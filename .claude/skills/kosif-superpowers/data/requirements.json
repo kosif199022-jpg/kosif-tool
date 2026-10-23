@@ -1,5 +1,16 @@
 {
  "_note": "Requirement registry used by scripts/requirements.py. key → how to detect it on this machine, how to install it, what it unlocks. kind: bin (executable on PATH), pip (python package), npm (node package), apt (system package), key (API key or account), service (hosted service/connector), os (platform), font (font file), model (downloaded model weights). Edit here, then run: python3 scripts/requirements.py derive && python3 scripts/requirements.py index",
+ "_unspecified_named": {
+  "_note": "Reviewed records whose key:unspecified hit (the words 'API key', 'connector', 'OAuth' or 'access token') refers to exactly one provider already registered here. derive drops key:unspecified for these ids only while that named key is still derived from the record's text. Records naming several providers, an example provider ('such as') or an unnamed LLM key stay key:unspecified.",
+  "APP-14": "pip:higgsfield",
+  "BEAT-163": "key:elevenlabs",
+  "CODE-17": "mcp:github",
+  "GEN-X01": "pip:higgsfield",
+  "GLOW-72": "key:video-gen",
+  "GRAPH-01": "key:graphify",
+  "GRAPH-11": "key:graphify",
+  "SEC-06": "mcp:github"
+ },
  "ffmpeg": {
   "kind": "bin",
   "detect": "ffmpeg",

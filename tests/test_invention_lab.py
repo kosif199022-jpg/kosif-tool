@@ -37,4 +37,9 @@ class InventionTests(unittest.TestCase):
     def test_methods_available(self):
         self.assertGreaterEqual(len(lab.METHODS),12)
         self.assertTrue(any(p[0]=="segmentation" for p in lab.METHODS))
+    def test_docstring_lists_every_action(self):
+        import re
+        actions=re.search(r'choices=\[([^\]]+)\]',PATH.read_text(encoding="utf-8")).group(1)
+        for name in re.findall(r'"([a-z-]+)"',actions):
+            self.assertIn("invention_lab.py "+name,lab.__doc__,name)
 if __name__=="__main__":unittest.main()

@@ -8,7 +8,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 
 <!-- hub:area:maintain:start -->
 
-**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -24,6 +24,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 | `repo-sync-catalog` (repo root) | Scrapes the public PromptsMotion library index and its detail pages (cached under .cache/promptsmotion/), extracts factual metadata only, rewrites catalog/styles.json, catalog/prompts_motion.json and every styles/<id>/STYLE.json, and flags entries that have left the index with listed=false. | `python3 tools/sync_catalog.py` | untested |
 | `repo-validate` (repo root) | Runs 14 integrity checks on the style atlas and prints a numbered PASS/WARN/FAIL report or JSON. It checks that catalog/styles.json parses with unique slug ids, that catalog/categories.json is a valid taxonomy, record fields, enums and https URLs, known categories, aspect_label against the pixel size, and that styles/<id>/SKILL.md exists and STYLE.json equals the record. It also checks for orphan folders, STYLE_INDEX.md coverage, prompts_motion and briefs consistency, playbook files, rehosted media under styles/ or catalog/, matching request-template placeholders and meta totals. | `python3 tools/validate.py` | tested-here |
 | `rea-superpowers-map` | Maps this skill the way REA maps a source tree it does not execute: a content-addressed inventory, Python import and invoke edges (ast), REA's JavaScript edges from its committed receipt, links from every script to its tools.json entry, tests, CI steps, powers and families, the gaps (orphan or untested scripts, missing tool files, unlisted references, broken links, families without a runnable tool) and Atlas safe-core coverage per theme. | `python3 scripts/rea_superpowers_map.py build` | tested-here |
+| `agent-guard` | Checks a shell command before an agent runs it against a documented 13-rule table (recursive rm of / ~ * or outside the folder, curl\|bash, force push, world-writable chmod, credentials in argv, disk-destroying commands, writes to system paths or outside cwd, history-rewriting git, sudo) and returns GREEN, YELLOW or RED with redacted findings; scans a transcript or log line by line for credential-shaped strings with the shared detector and prints only redacted excerpts; and plans parallel agent work as deterministic branch/worktree names, waves and a dependency-respecting merge order with the git commands. | `python3 scripts/agent_guard.py rules` | tested-here |
 
 <!-- hub:area:maintain:end -->
 
@@ -71,6 +72,7 @@ python3 scripts/kosif_hubs.py build             # data/hubs_index.json, referenc
 python3 scripts/capability_mindmap.py build     # data/capability_mindmap.json + references/capability-mindmap.md
 python3 scripts/owned_repos.py render           # references/owned-repos-map.md (its catalog proof counts move with the powers)
 python3 scripts/github_top_repos.py build       # data/github_top1000.json + references/github-top-1000.md (it lists the powers that cite each repository)
+python3 scripts/micro_index.py build            # data/micro_index.json + references/micro-index/ (one line per power, tool, superpower)
 python3 scripts/hub.py build                    # again: manifest.json, references/INDEX.md, SKILL.md and guide tool blocks
 python3 scripts/boot.py --static --write        # CAPABILITIES.md + llms.txt at the repo root
 python3 scripts/rea_superpowers_map.py build    # data/superpowers_rea_map.json + references/superpowers-rea-map.{md,html} (not CI-checked)
@@ -82,6 +84,7 @@ python3 scripts/check_skill.py --evals          # structure, links, proofs, coun
 Then, from the repo root: `python3 tools/build.py && python3 tools/validate.py && python3 -m unittest discover -s tests`.
 
 Check-only versions (what CI runs; they write nothing): `requirements.py derive --check`, `relabel_proofs.py --check`, `build_chapters.py --check`, `requirements.py index --check`, `capability_graph.py build --check`, `capability_atlas.py build --check`, `powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check`, `hub.py build --check`, `boot.py --static --check`, `smart_capabilities.py library-check`, `smart_capabilities.py cards-check`, `github_top_repos.py build --check`, `tools/build.py --check`.
+Check-only versions (what CI runs; they write nothing): `requirements.py derive --check`, `relabel_proofs.py --check`, `build_chapters.py --check`, `requirements.py index --check`, `capability_graph.py build --check`, `capability_atlas.py build --check`, `powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check`, `hub.py build --check`, `boot.py --static --check`, `smart_capabilities.py library-check`, `smart_capabilities.py cards-check`, `micro_index.py build --check`, `tools/build.py --check`.
 
 The chapters (`build_chapters.py`) link related references but skip the generated ones (`INDEX.md`, `LAYOUT.md`, `requirements.md`, `capability-atlas.md`, `capability-map.md`), so one pass of the chain converges whatever order those are rebuilt in.
 

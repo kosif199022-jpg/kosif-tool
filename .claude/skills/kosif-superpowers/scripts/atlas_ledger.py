@@ -8,6 +8,8 @@ question "what happened to every one of the Atlas skills?": each skill gets exac
   pattern           the skill is one instance of a method a KOSIF power already holds (for example
                     one vendor's "rate-limits" stage); vendor specifics stay in the Atlas folder
   duplicate         same description or same normalised name as an earlier Atlas skill
+  skipped           read and reviewed, nothing to transfer (product-specific, a stub or thin wrapper,
+                    one lint rule, niche jurisdiction); the reason is recorded per rule
   excluded-review   verdict is not READ_ONLY_OK (the skill ships scripts or install steps); not read
   excluded-copyleft copyleft license; referenced, never copied
   excluded-risk     KOSIF inspection raised risk flags
@@ -41,7 +43,7 @@ POWERS = SKILL / "data" / "powers"
 DECISIONS = SKILL / "data" / "atlas-ledger-decisions.json"
 OUT = SKILL / "data" / "atlas_ledger.json.gz"
 SCHEMA = "kosif.atlas-ledger.v1"
-STATUSES = ("covered", "pattern", "duplicate", "excluded-review", "excluded-copyleft",
+STATUSES = ("covered", "pattern", "duplicate", "skipped", "excluded-review", "excluded-copyleft",
             "excluded-risk", "pending")
 
 
@@ -153,9 +155,11 @@ def self_test() -> int:
         {"id": 5, "path": "skills/b/5-v-rate-limits", "skill": "v-rate-limits", "norm": "v", "desc_hash": "h5", "verdict": "READ_ONLY_OK", "source": "https://x/pack", "theme": "t"},
         {"id": 6, "path": "skills/b/6-u", "skill": "u", "norm": "u", "desc_hash": "h6", "verdict": "READ_ONLY_OK", "risk": ["net"], "theme": "t"},
         {"id": 7, "path": "skills/b/7-q", "skill": "q", "norm": "q", "desc_hash": "h7", "verdict": "READ_ONLY_OK", "theme": "t"},
+        {"id": 8, "path": "skills/b/8-p", "skill": "p", "norm": "p", "desc_hash": "h8", "verdict": "READ_ONLY_OK", "theme": "t"},
     ]}
     rules = [{"match": {"source_prefix": "https://x/", "skill_suffix": ["-rate-limits"]}, "status": "pattern",
-              "powers": ["P-2"], "reason": "stage"}]
+              "powers": ["P-2"], "reason": "stage"},
+             {"match": {"ids": [8]}, "status": "skipped", "reason": "product-specific"}]
     rows = {r["id"]: r for r in classify(idx, {"skills/a/1-x": ["P-1"]}, {7: {"P-7"}}, rules)}
     checks = [
         rows[1]["status"] == "covered" and rows[1]["powers"] == ["P-1"],
@@ -165,6 +169,7 @@ def self_test() -> int:
         rows[5]["status"] == "pattern" and rows[5]["powers"] == ["P-2"],
         rows[6]["status"] == "excluded-risk",
         rows[7]["status"] == "covered" and rows[7]["powers"] == ["P-7"],
+        rows[8]["status"] == "skipped" and rows[8]["powers"] == [] and rows[8]["reason"] == "product-specific",
         not rule_matches({"match": {}}, idx["skills"][0]),
         set(r["status"] for r in rows.values()) <= set(STATUSES),
     ]

@@ -978,7 +978,7 @@
      "IDEA",
      "STORY"
     ],
-    "top_k": 8,
+    "top_k": 10,
     "motion_output": true,
     "expect_all": [
      "IDEA"
@@ -1508,7 +1508,8 @@
    ],
    "routing": {
     "expect_any": [
-     "APPX"
+     "APPX",
+     "TOOL"
     ],
     "top_k": 8
    }
@@ -2249,6 +2250,116 @@
     ],
     "top_k": 8,
     "motion_output": false
+   }
+  },
+  {
+   "id": 154,
+   "lang": "ar",
+   "domain": "code",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "فهمني المستودع ده بسرعة: إيه أهم الملفات والدوال قبل ما نعدل",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names repo_map.py map with a budget and reports the ranked files",
+    "Says it parses text only and never runs the target"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "CODE"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 155,
+   "lang": "ar",
+   "domain": "mind",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "احفظ تفضيلاتي الجديدة في الذاكرة من غير ما تتكرر أو تتناقض مع القديم",
+   "files": [],
+   "expected_behavior": [
+    "Uses memory_ops.py propose then apply after review, reporting ADD/UPDATE/DELETE/NOOP with reasons",
+    "Refuses secrets and keeps old values in history"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "AGENT"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 156,
+   "lang": "en",
+   "domain": "research",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "write a comprehensive cited report on a topic using several perspectives and an outline first",
+   "files": [],
+   "expected_behavior": [
+    "Applies perspective-guided research then outline then cited writing (WEB-25)",
+    "Every claim maps to a cited snippet; unanswered questions are reported as open"
+   ],
+   "routing": {
+    "expect_any": [
+     "WEB",
+     "TOOL"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 157,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز انميشن ارتداد نابض طبيعي للعنوان واطلعلي القيم لكل فريم",
+   "files": [],
+   "expected_behavior": [
+    "Computes the spring with motion_physics.py spring instead of hand-keying a bounce (EASE-G01)",
+    "Reports damping ratio, settle time and overshoot with the values"
+   ],
+   "routing": {
+    "expect_any": [
+     "EASE",
+     "TOOL"
+    ],
+    "top_k": 8,
+    "motion_output": true
+   }
+  },
+  {
+   "id": 158,
+   "lang": "en",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "stagger the tiles of a 4x3 grid from the center with eased delays",
+   "files": [],
+   "expected_behavior": [
+    "Uses motion_physics.py stagger --grid with --from center (EASE-G03)",
+    "Keeps the total stagger within about 40 % of the move"
+   ],
+   "routing": {
+    "expect_any": [
+     "EASE",
+     "TOOL"
+    ],
+    "top_k": 8,
+    "motion_output": true
    }
   }
  ]

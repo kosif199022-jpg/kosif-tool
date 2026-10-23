@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v5.5).
+"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v5.6).
 
 The machine half of PROTOCOL.md. For any request it:
   0. checks the environment and that every derived index is fresh,
@@ -64,7 +64,8 @@ WEIGHTS = {"fit": 35, "integration": 20, "feasibility": 15, "evidence": 10, "cos
 LOCAL_RANK = ["✅", "🟢", "📦", "🔑", "📄", "💡"]
 LOCAL_EVIDENCE = {"✅": 1.0, "🟢": 0.8, "📦": 0.55, "🔑": 0.4, "📄": 0.25, "💡": 0.1}
 STAGE_ORDER = ["understand", "plan", "create", "refine", "assemble", "verify", "deliver"]
-PROTOCOL_VERSION = "USIP v5.5"
+PROTOCOL_VERSION = "USIP v5.6"
+META_TOOL_RX = re.compile(r"^(capability-|atlas-|ai-tool-discovery|boot|hub$|powers|skill-intelligence|superpower-fusion|kosif-groups|capability|requirements|probe-env|catalog-|check-skill|relabel|build-chapters|package-skill|rea-creative)")
 MIN_FIT = 0.25          # a non-must-have pick needs at least this share of the best fit to enter a plan or be "core"
 PLAN_DEFINITIONS = {    # canonical one-line meanings (CONTRACT glossary); Phase 6 of PROTOCOL.md is the source
     "A": "simplest path that meets every must-have", "B": "balanced professional with cross-domain integration",
@@ -964,6 +965,10 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         grp = plan_group(s.get("families", {}), s["pipeline"])
         fit *= affinity(an["primary"], dom, fam_count, an["still"], grp, an["topics"])
         hits = sorted(((a, sc) for a, sc in ms if sc > 0), key=lambda x: -x[1])
+        self_tools = [pid2tool.get(a["id"]) for a, _ in hits[:2]]
+        if self_tools and an["primary"] not in ("research", "unspecified") and all(
+                t and (META_TOOL_RX.match(t["id"]) or "self-discovery" in t.get("families", [])) for t in self_tools):
+            fit *= 0.3   # what matched is the skill's own maintenance/self-discovery tooling, not the user's job
         if an["still"] and re.search(MOVING_RX, " ".join(a["name_en"] for a, _ in hits[:2]).lower()):
             fit *= 0.5   # a still image: what matched is about moving pictures
         badges = [local_badge(a, pres) for a, _ in (hits or ms)]
@@ -1034,6 +1039,9 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         pick = [ranked_need[0][0]] if ranked_need else []
         if len(ranked_need) > 1 and ranked_need[1][1] >= 0.75 * ranked_need[0][1] and sp_by_id[ranked_need[1][0]]["fit_raw"] >= MIN_FIT * maxfit:
             pick.append(ranked_need[1][0])   # a second pick must also fit the request, not only the need's words
+        top_sid = atom2sp.get(best_atoms[0][1]["id"]) if best_atoms else None
+        if pick and top_sid in sp_by_id and top_sid not in pick and agg[top_sid] >= 0.75 * ranked_need[0][1]:
+            pick.append(top_sid)   # the need's single best-matching atom keeps its superpower in, even beside a broader pick
         must_ids.update(pick)
         must_cov.append({"need": need["need"], "superpowers": pick, "atoms": [r["id"] for _, r in best_atoms[:4]],
                          "status": "covered" if pick else "gap", "local_badges": [sp_by_id[p]["local_badge"] for p in pick]})
@@ -1141,7 +1149,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
                 if l not in [c["id"] for c in comp]:
                     comp.append({"id": l, "name_ar": y["name_ar"], "name_en": y["name_en"], "because": f"linked to {x['id']}", "stage": y["stage"]})
     # tools
-    meta_tool = re.compile(r"^(capability-|atlas-|ai-tool-discovery|boot|hub$|powers|skill-intelligence|superpower-fusion|kosif-groups|capability|requirements|probe-env|catalog-|check-skill|relabel|build-chapters|package-skill|rea-creative)")
+    meta_tool = META_TOOL_RX
     tools_hit = []
     short_fams = {f for x in short[:25] for f in x["families"]}
     try:

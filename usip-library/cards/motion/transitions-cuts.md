@@ -1,6 +1,6 @@
-# `transitions-cuts` — الموشن والمونتاج والسينما (474 بطاقة)
+# `transitions-cuts` — الموشن والمونتاج والسينما (475 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/transitions-cuts.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/transitions-cuts.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -464,6 +464,7 @@
 - [`TRANS-97` ذوبان ضوضائي بين مشهدين](#trans-97--ذوبان-ضوضائي-بين-مشهدين--noise-dissolve-between-two-rendered-scenes)
 - [`TRANS-98` انتقال المسح بطبقة غطاء](#trans-98--انتقال-المسح-بطبقة-غطاء--overlay-wipe-page-transition)
 - [`TRANS-99` انتقال تحلل بالنويز بين مشهدين](#trans-99--انتقال-تحلل-بالنويز-بين-مشهدين--noise-dissolve-scene-transition)
+- [`TRANS-G01` انتقال سحري بين حالتين](#trans-g01--انتقال-سحري-بين-حالتين--auto-animate-between-two-states-magic-move)
 - [`TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف](#trans-u01--منحنى-منزلق-قبلبعد-انزلاق-ثم-زحف-ثم-كشف--beforeafter-slider-glide--crawl--reveal)
 - [`TRANS-X01` لكل انتقال سبب يُسمّى](#trans-x01--لكل-انتقال-سبب-يُسمّى--every-transition-needs-a-nameable-cause)
 - [`TRANS-X02` زوم الإبرة على جسم مستمر](#trans-x02--زوم-الإبرة-على-جسم-مستمر--needle-zoom-on-a-persistent-object)
@@ -493,7 +494,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: dip to black.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: غمس للأسود. — Custom transition modelling what CapCut/InShot do: dip to black.
 
 **متى:** حين يريد المستخدم انتقالًا بالغمس في الأسود بين لقطتين كما في CapCut / when the user wants a dip-to-black transition between two shots, CapCut/InShot style
 
@@ -524,7 +525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -568,7 +569,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: dip to white.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: غمس للأبيض. — Custom transition modelling what CapCut/InShot do: dip to white.
 
 **متى:** حين يطلب المستخدم انتقالًا بالغمس في الأبيض بين مقطعين كما في تطبيقات الموبايل / when the user wants a dip-to-white transition between two clips like phone editors do
 
@@ -599,7 +600,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -644,7 +645,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: white flash cut (phone editors).
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: قطع بفلاش أبيض (محررات الهاتف). — Custom transition modelling what CapCut/InShot do: white flash cut (phone editors).
 
 **متى:** حين يريد المستخدم قطعًا بفلاش أبيض سريع بين لقطتين على طريقة CapCut / when the user wants a quick white flash cut between two shots, phone-editor style
 
@@ -675,7 +676,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -721,7 +722,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** When a hook is inserted at the head, picture, subtitles and location sound shift by the hook length while the music bed stays in place so it plays uninterrupted from frame 0; afterwards the first music clip is extended by the hook length so later music edits realign with scenes; hook audio lives on …
+**ما هي:** عند إدراج خطاف في البداية تُزاح الصورة والترجمات وصوت الموقع بطول الخطاف بينما يبقى فرش الموسيقى في مكانه فيعمل دون انقطاع من الإطار 0؛ ثم يُمدَّد أول مقطع موسيقي بطول الخطاف لتعاد محاذاة تعديلات الموسيقى اللاحقة مع المشاهد؛ وصوت الخطاف يقيم على … — When a hook is inserted at the head, picture, subtitles and location sound shift by the hook length while the music bed stays in place so it plays uninterrupted from frame 0; afterwards the first music clip is extended by the hook length so later music edits realign with scenes; hook audio lives on …
 
 **متى:** عند إضافة خطاف أو مقدمة في أول الفيديو مع بقاء الموسيقى متصلة دون انقطاع / when inserting a hook at the start of an edit while the music bed keeps playing uninterrupted
 
@@ -751,7 +752,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -798,7 +799,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Word gaps over 0.7 s are cut candidates; keep about 0.4 s breath at sentence ends; preserve 0.8-2 s intentional pauses after turning points, decisions, failures or realizations; remove filler-only segments; do not cut an in-sentence filler when neighbouring gaps are under 0.15 s (audible stutter).
+**ما هي:** فجوات الكلمات فوق 0.7 ث مرشحة للقص؛ أبقِ نحو 0.4 ث للتنفس عند نهايات الجمل؛ واحفظ وقفات مقصودة 0.8-2 ث بعد نقاط التحول والقرارات والإخفاقات والإدراكات؛ أزل المقاطع الحشوية فقط؛ ولا تقص حشوًا داخل جملة حين تكون الفجوات المجاورة أقل من 0.15 ث (تلعثم مسموع). — Word gaps over 0.7 s are cut candidates; keep about 0.4 s breath at sentence ends; preserve 0.8-2 s intentional pauses after turning points, decisions, failures or realizations; remove filler-only segments; do not cut an in-sentence filler when neighbouring gaps are under 0.15 s (audible stutter).
 
 **متى:** حين يطلب المستخدم حذف الصمت وكلمات الحشو من كلام مسجل مع إبقاء الوقفات المقصودة / when trimming silences and filler words from speech while keeping intentional pauses
 
@@ -828,7 +829,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -875,7 +876,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** ffmpeg's xfade filter gives ~58 built-in transitions between two clips without any editor: fades, wipes, slides, circle/rect crops, pixelize, radial, slices, wind, cover/reveal, zoomin, squeeze.
+**ما هي:** يوفّر فلتر xfade في ffmpeg نحو 58 انتقالًا مدمجًا بين مقطعين دون أي محرر: تلاشي، مسح، انزلاق، قص دائري/مستطيل، بكسلة، شعاعي، شرائح، ريح، تغطية/كشف، زووم للداخل، ضغط. — ffmpeg's xfade filter gives ~58 built-in transitions between two clips without any editor: fades, wipes, slides, circle/rect crops, pixelize, radial, slices, wind, cover/reveal, zoomin, squeeze.
 
 **متى:** حين يحتاج المستخدم انتقالات جاهزة بين مقطعين عبر ffmpeg دون برنامج مونتاج / when the user needs ready-made transitions between two clips with ffmpeg and no editor
 
@@ -905,7 +906,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -952,7 +953,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each view remounts inside a keyed stage that fades and rises with a hairline scale-up, then focus moves to the workspace without scrolling.
+**ما هي:** تُعاد تهيئة كل شاشة داخل مسرح بمفتاح يتلاشى ويرتفع مع تكبير خفيف جدًا، ثم ينتقل التركيز إلى مساحة العمل دون تمرير. — Each view remounts inside a keyed stage that fades and rises with a hairline scale-up, then focus moves to the workspace without scrolling.
 
 **متى:** عند تبديل الشاشات في واجهة React والرغبة في دخول ناعم بتلاشي وارتفاع خفيف / when switching views in a React UI and each screen should fade and rise in gently
 
@@ -982,7 +983,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1030,7 +1031,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Named clip-to-clip handoffs, one per theme: soft blur-dissolve + grey arc; white flash; blur-dissolve + zoom-out; horizontal light-streak sweep; gold light leak; full-red panel; round iris wipe + zoom; leaf-shadow sweep; cobalt light sweep; glitch cut + whip-slide; sunburst stripe wipe; light-flare …
+**ما هي:** تسليمات مسماة من مقطع إلى مقطع، واحدة لكل سمة: ذوبان ضبابي ناعم مع قوس رمادي؛ وميض أبيض؛ ذوبان ضبابي مع تصغير؛ مسح بخط ضوء أفقي؛ تسرب ضوء ذهبي؛ لوح أحمر كامل؛ مسح قزحية مستديرة مع زووم؛ مسح بظل أوراق؛ مسح بضوء كوبالتي؛ قطع غليتش مع انزلاق سريع؛ مسح بشرائط شمسية؛ توهج ضوئي… — Named clip-to-clip handoffs, one per theme: soft blur-dissolve + grey arc; white flash; blur-dissolve + zoom-out; horizontal light-streak sweep; gold light leak; full-red panel; round iris wipe + zoom; leaf-shadow sweep; cobalt light sweep; glitch cut + whip-slide; sunburst stripe wipe; light-flare …
 
 **متى:** حين تختار انتقالًا مسمى يناسب الثيم بين المقاطع ويكتب في آخر ثانية من برومبت كل مقطع / when choosing a named theme transition between clips, written into the final second of each clip prompt
 
@@ -1060,7 +1061,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1105,7 +1106,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each clip ends in an identifiable pose/state that the next clip starts from, enabling invisible joins between AI clips.
+**ما هي:** ينتهي كل مقطع بوضعية/حالة يمكن تحديدها يبدأ منها المقطع التالي، فتصير الوصلات بين مقاطع الذكاء الاصطناعي غير ملحوظة. — Each clip ends in an identifiable pose/state that the next clip starts from, enabling invisible joins between AI clips.
 
 **متى:** عند ربط مقاطع مولدة بالذكاء الاصطناعي بحيث يبدأ كل مقطع من وضعية نهاية المقطع السابق / when joining AI clips invisibly so each clip starts from the previous clip's ending pose
 
@@ -1133,7 +1134,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1180,7 +1181,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** JSON timelines use FFmpeg xfade transitions with Arabic labels; unknown names are rejected.
+**ما هي:** تستخدم تايملاينات JSON انتقالات xfade من FFmpeg بتسميات عربية، وتُرفض الأسماء غير المعروفة. — JSON timelines use FFmpeg xfade transitions with Arabic labels; unknown names are rejected.
 
 **متى:** حين تبني تايملاين JSON وتحتاج انتقالات xfade بأسماء عربية مع رفض الأسماء غير المعروفة / when a JSON timeline needs FFmpeg xfade transitions with Arabic labels and unknown names rejected
 
@@ -1208,7 +1209,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1255,7 +1256,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A ping-pong fluid texture acts as a mask to reveal a second scene.
+**ما هي:** نسيج سائل متبادل (ping-pong) يعمل كقناع لكشف مشهد ثانٍ. — A ping-pong fluid texture acts as a mask to reveal a second scene.
 
 **متى:** حين تريد كشف مشهد ثانٍ تحت الأول بقناع سائل متحرك كأنه أشعة سينية / when a moving fluid mask should reveal a second scene underneath, x-ray style
 
@@ -1283,7 +1284,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-100` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1329,7 +1330,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Eleven transitions applied at every zoom cut.
+**ما هي:** أحد عشر انتقالًا تُطبَّق عند كل قطعة زووم. — Eleven transitions applied at every zoom cut.
 
 **متى:** حين تريد انتقالًا جاهزًا عند كل قطع زووم: فلاش أو سوط أو اهتزاز أو جليتش أو غمس أو قزحية / when each zoom cut needs a transition such as flash, whip, shake, glitch, dip, wipe or iris
 
@@ -1359,7 +1360,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-101` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1407,7 +1408,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Owner rule, on by default: no white flashes, dips to black, glitch/RGB bursts, shake or spin; energy must come from motion. Also appended to every Claude prompt.
+**ما هي:** قاعدة المالك، مفعّلة افتراضيًا: لا وميض أبيض ولا غطس إلى الأسود ولا انفجارات غليتش/RGB ولا اهتزاز أو دوران؛ ويجب أن تأتي الطاقة من الحركة. وتُلحق كذلك بكل موجّه Claude. — Owner rule, on by default: no white flashes, dips to black, glitch/RGB bursts, shake or spin; energy must come from motion. Also appended to every Claude prompt.
 
 **متى:** حين يطلب المستخدم مونتاجًا هادئًا بلا وميض أو اهتزاز أو جليتش وتكون الطاقة من الحركة فقط / when the user wants a calm edit with no flashes, glitch, shake or spin, energy from motion only
 
@@ -1435,7 +1436,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-102` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1483,7 +1484,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Channel-split by redrawing the frame through red and cyan multiplied buffers offset sideways, and slice glitch by shifting random horizontal bands.
+**ما هي:** فصل القنوات بإعادة رسم الإطار عبر مخزنين أحمر وسماوي مضروبين مزاحين جانبيًا، وغليتش الشرائح بإزاحة نطاقات أفقية عشوائية. — Channel-split by redrawing the frame through red and cyan multiplied buffers offset sideways, and slice glitch by shifting random horizontal bands.
 
 **متى:** حين تريد تأثير انفصال قنوات الألوان أو إزاحة شرائح أفقية عشوائية في الإطار / when you need an RGB channel split or a horizontal slice glitch drawn on canvas
 
@@ -1511,7 +1512,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-103` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1558,7 +1559,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Adjacent full-screen scenes hand over with a hard cut; isolated scenes fade in 0.2 s and out 0.22 s.
+**ما هي:** تتسلّم المشاهد الكاملة المتجاورة بقطع حاد؛ أما المشاهد المنعزلة فتظهر بتلاشٍ 0.2 s وتختفي في 0.22 s. — Adjacent full-screen scenes hand over with a hard cut; isolated scenes fade in 0.2 s and out 0.22 s.
 
 **متى:** عند تحديد كيف يسلّم مشهد للتالي: قطع حاد للمشاهد المتلاصقة وتلاشي قصير للمعزولة / when deciding between a hard cut for adjacent scenes and a short fade for isolated ones
 
@@ -1588,7 +1589,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-104` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1634,7 +1635,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال بمُظلِّل أجزاء WebGL بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقال شيدر بانفصال لوني بين مشهدين في HyperFrames / for a WebGL chromatic-split shader transition between two scenes
 
@@ -1663,7 +1664,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-105` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1709,7 +1710,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: زوم سينمائي: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: cinematic-zoom: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا سينمائيًا بالتقريب بين مشهدين عبر شيدر WebGL / for a cinematic zoom shader transition between two scenes
 
@@ -1738,7 +1739,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-106` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1784,7 +1785,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تحول التوائي: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: cross-warp-morph: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد أن يلتوي المشهد الأول ويتحول إلى الثاني بانتقال شيدر / for a warping morph shader transition that bends one scene into the next
 
@@ -1813,7 +1814,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-107` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1859,7 +1860,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تشويه المجال: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: domain-warp: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا يشوه الصورة ويلويها بين مشهدين عبر شيدر WebGL / for a domain-warp distortion shader transition between two scenes
 
@@ -1888,7 +1889,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-108` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1934,7 +1935,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: وميض أبيض: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: flash-through-white: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد الانتقال بين مشهدين عبر وميض أبيض بشيدر WebGL / for a shader transition that passes through a white flash between scenes
 
@@ -1963,7 +1964,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-109` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2009,7 +2010,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every segment fades from and to black for a few frames so the concatenated cuts breathe instead of popping.
+**ما هي:** يخفت كل مقطع من الأسود وإليه لبضعة إطارات، فتتنفس القطعات المتسلسلة بدل أن تقفز. — Every segment fades from and to black for a few frames so the concatenated cuts breathe instead of popping.
 
 **متى:** حين تبدو القطعات الحادة مفاجئة وتحتاج إظلامًا خفيفًا لبضع إطارات بين المقاطع / when hard cuts feel too abrupt and segments need a few frames of fade to and from black
 
@@ -2039,7 +2040,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2085,7 +2086,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: غلتش: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: glitch: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقال جليتش رقمي بين مشهدين عبر شيدر WebGL / for a digital glitch shader transition between two scenes
 
@@ -2114,7 +2115,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-110` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2160,7 +2161,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: عدسة جاذبية: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: gravitational-lens: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتشويه عدسة جاذبية يحني الصورة بين مشهدين / for a gravitational-lens distortion shader transition between scenes
 
@@ -2189,7 +2190,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-111` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2235,7 +2236,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تسرب ضوء: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: light-leak: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتسرب ضوئي بين مشهدين عبر شيدر WebGL / for a light-leak shader transition between two scenes
 
@@ -2264,7 +2265,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-112` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2310,7 +2311,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: احتراق متعرج: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: ridged-burn: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقال حرق بحواف متعرجة بين مشهدين عبر شيدر WebGL / for a ridged burn shader transition between two scenes
 
@@ -2339,7 +2340,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-113` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2385,7 +2386,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تموجات: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: ripple-waves: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتموجات تشوه الصورة بين مشهدين عبر شيدر / for a ripple-wave shader transition between two scenes
 
@@ -2414,7 +2415,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-114` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2460,7 +2461,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: قزحية: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: sdf-iris: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد كشف المشهد التالي بفتحة قزحية عبر شيدر WebGL / for an iris-shaped shader reveal from one scene to the next
 
@@ -2489,7 +2490,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-115` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2535,7 +2536,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: دوامة: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: swirl-vortex: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بدوامة تلف المشهد قبل ظهور التالي عبر شيدر / for a swirl vortex shader transition between two scenes
 
@@ -2564,7 +2565,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-116` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2610,7 +2611,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تشوه حراري: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: thermal-distortion: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتشوه حراري يشبه السراب بين مشهدين عبر شيدر / for a thermal distortion shader transition between two scenes
 
@@ -2639,7 +2640,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-117` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2685,7 +2686,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: سوط كاميرا: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: whip-pan: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا كحركة كاميرا سريعة خاطفة بين مشهدين عبر شيدر / for a whip-pan shader transition between two scenes
 
@@ -2714,7 +2715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-118` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2760,7 +2761,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A fast slide wipe that splits RGB channels on its peak frames.
+**ما هي:** مسح انزلاقي سريع يفصل قنوات RGB عند إطارات ذروته. — A fast slide wipe that splits RGB channels on its peak frames.
 
 **متى:** حين تريد مسحًا انزلاقيًا سريعًا مع انفصال قنوات RGB في ذروته وباتجاه تختاره / for a fast directional slide wipe that splits RGB channels at its peak
 
@@ -2790,7 +2791,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-119` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2838,7 +2839,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Each detected transition is identified by re-rendering candidate kinds and fitting their progress curve to the real frames, then replayed with the same kind and curve.
+**ما هي:** يُحدَّد كل انتقال مكتشف بإعادة تصيير الأنواع المرشحة ومطابقة منحنى تقدمها مع الإطارات الحقيقية، ثم يُعاد تشغيله بالنوع والمنحنى نفسيهما. — Each detected transition is identified by re-rendering candidate kinds and fitting their progress curve to the real frames, then replayed with the same kind and curve.
 
 **متى:** حين تريد معرفة نوع الانتقال في فيديو مرجعي وإعادة تنفيذه بنفس المنحنى / when identifying which transition a reference video uses and replaying it with the same kind and curve
 
@@ -2868,7 +2869,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2914,7 +2915,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two pleated velvet curtains gather outward from centre under a fixed pelmet, optionally blooming a spotlight on the stage.
+**ما هي:** ستارتان مخمليتان مطويتان تنفرجان إلى الخارج من المركز تحت إفريز ثابت، مع إمكانية تفتّح بقعة ضوء على المسرح. — Two pleated velvet curtains gather outward from centre under a fixed pelmet, optionally blooming a spotlight on the stage.
 
 **متى:** حين تريد افتتاحًا مسرحيًا بستائر مخملية تنفتح من المنتصف مع بقعة ضوء اختيارية / for a theatrical opening where velvet curtains part from the centre, optional spotlight
 
@@ -2945,7 +2946,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-120` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2993,7 +2994,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Velocity-matched hard cut: outgoing subject accelerates (power4.in), swaps at peak speed, incoming continues same direction (power4.out).
+**ما هي:** قطع حاد بسرعة مطابقة: يتسارع الموضوع الخارج (power4.in) ويُبدَّل عند ذروة السرعة، ويواصل الداخل بالاتجاه نفسه (power4.out). — Velocity-matched hard cut: outgoing subject accelerates (power4.in), swaps at peak speed, incoming continues same direction (power4.out).
 
 **متى:** حين تريد قطعًا حادًا يحافظ على السرعة: العنصر يتسارع ويتبدل في ذروة سرعته ويكمل بنفس الاتجاه / for a velocity-matched hard cut that swaps subjects at peak speed in the same direction
 
@@ -3024,7 +3025,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-121` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3072,7 +3073,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One panel slides over another as a directional scene push.
+**ما هي:** لوح ينزلق فوق لوح آخر كدفع اتجاهي للمشهد. — One panel slides over another as a directional scene push.
 
 **متى:** حين تريد أن تنزلق لوحة فوق أخرى لدفع المشهد في اتجاه واضح / when one panel should slide over another as a directional scene push
 
@@ -3103,7 +3104,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-122` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3151,7 +3152,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Calm transition: layer A fades into a wash colour then layer B fades up.
+**ما هي:** انتقال هادئ: تتلاشى الطبقة A إلى لون غمر ثم تظهر الطبقة B تدريجيًا. — Calm transition: layer A fades into a wash colour then layer B fades up.
 
 **متى:** حين تريد انتقالًا هادئًا يمر عبر لون غامر ثم يظهر المشهد التالي / for a calm transition fading through a wash colour into the next layer
 
@@ -3182,7 +3183,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-123` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3230,7 +3231,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Screen dissolves into a grid of squares fading out with staggered timing.
+**ما هي:** تذوب الشاشة إلى شبكة مربعات تخبو بتوقيت متدرج. — Screen dissolves into a grid of squares fading out with staggered timing.
 
 **متى:** حين تريد أن تتفكك الشاشة إلى مربعات تختفي بتتابع كانتقال بكسلي / when the screen should break into a grid of squares fading out with staggered timing
 
@@ -3259,7 +3260,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-124` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3307,7 +3308,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Accent ink dots pop onto a grid smallest-first, each becoming a window onto scene B until B replaces A.
+**ما هي:** تظهر نقاط حبر التمييز على شبكة من الأصغر أولًا، وتصير كل منها نافذة على المشهد B حتى يحل B محل A. — Accent ink dots pop onto a grid smallest-first, each becoming a window onto scene B until B replaces A.
 
 **متى:** حين تريد ذوبانًا بنقاط حبر هافتون تظهر على شبكة وتكشف المشهد الثاني من خلالها / for a halftone ink-dot dissolve where dots pop onto a grid and reveal scene B
 
@@ -3338,7 +3339,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-125` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3386,7 +3387,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Circle clip-path opens from a set origin revealing B over A; classic register desaturates A so B lands in full colour, thin accent rim.
+**ما هي:** يفتح clip-path دائري من أصل محدد كاشفًا B فوق A؛ وفي النمط الكلاسيكي تفقد A ألوانها ليهبط B بألوانه الكاملة، مع حافة تمييز رفيعة. — Circle clip-path opens from a set origin revealing B over A; classic register desaturates A so B lands in full colour, thin accent rim.
 
 **متى:** حين تريد دائرة تنفتح من نقطة محددة لتكشف المشهد التالي بأسلوب كلاسيكي / for a circular iris opening from a set point to reveal the next scene, classic style
 
@@ -3417,7 +3418,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-126` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3465,7 +3466,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A circle accelerates into a single-frame scene swap that matches the incoming circle exactly, then continues to a smaller rest pose.
+**ما هي:** تتسارع دائرة نحو تبديل مشهد في إطار واحد يطابق الدائرة الواردة تمامًا، ثم تواصل إلى وضعية سكون أصغر. — A circle accelerates into a single-frame scene swap that matches the incoming circle exactly, then continues to a smaller rest pose.
 
 **متى:** حين تريد ربط مشهدين بالشكل: دائرة تتسارع وتتبدل في إطار واحد مع دائرة مطابقة في المشهد التالي / for a match cut where an accelerating circle swaps in one frame into a matching circle
 
@@ -3496,7 +3497,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-127` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3544,7 +3545,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two slotted siblings share one centre; A condenses (shrink-fade) or reshapes (scaleX/scaleY) into B.
+**ما هي:** شقيقان في فتحتين يتشاركان مركزًا واحدًا؛ يتكثف A (تقلص وتلاشٍ) أو يعيد تشكله (scaleX/scaleY) إلى B. — Two slotted siblings share one centre; A condenses (shrink-fade) or reshapes (scaleX/scaleY) into B.
 
 **متى:** حين تريد أن يتحول عنصر إلى آخر في نفس المركز بالانكماش أو بإعادة التشكيل / when one element should condense or reshape into another sharing the same centre
 
@@ -3575,7 +3576,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-128` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3623,7 +3624,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Outgoing and incoming page panels slide (transitions.dev-inspired).
+**ما هي:** تنزلق لوحتا الصفحة الخارجة والداخلة (بوحي من transitions.dev). — Outgoing and incoming page panels slide (transitions.dev-inspired).
 
 **متى:** حين تريد انزلاقًا بين صفحتين في واجهة تطبيق مثل لوحة التحكم ثم التحليلات / for sliding between two UI page panels, e.g. a dashboard to an analytics view
 
@@ -3654,7 +3655,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-129` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3702,7 +3703,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: crossfade, through black/white/grey, pixel dissolve.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: تقاطع تلاشي، مرور عبر الأسود/الأبيض/الرمادي، ذوبان بكسلي. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: crossfade, through black/white/grey, pixel dissolve.
 
 **متى:** حين يطلب المستخدم مزجًا أو تلاشيًا عبر الأسود أو الأبيض أو ذوبانًا بكسليًا بين لقطتين / for a crossfade, a fade through black, white or grey, or a pixel dissolve between two shots
 
@@ -3733,7 +3734,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3779,7 +3780,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Outgoing panel strains against rising resistance, holds at tension, then snaps past an edge with overshoot as the next settles.
+**ما هي:** اللوح الخارج يتوتر أمام مقاومة متزايدة، ويثبت عند التوتر، ثم ينقطع متجاوزًا حافة بتجاوز زائد بينما يستقر التالي. — Outgoing panel strains against rising resistance, holds at tension, then snaps past an edge with overshoot as the next settles.
 
 **متى:** حين تريد أن تشتد اللوحة كالمطاط ثم تنفلت مع ارتداد ليستقر المشهد التالي / when a panel should strain like a rubber band, hold, then snap past the edge with overshoot
 
@@ -3810,7 +3811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-130` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3858,7 +3859,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-word vertical shared-axis swap for sharp editorial changes.
+**ما هي:** تبديل عمودي لكل كلمة بمحور مشترك لتغييرات تحريرية حادة. — Per-word vertical shared-axis swap for sharp editorial changes.
 
 **متى:** حين تريد تبديل الكلمات بحركة عمودية مشتركة لتغيير تحريري حاد / for a sharp editorial word swap moving along a shared vertical axis
 
@@ -3889,7 +3890,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-131` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3937,7 +3938,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scale-based shared-axis transition for depth/focus shifts.
+**ما هي:** انتقال بمحور مشترك قائم على التحجيم لتحولات العمق/التركيز. — Scale-based shared-axis transition for depth/focus shifts.
 
 **متى:** حين تريد انتقالًا بالتحجيم يوحي بالعمق أو بتحول التركيز للداخل أو الخارج / for a scale-based transition that suggests depth or a focus shift in or out
 
@@ -3968,7 +3969,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-132` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4016,7 +4017,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One line becomes another mid-move: both ride one 85 % easy-ease curve and hard-swap at speed peak as scale, tracking or slide.
+**ما هي:** سطر يصير سطرًا آخر في منتصف الحركة: يركبان منحنى تسهيل 85% واحدًا ويتبدلان بقطع حاد عند ذروة السرعة كتحجيم أو تباعد أحرف أو انزلاق. — One line becomes another mid-move: both ride one 85 % easy-ease curve and hard-swap at speed peak as scale, tracking or slide.
 
 **متى:** حين تريد أن يتحول سطر نصي إلى آخر في منتصف الحركة بتبديل حاد عند ذروة السرعة / when one text line should become another mid-move with a hard swap at peak speed
 
@@ -4047,7 +4048,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-133` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4095,7 +4096,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Headline splits vertically around an incoming panel that grows from the gap; words exit opposite edges.
+**ما هي:** ينشق العنوان عموديًا حول لوح وارد ينمو من الفجوة؛ وتخرج الكلمات من الحافتين المتقابلتين. — Headline splits vertically around an incoming panel that grows from the gap; words exit opposite edges.
 
 **متى:** حين تريد أن ينقسم عنوان كبير لتنمو لوحة جديدة من الفراغ بين كلماته / when a headline should split apart as an incoming panel grows from the gap
 
@@ -4126,7 +4127,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-134` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4174,7 +4175,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Full-frame whip pan: A whips off with capped directional blur, B enters at matched velocity on a speed-ramp with decelerating catch.
+**ما هي:** سحب كاميرا سريع بالإطار الكامل: يندفع A للخارج بتمويه اتجاهي محدود، ويدخل B بسرعة مطابقة على تسارع زمني مع التقاط متباطئ. — Full-frame whip pan: A whips off with capped directional blur, B enters at matched velocity on a speed-ramp with decelerating catch.
 
 **متى:** حين تريد قطعًا بحركة كاميرا خاطفة مع ضبابية اتجاهية ودخول المشهد التالي بنفس السرعة / for a full-frame whip pan cut with directional blur and a matched-speed entry
 
@@ -4205,7 +4206,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-135` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4253,7 +4254,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Zooms through a focal card into the next scene.
+**ما هي:** زووم عبر بطاقة بؤرية إلى المشهد التالي. — Zooms through a focal card into the next scene.
 
 **متى:** حين تريد التقريب عبر بطاقة محورية للدخول إلى المشهد التالي / when the camera should zoom through a focal card into the next scene
 
@@ -4283,7 +4284,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-136` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4331,7 +4332,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition: radial chromatic-aberration split between scene A and B.
+**ما هي:** انتقال WebGL: انقسام شعاعي بانحراف لوني بين المشهدين A وB. — WebGL transition: radial chromatic-aberration split between scene A and B.
 
 **متى:** حين تريد انتقالًا بانقسام ألوان شعاعي بين مشهدين كتكوين WebGL جاهز / for a radial chromatic-aberration split between two scenes as a ready WebGL composition
 
@@ -4363,7 +4364,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-137` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4411,7 +4412,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with dramatic zoom blur.
+**ما هي:** انتقال WebGL بتمويه زووم درامي. — WebGL transition with dramatic zoom blur.
 
 **متى:** حين تريد انتقالًا دراميًا بتقريب مع ضبابية زووم بين مشهدين / for a dramatic zoom-blur transition between two scenes
 
@@ -4443,7 +4444,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-138` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4491,7 +4492,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with cross-warped morph.
+**ما هي:** انتقال WebGL بتحول تشويه متقاطع. — WebGL transition with cross-warped morph.
 
 **متى:** حين تريد أن يلتوي المشهد ويتحول بشكل متقاطع إلى التالي كتكوين WebGL جاهز / for a cross-warped morph transition between scenes as a ready WebGL composition
 
@@ -4523,7 +4524,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-139` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4571,7 +4572,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: hard-edge wipes incl. diagonal corners.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: مسحات بحواف حادة تشمل الزوايا القطرية. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: hard-edge wipes incl. diagonal corners.
 
 **متى:** حين يطلب المستخدم انتقال مسح بحافة حادة أفقيًا أو رأسيًا أو من الزوايا بين لقطتين / for a hard-edge wipe between two shots, sideways, vertical or from a corner
 
@@ -4602,7 +4603,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4648,7 +4649,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition using fractal-noise domain warping.
+**ما هي:** انتقال WebGL بالتواء المجال بضوضاء كسورية. — WebGL transition using fractal-noise domain warping.
 
 **متى:** حين تريد ذوبانًا بين مشهدين يشوه الصورة بالتواء ضوضاء كسرية / for a dissolve that distorts the image with fractal-noise domain warping
 
@@ -4680,7 +4681,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-140` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4728,7 +4729,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL crossfade through a white flash.
+**ما هي:** تقاطع WebGL عبر وميض أبيض. — WebGL crossfade through a white flash.
 
 **متى:** حين تريد تلاشيًا متقاطعًا يمر بوميض أبيض بين مشهدين / for a crossfade that passes through a white flash between scenes
 
@@ -4760,7 +4761,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-141` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4808,7 +4809,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL glitch transition: line displacement, block offsets, RGB shift, scanlines, colour quantisation, mixed by progress.
+**ما هي:** انتقال غليتش WebGL: إزاحة خطوط، وإزاحات كتل، وفصل RGB، وخطوط مسح، وتكميم ألوان، ممزوجة بالتقدم. — WebGL glitch transition: line displacement, block offsets, RGB shift, scanlines, colour quantisation, mixed by progress.
 
 **متى:** حين تريد انتقال جليتش رقمي بخطوط مسح وإزاحة كتل وانزياح RGB / for a digital glitch transition with scanlines, block offsets and RGB shift
 
@@ -4840,7 +4841,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-142` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4888,7 +4889,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with gravitational lensing distortion.
+**ما هي:** انتقال WebGL بتشويه عدسة جاذبية. — WebGL transition with gravitational lensing distortion.
 
 **متى:** حين تريد انتقالًا بتشويه العدسة الجاذبية الذي يحني الصورة بين مشهدين / for a gravitational lensing distortion transition between two scenes
 
@@ -4920,7 +4921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-143` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4968,7 +4969,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with a cinematic light-leak overlay.
+**ما هي:** انتقال WebGL بتراكب تسرب ضوء سينمائي. — WebGL transition with a cinematic light-leak overlay.
 
 **متى:** حين تريد انتقالًا سينمائيًا بطبقة تسرب ضوء بين مشهدين / for a cinematic light-leak overlay transition between scenes
 
@@ -5000,7 +5001,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-144` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5048,7 +5049,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Overlay transition: tiled word wall covers frame, inverts by difference blend, clears; hard-cut underneath while covered.
+**ما هي:** انتقال تراكب: جدار كلمات مرصوف يغطي الإطار، وينقلب بمزج الفرق، ثم ينجلي؛ وقطع حاد تحته أثناء التغطية. — Overlay transition: tiled word wall covers frame, inverts by difference blend, clears; hard-cut underneath while covered.
 
 **متى:** حين تريد جدارًا من الكلمات المتكررة يغطي الإطار وينقلب لونه ثم ينزاح مع قطع حاد تحته / when a tiled wall of repeated words should cover the frame, invert, then clear over a hidden cut
 
@@ -5079,7 +5080,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-145` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5127,7 +5128,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with ridged-turbulence burn.
+**ما هي:** انتقال WebGL بحرق ذي اضطراب متعرج. — WebGL transition with ridged-turbulence burn.
 
 **متى:** حين تريد انتقال حرق باضطراب متعرج بين مشهدين / for a burn transition with ridged turbulence between two scenes
 
@@ -5159,7 +5160,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-146` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5207,7 +5208,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with concentric ripple distortion.
+**ما هي:** انتقال WebGL بتشويه تموجات متحدة المركز. — WebGL transition with concentric ripple distortion.
 
 **متى:** حين تريد انتقالًا بتموجات متحدة المركز تشوه الصورة بين مشهدين / for a transition with concentric ripple distortion between scenes
 
@@ -5239,7 +5240,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-147` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5287,7 +5288,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL iris reveal built on a signed distance field.
+**ما هي:** كشف قزحية WebGL مبني على حقل مسافة موقَّعة. — WebGL iris reveal built on a signed distance field.
 
 **متى:** حين تريد كشف المشهد التالي بقزحية WebGL مبنية على حقل مسافة موقّع / for a WebGL iris reveal built on a signed distance field
 
@@ -5319,7 +5320,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-148` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5367,7 +5368,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with swirling vortex distortion.
+**ما هي:** انتقال WebGL بتشويه دوامة. — WebGL transition with swirling vortex distortion.
 
 **متى:** حين تريد انتقالًا بدوامة ملتفة تشوه المشهد قبل ظهور التالي / for a swirling vortex distortion transition between scenes
 
@@ -5399,7 +5400,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-149` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5447,7 +5448,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: push the old shot out.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: دفع اللقطة القديمة إلى الخارج. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: push the old shot out.
 
 **متى:** حين يريد المستخدم أن تدفع اللقطة الجديدة القديمة خارج الكادر في أي اتجاه / when the new shot should push the old one out of frame in any direction
 
@@ -5478,7 +5479,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5524,7 +5525,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition with heat-haze distortion.
+**ما هي:** انتقال WebGL بتشويه سراب حراري. — WebGL transition with heat-haze distortion.
 
 **متى:** حين تريد انتقالًا بتشوه حراري يشبه سراب الحر بين مشهدين / for a heat-haze distortion transition between two scenes
 
@@ -5556,7 +5557,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-150` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5604,7 +5605,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of a 3D perspective card-flip transition (rotationY 0->180, power2.inOut 0.6 s).
+**ما هي:** عرض لانتقال قلب بطاقة منظوري ثلاثي الأبعاد (rotationY من 0 إلى 180، power2.inOut، 0.6 s). — Showcase of a 3D perspective card-flip transition (rotationY 0->180, power2.inOut 0.6 s).
 
 **متى:** حين تريد انتقال قلب بطاقة بمنظور ثلاثي الأبعاد بين مشهدين / for a 3D perspective card-flip transition between scenes
 
@@ -5635,7 +5636,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-151` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5683,7 +5684,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of blur transitions.
+**ما هي:** عرض لانتقالات الضبابية. — Showcase of blur transitions.
 
 **متى:** حين تريد انتقالات بالضبابية: عبور ضبابي أو ضبابية اتجاهية أو نسخة هادئة / for blur-based transitions: blur through, directional blur or a calm blur
 
@@ -5714,7 +5715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-152` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5762,7 +5763,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of cover/uncover transitions.
+**ما هي:** عرض لانتقالات التغطية/الكشف. — Showcase of cover/uncover transitions.
 
 **متى:** حين تريد انتقالات تغطية بكتل متتابعة أو ستائر أفقية وعمودية / for cover/uncover transitions with staggered blocks or horizontal and vertical blinds
 
@@ -5793,7 +5794,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-153` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5841,7 +5842,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of break-apart transitions.
+**ما هي:** عرض لانتقالات التفكك. — Showcase of break-apart transitions.
 
 **متى:** حين تريد انتقالًا يتفكك فيه المشهد أو تحترق فيه الصفحة / for break-apart transitions such as a page burn
 
@@ -5872,7 +5873,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-154` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5920,7 +5921,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of dissolve and fade transitions.
+**ما هي:** عرض لانتقالات الذوبان والتلاشي. — Showcase of dissolve and fade transitions.
 
 **متى:** حين تريد انتقالات ذوبان وتلاشي: متقاطع أو ضبابي أو سحب التركيز أو غمس بلون / for dissolves and fades: crossfade, blur crossfade, focus pull or colour dip
 
@@ -5951,7 +5952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-155` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5999,7 +6000,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of warp/distortion transitions.
+**ما هي:** عرض لانتقالات الالتواء/التشويه. — Showcase of warp/distortion transitions.
 
 **متى:** حين تريد انتقالات تشويه مثل الجليتش أو انفصال الألوان أو التموج / for warp transitions such as glitch, chromatic aberration or ripple
 
@@ -6030,7 +6031,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-156` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6078,7 +6079,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of grid tile transitions (cells timed by distance from centre).
+**ما هي:** عرض لانتقالات بلاط الشبكة (الخلايا موقَّتة بحسب البعد عن المركز). — Showcase of grid tile transitions (cells timed by distance from centre).
 
 **متى:** حين تريد انتقالًا بخلايا شبكة تختفي بتوقيت حسب بعدها عن المركز / for grid-tile transitions where cells are timed by distance from the centre
 
@@ -6109,7 +6110,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-157` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6157,7 +6158,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of light-based transitions.
+**ما هي:** عرض للانتقالات القائمة على الضوء. — Showcase of light-based transitions.
 
 **متى:** حين تريد انتقالات ضوئية مثل تسرب الضوء أو حرق التعريض الزائد أو حرق الفيلم / for light-based transitions: light leak, overexposure burn or film burn
 
@@ -6188,7 +6189,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-158` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6236,7 +6237,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of mechanical transitions.
+**ما هي:** عرض للانتقالات الميكانيكية. — Showcase of mechanical transitions.
 
 **متى:** حين تريد انتقالات ميكانيكية كالغالق أو المسح الدائري كعقرب الساعة / for mechanical transitions such as a shutter or a clock wipe
 
@@ -6267,7 +6268,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-159` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6315,7 +6316,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: soft-edged wipes.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: مسحات بحواف ناعمة. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: soft-edged wipes.
 
 **متى:** حين يحتاج المستخدم مسحًا بحافة ناعمة بدل الحافة الحادة بين لقطتين / for a soft-edged wipe instead of a hard edge between two shots
 
@@ -6346,7 +6347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6392,7 +6393,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of misc creative transitions.
+**ما هي:** عرض لانتقالات إبداعية متنوعة. — Showcase of misc creative transitions.
 
 **متى:** حين تريد انتقالات إبداعية متنوعة مثل قطع بفلاش أو سقوط بالجاذبية أو دائرة متحولة / for misc creative transitions: flash cut, gravity drop or morph circle
 
@@ -6423,7 +6424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-160` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6471,7 +6472,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of push/slide transitions.
+**ما هي:** عرض لانتقالات الدفع/الانزلاق. — Showcase of push/slide transitions.
 
 **متى:** حين تريد انتقالات دفع وانزلاق أفقية أو عمودية أو مرنة أو بالضغط / for push/slide transitions: horizontal, vertical, elastic push or squeeze
 
@@ -6502,7 +6503,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-161` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6550,7 +6551,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of radial wipes.
+**ما هي:** عرض للمسحات الشعاعية. — Showcase of radial wipes.
 
 **متى:** حين تريد مسحًا شعاعيًا بقزحية دائرية أو ماسية أو بانقسام قطري / for radial wipes: circle iris, diamond iris or diagonal split
 
@@ -6581,7 +6582,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-162` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6629,7 +6630,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Showcase of scale/zoom transitions.
+**ما هي:** عرض لانتقالات التحجيم/الزووم. — Showcase of scale/zoom transitions.
 
 **متى:** حين تريد انتقالات بالتحجيم كالتقريب عبر المشهد أو التبعيد عنه / for scale/zoom transitions: zoom through or zoom out
 
@@ -6660,7 +6661,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-163` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6708,7 +6709,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** HTML portal transition between a light-mode and a dark-mode panel.
+**ما هي:** انتقال بوابة HTML بين لوحة بالوضع الفاتح ولوحة بالوضع الداكن. — HTML portal transition between a light-mode and a dark-mode panel.
 
 **متى:** حين تريد بوابة تنقلك من لوحة بالوضع الفاتح إلى لوحة بالوضع الداكن / for a portal transition from a light-mode panel to a dark-mode panel
 
@@ -6741,7 +6742,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-164` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6789,7 +6790,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** HTML glass-shatter transition from panel A to panel B.
+**ما هي:** انتقال تحطم زجاج HTML من اللوحة A إلى اللوحة B. — HTML glass-shatter transition from panel A to panel B.
 
 **متى:** حين تريد أن يتحطم المشهد كالزجاج ليكشف اللوحة التالية / when panel A should shatter like glass into panel B
 
@@ -6822,7 +6823,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-165` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6870,7 +6871,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL transition simulating a fast camera whip pan.
+**ما هي:** انتقال WebGL يحاكي سحب كاميرا سريعًا. — WebGL transition simulating a fast camera whip pan.
 
 **متى:** حين تريد انتقال WebGL يحاكي حركة كاميرا سريعة خاطفة بين مشهدين / for a WebGL transition that simulates a fast camera whip pan
 
@@ -6902,7 +6903,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-166` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6950,7 +6951,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Shader transition blocks rasterise scene A and scene B DOM into canvas textures once, then a WebGL fragment shader mixes u_from/u_to by u_progress inside a GSAP-driven onUpdate.
+**ما هي:** تحوّل كتل انتقال المُظلِّل مرة واحدة DOM المشهدين A وB إلى أنسجة لوحة، ثم يمزج مُظلِّل أجزاء WebGL قيمتي u_from/u_to بحسب u_progress داخل onUpdate يقوده GSAP. — Shader transition blocks rasterise scene A and scene B DOM into canvas textures once, then a WebGL fragment shader mixes u_from/u_to by u_progress inside a GSAP-driven onUpdate.
 
 **متى:** عند بناء انتقال شيدر خاص يحوّل مشهدي الصفحة إلى صور ويمزجهما في WebGL بتحكم GSAP / when building a custom shader transition that turns two DOM scenes into textures mixed in WebGL
 
@@ -6981,7 +6982,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-167` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7029,7 +7030,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A polygon clip-path tween reveals the next clip over an overlapping 0.5 s handoff; same tool builds split-screens.
+**ما هي:** يكشف تحريك clip-path متعدد الأضلاع المقطع التالي فوق تسليم متداخل مدته 0.5 s؛ وتبني الأداة نفسها الشاشات المقسومة. — A polygon clip-path tween reveals the next clip over an overlapping 0.5 s handoff; same tool builds split-screens.
 
 **متى:** حين تريد كشف المقطع التالي بمسح قناع مضلع أو بناء شاشة مقسومة / for a polygon clip-path wipe revealing the next clip, or building a split-screen
 
@@ -7037,7 +7038,7 @@
 
 **المعاملات:** 0.5 s overlap
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** مسح · شاشة مقسومة · قناع · split screen · clip-path · wipe
 
@@ -7053,13 +7054,13 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-168` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7105,7 +7106,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two video clips on distinct tracks overlap 0.5 s with opposing opacity tweens on their wrappers and opposing volume lanes in each video's data-automation.
+**ما هي:** مقطعا فيديو على مسارين مختلفين يتداخلان 0.5 s بتحريك شفافية متعاكس على غلافيهما ومسارات صوت متعاكسة في data-automation لكل فيديو. — Two video clips on distinct tracks overlap 0.5 s with opposing opacity tweens on their wrappers and opposing volume lanes in each video's data-automation.
 
 **متى:** حين تريد تداخل مقطعي فيديو بتلاشي الصورة ومستوى الصوت في اتجاهين متعاكسين / when overlapping two video clips with opposing opacity and volume fades
 
@@ -7135,7 +7136,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-169` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7181,7 +7182,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: iris-style shape transitions and clock wipe.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: انتقالات أشكال بأسلوب القزحية ومسح بعقرب الساعة. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: iris-style shape transitions and clock wipe.
 
 **متى:** حين يريد المستخدم انتقالًا على شكل قزحية دائرية أو مستطيل أو مسح ساعة بين لقطتين / for an iris-style circle or rectangle transition, or a clock wipe, between two shots
 
@@ -7212,7 +7213,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7258,7 +7259,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Offset color copies jitter on a hash of quantized timeline time, or horizontal slice bands displace and converge under a stepped ease; brief violence then clean clamped rest; entrance stretch, emphasis burst, slice-reveal forms.
+**ما هي:** نسخ لونية مزاحة ترتجف على تجزئة زمن التايملاين المكمَّم، أو تنزاح نطاقات شرائح أفقية وتتلاقى بتسهيل متدرج؛ عنف وجيز ثم سكون نظيف محصور؛ وأشكال: تمدد دخول، انفجار تأكيد، كشف بالشرائح. — Offset color copies jitter on a hash of quantized timeline time, or horizontal slice bands displace and converge under a stepped ease; brief violence then clean clamped rest; entrance stretch, emphasis burst, slice-reveal forms.
 
 **متى:** حين تريد جليتش بانقسام ألوان أو شرائح أفقية عند دخول عنصر أو إبرازه ثم يستقر نظيفًا / for an RGB-split or slice glitch on entrance, emphasis or reveal that resolves to a clean rest
 
@@ -7289,7 +7290,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-170` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7336,7 +7337,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two elements at the same center: exit shrinks and fades (power2.in), entrance pops with back.out overshoot.
+**ما هي:** عنصران في المركز نفسه: يتقلص الخارج ويخبو (power2.in)، ويظهر الداخل بقفزة مع تجاوز back.out. — Two elements at the same center: exit shrinks and fades (power2.in), entrance pops with back.out overshoot.
 
 **متى:** حين تريد استبدال عنصر بآخر في نفس المركز: الأول ينكمش ويختفي والثاني يبرز بارتداد / when swapping two elements at one centre: exit shrinks and fades, entrance pops with overshoot
 
@@ -7367,7 +7368,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-171` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7414,7 +7415,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Whole theme (background, type, radii, icons, logos) re-skins through N pre-styled layers via opacity crossfades while one anchor never moves.
+**ما هي:** تتبدل السمة بأكملها (الخلفية والخط والتقويس والأيقونات والشعارات) عبر N طبقات مصممة مسبقًا بتقاطع الشفافية بينما يبقى عنصر مرساة واحد ثابتًا. — Whole theme (background, type, radii, icons, logos) re-skins through N pre-styled layers via opacity crossfades while one anchor never moves.
 
 **متى:** حين تريد تغيير الثيم كله من خلفية وخطوط وأيقونات بتلاشي متقاطع بينما يبقى عنصر واحد ثابتًا / when re-skinning a whole theme through crossfades while one anchor never moves
 
@@ -7445,7 +7446,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-172` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7492,7 +7493,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Push slide' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «دفع انزلاقي» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Push slide' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد أن يدفع المشهد الجديد القديم أفقيًا خارج الشاشة بانتقال CSS / when the new scene should push the old one off horizontally with a CSS transition
 
@@ -7523,7 +7524,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-173` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7570,7 +7571,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Vertical push' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «دفع عمودي» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Vertical push' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد انتقال دفع عمودي يخرج فيه مشهد ويحل محله التالي / for a vertical push where one scene moves off along y and the next takes its place
 
@@ -7601,7 +7602,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-174` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7648,7 +7649,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Elastic push' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «دفع مرن» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Elastic push' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد دفعًا يتجاوز فيه المشهد الجديد مكانه ثم يرتد ويستقر / for a push where the incoming scene overshoots then springs back into place
 
@@ -7679,7 +7680,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-175` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7726,7 +7727,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Squeeze' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «ضغط» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Squeeze' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد أن ينضغط المشهد القديم أفقيًا بينما يتمدد الجديد من الجهة المقابلة / when the old scene squeezes horizontally while the new one stretches in from the other side
 
@@ -7757,7 +7758,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-176` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7804,7 +7805,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Circle iris' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «قزحية دائرية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Circle iris' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد كشف المشهد التالي بدائرة تتسع من المنتصف بانتقال CSS / for revealing the next scene with a circle expanding from the centre
 
@@ -7835,7 +7836,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-177` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7882,7 +7883,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Diamond iris' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «قزحية ماسية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Diamond iris' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد كشف المشهد التالي بشكل ماسي يتسع من المنتصف / for revealing the next scene with a diamond shape expanding from the centre
 
@@ -7913,7 +7914,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-178` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7960,7 +7961,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Diagonal split' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «انقسام قطري» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Diagonal split' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد أن ينكمش المشهد القديم إلى مثلث في الزاوية بانقسام قطري يكشف الجديد / when the old scene shrinks into a corner triangle in a diagonal split revealing the new
 
@@ -7991,7 +7992,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-179` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8038,7 +8039,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: split open/close.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: انفتاح وانغلاق بالانقسام. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: split open/close.
 
 **متى:** حين يريد المستخدم انتقالًا ينقسم وينفتح أو ينغلق كالأبواب رأسيًا أو أفقيًا / for a split transition that opens or closes like barn doors, vertical or horizontal
 
@@ -8069,7 +8070,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8115,7 +8116,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff '3D card flip' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «قلب البطاقة ثلاثي الأبعاد» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff '3D card flip' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد أن تنقلب الشاشة كبطاقة ثلاثية الأبعاد ليظهر المشهد التالي على ظهرها / when the frame should flip like a 3D card to show the next scene on its back
 
@@ -8146,7 +8147,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-180` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8193,7 +8194,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Zoom through' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «اختراق بالتقريب» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Zoom through' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد اختراق المشهد بتقريب قوي مع ضبابية ليظهر التالي متكبرًا من الداخل / for zooming hard into the old scene with blur as the next scales up into view
 
@@ -8224,7 +8225,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-181` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8271,7 +8272,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Zoom out' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «تبعيد» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Zoom out' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد أن يتصاغر المشهد القديم ويختفي فوق المشهد الجديد / when the old scene should shrink and fade out on top of the new one
 
@@ -8302,7 +8303,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-182` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8349,7 +8350,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Crossfade' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «تلاشٍ متقاطع» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Crossfade' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد انتقالًا بسيطًا بتلاشي متقاطع ناعم بين مشهدين / for a simple smooth opacity crossfade between two scenes
 
@@ -8380,7 +8381,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-183` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8427,7 +8428,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Blur crossfade' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «تلاشٍ متقاطع مع ضبابية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Blur crossfade' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين تريد تلاشيًا متقاطعًا مع ضبابية وتحجيم خفيف أو نسخة هادئة تتوقف عند لون مجرد / for a crossfade with blur and slight scale, or a calm version holding on an abstract colour
 
@@ -8458,7 +8459,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-184` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8505,7 +8506,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Focus pull' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «سحب التركيز» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Focus pull' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم الانتقال بين مشهدين بتغبيش المشهد الخارج كأن العدسة تبدل تركيزها / when the user wants a scene change where the outgoing scene blurs out like a focus pull
 
@@ -8536,7 +8537,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-185` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8583,7 +8584,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Color dip' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «غمس لوني» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Color dip' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم انتقالًا هادئًا يغطس فيه المشهد إلى لون مصمت كالأسود قبل المشهد التالي / when the user wants a calm dip to a solid color such as black between two scenes
 
@@ -8614,7 +8615,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-186` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8661,7 +8662,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Staggered color blocks' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «كتل لونية متتابعة» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Staggered color blocks' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا حيويًا تعبر فيه كتل لونية بحجم الكادر الشاشة بالتتابع لتكشف المشهد التالي / when the user wants an energetic wipe of full-frame color blocks sweeping across in a stagger
 
@@ -8692,7 +8693,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-187` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8739,7 +8740,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Horizontal blinds' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «ستائر أفقية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Horizontal blinds' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا بشرائح أفقية تغطي المشهد كالستارة ثم تكشف المشهد التالي / when the user wants a horizontal blinds transition with strips covering one scene and revealing the next
 
@@ -8770,7 +8771,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-188` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8817,7 +8818,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Vertical blinds' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «ستائر عمودية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Vertical blinds' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم انتقالًا بشرائح عمودية يزيد عددها مع طاقة المقطع من الهادئ إلى السريع / when the user wants a vertical blinds transition with strip count matched to calm, medium or high energy
 
@@ -8848,7 +8849,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-189` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8895,7 +8896,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: diagonal reveals.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: كشوفات قطرية. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: diagonal reveals.
 
 **متى:** حين يريد المستخدم كشف اللقطة التالية بشكل قطري من إحدى الزوايا / for revealing the next shot diagonally from one corner
 
@@ -8926,7 +8927,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8972,7 +8973,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Light leak' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «تسرب ضوئي» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Light leak' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا دافئًا بتسرب ضوئي تنساب فيه بقع ضوء شعاعية فوق الصورة أثناء تبديل المشهد / when the user wants a warm light-leak transition with radial glows drifting across during the scene swap
 
@@ -9003,7 +9004,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-190` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9050,7 +9051,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Overexposure burn' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «حرق بالتعريض الزائد» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Overexposure burn' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا يحترق فيه المشهد إلى الأبيض برفع السطوع ثم يظهر المشهد التالي / when the user wants an overexposure burn where the scene blows out to white before the next one
 
@@ -9081,7 +9082,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-191` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9128,7 +9129,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Film burn' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «حرق الفيلم» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Film burn' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم انتقال حرق فيلم بطبقات كهرمانية وبرتقالية وحمراء تزحف من طرف الكادر / when the user wants a film burn transition with amber, orange and red overlays bleeding in from an edge
 
@@ -9159,7 +9160,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-192` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9206,7 +9207,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Glitch' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «غليتش» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Glitch' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقال جليتش رقمي باهتزاز سريع وطبقات RGB بين مشهدين / when the user wants a digital glitch transition with RGB layers and fast jitter between scenes
 
@@ -9237,7 +9238,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-193` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9284,7 +9285,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Chromatic aberration' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «زيغ لوني» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Chromatic aberration' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا تنفصل فيه نسخ الألوان الأحمر والأخضر والأزرق ثم تلتئم على المشهد الجديد / when the user wants an RGB split transition where color copies spread apart and converge on the new scene
 
@@ -9315,7 +9316,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-194` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9362,7 +9363,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Ripple' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «تموج» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Ripple' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا متموجًا يتأرجح فيه المشهد أفقيًا وتزداد ضبابيته حتى لحظة التبديل / when the user wants a wobbly ripple transition with oscillation and rising blur before the swap
 
@@ -9393,7 +9394,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-195` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9440,7 +9441,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'VHS tape' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «شريط VHS» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'VHS tape' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم انتقالًا بطابع شريط VHS بشرائح مزاحة ونسخ حمراء وزرقاء / when the user wants a VHS tape look transition with offset strips and red and blue copies
 
@@ -9471,7 +9472,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-196` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9518,7 +9519,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Shutter' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «مصراع» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Shutter' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا يغلق فيه نصفا الشاشة العلوي والسفلي كالمصراع ثم ينفتحان على المشهد الجديد / when the user wants a shutter transition where top and bottom halves close and reopen on the new scene
 
@@ -9549,7 +9550,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-197` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9596,7 +9597,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Clock wipe' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «مسح كعقرب الساعة» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Clock wipe' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم مسحًا يدور كعقرب الساعة ليكشف المشهد التالي ربعًا بعد ربع / when the user wants a clock wipe that sweeps around like a clock hand to reveal the next scene
 
@@ -9627,7 +9628,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-198` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9674,7 +9675,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Grid dissolve' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «تحلل شبكي» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Grid dissolve' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا تتفكك فيه الشاشة إلى مربعات شبكية تنتشر من المركز قبل ظهور المشهد التالي / when the user wants a grid dissolve where tiles ripple out from the center to swap scenes
 
@@ -9705,7 +9706,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-199` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9752,7 +9753,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: venetian slice transitions.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: انتقالات شرائح بأسلوب الستائر المخططة. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: venetian slice transitions.
 
 **متى:** حين يريد المستخدم انتقالًا بشرائح كالستائر الفينيسية بين لقطتين / for a venetian-blind slice transition between two shots
 
@@ -9783,7 +9784,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9829,7 +9830,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Gravity drop' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «سقوط بالجاذبية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Gravity drop' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا يسقط فيه المشهد القديم للأسفل مع ميلان خفيف كأن الجاذبية سحبته / when the user wants the outgoing scene to fall away downward with a slight tilt as if pulled by gravity
 
@@ -9860,7 +9861,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-200` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9907,7 +9908,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Morph circle' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «دائرة متحولة» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Morph circle' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم دائرة بلون خلفية المشهد الجديد تكبر حتى تملأ الشاشة ثم يتم التبديل / when the user wants a circle in the next scene's background color to grow and fill the frame before the swap
 
@@ -9938,7 +9939,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-201` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9985,7 +9986,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Blur through' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «عبور بالضبابية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Blur through' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم انتقالًا يذوب فيه المشهد في ضبابية قوية ثم يتضح المشهد التالي تدريجيًا / when the user wants a blur-through transition where the frame blurs heavily then resolves into the next scene
 
@@ -10016,7 +10017,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-202` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10063,7 +10064,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Directional blur' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «ضبابية اتجاهية» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Directional blur' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يريد المستخدم انتقالًا بضبابية حركة مائلة تدفع المشهد جانبيًا نحو المشهد التالي / when the user wants a directional blur transition that skews and pushes the scene sideways
 
@@ -10094,7 +10095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-203` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10141,7 +10142,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene-to-scene handoff 'Page burn' between an outgoing and incoming scene container driven by GSAP.
+**ما هي:** تسليم من مشهد إلى مشهد بأسلوب «احتراق الصفحة» بين حاوية المشهد الخارج وحاوية المشهد الداخل بقيادة GSAP. — Scene-to-scene handoff 'Page burn' between an outgoing and incoming scene container driven by GSAP.
 
 **متى:** حين يطلب المستخدم انتقالًا تحترق فيه الصفحة من أحد الأركان بحافة نار متعرجة ومتفحمة لتكشف المشهد التالي / when the user wants a page-burn transition with a jagged charred fire edge spreading from a corner
 
@@ -10172,7 +10173,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-204` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10219,7 +10220,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'chromatic-split' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «chromatic-split» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'chromatic-split' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقال شيدر WebGL ينقسم فيه اللون إلى قنوات بين مشهدين / when the user wants a WebGL shader transition that splits color channels between two scenes
 
@@ -10250,7 +10251,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-205` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10297,7 +10298,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'cinematic-zoom' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «cinematic-zoom» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'cinematic-zoom' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا سينمائيًا بالتقريب بين مشهدين عبر شيدر WebGL / when the user wants a cinematic zoom transition between two scenes rendered as a WebGL shader
 
@@ -10328,7 +10329,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-206` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10375,7 +10376,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'cross-warp-morph' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «cross-warp-morph» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'cross-warp-morph' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا يلتوي فيه المشهدان ويتحول أحدهما إلى الآخر بشيدر WebGL / when the user wants a warp morph transition where both scenes distort into each other via a WebGL shader
 
@@ -10406,7 +10407,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-207` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10453,7 +10454,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'domain-warp' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «domain-warp» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'domain-warp' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا يشوه نسيج الصورة ويلويه بين مشهدين باستخدام شيدر WebGL / when the user wants a domain-warp shader transition that distorts the image between two scenes
 
@@ -10484,7 +10485,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-208` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10531,7 +10532,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'flash-through-white' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «flash-through-white» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'flash-through-white' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا بوميض أبيض يعبر بين مشهدين عبر شيدر WebGL / when the user wants a flash-through-white shader transition between two scenes
 
@@ -10562,7 +10563,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-209` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10609,7 +10610,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: new shot slides over / old shot slides off.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: انزلاق اللقطة الجديدة فوق القديمة / انزلاق القديمة إلى الخارج. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: new shot slides over / old shot slides off.
 
 **متى:** حين تنزلق اللقطة الجديدة فوق القديمة أو تنزلق القديمة لتكشف الجديدة / when the new shot slides over the old, or the old slides off to reveal the new
 
@@ -10640,7 +10641,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10686,7 +10687,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'gravitational-lens' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «gravitational-lens» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'gravitational-lens' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا تنحني فيه الصورة كأنها خلف عدسة جاذبية بين مشهدين بشيدر WebGL / when the user wants a gravitational-lens shader transition that bends the image between two scenes
 
@@ -10717,7 +10718,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-210` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10764,7 +10765,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'light-leak' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «light-leak» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'light-leak' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقال تسرب ضوئي بين مشهدين منفذًا كشيدر WebGL على مستوى البكسل / when the user wants a light-leak transition between two scenes as a per-pixel WebGL shader
 
@@ -10795,7 +10796,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-211` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10842,7 +10843,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'ridged-burn' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «ridged-burn» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'ridged-burn' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقال حرق بحواف متشققة يلتهم المشهد ويكشف التالي بشيدر WebGL / when the user wants a ridged burn shader transition that eats away one scene to reveal the next
 
@@ -10873,7 +10874,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-212` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10920,7 +10921,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'ripple-waves' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «ripple-waves» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'ripple-waves' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا بموجات متموجة تنتشر على الصورة بين مشهدين بشيدر WebGL / when the user wants a ripple-waves shader transition spreading waves across the frame between two scenes
 
@@ -10951,7 +10952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-213` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10998,7 +10999,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'sdf-iris' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «sdf-iris» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'sdf-iris' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا بفتحة قزحية تكشف المشهد التالي عبر شيدر WebGL / when the user wants an iris-style WebGL shader transition revealing the next scene through an opening
 
@@ -11029,7 +11030,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-214` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11076,7 +11077,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'swirl-vortex' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «swirl-vortex» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'swirl-vortex' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا تدور فيه الصورة كدوامة وتلتف نحو المشهد التالي بشيدر WebGL / when the user wants a swirl-vortex shader transition twisting one scene into the next
 
@@ -11107,7 +11108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-215` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11154,7 +11155,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'thermal-distortion' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «thermal-distortion» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'thermal-distortion' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقالًا يرتعش فيه المشهد كتموج الحرارة قبل التبديل بشيدر WebGL / when the user wants a thermal-distortion shader transition with a heat-haze shimmer between scenes
 
@@ -11185,7 +11186,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-216` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11232,7 +11233,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel GPU transition 'whip-pan' compositing both scene textures from @hyperframes/shader-transitions.
+**ما هي:** انتقال GPU لكل بكسل «whip-pan» يركّب نسيجي المشهدين من @hyperframes/shader-transitions. — Per-pixel GPU transition 'whip-pan' compositing both scene textures from @hyperframes/shader-transitions.
 
 **متى:** حين يريد المستخدم انتقال سوايب سريع كحركة كاميرا خاطفة بين مشهدين بشيدر WebGL / when the user wants a fast whip-pan shader transition between two scenes
 
@@ -11263,7 +11264,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-217` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11310,7 +11311,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pick one primary transition for 60-70% of cuts plus 1-2 accents, chosen by energy (calm/medium/high) and mood (warm, cold, editorial, tech, tense, playful, dramatic, premium, retro) and narrative position (opening 0.4-0.6 s, related 0.3 s, outro 0.6-1.0 s).
+**ما هي:** اختر انتقالًا أساسيًا واحدًا لـ 60-70% من القطعات مع 1-2 انتقال للتأكيد، بحسب الطاقة (هادئة/متوسطة/عالية) والمزاج (دافئ، بارد، تحريري، تقني، متوتر، مرح، درامي، فاخر، رجعي) وموضع السرد (الافتتاح 0.4-0.6 s، المتصل 0.3 s، الخاتمة 0.6-1.0 s). — Pick one primary transition for 60-70% of cuts plus 1-2 accents, chosen by energy (calm/medium/high) and mood (warm, cold, editorial, tech, tense, playful, dramatic, premium, retro) and narrative position (opening 0.4-0.6 s, related 0.3 s, outro 0.6-1.0 s).
 
 **متى:** حين يحتار المستخدم أي انتقال يختار وكم مدته حسب طاقة الفيديو ومزاجه وموقع القطع في القصة / when choosing which transition and duration to use by video energy, mood and position in the story
 
@@ -11340,7 +11341,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-218` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11386,7 +11387,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Five tier-B between-scene types (crossfade 0.5 s, blur-crossfade 0.6 s, push-slide 0.5 s LEFT/RIGHT/UP/DOWN, zoom-through 0.4 s, squeeze 0.4 s) with GSAP templates the harness stamps; defaults zoom-through for high energy and blur-crossfade otherwise; max 2.0 s; tier-A shared-element morph exempt.
+**ما هي:** خمسة أنواع من الدرجة B بين المشاهد (تقاطع 0.5 s، تقاطع ضبابي 0.6 s، دفع انزلاقي 0.5 s يسار/يمين/أعلى/أسفل، اختراق بالتقريب 0.4 s، ضغط 0.4 s) بقوالب GSAP يختمها الإطار؛ والافتراضي اختراق بالتقريب للطاقة العالية وتقاطع ضبابي فيما عداها؛ وبحد أقصى 2.0 s؛ ويُستثنى تحويل العنصر المشترك من الدرجة A. — Five tier-B between-scene types (crossfade 0.5 s, blur-crossfade 0.6 s, push-slide 0.5 s LEFT/RIGHT/UP/DOWN, zoom-through 0.4 s, squeeze 0.4 s) with GSAP templates the harness stamps; defaults zoom-through for high energy and blur-crossfade otherwise; max 2.0 s; tier-A shared-element morph exempt.
 
 **متى:** حين يحتاج المخطط إلى حقن انتقالات جاهزة تلقائيًا بين المشاهد من سطر واحد لكل مشهد / when a planner should auto-insert ready between-scene transitions from a one-line note per scene
 
@@ -11416,7 +11417,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-219` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11464,7 +11465,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: stylised xfade kinds.
+**ما هي:** تحويلات xfade في FFmpeg منقولة إلى numpy صيغةً بصيغة لتُعاد المكتشفة منها بدقة: أنواع xfade الأسلوبية. — FFmpeg xfade transitions ported formula-for-formula to numpy so a detected one replays exactly: stylised xfade kinds.
 
 **متى:** حين يريد المستخدم انتقالًا مميزًا بالضغط أو الزووم أو البكسلة أو الضبابية الأفقية بين لقطتين / for a stylised squeeze, zoom-in, pixelize or horizontal blur transition between two shots
 
@@ -11495,7 +11496,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11541,7 +11542,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Exit one beat accelerating with blur and enter the next at the matched velocity so motion reads continuous across a cut.
+**ما هي:** الخروج من إيقاع بتسارع وضبابية والدخول إلى التالي بالسرعة المطابقة، فتُقرأ الحركة متصلة عبر القطعة. — Exit one beat accelerating with blur and enter the next at the matched velocity so motion reads continuous across a cut.
 
 **متى:** حين يريد المستخدم أن تبدو الحركة متصلة عبر القطع بخروج متسارع ودخول بالسرعة نفسها / when the user wants motion to read continuous across a cut by matching exit and entry velocity
 
@@ -11569,7 +11570,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-220` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11615,7 +11616,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Fast whip-pan hard cut between frames, anchored to music events (beat / hard_stop).
+**ما هي:** قطع حاد بسحب كاميرا سريع بين الإطارات، مرتبط بأحداث الموسيقى (beat / hard_stop). — Fast whip-pan hard cut between frames, anchored to music events (beat / hard_stop).
 
 **متى:** حين يريد المستخدم قطعًا خاطفًا بحركة سوط سريعة يقع على ضربة الإيقاع أو التوقف المفاجئ في الموسيقى / when the user wants a fast whip-pan hard cut landing on a music beat or hard stop
 
@@ -11645,7 +11646,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-221` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11692,7 +11693,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Clip-path mask wipe reveal, anchored to music events (section_start / downbeat).
+**ما هي:** كشف بمسح قناع clip-path، مرتبط بأحداث الموسيقى (section_start / downbeat). — Clip-path mask wipe reveal, anchored to music events (section_start / downbeat).
 
 **متى:** حين يريد المستخدم كشفًا بقناع يمسح الشاشة مع بداية مقطع موسيقي أو الضربة القوية / when the user wants a clip-path mask wipe reveal timed to a section start or downbeat in the music
 
@@ -11722,7 +11723,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-222` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11769,7 +11770,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Circular iris-open reveal, anchored to music events (section_start / reveal).
+**ما هي:** كشف بفتح قزحية دائرية، مرتبط بأحداث الموسيقى (section_start / reveal). — Circular iris-open reveal, anchored to music events (section_start / reveal).
 
 **متى:** حين يريد المستخدم كشفًا دائريًا يفتح كالقزحية مع بداية مقطع موسيقي أو لحظة الكشف / when the user wants a circular iris-open reveal timed to a music section start or reveal moment
 
@@ -11799,7 +11800,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-223` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11846,7 +11847,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Blur-in to crisp then blur-out on the cut, anchored to music events (stop / final hold).
+**ما هي:** ضبابية تتحول إلى وضوح ثم تضبب عند القطعة، مرتبط بأحداث الموسيقى (stop / final hold). — Blur-in to crisp then blur-out on the cut, anchored to music events (stop / final hold).
 
 **متى:** حين يريد المستخدم لقطة تتضح من الضبابية ثم تذوب فيها عند القطع مع توقف الموسيقى أو اللقطة الختامية / when the user wants a blur-in to crisp then blur-out on the cut, timed to a music stop or final hold
 
@@ -11876,7 +11877,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-224` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11923,7 +11924,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Full-frame flash masking a state change, anchored to music events (drop / crash).
+**ما هي:** وميض بالإطار الكامل يحجب تغير الحالة، مرتبط بأحداث الموسيقى (drop / crash). — Full-frame flash masking a state change, anchored to music events (drop / crash).
 
 **متى:** حين يريد المستخدم ومضة تغطي الشاشة لإخفاء تغيير المشهد عند الدروب أو ضربة الصنج في الموسيقى / when the user wants a full-frame flash hiding a state change on a music drop or crash
 
@@ -11953,7 +11954,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-225` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12000,7 +12001,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Sample-accurate color-block + word cut, anchored to music events (beat / hard_stop).
+**ما هي:** قطع دقيق على مستوى العينة بكتلة لونية وكلمة، مرتبط بأحداث الموسيقى (beat / hard_stop). — Sample-accurate color-block + word cut, anchored to music events (beat / hard_stop).
 
 **متى:** حين يريد المستخدم قطعًا حادًا دقيقًا بكتلة لونية وكلمة على ضربة الإيقاع أو التوقف المفاجئ / when the user wants a sample-accurate hard cut of color block and word on a beat or hard stop
 
@@ -12030,7 +12031,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-226` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12077,7 +12078,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Ordered cascade-out clearing the frame, anchored to music events (phrase / transition).
+**ما هي:** خروج متتابع مرتب يُخلي الإطار، مرتبط بأحداث الموسيقى (phrase / transition). — Ordered cascade-out clearing the frame, anchored to music events (phrase / transition).
 
 **متى:** حين يريد المستخدم إخلاء الكادر بخروج العناصر متتابعة بالترتيب مع نهاية جملة موسيقية أو انتقال / when the user wants elements to cascade out in order to clear the frame at a musical phrase or transition
 
@@ -12107,7 +12108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-227` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12154,7 +12155,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Worker-built seams: zoom-through forward (Z toward viewer, hard cut at blur peak, opacity 0.15 at cut), inverse zoom (arrival), cut-the-curve between scenes (same path same direction x 0 -> -230 then +230 -> 0 with mirrored eases), waterfall cut (per-word cut-the-curve).
+**ما هي:** وصلات يبنيها العامل: زووم عابر إلى الأمام (Z نحو المشاهد، قطع حاد عند ذروة الضبابية، شفافية 0.15 عند القطع)، وزووم معكوس (الوصول)، وقطع المنحنى بين المشاهد (المسار نفسه والاتجاه نفسه x من 0 إلى -230 ثم +230 إلى 0 بتسهيلات معكوسة)، وقطع الشلال (قطع المنحنى لكل كلمة). — Worker-built seams: zoom-through forward (Z toward viewer, hard cut at blur peak, opacity 0.15 at cut), inverse zoom (arrival), cut-the-curve between scenes (same path same direction x 0 -> -230 then +230 -> 0 with mirrored eases), waterfall cut (per-word cut-the-curve).
 
 **متى:** حين يريد المستخدم قطوعًا داخل اللقطة كالعبور بالتكبير أو قطع المنحنى أو قطع الكلمات المتتالية / when the user wants in-frame seams like zoom-through, inverse zoom, cut-the-curve or per-word waterfall cuts
 
@@ -12184,7 +12185,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-228` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12231,7 +12232,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Multi-target value = first value + one spring per change, still pure in t.
+**ما هي:** قيمة متعددة الأهداف = القيمة الأولى + نابض واحد لكل تغيير، وتبقى دالة صرفة في t. — Multi-target value = first value + one spring per change, still pure in t.
 
 **متى:** حين يجب أن تنتقل قيمة بين عدة أهداف متتالية بنابض لكل تغيير مع بقائها محسوبة من الزمن مباشرة / when a value must retarget through several keys with one spring per change while staying pure in time
 
@@ -12261,7 +12262,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-229` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12309,7 +12310,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Places every cut on a detected beat with a rhythm of quick and breathing shots; breathing shots prefer downbeats; no flash frames; a short tail is folded into the last shot.
+**ما هي:** يضع كل قطعة على إيقاع مكتشف بنمط من اللقطات السريعة واللقطات المتنفسة؛ تفضّل المتنفسة الإيقاعات القوية؛ بلا إطارات وميض؛ ويُدمج الذيل القصير في اللقطة الأخيرة. — Places every cut on a detected beat with a rhythm of quick and breathing shots; breathing shots prefer downbeats; no flash frames; a short tail is folded into the last shot.
 
 **متى:** حين تريد توزيع القطعات على ضربات الموسيقى بإيقاع يمزج لقطات سريعة وأخرى متنفسة / when planning cuts on music beats with a rhythm of quick and breathing shots
 
@@ -12340,7 +12341,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12387,7 +12388,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cross-fade to a constant-blur copy; never animate a large blur.
+**ما هي:** تلاشٍ متقاطع إلى نسخة بضبابية ثابتة؛ ولا تحرّك ضبابية كبيرة أبدًا. — Cross-fade to a constant-blur copy; never animate a large blur.
 
 **متى:** حين يريد المستخدم تبديل البؤرة بمزج تدريجي مع نسخة ضبابية ثابتة بدل تحريك ضبابية كبيرة / when the user wants a rack-focus effect by cross-fading to a constant-blur copy instead of animating a large blur
 
@@ -12417,7 +12418,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-230` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12465,7 +12466,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Radius-in-log-space circular reveal or colour flood.
+**ما هي:** كشف دائري أو غمر لوني بنصف قطر في الفضاء اللوغاريتمي. — Radius-in-log-space circular reveal or colour flood.
 
 **متى:** حين يريد المستخدم كشفًا دائريًا أو فيضانًا لونيًا يغطي الشاشة كفاصل بين المشاهد / when the user wants a circular iris reveal or a colour flood as a seam between scenes
 
@@ -12495,7 +12496,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-231` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12543,7 +12544,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Front-loaded flip: 35% in first frame, done in 10 f.
+**ما هي:** قلب مُحمَّل في البداية: 35% في الإطار الأول، ويكتمل في 10 إطارات. — Front-loaded flip: 35% in first frame, done in 10 f.
 
 **متى:** حين يريد المستخدم انقلابًا ثلاثي الأبعاد يبدأ قويًا من أول إطار وينتهي خلال عشرة إطارات كفاصل بين مشهدين / when the user wants a fast front-loaded 3D flip as a seam between scenes
 
@@ -12573,7 +12574,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-232` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12621,7 +12622,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Stage light/dark flips only at act boundaries riding a move.
+**ما هي:** ينقلب فاتح/داكن المسرح عند حدود الفصول فقط ممتطيًا حركة. — Stage light/dark flips only at act boundaries riding a move.
 
 **متى:** حين يريد المستخدم قلب المسرح من فاتح إلى داكن أو العكس عند حدود الفصول فقط مع حركة / when the user wants the stage to flip between light and dark only at act boundaries, riding a move
 
@@ -12651,7 +12652,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-233` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12699,7 +12700,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Instead of a black overlay, the 3D film opens by ramping tone-mapping exposure from about 12 % to full over the first second.
+**ما هي:** بدل تراكب أسود، يفتتح الفيلم ثلاثي الأبعاد برفع تعريض ضبط النغمات من نحو 12% إلى الكامل خلال الثانية الأولى. — Instead of a black overlay, the 3D film opens by ramping tone-mapping exposure from about 12 % to full over the first second.
 
 **متى:** حين يريد المستخدم افتتاح فيلم ثلاثي الأبعاد بظهور تدريجي من العتمة برفع التعريض بدل طبقة سوداء / when the user wants a 3D film to open from black by ramping exposure instead of a black overlay
 
@@ -12727,7 +12728,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-234` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12774,7 +12775,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A white overlay spikes for one or two frames and settles, masking a hard change (brand flood).
+**ما هي:** يرتفع تراكب أبيض لإطار أو اثنين ثم يستقر، فيحجب تغييرًا حادًا (غمر العلامة). — A white overlay spikes for one or two frames and settles, masking a hard change (brand flood).
 
 **متى:** حين يريد المستخدم ومضة بيضاء قصيرة تخفي تغييرًا حادًا أو تعطي لمسة قوية عند القطع / when the user wants a brief white flash to mask a hard change or punctuate a cut
 
@@ -12804,7 +12805,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-235` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12851,7 +12852,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A circular clip opens from the travelling dot to reveal full-bleed footage on the drop beat.
+**ما هي:** يفتح قص دائري من النقطة المتنقلة ليكشف لقطات بملء الشاشة على ضربة الإسقاط. — A circular clip opens from the travelling dot to reveal full-bleed footage on the drop beat.
 
 **متى:** حين يريد المستخدم أن تتسع دائرة من نقطة متحركة لتكشف فيديو ملء الشاشة على ضربة الدروب / when the user wants a circle to open from a travelling dot to reveal full-bleed footage on the drop beat
 
@@ -12879,7 +12880,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-236` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12926,7 +12927,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A giant word fills the frame at the moment of a cut so the cut happens behind it, then the word flies up and shrinks into the sky of the new shot.
+**ما هي:** كلمة عملاقة تملأ الإطار لحظة القطعة فتقع القطعة خلفها، ثم تطير للأعلى وتتقلص في سماء اللقطة الجديدة. — A giant word fills the frame at the moment of a cut so the cut happens behind it, then the word flies up and shrinks into the sky of the new shot.
 
 **متى:** حين يريد المستخدم أن تملأ كلمة ضخمة الشاشة لحظة القطع ليختفي خلفها ثم تطير الكلمة إلى اللقطة الجديدة / when the user wants a giant word to fill the frame and hide a cut, then fly up into the new shot
 
@@ -12954,7 +12955,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-237` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13001,13 +13002,13 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One container is never cut: full-bleed footage shrinks into a rounded card beside metrics, then implodes into the dot, a beat of silence, and the lockup builds around it.
+**ما هي:** حاوية واحدة لا تُقطع أبدًا: تتقلص لقطات ملء الشاشة إلى بطاقة مستديرة بجانب المقاييس، ثم تنهار إلى النقطة، فلحظة صمت، ويُبنى الشعار حولها. — One container is never cut: full-bleed footage shrinks into a rounded card beside metrics, then implodes into the dot, a beat of silence, and the lockup builds around it.
 
 **متى:** حين يريد المستخدم ختامًا بلا قطع تتقلص فيه اللقطة إلى بطاقة بجانب أرقام ثم تنكمش إلى نقطة ويظهر الشعار / when the user wants an uncut ending: footage shrinks to a card, implodes to a dot and the lockup builds
 
 **كيف:** tl.to(card, {x:−360, scale:.56, borderRadius:44px, .66 s E.inOut}); metrics x 40→0 staggered .12; implode {x:0, scale:.02, radius 600px, .38 s E.in}; lockup at b(26).
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** ختام بالشعار · تصغير اللقطة · انكماش · logo reveal · outro
 
@@ -13023,13 +13024,13 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-238` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13076,7 +13077,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Films end deliberately on a dip rather than a hard stop.
+**ما هي:** تنتهي الأفلام عمدًا بغطس إلى الأسود بدل التوقف الحاد. — Films end deliberately on a dip rather than a hard stop.
 
 **متى:** حين يريد المستخدم إنهاء الفيلم بإظلام متعمد إلى الأسود أو لون داكن بدل التوقف المفاجئ / when the user wants the film to end deliberately on a dip to black or ink instead of a hard stop
 
@@ -13104,7 +13105,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-239` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13152,7 +13153,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** For each slot, picks the window of the next clip (round robin) with the highest frame-difference energy that has not been used yet.
+**ما هي:** لكل خانة يختار نافذة المقطع التالي (بالتناوب الدوري) ذات أعلى طاقة فرق بين الإطارات ولم تُستخدم بعد. — For each slot, picks the window of the next clip (round robin) with the highest frame-difference energy that has not been used yet.
 
 **متى:** حين تريد اختيار الجزء الأكثر حركة من كل مقطع لملء خانات المونتاج دون تكرار / when picking the most active, unused window of each clip to fill montage slots
 
@@ -13182,7 +13183,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13230,7 +13231,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Black bars at top and bottom frame the title and open as the film starts, or snap open on the first kick, and close on the end card.
+**ما هي:** شريطان أسودان في الأعلى والأسفل يؤطّران العنوان ويفتحان عند بدء الفيلم أو ينفتحان فجأة على أول طبلة، ويُغلقان عند بطاقة الختام. — Black bars at top and bottom frame the title and open as the film starts, or snap open on the first kick, and close on the end card.
 
 **متى:** حين يريد المستخدم شريطين أسودين أعلى الكادر وأسفله ينفتحان مع بداية الفيلم أو ينغلقان على بطاقة النهاية / when the user wants black letterbox bars that open as the film starts or close on the end card
 
@@ -13258,7 +13259,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-240` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13306,13 +13307,13 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** At a story turn the virtual camera jumps to a new crop and origin and settles fast, so one plate feels like a new shot.
+**ما هي:** عند منعطف في القصة تقفز الكاميرا الافتراضية إلى قص وأصل جديدين وتستقر سريعًا، فتبدو اللوحة الواحدة كلقطة جديدة. — At a story turn the virtual camera jumps to a new crop and origin and settles fast, so one plate feels like a new shot.
 
 **متى:** حين يريد المستخدم أن تبدو صورة واحدة كلقطة جديدة بقفزة كاميرا افتراضية إلى قص مختلف عند منعطف القصة / when the user wants one plate to feel like a new shot via a virtual camera jump to a new crop at a story turn
 
 **كيف:** tl.set(cam, {scale:1.42, x:0, y:0, transformOrigin:'585px 690px'}, 13.30).to(cam, {scale:1.10, .6 s, expo.out}, 13.30).
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** إعادة تأطير · قص الكادر · زووم مفاجئ · punch in · reframe
 
@@ -13328,13 +13329,13 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-241` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13380,7 +13381,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every hard cut gets a 12-tap radial zoom blur that peaks on the cut and a soft radial white flash, hiding the jump and adding punch.
+**ما هي:** تنال كل قطعة حادة تمويه زووم شعاعيًا بـ 12 عينة يبلغ ذروته عند القطعة ووميضًا أبيض شعاعيًا ناعمًا، فيخفيان القفزة ويضيفان قوة. — Every hard cut gets a 12-tap radial zoom blur that peaks on the cut and a soft radial white flash, hiding the jump and adding punch.
 
 **متى:** حين يريد المستخدم إخفاء القفزات وإضافة قوة لكل قطع حاد بتمويه شعاعي وومضة بيضاء ناعمة / when the user wants every hard cut to get a radial zoom blur and a soft white flash for punch
 
@@ -13410,7 +13411,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-242` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13458,7 +13459,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every shot ends in a ~0.77 s dip to black; the next line of text starts at the start of the dip, so words cross the black and the cut never feels empty.
+**ما هي:** تنتهي كل لقطة بغطس إلى الأسود نحو 0.77 s؛ ويبدأ سطر النص التالي عند بداية الغطس، فتعبر الكلمات السواد ولا تبدو القطعة فارغة. — Every shot ends in a ~0.77 s dip to black; the next line of text starts at the start of the dip, so words cross the black and the cut never feels empty.
 
 **متى:** حين يريد المستخدم أن تنتهي كل لقطة بإظلام قصير ويبدأ النص التالي أثناءه فلا يبدو القطع فارغًا / when the user wants each shot to dip to black with the next line of text starting during the dip
 
@@ -13488,7 +13489,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-243` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13535,7 +13536,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Two mindsets side by side: the right half (money) and left half (joy) whip in from their edges, a gold seam grows down the middle, and each half dims while the other is named.
+**ما هي:** عقليتان جنبًا إلى جنب: النصف الأيمن (المال) والأيسر (الفرح) يندفعان من حافتيهما، وتنمو درزة ذهبية في المنتصف، ويخفت كل نصف بينما يُسمّى الآخر. — Two mindsets side by side: the right half (money) and left half (joy) whip in from their edges, a gold seam grows down the middle, and each half dims while the other is named.
 
 **متى:** حين يريد المستخدم مقارنة فكرتين جنبًا إلى جنب بشاشة مقسومة يدخل نصفاها بسرعة مع خط فاصل ذهبي / when the user wants a side-by-side comparison with split-screen halves whipping in and a gold seam
 
@@ -13563,7 +13564,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-244` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13610,7 +13611,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Act changes are sealed by a short warm-white flash; the film ends with a 0.6 s fade to black after the viewer question.
+**ما هي:** تُختم تغيّرات الفصول بوميض أبيض دافئ قصير؛ وينتهي الفيلم بتلاشٍ إلى الأسود 0.6 s بعد سؤال المشاهد. — Act changes are sealed by a short warm-white flash; the film ends with a 0.6 s fade to black after the viewer question.
 
 **متى:** حين يريد المستخدم ومضات بيضاء دافئة قصيرة تفصل فصول الفيلم وإظلامًا إلى الأسود بعد سؤال الختام / when the user wants short warm-white flashes sealing act changes and a fade to black after the closing question
 
@@ -13638,7 +13639,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-245` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13686,7 +13687,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A circle wipe in log space from any point (open or close), and a one-time full-frame colour flood transition built on it.
+**ما هي:** مسح دائري في الفضاء اللوغاريتمي من أي نقطة (فتح أو إغلاق)، وانتقال غمر لوني بالإطار الكامل لمرة واحدة مبني عليه. — A circle wipe in log space from any point (open or close), and a one-time full-frame colour flood transition built on it.
 
 **متى:** حين يريد المستخدم مسحًا دائريًا يفتح أو يغلق من أي نقطة أو فيضانًا لونيًا يملأ الشاشة كانتقال / when the user wants a circle wipe opening or closing from any point, or a full-frame colour flood transition
 
@@ -13714,7 +13715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-246` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13760,7 +13761,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: whip pan with directional motion blur.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: سحب كاميرا بتمويه حركة اتجاهي. — Custom transition modelling what CapCut/InShot do: whip pan with directional motion blur.
 
 **متى:** حين يريد المستخدم تقليد انتقال السوايب في CapCut أو InShot بحركة سريعة وضبابية اتجاهية / when the user wants to replicate a CapCut or InShot whip transition with directional motion blur
 
@@ -13791,7 +13792,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-247` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13837,7 +13838,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Python port of FFmpeg vf_xfade formulas so detected transitions replay identically: fade, wipeleft, wiperight, wipeup, wipedown, slideleft, slideright, slideup, slidedown, circlecrop, rectcrop, distance, fadeblack, fadewhite, radial, smoothleft, smoothright, smoothup, smoothdown, circleopen, circlec…
+**ما هي:** نقل بايثون لصيغ vf_xfade في FFmpeg لتُعاد الانتقالات المكتشفة بالتطابق: fade, wipeleft, wiperight, wipeup, wipedown, slideleft, slideright, slideup, slidedown, circlecrop, rectcrop, distance, fadeblack, fadewhite, radial, smoothleft, smoothright, smoothup, smoothdown, circleopen, circlec… — Python port of FFmpeg vf_xfade formulas so detected transitions replay identically: fade, wipeleft, wiperight, wipeup, wipedown, slideleft, slideright, slideup, slidedown, circlecrop, rectcrop, distance, fadeblack, fadewhite, radial, smoothleft, smoothright, smoothup, smoothdown, circleopen, circlec…
 
 **متى:** حين يحتاج المستخدم إعادة إنتاج انتقالات FFmpeg xfade مثل fade وwipe وslide بدقة في بايثون / when the user needs FFmpeg xfade transitions like fade, wipe, slide or circleopen replayed identically in Python
 
@@ -13868,7 +13869,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-248` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13914,7 +13915,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom model of CapCut/InShot-style 'whipleft' transition, replayable with a measured progress curve.
+**ما هي:** نموذج مخصص لانتقال «whipleft» بأسلوب CapCut/InShot، قابل لإعادة التشغيل بمنحنى تقدم مقيس. — Custom model of CapCut/InShot-style 'whipleft' transition, replayable with a measured progress curve.
 
 **متى:** حين يريد المستخدم انتقال سوايب نحو اليسار بأسلوب CapCut وInShot يعاد بمنحنى تقدم مقاس / when the user wants a CapCut or InShot style whip-left transition replayed with a measured progress curve
 
@@ -13942,7 +13943,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-249` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13988,7 +13989,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Full music-driven edit: beats → plan → active windows → fill-crop + punches + grade → hard cuts → music (+voice ducked, +clips' own sound) → −14 LUFS → optional karaoke captions; writes a .montage.json log.
+**ما هي:** مونتاج كامل تقوده الموسيقى: إيقاعات ← خطة ← نوافذ نشطة ← قص ملء + لكمات + تدريج لوني ← قطعات حادة ← موسيقى (+ صوت معلّق مخفوض + صوت المقاطع نفسها) ← −14 LUFS ← ترجمات كاريوكي اختيارية؛ ويكتب سجل .montage.json. — Full music-driven edit: beats → plan → active windows → fill-crop + punches + grade → hard cuts → music (+voice ducked, +clips' own sound) → −14 LUFS → optional karaoke captions; writes a .montage.json log.
 
 **متى:** حين يطلب المستخدم مونتاجًا كاملًا على الموسيقى من عدة مقاطع مع تلوين وترجمة اختيارية / when the user wants a full music-driven edit from several clips with a grade and optional captions
 
@@ -14019,7 +14020,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14066,7 +14067,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom model of CapCut/InShot-style 'whipright' transition, replayable with a measured progress curve.
+**ما هي:** نموذج مخصص لانتقال «whipright» بأسلوب CapCut/InShot، قابل لإعادة التشغيل بمنحنى تقدم مقيس. — Custom model of CapCut/InShot-style 'whipright' transition, replayable with a measured progress curve.
 
 **متى:** حين يريد المستخدم انتقال سوايب نحو اليمين بأسلوب CapCut وInShot يعاد بمنحنى تقدم مقاس / when the user wants a CapCut or InShot style whip-right transition replayed with a measured progress curve
 
@@ -14094,7 +14095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-250` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14140,7 +14141,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom model of CapCut/InShot-style 'whipup' transition, replayable with a measured progress curve.
+**ما هي:** نموذج مخصص لانتقال «whipup» بأسلوب CapCut/InShot، قابل لإعادة التشغيل بمنحنى تقدم مقيس. — Custom model of CapCut/InShot-style 'whipup' transition, replayable with a measured progress curve.
 
 **متى:** حين يريد المستخدم انتقال سوايب نحو الأعلى بأسلوب CapCut وInShot يعاد بمنحنى تقدم مقاس / when the user wants a CapCut or InShot style whip-up transition replayed with a measured progress curve
 
@@ -14168,7 +14169,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-251` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14214,7 +14215,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom model of CapCut/InShot-style 'whipdown' transition, replayable with a measured progress curve.
+**ما هي:** نموذج مخصص لانتقال «whipdown» بأسلوب CapCut/InShot، قابل لإعادة التشغيل بمنحنى تقدم مقيس. — Custom model of CapCut/InShot-style 'whipdown' transition, replayable with a measured progress curve.
 
 **متى:** حين يريد المستخدم انتقال سوايب نحو الأسفل بأسلوب CapCut وInShot يعاد بمنحنى تقدم مقاس / when the user wants a CapCut or InShot style whip-down transition replayed with a measured progress curve
 
@@ -14242,7 +14243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-252` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14288,7 +14289,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A white (or any) overlay flash with optional double flicker.
+**ما هي:** وميض بتراكب أبيض (أو أي لون) مع ارتعاش مزدوج اختياري. — A white (or any) overlay flash with optional double flicker.
 
 **متى:** حين يريد المستخدم ومضة فلاش بيضاء أو ملونة تملأ الشاشة مع رعشة مزدوجة اختيارية / when the user wants a white or coloured overlay flash with an optional double flicker
 
@@ -14318,7 +14319,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-253` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14364,7 +14365,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reveals or hides an element through a growing/shrinking circle from a point, radius in log space.
+**ما هي:** يكشف عنصرًا أو يخفيه عبر دائرة تنمو/تتقلص من نقطة، ونصف قطرها في الفضاء اللوغاريتمي. — Reveals or hides an element through a growing/shrinking circle from a point, radius in log space.
 
 **متى:** حين يريد المستخدم إظهار عنصر أو إخفاءه بدائرة تكبر أو تصغر من نقطة محددة / when the user wants to reveal or hide an element through a circle growing or shrinking from a point
 
@@ -14394,7 +14395,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-254` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14440,7 +14441,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A rotationX flip that does ~35% in the first frame and finishes in ~10 frames.
+**ما هي:** قلب rotationX يُنجز نحو 35% في الإطار الأول ويكتمل في نحو 10 إطارات. — A rotationX flip that does ~35% in the first frame and finishes in ~10 frames.
 
 **متى:** حين يريد المستخدم دخول عنصر بقلبة ثلاثية الأبعاد سريعة على المحور الأفقي تنتهي في نحو عشرة إطارات / when the user wants an element to flip in on rotationX, front-loaded and done in about ten frames
 
@@ -14470,7 +14471,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-255` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14516,7 +14517,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A list [{at, shot}] becomes one camera function with hard cuts and moves starting at each cut.
+**ما هي:** قائمة [{at, shot}] تصير دالة كاميرا واحدة بقطعات حادة وحركات تبدأ عند كل قطعة. — A list [{at, shot}] becomes one camera function with hard cuts and moves starting at each cut.
 
 **متى:** حين يريد المستخدم تحويل قائمة لقطات بأزمنتها إلى كاميرا واحدة تقطع قطعًا حادًا وتبدأ حركتها مع كل قطع / when the user wants a timed shot list turned into one camera with hard cuts and moves starting at each cut
 
@@ -14546,7 +14547,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-256` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14592,7 +14593,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One-container transitions instead of cuts: an iris opens from a dot onto real footage, the footage shrinks into a rounded card beside facts, then everything implodes back into the dot.
+**ما هي:** انتقالات بحاوية واحدة بدل القطعات: تنفتح قزحية من نقطة على لقطات حقيقية، وتتقلص اللقطات إلى بطاقة مستديرة بجانب الحقائق، ثم ينهار كل شيء عائدًا إلى النقطة. — One-container transitions instead of cuts: an iris opens from a dot onto real footage, the footage shrinks into a rounded card beside facts, then everything implodes back into the dot.
 
 **متى:** حين يريد المستخدم شوريل بانتقالات بلا قطع: قزحية تفتح على الفيديو ثم بطاقة بجانب معلومات ثم انضغاط إلى نقطة / when the user wants a showreel using one-container iris, card and implode transitions instead of cuts
 
@@ -14622,7 +14623,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-257` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14700,7 +14701,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-258` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14747,7 +14748,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Every scene fades in and out over 10 frames with easeOutCubic.
+**ما هي:** يظهر كل مشهد ويختفي بتلاشٍ على 10 إطارات بتسهيل easeOutCubic. — Every scene fades in and out over 10 frames with easeOutCubic.
 
 **متى:** حين يريد المستخدم أن يظهر كل مشهد ويختفي بتلاش قصير ناعم عند حوافه / when the user wants every scene to fade in and out over a short eased edge of about ten frames
 
@@ -14777,7 +14778,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-259` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14823,7 +14824,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** For interviews, speeches and podcasts: cuts follow caption boundaries (semantic) or a varied cadence; no fake BPM; clips' own sound can sit under the voice.
+**ما هي:** للمقابلات والخطب والبودكاست: تتبع القطعات حدود الترجمات (دلاليًا) أو إيقاعًا متنوعًا؛ بلا BPM زائف؛ ويمكن أن يبقى صوت المقاطع نفسها تحت الصوت. — For interviews, speeches and podcasts: cuts follow caption boundaries (semantic) or a varied cadence; no fake BPM; clips' own sound can sit under the voice.
 
 **متى:** حين يكون الفيديو مقابلة أو خطبة أو بودكاست ويجب أن يتبع القطع الكلام لا الإيقاع / for interviews, speeches or podcasts where cuts should follow the voice, not a beat
 
@@ -14854,7 +14855,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14902,7 +14903,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | none |
 
-**ما هي:** First frames from MP4 sit under video, fade in second half of previous leg and scale 1+0.06*progress so swap is invisible.
+**ما هي:** تقع أوائل الإطارات من MP4 تحت الفيديو، وتظهر في النصف الثاني من المقطع السابق وتتكبر بمقدار 1+0.06*progress فيصير التبديل غير مرئي. — First frames from MP4 sit under video, fade in second half of previous leg and scale 1+0.06*progress so swap is invisible.
 
 **متى:** حين يريد المستخدم إخفاء لحظة تبديل المقاطع بوضع الإطار الأول تحت الفيديو مع تكبير خفيف / when the user wants clip swaps to be invisible by placing first frames under the video with a slight zoom
 
@@ -14932,7 +14933,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-260` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14978,7 +14979,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Give the video model a start image and an end image and let it invent the motion between them; ideal for scene-to-scene morph transitions or time-lapses.
+**ما هي:** أعطِ نموذج الفيديو صورة بداية وصورة نهاية ودعه يبتكر الحركة بينهما؛ مثالي لانتقالات التحول بين المشاهد أو فواصل التسارع الزمني. — Give the video model a start image and an end image and let it invent the motion between them; ideal for scene-to-scene morph transitions or time-lapses.
 
 **متى:** حين يريد المستخدم انتقالًا تحوليًا بين مشهدين أو لقطة تايم لابس يولدها نموذج فيديو من صورة بداية وصورة نهاية / when the user wants an AI morph transition or time-lapse generated from a start image and an end image
 
@@ -15008,7 +15009,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-261` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15056,7 +15057,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** fade a white veil over the world to ~70%, scale in a rounded white card with ink border, reveal quote text, then reverse (text first, then card)
+**ما هي:** يُخفَّف حجاب أبيض فوق العالم إلى نحو 70%، وتتكبر بطاقة بيضاء مستديرة بحد حبري، ويُكشف نص الاقتباس، ثم يُعكس الأمر (النص أولًا ثم البطاقة). — fade a white veil over the world to ~70%, scale in a rounded white card with ink border, reveal quote text, then reverse (text first, then card)
 
 **متى:** حين يريد المستخدم إبراز اقتباس على بطاقة بيضاء فوق مشهد يبهت خلف غلالة بيضاء ثم يعود / when the user wants a quote shown on a white card over the scene faded behind a white veil, then reversed
 
@@ -15086,7 +15087,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-262` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15131,7 +15132,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** exponential scale around hole centre (s = e^(k t)); next scene rendered full frame and clip-path: circle(holeRadius*s) until it exceeds the diagonal
+**ما هي:** تكبير أسي حول مركز الفتحة (s = e^(k t))؛ ويُصيَّر المشهد التالي بملء الإطار مع clip-path: circle(holeRadius*s) حتى يتجاوز القطر. — exponential scale around hole centre (s = e^(k t)); next scene rendered full frame and clip-path: circle(holeRadius*s) until it exceeds the diagonal
 
 **متى:** حين يريد المستخدم الانتقال بالتكبير داخل فتحة في المشهد حتى تتسع وتكشف المشهد التالي / when the user wants to zoom through a hole in the scene until it widens to reveal the next scene
 
@@ -15161,7 +15162,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-263` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15206,7 +15207,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** large blurred white cloud sprites scale up and pass the camera while the map zooms, masking a big camera change
+**ما هي:** تتكبر وتمر أمام الكاميرا سحب بيضاء كبيرة ضبابية مصنوعة من سبرايتات بينما تقرّب الخريطة، فتحجب تغيير كاميرا كبيرًا. — large blurred white cloud sprites scale up and pass the camera while the map zooms, masking a big camera change
 
 **متى:** حين يريد المستخدم إخفاء تغيير كبير للكاميرا فوق خريطة بعبور سحب بيضاء ضبابية أمام العدسة / when the user wants to mask a big camera change over a zooming map with blurred clouds passing the camera
 
@@ -15236,7 +15237,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-264` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15281,7 +15282,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** row of frame cards with sprocket holes translating horizontally at constant speed, each showing a slightly later state of the animation
+**ما هي:** صف من بطاقات الإطارات بثقوب الشريط ينزلق أفقيًا بسرعة ثابتة، تعرض كل بطاقة حالة لاحقة قليلًا من التحريك. — row of frame cards with sprocket holes translating horizontally at constant speed, each showing a slightly later state of the animation
 
 **متى:** حين يريد المستخدم شريط إطارات بثقوب كالفيلم ينزلق أفقيًا ويعرض كل إطار مرحلة أحدث من الحركة / when the user wants a sprocketed film strip sliding sideways, each frame showing a slightly later state
 
@@ -15311,7 +15312,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-265` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15356,7 +15357,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** clip-path circle grows from centre (with a thin ring ahead of it) revealing the next solid-colour scene
+**ما هي:** دائرة clip-path تنمو من المركز (مع حلقة رفيعة أمامها) كاشفة المشهد التالي بلون صلب. — clip-path circle grows from centre (with a thin ring ahead of it) revealing the next solid-colour scene
 
 **متى:** حين يريد المستخدم دائرة تتسع من المنتصف تسبقها حلقة رفيعة لتكشف مشهدًا تاليًا بلون مصمت / when the user wants a centre circle reveal, led by a thin ring, opening onto the next solid-colour scene
 
@@ -15386,7 +15387,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-266` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15431,7 +15432,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Three full-height bands (brand orange, black, cream) slide across in sequence, the last one becomes the new ground
+**ما هي:** ثلاثة أشرطة بكامل الارتفاع (برتقالي العلامة وأسود وكريمي) تنزلق متتابعة، ويصير الأخير الأرضية الجديدة. — Three full-height bands (brand orange, black, cream) slide across in sequence, the last one becomes the new ground
 
 **متى:** حين يريد المستخدم مسحًا بثلاث شرائح لونية بطول الكادر تعبر بالتتابع وتصبح آخرها خلفية المشهد الجديد / when the user wants three full-height colour bands to slide across in sequence, the last becoming the new ground
 
@@ -15461,7 +15462,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-267` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15506,7 +15507,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** clip-path circle (or radial mask) centred on the dot, radius 0→hypot(w,h) with feathered edge
+**ما هي:** دائرة clip-path (أو قناع شعاعي) متمركزة على النقطة، ونصف قطرها من 0 إلى hypot(w,h) بحافة مريّشة. — clip-path circle (or radial mask) centred on the dot, radius 0→hypot(w,h) with feathered edge
 
 **متى:** حين يريد المستخدم مسحًا دائريًا ناعم الحواف يبدأ من نقطة التركيز ويتسع حتى يغطي الكادر / when the user wants a feathered circle wipe centred on a focal dot, growing to cover the frame
 
@@ -15536,7 +15537,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-268` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15581,7 +15582,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** full-bleed palette swap each beat 120 bpm
+**ما هي:** تبديل لوحة ألوان بملء الإطار عند كل إيقاع بسرعة 120 bpm. — full-bleed palette swap each beat 120 bpm
 
 **متى:** حين يريد المستخدم تبديل ألوان الخلفية الكاملة مع كل ضربة إيقاع لصنع تقطيع لوني سريع / when the user wants a full-bleed palette swap on each beat for a colour-field cut rhythm
 
@@ -15609,7 +15610,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-269` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15654,7 +15655,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Scene boundaries are marked by a quick 200 ms scale ramp (1.0->1.08/1.12) snapping back to 1.0, giving a punchy cut.
+**ما هي:** تُعلَّم حدود المشاهد بتدرّج سريع للحجم مدته 200 ms (من 1.0 إلى 1.08/1.12) يعود إلى 1.0، فتصير القطعة حادّة الوقع. — Scene boundaries are marked by a quick 200 ms scale ramp (1.0->1.08/1.12) snapping back to 1.0, giving a punchy cut.
 
 **متى:** حين تحتاج القطعات بين المشاهد زووم خاطفًا قصيرًا يرتد سريعًا ليصبح القطع أقوى / when scene cuts need a quick 200 ms punch-in zoom that snaps back
 
@@ -15684,7 +15685,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15729,7 +15730,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Cut rapidly between extreme close-ups of the drawings (scale 6-10x, paper texture visible) clipped by a large circle edge, on flat saturated colour fields, with one word of a sentence per cut
+**ما هي:** قطع سريع بين لقطات مقربة جدًا للرسومات (تكبير 6-10x مع ظهور نسيج الورق) مقصوصة بحافة دائرة كبيرة، على حقول ألوان مشبعة مسطحة، بكلمة واحدة من الجملة في كل قطعة. — Cut rapidly between extreme close-ups of the drawings (scale 6-10x, paper texture visible) clipped by a large circle edge, on flat saturated colour fields, with one word of a sentence per cut
 
 **متى:** حين يريد المستخدم تقطيعًا سريعًا بين لقطات مقربة جدًا للرسومات على خلفيات ملونة مع كلمة واحدة في كل قطع / when the user wants rapid cuts between extreme close-ups of drawings with one word of a sentence per cut
 
@@ -15759,7 +15760,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-270` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15804,7 +15805,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** each feature word full-frame 0.25 s, alternate black/yellow fields
+**ما هي:** تملأ كل كلمة ميزة الإطار 0.25 s، بتبادل حقلي الأسود والأصفر. — each feature word full-frame 0.25 s, alternate black/yellow fields
 
 **متى:** حين يريد المستخدم عرض المزايا بكلمات تملأ الشاشة تتقطع بسرعة على خلفيات سوداء وصفراء متبادلة / when the user wants feature words flashed full-frame in rapid cuts on alternating black and yellow fields
 
@@ -15832,7 +15833,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-271` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15877,7 +15878,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** dot grid with radial scale gradient opening a window
+**ما هي:** شبكة نقاط بتدرج حجم شعاعي تفتح نافذة. — dot grid with radial scale gradient opening a window
 
 **متى:** حين يريد المستخدم مسحًا بشبكة نقاط تكبر شعاعيًا لتفتح نافذة على المشهد بأسلوب الهافتون / when the user wants a halftone dot-grid wipe whose radial scale gradient opens a window
 
@@ -15905,7 +15906,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-272` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15950,7 +15951,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 2-3 skewed rectangles in light-to-deep blue sweep across the frame with 60 ms offsets, revealing the next scene behind
+**ما هي:** 2-3 مستطيلات مائلة بدرجات الأزرق من الفاتح إلى العميق تكتسح الإطار بفارق 60 ms كاشفة المشهد التالي خلفها. — 2-3 skewed rectangles in light-to-deep blue sweep across the frame with 60 ms offsets, revealing the next scene behind
 
 **متى:** حين يريد المستخدم مسحًا قطريًا بألواح مائلة بدرجات الأزرق تعبر الكادر بالتتابع وتكشف المشهد التالي / when the user wants skewed blue panels to sweep diagonally across the frame and reveal the next scene
 
@@ -15980,7 +15981,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-273` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16025,7 +16026,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** full-width strip slides across with label
+**ما هي:** شريط بعرض كامل ينزلق عبر الإطار مع ملصق. — full-width strip slides across with label
 
 **متى:** حين يريد المستخدم شريطًا بعرض الشاشة ينزلق عبرها حاملًا عنوانًا ليعلن الدور التالي / when the user wants a full-width labelled strip sliding across the screen to announce a turn
 
@@ -16055,7 +16056,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-274` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16100,7 +16101,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 3-4 violet tint bands slide across 400 ms
+**ما هي:** 3-4 أشرطة بتدرج بنفسجي تنزلق عبر الإطار في 400 ms. — 3-4 violet tint bands slide across 400 ms
 
 **متى:** حين يريد المستخدم مسحًا بخطوط قطرية من ثلاث أو أربع شرائح بلون بنفسجي تعبر الشاشة بسرعة / when the user wants a wipe of three or four violet tint bands sliding across the frame
 
@@ -16128,7 +16129,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-275` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16173,7 +16174,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** double circle, crosshair lines, grey wedge sweeping 360° per second, big numeral swapping each sweep; end on white flash
+**ما هي:** دائرتان مزدوجتان وخطوط تصويب وقطاع رمادي يمسح 360° في الثانية، ورقم كبير يتبدل مع كل مسحة؛ وينتهي بوميض أبيض. — double circle, crosshair lines, grey wedge sweeping 360° per second, big numeral swapping each sweep; end on white flash
 
 **متى:** حين يريد المستخدم عدًا تنازليًا كبداية شريط السينما بدوائر وخطوط تصويب وقطاع دوار ينتهي بومضة بيضاء / when the user wants a film-leader countdown with circles, crosshairs, a sweeping wedge and a white-flash end
 
@@ -16203,7 +16204,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-276` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16248,7 +16249,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale object up while radial pencil lines converge, white-out
+**ما هي:** تكبير الجسم بينما تتقارب خطوط قلم رصاص شعاعية، ثم ابيضاض كامل. — scale object up while radial pencil lines converge, white-out
 
 **متى:** حين يُراد اندفاع تكبير نحو عنصر مع خطوط سرعة متقاربة تنتهي بشاشة بيضاء / when zooming hard into an object as radial speed lines converge and the frame whites out
 
@@ -16278,7 +16279,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-277` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16323,7 +16324,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 6 stripes slide in staggered with dashed edges
+**ما هي:** 6 خطوط تنزلق متتابعة بحواف متقطعة. — 6 stripes slide in staggered with dashed edges
 
 **متى:** عند الانتقال بين مشهدين بست شرائط بألوان قوس قزح تنزلق بالتتابع بحواف متقطعة / for a scene change with six staggered rainbow stripes sliding in with dashed edges
 
@@ -16353,7 +16354,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-278` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16398,7 +16399,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Fade all scene elements to 0 (~500 ms) leaving the flat ground, short hold, then build next scene
+**ما هي:** تخبو كل عناصر المشهد إلى 0 (~500 ms) تاركة الأرضية المسطحة، وتوقف قصير، ثم يُبنى المشهد التالي. — Fade all scene elements to 0 (~500 ms) leaving the flat ground, short hold, then build next scene
 
 **متى:** حين تريد تغيير المشهد بتلاشي كل العناصر إلى الخلفية الصافية ثم بناء المشهد التالي / when changing scenes by fading every element out to the flat ground, holding briefly, then building the next
 
@@ -16428,7 +16429,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-279` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16473,7 +16474,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Remove silences from talking clips.
+**ما هي:** إزالة فترات الصمت من المقاطع الحوارية. — Remove silences from talking clips.
 
 **متى:** حين يطلب المستخدم حذف السكتات من مقطع كلام وعمل قطع سريع / when the user wants silences removed from a talking clip as jump cuts
 
@@ -16501,7 +16502,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16550,7 +16551,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** FLIP animate grid windows to single phone screen
+**ما هي:** تحريك FLIP لنوافذ الشبكة إلى شاشة هاتف واحدة. — FLIP animate grid windows to single phone screen
 
 **متى:** عند تحويل شبكة نوافذ متعددة إلى شاشة هاتف واحدة بحركة سلسة / when a grid of windows should morph into a single phone screen via a FLIP animation
 
@@ -16580,7 +16581,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-280` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16625,7 +16626,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** segmented control: active segment orange; switching animates a dithered wipe between segments
+**ما هي:** عنصر تحكم مجزّأ: القطاع النشط برتقالي؛ والتبديل يحرّك مسحًا منقّطًا بين القطاعات. — segmented control: active segment orange; switching animates a dithered wipe between segments
 
 **متى:** حين تُحرَّك أداة تبديل أوضاع مقسمة وينتقل التحديد بين الأقسام بمسح نقطي / when animating a segmented mode switch whose selection moves between segments with a dithered wipe
 
@@ -16655,7 +16656,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-281` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16700,7 +16701,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** zoom camera into a grid tile with zoom/motion blur; interpolate tile corner radius to 0 as it reaches full frame so the hand-off to the full-res video is seamless; start the full-res clip with a match
+**ما هي:** تقريب الكاميرا في بلاطة شبكة بتمويه زووم/حركة؛ ويُدرَّج نصف قطر زاوية البلاطة إلى 0 عند بلوغ الإطار الكامل ليكون التسليم إلى الفيديو بالدقة الكاملة سلسًا؛ ويبدأ المقطع بدقته الكاملة بتطابق — zoom camera into a grid tile with zoom/motion blur; interpolate tile corner radius to 0 as it reaches full frame so the hand-off to the full-res video is seamless; start the full-res clip with a match
 
 **متى:** عند الانتقال من شبكة مقاطع إلى فيديو واحد بملء الشاشة بتكبير سريع داخل بطاقته / when diving from a grid of tiles into one clip full-screen with a fast blurred zoom and a seamless hand-off
 
@@ -16730,7 +16731,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-282` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16775,7 +16776,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** reverse the whip: scale the playing full-bleed video down into its tile position in the grid while the grid fades into view around it
+**ما هي:** اعكس السحب: صغّر الفيديو الجاري بملء الشاشة إلى موضع بلاطته في الشبكة بينما تظهر الشبكة تدريجيًا حوله. — reverse the whip: scale the playing full-bleed video down into its tile position in the grid while the grid fades into view around it
 
 **متى:** حين يعود الفيديو المعروض بملء الشاشة إلى مكانه في الشبكة بتصغير متطابق / when shrinking a full-bleed video back into its grid tile as the grid fades in around it
 
@@ -16805,7 +16806,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-283` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16850,7 +16851,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** hard cut through 5-6 full-frame cards at a fixed 250 ms grid (8 beats at 120 BPM)
+**ما هي:** قطع حاد عبر 5-6 بطاقات بملء الإطار على شبكة ثابتة 250 ms (8 إيقاعات عند 120 BPM). — hard cut through 5-6 full-frame cards at a fixed 250 ms grid (8 beats at 120 BPM)
 
 **متى:** عند عرض سلسلة بطاقات علامة تجارية بقطع حاد كل ربع ثانية على الإيقاع / for flashing 5-6 full-frame brand cards with hard cuts on a fixed 250 ms beat grid
 
@@ -16880,7 +16881,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-284` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16925,7 +16926,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 4-6 giant words, each 0.25 s, alternating dark/orange fields
+**ما هي:** 4-6 كلمات عملاقة، كل منها 0.25 s، بتبادل حقلي الداكن والبرتقالي. — 4-6 giant words, each 0.25 s, alternating dark/orange fields
 
 **متى:** حين تريد سلسلة كلمات ضخمة تتوالى بقطع سريع كل ربع ثانية على خلفيات متبادلة / when flashing 4-6 giant words, 0.25 s each, over alternating dark and orange fields
 
@@ -16953,7 +16954,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-285` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16998,7 +16999,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Hard-cut through 4 full-bleed style cards (Swiss grid / halftone / op-art / glitch), each 0.25-0.5 s, labelled 'STYLE 0N — NAME'
+**ما هي:** قطع حاد عبر 4 بطاقات أسلوب بملء الإطار (شبكة سويسرية / نصف تون / أوب آرت / غليتش)، كل منها 0.25-0.5 s، بعنوان 'STYLE 0N — NAME'. — Hard-cut through 4 full-bleed style cards (Swiss grid / halftone / op-art / glitch), each 0.25-0.5 s, labelled 'STYLE 0N — NAME'
 
 **متى:** عند استعراض مجموعة أساليب بصرية ببطاقات تتبدل بقطع سريع مع الإيقاع / for showcasing a range of visual styles as full-bleed cards hard-cut on musical eighth notes
 
@@ -17028,7 +17029,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-286` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17074,7 +17075,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Accent dot scales up to a large disc, then the disc becomes a circular mask revealing the photo with an accent ring
+**ما هي:** تتكبر نقطة التمييز إلى قرص كبير، ثم يصير القرص قناعًا دائريًا يكشف الصورة بحلقة تمييز. — Accent dot scales up to a large disc, then the disc becomes a circular mask revealing the photo with an accent ring
 
 **متى:** حين تريد كشف صورة شخصية من نقطة صغيرة تكبر إلى قناع دائري بحلقة لونية / when revealing a portrait photo from an accent dot that grows into a circular mask with a ring
 
@@ -17104,7 +17105,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-287` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17149,7 +17150,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Ordered/Bayer dither mask sweeping left->right; pixels inside the front band flicker between old and new text before settling
+**ما هي:** قناع تنقيط مرتب/Bayer يمسح من اليسار إلى اليمين؛ وتومض بكسلات الشريط الأمامي بين النص القديم والجديد قبل أن تستقر. — Ordered/Bayer dither mask sweeping left->right; pixels inside the front band flicker between old and new text before settling
 
 **متى:** عند تبديل نص بأسلوب شاشات الحبر الإلكتروني بمسح نقطي يومض قبل الاستقرار / when swapping text with an e-ink style ordered dither sweep that flickers old and new pixels
 
@@ -17179,7 +17180,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-288` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17224,7 +17225,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** FLIP the same artwork from list thumbnail rect to centred hero rect, then slide left as details reveal on the right
+**ما هي:** FLIP للرسم نفسه من مستطيل مصغّر القائمة إلى مستطيل البطل المتمركز، ثم ينزلق لليسار بينما تظهر التفاصيل على اليمين. — FLIP the same artwork from list thumbnail rect to centred hero rect, then slide left as details reveal on the right
 
 **متى:** حين يتحول غلاف مصغر في قائمة إلى صورة كبيرة في المنتصف ثم تظهر التفاصيل بجانبه / when a list thumbnail artwork expands into a centred hero, then slides left as details appear
 
@@ -17254,7 +17255,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-289` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17299,7 +17300,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Exit the outgoing beat with an accelerating move plus blur ramp and enter the next with a decelerating move from blur; the fastest moments meet at the cut so it reads as one camera move.
+**ما هي:** يخرج من الإيقاع الصادر بحركة متسارعة مع تدرج ضبابية، ويدخل التالي بحركة متباطئة من ضبابية؛ وتلتقي أسرع اللحظات عند القطعة فتُقرأ كحركة كاميرا واحدة. — Exit the outgoing beat with an accelerating move plus blur ramp and enter the next with a decelerating move from blur; the fastest moments meet at the cut so it reads as one camera move.
 
 **متى:** حين تريد أن يبدو القطع بين مشهدين كحركة كاميرا واحدة بتسارع وتباطؤ مع ضبابية / when a cut between beats should read as one camera move using matched acceleration and blur
 
@@ -17330,7 +17331,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17377,7 +17378,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** stepped column mask advances across frame
+**ما هي:** قناع أعمدة متدرج يتقدم عبر الإطار. — stepped column mask advances across frame
 
 **متى:** عند الانتقال بين مشهدين بقناع أعمدة متدرج كالسلم يتقدم عبر الكادر / for a pixel-style scene change where a stepped column mask advances across the frame
 
@@ -17407,7 +17408,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-290` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17452,7 +17453,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Bright vertical glowing bar travels across a card; left of the bar shows the improved 'after' state, right still shows the grey blurred 'before' with red X issues
+**ما هي:** شريط عمودي لامع متوهج يعبر البطاقة؛ يسار الشريط يُظهر حالة 'بعد' المحسنة، ويمينه ما يزال يُظهر حالة 'قبل' الرمادية الضبابية مع علامات X حمراء للمشكلات. — Bright vertical glowing bar travels across a card; left of the bar shows the improved 'after' state, right still shows the grey blurred 'before' with red X issues
 
 **متى:** حين تعرض مقارنة قبل وبعد بشريط ضوئي يكشف الحالة المحسنة مكان القديمة المشوشة / when showing a before/after comparison with a glowing bar sweeping the improved state over the blurred one
 
@@ -17482,7 +17483,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-291` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17527,7 +17528,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Line chart with monthly ticks draws with node dots and gradient area; an arrowhead rides the line tip, then detaches and flies to become the arrow of the brand logo in the end card
+**ما هي:** رسم بياني خطي بعلامات شهرية يُرسم بنقاط عقد ومساحة متدرجة؛ ورأس سهم يمتطي طرف الخط، ثم ينفصل ويطير ليصير سهم شعار العلامة في بطاقة الختام. — Line chart with monthly ticks draws with node dots and gradient area; an arrowhead rides the line tip, then detaches and flies to become the arrow of the brand logo in the end card
 
 **متى:** عند رسم منحنى نمو ينتهي سهمه بالطيران ليصير جزءًا من الشعار في الخاتمة / when a growth line chart draws on and its arrowhead flies off to become the logo's arrow on the end card
 
@@ -17557,7 +17558,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-292` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17602,7 +17603,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** alternate chapters between paper-light and charcoal grounds with hard cuts to create rhythm
+**ما هي:** تتبادل الفصول بين أرضيتي ورق فاتح وفحمي بقطعات حادة لصنع الإيقاع. — alternate chapters between paper-light and charcoal grounds with hard cuts to create rhythm
 
 **متى:** حين تريد إيقاعًا بصريًا بتبديل الفصول بين خلفية فاتحة وداكنة بقطع حاد / for creating rhythm by alternating chapters between paper-light and charcoal grounds with hard cuts
 
@@ -17632,7 +17633,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-293` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17677,7 +17678,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** circle scale from point to cover screen 400 ms
+**ما هي:** دائرة تتكبر من نقطة حتى تغطي الشاشة في 400 ms. — circle scale from point to cover screen 400 ms
 
 **متى:** عند الانتقال بدائرة تكبر من نقطة حتى تغطي الشاشة / for a scene change where a circle scales from a point to cover the screen in 400 ms
 
@@ -17705,7 +17706,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-294` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17750,7 +17751,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** invert ground on beat
+**ما هي:** قلب لون الأرضية على الإيقاع. — invert ground on beat
 
 **متى:** حين تريد قلب الخلفية بين الفاتح والداكن مع ضربة الإيقاع / when the background should invert between light and dark on the beat
 
@@ -17778,7 +17779,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-295` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17823,7 +17824,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** outgoing elements animate filter blur 0→12 px + opacity 1→0 while incoming go blur 12→0, ~400 ms overlap
+**ما هي:** تحرّك العناصر الخارجة ضبابية filter من 0 إلى 12 px وشفافية من 1 إلى 0 بينما تنتقل الداخلة من ضبابية 12 إلى 0، بتداخل نحو 400 ms. — outgoing elements animate filter blur 0→12 px + opacity 1→0 while incoming go blur 12→0, ~400 ms overlap
 
 **متى:** عند الانتقال بين الفصول بتغبيش وتلاشٍ متداخل للعناصر الخارجة والداخلة / when changing chapters with outgoing elements blurring out while incoming ones sharpen in, overlapping
 
@@ -17853,7 +17854,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-296` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17898,7 +17899,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** A disc in the next scene's colour grows from the counter of a digit (the '0') until it covers the frame, revealing the new background
+**ما هي:** قرص بلون المشهد التالي ينمو من تجويف رقم (الصفر '0') حتى يغطي الإطار كاشفًا الخلفية الجديدة. — A disc in the next scene's colour grows from the counter of a digit (the '0') until it covers the frame, revealing the new background
 
 **متى:** حين ينطلق الانتقال من داخل رقم مثل الصفر بدائرة تكبر بلون المشهد التالي / when a disc in the next scene's colour grows out of a digit's counter, like the 0, to cover the frame
 
@@ -17928,7 +17929,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-297` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17973,7 +17974,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** hard cut each beat to the same game view in a different skin with label 'COURT 0N / 06 · TYPE' and a giant city name bottom-left
+**ما هي:** قطع حاد عند كل إيقاع إلى منظر اللعبة نفسه بمظهر مختلف مع الملصق 'COURT 0N / 06 · TYPE' واسم مدينة عملاق في أسفل اليسار. — hard cut each beat to the same game view in a different skin with label 'COURT 0N / 06 · TYPE' and a giant city name bottom-left
 
 **متى:** عند استعراض سمات أو أشكال متعددة لنفس واجهة اللعبة بقطع حاد على كل ضربة / for showing the same game view in several skins, hard-cutting each beat with a label and giant city name
 
@@ -18003,7 +18004,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-298` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18048,7 +18049,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Open and close a contemplative piece with ~1 s black fades instead of logo cards
+**ما هي:** افتح قطعة تأملية وأغلقها بتلاشٍ إلى الأسود نحو 1 s بدل بطاقات الشعار. — Open and close a contemplative piece with ~1 s black fades instead of logo cards
 
 **متى:** حين تفتتح عملًا تأمليًا هادئًا وتختمه بتلاشٍ من السواد وإليه بدل بطاقات الشعار / for opening and closing a contemplative piece with ~1 s fades from and to black instead of logo cards
 
@@ -18078,7 +18079,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-299` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18123,7 +18124,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reveals or hides an element through a growing circle from a point, radius in log space.
+**ما هي:** يكشف عنصرًا أو يخفيه عبر دائرة تنمو من نقطة، ونصف قطرها في الفضاء اللوغاريتمي. — Reveals or hides an element through a growing circle from a point, radius in log space.
 
 **متى:** حين تريد كشف عنصر أو إخفاءه بدائرة تتسع أو تنغلق من نقطة محددة / when revealing or hiding an element through a circle growing from or closing to a point
 
@@ -18153,7 +18154,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18199,7 +18200,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** jagged-edge polygon sweeping diagonally 500 ms
+**ما هي:** مضلع بحواف مسننة يمسح قطريًا في 500 ms. — jagged-edge polygon sweeping diagonally 500 ms
 
 **متى:** عند الانتقال بمسح مائل بحافة مسننة تشبه الورق الممزق / for a diagonal scene change with a jagged torn-paper edge sweeping across
 
@@ -18227,7 +18228,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-300` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18272,7 +18273,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Brand-blue panel slides over the scene, hosts a two-line statement, then wipes off to the next chapter
+**ما هي:** لوح أزرق العلامة ينزلق فوق المشهد، ويستضيف عبارة من سطرين، ثم يُمسح إلى الفصل التالي. — Brand-blue panel slides over the scene, hosts a two-line statement, then wipes off to the next chapter
 
 **متى:** حين تحتاج فاصلًا بلون العلامة يغطي الشاشة ويعرض عبارة من سطرين ثم ينسحب للفصل التالي / when a brand-colour panel should cover the scene, hold a two-line statement, then wipe to the next chapter
 
@@ -18302,7 +18303,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-301` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18347,7 +18348,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** each scene renders the next scene live inside a screen rect; animate scale so the inner rect fills the frame, then swap; reverse for return
+**ما هي:** يصيّر كل مشهد المشهد التالي حيًّا داخل مستطيل شاشة؛ ويُحرَّك التحجيم حتى يملأ المستطيل الداخلي الإطار، ثم يُبدَّل؛ ويُعكس للعودة. — each scene renders the next scene live inside a screen rect; animate scale so the inner rect fills the frame, then swap; reverse for return
 
 **متى:** عند الغوص من مشهد إلى آخر يُعرض حيًّا داخل شاشة فيه بتكبير حتى يملأ الكادر / when diving into a screen inside the scene that shows the next scene live, zooming until it fills the frame
 
@@ -18377,7 +18378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-302` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18422,7 +18423,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Full rect slides in from side
+**ما هي:** مستطيل كامل ينزلق من الجانب. — Full rect slides in from side
 
 **متى:** حين تريد إنهاء الفيديو بلوح كريمي كامل ينزلق من الجانب / for closing a video with a full cream panel sliding in from the side
 
@@ -18452,7 +18453,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-303` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18497,7 +18498,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** sample frame into blocks of growing size or randomly replace blocks with flat palette tiles; ease block size 2->32px
+**ما هي:** يُقسَّم الإطار إلى كتل متزايدة الحجم أو تُستبدل الكتل عشوائيًا ببلاطات لوحة ألوان مسطحة؛ مع تسهيل حجم الكتلة من 2 إلى 32px. — sample frame into blocks of growing size or randomly replace blocks with flat palette tiles; ease block size 2->32px
 
 **متى:** عند الانتقال بتفكيك الصورة إلى مربعات فسيفساء تكبر أو تُستبدل ببلاطات لونية / when dissolving a frame into growing mosaic blocks or flat palette tiles between scenes
 
@@ -18527,7 +18528,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-304` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18572,7 +18573,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** repeat word rows with RGB offset, shift
+**ما هي:** تكرار صفوف الكلمة بإزاحة RGB وتزحزح. — repeat word rows with RGB offset, shift
 
 **متى:** حين تريد تكرار كلمة في صفوف متتالية مع إزاحة ألوان RGB وتشويش / when repeating a word in tiled rows with RGB offset and shifting for a glitch type look
 
@@ -18600,7 +18601,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-305` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18645,7 +18646,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** stacked full-width coloured bands translate down across frame in sequence 60 ms apart, revealing next scene
+**ما هي:** أشرطة ملونة مكدسة بعرض الإطار تنزل عبره متتابعة بفارق 60 ms كاشفة المشهد التالي. — stacked full-width coloured bands translate down across frame in sequence 60 ms apart, revealing next scene
 
 **متى:** عند كشف المشهد التالي بأشرطة لونية عريضة تنزل عبر الكادر بالتتابع / for revealing the next scene with stacked full-width colour bands sliding down in sequence
 
@@ -18675,7 +18676,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-306` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18720,7 +18721,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** At 128 BPM fire one transition per eighth note (~234 ms) for a full bar: iris circle grow, alternating inset block wipe, spin +270 deg inside a diamond mask, etc.; each carries a one-word title naming
+**ما هي:** عند 128 BPM يُطلق انتقال لكل ثُمن نغمة (~234 ms) طوال مازورة كاملة: نمو قزحية دائرية، مسح كتل داخلي متناوب، دوران +270 درجة داخل قناع ماسي، وغيرها؛ ويحمل كلٌّ عنوانًا من كلمة واحدة يسمّي — At 128 BPM fire one transition per eighth note (~234 ms) for a full bar: iris circle grow, alternating inset block wipe, spin +270 deg inside a diamond mask, etc.; each carries a one-word title naming
 
 **متى:** حين تريد عرض ثمانية انتقالات متتابعة على إيقاع موسيقي، لكل منها عنوان باسمه / for showcasing eight different transitions in one musical bar, one per eighth note, each labelled
 
@@ -18750,7 +18751,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-307` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18795,7 +18796,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** each cut swaps full background among 3-4 flat colours
+**ما هي:** تبدّل كل قطعة الخلفية الكاملة بين 3-4 ألوان مسطحة. — each cut swaps full background among 3-4 flat colours
 
 **متى:** عند القطع على الإيقاع مع تبديل الخلفية كاملة بين ثلاثة أو أربعة ألوان سادة / when each beat cut swaps the full background among 3-4 flat colours
 
@@ -18825,7 +18826,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-308` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18870,7 +18871,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** full rectangle slides in from top 350ms then reveals next scene
+**ما هي:** مستطيل كامل ينزلق من الأعلى في 350ms ثم يكشف المشهد التالي. — full rectangle slides in from top 350ms then reveals next scene
 
 **متى:** حين تريد انتقالًا بسيطًا بلوح لوني كامل ينزل من الأعلى ثم يكشف المشهد التالي / for a simple scene change with a solid colour panel sliding in from the top, then revealing the next scene
 
@@ -18898,7 +18899,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-309` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18943,7 +18944,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A full-frame accent colour floods from a point on its cue (one per film) and can fade out.
+**ما هي:** لون تمييز يغمر الإطار كاملًا من نقطة عند إشارته (مرة واحدة في الفيلم) ويمكنه أن يخبو. — A full-frame accent colour floods from a point on its cue (one per film) and can fade out.
 
 **متى:** حين تريد لونًا مميزًا يغمر الكادر كله من نقطة كفاصل مرة واحدة في الفيلم / when one full-frame accent colour should flood from a point as a seam, once per film
 
@@ -18973,7 +18974,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19019,7 +19020,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Pan the camera horizontally fast with directional blur, then scale out to reveal all previous scenes as glowing thumbnails in a grid
+**ما هي:** تحريك الكاميرا أفقيًا بسرعة بتمويه اتجاهي، ثم التصغير لكشف كل المشاهد السابقة كصور مصغّرة متوهجة في شبكة. — Pan the camera horizontally fast with directional blur, then scale out to reveal all previous scenes as glowing thumbnails in a grid
 
 **متى:** حين تريد حركة كاميرا جانبية سريعة ثم تصغيرًا يكشف كل المشاهد السابقة كمصغرات متوهجة في شبكة / when a fast blurred camera pan zooms out to reveal all previous scenes as glowing thumbnails in a grid
 
@@ -19049,7 +19050,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-310` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19094,7 +19095,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** vertical accent line divides two images
+**ما هي:** خط تمييز عمودي يقسم صورتين. — vertical accent line divides two images
 
 **متى:** عند عرض صورتين جنبًا إلى جنب يفصلهما خط عمودي ملون / for showing two images side by side divided by a vertical accent line
 
@@ -19122,7 +19123,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-311` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19167,7 +19168,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Every 2-3 s a tall semi-transparent dark vertical bar sweeps across the window very fast with horizontal blur to sell speed
+**ما هي:** كل 2-3 s يكتسح عمود عمودي داكن شبه شفاف النافذة بسرعة كبيرة مع ضبابية أفقية لتأكيد السرعة. — Every 2-3 s a tall semi-transparent dark vertical bar sweeps across the window very fast with horizontal blur to sell speed
 
 **متى:** حين تريد إيحاء السرعة من خلف نافذة بعمود داكن ضبابي يعبر الكادر كل بضع ثوانٍ / for selling speed through a window by sweeping a blurred dark vertical bar across every 2-3 s
 
@@ -19197,7 +19198,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-312` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19242,7 +19243,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** A tunnel portal wall then darkness scrolls in from the right, covers the window for ~0.5 s while the season state is swapped behind it, then the new scene scrolls in
+**ما هي:** جدار بوابة نفق ثم ظلام يتمرر من اليمين ويغطي النافذة نحو 0.5 s بينما تُبدَّل حالة الموسم خلفه، ثم يتمرر المشهد الجديد داخلًا. — A tunnel portal wall then darkness scrolls in from the right, covers the window for ~0.5 s while the season state is swapped behind it, then the new scene scrolls in
 
 **متى:** عند تغيير حالة المشهد كالفصول خلف ظلام نفق يمر عبر النافذة ثم يظهر المشهد الجديد / when swapping the scene state, such as the season, behind a tunnel's darkness scrolling across the window
 
@@ -19272,7 +19273,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-313` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19317,7 +19318,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 8 vertical stripes drop from top (or rise) with staggered timing, colours cycling orange/cream/blue, covering the frame and revealing the next chapter
+**ما هي:** 8 أشرطة عمودية تسقط من الأعلى (أو ترتفع) بتوقيت متدرج وبألوان تتناوب بين البرتقالي والكريمي والأزرق، فتغطي الإطار وتكشف الفصل التالي. — 8 vertical stripes drop from top (or rise) with staggered timing, colours cycling orange/cream/blue, covering the frame and revealing the next chapter
 
 **متى:** حين تنتقل إلى الفصل التالي بأشرطة عمودية ملونة تسقط من الأعلى أو تصعد بالتتابع / for revealing the next chapter with eight staggered vertical colour stripes dropping from the top or rising
 
@@ -19347,7 +19348,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-314` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19392,7 +19393,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Duplicate the generated image, animate its bounding box from chat thumbnail to the email hero slot (FLIP), then flash a 4-point sparkle
+**ما هي:** نسخ الصورة المولَّدة وتحريك صندوقها المحيط من مصغّر المحادثة إلى خانة البطل في البريد (FLIP)، ثم وميض بريق رباعي الرؤوس. — Duplicate the generated image, animate its bounding box from chat thumbnail to the email hero slot (FLIP), then flash a 4-point sparkle
 
 **متى:** حين تنتقل صورة مولّدة من مصغّرها في المحادثة إلى مكانها في رسالة البريد ثم تلمع / when a generated image flies from a chat thumbnail into the email hero slot, then flashes a sparkle
 
@@ -19422,7 +19423,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-315` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19467,7 +19468,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** use dips to black (1-2 s) to mark time jumps and location changes instead of cuts; reveal each scene by its own light source
+**ما هي:** استخدم الغطس إلى الأسود (1-2 s) لتعليم القفزات الزمنية وتغيّر المواقع بدل القطعات؛ واكشف كل مشهد بمصدر ضوئه الخاص. — use dips to black (1-2 s) to mark time jumps and location changes instead of cuts; reveal each scene by its own light source
 
 **متى:** حين تريد التعبير عن قفزات الزمن وتغيّر المكان بالتلاشي إلى الأسود بدل القطع / for marking time jumps and location changes with 1-2 s dips to black instead of cuts
 
@@ -19497,7 +19498,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-316` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19542,7 +19543,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Camera pushes into the logo tile until it fills the frame, then resolve to a clean name card with role line and URL pill that the cursor clicks
+**ما هي:** تدفع الكاميرا نحو بلاطة الشعار حتى تملأ الإطار، ثم تستقر على بطاقة اسم نظيفة بسطر الدور وحبة الرابط التي ينقر عليها المؤشر. — Camera pushes into the logo tile until it fills the frame, then resolve to a clean name card with role line and URL pill that the cursor clicks
 
 **متى:** عند ختام الفيديو بتكبير داخل الشعار ثم بطاقة اسم ورابط ينقر عليه المؤشر / for ending a video by pushing into the logo tile, then resolving to a name card with a URL pill the cursor clicks
 
@@ -19572,7 +19573,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-317` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19617,7 +19618,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Draw text in R, G, B offsets ±6-12 px plus random horizontal band displacements and duplicate ghost letters for 2-6 frames between scenes
+**ما هي:** ارسم النص بإزاحات R وG وB بمقدار ±6-12 px مع إزاحات نطاقات أفقية عشوائية وحروف شبحية مكررة لمدة 2-6 إطارات بين المشاهد. — Draw text in R, G, B offsets ±6-12 px plus random horizontal band displacements and duplicate ghost letters for 2-6 frames between scenes
 
 **متى:** حين تريد انتقال جليتش قصيرًا بين المشاهد بفصل ألوان النص وإزاحة شرائح أفقية / for a brief between-scenes glitch with RGB-split text, displaced horizontal bands and ghost letters
 
@@ -19647,7 +19648,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-318` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19692,7 +19693,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** insert 1-3 frames of the next chapter (pixel-font word on grey) between collapse and title cut to create a subliminal jolt
+**ما هي:** أدرج 1-3 إطارات من الفصل التالي (كلمة بخط بكسلي على رمادي) بين الانهيار وقطعة العنوان لصنع هزة لاواعية. — insert 1-3 frames of the next chapter (pixel-font word on grey) between collapse and title cut to create a subliminal jolt
 
 **متى:** حين تريد صدمة خاطفة بإدخال إطار إلى ثلاثة من الفصل القادم قبل قطع العنوان / when inserting 1-3 frames of the next chapter before the title cut for a subliminal jolt
 
@@ -19722,7 +19723,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-319` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19767,7 +19768,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Three CSS-level transition recipes for continuous-camera feeling between beats.
+**ما هي:** ثلاث وصفات انتقال على مستوى CSS لإحساس كاميرا متصلة بين الإيقاعات. — Three CSS-level transition recipes for continuous-camera feeling between beats.
 
 **متى:** حين تريد إحساس كاميرا متصلة بين المشاهد بسحب سريع أو عبور ضبابي أو زووم / for a continuous-camera feel between beats via whip pan, blur-through or zoom-through
 
@@ -19797,7 +19798,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19842,7 +19843,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** outgoing scene blurs 0->12 px and fades while incoming scene starts at 12 px blur and sharpens; alternate dark and light scenes to create rhythm
+**ما هي:** يضبب المشهد الخارج من 0 إلى 12 px ويتلاشى بينما يبدأ الداخل بضبابية 12 px ويتحدد؛ ويتناوب المشهدان الداكن والفاتح لصنع الإيقاع. — outgoing scene blurs 0->12 px and fades while incoming scene starts at 12 px blur and sharpens; alternate dark and light scenes to create rhythm
 
 **متى:** عند التبديل بين مشاهد داكنة وفاتحة بتغبيش متقاطع يمنح الفيديو إيقاعًا / when alternating dark and light scenes with a blur crossfade, the outgoing blurring out as the incoming sharpens
 
@@ -19872,7 +19873,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-320` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19917,7 +19918,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** render next scene inside a circular mask (watch glass/lens); when mask diameter exceeds frame diagonal swap to the full next scene
+**ما هي:** يُصيَّر المشهد التالي داخل قناع دائري (زجاج ساعة/عدسة)؛ وعندما يتجاوز قطر القناع قطر الإطار يُبدَّل إلى المشهد التالي كاملًا. — render next scene inside a circular mask (watch glass/lens); when mask diameter exceeds frame diagonal swap to the full next scene
 
 **متى:** حين يظهر المشهد التالي داخل جسم دائري كزجاج ساعة أو عدسة ثم يتسع ليملأ الشاشة / when the next scene shows inside a circular object like a watch glass or lens, then grows to fill the frame
 
@@ -19947,7 +19948,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-321` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19992,7 +19993,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** headline enters from off-frame horizontally in ~200 ms with directional blur that resolves to sharp; previous card exits same direction
+**ما هي:** يدخل العنوان من خارج الإطار أفقيًا في نحو 200 ms بتمويه اتجاهي يتحول إلى وضوح؛ وتخرج البطاقة السابقة بالاتجاه نفسه. — headline enters from off-frame horizontally in ~200 ms with directional blur that resolves to sharp; previous card exits same direction
 
 **متى:** عند إدخال عنوان بسرعة من خارج الكادر مع ضبابية حركة تتلاشى حتى الوضوح / for whipping a headline in from off-frame with directional blur that resolves sharp as the previous card exits
 
@@ -20022,7 +20023,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-322` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20067,7 +20068,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Wordmark slides quickly sideways with directional blur proportional to velocity
+**ما هي:** يتحرك شعار الكلمة جانبيًا بسرعة بتمويه اتجاهي يتناسب مع السرعة. — Wordmark slides quickly sideways with directional blur proportional to velocity
 
 **متى:** حين يخرج الشعار النصي بانزلاق جانبي سريع مع ضبابية تتناسب مع سرعته / when a wordmark should exit by sliding sideways fast with velocity-scaled directional blur
 
@@ -20097,7 +20098,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-323` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20142,7 +20143,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** fast horizontal motion-blur slide between samples
+**ما هي:** انزلاق أفقي سريع بتمويه حركة بين العينات. — fast horizontal motion-blur slide between samples
 
 **متى:** عند التنقل بين عدة نماذج أو أمثلة بانزلاق أفقي سريع مع ضبابية حركة / for moving between samples with a fast horizontal motion-blur slide
 
@@ -20172,7 +20173,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-324` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20217,7 +20218,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Animate a full-frame image to a rounded-corner card (radius 0 -> 24 px, scale 1 -> 0.85) to reveal the UI or gallery around it
+**ما هي:** حرّك صورة بملء الإطار إلى بطاقة بزوايا مستديرة (نصف القطر من 0 إلى 24 px، والتحجيم من 1 إلى 0.85) لكشف الواجهة أو المعرض حولها. — Animate a full-frame image to a rounded-corner card (radius 0 -> 24 px, scale 1 -> 0.85) to reveal the UI or gallery around it
 
 **متى:** حين تتقلص صورة بملء الشاشة إلى بطاقة بحواف مستديرة لتكشف الواجهة أو المعرض حولها / when a full-frame image shrinks into a rounded card to reveal the UI or gallery around it
 
@@ -20247,7 +20248,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-325` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20292,7 +20293,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** single line persists across scenes as anchor
+**ما هي:** خط واحد يستمر عبر المشاهد كمرساة. — single line persists across scenes as anchor
 
 **متى:** عند ربط المشاهد بخط واحد مستمر يبقى مرتكزًا بصريًا عبرها / for tying scenes together with a single line that persists across them as an anchor
 
@@ -20320,7 +20321,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-326` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20365,7 +20366,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale circle mask from device into full frame
+**ما هي:** تكبير قناع دائري من الجهاز إلى الإطار الكامل. — scale circle mask from device into full frame
 
 **متى:** حين يتسع قناع دائري من شاشة جهاز حتى يملأ الكادر بالكامل / when a circle mask scales up from a device until it fills the full frame
 
@@ -20393,7 +20394,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-327` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20438,7 +20439,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** invert to white ground with dark text for 1-2 frames on a hit
+**ما هي:** قلب إلى أرضية بيضاء بنص داكن لإطار أو اثنين عند ضربة. — invert to white ground with dark text for 1-2 frames on a hit
 
 **متى:** حين تريد وميضًا سالبًا يقلب الشاشة إلى خلفية بيضاء ونص داكن لإطار أو اثنين مع الضربة / for inverting to a white ground with dark text for 1-2 frames on a hit
 
@@ -20468,7 +20469,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-328` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20513,7 +20514,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Finished card and caption drop to ~30% opacity and fade while the next step's chip and card fade in; no cuts
+**ما هي:** تنخفض البطاقة المنجزة وتعليقها إلى نحو 30% شفافية وتخبو بينما تظهر شريحة الخطوة التالية وبطاقتها؛ بلا قطعات. — Finished card and caption drop to ~30% opacity and fade while the next step's chip and card fade in; no cuts
 
 **متى:** حين تعرض خطوات متتالية وتريد خفوت الخطوة المنتهية وظهور التالية بالتلاشي دون قطع / when stepping through a process, dimming the finished card and caption while the next step fades in, no cuts
 
@@ -20543,7 +20544,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-329` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20588,7 +20589,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Browser-native snapshot transitions between UI states: cross-fade, directional slides for hierarchy, scale in/out, and shared-element morphs with a brief blur midway.
+**ما هي:** انتقالات لقطة أصلية في المتصفح بين حالات الواجهة: تلاشٍ متقاطع، انزلاقات اتجاهية للتسلسل الهرمي، تكبير/تصغير، وتحويلات عنصر مشترك مع ضبابية قصيرة في المنتصف. — Browser-native snapshot transitions between UI states: cross-fade, directional slides for hierarchy, scale in/out, and shared-element morphs with a brief blur midway.
 
 **متى:** حين تريد انتقالات أصلية في المتصفح بين حالات الواجهة بالتلاشي أو الانزلاق أو التكبير أو التحول / for browser-native transitions between UI states: cross-fade, slide, scale or shared-element morph
 
@@ -20619,7 +20620,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20667,7 +20668,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** render word three times in red/blue/white with offsets ±6 px and random horizontal slice displacement, decay to 0 over 200 ms; scale 1.2→1
+**ما هي:** تُصيَّر الكلمة ثلاث مرات بالأحمر/الأزرق/الأبيض بإزاحات ±6 px وإزاحة شرائح أفقية عشوائية، وتتلاشى إلى 0 خلال 200 ms؛ والتحجيم من 1.2 إلى 1. — render word three times in red/blue/white with offsets ±6 px and random horizontal slice displacement, decay to 0 over 200 ms; scale 1.2→1
 
 **متى:** عند إدخال كلمة بضربة قوية مع تشويش فصل ألوان RGB وشرائح مزاحة تهدأ سريعًا / for slamming a word in with RGB-split copies and displaced slices that decay over 200 ms
 
@@ -20697,7 +20698,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-330` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20742,7 +20743,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** flash to a white field shaped like a soft spotlight with dark vignette corners, then cut; used to reset between sections
+**ما هي:** وميض إلى حقل أبيض بشكل بقعة ضوء ناعمة مع زوايا معتمة، ثم قطع؛ يُستخدم لإعادة الضبط بين الأقسام. — flash to a white field shaped like a soft spotlight with dark vignette corners, then cut; used to reset between sections
 
 **متى:** حين تريد فاصلًا بين الأقسام بوميض أبيض يشبه بقعة ضوء مع حواف داكنة ثم قطع / for resetting between sections with a spotlight-shaped white flash with dark vignette corners, then a cut
 
@@ -20772,7 +20773,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-331` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20817,7 +20818,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 5+ cuts within 0.5 s before finale
+**ما هي:** 5 قطعات فأكثر خلال 0.5 s قبل الخاتمة. — 5+ cuts within 0.5 s before finale
 
 **متى:** حين تريد دفعة من خمس قطعات أو أكثر خلال نصف ثانية قبل الختام / for a burst of 5+ cuts within half a second right before the finale
 
@@ -20845,7 +20846,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-332` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20890,7 +20891,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Full-bleed flat colour panel scales/slides in over 150-250 ms to open each chapter; next chapter uses a new brand colour
+**ما هي:** لوح لون مسطح بملء الإطار يتحجم/ينزلق داخلًا خلال 150-250 ms ليفتتح كل فصل؛ ويستخدم الفصل التالي لون علامة جديدًا. — Full-bleed flat colour panel scales/slides in over 150-250 ms to open each chapter; next chapter uses a new brand colour
 
 **متى:** عند افتتاح كل فصل بلوح لوني كامل يدخل بقوة، بلون مختلف من ألوان العلامة لكل فصل / for opening each chapter with a full-bleed colour panel slamming in, rotating through brand colours
 
@@ -20920,7 +20921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-333` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20965,7 +20966,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** offset R/G/B channels and slice horizontal bands with random x shifts for 3-6 frames
+**ما هي:** إزاحة قنوات R/G/B وتقطيع نطاقات أفقية بإزاحات x عشوائية لمدة 3-6 إطارات. — offset R/G/B channels and slice horizontal bands with random x shifts for 3-6 frames
 
 **متى:** حين تريد انتقال جليتش سريعًا بإزاحة قنوات الألوان وتقطيع شرائح أفقية لبضعة إطارات / for a quick glitch transition offsetting R/G/B channels and shifting horizontal slices for 3-6 frames
 
@@ -20995,7 +20996,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-334` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21040,7 +21041,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Push into a bloomed sun until the frame clips to warm white, hold 0.5 s, then cut to black scene
+**ما هي:** الدفع نحو شمس متوهجة حتى يُقصّ الإطار إلى أبيض دافئ، وتوقف 0.5 s، ثم قطع إلى مشهد أسود. — Push into a bloomed sun until the frame clips to warm white, hold 0.5 s, then cut to black scene
 
 **متى:** عند الانتقال بالتقدم نحو شمس متوهجة حتى يبيضّ الكادر ثم القطع إلى مشهد أسود / when pushing into a bloomed sun until the frame clips to warm white, holding, then cutting to a black scene
 
@@ -21070,7 +21071,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-335` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21115,7 +21116,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Accelerate the whole scene upward to ~25 px/frame with vertical blur while tinting toward light blue; cut; new page arrives low and smeared and decays into place
+**ما هي:** تسريع المشهد كله للأعلى حتى ~25 px/إطار بضبابية عمودية مع تلوين نحو الأزرق الفاتح؛ ثم قطع؛ وتصل الصفحة الجديدة منخفضة ومطموسة وتستقر تدريجيًا. — Accelerate the whole scene upward to ~25 px/frame with vertical blur while tinting toward light blue; cut; new page arrives low and smeared and decays into place
 
 **متى:** حين تنتقل بين صفحتين بإمالة سريعة للأعلى مع ضبابية عمودية ووميض أزرق فاتح / for jumping between pages with a fast upward whip-tilt, vertical blur and a light blue tint flash
 
@@ -21145,7 +21146,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-336` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21190,7 +21191,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** page starts ~400 px low with 24px blur, offsets decay geometrically (×0.75/frame) to 0 and blur to ~1.5 px; one key phrase set in black 600 among grey body
+**ما هي:** تبدأ الصفحة منخفضة ~400 px بضبابية 24px، وتتناقص الإزاحات هندسيًا (×0.75/إطار) إلى 0 والضبابية إلى ~1.5 px؛ وعبارة مفتاحية واحدة بخط أسود 600 وسط نص رمادي. — page starts ~400 px low with 24px blur, offsets decay geometrically (×0.75/frame) to 0 and blur to ~1.5 px; one key phrase set in black 600 among grey body
 
 **متى:** عند دخول صفحة نصية من الأسفل بلطخة ضبابية تستقر تدريجيًا مع إبراز عبارة مفتاحية / when a text page scrolls up from below with a blur smear that settles, one key phrase set in black
 
@@ -21220,7 +21221,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-337` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21265,7 +21266,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** hard cut to a full black frame with white bold claim for the hook and the manifesto, then hard cut back to white page
+**ما هي:** قطع حاد إلى إطار أسود كامل بعبارة بيضاء عريضة للخطاف والبيان، ثم قطع حاد عائدًا إلى الصفحة البيضاء. — hard cut to a full black frame with white bold claim for the hook and the manifesto, then hard cut back to white page
 
 **متى:** حين تريد إبراز الخطاف أو البيان بقطع حاد إلى شاشة سوداء بنص أبيض عريض ثم العودة / for punching the hook or manifesto with a hard cut to a black frame with bold white text, then back to white
 
@@ -21295,7 +21296,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-338` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21340,7 +21341,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** brand-coloured circle/ring expands from off-frame to cover and reveal the next scene
+**ما هي:** دائرة/حلقة بلون العلامة تتوسع من خارج الإطار لتغطي المشهد التالي وتكشفه. — brand-coloured circle/ring expands from off-frame to cover and reveal the next scene
 
 **متى:** عند الانتقال بدائرة أو حلقة بلون العلامة تتسع من خارج الكادر لتغطي وتكشف المشهد التالي / for changing scenes with a brand-colour circle or ring expanding from off-frame to reveal the next
 
@@ -21370,7 +21371,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-339` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21415,7 +21416,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** An element keeps its identity across states: a card grows into a modal, a pill expands into a panel, a highlight slides between tabs; content inside cross-fades while bounds animate.
+**ما هي:** يحتفظ العنصر بهويته عبر الحالات: بطاقة تكبر إلى نافذة منبثقة، حبة تتوسع إلى لوحة، تمييز ينزلق بين التبويبات؛ ويتلاشى المحتوى الداخلي تبادليًا بينما تتحرك الحدود. — An element keeps its identity across states: a card grows into a modal, a pill expands into a panel, a highlight slides between tabs; content inside cross-fades while bounds animate.
 
 **متى:** حين يجب أن تتحول بطاقة إلى نافذة أو زر إلى لوحة مع الحفاظ على هوية العنصر / when a card should grow into a modal or a pill into a panel, keeping the element's identity
 
@@ -21446,7 +21447,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21494,7 +21495,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** thin line draws diagonally across frame; word clipped into two polygons along the line, halves offset a few px in opposite directions
+**ما هي:** يُرسم خط رفيع قطريًا عبر الإطار؛ وتُقصّ الكلمة إلى مضلعين على امتداد الخط، ويُزاح النصفان بضعة بكسلات في اتجاهين متعاكسين. — thin line draws diagonally across frame; word clipped into two polygons along the line, halves offset a few px in opposite directions
 
 **متى:** حين تريد شق كلمة إلى نصفين بخط مائل يُرسم عبر الكادر ثم يتباعد نصفاها / when a thin diagonal line draws across and splits a word into two offset halves
 
@@ -21524,7 +21525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-340` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21569,7 +21570,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** each tool word 250 ms on new colour field
+**ما هي:** تظهر كل كلمة أداة 250 ms على حقل لون جديد. — each tool word 250 ms on new colour field
 
 **متى:** عند استعراض أسماء أدوات بكلمة واحدة كل ربع ثانية على خلفية لونية جديدة / for flashing tool names one word every 250 ms, each on a new colour field
 
@@ -21597,7 +21598,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-341` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21642,7 +21643,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** rounded squares scale 0→1 stagger diagonal 15 ms
+**ما هي:** مربعات مستديرة تتحجم من 0 إلى 1 بتتابع قطري 15 ms. — rounded squares scale 0→1 stagger diagonal 15 ms
 
 **متى:** حين تريد انتقالًا بشبكة مربعات مستديرة الحواف تكبر بالتتابع على القطر / for a scene change where a grid of rounded squares scales in with a diagonal stagger
 
@@ -21670,7 +21671,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-342` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21715,7 +21716,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Alternate cuts every 0.6-1 s at drop
+**ما هي:** قطعات متبادلة كل 0.6-1 s عند الإسقاط. — Alternate cuts every 0.6-1 s at drop
 
 **متى:** عند الدروب الموسيقي لتبديل اللقطات بين الشيفرة ومرئياتها كل أقل من ثانية / when alternating cuts between code and its visual every 0.6-1 s at the music drop
 
@@ -21743,7 +21744,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-343` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21788,7 +21789,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** rotated -15deg band slides across with text
+**ما هي:** شريط مائل -15deg ينزلق عبر الإطار مع نص. — rotated -15deg band slides across with text
 
 **متى:** حين تريد شريطًا مائلًا يحمل نصًا يعبر الشاشة بقوة / for a rotated diagonal band carrying text that slides across the frame
 
@@ -21818,7 +21819,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-344` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21863,7 +21864,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Cut full-bleed images on every 16th note leading into a music drop, with a click SFX per change; caption typed over in white
+**ما هي:** قطع صور بملء الإطار على كل نوتة سادس عشر تقود إلى إسقاط موسيقي، مع مؤثر نقرة عند كل تغيير؛ ويُكتب تعليق أبيض فوقها. — Cut full-bleed images on every 16th note leading into a music drop, with a click SFX per change; caption typed over in white
 
 **متى:** حين تريد تمهيدًا للدروب بصور تتبدل بملء الشاشة على كل نوتة سريعة مع صوت نقرة / when leading into a music drop by cutting full-bleed images every 16th note with a click SFX each
 
@@ -21893,7 +21894,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-345` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21938,7 +21939,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** outgoing scene scales 1 -> 1.04 and blurs 0 -> 12 px while fading; incoming scene does the reverse
+**ما هي:** يتكبر المشهد الخارج من 1 إلى 1.04 ويضبب من 0 إلى 12 px مع التلاشي؛ ويفعل الداخل العكس. — outgoing scene scales 1 -> 1.04 and blurs 0 -> 12 px while fading; incoming scene does the reverse
 
 **متى:** عند الانتقال بين مشهدين بتكبير طفيف وتغبيش وتلاشٍ متعاكس / for a dissolve where the outgoing scene zooms slightly and blurs out while the incoming does the reverse
 
@@ -21968,7 +21969,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-346` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22013,7 +22014,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Scale the current scene down into a preview window inside a mock NLE: layer list, spring graph, waveform track and clip chips with playhead
+**ما هي:** تصغير المشهد الحالي إلى نافذة معاينة داخل NLE وهمي: قائمة طبقات، ورسم نابض، ومسار شكل موجة، وشرائح مقاطع مع رأس التشغيل. — Scale the current scene down into a preview window inside a mock NLE: layer list, spring graph, waveform track and clip chips with playhead
 
 **متى:** حين تريد كشف كواليس التحرير بتصغير المشهد داخل نافذة معاينة لبرنامج مونتاج تخيلي / when pulling the scene back into a preview window inside a mock editing app with layers, graph and timeline
 
@@ -22043,7 +22044,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-347` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22088,7 +22089,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Small reticle circle with centre dot expands into a soft-edged bright disc that fills the frame
+**ما هي:** دائرة تصويب صغيرة بنقطة مركزية تتوسع إلى قرص ساطع بحواف ناعمة يملأ الإطار. — Small reticle circle with centre dot expands into a soft-edged bright disc that fills the frame
 
 **متى:** عند كشف المشهد من علامة تصويب صغيرة تتسع إلى قرص مضيء ناعم الحواف يملأ الكادر / when a small reticle with a centre dot expands into a soft-edged bright disc that fills the frame
 
@@ -22118,7 +22119,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-348` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22163,7 +22164,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** clip-path circle shrinks/expands from content to dark ground, with a dotted ring outside
+**ما هي:** دائرة clip-path تتقلص/تتوسع من المحتوى إلى الأرضية الداكنة، مع حلقة منقطة في الخارج. — clip-path circle shrinks/expands from content to dark ground, with a dotted ring outside
 
 **متى:** حين تريد انتقالًا دائريًا يتقلص أو يتسع بين المحتوى وخلفية داكنة مع حلقة منقطة / for a circular clip-path transition that shrinks or expands between content and a dark ground with a dotted ring
 
@@ -22193,7 +22194,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-349` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22238,7 +22239,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** CSS-only enter/exit for popovers, dialogs and newly displayed elements, including transitions on display; Tailwind v4 keeps keyframes inside @theme as --animate-* tokens (tailwindcss-animate is gone).
+**ما هي:** دخول وخروج بـ CSS فقط للنوافذ المنبثقة والحوارات والعناصر المعروضة حديثًا، بما فيها الانتقال على display؛ ويبقي Tailwind v4 الإطارات المفتاحية داخل @theme كرموز --animate-* (اختفى tailwindcss-animate). — CSS-only enter/exit for popovers, dialogs and newly displayed elements, including transitions on display; Tailwind v4 keeps keyframes inside @theme as --animate-* tokens (tailwindcss-animate is gone).
 
 **متى:** حين تحتاج حركة دخول وخروج للنوافذ المنبثقة والحوارات بـ CSS فقط / for CSS-only enter and exit animations on popovers, dialogs and newly shown elements
 
@@ -22268,7 +22269,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22316,7 +22317,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Translate the whole scene group ~60% width in 200 ms with expo ease and apply horizontal blur proportional to velocity (CSS filter blur 0->20px->0 or multi-sample); next scene enters from the opposite
+**ما هي:** تحريك مجموعة المشهد كله بنحو 60% من العرض في 200 ms بتسهيل expo وتطبيق ضبابية أفقية تتناسب مع السرعة (filter blur في CSS من 0 إلى 20px ثم 0 أو عينات متعددة)؛ ويدخل المشهد التالي من الجهة المقابلة. — Translate the whole scene group ~60% width in 200 ms with expo ease and apply horizontal blur proportional to velocity (CSS filter blur 0->20px->0 or multi-sample); next scene enters from the opposite
 
 **متى:** عند الانتقال بسحبة أفقية سريعة للمشهد كاملًا مع ضبابية حركة ودخول التالي من الجهة المقابلة / for a fast horizontal whip of the whole scene with velocity blur, the next scene entering from the opposite side
 
@@ -22346,7 +22347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-350` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22391,7 +22392,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Huge circles of flat colour sweep across the frame in sequence to change the ground colour
+**ما هي:** دوائر ضخمة بلون مسطح تكتسح الإطار تباعًا لتغيير لون الأرضية. — Huge circles of flat colour sweep across the frame in sequence to change the ground colour
 
 **متى:** حين تريد تغيير لون الخلفية بدوائر لونية ضخمة تكتسح الكادر بالتتابع / when changing the ground colour with huge flat-colour circles sweeping across the frame in sequence
 
@@ -22421,7 +22422,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-351` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22466,7 +22467,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** offset horizontal strips randomly by +/-40 px, split RGB channels, flash 3-5 frames, then cut to next scene
+**ما هي:** إزاحة شرائح أفقية عشوائيًا بمقدار ±40 px، وفصل قنوات RGB، ووميض 3-5 إطارات، ثم قطع إلى المشهد التالي. — offset horizontal strips randomly by +/-40 px, split RGB channels, flash 3-5 frames, then cut to next scene
 
 **متى:** عند القطع إلى المشهد التالي بعد ومضة جليتش بشرائح أفقية مزاحة وفصل ألوان / when cutting to the next scene after a brief glitch of randomly shifted horizontal strips and RGB split
 
@@ -22496,7 +22497,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-352` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22541,7 +22542,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** dot scales to fill frame revealing next colour
+**ما هي:** نقطة تتحجم لتملأ الإطار كاشفة اللون التالي. — dot scales to fill frame revealing next colour
 
 **متى:** حين تكبر نقطة حتى تملأ الكادر وتكشف اللون التالي / for a wipe where a dot grows to fill the frame and reveal the next colour
 
@@ -22571,7 +22572,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-353` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22616,7 +22617,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Thin horizontal coloured lines streak across the frame randomly behind the wordmark; brief chromatic offset on text
+**ما هي:** خطوط أفقية رفيعة ملونة تعبر الإطار عشوائيًا خلف شعار الكلمة؛ مع إزاحة لونية وجيزة على النص. — Thin horizontal coloured lines streak across the frame randomly behind the wordmark; brief chromatic offset on text
 
 **متى:** عند تصميم بطاقة ختام تعبر خلف شعارها خطوط ملونة رفيعة مع إزاحة لونية خفيفة للنص / for an end card with thin coloured lines streaking behind the wordmark and a brief chromatic offset on the text
 
@@ -22646,7 +22647,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-354` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22691,7 +22692,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** alternate full-field bg colours per scene on beat
+**ما هي:** تبديل ألوان الخلفية بملء الحقل لكل مشهد على الإيقاع. — alternate full-field bg colours per scene on beat
 
 **متى:** حين تريد تبديل لون الخلفية الكاملة مع كل مشهد على الإيقاع بقطع حاد / when alternating full-field background colours per scene with hard cuts on the beat
 
@@ -22721,7 +22722,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-355` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22766,7 +22767,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** single word per card, hard cut every 250 ms, colour-tinted word
+**ما هي:** كلمة واحدة في كل بطاقة، وقطع حاد كل 250 ms، والكلمة ملونة. — single word per card, hard cut every 250 ms, colour-tinted word
 
 **متى:** عند مونتاج كلمات منفردة على بطاقات تتبدل بقطع حاد كل ربع ثانية على الإيقاع / for a montage of single-word cards hard-cutting every 250 ms, each word colour-tinted
 
@@ -22794,7 +22795,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-356` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22840,7 +22841,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** translate and rotate cards off-frame in 250 ms with directional blur proportional to velocity (CSS filter blur or sampled frames)
+**ما هي:** تحريك البطاقات وتدويرها خارج الإطار في 250 ms بتمويه اتجاهي يتناسب مع السرعة (filter blur في CSS أو إطارات معيَّنة). — translate and rotate cards off-frame in 250 ms with directional blur proportional to velocity (CSS filter blur or sampled frames)
 
 **متى:** حين تريد إخراج البطاقات من الكادر بسرعة مع دوران خفيف وضبابية حركة / when cards should fly off-frame fast with a slight rotation and directional motion blur
 
@@ -22870,7 +22871,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-357` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22915,7 +22916,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** offset R/B copies ±8px, cuts every ~120ms
+**ما هي:** إزاحة نسخ R/B بمقدار ±8px وقطعات كل ~120ms. — offset R/B copies ±8px, cuts every ~120ms
 
 **متى:** حين تريد تأثير تقطّع مهتز بنسخ حمراء وزرقاء مزاحة وقطعات متلاحقة سريعة / for a stuttering effect with offset red and blue copies and rapid cuts about every 120 ms
 
@@ -22943,7 +22944,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-358` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22988,7 +22989,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** eraser sprite sweeps zig-zag across the board while a reveal mask clears the drawing layer behind it
+**ما هي:** سبرايت ممحاة يمسح السبورة بشكل متعرج بينما يمسح قناع كشف طبقة الرسم خلفه. — eraser sprite sweeps zig-zag across the board while a reveal mask clears the drawing layer behind it
 
 **متى:** حين يُمسح رسم السبورة بممحاة تتحرك متعرجة قبل عنوان الفصل التالي / for clearing a board drawing with a zig-zag eraser sweep before the next chapter title
 
@@ -23018,7 +23019,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-359` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23063,7 +23064,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Images and sections revealed by an animating clip-path or SVG mask rather than a fade, often triggered on scroll or beat.
+**ما هي:** تُكشف الصور والأقسام بـ clip-path متحرك أو قناع SVG بدل التلاشي، وغالبًا عند التمرير أو الإيقاع. — Images and sections revealed by an animating clip-path or SVG mask rather than a fade, often triggered on scroll or beat.
 
 **متى:** حين تريد كشف صورة أو قسم بقناع أو قص متحرك بدل التلاشي عند التمرير أو الإيقاع / when revealing an image or section with an animated clip-path or SVG mask instead of a fade
 
@@ -23093,7 +23094,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23140,7 +23141,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 8-9 horizontal bars in palette colours scaleX 0→1 from alternating sides with 30 ms stagger, then exit
+**ما هي:** 8-9 أشرطة أفقية بألوان اللوحة تتحجم scaleX من 0 إلى 1 من جهات متناوبة بتتابع 30 ms، ثم تخرج. — 8-9 horizontal bars in palette colours scaleX 0→1 from alternating sides with 30 ms stagger, then exit
 
 **متى:** عند الانتقال بأشرطة أفقية ملونة تمتد من جانبين متبادلين حتى تغطي الشاشة ثم تخرج / for a full-screen wipe of horizontal palette bars growing from alternating sides, then exiting
 
@@ -23170,7 +23171,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-360` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23215,7 +23216,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** A solid circle in the next scene's ground colour scales from a point to cover the frame, soft-edged, with faint inner rings
+**ما هي:** دائرة صلبة بلون أرضية المشهد التالي تتحجم من نقطة لتغطي الإطار، بحواف ناعمة وحلقات داخلية خافتة. — A solid circle in the next scene's ground colour scales from a point to cover the frame, soft-edged, with faint inner rings
 
 **متى:** حين تنتقل إلى مشهد بلون خلفية جديد بدائرة ناعمة الحواف تتسع من نقطة / when a soft-edged circle in the next scene's ground colour grows from a point to cover the frame
 
@@ -23245,7 +23246,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-361` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23290,7 +23291,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Clip-path circle grows from centre (r 0 -> 120% diagonal) in accent colour over ~400 ms easeInOut, carrying a blurred badge
+**ما هي:** دائرة clip-path تنمو من المركز (r من 0 إلى 120% من القطر) بلون التمييز خلال ~400 ms بتسهيل easeInOut، حاملة شارة ضبابية. — Clip-path circle grows from centre (r 0 -> 120% diagonal) in accent colour over ~400 ms easeInOut, carrying a blurred badge
 
 **متى:** عند غمر الشاشة بلون مميز عبر دائرة تكبر من المنتصف تحمل شارة مموهة / when flooding the frame with an accent colour via a clip-path circle growing from centre, carrying a blurred badge
 
@@ -23320,7 +23321,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-362` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23365,7 +23366,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** brand-colour circle scales from an icon until it covers the frame diagonal, becoming the next background
+**ما هي:** دائرة بلون العلامة تتحجم من أيقونة حتى تغطي قطر الإطار وتصير الخلفية التالية. — brand-colour circle scales from an icon until it covers the frame diagonal, becoming the next background
 
 **متى:** حين تخرج دائرة بلون العلامة من أيقونة وتكبر حتى تصبح خلفية المشهد التالي / when a brand-colour circle scales out of an icon until it covers the frame and becomes the next background
 
@@ -23395,7 +23396,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-363` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23440,7 +23441,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** skewed brand-colour band sweeps across revealing full-bleed photo; giant white title masks up from bottom-left
+**ما هي:** شريط مائل بلون العلامة يكتسح الإطار كاشفًا صورة بملء الشاشة؛ وعنوان أبيض عملاق يظهر بقناع من الأسفل الأيسر. — skewed brand-colour band sweeps across revealing full-bleed photo; giant white title masks up from bottom-left
 
 **متى:** عند كشف صورة بملء الشاشة بشريط مائل بلون العلامة مع عنوان أبيض ضخم يظهر من الأسفل / for revealing a full-bleed photo with a skewed brand band sweep while a giant white title masks up
 
@@ -23470,7 +23471,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-364` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23515,7 +23516,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Downsample frame into growing blocks then cut
+**ما هي:** تصغير دقة الإطار إلى كتل متزايدة ثم قطع. — Downsample frame into growing blocks then cut
 
 **متى:** حين تريد تفكيك الصورة إلى مربعات تكبر تدريجيًا ثم القطع إلى المشهد التالي / when downsampling the frame into growing pixel blocks before cutting
 
@@ -23545,7 +23546,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-365` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23590,7 +23591,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Horizontal bands offset x randomly, colour blocks
+**ما هي:** نطاقات أفقية تُزاح x عشوائيًا، وكتل ألوان — Horizontal bands offset x randomly, colour blocks
 
 **متى:** عند الانتقال بمسح جليتش تُزاح فيه شرائح أفقية عشوائيًا مع كتل لونية / for a glitch wipe with horizontal bands offset randomly and blocks of colour
 
@@ -23620,7 +23621,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-366` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23665,7 +23666,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale card until it fills frame, swap to full-bleed photo
+**ما هي:** تتحجم البطاقة حتى تملأ الإطار، ثم يُبدَّل إلى صورة بملء الشاشة. — scale card until it fills frame, swap to full-bleed photo
 
 **متى:** حين تكبر بطاقة صورة حتى تملأ الكادر ثم تتحول إلى الصورة بملء الشاشة / when scaling a card until it fills the frame, then swapping to the full-bleed photo
 
@@ -23695,7 +23696,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-367` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23740,7 +23741,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** outgoing content blur 0->6px & opacity 1->0 over 120 ms; incoming starts 60 ms later with blur 6->0 & opacity 0->1
+**ما هي:** المحتوى الخارج: ضبابية من 0 إلى 6px وشفافية من 1 إلى 0 خلال 120 ms؛ والداخل يبدأ بعد 60 ms بضبابية من 6 إلى 0 وشفافية من 0 إلى 1. — outgoing content blur 0->6px & opacity 1->0 over 120 ms; incoming starts 60 ms later with blur 6->0 & opacity 0->1
 
 **متى:** عند تبديل محتوى في نفس المكان بسرعة بتغبيش وتلاشٍ قصير جدًا / for a very quick content swap where old content blurs out and new content blurs in within about 200 ms
 
@@ -23770,7 +23771,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-368` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23815,7 +23816,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** clip-path circle growing with blurred rim exposing new layer
+**ما هي:** clip-path دائري ينمو بحافة ضبابية ليكشف طبقة جديدة. — clip-path circle growing with blurred rim exposing new layer
 
 **متى:** حين يريد المستخدم كشف المشهد التالي من دائرة تتسع بحافة ضبابية / when the user wants the next layer revealed by a growing circle with a soft blurred edge
 
@@ -23845,7 +23846,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-369` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23890,7 +23891,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Stream-copy cuts only land cleanly on I/IDR frames; a cut on a P/B frame produces black/frozen first seconds. Probe packet flags to find the nearest keyframe before -c copy.
+**ما هي:** لا تقع قطعات نسخ التدفق بنظافة إلا على إطارات I/IDR؛ والقطع على إطار P/B يعطي أول ثوانٍ سوداء أو مجمدة. افحص أعلام الحزم لإيجاد أقرب إطار مفتاحي قبل -c copy. — Stream-copy cuts only land cleanly on I/IDR frames; a cut on a P/B frame produces black/frozen first seconds. Probe packet flags to find the nearest keyframe before -c copy.
 
 **متى:** حين تريد قص فيديو دون إعادة ترميز وتجنب ثوان سوداء أو متجمدة في البداية / when cutting video without re-encoding and avoiding black or frozen first seconds
 
@@ -23920,7 +23921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23966,7 +23967,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** lime rectangle scales then content card zooms
+**ما هي:** مستطيل ليموني يتحجم ثم تتكبر بطاقة المحتوى. — lime rectangle scales then content card zooms
 
 **متى:** عند الحاجة لكشف بطاقة محتوى بعد مستطيل ملون يتمدد ثم يكبر المحتوى / for revealing a content card after a coloured rectangle scales up, then the card zooms in
 
@@ -23994,7 +23995,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-370` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24039,7 +24040,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** keep a single dot at same screen pos across cuts while bg changes
+**ما هي:** إبقاء نقطة واحدة في موضعها نفسه على الشاشة عبر القطعات بينما تتغير الخلفية. — keep a single dot at same screen pos across cuts while bg changes
 
 **متى:** حين يريد المستخدم ربط مشاهد متتالية بنقطة ثابتة في نفس المكان بينما تتغير الخلفية / when linking cuts with one dot held at the same screen spot while the background changes
 
@@ -24067,7 +24068,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-371` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24112,7 +24113,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale circle/bar to fill frame 400 ms
+**ما هي:** تحجيم دائرة/شريط ليملأ الإطار في 400 ms. — scale circle/bar to fill frame 400 ms
 
 **متى:** عند الانتقال بشكل ملون (دائرة أو شريط) يكبر حتى يملأ الكادر / for a transition where a coloured circle or bar scales up to fill the frame
 
@@ -24140,7 +24141,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-372` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24185,7 +24186,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** vertical bars of red/blue/yellow/black slide horizontally at different speeds with motion blur, revealing next card
+**ما هي:** أشرطة عمودية حمراء وزرقاء وصفراء وسوداء تنزلق أفقيًا بسرعات مختلفة مع تمويه حركة، كاشفة البطاقة التالية. — vertical bars of red/blue/yellow/black slide horizontally at different speeds with motion blur, revealing next card
 
 **متى:** حين يطلب المستخدم مسحًا حيويًا بأشرطة عمودية ملونة تنزلق بسرعات مختلفة لتكشف البطاقة التالية / when the user wants a wipe of coloured vertical bars sliding at varied speeds to reveal the next card
 
@@ -24215,7 +24216,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-373` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24260,7 +24261,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** horizontal blur slide 300 ms
+**ما هي:** انزلاق أفقي ضبابي 300 ms. — horizontal blur slide 300 ms
 
 **متى:** عند الحاجة لانتقال سريع بانزلاق أفقي مع ضبابية حركة / for a quick horizontal slide transition with motion blur between scenes
 
@@ -24288,7 +24289,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-374` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24333,7 +24334,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cut instantly from #06050a scene to #f8f7ff scene on a beat, with a reverse-suck SFX leading into it
+**ما هي:** قطع فوري من مشهد #06050a إلى مشهد #f8f7ff على إيقاع، مع مؤثر شفط معكوس يسبقه. — cut instantly from #06050a scene to #f8f7ff scene on a beat, with a reverse-suck SFX leading into it
 
 **متى:** حين يريد المستخدم قطعًا حادًا على الإيقاع من مشهد مظلم إلى مشهد فاتح مع مؤثر صوتي معكوس قبله / when the user wants an on-beat hard cut from a dark scene to a light one, led by a reverse-suck sound effect
 
@@ -24363,7 +24364,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-375` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24408,7 +24409,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Last frame of a scene equals next scene's first; a dot grows into a pill then a card; no cut, no crossfade.
+**ما هي:** آخر إطار في المشهد يساوي أول إطار في المشهد التالي؛ تنمو نقطة إلى حبة ثم بطاقة؛ بلا قطع ولا تقاطع تلاشي. — Last frame of a scene equals next scene's first; a dot grows into a pill then a card; no cut, no crossfade.
 
 **متى:** عند الرغبة في انتقال بلا قطع ولا مزج، حيث تتحول نقطة إلى كبسولة ثم بطاقة تبدأ المشهد التالي / for a cut-free handover where a dot grows into a pill, then a card that opens the next scene
 
@@ -24436,7 +24437,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-376` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24482,7 +24483,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** In multi-scene pieces every element enters with an animation, no element exits before the transition, and only the final scene fades out.
+**ما هي:** في القطع متعددة المشاهد تدخل كل العناصر بتحريك، ولا يخرج أي عنصر قبل الانتقال، ولا يتلاشى إلا المشهد الأخير. — In multi-scene pieces every element enters with an animation, no element exits before the transition, and only the final scene fades out.
 
 **متى:** حين يبني المستخدم فيديو متعدد المشاهد ويحتاج قاعدة لدخول العناصر وترك الخروج للانتقال / when building a multi-scene piece: animate every entrance and let the transition handle exits
 
@@ -24512,7 +24513,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-377` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24559,7 +24560,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Choose one primary transition (60-70% of cuts) plus 1-2 accents according to the piece's energy.
+**ما هي:** اختر انتقالًا أساسيًا واحدًا (60-70% من القطعات) مع 1-2 انتقال للتأكيد بحسب طاقة القطعة. — Choose one primary transition (60-70% of cuts) plus 1-2 accents according to the piece's energy.
 
 **متى:** عند اختيار نوع الانتقالات ومدتها حسب طاقة الفيديو: هادئ أو متوسط أو عالي / for choosing a main transition and its timing by the piece's energy: calm, medium or high
 
@@ -24589,7 +24590,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-378` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24634,7 +24635,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A cut type communicates a relation: crossfade continues, hard cut wakes up, slow dissolve drifts, push = next point, staggered blocks = new section.
+**ما هي:** نوع القطعة يعبّر عن علاقة: التقاطع يواصل، والقطع الحاد يوقظ، والذوبان البطيء ينجرف، والدفع = النقطة التالية، والكتل المتتابعة = قسم جديد. — A cut type communicates a relation: crossfade continues, hard cut wakes up, slow dissolve drifts, push = next point, staggered blocks = new section.
 
 **متى:** حين يسأل المستخدم أي انتقال يناسب المعنى أو المزاج، كالقطع الحاد للتنبيه والمزج للاستمرار / when the user asks which transition fits the meaning or mood, e.g. hard cut to wake up, crossfade to continue
 
@@ -24662,7 +24663,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-379` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24708,7 +24709,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Warm gradient overlays sweep across and peak while scenes swap.
+**ما هي:** تمر تراكبات متدرجة دافئة وتبلغ ذروتها بينما تتبدل المشاهد. — Warm gradient overlays sweep across and peak while scenes swap.
 
 **متى:** حين تريد انتقالًا دافئًا بتسرب ضوئي يجتاح الكادر أثناء تبديل المشاهد / for a warm light-leak sweep that peaks while scenes swap
 
@@ -24738,7 +24739,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24784,7 +24785,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Six named duration/ease presets for scene changes.
+**ما هي:** ست إعدادات مسماة للمدة والتسهيل لتغييرات المشاهد. — Six named duration/ease presets for scene changes.
 
 **متى:** عند الحاجة لمدة وتسارع جاهزين لانتقال المشهد بدل ضبطهما يدويًا / for picking a ready duration and easing for a scene change instead of tuning by hand
 
@@ -24814,7 +24815,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-380` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24859,7 +24860,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Blur-through dissolve whose blur radius, duration and hold scale with energy.
+**ما هي:** ذوبان عبر الضبابية يتدرج نصف قطر ضبابيته ومدته وتوقفه مع الطاقة. — Blur-through dissolve whose blur radius, duration and hold scale with energy.
 
 **متى:** حين يريد المستخدم مزجًا ضبابيًا بين المشاهد ويحتاج مقدار الضبابية والمدة حسب الطاقة / when the user wants a blur-through dissolve and needs blur amount and timing matched to energy
 
@@ -24889,7 +24890,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-381` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24935,7 +24936,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Reveal the next scene through a growing circle/diamond mask or slice the outgoing scene away diagonally.
+**ما هي:** اكشف المشهد التالي عبر قناع دائرة/معين ينمو، أو اقطع المشهد الخارج قطريًا. — Reveal the next scene through a growing circle/diamond mask or slice the outgoing scene away diagonally.
 
 **متى:** عند كشف المشهد التالي بدائرة أو معين يتسع أو بشق قطري للمشهد الخارج / for revealing the next scene through a growing circle or diamond mask, or a diagonal split of the outgoing one
 
@@ -24965,7 +24966,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-382` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25011,7 +25012,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Digital breakdown cuts built from RGB-split overlays, jitter frames and sliced strips.
+**ما هي:** قطعات انهيار رقمي مبنية من تراكبات فصل RGB وإطارات ارتجاف وشرائح مقطعة. — Digital breakdown cuts built from RGB-split overlays, jitter frames and sliced strips.
 
 **متى:** حين يطلب المستخدم انتقالًا بتشويش رقمي أو انقسام ألوان أو أشرطة VHS أو تموج / when the user asks for a glitch, RGB-split, VHS or ripple cut between scenes
 
@@ -25041,7 +25042,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-383` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25087,7 +25088,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cover the frame with full-size panels or slats that sweep in a stagger, then reveal the next scene.
+**ما هي:** تغطية الإطار بألواح أو شرائح بالحجم الكامل تكتسح بتتابع، ثم كشف المشهد التالي. — Cover the frame with full-size panels or slats that sweep in a stagger, then reveal the next scene.
 
 **متى:** عند تغطية الكادر بشرائح أو ألواح تتتابع ثم تكشف المشهد التالي، مثل الستائر أو ذوبان الشبكة / for covering the frame with staggered panels or slats, like blinds or a grid dissolve, before the next scene
 
@@ -25117,7 +25118,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-384` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25163,7 +25164,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** When one screen has been held past the style's maximum, switch to another B-roll or screen capture at a sentence boundary where a noun or action is spoken, while the voice continues uninterrupted.
+**ما هي:** عند بقاء شاشة واحدة أكثر من الحد الأقصى للأسلوب، يُبدَّل إلى B-roll أو لقطة شاشة أخرى عند حدود الجملة حيث يُنطق اسم أو فعل، بينما يستمر الصوت دون انقطاع. — When one screen has been held past the style's maximum, switch to another B-roll or screen capture at a sentence boundary where a noun or action is spoken, while the voice continues uninterrupted.
 
 **متى:** حين تطول لقطة واحدة على الشاشة ويلزم تبديلها بلقطة مساندة عند نهاية جملة دون قطع الصوت / when one screen is held too long and should switch to B-roll at a sentence boundary while the voice continues
 
@@ -25193,7 +25194,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-385` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25239,7 +25240,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Two shots sharing a round element (cup rim -> camera lens) are joined by scaling into the circle of shot A and emerging from the matching circle of shot B.
+**ما هي:** لقطتان تتشاركان عنصرًا مستديرًا (حافة كوب ← عدسة كاميرا) تتصلان بالتحجيم داخل دائرة اللقطة A والخروج من الدائرة المطابقة في اللقطة B. — Two shots sharing a round element (cup rim -> camera lens) are joined by scaling into the circle of shot A and emerging from the matching circle of shot B.
 
 **متى:** عند ربط لقطتين تشتركان في عنصر دائري بالدخول في دائرة الأولى والخروج من دائرة الثانية / for joining two shots that share a round element by zooming into one circle and out of the matching one
 
@@ -25269,7 +25270,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-386` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25316,7 +25317,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** A person or object close to the lens crosses frame and hides the cut; the new location is revealed behind its trailing edge.
+**ما هي:** شخص أو جسم قريب من العدسة يعبر الإطار فيخفي القطعة؛ ويُكشف الموقع الجديد خلف حافته الخلفية. — A person or object close to the lens crosses frame and hides the cut; the new location is revealed behind its trailing edge.
 
 **متى:** حين يمر شخص أو جسم قريب من العدسة ويراد إخفاء القطع خلفه وكشف المكان الجديد / when a person or object crosses close to the lens and the cut should hide behind it to reveal a new place
 
@@ -25346,7 +25347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-387` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25393,7 +25394,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Shot slides sideways and the cut is hidden at the moment of maximum motion blur, in the same direction on both sides.
+**ما هي:** تنزلق اللقطة جانبيًا وتُخفى القطعة لحظة أقصى تمويه حركة، بالاتجاه نفسه على الجانبين. — Shot slides sideways and the cut is hidden at the moment of maximum motion blur, in the same direction on both sides.
 
 **متى:** عند الحاجة لنقلة جانبية سريعة يختفي فيها القطع داخل ضبابية الحركة باتجاه واحد / for a fast sideways whip where the cut hides inside directional motion blur
 
@@ -25423,7 +25424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-388` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25470,7 +25471,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** An ink drop spreads across the screen until the next shot fills it.
+**ما هي:** قطرة حبر تنتشر على الشاشة حتى تملأها اللقطة التالية. — An ink drop spreads across the screen until the next shot fills it.
 
 **متى:** حين يريد المستخدم أن تنتشر بقعة حبر على الشاشة حتى تكشف اللقطة التالية / when the user wants an ink drop to spread across the screen until the next shot fills it
 
@@ -25500,7 +25501,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-389` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25547,7 +25548,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scene brightens to white flash then cuts.
+**ما هي:** يشتد سطوع المشهد حتى وميض أبيض ثم يُقطع. — Scene brightens to white flash then cuts.
 
 **متى:** حين ينبغي أن يسطع المشهد حتى فلاش أبيض ثم يقطع إلى المشهد التالي / when a scene should brighten into a white flash before cutting to the next
 
@@ -25575,7 +25576,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25620,7 +25621,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Five vertical strips each pull the new image in with a short delay, then fuse.
+**ما هي:** خمس شرائح عمودية تسحب كلٌّ منها الصورة الجديدة بتأخير قصير، ثم تندمج. — Five vertical strips each pull the new image in with a short delay, then fuse.
 
 **متى:** عند الانتقال بشرائح عمودية تسحب الصورة الجديدة واحدة تلو الأخرى ثم تلتحم / for a transition of vertical strips pulling in the new image one after another, then merging
 
@@ -25650,7 +25651,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-390` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25696,7 +25697,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Frame freezes and shrinks in four jumps into a sticker sitting over the next scene - a handmade cut for ads.
+**ما هي:** يتجمد الإطار ويتقلص في أربع قفزات إلى ملصق فوق المشهد التالي، وهي قطعة يدوية الصنع للإعلانات. — Frame freezes and shrinks in four jumps into a sticker sitting over the next scene - a handmade cut for ads.
 
 **متى:** حين يطلب المستخدم انتقالًا يدوي الطابع للإعلانات يتجمد فيه الكادر ويصغر بقفزات إلى ملصق / when the user wants a handmade ad cut where the frame freezes and shrinks in jumps into a sticker
 
@@ -25726,7 +25727,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-391` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25773,7 +25774,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** A ripple starts in the centre and rolls over the cut point; fits water or heat scenes.
+**ما هي:** تبدأ موجة تموج في المركز وتتدحرج فوق نقطة القطع؛ تناسب مشاهد الماء أو الحرارة. — A ripple starts in the centre and rolls over the cut point; fits water or heat scenes.
 
 **متى:** عند الانتقال بين مشاهد ماء أو حرارة بموجة تشوه تعبر نقطة القطع / for water or heat scenes where a ripple distortion rolls over the cut point
 
@@ -25803,7 +25804,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-392` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25850,7 +25851,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** The shot freezes into a hanging print; a camera travels to another print that comes alive (time jump). Same 2.5D family: MG-004 a paper corner folds over to reveal the next clip (two fake-3D panels with shadows), MG-007 a door plane is tracked and the next location corner-pinned into the opening.
+**ما هي:** تتجمد اللقطة كمطبوعة معلقة؛ وتنتقل الكاميرا إلى مطبوعة أخرى تنبض بالحياة (قفزة زمنية). من عائلة 2.5D نفسها: MG-004 زاوية ورقة تنطوي لتكشف المقطع التالي (لوحان ثلاثي الأبعاد مزيفان بظلال)، وMG-007 يُتتبَّع مستوى باب ويُثبَّت الموقع التالي بالزوايا داخل الفتحة. — The shot freezes into a hanging print; a camera travels to another print that comes alive (time jump). Same 2.5D family: MG-004 a paper corner folds over to reveal the next clip (two fake-3D panels with shadows), MG-007 a door plane is tracked and the next location corner-pinned into the opening.
 
 **متى:** حين يريد المستخدم قفزة زمنية بتجميد اللقطة كصورة معلقة تنتقل الكاميرا منها لأخرى، أو طي ورقة أو عبور باب / when the user wants a time jump via a frozen print the camera travels from, or a page fold or door portal
 
@@ -25880,7 +25881,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-393` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25927,7 +25928,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Decide how hard to cut pauses by content type: ambient/relaxing keeps silences of 15 s+ and cuts under 20%; action trims pauses of 500 ms+ and may cut up to 40%; speech-driven cuts only at semantic boundaries; visual-first keeps wordless scenes and cuts only true silence; mixed narrative cuts only w…
+**ما هي:** قرّر مدى حدة قص الفترات الصامتة بحسب نوع المحتوى: الأجواء/الاسترخاء يحتفظ بصمت 15 s وأكثر ويقص أقل من 20%؛ الأكشن يقلّم توقفات 500 ms فأكثر وقد يقص حتى 40%؛ ما يقوده الكلام يُقص عند الحدود الدلالية فقط؛ ما يغلب عليه البصري يحتفظ بالمشاهد الصامتة ويقص الصمت الحقيقي فقط؛ والسرد المختلط يقص فقط… — Decide how hard to cut pauses by content type: ambient/relaxing keeps silences of 15 s+ and cuts under 20%; action trims pauses of 500 ms+ and may cut up to 40%; speech-driven cuts only at semantic boundaries; visual-first keeps wordless scenes and cuts only true silence; mixed narrative cuts only w…
 
 **متى:** عند قص الصمت والوقفات في فيديو بحسب نوعه: هادئ أو أكشن أو كلامي أو بصري / for trimming silences and pauses by content type: ambient, action, speech-driven or visual-first
 
@@ -25957,7 +25958,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-394` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26003,7 +26004,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** When the cut must be frame-exact (or for any standalone deliverable) re-encode from the in-point rather than stream-copy, otherwise the head freezes until the next keyframe. Smart-cut (re-encode only the boundary GOP) is the middle ground.
+**ما هي:** حين يجب أن يكون القطع مطابقًا للإطار (أو لأي مُخرَج مستقل) أعد الترميز من نقطة الدخول بدل نسخ التدفق، وإلا يتجمد الرأس حتى الإطار المفتاحي التالي. القص الذكي (إعادة ترميز GOP الحدود فقط) هو الحل الوسط. — When the cut must be frame-exact (or for any standalone deliverable) re-encode from the in-point rather than stream-copy, otherwise the head freezes until the next keyframe. Smart-cut (re-encode only the boundary GOP) is the middle ground.
 
 **متى:** حين يحتاج المستخدم قصًا دقيقًا على مستوى الإطار دون تجمد بداية المقطع / when the user needs a frame-exact trim without the head freezing until the next keyframe
 
@@ -26032,7 +26033,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-395` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26079,7 +26080,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Join many segments in order from a text list; stream copy when codecs match, re-encode once when they do not or when timing must add up exactly.
+**ما هي:** ضمّ مقاطع كثيرة بالترتيب من قائمة نصية؛ نسخ التدفق عند تطابق الترميزات، وإعادة ترميز واحدة عند عدم تطابقها أو حين يجب أن يتطابق التوقيت تمامًا. — Join many segments in order from a text list; stream copy when codecs match, re-encode once when they do not or when timing must add up exactly.
 
 **متى:** عند دمج عدة مقاطع فيديو بالترتيب في ملف واحد / for joining many video segments in order into one file
 
@@ -26107,7 +26108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-396` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26154,7 +26155,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Trim aggressiveness depends on genre: ambient/relax tolerates 15 s+ silence and cuts <20%; action trims pauses ≥500 ms up to 40% cut ratio; speech-driven cuts at semantic boundaries; visual-first keeps silent scenes and cuts only true silence; tutorial trims precisely and never speeds through instru…
+**ما هي:** تعتمد شدة القص على النوع: الأجواء/الاسترخاء يتحمل صمت 15 s وأكثر ويقص أقل من 20%؛ الأكشن يقلّم التوقفات ≥500 ms حتى نسبة قص 40%؛ ما يقوده الكلام يُقص عند الحدود الدلالية؛ والبصري أولًا يحتفظ بالمشاهد الصامتة ويقص الصمت الحقيقي فقط؛ والتعليمي يقلّم بدقة ولا يسرّع عبر التعليمات… — Trim aggressiveness depends on genre: ambient/relax tolerates 15 s+ silence and cuts <20%; action trims pauses ≥500 ms up to 40% cut ratio; speech-driven cuts at semantic boundaries; visual-first keeps silent scenes and cuts only true silence; tutorial trims precisely and never speeds through instru…
 
 **متى:** حين يريد المستخدم قصًا تلقائيًا للصمت تتحدد شدته حسب نوع الفيديو، مثل الشرح أو الأكشن / when the user wants auto-trimming whose aggressiveness depends on genre, such as tutorial or action
 
@@ -26184,7 +26185,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-397` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26229,7 +26230,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Bring next scene's ambience in early (J) or let the previous tail linger (L) to bridge cuts.
+**ما هي:** أدخل أجواء المشهد التالي مبكرًا (J) أو دع ذيل السابق يمتد (L) لجسر القطعات. — Bring next scene's ambience in early (J) or let the previous tail linger (L) to bridge cuts.
 
 **متى:** عند وصل لقطتين بإدخال صوت المشهد التالي مبكرًا أو إبقاء ذيل صوت السابق / for bridging cuts by bringing the next scene's ambience in early or letting the previous one linger
 
@@ -26258,7 +26259,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-398` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26304,7 +26305,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Preserve reverb tail when music stops; land reverse swells/risers on the next downbeat or scene.
+**ما هي:** احفظ ذيل الصدى عند توقف الموسيقى؛ واجعل التصاعدات والمعكوسات تهبط على الإيقاع القوي أو المشهد التاليين. — Preserve reverb tail when music stops; land reverse swells/risers on the next downbeat or scene.
 
 **متى:** حين تتوقف الموسيقى ثم تعود ويلزم إبقاء ذيل الصدى وإنهاء صعود معكوس على الضربة التالية / when music stops and returns, keeping the reverb tail and landing a reverse riser on the next downbeat
 
@@ -26332,7 +26333,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-399` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26377,7 +26378,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Three orange burn blobs slide across; swap under them.
+**ما هي:** ثلاث بقع احتراق برتقالية تنزلق عبر الإطار؛ ويتم التبديل تحتها. — Three orange burn blobs slide across; swap under them.
 
 **متى:** حين تريد انتقال حرق فيلم ببقع برتقالية تعبر الكادر ويتم التبديل تحتها / for a film-burn transition where orange burn blobs slide across and scenes swap beneath
 
@@ -26405,7 +26406,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26450,7 +26451,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Switch at phrase ends/emotion change; crossfade if key/BPM compatible, else short tail -> ambience/silence -> new song.
+**ما هي:** بدّل عند نهايات العبارات أو تغير المشاعر؛ مع تقاطع إن تطابقت السلّم/BPM، وإلا ذيل قصير ← أجواء/صمت ← أغنية جديدة. — Switch at phrase ends/emotion change; crossfade if key/BPM compatible, else short tail -> ambience/silence -> new song.
 
 **متى:** عند الانتقال من أغنية إلى أخرى في نهاية الجملة الموسيقية أو عند تغير الإحساس / for switching from one song to another at a phrase end or mood change
 
@@ -26478,7 +26479,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-400` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26523,7 +26524,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Reveal an image by halving pixel size in power-of-two steps.
+**ما هي:** اكشف صورة بتنصيف حجم البكسل بخطوات من قوى العدد 2. — Reveal an image by halving pixel size in power-of-two steps.
 
 **متى:** حين يريد المستخدم كشف صورة تدريجيًا من بكسلات كبيرة حتى تتضح / when the user wants an image revealed step by step from large pixels to full detail
 
@@ -26553,7 +26554,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-401` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26598,7 +26599,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** When-to-use guidance for hard cut, J/L cut, match cut, whip, zoom-through, flash (disabled), shake, dissolve, fade-to-black, jump cut, glitch and AI morph.
+**ما هي:** إرشادات متى تستخدم القطع الحاد، وقطع J/L، والقطع المطابق، والسحب السريع، والزووم العابر، والوميض (معطَّل)، والاهتزاز، والذوبان، والتلاشي إلى الأسود، والقطع القافز، والغليتش، وتحول الذكاء الاصطناعي. — When-to-use guidance for hard cut, J/L cut, match cut, whip, zoom-through, flash (disabled), shake, dissolve, fade-to-black, jump cut, glitch and AI morph.
 
 **متى:** عند تحديد متى يستخدم كل انتقال، كالقطع الحاد أو المطابق أو السوطي أو الذوبان، ومدده المقترحة / for deciding when to use each transition, such as hard, match or whip cut or dissolve, and its timing
 
@@ -26626,7 +26627,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-402` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26671,7 +26672,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Half of changes are hard cuts on grid; rest via camera, morph, match cut, flood, 1–2 f blends; 6–8 transition types ≤2 uses each + one signature move at open/middle/close.
+**ما هي:** نصف التغييرات قطعات حادة على الشبكة؛ والباقي بالكاميرا أو التحول أو القطع المطابق أو الغمر أو مزج 1-2 إطار؛ 6-8 أنواع انتقال، كل منها ≤2 استخدام، مع حركة مميزة واحدة في الافتتاح والمنتصف والختام. — Half of changes are hard cuts on grid; rest via camera, morph, match cut, flood, 1–2 f blends; 6–8 transition types ≤2 uses each + one signature move at open/middle/close.
 
 **متى:** حين يريد المستخدم تجنب المزج المتلاشي والقطع عند ذروة السرعة مع استمرار الحركة بنفس الاتجاه / when avoiding crossfades and cutting at peak speed with the next shot moving the same way
 
@@ -26701,7 +26702,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-403` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26746,7 +26747,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A warm light leak drifts across each section cut (alternating direction) instead of a flat flash.
+**ما هي:** يمر تسرب ضوء دافئ عبر كل قطعة قسم (باتجاه متناوب) بدل الوميض المسطح. — A warm light leak drifts across each section cut (alternating direction) instead of a flat flash.
 
 **متى:** عند الرغبة في تسرب ضوئي دافئ يعبر الكادر عند قطع الأقسام بدل الوميض الأبيض / for a warm light leak drifting across section cuts instead of a flat white flash
 
@@ -26776,7 +26777,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-404` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26822,7 +26823,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cover silence or abstract explanation with supporting footage or a 3D insert dissolved in over the A-roll.
+**ما هي:** غطِّ الصمت أو الشرح المجرد بلقطات داعمة أو إدراج ثلاثي الأبعاد يذوب فوق A-roll. — Cover silence or abstract explanation with supporting footage or a 3D insert dissolved in over the A-roll.
 
 **متى:** حين يلزم تغطية صمت أو شرح مجرد بلقطات مساندة تذوب فوق اللقطة الأساسية / when silence or an abstract explanation needs supporting B-roll dissolved over the main footage
 
@@ -26852,7 +26853,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-405` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26900,7 +26901,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** About half of beat changes are hard cuts on the grid; the rest ride camera moves, morphs, match cuts, floods or 1-2 f blends; 6-8 transition types per film each <= 2 uses plus one signature move at open, middle and close.
+**ما هي:** نحو نصف تغييرات الإيقاع قطعات حادة على الشبكة؛ والباقي يركب حركات الكاميرا أو التحولات أو القطعات المطابقة أو الغمر أو مزج 1-2 إطار؛ 6-8 أنواع انتقال لكل فيلم، كل منها ≤2 استخدام، مع حركة مميزة واحدة في الافتتاح والمنتصف والختام. — About half of beat changes are hard cuts on the grid; the rest ride camera moves, morphs, match cuts, floods or 1-2 f blends; 6-8 transition types per film each <= 2 uses plus one signature move at open, middle and close.
 
 **متى:** عند تخطيط انتقالات فيلم كامل: نصفها تقريبًا قطع حاد على الشبكة والباقي حركة كاميرا أو تحول / for planning a film's transitions: about half hard cuts on the grid, the rest camera moves, morphs or match cuts
 
@@ -26928,7 +26929,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-406` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26974,7 +26975,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each transition carries meaning; max two transition types per film.
+**ما هي:** لكل انتقال معنى؛ بحد أقصى نوعا انتقال في الفيلم. — Each transition carries meaning; max two transition types per film.
 
 **متى:** حين يريد المستخدم أن يحمل كل انتقال معنى مع الاكتفاء بنوعين فقط في الفيلم / when each transition should carry meaning and the film should use no more than two types
 
@@ -27004,7 +27005,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-407` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27050,7 +27051,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'push': push slide, vertical push, elastic push, squeeze.
+**ما هي:** عائلة انتقالات HTML/GSAP «push»: دفع انزلاقي، دفع عمودي، دفع مرن، ضغط. — HTML/GSAP transition family 'push': push slide, vertical push, elastic push, squeeze.
 
 **متى:** عند بناء انتقال دفع بين مشاهد HTML، أفقي أو عمودي أو مرن أو بالضغط / for building a push transition between HTML scenes: slide, vertical, elastic or squeeze
 
@@ -27078,7 +27079,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-408` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27124,7 +27125,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'radial': circle iris, diamond iris, diagonal split.
+**ما هي:** عائلة انتقالات HTML/GSAP «radial»: قزحية دائرية، قزحية ماسية، انقسام قطري. — HTML/GSAP transition family 'radial': circle iris, diamond iris, diagonal split.
 
 **متى:** حين يريد المستخدم كشفًا دائريًا أو بمعين أو شقًا قطريًا بين مشاهد HTML / when the user wants a circle or diamond iris or a diagonal split between HTML scenes
 
@@ -27152,7 +27153,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-409` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27198,7 +27199,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Noise-edged burning hole eats the frame; next scene fades from black at ~90%.
+**ما هي:** ثقب محترق بحواف مشوشة يلتهم الإطار؛ ويظهر المشهد التالي من الأسود عند نحو 90%. — Noise-edged burning hole eats the frame; next scene fades from black at ~90%.
 
 **متى:** حين تريد أن تأكل فتحة محترقة بحواف متعرجة الكادر ثم يظهر المشهد التالي من الأسود / when a noise-edged burning hole should eat the frame before the next scene fades in from black
 
@@ -27226,7 +27227,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27271,7 +27272,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family '3D': card flip.
+**ما هي:** عائلة انتقالات HTML/GSAP «3D»: قلب البطاقة. — HTML/GSAP transition family '3D': card flip.
 
 **متى:** عند الانتقال بين مشهدين بقلب البطاقة ثلاثي الأبعاد في HTML / for switching HTML scenes with a 3D card flip
 
@@ -27299,7 +27300,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-410` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27345,7 +27346,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'scale': zoom through, zoom out.
+**ما هي:** عائلة انتقالات HTML/GSAP «scale»: اختراق بالتقريب، تبعيد. — HTML/GSAP transition family 'scale': zoom through, zoom out.
 
 **متى:** حين يريد المستخدم الانتقال بالتكبير عبر المشهد أو بالتصغير منه في مشاهد HTML / when the user wants a zoom-through or zoom-out transition between HTML scenes
 
@@ -27373,7 +27374,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-411` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27419,7 +27420,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'dissolve': crossfade, blur crossfade, focus pull, color dip.
+**ما هي:** عائلة انتقالات HTML/GSAP «dissolve»: تلاشٍ متقاطع، تلاشٍ متقاطع مع ضبابية، سحب التركيز، غمس لوني. — HTML/GSAP transition family 'dissolve': crossfade, blur crossfade, focus pull, color dip.
 
 **متى:** عند الحاجة لانتقال ناعم بين مشاهد HTML بالمزج أو الضبابية أو سحب التركيز أو الغمس في لون / for a soft HTML scene change via crossfade, blur, focus pull or colour dip
 
@@ -27447,7 +27448,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-412` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27493,7 +27494,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'cover': staggered blocks, horizontal blinds, vertical blinds.
+**ما هي:** عائلة انتقالات HTML/GSAP «cover»: كتل متتابعة، ستائر أفقية، ستائر عمودية. — HTML/GSAP transition family 'cover': staggered blocks, horizontal blinds, vertical blinds.
 
 **متى:** حين يريد المستخدم تغطية المشهد بكتل متتابعة أو ستائر أفقية أو عمودية قبل التالي / when the user wants staggered blocks or horizontal/vertical blinds to cover a scene before the next
 
@@ -27521,7 +27522,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-413` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27567,7 +27568,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'light': light leak, overexposure burn, film burn.
+**ما هي:** عائلة انتقالات HTML/GSAP «light»: تسرب ضوئي، حرق بالتعريض الزائد، حرق الفيلم. — HTML/GSAP transition family 'light': light leak, overexposure burn, film burn.
 
 **متى:** عند الانتقال بالضوء: تسرب ضوئي أو احتراق بالتعريض الزائد أو احتراق الفيلم / for light-based scene changes: light leak, overexposure burn or film burn
 
@@ -27595,7 +27596,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-414` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27641,7 +27642,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'distortion': glitch, chromatic aberration, ripple, VHS.
+**ما هي:** عائلة انتقالات HTML/GSAP «distortion»: غليتش، زيغ لوني، تموج، VHS. — HTML/GSAP transition family 'distortion': glitch, chromatic aberration, ripple, VHS.
 
 **متى:** حين يطلب المستخدم انتقالًا بتشويه مثل الجليتش أو انحراف الألوان أو التموج أو VHS بين مشاهد HTML / when the user asks for a distortion change like glitch, chromatic aberration, ripple or VHS between HTML scenes
 
@@ -27669,7 +27670,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-415` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27715,7 +27716,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'mechanical': shutter, clock wipe.
+**ما هي:** عائلة انتقالات HTML/GSAP «mechanical»: مصراع، مسح كعقرب الساعة. — HTML/GSAP transition family 'mechanical': shutter, clock wipe.
 
 **متى:** عند الحاجة لانتقال آلي الطابع مثل الغالق أو المسح الدوار كعقارب الساعة / for a mechanical-feel transition such as a shutter or a clock wipe
 
@@ -27743,7 +27744,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-416` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27789,7 +27790,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'grid': grid dissolve.
+**ما هي:** عائلة انتقالات HTML/GSAP «grid»: تحلل شبكي. — HTML/GSAP transition family 'grid': grid dissolve.
 
 **متى:** حين يريد المستخدم أن يذوب المشهد عبر شبكة خلايا قبل ظهور التالي / when the user wants a scene to dissolve through a grid of cells into the next one
 
@@ -27817,7 +27818,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-417` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27863,7 +27864,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HTML/GSAP transition family 'other': gravity drop, morph circle, blur through, page burn.
+**ما هي:** عائلة انتقالات HTML/GSAP «other»: سقوط بالجاذبية، دائرة متحولة، عبور بالضبابية، احتراق الصفحة. — HTML/GSAP transition family 'other': gravity drop, morph circle, blur through, page burn.
 
 **متى:** عند البحث عن انتقالات أخرى كسقوط المشهد بالجاذبية أو تحول دائرة أو حرق الصفحة / for other transitions such as a gravity drop, morphing circle, blur-through or page burn
 
@@ -27891,7 +27892,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-418` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27937,7 +27938,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Full-frame block overlays; RGB glitch at 35% normal blend not multiply; light leak >=2400px with no visible shape; VHS clones real scene + red/blue copies, seeded noise; page burn hides via tl.set and clipPath:none on return; clock wipe = 9-point polygon, 4 tweens; blinds by energy (calm 4H/6V, mid …
+**ما هي:** طبقات كتل بملء الإطار؛ غليتش RGB بمزج عادي 35% لا ضرب؛ تسرب ضوء ≥2400px بلا شكل ظاهر؛ VHS يستنسخ المشهد الحقيقي مع نسختين حمراء وزرقاء وضوضاء ببذرة؛ احتراق الصفحة يخفي عبر tl.set وclipPath:none عند العودة؛ مسح عقرب الساعة = مضلع بـ 9 نقاط و4 تحريكات؛ والستائر بحسب الطاقة (هادئ 4 أفقية/6 عمودية، متوسط … — Full-frame block overlays; RGB glitch at 35% normal blend not multiply; light leak >=2400px with no visible shape; VHS clones real scene + red/blue copies, seeded noise; page burn hides via tl.set and clipPath:none on return; clock wipe = 9-point polygon, 4 tweens; blinds by energy (calm 4H/6V, mid …
 
 **متى:** عند تنفيذ انتقالات HTML والحاجة لقواعد صارمة للجليتش والتسرب الضوئي والستائر وحرق الصفحة / when building HTML transitions and needing strict rules for glitch, light leak, blinds and page burn
 
@@ -27967,7 +27968,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-419` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28013,7 +28014,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Tinted R/G/B copies jitter with large offsets for a few frames.
+**ما هي:** نسخ ملونة R/G/B ترتجف بإزاحات كبيرة لبضعة إطارات. — Tinted R/G/B copies jitter with large offsets for a few frames.
 
 **متى:** حين تريد انتقال غليتش سريعًا بنسخ ألوان RGB مهتزة لبضع إطارات / for a quick glitch transition with jittering tinted RGB copies for a few frames
 
@@ -28041,7 +28042,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28086,7 +28087,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Remotion transitions shorten total duration (60+60-15=105); overlays don't.
+**ما هي:** تقصّر انتقالات Remotion المدة الإجمالية (60+60-15=105)؛ أما التراكبات فلا. — Remotion transitions shorten total duration (60+60-15=105); overlays don't.
 
 **متى:** حين يضيف المستخدم انتقالات في Remotion مثل التلاشي أو الانزلاق أو المسح ويحتاج حساب المدة الكلية / when adding Remotion transitions like fade, slide or wipe and accounting for the shortened total duration
 
@@ -28116,7 +28117,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-420` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28162,7 +28163,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Crossfade = continues, hard cut = wake up, slow dissolve = drift; don't dissolve everything.
+**ما هي:** التقاطع = يواصل، القطع الحاد = يوقظ، الذوبان البطيء = ينجرف؛ ولا تُذِب كل شيء. — Crossfade = continues, hard cut = wake up, slow dissolve = drift; don't dissolve everything.
 
 **متى:** عند اختيار الانتقال حسب نية السرد: المزج للاستمرار والقطع الحاد للتنبيه والذوبان البطيء للانسياب / for picking transitions by narrative intent: crossfade continues, hard cut wakes up, slow dissolve drifts
 
@@ -28190,7 +28191,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-421` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28235,7 +28236,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One object inherits through every scene; incoming scene visible while outgoing still 25-50%; no fade-to-empty.
+**ما هي:** جسم واحد يورَّث عبر كل مشهد؛ يبقى المشهد الداخل مرئيًا بينما الخارج ما يزال 25-50%؛ بلا تلاشٍ إلى الفراغ. — One object inherits through every scene; incoming scene visible while outgoing still 25-50%; no fade-to-empty.
 
 **متى:** حين يريد المستخدم جسمًا واحدًا ينتقل عبر كل المشاهد مع ظهور المشهد الجديد قبل خروج القديم / when one object should carry through every scene, with the next scene visible before the old one leaves
 
@@ -28265,7 +28266,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-422` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28310,7 +28311,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Hard cut for change, fade/dissolve for continuity; no more than 2 transition types.
+**ما هي:** قطع حاد للتغيير، وتلاشٍ/ذوبان للاستمرارية؛ وبما لا يزيد عن نوعي انتقال. — Hard cut for change, fade/dissolve for continuity; no more than 2 transition types.
 
 **متى:** عند تبسيط المونتاج بقطع حاد للتغيير ومزج للاستمرار دون أكثر من نوعين / for keeping edits simple: hard cut for change, fade for continuity, no more than two types
 
@@ -28338,7 +28339,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-423` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28384,7 +28385,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** How beat changes are carried in top films.
+**ما هي:** كيف تُحمَل تغييرات الإيقاع في أفضل الأفلام. — How beat changes are carried in top films.
 
 **متى:** حين يسأل المستخدم كيف تنتقل الأفلام المتميزة بين المقاطع: قطع حاد على الشبكة وأنواع انتقال محدودة / when asking how top films carry beat changes: mostly hard cuts on the grid and few transition types
 
@@ -28414,7 +28415,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-424` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28459,7 +28460,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (cut); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (cut)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (cut); implemented per film in the starter scene code.
 
 **متى:** عند كتابة خطة الفيلم وتسمية قطع مباشر في جدول الانتقالات بمدته ومنحناه / for declaring a plain cut in the film PLAN transitions table with its duration and curve
 
@@ -28487,7 +28488,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-425` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28532,7 +28533,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (wipe); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (wipe)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (wipe); implemented per film in the starter scene code.
 
 **متى:** عند تحديد انتقال مسح في جدول انتقالات خطة الفيلم بمدته ومنحناه / for declaring a wipe in the film PLAN transitions table with its duration and curve
 
@@ -28560,7 +28561,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-426` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28605,7 +28606,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (morph); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (morph)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (morph); implemented per film in the starter scene code.
 
 **متى:** عند تحديد انتقال بالتحول بين الأشكال في جدول انتقالات خطة الفيلم / for declaring a morph transition in the film PLAN transitions table
 
@@ -28633,7 +28634,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-427` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28678,7 +28679,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (mask-reveal); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (mask-reveal)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (mask-reveal); implemented per film in the starter scene code.
 
 **متى:** عند تحديد انتقال يكشف المشهد عبر قناع في جدول انتقالات خطة الفيلم / for declaring a mask-reveal transition in the film PLAN transitions table
 
@@ -28706,7 +28707,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-428` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28751,7 +28752,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (zoom-through); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (zoom-through)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (zoom-through); implemented per film in the starter scene code.
 
 **متى:** عند تحديد انتقال بالعبور خلال تكبير في جدول انتقالات خطة الفيلم / for declaring a zoom-through transition in the film PLAN transitions table
 
@@ -28779,7 +28780,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-429` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28824,7 +28825,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** RGB layers spread ±80px, scene fades, converge onto new scene.
+**ما هي:** تتباعد طبقات RGB بمقدار ±80px ويتلاشى المشهد ثم تتجمع على المشهد الجديد. — RGB layers spread ±80px, scene fades, converge onto new scene.
 
 **متى:** حين تريد أن تنفصل طبقات الألوان ثم تلتقي على المشهد الجديد كانتقال / when RGB layers should spread apart then converge onto the new scene as a transition
 
@@ -28854,7 +28855,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28900,7 +28901,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (match-cut); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (match-cut)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (match-cut); implemented per film in the starter scene code.
 
 **متى:** عند تحديد قطع مطابق بين لقطتين في جدول انتقالات خطة الفيلم / for declaring a match cut between two shots in the film PLAN transitions table
 
@@ -28928,7 +28929,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-430` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28973,7 +28974,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Named transition in the PLAN vocabulary (dissolve); implemented per film in the starter scene code.
+**ما هي:** انتقال مسمّى في مفردات PLAN (dissolve)؛ يُنفَّذ لكل فيلم في شيفرة المشهد الابتدائية. — Named transition in the PLAN vocabulary (dissolve); implemented per film in the starter scene code.
 
 **متى:** عند تحديد انتقال بالذوبان بين مشهدين في جدول انتقالات خطة الفيلم / for declaring a dissolve between scenes in the film PLAN transitions table
 
@@ -29001,7 +29002,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-431` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29046,7 +29047,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Split-screen wipe from before to after with a saved-hours counter.
+**ما هي:** مسح بشاشة مقسومة من قبل إلى بعد مع عداد ساعات موفَّرة. — Split-screen wipe from before to after with a saved-hours counter.
 
 **متى:** حين يريد المستخدم مقارنة قبل وبعد بمسح مقسوم مع عداد للساعات الموفرة / when the user wants a before/after split-screen wipe with a saved-hours counter
 
@@ -29076,7 +29077,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-432` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29121,7 +29122,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Pencil sketch of UI crossfades into real screenshot at same geometry.
+**ما هي:** رسم قلم رصاص للواجهة يتقاطع تلاشيًا مع لقطة شاشة حقيقية بالهندسة نفسها. — Pencil sketch of UI crossfades into real screenshot at same geometry.
 
 **متى:** عند تحويل رسم أولي بالقلم لواجهة إلى لقطة شاشة حقيقية في نفس المكان / for crossfading a pencil sketch of a UI into the real screenshot at the same geometry
 
@@ -29151,7 +29152,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-433` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29196,7 +29197,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Cut on beat or one frame before; never 2+ frames late.
+**ما هي:** اقطع على الإيقاع أو قبله بإطار واحد؛ ولا تتأخر أبدًا إطارين أو أكثر. — Cut on beat or one frame before; never 2+ frames late.
 
 **متى:** حين يقطع المستخدم على إيقاع الموسيقى ويريد ضبط القطع على الضربة أو قبلها بإطار / when cutting to music and timing each cut on the beat or one frame before
 
@@ -29226,7 +29227,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-434` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29271,7 +29272,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Hero shape survives every transition changing role (button→card→screen) through morph and scale.
+**ما هي:** الشكل البطل ينجو من كل انتقال ويغيّر دوره (زر ← بطاقة ← شاشة) عبر التحول والتحجيم. — Hero shape survives every transition changing role (button→card→screen) through morph and scale.
 
 **متى:** عند الرغبة في شكل بطل واحد يعبر كل الانتقالات ويتغير دوره من زر إلى بطاقة إلى شاشة / for one hero shape that survives every transition, changing role from button to card to screen
 
@@ -29299,7 +29300,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-435` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29344,7 +29345,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Circle mask grows from hero shape revealing next scene.
+**ما هي:** قناع دائري ينمو من الشكل البطل كاشفًا المشهد التالي. — Circle mask grows from hero shape revealing next scene.
 
 **متى:** حين يريد المستخدم أن تتسع دائرة من الشكل الرئيسي لتكشف المشهد التالي / when the user wants a circle mask to grow from the hero shape and reveal the next scene
 
@@ -29374,7 +29375,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-436` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29419,7 +29420,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Incoming screen travels full width from inline-end; outgoing parallax and dim.
+**ما هي:** تنتقل الشاشة الداخلة بعرضها الكامل من الجهة الداخلية؛ وتتحرك الخارجة بتأثير بارالاكس وتخفت. — Incoming screen travels full width from inline-end; outgoing parallax and dim.
 
 **متى:** عند تحريك شاشات تطبيق بدفع الشاشة الجديدة من الجانب أو إظهار لوحة منبثقة من الأسفل / for app-screen pushes from the side or a modal sheet sliding up
 
@@ -29449,7 +29450,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-437` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29494,7 +29495,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Feathered wipes with mask leading the photo; shape masks grow with counter-scaling content.
+**ما هي:** مسحات مريّشة يتقدم فيها القناع الصورة؛ وأقنعة أشكال تنمو مع محتوى معاكس التحجيم. — Feathered wipes with mask leading the photo; shape masks grow with counter-scaling content.
 
 **متى:** حين يريد المستخدم كشف الصور بمسح ناعم الحواف أو أقنعة أشكال تتسع مع تحجيم المحتوى / when photos should reveal through feathered wipes or growing shape masks with counter-scaling content
 
@@ -29524,7 +29525,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-438` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29570,7 +29571,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Outline traces subject, photo fades, vector fill arrives.
+**ما هي:** يرسم المحيط الموضوع، وتخبو الصورة، ثم يصل التعبئة المتجهية. — Outline traces subject, photo fades, vector fill arrives.
 
 **متى:** عند تحويل صورة إلى رسم: خط يحدد الموضوع ثم تختفي الصورة وتظهر تعبئة متجهية / for turning a photo into a graphic: an outline traces the subject, the photo fades, a vector fill arrives
 
@@ -29600,7 +29601,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-439` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29646,7 +29647,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Rapid ±30px oscillation with 0.97-1.03 scale and rising blur; or 20 clip-path strips of 54px shifting randomly.
+**ما هي:** تذبذب سريع ±30px مع تكبير 0.97-1.03 وضبابية متزايدة؛ أو 20 شريحة clip-path بعرض 54px تتزحزح عشوائيًا. — Rapid ±30px oscillation with 0.97-1.03 scale and rising blur; or 20 clip-path strips of 54px shifting randomly.
 
 **متى:** حين تريد انتقالًا متموجًا مهتزًا أو شرائط بطابع VHS تتحرك عشوائيًا / for a rippling shake transition or VHS-style strips shifting randomly
 
@@ -29674,7 +29675,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29720,7 +29721,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Brief white/black frame between scenes for chaotic tone.
+**ما هي:** إطار أبيض/أسود وجيز بين المشاهد لنبرة فوضوية. — Brief white/black frame between scenes for chaotic tone.
 
 **متى:** حين يريد المستخدم نبرة فوضوية بإطار أبيض أو أسود قصير بين المشاهد / when the user wants a chaotic tone with a brief white or black frame between scenes
 
@@ -29750,7 +29751,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-440` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29795,7 +29796,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Scene enters at scale 1.2 settling to 1.0.
+**ما هي:** يدخل المشهد بتحجيم 1.2 ويستقر على 1.0. — Scene enters at scale 1.2 settling to 1.0.
 
 **متى:** عند دخول المشهد بتكبير خفيف يستقر إلى الحجم الطبيعي / for a scene entrance that starts slightly scaled up and settles to normal size
 
@@ -29825,7 +29826,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-441` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29870,7 +29871,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Crossfade while incoming scene grows 0.95->1.0 (cinematic).
+**ما هي:** تقاطع تلاشٍ بينما يتكبر المشهد الداخل من 0.95 إلى 1.0 (سينمائي). — Crossfade while incoming scene grows 0.95->1.0 (cinematic).
 
 **متى:** حين يريد المستخدم مزجًا سينمائيًا يكبر فيه المشهد الداخل قليلًا أثناء التلاشي / when the user wants a cinematic crossfade with the incoming scene gently growing
 
@@ -29900,7 +29901,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-442` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29945,7 +29946,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** The scroll-story vocabulary maps directly onto video transitions between chart states.
+**ما هي:** مفردات السرد بالتمرير تقابل مباشرة انتقالات الفيديو بين حالات الرسم البياني. — The scroll-story vocabulary maps directly onto video transitions between chart states.
 
 **متى:** عند تحويل أساليب القصص بالتمرير إلى حركات فيديو بين حالات الرسم البياني / for turning scrollytelling moves into video transitions between chart states
 
@@ -29973,7 +29974,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-443` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30018,7 +30019,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Page turn using a paper-curl mask with rustle.
+**ما هي:** قلب صفحة بقناع التفاف ورقة مع حفيف. — Page turn using a paper-curl mask with rustle.
 
 **متى:** حين يطلب المستخدم انتقالًا بقلب صفحة ملتفة كالورق مع صوت حفيف / when the user asks for a page-turn transition with a paper curl and rustle sound
 
@@ -30046,7 +30047,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-444` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30091,7 +30092,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Cuts land exactly on beats, optional 2-frame hold, no flash frames.
+**ما هي:** تقع القطعات تمامًا على الإيقاعات، مع تثبيت اختياري لإطارين، وبلا إطارات وميض. — Cuts land exactly on beats, optional 2-frame hold, no flash frames.
 
 **متى:** عند المونتاج على موسيقى 120 نبضة بالدقيقة وحساب إطارات القطع لتقع على الضربات بدقة / for editing to 120 BPM music and computing cut frames so they land exactly on beats
 
@@ -30121,7 +30122,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-445` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30166,7 +30167,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Theme reskin radiates from a centre point per beat.
+**ما هي:** إعادة تغليف السمة تشع من نقطة مركزية عند كل إيقاع. — Theme reskin radiates from a centre point per beat.
 
 **متى:** حين يريد المستخدم تبديل ثيم التصميم بمسح دائري ينتشر من نقطة مع كل ضربة / when the user wants a theme reskin that radiates from a centre point on each beat
 
@@ -30196,7 +30197,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-446` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30241,7 +30242,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Only cross-dissolves; device stays in central third of 720x1280.
+**ما هي:** تقاطع ذوبان فقط؛ ويبقى الجهاز في الثلث المركزي من 720x1280. — Only cross-dissolves; device stays in central third of 720x1280.
 
 **متى:** عند فيديو عمودي بانتقالات مزج فقط مع إبقاء الجهاز في الثلث الأوسط من الكادر / for a vertical video that uses only cross-dissolves and keeps the device in the central third
 
@@ -30271,7 +30272,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-447` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30316,7 +30317,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Continuous camera; element fills frame and becomes next background.
+**ما هي:** كاميرا متصلة؛ العنصر يملأ الإطار ويصير الخلفية التالية. — Continuous camera; element fills frame and becomes next background.
 
 **متى:** حين يريد المستخدم لقطة واحدة متصلة يكبر فيها عنصر حتى يملأ الكادر ويصبح خلفية المشهد التالي / when the user wants a one-take feel where an element fills the frame and becomes the next background
 
@@ -30346,7 +30347,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-448` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30391,7 +30392,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Claims slide in on alternating axes through masks.
+**ما هي:** تنزلق الادعاءات على محاور متناوبة عبر الأقنعة. — Claims slide in on alternating axes through masks.
 
 **متى:** عند إظهار عبارات أو ادعاءات تنزلق من خلف أقنعة على محاور متبادلة / for claims or lines that slide in through masks on alternating axes
 
@@ -30419,7 +30420,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-449` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30464,7 +30465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** 180° Y flip between scenes.
+**ما هي:** قلب 180° حول المحور Y بين المشهدين. — 180° Y flip between scenes.
 
 **متى:** حين تريد قلب المشهد كبطاقة بدوران 180 درجة للانتقال إلى المشهد التالي / when flipping between scenes like a card with a 180-degree Y-axis rotation
 
@@ -30492,7 +30493,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30537,7 +30538,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Hard/match cuts on beat; any dissolve ≤150 ms; accent ≤10% frame, swaps per chapter.
+**ما هي:** قطعات حادة/مطابقة على الإيقاع؛ وأي ذوبان ≤150 ms؛ والتمييز ≤10% من الإطار، ويتبدل لكل فصل. — Hard/match cuts on beat; any dissolve ≤150 ms; accent ≤10% frame, swaps per chapter.
 
 **متى:** حين يريد المستخدم قطعًا حادة أو مطابقة على الإيقاع مع حد أقصى قصير للمزج / when the user wants hard or match cuts on beat with any dissolve capped very short
 
@@ -30567,7 +30568,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-450` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30612,7 +30613,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Vertical wipe line reveals AI twin; preset swaps with scale pop.
+**ما هي:** خط مسح عمودي يكشف التوأم المولَّد بالذكاء الاصطناعي؛ وتتبدل الإعدادات المسبقة بنبضة تحجيم. — Vertical wipe line reveals AI twin; preset swaps with scale pop.
 
 **متى:** عند مقارنة قبل وبعد بخط مسح عمودي يكشف النسخة المولدة بالذكاء الاصطناعي / for a before/after compare where a vertical wipe line reveals the AI twin, with preset swaps popping in
 
@@ -30642,7 +30643,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-451` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30687,7 +30688,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Dolly then 200 ms dark dip resets camera.
+**ما هي:** حركة دولي ثم غطسة معتمة 200 ms تعيد ضبط الكاميرا. — Dolly then 200 ms dark dip resets camera.
 
 **متى:** حين يلزم إعادة ضبط الكاميرا بعد حركة دولي عبر غمسة مظلمة قصيرة / when the camera needs a reset after a dolly through a short dark dip
 
@@ -30717,7 +30718,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-452` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30762,7 +30763,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Cut on every beat in drops, every second beat elsewhere.
+**ما هي:** قطع على كل إيقاع في الإسقاطات، وعلى كل إيقاع ثانٍ في غيرها. — Cut on every beat in drops, every second beat elsewhere.
 
 **متى:** عند مونتاج سريع يقطع على كل ضربة في الذروة وعلى كل ضربتين في غيرها / for fast edits that cut on every beat in drops and every second beat elsewhere
 
@@ -30792,7 +30793,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-453` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30838,7 +30839,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Last element of a scene reshapes into the next scene's first.
+**ما هي:** آخر عنصر في المشهد يعيد تشكله إلى أول عنصر في المشهد التالي. — Last element of a scene reshapes into the next scene's first.
 
 **متى:** حين يريد المستخدم أن يتحول آخر عنصر في المشهد إلى أول عنصر في التالي دون قطع / when the user wants the last element of a scene to reshape into the next scene's first, with no hard cut
 
@@ -30868,7 +30869,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-454` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30914,7 +30915,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Fast whip with directional blur and arrival hold.
+**ما هي:** سحب سريع بتمويه اتجاهي وتثبيت عند الوصول. — Fast whip with directional blur and arrival hold.
 
 **متى:** عند الحاجة لسحبة كاميرا سريعة جدًا بضبابية اتجاهية وثبات قصير عند الوصول / for a very fast whip pan with directional blur and a short hold on arrival
 
@@ -30944,7 +30945,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-455` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30989,7 +30990,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Stacked colour layers blend via vertical gradient collapsing to flat.
+**ما هي:** طبقات ألوان مكدسة تمتزج عبر تدرج عمودي ينهار إلى لون مسطح. — Stacked colour layers blend via vertical gradient collapsing to flat.
 
 **متى:** حين يريد المستخدم مزج طبقات ألوان مكدسة عبر تدرج عمودي ينهار إلى لون مسطح / when the user wants stacked colour layers to blend through a vertical gradient collapsing to flat
 
@@ -31019,7 +31020,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-456` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31064,7 +31065,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Baseline->rail, letters->bars, outline->blob.
+**ما هي:** خط الأساس ← قضيب، حروف ← أعمدة، محيط ← بقعة. — Baseline->rail, letters->bars, outline->blob.
 
 **متى:** عند الانتقال بين الفصول بتحويل العناصر، كخط الأساس إلى سكة أو الحروف إلى أعمدة / for chapter changes where elements morph: baseline to rail, letters to bars, outline to blob
 
@@ -31094,7 +31095,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-457` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31139,7 +31140,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** push 3-6%, orbit <=8°
+**ما هي:** دفع 3-6%، مدار ≤8° — push 3-6%, orbit <=8°
 
 **متى:** حين يريد المستخدم فيديو بلا قطع مباشر يعتمد على التحول ومسح القناع والعبور بالتكبير / when the user wants a cut-free piece using only morphs, mask wipes and scale-throughs
 
@@ -31167,7 +31168,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-458` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31212,7 +31213,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** link->card->dashboard->link.
+**ما هي:** رابط ← بطاقة ← لوحة معلومات ← رابط. — link->card->dashboard->link.
 
 **متى:** عند تحويل حاوية واحدة في حلقة من رابط إلى بطاقة إلى لوحة تحكم ثم إلى رابط / for one container morphing in a loop: link to card to dashboard and back to link
 
@@ -31242,7 +31243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-459` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31287,7 +31288,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Outgoing text accelerates out with blur, incoming decelerates in from blur, reading as one motion.
+**ما هي:** يخرج النص الصادر متسارعًا مع ضبابية ويدخل الوارد متباطئًا من الضبابية، فيُقرأ كحركة واحدة. — Outgoing text accelerates out with blur, incoming decelerates in from blur, reading as one motion.
 
 **متى:** حين تريد أن يخرج نص ويدخل نص آخر بضبابية وسرعة متطابقة كأنها حركة واحدة / when outgoing and incoming text should swap with matched blur and speed as one motion
 
@@ -31317,7 +31318,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31362,7 +31363,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** 20 px up, 400 ms
+**ما هي:** 20 px للأعلى، 400 ms — 20 px up, 400 ms
 
 **متى:** حين يريد المستخدم انتقالًا هادئًا ينزلق فيه المحتوى قليلًا للأعلى مع التلاشي / when the user wants a gentle transition where content slides slightly up while fading
 
@@ -31390,7 +31391,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-460` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31435,7 +31436,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Minimal 5px rise for whole views and a 10px slide-up for toasts.
+**ما هي:** ارتفاع طفيف 5px للشاشات كاملة وانزلاق للأعلى 10px للإشعارات. — Minimal 5px rise for whole views and a 10px slide-up for toasts.
 
 **متى:** حين تحتاج دخولًا بسيطًا للشاشات وانزلاقًا خفيفًا للإشعارات في الواجهة / for a minimal rise-in for whole views and a small slide-up for toast notifications
 
@@ -31465,7 +31466,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31511,7 +31512,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Quick partial-opacity rise when switching workspace tabs, skipped on overview.
+**ما هي:** ارتفاع سريع بشفافية جزئية عند تبديل تبويبات مساحة العمل، ويُتخطى في النظرة العامة. — Quick partial-opacity rise when switching workspace tabs, skipped on overview.
 
 **متى:** حين يتنقل المستخدم بين تبويبات مساحة العمل ويجب أن يظهر المحتوى بارتفاع سريع خفيف / when switching workspace tabs and content should rise in quickly with partial opacity
 
@@ -31541,7 +31542,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31586,7 +31587,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Content swap for a side detail: vertical variant rises 6px with tiny scale, horizontal variant slides 8px in from the inline side.
+**ما هي:** تبديل المحتوى للوحة تفاصيل جانبية: النسخة العمودية ترتفع 6px مع تكبير طفيف، والأفقية تنزلق 8px من الجهة الداخلية. — Content swap for a side detail: vertical variant rises 6px with tiny scale, horizontal variant slides 8px in from the inline side.
 
 **متى:** حين يتغير محتوى لوحة التفاصيل الجانبية ويحتاج تبديلًا بارتفاع أو انزلاق خفيف / when side detail panel content swaps with a small rise or inline slide
 
@@ -31616,7 +31617,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31662,7 +31663,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Expanded request details drop in from 5px above on phones.
+**ما هي:** تنزل تفاصيل الطلب الموسّعة من ارتفاع 5px على الهواتف. — Expanded request details drop in from 5px above on phones.
 
 **متى:** حين تتوسع تفاصيل صف على شاشة الجوال ويجب أن تنزل بنعومة من أعلى / when expanded row details on phones should drop in gently from above
 
@@ -31692,7 +31693,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31737,7 +31738,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Pure-CSS accordion: the ::details-content pseudo animates block-size from 0 to auto (enabled by interpolate-size) while a +/- badge flips 180deg on a spring.
+**ما هي:** أكورديون بـ CSS فقط: يحرّك العنصر الزائف ::details-content الخاصية block-size من 0 إلى auto (بفضل interpolate-size) بينما تنقلب شارة +/- بمقدار 180deg على نابض. — Pure-CSS accordion: the ::details-content pseudo animates block-size from 0 to auto (enabled by interpolate-size) while a +/- badge flips 180deg on a spring.
 
 **متى:** حين تريد أكورديون بـ CSS فقط يفتح ويغلق بارتفاع متحرك لعنصر details / for a pure-CSS accordion whose native details element animates its height open and closed
 
@@ -31767,7 +31768,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31814,7 +31815,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A full-frame accent colour floods from a point (one per film), already opening on its cue.
+**ما هي:** لون تمييز يغمر الإطار كاملًا من نقطة (مرة واحدة في الفيلم)، ويكون مفتوحًا بالفعل عند إشارته. — A full-frame accent colour floods from a point (one per film), already opening on its cue.
 
 **متى:** حين تريد مسحًا بلون كامل يغمر الكادر من نقطة عند لحظة محددة مرة في الفيلم / for a full-frame accent colour wipe flooding from a point on its cue, once per film
 
@@ -31844,7 +31845,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31889,7 +31890,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Front-loaded rotationX flip into place with perspective on the parent.
+**ما هي:** قلب rotationX مُحمَّل في البداية يستقر في مكانه مع perspective على العنصر الأب. — Front-loaded rotationX flip into place with perspective on the parent.
 
 **متى:** حين تريد أن يدخل عنصر بدوران سريع على المحور الأفقي مع منظور ثلاثي الأبعاد / when an element should roll into place with a fast rotationX flip in perspective
 
@@ -31919,7 +31920,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -31964,7 +31965,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** An SVG Gaussian blur on one axis that swells and fades over a fast move.
+**ما هي:** ضبابية SVG غاوسية على محور واحد تتضخم وتخبو خلال حركة سريعة. — An SVG Gaussian blur on one axis that swells and fades over a fast move.
 
 **متى:** حين تحتاج حركة سريعة إلى ضبابية في اتجاه واحد تتصاعد ثم تخبو / when a fast move needs one-axis motion blur that swells and fades
 
@@ -31994,7 +31995,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32039,7 +32040,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** RGB-split drop shadows plus random horizontal slices, seeded, returning clean.
+**ما هي:** ظلال RGB منفصلة مع شرائح أفقية عشوائية بذرة ثابتة، ثم يعود الإطار نظيفًا. — RGB-split drop shadows plus random horizontal slices, seeded, returning clean.
 
 **متى:** حين تريد تشويشًا رقميًا قصيرًا بانقسام الألوان وشرائح أفقية يعود بعده العنصر نظيفًا / for a short digital glitch with RGB split and horizontal slices that returns clean
 
@@ -32069,7 +32070,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32114,7 +32115,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One deterministic post pass: chroma split, slice displacement on 24 bands, negative tear, cold silver freeze monochrome, tape warp.
+**ما هي:** تمريرة معالجة لاحقة حتمية واحدة: انفصال كروما، إزاحة شرائح على 24 نطاقًا، تمزق سالب، تجميد فضي بارد أحادي اللون، التواء شريط. — One deterministic post pass: chroma split, slice displacement on 24 bands, negative tear, cold silver freeze monochrome, tape warp.
 
 **متى:** حين يحتاج مشهد ثلاثي الأبعاد مرحلة غليتش لاحقة بانقسام لوني وتمزق وتجميد أحادي اللون / when a 3D scene needs a glitch post pass with chroma split, tear, mono freeze and tape warp
 
@@ -32144,7 +32145,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32189,7 +32190,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A shot list becomes one camera function with hard cuts; each move starts at its cut.
+**ما هي:** تتحول قائمة اللقطات إلى دالة كاميرا واحدة بقطعات حادة؛ وتبدأ كل حركة عند قطعتها. — A shot list becomes one camera function with hard cuts; each move starts at its cut.
 
 **متى:** حين تحول قائمة لقطات إلى دالة كاميرا واحدة بقطعات حادة تبدأ كل حركة عندها / when turning a shot list into one camera function with hard cuts, each move starting at its cut
 
@@ -32219,7 +32220,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32264,7 +32265,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade + matching acrossfade; clamped to half clip.
+**ما هي:** xfade من FFmpeg مع acrossfade مطابق؛ محصور بنصف المقطع. — FFmpeg xfade + matching acrossfade; clamped to half clip.
 
 **متى:** حين تحتاج مقاطع التايملاين انتقال xfade مع تداخل صوتي مطابق / when timeline clips need an xfade transition with a matching audio crossfade
 
@@ -32292,7 +32293,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32338,7 +32339,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 58 named FFmpeg xfade transitions with matching audio crossfades, filtered to those the local build supports.
+**ما هي:** 58 انتقال xfade مسمّى من FFmpeg مع تقاطع صوتي مطابق، مصفّاة إلى ما يدعمه البناء المحلي. — 58 named FFmpeg xfade transitions with matching audio crossfades, filtered to those the local build supports.
 
 **متى:** حين تختار انتقالًا من قائمة انتقالات FFmpeg المدعومة محليًا مع تلاشي صوتي مطابق / when choosing from the FFmpeg xfade transitions the local build supports, with audio crossfades
 
@@ -32369,7 +32370,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32416,7 +32417,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Rebuild a reference reel shot-for-shot with new footage: frame-exact cuts, transitions, text zones, sound.
+**ما هي:** إعادة بناء ريل مرجعي لقطة بلقطة بلقطات جديدة: قطعات وانتقالات ومناطق نص وصوت مطابقة للإطار. — Rebuild a reference reel shot-for-shot with new footage: frame-exact cuts, transitions, text zones, sound.
 
 **متى:** حين يطلب المستخدم تقليد ريل مرجعي لقطة بلقطة بلقطاته الخاصة بنفس القطعات والانتقالات / when the user wants to rebuild a reference reel shot-for-shot with new footage
 
@@ -32446,7 +32447,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32491,7 +32492,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Tail dissolves into head.
+**ما هي:** يذوب الذيل في الرأس. — Tail dissolves into head.
 
 **متى:** حين يريد المستخدم فيديو يدور بلا نهاية بحيث تذوب نهايته في بدايته / when the user wants a video that loops endlessly with its tail dissolving into its head
 
@@ -32520,7 +32521,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32566,7 +32567,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة التلاشي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Cross-fade family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تختار من عائلة انتقالات التلاشي في تايملاين الاستوديو مع تلاشي صوتي مطابق / when picking a cross-fade family transition in the studio timeline, with a matching audio cross-fade
 
@@ -32596,7 +32597,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32644,7 +32645,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة المسح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Wipe family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقال مسح يمينًا أو يسارًا أو لأعلى أو لأسفل أو من الزوايا في تايملاين الاستوديو / for a wipe transition left, right, up, down or from a corner in the studio timeline
 
@@ -32674,7 +32675,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32722,7 +32723,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة الانزلاق: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Slide family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انزلاق اللقطة في اتجاه محدد كانتقال داخل تايملاين الاستوديو / for a directional slide transition between clips in the studio timeline
 
@@ -32752,7 +32753,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32800,7 +32801,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة المسح الناعم: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Smooth wipe family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد مسحًا بحافة ناعمة بين مقطعين في تايملاين الاستوديو / for a soft-edged wipe between two clips in the studio timeline
 
@@ -32830,7 +32831,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32878,7 +32879,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** كشف دائري ومستطيل وشعاعي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Circle / rect / radial reveals (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد كشف اللقطة التالية بدائرة أو مستطيل أو مسح شعاعي في التايملاين / for revealing the next clip with a circle, rectangle or radial sweep in the timeline
 
@@ -32908,7 +32909,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -32956,7 +32957,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** فتح وإغلاق رأسي وأفقي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Barn-door opens and closes (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا ينفتح أو ينغلق رأسيًا أو أفقيًا كالأبواب بين مقطعين / for a barn-door transition that opens or closes vertically or horizontally between clips
 
@@ -32986,7 +32987,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33034,7 +33035,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** مسح قطري: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Diagonal wipes (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد مسحًا قطريًا من إحدى زوايا الكادر بين مقطعين في التايملاين / for a diagonal wipe from one corner of the frame between two clips in the timeline
 
@@ -33064,7 +33065,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33112,7 +33113,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الشرائح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Slice transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا بالشرائح يتحرك يمينًا أو يسارًا أو لأعلى أو لأسفل بين مقطعين / for a slice transition moving left, right, up or down between two clips in the timeline
 
@@ -33142,7 +33143,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33190,7 +33191,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الريح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Wind transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقال الريح بأحد الاتجاهات الأربعة بين مقطعين في التايملاين / for a wind-style transition in one of four directions between two clips in the timeline
 
@@ -33220,7 +33221,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33268,7 +33269,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات التغطية: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Cover transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين يجب أن تنزلق اللقطة الجديدة فوق القديمة من أحد الاتجاهات في التايملاين / when the new clip should slide over the old one from a chosen direction in the timeline
 
@@ -33298,7 +33299,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-71` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33346,7 +33347,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الكشف: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Reveal transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين يجب أن تنزلق اللقطة القديمة جانبًا لتكشف الجديدة في التايملاين / when the old clip should slide off to reveal the new one in the timeline
 
@@ -33376,7 +33377,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-72` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33424,7 +33425,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الضغط: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Squeeze transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا تنضغط فيه اللقطة أفقيًا أو رأسيًا لتظهر التالية / for a squeeze transition that compresses the shot horizontally or vertically into the next
 
@@ -33454,7 +33455,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-73` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33502,7 +33503,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال الزووم للداخل: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Zoom-in transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا بالزووم للداخل من مقطع إلى التالي في التايملاين / for a zoom-in transition from one clip into the next in the timeline
 
@@ -33532,7 +33533,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-74` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33580,7 +33581,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال التبكسل: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Pixelize transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا تتحول فيه الصورة إلى بكسلات ثم تظهر اللقطة التالية / for a pixelize transition where the picture breaks into pixels before the next clip
 
@@ -33610,7 +33611,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-75` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33658,7 +33659,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال الضبابية الأفقية: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Horizontal blur transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا بضبابية أفقية بين مقطعين في التايملاين / for a horizontal blur transition between two clips in the timeline
 
@@ -33688,7 +33689,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-76` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33736,7 +33737,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال المسافة: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Distance transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقال المسافة من عائلة xfade بين مقطعين مع تلاشي صوتي مطابق / for the distance xfade transition between two clips with a matching audio cross-fade
 
@@ -33766,7 +33767,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-77` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33814,7 +33815,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** An element flips in on its X axis with 35% of the rotation on the first frame, done in about 10 frames.
+**ما هي:** يدور العنصر حول محور X عند دخوله بحيث يُنجز 35% من الدوران في الإطار الأول، ويكتمل في نحو 10 إطارات. — An element flips in on its X axis with 35% of the rotation on the first frame, done in about 10 frames.
 
 **متى:** حين تريد أن ينقلب عنصر للداخل على محوره الأفقي بسرعة خلال نحو 10 إطارات / when an element should flip in on its X axis fast, in about 10 frames
 
@@ -33844,7 +33845,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-78` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33889,7 +33890,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Edits any footage to a music track: beat grid -> shot plan of quick/breathing shots landing on beats (big ones on downbeats) -> most active window of each clip -> fill-crop, punches, grade -> hard cuts -> ducked mix -> optional karaoke captions.
+**ما هي:** يُمنتج أي لقطات على مقطوعة موسيقية: شبكة إيقاعات ← خطة لقطات سريعة/متنفسة تقع على الإيقاعات (الكبيرة على الإيقاعات القوية) ← أنشط نافذة في كل مقطع ← قص ملء ولكمات وتدريج لوني ← قطعات حادة ← مزج مخفوض ← ترجمات كاريوكي اختيارية. — Edits any footage to a music track: beat grid -> shot plan of quick/breathing shots landing on beats (big ones on downbeats) -> most active window of each clip -> fill-crop, punches, grade -> hard cuts -> ducked mix -> optional karaoke captions.
 
 **متى:** حين يطلب المستخدم تقطيع أي لقطات على أغنية أو موسيقى بحيث يقع القطع على الإيقاع / when the user wants any footage edited to a music track with cuts landing on the beat
 
@@ -33920,7 +33921,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-79` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -33967,7 +33968,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** On beats the picture jumps to +9% scale and decays with a 0.32 s time constant (rendered at 2x for half-pixel steps).
+**ما هي:** عند الإيقاعات تقفز الصورة إلى تكبير +9% ثم تتلاشى بثابت زمني 0.32 s (تُصيَّر بضعف الدقة لخطوات نصف بكسل). — On beats the picture jumps to +9% scale and decays with a 0.32 s time constant (rendered at 2x for half-pixel steps).
 
 **متى:** حين تريد أن تقفز الصورة بزووم مع كل ضربة إيقاع ثم تخبو تدريجيًا كالصدمة / when the picture should jump in scale on each beat and decay like a hit
 
@@ -33998,7 +33999,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-80` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34044,7 +34045,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Makes a clip loop by dissolving its tail into its head.
+**ما هي:** يجعل المقطع حلقة بإذابة ذيله في رأسه. — Makes a clip loop by dissolving its tail into its head.
 
 **متى:** حين يحتاج المستخدم مقطعًا يتكرر بلا فاصل ظاهر بين نهايته وبدايته / when the user needs a clip that loops with no visible seam between end and start
 
@@ -34075,7 +34076,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-81` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34121,7 +34122,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Video crossfade-family transition with matching audio crossfade.
+**ما هي:** انتقال من عائلة التقاطع للفيديو مع تقاطع صوتي مطابق. — Video crossfade-family transition with matching audio crossfade.
 
 **متى:** حين تدمج مقطعين بانتقال صورة مع تداخل صوتي مطابق / when joining two clips with a video transition and a matching audio crossfade
 
@@ -34151,7 +34152,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-82` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34198,7 +34199,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Audio of next clip leads its picture (J) or previous audio runs under new picture (L) to hide cuts.
+**ما هي:** يسبق صوت المقطع التالي صورته (J) أو يستمر الصوت السابق تحت الصورة الجديدة (L) لإخفاء القطعات. — Audio of next clip leads its picture (J) or previous audio runs under new picture (L) to hide cuts.
 
 **متى:** حين تريد إخفاء القطع بأن يسبق صوت اللقطة التالية صورتها أو يمتد صوت السابقة تحت الجديدة / when hiding a cut by letting the next audio lead its picture or the previous audio run under
 
@@ -34228,7 +34229,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-83` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34274,7 +34275,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Montage shots join with straight cuts through the concat demuxer; crossfades are avoided on purpose.
+**ما هي:** تتصل لقطات المونتاج بقطعات مباشرة عبر concat demuxer؛ ويُتجنَّب التقاطع التلاشي عمدًا. — Montage shots join with straight cuts through the concat demuxer; crossfades are avoided on purpose.
 
 **متى:** حين تريد ربط لقطات المونتاج بقطع مباشر دون تلاشي وبلا إعادة ترميز / when joining montage shots with straight cuts and no crossfades, without re-encoding
 
@@ -34303,7 +34304,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-84` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34349,7 +34350,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Dissolves the tail into the head so the clip loops without a seam, then repeats it to the requested length.
+**ما هي:** يذيب الذيل في الرأس ليدور المقطع بلا وصلة ظاهرة، ثم يكرره حتى الطول المطلوب. — Dissolves the tail into the head so the clip loops without a seam, then repeats it to the requested length.
 
 **متى:** حين يطلب المستخدم تكرار مقطع حتى مدة معينة كحلقة بلا فاصل / when the user wants a clip repeated to a set length as a seamless loop
 
@@ -34380,7 +34381,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-85` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34426,7 +34427,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** At a cut the keyword fills the frame, then flies up and settles small as a chapter header.
+**ما هي:** عند القطعة تملأ الكلمة المفتاحية الإطار ثم تطير للأعلى وتستقر صغيرة كعنوان فصل. — At a cut the keyword fills the frame, then flies up and settles small as a chapter header.
 
 **متى:** حين تريد أن تملأ كلمة الفصل الكادر عند القطع ثم تطير لتصبح عنوانًا صغيرًا / when a chapter keyword should fill the frame at a cut, then fly up to settle as a small header
 
@@ -34456,7 +34457,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-86` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34503,7 +34504,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A thin gradient rule opening from centre marks each new section instead of a transition effect.
+**ما هي:** خط رفيع متدرج اللون ينفتح من المركز يعلّم كل قسم جديد بدل مؤثر انتقال. — A thin gradient rule opening from centre marks each new section instead of a transition effect.
 
 **متى:** حين تريد فاصلًا هادئًا بخط ضوئي رفيع ينفتح من المنتصف لكل قسم بدل مؤثر انتقال / when each new section should be marked by a thin light rule opening from centre instead of a transition
 
@@ -34533,7 +34534,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-87` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34580,7 +34581,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: blur crossfade.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: تقاطع بالتمويه. — Custom transition modelling what CapCut/InShot do: blur crossfade.
 
 **متى:** حين يطلب المستخدم مزجًا بين لقطتين مع تمويه كما في تطبيقات المونتاج على الموبايل / when the user wants a blur crossfade between two shots like phone editing apps
 
@@ -34611,7 +34612,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-88` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34657,7 +34658,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: zoom in with radial blur, CapCut style.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: زووم للداخل مع تمويه شعاعي بأسلوب CapCut. — Custom transition modelling what CapCut/InShot do: zoom in with radial blur, CapCut style.
 
 **متى:** حين يطلب المستخدم انتقال زووم مع تمويه شعاعي على طريقة CapCut بين لقطتين / when the user wants a CapCut-style zoom-in transition with radial blur between two shots
 
@@ -34688,7 +34689,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-89` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34734,7 +34735,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: zoom out with blur.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: زووم للخارج مع تمويه. — Custom transition modelling what CapCut/InShot do: zoom out with blur.
 
 **متى:** حين يطلب المستخدم انتقالًا بالزووم للخارج مع تمويه بين لقطتين كتطبيقات الموبايل / when the user wants a zoom-out with blur transition between two shots, phone-editor style
 
@@ -34765,7 +34766,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-90` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34811,7 +34812,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Custom transition modelling what CapCut/InShot do: rotating spin transition.
+**ما هي:** انتقال مخصص يحاكي ما يفعله CapCut/InShot: انتقال دوران. — Custom transition modelling what CapCut/InShot do: rotating spin transition.
 
 **متى:** حين يطلب المستخدم انتقالًا بالدوران 90 أو 180 درجة بين لقطتين كما في CapCut / when the user wants a rotating spin transition of 90 or 180 degrees between two shots
 
@@ -34842,7 +34843,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-91` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34888,7 +34889,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Per-pixel transitions (cross-warp morph, domain warp, whip pan, glitch, ridged burn, gravitational lens, swirl, ripple, SDF iris, thermal) composite both scene textures on a WebGL canvas.
+**ما هي:** انتقالات لكل بكسل (تشويه متقاطع، تشويه المجال، سحب سريع، غليتش، حرق متعرج، عدسة جاذبية، دوامة، تموج، قزحية SDF، حراري) تركّب نسيجي المشهدين على لوحة WebGL. — Per-pixel transitions (cross-warp morph, domain warp, whip pan, glitch, ridged burn, gravitational lens, swirl, ripple, SDF iris, thermal) composite both scene textures on a WebGL canvas.
 
 **متى:** حين تريد انتقالات بكسلية متقدمة بين مشاهد HTML كالالتواء والعدسة والتموج عبر WebGL / for per-pixel WebGL transitions between HTML scenes such as warp, lens, swirl, ripple or burn
 
@@ -34919,7 +34920,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-92` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -34966,7 +34967,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Transitions overlap scenes and shorten the total; overlays sit on the cut without changing duration.
+**ما هي:** تتداخل الانتقالات مع المشاهد وتقصّر المدة الإجمالية؛ أما التراكبات فتقع على القطعة دون تغيير المدة. — Transitions overlap scenes and shorten the total; overlays sit on the cut without changing duration.
 
 **متى:** عند حساب المدة الكلية لفيديو فيه انتقالات متداخلة بين المشاهد وطبقات فوق نقاط القطع / when computing total video length with overlapping scene transitions and overlays on cuts
 
@@ -34996,7 +34997,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-93` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35042,7 +35043,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Browser-native snapshot morphs between DOM states (shared element, list reorder, enter/exit, route change).
+**ما هي:** تحويلات لقطة أصلية في المتصفح بين حالات DOM (عنصر مشترك، إعادة ترتيب قائمة، دخول/خروج، تغيير مسار). — Browser-native snapshot morphs between DOM states (shared element, list reorder, enter/exit, route change).
 
 **متى:** حين تبني صفحة ويب تفاعلية وتريد تحولًا سلسًا بين حالتين أو عند تغيير المسار أو إعادة ترتيب قائمة / for interactive web pages morphing between DOM states, list reorders or route changes
 
@@ -35071,7 +35072,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-94` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35118,7 +35119,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render two scenes to textures and mix them with a noise threshold that sweeps with progress for organic dissolves.
+**ما هي:** يصيّر مشهدين إلى نسيجين ويمزجهما بعتبة ضوضاء تتحرك مع التقدم لذوبان عضوي. — Render two scenes to textures and mix them with a noise threshold that sweeps with progress for organic dissolves.
 
 **متى:** حين تريد ذوبانًا عضويًا غير منتظم بين مشهدين مرسومين بدل التلاشي العادي / when you want an organic, irregular dissolve between two rendered scenes instead of a plain fade
 
@@ -35148,7 +35149,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-95` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35194,7 +35195,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Shader transitions for reveals, logo unveils and downbeat moments; CSS transitions for connective, continuous-camera beats; hard cuts for rapid lists, percussive beat edits and comic timing.
+**ما هي:** مُظلِّلات الانتقال للكشوفات وإزاحة الشعار واللحظات على الإيقاع القوي؛ وانتقالات CSS للإيقاعات الرابطة ذات الكاميرا المتصلة؛ والقطعات الحادة للقوائم السريعة وقطعات الإيقاع الإيقاعية والتوقيت الكوميدي. — Shader transitions for reveals, logo unveils and downbeat moments; CSS transitions for connective, continuous-camera beats; hard cuts for rapid lists, percussive beat edits and comic timing.
 
 **متى:** عند التخطيط لانتقالات ريل واختيار نوع كل انتقال: شيدر للكشف الكبير أو CSS للربط أو قطع حاد للإيقاع / when planning a reel's transitions and choosing shader, CSS or hard cut per beat
 
@@ -35224,7 +35225,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-96` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35270,7 +35271,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render both scenes to offscreen targets and blend them with a noise threshold driven by a progress uniform, giving an organic burn/dissolve.
+**ما هي:** يصيّر المشهدين إلى هدفين خارج الشاشة ويمزجهما بعتبة ضوضاء يقودها متغير تقدم موحّد، فينتج احتراق/ذوبان عضوي. — Render both scenes to offscreen targets and blend them with a noise threshold driven by a progress uniform, giving an organic burn/dissolve.
 
 **متى:** حين تحتاج انتقال احتراق أو ذوبان عضوي بين مشهدين ثلاثيي الأبعاد في Three.js / for an organic burn or dissolve between two Three.js scenes rendered offscreen
 
@@ -35301,7 +35302,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-97` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35347,7 +35348,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A solid overlay scales up from the bottom to cover the old view, then scales away from the top revealing the new view whose elements rise in.
+**ما هي:** يتمدد لوح صلب من الأسفل ليغطي العرض القديم ثم يتقلص نحو الأعلى كاشفًا العرض الجديد الذي ترتفع عناصره للداخل. — A solid overlay scales up from the bottom to cover the old view, then scales away from the top revealing the new view whose elements rise in.
 
 **متى:** حين تريد طبقة لونية تغطي الشاشة ثم ترتفع لتكشف المشهد الجديد مع صعود عناصره / when a solid overlay should cover the old view then lift to reveal the new one
 
@@ -35377,7 +35378,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-98` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35409,7 +35410,7 @@
 - `TRANS-96` متى نستخدم انتقال شيدر أو CSS أو قطع حاد / When to use shader vs CSS vs hard cut (install)
 - `TRANS-97` ذوبان ضوضائي بين مشهدين / Noise-dissolve between two rendered scenes (install)
 - `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
-- `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
 
 ### `TRANS-99` — انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition
 
@@ -35423,7 +35424,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render two scenes to textures and reveal B through an organic noise front.
+**ما هي:** يصيّر مشهدين إلى نسيجين ويكشف B عبر جبهة ضوضاء عضوية. — Render two scenes to textures and reveal B through an organic noise front.
 
 **متى:** عند الانتقال بين مشهدين بكشف تدريجي عبر حافة ضوضاء عضوية يتحكم بها التايملاين / when revealing scene B through an organic noise edge driven by the timeline
 
@@ -35453,7 +35454,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-99` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35484,6 +35485,81 @@
 
 - `TRANS-97` ذوبان ضوضائي بين مشهدين / Noise-dissolve between two rendered scenes (install)
 - `TRANS-98` انتقال المسح بطبقة غطاء / Overlay wipe page transition (install)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
+- `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
+
+### `TRANS-G01` — انتقال سحري بين حالتين / Auto-animate between two states (magic move)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `transitions-cuts` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/transitions-cuts.md)) |
+| المجموعة | الموشن والمونتاج والسينما (`motion`) |
+| نوع المخرج (A25، A27) | فيديو وموشن ومونتاج (`video`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** طابق العناصر بين حالتين بمعرّف ثابت، وحرّك الموضع والحجم واللون للمتطابق، وأظهر أو أخفِ غير المتطابق، فيبدو الانتقال حركة واحدة. — Match elements between two states by a stable id, tween position, size and colour of matches, and fade the rest, so the change reads as one move.
+
+**متى:** شرائح أو شاشات تطبيق أو لوحات بيانات تتغير / slides, app screens or dashboards that change
+
+**كيف:** Give each persistent element a data-id in both states; measure both layouts; tween matched boxes (FLIP: first, last, invert, play) with one easing; unmatched: fade 150-250 ms; text that changes content cross-fades in place. Keep durations 0.4-0.8 s; more than ~12 moving matches turns into noise.
+
+**المعاملات:** 0.4-0.8 s; unmatched fade 150-250 ms
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** auto-animate · magic move · flip · reveal.js · transition · انتقال · شرائح · حركة سحرية
+
+#### 1. الاستقبال (A25)
+
+- المقاس والمنصة: افتراض مكتوب ← 9:16 لمنصات المقاطع القصيرة
+- المدة: افتراض مكتوب ← مدة الصوت المرفوع، وإلا 30 ثانية
+- الصوت المصدر: سؤال بإجابة مقترحة ← بلا صوت مرفوع: موسيقى مرخصة هادئة أو صمت، يُسأل عنها
+- اللقطات والأصول: افتراض مكتوب ← لقطات مجانية مرخصة مع تسجيل رخصة كل لقطة
+- الأسلوب البصري: افتراض مكتوب ← أسلوب واحد متسق يقترحه التقرير
+- النص الظاهر واللغة: افتراض مكتوب ← عربية RTL بلغة الطلب
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
+- مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: المدة والمقاس وfps مطابقة بالقياس ← tools/verify_video.py أو ffprobe
+- إلزامي: صوت المستخدم منسوخ بلا تعديل (MD5 مطابق) ← ffmpeg -f md5
+- جودة: تزامن الكلمات ضمن ±2 إطار من words.json ← سجل seek
+- إلزامي: العربية متصلة الحروف وصحيحة الاتجاه ← لوحة لقطات
+- إلزامي: حركة حقيقية (كاميرا أو رسم أو تحويل) لا شرائح ثابتة ← لوحة لقطات كل ثانيتين
+- جودة: النص داخل المنطقة الآمنة للمنصة ← لقطة بإطار المنطقة الآمنة
+- إلزامي: رخصة كل لقطة وموسيقى وخط مسجلة ← rights.json أو جدول المصادر
+- جودة: معاينة رخيصة قبل الرندر الكامل ← render_html.cjs --preview
+- أمر الحكم في الوضع 1: `think.py qa video --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `TRANS-98` انتقال المسح بطبقة غطاء / Overlay wipe page transition (install)
+- `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
 - `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
 - `TRANS-X01` لكل انتقال سبب يُسمّى / Every transition needs a nameable cause (documented)
 
@@ -35529,7 +35605,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-U01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35559,8 +35635,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TRANS-98` انتقال المسح بطبقة غطاء / Overlay wipe page transition (install)
 - `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
 - `TRANS-X01` لكل انتقال سبب يُسمّى / Every transition needs a nameable cause (documented)
 - `TRANS-X02` زوم الإبرة على جسم مستمر / Needle zoom on a persistent object (documented)
 
@@ -35606,7 +35682,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35635,7 +35711,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TRANS-99` انتقال تحلل بالنويز بين مشهدين / Noise-dissolve scene transition (install)
+- `TRANS-G01` انتقال سحري بين حالتين / Auto-animate between two states (magic move) (documented)
 - `TRANS-U01` منحنى منزلق قبل/بعد: انزلاق ثم زحف ثم كشف / Before/after slider: glide → crawl → reveal (proven)
 - `TRANS-X02` زوم الإبرة على جسم مستمر / Needle zoom on a persistent object (documented)
 - `TRANS-X03` استمرار الطيران عبر الأشياء / Fly-through continuation rule (documented)
@@ -35682,7 +35758,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35757,7 +35833,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35832,7 +35908,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35907,7 +35983,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -35982,7 +36058,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36057,7 +36133,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36132,7 +36208,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36207,7 +36283,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36282,7 +36358,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36357,7 +36433,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36431,7 +36507,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -36478,7 +36554,7 @@
 
 **ما هي:** لا تخمّن الانتقال من شكل منحنى الفرق؛ ارسم كل نوع مرشح (54 من xfade في FFmpeg + 11 من محررات الهاتف) من الإطارين النقيين قبل وبعد عند 25 قيمة تقدّم، واختر مسارًا رتيبًا بالبرمجة الديناميكية؛ الناتج نوع ومعاملات ومدى ومنحنى تقدّم مقاس يُعاد تشغيله حرفيًا في البناء. — Instead of guessing from the difference curve, render every candidate kind (54 FFmpeg xfade + 11 phone-editor kinds) from the pure frames before and after at 25 progress values and pick a monotone dynamic-programming path; the output is kind, params, exact span and a measured progress curve replayed verbatim in the build.
 
-**متى:** rebuilding a reference edit exactly; identifying what CapCut/InShot/xfade transition a reference used
+**متى:** حين تعيد بناء مونتاج مرجعي بدقة، أو تحدد أي انتقال من CapCut/InShot/xfade استخدمه المرجع. / rebuilding a reference edit exactly; identifying what CapCut/InShot/xfade transition a reference used
 
 **كيف:** `mm_analyze.analyze(ref, work)` → `spec.json: transitions[{type, params, ts, te, progress, confidence, alternatives}]`; replay with `mm_transitions.render(kind, A, B, p, **params)`. The xfade port is LGPL-2.1-or-later (notice at the top of `mm_transitions.py`); custom kinds need OpenCV or SciPy.
 
@@ -36511,7 +36587,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:TRANS-X13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

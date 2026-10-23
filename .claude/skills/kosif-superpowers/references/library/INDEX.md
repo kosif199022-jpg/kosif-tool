@@ -1,6 +1,6 @@
-# مكتبة البروتوكول — USIP v5.5 protocol library
+# مكتبة البروتوكول — USIP v5.6 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,512 قدرة في 62 عائلة و15 مجموعة، و149 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,728 قدرة في 62 عائلة و15 مجموعة، و168 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -19,23 +19,23 @@
 
 | المجموعة | القدرات | proven | ready | الأدوات | الفصل |
 |---|---:|---:|---:|---:|---|
-| البحث والمعرفة (`research`) | 56 | 21 | 0 | 14 | [research.md](research.md) |
-| التفكير والتخطيط والاستراتيجية (`thinking`) | 335 | 17 | 8 | 20 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 159 | 87 | 5 | 38 | [agents.md](agents.md) |
-| البرمجة وبناء التطبيقات (`software`) | 578 | 111 | 16 | 16 | [software.md](software.md) |
-| الرسم والأشكال والتصميم (`drawing`) | 300 | 53 | 55 | 23 | [drawing.md](drawing.md) |
-| الصور والتحرير والتوليد (`images`) | 319 | 96 | 42 | 27 | [images.md](images.md) |
-| الثري دي والمحاكاة والرندر (`3d`) | 755 | 122 | 141 | 27 | [3d.md](3d.md) |
-| الموشن والمونتاج والسينما (`motion`) | 1,228 | 117 | 180 | 51 | [motion.md](motion.md) |
-| الصوت والموسيقى والتعليق (`audio`) | 422 | 59 | 74 | 22 | [audio.md](audio.md) |
-| الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 12 | [type.md](type.md) |
-| البيانات والرسوم والمواقع (`data`) | 258 | 49 | 18 | 2 | [data.md](data.md) |
-| المستندات والكتابة (`documents`) | 138 | 32 | 0 | 2 | [documents.md](documents.md) |
-| الاختبارات والجودة والأمان (`quality`) | 464 | 94 | 58 | 35 | [quality.md](quality.md) |
-| التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 20 | [reverse.md](reverse.md) |
+| البحث والمعرفة (`research`) | 60 | 21 | 0 | 14 | [research.md](research.md) |
+| التفكير والتخطيط والاستراتيجية (`thinking`) | 359 | 17 | 8 | 21 | [thinking.md](thinking.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 266 | 162 | 22 | 41 | [agents.md](agents.md) |
+| البرمجة وبناء التطبيقات (`software`) | 630 | 115 | 17 | 21 | [software.md](software.md) |
+| الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 26 | [drawing.md](drawing.md) |
+| الصور والتحرير والتوليد (`images`) | 320 | 96 | 42 | 30 | [images.md](images.md) |
+| الثري دي والمحاكاة والرندر (`3d`) | 758 | 122 | 141 | 28 | [3d.md](3d.md) |
+| الموشن والمونتاج والسينما (`motion`) | 1,233 | 117 | 183 | 54 | [motion.md](motion.md) |
+| الصوت والموسيقى والتعليق (`audio`) | 422 | 59 | 74 | 25 | [audio.md](audio.md) |
+| الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 13 | [type.md](type.md) |
+| البيانات والرسوم والمواقع (`data`) | 262 | 49 | 18 | 4 | [data.md](data.md) |
+| المستندات والكتابة (`documents`) | 143 | 32 | 0 | 2 | [documents.md](documents.md) |
+| الاختبارات والجودة والأمان (`quality`) | 469 | 94 | 58 | 37 | [quality.md](quality.md) |
+| التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 21 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 6,644 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 6,888 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 

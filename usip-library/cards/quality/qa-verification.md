@@ -1,6 +1,6 @@
 # `qa-verification` — الاختبارات والجودة والأمان (384 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/qa-verification.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/quality.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/qa-verification.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/quality.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -403,7 +403,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Last check before delivery: H.264/yuv420p, black and frozen stretches, integrated LUFS and true peak, sampled exposure.
+**ما هي:** فحص أخير قبل التسليم: H.264/yuv420p، والمقاطع السوداء والمجمدة، وLUFS الكلي والذروة الحقيقية، والتعريض المعاين. — Last check before delivery: H.264/yuv420p, black and frozen stretches, integrated LUFS and true peak, sampled exposure.
 
 **متى:** عند الفحص الأخير للفيديو قبل تسليمه للتأكد من خلوه من شاشات سوداء أو تجمد وضبط علو الصوت / when a finished video needs a last check for black or frozen stretches, loudness and true peak before delivery
 
@@ -476,7 +476,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Passes when the jump from last frame to first is no bigger than an ordinary step near the ends.
+**ما هي:** ينجح حين لا يزيد القفز من الإطار الأخير إلى الأول عن خطوة عادية قرب الطرفين. — Passes when the jump from last frame to first is no bigger than an ordinary step near the ends.
 
 **متى:** حين يُطلب فيديو يتكرر بلا قفزة ظاهرة بين آخر إطار وأوله / when confirming a looping video has no visible jump from its last frame back to the first
 
@@ -549,7 +549,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** ffprobe/ffmpeg checks: H.264, yuv420p, even dims, aspect, fps (±0.05), duration (±1 frame), frame count (±1), audio present, AAC, ≥44.1 kHz, EBU R128 integrated loudness vs target ±1.5 LU, true peak ≤ -1 dBFS, delivered audio = master ±50 ms; JSON report.
+**ما هي:** فحوص ffprobe/ffmpeg: H.264، وyuv420p، وأبعاد زوجية، والنسبة، وfps (±0.05)، والمدة (±1 إطار)، وعدد الإطارات (±1)، ووجود الصوت، وAAC، و≥44.1 kHz، وجهارة EBU R128 الكلية مقابل الهدف ±1.5 LU، وذروة حقيقية ≤ -1 dBFS، والصوت المسلَّم = الماستر ±50 ms؛ وتقرير JSON. — ffprobe/ffmpeg checks: H.264, yuv420p, even dims, aspect, fps (±0.05), duration (±1 frame), frame count (±1), audio present, AAC, ≥44.1 kHz, EBU R128 integrated loudness vs target ±1.5 LU, true peak ≤ -1 dBFS, delivered audio = master ±50 ms; JSON report.
 
 **متى:** عند التحقق من أن الفيديو المصدَّر يطابق المقاس والمدة وعدد الإطارات ومواصفات الصوت المطلوبة / when an exported video must match the requested aspect, fps, duration, frame count and audio specs
 
@@ -624,7 +624,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Verify the finished file itself: full decode errors, codec/pixel format, even dimensions, BT.709 tags, faststart, black/frozen/silent stretches, loudness and true peak, size cap.
+**ما هي:** تحقق من الملف المنجز نفسه: أخطاء فك الترميز الكاملة، والترميز/صيغة البكسل، والأبعاد الزوجية، ووسوم BT.709، وfaststart، والمقاطع السوداء/المجمدة/الصامتة، والجهارة والذروة الحقيقية، وسقف الحجم. — Verify the finished file itself: full decode errors, codec/pixel format, even dimensions, BT.709 tags, faststart, black/frozen/silent stretches, loudness and true peak, size cap.
 
 **متى:** حين تريد فحص ملف الفيديو النهائي نفسه بحثًا عن أخطاء فك الترميز والصمت وحجم الملف / when checking the finished file itself for decode errors, silent gaps, color tags, faststart and size cap
 
@@ -697,7 +697,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Real captures keep only frames the page actually painted, laid onto a constant fps by holding the newest frame; never interpolate; report held frames, measured page fps and GPU renderer; warn under 20 fps or on software rendering.
+**ما هي:** تحتفظ اللقطات الحقيقية بالإطارات التي رسمتها الصفحة فعلًا فقط، موضوعة على fps ثابت بتثبيت أحدث إطار؛ ولا استكمال أبدًا؛ ويُبلَّغ عن الإطارات المثبتة وfps الصفحة المقيس ومصيِّر GPU؛ ويُحذَّر دون 20 fps أو عند التصيير البرمجي. — Real captures keep only frames the page actually painted, laid onto a constant fps by holding the newest frame; never interpolate; report held frames, measured page fps and GPU renderer; warn under 20 fps or on software rendering.
 
 **متى:** عند تسجيل صفحة ويب أو لعبة كفيديو دون اختلاق إطارات وسيطة مع معرفة معدل الإطارات الحقيقي / when recording a live page or game to video without interpolating frames and reporting real fps
 
@@ -772,7 +772,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Locate cuts in footage (for b-roll logging, thumbnails, or to check that cuts land on the beat grid).
+**ما هي:** تحديد القطعات في اللقطات (لتسجيل B-roll أو المصغرات أو للتحقق من وقوع القطعات على شبكة الضربات). — Locate cuts in footage (for b-roll logging, thumbnails, or to check that cuts land on the beat grid).
 
 **متى:** حين تريد معرفة أماكن القطعات في فيديو لتسجيل اللقطات أو اختيار صورة مصغرة / when locating cuts in footage for b-roll logging, thumbnails or checking cuts against the beat grid
 
@@ -845,7 +845,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** After assembly, compare detected scene changes to the intended bar/beat boundaries and render a contact sheet one frame a few frames after every half-bar labelled with bar and shot id.
+**ما هي:** بعد التجميع، قارن تغيرات المشهد المكتشفة بحدود المازورة/الضربة المقصودة وصيّر ورقة لقطات بإطار واحد بعد كل نصف مازورة بإطارات قليلة موسومة برقم المازورة ومعرّف اللقطة. — After assembly, compare detected scene changes to the intended bar/beat boundaries and render a contact sheet one frame a few frames after every half-bar labelled with bar and shot id.
 
 **متى:** عند الانتهاء من تجميع المونتاج للتأكد أن القطعات تقع على الإيقاع والمازورة المخطط لها / when an assembled edit needs checking that its cuts land on the planned beats and bars
 
@@ -916,7 +916,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Joining mp3 pieces with -c copy keeps encoder padding (~50ms/join), so captions drift; decode and encode once.
+**ما هي:** دمج قطع mp3 بـ -c copy يُبقي حشو المرمّز (~50ms لكل وصلة) فتنحرف الترجمات؛ فك الترميز وأعد الترميز مرة واحدة. — Joining mp3 pieces with -c copy keeps encoder padding (~50ms/join), so captions drift; decode and encode once.
 
 **متى:** عند دمج ملفات صوت mp3 كثيرة وظهور انزياح في توقيت الترجمة / when joining many mp3 pieces makes captions drift out of sync with the audio
 
@@ -988,7 +988,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Measured contrast rules for text and graphic marks plus a grayscale distinguishability screen.
+**ما هي:** قواعد تباين مقيسة للنصوص والعلامات الرسومية، مع فحص تمييز بالتدرج الرمادي. — Measured contrast rules for text and graphic marks plus a grayscale distinguishability screen.
 
 **متى:** حين تريد التأكد أن ألوان النص والرسوم مقروءة وتتباين بما يكفي / when checking text and graphic colors meet contrast ratios and stay distinguishable in grayscale
 
@@ -1063,7 +1063,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A node:test file parses hex tokens straight from the CSS and asserts WCAG 2.x contrast (4.5:1 for 10 text pairs, 3:1 for status colours on card and soft tints) plus CIE76 deltaE >= 25 between every pair of semantic hues, in both themes.
+**ما هي:** ملف node:test يقرأ رموز hex من CSS مباشرةً ويتحقق من تباين WCAG 2.x (4.5:1 لعشرة أزواج نصوص، و3:1 لألوان الحالة على البطاقة والدرجات الفاتحة) وعلى CIE76 deltaE >= 25 بين كل زوج من الألوان الدلالية، في الثيمين. — A node:test file parses hex tokens straight from the CSS and asserts WCAG 2.x contrast (4.5:1 for 10 text pairs, 3:1 for status colours on card and soft tints) plus CIE76 deltaE >= 25 between every pair of semantic hues, in both themes.
 
 **متى:** عند اختبار لوحة ألوان التصميم آليًا في الثيمين لضمان التباين وتمايز الألوان / when automatically testing a palette's contrast and hue distance in both themes
 
@@ -1135,7 +1135,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** reel.json review page; feedback applied to source, re-render.
+**ما هي:** صفحة مراجعة reel.json؛ وتُطبَّق الملاحظات على المصدر، وإعادة التصيير. — reel.json review page; feedback applied to source, re-render.
 
 **متى:** حين يرسل المستخدم ملاحظاته على المشاهد ويجب تطبيقها على المصدر وإعادة التصيير / when the user's scene feedback must be applied to the source and the film re-rendered
 
@@ -1204,7 +1204,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reports route A/B/C and available capabilities.
+**ما هي:** يبلّغ عن المسار A/B/C والقدرات المتاحة. — Reports route A/B/C and available capabilities.
 
 **متى:** في بداية العمل لمعرفة المسار المتاح A/B/C والقدرات المتوفرة / at the start of a job, to report which route (A/B/C) and capabilities are available
 
@@ -1274,7 +1274,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The site header shows which route (A/B/C) the PC supports, FFmpeg, a browser, Whisper, CPU cores, the face detector and the number of xfade transitions; the env tab shows the full JSON.
+**ما هي:** يعرض رأس الموقع أي مسار (A/B/C) يدعمه الحاسوب، وFFmpeg، ومتصفحًا، وWhisper، وأنوية المعالج، وكاشف الوجوه، وعدد انتقالات xfade؛ وتبويب البيئة يعرض JSON كاملًا. — The site header shows which route (A/B/C) the PC supports, FFmpeg, a browser, Whisper, CPU cores, the face detector and the number of xfade transitions; the env tab shows the full JSON.
 
 **متى:** حين تريد أن يعرض رأس الموقع ما يدعمه الجهاز من مسار وFFmpeg ومتصفح وWhisper وعدد الأنوية / when the site header should show what the PC supports: route, FFmpeg, browser, Whisper, CPU cores
 
@@ -1348,7 +1348,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** When an element is moved or resized on a rendered video, the old spot is blurred and that patch of the live video is redrawn at the new spot, so the change is visible before re-rendering.
+**ما هي:** عند نقل عنصر أو تغيير حجمه على فيديو مصيَّر، يُطمس المكان القديم وتُعاد رسم تلك البقعة من الفيديو الحي في المكان الجديد، فيظهر التغيير قبل إعادة التصيير. — When an element is moved or resized on a rendered video, the old spot is blurred and that patch of the live video is redrawn at the new spot, so the change is visible before re-rendering.
 
 **متى:** عند تحريك عنصر أو تغيير حجمه على فيديو مُصيَّر لرؤية التغيير قبل إعادة التصيير / when moving or resizing an element on a rendered video and you want to see the change before re-rendering
 
@@ -1417,7 +1417,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** Note mode (N) or Alt-click pins a numbered note to an exact time and x/y spot (and the element under it); notes sort by time, move a scene to 'changes', and appear as markers on the timeline.
+**ما هي:** وضع الملاحظة (N) أو Alt-click يثبّت ملاحظة مرقمة عند زمن محدد وموضع x/y (والعنصر تحته)؛ وتُرتَّب الملاحظات بالزمن، وتنقل المشهد إلى 'changes'، وتظهر كعلامات على الخط الزمني. — Note mode (N) or Alt-click pins a numbered note to an exact time and x/y spot (and the element under it); notes sort by time, move a scene to 'changes', and appear as markers on the timeline.
 
 **متى:** حين يريد المراجع تثبيت ملاحظة على لحظة ومكان محدد في الإطار لتظهر علامة على الخط الزمني / when a reviewer wants to pin a note to an exact time and x/y spot in the frame, shown on the timeline
 
@@ -1486,7 +1486,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** The page polls reel.json and reloads itself when Claude bumps the version; a URL hash can jump to a time and select an element.
+**ما هي:** تستطلع الصفحة reel.json وتُعيد تحميل نفسها حين يزيد Claude الإصدار؛ ويمكن لتجزئة URL القفز إلى زمن وتحديد عنصر. — The page polls reel.json and reloads itself when Claude bumps the version; a URL hash can jump to a time and select an element.
 
 **متى:** حين تريد أن تتحدث صفحة المراجعة تلقائيًا عند نسخة جديدة أو يفتح رابط على زمن وعنصر محدد / when the review page should reload on a new version or a link should jump to a time and element
 
@@ -1558,7 +1558,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** After an offline export the page records what was produced so a script or Claude can verify it: codec, audio codec, frames, fps, size, bytes, seconds taken, skipped audio files and loudness before/after/gain/limitedByPeak.
+**ما هي:** بعد التصدير دون اتصال تسجّل الصفحة ما أُنتج ليتحقق منه سكربت أو Claude: الترميز وترميز الصوت والإطارات وfps والحجم والبايتات والثواني المستغرقة وملفات الصوت المتخطاة والجهارة قبل/بعد/الكسب/limitedByPeak. — After an offline export the page records what was produced so a script or Claude can verify it: codec, audio codec, frames, fps, size, bytes, seconds taken, skipped audio files and loudness before/after/gain/limitedByPeak.
 
 **متى:** بعد تصدير الفيديو للتحقق برمجيًا من الترميز والإطارات والحجم وعلو الصوت / after an offline export, to verify codec, frames, fps, size and loudness from a script or by Claude
 
@@ -1627,7 +1627,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Rates focus with Laplacian variance (global and the mean of the 3 most detailed tiles of an 8×8 grid, so a sharp subject on bokeh still counts) and noise with Immerkaer's fast sigma estimate.
+**ما هي:** يقيّم التركيز بتباين Laplacian (عام ومتوسط أكثر 3 بلاطات تفصيلًا من شبكة 8×8، فيُحتسب الموضوع الحاد على bokeh) والضجيج بتقدير سيغما السريع لـ Immerkaer. — Rates focus with Laplacian variance (global and the mean of the 3 most detailed tiles of an 8×8 grid, so a sharp subject on bokeh still counts) and noise with Immerkaer's fast sigma estimate.
 
 **متى:** حين تريد معرفة هل الصورة أو الإطار حاد أم ضبابي وكم فيه من تشويش / when you need to rate whether a frame is sharp, soft or blurry and how noisy it is
 
@@ -1699,7 +1699,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Compares two images metric by metric (brightness, contrast, clipping, CCT, saturation, colourfulness, sharpness, noise, symmetry) and says which is sharper and cleaner — e.g. last frame of one generated chunk vs first frame of the next.
+**ما هي:** يقارن صورتين مقياسًا مقياسًا (السطوع والتباين والقص وCCT والتشبع والألوان والحدة والضجيج والتناظر) ويحدد الأحدّ والأنظف، مثل آخر إطار في مقطع مولّد مقابل أول إطار في التالي. — Compares two images metric by metric (brightness, contrast, clipping, CCT, saturation, colourfulness, sharpness, noise, symmetry) and says which is sharper and cleaner — e.g. last frame of one generated chunk vs first frame of the next.
 
 **متى:** عند ربط مقاطع مولدة والتأكد من تطابق آخر إطار في مقطع مع أول إطار في التالي / when stitching generated chunks and checking the last frame of one matches the first frame of the next
 
@@ -1771,7 +1771,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds one PNG grid of sampled frames so a reviewer (or Claude's vision) can check a whole video at a glance before delivery.
+**ما هي:** يبني شبكة PNG واحدة من إطارات معاينة ليتمكن المراجع (أو رؤية Claude) من فحص فيديو كامل بنظرة قبل التسليم. — Builds one PNG grid of sampled frames so a reviewer (or Claude's vision) can check a whole video at a glance before delivery.
 
 **متى:** قبل تسليم الفيديو لمراجعته كله بنظرة واحدة في صورة شبكية من إطارات مختارة / before delivery, to review a whole video at a glance as one PNG grid of sampled frames
 
@@ -1844,7 +1844,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Under prefers-reduced-motion all durations collapse to 0.01ms with one iteration and smooth scroll off; every decorated element is forced to its final visible state, but the progress bar transform is kept so data still reads.
+**ما هي:** تحت prefers-reduced-motion تنهار كل المدد إلى 0.01ms بتكرار واحد ويُوقف التمرير الناعم؛ ويُفرض على كل عنصر مزخرف حالته النهائية المرئية، مع إبقاء تحويل شريط التقدم لتبقى البيانات مقروءة. — Under prefers-reduced-motion all durations collapse to 0.01ms with one iteration and smooth scroll off; every decorated element is forced to its final visible state, but the progress bar transform is kept so data still reads.
 
 **متى:** حين يجب احترام إعداد تقليل الحركة لدى المستخدم مع بقاء كل العناصر ظاهرة / when a page must honor prefers-reduced-motion while keeping every element in its final visible state
 
@@ -1916,7 +1916,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Probes a finished MP4 for black spans, frozen frames, loudness and size, writes a contact sheet and returns PASS/WARN/FAIL JSON.
+**ما هي:** يفحص MP4 منجزًا بحثًا عن مقاطع سوداء وإطارات مجمدة والجهارة والحجم، ويكتب ورقة لقطات ويعيد JSON بـ PASS/WARN/FAIL. — Probes a finished MP4 for black spans, frozen frames, loudness and size, writes a contact sheet and returns PASS/WARN/FAIL JSON.
 
 **متى:** حين ينتهي الفيديو وتريد كشف الشاشات السوداء والإطارات المتجمدة وفحص الحجم قبل التسليم / when a finished MP4 must be checked for black spans, frozen frames and size with a PASS/WARN/FAIL verdict
 
@@ -1991,7 +1991,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reports loudness, peaks, clipping, silence, stereo health, tonal balance and tempo of any audio file, with Arabic fix suggestions — the check for a voice-over or a finished mix.
+**ما هي:** يبلّغ عن الجهارة والذروات والقص والصمت وسلامة الستيريو والتوازن النغمي والإيقاع لأي ملف صوت، مع اقتراحات إصلاح بالعربية، وهو فحص التعليق الصوتي أو المزيج المنجز. — Reports loudness, peaks, clipping, silence, stereo health, tonal balance and tempo of any audio file, with Arabic fix suggestions — the check for a voice-over or a finished mix.
 
 **متى:** حين تريد فحص تعليق صوتي أو مكساج نهائي: علو الصوت والذروة والتشوه والصمت والإيقاع / for checking a voice-over or final mix: loudness, true peak, clipping, silence, stereo health and tempo
 
@@ -2066,7 +2066,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures exposure, tonal key, colour temperature, cast, saturation, palette, sharpness, noise, light side and composition of a frame — for checking renders, grading references and reverse-engineering looks.
+**ما هي:** يقيس التعريض والمفتاح النغمي ودرجة حرارة اللون والصبغة والتشبع ولوحة الألوان والحدة والضجيج وجانب الضوء والتكوين لإطار، لفحص التصييرات ومراجع التلوين وهندسة المظهر العكسية. — Measures exposure, tonal key, colour temperature, cast, saturation, palette, sharpness, noise, light side and composition of a frame — for checking renders, grading references and reverse-engineering looks.
 
 **متى:** حين تريد قياس إضاءة صورة أو إطار وحرارة اللون والتشبع والتكوين لفحص رندر أو تقليد لوك / for measuring a frame's exposure, colour temperature, saturation and composition to check renders or copy a look
 
@@ -2140,7 +2140,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Compares two images metric by metric — used to check continuity between stitched clips or before/after grades.
+**ما هي:** يقارن صورتين مقياسًا مقياسًا، للتحقق من الاستمرارية بين مقاطع مخيطة أو قبل/بعد التلوين. — Compares two images metric by metric — used to check continuity between stitched clips or before/after grades.
 
 **متى:** عند فحص الاستمرارية بين مقاطع موصولة أو مقارنة الصورة قبل التلوين وبعده / when checking continuity between stitched clips or comparing before/after colour grades
 
@@ -2212,7 +2212,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One JPEG showing two frames (early and middle) of every candidate clip so burned-in text, logos or wrong style can be spotted before editing.
+**ما هي:** JPEG واحد يعرض إطارين (مبكرًا ومنتصفًا) من كل مقطع مرشح ليُكتشف النص المحروق أو الشعارات أو الأسلوب الخاطئ قبل المونتاج. — One JPEG showing two frames (early and middle) of every candidate clip so burned-in text, logos or wrong style can be spotted before editing.
 
 **متى:** قبل المونتاج لفرز المقاطع المرشحة وكشف نص محروق أو شعار أو أسلوب غير مناسب / before editing, to triage candidate clips and spot burned-in text, logos or the wrong style
 
@@ -2286,7 +2286,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds a 2 fps contact sheet, a 360 px phone-width test, a 12-frame strip around a moment, the first frame, and a review rubric.
+**ما هي:** يبني ورقة لقطات 2 fps، واختبار 360 px بعرض الهاتف، وشريطًا من 12 إطارًا حول لحظة، والإطار الأول، ومعيار مراجعة. — Builds a 2 fps contact sheet, a 360 px phone-width test, a 12-frame strip around a moment, the first frame, and a review rubric.
 
 **متى:** حين تريد نقد الفيلم بنفسك عبر لقطات متتابعة واختبار عرض الجوال وشريط إطارات حول لحظة معينة / when self-critiquing a film with a contact sheet, a phone-width test and a frame strip around a moment
 
@@ -2359,7 +2359,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic read-only preflight that states what a media job can truthfully claim (NOT_FULL_PRO without runtime receipts).
+**ما هي:** فحص مسبق حتمي للقراءة فقط يحدد ما يمكن لمهمة الوسائط ادعاؤه بصدق (NOT_FULL_PRO دون إيصالات وقت التشغيل). — Deterministic read-only preflight that states what a media job can truthfully claim (NOT_FULL_PRO without runtime receipts).
 
 **متى:** قبل بدء مهمة وسائط لمعرفة ما يمكن ادعاؤه بصدق عن النتيجة دون إيصالات تشغيل / before a media job, to state what it can truthfully claim without runtime receipts
 
@@ -2429,7 +2429,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Probe streams/duration/fps/loudness, run several kmotion jobs in parallel, list Arabic-capable fonts on the machine.
+**ما هي:** افحص التدفقات/المدة/fps/الجهارة، وشغّل عدة مهام kmotion بالتوازي، واسرد الخطوط العربية المتاحة على الجهاز. — Probe streams/duration/fps/loudness, run several kmotion jobs in parallel, list Arabic-capable fonts on the machine.
 
 **متى:** حين تريد فحص ملف وسائط أو تشغيل عدة مهام دفعة واحدة أو معرفة الخطوط العربية المثبتة / when you need to probe a media file, run several jobs in parallel or list Arabic-capable fonts
 
@@ -2499,7 +2499,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scans pasted code for file deletion, process launch, network or low-level access and asks first; runs in a separate process with a 120 s limit in a scratch folder; SVG is data and never checked.
+**ما هي:** يفحص الكود الملصوق بحثًا عن حذف ملفات أو إطلاق عمليات أو شبكة أو وصول منخفض المستوى ويسأل أولًا؛ ويعمل في عملية منفصلة بحد 120 ث في مجلد مؤقت؛ وSVG بيانات ولا يُفحص أبدًا. — Scans pasted code for file deletion, process launch, network or low-level access and asks first; runs in a separate process with a 120 s limit in a scratch folder; SVG is data and never checked.
 
 **متى:** حين يلصق المستخدم كودًا ويجب فحصه من الحذف والشبكة وتشغيله معزولًا بمهلة محددة / when the user pastes code that must be scanned for deletion or network access and run isolated with a timeout
 
@@ -2571,7 +2571,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Sheets Claude and the user look at to fill texts, describe shots and compare remake vs reference.
+**ما هي:** أوراق ينظر إليها Claude والمستخدم لملء النصوص ووصف اللقطات ومقارنة النسخة المعاد صنعها بالمرجع. — Sheets Claude and the user look at to fill texts, describe shots and compare remake vs reference.
 
 **متى:** عند إعادة إنتاج فيديو مرجعي لملء النصوص ووصف اللقطات ومقارنة النسخة الجديدة بالأصل جنبًا إلى جنب / when remaking a reference: sheets to fill texts, describe shots and compare remake vs reference side by side
 
@@ -2640,7 +2640,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Regex-based node:test checks over CSS/TSX: duration tokens exact, curves present, no transition-all, keyed view stage + focus, reduced-motion block, safe-area/dvh rules.
+**ما هي:** فحوص node:test بالتعابير النمطية على CSS/TSX: رموز المدد مطابقة، والمنحنيات موجودة، ولا transition-all، ومرحلة العرض ذات المفتاح والتركيز، وكتلة الحركة المخفضة، وقواعد safe-area/dvh. — Regex-based node:test checks over CSS/TSX: duration tokens exact, curves present, no transition-all, keyed view stage + focus, reduced-motion block, safe-area/dvh rules.
 
 **متى:** عند التأكد آليًا أن ملفات CSS وTSX تلتزم بمدد ومنحنيات الحركة المتفق عليها / when checking CSS/TSX files keep the agreed motion durations, curves and reduced-motion rules
 
@@ -2712,7 +2712,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reads codec, resolution, CFR/VFR, duration, audio and keyframe positions of every source before editing.
+**ما هي:** يقرأ ترميز كل مصدر ودقته وCFR/VFR والمدة والصوت ومواضع الإطارات المفتاحية قبل المونتاج. — Reads codec, resolution, CFR/VFR, duration, audio and keyframe positions of every source before editing.
 
 **متى:** قبل المونتاج لمعرفة ترميز كل مصدر ودقته ومعدل إطاراته الثابت أو المتغير ومواضع الإطارات المفتاحية / before editing, to read each source's codec, resolution, CFR/VFR, audio and keyframe positions
 
@@ -2784,7 +2784,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Runs pasted picture code in a separate process, 120 s timeout, temp dir, risky() scan for delete/network/subprocess/ctypes needing consent.
+**ما هي:** يشغّل كود الصور الملصوق في عملية منفصلة، مهلة 120 ث، مجلد مؤقت، وفحص risky() لما يحتاج موافقة (حذف/شبكة/subprocess/ctypes). — Runs pasted picture code in a separate process, 120 s timeout, temp dir, risky() scan for delete/network/subprocess/ctypes needing consent.
 
 **متى:** حين يجب تشغيل كود رسم ملصوق في عملية منفصلة بمهلة ومجلد مؤقت وموافقة على الأوامر الخطرة / when pasted picture code must run in a separate process with a timeout, temp dir and consent for risky calls
 
@@ -2857,7 +2857,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures per-frame motion energy of an mp4 or frame dir: mean, peak, share above threshold, near-still share, longest freeze, luma/saturation; compares to a reference.
+**ما هي:** يقيس طاقة الحركة لكل إطار لـ mp4 أو مجلد إطارات: المتوسط والذروة ونسبة ما فوق العتبة ونسبة شبه الساكن وأطول تجمد وluma/التشبع؛ ويقارن بمرجع. — Measures per-frame motion energy of an mp4 or frame dir: mean, peak, share above threshold, near-still share, longest freeze, luma/saturation; compares to a reference.
 
 **متى:** حين تريد قياس كمية الحركة في فيديو وذروتها وأطول تجمد ومقارنتها بفيديو مرجعي / when measuring how much a video moves, its peaks and longest freeze, and comparing it to a reference
 
@@ -2929,7 +2929,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Streams, duration, size, fps, audio rate/channels as JSON.
+**ما هي:** التدفقات والمدة والحجم وfps ومعدل الصوت/القنوات كـ JSON. — Streams, duration, size, fps, audio rate/channels as JSON.
 
 **متى:** حين تحتاج معلومات سريعة عن ملف: المدة والحجم ومعدل الإطارات وتردد الصوت وقنواته / when you need a file's streams, duration, size, fps and audio rate/channels as JSON
 
@@ -2999,7 +2999,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Play/pause button, range scrubber, space-bar toggle, ?t=3.2 to jump, ?autoplay=1; controls hide automatically when navigator.webdriver (renderer).
+**ما هي:** زر تشغيل/إيقاف، ومنزلق تمرير، ومفتاح المسافة للتبديل، و?t=3.2 للقفز، و?autoplay=1؛ وتختفي عناصر التحكم تلقائيًا عند navigator.webdriver (المصيِّر). — Play/pause button, range scrubber, space-bar toggle, ?t=3.2 to jump, ?autoplay=1; controls hide automatically when navigator.webdriver (renderer).
 
 **متى:** عند فتح index.html في المتصفح للتشغيل والتقديم والقفز إلى ثانية محددة / when opening index.html in a browser to play, scrub or jump to a time with ?t= or autoplay
 
@@ -3069,7 +3069,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Flags BRIEF texts that share a run of ≥N words (default 6) with the creator's source description, enforcing original writing.
+**ما هي:** يعلّم نصوص BRIEF التي تشترك في تسلسل ≥N كلمات (الافتراضي 6) مع وصف مصدر المبدع، لفرض كتابة أصيلة. — Flags BRIEF texts that share a run of ≥N words (default 6) with the creator's source description, enforcing original writing.
 
 **متى:** حين تريد التأكد أن نصوص الموجز مكتوبة بأسلوب أصلي ولا تنقل عبارات من وصف المصدر / when checking that brief texts are originally written and do not copy word runs from the source description
 
@@ -3139,7 +3139,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Sample background pixels behind every text element at several timestamps and compute contrast ratios.
+**ما هي:** خذ عينات من بكسلات الخلفية خلف كل عنصر نص عند أزمنة عدة واحسب نسب التباين. — Sample background pixels behind every text element at several timestamps and compute contrast ratios.
 
 **متى:** حين تتغير الخلفية خلف النص أثناء الفيديو وتريد التأكد أن التباين مقروء في عدة لحظات / when backgrounds change behind text over time and contrast must stay readable at several timestamps
 
@@ -3214,7 +3214,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Seek through the timeline in headless Chrome and report text spilling out of containers, clipped text and off-canvas elements, with timestamps.
+**ما هي:** ابحث عبر الخط الزمني في Chrome بلا واجهة وأبلغ عن النص المتسرب من الحاويات والنص المقصوص والعناصر خارج اللوحة، مع الأزمنة. — Seek through the timeline in headless Chrome and report text spilling out of containers, clipped text and off-canvas elements, with timestamps.
 
 **متى:** حين يخرج النص عن حاويته أو يُقص أو يخرج عنصر عن الشاشة في لحظات من الفيديو / when text spills out of containers, gets clipped or elements go off-canvas at moments in the timeline
 
@@ -3288,7 +3288,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Produce per-tween summaries, an ASCII Gantt of all tweens, measured stagger intervals, dead zones and flags (offscreen, collision, invisible, too fast, too slow).
+**ما هي:** أنتج ملخصات لكل تويين، ومخطط Gantt نصيًا لكل التوينات، وفواصل التتابع المقيسة والمناطق الميتة والعلامات (خارج الشاشة، تصادم، غير مرئي، سريع جدًا، بطيء جدًا). — Produce per-tween summaries, an ASCII Gantt of all tweens, measured stagger intervals, dead zones and flags (offscreen, collision, invisible, too fast, too slow).
 
 **متى:** حين تريد تدقيق توقيت كل الحركات وفواصلها وكشف الفترات الميتة والحركات السريعة أو البطيئة جدًا / when auditing every tween's timing and stagger, flagging dead zones and too-fast or too-slow moves
 
@@ -3361,7 +3361,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Measure a drawn style into knob values and p10/p50/p90 bands (edge roughness, stroke widths, solid black, boil rate, holds) and check whether a new film stays inside them.
+**ما هي:** قِس أسلوبًا مرسومًا إلى قيم مقابض ونطاقات p10/p50/p90 (خشونة الحافة، وعروض الخطوط، والأسود الصلب، ومعدل الغليان، والتثبيتات) وتحقق هل يبقى فيلم جديد داخلها. — Measure a drawn style into knob values and p10/p50/p90 bands (edge roughness, stroke widths, solid black, boil rate, holds) and check whether a new film stays inside them.
 
 **متى:** حين تريد قياس أسلوب رسم وتحويله لقيم ونطاقات ثم فحص هل الفيلم الجديد ما زال داخلها / when a drawn style must be measured into knobs and p10-p90 bands and a new film checked against them
 
@@ -3433,7 +3433,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Slices CSS by media query and asserts phone/tablet behaviours (bottom nav at 768px, 16px/12px padding, safe-area offsets, 100dvh).
+**ما هي:** يقطّع CSS بحسب استعلامات الوسائط ويتحقق من سلوك الهاتف/اللوحي (تنقل سفلي عند 768px، وحشو 16px/12px، وإزاحات safe-area، و100dvh). — Slices CSS by media query and asserts phone/tablet behaviours (bottom nav at 768px, 16px/12px padding, safe-area offsets, 100dvh).
 
 **متى:** حين تريد التأكد أن التصميم يتصرف صحيحًا على الجوال والتابلت / when checking a layout behaves correctly at phone and tablet breakpoints with safe-area offsets
 
@@ -3505,7 +3505,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** To learn from a reference reel or post: sample frames across the timeline (all slides for carousels), get a verbatim timestamped transcript and the caption, then write header, TL;DR, full transcript, on-screen text and visuals timeline, verbatim caption, beat-by-beat structure (hook -> points -> CTA…
+**ما هي:** للتعلم من ريل أو منشور مرجعي: خذ عينات إطارات عبر الخط الزمني (كل الشرائح في الكاروسيل)، واحصل على تفريغ حرفي موقّت والتعليق، ثم اكتب الترويسة وTL;DR والتفريغ الكامل والنص على الشاشة وخط المرئيات الزمني والتعليق الحرفي والبنية ضربة بضربة (الخطاف ← النقاط ← CTA… — To learn from a reference reel or post: sample frames across the timeline (all slides for carousels), get a verbatim timestamped transcript and the caption, then write header, TL;DR, full transcript, on-screen text and visuals timeline, verbatim caption, beat-by-beat structure (hook -> points -> CTA…
 
 **متى:** حين يعطي المستخدم ريلًا أو منشورًا مرجعيًا ويريد تفكيكه: نص كامل وجدول للمرئيات وبنية من الهوك حتى الدعوة / when breaking down a reference reel or post: transcript, visuals timeline, hook-to-CTA beats
 
@@ -3576,7 +3576,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Pixel-compare rendered frames against approved goldens with exit-code verdicts: 0 match, 22 pixel differences, 21 size/layout change (with --fail-on-layout); suppress antialias noise on text, ignore dynamic rectangles (timestamps), write a magenta diff image.
+**ما هي:** قارن الإطارات المصيَّرة بنسخ ذهبية معتمدة بالبكسل مع أحكام بكود خروج: 0 تطابق، 22 فروق بكسل، 21 تغيّر حجم/تخطيط (مع --fail-on-layout)؛ واكتم ضجيج antialias على النص، وتجاهل المستطيلات الديناميكية (الطوابع الزمنية)، واكتب صورة فرق بالأرجواني. — Pixel-compare rendered frames against approved goldens with exit-code verdicts: 0 match, 22 pixel differences, 21 size/layout change (with --fail-on-layout); suppress antialias noise on text, ignore dynamic rectangles (timestamps), write a magenta diff image.
 
 **متى:** حين تريد مقارنة إطارات الرندر الجديد بإطارات معتمدة بكسلًا ببكسل لكشف أي تغير غير مقصود / when rendered frames must be pixel-compared against approved goldens to catch unintended changes
 
@@ -3651,7 +3651,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Use a fixed marker vocabulary so review is machine-readable: chapter, cut-done, cut-review, privacy, exposure/WB checks, audio review, hook, GFX; Resolve allows one marker per frame and only 16 colours (Blue Cyan Green Yellow Red Pink Purple Fuchsia Rose Lavender Sky Mint Lemon Sand Cocoa Cream); of…
+**ما هي:** استخدم مفردات علامات ثابتة ليكون التقييم مقروءًا آليًا: فصل، وقطع منجز، وقطع للمراجعة، وخصوصية، وفحوص التعريض/توازن الأبيض، ومراجعة الصوت، وخطاف، وGFX؛ يسمح Resolve بعلامة واحدة لكل إطار و16 لونًا فقط (Blue Cyan Green Yellow Red Pink Purple Fuchsia Rose Lavender Sky Mint Lemon Sand Cocoa Cream)؛ of… — Use a fixed marker vocabulary so review is machine-readable: chapter, cut-done, cut-review, privacy, exposure/WB checks, audio review, hook, GFX; Resolve allows one marker per frame and only 16 colours (Blue Cyan Green Yellow Red Pink Purple Fuchsia Rose Lavender Sky Mint Lemon Sand Cocoa Cream); of…
 
 **متى:** حين تريد وسم الخط الزمني في Resolve بعلامات ملونة ثابتة المعنى لتكون المراجعة مقروءة آليًا / when tagging a Resolve timeline with a fixed colour marker vocabulary so review is machine-readable
 
@@ -3724,7 +3724,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Understand a social/local video by sampling frames across the timeline (scene-detect + perceptual-hash dedupe + stratified interval + transcript-anchored frames, no hard cap), reading them with vision, plus a full timestamped transcript and caption; every frame keeps a measured, estimated (±half int…
+**ما هي:** افهم فيديو اجتماعيًا/محليًا بأخذ عينات إطارات عبر الخط الزمني (كشف مشاهد + إزالة تكرار البصمة الإدراكية + فاصل طبقي + إطارات مرتبطة بالتفريغ، بلا سقف صارم)، وقراءتها بالرؤية، مع تفريغ كامل موقّت وتعليق؛ ويحتفظ كل إطار بزمن مقيس أو مقدّر (±نصف فاصل… — Understand a social/local video by sampling frames across the timeline (scene-detect + perceptual-hash dedupe + stratified interval + transcript-anchored frames, no hard cap), reading them with vision, plus a full timestamped transcript and caption; every frame keeps a measured, estimated (±half int…
 
 **متى:** حين يطلب المستخدم مشاهدة فيديو أو ريل وفهمه: إطارات مختارة عبر الزمن مع تفريغ كامل بالتوقيت / when asked to watch and understand a social or local video via sampled frames plus a timed transcript
 
@@ -3797,7 +3797,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Every cut must change the picture within one frame of the sound onset.
+**ما هي:** يجب أن يغيّر كل قطع الصورة خلال إطار واحد من بداية الصوت. — Every cut must change the picture within one frame of the sound onset.
 
 **متى:** حين يجب التحقق أن كل قطع في المونتاج يقع على الضربة الصوتية في حدود إطار واحد / when verifying that every cut lands within one frame of the sound onset
 
@@ -3871,7 +3871,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Headless renders can lose the GPU device; detect and rebuild instead of producing black frames.
+**ما هي:** قد تفقد التصييرات بلا واجهة جهاز GPU؛ اكتشف ذلك وأعد البناء بدل إنتاج إطارات سوداء. — Headless renders can lose the GPU device; detect and rebuild instead of producing black frames.
 
 **متى:** حين يفقد الرندر بدون واجهة جهاز GPU وينتج إطارات سوداء وتريد اكتشاف ذلك وإعادة البناء / when headless renders lose the GPU device and would produce black frames, to detect and rebuild instead
 
@@ -3942,7 +3942,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Replica acceptance per drawing measured, not eyeballed.
+**ما هي:** قبول النسخة المطابقة لكل رسمة مقيسٌ لا بالعين. — Replica acceptance per drawing measured, not eyeballed.
 
 **متى:** عند قبول رسم روتوسكوب مطابق للمصدر بالقياس بدل الحكم بالعين / when accepting a rotoscoped replica drawing by measured SSIM and XOR against the source, not by eye
 
@@ -4014,7 +4014,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Invalid or mis-projected geometry produces blank maps, points in the ocean and crashing area/union operations.
+**ما هي:** الهندسة غير الصالحة أو ذات الإسقاط الخاطئ تنتج خرائط فارغة ونقاطًا في المحيط وتعطل عمليات المساحة/الاتحاد. — Invalid or mis-projected geometry produces blank maps, points in the ocean and crashing area/union operations.
 
 **متى:** حين تظهر الخريطة فارغة أو النقاط في البحر أو تفشل عمليات المساحة والدمج بسبب هندسة غير صالحة / when maps come out blank, points land in the ocean or area/union fails due to invalid geometry
 
@@ -4087,7 +4087,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures speech level, noise floor, peak and SNR to decide gain, low-cut and compression.
+**ما هي:** يقيس مستوى الكلام وأرضية الضجيج والذروة وSNR لتقرير الكسب والقطع المنخفض والضغط. — Measures speech level, noise floor, peak and SNR to decide gain, low-cut and compression.
 
 **متى:** حين تريد ضبط صوت المتكلم بقياس مستوى الكلام والضوضاء ونسبة الإشارة لتحديد الكسب والقطع المنخفض والضغط / when deciding gain, low-cut and compression from measured speech level, noise floor and SNR
 
@@ -4159,7 +4159,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Counts hard cuts, average shot length, motion and still share of any reference video locally.
+**ما هي:** يعدّ القطعات الحادة ومتوسط طول اللقطة والحركة ونسبة الساكن لأي فيديو مرجعي محليًا. — Counts hard cuts, average shot length, motion and still share of any reference video locally.
 
 **متى:** حين تريد معرفة عدد القطعات ومتوسط طول اللقطة ونسبة الثبات في فيديو مرجعي محليًا / when counting hard cuts, average shot length and still share of a reference video locally
 
@@ -4229,7 +4229,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Walks the repo, syntax-checks every JS module with node --check, validates local asset references, view IDs and the PWA cache list.
+**ما هي:** يمشي في المستودع، ويفحص صياغة كل وحدة JS بـ node --check، ويتحقق من مراجع الأصول المحلية ومعرّفات العروض وقائمة ذاكرة PWA. — Walks the repo, syntax-checks every JS module with node --check, validates local asset references, view IDs and the PWA cache list.
 
 **متى:** عند فحص مشروع ويب بحثًا عن أخطاء صياغة JS ومراجع ملفات مفقودة / when scanning a web repo for JS syntax errors and broken local asset references
 
@@ -4301,7 +4301,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A local study of a reference: frame-accurate cuts (hard cuts, whips, dissolves, white flashes, dips), per-shot camera moves from a motion field, palette and grade, caption band/size/colour/rate, per-second energy and beat alignment of cuts.
+**ما هي:** دراسة محلية للمرجع: قطعات دقيقة بالإطار (حادة، وwhips، وذوبان، ووميض أبيض، وغطس)، وحركات الكاميرا لكل لقطة من حقل الحركة، ولوحة الألوان والتدرج، ونطاق الترجمة وحجمها ولونها ومعدلها، وطاقة كل ثانية ومحاذاة القطعات للضربات. — A local study of a reference: frame-accurate cuts (hard cuts, whips, dissolves, white flashes, dips), per-shot camera moves from a motion field, palette and grade, caption band/size/colour/rate, per-second energy and beat alignment of cuts.
 
 **متى:** حين تريد دراسة مرجع بعمق: أنواع الانتقالات وحركات الكاميرا والألوان وشكل الترجمة وتوافق القطع مع الإيقاع / for a deep reference study: transition types, camera moves, palette, captions and beat-aligned cuts
 
@@ -4373,7 +4373,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders the product through the same measurements and scores it against the reference, then closes the biggest gap.
+**ما هي:** يصيّر المنتج عبر القياسات نفسها ويقيّمه مقابل المرجع، ثم يسدّ أكبر فجوة. — Renders the product through the same measurements and scores it against the reference, then closes the biggest gap.
 
 **متى:** حين تريد قياس مدى تشابه الفيديو الناتج مع المرجع ثم إصلاح أكبر فرق تلقائيًا / when scoring how close the product is to the reference and automatically closing the biggest gap
 
@@ -4445,7 +4445,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Estimates a plan's cost before running it and tracks actual cost per key; asks before plans above the limit.
+**ما هي:** يقدّر تكلفة الخطة قبل تشغيلها ويتتبع التكلفة الفعلية لكل مفتاح؛ ويسأل قبل الخطط التي تتجاوز الحد. — Estimates a plan's cost before running it and tracks actual cost per key; asks before plans above the limit.
 
 **متى:** قبل تشغيل خطة تستدعي نماذج مدفوعة لتقدير تكلفتها وطلب الموافقة إذا تجاوزت الحد / before running a plan that calls paid models, to estimate its cost and ask when it exceeds the limit
 
@@ -4520,7 +4520,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Local checks every 1.5 s suggest the next step and fix problems with one tap.
+**ما هي:** فحوص محلية كل 1.5 ث تقترح الخطوة التالية وتصلح المشكلات بنقرة واحدة. — Local checks every 1.5 s suggest the next step and fix problems with one tap.
 
 **متى:** أثناء المونتاج حين تريد اقتراحات فورية بالخطوة التالية وإصلاح المشاكل بضغطة دون ذكاء اصطناعي / while editing, for instant local tips on the next step and one-tap fixes without AI
 
@@ -4592,7 +4592,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A pre-publish checklist with pass/warn/fail lines and a verdict.
+**ما هي:** قائمة تحقق ما قبل النشر بأسطر نجاح/تحذير/فشل وحكم. — A pre-publish checklist with pass/warn/fail lines and a verdict.
 
 **متى:** قبل النشر لمراجعة قائمة نهائية بالمدة والترجمة والصوت والتزامن مع حكم نجاح أو تحذير أو فشل / before publishing, for a final checklist on duration, captions, audio and sync with a pass/warn/fail verdict
 
@@ -4662,7 +4662,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A safe status page checks configuration and then makes read-only requests to test reachability/auth of Gemini and Claude; the agent can also run a timed diagnosis of every route.
+**ما هي:** صفحة حالة آمنة تفحص الإعدادات ثم تُجري طلبات للقراءة فقط لاختبار الوصول/المصادقة مع Gemini وClaude؛ ويمكن للوكيل أيضًا تشغيل تشخيص موقّت لكل مسار. — A safe status page checks configuration and then makes read-only requests to test reachability/auth of Gemini and Claude; the agent can also run a timed diagnosis of every route.
 
 **متى:** حين لا يعمل الربط مع Gemini أو Claude وتريد فحص الإعدادات والاتصال والمصادقة بأمان / when the Gemini or Claude integration fails and you need to check config, reachability and auth safely
 
@@ -4734,7 +4734,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Product, original and reference monitors can be shown one at a time or side by side, with the reference video playing in sync.
+**ما هي:** يمكن عرض شاشات المنتج والأصل والمرجع واحدة تلو الأخرى أو جنبًا إلى جنب، مع تشغيل فيديو المرجع متزامنًا. — Product, original and reference monitors can be shown one at a time or side by side, with the reference video playing in sync.
 
 **متى:** حين تريد عرض المنتج والأصل والمرجع واحدًا تلو الآخر أو جنبًا إلى جنب مع تشغيل المرجع متزامنًا / when showing product, original and reference monitors one at a time or side by side with synced playback
 
@@ -4805,7 +4805,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Short low-res test render to prove the pipeline before approval.
+**ما هي:** تصيير تجريبي قصير منخفض الدقة لإثبات خط الأنابيب قبل الاعتماد. — Short low-res test render to prove the pipeline before approval.
 
 **متى:** قبل الموافقة على الرندر الكامل لتجربة قصيرة بدقة منخفضة تثبت أن خط الإنتاج يعمل / before approval, for a short low-res test render that proves the pipeline works
 
@@ -4878,7 +4878,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Static linter (~150 rule codes) over composition HTML/CSS/JS.
+**ما هي:** مدقق ثابت (~150 رمز قاعدة) على HTML/CSS/JS للتركيب. — Static linter (~150 rule codes) over composition HTML/CSS/JS.
 
 **متى:** حين تريد فحص ملفات HTML وCSS وJS للتكوين بقواعد ثابتة واكتشاف الأخطاء / when composition HTML/CSS/JS must be statically checked against lint rule codes
 
@@ -4951,7 +4951,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Browser audit at 9 midpoint samples (+--at-transitions): overflow tolerance 2px, WCAG contrast, --caption-zone band gate, --frame-check, --snapshots crops.
+**ما هي:** تدقيق متصفح عند 9 عينات منتصفية (+--at-transitions): تسامح الفيض 2px، وتباين WCAG، وبوابة نطاق --caption-zone، و--frame-check، واقتطاعات --snapshots. — Browser audit at 9 midpoint samples (+--at-transitions): overflow tolerance 2px, WCAG contrast, --caption-zone band gate, --frame-check, --snapshots crops.
 
 **متى:** حين تريد تدقيق التكوين في المتصفح للتجاوز والتباين ومنطقة الترجمة في عينات من الخط الزمني / when auditing a composition in the browser for overflow, contrast and caption-zone issues at sampled times
 
@@ -5025,7 +5025,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Asserts required hex tokens, Tajawal, hero gradient and shadow exist; checks cascade order, theme-color consistency and font weights linked.
+**ما هي:** يتحقق من وجود رموز hex المطلوبة وخط Tajawal وتدرج البطل والظل؛ ويفحص ترتيب التتالي واتساق theme-color وأوزان الخطوط المربوطة. — Asserts required hex tokens, Tajawal, hero gradient and shadow exist; checks cascade order, theme-color consistency and font weights linked.
 
 **متى:** حين تريد منع تغيّر ألوان وخط الثيم المعتمد في لوحة التحكم دون قصد / when locking a dashboard theme's colors, Tajawal font and gradient against accidental changes
 
@@ -5098,7 +5098,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** PNG frames at --at times or --frames 5; --zoom selector crop at scale 3; --against reference video side-by-side.
+**ما هي:** إطارات PNG عند أزمنة --at أو --frames 5؛ واقتطاع محدد --zoom بمقياس 3؛ و--against فيديو مرجعي جنبًا إلى جنب. — PNG frames at --at times or --frames 5; --zoom selector crop at scale 3; --against reference video side-by-side.
 
 **متى:** حين تريد صورًا ثابتة من التكوين في أزمنة محددة أو تكبير عنصر أو مقارنته بفيديو مرجعي / when you need PNG frames at chosen times, a zoomed element crop or a side-by-side with a reference video
 
@@ -5171,7 +5171,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Inspect tween keyframes over time.
+**ما هي:** افحص الإطارات المفتاحية للتوينات عبر الزمن. — Inspect tween keyframes over time.
 
 **متى:** حين تريد فحص الإطارات المفتاحية للحركة وكيف تتغير القيم عبر الزمن / when you need to inspect tween keyframes and how values change over time
 
@@ -5244,7 +5244,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Compare renders; grade-compare tiles up to 16 grades 4 per row into grade-compare.png.
+**ما هي:** قارن التصييرات؛ وgrade-compare يرتب حتى 16 تدرجًا بواقع 4 في الصف في grade-compare.png. — Compare renders; grade-compare tiles up to 16 grades 4 per row into grade-compare.png.
 
 **متى:** حين تريد مقارنة نسخ الرندر أو عرض حتى 16 تدريجًا لونيًا في صورة واحدة للاختيار بينها / when comparing renders or tiling up to 16 colour grades into one image to choose between them
 
@@ -5317,7 +5317,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Fewer big backdrop-filter/blur layers; draft quality for review only.
+**ما هي:** طبقات backdrop-filter/blur كبيرة أقل؛ وجودة المسودة للمراجعة فقط. — Fewer big backdrop-filter/blur layers; draft quality for review only.
 
 **متى:** حين يكون الرندر ثقيلًا بسبب طبقات التمويه الكبيرة الكثيرة وتريد جودة مسودة للمراجعة فقط / when renders are heavy from many big blur/backdrop-filter layers and you want draft quality for review only
 
@@ -5387,7 +5387,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Fidelity is earned pass by pass: frame table proposal in chat, static styled sketches as cells of storyboard.html, building that dresses (never redraws) confirmed layouts, then Studio preview before render; autonomous mode keeps exactly one question before render.
+**ما هي:** تُكتسب الدقة مرحلة بعد مرحلة: اقتراح جدول إطارات في المحادثة، ثم رسومات ثابتة منسقة كخلايا في storyboard.html، ثم بناء يكسو (ولا يعيد رسم) التخطيطات المؤكدة، ثم معاينة Studio قبل التصيير؛ والنمط المستقل يبقي سؤالًا واحدًا بالضبط قبل التصيير. — Fidelity is earned pass by pass: frame table proposal in chat, static styled sketches as cells of storyboard.html, building that dresses (never redraws) confirmed layouts, then Studio preview before render; autonomous mode keeps exactly one question before render.
 
 **متى:** حين يُبنى الفيديو على مراحل بموافقة: خطة إطارات ثم رسومات ثابتة ثم بناء ثم معاينة قبل الرندر / when building a video in approved passes: frame plan, static sketches, build, then preview before render
 
@@ -5460,7 +5460,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Projects pin hyperframes@<version>; before render-affecting commands probe and, if behind, upgrade then verify with check; name old/new version in the summary, revert on failure.
+**ما هي:** تثبّت المشاريع hyperframes@<version>؛ وقبل الأوامر المؤثرة على التصيير افحص، وإن كان الإصدار أقدم فرقِّ ثم تحقق بـ check؛ وسمِّ الإصدار القديم والجديد في الملخص، وتراجع عند الفشل. — Projects pin hyperframes@<version>; before render-affecting commands probe and, if behind, upgrade then verify with check; name old/new version in the summary, revert on failure.
 
 **متى:** قبل أوامر الرندر حين يكون إصدار hyperframes المثبت في المشروع قديمًا ويحتاج ترقية وتحققًا / before render-affecting commands when the project's pinned hyperframes version is behind and must be upgraded
 
@@ -5530,7 +5530,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Every frame must be a pure function of time: no Date.now/performance.now, no unseeded Math.random (use seeded PRNG), no render-time network, no hover/scroll/input, repeat:-1 only under finite root duration, no tl.play() for render motion.
+**ما هي:** يجب أن يكون كل إطار دالة خالصة للزمن: لا Date.now/performance.now، ولا Math.random بلا بذرة (استخدم PRNG مبذورًا)، ولا شبكة وقت التصيير، ولا hover/scroll/input، وrepeat:-1 فقط تحت مدة جذر محدودة، ولا tl.play() لحركة التصيير. — Every frame must be a pure function of time: no Date.now/performance.now, no unseeded Math.random (use seeded PRNG), no render-time network, no hover/scroll/input, repeat:-1 only under finite root duration, no tl.play() for render motion.
 
 **متى:** حين يختلف الرندر بين مرة وأخرى أو يجب أن يكون كل إطار دالة ثابتة للزمن بلا عشوائية غير مضبوطة / when renders differ between runs or every frame must be a pure function of time, with no unseeded random
 
@@ -5600,7 +5600,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Known lint errors: gsap_css_transform_conflict, media_crossorigin_breaks_preview, video_nested_in_timed_element, media_missing_id (silent render), gsap_animates_clip_element, font_family_without_font_face, standalone_composition_wrapped_in_template, subcomposition_root_styled_by_class.
+**ما هي:** أخطاء فحص معروفة: gsap_css_transform_conflict وmedia_crossorigin_breaks_preview وvideo_nested_in_timed_element وmedia_missing_id (تصيير صامت) وgsap_animates_clip_element وfont_family_without_font_face وstandalone_composition_wrapped_in_template وsubcomposition_root_styled_by_class. — Known lint errors: gsap_css_transform_conflict, media_crossorigin_breaks_preview, video_nested_in_timed_element, media_missing_id (silent render), gsap_animates_clip_element, font_family_without_font_face, standalone_composition_wrapped_in_template, subcomposition_root_styled_by_class.
 
 **متى:** حين يظهر خطأ فحص معروف مثل تعارض التحويلات أو وسائط بلا id أو خط بلا @font-face / when lint reports known errors like transform conflicts, media without id or fonts without @font-face
 
@@ -5670,7 +5670,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Lists every track and clip (starts, ends, what plays) of a project.
+**ما هي:** يسرد كل مسار ومقطع (البدايات والنهايات وما يُعرض) في مشروع. — Lists every track and clip (starts, ends, what plays) of a project.
 
 **متى:** حين تريد قائمة بكل المسارات والمقاطع في المشروع مع بداياتها ونهاياتها وما يعمل فيها / when you need a list of every track and clip in a project with starts, ends and what plays
 
@@ -5741,7 +5741,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Do not use star iris (polygon interpolation broken), tilt-shift, lens flare (visible shape), hinge/door; glitch overlays must not use multiply blend; light leaks >2400 px.
+**ما هي:** لا تستخدم star iris (استكمال المضلع معطوب)، ولا tilt-shift، ولا lens flare (شكل مرئي)، ولا hinge/door؛ ويجب ألا تستخدم تراكبات الخلل مزج multiply؛ وتسرب الضوء >2400 px. — Do not use star iris (polygon interpolation broken), tilt-shift, lens flare (visible shape), hinge/door; glitch overlays must not use multiply blend; light leaks >2400 px.
 
 **متى:** عند اختيار انتقال CSS لتجنب الأنواع المعطوبة مثل القزحية النجمية وتوهج العدسة والمفصلة / when choosing CSS transitions, to avoid broken ones like star iris, lens flare, tilt-shift and hinge
 
@@ -5811,7 +5811,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures where and how parts of a reference move over time (16 regions), compensating for camera motion, then rebuilds animated inserts on the user's project and scores motion similarity.
+**ما هي:** يقيس أين تتحرك أجزاء المرجع وكيف عبر الزمن (16 منطقة) مع تعويض حركة الكاميرا، ثم يعيد بناء إدراجات متحركة على مشروع المستخدم ويقيّم تشابه الحركة. — Measures where and how parts of a reference move over time (16 regions), compensating for camera motion, then rebuilds animated inserts on the user's project and scores motion similarity.
 
 **متى:** عند تقليد طريقة تحرك أجزاء فيديو مرجعي وإعادة بنائها على مشروعك / when copying how regions of a reference video move and rebuilding that motion on your project
 
@@ -5884,7 +5884,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Enumerates every GSAP tween on window.__timelines, samples bounding boxes, flags dead zones, stagger inconsistency and lifecycle problems into animation-map.json.
+**ما هي:** يعدّد كل توين GSAP على window.__timelines، ويأخذ عينات من صناديق الإحاطة، ويعلّم المناطق الميتة وعدم اتساق التتابع ومشكلات دورة الحياة في animation-map.json. — Enumerates every GSAP tween on window.__timelines, samples bounding boxes, flags dead zones, stagger inconsistency and lifecycle problems into animation-map.json.
 
 **متى:** حين تريد حصر كل حركات GSAP في التكوين وكشف الفترات الميتة وعدم انتظام التتابع / when enumerating every GSAP tween to flag dead zones, stagger inconsistency and lifecycle problems
 
@@ -5957,7 +5957,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Surfaces targets, explicit stops, paths, traces and composed motion; --shot renders onion-skin ghosts of a selector; --layout strip shows in-place motion; --ghost covers canvas/WebGL; snapshot --at proves final lockups.
+**ما هي:** يُظهر الأهداف والإيقافات الصريحة والمسارات والآثار والحركة المركبة؛ و--shot يصيّر أشباح onion-skin لمحدد؛ و--layout strip يعرض الحركة في المكان؛ و--ghost يغطي canvas/WebGL؛ وsnapshot --at يثبت الإقفالات النهائية. — Surfaces targets, explicit stops, paths, traces and composed motion; --shot renders onion-skin ghosts of a selector; --layout strip shows in-place motion; --ghost covers canvas/WebGL; snapshot --at proves final lockups.
 
 **متى:** حين تريد تشخيص مسار حركة عنصر ورؤية أشباحه المتتالية وثبات سرعته وإثبات الوضع النهائي / when diagnosing an element's motion path with onion-skin ghosts, speed evenness and final lockup proof
 
@@ -6029,7 +6029,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Post-authoring check of colors, type, corners, spacing and depth against the spec.
+**ما هي:** فحص ما بعد التأليف للألوان والخطوط والزوايا والمسافات والعمق مقابل المواصفة. — Post-authoring check of colors, type, corners, spacing and depth against the spec.
 
 **متى:** بعد التنفيذ للتأكد أن الألوان والخطوط والزوايا والمسافات والعمق مطابقة لمواصفات التصميم / after authoring, to check colors, type, corners, spacing and depth against the design spec
 
@@ -6099,7 +6099,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Inspects WCAG contrast warnings in rendered frames.
+**ما هي:** يفحص تحذيرات تباين WCAG في الإطارات المصيَّرة. — Inspects WCAG contrast warnings in rendered frames.
 
 **متى:** حين تريد معرفة تحذيرات التباين في الإطارات المصيرة للتأكد من وضوح النص / when you need WCAG contrast warnings from rendered frames to check text legibility
 
@@ -6172,7 +6172,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Static HTML structure check with named rule ids.
+**ما هي:** فحص ثابت لبنية HTML بمعرّفات قواعد مسماة. — Static HTML structure check with named rule ids.
 
 **متى:** حين تريد فحص بنية HTML للتكوين فحصًا ثابتًا بقواعد لها أسماء / for a static check of composition HTML structure that reports named rule ids
 
@@ -6243,7 +6243,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One headless browser session and seek pass auditing runtime errors, failed requests, layout overflow, *.motion.json motion assertions and WCAG AA contrast; persistent findings gate the exit code.
+**ما هي:** جلسة متصفح بلا واجهة واحدة ومرور بحث يدقق أخطاء وقت التشغيل والطلبات الفاشلة وفيض التخطيط وتأكيدات الحركة *.motion.json وتباين WCAG AA؛ والنتائج المستمرة تتحكم في كود الخروج. — One headless browser session and seek pass auditing runtime errors, failed requests, layout overflow, *.motion.json motion assertions and WCAG AA contrast; persistent findings gate the exit code.
 
 **متى:** حين تريد فحصًا واحدًا في المتصفح لأخطاء التشغيل والطلبات الفاشلة والتجاوز وتأكيدات الحركة والتباين / for one headless browser pass on runtime errors, failed requests, overflow, motion assertions and contrast
 
@@ -6318,7 +6318,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** State motion intent next to a composition (entrances firing under seek, stagger order, in-frame, liveness) so `check` verifies it automatically; closest automated proxy for watching the MP4.
+**ما هي:** صرّح بقصد الحركة بجانب التركيب (الدخول تعمل تحت البحث، وترتيب التتابع، داخل الإطار، والحيوية) ليتحقق `check` منه تلقائيًا؛ وهو أقرب بديل آلي لمشاهدة MP4. — State motion intent next to a composition (entrances firing under seek, stagger order, in-frame, liveness) so `check` verifies it automatically; closest automated proxy for watching the MP4.
 
 **متى:** حين تريد كتابة نية الحركة بجانب التكوين ليتحقق منها الفحص آليًا بدل مشاهدة الفيديو / when stating motion intent next to a composition so check verifies entrances, stagger and in-frame automatically
 
@@ -6388,7 +6388,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Render still frames at chosen timestamps to inspect mounts, text and final lockups.
+**ما هي:** صيّر إطارات ثابتة عند أزمنة مختارة لفحص التثبيتات والنص والإقفالات النهائية. — Render still frames at chosen timestamps to inspect mounts, text and final lockups.
 
 **متى:** حين تريد صورًا ثابتة في أزمنة تختارها لفحص ظهور العناصر والنصوص والوضع النهائي / when rendering stills at chosen timestamps to inspect mounts, text and final lockups
 
@@ -6459,7 +6459,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** After render read the second summary line: beginframe vs screenshot capture, GPU mode, stage timings (compile/setup/capture/encode); screenshot + software GPU on Linux is the slow path.
+**ما هي:** بعد التصيير اقرأ سطر الملخص الثاني: التقاط beginframe مقابل screenshot، ووضع GPU، وتوقيتات المراحل (compile/setup/capture/encode)؛ وscreenshot + GPU برمجي على Linux هو المسار البطيء. — After render read the second summary line: beginframe vs screenshot capture, GPU mode, stage timings (compile/setup/capture/encode); screenshot + software GPU on Linux is the slow path.
 
 **متى:** بعد الرندر وخاصة إذا كان بطيئًا لمعرفة طريقة الالتقاط ووضع GPU وتوقيت كل مرحلة / after a render, especially a slow one, to read the capture path, GPU mode and per-stage timings
 
@@ -6532,7 +6532,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Side-by-side comparison of projects/variants and of color grades.
+**ما هي:** مقارنة جنبًا إلى جنب بين المشاريع/النسخ وبين تدرجات الألوان. — Side-by-side comparison of projects/variants and of color grades.
 
 **متى:** حين تريد مقارنة نسختين من المشروع أو درجات تلوين مختلفة جنبًا إلى جنب / when comparing project variants or colour grades side by side
 
@@ -6603,7 +6603,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** GitHub Actions run the source smoke check, Python media-helper tests, motion-clone tests, TypeScript check and a Vite build.
+**ما هي:** تشغّل GitHub Actions فحص الدخان للمصدر، واختبارات مساعد الوسائط بـ Python، واختبارات استنساخ الحركة، وفحص TypeScript، وبناء Vite. — GitHub Actions run the source smoke check, Python media-helper tests, motion-clone tests, TypeScript check and a Vite build.
 
 **متى:** حين تريد تشغيل اختبارات تلقائية مع كل تعديل للتأكد أن المشروع لم ينكسر / when setting up automated CI checks so regressions in the project are caught on each change
 
@@ -6676,7 +6676,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Every write is an undoable entry; agents bracket turns and undo their newest turn without touching the person's edits.
+**ما هي:** كل كتابة مدخل قابل للتراجع؛ يحيط الوكلاء الأدوار بأقواس ويتراجعون عن أحدث دور لهم دون المساس بتعديلات الشخص. — Every write is an undoable entry; agents bracket turns and undo their newest turn without touching the person's edits.
 
 **متى:** حين يعمل وكيل على المشروع ويحتاج التراجع عن آخر دورة له دون المساس بتعديلات الشخص / when an agent must undo its newest turn on a project without touching the person's edits
 
@@ -6749,7 +6749,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Rules for authoring a new block/component upstream: demo HTML pattern, placeholder material, quality bar, templates, discovery metadata.
+**ما هي:** قواعد تأليف كتلة/مكوّن جديد في المصدر: نمط HTML للعرض، ومواد نائبة، ومعيار الجودة، والقوالب، وبيانات الاكتشاف. — Rules for authoring a new block/component upstream: demo HTML pattern, placeholder material, quality bar, templates, discovery metadata.
 
 **متى:** حين تريد إضافة مكون أو بلوك جديد إلى السجل وفق معيار الجودة والقوالب وبيانات الاكتشاف / when authoring a new block or component upstream with the quality bar, templates and discovery metadata
 
@@ -6820,7 +6820,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Mandatory transcript QC (hallucinations, missing words, timestamps), automatic retry with bigger model, cleaning, importing external API transcripts (SRT/VTT/JSON).
+**ما هي:** فحص جودة تفريغ إلزامي (الهلوسات، والكلمات الناقصة، والأزمنة)، وإعادة محاولة تلقائية بنموذج أكبر، وتنظيف، واستيراد تفريغات API خارجية (SRT/VTT/JSON). — Mandatory transcript QC (hallucinations, missing words, timestamps), automatic retry with bigger model, cleaning, importing external API transcripts (SRT/VTT/JSON).
 
 **متى:** بعد تفريغ الصوت لفحص الهلوسة والكلمات الناقصة والتوقيتات وتنظيف النص أو استيراد SRT وVTT / after transcription, to check hallucinations, missing words and timestamps, clean it or import SRT/VTT
 
@@ -6890,7 +6890,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Refuse or split: multiple speakers or hard cuts, no human subject, <3 s or no speech (Whisper hallucinates 'Thank you.'), burned-in captions (check 1 fps contact sheet), garbage transcript (retry WHISPER_MODEL=medium once), busy handheld motion.
+**ما هي:** ارفض أو قسّم: متحدثون متعددون أو قطعات حادة، أو لا شخص بشري، أو <3 ث أو بلا كلام (Whisper يهلوس 'Thank you.')، أو ترجمات محروقة (افحص ورقة 1 fps)، أو تفريغ تالف (أعد المحاولة مرة بـ WHISPER_MODEL=medium)، أو حركة محمولة بيد مزدحمة. — Refuse or split: multiple speakers or hard cuts, no human subject, <3 s or no speech (Whisper hallucinates 'Thank you.'), burned-in captions (check 1 fps contact sheet), garbage transcript (retry WHISPER_MODEL=medium once), busy handheld motion.
 
 **متى:** قبل ترجمة مقطع لتقرر رفضه أو تقسيمه: عدة متحدثين أو بلا كلام أو ترجمة محروقة أو تفريغ رديء / before captioning a clip, to refuse or split it: multiple speakers, no speech, burned-in captions, bad transcript
 
@@ -6963,7 +6963,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Approximate final composite frames in ~2 s/frame without rendering, for visual QA before paying for a render.
+**ما هي:** تقريب إطارات التركيب النهائي في نحو 2 ث/إطار دون تصيير، للـ QA البصري قبل دفع ثمن التصيير. — Approximate final composite frames in ~2 s/frame without rendering, for visual QA before paying for a render.
 
 **متى:** قبل دفع تكلفة الرندر لمعاينة إطارات تقريبية من التركيب النهائي في نحو ثانيتين لكل إطار / before paying for a render, to preview approximate final composite frames at about 2 s per frame
 
@@ -7036,7 +7036,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Gates before final: check-timing, check-occlusion (Chromium DOM rects vs matte alpha per word/cap), check-overflow (frame edge), check-rail-climax (rail-to-climax hand-off); measure-layout seeks the GSAP timeline and measures bboxes.
+**ما هي:** بوابات قبل النهائي: check-timing، وcheck-occlusion (مستطيلات Chromium DOM مقابل ألفا القناع لكل كلمة/غطاء)، وcheck-overflow (حافة الإطار)، وcheck-rail-climax (تسليم السكة إلى الذروة)؛ وmeasure-layout يبحث في خط GSAP الزمني ويقيس الصناديق. — Gates before final: check-timing, check-occlusion (Chromium DOM rects vs matte alpha per word/cap), check-overflow (frame edge), check-rail-climax (rail-to-climax hand-off); measure-layout seeks the GSAP timeline and measures bboxes.
 
 **متى:** قبل الإخراج النهائي لفحص توقيت الترجمة وتداخلها مع القناع وخروجها عن الإطار وانتقالها إلى الذروة / before final, to check caption timing, occlusion against the matte, frame-edge overflow and rail-to-climax hand-off
 
@@ -7109,7 +7109,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** CoreML corrupts face alpha; aspect/channel-stride garbage alpha; flex-stacked captions push into gesture zone; letterSpacing animation reflow jumps; double fade pop; overlay blend vanishes in dark, screen washes on bright; fps mismatch between bg and matte; WebM alpha flaky in Chromium; centered cro…
+**ما هي:** CoreML يفسد ألفا الوجه؛ ونسبة الأبعاد/خطوة القناة تنتج ألفا تالفة؛ والترجمات المكدسة بـ flex تُدفع إلى منطقة الإيماءات؛ وحركة letterSpacing تسبب قفزات إعادة تدفق؛ وظهور مزدوج للتلاشي؛ ويختفي مزج overlay في الداكن، ويغسل screen الفاتح؛ وعدم تطابق fps بين الخلفية والقناع؛ وألفا WebM غير مستقرة في Chromium؛ وcentered cro… — CoreML corrupts face alpha; aspect/channel-stride garbage alpha; flex-stacked captions push into gesture zone; letterSpacing animation reflow jumps; double fade pop; overlay blend vanishes in dark, screen washes on bright; fps mismatch between bg and matte; WebM alpha flaky in Chromium; centered cro…
 
 **متى:** حين تظهر مشاكل في الترجمة المتحركة كقفز التباعد أو اختفائها في الظلام أو قناع ألفا تالف / when animated captions misbehave: letter-spacing jumps, blend vanishing in dark, or corrupted alpha mattes
 
@@ -7180,7 +7180,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Compares the HyperFrames render against Figma's export_video using frame-difference deltas so static font/raster divergence cancels and only trajectories, timing and easing are scored.
+**ما هي:** يقارن تصيير HyperFrames بـ export_video من Figma بفروق الإطارات، فيلغي اختلاف الخط/الراستر الثابت ويُقيَّم المسار والتوقيت والتسهيل فقط. — Compares the HyperFrames render against Figma's export_video using frame-difference deltas so static font/raster divergence cancels and only trajectories, timing and easing are scored.
 
 **متى:** حين تنقل حركة من Figma وتريد قياس تطابق المسارات والتوقيت والتسهيل مع الفيديو المصدّر منه / when porting Figma motion and scoring trajectories, timing and easing against Figma's exported video
 
@@ -7252,7 +7252,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Render selected stills before any video render (the 8-second gate).
+**ما هي:** صيّر لقطات ثابتة مختارة قبل أي تصيير فيديو (بوابة 8 ثوانٍ). — Render selected stills before any video render (the 8-second gate).
 
 **متى:** قبل أي رندر فيديو لتصيير صور ثابتة في أزمنة مختارة والتأكد منها أولًا / before any video render, to render selected stills at chosen times and check them first
 
@@ -7325,7 +7325,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A window.__dbg object hides water, pads, petals, grass, reeds, pebbles, rim, ground, koi or the whole post stack, isolating performance or artefact problems.
+**ما هي:** يخفي كائن window.__dbg الماء والوسائد والبتلات والعشب والقصب والحصى والحافة والأرض وأسماك koi أو كامل مكدس ما بعد المعالجة، لعزل مشكلات الأداء أو العيوب. — A window.__dbg object hides water, pads, petals, grass, reeds, pebbles, rim, ground, koi or the whole post stack, isolating performance or artefact problems.
 
 **متى:** حين يكون مشهد ثلاثي الأبعاد ثقيلًا أو فيه عيوب وتريد إخفاء عناصر كالماء أو المؤثرات لعزل المشكلة / when a heavy 3D scene has performance or artefact problems and you hide parts to isolate the cause
 
@@ -7396,7 +7396,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every animation is decoration: prefers-reduced-motion zeroes all duration tokens, disables keyframes, renders the 3D world as one still frame and skips the cinematic intro.
+**ما هي:** كل حركة زخرفة: يصفّر prefers-reduced-motion كل رموز المدد، ويعطّل الإطارات المفتاحية، ويصيّر العالم ثلاثي الأبعاد كإطار ساكن واحد ويتخطى المقدمة السينمائية. — Every animation is decoration: prefers-reduced-motion zeroes all duration tokens, disables keyframes, renders the 3D world as one still frame and skips the cinematic intro.
 
 **متى:** حين يفضل المستخدم تقليل الحركة فتتوقف الأنيميشن ويظهر العالم ثلاثي الأبعاد ثابتًا / when users prefer reduced motion, so animations, the 3D world and the intro become still
 
@@ -7467,7 +7467,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds mimic.timeline.json -> film, then compares duration, boundaries, audio correlation.
+**ما هي:** يبني mimic.timeline.json ← الفيلم، ثم يقارن المدة والحدود وارتباط الصوت. — Builds mimic.timeline.json -> film, then compares duration, boundaries, audio correlation.
 
 **متى:** حين تبني فيلمًا يحاكي مرجعًا وتريد مقارنة المدة وحدود اللقطات وترابط الصوت معه / when building a film that mimics a reference and comparing duration, shot boundaries and audio correlation
 
@@ -7539,7 +7539,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Known pitfalls: truncated downloads, text fades mistaken for dissolves (ignore_mask), exposure fades as suspects, dark dip thresholds, 720p upscale.
+**ما هي:** فخاخ معروفة: تنزيلات مبتورة، وتلاشي النص يُلتبس بالذوبان (ignore_mask)، وتلاشي التعريض يُشتبه به، وعتبات الغطس المظلم، وتكبير 720p. — Known pitfalls: truncated downloads, text fades mistaken for dissolves (ignore_mask), exposure fades as suspects, dark dip thresholds, 720p upscale.
 
 **متى:** عند محاكاة مرجع لتجنب أخطاء معروفة كالتنزيل المبتور وخلط تلاشي النص بالذوبان وحدود الإظلام / when mimicking a reference, to avoid known traps: truncated downloads, text fades mistaken for dissolves
 
@@ -7609,7 +7609,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Draft preview and readability (~0.3 s/word, hook in 2 s).
+**ما هي:** معاينة مسودة وقابلية القراءة (~0.3 ث/كلمة، الخطاف في 2 ث). — Draft preview and readability (~0.3 s/word, hook in 2 s).
 
 **متى:** حين تريد معاينة مسودة والتأكد أن النص يُقرأ بسرعة مناسبة وأن الهوك يظهر في أول ثانيتين / when previewing a draft and checking text reads at a comfortable pace and the hook lands within 2 s
 
@@ -7679,7 +7679,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** User marks up film on local review page.
+**ما هي:** يعلّم المستخدم الفيلم على صفحة مراجعة محلية. — User marks up film on local review page.
 
 **متى:** حين يريد المستخدم وضع ملاحظاته على الفيلم في صفحة مراجعة محلية ثم تطبيقها / when the user marks up the film on a local review page and the feedback is applied
 
@@ -7751,7 +7751,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Lossless capture CRF 16, poster frame 0; inspect H.264 yuv420p, -14±1.5 LUFS, TP<=-1, no black/frozen.
+**ما هي:** التقاط دون فقد CRF 16، وإطار الملصق 0؛ وفحص H.264 yuv420p، و-14±1.5 LUFS، وTP<=-1، وبلا أسود/تجمد. — Lossless capture CRF 16, poster frame 0; inspect H.264 yuv420p, -14±1.5 LUFS, TP<=-1, no black/frozen.
 
 **متى:** عند الرندر النهائي والتأكد من الترميز وعلو الصوت والذروة وعدم وجود إطارات سوداء أو متجمدة / for the final render, checking H.264 yuv420p, -14 LUFS loudness, true peak and no black or frozen frames
 
@@ -7824,7 +7824,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Specs, beats<=3 s, palette hex, motion energy, pan, entries, LUFS, BPM, onsets, stills.
+**ما هي:** المواصفات، والضربات<=3 ث، وhex لوحة الألوان، وطاقة الحركة، والتحريك الأفقي، والمداخل، وLUFS، وBPM، والبدايات، واللقطات الثابتة. — Specs, beats<=3 s, palette hex, motion energy, pan, entries, LUFS, BPM, onsets, stills.
 
 **متى:** حين تريد تحليل فيديو إلى مواصفاته ومقاطعه وألوانه وطاقة حركته وعلو صوته وإيقاعه / when breaking down a video into specs, beats, palette, motion energy, loudness, BPM and onsets
 
@@ -7896,7 +7896,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measure many references to library.json/csv for house style.
+**ما هي:** قِس مراجع كثيرة إلى library.json/csv لأسلوب البيت. — Measure many references to library.json/csv for house style.
 
 **متى:** حين تريد قياس عدة فيديوهات مرجعية دفعة واحدة لبناء مكتبة أسلوب موحد للمؤسسة / when measuring many reference videos at once to build a house-style library
 
@@ -7966,7 +7966,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Saves a PNG with the waveform and a log-frequency spectrum of the file.
+**ما هي:** يحفظ PNG بالموجة الصوتية وطيف ترددي لوغاريتمي للملف. — Saves a PNG with the waveform and a log-frequency spectrum of the file.
 
 **متى:** حين تريد صورة لشكل موجة الصوت وطيف تردداته لفحصه بصريًا / when you want a PNG of an audio file's waveform and log-frequency spectrum
 
@@ -8038,7 +8038,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Shows honest percent progress of a render by parsing ffmpeg's machine-readable progress stream and writing an atomic status JSON that a small window polls.
+**ما هي:** يعرض نسبة تقدم صادقة لعملية الرندر عبر تحليل مجرى التقدم المقروء آليًا من ffmpeg، ويكتب ملف JSON للحالة بشكل ذري تستطلعه نافذة صغيرة. — Shows honest percent progress of a render by parsing ffmpeg's machine-readable progress stream and writing an atomic status JSON that a small window polls.
 
 **متى:** حين تريد شريط تقدم حقيقيًا بالنسبة المئوية أثناء رندر ffmpeg في نافذة صغيرة / when you want honest percent progress of an ffmpeg render shown in a small polling window
 
@@ -8112,7 +8112,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Find which object or material causes an artifact by rendering the same frame with one material type (or one ShaderMaterial) hidden at a time and comparing screenshots; also list meshes with distance to camera.
+**ما هي:** يحدد الكائن أو الخامة المسببة للعيب بتصيير الإطار نفسه مع إخفاء نوع واحد من الخامات (أو ShaderMaterial واحدًا) في كل مرة ومقارنة لقطات الشاشة، ويسرد أيضًا المجسمات مع بُعدها عن الكاميرا. — Find which object or material causes an artifact by rendering the same frame with one material type (or one ShaderMaterial) hidden at a time and comparing screenshots; also list meshes with distance to camera.
 
 **متى:** حين يظهر عيب أو تشوه في المشهد ثلاثي الأبعاد ولا يُعرف أي مادة أو شيدر يسببه / when a 3D scene shows a visual artifact and you must find which material or shader causes it
 
@@ -8185,7 +8185,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Tests lock the brand: no cobalt hex in marks/icons/manifest/door styles, theme-color #1d1814, crystal world colours only via uniforms, door tokens equal ledger tokens, cobalt kept as a selectable look.
+**ما هي:** تقفل الاختبارات الهوية: لا hex كوبالتي في العلامات/الأيقونات/manifest/أنماط الباب، وtheme-color #1d1814، وألوان عالم الكريستال عبر uniforms فقط، ورموز الباب مساوية لرموز السجل، والكوبالتي يبقى مظهرًا قابلًا للاختيار. — Tests lock the brand: no cobalt hex in marks/icons/manifest/door styles, theme-color #1d1814, crystal world colours only via uniforms, door tokens equal ledger tokens, cobalt kept as a selectable look.
 
 **متى:** عند حماية هوية العلامة من عودة ألوان غير معتمدة إلى الشعارات والأيقونات / when guarding brand identity so disallowed colors never return to marks, icons or the manifest
 
@@ -8258,7 +8258,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures a reference reel automatically: cut/transition boundaries with type and confidence, per-shot look statistics, text bounding boxes and colour, text appear/disappear events, global fades and audio loudness.
+**ما هي:** يقيس فيديو مرجعيًا تلقائيًا: حدود القطع والانتقال مع النوع ودرجة الثقة، وإحصاءات المظهر لكل لقطة، ومستطيلات النص وألوانه، وأحداث ظهور النص واختفائه، والتلاشي العام، وجهارة الصوت. — Measures a reference reel automatically: cut/transition boundaries with type and confidence, per-shot look statistics, text bounding boxes and colour, text appear/disappear events, global fades and audio loudness.
 
 **متى:** حين يرسل المستخدم فيديو مرجعيًا ويريد تقليده: قياس القطعات والانتقالات والألوان وأماكن النص / when the user shares a reference reel to imitate and its cuts, transitions, looks and text zones must be measured
 
@@ -8330,7 +8330,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Proves a rebuilt film matches its reference: every boundary found within 2 frames with the same transition type, no extra cuts, duration within 2 frames and identical audio by cross-correlation; a comparison sheet is saved.
+**ما هي:** يثبت أن الفيلم المعاد بناؤه يطابق مرجعه: كل حد يقع ضمن إطارين وبنفس نوع الانتقال، بلا قطع زائد، والمدة ضمن إطارين، والصوت مطابق بالارتباط المتبادل؛ ويُحفظ لوح مقارنة. — Proves a rebuilt film matches its reference: every boundary found within 2 frames with the same transition type, no extra cuts, duration within 2 frames and identical audio by cross-correlation; a comparison sheet is saved.
 
 **متى:** حين تريد إثبات أن الفيديو المعاد بناؤه يطابق المرجع في القطعات والمدة والصوت / when you need to prove a rebuilt film matches its reference in cuts, duration and audio
 
@@ -8402,7 +8402,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Opening a composition in a normal browser shows a fitted preview with play/pause, scrub bar, time readout and space-bar toggle, synced to its audio/video; hidden from renderers.
+**ما هي:** عند فتح التركيب في متصفح عادي تظهر معاينة ملائمة للنافذة مع تشغيل/إيقاف وشريط تمرير وعرض للوقت ومفتاح المسافة للتبديل، متزامنة مع صوته/فيديوه؛ وتُخفى عن أدوات الرندر. — Opening a composition in a normal browser shows a fitted preview with play/pause, scrub bar, time readout and space-bar toggle, synced to its audio/video; hidden from renderers.
 
 **متى:** حين يريد المستخدم معاينة التصميم المتحرك في متصفح عادي بزر تشغيل وشريط تقديم / when the user wants to preview a composition in a normal browser with play/pause and a scrub bar
 
@@ -8472,7 +8472,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders a handful of key frames to look at before any full render.
+**ما هي:** يصيّر عددًا قليلًا من الإطارات المفتاحية للنظر فيها قبل أي رندر كامل. — Renders a handful of key frames to look at before any full render.
 
 **متى:** قبل أي رندر كامل حين تريد إلقاء نظرة سريعة على بضعة إطارات مفتاحية / before any full render, when you want a quick look at a handful of key frames
 
@@ -8544,7 +8544,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures px/frame by optical flow and says whether a move is clean, needs motion blur, or must be redesigned.
+**ما هي:** يقيس px/إطار بالتدفق البصري ويحدد هل الحركة نظيفة أم تحتاج إلى motion blur أم يجب إعادة تصميمها. — Measures px/frame by optical flow and says whether a move is clean, needs motion blur, or must be redesigned.
 
 **متى:** حين تبدو الحركة سريعة جدًا وتريد معرفة هل هي نظيفة أم تحتاج ضبابية حركة أم إعادة تصميم / when a move looks too fast and you must decide between clean, motion blur, or redesign
 
@@ -8617,7 +8617,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures flat fills, one-pixel edges, distinct colours and tonal range against calibrated thresholds, then lets Jev pick the verbal verdict.
+**ما هي:** يقيس المساحات المسطحة والحواف بعرض بكسل واحد والألوان المتمايزة والمدى النغمي مقابل عتبات معايرة، ثم يترك لـ Jev اختيار الحكم اللفظي. — Measures flat fills, one-pixel edges, distinct colours and tonal range against calibrated thresholds, then lets Jev pick the verbal verdict.
 
 **متى:** حين تريد حكمًا مقاسًا على الصورة المرسومة: هل تبدو واقعية أم مسطحة كرتونية / when you need a measured verdict on whether a still render looks realistic or flat
 
@@ -8690,7 +8690,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Per-frame features detect shot boundaries, per-shot look/motion/keyframes, and a global look (vignette, grain, letterbox, fades).
+**ما هي:** ميزات لكل إطار تكشف حدود اللقطات، ومظهر وحركة وإطارات مفتاحية لكل لقطة، ومظهرًا عامًا (تعتيم الحواف، الحبيبات، الشريطان الأسودان، التلاشي). — Per-frame features detect shot boundaries, per-shot look/motion/keyframes, and a global look (vignette, grain, letterbox, fades).
 
 **متى:** حين تحتاج تقسيم فيديو إلى لقطات ومعرفة مظهر كل لقطة والفينييت والحبيبات والإطار الأسود / when you need to split a video into shots and read each shot's look plus vignette, grain and letterbox
 
@@ -8762,7 +8762,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Builds a synthetic reference with known truth (transitions, texts) and scores the analyser's detections.
+**ما هي:** يبني مرجعًا اصطناعيًا بحقيقة معروفة (انتقالات، نصوص) ويقيّم ما كشفه المحلل. — Builds a synthetic reference with known truth (transitions, texts) and scores the analyser's detections.
 
 **متى:** حين تعدل محلل التقليد وتريد التأكد أنه ما زال يكتشف الانتقالات والنصوص بدقة / when you change the mimic analyser and need to score its detections against known truth
 
@@ -8833,7 +8833,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Per-frame features -> shot boundaries -> transition kind + progress curve by re-synthesis -> per-shot look/motion -> global look (vignette, grain, letterbox, fades) -> review sheets; original audio copied untouched.
+**ما هي:** ميزات لكل إطار -> حدود اللقطات -> نوع الانتقال ومنحنى تقدمه بإعادة التركيب -> مظهر وحركة كل لقطة -> المظهر العام (تعتيم الحواف، الحبيبات، الشريطان الأسودان، التلاشي) -> أوراق مراجعة؛ ويُنسخ الصوت الأصلي دون مساس. — Per-frame features -> shot boundaries -> transition kind + progress curve by re-synthesis -> per-shot look/motion -> global look (vignette, grain, letterbox, fades) -> review sheets; original audio copied untouched.
 
 **متى:** حين يرسل المستخدم فيديو مرجعيًا ويطلب تحليل قطعاته وانتقالاته ومظهره مع الحفاظ على صوته / when the user sends a reference video and wants its cuts, transition types and look analysed with audio kept intact
 
@@ -8906,7 +8906,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Generates a synthetic reference with truth.json and scores analysis + font ranking.
+**ما هي:** يولّد مرجعًا اصطناعيًا مع truth.json ويقيّم نتيجة التحليل وترتيب الخطوط. — Generates a synthetic reference with truth.json and scores analysis + font ranking.
 
 **متى:** عند اختبار دقة تحليل المحاكاة وترتيب الخطوط على مرجع اصطناعي معروف الحقيقة / when testing mimic analysis and font ranking accuracy on a synthetic reference with known truth
 
@@ -8976,7 +8976,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures how far stylesheets/modules drift from the identity and fails CI if any metric worsens.
+**ما هي:** يقيس مدى انحراف أوراق الأنماط/الوحدات عن الهوية ويُفشل CI إن ساء أي مقياس. — Measures how far stylesheets/modules drift from the identity and fails CI if any metric worsens.
 
 **متى:** حين تريد قياس ابتعاد ملفات التنسيق عن الهوية البصرية ومنع ازدياده / when measuring how far stylesheets drift from the design identity and failing CI if it worsens
 
@@ -9049,7 +9049,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures flat-area %, hard-edge %, distinct colours, value range to classify painted-realistic vs flat cartoon; optional Jev verdict.
+**ما هي:** يقيس نسبة المساحات المسطحة ونسبة الحواف الحادة والألوان المتمايزة ومدى القيم لتصنيف الصورة المرسومة الواقعية مقابل الكرتون المسطح؛ مع حكم Jev اختياريًا. — Measures flat-area %, hard-edge %, distinct colours, value range to classify painted-realistic vs flat cartoon; optional Jev verdict.
 
 **متى:** حين تريد تصنيف رسمة هل هي واقعية مرسومة أم كرتون مسطح بمقاييس رقمية / when classifying an image as painted-realistic or flat cartoon by numbers
 
@@ -9122,7 +9122,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** When opened in a normal browser (not under a renderer) the composition plays with audio, scales to window, play/pause + scrub bar + space key.
+**ما هي:** عند فتحه في متصفح عادي (لا تحت أداة رندر) يعمل التركيب بالصوت ويتناسب مع النافذة مع تشغيل/إيقاف وشريط تمرير ومفتاح المسافة. — When opened in a normal browser (not under a renderer) the composition plays with audio, scales to window, play/pause + scrub bar + space key.
 
 **متى:** حين يفتح المستخدم التصميم في متصفح عادي ويريد تشغيله بالصوت مع إيقاف وتقديم / when the user opens a composition in a normal browser and wants it to play with audio, pause and scrub
 
@@ -9194,7 +9194,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Remaining differences are painted most-visible first, with time proportional to visibility, using CIE76 Delta E plus an alpha term.
+**ما هي:** تُرسم الفروق المتبقية الأوضح أولًا، بزمن يتناسب مع وضوحها، باستخدام CIE76 Delta E مع حد لقناة ألفا. — Remaining differences are painted most-visible first, with time proportional to visibility, using CIE76 Delta E plus an alpha term.
 
 **متى:** حين تبقى فروق لونية بين الرسم والأصل وتريد إصلاح الأوضح أولًا / when finishing a painting and the remaining colour differences should be fixed most-visible first
 
@@ -9268,7 +9268,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** For photos, four block-in/refine plans are measured on a 240 px copy (first-impression dE, refined dE, % pixels visibly off, step count) and the Jev service is asked twice with options reversed; a deterministic rule decides offline.
+**ما هي:** للصور الفوتوغرافية تُقاس أربع خطط للتظليل الأولي ثم التحسين على نسخة 240 px (dE للانطباع الأول، وdE بعد التحسين، ونسبة البكسلات المختلفة بوضوح، وعدد الخطوات) ويُسأل Jev مرتين بعكس ترتيب الخيارات؛ وتحسم قاعدة حتمية دون اتصال. — For photos, four block-in/refine plans are measured on a 240 px copy (first-impression dE, refined dE, % pixels visibly off, step count) and the Jev service is asked twice with options reversed; a deterministic rule decides offline.
 
 **متى:** عند رسم صورة فوتوغرافية وتريد اختيار خطة الرسم الأفضل بالقياس بدل التخمين / when painting a photo and you need to pick the best block-in/refine plan by measurement
 
@@ -9342,7 +9342,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** After drawing an image the canvas is compared with the original pixel by pixel; the window shows a success line with the pixel count or the number of differing pixels, and saves <name>_exact.png.
+**ما هي:** بعد رسم الصورة تُقارن اللوحة بالأصل بكسلًا ببكسل؛ وتعرض النافذة سطر نجاح مع عدد البكسلات أو عدد البكسلات المختلفة، وتحفظ <name>_exact.png. — After drawing an image the canvas is compared with the original pixel by pixel; the window shows a success line with the pixel count or the number of differing pixels, and saves <name>_exact.png.
 
 **متى:** بعد رسم صورة حين تريد التأكد أن الرسم يطابق الأصل بكسلًا ببكسل / after drawing an image, when you need to confirm the canvas matches the original pixel for pixel
 
@@ -9416,7 +9416,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A data-only image program (TITLE/SIZE/IMAGE_B64) is read with ast.literal_eval so nothing in the file ever runs, then painted exactly.
+**ما هي:** يُقرأ برنامج صورة بيانات فقط (TITLE/SIZE/IMAGE_B64) بـ ast.literal_eval فلا يُنفَّذ شيء من الملف، ثم تُرسم الصورة بدقة تامة. — A data-only image program (TITLE/SIZE/IMAGE_B64) is read with ast.literal_eval so nothing in the file ever runs, then painted exactly.
 
 **متى:** حين تستلم ملف كود صورة وتريد قراءته ورسمه دون تشغيل أي شيء بداخله / when you receive an image-code file and must read and paint it without executing anything in it
 
@@ -9488,7 +9488,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures a render after removing letterbox bars and pure black/white areas: smooth-gradient share, perfectly flat share, hard one-pixel edge share, distinct colours and tonal range; returns PASS or REVISE with reasons, then optionally asks Jev which description fits the numbers.
+**ما هي:** يقيس الرندر بعد إزالة الشريطين الأسودين والمساحات السوداء/البيضاء الصرفة: نسبة التدرجات الناعمة، والمسطح تمامًا، والحواف الحادة بعرض بكسل، والألوان المتمايزة، والمدى النغمي؛ ويعيد PASS أو REVISE مع الأسباب، ثم يسأل Jev اختياريًا أي وصف يلائم الأرقام. — Measures a render after removing letterbox bars and pure black/white areas: smooth-gradient share, perfectly flat share, hard one-pixel edge share, distinct colours and tonal range; returns PASS or REVISE with reasons, then optionally asks Jev which description fits the numbers.
 
 **متى:** حين تريد قبول أو رفض رندر بناءً على واقعيته مع أسباب واضحة للمراجعة / when a render needs a PASS or REVISE realism verdict with reasons
 
@@ -9562,7 +9562,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Write quality locks, build back-to-front, render a still, measure with judge.py, inspect 1:1 crops of face/action/main material, fix and repeat 2-4 rounds, then report what worked in numbers.
+**ما هي:** تُكتب أقفال الجودة، ويُبنى من الخلف إلى الأمام، ويُصيَّر إطار ثابت، ويُقاس بـ judge.py، وتُفحص مقتطفات 1:1 للوجه/الحدث/الخامة الرئيسية، ثم يُصلح ويُكرر 2-4 جولات، ثم يُبلَّغ بما نجح بالأرقام. — Write quality locks, build back-to-front, render a still, measure with judge.py, inspect 1:1 crops of face/action/main material, fix and repeat 2-4 rounds, then report what worked in numbers.
 
 **متى:** عند رسم مشهد وتريد تحسينه على جولات مراجعة مقاسة حتى يصل لجودة مقبولة / when painting a scene and you want to improve it over 2-4 measured review rounds
 
@@ -9634,7 +9634,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Unit tests covering renderer holes/even-odd/arcs/gradients/Arabic text, realism and camera ops, reveal orders, SVG import, vectorising, exact redraw, image-to-Python, judge, Jev fallback, HTML frames, drawing films, the runner, edit packages, local edits, AI bridge with a fake CLI, plus motion pipel…
+**ما هي:** اختبارات وحدة تغطي ثقوب المصيّر وقاعدة even-odd والأقواس والتدرجات والنص العربي، والواقعية وعمليات الكاميرا، وترتيب الكشف، واستيراد SVG، والتحويل المتجهي، وإعادة الرسم الدقيقة، وتحويل الصورة إلى Python، والحكم، وبديل Jev، وإطارات HTML، وأفلام الرسم، والمشغّل، وحزم التحرير، والتعديلات المحلية، وجسر الذكاء الاصطناعي بواجهة أوامر وهمية، إضافة إلى خط الحركة… — Unit tests covering renderer holes/even-odd/arcs/gradients/Arabic text, realism and camera ops, reveal orders, SVG import, vectorising, exact redraw, image-to-Python, judge, Jev fallback, HTML frames, drawing films, the runner, edit packages, local edits, AI bridge with a fake CLI, plus motion pipel…
 
 **متى:** بعد تعديل كود الاستوديو حين تريد تشغيل الاختبارات والتأكد أن شيئًا لم ينكسر / after changing studio code, when you need to run the unit tests to make sure nothing broke
 
@@ -9707,7 +9707,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Opens the composition once in the studio browser and saves PNG stills at chosen times, retrying stalled grabs and reporting page errors and console warnings.
+**ما هي:** يفتح التركيب مرة واحدة في متصفح الاستوديو ويحفظ لقطات PNG في أوقات محددة، مع إعادة المحاولة عند تعثر الالتقاط وتقرير أخطاء الصفحة وتحذيرات وحدة التحكم. — Opens the composition once in the studio browser and saves PNG stills at chosen times, retrying stalled grabs and reporting page errors and console warnings.
 
 **متى:** حين تريد حفظ صور ثابتة من التصميم عند أزمنة محددة لمراجعتها مع أخطاء الصفحة / when you need PNG stills of a composition at chosen times plus page errors and console warnings
 
@@ -9779,7 +9779,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every sector has its picture, every named brand file exists and stays light, door film gating is correct, and the EARTH intro has adaptive 4K + mobile fallback.
+**ما هي:** لكل قطاع صورته، وكل ملف علامة مسمى موجود وخفيف، وضبط بوابة فيلم الباب صحيح، ولمقدمة EARTH بديل تكيفي 4K وبديل للجوال. — Every sector has its picture, every named brand file exists and stays light, door film gating is correct, and the EARTH intro has adaptive 4K + mobile fallback.
 
 **متى:** عند التأكد أن صور الهوية وملفاتها موجودة وخفيفة الحجم وأن للمقدمة بديلًا للجوال / when checking every brand image exists, stays lightweight, and the intro has a mobile fallback
 
@@ -9849,7 +9849,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Farneback optical flow forward and backward; only consistent pixels count; frame speed is the 99.5th percentile in px/frame at native size, with a verdict.
+**ما هي:** تدفق بصري Farneback أماميًا وخلفيًا؛ تُحسب البكسلات المتسقة فقط؛ وسرعة الإطار هي المئين 99.5 بوحدة px/إطار بالحجم الأصلي، مع حكم. — Farneback optical flow forward and backward; only consistent pixels count; frame speed is the 99.5th percentile in px/frame at native size, with a verdict.
 
 **متى:** حين تريد قياس سرعة الحركة على الشاشة بالبكسل لكل إطار مع حكم: ضبابية أم إعادة تصميم / when you need px-per-frame motion speed with a verdict on blur or redesign
 
@@ -9922,7 +9922,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measures a reference's grammar (never its content): cuts, shot lengths, first change, motion energy, palette by area, contact sheet, and writes style_guide.md with fill-in prompts for type, transitions, camera, texture.
+**ما هي:** يقيس قواعد المرجع (لا محتواه): القطعات، وأطوال اللقطات، وأول تغيّر، وطاقة الحركة، واللوحة اللونية بالمساحة، وورقة اللقطات، ويكتب style_guide.md بمطالبات تُملأ للخط والانتقالات والكاميرا والملمس. — Measures a reference's grammar (never its content): cuts, shot lengths, first change, motion energy, palette by area, contact sheet, and writes style_guide.md with fill-in prompts for type, transitions, camera, texture.
 
 **متى:** حين يريد المستخدم أسلوب فيديو مرجعي لا محتواه: إيقاع القطعات والألوان ودليل أسلوب / when the user wants a reference film's style, not its content: cut rhythm, palette and a style guide
 
@@ -9994,7 +9994,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Checks duration, fps, frame count, audio stream and loudness of the output.
+**ما هي:** يفحص مدة المخرج ومعدل الإطارات وعدد الإطارات ومجرى الصوت والجهارة. — Checks duration, fps, frame count, audio stream and loudness of the output.
 
 **متى:** قبل تسليم الفيديو النهائي حين تريد التحقق من المدة والفريمات والصوت والجهارة / before delivering a final video, to verify duration, fps, frame count, audio and loudness
 
@@ -10065,7 +10065,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Single pre-render gate incl. WCAG contrast (errors) and layout overflow.
+**ما هي:** بوابة واحدة قبل الرندر تشمل تباين WCAG (أخطاء) وفيض التخطيط. — Single pre-render gate incl. WCAG contrast (errors) and layout overflow.
 
 **متى:** قبل الرندر حين تريد فحصًا واحدًا لتباين النص وخروج العناصر عن الإطار / before rendering, for one check that catches text contrast errors and layout overflow
 
@@ -10138,7 +10138,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Generate or sketch a concept frame per section/beat, lock it as the spec (colors exact, no added overlays), extract a token system from it, build, then compare concept vs render side by side until they match.
+**ما هي:** يُولَّد أو يُرسم إطار مفهوم لكل قسم/إيقاع، ويُقفل مواصفةً (ألوان دقيقة دون طبقات مضافة)، ويُستخرج منه نظام رموز، ثم يُبنى، ثم يُقارن المفهوم بالرندر جنبًا إلى جنب حتى يتطابقا. — Generate or sketch a concept frame per section/beat, lock it as the spec (colors exact, no added overlays), extract a token system from it, build, then compare concept vs render side by side until they match.
 
 **متى:** حين يجب أن يطابق التصميم النهائي صورة مفهوم أو ستوري بورد معتمدة / when the final build must match an approved concept frame or storyboard still
 
@@ -10212,7 +10212,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Quote cost, get user go-ahead and cap, dry-run free validation, then one paid render; never raise the cap yourself.
+**ما هي:** اعرض التكلفة، واحصل على موافقة المستخدم وسقف، وأجرِ تحققًا مجانيًا تجريبيًا، ثم رندر مدفوعًا واحدًا؛ ولا ترفع السقف بنفسك أبدًا. — Quote cost, get user go-ahead and cap, dry-run free validation, then one paid render; never raise the cap yourself.
 
 **متى:** حين يحتاج الرندر لخدمة مدفوعة وتريد عرض التكلفة وأخذ موافقة المستخدم وسقف للميزانية / when a render costs money and needs a quote, user approval and a budget cap
 
@@ -10283,7 +10283,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Check that every planned line was actually sung by transcribing the render and matching lines in order.
+**ما هي:** تحقق من أن كل سطر مخطط له غُنّي فعلًا بتفريغ الرندر نصيًا ومطابقة الأسطر بالترتيب. — Check that every planned line was actually sung by transcribing the render and matching lines in order.
 
 **متى:** حين تولد أغنية وتريد التأكد أن كل سطر مكتوب غُني فعلًا / when a generated song must be checked that every planned lyric line was actually sung
 
@@ -10357,7 +10357,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | BSD-3-Clause |
 
-**ما هي:** A shared theme file (palette, typography, style and negative tokens, text limits, model settings) drives every generated panel, and each candidate is QA'd before the next change.
+**ما هي:** ملف سمة مشترك (لوحة ألوان، وطباعة، ورموز الأسلوب والنفي، وحدود النص، وإعدادات النموذج) يقود كل لوح يُولَّد، ويُفحص كل مرشح قبل التغيير التالي. — A shared theme file (palette, typography, style and negative tokens, text limits, model settings) drives every generated panel, and each candidate is QA'd before the next change.
 
 **متى:** حين تولد مجموعة صور أو رسومات بنفس الأسلوب وتريد فحص كل نسخة قبل التعديل التالي / when generating a set of figures in one style and each candidate needs QA before the next change
 
@@ -10432,7 +10432,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Chooses among fixed options (choice, yes/no, score) with order bias removed: asked twice with options reversed; thousands of options pre-ranked by multilingual embeddings in heats of 12.
+**ما هي:** يختار بين خيارات ثابتة (اختيار، نعم/لا، درجة) مع إزالة انحياز الترتيب: يُسأل مرتين بعكس الخيارات؛ وتُرتَّب آلاف الخيارات مسبقًا بتضمينات متعددة اللغات في تصفيات من 12. — Chooses among fixed options (choice, yes/no, score) with order bias removed: asked twice with options reversed; thousands of options pre-ranked by multilingual embeddings in heats of 12.
 
 **متى:** حين تحتاج اختيارًا محايدًا من خيارات ثابتة أو نعم/لا أو درجة دون تحيز الترتيب / when you need an unbiased pick among fixed options, yes/no or a score, free of order bias
 
@@ -10507,7 +10507,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Steps always run in a working order; montages get free stock clips when none were uploaded, empty frames get a matching photo before review/render, and Claude reviews new productions automatically.
+**ما هي:** تعمل الخطوات دائمًا بترتيب صالح؛ وتحصل المونتاجات على لقطات مجانية جاهزة إن لم تُرفع لقطات، وتحصل الإطارات الفارغة على صورة مناسبة قبل المراجعة/الرندر، ويراجع Claude الإنتاجات الجديدة تلقائيًا. — Steps always run in a working order; montages get free stock clips when none were uploaded, empty frames get a matching photo before review/render, and Claude reviews new productions automatically.
 
 **متى:** حين تخطط إنتاج فيديو متعدد الخطوات وتريد ترتيبها صحيحًا وسد الفراغات قبل الرندر / when planning a multi-step production that needs steps in working order and gaps filled before render
 
@@ -10581,7 +10581,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Loads the WebGL engine in a Node vm sandbox with stubbed window to assert API shape, graceful null without WebGL, closed shard geometry with unit normals and determinism.
+**ما هي:** يحمّل محرك WebGL في صندوق Node vm بنافذة مبتورة للتحقق من شكل API، وإرجاع null بسلاسة دون WebGL، وهندسة شظايا مغلقة بعمودات وحدة، والحتمية. — Loads the WebGL engine in a Node vm sandbox with stubbed window to assert API shape, graceful null without WebGL, closed shard geometry with unit normals and determinism.
 
 **متى:** حين تريد اختبار محرك WebGL ثلاثي الأبعاد داخل Node دون فتح متصفح / when unit-testing a WebGL 3D engine in Node without opening a browser
 
@@ -10655,7 +10655,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Claude looks at the current frame and fixes only what is wrong: caption legibility and contrast, faces covered, TikTok/Reels safe zones (bottom 18%, right side), colour harmony, clutter.
+**ما هي:** ينظر Claude إلى الإطار الحالي ويصلح الخلل فقط: وضوح الترجمة وتباينها، والوجوه المغطاة، والمناطق الآمنة في TikTok/Reels (أسفل 18%، والجانب الأيمن)، وتناسق الألوان، والازدحام. — Claude looks at the current frame and fixes only what is wrong: caption legibility and contrast, faces covered, TikTok/Reels safe zones (bottom 18%, right side), colour harmony, clutter.
 
 **متى:** حين يريد المستخدم مراجعة الفريم الحالي: وضوح الترجمة والوجوه ومناطق تيك توك الآمنة / when the user wants the current frame reviewed for caption legibility, faces and TikTok/Reels safe zones
 
@@ -10726,7 +10726,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Checks the film's written words against what is actually said before building on them.
+**ما هي:** يفحص نص الفيلم المكتوب مقابل ما يُقال فعلًا قبل البناء عليه. — Checks the film's written words against what is actually said before building on them.
 
 **متى:** قبل البناء على نص الفيلم حين تريد التأكد أنه يطابق الكلام المنطوق فعلًا / before building on a film's written words, to check them against what is actually said
 
@@ -10797,7 +10797,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** After a montage or film plan, any empty stretch of the timeline gets a matching photo before review and export.
+**ما هي:** بعد خطة المونتاج أو الفيلم، تحصل أي فترة فارغة في المخطط الزمني على صورة مناسبة قبل المراجعة والتصدير. — After a montage or film plan, any empty stretch of the timeline gets a matching photo before review and export.
 
 **متى:** حين يبقى جزء فارغ في خط المونتاج وتريد ملأه بصورة مناسبة قبل المراجعة والتصدير / when a montage timeline has empty stretches that need a matching photo before review and export
 
@@ -10869,7 +10869,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** At creation start and milestones the agent reads remaining hosted allowance and reset times; unknown means say unknown.
+**ما هي:** عند بدء الإنشاء وعند المراحل يقرأ الوكيل الحصة المستضافة المتبقية وأوقات إعادة الضبط؛ وإن كانت مجهولة فيُقال إنها مجهولة. — At creation start and milestones the agent reads remaining hosted allowance and reset times; unknown means say unknown.
 
 **متى:** في بداية العمل وقبل الرندر حين تريد معرفة الرصيد المتبقي وموعد تجديده / at the start and before rendering, to read the remaining hosted allowance and reset times
 
@@ -10941,7 +10941,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Asks the live Jev service to choose between options twice with reversed order and averages; falls back to a deterministic rule offline.
+**ما هي:** يطلب من خدمة Jev الحية الاختيار بين الخيارات مرتين بترتيب معكوس ويأخذ المتوسط؛ ويعود إلى قاعدة حتمية دون اتصال. — Asks the live Jev service to choose between options twice with reversed order and averages; falls back to a deterministic rule offline.
 
 **متى:** حين تحتاج حكمًا بين خيارات لا يتأثر بترتيبها مع قاعدة بديلة تعمل دون اتصال / when choosing between options needs an order-robust judge with an offline rule fallback
 
@@ -11012,7 +11012,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** SetCurrentRenderFormatAndCodec, SetRenderSettings, AddRenderJob, StartRendering, GetRenderJobStatus then ffprobe match of size/fps/duration (±1 frame).
+**ما هي:** SetCurrentRenderFormatAndCodec وSetRenderSettings وAddRenderJob وStartRendering وGetRenderJobStatus ثم مطابقة ffprobe للحجم/معدل الإطارات/المدة (±1 إطار). — SetCurrentRenderFormatAndCodec, SetRenderSettings, AddRenderJob, StartRendering, GetRenderJobStatus then ffprobe match of size/fps/duration (±1 frame).
 
 **متى:** حين ترندر من دافنشي ريزولف وتريد التأكد أن المقاس والفريمات والمدة صحيحة / when rendering from DaVinci Resolve and the output size, fps and duration must be verified
 
@@ -11086,7 +11086,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Asks the owner's Jev service to choose between options twice in parallel with the option order reversed, averages the probabilities and flags whether both orders agreed; returns None offline so callers fall back to a rule.
+**ما هي:** يطلب من خدمة Jev الخاصة بالمالك الاختيار بين الخيارات مرتين على التوازي بترتيب معكوس، ويأخذ متوسط الاحتمالات، ويبيّن هل اتفق الترتيبان؛ ويعيد None دون اتصال ليعود المستدعون إلى قاعدة. — Asks the owner's Jev service to choose between options twice in parallel with the option order reversed, averages the probabilities and flags whether both orders agreed; returns None offline so callers fall back to a rule.
 
 **متى:** عند استدعاء خدمة Jev من الكود لاختيار خيار بترتيبين معكوسين مع علامة ثبات الحكم / when code calls the Jev service to choose an option in two reversed orders with a stability flag
 
@@ -11160,7 +11160,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | none |
 
-**ما هي:** Test one transition on Kling 3.0, MiniMax H3, Seedance 2.0 before committing.
+**ما هي:** اختبر انتقالًا واحدًا على Kling 3.0 وMiniMax H3 وSeedance 2.0 قبل الالتزام. — Test one transition on Kling 3.0, MiniMax H3, Seedance 2.0 before committing.
 
 **متى:** قبل الالتزام بنموذج توليد فيديو حين تريد تجربة نفس الانتقال على ثلاثة نماذج / before committing to a video model, to test one transition on Kling, MiniMax and Seedance
 
@@ -11233,7 +11233,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** for grid of video previews, detect internal cuts (scene detection), loop only cut-free windows with a short dissolve at the seam, offset each tile's phase so neighbours never change on the same frame
+**ما هي:** لشبكة من معاينات الفيديو: اكشف القطعات الداخلية (كشف المشاهد)، وكرر النوافذ الخالية من القطع فقط مع تلاشٍ قصير عند الوصلة، وأزح طور كل بلاطة كي لا يتغير الجيران في الإطار نفسه. — for grid of video previews, detect internal cuts (scene detection), loop only cut-free windows with a short dissolve at the seam, offset each tile's phase so neighbours never change on the same frame
 
 **متى:** حين تعرض شبكة معاينات فيديو متكررة وتريد ألا تتغير البلاطات المتجاورة في اللحظة نفسها / when showing a grid of looping video previews where neighbouring tiles must not change on the same frame
 
@@ -11304,7 +11304,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** render remake at same fps/frame count as the reference, then ffmpeg hstack both with labels on a dark frame to prove timing parity
+**ما هي:** صيّر النسخة المعادة بنفس معدل الإطارات وعدد الإطارات للمرجع، ثم ضمّ الاثنين أفقيًا بـ ffmpeg hstack مع تسميات على إطار داكن لإثبات تطابق التوقيت. — render remake at same fps/frame count as the reference, then ffmpeg hstack both with labels on a dark frame to prove timing parity
 
 **متى:** حين تعيد بناء فيديو لقطة بلقطة وتريد إثبات تطابق التوقيت بعرضهما جنبًا إلى جنب / when remaking a video shot for shot and proving timing parity side by side
 
@@ -11376,7 +11376,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Normalises a brief over defaults and rejects invalid duration, aspect or empty fields before any planning.
+**ما هي:** يطبّع موجزًا فوق الافتراضيات ويرفض المدة أو النسبة غير الصالحة أو الحقول الفارغة قبل أي تخطيط. — Normalises a brief over defaults and rejects invalid duration, aspect or empty fields before any planning.
 
 **متى:** عند بدء التخطيط للتأكد أن ملخص الفيديو فيه مدة ومقاس وحقول صحيحة / when a brief must be rejected early for invalid duration, aspect or empty fields before planning
 
@@ -11448,7 +11448,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** ensure final frame equals first frame including cursor position/velocity; verify by diffing frame 0 and last
+**ما هي:** تأكد أن الإطار الأخير يساوي الأول بما في ذلك موضع المؤشر وسرعته؛ وتحقق بمقارنة الإطار 0 والأخير. — ensure final frame equals first frame including cursor position/velocity; verify by diffing frame 0 and last
 
 **متى:** حين يريد المستخدم فيديو يتكرر بلا قفزة ظاهرة بين آخر إطار وأول إطار / when the user wants a loop with no visible jump between the last and first frame
 
@@ -11519,7 +11519,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Contact sheet 2 fps, phone 360 px, first frame, strip around fast moment, review.md rubric (hook, phone readability, motion, variety, composition, truth, sound sync, identity); fix 3 worst per round.
+**ما هي:** ورقة لقطات بمعدل 2 إطار/ث، وعرض هاتف 360 px، والإطار الأول، وشريط حول اللحظة السريعة، ومعيار review.md (الخطاف، قراءة الهاتف، الحركة، التنوع، التكوين، الصدق، تزامن الصوت، الهوية)؛ ويُصلح أسوأ ثلاثة في كل جولة. — Contact sheet 2 fps, phone 360 px, first frame, strip around fast moment, review.md rubric (hook, phone readability, motion, variety, composition, truth, sound sync, identity); fix 3 worst per round.
 
 **متى:** حين تريد نقد الفيلم وتحسينه على ثلاث جولات على الأقل بإصلاح أسوأ ثلاث مشكلات كل مرة / when a film needs at least three critique rounds fixing the three worst issues each time
 
@@ -11593,7 +11593,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cross-correlate a generated clip's soundtrack with the reference slice to find the offset; a sharp peak near 0 means lips follow the song.
+**ما هي:** ارتباط متبادل بين صوت المقطع المولَّد وشريحة المرجع لإيجاد الإزاحة؛ وذروة حادة قرب 0 تعني أن الشفاه تتبع الأغنية. — Cross-correlate a generated clip's soundtrack with the reference slice to find the offset; a sharp peak near 0 means lips follow the song.
 
 **متى:** حين تولد مقطعًا يغني وتريد التأكد أن حركة الشفاه متزامنة مع الأغنية / when a generated singing clip must be checked that the lips follow the song
 
@@ -11664,7 +11664,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Never pass generated footage as real capture, no frame interpolation inventing motion, rebuild constant frame rate from real timestamps, mask private info and decode every QR before publishing.
+**ما هي:** لا تقدّم لقطات مولَّدة على أنها تصوير حقيقي، ولا تستخدم استيفاء إطارات يخترع حركة، وأعد بناء معدل إطارات ثابت من الطوابع الزمنية الحقيقية، وأخفِ المعلومات الخاصة، وفكّ كل رمز QR قبل النشر. — Never pass generated footage as real capture, no frame interpolation inventing motion, rebuild constant frame rate from real timestamps, mask private info and decode every QR before publishing.
 
 **متى:** عند تسجيل لقطات شاشة أو واجهات للنشر وتريد ألا تُعرض لقطات مولدة كأنها حقيقية / when capturing screen or UI footage for publishing that must stay honest and privacy-safe
 
@@ -11736,7 +11736,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Tile frames every N seconds of the render into one image to review the whole film at a glance, then denser sheets at hook/chorus.
+**ما هي:** يرصّ إطارات الرندر كل N ثانية في صورة واحدة لمراجعة الفيلم كله بنظرة، ثم أوراق أكثف عند الخطاف/اللازمة. — Tile frames every N seconds of the render into one image to review the whole film at a glance, then denser sheets at hook/chorus.
 
 **متى:** حين تريد مراجعة الفيلم كله بنظرة واحدة في صورة تجمع إطارًا من كل ثانية / when you want to review a whole film at a glance as one image of frames every second
 
@@ -11809,7 +11809,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render and commit a still of a key frame to diff against after changes.
+**ما هي:** اعرض وثبّت إطارًا مرجعيًا لإطار مفتاحي للمقارنة به بعد التغييرات. — Render and commit a still of a key frame to diff against after changes.
 
 **متى:** بعد تعديل التصميم حين تريد مقارنة إطار مهم بنسخة مرجعية محفوظة لاكتشاف التغيرات / after changes, to diff a key frame against a committed reference still
 
@@ -11880,7 +11880,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Before publishing UI footage, mask addresses, ports, local URLs, location text, keys, private messages and QR codes; decode every QR in the final; re-cut stills from the masked master.
+**ما هي:** قبل نشر لقطات الواجهة أخفِ العناوين والمنافذ والروابط المحلية ونصوص الموقع والمفاتيح والرسائل الخاصة ورموز QR؛ وفكّ كل رمز QR في النسخة النهائية؛ وأعد قص اللقطات الثابتة من النسخة الرئيسية المخفاة. — Before publishing UI footage, mask addresses, ports, local URLs, location text, keys, private messages and QR codes; decode every QR in the final; re-cut stills from the masked master.
 
 **متى:** قبل نشر فيديو لواجهة أو شاشة يظهر فيه عناوين أو مفاتيح أو رسائل خاصة أو رموز QR / before publishing UI footage that shows addresses, keys, private messages or QR codes
 
@@ -11951,7 +11951,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Check the delivered file, not the command: every frame decodes, H.264 yuv420p, even dimensions, BT.709 tags, faststart, no black/frozen/silent stretches, loudness and true peak, size cap; then watch a contact sheet once end to end.
+**ما هي:** افحص الملف المسلَّم لا الأمر: كل إطار يُفك ترميزه، H.264 yuv420p، أبعاد زوجية، وسوم BT.709، faststart، لا امتدادات سوداء/مجمّدة/صامتة، الجهارة وذروة الصوت الحقيقية، حد الحجم؛ ثم شاهد ورقة لقطات مرة من البداية إلى النهاية. — Check the delivered file, not the command: every frame decodes, H.264 yuv420p, even dimensions, BT.709 tags, faststart, no black/frozen/silent stretches, loudness and true peak, size cap; then watch a contact sheet once end to end.
 
 **متى:** قبل رفع فيديو على الويب أو السوشيال حين تريد التأكد من الترميز والصوت والحجم / before posting a video to web or social, to check encoding, black/frozen/silent stretches, loudness and size
 
@@ -12026,7 +12026,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Before a full export render stills at the first frame, every action, every transition midpoint and the last frame; check readability at phone size and that every scene works as a still.
+**ما هي:** قبل التصدير الكامل صيّر لقطات ثابتة للإطار الأول، وكل حدث، ومنتصف كل انتقال، والإطار الأخير؛ وتحقق من القراءة بحجم الهاتف وأن كل مشهد يصلح كلقطة ثابتة. — Before a full export render stills at the first frame, every action, every transition midpoint and the last frame; check readability at phone size and that every scene works as a still.
 
 **متى:** قبل التصدير الكامل حين تريد مراجعة صور ثابتة لكل حركة وانتقال ووضوحها على الجوال / before a full export, to review stills of every action and transition at phone size
 
@@ -12099,7 +12099,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Every animated scene needs a meaningful static state: reduced motion swaps travel/parallax for direct state changes, freezes shaders at a good frame, and keeps all information available.
+**ما هي:** كل مشهد متحرك يحتاج إلى حالة ثابتة ذات معنى: تقليل الحركة يستبدل الانتقال/البارالاكس بتغييرات حالة مباشرة، ويجمّد الشيدرات عند إطار جيد، ويُبقي كل المعلومات متاحة. — Every animated scene needs a meaningful static state: reduced motion swaps travel/parallax for direct state changes, freezes shaders at a good frame, and keeps all information available.
 
 **متى:** حين يحتاج المشهد المتحرك حالة ثابتة مفهومة لمن يفضل تقليل الحركة أو كصورة غلاف / when an animated scene needs a meaningful static state for reduced motion or as a poster frame
 
@@ -12171,7 +12171,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** For the Viral Editorial profile, MP4 export with --approved is refused unless all five stages are done and the user typed APPROVE FINAL RENDER, recorded as approval.final_render=true.
+**ما هي:** في ملف Viral Editorial يُرفض تصدير MP4 مع --approved ما لم تكتمل المراحل الخمس ويكتب المستخدم APPROVE FINAL RENDER، ويُسجَّل كـ approval.final_render=true. — For the Viral Editorial profile, MP4 export with --approved is refused unless all five stages are done and the user typed APPROVE FINAL RENDER, recorded as approval.final_render=true.
 
 **متى:** عند منع تصدير الفيديو النهائي حتى يكتب المستخدم عبارة الاعتماد صراحة / when the final MP4 export must wait until the user types the approval phrase
 
@@ -12246,7 +12246,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A data hook is only as good as its source: precise numbers read as researched, round ones as invented; a missing source is left as a visible placeholder rather than fabricated, and data cards always show source and date.
+**ما هي:** الخطاف المعتمد على البيانات لا يتجاوز مصدره: الأرقام الدقيقة تبدو مدروسة والمقرَّبة تبدو مختلَقة؛ والمصدر المفقود يُترك مكانًا بديلًا ظاهرًا لا يُختلق، وتعرض بطاقات البيانات المصدر والتاريخ دائمًا. — A data hook is only as good as its source: precise numbers read as researched, round ones as invented; a missing source is left as a visible placeholder rather than fabricated, and data cards always show source and date.
 
 **متى:** حين يبدأ الفيديو برقم أو إحصائية كخطاف ولا يوجد مصدر موثق له / when a video's hook relies on a number or statistic whose source is missing
 
@@ -12317,7 +12317,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Vertical videos need burned-in captions (most watch muted; required for deaf viewers), on-screen text at least 32 px with high contrast and enough reading time, and no flashing faster than 3 Hz.
+**ما هي:** الفيديوهات الرأسية تحتاج ترجمة مدمجة (معظم المشاهدين بلا صوت؛ ومطلوبة للصم)، ونصًا على الشاشة لا يقل عن 32 px بتباين عالٍ ووقت قراءة كافٍ، ولا وميض أسرع من 3 Hz. — Vertical videos need burned-in captions (most watch muted; required for deaf viewers), on-screen text at least 32 px with high contrast and enough reading time, and no flashing faster than 3 Hz.
 
 **متى:** عند عمل فيديو عمودي يحتاج ترجمة مدمجة ونصًا مقروءًا وبلا وميض سريع / when making a vertical video that needs burned-in captions, readable text and no fast flashing
 
@@ -12390,7 +12390,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Never trust raw contrast of text on photos: add a solid overlay, gradient or box and measure contrast against the brightest region under the text, not the image average.
+**ما هي:** لا تثق بالتباين الخام للنص فوق الصور: أضف طبقة صلبة أو تدرجًا أو صندوقًا وقس التباين مقابل أسطع منطقة تحت النص لا متوسط الصورة. — Never trust raw contrast of text on photos: add a solid overlay, gradient or box and measure contrast against the brightest region under the text, not the image average.
 
 **متى:** حين تضع نصًا فوق صورة وتريد التأكد أنه مقروء بقياس التباين / when placing text over a photo and checking it stays readable by measured contrast
 
@@ -12465,7 +12465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Paid statics pass a 3-second comprehension test, a 150 px preview legibility test, WCAG AA contrast, and keep text at or below ~20% of the canvas area (logo excluded); one message per asset.
+**ما هي:** تجتاز الإعلانات الثابتة المدفوعة اختبار فهم في 3 ثوانٍ، واختبار وضوح المعاينة بعرض 150 px، وتباين WCAG AA، وتُبقي النص عند ~20% من مساحة اللوحة أو أقل (دون الشعار)؛ رسالة واحدة لكل مادة. — Paid statics pass a 3-second comprehension test, a 150 px preview legibility test, WCAG AA contrast, and keep text at or below ~20% of the canvas area (logo excluded); one message per asset.
 
 **متى:** قبل نشر إعلان ثابت مدفوع حين تريد التأكد من وضوحه وفهمه في ثلاث ثوان / before running a paid static ad, to check it reads in 3 seconds and at a 150 px preview
 
@@ -12537,7 +12537,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Test one creative variable at a time (video hook = first 3 s, length, format, offer framing, social proof type...), keep a 10-20% holdout control, require 90% confidence for directional and 95% for major decisions, observe at least 7 days, and name assets platform_audience_variable_variant_date.
+**ما هي:** اختبر متغير إبداع واحدًا في كل مرة (خطاف الفيديو = أول 3 ث، المدة، الصيغة، صياغة العرض، نوع الدليل الاجتماعي...)، واحتفظ بمجموعة ضابطة 10-20%، واشترط ثقة 90% للاتجاهي و95% للقرارات الكبرى، وراقب 7 أيام على الأقل، وسمِّ المواد platform_audience_variable_variant_date. — Test one creative variable at a time (video hook = first 3 s, length, format, offer framing, social proof type...), keep a 10-20% holdout control, require 90% confidence for directional and 95% for major decisions, observe at least 7 days, and name assets platform_audience_variable_variant_date.
 
 **متى:** حين تريد اختبار نسخ إعلانية أو خطافات مختلفة بطريقة منضبطة ومعرفة أيها أفضل / when testing ad creatives or hooks with one variable at a time, a holdout and confidence rules
 
@@ -12610,7 +12610,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Score candidate scenes 0-2 on six criteria (12 max): matches the title/thumbnail promise, understandable muted from one still, single focus with empty space for text, visible motion or light change, sparks curiosity (contrast, cut-before-the-end, surprise), representative of the best footage.
+**ما هي:** قيّم المشاهد المرشحة من 0 إلى 2 على ستة معايير (الحد الأقصى 12): تطابق وعد العنوان/الصورة المصغرة، مفهومة بلا صوت من لقطة واحدة، تركيز واحد مع فراغ للنص، حركة أو تغير ضوء مرئي، تثير الفضول (تباين، قطع قبل النهاية، مفاجأة)، ممثلة لأفضل اللقطات. — Score candidate scenes 0-2 on six criteria (12 max): matches the title/thumbnail promise, understandable muted from one still, single focus with empty space for text, visible motion or light change, sparks curiosity (contrast, cut-before-the-end, surprise), representative of the best footage.
 
 **متى:** حين تختار أقوى مشهد افتتاحي للفيديو من بين عدة لقطات بجدول تقييم / when picking the strongest opening hook scene among candidate shots with a scored rubric
 
@@ -12682,7 +12682,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Before publishing: every frame decodes, phone-safe encoding, faststart, no black or frozen stretches, loudness and true peak in range, file size under the destination limit (25 MiB in one site), plus a contact sheet where every cell is actually looked at.
+**ما هي:** قبل النشر: كل إطار يُفك ترميزه، وترميز آمن للهاتف، وfaststart، ولا امتدادات سوداء أو مجمّدة، والجهارة وذروة الصوت الحقيقية في المدى، وحجم الملف دون حد الوجهة (25 MiB في أحد المواقع)، مع ورقة لقطات يُنظر فعلًا في كل خلية منها. — Before publishing: every frame decodes, phone-safe encoding, faststart, no black or frozen stretches, loudness and true peak in range, file size under the destination limit (25 MiB in one site), plus a contact sheet where every cell is actually looked at.
 
 **متى:** قبل النشر حين تريد فحص الملف المسلم نفسه: فك الترميز والإطارات السوداء والصوت والحجم / before publishing, to check the delivered file itself: decoding, black/frozen frames, loudness and size
 
@@ -12756,7 +12756,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Score a message on six traits (Simple, Unexpected, Concrete, Credible, Emotional, Stories) 1-10 each; 50-60 extremely sticky, 35-49 strong, 20-34 forgettable, under 20 will not stick; fix the lowest traits first.
+**ما هي:** قيّم الرسالة على ست سمات (Simple, Unexpected, Concrete, Credible, Emotional, Stories) من 1 إلى 10 لكل منها؛ 50-60 شديد الالتصاق، 35-49 قوي، 20-34 منسي، أقل من 20 لن يلتصق؛ وأصلح السمات الأدنى أولًا. — Score a message on six traits (Simple, Unexpected, Concrete, Credible, Emotional, Stories) 1-10 each; 50-60 extremely sticky, 35-49 strong, 20-34 forgettable, under 20 will not stick; fix the lowest traits first.
 
 **متى:** حين تريد تقييم قوة الرسالة الأساسية لفيديو شرح قبل تحريكه لتصبح لا تُنسى / when scoring an explainer's core message for stickiness before animating it
 
@@ -12827,7 +12827,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Review covers for clicks with reasons: (1) TV 50% test - the top half alone must convey the topic because TV home rows show only the top (apply if TV share >=10% or unknown); (2) works without the title by creating a question or emotion; (3) built from 10-15 references across 5 sources by extracting…
+**ما هي:** مراجعة الأغلفة للنقرات مع الأسباب: (1) اختبار التلفزيون 50% - النصف العلوي وحده يجب أن ينقل الموضوع لأن صفوف الصفحة الرئيسية للتلفزيون تعرض الأعلى فقط (يُطبق إذا كانت حصة التلفزيون ≥10% أو مجهولة)؛ (2) تعمل دون العنوان بإثارة سؤال أو شعور؛ (3) مبنية من 10-15 مرجعًا عبر 5 مصادر باستخراج… — Review covers for clicks with reasons: (1) TV 50% test - the top half alone must convey the topic because TV home rows show only the top (apply if TV share >=10% or unknown); (2) works without the title by creating a question or emotion; (3) built from 10-15 references across 5 sources by extracting…
 
 **متى:** حين يطلب المستخدم مراجعة صورة الغلاف (الثمبنيل) ومعرفة هل ستجلب نقرات / when the user wants a thumbnail reviewed for clicks with a reasoned verdict table
 
@@ -12899,7 +12899,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Combine scene-change detection, perceptual-hash de-duplication, stratified interval sampling, frames anchored to transcript cues, and denser sampling in transcript windows; batch frames into contact sheets; every frame records whether its time is measured, estimated (interval index, +/- half interva…
+**ما هي:** اجمع كشف تغير المشهد، وإزالة التكرار بالتجزئة الإدراكية، والعينات الدورية الطبقية، وإطارات مرتبطة بإشارات التفريغ، وعينات أكثف في نوافذ التفريغ؛ وضمّ الإطارات في أوراق لقطات؛ ويسجل كل إطار هل وقته مقيس أم مقدَّر (فهرس الفترة، ± نصف فترة… — Combine scene-change detection, perceptual-hash de-duplication, stratified interval sampling, frames anchored to transcript cues, and denser sampling in transcript windows; batch frames into contact sheets; every frame records whether its time is measured, estimated (interval index, +/- half interva…
 
 **متى:** حين تحتاج فهم محتوى فيديو باختيار إطارات ذكية غير مكررة ومرتبطة بالتفريغ / when you need to watch a video by picking informative, de-duplicated frames tied to the transcript
 
@@ -12973,7 +12973,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** node --test covering planner, all seven profiles, CLI persistence/clean plate and the viral gate logic; 24/24 passed here in under 1 s.
+**ما هي:** node --test يغطي المخطط وكل الملفات السبعة وثبات CLI/اللوحة النظيفة ومنطق بوابة viral؛ نجح 24/24 هنا في أقل من ثانية. — node --test covering planner, all seven profiles, CLI persistence/clean plate and the viral gate logic; 24/24 passed here in under 1 s.
 
 **متى:** حين تريد التأكد سريعًا أن المخطط والبروفايلات وبوابة الاعتماد تعمل بعد أي تعديل / when quickly confirming the planner, profiles and viral gate still pass after a change
 
@@ -13047,7 +13047,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Compare competitor packaging against each channel's own baseline for similar format and age, flag normalized outliers, separate repeated patterns from one-off anomalies, never compare raw views across unlike channels, and remember impressions, CTR, average view duration and retention are creator-onl…
+**ما هي:** قارن تغليف المنافسين بخط الأساس الخاص بكل قناة لصيغة وعمر مشابهين، وعلّم القيم الشاذة المعيارية، وافصل الأنماط المتكررة عن الشذوذ العابر، ولا تقارن المشاهدات الخام عبر قنوات غير متشابهة، وتذكّر أن مرات الظهور ونسبة النقر ومتوسط مدة المشاهدة والاحتفاظ متاحة لصاحب القناة فقط… — Compare competitor packaging against each channel's own baseline for similar format and age, flag normalized outliers, separate repeated patterns from one-off anomalies, never compare raw views across unlike channels, and remember impressions, CTR, average view duration and retention are creator-onl…
 
 **متى:** حين تبحث في عناوين وصور قنوات منافسة وتريد مقارنة عادلة دون نسخ / when researching competitor packaging fairly against each channel's own baseline without copying
 
@@ -13117,7 +13117,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Before sign-off: Arabic letters stay joined with dots and diacritics visible and the reading order correct; reading time measured on the real text at the target size; each scene has an asset or a 'missing' tag with fallback; no full product spin promised from a single still; data, prices, before/aft…
+**ما هي:** قبل الاعتماد: الحروف العربية متصلة مع ظهور النقاط والتشكيل وصحة ترتيب القراءة؛ وزمن القراءة مقيس على النص الفعلي بالحجم المستهدف؛ ولكل مشهد مادة أو وسم 'مفقود' مع بديل؛ ولا يُوعد بدوران كامل للمنتج من صورة واحدة؛ والبيانات والأسعار وقبل/بعد… — Before sign-off: Arabic letters stay joined with dots and diacritics visible and the reading order correct; reading time measured on the real text at the target size; each scene has an asset or a 'missing' tag with fallback; no full product spin promised from a single still; data, prices, before/aft…
 
 **متى:** قبل اعتماد فيديو موشن حين تريد قائمة فحص للعربية ووقت القراءة والأصول والصوت / before signing off a motion piece, for a checklist covering Arabic text, reading time, assets and loudness
 
@@ -13188,7 +13188,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Per-category rules: data pieces need source, unit and period, fair scales and no invented final counter value; product ads separate confirmed features from proposed copy and never infer available colours, discounts or before/after results; social clips carry one message, one opener and one CTA, take…
+**ما هي:** قواعد لكل فئة: مواد البيانات تحتاج مصدرًا ووحدة وفترة وسلالم عادلة ولا قيمة نهائية مختلقة للعداد؛ وإعلانات المنتجات تفصل الميزات المؤكدة عن الصياغة المقترحة ولا تستنتج ألوانًا متاحة أو خصومات أو نتائج قبل/بعد؛ والمقاطع الاجتماعية تحمل رسالة واحدة وافتتاحًا واحدًا ودعوة واحدة، وتأخذ… — Per-category rules: data pieces need source, unit and period, fair scales and no invented final counter value; product ads separate confirmed features from proposed copy and never infer available colours, discounts or before/after results; social clips carry one message, one opener and one CTA, take…
 
 **متى:** حين يعرض فيديو موشن أرقامًا أو مزايا منتج أو أسعارًا ويجب ألا يخترع ما لم يُعطَ / when a motion piece shows data, product features or prices and must not invent anything not supplied
 
@@ -13259,7 +13259,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Blend before and after 50/50 at identical pixel geometry to expose small spacing, alignment or typography changes; it's supplemental evidence kept beside the originals; never stretch or shift one image to align. Works for comparing render v1 vs v2 frames of a motion piece.
+**ما هي:** ادمج قبل وبعد بنسبة 50/50 بنفس هندسة البكسل لإظهار تغييرات صغيرة في التباعد أو المحاذاة أو الطباعة؛ وهو دليل تكميلي يُحفظ بجانب الأصول؛ ولا تمدد صورة أو تزحها للمحاذاة. يصلح لمقارنة إطارات الرندر v1 وv2 لعمل حركي. — Blend before and after 50/50 at identical pixel geometry to expose small spacing, alignment or typography changes; it's supplemental evidence kept beside the originals; never stretch or shift one image to align. Works for comparing render v1 vs v2 frames of a motion piece.
 
 **متى:** حين تريد كشف فروق صغيرة في المسافات أو المحاذاة أو الخط بين نسختين من الإطار / when you need to expose small spacing, alignment or typography changes between two versions of a frame
 
@@ -13332,7 +13332,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Judge candidates in order and stop at the first failure: concept fit -> clean space for text -> brand palette -> generation defects (hands, faces, garbled text, mechanical repetition, impossible shadows/reflections/scale) -> set consistency -> technical quality -> taste last. Inspect at full size, l…
+**ما هي:** احكم على المرشحين بالترتيب وتوقف عند أول إخفاق: ملاءمة المفهوم -> مساحة نظيفة للنص -> لوحة العلامة -> عيوب التوليد (اليدان، الوجوه، النص المشوش، التكرار الآلي، الظلال/الانعكاسات/المقاييس المستحيلة) -> اتساق المجموعة -> الجودة التقنية -> الذوق أخيرًا. افحص بالحجم الكامل، l… — Judge candidates in order and stop at the first failure: concept fit -> clean space for text -> brand palette -> generation defects (hands, faces, garbled text, mechanical repetition, impossible shadows/reflections/scale) -> set consistency -> technical quality -> taste last. Inspect at full size, l…
 
 **متى:** حين تولد عدة نسخ من صورة وتريد اختيار الأفضل باستبعاد العيوب بترتيب واضح / when choosing among generated image variants by eliminating failures in a fixed order
 
@@ -13402,7 +13402,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Test lower thirds, cards and counters with worst-case content: names from 1 to 60+ characters, currencies up to 13 visible characters, counts in billions (abbreviate like 12.4M), German ~30% longer text, Arabic RTL and mixed bidi, emoji and combining marks, missing or wrong-aspect images, empty stat…
+**ما هي:** اختبر الشرائط السفلية والبطاقات والعدادات بأسوأ محتوى: أسماء من حرف إلى 60+ حرفًا، وعملات حتى 13 حرفًا مرئيًا، وأعداد بالمليارات (اختصر مثل 12.4M)، ونص ألماني أطول بنحو 30%، والعربية RTL وثنائية الاتجاه المختلطة، والإيموجي والعلامات المدمجة، وصور مفقودة أو بنسبة خاطئة، وإحصاءات فارغة… — Test lower thirds, cards and counters with worst-case content: names from 1 to 60+ characters, currencies up to 13 visible characters, counts in billions (abbreviate like 12.4M), German ~30% longer text, Arabic RTL and mixed bidi, emoji and combining marks, missing or wrong-aspect images, empty stat…
 
 **متى:** حين تبني قالب عنوان سفلي أو بطاقة أو عداد وتريد اختباره بأسماء طويلة ونص عربي وأرقام ضخمة / when testing lower thirds, cards or counters with worst-case names, RTL text and huge numbers
 
@@ -13474,7 +13474,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Confirm the final file meets the loudness spec instead of trusting the mixer.
+**ما هي:** تأكد أن الملف النهائي يطابق مواصفة الجهارة بدل الوثوق بالمازج. — Confirm the final file meets the loudness spec instead of trusting the mixer.
 
 **متى:** حين تريد التأكد أن صوت الملف النهائي يطابق مواصفات الجهارة والذروة / when confirming the final file meets the loudness and true-peak spec
 
@@ -13547,7 +13547,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Phone and screen recordings are often variable frame rate; A/V drifts in editors and filters. Force constant frame rate and resample audio with async.
+**ما هي:** الهواتف وتسجيلات الشاشة غالبًا بمعدل إطارات متغير؛ فيحدث انجراف الصوت والصورة في المحررات والمرشحات. افرض معدل إطارات ثابتًا وأعد أخذ عينات الصوت بـ async. — Phone and screen recordings are often variable frame rate; A/V drifts in editors and filters. Force constant frame rate and resample audio with async.
 
 **متى:** حين يخرج الصوت عن تزامن الصورة في تسجيل جوال أو شاشة بمعدل إطارات متغير / when audio drifts out of sync on a phone or screen recording with variable frame rate
 
@@ -13617,7 +13617,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Full-screen flashes are capped to avoid photosensitive risk: keep flashes under ~0.35 opacity with soft fades, and never flicker above 3 Hz.
+**ما هي:** تُحدّ الومضات بملء الشاشة لتجنب خطر الحساسية الضوئية: أبقِ الومضات دون ~0.35 عتامة مع تلاشٍ ناعم، ولا تومض فوق 3 Hz أبدًا. — Full-screen flashes are capped to avoid photosensitive risk: keep flashes under ~0.35 opacity with soft fades, and never flicker above 3 Hz.
 
 **متى:** حين يحتوي الفيديو على ومضات تملأ الشاشة وتريد تجنب خطر الحساسية للضوء / when a video uses full-screen flashes that must stay safe for photosensitive viewers
 
@@ -13689,7 +13689,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Measure real glyph height on a still rather than trusting font size numbers. Dialogue/comments ≥5% of frame height (108 px at 4K), keywords/beat titles ≥6% (130 px), numbered/opening titles ≥8% (173 px). Never shrink to fit; shorten or split to 2 lines.
+**ما هي:** قس ارتفاع الحرف الفعلي على لقطة ثابتة بدل الثقة بأرقام حجم الخط. الحوار/التعليقات ≥5% من ارتفاع الإطار (108 px عند 4K)، والكلمات المفتاحية/عناوين الإيقاع ≥6% (130 px)، والعناوين المرقمة/الافتتاحية ≥8% (173 px). لا تصغّر لتلائم؛ اختصر أو قسّم إلى سطرين. — Measure real glyph height on a still rather than trusting font size numbers. Dialogue/comments ≥5% of frame height (108 px at 4K), keywords/beat titles ≥6% (130 px), numbered/opening titles ≥8% (173 px). Never shrink to fit; shorten or split to 2 lines.
 
 **متى:** حين تحدد حجم الترجمة أو العناوين على الفيديو وتريد ضمان أنها مقروءة / when sizing captions or titles on video so they stay readable at a measured minimum height
 
@@ -13760,7 +13760,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** History narration lines are placeholders; output carries needsFactCheck=true and requires real sources and authenticated images before publishing; single clips are revised in place.
+**ما هي:** أسطر السرد التاريخي عناصر نائبة؛ والمخرج يحمل needsFactCheck=true ويشترط مصادر حقيقية وصورًا موثقة قبل النشر؛ وتُعدَّل المقاطع المفردة في مكانها. — History narration lines are placeholders; output carries needsFactCheck=true and requires real sources and authenticated images before publishing; single clips are revised in place.
 
 **متى:** حين يحتوي فيديو تاريخي على سرد يحتاج مصادر حقيقية وصورًا موثقة قبل النشر / when a history video's narration needs real sources and authenticated images before publishing
 
@@ -13830,7 +13830,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Read every transcript before using it: music-note tokens, garbled words, looping repeated lines over music, inserted ads; Whisper has no speaker labels; keep verbatim, do not invent.
+**ما هي:** اقرأ كل تفريغ قبل استخدامه: رموز النوتة الموسيقية، والكلمات المشوشة، والأسطر المكررة المتكررة فوق الموسيقى، والإعلانات المدرجة؛ Whisper لا يضع تسميات للمتحدثين؛ احتفظ بالنص حرفيًا ولا تختلق. — Read every transcript before using it: music-note tokens, garbled words, looping repeated lines over music, inserted ads; Whisper has no speaker labels; keep verbatim, do not invent.
 
 **متى:** قبل استخدام تفريغ صوتي حين تريد كشف الكلمات المشوهة والأسطر المكررة فوق الموسيقى / before using a transcript, to catch garbled words, music tokens and repeated lines
 
@@ -13901,7 +13901,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Judge grades numerically on the same frame/output: P10/P50/P95 luma, % pixels ≥99 IRE (bright ≠ clipped; check RGB parade separately), ROI-based chroma radius; exclude letterbox/titles; log 'estimated' when read by eye.
+**ما هي:** احكم على التلوين رقميًا على الإطار/المخرج نفسه: لوما P10/P50/P95، ونسبة البكسلات ≥99 IRE (الساطع ≠ المقصوص؛ افحص RGB parade منفصلًا)، ونصف قطر الكروما حسب منطقة الاهتمام؛ واستبعد الشريطين الأسودين والعناوين؛ وسجّل 'مقدَّر' عند القراءة بالعين. — Judge grades numerically on the same frame/output: P10/P50/P95 luma, % pixels ≥99 IRE (bright ≠ clipped; check RGB parade separately), ROI-based chroma radius; exclude letterbox/titles; log 'estimated' when read by eye.
 
 **متى:** حين تريد الحكم على تلوين الفيديو بالأرقام بدل العين ومعرفة المناطق المحترقة / when judging a colour grade numerically, including bright vs clipped pixels, instead of by eye
 
@@ -13972,7 +13972,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** When cuts change, pass a change list (file \| old start TC \| new start TC \| frame delta) to captions, graphics and sound; timeline markers do not follow clips, so remove/re-place them; re-run auto-subtitles and transcript diff.
+**ما هي:** عند تغيّر القطعات مرّر قائمة تغييرات (الملف \| TC البداية القديم \| TC البداية الجديد \| فرق الإطارات) إلى الترجمات والرسوم والصوت؛ العلامات على المخطط الزمني لا تتبع المقاطع فأزلها وأعد وضعها؛ وأعد تشغيل الترجمة التلقائية ومقارنة التفريغ. — When cuts change, pass a change list (file \| old start TC \| new start TC \| frame delta) to captions, graphics and sound; timeline markers do not follow clips, so remove/re-place them; re-run auto-subtitles and transcript diff.
 
 **متى:** حين تتغير القطعات في المونتاج وتريد تحديث الترجمة والجرافيك والصوت تبعًا لها / when cuts change and captions, graphics and sound must follow the new timings
 
@@ -14042,7 +14042,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Before calling a render done: resolution, fps, frame count (duration×fps within 1 frame), one AAC 48 kHz stereo stream, LUFS/TP, playback of head/middle/tail for missing media or unintended black/silence, source timeline unchanged vs preflight record.
+**ما هي:** قبل إعلان انتهاء الرندر: الدقة، ومعدل الإطارات، وعدد الإطارات (المدة×المعدل ضمن إطار واحد)، ومجرى AAC واحد 48 kHz ستيريو، وLUFS/TP، وتشغيل الرأس والمنتصف والذيل بحثًا عن وسائط مفقودة أو سواد/صمت غير مقصود، والمخطط الزمني المصدر دون تغيير مقارنة بسجل ما قبل الفحص. — Before calling a render done: resolution, fps, frame count (duration×fps within 1 frame), one AAC 48 kHz stereo stream, LUFS/TP, playback of head/middle/tail for missing media or unintended black/silence, source timeline unchanged vs preflight record.
 
 **متى:** قبل اعتبار الرندر منتهيًا حين تريد جدول تحقق من الدقة والفريمات والصوت والجهارة / before calling a render done, for a check table of resolution, fps, frames, audio and loudness
 
@@ -14116,7 +14116,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Numbers cannot judge excitement or readability at phone size: watch every cut once with sound and once muted, at phone scale, before delivery; send contact sheets and the report to the user.
+**ما هي:** الأرقام لا تحكم على الإثارة أو القراءة بحجم الهاتف: شاهد كل قطع مرة بالصوت ومرة صامتًا، بمقياس الهاتف، قبل التسليم؛ وأرسل أوراق اللقطات والتقرير إلى المستخدم. — Numbers cannot judge excitement or readability at phone size: watch every cut once with sound and once muted, at phone scale, before delivery; send contact sheets and the report to the user.
 
 **متى:** قبل تسليم الفيديو حين تريد الحكم على الإثارة والوضوح على شاشة الجوال بالمشاهدة الفعلية / before delivery, to judge excitement and phone-size readability by watching with and without sound
 
@@ -14186,7 +14186,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Reject transcripts with music tokens, nonsense or ultra-short word spans; retry with a bigger model, then ask for lyrics/script.
+**ما هي:** ارفض التفريغات ذات رموز الموسيقى أو الكلام غير المفهوم أو امتدادات الكلمات القصيرة جدًا؛ أعد المحاولة بنموذج أكبر، ثم اطلب الكلمات/النص. — Reject transcripts with music tokens, nonsense or ultra-short word spans; retry with a bigger model, then ask for lyrics/script.
 
 **متى:** حين يأتي التفريغ مليئًا برموز الموسيقى أو كلام بلا معنى وتريد إعادة المحاولة / when a transcript is full of music tokens or nonsense and needs a retry with a bigger model
 
@@ -14257,7 +14257,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Measure word error rate on real representative audio (accents, noise), and tune VAD silence thresholds rather than one fixed value.
+**ما هي:** قس معدل خطأ الكلمات على صوت تمثيلي حقيقي (لهجات، ضجيج)، واضبط عتبات صمت VAD بدل قيمة ثابتة واحدة. — Measure word error rate on real representative audio (accents, noise), and tune VAD silence thresholds rather than one fixed value.
 
 **متى:** حين تريد قياس دقة التعرف على الكلام على صوت حقيقي بلهجات وضوضاء وضبط عتبة الصمت / when measuring speech recognition accuracy on real accented, noisy audio and tuning silence thresholds
 
@@ -14327,7 +14327,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Claude can't listen, so render a spectrogram over waveform PNG and look for clicks, aliasing, tails and section structure.
+**ما هي:** لا يستطيع Claude الاستماع، فصيّر صورة PNG لطيف فوق الموجة وابحث عن النقرات والتعرّج والذيول وبنية الأقسام. — Claude can't listen, so render a spectrogram over waveform PNG and look for clicks, aliasing, tails and section structure.
 
 **متى:** حين لا يمكن سماع الصوت وتريد فحصه بصريًا بحثًا عن الطقطقة والتشوه والذيول / when you can't listen and need to check audio visually for clicks, aliasing, tails and structure
 
@@ -14398,7 +14398,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Decide hero sound, then clip gain -> EQ -> dynamics; compare without music, without SFX, full mix; check masking, clicks, phase, mono.
+**ما هي:** حدد الصوت البطل، ثم ربح المقطع -> EQ -> الديناميكا؛ وقارن دون موسيقى، ودون مؤثرات، والميكس الكامل؛ وافحص الحجب والنقرات والطور وأحادية القناة. — Decide hero sound, then clip gain -> EQ -> dynamics; compare without music, without SFX, full mix; check masking, clicks, phase, mono.
 
 **متى:** عند مكساج الصوت حين تريد ترتيب الخطوات وفحص التداخل والطقطقة والطور وصوت المونو / when mixing audio and checking step order, masking, clicks, phase and mono
 
@@ -14468,7 +14468,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Integrated LUFS needs 400ms blocks; sub-400ms effects read -70 LUFS — level them by peak/loudest 50ms.
+**ما هي:** LUFS المتكامل يحتاج كتل 400ms؛ والمؤثرات الأقصر من 400ms تُقرأ -70 LUFS - اضبط مستواها بالذروة/أعلى 50ms. — Integrated LUFS needs 400ms blocks; sub-400ms effects read -70 LUFS — level them by peak/loudest 50ms.
 
 **متى:** حين تضبط مستوى مؤثرات صوتية قصيرة جدًا وتظهر قراءة الجهارة منخفضة بشكل غريب / when leveling very short sound effects whose LUFS reading looks wrongly low
 
@@ -14540,7 +14540,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A kosif-props JSON block holds editable copy (title, subtitle, titleAt) and a kosif-reel JSON block describes scenes, elements, boxes (percent), bindings and AI shot layers so a review page can edit the film and write back.
+**ما هي:** كتلة JSON باسم kosif-props تحمل النص القابل للتعديل (العنوان والعنوان الفرعي وtitleAt) وكتلة kosif-reel JSON تصف المشاهد والعناصر والمربعات (نسبة مئوية) والارتباطات وطبقات لقطات الذكاء الاصطناعي ليحرر صفحة المراجعة الفيلم وتكتب التعديلات. — A kosif-props JSON block holds editable copy (title, subtitle, titleAt) and a kosif-reel JSON block describes scenes, elements, boxes (percent), bindings and AI shot layers so a review page can edit the film and write back.
 
 **متى:** عند تجهيز فيديو بحيث تعدّل صفحة المراجعة نصوصه ومشاهده وألوانه وتكتبها للمصدر / when a composition must expose editable titles, scenes and colors for a review page to change
 
@@ -14613,7 +14613,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Duplicate the timeline/file before any audio edit; never overwrite originals; reverse/reverb as derived files.
+**ما هي:** انسخ المخطط الزمني/الملف قبل أي تعديل صوتي؛ ولا تستبدل الأصول أبدًا؛ والعكس/الصدى ملفات مشتقة. — Duplicate the timeline/file before any audio edit; never overwrite originals; reverse/reverb as derived files.
 
 **متى:** قبل أي تعديل على الصوت حين تريد الحفاظ على الأصل بالعمل على نسخة / before any audio edit, to keep the original untouched by working on a duplicate
 
@@ -14683,7 +14683,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Leave AUDIO_REVIEW markers with TC, intent, alternative and status; report numbers, ask the user to listen; never claim it 'sounds great'.
+**ما هي:** اترك علامات AUDIO_REVIEW مع TC والقصد والبديل والحالة؛ وأبلغ بالأرقام واطلب من المستخدم أن يستمع؛ ولا تدّعِ أنه 'يبدو رائعًا' أبدًا. — Leave AUDIO_REVIEW markers with TC, intent, alternative and status; report numbers, ask the user to listen; never claim it 'sounds great'.
 
 **متى:** حين يكون قرار الصوت ذوقيًا وتريد ترك علامة مراجعة ليستمع المستخدم بنفسه / when an audio decision is subjective and should be marked for the user to listen to
 
@@ -14753,7 +14753,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Inside If() blocks, reassigning a JS variable is invisible to TSL; use .assign(), property setters or select().
+**ما هي:** داخل كتل If() إعادة إسناد متغير JS لا تراها TSL؛ استخدم .assign() أو دوال ضبط الخصائص أو select(). — Inside If() blocks, reassigning a JS variable is invisible to TSL; use .assign(), property setters or select().
 
 **متى:** حين لا يتغير متغير داخل كتلة If في TSL رغم إعادة إسناده / when a variable reassigned inside a TSL If() block has no effect
 
@@ -14822,7 +14822,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Noise-heavy shaders: cap DPR 2 for objects, ~1.25 full-bleed; pause offscreen; constant loop bounds in GLSL ES 1.0.
+**ما هي:** الشيدرات الكثيفة بالضجيج: حدّد DPR بـ 2 للكائنات و~1.25 لملء الشاشة؛ أوقف ما هو خارج الشاشة؛ وحدود حلقات ثابتة في GLSL ES 1.0. — Noise-heavy shaders: cap DPR 2 for objects, ~1.25 full-bleed; pause offscreen; constant loop bounds in GLSL ES 1.0.
 
 **متى:** حين يكون الشيدر ثقيلًا بالضوضاء ويبطئ العرض وتريد ضبط الدقة وإيقاف ما خارج الشاشة / when a noise-heavy shader is too slow and needs DPR caps and offscreen pausing
 
@@ -14894,7 +14894,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Black Cycles output usually means missing camera, lights or broken material links; assert before render.
+**ما هي:** مخرج Black Cycles عادةً يعني غياب الكاميرا أو الإضاءة أو كسر روابط الخامات؛ تحقق قبل الرندر. — Black Cycles output usually means missing camera, lights or broken material links; assert before render.
 
 **متى:** حين يخرج رندر بلندر أسود بالكامل وتريد فحص الكاميرا والإضاءة والمواد / when a Blender Cycles render comes out black and you need to check camera, lights and materials
 
@@ -14964,7 +14964,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Text contrast minimums double as safe floors for video text.
+**ما هي:** حدود التباين الدنيا للنص تصلح أيضًا حدودًا آمنة لنص الفيديو. — Text contrast minimums double as safe floors for video text.
 
 **متى:** حين تختار لون النص والخلفية في الفيديو وتريد حدًا أدنى آمنًا للتباين / when choosing text and background colours for video and needing safe contrast minimums
 
@@ -15037,7 +15037,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Keep text legible at rest; avoid rapid repeated flashing.
+**ما هي:** أبقِ النص مقروءًا في السكون؛ وتجنب الومض المتكرر السريع. — Keep text legible at rest; avoid rapid repeated flashing.
 
 **متى:** حين تحرك نصوصًا وتريد أن تبقى مقروءة عند التوقف وبلا وميض متكرر سريع / when animating text that must stay legible at rest without rapid repeated flashing
 
@@ -15109,7 +15109,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Wrap strings in RLI…PDF or reverse order to flush out direction bugs before final render.
+**ما هي:** لفّ النصوص بـ RLI…PDF أو اعكس الترتيب لكشف أخطاء الاتجاه قبل الرندر النهائي. — Wrap strings in RLI…PDF or reverse order to flush out direction bugs before final render.
 
 **متى:** قبل الرندر النهائي حين تريد كشف أخطاء اتجاه النص من اليمين لليسار وتمدد النص / before final render, to flush out text direction bugs and box overflow with pseudo strings
 
@@ -15180,7 +15180,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** If a glyph is not in the chosen font, use a fallback notation rather than an approximate lookalike.
+**ما هي:** إذا لم يكن الرمز في الخط المختار فاستخدم تدوينًا بديلًا بدل شبيه تقريبي. — If a glyph is not in the chosen font, use a fallback notation rather than an approximate lookalike.
 
 **متى:** حين تحتاج رمزًا خاصًا أو حرفًا قد لا يكون موجودًا في الخط المختار / when a needed symbol or glyph may be missing from the chosen font
 
@@ -15250,7 +15250,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Masks and clipping can cut Arabic dots and harakat that sit above/below the line box.
+**ما هي:** القنعان والقص قد يقطعان نقاط الحروف العربية وحركاتها الواقعة فوق خط الصندوق أو تحته. — Masks and clipping can cut Arabic dots and harakat that sit above/below the line box.
 
 **متى:** حين تظهر نصًا عربيًا بقناع أو قص وتخشى أن تُقطع النقاط أو التشكيل / when revealing Arabic text with a mask or clip that may cut dots or harakat
 
@@ -15321,7 +15321,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Boundaries in a film are found frame-exactly and typed as cut, dissolve or fade-to-black; exposure ramps inside a shot are not mistaken for cuts; shots cover the whole film.
+**ما هي:** تُوجد الحدود في الفيلم بدقة الإطار وتُصنَّف قطعًا أو ذوبانًا أو تلاشيًا إلى الأسود؛ ولا تُلتبس تدرجات التعريض داخل اللقطة بالقطعات؛ وتغطي اللقطات الفيلم كله. — Boundaries in a film are found frame-exactly and typed as cut, dissolve or fade-to-black; exposure ramps inside a shot are not mistaken for cuts; shots cover the whole film.
 
 **متى:** حين تريد معرفة نوع كل انتقال في فيلم: قطع أو ذوبان أو تلاشٍ للأسود / when finding each boundary in a film frame-exactly and typing it as cut, dissolve or fade to black
 
@@ -15393,7 +15393,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Verify a grade by measuring luma percentiles and vectorscope cluster radius on the final SDR output, excluding letterbox/subtitles, and compare +1/+2 stop variants on a real display.
+**ما هي:** تحقق من التدريج بقياس مئينات اللوما ونصف قطر عنقود vectorscope على المخرج النهائي SDR، مع استبعاد الشريطين الأسودين/الترجمات، وقارن نسخ +1/+2 stop على شاشة حقيقية. — Verify a grade by measuring luma percentiles and vectorscope cluster radius on the final SDR output, excluding letterbox/subtitles, and compare +1/+2 stop variants on a real display.
 
 **متى:** حين تريد التحقق من لوك التلوين النهائي بقياس السطوع والتشبع بدل الاعتماد على العين / when verifying a final grade's look by measuring luma percentiles and chroma clusters
 
@@ -15465,7 +15465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Check distinct contact and passing poses, consistent bob, limbs separated from torso, constant volumes, held impact frames, short anticipation on player attacks.
+**ما هي:** تحقق من وضعيات التلامس والعبور المتمايزة، وتمايل متسق، وفصل الأطراف عن الجذع، وأحجام ثابتة، وإطارات الاصطدام المثبتة، وترقب قصير في هجمات اللاعب. — Check distinct contact and passing poses, consistent bob, limbs separated from torso, constant volumes, held impact frames, short anticipation on player attacks.
 
 **متى:** حين تراجع حركة شخصية متحركة: وضعيات التلامس والمرور والحجم وتمهيد الهجوم / when reviewing character animation for contact/passing poses, bob, volumes and attack anticipation
 
@@ -15534,7 +15534,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Verify true transparency (a baked checkerboard is not alpha) and look for edge halos on both light and dark backgrounds.
+**ما هي:** تحقق من الشفافية الحقيقية (رقعة الشطرنج المخبوزة ليست ألفا) وابحث عن هالات الحواف على الخلفيات الفاتحة والداكنة. — Verify true transparency (a baked checkerboard is not alpha) and look for edge halos on both light and dark backgrounds.
 
 **متى:** حين تصدر صورة أو إطارات بخلفية شفافة وتريد التأكد أن الشفافية حقيقية وبلا هالات / when exporting transparent images or frames and checking for real alpha and edge halos
 
@@ -15605,7 +15605,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Do not let an animated stat claim a change that sampling noise can explain; attach an interval or say 'not yet distinguishable'.
+**ما هي:** لا تدع إحصاءً متحركًا يدّعي تغيرًا يمكن تفسيره بضجيج العينات؛ أرفق مجالًا أو قل 'لا يمكن تمييزه بعد'. — Do not let an animated stat claim a change that sampling noise can explain; attach an interval or say 'not yet distinguishable'.
 
 **متى:** حين يعرض الفيديو رقمًا أو نسبة تغيّر وتريد التأكد أنها ليست مجرد تذبذب عشوائي / when an animated stat shows a change that sampling noise might explain
 
@@ -15677,7 +15677,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | BSD-3-Clause |
 
-**ما هي:** Scripts measure everything with ground truth (fonts, palette, overlaps, text present, resolution); a fresh-context vision review scores only aesthetics.
+**ما هي:** تقيس السكربتات كل شيء بحقيقة مرجعية (الخطوط، اللوحة، التداخلات، وجود النص، الدقة)؛ ومراجعة بصرية بسياق جديد تقيّم الجماليات فقط. — Scripts measure everything with ground truth (fonts, palette, overlaps, text present, resolution); a fresh-context vision review scores only aesthetics.
 
 **متى:** عند مراجعة إطار أو رسم بياني قبل اعتماده: فحص آلي للخطوط والألوان ثم تقييم بصري / when reviewing a frame or figure before shipping: scripted checks first, then a vision score
 
@@ -15750,7 +15750,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Screenshot tests compare intentional states, with fonts, viewport, timezone, locale and motion frozen.
+**ما هي:** اختبارات لقطات الشاشة تقارن حالات مقصودة، مع تجميد الخطوط ونافذة العرض والمنطقة الزمنية واللغة والحركة. — Screenshot tests compare intentional states, with fonts, viewport, timezone, locale and motion frozen.
 
 **متى:** حين تبني اختبارات لقطات شاشة لمشاهد الرسوم البيانية وتريد نتائج ثابتة لا تتغير عشوائيًا / for screenshot tests of chart scenes that must compare frozen, intentional states
 
@@ -15820,7 +15820,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Map motion must be judged on a rendered MP4, not a live preview.
+**ما هي:** يجب الحكم على حركة الخرائط من MP4 مصيَّر لا من معاينة حية. — Map motion must be judged on a rendered MP4, not a live preview.
 
 **متى:** عند التحقق من حركة خريطة أو كاميرا فوق التضاريس على ملف MP4 مُصيَّر لا على معاينة حية / when checking map camera motion on a rendered MP4 rather than a live preview
 
@@ -15891,7 +15891,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Some public data APIs return HTTP 200 with empty or silently wrong aggregates; never trust a plausible number from a guessed query.
+**ما هي:** بعض واجهات البيانات العامة تعيد HTTP 200 مع تجميعات فارغة أو خاطئة بصمت؛ لا تثق أبدًا برقم معقول من استعلام مخمَّن. — Some public data APIs return HTTP 200 with empty or silently wrong aggregates; never trust a plausible number from a guessed query.
 
 **متى:** حين تسحب أرقامًا من واجهة بيانات عامة لمشهد أو رسم بياني وتخشى نتائج فارغة أو خاطئة / when pulling numbers from a public data API that may return empty or wrong totals
 
@@ -15961,7 +15961,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Charts must survive color-vision deficiency and grayscale: color is never the only cue.
+**ما هي:** يجب أن تصمد المخططات أمام عمى الألوان والتدرج الرمادي: اللون ليس الإشارة الوحيدة أبدًا. — Charts must survive color-vision deficiency and grayscale: color is never the only cue.
 
 **متى:** عند التأكد أن الرسم البياني مقروء لمن لديه ضعف في تمييز الألوان وعند تحويله للرمادي / when a chart must stay readable for color-blind viewers and in grayscale
 
@@ -16032,7 +16032,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Record prompt, model, provider, license, indemnity, C2PA status and date for every generated asset because C2PA manifests are often stripped; add visible disclosure for EU audiences.
+**ما هي:** سجّل المطالبة والنموذج والمزوّد والترخيص والتعويض وحالة C2PA والتاريخ لكل مادة مولَّدة لأن بيانات C2PA كثيرًا ما تُنزع؛ وأضف إفصاحًا مرئيًا للجمهور الأوروبي. — Record prompt, model, provider, license, indemnity, C2PA status and date for every generated asset because C2PA manifests are often stripped; add visible disclosure for EU audiences.
 
 **متى:** حين تستخدم أصولًا مولّدة وتحتاج توثيق البرومبت والنموذج والترخيص والإفصاح للجمهور الأوروبي / when generated assets need their prompt, model, license and AI disclosure recorded
 
@@ -16103,7 +16103,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The truss solver is checked against hand calculations (2D triangle, 3D tripod), equilibrium, mechanisms, NaN/geometry rejection, swap that cannot hide the next bottleneck, and a self-contained dashboard.
+**ما هي:** يُتحقق من حلّال الجمالونات بحسابات يدوية (مثلث ثنائي الأبعاد، حامل ثلاثي ثلاثي الأبعاد)، والتوازن، والآليات، ورفض NaN/الهندسة، وتبديل لا يخفي عنق الزجاجة التالي، ولوحة مستقلة. — The truss solver is checked against hand calculations (2D triangle, 3D tripod), equilibrium, mechanisms, NaN/geometry rejection, swap that cannot hide the next bottleneck, and a self-contained dashboard.
 
 **متى:** عند تحليل جمالون إنشائي ومعرفة القوى وأنماط الانهيار مع مطابقتها للحساب اليدوي / when analysing a truss for member forces and failure modes checked against hand calculations
 
@@ -16174,7 +16174,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Documented method for a style-only patch: measure font sizes, line length, chrome height and visible tabs before/after, and prove no capability changed by counting tables/rows/fields/buttons on every tab plus overflow checks at 390px.
+**ما هي:** منهج موثّق لتصحيح يخص الأسلوب فقط: قس أحجام الخطوط وطول السطر وارتفاع الإطار والتبويبات المرئية قبل/بعد، وأثبت عدم تغيّر أي قدرة بعد الجداول/الصفوف/الحقول/الأزرار في كل تبويب مع فحوص الفيض عند 390px. — Documented method for a style-only patch: measure font sizes, line length, chrome height and visible tabs before/after, and prove no capability changed by counting tables/rows/fields/buttons on every tab plus overflow checks at 390px.
 
 **متى:** عند تعديل شكل واجهة فقط وتريد قياس الكثافة قبل وبعد وإثبات عدم فقدان أي جدول أو زر / for a style-only UI patch that must prove density changed but no feature was lost
 
@@ -16245,7 +16245,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every generated or processed asset is logged with source model, approval, resolution, size, use and honesty notes (e.g. 'local upscale, not native 4K'), private inputs never committed, paid retries guarded.
+**ما هي:** تُسجَّل كل مادة مولَّدة أو معالَجة بالنموذج المصدر والموافقة والدقة والحجم والاستخدام وملاحظات الصدق (مثل 'ترقية محلية، ليست 4K أصلية')؛ ولا تُودَع المدخلات الخاصة، وتُحرس إعادة المحاولات المدفوعة. — Every generated or processed asset is logged with source model, approval, resolution, size, use and honesty notes (e.g. 'local upscale, not native 4K'), private inputs never committed, paid retries guarded.
 
 **متى:** حين تولّد أو تعالج أصولًا للمشروع وتريد سجلًا لمصدرها ودقتها واستخدامها مع منع إعادة المحاولات المدفوعة / when logging each generated or processed asset with its source, resolution, use and honesty notes
 
@@ -16316,7 +16316,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measured the intro soundtrack: quiet, low-range bed well below a -14 LUFS social target; sample rate 32 kHz rather than 48 kHz.
+**ما هي:** قيس جهارة صوت المقدمة: فرش هادئ منخفض المدى دون هدف -14 LUFS للمنصات الاجتماعية بوضوح؛ ومعدل العينات 32 kHz لا 48 kHz. — Measured the intro soundtrack: quiet, low-range bed well below a -14 LUFS social target; sample rate 32 kHz rather than 48 kHz.
 
 **متى:** عند قياس علو صوت موسيقى المقدمة ومقارنته بهدف -14 LUFS للمنصات الاجتماعية / when measuring an intro soundtrack's loudness against a -14 LUFS social target
 
@@ -16388,7 +16388,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Acceptance for the 3D background: at least 20 fps on a laptop, canvas size equals viewport, one still frame under reduced motion.
+**ما هي:** قبول الخلفية الثلاثية الأبعاد: 20 إطارًا/ث على الأقل على لابتوب، وحجم اللوحة يساوي نافذة العرض، وإطار ثابت واحد عند تقليل الحركة. — Acceptance for the 3D background: at least 20 fps on a laptop, canvas size equals viewport, one still frame under reduced motion.
 
 **متى:** حين تضيف خلفية ثلاثية الأبعاد زخرفية وتريد شرط قبول للأداء وحجم اللوحة وتقليل الحركة / for accepting a decorative 3D background: frame rate on a laptop, canvas size, reduced motion
 
@@ -16459,7 +16459,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Forbids claiming premium models, 4K, sync, lip-sync, Higgsfield connectivity, inspected media or paid services without evidence; QA metrics and manual checks are reported separately.
+**ما هي:** يمنع الادعاء بنماذج متميزة أو 4K أو مزامنة أو مزامنة الشفاه أو اتصال Higgsfield أو وسائط مفحوصة أو خدمات مدفوعة دون دليل؛ وتُبلَّغ مقاييس الجودة والفحوص اليدوية منفصلة. — Forbids claiming premium models, 4K, sync, lip-sync, Higgsfield connectivity, inspected media or paid services without evidence; QA metrics and manual checks are reported separately.
 
 **متى:** عند تسليم عمل دون ادعاء جودة 4K أو مزامنة أو مشاهدة للملفات أو خدمات مدفوعة لم تتحقق منها / when delivering work without claiming 4K, sync, inspected media or paid services you never verified
 
@@ -16531,7 +16531,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Ten-point pre-delivery list: signed script, device safe margins, real animation tied to words, captions validated, colours/Arabic diacritics, preview viewed, first/middle/last frames, codec/size/fps/duration/audio/loudness, licensing, deliverables.
+**ما هي:** قائمة من عشر نقاط قبل التسليم: نص موقَّع، وهوامش أمان الأجهزة، وحركة حقيقية مرتبطة بالكلمات، وترجمات مدققة، والألوان/تشكيل العربية، ومعاينة مشاهَدة، والإطار الأول/الأوسط/الأخير، والترميز/الحجم/معدل الإطارات/المدة/الصوت/الجهارة، والتراخيص، والمخرجات. — Ten-point pre-delivery list: signed script, device safe margins, real animation tied to words, captions validated, colours/Arabic diacritics, preview viewed, first/middle/last frames, codec/size/fps/duration/audio/loudness, licensing, deliverables.
 
 **متى:** بعد الرندر وقبل تسليم الفيديو، لمراجعة الهوامش والترجمة والصوت والترخيص بندًا بندًا / after a render and before delivery, to walk ten checks from safe margins to licensing
 
@@ -16602,7 +16602,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** CI runs all five viral stages with a fixture, compiles, and asserts 30 s, 5 scenes, 9:16, exactly 2 background lines and final_render still false before a smoke render + qa.py.
+**ما هي:** يشغّل CI مراحل viral الخمس كلها بمثبّت اختبار، ويصرّف، ويتحقق من 30 ث و5 مشاهد و9:16 وسطرين بالضبط للخلفية وبقاء final_render false قبل رندر تجريبي + qa.py. — CI runs all five viral stages with a fixture, compiles, and asserts 30 s, 5 scenes, 9:16, exactly 2 background lines and final_render still false before a smoke render + qa.py.
 
 **متى:** حين تريد أن يتحقق CI آليًا من المراحل الخمس والمدة وعدد المشاهد ونسبة 9:16 قبل رندر تجريبي / when CI must assert duration, scene count and 9:16 before a smoke render
 
@@ -16677,7 +16677,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** After render, inspect opening, middle and closing frames and listen for sync, transitions, Arabic correctness and artefacts; do not overstate metrics.
+**ما هي:** بعد الرندر افحص الإطار الافتتاحي والأوسط والختامي واستمع لتزامن الصوت والانتقالات وصحة العربية والعيوب؛ ولا تبالغ في عرض المقاييس. — After render, inspect opening, middle and closing frames and listen for sync, transitions, Arabic correctness and artefacts; do not overstate metrics.
 
 **متى:** بعد الرندر مباشرة لفحص بداية الفيديو ووسطه ونهايته والاستماع للتزامن وصحة العربي / right after a render, to view opening, middle and closing stills and listen for sync
 
@@ -16748,7 +16748,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pins Chromium, fonts and FFmpeg for bit-stable output.
+**ما هي:** يثبّت Chromium والخطوط وFFmpeg لمخرج ثابت على مستوى البت. — Pins Chromium, fonts and FFmpeg for bit-stable output.
 
 **متى:** حين يخرج الرندر مختلفًا بين جهاز وآخر وتريد نتيجة ثابتة بتثبيت Chromium والخطوط وFFmpeg / when renders differ between machines and output must be bit-stable
 
@@ -16821,7 +16821,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Compare against something inside the same file (clean original, pauses/noise floor, speech tilt, file vs itself over time), never a different voice; ffmpeg recipes for integrated loudness (ebur128), proportional band energy, noise floor, level over time, pitch.
+**ما هي:** قارن بشيء من داخل الملف نفسه (الأصل النظيف، الوقفات/أرضية الضجيج، ميل الكلام، الملف مقابل نفسه عبر الزمن)، لا بصوت مختلف أبدًا؛ وصفات ffmpeg للجهارة المتكاملة (ebur128)، وطاقة النطاقات النسبية، وأرضية الضجيج، والمستوى عبر الزمن، والنبرة. — Compare against something inside the same file (clean original, pauses/noise floor, speech tilt, file vs itself over time), never a different voice; ffmpeg recipes for integrated loudness (ebur128), proportional band energy, noise floor, level over time, pitch.
 
 **متى:** حين تحتاج تقييم صوت أو تعليق صوتي دون سماعه، بقياس العلو والضجيج والطبقة من الملف نفسه / when judging a voice track you cannot listen to, by measuring loudness, noise floor and pitch
 
@@ -16891,7 +16891,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A film written as a pure function is unit-tested like code: every frame string is valid, contains no NaN/undefined/Infinity, has the right size, is identical on re-render, changes over time, and story beats (jump height, landing, travel, clamping) hold.
+**ما هي:** فيلم مكتوب كدالة خالصة يُختبر وحدويًا كالكود: كل سلسلة إطار صالحة، بلا NaN/undefined/Infinity، بالحجم الصحيح، مطابقة عند إعادة التصيير، تتغير عبر الزمن، وتصمد نبضات القصة (ارتفاع القفز، الهبوط، المسافة، التقييد). — A film written as a pure function is unit-tested like code: every frame string is valid, contains no NaN/undefined/Infinity, has the right size, is identical on re-render, changes over time, and story beats (jump height, landing, travel, clamping) hold.
 
 **متى:** حين يكون الفيلم مكتوبًا كدالة وتريد اختبار كل إطار فيه مثل الكود / when a film written as a pure function needs code-style tests for valid, stable, changing frames
 
@@ -16963,7 +16963,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Known lint failures: dir=rtl on <html> renders blank; audio without id silent; unknown font family fails; GSAP fromTo renders from-state immediately; marker-end arrowheads show early.
+**ما هي:** إخفاقات lint معروفة: dir=rtl على <html> يصيّر فارغًا؛ الصوت بلا id صامت؛ عائلة خط مجهولة تفشل؛ GSAP fromTo يصيّر حالة البداية فورًا؛ رؤوس أسهم marker-end تظهر مبكرًا. — Known lint failures: dir=rtl on <html> renders blank; audio without id silent; unknown font family fails; GSAP fromTo renders from-state immediately; marker-end arrowheads show early.
 
 **متى:** عند ظهور شاشة فارغة أو صوت صامت أو خط لا يعمل في مشروع HyperFrames، خاصة مع اتجاه RTL / when a HyperFrames composition renders blank, silent or with a failing font, especially with RTL
 
@@ -17035,7 +17035,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Text being read ≤3 px/f; >12–20 px/f needs blur; nothing >80 px/f.
+**ما هي:** النص المقروء ≤3 px/إطار؛ >12–20 px/إطار يحتاج blur؛ لا شيء >80 px/إطار. — Text being read ≤3 px/f; >12–20 px/f needs blur; nothing >80 px/f.
 
 **متى:** حين تضبط سرعة حركة نص أو عنصر على الشاشة وتريد أن يبقى مقروءًا أو تعرف متى يحتاج ضبابية / when setting how fast text or elements move so they stay readable or know when blur is needed
 
@@ -17106,7 +17106,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Luma frame difference at 320 px as pacing metric.
+**ما هي:** فرق اللوما بين الإطارات عند 320 px مقياسًا للإيقاع. — Luma frame difference at 320 px as pacing metric.
 
 **متى:** لقياس إيقاع الفيديو وهدوئه بفرق الإضاءة بين الإطارات ومقارنته بفيديو مرجعي / for measuring a video's pacing via frame-to-frame luma difference against a reference
 
@@ -17177,7 +17177,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Report measured vs not; credit footage; never fabricate/replace a real face; never claim un-run renders.
+**ما هي:** أبلغ بما قيس وما لم يُقَس؛ وانسب اللقطات لأصحابها؛ ولا تختلق وجهًا حقيقيًا أو تستبدله؛ ولا تدّعِ رندرات لم تُشغَّل. — Report measured vs not; credit footage; never fabricate/replace a real face; never claim un-run renders.
 
 **متى:** عند كتابة تقرير التسليم: افصل ما قِيس عمّا لم يُقَس وانسب اللقطات لأصحابها ولا تختلق وجهًا / when reporting a job: separate measured from unmeasured, credit footage, never fake a face
 
@@ -17248,7 +17248,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A finished render is checked and reported: input vs output duration, codec, resolution, fps, frame count, audio codec/sample rate, correlation between delivered and source voice, sampled brightness levels and frame differences, plus honest notes about timing method and review depth.
+**ما هي:** يُفحص الرندر المنتهي ويُبلَّغ عنه: مدة المدخل مقابل المخرج، والترميز، والدقة، ومعدل الإطارات، وعدد الإطارات، وترميز الصوت ومعدل العينات، والارتباط بين الصوت المسلَّم والصوت المصدر، ومستويات السطوع المأخوذة وفروق الإطارات، مع ملاحظات صادقة عن طريقة التوقيت وعمق المراجعة. — A finished render is checked and reported: input vs output duration, codec, resolution, fps, frame count, audio codec/sample rate, correlation between delivered and source voice, sampled brightness levels and frame differences, plus honest notes about timing method and review depth.
 
 **متى:** حين تسلّم فيديو مبنيًا على تعليق صوتي وتريد تقريرًا يثبت تطابق المدة وأن الصوت لم يُمس / when delivering a voice-driven video with a report proving duration match and untouched audio
 
@@ -17319,7 +17319,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Score Hook, Readability, Motion, Variety, Composition, Truth, Sound sync, Brand 1-10; fix worst 3; >=3 rounds; end with What I'd still change.
+**ما هي:** قيّم الخطاف، والمقروئية، والحركة، والتنوع، والتكوين، والصدق، وتزامن الصوت، والعلامة من 1 إلى 10؛ وأصلح الأسوأ ثلاثة؛ ثلاث جولات على الأقل؛ وانتهِ بـ What I'd still change. — Score Hook, Readability, Motion, Variety, Composition, Truth, Sound sync, Brand 1-10; fix worst 3; >=3 rounds; end with What I'd still change.
 
 **متى:** حين تريد نقد الفيديو بنفسك بتقييم ثمانية معايير وإصلاح أسوأ ثلاثة على عدة جولات / when self-critiquing a video by scoring eight criteria and fixing the worst three over rounds
 
@@ -17391,7 +17391,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Elements >40 px, natural arcs, follow-through, <20 animated elements, transform+opacity, reduced-motion variant.
+**ما هي:** عناصر >40 px، وأقواس طبيعية، ومتابعة الحركة، وأقل من 20 عنصرًا متحركًا، وtransform+opacity، ونسخة بتقليل الحركة. — Elements >40 px, natural arcs, follow-through, <20 animated elements, transform+opacity, reduced-motion variant.
 
 **متى:** قبل اعتماد أنيميشن، للتأكد من حجم العناصر وعددها والأقواس الطبيعية ونسخة الحركة المخففة / before approving an animation: element size, count, natural arcs and a reduced-motion variant
 
@@ -17463,7 +17463,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Design/Motion/Engineering review and receipt of rendered/tested/untested.
+**ما هي:** مراجعة بثلاث عدسات: التصميم/الحركة/الهندسة، وإيصال بما صُيِّر وما اختُبر وما لم يُختبر. — Design/Motion/Engineering review and receipt of rendered/tested/untested.
 
 **متى:** عند ختام عمل حركي لمراجعته من زوايا التصميم والحركة والهندسة وبيان ما رُند وما اختُبر / at the end of a motion job, to review design, motion and engineering and list what was tested
 
@@ -17532,7 +17532,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Exports still frames at chosen times so the composition can be judged before rendering.
+**ما هي:** يصدّر إطارات ثابتة في أوقات محددة ليُحكم على التركيب قبل الرندر. — Exports still frames at chosen times so the composition can be judged before rendering.
 
 **متى:** قبل الرندر الكامل لتصدير لقطات ثابتة عند ثوانٍ محددة والحكم على التكوين مبكرًا / before a full render, to export stills at chosen seconds and judge the composition early
 
@@ -17604,7 +17604,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Checks a composition for non-deterministic code and taste issues before rendering.
+**ما هي:** يفحص التركيب بحثًا عن شيفرة غير حتمية ومشكلات ذوق قبل الرندر. — Checks a composition for non-deterministic code and taste issues before rendering.
 
 **متى:** قبل الرندر للتأكد أن المشروع خالٍ من كود غير حتمي ومن أخطاء ذوق شائعة / before rendering, to catch non-deterministic code and taste problems in a composition
 
@@ -17676,7 +17676,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The standalone HTML player is executed in a Node vm with a fake document and rAF to test init, reduced motion, seek, deterministic frame, play/pause, restart, auto-stop and bounds without a browser.
+**ما هي:** يُنفَّذ مشغل HTML المستقل في Node vm بمستند و rAF مزيفين لاختبار البدء والحركة المخفضة والبحث والإطار الحتمي والتشغيل/الإيقاف وإعادة البدء والإيقاف التلقائي والحدود دون متصفح. — The standalone HTML player is executed in a Node vm with a fake document and rAF to test init, reduced motion, seek, deterministic frame, play/pause, restart, auto-stop and bounds without a browser.
 
 **متى:** عند اختبار مشغل HTML المستقل دون متصفح للتشغيل والإيقاف والتقديم / when testing a standalone HTML player's play, pause, seek and restart without a browser
 
@@ -17748,7 +17748,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Checks a finished film for black frames, freezes, loudness, peaks and exposure before delivery.
+**ما هي:** يفحص فيلمًا منتهيًا بحثًا عن إطارات سوداء وتجمّدات والجهارة والذروات والتعريض قبل التسليم. — Checks a finished film for black frames, freezes, loudness, peaks and exposure before delivery.
 
 **متى:** قبل تسليم فيلم نهائي لاكتشاف الإطارات السوداء والتجميد ومشاكل علو الصوت والذروة والتعريض / before delivering a finished film, to catch black frames, freezes, loudness, peaks and exposure
 
@@ -17820,7 +17820,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds a contact sheet of frames and a phone-size view for critique.
+**ما هي:** يبني ورقة لقطات من الإطارات وعرضًا بحجم الهاتف للنقد. — Builds a contact sheet of frames and a phone-size view for critique.
 
 **متى:** حين تريد ورقة لقطات من الفيديو وعرضًا بحجم الهاتف لنقده بسرعة / when you need a contact sheet of frames plus a phone-size view to critique a video
 
@@ -17892,7 +17892,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Prints media file information (ffprobe).
+**ما هي:** يطبع معلومات ملف الوسائط (ffprobe). — Prints media file information (ffprobe).
 
 **متى:** حين تريد عرض معلومات ملف فيديو أو صوت بسرعة عبر ffprobe / when you need to print a media file's information with ffprobe
 
@@ -17965,7 +17965,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reports what this PC can run (FFmpeg, browser, Whisper, fonts, face detector).
+**ما هي:** يبلّغ بما يستطيع هذا الحاسوب تشغيله (FFmpeg، المتصفح، Whisper، الخطوط، كاشف الوجوه). — Reports what this PC can run (FFmpeg, browser, Whisper, fonts, face detector).
 
 **متى:** حين تريد معرفة ما يقدر جهازك تشغيله: FFmpeg والمتصفح وWhisper والخطوط وكاشف الوجوه / when checking what this PC can run: FFmpeg, browser, Whisper, fonts and face detector
 
@@ -18036,7 +18036,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** Validates a review reel before the player opens it: required fields, gapless scenes, unique ids without dots, boxes inside the frame, brand colour references, prop types, list rows and choices, Arabic copy without lang, and the video's size/fps/duration via ffprobe.
+**ما هي:** يتحقق من مراجعة reel قبل أن يفتحها المشغّل: الحقول المطلوبة، ومشاهد بلا فجوات، ومعرّفات فريدة بلا نقاط، ومستطيلات داخل الإطار، ومراجع ألوان العلامة، وأنواع الخصائص، وصفوف القوائم والخيارات، ونصًا عربيًا بلا lang، وحجم الفيديو/معدل الإطارات/المدة عبر ffprobe. — Validates a review reel before the player opens it: required fields, gapless scenes, unique ids without dots, boxes inside the frame, brand colour references, prop types, list rows and choices, Arabic copy without lang, and the video's size/fps/duration via ffprobe.
 
 **متى:** قبل فتح بكرة المراجعة في المشغل، للتحقق من حقول reel.json وتتابع المشاهد وأبعاد الفيديو / before opening a review reel, to validate reel.json fields, gapless scenes and video specs
 
@@ -18110,7 +18110,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Four gates before any video ships.
+**ما هي:** أربع بوابات قبل نشر أي فيديو. — Four gates before any video ships.
 
 **متى:** قبل نشر أي فيديو مونتاج: فحص الإطارات السوداء وعلو الصوت وتباين الترجمة وصيغة الترميز / before shipping any montage: black frames, loudness, caption contrast and H.264 format
 
@@ -18182,7 +18182,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** What to check in every generated frame.
+**ما هي:** ما يجب فحصه في كل إطار مولَّد. — What to check in every generated frame.
 
 **متى:** عند مراجعة إطارات مولّدة لاكتشاف الأطراف المكررة والنص المشوه والإضاءة المتناقضة والأيدي / when reviewing generated frames for duplicated limbs, garbled text, bad hands and inconsistent light
 
@@ -18252,7 +18252,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Element index script with stable FNV-1a ids, role/name locators, postcondition waits and full-page screenshots — for rendering and checking HTML animations or UI demos.
+**ما هي:** سكربت فهرس عناصر بمعرّفات FNV-1a ثابتة، ومحددات بالدور/الاسم، وانتظار الشروط اللاحقة، ولقطات شاشة للصفحة كاملة — لتصيير وفحص رسوم HTML المتحركة أو عروض الواجهة. — Element index script with stable FNV-1a ids, role/name locators, postcondition waits and full-page screenshots — for rendering and checking HTML animations or UI demos.
 
 **متى:** حين تريد أتمتة متصفح لتصيير رسوم HTML المتحركة أو عرض واجهة والتقاط لقطات شاشة للفحص / when automating a browser to render HTML animations or UI demos and capture screenshots
 
@@ -18325,7 +18325,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Labels how much was actually verified: T0 playbook only (unverified), T1 local scripts, T2 MCP tools, T3 live backend; capability != exposure != execution != goal; receipts at the end.
+**ما هي:** يصنّف مقدار ما تم التحقق منه فعلًا: T0 دليل فقط (غير متحقق)، T1 سكربتات محلية، T2 أدوات MCP، T3 خلفية حية؛ القدرة != التعريض != التنفيذ != الهدف؛ وإيصالات في النهاية. — Labels how much was actually verified: T0 playbook only (unverified), T1 local scripts, T2 MCP tools, T3 live backend; capability != exposure != execution != goal; receipts at the end.
 
 **متى:** عند الإبلاغ عن نتيجة مهمة وتوضيح مستوى التحقق الفعلي، من دليل مكتوب فقط إلى تشغيل حي / when reporting a task and stating how far it was verified, from playbook only to live backend
 
@@ -18396,7 +18396,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reject found clips that carry burned-in English text, logos, screen recordings or a drawing style that breaks realism; record URL, creator and rights for every clip; never claim publication rights from a download.
+**ما هي:** ارفض اللقطات الجاهزة التي تحمل نصًا إنجليزيًا محروقًا أو شعارات أو تسجيلات شاشة أو أسلوب رسم يكسر الواقعية؛ وسجّل الرابط والمنشئ والحقوق لكل مقطع؛ ولا تدّعِ حقوق نشر من مجرد تنزيل. — Reject found clips that carry burned-in English text, logos, screen recordings or a drawing style that breaks realism; record URL, creator and rights for every clip; never claim publication rights from a download.
 
 **متى:** عند اختيار لقطات جاهزة: ارفض ما عليه نص محروق أو شعارات أو تسجيل شاشة وسجّل الرابط والحقوق / when picking found clips: reject burned-in text, logos or screen recordings and log rights
 
@@ -18466,7 +18466,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each text overlay is checked against its on-screen time for its length; too-short items are flagged and the hook is checked.
+**ما هي:** يُفحص كل تراكب نص مقابل زمن ظهوره بالنسبة لطوله؛ وتُعلَّم العناصر القصيرة جدًا ويُفحص الخطاف. — Each text overlay is checked against its on-screen time for its length; too-short items are flagged and the hook is checked.
 
 **متى:** حين تريد التأكد أن كل نص على الشاشة يبقى وقتًا كافيًا لقراءته / when checking each on-screen text overlay stays long enough to read and the hook works
 
@@ -18535,7 +18535,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Score hook, readability, motion quality, variety, composition, truth, sound sync and brand 1-10 on rendered frames; fix the three worst with timestamps; end with 'What I'd still change'.
+**ما هي:** قيّم الخطاف والمقروئية وجودة الحركة والتنوع والتكوين والصدق وتزامن الصوت والعلامة من 1 إلى 10 على إطارات مصيَّرة؛ وأصلح الأسوأ ثلاثة مع الأوقات؛ وانتهِ بـ 'What I'd still change'. — Score hook, readability, motion quality, variety, composition, truth, sound sync and brand 1-10 on rendered frames; fix the three worst with timestamps; end with 'What I'd still change'.
 
 **متى:** بعد عمل ورقة لقطات للفيديو، لتقييم ثمانية معايير وإصلاح أسوأ ثلاثة بتوقيتاتها على جولات / after a frame sheet, to score eight criteria and fix the worst three with timestamps
 
@@ -18608,7 +18608,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Fixes for VFR drift, non-monotonous DTS, washed iOS colour, invalid NAL, frozen start.
+**ما هي:** حلول لانجراف VFR، وDTS غير الرتيب، ولون iOS الباهت، وNAL غير الصالح، والبداية المجمّدة. — Fixes for VFR drift, non-monotonous DTS, washed iOS colour, invalid NAL, frozen start.
 
 **متى:** حين يظهر خلل في ffmpeg مثل انزياح الصوت أو DTS غير متتابع أو ألوان باهتة على iOS أو بداية متجمدة / when ffmpeg output shows VFR drift, DTS errors, washed iOS colour or a frozen start
 
@@ -18678,7 +18678,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Duration within 1 frame of EDL, measured loudness, peak <=-1 dBTP, CFR output, no -c copy off keyframe, contact sheet, black-frame check.
+**ما هي:** المدة ضمن إطار واحد من EDL، وجهارة مقيسة، وذروة <=-1 dBTP، ومخرج CFR، ولا -c copy خارج الإطار المفتاحي، وورقة لقطات، وفحص الإطارات السوداء. — Duration within 1 frame of EDL, measured loudness, peak <=-1 dBTP, CFR output, no -c copy off keyframe, contact sheet, black-frame check.
 
 **متى:** قبل تسليم مونتاج نهائي: مطابقة المدة لقائمة القطعات وقياس العلو والذروة وفحص الإطارات السوداء / before handing off an edit: duration vs EDL, loudness, peak, CFR and black frames
 
@@ -18750,7 +18750,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Without API scopes: set timecode to clip middle, export still, compute luminance/channel histograms with Pillow; WB channel diff <=20/255 on true neutral.
+**ما هي:** دون مقاييس API: اضبط الكود الزمني على منتصف المقطع، وصدّر إطارًا ثابتًا، واحسب مدرجات اللمعان/القنوات بـ Pillow؛ فرق قنوات WB <=20/255 على محايد حقيقي. — Without API scopes: set timecode to clip middle, export still, compute luminance/channel histograms with Pillow; WB channel diff <=20/255 on true neutral.
 
 **متى:** حين تحتاج قياس الإضاءة وتوازن الأبيض لمقطع دون Scopes، بتصدير لقطة وتحليل الهيستوغرام / when measuring luminance and white balance without API scopes, by exporting a still
 
@@ -18822,7 +18822,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Fixed marker colours: Blue CHAPTER (first at frame 0), Purple/Pink PRIVACY, Red CUT_DONE, Yellow CUT_REVIEW, Lemon EXPOSURE_CHECK, Sky WB_CHECK, Sand AUDIO_REVIEW, Cyan GFX; offsets +0..+6 avoid collisions; only Resolve's 16 colours.
+**ما هي:** ألوان علامات ثابتة: أزرق CHAPTER (الأول عند الإطار 0)، وبنفسجي/وردي PRIVACY، وأحمر CUT_DONE، وأصفر CUT_REVIEW، وليموني EXPOSURE_CHECK، وسماوي فاتح WB_CHECK، ورملي AUDIO_REVIEW، وسماوي GFX؛ وإزاحات +0..+6 لتجنب التصادم؛ ألوان Resolve الـ16 فقط. — Fixed marker colours: Blue CHAPTER (first at frame 0), Purple/Pink PRIVACY, Red CUT_DONE, Yellow CUT_REVIEW, Lemon EXPOSURE_CHECK, Sky WB_CHECK, Sand AUDIO_REVIEW, Cyan GFX; offsets +0..+6 avoid collisions; only Resolve's 16 colours.
 
 **متى:** حين تضع علامات ملونة على تايملاين Resolve وتريد لونًا ثابتًا لكل نوع مراجعة دون تصادم / when adding colour markers on a Resolve timeline with a fixed colour per review type
 
@@ -18893,7 +18893,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Dark, shaky, out-of-focus parts found from extracted frames by Laplacian variance and flagged CUT_REVIEW before deletion.
+**ما هي:** تُكتشف الأجزاء المظلمة والمهتزة وغير الواضحة من الإطارات المستخرجة بتباين Laplacian وتُعلَّم CUT_REVIEW قبل الحذف. — Dark, shaky, out-of-focus parts found from extracted frames by Laplacian variance and flagged CUT_REVIEW before deletion.
 
 **متى:** حين تريد إيجاد الأجزاء المظلمة أو المهتزة أو غير الواضحة في التصوير ووسمها للمراجعة قبل حذفها / when finding dark, shaky or out-of-focus segments in footage to flag before cutting
 
@@ -18963,7 +18963,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Resolution/fps match timeline, no offline media/black frames, peak <=-1 dBTP, scene diffs <=6 dB, no exposure/colour jumps, faces blurred, subs in safe area.
+**ما هي:** الدقة/معدل الإطارات تطابق المخطط الزمني، ولا وسائط غير متصلة/إطارات سوداء، وذروة <=-1 dBTP، وفروق المشاهد <=6 dB، ولا قفزات تعريض/لون، والوجوه مطموسة، والترجمات في المنطقة الآمنة. — Resolution/fps match timeline, no offline media/black frames, peak <=-1 dBTP, scene diffs <=6 dB, no exposure/colour jumps, faces blurred, subs in safe area.
 
 **متى:** قبل الرندر في Resolve للتأكد من الدقة ومعدل الإطارات وغياب الملفات المفقودة وتمويه الوجوه / before rendering in Resolve: resolution, fps, offline media, peaks, blurred faces and safe-area subs
 
@@ -19032,7 +19032,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Flags AI-default design: banned Latin fonts and over-used Arabic fonts, default greys/blues.
+**ما هي:** يعلّم التصميم الآلي الافتراضي: الخطوط اللاتينية المحظورة والخطوط العربية المفرطة الاستخدام، والرماديات/الزرقاوات الافتراضية. — Flags AI-default design: banned Latin fonts and over-used Arabic fonts, default greys/blues.
 
 **متى:** حين تريد تجنب الشكل الافتراضي للتصميم الآلي: خطوط مستهلكة وألوان رمادية وزرقاء افتراضية / when avoiding AI-default design: overused Latin and Arabic fonts and default greys or blues
 
@@ -19105,7 +19105,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Text >=40px at 1080p, contrast 4.5:1, read time less than on-screen time (3 s on screen read in 2).
+**ما هي:** نص >=40px عند 1080p، وتباين 4.5:1، وزمن القراءة أقل من زمن الظهور (3 ث على الشاشة تُقرأ في 2). — Text >=40px at 1080p, contrast 4.5:1, read time less than on-screen time (3 s on screen read in 2).
 
 **متى:** حين تتأكد أن نص الفيديو كبير وواضح التباين ويبقى على الشاشة وقتًا كافيًا لقراءته / when checking on-screen text size, contrast and hold time are enough to read it
 
@@ -19176,7 +19176,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** List of generic AI looks to remove: gradient text, left accent bar on cards, cyan on black, purple-blue gradient, pure black/white, identical card grids, all-centred single weight.
+**ما هي:** قائمة بالمظاهر الآلية العامة الواجب إزالتها: النص المتدرج، وشريط التمييز الأيسر على البطاقات، والسماوي على الأسود، والتدرج البنفسجي-الأزرق، والأسود/الأبيض الصرف، وشبكات البطاقات المتطابقة، وكل شيء في المنتصف بوزن واحد. — List of generic AI looks to remove: gradient text, left accent bar on cards, cyan on black, purple-blue gradient, pure black/white, identical card grids, all-centred single weight.
 
 **متى:** حين يبدو التصميم آليًا ومكررًا وتريد إزالة النص المتدرج والبطاقات المتطابقة والألوان المبتذلة / when a design looks generic and machine-made: gradient text, identical cards, cyan on black
 
@@ -19245,7 +19245,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Launch/share text is linted: banned clichés (e.g. 'Excited to share…'), too many short sentences, empty copy are flagged; a short concrete Arabic line passes.
+**ما هي:** يُفحص نص الإطلاق/المشاركة: العبارات المبتذلة المحظورة (مثل 'Excited to share…') وكثرة الجمل القصيرة والنص الفارغ تُعلَّم؛ وسطر عربي قصير ملموس يجتاز. — Launch/share text is linted: banned clichés (e.g. 'Excited to share…'), too many short sentences, empty copy are flagged; a short concrete Arabic line passes.
 
 **متى:** عند مراجعة نص منشور الإطلاق من العبارات المستهلكة وكثرة الجمل القصيرة / when linting launch or share post copy for clichés and too many short sentences
 
@@ -19314,7 +19314,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Build 5-8 s, contact sheet to requester, ask worst seconds, rebuild; then same for middle.
+**ما هي:** ابنِ 5-8 ث، وأرسل ورقة اللقطات إلى الطالب، واسأل عن أسوأ الثواني، وأعد البناء؛ ثم كرر للمنتصف. — Build 5-8 s, contact sheet to requester, ask worst seconds, rebuild; then same for middle.
 
 **متى:** في بداية مشروع حركي: ابنِ أول 5-8 ثوانٍ وأرسل ورقة لقطات لصاحب الطلب واسأله عن أسوأ لحظة ثم أعد البناء / early in a motion job: build 5-8 s, share a contact sheet, ask for the worst seconds
 
@@ -19385,7 +19385,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Motion that survives freezing all gradients is real; drifting gradients fake low stillness numbers.
+**ما هي:** الحركة التي تصمد عند تجميد كل التدرجات حقيقية؛ والتدرجات المنجرفة تزيّف أرقام السكون المنخفضة. — Motion that survives freezing all gradients is real; drifting gradients fake low stillness numbers.
 
 **متى:** حين تشك أن الحركة في المشهد مزيفة وأن التدرجات المنجرفة تخفي سكونًا حقيقيًا / when checking whether scene motion is real or just drifting gradients faking stillness numbers
 
@@ -19454,7 +19454,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** WCAG 2.2: 4.5:1 contrast, 200% zoom, pausable motion, meaningful alt text, RTL checks -> apply as caption/text contrast and motion-safety gate.
+**ما هي:** WCAG 2.2: تباين 4.5:1، وتكبير 200%، وحركة قابلة للإيقاف، ونص بديل ذو معنى، وفحوص RTL -> تُطبَّق كبوابة لتباين الترجمة/النص وأمان الحركة. — WCAG 2.2: 4.5:1 contrast, 200% zoom, pausable motion, meaningful alt text, RTL checks -> apply as caption/text contrast and motion-safety gate.
 
 **متى:** حين يحتاج الفيديو إلى إتاحة: تباين الترجمة والنص، وحركة يمكن إيقافها، ونص بديل، وفحص RTL / for accessibility: caption and text contrast, pausable motion, alt text and RTL checks
 
@@ -19524,7 +19524,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "Fact-Checker & Verifier" (own words): workflow guidance for fact-checker & verifier; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة بناها المالك "Fact-Checker & Verifier" (بكلماته): إرشادات سير عمل للمدقق والمتحقق؛ تفيد مهمة الفيديو فقط كمعرفة تخطيط/إنتاج داعمة. — Owner-built skill "Fact-Checker & Verifier" (own words): workflow guidance for fact-checker & verifier; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين يحتوي نص الفيديو على ادعاءات أو أرقام أو اقتباسات تحتاج تدقيقًا / when a video script contains claims, numbers or quotes that need checking
 
@@ -19593,7 +19593,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "LLM Judge & Eval Lab" (own words): workflow guidance for llm judge & eval lab; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة بناها المالك "LLM Judge & Eval Lab" (بكلماته): إرشادات سير عمل لـ llm judge & eval lab؛ تفيد مهمة الفيديو فقط كمعرفة تخطيط/إنتاج داعمة. — Owner-built skill "LLM Judge & Eval Lab" (own words): workflow guidance for llm judge & eval lab; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين تريد تقييم مخرجات الذكاء الاصطناعي بأرقام ومعايير بدل الانطباع / when you want to score AI outputs with numbers instead of impressions
 
@@ -19662,7 +19662,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "LLM Judge & Eval Suites" (own words): workflow guidance for llm judge & eval suites; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة بناها المالك "LLM Judge & Eval Suites" (بكلماته): إرشادات سير عمل لـ llm judge & eval suites؛ تفيد مهمة الفيديو فقط كمعرفة تخطيط/إنتاج داعمة. — Owner-built skill "LLM Judge & Eval Suites" (own words): workflow guidance for llm judge & eval suites; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين تبني ميزة ذكاء اصطناعي وتريد مجموعة اختبارات تقيسها بأرقام / when building an AI feature and needing an eval suite that measures it with numbers
 
@@ -19731,7 +19731,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "Complete Testing Suite" (own words): workflow guidance for complete testing suite; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة بناها المالك "Complete Testing Suite" (بكلماته): إرشادات سير عمل لـ complete testing suite؛ تفيد مهمة الفيديو فقط كمعرفة تخطيط/إنتاج داعمة. — Owner-built skill "Complete Testing Suite" (own words): workflow guidance for complete testing suite; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين تريد كتابة اختبارات تثبت أن الكود يعمل فعلًا / when you need tests that prove the code actually works
 
@@ -19800,7 +19800,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Storyboard must be understandable muted; each shot adds new info.
+**ما هي:** يجب أن يُفهم السيناريو المصوَّر بلا صوت؛ وكل لقطة تضيف معلومة جديدة. — Storyboard must be understandable muted; each shot adds new info.
 
 **متى:** حين تريد التأكد أن الستوري بورد مفهوم بدون صوت وأن كل لقطة تضيف معلومة جديدة / when checking a storyboard is understandable on mute and each shot adds new info
 
@@ -19869,7 +19869,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Two versions differing in exactly one element; 10% downscale legibility test.
+**ما هي:** نسختان تختلفان في عنصر واحد بالضبط؛ واختبار وضوح بتصغير 10%. — Two versions differing in exactly one element; 10% downscale legibility test.
 
 **متى:** حين تصمم صورتين مصغرتين للمقارنة تختلفان في عنصر واحد فقط وتختبر وضوحهما عند التصغير / when making two thumbnail versions that differ in one element and testing legibility when shrunk
 
@@ -19939,7 +19939,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Histogram, sharpness, exposure ratio, dominant colour.
+**ما هي:** المدرج التكراري، والحدة، ونسبة التعريض، واللون السائد. — Histogram, sharpness, exposure ratio, dominant colour.
 
 **متى:** حين تريد قياس صورة برمجيًا: الهيستوغرام والحدة ونسبة التعريض واللون الغالب / when measuring an image by code: histogram, sharpness, exposure ratio and dominant colour
 
@@ -20010,7 +20010,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every motion template generates a project whose HTML has no leftover {{placeholders}}, escapes HTML in titles, registers window.__timelines, ships motion-kit and template.json, and passes the project lint with zero errors.
+**ما هي:** كل قالب حركة يولّد مشروعًا لا يحوي HTML فيه {{placeholders}} متبقية، ويهرب HTML في العناوين، ويسجل window.__timelines، ويشحن motion-kit وtemplate.json، ويجتاز فحص المشروع بصفر أخطاء. — Every motion template generates a project whose HTML has no leftover {{placeholders}}, escapes HTML in titles, registers window.__timelines, ships motion-kit and template.json, and passes the project lint with zero errors.
 
 **متى:** حين تريد إنشاء مشروع موشن من قالب جاهز مثل العد التنازلي أو الشريط السفلي مع فحصه / when generating a motion project from a template like countdown or lower third and linting it
 
@@ -20079,7 +20079,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Declared criteria each scored /20; composition (thirds, leading lines, space, balance) and gen defects (limbs, text, reflections, repetition).
+**ما هي:** معايير معلنة تُقيَّم كل منها من 20؛ التكوين (الأثلاث، الخطوط الموجهة، المساحة، التوازن) وعيوب التوليد (الأطراف، النص، الانعكاسات، التكرار). — Declared criteria each scored /20; composition (thirds, leading lines, space, balance) and gen defects (limbs, text, reflections, repetition).
 
 **متى:** حين تقيّم صورة أو إطارًا بمعايير معلنة من 20 لكل معيار، منها التكوين وعيوب التوليد / when scoring an image against declared criteria out of 20, including composition and generation defects
 
@@ -20148,7 +20148,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Spring parameters for secondary motion chosen to stay under the speed gate.
+**ما هي:** معاملات النابض للحركة الثانوية تُختار لتبقى دون بوابة السرعة. — Spring parameters for secondary motion chosen to stay under the speed gate.
 
 **متى:** حين تحرّك أذن شخصية أو جزءًا ثانويًا بنابض وتريد أن تبقى سرعته تحت حد السرعة / when animating a character's ear or secondary part with a spring kept under the speed gate
 
@@ -20219,7 +20219,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Abridged LottieFiles checklist.
+**ما هي:** قائمة LottieFiles مختصرة. — Abridged LottieFiles checklist.
 
 **متى:** قبل الرندر النهائي لمراجعة جودة الحركة: حجم العناصر وعددها وطبقات الحركة وتأخر التوابع / before the final render, to check motion quality: element size, count, layers and follow-through
 
@@ -20291,7 +20291,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Keep real values/units/provenance; never animate fabricated intermediate amounts; label demo data; Arabic shaping and bidi numbers; reduced motion keeps information.
+**ما هي:** حافظ على القيم والوحدات والمصدر الحقيقية؛ ولا تحرّك مقادير وسيطة مختلقة؛ وسمِّ بيانات العرض التجريبي؛ وتشكيل العربية وأرقام ثنائية الاتجاه؛ وتقليل الحركة يُبقي المعلومات. — Keep real values/units/provenance; never animate fabricated intermediate amounts; label demo data; Arabic shaping and bidi numbers; reduced motion keeps information.
 
 **متى:** حين تحرّك أرقامًا أو بيانات حقيقية وتريد صدق القيم والوحدات مع عربي سليم وحركة مخففة / when animating real data while keeping values, units and provenance true and accessible
 
@@ -20360,7 +20360,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Confirm size/fps/duration/audio; one seekable clock; seed randomness; load fonts/media before capture; sample first, peak, boundary and final frames, seek backward and forward; verify the encoded file.
+**ما هي:** تأكد من الحجم/معدل الإطارات/المدة/الصوت؛ وساعة واحدة قابلة للتمرير؛ وعشوائية ببذرة؛ وحمّل الخطوط/الوسائط قبل الالتقاط؛ وخذ عينات من الأول والذروة والحد والأخير، وابحث للخلف وللأمام؛ وتحقق من الملف المرمَّز. — Confirm size/fps/duration/audio; one seekable clock; seed randomness; load fonts/media before capture; sample first, peak, boundary and final frames, seek backward and forward; verify the encoded file.
 
 **متى:** حين تريد فيديو يُرند بنفس النتيجة كل مرة: ساعة واحدة وعشوائية مثبتة وتحميل الخطوط قبل الالتقاط / when a video must render identically every time: one clock, seeded randomness, fonts loaded
 
@@ -20430,7 +20430,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Fail-closed check of the encoded file.
+**ما هي:** فحص مغلق عند الفشل للملف المرمَّز. — Fail-closed check of the encoded file.
 
 **متى:** قبل تسليم الملف المرمّز، لفحص صارم يرفض الإطارات السوداء والمتجمدة ومشاكل العلو والذروة / before delivering the encoded file, for a fail-closed check of black, frozen, loudness and peak issues
 
@@ -20503,7 +20503,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Two reviewers score alone, then merge; findings are ranked P0 (breaks film), P1 (reads generated), P2 (taste); the fixer only changes what a reviewer can point to on a frame; at least 3 rounds until no P0/P1.
+**ما هي:** يقيّم مراجعان كلٌّ بمفرده ثم يدمجان؛ وتُرتَّب النتائج P0 (يكسر الفيلم)، P1 (يبدو مولَّدًا)، P2 (ذوق)؛ ولا يغيّر المصلح إلا ما يستطيع المراجع الإشارة إليه في إطار؛ وثلاث جولات على الأقل حتى لا يبقى P0/P1. — Two reviewers score alone, then merge; findings are ranked P0 (breaks film), P1 (reads generated), P2 (taste); the fixer only changes what a reviewer can point to on a frame; at least 3 rounds until no P0/P1.
 
 **متى:** حين تريد مراجعة الفيديو بمراجعَين مستقلَّين ثم دمج ملاحظاتهما وترتيبها حسب الخطورة / when two reviewers should score a video alone, merge findings and rank them by severity
 
@@ -20574,7 +20574,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A council checklist judged on frames: world & depth, character silhouette, action/contact, camera, light, colour, VFX, atmosphere, materials, production design, composition, beauty.
+**ما هي:** قائمة مجلس تُقيَّم على الإطارات: العالم والعمق، وصورة الشخصية الظلية، والحدث/التلامس، والكاميرا، والضوء، واللون، والمؤثرات البصرية، والجو، والخامات، وتصميم الإنتاج، والتكوين، والجمال. — A council checklist judged on frames: world & depth, character silhouette, action/contact, camera, light, colour, VFX, atmosphere, materials, production design, composition, beauty.
 
 **متى:** حين تريد نقدًا جماليًا شاملًا للإطارات: العمق والإضاءة والألوان والكاميرا والتكوين والمواد / for a full aesthetic critique of frames: depth, light, colour, camera, composition and materials
 
@@ -20643,7 +20643,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Concrete defects to look for: overlapping text during swaps, sliding instead of easing, corner labels/frame borders, centred title on gradient, blurry scaled text, dead beats, loop-seam stutter, device blinking out, inconsistent light, bad scale, impossible contact, blown/crushed exposure.
+**ما هي:** عيوب محددة يُبحث عنها: نص متداخل أثناء التبديل، وانزلاق بدل التسهيل، وتسميات الزوايا/حدود الإطار، وعنوان في المنتصف على تدرج، ونص مكبَّر ضبابي، وإيقاعات ميتة، وتقطع وصلة الحلقة، وجهاز يومض ويختفي، وإضاءة غير متسقة، ومقياس خاطئ، وتلامس مستحيل، وتعريض محروق/مسحوق. — Concrete defects to look for: overlapping text during swaps, sliding instead of easing, corner labels/frame borders, centred title on gradient, blurry scaled text, dead beats, loop-seam stutter, device blinking out, inconsistent light, bad scale, impossible contact, blown/crushed exposure.
 
 **متى:** حين تفحص ورقة اللقطات وعرض الهاتف بحثًا عن عيوب محددة: تداخل النص والانزلاق واللحظات الميتة / when scanning contact and phone sheets for concrete defects like overlapping text or dead beats
 
@@ -20712,7 +20712,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Contact sheet (9-12 frames) + 3-5 s clip of the hardest scene approved by the user before the final render.
+**ما هي:** ورقة لقطات (9-12 إطارًا) + مقطع 3-5 ث من أصعب مشهد يوافق عليه المستخدم قبل الرندر النهائي. — Contact sheet (9-12 frames) + 3-5 s clip of the hardest scene approved by the user before the final render.
 
 **متى:** قبل الرندر النهائي لأخذ موافقة المستخدم على ورقة لقطات ومقطع قصير من أصعب مشهد / before the final render, to get user approval on a contact sheet and a short clip of the hardest scene
 
@@ -20781,7 +20781,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A film or timeline becomes a reel the user reviews in a browser page; edits to copy, times, boxes and colours are applied back into the source, motion requests and pinned notes are left for Claude, approved scenes are locked, versions bump.
+**ما هي:** يصبح الفيلم أو الجدول الزمني ريلًا يراجعه المستخدم في صفحة متصفح؛ وتُطبَّق تعديلات النص والأزمنة والمربعات والألوان على المصدر، ويُترك للـ Claude طلبات الحركة والملاحظات المثبتة، وتُقفل المشاهد المعتمدة، وتزيد الإصدارات. — A film or timeline becomes a reel the user reviews in a browser page; edits to copy, times, boxes and colours are applied back into the source, motion requests and pinned notes are left for Claude, approved scenes are locked, versions bump.
 
 **متى:** عند مراجعة الفيلم مع المستخدم مشهدًا بمشهد وتطبيق تعديلاته على المصدر / when the user reviews a film scene by scene and their edits are written back into the source
 
@@ -20851,7 +20851,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Reject chrome-everything, aimless spinning logos, motion-sick whips, default grey light, random lens flares, 3D where flat explains better.
+**ما هي:** ارفض الكروم في كل شيء، والشعارات الدوارة بلا هدف، والسحبات المسببة للدوار، والإضاءة الرمادية الافتراضية، وlens flares العشوائية، والـ3D حيث يشرح المسطح أفضل. — Reject chrome-everything, aimless spinning logos, motion-sick whips, default grey light, random lens flares, 3D where flat explains better.
 
 **متى:** حين تراجع مشهدًا ثلاثي الأبعاد لتجنب الكروم المبالغ والشعار الدوار بلا هدف والإضاءة الرمادية / when reviewing a 3D scene to avoid chrome-everything, aimless spinning logos and default grey light
 
@@ -20922,7 +20922,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** 10-point ad gate: first-frame motion, one message per beat, one CTA ≥2 s, brand tokens, product ≥40%, platform aspect, works muted, prices isolated, logo ≥1 s, truthful claims.
+**ما هي:** بوابة إعلان من 10 نقاط: حركة في الإطار الأول، ورسالة واحدة لكل إيقاع، ودعوة واحدة ≥2 ث، ورموز العلامة، والمنتج ≥40%، ونسبة المنصة، ويعمل بلا صوت، والأسعار معزولة، والشعار ≥1 ث، وادعاءات صادقة. — 10-point ad gate: first-frame motion, one message per beat, one CTA ≥2 s, brand tokens, product ≥40%, platform aspect, works muted, prices isolated, logo ≥1 s, truthful claims.
 
 **متى:** قبل تسليم إعلان فيديو، لفحص رسالة واحدة لكل لقطة ودعوة واضحة لاتخاذ إجراء وظهور المنتج والشعار / before delivering a video ad: one message per beat, a clear CTA, product share and logo time
 
@@ -20992,7 +20992,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** 10 checks: no split words, no letter-spacing, fonts loaded, captions ≥56 px on 9:16, bidi isolated, one digit system, diacritics unclipped, entrances from right, Arabic punctuation, phone-size screenshot.
+**ما هي:** 10 فحوص: لا كلمات مقسومة، ولا تباعد حروف، والخطوط محمّلة، والترجمات ≥56 px على 9:16، وثنائية الاتجاه معزولة، ونظام أرقام واحد، والتشكيل غير مقصوص، ودخول العناصر من اليمين، وعلامات الترقيم العربية، ولقطة شاشة بحجم الهاتف. — 10 checks: no split words, no letter-spacing, fonts loaded, captions ≥56 px on 9:16, bidi isolated, one digit system, diacritics unclipped, entrances from right, Arabic punctuation, phone-size screenshot.
 
 **متى:** حين يحتوي الفيديو على نص أو ترجمة عربية وتريد فحص الخط والتشكيل والاتجاه والأرقام بحجم الهاتف / when a video has Arabic text or captions to check fonts, diacritics, direction and digits
 
@@ -21062,7 +21062,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Watch with sound at three timestamps per scene after automated checks.
+**ما هي:** شاهد بالصوت عند ثلاثة أوقات لكل مشهد بعد الفحوص الآلية. — Watch with sound at three timestamps per scene after automated checks.
 
 **متى:** بعد الفحوص الآلية، للمشاهدة مع الصوت عند ثلاث لحظات في كل مشهد والتأكد من التزامن / after automated checks, to watch with sound at three moments per scene and confirm sync
 
@@ -21134,7 +21134,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Avoid puppet whole-body rotation, rubber limbs, identical timing, sliding feet, famous-character imitation.
+**ما هي:** تجنب دوران الجسم كله كالدمية، والأطراف المطاطية، والتوقيت المتطابق، والأقدام المنزلقة، وتقليد الشخصيات المشهورة. — Avoid puppet whole-body rotation, rubber limbs, identical timing, sliding feet, famous-character imitation.
 
 **متى:** حين تحرّك شخصية وتريد تجنب الدوران الكامل كالدمية والأطراف المطاطية والأقدام المنزلقة / when animating a character and avoiding puppet rotation, rubber limbs and sliding feet
 
@@ -21203,7 +21203,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Bouncing bars, everything-at-once soup, slot-machine counters, neon/gradients/3D on data, invented data, truncated axes, cross-dataset morphs, idle wobble, simultaneous chart+caption, camera shake, mirrored time axes, mixed digits.
+**ما هي:** أعمدة ترتد، وحساء كل شيء دفعة واحدة، وعدادات كآلات القمار، ونيون/تدرجات/3D على البيانات، وبيانات مختلقة، ومحاور مبتورة، وتحولات بين مجموعات بيانات، وتمايل في السكون، ومخطط وتعليق في آن واحد، واهتزاز الكاميرا، ومحاور زمن معكوسة، وأرقام مختلطة. — Bouncing bars, everything-at-once soup, slot-machine counters, neon/gradients/3D on data, invented data, truncated axes, cross-dataset morphs, idle wobble, simultaneous chart+caption, camera shake, mirrored time axes, mixed digits.
 
 **متى:** حين تحرّك رسمًا بيانيًا وتريد تجنب الأعمدة القافزة والعدادات الدوارة والمحاور المقطوعة والبيانات المختلقة / when animating a chart and avoiding bouncing bars, slot-machine counters and truncated axes
 
@@ -21273,7 +21273,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** No Matrix rain, hacker clichés, tiny code, typing 60-line files, render-varying jitter; same frame twice = identical pixels.
+**ما هي:** لا مطر Matrix، ولا كليشيهات الهاكرز، ولا كود صغير، ولا كتابة ملفات من 60 سطرًا، ولا اهتزاز يتغير بين الرندرات؛ الإطار نفسه مرتين = بكسلات متطابقة. — No Matrix rain, hacker clichés, tiny code, typing 60-line files, render-varying jitter; same frame twice = identical pixels.
 
 **متى:** حين تعرض كودًا برمجيًا في فيديو وتريد تجنب كليشيهات الهاكر والكود الصغير وكتابة الملفات الطويلة / when showing code on screen and avoiding hacker clichés, tiny code and typing long files
 
@@ -21342,7 +21342,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** No typewriter everywhere, letter flying, glow/chromatic aberration on body, bounce-every-word, diagonal slides, random fonts, too-short holds.
+**ما هي:** لا آلة كاتبة في كل مكان، ولا حروف طائرة، ولا توهج/انحراف لوني على النص الأساسي، ولا ارتداد لكل كلمة، ولا انزلاقات قطرية، ولا خطوط عشوائية، ولا ثبات قصير جدًا. — No typewriter everywhere, letter flying, glow/chromatic aberration on body, bounce-every-word, diagonal slides, random fonts, too-short holds.
 
 **متى:** حين تحرّك نصًا أو عناوين وتريد تجنب الآلة الكاتبة في كل مكان والحروف الطائرة وقفز كل كلمة / when animating text and avoiding typewriter everywhere, flying letters and bouncing every word
 
@@ -21411,7 +21411,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Avoid strobe; keep flashes below 3 per second.
+**ما هي:** تجنب الوميض الستروبي؛ أبقِ الومضات دون 3 في الثانية. — Avoid strobe; keep flashes below 3 per second.
 
 **متى:** حين يحتوي الفيديو على ومضات أو تأثير ستروب وتريد إبقاءها أقل من 3 في الثانية / when a video uses flashes or strobe effects and they must stay below 3 per second
 
@@ -21482,7 +21482,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** No endless glowing dust, bloom on everything, Math.random per frame, particles over captions, rainbow colours.
+**ما هي:** لا غبار متوهج لا ينتهي، ولا bloom على كل شيء، ولا Math.random لكل إطار، ولا جسيمات فوق الترجمات، ولا ألوان قوس قزح. — No endless glowing dust, bloom on everything, Math.random per frame, particles over captions, rainbow colours.
 
 **متى:** حين تضيف جسيمات وتريد تجنب الغبار المتوهج بلا نهاية والتوهج على كل شيء والجسيمات فوق الترجمة / when adding particles and avoiding endless glowing dust, bloom everywhere and per-frame random
 
@@ -21551,7 +21551,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Remote 2D rendering and the public Workbench bridge only run with explicit consent: pinned origin, no redirects, bounded request/response sizes, refusing tokens in payloads, never echoing credentials, no overwrite races, project folders created without execution.
+**ما هي:** لا يعمل التصيير ثنائي الأبعاد البعيد وجسر Workbench العام إلا بموافقة صريحة: أصل مثبّت، بلا إعادة توجيه، وأحجام طلب/استجابة محدودة، ورفض الرموز في الحمولات، وعدم ترديد بيانات الاعتماد، وبلا سباقات الكتابة فوق، وإنشاء مجلدات المشاريع دون تنفيذ. — Remote 2D rendering and the public Workbench bridge only run with explicit consent: pinned origin, no redirects, bounded request/response sizes, refusing tokens in payloads, never echoing credentials, no overwrite races, project folders created without execution.
 
 **متى:** حين يلزم رندر عن بُعد أو ربط بالموقع بموافقة صريحة وحماية للبيانات / when remote rendering or the public bridge must run only with consent and strict safety limits
 
@@ -21621,7 +21621,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Preview approved, identical re-render, fonts loaded, duration/fps/frames match, yuv420p even dims, AAC untouched audio, loudness, intentional first/last frames, editable sources delivered, TEST_REPORT filled; never claim unrun checks.
+**ما هي:** المعاينة معتمدة، وإعادة رندر مطابقة، والخطوط محمّلة، والمدة/معدل الإطارات/الإطارات تطابق، وyuv420p بأبعاد زوجية، وصوت AAC غير ممسوس، والجهارة، وإطارات أول/آخر مقصودة، ومصادر قابلة للتحرير مسلَّمة، وTEST_REPORT مملوء؛ ولا تدّعِ فحوصًا لم تُشغَّل. — Preview approved, identical re-render, fonts loaded, duration/fps/frames match, yuv420p even dims, AAC untouched audio, loudness, intentional first/last frames, editable sources delivered, TEST_REPORT filled; never claim unrun checks.
 
 **متى:** بعد الرندر النهائي لفحص المعاينة المعتمدة والخطوط والمدة والإطارات والصوت والعلو وتقرير الاختبار / after the final render, to confirm preview approval, fonts, duration, frames, audio and the test report
 
@@ -21690,7 +21690,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Floating phone, perpetual bob, bending glass, mismatched radii, blurry screenshot, ghost taps, looping glare, rainbow chrome, mirrored hardware, linear scrolling, wall-clock motion.
+**ما هي:** هاتف عائم، وتمايل دائم، وزجاج ينحني، وأنصاف أقطار غير متطابقة، ولقطة شاشة ضبابية، ونقرات شبحية، ولمعان متكرر، وكروم قوس قزح، وعتاد معكوس، وتمرير خطي، وحركة بساعة الحائط. — Floating phone, perpetual bob, bending glass, mismatched radii, blurry screenshot, ghost taps, looping glare, rainbow chrome, mirrored hardware, linear scrolling, wall-clock motion.
 
 **متى:** حين تصنع فيديو يظهر فيه هاتف وتريد تجنب الهاتف الطائف والاهتزاز الدائم واللمسات الوهمية / when making a phone film and avoiding a floating phone, perpetual bob and ghost taps
 
@@ -21759,7 +21759,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Screensaver push-ins, 1 s crossfades, stretched edges, opposing layers, haloed cut-outs, glossy 3D photo cards, per-layer HDR, face over-push, black boxes, literal stock, mirrored text, undisclosed AI, audio-reactive scaling.
+**ما هي:** دفع للداخل كشاشة التوقف، وتلاشٍ متقاطع 1 ث، وحواف ممطوطة، وطبقات متعاكسة، وقصاصات بهالات، وبطاقات صور 3D لامعة، وHDR لكل طبقة، وإفراط في تقريب الوجه، وصناديق سوداء، ولقطات جاهزة حرفية، ونص معكوس، وذكاء اصطناعي غير معلن، وتكبير تفاعلي مع الصوت. — Screensaver push-ins, 1 s crossfades, stretched edges, opposing layers, haloed cut-outs, glossy 3D photo cards, per-layer HDR, face over-push, black boxes, literal stock, mirrored text, undisclosed AI, audio-reactive scaling.
 
 **متى:** حين تصنع فيلمًا من صور ثابتة وتريد تجنب التقريب الممل والمزج الطويل والقص ذي الهالة / when making a film from photos and avoiding screensaver push-ins, slow crossfades and haloed cut-outs
 
@@ -21829,7 +21829,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Teleporting cursor, zero latency, bounce everywhere, glass-and-glow, lorem UI, uniform 300 ms, infinite stagger, blur-in text, 3D wobble, mismatched density, fake scroll, sound on everything.
+**ما هي:** مؤشر ينتقل آنيًا، وزمن استجابة صفري، وارتداد في كل مكان، وزجاج وتوهج، وواجهة lorem، و300 ms موحدة، وتتابع لا نهائي، ونص يظهر بضبابية، وتمايل 3D، وكثافة غير متطابقة، وتمرير مزيف، وصوت على كل شيء. — Teleporting cursor, zero latency, bounce everywhere, glass-and-glow, lorem UI, uniform 300 ms, infinite stagger, blur-in text, 3D wobble, mismatched density, fake scroll, sound on everything.
 
 **متى:** حين تصنع فيديو يعرض واجهة منتج وتريد تجنب المؤشر القافز والارتداد في كل مكان والنص الوهمي / when making a product UI film and avoiding a teleporting cursor, bounce everywhere and lorem UI
 
@@ -21898,7 +21898,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Classify SFX by spectral centroid, brightBurden, highActiveDuration, envelope, transient sharpness to avoid fatiguing sounds.
+**ما هي:** صنّف المؤثرات الصوتية بمركز الطيف وbrightBurden وhighActiveDuration والغلاف وحدة العابر لتجنب الأصوات المرهقة. — Classify SFX by spectral centroid, brightBurden, highActiveDuration, envelope, transient sharpness to avoid fatiguing sounds.
 
 **متى:** حين تختار مؤثرات صوتية وتريد استبعاد الأصوات الحادة التي تُتعب الأذن / when choosing sound effects and filtering out sharp, fatiguing high-frequency sounds
 
@@ -21969,7 +21969,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Pick the strongest beat at a settled moment, not mid-transition.
+**ما هي:** اختر أقوى إيقاع عند لحظة مستقرة، لا في منتصف انتقال. — Pick the strongest beat at a settled moment, not mid-transition.
 
 **متى:** حين تحتاج صورة غلاف من الفيديو وتريد أقوى لحظة مستقرة لا لحظة انتقال / when picking a cover or poster still from a video at a settled beat, not mid-transition
 
@@ -22039,7 +22039,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Next clip starts from the previous clip's actual last frame to avoid pop.
+**ما هي:** يبدأ المقطع التالي من الإطار الأخير الفعلي للمقطع السابق لتجنب القفزة. — Next clip starts from the previous clip's actual last frame to avoid pop.
 
 **متى:** حين تربط مقاطع متتالية وتريد أن يبدأ كل مقطع من آخر إطار فعلي للسابق دون قفزة / when chaining clips so each starts from the previous clip's actual last frame without a pop
 
@@ -22110,7 +22110,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Step 8 eyeballs each seam and each leg's last frame before chaining.
+**ما هي:** الخطوة 8 تفحص بالعين كل وصلة والإطار الأخير لكل مقطع قبل التسلسل. — Step 8 eyeballs each seam and each leg's last frame before chaining.
 
 **متى:** قبل ربط المقاطع ببعضها لمراجعة كل وصلة وآخر إطار في كل جزء بالعين / before chaining clips, to eyeball each seam and each leg's last frame
 
@@ -22179,7 +22179,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Scenes hold ≥1.8 s with settled title; anything visible <400 ms gets extended after frame inspection.
+**ما هي:** تبقى المشاهد ≥1.8 ث مع عنوان مستقر؛ وأي شيء يظهر أقل من 400 ms يُمدَّد بعد فحص الإطارات. — Scenes hold ≥1.8 s with settled title; anything visible <400 ms gets extended after frame inspection.
 
 **متى:** حين تمر المشاهد أو العناوين بسرعة لا تسمح بقراءتها وتحتاج حدًا أدنى لمدة الظهور / when scenes or titles flash by too fast to read and need a minimum on-screen time
 
@@ -22250,7 +22250,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Never use third-party logos/trade dress; label unverified claims as placeholders.
+**ما هي:** لا تستخدم شعارات الأطراف الثالثة أو مظهرها التجاري أبدًا؛ وسمِّ الادعاءات غير المتحقق منها كعناصر نائبة. — Never use third-party logos/trade dress; label unverified claims as placeholders.
 
 **متى:** حين قد يتضمن العمل شعارات أو هوية تجارية لجهات أخرى أو ادعاءات لم يُتحقق منها / when work might include third-party logos, trade dress or unverified claims
 
@@ -22319,7 +22319,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Checks a proplan for schema, intent, fps/aspect, whole frames and gapless shot coverage (1–100 shots), with Arabic error messages and a rights/fonts/audio review warning.
+**ما هي:** يفحص proplan من حيث المخطط والقصد وfps/النسبة والإطارات الكاملة وتغطية اللقطات بلا فجوات (1–100 لقطة)، مع رسائل خطأ عربية وتحذير مراجعة الحقوق/الخطوط/الصوت. — Checks a proplan for schema, intent, fps/aspect, whole frames and gapless shot coverage (1–100 shots), with Arabic error messages and a rights/fonts/audio review warning.
 
 **متى:** عند فحص خطة اللقطات قبل الرندر للتأكد أنها صحيحة ومتصلة بلا فجوات / when a shot plan needs checking for schema, fps, aspect and gapless shot coverage before rendering
 
@@ -22390,7 +22390,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** No unseeded randomness; every run reproducible frame for frame.
+**ما هي:** لا عشوائية بلا بذرة؛ وكل تشغيل قابل لإعادة الإنتاج إطارًا بإطار. — No unseeded randomness; every run reproducible frame for frame.
 
 **متى:** حين تستخدم العشوائية في التحريك وتريد أن يعطي كل تشغيل نفس الإطارات تمامًا / when animation uses randomness and every run must give the same frames
 
@@ -22459,7 +22459,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** No text over selfie face, no blur on result, photos untinted.
+**ما هي:** لا نص فوق وجه السيلفي، ولا طمس على النتيجة، والصور بلا صبغة. — No text over selfie face, no blur on result, photos untinted.
 
 **متى:** حين تضع نصًا على صورة أو فيديو سيلفي وتريد ألا يغطي الوجه ولا تضبّب النتيجة / when placing text over a selfie so it never covers the face and the result stays unblurred
 
@@ -22528,7 +22528,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** White/accent flash frames limited.
+**ما هي:** تُحدّ إطارات الوميض الأبيض/اللوني. — White/accent flash frames limited.
 
 **متى:** حين تستخدم إطارات وميض بيضاء أو بلون مميز وتريد حدًا آمنًا لعددها في الثانية / when using white or accent flash frames that must be capped per second
 
@@ -22599,7 +22599,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Strict model for a renderable manifest: only known keys, even pixel sizes, allowed fps, whole frames, gapless scenes covering the whole duration, safe ids and #rrggbb accents.
+**ما هي:** نموذج صارم لـ manifest قابل للتصيير: مفاتيح معروفة فقط، وأحجام بكسل زوجية، وfps مسموح، وإطارات كاملة، ومشاهد بلا فجوات تغطي المدة كلها، ومعرّفات آمنة ولهجات #rrggbb. — Strict model for a renderable manifest: only known keys, even pixel sizes, allowed fps, whole frames, gapless scenes covering the whole duration, safe ids and #rrggbb accents.
 
 **متى:** عند تجهيز ملف manifest للرندر والتأكد من المقاسات والفريمات وتغطية المشاهد / when a render manifest must pass strict checks on sizes, fps, frames and scene coverage
 
@@ -22671,7 +22671,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** State-changing requests to /api/*, /review/* and /mcp are refused with 403 when a browser reports they came from another website, while curl, scripts and MCP clients without an Origin header still work; API answers are no-store and nosniff.
+**ما هي:** تُرفض طلبات تغيير الحالة إلى /api/* و/review/* و/mcp بـ 403 حين يبلغ المتصفح أنها من موقع آخر، بينما تعمل curl والسكربتات وعملاء MCP دون ترويسة Origin؛ وإجابات API no-store وnosniff. — State-changing requests to /api/*, /review/* and /mcp are refused with 403 when a browser reports they came from another website, while curl, scripts and MCP clients without an Origin header still work; API answers are no-store and nosniff.
 
 **متى:** حين تريد حماية الواجهة المحلية من طلبات تغيّر البيانات تأتي من مواقع أخرى / when protecting the local API from state-changing requests sent by other websites
 
@@ -22742,7 +22742,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** After a render, the film opens in a review player where the user edits text, colours, fonts, logo, music, timing, size and position, pins notes on the frame, marks scenes approved, and sends one prompt back to Claude.
+**ما هي:** بعد التصيير يُفتح الفيلم في مشغل مراجعة يحرر فيه المستخدم النص والألوان والخطوط والشعار والموسيقى والتوقيت والحجم والموضع، ويثبّت ملاحظات على الإطار، ويعتمد المشاهد، ويرسل برومبتًا واحدًا إلى Claude. — After a render, the film opens in a review player where the user edits text, colours, fonts, logo, music, timing, size and position, pins notes on the frame, marks scenes approved, and sends one prompt back to Claude.
 
 **متى:** عند انتهاء الرندر حين يريد المستخدم تعديل النصوص والألوان والتوقيت ووضع ملاحظات على الإطار / when the user wants to edit text, colors and timing and pin notes on frames after a render
 
@@ -22815,7 +22815,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every project change or opened file is normalised: version 1 only, ids de-duplicated, numbers clamped, colours #rrggbb, enums whitelisted, clips capped against media duration and the 60-second total.
+**ما هي:** يُطبَّع كل تغيير في المشروع أو ملف مفتوح: الإصدار 1 فقط، ومعرّفات غير مكررة، وأرقام مقيّدة، وألوان #rrggbb، وتعدادات ضمن القائمة البيضاء، ومقاطع مقيّدة بمدة الوسائط وإجمالي 60 ثانية. — Every project change or opened file is normalised: version 1 only, ids de-duplicated, numbers clamped, colours #rrggbb, enums whitelisted, clips capped against media duration and the 60-second total.
 
 **متى:** عند فتح أو تعديل مشروع Studio لتنظيف القيم الخاطئة وضبط المدد والألوان / when a Studio project must be normalized: deduped ids, clamped numbers, valid colors and clip lengths
 
@@ -22888,7 +22888,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Rejects any scene missing identity, anatomy, physics, camera, lens, lighting key/fill/rim, grade, materials, weather, VFX, composition or negatives.
+**ما هي:** يرفض أي مشهد تنقصه الهوية أو التشريح أو الفيزياء أو الكاميرا أو العدسة أو إضاءة المفتاح/التعبئة/الحافة أو التدرج أو الخامات أو الطقس أو المؤثرات أو التكوين أو السلبيات. — Rejects any scene missing identity, anatomy, physics, camera, lens, lighting key/fill/rim, grade, materials, weather, VFX, composition or negatives.
 
 **متى:** عند تجهيز وصف مشهد للتوليد للتأكد أنه يشمل الكاميرا والعدسة والإضاءة والفيزياء وكل الحقول / when a scene spec must be rejected if it misses camera, lens, lighting, physics or other fields
 
@@ -22962,7 +22962,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scores a prompt against the KOSIF formula, enforces required/forbidden terms and verbatim locks, flags contradictions and Arabic inside generation text.
+**ما هي:** يقيّم برومبتًا مقابل صيغة KOSIF، ويفرض المصطلحات المطلوبة/المحظورة والأقفال الحرفية، ويعلّم التناقضات والعربية داخل نص التوليد. — Scores a prompt against the KOSIF formula, enforces required/forbidden terms and verbatim locks, flags contradictions and Arabic inside generation text.
 
 **متى:** حين تريد تقييم برومبت صورة أو فيديو وكشف التناقضات والكلمات الممنوعة قبل التوليد / when scoring an image or video prompt and flagging contradictions or forbidden terms before generation
 
@@ -23035,7 +23035,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Freezes what must stay true in a generated image, checks observed evidence against it, and allows exactly one targeted repair.
+**ما هي:** يثبّت ما يجب أن يبقى صحيحًا في صورة مولّدة، ويفحص الأدلة المرصودة مقابله، ويسمح بإصلاح مستهدف واحد فقط. — Freezes what must stay true in a generated image, checks observed evidence against it, and allows exactly one targeted repair.
 
 **متى:** عند توليد صورة يجب أن تحافظ على عناصر محددة ومقارنة النتيجة بها وإصلاحها مرة واحدة / when a generated image must keep locked elements, be checked against them and get one fix
 
@@ -23108,7 +23108,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic audit of an HTML page or folder: document, accessibility incl. contrast in both themes, responsive, performance, token use, security.
+**ما هي:** تدقيق حتمي لصفحة HTML أو مجلد: المستند، وإمكانية الوصول بما فيها التباين في الثيمين، والتجاوب، والأداء، واستخدام الرموز، والأمان. — Deterministic audit of an HTML page or folder: document, accessibility incl. contrast in both themes, responsive, performance, token use, security.
 
 **متى:** عند مراجعة صفحة HTML من ناحية الإتاحة والتباين والتجاوب والأداء والأمان / when auditing an HTML page for accessibility, contrast, responsiveness, performance and security
 
@@ -23182,7 +23182,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Refuses to call a render finished unless duration, size, codecs and both streams are right; then writes a receipt with sha256, scenes, sources, licence status and QA stills.
+**ما هي:** يرفض اعتبار التصيير منتهيًا ما لم تكن المدة والحجم والترميزات وكلا المسارين صحيحة؛ ثم يكتب إيصالًا بـ sha256 والمشاهد والمصادر وحالة الترخيص ولقطات QA. — Refuses to call a render finished unless duration, size, codecs and both streams are right; then writes a receipt with sha256, scenes, sources, licence status and QA stills.
 
 **متى:** عند التأكد من انتهاء الرندر فعلًا بفحص المدة والمقاس والمسارين وكتابة إيصال الإنتاج / when a render must not count as done until duration, size and streams pass and a receipt is written
 
@@ -23256,7 +23256,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sample size per variant and a results reader with rates, lift, 95% CI, z and p for hooks, covers or titles.
+**ما هي:** حجم العينة لكل نسخة وقارئ نتائج بالمعدلات والرفع وفاصل ثقة 95% وz وp للخطافات أو الأغلفة أو العناوين. — Sample size per variant and a results reader with rates, lift, 95% CI, z and p for hooks, covers or titles.
 
 **متى:** حين تريد مقارنة نسختين من الهوك أو الغلاف أو العنوان ومعرفة أيهما أفضل / when comparing variants of a hook, cover or title and reading which one wins
 
@@ -23329,7 +23329,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Median per weekday x 3-hour block (>=2 posts per cell) vs overall median; <8 posts keeps defaults.
+**ما هي:** الوسيط لكل يوم أسبوع × كتلة 3 ساعات (≥2 منشور لكل خلية) مقابل الوسيط العام؛ وأقل من 8 منشورات يبقي الافتراضيات. — Median per weekday x 3-hour block (>=2 posts per cell) vs overall median; <8 posts keeps defaults.
 
 **متى:** حين تريد معرفة أفضل يوم ووقت للنشر من إحصاءات حسابك / when picking the best weekday and time block to post from your own analytics export
 
@@ -23399,7 +23399,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sample size per variant (alpha 0.05, power 0.8) and results with lift, 95% CI, z and p.
+**ما هي:** حجم العينة لكل نسخة (alpha 0.05، القدرة 0.8) والنتائج بالرفع وفاصل ثقة 95% وz وp. — Sample size per variant (alpha 0.05, power 0.8) and results with lift, 95% CI, z and p.
 
 **متى:** عند تخطيط تجربة A/B بعدد عينة كافٍ وقراءة النتائج بدلالة إحصائية / when planning an A/B test sample size and reading results with lift, confidence interval and p-value
 
@@ -23471,7 +23471,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Downsamples frames to 320px grey, flags near-black (mean<6), near-white (>249), freezes (diff<0.05 for >=1.5 s) and excess hard cuts (diff>60).
+**ما هي:** يخفض عينة الإطارات إلى رمادي 320px، ويعلّم شبه الأسود (المتوسط<6) وشبه الأبيض (>249) والتجمدات (الفرق<0.05 لمدة >=1.5 ث) والقطعات الحادة الزائدة (الفرق>60). — Downsamples frames to 320px grey, flags near-black (mean<6), near-white (>249), freezes (diff<0.05 for >=1.5 s) and excess hard cuts (diff>60).
 
 **متى:** حين تريد فحص إطارات الفيديو آليًا بحثًا عن شاشات سوداء أو بيضاء أو تجمد أو قطعات زائدة / when scanning rendered frames for black, white, frozen stretches or too many hard cuts
 
@@ -23543,7 +23543,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Validates scenes.json/storyboard.json: scene count, verb descriptions, carrier object every scene, <=8 words/frame, hero coverage, object test, camera budget; returns PASS/REVISE.
+**ما هي:** يتحقق من scenes.json/storyboard.json: عدد المشاهد، وأوصاف بأفعال، وجسم حامل في كل مشهد، و<=8 كلمات/إطار، وتغطية البطل، واختبار الجسم، وميزانية الكاميرا؛ ويعيد PASS/REVISE. — Validates scenes.json/storyboard.json: scene count, verb descriptions, carrier object every scene, <=8 words/frame, hero coverage, object test, camera budget; returns PASS/REVISE.
 
 **متى:** عند مراجعة الستوري بورد قبل التنفيذ: عدد المشاهد والكلمات لكل إطار وحركة الكاميرا / when a storyboard needs checking for scene count, words per frame, hero coverage and camera budget
 
@@ -23616,7 +23616,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A rendered 6 s 1080x1920 30 fps demo with mp4, GIF, contact sheet and PASS qa.json.
+**ما هي:** عرض demo2d مصيَّر مدته 6 ث بدقة 1080x1920 و30 fps مع mp4 وGIF وورقة لقطات وqa.json بنتيجة PASS. — A rendered 6 s 1080x1920 30 fps demo with mp4, GIF, contact sheet and PASS qa.json.
 
 **متى:** حين تحتاج مثالًا مرجعيًا لرندر عمودي قصير مع GIF وورقة إطارات وتقرير فحص / when you need a reference vertical demo render with mp4, GIF, contact sheet and QA report
 
@@ -23688,7 +23688,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Flags missing required fields, >2 light sources, two lenses, living-artist names (BLOCK), real-person prompts (BLOCK), unsupported aspect, no negatives, Arabic text warning.
+**ما هي:** يعلّم الحقول المطلوبة الناقصة، وأكثر من مصدري ضوء، وعدستين، وأسماء فنانين أحياء (حظر)، وبرومبتات أشخاص حقيقيين (حظر)، ونسبة غير مدعومة، وغياب السلبيات، وتحذير النص العربي. — Flags missing required fields, >2 light sources, two lenses, living-artist names (BLOCK), real-person prompts (BLOCK), unsupported aspect, no negatives, Arabic text warning.
 
 **متى:** عند كتابة برومبت صورة لكشف الحقول الناقصة وأسماء الفنانين والأشخاص الحقيقيين قبل التوليد / when an image prompt must be checked for missing fields, living-artist names or real people
 
@@ -23760,7 +23760,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Check identity drift, hands/faces, physics, stray text, wardrobe/light continuity; regenerate only failed shot.
+**ما هي:** افحص انجراف الهوية، واليدين/الوجوه، والفيزياء، والنص الشارد، واستمرارية الملابس/الإضاءة؛ وأعد توليد اللقطة الفاشلة فقط. — Check identity drift, hands/faces, physics, stray text, wardrobe/light continuity; regenerate only failed shot.
 
 **متى:** عند الانتهاء من توليد فيديو لفحص ثبات الشخصية واليدين والفيزياء والنصوص الشاردة / when a generated video needs checks for identity drift, hands, physics, stray text and continuity
 
@@ -23829,7 +23829,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scans pasted Python for commands beyond drawing (file deletion, process launch, network, ctypes/winreg, eval/exec, file writes, pip/sys.exit) and asks the user; runs in a scratch folder with a time limit. SVG is treated as data.
+**ما هي:** يفحص كود Python الملصوق بحثًا عن أوامر تتجاوز الرسم (حذف ملفات، إطلاق عمليات، شبكة، ctypes/winreg، eval/exec، كتابة ملفات، pip/sys.exit) ويسأل المستخدم؛ ويعمل في مجلد مؤقت بحد زمني. ويُعامل SVG كبيانات. — Scans pasted Python for commands beyond drawing (file deletion, process launch, network, ctypes/winreg, eval/exec, file writes, pip/sys.exit) and asks the user; runs in a scratch folder with a time limit. SVG is treated as data.
 
 **متى:** عند تشغيل كود بايثون ملصوق للرسم والتأكد أنه لا يحذف ملفات أو يشغل عمليات أو يتصل بالشبكة / when running pasted Python drawing code and checking it won't delete files, launch processes or use the network
 
@@ -23903,7 +23903,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decides whether an image is a photo/painting or a logo/flat art by counting distinct colours at a fixed size.
+**ما هي:** يقرر هل الصورة فوتوغرافية/لوحة أم شعار/فن مسطح بعدّ الألوان المتمايزة عند حجم ثابت. — Decides whether an image is a photo/painting or a logo/flat art by counting distinct colours at a fixed size.
 
 **متى:** حين تريد معرفة هل الصورة فوتوغرافية أم شعار أو رسم مسطح قبل معالجتها / when deciding if an image is a photo or painting versus a logo or flat art
 
@@ -23975,7 +23975,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Static scan of index.html, src/*.js and project scripts for render-breaking and generated-looking patterns.
+**ما هي:** فحص ثابت لـ index.html وsrc/*.js وسكربتات المشروع بحثًا عن أنماط تكسر التصيير أو تبدو مولّدة. — Static scan of index.html, src/*.js and project scripts for render-breaking and generated-looking patterns.
 
 **متى:** عند فحص مشروع موشن قبل الرندر لاكتشاف ما يكسر الرندر أو يبدو مولدًا آليًا / when scanning a motion project for render-breaking non-determinism and generated-looking patterns
 
@@ -24049,7 +24049,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds a 2 fps contact sheet, a 1 fps phone-width sheet, a 12-frame strip around a moment, the first frame and a review.md template.
+**ما هي:** يبني ورقة لقطات 2 fps، وورقة بعرض الهاتف 1 fps، وشريطًا من 12 إطارًا حول لحظة، والإطار الأول وقالب review.md. — Builds a 2 fps contact sheet, a 1 fps phone-width sheet, a 12-frame strip around a moment, the first frame and a review.md template.
 
 **متى:** حين تريد مراجعة فيلم بنظرة واحدة عبر ورقة إطارات وعرض بعرض الجوال / when reviewing a film at a glance with contact sheets, a phone-width sheet and a frame strip
 
@@ -24122,7 +24122,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Timing that was not measured is labelled: verse marks 'estimated', audio2motion writes timing_quality 'estimated_from_text_length_NOT_ASR' and refuses to invent a transcript; transcribe.load_transcript only accepts timed words.
+**ما هي:** التوقيت غير المقيس يوسَم: علامات الأبيات 'estimated'، وaudio2motion تكتب timing_quality 'estimated_from_text_length_NOT_ASR' وترفض اختلاق تفريغ؛ وtranscribe.load_transcript لا يقبل إلا كلمات موقّتة. — Timing that was not measured is labelled: verse marks 'estimated', audio2motion writes timing_quality 'estimated_from_text_length_NOT_ASR' and refuses to invent a transcript; transcribe.load_transcript only accepts timed words.
 
 **متى:** عند ادعاء تزامن الصوت مع الحركة للتأكد أن التوقيت مقاس فعلًا وليس تقديريًا / when about to claim audio sync, to check whether timing was measured or only estimated
 
@@ -24193,7 +24193,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Unit tests for scaffold, ambience, bundling, canvas route, score+beats, lint, sheet+speed, channels tape-stop, loopcheck+inspect, montage, long exposure, book lessons, kmotion, decaption, transcript writers, direct plan, verse; plus Voice2Motion, site bridge, open footage and voice plan tests.
+**ما هي:** اختبارات وحدة للسقالة والأجواء والتجميع ومسار canvas والمقطوعة+الضربات والفحص وورقة+السرعة وقنوات توقف الشريط وloopcheck+inspect والمونتاج والتعريض الطويل ودروس الكتب وkmotion وإزالة الترجمة وكتّاب التفريغ والخطة المباشرة والأبيات؛ إضافةً إلى اختبارات Voice2Motion وجسر الموقع واللقطات المفتوحة وخطة الصوت. — Unit tests for scaffold, ambience, bundling, canvas route, score+beats, lint, sheet+speed, channels tape-stop, loopcheck+inspect, montage, long exposure, book lessons, kmotion, decaption, transcript writers, direct plan, verse; plus Voice2Motion, site bridge, open footage and voice plan tests.
 
 **متى:** حين تريد التأكد أن أدوات الموشن والمونتاج والصوت ما زالت تعمل بعد أي تعديل / when confirming the motion, montage and voice tools still pass their tests after a change
 
@@ -24269,7 +24269,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Rendered films in out/ that serve as proof and regression references; measured here with qa.inspect and motion energy.
+**ما هي:** أفلام مصيَّرة في out/ تعمل مراجع إثبات وانحدار؛ وقيست هنا بـ qa.inspect وطاقة الحركة. — Rendered films in out/ that serve as proof and regression references; measured here with qa.inspect and motion energy.
 
 **متى:** حين تحتاج أفلامًا مرجعية مقاسة للمقارنة في علو الصوت وطاقة الحركة / when you need measured reference films to compare loudness and motion energy against
 
@@ -24342,7 +24342,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Checks that generated text does not copy third-party prompts.
+**ما هي:** يفحص أن النص المولّد لا ينسخ برومبتات من طرف ثالث. — Checks that generated text does not copy third-party prompts.
 
 **متى:** حين تريد التأكد أن النص المولد لا ينسخ برومبتات طرف ثالث / when checking that generated text does not copy third-party prompts
 
@@ -24412,7 +24412,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Renders 8 evenly spaced frames, labels each with time and frame index via ffmpeg drawtext, and tiles them 4x2 into one PNG for approval before the full render.
+**ما هي:** يصيّر 8 إطارات متباعدة بالتساوي، ويسم كلًّا بالزمن وفهرس الإطار عبر ffmpeg drawtext، ويرتبها 4x2 في PNG واحد للاعتماد قبل التصيير الكامل. — Renders 8 evenly spaced frames, labels each with time and frame index via ffmpeg drawtext, and tiles them 4x2 into one PNG for approval before the full render.
 
 **متى:** عند الحاجة لموافقة المستخدم قبل الرندر الكامل بعرض 8 لقطات من الفيلم في صورة واحدة / when the user should approve 8 labelled frames tiled in one image before the full render
 
@@ -24487,7 +24487,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** After encoding, render_html probes the file and fails with exit code 3 if fps, frame count (±1), duration (±1 frame+2 ms), size or audio presence disagree with the request.
+**ما هي:** بعد الترميز يفحص render_html الملف ويفشل بكود خروج 3 إن اختلفت fps أو عدد الإطارات (±1) أو المدة (±إطار+2 ms) أو الحجم أو وجود الصوت عن الطلب. — After encoding, render_html probes the file and fails with exit code 3 if fps, frame count (±1), duration (±1 frame+2 ms), size or audio presence disagree with the request.
 
 **متى:** عند انتهاء الرندر للتأكد تلقائيًا أن المدة والفريمات والمقاس والصوت تطابق الطلب / when a render must auto-check that fps, frames, duration, size and audio match the request
 
@@ -24560,7 +24560,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Measured-values report: duration, fps, frames, resolution, audio track, untouched voice, loudness, phone legibility, RTL shaping, key-word sync, motion in every scene, safe margins, contrast, first/last frame, assets licensing, preview approval; with ffprobe/ffmpeg commands incl. 4x4 contact sheet a…
+**ما هي:** تقرير قيم مقيسة: المدة وfps والإطارات والدقة ومسار الصوت والصوت دون مساس والجهارة ووضوح الهاتف وتشكيل RTL وتزامن الكلمات المفتاحية والحركة في كل مشهد والهوامش الآمنة والتباين والإطار الأول/الأخير وترخيص الأصول واعتماد المعاينة؛ بأوامر ffprobe/ffmpeg بما فيها ورقة لقطات 4x4 a… — Measured-values report: duration, fps, frames, resolution, audio track, untouched voice, loudness, phone legibility, RTL shaping, key-word sync, motion in every scene, safe margins, contrast, first/last frame, assets licensing, preview approval; with ffprobe/ffmpeg commands incl. 4x4 contact sheet a…
 
 **متى:** عند التسليم لتوثيق 16 قياسًا للفيديو من المدة والصوت إلى وضوح العربي والتراخيص / when delivery needs a 16-check measured QA report, from duration and audio to RTL and licensing
 
@@ -24630,7 +24630,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** validate passes through to tools/validate.py; stats counts by origin/type/category/aspect, top creators, brief and playbook coverage.
+**ما هي:** التحقق يمرّ إلى tools/validate.py؛ والإحصاءات تعدّ حسب الأصل/النوع/الفئة/النسبة وأبرز المبدعين وتغطية الموجز والدليل. — validate passes through to tools/validate.py; stats counts by origin/type/category/aspect, top creators, brief and playbook coverage.
 
 **متى:** عند التحقق من سلامة كتالوج الأساليب أو معرفة أعداده حسب المصدر والنوع / when validating the style catalog or getting counts by origin, type, category and aspect
 
@@ -24703,7 +24703,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** npm test runs 5 node tests (generator, markdown) and 55 Python tests (catalog, CLI, templates, validate, words_convert, verify_video on a synthetic ffmpeg clip); all passed here in ~10 s.
+**ما هي:** يشغّل npm test خمسة اختبارات node (المولّد وmarkdown) و55 اختبار Python (الفهرس وCLI والقوالب وvalidate وwords_convert وverify_video على مقطع ffmpeg اصطناعي)؛ نجحت كلها هنا في نحو 10 ث. — npm test runs 5 node tests (generator, markdown) and 55 Python tests (catalog, CLI, templates, validate, words_convert, verify_video on a synthetic ffmpeg clip); all passed here in ~10 s.
 
 **متى:** حين تريد تشغيل كل اختبارات المستودع للتأكد أن الكتالوج والأدوات سليمة / when running all repo tests to confirm the catalog, CLI, templates and verify tool still pass
 
@@ -24777,7 +24777,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Measure whether a generated clip actually used the audio reference by cross-correlating its soundtrack with the reference slice.
+**ما هي:** قياس هل استخدم المقطع المولّد مرجع الصوت فعلًا بالارتباط المتقاطع بين مساره الصوتي وشريحة المرجع. — Measure whether a generated clip actually used the audio reference by cross-correlating its soundtrack with the reference slice.
 
 **متى:** حين تشك أن حركة الشفاه في مقطع مولد لا تتطابق مع الصوت المرجعي / when checking whether a generated clip's lips actually follow the reference audio and by what offset
 
@@ -24849,7 +24849,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Zeroes NaN/Inf pixels and clamps HDR before bloom so bad pixels don't bloom into black rectangles.
+**ما هي:** يصفّر بكسلات NaN/Inf ويقيّد HDR قبل bloom كي لا تتحول البكسلات التالفة إلى مستطيلات سوداء. — Zeroes NaN/Inf pixels and clamps HDR before bloom so bad pixels don't bloom into black rectangles.
 
 **متى:** عند ظهور مستطيلات سوداء في التوهج بسبب بكسلات تالفة في الرندر / when bad NaN/Inf pixels bloom into black rectangles in a post-processing pass
 
@@ -24922,7 +24922,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Determinism/taste lint: no Math.random, Date.now, timers, dir=rtl on html, CSS transitions, glow text-shadow, linear eases, infinite repeat, backdrop-filter.
+**ما هي:** فحص حتمية/ذوق: لا Math.random ولا Date.now ولا مؤقتات ولا dir=rtl على html ولا انتقالات CSS ولا ظل نص متوهج ولا تسهيلات خطية ولا تكرار لانهائي ولا backdrop-filter. — Determinism/taste lint: no Math.random, Date.now, timers, dir=rtl on html, CSS transitions, glow text-shadow, linear eases, infinite repeat, backdrop-filter.
 
 **متى:** حين تريد فحص مشروع الموشن من العشوائية والمؤقتات والتأثيرات المخالفة للذوق / when linting a motion project for randomness, timers, linear eases and off-taste effects
 
@@ -24995,7 +24995,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reports near-still share, mean and peak frame difference of a film.
+**ما هي:** يبلّغ عن نسبة شبه الساكن والمتوسط وذروة فرق الإطارات في الفيلم. — Reports near-still share, mean and peak frame difference of a film.
 
 **متى:** حين تريد قياس مقدار الحركة في فيلم ونسبة اللحظات الثابتة فيه / when measuring how much a film moves and its share of near-still frames
 
@@ -25069,7 +25069,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Detect whether a reference site uses GSAP, Lottie, anime.js, Lenis/Locomotive, Three/Pixi/WebGL canvas, SVG SMIL, custom cursors, backdrop filters, blend modes, clip paths; classify each section as static, click-, scroll- or time-driven by scrolling slowly before clicking.
+**ما هي:** اكتشاف هل يستخدم موقع مرجعي GSAP أو Lottie أو anime.js أو Lenis/Locomotive أو Three/Pixi/WebGL canvas أو SVG SMIL أو مؤشرات مخصصة أو backdrop filters أو أوضاع المزج أو clip paths؛ وتصنيف كل قسم ساكنًا أو مدفوعًا بالنقر أو التمرير أو الزمن بالتمرير ببطء قبل النقر. — Detect whether a reference site uses GSAP, Lottie, anime.js, Lenis/Locomotive, Three/Pixi/WebGL canvas, SVG SMIL, custom cursors, backdrop filters, blend modes, clip paths; classify each section as static, click-, scroll- or time-driven by scrolling slowly before clicking.
 
 **متى:** عند دراسة موقع مرجعي لمعرفة مكتبات الحركة فيه وهل حركته بالتمرير أو النقر أو الزمن / when studying a reference site to detect its animation libraries and scroll, click or time-driven sections
 
@@ -25145,7 +25145,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Compare a rendered frame against its reference: per-pixel diff ratio, similarity score, alpha flag and an 8x8 grid of ranked hotspots showing where it deviates; evidence for review, not a verdict.
+**ما هي:** قارن إطارًا مصيَّرًا بمرجعه: نسبة فرق لكل بكسل ودرجة تشابه وعلم ألفا وشبكة 8x8 من البؤر المرتبة تُظهر مواضع الانحراف؛ أدلة للمراجعة لا حكم. — Compare a rendered frame against its reference: per-pixel diff ratio, similarity score, alpha flag and an 8x8 grid of ranked hotspots showing where it deviates; evidence for review, not a verdict.
 
 **متى:** حين تريد مقارنة إطار مرندر بصورته المرجعية ومعرفة أماكن الاختلاف / when comparing a rendered frame with its reference and locating where they differ
 
@@ -25219,7 +25219,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Capture before/after or current-state UI with identical route, viewport, scale, theme, locale, timezone, data and interaction state; wait for observable readiness (content visible + fonts loaded) rather than sleeps; drive hover/focus/menus explicitly; keep the same crop for pairs; inspect every fram…
+**ما هي:** التقط واجهة قبل/بعد أو الحالة الحالية بالمسار والعرض والمقياس والثيم واللغة والمنطقة الزمنية والبيانات وحالة التفاعل نفسها؛ وانتظر جاهزية قابلة للملاحظة (المحتوى ظاهر + الخطوط محمّلة) بدل التوقفات؛ وقد التمرير/التركيز/القوائم صراحةً؛ وأبقِ القص نفسه للأزواج؛ وافحص كل إطار… — Capture before/after or current-state UI with identical route, viewport, scale, theme, locale, timezone, data and interaction state; wait for observable readiness (content visible + fonts loaded) rather than sleeps; drive hover/focus/menus explicitly; keep the same crop for pairs; inspect every fram…
 
 **متى:** عند التقاط صور قبل وبعد لواجهة بنفس المقاس والثيم والحالة لمقارنة عادلة / when capturing before/after UI screenshots with identical viewport, theme and interaction state
 
@@ -25291,7 +25291,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** To copy a look (not content) from a reference, grab frames at 0.5-1 s steps across appear/hold/emphasis/exit and measure glyph height, margins, alignment, colours, reveal order and read time; never ship the reference's people, words or memes.
+**ما هي:** لنسخ مظهر (لا محتوى) من مرجع، التقط إطارات بخطوات 0.5-1 ث عبر الظهور/الثبات/التأكيد/الخروج وقِس ارتفاع الحرف والهوامش والمحاذاة والألوان وترتيب الكشف وزمن القراءة؛ ولا تشحن أبدًا أشخاص المرجع أو كلماته أو ميماته. — To copy a look (not content) from a reference, grab frames at 0.5-1 s steps across appear/hold/emphasis/exit and measure glyph height, margins, alignment, colours, reveal order and read time; never ship the reference's people, words or memes.
 
 **متى:** حين تريد تقليد ستايل فيديو مرجعي دون نسخ محتواه بقياس الخطوط والهوامش والألوان / when matching a reference video's look without its content by measuring type, margins and colors
 
@@ -25364,7 +25364,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Before delivery every sung word and every musical hit is checked on the actual rendered frames.
+**ما هي:** قبل التسليم تُفحص كل كلمة مغناة وكل ضربة موسيقية على الإطارات المصيَّرة الفعلية. — Before delivery every sung word and every musical hit is checked on the actual rendered frames.
 
 **متى:** عند تسليم فيديو أغنية للتأكد أن كل كلمة وكل ضربة موسيقية تظهر على الإطار الصحيح / when every sung word and musical hit must be checked on the rendered frames before delivery
 
@@ -25435,7 +25435,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** ComfyUI outputs embed the exact prompt and workflow, so a still or clip can be reproduced or audited.
+**ما هي:** تضمّن مخرجات ComfyUI البرومبت وسير العمل بدقة، فيمكن إعادة إنتاج صورة أو مقطع أو تدقيقه. — ComfyUI outputs embed the exact prompt and workflow, so a still or clip can be reproduced or audited.
 
 **متى:** حين تريد معرفة البرومبت وسير العمل المستخدمين في صورة أو مقطع من ComfyUI لإعادة إنتاجه / when recovering the prompt and workflow embedded in a ComfyUI image or clip to reproduce it
 
@@ -25505,7 +25505,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Regenerates the identity reference so every hex in the doc is the one rendered.
+**ما هي:** يعيد توليد مرجع الهوية بحيث يكون كل hex في الوثيقة هو المصيَّر. — Regenerates the identity reference so every hex in the doc is the one rendered.
 
 **متى:** عند تحديث وثيقة الهوية لتطابق ألوانها الرموز المستخدمة فعليًا في CSS / when regenerating the identity doc so every hex matches the tokens actually rendered
 
@@ -25576,7 +25576,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Browser sweeps that open every registered screen on laptop and phone, screenshot it and fail on page errors, broken values (undefined/NaN/[object Object]), horizontal overflow, clipped controls or empty views; a clutter audit measures chrome vs content.
+**ما هي:** مسوح متصفح تفتح كل شاشة مسجلة على اللابتوب والهاتف وتلتقطها وتفشل عند أخطاء الصفحة والقيم التالفة (undefined/NaN/[object Object]) والفيض الأفقي والعناصر المقصوصة أو العروض الفارغة؛ وتدقيق ازدحام يقيس الإطار مقابل المحتوى. — Browser sweeps that open every registered screen on laptop and phone, screenshot it and fail on page errors, broken values (undefined/NaN/[object Object]), horizontal overflow, clipped controls or empty views; a clutter audit measures chrome vs content.
 
 **متى:** حين تريد فتح كل شاشات التطبيق على اللابتوب والجوال وكشف الأخطاء والتداخل والازدحام / when sweeping every app screen on laptop and phone for errors, overflow, clipped controls and clutter
 
@@ -25651,7 +25651,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** No final render, publishing, paid API call or third-party upload until the user explicitly approves the preview; local smoke renders are allowed.
+**ما هي:** لا تصيير نهائي ولا نشر ولا استدعاء API مدفوع ولا رفع لطرف ثالث حتى يعتمد المستخدم المعاينة صراحةً؛ وتصييرات الدخان المحلية مسموحة. — No final render, publishing, paid API call or third-party upload until the user explicitly approves the preview; local smoke renders are allowed.
 
 **متى:** عند منع الرندر النهائي أو النشر أو أي طلب مدفوع قبل أن يعتمد المستخدم المعاينة / when no final render, publishing or paid API call may happen before the user approves the preview
 
@@ -25725,7 +25725,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Probes the MP4 and writes output/qa_report.json; passes only if a video stream exists, codec is h264, width/height are even and duration > 0, and it explicitly records manual review NOT_DONE and word alignment NOT_VERIFIED.
+**ما هي:** يفحص MP4 ويكتب output/qa_report.json؛ ولا ينجح إلا إن وُجد مسار فيديو والترميز h264 والعرض/الارتفاع زوجيان والمدة > 0، ويسجل صراحةً أن المراجعة اليدوية NOT_DONE ومحاذاة الكلمات NOT_VERIFIED. — Probes the MP4 and writes output/qa_report.json; passes only if a video stream exists, codec is h264, width/height are even and duration > 0, and it explicitly records manual review NOT_DONE and word alignment NOT_VERIFIED.
 
 **متى:** حين تريد تقرير فحص سريع يثبت سلامة ملف MP4 ويوضح ما لم يُراجع يدويًا / when you need a quick MP4 QA receipt that also records what was not manually reviewed
 
@@ -25798,7 +25798,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Proves a render is real motion by extracting frames at several timestamps and requiring all SHA-256 hashes to differ.
+**ما هي:** يثبت أن التصيير حركة حقيقية باستخراج إطارات عند أزمنة عدة واشتراط اختلاف كل بصمات SHA-256. — Proves a render is real motion by extracting frames at several timestamps and requiring all SHA-256 hashes to differ.
 
 **متى:** إثبات أن الرندر فيديو متحرك فعلًا لا صورة ثابتة عبر مقارنة بصمات إطاراته / for proving a render is real motion, not a still, by requiring distinct frame hashes
 
@@ -25870,7 +25870,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Flags clips whose words exceed 10 Latin letters or contain digits/hyphens because AI video may misspell them.
+**ما هي:** يعلّم المقاطع التي تتجاوز كلماتها 10 أحرف لاتينية أو تحوي أرقامًا/شرطات لأن فيديو الذكاء الاصطناعي قد يخطئ في تهجئتها. — Flags clips whose words exceed 10 Latin letters or contain digits/hyphens because AI video may misspell them.
 
 **متى:** حين يحتوي مقطع فيديو مولد بالذكاء الاصطناعي على كلمات طويلة أو أرقام قد تُكتب خطأ / when an AI video clip contains long words, digits or hyphens it may misspell
 
@@ -25941,7 +25941,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Find a target's box in an image without a detector API: overlay numbered 1-9 vertical/horizontal strips, the model picks strips, region crop + upscale, refine; optional Gemini auto path; returns normalized box and center.
+**ما هي:** اعثر على مربع الهدف في صورة دون API كاشف: ركّب شرائح رأسية/أفقية مرقمة 1-9، يختار النموذج الشرائح، ثم اقتطاع المنطقة وتكبيرها وصقلها؛ ومسار Gemini تلقائي اختياري؛ ويعيد مربعًا مطبّعًا ومركزًا. — Find a target's box in an image without a detector API: overlay numbered 1-9 vertical/horizontal strips, the model picks strips, region crop + upscale, refine; optional Gemini auto path; returns normalized box and center.
 
 **متى:** حين تريد تحديد مكان عنصر في صورة وإرجاع مربعه دون واجهة لكشف الأجسام / when locating a target's box in an image without a detector API using numbered grid strips
 
@@ -26014,7 +26014,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Post-render checks absent from vendor CLI: yuv420p/H.264, real black frames, unintended freezes, LUFS within +/-1.5 of -14 and true peak <= -1 dB; motion energy still share/peak/mean; speed caps (text <= 3 px/frame, nothing > ~80 px/frame); contact sheet + 360 px phone test + review.md critique roun…
+**ما هي:** فحوص ما بعد التصيير الغائبة عن CLI المورّد: yuv420p/H.264، وإطارات سوداء حقيقية، وتجمدات غير مقصودة، وLUFS ضمن ±1.5 من -14 وذروة حقيقية <= -1 dB؛ وطاقة الحركة (نسبة الساكن/الذروة/المتوسط)؛ وحدود السرعة (النص <= 3 px/إطار، ولا شيء > ~80 px/إطار)؛ وورقة لقطات + اختبار الهاتف 360 px + جولات نقد review.md… — Post-render checks absent from vendor CLI: yuv420p/H.264, real black frames, unintended freezes, LUFS within +/-1.5 of -14 and true peak <= -1 dB; motion energy still share/peak/mean; speed caps (text <= 3 px/frame, nothing > ~80 px/frame); contact sheet + 360 px phone test + review.md critique roun…
 
 **متى:** عند فحص الفيلم بعد الرندر: الصوت والإطارات السوداء والتجمد وسرعة النص وعرض الجوال / when a rendered film needs post-render checks for loudness, black frames, freezes, text speed and phone view
 
@@ -26088,7 +26088,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Streams/duration; list Arabic fonts available.
+**ما هي:** التدفقات/المدة؛ وسرد الخطوط العربية المتاحة. — Streams/duration; list Arabic fonts available.
 
 **متى:** حين تريد معرفة مدة ملف ومساراته أو عرض الخطوط العربية المتاحة / when you need a file's streams and duration or a list of available Arabic fonts
 
@@ -26158,7 +26158,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** yuv420p H.264 even size, no unintended black/frozen, −14±1.5 LUFS, TP ≤ −1, blown/crushed checks.
+**ما هي:** yuv420p H.264 بحجم زوجي، بلا أسود/تجمد غير مقصود، −14±1.5 LUFS، TP ≤ −1، وفحوص الإفراط في السطوع/السحق. — yuv420p H.264 even size, no unintended black/frozen, −14±1.5 LUFS, TP ≤ −1, blown/crushed checks.
 
 **متى:** عند تسليم الفيديو للتأكد من الترميز وخلوه من السواد والتجمد وضبط الصوت والإضاءة / when checking a video before delivery for codec, black or frozen spots, loudness and blown or crushed exposure
 
@@ -26230,7 +26230,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Contact 2 fps, phone 360 px, first frame, strip, review.md P0/P1/P2 with 12 aesthetic lenses.
+**ما هي:** لقطات 2 fps، وهاتف 360 px، والإطار الأول، وشريط، وreview.md بـ P0/P1/P2 مع 12 عدسة جمالية. — Contact 2 fps, phone 360 px, first frame, strip, review.md P0/P1/P2 with 12 aesthetic lenses.
 
 **متى:** حين تريد مراجعة جمالية للفيلم بورقة إطارات وعرض الجوال وملاحظات مرتبة بالأولوية / when reviewing a film's aesthetics with contact sheets, phone view and a prioritized P0/P1/P2 review
 
@@ -26302,7 +26302,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Determinism, contract, taste checks.
+**ما هي:** فحوص الحتمية والعقد والذوق. — Determinism, contract, taste checks.
 
 **متى:** عند فحص مشروع موشن قبل الرندر للتأكد من الحتمية والالتزام بالعقد والذوق / when linting a motion project for determinism, contract and taste issues before rendering
 
@@ -26374,7 +26374,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cuts, shot lengths, first change, energy, palette → style_guide.md.
+**ما هي:** قطعات وأطوال لقطات وأول تغيير وطاقة ولوحة ألوان ← style_guide.md. — Cuts, shot lengths, first change, energy, palette → style_guide.md.
 
 **متى:** حين تريد تحليل فيديو مرجعي واستخراج طول اللقطات والطاقة والألوان في دليل أسلوب / when analysing a reference video's cuts, shot lengths, energy and palette into a style guide
 
@@ -26446,7 +26446,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Prove a loop seam.
+**ما هي:** إثبات درزة الحلقة. — Prove a loop seam.
 
 **متى:** حين تريد إثبات أن الفيديو يعيد نفسه بلا قطع ظاهر عند نقطة التكرار / when proving a looping film has a clean seam where it repeats
 
@@ -26518,7 +26518,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every line settled ≥ max(0.8 s, 0.3 s×words); hook ≤2 s.
+**ما هي:** كل سطر مستقر ≥ max(0.8 ث، 0.3 ث×الكلمات)؛ الخطاف ≤2 ث. — Every line settled ≥ max(0.8 s, 0.3 s×words); hook ≤2 s.
 
 **متى:** حين تريد التأكد أن كل سطر نص يثبت وقتًا كافيًا للقراءة وأن الهوك سريع / when checking every text line stays settled long enough to read and the hook lands within 2 s
 
@@ -26590,7 +26590,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Strongest settled frame baked as frame 0, frame count/duration/sound unchanged.
+**ما هي:** أقوى إطار مستقر يُخبز كإطار 0، مع بقاء عدد الإطارات والمدة والصوت دون تغيير. — Strongest settled frame baked as frame 0, frame count/duration/sound unchanged.
 
 **متى:** حين تريد أن يكون أول إطار في الفيديو أقوى لقطة ليظهر كغلاف دون تغيير المدة / when baking the strongest settled frame as frame 0 so the video opens on a good cover
 
@@ -26662,7 +26662,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Spelling, joined letters, RTL, order (ASS Encoding -1), descender dots, max 2 lines, 9:16 text between ~15% and ~80% height, off right UI, never over eyes/mouth.
+**ما هي:** الإملاء، والحروف المتصلة، وRTL، والترتيب (ASS Encoding -1)، ونقاط الحروف النازلة، وسطران كحد أقصى، ونص 9:16 بين نحو 15% و80% من الارتفاع، وبعيدًا عن واجهة اليمين، وليس فوق العينين/الفم أبدًا. — Spelling, joined letters, RTL, order (ASS Encoding -1), descender dots, max 2 lines, 9:16 text between ~15% and ~80% height, off right UI, never over eyes/mouth.
 
 **متى:** عند تسليم فيديو فيه نص عربي للتأكد من الإملاء واتصال الحروف والاتجاه وموضع النص / when delivering video with Arabic text: spelling, joined letters, RTL order, line count and safe placement
 
@@ -26734,7 +26734,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** reel.json scenes/elements served at /review/NAME/; user edits saved; apply writes bound edits; bump versions.
+**ما هي:** مشاهد/عناصر reel.json تُقدَّم على /review/NAME/؛ وتُحفظ تعديلات المستخدم؛ وapply يكتب التعديلات المربوطة؛ وتزيد الإصدارات. — reel.json scenes/elements served at /review/NAME/; user edits saved; apply writes bound edits; bump versions.
 
 **متى:** حين يريد المستخدم مراجعة مشاهد الفيلم وتعديل عناصره من صفحة ويب ثم تطبيق التعديلات ورفع النسخة / when the user wants to review reel scenes in a web page, save edits, apply them and bump the version
 
@@ -26808,7 +26808,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Opening a composition in a normal browser plays it in real time with audio, scaled to the window, with play/pause, scrub bar and Space key; hidden from renderers.
+**ما هي:** فتح تركيب في متصفح عادي يشغّله فورًا مع الصوت، بمقياس النافذة، مع تشغيل/إيقاف وشريط تمرير ومفتاح Space؛ ويختفي عن المصيِّرات. — Opening a composition in a normal browser plays it in real time with audio, scaled to the window, with play/pause, scrub bar and Space key; hidden from renderers.
 
 **متى:** عند فتح التكوين في متصفح عادي لمشاهدته بالصوت مع تشغيل وإيقاف وشريط تقديم / when watching a composition in a normal browser in real time with audio, play/pause and a scrub bar
 
@@ -26880,7 +26880,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Simulated numbers are labelled on screen and in data as illustrative, chosen values, not measurements, with a scope warning that it is not for safety decisions; break paths are called hypothetical.
+**ما هي:** الأرقام المحاكاة موسومة على الشاشة وفي البيانات بأنها توضيحية وقيم مختارة لا قياسات، مع تحذير نطاق بأنها ليست لقرارات السلامة؛ ومسارات الانكسار تُسمّى افتراضية. — Simulated numbers are labelled on screen and in data as illustrative, chosen values, not measurements, with a scope warning that it is not for safety decisions; break paths are called hypothetical.
 
 **متى:** حين تعرض المحاكاة أرقامًا مختارة لا مقاسة ويجب وسمها كتوضيحية مع تحذير من حدود استخدامها / when a simulation shows chosen, not measured, numbers that must be labelled illustrative with a scope warning
 
@@ -26951,7 +26951,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 2 fps contact sheet, phone-width test, optical-flow px/frame speed.
+**ما هي:** لقطات 2 fps، واختبار بعرض الهاتف، وسرعة التدفق البصري px/إطار. — 2 fps contact sheet, phone-width test, optical-flow px/frame speed.
 
 **متى:** عند مراجعة فيديو بلقطات متتابعة واختبار عرض الجوال وقياس سرعة الحركة بالبكسل لكل إطار / when checking a video with a 2 fps contact sheet, a phone-width test and optical-flow speed per frame
 
@@ -27020,7 +27020,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measure cuts, shot lengths, energy, palette of a reference into a style guide.
+**ما هي:** قِس القطعات وأطوال اللقطات والطاقة ولوحة ألوان مرجع في دليل أسلوب. — Measure cuts, shot lengths, energy, palette of a reference into a style guide.
 
 **متى:** حين يعطي المستخدم فيديو مرجعيًا ويريد استخراج إيقاع القطع وأطوال اللقطات والألوان كدليل أسلوب / when the user supplies a reference and wants its cuts, shot lengths, energy and palette as a style guide
 
@@ -27821,7 +27821,7 @@
 
 **ما هي:** اقتطع المناطق نفسها من إطارات المرجع ومن لوحة إطارات الرندر، وحّد الارتفاع وضعها جنبًا إلى جنب (مع تكبير لمنطقة العنوان والتاريخ)، واحكم بعينك؛ قارن وزن الضربة بنسبة تغطية الحبر عند عرض متساوٍ بدل التخمين. — Crop the same regions from the reference frames and the render's contact-sheet tiles, equalise heights, place them side by side (plus a zoom), judge by eye; compare stroke weight by ink coverage at equal width.
 
-**متى:** claiming a render matches a reference
+**متى:** حين تدّعي أن الرندر يطابق مرجعًا / claiming a render matches a reference
 
 **كيف:** `node tools/render_html.cjs --in film.html --out out/preview.png --preview` → tiles; Pillow: crop → resize to equal height → paste pairs; ink coverage = mask.mean() of white/gold masks at equal width (video 0.134 ≈ Amiri Bold 0.134 in the Friday study). Record what matched and what did not in README/STYLE.md; the user sees the composite before any 'done'.
 
@@ -27897,7 +27897,7 @@
 
 **ما هي:** ولّد مرجعًا اصطناعيًا تعرف حقيقته (لقطات، انتقالات، أحداث نص بخطوط معلومة)، حلّله بالخط نفسه الذي ستستخدمه على فيديو المستخدم، وقارن النوع والمدى والتوقيت والخط بالحقيقة قبل أن تثق بأي قياس على مرجع حقيقي. — Generate a synthetic reference whose truth you wrote (shots, transitions, text events in known fonts), analyse it with the same pipeline you will run on the user's video, and compare kind, span, timing and font against the truth before trusting any measurement on a real reference.
 
-**متى:** before claiming a reference analysis is exact; after touching any analyser
+**متى:** قبل الادعاء بأن تحليل المرجع دقيق؛ وبعد تعديل أي محلل / before claiming a reference analysis is exact; after touching any analyser
 
 **كيف:** `cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present).
 

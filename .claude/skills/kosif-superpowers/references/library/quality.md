@@ -1,6 +1,6 @@
 # الاختبارات والجودة والأمان — QA & security (`quality`)
 
-> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -24,17 +24,18 @@
 |---|---:|---|
 | `proven` | 94 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 58 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 195 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 200 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 3 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 94 | 📦 install: needs a package, binary or model first |
 | `key` | 15 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 5 | 💡 idea: not built |
-| **المجموع** | **464** | |
+| **المجموع** | **469** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
+| `agent-guard` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | `python3 scripts/agent_guard.py rules` | tested-here |
 | `anchor-gate` | بوابة حفظ الحقائق عند إعادة الصياغة | `python3 scripts/anchor_gate.py --before proofs/general-writing/pairs/en_before.txt --after proofs/general-writing/pairs/en_after_drift.txt --text` | tested-here |
 | `atlas-audit-synthesis` | تحويل مراجعة الأطلس إلى بيان مُراجَع | `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md` | untested |
 | `atlas-body-audit` | مراجعة ساكنة لنصوص مهارات الأطلس | `python3 scripts/atlas_body_audit.py --index ./atlas-index.json --out ./out/atlas-audit-private --limit 200` | tested-here |
@@ -52,6 +53,7 @@
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
+| `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |
 | `local-project-audit` | فحص المشروع المحلي دون تشغيل | `python3 scripts/local_project_audit.py ./my-project` | tested-here |
 | `package-skill` | تحزيم المهارة للرفع إلى claude.ai | `python3 scripts/package_skill.py` | tested-here |
 | `prompt-lab` | مختبر البرومبت | `python3 scripts/prompt_lab.py kinds` | tested-here |
@@ -66,7 +68,7 @@
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
 | `skill-layout` | خريطة ترتيب المهارة | `python3 scripts/skill_layout.py build` | tested-here |
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
-| `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir out/demo` | tested-here |
+| `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |
 | `tell-scan` | فاحص العبارات الكتابية النمطية | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | tested-here |
 | `verify-video` | بوابة فحص تسليم الفيديو | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --duration 15 --json ./out/report.json` | tested-here |
 | `video-workflow-bridge` | جسر سير عمل الفيديو | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |
@@ -80,7 +82,7 @@
 | `api-testing` | 22 | [api-testing.md](../powers/api-testing.md) |
 | `qa-verification` | 384 | [qa-verification.md](../powers/qa-verification.md) |
 | `security-safety` | 23 | [security-safety.md](../powers/security-safety.md) |
-| `verification-evals` | 35 | [verification-evals.md](../powers/verification-evals.md) |
+| `verification-evals` | 40 | [verification-evals.md](../powers/verification-evals.md) |
 
 ## كل القدرات / every power
 
@@ -391,7 +393,7 @@
 | `SEC-03` | تغليف المدخلات غير الموثوقة للنموذج | Wrap untrusted input before a model reads it | documented | claude:tools |
 | `SEC-04` | افصل القارئ عن المنفّذ | Split the reader from the actor | documented |  |
 | `SEC-05` | نظافة الأسرار | Secrets hygiene | documented | key:unspecified |
-| `SEC-06` | البحث عن الأسرار المسرّبة | Leaked-secret scanning | documented | git, mcp:github, key:unspecified, gitleaks |
+| `SEC-06` | البحث عن الأسرار المسرّبة | Leaked-secret scanning | documented | git, mcp:github, gitleaks |
 | `SEC-07` | عند تسرّب سر | When a secret leaks | documented |  |
 | `SEC-08` | مراجعة أمان للتغييرات | Security review of a change | documented | node |
 | `SEC-10` | المهارات والإضافات سلسلة توريد | Skills, plugins and MCP servers are supply chain | documented |  |
@@ -435,6 +437,11 @@
 | `CHECK-33` | قائمة سطح الملاحظة | Observable-surface checklist | documented |  |
 | `CHECK-34` | المصحّح يعطي 100% على نفسه أولًا | Scorer must score 100% on itself first | documented | python3 |
 | `CHECK-35` | ملاحظات استرداد صادقة وخط أساس | Honest recovery notes and a measured baseline | documented | npm:rea |
+| `CHECK-36` | سجل قيم بمصدر واقتباس لكل رقم | One value registry: a source and the supporting sentence for every number | documented | python3 |
+| `CHECK-37` | النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا | Text refers to numbers by id and fails closed | documented | python3 |
+| `CHECK-38` | ملف فجوات بدل اختراع رقم | An explicit gaps list instead of an invented number | documented |  |
+| `CHECK-39` | مراجعة حقائق تعيد الرقم المنشور | A fact-check pass that restores the published figure | documented | python3 |
+| `CHECK-40` | دفتر حفظ: ابحث عن كل وحدة | A conservation ledger: account for every unit | documented | python3 |
 | `QA-228` | تعاقب حلقات تشغيل المعاينات في الشبكة | Staggered loop phases for live grids | seen |  |
 | `QA-229` | مقارنة إعادة بناء لقطة بلقطة | Shot-for-shot remake comparison | seen | ffmpeg |
 | `QA-230` | إغلاق حلقة بلا تقطيع | Seamless loop closure | seen |  |

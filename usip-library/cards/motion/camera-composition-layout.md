@@ -1,6 +1,6 @@
 # `camera-composition-layout` — الموشن والمونتاج والسينما (425 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/camera-composition-layout.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/camera-composition-layout.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -444,7 +444,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Spring track on log(scale) for camera zooms with several targets.
+**ما هي:** مسار نابضي على log(scale) لتكبيرات الكاميرا ذات الأهداف المتعددة. — Spring track on log(scale) for camera zooms with several targets.
 
 **متى:** حين تحتاج زووم كاميرا يتنقل بين عدة أهداف بحركة زنبركية ناعمة / when a camera zoom must travel through several targets with a smooth spring feel
 
@@ -516,7 +516,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sticky 72px glass top bar, left/right rails and a central stage that collapse progressively; at 768px it becomes a 4-tab bottom nav with safe-area padding.
+**ما هي:** شريط علوي زجاجي لاصق بارتفاع 72px مع عمودين جانبيين ومسرح مركزي ينطوون تدريجيًا؛ وعند 768px يصبح تنقلًا سفليًا من 4 تبويبات مع هوامش المنطقة الآمنة. — Sticky 72px glass top bar, left/right rails and a central stage that collapse progressively; at 768px it becomes a 4-tab bottom nav with safe-area padding.
 
 **متى:** عند بناء واجهة تطبيق عربية بثلاثة أعمدة تتحول لشريط تنقل سفلي على الجوال / for an Arabic RTL app layout whose side rails collapse into a bottom tab bar on mobile
 
@@ -592,7 +592,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** All spacing/positioning uses inline/block logical properties so the same CSS mirrors correctly for Arabic.
+**ما هي:** تستخدم كل المسافات والمواضع خصائص منطقية inline/block فينعكس CSS نفسه صحيحًا للعربية. — All spacing/positioning uses inline/block logical properties so the same CSS mirrors correctly for Arabic.
 
 **متى:** حين يجب أن تنعكس الصفحة تلقائيا من اليمين لليسار للعربية بنفس CSS / when the same CSS must mirror correctly for Arabic right-to-left pages
 
@@ -666,7 +666,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Layout rules baked into the style line: 9:16 lockups upper middle with 10% safe margins and object off-centre lower third; 16:9 text left third, objects right; 1:1 centred type above object; 40–50% negative space; top-centre wordmark strip.
+**ما هي:** قواعد تخطيط مدمجة في سطر النمط: في 9:16 تكون العلامات في أعلى الوسط بهوامش آمنة 10% والعنصر خارج المركز في الثلث السفلي؛ وفي 16:9 النص في الثلث الأيسر والعناصر يمينًا؛ وفي 1:1 نص متمركز فوق العنصر؛ مع 40–50% فراغ سلبي وشريط شعار في أعلى الوسط. — Layout rules baked into the style line: 9:16 lockups upper middle with 10% safe margins and object off-centre lower third; 16:9 text left third, objects right; 1:1 centred type above object; 40–50% negative space; top-centre wordmark strip.
 
 **متى:** عند تحديد أماكن النص والعنصر حسب مقاس الفيديو 9:16 أو 16:9 أو 1:1 / for placing text and objects per aspect ratio (9:16, 16:9, 1:1) with safe margins
 
@@ -741,7 +741,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Five-clip camera plan that escalates with the story arc: wide establishing, medium eye-level, over-the-shoulder three-quarter, slightly low angle, close-up on posture with room for the reveal.
+**ما هي:** خطة كاميرا من خمس لقطات تتصاعد مع قوس القصة: لقطة تأسيسية واسعة، ثم متوسطة بمستوى العين، ثم فوق الكتف بثلاثة أرباع، ثم زاوية منخفضة قليلًا، ثم لقطة قريبة على الوضعية مع مساحة للكشف. — Five-clip camera plan that escalates with the story arc: wide establishing, medium eye-level, over-the-shoulder three-quarter, slightly low angle, close-up on posture with room for the reveal.
 
 **متى:** حين تخطط خمس لقطات لقصة تتصاعد من لقطة واسعة إلى لقطة قريبة / when planning a five-clip story whose shots escalate from wide to close-up
 
@@ -817,7 +817,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each story beat is covered twice: a wide 35 mm establishing frame with layered depth and an intimate 85 mm close-up on hands, posture and eyes.
+**ما هي:** تُغطى كل نبضة في القصة مرتين: إطار تأسيسي واسع بعدسة 35 mm بعمق متعدد الطبقات، ولقطة قريبة حميمة بعدسة 85 mm على اليدين والوضعية والعينين. — Each story beat is covered twice: a wide 35 mm establishing frame with layered depth and an intimate 85 mm close-up on hands, posture and eyes.
 
 **متى:** عند تغطية كل لحظة عاطفية بلقطة واسعة وأخرى قريبة للتفاصيل / for covering each emotional story beat with a wide establishing frame and an intimate close-up
 
@@ -892,7 +892,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Fixed tripod three-quarter medium food close-up at 45 degrees with a 50 mm look and shallow depth of field, allowing only tiny motivated macro pushes.
+**ما هي:** لقطة طعام قريبة متوسطة بثلاثة أرباع على حامل ثابت بزاوية 45 درجة ومظهر 50 mm وعمق ميدان ضحل، مع السماح بدفعات ماكرو صغيرة مبررة فقط. — Fixed tripod three-quarter medium food close-up at 45 degrees with a 50 mm look and shallow depth of field, allowing only tiny motivated macro pushes.
 
 **متى:** حين تصور طعاما بلقطة ثابتة مائلة قريبة وعمق ميدان ضحل في كل المقاطع / when shooting food clips with one fixed angled close-up and shallow depth of field
 
@@ -967,7 +967,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera position + look target keyed in time with smoothstep between keys (still between events).
+**ما هي:** موضع الكاميرا وهدف النظر مفتاحان زمنيان يُستكملان بين المفاتيح بدالة smoothstep (ثابتة بين الأحداث). — Camera position + look target keyed in time with smoothstep between keys (still between events).
 
 **متى:** عند تحريك كاميرا ثلاثية الأبعاد بين مواضع محددة بالزمن مع ثبات بين الأحداث / for moving a 3D camera between timed positions and look targets with still holds between events
 
@@ -1042,7 +1042,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A 2.5D camera track: each layer translates by its own factor of one camera value while a slow zoom centred low in frame pushes in; a black foreground alley edge moves fastest.
+**ما هي:** مسار كاميرا 2.5D: تنتقل كل طبقة بعامل خاص بها من قيمة كاميرا واحدة بينما يدفع تكبير بطيء متمركز في أسفل الإطار للداخل؛ وحافة الزقاق السوداء في المقدمة هي الأسرع. — A 2.5D camera track: each layer translates by its own factor of one camera value while a slow zoom centred low in frame pushes in; a black foreground alley edge moves fastest.
 
 **متى:** حين تريد عمقا وهميا من طبقات SVG تتحرك بسرعات مختلفة مع اقتراب بطيء / when building 2.5D depth from SVG layers moving at different rates under a slow push-in
 
@@ -1115,7 +1115,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Automatic edit plans keep keywords below the detected face box and captions inside the 9:16 safe area.
+**ما هي:** تُبقي خطط التحرير التلقائية الكلمات المفتاحية أسفل مربع الوجه المكتشف والترجمات داخل المنطقة الآمنة 9:16. — Automatic edit plans keep keywords below the detected face box and captions inside the 9:16 safe area.
 
 **متى:** عند وضع الكلمات والترجمة في فيديو عمودي دون تغطية الوجه / when placing keywords and captions in a vertical video without covering the detected face
 
@@ -1189,7 +1189,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Slow scale + translate drift across an image or clip.
+**ما هي:** انجراف بطيء بالتحجيم والإزاحة عبر صورة أو مقطع. — Slow scale + translate drift across an image or clip.
 
 **متى:** حين تريد تحريك صورة ثابتة أو لقطة بتكبير وانزلاق بطيء لتبدو حية / when you want a slow zoom-and-pan drift over a still photo or clip
 
@@ -1197,7 +1197,7 @@
 
 **المعاملات:** scale 1.05->1.2, xPercent 0->-12, 4 s linear
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** تحريك الصور · صورة ثابتة · زووم بطيء · photo pan · slow zoom
 
@@ -1213,7 +1213,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -1265,13 +1265,13 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Reframe a clip by tweening clipPath inset and offset on the inner wrapper.
+**ما هي:** يعيد تأطير مقطع بتحريك inset الخاص بـ clipPath والإزاحة على الغلاف الداخلي. — Reframe a clip by tweening clipPath inset and offset on the inner wrapper.
 
 **متى:** عند إعادة تأطير لقطة أو قصها تدريجيًا وتحريكها داخل الإطار / for reframing or cropping a clip with an animated inset and offset
 
 **كيف:** tl.to('#clip .inner',{clipPath:'inset(8% 12% 6% 10%)',xPercent:-4,duration:1},2).
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** قص الفيديو · كروب · تأطير · crop animation · mask
 
@@ -1287,7 +1287,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -1339,7 +1339,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Pattern for full-frame motion where a persistent background layer spans scenes while foreground scenes swap.
+**ما هي:** نمط لحركة ملء الشاشة تمتد فيها طبقة خلفية دائمة عبر المشاهد بينما تتبدل مشاهد المقدمة. — Pattern for full-frame motion where a persistent background layer spans scenes while foreground scenes swap.
 
 **متى:** حين تبني مشاهد بملء الشاشة تتبدل مقدمتها بينما تبقى طبقة الخلفية مستمرة / when full-frame scenes swap in the foreground while one background layer persists across them
 
@@ -1414,7 +1414,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Zoom onto a non-centered element: outer wrapper scales around 50% 50%, inner wrapper counter-translates (T = -offset).
+**ما هي:** تكبير على عنصر غير مركزي: يتحجم الغلاف الخارجي حول 50% 50%، ويعاكس الغلاف الداخلي الإزاحة (T = -offset). — Zoom onto a non-centered element: outer wrapper scales around 50% 50%, inner wrapper counter-translates (T = -offset).
 
 **متى:** حين تريد التكبير على عنصر ليس في منتصف الشاشة / when you need to zoom onto an off-centre element on screen
 
@@ -1492,7 +1492,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two-phase virtual camera: static framing, then the world translates to keep a moving typing caret locked in view.
+**ما هي:** كاميرا افتراضية بمرحلتين: تأطير ثابت، ثم يتحرك العالم ليُبقي مؤشر الكتابة المتحرك في المنظر. — Two-phase virtual camera: static framing, then the world translates to keep a moving typing caret locked in view.
 
 **متى:** عند كتابة نص متحرك وتريد أن تتبع الكاميرا مؤشر الكتابة ليبقى ظاهرًا / when text is being typed and the camera should follow the caret to keep it in view
 
@@ -1570,7 +1570,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Sequential zoom phases (pull-back / focus / push) plus continuous micro-drift spanning the composition; patterns like bookend pull.
+**ما هي:** مراحل تكبير متتابعة (سحب للخلف / تركيز / دفع) مع انجراف دقيق مستمر يمتد على التركيب؛ وأنماط مثل bookend pull. — Sequential zoom phases (pull-back / focus / push) plus continuous micro-drift spanning the composition; patterns like bookend pull.
 
 **متى:** حين يحتاج المشهد مراحل زووم متتالية من تبعيد وتركيز ودفع مع انجراف خفيف مستمر / when a scene needs successive pull-back, focus and push phases with a constant subtle drift
 
@@ -1648,7 +1648,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Simulate zoom/pan/focus-lock by transforming one .world wrapper with translate(x,y) scale(S); counter-translate T = -offset x S.
+**ما هي:** محاكاة التكبير/التحريك/قفل التركيز بتحويل غلاف .world واحد بـ translate(x,y) scale(S)؛ مع إزاحة معاكسة T = -offset x S. — Simulate zoom/pan/focus-lock by transforming one .world wrapper with translate(x,y) scale(S); counter-translate T = -offset x S.
 
 **متى:** حين تريد كاميرا افتراضية تعمل زووم وتحريك وتثبيت تركيز بتحريك غلاف واحد للمشهد / for faking zoom, pan and focus-lock by transforming one world wrapper
 
@@ -1726,7 +1726,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Blur (and slight dim) off-focus layers through a --dof variable while the focal element stays sharp: single pull, two-plane rack, or blur-the-cluster while pushing in.
+**ما هي:** تمويه (وتعتيم طفيف) للطبقات خارج البؤرة عبر متغير --dof بينما يبقى العنصر البؤري حادًا: سحب واحد، أو تبديل مستويين، أو تمويه المجموعة أثناء الدفع للداخل. — Blur (and slight dim) off-focus layers through a --dof variable while the focal element stays sharp: single pull, two-plane rack, or blur-the-cluster while pushing in.
 
 **متى:** حين تريد تمويه الطبقات غير المهمة وإبقاء العنصر الأساسي حادًا أو نقل التركيز بين مستويين / when off-focus layers should blur while the key element stays sharp, or focus racks between two planes
 
@@ -1804,7 +1804,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Elements start clustered at center and expand to CSS-authored target positions in lockstep with one driver (x = targetX x progress).
+**ما هي:** تبدأ العناصر متجمعة في المركز وتتمدد إلى مواضع هدف مكتوبة في CSS بتناسق مع محرك واحد (x = targetX x progress). — Elements start clustered at center and expand to CSS-authored target positions in lockstep with one driver (x = targetX x progress).
 
 **متى:** عند عناصر تبدأ متجمعة في المنتصف ثم تتفرق معًا إلى أماكنها النهائية / for elements that start clustered at centre and spread out together to their final positions
 
@@ -1882,7 +1882,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two cards side by side with opposing rotateY tilts, sliding in from their sides, floating in phase opposition.
+**ما هي:** بطاقتان جنبًا إلى جنب بميلان rotateY متعاكس، تنزلقان من جانبيهما وتطفوان بتعاكس الطور. — Two cards side by side with opposing rotateY tilts, sliding in from their sides, floating in phase opposition.
 
 **متى:** حين تعرض بطاقتين جنبًا إلى جنب بميلان متعاكس تدخلان من الجانبين وتطفوان / for showing two side-by-side cards with opposite 3D tilts sliding in and floating
 
@@ -1960,7 +1960,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Recognised moves: push-in, pull-out, dolly, tracking, orbit, arc, crane, handheld, whip pan, pan, tilt, rack focus, dolly-zoom, drone, flyover, static, locked-off, POV, zoom; lint rejects more than one per shot.
+**ما هي:** المفردات المعترف بها: push-in وpull-out وdolly وtracking وorbit وarc وcrane وhandheld وwhip pan وpan وtilt وrack focus وdolly-zoom وdrone وflyover وstatic وlocked-off وPOV وzoom؛ ويرفض lint أكثر من واحدة للقطة. — Recognised moves: push-in, pull-out, dolly, tracking, orbit, arc, crane, handheld, whip pan, pan, tilt, rack focus, dolly-zoom, drone, flyover, static, locked-off, POV, zoom; lint rejects more than one per shot.
 
 **متى:** حين تكتب برومبت فيديو وتريد حركة كاميرا واحدة واضحة لكل لقطة / when writing video prompts that should name exactly one camera move per shot
 
@@ -2036,7 +2036,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Labeled stations on one oversized canvas traversed by one virtual camera with lateral/diagonal pans, landing on the last.
+**ما هي:** محطات معنونة على لوحة واحدة ضخمة تجتازها كاميرا افتراضية واحدة بتحريك جانبي/قطري، وتستقر عند الأخيرة. — Labeled stations on one oversized canvas traversed by one virtual camera with lateral/diagonal pans, landing on the last.
 
 **متى:** حين تريد التنقل بالكاميرا بين محطات أو نقاط مسماة على لوحة واحدة كبيرة / when one camera pans across labeled stations on a single oversized canvas
 
@@ -2113,7 +2113,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A multi-leg motivated camera journey across one world: action roundtrip (dive, click fires, swoop to consequence) or cursorless cinematic 3D flight with motion blur and DoF.
+**ما هي:** رحلة كاميرا مبررة متعددة المراحل عبر عالم واحد: ذهاب وإياب بالفعل (غوص، تطلق النقرة، انقضاض إلى النتيجة) أو طيران سينمائي ثلاثي الأبعاد بلا مؤشر مع تمويه حركة وعمق ميدان. — A multi-leg motivated camera journey across one world: action roundtrip (dive, click fires, swoop to consequence) or cursorless cinematic 3D flight with motion blur and DoF.
 
 **متى:** عند رحلة كاميرا متعددة المراحل عبر عالم واحد مثل غوص ونقرة ثم انتقال للنتيجة أو طيران سينمائي / for a multi-leg camera journey across one world: dive, click and swoop, or a cinematic 3D flight
 
@@ -2190,7 +2190,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Open tight on a detail, micro-action in close-up, then one continuous decelerating zoom-out reveals the whole workspace.
+**ما هي:** تبدأ بلقطة قريبة على تفصيل، ثم فعل صغير قريب، ثم تكشف تصغيرة متباطئة واحدة مستمرة مساحة العمل كلها. — Open tight on a detail, micro-action in close-up, then one continuous decelerating zoom-out reveals the whole workspace.
 
 **متى:** حين تبدأ بلقطة قريبة على تفصيلة ثم تبعد الكاميرا ببطء لتكشف مساحة العمل كاملة / when opening tight on a detail, then one long zoom-out reveals the whole workspace
 
@@ -2267,7 +2267,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** N tiles/cards/logos self-assemble in a staggered cascade into a grid or list, optional zoom-out reveal.
+**ما هي:** تتجمع N من الشرائح/البطاقات/الشعارات ذاتيًا في شلال متدرج إلى شبكة أو قائمة، مع كشف تصغير اختياري. — N tiles/cards/logos self-assemble in a staggered cascade into a grid or list, optional zoom-out reveal.
 
 **متى:** عند عرض شعارات أو بطاقات تتجمع بالتتابع في شبكة أو قائمة / for logos, tiles or cards that assemble one after another into a grid or list
 
@@ -2344,7 +2344,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Two equal items enter from opposite wings with mirrored 3D book-open tilts, then inner-edge pill badges spring-pop.
+**ما هي:** عنصران متساويان يدخلان من جناحين متقابلين بميلان كتاب ثلاثي الأبعاد معكوس، ثم تنبثق شارات كبسولة عند الحافتين الداخليتين بنابض. — Two equal items enter from opposite wings with mirrored 3D book-open tilts, then inner-edge pill badges spring-pop.
 
 **متى:** حين تقارن بين عنصرين متساويين يدخلان من الجانبين مع شارات تظهر بينهما / when comparing two equal items that enter from opposite sides with badges popping in between
 
@@ -2421,7 +2421,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Web sizes vanish on video: headlines 64-120 px, body 28-42 px, labels 18-24 px, decorative opacity 12-25%, borders 2-4 px, padding 60-140 px; 6-10 visual roles for produced marketing frames; no full-screen linear gradients on dark (H.264 banding).
+**ما هي:** تختفي مقاييس الويب في الفيديو: العناوين 64-120 px، والنص 28-42 px، والتسميات 18-24 px، وعتامة الزخارف 12-25%، والحدود 2-4 px، والحشو 60-140 px؛ و6-10 أدوار بصرية للإطارات التسويقية المنتجة؛ ولا تدرجات خطية ملء الشاشة على الداكن (تخطط H.264). — Web sizes vanish on video: headlines 64-120 px, body 28-42 px, labels 18-24 px, decorative opacity 12-25%, borders 2-4 px, padding 60-140 px; 6-10 visual roles for produced marketing frames; no full-screen linear gradients on dark (H.264 banding).
 
 **متى:** حين تحدد أحجام الخطوط والحدود والمسافات لفيديو بدل أحجام الويب أو تخطط لطبقات الإطار / when setting text sizes, borders and padding for video rather than web, or planning frame layers
 
@@ -2497,7 +2497,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Video inside a framed window over a designed background.
+**ما هي:** فيديو داخل نافذة مؤطرة فوق خلفية مصممة. — Video inside a framed window over a designed background.
 
 **متى:** حين تضع فيديو داخل نافذة بإطار فوق خلفية مصممة / when placing a video inside a framed window over a designed background
 
@@ -2571,7 +2571,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Simple title card with fade and a slide show with section headers + top-level composition example.
+**ما هي:** بطاقة عنوان بسيطة بتلاشٍ وعرض شرائح برؤوس أقسام + مثال تركيب من المستوى الأعلى. — Simple title card with fade and a slide show with section headers + top-level composition example.
 
 **متى:** عند عمل بطاقة عنوان بسيطة بتلاش أو عرض شرائح بعناوين أقسام / for a simple fading title card or a slideshow with section headers
 
@@ -2645,7 +2645,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Action-safe 90% of frame (5% inset each edge); title-safe 80% (10% inset).
+**ما هي:** المنطقة الآمنة للفعل 90% من الإطار (هامش 5% من كل حافة)؛ والآمنة للعنوان 80% (هامش 10%). — Action-safe 90% of frame (5% inset each edge); title-safe 80% (10% inset).
 
 **متى:** حين تريد إبقاء النصوص والعناصر المهمة داخل حدود آمنة بعيدًا عن حواف الإطار / when keeping titles and key action inside safe margins away from the frame edges
 
@@ -2721,7 +2721,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Precomputes where captions can go (global + per-sentence windows) plus scene palette, optics and lighting from the matte.
+**ما هي:** يحسب مسبقًا أين يمكن وضع الترجمات (نوافذ عامة ولكل جملة) مع لوحة ألوان المشهد والبصريات والإضاءة من القناع. — Precomputes where captions can go (global + per-sentence windows) plus scene palette, optics and lighting from the matte.
 
 **متى:** قبل كتابة الترجمة حين تريد معرفة الأماكن المتاحة للنص من قناع الشخص / before authoring captions, to find from the subject matte where text can go
 
@@ -2795,7 +2795,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Vertical stack from face down: keyword under the chin, caption under the keyword; motifs on the free side; text never over eyes or mouth.
+**ما هي:** رصّ عمودي من الوجه نزولًا: الكلمة المفتاحية تحت الذقن والترجمة تحتها؛ والزخارف في الجهة الحرة؛ ولا يقع النص فوق العينين أو الفم. — Vertical stack from face down: keyword under the chin, caption under the keyword; motifs on the free side; text never over eyes or mouth.
 
 **متى:** عند ترتيب الكلمة والترجمة تحت الذقن بعيدا عن العينين والفم / for stacking a keyword under the chin and captions below it, never over eyes or mouth
 
@@ -2871,7 +2871,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** wall-embed (text printed on a flat real surface, four conditions), corner-column-crown (clean region beside subject), portrait-header (subject fills center, top banner); pick the bigger clean zone, honor gaze 'looking room', avoid baked graphics.
+**ما هي:** wall-embed (نص مطبوع على سطح حقيقي مسطح، أربع حالات)، وcorner-column-crown (منطقة نظيفة بجانب الشخص)، وportrait-header (الشخص يملأ الوسط، شريط علوي)؛ اختر المنطقة النظيفة الأكبر، واحترم «مساحة النظر»، وتجنب الرسوم المدمجة. — wall-embed (text printed on a flat real surface, four conditions), corner-column-crown (clean region beside subject), portrait-header (subject fills center, top banner); pick the bigger clean zone, honor gaze 'looking room', avoid baked graphics.
 
 **متى:** حين تختار مكان الترجمة حسب نوع اللقطة والمساحة الخالية واتجاه نظر الشخص / when choosing where captions go based on shot type, clean space and the subject's gaze
 
@@ -2946,7 +2946,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Register-gated reaction beats applied to the footage after the matte composite so subject + text + plate move as one: charge-dim, punch zoom, screen shake, grain.
+**ما هي:** نبضات تفاعل مقيدة بالسجل تُطبَّق على اللقطات بعد دمج القناع فيتحرك الشخص والنص واللوحة كوحدة: تعتيم شحن، وتكبير ضربة، واهتزاز شاشة، وحبيبات. — Register-gated reaction beats applied to the footage after the matte composite so subject + text + plate move as one: charge-dim, punch zoom, screen shake, grain.
 
 **متى:** حين تريد لحظات تفاعل على اللقطة كتعتيم أو زووم أو اهتزاز أو حبيبات يتحرك فيها الشخص والنص معًا / for reaction beats on footage (dim, punch, shake, grain) that move subject, text and plate together
 
@@ -3024,7 +3024,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Five zones: fullscreen, whiteboard-area (40 px inset landscape / bottom 45% portrait), lower-third (bottom 30%), side-panel (right 42% / bottom 40% portrait), video-overlay (transparent card root).
+**ما هي:** خمس مناطق: fullscreen وwhiteboard-area (هامش 40 px أفقيًا / أسفل 45% عموديًا) وlower-third (أسفل 30%) وside-panel (يمين 42% / أسفل 40% عموديًا) وvideo-overlay (جذر بطاقة شفاف). — Five zones: fullscreen, whiteboard-area (40 px inset landscape / bottom 45% portrait), lower-third (bottom 30%), side-panel (right 42% / bottom 40% portrait), video-overlay (transparent card root).
 
 **متى:** حين تحدد مكان البطاقة على الشاشة: ملء الشاشة أو الثلث السفلي أو لوحة جانبية أو فوق الفيديو / when deciding where a card sits: fullscreen, lower third, side panel or over the video
 
@@ -3098,7 +3098,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Camera/screen shake jitter, anchored to music events (drop / crash / kick).
+**ما هي:** اهتزاز كاميرا/شاشة مرتبط بأحداث الموسيقى (drop / crash / kick). — Camera/screen shake jitter, anchored to music events (drop / crash / kick).
 
 **متى:** عند هز الشاشة مع ضربات الموسيقى مثل الدروب أو الكيك / for shaking the screen on music hits like a drop, crash or kick
 
@@ -3175,7 +3175,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Vertigo dolly zoom (scale vs perspective), anchored to music events (phrase / build).
+**ما هي:** دوللي زووم فيرتيغو (تحجيم مقابل المنظور) مرتبط بأحداث الموسيقى (phrase / build). — Vertigo dolly zoom (scale vs perspective), anchored to music events (phrase / build).
 
 **متى:** حين تريد تأثير الدوار على بناء الموسيقى أو بداية جملة لحنية / for a vertigo dolly zoom timed to a musical build or phrase
 
@@ -3252,7 +3252,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Violent crash zoom-in, anchored to music events (drop / surge).
+**ما هي:** تكبير عنيف مفاجئ للداخل مرتبط بأحداث الموسيقى (drop / surge). — Violent crash zoom-in, anchored to music events (drop / surge).
 
 **متى:** عند زووم عنيف ومفاجئ على الدروب أو ذروة الموسيقى / for a violent crash zoom on a music drop or surge
 
@@ -3329,7 +3329,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scattered tiles fly in and pack into a grid, anchored to music events (beat / build).
+**ما هي:** تتطاير شرائح متناثرة وتتراص في شبكة، مرتبطة بأحداث الموسيقى (beat / build). — Scattered tiles fly in and pack into a grid, anchored to music events (beat / build).
 
 **متى:** حين تريد مربعات متناثرة تطير وتتجمع في شبكة مع الإيقاع / when scattered tiles should fly in and pack into a grid on the beat or build
 
@@ -3406,7 +3406,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Diagonal tile sweep assembling a poster, anchored to music events (build / reveal).
+**ما هي:** كنسة شرائح قطرية تجمع ملصقًا، مرتبطة بأحداث الموسيقى (build / reveal). — Diagonal tile sweep assembling a poster, anchored to music events (build / reveal).
 
 **متى:** عند كشف بوستر بمربعات تتجمع في مسح قطري مع بناء الموسيقى / for revealing a poster with a diagonal sweep of tiles on a music build or reveal
 
@@ -3483,7 +3483,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scale and zoom interpolated in log space.
+**ما هي:** تحجيم وتكبير يُستكملان في الفضاء اللوغاريتمي. — Scale and zoom interpolated in log space.
 
 **متى:** حين تريد أن يتم التكبير والتحجيم باستيفاء لوغاريتمي داخل مشروع موشن / when scale and zoom should be interpolated in log space inside a motion-kit project
 
@@ -3561,7 +3561,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decaying seeded camera hit.
+**ما هي:** ضربة كاميرا مبذورة متلاشية. — Decaying seeded camera hit.
 
 **متى:** عند ضربة اهتزاز للكاميرا تخمد تدريجيًا وتتكرر بنفس الشكل في كل مرة / for a decaying camera hit shake that repeats the same way each time (seeded)
 
@@ -3639,7 +3639,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Camera keys {t,x,y,scale,rot} are eased (inOutCubic) and applied to a #world wrapper as pan, then scale/rotate around stage centre; captions stay outside so they remain pinned.
+**ما هي:** مفاتيح الكاميرا {t,x,y,scale,rot} تُنعَّم (inOutCubic) وتُطبَّق على غلاف #world كإزاحة ثم تحجيم/تدوير حول مركز المسرح؛ وتبقى الترجمات خارجه فتظل مثبتة. — Camera keys {t,x,y,scale,rot} are eased (inOutCubic) and applied to a #world wrapper as pan, then scale/rotate around stage centre; captions stay outside so they remain pinned.
 
 **متى:** حين تحتاج كاميرا ثنائية الأبعاد تتحرك وتقرب وتدور فوق المشهد مع بقاء الترجمة ثابتة / when a 2D camera should pan, zoom and rotate the scene while captions stay pinned
 
@@ -3715,7 +3715,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Layers moving by depth.
+**ما هي:** طبقات تتحرك بحسب العمق. — Layers moving by depth.
 
 **متى:** حين تريد إحساسًا بالعمق بتحريك الطبقات بسرعات مختلفة حسب بعدها / when layers should move by depth to give the scene a sense of depth
 
@@ -3793,7 +3793,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Holds stay alive with creep or drift; no handheld shake.
+**ما هي:** تبقى اللقطات الثابتة حية بزحف أو انجراف؛ دون اهتزاز يدوي. — Holds stay alive with creep or drift; no handheld shake.
 
 **متى:** حين لا تريد أن تتجمد اللقطة الثابتة فتضيف لها زحفًا أو انجرافًا خفيفًا / when a hold should not freeze but keep a slow creep or drift
 
@@ -3871,7 +3871,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (three.js MIT) |
 
-**ما هي:** shot(kind) for establishing, wide, medium, closeup, extreme_closeup, low/high angle, birds_eye, dutch, tracking, crane_up/down, push_in, pull_back, orbit, arc, handheld(seeded), dolly_zoom, whip_pan, turntable; shotFromWords; sequence with hard cuts.
+**ما هي:** shot(kind) للأنواع: establishing وwide وmedium وcloseup وextreme_closeup وزاوية منخفضة/عالية وbirds_eye وdutch وtracking وcrane_up/down وpush_in وpull_back وorbit وarc وhandheld(مبذور) وdolly_zoom وwhip_pan وturntable؛ وshotFromWords؛ وتسلسل بقطعات حادة. — shot(kind) for establishing, wide, medium, closeup, extreme_closeup, low/high angle, birds_eye, dutch, tracking, crane_up/down, push_in, pull_back, orbit, arc, handheld(seeded), dolly_zoom, whip_pan, turntable; shotFromWords; sequence with hard cuts.
 
 **متى:** حين تريد تحويل أسماء اللقطات مثل واسعة أو قريبة أو تتبع أو رافعة إلى كاميرا ثلاثية الأبعاد / for turning shot names like wide, close-up, tracking or crane into 3D cameras
 
@@ -3949,7 +3949,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (three.js MIT) |
 
-**ما هي:** One continuous camera through keys without stops.
+**ما هي:** كاميرا واحدة مستمرة عبر المفاتيح دون توقفات. — One continuous camera through keys without stops.
 
 **متى:** عند حركة كاميرا واحدة متصلة تمر بعدة نقاط دون توقف / for one continuous camera move through several keys without stopping
 
@@ -3957,7 +3957,7 @@
 
 **المعاملات:** centripetal Catmull-Rom
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** مسار سلس · حركة متصلة · نقاط مفتاحية · spline camera · keyframes
 
@@ -3973,7 +3973,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -4026,7 +4026,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Walks around target holding at each stop.
+**ما هي:** تدور حول الهدف وتتوقف عند كل محطة. — Walks around target holding at each stop.
 
 **متى:** حين تدور الكاميرا حول هدف وتتوقف عند كل محطة قليلًا / when the camera walks around a target and holds at each stop
 
@@ -4104,7 +4104,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A gradient shade over the top half fades in under the title and out after, so text never fights a bright sky.
+**ما هي:** تظليل متدرج على النصف العلوي يظهر تحت العنوان ويزول بعده، فلا يتصارع النص مع سماء ساطعة. — A gradient shade over the top half fades in under the title and out after, so text never fights a bright sky.
 
 **متى:** حين يكون العنوان فوق سماء أو منطقة ساطعة في أعلى الكادر ويصعب قراءته / when a title sits over a bright sky at the top of the frame and must stay readable
 
@@ -4179,7 +4179,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One move per idea on a talking-head plate: slow eased pushes and lateral drifts between lines, quick expo punches on stressed words, with the transform origin on the subject's face.
+**ما هي:** حركة واحدة لكل فكرة على لقطة متحدث: دفعات بطيئة منعّمة وانجرافات جانبية بين السطور، وضربات expo سريعة على الكلمات المشدَّدة، مع جعل أصل التحويل على وجه الشخص. — One move per idea on a talking-head plate: slow eased pushes and lateral drifts between lines, quick expo punches on stressed words, with the transform origin on the subject's face.
 
 **متى:** حين تريد كاميرا تتحرك مع كلام المتحدث فتقترب بهدوء وتضرب زووم سريع على الكلمات المهمة / when a talking-head shot needs camera pushes between lines and quick punches on stressed words
 
@@ -4253,13 +4253,13 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A tiny deterministic shake on the hardest word sells impact without randomness between renders.
+**ما هي:** اهتزاز حتمي صغير على أقوى كلمة يرسّخ الأثر دون عشوائية بين عمليات التصيير. — A tiny deterministic shake on the hardest word sells impact without randomness between renders.
 
 **متى:** عند اهتزاز صغير جدًا على أقوى كلمة ليعطي إحساس الصدمة بنفس النتيجة في كل رندر / for a tiny shake on the hardest word that sells impact identically on every render
 
 **كيف:** tl.set(cam, {x, y}) at 10.90 + d for [(0,6,−4), (1/30,−5,3), (2/30,3,−2), (3/30,0,0)] plus #dim .22 flash.
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** رجة خفيفة · اهتزاز على الكلمة · تأثير الصدمة · micro shake · impact
 
@@ -4275,7 +4275,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -4327,7 +4327,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Zooms ease in log space so the perceived speed is even; holds never freeze but creep slowly.
+**ما هي:** تُنعَّم التكبيرات في الفضاء اللوغاريتمي فتبدو السرعة المدركة متساوية؛ ولا تتجمد اللقطات الثابتة بل تزحف ببطء. — Zooms ease in log space so the perceived speed is even; holds never freeze but creep slowly.
 
 **متى:** حين تريد زووم بسرعة تبدو متساوية للعين ولقطات ثابتة لا تتجمد بل تزحف ببطء / when zooms should feel even in speed and holds should creep instead of freezing
 
@@ -4405,7 +4405,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Around a small character the camera slowly orbits, pushes in on the weak part for the break, shakes with exponential decay at the snap, and pulls back for the ranking.
+**ما هي:** حول شخصية صغيرة تدور الكاميرا ببطء، وتدفع للداخل على الجزء الضعيف عند الانكسار، وتهتز بتلاشٍ أسي عند الكسر، ثم ترجع للخلف للترتيب. — Around a small character the camera slowly orbits, pushes in on the weak part for the break, shakes with exponential decay at the snap, and pulls back for the ranking.
 
 **متى:** حين تدور الكاميرا حول شخصية صغيرة وتقترب عند لحظة الكسر وتهتز ثم تبتعد للنتيجة / when the camera orbits a small character, pushes in for the break, shakes at the snap and pulls back
 
@@ -4479,7 +4479,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Keeps a hold alive with a slow scale creep and optional drift so frames never freeze.
+**ما هي:** يُبقي الثبات حيًا بزحف تحجيم بطيء وانجراف اختياري حتى لا تتجمد الإطارات. — Keeps a hold alive with a slow scale creep and optional drift so frames never freeze.
 
 **متى:** عند لقطة ثابتة طويلة تحتاج تكبيرا خفيفا كي لا يبدو الإطار متجمدا / when a long hold needs a slow scale creep or drift so the frame never looks frozen
 
@@ -4556,7 +4556,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One lens walks the whole circle around two characters, stopping at parts (head, eye extreme close-up, mane, far side, tail) with holds, then returns to the wide.
+**ما هي:** عدسة واحدة تدور الدائرة كاملة حول شخصيتين وتتوقف عند أجزاء (الرأس، لقطة قريبة جدًا للعين، العُرف، الجهة البعيدة، الذيل) مع مكوث، ثم تعود إلى اللقطة الواسعة. — One lens walks the whole circle around two characters, stopping at parts (head, eye extreme close-up, mane, far side, tail) with holds, then returns to the wide.
 
 **متى:** عند جولة كاميرا كاملة حول شخصيتين تتوقف عند أجزاء كالرأس والعين والذيل ثم تعود للقطة الواسعة / for a full camera circle around two characters, stopping on head, eye and tail, then back to wide
 
@@ -4630,7 +4630,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A continuous take keyed on the music's bars with velocity-continuous Hermite interpolation; during a tape stop the world freezes while the camera keeps orbiting, then whips home; kicks add fov punches, shake and alternating roll.
+**ما هي:** لقطة مستمرة مفتاحها موازير الموسيقى باستكمال هيرميت متصل السرعة؛ وأثناء توقف الشريط يتجمد العالم بينما تواصل الكاميرا الدوران ثم تعود بسرعة؛ والنبضات تضيف ضربات fov واهتزازًا ودورانًا متناوبًا. — A continuous take keyed on the music's bars with velocity-continuous Hermite interpolation; during a tape stop the world freezes while the camera keeps orbiting, then whips home; kicks add fov punches, shake and alternating roll.
 
 **متى:** حين تريد لقطة متصلة على إيقاع الموسيقى يتجمد فيها العالم بينما تواصل الكاميرا الدوران / for a continuous take on the music bars where the world freezes while the camera keeps orbiting
 
@@ -4707,7 +4707,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A list of [t, camera xyz, look-at xyz] keys yields one smooth move with no stops (koi) or slow moves with stillness between (water cycle), with fov changes for the storm.
+**ما هي:** قائمة مفاتيح [t, xyz الكاميرا, xyz نقطة النظر] تعطي حركة سلسة واحدة بلا توقف (koi) أو حركات بطيئة بينها سكون (دورة الماء)، مع تغيّر fov للعاصفة. — A list of [t, camera xyz, look-at xyz] keys yields one smooth move with no stops (koi) or slow moves with stillness between (water cycle), with fov changes for the storm.
 
 **متى:** حين تريد كاميرا تمر بنقاط محددة بحركة ناعمة واحدة أو حركات بطيئة بينها سكون مع تغيير زاوية العدسة / when camera keys should give one smooth move or slow moves with stillness between, plus fov changes
 
@@ -4783,7 +4783,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Shot words like 'slow push-in, low angle, road-level' or 'orbit 10°' are translated into explicit camera math so AI-video vocabulary and code agree.
+**ما هي:** تُترجم كلمات اللقطة مثل 'slow push-in, low angle, road-level' أو 'orbit 10°' إلى رياضيات كاميرا صريحة فيتفق مفردات فيديو الذكاء الاصطناعي مع الشيفرة. — Shot words like 'slow push-in, low angle, road-level' or 'orbit 10°' are translated into explicit camera math so AI-video vocabulary and code agree.
 
 **متى:** حين تريد ترجمة وصف لقطة مثل دفع بطيء من زاوية منخفضة إلى حركة كاميرا دقيقة بالأرقام / when translating shot words like 'slow push-in, low angle' into explicit camera math
 
@@ -4859,7 +4859,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A 2D callout (leader line + label box) follows a 3D member exactly by projecting its midpoint with this frame's camera.
+**ما هي:** يتبع وسم ثنائي الأبعاد (خط إرشاد + مربع تسمية) عنصرًا ثلاثي الأبعاد بدقة بإسقاط نقطة منتصفه بكاميرا الإطار الحالي. — A 2D callout (leader line + label box) follows a 3D member exactly by projecting its midpoint with this frame's camera.
 
 **متى:** حين تريد تعليقًا أو خط إشارة ثنائي الأبعاد يتبع جزءًا داخل مشهد ثلاثي الأبعاد بدقة / when a 2D callout with a leader line must track a part of a 3D scene exactly
 
@@ -4934,7 +4934,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Push eased by raised cosine rendered at 2x.
+**ما هي:** دفع منعَّم بجيب التمام المرفوع ومُصيَّر بدقة 2x. — Push eased by raised cosine rendered at 2x.
 
 **متى:** عند إضافة زووم بطيء ناعم على كليب بتحديد بداية ونهاية التكبير / for adding a smooth slow zoom to a clip by setting its start and end zoom
 
@@ -5010,7 +5010,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera circles a quarter turn while pushing in and gently rising and falling, always looking at the subject.
+**ما هي:** تدور الكاميرا ربع دورة وهي تدفع للداخل وترتفع وتنخفض برفق، ناظرة دائمًا إلى الهدف. — Camera circles a quarter turn while pushing in and gently rising and falling, always looking at the subject.
 
 **متى:** حين تريد كاميرا تلف ربع دورة حول المجسم وهي تقترب منه وتعلو وتنخفض بخفة / when the camera should arc a quarter turn around the subject while pushing in and gently bobbing
 
@@ -5087,7 +5087,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Talking-head footage alternates between normal framing and a slight punch-in every few seconds to reset attention.
+**ما هي:** تتناوب لقطات المتحدث بين التأطير العادي ودفع خفيف للداخل كل بضع ثوانٍ لتجديد الانتباه. — Talking-head footage alternates between normal framing and a slight punch-in every few seconds to reset attention.
 
 **متى:** حين يكون الفيديو لمتحدث وتريد زووم خفيفًا متكررًا كل بضع ثوان لشد الانتباه / when talking-head footage needs a slight punch-in every few seconds to reset attention
 
@@ -5165,7 +5165,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each shot has one readable camera move: orbit dive with roll, slow push and crane at Giza, a drone track that follows the maglev, a CatmullRom flythrough rising to the tower, a low glide over water to the lighthouse, a pull back to orbit.
+**ما هي:** لكل لقطة حركة كاميرا مقروءة واحدة: غوص مداري مع دوران، ودفع بطيء ورافعة عند الجيزة، ومسار درون يتبع المغلف، وتحليق CatmullRom صاعد نحو البرج، وانزلاق منخفض فوق الماء نحو المنارة، وسحب للخلف إلى مدار. — Each shot has one readable camera move: orbit dive with roll, slow push and crane at Giza, a drone track that follows the maglev, a CatmullRom flythrough rising to the tower, a low glide over water to the lighthouse, a pull back to orbit.
 
 **متى:** عند فيلم ثلاثي الأبعاد يحتاج حركة كاميرا واضحة لكل لقطة كالغوص أو الرافعة أو تتبع الدرون أو الطيران عبر المشهد / for a 3D film where each shot needs one readable move: dive, crane, drone track or flythrough
 
@@ -5243,7 +5243,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Keeps busy art behind text readable: a soft elliptical dark radial behind the text card and an even-odd veil that darkens everything outside the arch so the eye stays inside.
+**ما هي:** يُبقي الفن المزدحم خلف النص مقروءًا: ظل شعاعي بيضاوي ناعم خلف بطاقة النص وحجاب even-odd يعتّم كل ما خارج القوس فتبقى العين داخله. — Keeps busy art behind text readable: a soft elliptical dark radial behind the text card and an even-odd veil that darkens everything outside the arch so the eye stays inside.
 
 **متى:** حين تكون الخلفية مزدحمة بالرسوم وتريد إبقاء النص مقروءًا وتركيز العين داخل القوس / when busy art behind text must stay readable and the eye should stay inside the arch
 
@@ -5318,7 +5318,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Multiple layers drift by depth factor (far moves less) for 2.5D depth.
+**ما هي:** تنجرف عدة طبقات بحسب عامل العمق (الأبعد تتحرك أقل) لإعطاء عمق 2.5D. — Multiple layers drift by depth factor (far moves less) for 2.5D depth.
 
 **متى:** حين تريد إحساس عمق بتحريك طبقات بسرعات حسب بعدها عن الكاميرا / for a 2.5D depth feel by drifting layers at speeds set by their depth
 
@@ -5396,7 +5396,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A 2D 'camera' div scales almost imperceptibly through the film, then pushes on the key line and again on the final amen.
+**ما هي:** عنصر div «كاميرا» ثنائي الأبعاد يتحجم بشكل لا يكاد يُلحظ طوال الفيلم، ثم يدفع على السطر الرئيسي ومرة أخرى على آمين الأخيرة. — A 2D 'camera' div scales almost imperceptibly through the film, then pushes on the key line and again on the final amen.
 
 **متى:** حين تريد كاميرا تتنفس ببطء طوال الفيلم ثم تقترب عند الجملة المهمة والخاتمة / when a 2D stage should breathe slowly throughout, then push in on the key line and the ending
 
@@ -5472,7 +5472,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Still images feel like footage: every plate is cut in hard while already scaling and slides on a dolly curve until the next cut.
+**ما هي:** تبدو الصور الثابتة كلقطات فيديو: تُقطع كل لوحة بحدة وهي تتحجم أصلًا وتنزلق على منحنى دوللي حتى القطع التالي. — Still images feel like footage: every plate is cut in hard while already scaling and slides on a dolly curve until the next cut.
 
 **متى:** حين تريد أن تبدو الصور الثابتة كأنها فيديو فتدخل كل صورة بالقطع وهي تتحرك بالفعل / when still images should feel like footage, each cut in while already scaling and drifting
 
@@ -5624,7 +5624,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Treat the whole stage as one camera: named moves with the camera ease, pushes in log space so zoom speed feels constant, and slow 'breathing' holds.
+**ما هي:** تعامل المسرح كله ككاميرا واحدة: حركات مسماة بتنعيم الكاميرا، ودفعات في الفضاء اللوغاريتمي فتبدو سرعة التكبير ثابتة، ولقطات ثابتة «تتنفس» ببطء. — Treat the whole stage as one camera: named moves with the camera ease, pushes in log space so zoom speed feels constant, and slow 'breathing' holds.
 
 **متى:** حين تعامل المسرح كله ككاميرا واحدة بحركات مسماة وزووم بسرعة ثابتة ولقطات ثابتة تتنفس / when treating the whole stage as one camera with named moves, even-speed pushes and breathing holds
 
@@ -5700,7 +5700,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Guesses the slow pan/zoom applied to each reference shot and applies the same to replacement footage.
+**ما هي:** يخمّن البانورما/التكبير البطيء المطبّق على كل لقطة مرجعية ويطبّق مثله على اللقطات البديلة. — Guesses the slow pan/zoom applied to each reference shot and applies the same to replacement footage.
 
 **متى:** حين تريد نسخ حركة الزووم والبان البطيئة من لقطات مرجعية وتطبيقها على لقطات بديلة / when copying the slow pan/zoom of reference shots onto replacement footage
 
@@ -5775,7 +5775,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** cover / contain / contain on blurred darkened cover, plus Ken Burns from measured per-shot motion; exact frame count per shot.
+**ما هي:** cover / contain / contain على غطاء ضبابي معتّم، مع كين بيرنز من حركة مقيسة لكل لقطة؛ وعدد إطارات دقيق لكل لقطة. — cover / contain / contain on blurred darkened cover, plus Ken Burns from measured per-shot motion; exact frame count per shot.
 
 **متى:** عند ملاءمة لقطة للإطار بالملء أو الاحتواء أو فوق خلفية مموهة مع حركة كين برنز / for fitting a shot to the frame with cover, contain or contain over a blurred backdrop, plus Ken Burns
 
@@ -5849,7 +5849,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** KOSIF Studio scene operation: defocus.
+**ما هي:** عملية مشهد في KOSIF Studio: defocus. — KOSIF Studio scene operation: defocus.
 
 **متى:** حين تريد تمويه الخلفية في مشهد KOSIF Studio قبل رسم العنصر الأساسي / when blurring the background in a KOSIF Studio scene before drawing the hero
 
@@ -5924,7 +5924,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** KOSIF Studio scene operation: motion_blur.
+**ما هي:** عملية مشهد في KOSIF Studio: motion_blur. — KOSIF Studio scene operation: motion_blur.
 
 **متى:** عند إضافة ضبابية حركة لعناصر مثل المطر أو الرذاذ في مشهد KOSIF Studio / for adding motion blur to elements like rain or spray in a KOSIF Studio scene
 
@@ -5999,7 +5999,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Hero element fills 40% of frame, text in safe zone, optional arrow/circle pointer; 3-word message.
+**ما هي:** عنصر رئيسي يملأ 40% من الإطار، والنص في المنطقة الآمنة، مع مؤشر سهم/دائرة اختياري؛ ورسالة من 3 كلمات. — Hero element fills 40% of frame, text in safe zone, optional arrow/circle pointer; 3-word message.
 
 **متى:** حين تصمم صورة مصغرة بعنصر كبير ورسالة من ثلاث كلمات وسهم أو دائرة اختيارية / when designing a thumbnail with a large hero, a three-word message and an optional arrow or circle
 
@@ -6075,7 +6075,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The whole stage moves as one object (x, y, scale, rotation) for a virtual camera.
+**ما هي:** يتحرك المسرح كله ككائن واحد (x وy وتحجيم ودوران) كاميرا افتراضية. — The whole stage moves as one object (x, y, scale, rotation) for a virtual camera.
 
 **متى:** حين تريد تحريك المسرح كله ككتلة واحدة بالإزاحة والتكبير والدوران كأنه كاميرا / when the whole stage should move as one object (x, y, scale, rotation) like a camera
 
@@ -6151,7 +6151,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Fakes a focus pull by cross-fading a sharp element and a constant-blur twin (animating large blur steps visibly).
+**ما هي:** يحاكي سحب البؤرة بالتلاشي المتقاطع بين عنصر حاد وتوأم بتمويه ثابت (لأن تحريك التمويه بخطوات كبيرة يظهر بوضوح). — Fakes a focus pull by cross-fading a sharp element and a constant-blur twin (animating large blur steps visibly).
 
 **متى:** عند نقل البؤرة بين عنصر حاد ونسخة مموهة دون تقطيع في البلور / when faking a focus pull by crossfading a sharp element with a blurred twin
 
@@ -6228,7 +6228,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera push whose scale grows at a constant perceived rate.
+**ما هي:** دفع كاميرا يتزايد تحجيمه بمعدل مدرك ثابت. — Camera push whose scale grows at a constant perceived rate.
 
 **متى:** حين تريد اقترابًا بالكاميرا تبدو سرعته ثابتة للعين من البداية للنهاية / when a camera push should grow at a constant perceived rate
 
@@ -6305,7 +6305,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decaying seeded jitter in x, y and a little rotation for hits.
+**ما هي:** اهتزاز مبذور متلاشٍ في x وy وقليل من الدوران للضربات. — Decaying seeded jitter in x, y and a little rotation for hits.
 
 **متى:** عند ضربة أو صدمة تحتاج اهتزازًا للكاميرا يخمد تدريجيًا مع دوران خفيف / for hits that need a decaying camera jitter with a little rotation
 
@@ -6381,7 +6381,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera position/look-at keys with smoothstep between them (still between events).
+**ما هي:** مفاتيح موضع الكاميرا/نقطة النظر بـ smoothstep بينها (ثابتة بين الأحداث). — Camera position/look-at keys with smoothstep between them (still between events).
 
 **متى:** حين تتحرك الكاميرا بين أوضاع محددة بانسيابية وتسكن بين الأحداث / when the camera should ease between set positions and stay still between events
 
@@ -6455,7 +6455,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One continuous camera through keys (centripetal Catmull-Rom for position and target) that never stops dead.
+**ما هي:** كاميرا واحدة مستمرة عبر المفاتيح (Catmull-Rom مركزي للموضع والهدف) لا تتوقف فجأة. — One continuous camera through keys (centripetal Catmull-Rom for position and target) that never stops dead.
 
 **متى:** عند حركة كاميرا متصلة عبر عدة مفاتيح لا تتوقف فجأة أبدًا / for one continuous camera move through keys that never stops dead
 
@@ -6531,7 +6531,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Director/Veo shot words as deterministic 3D cameras returning pos/look/fov/roll/focus per t.
+**ما هي:** كلمات اللقطات عند المخرج/Veo ككاميرات ثلاثية الأبعاد حتمية تُرجع pos/look/fov/roll/focus لكل t. — Director/Veo shot words as deterministic 3D cameras returning pos/look/fov/roll/focus per t.
 
 **متى:** حين تريد كاميرا ثلاثية الأبعاد ثابتة النتيجة من كلمات المخرج مثل لقطة قريبة أو واسعة أو من أسفل / for deterministic 3D cameras from director shot words like close-up, wide or low angle
 
@@ -6609,7 +6609,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Three octaves of smooth sine noise around a ~1.3 Hz sway, not random jitter.
+**ما هي:** ثلاثة أوكتافات من ضوضاء جيبية ناعمة حول تمايل نحو 1.3 Hz، لا اهتزاز عشوائي. — Three octaves of smooth sine noise around a ~1.3 Hz sway, not random jitter.
 
 **متى:** حين تريد إحساس كاميرا محمولة باليد بتمايل ناعم لا ارتعاش عشوائي / when you want a handheld camera feel with smooth sway rather than random jitter
 
@@ -6685,7 +6685,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Parses a phrase ('low angle tracking shot', 'slow push-in', 'vertigo') into a camera, combining modifiers.
+**ما هي:** يحلل عبارة ('low angle tracking shot' أو 'slow push-in' أو 'vertigo') إلى كاميرا مع دمج المعدِّلات. — Parses a phrase ('low angle tracking shot', 'slow push-in', 'vertigo') into a camera, combining modifiers.
 
 **متى:** حين يصف المستخدم اللقطة بالكلام مثل لقطة تتبع من زاوية منخفضة وتريد تحويلها لكاميرا / when the user describes a shot in words, e.g. 'low angle tracking shot', and it must become a camera
 
@@ -6761,7 +6761,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Radial gradient canvas texture as a scene background.
+**ما هي:** نسيج لوحة بتدرج شعاعي كخلفية مشهد. — Radial gradient canvas texture as a scene background.
 
 **متى:** حين يحتاج المشهد خلفية استوديو بتدرج دائري / when a scene needs a radial-gradient studio backdrop as its background
 
@@ -6837,7 +6837,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Product-lab set: cream sweep sphere, contact shadow floor, faint grid, key/fill/rim + hemisphere.
+**ما هي:** مجموعة مختبر منتجات: كرة مسح كريمية، وأرضية بظل تلامس، وشبكة خافتة، وإضاءة رئيسية/مالئة/خلفية مع نصف كرة. — Product-lab set: cream sweep sphere, contact shadow floor, faint grid, key/fill/rim + hemisphere.
 
 **متى:** عند عرض منتج في استوديو كريمي بظل أرضي وشبكة خفيفة وإضاءة رئيسية ومساعدة وخلفية / for showing a product in a cream studio set with a contact shadow, faint grid and key/fill/rim lights
 
@@ -6913,7 +6913,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Averages k sub-frames centred on each frame time (a real shutter) or keeps each pixel's brightest sample for long-exposure light trails and star trails.
+**ما هي:** يحسب متوسط k إطارًا فرعيًا متمركزة على زمن كل إطار (غالق حقيقي)، أو يحتفظ بأسطع عينة لكل بكسل لمسارات ضوء وأثر نجوم بتعريض طويل. — Averages k sub-frames centred on each frame time (a real shutter) or keeps each pixel's brightest sample for long-exposure light trails and star trails.
 
 **متى:** حين تريد ضبابية حركة واقعية كغالق الكاميرا أو آثار ضوء ونجوم بالتعريض الطويل / for realistic shutter motion blur, or long-exposure light trails and star trails
 
@@ -6991,7 +6991,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decaying seeded jitter in x, y and rotation for impacts.
+**ما هي:** اهتزاز مبذور متلاشٍ في x وy والدوران للارتطامات. — Decaying seeded jitter in x, y and rotation for impacts.
 
 **متى:** حين يحتاج المشهد هزة كاميرا عند ضربة أو اصطدام ثم يهدأ / for an impact hit that shakes the frame and decays back to rest
 
@@ -7067,7 +7067,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Everything painted so far goes out of focus (optionally inside a soft-edged shape); call after background steps and before the subject.
+**ما هي:** يصبح كل ما رُسم حتى الآن خارج البؤرة (اختياريًا داخل شكل ناعم الحواف)؛ يُستدعى بعد خطوات الخلفية وقبل الموضوع. — Everything painted so far goes out of focus (optionally inside a soft-edged shape); call after background steps and before the subject.
 
 **متى:** حين تريد تمويه كل ما رسم في الخلفية قبل إضافة العنصر الأساسي / when everything painted so far should go out of focus before the subject is drawn
 
@@ -7144,7 +7144,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Streaks what is inside a shape along an angle — rain, spray, wing beats.
+**ما هي:** يمدّ ما داخل شكل على امتداد زاوية — مطر ورذاذ وخفقات أجنحة. — Streaks what is inside a shape along an angle — rain, spray, wing beats.
 
 **متى:** حين تحتاج خطوطا مائلة داخل شكل لتمثيل مطر أو رذاذ أو رفرفة أجنحة / when a shape needs streaks along an angle, like rain, spray or wing beats
 
@@ -7221,7 +7221,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Red and blue channels scale apart toward the frame edges like a real lens.
+**ما هي:** تتباعد قناتا الأحمر والأزرق في التحجيم نحو حواف الإطار كما في عدسة حقيقية. — Red and blue channels scale apart toward the frame edges like a real lens.
 
 **متى:** حين تريد مظهر عدسة حقيقية تنفصل فيه القنوات الحمراء والزرقاء عند أطراف الكادر / for a real-lens look where red and blue channels split toward the frame edges
 
@@ -7297,7 +7297,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One eased move per idea on a static plate: a hook release, slow pushes, lateral drifts, sharp punches on stressed words, a seeded 4-frame micro-shake, and a scale pull-back reveal at the shot change.
+**ما هي:** حركة منعَّمة واحدة لكل فكرة على لوحة ثابتة: إطلاق خطّاف، ودفعات بطيئة، وانجرافات جانبية، وضربات حادة على الكلمات المشدَّدة، واهتزاز دقيق مبذور من 4 إطارات، وكشف بسحب تحجيم عند تغيّر اللقطة. — One eased move per idea on a static plate: a hook release, slow pushes, lateral drifts, sharp punches on stressed words, a seeded 4-frame micro-shake, and a scale pull-back reveal at the shot change.
 
 **متى:** حين يكون عندك مقطع متكلم ثابت وتريد دفعات وانجرافا وزووم سريعا على الكلمات المهمة / when a static talking clip needs eased pushes, drifts and sharp punches on stressed words
 
@@ -7373,7 +7373,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** direct.py finds the subject per shot (largest skin region in the upper 78 %, else moving region) and pushes the camera on it, starting wider when the subject is small.
+**ما هي:** يجد direct.py الموضوع في كل لقطة (أكبر منطقة جلد في أعلى 78 %، وإلا منطقة متحركة) ويدفع الكاميرا نحوه، ويبدأ أوسع عندما يكون الموضوع صغيرًا. — direct.py finds the subject per shot (largest skin region in the upper 78 %, else moving region) and pushes the camera on it, starting wider when the subject is small.
 
 **متى:** حين تريد أن تقترب الكاميرا تلقائيا من الشخص في كل لقطة دون تحديد مكانه يدويا / when the camera should push in on the subject of each shot automatically, found by skin or motion
 
@@ -7450,7 +7450,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** For verse films with photos, finds the head region after fill-crop and moves the line to the lower or upper third when the face occupies the middle band.
+**ما هي:** في أفلام الأبيات ذات الصور، يجد منطقة الرأس بعد القص بالملء وينقل السطر إلى الثلث السفلي أو العلوي حين يشغل الوجه النطاق الأوسط. — For verse films with photos, finds the head region after fill-crop and moves the line to the lower or upper third when the face occupies the middle band.
 
 **متى:** حين تضع سطور نص فوق صور فيها أشخاص وتريد ألا يغطي النص الوجه / when verse lines over photos must move to the upper or lower third to keep off the face
 
@@ -7526,7 +7526,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Cinematic bars that open from the title and close on the end.
+**ما هي:** أشرطة سينمائية تنفتح من العنوان وتنغلق عند النهاية. — Cinematic bars that open from the title and close on the end.
 
 **متى:** حين تريد شرائط سوداء سينمائية تنفتح بعد العنوان وتنغلق في نهاية الفيديو / for cinematic black bars that open from the title and close on the end
 
@@ -7603,7 +7603,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A single lens walks the full circle around the subjects and stops at parts (head, eye, mane) with holds, as a lab/HUD documentary move.
+**ما هي:** عدسة واحدة تدور الدائرة كاملة حول الأهداف وتتوقف عند أجزاء (الرأس، العين، العُرف) مع مكوث، كحركة وثائقية مختبرية/HUD. — A single lens walks the full circle around the subjects and stops at parts (head, eye, mane) with holds, as a lab/HUD documentary move.
 
 **متى:** حين تريد كاميرا تلف حول الموضوع وتتوقف عند أجزاء كالرأس والعين بأسلوب وثائقي معملي / for a lab documentary move that circles the subject and holds on parts like head or eye
 
@@ -7679,7 +7679,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Continuous fly-through camera journey across scenes (Higgsfield-style).
+**ما هي:** رحلة كاميرا طيران مستمرة عبر المشاهد (بأسلوب Higgsfield). — Continuous fly-through camera journey across scenes (Higgsfield-style).
 
 **متى:** حين يطلب المستخدم رحلة كاميرا متصلة تعبر المشاهد بلا قطع وتنتقل بالحركة نفسها / when the user wants one continuous fly-through camera journey across scenes with no cuts
 
@@ -7754,7 +7754,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** One group transform drifts across the film: scale 1.08->1.0->1.04->1.1, x 0->-36, y 26->-18->0 at scene boundaries, rotate -0.8->0.8 deg, eased inOutCubic.
+**ما هي:** يتحرك تحويل مجموعة واحدة عبر الفيلم: التحجيم 1.08->1.0->1.04->1.1، وx من 0 إلى -36، وy من 26 إلى -18 ثم 0 عند حدود المشاهد، والدوران من -0.8 إلى 0.8 درجة، بتنعيم inOutCubic. — One group transform drifts across the film: scale 1.08->1.0->1.04->1.1, x 0->-36, y 26->-18->0 at scene boundaries, rotate -0.8->0.8 deg, eased inOutCubic.
 
 **متى:** حين تريد حركة كاميرا خفيفة مستمرة طوال الفيلم في Remotion بتكبير وانزياح ودوران بسيط / for a subtle whole-film camera drift in Remotion with gentle scale, pan and rotation
 
@@ -7828,7 +7828,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera and target follow centripetal Catmull-Rom curves so moves never stop dead between keys.
+**ما هي:** تتبع الكاميرا والهدف منحنيات Catmull-Rom المركزية فلا تتوقف الحركة فجأة بين المفاتيح. — Camera and target follow centripetal Catmull-Rom curves so moves never stop dead between keys.
 
 **متى:** عند تحريك كاميرا عبر عدة نقاط في مسار منحني دون توقف مفاجئ بينها / when a camera should glide through several keys on a curved path without stopping dead
 
@@ -7905,7 +7905,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Camera moves along a CatmullRom spline with sine in-out, never linear starts/stops.
+**ما هي:** تتحرك الكاميرا على منحنى CatmullRom بجيب دخول-خروج، دون بدايات أو توقفات خطية أبدًا. — Camera moves along a CatmullRom spline with sine in-out, never linear starts/stops.
 
 **متى:** حين تحتاج مسار كاميرا منحنيا وسلسا في مشهد ثلاثي الأبعاد بلا بدايات أو توقفات خطية / for a smooth curved camera path on a CatmullRom spline with eased, never linear, starts and stops
 
@@ -7981,7 +7981,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Smooth cinematic path: rounded curve, constant ground speed, look-ahead heading, constant pitch, bank into turns.
+**ما هي:** مسار سينمائي ناعم: منحنى مدور، وسرعة أرضية ثابتة، واتجاه استشرافي، وميل ثابت، وانحناء في المنعطفات. — Smooth cinematic path: rounded curve, constant ground speed, look-ahead heading, constant pitch, bank into turns.
 
 **متى:** حين تبني لقطة تحليق فوق تضاريس وتريد مسارا ناعما وسرعة ثابتة وميلا طبيعيا في المنعطفات / for a terrain flyover that needs a rounded route, constant ground speed and banking into turns
 
@@ -8059,7 +8059,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Ask the generator for rule-of-thirds, centered, wide panoramic, overhead or negative-space framing so later motion typography has a clean area.
+**ما هي:** اطلب من المولِّد تأطير قاعدة الأثلاث أو المركزي أو بانورامي واسع أو علوي أو بفراغ سلبي ليتوفر لاحقًا مجال نظيف للنص الحركي. — Ask the generator for rule-of-thirds, centered, wide panoramic, overhead or negative-space framing so later motion typography has a clean area.
 
 **متى:** حين تكتب برومبت صورة وتحتاج مساحة فارغة نظيفة لاحقا للنص المتحرك أو الشعار / when prompting an image generator so the frame leaves clean empty space for later text or a logo
 
@@ -8137,7 +8137,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 / MIT |
 
-**ما هي:** Terms video generators understand: static, pan, tilt, dolly in/out, orbit, tracking, crane/aerial, handheld, zoom (lens) vs dolly (body), slow push.
+**ما هي:** مصطلحات تفهمها مولدات الفيديو: static وpan وtilt وdolly in/out وorbit وtracking وcrane/aerial وhandheld وzoom (العدسة) مقابل dolly (الجسم) وslow push. — Terms video generators understand: static, pan, tilt, dolly in/out, orbit, tracking, crane/aerial, handheld, zoom (lens) vs dolly (body), slow push.
 
 **متى:** حين تكتب برومبت لنموذج فيديو وتختار حركة كاميرا واحدة واضحة مثل بان أو دولي أو أوربت / when writing a video-model prompt and picking one plain camera move: pan, tilt, dolly or orbit
 
@@ -8214,7 +8214,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Numeric single-axis camera moves for T2V/I2V on v1.6+.
+**ما هي:** تحكم رقمي أحادي المحور بحركات الكاميرا لـ T2V/I2V في الإصدار v1.6 فما فوق. — Numeric single-axis camera moves for T2V/I2V on v1.6+.
 
 **متى:** حين تولد فيديو في Kling وتريد حركة كاميرا رقمية على محور واحد مثل بان أو زووم أو إمالة / when generating in Kling and you need a numeric single-axis camera move: pan, zoom or tilt
 
@@ -8291,7 +8291,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** In multi-segment generated ads what defines the cut is where each segment starts, so prompts describe the opening framing, and UGC keeps the same framing unless asked.
+**ما هي:** في الإعلانات المولَّدة متعددة المقاطع، ما يحدد القطع هو موضع بدء كل مقطع، فتصف البرومبتات التأطير الافتتاحي، ويحافظ UGC على التأطير نفسه ما لم يُطلب غيره. — In multi-segment generated ads what defines the cut is where each segment starts, so prompts describe the opening framing, and UGC keeps the same framing unless asked.
 
 **متى:** حين تولد إعلانا من عدة مقاطع وتريد تحديد لقطة بداية كل مقطع بدل أوامر حركة الكاميرا / for multi-segment generated ads where each segment's opening framing, not a lens move, defines the cut
 
@@ -8366,7 +8366,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** With the local bridge's /api/watch (cv2, no models), the cover crop follows the subject sideways per shot without jitter.
+**ما هي:** مع /api/watch في الجسر المحلي (cv2 دون نماذج)، يتبع القص بالتغطية الهدفَ جانبيًا في كل لقطة دون ارتعاش. — With the local bridge's /api/watch (cv2, no models), the cover crop follows the subject sideways per shot without jitter.
 
 **متى:** حين يقص الكادر الفيديو لملء الإطار وتريد أن يتبع الشخص جانبيا في كل لقطة دون اهتزاز / when a cover crop must follow the subject sideways per shot without jitter
 
@@ -8444,7 +8444,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: luxury product: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: luxury product: Concept-matched mid-leg camera move.
 
 **متى:** حين تكتب برومبت مقطع لمنتج فاخر وتحتاج حركة كاميرا مناسبة كنصف دوران بطيء حوله / for a luxury product leg prompt that needs a slow half-orbit around the hero object
 
@@ -8522,7 +8522,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: real estate: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: real estate: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع فيديو عقاريا وتحتاج كاميرا تنساب عبر الأبواب وترتفع في الردهات / for a real-estate leg prompt: steadicam glide through doorways and crane-up in atria
 
@@ -8600,7 +8600,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: industrial: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: industrial: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع مشهدا بطابع صناعي وتحتاج تتبعا جانبيا منخفضا مع بارالاكس في المقدمة / for an industrial leg prompt: a low lateral track with foreground parallax
 
@@ -8678,7 +8678,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Dolly in while widening fov so the subject keeps its size and the background stretches.
+**ما هي:** تقترب الكاميرا بينما يتسع مجال الرؤية فيحتفظ الهدف بحجمه ويتمدد الخلفية. — Dolly in while widening fov so the subject keeps its size and the background stretches.
 
 **متى:** حين تريد تأثير فيرتيغو حيث يثبت حجم العنصر وتتمدد الخلفية / for the Vertigo effect where the subject keeps its size while the background stretches
 
@@ -8754,7 +8754,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: travel: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: travel: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع فيديو سفر وتريد لقطة درون ترتفع لتكشف المكان ثم تنقض نازلة / for a travel leg prompt: a drone rise-and-reveal followed by a descending swoop
 
@@ -8832,7 +8832,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: food/craft: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: food/craft: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع مقطع طبخ أو حرفة يدوية وتريد دفع الكاميرا نحو لحظة العمل ثم التراجع بهدوء / for a food or craft leg prompt: push in on the craft moment, then ease back
 
@@ -8910,7 +8910,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Concept-matched mid-leg camera move.
+**ما هي:** حركة كاميرا: miniature: حركة كاميرا وسطية مطابقة للمفهوم. — Camera grammar: miniature: Concept-matched mid-leg camera move.
 
 **متى:** حين تصنع عالما مصغرا وتريد كاميرا تغوص فيه وتقفز جويا بين أجزائه / for a miniature-world leg prompt with dives and aerial hops
 
@@ -8988,7 +8988,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Fixed high isometric angle, only straight level travel; calmest, cheapest rerolls.
+**ما هي:** زاوية إيزومترية عالية ثابتة، وانتقال مستوٍ مستقيم فقط؛ الأهدأ والأرخص في إعادة التوليد. — Fixed high isometric angle, only straight level travel; calmest, cheapest rerolls.
 
 **متى:** حين تريد زاوية إيزومترية علوية ثابتة بحركة مستقيمة هادئة وإعادة توليد أقل / when you want a fixed high isometric view with straight level travel and the calmest, cheapest rerolls
 
@@ -9064,7 +9064,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A: one forward flight for grounded worlds; B: dive into each diorama then aerial connector.
+**ما هي:** أ: طيران أمامي واحد للعوالم الأرضية؛ ب: غوص في كل مجسم مصغر ثم رابط جوي. — A: one forward flight for grounded worlds; B: dive into each diorama then aerial connector.
 
 **متى:** حين تختار بين رحلة طيران أمامية واحدة لعالم متصل أو غوص في كل ديوراما مع وصلات جوية / when choosing between one forward flight or diving into each diorama with aerial connectors
 
@@ -9139,7 +9139,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Overlay layer on top of every scene: 4 L-shaped corner brackets (~40 px arms, 1.5 px white 60%), top-left title/subtitle/REC dot, top-right running timecode HH:MM:SS:FF + spec line, bottom-left scene
+**ما هي:** طبقة تراكب فوق كل مشهد: 4 أقواس زوايا على شكل L (أذرع ~40 px، 1.5 px أبيض 60%)، أعلى اليسار العنوان/العنوان الفرعي/نقطة REC، أعلى اليمين تايمكود جارٍ HH:MM:SS:FF وسطر مواصفات، أسفل اليسار المشهد… — Overlay layer on top of every scene: 4 L-shaped corner brackets (~40 px arms, 1.5 px white 60%), top-left title/subtitle/REC dot, top-right running timecode HH:MM:SS:FF + spec line, bottom-left scene
 
 **متى:** حين تريد طبقة HUD فوق كل مشاهد الريل بزوايا وتايمكود ونقطة تسجيل وأشرطة تقدم / for a showreel overlay with corner brackets, running timecode, REC dot and progress bars
 
@@ -9217,7 +9217,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets, mono timecode TC and frame counter F 0263/0900
+**ما هي:** أقواس زوايا، وتايمكود TC أحادي المسافة، وعداد إطارات F 0263/0900 — corner brackets, mono timecode TC and frame counter F 0263/0900
 
 **متى:** حين تحتاج إطارا بسيطا بزوايا وتايمكود وعداد إطارات فوق الفيديو / for a simple overlay of corner brackets, mono timecode and a frame counter
 
@@ -9293,7 +9293,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Overlay layer with corner brackets, mono labels, live timecode TC hh:mm:ss:ff, chapter 'NN/07 NAME', and 4 beat squares filling per beat
+**ما هي:** طبقة تراكب بأقواس زوايا وتسميات أحادية المسافة وتايمكود حي TC hh:mm:ss:ff وفصل 'NN/07 NAME' و4 مربعات إيقاع تمتلئ مع كل نبضة — Overlay layer with corner brackets, mono labels, live timecode TC hh:mm:ss:ff, chapter 'NN/07 NAME', and 4 beat squares filling per beat
 
 **متى:** حين تريد إطار HUD ثابتا للشوريل يعرض الفصل والتايمكود ومربعات تمتلئ مع كل نبضة إيقاع / for a persistent reel HUD showing chapter, live timecode and beat squares that fill per beat
 
@@ -9370,7 +9370,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner tick marks, timecode, bottom progress line
+**ما هي:** علامات زوايا، وتايمكود، وخط تقدم سفلي — corner tick marks, timecode, bottom progress line
 
 **متى:** حين تريد إطارا خفيفا بعلامات زوايا وتايمكود وخط تقدم سفلي رفيع / for light HUD chrome: corner tick marks, timecode and a thin bottom progress line
 
@@ -9447,7 +9447,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner L-brackets at 3% inset; mono labels in all four corners; running timecode TC hh:mm:ss:ff from frame number; bottom progress line width = t/duration
+**ما هي:** أقواس L في الزوايا بهامش 3%؛ وتسميات أحادية المسافة في الزوايا الأربع؛ وتايمكود جارٍ TC hh:mm:ss:ff من رقم الإطار؛ وخط تقدم سفلي بعرض t/duration — corner L-brackets at 3% inset; mono labels in all four corners; running timecode TC hh:mm:ss:ff from frame number; bottom progress line width = t/duration
 
 **متى:** حين تريد شكل شاشة الكاميرا بزوايا وتسميات في الأركان الأربعة وتايمكود محسوب من رقم الإطار / for a viewfinder look with corner brackets, mono labels in all four corners and frame-based timecode
 
@@ -9523,7 +9523,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A lens that walks the circle around the hero object and holds at parts with micro drift.
+**ما هي:** عدسة تدور حول الجسم الرئيسي وتتوقف عند نقاط بانجراف دقيق. — A lens that walks the circle around the hero object and holds at parts with micro drift.
 
 **متى:** عند الدوران حول العنصر الرئيسي والتوقف عند أجزائه مع انجراف خفيف / when circling a hero object and pausing on its parts with slight drift
 
@@ -9599,7 +9599,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Corner brackets, mono chapter label 'NN NAME', timecode, progress bar persistent over all scenes
+**ما هي:** أقواس زوايا، وتسمية فصل أحادية المسافة 'NN NAME'، وتايمكود، وشريط تقدم دائم فوق كل المشاهد — Corner brackets, mono chapter label 'NN NAME', timecode, progress bar persistent over all scenes
 
 **متى:** حين تريد إطارا ثابتا على كل مشاهد الشوريل باسم الفصل والتايمكود وشريط التقدم / for a showreel frame that stays over all scenes with chapter label, timecode and progress bar
 
@@ -9675,7 +9675,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** key camera (x, y, zoom) to each element as it is drawn, ease-in-out between, final pull-out revealing the full board composition
+**ما هي:** تُثبَّت الكاميرا (x وy وتكبير) على كل عنصر عند رسمه، بتنعيم دخول-خروج بينها، وسحب ختامي يكشف تركيب السبورة كاملًا — key camera (x, y, zoom) to each element as it is drawn, ease-in-out between, final pull-out revealing the full board composition
 
 **متى:** حين تشرح درسا على لوحة وتريد الكاميرا تقترب من كل عنصر عند رسمه ثم تبتعد لتكشف اللوحة كاملة / for a lesson board where the camera zooms to each element as it is drawn, then pulls out to reveal all
 
@@ -9750,7 +9750,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** build one long world strip; zones blend by ground colour and prop density; animate camera x/y/zoom keyframes with inOut cubic, moving only in sentence pauses
+**ما هي:** يُبنى شريط عالم طويل واحد؛ وتمتزج المناطق بلون الأرض وكثافة العناصر؛ وتُحرَّك مفاتيح x/y/zoom للكاميرا بـ inOut cubic، وتتحرك فقط في فواصل الجمل — build one long world strip; zones blend by ground colour and prop density; animate camera x/y/zoom keyframes with inOut cubic, moving only in sentence pauses
 
 **متى:** حين تريد عالما طويلا واحدا تتنقل الكاميرا بين مناطقه في لقطة واحدة ولا تتحرك إلا في وقفات الكلام / for one long world strip where the camera moves between zones in one take, only in sentence pauses
 
@@ -9825,7 +9825,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** fixed yaw/pitch camera, wall/floor/frame as 3D polygons projected point by point; draw door before wall-with-opening to occlude swing; key inside lock clipped in its own coordinates
+**ما هي:** كاميرا بزاويتي yaw/pitch ثابتتين، والجدار/الأرض/الإطار كمضلعات ثلاثية الأبعاد تُسقط نقطة نقطة؛ يُرسم الباب قبل الجدار ذي الفتحة لحجب الدوران؛ ويُقص المفتاح داخل القفل بإحداثياته — fixed yaw/pitch camera, wall/floor/frame as 3D polygons projected point by point; draw door before wall-with-opening to occlude swing; key inside lock clipped in its own coordinates
 
 **متى:** حين ترسم غرفة بزاوية مائلة من مضلعات مسقطة وتحتاج بابا يفتح ومفتاحا داخل القفل / for an oblique room drawn from projected 3D polygons with a swinging door and a key in the lock
 
@@ -9900,7 +9900,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** keyframes [t, x, y, z, zoom] interpolated with easeInOut; follow weight w(t) blends target to the van position; project target to centre the viewport
+**ما هي:** مفاتيح [t, x, y, z, zoom] تُستكمل بـ easeInOut؛ ووزن التتبع w(t) يمزج الهدف مع موضع الشاحنة؛ ويُسقط الهدف ليتمركز في منفذ العرض — keyframes [t, x, y, z, zoom] interpolated with easeInOut; follow weight w(t) blends target to the van position; project target to centre the viewport
 
 **متى:** حين تحرك الكاميرا بمفاتيح في إحداثيات العالم وتريدها أن تتبع مركبة متحركة بين المناطق بسلاسة / for world-space camera keyframes that blend into following a moving van between zones
 
@@ -9975,7 +9975,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** camera centre = lerp(head, point slightly ahead on route); zoom = base - k*sin(pi*legProgress) so it widens mid-leg and tightens on arrival
+**ما هي:** مركز الكاميرا = lerp(الرأس، نقطة أمامه قليلًا على المسار)؛ والتكبير = الأساس - k*sin(pi*legProgress) فيتسع في منتصف المرحلة ويشتد عند الوصول — camera centre = lerp(head, point slightly ahead on route); zoom = base - k*sin(pi*legProgress) so it widens mid-leg and tightens on arrival
 
 **متى:** حين تتبع الكاميرا رأس مسار متحرك فتتسع في منتصف كل مرحلة وتقترب عند الوصول / for a route-following camera that widens mid-leg and tightens on arrival
 
@@ -10050,7 +10050,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 40-60 mono pill badges with coloured status dot, random rotateZ ±8 deg and translateZ, spawned progressively and drifting slowly; density increases with counter
+**ما هي:** 40-60 شارة كبسولة أحادية المسافة بنقطة حالة ملونة، مع rotateZ عشوائي ±8 درجات وtranslateZ، تظهر تدريجيًا وتنجرف ببطء؛ وتزداد الكثافة مع العداد — 40-60 mono pill badges with coloured status dot, random rotateZ ±8 deg and translateZ, spawned progressively and drifting slowly; density increases with counter
 
 **متى:** حين تريد مشهد فوضى بشارات صغيرة طافية تتكاثر وتزداد كثافتها مع ارتفاع العداد / for a chaotic field of floating status-dot badges whose density grows as a counter climbs
 
@@ -10125,7 +10125,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Mono pill tabs '01 Read · 02 Tap · 03 Listen · 04 Speak'; active one inverts (dark fill, light text) as the section changes
+**ما هي:** تبويبات كبسولة أحادية المسافة '01 Read · 02 Tap · 03 Listen · 04 Speak'؛ والنشط ينعكس (تعبئة داكنة ونص فاتح) عند تغيّر القسم — Mono pill tabs '01 Read · 02 Tap · 03 Listen · 04 Speak'; active one inverts (dark fill, light text) as the section changes
 
 **متى:** حين يشرح الفيديو خطوات مرقمة وتريد شريط تبويبات يبرز الخطوة الحالية بلون معكوس / for a numbered step tab bar whose active tab inverts as each section changes
 
@@ -10200,7 +10200,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets + mono timecode 9 px
+**ما هي:** أقواس زوايا + تايمكود أحادي المسافة 9 px — corner brackets + mono timecode 9 px
 
 **متى:** حين تكفيك زوايا إطار بسيطة مع تايمكود صغير بخط أحادي المسافة فوق الفيديو / for a minimal overlay: corner brackets with a tiny mono timecode
 
@@ -10273,7 +10273,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Pastel alternating rays from centre rotating slowly; every character sticker arranged on an ellipse around a centred two-line handwritten title; small stars twinkle
+**ما هي:** أشعة باستيل متناوبة من المركز تدور ببطء؛ وكل ملصق شخصية مرتب على قطع ناقص حول عنوان مكتوب بخط اليد من سطرين متمركز؛ ونجوم صغيرة تتلألأ — Pastel alternating rays from centre rotating slowly; every character sticker arranged on an ellipse around a centred two-line handwritten title; small stars twinkle
 
 **متى:** حين تريد خاتمة مبهجة بأشعة باستيل دوارة وحلقة شخصيات حول عنوان مكتوب بخط اليد / for a cheerful finale: rotating pastel rays with all character stickers ringed around a handwritten title
 
@@ -10348,7 +10348,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Elements rise into place when they enter view, children staggered; lightweight class toggling instead of scroll handlers.
+**ما هي:** ترتفع العناصر إلى مكانها عند دخولها المشهد وتتتابع العناصر الفرعية؛ بتبديل صنف خفيف بدل معالجات التمرير. — Elements rise into place when they enter view, children staggered; lightweight class toggling instead of scroll handlers.
 
 **متى:** حين تريد ظهور عناصر الصفحة تدريجيا عند التمرير إليها / for page elements that rise into place with a stagger as they scroll into view
 
@@ -10424,7 +10424,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets, top-left project label, top-right '0N / 06 - SECTION', bottom timecode, resolution tag and a progress line
+**ما هي:** أقواس زوايا، وتسمية المشروع أعلى اليسار، و'0N / 06 - SECTION' أعلى اليمين، وتايمكود سفلي، ووسم الدقة، وخط تقدم — corner brackets, top-left project label, top-right '0N / 06 - SECTION', bottom timecode, resolution tag and a progress line
 
 **متى:** حين تريد إطار شوريل يرقم الأقسام ويعرض اسم المشروع والتايمكود ودقة الفيديو وخط التقدم / for a reel frame with numbered sections, project label, timecode, resolution tag and progress line
 
@@ -10499,7 +10499,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Left column: numbered pill + feature name, 2-line headline, grey body, 3 tag chips; right: browser window at 60% width with large soft shadow
+**ما هي:** العمود الأيسر: كبسولة مرقمة + اسم الميزة، وعنوان من سطرين، ونص رمادي، و3 شرائح وسوم؛ واليمين: نافذة متصفح بعرض 60% مع ظل ناعم كبير — Left column: numbered pill + feature name, 2-line headline, grey body, 3 tag chips; right: browser window at 60% width with large soft shadow
 
 **متى:** حين تعرض ميزة بعنوان ونص ووسوم على اليسار ونافذة متصفح كبيرة بظل ناعم على اليمين / for a feature beat with text and tag chips on the left and a large shadowed browser window on the right
 
@@ -10574,7 +10574,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Scale the screenshot inside the window 1.0->1.25 and pan to the region being explained
+**ما هي:** تكبير لقطة الشاشة داخل النافذة من 1.0 إلى 1.25 مع تحريكها إلى المنطقة المشروحة — Scale the screenshot inside the window 1.0->1.25 and pan to the region being explained
 
 **متى:** حين تشرح لقطة شاشة وتريد تقريبا بطيئا وتحريكا نحو الجزء الذي تتحدث عنه / when explaining a screenshot and slowly zooming and panning to the region being explained
 
@@ -10649,7 +10649,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** section names highlighted per chapter
+**ما هي:** شريط تنقل سفلي تُبرَز فيه أسماء الأقسام لكل فصل — section names highlighted per chapter
 
 **متى:** حين تريد شريطا سفليا بأسماء الأقسام يبرز القسم الحالي مع كل فصل / for a bottom bar of section names that highlights the current chapter
 
@@ -10722,7 +10722,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** hundreds of small thumbnail planes on a curved ground with warm glow; camera dolly forward and tilt; bold statement overlaid centre
+**ما هي:** مئات المستويات الصغيرة للصور المصغرة على أرض منحنية بتوهج دافئ؛ والكاميرا تتقدم دوللي وتميل؛ وعبارة جريئة متراكبة في الوسط — hundreds of small thumbnail planes on a curved ground with warm glow; camera dolly forward and tilt; bold statement overlaid centre
 
 **متى:** حين تريد تحليقا فوق مئات البطاقات المصغرة المتوهجة مع عبارة جريئة في المنتصف / for a fly-over across hundreds of glowing thumbnail cards with a bold statement in the centre
 
@@ -10797,7 +10797,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner crop marks, BPM/bar counter, timecode
+**ما هي:** علامات قص في الزوايا، وعداد BPM/موازير، وتايمكود — corner crop marks, BPM/bar counter, timecode
 
 **متى:** حين تريد طبقة فيلمية بعلامات قص في الأركان وعداد BPM والمازورة والتايمكود / for a film overlay with corner crop marks, a BPM and bar counter, and timecode
 
@@ -10870,7 +10870,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** left 40% headline, right card with shadow
+**ما هي:** عنوان في أول 40% يسارًا، وبطاقة بظل يمينًا — left 40% headline, right card with shadow
 
 **متى:** حين تريد تخطيطا بسيطا بعنوان على اليسار وبطاقة واجهة بظل على اليمين / for a simple layout: headline on the left 40% and a shadowed UI card on the right
 
@@ -10943,7 +10943,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** dolly from wide to mascot close-up with DOF
+**ما هي:** دوللي من لقطة واسعة إلى لقطة قريبة للتميمة مع عمق ميدان — dolly from wide to mascot close-up with DOF
 
 **متى:** حين تريد أن تقترب الكاميرا من لقطة واسعة إلى لقطة قريبة على الشخصية مع عمق ميدان / for a dolly from a wide shot to a mascot close-up with depth of field
 
@@ -11018,7 +11018,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets + coordinates + section labels
+**ما هي:** أقواس زوايا + إحداثيات + تسميات الأقسام — corner brackets + coordinates + section labels
 
 **متى:** حين تريد إطارا بزوايا وإحداثيات وأسماء أقسام فوق المشهد بطابع جغرافي / for a geo-style overlay of corner brackets, coordinates and section labels
 
@@ -11091,7 +11091,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** lerp camera from low 3/4 to overhead over 2 s easeInOutCubic; overlay HTML tagline and logo with fade 500 ms
+**ما هي:** استكمال الكاميرا من ثلاثة أرباع منخفضة إلى علوية خلال ثانيتين بـ easeInOutCubic؛ وتراكب شعار HTML ونص تعريفي بتلاشٍ 500 ms — lerp camera from low 3/4 to overhead over 2 s easeInOutCubic; overlay HTML tagline and logo with fade 500 ms
 
 **متى:** حين تختم الفيديو برفع الكاميرا إلى لقطة علوية ثم تظهر عبارة الختام والشعار تدريجيا / for an ending that cranes the camera to overhead, then fades in a tagline and logo
 
@@ -11166,7 +11166,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Static captures always move: slow push or pan across a screenshot, often under a tinted overlay, so no still sits dead on screen.
+**ما هي:** اللقطات الثابتة تتحرك دائمًا: دفع بطيء أو بانورما عبر لقطة شاشة، غالبًا تحت طبقة ملوّنة، فلا تبقى صورة ميتة على الشاشة. — Static captures always move: slow push or pan across a screenshot, often under a tinted overlay, so no still sits dead on screen.
 
 **متى:** عند عرض لقطات شاشة لموقع في فيديو دون أن تبقى صورة ثابتة / when showing website screenshots in a video so no still sits dead on screen
 
@@ -11243,7 +11243,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** short 1-2 line headline centred, ~6% height, accent word/icon in brand colour, everything else black
+**ما هي:** عنوان قصير من سطر إلى سطرين متمركز، بارتفاع ~6%، مع كلمة/أيقونة بلون العلامة، وكل شيء آخر أسود — short 1-2 line headline centred, ~6% height, accent word/icon in brand colour, everything else black
 
 **متى:** حين تريد عنوانا قصيرا في وسط شاشة سوداء بكلمة أو أيقونة مميزة بلون العلامة / for a short centred headline on black with one accent word or icon in brand colour
 
@@ -11318,7 +11318,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** lay out the whole UI once in world coordinates; animate a camera with focusX, focusY and log(scale) keyframes, interpolate in log space so zooms feel uniform; never animate two camera moves at once
+**ما هي:** يُوضع الواجهة كلها مرة واحدة في إحداثيات العالم؛ وتُحرَّك كاميرا بمفاتيح focusX وfocusY وlog(scale)، مع الاستكمال في الفضاء اللوغاريتمي لتبدو التكبيرات منتظمة؛ ولا تُحرَّك حركتا كاميرا معًا أبدًا — lay out the whole UI once in world coordinates; animate a camera with focusX, focusY and log(scale) keyframes, interpolate in log space so zooms feel uniform; never animate two camera moves at once
 
 **متى:** حين تبني الواجهة كاملة مرة واحدة وتتنقل فيها بكاميرا تكبر وتتحرك بسلاسة دون حركتين معا / when the whole UI is laid out once and a camera moves and zooms across it with uniform log-scale zooms
 
@@ -11393,7 +11393,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Grid of real-looking content cards on a plane rotated (rotateX 20 deg, rotateZ -10 deg), blurred 4-8 px and darkened, drifting slowly behind a sharp headline
+**ما هي:** شبكة بطاقات محتوى واقعية المظهر على مستوى مائل (rotateX 20 درجة، rotateZ -10 درجات)، مموهة 4-8 px ومعتّمة، تنجرف ببطء خلف عنوان حاد — Grid of real-looking content cards on a plane rotated (rotateX 20 deg, rotateZ -10 deg), blurred 4-8 px and darkened, drifting slowly behind a sharp headline
 
 **متى:** حين تحتاج خلفية من بطاقات محتوى مائلة ومموهة تتحرك ببطء خلف عنوان حاد / for a backdrop of tilted, blurred content cards drifting slowly behind a sharp headline
 
@@ -11468,7 +11468,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** repeat railing posts along pier; track camera at rider speed so foreground posts sweep past faster than background
+**ما هي:** تكرار أعمدة السياج على طول الرصيف؛ وتتبع الكاميرا بسرعة الراكب فتمر أعمدة المقدمة أسرع من الخلفية — repeat railing posts along pier; track camera at rider speed so foreground posts sweep past faster than background
 
 **متى:** حين تريد إحساس سرعة لراكب يتحرك بمرور أعمدة السياج في المقدمة أسرع من الخلفية / for a sense of speed as foreground railing posts sweep past faster than the background
 
@@ -11543,7 +11543,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Feature tiles of varied sizes/colours spring into a 4x3 grid, each tile a mini feature label
+**ما هي:** شرائح ميزات بأحجام وألوان متنوعة تنبثق بنابض إلى شبكة 4x3، وكل شريحة تسمية ميزة مصغرة — Feature tiles of varied sizes/colours spring into a 4x3 grid, each tile a mini feature label
 
 **متى:** حين تعرض مزايا كثيرة كبلاطات مختلفة الأحجام والألوان تقفز لتتجمع في شبكة / for feature tiles of varied sizes and colours springing into a 4x3 grid, one mini label each
 
@@ -11618,7 +11618,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 3x3 colour cards each looping a mini demo
+**ما هي:** بطاقات ملونة 3x3 تكرر كل منها عرضًا تجريبيًا مصغرًا — 3x3 colour cards each looping a mini demo
 
 **متى:** حين تريد شبكة 3×3 من بطاقات ملونة تعرض كل منها عرضا صغيرا متكررا / for a 3x3 grid of colour cards, each looping its own mini demo
 
@@ -11693,7 +11693,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Four thin L-shaped ticks framing the UI panel like print registration marks
+**ما هي:** أربع علامات رفيعة على شكل L تؤطر لوحة الواجهة كعلامات تسجيل الطباعة — Four thin L-shaped ticks framing the UI panel like print registration marks
 
 **متى:** حين تريد تأطير لوحة واجهة بعلامات زوايا رفيعة تشبه علامات القص في الطباعة / for framing a UI panel with thin L-shaped corner ticks like print registration marks
 
@@ -11768,7 +11768,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Full-frame brand-colour gradient (bright top-left → dark bottom), centred near-black rounded rectangle ~80%x75% slightly below centre with soft shadow; all action inside the stage
+**ما هي:** تدرج لوني بلون العلامة بملء الإطار (ساطع أعلى اليسار → داكن أسفل اليمين)، ومستطيل مستدير شبه أسود متمركز ~80%x75% أسفل الوسط قليلًا بظل ناعم؛ كل الحركة داخل المسرح — Full-frame brand-colour gradient (bright top-left → dark bottom), centred near-black rounded rectangle ~80%x75% slightly below centre with soft shadow; all action inside the stage
 
 **متى:** حين تريد خلفية متدرجة بلون العلامة ومسرحا داكنا بحواف دائرية يجري داخله كل الحدث / for a brand-colour gradient backdrop with a dark rounded stage that holds all the action
 
@@ -11843,7 +11843,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale phone 1->1.8 around badge, hold, return
+**ما هي:** تحجيم الهاتف من 1 إلى 1.8 حول الشارة، ثم مكوث، ثم عودة — scale phone 1->1.8 around badge, hold, return
 
 **متى:** حين تريد تقريب الهاتف نحو شارة فيه ثم الثبات قليلا والعودة / for pushing in on a phone around a badge, holding, then returning
 
@@ -11918,7 +11918,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** mono 10px plate number, chapter code, colour-key dots at left edge
+**ما هي:** تسميات أحادية المسافة 10px لرقم اللوحة ورمز الفصل ونقاط مفتاح الألوان عند الحافة اليسرى — mono 10px plate number, chapter code, colour-key dots at left edge
 
 **متى:** حين تريد تسميات صغيرة بأسلوب الملصق كرقم اللوحة ورمز الفصل ونقاط مفتاح الألوان / for small poster-style labels: plate number, chapter code and colour-key dots on the left edge
 
@@ -11991,7 +11991,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Animates an SVG map's viewBox from the current frame to a fitted target so the 'camera' flies into a region or city.
+**ما هي:** يحرّك viewBox لخريطة SVG من الإطار الحالي إلى هدف مناسب فتطير «الكاميرا» إلى منطقة أو مدينة. — Animates an SVG map's viewBox from the current frame to a fitted target so the 'camera' flies into a region or city.
 
 **متى:** حين تريد التحليق بالكاميرا داخل خريطة SVG إلى منطقة أو مدينة / for flying the camera into a region or city on an SVG map
 
@@ -12067,7 +12067,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** camera orbits 30-60°/s around model on textured ground with soft shadow
+**ما هي:** تدور الكاميرا 30-60 درجة/ث حول نموذج على أرض منسّجة بظل ناعم — camera orbits 30-60°/s around model on textured ground with soft shadow
 
 **متى:** حين تريد عرض مجسم بدوران الكاميرا حوله فوق أرضية بظل ناعم / for showcasing a model with the camera orbiting it on textured ground with a soft shadow
 
@@ -12140,7 +12140,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 40/60 split, headline 2 lines with green key word
+**ما هي:** تقسيم 40/60، وعنوان من سطرين مع كلمة مفتاحية خضراء — 40/60 split, headline 2 lines with green key word
 
 **متى:** حين تريد تقسيم 40/60 بعنوان من سطرين وكلمة مفتاحية ملونة بجانب بطاقة واجهة / for a 40/60 split: two-line headline with a green key word beside a UI card
 
@@ -12215,7 +12215,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale 1→3 on a region over 2s ease-in-out with slight blur
+**ما هي:** تحجيم 1→3 على منطقة خلال ثانيتين بدخول-خروج مع تمويه طفيف — scale 1→3 on a region over 2s ease-in-out with slight blur
 
 **متى:** حين تريد تقريبا قويا على تفصيلة صغيرة في الواجهة مع تمويه خفيف أثناء الحركة / for a strong zoom into a small UI region with a slight blur during the move
 
@@ -12288,7 +12288,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Back cards opacity .3 blur 4px
+**ما هي:** بطاقات خلفية بعتامة .3 وتمويه 4px — Back cards opacity .3 blur 4px
 
 **متى:** حين تريد إبراز البطاقة الأمامية بتمويه البطاقات الخلفية وتخفيف شفافيتها / for focusing the front card by blurring and fading the cards behind it
 
@@ -12361,7 +12361,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Mono 'NN/06 SECTION' bottom-left + progress line, spec text bottom-right
+**ما هي:** 'NN/06 SECTION' أحادي المسافة أسفل اليسار + خط تقدم، ونص المواصفات أسفل اليمين — Mono 'NN/06 SECTION' bottom-left + progress line, spec text bottom-right
 
 **متى:** حين تريد وسم فصل مرقما أسفل اليسار مع خط تقدم ونص مواصفات أسفل اليمين / for a numbered chapter tag bottom-left with a progress line and spec text bottom-right
 
@@ -12434,7 +12434,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** brand left, tagline right, section label over rule
+**ما هي:** العلامة يسارًا، والشعار التعريفي يمينًا، وتسمية القسم فوق خط — brand left, tagline right, section label over rule
 
 **متى:** حين تريد ترويسة بأسلوب مجلة بالعلامة يسارا والعبارة التعريفية يمينا واسم القسم فوق خط / for a magazine-style header: brand left, tagline right, section label over a rule
 
@@ -12507,7 +12507,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 3x3 grid of clips on coloured panels
+**ما هي:** شبكة 3x3 من المقاطع على ألواح ملونة — 3x3 grid of clips on coloured panels
 
 **متى:** حين تريد عرض عدة مقاطع معا في شبكة 3×3 على لوحات ملونة / for showing several clips at once in a 3x3 grid on coloured panels
 
@@ -12580,7 +12580,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** top-left at 5% margin: tiny grey mono index ('04') + bold 700 sans title; fade/blur in 300 ms at chapter start, blur out at end
+**ما هي:** أعلى اليسار بهامش 5%: فهرس رمادي صغير أحادي المسافة ('04') + عنوان sans عريض 700؛ يظهر بتلاشٍ/تمويه في 300 ms عند بدء الفصل ويزول بتمويه عند نهايته — top-left at 5% margin: tiny grey mono index ('04') + bold 700 sans title; fade/blur in 300 ms at chapter start, blur out at end
 
 **متى:** حين تريد عنوان فصل أعلى اليسار برقم صغير يظهر بتلاش وتمويه عند بداية كل فصل / for a top-left chapter header with a small index that fades and blurs in at each chapter start
 
@@ -12655,7 +12655,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** full-frame black card with centred white title; scale to 0.9 with rounded corners revealing grey surround, then cross to next UI content
+**ما هي:** بطاقة سوداء بملء الإطار بعنوان أبيض متمركز؛ تتحجم إلى 0.9 بزوايا مستديرة تكشف محيطًا رماديًا، ثم تنتقل إلى محتوى الواجهة التالي — full-frame black card with centred white title; scale to 0.9 with rounded corners revealing grey surround, then cross to next UI content
 
 **متى:** حين تريد انتقالا من بطاقة عنوان سوداء تتقلص بحواف دائرية لتكشف المحتوى التالي / for a transition where a black title card shrinks with rounded corners before crossing to the next UI
 
@@ -12730,7 +12730,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Continuous lateral truck with parallax (far skyline slower, near tree line faster) bringing the landmark from frame edge to centre
+**ما هي:** تحريك جانبي مستمر (truck) بالبارالاكس (الأفق البعيد أبطأ وصف الأشجار القريب أسرع) يجلب المَعلم من حافة الإطار إلى المركز — Continuous lateral truck with parallax (far skyline slower, near tree line faster) bringing the landmark from frame edge to centre
 
 **متى:** حين تريد كشف معلم بحركة جانبية بطيئة مع بارالاكس بين الأفق البعيد والأشجار القريبة / for slowly revealing a landmark with a lateral truck and layered parallax
 
@@ -12805,7 +12805,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera drifts on slow sines and follows the pointer with lag; scrolling dollies it forward and tilts the look-at.
+**ما هي:** تنجرف الكاميرا على جيوب بطيئة وتتبع المؤشر بتأخر؛ والتمرير يقرّبها للأمام ويميل نقطة النظر. — Camera drifts on slow sines and follows the pointer with lag; scrolling dollies it forward and tilts the look-at.
 
 **متى:** عند كاميرا مشهد ويب تتبع المؤشر واللمس وتتقدم مع التمرير / for a web scene camera that follows the pointer and touch and dollies forward on scroll
 
@@ -12881,7 +12881,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** one element on flat warm grey, soft shadow 0 8px 24px rgba(0,0,0,.08)
+**ما هي:** عنصر واحد على رمادي دافئ مسطح بظل ناعم 0 8px 24px rgba(0,0,0,.08) — one element on flat warm grey, soft shadow 0 8px 24px rgba(0,0,0,.08)
 
 **متى:** حين تريد مشهدا بسيطا جدا بعنصر واحد على رمادي دافئ بظل ناعم / for a minimal scene: one element on flat warm grey with a soft shadow
 
@@ -12954,7 +12954,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Start cards at random positions with ±8-12° rotation; spring them to an aligned row while a search pill appears above and branches connect to each
+**ما هي:** تبدأ البطاقات بمواضع عشوائية بدوران ±8-12°؛ وتُنبض بنابض إلى صف محاذٍ بينما تظهر كبسولة بحث فوقها وتتصل بها الفروع — Start cards at random positions with ±8-12° rotation; spring them to an aligned row while a search pill appears above and branches connect to each
 
 **متى:** حين تريد تحويل الفوضى إلى ترتيب: بطاقات مائلة عشوائيا ترتص في صف مع شريط بحث يتفرع إليها / for scattered, rotated cards that spring into an aligned row as a search pill appears and connects to each
 
@@ -13029,7 +13029,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Show 'frame / total' and 'chapter / total' counters in corners, ticking every frame, to celebrate the code-rendered nature
+**ما هي:** عرض عدادي 'إطار / إجمالي' و'فصل / إجمالي' في الزوايا، يتحدثان كل إطار، للاحتفاء بطبيعة التصيير بالشيفرة — Show 'frame / total' and 'chapter / total' counters in corners, ticking every frame, to celebrate the code-rendered nature
 
 **متى:** حين تريد إبراز أن الفيديو مصنوع بالكود بعدادات للإطار والفصل في الأركان تتغير كل إطار / to celebrate a code-rendered video with frame and chapter counters ticking in the corners
 
@@ -13104,7 +13104,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** blur inactive UI, sharpen focus region
+**ما هي:** تمويه الواجهة غير النشطة وإحداد منطقة التركيز — blur inactive UI, sharpen focus region
 
 **متى:** حين تريد توجيه نظر المشاهد إلى جزء من الواجهة بتمويه الباقي / for guiding attention to one UI region by blurring the inactive parts
 
@@ -13179,7 +13179,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** White rounded cards on light grey, each with title and mini demo, staggered rise
+**ما هي:** بطاقات بيضاء مستديرة على رمادي فاتح، لكل منها عنوان وعرض مصغر، تصعد بتتابع — White rounded cards on light grey, each with title and mini demo, staggered rise
 
 **متى:** حين تعرض مزايا في بطاقات بيضاء مستديرة بعنوان وعرض صغير ترتفع بالتتابع / for white rounded feature cards on light grey, each with a title and mini demo, rising staggered
 
@@ -13254,7 +13254,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** one React/HTML component fed by data rows (title, tagline, bullets, stats, accent colour, illustration); left text column + right framed visual; reuse for every item
+**ما هي:** مكوّن React/HTML واحد يغذّيه صفوف بيانات (عنوان، شعار، نقاط، إحصاءات، لون تمييز، رسم)؛ عمود نص يسارًا وعنصر بصري مؤطر يمينًا؛ يُعاد استخدامه لكل عنصر — one React/HTML component fed by data rows (title, tagline, bullets, stats, accent colour, illustration); left text column + right framed visual; reuse for every item
 
 **متى:** حين تصنع فيديو قائمة لعدة عناصر وتريد قالب بطاقة واحدا يتغذى من البيانات لكل عنصر / for a listicle video where one data-fed card component is reused for every item
 
@@ -13330,7 +13330,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** N short dashes in the header; past ones grey, current one fills with accent colour as the segment plays
+**ما هي:** N شرطات قصيرة في الترويسة؛ الماضية رمادية والحالية تمتلئ بلون التمييز أثناء تشغيل المقطع — N short dashes in the header; past ones grey, current one fills with accent colour as the segment plays
 
 **متى:** حين تريد مؤشر تقدم بشرطات قصيرة في الأعلى تمتلئ فيه شرطة المقطع الحالي بلون مميز / for header progress dashes where the current one fills with accent colour as its segment plays
 
@@ -13405,7 +13405,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets, mono labels top (title/reel, TC hh:mm:ss:ff) and bottom (counter, red REC dot blinking 1 Hz)
+**ما هي:** أقواس زوايا، وتسميات أحادية المسافة أعلى (عنوان/ريل، TC hh:mm:ss:ff) وأسفل (عداد، نقطة REC حمراء تومض 1 Hz) — corner brackets, mono labels top (title/reel, TC hh:mm:ss:ff) and bottom (counter, red REC dot blinking 1 Hz)
 
 **متى:** حين تريد شكل كاميرا تسجيل بزوايا وتايمكود ونقطة تسجيل حمراء تومض / for a camcorder look with corner brackets, timecode and a blinking red REC dot
 
@@ -13480,7 +13480,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner marks, TC counter, REC dot
+**ما هي:** علامات زوايا، وعداد TC، ونقطة REC — corner marks, TC counter, REC dot
 
 **متى:** حين تريد إطارا يشبه شاشة الكاميرا بعلامات زوايا وعداد تايمكود ونقطة تسجيل / for a camera-screen look: corner marks, timecode counter and a REC dot
 
@@ -13553,7 +13553,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** layered PNGs scale at different rates
+**ما هي:** تتحجم ملفات PNG الطبقية بمعدلات مختلفة — layered PNGs scale at different rates
 
 **متى:** حين تريد تقريبا على كولاج من طبقات صور تتحرك كل منها بسرعة مختلفة لإحساس العمق / for pushing into a layered collage where each PNG layer scales at its own rate
 
@@ -13626,7 +13626,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Two stacked gradients darken the text side and the bottom of a full-bleed video so Arabic copy stays readable; phones switch to a mostly-bottom veil and re-centre the subject.
+**ما هي:** تدرّجان متراكبان يعتّمان جهة النص وأسفل فيديو ممتد بالكامل ليبقى النص العربي مقروءًا؛ وفي الهواتف يتحول إلى حجاب سفلي في الغالب ويُعاد توسيط الهدف. — Two stacked gradients darken the text side and the bottom of a full-bleed video so Arabic copy stays readable; phones switch to a mostly-bottom veil and re-centre the subject.
 
 **متى:** حين يكون نص عربي فوق فيديو بملء الشاشة ويحتاج تعتيما ليقرأ / when Arabic copy over a full-bleed video needs darkening gradients to stay readable
 
@@ -13700,7 +13700,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** camera.position lerps toward ball + offset(2,3,5) each frame, lookAt smoothed target
+**ما هي:** يستكمل camera.position نحو الكرة + إزاحة (2,3,5) في كل إطار، مع lookAt بهدف مُنعَّم — camera.position lerps toward ball + offset(2,3,5) each frame, lookAt smoothed target
 
 **متى:** حين تريد كاميرا تلاحق كرة متحركة بتأخير ناعم ونظرة مستقرة / for a chase camera that trails a moving ball with smooth lag and a smoothed look target
 
@@ -13775,7 +13775,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Top line shows a mono code comment describing the current technique (e.g. '// per-letter rise + rotate · stagger 22ms · circ.out') and right side 'NN / SECTION'; bottom shows scene id, BPM, bar number
+**ما هي:** السطر العلوي تعليق شيفرة أحادي المسافة يصف التقنية الحالية (مثل '// per-letter rise + rotate · stagger 22ms · circ.out') واليمين 'NN / SECTION'؛ والسفلي معرّف المشهد وBPM ورقم الميزان — Top line shows a mono code comment describing the current technique (e.g. '// per-letter rise + rotate · stagger 22ms · circ.out') and right side 'NN / SECTION'; bottom shows scene id, BPM, bar number
 
 **متى:** حين تريد HUD يكتب اسم التقنية الحالية كتعليق برمجي مع BPM ورقم المازورة وخط زمني / for a HUD that names the current technique as a code comment, plus BPM, bar number and a keyframe timeline
 
@@ -13850,7 +13850,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** two columns, each with a kicker dot (red 'what people typed', green 'type this instead'), prompt card above and reply card below; paraphrased replies use a dashed border, verbatim replies a solid one
+**ما هي:** عمودان، لكل منهما نقطة عنوان (أحمر 'what people typed'، أخضر 'type this instead')، وبطاقة موجِّه فوق وبطاقة رد تحت؛ الردود المعاد صياغتها بحد متقطع، والحرفية بحد متصل — two columns, each with a kicker dot (red 'what people typed', green 'type this instead'), prompt card above and reply card below; paraphrased replies use a dashed border, verbatim replies a solid one
 
 **متى:** حين تقارن ما كتبه الناس بالبديل المقترح في عمودين لكل منهما برومبت ورد / for a two-column comparison of what people typed versus what to type instead, each with prompt and reply cards
 
@@ -13925,7 +13925,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 04/10 index top-right, labels uppercase mono
+**ما هي:** فهرس 04/10 أعلى اليمين، وتسميات كبيرة الأحرف أحادية المسافة — 04/10 index top-right, labels uppercase mono
 
 **متى:** حين تريد عدادا صغيرا مثل 04/10 أعلى اليمين مع تسميات بحروف كبيرة أحادية المسافة / for a small 04/10 index top-right with uppercase mono labels
 
@@ -13998,7 +13998,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** bottom bar with diamond keyframes, playhead moving with real time, handwritten section label at playhead; timecode top-right in HH:MM:SS:FF
+**ما هي:** شريط سفلي بمفاتيح معينية، ورأس تشغيل يتحرك بالزمن الحقيقي، وتسمية قسم بخط اليد عند رأس التشغيل؛ وتايمكود أعلى اليمين بصيغة HH:MM:SS:FF — bottom bar with diamond keyframes, playhead moving with real time, handwritten section label at playhead; timecode top-right in HH:MM:SS:FF
 
 **متى:** حين تريد شريطا زمنيا يشبه برامج المونتاج بنقاط مفاتيح ومؤشر تشغيل يتحرك مع الوقت / for an editor-style timeline bar with diamond keyframes and a playhead moving in real time
 
@@ -14073,7 +14073,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** rotateX ~10deg, translateZ push 3s
+**ما هي:** rotateX ~10 درجات، ودفع translateZ لمدة 3 ث — rotateX ~10deg, translateZ push 3s
 
 **متى:** حين تريد إمالة الواجهة بزاوية خفيفة ثم الاقتراب منها ببطء / for tilting a UI about 10 degrees on X and slowly pushing in on it
 
@@ -14146,7 +14146,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets + tiny mono timecode labels on cream ground
+**ما هي:** أقواس زوايا + تسميات تايمكود أحادية المسافة صغيرة على أرضية كريمية — corner brackets + tiny mono timecode labels on cream ground
 
 **متى:** حين تريد إطارًا بأقواس زوايا وتايم كود صغير على خلفية كريمية بطابع ورقي / when you want a frame of corner brackets and tiny timecode labels on a cream paper ground
 
@@ -14219,7 +14219,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Left: headline + one-line subline; right: dark UI card with large soft shadow sliding in
+**ما هي:** اليسار: عنوان + سطر فرعي واحد؛ واليمين: بطاقة واجهة داكنة بظل ناعم كبير تنزلق للداخل — Left: headline + one-line subline; right: dark UI card with large soft shadow sliding in
 
 **متى:** عند عرض ميزة منتج بعنوان على اليسار وبطاقة واجهة داكنة تنزلق على اليمين / for a feature beat with a headline on the left and a dark UI card sliding in on the right
 
@@ -14294,7 +14294,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Top bar with player name, zero-padded score counter, hearts and level; bottom bar with section label, countdown TIME and a thin progress bar that grows across the full duration
+**ما هي:** شريط علوي باسم اللاعب وعداد نقاط مبطّن بالأصفار وقلوب ومستوى؛ وشريط سفلي بتسمية القسم وعد تنازلي TIME وشريط تقدم رفيع ينمو عبر المدة كلها — Top bar with player name, zero-padded score counter, hearts and level; bottom bar with section label, countdown TIME and a thin progress bar that grows across the full duration
 
 **متى:** حين يريد المستخدم طابع ألعاب الفيديو بعداد نقاط وقلوب ومستوى ومؤقت تنازلي وشريط تقدم ثابت / when the user wants a video-game look with score counter, hearts, level, countdown timer and a persistent progress bar
 
@@ -14369,7 +14369,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** thin violet rule under the hero word, pixel-mono index number (01-04) in violet and the model identifier in typewriter mono beside it
+**ما هي:** خط بنفسجي رفيع تحت الكلمة الرئيسية، ورقم فهرس بكسلي أحادي المسافة (01-04) بالبنفسجي ومعرّف النموذج بخط آلة كاتبة أحادي المسافة بجانبه — thin violet rule under the hero word, pixel-mono index number (01-04) in violet and the model identifier in typewriter mono beside it
 
 **متى:** عند تقديم عناصر أو نماذج مرقمة بشريط سفلي يضم رقم الفهرس واسم النموذج تحت الكلمة الرئيسية / for introducing numbered items or models with a lower-third showing an index number and the model name
 
@@ -14444,7 +14444,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sector/gate cards carry a picture on the far side that fades into the card with a gradient mask, toned to the brand.
+**ما هي:** تحمل بطاقات القطاع/البوابة صورة في الجهة البعيدة تتلاشى داخل البطاقة بقناع متدرج بلون العلامة. — Sector/gate cards carry a picture on the far side that fades into the card with a gradient mask, toned to the brand.
 
 **متى:** عند إضافة صورة على طرف بطاقة تذوب فيها بتدرج بألوان الهوية / for a card picture on the far side that fades into the card with a brand-toned gradient mask
 
@@ -14518,7 +14518,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Clip a landscape to a window rect; draw 4-5 tiled layers (sky, mountains, hills+buildings, trees, foreground fence/poles) scrolling horizontally at increasing speeds; wrap tiles seamlessly
+**ما هي:** قص منظر طبيعي إلى مستطيل نافذة؛ وارسم 4-5 طبقات مبلّطة (سماء، جبال، تلال+مبانٍ، أشجار، سياج/أعمدة أمامية) تتمرر أفقيًا بسرعات متزايدة؛ مع التفاف البلاطات بسلاسة — Clip a landscape to a window rect; draw 4-5 tiled layers (sky, mountains, hills+buildings, trees, foreground fence/poles) scrolling horizontally at increasing speeds; wrap tiles seamlessly
 
 **متى:** حين تريد إحساس رحلة يُرى منظرها من نافذة بطبقات طبيعية تتحرك أفقيًا بسرعات متفاوتة / when you want a travel feel seen through a window, with landscape layers scrolling sideways at different speeds
 
@@ -14593,7 +14593,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Centre every element on the vertical axis, mirror props left/right, pastel pink + deep purple + gold, flat frontal perspective, ornamental medallion at top centre
+**ما هي:** مركزة كل عنصر على المحور العمودي، وعكس الإكسسوارات يمينًا/يسارًا، وردي باستيل + بنفسجي غامق + ذهبي، ومنظور أمامي مسطح، وميدالية زخرفية في أعلى الوسط — Centre every element on the vertical axis, mirror props left/right, pastel pink + deep purple + gold, flat frontal perspective, ornamental medallion at top centre
 
 **متى:** حين يطلب المستخدم لقطة متناظرة بأسلوب ويس أندرسون بألوان باستيل ومنظور أمامي مسطح / when the user asks for a symmetrical Wes Anderson style frame with pastel colours and a flat frontal perspective
 
@@ -14668,7 +14668,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** '03/08 KINETIC TYPE' label + progress segment
+**ما هي:** تسمية '03/08 KINETIC TYPE' + مقطع تقدم — '03/08 KINETIC TYPE' label + progress segment
 
 **متى:** عند حاجة الفيديو إلى تسمية صغيرة تبين رقم المشهد من الإجمالي واسمه مع جزء تقدم / when a video needs a small label showing scene number out of total and its name, plus a progress segment
 
@@ -14743,7 +14743,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** lerp camera behind target, roll proportional to lateral velocity
+**ما هي:** يستكمل الكاميرا خلف الهدف، مع دوران يتناسب مع السرعة الجانبية — lerp camera behind target, roll proportional to lateral velocity
 
 **متى:** حين تتبع الكاميرا جسمًا متحركًا من الخلف وتميل مع حركته الجانبية / when the camera follows a moving target from behind and banks with its sideways velocity
 
@@ -14818,7 +14818,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Scale the whole scene ~2.5x toward monitor, type a green mono line with block cursor, then pull back
+**ما هي:** تحجيم المشهد كله ~2.5x نحو الشاشة، وكتابة سطر أخضر أحادي المسافة بمؤشر كتلة، ثم الرجوع للخلف — Scale the whole scene ~2.5x toward monitor, type a green mono line with block cursor, then pull back
 
 **متى:** عند الاقتراب من شاشة لكتابة سطر طرفية أخضر بمؤشر مربع ثم الابتعاد / for pushing into a monitor to type a green terminal line with a block cursor, then pulling back
 
@@ -14893,7 +14893,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Persistent overlay: 4 corner brackets (20 px arms), mono title top-left, timecode top-right, chapter label bottom-left, 'frame / total' with thin progress line bottom-right, all ~12 px mono at 60% opa
+**ما هي:** تراكب دائم: 4 أقواس زوايا (أذرع 20 px)، وعنوان أحادي المسافة أعلى اليسار، وتايمكود أعلى اليمين، وتسمية فصل أسفل اليسار، و'إطار / إجمالي' مع خط تقدم رفيع أسفل اليمين، كلها ~12 px أحادية المسافة بعتامة 60% — Persistent overlay: 4 corner brackets (20 px arms), mono title top-left, timecode top-right, chapter label bottom-left, 'frame / total' with thin progress line bottom-right, all ~12 px mono at 60% opa
 
 **متى:** حين يحتاج الشوريل إلى إطار ثابت بزوايا وعنوان وتايم كود واسم الفصل وعداد إطارات وخط تقدم / when a showreel needs a persistent overlay with corner brackets, title, timecode, chapter label, frame counter and progress line
 
@@ -14968,7 +14968,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Four L corners + brand tag + footer date
+**ما هي:** أربع زوايا L + وسم العلامة + تاريخ التذييل — Four L corners + brand tag + footer date
 
 **متى:** عند تأطير الشاشة بعلامات قص على شكل L مع اسم العلامة وتاريخ في التذييل / for framing the screen with L-shaped crop marks, a brand tag and a footer date
 
@@ -15043,7 +15043,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** short lowercase line at top centre ('as a demo.', 'or a video.') with a browser/app window sliding up below it and a cursor performing one action
+**ما هي:** سطر قصير بأحرف صغيرة أعلى الوسط ('as a demo.' أو 'or a video.') تنزلق تحته نافذة متصفح/تطبيق للأعلى ومؤشر ينفذ فعلًا واحدًا — short lowercase line at top centre ('as a demo.', 'or a video.') with a browser/app window sliding up below it and a cursor performing one action
 
 **متى:** حين تعرض منتجًا رقميًا بسطر عنوان قصير ونافذة متصفح أو تطبيق تصعد ومؤشر ينفذ إجراءً واحدًا / when showing a product with a short headline, a browser or app window sliding up and a cursor doing one action
 
@@ -15118,7 +15118,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** tracked uppercase section kicker top-left, contextual line icon top-right, brand logo bubble bottom-left kept across every cut to unify rapid scenes
+**ما هي:** عنوان قسم كبير الأحرف متباعد أعلى اليسار، وأيقونة خطية سياقية أعلى اليمين، وفقاعة شعار العلامة أسفل اليسار تبقى عبر كل قطعة لتوحيد المشاهد السريعة — tracked uppercase section kicker top-left, contextual line icon top-right, brand logo bubble bottom-left kept across every cut to unify rapid scenes
 
 **متى:** حين تتتابع مشاهد سريعة وتريد توحيدها بعناصر ثابتة في الزوايا كعنوان القسم والأيقونة والشعار / when rapid cuts need unifying with persistent corner elements: section kicker, icon and brand logo
 
@@ -15193,7 +15193,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Lay out the full product UI on a large canvas and animate a transform (translate/scale) to frame each step instead of cutting
+**ما هي:** ضع واجهة المنتج كاملة على لوحة كبيرة وحرّك تحويلًا (إزاحة/تحجيم) لتأطير كل خطوة بدل القطع — Lay out the full product UI on a large canvas and animate a transform (translate/scale) to frame each step instead of cutting
 
 **متى:** عند شرح خطوات منتج بتحريك كاميرا فوق لوحة واجهة واحدة كبيرة بدل القطع بين اللقطات / for walking through product steps by moving a camera over one large UI canvas instead of cutting
 
@@ -15268,7 +15268,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Editorial camera: locked lens with a slow 4% optical push and slight Z drift, no shake.
+**ما هي:** كاميرا تحريرية: عدسة مثبتة مع دفع بصري بطيء 4% وانجراف Z طفيف دون اهتزاز. — Editorial camera: locked lens with a slow 4% optical push and slight Z drift, no shake.
 
 **متى:** حين تريد كاميرا تحريرية هادئة بدفع بطيء دون أي اهتزاز / for a calm editorial shot with a locked lens, slow push and no shake
 
@@ -15344,7 +15344,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Horizontal rails at 25/55/90% height, each a row of labelled bars with note names below; colour-code each instrument family
+**ما هي:** قضبان أفقية عند ارتفاع 25/55/90%، كل منها صف من أشرطة معنونة وأسماء النوتات تحتها؛ وترميز لوني لكل عائلة آلات — Horizontal rails at 25/55/90% height, each a row of labelled bars with note names below; colour-code each instrument family
 
 **متى:** حين تعرض آلات موسيقية في صفوف أفقية بأشرطة ملونة حسب العائلة وأسماء النوتات تحتها / when laying out musical instruments as horizontal rows of colour-coded bars with note names below
 
@@ -15419,7 +15419,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale camera from room to monitor content and back
+**ما هي:** تحجيم الكاميرا من الغرفة إلى محتوى الشاشة والعودة — scale camera from room to monitor content and back
 
 **متى:** عند الانتقال من لقطة الغرفة إلى محتوى الشاشة ثم العودة في بداية المقطع ونهايته / for moving the camera from a room shot into the monitor content and back as an opening and closing bookend
 
@@ -15492,7 +15492,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 3 equal vertical colour panels slide up staggered 120 ms, each with icon + serif label
+**ما هي:** 3 ألواح ألوان عمودية متساوية تنزلق للأعلى بتتابع 120 ms، لكل منها أيقونة + تسمية serif — 3 equal vertical colour panels slide up staggered 120 ms, each with icon + serif label
 
 **متى:** حين تعرض ثلاث فئات أو أقسام في ألواح عمودية ملونة تصعد بتتابع مع أيقونة وعنوان / when presenting three categories as equal vertical colour panels sliding up in stagger, each with icon and label
 
@@ -15567,7 +15567,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Rotated 90° uppercase word on left edge in accent blue framing a card
+**ما هي:** كلمة كبيرة الأحرف مدارة 90° على الحافة اليسرى بأزرق التمييز تؤطر بطاقة — Rotated 90° uppercase word on left edge in accent blue framing a card
 
 **متى:** عند إضافة كلمة عمودية مدارة 90 درجة على الحافة اليسرى لتأطير بطاقة / for adding a 90-degree rotated uppercase word on the left edge to frame a card
 
@@ -15640,7 +15640,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Start tight on a single tile (logo) and scale the canvas container from ~4x to ~0.5x with motion blur so the whole body of work appears at once
+**ما هي:** البدء بلقطة قريبة على شريحة واحدة (شعار) وتحجيم حاوية اللوحة من ~4x إلى ~0.5x مع تمويه حركة ليظهر العمل كله دفعة واحدة — Start tight on a single tile (logo) and scale the canvas container from ~4x to ~0.5x with motion blur so the whole body of work appears at once
 
 **متى:** حين تبدأ قريبًا من الشعار ثم تبتعد بسرعة لكشف مجموعة الأعمال كلها دفعة واحدة / when starting tight on a logo tile and zooming out fast to reveal the whole body of work at once
 
@@ -15715,7 +15715,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** '05 / ELIZA' top-left, tick ruler top-right with orange marker
+**ما هي:** '05 / ELIZA' أعلى اليسار، ومسطرة تدريج أعلى اليمين بعلامة برتقالية — '05 / ELIZA' top-left, tick ruler top-right with orange marker
 
 **متى:** عند تقسيم الفيديو إلى فصول مرقمة مع مسطرة زمنية صغيرة ومؤشر يبين الموضع / for chaptered videos needing a numbered chapter label and a small tick ruler with a position marker
 
@@ -15788,7 +15788,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** persistent top pill nav; a dark active pill slides to next tab, scene content (headline left, window right) swaps with blur crossfade
+**ما هي:** شريط تنقل كبسولي دائم في الأعلى؛ تنزلق كبسولة نشطة داكنة إلى التبويب التالي، ويتبدل محتوى المشهد (العنوان يسارًا والنافذة يمينًا) بتلاشٍ متقاطع مموه — persistent top pill nav; a dark active pill slides to next tab, scene content (headline left, window right) swaps with blur crossfade
 
 **متى:** حين تتنقل بين أقسام الفيديو بشريط تبويبات علوي ينزلق فيه التبويب النشط وتتبدل المشاهد / when navigating video sections with a top pill tab bar whose active tab slides while scene content swaps
 
@@ -15863,7 +15863,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** scale = base^(t/T); zoom toward a fixed anchor; each segment duration proportional to log(zoom ratio) so perceived speed is constant
+**ما هي:** التحجيم = الأساس^(t/T)؛ تكبير نحو مرساة ثابتة؛ ومدة كل مقطع تتناسب مع log(نسبة التكبير) فتبقى السرعة المدركة ثابتة — scale = base^(t/T); zoom toward a fixed anchor; each segment duration proportional to log(zoom ratio) so perceived speed is constant
 
 **متى:** عند الحاجة إلى زووم لا ينتهي يعبر عوالم متداخلة بسرعة محسوسة ثابتة / for an endless zoom through nested worlds at a constant perceived speed
 
@@ -15938,7 +15938,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** OrbitControls tween target and distance
+**ما هي:** يحرّك OrbitControls الهدف والمسافة بتنعيم — OrbitControls tween target and distance
 
 **متى:** حين تريد كاميرا تدور حول الهدف وتقترب منه بانسيابية بتحريك هدف ومسافة OrbitControls / when the camera should orbit and push in on a target by tweening OrbitControls target and distance
 
@@ -16013,7 +16013,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** mono '01 · UPLOAD' + bold caption under UI
+**ما هي:** '01 · UPLOAD' أحادي المسافة + تعليق عريض تحت الواجهة — mono '01 · UPLOAD' + bold caption under UI
 
 **متى:** عند شرح خطوات استخدام واجهة بتسمية خطوة مرقمة وتعليق عريض أسفلها / for explaining UI steps with a numbered step label and a bold caption beneath the interface
 
@@ -16086,7 +16086,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 1080x1920 centre composition with 10% side margins and clean negative space.
+**ما هي:** تكوين مركزي 1080x1920 بهوامش جانبية 10% وفراغ سلبي نظيف. — 1080x1920 centre composition with 10% side margins and clean negative space.
 
 **متى:** عند تصميم إطار عمودي للجوال 1080x1920 بهوامش آمنة ومساحة فارغة نظيفة / for a 1080x1920 vertical composition with safe side margins and clean negative space
 
@@ -16162,7 +16162,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** lay all steps on one large canvas (~4x frame); animate a camera transform (translate/scale) between step regions; finish with a pull-back to show the whole map
+**ما هي:** ضع كل الخطوات على لوحة كبيرة واحدة (~4x الإطار)؛ وحرّك تحويل كاميرا (إزاحة/تحجيم) بين مناطق الخطوات؛ وأنهِ بسحب للخلف لإظهار الخريطة كلها — lay all steps on one large canvas (~4x frame); animate a camera transform (translate/scale) between step regions; finish with a pull-back to show the whole map
 
 **متى:** حين تشرح عملية من عدة خطوات على سبورة كبيرة تتنقل الكاميرا بينها ثم تبتعد لعرض الخريطة كاملة / when explaining a multi-step process on one big board, panning between steps then pulling back to show the whole map
 
@@ -16237,7 +16237,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Scale and translate the whole UI layer so a target element (button) fills a corner, then return
+**ما هي:** تحجيم وإزاحة طبقة الواجهة كلها ليملأ عنصر هدف (زر) زاوية، ثم العودة — Scale and translate the whole UI layer so a target element (button) fills a corner, then return
 
 **متى:** عند لفت الانتباه إلى زر أو عنصر في الواجهة بالتقريب عليه ثم العودة / for drawing attention to a button or UI element by zooming the whole UI onto it and returning
 
@@ -16312,7 +16312,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Corner crop marks, mono labels in four corners (name/role, project/year, chapter 'NN — NAME', running timecode) and a segmented progress bar at bottom centre
+**ما هي:** علامات قص في الزوايا، وتسميات أحادية المسافة في الزوايا الأربع (الاسم/الدور، المشروع/السنة، الفصل 'NN — NAME'، تايمكود جارٍ) وشريط تقدم مجزأ أسفل الوسط — Corner crop marks, mono labels in four corners (name/role, project/year, chapter 'NN — NAME', running timecode) and a segmented progress bar at bottom centre
 
 **متى:** حين تريد إطارًا بطابع سويسري بعلامات قص وتسميات في الزوايا وعداد فصول وشريط تقدم مقسم / when you want a Swiss-style frame with crop marks, corner labels, chapter counter and a segmented progress bar
 
@@ -16387,7 +16387,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** draw a circle + handle; inside, render the function rescaled around a focus point by factor k so curvature vanishes; caption 'magnification ×100'
+**ما هي:** ارسم دائرة + مقبضًا؛ وداخلها صيّر الدالة مُعاد تحجيمها حول نقطة تركيز بعامل k فيختفي الانحناء؛ مع التسمية 'magnification ×100' — draw a circle + handle; inside, render the function rescaled around a focus point by factor k so curvature vanishes; caption 'magnification ×100'
 
 **متى:** عند شرح فكرة رياضية بعدسة مكبرة تكبر منحنى دالة حتى يختفي انحناؤه وتقارن الأملس بالزاوية / for a math explainer using a magnifier that rescales a function until its curvature vanishes, comparing smooth vs corner
 
@@ -16462,7 +16462,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** When focusing on a detail panel, keep the previous scene (gallery) behind it blurred 12-20 px and dimmed 50%, panel slides in from the right with shadow
+**ما هي:** عند التركيز على لوحة تفصيل، أبقِ المشهد السابق (المعرض) خلفها مموهًا 12-20 px ومعتّمًا 50%، وتنزلق اللوحة من اليمين بظل — When focusing on a detail panel, keep the previous scene (gallery) behind it blurred 12-20 px and dimmed 50%, panel slides in from the right with shadow
 
 **متى:** حين تفتح لوحة تفاصيل فوق المعرض مع إبقاء المشهد السابق خلفها مموهًا ومعتمًا لإحساس العمق / when a detail panel slides in over the gallery and the previous scene stays blurred and dimmed behind it for depth
 
@@ -16537,7 +16537,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets, chapter index, timecode, bpm in mono
+**ما هي:** أقواس زوايا، وفهرس الفصل، وتايمكود، وbpm بخط أحادي المسافة — corner brackets, chapter index, timecode, bpm in mono
 
 **متى:** عند فيديو مقسم إلى فصول يحتاج إطارًا بزوايا ورقم الفصل وتايم كود وسرعة الإيقاع BPM / for a chaptered video needing corner brackets, chapter index, timecode and a BPM readout
 
@@ -16610,7 +16610,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Black bars animate from top and bottom until only a thin strip of the name card remains, then cut to black
+**ما هي:** أشرطة سوداء تتحرك من الأعلى والأسفل حتى لا يبقى إلا شريط رفيع من بطاقة الاسم، ثم قطع إلى الأسود — Black bars animate from top and bottom until only a thin strip of the name card remains, then cut to black
 
 **متى:** لختام الفيديو بأشرطة سوداء تنغلق من أعلى وأسفل حتى يبقى شريط رفيع من بطاقة الاسم ثم إظلام / for ending a video with black bars closing from top and bottom to a thin strip of the name card, then cut to black
 
@@ -16685,7 +16685,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** large glyph horizontal plus a vertical stack of smaller glyphs, separated by thin 1-2 px L-shaped rule lines
+**ما هي:** حرف كبير أفقي مع رصّ عمودي لحروف أصغر، تفصلها خطوط L رفيعة 1-2 px — large glyph horizontal plus a vertical stack of smaller glyphs, separated by thin 1-2 px L-shaped rule lines
 
 **متى:** حين تريد تكوينًا طباعيًا يجمع حرفًا كبيرًا أفقيًا مع عمود حروف صغيرة يفصلهما خط رفيع على شكل L / when pairing a large horizontal glyph with a vertical stack of small glyphs separated by thin L-shaped rules
 
@@ -16760,7 +16760,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** tiny wide-tracked condensed caps labels top-left (with red underline) and bottom-right (year/version)
+**ما هي:** تسميات صغيرة بأحرف كبيرة ضيقة واسعة التباعد أعلى اليسار (بخط أحمر تحتها) وأسفل اليمين (السنة/الإصدار) — tiny wide-tracked condensed caps labels top-left (with red underline) and bottom-right (year/version)
 
 **متى:** عند إضافة تسميات صغيرة متباعدة الحروف في الزوايا للسنة أو الإصدار مع خط أحمر تحت إحداها / for adding tiny wide-tracked caps labels in the corners for year or version, with a red underline
 
@@ -16835,7 +16835,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Top-centre label: small accent-filled square with two-digit number in dark mono + uppercase tracked mono step name; swap on each step
+**ما هي:** تسمية أعلى الوسط: مربع صغير بلون التمييز برقم من خانتين بخط أحادي داكن + اسم الخطوة بأحرف كبيرة متباعدة أحادية المسافة؛ تتبدل مع كل خطوة — Top-centre label: small accent-filled square with two-digit number in dark mono + uppercase tracked mono step name; swap on each step
 
 **متى:** حين تعرض خطوات متتالية برقم داخل مربع ملون واسم الخطوة أعلى المنتصف يتبدل مع كل خطوة / when showing sequential steps with a two-digit number chip and step name at top centre that swaps per step
 
@@ -16910,7 +16910,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 + MIT (vtake-skills) |
 
-**ما هي:** Four video+card canvas recipes with exact #video-wrap targets: split (landscape video 960x1080 at left 960; portrait bottom half 1080x960), stack (top 52%: 1892x548 at 14,14; portrait top 44% 1080x844), pip (400x300 at 1480,760; portrait 360x203 at 690,28 + .framed), overlay (full bleed + glass card…
+**ما هي:** أربع وصفات للوحة فيديو وبطاقة بأهداف #video-wrap دقيقة: split (فيديو أفقي 960x1080 عند اليسار 960؛ وعمودي النصف السفلي 1080x960)، stack (أعلى 52%: 1892x548 عند 14,14؛ وعمودي أعلى 44% 1080x844)، pip (400x300 عند 1480,760؛ وعمودي 360x203 عند 690,28 مع .framed)، overlay (ملء كامل مع بطاقة زجاجية… — Four video+card canvas recipes with exact #video-wrap targets: split (landscape video 960x1080 at left 960; portrait bottom half 1080x960), stack (top 52%: 1892x548 at 14,14; portrait top 44% 1080x844), pip (400x300 at 1480,760; portrait 360x203 at 690,28 + .framed), overlay (full bleed + glass card…
 
 **متى:** حين تجمع فيديو مع بطاقة بتقسيم الشاشة أو صورة داخل صورة أو تراكب / when combining a video with a card as split screen, stacked, picture-in-picture or overlay
 
@@ -16987,7 +16987,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** lerp camera pos/target over 3 s easeInOutCubic
+**ما هي:** استكمال موضع/هدف الكاميرا خلال 3 ث بـ easeInOutCubic — lerp camera pos/target over 3 s easeInOutCubic
 
 **متى:** عند الانتقال بين فصول المشهد بطيران الكاميرا بسلاسة من موضع إلى آخر / for flying the camera smoothly from one chapter position and target to the next
 
@@ -17060,7 +17060,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** four small mono labels pinned to safe-area corners (URL, network, slogan, live timecode mm:ss.cs) that persist across cuts and stay readable on both black and white
+**ما هي:** أربع تسميات صغيرة أحادية المسافة مثبتة في زوايا المنطقة الآمنة (URL، الشبكة، الشعار، تايمكود حي mm:ss.cs) تبقى عبر القطعات وتظل مقروءة على الأسود والأبيض — four small mono labels pinned to safe-area corners (URL, network, slogan, live timecode mm:ss.cs) that persist across cuts and stay readable on both black and white
 
 **متى:** حين تريد تسميات ثابتة في زوايا الشاشة للرابط والشعار النصي وتايم كود جارٍ تبقى مقروءة على الأسود والأبيض / when you need persistent corner labels (URL, slogan, live timecode) that stay readable on both black and white
 
@@ -17135,7 +17135,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** repeating rings of instances scaled exponentially, wrap-around
+**ما هي:** حلقات متكررة من النسخ بتحجيم أسي مع التفاف — repeating rings of instances scaled exponentially, wrap-around
 
 **متى:** عند الرغبة في نفق لا نهائي من حلقات متكررة تتكبر أسيًا وتلتف من جديد / for an endless tunnel of repeating rings that scale exponentially and wrap around
 
@@ -17208,7 +17208,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets, 0N/07 chapter label, timecode, ruler progress
+**ما هي:** أقواس زوايا، وتسمية الفصل 0N/07، وتايمكود، وتقدم بمسطرة — corner brackets, 0N/07 chapter label, timecode, ruler progress
 
 **متى:** حين يقسم الفيديو إلى فصول مرقمة ويحتاج إطارًا بزوايا وتايم كود ومسطرة تقدم / when a video is split into numbered chapters and needs corner brackets, timecode and a ruler progress
 
@@ -17283,7 +17283,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Camera target = plane position + offset behind/above in plane space, smoothed with a critically damped spring; inherit a fraction of plane roll so the horizon tilts
+**ما هي:** هدف الكاميرا = موضع الطائرة + إزاحة خلف/فوق في فضاء الطائرة، مُنعَّم بنابض مخمَّد حرجًا؛ وترث جزءًا من دوران الطائرة فيميل الأفق — Camera target = plane position + offset behind/above in plane space, smoothed with a critically damped spring; inherit a fraction of plane roll so the horizon tilts
 
 **متى:** عند تتبع طائرة من الخلف وأعلى بكاميرا ناعمة تميل مع ميلان الطائرة فيميل الأفق / for following a plane from behind and above with a smoothed camera that inherits its roll so the horizon tilts
 
@@ -17358,7 +17358,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Dashed vertical divider, labels at top, one icon per side (key = ownership, pencil = action) and a red caveat line with crash arrow
+**ما هي:** فاصل عمودي متقطع، وتسميات في الأعلى، وأيقونة لكل جانب (مفتاح = ملكية، قلم = فعل) وسطر تحذير أحمر مع سهم تحطم — Dashed vertical divider, labels at top, one icon per side (key = ownership, pencil = action) and a red caveat line with crash arrow
 
 **متى:** حين تشرح الفرق بين دورك ودوري بتقسيم الشاشة بخط متقطع وأيقونة لكل جانب وسطر تحذير أحمر / when contrasting 'you' vs 'me' with a dashed split screen, one icon per side and a red caveat line
 
@@ -17433,7 +17433,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Corner crop brackets, top labels and timecode, bottom elapsed bar with tick marks and moving playhead; everything ~40% opacity tiny mono
+**ما هي:** أقواس قص في الزوايا، وتسميات وتايمكود في الأعلى، وشريط انقضاء سفلي بعلامات تدريج ورأس تشغيل متحرك؛ وكل شيء بعتامة ~40% أحادي المسافة صغير — Corner crop brackets, top labels and timecode, bottom elapsed bar with tick marks and moving playhead; everything ~40% opacity tiny mono
 
 **متى:** عند إضافة إطار سينمائي خافت بزوايا قص وتايم كود وشريط زمن منقضٍ بعلامات ومؤشر متحرك / for adding faint cinematic chrome with crop corners, timecode and an elapsed bar with ticks and a moving playhead
 
@@ -17508,7 +17508,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 2 px black line at the very bottom edge grows linearly from left over the whole duration, signalling story progress
+**ما هي:** خط أسود 2 px عند الحافة السفلية يمتد خطيًا من اليسار طوال المدة، دالًّا على تقدم القصة — 2 px black line at the very bottom edge grows linearly from left over the whole duration, signalling story progress
 
 **متى:** حين تريد خطًا رفيعًا أسفل الشاشة ينمو طوال الفيديو ليبين تقدم القصة / when you want a thin line at the bottom edge growing over the whole duration to signal story progress
 
@@ -17583,7 +17583,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** four corner mono labels (title, chapter 'NN / NAME', grid spec, running timecode) that update per act
+**ما هي:** أربع تسميات أحادية المسافة في الزوايا (العنوان، الفصل 'NN / NAME'، مواصفات الشبكة، تايمكود جارٍ) تتحدث مع كل فصل — four corner mono labels (title, chapter 'NN / NAME', grid spec, running timecode) that update per act
 
 **متى:** عند تصميم بطابع الملصقات يعرض في الزوايا العنوان والفصل ومواصفات الشبكة وتايم كود يتحدث مع كل فصل / for a poster-style frame with corner labels for title, chapter, grid spec and running timecode updating per act
 
@@ -17658,7 +17658,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** rounded card with controls on a light half and the result number in brand orange on a black half; a mascot overlaps the corner
+**ما هي:** بطاقة مستديرة بعناصر تحكم في نصف فاتح ورقم النتيجة بالبرتقالي العلامي على نصف أسود؛ وتميمة تتداخل مع الزاوية — rounded card with controls on a light half and the result number in brand orange on a black half; a mascot overlaps the corner
 
 **متى:** حين تعرض نتيجة رقمية في بطاقة نصفها فاتح للتحكم ونصفها داكن للرقم مع شخصية على الزاوية / when showing a result number in a card split into a light controls half and a dark result half, with a mascot overlapping
 
@@ -17733,7 +17733,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 + MIT (vtake-skills) |
 
-**ما هي:** Decorative chrome around the video: clean (none, default), hairline (double stroke + four viewfinder corner ticks), polaroid (white photo frame + Caveat label + blue washi tape).
+**ما هي:** إطار زخرفي حول الفيديو: clean (بلا إطار، الافتراضي)، hairline (خط مزدوج مع أربع علامات زوايا كمنظار)، polaroid (إطار صورة أبيض مع تسمية Caveat وشريط washi أزرق). — Decorative chrome around the video: clean (none, default), hairline (double stroke + four viewfinder corner ticks), polaroid (white photo frame + Caveat label + blue washi tape).
 
 **متى:** عند إضافة إطار زخرفي حول الفيديو مثل خط رفيع أو إطار بولارويد / for decorative chrome around a video such as a hairline viewfinder or a polaroid frame
 
@@ -17807,7 +17807,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** top '04 / 07 TITLE' strip
+**ما هي:** شريط علوي '04 / 07 TITLE' — top '04 / 07 TITLE' strip
 
 **متى:** عند حاجة الفيديو إلى شريط علوي يبين رقم الفصل من الإجمالي وعنوانه / for a top strip showing the current chapter number out of total with its title
 
@@ -17880,7 +17880,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 4x3 cards slight rotation drift
+**ما هي:** بطاقات 4x3 بانجراف دوران طفيف — 4x3 cards slight rotation drift
 
 **متى:** حين تريد شبكة بطاقات 4×3 تنجرف وتدور قليلًا / when you want a 4x3 wall of cards drifting with a slight rotation
 
@@ -17953,7 +17953,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Left column: mono kicker with dot, 2-line bold headline (line 2 in brand colour); right column: white rounded card with large soft shadow; keep layout fixed and swap content per feature
+**ما هي:** العمود الأيسر: شعار أحادي المسافة بنقطة، وعنوان عريض من سطرين (السطر الثاني بلون العلامة)؛ والعمود الأيمن: بطاقة بيضاء مستديرة بظل ناعم كبير؛ يبقى التخطيط ثابتًا ويتبدل المحتوى لكل ميزة — Left column: mono kicker with dot, 2-line bold headline (line 2 in brand colour); right column: white rounded card with large soft shadow; keep layout fixed and swap content per feature
 
 **متى:** عند عرض عدة ميزات بتخطيط ثابت: عنوان عريض يسارًا وبطاقة واجهة بيضاء طافية يمينًا يتبدل محتواها / for presenting several features in one fixed layout: bold headline left, floating white UI card right with swapped content
 
@@ -18028,7 +18028,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Exponential ease of camera distance over minutes so object size grows steadily; slight inclination change for reveal
+**ما هي:** تنعيم أسي لمسافة الكاميرا على مدى دقائق فينمو حجم الجسم بثبات؛ مع تغيّر طفيف في الميل للكشف — Exponential ease of camera distance over minutes so object size grows steadily; slight inclination change for reveal
 
 **متى:** حين تريد اقترابًا بطيئًا جدًا من جسم على مدى دقائق ليكبر حجمه بثبات مع تغير خفيف في الزاوية / when slowly approaching an object over minutes so its size grows steadily, with a slight inclination change for reveal
 
@@ -18103,7 +18103,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets, chapter n/8, mono label, progress line bottom
+**ما هي:** أقواس زوايا، والفصل n/8، وتسمية أحادية المسافة، وخط تقدم سفلي — corner brackets, chapter n/8, mono label, progress line bottom
 
 **متى:** عند فيديو بفصول يحتاج إطارًا بسيطًا بزوايا ورقم الفصل وخط تقدم سفلي / for a chaptered video needing a simple frame with corner brackets, chapter number and a bottom progress line
 
@@ -18176,7 +18176,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** four corner labels in small uppercase sans; bottom-left 'CH1 2.0V/div 110BPM T+ss.ss' updated per frame; top-right chapter word swaps per section
+**ما هي:** أربع تسميات زوايا بأحرف كبيرة sans صغيرة؛ وأسفل اليسار 'CH1 2.0V/div 110BPM T+ss.ss' يتحدث كل إطار؛ وكلمة الفصل أعلى اليمين تتبدل مع كل قسم — four corner labels in small uppercase sans; bottom-left 'CH1 2.0V/div 110BPM T+ss.ss' updated per frame; top-right chapter word swaps per section
 
 **متى:** حين تريد طابع راسم الإشارة بقراءات حية في الزوايا مثل الفولت والإيقاع والزمن تتحدث كل إطار / when you want a scope-style HUD with live corner readouts (V/div, BPM, time) updating every frame
 
@@ -18251,7 +18251,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 9 images start off-frame with random rotation/scale and ease into a 3x3 grid with small gaps, staggered
+**ما هي:** 9 صور تبدأ خارج الإطار بدوران/تحجيم عشوائيين وتنساب إلى شبكة 3x3 بفجوات صغيرة، بتتابع — 9 images start off-frame with random rotation/scale and ease into a 3x3 grid with small gaps, staggered
 
 **متى:** عند تجميع صور إلهام أو مود بورد تطير من خارج الإطار وتستقر في شبكة 3×3 بتتابع / for assembling moodboard images that fly in from off-frame and settle into a staggered 3x3 grid
 
@@ -18326,7 +18326,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Each scene scales 1.00->1.04; next scene starts at the previous end scale so zoom never snaps; all appearances use >=0.3 s eased fades
+**ما هي:** يتحجم كل مشهد من 1.00 إلى 1.04؛ ويبدأ التالي بتحجيم نهاية السابق فلا ينكسر التكبير؛ وكل الظهورات تستخدم تلاشيات منعَّمة >=0.3 ث — Each scene scales 1.00->1.04; next scene starts at the previous end scale so zoom never snaps; all appearances use >=0.3 s eased fades
 
 **متى:** حين تريد زووم بطيئًا مستمرًا عبر المشاهد دون قفزات مع ظهور العناصر بتلاشٍ ناعم / when you want a slow continuous push across scenes that never snaps, with smooth eased fades
 
@@ -18401,7 +18401,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** black bars to 2.39:1, shot list with varied lens
+**ما هي:** أشرطة سوداء بنسبة 2.39:1، وقائمة لقطات بعدسات متنوعة — black bars to 2.39:1, shot list with varied lens
 
 **متى:** عند الرغبة في مظهر سينمائي بأشرطة سوداء بنسبة 2.39:1 وقائمة لقطات بعدسات متنوعة / for a cinematic look with 2.39:1 black bars and a shot list using varied lenses
 
@@ -18474,7 +18474,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Blur last footage frame as backdrop, left: big CTA question in white + lime, right: 3x3 grid of segment stills each with white border and numbered lime circle, staggered pop
+**ما هي:** تمويه آخر إطار من اللقطة كخلفية؛ يسارًا سؤال CTA كبير بالأبيض + الليموني، ويمينًا شبكة 3x3 من لقطات المقاطع بحد أبيض ودائرة ليمونية مرقمة، تنبثق بتتابع — Blur last footage frame as backdrop, left: big CTA question in white + lime, right: 3x3 grid of segment stills each with white border and numbered lime circle, staggered pop
 
 **متى:** لختام بملخص يعرض المقاطع في شبكة 3×3 مرقمة بجانب سؤال دعوة لاتخاذ إجراء فوق خلفية مموهة / for a recap with a numbered 3x3 grid of segment stills beside a big CTA question over a blurred backdrop
 
@@ -18549,7 +18549,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Moves the whole stage as one camera (x, y, scale, rotation); house rule: count the moves, stay still between.
+**ما هي:** يحرّك المسرح كله ككاميرا واحدة (x وy وتحجيم ودوران)؛ وقاعدة الأسلوب: عُدّ الحركات وابقَ ثابتًا بينها. — Moves the whole stage as one camera (x, y, scale, rotation); house rule: count the moves, stay still between.
 
 **متى:** حين تحرك المشهد كله ككاميرا واحدة مع البقاء ثابتا بين الحركات / when moving the whole stage as one camera and staying still between moves
 
@@ -18624,7 +18624,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** corner brackets 24px inset; mono uppercase labels: title/artist top-left, countdown top-right, 'BAR n / N' + dash progress bottom-left, 'NN — CHAPTER' bottom-right; all at ~60% opacity cream
+**ما هي:** أقواس زوايا بهامش 24px؛ تسميات أحادية المسافة كبيرة الأحرف: العنوان/الفنان أعلى اليسار، والعد التنازلي أعلى اليمين، و'BAR n / N' + تقدم بشرطات أسفل اليسار، و'NN — CHAPTER' أسفل اليمين؛ كلها بعتامة ~60% كريمية — corner brackets 24px inset; mono uppercase labels: title/artist top-left, countdown top-right, 'BAR n / N' + dash progress bottom-left, 'NN — CHAPTER' bottom-right; all at ~60% opacity cream
 
 **متى:** حين تريد إطارًا ثابتًا يعرض العنوان والفنان وعدًا تنازليًا ورقم المازورة واسم الفصل / when you want a persistent frame showing title and artist, a countdown, a bar counter with dash progress and the chapter label
 
@@ -18699,7 +18699,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** cream grainy paper, black 2px grid lines draw on, each word snaps into a cell on its onset, key word coloured red, red dot pops (scale 0->1.1->1)
+**ما هي:** ورق كريمي محبب، وخطوط شبكة سوداء 2px ترسم نفسها، وتنطبق كل كلمة في خلية عند بدايتها، والكلمة المفتاحية بالأحمر، وتنبثق نقطة حمراء (تحجيم 0->1.1->1) — cream grainy paper, black 2px grid lines draw on, each word snaps into a cell on its onset, key word coloured red, red dot pops (scale 0->1.1->1)
 
 **متى:** عند جعل الكلمات تسقط في خلايا شبكة على ورق كريمي مع توقيت ظهورها وإبراز الكلمة المفتاحية بالأحمر / for words snapping into grid cells on their onset over cream paper, with the key word in red
 
@@ -18774,7 +18774,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 01 Geometry / 02 Depth corner labels + timecode
+**ما هي:** تسميات زوايا للفصول بأسلوب HUD: 01 Geometry / 02 Depth + تايمكود — 01 Geometry / 02 Depth corner labels + timecode
 
 **متى:** حين تحتاج تسميات فصول مرقمة في الزاوية مع تايم كود / when you need numbered chapter labels in the corner plus a timecode
 
@@ -18847,7 +18847,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Grid of rounded video thumbnails rotated ~20 deg occupying right half, translated diagonally continuously to suggest infinite content; text on left
+**ما هي:** شبكة صور مصغرة مستديرة لفيديو مائلة ~20 درجة تشغل النصف الأيمن، وتنزاح قطريًا باستمرار للإيحاء بمحتوى لا نهائي؛ والنص يسارًا — Grid of rounded video thumbnails rotated ~20 deg occupying right half, translated diagonally continuously to suggest infinite content; text on left
 
 **متى:** عند الإيحاء بمحتوى لا ينتهي بجدار صور مصغرة مائل يتحرك قطريًا يمينًا مع نص على اليسار / for suggesting infinite content with a tilted wall of video thumbnails moving diagonally on the right and text on the left
 
@@ -18922,7 +18922,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** colored rule + 'n of 11' + condensed headline + 3-line body, crossfade on chapter
+**ما هي:** بطاقة فصل أسفل اليسار: خط ملون + 'n of 11' + عنوان ضيق + نص من 3 أسطر، بتلاشٍ متقاطع عند تغيّر الفصل — colored rule + 'n of 11' + condensed headline + 3-line body, crossfade on chapter
 
 **متى:** حين تعرض فصولًا ببطاقة نصية أسفل اليسار فيها رقم الفصل وعنوان وفقرة قصيرة تتبدل بتلاشٍ / when showing chapters with a bottom-left text card (number, headline, short body) that crossfades per chapter
 
@@ -18995,7 +18995,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Corner brackets, reel ID, running timecode and 'NN / 08 CHAPTER' label with progress dots updated on each section
+**ما هي:** أقواس زوايا ومعرّف الريل وتايمكود جارٍ وتسمية 'NN / 08 CHAPTER' مع نقاط تقدم تتحدث عند كل قسم — Corner brackets, reel ID, running timecode and 'NN / 08 CHAPTER' label with progress dots updated on each section
 
 **متى:** عند الرغبة في إطار يشبه عدسة الكاميرا بزوايا ورقم البكرة وتايم كود ونقاط تقدم للفصول / for a viewfinder-style frame with corner brackets, reel ID, timecode and chapter progress dots
 
@@ -19070,7 +19070,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** left headline in heavy caps (second line lime), mono subline, rotating chrome/lime blob on right, pagination top-right
+**ما هي:** عنوان يسارًا بأحرف كبيرة ثقيلة (السطر الثاني ليموني)، وسطر فرعي أحادي المسافة، وكتلة كروم/ليمونية دوارة يمينًا، وترقيم صفحات أعلى اليمين — left headline in heavy caps (second line lime), mono subline, rotating chrome/lime blob on right, pagination top-right
 
 **متى:** حين تريد شريحة بعنوان ضخم بأحرف كبيرة يسارًا وجسم ثلاثي الأبعاد كروم يدور يمينًا مع ترقيم الصفحات / when you want a slide with a heavy caps headline left and a rotating chrome 3D blob right, with pagination
 
@@ -19145,7 +19145,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** zoom out to show all previous scenes as tiled cards dimmed
+**ما هي:** تصغير لإظهار كل المشاهد السابقة كبطاقات مبلّطة معتّمة — zoom out to show all previous scenes as tiled cards dimmed
 
 **متى:** عند الابتعاد بالكاميرا لكشف كل المشاهد السابقة كبطاقات متجاورة معتمة / for zooming out to reveal all previous scenes as dimmed tiled cards
 
@@ -19220,7 +19220,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Camera tracks over a column of form sheets under a spotlight; a red stamp slams onto one
+**ما هي:** تتبع الكاميرا عمودًا من أوراق النماذج تحت بقعة ضوء؛ ويُطبع ختم أحمر بقوة على إحداها — Camera tracks over a column of form sheets under a spotlight; a red stamp slams onto one
 
 **متى:** حين تتحرك الكاميرا فوق أوراق ونماذج تحت إضاءة مركزة ثم يهبط ختم أحمر على إحداها / when the camera tracks over form sheets under a spotlight and a red stamp slams onto one
 
@@ -19295,7 +19295,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** big gradient numeral 01 + 2-line title left, UI window right sliding in
+**ما هي:** رقم كبير متدرج 01 + عنوان من سطرين يسارًا، ونافذة واجهة تنزلق من اليمين — big gradient numeral 01 + 2-line title left, UI window right sliding in
 
 **متى:** عند شرح خطوات الاستخدام برقم كبير متدرج وعنوان يسارًا ونافذة واجهة تنزلق يمينًا / for numbered steps with a big gradient numeral and title on the left and a UI window sliding in on the right
 
@@ -19370,7 +19370,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A push-in or pull-out whose zoom speed feels constant.
+**ما هي:** دفع أو سحب للكاميرا بسرعة تكبير تبدو ثابتة. — A push-in or pull-out whose zoom speed feels constant.
 
 **متى:** عند دفع الكاميرا للداخل أو سحبها للخلف بسرعة زووم تبدو ثابتة / for a push-in or pull-out whose zoom speed feels constant
 
@@ -19445,7 +19445,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** off-white rounded rect with faint smudge noise, 8 px light-grey frame, tray bar under it with drop shadow, dark slate wall with radial vignette; subtitles live on the wall below
+**ما هي:** مستطيل مستدير أبيض مطفأ بضوضاء لطخات خافتة، وإطار رمادي فاتح 8 px، وشريط حامل تحته بظل، وجدار أردوازي داكن بتعتيم شعاعي؛ وتوضع الترجمات على الجدار أسفله — off-white rounded rect with faint smudge noise, 8 px light-grey frame, tray bar under it with drop shadow, dark slate wall with radial vignette; subtitles live on the wall below
 
 **متى:** حين تريد مشهد سبورة بيضاء مؤطرة على جدار داكن مع الترجمة أسفلها على الجدار / for a set with a framed whiteboard on a dark slate wall and subtitles living on the wall below it
 
@@ -19520,7 +19520,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Corner brackets, bottom-left spec string (ID, BPM, resolution, fps), bottom-right elapsed time + beat counter, left vertical ruler ticks
+**ما هي:** أقواس زوايا، وسلسلة مواصفات أسفل اليسار (المعرّف، BPM، الدقة، fps)، والزمن المنقضي + عداد النبضات أسفل اليمين، وعلامات مسطرة عمودية يسارًا — Corner brackets, bottom-left spec string (ID, BPM, resolution, fps), bottom-right elapsed time + beat counter, left vertical ruler ticks
 
 **متى:** عند الرغبة في إطار إنتاجي تقني يعرض المعرف والدقة والفريمات والإيقاع والزمن المنقضي وعداد النبضات / for a technical production frame showing ID, BPM, resolution, fps, elapsed time and a beat counter
 
@@ -19595,7 +19595,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** headline top-left 64px, visual proof fills lower 70%
+**ما هي:** عنوان أعلى اليسار 64px، والدليل البصري يملأ أسفل 70% — headline top-left 64px, visual proof fills lower 70%
 
 **متى:** حين تريد تخطيطًا بسيطًا بعنوان أعلى اليسار ودليل بصري يملأ معظم الشاشة تحته / when you want a simple layout with a headline top-left and visual proof filling the lower 70%
 
@@ -19668,7 +19668,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Corner ticks; top-left reel title; top-right 'NN/06 — CHAPTER'; per-scene caption 'FIG.0n — NAME' with a short line of technical specs (e.g. '9x5 grid · radial ripple · eases'); bottom: timecode, cent
+**ما هي:** علامات زوايا؛ عنوان الريل أعلى اليسار؛ 'NN/06 — CHAPTER' أعلى اليمين؛ وتعليق لكل مشهد 'FIG.0n — NAME' مع سطر قصير من المواصفات التقنية (مثل '9x5 grid · radial ripple · eases')؛ وأسفل: تايمكود، cent — Corner ticks; top-left reel title; top-right 'NN/06 — CHAPTER'; per-scene caption 'FIG.0n — NAME' with a short line of technical specs (e.g. '9x5 grid · radial ripple · eases'); bottom: timecode, cent
 
 **متى:** عند فيديو تقني بفصول يحتاج تعليق FIG لكل مشهد مع مواصفات قصيرة وتايم كود وشريط تقدم ومربعات الإيقاع / for a technical chaptered reel needing per-scene FIG captions with specs, timecode, progress bar and beat squares
 
@@ -19743,7 +19743,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** place a tiny red-cloaked character centre-low facing a huge emissive object; only saturated colour in frame
+**ما هي:** ضع شخصية صغيرة بعباءة حمراء في وسط الإطار منخفضًا تواجه جسمًا ضخمًا مشعًّا؛ وهو اللون المشبع الوحيد في الإطار — place a tiny red-cloaked character centre-low facing a huge emissive object; only saturated colour in frame
 
 **متى:** حين تريد إبراز ضخامة جسم مضيء بوضع شخصية صغيرة بعباءة حمراء أسفل المنتصف أمامه / when you want to show the scale of a huge emissive object with a tiny red-cloaked figure centre-low facing it
 
@@ -19818,7 +19818,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 4 colored dots on line with labels, active fills
+**ما هي:** 4 نقاط ملونة على خط بتسميات، والنشطة تمتلئ — 4 colored dots on line with labels, active fills
 
 **متى:** عند عرض أربع مراحل على خط بنقاط ملونة تمتلئ عند تفعيل كل مرحلة / for showing four stages as coloured dots with labels on a line that fill as each becomes active
 
@@ -19891,7 +19891,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** rotated small cards drift slightly
+**ما هي:** بطاقات صغيرة مائلة تنجرف قليلًا — rotated small cards drift slightly
 
 **متى:** حين تريد كولاجًا من بطاقات صغيرة مائلة متناثرة تنجرف بخفة / when you want a collage of small rotated cards scattered and drifting slightly
 
@@ -19964,7 +19964,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 3 rounded photo cards on dark navy rise 40 px + fade with 100 ms stagger, labels bottom-left
+**ما هي:** 3 بطاقات صور مستديرة على كحلي داكن ترتفع 40 px وتظهر بتلاشٍ بتتابع 100 ms، والتسميات أسفل اليسار — 3 rounded photo cards on dark navy rise 40 px + fade with 100 ms stagger, labels bottom-left
 
 **متى:** عند عرض ثلاث صور في بطاقات مستديرة الحواف تصعد وتظهر بتتابع على خلفية كحلية مع تسميات / for three rounded photo cards rising and fading in with a stagger on dark navy, with labels
 
@@ -20039,7 +20039,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Scene code, ruler scrubber with moving marker, spec text 1920x1080/30fps, corner brackets
+**ما هي:** رمز المشهد، ومنزلق بمسطرة بعلامة متحركة، ونص المواصفات 1920x1080/30fps، وأقواس الزوايا — Scene code, ruler scrubber with moving marker, spec text 1920x1080/30fps, corner brackets
 
 **متى:** حين تريد إطار ريل يعرض رمز المشهد ومسطرة بمؤشر متحرك ونص المواصفات وزوايا / when you want reel chrome with scene code, a ruler scrubber with moving marker, spec text and corner brackets
 
@@ -20112,7 +20112,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** italic serif 01/02/03 + bold label top-left
+**ما هي:** 01/02/03 بخط serif مائل + تسمية عريضة أعلى اليسار — italic serif 01/02/03 + bold label top-left
 
 **متى:** عند ترقيم خطوات الفيديو بأرقام سيريف مائلة وعنوان عريض أعلى اليسار / for numbering video steps with italic serif numerals and a bold label at top-left
 
@@ -20185,7 +20185,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Simulates focus pulls by crossfading the sharp element with a constant-blur twin (avoids stepping animated blur).
+**ما هي:** يحاكي سحب البؤرة بالتلاشي المتقاطع بين العنصر الحاد وتوأم بتمويه ثابت (يتجنب تدرج التمويه المتحرك). — Simulates focus pulls by crossfading the sharp element with a constant-blur twin (avoids stepping animated blur).
 
 **متى:** حين تحاكي نقل البؤرة بين عنصرين بالمزج مع نسخة مموهة ثابتة / when simulating a focus pull by crossfading with a constant-blur twin
 
@@ -20260,7 +20260,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** bottom ruler with ticks and diamond chapter markers; a red playhead moves with the video; label shows current frame + chapter name in serif italic
+**ما هي:** مسطرة سفلية بعلامات تدريج وعلامات فصول معينية؛ ورأس تشغيل أحمر يتحرك مع الفيديو؛ وتسمية تعرض الإطار الحالي + اسم الفصل بخط serif مائل — bottom ruler with ticks and diamond chapter markers; a red playhead moves with the video; label shows current frame + chapter name in serif italic
 
 **متى:** حين تريد مسطرة زمنية سفلية بعلامات فصول ومؤشر أحمر يتحرك مع الفيديو ويعرض اسم الفصل الحالي / when you want a bottom ruler with chapter markers and a red playhead moving with the video, labelling the current chapter
 
@@ -20335,7 +20335,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** grid of rounded screenshots inside a container rotated ~-15° with rotateX tilt; translate diagonally with motion blur; scale down to reveal
+**ما هي:** شبكة لقطات شاشة مستديرة داخل حاوية مائلة ~-15° مع ميلان rotateX؛ تنزاح قطريًا مع تمويه حركة؛ ثم تتصغر للكشف — grid of rounded screenshots inside a container rotated ~-15° with rotateX tilt; translate diagonally with motion blur; scale down to reveal
 
 **متى:** عند استعراض لقطات شاشة كثيرة بسرعة في جدار مائل ينزلق قطريًا بضبابية حركة ثم يصغر للكشف / for sweeping through many screenshots on a tilted wall moving diagonally with motion blur, then scaling down to reveal
 
@@ -20410,7 +20410,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** 2 cards with ±5° rotation, overlap, spring in
+**ما هي:** بطاقتان بدوران ±5° متداخلتان، تدخلان بنابض — 2 cards with ±5° rotation, overlap, spring in
 
 **متى:** حين تريد بطاقتين متداخلتين مائلتين قليلًا تدخلان بحركة نابضية / when you want two overlapping cards tilted about 5 degrees that spring in
 
@@ -20483,7 +20483,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** show easing name + timecode in corners
+**ما هي:** عرض اسم التسهيل + التايمكود في الزوايا — show easing name + timecode in corners
 
 **متى:** عند عرض اسم منحنى التسهيل والتايم كود في زوايا الشاشة / for showing the easing curve name and timecode in the screen corners
 
@@ -20556,7 +20556,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Show a full desktop window, then scale+translate the group to crop on the area of interest while headline stays pinned
+**ما هي:** عرض نافذة سطح مكتب كاملة، ثم تحجيم وإزاحة المجموعة لقص المنطقة محل الاهتمام بينما يبقى العنوان مثبتًا — Show a full desktop window, then scale+translate the group to crop on the area of interest while headline stays pinned
 
 **متى:** حين تعرض نافذة تطبيق كاملة ثم تقترب لقص منطقة مهمة بينما يبقى العنوان ثابتًا / when showing a full desktop window then scaling in to crop the area of interest while the headline stays pinned
 
@@ -20631,7 +20631,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** red curtain sides + valance overlay
+**ما هي:** إطار ستارة: جانبا ستارة حمراء + تراكب زخرفة علوية — red curtain sides + valance overlay
 
 **متى:** عند تأطير المشهد بستارة مسرح حمراء على الجانبين وأعلى الإطار / for framing the scene with red curtain sides and a valance overlay on top
 
@@ -20704,7 +20704,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** each card has fixed translateZ and xy; global cameraZ added to all; opacity fades as card z approaches camera; trigger whoosh at computed pass time (inverse of easing)
+**ما هي:** لكل بطاقة translateZ وxy ثابتان؛ ويُضاف cameraZ العام إلى الجميع؛ وتخفت العتامة كلما اقتربت z البطاقة من الكاميرا؛ ويُطلق صوت whoosh عند زمن المرور المحسوب (عكس التنعيم) — each card has fixed translateZ and xy; global cameraZ added to all; opacity fades as card z approaches camera; trigger whoosh at computed pass time (inverse of easing)
 
 **متى:** حين تعبر الكاميرا بين بطاقات موزعة في العمق تتلاشى عند الاقتراب مع صوت ووش عند المرور / when the camera flies through cards spread in depth, fading as they near and triggering a whoosh at each pass
 
@@ -20779,7 +20779,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** add noise2D(seed, t*freq) offsets to camera x/y with an exponentially decaying amplitude after each impact
+**ما هي:** أضف إزاحات noise2D(seed, t*freq) إلى x/y الكاميرا بسعة تتناقص أسيًا بعد كل ارتطام — add noise2D(seed, t*freq) offsets to camera x/y with an exponentially decaying amplitude after each impact
 
 **متى:** عند الارتطام أو الضربة لإضافة اهتزاز كاميرا يخفت تدريجيًا بعد كل صدمة / for adding a camera shake that decays after each impact or hit
 
@@ -20854,7 +20854,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** single floor line, props spaced left-to-right as story stations (cause -> problem -> solution box), wall props for context, title top-centre
+**ما هي:** خط أرضية واحد، وإكسسوارات متباعدة من اليسار إلى اليمين كمحطات قصة (سبب -> مشكلة -> صندوق الحل)، وإكسسوارات جدارية للسياق، والعنوان أعلى الوسط — single floor line, props spaced left-to-right as story stations (cause -> problem -> solution box), wall props for context, title top-centre
 
 **متى:** حين تروي قصة سبب ثم مشكلة ثم حل بعناصر مصفوفة على أرضية واحدة من اليسار لليمين بمنظر جانبي / when telling a cause, problem, solution story with props laid left-to-right on one floor line in side view
 
@@ -20929,7 +20929,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** keyframes (x, y, zoom) with Easing.inOut(cubic) applied as one CSS transform to both the SVG drawing layer and the HTML text layer so they stay locked
+**ما هي:** مفاتيح (x, y, zoom) بـ Easing.inOut(cubic) تُطبَّق كتحويل CSS واحد على طبقة رسم SVG وطبقة نص HTML معًا فتبقيان متطابقتين — keyframes (x, y, zoom) with Easing.inOut(cubic) applied as one CSS transform to both the SVG drawing layer and the HTML text layer so they stay locked
 
 **متى:** عند الحاجة لتحريك كاميرا واحدة على طبقة رسم SVG وطبقة نص HTML معًا كي تبقيا متطابقتين / when one camera move must drive both an SVG drawing layer and an HTML text layer so they stay locked
 
@@ -21004,7 +21004,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** BokehPass DOF with focus distance driven per frame (or by applyShot).
+**ما هي:** تمويه عمق الميدان بـ BokehPass مع مسافة تركيز تُحرَّك في كل إطار (أو بـ applyShot). — BokehPass DOF with focus distance driven per frame (or by applyShot).
 
 **متى:** عند مشهد ثلاثي الأبعاد يحتاج خلفية ضبابية وتركيزا يتغير مع كل إطار / for a 3D scene needing bokeh blur with focus distance driven per frame
 
@@ -21080,7 +21080,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A multi-cell moving grid that mixes real UI moments with the brand's mark, palette and type so the product's range reads as one world.
+**ما هي:** شبكة متحركة متعددة الخلايا تمزج لحظات واجهة حقيقية مع علامة الهوية ولوحتها وخطها فيُقرأ مدى المنتج كعالم واحد. — A multi-cell moving grid that mixes real UI moments with the brand's mark, palette and type so the product's range reads as one world.
 
 **متى:** حين تريد مونتاجًا شبكيًا يجمع لقطات الواجهة مع شعار العلامة وألوانها وخطوطها بتصميم لكل مقاس / when you want a grid montage mixing real UI moments with the brand's mark, palette and type, designed per aspect ratio
 
@@ -21156,7 +21156,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Build the static layout of each scene's fullest moment first, then animate entrances with from() and exits with to(), so overlaps are caught before motion hides them.
+**ما هي:** ابنِ التخطيط الثابت لأكمل لحظة في كل مشهد أولًا، ثم حرّك الدخول بـ from() والخروج بـ to()، فتُكتشف التداخلات قبل أن تخفيها الحركة. — Build the static layout of each scene's fullest moment first, then animate entrances with from() and exits with to(), so overlaps are caught before motion hides them.
 
 **متى:** حين تبني مشهد موشن وتريد تثبيت توزيع العناصر قبل التحريك لكشف التداخل / when laying out a scene's fullest frame before animating entrances and exits, to catch overlaps
 
@@ -21231,7 +21231,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Video frames are not web pages: fill the frame, keep three layers, give two focal points, anchor to edges, use split zones and structural rules.
+**ما هي:** إطارات الفيديو ليست صفحات ويب: املأ الإطار، وأبقِ ثلاث طبقات، وأعطِ نقطتي تركيز، وثبّت إلى الحواف، واستخدم مناطق التقسيم والقواعد البنيوية. — Video frames are not web pages: fill the frame, keep three layers, give two focal points, anchor to edges, use split zones and structural rules.
 
 **متى:** حين يبدو الكادر فارغًا أو كصفحة ويب وتحتاج ملء الإطار بطبقات ونقطتي تركيز / when a video frame looks empty or web-like and needs layers, focal points and edge anchoring
 
@@ -21307,7 +21307,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Camera rails and object paths need the right curve family and arc-length reparameterization to move at constant world speed.
+**ما هي:** تحتاج قضبان الكاميرا ومسارات الأجسام إلى عائلة المنحنى الصحيحة وإعادة تعيين المعاملات بطول القوس لتتحرك بسرعة عالم ثابتة. — Camera rails and object paths need the right curve family and arc-length reparameterization to move at constant world speed.
 
 **متى:** عند تحريك كاميرا أو جسم على مسار منحني بسرعة ثابتة دون تسارع مفاجئ / when moving a camera or object along a curved path at constant speed
 
@@ -21380,7 +21380,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Author at 1920x1080 and scale the whole stage to the viewport (letterbox allowed, never reflow); switch slides with visibility/opacity not display.
+**ما هي:** التأليف بدقة 1920x1080 وتحجيم المسرح كله إلى منفذ العرض (يُسمح بـ letterbox، ولا إعادة تدفق أبدًا)؛ وتبديل الشرائح بـ visibility/opacity لا display. — Author at 1920x1080 and scale the whole stage to the viewport (letterbox allowed, never reflow); switch slides with visibility/opacity not display.
 
 **متى:** حين تصمم المشهد بمقاس 1920x1080 وتريد تكبيره ليناسب أي شاشة دون إعادة ترتيب / when authoring at 1920x1080 and scaling the whole stage to any viewport without reflow
 
@@ -21456,7 +21456,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Spacing from an 8px scale; inner radius equals outer radius minus inset; per-component type budget of at most three sizes and three weights; two families per piece.
+**ما هي:** المسافات من سلم 8px؛ نصف القطر الداخلي = الخارجي ناقص الإزاحة؛ وميزانية خطوط لكل مكوّن بحد أقصى ثلاثة أحجام وثلاثة أوزان؛ وعائلتا خط لكل قطعة. — Spacing from an 8px scale; inner radius equals outer radius minus inset; per-component type budget of at most three sizes and three weights; two families per piece.
 
 **متى:** حين تضبط المسافات والزوايا المستديرة وأحجام الخط في التصميم بنظام متسق / when setting consistent spacing, nested corner radii and type sizes for a design
 
@@ -21531,7 +21531,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Offset titles and let imagery bleed past containers; alternate dense and sparse beats so scale shifts create rhythm.
+**ما هي:** أزح العناوين ودع الصور تتجاوز الحاويات؛ وبدّل بين اللحظات الكثيفة والخفيفة ليخلق تغيّر المقياس إيقاعًا. — Offset titles and let imagery bleed past containers; alternate dense and sparse beats so scale shifts create rhythm.
 
 **متى:** حين تريد تكوينًا غير متماثل بعناوين مزاحة وصور تخرج عن حدود الإطار لخلق إيقاع / when you want offset titles and imagery bleeding past containers to create rhythm
 
@@ -21606,7 +21606,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A dependable layout for 1920x1080 demo scenes: title band top, hero media middle, footer/CTA bottom; one focal point per scene.
+**ما هي:** تخطيط موثوق لمشاهد العرض 1920x1080: شريط العنوان أعلى، والوسائط الرئيسية في الوسط، والتذييل/CTA أسفل؛ ونقطة تركيز واحدة لكل مشهد. — A dependable layout for 1920x1080 demo scenes: title band top, hero media middle, footer/CTA bottom; one focal point per scene.
 
 **متى:** حين تبني مشهد عرض ديمو بعنوان أعلى ولقطة شاشة في الوسط ودعوة للإجراء أسفل / when building a 1920x1080 demo scene with title band, hero screenshot and footer CTA
 
@@ -21681,7 +21681,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Five repeatable framings for faceless creators: top-down (60-80 cm above desk), over-shoulder (1 m behind, shoulder +10 cm, tilted 15 deg down), below-chest frontal (1 m, chest height), object/space (30-50 cm at object height, no person), side hands (50 cm beside desk, desk +20 cm).
+**ما هي:** خمس وضعيات تصوير متكررة لصنّاع المحتوى بدون إظهار الوجه: علوية (60-80 سم فوق المكتب)، وفوق الكتف (1 م خلفًا، الكتف +10 سم، مائلة 15 درجة للأسفل)، وأمامية تحت الصدر (1 م، بارتفاع الصدر)، وجسم/مكان (30-50 سم بارتفاع الجسم، دون شخص)، ويدان جانبيتان (50 سم بجانب المكتب، المكتب +20 سم). — Five repeatable framings for faceless creators: top-down (60-80 cm above desk), over-shoulder (1 m behind, shoulder +10 cm, tilted 15 deg down), below-chest frontal (1 m, chest height), object/space (30-50 cm at object height, no person), side hands (50 cm beside desk, desk +20 cm).
 
 **متى:** حين يريد صانع المحتوى التصوير دون إظهار وجهه ويحتاج زوايا كاميرا جاهزة / when a faceless creator needs repeatable camera framings with set distances and angles
 
@@ -21756,7 +21756,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Wide negative space, one focal element, a single accent colour; gentle positional entrances, straight cuts and clear holds for reading. Cheap and clear; may feel too calm for a loud ad.
+**ما هي:** فراغ سلبي واسع، وعنصر تركيز واحد، ولون تمييز واحد؛ ودخولات موضعية لطيفة، وقطعات مستقيمة، ومكوث واضح للقراءة. رخيص وواضح؛ وقد يبدو هادئًا أكثر من اللازم لإعلان صاخب. — Wide negative space, one focal element, a single accent colour; gentle positional entrances, straight cuts and clear holds for reading. Cheap and clear; may feel too calm for a loud ad.
 
 **متى:** حين يطلب المستخدم أسلوبًا هادئًا ونظيفًا بمساحات فارغة ولون مميز واحد ونص واضح / when the user wants a calm, clean minimal look with negative space and one accent colour
 
@@ -21831,7 +21831,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic cameras for named shot types with framing computed from subject size and fov.
+**ما هي:** كاميرات حتمية لأنواع لقطات مسماة، ويُحسب التأطير من حجم الهدف ومجال الرؤية. — Deterministic cameras for named shot types with framing computed from subject size and fov.
 
 **متى:** حين تريد لقطات مسماة كالواسعة والمتوسطة والقريبة بإطار محسوب من حجم الموضوع / for named shot types (wide, medium, close-up) framed from subject size and fov
 
@@ -21907,7 +21907,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Depth and layers, directed light, balanced frame; slow scene-driven moves and gradual reveals. Builds mood and anticipation; slower to deliver a direct offer and needs suitable plates.
+**ما هي:** عمق وطبقات، وإضاءة موجَّهة، وإطار متوازن؛ وحركات بطيئة تقودها المشاهد وكشوف تدريجية. يبني المزاج والترقب؛ وأبطأ في تقديم عرض مباشر ويحتاج لوحات مناسبة. — Depth and layers, directed light, balanced frame; slow scene-driven moves and gradual reveals. Builds mood and anticipation; slower to deliver a direct offer and needs suitable plates.
 
 **متى:** حين يريد المستخدم جوًا سينمائيًا بعمق وطبقات وإضاءة موجهة لبناء مزاج وترقب / when the user wants a moody cinematic look with depth layers, directed light and slow reveals
 
@@ -21985,7 +21985,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Typographic grid, clear headlines, orderly photo composition; line reveals, measured cuts, moves between columns. Clear reading order and mature tone; depends on text formatting and long text needs more time.
+**ما هي:** شبكة طباعية، وعناوين واضحة، وتكوين صور منظم؛ وكشف الأسطر، وقطعات محسوبة، وانتقالات بين الأعمدة. ترتيب قراءة واضح ونبرة ناضجة؛ يعتمد على تنسيق النص ويحتاج النص الطويل وقتًا أطول. — Typographic grid, clear headlines, orderly photo composition; line reveals, measured cuts, moves between columns. Clear reading order and mature tone; depends on text formatting and long text needs more time.
 
 **متى:** حين يطلب المستخدم أسلوبًا تحريريًا يعتمد على شبكة طباعية وعناوين واضحة وكشف الأسطر / when the user wants a modern editorial style with typographic grid, headlines and line reveals
 
@@ -22063,7 +22063,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** The frame pushes into a specific part while a small locator map keeps the viewer oriented.
+**ما هي:** يدفع الإطار نحو جزء محدد بينما تُبقي خريطة محدِّد صغيرة المشاهد على اطلاع بموقعه. — The frame pushes into a specific part while a small locator map keeps the viewer oriented.
 
 **متى:** حين تريد التكبير من الصورة الكاملة إلى تفصيلة مع خريطة صغيرة توضح موقعها / when zooming from the whole view into a detail while a small locator map keeps viewers oriented
 
@@ -22139,7 +22139,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Every shot must do a job: wide shots establish space and situation, medium shots show action, close shots show decisions and details; a camera move needs a start, end, direction, speed and a reason; B-roll should add context, action or emotion rather than literally repeating the words; get varied co…
+**ما هي:** يجب أن تؤدي كل لقطة وظيفة: الواسعة ترسّخ المكان والموقف، والمتوسطة تُظهر الفعل، والقريبة تُظهر القرارات والتفاصيل؛ وحركة الكاميرا تحتاج بداية ونهاية واتجاهًا وسرعة وسببًا؛ ولقطات B-roll تضيف سياقًا أو فعلًا أو عاطفة بدل تكرار الكلمات حرفيًا؛ احصل على تنوع… — Every shot must do a job: wide shots establish space and situation, medium shots show action, close shots show decisions and details; a camera move needs a start, end, direction, speed and a reason; B-roll should add context, action or emotion rather than literally repeating the words; get varied co…
 
 **متى:** حين تكتب ستوري بورد وتريد أن تؤدي كل لقطة وظيفة واضحة بين واسعة ومتوسطة وقريبة / when planning a storyboard so every wide, medium, close shot and B-roll has a clear job
 
@@ -22213,7 +22213,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Push overlays forward and footage back with calibrated cues: scrim 10-20% for soft separation, 40-60% for modal-like focus, 70%+ for full focus; dim inactive content to 50-70% opacity while keeping it legible; shadow blur 2-4 px for slight lift, 8-12 px for floating; background blur is the strongest…
+**ما هي:** ادفع الطبقات الفوقية للأمام والفيديو للخلف بإشارات معايرة: حجاب 10-20% لفصل ناعم، و40-60% لتركيز يشبه النافذة المنبثقة، و70%+ لتركيز كامل؛ وعتّم المحتوى غير النشط إلى عتامة 50-70% مع إبقائه مقروءًا؛ وتمويه الظل 2-4 px لرفع طفيف، و8-12 px للطفو؛ وتمويه الخلفية هو الأقوى… — Push overlays forward and footage back with calibrated cues: scrim 10-20% for soft separation, 40-60% for modal-like focus, 70%+ for full focus; dim inactive content to 50-70% opacity while keeping it legible; shadow blur 2-4 px for slight lift, 8-12 px for floating; background blur is the strongest…
 
 **متى:** حين تضع نصوصًا أو عناصر فوق فيديو وتحتاج فصلها عن الخلفية بتعتيم أو ظل أو تمويه / when overlays on footage need separation from the plate via scrim, dimming, shadow or blur
 
@@ -22290,7 +22290,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** For every border, tint, shadow, gradient, icon and repeated logo ask whether removing it loses information; keep separators that disambiguate, state colours, semantic colours and real elevation; decorative heading icons and repeated brand marks go (one mark per screen, plus an end card).
+**ما هي:** لكل حد وتلوين وظل وتدرج وأيقونة وشعار مكرر اسأل: هل يفقد إزالته معلومة؟ احتفظ بالفواصل التي تزيل اللبس وألوان الحالة والألوان الدلالية والارتفاع الحقيقي؛ وتُحذف أيقونات العناوين الزخرفية والعلامات المكررة (علامة واحدة لكل شاشة، إضافة إلى بطاقة ختام). — For every border, tint, shadow, gradient, icon and repeated logo ask whether removing it loses information; keep separators that disambiguate, state colours, semantic colours and real elevation; decorative heading icons and repeated brand marks go (one mark per screen, plus an end card).
 
 **متى:** حين تبدو الإطارات مزدحمة بزخارف وأيقونات وشعارات مكررة وتحتاج تنظيفها قبل التحريك / when storyboard frames are cluttered with borders, icons and repeated logos before animating
 
@@ -22363,7 +22363,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** For motion-graphics or game footage, render the 9:16 version natively (re-layout, zoom canvas) instead of cropping the 16:9, which halves resolution and loses the subject in motion.
+**ما هي:** لمواد الموشن غرافيك أو الألعاب، صيّر نسخة 9:16 أصليًا (إعادة تخطيط وتكبير اللوحة) بدل قص نسخة 16:9 الذي يخفض الدقة للنصف ويضيّع الهدف المتحرك. — For motion-graphics or game footage, render the 9:16 version natively (re-layout, zoom canvas) instead of cropping the 16:9, which halves resolution and loses the subject in motion.
 
 **متى:** حين تحتاج نسخة عمودية 9:16 من موشن جرافيك أو لقطات ألعاب دون قص يفقد الدقة / when you need a 9:16 vertical version of motion graphics or game footage instead of cropping 16:9
 
@@ -22440,7 +22440,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Overlay a presenter/webcam over a screen capture, or stitch clips side by side / stacked for comparisons.
+**ما هي:** تراكب مقدم/كاميرا ويب فوق تسجيل الشاشة، أو دمج المقاطع جنبًا إلى جنب / متراصة للمقارنات. — Overlay a presenter/webcam over a screen capture, or stitch clips side by side / stacked for comparisons.
 
 **متى:** حين تريد وضع كاميرا المقدم فوق تسجيل الشاشة أو مقارنة مقطعين جنبًا إلى جنب / when overlaying a webcam presenter on a screen capture or stacking clips side by side to compare
 
@@ -22513,7 +22513,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Only one object carries copy at any moment, on a real surface rather than floating.
+**ما هي:** يحمل جسم واحد فقط النص في أي لحظة، على سطح حقيقي لا طافيًا. — Only one object carries copy at any moment, on a real surface rather than floating.
 
 **متى:** حين تزدحم اللقطة بنصوص متعددة وتريد أن يحمل عنصر واحد فقط الكلام على سطح حقيقي / when a frame has competing text layers and only one object on a real surface should carry copy
 
@@ -22588,7 +22588,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Translated text can be 30-50% longer; layouts must not clip.
+**ما هي:** قد يطول النص المترجم 30-50%؛ ويجب ألا تقص التخطيطات. — Translated text can be 30-50% longer; layouts must not clip.
 
 **متى:** عند ترجمة نصوص الفيديو لتفادي قص الكلام بعد أن يطول النص المترجم / when translating on-screen text so longer translations don't get clipped
 
@@ -22663,7 +22663,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Three octaves of smooth seeded noise around a ~1.3 Hz sway plus slight roll.
+**ما هي:** ثلاثة أوكتافات من ضوضاء مبذورة ناعمة حول تمايل نحو 1.3 Hz مع ميلان طفيف. — Three octaves of smooth seeded noise around a ~1.3 Hz sway plus slight roll.
 
 **متى:** عند إضافة اهتزاز كاميرا محمولة طبيعي لمشهد ثلاثي الأبعاد / for natural handheld sway and slight roll on a 3D camera
 
@@ -22738,7 +22738,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Elements sharing hue read as a group; preattentive pop-out works only when colour is sparse.
+**ما هي:** العناصر المشتركة في اللون تُقرأ كمجموعة؛ والبروز ما قبل الانتباهي لا ينجح إلا عندما يكون اللون نادرًا. — Elements sharing hue read as a group; preattentive pop-out works only when colour is sparse.
 
 **متى:** حين تريد إبراز العنصر الذي يتحدث عنه الراوي وجعل العناصر المتشابهة تُقرأ كمجموعة باللون / when highlighting the one element the narration is about and grouping items by shared colour
 
@@ -22812,7 +22812,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Use value (lightness) contrast before hue for hierarchy; signal-to-noise: emphasise little.
+**ما هي:** استخدم تباين القيمة (الإضاءة) قبل الصبغة للتسلسل الهرمي؛ والإشارة إلى الضجيج: أبرز القليل. — Use value (lightness) contrast before hue for hierarchy; signal-to-noise: emphasise little.
 
 **متى:** حين تتنافس عناصر الإطار على الانتباه وتحتاج ترتيبًا هرميًا بالسطوع والتباين قبل الألوان / when frame elements compete for attention and need hierarchy through lightness contrast
 
@@ -22886,7 +22886,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Top-down 60-80cm above desk; over-shoulder 1m behind at shoulder+10cm tilted 15deg; chest-down 1m; object 30-50cm; side-hand 50cm at desk+20cm.
+**ما هي:** علوية 60-80 سم فوق المكتب؛ فوق الكتف 1 م خلفًا عند الكتف+10 سم بميل 15 درجة؛ من الصدر للأسفل 1 م؛ جسم 30-50 سم؛ يد جانبية 50 سم عند المكتب+20 سم. — Top-down 60-80cm above desk; over-shoulder 1m behind at shoulder+10cm tilted 15deg; chest-down 1m; object 30-50cm; side-hand 50cm at desk+20cm.
 
 **متى:** حين تكتب بريف لقطات بي رول بدون وجه أو تضبط كاميرا افتراضية بزوايا ومسافات جاهزة / when briefing faceless B-roll or setting virtual cameras with preset distances and angles
 
@@ -22961,7 +22961,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Layout tiers by viewing time: 3 s overview, 30 s filtering/breakdown, 300 s detail. In video this becomes headline shot, breakdown shot, optional detail.
+**ما هي:** طبقات التخطيط بحسب زمن النظر: نظرة عامة 3 ث، وتصفية/تفصيل 30 ث، وتفاصيل 300 ث. وفي الفيديو تصبح لقطة العنوان ولقطة التفصيل ولقطة تفاصيل اختيارية. — Layout tiers by viewing time: 3 s overview, 30 s filtering/breakdown, 300 s detail. In video this becomes headline shot, breakdown shot, optional detail.
 
 **متى:** حين تعرض بيانات أو داشبورد في فيديو وتريد ترتيب المعلومات من الخلاصة إلى التفصيل / when presenting data in video, ordering headline, breakdown and detail by viewing time
 
@@ -23037,7 +23037,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 8px spacing grid (half-step 4 only when needed); inner radius = outer radius minus padding; no borders at rest, full-target hover; touch targets >= 44px; one focus ring.
+**ما هي:** شبكة مسافات 8px (نصف خطوة 4 عند الحاجة فقط)؛ نصف القطر الداخلي = الخارجي ناقص الحشو؛ بلا حدود في السكون، وتفاعل التمرير يشمل الهدف كاملًا؛ وأهداف اللمس >= 44px؛ وحلقة تركيز واحدة. — 8px spacing grid (half-step 4 only when needed); inner radius = outer radius minus padding; no borders at rest, full-target hover; touch targets >= 44px; one focus ring.
 
 **متى:** حين تبني واجهة أو بطاقات وتحتاج مسافات منتظمة وزوايا متداخلة وأهداف لمس مناسبة / when building UI cards that need consistent spacing, nested radii, touch targets and a focus ring
 
@@ -23113,7 +23113,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Generated hero art and clips are mirrored so subjects sit on the far (left) side and the right side stays empty for Arabic headlines; on phones the subject is re-centred via object-position.
+**ما هي:** تُعكس الصور والمقاطع الرئيسية المولَّدة ليقع الأشخاص في الجهة البعيدة (اليسرى) وتبقى الجهة اليمنى فارغة للعناوين العربية؛ وفي الهواتف يُعاد توسيط الهدف عبر object-position. — Generated hero art and clips are mirrored so subjects sit on the far (left) side and the right side stays empty for Arabic headlines; on phones the subject is re-centred via object-position.
 
 **متى:** حين تحتاج صورة أو مقطعًا بفراغ على اليمين لعنوان عربي فتعكس المشهد ليقع الموضوع يسارًا / when hero art needs empty right-side space for an Arabic headline by mirroring the subject left
 
@@ -23188,7 +23188,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Pushes and close-ups numbers.
+**ما هي:** أرقام الدفع واللقطات القريبة. — Pushes and close-ups numbers.
 
 **متى:** حين تحتاج أرقامًا افتراضية لمقدار ومدة دفع الكاميرا واللقطات القريبة أثناء التحريك / when you need default numbers for camera push scale, duration and close-ups while animating
 
@@ -23263,7 +23263,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Alternate 1.0x and 1.10-1.15x framing during talking heads.
+**ما هي:** تبديل التأطير بين 1.0x و1.10-1.15x أثناء لقطات المتحدث. — Alternate 1.0x and 1.10-1.15x framing during talking heads.
 
 **متى:** حين تكون اللقطة لمتحدث أمام الكاميرا وتريد التبديل بين كادر عادي وزووم خفيف كل بضع ثوانٍ / when a talking-head shot should alternate normal framing with a slight punch-in zoom
 
@@ -23338,7 +23338,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Hero leads; one origin per group; counter-motion 20-30%; parallax speeds.
+**ما هي:** يقود البطل؛ أصل واحد لكل مجموعة؛ حركة معاكسة 20-30%؛ وسرعات البارالاكس. — Hero leads; one origin per group; counter-motion 20-30%; parallax speeds.
 
 **متى:** حين تحرك مجموعة عناصر وتريد أن يقودها عنصر رئيسي مع حركة معاكسة وسرعات بارالاكس للطبقات / when choreographing a group where the hero leads, with counter-motion and parallax speeds
 
@@ -23413,7 +23413,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One transform on one container, one move at a time, still between events.
+**ما هي:** تحويل واحد على حاوية واحدة، وحركة واحدة في كل مرة، وسكون بين الأحداث. — One transform on one container, one move at a time, still between events.
 
 **متى:** حين تبني كاميرا افتراضية بتحويل واحد على حاوية واحدة وحركة واحدة في كل مرة مع ثبات بين الأحداث / when building a virtual camera as one transform on one container, one move at a time
 
@@ -23486,7 +23486,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A lens walking around the subject on the shorter arc, holding at stops with micro drift, fov per stop.
+**ما هي:** عدسة تدور حول الهدف على القوس الأقصر وتتوقف عند نقاط بانجراف دقيق، مع مجال رؤية لكل توقف. — A lens walking around the subject on the shorter arc, holding at stops with micro drift, fov per stop.
 
 **متى:** حين تدور الكاميرا حول الموضوع وتقف عند محطات بزاوية عدسة لكل توقف / when a camera circles a subject on the shorter arc and holds at stops with per-stop fov
 
@@ -23561,7 +23561,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Rule of thirds: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Rule of thirds: Composition rule for prompts/shots.
 
 **متى:** حين تكتب برومبت لصورة أو تخطط لقطة وتريد وضع الموضوع على خطوط الأثلاث / when writing an image prompt or planning a shot that places the subject on the thirds grid
 
@@ -23634,7 +23634,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Golden ratio/spiral: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Golden ratio/spiral: Composition rule for prompts/shots.
 
 **متى:** حين تكتب برومبت أو تخطط لقطة بتكوين النسبة الذهبية أو الحلزون الذهبي / when writing a prompt or planning a shot with golden ratio or golden spiral composition
 
@@ -23707,7 +23707,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Centred symmetry: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Centred symmetry: Composition rule for prompts/shots.
 
 **متى:** حين يحتاج البرومبت أو اللقطة كادرًا متماثلًا والموضوع في منتصفه تمامًا / when a prompt or shot calls for a centred, symmetrical frame
 
@@ -23780,7 +23780,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Leading lines: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Leading lines: Composition rule for prompts/shots.
 
 **متى:** حين تريد توجيه عين المشاهد نحو الموضوع بخطوط داخل الكادر في برومبت أو لقطة / when a prompt or shot should guide the eye to the subject with lines in the frame
 
@@ -23853,7 +23853,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Negative space: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Negative space: Composition rule for prompts/shots.
 
 **متى:** حين يحتاج البرومبت أو اللقطة مساحة فارغة واسعة حول الموضوع / when a prompt or shot needs generous empty space around the subject
 
@@ -23926,7 +23926,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Frame-within-frame: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Frame-within-frame: Composition rule for prompts/shots.
 
 **متى:** حين تريد تأطير الموضوع داخل إطار آخر ضمن المشهد في برومبت أو لقطة / when a prompt or shot frames the subject inside another frame within the scene
 
@@ -23999,7 +23999,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Low-angle hero / high-angle vulnerability: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Low-angle hero / high-angle vulnerability: Composition rule for prompts/shots.
 
 **متى:** حين تريد إظهار الشخصية قوية بزاوية منخفضة أو ضعيفة بزاوية مرتفعة في برومبت أو لقطة / when a prompt or shot should make a subject look heroic from low or vulnerable from high
 
@@ -24072,7 +24072,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Composition rule for prompts/shots.
+**ما هي:** تكوين: Depth stacking: قاعدة تكوين للبرومبتات/اللقطات. — Composition: Depth stacking: Composition rule for prompts/shots.
 
 **متى:** حين تريد عمقًا في اللقطة بطبقات أمامية ووسطى وخلفية في برومبت أو تصوير / when a prompt or shot needs depth via stacked foreground, midground and background
 
@@ -24145,7 +24145,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 14mm to 200mm + anamorphic 40mm.
+**ما هي:** من 14mm إلى 200mm + أنامورفيك 40mm. — 14mm to 200mm + anamorphic 40mm.
 
 **متى:** حين تختار البعد البؤري أو العدسة للقطة من 14 مم الواسعة إلى 200 مم أو أنامورفيك / when choosing a focal length or lens for a shot, from 14mm wide to 200mm or anamorphic 40mm
 
@@ -24220,7 +24220,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** ECU..insert; eye/low/high/drone/Dutch/worm/bird/POV.
+**ما هي:** من ECU إلى insert؛ مستوى العين/منخفضة/عالية/درون/Dutch/worm/bird/POV. — ECU..insert; eye/low/high/drone/Dutch/worm/bird/POV.
 
 **متى:** حين تحدد حجم اللقطة وزاويتها من الكلوز أب إلى الإنسرت ومن مستوى العين إلى الدرون / when picking shot size and angle, from extreme close-up to insert, eye level to drone or POV
 
@@ -24293,7 +24293,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Slow zoom on clip/still.
+**ما هي:** تكبير بطيء على مقطع أو صورة ثابتة. — Slow zoom on clip/still.
 
 **متى:** عند تحريك صورة ثابتة أو مقطع بتكبير بطيء خفيف في المونتاج / for a slow gentle zoom on a still image or clip in the timeline
 
@@ -24368,7 +24368,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** static, pan, tilt, dolly, truck, pedestal, zoom, orbit, handheld, Steadicam, prose motion for models.
+**ما هي:** static وpan وtilt وdolly وtruck وpedestal وzoom وorbit وhandheld وSteadicam، ووصف نثري للحركة للنماذج. — static, pan, tilt, dolly, truck, pedestal, zoom, orbit, handheld, Steadicam, prose motion for models.
 
 **متى:** حين تصف حركة الكاميرا نصيًا في برومبت للنماذج أو خطة لقطات مثل بان وتيلت ودولي / when describing camera movement in prose for models or shot plans: pan, tilt, dolly, orbit
 
@@ -24441,7 +24441,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Named composition systems to pick per shot.
+**ما هي:** أنظمة تكوين مسماة تُختار لكل لقطة. — Named composition systems to pick per shot.
 
 **متى:** حين تختار نظام تكوين لكل لقطة من قائمة جاهزة كالأثلاث والتماثل والخطوط الموجهة / when choosing one named composition system per shot, such as thirds, symmetry or leading lines
 
@@ -24514,7 +24514,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Pass to run before delivering any multi-shot sequence.
+**ما هي:** مرور يُجرى قبل تسليم أي تسلسل متعدد اللقطات. — Pass to run before delivering any multi-shot sequence.
 
 **متى:** قبل تسليم أي مشهد متعدد اللقطات للتأكد من ثبات الإضاءة والملابس والاتجاه وقاعدة 180 درجة / before delivering any multi-shot sequence, to check light, wardrobe, props and the 180-degree rule
 
@@ -24587,7 +24587,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Focal lengths with their storytelling effect.
+**ما هي:** أطوال بؤرية مع تأثير كل منها في السرد. — Focal lengths with their storytelling effect.
 
 **متى:** حين تريد معرفة الأثر القصصي لكل عدسة: الواسعة تُظهر المكان والطويلة تعزل الموضوع / when choosing a focal length for its storytelling effect: wide shows environment, long isolates
 
@@ -24663,7 +24663,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Complete vocabulary for describing framing and motion, each move tagged with its emotional use.
+**ما هي:** مفردات كاملة لوصف التأطير والحركة، مع وسم كل حركة باستخدامها العاطفي. — Complete vocabulary for describing framing and motion, each move tagged with its emotional use.
 
 **متى:** حين تكتب قائمة لقطات وتحدد لكل لقطة حجمها وزاويتها وحركتها وأثرها العاطفي / when writing a shot list and picking size, angle and camera move with its emotional use per shot
 
@@ -24740,7 +24740,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Two focal points, title 60-80% of width, three layers (living bg, content, accents), anchor to edges, never pure black empty bg.
+**ما هي:** نقطتا تركيز، والعنوان 60-80% من العرض، وثلاث طبقات (خلفية حية، محتوى، لمسات)، وتثبيت إلى الحواف، ولا خلفية فارغة سوداء خالصة أبدًا. — Two focal points, title 60-80% of width, three layers (living bg, content, accents), anchor to edges, never pure black empty bg.
 
 **متى:** حين تصمم كادر الفيديو قبل التحريك وتريد عنوانًا كبيرًا وطبقات وخلفية غير سوداء فارغة / when designing a video frame before motion: large title, three layers, two focal points, no empty black
 
@@ -24815,7 +24815,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Place every element at its clearest moment as static CSS, then animate from/to it.
+**ما هي:** ضع كل عنصر في أوضح لحظاته كـ CSS ثابت، ثم حرّك منه وإليه. — Place every element at its clearest moment as static CSS, then animate from/to it.
 
 **متى:** حين تبدأ تحريك مشهد وتريد وضع كل عنصر أولًا في أوضح لحظاته ثم تحريكه منها وإليها / when animating a scene by first placing each element at its clearest moment as static CSS
 
@@ -24889,7 +24889,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Hero entrances combine position, rotation, blur and scale and start >=0.35 stage width away; distances as fractions of width.
+**ما هي:** دخولات البطل تجمع الموضع والدوران والتمويه والتحجيم وتبدأ على بعد >=0.35 من عرض المسرح؛ والمسافات كأجزاء من العرض. — Hero entrances combine position, rotation, blur and scale and start >=0.35 stage width away; distances as fractions of width.
 
 **متى:** حين تصمم دخول العنصر الرئيسي بحركة ودوران وتمويه من مسافة بدل التكبير في مكانه / when a hero entrance should travel in with rotation, blur and scale instead of growing in place
 
@@ -24964,7 +24964,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 2-3 named timed camera moves; hold between; no constant drift/orbit; budget 60% object transforms, 20% surface/light, 20% camera; fill every camera lock with acting object.
+**ما هي:** 2-3 حركات كاميرا مسماة موقوتة؛ سكون بينها؛ لا انجراف/دوران دائم؛ الميزانية 60% تحويلات الأجسام و20% السطح/الضوء و20% الكاميرا؛ واملأ كل قفل كاميرا بجسم يمثّل. — 2-3 named timed camera moves; hold between; no constant drift/orbit; budget 60% object transforms, 20% surface/light, 20% camera; fill every camera lock with acting object.
 
 **متى:** حين تخطط حركات الكاميرا في مشهد وتريد عددًا محدودًا من الحركات المسماة مع ثبات بينها / when planning 2-3 named timed camera moves with holds between and no constant drift
 
@@ -25040,7 +25040,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Vendored atlas skill excerpt for Kling camera control parameters.
+**ما هي:** مقتطف مأخوذ من مهارة atlas لمعاملات التحكم بكاميرا Kling. — Vendored atlas skill excerpt for Kling camera control parameters.
 
 **متى:** حين تستخدم Kling وتحتاج مرجعًا لمعاملات التحكم في حركة الكاميرا / when using Kling and you need a reference for its camera control parameters
 
@@ -25115,7 +25115,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Fit footage to frame by crop, letterbox pad, or blurred-fill background.
+**ما هي:** ملاءمة اللقطة للإطار بالقص أو بحشو letterbox أو بخلفية ضبابية. — Fit footage to frame by crop, letterbox pad, or blurred-fill background.
 
 **متى:** حين لا يطابق مقاس المقطع الإطار وتريد قصه أو إضافة أشرطة أو خلفية ضبابية / when footage does not match the frame and needs crop, letterbox padding or a blurred fill
 
@@ -25188,7 +25188,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Virtual camera behaviour in 2D/2.5D films.
+**ما هي:** سلوك الكاميرا الافتراضية في أفلام 2D/2.5D. — Virtual camera behaviour in 2D/2.5D films.
 
 **متى:** حين تحرك كاميرا افتراضية في فيلم ثنائي الأبعاد أو 2.5D وتحتاج حدود الدفع والانجراف بلا اهتزاز يدوي / when moving a virtual camera in a 2D or 2.5D film with push and drift limits
 
@@ -25264,7 +25264,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One strong diagonal between hero and antagonist, scale contrast, calm empty space around the action, far = softer and bluer, near = sharp, no black outlines unless cartoon is intended.
+**ما هي:** قطر قوي واحد بين البطل والخصم، وتباين المقياس، وفراغ هادئ حول الحدث، والبعيد أنعم وأزرق والقريب حاد، ولا خطوط سوداء إلا إذا قُصد الكرتون. — One strong diagonal between hero and antagonist, scale contrast, calm empty space around the action, far = softer and bluer, near = sharp, no black outlines unless cartoon is intended.
 
 **متى:** حين ترسم لوحة أو مشهدًا ثابتًا فيه بطل وخصم وتريد تكوينًا بقطر قوي وعمق جوي / when composing a painted still with hero and antagonist on a strong diagonal and atmospheric depth
 
@@ -25340,7 +25340,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** PLAN keys: static, push-in, pull-back, pan, tilt, orbit, rack-focus; STYLE defaults: opening push-in 100->108% ease-out, pans ≤20% of frame, closing pull-back 105->100%.
+**ما هي:** مفاتيح PLAN: static وpush-in وpull-back وpan وtilt وorbit وrack-focus؛ والافتراضيات STYLE: دفع افتتاحي 100->108% بتباطؤ، وبانورامات ≤20% من الإطار، وسحب ختامي للخلف 105->100%. — PLAN keys: static, push-in, pull-back, pan, tilt, orbit, rack-focus; STYLE defaults: opening push-in 100->108% ease-out, pans ≤20% of frame, closing pull-back 105->100%.
 
 **متى:** حين تملأ عمود الكاميرا في جدول خطة المشاهد وتحتاج قيمًا افتراضية للدفع والبان والسحب / when filling the Camera column of a scene plan with push-in, pan or pull-back defaults
 
@@ -25414,7 +25414,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Natural shots vs product close-ups mapped to Three.js field of view.
+**ما هي:** لقطات طبيعية مقابل لقطات قريبة للمنتج مقابلة لمجال الرؤية في Three.js. — Natural shots vs product close-ups mapped to Three.js field of view.
 
 **متى:** حين تضبط كاميرا ثلاثية الأبعاد في Three.js وتريد زاوية رؤية تقابل عدسة طبيعية أو لقطة منتج قريبة / when setting a Three.js camera fov to match natural lenses or a product close-up
 
@@ -25491,7 +25491,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Layer speed inversely proportional to depth for planar parallax.
+**ما هي:** سرعة الطبقة تتناسب عكسيًا مع العمق في البارالاكس المستوي. — Layer speed inversely proportional to depth for planar parallax.
 
 **متى:** حين تبني بارالاكس بطبقات أمامية ووسطى وخلفية وتحتاج نسب السرعة حسب العمق / when building planar parallax and you need layer speed factors by depth
 
@@ -25566,7 +25566,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Avoid expensive DOF by blurring a background layer in 2.5D.
+**ما هي:** تجنب عمق الميدان المكلف بتمويه طبقة خلفية في 2.5D. — Avoid expensive DOF by blurring a background layer in 2.5D.
 
 **متى:** حين تريد خلفية ضبابية توحي بعمق الميدان دون كلفة عالية في مشهد 2.5D / when you want a blurred background suggesting depth of field without expensive DOF in 2.5D
 
@@ -25639,7 +25639,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Gentle camera on tabular info.
+**ما هي:** كاميرا لطيفة على المعلومات الجدولية. — Gentle camera on tabular info.
 
 **متى:** حين تحرك الكاميرا فوق جداول أو رسوم بيانية وتريد حركة هادئة محدودة بلا اهتزاز / when moving the camera over charts or tabular info gently, with a small push and pan and no shake
 
@@ -25714,7 +25714,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Pan between chapters; zoom limits; hold after moves.
+**ما هي:** بانورما بين الفصول؛ وحدود التكبير؛ ومكوث بعد الحركات. — Pan between chapters; zoom limits; hold after moves.
 
 **متى:** حين تشرح مخططًا على مراحل وتنقل الكاميرا بين أجزائه بزووم محدود وتوقف بعد كل حركة / when panning a camera between chapters of a diagram with zoom limits and holds after moves
 
@@ -25789,7 +25789,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Device frame share by aspect ratio.
+**ما هي:** حصة إطار الجهاز بحسب نسبة الأبعاد. — Device frame share by aspect ratio.
 
 **متى:** حين تعرض جهازًا في فيديو وتريد حجمه المناسب لكل نسبة عرض 9:16 أو 16:9 أو 1:1 / when sizing a device frame for each aspect ratio: 9:16, 16:9 or 1:1
 
@@ -25864,7 +25864,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Text margins; never crop through island/camera/home indicator; keep one vertical edge in push-ins.
+**ما هي:** هوامش النص؛ لا قص عبر الجزيرة/الكاميرا/مؤشر الصفحة الرئيسية أبدًا؛ وإبقاء حافة عمودية واحدة في الدفعات. — Text margins; never crop through island/camera/home indicator; keep one vertical edge in push-ins.
 
 **متى:** حين تقص أو تقرّب على شاشة جهاز وتريد هوامش آمنة للنص دون قطع الجزيرة أو الكاميرا أو مؤشر الرئيسية / when cropping or pushing in on a device without cutting the island, camera or home indicator
 
@@ -25939,7 +25939,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Face-aware crop / centre crop / blurred pad to target ratio.
+**ما هي:** قص يراعي الوجه أو قص مركزي أو حشو ضبابي إلى النسبة المطلوبة. — Face-aware crop / centre crop / blurred pad to target ratio.
 
 **متى:** عند تحويل مقاس فيديو إلى 9:16 أو 1:1 أو غيره مع إبقاء الوجه في الإطار / when converting a clip to 9:16 or another ratio while keeping the face in frame
 
@@ -26015,7 +26015,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Slow push during holds; dolly toward tapped element.
+**ما هي:** دفع بطيء أثناء المكوث؛ ودوللي نحو العنصر المنقور. — Slow push during holds; dolly toward tapped element.
 
 **متى:** حين تعرض شاشة جهاز وتريد دفعًا بطيئًا أثناء التوقف وتقريبًا نحو العنصر عند النقر عليه / when showing a device with a slow push during holds and a dolly toward the tapped element
 
@@ -26090,7 +26090,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** All photos in a scene share one rig transform so cuts feel like one operator.
+**ما هي:** كل صور المشهد تشترك في تحويل منصة واحد فتبدو القطعات كمشغّل واحد. — All photos in a scene share one rig transform so cuts feel like one operator.
 
 **متى:** حين تحرك عدة صور في مشهد واحد وتريد أن تبدو القطعات كأن مصورًا واحدًا يحرك الكاميرا / when animating several photos in one scene so cuts feel like one operator on one rig
 
@@ -26165,7 +26165,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Eyes in top third; limited push into faces; 9:16 subject on vertical third.
+**ما هي:** العيون في الثلث العلوي؛ ودفع محدود نحو الوجوه؛ وهدف 9:16 على الثلث العمودي. — Eyes in top third; limited push into faces; 9:16 subject on vertical third.
 
 **متى:** حين تؤطر صورة شخصية أو وجهًا وتريد العينين في الثلث العلوي وتقريبًا محدودًا على الوجه / when framing a portrait with eyes in the top third and limited push into faces
 
@@ -26240,7 +26240,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Device-free screen width share, arrival rotation; vertical travel on 9:16; callouts outside screen.
+**ما هي:** حصة عرض الشاشة دون الجهاز، ودوران الوصول؛ وانتقال عمودي في 9:16؛ والتعليقات خارج الشاشة. — Device-free screen width share, arrival rotation; vertical travel on 9:16; callouts outside screen.
 
 **متى:** حين تعرض شاشة دون إطار جهاز وتحتاج نسبة عرضها ودورانها عند الوصول وموضع التعليقات / when framing a device-free screen with width share, arrival rotation and callouts outside it
 
@@ -26315,7 +26315,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** One transform drives push/pan/focus per scene; build at 2× for zooms >1.4×.
+**ما هي:** تحويل واحد يقود الدفع/البانورما/التركيز لكل مشهد؛ والبناء بدقة 2× للتكبيرات >1.4×. — One transform drives push/pan/focus per scene; build at 2× for zooms >1.4×.
 
 **متى:** حين تبني كاميرا في Remotion بتحويل واحد للدفع والبان وتحتاج بناءً بدقة مضاعفة للزووم الكبير / when one transform drives push, pan and focus per scene and zooms over 1.4x need a 2x build
 
@@ -26391,7 +26391,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Every leg ends ~1 s in slow forward drift and next begins continuing it; reversals only inside a leg.
+**ما هي:** تنتهي كل مرحلة بانجراف أمامي بطيء ~1 ث وتبدأ التالية بمواصلته؛ والانعكاسات داخل المرحلة فقط. — Every leg ends ~1 s in slow forward drift and next begins continuing it; reversals only inside a leg.
 
 **متى:** حين تكتب برومبتات لمقاطع متتالية وتريد أن تتصل الحركة بين نهاية مقطع وبداية التالي / when writing prompts for consecutive legs so each ends in slow forward drift the next continues
 
@@ -26466,7 +26466,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Only 0,2,4,8,12,16,24,32,40,48,64,80,96 px; buttons 8x12 px.
+**ما هي:** المسافات المعتمدة فقط: 0 و2 و4 و8 و12 و16 و24 و32 و40 و48 و64 و80 و96 px؛ والأزرار 8x12 px. — Only 0,2,4,8,12,16,24,32,40,48,64,80,96 px; buttons 8x12 px.
 
 **متى:** حين تضبط المسافات في تصميم الواجهة وتريد الالتزام بقيم مسافات معتمدة فقط / when spacing a UI and you must stick to the approved pixel values only
 
@@ -26539,7 +26539,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Single impact shake as integer offset.
+**ما هي:** اهتزاز ارتطام واحد كإزاحة بأعداد صحيحة. — Single impact shake as integer offset.
 
 **متى:** حين تريد اهتزازًا خفيفًا واحدًا للشاشة لحظة الاصطدام أو الضربة / when you want a single subtle screen shake on an impact
 
@@ -26614,7 +26614,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Slow push per beat plus sinusoidal drift; straight cuts on sound hits.
+**ما هي:** دفع بطيء لكل نبضة مع انجراف جيبي؛ وقطعات مستقيمة عند ضربات الصوت. — Slow push per beat plus sinusoidal drift; straight cuts on sound hits.
 
 **متى:** حين تريد كاميرا تدفع ببطء مع كل نبضة مع اهتزاز يدوي خفيف وقطعات على ضربات الصوت / when you want a slow push per beat with gentle handheld drift and straight cuts on sound hits
 
@@ -26689,7 +26689,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Visible grid in every shot; elements rest on grid cells.
+**ما هي:** شبكة مرئية في كل لقطة؛ وتستقر العناصر على خلايا الشبكة. — Visible grid in every shot; elements rest on grid cells.
 
 **متى:** حين تريد شبكة ظاهرة في خلفية كل لقطة تستقر عليها العناصر بمحاذاة منتظمة / when every shot shows a visible background grid and elements rest on its cells
 
@@ -26764,7 +26764,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Ten named camera moves the planner and manifest accept: five for 2D motion and five for 3D shots.
+**ما هي:** عشر حركات كاميرا مسماة يقبلها المخطِّط وملف manifest: خمس للحركة ثنائية الأبعاد وخمس للقطات ثلاثية الأبعاد. — Ten named camera moves the planner and manifest accept: five for 2D motion and five for 3D shots.
 
 **متى:** حين تحدد حركة كاميرا لمشهد في الخطة ويجب أن تكون من الأسماء المقبولة / when setting a scene's camera move in the plan or manifest from the allowed names
 
@@ -26840,7 +26840,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Continuous slow pushes or small pans, no whip/rotation.
+**ما هي:** دفعات بطيئة مستمرة أو بانورامات صغيرة، دون whip أو دوران. — Continuous slow pushes or small pans, no whip/rotation.
 
 **متى:** حين تريد حركة كاميرا هادئة مستمرة بدفع بطيء أو بان صغير دون حركات سريعة أو دوران / when you want continuous slow pushes or small pans with no whip or rotation
 
@@ -26915,7 +26915,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Only the camera eases: one dolly-in per chorus.
+**ما هي:** الكاميرا وحدها تتحرك بتنعيم: دوللي للداخل واحد لكل كورس. — Only the camera eases: one dolly-in per chorus.
 
 **متى:** حين تريد أن تقترب الكاميرا وحدها بدولي ناعم واحد في كل كورس من الأغنية / when only the camera should move, with one eased dolly-in per song chorus
 
@@ -26990,7 +26990,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Camera follows subject with lag and overshoot then recentres.
+**ما هي:** تتبع الكاميرا الهدف بتأخر وتجاوز ثم تعيد التمركز. — Camera follows subject with lag and overshoot then recentres.
 
 **متى:** حين تتبع الكاميرا جسمًا متحركًا كالكرة بتأخير وتجاوز ثم إعادة توسيط / when the camera follows a moving subject like a ball with lag and overshoot before recentring
 
@@ -27065,7 +27065,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Cinematic letterbox inside 16:9; dolly only.
+**ما هي:** شريط سينمائي letterbox داخل 16:9؛ ودوللي فقط. — Cinematic letterbox inside 16:9; dolly only.
 
 **متى:** حين تريد مظهرًا سينمائيًا بأشرطة سوداء داخل كادر 16:9 مع حركة دولي فقط / when you want a cinematic 2.35:1 letterbox inside 16:9 with a dolly-only camera
 
@@ -27140,7 +27140,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Zoom when 3 rings remain, decaying shake per hit.
+**ما هي:** التكبير عندما تبقى 3 حلقات، واهتزاز متلاشٍ مع كل ضربة. — Zoom when 3 rings remain, decaying shake per hit.
 
 **متى:** حين تريد ذروة بزووم عند بقاء ثلاث حلقات واهتزاز يتلاشى مع كل ضربة / when building a climax with a zoom as 3 rings remain and a decaying shake on each hit
 
@@ -27215,7 +27215,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Pans and one push; flat UI rotates ≤8° in 3D.
+**ما هي:** بانورامات ودفعة واحدة؛ وتدور الواجهة المسطحة ≤8° في 3D. — Pans and one push; flat UI rotates ≤8° in 3D.
 
 **متى:** حين تعرض واجهة مسطحة بكاميرا 2.5D مع بان ودفع واحد ودوران ثلاثي الأبعاد محدود / when presenting flat UI with a 2.5D camera: pans, one push and up to 8° 3D rotation
 
@@ -27290,7 +27290,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Scale jumps in one frame then relaxes.
+**ما هي:** يقفز التحجيم في إطار واحد ثم يسترخي. — Scale jumps in one frame then relaxes.
 
 **متى:** حين تريد زوومًا صادمًا يقفز في إطار واحد عند ضربة ثم يرتخي تدريجيًا / when you want a zoom that jumps in one frame on a hit and then relaxes back
 
@@ -27365,7 +27365,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Inward zoom toward pupil at exponential constant rate.
+**ما هي:** تكبير للداخل نحو البؤبؤ بمعدل أسي ثابت. — Inward zoom toward pupil at exponential constant rate.
 
 **متى:** حين تريد زوومًا نفقيًا مستمرًا نحو بؤبؤ العين بمعدل أسي ثابت / when you want a continuous inward tunnel zoom toward a pupil at a constant exponential rate
 
@@ -27440,7 +27440,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Only two small push-ins.
+**ما هي:** كاميرا ثابتة ودفعتان صغيرتان فقط. — Only two small push-ins.
 
 **متى:** حين تريد كاميرا ثابتة لا تتحرك إلا بدفعتين صغيرتين فقط / when the camera stays static except for two small push-ins
 
@@ -27515,7 +27515,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** scale 0.92->1.00 plus 24 px drop shadow.
+**ما هي:** تحجيم 0.92->1.00 مع ظل منسدل 24 px. — scale 0.92->1.00 plus 24 px drop shadow.
 
 **متى:** حين تكون الكاميرا ثابتة وتريد إيحاء العمق بتكبير العنصر قليلًا مع ظل ساقط / when the camera is locked and depth comes from a slight scale-up plus a drop shadow
 
@@ -27588,7 +27588,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Media clips either fill the frame with edge cropping or show the whole picture letterboxed on the project background colour.
+**ما هي:** تملأ مقاطع الوسائط الإطار مع قص الحواف، أو تعرض الصورة كاملة بحشو letterbox على لون خلفية المشروع. — Media clips either fill the frame with edge cropping or show the whole picture letterboxed on the project background colour.
 
 **متى:** عند وضع صورة أو مقطع إما بملء الإطار مع قص الحواف أو كاملا بأشرطة / for media clips that either fill the frame with edge cropping or show whole letterboxed
 
@@ -27663,7 +27663,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** background grid at 0.5 speed; grid scale 0.92->1
+**ما هي:** شبكة خلفية بسرعة 0.5؛ وتحجيم الشبكة 0.92->1 — background grid at 0.5 speed; grid scale 0.92->1
 
 **متى:** حين تريد خلفية شبكة تتحرك بنصف السرعة لصنع بارالاكس بطبقتين / when a background grid moves at half speed to create two-layer parallax
 
@@ -27738,7 +27738,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** scale 1.00->1.06 over 30 s
+**ما هي:** تحجيم 1.00->1.06 خلال 30 ث — scale 1.00->1.06 over 30 s
 
 **متى:** حين يكون الفيديو لقطة واحدة متصلة وتريد دفعًا بطيئًا جدًا للكاميرا على مدى 30 ثانية / when a single continuous shot needs a very slow push from 1.00 to 1.06 over 30 s
 
@@ -27811,7 +27811,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Depth from layers moving at different rates under one camera track, plus a gentle zoom: far sky slowest, mid buildings, ground, then fast foreground alley edges.
+**ما هي:** عمق من طبقات تتحرك بمعدلات مختلفة تحت مسار كاميرا واحد مع تكبير لطيف: السماء البعيدة الأبطأ، ثم المباني، ثم الأرض، ثم حواف الزقاق الأمامية السريعة. — Depth from layers moving at different rates under one camera track, plus a gentle zoom: far sky slowest, mid buildings, ground, then fast foreground alley edges.
 
 **متى:** حين تبني عمقا من طبقات سماء ومبان وأرض ومقدمة تتحرك بسرعات مختلفة تحت تتبع كاميرا / for depth from sky, building, ground and foreground layers moving at different rates under one camera track
 
@@ -27886,7 +27886,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Black top and bottom bars, a horizontal edge vignette, a tiny tracked-out brand line and a light-weight widely spaced title for a filmic look.
+**ما هي:** شريطان أسودان أعلى وأسفل وتعتيم أفقي للحواف وسطر علامة صغير متباعد الأحرف وعنوان خفيف الوزن واسع التباعد لمظهر سينمائي. — Black top and bottom bars, a horizontal edge vignette, a tiny tracked-out brand line and a light-weight widely spaced title for a filmic look.
 
 **متى:** عند إعطاء المشهد طابعا سينمائيا بأشرطة سوداء وتعتيم الحواف وعنوان رفيع متباعد / for a filmic look with black bars, edge vignette and a light, widely spaced title
 
@@ -27959,7 +27959,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Finds the visual centre of strong edges and reports whether it sits on a rule-of-thirds point, centred or off-grid, plus mirror symmetry and the nearest standard aspect ratio.
+**ما هي:** يجد المركز البصري للحواف القوية ويبلّغ هل يقع على نقطة قاعدة الأثلاث أو في الوسط أو خارج الشبكة، مع تناظر المرآة وأقرب نسبة أبعاد قياسية. — Finds the visual centre of strong edges and reports whether it sits on a rule-of-thirds point, centred or off-grid, plus mirror symmetry and the nearest standard aspect ratio.
 
 **متى:** حين تريد فحص تكوين صورة: قاعدة الأثلاث والتماثل وأقرب نسبة أبعاد / when checking an image's composition: rule of thirds, symmetry and nearest aspect ratio
 
@@ -28036,7 +28036,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic photo/cinema light maths op 'equivalent' for planning believable lighting in shots, prompts and 3D scenes.
+**ما هي:** عملية رياضيات إضاءة حتمية للتصوير والسينما 'equivalent' لتخطيط إضاءة معقولة في اللقطات والبرومبتات والمشاهد ثلاثية الأبعاد. — Deterministic photo/cinema light maths op 'equivalent' for planning believable lighting in shots, prompts and 3D scenes.
 
 **متى:** عند حساب سرعة غالق مكافئة بعد تغيير فتحة العدسة أو ISO لإضاءة مقنعة / when computing the matching shutter after changing aperture or ISO for believable lighting
 
@@ -28112,7 +28112,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic photo/cinema light maths op 'shutter_angle' for planning believable lighting in shots, prompts and 3D scenes.
+**ما هي:** عملية رياضيات إضاءة حتمية للتصوير والسينما 'shutter_angle' لتخطيط إضاءة معقولة في اللقطات والبرومبتات والمشاهد ثلاثية الأبعاد. — Deterministic photo/cinema light maths op 'shutter_angle' for planning believable lighting in shots, prompts and 3D scenes.
 
 **متى:** حين تحول زاوية الغالق ومعدل الإطارات إلى سرعة غالق لتقدير ضبابية الحركة / when converting shutter angle and fps into shutter speed to plan motion blur
 
@@ -28188,7 +28188,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The whole stage moves as one camera (x, y, scale, rotation); count the moves and keep still in between.
+**ما هي:** يتحرك المسرح كله ككاميرا واحدة (x وy وتحجيم ودوران)؛ عُدّ الحركات وابقَ ثابتًا بينها. — The whole stage moves as one camera (x, y, scale, rotation); count the moves and keep still in between.
 
 **متى:** عند تحريك المسرح كله ككاميرا ثنائية الأبعاد بعدد حركات محدود وثبات بينها / for moving the whole stage as one 2D camera with few counted moves and stillness between
 
@@ -28264,7 +28264,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A push-in whose scale changes in log space so it feels constant.
+**ما هي:** دفع للداخل يتغير تحجيمه في فضاء لوغاريتمي فيبدو ثابتًا. — A push-in whose scale changes in log space so it feels constant.
 
 **متى:** حين تريد دفعة كاميرا للداخل يبدو تكبيرها ثابت السرعة / when a camera push-in should scale in log space so its speed feels constant
 
@@ -28340,7 +28340,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** An SVG Gaussian blur along one axis that swells and clears over a fast move.
+**ما هي:** تمويه Gaussian في SVG على محور واحد يتضخم ويزول خلال حركة سريعة. — An SVG Gaussian blur along one axis that swells and clears over a fast move.
 
 **متى:** عند حركة سريعة تحتاج ضبابية في اتجاه واحد تزداد ثم تختفي / for a fast move that needs a one-axis blur that swells and clears
 
@@ -28415,7 +28415,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Camera position and look target interpolated with smoothstep between keys, still between events.
+**ما هي:** يُستكمل موضع الكاميرا وهدف النظر بـ smoothstep بين المفاتيح، وثابتان بين الأحداث. — Camera position and look target interpolated with smoothstep between keys, still between events.
 
 **متى:** حين تحرك كاميرا ثلاثية الأبعاد بين مواضع وأهداف نظر محددة مع ثبات بين الأحداث / when a 3D camera moves between keyed positions and look targets, still between events
 
@@ -28488,7 +28488,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Director/Veo shot words become camera functions: framing by subject size and fov, moves, dolly zoom with constant subject size, seeded handheld.
+**ما هي:** تتحول كلمات اللقطات عند المخرج/Veo إلى دوال كاميرا: تأطير بحسب حجم الهدف ومجال الرؤية، وحركات، ودوللي زووم بحجم هدف ثابت، واهتزاز يدوي مبذور. — Director/Veo shot words become camera functions: framing by subject size and fov, moves, dolly zoom with constant subject size, seeded handheld.
 
 **متى:** عند تحويل وصف لقطة نصي مثل لقطة منخفضة متتبعة إلى كاميرا ثلاثية الأبعاد / when turning shot words like 'low angle tracking shot' into 3D cameras with cuts and DOF
 
@@ -28567,7 +28567,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Depth-of-field blur on the whole canvas or a shape, and directional motion blur on a shape.
+**ما هي:** تمويه عمق الميدان على اللوحة كلها أو على شكل، وتمويه حركة اتجاهي على شكل. — Depth-of-field blur on the whole canvas or a shape, and directional motion blur on a shape.
 
 **متى:** حين تريد تمويه عمق للوحة كلها أو لشكل محدد أو ضبابية حركة اتجاهية / for depth-of-field blur on the whole canvas or a shape, or directional motion blur
 
@@ -28641,7 +28641,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Make a painting look photographed by applying, in order: defocus on background, motion blur on rain, bloom and flare from the strongest light, light chroma, filmic, vignette, grain.
+**ما هي:** لجعل لوحة مرسومة تبدو مصوَّرة، تُطبَّق بالترتيب: عدم تركيز على الخلفية، وتمويه حركة على المطر، وإزهار وتوهج من أقوى ضوء، ولون ضوئي خفيف، وفيلمي، وتعتيم الحواف، وحبيبات. — Make a painting look photographed by applying, in order: defocus on background, motion blur on rain, bloom and flare from the strongest light, light chroma, filmic, vignette, grain.
 
 **متى:** عند جعل لوحة مرسومة تبدو كأنها مصورة بكاميرا عبر ترتيب مؤثرات العدسة / when making a painting look photographed by applying lens effects in a set order
 
@@ -28718,7 +28718,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Black bars top and bottom turn the 1200x800 sheet into a 1200x676 cinematic frame.
+**ما هي:** شريطان أسودان أعلى وأسفل يحوّلان الصفحة 1200x800 إلى إطار سينمائي 1200x676. — Black bars top and bottom turn the 1200x800 sheet into a 1200x676 cinematic frame.
 
 **متى:** حين تحول لوحة 1200x800 إلى إطار سينمائي بأشرطة سوداء أعلى وأسفل / for turning a 1200x800 sheet into a cinematic frame with top and bottom black bars
 
@@ -28794,7 +28794,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Distant layers are lowered in contrast and pushed blue by translucent blurred screen bands; valley fog sits between mountain layers.
+**ما هي:** تُخفَّض تباينات الطبقات البعيدة وتُدفع نحو الزرقة بحزم شاشة شبه شفافة ضبابية؛ ويقع ضباب الوادي بين طبقات الجبال. — Distant layers are lowered in contrast and pushed blue by translucent blurred screen bands; valley fog sits between mountain layers.
 
 **متى:** عند إضافة عمق جوي وضباب بين طبقات الجبال لتبدو البعيدة باهتة ومائلة للأزرق / for atmospheric depth and fog between mountain layers so distant ones fade and turn bluer
 
@@ -28871,7 +28871,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A hit-like zoom: the shot jumps to +9 % scale on a downbeat and decays exponentially; rendered at 2× so the zoom moves in half-pixel steps.
+**ما هي:** ضربة تكبير: تقفز اللقطة إلى +9 % تحجيم عند النبضة القوية وتتلاشى أسيًا؛ وتُصيَّر بدقة 2× فيتحرك التكبير بخطوات نصف بكسل. — A hit-like zoom: the shot jumps to +9 % scale on a downbeat and decays exponentially; rendered at 2× so the zoom moves in half-pixel steps.
 
 **متى:** حين تريد ضربة زووم على إيقاع الموسيقى في المونتاج تقفز ثم تهدأ / when the montage needs a zoom hit on each downbeat that jumps then decays
 
@@ -28947,7 +28947,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Converts aspect ratio by cropping around detected faces (weighted by face size), else around the centroid of motion energy; or fits the whole frame over a blurred darker copy.
+**ما هي:** يحوّل نسبة الأبعاد بالقص حول الوجوه المكتشفة (بوزن حجمها)، وإلا حول مركز ثقل طاقة الحركة؛ أو يلائم الإطار كاملًا فوق نسخة ضبابية أغمق. — Converts aspect ratio by cropping around detected faces (weighted by face size), else around the centroid of motion energy; or fits the whole frame over a blurred darker copy.
 
 **متى:** عند تغيير مقاس فيديو بالقص حول الوجوه أو الحركة أو بخلفية مموهة لعرضه كاملا / when converting aspect ratio by cropping around faces or motion, or fitting over a blurred copy
 
@@ -29025,7 +29025,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Three layers drift by different multipliers of a normalized pointer position with a lagging tween, creating a looking-through-a-window depth.
+**ما هي:** ثلاث طبقات تنجرف بمضاعفات مختلفة لموضع المؤشر المطبَّع مع تأخر في التحريك، فيظهر عمق كأنك تنظر من نافذة. — Three layers drift by different multipliers of a normalized pointer position with a lagging tween, creating a looking-through-a-window depth.
 
 **متى:** حين تريد طبقات تتحرك مع الماوس كأنك تنظر من نافذة أو بمسار مبرمج في الفيديو / for layers that drift with the pointer like looking through a window, or on a scripted path in video
 
@@ -29101,7 +29101,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Background moves slower than foreground while scrolling; a section pins while its internal timeline plays, then releases; horizontal galleries translate while the page scrolls vertically.
+**ما هي:** تتحرك الخلفية أبطأ من المقدمة أثناء التمرير؛ ويُثبَّت قسم أثناء تشغيل خطه الزمني الداخلي ثم يتحرر؛ وتنزاح المعارض الأفقية بينما تتمرر الصفحة عموديًا. — Background moves slower than foreground while scrolling; a section pins while its internal timeline plays, then releases; horizontal galleries translate while the page scrolls vertically.
 
 **متى:** عند بناء صفحة تمرير بخلفية أبطأ وأقسام مثبتة ومعرض أفقي أثناء التمرير / for scroll pages with slower backgrounds, pinned sections and horizontal galleries
 
@@ -29179,7 +29179,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Each card pins at the top while the next slides over it; the covered card shrinks and dims, producing a deck being stacked.
+**ما هي:** تُثبَّت كل بطاقة في الأعلى بينما تنزلق التالية فوقها؛ وتنكمش البطاقة المغطاة وتعتم فتبدو كرزمة تتراكم. — Each card pins at the top while the next slides over it; the covered card shrinks and dims, producing a deck being stacked.
 
 **متى:** حين تريد بطاقات تتثبت وتتراكم فوق بعضها كرزمة أثناء التمرير / for cards that pin and stack like a deck as the page scrolls
 
@@ -29255,7 +29255,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A pinned visual on one side swaps or interpolates frames as text steps scroll past on the other side.
+**ما هي:** عنصر بصري مثبت في جهة يبدل الإطارات أو يستكملها بينما تتمرر خطوات النص في الجهة الأخرى. — A pinned visual on one side swaps or interpolates frames as text steps scroll past on the other side.
 
 **متى:** عند سرد قصة بالتمرير مع صورة مثبتة تتغير بجانب خطوات النص / for scrollytelling with a pinned visual that swaps frames as text steps scroll by
 
@@ -29332,7 +29332,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Feature cards flip up slightly in 3D as they arrive in sequence.
+**ما هي:** تنقلب بطاقات الميزات قليلًا في 3D عند وصولها تباعًا. — Feature cards flip up slightly in 3D as they arrive in sequence.
 
 **متى:** حين تظهر بطاقات المزايا بالتتابع مع ميلان ثلاثي الأبعاد خفيف عند التمرير / when feature cards arrive in sequence with a slight 3D tilt-up on scroll
 
@@ -29408,7 +29408,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Focus pull and bokeh blur from view depth.
+**ما هي:** سحب بؤرة وتمويه بوكيه من عمق المشهد. — Focus pull and bokeh blur from view depth.
 
 **متى:** عند الحاجة إلى تركيز وبوكيه حسب عمق المشهد مع تحريك المسافة لنقل البؤرة / for depth-based focus and bokeh blur, animating focus distance for a rack focus
 
@@ -29416,7 +29416,7 @@
 
 **المعاملات:** e.g. 5.0, 25.0, 1.0; API reimplemented in r181 (old options object broken)
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** بوكيه · خلفية ضبابية · نقل البؤرة · bokeh · tsl · focus pull
 
@@ -29432,7 +29432,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -29484,7 +29484,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Image planes in 3D with velocity-reactive shader distortion; in video, drive by timeline progress instead of scroll.
+**ما هي:** مستويات صور ثلاثية الأبعاد مع تشويه shader يتفاعل مع السرعة؛ وفي الفيديو تُدار بتقدم الخط الزمني بدل التمرير. — Image planes in 3D with velocity-reactive shader distortion; in video, drive by timeline progress instead of scroll.
 
 **متى:** حين تريد معرض صور ثلاثي الأبعاد ينحني مع السرعة ويقاد بالزمن في الفيديو / for a 3D image-plane gallery whose shader bends with velocity, driven by the timeline in video
 
@@ -29559,7 +29559,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Define first/final frames and named camera states; interpolate shortest path between them.
+**ما هي:** حدد الإطارين الأول والأخير وحالات كاميرا مسماة؛ واستكمل أقصر مسار بينها. — Define first/final frames and named camera states; interpolate shortest path between them.
 
 **متى:** عند تحديد لقطات بداية ونهاية وحالات كاميرا مسماة والانتقال بينها بأقصر مسار / for defining first and final frames and named camera states, tweening the shortest path between them
 
@@ -29633,7 +29633,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Kinetic letters treat copy blocks/buttons as obstacles and flow around them.
+**ما هي:** حروف حركية تعامل كتل النص/الأزرار كعوائق وتنساب حولها. — Kinetic letters treat copy blocks/buttons as obstacles and flow around them.
 
 **متى:** حين تتحرك الحروف وتتفادى الأزرار وكتل النص كعوائق فيزيائية / when kinetic letters flow around buttons and copy blocks as physical obstacles
 
@@ -29707,7 +29707,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Camera follows the drawing head and breathes out in the middle of a long route, then dives back in at the destination.
+**ما هي:** تتبع الكاميرا رأس الرسم وتتنفس للخارج في منتصف مسار طويل، ثم تغوص ثانية عند الوجهة. — Camera follows the drawing head and breathes out in the middle of a long route, then dives back in at the destination.
 
 **متى:** عند تحريك خريطة تتبع رأس المسار وتبتعد في منتصف الرحلة ثم تقترب عند الوجهة / for a map camera that follows the route head, pulls out mid-journey and dives in at the destination
 
@@ -29784,7 +29784,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Per-shot zoom behaviours applied to footage between cuts.
+**ما هي:** سلوكات تكبير لكل لقطة تُطبَّق على اللقطات بين القطعات. — Per-shot zoom behaviours applied to footage between cuts.
 
 **متى:** حين تريد زووم بين القطعات في المونتاج: ضربة أو كين بيرنز أو انجراف أو نبض / when footage needs a zoom behaviour between cuts: punch, Ken Burns, drift or pulse
 
@@ -29861,7 +29861,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Nineteen parametric virtual camera moves on footage: base moves per shot multiplied by short accents plus handheld noise.
+**ما هي:** تسع عشرة حركة كاميرا افتراضية بمعاملات على اللقطات: حركات أساسية لكل لقطة مضروبة في لمسات قصيرة مع ضوضاء يدوية. — Nineteen parametric virtual camera moves on footage: base moves per shot multiplied by short accents plus handheld noise.
 
 **متى:** عند إضافة حركات كاميرا افتراضية للمقاطع مثل الدفع والسحب والبان والبان السريع / for virtual camera moves on footage such as push-in, pull-out, pan, whip pan and truck
 
@@ -29936,7 +29936,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** When the camera rolls, zoom is raised enough that no black corners appear.
+**ما هي:** عند دوران الكاميرا يُرفع التكبير بما يكفي لئلا تظهر زوايا سوداء. — When the camera rolls, zoom is raised enough that no black corners appear.
 
 **متى:** حين تدور الكاميرا على المقطع وتحتاج تكبيرا كافيا لمنع ظهور زوايا سوداء / when the camera rolls and the zoom must rise enough to hide black corners
 
@@ -30011,7 +30011,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Plans a camera move per shot from the cuts, the mood and the loudest spoken words.
+**ما هي:** يخطط حركة كاميرا لكل لقطة من القطعات والمزاج وأعلى الكلمات المنطوقة صوتًا. — Plans a camera move per shot from the cuts, the mood and the loudest spoken words.
 
 **متى:** عند تخطيط حركة كاميرا لكل لقطة تلقائيا حسب المود والقطعات والكلمات العالية / for auto-planning a camera move per shot from the cuts, the mood and the loudest spoken words
 
@@ -30088,7 +30088,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Footage whose aspect differs can fill the frame (crop) or sit whole over a blurred, darkened copy of itself.
+**ما هي:** اللقطة ذات نسبة الأبعاد المختلفة تملأ الإطار (بالقص) أو تُوضع كاملة فوق نسخة ضبابية معتمة منها. — Footage whose aspect differs can fill the frame (crop) or sit whole over a blurred, darkened copy of itself.
 
 **متى:** حين يختلف مقاس المقطع وتريد عرضه كاملا فوق نسخة مموهة منه بدل القص / when footage of another aspect should sit whole over its own blurred copy instead of cropping
 
@@ -30165,7 +30165,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Black bars top and bottom for a widescreen look.
+**ما هي:** شريطان أسودان أعلى وأسفل لمظهر شاشة عريضة. — Black bars top and bottom for a widescreen look.
 
 **متى:** عند إعطاء الفيديو مظهرا عريضا سينمائيا بأشرطة سوداء أعلى وأسفل / for a widescreen film look with black bars top and bottom
 
@@ -30239,7 +30239,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Video or image tracks can play as a rounded window in the top corner that springs in.
+**ما هي:** يمكن تشغيل مسارات الفيديو أو الصور كنافذة مستديرة في الزاوية العليا تنبثق بنابض. — Video or image tracks can play as a rounded window in the top corner that springs in.
 
 **متى:** حين تريد نافذة فيديو أو صورة صغيرة بزاوية الشاشة تدخل بحركة زنبركية / when a video or image should play as a rounded corner window that springs in
 
@@ -30313,7 +30313,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Maps the reference's measured camera moves onto the product's own cuts in the same order, plus punch accents at the reference's accent rate.
+**ما هي:** ينقل حركات كاميرا المرجع المقيسة إلى قطعات المنتج نفسه بالترتيب ذاته، مع لمسات ضربة بمعدل لمسات المرجع. — Maps the reference's measured camera moves onto the product's own cuts in the same order, plus punch accents at the reference's accent rate.
 
 **متى:** عند نقل حركات كاميرا فيديو مرجعي إلى قطعات فيديوك بنفس الترتيب / when applying a reference video's measured camera moves to your own cuts in the same order
 
@@ -30387,7 +30387,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Closed-form, seek-safe camera shake for any wrapper using value-noise channels over three octaves with per-lens projection (28/50/85 mm).
+**ما هي:** اهتزاز كاميرا بصيغة مغلقة آمن للقفز الزمني لأي غلاف، بقنوات ضوضاء قيمية على ثلاثة أوكتافات مع إسقاط لكل عدسة (28/50/85 mm). — Closed-form, seek-safe camera shake for any wrapper using value-noise channels over three octaves with per-lens projection (28/50/85 mm).
 
 **متى:** حين تحتاج اهتزاز كاميرا محمولة ثابت النتيجة عند التنقل في الزمن مع ملفات لكل عدسة / for a seek-safe handheld camera shake with per-lens profiles on any wrapper
 
@@ -30466,7 +30466,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Screen-recording auto-zoom: camera pushes toward each upcoming click, follows the cursor on a spring, marks clicks with press+ring, and eases back out.
+**ما هي:** تكبير تلقائي لتسجيل الشاشة: تدفع الكاميرا نحو كل نقرة قادمة وتتبع المؤشر بنابض وتعلّم النقرات بضغطة وحلقة ثم ترجع بسلاسة. — Screen-recording auto-zoom: camera pushes toward each upcoming click, follows the cursor on a spring, marks clicks with press+ring, and eases back out.
 
 **متى:** عند فيديو تسجيل شاشة يقرب تلقائيا نحو النقرات ويتبع المؤشر / for a screen recording that auto-zooms toward each click and follows the cursor
 
@@ -30545,7 +30545,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Centred card stays subtly alive with loop-exact rotation, scale breathing and a slow light sweep.
+**ما هي:** تبقى بطاقة متمركزة حية بدقة عبر دوران متكرر بدقة وتنفس تحجيم وكنسة ضوء بطيئة. — Centred card stays subtly alive with loop-exact rotation, scale breathing and a slow light sweep.
 
 **متى:** حين تبقى بطاقة في المنتصف وتحتاج حياة خفيفة بدوران وتنفس ولمعة بطيئة / when a centred card should stay subtly alive with rotation, breathing and a slow light sweep
 
@@ -30625,7 +30625,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Focus moves once between two cards at different apparent depths using synced blur, dimming, scale and parallax.
+**ما هي:** ينتقل التركيز مرة واحدة بين بطاقتين بعمقين ظاهرين مختلفين باستخدام تمويه وتعتيم وتحجيم وبارالاكس متزامنة. — Focus moves once between two cards at different apparent depths using synced blur, dimming, scale and parallax.
 
 **متى:** عند نقل التركيز مرة واحدة بين بطاقتين على أعماق مختلفة مثل مسودة ومنشور / for shifting focus once between two cards at different depths, e.g. Draft to Published
 
@@ -30704,7 +30704,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Lateral camera move across a row of labelled stations with a steady dwell at each stop; centring logic is unit-tested.
+**ما هي:** حركة كاميرا جانبية عبر صف من المحطات المسماة مع مكوث ثابت عند كل توقف؛ ومنطق التوسيط مختبر بوحدات اختبار. — Lateral camera move across a row of labelled stations with a steady dwell at each stop; centring logic is unit-tested.
 
 **متى:** حين تريد حركة كاميرا جانبية تمر على محطات مسماة مع توقف عند كل واحدة / for a lateral camera pan across labelled stations, dwelling at each stop
 
@@ -30783,7 +30783,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Phone rises, camera pushes through its screen and layered app UI expands to fill frame.
+**ما هي:** يرتفع هاتف وتدفع الكاميرا عبر شاشته وتتمدد واجهة التطبيق متعددة الطبقات لتملأ الإطار. — Phone rises, camera pushes through its screen and layered app UI expands to fill frame.
 
 **متى:** عند عرض تطبيق بهاتف يرتفع ثم تدخل الكاميرا عبر شاشته وتتمدد الواجهة لملء الإطار / for showing an app: a phone rises and the camera pushes through its screen as layered UI fills the frame
 
@@ -30861,7 +30861,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Focus card shrinks from full frame while siblings parallax in to form a grid.
+**ما هي:** تنكمش بطاقة التركيز من الإطار الكامل بينما تنزلق البطاقات المجاورة بالبارالاكس لتشكل شبكة. — Focus card shrinks from full frame while siblings parallax in to form a grid.
 
 **متى:** حين تصغر بطاقة من ملء الشاشة وتدخل البطاقات المجاورة لتكوين شبكة / when a focus card shrinks from full frame while siblings parallax in to form a grid
 
@@ -30938,7 +30938,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Centre card scales to fill frame while siblings parallax outward.
+**ما هي:** تتحجم البطاقة المركزية لتملأ الإطار بينما تنزلق البطاقات المجاورة للخارج بالبارالاكس. — Centre card scales to fill frame while siblings parallax outward.
 
 **متى:** عند تكبير البطاقة الوسطى لتملأ الإطار بينما تتباعد البطاقات المحيطة / when the centre card scales to fill frame while sibling cards parallax outward
 
@@ -31015,7 +31015,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Tight detail (e.g. +312%) holds, then one decelerating pull-back reveals the headline and context cards.
+**ما هي:** تثبت لقطة تفصيل قريبة (مثل +312%) ثم يكشف سحب خلفي واحد متباطئ العنوان وبطاقات السياق. — Tight detail (e.g. +312%) holds, then one decelerating pull-back reveals the headline and context cards.
 
 **متى:** حين تبدأ بتفصيلة قريبة مثل رقم ثم تبتعد الكاميرا لتكشف العنوان والسياق / when a tight detail like a number holds, then one pull-back reveals the headline and context
 
@@ -31094,7 +31094,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One slow continuous camera push on a centred headline with gentle fade.
+**ما هي:** دفع كاميرا بطيء مستمر واحد على عنوان متمركز مع تلاشٍ لطيف. — One slow continuous camera push on a centred headline with gentle fade.
 
 **متى:** حين تريد دفعة كاميرا بطيئة نحو عنوان في منتصف الشاشة مع تلاش هادئ / when you need a slow camera push toward a centred headline with a soft fade
 
@@ -31173,7 +31173,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Forced-scroll cinematic pass through a tall scene of slotted sections with depth-layer parallax, decelerating into the last section.
+**ما هي:** مرور سينمائي بتمرير قسري عبر مشهد طويل من أقسام في فتحات مع بارالاكس طبقات العمق، يتباطأ عند القسم الأخير. — Forced-scroll cinematic pass through a tall scene of slotted sections with depth-layer parallax, decelerating into the last section.
 
 **متى:** عند عرض عدة أقسام في مشهد طويل بتمرير سينمائي وبارالاكس حتى القسم الأخير / for a cinematic scroll through stacked sections with depth parallax, easing into the last one
 
@@ -31252,7 +31252,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** App surface settles, then camera zooms/pans to an anchor on cue and holds, optional soft halo.
+**ما هي:** يستقر سطح التطبيق ثم تقرّب الكاميرا/تنتقل إلى مرساة عند الإشارة وتثبت، مع هالة ناعمة اختيارية. — App surface settles, then camera zooms/pans to an anchor on cue and holds, optional soft halo.
 
 **متى:** حين تريد التكبير على جزء من واجهة تطبيق في لحظة محددة والثبات عليه / when you want to zoom into a spot on an app UI on cue and hold there
 
@@ -31331,7 +31331,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Helpers for zoom, slide and 3D tilt-pan on any wrapper (video/include/card) with cubic defaults and edge-defocus pulse overlay.
+**ما هي:** مساعدات للتكبير والانزلاق وإمالة-بانورما ثلاثية الأبعاد على أي غلاف (فيديو/include/بطاقة) بقيم cubic افتراضية وتراكب نبضة إزالة تركيز الحواف. — Helpers for zoom, slide and 3D tilt-pan on any wrapper (video/include/card) with cubic defaults and edge-defocus pulse overlay.
 
 **متى:** حين تحتاج تكبيرًا أو انزلاقًا أو ميلانًا ثلاثي الأبعاد على فيديو أو بطاقة بأسلوب يوتيوب / for adding zoom, slide or 3D tilt-pan moves to a video or card wrapper
 
@@ -31408,7 +31408,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Dolly zoom: camera tracks while field of view solves d*tan(FOV/2)=const each frame so the subject keeps size while the background stretches or collapses; needs layered depth.
+**ما هي:** دوللي زووم: تتحرك الكاميرا بينما يحل مجال الرؤية d*tan(FOV/2)=const في كل إطار فيحتفظ الهدف بحجمه بينما تتمدد الخلفية أو تنهار؛ ويحتاج عمقًا متعدد الطبقات. — Dolly zoom: camera tracks while field of view solves d*tan(FOV/2)=const each frame so the subject keeps size while the background stretches or collapses; needs layered depth.
 
 **متى:** حين تريد تأثير الدوار حيث يبقى الشخص بنفس الحجم بينما تتمدد الخلفية أو تنكمش / when the subject must keep its size while the background stretches or collapses
 
@@ -31487,7 +31487,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** WebGL focus pull with real aperture bokeh: polygon discs that clip to cat-eye toward the corners as the focal plane travels near to far.
+**ما هي:** سحب بؤرة WebGL ببوكيه فتحة حقيقي: أقراص مضلعة تُقص إلى عين القط نحو الزوايا بينما يتنقل مستوى البؤرة من القريب إلى البعيد. — WebGL focus pull with real aperture bokeh: polygon discs that clip to cat-eye toward the corners as the focal plane travels near to far.
 
 **متى:** حين تريد نقل التركيز من القريب إلى البعيد مع بوكيه عدسة واقعي / when you need a focus pull from near to far with realistic lens bokeh
 
@@ -31567,7 +31567,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Image cards ride a circle with size graded by depth angle, sweeping in fast-slow-fast swings; 12 image slots. Five style variants (1-5).
+**ما هي:** تركب بطاقات الصور دائرة بأحجام متدرجة حسب زاوية العمق، وبتأرجح سريع-بطيء-سريع؛ 12 فتحة صورة. خمسة أنماط (1-5). — Image cards ride a circle with size graded by depth angle, sweeping in fast-slow-fast swings; 12 image slots. Five style variants (1-5).
 
 **متى:** عند عرض مجموعة صور تدور في دائرة بعمق وتأرجح سريع ثم بطيء / for showing a set of photos spinning around a circle with depth and fast-slow swings
 
@@ -31646,7 +31646,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Image cards on a spinning 3D Fibonacci sphere, billboarded to camera and sized by distance; 24 slots. Five style variants (1-5).
+**ما هي:** بطاقات صور على كرة فيبوناتشي ثلاثية الأبعاد دوارة، متجهة نحو الكاميرا وبأحجام بحسب المسافة؛ 24 فتحة. خمسة أنماط (1-5). — Image cards on a spinning 3D Fibonacci sphere, billboarded to camera and sized by distance; 24 slots. Five style variants (1-5).
 
 **متى:** حين تريد عرض صور كثيرة على كرة ثلاثية الأبعاد تدور / for showing many images as cards on a spinning 3D sphere
 
@@ -31725,7 +31725,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Image cards ride an open bezier path (arc, V, diagonal, wave, S-curve) with depth scaling and tangent rotation; 12-24 slots. Five style variants (1-5).
+**ما هي:** تركب بطاقات الصور مسار بيزييه مفتوحًا (قوس أو V أو قطري أو موجة أو S) بتحجيم حسب العمق ودوران مماس؛ 12-24 فتحة. خمسة أنماط (1-5). — Image cards ride an open bezier path (arc, V, diagonal, wave, S-curve) with depth scaling and tangent rotation; 12-24 slots. Five style variants (1-5).
 
 **متى:** عند تحريك بطاقات صور على مسار منحن مثل قوس أو موجة أو حرف S / for moving image cards along a curved path such as an arc, wave or S-curve
 
@@ -31804,7 +31804,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Headline mask-reveals per word while a circle carousel converges from off-frame, threads the line, collapses to centre and hard-cuts to a second line at 1.4x. Five style variants (1-5).
+**ما هي:** يظهر العنوان كلمة كلمة بقناع بينما يتقارب دوار دائري من خارج الإطار، ويخيط السطر، وينكمش إلى المركز، ثم يقطع بحدة إلى سطر ثانٍ عند 1.4x. خمسة أنماط (1-5). — Headline mask-reveals per word while a circle carousel converges from off-frame, threads the line, collapses to centre and hard-cuts to a second line at 1.4x. Five style variants (1-5).
 
 **متى:** حين تريد عنوانًا يظهر كلمة كلمة بينما تلتف حوله دائرة صور ثم قطع لسطر ثان / when a headline reveals word by word as a circle of images converges, then cuts to a second line
 
@@ -31883,7 +31883,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Ring of large image cards tilted into a row under a 3D camera, each turning toward centre; 12 slots. Five style variants (1-5).
+**ما هي:** حلقة من بطاقات صور كبيرة مائلة في صف تحت كاميرا ثلاثية الأبعاد، وكل بطاقة تلتفت نحو المركز؛ 12 فتحة. خمسة أنماط (1-5). — Ring of large image cards tilted into a row under a 3D camera, each turning toward centre; 12 slots. Five style variants (1-5).
 
 **متى:** عند عرض صور كبيرة في حلقة مائلة تحت كاميرا ثلاثية الأبعاد تلتفت نحو المركز / for a ring of large image cards tilted into a row under a 3D camera
 
@@ -31962,7 +31962,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Structured Swiss-grid layout example in Helvetica on #f2f2f2 (10 s). [Local copy lacks its sub-compositions: compositions/captions.html, compositions/graphics.html, compositions/intro.html.]
+**ما هي:** مثال تخطيط شبكة سويسرية منظم بخط Helvetica على #f2f2f2 (10 ث). [النسخة المحلية تفتقر إلى تركيباتها الفرعية: compositions/captions.html وcompositions/graphics.html وcompositions/intro.html.] — Structured Swiss-grid layout example in Helvetica on #f2f2f2 (10 s). [Local copy lacks its sub-compositions: compositions/captions.html, compositions/graphics.html, compositions/intro.html.]
 
 **متى:** حين تبدأ مشروعًا بتخطيط شبكي سويسري منظم أو تحتاج مرجعًا للألوان والخطوط / when starting from a structured Swiss-grid layout or using it as a type and palette reference
 
@@ -32039,7 +32039,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** All frame content stays in the top ~83% of the canvas because a karaoke caption pill owns the bottom ~17%, even when captions are disabled.
+**ما هي:** يبقى كل محتوى الإطار في أعلى نحو 83% من اللوحة لأن كبسولة ترجمة الكاراوكي تشغل نحو 17% السفلية، حتى عند تعطيل الترجمات. — All frame content stays in the top ~83% of the canvas because a karaoke caption pill owns the bottom ~17%, even when captions are disabled.
 
 **متى:** حين تضع ترجمة كاريوكي أسفل الإطار وتريد إبقاء باقي العناصر في الجزء العلوي / when a karaoke caption owns the bottom of the frame and other content must stay above it
 
@@ -32115,7 +32115,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Zoom/punch animates the inner wrapper of a clip, never the timed clip element.
+**ما هي:** تحرّك حركة التكبير/الضربة الغلاف الداخلي للمقطع، ولا تحرّك عنصر المقطع المؤقت أبدًا. — Zoom/punch animates the inner wrapper of a clip, never the timed clip element.
 
 **متى:** حين تريد تكبيرًا سريعًا مفاجئًا على لقطة فيديو دون كسر توقيت الكليب / when you need a quick punch zoom on a video clip without breaking the clip timing
 
@@ -32123,7 +32123,7 @@
 
 **المعاملات:** scale 1.35, 0.18 s
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** زووم سريع · تكبير مفاجئ · لقطة فيديو · snap zoom · zoom hit
 
@@ -32139,7 +32139,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)

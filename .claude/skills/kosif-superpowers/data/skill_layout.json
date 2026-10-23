@@ -24,6 +24,7 @@
     "START.md",
     "PROTOCOL.md",
     "USIP_PORTABLE.md",
+    "USIP_PASTE.md",
     "SESSION_PROMPT.md",
     "references/INDEX.md",
     "references/LAYOUT.md",
@@ -57,7 +58,8 @@
     "references/self-discovery.md",
     "references/prompt-optimizer.md",
     "references/humanizer.md",
-    "references/creative-quality-gates.md"
+    "references/creative-quality-gates.md",
+    "references/lesson-integrity-methods.md"
    ],
    "globs": []
   },
@@ -89,7 +91,8 @@
     "references/owned-repos-map.md",
     "references/superpowers-rea-map.md",
     "references/superpowers-rea-map.html",
-    "references/github-top-1000.md"
+    "references/github-top-1000.md",
+    "references/agents-memory-reasoning-repos.md"
    ],
    "globs": []
   },
@@ -102,7 +105,8 @@
    "files": [],
    "globs": [
     "references/powers/*",
-    "references/library/*"
+    "references/library/*",
+    "references/micro-index/*"
    ]
   },
   {
@@ -232,7 +236,8 @@
     "references/owner-uploads-review-20261023.md",
     "references/codex-repos-study-20261023.md",
     "references/rea-superpowers-frontier-20261023.md",
-    "references/atlas-ledger-20261023.md"
+    "references/atlas-ledger-20261023.md",
+    "references/every-joule-study-20261023.md"
    ],
    "globs": []
   }

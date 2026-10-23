@@ -53,8 +53,10 @@ def toks(s):
 
 
 def vectors(ps):
-    docs = []
+    docs, mirror = [], []
     for p in ps:
+        # runnable-tools mirrors tools.json: it must not shift every family's term weights as the registry grows
+        mirror.append(p.get("family") == "runnable-tools")
         c = collections.Counter()
         for w in toks(p.get("name_en")):
             c[w] += 3
@@ -68,8 +70,8 @@ def vectors(ps):
         for w in toks(str(p.get("what") or "").split(" — ")[-1])[:40]:
             c[w] += 1
         docs.append(c)
-    df = collections.Counter(w for d in docs for w in d)
-    n = len(docs)
+    df = collections.Counter(w for d, m in zip(docs, mirror) if not m for w in d)
+    n = len(docs) - sum(mirror)
     out = []
     for d in docs:
         v = {w: x * math.log(n / (1 + df[w])) for w, x in d.items() if df[w] > 1}

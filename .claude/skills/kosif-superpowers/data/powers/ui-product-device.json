@@ -2,6 +2,7 @@
  {
   "id": "UI-01",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "العرض الصامت: الواجهة تحكي",
   "name_en": "Silent product demo — the UI tells the story",
   "status": "documented",
@@ -36,6 +37,7 @@
  {
   "id": "UI-02",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "ثلاثية النية والفعل والاستجابة",
   "name_en": "Intent → action → response with real latency",
   "status": "documented",
@@ -68,6 +70,7 @@
  {
   "id": "UI-03",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "محتوى واجهة حقيقي ومحلي",
   "name_en": "Real, locale-correct UI content",
   "status": "documented",
@@ -101,6 +104,7 @@
  {
   "id": "UI-04",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "إعادة بناء الشاشة كطبقات",
   "name_en": "Layered screen rebuild",
   "status": "ready",
@@ -134,6 +138,7 @@
  {
   "id": "UI-05",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "حقيبة أصول من أجزاء حقيقية",
   "name_en": "Animation kit from real parts",
   "status": "ready",
@@ -168,6 +173,7 @@
  {
   "id": "UI-06",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "عكس الواجهة للعربية",
   "name_en": "RTL product-UI mirroring",
   "status": "documented",
@@ -202,6 +208,7 @@
  {
   "id": "UI-07",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "لوحة البيانات داخل الإطار",
   "name_en": "Dashboard composition for a frame",
   "status": "documented",
@@ -233,6 +240,7 @@
  {
   "id": "UI-08",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تشريح التفاعل الدقيق كوحدة مشهد",
   "name_en": "Microinteraction anatomy as a beat",
   "status": "documented",
@@ -265,6 +273,7 @@
  {
   "id": "UI-09",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مقطع حلقة لمكوّن واحد",
   "name_en": "Seamless UI component loop (3–6 s)",
   "status": "documented",
@@ -295,6 +304,7 @@
  {
   "id": "UI-10",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "عناوين أفعال بسيطة في الشروحات",
   "name_en": "Plain action labels in tutorials",
   "status": "documented",
@@ -326,6 +336,7 @@
  {
   "id": "UI-11",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشر بفيزياء في motion-kit",
   "name_en": "motion-kit physics cursor + press + typeOn",
   "status": "proven",
@@ -365,6 +376,7 @@
  {
   "id": "UI-12",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "واجهة منتج على Canvas بدالة draw(t)",
   "name_en": "Canvas product UI draw(t) recipe",
   "status": "proven",
@@ -402,6 +414,7 @@
  {
   "id": "UI-13",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تصميم حركة المؤشر",
   "name_en": "Cursor choreography rules",
   "status": "documented",
@@ -436,6 +449,7 @@
  {
   "id": "UI-14",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "حلقة الضغط والتموج",
   "name_en": "Press ring & click ripple",
   "status": "ready",
@@ -470,6 +484,7 @@
  {
   "id": "UI-15",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشر ماك معبّر يتجه مع حركته",
   "name_en": "Expressive directional macOS cursor",
   "status": "seen",
@@ -507,6 +522,7 @@
  {
   "id": "UI-16",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشر بهالة لونية يلاحق هدفًا متحركًا",
   "name_en": "Cursor with accent halo homing on a live target",
   "status": "seen",
@@ -539,6 +555,7 @@
  {
   "id": "UI-17",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "المؤشر المغناطيسي",
   "name_en": "Magnetic cursor & magnetic buttons",
   "status": "install",
@@ -573,6 +590,7 @@
  {
   "id": "UI-18",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "سحب وإفلات",
   "name_en": "Cursor drag & drop",
   "status": "install",
@@ -606,6 +624,7 @@
  {
   "id": "UI-19",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تحديد نص ومستطيل وقائمة يمين",
   "name_en": "Text select, marquee select & context menu",
   "status": "install",
@@ -640,6 +659,7 @@
  {
   "id": "UI-20",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشرات متعاونين بأسمائها",
   "name_en": "Named multiplayer cursors",
   "status": "install",
@@ -678,6 +698,7 @@
  {
   "id": "UI-21",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشر وكيل ذكي",
   "name_en": "AI agent cursor",
   "status": "install",
@@ -711,6 +732,7 @@
  {
   "id": "UI-22",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشر اللمس على الهاتف",
   "name_en": "Touch indicator: tap & swipe",
   "status": "install",
@@ -747,6 +769,7 @@
  {
   "id": "UI-23",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "ضغط اختصار لوحة المفاتيح",
   "name_en": "Keycap shortcut trigger",
   "status": "seen",
@@ -779,6 +802,7 @@
  {
   "id": "UI-24",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تحكم وهدف يتغيران معًا",
   "name_en": "Control ↔ target live sync",
   "status": "documented",
@@ -816,6 +840,7 @@
  {
   "id": "UI-25",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "كتابة بإيقاع بشري",
   "name_en": "Human-rhythm typing with caret",
   "status": "ready",
@@ -854,6 +879,7 @@
  {
   "id": "UI-26",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "طلب يُكتب ثم يُرسل ثم يولّد",
   "name_en": "Prompt type → submit → generate",
   "status": "documented",
@@ -893,6 +919,7 @@
  {
   "id": "UI-27",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "وكيل ينجز قائمة مهام",
   "name_en": "Agent progress theater & tool-call checklist",
   "status": "seen",
@@ -936,6 +963,7 @@
  {
   "id": "UI-28",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "محادثة: فقاعات وكتابة جارية",
   "name_en": "Chat thread, bubbles & typing dots",
   "status": "install",
@@ -975,6 +1003,7 @@
  {
   "id": "UI-29",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "طرفية ومحرر كود",
   "name_en": "Terminal & IDE scenes (24 theme blocks)",
   "status": "install",
@@ -1016,6 +1045,7 @@
  {
   "id": "UI-30",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "لوحة أوامر وبحث يصفّي النتائج",
   "name_en": "Command palette & search filter",
   "status": "seen",
@@ -1055,6 +1085,7 @@
  {
   "id": "UI-31",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "إجابة متدفقة وسجل حي",
   "name_en": "Streaming answer & live log",
   "status": "seen",
@@ -1094,6 +1125,7 @@
  {
   "id": "UI-32",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "كتابة في تطبيق الملاحظات",
   "name_en": "Notes-app typing story",
   "status": "install",
@@ -1127,6 +1159,7 @@
  {
   "id": "UI-33",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "جدول ردود الفعل الدقيقة",
   "name_en": "Micro-feedback timing table",
   "status": "documented",
@@ -1162,6 +1195,7 @@
  {
   "id": "UI-34",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "ضغط ومرور بمنطق القراءة",
   "name_en": "Press & hover with reading-direction nudges",
   "status": "ready",
@@ -1195,6 +1229,7 @@
  {
   "id": "UI-35",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "ضغط وتحرير زر نابض",
   "name_en": "Press-release spring button",
   "status": "documented",
@@ -1228,6 +1263,7 @@
  {
   "id": "UI-36",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "قلب المفتاح وتبديل الثيم",
   "name_en": "Toggle flip & theme switch",
   "status": "install",
@@ -1267,6 +1303,7 @@
  {
   "id": "UI-37",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "من التحميل إلى علامة صح",
   "name_en": "Spinner → success check",
   "status": "install",
@@ -1303,6 +1340,7 @@
  {
   "id": "UI-38",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "حقل إدخال: خطأ واهتزاز ونجاح",
   "name_en": "Input feedback: error shake & valid state",
   "status": "install",
@@ -1340,6 +1378,7 @@
  {
   "id": "UI-39",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "هيكل لامع يتحول إلى محتوى",
   "name_en": "Skeleton shimmer → content",
   "status": "install",
@@ -1377,6 +1416,7 @@
  {
   "id": "UI-40",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "إشعارات: نظام وجزيرة ورصّة",
   "name_en": "Notifications: native pop, dynamic island, stacks",
   "status": "install",
@@ -1416,6 +1456,7 @@
  {
   "id": "UI-41",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تحول بطاقة إلى لوحة (FLIP)",
   "name_en": "Shared-element morph: card → panel (FLIP)",
   "status": "install",
@@ -1457,6 +1498,7 @@
  {
   "id": "UI-42",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "إعادة ترتيب قائمة وسطور",
   "name_en": "FLIP list reorder & self-reordering lines",
   "status": "seen",
@@ -1491,6 +1533,7 @@
  {
   "id": "UI-43",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مؤشرات التبويب والشريط النشط",
   "name_en": "Tab slide indicator & active rail bar",
   "status": "ready",
@@ -1523,6 +1566,7 @@
  {
   "id": "UI-44",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "شريط المراحل والحلقة والتقدم",
   "name_en": "Stepper, progress ring & progress bars",
   "status": "proven",
@@ -1562,6 +1606,7 @@
  {
   "id": "UI-45",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "نقطة حالة بهالة وشارة مباشرة",
   "name_en": "Status dot with halo & live pill",
   "status": "ready",
@@ -1597,6 +1642,7 @@
  {
   "id": "UI-46",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "لحظة احتفال توقيعية",
   "name_en": "Signature celebration moment",
   "status": "idea",
@@ -1628,6 +1674,7 @@
  {
   "id": "UI-47",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "ثوابت الهاتف البارامتري",
   "name_en": "Parametric phone constants",
   "status": "documented",
@@ -1662,6 +1709,7 @@
  {
   "id": "UI-48",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "منظور الجهاز وسرعة دورانه",
   "name_en": "Device perspective, rotation caps & idle hover",
   "status": "documented",
@@ -1694,6 +1742,7 @@
  {
   "id": "UI-49",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "دخول الجهاز وكشف البطل",
   "name_en": "Device entrance & hero reveal",
   "status": "documented",
@@ -1732,6 +1781,7 @@
  {
   "id": "UI-50",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "هاتف 2.5D على Canvas",
   "name_en": "Canvas 2.5D phone (drawPhone)",
   "status": "ready",
@@ -1764,6 +1814,7 @@
  {
   "id": "UI-51",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مكوّن Device في Remotion",
   "name_en": "Remotion Device component",
   "status": "install",
@@ -1798,6 +1849,7 @@
  {
   "id": "UI-52",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تسليم بين جهازين",
   "name_en": "Two-device turntable handoff",
   "status": "documented",
@@ -1829,6 +1881,7 @@
  {
   "id": "UI-53",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "نافذة متصفح أو ماك وهمية",
   "name_en": "Browser chrome & macOS frame mock",
   "status": "seen",
@@ -1869,6 +1922,7 @@
  {
   "id": "UI-54",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مروحة أجهزة وانفراد الهواتف",
   "name_en": "Multi-device splay & phone fan-out",
   "status": "install",
@@ -1906,6 +1960,7 @@
  {
   "id": "UI-55",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "آيفون وماك بوك ثلاثيا الأبعاد بشاشات حية",
   "name_en": "3D GLTF iPhone & MacBook with live screens",
   "status": "install",
@@ -1946,6 +2001,7 @@
  {
   "id": "UI-56",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "موك أب HTML بلقطة 2×",
   "name_en": "HTML/CSS device & package mockup screenshot",
   "status": "ready",
@@ -1981,6 +2037,7 @@
  {
   "id": "UI-57",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "قلب الهاتف وتبديل الشاشة",
   "name_en": "Phone flip with mid-swap",
   "status": "idea",
@@ -2011,6 +2068,7 @@
  {
   "id": "UI-58",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "جولة تمرير مع شروحات",
   "name_en": "Scroll tour with callouts",
   "status": "documented",
@@ -2045,6 +2103,7 @@
  {
   "id": "UI-59",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "خطوط شرح قائدة",
   "name_en": "Callout leader lines",
   "status": "documented",
@@ -2081,6 +2140,7 @@
  {
   "id": "UI-60",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "اقتراب يقوده المؤشر",
   "name_en": "Cursor-led push-in & focus zoom",
   "status": "seen",
@@ -2114,6 +2174,7 @@
  {
   "id": "UI-61",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "وصفة النقر وفتح نافذة",
   "name_en": "Click → modal recipe",
   "status": "documented",
@@ -2148,6 +2209,7 @@
  {
   "id": "UI-62",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "صفحة ويب مائلة تتمرر",
   "name_en": "3D tilted webpage scroll & perspective pan",
   "status": "documented",
@@ -2186,6 +2248,7 @@
  {
   "id": "UI-63",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "جدار بطاقات واجهة يطفو بعمق",
   "name_en": "Floating UI card wall in depth",
   "status": "seen",
@@ -2222,6 +2285,7 @@
  {
   "id": "UI-64",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "عدسة تكبير التفاصيل",
   "name_en": "Magnifier lens pass",
   "status": "documented",
@@ -2253,6 +2317,7 @@
  {
   "id": "UI-65",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "نقطة ساخنة مع فقاعة إرشاد",
   "name_en": "Hotspot tooltip walkthrough",
   "status": "seen",
@@ -2287,6 +2352,7 @@
  {
   "id": "UI-66",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مقارنة قبل وبعد",
   "name_en": "Before/after wipe & comparison split",
   "status": "install",
@@ -2323,6 +2389,7 @@
  {
   "id": "UI-67",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "دوار الشاشات والموكاب الثابت",
   "name_en": "Screen-flow carousel & sticky mock swap",
   "status": "install",
@@ -2362,6 +2429,7 @@
  {
   "id": "UI-68",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "شبكة بنتو للميزات",
   "name_en": "Bento feature grid",
   "status": "seen",
@@ -2398,6 +2466,7 @@
  {
   "id": "UI-69",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "لوحة قياس HUD وشروح مسقطة من 3D",
   "name_en": "Instrument-panel HUD & projected callouts",
   "status": "ready",
@@ -2432,6 +2501,7 @@
  {
   "id": "UI-70",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مربع تتبع وماسح ضوئي",
   "name_en": "AI tracking box & scanner brackets",
   "status": "seen",
@@ -2472,6 +2542,7 @@
  {
   "id": "UI-71",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مسرح أداة تصميم ومقابض تحديد",
   "name_en": "Design-tool canvas, selection handles & size tags",
   "status": "seen",
@@ -2510,6 +2581,7 @@
  {
   "id": "UI-72",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تسجيل صفحة بخطوات مبرمجة",
   "name_en": "Scripted page recording (Playwright)",
   "status": "ready",
@@ -2546,6 +2618,7 @@
  {
   "id": "UI-73",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "التقاط موقع إلى فيديو",
   "name_en": "Website capture → video",
   "status": "install",
@@ -2583,6 +2656,7 @@
  {
   "id": "UI-74",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "فيلم إطلاق kmotion brag",
   "name_en": "kmotion brag launch film",
   "status": "ready",
@@ -2617,6 +2691,7 @@
  {
   "id": "UI-75",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "وصفة فيديو ميزة حقيقية",
   "name_en": "Real-feature video recipe",
   "status": "documented",
@@ -2651,6 +2726,7 @@
  {
   "id": "UI-76",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "من فيجما إلى طبقات متحركة",
   "name_en": "Figma frame → animatable layers",
   "status": "key",
@@ -2684,6 +2760,7 @@
  {
   "id": "UI-77",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "تسجيل المتصفح بمؤشر ولوحة لقطات",
   "name_en": "Browser recording CLI with cursor & contact sheet",
   "status": "install",
@@ -2718,6 +2795,7 @@
  {
   "id": "UI-78",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "فيديو تعليمي من ملف YAML",
   "name_en": "YAML-defined tutorial video",
   "status": "documented",
@@ -2750,6 +2828,7 @@
  {
   "id": "UI-79",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "رموز تصميم الواجهة وسلالمها",
   "name_en": "UI tokens & Refactoring-UI scales",
   "status": "documented",
@@ -2782,6 +2861,7 @@
  {
   "id": "UI-80",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "سطح زجاجي للواجهات",
   "name_en": "Glass surface stack",
   "status": "proven",
@@ -2819,6 +2899,7 @@
  {
   "id": "UI-81",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "معمارية الثيمات: الشكل × الوضع × العلامة",
   "name_en": "Look × theme × brand token architecture",
   "status": "ready",
@@ -2853,6 +2934,7 @@
  {
   "id": "UI-82",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "ستايل برومو المنتج",
   "name_en": "Product promo style (neon prompt + glass orb)",
   "status": "seen",
@@ -2887,6 +2969,7 @@
  {
   "id": "UI-83",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "واجهة ملصقات بظل صلب",
   "name_en": "Sticker UI with hard offset shadow",
   "status": "seen",
@@ -2921,6 +3004,7 @@
  {
   "id": "UI-84",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مكتبة مكوّنات HyperFrames للواجهات",
   "name_en": "HyperFrames UI component registry",
   "status": "install",
@@ -2955,6 +3039,7 @@
  {
   "id": "UI-85",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مخططات مشاهد الواجهة",
   "name_en": "UI scene blueprints",
   "status": "documented",
@@ -2987,6 +3072,7 @@
  {
   "id": "UI-86",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "أساليب KOSIF للواجهات",
   "name_en": "KOSIF UI styles to scaffold",
   "status": "ready",
@@ -3025,6 +3111,7 @@
  {
   "id": "UI-87",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مشغّل HTML مستقل بشريط تقديم",
   "name_en": "Standalone HTML player with seek & reduced motion",
   "status": "proven",
@@ -3059,6 +3146,7 @@
  {
   "id": "UI-88",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "مراجعة على الإطار: سحب وتحجيم واختصارات",
   "name_en": "Frame review: drag, resize & Arabic-safe shortcuts",
   "status": "ready",
@@ -3092,6 +3180,7 @@
  {
   "id": "UI-89",
   "family": "ui-product-device",
+  "domain": "motion",
   "name_ar": "قواعد صفحات الويب المسلَّمة",
   "name_en": "Web deliverable rules (landing, perf, hover gating)",
   "status": "documented",

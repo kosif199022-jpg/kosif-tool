@@ -1,6 +1,6 @@
-# `shapes-morph-geometry` — الرسم والأشكال والتصميم (95 بطاقة)
+# `shapes-morph-geometry` — الرسم والأشكال والتصميم (97 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/shapes-morph-geometry.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/drawing.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/shapes-morph-geometry.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/drawing.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -97,6 +97,8 @@
 - [`SHAPE-91` انضغاط وتمدد بحفظ المساحة](#shape-91--انضغاط-وتمدد-بحفظ-المساحة--area-preserving-squash--stretch)
 - [`SHAPE-92` التصاق مغناطيسي وكل شيء من المركز](#shape-92--التصاق-مغناطيسي-وكل-شيء-من-المركز--magnet-snap-spring--centre-origin-rule)
 - [`SHAPE-93` أسلوب المرح الهندسي (S07)](#shape-93--أسلوب-المرح-الهندسي-s07--playful-geometric-style-s07)
+- [`SHAPE-G01` رقم متحرك واحد يقود كل الأشكال](#shape-g01--رقم-متحرك-واحد-يقود-كل-الأشكال--one-animated-value-drives-every-dependent-shape)
+- [`SHAPE-G02` تحويل يطابق الأجزاء المشتركة](#shape-g02--تحويل-يطابق-الأجزاء-المشتركة--morph-that-matches-shared-parts)
 - [`SHAPE-X01` تحوّل هندسي بلا مزج](#shape-x01--تحوّل-هندسي-بلا-مزج--geometric-morph-without-a-crossfade-letter--planet)
 - [`SHAPE-X02` لقطة متصلة من عناصر مشتركة](#shape-x02--لقطة-متصلة-من-عناصر-مشتركة--one-continuous-shot-from-shared-elements)
 
@@ -6634,7 +6636,7 @@
 - `SHAPE-90` سلالم الأقطار والخطوط والفراغ / Primitive, radius & stroke scales (documented)
 - `SHAPE-91` انضغاط وتمدد بحفظ المساحة / Area-preserving squash & stretch (ready)
 - `SHAPE-93` أسلوب المرح الهندسي (S07) / Playful geometric style (S07) (documented)
-- `SHAPE-X01` تحوّل هندسي بلا مزج / Geometric morph without a crossfade (letter → planet) (documented)
+- `SHAPE-G01` رقم متحرك واحد يقود كل الأشكال / One animated value drives every dependent shape (documented)
 
 ### `SHAPE-93` — أسلوب المرح الهندسي (S07) / Playful geometric style (S07)
 
@@ -6706,6 +6708,140 @@
 
 - `SHAPE-91` انضغاط وتمدد بحفظ المساحة / Area-preserving squash & stretch (ready)
 - `SHAPE-92` التصاق مغناطيسي وكل شيء من المركز / Magnet snap spring & centre-origin rule (idea)
+- `SHAPE-G01` رقم متحرك واحد يقود كل الأشكال / One animated value drives every dependent shape (documented)
+- `SHAPE-G02` تحويل يطابق الأجزاء المشتركة / Morph that matches shared parts (documented)
+
+### `SHAPE-G01` — رقم متحرك واحد يقود كل الأشكال / One animated value drives every dependent shape
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `shapes-morph-geometry` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/shapes-morph-geometry.md)) |
+| المجموعة | الرسم والأشكال والتصميم (`drawing`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** حرّك قيمة واحدة (متتبع) واجعل كل شكل يعتمد عليها يُعاد رسمه من دالة في كل إطار، بدل تحريك كل شكل وحده. — Animate one value (a tracker) and redraw every dependent shape from a function of it each frame, instead of animating each shape alone.
+
+**متى:** رسوم شرح فيها نقطة على منحنى، أو عداد وأعمدة، أو زاوية ومثلث / explainers with a dot on a curve, a counter and bars, or an angle and a triangle
+
+**كيف:** Manim pattern: ValueTracker t → always_redraw(lambda: Dot(axes.c2p(t, f(t)))) plus a label and a tangent from the same t; then animate only t. In HTML: one state value, every element computed in render(t). Dependencies can never drift apart, and seeking any frame is exact.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** manim · valuetracker · updater · always_redraw · dependent animation · متتبع · رسوم شرح · إعادة رسم
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:SHAPE-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `code-drawing-master` · `motion-director` · `motion-engine-js` · `native-3d` · `native-glb` · `smart-draw`.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `SHAPE-92` التصاق مغناطيسي وكل شيء من المركز / Magnet snap spring & centre-origin rule (idea)
+- `SHAPE-93` أسلوب المرح الهندسي (S07) / Playful geometric style (S07) (documented)
+- `SHAPE-G02` تحويل يطابق الأجزاء المشتركة / Morph that matches shared parts (documented)
+- `SHAPE-X01` تحوّل هندسي بلا مزج / Geometric morph without a crossfade (letter → planet) (documented)
+
+### `SHAPE-G02` — تحويل يطابق الأجزاء المشتركة / Morph that matches shared parts
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `shapes-morph-geometry` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/shapes-morph-geometry.md)) |
+| المجموعة | الرسم والأشكال والتصميم (`drawing`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** عند تحويل معادلة أو نص أو شكل إلى آخر، أبقِ الأجزاء المتطابقة في مكانها وحرّكها، وحوّل المختلف فقط، بدل ذوبان كل شيء في كل شيء. — When morphing one equation, text or shape into another, keep matching parts and move them, morph only what differs, instead of melting everything into everything.
+
+**متى:** خطوات حل معادلة، تغيير كلمة في عنوان، تطور شعار / equation steps, swapping a word in a title, logo evolution
+
+**كيف:** Split both states into parts with stable keys (tokens, glyphs, sub-paths); matched keys tween position/scale; unmatched old parts fade or shrink out, new ones fade or grow in; order point lists before a path morph so vertices pair by position. Manim: TransformMatchingTex / TransformMatchingShapes; ReplacementTransform when the target object replaces the source in the scene.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** morph · transform matching · equation animation · manim · تحويل · معادلة · تطابق
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:SHAPE-G02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `code-drawing-master` · `motion-director` · `motion-engine-js` · `native-3d` · `native-glb` · `smart-draw`.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `SHAPE-93` أسلوب المرح الهندسي (S07) / Playful geometric style (S07) (documented)
+- `SHAPE-G01` رقم متحرك واحد يقود كل الأشكال / One animated value drives every dependent shape (documented)
 - `SHAPE-X01` تحوّل هندسي بلا مزج / Geometric morph without a crossfade (letter → planet) (documented)
 - `SHAPE-X02` لقطة متصلة من عناصر مشتركة / One continuous shot from shared elements (documented)
 
@@ -6773,8 +6909,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `SHAPE-92` التصاق مغناطيسي وكل شيء من المركز / Magnet snap spring & centre-origin rule (idea)
-- `SHAPE-93` أسلوب المرح الهندسي (S07) / Playful geometric style (S07) (documented)
+- `SHAPE-G01` رقم متحرك واحد يقود كل الأشكال / One animated value drives every dependent shape (documented)
+- `SHAPE-G02` تحويل يطابق الأجزاء المشتركة / Morph that matches shared parts (documented)
 - `SHAPE-X02` لقطة متصلة من عناصر مشتركة / One continuous shot from shared elements (documented)
 
 ### `SHAPE-X02` — لقطة متصلة من عناصر مشتركة / One continuous shot from shared elements
@@ -6841,6 +6977,6 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `SHAPE-93` أسلوب المرح الهندسي (S07) / Playful geometric style (S07) (documented)
+- `SHAPE-G02` تحويل يطابق الأجزاء المشتركة / Morph that matches shared parts (documented)
 - `SHAPE-X01` تحوّل هندسي بلا مزج / Geometric morph without a crossfade (letter → planet) (documented)
 

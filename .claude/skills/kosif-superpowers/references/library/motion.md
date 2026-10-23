@@ -1,6 +1,6 @@
 # الموشن والمونتاج والسينما — Motion & video editing (`motion`)
 
-> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -23,13 +23,13 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 117 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 180 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 269 | 📄 documented: a described method; needs building or wiring before it runs |
+| `ready` | 183 | 🟢 ready: runnable without setup according to the catalog |
+| `documented` | 271 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 292 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 314 | 📦 install: needs a package, binary or model first |
 | `key` | 23 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 33 | 💡 idea: not built |
-| **المجموع** | **1,228** | |
+| **المجموع** | **1,233** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -45,6 +45,7 @@
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
 | `code-drawing-master` | رسم الشخصيات والمشاهد بالكود | `python3 scripts/code_drawing_master.py --cast human+cat --expression happy --location street --action walk --out ./story.json --html ./story.html` | tested-here |
+| `color-media` | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة | `python3 scripts/color_media.py draw --photo in.png --out out/x --medium oil` | tested-here |
 | `creative-paint` | الرسم الإبداعي بالطبقات | `python3 scripts/creative_paint.py doctor` | tested-here |
 | `creative-principles` | دراسة الرسم التدريجي والظل الأصلي | `python3 scripts/creative_principles.py construct --input original-shapes.json --out-prefix out/stage` | tested-elsewhere |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
@@ -54,6 +55,7 @@
 | `drawing-methods` | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `drawing-visual-qa` | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 | `dua-wednesday` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | `python3 scripts/dua_wednesday.py doctor` | tested-here |
+| `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `fetch-reference` | جلب المرجع المسموح وقياسه | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
 | `kosif-timeline` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | `python3 scripts/kosif_timeline.py doctor` | tested-here |
@@ -62,6 +64,7 @@
 | `mimic` | محرك محاكاة الفيديو المرجعي | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm_analyze; mm_analyze.analyze('./in.mp4','./work')"` | tested-here |
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |
 | `motion-engine-js` | محرك حركة SVG | `python3 scripts/motion_director.py compile ./scene.json --out ./out/film.html` | tested-here |
+| `motion-physics` | فيزياء الحركة | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` | tested-here |
 | `motion-reference-probe` | فاحص توقيت الفيديو المرجعي | `python3 scripts/motion_reference_probe.py ./in.mp4` | tested-here |
 | `motion-toolkit` | مكتبة رياضيات الحركة | `node --input-type=module -e "import {ease, timeCode} from './resources/motion-runtime/motion_toolkit.mjs'; console.log(ease(0.5,'cubic'), timeCode(2.5,30))"` | tested-here |
 | `music-rhythm-engine` | فرضيات إيقاع الموسيقى | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json` | tested-here |
@@ -95,10 +98,10 @@
 |---|---:|---|
 | `camera-composition-layout` | 425 | [camera-composition-layout.md](../powers/camera-composition-layout.md) |
 | `characters-rigs` | 51 | [characters-rigs.md](../powers/characters-rigs.md) |
-| `easing-timing-rhythm` | 102 | [easing-timing-rhythm.md](../powers/easing-timing-rhythm.md) |
+| `easing-timing-rhythm` | 106 | [easing-timing-rhythm.md](../powers/easing-timing-rhythm.md) |
 | `formats-platforms` | 70 | [formats-platforms.md](../powers/formats-platforms.md) |
 | `story-direction-ideas` | 95 | [story-direction-ideas.md](../powers/story-direction-ideas.md) |
-| `transitions-cuts` | 474 | [transitions-cuts.md](../powers/transitions-cuts.md) |
+| `transitions-cuts` | 475 | [transitions-cuts.md](../powers/transitions-cuts.md) |
 | `video-download` | 11 | [video-download.md](../powers/video-download.md) |
 
 ## كل القدرات / every power
@@ -308,6 +311,9 @@
 | `EASE-82` | زمن الرسم حسب حجم الخطوة | Drawing-time model | ready |  |
 | `EASE-83` | تفاعلات الضغط والمرور والنوافذ | Press, hover & dialog entrances | ready |  |
 | `EASE-85` | زر تهدئة الحركة وتقليلها | Quiet-motion toggle & reduced motion | ready |  |
+| `EASE-G01` | نابض بالفيزياء يطبع كل إطار | Spring solved frame by frame | ready | python3 |
+| `EASE-G02` | منحنى CSS محسوب كما يحسبه المتصفح | Browser-exact cubic-bezier sampling | ready | python3 |
+| `EASE-G03` | تتابع من نقطة أصل على شبكة | Stagger from an origin on a grid | ready | python3 |
 | `FMT-01` | المقاس من الوجهة | Derive the canvas from the destination | ready | python3 |
 | `FMT-11` | قواعد المقروئية على الهاتف | Phone legibility gate | ready | imagemagick |
 | `FMT-15` | تحجيم مع حشو لأي إطار | Scale + pad / centre crop | ready |  |
@@ -512,6 +518,7 @@
 | `EASE-70` | قواعد الوقفات في قص المتكلم | Speech pause grammar | documented | ffmpeg, pip:faster-whisper |
 | `EASE-88` | تنعيم أثر المؤشر بالمسافة | Distance-sampled pointer trail | documented |  |
 | `EASE-89` | توقيتات الصور وضربات الميزات | Photo & feature-beat timings | documented | imagemagick |
+| `EASE-G04` | خط زمني بإزاحات نسبية وعلامات | Timeline with relative offsets and labels | documented | npm:gsap, npm:animejs |
 | `EASE-X06` | جداول منحنيات بالاسم والنية | Named curves: AE ↔ CSS table and intent eases | documented |  |
 | `EASE-X07` | أرقام نعومة قبلها العميل | Client-approved smoothness numbers | documented |  |
 | `EASE-X08` | قراءات مسموحة وميزانية السكون | Listed reads and the still-time budget | documented |  |
@@ -658,6 +665,7 @@
 | `TRANS-440` | قطع وميضي | Flash cut | documented |  |
 | `TRANS-441` | قطع بالتكبير | Zoom cut entrance | documented |  |
 | `TRANS-442` | تلاشي مع تحجيم | Scale crossfade | documented |  |
+| `TRANS-G01` | انتقال سحري بين حالتين | Auto-animate between two states (magic move) | documented |  |
 | `TRANS-X01` | لكل انتقال سبب يُسمّى | Every transition needs a nameable cause | documented |  |
 | `TRANS-X02` | زوم الإبرة على جسم مستمر | Needle zoom on a persistent object | documented |  |
 | `TRANS-X03` | استمرار الطيران عبر الأشياء | Fly-through continuation rule | documented |  |
@@ -965,8 +973,8 @@
 | `TRANS-373` | مسح بأشرطة ألوان أساسية | Primary-colour stripe wipe | seen |  |
 | `TRANS-374` | انتقال سوط ضبابي | Whip motion-blur transition | seen |  |
 | `TRANS-375` | قطع حاد بين الظلام والنور | Hard dark/light section flip | seen |  |
-| `CAM-100` | حركة كين بيرنز | Ken Burns pan on stills/footage | install |  |
-| `CAM-101` | إعادة التأطير بالقص | Crop / reframe with clip-path inset | install |  |
+| `CAM-100` | حركة كين بيرنز | Ken Burns pan on stills/footage | install | npm:gsap |
+| `CAM-101` | إعادة التأطير بالقص | Crop / reframe with clip-path inset | install | npm:gsap |
 | `CAM-102` | حركة ملء الشاشة بخلفيات مشتركة | Full-screen motion with shared backgrounds | install |  |
 | `CAM-103` | تقريب إلى هدف غير مركزي | Coordinate target zoom | install | npm:gsap, npm:hyperframes |
 | `CAM-104` | كاميرا تتبع مؤشر الكتابة | Camera tracks typing cursor | install | npm:gsap, npm:hyperframes |
@@ -998,11 +1006,11 @@
 | `CAM-130` | البارالاكس | parallax | install |  |
 | `CAM-131` | تنفس اللقطة الثابتة | breathe holds | install |  |
 | `CAM-132` | مفردات اللقطات ككاميرات | Veo shot vocabulary as cameras | install | key:video-gen |
-| `CAM-133` | مسار الكاميرا المستمر | cameraPath Catmull-Rom | install |  |
+| `CAM-133` | مسار الكاميرا المستمر | cameraPath Catmull-Rom | install | npm:three |
 | `CAM-134` | كاميرا الدوران مع التوقفات | orbitWalk camera | install |  |
 | `CAM-135` | تظليل علوي لوضوح العنوان | Top shade for title legibility | install |  |
 | `CAM-136` | كاميرا ثنائية الأبعاد متزامنة مع الكلام | Word-synced 2D camera on a footage plate | install |  |
-| `CAM-137` | اهتزاز دقيق لأربعة إطارات | Seeded 4-frame micro shake | install |  |
+| `CAM-137` | اهتزاز دقيق لأربعة إطارات | Seeded 4-frame micro shake | install | npm:gsap |
 | `CAM-138` | دفع لوغاريتمي وثبات حي | Log-space push and living hold | install |  |
 | `CAM-139` | مدار ثلاثي الأبعاد مع اقتراب واهتزاز | 3D orbit with push-in, break shake and pull-back | install |  |
 | `CAM-140` | جولة كاميرا حول المشهد بتوقفات | Orbit walk with stops and holds | install |  |
@@ -1051,7 +1059,7 @@
 | `CAM-61` | رصّ البطاقات المثبتة أثناء التمرير | Sticky scroll-stack of cards | install | npm:gsap |
 | `CAM-62` | قصة تمرير بصورة مثبتة | Sticky-graphic scroll story | install | npm:gsap |
 | `CAM-63` | كشف بطاقات بميلان ثلاثي | Card batch reveal with 3D tilt-up | install | npm:gsap |
-| `CAM-64` | عمق الميدان / بوكيه | Depth of field (TSL dof) | install |  |
+| `CAM-64` | عمق الميدان / بوكيه | Depth of field (TSL dof) | install | npm:three |
 | `CAM-65` | معرض WebGL مدفوع بالزمن | Scroll/time-driven WebGL gallery | install | npm:three, npm:gsap |
 | `CAM-66` | حالات كاميرا مسماة | Named camera states | install | npm:gsap |
 | `CAM-67` | نص يتفادى العناصر | Obstacle-aware type layout | install | npm:matter |
@@ -1086,7 +1094,7 @@
 | `CAM-96` | دوار الرؤية | Carousel vision (styles 1-5) | install | npm:gsap, npm:hyperframes |
 | `CAM-97` | الشبكة السويسرية | Example project: swiss-grid | install | npm:hyperframes |
 | `CAM-98` | منطقة حجز الترجمة أسفل الإطار | Caption keep-out zone (bottom ~17%) | install |  |
-| `CAM-99` | تقريب مفاجئ على اللقطة | Punch-in zoom on footage | install |  |
+| `CAM-99` | تقريب مفاجئ على اللقطة | Punch-in zoom on footage | install | npm:gsap |
 | `CHAR-09` | شخصية ذكاء اصطناعي بالحالات | Stateful AI persona orb | install | node, chromium |
 | `CHAR-47` | تمثيل الشخصيات بلوتي | Lottie character acting | install | npm:gsap, npm:hyperframes, npm:lottie |
 | `EASE-17` | وصول مقدَّم الوزن | Front-loaded arrival (extended keyframe) | install | npm:hyperframes |
@@ -1172,7 +1180,7 @@
 | `TRANS-165` | تحطم الزجاج | Shatter | install | chromium, npm:three, npm:gsap, npm:hyperframes |
 | `TRANS-166` | انتقال شيدر السوط | Whip Pan | install | npm:three, npm:gsap, npm:hyperframes |
 | `TRANS-167` | نمط انتقال الشيدر من الصفحة | DOM-to-texture shader transition pattern | install | npm:three, npm:gsap |
-| `TRANS-168` | المسح بالقناع وتقسيم الشاشة | Clip-path wipe and split-screen | install |  |
+| `TRANS-168` | المسح بالقناع وتقسيم الشاشة | Clip-path wipe and split-screen | install | npm:gsap |
 | `TRANS-169` | مزج متقاطع للصورة والصوت | Crossfade with opposing volume envelopes | install |  |
 | `TRANS-170` | تشويش انقسام الألوان والشرائح | Chromatic RGB-split / slice glitch | install | npm:gsap, npm:hyperframes |
 | `TRANS-171` | تبديل بالتحجيم في نفس المركز | Scale swap morph | install | npm:gsap, npm:hyperframes |
@@ -1242,10 +1250,10 @@
 | `TRANS-235` | ومضة بيضاء | White flash accent | install |  |
 | `TRANS-236` | فتح قزحي من نقطة إلى اللقطة | Iris open from a point onto footage | install |  |
 | `TRANS-237` | الكلمة كسطح انتقال | Word as the transition plane | install |  |
-| `TRANS-238` | لقطة إلى بطاقة إلى انهيار إلى شعار | Footage → card → implode → lockup | install |  |
+| `TRANS-238` | لقطة إلى بطاقة إلى انهيار إلى شعار | Footage → card → implode → lockup | install | npm:gsap |
 | `TRANS-239` | خاتمة بالغطس إلى الأسود | Dip to black / dip to ink ending | install |  |
 | `TRANS-240` | شريطا السينما يفتحان ويغلقان | Cinematic letterbox open/close | install |  |
-| `TRANS-241` | قطع حاد مع إعادة تأطير الكاميرا | Hard cut with camera reframe | install |  |
+| `TRANS-241` | قطع حاد مع إعادة تأطير الكاميرا | Hard cut with camera reframe | install | npm:gsap |
 | `TRANS-242` | ضربة القطع: تمويه شعاعي ووميض | Cut kick (radial blur on cuts) + white flash | install |  |
 | `TRANS-243` | إيقاع الإظلام مع تداخل النص | Fade-through-black rhythm with overlapping text | install |  |
 | `TRANS-244` | شاشة مقسومة للمقارنة | Split-screen comparison with whip-in halves | install |  |

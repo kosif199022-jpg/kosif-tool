@@ -3,24 +3,25 @@
 
 > **قوتك هنا / what this gives you:** من الهدف إلى خطة قابلة للتنفيذ: تخطيط عكسي، تفكيك، مسار حرج، بوابة المستلزمات، تشريح مسبق، معايير إيقاف. — From goal to executable plan: backcasting, breakdown, critical path, requirements gate, pre-mortem, kill criteria.
 > **أقوى دليل / strongest evidence:** **PLAN-01** Full plan scaffold from a goal (`kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`) · **PLAN-05** Requirements gate before scheduling (`kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`)
-> **12 powers follow** — ✅ 2 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 10 · 💡 0.
+> **14 powers follow** — ✅ 2 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 12 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `PLAN` · **البيانات / data:** `data/powers/planning-execution.json` · **بحث / search:** `python3 scripts/powers.py family planning-execution`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [cognition.md](../cognition.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [agents-memory-reasoning-repos.md](../agents-memory-reasoning-repos.md) · [cognition.md](../cognition.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
 - **Planning** — PLAN-01 … PLAN-12 (12)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — PLAN-13 … PLAN-14 (2)
 - المصادر والرخص / sources & licences
 
 ## Planning
 
 #### PLAN-01 · مخطط الخطة الكاملة من الهدف · Full plan scaffold from a goal · ✅ مُثبت هنا / proven here
-- **ماذا / what:** Backcast milestones, work breakdown with done-tests, critical path note, pre-mortem with signals, kill criteria and a 10-minute first action, printed as a fill-in scaffold.
-- **متى أستخدمها / when:** any project longer than an afternoon
+- **ماذا / what:** استنتاج المعالم عكسيًا، وتقسيم العمل مع اختبارات الإنجاز، وملاحظة المسار الحرج، وتشريح مسبق بإشارات، ومعايير إيقاف، وإجراء أول مدته 10 دقائق، مطبوعة كهيكل للتعبئة. — Backcast milestones, work breakdown with done-tests, critical path note, pre-mortem with signals, kill criteria and a 10-minute first action, printed as a fill-in scaffold.
+- **متى أستخدمها / when:** عند أي مشروع أطول من بعد ظهر يوم واحد / any project longer than an afternoon
 - **كيف / how:** `python3 scripts/think.py plan "<goal>" --weeks N` then fill every … ; re-run requirements.py plan for the same goal. **أرقام / params:** weeks → 4 milestones at 15/40/70/100 %
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
@@ -28,32 +29,32 @@
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-02 · التخطيط العكسي من الحالة النهائية · Backcasting from the end state · 📄 موصوف / documented only
-- **ماذا / what:** Describe the finished state concretely, step back to its preconditions until today, then reverse into milestones.
-- **متى أستخدمها / when:** vague goals, roadmaps
+- **ماذا / what:** صف الحالة النهائية بدقة، وارجع خطوة خطوة إلى شروطها المسبقة حتى اليوم، ثم اعكس إلى معالم. — Describe the finished state concretely, step back to its preconditions until today, then reverse into milestones.
+- **متى أستخدمها / when:** عند الأهداف الغامضة وخرائط الطريق / vague goals, roadmaps
 - **كيف / how:** MODEL-25 steps; each milestone gets a done-test.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-03 · تفكيك العمل إلى مخرجات قابلة للفحص · Work breakdown into checkable deliverables · 📄 موصوف / documented only
-- **ماذا / what:** Split the outcome into deliverables, then into tasks of a few hours, each with an observable done-test.
-- **متى أستخدمها / when:** big or fuzzy tasks
+- **ماذا / what:** قسّم النتيجة إلى مخرجات، ثم إلى مهام من بضع ساعات، لكل منها اختبار إنجاز قابل للملاحظة. — Split the outcome into deliverables, then into tasks of a few hours, each with an observable done-test.
+- **متى أستخدمها / when:** عند المهام الكبيرة أو الضبابية / big or fuzzy tasks
 - **كيف / how:** MODEL-27; deliverables not activities; done-test per task. **أرقام / params:** task ≤ 4 h
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-04 · المسار الحرج وحماية الموعد · Critical path and date protection · 📄 موصوف / documented only
-- **ماذا / what:** Find the longest chain of dependent tasks, protect it, parallelise the rest with agents or workflows.
-- **متى أستخدمها / when:** deadlines, multi-part builds
+- **ماذا / what:** جد أطول سلسلة من المهام المعتمدة على بعضها، واحمها، وواز الباقي بوكلاء أو سير عمل. — Find the longest chain of dependent tasks, protect it, parallelise the rest with agents or workflows.
+- **متى أستخدمها / when:** عند المواعيد النهائية والبناءات متعددة الأجزاء / deadlines, multi-part builds
 - **كيف / how:** MODEL-26; list durations and dependencies, compute the longest path in code.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-05 · بوابة المستلزمات قبل الجدولة · Requirements gate before scheduling · ✅ مُثبت هنا / proven here
-- **ماذا / what:** Before any date depends on a tool, list every requirement of the chosen powers and install what is missing (with consent for paid or system-wide installs).
-- **متى أستخدمها / when:** every plan that touches tools
+- **ماذا / what:** قبل أن يعتمد أي تاريخ على أداة، اذكر كل متطلبات القدرات المختارة وثبّت الناقص (بموافقة في التثبيتات المدفوعة أو على مستوى النظام). — Before any date depends on a tool, list every requirement of the chosen powers and install what is missing (with consent for paid or system-wide installs).
+- **متى أستخدمها / when:** عند كل خطة تمس الأدوات / every plan that touches tools
 - **كيف / how:** `python3 scripts/requirements.py plan "<goal>" --json` → install plan; mark ▶ powers that can start now. **أرقام / params:** present/missing/unknown per requirement
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
@@ -61,65 +62,84 @@
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-06 · الشريحة الأولى المرئية · First visible thin slice · 📄 موصوف / documented only
-- **ماذا / what:** Cut scope to one end-to-end path through every layer and show it to the user before widening.
-- **متى أستخدمها / when:** start of any build
+- **ماذا / what:** اقتصر النطاق على مسار واحد من الطرف إلى الطرف عبر كل الطبقات وأره للمستخدم قبل التوسع. — Cut scope to one end-to-end path through every layer and show it to the user before widening.
+- **متى أستخدمها / when:** عند بداية أي بناء / start of any build
 - **كيف / how:** MODEL-51; render 2 s, one screen, one record — then expand from feedback.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-07 · التشريح المسبق بإشارات إنذار · Pre-mortem with early-warning signals · 📄 موصوف / documented only
-- **ماذا / what:** Imagine the failure, list causes, convert each to a mitigation plus a signal you can watch.
-- **متى أستخدمها / when:** before launches and long runs
+- **ماذا / what:** تخيّل الفشل، واذكر الأسباب، وحوّل كلًّا منها إلى خطة تخفيف وإشارة يمكنك مراقبتها. — Imagine the failure, list causes, convert each to a mitigation plus a signal you can watch.
+- **متى أستخدمها / when:** قبل الإطلاقات والتشغيلات الطويلة / before launches and long runs
 - **كيف / how:** MODEL-24; the plan scaffold lists five default causes to start from.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-08 · معايير الإيقاف والتحول · Kill and pivot criteria · 📄 موصوف / documented only
-- **ماذا / what:** A measurable stop signal and a date, agreed before the work starts.
-- **متى أستخدمها / when:** experiments, pilots, paid generations
+- **ماذا / what:** إشارة إيقاف قابلة للقياس وتاريخ، يُتفق عليهما قبل بدء العمل. — A measurable stop signal and a date, agreed before the work starts.
+- **متى أستخدمها / when:** عند التجارب والتجريبات والتوليدات المدفوعة / experiments, pilots, paid generations
 - **كيف / how:** MODEL-50.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-09 · سيناريوهات المستقبل والحركات المتينة · Scenario grid and robust moves · 📄 موصوف / documented only
-- **ماذا / what:** Cross two key uncertainties into four futures; keep moves that work in all and watch signposts.
-- **متى أستخدمها / when:** strategy under deep uncertainty
+- **ماذا / what:** اضرب عدم يقينين رئيسيين لتحصل على أربعة مستقبلات؛ واحتفظ بالحركات التي تنجح في الجميع وراقب المؤشرات. — Cross two key uncertainties into four futures; keep moves that work in all and watch signposts.
+- **متى أستخدمها / when:** عند الاستراتيجية في ظل عدم يقين عميق / strategy under deep uncertainty
 - **كيف / how:** MODEL-52.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-10 · توزيع العمل على وكلاء متوازيين · Parallel lanes for agents and workflows · 📄 موصوف / documented only
-- **ماذا / what:** Turn independent branches of the WBS into parallel agent briefs with completion contracts; keep one integrator.
-- **متى أستخدمها / when:** plans with independent parts
+- **ماذا / what:** حوّل الفروع المستقلة من WBS إلى موجزات وكلاء متوازين بعقود إنجاز؛ وأبقِ مُدمِجًا واحدًا. — Turn independent branches of the WBS into parallel agent briefs with completion contracts; keep one integrator.
+- **متى أستخدمها / when:** عند الخطط ذات الأجزاء المستقلة / plans with independent parts
 - **كيف / how:** Agent tool briefs or the Workflow tool when the user opted in; THINK-27 brief format.
 - **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-11 · مراجعة الخطة كل مرحلة · Phase-boundary plan review · 📄 موصوف / documented only
-- **ماذا / what:** At each milestone: what changed, which assumption broke, does the critical path still hold, update the plan file.
-- **متى أستخدمها / when:** multi-day work
+- **ماذا / what:** عند كل معلم: ما الذي تغيّر، وأي افتراض انكسر، وهل ما زال المسار الحرج قائمًا، وحدّث ملف الخطة. — At each milestone: what changed, which assumption broke, does the critical path still hold, update the plan file.
+- **متى أستخدمها / when:** عند العمل لعدة أيام / multi-day work
 - **كيف / how:** Metacognition checklist (cognition.md §8) + coverage ledger.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-12 · خطة تسليم بإيصال · Delivery plan with a receipt · 📄 موصوف / documented only
-- **ماذا / what:** The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check.
-- **متى أستخدمها / when:** anything shipped
+- **ماذا / what:** يسمّي المعلم الأخير إيصال التحقق: fps والمدة والصوت والاختبارات والروابط، مما يستطيع المستخدم فحصه. — The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check.
+- **متى أستخدمها / when:** عند أي شيء يُسلَّم / anything shipped
 - **كيف / how:** TEMPLATES/TEST_REPORT.md for video; test output for code.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
+
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### PLAN-13 · تطوير يقوده المواصفات · Spec-driven development · 📄 موصوف / documented only
+- **ماذا / what:** مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, implementation, and a consistency check across them.
+- **متى أستخدمها / when:** ميزة جديدة أو تطبيق من الصفر / a new feature or an app from scratch
+- **كيف / how:** constitution (5-9 non-negotiables: tests first, no secrets, accessibility …) → specify (user stories, acceptance criteria; mark gaps [NEEDS CLARIFICATION]) → clarify (resolve each mark with the user or a stated assumption) → plan (stack, data model, interfaces, how each criterion will be tested) → tasks (numbered, files named, [P] = can run in parallel, test task before its code task) → implement. Before implementing, check every acceptance criterion has a task and a test, and every task traces to a criterion.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/github/spec-kit (MIT) — restated in our own words
+
+#### PLAN-14 · عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا · Brainstorm, plan, then a test-first subagent per task · 📄 موصوف / documented only
+- **ماذا / what:** صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review between tasks, and never say done before verifying.
+- **متى أستخدمها / when:** تنفيذ برمجي من عدة خطوات بوكلاء / multi-step coding done with agents
+- **كيف / how:** Brainstorm: ask one question at a time until the design is agreed; write it down. Plan: tasks of 2-5 minutes each, with exact file paths, the code shape and the command that proves it. Execute: one fresh subagent per task (clean context), red → green → refactor; a reviewer checks the diff against the plan before the next task. Finish: run the full suite and show the output before claiming completion.
+- **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/obra/superpowers (MIT; skills: brainstorming, writing-plans, subagent-driven development, verification) — restated in our own words
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: owner (12)
+- الرخص / licences: owner (12) · MIT (2)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

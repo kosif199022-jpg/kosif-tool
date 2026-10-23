@@ -1,4 +1,4 @@
-# أدوات المجال `think` (12 أداة)
+# أدوات المجال `think` (16 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -340,6 +340,57 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:council --evidence <ملف>`.
 
+### `decision-math` — رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار / Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/decision_math.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `atlas-strategy`, `strategy-finance` |
+
+**ما تفعله:** يشغّل محاكاة مونت كارلو ببذرة ثابتة لنموذج ربح بمدخلات مثلثية/منتظمة/طبيعية (P10/P50/P90 واحتمال الخسارة)، ويحسب نقطة التعادل، ويرتب قائمة العمل بطريقة ICE، ويحسب القيمة الحالية الصافية ومعدل العائد الداخلي، ويجد بالتنصيف قيمة الافتراض التي ينقلب عندها القرار.
+
+**What it does:** Runs a seeded Monte Carlo over a profit model with triangular/uniform/normal inputs (P5/P10/P50/P90/P95 and probability of loss), computes break-even units and revenue, ranks a backlog by ICE, computes NPV and IRR by bisection, and finds by bisection the value of one assumption at which the go/no-go decision flips.
+
+#### متى تُستدعى
+
+- «احسب احتمال الخسارة ونطاق الربح للمشروع ده»
+- «عند كام وحدة هنغطي التكاليف؟»
+- «رتّب الأفكار دي بطريقة ICE»
+- «What is the probability this launch loses money?»
+- «At what price does this decision flip?»
+- «Compute NPV and IRR for these cash flows»
+
+#### الأوامر
+
+- **montecarlo**: P5-P95 profit range, mean, sd and probability of profit below target.
+  - `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py montecarlo - --runs 20000 --seed 7`
+- **breakeven**: Break-even units (exact and rounded up), revenue and contribution margin.
+  - `python3 scripts/decision_math.py breakeven --price 25 --fixed 10000 --variable 15`
+- **ice**: ICE ranking (impact x confidence x ease, 1-10 each) of a CSV backlog.
+  - `printf 'name,impact,confidence,ease\nA,8,7,5\nB,9,9,9\nC,3,4,10\n' \| python3 scripts/decision_math.py ice - --text`
+- **npv**: NPV at the rate and IRR by bisection (flags non-unique IRR).
+  - `python3 scripts/decision_math.py npv --rate 0.1 --flows -1000,300,400,500`
+- **flip**: Value of one input where profit crosses the target, with headroom from the base case.
+  - `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py flip - --var price`
+- **self-test**: Offline self-check.
+  - `python3 scripts/decision_math.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Inputs are sampled independently (no correlations); the profit expression allows arithmetic and min/max/abs/round only; flip varies one input with the others at their base values; IRR may be non-unique when flows change sign more than once.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_decision_math.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:decision-math --evidence <ملف>`.
+
 ### `invention-lab` — مختبر الابتكار الهندسي / Invention Lab Candidates
 
 | الحقل | القيمة |
@@ -384,6 +435,105 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:invention-lab --evidence <ملف>`.
+
+### `lesson-integrity` — فاحص أرقام الدروس والشروح / Lesson number integrity checker
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/lesson_integrity.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `verification-evals`, `apps-artifacts` |
+
+**ما تفعله:** يفحص الأرقام التي يعرضها شرح أو فيديو تعليمي أو إنفوجراف أو درس تفاعلي. values يتحقق من سجل قيم يذكر لكل رقم مصدره والجملة المقتبسة التي تثبته أو ملاحظة فجوة صريحة، ويعيد حساب المجاميع والحواصل المشتقة؛ render يملأ العناصر النائبة {v:id} و{v:id\|dp} و{n:id} في السكربت أو الصفحة ويفشل مغلقًا على قيمة غير موجودة أو فجوة أو وحدة بلا شكل طباعة (و--strict يكشف الأرقام المكتوبة مباشرة في النص)؛ ledger يتحقق من توازن دفتر حفظ (طاقة، ميزانية، وقت) ويعرض الحصص والكفاءة؛ scale يختار سعة عدّاد 1-2-5؛ sprite يفحص قائمة مناطق ملف المؤثرات الصوتية (تداخل، طول الملف، رخصة معتمدة لكل مؤثر). مكتبة Python القياسية فقط، ولا يشغّل شيئًا.
+
+**What it does:** Checks the numbers an explainer, lesson film, infographic or interactive lesson shows. values validates a registry where every value names its source and quotes the supporting sentence, or carries an explicit gap note, and recomputes derived sums and products; render fills {v:id}, {v:id\|dp} and {n:id} placeholders in a script or page and fails closed on an unknown value, a gap or a unit with no print form (--strict also flags numbers typed straight into the text); ledger checks that a conservation ledger (energy, budget, time) balances and reports shares and efficiency; scale picks a 1-2-5 gauge capacity; sprite checks a sound-sprite manifest for overlapping regions, file length and a credited allowed licence per cue. Stdlib only; it runs nothing.
+
+#### متى تُستدعى
+
+- «اتأكد إن كل رقم في سكربت الفيديو التعليمي ليه مصدر»
+- «تأكد أن مخطط سانكي للطاقة متوازن وما دخل يساوي ما خرج»
+- «check every number in my explainer script has a cited source»
+- «check my sound sprite regions and credits before shipping»
+
+#### الأوامر
+
+- **values**: Errors on a number with no source and no gap note, an unknown source ref, a missing quote, a value outside its range or a derived value that no longer matches its parts; warns when the number is not in its quote and for every gap.
+  - `python3 scripts/lesson_integrity.py values --registry values.json`
+- **render**: Fills the placeholders and writes --out only when there is no error; without --out prints the text.
+  - `python3 scripts/lesson_integrity.py render --registry values.json --content script.md --strict --out script.out.md`
+- **ledger**: Reports in, out, gap, each output's share and the efficiency of the 'useful' outputs; exits 1 when the ledger does not balance or holds a negative amount.
+  - `python3 scripts/lesson_integrity.py ledger --file ledger.json --json`
+- **scale**: Prints the smallest 1, 2 or 5 x 10^n capacity the value fills to at most --headroom (default 0.9).
+  - `python3 scripts/lesson_integrity.py scale 14.7`
+- **sprite**: Checks regions and layers do not overlap, fit the file and that every cue has a credits row under an allowed licence (CC0, CC-BY 4.0, owner, original).
+  - `python3 scripts/lesson_integrity.py sprite --manifest sounds.json --credits CREDITS.md --duration 20`
+- **self-test**: Runs the 11 built-in checks on synthetic data.
+  - `python3 scripts/lesson_integrity.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: render --out writes only that file, and only when every placeholder resolved.
+- الحدود: It checks the registry against itself: it cannot tell whether a source is right or whether the quoted sentence really appears in it, it does not solve a physics model or generate challenges, and sprite reads the manifest and credits only, without decoding or measuring the audio. --strict recognises common SI units only.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_lesson_integrity.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/lesson-integrity-methods.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:lesson-integrity --evidence <ملف>`.
+
+### `memory-ops` — عمليات الذاكرة / Memory Ops
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/memory_ops.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `agent-orchestration`, `self-discovery` |
+
+**ما تفعله:** يحفظ ملف ذاكرة محليًا طويل المدى بلا تناقضات: لكل معلومة مرشحة يقترح عملية واحدة بسببها (إضافة إن لم يوجد مثلها، تحديث إن تغيرت قيمة لنفس الموضوع والخاصية أو أضافت صياغة أدق تفصيلًا، حذف إن تراجعت عن محفوظ، ولا شيء للمكرر)، ويرفض المعلومات التي فيها أسرار، وينفذ الخطة المعتمدة مع حفظ كل قيمة قديمة في السجل، ويبحث في المخزن. يوحّد النص العربي والإنجليزي قبل المقارنة.
+
+**What it does:** Keeps a local long-term memory file free of contradictions: for every candidate fact it proposes one operation with its reason (ADD when nothing similar is stored, UPDATE when the same subject and attribute get a new value or a closer restatement adds detail, DELETE when the fact retracts a stored one, NOOP for duplicates), refuses facts that contain a secret, applies an approved plan while keeping every old value in history, and searches the store. English and Arabic text is normalised before comparison.
+
+#### متى تُستدعى
+
+- «احفظ تفضيلاتي دي من غير ما تتكرر أو تتناقض مع القديم»
+- «المستخدم غير رأيه في اللهجة، حدّث الذاكرة»
+- «decide whether these new facts should update or replace what we stored»
+- «search the project memory for the export settings»
+
+#### الأوامر
+
+- **propose**: One ADD/UPDATE/DELETE/NOOP/REFUSE per fact with its reason; nothing is written to the store
+  - `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json`
+- **apply**: Writes the store from an approved plan; replaced and deleted memories go to history
+  - `python3 scripts/memory_ops.py apply --store memory.json --plan plan.json --when 2026-10-23`
+- **search**: BM25-style ranked memories
+  - `python3 scripts/memory_ops.py search --store memory.json "export settings"`
+- **--self-test**: Runs the built-in decision cases
+  - `python3 scripts/memory_ops.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: writes-files
+- الموافقة: apply writes the memory file the user names; what may be remembered is still the user's and the project's call.
+- الحدود: Decisions use word overlap and subject/attribute keys, not meaning, so a paraphrase with different words can be added twice and a short unrelated sentence with shared words can be merged; review the plan before apply.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_memory_ops.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/agents-memory-reasoning-repos.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:memory-ops --evidence <ملف>`.
 
 ### `prompt-lab` — مختبر البرومبت / Prompt Lab
 
@@ -463,7 +613,7 @@
 - **--self-test**: Runs deterministic in-process shadow checks for Full Pro claim truth, incompatible typed edges, privacy and planning limits.
   - `python3 scripts/see_pro_cognitive_gate.py --self-test`
 - **check**: Checks a JSON reasoning packet and emits PASS/HARD_FAIL with concrete contract errors.
-  - `python3 scripts/see_pro_cognitive_gate.py check --file .claude/skills/kosif-superpowers/examples/see_pro_cognitive_packet.example.json`
+  - `python3 scripts/see_pro_cognitive_gate.py check --file examples/see_pro_cognitive_packet.example.json`
 
 #### المتطلبات والأمان
 
@@ -479,6 +629,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:see-pro-cognitive-gate --evidence <ملف>`.
+
+### `stats-lab` — مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات / Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/stats_lab.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `atlas-data`, `data-analysis` |
+
+**ما تفعله:** إحصاء حتمي للقرار: اختبار A/B بقيمة p وفترة ثقة للفرق والتحسن، وحجم العينة لكل مجموعة، ووصف عمود CSV مع القيم الشاذة وأرقام صفوفها، والأرباح المحققة لكل بيع بطريقة FIFO أو LIFO أو HIFO بحساب عشري دقيق.
+
+**What it does:** Deterministic decision statistics with the standard library: a pooled two-proportion z-test with p-value, Wald CI of the difference and log risk-ratio CI of the lift; visitors per arm for a target lift, alpha and power; n, mean, median, sd, quartiles and IQR outliers (with row numbers) for a CSV column; and realized gains per sell from a trades CSV by FIFO, LIFO or HIFO lots with fees and exact decimals.
+
+#### متى تُستدعى
+
+- «هل الفرق بين النسختين في اختبار A/B حقيقي؟»
+- «كم زائر أحتاج عشان أختبر تحسين 20%؟»
+- «احسب أرباحي المحققة من ملف الصفقات بطريقة FIFO»
+- «Is variant B's conversion lift statistically significant?»
+- «How many users per arm do I need for this A/B test?»
+- «Describe this CSV column and flag the outliers»
+
+#### الأوامر
+
+- **abtest**: Two-proportion z-test: z, p-value, CI of difference and lift, verdict.
+  - `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130`
+- **samplesize**: Visitors per arm and total for a relative (or --absolute) minimum detectable effect.
+  - `python3 scripts/stats_lab.py samplesize --base 0.10 --mde 0.20 --power 0.8`
+- **describe**: n, mean, median, sd, quartiles, IQR fences and outlier rows of one column.
+  - `printf 'region,revenue\nA,120\nB,95\nC,130\nD,110\nE,900\n' \| python3 scripts/stats_lab.py describe - --col revenue`
+- **lots**: Realized gain per sell with the lots used, totals per asset and open lots.
+  - `printf 'date,side,qty,price,fee\n2024-01-05,buy,10,100,5\n2024-03-01,buy,10,150,5\n2024-06-01,sell,12,200,4\n' \| python3 scripts/stats_lab.py lots - --method fifo`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Normal-approximation tests (not exact or Bayesian, no sequential-peeking correction); lots is arithmetic, not tax advice (no wash-sale or holding-period rules).
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_stats_lab.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:stats-lab --evidence <ملف>`.
 
 ### `tell-scan` — فاحص العبارات الكتابية النمطية / Writing Tell Scanner
 

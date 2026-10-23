@@ -46,7 +46,7 @@
 - **كيف / how:** List the assumptions behind the usual approach → Strike each one that is convention rather than law → Rebuild the solution from the remaining facts and constraints. Pitfall: stopping at the first convention that feels like physics. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: reasoning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-02 · العكس · Inversion · 📄 موصوف / documented only
@@ -55,7 +55,7 @@
 - **كيف / how:** Write the recipe for the worst outcome → Turn each ingredient into a guard or check → Keep the three guards that prevent most damage. Pitfall: listing failures without converting them into actions. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: reasoning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-06 · شفرة أوكام · Occam's razor · 📄 موصوف / documented only
@@ -64,7 +64,7 @@
 - **كيف / how:** List candidate explanations → Count the extra assumptions each needs → Test the simplest first, keep the others alive. Pitfall: using simplicity as proof instead of as test order. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: reasoning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## systems
@@ -75,7 +75,7 @@
 - **كيف / how:** State the immediate effect → Ask 'and then?' twice for each stakeholder → Flag effects that reverse the first-order gain. Pitfall: treating the first effect as the whole story. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: systems
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-16 · نظرية القيود · Theory of constraints · 📄 موصوف / documented only
@@ -84,7 +84,7 @@
 - **كيف / how:** Find the step with the longest queue or wait → Exploit it fully before adding anything → Subordinate other steps to it, then re-find the bottleneck. Pitfall: optimising non-bottlenecks. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: systems
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-17 · حلقات التغذية الراجعة · Feedback loops · 📄 موصوف / documented only
@@ -93,7 +93,7 @@
 - **كيف / how:** Draw causes as arrows with + or − → Mark reinforcing and balancing loops → Find the delay in each loop and where to intervene. Pitfall: ignoring delays. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: systems
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-18 · المخزون والتدفق · Stocks and flows · 📄 موصوف / documented only
@@ -102,7 +102,7 @@
 - **كيف / how:** Name the stock → Name inflows and outflows with rates → Change the flow, then predict the stock over time in code. Pitfall: confusing level with rate. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: systems
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-19 · نقاط الرافعة · Leverage points · 📄 موصوف / documented only
@@ -111,7 +111,7 @@
 - **كيف / how:** List parameters, loops, rules, goals and mindsets → Prefer higher leverage (rules, goals) when feasible → Pick one intervention and its expected effect. Pitfall: only tweaking parameters. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: systems
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## epistemics
@@ -122,7 +122,7 @@
 - **كيف / how:** Name the model or metric you are using → List what it leaves out → Check one omitted thing against reality before deciding. Pitfall: optimising the metric instead of the goal. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: epistemics
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-05 · دائرة الكفاءة · Circle of competence · 📄 موصوف / documented only
@@ -131,7 +131,7 @@
 - **كيف / how:** Mark which parts you can check with tools or sources → For the rest, find a source, a test or an expert → Say plainly which claims are outside the circle. Pitfall: confident tone on unverifiable parts. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: epistemics
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-42 · المعايرة · Calibration · 📄 موصوف / documented only
@@ -140,7 +140,7 @@
 - **كيف / how:** Attach a probability to key claims → Prefer ranges for numbers → Lower confidence where you have no check. Pitfall: 100% language for guesses. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: epistemics
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-43 · قابلية الدحض · Falsifiability · 📄 موصوف / documented only
@@ -149,7 +149,7 @@
 - **كيف / how:** State the claim precisely → Write the result that would refute it → Run or name that test. Pitfall: unfalsifiable claims. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: epistemics
 - **يحتاج / needs:** [`pip:hypothesis`](../requirements.md#req-pip-hypothesis)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-62 · قانون جودهارت · Goodhart's law · 📄 موصوف / documented only
@@ -158,7 +158,7 @@
 - **كيف / how:** Name the real goal → Pair the metric with a counter-metric → Audit samples by hand. Pitfall: rewarding the number. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: epistemics
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## people
@@ -169,7 +169,7 @@
 - **كيف / how:** Assume the most charitable plausible cause → Check it with one question or fact → Escalate only if the evidence says otherwise. Pitfall: excusing repeated, evidenced harm. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: people
 - **يحتاج / needs:** [`pip:hypothesis`](../requirements.md#req-pip-hypothesis)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-56 · خريطة أصحاب المصلحة · Systems map of stakeholders · 📄 موصوف / documented only
@@ -178,7 +178,7 @@
 - **كيف / how:** List stakeholders with interest and power → Mark supporters, blockers, deciders → Plan one message per group. Pitfall: ignoring silent blockers. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: people
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## probability
@@ -189,7 +189,7 @@
 - **كيف / how:** State a prior as a number → Estimate how much more likely the evidence is if true vs false → Update proportionally and write the new number. Pitfall: ignoring base rates. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: probability
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-09 · المعدلات الأساسية · Base rates · 📄 موصوف / documented only
@@ -198,7 +198,7 @@
 - **كيف / how:** Find the reference class → Get its base rate from data or a source → Adjust from the base rate only for specific evidence. Pitfall: starting from the vivid case. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: probability
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## quantitative
@@ -209,7 +209,7 @@
 - **كيف / how:** Decompose into 3–6 multiplied factors → Estimate each with a range → Multiply in code; report the range, not one number. Pitfall: false precision. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: quantitative
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## decision
@@ -220,7 +220,7 @@
 - **كيف / how:** List outcomes per option with probability and value → Compute EV in code → Check the worst case is survivable. Pitfall: ignoring ruin risk. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: decision
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-12 · قرار قابل للرجوع أم لا · Reversible vs irreversible (one-way doors) · 📄 موصوف / documented only
@@ -229,7 +229,7 @@
 - **كيف / how:** Classify the decision as two-way or one-way door → Two-way: decide fast with 70% info → One-way: slow down, gather evidence, get consent. Pitfall: treating every decision as irreversible. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: decision
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-21 · حلقة أودا · OODA loop · 📄 موصوف / documented only
@@ -238,7 +238,7 @@
 - **كيف / how:** Observe fresh signals → Orient: update the mental model → Decide and act on a small step, then loop. Pitfall: orientation frozen on old assumptions. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: decision
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:react`](../requirements.md#req-npm-react)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-48 · تقليل الندم · Regret minimisation · 📄 موصوف / documented only
@@ -247,7 +247,7 @@
 - **كيف / how:** Project yourself forward → Name the regret for each option → Choose the one with the smaller lasting regret. Pitfall: using it for small decisions. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: decision
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-49 · مصفوفة القرار الموزونة · Weighted decision matrix · 📄 موصوف / documented only
@@ -256,7 +256,7 @@
 - **كيف / how:** List options and 3–6 criteria with weights → Score 1–5 and compute in code → Run a sensitivity check (±1 on each weight). Pitfall: precise weights for fuzzy criteria. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: decision
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-60 · الاستكشاف مقابل الاستغلال · Explore–exploit · 📄 موصوف / documented only
@@ -265,7 +265,7 @@
 - **كيف / how:** Estimate remaining horizon → Explore more early or when stakes are low → Exploit when time is short. Pitfall: never exploring. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: decision
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## economics
@@ -276,7 +276,7 @@
 - **كيف / how:** Name the next-best use of the same time or money → Compare value, not just cost → Drop work whose value is below that line. Pitfall: comparing against doing nothing. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: economics
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-55 · اقتصاديات الوحدة · Unit economics · 📄 موصوف / documented only
@@ -285,7 +285,7 @@
 - **كيف / how:** Define the unit → Compute revenue and variable costs per unit in code → Check payback and contribution margin. Pitfall: ignoring variable costs. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: economics
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## engineering
@@ -296,7 +296,7 @@
 - **كيف / how:** Estimate the expected need → Add a buffer proportional to uncertainty → Design so failure inside the buffer is harmless. Pitfall: buffers on every task (hidden padding). Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: engineering
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-58 · سياج تشسترتون · Chesterton's fence · 📄 موصوف / documented only
@@ -305,7 +305,7 @@
 - **كيف / how:** Find the reason the thing was added (history, owner, tests) → Decide with that reason in view → Remove only with a replacement for its purpose. Pitfall: removing what you do not understand. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: engineering
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## prioritisation
@@ -316,7 +316,7 @@
 - **كيف / how:** List the parts and their value → Rank by value per effort → Do the top slice first and re-measure. Pitfall: assuming the ratio without measuring. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: prioritisation
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## complexity
@@ -327,7 +327,7 @@
 - **كيف / how:** Classify the situation → Clear: apply best practice; complicated: analyse; complex: probe-sense-respond; chaotic: act to stabilise → Pick the matching first move. Pitfall: analysing a complex problem as if it were complicated. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: complexity
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## argument
@@ -338,7 +338,7 @@
 - **كيف / how:** State the opposing view better than its holders → Find what it gets right → Update or answer that strongest form. Pitfall: arguing with a strawman. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: argument
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-23 · الفريق الأحمر · Red team · 📄 موصوف / documented only
@@ -347,7 +347,7 @@
 - **كيف / how:** Switch role to an adversary → List the three most damaging attacks → Fix or disclose each. Pitfall: attacking only the easy parts. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: argument
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## planning
@@ -358,7 +358,7 @@
 - **كيف / how:** Imagine the failure vividly → Write the top causes → Turn each into a mitigation or an early warning signal. Pitfall: generic risks with no signal. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: planning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-25 · التخطيط العكسي · Backcasting · 📄 موصوف / documented only
@@ -367,7 +367,7 @@
 - **كيف / how:** Describe the end state concretely → Step backwards to the conditions that precede it → Stop when you reach today; reverse the list into a plan. Pitfall: planning forward from habits. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: planning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-26 · المسار الحرج · Critical path · 📄 موصوف / documented only
@@ -376,7 +376,7 @@
 - **كيف / how:** List tasks with durations and dependencies → Compute the longest path in code → Protect that path; parallelise the rest. Pitfall: adding resources off the critical path. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: planning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-27 · تفكيك العمل · Work breakdown · 📄 موصوف / documented only
@@ -385,7 +385,7 @@
 - **كيف / how:** Split the outcome into deliverables → Split each into tasks under a few hours → Give every task an observable done criterion. Pitfall: splitting by activity instead of deliverable. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: planning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-50 · معايير الإيقاف · Kill criteria · 📄 موصوف / documented only
@@ -394,7 +394,7 @@
 - **كيف / how:** Write a measurable stop signal and a date → Agree on it before starting → Check it at the date and act. Pitfall: moving the goalposts. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: planning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-51 · الشريحة الأصغر القابلة للعرض · Minimum viable slice · 📄 موصوف / documented only
@@ -403,7 +403,7 @@
 - **كيف / how:** Cut scope to one path through every layer → Build and show it → Expand from feedback. Pitfall: building one layer completely first. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: planning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## structuring
@@ -414,7 +414,7 @@
 - **كيف / how:** Draft the buckets → Check overlaps and gaps → Rename or split until each item fits exactly one. Pitfall: forcing MECE on fuzzy human topics. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: structuring
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-29 · شجرة المشكلة · Issue tree · 📄 موصوف / documented only
@@ -423,7 +423,7 @@
 - **كيف / how:** Write the key question → Branch into 3–5 MECE sub-questions → Attach a test or data source to each leaf. Pitfall: branches without tests. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: structuring
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## diagnosis
@@ -434,7 +434,7 @@
 - **كيف / how:** Ask why until you reach a process or design cause → Check each link with evidence → Fix the deepest controllable cause. Pitfall: one linear chain for a multi-cause failure. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: diagnosis
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-31 · السبب الجذري مقابل العرض · Root cause vs symptom · 📄 موصوف / documented only
@@ -443,7 +443,7 @@
 - **كيف / how:** Trace the bad output to where it is produced → Fix there → Remove downstream patches made unnecessary. Pitfall: stacking patches. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: diagnosis
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## creativity
@@ -454,7 +454,7 @@
 - **كيف / how:** Describe the problem abstractly → Find two fields with the same structure → Port the mechanism, not the surface. Pitfall: copying surface features. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: creativity
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-33 · القيد كمحرك · Constraint as engine · 📄 موصوف / documented only
@@ -463,7 +463,7 @@
 - **كيف / how:** Add one hard constraint (one colour, no words, 3 s) → Generate under it → Keep what survives when the constraint is lifted. Pitfall: constraints that only shrink quality. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: creativity
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-34 · الإبداع التركيبي · Combinatorial creativity · 📄 موصوف / documented only
@@ -472,7 +472,7 @@
 - **كيف / how:** List elements from different domains → Pair them randomly or systematically → Score pairs for novelty × feasibility. Pitfall: only combining neighbours. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: creativity
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-35 · التباعد ثم التقارب · Divergent → convergent · 📄 موصوف / documented only
@@ -481,7 +481,7 @@
 - **كيف / how:** Generate many options without judgement → Cluster them → Converge with explicit criteria. Pitfall: judging during generation. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: creativity
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-36 · التفكير الجانبي · Lateral thinking (provocation) · 📄 موصوف / documented only
@@ -490,7 +490,7 @@
 - **كيف / how:** Make a deliberate provocation ('the video has no picture') → Extract the movement from it → Shape the movement into a usable idea. Pitfall: stopping at the absurd. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: creativity
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## product
@@ -501,7 +501,7 @@
 - **كيف / how:** Write: when <situation>, I want <motivation>, so I can <outcome> → Find what they use today → Design against that job, not the feature list. Pitfall: asking users for features. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: product
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## communication
@@ -512,7 +512,7 @@
 - **كيف / how:** Describe the reader in two lines → Remove what they know, add what they lack → Order by what they need to decide. Pitfall: writing for yourself. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: communication
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-39 · مبدأ الهرم · Pyramid principle · 📄 موصوف / documented only
@@ -521,7 +521,7 @@
 - **كيف / how:** State the conclusion → Group 3 supporting arguments → Support each with evidence. Pitfall: building up to the point. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: communication
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-59 · سلّم التجريد · Abstraction ladder · 📄 موصوف / documented only
@@ -530,7 +530,7 @@
 - **كيف / how:** Ask why to climb to purpose → Ask how to descend to concrete steps → Pair each abstract claim with one concrete example. Pitfall: staying at one level. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: communication
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## learning
@@ -541,7 +541,7 @@
 - **كيف / how:** Explain in plain words → Find where the explanation breaks → Go back to the source for those gaps and re-explain. Pitfall: simplifying away the truth. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: learning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-41 · الممارسة المتعمدة · Deliberate practice loop · 📄 موصوف / documented only
@@ -550,7 +550,7 @@
 - **كيف / how:** Isolate the weakest sub-skill from evidence → Design a short targeted attempt → Measure, adjust, repeat. Pitfall: repeating whole tasks without feedback. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: learning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-57 · التساؤل السقراطي · Socratic questioning · 📄 موصوف / documented only
@@ -559,7 +559,7 @@
 - **كيف / how:** Clarify terms → Probe evidence and assumptions → Explore implications and alternatives. Pitfall: interrogating instead of exploring. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: learning
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## biases
@@ -570,7 +570,7 @@
 - **كيف / how:** Ask where the failures went → Look for the silent denominator → Re-judge the pattern with them. Pitfall: copying winners' habits. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: biases
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-45 · فحص انحياز التأكيد · Confirmation bias check · 📄 موصوف / documented only
@@ -579,7 +579,7 @@
 - **كيف / how:** Write what would disconfirm you → Search for it first → Report what you found either way. Pitfall: searching only for support. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: biases
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-46 · فحص الإرساء · Anchoring check · 📄 موصوف / documented only
@@ -588,7 +588,7 @@
 - **كيف / how:** Note the anchor → Estimate independently from a reference class → Compare and reconcile. Pitfall: adjusting slightly from the anchor. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: biases
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-47 · فحص التكلفة الغارقة · Sunk cost check · 📄 موصوف / documented only
@@ -597,7 +597,7 @@
 - **كيف / how:** Ignore what is already spent → Compare future cost vs future value → Continue only if today you would start. Pitfall: finishing because of past effort. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: biases
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## strategy
@@ -608,7 +608,7 @@
 - **كيف / how:** Pick two key uncertainties → Cross them into four scenarios → Find robust moves and signposts. Pitfall: predicting one future. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: strategy
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-53 · قوى بورتر الخمس · Porter's five forces · 📄 موصوف / documented only
@@ -617,7 +617,7 @@
 - **كيف / how:** Rate each force with evidence → Find the force that caps profit → Plan a move against it. Pitfall: rating without evidence. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: strategy
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### MODEL-54 · تحليل سوات إلى استراتيجيات · SWOT → TOWS · 📄 موصوف / documented only
@@ -626,7 +626,7 @@
 - **كيف / how:** List S, W, O, T with evidence → Pair them into SO/ST/WO/WT moves → Pick the top two moves. Pitfall: a SWOT list with no moves. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: strategy
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## forecasting
@@ -637,7 +637,7 @@
 - **كيف / how:** Check age and maintenance history → Prefer older, maintained options for foundations → Use new ones where swapping is cheap. Pitfall: dismissing anything new. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: forecasting
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## capability
@@ -648,7 +648,7 @@
 - **كيف / how:** Search the capability map → Probe the machine → Install in a sandbox and test → Only then offer an alternative. Pitfall: saying no before probing. Ranked for a problem by `think.py models "<problem>"`. **أرقام / params:** discipline: capability
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## المصادر والرخص / sources & licences

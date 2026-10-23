@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (13 أداة)
+# أدوات المجال `edit` (15 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -195,6 +195,63 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:dua-wednesday --evidence <ملف>`.
 
+### `fast-edit` — التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/fast_edit.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `transitions-cuts`, `audio-sync-captions` |
+
+**ما تفعله:** عمليات سريعة على ملف واحد بإيصال JSON: يعرض الإطارات المفتاحية، ويقص بالنسخ المباشر لو البداية على إطار مفتاحي وإلا يعيد الترميز بدقة ويقول قد إيه كان النسخ هيبدأ بدري، ويغيّر الصوت بنفس معدل العينة ونفس الطول، ويفتّح الفيديو المظلم ويقيس الإضاءة قبل وبعد، ويستخرج الصوت بدون إعادة ترميز لما ينفع.
+
+**What it does:** Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it.
+
+#### متى تُستدعى
+
+- «Cut a clip from 1:05 to 1:40 instantly without re-encoding if possible»
+- «Make this voice sound like a chipmunk / robot / radio without changing its length»
+- «Brighten this dark night video and remove the noise»
+- «Extract the audio from this video without losing quality»
+- «قص الفيديو من الدقيقة دي للدقيقة دي بسرعة من غير ما يبوظ الجودة»
+- «غيّر الصوت لصوت روبوت أو صوت تخين»
+- «فتّح الفيديو المظلم وشيل التشويش»
+- «استخرج الصوت من الفيديو»
+
+#### الأوامر
+
+- **doctor**: Check ffmpeg/ffprobe and list the voice presets.
+  - `python3 scripts/fast_edit.py doctor`
+- **keyframes**: List video keyframe times and the largest gap between them.
+  - `python3 scripts/fast_edit.py keyframes --input ./clip.mp4`
+- **cut**: Cut [start, end): stream copy when the start is within --tolerance of a keyframe, exact re-encode otherwise (--mode copy\|exact forces one); the receipt gives the copy drift and measured stream durations.
+  - `python3 scripts/fast_edit.py cut --input ./clip.mp4 --start 65 --end 100 --output ./cut.mp4`
+- **voice**: Apply a voice preset at the real sample rate, keeping the length; video is stream-copied (audio-only extensions drop it).
+  - `python3 scripts/fast_edit.py voice --input ./talk.mp4 --preset robot --output ./robot.mp4`
+- **brighten**: Lift shadows and midtones (strength 0..1, optional hqdn3d denoise), audio stream-copied; reports mean luma before/after and skips clips that are already bright unless --force-lift.
+  - `python3 scripts/fast_edit.py brighten --input ./night.mp4 --denoise --output ./lifted.mp4`
+- **extract-audio**: Extract the first audio stream: bit-exact copy when the extension can hold the codec, otherwise re-encoded (WAV, FLAC, MP3, M4A, AAC, Opus, Ogg).
+  - `python3 scripts/fast_edit.py extract-audio --input ./clip.mp4 --output ./voice.m4a`
+- **tests**: Run 17 tests: cut planning, filter building and real FFmpeg runs (skipped without ffmpeg).
+  - `python3 -m unittest discover -s evals -p 'test_fast_edit.py' -v`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- الأمان: writes-files
+- الموافقة: Use only media the user owns or is licensed to edit; outputs are new files.
+- الحدود: One file per command, no timeline. A copy cut starts on the keyframe at or before the start and may keep a frame or two past the end (B-frame reordering); use --mode exact for frame accuracy. Voice presets are classic DSP effects, not AI voice conversion. Brighten is a fixed tone curve measured by mean luma, not a learned low-light model.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_fast_edit.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/edit.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fast-edit --evidence <ملف>`.
+
 ### `kosif-timeline` — محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة / KOSIF Timeline: genuine multitrack video, image and audio editor
 
 | الحقل | القيمة |
@@ -291,6 +348,53 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:kosif-timeline-demo --evidence <ملف>`.
 
+### `look-pipeline` — خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL / Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/look_pipeline.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `color-palette-grading`, `app-feature-transfer`, `photo-video-footage` |
+
+**ما تفعله:** كُتبت بعد دراسة «مونتاجي»: 11 لوكًا وثمانية معاملات تصبح خطوة خطية ومصفوفة 3×3، تخرج بالأرقام نفسها لـ ffmpeg وSVG وCSS وGLSL فتتطابق المعاينة والتصدير؛ verify يقيس الفرق بكسلًا بكسلًا، وapply يلوّن فيديو في ملف جديد.
+
+**What it does:** Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file.
+
+#### متى تُستدعى
+
+- «لوّن الفيديو ده لوك سينمائي وخلي المعاينة زي التصدير»
+- «Give me the same warm grade as an ffmpeg filter and a CSS filter»
+- «Check that my web preview colour matches the exported MP4»
+- «عايز فلتر أبيض وأسود للفيديو»
+
+#### الأوامر
+
+- **presets**: The eleven looks and their parameters.
+  - `python3 scripts/look_pipeline.py presets`
+- **build**: Emit one look for ffmpeg, svg, css, glsl or json, with --set overrides.
+  - `python3 scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg`
+- **verify**: ffmpeg output vs the reference maths on a 64x36 test frame; exits 1 above the tolerance.
+  - `python3 scripts/look_pipeline.py verify --all`
+- **apply**: Grade a video into a new H.264 file, audio copied; refuses to overwrite.
+  - `python3 scripts/look_pipeline.py apply in.mp4 graded.mp4 --preset warm --amount 0.6`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg
+- الأمان: writes-files
+- الموافقة: apply writes a new file next to the user's media and never overwrites the source.
+- الحدود: Per-pixel looks only (no curves, LUT files or skin masks); vignette is emitted for every renderer but left out of the parity check; SVG and GLSL parity follow from the same numbers and are not rendered here.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_look_pipeline.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:look-pipeline --evidence <ملف>`.
+
 ### `mimic` — محرك محاكاة الفيديو المرجعي / KOSIF Mimic reference rebuilder
 
 | الحقل | القيمة |
@@ -386,17 +490,17 @@
 - **doctor**: Tools present and ready options.
   - `python3 scripts/montage_pro.py doctor`
 - **intake**: Measures the media into job1/intake.json.
-  - `python3 scripts/montage_pro.py intake ./voice.wav --job ./job1`
+  - `python3 scripts/montage_pro.py intake ./voice.wav --job ../../../out/job1`
 - **transcribe**: Decodes the audio with ffmpeg to 16 kHz mono and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them; skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words.
-  - `python3 scripts/montage_pro.py transcribe ./voice.m4a --job ./out/job1 --language ar --local-only`
+  - `python3 scripts/montage_pro.py transcribe ./voice.m4a --job ../../../out/job1 --language ar --local-only`
 - **intake with transcription**: Opt-in: transcribes right after the probe so the cue mapper imports the aligned words; plain intake is unchanged.
-  - `python3 scripts/montage_pro.py intake ./voice.m4a --job ./out/job1 --transcribe --local-only`
+  - `python3 scripts/montage_pro.py intake ./voice.m4a --job ../../../out/job1 --transcribe --local-only`
 - **options**: Option menu with team, pipeline, status and a stage plan.
-  - `python3 scripts/montage_pro.py options ./job1 --brief "ريلز حماسي"`
+  - `python3 scripts/montage_pro.py options ../../../out/job1 --brief "ريلز حماسي"`
 - **build**: Renders and verifies the option; optional separate -14 LUFS delivery copy.
-  - `python3 scripts/montage_pro.py build ./job1 --option kinetic-film --style kinetic --deliver-mix`
+  - `python3 scripts/montage_pro.py build ../../../out/job1 --option kinetic-film --style kinetic --deliver-mix`
 - **acquire**: Licence-gated download or stream grab into job1/footage with rights.json.
-  - `python3 scripts/montage_pro.py acquire https://example.com/clip.mp4 --job ./job1 --license "CC0" --source-page https://example.com/page`
+  - `python3 scripts/montage_pro.py acquire https://example.com/clip.mp4 --job ../../../out/job1 --license "CC0" --source-page https://example.com/page`
 
 #### المتطلبات والأمان
 
@@ -494,7 +598,7 @@
 - **build**: Plan, plate, scene, render, -c copy mux and verify_video --source-audio; writes OUT/reel.mp4, TEST_REPORT.md and build.json (inputs sha256, commands, results). Exit 4 when the build or the verification fails.
   - `python3 scripts/reel_factory.py build --audio ./voice.m4a --audio-rights direct-permission --audio-rights-evidence https://example.com/permission --transcribe --local-only --shots ./shots.json --credit "الصوت: @x" --style rose-dusk`
 - **draft**: Renders a 540x960 check copy with the same 9:16 checks.
-  - `python3 scripts/reel_factory.py build ... --draft`
+  - `python3 scripts/reel_factory.py build --audio ./voice.m4a --audio-rights owned --words ./words.json --shots ./shots.json --draft`
 
 #### المتطلبات والأمان
 

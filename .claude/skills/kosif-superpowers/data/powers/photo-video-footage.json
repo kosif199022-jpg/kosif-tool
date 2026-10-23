@@ -2,6 +2,7 @@
  {
   "id": "FOOT-01",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "انضباط ترخيص الصور واللقطات",
   "name_en": "Media licensing discipline",
   "status": "documented",
@@ -35,6 +36,7 @@
  {
   "id": "FOOT-02",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تنزيل لقطة مفتوحة مع إيصال مصدر",
   "name_en": "Open-footage downloader with provenance",
   "status": "ready",
@@ -70,6 +72,7 @@
  {
   "id": "FOOT-03",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "جلب من المنصات مع الاعتمادات",
   "name_en": "Social/Pinterest fetch with credits (yt-dlp)",
   "status": "install",
@@ -107,6 +110,7 @@
  {
   "id": "FOOT-04",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مجمع لقطات بأسئلة بحث ثنائية اللغة",
   "name_en": "Per-shot bilingual footage pool",
   "status": "documented",
@@ -140,6 +144,7 @@
  {
   "id": "FOOT-05",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مكتبة وسائط محلية مع فحص",
   "name_en": "Local media library with probe",
   "status": "ready",
@@ -171,6 +176,7 @@
  {
   "id": "FOOT-06",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تايملاين زمني متعدد الكاميرات",
   "name_en": "Chronological multi-camera timeline",
   "status": "documented",
@@ -203,6 +209,7 @@
  {
   "id": "FOOT-07",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "إعدادات تسجيل الشاشة",
   "name_en": "Screen-capture defaults",
   "status": "documented",
@@ -232,6 +239,7 @@
  {
   "id": "FOOT-08",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "كشف اللقطات إلى تايملاين",
   "name_en": "Scene/shot detection → timeline",
   "status": "proven",
@@ -268,6 +276,7 @@
  {
   "id": "FOOT-09",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "لوحة لقطات واختيار الغلاف",
   "name_en": "Contact sheet & cover-frame mining",
   "status": "proven",
@@ -302,6 +311,7 @@
  {
   "id": "FOOT-10",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "اختيار أنشط نافذة في اللقطة",
   "name_en": "Motion-energy window picking",
   "status": "ready",
@@ -336,6 +346,7 @@
  {
   "id": "FOOT-11",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "قص البدايات المعيبة وتجميع المكرر",
   "name_en": "Bad-head trimming & duplicate-take grouping",
   "status": "documented",
@@ -373,6 +384,7 @@
  {
   "id": "FOOT-12",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تحليل تعريض الصورة ونصائح بالعربية",
   "name_en": "Image exposure analysis + Arabic fix advice",
   "status": "ready",
@@ -407,6 +419,7 @@
  {
   "id": "FOOT-13",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "دراسة ريل مرجعي بدقة الإطار",
   "name_en": "Reference-reel study (mimic)",
   "status": "proven",
@@ -442,6 +455,7 @@
  {
   "id": "FOOT-14",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تحليل فيديو مرجعي إلى نبضات",
   "name_en": "Video breakdown to beats",
   "status": "ready",
@@ -474,6 +488,7 @@
  {
   "id": "FOOT-15",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تشخيص قبل رفع الدقة",
   "name_en": "Upscale triage",
   "status": "documented",
@@ -508,6 +523,7 @@
  {
   "id": "FOOT-16",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مترجم تايملاين JSON",
   "name_en": "JSON timeline compiler (cuts, ramps, overlays)",
   "status": "proven",
@@ -544,6 +560,7 @@
  {
   "id": "FOOT-17",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "قص دقيق بالإطار",
   "name_en": "Frame-accurate trim (re-encode)",
   "status": "ready",
@@ -580,6 +597,7 @@
  {
   "id": "FOOT-18",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "دمج مقاطع مختلفة دون كسر الصوت",
   "name_en": "Fit-and-join concat",
   "status": "ready",
@@ -613,6 +631,7 @@
  {
   "id": "FOOT-19",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "منحدرات السرعة والتصوير البطيء",
   "name_en": "Speed ramps & slow motion",
   "status": "proven",
@@ -649,6 +668,7 @@
  {
   "id": "FOOT-20",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "قص الصمت",
   "name_en": "Silence jump-cut",
   "status": "ready",
@@ -684,6 +704,7 @@
  {
   "id": "FOOT-21",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تجميد إطار وتكرار حلقة",
   "name_en": "Freeze frame & loop",
   "status": "ready",
@@ -718,6 +739,7 @@
  {
   "id": "FOOT-22",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "محرر KOSIF Studio في المتصفح",
   "name_en": "KOSIF Studio browser montage editor",
   "status": "ready",
@@ -754,6 +776,7 @@
  {
   "id": "FOOT-23",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مونتاج مستقل أو متتابع في Remotion",
   "name_en": "Remotion clip editing: independent vs ripple",
   "status": "install",
@@ -787,6 +810,7 @@
  {
   "id": "FOOT-24",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تثبيت الاهتزاز",
   "name_en": "Stabilisation (vidstab 2-pass)",
   "status": "proven",
@@ -821,6 +845,7 @@
  {
   "id": "FOOT-25",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "إزالة التشويش والتوضيح وسلسلة الترميم",
   "name_en": "Denoise, sharpen & restoration chain",
   "status": "proven",
@@ -856,6 +881,7 @@
  {
   "id": "FOOT-26",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مسح الترجمة المحروقة",
   "name_en": "Burned-caption eraser (decaption)",
   "status": "proven",
@@ -890,6 +916,7 @@
  {
   "id": "FOOT-27",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تمويه الوجوه والمناطق",
   "name_en": "Face & region privacy masks",
   "status": "install",
@@ -931,6 +958,7 @@
  {
   "id": "FOOT-28",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مفتاح اللون الأخضر",
   "name_en": "Chroma key",
   "status": "proven",
@@ -965,6 +993,7 @@
  {
   "id": "FOOT-29",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تعديل الصورة: إعادة تلوين تحفظ الظلال",
   "name_en": "Picture edits: shading-preserving recolour",
   "status": "proven",
@@ -1000,6 +1029,7 @@
  {
   "id": "FOOT-30",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "معالجة الصور بـ ImageMagick",
   "name_en": "ImageMagick still post-processing",
   "status": "ready",
@@ -1035,6 +1065,7 @@
  {
   "id": "FOOT-31",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "عزل الشخص بقناع شفاف",
   "name_en": "Person matte / background removal",
   "status": "install",
@@ -1075,6 +1106,7 @@
  {
   "id": "FOOT-32",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "عنوان خلف المتحدث",
   "name_en": "Title behind the speaker",
   "status": "documented",
@@ -1109,6 +1141,7 @@
  {
   "id": "FOOT-33",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "متحدث مقصوص فوق عوالم متبدلة",
   "name_en": "Rotoscoped speaker over swapped worlds",
   "status": "seen",
@@ -1141,6 +1174,7 @@
  {
   "id": "FOOT-34",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تسمية متتبعة ودائرة اهتمام",
   "name_en": "Tracked callout & attention ring",
   "status": "ready",
@@ -1175,6 +1209,7 @@
  {
   "id": "FOOT-35",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "إدراج بمنظور مثبت بأربع نقاط",
   "name_en": "Planar corner-pin inserts",
   "status": "documented",
@@ -1210,6 +1245,7 @@
  {
   "id": "FOOT-36",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "تجميد الشخص والعالم يمشي",
   "name_en": "Freeze the subject, keep the world moving",
   "status": "documented",
@@ -1241,6 +1277,7 @@
  {
   "id": "FOOT-37",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "سينماغراف",
   "name_en": "Cinemagraph",
   "status": "install",
@@ -1273,6 +1310,7 @@
  {
   "id": "FOOT-38",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مقارنة قبل وبعد صادقة",
   "name_en": "Honest before/after wipe",
   "status": "documented",
@@ -1308,6 +1346,7 @@
  {
   "id": "FOOT-39",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "كين بيرنز الصحيح",
   "name_en": "Ken Burns done well",
   "status": "proven",
@@ -1343,6 +1382,7 @@
  {
   "id": "FOOT-40",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "بارالاكس مستوي بمعاملات عمق",
   "name_en": "Planar parallax with depth factors",
   "status": "ready",
@@ -1380,6 +1420,7 @@
  {
   "id": "FOOT-41",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "كشف بارالاكس ثلاثي ومن الكولاج إلى البطل",
   "name_en": "Three-layer reveal & collage → hero",
   "status": "documented",
@@ -1412,6 +1453,7 @@
  {
   "id": "FOOT-42",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "حماية النص فوق الصور واللقطات",
   "name_en": "Text protection over photos & footage",
   "status": "documented",
@@ -1451,6 +1493,7 @@
  {
   "id": "FOOT-43",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "صورة أرشيف تنفتح على الحاضر",
   "name_en": "Archive photo opens onto the present",
   "status": "documented",
@@ -1485,6 +1528,7 @@
  {
   "id": "FOOT-44",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "قواعد الصور للعربية",
   "name_en": "RTL photo layout rules",
   "status": "documented",
@@ -1515,6 +1559,7 @@
  {
   "id": "FOOT-45",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "أساليب الصور الجاهزة",
   "name_en": "Photo styles to scaffold",
   "status": "ready",
@@ -1552,6 +1597,7 @@
  {
   "id": "FOOT-46",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "شرائح الفلاتر وجدار الصور",
   "name_en": "Filter strips & tile walls",
   "status": "seen",
@@ -1588,6 +1634,7 @@
  {
   "id": "FOOT-47",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "لوح لقطات كل إطاراته مفتاحية",
   "name_en": "All-intra seekable footage plate",
   "status": "proven",
@@ -1623,6 +1670,7 @@
  {
   "id": "FOOT-48",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "عرض الأفقي في 9:16 فوق نسخة مموهة",
   "name_en": "Landscape in 9:16 over a blurred fill",
   "status": "proven",
@@ -1658,6 +1706,7 @@
  {
   "id": "FOOT-49",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "لقطة متحدث تحت الرسوم",
   "name_en": "Real footage plate under graphics",
   "status": "ready",
@@ -1691,6 +1740,7 @@
  {
   "id": "FOOT-50",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "محرك المونتاج الموجّه",
   "name_en": "Directed-edit engine",
   "status": "ready",
@@ -1724,6 +1774,7 @@
  {
   "id": "FOOT-51",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "إعادة تغليف المتحدث ببطاقات",
   "name_en": "Talking-head recut with designed cards",
   "status": "install",
@@ -1759,6 +1810,7 @@
  {
   "id": "FOOT-52",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "فيديو ولوتي داخل HTML",
   "name_en": "Video & Lottie inside HTML compositions",
   "status": "install",
@@ -1792,6 +1844,7 @@
  {
   "id": "FOOT-53",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مشغل مقدمة سينمائية متكيف",
   "name_en": "Adaptive cinematic intro player",
   "status": "proven",
@@ -1826,6 +1879,7 @@
  {
   "id": "FOOT-54",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مونتاج تلقائي على الموسيقى",
   "name_en": "Auto montage to music",
   "status": "proven",
@@ -1861,6 +1915,7 @@
  {
   "id": "FOOT-55",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "ريل من مقطع كلام بأمر واحد",
   "name_en": "One-command talking-clip reel",
   "status": "ready",
@@ -1896,6 +1951,7 @@
  {
   "id": "FOOT-56",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "ريلز من فيديو طويل",
   "name_en": "Reels from a long video",
   "status": "key",
@@ -1931,6 +1987,7 @@
  {
   "id": "FOOT-57",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "المونتاج الذكي الكامل من الكلام",
   "name_en": "Smart full montage from speech (AutoEdit)",
   "status": "key",
@@ -1967,6 +2024,7 @@
  {
   "id": "FOOT-58",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مونتاج لقطات المستخدم على الإيقاع (بصمة)",
   "name_en": "Basma automatic beat montage",
   "status": "key",
@@ -2002,6 +2060,7 @@
  {
   "id": "FOOT-P01",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "إعادة مونتاج اللقطات من قائمة قطع محدودة",
   "name_en": "Bounded EDL recut: trim/concat with denoise and loudnorm",
   "status": "documented",
@@ -2236,13 +2295,14 @@
    "rights"
   ],
   "domain": "motion",
-  "when": "AGENTS.md rule 3: observe the reference before implementing, lawfully",
+  "when": "عندما تنص قاعدة AGENTS.md رقم 3 على مراقبة المرجع قبل التنفيذ، وبصورة مشروعة / AGENTS.md rule 3: observe the reference before implementing, lawfully",
   "section": "إضافات v3 — v3 additions",
   "source": ""
  },
  {
   "id": "FOOT-D01",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "ريل «الدعاء» من لقطاتك وصوتك",
   "name_en": "«الدعاء» Friday dua reel kit",
   "status": "proven",
@@ -2286,6 +2346,7 @@
  {
   "id": "FOOT-D02",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "انتقالات كاب كات على الصورة فقط",
   "name_en": "CapCut-style transitions under fixed text",
   "status": "proven",
@@ -2328,6 +2389,7 @@
  {
   "id": "FOOT-D03",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "قياس أسلوب ريل من الإطارات",
   "name_en": "Measure a reel's style from its frames",
   "status": "proven",
@@ -2371,6 +2433,7 @@
  {
   "id": "FOOT-U01",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "مطابقة المسودة بلقطات المصدر",
   "name_en": "Match a draft back to its source shots",
   "status": "documented",
@@ -2401,6 +2464,7 @@
  {
   "id": "FOOT-U02",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "كاشف القفزات: اقطع قبل القفزة",
   "name_en": "Jump-cut finder: cut on the frame before",
   "status": "documented",
@@ -2430,6 +2494,7 @@
  {
   "id": "FOOT-U03",
   "family": "photo-video-footage",
+  "domain": "motion",
   "name_ar": "قناع شخص بلا تعلم آلي",
   "name_en": "Person matte without ML",
   "status": "documented",

@@ -2,6 +2,7 @@
  {
   "id": "EASE-01",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "كل شيء دالة للزمن",
   "name_en": "Everything is a function of t",
   "status": "proven",
@@ -38,6 +39,7 @@
  {
   "id": "EASE-02",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حساب الإطارات بنطاق نصف مفتوح",
   "name_en": "Half-open frame arithmetic",
   "status": "proven",
@@ -71,6 +73,7 @@
  {
   "id": "EASE-03",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "المدة الكلية حساب صريح",
   "name_en": "Duration arithmetic truth",
   "status": "ready",
@@ -100,6 +103,7 @@
  {
   "id": "EASE-04",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "مقسّم المشاهد التلقائي",
   "name_en": "Auto beat-count storyboard splitter",
   "status": "proven",
@@ -127,6 +131,7 @@
  {
   "id": "EASE-05",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تقدير المدة من سرعة الكلام وخرائط المقاطع",
   "name_en": "Word-pace estimator & clip beat maps",
   "status": "proven",
@@ -155,6 +160,7 @@
  {
   "id": "EASE-06",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "زمن القراءة من النص الفعلي",
   "name_en": "Reading-hold formulas",
   "status": "documented",
@@ -184,6 +190,7 @@
  {
   "id": "EASE-07",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "توقيت السطور العربية بلا صوت",
   "name_en": "Arabic line timing without audio",
   "status": "ready",
@@ -211,6 +218,7 @@
  {
   "id": "EASE-08",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "معامل بطء واحد للدرس كله",
   "name_en": "Global slowness factor TS",
   "status": "seen",
@@ -241,6 +249,7 @@
  {
   "id": "EASE-09",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "رموز التسارع حسب الدور (17 منحنى)",
   "name_en": "Role-based easing tokens MOTION.E",
   "status": "proven",
@@ -273,6 +282,7 @@
  {
   "id": "EASE-10",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "أربع تسارعات مسماة فقط",
   "name_en": "Four named eases slam/snap/drive/settle",
   "status": "ready",
@@ -303,6 +313,7 @@
  {
   "id": "EASE-11",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "دوال تسهيل بلا مكتبات",
   "name_en": "Dependency-free easing set",
   "status": "proven",
@@ -337,6 +348,7 @@
  {
   "id": "EASE-12",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "رموز حركة CSS مختبرة",
   "name_en": "Tested CSS motion tokens",
   "status": "proven",
@@ -366,6 +378,7 @@
  {
   "id": "EASE-13",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "منحنيات الاستوديوهات ورموز ستايل الكتالوج",
   "name_en": "Agency curves & catalog style tokens",
   "status": "documented",
@@ -395,6 +408,7 @@
  {
   "id": "EASE-14",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قاموس منحنيات GSAP حسب الإحساس",
   "name_en": "GSAP ease vocabulary by mood",
   "status": "ready",
@@ -429,6 +443,7 @@
  {
   "id": "EASE-15",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "اتجاه التسهيل معنى",
   "name_en": "Ease direction = meaning",
   "status": "ready",
@@ -460,6 +475,7 @@
  {
   "id": "EASE-16",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "زووم لوغاريتمي ثابت الإحساس",
   "name_en": "Log-space zoom (logEase, lmix, zoomTrack)",
   "status": "proven",
@@ -490,6 +506,7 @@
  {
   "id": "EASE-17",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "وصول مقدَّم الوزن",
   "name_en": "Front-loaded arrival (extended keyframe)",
   "status": "install",
@@ -522,6 +539,7 @@
  {
   "id": "EASE-18",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "انزلاق بطيء-سريع-بطيء",
   "name_en": "Nudge curve slow–fast–slow",
   "status": "documented",
@@ -546,6 +564,7 @@
  {
   "id": "EASE-19",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "لقطة السرعة U",
   "name_en": "U-speed shot",
   "status": "ready",
@@ -576,6 +595,7 @@
  {
   "id": "EASE-20",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "إعدادات توقيت الانتقال الستة",
   "name_en": "Transition timing presets",
   "status": "documented",
@@ -602,6 +622,7 @@
  {
   "id": "EASE-21",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "منحنى التسهيل على الشاشة",
   "name_en": "Easing curve shown on screen",
   "status": "seen",
@@ -642,6 +663,7 @@
  {
   "id": "EASE-22",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "نوابض فيزيائية مغلقة الصيغة SPR",
   "name_en": "Physical springs SPR (closed form)",
   "status": "proven",
@@ -671,6 +693,7 @@
  {
   "id": "EASE-23",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "نوابض مطبّعة كمنحنيات GSAP",
   "name_en": "Normalised spring eases",
   "status": "proven",
@@ -700,6 +723,7 @@
  {
   "id": "EASE-24",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قيمة تتبع أهدافًا بنابض",
   "name_en": "Retargetable spring track",
   "status": "proven",
@@ -729,6 +753,7 @@
  {
   "id": "EASE-25",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "نابض بتردد وتخميد",
   "name_en": "Frequency–ζ analytic spring",
   "status": "ready",
@@ -758,6 +783,7 @@
  {
   "id": "EASE-26",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "جداول إعدادات النوابض",
   "name_en": "Spring preset tables",
   "status": "documented",
@@ -790,6 +816,7 @@
  {
   "id": "EASE-27",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "منحنى النابض المحسوب مسبقًا",
   "name_en": "Baked spring ease (springEase)",
   "status": "documented",
@@ -817,6 +844,7 @@
  {
   "id": "EASE-28",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "ميزانية التجاوز",
   "name_en": "Overshoot budget",
   "status": "documented",
@@ -845,6 +873,7 @@
  {
   "id": "EASE-29",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "نابض Remotion والتحجيم الإدراكي",
   "name_en": "Remotion spring & perceptual scale",
   "status": "install",
@@ -874,6 +903,7 @@
  {
   "id": "EASE-30",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "القفزة النابضة للدخول",
   "name_en": "Spring pop entrance",
   "status": "proven",
@@ -908,6 +938,7 @@
  {
   "id": "EASE-31",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "سقوط ثم استقرار",
   "name_en": "Drop + spring settle",
   "status": "documented",
@@ -937,6 +968,7 @@
  {
   "id": "EASE-32",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "ميزانيات التتابع",
   "name_en": "Stagger budgets",
   "status": "documented",
@@ -968,6 +1000,7 @@
  {
   "id": "EASE-33",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تتابع القائمة في مكتبة الحركة",
   "name_en": "Kit list stagger",
   "status": "ready",
@@ -996,6 +1029,7 @@
  {
   "id": "EASE-34",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تتابع CSS بالترتيب",
   "name_en": "CSS index-stagger cascades",
   "status": "proven",
@@ -1024,6 +1058,7 @@
  {
   "id": "EASE-35",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "نوافذ افتتاحية المشهد",
   "name_en": "Hero opening choreography windows",
   "status": "documented",
@@ -1052,6 +1087,7 @@
  {
   "id": "EASE-36",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "التداخل ونسب الفصول الأربعة",
   "name_en": "Overlap & four-act proportions",
   "status": "documented",
@@ -1078,6 +1114,7 @@
  {
   "id": "EASE-37",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قواعد الثلث",
   "name_en": "The 1/3 rules",
   "status": "documented",
@@ -1104,6 +1141,7 @@
  {
   "id": "EASE-38",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "بناء ثم تنفس ثم حسم",
   "name_en": "Build / breathe / resolve",
   "status": "documented",
@@ -1128,6 +1166,7 @@
  {
   "id": "EASE-39",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "السرعة تعني الوزن",
   "name_en": "Speed = weight tiers",
   "status": "documented",
@@ -1157,6 +1196,7 @@
  {
   "id": "EASE-40",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "مدة حسب المسافة",
   "name_en": "Distance-based duration durFor",
   "status": "proven",
@@ -1184,6 +1224,7 @@
  {
   "id": "EASE-41",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "مشهد تحريري بست ثوانٍ",
   "name_en": "Six-second editorial scene timeline",
   "status": "ready",
@@ -1211,6 +1252,7 @@
  {
   "id": "EASE-42",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "سلالم مدد الواجهات",
   "name_en": "UI duration ladders",
   "status": "documented",
@@ -1239,6 +1281,7 @@
  {
   "id": "EASE-43",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "جدول توقيت عرض المنتج",
   "name_en": "Product-demo interaction timing",
   "status": "documented",
@@ -1266,6 +1309,7 @@
  {
   "id": "EASE-44",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "اكشف على امتداد اللقطة",
   "name_en": "Reveal across the shot (anti-slide)",
   "status": "documented",
@@ -1293,6 +1337,7 @@
  {
   "id": "EASE-45",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "أبقِ كل عنصر حيًا",
   "name_en": "Keep every element alive",
   "status": "documented",
@@ -1320,6 +1365,7 @@
  {
   "id": "EASE-46",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "سلّم الوضعيات بإطارات GSAP",
   "name_en": "Pose ladder & mechanism choice",
   "status": "documented",
@@ -1347,6 +1393,7 @@
  {
   "id": "EASE-47",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "الخط الزمني الرئيسي المتوقف",
   "name_en": "Paused master timeline authoring",
   "status": "ready",
@@ -1379,6 +1426,7 @@
  {
   "id": "EASE-48",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "مفاتيح مأخوذة من دالة",
   "name_en": "Function-sampled keyframes",
   "status": "proven",
@@ -1407,6 +1455,7 @@
  {
   "id": "EASE-49",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "التمهيد والمتابعة",
   "name_en": "Anticipation & follow-through",
   "status": "documented",
@@ -1434,6 +1483,7 @@
  {
   "id": "EASE-50",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "دخول بميل ثم استقرار",
   "name_en": "Tilt-in settle",
   "status": "seen",
@@ -1463,6 +1513,7 @@
  {
   "id": "EASE-51",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "غلاف الضربة hitPulse",
   "name_en": "Hit pulse envelope",
   "status": "proven",
@@ -1492,6 +1543,7 @@
  {
   "id": "EASE-52",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "انضغاط التلامس",
   "name_en": "Contact squash",
   "status": "ready",
@@ -1520,6 +1572,7 @@
  {
   "id": "EASE-53",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "كلمة تقفز بالمط والضغط",
   "name_en": "Squash-and-stretch hop",
   "status": "ready",
@@ -1554,6 +1607,7 @@
  {
   "id": "EASE-54",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "أشباح تبيّن التباعد",
   "name_en": "Onion-skin spacing ghosts & echo trail",
   "status": "install",
@@ -1595,6 +1649,7 @@
  {
   "id": "EASE-55",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قفزة بقوس بين حاملين",
   "name_en": "Parabolic hops & piecewise paths",
   "status": "seen",
@@ -1627,6 +1682,7 @@
  {
   "id": "EASE-56",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "ختم يُطبع بقوة",
   "name_en": "Stamp slam",
   "status": "seen",
@@ -1657,6 +1713,7 @@
  {
   "id": "EASE-57",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حلقة الأثر ووميض المفتاح",
   "name_en": "Impact ripple & key hit-flash",
   "status": "seen",
@@ -1686,6 +1743,7 @@
  {
   "id": "EASE-58",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "ظهور منبثق مع تمويه",
   "name_en": "Blur pop-in / pop-out",
   "status": "ready",
@@ -1711,6 +1769,7 @@
  {
   "id": "EASE-59",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "اهتزاز الضحك والتمايل",
   "name_en": "Laughing wiggle & phase-offset sway",
   "status": "ready",
@@ -1738,6 +1797,7 @@
  {
   "id": "EASE-60",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حدود السرعة بالبكسل لكل إطار",
   "name_en": "Speed limits in px/frame",
   "status": "proven",
@@ -1768,6 +1828,7 @@
  {
   "id": "EASE-61",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تمويه السرعة الاتجاهي",
   "name_en": "Directional speed blur",
   "status": "ready",
@@ -1802,6 +1863,7 @@
  {
   "id": "EASE-62",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "ضبابية الغالق الحقيقية",
   "name_en": "Shutter motion blur",
   "status": "install",
@@ -1831,6 +1893,7 @@
  {
   "id": "EASE-63",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "معايير الإيقاع من أفلام الإطلاق",
   "name_en": "Pacing medians of top launch films",
   "status": "ready",
@@ -1861,6 +1924,7 @@
  {
   "id": "EASE-64",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "إيقاع المونتاج حسب النوع",
   "name_en": "Edit rhythm by genre",
   "status": "documented",
@@ -1889,6 +1953,7 @@
  {
   "id": "EASE-65",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "البنية الدقيقة للفيديو القصير",
   "name_en": "Short-form micro-structure",
   "status": "documented",
@@ -1916,6 +1981,7 @@
  {
   "id": "EASE-66",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "القص على الإيقاع 60/BPM",
   "name_en": "Beat-cut rule",
   "status": "documented",
@@ -1950,6 +2016,7 @@
  {
   "id": "EASE-67",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "ساعة الإيقاع في التركيب",
   "name_en": "Beat clock in compositions",
   "status": "ready",
@@ -1982,6 +2049,7 @@
  {
   "id": "EASE-68",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قائمة لقطات على شبكة الإيقاع",
   "name_en": "Beat-grid shot list with onset-snapped words",
   "status": "documented",
@@ -2009,6 +2077,7 @@
  {
   "id": "EASE-69",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "أنماط توقيت القطع والمغناطيس",
   "name_en": "Cut timing modes & magnetic snapping",
   "status": "ready",
@@ -2036,6 +2105,7 @@
  {
   "id": "EASE-70",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قواعد الوقفات في قص المتكلم",
   "name_en": "Speech pause grammar",
   "status": "documented",
@@ -2065,6 +2135,7 @@
  {
   "id": "EASE-71",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "انفجار القطع السريع",
   "name_en": "Rapid-fire cut bursts",
   "status": "seen",
@@ -2104,6 +2175,7 @@
  {
   "id": "EASE-72",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "بناء بطيء ثم ضربة",
   "name_en": "Contrast pacing: slow burn, calm hold",
   "status": "seen",
@@ -2136,6 +2208,7 @@
  {
   "id": "EASE-73",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "قالب العد التنازلي",
   "name_en": "Countdown template",
   "status": "proven",
@@ -2172,6 +2245,7 @@
  {
   "id": "EASE-74",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "شريط التقدم الزمني",
   "name_en": "Timeline progress bars",
   "status": "ready",
@@ -2203,6 +2277,7 @@
  {
   "id": "EASE-75",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "منحدرات سرعة بتكامل دقيق",
   "name_en": "Exact speed ramps",
   "status": "proven",
@@ -2233,6 +2308,7 @@
  {
   "id": "EASE-76",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حركة بطيئة بإطارات مولدة",
   "name_en": "Optical-flow slow motion & frame interpolation",
   "status": "ready",
@@ -2264,6 +2340,7 @@
  {
   "id": "EASE-77",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "الإيقاع المتقطع على اثنين وثلاثة",
   "name_en": "Stepped cadence: on twos & threes",
   "status": "install",
@@ -2300,6 +2377,7 @@
  {
   "id": "EASE-78",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حلقات التنفس والطفو",
   "name_en": "Sine idle loops & breathing",
   "status": "ready",
@@ -2336,6 +2414,7 @@
  {
   "id": "EASE-79",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حلقة مغلقة بلا قطع",
   "name_en": "Seamless loop closure",
   "status": "seen",
@@ -2363,6 +2442,7 @@
  {
   "id": "EASE-80",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حلقات الحالة الصغيرة",
   "name_en": "Status micro-loops",
   "status": "ready",
@@ -2392,6 +2472,7 @@
  {
   "id": "EASE-81",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "سرعات الكتابة الآلية",
   "name_en": "Typewriter speed table",
   "status": "ready",
@@ -2420,6 +2501,7 @@
  {
   "id": "EASE-82",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "زمن الرسم حسب حجم الخطوة",
   "name_en": "Drawing-time model",
   "status": "ready",
@@ -2446,6 +2528,7 @@
  {
   "id": "EASE-83",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تفاعلات الضغط والمرور والنوافذ",
   "name_en": "Press, hover & dialog entrances",
   "status": "ready",
@@ -2478,6 +2561,7 @@
  {
   "id": "EASE-84",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "التحويل والشفافية فقط",
   "name_en": "Transform/opacity-only contract",
   "status": "proven",
@@ -2505,6 +2589,7 @@
  {
   "id": "EASE-85",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "زر تهدئة الحركة وتقليلها",
   "name_en": "Quiet-motion toggle & reduced motion",
   "status": "ready",
@@ -2532,6 +2617,7 @@
  {
   "id": "EASE-86",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "حركات طبقات الاستوديو",
   "name_en": "Studio layer entrances & opacity envelope",
   "status": "proven",
@@ -2563,6 +2649,7 @@
  {
   "id": "EASE-87",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تبديل الحالات بانسيابية",
   "name_en": "State swaps: FLIP reflow & headline crossfade",
   "status": "seen",
@@ -2593,6 +2680,7 @@
  {
   "id": "EASE-88",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "تنعيم أثر المؤشر بالمسافة",
   "name_en": "Distance-sampled pointer trail",
   "status": "documented",
@@ -2618,6 +2706,7 @@
  {
   "id": "EASE-89",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "توقيتات الصور وضربات الميزات",
   "name_en": "Photo & feature-beat timings",
   "status": "documented",
@@ -2649,6 +2738,7 @@
  {
   "id": "EASE-90",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "مكونات HyperFrames للتوقيت",
   "name_en": "HyperFrames timing components",
   "status": "install",
@@ -2681,6 +2771,7 @@
  {
   "id": "EASE-91",
   "family": "easing-timing-rhythm",
+  "domain": "motion",
   "name_ar": "مكتبات توقيت إضافية",
   "name_en": "Extra timing libraries",
   "status": "install",
@@ -3072,5 +3163,144 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md"
+ },
+ {
+  "id": "EASE-G01",
+  "family": "easing-timing-rhythm",
+  "domain": "motion",
+  "name_ar": "نابض بالفيزياء يطبع كل إطار",
+  "name_en": "Spring solved frame by frame",
+  "status": "ready",
+  "what": "احسب النابض من الكتلة والصلابة والتخميد لا من مدة، واطبع قيمته في كل إطار وزمن استقراره ونسبة تجاوزه، أو كإطارات CSS. — Solve the spring from mass, stiffness and damping instead of a duration, and print its value every frame, its settle time and overshoot, or CSS @keyframes.",
+  "when": "حركة دخول أو ارتداد طبيعية في HTML أو Remotion أو After Effects / a natural entrance or bounce in HTML, Remotion or After Effects",
+  "how": "`python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` → JSON with damping_ratio, regime, settled, seconds, overshoot_pct and values per frame; `--css pop` prints @keyframes. Damping ratio ζ = damping / (2√(stiffness·mass)): ζ<1 bounces, ζ≈1 settles fastest without overshoot. Measured here: 170/26 settles in 0.73 s with 0 % overshoot (ζ≈1.0); 180/8 overshoots 37 % and settles in 1.6 s. Paste the values array instead of hand-keying a bounce.",
+  "params": "stiffness 170 · damping 26 · mass 1 (common UI spring defaults); sub-step 1/16 frame",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "spring",
+   "physics",
+   "tension",
+   "friction",
+   "overshoot",
+   "keyframes",
+   "نابض",
+   "ارتداد",
+   "فيزياء الحركة"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/pmndrs/react-spring (MIT; tension/friction model) — our own solver in scripts/motion_physics.py"
+ },
+ {
+  "id": "EASE-G02",
+  "family": "easing-timing-rhythm",
+  "domain": "motion",
+  "name_ar": "منحنى CSS محسوب كما يحسبه المتصفح",
+  "name_en": "Browser-exact cubic-bezier sampling",
+  "status": "ready",
+  "what": "حوّل أي cubic-bezier أو اسم تسهيل CSS إلى قيم لكل إطار بنفس حل المتصفح، لتطابق الحركة في الفيديو ما يظهر في الصفحة. — Turn any cubic-bezier or named CSS easing into per-frame values with the browser's solution, so the rendered film matches the page.",
+  "when": "نقل حركة من CSS إلى Manim أو After Effects أو العكس / moving an animation between CSS and Manim or After Effects",
+  "how": "`python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30`; named easings for `--ease` in stagger and keyframes: linear, ease, ease-in, ease-out, ease-in-out, out-expo, out-back, in-out-cubic, plus steps(n). Solver: Newton on x(t) with bisection fallback, then y(t). Check: CSS 'ease' at x=0.5 gives 0.8024.",
+  "params": "x1, x2 ∈ [0,1]; y may overshoot (out-back)",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "cubic-bezier",
+   "css easing",
+   "sampling",
+   "ease",
+   "منحنى",
+   "تسهيل",
+   "css"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "CSS Easing Functions definition (W3C) — our own solver in scripts/motion_physics.py"
+ },
+ {
+  "id": "EASE-G03",
+  "family": "easing-timing-rhythm",
+  "domain": "motion",
+  "name_ar": "تتابع من نقطة أصل على شبكة",
+  "name_en": "Stagger from an origin on a grid",
+  "status": "ready",
+  "what": "وزّع التأخير على العناصر حسب بعدها عن نقطة أصل (الأول، الأخير، المنتصف، الأطراف، عنصر بعينه) في صف أو شبكة، مع منحنى للتأخير نفسه. — Spread delays by each element's distance from an origin (first, last, center, edges, a given index) in a row or grid, with an easing on the delays themselves.",
+  "when": "ظهور حروف أو أيقونات أو بلاطات شبكة / revealing letters, icons or grid tiles",
+  "how": "`python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out` → delays in seconds per element (2-D distance on a grid). Center-out reads as an explosion, edges-in as gathering; ease-out on delays bunches the first ones and spreads the tail. Keep the total stagger ≤ 40 % of the move so the group still reads as one gesture.",
+  "params": "each 0.03-0.08 s for letters; total ≤ 40 % of the move",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "MIT",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "stagger",
+   "grid",
+   "stagger origin",
+   "choreography",
+   "delay",
+   "تتابع",
+   "شبكة",
+   "تأخير"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/juliangarnier/anime (MIT; stagger options) — semantics restated, our own code in scripts/motion_physics.py"
+ },
+ {
+  "id": "EASE-G04",
+  "family": "easing-timing-rhythm",
+  "domain": "motion",
+  "name_ar": "خط زمني بإزاحات نسبية وعلامات",
+  "name_en": "Timeline with relative offsets and labels",
+  "status": "documented",
+  "what": "ابنِ المشهد كخط زمني واحد تُوضع فيه كل حركة بإزاحة نسبية من السابقة أو عند علامة مسماة، فيتغير التوقيت كله بتعديل رقم واحد. — Build the scene as one timeline where each move is placed by a relative offset from the previous one or at a named label, so retiming means editing one number.",
+  "when": "مشهد فيه أكثر من خمس حركات متتالية / a scene with more than five chained moves",
+  "how": "Place: '+=0.2' (gap after the previous end), '-=0.15' (overlap), '<' (same start as previous), 'label+0.3'. Labels for beats ('title', 'logo', 'cta') come from the audio grid (words.json or beats). Never hard-code absolute times in many places; compute them from the label table and export the table with the film for review.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "npm:gsap",
+   "npm:animejs"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "timeline",
+   "offsets",
+   "labels",
+   "overlap",
+   "gsap",
+   "anime.js",
+   "خط زمني",
+   "علامات",
+   "تداخل"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/juliangarnier/anime (MIT; timeline offsets) — restated; GSAP's position parameter is the same idea (GSAP licence: link only)"
  }
 ]

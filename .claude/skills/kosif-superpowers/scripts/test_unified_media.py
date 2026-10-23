@@ -1,5 +1,6 @@
 """Test original photo processing + Unified Draw compositing and video exports."""
 import copy
+import importlib.util
 import json
 import shutil
 import subprocess
@@ -12,6 +13,8 @@ from PIL import Image, ImageChops, ImageDraw
 from unified_media import checked_image, compose, export, validate_job
 from unified_draw import compile_scene
 
+# the "develop" photo effect runs App Studio, which needs OpenCV (opencv-python-headless)
+HAVE_CV2=importlib.util.find_spec("cv2") is not None
 SCENE=Path(__file__).resolve().parent.parent/"templates"/"unified-draw-motion-demo.json"
 
 
@@ -55,6 +58,7 @@ class MediaIntegration(unittest.TestCase):
                 self.assertEqual(img.size,(640,480))
             self.assertEqual(len(receipt["sha256"]),64)
 
+    @unittest.skipUnless(HAVE_CV2,"OpenCV (cv2) required for the App Studio develop effect")
     def test_edited_photo_pipeline_develop(self):
         with tempfile.TemporaryDirectory() as d:
             photo,doc=fixture(d)

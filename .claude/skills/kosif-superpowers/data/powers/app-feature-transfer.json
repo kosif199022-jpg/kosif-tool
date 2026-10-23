@@ -4559,5 +4559,534 @@
   ],
   "section": "MagicPath — منهج اللوحة المشتركة (أفكار من الوثائق العامة بكلماتنا، بلا نص منسوخ) — MagicPath public-docs methods",
   "source": "MagicPath study 2026-10-20: magicpath.ai public documentation (proprietary); idea only, restated for KOSIF motion work"
+ },
+ {
+  "id": "APPX-140",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "سطور ترجمة بقواعد قراءة",
+  "name_en": "Caption lines with reading rules",
+  "status": "proven",
+  "what": "يحوّل توقيت الكلمات إلى سطور ترجمة قصيرة مقروءة: حد للكلمات والحروف والمدة، وكسر عند الوقفة ونهاية الجملة (؟ ؛ . !) وعند الفاصلة بعد كلمتين، وسد الفجوات القصيرة، وحد أدنى للمدة بلا تداخل — word timings to readable SRT/VTT/JSON lines.",
+  "when": "ترجمة تلقائية لريل أو فيديو بعد التفريغ / auto captions after transcription",
+  "how": "`python3 $SKILL_DIR/scripts/caption_lines.py group words.json -o captions.srt --rlm` (atlas words.json, whisper.cpp -oj, faster-whisper)",
+  "params": "--max-words 4 --max-chars 32 --max-dur 3.2 --gap 0.6 --min-dur 0.4 --bridge 0.3 --rlm",
+  "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
+  "license": "recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "captions",
+   "subtitles",
+   "srt",
+   "vtt",
+   "line breaking",
+   "ترجمة",
+   "سطور الترجمة",
+   "تقسيم الترجمة",
+   "montaji",
+   "مونتاجي",
+   "ويسبر",
+   "whisper",
+   "تفريغ",
+   "سطور قصيرة",
+   "subtitle lines"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-141",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تنقية هلوسة نموذج التفريغ",
+  "name_en": "Screen speech-model inventions",
+  "status": "proven",
+  "what": "يحذف من الترجمة ما يخترعه نموذج الكلام فوق الصمت أو الموسيقى: حقوق الترجمة، و«اشتركوا في القناة»، و«شكرا للمشاهدة»، ووسوم الصوت، والنقط وحدها، وتكرار السطر نفسه ثلاث مرات — ويسرد المحذوف ليرجعه إنسان.",
+  "when": "بعد Whisper وقبل نشر الترجمة / after Whisper, before publishing captions",
+  "how": "`caption_lines.py group … --keep-suspect` يعلّمها بدل حذفها؛ `caption_lines.py lint captions.srt` يفحص أي ملف ترجمة",
+  "params": "--keep-suspect · lint --max-cps 17",
+  "install": "",
+  "requires": [
+   "pip:faster-whisper"
+  ],
+  "license": "recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/caption_lines.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_caption_lines.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "whisper",
+   "hallucination",
+   "هلوسة",
+   "ترجمة نانسي",
+   "subscribe",
+   "caption qa",
+   "تدقيق الترجمة",
+   "ويسبر",
+   "تفريغ",
+   "سطور ترجمة"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-142",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "لوك ألوان واحد لكل المحركات",
+  "name_en": "One colour look for every renderer",
+  "status": "proven",
+  "what": "اللوك أرقام: خطوة خطية لكل قناة ثم مصفوفة 3×3، تخرج منها فلاتر ffmpeg (lutrgb + colorchannelmixer) وSVG/CSS وGLSL بالأرقام نفسها؛ 11 لوك (سينمائي، دافئ، أبيض وأسود، ليلي هادئ…) مع شدة وتعديل يدوي.",
+  "when": "تلوين فيديو مع معاينة في المتصفح تطابق التصدير / grade with a browser preview that matches the export",
+  "how": "`python3 $SKILL_DIR/scripts/look_pipeline.py build --preset cinematic --amount 0.8 --target ffmpeg|svg|css|glsl|json` ; `apply in.mp4 out.mp4 --preset warm`",
+  "params": "brightness contrast saturation temperature (-1..1) · fade sepia teal vignette (0..1)",
+  "install": "ffmpeg (apply/verify only)",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
+  "license": "recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "color grade",
+   "lut",
+   "look",
+   "filter",
+   "تلوين",
+   "فلتر",
+   "لوك",
+   "svg filter",
+   "glsl",
+   "colorchannelmixer"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-143",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "إثبات تطابق المعاينة والتصدير بالقياس",
+  "name_en": "Measured preview/export colour parity",
+  "status": "proven",
+  "what": "يمرّر إطار اختبار في ffmpeg ويقارن كل بكسل بالمعادلة المرجعية؛ أقصى فرق هنا 1 من 255 في كل اللوكات — قياس لا ادعاء.",
+  "when": "قبل الاعتماد على معاينة لون في محرر ويب / before trusting a web preview's colour",
+  "how": "`python3 $SKILL_DIR/scripts/look_pipeline.py verify --all --tolerance 3`",
+  "params": "--preset · --all · --tolerance",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
+  "license": "recipe and code: owner (KOSIF); idea from Montaji (no licence, private) — idea only, no code copied",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/look_pipeline.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_look_pipeline.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "parity",
+   "preview",
+   "export",
+   "تطابق",
+   "معاينة",
+   "تصدير",
+   "color qa"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-144",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "مسار رئيسي مغناطيسي بانتقالات محسوبة",
+  "name_en": "Magnetic main track with clamped transitions",
+  "status": "documented",
+  "what": "اللقطات تتبع بعضها بلا فراغ؛ الانتقال يُخزَّن على اللقطة الخارجة ولا يزيد على نصف أي من الجارتين؛ في ffmpeg: xfade بإزاحة = الطول المتراكم − مدة الانتقال، وacrossfade للصوت، وconcat عند غياب الانتقال.",
+  "when": "تصدير تايملاين فيه انتقالات بين اللقطات / exporting a cut list with transitions",
+  "how": "`[v0][v1]xfade=transition=fade:duration=T:offset=ACC-T` ثم ACC = ACC + dur − T؛ `[a0][a1]acrossfade=d=T`؛ قرّب كل الأزمنة لإطار (round(t·fps)/fps). الفجوة: kosif_timeline.py يدعم التلاشي بالشفافية فقط.",
+  "params": "T ≤ min(dur_a, dur_b)/2",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg",
+   "python3"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "xfade",
+   "transitions",
+   "magnetic timeline",
+   "انتقالات",
+   "تايملاين مغناطيسي",
+   "acrossfade"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-145",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "أي سرعة صوت بسلسلة atempo",
+  "name_en": "Any audio speed with an atempo chain",
+  "status": "documented",
+  "what": "atempo يقبل 0.5 إلى 100 فقط؛ قسّم المعامل إلى خطوات (0.25 = 0.5×0.5) ليبقى الصوت متزامنًا مع setpts للفيديو.",
+  "when": "تسريع أو إبطاء مقطع بصوته / speed change with sound",
+  "how": "فيديو: `setpts=PTS/S`؛ صوت: كرر atempo=0.5 حتى يصبح الباقي ≥ 0.5 (و100 للأعلى) ثم atempo=الباقي.",
+  "params": "S = speed",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "atempo",
+   "speed",
+   "سرعة",
+   "تسريع",
+   "إبطاء"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-146",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "خلفية مموهة رخيصة للمقاس العمودي",
+  "name_en": "Cheap blurred background fill",
+  "status": "documented",
+  "what": "لملء 9:16 بلقطة أفقية: صغّر نسخة إلى ربع المقاس، املأ وقص، طبّق gblur، ثم كبّر — أسرع بكثير من التمويه بالحجم الكامل والنتيجة نفسها بصريًا.",
+  "when": "فيديو أفقي في ريل عمودي / landscape clip in a vertical reel",
+  "how": "`split[a][b];[b]scale=W/4:H/4:force_original_aspect_ratio=increase,crop=W/4:H/4,gblur=sigma=s,scale=W:H[bg];[bg][a]overlay=(W-w)/2:(H-h)/2`",
+  "params": "sigma ≈ 3% of the short side / 4",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "blur background",
+   "9:16",
+   "خلفية مموهة",
+   "ريلز",
+   "reframe"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-147",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "نص عربي مرسوم بوحدات مرجعية",
+  "name_en": "Arabic text raster in reference units",
+  "status": "documented",
+  "what": "ارسم النص في المتصفح (تشكيل عربي صحيح وحدّ وظل وخلفية مستديرة) بقياسات مرجعية للضلع القصير 1080 ثم كبّر مرة واحدة، فتبقى فواصل الأسطر واحدة في كل مقاس؛ قص الصورة على حدود النص بعد الدوران، ودع ffmpeg يحرّكها ويخفيها بتعابير تطابق منحنى المعاينة.",
+  "when": "نصوص عربية في فيديو مصدَّر بمقاسات مختلفة / Arabic titles exported at several sizes",
+  "how": "Canvas: layout at short=1080, ctx.scale(k); export PNG cropped to rotated bounds; ffmpeg `loop`, `fade=alpha=1`, `overlay=x='X+dx*pow(1-p,2)'`. انظر playbooks/arabic-typography.md.",
+  "params": "k = short side / 1080",
+  "install": "",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "arabic text",
+   "نص عربي",
+   "typography",
+   "overlay",
+   "canvas",
+   "rtl"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-148",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تجهيز الوسائط لمحرر",
+  "name_en": "Media prep for an editor",
+  "status": "documented",
+  "what": "عند الاستيراد: افحص بـ ffprobe (الدوران 90° يبدّل العرض والارتفاع)، صورة غلاف عند 10% (حتى ثانية)، شريط مصغرات من لقطات بحث سريع على دفعات ثم tile، غلاف موجة 50 قيمة/ث بجذر تربيعي، وبروكسي فقط إذا كان الترميز أو صيغة البكسل أو الحاوية لا تعمل في المتصفح.",
+  "when": "بناء تايملاين أو واجهة مونتاج / building a timeline UI",
+  "how": "`-noaccurate_seek -ss t -i src` × 8 per call → `tile=Nx1`؛ peaks: s16le 4 kHz → max per 80 samples → sqrt(v/max)·255؛ proxy if not (h264|hevc|vp9|av1 in yuv420p in mp4/mov/webm).",
+  "params": "",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "filmstrip",
+   "waveform",
+   "proxy",
+   "thumbnails",
+   "شريط مصغرات",
+   "موجة الصوت",
+   "بروكسي"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-149",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ترميز بالعتاد مع رجوع للبرمجي",
+  "name_en": "Hardware encoder with software fallback",
+  "status": "documented",
+  "what": "جرّب مرمّز العتاد أولًا (VideoToolbox/NVENC) بمعدل بت = بت لكل بكسل × العرض × الارتفاع × الإطارات، وإن فشل فتح المرمّز أعد المحاولة بـ libx264/libx265 بـ CRF؛ احذف الملف الناقص عند الفشل.",
+  "when": "تصدير سريع على أجهزة مختلفة / fast export on unknown machines",
+  "how": "bpp: normal 0.07 · high 0.12 · max 0.2 (H.264)، HEVC × 0.65؛ retry only on encoder-open errors; `-movflags +faststart`.",
+  "params": "",
+  "install": "ffmpeg",
+  "requires": [
+   "ffmpeg"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "videotoolbox",
+   "nvenc",
+   "encoder",
+   "bitrate",
+   "تصدير",
+   "ترميز"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-150",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "خادم محلي آمن لأداة مونتاج",
+  "name_en": "A safe local editor server",
+  "status": "documented",
+  "what": "لأي أداة تفتح واجهة على localhost: استمع على 127.0.0.1 فقط، اقبل Host معروفًا فقط (ضد DNS rebinding)، واطلب رأسًا خاصًا في كل طلب يغيّر شيئًا ليجبر المتصفح على preflight فلا تتحكم مواقع أخرى بالأداة، وطبّع المسارات، وتحقق من المعرّفات بنمط، واخرج عند الخمول أو موت العملية الأم.",
+  "when": "عند بناء أداة ويب محلية / building any loopback web tool",
+  "how": "checklist: bind 127.0.0.1 · Host allowlist · X-<app>: 1 on non-GET · path.normalize + prefix check · id regex · idle exit · ppid==1 exit.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "localhost",
+   "security",
+   "dns rebinding",
+   "cors",
+   "أمان",
+   "خادم محلي"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-151",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تنزيل نماذج موثَّق",
+  "name_en": "Verified model downloads",
+  "status": "documented",
+  "what": "نزّل النموذج إلى ملف .part مع تقدم مرئي وإلغاء، احسب SHA-256 أثناء التنزيل وقارنه ببصمة مثبتة، ثم أعد التسمية ذريًا؛ مرآة محلية للاختبارات فقط.",
+  "when": "أول استعمال لنموذج ذكاء اصطناعي محلي / first use of a local AI model",
+  "how": "stream → hashlib.sha256().update(chunk) → compare → os.replace(part, final); remove .part on error or cancel.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "network"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "model download",
+   "sha256",
+   "checksum",
+   "تنزيل نموذج",
+   "تحقق"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-152",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تراجع يجمع سحب المنزلقات",
+  "name_en": "Undo that groups slider drags",
+  "status": "documented",
+  "what": "كل تعديل يمر بدالة واحدة تحفظ لقطة JSON (حتى 150)؛ التعديلات المتتالية بالمفتاح نفسه خلال ثانية ونصف خطوة واحدة؛ حفظ تلقائي مؤجل 0.7 ث بكتابة ذرية ونسخة .bak.",
+  "when": "محرر تفاعلي أو ملف مشروع يُعدَّل كثيرًا / interactive editors",
+  "how": "change(fn, {merge:key}) → push snapshot unless same key within 1.5 s; save: write tmp → rename; keep project.json.bak.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "undo",
+   "redo",
+   "autosave",
+   "تراجع",
+   "حفظ تلقائي"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-153",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "اختبار ذاتي داخل المضيف الحقيقي",
+  "name_en": "Self-test inside the real host",
+  "status": "documented",
+  "what": "افتح الواجهة بمعامل selftest فتجري خطوات حقيقية (لون، نص عربي، مشروع، استيراد، فك ترميز، فلتر، تصدير، ترجمة) داخل المتصفح الفعلي، كل خطوة ok/error، مع فحص بكسلات (نسبة الإضاءة، رمادية الأبيض والأسود)، ويُكتب التقرير إلى ملف.",
+  "when": "قبل تسليم أداة تعمل في WebKit أو Chromium / before shipping a web-view tool",
+  "how": "?selftest=1 → steps → JSON report → POST to a local file; pixel probes: lit ratio > 0.2, |r−g|<4 for mono.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "selftest",
+   "e2e",
+   "qa",
+   "اختبار ذاتي",
+   "webview"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-154",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "ذاكرة وسائط بالمحتوى واستئناف",
+  "name_en": "Content-addressed media cache with resume",
+  "status": "documented",
+  "what": "معرّف الوسائط = بصمة (المسار، الحجم، وقت التعديل)، فلا يُعاد تجهيز ملف لم يتغير؛ طابور عمل باثنين معًا، ويستأنف عند التشغيل التالي ما انقطع؛ الأصل لا يُنسخ ولا يُعدَّل.",
+  "when": "استيراد ملفات كثيرة أو كبيرة / importing many or large files",
+  "how": "id = sha1(f'{path}|{size}|{mtime}')[:16]; index.json written atomically and debounced; on start re-queue status=processing.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "cache",
+   "media library",
+   "resume",
+   "ذاكرة مؤقتة",
+   "استيراد"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
+ },
+ {
+  "id": "APPX-155",
+  "family": "app-feature-transfer",
+  "domain": "build",
+  "name_ar": "تفريغ عربي محلي بلا إنترنت",
+  "name_en": "Offline Arabic speech stack",
+  "status": "documented",
+  "what": "whisper.cpp مع large-v3-turbo-q5_0 (574 ميجا، الأدق للعربي) أو small-q5_1 (190 ميجا) وSilero VAD، بكلمة لكل مدخل؛ يُمزج صوت التايملاين إلى 16 كيلوهرتز أحادي قبل التفريغ.",
+  "when": "ترجمة عربية على الجهاز / Arabic captions on the device",
+  "how": "`whisper-cli -m ggml-large-v3-turbo-q5_0.bin -f audio.wav -l ar -ml 1 -sow -oj --vad -vm ggml-silero-v5.1.2.bin` ثم `caption_lines.py group audio.json -o captions.srt`.",
+  "params": "-l ar -ml 1 -sow -oj --vad",
+  "install": "whisper.cpp (MIT) + models from huggingface.co/ggerganov/whisper.cpp",
+  "requires": [
+   "pip:faster-whisper",
+   "network"
+  ],
+  "license": "method idea from Montaji (no licence, private); idea only, in KOSIF's terms",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/app-studies/montaji.md"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "whisper.cpp",
+   "arabic transcription",
+   "تفريغ عربي",
+   "offline",
+   "vad",
+   "silero"
+  ],
+  "section": "مونتاجي — محرر فيديو عربي للماك (دراسة قراءة فقط، أفكار بكلماتنا) — Montaji study",
+  "source": "Montaji 1.0.0 macOS DMG shared by the owner, unpacked and read as text without running it (2026-10-23)"
  }
 ]

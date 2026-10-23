@@ -1,4 +1,4 @@
-# أدوات المجال `audio` (3 أداة)
+# أدوات المجال `audio` (5 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -52,6 +52,48 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:audio-cue-mapper --evidence <ملف>`.
+
+### `caption-lines` — سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة / Caption lines: word timings to readable SRT/VTT
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/caption_lines.py` (جذر: skill) |
+| المجال | `audio` |
+| الدليل | `tested-here` |
+| العائلات | `audio-sync-captions`, `app-feature-transfer`, `typography-arabic` |
+
+**ما تفعله:** كُتبت بعد دراسة «مونتاجي»: تقسم توقيت الكلمات إلى سطور ترجمة قصيرة بحد للكلمات والحروف والمدة، وتكسر عند الوقفة ونهاية الجملة والفاصلة، وتسد الفجوات القصيرة، وتضيف علامة الاتجاه للعربي، وتحذف ما يخترعه نموذج التفريغ مثل «ترجمة نانسي» و«اشتركوا في القناة» مع سرده؛ وlint يفحص أي ملف ترجمة.
+
+**What it does:** Written after a read-only study of the Montaji Arabic video editor: groups word timings (atlas words.json, whisper.cpp -oj or faster-whisper JSON) into short caption lines by word count, characters, time on screen, pauses, sentence ends (including ؟ and ؛) and commas; closes short holes, extends short lines only into silence, can add a right-to-left mark for Arabic, and drops and lists phrases speech models invent (subtitle credits, subscribe outros, sound tags, punctuation-only and looping lines). lint checks any SRT/VTT/JSON for overlaps, durations, reading speed and the same phrases.
+
+#### متى تُستدعى
+
+- «قسّم التفريغ ده لسطور ترجمة قصيرة SRT»
+- «Turn these Whisper word timestamps into readable captions»
+- «نظّف الترجمة من الهلوسة زي ترجمة نانسي واشتركوا في القناة»
+- «Lint this SRT for overlaps and reading speed»
+
+#### الأوامر
+
+- **group**: Words to SRT, VTT or JSON lines; reports the suspect lines it dropped.
+  - `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm`
+- **lint**: Overlaps, too-short lines, reading speed above 17 chars/s and suspect phrases; exits 1 on any issue.
+  - `python3 scripts/caption_lines.py lint captions.srt`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: Reads and writes local files only; captions of someone else's speech follow the media's rights.
+- الحدود: Does not transcribe: pair it with whisper.cpp or faster-whisper. The suspect-phrase list is short and generic, so a real spoken 'subscribe' is dropped too (use --keep-suspect). Line breaking counts characters, not rendered width.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_caption_lines.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/app-studies/montaji.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:caption-lines --evidence <ملف>`.
 
 ### `music-rhythm-engine` — فرضيات إيقاع الموسيقى / Music rhythm hypotheses
 
@@ -154,4 +196,49 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-words-convert --evidence <ملف>`.
+
+### `tts-script` — تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML / TTS script prep: prosody-safe chunks, duration estimate and SSML
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/tts_script.py` (جذر: skill) |
+| المجال | `audio` |
+| الدليل | `tested-here` |
+| العائلات | `voice-tts` |
+
+**ما تفعله:** يجهز نص التعليق العربي أو المختلط لأي محرك تحويل نص إلى كلام: يقطعه عند نهايات الجمل ثم الفواصل ثم بين الكلمات دون كسر كلمة، ويقدر مدة كل قطعة بعدد الكلمات في الدقيقة مع الوقفات، ويكتب SSML بوقفات عند علامات الترقيم ووسوم لغة حول الكلمات الإنجليزية.
+
+**What it does:** Prepares an Arabic or mixed-language narration script for any TTS engine: splits it into request-sized chunks at sentence ends, then clause marks, then between words (never mid-word, never across paragraphs); estimates speech time per chunk from words per minute plus sentence, clause and paragraph pauses with Arabic word counting; and writes SSML 1.0 with paragraphs, sentences, breaks at punctuation and lang tags around Latin runs (or Arabic runs in a Latin script).
+
+#### متى تُستدعى
+
+- «قسم نص التعليق الصوتي لقطع مناسبة لـ ElevenLabs»
+- «التعليق ده هياخد كام ثانية؟»
+- «اعمل SSML للنص العربي بوقفات عند الفواصل»
+- «Split my narration script into TTS-safe chunks»
+- «Estimate how long this voice-over will run»
+- «Generate SSML with breaks and language tags for a mixed Arabic/English script»
+
+#### الأوامر
+
+- **chunk**: Chunks at most N characters with their end type (sentence, clause, word, paragraph).
+  - `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30`
+- **estimate**: Seconds per chunk (speech + pauses), start times and total mm:ss.
+  - `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py estimate - --wpm 140`
+- **ssml**: SSML 1.0 document with <p>, <s>, <break> and <lang> around Latin runs.
+  - `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n' \| python3 scripts/tts_script.py ssml - --lang ar-EG --xml`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Timing is a words-per-minute estimate (numbers and abbreviations count as one word; real length depends on the voice); SSML support for <lang> and break times varies by engine.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_tts_script.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:tts-script --evidence <ملف>`.
 

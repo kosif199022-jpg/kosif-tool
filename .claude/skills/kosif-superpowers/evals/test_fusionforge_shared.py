@@ -120,5 +120,11 @@ class TestShared(unittest.TestCase):
         incomplete['baseline_comparison']['candidate']=1
         (review/f'{sig}.json').write_text(json.dumps(incomplete))
         with self.assertRaises(ValueError):fsh.approved_review(review/f'{sig}.json',sig)
+    def test_docstring_lists_every_subcommand(self):
+        for name in ('audit','approve','recall','review-template'):
+            self.assertIn('fusionforge_shared.py '+name,fsh.__doc__,name)
+        src=FILE.read_text(encoding='utf-8')
+        for name in __import__('re').findall(r"add_parser\('([a-z-]+)'",src):
+            self.assertIn('fusionforge_shared.py '+name,fsh.__doc__,name)
 
 if __name__=='__main__':unittest.main(verbosity=2)

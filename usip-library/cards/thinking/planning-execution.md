@@ -1,6 +1,6 @@
-# `planning-execution` — التفكير والتخطيط والاستراتيجية (12 بطاقة)
+# `planning-execution` — التفكير والتخطيط والاستراتيجية (14 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/planning-execution.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/planning-execution.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -16,6 +16,8 @@
 - [`PLAN-10` توزيع العمل على وكلاء متوازيين](#plan-10--توزيع-العمل-على-وكلاء-متوازيين--parallel-lanes-for-agents-and-workflows)
 - [`PLAN-11` مراجعة الخطة كل مرحلة](#plan-11--مراجعة-الخطة-كل-مرحلة--phase-boundary-plan-review)
 - [`PLAN-12` خطة تسليم بإيصال](#plan-12--خطة-تسليم-بإيصال--delivery-plan-with-a-receipt)
+- [`PLAN-13` تطوير يقوده المواصفات](#plan-13--تطوير-يقوده-المواصفات--spec-driven-development)
+- [`PLAN-14` عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا](#plan-14--عصف-ثم-خطة-ثم-وكيل-لكل-مهمة-بالاختبار-أولًا--brainstorm-plan-then-a-test-first-subagent-per-task)
 
 ## البطاقات / cards
 
@@ -31,9 +33,9 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Backcast milestones, work breakdown with done-tests, critical path note, pre-mortem with signals, kill criteria and a 10-minute first action, printed as a fill-in scaffold.
+**ما هي:** استنتاج المعالم عكسيًا، وتقسيم العمل مع اختبارات الإنجاز، وملاحظة المسار الحرج، وتشريح مسبق بإشارات، ومعايير إيقاف، وإجراء أول مدته 10 دقائق، مطبوعة كهيكل للتعبئة. — Backcast milestones, work breakdown with done-tests, critical path note, pre-mortem with signals, kill criteria and a 10-minute first action, printed as a fill-in scaffold.
 
-**متى:** any project longer than an afternoon
+**متى:** عند أي مشروع أطول من بعد ظهر يوم واحد / any project longer than an afternoon
 
 **كيف:** `python3 scripts/think.py plan "<goal>" --weeks N` then fill every … ; re-run requirements.py plan for the same goal.
 
@@ -97,12 +99,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Describe the finished state concretely, step back to its preconditions until today, then reverse into milestones.
+**ما هي:** صف الحالة النهائية بدقة، وارجع خطوة خطوة إلى شروطها المسبقة حتى اليوم، ثم اعكس إلى معالم. — Describe the finished state concretely, step back to its preconditions until today, then reverse into milestones.
 
-**متى:** vague goals, roadmaps
+**متى:** عند الأهداف الغامضة وخرائط الطريق / vague goals, roadmaps
 
 **كيف:** MODEL-25 steps; each milestone gets a done-test.
 
@@ -145,7 +147,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -162,12 +164,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Split the outcome into deliverables, then into tasks of a few hours, each with an observable done-test.
+**ما هي:** قسّم النتيجة إلى مخرجات، ثم إلى مهام من بضع ساعات، لكل منها اختبار إنجاز قابل للملاحظة. — Split the outcome into deliverables, then into tasks of a few hours, each with an observable done-test.
 
-**متى:** big or fuzzy tasks
+**متى:** عند المهام الكبيرة أو الضبابية / big or fuzzy tasks
 
 **كيف:** MODEL-27; deliverables not activities; done-test per task.
 
@@ -212,7 +214,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -230,12 +232,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Find the longest chain of dependent tasks, protect it, parallelise the rest with agents or workflows.
+**ما هي:** جد أطول سلسلة من المهام المعتمدة على بعضها، واحمها، وواز الباقي بوكلاء أو سير عمل. — Find the longest chain of dependent tasks, protect it, parallelise the rest with agents or workflows.
 
-**متى:** deadlines, multi-part builds
+**متى:** عند المواعيد النهائية والبناءات متعددة الأجزاء / deadlines, multi-part builds
 
 **كيف:** MODEL-26; list durations and dependencies, compute the longest path in code.
 
@@ -278,7 +280,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -299,9 +301,9 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Before any date depends on a tool, list every requirement of the chosen powers and install what is missing (with consent for paid or system-wide installs).
+**ما هي:** قبل أن يعتمد أي تاريخ على أداة، اذكر كل متطلبات القدرات المختارة وثبّت الناقص (بموافقة في التثبيتات المدفوعة أو على مستوى النظام). — Before any date depends on a tool, list every requirement of the chosen powers and install what is missing (with consent for paid or system-wide installs).
 
-**متى:** every plan that touches tools
+**متى:** عند كل خطة تمس الأدوات / every plan that touches tools
 
 **كيف:** `python3 scripts/requirements.py plan "<goal>" --json` → install plan; mark ▶ powers that can start now.
 
@@ -367,12 +369,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Cut scope to one end-to-end path through every layer and show it to the user before widening.
+**ما هي:** اقتصر النطاق على مسار واحد من الطرف إلى الطرف عبر كل الطبقات وأره للمستخدم قبل التوسع. — Cut scope to one end-to-end path through every layer and show it to the user before widening.
 
-**متى:** start of any build
+**متى:** عند بداية أي بناء / start of any build
 
 **كيف:** MODEL-51; render 2 s, one screen, one record — then expand from feedback.
 
@@ -415,7 +417,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -433,12 +435,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Imagine the failure, list causes, convert each to a mitigation plus a signal you can watch.
+**ما هي:** تخيّل الفشل، واذكر الأسباب، وحوّل كلًّا منها إلى خطة تخفيف وإشارة يمكنك مراقبتها. — Imagine the failure, list causes, convert each to a mitigation plus a signal you can watch.
 
-**متى:** before launches and long runs
+**متى:** قبل الإطلاقات والتشغيلات الطويلة / before launches and long runs
 
 **كيف:** MODEL-24; the plan scaffold lists five default causes to start from.
 
@@ -481,7 +483,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -499,12 +501,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** A measurable stop signal and a date, agreed before the work starts.
+**ما هي:** إشارة إيقاف قابلة للقياس وتاريخ، يُتفق عليهما قبل بدء العمل. — A measurable stop signal and a date, agreed before the work starts.
 
-**متى:** experiments, pilots, paid generations
+**متى:** عند التجارب والتجريبات والتوليدات المدفوعة / experiments, pilots, paid generations
 
 **كيف:** MODEL-50.
 
@@ -547,7 +549,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -565,12 +567,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Cross two key uncertainties into four futures; keep moves that work in all and watch signposts.
+**ما هي:** اضرب عدم يقينين رئيسيين لتحصل على أربعة مستقبلات؛ واحتفظ بالحركات التي تنجح في الجميع وراقب المؤشرات. — Cross two key uncertainties into four futures; keep moves that work in all and watch signposts.
 
-**متى:** strategy under deep uncertainty
+**متى:** عند الاستراتيجية في ظل عدم يقين عميق / strategy under deep uncertainty
 
 **كيف:** MODEL-52.
 
@@ -613,7 +615,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -631,12 +633,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Turn independent branches of the WBS into parallel agent briefs with completion contracts; keep one integrator.
+**ما هي:** حوّل الفروع المستقلة من WBS إلى موجزات وكلاء متوازين بعقود إنجاز؛ وأبقِ مُدمِجًا واحدًا. — Turn independent branches of the WBS into parallel agent briefs with completion contracts; keep one integrator.
 
-**متى:** plans with independent parts
+**متى:** عند الخطط ذات الأجزاء المستقلة / plans with independent parts
 
 **كيف:** Agent tool briefs or the Workflow tool when the user opted in; THINK-27 brief format.
 
@@ -680,7 +682,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -698,12 +700,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** At each milestone: what changed, which assumption broke, does the critical path still hold, update the plan file.
+**ما هي:** عند كل معلم: ما الذي تغيّر، وأي افتراض انكسر، وهل ما زال المسار الحرج قائمًا، وحدّث ملف الخطة. — At each milestone: what changed, which assumption broke, does the critical path still hold, update the plan file.
 
-**متى:** multi-day work
+**متى:** عند العمل لعدة أيام / multi-day work
 
 **كيف:** Metacognition checklist (cognition.md §8) + coverage ledger.
 
@@ -746,13 +748,14 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
 - `PLAN-09` سيناريوهات المستقبل والحركات المتينة / Scenario grid and robust moves (documented)
 - `PLAN-10` توزيع العمل على وكلاء متوازيين / Parallel lanes for agents and workflows (documented)
 - `PLAN-12` خطة تسليم بإيصال / Delivery plan with a receipt (documented)
+- `PLAN-13` تطوير يقوده المواصفات / Spec-driven development (documented)
 
 ### `PLAN-12` — خطة تسليم بإيصال / Delivery plan with a receipt
 
@@ -763,12 +766,12 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check.
+**ما هي:** يسمّي المعلم الأخير إيصال التحقق: fps والمدة والصوت والاختبارات والروابط، مما يستطيع المستخدم فحصه. — The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check.
 
-**متى:** anything shipped
+**متى:** عند أي شيء يُسلَّم / anything shipped
 
 **كيف:** TEMPLATES/TEST_REPORT.md for video; test output for code.
 
@@ -811,10 +814,142 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
 - `PLAN-10` توزيع العمل على وكلاء متوازيين / Parallel lanes for agents and workflows (documented)
 - `PLAN-11` مراجعة الخطة كل مرحلة / Phase-boundary plan review (documented)
+- `PLAN-13` تطوير يقوده المواصفات / Spec-driven development (documented)
+- `PLAN-14` عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا / Brainstorm, plan, then a test-first subagent per task (documented)
+
+### `PLAN-13` — تطوير يقوده المواصفات / Spec-driven development
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `planning-execution` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/planning-execution.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** مبادئ ثابتة أولًا، ثم مواصفة تقول ماذا ولماذا دون كيف، ثم توضيح المبهم، ثم خطة تقنية، ثم مهام مرتبة بالاختبار أولًا، ثم التنفيذ، مع فحص اتساق بينها. — Fixed principles first, then a spec of what and why without how, then clarification, a technical plan, ordered test-first tasks, implementation, and a consistency check across them.
+
+**متى:** ميزة جديدة أو تطبيق من الصفر / a new feature or an app from scratch
+
+**كيف:** constitution (5-9 non-negotiables: tests first, no secrets, accessibility …) → specify (user stories, acceptance criteria; mark gaps [NEEDS CLARIFICATION]) → clarify (resolve each mark with the user or a stated assumption) → plan (stack, data model, interfaces, how each criterion will be tested) → tasks (numbered, files named, [P] = can run in parallel, test task before its code task) → implement. Before implementing, check every acceptance criterion has a task and a test, and every task traces to a criterion.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** spec-kit · specification · constitution · tasks · sdd · مواصفات · خطة · مهام
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:PLAN-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `book-methods` · `business-workflows` · `capability-atlas` · `capability-mindmap` · `capability-runtime-router`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `PLAN-11` مراجعة الخطة كل مرحلة / Phase-boundary plan review (documented)
+- `PLAN-12` خطة تسليم بإيصال / Delivery plan with a receipt (documented)
+- `PLAN-14` عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا / Brainstorm, plan, then a test-first subagent per task (documented)
+
+### `PLAN-14` — عصف ثم خطة ثم وكيل لكل مهمة بالاختبار أولًا / Brainstorm, plan, then a test-first subagent per task
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `planning-execution` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/planning-execution.md)) |
+| المجموعة | التفكير والتخطيط والاستراتيجية (`thinking`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** صمّم بالأسئلة قبل الكود، واكتب خطة مهام صغيرة بملفاتها وطريقة تحققها، وأعطِ كل مهمة لوكيل فرعي جديد، وراجع بين المهام، ولا تقل «تم» قبل التحقق. — Design by questions before code, write a plan of small tasks with files and verification, give each task to a fresh subagent, review between tasks, and never say done before verifying.
+
+**متى:** تنفيذ برمجي من عدة خطوات بوكلاء / multi-step coding done with agents
+
+**كيف:** Brainstorm: ask one question at a time until the design is agreed; write it down. Plan: tasks of 2-5 minutes each, with exact file paths, the code shape and the command that proves it. Execute: one fresh subagent per task (clean context), red → green → refactor; a reviewer checks the diff against the plan before the next task. Finish: run the full suite and show the output before claiming completion.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** superpowers · brainstorming · writing plans · subagent · tdd · verification · عصف ذهني · خطة · اختبار أولًا
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `claude:tools` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:PLAN-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `architecture-sizer` · `book-methods` · `business-workflows` · `capability-atlas` · `capability-mindmap` · `capability-runtime-router`.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `PLAN-12` خطة تسليم بإيصال / Delivery plan with a receipt (documented)
+- `PLAN-13` تطوير يقوده المواصفات / Spec-driven development (documented)
 

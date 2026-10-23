@@ -2,6 +2,7 @@
  {
   "id": "DATA-01",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "اختيار المخطط حسب السؤال",
   "name_en": "Chart choice by analytical question",
   "status": "documented",
@@ -35,6 +36,7 @@
  {
   "id": "DATA-02",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "المسار أم الميل",
   "name_en": "Line path vs slope net-change",
   "status": "documented",
@@ -65,6 +67,7 @@
  {
   "id": "DATA-03",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "اختيار مخطط التوزيع",
   "name_en": "Distribution chart choice",
   "status": "documented",
@@ -95,6 +98,7 @@
  {
   "id": "DATA-04",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "رسم واحد لخلاصة واحدة وقوس القصة",
   "name_en": "One insight per chart & data story arc",
   "status": "documented",
@@ -126,6 +130,7 @@
  {
   "id": "DATA-05",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "صفر حقيقي ومقياس موحد",
   "name_en": "True-zero baseline & shared scale",
   "status": "documented",
@@ -158,6 +163,7 @@
  {
   "id": "DATA-06",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أمانة المقاييس: المساحة واللوغاريتم والتطبيع",
   "name_en": "Scale honesty: area, log, normalization",
   "status": "documented",
@@ -189,6 +195,7 @@
  {
   "id": "DATA-07",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أشكال ممنوعة أو خطرة",
   "name_en": "Forbidden and risky chart forms",
   "status": "documented",
@@ -222,6 +229,7 @@
  {
   "id": "DATA-08",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "قواعد الرسم الدائري",
   "name_en": "Pie rules",
   "status": "documented",
@@ -252,6 +260,7 @@
  {
   "id": "DATA-09",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "المفقود ليس صفرًا",
   "name_en": "Missing, zero and censored are different",
   "status": "documented",
@@ -282,6 +291,7 @@
  {
   "id": "DATA-10",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "لا أرقام مخترعة: مصدر أو «توضيحي»",
   "name_en": "No invented figures: source line or 'illustrative'",
   "status": "documented",
@@ -315,6 +325,7 @@
  {
   "id": "DATA-11",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "التسمية المباشرة بدل وسيلة الإيضاح",
   "name_en": "Direct labels over legends",
   "status": "documented",
@@ -346,6 +357,7 @@
  {
   "id": "DATA-12",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "الترتيب حسب القيمة ونسبة الأبعاد",
   "name_en": "Sort by value & aspect by task",
   "status": "documented",
@@ -375,6 +387,7 @@
  {
   "id": "DATA-13",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "البيانات المتحركة لها وزن واستمرارية",
   "name_en": "Data-in-motion weight & continuity",
   "status": "documented",
@@ -408,6 +421,7 @@
  {
   "id": "DATA-14",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ربط البيانات بقنوات الحركة",
   "name_en": "Mapping data to motion channels",
   "status": "documented",
@@ -440,6 +454,7 @@
  {
   "id": "DATA-15",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "قيمة واحدة تقود الشكل والرقم",
   "name_en": "One-scalar rule (no bar springs)",
   "status": "documented",
@@ -472,6 +487,7 @@
  {
   "id": "DATA-16",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "اتجاه المحاور في العربية",
   "name_en": "RTL chart axis conventions",
   "status": "documented",
@@ -504,6 +520,7 @@
  {
   "id": "DATA-17",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أحجام نصوص الرسوم",
   "name_en": "Chart type sizes",
   "status": "documented",
@@ -535,6 +552,7 @@
  {
   "id": "DATA-18",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "نبضة التمييز وهرمية التركيز",
   "name_en": "Highlight pulse & focus hierarchy",
   "status": "documented",
@@ -570,6 +588,7 @@
  {
   "id": "DATA-19",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "العدّاد التصاعدي بأرقام ثابتة العرض",
   "name_en": "Tabular count-up counter",
   "status": "proven",
@@ -618,6 +637,7 @@
  {
   "id": "DATA-20",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "قالب stat-counter: رقم مع حلقة",
   "name_en": "stat-counter template (count + drawn ring)",
   "status": "proven",
@@ -653,6 +673,7 @@
  {
   "id": "DATA-21",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "عداد الأسطوانة (أودوميتر)",
   "name_en": "Odometer digit roll",
   "status": "install",
@@ -697,6 +718,7 @@
  {
   "id": "DATA-22",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "العدّاد المتخلخل والوميض",
   "name_en": "Scramble / flicker counter",
   "status": "seen",
@@ -731,6 +753,7 @@
  {
   "id": "DATA-23",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "عدّاد يكبر مع قيمته ونبضة الهبوط",
   "name_en": "Count-up with growing scale & landing punch",
   "status": "install",
@@ -766,6 +789,7 @@
  {
   "id": "DATA-24",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ظهور الرقم بضبابية ورفع",
   "name_en": "Number pop-in with blur & lift",
   "status": "install",
@@ -802,6 +826,7 @@
  {
   "id": "DATA-25",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "تنسيق الأرقام المختصر والمحلي",
   "name_en": "Compact & locale number formatting",
   "status": "ready",
@@ -836,6 +861,7 @@
  {
   "id": "DATA-26",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "عدّاد يتلوّن مع تصاعد المشكلة",
   "name_en": "Threshold-colour escalation counter",
   "status": "seen",
@@ -870,6 +896,7 @@
  {
   "id": "DATA-27",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "عدّاد التكلفة التراكمي",
   "name_en": "Cost-stack accumulation counter",
   "status": "seen",
@@ -904,6 +931,7 @@
  {
   "id": "DATA-28",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "عدّادات HUD والسنوات والمسافة",
   "name_en": "HUD, year & distance counters",
   "status": "seen",
@@ -944,6 +972,7 @@
  {
   "id": "DATA-29",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "الرقم المنطوق يصبح حلقة ساعة",
   "name_en": "Spoken number → clock-ring motif",
   "status": "proven",
@@ -976,6 +1005,7 @@
  {
   "id": "DATA-30",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "شطب القيمة واستبدالها",
   "name_en": "Strike-and-replace value",
   "status": "seen",
@@ -1007,6 +1037,7 @@
  {
   "id": "DATA-31",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "حاسبة حيّة بشريط تمرير",
   "name_en": "Slider-driven live calculator",
   "status": "seen",
@@ -1041,6 +1072,7 @@
  {
   "id": "DATA-32",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أرقام KPI بتدرج أو نيون",
   "name_en": "Gradient-clipped & neon KPI numerals",
   "status": "ready",
@@ -1078,6 +1110,7 @@
  {
   "id": "DATA-33",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "عدّاد حي فوق اللقطات",
   "name_en": "Live stat over footage",
   "status": "seen",
@@ -1112,6 +1145,7 @@
  {
   "id": "DATA-34",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "كومة أرقام الضرر",
   "name_en": "MMO damage-number stack",
   "status": "seen",
@@ -1143,6 +1177,7 @@
  {
   "id": "DATA-35",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "نمو الأعمدة المتدرج",
   "name_en": "Staggered bar growth",
   "status": "install",
@@ -1184,6 +1219,7 @@
  {
   "id": "DATA-36",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أعمدة أفقية مرتبة مع تمييز واحد",
   "name_en": "Ranked horizontal bars with one highlight",
   "status": "ready",
@@ -1219,6 +1255,7 @@
  {
   "id": "DATA-37",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "سباق الأعمدة",
   "name_en": "Bar-chart race",
   "status": "install",
@@ -1258,6 +1295,7 @@
  {
   "id": "DATA-38",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أعمدة مجمّعة أو مكدّسة مع خط",
   "name_en": "Grouped / stacked columns + line",
   "status": "ready",
@@ -1289,6 +1327,7 @@
  {
   "id": "DATA-39",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مخطط الشلال (الجسر)",
   "name_en": "Waterfall / bridge chart",
   "status": "ready",
@@ -1321,6 +1360,7 @@
  {
   "id": "DATA-40",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "شريط النسب المقسّم (كبسولة)",
   "name_en": "Proportional split bar (segmented pill)",
   "status": "seen",
@@ -1354,6 +1394,7 @@
  {
   "id": "DATA-41",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "زووم لوغاريتمي داخل شريحة",
   "name_en": "Log-domain zoom into a slice",
   "status": "seen",
@@ -1385,6 +1426,7 @@
  {
   "id": "DATA-42",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أعمدة بفترات ثقة",
   "name_en": "Bars with interval whiskers",
   "status": "seen",
@@ -1417,6 +1459,7 @@
  {
   "id": "DATA-43",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مقاييس وأشرطة تقدم بلون الحكم",
   "name_en": "Verdict-coloured meters & RTL-safe progress",
   "status": "ready",
@@ -1450,6 +1493,7 @@
  {
   "id": "DATA-44",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أشرطة مقسّمة إلى خانات",
   "name_en": "Segmented / dotted meters",
   "status": "seen",
@@ -1492,6 +1536,7 @@
  {
   "id": "DATA-45",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "سباق المقارنة والسرعة",
   "name_en": "Speed / latency comparison race",
   "status": "seen",
@@ -1529,6 +1574,7 @@
  {
   "id": "DATA-46",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "لوحة احتمالات الكلمة التالية",
   "name_en": "Next-token probability panel",
   "status": "seen",
@@ -1563,6 +1609,7 @@
  {
   "id": "DATA-47",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ترتيب يتغير والقوائم المرتبة",
   "name_en": "Rank swap & ranked lists",
   "status": "seen",
@@ -1599,6 +1646,7 @@
  {
   "id": "DATA-48",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مخطط أعمدة دائري / شعاعي",
   "name_en": "Radial / clockwise bar chart",
   "status": "idea",
@@ -1629,6 +1677,7 @@
  {
   "id": "DATA-49",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "المضاعفات الصغيرة",
   "name_en": "Small multiples",
   "status": "documented",
@@ -1659,6 +1708,7 @@
  {
   "id": "DATA-50",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "خط يُرسم مع مساحة ونقاط تقفز",
   "name_en": "Line draw-on with area fade & dot pops",
   "status": "proven",
@@ -1698,6 +1748,7 @@
  {
   "id": "DATA-51",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "خط يرسمه رأس قلم يحمل العدّاد",
   "name_en": "Pen-tip counter line",
   "status": "ready",
@@ -1735,6 +1786,7 @@
  {
   "id": "DATA-52",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "منحنى ناعم في Remotion",
   "name_en": "Remotion smooth cubic line",
   "status": "install",
@@ -1768,6 +1820,7 @@
  {
   "id": "DATA-53",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مؤشر قراءة متحرك على المخطط",
   "name_en": "Chart scrub readout (playhead)",
   "status": "install",
@@ -1807,6 +1860,7 @@
  {
   "id": "DATA-54",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "خط/مساحة مع مؤشر تقاطع",
   "name_en": "SKCharts line/area with crosshair",
   "status": "ready",
@@ -1837,6 +1891,7 @@
  {
   "id": "DATA-55",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "الخطوط المصغرة",
   "name_en": "Sparklines & micro-charts",
   "status": "proven",
@@ -1874,6 +1929,7 @@
  {
   "id": "DATA-56",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "صعود ثم انهيار",
   "name_en": "Rise-then-crash line metaphor",
   "status": "install",
@@ -1912,6 +1968,7 @@
  {
   "id": "DATA-57",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "الشموع وشريط الأسعار",
   "name_en": "Candlesticks & price ticker",
   "status": "seen",
@@ -1947,6 +2004,7 @@
  {
   "id": "DATA-58",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "طبقة التعليقات والإبراز",
   "name_en": "Annotation & highlight layer",
   "status": "ready",
@@ -1981,6 +2039,7 @@
  {
   "id": "DATA-59",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "تحوّل المخططات",
   "name_en": "Chart morph (bars → donut / line / scatter)",
   "status": "install",
@@ -2020,6 +2079,7 @@
  {
   "id": "DATA-60",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "رسم بياني بخط اليد",
   "name_en": "Hand-drawn axis plot",
   "status": "seen",
@@ -2056,6 +2116,7 @@
  {
   "id": "DATA-61",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مروحة مونت كارلو وعدم اليقين",
   "name_en": "Monte Carlo fan & uncertainty",
   "status": "seen",
@@ -2089,6 +2150,7 @@
  {
   "id": "DATA-62",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "هيستوغرام نقاط يصير منحنى جرس",
   "name_en": "Dot histogram resolving to a bell curve",
   "status": "seen",
@@ -2125,6 +2187,7 @@
  {
   "id": "DATA-63",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "رسم الدوال والمشتقة حيًّا",
   "name_en": "Live function & derivative tracer",
   "status": "seen",
@@ -2161,6 +2224,7 @@
  {
   "id": "DATA-64",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "راكب على خط المخطط",
   "name_en": "Glyph riding the chart path",
   "status": "seen",
@@ -2195,6 +2259,7 @@
  {
   "id": "DATA-65",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "حقل خطوط الجبال",
   "name_en": "Ridge-line wave field",
   "status": "seen",
@@ -2228,6 +2293,7 @@
  {
   "id": "DATA-66",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مبعثر الحد الفعّال",
   "name_en": "Scatter with frontier curve",
   "status": "seen",
@@ -2260,6 +2326,7 @@
  {
   "id": "DATA-67",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "حلقة التقدم المخروطية",
   "name_en": "Conic-gradient progress ring",
   "status": "ready",
@@ -2293,6 +2360,7 @@
  {
   "id": "DATA-68",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "دونات بخدعة المحيط 100",
   "name_en": "Donut via r = 15.915 dasharray",
   "status": "ready",
@@ -2324,6 +2392,7 @@
  {
   "id": "DATA-69",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مسح الدائرة بزاوية واحدة",
   "name_en": "Pie sweep (one eased angle)",
   "status": "documented",
@@ -2352,6 +2421,7 @@
  {
   "id": "DATA-70",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "دونات متوهجة مع قائمة",
   "name_en": "Glowing donut with legend",
   "status": "seen",
@@ -2384,6 +2454,7 @@
  {
   "id": "DATA-71",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "حلقة قياس مع عدّاد متزامن",
   "name_en": "Arc gauge with synced counter",
   "status": "install",
@@ -2427,6 +2498,7 @@
  {
   "id": "DATA-72",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مقاييس HUD الدائرية",
   "name_en": "HUD radial gauges",
   "status": "seen",
@@ -2461,6 +2533,7 @@
  {
   "id": "DATA-73",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مقياس السائل والمنسوب",
   "name_en": "Liquid-fill & level gauges",
   "status": "seen",
@@ -2500,6 +2573,7 @@
  {
   "id": "DATA-74",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "تعبئة النجوم والتقييم",
   "name_en": "Star-rating fill",
   "status": "install",
@@ -2534,6 +2608,7 @@
  {
   "id": "DATA-75",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "رادار المسح",
   "name_en": "Radar sweep with pings",
   "status": "seen",
@@ -2569,6 +2644,7 @@
  {
   "id": "DATA-76",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "نصف دائرة البرلمان وحلقة النقاط",
   "name_en": "Parliament hemicycle & dot ring",
   "status": "seen",
@@ -2603,6 +2679,7 @@
  {
   "id": "DATA-77",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مخطط الوافل: 100 نقطة",
   "name_en": "Waffle — 100 dots with synced percent",
   "status": "seen",
@@ -2642,6 +2719,7 @@
  {
   "id": "DATA-78",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مصفوفة الوحدات: نقطة لكل عنصر",
   "name_en": "Unit dot matrix (one dot per item)",
   "status": "seen",
@@ -2675,6 +2753,7 @@
  {
   "id": "DATA-79",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مقياس إلى شيء مألوف",
   "name_en": "Scale to a familiar object",
   "status": "documented",
@@ -2706,6 +2785,7 @@
  {
   "id": "DATA-80",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "خريطة حرارية تقويمية",
   "name_en": "Calendar heatmap grid",
   "status": "ready",
@@ -2742,6 +2822,7 @@
  {
   "id": "DATA-81",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "خريطة المخاطر 3×3 بأربع درجات",
   "name_en": "3×3 risk heatmap with 4-step scale",
   "status": "ready",
@@ -2773,6 +2854,7 @@
  {
   "id": "DATA-82",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "جدول حرارة الصفوف × الأعمدة",
   "name_en": "Matrix intensity table",
   "status": "ready",
@@ -2802,6 +2884,7 @@
  {
   "id": "DATA-83",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مخطط بنفورد للرقم الأول",
   "name_en": "Benford first-digit chart",
   "status": "proven",
@@ -2834,6 +2917,7 @@
  {
   "id": "DATA-84",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "جدول يتكشف صفًّا صفًّا",
   "name_en": "Progressive table & status pills",
   "status": "seen",
@@ -2867,6 +2951,7 @@
  {
   "id": "DATA-85",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "تشريح بطاقة المؤشر",
   "name_en": "KPI card anatomy",
   "status": "documented",
@@ -2899,6 +2984,7 @@
  {
   "id": "DATA-86",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ثلاثية بطاقات الأرقام والإثبات",
   "name_en": "Stat-tile trio & proof cards",
   "status": "seen",
@@ -2948,6 +3034,7 @@
  {
   "id": "DATA-87",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "افتتاحية الرقم البطل",
   "name_en": "Hero-number opener card",
   "status": "seen",
@@ -2987,6 +3074,7 @@
  {
   "id": "DATA-88",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "سجل HyperFrames للبيانات",
   "name_en": "HyperFrames data registry (components & blocks)",
   "status": "install",
@@ -3023,6 +3111,7 @@
  {
   "id": "DATA-89",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مخططات مشاهد البيانات في HyperFrames",
   "name_en": "HyperFrames data blueprints & categories",
   "status": "documented",
@@ -3058,6 +3147,7 @@
  {
   "id": "DATA-90",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ستايل الإنفوجرافيك بأسلوب أبل",
   "name_en": "Keynote infographic style",
   "status": "seen",
@@ -3094,6 +3184,7 @@
  {
   "id": "DATA-91",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ستايل البيانات المتحركة الداكن",
   "name_en": "Data-in-Motion dark style",
   "status": "documented",
@@ -3125,6 +3216,7 @@
  {
   "id": "DATA-92",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "لوحات ألوان الرسوم",
   "name_en": "Chart palettes (categorical, sequential, semantic)",
   "status": "proven",
@@ -3160,6 +3252,7 @@
  {
   "id": "DATA-93",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "رموز بطاقات البيانات التقنية",
   "name_en": "Tech-doc data-card tokens",
   "status": "documented",
@@ -3189,6 +3282,7 @@
  {
   "id": "DATA-94",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "لوحة التوأم الإنشائي",
   "name_en": "Structural-twin dashboard & utilisation ramp",
   "status": "proven",
@@ -3223,6 +3317,7 @@
  {
   "id": "DATA-95",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "ملف إكسل برسوم أصلية",
   "name_en": "Excel workbook with native charts",
   "status": "proven",
@@ -3257,6 +3352,7 @@
  {
   "id": "DATA-96",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مكتبات الرسوم كإطارات فيديو",
   "name_en": "Chart libraries as video frames",
   "status": "install",
@@ -3293,6 +3389,7 @@
  {
   "id": "DATA-97",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مشاهد بسمة للبيانات وقوالب أفلامها",
   "name_en": "Basma chart scenes & data-film templates",
   "status": "key",
@@ -3329,6 +3426,7 @@
  {
   "id": "DATA-98",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "إنفوجرافيك مولَّد مستند إلى بحث",
   "name_en": "Search-grounded infographic generation",
   "status": "key",
@@ -3360,6 +3458,7 @@
  {
   "id": "DATA-99",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "مشاهد السرد بالتمرير كبيانات",
   "name_en": "Scrollytelling scenes as data",
   "status": "documented",
@@ -3389,6 +3488,7 @@
  {
   "id": "DATA-100",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "تخطيطات إنفوجرافيك العمليات",
   "name_en": "Process infographic layouts",
   "status": "documented",
@@ -3419,6 +3519,7 @@
  {
   "id": "DATA-101",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "الخطوط الزمنية المتحركة",
   "name_en": "Animated timelines & Gantt traces",
   "status": "seen",
@@ -3459,6 +3560,7 @@
  {
   "id": "DATA-102",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "الشبكات والمحاور والأقواس",
   "name_en": "Networks, hubs & brackets",
   "status": "install",
@@ -3499,6 +3601,7 @@
  {
   "id": "DATA-103",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أدوات التحليل الخلفية",
   "name_en": "Analysis back-office skills",
   "status": "documented",
@@ -3534,6 +3637,7 @@
  {
   "id": "DATA-104",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "تقاطع فن والأشرطة الطيفية",
   "name_en": "Venn overlap & spectrum indicator",
   "status": "seen",
@@ -3570,6 +3674,7 @@
  {
   "id": "DATA-105",
   "family": "charts-data-infographic",
+  "domain": "motion",
   "name_ar": "أيقونة مخطط أعمدة",
   "name_en": "Mini bar-chart hero icon",
   "status": "ready",

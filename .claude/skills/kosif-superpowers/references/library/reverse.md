@@ -1,6 +1,6 @@
 # التحليل العكسي وفحص البرامج — Reverse engineering (`reverse`)
 
-> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -32,13 +32,13 @@
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
-| `atlas-bulk-source-audit` | ????? ???? ?????? ???? | `python3 scripts/atlas_bulk_source_audit.py --help` | untested |
-| `atlas-capability-miner` | ???? ????? ???? | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
-| `atlas-deep-fusion` | ????? ??? ???? | `python3 scripts/atlas_deep_fusion.py --help` | untested |
-| `atlas-review-summary` | ???? ?????? ???? | `python3 scripts/atlas_review_summary.py --help` | untested |
-| `atlas-reviewed-methods-v3` | ??? ???? ???????? | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
-| `atlas-task-method-router` | ????? ???? ???? | `python3 scripts/atlas_task_method_router.py --help` | untested |
-| `atlas-transfer` | ??? ??? ???? | `python3 scripts/atlas_transfer.py --help` | untested |
+| `atlas-bulk-source-audit` | تدقيق نصوص مصادر الأطلس | `python3 scripts/atlas_bulk_source_audit.py --help` | untested |
+| `atlas-capability-miner` | منقّب قدرات الأطلس من البيانات الوصفية | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
+| `atlas-deep-fusion` | منتقي مناهج الأطلس للقراءة فقط | `python3 scripts/atlas_deep_fusion.py --help` | untested |
+| `atlas-review-summary` | ملخص مراجعة الأطلس | `python3 scripts/atlas_review_summary.py --help` | untested |
+| `atlas-reviewed-methods-v3` | مناهج الأطلس المراجَعة | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
+| `atlas-task-method-router` | موجّه مناهج الأطلس حسب المهمة | `python3 scripts/atlas_task_method_router.py --help` | untested |
+| `atlas-transfer` | نقل مناهج الأطلس المثبتة | `python3 scripts/atlas_transfer.py --help` | untested |
 | `blender-api-audit` | تدقيق واجهة بايثون في Blender | `python3 scripts/blender_api_audit.py --help` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
@@ -49,6 +49,7 @@
 | `rea-family-router` | موجّه عائلات REA | `python3 scripts/rea_family_router.py list` | tested-here |
 | `rea-owned-repo-batch` | تحليل REA لمستودعات المالك دفعةً واحدة | `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000` | untested |
 | `rea-superpowers-map` | خريطة سوبر باور بمنهج REA | `python3 scripts/rea_superpowers_map.py build` | tested-here |
+| `repo-map` | خريطة المستودع | `python3 scripts/repo_map.py map scripts --budget 3000 --focus prompt` | tested-here |
 | `repository-capability-packer` | فحص المستودعات وحزمها | `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json` | tested-here |
 | `web-app-study` | دراسة تطبيق ويب عام بـ REA (حقائق فقط) | `python3 scripts/web_app_study.py doctor` | tested-here |
 

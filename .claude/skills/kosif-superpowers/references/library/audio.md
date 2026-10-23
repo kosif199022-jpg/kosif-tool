@@ -1,6 +1,6 @@
 # الصوت والموسيقى والتعليق — Audio & voice (`audio`)
 
-> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -37,6 +37,7 @@
 |---|---|---|---|
 | `audio-cue-mapper` | مستخرج إشارات التوقيت من الصوت | `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json` | tested-here |
 | `blender-cinematic-bridge` | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت | `python3 scripts/blender_cinematic_bridge.py doctor` | tested-here |
+| `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `character-fullbody` | تحريك الشخصية بكامل الجسم | `python3 scripts/character_fullbody.py doctor` | tested-here |
 | `character-ik` | تحريك ذراع الشخصية بالحركية العكسية | `python3 scripts/character_ik.py doctor` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
@@ -44,6 +45,7 @@
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `creative-reasoning-bridge` | جسر الصوت إلى لوحة القصة | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto --out ./out/scene.json --report ./out/decision.json` | tested-here |
 | `dua-wednesday` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | `python3 scripts/dua_wednesday.py doctor` | tested-here |
+| `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `kosif-timeline` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | `python3 scripts/kosif_timeline.py doctor` | tested-here |
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |
 | `motion-director` | مُصرِّف حركة SVG المتزامنة مع الصوت | `python3 scripts/motion_director.py doctor` | tested-here |
@@ -55,6 +57,7 @@
 | `repo-words-convert` | محوّل الترجمات إلى توقيت الكلمات | `python3 tools/words_convert.py ./captions.srt ./words.json` | tested-here |
 | `starter-html-canvas` | قالب فيلم HTML Canvas | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `starter-remotion` | قالب فيلم Remotion | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | tested-elsewhere |
+| `tts-script` | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30` | tested-here |
 | `unified-cinematic` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `video-workflow-bridge` | جسر سير عمل الفيديو | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |
 
@@ -405,7 +408,7 @@
 | `BEAT-129` | محلل شبكة الإيقاع | Beat-grid analyzer (audiomap.json) | install | pip:numpy, pip:librosa, pip:soundfile |
 | `BEAT-130` | حركات إيقاعية موثقة فقط | Beat motion primitives without demo folders | install |  |
 | `BEAT-131` | مساعدات مدة الإطار ومستوى الموسيقى | Pad frame duration and BGM volume helpers | install | node |
-| `BEAT-132` | الصوت يحرك الصورة | Sound-driven picture | install |  |
+| `BEAT-132` | الصوت يحرك الصورة | Sound-driven picture | install | npm:three |
 | `BEAT-133` | وادٍ من المخطط الطيفي | Spectrogram canyon (sound as terrain) | install |  |
 | `BEAT-134` | ساعة شبكة إيقاع لفيلم كامل | Beat-grid clock for a whole film | install |  |
 | `BEAT-135` | توقف الشريط ووقت الرصاصة ولمسات الخلل | Tape-stop bullet time and glitch accents | install |  |
@@ -451,7 +454,7 @@
 | `SYNC-14` | تفريغ سحابي مع فصل المتحدثين | Cloud STT with diarisation | key | pip:faster-whisper, key:elevenlabs, key:unspecified, pip:pyannote |
 | `BEAT-161` | توليد مؤثرات صوتية من وصف نصي | Text-to-sound-effects generation | key | key:elevenlabs |
 | `BEAT-162` | مكتبة مؤثرات صوتية | SFX library by URL | key | npm:remotion, key:unspecified |
-| `BEAT-163` | توليد مؤثرات صوتية من نص | Text-to-SFX generation | key | pip:numpy, key:elevenlabs, key:unspecified |
+| `BEAT-163` | توليد مؤثرات صوتية من نص | Text-to-SFX generation | key | pip:numpy, key:elevenlabs |
 | `BEAT-164` | خطة تأليف موسيقى ElevenLabs | ElevenLabs Music composition plan | key | key:elevenlabs |
 | `BEAT-165` | الكلمات داخل أقسام الخطة فقط | Lyrics only via plan sections | key | key:unspecified |
 | `BEAT-166` | برومبت الأسلوب السداسي في Suno | Suno six-layer style prompt | key | key:video-gen |

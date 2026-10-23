@@ -6,9 +6,9 @@ Run from any directory:
   python scripts/smart_capabilities.py verify
   python scripts/smart_capabilities.py groups
   python scripts/smart_capabilities.py find "رسم خطوط وأشكال" --json
-  python scripts/smart_capabilities.py library          # references/library/: one routing chapter per group (USIP v5.5, A28)
+  python scripts/smart_capabilities.py library          # references/library/: one routing chapter per group (USIP v5.6, A28)
   python scripts/smart_capabilities.py library-check    # exit 1 when references/library/ is stale
-  python scripts/smart_capabilities.py cards [--single FILE]   # usip-library/ (repo root): a protocol card per power and tool (USIP v5.5)
+  python scripts/smart_capabilities.py cards [--single FILE]   # usip-library/ (repo root): a protocol card per power and tool (USIP v5.6)
   python scripts/smart_capabilities.py cards-check      # exit 1 when usip-library/ is stale
 
 Catalog classification is an information architecture, NOT proof that separate
@@ -223,7 +223,7 @@ def library_pages(index):
         heads = ["متى تستخدم هذه المجموعة / when", "الحالة بالأرقام / status", "الأدوات القابلة للتشغيل / runnable tools",
                  "العائلات / families", "كل القدرات / every power"]
         L = [f"# {g['ar']} — {g['en']} (`{g['id']}`)", "",
-             f"> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. "
+             f"> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. "
              f"الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)",
              "", "## الفهرس / contents", ""]
         L += [f"- [{h}](#{_slug(h)})" for h in heads]
@@ -255,7 +255,7 @@ def library_pages(index):
         rows.append((g, len(tools), len(L) + 1))
     total_lines = sum(r[2] for r in rows)
     heads = ["كيف تستخدمها / how to use", "المجموعات / groups", "من أي محادثة / from any chat"]
-    I = ["# مكتبة البروتوكول — USIP v5.5 protocol library", "",
+    I = ["# مكتبة البروتوكول — USIP v5.6 protocol library", "",
          f"> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. {index['catalog_powers']:,} قدرة في {index['family_count']} عائلة و{index['group_count']} مجموعة، "
          f"و{len(reg['tools'])} أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)",
          "", "## الفهرس / contents", ""]

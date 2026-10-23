@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (25 أداة)
+# أدوات المجال `discover` (26 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -94,7 +94,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-5000 --evidence <ملف>`.
 
-### `atlas-capability-miner` — ???? ????? ???? / Atlas metadata capability miner
+### `atlas-capability-miner` — منقّب قدرات الأطلس من البيانات الوصفية / Atlas metadata capability miner
 
 | الحقل | القيمة |
 |---|---|
@@ -103,7 +103,7 @@
 | الدليل | `tested-here` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ???? ????? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يفهرس البيانات الوصفية لمهارات الأطلس الخارجية أو يستعلم عنها، مع مسار REA اختياري؛ وجود المصدر ليس دليل تشغيل.
 
 **What it does:** Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof.
 
@@ -111,7 +111,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «طلّع القدرات المفيدة من بيانات مهارات الأطلس»
+- «ابحث في فهرس الأطلس عن مهارات تناسب طلبي»
 
 #### الأوامر
 
@@ -185,7 +186,7 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-ledger --evidence <ملف>`.
 
-### `atlas-task-method-router` — ????? ???? ???? / Atlas task method router
+### `atlas-task-method-router` — موجّه مناهج الأطلس حسب المهمة / Atlas task method router
 
 | الحقل | القيمة |
 |---|---|
@@ -194,7 +195,7 @@
 | الدليل | `untested` |
 | العائلات | `software-investigation` |
 
-**ما تفعله:** ????? ???? ????? ?????? ????? ?? ???? ????? ??? ???????.
+**ما تفعله:** يجد مناهج مرشحة من الأطلس مدعومة بالمصادر لمهمة ما دون تشغيل كودها.
 
 **What it does:** Finds source-backed Atlas method candidates for a task without executing their code.
 
@@ -202,7 +203,8 @@
 
 - «Review documented Atlas or Blender capabilities»
 - «Inspect relevant tool arguments before running»
-- «????? ??????? ???????? ?? ???????»
+- «إيه مناهج الأطلس المناسبة للمهمة دي؟»
+- «وجّهني لمنهج من الأطلس يحل المشكلة دي»
 
 #### الأوامر
 
@@ -540,9 +542,9 @@
 - **recall**: Read-only: returns only explicitly approved, allowlisted structural graphs for the named output kind.
   - `python3 scripts/fusionforge_shared.py recall --kind video`
 - **review-template**: Prints the independent privacy/security/QA and baseline comparison review template without approving.
-  - `python3 scripts/fusionforge_shared.py review-template --signature <sha256>`
+  - `python3 scripts/fusionforge_shared.py review-template --signature "$SIG"`
 - **approve**: Writes a sanitized graph into the project-local shared registry only after independent test, review and security gates.
-  - `python3 scripts/fusionforge_shared.py approve --signature <sha256>`
+  - `python3 scripts/fusionforge_shared.py approve --signature "$SIG"`
 
 #### المتطلبات والأمان
 
@@ -755,6 +757,52 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:local-first --evidence <ملف>`.
+
+### `micro-index` — الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/micro_index.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery` |
+
+**ما تفعله:** يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة.
+
+**What it does:** Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.
+
+#### متى تُستدعى
+
+- «اعرض لي الفهرس الدقيق لكل القدرات»
+- «فين القدرة دي وإيه الأدوات اللي معاها»
+- «Find every power, tool and superpower about loudness»
+- «Show SP-0042 with its members and links»
+
+#### الأوامر
+
+- **build**: Writes data/micro_index.json and the pages under references/micro-index/; --check writes nothing and exits 1 when stale.
+  - `python3 scripts/micro_index.py build`
+- **find**: Ranked one-line matches across powers, tools and superpowers; --kind narrows, --json for machines.
+  - `python3 scripts/micro_index.py find "قص على الإيقاع" --top 10`
+- **show**: One id (power, TOOL-NN, tool id or SP-NNNN) with its superpower, family tools, chapter, card, members or links.
+  - `python3 scripts/micro_index.py show SP-0001`
+- **stats**: Counts per kind, status and group.
+  - `python3 scripts/micro_index.py stats`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: build writes only its own generated files; find, show and stats only read.
+- الحدود: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_micro_index.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/micro-index/README.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:micro-index --evidence <ملف>`.
 
 ### `owned-repos` — خريطة مستودعات المالك وخريطة المهارات / Owned-repositories map and skill map
 

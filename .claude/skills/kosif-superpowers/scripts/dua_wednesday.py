@@ -509,6 +509,41 @@ def run(cmd, **kw):
     return subprocess.run(cmd, check=True, **kw)
 
 
+class CommandError(Exception):
+    """A user-facing failure: main() prints it as one JSON line and exits 2 (no traceback)."""
+
+    def __init__(self, payload: dict):
+        super().__init__(payload.get("error") or payload.get("status"))
+        self.payload = payload
+
+
+def fail(cmd: str, error: str, **extra):
+    raise CommandError({"cmd": cmd, "status": "error", "error": error, **extra})
+
+
+def require(cmd: str, modules=(), tools=()):
+    """Fail with {"status": "missing_requirements", ...} (like app_studio.py) when a module or binary is absent."""
+    import importlib.util
+    miss = []
+    for m in modules:
+        try:
+            found = importlib.util.find_spec(m) is not None
+        except (ImportError, ValueError):
+            found = False
+        if not found:
+            miss.append(m)
+    miss += [t for t in tools if not shutil.which(t)]
+    if miss:
+        raise CommandError({"cmd": cmd, "status": "missing_requirements", "missing": miss})
+
+
+def require_file(cmd: str, path, what: str):
+    f = Path(path)
+    if not f.is_file():
+        fail(cmd, f"{what} not found: {path}", path=str(path))
+    return f
+
+
 def cmd_doctor(a):
     rows = [("ffmpeg", bool(shutil.which("ffmpeg"))), ("ffprobe", bool(shutil.which("ffprobe"))), ("node", bool(shutil.which("node")))]
     for mod in ("numpy", "cv2", "faster_whisper", "yt_dlp"):
@@ -552,15 +587,31 @@ def cmd_fetch(a):
 
 def cmd_caption_times(a):
     """On-screen caption onsets of a reference reel: white-text coverage change in a horizontal band."""
+    require("caption-times", modules=("numpy",), tools=("ffprobe", "ffmpeg"))
     import numpy as np
-    y0, y1 = (float(v) for v in a.band.split(":"))
-    probe = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v", "-show_entries", "stream=width,height",
-                                       "-of", "json", a.video], capture_output=True, text=True).stdout)["streams"][0]
-    w, h = probe["width"], probe["height"]
+    try:
+        y0, y1 = (float(v) for v in a.band.split(":"))
+    except ValueError:
+        fail("caption-times", f"--band must be TOP:BOTTOM fractions, got {a.band!r}")
+    if not 0 <= y0 < y1 <= 1:
+        fail("caption-times", f"--band must satisfy 0 <= top < bottom <= 1, got {a.band!r}")
+    require_file("caption-times", a.video, "video")
+    pr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v", "-show_entries", "stream=width,height",
+                         "-of", "json", a.video], capture_output=True, text=True)
+    try:
+        streams = json.loads(pr.stdout or "{}").get("streams") or []
+    except json.JSONDecodeError:
+        streams = []
+    if pr.returncode != 0 or not streams or not streams[0].get("width") or not streams[0].get("height"):
+        fail("caption-times", "ffprobe found no readable video stream", path=a.video,
+             ffprobe_rc=pr.returncode, detail=(pr.stderr or "").strip()[:200])
+    w, h = streams[0]["width"], streams[0]["height"]
     by0, bh = int(h * y0), int(h * (y1 - y0))
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", a.video, "-vf", f"fps=10,crop={w}:{bh}:0:{by0},scale=480:60,format=gray",
                           "-f", "rawvideo", "-"], capture_output=True).stdout
-    frames = np.frombuffer(raw, np.uint8).reshape(-1, 60, 480)
+    if not raw:
+        fail("caption-times", "ffmpeg decoded no frames", path=a.video)
+    frames = np.frombuffer(raw, np.uint8)[: len(raw) // (60 * 480) * 60 * 480].reshape(-1, 60, 480)
     m = frames > 235
     cov = m.mean(axis=(1, 2))
     onsets, on = [], False
@@ -573,9 +624,11 @@ def cmd_caption_times(a):
 
 
 def cmd_asr(a):
+    require("asr", modules=("numpy", "faster_whisper"), tools=("ffmpeg",))
+    job = Path(a.job)
+    require_file("asr", job / "voice.m4a", "voice track (run fetch first)")
     import numpy as np
     from faster_whisper import WhisperModel
-    job = Path(a.job)
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", str(job / "voice.m4a"), "-ac", "1", "-ar", "16000", "-f", "f32le", "-"],
                          capture_output=True).stdout
     audio = np.frombuffer(raw, np.float32)
@@ -627,18 +680,31 @@ def cmd_init(a):
     print(f"→ {dst}  (edit title, date_line, subtitle, lines, shots)")
 
 
+def ffmpeg_checked(cmd: str, argv, src):
+    pr = subprocess.run(argv, capture_output=True, text=True)
+    if pr.returncode != 0:
+        fail(cmd, "ffmpeg failed", input=str(src), ffmpeg_rc=pr.returncode, detail=(pr.stderr or "").strip()[-300:])
+
+
 def cmd_prep(a):
     """Licensed clips → 1080×1920 30 fps mezzanine. SRC[:X] where X is the crop's left edge in source pixels."""
-    job = Path(a.job); (job / "v").mkdir(parents=True, exist_ok=True)
-    for i, spec in enumerate(a.clips):
+    require("prep", tools=("ffmpeg",))
+    specs = []
+    for spec in a.clips:
         src, x = spec, ""
         if ":" in spec and spec.rsplit(":", 1)[1].isdigit():
             src, x = spec.rsplit(":", 1)
+        specs.append((src, x))
+    missing = [src for src, _ in specs if not Path(src).is_file()]
+    if missing:
+        fail("prep", "source clip(s) not found", missing=missing)
+    job = Path(a.job); (job / "v").mkdir(parents=True, exist_ok=True)
+    for i, (src, x) in enumerate(specs):
         xexpr = x if x else "(iw-ow)/2"
         out = job / "v" / f"{i:02d}.mp4"
-        run(["ffmpeg", "-y", "-v", "error", "-i", src, "-t", str(a.seconds), "-an", "-vf",
+        ffmpeg_checked("prep", ["ffmpeg", "-y", "-v", "error", "-i", src, "-t", str(a.seconds), "-an", "-vf",
              f"crop='min(iw,ih*9/16)':ih:{xexpr}:0,scale=1080:1920:flags=lanczos,unsharp=5:5:0.7:5:5:0,fps=30",
-             "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-g", "15", str(out)])
+             "-c:v", "libx264", "-crf", "14", "-preset", "fast", "-g", "15", str(out)], src)
         print(f"{src} → {out}")
 
 
@@ -651,8 +717,10 @@ def cmd_sprites(a):
 
 
 def cmd_stills(a):
-    import cv2
+    require("stills", modules=("numpy", "cv2"))
     job = Path(a.job)
+    require_file("stills", job / "project.json", "project.json (run init first)")
+    import cv2
     eng = Engine(job, load_project(job))
     (job / "stills").mkdir(exist_ok=True)
     for t in (float(x) for x in a.t.split(",")):
@@ -674,7 +742,9 @@ def cmd_render_chunk(a):
 
 def cmd_render(a):
     import os
+    require("render", modules=("numpy", "cv2"), tools=("ffmpeg", "ffprobe"))
     job = Path(a.job)
+    require_file("render", job / "project.json", "project.json (run init first)")
     p = load_project(job)
     n = int(round(p["duration"] * p["fps"]))
     out = job / "out"; out.mkdir(exist_ok=True)
@@ -734,9 +804,14 @@ def main(argv=None):
     s.add_argument("--job", required=True); s.add_argument("--workers", type=int, default=4)
     s = sub.add_parser("_chunk"); s.add_argument("--job"); s.add_argument("--range"); s.add_argument("--out")
     a = ap.parse_args(argv)
-    {"doctor": cmd_doctor, "fetch": cmd_fetch, "caption-times": cmd_caption_times, "asr": cmd_asr, "init": cmd_init,
-     "prep": cmd_prep, "sprites": cmd_sprites, "stills": cmd_stills, "render": cmd_render, "_chunk": cmd_render_chunk}[a.cmd](a)
+    try:
+        {"doctor": cmd_doctor, "fetch": cmd_fetch, "caption-times": cmd_caption_times, "asr": cmd_asr, "init": cmd_init,
+         "prep": cmd_prep, "sprites": cmd_sprites, "stills": cmd_stills, "render": cmd_render, "_chunk": cmd_render_chunk}[a.cmd](a)
+    except CommandError as exc:
+        print(json.dumps(exc.payload, ensure_ascii=False))
+        return 2
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5512
+   "count": 5728
   },
   {
    "id": "dom:motion",
@@ -28,10 +28,10 @@
    "label": "3D & spatial",
    "ar": "الأبعاد الثلاثية",
    "prefix": "3D",
-   "count": 52,
+   "count": 53,
    "proven": 2,
    "status": {
-    "documented": 8,
+    "documented": 9,
     "ready": 24,
     "seen": 11,
     "install": 4,
@@ -68,15 +68,6 @@
    "req_kind": "npm"
   },
   {
-   "id": "req:npm:remotion",
-   "kind": "requirement",
-   "label": "npm:remotion",
-   "ar": "فيديو برمجي بـ React",
-   "en": "programmatic video in React",
-   "install": "npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3 people)",
-   "req_kind": "npm"
-  },
-  {
    "id": "req:chromium",
    "kind": "requirement",
    "label": "chromium",
@@ -84,6 +75,15 @@
    "en": "capture HTML scenes frame by frame; observe pages",
    "install": "npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)",
    "req_kind": "bin"
+  },
+  {
+   "id": "req:npm:remotion",
+   "kind": "requirement",
+   "label": "npm:remotion",
+   "ar": "فيديو برمجي بـ React",
+   "en": "programmatic video in React",
+   "install": "npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3 people)",
+   "req_kind": "npm"
   },
   {
    "id": "req:npm:react",
@@ -123,13 +123,14 @@
    "label": "Agent orchestration",
    "ar": "تنسيق الوكلاء",
    "prefix": "AGENT",
-   "count": 46,
+   "count": 55,
    "proven": 1,
    "status": {
-    "documented": 41,
+    "documented": 49,
     "key": 1,
     "install": 3,
-    "proven": 1
+    "proven": 1,
+    "ready": 1
    }
   },
   {
@@ -178,15 +179,20 @@
    "req_kind": "service"
   },
   {
+   "id": "script:scripts/memory_ops.py",
+   "kind": "script",
+   "label": "scripts/memory_ops.py"
+  },
+  {
    "id": "fam:ai-generation",
    "kind": "family",
    "label": "AI generation",
    "ar": "التوليد بالذكاء الاصطناعي",
    "prefix": "GEN",
-   "count": 93,
+   "count": 94,
    "proven": 14,
    "status": {
-    "documented": 31,
+    "documented": 32,
     "proven": 14,
     "ready": 7,
     "install": 3,
@@ -271,11 +277,11 @@
    "label": "Analyzed app capabilities",
    "ar": "قدرات التطبيقات المحللة",
    "prefix": "APPX",
-   "count": 139,
-   "proven": 96,
+   "count": 155,
+   "proven": 100,
    "status": {
-    "proven": 96,
-    "documented": 41,
+    "proven": 100,
+    "documented": 53,
     "install": 1,
     "ready": 1
    }
@@ -308,13 +314,13 @@
    "req_kind": "pip"
   },
   {
-   "id": "req:npm:rea",
+   "id": "req:pip:faster-whisper",
    "kind": "requirement",
-   "label": "npm:rea",
-   "ar": "فحص البرامج والهندسة العكسية القانونية",
-   "en": "lawful software inspection (REA)",
-   "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
-   "req_kind": "npm"
+   "label": "pip:faster-whisper",
+   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+   "en": "speech-to-text with word timestamps (Arabic)",
+   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+   "req_kind": "model"
   },
   {
    "id": "script:scripts/app_studio.py",
@@ -332,6 +338,16 @@
    "label": "scripts/blender_cinema.py"
   },
   {
+   "id": "script:scripts/look_pipeline.py",
+   "kind": "script",
+   "label": "scripts/look_pipeline.py"
+  },
+  {
+   "id": "script:scripts/caption_lines.py",
+   "kind": "script",
+   "label": "scripts/caption_lines.py"
+  },
+  {
    "id": "script:scripts/installer_triage.py",
    "kind": "script",
    "label": "scripts/installer_triage.py"
@@ -342,13 +358,13 @@
    "label": "Apps & artifacts",
    "ar": "التطبيقات والواجهات",
    "prefix": "APP",
-   "count": 23,
+   "count": 27,
    "proven": 6,
    "status": {
     "key": 5,
     "proven": 6,
     "install": 7,
-    "documented": 5
+    "documented": 9
    }
   },
   {
@@ -368,6 +384,11 @@
    "en": "call Claude from code",
    "install": "pip install anthropic  (needs ANTHROPIC_API_KEY)",
    "req_kind": "pip"
+  },
+  {
+   "id": "script:scripts/lesson_integrity.py",
+   "kind": "script",
+   "label": "scripts/lesson_integrity.py"
   },
   {
    "id": "dom:craft",
@@ -483,10 +504,10 @@
    "label": "Atlas: engineering & code",
    "ar": "أطلس: الهندسة والكود",
    "prefix": "ACODE",
-   "count": 247,
+   "count": 277,
    "proven": 0,
    "status": {
-    "documented": 247
+    "documented": 277
    }
   },
   {
@@ -544,10 +565,10 @@
    "label": "Atlas: data, ML & charts",
    "ar": "أطلس: البيانات والتعلم الآلي",
    "prefix": "ADATA",
-   "count": 52,
+   "count": 56,
    "proven": 0,
    "status": {
-    "documented": 52
+    "documented": 56
    }
   },
   {
@@ -597,10 +618,10 @@
    "label": "Atlas: documents & diagrams",
    "ar": "أطلس: المستندات والمخططات",
    "prefix": "ADOCS",
-   "count": 50,
+   "count": 55,
    "proven": 0,
    "status": {
-    "documented": 50
+    "documented": 55
    }
   },
   {
@@ -662,10 +683,10 @@
    "label": "Atlas: agent workflows, planning & review",
    "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "prefix": "AMIND",
-   "count": 54,
+   "count": 60,
    "proven": 0,
    "status": {
-    "documented": 54
+    "documented": 60
    }
   },
   {
@@ -705,10 +726,10 @@
    "label": "Atlas: product, marketing & business",
    "ar": "أطلس: المنتج والتسويق والأعمال",
    "prefix": "ASTRAT",
-   "count": 72,
+   "count": 87,
    "proven": 0,
    "status": {
-    "documented": 72
+    "documented": 87
    }
   },
   {
@@ -736,15 +757,6 @@
     "install": 7,
     "seen": 5
    }
-  },
-  {
-   "id": "req:pip:faster-whisper",
-   "kind": "requirement",
-   "label": "pip:faster-whisper",
-   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
-   "en": "speech-to-text with word timestamps (Arabic)",
-   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
-   "req_kind": "model"
   },
   {
    "id": "req:network",
@@ -852,13 +864,19 @@
    "label": "Code engineering",
    "ar": "هندسة البرمجيات",
    "prefix": "CODE",
-   "count": 24,
+   "count": 26,
    "proven": 3,
    "status": {
-    "documented": 20,
+    "documented": 21,
     "proven": 3,
-    "key": 1
+    "key": 1,
+    "ready": 1
    }
+  },
+  {
+   "id": "script:scripts/repo_map.py",
+   "kind": "script",
+   "label": "scripts/repo_map.py"
   },
   {
    "id": "fam:color-palette-grading",
@@ -975,10 +993,10 @@
    "label": "Diagrams, explainers & code",
    "ar": "المخططات والشرح والكود",
    "prefix": "EXPL",
-   "count": 67,
+   "count": 69,
    "proven": 2,
    "status": {
-    "documented": 28,
+    "documented": 30,
     "key": 1,
     "install": 11,
     "ready": 11,
@@ -1026,12 +1044,12 @@
    "label": "Easing, timing & rhythm",
    "ar": "التوقيت والإيقاع والتسهيل",
    "prefix": "EASE",
-   "count": 102,
+   "count": 106,
    "proven": 27,
    "status": {
     "proven": 27,
-    "ready": 26,
-    "documented": 32,
+    "ready": 29,
+    "documented": 33,
     "seen": 10,
     "install": 7
    }
@@ -1055,12 +1073,17 @@
    "req_kind": "npm"
   },
   {
+   "id": "script:scripts/motion_physics.py",
+   "kind": "script",
+   "label": "scripts/motion_physics.py"
+  },
+  {
    "id": "fam:engines-render-pipeline",
    "kind": "family",
    "label": "Engines & render pipeline",
    "ar": "المحركات وخط الرندر",
    "prefix": "ENG",
-   "count": 443,
+   "count": 445,
    "proven": 55,
    "status": {
     "proven": 55,
@@ -1068,7 +1091,7 @@
     "install": 209,
     "key": 27,
     "seen": 8,
-    "documented": 83,
+    "documented": 85,
     "idea": 1
    }
   },
@@ -1100,12 +1123,12 @@
    "label": "Hand-drawn & draw-on",
    "ar": "الرسم اليدوي والرسم الحي",
    "prefix": "DRAW",
-   "count": 63,
+   "count": 65,
    "proven": 17,
    "status": {
     "proven": 17,
     "ready": 15,
-    "documented": 19,
+    "documented": 21,
     "install": 6,
     "seen": 6
    }
@@ -1116,12 +1139,12 @@
    "label": "Knowledge graph & mind maps",
    "ar": "الرسم المعرفي والخرائط الذهنية",
    "prefix": "GRAPH",
-   "count": 21,
+   "count": 23,
    "proven": 11,
    "status": {
     "proven": 11,
     "key": 5,
-    "documented": 4,
+    "documented": 6,
     "idea": 1
    }
   },
@@ -1307,11 +1330,11 @@
    "label": "Planning & execution",
    "ar": "التخطيط والتنفيذ",
    "prefix": "PLAN",
-   "count": 12,
+   "count": 14,
    "proven": 2,
    "status": {
     "proven": 2,
-    "documented": 10
+    "documented": 12
    }
   },
   {
@@ -1383,13 +1406,31 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 70,
-   "proven": 60,
+   "count": 168,
+   "proven": 135,
    "status": {
-    "proven": 60,
-    "ready": 5,
-    "install": 5
+    "proven": 135,
+    "ready": 21,
+    "install": 12
    }
+  },
+  {
+   "id": "req:npm:rea",
+   "kind": "requirement",
+   "label": "npm:rea",
+   "ar": "فحص البرامج والهندسة العكسية القانونية",
+   "en": "lawful software inspection (REA)",
+   "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
+   "req_kind": "npm"
+  },
+  {
+   "id": "req:engine:ghidra",
+   "kind": "requirement",
+   "label": "engine:ghidra",
+   "ar": "تفكيك الثنائيات الأصلية",
+   "en": "native binary disassembly/decompilation",
+   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
+   "req_kind": "bin"
   },
   {
    "id": "script:scripts/hub.py",
@@ -1406,6 +1447,11 @@
    "id": "script:scripts/blender_bridge.py",
    "kind": "script",
    "label": "scripts/blender_bridge.py"
+  },
+  {
+   "id": "script:scripts/council.py",
+   "kind": "script",
+   "label": "scripts/council.py"
   },
   {
    "id": "script:scripts/boot.py",
@@ -1431,17 +1477,6 @@
    "id": "script:scripts/superpowers_unified.py",
    "kind": "script",
    "label": "scripts/superpowers_unified.py"
-  },
-  {
-   "id": "script:scripts/motion_kit_bridge.py",
-   "kind": "script",
-   "label": "scripts/motion_kit_bridge.py",
-   "executor_score": 1.21
-  },
-  {
-   "id": "script:scripts/motion_runtime.py",
-   "kind": "script",
-   "label": "scripts/motion_runtime.py"
   },
   {
    "id": "fam:security-safety",
@@ -1495,11 +1530,11 @@
    "label": "Shapes & morphing",
    "ar": "الأشكال والتحوّل",
    "prefix": "SHAPE",
-   "count": 95,
+   "count": 97,
    "proven": 16,
    "status": {
     "proven": 16,
-    "documented": 19,
+    "documented": 21,
     "seen": 32,
     "install": 7,
     "ready": 17,
@@ -1519,15 +1554,6 @@
     "proven": 30,
     "install": 48
    }
-  },
-  {
-   "id": "req:engine:ghidra",
-   "kind": "requirement",
-   "label": "engine:ghidra",
-   "ar": "تفكيك الثنائيات الأصلية",
-   "en": "native binary disassembly/decompilation",
-   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
-   "req_kind": "bin"
   },
   {
    "id": "req:engine:android",
@@ -1624,10 +1650,10 @@
    "label": "Thinking core",
    "ar": "نواة التفكير",
    "prefix": "THINK",
-   "count": 46,
+   "count": 47,
    "proven": 7,
    "status": {
-    "documented": 39,
+    "documented": 40,
     "proven": 7
    }
   },
@@ -1637,7 +1663,7 @@
    "label": "Transitions & cuts",
    "ar": "الانتقالات والقطعات",
    "prefix": "TRANS",
-   "count": 474,
+   "count": 475,
    "proven": 29,
    "status": {
     "proven": 29,
@@ -1645,7 +1671,7 @@
     "install": 175,
     "key": 1,
     "seen": 114,
-    "documented": 79,
+    "documented": 80,
     "idea": 18
    }
   },
@@ -1744,10 +1770,10 @@
    "label": "Verification & evals",
    "ar": "التحقق والتقييم",
    "prefix": "CHECK",
-   "count": 35,
+   "count": 40,
    "proven": 4,
    "status": {
-    "documented": 31,
+    "documented": 36,
     "proven": 4
    }
   },
@@ -1830,12 +1856,12 @@
    "label": "Web research",
    "ar": "البحث على الويب",
    "prefix": "WEB",
-   "count": 24,
+   "count": 26,
    "proven": 10,
    "status": {
     "proven": 10,
     "key": 4,
-    "documented": 8,
+    "documented": 10,
     "install": 2
    }
   },
@@ -1875,6 +1901,16 @@
    "id": "script:scripts/smart_capabilities.py",
    "kind": "script",
    "label": "scripts/smart_capabilities.py"
+  },
+  {
+   "id": "script:scripts/agent_guard.py",
+   "kind": "script",
+   "label": "scripts/agent_guard.py"
+  },
+  {
+   "id": "script:scripts/_secrets.py",
+   "kind": "script",
+   "label": "scripts/_secrets.py"
   },
   {
    "id": "script:scripts/atlas_bulk_source_audit.py",
@@ -1982,11 +2018,6 @@
    "label": "scripts/charter_ingest.py"
   },
   {
-   "id": "script:scripts/_secrets.py",
-   "kind": "script",
-   "label": "scripts/_secrets.py"
-  },
-  {
    "id": "script:scripts/check_skill.py",
    "kind": "script",
    "label": "scripts/check_skill.py"
@@ -2015,11 +2046,6 @@
    "id": "script:scripts/portrait_pipeline.py",
    "kind": "script",
    "label": "scripts/portrait_pipeline.py"
-  },
-  {
-   "id": "script:scripts/council.py",
-   "kind": "script",
-   "label": "scripts/council.py"
   },
   {
    "id": "script:scripts/skill_intelligence.py",
@@ -2072,6 +2098,11 @@
    "label": "scripts/kosif_timeline.py"
   },
   {
+   "id": "script:scripts/micro_index.py",
+   "kind": "script",
+   "label": "scripts/micro_index.py"
+  },
+  {
    "id": "script:scripts/mimic/mm_common.py",
    "kind": "script",
    "label": "scripts/mimic/mm_common.py"
@@ -2096,6 +2127,12 @@
    "id": "script:scripts/mimic/synthetic/synth.py",
    "kind": "script",
    "label": "scripts/mimic/synthetic/synth.py"
+  },
+  {
+   "id": "script:scripts/motion_kit_bridge.py",
+   "kind": "script",
+   "label": "scripts/motion_kit_bridge.py",
+   "executor_score": 1.21
   },
   {
    "id": "script:scripts/code_drawing_master.py",
@@ -2256,6 +2293,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_usip_shadow.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_usip_shadow.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_agent_guard.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_agent_guard.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_app_studio.py",
@@ -2443,6 +2485,16 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_local_first.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_memory_ops.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_memory_ops.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
+  },
+  {
    "id": "test:tests/test_mimic.py",
    "kind": "test",
    "label": "tests/test_mimic.py"
@@ -2453,14 +2505,14 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_motion_director.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_physics.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
   },
   {
    "id": "test:tests/test_superpowers_unified.py",
@@ -2518,6 +2570,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_repo_map.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_repo_map.py"
+  },
+  {
    "id": "test:tests/test_requirements.py",
    "kind": "test",
    "label": "tests/test_requirements.py"
@@ -2563,6 +2620,11 @@
    "label": "tests/test_think_reasoning.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
+  },
+  {
    "id": "test:tests/test_tools_extra.py",
    "kind": "test",
    "label": "tests/test_tools_extra.py"
@@ -2589,19 +2651,19 @@
    "from": "dom:motion",
    "to": "fam:3d-spatial",
    "rel": "has",
-   "w": 52
+   "w": 53
   },
   {
    "from": "fam:3d-spatial",
    "to": "req:npm:three",
    "rel": "needs",
-   "w": 11
+   "w": 12
   },
   {
    "from": "fam:3d-spatial",
    "to": "req:python3",
    "rel": "needs",
-   "w": 9
+   "w": 10
   },
   {
    "from": "fam:3d-spatial",
@@ -2611,13 +2673,13 @@
   },
   {
    "from": "fam:3d-spatial",
-   "to": "req:npm:remotion",
+   "to": "req:chromium",
    "rel": "needs",
-   "w": 2
+   "w": 3
   },
   {
    "from": "fam:3d-spatial",
-   "to": "req:chromium",
+   "to": "req:npm:remotion",
    "rel": "needs",
    "w": 2
   },
@@ -2649,7 +2711,7 @@
    "from": "dom:mind",
    "to": "fam:agent-orchestration",
    "rel": "has",
-   "w": 46
+   "w": 55
   },
   {
    "from": "fam:agent-orchestration",
@@ -2666,6 +2728,12 @@
   {
    "from": "fam:agent-orchestration",
    "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:agent-orchestration",
+   "to": "req:python3",
    "rel": "needs",
    "w": 3
   },
@@ -2689,15 +2757,15 @@
   },
   {
    "from": "fam:agent-orchestration",
-   "to": "req:python3",
+   "to": "req:key:graphify",
    "rel": "needs",
    "w": 1
   },
   {
    "from": "fam:agent-orchestration",
-   "to": "req:key:graphify",
-   "rel": "needs",
-   "w": 1
+   "to": "script:scripts/memory_ops.py",
+   "rel": "runs",
+   "w": 4
   },
   {
    "from": "root",
@@ -2709,7 +2777,7 @@
    "from": "dom:motion",
    "to": "fam:ai-generation",
    "rel": "has",
-   "w": 93
+   "w": 94
   },
   {
    "from": "fam:ai-generation",
@@ -2719,13 +2787,13 @@
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:key:unspecified",
+   "to": "req:python3",
    "rel": "needs",
    "w": 15
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:python3",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 14
   },
@@ -2749,15 +2817,15 @@
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:npm:hyperframes",
+   "to": "req:node",
    "rel": "needs",
    "w": 4
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:node",
+   "to": "req:npm:hyperframes",
    "rel": "needs",
-   "w": 3
+   "w": 4
   },
   {
    "from": "root",
@@ -2793,7 +2861,7 @@
    "from": "dom:build",
    "to": "fam:app-feature-transfer",
    "rel": "has",
-   "w": 139
+   "w": 155
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2821,15 +2889,15 @@
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:python3",
+   "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 24
+   "w": 27
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:ffmpeg",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 19
+   "w": 27
   },
   {
    "from": "fam:app-feature-transfer",
@@ -2839,7 +2907,7 @@
   },
   {
    "from": "fam:app-feature-transfer",
-   "to": "req:npm:rea",
+   "to": "req:pip:faster-whisper",
    "rel": "needs",
    "w": 4
   },
@@ -2863,6 +2931,18 @@
   },
   {
    "from": "fam:app-feature-transfer",
+   "to": "script:scripts/look_pipeline.py",
+   "rel": "runs",
+   "w": 4
+  },
+  {
+   "from": "fam:app-feature-transfer",
+   "to": "script:scripts/caption_lines.py",
+   "rel": "runs",
+   "w": 3
+  },
+  {
+   "from": "fam:app-feature-transfer",
    "to": "script:scripts/installer_triage.py",
    "rel": "runs",
    "w": 1
@@ -2877,13 +2957,13 @@
    "from": "dom:build",
    "to": "fam:apps-artifacts",
    "rel": "has",
-   "w": 23
+   "w": 27
   },
   {
    "from": "fam:apps-artifacts",
    "to": "req:python3",
    "rel": "needs",
-   "w": 6
+   "w": 8
   },
   {
    "from": "fam:apps-artifacts",
@@ -2905,13 +2985,13 @@
   },
   {
    "from": "fam:apps-artifacts",
-   "to": "req:key:unspecified",
+   "to": "req:npm:react",
    "rel": "needs",
-   "w": 3
+   "w": 2
   },
   {
    "from": "fam:apps-artifacts",
-   "to": "req:npm:react",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 2
   },
@@ -2926,6 +3006,12 @@
    "to": "req:pip:anthropic",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:apps-artifacts",
+   "to": "script:scripts/lesson_integrity.py",
+   "rel": "runs",
+   "w": 2
   },
   {
    "from": "root",
@@ -2991,7 +3077,7 @@
    "from": "fam:arabic-language",
    "to": "script:scripts/anchor_gate.py",
    "rel": "runs",
-   "w": 1
+   "w": 2
   },
   {
    "from": "root",
@@ -3063,7 +3149,7 @@
    "from": "dom:code",
    "to": "fam:atlas-code",
    "rel": "has",
-   "w": 247
+   "w": 277
   },
   {
    "from": "fam:atlas-code",
@@ -3085,13 +3171,13 @@
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:gh",
+   "to": "req:node",
    "rel": "needs",
-   "w": 11
+   "w": 12
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:node",
+   "to": "req:gh",
    "rel": "needs",
    "w": 11
   },
@@ -3099,19 +3185,19 @@
    "from": "fam:atlas-code",
    "to": "req:npm:react",
    "rel": "needs",
-   "w": 7
+   "w": 10
   },
   {
    "from": "fam:atlas-code",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 6
+   "w": 7
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:chromium",
+   "to": "req:os:macos",
    "rel": "needs",
-   "w": 4
+   "w": 5
   },
   {
    "from": "fam:atlas-code",
@@ -3171,13 +3257,13 @@
    "from": "dom:data",
    "to": "fam:atlas-data",
    "rel": "has",
-   "w": 52
+   "w": 56
   },
   {
    "from": "fam:atlas-data",
    "to": "req:python3",
    "rel": "needs",
-   "w": 4
+   "w": 5
   },
   {
    "from": "fam:atlas-data",
@@ -3210,6 +3296,18 @@
    "w": 1
   },
   {
+   "from": "fam:atlas-data",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-data",
+   "to": "req:npm:three",
+   "rel": "needs",
+   "w": 1
+  },
+  {
    "from": "root",
    "to": "dom:docs",
    "rel": "has",
@@ -3219,7 +3317,7 @@
    "from": "dom:docs",
    "to": "fam:atlas-docs",
    "rel": "has",
-   "w": 50
+   "w": 55
   },
   {
    "from": "fam:atlas-docs",
@@ -3339,7 +3437,7 @@
    "from": "dom:mind",
    "to": "fam:atlas-mind",
    "rel": "has",
-   "w": 54
+   "w": 60
   },
   {
    "from": "fam:atlas-mind",
@@ -3429,11 +3527,17 @@
    "from": "dom:strategy",
    "to": "fam:atlas-strategy",
    "rel": "has",
-   "w": 72
+   "w": 87
   },
   {
    "from": "fam:atlas-strategy",
    "to": "req:lean",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-strategy",
+   "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 3
   },
@@ -3458,12 +3562,6 @@
   {
    "from": "fam:atlas-strategy",
    "to": "req:pip:matplotlib",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-strategy",
-   "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 1
   },
@@ -3621,7 +3719,7 @@
    "from": "fam:camera-composition-layout",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 29
+   "w": 33
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3655,9 +3753,9 @@
   },
   {
    "from": "fam:camera-composition-layout",
-   "to": "req:node",
+   "to": "req:npm:three",
    "rel": "needs",
-   "w": 4
+   "w": 6
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3801,7 +3899,7 @@
    "from": "dom:code",
    "to": "fam:code-engineering",
    "rel": "has",
-   "w": 24
+   "w": 26
   },
   {
    "from": "fam:code-engineering",
@@ -3811,21 +3909,15 @@
   },
   {
    "from": "fam:code-engineering",
-   "to": "req:git",
+   "to": "req:python3",
    "rel": "needs",
    "w": 3
   },
   {
    "from": "fam:code-engineering",
-   "to": "req:python3",
+   "to": "req:git",
    "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:code-engineering",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 2
+   "w": 3
   },
   {
    "from": "fam:code-engineering",
@@ -3850,6 +3942,18 @@
    "to": "req:ffmpeg",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:code-engineering",
+   "to": "req:key:unspecified",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:code-engineering",
+   "to": "script:scripts/repo_map.py",
+   "rel": "runs",
+   "w": 3
   },
   {
    "from": "root",
@@ -4071,7 +4175,7 @@
    "from": "dom:motion",
    "to": "fam:diagrams-explainers-code",
    "rel": "has",
-   "w": 67
+   "w": 69
   },
   {
    "from": "fam:diagrams-explainers-code",
@@ -4191,19 +4295,19 @@
    "from": "dom:motion",
    "to": "fam:easing-timing-rhythm",
    "rel": "has",
-   "w": 102
+   "w": 106
   },
   {
    "from": "fam:easing-timing-rhythm",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 12
+   "w": 13
   },
   {
    "from": "fam:easing-timing-rhythm",
    "to": "req:python3",
    "rel": "needs",
-   "w": 8
+   "w": 11
   },
   {
    "from": "fam:easing-timing-rhythm",
@@ -4231,15 +4335,21 @@
   },
   {
    "from": "fam:easing-timing-rhythm",
+   "to": "req:npm:animejs",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:easing-timing-rhythm",
    "to": "req:chromium",
    "rel": "needs",
    "w": 2
   },
   {
    "from": "fam:easing-timing-rhythm",
-   "to": "req:npm:animejs",
-   "rel": "needs",
-   "w": 2
+   "to": "script:scripts/motion_physics.py",
+   "rel": "runs",
+   "w": 6
   },
   {
    "from": "root",
@@ -4251,7 +4361,7 @@
    "from": "dom:motion",
    "to": "fam:engines-render-pipeline",
    "rel": "has",
-   "w": 443
+   "w": 445
   },
   {
    "from": "fam:engines-render-pipeline",
@@ -4293,7 +4403,7 @@
    "from": "fam:engines-render-pipeline",
    "to": "req:npm:three",
    "rel": "needs",
-   "w": 29
+   "w": 32
   },
   {
    "from": "fam:engines-render-pipeline",
@@ -4389,7 +4499,7 @@
    "from": "dom:motion",
    "to": "fam:hand-drawn-draw-on",
    "rel": "has",
-   "w": 63
+   "w": 65
   },
   {
    "from": "fam:hand-drawn-draw-on",
@@ -4449,25 +4559,19 @@
    "from": "dom:code",
    "to": "fam:knowledge-graph",
    "rel": "has",
-   "w": 21
+   "w": 23
   },
   {
    "from": "fam:knowledge-graph",
    "to": "req:key:graphify",
    "rel": "needs",
-   "w": 16
+   "w": 18
   },
   {
    "from": "fam:knowledge-graph",
    "to": "req:python3",
    "rel": "needs",
    "w": 7
-  },
-  {
-   "from": "fam:knowledge-graph",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 5
   },
   {
    "from": "fam:knowledge-graph",
@@ -4496,6 +4600,12 @@
   {
    "from": "fam:knowledge-graph",
    "to": "req:git",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:knowledge-graph",
+   "to": "req:pip:chromadb",
    "rel": "needs",
    "w": 2
   },
@@ -5037,7 +5147,7 @@
    "from": "dom:mind",
    "to": "fam:planning-execution",
    "rel": "has",
-   "w": 12
+   "w": 14
   },
   {
    "from": "fam:planning-execution",
@@ -5049,7 +5159,7 @@
    "from": "fam:planning-execution",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 1
+   "w": 2
   },
   {
    "from": "fam:planning-execution",
@@ -5235,61 +5345,67 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 70
+   "w": 168
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 57
+   "w": 133
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 14
+   "w": 39
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 9
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "req:pip:pillow",
-   "rel": "needs",
-   "w": 8
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "req:npm:rea",
-   "rel": "needs",
-   "w": 7
+   "w": 22
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:blender",
    "rel": "needs",
-   "w": 7
+   "w": 20
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:pip:pillow",
+   "rel": "needs",
+   "w": 19
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "req:npm:rea",
+   "rel": "needs",
+   "w": 16
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:node",
    "rel": "needs",
-   "w": 6
+   "w": 14
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:npm:remotion",
+   "to": "req:engine:ghidra",
    "rel": "needs",
-   "w": 3
+   "w": 11
   },
   {
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 75
+   "w": 173
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/app_studio.py",
+   "rel": "runs",
+   "w": 8
   },
   {
    "from": "fam:runnable-tools",
@@ -5300,6 +5416,12 @@
   {
    "from": "fam:runnable-tools",
    "to": "script:scripts/blender_bridge.py",
+   "rel": "runs",
+   "w": 6
+  },
+  {
+   "from": "fam:runnable-tools",
+   "to": "script:scripts/council.py",
    "rel": "runs",
    "w": 6
   },
@@ -5334,18 +5456,6 @@
    "w": 5
   },
   {
-   "from": "fam:runnable-tools",
-   "to": "script:scripts/motion_kit_bridge.py",
-   "rel": "runs",
-   "w": 5
-  },
-  {
-   "from": "fam:runnable-tools",
-   "to": "script:scripts/motion_runtime.py",
-   "rel": "runs",
-   "w": 5
-  },
-  {
    "from": "root",
    "to": "dom:code",
    "rel": "has",
@@ -5360,12 +5470,6 @@
   {
    "from": "fam:security-safety",
    "to": "req:network",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:security-safety",
-   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 2
   },
@@ -5390,6 +5494,12 @@
   {
    "from": "fam:security-safety",
    "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:security-safety",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 1
   },
@@ -5487,7 +5597,7 @@
    "from": "dom:motion",
    "to": "fam:shapes-morph-geometry",
    "rel": "has",
-   "w": 95
+   "w": 97
   },
   {
    "from": "fam:shapes-morph-geometry",
@@ -5799,7 +5909,7 @@
    "from": "dom:mind",
    "to": "fam:thinking-core",
    "rel": "has",
-   "w": 46
+   "w": 47
   },
   {
    "from": "fam:thinking-core",
@@ -5811,7 +5921,7 @@
    "from": "fam:thinking-core",
    "to": "req:python3",
    "rel": "needs",
-   "w": 11
+   "w": 12
   },
   {
    "from": "fam:thinking-core",
@@ -5862,6 +5972,12 @@
    "w": 1
   },
   {
+   "from": "fam:thinking-core",
+   "to": "script:scripts/council.py",
+   "rel": "runs",
+   "w": 1
+  },
+  {
    "from": "root",
    "to": "dom:motion",
    "rel": "has",
@@ -5871,7 +5987,7 @@
    "from": "dom:motion",
    "to": "fam:transitions-cuts",
    "rel": "has",
-   "w": 474
+   "w": 475
   },
   {
    "from": "fam:transitions-cuts",
@@ -5883,7 +5999,7 @@
    "from": "fam:transitions-cuts",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 96
+   "w": 99
   },
   {
    "from": "fam:transitions-cuts",
@@ -6159,13 +6275,13 @@
    "from": "dom:mind",
    "to": "fam:verification-evals",
    "rel": "has",
-   "w": 35
+   "w": 40
   },
   {
    "from": "fam:verification-evals",
    "to": "req:python3",
    "rel": "needs",
-   "w": 7
+   "w": 11
   },
   {
    "from": "fam:verification-evals",
@@ -6208,6 +6324,12 @@
    "to": "req:git",
    "rel": "needs",
    "w": 1
+  },
+  {
+   "from": "fam:verification-evals",
+   "to": "script:scripts/lesson_integrity.py",
+   "rel": "runs",
+   "w": 3
   },
   {
    "from": "fam:verification-evals",
@@ -6357,7 +6479,7 @@
    "from": "dom:research",
    "to": "fam:web-research",
    "rel": "has",
-   "w": 24
+   "w": 26
   },
   {
    "from": "fam:web-research",
@@ -6452,6 +6574,12 @@
   {
    "from": "script:scripts/_usip_cards.py",
    "to": "script:scripts/smart_capabilities.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/agent_guard.py",
+   "to": "script:scripts/_secrets.py",
    "rel": "imports",
    "w": 1
   },
@@ -6746,6 +6874,18 @@
   {
    "from": "script:scripts/kosif_timeline_demo.py",
    "to": "script:scripts/kosif_timeline.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/memory_ops.py",
+   "to": "script:scripts/_secrets.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
@@ -7158,6 +7298,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/test_kosif_timeline.py",
+   "to": "script:scripts/kosif_timeline_demo.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/test_telegram_typography_atlas.py",
    "to": "script:scripts/telegram_typography_atlas.py",
    "rel": "imports",
@@ -7298,6 +7444,12 @@
   {
    "from": "script:scripts/_secrets.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_usip_shadow.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/agent_guard.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_agent_guard.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7626,6 +7778,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/memory_ops.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_memory_ops.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "test:tests/test_mimic.py",
    "rel": "tested_by",
@@ -7662,14 +7826,14 @@
    "w": 1
   },
   {
-   "from": "script:scripts/motion_reference_probe.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
+   "from": "script:scripts/motion_physics.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_physics.py",
    "rel": "tested_by",
    "w": 1
   },
   {
-   "from": "script:scripts/motion_runtime.py",
-   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_runtime.py",
+   "from": "script:scripts/motion_reference_probe.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7802,6 +7966,12 @@
   {
    "from": "script:scripts/render_text.cjs",
    "to": "test:tests/test_superpowers_catalog.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/repo_map.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_repo_map.py",
    "rel": "tested_by",
    "w": 1
   },

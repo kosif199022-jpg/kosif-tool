@@ -116,13 +116,25 @@ def py_edges(root: Path, files: list) -> dict:
 
 
 def ci_patterns(text: str) -> tuple:
-    names = set(re.findall(r"(test_[A-Za-z0-9_*]+\.py)", text))
-    skill_discover_all = bool(re.search(r"discover -s \S*kosif-superpowers/evals(?! -p)", text))
-    return names, skill_discover_all
+    """What ci.yml runs: ([(start_dir, pattern)] from every `unittest discover`, {test file paths run directly}).
+
+    `discover -s DIR` without `-p` uses unittest's default pattern `test*.py`. Paths are repo-relative as written."""
+    discovers, files = [], set()
+    for line in text.splitlines():
+        if "discover" in line:
+            for m in re.finditer(r"discover((?:\s+(?:-[a-z]\s+(?:'[^']*'|\"[^\"]*\"|\S+)|-v|--verbose))*)", line):
+                opts = dict((k, v.strip("'\"")) for k, v in re.findall(r"(-[spt])\s+('[^']*'|\"[^\"]*\"|\S+)", m.group(1)))
+                if "-s" in opts:
+                    discovers.append((opts["-s"].rstrip("/").removeprefix("./"), opts.get("-p", "test*.py")))
+        else:
+            files |= {f.removeprefix("./") for f in re.findall(r"(\S*test_[A-Za-z0-9_]+\.py)\b", line)}
+    return discovers, files
 
 
-def in_ci(test_name: str, names: set, all_evals: bool) -> bool:
-    return all_evals or any(fnmatch.fnmatch(test_name, n) for n in names)
+def in_ci(rel_path: str, discovers: list, files: set) -> bool:
+    """rel_path is repo-relative (e.g. .claude/skills/kosif-superpowers/scripts/test_x.py or tests/test_y.py)."""
+    parent, name = rel_path.rsplit("/", 1) if "/" in rel_path else ("", rel_path)
+    return rel_path in files or any(parent == d and fnmatch.fnmatchcase(name, pat) for d, pat in discovers)
 
 
 def build(root: Path = SK, repo: Path = REPO, atlas=True) -> dict:
@@ -139,7 +151,11 @@ def build(root: Path = SK, repo: Path = REPO, atlas=True) -> dict:
     tools_doc = load_json(root / "data/tools.json", {"tools": []})
     tools = tools_doc.get("tools", []) if isinstance(tools_doc, dict) else []
     ci_text = (repo / ".github/workflows/ci.yml").read_text(encoding="utf-8") if (repo / ".github/workflows/ci.yml").is_file() else ""
-    ci_names, ci_all = ci_patterns(ci_text)
+    ci_discovers, ci_files = ci_patterns(ci_text)
+    try:
+        skill_prefix = root.resolve().relative_to(repo.resolve()).as_posix() + "/"
+    except ValueError:  # skill used outside its repository: match on the skill-relative path only
+        skill_prefix = ""
     powers = []
     for f in sorted((root / "data/powers").glob("*.json")):
         data = load_json(f, [])
@@ -195,10 +211,16 @@ def build(root: Path = SK, repo: Path = REPO, atlas=True) -> dict:
             gaps.append({"kind": "script_unregistered", "id": stem, "detail": "helper imported by " + ", ".join(sorted(importers[stem])[:4])})
         if not tests and not ci:
             gaps.append({"kind": "script_untested", "id": stem, "detail": "no eval, repo test, tools.json test or CI step references it"})
+    # every test file: evals/test_*.py, scripts/test_*.py (beside their tools) and the repo's tests/test_*.py
     for e in evals:
         name = Path(e).name
-        if name.startswith("test_") and e.startswith("evals/") and not in_ci(name, ci_names, ci_all):
-            gaps.append({"kind": "test_not_in_ci", "id": name, "detail": "ci.yml names no pattern that runs it"})
+        if name.startswith("test_") and not in_ci(skill_prefix + e, ci_discovers, ci_files):
+            gaps.append({"kind": "test_not_in_ci", "id": name if e.startswith("evals/") else e,
+                         "detail": "ci.yml names no pattern that runs it"})
+    for t in repo_tests:
+        rel = "tests/" + Path(t).name
+        if not in_ci(rel, ci_discovers, ci_files):
+            gaps.append({"kind": "test_not_in_ci", "id": rel, "detail": "ci.yml names no pattern that runs it"})
     for t in tools:
         base = repo if t.get("root") == "repo" else root
         if t.get("path") and not (base / t["path"]).exists():
@@ -410,6 +432,10 @@ def self_test() -> int:
         (root / "scripts/broken.py").write_text("def (\n")
         (root / "evals/test_core.py").write_text("import core\n")
         (root / "evals/test_skipped.py").write_text("import helper\n")
+        (root / "scripts/test_beside.py").write_text("import core\n")
+        (root / "scripts/test_direct.py").write_text("import core\n")
+        (repo / "tests").mkdir()
+        (repo / "tests/test_repo_level.py").write_text("x = 1\n")
         (root / "data/tools.json").write_text(json.dumps({"tools": [
             {"id": "core", "path": "scripts/core.py", "root": "skill", "tests": [], "docs": ["nope.md"], "families": ["fam-a"]},
             {"id": "ghost", "path": "scripts/ghost.py", "root": "skill", "tests": [], "docs": [], "families": []}]}))
@@ -418,7 +444,9 @@ def self_test() -> int:
         (root / "data/skill_layout.json").write_text(json.dumps({"sections": [{"files": ["references/listed.md"]}]}))
         (root / "references/listed.md").write_text("[ok](unlisted.md) [bad](missing.md) [web](https://x.y)\n")
         (root / "references/unlisted.md").write_text("x\n")
-        (repo / ".github/workflows/ci.yml").write_text("run: python3 -m unittest discover -s x/kosif-superpowers/evals -p 'test_core.py'\n")
+        (repo / ".github/workflows/ci.yml").write_text(
+            "run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_core.py' -v\n"
+            "run: python3 .claude/skills/kosif-superpowers/scripts/test_direct.py\n")
         m = build(root, repo, atlas=False)
         kinds = {(g["kind"], g["id"]) for g in m["gaps"]}
         roles = {s["id"]: s["role"] for s in m["scripts"]}
@@ -427,6 +455,9 @@ def self_test() -> int:
             ({"from": "core", "to": "lonely", "kind": "invokes"} in m["py_edges"], "invoke edge"),
             ([f["path"] for f in m["parse_failures"]] == ["scripts/broken.py"], "parse failure recorded"),
             (("test_not_in_ci", "test_skipped.py") in kinds and ("test_not_in_ci", "test_core.py") not in kinds, "ci patterns"),
+            (("test_not_in_ci", "scripts/test_beside.py") in kinds and ("test_not_in_ci", "scripts/test_direct.py") not in kinds,
+             "scripts/test_* considered"),
+            (("test_not_in_ci", "tests/test_repo_level.py") in kinds, "repo tests/ considered"),
             (("tool_path_missing", "ghost") in kinds and ("tool_file_missing", "core") in kinds, "tools.json paths"),
             (("reference_unlisted", "references/unlisted.md") in kinds, "layout index"),
             ([g["detail"] for g in m["gaps"] if g["kind"] == "broken_link"] == ["missing.md"], "broken links"),

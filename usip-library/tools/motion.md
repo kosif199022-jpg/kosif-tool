@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (18 أداة)
+# أدوات المجال `motion` (21 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -298,6 +298,56 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:motion-kit-bridge --evidence <ملف>`.
 
+### `motion-physics` — فيزياء الحركة / Motion Physics
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/motion_physics.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `easing-timing-rhythm` |
+
+**ما تفعله:** يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه) في صف أو شبكة، وعينات خط مفاتيح لكل إطار بتسهيل. مكتبة بايثون القياسية فقط؛ يطبع JSON أو CSS ولا يكتب ملفات.
+
+**What it does:** Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files.
+
+#### متى تُستدعى
+
+- «عايز ارتداد نابض طبيعي للعنوان، اطلعلي القيم لكل فريم»
+- «حوّل cubic-bezier ده لقيم لكل فريم»
+- «give me stagger delays from the center of a 4x3 grid»
+- «spring keyframes with stiffness 180 and damping 12 as CSS»
+
+#### الأوامر
+
+- **spring**: Values per frame, damping ratio, regime, settle time and overshoot; --css NAME prints @keyframes
+  - `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30`
+- **bezier**: A CSS cubic-bezier sampled at --frames + 1 evenly spaced points
+  - `python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30`
+- **stagger**: Delay in seconds for each element from an origin on a row or a grid
+  - `python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out`
+- **keyframes**: A time:value track sampled per frame with an easing
+  - `python3 scripts/motion_physics.py keyframes --track 0:0,0.5:120,1.2:100 --ease out --fps 30`
+- **--self-test**: Checks spring regimes, the CSS 'ease' value at 0.5, stagger origins and track sampling
+  - `python3 scripts/motion_physics.py --self-test`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: The spring is integrated numerically (16 sub-steps per frame), so values match an analytic spring to about 1e-3, not exactly; one dimension at a time; settle uses a 0.1 % rest threshold; easing names cover the CSS keywords plus a few common curves, not every library's presets.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_motion_physics.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/motion.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:motion-physics --evidence <ملف>`.
+
 ### `motion-runtime` — إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer
 
 | الحقل | القيمة |
@@ -467,6 +517,51 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:motion-toolkit --evidence <ملف>`.
+
+### `particles` — جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG / Seekable particles: closed-form bursts, budget check and SVG frame
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/particles.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `particles-fluids-physics` |
+
+**ما تفعله:** يحسب موقع وشفافية كل جسيم في انفجار ببذرة عند أي زمن t بصيغة مغلقة للسحب والجاذبية ومولد عشوائي بالهاش بلا حالة (فيطابق كل إطار في أي ترتيب رندر)، ويفحص مواصفة الجسيمات مقابل قواعد الميزانية، ويرسم إطارًا واحدًا SVG للمراجعة.
+
+**What it does:** Computes every particle of a seeded burst at any time t from a closed-form drag+gravity solution and a stateless lowbias32 hash RNG (so frames render identically in any order), checks a particle spec against the family's budget rules (sizes, colours, per-engine counts, burst size, seeding, layering), and writes one frame as SVG for visual review.
+
+#### متى تُستدعى
+
+- «اعمل انفجار جسيمات ثابت في كل رندر»
+- «هل عدد الجسيمات ده كتير على Canvas؟»
+- «Make a deterministic particle burst I can seek to any frame»
+- «Check my particle budget before rendering»
+
+#### الأوامر
+
+- **burst**: Position, opacity, size and colour of every particle at time t.
+  - `python3 scripts/particles.py burst --seed 7 --count 40 --t 0.5 --visible-only`
+- **budget**: Budget violations and warnings with the source power card of each rule.
+  - `echo '{"engine":"canvas2d","kind":"ambient","count":900,"sizes":[4,8,14],"colors":["#fff","#fc0"],"seeded":true,"behind_text":true}' \| python3 scripts/particles.py budget -`
+- **svg**: One frame as SVG on stdout (or --out FILE).
+  - `python3 scripts/particles.py svg --seed 7 --count 160 --t 0.4`
+- **self-test**: Offline self-check.
+  - `python3 scripts/particles.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: Writes only the --out SVG path the user passes; otherwise stdout.
+- الحدود: Radial bursts with linear drag and constant gravity only (no collisions, fluids or forces between particles); the SVG/DOM count limit of 300 is a tool heuristic, the Canvas/WebGL limits come from PART-04.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_particles.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:particles --evidence <ملف>`.
 
 ### `render-html` — محوّل HTML إلى فيديو MP4 / HTML to MP4 renderer
 
@@ -875,6 +970,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:style-atlas-bridge --evidence <ملف>`.
+
+### `ui-beat` — إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة / UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/ui_beat.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `ui-product-device` |
+
+**ما تفعله:** يحسب إطارات حركة المؤشر على منحنى بيزييه بتسهيل CSS مع توقيت النقر والتموج، ويعكس تخطيط الواجهة للعربية مع قائمة الأيقونات التي تنقلب، ويتأكد أن بداية الحلقة تساوي نهايتها.
+
+**What it does:** Computes one cursor keyframe per frame along a bowed quadratic Bezier timed by a CSS cubic-bezier easing (solved by bisection), with press, release, UI-response (60-120 ms) and ripple timings; mirrors a UI layout for RTL (x' = W - x - w, left/right alignment flips, directional icon flip list); and checks that a loop's first and last states match, listing differing keys.
+
+#### متى تُستدعى
+
+- «اعمل حركة ماوس طبيعية من الزر للقائمة مع نقرة»
+- «اعكس تصميم الشاشة ده للعربي»
+- «اتأكد إن اللوب بيرجع لنفس البداية»
+- «Generate cursor keyframes with a click ripple for a UI demo»
+- «Mirror this layout for RTL»
+- «Check that my UI animation loops seamlessly»
+
+#### الأوامر
+
+- **cursor**: Per-frame x/y/progress/angle keyframes plus click, response and ripple timings.
+  - `python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur 0.8 --fps 30 --ease ease-in-out --arc 0.12`
+- **rtl-mirror**: Mirrored elements, alignment flips, icons to flip vs keep, warnings for out-of-bounds elements.
+  - `python3 scripts/ui_beat.py rtl-mirror /tmp/layout.json --width 1080`
+- **loop-check**: seamless true/false with every differing, missing or retyped key; warns outside 3-6 s.
+  - `python3 scripts/ui_beat.py loop-check /tmp/states.json --tol 0.000001`
+- **self-test**: Offline self-check.
+  - `python3 scripts/ui_beat.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Computes numbers only (no rendering): one Bezier leg per call, icon flipping is a name-based rule list, and loop-check compares declared states, not rendered frames.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_ui_beat.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:ui-beat --evidence <ملف>`.
 
 ### `unified-cinematic` — السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا / Unified Cinematic: sound-clocked animation and video
 

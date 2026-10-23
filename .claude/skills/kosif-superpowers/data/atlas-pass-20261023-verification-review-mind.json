@@ -1,0 +1,96 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "verification-review-mind",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 6,
+ "sources_read": 7,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval (2026-10-23) the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas, listed with hashes in vendor/kosif-atlas/KOSIF_INTEGRATION.json. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 715,
+   "plugin": "mas-ai-workflows",
+   "skill": "ai-citation-verification",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/229-mas-ai-workflows/715-ai-citation-verification",
+   "skill_md_sha256": "1f10b26b5a9aca2b4c817a2afaa09dc43d925c9aaa1a90c3cb8b48f1d4bc95dc",
+   "bytes": 1561,
+   "read_in_full": true,
+   "power": "AMIND-55"
+  },
+  {
+   "atlas_id": 4131,
+   "plugin": "digital-marketing-pro",
+   "skill": "verify-claims",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/1520-digital-marketing-pro/4131-verify-claims",
+   "skill_md_sha256": "52a7cbd5c56dfc7345faa790c988481f6b3c624280493bf659f422828e4cd114",
+   "bytes": 9848,
+   "read_in_full": true,
+   "power": "AMIND-55"
+  },
+  {
+   "atlas_id": 13504,
+   "plugin": "prior-art",
+   "skill": "prior-art",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/3175-prior-art/13504-prior-art",
+   "skill_md_sha256": "ba5434645046ddfb28c48abad75eedc56ea085c79622c12222f142aad9db9d98",
+   "bytes": 12311,
+   "read_in_full": true,
+   "power": "AMIND-56"
+  },
+  {
+   "atlas_id": 13885,
+   "plugin": "us-federal-open-data-claim-verification",
+   "skill": "us-federal-open-data-claim-verification",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/3370-us-federal-open-data-claim-verification/13885-us-federal-open-data-claim-verification",
+   "skill_md_sha256": "1f8a0f635296e0bc856ab23537bc3334f966268ca1cc3a3a31fa5456cc542bd8",
+   "bytes": 11160,
+   "read_in_full": true,
+   "power": "AMIND-57"
+  },
+  {
+   "atlas_id": 7149,
+   "plugin": "epharmoge",
+   "skill": "contextualize",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/1989-epharmoge/7149-contextualize",
+   "skill_md_sha256": "39e61b7a3dcb95899776f5e1531cbfdb6e7f20a61349b62cd4530d98fc9f47b8",
+   "bytes": 34850,
+   "read_in_full": true,
+   "power": "AMIND-58"
+  },
+  {
+   "atlas_id": 7150,
+   "plugin": "epistemic-cooperative",
+   "skill": "gate-check",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/1990-epistemic-cooperative/7150-gate-check",
+   "skill_md_sha256": "107c1781ee660cb4aa863e1f2e41184a07ab23e04564e9b74ba9e948b33e4280",
+   "bytes": 53167,
+   "read_in_full": true,
+   "power": "AMIND-59"
+  },
+  {
+   "atlas_id": 13330,
+   "plugin": "estregenesis",
+   "skill": "feeda",
+   "license": "Apache-2.0",
+   "theme": "verification-review",
+   "path": "skills/3113-estregenesis/13330-feeda",
+   "skill_md_sha256": "ec5d2e632d57f3af35fadeed8eaefe08682f3cdfcd30fb858c42e9eb8dc3c105",
+   "bytes": 3874,
+   "read_in_full": true,
+   "power": "AMIND-60"
+  }
+ ]
+}

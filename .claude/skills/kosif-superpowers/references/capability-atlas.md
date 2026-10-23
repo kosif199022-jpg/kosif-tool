@@ -2,7 +2,7 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**5,512 powers / 62 families / 10 domains / 22 route descriptions.**
+**5,728 powers / 62 families / 10 domains / 22 route descriptions.**
 
 For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
 
@@ -42,21 +42,21 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 
 ## Families by domain
 
-### build: 284 powers
+### build: 402 powers
 
-- app-feature-transfer: 139
-- runnable-tools: 70
+- runnable-tools: 168
+- app-feature-transfer: 155
 - atlas-build: 52
-- apps-artifacts: 23
+- apps-artifacts: 27
 
-### code: 595 powers
+### code: 629 powers
 
+- atlas-code: 277
 - software-investigation: 258
-- atlas-code: 247
-- code-engineering: 24
+- code-engineering: 26
+- knowledge-graph: 23
 - security-safety: 23
 - api-testing: 22
-- knowledge-graph: 21
 
 ### craft: 119 powers
 
@@ -66,14 +66,14 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - arabic-language: 22
 - typography-arabic: 2
 
-### data: 91 powers
+### data: 95 powers
 
-- atlas-data: 52
+- atlas-data: 56
 - data-analysis: 39
 
-### docs: 84 powers
+### docs: 89 powers
 
-- atlas-docs: 50
+- atlas-docs: 55
 - documents-office: 34
 
 ### media: 68 powers
@@ -81,58 +81,58 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - media-image-audio: 41
 - atlas-media: 27
 
-### mind: 328 powers
+### mind: 351 powers
 
 - mental-models: 63
-- atlas-mind: 54
-- agent-orchestration: 46
-- thinking-core: 46
+- atlas-mind: 60
+- agent-orchestration: 55
+- thinking-core: 47
 - self-discovery: 43
-- verification-evals: 35
+- verification-evals: 40
 - creativity-engine: 29
-- planning-execution: 12
+- planning-execution: 14
 
-### motion: 3,818 powers
+### motion: 3,833 powers
 
-- transitions-cuts: 474
-- engines-render-pipeline: 443
+- transitions-cuts: 475
+- engines-render-pipeline: 445
 - camera-composition-layout: 425
 - qa-verification: 384
 - music-beat-sound: 306
+- easing-timing-rhythm: 106
 - charts-data-infographic: 105
-- easing-timing-rhythm: 102
+- shapes-morph-geometry: 97
 - typography-arabic: 97
 - texture-material: 96
-- shapes-morph-geometry: 95
 - story-direction-ideas: 95
+- ai-generation: 94
 - typography-latin: 94
-- ai-generation: 93
 - ui-product-device: 93
 - color-palette-grading: 87
 - light-glow-bloom: 87
 - particles-fluids-physics: 77
 - photo-video-footage: 71
 - formats-platforms: 70
-- diagrams-explainers-code: 67
-- hand-drawn-draw-on: 63
+- diagrams-explainers-code: 69
+- hand-drawn-draw-on: 65
 - maps-geo: 62
 - audio-sync-captions: 61
 - voice-tts: 55
-- 3d-spatial: 52
+- 3d-spatial: 53
 - characters-rigs: 51
 - brand-logo-identity: 43
 - pixel-retro-stylized: 32
 - other: 27
 - video-download: 11
 
-### research: 35 powers
+### research: 37 powers
 
-- web-research: 24
+- web-research: 26
 - atlas-research: 11
 
-### strategy: 90 powers
+### strategy: 105 powers
 
-- atlas-strategy: 72
+- atlas-strategy: 87
 - strategy-finance: 18
 
 ## Decision flow

@@ -2721,5 +2721,297 @@
     "11563": "f832f2ce88a4bf7aa8c2b3776afec5a592b51cd0b1f951b68efe72c589d20ef9"
    }
   }
+ },
+ {
+  "id": "ADOCS-51",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "جولات CodeTour في الكود موجّهة لشخصية القارئ",
+  "name_en": "Persona-targeted CodeTour walkthroughs with verified anchors",
+  "status": "documented",
+  "what": "يكتب ملفات .tour لإضافة CodeTour: جولة قصصية خطوة بخطوة في المستودع لشخص محدد (منضم جديد، مراجع PR، محقق سبب جذري، معماري، مراجع أمان)، كل خطوة مربوطة بملف وسطر حقيقيين، دون تعديل أي كود. — Writes CodeTour .tour files: a narrative, persona-specific walkthrough anchored to real files and lines, without touching source.",
+  "when": "تأهيل مطوّر جديد، شرح PR، شرح كيف يعمل جزء من النظام، جولة لتحقيق في عطل / onboarding, PR walkthrough, explaining a subsystem, RCA tour",
+  "how": "1) Explore first: root listing, README, config, languages, frameworks, entry points, 1–2 levels of folders. 2) Infer persona and depth from the request (PR → reviewer, 'why did X break' → RCA, 'onboarding' → new joiner, 'architecture' → architect deep); default new joiner, standard depth. 3) Read every file you will point to and verify each path and line; a wrong line is worse than no tour. 4) Use step types deliberately: at most two content-only steps (intro/close), directory steps to orient, file+line as the workhorse, selection for blocks, pattern anchors for volatile files, URI steps for PRs/issues/docs. 5) Size: quick 5–8 steps, standard 9–13, deep 14–18. 6) Write each description as: what this is, why it matters, how it connects, and what to look at next. 7) Save as .tours/<persona>-<focus>.tour. Full original skill(s) with license: vendor/kosif-atlas/skills/162-code-tour/531-code-tour.",
+  "params": "repo, persona, focus",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/162-code-tour/531-code-tour ~/.claude/skills/code-tour",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/162-code-tour/531-code-tour"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "CodeTour",
+   "onboarding",
+   "walkthrough",
+   "VS Code",
+   "code tour",
+   "جولة كود",
+   "تأهيل"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): code-tour/code-tour (#531) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "531"
+   ],
+   "examples": [
+    {
+     "id": "531",
+     "plugin": "code-tour",
+     "skill": "code-tour",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/162-code-tour/531-code-tour"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-docs.json",
+   "skill_md_sha256": {
+    "531": "3497bd672c185df19a2205190f897fddf64f9b55a599ad3c24443b87241139e6"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/162-code-tour/531-code-tour"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-52",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تدقيق نصوص التعليمات الموجهة للنموذج: نواهٍ تلفت الانتباه وأمثلة تقيّد",
+  "name_en": "LLM-facing prose audit: priming prohibitions and anchoring examples",
+  "status": "documented",
+  "what": "يراجع ملفات المهارات وبرومبتات الوكلاء بحثًا عن نمطين يضعفان الاتباع: ذكر أفعال ممنوعة أو مسارات قديمة أو بدائل مرفوضة دون حاجة (يبقيها في انتباه النموذج)، وأمثلة few-shot تربط النموذج بحالات بعينها بدل المبدأ. قراءة فقط، والقرار للمؤلف. — Read-only audit of skill files and agent prompts for unnecessary prohibitions and anchoring few-shot examples.",
+  "when": "قبل نشر SKILL.md أو برومبت نظام، النموذج يفعل بالضبط ما نُهي عنه، مخرجات تقلد الأمثلة حرفيًا / before shipping a SKILL.md or system prompt, the model does the forbidden thing, outputs copy the examples",
+  "how": "1) Scope: LLM-facing prose only (skill bodies, agent prompts, output styles); skip code fences, formal definition blocks and human-facing docs. 2) Prohibition pass: flag 'do not X', mentions of retired paths and named rejected alternatives; keep a mention only if it is load-bearing (a real hazard the model would otherwise take). 3) For each flagged line propose the positive rewrite: the current path plus its reason ('Use Y because Z'). 4) Anchoring pass: flag principles followed by example lists whose main effect is to pin the model to those instances; boundary test: would removing the example widen correct application without losing format reliability? 5) Propose a sharper principle instead of the examples; keep examples that define an output format or delimit scope. 6) Emit structured findings (file, line, type, proposed text, load-bearing yes/no) and write no fixes; the author decides. Full original skill(s) with license: vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear, vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot.",
+  "params": "files or glob",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear ~/.claude/skills/white-bear ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot ~/.claude/skills/zero-shot",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7157-white-bear",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7158-zero-shot"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "prompt engineering",
+   "SKILL.md",
+   "system prompt",
+   "few-shot",
+   "negative instructions",
+   "برومبت",
+   "تعليمات"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): epistemic-cooperative/white-bear (#7157); epistemic-cooperative/zero-shot (#7158) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "7157",
+    "7158"
+   ],
+   "examples": [
+    {
+     "id": "7157",
+     "plugin": "epistemic-cooperative",
+     "skill": "white-bear",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7157-white-bear"
+    },
+    {
+     "id": "7158",
+     "plugin": "epistemic-cooperative",
+     "skill": "zero-shot",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1990-epistemic-cooperative/7158-zero-shot"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "PROMPT-09"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-docs.json",
+   "skill_md_sha256": {
+    "7157": "45dae5139ab90504d4856cde1be19b65dd6619ed76b5af3982f1a7ef5e35a4e7",
+    "7158": "264d1ed8a2f4c6e94404403adf44357d316652a9e916e478c723403d982d42a0"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear",
+    "vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-53",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "مخطط كتاب بمواصفة لكل فصل و'كتاب مرجعي' يحفظ الاتساق",
+  "name_en": "Book outline with per-chapter specs and a series bible",
+  "status": "documented",
+  "what": "مخطط كتاب مفصل بما يكفي لكتابة كل فصل دون اختراع بنية: لكل فصل غرض وحالة دخول وخروج للقارئ (والبطل)، وسحب يشد القارئ، ومحتوى (مشاهد أو ادعاءات بأدلة أو مفاهيم)، مع 'كتاب مرجعي' للشخصيات والمصطلحات والقواعد، وتحقق ونقطة موافقة المؤلف. — A chapter-by-chapter outline with entry/exit states and pull per chapter, plus a bible, validated and author-approved.",
+  "when": "كتابة رواية أو كتاب غير قصصي أو تقني طويل، مسودات فصول تتناقض، قبل البدء في الكتابة / writing a novel, nonfiction or technical book, chapters contradicting each other",
+  "how": "1) Read the brief, style guide, ideas and source index first. 2) For each chapter specify: working title, purpose (what it changes for the reader; two chapters with the same purpose means one is redundant), entry state and exit state (what the reader or protagonist knows, wants, fears, believes), the pull (question or tension carrying the reader), and content: 2–5 scene seeds for fiction (situation, turn, stakes), claims with source IDs and an anchoring story for nonfiction, concepts and the code arc for technical books. 3) Draw a pacing map across chapters. 4) Start the bible: characters, places, terms, rules of the world or the argument, timeline. 5) Validate structure (score and issues); revise once if weak, then surface remaining issues to the author instead of iterating blindly. 6) Stop for author approval with the shape, chapter list, pacing map and top three risks; record the approval date. Full original skill(s) with license: vendor/kosif-atlas/skills/1376-velith/3225-book-outline.",
+  "params": "brief, genre",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1376-velith/3225-book-outline ~/.claude/skills/book-outline",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3225-book-outline"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "book writing",
+   "outline",
+   "novel",
+   "nonfiction",
+   "story structure",
+   "كتابة كتاب",
+   "مخطط"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): velith/book-outline (#3225) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "3225"
+   ],
+   "examples": [
+    {
+     "id": "3225",
+     "plugin": "velith",
+     "skill": "book-outline",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3225-book-outline"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-docs.json",
+   "skill_md_sha256": {
+    "3225": "6cd8d314b9180aa04d050b4b638614a7cf655c7a2f96112c7f074448d97e6fb8"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1376-velith/3225-book-outline"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-54",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "بناء ونشر كتاب: EPUB وPDF عبر Pandoc مع epubcheck وبيانات النشر",
+  "name_en": "Book publishing build: EPUB/PDF via Pandoc, epubcheck and metadata",
+  "status": "documented",
+  "what": "يحول مسودات الكتاب النهائية إلى ملفات يقبلها الموزّع من أول رفع: بوابة جاهزية، بيانات وصفية، صفحات أمامية وخلفية (منها إفصاح استخدام الذكاء الاصطناعي حين يُطلب)، معالجة مسبقة للشعر والسيناريو والصور، بناء EPUB وPDF وغيرها بـPandoc، وفحص بـepubcheck. — Turns final drafts into distributor-ready files with front/back matter, pre-processing, Pandoc builds and epubcheck validation.",
+  "when": "نشر كتاب على Kindle أو متاجر الكتب، تجهيز EPUB وPDF، رفض ملف من منصة نشر / publishing an e-book or print PDF, a rejected upload",
+  "how": "1) Gate in: a readiness report says pass and every chapter is final; a forced override is recorded. 2) Write metadata (title, author, language, identifiers, description, keywords) and front matter (title, copyright with optional AI-assistance line, dedication, epigraph) and back matter (about the author, acknowledgements, further reading, glossary, source index). Some stores require AI-generated-text disclosure at upload. 3) Build from the final drafts, never from editing notes. 4) Pre-process: strip each chapter's YAML front matter into temp copies (concatenated blocks collide), add two trailing spaces to poem lines to keep breaks, monospace PDF without TOC for screenplays, drop a missing cover key with a note, and set --resource-path so images resolve (list files explicitly on Windows). 5) Run pandoc to EPUB, PDF and the other requested formats. 6) Validate the EPUB with epubcheck and open the PDF to check fonts, images and page breaks. 7) Produce title candidates, cover concepts and a launch checklist as separate notes. Full original skill(s) with license: vendor/kosif-atlas/skills/1376-velith/3227-book-publish.",
+  "params": "manuscript folder, formats",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/1376-velith/3227-book-publish ~/.claude/skills/book-publish",
+  "requires": [
+   "pandoc"
+  ],
+  "license": "card in our own words; the original skill folders are copied verbatim with their Apache-2.0 license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3227-book-publish"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "publishing",
+   "EPUB",
+   "PDF",
+   "Pandoc",
+   "epubcheck",
+   "Kindle",
+   "نشر كتاب"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): velith/book-publish (#3227) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "3227"
+   ],
+   "examples": [
+    {
+     "id": "3227",
+     "plugin": "velith",
+     "skill": "book-publish",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3227-book-publish"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [
+    "ACRAFT-14"
+   ],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-docs.json",
+   "skill_md_sha256": {
+    "3227": "1adb774b39c33805158a81fbca6c1fba00d369aee6c3bd1077534e65dffea1ae"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/1376-velith/3227-book-publish"
+   ]
+  }
+ },
+ {
+  "id": "ADOCS-55",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "نشر مجموعة رقمية بعد بوابتي الحقوق والحساسية الثقافية",
+  "name_en": "Publish a digital collection through rights and cultural-sensitivity gates",
+  "status": "documented",
+  "what": "قبل نشر مقتنيات أو أرشيف على الإنترنت: بوابة حقوق (ملك عام، أو حقوق مُصرّح بها، أو غير مصرح فلا يُنشر إلا وصف وصورة مصغرة)، ثم بوابة حساسية ثقافية بالتشاور مع المجتمع المصدر، ثم قرار الوصول المفتوح أو المقيد بترخيص واضح، والبنية التقنية للنشر. — Rights gate, then community-consultation sensitivity gate, then the open-vs-restricted decision and the publishing stack.",
+  "when": "متحف أو مكتبة أو أرشيف يريد نشر مجموعته رقميًا، مواد حساسة ثقافيًا أو دينيًا، اختيار CC0 أم ترخيص مقيد / a museum, library or archive publishing a collection online",
+  "how": "1) Rights gate per item: public domain (openness possible), in copyright with rights held or cleared (publish under a licence), in copyright and not cleared (metadata and thumbnail only until cleared). Never publish a full image you have not cleared. 2) Sensitivity gate: culturally or religiously sensitive or community-restricted material needs consultation with the source community, traditional-knowledge labels and restriction or context as they advise; this can override public-domain status. 3) Where rights and sensitivity allow, default toward openness (CC0 or CC-BY); otherwise publish under a clear licence with access terms and standard rights statements. 4) Choose the stack: digital asset management, an online catalogue, IIIF image delivery, and virtual exhibitions where useful. 5) Record decisions per item so they can be audited and revisited. Full original skill(s) with license: vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access.",
+  "params": "collection, rights data",
+  "install": "mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access ~/.claude/skills/publish-digital-collections-and-access",
+  "requires": [],
+  "license": "card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "digital collections",
+   "copyright",
+   "open access",
+   "IIIF",
+   "museum",
+   "archive",
+   "حقوق النشر",
+   "أرشيف رقمي"
+  ],
+  "section": "المراجعة والتحقق — Review, verification & quality gates",
+  "source": "KOSIF Atlas exhaustive pass 2026-10-23, batch verification-review-docs (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): museum-cultural-institution-operations/publish-digital-collections-and-access (#9003) · SKILL.md read in full as inert text",
+  "atlas": {
+   "ids": [
+    "9003"
+   ],
+   "examples": [
+    {
+     "id": "9003",
+     "plugin": "museum-cultural-institution-operations",
+     "skill": "publish-digital-collections-and-access",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access"
+    }
+   ],
+   "theme": "verification-review",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-pass-20261023-verification-review-docs.json",
+   "skill_md_sha256": {
+    "9003": "ba94265b5692350aadb0e37a739c38891ed31d39d5f995d7290ccaa234f0549d"
+   },
+   "vendored": [
+    "vendor/kosif-atlas/skills/2342-museum-cultural-institution-operations/9003-publish-digital-collections-and-access"
+   ]
+  }
  }
 ]
