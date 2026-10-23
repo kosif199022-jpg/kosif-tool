@@ -47,6 +47,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_*atlas_*.py' -v
       - name: Business workflows (A16)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_business_workflows.py' -v
+      - name: Book-distilled methods (A20)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_book_methods.py' -v
       - name: Reference visual observation and color-to-edit integration tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_visual*.py' -v
       - name: Reference Edit Engine Python and project generation tests

@@ -328,8 +328,8 @@
 },
 "SP-0006": {
 "id": "SP-0006",
-"name_ar": "مراجعة الافتراضات وإعادة التقييم",
-"name_en": "Challenge approach before commitment",
+"name_ar": "قاطع التكرار العقيم بعد محاولتين فاشلتين",
+"name_en": "Anti-thrashing circuit breaker after two failed fixes",
 "hub": "thinking",
 "stage": "understand",
 "stages": {
@@ -407,9 +407,9 @@
 "ready_now": 2,
 "links": [
 "SP-0012",
+"SP-0121",
 "SP-0340",
-"SP-0136",
-"SP-0371"
+"SP-0136"
 ],
 "text": "idea matrix: operators × powers مصفوفة الأفكار: عوامل × قدرات ideas أفكار creativity feasibility from requirements, not optimism الجدوى من المستلزمات لا من التفاؤل ideas أفكار creativity scamper سكامبر (scamper) scamper variation سكامبر تنويع constraint injection حقن القيود constraints limits قيود تحدي strengthen an idea with its steelman objection تقوية الفكرة بالحجة المضادة ideas أفكار creativity worst idea first أسوأ فكرة أولًا bad ideas reverse brainstorming أسوأ فكرة عصف عكسي eight-stage idea development pipeline خط تطوير الفكرة بثماني مراحل ideas أفكار creativity morphological matrix المصفوفة المورفولوجية morphological matrix combinations مصفوفة تركيبات constraint removal إزالة القيود constraint removal ideal إزالة القيود الحل المثالي ensemble and judge التجميع والتحكيم ensemble judge variants تحكيم نسخ متعددة capability cross-over العبور بين القدرات cross-domain capability combination عبور قدرات دمج المجالات inversion القلب: كيف نضمن الفشل؟ inversion reverse thinking القلب التفكير العكسي first principles التفكير من المبادئ الأولى first principles fundamentals المبادئ الأولى جوهر المشكلة perspective swap تبديل المنظور perspective persona empathy منظور شخصية تعاطف exaggerate / minimise (10× / 0.1×) التضخيم والتصغير exaggerate scale تضخيم تصغير مبالغة fermi estimate تقدير فيرمي fermi estimate feasibility تقدير جدوى حساب تقريبي random stimulus (catalog dice) المحفّز العشوائي random stimulus lateral thinking عشوائي محفز تفكير جانبي pre-mortem التشريح المسبق للفشل premortem risk تشريح مسبق مخاطر analogy transfer النقل بالتشبيه analogy transfer metaphor تشبيه نقل الآلية remix the masters (mechanisms, not assets) مزج أساليب المعلّمين remix references influence مزج مراجع إلهام diverge → converge protocol التباعد ثم التقارب divergent convergent brainstorm ideation creative ideas double diamond عصف ذهني توليد أفكار أفكار إبداع ابتكار تباعد تقارب"
 },
@@ -605,7 +605,7 @@
 "links": [
 "SP-0343",
 "SP-0023",
-"SP-0121",
+"SP-0122",
 "SP-0325"
 ],
 "text": "arabic font probe خطوط عربية قبل الرندر fonts arabic fc-list rtl خطوط عربي one-command capability card بطاقة القدرات بسكربت واحد probe environment capability card json فحص البيئة بطاقة manual shell probe فحص يدوي للآلة shell which version cpu ram disk فحص أوامر python import probe فحص مكتبات بايثون python import pip library مكتبة بايثون network test ladder سُلَّم اختبار الشبكة network curl proxy egress allowlist شبكة اتصال credentials by name only المفاتيح بالأسماء فقط env secrets api key token safety أسرار مفاتيح github access in cloud sessions وصول github في جلسات السحابة github git gh clone add_repo mcp مستودع no gpu: plan for cpu لا gpu: خطط للمعالج gpu cuda cpu diffusion model معالج رسومي node globals and bundled browser node والمتصفح المدمج node npm playwright chromium browser headless متصفح root and apt check صلاحيات الجذر وapt apt root sudo system package تثبيت نظام docker: client is not daemon docker: العميل ليس الخدمة docker container daemon حاويات environment documentation pages صفحات توثيق البيئة documentation environment network settings cloud توثيق إعدادات proxy etiquette آداب البروكسي proxy tls certificate 403 node fetch بروكسي شهادة skill scout ladder مستكشف المهارات skill-scout skills github search vet مهارة جديدة"
@@ -761,7 +761,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0121",
+"SP-0122",
 "SP-0026",
 "SP-0337",
 "SP-0020"
@@ -967,8 +967,8 @@
 "links": [
 "SP-0028",
 "SP-0343",
-"SP-0416",
-"SP-0336"
+"SP-0336",
+"SP-0416"
 ],
 "text": "arabic msa and egyptian tell scan (ar1–ar26) فحص علامات الكتابة الآلية في الفصحى والمصرية arabic msa egyptian فصحى عامية مصرية ركاكة ترجمة حرفية أسلوب آلي لينكدان بوست منشور مكتوب بالذكاء الاصطناعي ميبانش يبان linkedin social post english tell scan (h1–h25 + x1) فحص علامات الكتابة الآلية في الإنجليزية tell scan ai writing humanizer lint prose english فحص النص علامات آلية linkedin social post sound like ai لينكدان لينكد إن بوست منشور arabic typography tells علامات الطباعة العربية arabic punctuation digits tatweel typography ترقيم عربي أرقام هندية تطويل tool-artifact and placeholder cleanup تنظيف بقايا الأدوات والقوالب الفارغة artifacts placeholders citations utm بقايا قالب فارغ writing regression suite مجموعة اختبارات انحدار للكتابة regression tests eval اختبارات evidence-weighted verdict ladder سُلَّم الحكم بحسب قوة الدليل verdict false positive evidence weight حكم قوة الدليل register switch with facts locked تبديل السجل: فصحى رسمية أو مبسطة أو مصرية register egyptian msa dialect سجل لغوي بالمصري فصحى مبسطة translate translation ترجم ترجمة عقد contract arabic paragraph-scale habits العادات البنيوية في النص العربي الآلي arabic style structure سجع إضافة مصدر تمّ بنية الفقرة finance, legal and audit exception استثناءات المال والقانون والتدقيق finance legal audit contract مالي قانوني تدقيق translate translation ترجم ترجمة عقد one-question causal model for every sentence سؤال واحد لكل جملة: هل تضيف جديدًا للقارئ؟ causal model clarity ai tone humanize وضوح نبرة آلية صياغة بشرية"
 },
@@ -2320,8 +2320,8 @@
 },
 "SP-0094": {
 "id": "SP-0094",
-"name_ar": "موصل المستندات الحية",
-"name_en": "Living-docs connector (Claude Docs)",
+"name_ar": "ملفات Google عبر الموصل",
+"name_en": "Google Docs/Sheets/Slides via connector",
 "hub": "documents",
 "stage": "deliver",
 "stages": {
@@ -2336,7 +2336,7 @@
 "SP-0056",
 "SP-0088"
 ],
-"text": "living-docs connector (claude docs) موصل المستندات الحية docs connector collaboration export مستند مشترك google docs/sheets/slides via connector ملفات google عبر الموصل google docs google sheets drive connector"
+"text": "google docs/sheets/slides via connector ملفات google عبر الموصل google docs google sheets drive connector living-docs connector (claude docs) موصل المستندات الحية docs connector collaboration export مستند مشترك"
 },
 "SP-0095": {
 "id": "SP-0095",
@@ -2426,7 +2426,7 @@
 "SP-0107",
 "SP-0100"
 ],
-"text": "dehaze (clearview-style) إزالة الضباب dxo clearview dehaze إزالة الضباب haze red-eye removal إزالة احمرار العين red eye عين حمراء flash unsharp-mask sharpening توضيح الحدة sharpen حدة unsharp lightroom dxo auto keystone / perspective تصحيح المنظور تلقائيًا dxo viewpoint perspective keystone منظور تقويم versioned preset / style files ملفات إعدادات مسبقة بإصدارات capture one dxo preset style فلتر إعدادات مسبقة auto horizon straighten تعديل الأفق تلقائيًا dxo capture one horizon straighten الأفق تقويم lateral chromatic aberration removal إزالة الزيغ اللوني dxo chromatic aberration زيغ لوني fringing aspect crop with subject focus قص بنسبة ذكي crop قص 9:16 4:5 film grain + vignette حبيبات فيلم وتعتيم أطراف capture one dxo film grain vignette حبيبات سينمائي moiré removal إزالة التموج (مواريه) moire مواريه fft object removal / heal إزالة عنصر وترميم remove object heal inpaint إزالة ترميم lens distortion correction تصحيح تشوّه العدسة dxo lens distortion عدسة تشوه fisheye watermark with exact opacity علامة مائية بشفافية دقيقة dxo watermark علامة مائية logo tiered noise reduction تقليل الضوضاء بمستويات dxo deepprime denoise noise تقليل الضوضاء تشويش resize for export تغيير المقاس resize تغيير المقاس batch tilt-shift miniature تأثير المجسم tilt shift miniature مجسم hsl per colour band تحكم لوني لكل نطاق hsl لون تشبع color editor background blur (portrait) تغبيش الخلفية background blur bokeh تغبيش الخلفية portrait contact sheet / print templates ورقة تواصل وقوالب طباعة capture one contact sheet print طباعة pdf clarity / texture (local contrast) الوضوح والملمس clarity texture وضوح microcontrast exposure fusion / selective tonal control دمج التعريضات والتحكم بالدرجات dxo hdr exposure fusion highlights ظلال تعريض auto tone / levels ضبط تلقائي للإضاءة auto tone levels ضبط تلقائي black & white channel mixer أبيض وأسود بخلط القنوات black and white أبيض وأسود sepia monochrome white balance + tone curve + hsl توازن الأبيض ومنحنى الدرجات وhsl dxo capture one white balance tone curve hsl توازن الأبيض منحنى perceptual jpeg recompression (jpegmini-style) ضغط jpeg إدراكي jpegmini jpeg compress ضغط الصور تصغير حجم الصور ssim split toning / colour grading تلوين الظلال والإضاءات split tone color grading تلوين teal orange xmp sidecar: rating, label, keywords ملف xmp جانبي: تقييم ووسوم lightroom acdsee xmp metadata keywords تقييم وسوم"
+"text": "dehaze (clearview-style) إزالة الضباب dxo clearview dehaze إزالة الضباب haze red-eye removal إزالة احمرار العين red eye عين حمراء flash unsharp-mask sharpening توضيح الحدة sharpen حدة unsharp lightroom dxo auto keystone / perspective تصحيح المنظور تلقائيًا dxo viewpoint perspective keystone منظور تقويم versioned preset / style files ملفات إعدادات مسبقة بإصدارات capture one dxo preset style فلتر إعدادات مسبقة auto horizon straighten تعديل الأفق تلقائيًا dxo capture one horizon straighten الأفق تقويم lateral chromatic aberration removal إزالة الزيغ اللوني dxo chromatic aberration زيغ لوني fringing aspect crop with subject focus قص بنسبة ذكي crop قص 9:16 4:5 film grain + vignette حبيبات فيلم وتعتيم أطراف capture one dxo film grain vignette حبيبات سينمائي moiré removal إزالة التموج (مواريه) moire مواريه fft object removal / heal إزالة عنصر وترميم remove object heal inpaint إزالة ترميم lens distortion correction تصحيح تشوّه العدسة dxo lens distortion عدسة تشوه fisheye watermark with exact opacity علامة مائية بشفافية دقيقة dxo watermark علامة مائية logo tiered noise reduction تقليل الضوضاء بمستويات dxo deepprime denoise noise تقليل الضوضاء تشويش resize for export تغيير المقاس resize تغيير المقاس batch tilt-shift miniature تأثير المجسم tilt shift miniature مجسم hsl per colour band تحكم لوني لكل نطاق hsl لون تشبع color editor background blur (portrait) تغبيش الخلفية background blur bokeh تغبيش الخلفية portrait clarity / texture (local contrast) الوضوح والملمس clarity texture وضوح microcontrast contact sheet / print templates ورقة تواصل وقوالب طباعة capture one contact sheet print طباعة pdf exposure fusion / selective tonal control دمج التعريضات والتحكم بالدرجات dxo hdr exposure fusion highlights ظلال تعريض auto tone / levels ضبط تلقائي للإضاءة auto tone levels ضبط تلقائي black & white channel mixer أبيض وأسود بخلط القنوات black and white أبيض وأسود sepia monochrome white balance + tone curve + hsl توازن الأبيض ومنحنى الدرجات وhsl dxo capture one white balance tone curve hsl توازن الأبيض منحنى perceptual jpeg recompression (jpegmini-style) ضغط jpeg إدراكي jpegmini jpeg compress ضغط الصور تصغير حجم الصور ssim split toning / colour grading تلوين الظلال والإضاءات split tone color grading تلوين teal orange xmp sidecar: rating, label, keywords ملف xmp جانبي: تقييم ووسوم lightroom acdsee xmp metadata keywords تقييم وسوم"
 },
 "SP-0099": {
 "id": "SP-0099",
@@ -2449,7 +2449,7 @@
 "SP-0347",
 "SP-0002",
 "SP-0097",
-"SP-0313"
+"SP-0121"
 ],
 "text": "parity first, adaptation second التطابق أولًا ثم التكييف parity refactor tokens تطابق تكييف magicpath visual verification loop for ui against a reference حلقة التحقق البصري للواجهة مقابل المرجع visual diff screenshot overlay تحقق بصري مقارنة magicpath design fidelity contract with a closed deviation list عقد الأمانة للتصميم بقائمة انحرافات مغلقة fidelity parity design to code عقد مطابقة magicpath preflight probe first: auth, context and version as one json فحص تمهيدي أولًا للحساب والسياق preflight auth doctor فحص تمهيدي سياق magicpath theme as portable data with a designer-intent field الثيم كبيانات قابلة للنقل مع حقل نية المصمم theme brand design tokens dark mode ثيم هوية magicpath pin exactly the version the user is looking at تثبيت النسخة التي يراها المستخدم بالضبط version pin hash reference بصمة نسخة magicpath import ui from a repository by reading its design foundation first استيراد واجهة من مستودع بقراءة أساس التصميم أولًا repository design system css variables مستودع أساس التصميم magicpath persistent visual board beside the agent لوحة بصرية دائمة بجانب الوكيل board live preview artifact لوحة معاينة حية magicpath selection-as-context reference bundle shared by every worker حزمة مراجع من التحديد تُعطى لكل العمّال reference bundle parallel fan-out مراجع توازي magicpath default rules for authored interactive ui frames قواعد افتراضية لإطارات الواجهات التفاعلية ui defaults responsive prototype واجهة تفاعلية قواعد magicpath deterministic-first edits; the model only for what cannot be rewritten safely التعديل الحتمي أولًا والنموذج للباقي فقط deterministic edit change log timeline تعديل حتمي سجل تغييرات magicpath linked instances: shared style, per-record content نُسخ مرتبطة: نمط مشترك ومحتوى لكل سجل linked instances template records نسخ مرتبطة قالب magicpath labeled rough sketch for structure; reference for look الرسم التقريبي الموسوم للبنية والمرجع للمظهر sketch wireframe structure رسم تقريبي بنية magicpath two-way mcp bridge with a current-selection hint جسر mcp باتجاهين مع تلميح التحديد الحالي mcp bridge agents selection جسر وكلاء magicpath design is the look spec; the old component is the behaviour spec التصميم مواصفة الشكل والمكوّن القديم مواصفة السلوك behaviour component swap checklist استبدال مكون سلوك magicpath agent-friendly command contract (json, non-interactive, dry-run, explicit states) عقد أوامر مريح للوكيل cli json dry run agent ergonomics أوامر تجربة جافة magicpath two-phase work session with a baseline manifest and an editable-file allowlis"
 },
@@ -2653,15 +2653,15 @@
 "links": [
 "SP-0136",
 "SP-0118",
-"SP-0121",
+"SP-0122",
 "SP-0338"
 ],
 "text": "live blender capability inventory جرد قدرات blender الحي blender inventory bpy قدرات بلندر film finish in the blender 5 compositor تشطيب الفيلم في المركّب compositor bloom glare chromatic aberration vignette مركب توهج cinematic cycles render presets (5 looks) رندر سينمائي بخمسة أساليب blender cycles render cinematic رندر سينمائي بلندر camera moves with 180° motion blur → mp4 حركة كاميرا سينمائية إلى mp4 camera move orbit dolly zoom vertigo turntable motion blur حركة كاميرا"
 },
 "SP-0109": {
 "id": "SP-0109",
-"name_ar": "مشغل فيديو عمودي بالسحب",
-"name_en": "Vertical swipe video player (Android)",
+"name_ar": "كاميرا افتراضية من فيديو",
+"name_en": "Virtual camera from a video file",
 "hub": "software",
 "stage": "assemble",
 "stages": {
@@ -2937,6 +2937,27 @@
 },
 "SP-0121": {
 "id": "SP-0121",
+"name_ar": "مختبر الابتكار الهندسي",
+"name_en": "Invention Lab Candidates",
+"hub": "agents",
+"stage": "plan",
+"stages": {
+"create": 2,
+"plan": 3
+},
+"size": 5,
+"best": "proven",
+"ready_now": 5,
+"links": [
+"SP-0418",
+"SP-0424",
+"SP-0031",
+"SP-0130"
+],
+"text": "invention lab candidates مختبر الابتكار الهندسي invention-lab invention ideation brainstorm triz hypothesis falsifiable kill criteria engineering alternatives ابتكار توليد أفكار عصف ذهني فرضية معايير الرفض حلول هندسية system capacity sizer مقدّر سعة الأنظمة architecture-sizer capacity planning system design back-of-envelope rps replicas storage estimate scaling system-design-primer تخطيط السعة تصميم الأنظمة تقدير التخزين عدد السيرفرات الطلبات في الثانية التوسع book-distilled methods: lateral ideas, pragmatic engineering, bayesian evidence, personality, accounting checks, prompt clarity مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت book-methods lateral thinking random word pragmatic programmer bayes bayesian evidence personality big five character accounting ifrs ledger vat prompt clarity تفكير جانبي أفكار احتمال شخصية محاسبة قيود ضريبة وضوح البرومنت شعر كتب ai for business: 9 functions, 64 workflows, claude-native gated runbooks الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لclaude business-workflows business workflow sales marketing support operations فور بيزنس أعمال مبيعات تسويق خطة عمل أتمتة futurepedia arabic-aware font fidelity lab مختبر مطابقة الخطوط العربية font-fidelity-lab font matching font identification arabic font typography iou libraqm gsub gpos variable font مطابقة الخط خط عربي تحديد الخط تغطية الحروف تشكيل قصاصة نص"
+},
+"SP-0122": {
+"id": "SP-0122",
 "name_ar": "تحزيم المهارة للرفع إلى claude.ai",
 "name_en": "Skill Packager for claude.ai",
 "hub": "agents",
@@ -2950,33 +2971,12 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0025",
 "SP-0108",
+"SP-0025",
 "SP-0261",
 "SP-0018"
 ],
 "text": "skill packager for claude.ai تحزيم المهارة للرفع إلى claude.ai package-skill package skill zip skill file claude.ai upload lite package release deterministic archive distribution تحزيم المهارة رفع المهارة ملف مضغوط نسخة خفيفة توزيع المهارة python package presence probe فاحص وجود حزم بايثون python-package-probe python packages pip installed version distribution metadata environment probe readiness حزم بايثون مكتبات مثبتة إصدار فحص البيئة importlib.metadata safe headless blender bridge جسر blender الآمن blender-bridge blender headless bridge bpy blend file glb export png render scene json doctor بلندر جسر بلندر رندر ثلاثي الأبعاد ملف blend skill health check فحص سلامة المهارة check-skill validate skill skill lint frontmatter broken links counts marker routing evals secret scan tool registry check ci gate فحص المهارة التحقق من المهارة روابط مكسورة تقييمات التوجيه عدادات القدرات فحص الأسرار"
-},
-"SP-0122": {
-"id": "SP-0122",
-"name_ar": "مختبر الابتكار الهندسي",
-"name_en": "Invention Lab Candidates",
-"hub": "agents",
-"stage": "create",
-"stages": {
-"create": 2,
-"plan": 2
-},
-"size": 4,
-"best": "proven",
-"ready_now": 4,
-"links": [
-"SP-0418",
-"SP-0424",
-"SP-0130",
-"SP-0005"
-],
-"text": "invention lab candidates مختبر الابتكار الهندسي invention-lab invention ideation brainstorm triz hypothesis falsifiable kill criteria engineering alternatives ابتكار توليد أفكار عصف ذهني فرضية معايير الرفض حلول هندسية system capacity sizer مقدّر سعة الأنظمة architecture-sizer capacity planning system design back-of-envelope rps replicas storage estimate scaling system-design-primer تخطيط السعة تصميم الأنظمة تقدير التخزين عدد السيرفرات الطلبات في الثانية التوسع ai for business: 9 functions, 64 workflows, claude-native gated runbooks الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لclaude business-workflows business workflow sales marketing support operations فور بيزنس أعمال مبيعات تسويق خطة عمل أتمتة futurepedia arabic-aware font fidelity lab مختبر مطابقة الخطوط العربية font-fidelity-lab font matching font identification arabic font typography iou libraqm gsub gpos variable font مطابقة الخط خط عربي تحديد الخط تغطية الحروف تشكيل قصاصة نص"
 },
 "SP-0123": {
 "id": "SP-0123",
@@ -3290,8 +3290,8 @@
 "stage": "create",
 "stages": {
 "create": 6,
-"refine": 3,
 "assemble": 3,
+"refine": 3,
 "plan": 1
 },
 "size": 13,
@@ -3303,7 +3303,7 @@
 "SP-0118",
 "SP-0276"
 ],
-"text": "raw-webgl procedural crystal shards عالم البلورات بـ webgl خام webgl crystals procedural lightweight بلورات glb models with seeked animation نماذج glb بحركة مضبوطة على الزمن glb gltf animationmixer blender نموذج parametric lofted boat hull بدن قارب بمعادلات boat felucca loft parametric قارب post stack (bloom, aces, film) سلسلة ما بعد المعالجة bloom post processing aces film grain ما بعد المعالجة kosif three-kit 3d project مشروع three-kit ثلاثي الأبعاد three-kit k3 tone mapping aces agx renderer clouds السحب clouds raymarch toon cumulus سحب physical materials (glass, chrome, wet, iridescent) المواد الفيزيائية glass chrome clearcoat iridescence pbr مواد sky, sun & gradient ibl السماء والشمس والإضاءة البيئية sky sun ibl fog blue hour سماء headless blender (bpy) blender بلا واجهة blender bpy cycles export بلندر remotion threecanvas ثلاثي الأبعاد في remotion remotion r3f threecanvas 3d type in 3d space النص داخل المشهد ثلاثي الأبعاد 3d text canvas texture extrude arabic 3d نص ثلاثي 3d product interactions (button, lid) أزرار وأجهزة ثلاثية الأبعاد button press laptop product interaction زر unbuilt 3d ideas أفكار ثلاثية الأبعاد غير منفذة first person embedding galaxy scroll world ideas أفكار"
+"text": "raw-webgl procedural crystal shards عالم البلورات بـ webgl خام webgl crystals procedural lightweight بلورات glb models with seeked animation نماذج glb بحركة مضبوطة على الزمن glb gltf animationmixer blender نموذج parametric lofted boat hull بدن قارب بمعادلات boat felucca loft parametric قارب kosif three-kit 3d project مشروع three-kit ثلاثي الأبعاد three-kit k3 tone mapping aces agx renderer post stack (bloom, aces, film) سلسلة ما بعد المعالجة bloom post processing aces film grain ما بعد المعالجة clouds السحب clouds raymarch toon cumulus سحب physical materials (glass, chrome, wet, iridescent) المواد الفيزيائية glass chrome clearcoat iridescence pbr مواد sky, sun & gradient ibl السماء والشمس والإضاءة البيئية sky sun ibl fog blue hour سماء headless blender (bpy) blender بلا واجهة blender bpy cycles export بلندر remotion threecanvas ثلاثي الأبعاد في remotion remotion r3f threecanvas 3d type in 3d space النص داخل المشهد ثلاثي الأبعاد 3d text canvas texture extrude arabic 3d نص ثلاثي 3d product interactions (button, lid) أزرار وأجهزة ثلاثية الأبعاد button press laptop product interaction زر unbuilt 3d ideas أفكار ثلاثية الأبعاد غير منفذة first person embedding galaxy scroll world ideas أفكار"
 },
 "SP-0137": {
 "id": "SP-0137",
@@ -3740,7 +3740,7 @@
 "SP-0418",
 "SP-0160",
 "SP-0143",
-"SP-0122"
+"SP-0121"
 ],
 "text": "video brand-system sheet ورقة نظام العلامة للفيديو نظام علامة brand system tokens consistency design.md series هوية الفيديو توحيد الشكل سلسلة فيديوهات style guide brand rules brand book anatomy & voice كتاب العلامة وصوتها كتاب العلامة brand book guidelines voice governance دليل الهوية براند بوك نبرة العلامة style guide tone of voice identity interview for no-brand clients مقابلة العميل بلا هوية بلا هوية مقابلة interview adjectives font pairing no brand أسئلة العميل اختيار الخطوط ألوان الهوية client questions brand colors brand grid montage مونتاج شبكة العلامة شبكة brand grid montage identity reel case study مونتاج الهوية عرض الهوية شبكة لقطات grid layout ui moments font-licence & ip gate بوابة ترخيص الخطوط والملكية ترخيص خطوط font licence ofl ip legal حقوق الخط حقوق الملكية خطوط مفتوحة copyright credits"
 },
@@ -4633,8 +4633,8 @@
 },
 "SP-0194": {
 "id": "SP-0194",
-"name_ar": "فراشة ويراعة مرافقة",
-"name_en": "Winged companions (butterfly, firefly)",
+"name_ar": "أدوات تفاصيل المخلوقات",
+"name_en": "Creature detail builders",
 "hub": "motion",
 "stage": "refine",
 "stages": {
@@ -5778,7 +5778,7 @@
 "SP-0344",
 "SP-0150"
 ],
-"text": "aac → opus audio codec fallback احتياط ترميز الصوت ترميز الصوت الصوت فيديو بدون صوت audio codec opus d3 as math and geometry engine d3 كمحرك رياضيات وهندسة مخطط متحرك تصوير البيانات إسقاط جغرافي d3 data viz trend: self-critique on frames ترند: self-critique on frames مراجعة ذاتية نقد الإطارات فحص الجودة contact sheet self review qa trend: one clock picture+sound ترند: one clock picture+sound مزامنة الصوت والصورة شبكة الإيقاع ضربات صوتية beat grid sound sync lufs trend: listen with math (@kloss_xyz) ترند: listen with math (@kloss_xyz) طيف الصوت جليتش تفاعل مع الموسيقى spectrogram audio channels glitch trend: measure real motion (@aicreataro) ترند: measure real motion (@aicreataro) التقاط الحركة جسيمات موديل ثلاثي mocap particles glb trend: program is the film: seek(t) route a ترند: program is the film: seek(t) route a فيلم بالكود تصوير الإطارات صفحة html playwright frame capture trend: generate-then-trace ترند: generate-then-trace إعادة الرسم تتبع اللقطة توليد فيديو trace redraw video model trend: arabic kinetic type gap ترند: arabic kinetic type gap نص عربي متحرك كتابة متحركة كاريوكي kinetic typography rtl word reveal trend: closed-form springs for ui morphs ترند: closed-form springs for ui morphs نابض حركة مرنة تحول الواجهة spring ui animation morph trend: effort xhigh/max ترند: effort xhigh/max مستوى الجهد تكلفة وقت الإنتاج effort token cost budget realtime audio architecture choice اختيار معمارية الصوت اللحظي صوت مباشر زمن التأخير معالجة صوت audioworklet web audio low latency deterministic sampling for render أخذ عينات حتمي للرندر تفاعل مع الصوت حركة على الموسيقى بيانات الصوت audio reactive per-frame data remotion"
+"text": "aac → opus audio codec fallback احتياط ترميز الصوت ترميز الصوت الصوت فيديو بدون صوت audio codec opus d3 as math and geometry engine d3 كمحرك رياضيات وهندسة مخطط متحرك تصوير البيانات إسقاط جغرافي d3 data viz trend: self-critique on frames ترند: self-critique on frames مراجعة ذاتية نقد الإطارات فحص الجودة contact sheet self review qa trend: one clock picture+sound ترند: one clock picture+sound مزامنة الصوت والصورة شبكة الإيقاع ضربات صوتية beat grid sound sync lufs trend: measure real motion (@aicreataro) ترند: measure real motion (@aicreataro) التقاط الحركة جسيمات موديل ثلاثي mocap particles glb trend: listen with math (@kloss_xyz) ترند: listen with math (@kloss_xyz) طيف الصوت جليتش تفاعل مع الموسيقى spectrogram audio channels glitch trend: program is the film: seek(t) route a ترند: program is the film: seek(t) route a فيلم بالكود تصوير الإطارات صفحة html playwright frame capture trend: generate-then-trace ترند: generate-then-trace إعادة الرسم تتبع اللقطة توليد فيديو trace redraw video model trend: arabic kinetic type gap ترند: arabic kinetic type gap نص عربي متحرك كتابة متحركة كاريوكي kinetic typography rtl word reveal trend: closed-form springs for ui morphs ترند: closed-form springs for ui morphs نابض حركة مرنة تحول الواجهة spring ui animation morph trend: effort xhigh/max ترند: effort xhigh/max مستوى الجهد تكلفة وقت الإنتاج effort token cost budget realtime audio architecture choice اختيار معمارية الصوت اللحظي صوت مباشر زمن التأخير معالجة صوت audioworklet web audio low latency deterministic sampling for render أخذ عينات حتمي للرندر تفاعل مع الصوت حركة على الموسيقى بيانات الصوت audio reactive per-frame data remotion"
 },
 "SP-0243": {
 "id": "SP-0243",
@@ -6028,7 +6028,7 @@
 "SP-0054",
 "SP-0016",
 "SP-0018",
-"SP-0121"
+"SP-0122"
 ],
 "text": "end-to-end kosif production pipeline خط الإنتاج الكامل من الطلب إلى التسليم خطوات الإنتاج من الفكرة للتسليم تسليم الفيديو workflow end to end production loop as dependency graph حلقة الإنتاج كمخطط اعتمادات خطة الإنتاج مراحل المونتاج سير العمل production pipeline workflow python pro كود python إنتاجي بايثون برمجة سكربت بايثون python production code typescript & node pro كود typescript صارم لـ node وbun وdeno تايب سكريبت جافاسكربت برمجة typescript node bun post-production dependency chain تسلسل مراحل ما بعد الإنتاج ما بعد الإنتاج تثبيت المونتاج تلوين picture lock deliverables critical path performance optimization تسريع المواقع والتطبيقات والاستعلامات با تسريع بطء تحسين الأداء speed up optimization slow docker & ci/cd حاوية ونشر مستمر لأي مشروع دوكر حاوية نشر تلقائي container deployment devops"
 },
@@ -6203,7 +6203,7 @@
 "ready_now": 1,
 "links": [
 "SP-0229",
-"SP-0121",
+"SP-0122",
 "SP-0017",
 "SP-0038"
 ],
@@ -8380,7 +8380,7 @@
 "SP-0314",
 "SP-0241",
 "SP-0376",
-"SP-0121"
+"SP-0122"
 ],
 "text": "studio project sanitiser منظف مشروع studio تنظيف المشروع قيم خاطئة تصحيح البيانات sanitize normalize brief validator مدقق ملخص المشروع ملخص المشروع بريف مدخلات ناقصة input validation brief check review: auto-reload on new version and deep links المراجعة: إعادة التحميل التلقائي والروابط العميقة تحديث تلقائي رابط مباشر نسخة جديدة auto reload deep link pin and upgrade the project cli تثبيت وترقية إصدار الأداة في المشروع تحديث الأداة ترقية إصدار upgrade version pin project history undo per agent turn سجل المشروع والتراجع لكل دورة تراجع سجل التعديلات رجوع undo revert"
 },
@@ -9637,7 +9637,7 @@
 "SP-0281",
 "SP-0393",
 "SP-0384",
-"SP-0204",
+"SP-0398",
 "SP-0030"
 ],
 "text": "chromatic-split transition انتقال تفكك لوني انفصال لوني زيغ لوني ترانزيشن ألوان chromatic aberration rgb split colour flood seam غمر لوني كامل فاصل لوني لون يملأ الشاشة ترانزيشن لون color wipe color flood css transition: chromatic aberration انتقال css: زيغ لوني انفصال الألوان فصل قنوات rgb تشويش لوني rgb split color fringe shader transition: chromatic-split انتقال شيدر: انفصال لوني انفصال لوني ترانزيشن شيدر color split webgl transition chromatic radial split انتقال شيدر الانقسام الشعاعي انقسام الألوان شعاعي ترانزيشن chromatic aberration radial transition text clone wall transition انتقال جدار الكلمات جدار نصي كلمات متكررة تغطية word wall text overlay difference blend chapter colour slam انتقال لوح لوني للفصل فاصل فصول ألوان العلامة لوح لوني chapter opener color panel full-bleed colour wipe interstitial مسح لوني كامل كفاصل فاصل لوح لوني عبارة interstitial chapter break stir gradient collapse blend مزج بالتحريك مزج الألوان تدرج لوني طبقات ألوان gradient blend color mix"
@@ -9866,8 +9866,8 @@
 "links": [
 "SP-0424",
 "SP-0429",
-"SP-0122",
-"SP-0155"
+"SP-0155",
+"SP-0121"
 ],
 "text": "font matching through a real shaper (chromium/harfbuzz) مطابقة الخط عبر محرك تشكيل حقيقي مطابقة الخط font matching harfbuzz chromium signatures amiri تشكيل type pairings اقترانات الخطوط اقتران الخطوط pairing kufi plex readex fraunces bilingual type تنسيق الخطوط خط العنوان خط النص font pairing headline font cairo split by unicode-range كايرو المقسوم بنطاق يونيكود cairo القاهرة unicode-range woff2 subset font-face تقسيم الخط خط كايرو تضمين الخط ملف الخط font subsetting webfont assemble a matched ofl family from two masters تجميع عائلة خط مطابقة من مصدرين ofl fonttools merge subset ofl عائلة خط amiri bodoni font matching by ink مطابقة الخط بالحبر مطابقة الخط font matching font id ink iou mimic ما هذا الخط تعرف على الخط خط مشابه identify font similar font arabic font voice map خريطة أصوات الخطوط خطوط كوفي نسخ رقعة font kufi naskh ruqaa ofl cairo tajawal amiri lalezar اختيار الخط خط عربي فونت font choice arabic typeface live google fonts loader & picker محمّل الخطوط الحي ومنتقي الخط google fonts منتقي الخط font picker تبديل الخط live swap تجربة الخطوط تغيير الفونت معاينة الخط font preview change font font discovery & fallback chain اكتشاف الخطوط وسلسلة البدائل اكتشاف الخطوط خط بديل fallback fc-list font discovery noto dubai خطوط الجهاز البحث عن خط خط مفقود installed fonts missing font font-ready gate before frame 0 بوابة تحميل الخط قبل الإطار الأول تحميل الخط خط بديل font loading fonts.ready delayrender fallback glyphs tofu الخط لا يظهر مربعات بدل الحروف انتظار الخط font not loaded first frame screen reading scale (v17 / sqc) سلّم القراءة للشاشات واجهة سلم القراءة ui type reading scale dashboard plex لوحة تحكم أحجام الواجهة وضوح القراءة ui font size line length font matches are candidates, not identities ترشيح الخط لا الجزم به font matching fallback tofu imitation مطابقة الخط خط احتياطي four open arabic fonts bundled by mosamem (ibm plex sans arabic, cairo, tajawal, amiri) أربعة خطوط عربية مفتوحة يرفقها مصمم خطوط عربية arabic fonts cairo tajawal amiri plex ofl"
 },
@@ -10056,8 +10056,8 @@
 "links": [
 "SP-0273",
 "SP-0148",
-"SP-0402",
 "SP-0416",
+"SP-0402",
 "SP-0118"
 ],
 "text": "strike-through & replace شطب واستبدال strikethrough replace correction شطب استبدال highlighter & underline swipe قلم التظليل والخط السفلي highlighter underline marker emphasis تظليل خط سفلي تأكيد two-tone lines & accent-word colour عنوان بلونين وكلمة لون two-tone accent colour emphasis لونين لون التمييز inline avatars & icons inside a headline صور ووجوه وأيقونات داخل السطر avatars inline icon صور داخل السطر keyword pills كلمات داخل كبسولات pill capsule keyword كبسولة كلمة مفتاحية word performs its meaning الكلمة تؤدي معناها verb literal meaning الكلمة تؤدي معناها dim-previous stacks & active-item lists قوائم تخفت السابق list dim triad قائمة تخفيت gradient & metallic word fills تعبئة متدرجة ومعدنية gradient metallic fill تدرج معدني selection brackets & design-tool bounding box أقواس تحديد وصندوق أداة تصميم brackets bounding box selection أقواس تحديد full-stop dot & glyph substitution النقطة الختامية وإبدال الحرف full stop dot glyph نقطة إبدال حرف"
@@ -10493,9 +10493,9 @@
 "ready_now": 2,
 "links": [
 "SP-0441",
-"SP-0416",
 "SP-0345",
-"SP-0129"
+"SP-0129",
+"SP-0416"
 ],
 "text": "coach voice cue lines جمل صوت المدرب مدرب لياقة أوامر صوتية coach cues fitness imperative تمارين جيم رياضة workout exercise language & dialect intake field اختيار اللغة واللهجة في المقابلة اللهجة اللغة مقابلة intake language dialect الموجز فصحى مصري brief voice engine language coach (ar/en) skill مدرب اللغة الثنائي مدرب اللغة ثنائي اللغة language coach bilingual ترجمة عربي إنجليزي تعلم اللغة translation arabic english"
 }
@@ -10572,18 +10572,18 @@
 "SP-0019"
 ],
 "plan": [
+"SP-0121",
 "SP-0020"
 ],
 "create": [
 "SP-0118",
 "SP-0017",
-"SP-0122",
 "SP-0002",
 "SP-0001",
 "SP-0003"
 ],
 "assemble": [
-"SP-0121"
+"SP-0122"
 ],
 "verify": [
 "SP-0004"
@@ -11722,11 +11722,11 @@
 }
 ],
 "audit": {
-"atoms": 5334,
+"atoms": 5335,
 "superpowers": 445,
 "twin_groups": 162,
 "twin_members": 427,
-"distinct_methods": 5069,
+"distinct_methods": 5070,
 "tiny_absorbed": 23,
 "same_name_groups": [
 {
@@ -12276,7 +12276,7 @@
 {
 "a": "SP-0031",
 "b": "SP-0140",
-"sim": 0.486,
+"sim": 0.485,
 "hubs": [
 "thinking",
 "images"
@@ -12546,7 +12546,7 @@
 {
 "a": "SP-0292",
 "b": "SP-0344",
-"sim": 0.353,
+"sim": 0.354,
 "hubs": [
 "audio",
 "quality"
@@ -12573,7 +12573,7 @@
 {
 "a": "SP-0148",
 "b": "SP-0416",
-"sim": 0.348,
+"sim": 0.347,
 "hubs": [
 "audio",
 "type"
@@ -12744,7 +12744,7 @@
 ]
 },
 "atom_stage_counts": {
-"plan": 879,
+"plan": 880,
 "deliver": 165,
 "create": 1801,
 "refine": 873,

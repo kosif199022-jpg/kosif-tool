@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5334,
+  "catalog_powers": 5335,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 132,
+  "tool_count": 133,
   "groups": [
     {
       "id": "research",
@@ -129,17 +129,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 146,
+      "count": 147,
       "status_counts": {
         "documented": 49,
         "install": 8,
         "key": 2,
-        "proven": 82,
+        "proven": 83,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 38,
-        "runnable-tools": 65,
+        "runnable-tools": 66,
         "self-discovery": 43
       },
       "examples": [
@@ -66032,6 +66032,24 @@
       ],
       "source": "runnable-tools.json",
       "what": "يبحث في مؤشر تبني الذكاء الاصطناعي لـ9 وظائف و64 خطة عمل، ويعيد توجيه كل خطوة إلى ما ينفذه Claude بنفسه أو إلى موصّل، ويكتب خطة تشغيل عربية ببوابات موافقة. — Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step f"
+    },
+    {
+      "id": "TOOL-66",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity",
+      "name_ar": "مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_book_methods.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/book_methods.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يبحث في 45 منهجًا مستخلصًا بكلماتنا من عشرة ملفات PDF، ويشغّل خمسة مساعدين: كلمات عشوائية محفّزة، وحساب بايزي بسجل أدلة بالديسيبل، وبوابة وضوح البرومنت، وفاحص قيود محاسبية، وبطاقة شخصية بالعوامل الخمسة. — Searches 45 methods distilled in our own words from ten uploaded PDFs (late"
     },
     {
       "id": "SEC-01",

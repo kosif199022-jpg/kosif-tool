@@ -11482,6 +11482,107 @@
    "evidence": "tested-here",
    "evidence_note": "evals/test_business_workflows.py passed on 2026-10-23 (64 workflows, 286 steps, 220 native).",
    "power_id": "TOOL-65"
+  },
+  {
+   "id": "book-methods",
+   "path": "scripts/book_methods.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity",
+   "title_ar": "مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت",
+   "summary_en": "Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card.",
+   "summary_ar": "يبحث في 45 منهجًا مستخلصًا بكلماتنا من عشرة ملفات PDF، ويشغّل خمسة مساعدين: كلمات عشوائية محفّزة، وحساب بايزي بسجل أدلة بالديسيبل، وبوابة وضوح البرومنت، وفاحص قيود محاسبية، وبطاقة شخصية بالعوامل الخمسة.",
+   "use_when": [
+    "أعطني أفكار غير تقليدية لإعلان",
+    "افحص وضوح هذا البرومنت قبل التوليد",
+    "تأكد أن القيود متوازنة وأن التحصيل ليس إيرادًا",
+    "Build a character's voice from a Big Five profile",
+    "Weigh this evidence with Bayes in decibels"
+   ],
+   "keywords": [
+    "lateral thinking",
+    "random word",
+    "pragmatic programmer",
+    "bayes",
+    "bayesian",
+    "evidence",
+    "personality",
+    "big five",
+    "character",
+    "accounting",
+    "ifrs",
+    "ledger",
+    "vat",
+    "prompt clarity",
+    "تفكير جانبي",
+    "أفكار",
+    "احتمال",
+    "شخصية",
+    "محاسبة",
+    "قيود",
+    "ضريبة",
+    "وضوح البرومنت",
+    "شعر",
+    "كتب"
+   ],
+   "commands": [
+    {
+     "name": "search",
+     "example": "python3 scripts/book_methods.py search \"شخصية حوار\"",
+     "does": "Arabic/English method search."
+    },
+    {
+     "name": "rest",
+     "example": "python3 scripts/book_methods.py rest --problem \"إعلان لمقهى\" --seed 7",
+     "does": "Seeded random-word provocation in four modes."
+    },
+    {
+     "name": "bayes",
+     "example": "python3 scripts/book_methods.py bayes --h fraud=0.01 --h ok=0.99 --e \"flag:fraud=0.9,ok=0.05\"",
+     "does": "Posterior and decibel evidence ledger."
+    },
+    {
+     "name": "clarity",
+     "example": "python3 scripts/book_methods.py clarity \"صورة جميلة لشخص\"",
+     "does": "Clarity/context/specificity score; exit 3 = REVISE."
+    },
+    {
+     "name": "ledger",
+     "example": "python3 scripts/book_methods.py ledger --file entries.json --revenue 4101 --receivable 1201",
+     "does": "Draft journal-entry checks; exit 1 on an error."
+    },
+    {
+     "name": "persona",
+     "example": "python3 scripts/book_methods.py persona --name سارة --big5 O=4,C=2,E=5,A=2,N=3",
+     "does": "Character card with speech rules and if-then signatures."
+    }
+   ],
+   "inputs": "data/book_methods.json; a problem, hypotheses, a prompt, journal entries JSON or Big Five scores",
+   "outputs": "JSON to stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Reads only the given files and prints JSON; generates no media, posts no entry and profiles no real person.",
+   "limits": "Methods are summaries, not the books; clarity is a word-list heuristic; ledger is a draft check, not posting or an audit opinion; persona is for fiction and tone only.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_book_methods.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A20-book-distilled-methods.md"
+   ],
+   "families": [
+    "planning-execution",
+    "qa-verification"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_book_methods.py passed on 2026-10-23 (10 sources, 45 methods, 8 tests).",
+   "power_id": "TOOL-66"
   }
  ]
 }
