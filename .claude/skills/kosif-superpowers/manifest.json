@@ -18,7 +18,7 @@
   "powers": 5512,
   "families": 62,
   "domains": 10,
-  "tools": 148,
+  "tools": 149,
   "guides": 108,
   "statuses": {
    "documented": 2097,
@@ -14178,6 +14178,122 @@
    "families": [
     "web-research",
     "self-discovery"
+   ]
+  },
+  {
+   "id": "fast-edit",
+   "path": "scripts/fast_edit.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
+   "title_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت",
+   "summary_en": "Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it.",
+   "summary_ar": "عمليات سريعة على ملف واحد بإيصال JSON: يعرض الإطارات المفتاحية، ويقص بالنسخ المباشر لو البداية على إطار مفتاحي وإلا يعيد الترميز بدقة ويقول قد إيه كان النسخ هيبدأ بدري، ويغيّر الصوت بنفس معدل العينة ونفس الطول، ويفتّح الفيديو المظلم ويقيس الإضاءة قبل وبعد، ويستخرج الصوت بدون إعادة ترميز لما ينفع.",
+   "use_when": [
+    "Cut a clip from 1:05 to 1:40 instantly without re-encoding if possible",
+    "Make this voice sound like a chipmunk / robot / radio without changing its length",
+    "Brighten this dark night video and remove the noise",
+    "Extract the audio from this video without losing quality",
+    "قص الفيديو من الدقيقة دي للدقيقة دي بسرعة من غير ما يبوظ الجودة",
+    "غيّر الصوت لصوت روبوت أو صوت تخين",
+    "فتّح الفيديو المظلم وشيل التشويش",
+    "استخرج الصوت من الفيديو"
+   ],
+   "keywords": [
+    "lossless cut",
+    "stream copy",
+    "instant cut",
+    "keyframe",
+    "gop",
+    "trim",
+    "voice changer",
+    "pitch shift",
+    "chipmunk",
+    "robot voice",
+    "echo",
+    "radio voice",
+    "low light",
+    "brighten",
+    "dark video",
+    "denoise",
+    "extract audio",
+    "mp3",
+    "m4a",
+    "ffmpeg",
+    "قص سريع",
+    "قص بدون فقد",
+    "إطار مفتاحي",
+    "مغير الصوت",
+    "تغيير الصوت",
+    "تفتيح",
+    "فيديو مظلم",
+    "استخراج الصوت"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/fast_edit.py doctor",
+     "does": "Check ffmpeg/ffprobe and list the voice presets."
+    },
+    {
+     "name": "keyframes",
+     "example": "python3 scripts/fast_edit.py keyframes --input ./clip.mp4",
+     "does": "List video keyframe times and the largest gap between them."
+    },
+    {
+     "name": "cut",
+     "example": "python3 scripts/fast_edit.py cut --input ./clip.mp4 --start 65 --end 100 --output ./cut.mp4",
+     "does": "Cut [start, end): stream copy when the start is within --tolerance of a keyframe, exact re-encode otherwise (--mode copy|exact forces one); the receipt gives the copy drift and measured stream durations."
+    },
+    {
+     "name": "voice",
+     "example": "python3 scripts/fast_edit.py voice --input ./talk.mp4 --preset robot --output ./robot.mp4",
+     "does": "Apply a voice preset at the real sample rate, keeping the length; video is stream-copied (audio-only extensions drop it)."
+    },
+    {
+     "name": "brighten",
+     "example": "python3 scripts/fast_edit.py brighten --input ./night.mp4 --denoise --output ./lifted.mp4",
+     "does": "Lift shadows and midtones (strength 0..1, optional hqdn3d denoise), audio stream-copied; reports mean luma before/after and skips clips that are already bright unless --force-lift."
+    },
+    {
+     "name": "extract-audio",
+     "example": "python3 scripts/fast_edit.py extract-audio --input ./clip.mp4 --output ./voice.m4a",
+     "does": "Extract the first audio stream: bit-exact copy when the extension can hold the codec, otherwise re-encoded (WAV, FLAC, MP3, M4A, AAC, Opus, Ogg)."
+    },
+    {
+     "name": "tests",
+     "example": "python3 -m unittest discover -s evals -p 'test_fast_edit.py' -v",
+     "does": "Run 17 tests: cut planning, filter building and real FFmpeg runs (skipped without ffmpeg)."
+    }
+   ],
+   "inputs": "One local video or audio file the user owns or may edit, plus times in seconds and a preset name.",
+   "outputs": "A new media file and a kosif.fast_edit.receipt.v1 JSON receipt (plan, measured durations, SHA-256, luma or copy flags); the source is never modified and an existing output is kept unless --force.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Use only media the user owns or is licensed to edit; outputs are new files.",
+   "limits": "One file per command, no timeline. A copy cut starts on the keyframe at or before the start and may keep a frame or two past the end (B-frame reordering); use --mode exact for frame accuracy. Voice presets are classic DSP effects, not AI voice conversion. Brighten is a fixed tone curve measured by mean luma, not a learned low-light model.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-23: 17/17 tests passed on this checkout with FFmpeg: keyframe-on cut copied with zero start error, a mid-GOP cut re-encoded to 1.5 s exactly, a forced copy reported -0.5 s start error, the chipmunk preset moved a 440 Hz tone to about 594 Hz at 48 kHz with the length kept, the low-light lift gained over 10 luma levels and a bright clip was skipped. Ideas only came from studying a user-supplied Electron editor; no code from it is used.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_fast_edit.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/edit.md"
+   ],
+   "families": [
+    "photo-video-footage",
+    "transitions-cuts",
+    "audio-sync-captions"
    ]
   }
  ],

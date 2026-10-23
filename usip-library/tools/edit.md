@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (13 أداة)
+# أدوات المجال `edit` (14 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -194,6 +194,63 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:dua-wednesday --evidence <ملف>`.
+
+### `fast-edit` — التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت / Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/fast_edit.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `transitions-cuts`, `audio-sync-captions` |
+
+**ما تفعله:** عمليات سريعة على ملف واحد بإيصال JSON: يعرض الإطارات المفتاحية، ويقص بالنسخ المباشر لو البداية على إطار مفتاحي وإلا يعيد الترميز بدقة ويقول قد إيه كان النسخ هيبدأ بدري، ويغيّر الصوت بنفس معدل العينة ونفس الطول، ويفتّح الفيديو المظلم ويقيس الإضاءة قبل وبعد، ويستخرج الصوت بدون إعادة ترميز لما ينفع.
+
+**What it does:** Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it.
+
+#### متى تُستدعى
+
+- «Cut a clip from 1:05 to 1:40 instantly without re-encoding if possible»
+- «Make this voice sound like a chipmunk / robot / radio without changing its length»
+- «Brighten this dark night video and remove the noise»
+- «Extract the audio from this video without losing quality»
+- «قص الفيديو من الدقيقة دي للدقيقة دي بسرعة من غير ما يبوظ الجودة»
+- «غيّر الصوت لصوت روبوت أو صوت تخين»
+- «فتّح الفيديو المظلم وشيل التشويش»
+- «استخرج الصوت من الفيديو»
+
+#### الأوامر
+
+- **doctor**: Check ffmpeg/ffprobe and list the voice presets.
+  - `python3 scripts/fast_edit.py doctor`
+- **keyframes**: List video keyframe times and the largest gap between them.
+  - `python3 scripts/fast_edit.py keyframes --input ./clip.mp4`
+- **cut**: Cut [start, end): stream copy when the start is within --tolerance of a keyframe, exact re-encode otherwise (--mode copy\|exact forces one); the receipt gives the copy drift and measured stream durations.
+  - `python3 scripts/fast_edit.py cut --input ./clip.mp4 --start 65 --end 100 --output ./cut.mp4`
+- **voice**: Apply a voice preset at the real sample rate, keeping the length; video is stream-copied (audio-only extensions drop it).
+  - `python3 scripts/fast_edit.py voice --input ./talk.mp4 --preset robot --output ./robot.mp4`
+- **brighten**: Lift shadows and midtones (strength 0..1, optional hqdn3d denoise), audio stream-copied; reports mean luma before/after and skips clips that are already bright unless --force-lift.
+  - `python3 scripts/fast_edit.py brighten --input ./night.mp4 --denoise --output ./lifted.mp4`
+- **extract-audio**: Extract the first audio stream: bit-exact copy when the extension can hold the codec, otherwise re-encoded (WAV, FLAC, MP3, M4A, AAC, Opus, Ogg).
+  - `python3 scripts/fast_edit.py extract-audio --input ./clip.mp4 --output ./voice.m4a`
+- **tests**: Run 17 tests: cut planning, filter building and real FFmpeg runs (skipped without ffmpeg).
+  - `python3 -m unittest discover -s evals -p 'test_fast_edit.py' -v`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- الأمان: writes-files
+- الموافقة: Use only media the user owns or is licensed to edit; outputs are new files.
+- الحدود: One file per command, no timeline. A copy cut starts on the keyframe at or before the start and may keep a frame or two past the end (B-frame reordering); use --mode exact for frame accuracy. Voice presets are classic DSP effects, not AI voice conversion. Brighten is a fixed tone curve measured by mean luma, not a learned low-light model.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_fast_edit.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/edit.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fast-edit --evidence <ملف>`.
 
 ### `kosif-timeline` — محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة / KOSIF Timeline: genuine multitrack video, image and audio editor
 
