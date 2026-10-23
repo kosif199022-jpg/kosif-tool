@@ -28,6 +28,8 @@ class AtlasTests(unittest.TestCase):
             for b in m["books"]:
                 self.assertIn(b, books | ext, f"{m['id']} names unknown book {b}")
             self.assertIn(m["review_status"], levels)
+        for b in self.data["external_books"]:
+            self.assertIn(b["review_status"], levels, b["id"])
 
     def test_status_never_claims_training_or_fulltext(self):
         self.assertIn("NOT_fulltext_review", self.data["status"])

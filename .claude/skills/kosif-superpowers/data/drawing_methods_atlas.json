@@ -10,7 +10,8 @@
   ],
   "review_status_levels": {
     "general_teaching_knowledge": "Method summarised from the widely taught content associated with the book; the book's full text was not read in this session.",
-    "public_domain_section_read": "A public-domain section was read (see A14 for the anchors)."
+    "public_domain_section_read": "A public-domain section was read (see A14 for the anchors).",
+    "bibliographic_metadata_only": "External book entries only: title and author are recorded; no content was reviewed."
   },
   "pipeline": [
     {
