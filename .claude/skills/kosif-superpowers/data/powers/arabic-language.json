@@ -219,8 +219,11 @@
    "tesseract"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/anchor_gate.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "bidi",
@@ -283,8 +286,11 @@
    "fonts:arabic"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "tashkeel",
@@ -550,8 +556,10 @@
    "pip:camel-tools"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "dialect",
@@ -621,8 +629,11 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md",
+   "kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "grammar",

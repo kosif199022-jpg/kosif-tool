@@ -13,8 +13,7 @@
   "install": "python3 -m venv V && V/bin/pip install \"graphifyy[mcp]==0.9.91\"",
   "requires": [
    "python3",
-   "key:graphify",
-   "key:unspecified"
+   "key:graphify"
   ],
   "license": "Apache-2.0",
   "proof": [
@@ -354,8 +353,7 @@
   "params": "",
   "install": "claude mcp add --transport http --scope user graphify https://api.graphify.com/mcp",
   "requires": [
-   "key:graphify",
-   "key:unspecified"
+   "key:graphify"
   ],
   "license": "",
   "proof": [
@@ -423,7 +421,7 @@
   "install": "",
   "requires": [
    "python3",
-   "key:unspecified"
+   "key:graphify"
   ],
   "license": "",
   "proof": [
@@ -437,7 +435,8 @@
    "hotspots",
    "risk",
    "اختبارات",
-   "مخاطر"
+   "مخاطر",
+   "graphify"
   ],
   "section": "Graphify المستضاف عبر MCP — Hosted Graphify MCP",
   "source": "Graphify MCP tool descriptions (this session)"
@@ -455,7 +454,7 @@
   "params": "",
   "install": "",
   "requires": [
-   "key:unspecified"
+   "key:graphify"
   ],
   "license": "",
   "proof": [],
@@ -465,7 +464,8 @@
    "remember",
    "recall",
    "workspace memory",
-   "ذاكرة مشتركة"
+   "ذاكرة مشتركة",
+   "graphify"
   ],
   "section": "Graphify المستضاف عبر MCP — Hosted Graphify MCP",
   "source": "Graphify MCP server instructions (this session)"

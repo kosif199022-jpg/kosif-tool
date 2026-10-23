@@ -1,6 +1,6 @@
 # `arabic-language` — الخطوط والنصوص العربية واللاتينية (22 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/arabic-language.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/type.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/arabic-language.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/type.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -447,7 +447,7 @@
 | نوع المخرج (A25، A27) | ترجمة وتعريب (`translation`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
 **ما هي:** علامات الاتجاه الخفية تُحذف قبل المعالجة وتُضاف عزلات الاتجاه عند العرض حول الكلمات اللاتينية والأرقام. — Strip invisible direction marks before processing; add direction isolates around Latin words and numbers when displaying.
@@ -496,7 +496,8 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/anchor_gate.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -582,7 +583,7 @@
 | نوع المخرج (A25، A27) | ترجمة وتعريب (`translation`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
 **ما هي:** احذف التشكيل للمطابقة، واحفظه كما هو في القرآن والحديث والشعر، وأضفه فقط حيث يرفع لبسًا. — Strip harakat for matching, keep them untouched in sacred text and poetry, add them only to resolve ambiguity.
@@ -632,7 +633,8 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1131,7 +1133,7 @@
 | نوع المخرج (A25، A27) | ترجمة وتعريب (`translation`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
 **ما هي:** حدد السجل قبل الكتابة (فصحى رسمية، فصحى مبسطة، مصرية، خليجية، شامية، حجازية، مغاربية) والتزم به، ولا تعامل اللهجات كلهجة واحدة. — Choose the register before writing and keep it; do not treat Arabic dialects as one.
@@ -1180,7 +1182,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -1266,7 +1268,7 @@
 | نوع المخرج (A25، A27) | ترجمة وتعريب (`translation`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
 **ما هي:** كل نقل للفاعل أو تغيير للعدد يغيّر المطابقة: "قررت اللجنة" لكن "حضر الطلاب" ثم "الطلاب حضروا"، والعدد من 3 إلى 10 يخالف المعدود. — Moving the subject or changing a count changes agreement; numbers 3–10 take the opposite gender of the counted noun.
@@ -1314,7 +1316,8 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/humanizer.md`
+- `kosif-tool/.claude/skills/kosif-superpowers/references/powers/typography-arabic.md`
 
 #### 7. قدرات قريبة في العائلة
 

@@ -27,7 +27,7 @@
 - **متى أستخدمها / when:** عند أي طلب إبداعي أو تصميمي أو تسمية أو حملة أو «أعطني أفكارًا»؛ وخطوة الاستكشاف في THINK-01. / Any creative, design, naming, campaign or 'give me ideas' request; the EXPLORE step of THINK-01.
 - **كيف / how:** Diverge: pick 3–5 operators (IDEA-02…IDEA-17) suited to the task, aim for 8–20 raw ideas, no judging while generating, write each idea as one line. Converge: score fit to done-criteria, feasibility with ✅/🟢 powers (check `python3 scripts/powers.py search`), novelty, risk (1–5 each); merge near-duplicates. Keep 1 safe + 1 bold; show both early (as stills or a one-paragraph treatment) when taste matters, then build the chosen one. Treat these operators as structured-diversity heuristics, not proven boosters. **أرقام / params:** 8–20 raw ideas · 3–5 operators · 4 criteria × 1–5 · safe + bold
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/creativity.md`
 - **المصدر / source:** Guilford divergent/convergent thinking; UK Design Council Double Diamond (2005) (classic method, public-domain idea; paraphrased); session-2026-10-16 distill thinking-methods §4. Narrative: references/creativity.md
 
 ## مشغّلات الإبداع — Creativity operators
@@ -232,7 +232,7 @@
 - **متى أستخدمها / when:** عند تحويل جملة إلى مفهوم قوي / turning a sentence into a strong concept
 - **كيف / how:** cognition.md §4.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### IDEA-28 · تقوية الفكرة بالحجة المضادة · Strengthen an idea with its steelman objection · 📄 موصوف / documented only
@@ -240,7 +240,7 @@
 - **متى أستخدمها / when:** بعد اختيار القائمة المختصرة / after shortlisting
 - **كيف / how:** cognition.md §4 step 5; MODEL-22, MODEL-33.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### IDEA-29 · الجدوى من المستلزمات لا من التفاؤل · Feasibility from requirements, not optimism · ✅ مُثبت هنا / proven here

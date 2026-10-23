@@ -1,6 +1,6 @@
 # `music-beat-sound` — الصوت والموسيقى والتعليق (306 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/music-beat-sound.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/audio.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/music-beat-sound.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/audio.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -3449,7 +3449,7 @@
 
 **المعاملات:** makeSpectrumGround, makeGlitchPass, makeSparks, spectrumOnTape
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i three@0.186.1 (MIT; version from arsenal-libraries.md)
 
 **الوسوم:** ثلاثي الأبعاد · جليتش · تفاعل مع الصوت · 3d · glitch
 
@@ -3462,7 +3462,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:three` ← npm ls three أو وجود node_modules/three
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -5823,7 +5823,6 @@
 
 - `pip:numpy` ← python3 -c "import numpy" (اسم الاستيراد قد يختلف عن اسم الحزمة)
 - `key:elevenlabs` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
-- `key:unspecified` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🔑 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🔑 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)

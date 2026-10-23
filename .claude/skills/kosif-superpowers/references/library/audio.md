@@ -1,6 +1,6 @@
 # الصوت والموسيقى والتعليق — Audio & voice (`audio`)
 
-> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -406,7 +406,7 @@
 | `BEAT-129` | محلل شبكة الإيقاع | Beat-grid analyzer (audiomap.json) | install | pip:numpy, pip:librosa, pip:soundfile |
 | `BEAT-130` | حركات إيقاعية موثقة فقط | Beat motion primitives without demo folders | install |  |
 | `BEAT-131` | مساعدات مدة الإطار ومستوى الموسيقى | Pad frame duration and BGM volume helpers | install | node |
-| `BEAT-132` | الصوت يحرك الصورة | Sound-driven picture | install |  |
+| `BEAT-132` | الصوت يحرك الصورة | Sound-driven picture | install | npm:three |
 | `BEAT-133` | وادٍ من المخطط الطيفي | Spectrogram canyon (sound as terrain) | install |  |
 | `BEAT-134` | ساعة شبكة إيقاع لفيلم كامل | Beat-grid clock for a whole film | install |  |
 | `BEAT-135` | توقف الشريط ووقت الرصاصة ولمسات الخلل | Tape-stop bullet time and glitch accents | install |  |
@@ -452,7 +452,7 @@
 | `SYNC-14` | تفريغ سحابي مع فصل المتحدثين | Cloud STT with diarisation | key | pip:faster-whisper, key:elevenlabs, key:unspecified, pip:pyannote |
 | `BEAT-161` | توليد مؤثرات صوتية من وصف نصي | Text-to-sound-effects generation | key | key:elevenlabs |
 | `BEAT-162` | مكتبة مؤثرات صوتية | SFX library by URL | key | npm:remotion, key:unspecified |
-| `BEAT-163` | توليد مؤثرات صوتية من نص | Text-to-SFX generation | key | pip:numpy, key:elevenlabs, key:unspecified |
+| `BEAT-163` | توليد مؤثرات صوتية من نص | Text-to-SFX generation | key | pip:numpy, key:elevenlabs |
 | `BEAT-164` | خطة تأليف موسيقى ElevenLabs | ElevenLabs Music composition plan | key | key:elevenlabs |
 | `BEAT-165` | الكلمات داخل أقسام الخطة فقط | Lyrics only via plan sections | key | key:unspecified |
 | `BEAT-166` | برومبت الأسلوب السداسي في Suno | Suno six-layer style prompt | key | key:video-gen |

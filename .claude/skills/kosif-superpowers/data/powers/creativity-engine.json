@@ -15,8 +15,10 @@
    "python3"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/creativity.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "divergent",
@@ -787,8 +789,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ideas",
@@ -812,8 +816,10 @@
   "install": "",
   "requires": [],
   "license": "owner",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "ideas",

@@ -2,6 +2,7 @@
  {
   "id": "PART-01",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "ضجيج حتمي بالهاش وmulberry32",
   "name_en": "Deterministic hash / seeded RNG",
   "status": "proven",
@@ -38,6 +39,7 @@
  {
   "id": "PART-02",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "الجسيم دالة للزمن لا حالة",
   "name_en": "Closed-form particles (state-free seek)",
   "status": "proven",
@@ -74,6 +76,7 @@
  {
   "id": "PART-03",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "الجسيم يعني شيئًا",
   "name_en": "Particle meaning rule",
   "status": "documented",
@@ -106,6 +109,7 @@
  {
   "id": "PART-04",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "ميزانية الأحجام والألوان والعدد",
   "name_en": "Size / colour / count budget",
   "status": "documented",
@@ -140,6 +144,7 @@
  {
   "id": "PART-05",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "المؤثر على إطار التلامس",
   "name_en": "Impact on the contact frame",
   "status": "documented",
@@ -171,6 +176,7 @@
  {
   "id": "PART-06",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "انفجار ببذرة وجاذبية",
   "name_en": "Seeded analytic burst",
   "status": "proven",
@@ -207,6 +213,7 @@
  {
   "id": "PART-07",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "وصفة انفجار الكشف",
   "name_en": "Reveal-burst recipe",
   "status": "documented",
@@ -238,6 +245,7 @@
  {
   "id": "PART-08",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "قصاصات احتفال تنقلب",
   "name_en": "Confetti burst / rain with 3D flip",
   "status": "proven",
@@ -280,6 +288,7 @@
  {
   "id": "PART-09",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "انفجارات HyperFrames الجاهزة",
   "name_en": "HyperFrames burst primitives (particle-burst, radial-burst-lines)",
   "status": "install",
@@ -315,6 +324,7 @@
  {
   "id": "PART-10",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "شرطات وشرارات الاصطدام",
   "name_en": "Radial dash burst & impact spark lines",
   "status": "seen",
@@ -352,6 +362,7 @@
  {
   "id": "PART-11",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "تحطم إلى مربعات أو شظايا",
   "name_en": "Shatter to squares / shards / ring shards",
   "status": "seen",
@@ -389,6 +400,7 @@
  {
   "id": "PART-12",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "انفجار سحابة صور أو بطاقات",
   "name_en": "Image-card burst cloud",
   "status": "seen",
@@ -424,6 +436,7 @@
  {
   "id": "PART-13",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "انفجار فتح إنجاز ونجوم ذهبية",
   "name_en": "Achievement unlock star burst",
   "status": "seen",
@@ -457,6 +470,7 @@
  {
   "id": "PART-14",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مؤثرات بكسل بخطوات اللوحة",
   "name_en": "Pixel VFX by palette-step fades",
   "status": "documented",
@@ -491,6 +505,7 @@
  {
   "id": "PART-15",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "جسيمات تتجمع كلمة عربية",
   "name_en": "Particles gather into a shaped Arabic word",
   "status": "proven",
@@ -531,6 +546,7 @@
  {
   "id": "PART-16",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "تفكك النص إلى جسيمات أو جمر",
   "name_en": "Text dissolve / disintegrate to embers",
   "status": "documented",
@@ -570,6 +586,7 @@
  {
   "id": "PART-17",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "أيقونة أو شعار يتكون من سحابة نقاط",
   "name_en": "Icon / logo coalescing from a point cloud",
   "status": "seen",
@@ -608,6 +625,7 @@
  {
   "id": "PART-18",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "جسيمات تتحول إلى بيانات أو واجهة",
   "name_en": "Particles → chart / grid / UI",
   "status": "seen",
@@ -644,6 +662,7 @@
  {
   "id": "PART-19",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "كشف صورة بالجسيمات",
   "name_en": "Particle image reveal (HyperFrames)",
   "status": "install",
@@ -675,6 +694,7 @@
  {
   "id": "PART-20",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "سحابة تتحول من حلقة إلى كرة",
   "name_en": "Point-cloud shape morph (torus ↔ sphere, helix → strands)",
   "status": "seen",
@@ -710,6 +730,7 @@
  {
   "id": "PART-21",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "من فيديو إلى جسم جسيمي",
   "name_en": "Mocap: performer silhouette → particle body",
   "status": "ready",
@@ -744,6 +765,7 @@
  {
   "id": "PART-22",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "صندوق الضوضاء",
   "name_en": "Noise toolbox (Perlin / Simplex / curl / fBm / warp)",
   "status": "documented",
@@ -777,6 +799,7 @@
  {
   "id": "PART-23",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "حقل curl تحليلي خالٍ من التباعد",
   "name_en": "Analytic curl field (stream-function)",
   "status": "proven",
@@ -810,6 +833,7 @@
  {
   "id": "PART-24",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "خطوط حقل التدفق",
   "name_en": "Flow-field streak lines",
   "status": "proven",
@@ -848,6 +872,7 @@
  {
   "id": "PART-25",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "سرير تدفق ولزوجة على الإيقاع",
   "name_en": "Beat-anchored flow-field bed & gooey metaball (HyperFrames)",
   "status": "install",
@@ -882,6 +907,7 @@
  {
   "id": "PART-26",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "تدفق الجسيمات على المسارات",
   "name_en": "Particle flow along routes & network edges",
   "status": "documented",
@@ -918,6 +944,7 @@
  {
   "id": "PART-27",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "طبقات التدفق في deck.gl",
   "name_en": "deck.gl flow layers (trips, arcs, hex)",
   "status": "install",
@@ -951,6 +978,7 @@
  {
   "id": "PART-28",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "حقل حراري يُلطخ بالإصبع",
   "name_en": "Thermal finger-trail smear field",
   "status": "documented",
@@ -984,6 +1012,7 @@
  {
   "id": "PART-29",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "شبكة نقاط تتأثر بجاذب",
   "name_en": "Dot-grid displacement around an attractor",
   "status": "seen",
@@ -1021,6 +1050,7 @@
  {
   "id": "PART-30",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "حزم موجات وشرائط خطوط",
   "name_en": "Noisy multi-trace waveform & line-ribbon waves",
   "status": "seen",
@@ -1058,6 +1088,7 @@
  {
   "id": "PART-31",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "آثار الحركة والضوء",
   "name_en": "Motion trails from time-sampled history",
   "status": "ready",
@@ -1093,6 +1124,7 @@
  {
   "id": "PART-32",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مطر motion-kit",
   "name_en": "MOTION.rain (seeded SVG/DOM rain)",
   "status": "proven",
@@ -1125,6 +1157,7 @@
  {
   "id": "PART-33",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "بخار motion-kit",
   "name_en": "MOTION.vapour (steam puffs)",
   "status": "proven",
@@ -1159,6 +1192,7 @@
  {
   "id": "PART-34",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "تلألؤ ونجوم",
   "name_en": "MOTION.sparkle & star twinkle",
   "status": "proven",
@@ -1193,6 +1227,7 @@
  {
   "id": "PART-35",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "غبار طافٍ وحقل عمق",
   "name_en": "Drifting dust motes & depth field",
   "status": "proven",
@@ -1229,6 +1264,7 @@
  {
   "id": "PART-36",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "أنظمة Basma الخمسة",
   "name_en": "Basma particle overlays (dust, bokeh, sparks, snow, confetti)",
   "status": "install",
@@ -1263,6 +1299,7 @@
  {
   "id": "PART-37",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مطر بطبقتين وبرك ورذاذ",
   "name_en": "Two-layer parallax rain, puddle ripples & splashes",
   "status": "proven",
@@ -1300,6 +1337,7 @@
  {
   "id": "PART-38",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مطر الرسام بطبقات وضوء نار",
   "name_en": "Painted rain with exposure smear (Studio)",
   "status": "ready",
@@ -1332,6 +1370,7 @@
  {
   "id": "PART-39",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مطر وضباب ومطر الغيمة",
   "name_en": "Rain + fog bands; cloud rain with splash rings",
   "status": "seen",
@@ -1368,6 +1407,7 @@
  {
   "id": "PART-40",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "جسيمات موسمية وبتلات",
   "name_en": "Seasonal particles & falling petals",
   "status": "ready",
@@ -1404,6 +1444,7 @@
  {
   "id": "PART-41",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "ثلج وحقل نجوم HyperFrames",
   "name_en": "HyperFrames snow & starfield blocks",
   "status": "install",
@@ -1438,6 +1479,7 @@
  {
   "id": "PART-42",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "ثلج وجمر على المعالج الرسومي",
   "name_en": "GPU snow / ember point sprites",
   "status": "ready",
@@ -1474,6 +1516,7 @@
  {
   "id": "PART-43",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "ذرات صاعدة وحلقات الركلة",
   "name_en": "Rising motes + kick rings (verse)",
   "status": "ready",
@@ -1507,6 +1550,7 @@
  {
   "id": "PART-44",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "هالة شعاعية وجسيمات صاعدة",
   "name_en": "Radial aura + drifting particle canvas",
   "status": "ready",
@@ -1538,6 +1582,7 @@
  {
   "id": "PART-45",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "خلفيات هادئة حلقية",
   "name_en": "Ambient background loops (MG-111/113/114)",
   "status": "documented",
@@ -1569,6 +1614,7 @@
  {
   "id": "PART-46",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "كرة جسيمات فيبوناتشي",
   "name_en": "Fibonacci particle sphere",
   "status": "proven",
@@ -1610,6 +1656,7 @@
  {
   "id": "PART-47",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مجرة حلزونية",
   "name_en": "Spiral galaxy (differential rotation)",
   "status": "proven",
@@ -1650,6 +1697,7 @@
  {
   "id": "PART-48",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "قفزة فضائية وخطوط سرعة",
   "name_en": "Hyperspace warp starfield",
   "status": "proven",
@@ -1690,6 +1738,7 @@
  {
   "id": "PART-49",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "حلقة جسيمات وكوكبة",
   "name_en": "Particle torus & constellation",
   "status": "seen",
@@ -1727,6 +1776,7 @@
  {
   "id": "PART-50",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "نقاط مضيئة ثلاثية جمعية",
   "name_en": "Additive glowing point sprites (three.js)",
   "status": "ready",
@@ -1761,6 +1811,7 @@
  {
   "id": "PART-51",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "جسيمات GPU بمئة ألف",
   "name_en": "GPU particles: FBO ping-pong & TSL compute (100k+)",
   "status": "install",
@@ -1796,6 +1847,7 @@
  {
   "id": "PART-52",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "دوامة وشفط وشظايا طافية",
   "name_en": "Particle vortex, suck-in & floating shards",
   "status": "seen",
@@ -1833,6 +1885,7 @@
  {
   "id": "PART-53",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "نفث النار بطبقات",
   "name_en": "Layered fire breath",
   "status": "ready",
@@ -1868,6 +1921,7 @@
  {
   "id": "PART-54",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "جمر ودخان وتعتيم",
   "name_en": "Embers, sparks & smoke atmosphere",
   "status": "ready",
@@ -1903,6 +1957,7 @@
  {
   "id": "PART-55",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "شرر على ساعة الشريط",
   "name_en": "Event sparks on the tape clock (three-kit)",
   "status": "install",
@@ -1941,6 +1996,7 @@
  {
   "id": "PART-56",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "بخار وغيوم من عناقيد بيضاوية",
   "name_en": "Ellipse-cluster clouds, smoke & steam (Studio)",
   "status": "ready",
@@ -1974,6 +2030,7 @@
  {
   "id": "PART-57",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "رذاذ وزبد وانهمار ماء",
   "name_en": "Spray, foam & water sheeting",
   "status": "ready",
@@ -2007,6 +2064,7 @@
  {
   "id": "PART-58",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "بحر عاكس وماء ضحل شفاف",
   "name_en": "Reflective sea & shallow see-through water (three-kit)",
   "status": "proven",
@@ -2044,6 +2102,7 @@
  {
   "id": "PART-59",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "شيدر ماء منمّط ورسام الماء",
   "name_en": "Stylised water shader / flat sea path",
   "status": "ready",
@@ -2079,6 +2138,7 @@
  {
   "id": "PART-60",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "أنظمة الطقس ثلاثية الأبعاد",
   "name_en": "3D weather: vapour, cloud slab, rain, flocks",
   "status": "install",
@@ -2122,6 +2182,7 @@
  {
   "id": "PART-61",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "حياة البركة: كوي وبتلات وقصب",
   "name_en": "Pond life: koi, petals, lily pads, reeds, sway",
   "status": "install",
@@ -2165,6 +2226,7 @@
  {
   "id": "PART-62",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "مسارات ضوء السيارات",
   "name_en": "Long-exposure car light trails",
   "status": "install",
@@ -2201,6 +2263,7 @@
  {
   "id": "PART-63",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "سكب وارتفاع السائل",
   "name_en": "Pour stream & liquid fill with wobble",
   "status": "seen",
@@ -2237,6 +2300,7 @@
  {
   "id": "PART-64",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "سائل ملون ومعدن سائل",
   "name_en": "Fluid sim backdrop & chrome metaballs",
   "status": "seen",
@@ -2277,6 +2341,7 @@
  {
   "id": "PART-65",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "لهب عادم وشعلة",
   "name_en": "Exhaust plume & canvas fire emitter",
   "status": "seen",
@@ -2317,6 +2382,7 @@
  {
   "id": "PART-66",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "أشعة تحت الماء وفوانيس عائمة",
   "name_en": "Underwater rays & floating lanterns",
   "status": "seen",
@@ -2352,6 +2418,7 @@
  {
   "id": "PART-67",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "محاكاة هوديني",
   "name_en": "Houdini FLIP / Pyro / Vellum / RBD + Karma",
   "status": "key",
@@ -2387,6 +2454,7 @@
  {
   "id": "PART-68",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "كرة ترتد بمعامل ارتداد",
   "name_en": "Gravity bounce with restitution & dotted trail",
   "status": "proven",
@@ -2423,6 +2491,7 @@
  {
   "id": "PART-69",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "كرة داخل حلقات دوارة",
   "name_en": "Ball in rotating gapped rings (escape sim)",
   "status": "seen",
@@ -2458,6 +2527,7 @@
  {
   "id": "PART-70",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "سقوط وتكدس الأجسام",
   "name_en": "Drops, piles & toppling stacks",
   "status": "seen",
@@ -2500,6 +2570,7 @@
  {
   "id": "PART-71",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "محركات الأجسام الصلبة",
   "name_en": "Rigid-body engines (Rapier / cannon-es / matter-js)",
   "status": "install",
@@ -2536,6 +2607,7 @@
  {
   "id": "PART-72",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "حركات فيزيائية جاهزة",
   "name_en": "HyperFrames physical motions (pendulum, physical exit, stack shuffle)",
   "status": "install",
@@ -2572,6 +2644,7 @@
  {
   "id": "PART-73",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "أوتار تهتز عند الاصطدام",
   "name_en": "Vibrating strings on impact",
   "status": "seen",
@@ -2605,6 +2678,7 @@
  {
   "id": "PART-74",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "أسراب الطيور والحروف (boids)",
   "name_en": "Flocks & boids (birds, letters, stipple)",
   "status": "seen",
@@ -2643,6 +2717,7 @@
  {
   "id": "PART-75",
   "family": "particles-fluids-physics",
+  "domain": "motion",
   "name_ar": "رمية قوسية بأشباح",
   "name_en": "Parabolic toss with ghost trail",
   "status": "idea",

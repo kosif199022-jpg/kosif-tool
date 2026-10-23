@@ -2,6 +2,7 @@
  {
   "id": "VOICE-01",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "تعليق عربي محلي بـ Piper",
   "name_en": "Piper offline Arabic TTS",
   "status": "proven",
@@ -41,6 +42,7 @@
  {
   "id": "VOICE-02",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "صوت ويندوز العربي (نايف) بالجدول الزمني",
   "name_en": "Windows OneCore Arabic narration (Naayf)",
   "status": "documented",
@@ -80,6 +82,7 @@
  {
   "id": "VOICE-03",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "Kokoro المحلي (بلا عربية)",
   "name_en": "Kokoro local TTS (no Arabic voice)",
   "status": "install",
@@ -120,6 +123,7 @@
  {
   "id": "VOICE-04",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "نطق المتصفح العربي ar-SA",
   "name_en": "Browser Web Speech fallback (ar-SA)",
   "status": "ready",
@@ -155,6 +159,7 @@
  {
   "id": "VOICE-05",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "أصوات Edge العصبية والمولدات المبنية عليها",
   "name_en": "Edge neural voices & scene-file generators",
   "status": "documented",
@@ -198,6 +203,7 @@
  {
   "id": "VOICE-06",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "تعليق ElevenLabs بإعدادات جاهزة",
   "name_en": "ElevenLabs narration presets",
   "status": "key",
@@ -236,6 +242,7 @@
  {
   "id": "VOICE-07",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "اختيار النموذج والصيغة حسب الاستخدام",
   "name_en": "Model & output-format choice",
   "status": "key",
@@ -271,6 +278,7 @@
  {
   "id": "VOICE-08",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "تقسيم النص الطويل مع حفظ النبرة",
   "name_en": "Long-script chunking with prosody context",
   "status": "key",
@@ -306,6 +314,7 @@
  {
   "id": "VOICE-09",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "استنساخ صوت بموافقة صاحبه",
   "name_en": "Consented voice cloning",
   "status": "key",
@@ -343,6 +352,7 @@
  {
   "id": "VOICE-10",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "تحويل صوت إلى صوت",
   "name_en": "Speech-to-speech re-voice",
   "status": "key",
@@ -376,6 +386,7 @@
  {
   "id": "VOICE-11",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "Gemini TTS بثلاثين صوتًا",
   "name_en": "Gemini TTS with 30 prebuilt voices",
   "status": "key",
@@ -413,6 +424,7 @@
  {
   "id": "VOICE-12",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "إخراج أداء الصوت بواسطة Claude",
   "name_en": "Claude-directed voice performance",
   "status": "key",
@@ -449,6 +461,7 @@
  {
   "id": "VOICE-13",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "حوار بأكثر من متكلم",
   "name_en": "Multi-speaker dialogue production",
   "status": "key",
@@ -484,6 +497,7 @@
  {
   "id": "VOICE-14",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "HeyGen Starfish بطوابع زمنية للكلمات",
   "name_en": "HeyGen Starfish TTS with word timestamps",
   "status": "key",
@@ -521,6 +535,7 @@
  {
   "id": "VOICE-15",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "محرك الصوت الموحد audio_meta.json",
   "name_en": "Unified audio engine (voice + words + BGM + SFX)",
   "status": "key",
@@ -559,6 +574,7 @@
  {
   "id": "VOICE-16",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "كتالوج Together للصوت",
   "name_en": "Together AI TTS catalog",
   "status": "key",
@@ -594,6 +610,7 @@
  {
   "id": "VOICE-17",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "أوضاع مخرج الصوت الخارجي",
   "name_en": "KOSIF Voice Director provider modes",
   "status": "documented",
@@ -625,6 +642,7 @@
  {
   "id": "VOICE-18",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "ميزانية الكلمات في الثانية",
   "name_en": "Words-per-second budget",
   "status": "documented",
@@ -662,6 +680,7 @@
  {
   "id": "VOICE-19",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "السرعة حسب المحتوى — أعد التوليد ولا تمطّ",
   "name_en": "Read speed by content — regenerate, never stretch",
   "status": "proven",
@@ -698,6 +717,7 @@
  {
   "id": "VOICE-20",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "نص النطق غير نص الشاشة",
   "name_en": "Spoken form vs on-screen form",
   "status": "documented",
@@ -733,6 +753,7 @@
  {
   "id": "VOICE-21",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "قواعد كتابة التعليق للمشهد",
   "name_en": "Scene narration writing rules",
   "status": "documented",
@@ -768,6 +789,7 @@
  {
   "id": "VOICE-22",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "سكربت تعليق بوسوم أداء SSML",
   "name_en": "VO script with performance tags (SSML)",
   "status": "documented",
@@ -804,6 +826,7 @@
  {
   "id": "VOICE-23",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "نص التعليق المقفل SCRIPT.md",
   "name_en": "Locked narration file (SCRIPT.md)",
   "status": "documented",
@@ -834,6 +857,7 @@
  {
   "id": "VOICE-24",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "توجيه الصوت باللهجات العربية",
   "name_en": "Arabic dialect voice-direction workflow",
   "status": "documented",
@@ -869,6 +893,7 @@
  {
   "id": "VOICE-25",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "اختيار اللغة واللهجة في المقابلة",
   "name_en": "Language & dialect intake field",
   "status": "ready",
@@ -904,6 +929,7 @@
  {
   "id": "VOICE-26",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "شخصية اليوتيوبر المصري",
   "name_en": "Egyptian YouTuber voice persona",
   "status": "documented",
@@ -937,6 +963,7 @@
  {
   "id": "VOICE-27",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "صوت الراوي الوثائقي المقفل",
   "name_en": "Locked documentary narrator voice",
   "status": "proven",
@@ -971,6 +998,7 @@
  {
   "id": "VOICE-28",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "جمل صوت المدرب",
   "name_en": "Coach voice cue lines",
   "status": "proven",
@@ -1004,6 +1032,7 @@
  {
   "id": "VOICE-29",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "مواصفات تسجيل الصوت البشري",
   "name_en": "Human VO recording spec",
   "status": "documented",
@@ -1035,6 +1064,7 @@
  {
   "id": "VOICE-30",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "مدرب اللغة الثنائي",
   "name_en": "Language Coach (AR/EN) skill",
   "status": "documented",
@@ -1067,6 +1097,7 @@
  {
   "id": "VOICE-31",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "مدة المشهد = طول التعليق + هامش",
   "name_en": "Scene duration from voice length",
   "status": "proven",
@@ -1106,6 +1137,7 @@
  {
   "id": "VOICE-32",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "توقيت كلمات التعليق المولد بـ faster-whisper",
   "name_en": "Word timings from the generated voice (faster-whisper)",
   "status": "proven",
@@ -1144,6 +1176,7 @@
  {
   "id": "VOICE-33",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "إعادة لصق النص المعروف على توقيت ويسبر",
   "name_en": "Re-attach the known script to Whisper timings",
   "status": "documented",
@@ -1178,6 +1211,7 @@
  {
   "id": "VOICE-34",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "إيقاع يقوده التعليق",
   "name_en": "Voice-led pacing",
   "status": "seen",
@@ -1217,6 +1251,7 @@
  {
   "id": "VOICE-35",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "قراءة صوتية بتظليل الكلمة المنطوقة",
   "name_en": "Read-aloud karaoke highlight",
   "status": "seen",
@@ -1253,6 +1288,7 @@
  {
   "id": "VOICE-36",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "ترجمة تُكتب على توقيت الصوت",
   "name_en": "Typewriter captions on voice word times",
   "status": "seen",
@@ -1288,6 +1324,7 @@
  {
   "id": "VOICE-37",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "موجة الصوت ومؤشر التشغيل",
   "name_en": "Voice waveform with playhead",
   "status": "seen",
@@ -1323,6 +1360,7 @@
  {
   "id": "VOICE-38",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "محاضرة مروية: رسم يتقدم مع الجمل",
   "name_en": "Narrated lecture: draw-on paced to sentences",
   "status": "seen",
@@ -1361,6 +1399,7 @@
  {
   "id": "VOICE-39",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "سلسلة تنظيف الصوت البشري",
   "name_en": "Voice clean-up chain",
   "status": "proven",
@@ -1402,6 +1441,7 @@
  {
   "id": "VOICE-40",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "وصفات إصلاح الصوت بالأعراض",
   "name_en": "Voice repair presets by symptom",
   "status": "documented",
@@ -1439,6 +1479,7 @@
  {
   "id": "VOICE-41",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "أزياء صوتية للشخصيات",
   "name_en": "Character voice costumes",
   "status": "proven",
@@ -1477,6 +1518,7 @@
  {
   "id": "VOICE-42",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "مختبر الصوت: عزل الصوت وفصل الموسيقى",
   "name_en": "Audiolab voice isolation & stem split",
   "status": "proven",
@@ -1514,6 +1556,7 @@
  {
   "id": "VOICE-43",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "خفض الموسيقى تحت التعليق",
   "name_en": "Music ducking under the voice",
   "status": "proven",
@@ -1551,6 +1594,7 @@
  {
   "id": "VOICE-44",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "التسليم بجهارة −14 LUFS وفحص البوابة",
   "name_en": "−14 LUFS delivery + gate",
   "status": "proven",
@@ -1590,6 +1634,7 @@
  {
   "id": "VOICE-45",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "وصل المقاطع كـ WAV لا MP3",
   "name_en": "Join chunks as PCM, not MP3 copy",
   "status": "documented",
@@ -1623,6 +1668,7 @@
  {
   "id": "VOICE-46",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "محادثة صوتية عربية لحظية عبر WebRTC",
   "name_en": "Realtime Arabic speech-to-speech (WebRTC)",
   "status": "key",
@@ -1660,6 +1706,7 @@
  {
   "id": "VOICE-47",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "مقاطعة المساعد بالكلام",
   "name_en": "Barge-in interruption",
   "status": "key",
@@ -1693,6 +1740,7 @@
  {
   "id": "VOICE-48",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "موجه نوايا صوتي عربي حتمي",
   "name_en": "Deterministic Arabic voice intent router",
   "status": "proven",
@@ -1730,6 +1778,7 @@
  {
   "id": "VOICE-49",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "كرة الصوت بحالاتها",
   "name_en": "Voice orb state animation",
   "status": "ready",
@@ -1766,6 +1815,7 @@
  {
   "id": "VOICE-50",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "نبض حلقة زر الميكروفون العائم",
   "name_en": "Live mic FAB ring pulse",
   "status": "ready",
@@ -1799,6 +1849,7 @@
  {
   "id": "VOICE-51",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "التقاط ميكروفون نظيف",
   "name_en": "Clean mic capture constraints",
   "status": "ready",
@@ -1830,6 +1881,7 @@
  {
   "id": "VOICE-52",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "تسجيل الصوت وتنزيله",
   "name_en": "MediaRecorder capture + download",
   "status": "ready",
@@ -1863,6 +1915,7 @@
  {
   "id": "VOICE-53",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "لا تقليد لأصوات حقيقية",
   "name_en": "Never imitate real voices",
   "status": "documented",
@@ -1896,6 +1949,7 @@
  {
   "id": "VOICE-54",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "لا ادعاء بلا ملف",
   "name_en": "No audio claim without a receipt",
   "status": "documented",
@@ -1931,6 +1985,7 @@
  {
   "id": "VOICE-55",
   "family": "voice-tts",
+  "domain": "motion",
   "name_ar": "نظافة تكلفة الحروف",
   "name_en": "TTS character-cost hygiene",
   "status": "documented",

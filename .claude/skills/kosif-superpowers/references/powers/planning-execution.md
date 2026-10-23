@@ -32,7 +32,7 @@
 - **متى أستخدمها / when:** عند الأهداف الغامضة وخرائط الطريق / vague goals, roadmaps
 - **كيف / how:** MODEL-25 steps; each milestone gets a done-test.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-03 · تفكيك العمل إلى مخرجات قابلة للفحص · Work breakdown into checkable deliverables · 📄 موصوف / documented only
@@ -40,7 +40,7 @@
 - **متى أستخدمها / when:** عند المهام الكبيرة أو الضبابية / big or fuzzy tasks
 - **كيف / how:** MODEL-27; deliverables not activities; done-test per task. **أرقام / params:** task ≤ 4 h
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-04 · المسار الحرج وحماية الموعد · Critical path and date protection · 📄 موصوف / documented only
@@ -48,7 +48,7 @@
 - **متى أستخدمها / when:** عند المواعيد النهائية والبناءات متعددة الأجزاء / deadlines, multi-part builds
 - **كيف / how:** MODEL-26; list durations and dependencies, compute the longest path in code.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-05 · بوابة المستلزمات قبل الجدولة · Requirements gate before scheduling · ✅ مُثبت هنا / proven here
@@ -65,7 +65,7 @@
 - **متى أستخدمها / when:** عند بداية أي بناء / start of any build
 - **كيف / how:** MODEL-51; render 2 s, one screen, one record — then expand from feedback.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-07 · التشريح المسبق بإشارات إنذار · Pre-mortem with early-warning signals · 📄 موصوف / documented only
@@ -73,7 +73,7 @@
 - **متى أستخدمها / when:** قبل الإطلاقات والتشغيلات الطويلة / before launches and long runs
 - **كيف / how:** MODEL-24; the plan scaffold lists five default causes to start from.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-08 · معايير الإيقاف والتحول · Kill and pivot criteria · 📄 موصوف / documented only
@@ -81,7 +81,7 @@
 - **متى أستخدمها / when:** عند التجارب والتجريبات والتوليدات المدفوعة / experiments, pilots, paid generations
 - **كيف / how:** MODEL-50.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-09 · سيناريوهات المستقبل والحركات المتينة · Scenario grid and robust moves · 📄 موصوف / documented only
@@ -89,7 +89,7 @@
 - **متى أستخدمها / when:** عند الاستراتيجية في ظل عدم يقين عميق / strategy under deep uncertainty
 - **كيف / how:** MODEL-52.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-10 · توزيع العمل على وكلاء متوازيين · Parallel lanes for agents and workflows · 📄 موصوف / documented only
@@ -98,7 +98,7 @@
 - **كيف / how:** Agent tool briefs or the Workflow tool when the user opted in; THINK-27 brief format.
 - **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-11 · مراجعة الخطة كل مرحلة · Phase-boundary plan review · 📄 موصوف / documented only
@@ -106,7 +106,7 @@
 - **متى أستخدمها / when:** عند العمل لعدة أيام / multi-day work
 - **كيف / how:** Metacognition checklist (cognition.md §8) + coverage ledger.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 #### PLAN-12 · خطة تسليم بإيصال · Delivery plan with a receipt · 📄 موصوف / documented only
@@ -114,7 +114,7 @@
 - **متى أستخدمها / when:** عند أي شيء يُسلَّم / anything shipped
 - **كيف / how:** TEMPLATES/TEST_REPORT.md for video; test output for code.
 - **الرخصة / license:** owner
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 - **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md
 
 ## المصادر والرخص / sources & licences

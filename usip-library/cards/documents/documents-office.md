@@ -1,6 +1,6 @@
 # `documents-office` — المستندات والكتابة (34 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/documents-office.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/documents-office.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/documents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 

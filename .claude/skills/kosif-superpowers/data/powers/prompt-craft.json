@@ -15,8 +15,10 @@
    "claude:tools"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "optimize",
@@ -77,8 +79,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "slots",
@@ -214,8 +218,10 @@
    "claude:tools"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "subagent",
@@ -273,8 +279,10 @@
    "key:video-gen"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/powers/ai-generation.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "image prompt",
@@ -300,8 +308,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/powers/ai-generation.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "video prompt",
@@ -354,8 +364,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "anti-patterns",
@@ -380,8 +392,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "rubric",
@@ -488,8 +502,10 @@
   "install": "",
   "requires": [],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "arabic prompt",
@@ -572,8 +588,10 @@
    "python3"
   ],
   "license": "",
-  "proof": [],
-  "proof_scope": "none",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md"
+  ],
+  "proof_scope": "repo",
   "styles": [],
   "tags": [
    "freshness",

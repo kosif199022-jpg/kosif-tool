@@ -1,6 +1,7 @@
 [
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: غمس للأسود",
   "name_en": "Phone-editor transition: dipblack",
   "status": "proven",
@@ -30,6 +31,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: غمس للأبيض",
   "name_en": "Phone-editor transition: dipwhite",
   "status": "proven",
@@ -59,6 +61,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: فلاش أبيض",
   "name_en": "Phone-editor transition: flash",
   "status": "proven",
@@ -88,6 +91,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إضافة خطاف في البداية مع استمرار الموسيقى",
   "name_en": "Prepend hook while music stays continuous",
   "status": "proven",
@@ -118,6 +122,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عتبات قص الصمت والحشو",
   "name_en": "Silence and filler cut thresholds",
   "status": "proven",
@@ -148,6 +153,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مكتبة انتقالات xfade",
   "name_en": "xfade transition palette",
   "status": "proven",
@@ -177,6 +183,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دخول المشهد عند تغيير الشاشة",
   "name_en": "Scene enter on view change",
   "status": "proven",
@@ -208,6 +215,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مكتبة انتقالات الكينتك",
   "name_en": "Kinetic transition library (17)",
   "status": "proven",
@@ -235,6 +243,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تسليم بوضعية مطابقة",
   "name_en": "Matching exit-pose handoff",
   "status": "proven",
@@ -264,6 +273,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات xfade في التايملاين",
   "name_en": "FFmpeg xfade transitions in the timeline",
   "status": "proven",
@@ -293,6 +303,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إظلام قصير بين القطعات",
   "name_en": "Micro dip between hard cuts",
   "status": "proven",
@@ -322,6 +333,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تصنيف الانتقال بإعادة التركيب",
   "name_en": "Transition classification by re-synthesis",
   "status": "proven",
@@ -349,6 +361,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تلاشي وذوبان",
   "name_en": "Fades and dissolves (xfade)",
   "status": "proven",
@@ -378,6 +391,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح",
   "name_en": "Wipes (xfade)",
   "status": "proven",
@@ -407,6 +421,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "سحب",
   "name_en": "Slides (xfade)",
   "status": "proven",
@@ -436,6 +451,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح ناعم",
   "name_en": "Smooth wipes (xfade)",
   "status": "proven",
@@ -465,6 +481,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دوائر ومستطيلات",
   "name_en": "Circle and rect shapes (xfade)",
   "status": "proven",
@@ -494,6 +511,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "أبواب تنفتح",
   "name_en": "Barn doors (xfade)",
   "status": "proven",
@@ -523,6 +541,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطري",
   "name_en": "Diagonals (xfade)",
   "status": "proven",
@@ -552,6 +571,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شرائح",
   "name_en": "Slices (xfade)",
   "status": "proven",
@@ -581,6 +601,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تغطية وكشف",
   "name_en": "Cover and reveal (xfade)",
   "status": "proven",
@@ -610,6 +631,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ضغط وزووم وبكسلة",
   "name_en": "Squeeze, zoom, pixelize, blur (xfade)",
   "status": "proven",
@@ -639,6 +661,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مخطط المونتاج على الإيقاع",
   "name_en": "Beat-grid montage planner",
   "status": "proven",
@@ -669,6 +692,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "اختيار أنشط مقطع",
   "name_en": "Most-active window shot picker",
   "status": "proven",
@@ -699,6 +723,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "أمر مونتاج الإيقاع",
   "name_en": "Beat montage command",
   "status": "proven",
@@ -730,6 +755,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مونتاج يقوده الصوت",
   "name_en": "Voice-first montage",
   "status": "proven",
@@ -762,6 +788,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "زووم خاطف عند القطع",
   "name_en": "Camera punch-in on scene cuts",
   "status": "proven",
@@ -788,6 +815,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قص الصمت",
   "name_en": "Silence jump-cut",
   "status": "ready",
@@ -819,6 +847,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع بسرعات متطابقة",
   "name_en": "Velocity-matched cut",
   "status": "ready",
@@ -849,6 +878,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف دائري",
   "name_en": "Iris reveal / close",
   "status": "ready",
@@ -876,6 +906,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "غمر لوني كامل",
   "name_en": "Colour flood seam",
   "status": "ready",
@@ -903,6 +934,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات السحب السريع والضبابي والزووم",
   "name_en": "Whip pan, blur-through and zoom-through transitions",
   "status": "ready",
@@ -929,6 +961,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "وصفات انتقالات العرض الأصلية",
   "name_en": "View Transitions recipes (fade, slide, scale, morph)",
   "status": "ready",
@@ -961,6 +994,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تحوّل الحاوية المشتركة",
   "name_en": "Shared-element container morph",
   "status": "ready",
@@ -993,6 +1027,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركات الدخول الأصلية بـ starting-style",
   "name_en": "Native entry animations with @starting-style",
   "status": "ready",
@@ -1024,6 +1059,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بالقص والقناع",
   "name_en": "Clip-path and SVG-mask reveals",
   "status": "ready",
@@ -1052,6 +1088,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قص بدون فقد مضبوط على الإطار المفتاحي",
   "name_en": "Keyframe-snapped lossless trim",
   "status": "ready",
@@ -1081,6 +1118,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تسرب ضوئي",
   "name_en": "Light-leak transition",
   "status": "ready",
@@ -1109,6 +1147,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "احتراق تعريض زائد",
   "name_en": "Overexposure burn",
   "status": "ready",
@@ -1135,6 +1174,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حرق فيلم",
   "name_en": "Film-burn transition",
   "status": "ready",
@@ -1161,6 +1201,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "احتراق الصفحة",
   "name_en": "Page-burn destruction",
   "status": "ready",
@@ -1187,6 +1228,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال غليتش",
   "name_en": "RGB glitch transition",
   "status": "ready",
@@ -1213,6 +1255,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تفكك لوني",
   "name_en": "Chromatic-split transition",
   "status": "ready",
@@ -1241,6 +1284,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تموج وشرائط VHS",
   "name_en": "Ripple / VHS strip transitions",
   "status": "ready",
@@ -1269,6 +1313,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قلب بطاقة ثلاثي الأبعاد",
   "name_en": "CSS 3D card flip",
   "status": "ready",
@@ -1295,6 +1340,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بسرعة متطابقة",
   "name_en": "Velocity-matched blur transitions on text",
   "status": "ready",
@@ -1321,6 +1367,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دخول الشاشة والإشعار",
   "name_en": "Legacy view-in and toast-in",
   "status": "ready",
@@ -1348,6 +1395,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تبويبات مساحة العمل",
   "name_en": "Workspace tab switch (V5)",
   "status": "ready",
@@ -1374,6 +1422,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبديل لوحة التفاصيل",
   "name_en": "Detail panel swap",
   "status": "ready",
@@ -1401,6 +1450,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "توسيع الصف على الجوال",
   "name_en": "Mobile row expand",
   "status": "ready",
@@ -1427,6 +1477,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ارتفاع متحرك لعنصر details",
   "name_en": "Animated native <details> height",
   "status": "ready",
@@ -1455,6 +1506,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "فيضان لوني",
   "name_en": "Colour flood wipe",
   "status": "ready",
@@ -1481,6 +1533,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دوران ثلاثي الأبعاد",
   "name_en": "3D card roll",
   "status": "ready",
@@ -1507,6 +1560,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ضبابية السرعة",
   "name_en": "Directional speed blur",
   "status": "ready",
@@ -1533,6 +1587,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تشويش رقمي",
   "name_en": "Digital glitch stutter (2D)",
   "status": "ready",
@@ -1559,6 +1614,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تشويش مرتبط بالتحليل",
   "name_en": "Analysis-keyed glitch pass (3D)",
   "status": "ready",
@@ -1586,6 +1642,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قائمة لقطات بقطعات",
   "name_en": "Shot list sequencer (hard cuts)",
   "status": "ready",
@@ -1612,6 +1669,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات xfade",
   "name_en": "xfade transitions (57)",
   "status": "ready",
@@ -1640,6 +1698,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات xfade",
   "name_en": "FFmpeg xfade transition set (58)",
   "status": "ready",
@@ -1670,6 +1729,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "محاكاة ريل",
   "name_en": "Mimic reference reel",
   "status": "ready",
@@ -1697,6 +1757,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حلقة سلسة",
   "name_en": "Seamless loop",
   "status": "ready",
@@ -1726,10 +1787,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عائلة التلاشي",
   "name_en": "Cross-fade family (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "عائلة التلاشي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Cross-fade family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: fade, fadefast, fadeslow, dissolve (grainy), fadeblack (through black), fadewhite (through white), fadegrays (through grey)",
   "install": "",
@@ -1756,10 +1818,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عائلة المسح",
   "name_en": "Wipe family (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "عائلة المسح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Wipe family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: wipeleft, wiperight, wipeup, wipedown, wipetl, wipetr, wipebl, wipebr",
   "install": "",
@@ -1786,10 +1849,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عائلة الانزلاق",
   "name_en": "Slide family (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "عائلة الانزلاق: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Slide family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: slideleft, slideright, slideup, slidedown",
   "install": "",
@@ -1816,10 +1880,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عائلة المسح الناعم",
   "name_en": "Smooth wipe family (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "عائلة المسح الناعم: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Smooth wipe family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: smoothleft, smoothright, smoothup, smoothdown",
   "install": "",
@@ -1846,10 +1911,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف دائري ومستطيل وشعاعي",
   "name_en": "Circle / rect / radial reveals (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "كشف دائري ومستطيل وشعاعي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Circle / rect / radial reveals (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: circlecrop, circleopen, circleclose, rectcrop, radial",
   "install": "",
@@ -1876,10 +1942,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "فتح وإغلاق رأسي وأفقي",
   "name_en": "Barn-door opens and closes (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "فتح وإغلاق رأسي وأفقي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Barn-door opens and closes (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: vertopen, vertclose, horzopen, horzclose",
   "install": "",
@@ -1906,10 +1973,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح قطري",
   "name_en": "Diagonal wipes (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "مسح قطري: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Diagonal wipes (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: diagtl, diagtr, diagbl, diagbr",
   "install": "",
@@ -1936,10 +2004,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الشرائح",
   "name_en": "Slice transitions (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقالات الشرائح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Slice transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: hlslice, hrslice, vuslice, vdslice",
   "install": "",
@@ -1966,10 +2035,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الريح",
   "name_en": "Wind transitions (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقالات الريح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Wind transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: hlwind, hrwind, vuwind, vdwind",
   "install": "",
@@ -1996,10 +2066,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات التغطية",
   "name_en": "Cover transitions (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقالات التغطية: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Cover transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: coverleft, coverright, coverup, coverdown",
   "install": "",
@@ -2026,10 +2097,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الكشف",
   "name_en": "Reveal transitions (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقالات الكشف: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Reveal transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: revealleft, revealright, revealup, revealdown",
   "install": "",
@@ -2056,10 +2128,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الضغط",
   "name_en": "Squeeze transitions (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقالات الضغط: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Squeeze transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: squeezeh, squeezev",
   "install": "",
@@ -2086,10 +2159,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الزووم للداخل",
   "name_en": "Zoom-in transition (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقال الزووم للداخل: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Zoom-in transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: zoomin",
   "install": "",
@@ -2116,10 +2190,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال التبكسل",
   "name_en": "Pixelize transition (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقال التبكسل: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Pixelize transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: pixelize",
   "install": "",
@@ -2146,10 +2221,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الضبابية الأفقية",
   "name_en": "Horizontal blur transition (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقال الضبابية الأفقية: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Horizontal blur transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: hblur",
   "install": "",
@@ -2176,10 +2252,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال المسافة",
   "name_en": "Distance transition (FFmpeg xfade)",
   "status": "ready",
-  "what": "تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
+  "what": "انتقال المسافة: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Distance transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.",
   "how": "In a timeline spec set clip.transition = \"NAME\" or {\"type\": \"NAME\", \"dur\": seconds}; GET /api/transitions or MCP kosif_transitions lists those the local FFmpeg build reports (parsed from `ffmpeg -h filter=xfade`).",
   "params": "names: distance",
   "install": "",
@@ -2206,6 +2283,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قلب ثلاثي الأبعاد",
   "name_en": "Front-loaded 3D roll flip",
   "status": "ready",
@@ -2232,6 +2310,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مونتاج على الإيقاع",
   "name_en": "Beat-cut montage",
   "status": "ready",
@@ -2262,6 +2341,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "زووم ضربة",
   "name_en": "Zoom punch that decays like a hit",
   "status": "ready",
@@ -2291,6 +2371,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "صانع الحلقة السلسة",
   "name_en": "Seamless loop maker",
   "status": "ready",
@@ -2320,6 +2401,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات xfade مع تداخل الصوت",
   "name_en": "xfade transitions + acrossfade",
   "status": "ready",
@@ -2349,6 +2431,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع J وL",
   "name_en": "J-cut / L-cut",
   "status": "ready",
@@ -2377,6 +2460,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع حاد بلا تلاشي",
   "name_en": "Hard-cut concat (no crossfades)",
   "status": "ready",
@@ -2406,6 +2490,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "صانع الحلقة السلسة",
   "name_en": "Seamless loop builder",
   "status": "ready",
@@ -2435,6 +2520,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كلمة الفصل كانتقال",
   "name_en": "Chapter keyword transition plane",
   "status": "install",
@@ -2462,6 +2548,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "خط الضوء الفاصل",
   "name_en": "Section rule of light",
   "status": "install",
@@ -2489,6 +2576,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: تمويه متداخل",
   "name_en": "Phone-editor transition: blurcross",
   "status": "install",
@@ -2518,6 +2606,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: زووم + تمويه (CapCut Zoom)",
   "name_en": "Phone-editor transition: zoomblur",
   "status": "install",
@@ -2547,6 +2636,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: زووم للخارج + تمويه",
   "name_en": "Phone-editor transition: zoomblurout",
   "status": "install",
@@ -2576,6 +2666,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: دوران",
   "name_en": "Phone-editor transition: spin",
   "status": "install",
@@ -2605,6 +2696,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الشيدر",
   "name_en": "Shader transitions (WebGL)",
   "status": "install",
@@ -2635,6 +2727,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حساب مدة الانتقالات",
   "name_en": "TransitionSeries math",
   "status": "install",
@@ -2662,6 +2755,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "واجهة انتقالات العرض",
   "name_en": "View Transitions API",
   "status": "install",
@@ -2693,6 +2787,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بقناع ضوضاء",
   "name_en": "Noise-mask scene transition (FBO)",
   "status": "install",
@@ -2719,6 +2814,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "متى نستخدم انتقال شيدر أو CSS أو قطع حاد",
   "name_en": "When to use shader vs CSS vs hard cut",
   "status": "install",
@@ -2748,6 +2844,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ذوبان ضوضائي بين مشهدين",
   "name_en": "Noise-dissolve between two rendered scenes",
   "status": "install",
@@ -2777,6 +2874,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال المسح بطبقة غطاء",
   "name_en": "Overlay wipe page transition",
   "status": "install",
@@ -2806,6 +2904,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تحلل بالنويز بين مشهدين",
   "name_en": "Noise-dissolve scene transition",
   "status": "install",
@@ -2832,6 +2931,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بمحاكاة سائل",
   "name_en": "Fluid-sim reveal / x-ray",
   "status": "install",
@@ -2858,6 +2958,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "الانتقالات الإحدى عشر",
   "name_en": "Cut transitions (11)",
   "status": "install",
@@ -2887,6 +2988,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "الوضع الهادي بدون وميض",
   "name_en": "Calm mode (no flicker) rule",
   "status": "install",
@@ -2916,6 +3018,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انفصال الألوان والجليتش",
   "name_en": "RGB split and slice glitch technique",
   "status": "install",
@@ -2944,6 +3047,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تسليم المشاهد قطع أو تلاشي",
   "name_en": "Scene handover: hard cut vs fade",
   "status": "install",
@@ -2971,6 +3075,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: انفصال لوني",
   "name_en": "Shader transition: chromatic-split",
   "status": "install",
@@ -3000,10 +3105,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: زوم سينمائي",
   "name_en": "Shader transition: cinematic-zoom",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: زوم سينمائي: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: cinematic-zoom: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'cinematic-zoom'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3029,10 +3135,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: تحول التوائي",
   "name_en": "Shader transition: cross-warp-morph",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: تحول التوائي: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: cross-warp-morph: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'cross-warp-morph'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3058,10 +3165,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: تشويه المجال",
   "name_en": "Shader transition: domain-warp",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: تشويه المجال: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: domain-warp: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'domain-warp'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3087,10 +3195,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: وميض أبيض",
   "name_en": "Shader transition: flash-through-white",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: وميض أبيض: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: flash-through-white: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'flash-through-white'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3116,10 +3225,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: غلتش",
   "name_en": "Shader transition: glitch",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: غلتش: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: glitch: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'glitch'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3145,10 +3255,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: عدسة جاذبية",
   "name_en": "Shader transition: gravitational-lens",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: عدسة جاذبية: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: gravitational-lens: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'gravitational-lens'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3174,10 +3285,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: تسرب ضوء",
   "name_en": "Shader transition: light-leak",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: تسرب ضوء: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: light-leak: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'light-leak'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3203,10 +3315,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: احتراق متعرج",
   "name_en": "Shader transition: ridged-burn",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: احتراق متعرج: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: ridged-burn: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'ridged-burn'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3232,10 +3345,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: تموجات",
   "name_en": "Shader transition: ripple-waves",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: تموجات: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: ripple-waves: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'ripple-waves'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3261,10 +3375,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: قزحية",
   "name_en": "Shader transition: sdf-iris",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: قزحية: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: sdf-iris: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'sdf-iris'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3290,10 +3405,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: دوامة",
   "name_en": "Shader transition: swirl-vortex",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: دوامة: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: swirl-vortex: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'swirl-vortex'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3319,10 +3435,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: تشوه حراري",
   "name_en": "Shader transition: thermal-distortion",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: تشوه حراري: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: thermal-distortion: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'thermal-distortion'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3348,10 +3465,11 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر: سوط كاميرا",
   "name_en": "Shader transition: whip-pan",
   "status": "install",
-  "what": "انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.",
+  "what": "انتقال شيدر: سوط كاميرا: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: whip-pan: WebGL fragment-shader transition between two scenes, captured from live DOM.",
   "how": "@hyperframes/shader-transitions registry id 'whip-pan'; page-side compositing ~6x faster for mp4/hls/gif.",
   "params": "",
   "install": "see arsenal-libraries.md",
@@ -3377,6 +3495,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بانقسام الألوان",
   "name_en": "Chromatic Aberration Wipe",
   "status": "install",
@@ -3408,6 +3527,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف الستارة المسرحية",
   "name_en": "Curtain Reveal",
   "status": "install",
@@ -3440,6 +3560,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع على المنحنى",
   "name_en": "Cut the Curve",
   "status": "install",
@@ -3471,6 +3592,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دفع اتجاهي",
   "name_en": "Directional Wipe",
   "status": "install",
@@ -3502,6 +3624,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تلاشي عبر لون",
   "name_en": "Fade Through",
   "status": "install",
@@ -3533,6 +3656,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال البكسلة",
   "name_en": "Grid Pixelate Wipe",
   "status": "install",
@@ -3565,6 +3689,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ذوبان الهافتون",
   "name_en": "Halftone Dissolve",
   "status": "install",
@@ -3597,6 +3722,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف القزحية",
   "name_en": "Iris Reveal",
   "status": "install",
@@ -3629,6 +3755,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع مطابق",
   "name_en": "Match Cut",
   "status": "install",
@@ -3660,6 +3787,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبادل بالتحول",
   "name_en": "Morph Swap",
   "status": "install",
@@ -3691,6 +3819,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انزلاق الصفحة",
   "name_en": "Page Slide",
   "status": "install",
@@ -3722,6 +3851,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "الشريط المطاطي",
   "name_en": "Rubber Band Bumper",
   "status": "install",
@@ -3754,6 +3884,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "محور مشترك عمودي",
   "name_en": "Shared Axis Y",
   "status": "install",
@@ -3786,6 +3917,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "محور مشترك عمقي",
   "name_en": "Shared Axis Z",
   "status": "install",
@@ -3817,6 +3949,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع مطابق للنص",
   "name_en": "Text Match Cut",
   "status": "install",
@@ -3849,6 +3982,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع مطابق بالعنوان",
   "name_en": "Type Match Cut",
   "status": "install",
@@ -3880,6 +4014,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع السوط",
   "name_en": "Whip Pan Cut",
   "status": "install",
@@ -3912,6 +4047,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال عبر التكبير",
   "name_en": "Zoom Through Transition",
   "status": "install",
@@ -3942,6 +4078,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر الانقسام الشعاعي",
   "name_en": "Chromatic Radial Split",
   "status": "install",
@@ -3974,6 +4111,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الزووم السينمائي",
   "name_en": "Cinematic Zoom",
   "status": "install",
@@ -4006,6 +4144,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الالتواء المتقاطع",
   "name_en": "Cross Warp Morph",
   "status": "install",
@@ -4038,6 +4177,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال التواء النطاق",
   "name_en": "Domain Warp Dissolve",
   "status": "install",
@@ -4070,6 +4210,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الوميض الأبيض",
   "name_en": "Flash Through White",
   "status": "install",
@@ -4102,6 +4243,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الغليتش",
   "name_en": "Glitch",
   "status": "install",
@@ -4135,6 +4277,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال العدسة الجاذبية",
   "name_en": "Gravitational Lens",
   "status": "install",
@@ -4167,6 +4310,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تسرب الضوء",
   "name_en": "Light Leak",
   "status": "install",
@@ -4199,6 +4343,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال جدار الكلمات",
   "name_en": "Text Clone Wall Transition",
   "status": "install",
@@ -4231,6 +4376,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الحرق المتعرج",
   "name_en": "Ridged Burn",
   "status": "install",
@@ -4263,6 +4409,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال التموجات",
   "name_en": "Ripple Waves",
   "status": "install",
@@ -4295,6 +4442,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال قزحية SDF",
   "name_en": "SDF Iris",
   "status": "install",
@@ -4327,6 +4475,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال الدوامة",
   "name_en": "Swirl Vortex",
   "status": "install",
@@ -4359,6 +4508,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال السراب الحراري",
   "name_en": "Thermal Distortion",
   "status": "install",
@@ -4391,6 +4541,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات ثلاثية الأبعاد",
   "name_en": "3D Transitions",
   "status": "install",
@@ -4422,6 +4573,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الضبابية",
   "name_en": "Blur Transitions",
   "status": "install",
@@ -4453,6 +4605,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات التغطية",
   "name_en": "Cover Transitions",
   "status": "install",
@@ -4484,6 +4637,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات التدمير",
   "name_en": "Destruction Transitions",
   "status": "install",
@@ -4515,6 +4669,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الذوبان",
   "name_en": "Dissolve Transitions",
   "status": "install",
@@ -4547,6 +4702,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات التشويه",
   "name_en": "Distortion Transitions",
   "status": "install",
@@ -4578,6 +4734,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الشبكة",
   "name_en": "Grid Transitions",
   "status": "install",
@@ -4609,6 +4766,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الضوء",
   "name_en": "Light Transitions",
   "status": "install",
@@ -4640,6 +4798,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات ميكانيكية",
   "name_en": "Mechanical Transitions",
   "status": "install",
@@ -4671,6 +4830,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات متنوعة",
   "name_en": "Other Transitions",
   "status": "install",
@@ -4703,6 +4863,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الدفع",
   "name_en": "Push Transitions",
   "status": "install",
@@ -4734,6 +4895,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات شعاعية",
   "name_en": "Radial Transitions",
   "status": "install",
@@ -4765,6 +4927,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات الحجم",
   "name_en": "Scale Transitions",
   "status": "install",
@@ -4796,6 +4959,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال البوابة",
   "name_en": "Portal",
   "status": "install",
@@ -4830,6 +4994,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تحطم الزجاج",
   "name_en": "Shatter",
   "status": "install",
@@ -4863,6 +5028,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر السوط",
   "name_en": "Whip Pan",
   "status": "install",
@@ -4895,6 +5061,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "نمط انتقال الشيدر من الصفحة",
   "name_en": "DOM-to-texture shader transition pattern",
   "status": "install",
@@ -4927,14 +5094,17 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "المسح بالقناع وتقسيم الشاشة",
   "name_en": "Clip-path wipe and split-screen",
   "status": "install",
   "what": "يكشف تحريك clip-path متعدد الأضلاع المقطع التالي فوق تسليم متداخل مدته 0.5 s؛ وتبني الأداة نفسها الشاشات المقسومة. — A polygon clip-path tween reveals the next clip over an overlapping 0.5 s handoff; same tool builds split-screens.",
   "how": "tl.fromTo('#next .inner',{clipPath:'polygon(0 0,0 0,0 100%,0 100%)'},{clipPath:'polygon(0 0,100% 0,100% 100%,0 100%)',duration:0.5},2).",
   "params": "0.5 s overlap",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "Apache-2.0",
   "proof": [
    "kosif-one/vendor/hyperframes/skills/hyperframes-core/references/creator-editing-recipes.md"
@@ -4954,6 +5124,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مزج متقاطع للصورة والصوت",
   "name_en": "Crossfade with opposing volume envelopes",
   "status": "install",
@@ -4980,6 +5151,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تشويش انقسام الألوان والشرائح",
   "name_en": "Chromatic RGB-split / slice glitch",
   "status": "install",
@@ -5011,6 +5183,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبديل بالتحجيم في نفس المركز",
   "name_en": "Scale swap morph",
   "status": "install",
@@ -5042,6 +5215,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبديل السمة حول عنصر ثابت",
   "name_en": "Theme crossfade morph under fixed anchor",
   "status": "install",
@@ -5073,6 +5247,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: دفع انزلاقي",
   "name_en": "CSS transition: Push slide",
   "status": "install",
@@ -5103,6 +5278,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: دفع عمودي",
   "name_en": "CSS transition: Vertical push",
   "status": "install",
@@ -5133,6 +5309,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: دفع مرن",
   "name_en": "CSS transition: Elastic push",
   "status": "install",
@@ -5164,6 +5341,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: ضغط",
   "name_en": "CSS transition: Squeeze",
   "status": "install",
@@ -5194,6 +5372,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: قزحية دائرية",
   "name_en": "CSS transition: Circle iris",
   "status": "install",
@@ -5225,6 +5404,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: قزحية ماسية",
   "name_en": "CSS transition: Diamond iris",
   "status": "install",
@@ -5255,6 +5435,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: انقسام قطري",
   "name_en": "CSS transition: Diagonal split",
   "status": "install",
@@ -5285,6 +5466,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: قلب البطاقة ثلاثي الأبعاد",
   "name_en": "CSS transition: 3D card flip",
   "status": "install",
@@ -5316,6 +5498,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: اختراق بالتقريب",
   "name_en": "CSS transition: Zoom through",
   "status": "install",
@@ -5346,6 +5529,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تبعيد",
   "name_en": "CSS transition: Zoom out",
   "status": "install",
@@ -5376,6 +5560,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تلاشي متقاطع",
   "name_en": "CSS transition: Crossfade",
   "status": "install",
@@ -5406,6 +5591,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تلاشي مع ضبابية",
   "name_en": "CSS transition: Blur crossfade",
   "status": "install",
@@ -5436,6 +5622,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: سحب التركيز",
   "name_en": "CSS transition: Focus pull",
   "status": "install",
@@ -5466,6 +5653,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: غمس لوني إلى الأسود",
   "name_en": "CSS transition: Color dip",
   "status": "install",
@@ -5496,6 +5684,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: كتل لونية متتابعة",
   "name_en": "CSS transition: Staggered color blocks",
   "status": "install",
@@ -5526,6 +5715,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: ستائر أفقية",
   "name_en": "CSS transition: Horizontal blinds",
   "status": "install",
@@ -5556,6 +5746,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: ستائر عمودية",
   "name_en": "CSS transition: Vertical blinds",
   "status": "install",
@@ -5586,6 +5777,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تسرب ضوئي",
   "name_en": "CSS transition: Light leak",
   "status": "install",
@@ -5616,6 +5808,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: حرق بالتعريض الزائد",
   "name_en": "CSS transition: Overexposure burn",
   "status": "install",
@@ -5646,6 +5839,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: حرق الفيلم",
   "name_en": "CSS transition: Film burn",
   "status": "install",
@@ -5676,6 +5870,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تشويش رقمي",
   "name_en": "CSS transition: Glitch",
   "status": "install",
@@ -5706,6 +5901,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: زيغ لوني",
   "name_en": "CSS transition: Chromatic aberration",
   "status": "install",
@@ -5736,6 +5932,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تموج",
   "name_en": "CSS transition: Ripple",
   "status": "install",
@@ -5766,6 +5963,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: شريط VHS",
   "name_en": "CSS transition: VHS tape",
   "status": "install",
@@ -5796,6 +5994,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: مصراع",
   "name_en": "CSS transition: Shutter",
   "status": "install",
@@ -5826,6 +6025,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: مسح كعقرب الساعة",
   "name_en": "CSS transition: Clock wipe",
   "status": "install",
@@ -5856,6 +6056,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: تحلل شبكي",
   "name_en": "CSS transition: Grid dissolve",
   "status": "install",
@@ -5886,6 +6087,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: سقوط بالجاذبية",
   "name_en": "CSS transition: Gravity drop",
   "status": "install",
@@ -5916,6 +6118,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: دائرة متحولة",
   "name_en": "CSS transition: Morph circle",
   "status": "install",
@@ -5946,6 +6149,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: عبور بالضبابية",
   "name_en": "CSS transition: Blur through",
   "status": "install",
@@ -5976,6 +6180,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: ضبابية اتجاهية",
   "name_en": "CSS transition: Directional blur",
   "status": "install",
@@ -6006,6 +6211,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال CSS: احتراق الصفحة",
   "name_en": "CSS transition: Page burn",
   "status": "install",
@@ -6036,6 +6242,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: انقسام لوني",
   "name_en": "WebGL shader transition: chromatic-split",
   "status": "install",
@@ -6066,6 +6273,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: تقريب سينمائي",
   "name_en": "WebGL shader transition: cinematic-zoom",
   "status": "install",
@@ -6096,6 +6304,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: تحول بالتشويه المتقاطع",
   "name_en": "WebGL shader transition: cross-warp-morph",
   "status": "install",
@@ -6126,6 +6335,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: تشويه المجال",
   "name_en": "WebGL shader transition: domain-warp",
   "status": "install",
@@ -6156,6 +6366,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: وميض عبر الأبيض",
   "name_en": "WebGL shader transition: flash-through-white",
   "status": "install",
@@ -6186,6 +6397,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: عدسة جاذبية",
   "name_en": "WebGL shader transition: gravitational-lens",
   "status": "install",
@@ -6216,6 +6428,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: تسرب ضوئي",
   "name_en": "WebGL shader transition: light-leak",
   "status": "install",
@@ -6246,6 +6459,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: حرق متشقق",
   "name_en": "WebGL shader transition: ridged-burn",
   "status": "install",
@@ -6276,6 +6490,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: موجات متموجة",
   "name_en": "WebGL shader transition: ripple-waves",
   "status": "install",
@@ -6306,6 +6521,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: قزحية SDF",
   "name_en": "WebGL shader transition: sdf-iris",
   "status": "install",
@@ -6336,6 +6552,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: دوامة",
   "name_en": "WebGL shader transition: swirl-vortex",
   "status": "install",
@@ -6366,6 +6583,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: تشوه حراري",
   "name_en": "WebGL shader transition: thermal-distortion",
   "status": "install",
@@ -6396,6 +6614,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال شيدر WebGL: حركة سوط سريعة",
   "name_en": "WebGL shader transition: whip-pan",
   "status": "install",
@@ -6426,6 +6645,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مطابقة الانتقال مع الطاقة والمزاج",
   "name_en": "Transition energy and mood mapping",
   "status": "install",
@@ -6453,6 +6673,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "سجل الانتقالات والحقن الآلي",
   "name_en": "Transition registry and auto-injection",
   "status": "install",
@@ -6484,6 +6705,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات بسرعات متطابقة",
   "name_en": "Velocity-matched transitions",
   "status": "install",
@@ -6510,6 +6732,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: hypercut-whip",
   "name_en": "Beat motion primitive: hypercut-whip",
   "status": "install",
@@ -6539,6 +6762,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: mask-reveal",
   "name_en": "Beat motion primitive: mask-reveal",
   "status": "install",
@@ -6568,6 +6792,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: iris-open",
   "name_en": "Beat motion primitive: iris-open",
   "status": "install",
@@ -6597,6 +6822,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: blur-resolve",
   "name_en": "Beat motion primitive: blur-resolve",
   "status": "install",
@@ -6626,6 +6852,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: flash-cut",
   "name_en": "Beat motion primitive: flash-cut",
   "status": "install",
@@ -6655,6 +6882,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: hard-cut",
   "name_en": "Beat motion primitive: hard-cut",
   "status": "install",
@@ -6684,6 +6912,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حركة إيقاعية: staggered-exit",
   "name_en": "Beat motion primitive: staggered-exit",
   "status": "install",
@@ -6713,6 +6942,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطوعات داخل اللقطة",
   "name_en": "Within-frame seam cuts (zoom-through, inverse zoom, cut-the-curve, waterfall)",
   "status": "install",
@@ -6740,6 +6970,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إعادة الاستهداف بالنابض",
   "name_en": "Spring retargeting track()",
   "status": "install",
@@ -6768,6 +6999,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبديل البؤرة",
   "name_en": "rackFocus",
   "status": "install",
@@ -6796,6 +7028,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال القزحية والفيضان",
   "name_en": "iris / flood seams",
   "status": "install",
@@ -6824,6 +7057,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انقلاب ثلاثي",
   "name_en": "roll 3D flip seam",
   "status": "install",
@@ -6852,6 +7086,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قلب قطبية المسرح",
   "name_en": "polarity stage flip",
   "status": "install",
@@ -6880,6 +7115,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دخول تدريجي بالتعريض",
   "name_en": "Exposure fade-in from black",
   "status": "install",
@@ -6907,6 +7143,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ومضة بيضاء",
   "name_en": "White flash accent",
   "status": "install",
@@ -6934,6 +7171,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "فتح قزحي من نقطة إلى اللقطة",
   "name_en": "Iris open from a point onto footage",
   "status": "install",
@@ -6961,6 +7199,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "الكلمة كسطح انتقال",
   "name_en": "Word as the transition plane",
   "status": "install",
@@ -6988,14 +7227,17 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "لقطة إلى بطاقة إلى انهيار إلى شعار",
   "name_en": "Footage → card → implode → lockup",
   "status": "install",
   "what": "حاوية واحدة لا تُقطع أبدًا: تتقلص لقطات ملء الشاشة إلى بطاقة مستديرة بجانب المقاييس، ثم تنهار إلى النقطة، فلحظة صمت، ويُبنى الشعار حولها. — One container is never cut: full-bleed footage shrinks into a rounded card beside metrics, then implodes into the dot, a beat of silence, and the lockup builds around it.",
   "how": "tl.to(card, {x:−360, scale:.56, borderRadius:44px, .66 s E.inOut}); metrics x 40→0 staggered .12; implode {x:0, scale:.02, radius 600px, .38 s E.in}; lockup at b(26).",
   "params": "",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/showreel/index.html:120",
@@ -7015,6 +7257,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "خاتمة بالغطس إلى الأسود",
   "name_en": "Dip to black / dip to ink ending",
   "status": "install",
@@ -7043,6 +7286,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شريطا السينما يفتحان ويغلقان",
   "name_en": "Cinematic letterbox open/close",
   "status": "install",
@@ -7071,14 +7315,17 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع حاد مع إعادة تأطير الكاميرا",
   "name_en": "Hard cut with camera reframe",
   "status": "install",
   "what": "عند منعطف في القصة تقفز الكاميرا الافتراضية إلى قص وأصل جديدين وتستقر سريعًا، فتبدو اللوحة الواحدة كلقطة جديدة. — At a story turn the virtual camera jumps to a new crop and origin and settles fast, so one plate feels like a new shot.",
   "how": "tl.set(cam, {scale:1.42, x:0, y:0, transformOrigin:'585px 690px'}, 13.30).to(cam, {scale:1.10, .6 s, expo.out}, 13.30).",
   "params": "",
-  "install": "see arsenal-libraries.md",
-  "requires": [],
+  "install": "npm i gsap@3.15.0  (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)",
+  "requires": [
+   "npm:gsap"
+  ],
   "license": "owner",
   "proof": [
    "100-superskills/skills/kosif-montage-motion/scripts/projects/premium_edit/index.html:133"
@@ -7097,6 +7344,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ضربة القطع: تمويه شعاعي ووميض",
   "name_en": "Cut kick (radial blur on cuts) + white flash",
   "status": "install",
@@ -7125,6 +7373,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إيقاع الإظلام مع تداخل النص",
   "name_en": "Fade-through-black rhythm with overlapping text",
   "status": "install",
@@ -7152,6 +7401,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شاشة مقسومة للمقارنة",
   "name_en": "Split-screen comparison with whip-in halves",
   "status": "install",
@@ -7179,6 +7429,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إظلام الختام ووميض الانتقال",
   "name_en": "Dip to black end + white flash seams",
   "status": "install",
@@ -7207,6 +7458,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف دائري وفيضان لوني",
   "name_en": "Iris reveal and colour flood",
   "status": "install",
@@ -7233,6 +7485,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال تطبيقات الموبايل: سوايب سريع",
   "name_en": "Phone-editor transition: whip (whipleft/whipright/whipup/whipdown)",
   "status": "install",
@@ -7262,6 +7515,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "54 انتقال xfade بالبايثون",
   "name_en": "54 xfade transitions in Python",
   "status": "install",
@@ -7292,6 +7546,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ويب يسار",
   "name_en": "Phone-editor transition: whipleft",
   "status": "install",
@@ -7318,6 +7573,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ويب يمين",
   "name_en": "Phone-editor transition: whipright",
   "status": "install",
@@ -7344,6 +7600,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ويب أعلى",
   "name_en": "Phone-editor transition: whipup",
   "status": "install",
@@ -7370,6 +7627,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ويب أسفل",
   "name_en": "Phone-editor transition: whipdown",
   "status": "install",
@@ -7396,6 +7654,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "وميض",
   "name_en": "Flash frame",
   "status": "install",
@@ -7422,6 +7681,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال القزحية",
   "name_en": "Iris wipe",
   "status": "install",
@@ -7448,6 +7708,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قلب ثلاثي الأبعاد",
   "name_en": "Front-loaded 3D roll",
   "status": "install",
@@ -7474,6 +7735,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تسلسل اللقطات",
   "name_en": "Shot list sequence with hard cuts",
   "status": "install",
@@ -7500,6 +7762,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات القزحية والبطاقة والانضغاط",
   "name_en": "Iris / card / implode transitions (showreel)",
   "status": "install",
@@ -7530,6 +7793,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "الكلمة المفتاحية كمستوى انتقال",
   "name_en": "Keyword as transition plane",
   "status": "install",
@@ -7557,6 +7821,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تلاشي حواف المشهد",
   "name_en": "sceneFade edge fades",
   "status": "install",
@@ -7583,6 +7848,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إطارات تحت المقاطع",
   "name_en": "Poster frames under clips with zoom",
   "status": "install",
@@ -7609,6 +7875,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "لقطات بإطار أول وأخير (انتقال تحوّلي)",
   "name_en": "First-and-last-frame keyframe shots (AI morph transition)",
   "status": "key",
@@ -7639,6 +7906,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "بطاقة اقتباس فوق مشهد باهت",
   "name_en": "Quote card over hazed scene",
   "status": "seen",
@@ -7667,6 +7935,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بالعبور من فتحة",
   "name_en": "Zoom-through-hole transition",
   "status": "seen",
@@ -7695,6 +7964,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عبور السحاب كانتقال",
   "name_en": "Cloud fly-through transition",
   "status": "seen",
@@ -7723,6 +7993,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شريط فيلم ينزلق",
   "name_en": "Sliding film strip",
   "status": "seen",
@@ -7751,6 +8022,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بدائرة قزحية",
   "name_en": "Circle iris reveal",
   "status": "seen",
@@ -7779,6 +8051,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بثلاث شرائح لونية",
   "name_en": "Tri-band panel wipe",
   "status": "seen",
@@ -7807,6 +8080,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح دائري ناعم من النقطة",
   "name_en": "Soft circle iris wipe from focal point",
   "status": "seen",
@@ -7835,6 +8109,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إيقاع حقول لونية",
   "name_en": "Colour-field cut rhythm",
   "status": "seen",
@@ -7863,6 +8138,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كلمات فوق تكبير شديد للرسم",
   "name_en": "Macro zoom word beats",
   "status": "seen",
@@ -7891,6 +8167,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع كلمات المزايا السريع",
   "name_en": "Rapid feature word cuts",
   "status": "seen",
@@ -7919,6 +8196,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح نقطي دائري",
   "name_en": "Halftone ring wipe",
   "status": "seen",
@@ -7947,6 +8225,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح قطري بألواح ملوّنة",
   "name_en": "Diagonal panel wipe",
   "status": "seen",
@@ -7975,6 +8254,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "لافتة الدور",
   "name_en": "Turn banner",
   "status": "seen",
@@ -8003,6 +8283,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بخطوط قطرية",
   "name_en": "Diagonal stripe wipe",
   "status": "seen",
@@ -8031,6 +8312,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عد تنازلي بأسلوب شريط السينما",
   "name_en": "Film-leader countdown",
   "status": "seen",
@@ -8059,6 +8341,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "اختراق بخطوط سرعة",
   "name_en": "Zoom-through speed lines",
   "status": "seen",
@@ -8087,6 +8370,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح شرائط قوس قزح",
   "name_en": "Rainbow stripe wipe",
   "status": "seen",
@@ -8115,6 +8399,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بالتلاشي إلى الخلفية",
   "name_en": "Fade-through-ground scene change",
   "status": "seen",
@@ -8143,6 +8428,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تقلص الشبكة إلى هاتف",
   "name_en": "Window grid to device",
   "status": "seen",
@@ -8171,6 +8457,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مفتاح أوضاع بمسح نقطي",
   "name_en": "Mode toggle with dither wipe",
   "status": "seen",
@@ -8200,6 +8487,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انقضاض تكبير داخل بطاقة حتى ملء الشاشة",
   "name_en": "Whip zoom into tile to full-bleed",
   "status": "seen",
@@ -8229,6 +8517,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع مطابق بالعودة إلى البطاقة",
   "name_en": "Match cut back into source tile",
   "status": "seen",
@@ -8257,6 +8546,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ومضات بطاقات العلامات",
   "name_en": "Rapid brand-card flashes",
   "status": "seen",
@@ -8285,6 +8575,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تتابع كلمات بقطع سريع",
   "name_en": "Cut-burst word sequence",
   "status": "seen",
@@ -8313,6 +8604,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مونتاج سريع لنطاق الأساليب",
   "name_en": "Style-range rapid montage",
   "status": "seen",
@@ -8343,6 +8635,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف الصورة من نقطة تتضخم",
   "name_en": "Dot-to-disc portrait reveal",
   "status": "seen",
@@ -8371,6 +8664,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بنقاط الحبر الإلكتروني",
   "name_en": "E-ink dither wipe",
   "status": "seen",
@@ -8400,6 +8694,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "توسيع العنصر المشترك (الغلاف)",
   "name_en": "Shared-element artwork expand",
   "status": "seen",
@@ -8429,6 +8724,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح درجي بكسلي",
   "name_en": "Pixel stair wipe",
   "status": "seen",
@@ -8457,6 +8753,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح ضوئي قبل/بعد",
   "name_en": "Light-bar before/after sweep",
   "status": "seen",
@@ -8485,6 +8782,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "سهم النمو يطير إلى الشعار",
   "name_en": "Growth chart arrow fly-off to logo",
   "status": "seen",
@@ -8514,6 +8812,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع بانقلاب الفاتح والداكن",
   "name_en": "Light/dark inversion cuts",
   "status": "seen",
@@ -8542,6 +8841,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بقرص يتمدد",
   "name_en": "Disc expand wipe",
   "status": "seen",
@@ -8570,6 +8870,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قلب فاتح داكن",
   "name_en": "Light/dark flip",
   "status": "seen",
@@ -8598,6 +8899,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بالتغبيش بين الفصول",
   "name_en": "Blur-dissolve chapter change",
   "status": "seen",
@@ -8626,6 +8928,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال دائري من داخل الرقم",
   "name_en": "Digit iris transition",
   "status": "seen",
@@ -8654,6 +8957,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "استعراض السمات بقطعات سريعة",
   "name_en": "Theme roll call cuts",
   "status": "seen",
@@ -8683,6 +8987,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "بداية ونهاية بتلاشٍ من السواد وإليه",
   "name_en": "Fade-from/to-black bookends",
   "status": "seen",
@@ -8711,6 +9016,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح ورقي ممزق",
   "name_en": "Torn paper wipe",
   "status": "seen",
@@ -8739,6 +9045,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح لوني كامل كفاصل",
   "name_en": "Full-bleed colour wipe interstitial",
   "status": "seen",
@@ -8767,6 +9074,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "غوص داخل شاشة متداخلة",
   "name_en": "Nested-screen dive (recursive zoom)",
   "status": "seen",
@@ -8795,6 +9103,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح ختامي كريمي",
   "name_en": "Cream end wipe",
   "status": "seen",
@@ -8823,6 +9132,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تذويب بكسلي",
   "name_en": "Pixel mosaic dissolve",
   "status": "seen",
@@ -8851,6 +9161,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تكرار نص متشوه",
   "name_en": "Glitch type tiling",
   "status": "seen",
@@ -8879,6 +9190,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال مسح بالشرائط",
   "name_en": "Stripe wipe transition",
   "status": "seen",
@@ -8907,6 +9219,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ثمانية انتقالات في مازورة",
   "name_en": "Beat-locked transition bar",
   "status": "seen",
@@ -8936,6 +9249,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع بالكتل اللونية",
   "name_en": "Colour-block cut",
   "status": "seen",
@@ -8964,6 +9278,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح لوني صلب",
   "name_en": "Solid colour wipe",
   "status": "seen",
@@ -8992,6 +9307,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دوران سريع وتصغير لخريطة المستويات",
   "name_en": "World-map whip and zoom-out",
   "status": "seen",
@@ -9021,6 +9337,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بشاشة منقسمة",
   "name_en": "Split-screen wipe",
   "status": "seen",
@@ -9049,6 +9366,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مرور عمود أمامي ضبابي",
   "name_en": "Foreground pole whoosh",
   "status": "seen",
@@ -9077,6 +9395,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بالنفق المظلم",
   "name_en": "Tunnel wipe scene change",
   "status": "seen",
@@ -9105,6 +9424,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بأشرطة لونية",
   "name_en": "Colour stripe wipe",
   "status": "seen",
@@ -9133,6 +9453,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "صورة تطير من المحادثة إلى المستند",
   "name_en": "Image flies into document slot",
   "status": "seen",
@@ -9161,6 +9482,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قواعد مشاهد مبنية على التلاشي",
   "name_en": "Fade-driven scene grammar",
   "status": "seen",
@@ -9189,6 +9511,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "نهاية بالغوص في الشعار",
   "name_en": "Zoom-through logo ending",
   "status": "seen",
@@ -9217,6 +9540,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "جليتش بانفصال القنوات وشرائح أفقية",
   "name_en": "RGB-split slice glitch",
   "status": "seen",
@@ -9245,6 +9569,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ومضة خاطفة تمهّد لما بعدها",
   "name_en": "Glitch flash-frame foreshadow",
   "status": "seen",
@@ -9273,6 +9598,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بقلب الثيم مع ضبابية",
   "name_en": "Theme-flip blur crossfade",
   "status": "seen",
@@ -9301,6 +9627,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع عبر بوابة الجسم",
   "name_en": "Portal object match-cut",
   "status": "seen",
@@ -9330,6 +9657,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دخول عنوان بسرعة مع ضبابية حركة",
   "name_en": "Whip-in headline with motion blur",
   "status": "seen",
@@ -9358,6 +9686,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "خروج سوطي بضبابية حركة",
   "name_en": "Motion-blur whip exit",
   "status": "seen",
@@ -9386,6 +9715,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تتابع سحب سريع",
   "name_en": "Whip relay",
   "status": "seen",
@@ -9414,6 +9744,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تقلّص الصورة إلى بطاقة",
   "name_en": "Hero shrinks into card",
   "status": "seen",
@@ -9442,6 +9773,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "خط أرض مستمر",
   "name_en": "Continuous ground line",
   "status": "seen",
@@ -9470,6 +9802,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تكبير عبر قناع دائري",
   "name_en": "Circle mask zoom-through",
   "status": "seen",
@@ -9498,6 +9831,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "وميض سالب",
   "name_en": "Negative flash",
   "status": "seen",
@@ -9526,6 +9860,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تلاشي بين الخطوات",
   "name_en": "Dim-out step crossfade",
   "status": "seen",
@@ -9554,6 +9889,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ضربة كلمة بتشويش ألوان RGB",
   "name_en": "RGB split glitch slam",
   "status": "seen",
@@ -9582,6 +9918,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ومضة ضوء بيضاء بإضاءة بقعية",
   "name_en": "Spotlight bloom white-out",
   "status": "seen",
@@ -9610,6 +9947,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تقطيع وميضي",
   "name_en": "Strobe cut burst",
   "status": "seen",
@@ -9638,6 +9976,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال لوح لوني للفصل",
   "name_en": "Chapter colour slam",
   "status": "seen",
@@ -9666,6 +10005,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال جليتش بفصل الألوان",
   "name_en": "RGB-split glitch transition",
   "status": "seen",
@@ -9694,6 +10034,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بالبياض الشمسي",
   "name_en": "Sun whiteout bridge",
   "status": "seen",
@@ -9722,6 +10063,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إمالة سريعة مع وميض لوني",
   "name_en": "Whip-tilt with tint flash",
   "status": "seen",
@@ -9750,6 +10092,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "صفحة تنزلق للأعلى بلطخة",
   "name_en": "Smear scroll-in page",
   "status": "seen",
@@ -9778,6 +10121,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "بطاقات صادمة بانعكاس الألوان",
   "name_en": "Colour-inversion beat cards",
   "status": "seen",
@@ -9806,6 +10150,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بمسح دائري",
   "name_en": "Circle wipe scene change",
   "status": "seen",
@@ -9834,6 +10179,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كلمة تنشق بخط مائل",
   "name_en": "Slash-split word",
   "status": "seen",
@@ -9862,6 +10208,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انفجار كلمات سريع",
   "name_en": "Rapid word-cut burst",
   "status": "seen",
@@ -9890,6 +10237,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بشبكة مربعات",
   "name_en": "Tile grid wipe",
   "status": "seen",
@@ -9918,6 +10266,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع متبادل بين الشيفرة والصورة",
   "name_en": "Code↔visual cut bursts",
   "status": "seen",
@@ -9946,6 +10295,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شريط مائل يدخل بقوة",
   "name_en": "Diagonal banner slam",
   "status": "seen",
@@ -9974,6 +10324,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ومضات صور سريعة بملء الشاشة",
   "name_en": "Rapid full-screen image flashes",
   "status": "seen",
@@ -10002,6 +10353,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بضبابية وتكبير",
   "name_en": "Blur-zoom dissolve",
   "status": "seen",
@@ -10030,6 +10382,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف واجهة المحرر بالتراجع",
   "name_en": "Editor pull-out reveal",
   "status": "seen",
@@ -10059,6 +10412,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف دائري من علامة تصويب",
   "name_en": "Iris reticle reveal",
   "status": "seen",
@@ -10087,6 +10441,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بقناع دائري",
   "name_en": "Iris circle transition",
   "status": "seen",
@@ -10115,6 +10470,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال سحب بتمويه حركة",
   "name_en": "Motion-blur whip transition",
   "status": "seen",
@@ -10143,6 +10499,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح لوني دائري عملاق",
   "name_en": "Circular colour-field wipe",
   "status": "seen",
@@ -10171,6 +10528,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال جليتش شرائحي",
   "name_en": "Slice glitch transition",
   "status": "seen",
@@ -10199,6 +10557,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بدائرة متنامية",
   "name_en": "Circle grow wipe",
   "status": "seen",
@@ -10227,6 +10586,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "خطوط تشويش ملونة للخاتمة",
   "name_en": "RGB glitch line end card",
   "status": "seen",
@@ -10255,6 +10615,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع بقلب الألوان",
   "name_en": "Colour-flip hard cuts",
   "status": "seen",
@@ -10283,6 +10644,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مونتاج كلمات على الإيقاع",
   "name_en": "Beat word-card montage",
   "status": "seen",
@@ -10313,6 +10675,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كروت تطير بضبابية حركة",
   "name_en": "Whip-out cards with motion blur",
   "status": "seen",
@@ -10341,6 +10704,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "اهتزاز فصل ألوان",
   "name_en": "RGB split stutter",
   "status": "seen",
@@ -10369,6 +10733,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح السبورة بالممحاة بين الفصول",
   "name_en": "Eraser chapter wipe",
   "status": "seen",
@@ -10397,6 +10762,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح الشاشة بشرائط ملونة",
   "name_en": "Full-screen stripe wipe",
   "status": "seen",
@@ -10425,6 +10791,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال دائرة لونية متوسعة",
   "name_en": "Iris circle colour wipe",
   "status": "seen",
@@ -10453,6 +10820,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح دائري يغمر الشاشة بلون",
   "name_en": "Circle wipe colour flood",
   "status": "seen",
@@ -10481,6 +10849,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دائرة تتمدد وتغمر الشاشة",
   "name_en": "Iris circle flood",
   "status": "seen",
@@ -10509,6 +10878,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بشريط مائل إلى صورة",
   "name_en": "Diagonal band wipe to photo",
   "status": "seen",
@@ -10537,6 +10907,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تفكك بكسلي",
   "name_en": "Pixelation dissolve",
   "status": "seen",
@@ -10565,6 +10936,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح غلتش شرائحي",
   "name_en": "Glitch slice wipe",
   "status": "seen",
@@ -10593,6 +10965,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عبور زووم داخل الصورة",
   "name_en": "Zoom-through image portal",
   "status": "seen",
@@ -10621,6 +10994,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبديل المحتوى بضبابية قصيرة",
   "name_en": "Blur content swap",
   "status": "seen",
@@ -10649,6 +11023,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بعدسة دائرية",
   "name_en": "Circular lens reveal",
   "status": "seen",
@@ -10677,6 +11052,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بطاقة ملونة",
   "name_en": "Colour card reveal",
   "status": "seen",
@@ -10705,6 +11081,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "نقطة بطلة تربط المشاهد",
   "name_en": "Hero dot match-cut",
   "status": "seen",
@@ -10733,6 +11110,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عبور بتكبير لوني",
   "name_en": "Zoom-through colour wipe",
   "status": "seen",
@@ -10761,6 +11139,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح بأشرطة ألوان أساسية",
   "name_en": "Primary-colour stripe wipe",
   "status": "seen",
@@ -10789,6 +11168,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال سوط ضبابي",
   "name_en": "Whip motion-blur transition",
   "status": "seen",
@@ -10817,6 +11197,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع حاد بين الظلام والنور",
   "name_en": "Hard dark/light section flip",
   "status": "seen",
@@ -10846,6 +11227,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بشكل مشترك",
   "name_en": "Shared-shape scene handover",
   "status": "documented",
@@ -10873,6 +11255,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قاعدة: الانتقال هو الخروج",
   "name_en": "Scene rules: transition is the exit",
   "status": "documented",
@@ -10903,6 +11286,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "اختيار الانتقال حسب الطاقة",
   "name_en": "Transition by energy table",
   "status": "documented",
@@ -10930,6 +11314,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "معنى كل انتقال",
   "name_en": "Transition meaning map",
   "status": "documented",
@@ -10957,6 +11342,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "إعدادات انتقال جاهزة",
   "name_en": "Transition presets",
   "status": "documented",
@@ -10983,6 +11369,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شدة ضبابية الانتقال",
   "name_en": "Blur crossfade intensity",
   "status": "documented",
@@ -11012,6 +11399,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "فتحة دائرية وقطع قطري",
   "name_en": "Clip-path iris & diagonal split",
   "status": "documented",
@@ -11040,6 +11428,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تشويش رقمي وانحراف لوني",
   "name_en": "Glitch / chromatic / VHS / ripple",
   "status": "documented",
@@ -11068,6 +11457,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "ستائر وكتل متتابعة",
   "name_en": "Blinds / staggered blocks / grid dissolve",
   "status": "documented",
@@ -11095,6 +11485,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تبديل اللقطات عند حدود الجمل",
   "name_en": "B-roll swap at sentence boundaries",
   "status": "documented",
@@ -11122,6 +11513,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-001 انتقال داخل شكل مطابق",
   "name_en": "MG-001 Shape-matched zoom-through",
   "status": "documented",
@@ -11151,6 +11543,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-002 ستارة من جسم عابر",
   "name_en": "MG-002 Foreground body wipe",
   "status": "documented",
@@ -11180,6 +11573,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-003 نقلة باندفاع جانبي",
   "name_en": "MG-003 Whip push inside directional blur",
   "status": "documented",
@@ -11210,6 +11604,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-005 حبر يفتح المشهد",
   "name_en": "MG-005 Ink-bloom luma-matte reveal",
   "status": "documented",
@@ -11239,6 +11634,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-006 شرائح بسرعات متتابعة",
   "name_en": "MG-006 Staggered slat wipe",
   "status": "documented",
@@ -11266,6 +11662,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-008 انتقال بإيقاف الحركة",
   "name_en": "MG-008 Stop-motion shrink to sticker",
   "status": "documented",
@@ -11296,6 +11693,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-009 موجة تشوه تعبر القطع",
   "name_en": "MG-009 Displacement wave across the cut",
   "status": "documented",
@@ -11325,6 +11723,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "MG-010 الانتقال عبر إطار مجمد وطي الورقة والباب",
   "name_en": "MG-010 Freeze-frame 2.5D hop (with page fold and door portal)",
   "status": "documented",
@@ -11355,6 +11754,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قص الصمت حسب نوع المحتوى",
   "name_en": "Genre-aware silence trimming",
   "status": "documented",
@@ -11384,6 +11784,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قص دقيق للإطار بإعادة الترميز",
   "name_en": "Frame-accurate trim by re-encode",
   "status": "documented",
@@ -11415,6 +11816,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "دمج المقاطع بقائمة concat",
   "name_en": "Concat list join",
   "status": "documented",
@@ -11445,6 +11847,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "سياسة القص التلقائي حسب النوع",
   "name_en": "Genre-aware auto-trim policy",
   "status": "documented",
@@ -11471,6 +11874,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع J و L للأصوات",
   "name_en": "J-cut / L-cut ambience",
   "status": "documented",
@@ -11501,6 +11905,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "عودة الموسيقى بذيل ورايزر",
   "name_en": "Music re-entry with tail & riser",
   "status": "documented",
@@ -11528,6 +11933,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "الانتقال بين مقطوعتين",
   "name_en": "Song A to B transition",
   "status": "documented",
@@ -11554,6 +11960,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف تدريجي من البكسلة",
   "name_en": "Progressive depixelation reveal",
   "status": "documented",
@@ -11580,6 +11987,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قواعد الانتقالات في قاعدة المخرج",
   "name_en": "Director KB transition rules (12)",
   "status": "documented",
@@ -11606,6 +12014,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "لا مزج متلاشي — القطع بمطابقة السرعة",
   "name_en": "No crossfades / velocity-matched cut",
   "status": "documented",
@@ -11632,6 +12041,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تسرب ضوئي عند القطع",
   "name_en": "Light-leak cut transition",
   "status": "documented",
@@ -11659,6 +12069,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تراكب لقطات B-roll بانتقال ذائب",
   "name_en": "B-roll overlay with crossfade",
   "status": "documented",
@@ -11690,6 +12101,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قواعد الانتقالات",
   "name_en": "Transition grammar: no crossfades, velocity-matched cuts",
   "status": "documented",
@@ -11717,6 +12129,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قاعدة معنى الانتقال",
   "name_en": "Transition meaning rule",
   "status": "documented",
@@ -11744,6 +12157,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات push",
   "name_en": "CSS/GSAP push transitions",
   "status": "documented",
@@ -11772,6 +12186,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات radial",
   "name_en": "CSS/GSAP radial transitions",
   "status": "documented",
@@ -11800,6 +12215,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات 3D",
   "name_en": "CSS/GSAP 3D transitions",
   "status": "documented",
@@ -11828,6 +12244,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات scale",
   "name_en": "CSS/GSAP scale transitions",
   "status": "documented",
@@ -11856,6 +12273,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات dissolve",
   "name_en": "CSS/GSAP dissolve transitions",
   "status": "documented",
@@ -11885,6 +12303,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات cover",
   "name_en": "CSS/GSAP cover transitions",
   "status": "documented",
@@ -11913,6 +12332,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات light",
   "name_en": "CSS/GSAP light transitions",
   "status": "documented",
@@ -11941,6 +12361,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات distortion",
   "name_en": "CSS/GSAP distortion transitions",
   "status": "documented",
@@ -11969,6 +12390,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات mechanical",
   "name_en": "CSS/GSAP mechanical transitions",
   "status": "documented",
@@ -11997,6 +12419,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات grid",
   "name_en": "CSS/GSAP grid transitions",
   "status": "documented",
@@ -12025,6 +12448,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات other",
   "name_en": "CSS/GSAP other transitions",
   "status": "documented",
@@ -12053,6 +12477,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قواعد الانتقالات الصلبة",
   "name_en": "Transition hard rules (HTML)",
   "status": "documented",
@@ -12081,6 +12506,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقالات Remotion",
   "name_en": "Remotion TransitionSeries",
   "status": "documented",
@@ -12109,6 +12535,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "معاني الانتقالات",
   "name_en": "Transition semantics",
   "status": "documented",
@@ -12135,6 +12562,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "سلسلة التحول بجسم حامل",
   "name_en": "Carrier-object transformation chain",
   "status": "documented",
@@ -12161,6 +12589,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قاعدة انتقالين",
   "name_en": "Two-transition rule",
   "status": "documented",
@@ -12189,6 +12618,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قواعد الانتقالات",
   "name_en": "Transition grammar (no crossfades)",
   "status": "documented",
@@ -12215,6 +12645,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: قطع",
   "name_en": "Transition key: cut",
   "status": "documented",
@@ -12241,6 +12672,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: مسح",
   "name_en": "Transition key: wipe",
   "status": "documented",
@@ -12267,6 +12699,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: تحول",
   "name_en": "Transition key: morph",
   "status": "documented",
@@ -12293,6 +12726,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: كشف بالقناع",
   "name_en": "Transition key: mask-reveal",
   "status": "documented",
@@ -12319,6 +12753,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: زووم عابر",
   "name_en": "Transition key: zoom-through",
   "status": "documented",
@@ -12345,6 +12780,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: قطع مطابق",
   "name_en": "Transition key: match-cut",
   "status": "documented",
@@ -12370,6 +12806,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال: ذوبان",
   "name_en": "Transition key: dissolve",
   "status": "documented",
@@ -12396,6 +12833,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح قبل وبعد",
   "name_en": "Before/after split wipe",
   "status": "documented",
@@ -12422,6 +12860,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "من الرسم إلى الحقيقي",
   "name_en": "Sketch-to-real crossfade",
   "status": "documented",
@@ -12448,6 +12887,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "القطع على الضربة",
   "name_en": "Cut-on-beat rule",
   "status": "documented",
@@ -12474,6 +12914,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "شكل واحد بلا قطع",
   "name_en": "One shape never cut",
   "status": "documented",
@@ -12500,6 +12941,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بقناع دائري",
   "name_en": "Boolean circle-mask reveal",
   "status": "documented",
@@ -12526,6 +12968,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "سحب الشاشة واللوحة المنبثقة",
   "name_en": "Swipe / screen push and modal sheet",
   "status": "documented",
@@ -12553,6 +12996,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "أقنعة الصور الديناميكية",
   "name_en": "Dynamic photo masks",
   "status": "documented",
@@ -12580,6 +13024,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تحويل الصورة إلى رسم",
   "name_en": "Photo-to-graphic trace",
   "status": "documented",
@@ -12607,6 +13052,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع وميضي",
   "name_en": "Flash cut",
   "status": "documented",
@@ -12633,6 +13079,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع بالتكبير",
   "name_en": "Zoom cut entrance",
   "status": "documented",
@@ -12659,6 +13106,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تلاشي مع تحجيم",
   "name_en": "Scale crossfade",
   "status": "documented",
@@ -12685,6 +13133,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تقنيات السرد بالتمرير كحركات فيديو",
   "name_en": "Scrollytelling techniques as video moves",
   "status": "idea",
@@ -12712,6 +13161,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قلب صفحة",
   "name_en": "Paper-curl page flip",
   "status": "idea",
@@ -12740,6 +13190,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع على 120 نبضة",
   "name_en": "Hard cuts on 120 BPM",
   "status": "idea",
@@ -12768,6 +13219,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مسح دائري للثيم",
   "name_en": "Radial theme wipe",
   "status": "idea",
@@ -12796,6 +13248,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مزج 400 مللي",
   "name_en": "Vertical 400 ms dissolve only",
   "status": "idea",
@@ -12824,6 +13277,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع مطابق بالتكبير",
   "name_en": "Scale match-cut one-take",
   "status": "idea",
@@ -12852,6 +13306,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف بقناع",
   "name_en": "Masked axis-alternating reveals",
   "status": "idea",
@@ -12880,6 +13335,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "حد المزج",
   "name_en": "Dissolve cap 150 ms",
   "status": "idea",
@@ -12908,6 +13364,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "كشف قبل وبعد",
   "name_en": "Before/after wipe reveal",
   "status": "idea",
@@ -12936,6 +13393,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انخفاض مظلم",
   "name_en": "Dark-dip camera reset",
   "status": "idea",
@@ -12964,6 +13422,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "قطع على كل ضربة",
   "name_en": "Beat-locked hard cuts",
   "status": "idea",
@@ -12995,6 +13454,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بالتحول",
   "name_en": "Seed morph transitions",
   "status": "idea",
@@ -13025,6 +13485,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تحريك سوطي",
   "name_en": "Whip-pan 180 ms",
   "status": "idea",
@@ -13053,6 +13514,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "مزج بالتحريك",
   "name_en": "Stir gradient collapse blend",
   "status": "idea",
@@ -13081,6 +13543,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تحول الفصول",
   "name_en": "Element-reborn chapter morphs",
   "status": "idea",
@@ -13109,6 +13572,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انتقال بلا قطع",
   "name_en": "Morph/mask wipe/scale-through only",
   "status": "idea",
@@ -13137,6 +13601,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "تحول الحاوية",
   "name_en": "Container morph loop",
   "status": "idea",
@@ -13165,6 +13630,7 @@
  },
  {
   "family": "transitions-cuts",
+  "domain": "motion",
   "name_ar": "انزلاق مع تلاشي",
   "name_en": "Slide-up crossfade",
   "status": "idea",

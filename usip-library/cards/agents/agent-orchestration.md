@@ -1,6 +1,6 @@
 # `agent-orchestration` — الوكلاء والتوجيه الذكي (46 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/agent-orchestration.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/agent-orchestration.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -2650,7 +2650,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** ملف التعليمات يحكم شجرة مجلده، والأعمق يغلب، وتعليمات المستخدم المباشرة تغلب كل الملفات. — An instruction file governs its folder's tree, the nearest file wins on conflict, and direct user instructions beat every file.
@@ -2698,7 +2698,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2716,7 +2716,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** حين يمتلئ السياق اكتب ملخص تسليم يكمل منه وكيل آخر دون سؤال. — When context fills, write a handoff another agent can resume from without asking.
@@ -2764,7 +2764,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2782,7 +2782,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** في التخطيط اجمع الحقيقة دون تغيير الملفات المتتبعة، واستكشف قبل أن تسأل، وسلّم خطة مكتملة القرار. — While planning, gather truth without changing tracked files, explore before asking, and deliver a decision-complete plan.
@@ -2830,7 +2830,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2848,7 +2848,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** خطوات ذات معنى قابلة للتحقق بالترتيب، واحدة قيد التنفيذ، وكل تغيير بسببه. — Meaningful, verifiable, ordered steps, one in progress, every change with its reason.
@@ -2896,7 +2896,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2914,7 +2914,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** أبقِ الهدف كاملًا عبر الأدوار، وصنّف كل دور، ولا تعلن الإكمال إلا بدليل لكل متطلب. — Keep the full goal across turns, classify every turn, and claim completion only with evidence per requirement.
@@ -2962,7 +2962,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -2980,7 +2980,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** بعد التسليم تابع فقط ما يغلق حلقة أو يثبت أن التغيير سرى، بشرط توقف، ودون توسيع الصلاحية. — After delivery, follow up only to close a loop or confirm a change took effect, with a stop condition and no wider authority.
@@ -3028,7 +3028,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3046,7 +3046,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** كل نتيجة أداة بغلاف ثابت (زمن، رمز خروج، حجم أصلي، مخرج مقتطع بإعلان)، وكل تشغيل بلا واجهة يطبع أحداث JSON بأنواع محدودة. — Every tool result in a fixed envelope (time, exit code, original size, announced truncation), every headless run as typed JSON events.
@@ -3095,7 +3095,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -3112,7 +3112,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | Apache-2.0 |
 
 **ما هي:** استخرج ذاكرة من كل جلسة منتهية خاملة ثم ادمج، بمهام محجوزة وسقف توازٍ وتنقيح أسرار. — Extract a memory from each idle finished session, then consolidate, with leased jobs, a concurrency cap and secret redaction.
@@ -3160,7 +3160,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/codex-agent-harness.md`
 
 #### 7. قدرات قريبة في العائلة
 

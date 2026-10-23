@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5601
+   "count": 5602
   },
   {
    "id": "dom:motion",
@@ -1126,6 +1126,15 @@
    }
   },
   {
+   "id": "req:yt-dlp",
+   "kind": "requirement",
+   "label": "yt-dlp",
+   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+   "en": "download licensed or owned media from links",
+   "install": "pip install yt-dlp",
+   "req_kind": "pip"
+  },
+  {
    "id": "fam:light-glow-bloom",
    "kind": "family",
    "label": "Glow, light & bloom",
@@ -1383,10 +1392,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 159,
-   "proven": 126,
+   "count": 160,
+   "proven": 127,
    "status": {
-    "proven": 126,
+    "proven": 127,
     "ready": 21,
     "install": 12
    }
@@ -1770,15 +1779,6 @@
    }
   },
   {
-   "id": "req:yt-dlp",
-   "kind": "requirement",
-   "label": "yt-dlp",
-   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
-   "en": "download licensed or owned media from links",
-   "install": "pip install yt-dlp",
-   "req_kind": "pip"
-  },
-  {
    "id": "req:pip:librosa",
    "kind": "requirement",
    "label": "pip:librosa",
@@ -2054,6 +2054,11 @@
    "id": "script:scripts/kosif_timeline.py",
    "kind": "script",
    "label": "scripts/kosif_timeline.py"
+  },
+  {
+   "id": "script:scripts/micro_index.py",
+   "kind": "script",
+   "label": "scripts/micro_index.py"
   },
   {
    "id": "script:scripts/mimic/mm_common.py",
@@ -2443,6 +2448,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_local_first.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
+  },
+  {
    "id": "test:tests/test_mimic.py",
    "kind": "test",
    "label": "tests/test_mimic.py"
@@ -2719,13 +2729,13 @@
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:key:unspecified",
+   "to": "req:python3",
    "rel": "needs",
-   "w": 15
+   "w": 14
   },
   {
    "from": "fam:ai-generation",
-   "to": "req:python3",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 14
   },
@@ -2905,13 +2915,13 @@
   },
   {
    "from": "fam:apps-artifacts",
-   "to": "req:key:unspecified",
+   "to": "req:npm:react",
    "rel": "needs",
-   "w": 3
+   "w": 2
   },
   {
    "from": "fam:apps-artifacts",
-   "to": "req:npm:react",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 2
   },
@@ -2991,7 +3001,7 @@
    "from": "fam:arabic-language",
    "to": "script:scripts/anchor_gate.py",
    "rel": "runs",
-   "w": 1
+   "w": 2
   },
   {
    "from": "root",
@@ -3621,7 +3631,7 @@
    "from": "fam:camera-composition-layout",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 29
+   "w": 33
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3655,9 +3665,9 @@
   },
   {
    "from": "fam:camera-composition-layout",
-   "to": "req:node",
+   "to": "req:npm:three",
    "rel": "needs",
-   "w": 4
+   "w": 6
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3823,12 +3833,6 @@
   },
   {
    "from": "fam:code-engineering",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:code-engineering",
    "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 2
@@ -3848,6 +3852,12 @@
   {
    "from": "fam:code-engineering",
    "to": "req:ffmpeg",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:code-engineering",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 1
   },
@@ -4293,7 +4303,7 @@
    "from": "fam:engines-render-pipeline",
    "to": "req:npm:three",
    "rel": "needs",
-   "w": 29
+   "w": 32
   },
   {
    "from": "fam:engines-render-pipeline",
@@ -4455,19 +4465,13 @@
    "from": "fam:knowledge-graph",
    "to": "req:key:graphify",
    "rel": "needs",
-   "w": 16
+   "w": 18
   },
   {
    "from": "fam:knowledge-graph",
    "to": "req:python3",
    "rel": "needs",
    "w": 7
-  },
-  {
-   "from": "fam:knowledge-graph",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 5
   },
   {
    "from": "fam:knowledge-graph",
@@ -4498,6 +4502,12 @@
    "to": "req:git",
    "rel": "needs",
    "w": 2
+  },
+  {
+   "from": "fam:knowledge-graph",
+   "to": "req:yt-dlp",
+   "rel": "needs",
+   "w": 1
   },
   {
    "from": "root",
@@ -5235,13 +5245,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 159
+   "w": 160
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 126
+   "w": 127
   },
   {
    "from": "fam:runnable-tools",
@@ -5289,7 +5299,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 164
+   "w": 165
   },
   {
    "from": "fam:runnable-tools",
@@ -5365,12 +5375,6 @@
   },
   {
    "from": "fam:security-safety",
-   "to": "req:key:unspecified",
-   "rel": "needs",
-   "w": 2
-  },
-  {
-   "from": "fam:security-safety",
    "to": "req:gitleaks",
    "rel": "needs",
    "w": 2
@@ -5390,6 +5394,12 @@
   {
    "from": "fam:security-safety",
    "to": "req:claude:tools",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:security-safety",
+   "to": "req:key:unspecified",
    "rel": "needs",
    "w": 1
   },
@@ -5883,7 +5893,7 @@
    "from": "fam:transitions-cuts",
    "to": "req:npm:gsap",
    "rel": "needs",
-   "w": 96
+   "w": 99
   },
   {
    "from": "fam:transitions-cuts",
@@ -6746,6 +6756,12 @@
   {
    "from": "script:scripts/kosif_timeline_demo.py",
    "to": "script:scripts/kosif_timeline.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
   },
@@ -7628,6 +7644,12 @@
   {
    "from": "script:scripts/media_sources.py",
    "to": "test:tests/test_media_sources_gateway.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
    "rel": "tested_by",
    "w": 1
   },

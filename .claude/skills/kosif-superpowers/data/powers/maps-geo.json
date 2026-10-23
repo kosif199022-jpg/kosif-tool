@@ -2,6 +2,7 @@
  {
   "id": "MAP-01",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "هل نحتاج خريطة أصلًا",
   "name_en": "Map or not",
   "status": "documented",
@@ -30,6 +31,7 @@
  {
   "id": "MAP-02",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "الخريطة الأساسية حسب الغرض",
   "name_en": "Basemap substrate by purpose",
   "status": "documented",
@@ -59,6 +61,7 @@
  {
   "id": "MAP-03",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "اختيار نوع الخريطة الموضوعية",
   "name_en": "Thematic map family choice",
   "status": "documented",
@@ -89,6 +92,7 @@
  {
   "id": "MAP-04",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "اختيار الإسقاط",
   "name_en": "Projection choice",
   "status": "documented",
@@ -119,6 +123,7 @@
  {
   "id": "MAP-05",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "تطبيع خرائط التظليل",
   "name_en": "Choropleth normalization",
   "status": "documented",
@@ -148,6 +153,7 @@
  {
   "id": "MAP-06",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "استراتيجيات تداخل النقاط",
   "name_en": "Point overlap strategies",
   "status": "documented",
@@ -175,6 +181,7 @@
  {
   "id": "MAP-07",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "طبقات تتكبر مع الخريطة وأخرى ثابتة",
   "name_en": "Map-space vs screen-stable layers",
   "status": "documented",
@@ -203,6 +210,7 @@
  {
   "id": "MAP-08",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "سجل الإحداثيات والمصادر",
   "name_en": "Coordinate & source ledger",
   "status": "documented",
@@ -234,6 +242,7 @@
  {
   "id": "MAP-09",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "الخرائط الحساسة والبيانات الإنسانية",
   "name_en": "Sensitive maps & human data",
   "status": "documented",
@@ -263,6 +272,7 @@
  {
   "id": "MAP-10",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "توقيعات حركة الخرائط وضوابطها",
   "name_en": "Map motion signatures & restraint rules",
   "status": "documented",
@@ -295,6 +305,7 @@
  {
   "id": "MAP-11",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "محرك واحد لكل لقطة",
   "name_en": "One map engine per shot (chooser)",
   "status": "documented",
@@ -330,6 +341,7 @@
  {
   "id": "MAP-12",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "لوحة خريطة ثابتة للموقع",
   "name_en": "Static locator map plate",
   "status": "documented",
@@ -360,6 +372,7 @@
  {
   "id": "MAP-13",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "MapLibre حتمي بلا واجهة",
   "name_en": "Deterministic headless MapLibre",
   "status": "install",
@@ -393,6 +406,7 @@
  {
   "id": "MAP-14",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "لوحة خريطة مجمّدة ضد الارتعاش",
   "name_en": "Frozen oversized plate (anti-shimmer)",
   "status": "install",
@@ -425,6 +439,7 @@
  {
   "id": "MAP-15",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة حقيقية مخبوزة مع طبقة متجهات حية",
   "name_en": "Baked real basemap MP4 + live SVG overlay",
   "status": "install",
@@ -457,6 +472,7 @@
  {
   "id": "MAP-16",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "Mapbox: كرة وأبنية ثلاثية الأبعاد",
   "name_en": "Mapbox globe & 3D buildings",
   "status": "key",
@@ -487,6 +503,7 @@
  {
   "id": "MAP-17",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "MapTiler: التحريك فوق طبقات المزود",
   "name_en": "MapTiler provider-layer animation",
   "status": "key",
@@ -517,6 +534,7 @@
  {
   "id": "MAP-18",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "طيران فوق التضاريس بـ Cesium",
   "name_en": "Cesium terrain flyover",
   "status": "key",
@@ -549,6 +567,7 @@
  {
   "id": "MAP-19",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "صور خرائط ثابتة من AWS",
   "name_en": "Amazon Location static maps",
   "status": "key",
@@ -577,6 +596,7 @@
  {
   "id": "MAP-20",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "أنماط VersaTiles المجانية",
   "name_en": "VersaTiles self-hosted styles",
   "status": "install",
@@ -607,6 +627,7 @@
  {
   "id": "MAP-21",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خطوط SDF والتسميات العربية على خرائط GL",
   "name_en": "SDF glyphs & Arabic labels on GL maps",
   "status": "install",
@@ -638,6 +659,7 @@
  {
   "id": "MAP-22",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "تنظيف الخريطة الأساسية",
   "name_en": "Basemap decluttering",
   "status": "install",
@@ -667,6 +689,7 @@
  {
   "id": "MAP-23",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "طبقات المزود أم GeoJSON مخصص",
   "name_en": "Provider vectors vs custom GeoJSON",
   "status": "documented",
@@ -694,6 +717,7 @@
  {
   "id": "MAP-24",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "متى GeoJSON ومتى البلاطات المتجهة",
   "name_en": "GeoJSON vs vector-tile threshold",
   "status": "documented",
@@ -721,6 +745,7 @@
  {
   "id": "MAP-25",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خط PMTiles وGeoParquet",
   "name_en": "PMTiles & GeoParquet pipeline",
   "status": "documented",
@@ -751,6 +776,7 @@
  {
   "id": "MAP-26",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "التحليل المكاني بـ DuckDB",
   "name_en": "DuckDB spatial analysis",
   "status": "documented",
@@ -780,6 +806,7 @@
  {
   "id": "MAP-27",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "بيانات Overture Maps المفتوحة",
   "name_en": "Overture Maps open data",
   "status": "documented",
@@ -810,6 +837,7 @@
  {
   "id": "MAP-28",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "OSM عبر Overpass لخطوط الأنهار والطرق",
   "name_en": "OSM via Overpass for centerlines",
   "status": "documented",
@@ -838,6 +866,7 @@
  {
   "id": "MAP-29",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "تجهيز ممر الكاميرا",
   "name_en": "Camera corridor path preparation",
   "status": "proven",
@@ -869,6 +898,7 @@
  {
   "id": "MAP-30",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "مرساة التسمية في أبعد نقطة داخلية",
   "name_en": "Label anchor at pole of inaccessibility",
   "status": "ready",
@@ -899,6 +929,7 @@
  {
   "id": "MAP-31",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "توحيد أسماء الأماكن العربية",
   "name_en": "Arabic place-name normalisation",
   "status": "proven",
@@ -930,6 +961,7 @@
  {
   "id": "MAP-32",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "رسم مسار الدائرة العظمى",
   "name_en": "Great-circle route draw-on",
   "status": "install",
@@ -961,6 +993,7 @@
  {
   "id": "MAP-33",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "رحلة على خريطة حبر قديمة",
   "name_en": "Parchment map journey",
   "status": "install",
@@ -999,6 +1032,7 @@
  {
   "id": "MAP-34",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "إسقاط خطوط الطول والعرض على SVG",
   "name_en": "Equirectangular lon/lat → SVG with latitude squash",
   "status": "seen",
@@ -1027,6 +1061,7 @@
  {
   "id": "MAP-35",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "متتبع مسار بطول القوس مع توقف",
   "name_en": "Arc-length route follower with dwell",
   "status": "seen",
@@ -1058,6 +1093,7 @@
  {
   "id": "MAP-36",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "كاميرا الخريطة المائلة 2.5D",
   "name_en": "Tilted 2.5D map camera",
   "status": "seen",
@@ -1087,6 +1123,7 @@
  {
   "id": "MAP-37",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خط زمني بمحطات وخريطة رحلة",
   "name_en": "Milestone timeline & map route (MG-045/046)",
   "status": "documented",
@@ -1117,6 +1154,7 @@
  {
   "id": "MAP-38",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "رسم مسار بمحطات تنبثق",
   "name_en": "Route line with popping station dots",
   "status": "seen",
@@ -1146,6 +1184,7 @@
  {
   "id": "MAP-39",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "مسار تقدم على جبل",
   "name_en": "Progress path up terrain with avatar",
   "status": "seen",
@@ -1174,6 +1213,7 @@
  {
   "id": "MAP-40",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة وثائقية",
   "name_en": "Documentary map",
   "status": "documented",
@@ -1207,6 +1247,7 @@
  {
   "id": "MAP-41",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "رحلة طيران نيويورك–باريس",
   "name_en": "NYC–Paris flight block",
   "status": "install",
@@ -1239,6 +1280,7 @@
  {
   "id": "MAP-42",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "أقواس ضوء ترسم بين المدن (3D)",
   "name_en": "3D light arcs between cities",
   "status": "install",
@@ -1269,6 +1311,7 @@
  {
   "id": "MAP-43",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "شريط نهر يُرسم ويجري",
   "name_en": "River ribbon reveal & flow",
   "status": "ready",
@@ -1300,6 +1343,7 @@
  {
   "id": "MAP-44",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "إضاءة الدول عند وصول النهر",
   "name_en": "River-triggered country reveal",
   "status": "key",
@@ -1333,6 +1377,7 @@
  {
   "id": "MAP-45",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة المملكة التخطيطية بالمناطق",
   "name_en": "Schematic Saudi Arabia map — 13 regions, drill-down",
   "status": "proven",
@@ -1367,6 +1412,7 @@
  {
   "id": "MAP-46",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "تدرّج الخريطة الأزرق",
   "name_en": "Sequential blue map heat ramp",
   "status": "ready",
@@ -1396,6 +1442,7 @@
  {
   "id": "MAP-47",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خرائط تظليل بكشف متتابع",
   "name_en": "Choropleth staggered-reveal blocks",
   "status": "install",
@@ -1431,6 +1478,7 @@
  {
   "id": "MAP-48",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة الفقاعات",
   "name_en": "Proportional bubble map",
   "status": "install",
@@ -1459,6 +1507,7 @@
  {
   "id": "MAP-49",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة التدفق",
   "name_en": "Origin–destination flow map",
   "status": "install",
@@ -1489,6 +1538,7 @@
  {
   "id": "MAP-50",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة سداسية",
   "name_en": "Hex tile map",
   "status": "install",
@@ -1517,6 +1567,7 @@
  {
   "id": "MAP-51",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "زووم دولة مع دائرة حمراء",
   "name_en": "Country zoom with red scribble circle",
   "status": "install",
@@ -1548,6 +1599,7 @@
  {
   "id": "MAP-52",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "علامات وتسميات داخل الخريطة",
   "name_en": "Map-native circle & symbol markers",
   "status": "install",
@@ -1578,6 +1630,7 @@
  {
   "id": "MAP-53",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "رسم خريطة شوارع وإسقاط دبابيس",
   "name_en": "SVG street map draw + pin drop",
   "status": "seen",
@@ -1607,6 +1660,7 @@
  {
   "id": "MAP-54",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة نقاط تجمعات المدن",
   "name_en": "Dot-cluster city map",
   "status": "seen",
@@ -1636,6 +1690,7 @@
  {
   "id": "MAP-55",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة عالم نقطية بكبسولات صور",
   "name_en": "Dotted world map with avatar pills",
   "status": "seen",
@@ -1664,6 +1719,7 @@
  {
   "id": "MAP-56",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة أعمدة ضوئية",
   "name_en": "Spike map",
   "status": "seen",
@@ -1691,6 +1747,7 @@
  {
   "id": "MAP-57",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "عناصر خرائط أرشيفية",
   "name_en": "Archival map-fragment collage props",
   "status": "proven",
@@ -1722,6 +1779,7 @@
  {
   "id": "MAP-58",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "كوكب الأرض مع غلاف جوي",
   "name_en": "Procedural Earth with atmosphere",
   "status": "install",
@@ -1754,6 +1812,7 @@
  {
   "id": "MAP-59",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "خريطة الأضواء من المدار",
   "name_en": "Orbit-at-night lights map",
   "status": "install",
@@ -1787,6 +1846,7 @@
  {
   "id": "MAP-60",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "كرة أرضية نقطية بإسقاط كروي",
   "name_en": "Orthographic dot / halftone globe",
   "status": "seen",
@@ -1822,6 +1882,7 @@
  {
   "id": "MAP-61",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "كرة أرضية بأقواس اتصال",
   "name_en": "Globe with great-circle arcs (wireframe / particle)",
   "status": "seen",
@@ -1856,6 +1917,7 @@
  {
   "id": "MAP-62",
   "family": "maps-geo",
+  "domain": "motion",
   "name_ar": "كرة غبار مع تسميات",
   "name_en": "Dust point-cloud globe with leader labels",
   "status": "seen",

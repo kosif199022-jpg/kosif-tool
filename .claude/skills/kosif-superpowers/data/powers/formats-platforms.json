@@ -2,6 +2,7 @@
  {
   "id": "FMT-01",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "المقاس من الوجهة",
   "name_en": "Derive the canvas from the destination",
   "status": "ready",
@@ -43,6 +44,7 @@
  {
   "id": "FMT-02",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "جدول المقاسات الموحد في أدواتك",
   "name_en": "Aspect presets across the owner tools",
   "status": "proven",
@@ -82,6 +84,7 @@
  {
   "id": "FMT-03",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "الإطار السينمائي العريض والأشرطة",
   "name_en": "Cinematic 2.35/2.39:1 and letterbox bars",
   "status": "proven",
@@ -123,6 +126,7 @@
  {
   "id": "FMT-04",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "مسرح ثابت يُكبَّر ككتلة",
   "name_en": "Fixed stage scaled as one block",
   "status": "documented",
@@ -157,6 +161,7 @@
  {
   "id": "FMT-05",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "خط متجاوب بين المقاسات",
   "name_en": "Fluid type tokens per aspect",
   "status": "documented",
@@ -190,6 +195,7 @@
  {
   "id": "FMT-06",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "نسختان مقصودتان لمشاهد البيانات",
   "name_en": "Deliberate vertical vs horizontal data layouts",
   "status": "documented",
@@ -223,6 +229,7 @@
  {
   "id": "FMT-07",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "أبعاد تناسب نماذج التوليد",
   "name_en": "Latent-friendly sizes and frame counts",
   "status": "documented",
@@ -261,6 +268,7 @@
  {
   "id": "FMT-08",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "المنطقة الآمنة في الإطار العمودي",
   "name_en": "9:16 UI safe zone",
   "status": "proven",
@@ -300,6 +308,7 @@
  {
   "id": "FMT-09",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "جدول هوامش المنصات للصور",
   "name_en": "Social canvas + text-safe margin table",
   "status": "documented",
@@ -336,6 +345,7 @@
  {
   "id": "FMT-10",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "منطقة الترجمة الآمنة",
   "name_en": "Caption safe area",
   "status": "documented",
@@ -368,6 +378,7 @@
  {
   "id": "FMT-11",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "قواعد المقروئية على الهاتف",
   "name_en": "Phone legibility gate",
   "status": "ready",
@@ -405,6 +416,7 @@
  {
   "id": "FMT-12",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "كثافة العرض: متحدث أم قراءة",
   "name_en": "Density mode: narrated vs read-first",
   "status": "documented",
@@ -438,6 +450,7 @@
  {
   "id": "FMT-13",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "إعادة تأطير ذكية حول الوجوه",
   "name_en": "Smart reframe around faces",
   "status": "proven",
@@ -477,6 +490,7 @@
  {
   "id": "FMT-14",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "الصورة الكاملة فوق نسختها الضبابية",
   "name_en": "Full frame over its blurred fill",
   "status": "proven",
@@ -513,6 +527,7 @@
  {
   "id": "FMT-15",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "تحجيم مع حشو لأي إطار",
   "name_en": "Scale + pad / centre crop",
   "status": "ready",
@@ -547,6 +562,7 @@
  {
   "id": "FMT-16",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "أوضاع ملاءمة اللقطة: cover / contain / blur",
   "name_en": "Clip fit modes cover · contain · blur",
   "status": "ready",
@@ -583,6 +599,7 @@
  {
   "id": "FMT-17",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "دفعة شورتس من مونتاج طويل",
   "name_en": "Batch vertical shorts from a long edit",
   "status": "documented",
@@ -618,6 +635,7 @@
  {
   "id": "FMT-18",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "إعادة التكوين لا القص الأعمى",
   "name_en": "Recompose per platform, never blind-crop",
   "status": "documented",
@@ -653,6 +671,7 @@
  {
   "id": "FMT-19",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "نسخ الصور متعددة المقاسات بخدمة Adobe",
   "name_en": "Multi-ratio still variations via Adobe",
   "status": "key",
@@ -689,6 +708,7 @@
  {
   "id": "FMT-20",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "ماستر H.264 آمن للويب",
   "name_en": "Web-safe H.264 master",
   "status": "proven",
@@ -729,6 +749,7 @@
  {
   "id": "FMT-21",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "ماستر يوتيوب 4K",
   "name_en": "YouTube 4K delivery spec",
   "status": "documented",
@@ -768,6 +789,7 @@
  {
   "id": "FMT-22",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "فيديو بقناة شفافة",
   "name_en": "Alpha video: WebM VP9 & ProRes 4444",
   "status": "proven",
@@ -806,6 +828,7 @@
  {
   "id": "FMT-23",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "HDR بعشرة بت",
   "name_en": "HDR 10-bit HEVC",
   "status": "install",
@@ -841,6 +864,7 @@
  {
   "id": "FMT-24",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "سلم جودات HLS",
   "name_en": "Multi-rendition HLS ladder",
   "status": "proven",
@@ -879,6 +903,7 @@
  {
   "id": "FMT-25",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "ترميز GPU بـ NVENC",
   "name_en": "NVENC GPU encode",
   "status": "documented",
@@ -913,6 +938,7 @@
  {
   "id": "FMT-26",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "أهداف العلوّ لكل وجهة",
   "name_en": "Loudness targets per destination",
   "status": "ready",
@@ -951,6 +977,7 @@
  {
   "id": "FMT-27",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "صيغ الصوت للحلقات وتراخيص الموسيقى",
   "name_en": "Loop audio formats & music licence receipts",
   "status": "documented",
@@ -988,6 +1015,7 @@
  {
   "id": "FMT-28",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "مواصفات معاينة متجر التطبيقات",
   "name_en": "App-store preview video spec",
   "status": "documented",
@@ -1022,6 +1050,7 @@
  {
   "id": "FMT-29",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "تضمين الموشن في صفحات الويب",
   "name_en": "Web embedding of motion & media",
   "status": "documented",
@@ -1058,6 +1087,7 @@
  {
   "id": "FMT-30",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "تسجيل المتصفح إلى MP4 وGIF بمرورين",
   "name_en": "Browser clip → MP4 + two-pass GIF",
   "status": "ready",
@@ -1093,6 +1123,7 @@
  {
   "id": "FMT-31",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "ملف مفحوص لكل منصة",
   "name_en": "Checked per-platform delivery (8 platforms)",
   "status": "proven",
@@ -1131,6 +1162,7 @@
  {
   "id": "FMT-32",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "حزمة التسليم: كل النسب وغلاف وGIF",
   "name_en": "Delivery pack: all ratios + poster + GIF/WebP",
   "status": "proven",
@@ -1168,6 +1200,7 @@
  {
   "id": "FMT-33",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "حزمة نشر مفحوصة لكل منصة",
   "name_en": "Post pack + linter per platform",
   "status": "proven",
@@ -1206,6 +1239,7 @@
  {
   "id": "FMT-34",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "جدول حدود المنصات (2026-10)",
   "name_en": "Platform limits table (as of 2026-10)",
   "status": "proven",
@@ -1242,6 +1276,7 @@
  {
   "id": "FMT-35",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "خلطة الوسوم والخطاف",
   "name_en": "Hashtag mix & hook rules",
   "status": "documented",
@@ -1276,6 +1311,7 @@
  {
   "id": "FMT-36",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "خط إنتاج النسخ المترجمة",
   "name_en": "Localized versions pipeline",
   "status": "documented",
@@ -1310,6 +1346,7 @@
  {
   "id": "FMT-37",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "رندر دفعي بالمتغيرات",
   "name_en": "Variable-driven batch render",
   "status": "install",
@@ -1348,6 +1385,7 @@
  {
   "id": "FMT-38",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "HyperFrames: صيغ وجودات الرندر",
   "name_en": "HyperFrames render formats & quality tiers",
   "status": "install",
@@ -1388,6 +1426,7 @@
  {
   "id": "FMT-39",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "مشاركة ورفع بلا نشر تلقائي",
   "name_en": "Share sheet & upload shortcuts (never auto-post)",
   "status": "install",
@@ -1421,6 +1460,7 @@
  {
   "id": "FMT-40",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "إرسال الفيلم على واتساب",
   "name_en": "WhatsApp media delivery container",
   "status": "key",
@@ -1456,6 +1496,7 @@
  {
   "id": "FMT-41",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "روابط خاصة مستضافة وعمليات Cloudinary",
   "name_en": "Hosted private links & Cloudinary URL ops",
   "status": "key",
@@ -1493,6 +1534,7 @@
  {
   "id": "FMT-42",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "استوديو كامل كصفحة claude.ai واحدة",
   "name_en": "KOSIF Studio Cloud — one-page artifact",
   "status": "proven",
@@ -1529,6 +1571,7 @@
  {
   "id": "FMT-43",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "حزم المساعدات الأخرى وغلاف JSON",
   "name_en": "Custom GPT / Claude Project packs & JSON envelope",
   "status": "documented",
@@ -1562,6 +1605,7 @@
  {
   "id": "FMT-44",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "الغلاف كإطار أول",
   "name_en": "Poster picked and baked as frame 0",
   "status": "proven",
@@ -1599,6 +1643,7 @@
  {
   "id": "FMT-45",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "اختيار إطار الغلاف آليًا",
   "name_en": "Thumbnail candidate picking",
   "status": "ready",
@@ -1635,6 +1680,7 @@
  {
   "id": "FMT-46",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "غلاف بعنوان عربي من الفيلم",
   "name_en": "Arabic-titled cover from a film frame",
   "status": "ready",
@@ -1670,6 +1716,7 @@
  {
   "id": "FMT-47",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "بريف الصورة المصغرة: 3 أفكار واختبار A/B",
   "name_en": "Thumbnail brief: 3 concepts + A/B",
   "status": "documented",
@@ -1703,6 +1750,7 @@
  {
   "id": "FMT-48",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "كلمات الغلاف وتكامله مع العنوان",
   "name_en": "Thumbnail word limits & title pairing",
   "status": "documented",
@@ -1736,6 +1784,7 @@
  {
   "id": "FMT-49",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "غلاف طباعي للروابط OG",
   "name_en": "Typography-first OG / cover image",
   "status": "documented",
@@ -1769,6 +1818,7 @@
  {
   "id": "FMT-50",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "حزمة أصول الهوية الرقمية",
   "name_en": "Identity export set: favicon, PWA, OG",
   "status": "ready",
@@ -1808,6 +1858,7 @@
  {
   "id": "FMT-51",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "تصدير الرسوم PNG@2x وSVG",
   "name_en": "Chart export PNG@2x / SVG + data-table toggle",
   "status": "ready",
@@ -1840,6 +1891,7 @@
  {
   "id": "FMT-52",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "تصدير SVG وأوضاع الاستوديو الرسام",
   "name_en": "Painter studio export modes (PNG · 4K · SVG · MP4)",
   "status": "ready",
@@ -1877,6 +1929,7 @@
  {
   "id": "FMT-53",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "مخرجات الطباعة والمستندات",
   "name_en": "Print & document outputs",
   "status": "ready",
@@ -1915,6 +1968,7 @@
  {
   "id": "FMT-54",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "المستند إلى عرض شرائح",
   "name_en": "Document → slideshow / interactive deck",
   "status": "ready",
@@ -1950,6 +2004,7 @@
  {
   "id": "FMT-55",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "فيزياء خانات الإعلان",
   "name_en": "Ad-slot structure physics",
   "status": "documented",
@@ -1984,6 +2039,7 @@
  {
   "id": "FMT-56",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "نسخ مختصرة ومطولة من نص واحد",
   "name_en": "Alternate cut-downs (60/30/15 s)",
   "status": "documented",
@@ -2016,6 +2072,7 @@
  {
   "id": "FMT-57",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "تفتيت المحتوى الطويل",
   "name_en": "Content atomisation map",
   "status": "documented",
@@ -2049,6 +2106,7 @@
  {
   "id": "FMT-58",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "مواصفات التريلر حسب المنصة",
   "name_en": "Trailer platform targets",
   "status": "documented",
@@ -2081,6 +2139,7 @@
  {
   "id": "FMT-59",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "فصول يوتيوب من العلامات",
   "name_en": "YouTube chapters from markers",
   "status": "proven",
@@ -2116,6 +2175,7 @@
  {
   "id": "FMT-60",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "بنية الكاروسيل وحدوده",
   "name_en": "Carousel structure & limits",
   "status": "ready",
@@ -2152,6 +2212,7 @@
  {
   "id": "FMT-61",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "افتتاحيات وخواتيم سوشيال عربية (MG-061…070)",
   "name_en": "Arabic social openers & closers (MG-061…070)",
   "status": "documented",
@@ -2187,6 +2248,7 @@
  {
   "id": "FMT-62",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "حلقة متصلة بلا قطع",
   "name_en": "Seamless loop (video + GIF)",
   "status": "proven",
@@ -2226,6 +2288,7 @@
  {
   "id": "FMT-63",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "قالب بطاقة الختام",
   "name_en": "End-card template",
   "status": "proven",
@@ -2264,6 +2327,7 @@
  {
   "id": "FMT-64",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "ختام تحميل التطبيق وشارات المتاجر",
   "name_en": "App end card & store badges",
   "status": "install",
@@ -2304,6 +2368,7 @@
  {
   "id": "FMT-65",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "بطاقات المنصات المتحركة",
   "name_en": "Animated platform cards (follow, post, comment, now-playing)",
   "status": "install",
@@ -2345,6 +2410,7 @@
  {
   "id": "FMT-66",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "سؤال خطاف مع عدّاد حي",
   "name_en": "Hook question + live counter overlay",
   "status": "seen",
@@ -2381,6 +2447,7 @@
  {
   "id": "FMT-67",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "إعلان مربع للخلاصة",
   "name_en": "Square feed promo",
   "status": "seen",
@@ -2424,6 +2491,7 @@
  {
   "id": "FMT-68",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "أمثلة بريفات جاهزة",
   "name_en": "Ready example briefs",
   "status": "ready",
@@ -2461,6 +2529,7 @@
  {
   "id": "FMT-69",
   "family": "formats-platforms",
+  "domain": "motion",
   "name_ar": "مهارات تسويق مساندة",
   "name_en": "Supporting marketing skills (store, newsletter, SEO)",
   "status": "documented",

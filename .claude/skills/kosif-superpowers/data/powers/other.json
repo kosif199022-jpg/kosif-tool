@@ -2,6 +2,7 @@
  {
   "id": "MISC-01",
   "family": "other",
+  "domain": "motion",
   "name_ar": "البحث في كتالوج الأساليب",
   "name_en": "Style catalogue search · list · show",
   "status": "proven",
@@ -40,6 +41,7 @@
  {
   "id": "MISC-02",
   "family": "other",
+  "domain": "motion",
   "name_ar": "مكتبة KOSIF Atlas",
   "name_en": "KOSIF Atlas library access",
   "status": "key",
@@ -77,6 +79,7 @@
  {
   "id": "MISC-03",
   "family": "other",
+  "domain": "motion",
   "name_ar": "فهرس نصي كامل لمهارات الأطلس",
   "name_en": "Atlas full-text index (FTS5)",
   "status": "install",
@@ -111,6 +114,7 @@
  {
   "id": "MISC-04",
   "family": "other",
+  "domain": "motion",
   "name_ar": "اختيار المهارة تلقائيًا والموجّه الحتمي",
   "name_en": "Auto skill selection & deterministic capability router",
   "status": "proven",
@@ -145,6 +149,7 @@
  {
   "id": "MISC-05",
   "family": "other",
+  "domain": "motion",
   "name_ar": "خادم MCP للاستوديو (22 أداة)",
   "name_en": "Studio MCP server for Claude Code (22 tools)",
   "status": "proven",
@@ -178,6 +183,7 @@
  {
   "id": "MISC-06",
   "family": "other",
+  "domain": "motion",
   "name_ar": "جسر Claude بأربعة طرق وعقد الرد",
   "name_en": "Claude bridge (CLI · API · MCP · copy-paste) & gated apply",
   "status": "proven",
@@ -211,6 +217,7 @@
  {
   "id": "MISC-07",
   "family": "other",
+  "domain": "motion",
   "name_ar": "ملف المشروع المحمول وإعادة الربط",
   "name_en": "Portable project file (.kosif.json) with media re-link",
   "status": "ready",
@@ -244,6 +251,7 @@
  {
   "id": "MISC-08",
   "family": "other",
+  "domain": "motion",
   "name_ar": "عقود الدخول لعدة وكلاء",
   "name_en": "Multi-agent entry contracts",
   "status": "documented",
@@ -278,6 +286,7 @@
  {
   "id": "MISC-09",
   "family": "other",
+  "domain": "motion",
   "name_ar": "التحكم بسطح مكتب ويندوز (KOSIF Mouse)",
   "name_en": "Windows desktop control with Live View (KOSIF Mouse)",
   "status": "key",
@@ -313,6 +322,7 @@
  {
   "id": "MISC-10",
   "family": "other",
+  "domain": "motion",
   "name_ar": "المدخلات غير الموثوقة",
   "name_en": "Untrusted-input safety rule",
   "status": "documented",
@@ -349,6 +359,7 @@
  {
   "id": "MISC-11",
   "family": "other",
+  "domain": "motion",
   "name_ar": "بوابة نقطة التفتيش البشرية",
   "name_en": "Human-checkpoint action gate",
   "status": "proven",
@@ -382,6 +393,7 @@
  {
   "id": "MISC-12",
   "family": "other",
+  "domain": "motion",
   "name_ar": "تدقيق تراخيص المصادر وحدود إعادة الاستخدام",
   "name_en": "Source licence audit & reuse allowlist",
   "status": "documented",
@@ -419,6 +431,7 @@
  {
   "id": "MISC-13",
   "family": "other",
+  "domain": "motion",
   "name_ar": "تسمية آمنة وتهريب النصوص",
   "name_en": "Safe naming & escaping",
   "status": "ready",
@@ -450,6 +463,7 @@
  {
   "id": "MISC-14",
   "family": "other",
+  "domain": "motion",
   "name_ar": "سجل مصادر المعرفة",
   "name_en": "Knowledge provenance registry",
   "status": "ready",
@@ -484,6 +498,7 @@
  {
   "id": "MISC-15",
   "family": "other",
+  "domain": "motion",
   "name_ar": "حدود التكامل مع KOSIF SEE",
   "name_en": "KOSIF SEE routing limits",
   "status": "documented",
@@ -518,6 +533,7 @@
  {
   "id": "MISC-16",
   "family": "other",
+  "domain": "motion",
   "name_ar": "قراءة النصوص من المسوحات والإطارات",
   "name_en": "OCR of scans and video frames",
   "status": "install",
@@ -552,6 +568,7 @@
  {
   "id": "MISC-17",
   "family": "other",
+  "domain": "motion",
   "name_ar": "أفضل وقت للنشر من بيانات الحساب",
   "name_en": "Best time to post from own analytics",
   "status": "ready",
@@ -584,6 +601,7 @@
  {
   "id": "MISC-18",
   "family": "other",
+  "domain": "motion",
   "name_ar": "مشاريع الأمثلة الجاهزة للمونتاج والموشن",
   "name_en": "Ready example projects (night_boat … water_cycle_3d)",
   "status": "ready",
@@ -620,6 +638,7 @@
  {
   "id": "MISC-19",
   "family": "other",
+  "domain": "motion",
   "name_ar": "تطبيقات المالك كمراجع تصميم",
   "name_en": "Owner apps as design references (Audit Pro, Audit Studio, KOSIF Earth)",
   "status": "ready",
@@ -659,6 +678,7 @@
  {
   "id": "MISC-20",
   "family": "other",
+  "domain": "motion",
   "name_ar": "تذييل المشهد وشريط التقدم",
   "name_en": "Scene footer label & progress bar",
   "status": "ready",
@@ -690,6 +710,7 @@
  {
   "id": "MISC-21",
   "family": "other",
+  "domain": "motion",
   "name_ar": "مهارات المالك المساندة (31 كتيب)",
   "name_en": "Owner supporting playbooks (31)",
   "status": "documented",
@@ -728,6 +749,7 @@
  {
   "id": "MISC-P01",
   "family": "other",
+  "domain": "motion",
   "name_ar": "سُلَّم اختيار سطح التشغيل وحزمة التنفيذ",
   "name_en": "Capability-surface ladder + execution packet",
   "status": "documented",
@@ -765,6 +787,7 @@
  {
   "id": "MISC-P02",
   "family": "other",
+  "domain": "motion",
   "name_ar": "حارس تصادم المسارات بعشر حالات ظل",
   "name_en": "Route-collision guard with 10 shadow cases",
   "status": "documented",
@@ -801,6 +824,7 @@
  {
   "id": "MISC-P03",
   "family": "other",
+  "domain": "motion",
   "name_ar": "اقتراح درس مشروعي بموافقة صريحة",
   "name_en": "Consent-gated, project-scoped lesson proposal",
   "status": "documented",
@@ -838,6 +862,7 @@
  {
   "id": "MISC-P04",
   "family": "other",
+  "domain": "motion",
   "name_ar": "كتالوج 60 معاينة مفهومية مولّدة بالكود",
   "name_en": "60-card concept-preview catalog generator (A01–A60)",
   "status": "documented",

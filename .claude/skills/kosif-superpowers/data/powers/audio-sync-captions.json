@@ -2,6 +2,7 @@
  {
   "id": "SYNC-01",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "الصوت هو الساعة الرئيسية",
   "name_en": "Audio is the master clock",
   "status": "proven",
@@ -40,6 +41,7 @@
  {
   "id": "SYNC-02",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ملف توقيت الكلمات kosif-words/1",
   "name_en": "words.json master timing schema",
   "status": "proven",
@@ -74,6 +76,7 @@
  {
   "id": "SYNC-03",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "محوّل الترجمات والتفريغ إلى words.json",
   "name_en": "Subtitle/transcript → words.json converter",
   "status": "proven",
@@ -109,6 +112,7 @@
  {
   "id": "SYNC-04",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "حدود تسامح التزامن",
   "name_en": "Sync tolerances",
   "status": "proven",
@@ -143,6 +147,7 @@
  {
   "id": "SYNC-05",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "قياس التزامن إطارًا بإطار",
   "name_en": "Frame-by-frame sync probe",
   "status": "proven",
@@ -176,6 +181,7 @@
  {
   "id": "SYNC-06",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "التحقق من توقيت جاهز",
   "name_en": "Pre-timed transcript validation",
   "status": "ready",
@@ -208,6 +214,7 @@
  {
   "id": "SYNC-07",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تفريغ عربي محلي بتوقيت الكلمات",
   "name_en": "Local Arabic word-timed transcription (faster-whisper)",
   "status": "proven",
@@ -246,6 +253,7 @@
  {
   "id": "SYNC-08",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "فخ نماذج .en",
   "name_en": "The .en model trap",
   "status": "documented",
@@ -282,6 +290,7 @@
  {
   "id": "SYNC-09",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "توقيت حقيقي من فونيمات Piper",
   "name_en": "True word timing from Piper phonemes",
   "status": "proven",
@@ -317,6 +326,7 @@
  {
   "id": "SYNC-10",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "محاذاة النص الصحيح على التفريغ",
   "name_en": "True-text alignment onto ASR",
   "status": "proven",
@@ -352,6 +362,7 @@
  {
   "id": "SYNC-11",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تصحيح الكلمات مع حفظ التوقيت",
   "name_en": "Transcript fixes that keep timing",
   "status": "ready",
@@ -384,6 +395,7 @@
  {
   "id": "SYNC-12",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ضبط بداية الكلمة على النطق",
   "name_en": "Onset snapping of word stamps",
   "status": "documented",
@@ -417,6 +429,7 @@
  {
   "id": "SYNC-13",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تجهيز الصوت للتفريغ وفخ التوقيت",
   "name_en": "STT audio prep & its timing trap",
   "status": "documented",
@@ -449,6 +462,7 @@
  {
   "id": "SYNC-14",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تفريغ سحابي مع فصل المتحدثين",
   "name_en": "Cloud STT with diarisation",
   "status": "key",
@@ -487,6 +501,7 @@
  {
   "id": "SYNC-15",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تفريغ HyperFrames",
   "name_en": "HyperFrames transcribe CLI",
   "status": "install",
@@ -522,6 +537,7 @@
  {
   "id": "SYNC-16",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "كشف الإعادات وتجميع المونتاج من النص",
   "name_en": "Retake detection & transcript-driven assembly",
   "status": "documented",
@@ -553,6 +569,7 @@
  {
   "id": "SYNC-17",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "توزيع النص على مقاطع الصوت",
   "name_en": "Text over voiced spans (estimated)",
   "status": "ready",
@@ -585,6 +602,7 @@
  {
   "id": "SYNC-18",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "توقيت الكلمات حسب الطول",
   "name_en": "Word timing by length",
   "status": "proven",
@@ -618,6 +636,7 @@
  {
   "id": "SYNC-19",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ميزانية الكلمات حسب الزمن",
   "name_en": "Narration word budgets",
   "status": "documented",
@@ -652,6 +671,7 @@
  {
   "id": "SYNC-20",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "سكريبت بتوقيت مكتوب",
   "name_en": "Timestamped script parser",
   "status": "proven",
@@ -685,6 +705,7 @@
  {
   "id": "SYNC-21",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تجميع الكلمات حسب الطاقة",
   "name_en": "Word grouping by energy",
   "status": "documented",
@@ -719,6 +740,7 @@
  {
   "id": "SYNC-22",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "موضع آمن وضمان الاختفاء",
   "name_en": "Safe placement & exit guarantee",
   "status": "documented",
@@ -752,6 +774,7 @@
  {
   "id": "SYNC-23",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ستايل الترجمة حسب نبرة الكلام",
   "name_en": "Caption style by tone",
   "status": "documented",
@@ -785,6 +808,7 @@
  {
   "id": "SYNC-24",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "وضوح الترجمة العربية",
   "name_en": "Arabic caption legibility",
   "status": "documented",
@@ -820,6 +844,7 @@
  {
   "id": "SYNC-25",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "لا تغيّر كلام المتحدث، والحرق عند الطلب",
   "name_en": "Verbatim words; burn only when asked",
   "status": "documented",
@@ -854,6 +879,7 @@
  {
   "id": "SYNC-26",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "إبراز تلقائي للكلمات المهمة",
   "name_en": "Automatic emphasis words",
   "status": "ready",
@@ -887,6 +913,7 @@
  {
   "id": "SYNC-27",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "كاريوكي ASS عربي بحدث لكل كلمة",
   "name_en": "Arabic ASS karaoke, one event per word",
   "status": "proven",
@@ -925,6 +952,7 @@
  {
   "id": "SYNC-28",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "سبعة ستايلات ترجمة جاهزة",
   "name_en": "Seven named caption styles",
   "status": "proven",
@@ -961,6 +989,7 @@
  {
   "id": "SYNC-29",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "صفحات ترجمة + SRT/VTT/ASS",
   "name_en": "Caption pages → JSON/SRT/VTT/ASS",
   "status": "proven",
@@ -996,6 +1025,7 @@
  {
   "id": "SYNC-30",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "معايرة حجم ASS",
   "name_en": "ASS PlayRes calibration",
   "status": "documented",
@@ -1030,6 +1060,7 @@
  {
   "id": "SYNC-31",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "كاريوكي \\k بشرائح متساوية",
   "name_en": "Even-slice \\k karaoke (omni)",
   "status": "ready",
@@ -1063,6 +1094,7 @@
  {
   "id": "SYNC-32",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "دخول الكلمة على بداية نطقها",
   "name_en": "Word enters on its spoken start",
   "status": "proven",
@@ -1095,6 +1127,7 @@
  {
   "id": "SYNC-33",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "تعبئة كاريوكي من اليمين بقناع كامل الكلمة",
   "name_en": "RTL karaoke fill with whole-word clip-path",
   "status": "proven",
@@ -1129,6 +1162,7 @@
  {
   "id": "SYNC-34",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "كاريوكي الكبسولة في starter الكانفس",
   "name_en": "Canvas karaoke pill (html-canvas starter)",
   "status": "proven",
@@ -1163,6 +1197,7 @@
  {
   "id": "SYNC-35",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ترجمة Remotion بالكلمة مع كشف الاتجاه",
   "name_en": "Remotion word captions with bidi detection",
   "status": "install",
@@ -1197,6 +1232,7 @@
  {
   "id": "SYNC-36",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "كلمات على مقاطعها مع كلمات ذهبية",
   "name_en": "Syllable-timed speech captions with gold keywords",
   "status": "ready",
@@ -1230,6 +1266,7 @@
  {
   "id": "SYNC-37",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "سطر شبحي يضيء كلمة بكلمة",
   "name_en": "Ghost-to-lit line",
   "status": "seen",
@@ -1266,6 +1303,7 @@
  {
   "id": "SYNC-38",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "صندوق ينتقل للكلمة النشطة",
   "name_en": "Word-hop highlight box",
   "status": "seen",
@@ -1301,6 +1339,7 @@
  {
   "id": "SYNC-39",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ترجمة تُكتب لحظة النطق",
   "name_en": "Voice-timed typewriter captions",
   "status": "seen",
@@ -1334,6 +1373,7 @@
  {
   "id": "SYNC-40",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "عداد كلمة مفتاحية ودائرة على الكلمة",
   "name_en": "Keyword counter & on-word annotations",
   "status": "seen",
@@ -1368,6 +1408,7 @@
  {
   "id": "SYNC-41",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "مكوّنات ترجمة HyperFrames",
   "name_en": "HyperFrames caption components",
   "status": "install",
@@ -1402,6 +1443,7 @@
  {
   "id": "SYNC-42",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ترجمة مدمجة: شريط وكلمة ذروة خلف المتحدث",
   "name_en": "Embedded captions: rail + peak word behind the subject",
   "status": "install",
@@ -1437,6 +1479,7 @@
  {
   "id": "SYNC-43",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "الأشرطة السفلية",
   "name_en": "Lower thirds",
   "status": "install",
@@ -1470,6 +1513,7 @@
  {
   "id": "SYNC-44",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ستايلات وحركات ترجمة بصمة",
   "name_en": "Basma caption presets, animations & highlight modes",
   "status": "install",
@@ -1505,6 +1549,7 @@
  {
   "id": "SYNC-45",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "فيلم كلمات من صوت (أغنية، شعر، دعاء)",
   "name_en": "Verse film from sound",
   "status": "proven",
@@ -1543,6 +1588,7 @@
  {
   "id": "SYNC-46",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "Voice2Motion: موشن بالمعنى من الصوت",
   "name_en": "Voice2Motion semantic scenes",
   "status": "proven",
@@ -1578,6 +1624,7 @@
  {
   "id": "SYNC-47",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "إخراج تلقائي لمقطع متكلم",
   "name_en": "Editor-style auto direction of a talking clip",
   "status": "proven",
@@ -1610,6 +1657,7 @@
  {
   "id": "SYNC-48",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "الريل التلقائي من الكلام",
   "name_en": "Automatic talking-clip reel",
   "status": "ready",
@@ -1643,6 +1691,7 @@
  {
   "id": "SYNC-49",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "إيقاع التلاوة والدعاء",
   "name_en": "Recitation & dua pacing",
   "status": "documented",
@@ -1677,6 +1726,7 @@
  {
   "id": "SYNC-50",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "توقيت سطر الأغنية",
   "name_en": "Lyric line timing",
   "status": "documented",
@@ -1709,6 +1759,7 @@
  {
   "id": "SYNC-51",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ريل كلمات أغنية",
   "name_en": "Songreel lyric reel",
   "status": "install",
@@ -1744,6 +1795,7 @@
  {
   "id": "SYNC-52",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "لكل جملة منطوقة دليل بصري",
   "name_en": "One visual proof per spoken claim",
   "status": "documented",
@@ -1777,6 +1829,7 @@
  {
   "id": "SYNC-53",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "كشف الصمت الثابت والتكيفي",
   "name_en": "Fixed & adaptive silence detection",
   "status": "proven",
@@ -1813,6 +1866,7 @@
  {
   "id": "SYNC-54",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "إصلاح انزياح الصوت المدموج",
   "name_en": "Joined-audio drift fix",
   "status": "documented",
@@ -1845,6 +1899,7 @@
  {
   "id": "SYNC-55",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "ذروة المؤثر على الحدث",
   "name_en": "SFX peak-offset alignment",
   "status": "seen",
@@ -1881,6 +1936,7 @@
  {
   "id": "SYNC-56",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "دمج المشاهد مع الصوت الأصلي بلا تعديل",
   "name_en": "Concat + untouched original audio mux",
   "status": "ready",
@@ -1916,6 +1972,7 @@
  {
   "id": "SYNC-57",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "غلاف الجهارة وقنوات الصوت للحركة",
   "name_en": "Loudness envelope & sound channels for motion",
   "status": "ready",
@@ -1952,6 +2009,7 @@
  {
   "id": "SYNC-58",
   "family": "audio-sync-captions",
+  "domain": "motion",
   "name_ar": "مزامنة الفم بستة أشكال",
   "name_en": "Six-shape lip sync",
   "status": "documented",

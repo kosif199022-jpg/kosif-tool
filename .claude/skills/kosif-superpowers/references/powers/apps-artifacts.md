@@ -149,7 +149,7 @@
 - **ماذا / what:** عند وجود موصل Higgsfield يمكن إنشاء موقع ونشره، بأرصدة مدفوعة وبطلب صريح فقط. — When the Higgsfield connector is present, it can create and deploy a website; this costs credits, so only on explicit request.
 - **متى أستخدمها / when:** حين يريد المستخدم صراحةً موقعًا مستضافًا من تلك الخدمة / the user explicitly wants a hosted site from that service
 - **كيف / how:** Follow the connector's own workflow instructions; quote the cost first; never call paid tools without the user's intent. Not exercised here.
-- **يحتاج / needs:** [`pip:higgsfield`](../requirements.md#req-pip-higgsfield) · [`key:unspecified`](../requirements.md#req-key-unspecified)
+- **يحتاج / needs:** [`pip:higgsfield`](../requirements.md#req-pip-higgsfield)
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** session-2026-10-16:claude-surfaces.md#4
 

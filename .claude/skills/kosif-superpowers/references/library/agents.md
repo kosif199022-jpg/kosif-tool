@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing (`agents`)
 
-> مكتبة بروتوكول USIP v5.5، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مكتبة بروتوكول USIP v5.6، مولّدة بـ `scripts/smart_capabilities.py library` من `data/powers/*.json` و`data/tools.json`؛ لا تُحرَّر يدويًا. الدليل: [A28 اختيار القدرات](../protocol/A28-capability-routing.md) · [الفهرس](INDEX.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 153 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 154 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **248** | |
+| **المجموع** | **249** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -55,6 +55,7 @@
 | `kosif-mcp` | خادم MCP لكتالوج KOSIF | `python3 scripts/kosif_mcp.py` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `local-first` | مدخل محلي بلا استنساخ | `python3 scripts/local_first.py doctor` | tested-here |
+| `micro-index` | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة | `python3 scripts/micro_index.py build` | tested-here |
 | `owned-repos` | خريطة مستودعات المالك وخريطة المهارات | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |
 | `probe-env` | فحص قدرات الجهاز | `python3 scripts/probe_env.py` | tested-elsewhere |
@@ -80,7 +81,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 159 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 160 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -153,6 +154,7 @@
 | `TOOL-159` | مختبر البرومبت | Prompt Lab | proven | python3 |
 | `TOOL-16` | إنشاء فيلم سبورة مرسوم وتصييره | Doodle film runtime and renderer | proven | ffmpeg, node, python3, chromium |
 | `TOOL-160` | متابعة أشهر 1000 مستودع | GitHub Top-1000 Tracker | proven | python3 |
+| `TOOL-161` | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة | Micro index: one line per power, tool and superpower | proven | python3 |
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |

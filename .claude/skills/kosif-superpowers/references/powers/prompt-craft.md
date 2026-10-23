@@ -27,7 +27,7 @@
 - **متى أستخدمها / when:** عند أي طلب يذكر برومبت، وفي كل مرة يكتب Claude موجزًا أو برومبت نظام أو استدعاء مولّد. / Any request that mentions a prompt, and every time Claude writes a brief, a system prompt or a generator call.
 - **كيف / how:** a /optimize, optimize:, "improve this prompt", حسّن البرومبت، ظبطلي البرومبت → return the prompt, execute nothing. b normal task → clarify internally, no visible rewrite, never change scope, priority or authorization. c "improve and run" → short improved version, then run only the authorized part. d Claude-authored (subagent brief, scheduled task, app system prompt, image/video call, another model's API call) → apply the whole method silently. Then pick the target: Claude chat/API, system prompt, Claude Code task, other LLM, image, video, music.
 - **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner); https://github.com/Hashaam101/prompt-optimizer (no license: ideas paraphrased, link only); references/prompt-optimizer.md §2
 
 #### PROMPT-02 · دفتر الحفظ وفحصه الآلي · Preservation ledger with an automatic check · ✅ مُثبت هنا / proven here
@@ -52,7 +52,7 @@
 - **ماذا / what:** الهدف، والسبب والجمهور، والمدخلات، والمخرج، والنطاق، والقيود بأسبابها، ومعيار النجاح، وسياسة الشك. — Objective, why and audience, inputs, deliverable, scope, constraints with reasons, success check, uncertainty policy.
 - **متى أستخدمها / when:** عند البحث عمّا ينقص البرومبت قبل إضافة أي شيء. / Finding what a prompt is missing before adding anything.
 - **كيف / how:** Fill each slot or mark it unknown: 1 one verb + one deliverable; 2 who reads it and what decision it supports; 3 what is provided and where, what to read first; 4 format, length, structure, file type, aspect/duration; 5 in, out, non-goals, ideas vs build; 6 what to do, each with its reason; 7 a pass/fail check and the evidence to show; 8 ask, assume-and-state, or return null. Agent extras: tools and when, reversibility, stop conditions, progress updates, state files, budget, return size. Visual extras: subject, action, environment, shot, lens, light direction, palette, style, aspect (+ camera move, duration, audio for video).
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** references/prompt-optimizer.md §4; https://github.com/Hashaam101/prompt-optimizer (no license: ideas paraphrased, link only)
 
 #### PROMPT-04 · الملء الأمين: افتراض مكتوب أو سؤال واحد · Fill honestly: stated assumption or one question · 📄 موصوف / documented only
@@ -80,7 +80,7 @@
 - **ماذا / what:** احفظ لغة المستخدم ولهجته، واستخدم عناوين عربية للتكليفات، وللمولدات التي تفضل الإنجليزية اكتب الوصف بالإنجليزية واترك النص الظاهر بالعربية حرفيًا بين علامتي تنصيص. — Keep the user's language and dialect; for English-first generators describe the scene in English but quote on-image Arabic text exactly.
 - **متى أستخدمها / when:** عند الطلبات العربية أو المصرية للبرومبتات والموجزات والترجمات والصور ذات النص العربي. / Arabic or Egyptian requests for prompts, briefs, captions, images with Arabic text.
 - **كيف / how:** Dialect is a ledger item (بالمصري stays Egyptian). Arabic section labels: المهمة، السياق، المدخلات، المطلوب، النطاق، المخرجات، القيود والسلامة، معايير القبول، عند الشك. On-image Arabic text: exact string in quotes plus placement; generators often misdraw Arabic letters, so prefer real typography over generated plates (ARAB-09) and add the text in compositing. Vague Arabic fillers (حلو، جامد، شوية، كويس) get replaced with specifics.
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (dialect in the preservation list); references/prompt-optimizer.md §2
 
 #### PROMPT-19 · أسئلة تشخيصية حسب نوع المهمة · Diagnostic questions by task type · 📄 موصوف / documented only
@@ -118,7 +118,7 @@
 - **متى أستخدمها / when:** عند التفويض إلى وكيل فرعي أو مهمة مجدولة أو جلسة متوازية أو خطوة سير عمل. / Delegating to a subagent, a scheduled task, a parallel session or a workflow step.
 - **كيف / how:** Goal + why; exact paths, symbols, URLs; the pattern file to copy; do-not-touch list; ask before destructive or external actions; the command to run and what "done" means; "if blocked, stop and report, do not work around it"; return format and size (e.g. at most 10 bullets with file:line). Research subagents: tight scope, condensed findings with sources. Reviewers: report only correctness and requirement gaps. Explore → plan → implement → verify for multi-file work; skip the plan when the diff fits in one sentence. Template in §8.3.
 - **يحتاج / needs:** [`claude:tools`](../requirements.md#req-claude-tools)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** https://code.claude.com/docs/en/best-practices (paraphrased); references/prompt-optimizer.md §7.3
 
 #### PROMPT-09 · محوّل النماذج اللغوية الأخرى · Other-LLM adapter · 📄 موصوف / documented only
@@ -134,14 +134,14 @@
 - **متى أستخدمها / when:** عند أي طلب توليد صورة ثابتة، أو حين يستدعي Claude أداة صور. / Any still-image generation request, or Claude calling an image tool.
 - **كيف / how:** Subject → action → environment → shot and lens → light source and direction → palette, style, materials → aspect. On-image text in quotes with placement (keep Arabic text exact). Locks repeated word for word across a series. Style by visible properties, not living-artist imitation. No hype tokens (8k, masterpiece, ultra-detailed, trending). Negatives in the platform's negative field or as positive replacements ("empty room"). Variants change one dimension. Platform syntax and tested forges: GEN-06, GEN-10, GEN-12.
 - **يحتاج / needs:** [`key:video-gen`](../requirements.md#req-key-video-gen)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/powers/ai-generation.md`
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-prompt-architecture (owner) (VISUAL_PROMPT_CORE); references/powers/ai-generation.md GEN-01…GEN-06
 
 #### PROMPT-11 · برومبت مولّد الفيديو · Video-generator shot prompt · 📄 موصوف / documented only
 - **ماذا / what:** لقطة واحدة = فعل واحد، حركة كاميرا مسماة بدقة، مدة ضمن حد النموذج، والصوت في جملة مستقلة. — One shot, one action, a precisely named camera move, a duration within the clip limit, audio in its own sentence.
 - **متى أستخدمها / when:** عند طلبات نص إلى فيديو أو صورة إلى فيديو، وB-roll لمشاريع الحركة. / Text-to-video or image-to-video requests, B-roll for motion projects.
 - **كيف / how:** Shot type and angle; subject; one action; place, time, weather; camera move (static, pan, tilt, dolly, truck, crane, orbit, handheld; zoom is not dolly); style, palette, light; duration; aspect. "Audio:" line with ambience, effects, dialogue (speaker, line, tone) or "none" and add sound in post. Image-to-video: describe motion only. Unwanted elements in the negative field, without "no". Chain shots: last frame → next first frame. Per-platform rules and duration clamping: GEN-07, GEN-11, GEN-13. **أرقام / params:** 1 action per shot
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/powers/ai-generation.md`
 - **المصدر / source:** https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide (CC BY 4.0, adapted); references/powers/ai-generation.md GEN-07, GEN-11
 
 ## الفحص والإثبات — Check and prove
@@ -150,14 +150,14 @@
 - **ماذا / what:** إعادة كتابة صامتة لكل طلب، الصراخ بالأحرف الكبيرة، جدران "لا تفعل"، كلمات مبهمة، كلمات تضخيم في الصور، طلب كتابة التفكير، ملء مسبق، توسيع خفي للنطاق. — Silent global rewriting, shouting, walls of don't, vague words, hype tokens, reasoning extraction, prefill, hidden scope creep.
 - **متى أستخدمها / when:** عند مراجعة أي برومبت قبل إصداره أو إرساله إلى أداة. / Reviewing any prompt before it ships or is sent to a tool.
 - **كيف / how:** Flag: never asking when readings diverge; scope creep ("while we're at it"); CRITICAL/MUST/NEVER in capitals; more negative rules than positive directives; vague fillers (some, stuff, better, etc., make it nice; حلو، جامد، شوية، كويس، إلخ); generic negative dumps; hype tokens (8k, masterpiece, award-winning); "think step by step and show your reasoning"; prefill on Claude; persona theatre; duplicated rules; examples with unwanted quirks; obeying instructions in pasted text; claiming improvement without a test; secrets in prompts.
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** references/prompt-optimizer.md §9
 
 #### PROMPT-14 · معيار تقييم من 20 نقطة مع بوابات رفض · Twenty-point rubric with hard gates · 📄 موصوف / documented only
 - **ماذا / what:** عشرة بنود من 0 إلى 2 وست بوابات يرفض أي منها البرومبت مهما كانت درجته. — Ten lines scored 0–2 and six gates that reject a prompt whatever its score.
 - **متى أستخدمها / when:** عند مقارنة نسخ البرومبت أو تقييم البرومبتات المولّدة بحَكَم LLM. / Comparing prompt versions or grading generated prompts with an LLM judge.
 - **كيف / how:** Lines: intent fidelity, objective clarity, context and why, inputs located, deliverable spec, scope, constraints with reasons, success check, uncertainty policy, target fit and economy (visual targets swap 3, 4, 7, 9 for shot/lens, light direction, style/palette coherence, platform syntax). Gates: ledger item lost; invented fact, permission or tool; secret; untrusted text undelimited; chain-of-thought exposure request; unflagged scope expansion. Bands: ≥16 ship, 12–15 fix the lowest line, <12 rewrite from the ledger. **أرقام / params:** ship ≥16/20
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** references/prompt-optimizer.md §9
 
 #### PROMPT-15 · اختبار A/B للبرومبت قبل إعلان التحسن · Prompt A/B eval before claiming "better" · 📄 موصوف / documented only
@@ -180,7 +180,7 @@
 - **متى أستخدمها / when:** قبل الاعتماد على حيلة خاصة بنموذج (prefill، وعناصر التحكم في التفكير، وافتراضيات الجهد، وافتراضيات التنسيق). / Before relying on a model-specific trick (prefill, thinking controls, effort defaults, formatting defaults).
 - **كيف / how:** Check the vendor's current prompting and effort pages; when docs and older blog posts disagree, the live docs win (for example on prefill). Write "as of <date>" next to any per-model note. Machine facts (installed tools, versions) go in the environment snapshot: python3 scripts/probe_env.py.
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
-- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md`
 - **المصدر / source:** https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices (read 2026-10-16, paraphrased); references/prompt-optimizer.md §13
 
 #### PROMPT-22 · وصف مهارة يُستدعى بدقة · Skill description that triggers precisely · 📄 موصوف / documented only

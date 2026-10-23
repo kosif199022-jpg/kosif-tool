@@ -1,6 +1,6 @@
 # `transitions-cuts` — الموشن والمونتاج والسينما (474 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/transitions-cuts.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/transitions-cuts.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/motion.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -1709,7 +1709,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: زوم سينمائي: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: cinematic-zoom: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا سينمائيًا بالتقريب بين مشهدين عبر شيدر WebGL / for a cinematic zoom shader transition between two scenes
 
@@ -1784,7 +1784,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تحول التوائي: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: cross-warp-morph: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد أن يلتوي المشهد الأول ويتحول إلى الثاني بانتقال شيدر / for a warping morph shader transition that bends one scene into the next
 
@@ -1859,7 +1859,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تشويه المجال: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: domain-warp: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا يشوه الصورة ويلويها بين مشهدين عبر شيدر WebGL / for a domain-warp distortion shader transition between two scenes
 
@@ -1934,7 +1934,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: وميض أبيض: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: flash-through-white: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد الانتقال بين مشهدين عبر وميض أبيض بشيدر WebGL / for a shader transition that passes through a white flash between scenes
 
@@ -2085,7 +2085,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: غلتش: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: glitch: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقال جليتش رقمي بين مشهدين عبر شيدر WebGL / for a digital glitch shader transition between two scenes
 
@@ -2160,7 +2160,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: عدسة جاذبية: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: gravitational-lens: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتشويه عدسة جاذبية يحني الصورة بين مشهدين / for a gravitational-lens distortion shader transition between scenes
 
@@ -2235,7 +2235,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تسرب ضوء: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: light-leak: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتسرب ضوئي بين مشهدين عبر شيدر WebGL / for a light-leak shader transition between two scenes
 
@@ -2310,7 +2310,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: احتراق متعرج: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: ridged-burn: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقال حرق بحواف متعرجة بين مشهدين عبر شيدر WebGL / for a ridged burn shader transition between two scenes
 
@@ -2385,7 +2385,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تموجات: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: ripple-waves: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتموجات تشوه الصورة بين مشهدين عبر شيدر / for a ripple-wave shader transition between two scenes
 
@@ -2460,7 +2460,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: قزحية: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: sdf-iris: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد كشف المشهد التالي بفتحة قزحية عبر شيدر WebGL / for an iris-shaped shader reveal from one scene to the next
 
@@ -2535,7 +2535,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: دوامة: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: swirl-vortex: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بدوامة تلف المشهد قبل ظهور التالي عبر شيدر / for a swirl vortex shader transition between two scenes
 
@@ -2610,7 +2610,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: تشوه حراري: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: thermal-distortion: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا بتشوه حراري يشبه السراب بين مشهدين عبر شيدر / for a thermal distortion shader transition between two scenes
 
@@ -2685,7 +2685,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — WebGL fragment-shader transition between two scenes, captured from live DOM.
+**ما هي:** انتقال شيدر: سوط كاميرا: انتقال WebGL بمُظلِّل أجزاء بين مشهدين، يُلتقط من DOM حيّ. — Shader transition: whip-pan: WebGL fragment-shader transition between two scenes, captured from live DOM.
 
 **متى:** حين تريد انتقالًا كحركة كاميرا سريعة خاطفة بين مشهدين عبر شيدر / for a whip-pan shader transition between two scenes
 
@@ -7037,7 +7037,7 @@
 
 **المعاملات:** 0.5 s overlap
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** مسح · شاشة مقسومة · قناع · split screen · clip-path · wipe
 
@@ -7053,7 +7053,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -13007,7 +13007,7 @@
 
 **كيف:** tl.to(card, {x:−360, scale:.56, borderRadius:44px, .66 s E.inOut}); metrics x 40→0 staggered .12; implode {x:0, scale:.02, radius 600px, .38 s E.in}; lockup at b(26).
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** ختام بالشعار · تصغير اللقطة · انكماش · logo reveal · outro
 
@@ -13023,7 +13023,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -13312,7 +13312,7 @@
 
 **كيف:** tl.set(cam, {scale:1.42, x:0, y:0, transformOrigin:'585px 690px'}, 13.30).to(cam, {scale:1.10, .6 s, expo.out}, 13.30).
 
-**التثبيت:** see arsenal-libraries.md
+**التثبيت:** npm i gsap@3.15.0 (GSAP Standard no-charge licence, not OSI; version from arsenal-libraries.md)
 
 **الوسوم:** إعادة تأطير · قص الكادر · زووم مفاجئ · punch in · reframe
 
@@ -13328,7 +13328,7 @@
 
 #### 2. الجاهزية والشارة (A28)
 
-- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -32566,7 +32566,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة التلاشي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Cross-fade family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تختار من عائلة انتقالات التلاشي في تايملاين الاستوديو مع تلاشي صوتي مطابق / when picking a cross-fade family transition in the studio timeline, with a matching audio cross-fade
 
@@ -32644,7 +32644,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة المسح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Wipe family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقال مسح يمينًا أو يسارًا أو لأعلى أو لأسفل أو من الزوايا في تايملاين الاستوديو / for a wipe transition left, right, up, down or from a corner in the studio timeline
 
@@ -32722,7 +32722,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة الانزلاق: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Slide family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انزلاق اللقطة في اتجاه محدد كانتقال داخل تايملاين الاستوديو / for a directional slide transition between clips in the studio timeline
 
@@ -32800,7 +32800,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** عائلة المسح الناعم: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Smooth wipe family (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد مسحًا بحافة ناعمة بين مقطعين في تايملاين الاستوديو / for a soft-edged wipe between two clips in the studio timeline
 
@@ -32878,7 +32878,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** كشف دائري ومستطيل وشعاعي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Circle / rect / radial reveals (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد كشف اللقطة التالية بدائرة أو مستطيل أو مسح شعاعي في التايملاين / for revealing the next clip with a circle, rectangle or radial sweep in the timeline
 
@@ -32956,7 +32956,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** فتح وإغلاق رأسي وأفقي: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Barn-door opens and closes (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا ينفتح أو ينغلق رأسيًا أو أفقيًا كالأبواب بين مقطعين / for a barn-door transition that opens or closes vertically or horizontally between clips
 
@@ -33034,7 +33034,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** مسح قطري: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Diagonal wipes (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد مسحًا قطريًا من إحدى زوايا الكادر بين مقطعين في التايملاين / for a diagonal wipe from one corner of the frame between two clips in the timeline
 
@@ -33112,7 +33112,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الشرائح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Slice transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا بالشرائح يتحرك يمينًا أو يسارًا أو لأعلى أو لأسفل بين مقطعين / for a slice transition moving left, right, up or down between two clips in the timeline
 
@@ -33190,7 +33190,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الريح: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Wind transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقال الريح بأحد الاتجاهات الأربعة بين مقطعين في التايملاين / for a wind-style transition in one of four directions between two clips in the timeline
 
@@ -33268,7 +33268,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات التغطية: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Cover transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين يجب أن تنزلق اللقطة الجديدة فوق القديمة من أحد الاتجاهات في التايملاين / when the new clip should slide over the old one from a chosen direction in the timeline
 
@@ -33346,7 +33346,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الكشف: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Reveal transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين يجب أن تنزلق اللقطة القديمة جانبًا لتكشف الجديدة في التايملاين / when the old clip should slide off to reveal the new one in the timeline
 
@@ -33424,7 +33424,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقالات الضغط: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Squeeze transitions (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا تنضغط فيه اللقطة أفقيًا أو رأسيًا لتظهر التالية / for a squeeze transition that compresses the shot horizontally or vertically into the next
 
@@ -33502,7 +33502,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال الزووم للداخل: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Zoom-in transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا بالزووم للداخل من مقطع إلى التالي في التايملاين / for a zoom-in transition from one clip into the next in the timeline
 
@@ -33580,7 +33580,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال التبكسل: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Pixelize transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا تتحول فيه الصورة إلى بكسلات ثم تظهر اللقطة التالية / for a pixelize transition where the picture breaks into pixels before the next clip
 
@@ -33658,7 +33658,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال الضبابية الأفقية: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Horizontal blur transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقالًا بضبابية أفقية بين مقطعين في التايملاين / for a horizontal blur transition between two clips in the timeline
 
@@ -33736,7 +33736,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
+**ما هي:** انتقال المسافة: تحويلات xfade في FFmpeg من هذه العائلة، يعرضها تبويب التايملاين في الاستوديو وMCP بتسمية عربية للعائلة، ويرافق كلًّا منها تلاشٍ صوتي مطابق في مُصيِّر التايملاين. — Distance transition (FFmpeg xfade): FFmpeg xfade transitions of this family, offered by the studio's timeline tab and MCP with an Arabic family label; each comes with a matching audio cross-fade in the timeline renderer.
 
 **متى:** حين تريد انتقال المسافة من عائلة xfade بين مقطعين مع تلاشي صوتي مطابق / for the distance xfade transition between two clips with a matching audio cross-fade
 

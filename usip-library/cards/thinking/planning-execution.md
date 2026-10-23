@@ -1,6 +1,6 @@
 # `planning-execution` — التفكير والتخطيط والاستراتيجية (12 بطاقة)
 
-> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/planning-execution.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+> مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/planning-execution.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/thinking.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
 ## الفهرس / contents
 
@@ -97,7 +97,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** صف الحالة النهائية بدقة، وارجع خطوة خطوة إلى شروطها المسبقة حتى اليوم، ثم اعكس إلى معالم. — Describe the finished state concretely, step back to its preconditions until today, then reverse into milestones.
@@ -145,7 +145,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -162,7 +162,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** قسّم النتيجة إلى مخرجات، ثم إلى مهام من بضع ساعات، لكل منها اختبار إنجاز قابل للملاحظة. — Split the outcome into deliverables, then into tasks of a few hours, each with an observable done-test.
@@ -212,7 +212,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -230,7 +230,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** جد أطول سلسلة من المهام المعتمدة على بعضها، واحمها، وواز الباقي بوكلاء أو سير عمل. — Find the longest chain of dependent tasks, protect it, parallelise the rest with agents or workflows.
@@ -278,7 +278,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -367,7 +367,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** اقتصر النطاق على مسار واحد من الطرف إلى الطرف عبر كل الطبقات وأره للمستخدم قبل التوسع. — Cut scope to one end-to-end path through every layer and show it to the user before widening.
@@ -415,7 +415,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -433,7 +433,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** تخيّل الفشل، واذكر الأسباب، وحوّل كلًّا منها إلى خطة تخفيف وإشارة يمكنك مراقبتها. — Imagine the failure, list causes, convert each to a mitigation plus a signal you can watch.
@@ -481,7 +481,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -499,7 +499,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** إشارة إيقاف قابلة للقياس وتاريخ، يُتفق عليهما قبل بدء العمل. — A measurable stop signal and a date, agreed before the work starts.
@@ -547,7 +547,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -565,7 +565,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** اضرب عدم يقينين رئيسيين لتحصل على أربعة مستقبلات؛ واحتفظ بالحركات التي تنجح في الجميع وراقب المؤشرات. — Cross two key uncertainties into four futures; keep moves that work in all and watch signposts.
@@ -613,7 +613,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -631,7 +631,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** حوّل الفروع المستقلة من WBS إلى موجزات وكلاء متوازين بعقود إنجاز؛ وأبقِ مُدمِجًا واحدًا. — Turn independent branches of the WBS into parallel agent briefs with completion contracts; keep one integrator.
@@ -680,7 +680,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -698,7 +698,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** عند كل معلم: ما الذي تغيّر، وأي افتراض انكسر، وهل ما زال المسار الحرج قائمًا، وحدّث ملف الخطة. — At each milestone: what changed, which assumption broke, does the critical path still hold, update the plan file.
@@ -746,7 +746,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -763,7 +763,7 @@
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
 | الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
 | سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
-| نطاق الدليل | `none` |
+| نطاق الدليل | `repo` |
 | الرخصة | owner |
 
 **ما هي:** يسمّي المعلم الأخير إيصال التحقق: fps والمدة والصوت والاختبارات والروابط، مما يستطيع المستخدم فحصه. — The last milestone names the verification receipt: fps, duration, audio, tests, links — what the user can check.
@@ -811,7 +811,7 @@
 
 #### 6. الأدلة
 
-- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+- `kosif-tool/.claude/skills/kosif-superpowers/references/cognition.md`
 
 #### 7. قدرات قريبة في العائلة
 

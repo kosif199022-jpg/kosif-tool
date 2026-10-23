@@ -2,6 +2,7 @@
  {
   "id": "BRAND-01",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "بريف الشعار: الشيء الواحد",
   "name_en": "Logo brief: the ONE THING",
   "status": "documented",
@@ -37,6 +38,7 @@
  {
   "id": "BRAND-02",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "مقابلة العميل بلا هوية",
   "name_en": "Identity interview for no-brand clients",
   "status": "documented",
@@ -73,6 +75,7 @@
  {
   "id": "BRAND-03",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "ورقة نظام العلامة للفيديو",
   "name_en": "Video brand-system sheet",
   "status": "ready",
@@ -110,6 +113,7 @@
  {
   "id": "BRAND-04",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "رموز بثلاث طبقات ومصفوفة العلامات",
   "name_en": "Three-tier tokens & multi-brand theming",
   "status": "documented",
@@ -146,6 +150,7 @@
  {
   "id": "BRAND-05",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "أنظمة تصميم جاهزة للكاميرا (frame.md)",
   "name_en": "Video-first design presets (frame.md)",
   "status": "ready",
@@ -184,6 +189,7 @@
  {
   "id": "BRAND-06",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "كتاب العلامة وصوتها",
   "name_en": "Brand book anatomy & voice",
   "status": "documented",
@@ -218,6 +224,7 @@
  {
   "id": "BRAND-07",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "بوابة ترخيص الخطوط والملكية",
   "name_en": "Font-licence & IP gate",
   "status": "documented",
@@ -254,6 +261,7 @@
  {
   "id": "BRAND-08",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "من الموقع إلى مادة الفيلم",
   "name_en": "Site → film material (palette, fonts, CTAs)",
   "status": "proven",
@@ -291,6 +299,7 @@
  {
   "id": "BRAND-09",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "حقيبة العلامة في بصمة",
   "name_en": "Basma brand kit: import, palette-from-logo, watermark & end card",
   "status": "install",
@@ -327,6 +336,7 @@
  {
   "id": "BRAND-10",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "جلب الشعار الرسمي لا رسمه",
   "name_en": "Official logo resolution (never redraw)",
   "status": "key",
@@ -362,6 +372,7 @@
  {
   "id": "BRAND-11",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "استيراد Figma وCanva",
   "name_en": "Figma / Canva import",
   "status": "key",
@@ -397,6 +408,7 @@
  {
   "id": "BRAND-12",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "قواعد بناء الشعار SVG",
   "name_en": "SVG logo construction rules & logo suite",
   "status": "ready",
@@ -434,6 +446,7 @@
  {
   "id": "BRAND-13",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "تحويل الشعار النقطي إلى متجه بألوانه",
   "name_en": "Raster logo → true-colour vector layers",
   "status": "proven",
@@ -471,6 +484,7 @@
  {
   "id": "BRAND-14",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "مجموعات الأيقونات وأيقونات التطبيق",
   "name_en": "Icon families, app icons & favicon sets",
   "status": "proven",
@@ -509,6 +523,7 @@
  {
   "id": "BRAND-15",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "شعارات KOSIF المبنية بالكود",
   "name_en": "Owner marks built in code (SQC, K marks, ram, cloud)",
   "status": "proven",
@@ -544,6 +559,7 @@
  {
   "id": "BRAND-16",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "توليد الشعار بالذكاء ثم تنقيحه",
   "name_en": "AI mark generation (Recraft / prompt) then curate",
   "status": "key",
@@ -579,6 +595,7 @@
  {
   "id": "BRAND-17",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "كشف فاخر بالزجاج والذهب",
   "name_en": "Luxury glass-and-gold reveal (proof film)",
   "status": "proven",
@@ -614,6 +631,7 @@
  {
   "id": "BRAND-18",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "رسم الخط ثم التعبئة",
   "name_en": "Stroke draw-on then fill",
   "status": "proven",
@@ -656,6 +674,7 @@
  {
   "id": "BRAND-19",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "شعار يتجمع من أجزائه",
   "name_en": "Assembled mark (blocks · dots · tiles · particles)",
   "status": "documented",
@@ -694,6 +713,7 @@
  {
   "id": "BRAND-20",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "كشوف القناع: ظل، ضباب، ختم، فراغ سالب",
   "name_en": "Mask reveals: shadow pass, fog, ink stamp, negative space",
   "status": "documented",
@@ -731,6 +751,7 @@
  {
   "id": "BRAND-21",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "الرمز وحده ثم الكلمة تنكشف بجانبه",
   "name_en": "Mark alone, then wordmark unfolds beside it",
   "status": "seen",
@@ -775,6 +796,7 @@
  {
   "id": "BRAND-22",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "انكماش التباعد إلى الشعار (لاتيني فقط)",
   "name_en": "Tracking-collapse lockup (Latin only)",
   "status": "ready",
@@ -808,6 +830,7 @@
  {
   "id": "BRAND-23",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "قفل المدار وانفجار الشرارات",
   "name_en": "Orbit-lock icon reveal & radial bursts",
   "status": "seen",
@@ -852,6 +875,7 @@
  {
   "id": "BRAND-24",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "بكرات القمار والخط الأفقي",
   "name_en": "Slot-reel & horizon-line reveals",
   "status": "seen",
@@ -887,6 +911,7 @@
  {
   "id": "BRAND-25",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "كشوف وختام HyperFrames الجاهزة",
   "name_en": "HyperFrames logo blocks (sting, tiles, extruded, outro, intro, split-pulse)",
   "status": "install",
@@ -925,6 +950,7 @@
  {
   "id": "BRAND-26",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "بطاقة شعار Remotion بحلقة وشيفرون",
   "name_en": "Remotion logo card: ring draw + chevron mark",
   "status": "install",
@@ -957,6 +983,7 @@
  {
   "id": "BRAND-27",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "كشف سائل بإزاحة الأثر",
   "name_en": "Liquid trail-displacement logo reveal",
   "status": "idea",
@@ -988,6 +1015,7 @@
  {
   "id": "BRAND-28",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "تشريح بطاقة الختام",
   "name_en": "End-card anatomy (icon · wordmark · tagline · URL pill · CTA)",
   "status": "seen",
@@ -1035,6 +1063,7 @@
  {
   "id": "BRAND-29",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "ختام بنقرة مؤشر",
   "name_en": "CTA end card with a cursor click",
   "status": "seen",
@@ -1076,6 +1105,7 @@
  {
   "id": "BRAND-30",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "النقطة كتوقيع العلامة",
   "name_en": "Brand full-stop dot",
   "status": "seen",
@@ -1122,6 +1152,7 @@
  {
   "id": "BRAND-31",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "بطاقات الإصدار والمطوّرين",
   "name_en": "Release & developer end cards (version · terminal · Out now)",
   "status": "seen",
@@ -1164,6 +1195,7 @@
  {
   "id": "BRAND-32",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "بطاقات الهوية الشخصية",
   "name_en": "Personal identity cards (name typed · contacts · chrome name)",
   "status": "seen",
@@ -1204,6 +1236,7 @@
  {
   "id": "BRAND-33",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "مكتبة بطاقات الختام للثيمات (17)",
   "name_en": "Per-theme end-card library (17) + user-owned wordmark slot",
   "status": "proven",
@@ -1237,6 +1270,7 @@
  {
   "id": "BRAND-34",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "كتل الختام والدليل الاجتماعي",
   "name_en": "Closer blocks: CTA close/lockup, social proof, testimonials, trust strip",
   "status": "install",
@@ -1276,6 +1310,7 @@
  {
   "id": "BRAND-35",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "إطار البث الثابت وتوقيع الزاوية",
   "name_en": "Persistent broadcast chrome & corner signature",
   "status": "ready",
@@ -1311,6 +1346,7 @@
  {
   "id": "BRAND-36",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "غمر لون العلامة",
   "name_en": "Brand-colour flood end frame",
   "status": "ready",
@@ -1345,6 +1381,7 @@
  {
   "id": "BRAND-37",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "قوالب الموشن العربية الثمانية",
   "name_en": "Eight Arabic motion templates (logo-reveal, end-card …)",
   "status": "proven",
@@ -1382,6 +1419,7 @@
  {
   "id": "BRAND-38",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "مونتاج شبكة العلامة",
   "name_en": "Brand grid montage",
   "status": "documented",
@@ -1420,6 +1458,7 @@
  {
   "id": "BRAND-39",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "مصفوفة مولّد الرمز البارامتري",
   "name_en": "Parametric mark-generator matrix",
   "status": "seen",
@@ -1453,6 +1492,7 @@
  {
   "id": "BRAND-40",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "أنظمة البطاقات والشارات",
   "name_en": "Card & badge systems (neo-brutalist, seal, pill, banner)",
   "status": "seen",
@@ -1496,6 +1536,7 @@
  {
   "id": "BRAND-41",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "لوكات الكلمة الشعار",
   "name_en": "Wordmark treatments (glow, gradient, per-letter colour, footer, hyphen)",
   "status": "seen",
@@ -1540,6 +1581,7 @@
  {
   "id": "BRAND-42",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "ملصق إعلان منتج عربي متجهي",
   "name_en": "Arabic vector product-ad poster (whole lamb)",
   "status": "ready",
@@ -1575,6 +1617,7 @@
  {
   "id": "BRAND-43",
   "family": "brand-logo-identity",
+  "domain": "motion",
   "name_ar": "نظام «ورق الدفتر» ولوك المانيفست",
   "name_en": "Ledger-paper design system & manifest title look",
   "status": "ready",
