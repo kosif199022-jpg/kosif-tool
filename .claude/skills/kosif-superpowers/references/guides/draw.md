@@ -69,7 +69,7 @@ Before drawing a character, face or figure, run `plan` for the matching drawing-
 
 ## Realistic portrait from a photo — بورتريه واقعي من صورة
 
-لرسم شخص حقيقي من صورته بالقلم الرصاص كأنه مرسوم باليد، دون تغيير التكوين: `python3 scripts/portrait_pipeline.py draw --photo <صورة> --out out/<مجلد> --models <مجلد النماذج>` ثم `review --dir out/<مجلد>` حتى PASS، ثم افتح الـPNG وانظر إليه وقارنه بأفضل جولة سابقة قبل التسليم. اللوحة تبدأ ورقًا فارغًا وكل علامة فيها خط مولَّد (لا بكسل من الصورة). البطاقات PM-01..PM-16 والخطوات في [رسم البورتريه](../portrait-drawing.md).
+لرسم شخص حقيقي من صورته بالقلم الرصاص كأنه مرسوم باليد، دون تغيير التكوين: `python3 scripts/portrait_pipeline.py draw --photo <صورة> --out out/<مجلد> --models <مجلد النماذج>` ثم `review --dir out/<مجلد>` حتى PASS، ثم افتح الـPNG وانظر إليه وقارنه بأفضل جولة سابقة قبل التسليم. اللوحة تبدأ ورقًا فارغًا وكل علامة فيها خط مولَّد (لا بكسل من الصورة). البطاقات PM-01..PM-24 والخطوات في [رسم البورتريه](../portrait-drawing.md). وبالألوان: `--medium colored-pencil` (ألوان خشبية) أو `oil` (فرشاة زيت) أو `watercolor` (ألوان مائية).
 
-To draw a real person from a photo as a pencil portrait, run `portrait_pipeline.py draw`, then `review` until PASS, then open the PNG and compare it with the best earlier round before delivery. The canvas is paper plus generated strokes only; the method cards and the loop rules are in [Portrait drawing](../portrait-drawing.md).
+To draw a real person from a photo as a pencil portrait, run `portrait_pipeline.py draw`, then `review` until PASS, then open the PNG and compare it with the best earlier round before delivery. The canvas is paper plus generated strokes only; the method cards and the loop rules are in [Portrait drawing](../portrait-drawing.md). Colour media: `--medium colored-pencil`, `oil` (brush) or `watercolor`.
 
