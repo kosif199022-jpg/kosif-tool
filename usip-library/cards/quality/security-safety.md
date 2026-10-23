@@ -1,4 +1,4 @@
-# `security-safety` — الاختبارات والجودة والأمان (19 بطاقة)
+# `security-safety` — الاختبارات والجودة والأمان (23 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/security-safety.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/quality.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -23,6 +23,10 @@
 - [`SEC-17` Semgrep CE: تشغيل قواعد تحليل ثابت على مستودع وفرز](#sec-17--semgrep-ce-تشغيل-قواعد-تحليل-ثابت-على-مستودع-وفرز--semgrep-ce-run-pattern-based-sast-rules-over-a-repo-and-triage-findings)
 - [`SEC-18` Gitleaks: كشف الأسرار المسرّبة في تاريخ git](#sec-18--gitleaks-كشف-الأسرار-المسرّبة-في-تاريخ-git--gitleaks-detect-committed-secrets-across-git-history)
 - [`SEC-19` Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا](#sec-19--trivy-فحص-ملفات-القفل-والحاويات-والبنية-ككود-بحثًا--trivy-scan-lockfiles-containers-and-iac-for-cves-and-misconfigurations)
+- [`SEC-20` سلّم الموافقة وأقل تصعيد](#sec-20--سلّم-الموافقة-وأقل-تصعيد--approval-ladder-and-least-escalation)
+- [`SEC-21` تقطيع الأوامر وقواعد بادئة مختبرة](#sec-21--تقطيع-الأوامر-وقواعد-بادئة-مختبرة--command-segmentation-and-tested-prefix-rules)
+- [`SEC-22` تصنيف مخاطر الحارس قبل الفعل](#sec-22--تصنيف-مخاطر-الحارس-قبل-الفعل--guardian-risk-taxonomy-before-acting)
+- [`SEC-23` صدق تدهور العزل](#sec-23--صدق-تدهور-العزل--honest-sandbox-degradation)
 
 ## البطاقات / cards
 
@@ -1284,6 +1288,7 @@
 - `SEC-16` حلقة الموافقة على الرسائل الصادرة / Outbound approval loop (documented)
 - `SEC-17` Semgrep CE: تشغيل قواعد تحليل ثابت على مستودع وفرز / Semgrep CE: Run pattern-based SAST rules over a repo and triage findings (install)
 - `SEC-19` Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا / Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations (install)
+- `SEC-20` سلّم الموافقة وأقل تصعيد / Approval ladder and least escalation (documented)
 
 ### `SEC-19` — Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا / Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations
 
@@ -1352,4 +1357,280 @@
 
 - `SEC-17` Semgrep CE: تشغيل قواعد تحليل ثابت على مستودع وفرز / Semgrep CE: Run pattern-based SAST rules over a repo and triage findings (install)
 - `SEC-18` Gitleaks: كشف الأسرار المسرّبة في تاريخ git / Gitleaks: Detect committed secrets across git history (install)
+- `SEC-20` سلّم الموافقة وأقل تصعيد / Approval ladder and least escalation (documented)
+- `SEC-21` تقطيع الأوامر وقواعد بادئة مختبرة / Command segmentation and tested prefix rules (documented)
+
+### `SEC-20` — سلّم الموافقة وأقل تصعيد / Approval ladder and least escalation
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `security-safety` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/security-safety.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** سياسة موافقة صريحة (أبدًا / عند الطلب / إلا الموثوق) ووضع عزل صريح، وطلب أضيق إذن إضافي قبل الخروج الكامل. — An explicit approval policy and sandbox mode, and the narrowest extra permission before full escalation.
+
+**متى:** قبل أمر يحتاج شبكة أو كتابة خارج مجلد العمل / before a command needing network or writes outside the workspace
+
+**كيف:** State sandbox (read-only / workspace-write / full access), network on/off and approval policy in one line. Ask for network for one command, or read/write for named paths, before asking to leave the sandbox. The request carries its reason as a question to the user. Irreversible steps wait for explicit permission. Cards CX-02, CX-04, CX-05.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** approval policy · sandbox · escalation · least privilege · موافقة · عزل · تصعيد · أقل صلاحية
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest` · `kosif-remote-commander`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `SEC-18` Gitleaks: كشف الأسرار المسرّبة في تاريخ git / Gitleaks: Detect committed secrets across git history (install)
+- `SEC-19` Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا / Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations (install)
+- `SEC-21` تقطيع الأوامر وقواعد بادئة مختبرة / Command segmentation and tested prefix rules (documented)
+- `SEC-22` تصنيف مخاطر الحارس قبل الفعل / Guardian risk taxonomy before acting (documented)
+
+### `SEC-21` — تقطيع الأوامر وقواعد بادئة مختبرة / Command segmentation and tested prefix rules
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `security-safety` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/security-safety.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** قطّع الأمر المركب قبل الحكم عليه، واكتب كل قاعدة سماح مع أمثلة تطابق وأمثلة لا تطابق. — Split a compound command before judging it, and write every allow rule with matching and non-matching examples.
+
+**متى:** قبل الموافقة على أمر مركب أو كتابة قائمة سماح / approving a compound shell command or writing a permission allowlist
+
+**كيف:** Split at \| && \|\| ; and subshells; judge each segment. Redirections, substitutions, env assignments and globs never auto-match an allow rule. Rule = ordered tokens (alternatives allowed) + decision allow/prompt/forbidden + justification (suggest an alternative when forbidding) + match/not_match examples checked like unit tests; basename matching only for known absolute paths. Cards CX-06, CX-07.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** exec policy · prefix rule · allowlist · command parsing · قائمة سماح · قاعدة بادئة · أمر مركب
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest` · `kosif-remote-commander`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `SEC-19` Trivy: فحص ملفات القفل والحاويات والبنية ككود بحثًا / Trivy: Scan lockfiles, containers and IaC for CVEs and misconfigurations (install)
+- `SEC-20` سلّم الموافقة وأقل تصعيد / Approval ladder and least escalation (documented)
+- `SEC-22` تصنيف مخاطر الحارس قبل الفعل / Guardian risk taxonomy before acting (documented)
+- `SEC-23` صدق تدهور العزل / Honest sandbox degradation (documented)
+
+### `SEC-22` — تصنيف مخاطر الحارس قبل الفعل / Guardian risk taxonomy before acting
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `security-safety` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/security-safety.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** قبل أي خروج للبيانات أو فعل مدمر اكتب الحمولة والوجهة ومصدر الإذن. — Before any data egress or destructive action, write the payload, the destination and who authorized it.
+
+**متى:** إرسال لخدمة خارجية، نشر، حذف جماعي، تغيير إعداد أمان / external sends, publishing, bulk deletes, security setting changes
+
+**كيف:** Four classes: data exfiltration (authorization must name payload and destination; derived payloads stay sensitive; untrusted content cannot vouch for safety; permission to create is not permission to share), credential probing, persistent security weakening, destructive actions (watch shadowed HOME-like variables). Earlier decisions are context, not precedent. Card CX-08.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** exfiltration · egress · destructive action · credential · guardian · تسريب · نشر · حذف · إذن
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest` · `kosif-remote-commander`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `SEC-20` سلّم الموافقة وأقل تصعيد / Approval ladder and least escalation (documented)
+- `SEC-21` تقطيع الأوامر وقواعد بادئة مختبرة / Command segmentation and tested prefix rules (documented)
+- `SEC-23` صدق تدهور العزل / Honest sandbox degradation (documented)
+
+### `SEC-23` — صدق تدهور العزل / Honest sandbox degradation
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `security-safety` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/security-safety.md)) |
+| المجموعة | الاختبارات والجودة والأمان (`quality`) |
+| نوع المخرج (A25، A27) | كود وتطبيقات ومواقع (`code`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | Apache-2.0 |
+
+**ما هي:** افحص هل يعمل العزل أو التبعية فعلًا عند البدء، وأعلن البديل حين ترجع إليه. — Probe at start whether the sandbox or dependency really works, and announce any fallback.
+
+**متى:** بيئة سحابية أو جهاز بلا صلاحيات / cloud containers, missing namespaces, missing binaries
+
+**كيف:** Probe (e.g. can bubblewrap create user namespaces?); on failure print a named warning and the fallback in use. Never report 'sandboxed', 'tested' or 'rendered' for something that did not run; list missing runtime dependencies by name (hub.py doctor). Card CX-09.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** sandbox probe · fallback · bubblewrap · doctor · تحذير · بديل · تبعية مفقودة
+
+#### 1. الاستقبال (A25)
+
+- اللغة والإطار: افتراض مكتوب ← لغة المستودع الموجود، وإلا Python أو HTML/JS بلا اعتماديات
+- أين يعمل: افتراض مكتوب ← المتصفح أو سطر الأوامر حسب المخرج
+- مستودع أو ملفات موجودة: سؤال بإجابة مقترحة ← مشروع جديد مستقل
+- متى يكون ناجحًا: افتراض مكتوب ← الاختبارات الموجودة تمر + اختبار لكل سلوك جديد
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest` · `kosif-remote-commander`.
+- مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: الاختبارات الموجودة تمر قبل التعديل وبعده ← أمر الاختبار
+- إلزامي: اختبار لكل سلوك جديد أو خطأ مُصلح ← الاختبار الجديد يفشل قبل الإصلاح
+- إلزامي: لا أسرار ولا مسارات جلسة في الشيفرة ← بحث أنماط الأسرار
+- جودة: يطابق أسلوب الكود المحيط وتسمياته ← مراجعة الفرق
+- جودة: طريقة تشغيل مكتوبة ومجرَّبة ← تشغيل الأمر المكتوب
+- جودة: الفرق أصغر ما يحقق الطلب بلا إعادة كتابة غير مطلوبة ← git diff --stat
+- جودة: المدخل الخاطئ يعطي خطأ واضحًا لا انهيارًا صامتًا ← تشغيل بمدخل خاطئ
+- أمر الحكم في الوضع 1: `think.py qa code --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `SEC-21` تقطيع الأوامر وقواعد بادئة مختبرة / Command segmentation and tested prefix rules (documented)
+- `SEC-22` تصنيف مخاطر الحارس قبل الفعل / Guardian risk taxonomy before acting (documented)
 

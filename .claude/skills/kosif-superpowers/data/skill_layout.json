@@ -194,7 +194,8 @@
     "references/app-feature-transfer.md",
     "references/arsenal-general.md",
     "references/arsenal-libraries.md",
-    "references/community-source-atlas.md"
+    "references/community-source-atlas.md",
+    "references/codex-agent-harness.md"
    ],
    "globs": [
     "references/app-studies/*"
@@ -223,7 +224,8 @@
     "references/threejs-cinematic-motion-20261020.md",
     "references/atlas-5000-mining-20261023.md",
     "references/atlas-reviewed-audit.md",
-    "references/owner-uploads-review-20261023.md"
+    "references/owner-uploads-review-20261023.md",
+    "references/codex-repos-study-20261023.md"
    ],
    "globs": []
   }

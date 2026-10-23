@@ -942,5 +942,160 @@
   ],
   "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
   "source": "owner-upload:KOSIF-handoff-2026-10-03-v3 §3 and §5 (kosif_jev_decide, kosif_skill_auto; owner; rewritten, no code copied)"
+ },
+ {
+  "id": "CHECK-31",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "امتحان مختوم قبل العمل",
+  "name_en": "Exam sealed before the work",
+  "status": "documented",
+  "what": "اكتب الامتحان قبل أن يبدأ المنفّذ، وأخفه عنه، واختمه ببصمات الملفات. — Write the exam before the builder starts, hide it, and seal it with file hashes.",
+  "when": "إعادة بناء أداة أو استنساخ سلوك أو أي ادعاء «مطابق للأصل» / rebuilding a tool, cloning behaviour, any 'matches the original' claim",
+  "how": "python3 scripts/differential_exam.py seal EXAM --out seal.json before the work; verify-seal EXAM seal.json at grading time (exit 1 if any file changed, vanished or appeared). Keep the seal outside the exam folder. Card HX-01.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "hidden test",
+   "sealed exam",
+   "sha256",
+   "امتحان خفي",
+   "ختم",
+   "بصمة"
+  ],
+  "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
+  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
+ },
+ {
+  "id": "CHECK-32",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "خادم نموذج وهمي مسجِّل",
+  "name_en": "Recording mock model server",
+  "status": "documented",
+  "what": "لاختبار حزام وكيل لا نموذجه: خادم يرد من سيناريو مكتوب ويحفظ كل طلب يصله. — To test an agent harness, not its model: a server that answers from a script and saves every request it receives.",
+  "when": "اختبار CLI أو وكيل يتصل بواجهة نموذج / testing a CLI or agent that calls a model API",
+  "how": "Script the model's replies per scenario (text, tool calls, server errors 500/401, bad JSON). Save every request body and headers to the scenario folder; save stdout, stderr, exit code and the workdir effects. Then compare runs with differential_exam.py. Card HX-02.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "mock server",
+   "fake model",
+   "responses api",
+   "harness test",
+   "خادم وهمي",
+   "اختبار الحزام"
+  ],
+  "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
+  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
+ },
+ {
+  "id": "CHECK-33",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "قائمة سطح الملاحظة",
+  "name_en": "Observable-surface checklist",
+  "status": "documented",
+  "what": "لكل سيناريو فحوص مسماة لكل ما يرسله البرنامج وما يفعله، لا حكم واحد. — Per scenario, named checks for everything the program sends and does, not one verdict.",
+  "when": "تصميم امتحان مقارنة / designing a comparison exam",
+  "how": "Thirteen checks: request count, request shape, instructions, tools, environment context, user messages, tool results, file effects, final answer, JSON events, exit code, stderr errors, headers. Cover hard paths too: model matrix, stdin, -C, images, env/PATH, server errors, unknown tool, long output truncation, non-zero exit. Cards HX-03, HX-05.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "owner",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "observable surface",
+   "checks",
+   "scenarios",
+   "error paths",
+   "فحوص",
+   "سيناريوهات",
+   "مسارات الخطأ"
+  ],
+  "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
+  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
+ },
+ {
+  "id": "CHECK-34",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "المصحّح يعطي 100% على نفسه أولًا",
+  "name_en": "Scorer must score 100% on itself first",
+  "status": "documented",
+  "what": "لا تثق في المصحّح قبل أن يعطي الأصل ضد نفسه 100% بعد إخفاء القيم المتغيرة. — Do not trust a scorer until the reference against itself scores 100% after masking volatile values.",
+  "when": "قبل نشر أي نسبة مطابقة / before reporting any match percentage",
+  "how": "python3 scripts/differential_exam.py self-check REF REF2 (two reference runs) — exits 1 and prints the remaining differences until ids, timestamps and paths are masked with --rule REGEX=>TOKEN, --root PATH or --skip-key KEY; then compare REF CAND [--min N]. In the test kit the reference first scored 84.5%/95.7% against itself. Card HX-04.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "owner",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "scorer validation",
+   "normalisation",
+   "self-check",
+   "differential testing",
+   "تحقق المصحّح",
+   "تطبيع",
+   "مقارنة تفاضلية"
+  ],
+  "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
+  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
+ },
+ {
+  "id": "CHECK-35",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "ملاحظات استرداد صادقة وخط أساس",
+  "name_en": "Honest recovery notes and a measured baseline",
+  "status": "documented",
+  "what": "لكل ما استُرد: الأداة التي أظهرته وما تغيّر وما تُحقق منه وما بقي، مع رقم قبل ورقم بعد على الامتحان نفسه. — For every recovery: the tool call that showed it, what changed, what was verified, what is missing, plus before/after numbers on the same exam.",
+  "when": "تقرير هندسة عكسية أو استنساخ أو تحسين / reverse-engineering, cloning or improvement reports",
+  "how": "Separate what came from the tool (e.g. REA reads) from what came from your own scripts. List what was not tested. When a tool chokes on a huge target, shrink the target (carve one section) and confirm bulk findings with tool reads. Report baseline vs upgrade (kit: 75.4% → 98.5% with REA mandatory). Cards HX-06…HX-08.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "npm:rea"
+  ],
+  "license": "owner",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "honest notes",
+   "baseline",
+   "not tested",
+   "REA",
+   "ملاحظات صادقة",
+   "خط أساس",
+   "لم يُختبر"
+  ],
+  "section": "الاختبار الخفي التفاضلي — Differential hidden exam",
+  "source": "https://github.com/softsweb/codex-clone-hidden-test-kit (no licence: methods only, no files copied); references/codex-agent-harness.md"
  }
 ]

@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (66 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (67 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -70,6 +70,7 @@
 - [`TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب](#tool-64--رندر-أفلام-الشرح-ستوريبورد-وفحص-حتمية-وmp4-حقيقي-بصوت-مُركّب--atlas-explainer-renderer-storyboard-determinism-check-and-real-mp4-with-synthesized-score)
 - [`TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude](#tool-65--الذكاء-الاصطناعي-في-الأعمال-9-وظائف-و64-خطة-عمل-بخطط-تشغيل-لclaude--ai-for-business-9-functions-64-workflows-claude-native-gated-runbooks)
 - [`TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت](#tool-66--مناهج-مستخلصة-من-الكتب-التفكير-الجانبي-والهندسة-العملية-والأدلة-البايزية-والشخصية-وفحوص-المحاسبة-ووضوح-البرومنت--book-distilled-methods-lateral-ideas-pragmatic-engineering-bayesian-evidence-personality-accounting-checks-prompt-clarity)
+- [`TOOL-67` مصحّح الامتحان الخفي التفاضلي](#tool-67--مصحّح-الامتحان-الخفي-التفاضلي--differential-hidden-exam-scorer)
 
 ## البطاقات / cards
 
@@ -4629,6 +4630,7 @@
 - `TOOL-63` أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح / Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds (proven)
 - `TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score (proven)
 - `TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity (proven)
+- `TOOL-67` مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer (proven)
 
 ### `TOOL-66` — مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity
 
@@ -4696,4 +4698,72 @@
 
 - `TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score (proven)
 - `TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude / AI for business: 9 functions, 64 workflows, Claude-native gated runbooks (proven)
+- `TOOL-67` مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer (proven)
+
+### `TOOL-67` — مصحّح الامتحان الخفي التفاضلي / Differential hidden-exam scorer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يقارن تشغيلًا مرشحًا بتشغيل مرجعي سيناريو سيناريو وملفًا ملفًا (<run>/<scenario>/<files>)، فيقارن JSON وJSONL كبيانات وباقي الملفات كنص بعد إخفاء القيم المتغيرة (المعرّفات والأختام الزمنية والمسارات المؤقتة والأزمنة والمفاتيح المستبعدة). ويختم الامتحان ببصمات SHA-256 قبل بدء العمل ويتحقق من الختم لاحقًا، ولا يثق في المصحّح حتى يعطي المرجع ضد نفسه 100%. مكتبة Python القياسية فقط، ولا يشغّل شيئًا. — Scores a candidate run against a reference run folder by folder and file by file (<run>/<scenario>/<files>), comparing JSON and JSONL as data and other files as text after masking volatile values (UUIDs, timestamps, epochs, temp names, long hex ids, durations, named root paths and dropped keys). It seals an exam with SHA-256 hashes before the work starts and verifies the seal later, and its self-check refuses to trust the scorer until reference against reference scores 100%. Stdlib only; it runs nothing.
+
+**متى:** قارن مخرجات النسخة المستنسخة بالأصل سيناريو سيناريو / compare a clone's recorded requests and outputs with the original
+
+**كيف:** seal: `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json`; verify-seal: `python3 scripts/differential_exam.py verify-seal ./exam ./exam-seal.json`; self-check: `python3 scripts/differential_exam.py self-check ./real-run-1 ./real-run-2 --root /tmp/work`; compare: `python3 scripts/differential_exam.py compare ./real-run ./clone-run --min 95 --json`. Full card: `python3 scripts/hub.py tool differential-exam`. Limits: It compares files that already exist: it does not run the reference or the candidate, does not build the mock model server, and cannot tell whether the scenarios cover enough behaviour. The default masks can hide a real difference in a long hex value or a duration; use --no-default-masks when those matter.
+
+**المعاملات:** in: Run folders laid out as <run>/<scenario>/<files> (request logs, stdout, stderr, exit_code, workdir files…); an exam folder to seal. · out: A text report or JSON (schema kosif.differential-exam.v1) on stdout; seal writes one JSON file at --out.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** differential-exam · differential testing · hidden exam · hidden test · clone · scorer · normalise · seal · sha256 · golden files · اختبار خفي · امتحان · مقارنة تفاضلية · استنساخ · ختم · مصحّح
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/differential_exam.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude / AI for business: 9 functions, 64 workflows, Claude-native gated runbooks (proven)
+- `TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity (proven)
 

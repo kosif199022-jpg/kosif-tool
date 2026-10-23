@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **66 powers follow** — ✅ 56 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **67 powers follow** — ✅ 57 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -19,7 +19,7 @@
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-35 (7)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-26 (2)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-31 (5)
-- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-62 (5)
+- **Software investigation / فحص البرامج** — TOOL-32 … TOOL-67 (6)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-60 (6)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-41 (6)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-61 (2)
@@ -404,6 +404,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-67 · مصحّح الامتحان الخفي التفاضلي · Differential hidden-exam scorer · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يقارن تشغيلًا مرشحًا بتشغيل مرجعي سيناريو سيناريو وملفًا ملفًا (<run>/<scenario>/<files>)، فيقارن JSON وJSONL كبيانات وباقي الملفات كنص بعد إخفاء القيم المتغيرة (المعرّفات والأختام الزمنية والمسارات المؤقتة والأزمنة والمفاتيح المستبعدة). ويختم الامتحان ببصمات SHA-256 قبل بدء العمل ويتحقق من الختم لاحقًا، ولا يثق في المصحّح حتى يعطي المرجع ضد نفسه 100%. مكتبة Python القياسية فقط، ولا يشغّل شيئًا. — Scores a candidate run against a reference run folder by folder and file by file (<run>/<scenario>/<files>), comparing JSON and JSONL as data and other files as text after masking volatile values (UUIDs, timestamps, epochs, temp names, long hex ids, durations, named root paths and dropped keys). It seals an exam with SHA-256 hashes before the work starts and verifies the seal later, and its self-check refuses to trust the scorer until reference against reference scores 100%. Stdlib only; it runs nothing.
+- **متى أستخدمها / when:** قارن مخرجات النسخة المستنسخة بالأصل سيناريو سيناريو / compare a clone's recorded requests and outputs with the original
+- **كيف / how:** seal: `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json`; verify-seal: `python3 scripts/differential_exam.py verify-seal ./exam ./exam-seal.json`; self-check: `python3 scripts/differential_exam.py self-check ./real-run-1 ./real-run-2 --root /tmp/work`; compare: `python3 scripts/differential_exam.py compare ./real-run ./clone-run --min 95 --json`. Full card: `python3 scripts/hub.py tool differential-exam`. Limits: It compares files that already exist: it does not run the reference or the candidate, does not build the mock model server, and cannot tell whether the scenarios cover enough behaviour. The default masks can hide a real difference in a long hex value or a duration; use --no-default-masks when those matter. **أرقام / params:** in: Run folders laid out as <run>/<scenario>/<files> (request logs, stdout, stderr, exit_code, workdir files…); an exam folder to seal. · out: A text report or JSON (schema kosif.differential-exam.v1) on stdout; seal writes one JSON file at --out.
+- **تثبيت / install:** `needs on PATH: python3`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_differential_exam.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/differential_exam.py`
+- **المصدر / source:** data/tools.json
+
 ## Maintain and build / الصيانة والبناء
 
 #### TOOL-33 · تدقيق أدلة الكتالوج · Catalog Evidence Audit · 🟢 جاهز / ready
@@ -622,7 +631,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (66)
+- الرخص / licences: — (67)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

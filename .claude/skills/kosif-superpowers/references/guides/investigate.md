@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:investigate:start -->
 
-**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -24,6 +24,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `atlas-review-summary` | Summarizes source-audit evidence and provenance for candidate Atlas methods. | `python3 scripts/atlas_review_summary.py --help` | untested |
 | `atlas-reviewed-methods-v3` | Works with reviewed Atlas method records and their provenance. | `python3 scripts/atlas_reviewed_methods_v3.py --help` | untested |
 | `atlas-transfer` | Converts reviewed Atlas records into KOSIF capability catalog data; writes files only when explicitly approved. | `python3 scripts/atlas_transfer.py --help` | untested |
+| `differential-exam` | Scores a candidate run against a reference run folder by folder and file by file (<run>/<scenario>/<files>), comparing JSON and JSONL as data and other files as text after masking volatile values (UUIDs, timestamps, epochs, temp names, long hex ids, durations, named root paths and dropped keys). It seals an exam with SHA-256 hashes before the work starts and verifies the seal later, and its self-check refuses to trust the scorer until reference against reference scores 100%. Stdlib only; it runs nothing. | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 
 <!-- hub:area:investigate:end -->
 
@@ -34,6 +35,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 3. [دراسة تطبيق ويب عام / Public web app study](#دراسة-تطبيق-ويب-عام--public-web-app-study)
 4. [REA v6.7 family router](#rea-v67-family-router)
 5. [REA + Ghidra on an authorized binary (2026-10-20)](#rea--ghidra-on-an-authorized-binary-2026-10-20)
+6. [الامتحان الخفي التفاضلي / Differential hidden exam](#الامتحان-الخفي-التفاضلي--differential-hidden-exam)
 
 ## فحص البرامج والهندسة العكسية / REA optional integration
 
@@ -82,3 +84,14 @@ For authorized reverse engineering, keep the existing `scripts/rea_bridge.py` se
 ## REA + Ghidra on an authorized binary (2026-10-20)
 
 For licensed local application investigation, use REA with the Ghidra provider only after a live `rea doctor` and a controlled proof on an authorized binary. REA 6.7.0 plus Ghidra 12.1.4 successfully analyzed an OS test executable on the owner's Windows computer (341 recovered procedures; this does not mean source recovered). Never open Crack/KeyGen/Patch samples or copy proprietary implementation.
+
+## الامتحان الخفي التفاضلي / Differential hidden exam
+
+حين تعيد بناء أداة أو تستنسخ سلوك برنامج مرخّص (مثل تجربة استنساخ `codex exec` بمساعدة REA)، لا تقل «مطابق» بلا امتحان كُتب قبل العمل ومصحّح أثبت نفسه. المنهج كاملًا في [codex-agent-harness.md](../codex-agent-harness.md#الاختبار-الخفي-التفاضلي--differential-hidden-exam) (HX-01…HX-08).
+
+    python3 $SKILL_DIR/scripts/differential_exam.py seal ./exam --out ./exam-seal.json          # before the builder starts
+    python3 $SKILL_DIR/scripts/differential_exam.py self-check ./real-1 ./real-2 --root /tmp/work  # must reach 100%
+    python3 $SKILL_DIR/scripts/differential_exam.py compare ./real-1 ./clone --min 95
+    python3 $SKILL_DIR/scripts/differential_exam.py verify-seal ./exam ./exam-seal.json
+
+كل تشغيل يُحفظ كمجلد لكل سيناريو (طلبات النموذج المسجلة، stdout، stderr، رمز الخروج، ملفات مجلد العمل). الأداة تقارن ما هو موجود فقط: تشغيل البرنامجين وخادم النموذج الوهمي عليك، داخل العزل وبإذن.
