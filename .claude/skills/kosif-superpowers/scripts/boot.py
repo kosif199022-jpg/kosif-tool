@@ -12,6 +12,7 @@ it is presence, not proof — ✅ still needs a real run.
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import json
 import platform
 import shutil
@@ -84,7 +85,8 @@ def live(as_json: bool) -> int:
     st = Counter(p.get("status") for p in pw)
     data = {
         "machine": {"os": platform.platform(), "python": platform.python_version(),
-                    "node": bool(shutil.which("node")), "ffmpeg": bool(shutil.which("ffmpeg")), "gpu": bool(shutil.which("nvidia-smi"))},
+                    "node": bool(shutil.which("node")), "ffmpeg": bool(shutil.which("ffmpeg")), "gpu": bool(shutil.which("nvidia-smi")),
+                    "yt_dlp": bool(shutil.which("yt-dlp")) or importlib.util.find_spec("yt_dlp") is not None},
         "catalog": {"powers": len(pw), "families": len(fams), "domains": len(by_dom), "status": dict(st)},
         "ready_now": len(ready),
         "ready_now_runnable": sum(1 for p in ready if p.get("status") in RUNNABLE),
@@ -97,7 +99,11 @@ def live(as_json: bool) -> int:
     if as_json:
         print(json.dumps(data, ensure_ascii=False, indent=1)); return 0
     m = data["machine"]
-    print(f"# KOSIF Superpowers — boot ({m['os']}, python {m['python']}, node {'✓' if m['node'] else '✗'}, ffmpeg {'✓' if m['ffmpeg'] else '✗'}, GPU {'✓' if m['gpu'] else '✗'})\n")
+    print(f"# KOSIF Superpowers — boot ({m['os']}, python {m['python']}, node {'✓' if m['node'] else '✗'}, ffmpeg {'✓' if m['ffmpeg'] else '✗'}, GPU {'✓' if m['gpu'] else '✗'}, yt-dlp {'✓' if m['yt_dlp'] else '✗'})\n")
+    if not m["yt_dlp"]:
+        print("yt-dlp missing (only needed to download TikTok/YouTube/other links): pip install yt-dlp, then python3 -m yt_dlp <url>;"
+              " if the network blocks it, ask the user to upload the video file instead.")
+    print("tool check: this header is the check. Do not chain `which a b c` into a compound command; it exits 1 when any one tool is missing.\n")
     print(f"catalog: {len(pw):,} powers · {len(fams)} families · {len(by_dom)} domains · ✅ {st['proven']} proven · 🟢 {st['ready']} ready · 📦 {st['install']} install · 🔑 {st['key']} key")
     print(f"ready NOW on this machine (every requirement present): {data['ready_now_runnable']:,} runnable powers (✅🟢📦🔑)"
           f" + {data['ready_now_methods']:,} methods Claude applies directly (📄👁💡)")
