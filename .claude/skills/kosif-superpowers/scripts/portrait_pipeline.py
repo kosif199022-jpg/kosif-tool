@@ -78,6 +78,21 @@ REGION_STYLE = {
 }
 
 
+# Drawing media: paper and pigment colours, stroke width/opacity multipliers, how much the stump blends
+# (and where), how far the pigment spreads, and how strongly the paper tooth breaks the stroke.
+MEDIUMS = {
+    "graphite": {"paper": (244, 238, 226), "ink": (38, 38, 44), "w": 1.0, "a": 1.0, "blend": "skin", "spread": 0.45,
+                 "tooth": 1.0, "sheen": 6.0},
+    "charcoal": {"paper": (238, 232, 220), "ink": (22, 20, 20), "w": 1.7, "a": 1.15, "blend": "all", "spread": 0.8,
+                 "tooth": 1.3, "sheen": 0.0},
+    "ink": {"paper": (248, 246, 240), "ink": (14, 14, 18), "w": 0.75, "a": 1.7, "blend": "none", "spread": 0.25,
+            "tooth": 0.3, "sheen": 0.0},
+    "sepia": {"paper": (243, 233, 212), "ink": (92, 54, 32), "w": 1.0, "a": 1.0, "blend": "skin", "spread": 0.5,
+              "tooth": 1.0, "sheen": 0.0},
+}
+MED = dict(MEDIUMS["graphite"])
+
+
 def _need():
     try:
         import numpy  # noqa: F401
@@ -153,6 +168,35 @@ def measure(img, models=None):
     return out
 
 
+def scene_regions(img, labels, k=7):
+    """Any subject without a person: GrabCut separates subject from surroundings (style), and a colour
+    clustering gives the shape boundaries strokes must not cross (the 'big shapes' of a block-in)."""
+    import cv2
+    import numpy as np
+    h, w = img.shape[:2]
+    mask = np.zeros((h, w), np.uint8)
+    m = max(4, int(min(h, w) * 0.05))
+    try:
+        bgd, fgd = np.zeros((1, 65), np.float64), np.zeros((1, 65), np.float64)
+        small = cv2.resize(img, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_AREA)
+        sm = np.zeros(small.shape[:2], np.uint8)
+        cv2.grabCut(small, sm, (m // 2, m // 2, small.shape[1] - m, small.shape[0] - m), bgd, fgd, 4,
+                    cv2.GC_INIT_WITH_RECT)
+        fg = cv2.resize(np.isin(sm, (1, 3)).astype(np.uint8), (w, h), interpolation=cv2.INTER_NEAREST)
+    except cv2.error:
+        fg = np.zeros((h, w), np.uint8)
+    style = np.where(fg > 0, 5, 0).astype(np.uint8)
+    lab = cv2.cvtColor(cv2.bilateralFilter(img, 9, 40, 7), cv2.COLOR_BGR2LAB).astype(np.float32)
+    lab[..., 0] *= 0.5
+    data = cv2.resize(lab, None, fx=0.25, fy=0.25, interpolation=cv2.INTER_AREA).reshape(-1, 3)
+    crit = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 20, 1.0)
+    _, _, centers = cv2.kmeans(data, k, None, crit, 2, cv2.KMEANS_PP_CENTERS)
+    d = ((lab.reshape(-1, 1, 3) - centers.reshape(1, -1, 3)) ** 2).sum(-1)
+    clusters = cv2.medianBlur(d.argmin(1).reshape(h, w).astype(np.uint8), 7)
+    bounds = style.astype(np.int32) * 16 + clusters
+    return style, bounds
+
+
 def proportions(lm):
     """Loomis/atelier proportional checks measured on the landmarks (pixels and ratios)."""
     if lm is None:
@@ -211,7 +255,7 @@ def value_map(img, labels):
     return np.clip(D, 0, 1), L
 
 
-def direction_field(L, labels):
+def direction_field(L, labels, flat_default=False):
     """Hatch orientation: along the isophotes where the form is coherent, a region default elsewhere."""
     import cv2
     import numpy as np
@@ -233,6 +277,8 @@ def direction_field(L, labels):
         deflt[m] = math.radians(-REGION_STYLE[name]["ang"])   # image y points down: negative = up-right
         cw[m] = REGION_STYLE[name]["coh"]
     c = np.clip(coh * 1.6, 0, 1) * cw
+    if flat_default:     # scenes: flat areas (a clear sky, a smooth wall) take the default angle instead of noise
+        c *= np.clip(tr / (np.percentile(tr, 60) + 1e-9), 0, 1)
     vx = c * np.cos(2 * iso) + (1 - c) * np.cos(2 * deflt)
     vy = c * np.sin(2 * iso) + (1 - c) * np.sin(2 * deflt)
     sk = np.isin(labels, (2, 3))
@@ -273,6 +319,7 @@ class Canvas:
         pts = np.asarray(pts, np.float32)
         if len(pts) < 2:
             return
+        width, alpha = width * MED["w"], min(alpha * MED["a"], 0.95)
         pad = int(math.ceil(max(width, spacing))) + 2
         x0 = max(int(pts[:, 0].min()) - pad, 0)
         y0 = max(int(pts[:, 1].min()) - pad, 0)
@@ -297,14 +344,15 @@ class Canvas:
             cv2.line(hi, tuple(q[i]), tuple(q[i + 1]), int(255 * p[i]), th, cv2.LINE_AA, shift=4)
         m = cv2.resize(hi, (x1 - x0, y1 - y0), interpolation=cv2.INTER_AREA).astype(np.float32) / 255.0
         tooth = self.tooth[y0:y1, x0:x1]
-        dep = alpha * m * (0.45 + 0.55 * tooth ** (1.4 - 0.8 * alpha))
+        k = 0.55 * min(MED["tooth"], 1.0)
+        dep = alpha * m * ((1 - k) + k * tooth ** ((1.4 - 0.8 * alpha) * max(MED["tooth"], 1.0)))
         roi = self.ink[y0:y1, x0:x1]
         roi[:] = 1 - (1 - roi) * (1 - dep)
         if spacing:
             lo = np.zeros((y1 - y0, x1 - x0), np.uint8)
             ql = ((pts - [x0, y0]) * 16).astype(np.int32)
             cv2.polylines(lo, [ql], False, 255, max(1, int(round(spacing))), cv2.LINE_AA, shift=4)
-            v = min(0.5 * alpha * width / spacing, 0.95)    # 0.5: measured take-up (tooth x taper x pressure width)
+            v = min(0.42 * alpha * width / spacing, 0.95)   # 0.42: measured take-up (tooth x taper x pressure width)
             croi = self.cov[y0:y1, x0:x1]
             croi[:] = 1 - (1 - croi) * (1 - v * lo.astype(np.float32) / 255.0)
         if record:
@@ -324,7 +372,9 @@ def trace(x0, y0, field, off, length, step, labels, tone, tol, cap, cov, rng, hw
     t0 = tone[int(y0), int(x0)]
     wob = math.radians(rng.normal(0, 3.0))
     a0 = field[int(y0), int(x0)] + off
-    if straight:
+    if straight == "free":
+        a0 += wob * 0.6
+    elif straight:
         for snap in (0.0, math.pi / 2, math.pi, -math.pi / 2):
             if abs((a0 - snap + math.pi) % (2 * math.pi) - math.pi) < math.radians(22):
                 a0 = snap
@@ -359,8 +409,9 @@ def trace(x0, y0, field, off, length, step, labels, tone, tol, cap, cov, rng, hw
     return halves[1][::-1] + [(x0, y0)] + halves[0]
 
 
-def tonal_pass(cv, P, D, L, labels, field, scale, rng, stats, region_mask=None, cap_scale=1.0):
+def tonal_pass(cv, P, D, L, labels, field, scale, rng, stats, region_mask=None, cap_scale=1.0, bounds=None):
     import numpy as np
+    bounds = labels if bounds is None else bounds
     h, w = D.shape
     cap = np.minimum(D, P["cap"] * cap_scale)
     sp_min = P["sp"] * scale * 0.72
@@ -390,7 +441,7 @@ def tonal_pass(cv, P, D, L, labels, field, scale, rng, stats, region_mask=None, 
             ln = rng.uniform(lo, hi) * st["ln"] * scale
             sp = P["sp"] * st["sp"] * scale
             o = off * st.get("off", 1.0)
-            pts = trace(x, y, field, o, ln, 1.6 * scale, labels, L, P["tol"] * st.get("tol", 1.0), cap, cv.cov, rng,
+            pts = trace(x, y, field, o, ln, 1.6 * scale, bounds, L, P["tol"] * st.get("tol", 1.0), cap, cv.cov, rng,
                         (h, w), straight=st.get("straight", False))
             if len(pts) < 3:
                 continue
@@ -476,10 +527,13 @@ def contour_lines(cv, img, L, labels, scale, rng, stats):
 
 
 def stump_blend(cv, labels, amount=0.55, sigma=1.6):
-    """Blending stump on skin: soften the hatching into continuous tone, keeping the edges of features."""
+    """Blending stump on skin (charcoal: everywhere; ink: never), keeping the edges of features."""
     import cv2
     import numpy as np
-    skin = np.isin(labels, (2, 3)).astype(np.float32)
+    if MED["blend"] == "none":
+        return
+    skin = (np.ones(labels.shape, np.float32) * 0.8 if MED["blend"] == "all"
+            else np.isin(labels, (2, 3)).astype(np.float32))
     skin = cv2.GaussianBlur(cv2.erode(skin, np.ones((3, 3), np.uint8)), (0, 0), 3) * amount
     soft = cv2.GaussianBlur(cv.ink, (0, 0), sigma)
     cv.ink[:] = cv.ink * (1 - skin) + soft * skin
@@ -537,31 +591,34 @@ def feature_accents(cv, lm, L, labels, scale, rng, stats):
 
 # ------------------------------------------------------------------ outputs
 
-def compose(cv, paper_rgb=(244, 238, 226), graphite_rgb=(38, 38, 44)):
+def compose(cv, paper_rgb=None, graphite_rgb=None):
     import cv2
     import numpy as np
-    ink = cv2.GaussianBlur(np.clip(cv.ink, 0, 1), (0, 0), 0.45)[..., None]   # graphite spreads slightly into the fibre
+    paper_rgb, graphite_rgb = paper_rgb or MED["paper"], graphite_rgb or MED["ink"]
+    ink = cv2.GaussianBlur(np.clip(cv.ink, 0, 1), (0, 0), MED["spread"])[..., None]   # pigment spreads into the fibre
     paper = np.array(paper_rgb, np.float32)
     shade = (0.965 + 0.035 * cv.tooth)[..., None]
     base = paper * shade
     gr = np.array(graphite_rgb, np.float32)
     out = base * (1 - ink) + gr * ink
-    sheen = (ink > 0.75) * 6.0
+    sheen = (ink > 0.75) * MED["sheen"]
     return np.clip(out + sheen, 0, 255).astype(np.uint8)
 
 
 def write_svg(path, cv, size, figure_parts, title):
     """Editable layered SVG: one <g> per stage, every stroke a path. figure parts carry rule-27 data."""
     w, h = size
+    paper = "#%02x%02x%02x" % MED["paper"]
+    ink = "#%02x%02x%02x" % MED["ink"]
     out = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">',
-           f"<title>{title}</title>", f'<rect width="{w}" height="{h}" fill="#f4eee2"/>']
+           f"<title>{title}</title>", f'<rect width="{w}" height="{h}" fill="{paper}"/>']
     layers = {}
     for layer, width, alpha, pts in cv.strokes:
         layers.setdefault(layer, []).append((width, alpha, pts))
     for layer in ("construction", "lay-in", "cross-hatch", "deep-shadow", "accents", "edges"):
         if layer not in layers:
             continue
-        out.append(f'<g id="{layer}" data-stage="{layer}" fill="none" stroke="#26262c" stroke-linecap="round">')
+        out.append(f'<g id="{layer}" data-stage="{layer}" fill="none" stroke="{ink}" stroke-linecap="round">')
         bins = {}
         for width, alpha, pts in layers[layer]:      # one path per (width, opacity) bin keeps the file small
             k = max(1, len(pts) // 5)
@@ -612,58 +669,144 @@ def figure_parts(labels, lm):
     return parts
 
 
-def draw(args):
+def has_person(labels):
+    return float((labels > 0).mean()) > 0.02
+
+
+def draw(args, ref=None, source=None):
+    """Draw a photo, or any reference image (an imagined scene rendered by code), from strokes only."""
     _need()
     import cv2
     import numpy as np
+    global MED
     t0 = time.time()
+    MED = dict(MEDIUMS[getattr(args, "medium", "graphite")])
     rng = np.random.default_rng(args.seed)
-    crop = [int(v) for v in args.crop.split(",")] if args.crop else None
-    ref, box = load_reference(args.photo, crop)
+    crop = [int(v) for v in args.crop.split(",")] if getattr(args, "crop", None) else None
+    if ref is None:
+        ref, box = load_reference(args.photo, crop)
+    else:
+        box = [0, 0, ref.shape[1], ref.shape[0]]
     if args.scale != 1.0:
         ref = cv2.resize(ref, None, fx=args.scale, fy=args.scale, interpolation=cv2.INTER_CUBIC)
     h, w = ref.shape[:2]
     meas = measure(ref, args.models)
     labels, lm = meas["labels"], meas["landmarks"]
-    D, L = value_map(ref, labels)
-    field = direction_field(L, labels)
-    cv = Canvas(h, w, paper_tooth(h, w, rng), rng)
-    stats = {}
-    sc = args.scale
-    construction(cv, lm, labels, sc, stats)
-    for P in PASSES[:2]:
-        tonal_pass(cv, P, D, L, labels, field, sc, rng, stats)
-    stump_blend(cv, labels, amount=args.blend, sigma=2.2)
-    skin = np.isin(labels, (2, 3))
-    fine = dict(PASSES[1], name="lay-in", sp=1.8, ln=(10, 30), a=0.30, w=0.9, cap=0.5)
-    cv.cov[skin] *= 0.6                                  # blending lightened the record: let fine hatching rebuild
-    tonal_pass(cv, fine, D, L, labels, field, sc, rng, stats, region_mask=skin)
-    for P in PASSES[2:]:
-        tonal_pass(cv, P, D, L, labels, field, sc, rng, stats)
-    stump_blend(cv, labels, amount=args.blend * 0.5, sigma=1.1)   # second, lighter stump pass knocks back specks
-    contour_lines(cv, ref, L, labels, sc, rng, stats)
-    feature_accents(cv, lm, L, labels, sc, rng, stats)
-    lift_highlights(cv, D, L, lm, labels, sc, rng)
+    subject = getattr(args, "subject", "auto")
+    person = subject == "portrait" or (subject == "auto" and has_person(labels))
+    saved = {k: dict(v) for k, v in REGION_STYLE.items()}
+    bounds = None
+    if not person:
+        labels, bounds = scene_regions(ref, labels)
+        lm = None
+        # a scene is all subject: keep its full value range; strokes follow the form unless told otherwise
+        # hatching in short straight strokes at the form's angle reads as a hand; long flowing curves read as a filter
+        REGION_STYLE["background"].update(val=0.92, floor=0.0, straight="free", off=1.0, ang=25.0, coh=0.85, ln=0.8)
+        REGION_STYLE["other"].update(val=1.0, coh=0.85, straight="free", ln=0.7)
+    if getattr(args, "background", "auto") in ("straight", "flow"):
+        REGION_STYLE["background"]["straight"] = args.background == "straight"
+    try:
+        D, L = value_map(ref, labels)
+        if not person:   # a designed maquette is often low in contrast: spread it over the full pencil range
+            lo, hi = np.percentile(D, [1, 99.5])
+            D = (np.clip((D - lo) / max(hi - lo, 1e-3), 0, 1) ** 1.25) * 0.95   # key the lights up, keep the darks
+        field = direction_field(L, labels, flat_default=not person)
+        cv = Canvas(h, w, paper_tooth(h, w, rng), rng)
+        stats = {}
+        sc = args.scale
+        construction(cv, lm, labels, sc, stats)
+        for P in PASSES[:2]:
+            tonal_pass(cv, P, D, L, labels, field, sc, rng, stats, bounds=bounds)
+        stump_blend(cv, labels, amount=args.blend, sigma=2.2)
+        skin = np.isin(labels, (2, 3))
+        if skin.any():
+            fine = dict(PASSES[1], name="lay-in", sp=1.8, ln=(10, 30), a=0.30, w=0.9, cap=0.5)
+            cv.cov[skin] *= 0.6                          # blending lightened the record: let fine hatching rebuild
+            tonal_pass(cv, fine, D, L, labels, field, sc, rng, stats, region_mask=skin, bounds=bounds)
+        for P in PASSES[2:]:
+            tonal_pass(cv, P, D, L, labels, field, sc, rng, stats, bounds=bounds)
+        stump_blend(cv, labels, amount=args.blend * 0.5, sigma=1.1)   # second, lighter stump pass knocks back specks
+        contour_lines(cv, ref, L, labels, sc, rng, stats)
+        feature_accents(cv, lm, L, labels, sc, rng, stats)
+        lift_highlights(cv, D, L, lm, labels, sc, rng)
+    finally:
+        REGION_STYLE.clear()
+        REGION_STYLE.update(saved)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     rgb = compose(cv)
     name = args.name
     cv2.imwrite(str(out / f"{name}.png"), cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR))
-    parts = figure_parts(labels, lm)
-    write_svg(out / f"{name}.svg", cv, (w, h), parts, f"{name}: graphite portrait from strokes")
+    parts = figure_parts(labels, lm) if person else []
+    write_svg(out / f"{name}.svg", cv, (w, h), parts, f"{name}: {getattr(args, 'medium', 'graphite')} drawing from strokes")
     # measurement artefacts for review (never shipped as the drawing)
     np.save(out / "_target_darkness.npy", D.astype(np.float16))
     np.save(out / "_labels.npy", labels)
-    rec = {"schema": SCHEMA, "photo_sha256": hashlib.sha256(Path(args.photo).read_bytes()).hexdigest(),
+    src_path = Path(source or args.photo)
+    rec = {"schema": SCHEMA, "source": str(src_path.name), "source_kind": "imagined" if source else "photo",
+           "source_sha256": hashlib.sha256(src_path.read_bytes()).hexdigest(),
+           "subject": "portrait" if person else "scene", "medium": getattr(args, "medium", "graphite"),
            "crop_box": box, "scale": sc, "size": [w, h], "seed": args.seed, "engines": meas["engine"],
            "canvas_source": "strokes_only", "photo_pixels_in_output": False,
            "strokes": len(cv.strokes), "strokes_by_stage": stats, "proportions": proportions(lm),
-           "methods": ["PM-01", "PM-02", "PM-03", "PM-04", "PM-05", "PM-06", "PM-07", "PM-08", "PM-09", "PM-10",
-                       "PM-11", "PM-12", "PM-13", "PM-14"],
+           "methods": (["PM-01", "PM-02", "PM-03", "PM-04", "PM-05", "PM-06", "PM-07", "PM-08", "PM-09", "PM-10",
+                        "PM-11", "PM-12", "PM-13", "PM-14"] if person else
+                       ["PM-03", "PM-04", "PM-05", "PM-07", "PM-08", "PM-10", "PM-12", "PM-14", "PM-17", "PM-18"]),
            "seconds": round(time.time() - t0, 1), "png": str(out / f"{name}.png"), "svg": str(out / f"{name}.svg"),
            "honesty": "Algorithmic rendering from measured construction and a value map; not a human hand."}
     (out / "receipt.json").write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps({k: rec[k] for k in ("strokes", "strokes_by_stage", "seconds", "png", "svg")}, ensure_ascii=False))
+    print(json.dumps({k: rec[k] for k in ("subject", "medium", "strokes", "seconds", "png", "svg")}, ensure_ascii=False))
+
+
+def rasterize_svg(svg, png, width=None, height=None):
+    """Render a Claude-authored SVG scene to PNG with headless Chromium (or rsvg-convert when present)."""
+    import re
+    import shutil
+    import subprocess
+    import tempfile
+    text = Path(svg).read_text(encoding="utf-8")
+    m = re.search(r'viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)', text)
+    w = int(width or (float(m.group(1)) if m else 1200))
+    h = int(height or (float(m.group(2)) if m else 1600))
+    if shutil.which("rsvg-convert"):
+        subprocess.run(["rsvg-convert", "-w", str(w), "-h", str(h), "-o", str(png), str(svg)], check=True)
+        return
+    candidates = [shutil.which(n) for n in ("chromium", "chromium-browser", "google-chrome")]
+    candidates += [str(p) for p in Path("/opt/pw-browsers").glob("chromium-*/chrome-linux/chrome")]
+    exe = next((c for c in candidates if c and Path(c).exists()), None)
+    if not exe:
+        raise SystemExit("no SVG rasterizer: install rsvg-convert (librsvg2-bin) or Chromium, or pass --png")
+    with tempfile.TemporaryDirectory() as tmp:
+        page = Path(tmp) / "scene.html"
+        page.write_text(f'<html><body style="margin:0;background:#fff">'
+                        f'<img src="file://{Path(svg).resolve()}" width="{w}" height="{h}"></body></html>')
+        subprocess.run([exe, "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars",
+                        "--allow-file-access-from-files", f"--window-size={w},{h + 240}",
+                        f"--screenshot={Path(png).resolve()}", f"file://{page}"],
+                       check=True, capture_output=True, timeout=120)
+    import cv2
+    shot = cv2.imread(str(png), cv2.IMREAD_COLOR)        # the window is taller than the scene: crop it exactly
+    cv2.imwrite(str(png), shot[:h, :w])
+
+
+def imagine(args):
+    """A scene from imagination: Claude writes it as an SVG (shapes + gradients for light and shadow), it is
+    rendered to a tonal reference, and that reference is drawn stroke by stroke like a photo."""
+    _need()
+    import cv2
+    src = Path(args.svg or args.png)
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    if args.svg:
+        ref_png = out / "_reference.png"
+        rasterize_svg(args.svg, ref_png, args.width, args.height)
+    else:
+        ref_png = src
+    ref = cv2.imread(str(ref_png), cv2.IMREAD_COLOR)
+    if ref is None:
+        raise SystemExit(f"cannot read reference {ref_png}")
+    args.photo = str(src)
+    return draw(args, ref=ref, source=str(src))
 
 
 def review(args):
@@ -675,12 +818,16 @@ def review(args):
     rec = json.loads((d / "receipt.json").read_text(encoding="utf-8"))
     sys.path.insert(0, str(Path(__file__).parent))
     import drawing_methods as dm
-    gate = dm.review_svg(rec["svg"], tolerance=3.0)
-    gate["pass"] = gate.get("status") == "PASS"
+    if rec.get("subject", "portrait") == "portrait":
+        gate = dm.review_svg(rec["svg"], tolerance=3.0)
+        gate["pass"] = gate.get("status") == "PASS"
+    else:   # no body to connect in a scene; the visual review still applies
+        gate = {"status": "N/A", "pass": True, "scope": "scene without a figure: rule-27 body gate not applicable"}
     img = cv2.imread(rec["png"], cv2.IMREAD_GRAYSCALE).astype(np.float32) / 255.0
     D = np.load(d / "_target_darkness.npy").astype(np.float32)
     labels = np.load(d / "_labels.npy")
-    paper = 238 / 255.0
+    pr = MEDIUMS.get(rec.get("medium", "graphite"), MEDIUMS["graphite"])["paper"]
+    paper = (0.299 * pr[0] + 0.587 * pr[1] + 0.114 * pr[2]) * 0.975 / 255.0
     drawn = np.clip(1 - img / paper, 0, 1)
     checks = []
 
@@ -705,8 +852,9 @@ def review(args):
     add("value-range", hi - lo > 0.6, {"p2": round(float(lo), 3), "p98": round(float(hi), 3)},
         "a full value range from paper white to deep graphite")
     lap = cv2.Laplacian(img, cv2.CV_32F)
-    tex = float(np.abs(lap)[labels == 4].mean()) if (labels == 4).any() else 0.0
-    add("stroke-texture", tex > 0.01, {"clothes_laplacian": round(tex, 4)},
+    dark = (labels == 4) if (labels == 4).any() else (cv2.GaussianBlur(D, (0, 0), 4) > 0.45)
+    tex = float(np.abs(lap)[dark].mean()) if dark.any() else 0.0
+    add("stroke-texture", tex > 0.01, {"dark_mass_laplacian": round(tex, 4)},
         "visible pencil texture (not flat fill) on large dark masses")
     add("strokes-only", rec.get("canvas_source") == "strokes_only", rec.get("canvas_source"),
         "receipt: canvas built from paper + strokes only")
@@ -735,7 +883,7 @@ def cards(args):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    d = sub.add_parser("draw", help="photo reference -> stroke-built graphite portrait (PNG + layered SVG)")
+    d = sub.add_parser("draw", help="photo (portrait or any subject) -> stroke-built drawing (PNG + layered SVG)")
     d.add_argument("--photo", required=True)
     d.add_argument("--out", required=True)
     d.add_argument("--name", default="portrait")
@@ -744,12 +892,30 @@ def main(argv=None):
     d.add_argument("--scale", type=float, default=1.0)
     d.add_argument("--blend", type=float, default=0.55, help="stump blending on skin, 0..1")
     d.add_argument("--seed", type=int, default=7)
+    i = sub.add_parser("imagine", help="draw a scene from imagination: a Claude-authored SVG (or any rendered PNG)")
+    src = i.add_mutually_exclusive_group(required=True)
+    src.add_argument("--svg", help="scene written as SVG; gradients carry the light and shadow families")
+    src.add_argument("--png", help="any rendered reference (3D render, unified_draw output, ...)")
+    i.add_argument("--out", required=True)
+    i.add_argument("--name", default="drawing")
+    i.add_argument("--width", type=int)
+    i.add_argument("--height", type=int)
+    i.add_argument("--scale", type=float, default=1.0)
+    i.add_argument("--blend", type=float, default=0.55)
+    i.add_argument("--seed", type=int, default=7)
+    for q in (d, i):
+        q.add_argument("--medium", choices=sorted(MEDIUMS), default="graphite")
+        q.add_argument("--subject", choices=("auto", "portrait", "scene"), default="auto",
+                       help="auto: portrait when a person is found, otherwise scene")
+        q.add_argument("--background", choices=("auto", "straight", "flow"), default="auto",
+                       help="straight = level/plumb strokes for architecture; flow = follow the form")
+    i.set_defaults(models=None, crop=None)
     r = sub.add_parser("review", help="rule-27 gate + value/edge fidelity metrics on a drawn portrait")
     r.add_argument("--dir", required=True)
     c = sub.add_parser("cards", help="list or show the portrait method cards")
     c.add_argument("--id")
     a = ap.parse_args(argv)
-    return {"draw": draw, "review": review, "cards": cards}[a.cmd](a) or 0
+    return {"draw": draw, "imagine": imagine, "review": review, "cards": cards}[a.cmd](a) or 0
 
 
 if __name__ == "__main__":

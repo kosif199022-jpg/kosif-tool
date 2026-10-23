@@ -64,6 +64,28 @@ class PortraitDrawTest(unittest.TestCase):
             checks = {c["id"]: c for c in json.loads((tmp / "o" / "review.json").read_text())["checks"]}
             self.assertTrue(checks["value-masses"]["pass"], checks["value-masses"])
 
+    def test_mediums_and_imagined_png(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            h, w = 200, 160
+            img = np.full((h, w, 3), 235, np.uint8)
+            cv2.rectangle(img, (20, 120), (140, 190), (70, 70, 70), -1)        # a dark block (near plane)
+            cv2.circle(img, (80, 70), 35, (150, 150, 150), -1)
+            cv2.imwrite(str(tmp / "maquette.png"), img)
+            means = {}
+            for medium in ("ink", "charcoal"):
+                out = tmp / medium
+                subprocess.run([sys.executable, str(SCRIPT), "imagine", "--png", str(tmp / "maquette.png"),
+                                "--out", str(out), "--medium", medium, "--seed", "2"], check=True, capture_output=True)
+                rec = json.loads((out / "receipt.json").read_text())
+                self.assertEqual((rec["source_kind"], rec["subject"], rec["medium"]), ("imagined", "scene", medium))
+                g = cv2.imread(str(out / "drawing.png"), cv2.IMREAD_GRAYSCALE).astype(float)
+                self.assertLess(g[140:180, 40:120].mean(), g[5:30, 5:30].mean() - 40)
+                means[medium] = g.mean()
+                rv = subprocess.run([sys.executable, str(SCRIPT), "review", "--dir", str(out)], capture_output=True)
+                self.assertEqual(rv.returncode, 0, rv.stdout)
+            self.assertNotEqual(round(means["ink"]), round(means["charcoal"]))
+
 
 if __name__ == "__main__":
     unittest.main()

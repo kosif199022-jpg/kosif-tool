@@ -52,7 +52,7 @@
 | `native-3d` | رندر ثلاثي الأبعاد مستقل عن Blender | `python3 scripts/native_3d.py doctor` | tested-here |
 | `native-glb` | مُصدِّر GLB مستقل عن Blender | `python3 scripts/native_glb.py --scene templates/blender-demo.json --output ./out/scene.glb` | tested-here |
 | `perspective-color-lab` | منظور هندسي ومقاييس التباين اللوني | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
-| `portrait-pipeline` | بورتريه واقعي من صورة مرسوم خطًا بخط بالجرافيت | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>` | tested-here |
+| `portrait-pipeline` | رسم يدوي المظهر بالرصاص أو الفحم أو الحبر لأي صورة أو مشهد متخيَّل، خطًا بخط | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>` | tested-here |
 | `smart-draw` | الرسم الذكي ومساعد الأشكال | `python3 scripts/smart_draw.py doctor` | tested-here |
 | `style-atlas-bridge` | أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح | `python3 scripts/style_atlas_bridge.py families` | tested-here |
 | `unified-draw` | الرسم الموحد: خطوط وأشكال وطبقات وتصدير | `python3 scripts/unified_draw.py doctor` | tested-here |

@@ -1,4 +1,4 @@
-# رسم البورتريه الواقعي — Realistic portrait drawing
+# رسم البورتريه وأي صورة أو مشهد متخيَّل — Portrait, any photo and imagined scenes
 
 أداة `scripts/portrait_pipeline.py` تحوّل صورة شخص إلى بورتريه بالقلم الرصاص مبني خطًا بخط، بمناهج كتب البورتريه الكلاسيكية. البطاقات في `data/portrait_methods.json` (16 بطاقة، كل بطاقة تذكر المرحلة التي تنفذها في الكود).
 
@@ -9,8 +9,9 @@
 1. [What it is and what it is not](#what-it-is-and-what-it-is-not)
 2. [Stages and the cards behind them](#stages-and-the-cards-behind-them)
 3. [Running it](#running-it)
-4. [The iteration loop (art-director rules)](#the-iteration-loop-art-director-rules)
-5. [Sources](#sources)
+4. [Any photo, imagined scenes and media](#any-photo-imagined-scenes-and-media)
+5. [The iteration loop (art-director rules)](#the-iteration-loop-art-director-rules)
+6. [Sources](#sources)
 
 ## What it is and what it is not
 
@@ -49,6 +50,18 @@ python3 scripts/portrait_pipeline.py cards [--id PM-02]
 On Linux without a display, MediaPipe needs `libegl1` (`apt-get install libegl1`). A 1320×2345 reference takes about three minutes at scale 1.0 on one CPU core (≈ 320,000 strokes).
 
 Outputs: `portrait.png`, `portrait.svg` (one `<g>` per stage, strokes binned by width and opacity, plus a hidden `data-figure` group for the rule-27 gate), `receipt.json`, `review.json`.
+
+## Any photo, imagined scenes and media
+
+- **Any photo.** When no person is found (`--subject auto`), the drawing switches to scene mode: GrabCut separates subject from surroundings, a colour clustering gives the big shapes that strokes may not cross, the value range is spread over the full pencil range with the lights keyed up, and hatching is done in short straight strokes at the form's angle (long flowing curves read as a filter, short straight strokes read as a hand). `--background straight` is for architecture; `flow` follows the form.
+- **From imagination (PM-17, PM-18).** Draw what does not exist the way Gurney does: build a maquette first. Claude writes the scene as an SVG with one light direction, gradients for the light and shadow families (light side, core shadow, reflected light), cast shadows away from the light, and far planes lighter and lower in contrast than near ones. `imagine --svg scene.svg --out out/scene` renders it (rsvg-convert or headless Chromium), keeps `_reference.png` as the receipt and draws it from strokes. Any renderer can be the maquette: `imagine --png` takes output from `unified_draw.py`, `drawing_methods.py draw ...` (construction SVGs become pencil or ink sketches), Blender or the native 3D tools. A flat vector maquette gives an illustration-like drawing; richer gradients and a real 3D render give a more realistic one.
+- **Media.** `--medium graphite` (default), `charcoal` (wider, darker, blended everywhere, heavier tooth), `ink` (fine black hatching, no blending, little tooth) and `sepia` (red-brown on cream).
+
+```bash
+python3 scripts/portrait_pipeline.py draw --photo landscape.jpg --out out/landscape --medium ink
+python3 scripts/portrait_pipeline.py imagine --svg scene.svg --out out/scene --medium charcoal
+python3 scripts/drawing_methods.py draw head --out out/head.svg && python3 scripts/portrait_pipeline.py imagine --svg out/head.svg --out out/head --medium ink
+```
 
 ## The iteration loop (art-director rules)
 
