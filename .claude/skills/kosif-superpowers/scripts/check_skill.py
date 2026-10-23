@@ -21,9 +21,11 @@ Checks (errors fail the run, warnings do not unless --strict):
   protocol      USIP structure (PROTOCOL.md core + references/protocol/): core under 520 lines and 72,000 characters, unique headings,
                 contents lists in heading order, every appendix linked from the trigger table, relative links and
                 #anchors resolve, every scripts/ evals/ tools/ tests/ file named exists, the CHANGELOG maps every
-                old section ID, one "USIP vX.Y" across the core, its paste block, SESSION_PROMPT, CLAUDE.md, SKILL.md
-                and both engines, and the canonical plan-letter definitions (evals/test_protocol_structure.py adds
+                old section ID, one "USIP vX.Y" across the core, its paste block, SESSION_PROMPT, CLAUDE.md, SKILL.md,
+                USIP_PORTABLE.md and both engines, and the canonical plan-letter definitions (evals/test_protocol_structure.py adds
                 the fusionforge.py command and required-flag check and the v5.2 text-retention check)
+  portable      (run inside protocol) USIP_PORTABLE.md stays in step with the core: its contents list matches its headings, it quotes the
+                canonical plan letters, and it names every appendix added after the v5.3 split (A12 onward)
 
 Counts marker — put this HTML comment anywhere in SKILL.md (it is invisible when rendered) and
 keep the human-readable numbers next to it in sync; print a fresh one with --print-counts:
@@ -498,7 +500,7 @@ def check_tools(r: Report):
     r.info("tools", f"{len(reg.get('tools', []))} registered tools")
 
 
-DRIFT_FILES = ("SKILL.md", "references/INDEX.md", "references/capability-map.md")
+DRIFT_FILES = ("SKILL.md", "USIP_PORTABLE.md", "references/INDEX.md", "references/capability-map.md")
 DRIFT_REPO_FILES = ("README.md", "CLAUDE.md", "AGENTS.md", "CAPABILITIES.md", "llms.txt")
 DRIFT_RE = re.compile(r"(\d,\d{3})(\+?)\s*(?:powers|قدرة|capabilities)")
 SCOPE_RE = re.compile(r"`(repo|sibling)`[^(`]{0,80}\((\d[\d,]*)")
@@ -534,6 +536,10 @@ def check_drift(r: Report):
 # ------------------------------------------------------------------ protocol structure (USIP core + appendices)
 
 PROTO_CORE = SK / "PROTOCOL.md"
+PORTABLE = SK / "USIP_PORTABLE.md"
+# A1–A11 hold the old "Phase -1" text that USIP_PORTABLE.md already summarises by meaning; every later
+# appendix is a new capability the portable file must name, or it silently falls behind the core.
+PORTABLE_FOLDED = tuple(f"A{i}" for i in range(1, 12))
 PROTO_DIR = SK / "references" / "protocol"
 PROTO_MAX_LINES = 520
 PROTO_MAX_CHARS = 72_000   # the core is read in full on every L1+ request: lines alone do not bound it
@@ -691,7 +697,7 @@ def protocol_problems() -> list:
     paste = md_section(core, PROTO_PASTE)
     if ver and f"USIP v{ver}" not in paste:
         probs.append(("error", f"the paste block in PROTOCOL.md does not say USIP v{ver}"))
-    entries = [SK / "SESSION_PROMPT.md", SK / "SKILL.md", REPO / "CLAUDE.md"]
+    entries = [SK / "SESSION_PROMPT.md", SK / "SKILL.md", REPO / "CLAUDE.md", PORTABLE]
     for f in entries:
         if not f.is_file():
             continue
@@ -722,7 +728,30 @@ def protocol_problems() -> list:
         for s in PLAN_DRIFT:
             if s in text:
                 probs.append(("error", f"{f.name} still uses the retired plan wording {s!r}"))
+    probs.extend(portable_problems())
     probs.append(("info", f"core {n} lines, {len(core):,} characters · {len(protocol_files()) - 1} file(s) under references/protocol · USIP v{ver or '?'} · {len(mp)} mapped old section(s)"))
+    return probs
+
+
+def portable_problems() -> list:
+    """[(level, message)] for USIP_PORTABLE.md: the one-file copy people paste into other chats."""
+    if not PORTABLE.is_file():
+        return []
+    text = PORTABLE.read_text(encoding="utf-8")
+    probs = []
+    msg = toc_problem(text)
+    if msg:
+        probs.append(("error", f"USIP_PORTABLE.md: {msg}"))
+    plain = text.replace("**", "")   # bold emphasis inside a definition does not change its wording
+    for s in PLAN_AR:
+        if s not in plain:
+            probs.append(("error", f"USIP_PORTABLE.md lacks the canonical plan text {s!r}"))
+    for f in protocol_files()[1:]:
+        if f.name == "CHANGELOG.md" or f.name.split("-")[0] in PORTABLE_FOLDED:
+            continue
+        if f.stem not in text:
+            probs.append(("error", f"USIP_PORTABLE.md does not name references/protocol/{f.name}; summarise it there "
+                                   "(the portable file must work without the repository)"))
     return probs
 
 
