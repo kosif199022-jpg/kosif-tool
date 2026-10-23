@@ -11701,7 +11701,7 @@
     }
    ],
    "inputs": "A photo of anything, or an imagined scene as an SVG maquette / rendered PNG; optional MediaPipe models for portraits",
-   "outputs": "<name>.png, layered editable <name>.svg, receipt.json, review.json",
+   "outputs": "<name>.png, <name>.svg (layered strokes for graphite media and coloured pencil; for oil and watercolour a wrapper around the PNG plus the rule-27 figure group), receipt.json, review.json",
    "requires": {
     "python": [
      "numpy",
