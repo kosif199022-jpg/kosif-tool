@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (23)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (24)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -27,6 +27,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `superpowers-unified` | Picks an ordered subset of the 15 vendored obra/superpowers v7 process skills (brainstorming, debugging, TDD, verification and others) for a task, checks the vendored sources, and can install KOSIF plus those skills into ~/.claude/skills with backups. | `python3 scripts/superpowers_unified.py doctor` | tested-here |
 | `repo-kosif` (repo root) | Searches, lists and shows records of the motion-graphics style atlas (289 records in catalog/styles.json). It also fills a ready-to-paste Claude Code request from templates/claude_request.<lang>.txt, scaffolds a project folder (STYLE.md, PLAN.md, TEST_REPORT.md, words.json, REQUEST.md and an optional starter copy), prints catalog statistics and runs the repository validator. | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
 | `atlas-capability-miner` | Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof. | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
+| `atlas-5000` | Maps the 5,116-skill safe core of KOSIF Atlas (READ_ONLY_OK, permissive license, no risk flags) against the KOSIF catalog: per-theme coverage, the themes with the most undistilled skills and their next candidates, and a bilingual search that shows which power already covers each Atlas skill. | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-task-method-router` | Finds source-backed Atlas method candidates for a task without executing their code. | `python3 scripts/atlas_task_method_router.py --help` | untested |
 | `smart-capabilities` | Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion. | `python3 scripts/smart_capabilities.py groups` | tested-here |
 | `skill-intelligence` | Before any substantial request: scans 100% of the catalog records with a SHA-256 coverage receipt that fails closed on unreadable or unclassified records, checks that every derived index is fresh, drafts a request analysis, ranks groups, fused superpowers, powers and runnable tools, scores candidates (fit 35, integration 20, feasibility 15, evidence 10, cost 10, creativity 10) and drafts plans A/B/C with a recommendation and the approval question. | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
@@ -64,11 +65,12 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 1. [Claude Code permission-aware local-first bootstrap](#claude-code-permission-aware-local-first-bootstrap)
 2. [Original bilingual task-to-capability finder](#original-bilingual-task-to-capability-finder)
 3. [Capability Atlas — start here for every substantial task](#capability-atlas--start-here-for-every-substantial-task)
-4. [اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing](#اختر-قدرة-حقيقية-واعرف-صلاحياتها--capability-runtime-routing)
-5. [مراجع أخرى / other references](#مراجع-أخرى--other-references)
-6. [العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph](#العقل-الفائق-والمستلزمات-والخريطة--cognition-requirements-graph)
-7. [KOSIF Innovation lab — invention candidates](#kosif-innovation-lab--invention-candidates)
-8. [KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)](#kosif-superpowers-ultimate--integrated-obrasuperpowers-v7-process-layer-2026-10-19)
+4. [أطلس الـ5000 مهارة — what Claude knows from the Atlas and what it could still learn](#أطلس-الـ5000-مهارة--what-claude-knows-from-the-atlas-and-what-it-could-still-learn)
+5. [اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing](#اختر-قدرة-حقيقية-واعرف-صلاحياتها--capability-runtime-routing)
+6. [مراجع أخرى / other references](#مراجع-أخرى--other-references)
+7. [العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph](#العقل-الفائق-والمستلزمات-والخريطة--cognition-requirements-graph)
+8. [KOSIF Innovation lab — invention candidates](#kosif-innovation-lab--invention-candidates)
+9. [KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)](#kosif-superpowers-ultimate--integrated-obrasuperpowers-v7-process-layer-2026-10-19)
 
 ## The front door: hub.py
 
@@ -101,6 +103,10 @@ See [REA website investigation](../taaft-rea-discovery-audit.md).
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](../capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
+
+## أطلس الـ5000 مهارة — what Claude knows from the Atlas and what it could still learn
+
+The safe core of KOSIF Atlas (5,116 skills: READ_ONLY_OK, permissive license, no risk flags) is mapped against the catalog by `python3 scripts/atlas_5000.py`. `stats` shows per-theme coverage, `gaps` lists the themes with the most skills not yet distilled and the next candidates, `find "<task>"` shows matching Atlas skills with the power that already covers each (`--uncovered` for the rest), and `show <id>` prints one record. Covered means a power cites the Atlas folder, never that the skill ran. The 2026-10-23 batch, sources and boundaries are in [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md).
 
 ## اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing
 

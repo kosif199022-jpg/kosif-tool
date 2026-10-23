@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5335
+   "count": 5390
   },
   {
    "id": "dom:motion",
@@ -483,10 +483,10 @@
    "label": "Atlas: engineering & code",
    "ar": "أطلس: الهندسة والكود",
    "prefix": "ACODE",
-   "count": 216,
+   "count": 226,
    "proven": 0,
    "status": {
-    "documented": 216
+    "documented": 226
    }
   },
   {
@@ -504,10 +504,10 @@
    "label": "Atlas: writing, prompts & languages",
    "ar": "أطلس: الكتابة والبرومبت والترجمة",
    "prefix": "ACRAFT",
-   "count": 7,
+   "count": 24,
    "proven": 0,
    "status": {
-    "documented": 7
+    "documented": 24
    }
   },
   {
@@ -518,6 +518,15 @@
    "en": "render Mermaid diagrams to images",
    "install": "npm i -g @mermaid-js/mermaid-cli",
    "req_kind": "npm"
+  },
+  {
+   "id": "req:graphviz",
+   "kind": "requirement",
+   "label": "graphviz",
+   "ar": "رسم المخططات من نص",
+   "en": "diagrams from text",
+   "install": "apt-get install -y graphviz",
+   "req_kind": "apt"
   },
   {
    "id": "dom:data",
@@ -583,10 +592,10 @@
    "label": "Atlas: documents & diagrams",
    "ar": "أطلس: المستندات والمخططات",
    "prefix": "ADOCS",
-   "count": 41,
+   "count": 45,
    "proven": 0,
    "status": {
-    "documented": 41
+    "documented": 45
    }
   },
   {
@@ -618,10 +627,10 @@
    "label": "Atlas: images, audio & video",
    "ar": "أطلس: الصور والصوت والفيديو",
    "prefix": "AMEDIA",
-   "count": 14,
+   "count": 27,
    "proven": 0,
    "status": {
-    "documented": 14
+    "documented": 27
    }
   },
   {
@@ -643,33 +652,15 @@
    "req_kind": "key"
   },
   {
-   "id": "req:yt-dlp",
-   "kind": "requirement",
-   "label": "yt-dlp",
-   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
-   "en": "download licensed or owned media from links",
-   "install": "pip install yt-dlp",
-   "req_kind": "pip"
-  },
-  {
-   "id": "req:pip:faster-whisper",
-   "kind": "requirement",
-   "label": "pip:faster-whisper",
-   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
-   "en": "speech-to-text with word timestamps (Arabic)",
-   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
-   "req_kind": "model"
-  },
-  {
    "id": "fam:atlas-mind",
    "kind": "family",
    "label": "Atlas: agent workflows, planning & review",
    "ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "prefix": "AMIND",
-   "count": 44,
+   "count": 50,
    "proven": 0,
    "status": {
-    "documented": 44
+    "documented": 50
    }
   },
   {
@@ -709,10 +700,10 @@
    "label": "Atlas: product, marketing & business",
    "ar": "أطلس: المنتج والتسويق والأعمال",
    "prefix": "ASTRAT",
-   "count": 57,
+   "count": 62,
    "proven": 0,
    "status": {
-    "documented": 57
+    "documented": 62
    }
   },
   {
@@ -740,6 +731,15 @@
     "install": 7,
     "seen": 5
    }
+  },
+  {
+   "id": "req:pip:faster-whisper",
+   "kind": "requirement",
+   "label": "pip:faster-whisper",
+   "ar": "تفريغ الصوت مع توقيت كل كلمة (عربي)",
+   "en": "speech-to-text with word timestamps (Arabic)",
+   "install": "pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)",
+   "req_kind": "model"
   },
   {
    "id": "req:network",
@@ -1753,6 +1753,15 @@
     "ready": 3,
     "documented": 2
    }
+  },
+  {
+   "id": "req:yt-dlp",
+   "kind": "requirement",
+   "label": "yt-dlp",
+   "ar": "تحميل وسائط مرخّصة أو مملوكة من روابط",
+   "en": "download licensed or owned media from links",
+   "install": "pip install yt-dlp",
+   "req_kind": "pip"
   },
   {
    "id": "req:pip:librosa",
@@ -2933,7 +2942,7 @@
    "from": "dom:code",
    "to": "fam:atlas-code",
    "rel": "has",
-   "w": 216
+   "w": 226
   },
   {
    "from": "fam:atlas-code",
@@ -2963,23 +2972,23 @@
    "from": "fam:atlas-code",
    "to": "req:node",
    "rel": "needs",
-   "w": 9
+   "w": 10
   },
   {
    "from": "fam:atlas-code",
    "to": "req:npm:react",
    "rel": "needs",
-   "w": 6
+   "w": 7
   },
   {
    "from": "fam:atlas-code",
    "to": "req:claude:tools",
    "rel": "needs",
-   "w": 5
+   "w": 6
   },
   {
    "from": "fam:atlas-code",
-   "to": "req:chromium",
+   "to": "req:os:macos",
    "rel": "needs",
    "w": 3
   },
@@ -2993,11 +3002,35 @@
    "from": "dom:craft",
    "to": "fam:atlas-craft",
    "rel": "has",
-   "w": 7
+   "w": 24
   },
   {
    "from": "fam:atlas-craft",
    "to": "req:npm:mermaid",
+   "rel": "needs",
+   "w": 3
+  },
+  {
+   "from": "fam:atlas-craft",
+   "to": "req:fonts:arabic",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-craft",
+   "to": "req:graphviz",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-craft",
+   "to": "req:pip:matplotlib",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-craft",
+   "to": "req:npm:axe",
    "rel": "needs",
    "w": 1
   },
@@ -3059,7 +3092,7 @@
    "from": "dom:docs",
    "to": "fam:atlas-docs",
    "rel": "has",
-   "w": 41
+   "w": 45
   },
   {
    "from": "fam:atlas-docs",
@@ -3113,17 +3146,41 @@
    "from": "dom:media",
    "to": "fam:atlas-media",
    "rel": "has",
-   "w": 14
+   "w": 27
   },
   {
    "from": "fam:atlas-media",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 5
+   "w": 8
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:chromium",
+   "rel": "needs",
+   "w": 3
   },
   {
    "from": "fam:atlas-media",
    "to": "req:key:elevenlabs",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:python3",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:npm:three",
+   "rel": "needs",
+   "w": 2
+  },
+  {
+   "from": "fam:atlas-media",
+   "to": "req:npm:react",
    "rel": "needs",
    "w": 2
   },
@@ -3140,30 +3197,6 @@
    "w": 1
   },
   {
-   "from": "fam:atlas-media",
-   "to": "req:yt-dlp",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-media",
-   "to": "req:pip:faster-whisper",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-media",
-   "to": "req:key:video-gen",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:atlas-media",
-   "to": "req:docker",
-   "rel": "needs",
-   "w": 1
-  },
-  {
    "from": "root",
    "to": "dom:mind",
    "rel": "has",
@@ -3173,7 +3206,7 @@
    "from": "dom:mind",
    "to": "fam:atlas-mind",
    "rel": "has",
-   "w": 44
+   "w": 50
   },
   {
    "from": "fam:atlas-mind",
@@ -3202,6 +3235,12 @@
   {
    "from": "fam:atlas-mind",
    "to": "req:latex",
+   "rel": "needs",
+   "w": 1
+  },
+  {
+   "from": "fam:atlas-mind",
+   "to": "req:pip:hypothesis",
    "rel": "needs",
    "w": 1
   },
@@ -3257,7 +3296,7 @@
    "from": "dom:strategy",
    "to": "fam:atlas-strategy",
    "rel": "has",
-   "w": 57
+   "w": 62
   },
   {
    "from": "fam:atlas-strategy",

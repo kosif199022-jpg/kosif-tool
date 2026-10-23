@@ -1905,6 +1905,49 @@
     ],
     "top_k": 3
    }
+  },
+  {
+   "id": 89,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "ارسم قصة ويبتون بنفس الشخصية في كل المشاهد",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the Atlas-5000 drawing cards (ACRAFT-09/10) and states their badge is documented, not run",
+    "Asks for the story details before drawing when they are missing, and writes one CHARACTER sentence reused verbatim in every scene prompt",
+    "Delivers a scene table plus one prompt per scene (or renders with a KOSIF drawing tool) and never claims an image was produced without a file"
+   ],
+   "routing": {
+    "expect_any": [
+     "ACRAFT"
+    ],
+    "expect_domain": "craft",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 90,
+   "lang": "ar",
+   "domain": "media",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل تأثير شيدر حراري يتبع الإصبع على الويب",
+   "files": [],
+   "expected_behavior": [
+    "Routes to AMEDIA-18 (thermal finger trail) or AMEDIA-16 (R3F shader model)",
+    "Builds one fragment shader with the documented defaults and previews it in a browser before claiming it works"
+   ],
+   "routing": {
+    "expect_any": [
+     "AMEDIA"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

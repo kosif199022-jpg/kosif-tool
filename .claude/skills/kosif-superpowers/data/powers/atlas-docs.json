@@ -2246,5 +2246,207 @@
    "stage": "extracted",
    "verified_by": "b036-education-learning-1.json"
   }
+ },
+ {
+  "id": "ADOCS-42",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "الكتابة البسيطة: كلمات يومية وجمل كاملة",
+  "name_en": "Plain writing: everyday words, complete sentences",
+  "status": "documented",
+  "what": "يكتب نصاً يُفهم من القراءة الأولى: كلمات شائعة، بلا مصطلحات مخترعة، بلا تفخيم فارغ، مع مثال قبل وبعد لكل قاعدة. — Writes text readable in one pass: common words, no invented jargon, no empty emphasis, with a before/after for each rule.",
+  "when": "اكتب ببساطة، نص واضح، بدون حشو / plain language, simple writing, remove fluff",
+  "how": "1) Prefer the common word; avoid words AI tools overuse (delve, tapestry, landscape, robust, leverage). 2) No jargon or invented shorthand; if a term is not in a standard dictionary, explain it. 3) Drop empty emphasis (really, pivotal, renowned, a testament to) and state the fact instead. 4) Complete sentences, one idea each, short paragraphs. 5) Revise by reading once as a newcomer and fixing every place you had to reread.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2868-plain-writing/11578-plain-writing"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "writing",
+   "كتابة",
+   "plain",
+   "بسيط",
+   "clarity",
+   "وضوح"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): plain-writing/plain-writing (#11578) · theme writing-content · 1 supporting skills · SKILL.md read in full as inert text: skills/2868-plain-writing/11578-plain-writing",
+  "atlas": {
+   "ids": [
+    "11578"
+   ],
+   "examples": [
+    {
+     "id": "11578",
+     "plugin": "plain-writing",
+     "skill": "plain-writing",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2868-plain-writing/11578-plain-writing"
+    }
+   ],
+   "theme": "writing-content",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "11578": "e54956e60fe712fadc735fbce21ce434eb1de6267b066ca04e47122c439bc378"
+   }
+  }
+ },
+ {
+  "id": "ADOCS-43",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "أنسنة النص بالكثافة لا بقائمة حذف",
+  "name_en": "Humanize by density, with an over-correction guard",
+  "status": "documented",
+  "what": "يزيل علامات النص الآلي التي يلاحظها القراء (المفردات والبنية) بقياس كثافتها، دون وعد بتجاوز كاشفات الذكاء الاصطناعي. — Removes the AI tells readers notice (vocabulary, structure) by scoring their density, without promising to beat AI detectors.",
+  "when": "النص يبدو آلياً، أنسنة تغريدة / sounds like AI, humanize tweet, AI tells",
+  "how": "1) Readers mostly cite vocabulary and sentence structure as tells; target those. 2) Score suspect words by density per length instead of deleting a fixed list. 3) Cap em dashes rather than banning them; treat forced rhythm (triplets, staccato fragments) as a tell, not a fix. 4) Add an over-correction guard: do not strip natural phrasing or facts while removing tells. 5) Be honest that rewrites do not make text pass trained detectors; on short texts their scores are noise.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3035-x-skills/13066-x-humanizer"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "humanizer",
+   "أنسنة",
+   "AI tells",
+   "writing",
+   "تغريدة"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): x-skills/x-humanizer (#13066) · theme writing-content · 1 supporting skills · SKILL.md read in full as inert text: skills/3035-x-skills/13066-x-humanizer",
+  "atlas": {
+   "ids": [
+    "13066"
+   ],
+   "examples": [
+    {
+     "id": "13066",
+     "plugin": "x-skills",
+     "skill": "x-humanizer",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3035-x-skills/13066-x-humanizer"
+    }
+   ],
+   "theme": "writing-content",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "13066": "7c7d27d1f79ce86c861d8965f9fd04cd64a0efdf43b7266a4e7d7f97233a4a3b"
+   }
+  }
+ },
+ {
+  "id": "ADOCS-44",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "تدقيق انحراف التوثيق عن الكود لكل بُعد",
+  "name_en": "Per-dimension documentation drift audit",
+  "status": "documented",
+  "what": "يقارن التوثيق بالكود الفعلي بُعداً بُعداً (الأوامر، الإعدادات، الواجهات…) ويخطط الإصلاح قبل التنفيذ. — Compares documentation with the actual code dimension by dimension (commands, config, APIs...) and plans fixes before executing them.",
+  "when": "التوثيق قديم، راجع ملفات README، تحديث الوثائق / outdated docs, docs drift, update README",
+  "how": "1) Inventory every doc. 2) For each dimension (install, commands, config keys, public API, architecture) check the claim against the code and record drift. 3) Plan: merge duplicates, surgical edits for outdated sections, link or archive orphans, fix broken references, add missing sections. 4) Ask before executing the plan. 5) After editing, verify no content was lost and links resolve.",
+  "params": "dimensions",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/95-docs-maintain-workflow"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "documentation",
+   "توثيق",
+   "README",
+   "drift",
+   "docs"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): codebase-mapper/docs-maintain-workflow (#95) · theme documentation · 2 supporting skills · SKILL.md read in full as inert text: skills/60-codebase-mapper/95-docs-maintain-workflow",
+  "atlas": {
+   "ids": [
+    "95",
+    "7385"
+   ],
+   "examples": [
+    {
+     "id": "95",
+     "plugin": "codebase-mapper",
+     "skill": "docs-maintain-workflow",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/95-docs-maintain-workflow"
+    }
+   ],
+   "theme": "documentation",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "95": "137554fa51991af387d074011e429d650cceb227fd947d7a89551868c7ea8576"
+   }
+  }
+ },
+ {
+  "id": "ADOCS-45",
+  "family": "atlas-docs",
+  "domain": "docs",
+  "name_ar": "الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة",
+  "name_en": "Transcreation routing for marketing translation",
+  "status": "documented",
+  "what": "يفرز في النص ما يحتاج ترجمة حرفية وما يحتاج إعادة إبداع (تعابير، تلاعب لفظي، فكاهة)، مع قائمة كلمات لا تُترجم. — Sorts what needs literal translation from what needs transcreation (idioms, wordplay, humour), with a do-not-translate list.",
+  "when": "ترجمة تسويقية، ترجمة إعلان، تعريب / marketing translation, transcreation, localize ad copy",
+  "how": "1) Inputs: content, target languages (codes or names), optional source language, formality, do-not-translate terms. 2) Flag idioms, wordplay, humour, cultural references and emotional hooks for transcreation instead of literal translation. 3) Keep brand and product names in the source language. 4) Route each language pair to the tool that handles it best and record why. 5) Quality-check meaning, tone and length; numbers, names and dates must survive (see KOSIF anchor_gate).",
+  "params": "formality, DNT list",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4128-translate-content"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "translation",
+   "ترجمة",
+   "localization",
+   "تعريب",
+   "transcreation"
+  ],
+  "section": "التوثيق — Documentation",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/translate-content (#4128) · theme localization-language · 1 supporting skills · SKILL.md read in full as inert text: skills/1520-digital-marketing-pro/4128-translate-content",
+  "atlas": {
+   "ids": [
+    "4128"
+   ],
+   "examples": [
+    {
+     "id": "4128",
+     "plugin": "digital-marketing-pro",
+     "skill": "translate-content",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4128-translate-content"
+    }
+   ],
+   "theme": "localization-language",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "4128": "29320398ecef5561fe132420c0f57f8b442b040017f70e26b7b67536724709e8"
+   }
+  }
  }
 ]

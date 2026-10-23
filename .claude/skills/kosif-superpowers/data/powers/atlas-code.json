@@ -12485,5 +12485,529 @@
    "stage": "extracted",
    "verified_by": "b042-git-release-1.json"
   }
+ },
+ {
+  "id": "ACODE-217",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تصميم أدوات الوكلاء: المستهلك نموذج لا إنسان",
+  "name_en": "Agent tool design: the consumer is a model",
+  "status": "documented",
+  "what": "يصمم أدوات MCP والدوال بحيث يعرف النموذج متى يستدعيها وماذا يمرر وكيف يتعافى من الخطأ. — Designs MCP and function tools so the model knows when to call them, what to pass and how to recover from errors.",
+  "when": "تصميم أداة MCP، أدوات للوكيل، function calling / MCP tool design, agent tools, function calling",
+  "how": "1) Names, descriptions, parameter names and error text are written for machine comprehension; they are the only orchestration layer, nothing enforces call order. 2) Description says when to call and when not to. 3) Parameters: few, typed, enums over free strings, sensible defaults. 4) Results: compact, stable shape, with the next useful identifiers. 5) Errors carry recovery guidance the agent can act on, not stack traces. 6) Design for non-deterministic chaining: every tool must be safe to call out of order.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "claude:tools"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12905-tool-design"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "MCP",
+   "tool design",
+   "أداة",
+   "agent",
+   "وكيل",
+   "function calling"
+  ],
+  "section": "واجهات API والخلفية — APIs, backends & auth",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): runtype-skills/tool-design (#12905) · theme mcp-tooling · 1 supporting skills · SKILL.md read in full as inert text: skills/3017-runtype-skills/12905-tool-design",
+  "atlas": {
+   "ids": [
+    "12905"
+   ],
+   "examples": [
+    {
+     "id": "12905",
+     "plugin": "runtype-skills",
+     "skill": "tool-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12905-tool-design"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "12905": "c76b0d52e72acfe08b7b898f239ba8d80a22ff9a53905c049db6a7ebdc38add5"
+   }
+  }
+ },
+ {
+  "id": "ACODE-218",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "حدود الثقة في الأدوات: الأسرار تُحقن والصلاحيات في الكود",
+  "name_en": "Tool trust boundary: injected secrets, permissions in code",
+  "status": "documented",
+  "what": "يحمي الأدوات من حقن الأوامر: لا مفاتيح ظاهرة للنموذج، وفحص الصلاحية للفعل والهدف يتم في الكود قبل التنفيذ. — Hardens tools against prompt injection: no model-visible keys, and permission checks for action and target run in code before execution.",
+  "when": "أمان أداة الوكيل، حماية المفاتيح، prompt injection / tool security, secret injection, prompt injection defence",
+  "how": "1) Name the principal the tool acts as and where its identity comes from. 2) Credentials are resolved server-side at call time, never a parameter; fix the host in config so a key cannot be sent elsewhere. 3) Check permission in code for both the action and the specific target, before the operation. 4) Declare and pre-check scopes per tool. 5) Fix the boundary: tenant, root path, allowed hosts, quotas. 6) Log every call with redacted parameters. 7) Prompts express intent; only code enforces rules.",
+  "params": "scopes, boundary",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12911-tool-design-security"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "security",
+   "أمان",
+   "secrets",
+   "مفاتيح",
+   "prompt injection",
+   "MCP"
+  ],
+  "section": "واجهات API والخلفية — APIs, backends & auth",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): runtype-skills/tool-design-security (#12911) · theme security · 1 supporting skills · SKILL.md read in full as inert text: skills/3017-runtype-skills/12911-tool-design-security",
+  "atlas": {
+   "ids": [
+    "12911"
+   ],
+   "examples": [
+    {
+     "id": "12911",
+     "plugin": "runtype-skills",
+     "skill": "tool-design-security",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12911-tool-design-security"
+    }
+   ],
+   "theme": "security",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "12911": "c00809ecad465d119d3c2a49a48f1be0f7261219e61a11fcbc8215fe34c8e68f"
+   }
+  }
+ },
+ {
+  "id": "ACODE-219",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "منع رفع الأسرار عند الالتزام",
+  "name_en": "Block secrets at commit time",
+  "status": "documented",
+  "what": "يفحص ما سيُلتزم به قبل الرفع بماسح أسرار، لأن المفتاح بعد الدفع لا يُحذف بل يُدوّر. — Scans what is about to be committed with a secret scanner, because once pushed a key cannot be deleted, only rotated.",
+  "when": "منع تسريب المفاتيح، فحص الأسرار قبل commit / prevent committing secrets, pre-commit secret scan",
+  "how": "1) A hook file is not proof: many pre-commit hooks only format and exit 0; check that one actually scans. 2) Scan staged content directly with a scanner in staged mode and with redaction so the finding does not print the secret into logs or transcripts. 3) Staged mode ignores untracked files: check env-like files and .gitignore before a future 'add -A'. 4) Install repo-locally through a versioned pre-commit config; committing the config protects nobody until each clone installs it. 5) After a leak, rotate the key; deleting the line is not containment.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3346-prevent-committing-secrets/13861-prevent-committing-secrets"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "secrets",
+   "أسرار",
+   "pre-commit",
+   "git",
+   "security",
+   "مفتاح"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): prevent-committing-secrets/prevent-committing-secrets (#13861) · theme security · 1 supporting skills · SKILL.md read in full as inert text: skills/3346-prevent-committing-secrets/13861-prevent-committing-secrets",
+  "atlas": {
+   "ids": [
+    "13861"
+   ],
+   "examples": [
+    {
+     "id": "13861",
+     "plugin": "prevent-committing-secrets",
+     "skill": "prevent-committing-secrets",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3346-prevent-committing-secrets/13861-prevent-committing-secrets"
+    }
+   ],
+   "theme": "security",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "13861": "d10976ba86e9d0998be9ed69ed0d4d9ea1a3de6839727f90902a6ca6466d09a0"
+   }
+  }
+ },
+ {
+  "id": "ACODE-220",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "مراجعة أمان للتغيير لا للمستودع كله",
+  "name_en": "Change-scoped security review vs posture audit",
+  "status": "documented",
+  "what": "يراجع فرقاً أو PR بحثاً عن ثغرات واثقة فقط، ويحوّل طلب تدقيق المستودع كاملاً إلى منهج مختلف. — Reviews a diff or PR for confident vulnerabilities only, and switches method when asked to audit a whole codebase.",
+  "when": "مراجعة أمان للـ PR، فحص ثغرات التعديل / security review of a PR, diff security audit",
+  "how": "1) Scope resolves to the diff; report only issues a senior security engineer would confidently raise, introduced or worsened by the change. 2) Skip pre-existing issues the diff merely sits near and generic 'missing defence in depth', because noise trains readers to skip the report. 3) For 'is my app secure' or 'find every IDOR', run a posture audit instead: there every finding is pre-existing and absences (missing tenant filter, unvalidated secret default) are the point. 4) Map findings to an OWASP testing category.",
+  "params": "diff scope",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2582-security-audit/9949-security-audit"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "security",
+   "أمان",
+   "PR",
+   "review",
+   "OWASP",
+   "ثغرات"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): security-audit/security-audit (#9949) · theme security · 1 supporting skills · SKILL.md read in full as inert text: skills/2582-security-audit/9949-security-audit",
+  "atlas": {
+   "ids": [
+    "9949"
+   ],
+   "examples": [
+    {
+     "id": "9949",
+     "plugin": "security-audit",
+     "skill": "security-audit",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2582-security-audit/9949-security-audit"
+    }
+   ],
+   "theme": "security",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "9949": "f3eab6359c297163c1582979c97b7a7e19c9559d9bd834140de2b3867c2b3110"
+   }
+  }
+ },
+ {
+  "id": "ACODE-221",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "التحقق من السلوك لا من التفاصيل الداخلية، بأوامر المستودع نفسه",
+  "name_en": "Behaviour-level assertions per layer, with the repo's own commands",
+  "status": "documented",
+  "what": "يكتب تحققات تشبه طريقة استخدام البرنامج فعلاً في كل طبقة، ويكتشف أوامر المستودع قبل أي شيء؛ دورة الأحمر والأخضر نفسها في CODE-08. — Asserts only what each layer's user can observe and discovers the repository's own commands first; the red-green loop itself is CODE-08.",
+  "when": "الاختبارات تنكسر عند إعادة الهيكلة، ماذا أتحقق منه / brittle tests, what to assert, tests break on refactor",
+  "how": "1) Principle: the closer a check is to how the software is used, the more confidence it gives. 2) Assert only on what the user of that layer can observe: return values, errors and public types for a library; status and body for an API; visible text and roles for a UI; never private helpers. 3) Checks bound to internals fail on harmless refactors and stay green on real breakage. 4) For a bug, reproduce it first, then fix (prove-it); the red-green-refactor loop is CODE-08. 5) Discover the stack before writing anything: build files, checked-in wrappers (./gradlew, make), framework, neighbouring conventions and the commands CI runs; run the focused command in the loop and the full suite before finishing; never assume 'npm test'.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "node"
+  ],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2586-testing-philosophy/9953-testing-philosophy",
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2110-base-dev-kit/7507-tdd"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "behaviour",
+   "سلوك",
+   "brittle",
+   "refactor",
+   "assertions"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): testing-philosophy/testing-philosophy (#9953); base-dev-kit/tdd (#7507) · theme testing-tdd · 2 supporting skills · SKILL.md read in full as inert text: skills/2586-testing-philosophy/9953-testing-philosophy, skills/2110-base-dev-kit/7507-tdd",
+  "atlas": {
+   "ids": [
+    "9953",
+    "7507"
+   ],
+   "examples": [
+    {
+     "id": "9953",
+     "plugin": "testing-philosophy",
+     "skill": "testing-philosophy",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2586-testing-philosophy/9953-testing-philosophy"
+    },
+    {
+     "id": "7507",
+     "plugin": "base-dev-kit",
+     "skill": "tdd",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2110-base-dev-kit/7507-tdd"
+    }
+   ],
+   "theme": "testing-tdd",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "9953": "64516da06939e6059ded9d8a6827693f779e6b98ebfed4f4fd2c84943d73009c",
+    "7507": "5517cbf3b66d201d2f4d680625f07cd1f529eb90620290422fca325c704f4ed2"
+   }
+  }
+ },
+ {
+  "id": "ACODE-222",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "قاعدة الاعتماد في البنية النظيفة",
+  "name_en": "Clean Architecture dependency rule",
+  "status": "documented",
+  "what": "ينظم الكود في دوائر بحيث تشير الاعتمادات للداخل نحو قواعد العمل، فيمكن تبديل قاعدة البيانات أو الإطار دون لمس المنطق. — Organises code in circles whose dependencies point inward to business rules, so the database or framework can change without touching logic.",
+  "when": "هيكلة المشروع، فصل المنطق عن الإطار، بنية نظيفة / clean architecture, separate business logic, layering",
+  "how": "1) Circles: entities, use cases, interface adapters, frameworks and drivers. 2) Inner circles never name anything from outer ones (classes, functions, data formats). 3) Data crossing a boundary takes the shape the inner circle prefers. 4) Use dependency inversion: interfaces defined inward, implemented outward. 5) Score seven diagnostic rows (framework independence, testable use cases, swappable UI and DB...) and map 6-7 to 9-10.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14108-clean-architecture"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "architecture",
+   "بنية",
+   "clean architecture",
+   "refactor",
+   "layers"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): systems-architecture/clean-architecture (#14108) · theme refactoring-architecture · 1 supporting skills · SKILL.md read in full as inert text: skills/3436-systems-architecture/14108-clean-architecture",
+  "atlas": {
+   "ids": [
+    "14108"
+   ],
+   "examples": [
+    {
+     "id": "14108",
+     "plugin": "systems-architecture",
+     "skill": "clean-architecture",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14108-clean-architecture"
+    }
+   ],
+   "theme": "refactoring-architecture",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "14108": "fc9fe201ae040df80164bc7a407507882783e2c8cdbc0379a1fbdcf3719e4446"
+   }
+  }
+ },
+ {
+  "id": "ACODE-223",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "أداء الويب: الكمون قبل عرض النطاق",
+  "name_en": "Web performance: latency before bandwidth",
+  "status": "documented",
+  "what": "يحسّن سرعة الموقع بتقليل الرحلات ذهاباً وإياباً، لأن الكمون لا عرض النطاق هو عنق الزجاجة غالباً. — Speeds up a site by cutting round trips, because latency rather than bandwidth is usually the bottleneck.",
+  "when": "الموقع بطيء، تحسين السرعة، Core Web Vitals / slow website, web performance, round trips",
+  "how": "1) Every new connection pays DNS, TCP handshake (1 RTT) and TLS before data; reuse connections, preconnect to critical origins, use HTTP/2 or 3. 2) Distance is physics (about 28 ms one way New York-London), so move content closer (CDN, edge cache). 3) Cut requests and bytes on the critical path; inline or preload the critical CSS and fonts. 4) Then fix rendering cost: layout, paint, raster and compositing work. 5) Judge by field metrics (LCP, INP, CLS) not only lab scores.",
+  "params": "RTT, field metrics",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14110-high-perf-browser"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "performance",
+   "أداء",
+   "web",
+   "سرعة",
+   "latency",
+   "CDN"
+  ],
+  "section": "التصحيح — Debugging & diagnosis",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): systems-architecture/high-perf-browser (#14110) · theme performance · 2 supporting skills · SKILL.md read in full as inert text: skills/3436-systems-architecture/14110-high-perf-browser",
+  "atlas": {
+   "ids": [
+    "14110",
+    "4192"
+   ],
+   "examples": [
+    {
+     "id": "14110",
+     "plugin": "systems-architecture",
+     "skill": "high-perf-browser",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14110-high-perf-browser"
+    }
+   ],
+   "theme": "performance",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "14110": "fed643149198165eadf1bb3bf8b6bfb173e18ba29c886e7f3d6a7681ad03a57d"
+   }
+  }
+ },
+ {
+  "id": "ACODE-224",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "قياس التحسين مقابل خط أساس مُلتقط قبل التغيير",
+  "name_en": "Measure improvement against a baseline captured before",
+  "status": "documented",
+  "what": "لا يدّعي تحسناً إلا بقياس قبل التغيير وبعده بالشروط نفسها، وإن غاب القياس الأول يقول ذلك صراحة. — Claims an improvement only with before and after measurements under the same conditions, and says so when no baseline exists.",
+  "when": "هل تحسّن الأداء فعلاً، قارن قبل وبعد / did it get faster, before and after benchmark",
+  "how": "1) When a plan states a measurable goal, capture the baseline at planning time and store it with the task. 2) After the change re-measure with the same tool, input and environment, and report the delta. 3) No baseline: report 'baseline not captured', give the after-number only, and do not call it an improvement. 4) Repeat runs and report spread, not one lucky number. 5) Same rule as KOSIF FusionForge --baseline.",
+  "params": "metric, runs",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2481-verification/9633-measure"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "benchmark",
+   "قياس",
+   "baseline",
+   "خط أساس",
+   "performance"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): verification/measure (#9633) · theme performance · 1 supporting skills · SKILL.md read in full as inert text: skills/2481-verification/9633-measure",
+  "atlas": {
+   "ids": [
+    "9633"
+   ],
+   "examples": [
+    {
+     "id": "9633",
+     "plugin": "verification",
+     "skill": "measure",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2481-verification/9633-measure"
+    }
+   ],
+   "theme": "performance",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "9633": "389c1b540041938c7d8228ff20c1b6355f632be1dd54d12884ace44b5c611427"
+   }
+  }
+ },
+ {
+  "id": "ACODE-225",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "jq: نموذج المرشّح لتدفق JSON",
+  "name_en": "jq filter mental model for JSON streams",
+  "status": "documented",
+  "what": "يعالج JSON من سطر الأوامر بفهم أن برنامج jq مرشّح يحوّل تدفق قيم إلى تدفق قيم. — Processes JSON on the command line by treating a jq program as a filter from a stream of values to a stream of values.",
+  "when": "استخراج من JSON، فلترة JSON في الطرفية / filter JSON, jq query, extract fields",
+  "how": "1) A filter takes one JSON value and emits zero, one or many; '.' is identity, '.[]' emits each element, 'select' can emit nothing. 2) Pipe filters with '|' like a shell. 3) It is pure: assignment returns a modified copy. 4) It runs once per input value; use -s to slurp a stream into one array, -r for raw strings, -c for one line per value. 5) Deterministic stdin to stdout, ideal for CI and agents.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1240-jq/2920-jq"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "jq",
+   "JSON",
+   "CLI",
+   "طرفية",
+   "filter"
+  ],
+  "section": "سير عمل تطوير عام — General development workflow",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): jq/jq (#2920) · theme mcp-tooling · 1 supporting skills · SKILL.md read in full as inert text: skills/1240-jq/2920-jq",
+  "atlas": {
+   "ids": [
+    "2920"
+   ],
+   "examples": [
+    {
+     "id": "2920",
+     "plugin": "jq",
+     "skill": "jq",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1240-jq/2920-jq"
+    }
+   ],
+   "theme": "mcp-tooling",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "2920": "b3838d0a965e6aaeb37baf82676936acd86d9f02fd25629a21cec99d474c5fe4"
+   }
+  }
+ },
+ {
+  "id": "ACODE-226",
+  "family": "atlas-code",
+  "domain": "code",
+  "name_ar": "تصميم تطبيقات Apple: اختر المسار أولاً",
+  "name_en": "Apple platform design: choose the track first",
+  "status": "documented",
+  "what": "يسأل أولاً عن مسار البناء (SwiftUI صارم، SwiftUI بهوية، React Native، Flutter، Electron) لأن لكل مسار سقفاً بصرياً وتكلفة. — Asks first which build track (strict SwiftUI, branded SwiftUI, React Native, Flutter, Electron) because each has a different visual ceiling and cost.",
+  "when": "تطبيق آيفون، تصميم iOS، تطبيق ماك / iPhone app design, iOS UI, macOS app",
+  "how": "1) Ask the track before code: system-like native (Settings, Notes feel), branded native (native chrome plus identity), or cross-platform. 2) Follow the platform guidelines: SF Symbols, system type with Dynamic Type, safe areas, split views and inspectors on iPad and Mac, sheets and toolbars. 3) Keep native controls; add originality through composition, content and state treatment, not web-style chrome. 4) Cover states, keyboard flow, focus and accessibility.",
+  "params": "track",
+  "install": "",
+  "requires": [
+   "npm:react",
+   "os:macos"
+  ],
+  "license": "method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md",
+  "proof": [
+   "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3324-apple-design"
+  ],
+  "proof_scope": "url",
+  "styles": [],
+  "tags": [
+   "iOS",
+   "SwiftUI",
+   "آيفون",
+   "Apple",
+   "macOS",
+   "تطبيق"
+  ],
+  "section": "بناء التطبيقات — App building, SaaS & product engineering",
+  "source": "KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): stark/apple-design (#3324) · theme mobile · 2 supporting skills · SKILL.md read in full as inert text: skills/1394-stark/3324-apple-design",
+  "atlas": {
+   "ids": [
+    "3324",
+    "14310"
+   ],
+   "examples": [
+    {
+     "id": "3324",
+     "plugin": "stark",
+     "skill": "apple-design",
+     "url": "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3324-apple-design"
+    }
+   ],
+   "theme": "mobile",
+   "risk_notes": "Method guidance only; no Atlas code imported or executed.",
+   "kosif_overlap_ids": [],
+   "stage": "extracted",
+   "verified_by": "atlas-5000-mining-20261023.json",
+   "skill_md_sha256": {
+    "3324": "5f0525a73e46a07597bbd2f68d22baeba53604346aba3b23cf4514893c1ff42c"
+   }
+  }
  }
 ]

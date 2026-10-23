@@ -8737,6 +8737,85 @@
    "evidence_note": "Eight focused unit tests passed locally on Windows for the Atlas miner."
   },
   {
+   "id": "atlas-5000",
+   "path": "scripts/atlas_5000.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Atlas-5000 coverage map",
+   "title_ar": "خريطة تغطية أطلس الـ5000 مهارة",
+   "summary_en": "Maps the 5,116-skill safe core of KOSIF Atlas (READ_ONLY_OK, permissive license, no risk flags) against the KOSIF catalog: per-theme coverage, the themes with the most undistilled skills and their next candidates, and a bilingual search that shows which power already covers each Atlas skill.",
+   "summary_ar": "يقارن النواة الآمنة لأطلس KOSIF (5,116 مهارة بحكم READ_ONLY_OK وترخيص مفتوح وبلا علامات خطر) بكتالوج القدرات: التغطية لكل موضوع، والمواضيع الأكثر مهارات غير مستخرجة مع المرشحين التاليين، وبحث عربي وإنجليزي يبيّن أي قدرة تغطي كل مهارة.",
+   "use_when": [
+    "ايه المهارات اللي في أطلس الـ5000 ولسه ما اتعلمتهاش؟",
+    "دوّر في الأطلس على مهارات رسم ويبتون وشخصيات",
+    "Which Atlas themes are least covered by KOSIF powers?",
+    "Find Atlas skills for storyboard drawing and show which power covers them"
+   ],
+   "keywords": [
+    "atlas 5000",
+    "5000 skills",
+    "skill atlas",
+    "coverage",
+    "gaps",
+    "learnable skills",
+    "أطلس الـ5000",
+    "أطلس المهارات",
+    "تغطية",
+    "فجوات",
+    "مهارات يمكن تعلمها"
+   ],
+   "commands": [
+    {
+     "name": "stats",
+     "example": "python3 scripts/atlas_5000.py stats --json",
+     "does": "Prints the Atlas total, the safe-core size, and per theme how many safe skills a KOSIF power already cites (covered) with the coverage percentage."
+    },
+    {
+     "name": "gaps",
+     "example": "python3 scripts/atlas_5000.py gaps --top 8 --per-theme 3",
+     "does": "Ranks themes by safe skills no power cites yet and lists up to --per-theme candidates per theme (one per plugin, no duplicate descriptions)."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/atlas_5000.py find \"storyboard character webtoon\" --top 10 --json",
+     "does": "Searches the safe core by name, theme and description with a few Arabic-to-English aliases; each hit lists covered_by power IDs. --uncovered keeps only skills not yet distilled."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/atlas_5000.py show 2425 --json",
+     "does": "Prints one Atlas skill's metadata, whether it is in the safe core and which powers cite it; an unknown id exits 2."
+    }
+   ],
+   "inputs": "data/atlas_capability_index.json.gz (metadata of 14,793 Atlas skills) and data/powers/*.json.",
+   "outputs": "Text or JSON on stdout; writes nothing.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None needed: it only reads two local data files.",
+   "limits": "covered means a power's proof or source cites the Atlas folder, not that the skill was run or verified; search is keyword overlap on metadata, and Atlas themes come from a keyword taxonomy that can misfile a skill.",
+   "evidence": "tested-here",
+   "evidence_note": "6/6 passed (evals/test_atlas_5000.py)",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_atlas_5000.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/atlas-5000-mining-20261023.md",
+    ".claude/skills/kosif-superpowers/references/guides/discover.md"
+   ],
+   "families": [
+    "self-discovery",
+    "software-investigation"
+   ]
+  },
+  {
    "id": "atlas-deep-fusion",
    "path": "scripts/atlas_deep_fusion.py",
    "root": "skill",
