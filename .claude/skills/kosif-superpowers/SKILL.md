@@ -404,3 +404,12 @@ Do not claim full Blender equivalence; use narrow executable proofs.
 - [environment.md](references/environment.md) — لقطة مؤرخة لهذه الحاوية من `probe_env.py`. [requirements.md](references/requirements.md) — فهرس المستلزمات المقلوب (`requirements.py plan "<task>"`).
 - [arsenal-general.md](references/arsenal-general.md) و[arsenal-libraries.md](references/arsenal-libraries.md) — المكتبات بإصداراتها ورخصها. [method-packs.md](references/method-packs.md) — البحث بالأدلة والتقييم والمال والمنتج وعقود الوكلاء.
 - [humanizer.md](references/humanizer.md) — كتابة بلا علامات آلية مع حراسة الحقائق (`scripts/tell_scan.py`، `scripts/anchor_gate.py`). [proofs/README.md](proofs/README.md) — أفلام وملفات الإثبات.
+
+
+## Atlas source-scoped audit and Wednesday dua motion (merged 2026-10-23)
+
+**Atlas static source-audit (not automatic installation):** Refer to [source review evidence](references/atlas-reviewed-audit.md), use `scripts/atlas_body_audit.py` for bounded, read-only scans of explicitly authorized public Atlas skill texts, and `scripts/atlas_audit_synthesis.py` for metadata-only receipts. See `data/atlas-reviewed/manifest.json` (a historical reviewed subset; not all 14,793 skills). Run `python -m unittest tests.test_atlas_body_audit`. Third-party code remains untrusted; do not execute downloaded skill programs or publish locally scanned private source.
+
+**Wednesday dua / weekday-title motion extension:** The original `scripts/dua_wednesday.py`, `dua-wednesday/WORKFLOW.md`, `dua-wednesday/project.example.json` and fonts licensed under the included OFL notices provide a 9:16 Arabic dua-editing workflow (word-timed captions, transitions, golden title and unchanged authorized narration). Execute `python scripts/dua_wednesday.py doctor` before using it and `python -m unittest discover -s evals -p test_dua_wednesday.py` to test the bounded implementation. The shared `styles/dua/kit/build_dua.py` and `layers.cjs` support `title_text` while preserving the Friday SVG fallback. This merge adds the new standalone editor but does not claim remote stock downloads or render output from this session.
+
+**Privacy-preserving Thursday branch reconciliation:** `claude/thursday-dua-montage` was brought into git ancestry without restoring the source-derived transcript, source footage, timed word JSON or images that the owner explicitly removed from the public repository. Follow the existing `jobs/tiktok-ZSgU3y7Sq/DECISIONS.md` restriction and rebuild only from media you may lawfully use.
