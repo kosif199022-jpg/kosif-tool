@@ -62,7 +62,7 @@
 | id | القدرة الخارقة / superpower | حجم | أفضل | جاهز الآن | يرتبط بـ |
 |---|---|---|---|---|---|
 | SP-0033 | CAMeL Tools: تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد · CAMeL Tools: Tokenise, lemmatise, diacritise and dialect-identify Arabic text <sub>(arabic, tashkeel, camel-tools, camel)</sub> | 19 | ✅ ✅12 📦4 📄3 | 12 | SP-0377 SP-0451 SP-0112 SP-0156 |
-| SP-0034 | تحقق من أرقام OCR ببوابة المراسي · Verify OCR numbers with the anchor gate <sub>(ocr, agreement, numbers, anchor)</sub> | 2 | ✅ ✅1 📄1 | 1 | SP-0156 SP-0348 SP-0007 SP-0109 |
+| SP-0034 | مراجعة المطابقة النحوية بعد التعديل · Agreement check after editing <sub>(ocr, agreement, numbers, anchor)</sub> | 2 | ✅ ✅1 📄1 | 1 | SP-0156 SP-0348 SP-0007 SP-0109 |
 | SP-0035 | تصميم الأيقونات بالتشابه والإغلاق البصري · Icon design by resemblance and Gestalt closure <sub>(design, front-end, systems, gestalt)</sub> | 15 | 📄 📄15 | 0 | SP-0134 SP-0060 SP-0459 SP-0237 |
 | SP-0036 | مخطط أولي ومنظمات بصرية ملائمة · Low-fi wireframe and ADHD-friendly visual organizers <sub>(visual, diagrams, documentation, illustration)</sub> | 9 | 📄 📄9 | 0 | SP-0106 SP-0140 SP-0011 SP-0245 |
 | SP-0037 | قوالب حسب نوع البرومبت · Prompt templates by kind <sub>(prompt, github, repositories, top)</sub> | 32 | ✅ ✅1 🟢5 📄26 | 6 | SP-0175 SP-0143 SP-0371 SP-0057 |

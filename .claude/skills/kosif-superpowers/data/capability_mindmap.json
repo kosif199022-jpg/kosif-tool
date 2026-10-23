@@ -523,7 +523,7 @@
 "SP-0038",
 "SP-0385"
 ],
-"text": "show, don't ask: three style previews اعرض ولا تسأل: ثلاث معاينات style preview show don't ask directions taste معاينة اتجاهات ذوق اختيار anti-cliché sweep (generic 'ai look' check) مسح الكليشيهات cliché ai slop design direction taste كليشيه ذوق اتجاه بصري تصميم عام"
+"text": "anti-cliché sweep (generic 'ai look' check) مسح الكليشيهات cliché ai slop design direction taste كليشيه ذوق اتجاه بصري تصميم عام show, don't ask: three style previews اعرض ولا تسأل: ثلاث معاينات style preview show don't ask directions taste معاينة اتجاهات ذوق اختيار"
 },
 "SP-0015": {
 "id": "SP-0015",
@@ -955,8 +955,8 @@
 },
 "SP-0034": {
 "id": "SP-0034",
-"name_ar": "تحقق من أرقام OCR ببوابة المراسي",
-"name_en": "Verify OCR numbers with the anchor gate",
+"name_ar": "مراجعة المطابقة النحوية بعد التعديل",
+"name_en": "Agreement check after editing",
 "hub": "type",
 "stage": "verify",
 "stages": {
@@ -10601,7 +10601,7 @@
 "SP-0419",
 "SP-0371"
 ],
-"text": "dynamic photo masks أقنعة الصور الديناميكية أقنعة الصور مسح ناعم كشف الصورة photo mask feathered wipe photo-to-graphic trace تحويل الصورة إلى رسم رسم الخطوط تحويل لرسم فيكتور line trace photo to vector"
+"text": "photo-to-graphic trace تحويل الصورة إلى رسم رسم الخطوط تحويل لرسم فيكتور line trace photo to vector dynamic photo masks أقنعة الصور الديناميكية أقنعة الصور مسح ناعم كشف الصورة photo mask feathered wipe"
 },
 "SP-0451": {
 "id": "SP-0451",

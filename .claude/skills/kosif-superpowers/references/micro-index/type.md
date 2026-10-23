@@ -34,8 +34,8 @@ chapter: [arabic-language](../powers/arabic-language.md) · card: `usip-library/
 | ARL-07 | 📄 | الاتجاه الثنائي في النصوص المختلطة · Bidi in mixed Arabic/Latin text | SP-0033 CAMeL Tools: Tokenise, lemmatise, diacr… | tesseract |
 | ARL-09 | 📄 | سياسة التشكيل (الحركات) · Tashkeel policy | SP-0033 CAMeL Tools: Tokenise, lemmatise, diacr… | pip:pillow, fonts:arabic |
 | ARL-17 | 📄 | التعامل مع اللهجات وتحديد السجل · Dialect handling and register choice | SP-0033 CAMeL Tools: Tokenise, lemmatise, diacr… | pip:camel-tools |
-| ARL-15 | ✅ | تحقق من أرقام OCR ببوابة المراسي · Verify OCR numbers with the anchor gate | SP-0034 Verify OCR numbers with the anchor gate | python3, tesseract |
-| ARL-19 | 📄 | مراجعة المطابقة النحوية بعد التعديل · Agreement check after editing | SP-0034 Verify OCR numbers with the anchor gate | — |
+| ARL-15 | ✅ | تحقق من أرقام OCR ببوابة المراسي · Verify OCR numbers with the anchor gate | SP-0034 Agreement check after editing | python3, tesseract |
+| ARL-19 | 📄 | مراجعة المطابقة النحوية بعد التعديل · Agreement check after editing | SP-0034 Agreement check after editing | — |
 | ARL-14 | ✅ | التعرف الضوئي على العربية (tesseract) · Arabic OCR with tesseract | SP-0156 Arabic + English OCR with tesseract | tesseract, pip:torch, fonts:arabic |
 
 ## typography-arabic (motion)

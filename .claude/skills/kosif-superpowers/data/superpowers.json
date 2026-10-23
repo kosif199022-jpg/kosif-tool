@@ -1679,16 +1679,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "IDEA-18",
-"status": "documented",
-"name_en": "Show, don't ask: three style previews",
-"name_ar": "اعرض ولا تسأل: ثلاث معاينات"
-},
-{
 "id": "IDEA-19",
 "status": "documented",
 "name_en": "Anti-cliché sweep (generic 'AI look' check)",
 "name_ar": "مسح الكليشيهات"
+},
+{
+"id": "IDEA-18",
+"status": "documented",
+"name_en": "Show, don't ask: three style previews",
+"name_ar": "اعرض ولا تسأل: ثلاث معاينات"
 }
 ],
 "proof": [],
@@ -4129,8 +4129,8 @@
 "id": "SP-0034",
 "domain": "craft",
 "family": "arabic-language",
-"name_ar": "تحقق من أرقام OCR ببوابة المراسي",
-"name_en": "Verify OCR numbers with the anchor gate",
+"name_ar": "مراجعة المطابقة النحوية بعد التعديل",
+"name_en": "Agreement check after editing",
 "focus": [
 "ocr",
 "agreement",
@@ -60072,16 +60072,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "TRANS-438",
-"status": "documented",
-"name_en": "Dynamic photo masks",
-"name_ar": "أقنعة الصور الديناميكية"
-},
-{
 "id": "TRANS-439",
 "status": "documented",
 "name_en": "Photo-to-graphic trace",
 "name_ar": "تحويل الصورة إلى رسم"
+},
+{
+"id": "TRANS-438",
+"status": "documented",
+"name_en": "Dynamic photo masks",
+"name_ar": "أقنعة الصور الديناميكية"
 }
 ],
 "proof": [],
