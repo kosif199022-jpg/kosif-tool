@@ -2,7 +2,7 @@
 
 Generated from real repository data. Catalog evidence is NOT a live execution receipt.
 
-**5,480 powers / 62 families / 10 domains / 22 route descriptions.**
+**5,490 powers / 62 families / 10 domains / 22 route descriptions.**
 
 For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines this atlas with the runnable tools and guides.
 
@@ -49,10 +49,10 @@ For a task in the user's words, `python3 scripts/hub.py find "<task>"` combines 
 - atlas-build: 52
 - apps-artifacts: 23
 
-### code: 585 powers
+### code: 595 powers
 
 - software-investigation: 258
-- atlas-code: 237
+- atlas-code: 247
 - code-engineering: 24
 - security-safety: 23
 - api-testing: 22

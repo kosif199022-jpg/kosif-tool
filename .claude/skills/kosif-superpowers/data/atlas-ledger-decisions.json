@@ -1,0 +1,417 @@
+{
+ "schema": "kosif.atlas-ledger-decisions.v1",
+ "note": "Reviewed rules applied by scripts/atlas_ledger.py to safe, unique Atlas skills that no power cites. First matching rule wins; longer suffixes are listed first. Each rule records a review decision over SKILL.md text read as inert data, with the evidence in data/atlas-pass-20261023-*.json.",
+ "rules": [
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-advanced-troubleshooting"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-238"
+   ],
+   "reason": "vendor-pack stage 'advanced-troubleshooting': the method is held by ACODE-238; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-reference-architecture"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-244"
+   ],
+   "reason": "vendor-pack stage 'reference-architecture': the method is held by ACODE-244; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-architecture-variants"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-244"
+   ],
+   "reason": "vendor-pack stage 'architecture-variants': the method is held by ACODE-244; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-reliability-patterns"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-245"
+   ],
+   "reason": "vendor-pack stage 'reliability-patterns': the method is held by ACODE-245; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-migration-deep-dive"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-246"
+   ],
+   "reason": "vendor-pack stage 'migration-deep-dive': the method is held by ACODE-246; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-deploy-integration"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-146",
+    "ACODE-151"
+   ],
+   "reason": "vendor-pack stage 'deploy-integration': the method is held by ACODE-146, ACODE-151; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-performance-tuning"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-160"
+   ],
+   "reason": "vendor-pack stage 'performance-tuning': the method is held by ACODE-160; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-upgrade-migration"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-246"
+   ],
+   "reason": "vendor-pack stage 'upgrade-migration': the method is held by ACODE-246; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-policy-guardrails"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-41"
+   ],
+   "reason": "vendor-pack stage 'policy-guardrails': the method is held by ASTRAT-41; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-incident-runbook"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-145"
+   ],
+   "reason": "vendor-pack stage 'incident-runbook': the method is held by ACODE-145; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-core-workflow-a"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-247"
+   ],
+   "reason": "vendor-pack stage 'core-workflow-a': the method is held by ACODE-247; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-core-workflow-b"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-247"
+   ],
+   "reason": "vendor-pack stage 'core-workflow-b': the method is held by ACODE-247; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-webhooks-events"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-52",
+    "ACODE-65"
+   ],
+   "reason": "vendor-pack stage 'webhooks-events': the method is held by ACODE-52, ACODE-65; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-enterprise-rbac"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-240"
+   ],
+   "reason": "vendor-pack stage 'enterprise-rbac': the method is held by ACODE-240; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-multi-env-setup"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-242"
+   ],
+   "reason": "vendor-pack stage 'multi-env-setup': the method is held by ACODE-242; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-security-basics"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-60",
+    "ACODE-51"
+   ],
+   "reason": "vendor-pack stage 'security-basics': the method is held by ACODE-60, ACODE-51; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-local-dev-loop"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-11"
+   ],
+   "reason": "vendor-pack stage 'local-dev-loop': the method is held by ACODE-11; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-known-pitfalls"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-241"
+   ],
+   "reason": "vendor-pack stage 'known-pitfalls': the method is held by ACODE-241; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-ci-integration"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-140",
+    "ACODE-130"
+   ],
+   "reason": "vendor-pack stage 'ci-integration': the method is held by ACODE-140, ACODE-130; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-prod-checklist"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-60"
+   ],
+   "reason": "vendor-pack stage 'prod-checklist': the method is held by ACODE-60; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-common-errors"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-99",
+    "ACODE-102"
+   ],
+   "reason": "vendor-pack stage 'common-errors': the method is held by ACODE-99, ACODE-102; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-data-handling"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-239"
+   ],
+   "reason": "vendor-pack stage 'data-handling': the method is held by ACODE-239; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-observability"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-243",
+    "ACODE-110"
+   ],
+   "reason": "vendor-pack stage 'observability': the method is held by ACODE-243, ACODE-110; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-install-auth"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-51"
+   ],
+   "reason": "vendor-pack stage 'install-auth': the method is held by ACODE-51; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-sdk-patterns"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-50"
+   ],
+   "reason": "vendor-pack stage 'sdk-patterns': the method is held by ACODE-50; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-debug-bundle"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-102"
+   ],
+   "reason": "vendor-pack stage 'debug-bundle': the method is held by ACODE-102; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-hello-world"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-51",
+    "ACODE-60"
+   ],
+   "reason": "vendor-pack stage 'hello-world': the method is held by ACODE-51, ACODE-60; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-rate-limits"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-41",
+    "ACODE-64"
+   ],
+   "reason": "vendor-pack stage 'rate-limits': the method is held by ACODE-41, ACODE-64; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-cost-tuning"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ASTRAT-40"
+   ],
+   "reason": "vendor-pack stage 'cost-tuning': the method is held by ASTRAT-40; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-load-scale"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-245"
+   ],
+   "reason": "vendor-pack stage 'load-scale': the method is held by ACODE-245; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  },
+  {
+   "match": {
+    "source_prefix": "https://github.com/jeremylongshore/tons-of-skills-marketplace",
+    "skill_suffix": [
+     "-env-setup"
+    ]
+   },
+   "status": "pattern",
+   "powers": [
+    "ACODE-242"
+   ],
+   "reason": "vendor-pack stage 'env-setup': the method is held by ACODE-242; vendor specifics stay in the Atlas folder (ACODE-247 maps all stages)"
+  }
+ ]
+}

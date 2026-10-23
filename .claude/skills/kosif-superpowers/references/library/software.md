@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 111 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 16 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 384 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 394 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **568** | |
+| **المجموع** | **578** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -38,6 +38,7 @@
 | `app-studio` | استوديو التطبيقات للصور والتصميم | `python3 scripts/app_studio.py --help` | tested-here |
 | `app-studio-paint` | حزمة الرسم في استوديو التطبيقات | `python3 -c "import sys; sys.path.insert(0,'scripts'); import app_studio; print(app_studio.PAINT_BATCH['effects'])"` | tested-here |
 | `architecture-sizer` | مقدّر سعة الأنظمة | `python3 scripts/architecture_sizer.py --daily-requests 86400 --peak-factor 5 --payload-bytes 1000 --retention-days 7 --replica-rps 100 --target-utilization 0.5 --copies 2` | tested-here |
+| `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
 | `browser-scout` | مستكشف المواقع بالمتصفح | `python3 scripts/browser_scout.py doctor` | tested-here |
 | `capability-graph` | باني خريطة القدرات المترابطة | `python3 scripts/capability_graph.py build` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
@@ -60,7 +61,7 @@
 | `app-feature-transfer` | 139 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
 | `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
-| `atlas-code` | 237 | [atlas-code.md](../powers/atlas-code.md) |
+| `atlas-code` | 247 | [atlas-code.md](../powers/atlas-code.md) |
 | `code-engineering` | 24 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
 
@@ -456,7 +457,17 @@
 | `ACODE-235` | تدقيق الامتثال لـ GDPR انطلاقًا من جرد البيانات الشخصية | GDPR review built on a personal-data inventory | documented |  |
 | `ACODE-236` | دليل سردي لمستودع غير مألوف للمساهمين الجدد | Narrative codebase guide for newcomers | documented | npm:mermaid |
 | `ACODE-237` | تثبيت كل أسطح الإصدارات لتقوية سلسلة التوريد | Pin every version surface for supply-chain hardening | documented | node, python3 |
+| `ACODE-238` | تشخيص أعطال تكامل SaaS المستعصية طبقةً طبقة | Layer-by-layer deep debugging of a stubborn SaaS integration | documented |  |
+| `ACODE-239` | دورة حياة البيانات المارّة بخدمة خارجية: تصنيف واحتفاظ وحذف | Data lifecycle governance for data sent through a SaaS vendor | documented |  |
 | `ACODE-24` | أنماط خدمات الواجهة الخلفية بعدة لغات | Backend service patterns: Node, Go, .NET, Django | documented |  |
+| `ACODE-240` | ربط أدوار المزوّد بصلاحيات التطبيق ومفاتيح الخدمة | Map vendor roles to application RBAC and scoped service keys | documented |  |
+| `ACODE-241` | مراجعة مطبات التكامل المتكررة قبل الإصدار | Recurring integration pitfall audit before release | documented |  |
+| `ACODE-242` | عزل بيئات التطوير والتجربة والإنتاج في التكامل | Prove dev/staging/production isolation for an integration | documented | key:unspecified |
+| `ACODE-243` | قياس صحة تكامل خارجي ونتائجه بمقامات صريحة | Integration observability with explicit denominators | documented |  |
+| `ACODE-244` | معمارية مرجعية لتكامل خارجي: بوابة سياسات ومحوّل وتسوية | Reference architecture for a vendor integration: policy gateway, adapter, reconciliation | documented |  |
+| `ACODE-245` | أنماط موثوقية تكامل خارجي: هوية عمل واحدة لكل إعادة | Integration reliability: one idempotency model for every retry path | documented |  |
+| `ACODE-246` | ترحيل عقد API لدى المزوّد بأدلة الحركة والقراءة المزدوجة | Vendor API contract migration with traffic evidence and dual reads | documented |  |
+| `ACODE-247` | خريطة دورة حياة تكامل SaaS: من التثبيت إلى الحوادث | SaaS integration lifecycle map: install to incident | documented | python3 |
 | `ACODE-25` | اختيار وتخزين مفاتيح الـAPI بأمان | Choose and store API credentials safely | documented | chromium, key:unspecified |
 | `ACODE-26` | اختيار واجهة Zoom المناسبة | Choose Zoom surface: REST, webhooks, WebSocket, SDK | documented | key:unspecified |
 | `ACODE-27` | اختبار عقود API من جهة المستهلك بـ Pact | Consumer-driven API contract testing with Pact | documented |  |
