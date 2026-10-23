@@ -13,9 +13,9 @@
   "relevant": 502,
   "decision": {
    "skip": 507,
-   "mine": 246,
+   "mine": 234,
    "reference": 210,
-   "transferred": 37
+   "transferred": 49
   },
   "topic": {
    "engineering-general": 468,
@@ -41,7 +41,7 @@
    "none": 82,
    "unknown": 29
   },
-  "transferred_ids": 198
+  "transferred_ids": 213
  },
  "rows": [
   {
@@ -1260,9 +1260,11 @@
    "license_class": "permissive",
    "topic": "data-viz-diagrams",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (data-viz-diagrams) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "DRAW-G01"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/excalidraw/excalidraw",
    "description": "Virtual whiteboard for sketching hand-drawn like diagrams"
@@ -1276,9 +1278,11 @@
    "license_class": "permissive",
    "topic": "media-audio-video",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (media-audio-video) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "GEN-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/harry0703/MoneyPrinterTurbo",
    "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow."
@@ -1581,9 +1585,11 @@
    "license_class": "permissive",
    "topic": "graphics-3d-games",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (graphics-3d-games) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "3D-G01"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/mrdoob/three.js",
    "description": "JavaScript 3D Library."
@@ -2159,9 +2165,12 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EXPL-G01",
+    "SHAPE-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/3b1b/manim",
    "description": "Animation engine for explanatory math videos"
@@ -3725,9 +3734,12 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EASE-G03",
+    "EASE-G04"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/juliangarnier/anime",
    "description": "JavaScript animation engine"
@@ -3789,9 +3801,11 @@
    "license_class": "permissive",
    "topic": "design-ui-type",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (design-ui-type) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "TRANS-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/hakimel/reveal.js",
    "description": "The HTML Presentation Framework"
@@ -6773,9 +6787,11 @@
    "license_class": "permissive",
    "topic": "graphics-3d-games",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (graphics-3d-games) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "ENG-G02"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/pixijs/pixijs",
    "description": "The HTML5 Creation Engine: Create beautiful digital content with the fastest, most flexible 2D WebGL renderer."
@@ -7993,9 +8009,11 @@
    "license_class": "permissive",
    "topic": "data-viz-diagrams",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (data-viz-diagrams) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EXPL-G02"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/mingrammer/diagrams",
    "description": ":art: Diagram as Code for prototyping cloud system architectures"
@@ -8187,9 +8205,11 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "DRAW-G02"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/nolimits4web/swiper",
    "description": "Most modern mobile touch slider with hardware accelerated transitions"
@@ -8235,9 +8255,12 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "SHAPE-G01",
+    "SHAPE-G02"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/ManimCommunity/manim",
    "description": "A community-maintained Python framework for creating mathematical animations."
@@ -12344,9 +12367,11 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "ENG-G01"
+   ],
    "credited_in_repos_json": true,
    "url": "https://github.com/airbnb/lottie-web",
    "description": "Render After Effects animations natively on Web, Android and iOS, and React Native. http://airbnb.io/lottie/"
@@ -14464,9 +14489,11 @@
    "license_class": "permissive",
    "topic": "motion-animation",
    "relevant": true,
-   "decision": "mine",
+   "decision": "transferred",
    "why": "relevant (motion-animation) and MIT: methods and code patterns may be reused with credit",
-   "transferred": [],
+   "transferred": [
+    "EASE-G01"
+   ],
    "credited_in_repos_json": false,
    "url": "https://github.com/pmndrs/react-spring",
    "description": "✌️ A spring physics based React animation library"

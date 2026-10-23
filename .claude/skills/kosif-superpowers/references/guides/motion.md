@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:motion:start -->
 
-**الأدوات / tools (18)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (19)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -30,6 +30,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `unified-cinematic` | Compose photo effects, layered animated strokes and shapes, WAV onset candidates, camera push/pan transitions and source-timed AAC audio into H.264 MP4. | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `style-atlas-bridge` | Searches the 86 paraphrased Futurepedia AI Style Atlas methods in 14 families (look, motion, explainer grammar, fonts, palette, techniques, sounds), fuses up to two (85/15), writes a storyboard-first production brief, scaffolds an explainer project on the original KOSIF engine, and draws static SVG studies. | `python3 scripts/style_atlas_bridge.py families` | tested-here |
 | `atlas-render` | Drives an A15 explainer page (window.seek/DURATION/scoreSound) in headless Chromium: storyboard grid PNG, single stills, a determinism and speed check, frame-by-frame H.264 render with the KSound score rendered offline and muxed as AAC, and a single-file HTML bundle. | `python3 scripts/atlas_render.py check` | tested-here |
+| `motion-physics` | Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files. | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` | tested-here |
 
 <!-- hub:area:motion:end -->
 

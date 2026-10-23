@@ -1,4 +1,4 @@
-# `hand-drawn-draw-on` — الرسم والأشكال والتصميم (63 بطاقة)
+# `hand-drawn-draw-on` — الرسم والأشكال والتصميم (65 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/hand-drawn-draw-on.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/drawing.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -64,6 +64,8 @@
 - [`DRAW-58` إعادة رسم مخرجات مولدة كمتجهات](#draw-58--إعادة-رسم-مخرجات-مولدة-كمتجهات--generated-raster--hand-vector-recreation)
 - [`DRAW-59` مكونات HyperFrames للرسم اليدوي](#draw-59--مكونات-hyperframes-للرسم-اليدوي--hyperframes-hand-drawn-components)
 - [`DRAW-60` مكتبات الرسم التدريجي](#draw-60--مكتبات-الرسم-التدريجي--draw-on-libraries)
+- [`DRAW-G01` رسم يدوي خشن ثابت البذرة](#draw-g01--رسم-يدوي-خشن-ثابت-البذرة--seeded-rough-hand-drawn-rendering)
+- [`DRAW-G02` زخم السحب والارتداد المطاطي](#draw-g02--زخم-السحب-والارتداد-المطاطي--drag-momentum-and-rubber-band-edges)
 - [`DRAW-P01` قصة الخط الواحد المستمر حتى الشعار](#draw-p01--قصة-الخط-الواحد-المستمر-حتى-الشعار--continuous-line-logo-story-one-stroke--three-beats--wordmark-loop)
 - [`DRAW-U01` فيلم يد مرسومة حتمي بـmake_frame(t)](#draw-u01--فيلم-يد-مرسومة-حتمي-بـmake_framet--deterministic-hand-drawn-film-via-make_framet)
 - [`DRAW-X01` ريشة تكتب السطر الفعلي](#draw-x01--ريشة-تكتب-السطر-الفعلي--quill-that-writes-the-actual-line-ink-frontier)
@@ -4314,7 +4316,7 @@
 - `DRAW-57` دراسة أسلوب مرسوم بالتتبع / Rotoscope style study & style pack (documented)
 - `DRAW-58` إعادة رسم مخرجات مولدة كمتجهات / Generated raster → hand vector recreation (ready)
 - `DRAW-60` مكتبات الرسم التدريجي / Draw-on libraries (install)
-- `DRAW-P01` قصة الخط الواحد المستمر حتى الشعار / Continuous-line logo story (one stroke → three beats → wordmark loop) (documented)
+- `DRAW-G01` رسم يدوي خشن ثابت البذرة / Seeded rough hand-drawn rendering (documented)
 
 ### `DRAW-60` — مكتبات الرسم التدريجي / Draw-on libraries
 
@@ -4382,6 +4384,144 @@
 
 - `DRAW-58` إعادة رسم مخرجات مولدة كمتجهات / Generated raster → hand vector recreation (ready)
 - `DRAW-59` مكونات HyperFrames للرسم اليدوي / HyperFrames hand-drawn components (install)
+- `DRAW-G01` رسم يدوي خشن ثابت البذرة / Seeded rough hand-drawn rendering (documented)
+- `DRAW-G02` زخم السحب والارتداد المطاطي / Drag momentum and rubber-band edges (documented)
+
+### `DRAW-G01` — رسم يدوي خشن ثابت البذرة / Seeded rough hand-drawn rendering
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `hand-drawn-draw-on` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/hand-drawn-draw-on.md)) |
+| المجموعة | الرسم والأشكال والتصميم (`drawing`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** ارسم الأشكال بمظهر يدوي (خشونة، انحناء، تهشير) ببذرة ثابتة لكل شكل حتى لا يرتعش عند إعادة الرسم، ثم اكشفه بطول المسار. — Draw shapes with a hand-made look (roughness, bowing, hachure) with one fixed seed per shape so it does not jitter on redraw, then reveal it by path length.
+
+**متى:** شرح بأسلوب السبورة أو الكراسة / whiteboard or notebook-style explainers
+
+**كيف:** Parameters: roughness 1-2, bowing 1, hachure fill with angle −41° and gap 4-8 px, stroke width 1.5-2.5; a seed per shape id (never Math.random per frame); animate with stroke-dasharray/offset over each generated path in drawing order (outline, then fill). For a lively loop change the seed every 3-4 frames on purpose ('boiling line'), not every frame.
+
+**المعاملات:** roughness 1-2; boil every 3-4 frames
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** excalidraw · rough.js · hand-drawn · sketchy · hachure · seed · رسم يدوي · سبورة · خشن
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:DRAW-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio-paint` · `atlas-render` · `code-drawing-master` · `creative-paint` · `creative-reasoning-bridge` · `drawing-methods`.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `DRAW-59` مكونات HyperFrames للرسم اليدوي / HyperFrames hand-drawn components (install)
+- `DRAW-60` مكتبات الرسم التدريجي / Draw-on libraries (install)
+- `DRAW-G02` زخم السحب والارتداد المطاطي / Drag momentum and rubber-band edges (documented)
+- `DRAW-P01` قصة الخط الواحد المستمر حتى الشعار / Continuous-line logo story (one stroke → three beats → wordmark loop) (documented)
+
+### `DRAW-G02` — زخم السحب والارتداد المطاطي / Drag momentum and rubber-band edges
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `hand-drawn-draw-on` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/hand-drawn-draw-on.md)) |
+| المجموعة | الرسم والأشكال والتصميم (`drawing`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** بعد إفلات السحب تستمر الحركة بسرعتها ثم تتباطأ أسيًا، وعند الحافة تقاوم بمعامل مطاطي ثم ترتد. — After a drag is released motion continues at its speed and decays exponentially; at the edge it resists with a rubber-band factor and springs back.
+
+**متى:** محاكاة تمرير أو سلايدر داخل فيديو منتج أو تطبيق / simulating a scroll or slider inside a product or app video
+
+**كيف:** Release velocity v0 from the last ~100 ms of drag; position x(t) = x0 + v0·τ·(1 − e^(−t/τ)) with τ ≈ 0.325 s; overscroll displayed = (1 − 1/(d·0.55/W + 1))·W for distance d past the edge and width W; return with a critically damped spring (EASE-G01). Feels like a real phone, so screen recordings and mock-ups read as genuine.
+
+**المعاملات:** τ ≈ 0.325 s; rubber-band 0.55
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** momentum · rubber band · scroll physics · swiper · ui animation · زخم · سحب · ارتداد
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:DRAW-G02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio-paint` · `atlas-render` · `code-drawing-master` · `creative-paint` · `creative-reasoning-bridge` · `drawing-methods`.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `tool_error` (خطأ أداة، ميزانية 3): اقرأ آخر سطر في الخطأ ثم أول سطر من كودك فيه ← أصلح السبب المثبت وحده، ثم شغّل الاختبار المتعلق · البديل: أداة أخرى أو مسار يدوي للمرحلة نفسها · تصعيد: خطأ في أداة خارجية لا تملكها: بلّغ بإعادة الإنتاج ولا تخفه
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `DRAW-60` مكتبات الرسم التدريجي / Draw-on libraries (install)
+- `DRAW-G01` رسم يدوي خشن ثابت البذرة / Seeded rough hand-drawn rendering (documented)
 - `DRAW-P01` قصة الخط الواحد المستمر حتى الشعار / Continuous-line logo story (one stroke → three beats → wordmark loop) (documented)
 - `DRAW-U01` فيلم يد مرسومة حتمي بـmake_frame(t) / Deterministic hand-drawn film via make_frame(t) (documented)
 
@@ -4452,8 +4592,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `DRAW-59` مكونات HyperFrames للرسم اليدوي / HyperFrames hand-drawn components (install)
-- `DRAW-60` مكتبات الرسم التدريجي / Draw-on libraries (install)
+- `DRAW-G01` رسم يدوي خشن ثابت البذرة / Seeded rough hand-drawn rendering (documented)
+- `DRAW-G02` زخم السحب والارتداد المطاطي / Drag momentum and rubber-band edges (documented)
 - `DRAW-U01` فيلم يد مرسومة حتمي بـmake_frame(t) / Deterministic hand-drawn film via make_frame(t) (documented)
 - `DRAW-X01` ريشة تكتب السطر الفعلي / Quill that writes the actual line (ink frontier) (documented)
 
@@ -4523,7 +4663,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `DRAW-60` مكتبات الرسم التدريجي / Draw-on libraries (install)
+- `DRAW-G02` زخم السحب والارتداد المطاطي / Drag momentum and rubber-band edges (documented)
 - `DRAW-P01` قصة الخط الواحد المستمر حتى الشعار / Continuous-line logo story (one stroke → three beats → wordmark loop) (documented)
 - `DRAW-X01` ريشة تكتب السطر الفعلي / Quill that writes the actual line (ink frontier) (documented)
 

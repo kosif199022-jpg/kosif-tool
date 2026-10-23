@@ -1,4 +1,4 @@
-# `diagrams-explainers-code` — الرسم والأشكال والتصميم (67 بطاقة)
+# `diagrams-explainers-code` — الرسم والأشكال والتصميم (69 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/diagrams-explainers-code.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/drawing.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -68,6 +68,8 @@
 - [`EXPL-62` أسلوب الرسومات التقنية](#expl-62--أسلوب-الرسومات-التقنية--tech-blueprint-style)
 - [`EXPL-63` لوحات ستوري بورد SVG مصغرة](#expl-63--لوحات-ستوري-بورد-svg-مصغرة--svg-thumbnail-storyboards)
 - [`EXPL-64` نموذج مجرة الأدلة](#expl-64--نموذج-مجرة-الأدلة--evidence-galaxy-graph-model)
+- [`EXPL-G01` قواعد مشهد الشرح الرياضي](#expl-g01--قواعد-مشهد-الشرح-الرياضي--explainer-scene-grammar)
+- [`EXPL-G02` مخطط بنية سحابية بالكود ثم كشفه](#expl-g02--مخطط-بنية-سحابية-بالكود-ثم-كشفه--architecture-diagram-as-code-revealed-by-cluster)
 - [`EXPL-U01` قائمة الأساليب الخمسة للموشن بالكود](#expl-u01--قائمة-الأساليب-الخمسة-للموشن-بالكود--five-code-rendered-motion-graphics-styles-menu)
 - [`EXPL-U02` لقطة التحليل المجمّدة](#expl-u02--لقطة-التحليل-المجمّدة--frozen-analysis-beat-overlay)
 - [`EXPL-X01` فيديو شرح بـManim](#expl-x01--فيديو-شرح-بـmanim--manim-explainer-workflow)
@@ -4528,7 +4530,7 @@
 - `EXPL-61` أدوات بصرية للشرح / Explainer visual devices (seen)
 - `EXPL-62` أسلوب الرسومات التقنية / Tech blueprint style (ready)
 - `EXPL-64` نموذج مجرة الأدلة / Evidence galaxy graph model (idea)
-- `EXPL-U01` قائمة الأساليب الخمسة للموشن بالكود / Five code-rendered motion-graphics styles menu (documented)
+- `EXPL-G01` قواعد مشهد الشرح الرياضي / Explainer scene grammar (documented)
 
 ### `EXPL-64` — نموذج مجرة الأدلة / Evidence galaxy graph model
 
@@ -4596,6 +4598,142 @@
 
 - `EXPL-62` أسلوب الرسومات التقنية / Tech blueprint style (ready)
 - `EXPL-63` لوحات ستوري بورد SVG مصغرة / SVG thumbnail storyboards (documented)
+- `EXPL-G01` قواعد مشهد الشرح الرياضي / Explainer scene grammar (documented)
+- `EXPL-G02` مخطط بنية سحابية بالكود ثم كشفه / Architecture diagram as code, revealed by cluster (documented)
+
+### `EXPL-G01` — قواعد مشهد الشرح الرياضي / Explainer scene grammar
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `diagrams-explainers-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/diagrams-explainers-code.md)) |
+| المجموعة | الرسم والأشكال والتصميم (`drawing`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** فكرة واحدة لكل مشهد: اكتب أو ارسم العنصر عند تقديمه، حوّله عند تغيّر معناه، تتابع بنسبة تأخير للمجموعات، حرّك الكاميرا نحو التفصيلة، واترك وقفة بعد كل خطوة. — One idea per scene: write or draw an element when it is introduced, transform it when its meaning changes, lag groups, move the camera to the detail, and hold a beat after each step.
+
+**متى:** فيديو شرح رياضي أو علمي أو تقني / a maths, science or technical explainer
+
+**كيف:** Grammar: Create/Write (introduce) → Transform (same thing, new form) → FadeOut (done) ; LaggedStart(lag_ratio≈0.1-0.25) for lists; camera frame moves rather than shrinking content; wait 0.5-1 s after each idea; colour = meaning (same quantity, same colour across scenes). Narration first, then animate to the words (words.json).
+
+**المعاملات:** lag_ratio 0.1-0.25; hold 0.5-1 s per idea
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** manim · explainer · laggedstart · scene grammar · 3blue1brown · فيديو شرح · رياضيات · مشهد
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:EXPL-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `EXPL-63` لوحات ستوري بورد SVG مصغرة / SVG thumbnail storyboards (documented)
+- `EXPL-64` نموذج مجرة الأدلة / Evidence galaxy graph model (idea)
+- `EXPL-G02` مخطط بنية سحابية بالكود ثم كشفه / Architecture diagram as code, revealed by cluster (documented)
+- `EXPL-U01` قائمة الأساليب الخمسة للموشن بالكود / Five code-rendered motion-graphics styles menu (documented)
+
+### `EXPL-G02` — مخطط بنية سحابية بالكود ثم كشفه / Architecture diagram as code, revealed by cluster
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `diagrams-explainers-code` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/diagrams-explainers-code.md)) |
+| المجموعة | الرسم والأشكال والتصميم (`drawing`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `none` |
+| الرخصة | MIT |
+
+**ما هي:** اكتب مخطط البنية كودًا (عُقد بأيقونات مزود الخدمة ومجموعات وحواف)، ولّده صورة متجهة، ثم اكشفه مجموعة بعد مجموعة مع السرد. — Write the architecture as code (provider-icon nodes, clusters, edges), render it to a vector image, then reveal it cluster by cluster with the narration.
+
+**متى:** شرح بنية نظام أو تدفق بيانات / explaining a system architecture or data flow
+
+**كيف:** Clusters = boundaries the viewer must understand (VPC, service, team); edges labelled with what flows; render to SVG; give every cluster an id; animate in narration order: cluster outline draws on, then its nodes stagger in (EASE-G03), then edges draw along their direction. Keep ≤ 12 nodes on screen at once; split bigger systems into scenes.
+
+**المعاملات:** ≤ 12 nodes per shot
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** diagrams as code · architecture · cloud · svg · mingrammer · مخطط · بنية · سحابة
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:EXPL-G02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- لا دليل مسجل: لا تُقدَّم أكثر من منهج.
+
+#### 7. قدرات قريبة في العائلة
+
+- `EXPL-64` نموذج مجرة الأدلة / Evidence galaxy graph model (idea)
+- `EXPL-G01` قواعد مشهد الشرح الرياضي / Explainer scene grammar (documented)
 - `EXPL-U01` قائمة الأساليب الخمسة للموشن بالكود / Five code-rendered motion-graphics styles menu (documented)
 - `EXPL-U02` لقطة التحليل المجمّدة / Frozen analysis beat overlay (documented)
 
@@ -4660,8 +4798,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `EXPL-63` لوحات ستوري بورد SVG مصغرة / SVG thumbnail storyboards (documented)
-- `EXPL-64` نموذج مجرة الأدلة / Evidence galaxy graph model (idea)
+- `EXPL-G01` قواعد مشهد الشرح الرياضي / Explainer scene grammar (documented)
+- `EXPL-G02` مخطط بنية سحابية بالكود ثم كشفه / Architecture diagram as code, revealed by cluster (documented)
 - `EXPL-U02` لقطة التحليل المجمّدة / Frozen analysis beat overlay (documented)
 - `EXPL-X01` فيديو شرح بـManim / Manim explainer workflow (install)
 
@@ -4728,7 +4866,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `EXPL-64` نموذج مجرة الأدلة / Evidence galaxy graph model (idea)
+- `EXPL-G02` مخطط بنية سحابية بالكود ثم كشفه / Architecture diagram as code, revealed by cluster (documented)
 - `EXPL-U01` قائمة الأساليب الخمسة للموشن بالكود / Five code-rendered motion-graphics styles menu (documented)
 - `EXPL-X01` فيديو شرح بـManim / Manim explainer workflow (install)
 

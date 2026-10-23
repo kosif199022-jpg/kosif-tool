@@ -13146,6 +13146,94 @@
     "agent-orchestration",
     "self-discovery"
    ]
+  },
+  {
+   "root": "skill",
+   "kind": "cli",
+   "consent": "",
+   "evidence": "tested-here",
+   "id": "motion-physics",
+   "path": "scripts/motion_physics.py",
+   "area": "motion",
+   "title_en": "Motion Physics",
+   "title_ar": "فيزياء الحركة",
+   "summary_en": "Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files.",
+   "summary_ar": "يحسب أرقام الحركة بدل تخمينها: نابض من الصلابة والتخميد والكتلة (القيمة في كل إطار ونسبة التخميد وزمن الاستقرار والتجاوز، أو إطارات CSS)، وأي منحنى cubic-bezier أو تسهيل CSS مسمى بنفس حساب المتصفح، وتأخيرات التتابع من نقطة أصل (الأول أو الأخير أو المنتصف أو الأطراف أو عنصر بعينه) في صف أو شبكة، وعينات خط مفاتيح لكل إطار بتسهيل. مكتبة بايثون القياسية فقط؛ يطبع JSON أو CSS ولا يكتب ملفات.",
+   "use_when": [
+    "عايز ارتداد نابض طبيعي للعنوان، اطلعلي القيم لكل فريم",
+    "حوّل cubic-bezier ده لقيم لكل فريم",
+    "give me stagger delays from the center of a 4x3 grid",
+    "spring keyframes with stiffness 180 and damping 12 as CSS"
+   ],
+   "keywords": [
+    "spring",
+    "spring physics",
+    "cubic-bezier",
+    "easing",
+    "stagger",
+    "keyframes",
+    "overshoot",
+    "settle time",
+    "react-spring",
+    "anime.js",
+    "نابض",
+    "ارتداد",
+    "تسهيل",
+    "تتابع",
+    "فيزياء الحركة",
+    "فريمات"
+   ],
+   "commands": [
+    {
+     "name": "spring",
+     "example": "python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30",
+     "does": "Values per frame, damping ratio, regime, settle time and overshoot; --css NAME prints @keyframes"
+    },
+    {
+     "name": "bezier",
+     "example": "python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30",
+     "does": "A CSS cubic-bezier sampled at --frames + 1 evenly spaced points"
+    },
+    {
+     "name": "stagger",
+     "example": "python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out",
+     "does": "Delay in seconds for each element from an origin on a row or a grid"
+    },
+    {
+     "name": "keyframes",
+     "example": "python3 scripts/motion_physics.py keyframes --track 0:0,0.5:120,1.2:100 --ease out --fps 30",
+     "does": "A time:value track sampled per frame with an easing"
+    },
+    {
+     "name": "--self-test",
+     "example": "python3 scripts/motion_physics.py --self-test",
+     "does": "Checks spring regimes, the CSS 'ease' value at 0.5, stagger origins and track sampling"
+    }
+   ],
+   "inputs": "Numbers on the command line.",
+   "outputs": "JSON or CSS on stdout; it writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "limits": "The spring is integrated numerically (16 sub-steps per frame), so values match an analytic spring to about 1e-3, not exactly; one dimension at a time; settle uses a 0.1 % rest threshold; easing names cover the CSS keywords plus a few common curves, not every library's presets.",
+   "evidence_note": "5/5 passed (python3 -m unittest evals.test_motion_physics) and --self-test OK on 2026-10-23",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_motion_physics.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/powers/easing-timing-rhythm.md",
+    ".claude/skills/kosif-superpowers/references/guides/motion.md"
+   ],
+   "families": [
+    "easing-timing-rhythm"
+   ]
   }
  ]
 }

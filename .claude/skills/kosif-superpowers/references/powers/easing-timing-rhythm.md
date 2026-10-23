@@ -2,7 +2,7 @@
 
 > **قوتك هنا:** أنت لا تحرّك الأشياء فقط — أنت تقرر **متى** و**كم** و**بأي إحساس**. كل إطار عندك دالة خالصة للزمن `seek(t)`، والمنحنيات لها أدوار (وصول، خروج، كاميرا، ضربة)، والنوابض بصيغة مغلقة تُحسب عند أي إطار، والإيقاع مأخوذ من أرقام قيست على أفلام إطلاق حقيقية: لقطة وسيطة 1.46 ث، تغيير كل 0.7 ث، أول كلمة مقروءة عند 0.4 ث.
 > **أقوى دليل:** قستُ نوابض ومنحنيات مكتبة الحركة في هذه الحاوية بـ node (‏SPR.snap تجاوز 6.0% ويستقر خلال 0.34 ث، firm حرج 0%، ‏durFor(600 px)=1.16 ث، ‏hitPulse يبلغ قمته عند 33 ملّي ثانية)، ومرّت اختبارات عقود الحركة (`kosif-audit-pro` 5/5، `kosif-earth-ci-fork` 4/4، منحدرات السرعة 2/2)، وأفلام الإثبات الخمسة في `proofs/` رُندرت إطارًا إطارًا بـ seek(t) وتطابق فيها عدد الإطارات والمدة (300 إطار = 10.000 ث).
-> **You can:** time, ease, spring, stagger, punch, ramp and pace any film deterministically — in plain canvas, GSAP (vendored), CSS, Remotion or ffmpeg. **102 powers follow** — ✅ 27 · 🟢 26 · 📦 7 · 🔑 0 · 👁 10 · 📄 32 · 💡 0.
+> **You can:** time, ease, spring, stagger, punch, ramp and pace any film deterministically — in plain canvas, GSAP (vendored), CSS, Remotion or ffmpeg. **106 powers follow** — ✅ 27 · 🟢 29 · 📦 7 · 🔑 0 · 👁 10 · 📄 33 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت هنا (كود + اختبار أو رندر في هذه الحاوية) · 🟢 جاهز (كود المالك يعمل بلا إضافات) · 📦 بأمر تثبيت · 🔑 مفتاح أو خدمة · 👁 شوهد في فيديو أنتجتَه (وصفة البناء مرفقة) · 📄 موصوف فقط · 💡 فكرة.
 مسارات الدليل نسبية إلى `/home/user/`؛ `style:<id>` = فيديو مرجعي أنتجتَه سابقًا (ملاحظاته في `kosif-tool/styles/<id>/`).
@@ -22,6 +22,7 @@
 - **مكونات ومكتبات جاهزة للتوقيت — Ready timing components & libraries** — EASE-90 … EASE-91 (2)
 - توليفات قوية / power combos · أخطاء ممنوعة / never do · أقوى 5 حركات توقيع / 5 signature moves
 - **إضافات v2 — v2 additions** — EASE-X01 … EASE-X11 (11)
+- **من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)** — EASE-G01 … EASE-G04 (4)
 
 ## قوانين الزمن والحتمية — Time laws & determinism
 
@@ -778,3 +779,38 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner (no LICENSE file)
 - **المصدر / source:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
 - **الدليل / proof:** `owner-upload:motion-skill-claude/higgsfield-motion-claude/references/production-lessons.md`
+
+## من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)
+
+_قدرات من أشهر مستودعات GitHub ذات الترخيص المفتوح (MIT)، مكتوبة بكلماتنا لا منسوخة، وسجل كل مستودع في [github-top-1000.md](../github-top-1000.md). 🟢 = الكود هنا في `scripts/motion_physics.py` واختباره `evals/test_motion_physics.py`. — Powers from the most-starred open-licence (MIT) GitHub repositories, restated in our own words; per-repo record in github-top-1000.md; 🟢 = code here in scripts/motion_physics.py with its test._
+
+#### EASE-G01 · نابض بالفيزياء يطبع كل إطار · Spring solved frame by frame · 🟢 جاهز / ready
+- **ماذا / what:** احسب النابض من الكتلة والصلابة والتخميد لا من مدة، واطبع قيمته في كل إطار وزمن استقراره ونسبة تجاوزه، أو كإطارات CSS. — Solve the spring from mass, stiffness and damping instead of a duration, and print its value every frame, its settle time and overshoot, or CSS @keyframes.
+- **متى أستخدمها / when:** حركة دخول أو ارتداد طبيعية في HTML أو Remotion أو After Effects / a natural entrance or bounce in HTML, Remotion or After Effects
+- **كيف / how:** `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` → JSON with damping_ratio, regime, settled, seconds, overshoot_pct and values per frame; `--css pop` prints @keyframes. Damping ratio ζ = damping / (2√(stiffness·mass)): ζ<1 bounces, ζ≈1 settles fastest without overshoot. Measured here: 170/26 settles in 0.73 s with 0 % overshoot (ζ≈1.0); 180/8 overshoots 37 % and settles in 1.6 s. Paste the values array instead of hand-keying a bounce. **أرقام / params:** stiffness 170 · damping 26 · mass 1 (react-spring defaults); sub-step 1/16 frame.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/pmndrs/react-spring (MIT; tension/friction model) — our own solver in scripts/motion_physics.py
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py`
+
+#### EASE-G02 · منحنى CSS محسوب كما يحسبه المتصفح · Browser-exact cubic-bezier sampling · 🟢 جاهز / ready
+- **ماذا / what:** حوّل أي cubic-bezier أو اسم تسهيل CSS إلى قيم لكل إطار بنفس حل المتصفح، لتطابق الحركة في الفيديو ما يظهر في الصفحة. — Turn any cubic-bezier or named CSS easing into per-frame values with the browser's solution, so the rendered film matches the page.
+- **متى أستخدمها / when:** نقل حركة من CSS إلى Manim أو After Effects أو العكس / moving an animation between CSS and Manim or After Effects
+- **كيف / how:** `python3 scripts/motion_physics.py bezier 0.25 0.1 0.25 1 --frames 30`; named easings for `--ease` in stagger and keyframes: linear, ease, ease-in, ease-out, ease-in-out, out-expo, out-back, in-out-cubic, plus steps(n). Solver: Newton on x(t) with bisection fallback, then y(t). Check: CSS 'ease' at x=0.5 gives 0.8024. **أرقام / params:** x1, x2 ∈ [0,1]; y may overshoot (out-back).
+- **الرخصة / license:** MIT
+- **المصدر / source:** CSS Easing Functions definition (W3C) — our own solver in scripts/motion_physics.py
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py`
+
+#### EASE-G03 · تتابع من نقطة أصل على شبكة · Stagger from an origin on a grid · 🟢 جاهز / ready
+- **ماذا / what:** وزّع التأخير على العناصر حسب بعدها عن نقطة أصل (الأول، الأخير، المنتصف، الأطراف، عنصر بعينه) في صف أو شبكة، مع منحنى للتأخير نفسه. — Spread delays by each element's distance from an origin (first, last, center, edges, a given index) in a row or grid, with an easing on the delays themselves.
+- **متى أستخدمها / when:** ظهور حروف أو أيقونات أو بلاطات شبكة / revealing letters, icons or grid tiles
+- **كيف / how:** `python3 scripts/motion_physics.py stagger --count 12 --each 0.06 --from center --grid 4x3 --ease out` → delays in seconds per element (2-D distance on a grid). Center-out reads as an explosion, edges-in as gathering; ease-out on delays bunches the first ones and spreads the tail. Keep the total stagger ≤ 40 % of the move so the group still reads as one gesture. **أرقام / params:** each 0.03-0.08 s for letters; total ≤ 40 % of the move.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/juliangarnier/anime (MIT; stagger options) — semantics restated, our own code in scripts/motion_physics.py
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py`
+
+#### EASE-G04 · خط زمني بإزاحات نسبية وعلامات · Timeline with relative offsets and labels · 📄 موصوف / documented only
+- **ماذا / what:** ابنِ المشهد كخط زمني واحد تُوضع فيه كل حركة بإزاحة نسبية من السابقة أو عند علامة مسماة، فيتغير التوقيت كله بتعديل رقم واحد. — Build the scene as one timeline where each move is placed by a relative offset from the previous one or at a named label, so retiming means editing one number.
+- **متى أستخدمها / when:** مشهد فيه أكثر من خمس حركات متتالية / a scene with more than five chained moves
+- **كيف / how:** Place: '+=0.2' (gap after the previous end), '-=0.15' (overlap), '<' (same start as previous), 'label+0.3'. Labels for beats ('title', 'logo', 'cta') come from the audio grid (words.json or beats). Never hard-code absolute times in many places; compute them from the label table and export the table with the film for review.
+- **الرخصة / license:** MIT
+- **المصدر / source:** https://github.com/juliangarnier/anime (MIT; timeline offsets) — restated; GSAP's position parameter is the same idea (GSAP licence: link only)

@@ -2807,5 +2807,40 @@
   ],
   "section": "إضافات v2 — v2 additions",
   "source": "https://github.com/affaan-m/ECC/tree/main/skills/taste-application/SKILL.md"
+ },
+ {
+  "id": "GEN-G01",
+  "family": "ai-generation",
+  "domain": "motion",
+  "name_ar": "خط إنتاج من موضوع إلى فيديو قصير",
+  "name_en": "Topic-to-short pipeline with reviewable stages",
+  "status": "documented",
+  "what": "موضوع ← نص ← كلمات بحث لكل جملة ← لقطات مرخصة ← صوت ← ترجمة بتوقيت الكلمات ← تجميع مع خفض الموسيقى، وكل مرحلة ملف يُراجع قبل التالية. — Topic → script → search terms per sentence → licensed clips → voice → word-timed subtitles → assembly with ducked music, each stage a file reviewed before the next.",
+  "when": "فيديوهات قصيرة متكررة من مواضيع / recurring short videos from topics",
+  "how": "Stage files: script.md, terms.json (2-3 visual terms per sentence), clips.json (source URL, licence, in/out), voice.wav, words.json, edit.json, film.mp4 + credits.txt. Clips only from sources whose licence allows reuse (Pexels/Pixabay terms, own footage); never the user's voice cloned without consent; the user approves script and clips before render. KOSIF executors: stock_fetch.py, montage_pro.py, render_html.cjs.",
+  "params": "",
+  "install": "",
+  "requires": [
+   "node",
+   "python3",
+   "chromium"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "moneyprinter",
+   "automation",
+   "stock footage",
+   "tts",
+   "subtitles",
+   "shorts",
+   "فيديو قصير",
+   "أتمتة",
+   "مونتاج"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/harry0703/MoneyPrinterTurbo (MIT) — pipeline restated in our own words"
  }
 ]

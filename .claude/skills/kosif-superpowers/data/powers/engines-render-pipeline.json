@@ -12944,5 +12944,66 @@
   ],
   "section": "إضافات v3 — v3 additions",
   "source": ""
+ },
+ {
+  "id": "ENG-G01",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "تصدير لوتي يعمل في كل مشغل",
+  "name_en": "Lottie export that plays everywhere",
+  "status": "documented",
+  "what": "صمم بطبقات أشكال متجهة فقط، وتجنب المؤثرات والتعبيرات غير المدعومة، وضع علامات للمقاطع، واختبر في المشغل قبل التسليم. — Design with vector shape layers only, avoid unsupported effects and expressions, add markers for segments, and test in the player before delivery.",
+  "when": "أيقونات متحركة أو رسوم واجهة أو ستيكرات / animated icons, UI animations or stickers",
+  "how": "Allowed: shape layers, trim paths, masks, transforms, solid fills/strokes, precomps; avoid: layer effects, blending modes, 3D layers, heavy expressions, raster images unless needed. Markers name segments (intro, loop, outro) for segment playback. Ship .json plus .lottie (zipped) and a poster frame; check size (< 100 KB for UI) and play it in lottie-web at 1×, 2× and in reverse.",
+  "params": "UI files < 100 KB; 30 or 60 fps",
+  "install": "",
+  "requires": [
+   "npm:lottie"
+  ],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "lottie",
+   "bodymovin",
+   "dotlottie",
+   "vector animation",
+   "markers",
+   "لوتي",
+   "أيقونات متحركة"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/airbnb/lottie-web (MIT) — restated in our own words"
+ },
+ {
+  "id": "ENG-G02",
+  "family": "engines-render-pipeline",
+  "domain": "motion",
+  "name_ar": "رسم ثنائي الأبعاد بآلاف العناصر",
+  "name_en": "2D scenes with thousands of sprites",
+  "status": "documented",
+  "what": "اجمع الصور في أطلس واحد، وارسم العناصر الكثيرة في حاوية جسيمات، وحرّك بفرق الزمن، فتبقى آلاف العناصر سلسة. — Pack images into one atlas, draw many elements in a particle container and move them by time delta, so thousands stay smooth.",
+  "when": "خلفيات جسيمات أو حشود أو مطر أو ثلج في 2D / particle backgrounds, crowds, rain or snow in 2D",
+  "how": "One texture atlas → one draw call; ParticleContainer for >1,000 sprites with only position/scale/rotation/alpha changing; ticker deltaTime for motion; pool objects instead of creating per frame; cap total sprites and measure frame time before adding effects.",
+  "params": "",
+  "install": "",
+  "requires": [],
+  "license": "MIT",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "pixijs",
+   "sprites",
+   "atlas",
+   "batching",
+   "particles",
+   "بكسي",
+   "جسيمات",
+   "أطلس"
+  ],
+  "section": "من أكبر مستودعات GitHub — from the top GitHub repositories (2026-10-23)",
+  "source": "https://github.com/pixijs/pixijs (MIT) — restated in our own words"
  }
 ]
