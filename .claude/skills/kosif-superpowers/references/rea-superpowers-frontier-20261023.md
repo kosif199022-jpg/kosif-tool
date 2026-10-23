@@ -26,6 +26,7 @@ REA 6.7.0 (`rea-agents`, MIT, source checked at morluto/rea 45a411e8 and against
 
 - Eight scripts had no test, CI step or tools.json test at all (`atlas_bulk_source_audit`, `atlas_deep_fusion`, `atlas_review_summary`, `atlas_task_method_router`, `atlas_transfer`, `probe_env`, `rea_owned_repo_batch`, `rebalance_creative_repos`). `evals/test_script_smoke.py` now checks that each parses its arguments offline, and checks the Atlas method router's behaviour on its shipped manifest.
 - Every one of REA's 153 CLI commands already had a power. Twelve MCP-only tools and REA's main `reverse-engineer-anything` skill did not; they are REA-246 to REA-258.
+- The fusion step renamed one superpower's medoid (the Electron inspection group is now named after "Passively inspect one Electron file page"; same members), so routing case R06 now accepts either name, as was done for R07 in the Atlas-5000 batch.
 - Left for a decision, not changed: 22 power families have no runnable tool in `data/tools.json` (most are documented method families, which is expected); `tools.json` marks `check-skill`, `build-chapters` and `relabel-proofs` as `untested` although CI runs them with `--check`.
 
 ## Atlas frontier powers

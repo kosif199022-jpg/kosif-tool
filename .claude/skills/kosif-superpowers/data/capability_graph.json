@@ -1846,6 +1846,16 @@
    "label": "scripts/tell_scan.py"
   },
   {
+   "id": "script:scripts/_usip_cards.py",
+   "kind": "script",
+   "label": "scripts/_usip_cards.py"
+  },
+  {
+   "id": "script:scripts/smart_capabilities.py",
+   "kind": "script",
+   "label": "scripts/smart_capabilities.py"
+  },
+  {
    "id": "script:scripts/atlas_bulk_source_audit.py",
    "kind": "script",
    "label": "scripts/atlas_bulk_source_audit.py"
@@ -1999,11 +2009,6 @@
    "id": "script:scripts/relabel_proofs.py",
    "kind": "script",
    "label": "scripts/relabel_proofs.py"
-  },
-  {
-   "id": "script:scripts/smart_capabilities.py",
-   "kind": "script",
-   "label": "scripts/smart_capabilities.py"
   },
   {
    "id": "script:scripts/kosif_mcp.py",
@@ -2352,6 +2357,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_prompt_pack.py"
   },
   {
+   "id": "test:tests/test_think_intel.py",
+   "kind": "test",
+   "label": "tests/test_think_intel.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py"
@@ -2455,6 +2465,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_layout.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_skill_layout.py"
+  },
+  {
+   "id": "test:tests/test_protocol_library.py",
+   "kind": "test",
+   "label": "tests/test_protocol_library.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
@@ -6322,6 +6337,12 @@
    "w": 2
   },
   {
+   "from": "script:scripts/_usip_cards.py",
+   "to": "script:scripts/smart_capabilities.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/app_studio.py",
    "to": "script:scripts/app_studio_paint.py",
    "rel": "imports",
@@ -6940,6 +6961,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/smart_capabilities.py",
+   "to": "script:scripts/_usip_cards.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/smart_draw.py",
    "to": "script:scripts/creative_paint.py",
    "rel": "imports",
@@ -7360,6 +7387,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/fusionforge.py",
+   "to": "test:tests/test_think_intel.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/fusionforge_shared.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py",
    "rel": "tested_by",
@@ -7630,6 +7663,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/smart_capabilities.py",
+   "to": "test:tests/test_protocol_library.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/sources_index.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
    "rel": "tested_by",
@@ -7674,6 +7713,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_think_intel.py",
    "rel": "tested_by",
    "w": 1
   },

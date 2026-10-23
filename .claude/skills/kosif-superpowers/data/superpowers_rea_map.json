@@ -477,13 +477,13 @@
    "family_without_tool": 22
   },
   "powers": 5468,
-  "py_edges": 247,
-  "repo_tests": 32,
+  "py_edges": 251,
+  "repo_tests": 34,
   "roles": {
-   "helper": 1,
+   "helper": 2,
    "registered": 124
   },
-  "scripts": 125,
+  "scripts": 126,
   "tools": 142
  },
  "families": [
@@ -919,6 +919,21 @@
  "method": "REA historical-reference discipline: content-addressed inventory, typed edges, explicit gaps and limitations; nothing executed",
  "parse_failures": [],
  "py_edges": [
+  {
+   "from": "_usip_cards",
+   "kind": "imports",
+   "to": "smart_capabilities"
+  },
+  {
+   "from": "_usip_cards",
+   "kind": "invokes",
+   "to": "hub"
+  },
+  {
+   "from": "_usip_cards",
+   "kind": "invokes",
+   "to": "smart_capabilities"
+  },
   {
    "from": "app_studio",
    "kind": "imports",
@@ -1443,6 +1458,11 @@
    "from": "skill_intelligence",
    "kind": "invokes",
    "to": "telegram_typography_atlas"
+  },
+  {
+   "from": "smart_capabilities",
+   "kind": "imports",
+   "to": "_usip_cards"
   },
   {
    "from": "smart_capabilities",
@@ -2641,6 +2661,21 @@
   },
   {
    "ci": false,
+   "id": "_usip_cards",
+   "imported_by": [
+    "smart_capabilities"
+   ],
+   "path": "scripts/_usip_cards.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [
+    "tests/test_protocol_library.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
    "id": "ai_tool_discovery",
    "imported_by": [],
    "path": "scripts/ai_tool_discovery.py",
@@ -3723,7 +3758,8 @@
    "tests": [
     "evals/test_fusionforge.py",
     "evals/test_protocol_structure.py",
-    "evals/test_usip_shadow.py"
+    "evals/test_usip_shadow.py",
+    "tests/test_think_intel.py"
    ],
    "tools": [
     "fusionforge"
@@ -3748,6 +3784,7 @@
    "ci": true,
    "id": "hub",
    "imported_by": [
+    "_usip_cards",
     "boot",
     "capability_atlas",
     "check_skill",
@@ -4251,6 +4288,7 @@
     "tests/test_capability_atlas.py",
     "tests/test_capability_graph.py",
     "tests/test_dua_style.py",
+    "tests/test_protocol_library.py",
     "tests/test_requirements.py",
     "tests/test_superpowers.py"
    ],
@@ -4598,6 +4636,7 @@
    "ci": true,
    "id": "smart_capabilities",
    "imported_by": [
+    "_usip_cards",
     "kosif_hubs",
     "skill_intelligence"
    ],
@@ -4606,7 +4645,8 @@
    "powers": [],
    "role": "registered",
    "tests": [
-    "evals/test_protocol_structure.py"
+    "evals/test_protocol_structure.py",
+    "tests/test_protocol_library.py"
    ],
    "tools": [
     "smart-capabilities"
@@ -4755,6 +4795,7 @@
     "tests/test_invention_lab.py",
     "tests/test_media_sources_gateway.py",
     "tests/test_mimic.py",
+    "tests/test_protocol_library.py",
     "tests/test_rea_family_router.py",
     "tests/test_reference_fetch_security.py",
     "tests/test_requirements.py",
@@ -4763,6 +4804,7 @@
     "tests/test_superpowers_catalog.py",
     "tests/test_superpowers_unified.py",
     "tests/test_think.py",
+    "tests/test_think_intel.py",
     "tests/test_think_reasoning.py",
     "tests/test_verify_source_audio.py"
    ],
@@ -4861,6 +4903,7 @@
    "role": "registered",
    "tests": [
     "tests/test_think.py",
+    "tests/test_think_intel.py",
     "tests/test_think_reasoning.py"
    ],
    "tools": [
@@ -4989,20 +5032,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 112,
+   "data": 113,
    "dua-wednesday": 10,
    "evals": 86,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 237,
-   "references": 192,
+   "references": 213,
    "resources": 3,
    "schemas": 5,
-   "scripts": 156,
+   "scripts": 157,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 53338632,
+  "bytes": 54319605,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5010,17 +5053,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 168,
-   ".md": 306,
+   ".json": 169,
+   ".md": 327,
    ".mjs": 9,
    ".png": 6,
-   ".py": 264,
+   ".py": 265,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 919,
+  "files": 942,
   "symlinks": 0
  }
 }

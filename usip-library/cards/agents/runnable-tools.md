@@ -1,0 +1,4699 @@
+# `runnable-tools` — الوكلاء والتوجيه الذكي (66 بطاقة)
+
+> مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
+
+## الفهرس / contents
+
+- [`TOOL-01` باحث القدرات ثنائي اللغة بلا اتصال](#tool-01--باحث-القدرات-ثنائي-اللغة-بلا-اتصال--offline-bilingual-capability-finder)
+- [`TOOL-02` إحاطة بدء الجلسة](#tool-02--إحاطة-بدء-الجلسة--session-boot-briefing)
+- [`TOOL-03` أطلس القدرات للبحث والتخطيط](#tool-03--أطلس-القدرات-للبحث-والتخطيط--capability-atlas-search-and-planner)
+- [`TOOL-04` موجّه القدرات التنفيذية](#tool-04--موجّه-القدرات-التنفيذية--capability-runtime-router)
+- [`TOOL-05` بوابة KOSIF الموحّدة](#tool-05--بوابة-kosif-الموحّدة--kosif-hub-front-door)
+- [`TOOL-06` خادم MCP لكتالوج KOSIF](#tool-06--خادم-mcp-لكتالوج-kosif--kosif-catalog-mcp-server)
+- [`TOOL-07` مدخل محلي بلا استنساخ](#tool-07--مدخل-محلي-بلا-استنساخ--local-first-no-clone-entry)
+- [`TOOL-08` فاحص وجود حزم بايثون](#tool-08--فاحص-وجود-حزم-بايثون--python-package-presence-probe)
+- [`TOOL-09` موجّه مهارات العمل ومثبّتها](#tool-09--موجّه-مهارات-العمل-ومثبّتها--process-skill-router-and-installer)
+- [`TOOL-10` مقدّر سعة الأنظمة](#tool-10--مقدّر-سعة-الأنظمة--system-capacity-sizer)
+- [`TOOL-11` مختبر الابتكار الهندسي](#tool-11--مختبر-الابتكار-الهندسي--invention-lab-candidates)
+- [`TOOL-12` جسر الصوت إلى لوحة القصة](#tool-12--جسر-الصوت-إلى-لوحة-القصة--audio-to-storyboard-bridge)
+- [`TOOL-13` مُصرِّف حركة SVG المتزامنة مع الصوت](#tool-13--مُصرِّف-حركة-svg-المتزامنة-مع-الصوت--audio-timed-svg-motion-compiler)
+- [`TOOL-14` محرك حركة SVG](#tool-14--محرك-حركة-svg--svg-motion-engine-runtime)
+- [`TOOL-15` جسر توقيتات Motion Starter Kit](#tool-15--جسر-توقيتات-motion-starter-kit--motion-starter-kit-timing-bridge)
+- [`TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره](#tool-16--إنشاء-فيلم-سبورة-مرسوم-وتصييره--doodle-film-runtime-and-renderer)
+- [`TOOL-17` مولّد مشاريع بداية لمحركات الحركة](#tool-17--مولّد-مشاريع-بداية-لمحركات-الحركة--third-party-motion-engine-scaffolder)
+- [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
+- [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
+- [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
+- [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
+- [`TOOL-22` محرك إعادة بناء المونتاج المرجعي](#tool-22--محرك-إعادة-بناء-المونتاج-المرجعي--reference-edit-engine)
+- [`TOOL-23` البصمة البصرية للفيديو المرجعي](#tool-23--البصمة-البصرية-للفيديو-المرجعي--reference-visual-fingerprint)
+- [`TOOL-24` جسر سير عمل الفيديو](#tool-24--جسر-سير-عمل-الفيديو--video-workflow-bridge)
+- [`TOOL-25` مستخرج إشارات التوقيت من الصوت](#tool-25--مستخرج-إشارات-التوقيت-من-الصوت--wav-audio-cue-mapper)
+- [`TOOL-26` فرضيات إيقاع الموسيقى](#tool-26--فرضيات-إيقاع-الموسيقى--music-rhythm-hypotheses)
+- [`TOOL-27` تحريك الشخصية بكامل الجسم](#tool-27--تحريك-الشخصية-بكامل-الجسم--full-body-character-animator)
+- [`TOOL-28` تحريك ذراع الشخصية بالحركية العكسية](#tool-28--تحريك-ذراع-الشخصية-بالحركية-العكسية--character-ik-arm-animator)
+- [`TOOL-29` رسم الشخصيات والمشاهد بالكود](#tool-29--رسم-الشخصيات-والمشاهد-بالكود--code-drawing-master-storyboards)
+- [`TOOL-30` الرسم الإبداعي بالطبقات](#tool-30--الرسم-الإبداعي-بالطبقات--creative-paint-layered-renderer)
+- [`TOOL-31` الرسم الذكي ومساعد الأشكال](#tool-31--الرسم-الذكي-ومساعد-الأشكال--smart-draw-shape-assist)
+- [`TOOL-32` فحص المشروع المحلي دون تشغيل](#tool-32--فحص-المشروع-المحلي-دون-تشغيل--local-project-static-audit)
+- [`TOOL-33` تدقيق أدلة الكتالوج](#tool-33--تدقيق-أدلة-الكتالوج--catalog-evidence-audit)
+- [`TOOL-34` باني خريطة القدرات المترابطة](#tool-34--باني-خريطة-القدرات-المترابطة--capability-graph-builder)
+- [`TOOL-35` بوابة جودة خطة المونتاج](#tool-35--بوابة-جودة-خطة-المونتاج--reference-edit-structural-quality-gate)
+- [`TOOL-36` تدقيق واجهة بايثون في Blender](#tool-36--تدقيق-واجهة-بايثون-في-blender--blender-python-api-audit)
+- [`TOOL-37` جسر Blender الآمن](#tool-37--جسر-blender-الآمن--safe-headless-blender-bridge)
+- [`TOOL-38` رندر Cycles إلى فيديو مُتحقَّق منه](#tool-38--رندر-cycles-إلى-فيديو-مُتحقَّق-منه--cycles-scene-to-verified-video)
+- [`TOOL-39` منفّذ المشهد داخل Blender](#tool-39--منفّذ-المشهد-داخل-blender--blender-side-scene-builder)
+- [`TOOL-40` رندر ثلاثي الأبعاد مستقل عن Blender](#tool-40--رندر-ثلاثي-الأبعاد-مستقل-عن-blender--native-3d-renderer-no-blender)
+- [`TOOL-41` مُصدِّر GLB مستقل عن Blender](#tool-41--مُصدِّر-glb-مستقل-عن-blender--native-glb-exporter-no-blender)
+- [`TOOL-42` مختبر مطابقة الخطوط العربية](#tool-42--مختبر-مطابقة-الخطوط-العربية--arabic-aware-font-fidelity-lab)
+- [`TOOL-43` بحث مهارات أطلس الخارجية](#tool-43--بحث-مهارات-أطلس-الخارجية--atlas-external-skill-search)
+- [`TOOL-44` تدقيق بيانات أطلس الوصفية](#tool-44--تدقيق-بيانات-أطلس-الوصفية--atlas-metadata-audit)
+- [`TOOL-45` مستكشف المواقع بالمتصفح](#tool-45--مستكشف-المواقع-بالمتصفح--browser-scout-site-survey)
+- [`TOOL-46` بحث المصادر الإبداعية دون اتصال](#tool-46--بحث-المصادر-الإبداعية-دون-اتصال--creative-sources-offline-search)
+- [`TOOL-47` بوابة الوسائط المرخّصة](#tool-47--بوابة-الوسائط-المرخّصة--licensed-stock-media-gateway)
+- [`TOOL-48` باني فهرس البحث الإبداعي](#tool-48--باني-فهرس-البحث-الإبداعي--creative-research-catalog-builder)
+- [`TOOL-49` إعادة موازنة فهرس المستودعات الإبداعية](#tool-49--إعادة-موازنة-فهرس-المستودعات-الإبداعية--rebalance-creative-repo-catalog)
+- [`TOOL-50` مستكشف مصادر المجتمع](#tool-50--مستكشف-مصادر-المجتمع--community-source-scout)
+- [`TOOL-51` استوديو التنزيل Cinema C للآيفون](#tool-51--استوديو-التنزيل-cinema-c-للآيفون--cinema-c-iphone-downloader-studio)
+- [`TOOL-52` موجّه عائلات REA](#tool-52--موجّه-عائلات-rea--rea-family-router)
+- [`TOOL-53` تحليل REA لمستودعات المالك دفعةً واحدة](#tool-53--تحليل-rea-لمستودعات-المالك-دفعةً-واحدة--rea-owned-repo-batch)
+- [`TOOL-54` فحص المستودعات وحزمها](#tool-54--فحص-المستودعات-وحزمها--repository-capability-packer)
+- [`TOOL-55` خادم KOSIF Remote Commander](#tool-55--خادم-kosif-remote-commander--kosif-remote-commander-mcp)
+- [`TOOL-56` فحص سلامة المهارة](#tool-56--فحص-سلامة-المهارة--skill-health-check)
+- [`TOOL-57` تحزيم المهارة للرفع إلى claude.ai](#tool-57--تحزيم-المهارة-للرفع-إلى-claudeai--skill-packager-for-claudeai)
+- [`TOOL-58` إعادة تصنيف نطاق الأدلة](#tool-58--إعادة-تصنيف-نطاق-الأدلة--proof-scope-relabeler)
+- [`TOOL-59` استيراد الملفات الإبداعية](#tool-59--استيراد-الملفات-الإبداعية--creative-brief-importer)
+- [`TOOL-60` مزامنة الكتالوج مع PromptsMotion](#tool-60--مزامنة-الكتالوج-مع-promptsmotion--promptsmotion-catalog-sync)
+- [`TOOL-61` مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام](#tool-61--مكتبة-kosif-الشاملة-للخطوط-وأفكار-التصميم-من-صادرات-تيليجرام--kosif-telegram-typography-atlas--private-safe-font-knowledge-and-idea-search)
+- [`TOOL-62` دراسة تطبيق ويب عام بـ REA (حقائق فقط)](#tool-62--دراسة-تطبيق-ويب-عام-بـ-rea-حقائق-فقط--web-app-study-public-frontend-rea-facts-only)
+- [`TOOL-63` أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح](#tool-63--أطلس-الأساليب-الكامل-86-طريقة-بحث-وتوليف-وموجز-إنتاج-وهيكل-مشروع-شرح--futurepedia-ai-style-atlas--all-86-methods-search-fusion-storyboard-first-briefs-and-engine-scaffolds)
+- [`TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب](#tool-64--رندر-أفلام-الشرح-ستوريبورد-وفحص-حتمية-وmp4-حقيقي-بصوت-مُركّب--atlas-explainer-renderer-storyboard-determinism-check-and-real-mp4-with-synthesized-score)
+- [`TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude](#tool-65--الذكاء-الاصطناعي-في-الأعمال-9-وظائف-و64-خطة-عمل-بخطط-تشغيل-لclaude--ai-for-business-9-functions-64-workflows-claude-native-gated-runbooks)
+- [`TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت](#tool-66--مناهج-مستخلصة-من-الكتب-التفكير-الجانبي-والهندسة-العملية-والأدلة-البايزية-والشخصية-وفحوص-المحاسبة-ووضوح-البرومنت--book-distilled-methods-lateral-ideas-pragmatic-engineering-bayesian-evidence-personality-accounting-checks-prompt-clarity)
+
+## البطاقات / cards
+
+### `TOOL-01` — باحث القدرات ثنائي اللغة بلا اتصال / Offline bilingual capability finder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يرتّب قدرات كتالوج KOSIF لمهمة مكتوبة بالعربية أو الإنجليزية بمطابقة موزونة للحقول مع ترجيح الكلمات النادرة في فهرس الأطلس المحلي، ويعيد المعرّفات والكلمات المطابقة والحالة المعلنة والمتطلبات مع التنبيه إلى أنها لم يُتحقَّق منها تشغيليًا. — Ranks KOSIF catalog powers for an Arabic or English task using weighted field matching with corpus-rarity scoring over the local atlas index, and returns IDs, matched terms, claimed status and requirements with runtime_verified=false.
+
+**متى:** ابحث عن قدرات لتحريك شخصيات في فيديو / Find KOSIF powers for blender 3d geometry
+
+**كيف:** task (positional): `python3 scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8`; --doctor: `python3 scripts/ai_tool_discovery.py --doctor`. Full card: `python3 scripts/hub.py tool ai-tool-discovery`. Limits: Lexical rarity-weighted ranking over the prebuilt atlas index; it neither checks that the index is fresh nor that requirements are met on this host, and it runs nothing.
+
+**المعاملات:** in: A task phrase in Arabic or English. It reads data/capability_atlas_index.json. · out: JSON on stdout (schema kosif.original-discovery.v1).
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** ai-tool-discovery · capability finder · offline ranking · IDF · bilingual · catalog discovery · local index · باحث القدرات · ترتيب · اكتشاف · بدون إنترنت · فهرس محلي · عربي وإنجليزي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/ai_tool_discovery.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-02` إحاطة بدء الجلسة / Session boot briefing (proven)
+- `TOOL-03` أطلس القدرات للبحث والتخطيط / Capability Atlas search and planner (proven)
+
+### `TOOL-02` — إحاطة بدء الجلسة / Session boot briefing
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يطبع إحاطة ذاتية سريعة لـ Claude تشمل معلومات الجهاز، وأعداد القدرات في كل مجال، وعدد القدرات التي تتوفر كل متطلباتها المسجّلة، والتثبيتات التي تفتح أكبر عدد من القدرات، وعدد الأدوات القابلة للتشغيل، والأوامر التالية المقترحة (hub.py وthink.py وrequirements.py). ويستطيع أيضًا إعادة توليد الملفين CAPABILITIES.md وllms.txt في جذر المستودع أو فحص تقادمهما. — Prints a short self-briefing for Claude: machine facts, catalog counts per domain, how many powers have every listed requirement present, the installs that unlock the most powers, the runnable-tool count and the next commands to run (hub.py, think.py, requirements.py). It can also regenerate or check the repo-root CAPABILITIES.md and llms.txt.
+
+**متى:** ابدأ الجلسة وقولي تقدر تعمل ايه هنا / Boot the KOSIF skill and brief yourself first
+
+**كيف:** live: `python3 scripts/boot.py`; json: `python3 scripts/boot.py --json`; static-check: `python3 scripts/boot.py --static --check`; static-write: `python3 scripts/boot.py --static --write`. Full card: `python3 scripts/hub.py tool boot`. Limits: 'Ready now' means only that every listed requirement was detected, and powers with no listed requirement (including documented, seen and idea records) also count, so it is not proof that any power works.
+
+**المعاملات:** in: No input for the live briefing. Reads data/powers/*.json, data/requirements.json and data/tools.json, and checks PATH, Python import specs, environment-variable names and font files to decide what is present. --static also reads data/styles.json, repos.json and references/guides/*.md. · out: Text or JSON on stdout (exit 0). --static --write overwrites CAPABILITIES.md and llms.txt at the repo root and prints 'wrote <file>'. --static --check exits 1 and names each stale file. --write or --check without --static is ignored and prints the live briefing.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** boot · self-briefing · startup · capabilities · ready now · biggest unlocks · CAPABILITIES.md · llms.txt · إحاطة · بدء الجلسة · قدراتك · ماذا تستطيع · الجاهز الآن · أكثر التثبيتات فائدة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_boot.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/boot.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-01` باحث القدرات ثنائي اللغة بلا اتصال / Offline bilingual capability finder (proven)
+- `TOOL-03` أطلس القدرات للبحث والتخطيط / Capability Atlas search and planner (proven)
+- `TOOL-04` موجّه القدرات التنفيذية / Capability runtime router (proven)
+
+### `TOOL-03` — أطلس القدرات للبحث والتخطيط / Capability Atlas search and planner
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبحث بالعربية أو الإنجليزية في كتالوج KOSIF الذي يضم 4,751 قدرة، ويخطط للمهمة باختيار معرّفات القدرات ومهارات العمل والمسارات المناسبة مع فحص المتطلبات محليًا، ويعيد بناء فهرس الأطلس ودليله. — Searches the 4,751-power KOSIF catalog in Arabic or English, plans a task by picking capability IDs, process skills, routes and local requirement checks, and rebuilds the atlas index and its guide.
+
+**متى:** ايه القدرات اللي تنفع لمهمة تايبوغرافي عربي متحرك؟ / Which KOSIF powers match 'Arabic kinetic typography'?
+
+**كيف:** stats: `python3 scripts/capability_atlas.py stats --json`; doctor: `python3 scripts/capability_atlas.py doctor --json`; search: `python3 scripts/capability_atlas.py search "Arabic kinetic typography" --top 10 --domain motion --json`; plan: `python3 scripts/capability_atlas.py plan "Build a secure accounting app" --top 7 --json`. Full card: `python3 scripts/hub.py tool capability-atlas`. Limits: Ranks by keyword overlap with catalog text and checks requirements only by PATH or import-spec lookup (pip requirements are looked up by distribution name, so installed Pillow or OpenCV show as not_detected); it never runs or verifies any capability.
+
+**المعاملات:** in: A task phrase in Arabic or English, or a capability ID. It reads data/powers/*.json and data/capability_routes.json, plus data/capability_atlas_index.json when the index is fresh. · out: JSON on stdout for every command. build also writes data/capability_atlas_index.json and references/capability-atlas.md.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** capability-atlas · capability atlas · catalog search · task planning · capability ID · requirements check · index freshness · bilingual search · أطلس القدرات · بحث في الكتالوج · تخطيط المهمة · معرّف القدرة · فحص المتطلبات · فهرس
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:opencv` ← python3 -c "import opencv" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_capability_atlas.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/capability_atlas.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-01` باحث القدرات ثنائي اللغة بلا اتصال / Offline bilingual capability finder (proven)
+- `TOOL-02` إحاطة بدء الجلسة / Session boot briefing (proven)
+- `TOOL-04` موجّه القدرات التنفيذية / Capability runtime router (proven)
+- `TOOL-05` بوابة KOSIF الموحّدة / KOSIF hub (front door) (proven)
+
+### `TOOL-04` — موجّه القدرات التنفيذية / Capability runtime router
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يطابق مهمة مكتوبة بالعربية أو الإنجليزية مع مسارات KOSIF الاثنين والعشرين في data/capability_routes.json (منها 17 مسارًا لها سكربت محلي و5 خارجية)، ويعيد لكل مسار أمر التشغيل والأدوات الموجودة والناقصة والأذونات المطلوبة التي لم تُمنح بعد، مع حالة لا تدّعي أن شيئًا نُفّذ. — Matches an Arabic or English task to the 22 KOSIF routes in data/capability_routes.json (17 backed by a local script, 5 external) and returns, for each one, the runbook command, which binaries are present or missing, the permissions it needs that have not been granted, and a status that never claims execution.
+
+**متى:** حلل فيديو مرجعي وأنتج مونتاج مشابه بأصولي، أي سكربت أشغّل؟ / Which KOSIF script should I run to analyze song energy?
+
+**كيف:** --task: `python3 scripts/capability_runtime_router.py --task "حلل فيديو مرجعي وأنتج مونتاج مشابه بأصولي" --limit 5 --json`; --id: `python3 scripts/capability_runtime_router.py --id reference-edit-remix --json`; --doctor: `python3 scripts/capability_runtime_router.py --doctor --json`; --list: `python3 scripts/capability_runtime_router.py --list --json`. Full card: `python3 scripts/hub.py tool capability-runtime-router`. Limits: Matches only against hand-written aliases for 22 routes and checks binaries on PATH; it never runs a runbook, never verifies permissions and never proves that a route works.
+
+**المعاملات:** in: A task text or a route ID. It reads data/capability_routes.json (schema kosif.capability-routes.v1, at most 100 routes). · out: JSON on stdout (errors as JSON on stderr with exit code 2). Each route gets one of four statuses: source_present_not_executed, missing_host_prerequisites, source_file_missing or external_not_integrated. Runbooks use a $SKILL_DIR placeholder. executed_in_current_request and verified_in_current_request are always false.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** capability-runtime-router · runtime router · runbook · preflight · permission ledger · missing binaries · executable routes · موجّه · أمر التشغيل · فحص مسبق · الأذونات · أدوات ناقصة · مسارات تنفيذية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_capability_runtime_router.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/capability_runtime_router.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-02` إحاطة بدء الجلسة / Session boot briefing (proven)
+- `TOOL-03` أطلس القدرات للبحث والتخطيط / Capability Atlas search and planner (proven)
+- `TOOL-05` بوابة KOSIF الموحّدة / KOSIF hub (front door) (proven)
+- `TOOL-06` خادم MCP لكتالوج KOSIF / KOSIF catalog MCP server (proven)
+
+### `TOOL-05` — بوابة KOSIF الموحّدة / KOSIF hub (front door)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** سؤال واحد يعطي كل ما يلزم: الأدوات القابلة للتشغيل للمهمة بأمر جاهز ومعرفة هل يملك الجهاز مستلزماتها، والقدرات المناسبة من الكتالوج، والأدلة، والأساليب المرجعية لطلبات الموشن. — One question in, everything relevant out: the runnable tools for a task (with a copy-paste command and whether this machine has their requirements), the catalog powers, the guides and, for motion work, reference styles.
+
+**متى:** ابدأ أي مهمة: ايش الأداة اللي أشغّلها؟ / which KOSIF tool should I run for this task?
+
+**كيف:** find: `python3 scripts/hub.py find "اعمل فيديو موشن عربي متزامن مع صوتي"`; tool: `python3 scripts/hub.py tool native-3d`; list: `python3 scripts/hub.py list --area 3d`; areas: `python3 scripts/hub.py areas`. Full card: `python3 scripts/hub.py tool hub`. Limits: Ranks by keywords, registry metadata and catalog families; a high score means relevant, not proven to work for this exact request — open the tool card and run its doctor first.
+
+**المعاملات:** in: a task in the user's words, a tool id, a power id or search words · out: ranked tools, powers, guides and styles as text or JSON; build writes manifest.json, references/INDEX.md and the hub blocks in SKILL.md and references/guides/*.md
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** hub · front door · find · router · discover · tool registry · دليل الأدوات · ابحث عن أداة · قدراتك · تقدر تعمل ايه · doctor · manifest · index
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_hub.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/hub.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-03` أطلس القدرات للبحث والتخطيط / Capability Atlas search and planner (proven)
+- `TOOL-04` موجّه القدرات التنفيذية / Capability runtime router (proven)
+- `TOOL-06` خادم MCP لكتالوج KOSIF / KOSIF catalog MCP server (proven)
+- `TOOL-07` مدخل محلي بلا استنساخ / Local-first no-clone entry (proven)
+
+### `TOOL-06` — خادم MCP لكتالوج KOSIF / KOSIF catalog MCP server
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** خادم MCP للقراءة فقط عبر stdio يتيح لأي عميل MCP (Claude Code وClaude Desktop وCursor وغيرها) طرح أسئلة hub.py نفسها: البحث، بطاقات الأدوات، الجاهزية، القدرات وعائلاتها، والأدلة. — Read-only stdio MCP server that lets any MCP client (Claude Code, Claude Desktop, Cursor …) ask the same questions as hub.py: find, tool cards, doctor, power search and records, families and guides.
+
+**متى:** اربط Claude Desktop بكتالوج قدرات KOSIF / expose the KOSIF catalog to Cursor or another MCP client
+
+**كيف:** serve: `python3 scripts/kosif_mcp.py`; selftest: `python3 scripts/kosif_mcp.py --selftest`. Full card: `python3 scripts/hub.py tool kosif-mcp`. Limits: Answers questions only: it never runs a tool, installs, writes files or touches the network; query text is capped at 2,000 characters and list sizes at 50. For bounded file access use kosif-remote-commander.
+
+**المعاملات:** in: MCP JSON-RPC requests on stdin · out: JSON-RPC responses on stdout; guide text is limited to files inside the skill folder
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** kosif-mcp · mcp · mcp server · stdio · json-rpc · catalog · claude desktop · cursor · خادم · ربط التطبيقات · اكتشاف الأدوات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_hub.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/kosif_mcp.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-04` موجّه القدرات التنفيذية / Capability runtime router (proven)
+- `TOOL-05` بوابة KOSIF الموحّدة / KOSIF hub (front door) (proven)
+- `TOOL-07` مدخل محلي بلا استنساخ / Local-first no-clone entry (proven)
+- `TOOL-08` فاحص وجود حزم بايثون / Python package presence probe (proven)
+
+### `TOOL-07` — مدخل محلي بلا استنساخ / Local-first no-clone entry
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** مدخل يعمل محليًا بلا شبكة وبلا استنساخ للمستودع. يفحص الأمر doctor المهارة المثبتة ويعرض عدد سجلات الكتالوج حسب الحالة ووجود أطلس الأساليب الكامل، ويحيل الأمر search البحث إلى كتالوج القدرات المحلي أو إلى أطلس الأساليب عند توفر نسخة كاملة من المستودع. — A no-network, no-clone entry point. `doctor` checks the installed skill and reports catalog record counts by status and whether the full style atlas is present; `search` forwards to the local power catalog or, inside a full kosif-tool checkout, to the style atlas.
+
+**متى:** شغّل المهارة من غير ما تعمل git clone / Auto mode blocked the clone, so use the installed skill instead
+
+**كيف:** doctor: `python3 scripts/local_first.py doctor`; search-powers: `python3 scripts/local_first.py search neon glow --scope powers`; search-styles: `python3 scripts/local_first.py search sketch --scope styles`; search-auto: `python3 scripts/local_first.py search silhouette`. Full card: `python3 scripts/hub.py tool local-first`. Limits: It never fetches, clones or installs anything, so in a standalone skill bundle the style atlas stays unavailable; doctor counts records and does not prove that any power runs.
+
+**المعاملات:** in: Optional --skill-dir (default: this skill's folder), search words, and --scope auto\|styles\|powers. · out: doctor prints JSON on stdout. search prints the results of powers.py search or tools/kosif.py search and passes on its exit code. It exits 2 with a JSON error on stdout when --scope styles is requested but the atlas is absent, and exits 1 with a JSON error on stderr for an invalid skill dir.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** local-first · offline · no clone · doctor · auto mode · style atlas · catalog search · standalone skill · بدون استنساخ · محلي · بلا شبكة · فحص المهارة · أطلس الأساليب
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_local_first.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/local_first.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-05` بوابة KOSIF الموحّدة / KOSIF hub (front door) (proven)
+- `TOOL-06` خادم MCP لكتالوج KOSIF / KOSIF catalog MCP server (proven)
+- `TOOL-08` فاحص وجود حزم بايثون / Python package presence probe (proven)
+- `TOOL-09` موجّه مهارات العمل ومثبّتها / Process-skill router and installer (proven)
+
+### `TOOL-08` — فاحص وجود حزم بايثون / Python package presence probe
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبيّن لكل توزيعة بايثون مذكورة (حتى 50 توزيعة) هل بياناتها الوصفية مثبتة وما إصدارها، دون استيرادها أو تثبيتها أو الاتصال بالشبكة. — Reports whether each named Python distribution (up to 50) has installed metadata and which version it is, without importing, installing or contacting the network.
+
+**متى:** هل pandas وnumpy متسطبين على الجهاز ده؟ / Check which of pandas, numpy and httpx are installed here
+
+**كيف:** probe (positional names): `python3 scripts/python_package_probe.py pandas numpy httpx`. Full card: `python3 scripts/hub.py tool python-package-probe`. Limits: Reads installed distribution metadata only and never imports the package, so a found package is not proven to import or work.
+
+**المعاملات:** in: From 1 to 50 pip distribution names, such as pillow or opencv-python-headless. Import names such as PIL or cv2 are reported as not found. · out: JSON on stdout with the Python version, one record per package and the scope current_environment_only_no_install_no_network.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** python-package-probe · python packages · pip · installed version · distribution metadata · environment probe · readiness · حزم بايثون · مكتبات مثبتة · إصدار · فحص البيئة · importlib.metadata
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:numpy` ← python3 -c "import numpy" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:opencv` ← python3 -c "import opencv" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:pandas` ← python3 -c "import pandas" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_system_python.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/python_package_probe.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-06` خادم MCP لكتالوج KOSIF / KOSIF catalog MCP server (proven)
+- `TOOL-07` مدخل محلي بلا استنساخ / Local-first no-clone entry (proven)
+- `TOOL-09` موجّه مهارات العمل ومثبّتها / Process-skill router and installer (proven)
+- `TOOL-10` مقدّر سعة الأنظمة / System Capacity Sizer (proven)
+
+### `TOOL-09` — موجّه مهارات العمل ومثبّتها / Process-skill router and installer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يختار للمهمة مجموعة مرتّبة من مهارات العمل الخمس عشرة المضمّنة من obra/superpowers الإصدار 7 (مثل العصف الذهني وتتبّع الأخطاء والتطوير المقاد بالاختبارات والتحقق)، ويفحص المصادر المضمّنة، ويستطيع تثبيت KOSIF مع تلك المهارات في ‎~/.claude/skills مع نسخ احتياطية. — Picks an ordered subset of the 15 vendored obra/superpowers v7 process skills (brainstorming, debugging, TDD, verification and others) for a task, checks the vendored sources, and can install KOSIF plus those skills into ~/.claude/skills with backups.
+
+**متى:** أي مهارات عمل أستخدمها لإصلاح عطل في التطبيق؟ / Which process skills apply to 'Fix the crash in the montage app'?
+
+**كيف:** doctor: `python3 scripts/superpowers_unified.py doctor`; plan: `python3 scripts/superpowers_unified.py plan "Fix the crash in the montage app"`; list: `python3 scripts/superpowers_unified.py list`; install: `python3 scripts/superpowers_unified.py install --no-global-instructions`. Full card: `python3 scripts/hub.py tool superpowers-unified`. Limits: plan is a fixed keyword-to-skill lookup and doctor checks only that files exist; neither one runs, verifies or tests any skill.
+
+**المعاملات:** in: A task text for plan. It reads vendor/obra-superpowers-v7/skills/*/SKILL.md and LICENSE. install targets the user's home directory (~/.claude). · out: JSON on stdout. install also writes ~/.claude/skills/<name>/, ~/.claude/backups/kosif-ultimate-<stamp>/ and, unless --no-global-instructions, ~/.claude/CLAUDE.md.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** superpowers-unified · process skills · obra superpowers · brainstorming · systematic debugging · TDD · verification · skill installer · مهارات العمل · منهجية · تتبع الأخطاء · تثبيت المهارات · خطة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `imagemagick` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_superpowers_unified.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/superpowers_unified.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-07` مدخل محلي بلا استنساخ / Local-first no-clone entry (proven)
+- `TOOL-08` فاحص وجود حزم بايثون / Python package presence probe (proven)
+- `TOOL-10` مقدّر سعة الأنظمة / System Capacity Sizer (proven)
+- `TOOL-11` مختبر الابتكار الهندسي / Invention Lab Candidates (proven)
+
+### `TOOL-10` — مقدّر سعة الأنظمة / System Capacity Sizer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحسب تقديرًا تقريبيًا حتميًا لسعة النظام (متوسط الطلبات في الثانية وذروتها، والحد الأدنى من النسخ المتماثلة، والتخزين المنطقي والمكرَّر بالبايت والجيبيبايت) انطلاقًا من افتراضات الحِمل والعتاد التي يقدّمها المستخدم، وبحساب عشري دقيق. — Computes a deterministic back-of-envelope capacity estimate (average and peak RPS, minimum replicas, logical and replicated storage in bytes and GiB) from caller-supplied traffic and hardware assumptions, using exact decimal arithmetic.
+
+**متى:** احسب لي كم سيرفر محتاج لو عندي مليون طلب في اليوم / estimate replicas and storage for 10M requests per day
+
+**كيف:** size: `python3 scripts/architecture_sizer.py --daily-requests 86400 --peak-factor 5 --payload-bytes 1000 --retention-days 7 --replica-rps 100 --target-utilization 0.5 --copies 2`. Full card: `python3 scripts/hub.py tool architecture-sizer`. Limits: Linear arithmetic on assumed numbers only; it runs no load test and leaves out indexes, log overhead, backups, compression, burst shape, network, CDN, failover headroom and regional placement.
+
+**المعاملات:** in: Six required decimal assumptions, each finite and > 0: --daily-requests, --peak-factor (>= 1), --payload-bytes, --retention-days, --replica-rps and --target-utilization (<= 1); plus optional --copies (a positive integer, default 1). · out: JSON on stdout (status deterministic_estimate_not_load_test, executed_benchmark false). It exits 2 with an argparse error on missing, non-numeric or out-of-range inputs.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** architecture-sizer · capacity planning · system design · back-of-envelope · RPS · replicas · storage estimate · scaling · system-design-primer · تخطيط السعة · تصميم الأنظمة · تقدير التخزين · عدد السيرفرات · الطلبات في الثانية · التوسع
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_system_python.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/architecture_sizer.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-08` فاحص وجود حزم بايثون / Python package presence probe (proven)
+- `TOOL-09` موجّه مهارات العمل ومثبّتها / Process-skill router and installer (proven)
+- `TOOL-11` مختبر الابتكار الهندسي / Invention Lab Candidates (proven)
+- `TOOL-12` جسر الصوت إلى لوحة القصة / Audio-to-Storyboard Bridge (proven)
+
+### `TOOL-11` — مختبر الابتكار الهندسي / Invention Lab Candidates
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل وصف مشكلة واحدة إلى قائمة JSON مرتّبة وقابلة لإعادة الإنتاج من أفكار هندسية قابلة للتفنيد (16 طريقة ابتكار على نهج TRIZ × 4 زوايا)، لكل فكرة فرضية واختبار ومقياس نجاح وحدّ للرفض. — Turns one problem statement into a reproducible, ranked JSON list of falsifiable engineering ideas (16 TRIZ-style inventive methods × 4 lenses), each with a hypothesis, test, success metric and rejection threshold.
+
+**متى:** اقترح لي حلول مبتكرة لمشكلة بطء الترجمة على الموبايل / brainstorm falsifiable engineering alternatives for this bottleneck
+
+**كيف:** methods: `python3 scripts/invention_lab.py methods`; invent: `python3 scripts/invention_lab.py invent "Make Arabic captions render faster on mobile" --count 12 --constraint "no paid APIs"`. Full card: `python3 scripts/hub.py tool invention-lab`. Limits: Fills fixed templates from the problem string and ranks them with a SHA-256-seeded heuristic, so it gives no real novelty, feasibility, cost or patent assessment.
+
+**المعاملات:** in: methods: nothing. invent: a problem statement of 8-2000 characters after whitespace normalization (positional), optional --count 1-64 (default 12) and repeatable --constraint strings. · out: JSON on stdout. For invent: schema kosif-invention-candidates-v1 with problem, constraints, disclaimer and candidates (id, method, lens, proposal, hypothesis, test, success_metric, failure_threshold, novelty_status, risk, cost_class, priority_score). Exit 2 with an argparse error for a missing/short problem or an out-of-range --count.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** invention-lab · invention · ideation · brainstorm · TRIZ · hypothesis · falsifiable · kill criteria · engineering alternatives · ابتكار · توليد أفكار · عصف ذهني · فرضية · معايير الرفض · حلول هندسية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:hypothesis` ← python3 -c "import hypothesis" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_invention_lab.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/invention_lab.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-09` موجّه مهارات العمل ومثبّتها / Process-skill router and installer (proven)
+- `TOOL-10` مقدّر سعة الأنظمة / System Capacity Sizer (proven)
+- `TOOL-12` جسر الصوت إلى لوحة القصة / Audio-to-Storyboard Bridge (proven)
+- `TOOL-13` مُصرِّف حركة SVG المتزامنة مع الصوت / Audio-timed SVG motion compiler (proven)
+
+### `TOOL-12` — جسر الصوت إلى لوحة القصة / Audio-to-Storyboard Bridge
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل ملف JSON بصيغة kosif.audio-cues.v1 (بدايات الأصوات المقيسة والكلمات المحاذاة الناتجة عن audio_cue_mapper.py) إلى لوحة قصة قابلة للتحرير بصيغة motion_director، فيها نص موقوت ومسار يُرسم تدريجيًا وشخصية وتقريب للكاميرا، مع تقرير قرار يقيّم أساليب doodle وkinetic وcinematic. — Turns a kosif.audio-cues.v1 JSON (measured onsets plus aligned words from audio_cue_mapper.py) into an editable motion_director storyboard with timed text, a draw-on path, a character and a camera zoom, plus a decision report that scores the doodle, kinetic and cinematic styles.
+
+**متى:** حوّل التعليق الصوتي وتوقيت الكلمات لستوري بورد موشن جرافيك / turn my audio cues and word timings into an editable motion storyboard
+
+**كيف:** plan (auto style): `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto --out ./out/scene.json --report ./out/decision.json`; plan (forced style, landscape): `python3 scripts/creative_reasoning_bridge.py ./cues.json --style kinetic --landscape --out ./out/scene.json --report ./out/decision.json`. Full card: `python3 scripts/hub.py tool creative-reasoning-bridge`. Limits: Builds an unrendered storyboard from a hand-written style heuristic and amplitude onsets; it does not understand lyrics or emotion, verify beats or render video.
+
+**المعاملات:** in: A kosif.audio-cues.v1 JSON produced by scripts/audio_cue_mapper.py (duration 0.1-120 s, up to 600 onset candidates, up to 1,500 non-overlapping timed words), plus --out and --report paths that are new, distinct and inside directories that already exist. · out: Two new JSON files: the storyboard (motion_director spec version 1, ready for 'motion_director.py compile') and the report (schema kosif.creative-plan.v1: decision with style scores and limitations, evidence, validated_storyboard, render_status unrendered_storyboard). A one-line JSON summary is printed to stdout.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** creative-reasoning-bridge · storyboard · audio sync · word timing · motion graphics · voiceover · scene plan · kinetic typography · doodle · لوحة القصة · مزامنة الصوت · توقيت الكلمات · موشن جرافيك · تعليق صوتي · ريلز
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_reasoning_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-10` مقدّر سعة الأنظمة / System Capacity Sizer (proven)
+- `TOOL-11` مختبر الابتكار الهندسي / Invention Lab Candidates (proven)
+- `TOOL-13` مُصرِّف حركة SVG المتزامنة مع الصوت / Audio-timed SVG motion compiler (proven)
+- `TOOL-14` محرك حركة SVG / SVG motion engine runtime (proven)
+
+### `TOOL-13` — مُصرِّف حركة SVG المتزامنة مع الصوت / Audio-timed SVG motion compiler
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يتحقق من ملف مشاهد بصيغة JSON مُوقَّت على مستوى الكلمات (مسارات ودوائر ونصوص وشخصيات وممثلون بمفاصل وتحوّلات أشكال وحركة كاميرا)، ثم يحوّله إلى رسم متحرك SVG/HTML مستقل يمكن الانتقال فيه إلى أي لحظة، مع تصيير اختياري إلى MP4 عبر render_html.cjs. — Validates a word-timed JSON scene spec (paths, circles, text, characters, rigged actors, morphs, camera) and compiles it into a self-contained seekable SVG/HTML animation, with an optional MP4 render through render_html.cjs.
+
+**متى:** اعمل لي موشن جرافيك عربي متزامن مع الكلمات من ملف JSON / Compile this word-timed scene JSON into a seekable SVG explainer
+
+**كيف:** doctor: `python3 scripts/motion_director.py doctor`; sample: `python3 scripts/motion_director.py sample --out ./scene.json`; compile: `python3 scripts/motion_director.py compile ./scene.json --out ./out/scene.html`; render: `python3 scripts/motion_director.py render ./out/scene.html --out ./out/scene.mp4 --audio ./voice.wav`. Full card: `python3 scripts/hub.py tool motion-director`. Limits: Compiles only its own validated vector primitives (≤80 elements, ≤120 s); it does not read words.json directly, transcribe or align audio, or verify the rendered MP4.
+
+**المعاملات:** in: Motion Director spec JSON v1: even width/height 320–4096, fps 24/25/30/60, duration 0.1–120 s, 1–30 continuous scenes with monotonic word timings (≤240 words each), camera zoom/pan, ≤80 elements in total of type path\|circle\|text\|character\|actor\|morph with hex colours; for render an existing HTML file, a new .mp4 path and an optional audio file. · out: JSON status on stdout; sample spec JSON; self-contained seekable HTML animation; optional MP4 (unverified) from render. Exit 0 ok, 1 render_failed, 2 validation/IO error.
+
+**التثبيت:** optional: bin:chromium, bin:ffmpeg, bin:ffprobe, bin:node, npm:playwright
+
+**الوسوم:** motion-director · motion graphics · SVG animation · word timing · captions · draw-on · camera zoom · morph · seekable HTML · render MP4 · موشن جرافيك · رسم بالكود · تزامن الكلمات · نصوص مصاحبة متزامنة · تحريك SVG · فيديو عربي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_director.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_director.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-11` مختبر الابتكار الهندسي / Invention Lab Candidates (proven)
+- `TOOL-12` جسر الصوت إلى لوحة القصة / Audio-to-Storyboard Bridge (proven)
+- `TOOL-14` محرك حركة SVG / SVG motion engine runtime (proven)
+- `TOOL-15` جسر توقيتات Motion Starter Kit / Motion Starter Kit timing bridge (proven)
+
+### `TOOL-14` — محرك حركة SVG / SVG motion engine runtime
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** سكربت يعمل في المتصفح يدمجه الأمر motion_director.py compile، يقرأ بيانات المشاهد بصيغة JSON من الوسم <script id=kosif-data> ويحرّك فيلم SVG بشكل حتمي: يرسم الخطوط تدريجيًا، ويُظهر النصوص بالتلاشي، ويحوّل المضلعات من شكل إلى آخر، ويحرّك شخصية خطية وممثلين بمفاصل محورية (مشي، جري، تلويح، إشارة، جلوس) مع رأس قلم متحرك، ويكبّر الكاميرا ويحرّكها لكل مشهد، ويعرض ترجمة عربية من اليمين إلى اليسار موقّتة بالكلمات، وكل ذلك عبر الدالة window.__kosif.seek(t) لرندر دقيق إطارًا بإطار. — A browser-side script (IIFE), inlined by motion_director.py compile, that reads scene JSON from <script id=kosif-data> and animates an SVG film deterministically: stroke draw-on, text fades, polygon morphs, a stick character, pivot-rigged actors (walk/run/wave/point/sit) with a moving pen tip, per-scene camera zoom/pan and word-timed RTL captions, all through window.__kosif.seek(t) for frame-exact rendering.
+
+**متى:** ارسم لي مشهد سبورة بيضاء يتحرك بالقلم ومتزامن مع الكلام / Animate my SVG scene with draw-on strokes, a walking character and word-timed captions
+
+**كيف:** embed: `python3 scripts/motion_director.py compile ./scene.json --out ./out/film.html`; seek: `window.__kosif.seek(2.5) // in the compiled page: draws t=2.5 s, returns {time, scene, word}`; check: `node --check assets/motion_engine.js`. Full card: `python3 scripts/hub.py tool motion-engine-js`. Limits: Draws simple SVG strokes, polygon morphs and stick-figure rigs only and shows one caption word at a time. It needs a host page and a separate renderer (render_html.cjs) to become MP4, and it is not a general animation editor.
+
+**المعاملات:** in: Scene JSON (validated by motion_director.py): {width, height, fps, duration, scenes:[{id, start, end, background, camera{fromZoom, toZoom, fromX, toX, fromY, toY, start, end}, words[{text, start, end}], elements[{type: path\|circle\|text\|character\|actor\|morph, start, end, move{fromX, toX, fromY, toY, start, end}, ...}]}]}. It must be embedded in a page that has #kosif-data, #background, #stage, #art and #captions; #scene is looked up but not used. · out: Live SVG DOM state for each seek(t), plus window.__kosif = {duration, fps, seek, source} and window.__kosifReady (a fonts-ready promise). The engine writes no files; the embed command writes one new HTML file.
+
+**التثبيت:** optional: bin:chromium, bin:ffmpeg, bin:ffprobe, bin:node, bin:python3, npm:playwright
+
+**الوسوم:** motion-engine-js · SVG animation · whiteboard · سبورة بيضاء · draw-on · رسم بالقلم · stroke dashoffset · stick figure · character rig · شخصية متحركة · morph · camera zoom · word captions · ترجمة عربية · seek(t) · deterministic · motion engine
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_engine.mjs`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_code_drawing_engine.mjs`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_director.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/assets/motion_engine.js`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-12` جسر الصوت إلى لوحة القصة / Audio-to-Storyboard Bridge (proven)
+- `TOOL-13` مُصرِّف حركة SVG المتزامنة مع الصوت / Audio-timed SVG motion compiler (proven)
+- `TOOL-15` جسر توقيتات Motion Starter Kit / Motion Starter Kit timing bridge (proven)
+- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+
+### `TOOL-15` — جسر توقيتات Motion Starter Kit / Motion Starter Kit timing bridge
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل ملف توقيت الكلمات بصيغة motion-starter-kit (lines[].words[]) إلى لوحة قصة أصلية لـ KOSIF Motion Director بعد التحقق منها، مع معاينة HTML اختيارية يمكن الانتقال فيها إلى أي لحظة، بأنماط plotter وdoodle وwhiteboard وinfographic. — Converts motalim-ai/motion-starter-kit word-timing JSON (lines[].words[]) into a validated native KOSIF Motion Director storyboard, plus optional seekable HTML, for the plotter, doodle, whiteboard or infographic styles.
+
+**متى:** حوّل ملف توقيت الكلمات من motion starter kit لموشن وايت بورد / Build a doodle storyboard from my motion-starter-kit words.json
+
+**كيف:** styles: `python3 scripts/motion_kit_bridge.py styles`; demo: `python3 scripts/motion_kit_bridge.py demo --style doodle --out ./out/demo-story.json --html ./out/demo-story.html`; build: `python3 scripts/motion_kit_bridge.py build --timings ./words.json --style plotter --out ./out/story.json --html ./out/story.html --fps 30`; build (estimated): `python3 scripts/motion_kit_bridge.py build --timings ./reading-estimates.json --allow-estimated --style whiteboard --out ./out/estimated-story.json`. Full card: `python3 scripts/hub.py tool motion-kit-bridge`. Limits: Executes only 4 of 10 upstream styles as native SVG approximations, does not render MP4, transcribe or align audio, and rejects KOSIF's flat words.json (top-level words[]).
+
+**المعاملات:** in: Motion Starter Kit words.json: {duration, audio (filename or null), source, lines:[{words:[{w\|word\|text,start,end}]}]}; style plotter\|doodle\|whiteboard\|infographic; fps 24/25/30/60; new output paths in existing folders. · out: JSON status on stdout; Motion Director storyboard JSON (1080x1920) and optional self-contained seekable HTML; never an MP4. Exit 2 on refusal.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** motion-kit-bridge · motion starter kit · words.json · word timing · storyboard · doodle · whiteboard · plotter · infographic · Arabic captions · توقيت الكلمات · لوحة قصة · رسم يدوي · سبورة · تزامن صوتي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_kit_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_kit_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-13` مُصرِّف حركة SVG المتزامنة مع الصوت / Audio-timed SVG motion compiler (proven)
+- `TOOL-14` محرك حركة SVG / SVG motion engine runtime (proven)
+- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+- `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
+
+### `TOOL-16` — إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** ينشئ فيلم رسم يدوي عربي على سبورة بيضاء بصيغة SVG قابلًا للتعديل (film.html وmotion.json وREADME) مع آلية انتقال زمني حتمية، ويعرض 25 بطاقة توجيه لمحركات الحركة، ولا يصيّره إلى صورة معاينة PNG أو فيديو MP4 بمقاس 1080x1920 عبر render_html.cjs إلا عند تمرير ‎--run صراحةً. — Scaffolds an editable Arabic whiteboard-doodle SVG film (film.html + motion.json + README) with a deterministic seek contract, lists 25 motion-engine route cards, and only with explicit --run renders it to a 1080x1920 PNG preview or MP4 through render_html.cjs.
+
+**متى:** اعمل فيلم رسم يدوي عربي على سبورة بيضاء بالكود / Make me an editable whiteboard doodle film I can render to MP4
+
+**كيف:** doctor: `python3 scripts/motion_runtime.py doctor`; engines: `python3 scripts/motion_runtime.py engines --family whiteboard`; scaffold: `python3 scripts/motion_runtime.py scaffold --out ./out/film --title "قصيف يرسم" --subtitle "الحركة تُولد بالكود" --duration 8 --fps 30`; render (dry): `python3 scripts/motion_runtime.py render --in ./out/film/film.html --out ./out/film/film.mp4`. Full card: `python3 scripts/hub.py tool motion-runtime`. Limits: The template is a fixed 8-second 1080x1920 whiteboard doodle performance (longer durations need hand-extended keyframes), and the render is not self-verified.
+
+**المعاملات:** in: Scaffold: new output dir, title/subtitle 1–36 chars without newlines, duration 8–120 s, fps 24–60. Render: existing .html, new .mp4 or .png path, fps 24/30/60, optional audio file (MP4 only), --run to approve. · out: JSON status on stdout; project folder (film.html, motion.json, README.md); PNG preview or MP4 marked rendered_requires_visual_qa. Exit 2 on invalid request or render failure.
+
+**التثبيت:** optional: bin:chromium, bin:ffmpeg, bin:ffprobe, bin:node, npm:playwright
+
+**الوسوم:** motion-runtime · whiteboard · doodle · hand-drawn · SVG film · seek · render · preview PNG · MP4 · engine map · سبورة بيضاء · رسم يدوي · فيلم SVG · معاينة · تصيير · فيديو طولي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_runtime.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_runtime.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-14` محرك حركة SVG / SVG motion engine runtime (proven)
+- `TOOL-15` جسر توقيتات Motion Starter Kit / Motion Starter Kit timing bridge (proven)
+- `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-17` — مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يعرض 25 تقنية حركة مسجّلة في الكتالوج، وينشئ مشاريع بداية أصلية دون تثبيت لكل من GSAP (مع Rough.js وVivus) وRemotion وManim وThree.js وPixiJS وp5.js، وتتيح مشاريع GSAP وThree.js وPixiJS وp5 الانتقال إلى أي لحظة عبر window.__kosif. — Lists 25 catalogued motion technologies and writes original, uninstalled starter projects for GSAP (+Rough.js/Vivus), Remotion, Manim, Three.js, PixiJS or p5.js; the GSAP, Three.js, PixiJS and p5 starters expose a seekable window.__kosif contract.
+
+**متى:** عايز مشروع بداية Three.js أو p5 للموشن / Scaffold a Remotion project for a 9:16 explainer
+
+**كيف:** list: `python3 scripts/motion_stack.py list`; doctor: `python3 scripts/motion_stack.py doctor`; scaffold: `python3 scripts/motion_stack.py scaffold gsap --out ./out/kosif-gsap`. Full card: `python3 scripts/hub.py tool motion-stack`. Limits: Writes starter source only; it does not install packages, check that any engine runs, or render a video.
+
+**المعاملات:** in: Backend name (gsap, remotion, manim, three, pixi, p5) and a new output directory whose parent exists; reads data/motion_sources.json. · out: JSON on stdout; a scaffold directory of original source files (package.json, index.html, src/main.js, or Remotion src/*.jsx, or Manim main.py) marked scaffold_created_not_installed. Exit 2 on refusal.
+
+**التثبيت:** optional: npm:@remotion/cli, npm:gsap, npm:p5, npm:pixi.js, npm:react, npm:react-dom, npm:remotion, npm:roughjs, npm:three, npm:vite, npm:vivus, pip:manim
+
+**الوسوم:** motion-stack · GSAP · Remotion · Manim · Three.js · PixiJS · p5.js · Rough.js · Vivus · scaffold · starter project · motion engines · محركات الحركة · مشروع بداية · قالب أنيميشن · تحريك بالكود
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:three` ← npm ls three أو وجود node_modules/three
+- `npm:gsap` ← npm ls gsap أو وجود node_modules/gsap
+- `npm:remotion` ← npm ls remotion أو وجود node_modules/remotion
+- `npm:p5` ← npm ls p5 أو وجود node_modules/p5
+- `npm:esbuild` ← npm ls esbuild أو وجود node_modules/esbuild
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_stack.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_stack.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-15` جسر توقيتات Motion Starter Kit / Motion Starter Kit timing bridge (proven)
+- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-18` — مكتبة رياضيات الحركة / Motion math toolkit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** وحدة ES بلا اعتماديات تصدّر 12 دالة حركة حتمية يمكن الانتقال بها إلى أي لحظة: حصر القيم ضمن مدى، ومنحنيات التسهيل، والاستيفاء بين الإطارات المفتاحية وخطوط الزمن، وكشف خطوط SVG تدريجيًا، وتحريك الكاميرا وتكبيرها، وزوايا مفاصل دورة المشي، واختلاف المنظر (البارالاكس)، واهتزاز الخط اليدوي ببذرة ثابتة، والرمز الزمني بصيغة HH:MM:SS:FF، وحالة الترجمة على مستوى الكلمة الكاملة، والتحقق من عقد الإطارات قبل الرندر. — A dependency-free ES module that exports 12 deterministic, seekable animation primitives: clamp, easing, keyframe interpolation and timelines, SVG stroke reveal, camera pan/zoom, walk-cycle joint angles, parallax, seeded hand-drawn line jitter, HH:MM:SS:FF timecode, whole-word caption cue state and a render frame-contract check.
+
+**متى:** أبي دوال جاهزة للـ easing والكي فريم في الأنيميشن بتاعي / Give me deterministic easing/keyframe helpers for a seekable SVG animation
+
+**كيف:** import: `node --input-type=module -e "import {ease, timeCode} from './resources/motion-runtime/motion_toolkit.mjs'; console.log(ease(0.5,'cubic'), timeCode(2.5,30))"`; ease: `ease(0.5, "cubic") // 0.5; kinds: linear \| smooth \| in \| out \| cubic`; interpolate: `interpolate(2, 1, 3, 4, 8) // 6`; timeline: `timeline(2, [{time:0,value:0},{time:1,value:10},{time:3,value:20}]) // 15`. Full card: `python3 scripts/hub.py tool motion-toolkit`. Limits: Supplies math primitives only: it draws, renders and edits nothing, and has just five easing curves and a single sine-based walk cycle.
+
+**المعاملات:** in: Plain numbers and objects passed as function arguments: times in seconds, keyframe arrays [{time, value}], word cues [{word, start, end}] and option objects. · out: New plain values or objects (numbers, {strokeDasharray, strokeDashoffset}, {zoom, x, y}, point arrays, timecode strings). Invalid input throws an Error, and no files are written.
+
+**التثبيت:** needs on PATH: node
+
+**الوسوم:** motion-toolkit · easing · keyframes · interpolation · timeline · تسهيل الحركة · إطارات مفتاحية · stroke reveal · رسم الخط · camera zoom pan · walk cycle · parallax · hand-drawn jitter · timecode · word cues · ترجمة بالكلمة · frame contract
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs`
+- `kosif-tool/.claude/skills/kosif-superpowers/resources/motion-runtime/motion_toolkit.mjs`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+- `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
+
+### `TOOL-19` — تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يصيّر فيديو B-roll حقيقيًا بحركة كاميرا (تقريب وابتعاد وتحريك جانبي) عبر FFmpeg، انطلاقًا من قائمة EDL جاهزة للإنتاج وبيان لقطات مرخّصة. ينسخ مسار الصوت الأصلي دون أي تعديل، ويتحقق من عدد الإطارات ومن تطابق بصمة الصوت. — Renders a real camera-motion B-roll video master with FFmpeg from a production-ready cinematic_cut_planner EDL and a licensed footage manifest (push-in, pull-back and pan per shot, exact frame counts), stream-copies the original audio and verifies frame count and audio bitstream hash.
+
+**متى:** صيّر لي فيديو B-roll بحركة كاميرا على الصوت الأصلي من غير ما يتغير / Render the EDL into a real video with slow push-ins and keep my audio bit-identical
+
+**كيف:** render: `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920`. Full card: `python3 scripts/hub.py tool cinematic-broll-render`. Limits: Produces only a camera-motion B-roll master (every shot starts at its clip's first frame) with no captions, Arabic text, graphics, transitions or audio mix, and its rights checks trust the manifest's declared flags.
+
+**المعاملات:** in: --edl: production_ready kosif.edl.v1 JSON from cinematic_cut_planner.py; --manifest: JSON array of clips (same fields as the planner plus sha256 and license_evidence_url or license_document; relative paths resolve against the manifest folder); --audio: the original audio master whose duration matches the EDL within 0.04 s; --out: new .mkv or .mp4; --width/--height: even values >=32 (default 1080x1920). · out: A video file (H.264 yuv420p, CRF 19) with the original audio stream copied unchanged, plus a JSON report on stdout: path, video_frames, width, height, fps, audio_codec, audio_stream_copied, audio_original_sha256, audio_packet_sha256, audio_bitstream_verified_identical, scope. Temporary shots are deleted.
+
+**التثبيت:** needs on PATH: ffmpeg, ffprobe
+
+**الوسوم:** cinematic-broll-render · B-roll render · ffmpeg zoompan · Ken Burns · camera motion · audio stream copy · video master · EDL render · تصيير · حركة كاميرا · ماستر فيديو · الصوت الأصلي · لقطات مرخصة · مونتاج حقيقي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_cinematic_broll_render.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_broll_render.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
+- `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
+
+### `TOOL-20` — مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبني قائمة قرارات مونتاج (EDL) حتمية بصيغة JSON من توقيت الكلمات وبيان لقطات مرخّصة ومراجَعة: يقسّم المشاهد عند وقفات الكلام (0.6 ثانية فأكثر) أو حين يبلغ المشهد 7 ثوانٍ، ويختار لكل مشهد اللقطة الأنسب بحسب الوسوم، ويحدد حركة الكاميرا، ويسجّل النواقص بدل اختلاق لقطات. — Builds a deterministic JSON edit decision list (kosif.edl.v1) from word timings and a reviewed, licensed footage manifest: splits scenes at speech pauses of 0.6 s or more or once a scene reaches 7 s, picks the best tag-matching clip per scene, assigns camera moves and lists blockers instead of inventing footage.
+
+**متى:** عندي تعليق صوتي وتوقيت كلمات ولقطات مرخصة، اعمل لي خطة مونتاج / Plan which licensed B-roll clip goes under each spoken phrase
+
+**كيف:** plan: `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json`. Full card: `python3 scripts/hub.py tool cinematic-cut-planner`. Limits: Plans only: it does not inspect footage pixels, transcribe, download or render anything, and matches clips purely by word/tag overlap.
+
+**المعاملات:** in: --words: a bare JSON array of {word\|text,start,end,emphasis?} in seconds (the bare-list output of tools/words_convert.py works; a {"words":[...]} object does not); --clips: JSON array of clips with id, path, duration, width, height, license_verified, reviewed_frames, contains_text, contains_excluded_people, is_moving_video, and tags/description; --duration: audio seconds; --fps: 24/25/30/60 (default 30); --out: JSON path. · out: EDL JSON (schema kosif.edl.v1) with video {fps,1080x1920,frame_count}, an audio lock policy, scenes (frames, spoken_text, word_ids, key_words, footage_id/path, video_trim, camera move + easing, rights_status), rejected_clips, blockers and production_ready; a one-line JSON summary on stdout.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** cinematic-cut-planner · EDL · edit decision list · B-roll planning · footage selection · speech pause scenes · licensed footage · camera moves · خطة مونتاج · قائمة قرارات المونتاج · توزيع اللقطات · لقطات مرخصة · وقفات الكلام
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_cinematic_cut_planner.py`
+- `kosif-tool/tests/test_cinematic_broll_render.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_cut_planner.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
+- `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)
+
+### `TOOL-21` — فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يقرأ فيديو محليًا مصرّحًا به عبر ffprobe لاستخراج المدة والأبعاد ومعدل الإطارات ووجود الصوت، ويشغّل اختياريًا كشف تغيّر المشاهد عبر FFmpeg، ثم يخرج تقرير توقيت بصيغة JSON بنقاط القطع المرشّحة والمقاطع، وهو مُدخل تحتاجه أدوات المونتاج اللاحقة. — Reads an authorized local video with ffprobe (duration, size, fps, audio presence) and optionally runs ffmpeg scene-change detection, producing a JSON timing report of cut candidates and segments that downstream KOSIF edit tools require.
+
+**متى:** شوف الفيديو المرجعي ده فيه كام قطع وفين / Detect the cut points in this reference reel
+
+**كيف:** metadata: `python3 scripts/motion_reference_probe.py ./in.mp4`; cuts: `python3 scripts/motion_reference_probe.py ./in.mp4 --cuts --threshold 0.35 --out ./cuts.json`. Full card: `python3 scripts/hub.py tool motion-reference-probe`. Limits: Cut candidates are heuristic scene-change detections that can miss dissolves or fire on flashes, and it does no object, motion, speech or semantic analysis.
+
+**المعاملات:** in: A local regular (non-symlink) video file of at most 300 s and 1 GB; --cuts to enable detection; --threshold strictly between 0 and 1, default 0.35; optional --out for a new JSON path whose parent exists. · out: JSON report with status 'reference_timing_observed_not_animation_reconstructed', target (absolute input path), width, height, fps_rational, duration_seconds, audio_present, cut_detection_run, cut_candidates_seconds, segments, important_limitations and next, printed to stdout or saved to --out. Errors print {status:failed,error} to stderr with exit 2.
+
+**التثبيت:** needs on PATH: ffprobe · optional: bin:ffmpeg
+
+**الوسوم:** motion-reference-probe · cut detection · scene change · ffprobe · video metadata · reference video · shot boundaries · timing probe · كشف القطعات · تغيّر المشهد · بيانات الفيديو · الفيديو المرجعي · حدود اللقطات · مدة الفيديو
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_reference_probe.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
+- `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)
+- `TOOL-23` البصمة البصرية للفيديو المرجعي / Reference Visual Fingerprint (proven)
+
+### `TOOL-22` — محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل تقرير القطعات المستخرج من فيديو مرجعي، مع إشارات الصوت والبصمة البصرية والمقاطع المملوكة اختياريًا، إلى مشروع Remotion جديد قابل للتعديل لم يُصيَّر بعد، بلقطات مضبوطة على مستوى الإطار وقطعات لا تقسم الكلمات، مع تقرير فحص من بوابة الجودة. — Turns a motion_reference_probe cut report (plus optional audio cues, visual fingerprint and owned replacement clips) into a new, unrendered, editable Remotion React project with frame-exact shots, word-safe cuts and a quality-gate audit.
+
+**متى:** عايز أعمل مونتاج بنفس إيقاع قطعات الفيديو ده بس بلقطاتي أنا / Rebuild this reference video's cut rhythm as an editable Remotion project
+
+**كيف:** build-project: `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./new-edit`; build-project-with-audio-and-look: `python3 scripts/reference_edit_engine.py --probe ./cuts.json --cues ./cues.json --visual ./reference-look.json --fps 30 --out ./new-edit`; build-project-with-owned-media: `python3 scripts/reference_edit_engine.py --probe ./cuts.json --cues ./cues.json --manifest ./my-assets.json --assets-dir ./my-assets --out ./new-edit`. Full card: `python3 scripts/hub.py tool reference-edit-engine`. Limits: Generates source code only: it does not install Remotion, render an MP4, inspect replacement media durations or codecs, understand shot content or reproduce the reference's effects, and output is fixed at 1080x1920.
+
+**المعاملات:** in: --probe: JSON from motion_reference_probe.py --cuts (required; fewer than 80 cut candidates, reference up to 300 s); optional --cues: kosif.audio-cues.v1 JSON from audio_cue_mapper.py (up to 120 s, words keyed 'word' or 'text'); --visual: JSON from reference_visual_fingerprint.py of the same video; --manifest {clips:[...],audio:'...'} with --assets-dir holding owned .mp4/.mov/.webm/.m4v and .mp3/.wav/.m4a/.aac files; --fps 24/25/30/60 (default 30); --out: a new directory whose parent exists. Every JSON input must be a regular file under 2 MB. · out: A new unrendered Remotion project directory: package.json (remotion ^4, @remotion/cli ^4, react ^19), src/index.jsx, src/Root.jsx, src/Video.jsx, src/plan.json (schema kosif.reference-edit.v1), decision-report.json (evidence flags), quality-audit.json (creative_quality_gate result), README.md, plus public/assets/ when owned media is given; prints a one-line JSON status.
+
+**التثبيت:** optional: bin:node, npm:@remotion/cli, npm:react, npm:react-dom, npm:remotion
+
+**الوسوم:** reference-edit-engine · reference edit · cut rhythm · Remotion project · editable timeline · word-safe cuts · replacement clips · Katana-style · مونتاج مرجعي · إيقاع القطعات · مشروع ريموشن · إعادة بناء المونتاج · محاكاة مونتاج · لقطات بديلة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:higgsfield` ← python3 -c "import higgsfield" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `npm:remotion` ← npm ls remotion أو وجود node_modules/remotion
+- `npm:react` ← npm ls react أو وجود node_modules/react
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_edit_engine.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_quality_gate.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_music_rhythm_engine.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/reference_edit_engine.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
+- `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
+- `TOOL-23` البصمة البصرية للفيديو المرجعي / Reference Visual Fingerprint (proven)
+- `TOOL-24` جسر سير عمل الفيديو / Video Workflow Bridge (proven)
+
+### `TOOL-23` — البصمة البصرية للفيديو المرجعي / Reference Visual Fingerprint
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يفكّ ترميز فيديو محلي مصرّح به بدقة 64×36 وبمعدل إطارين في الثانية عبر FFmpeg، ويقيس لكل لقطة لوحة الألوان والإضاءة والتباين والتشبّع ومقدار التغيّر ومرشّحات الإزاحة التقريبية، ثم يكتب بصمة JSON يستطيع محرك المونتاج المرجعي تحويلها إلى ألوان مشاهد جديدة. — Decodes an authorized local video at 64x36 and 2 fps with ffmpeg and measures per-shot palette, luma, contrast, saturation, frame change and coarse translation candidates, writing a JSON fingerprint that reference_edit_engine can apply as new shot colors.
+
+**متى:** استخرج ألوان وإضاءة كل لقطة من الفيديو المرجعي / Measure the palette and brightness of each shot in this reference video
+
+**كيف:** fingerprint-per-shot: `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cuts.json --out ./reference-look.json`; fingerprint-whole: `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --out ./reference-look.json`. Full card: `python3 scripts/hub.py tool reference-visual-fingerprint`. Limits: Measures coarse low-resolution pixel statistics only (3-bit-quantized palette, uncalibrated luma, sparse translation guesses), not accurate color grading, object or camera tracking, or semantic understanding.
+
+**المعاملات:** in: A local regular (non-symlink) video of at most 120 s; optional --probe JSON from motion_reference_probe.py --cuts of the same video; --out: a new JSON path whose parent exists (never overwritten). · out: JSON (schema kosif.reference-visual-fingerprint.v1) with duration, sample_fps 2, sample_dimensions [64,36], sample_count, per-sample rows (luma, contrast, saturation_proxy, mean_rgb, change_ratio, translation) and sections (start/end, palette hex list, mean_luma, mean_contrast, saturation_proxy, change_ratio_mean, possible_translation, motion_candidate_count), exclusions, source_name, cut_report_provided and source_video_unchanged; prints a one-line status.
+
+**التثبيت:** needs on PATH: ffmpeg, ffprobe
+
+**الوسوم:** reference-visual-fingerprint · visual fingerprint · color palette · luma · contrast · frame change · camera pan candidate · reference look · بصمة بصرية · لوحة الألوان · الإضاءة · التباين · حركة الكاميرا · ألوان الفيديو المرجعي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_fingerprint.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/reference_visual_fingerprint.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
+- `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)
+- `TOOL-24` جسر سير عمل الفيديو / Video Workflow Bridge (proven)
+- `TOOL-25` مستخرج إشارات التوقيت من الصوت / WAV audio cue mapper (proven)
+
+### `TOOL-24` — جسر سير عمل الفيديو / Video Workflow Bridge
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** ينتج ملفات JSON حتمية وغير إتلافية لمسارين من مسارات المونتاج: خطة مونتاج نصية تحوّل نطاقات الكلمات المختارة إلى مقاطع فيديو محددة بالإطارات، وعلامات مراجعة دقيقة على مستوى الإطار مع رموز زمنية (timecode) وإحداثيات بكسل اختيارية، دون أن يقرأ الوسائط أو يقصّها أو يصيّرها. — Generates deterministic, non-destructive JSON for two editor workflows: a text-based paper edit that turns selected word ranges into frame-bounded video-only segments, and frame-accurate review markers with timecodes and optional pixel anchors; it never reads, cuts or renders media.
+
+**متى:** عايز أقص الفيديو بالكلام: خلّي الكلمات من 1 لـ 3 ومن 7 لـ 9 / Make a text-based paper edit from words.json
+
+**كيف:** paper-edit: `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json`; review: `python3 scripts/video_workflow_bridge.py review ./notes.json --duration 60 --fps 30 --width 1080 --height 1920 --out ./out/review-markers.json`. Full card: `python3 scripts/hub.py tool video-workflow-bridge`. Limits: Produces cut and review plans only: it never cuts, renders or plays media, and its paper-edit segments must not be applied to an audio master.
+
+**المعاملات:** in: paper-edit: words.json (list or {words:[...]}) with 'word'/start/end seconds, non-overlapping; --keep ranges such as '1-3,7-9'; --fps (integer, default 30). review: notes JSON list of {time,comment,x?,y?} with 0 <= time < duration and x/y in 0..1; --duration seconds; --fps; --width/--height (default 1080x1920). · out: A JSON file at --out (parent dirs created, existing file overwritten): kosif.video-paper-edit.v1 segments with source/output frames, word indices and text, or kosif.frame-review.v1 markers; prints {status,output,schema}.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** video-workflow-bridge · paper edit · text-based editing · word ranges · review markers · frame-accurate notes · timecode · Frame.io-style review · Descript-style · مونتاج نصي · قص بالكلام · ملاحظات المراجعة · تايم كود · رمز زمني · علامات الإطارات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_video_workflow_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/video_workflow_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)
+- `TOOL-23` البصمة البصرية للفيديو المرجعي / Reference Visual Fingerprint (proven)
+- `TOOL-25` مستخرج إشارات التوقيت من الصوت / WAV audio cue mapper (proven)
+- `TOOL-26` فرضيات إيقاع الموسيقى / Music rhythm hypotheses (proven)
+
+### `TOOL-25` — مستخرج إشارات التوقيت من الصوت / WAV audio cue mapper
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يقيس ملف WAV بترميز PCM بعمق 16 بت (حتى 120 ثانية) ويُخرج ملف JSON جديدًا بصيغة kosif.audio-cues.v1 يضم غلاف طاقة RMS كل 50 ملي ثانية وبدايات صوتية مرشّحة عند ارتفاع الطاقة، ويستورد اختياريًا توقيتات كلمات جاهزة من WhisperX أو KOSIF بعد التحقق منها، دون أن يختلق سرعة إيقاع أو نبضات أو كلمات أو مشاعر. — Measures a 16-bit PCM WAV (up to 120 s) into a new kosif.audio-cues.v1 JSON with a 50 ms RMS energy envelope and rising-energy onset candidates, optionally importing validated WhisperX/KOSIF word timings, without ever inventing BPM, beats, words or emotion.
+
+**متى:** حلّل الصوت ده وطلّع لي لحظات ارتفاع الطاقة عشان أركّب عليها القطعات / Measure onsets and energy in my voiceover WAV for motion sync
+
+**كيف:** measure: `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json`; measure-with-words: `python3 scripts/audio_cue_mapper.py ./voice.wav --aligned-words ./words.json --out ./out/cues.json`; help: `python3 scripts/audio_cue_mapper.py --help`. Full card: `python3 scripts/hub.py tool audio-cue-mapper`. Limits: Detects amplitude jumps only: it does not estimate tempo or beats, does not transcribe, and does not read MP3/AAC or 8/24/32-bit WAV, which must first be converted to 16-bit PCM WAV elsewhere.
+
+**المعاملات:** in: An uncompressed 16-bit PCM WAV, mono or stereo, 8–192 kHz, 0.1–120 s, under 64 MB. Optionally a JSON with words[] or segments[].words[], each {word\|text, start, end} in seconds, in order and inside the audio (at most 1500 words, 120 characters each). · out: A new JSON file with schema kosif.audio-cues.v1: source, duration, sample_rate, channels, window_seconds, energy_rms[], energy_median, onset_candidates_seconds[], words[{text, start, end}], word_alignment_source, bpm:null, emotion:null, verified_beats:false, scope and master_clock. It refuses to overwrite, and the parent folder must exist. A one-line JSON summary is printed on stdout; errors exit 2.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** audio-cue-mapper · audio onsets · energy envelope · RMS · تحليل الصوت · بدايات الأصوات · word timing · توقيت الكلمات · WhisperX · WAV · audio sync · مزامنة الصوت · captions data · cues.json · transients
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:faster-whisper` ← python3 -c "import faster-whisper" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/audio_cue_mapper.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-23` البصمة البصرية للفيديو المرجعي / Reference Visual Fingerprint (proven)
+- `TOOL-24` جسر سير عمل الفيديو / Video Workflow Bridge (proven)
+- `TOOL-26` فرضيات إيقاع الموسيقى / Music rhythm hypotheses (proven)
+- `TOOL-27` تحريك الشخصية بكامل الجسم / Full-body character animator (proven)
+
+### `TOOL-26` — فرضيات إيقاع الموسيقى / Music rhythm hypotheses
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل ملف kosif.audio-cues.v1 إلى ملف JSON جديد يضم حتى ثلاث فرضيات متمايزة لسرعة الإيقاع (يقيّم السرعات من 60 إلى 200 نبضة في الدقيقة مقابل البدايات المقيسة)، وشبكة نبضات تقديرية عندما يبلغ أفضل تطابق 0.60 أو أكثر، وأقسام طاقة لكل ثانية مقارنةً بوسيط المقطع، مع وسم كل النتائج بأنها غير مؤكدة. — Turns a kosif.audio-cues.v1 file into a new JSON of up to three distinct tempo hypotheses (60–200 BPM scored against measured onsets), an estimated beat grid when the best match is at least 0.60, and per-second energy sections relative to the track median, all flagged as unverified.
+
+**متى:** طلّع لي البي بي إم التقريبي للمزيكا دي / Estimate the tempo and a beat grid from my measured audio cues
+
+**كيف:** estimate: `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json`; help: `python3 scripts/music_rhythm_engine.py --help`. Full card: `python3 scripts/hub.py tool music-rhythm-engine`. Limits: Gives a heuristic tempo guess from onset alignment only: half- and double-time errors are common, fewer than 4 onsets gives no tempo, and it detects no chords, mood or lyrics.
+
+**المعاملات:** in: A cues JSON from audio_cue_mapper.py (schema kosif.audio-cues.v1, at most 2 MB, not a symlink): duration 0.1–120 s, strictly increasing onset_candidates_seconds (at most 600), energy_rms values in 0..1 (at most 10,000) and window_seconds (0.001–1, default 0.05). · out: A new JSON file with schema kosif.music-rhythm-hypotheses.v1: duration, source, tempo_hypotheses (up to 3, each {bpm, match, aligned_onsets, mean_error_seconds, phase_anchor_seconds}), candidate_tempo_bpm or null, estimated_grid_seconds[], measured_transients_seconds[], relative_energy_sections[{start, end, mean_rms, energy_label}], verified_bpm:false, lyric_understanding:false, emotion_detection:false and notes. It refuses to overwrite, and the parent folder must exist. A summary JSON is printed on stdout; errors exit 2.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** music-rhythm-engine · BPM · tempo estimate · beat grid · سرعة الإيقاع · شبكة النبضات · rhythm · إيقاع · music sync · cut on beat · القص على الإيقاع · energy sections · onsets · half-time double-time
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_music_rhythm_engine.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/music_rhythm_engine.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-24` جسر سير عمل الفيديو / Video Workflow Bridge (proven)
+- `TOOL-25` مستخرج إشارات التوقيت من الصوت / WAV audio cue mapper (proven)
+- `TOOL-27` تحريك الشخصية بكامل الجسم / Full-body character animator (proven)
+- `TOOL-28` تحريك ذراع الشخصية بالحركية العكسية / Character IK arm animator (proven)
+
+### `TOOL-27` — تحريك الشخصية بكامل الجسم / Full-body character animator
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يرسم شخصية ثنائية الأبعاد كاملة الجسم مكوّنة من طبقات، تمشي وتركض وتلوّح وتبتسم وترمش وتومئ برأسها وفق أزمنة أو كلمات محددة، مستخدمًا الحركية العكسية ذات العظمتين للساقين والذراعين، ويصدّرها صورًا ثابتة PNG أو SVG أو GIF أو MP4 بترميز H.264 مع إمكانية إرفاق الصوت الأصلي بصيغة AAC والتحقق من حزمه. — Renders a layered 2D full-body character that walks, runs, waves, smiles, blinks and nods on time or word cues, using two-bone IK for legs and arms, and exports PNG/SVG stills or GIF/H.264 MP4 with optional packet-verified original AAC audio.
+
+**متى:** خلّي الشخصية تمشي وتلوّح وتبتسم على كلمات التعليق / Animate a 2D character that walks, waves, smiles, blinks and nods
+
+**كيف:** doctor: `python3 scripts/character_fullbody.py doctor`; render-still: `python3 scripts/character_fullbody.py render --scene templates/fullbody-demo.json --words templates/fullbody-demo-words.json --time 1.55 --output ./still.png`; render-gif: `python3 scripts/character_fullbody.py render --scene templates/fullbody-demo.json --words templates/fullbody-demo-words.json --fps 8 --output ./walk.gif`; render-mp4-audio: `python3 scripts/character_fullbody.py render --scene templates/fullbody-demo.json --words templates/fullbody-demo-words.json --fps 24 --audio ./voice.m4a --output ./fullbody.mp4`. Full card: `python3 scripts/hub.py tool character-fullbody`. Limits: One stylized 2D figure with six preset actions and simple leg/arm IK; no 3D, mocap, lip sync, transcription, multiple characters or custom artwork.
+
+**المعاملات:** in: A kosif.fullbody.v1 scene JSON with: a 128-1280 px canvas; duration 0.1-30 s; character origin, scale 0.35-1.8 and colours; at most 100 actions (walk, run, wave, smile, blink, nod). Actions must be ordered by start across all channels. Each has exactly one of time or word (+occurrence), a duration of 0.05-30 s and an optional speed. Walk and run share one channel, and no two actions may overlap on the same channel. Optional --words JSON {words:[{word,start,end}]} from real alignment. Optional --audio must be AAC (MP4 only) with a length matching the duration. --fps 1-60; --time applies to stills. · out: A new PNG or SVG still, or a GIF or H.264 MP4 (CRF 19, whole frame count, at most 600 frames). Images have five layers: ground, back limbs, torso and head, facial expression, front arm. The MP4 can include the original AAC by stream copy. stdout gets JSON with verified, the output path, frames, sha256, audio_packets_preserved and the format; errors go to stderr with exit 1.
+
+**التثبيت:** pip install Pillow · optional: bin:ffmpeg, bin:ffprobe
+
+**الوسوم:** character-fullbody · full body character · walk cycle · run · wave · smile · blink · nod · 2D IK · word cue · character animation · شخصية كاملة · مشي · تلويح · ابتسامة · رمش · تحريك الشخصيات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:rdkit` ← python3 -c "import rdkit" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_character_fullbody.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/character_fullbody.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-25` مستخرج إشارات التوقيت من الصوت / WAV audio cue mapper (proven)
+- `TOOL-26` فرضيات إيقاع الموسيقى / Music rhythm hypotheses (proven)
+- `TOOL-28` تحريك ذراع الشخصية بالحركية العكسية / Character IK arm animator (proven)
+- `TOOL-29` رسم الشخصيات والمشاهد بالكود / Code Drawing Master storyboards (proven)
+
+### `TOOL-28` — تحريك ذراع الشخصية بالحركية العكسية / Character IK arm animator
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحرّك ذراع شخصية مرسومة بسيطة بالحركية العكسية التحليلية ذات العظمتين نحو أهداف تحدّدها أزمنة أو توقيتات كلمات موثّقة، ويصدّر صورًا ثابتة PNG أو SVG أو GIF أو MP4 بترميز H.264، مع إمكانية نسخ التعليق الصوتي الأصلي بصيغة AAC دون إعادة ترميز والتحقق منه ببصمات الحزم. — Animates a simple drawn character's arm with analytic two-bone inverse kinematics toward targets cued by time or verified word timestamps, exporting PNG/SVG stills or GIF/H.264 MP4, optionally with the original AAC narration stream-copied and checked by packet hashes.
+
+**متى:** حرّك ذراع الشخصية لما يقول كلمة ارفع / Make the character raise its arm on a specific word from my narration
+
+**كيف:** doctor: `python3 scripts/character_ik.py doctor`; render-still: `python3 scripts/character_ik.py render --scene templates/ik-wave-demo.json --words templates/ik-wave-words.json --time 0.8 --output ./pose.png`; render-video: `python3 scripts/character_ik.py render --scene templates/ik-wave-demo.json --words templates/ik-wave-words.json --fps 24 --output ./wave.mp4`; render-with-audio: `python3 scripts/character_ik.py render --scene templates/ik-wave-demo.json --words templates/ik-wave-words.json --fps 24 --audio ./narration.m4a --output ./wave-voice.mp4`. Full card: `python3 scripts/hub.py tool character-ik`. Limits: Animates one two-bone arm on an otherwise static simple figure; it is not full-body rigging, lip sync, transcription or AI character generation.
+
+**المعاملات:** in: A kosif.ik.v1 scene JSON with: a 128-2048 px canvas; duration 0.1-30 s; a rig (shoulder, upper/lower bone lengths 5-1000, bend ±1, colours, widths); 1-100 targets, each with exactly one of time or word (+occurrence), a point and a travel time. The first target must sit at time 0 with travel 0. Optional --words JSON ({words:[{word,start,end}]} or a bare list, sorted by start, from real alignment). Optional --audio must be AAC and match the scene length (MP4 only). --fps 1-60; --time applies to stills only. · out: A new PNG or SVG still at --time, or a GIF or H.264 MP4 of the whole scene (duration×fps must be a whole number of frames, at most 600). The MP4 can carry the original AAC by stream copy. stdout gets JSON with the output path, verified, sha256, frames, fps, cue_times and audio_packet_copy_verified; errors go to stderr with exit 1.
+
+**التثبيت:** pip install Pillow · optional: bin:ffmpeg, bin:ffprobe
+
+**الوسوم:** character-ik · inverse kinematics · IK · two-bone arm · elbow · gesture · word cue · words.json · AAC stream copy · character rig · حركية عكسية · ذراع · كوع · إيماءة · توقيت الكلمات · تحريك الشخصيات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_character_ik.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_character_fullbody.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/character_ik.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-26` فرضيات إيقاع الموسيقى / Music rhythm hypotheses (proven)
+- `TOOL-27` تحريك الشخصية بكامل الجسم / Full-body character animator (proven)
+- `TOOL-29` رسم الشخصيات والمشاهد بالكود / Code Drawing Master storyboards (proven)
+- `TOOL-30` الرسم الإبداعي بالطبقات / Creative Paint layered renderer (proven)
+
+### `TOOL-29` — رسم الشخصيات والمشاهد بالكود / Code Drawing Master storyboards
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يولّد لوحة قصصية (storyboard) قابلة للتحرير بصيغة JSON لأداة Motion Director بمقاس 1080×1920، مع معاينة HTML مستقلة اختيارية يمكن التنقّل فيها زمنيًا، تُرسم فيها تدريجيًا شخصيات متجهية لإنسان أو قطة أو كليهما في شارع أو حديقة، بست حركات وثلاثة تعابير وتوقيتات كلمات حقيقية اختيارية. — Generates an editable 1080x1920 Motion Director storyboard JSON, plus an optional self-contained seekable HTML preview, in which procedural vector human and/or cat characters draw on in a street or park with six actions, three moods and optional real word timestamps.
+
+**متى:** ارسم لي شخص وقطة يمشون في شارع كموشن جرافيك / Draw a hand-drawn style character walking down a street as an editable animation
+
+**كيف:** generate: `python3 scripts/code_drawing_master.py --cast human+cat --expression happy --location street --action walk --out ./story.json --html ./story.html`; generate-with-words: `python3 scripts/code_drawing_master.py --cast human --action wave --duration 9 --words-json templates/ik-wave-words.json --out ./talk.json --html ./talk.html`; generate-json-only: `python3 scripts/code_drawing_master.py --cast cat --expression determined --location park --action run --duration 12 --fps 30 --out ./cat-park.json`; library: `python3 -c "import sys; sys.path.insert(0,'scripts'); import code_drawing_master as d; print(len(d.human_parts('happy')), len(d.cat_parts('sad')))"`. Full card: `python3 scripts/hub.py tool code-drawing-master`. Limits: Produces a fixed, stylized procedural storyboard (two locations, preset human/cat rigs, six actions) and only compiles HTML; it does not render MP4, transcribe speech, lip-sync or accept custom artwork.
+
+**المعاملات:** in: CLI choices only: --cast human\|cat\|human+cat (default human+cat); --expression happy\|sad\|determined; --location street\|park; --action idle\|walk\|run\|wave\|point\|sit; --duration 4-120 s (default 9); --fps 24\|25\|30\|60. Optional --words-json takes pre-aligned timestamps (words[] or WhisperX segments[].words, at most 240 words, UTF-8 without a BOM); they must be non-overlapping and inside the duration, and words without start/end are refused. --out (required) and --html must be new paths in existing directories. · out: A new Motion Director v1 storyboard JSON at --out: one 1080x1920 scene with draw-on street or park paths, a fixed 'KOSIF DRAWING' title, a polygon morph, articulated actors (20-part human, 14-part cat) with post-draw movement, a camera zoom and the words. Optional --html adds a self-contained seekable HTML that embeds assets/motion_engine.js. A JSON report goes to stdout with rendered:false; failures print {status:failed} to stderr with exit 2.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** code-drawing-master · code drawing · draw-on · storyboard · vector character · human rig · cat rig · street scene · park scene · SVG path animation · word timestamps · رسم بالكود · رسم تدريجي · شخصية كرتونية · قطة · لوحة قصصية · موشن جرافيك
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:faster-whisper` ← python3 -c "import faster-whisper" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_code_drawing_master.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/code_drawing_master.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-27` تحريك الشخصية بكامل الجسم / Full-body character animator (proven)
+- `TOOL-28` تحريك ذراع الشخصية بالحركية العكسية / Character IK arm animator (proven)
+- `TOOL-30` الرسم الإبداعي بالطبقات / Creative Paint layered renderer (proven)
+- `TOOL-31` الرسم الذكي ومساعد الأشكال / Smart Draw shape assist (proven)
+
+### `TOOL-30` — الرسم الإبداعي بالطبقات / Creative Paint layered renderer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يرسم مشهدًا من طبقات معرّفًا بصيغة JSON صارمة (مستطيلات وأشكال بيضاوية وخطوط ومضلعات وضربات فرشاة حساسة للضغط ونصوص) باستخدام Pillow ويصدّره صورًا ثابتة PNG أو SVG، أو يحرّك الطبقات كاملةً بإطارات مفتاحية ويصدّرها GIF أو MP4 بترميز H.264. — Paints a strict JSON layered scene (rectangles, ellipses, lines, polygons, pressure brush strokes, text) with Pillow into PNG/SVG stills, or animates whole layers with keyframes into a GIF or H.264 MP4.
+
+**متى:** ارسم لوحة بطبقات وصدّرها PNG وSVG / Paint a layered illustration from JSON and export PNG and SVG
+
+**كيف:** doctor: `python3 scripts/creative_paint.py doctor`; render: `python3 scripts/creative_paint.py render --scene templates/creative-paint-demo.json --output ./paint.png --time 0.5`; render-svg: `python3 scripts/creative_paint.py render --scene templates/creative-paint-demo.json --output ./paint.svg`; animate-gif: `python3 scripts/creative_paint.py animate --scene templates/creative-paint-demo.json --output ./paint.gif --fps 12 --duration 2`. Full card: `python3 scripts/hub.py tool creative-paint`. Limits: A simple 2D primitive painter with whole-layer keyframes only (no AI generation, per-shape animation or PSD); SVG drops brush pressure and blend modes, and rotated layers do not land in the same place in PNG and SVG.
+
+**المعاملات:** in: A kosif.paint.v1 JSON scene (UTF-8 without a BOM) with: integer width/height 1-2048; background as #RRGGBB[AA] or 'transparent'; 1-150 layers (name, opacity, blend normal\|multiply\|screen, visible); at most 1500 shapes in total. Shape kinds are rectangle, ellipse, line, polygon, brush ([x,y,pressure] points, 2-1500) and text (optional font file path). Optional per-layer keyframes (up to 100) set x/y/angle/scale/opacity with linear or ease-in-out. render takes --time 0-3600 s; animate takes --fps 1-60 and --duration up to 30 s, with ceil(fps×duration) at most 300 frames. · out: render writes a new .png or .svg; animate writes a new .gif, or a .mp4 (H.264, CRF 18) via ffmpeg. stdout gets JSON with the output path, sha256, bytes or fps/frames, and a verified flag; errors go to stderr as {verified:false,error} with exit 1. Existing outputs are never overwritten.
+
+**التثبيت:** pip install Pillow · optional: bin:ffmpeg
+
+**الوسوم:** creative-paint · paint · layers · brush · pressure brush · keyframes · PNG · SVG · GIF · MP4 · Pillow · رسم · طبقات · فرشاة · إطارات مفتاحية · تحريك
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_paint.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_smart_draw.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_character_fullbody.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_paint.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-28` تحريك ذراع الشخصية بالحركية العكسية / Character IK arm animator (proven)
+- `TOOL-29` رسم الشخصيات والمشاهد بالكود / Code Drawing Master storyboards (proven)
+- `TOOL-31` الرسم الذكي ومساعد الأشكال / Smart Draw shape assist (proven)
+- `TOOL-32` فحص المشروع المحلي دون تشغيل / Local project static audit (proven)
+
+### `TOOL-31` — الرسم الذكي ومساعد الأشكال / Smart Draw shape assist
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل ضربات الرسم الحر المعرّفة بصيغة JSON إلى رسمة من طبقات، ويطابق كل ضربة اختياريًا مع مستطيل أو شكل بيضاوي أو خط مستقيم بهندسة حتمية، ثم يعرض الأشكال المتعرَّف عليها أو يصدّر الرسمة بصيغة PNG أو SVG. — Turns freehand stroke JSON into a layered drawing, optionally snapping each stroke to a rectangle, ellipse or straight line with deterministic geometry, then reports the recognized shapes or renders the drawing to PNG/SVG.
+
+**متى:** حوّل خربشاتي إلى مستطيل ودائرة وخط مستقيم / Snap my rough freehand strokes into clean shapes
+
+**كيف:** doctor: `python3 scripts/smart_draw.py doctor`; analyze: `python3 scripts/smart_draw.py analyze --scene templates/smart-draw-demo.json`; render-svg: `python3 scripts/smart_draw.py render --scene templates/smart-draw-demo.json --output ./sketch.svg`; render-png: `python3 scripts/smart_draw.py render --scene templates/smart-draw-demo.json --output ./sketch.png`. Full card: `python3 scripts/hub.py tool smart-draw`. Limits: Heuristic geometric snapping into three shape classes plus freehand (rectangle, ellipse, line); no ML object recognition like AutoDraw, no eraser, collaboration or template library.
+
+**المعاملات:** in: A kosif.smartdraw.v1 JSON with: integer width/height 128-2048; background #RRGGBB[AA] or 'transparent'; 1-100 strokes. Each stroke has 2-1500 [x,y,pressure?] points inside the canvas (pressure 0.1-5), a color #RRGGBB[AA], a width of 1-80, a brush of pen, marker or highlighter, and assist true or false (default false). Only strokes with assist:true are classified. · out: analyze prints JSON {recognized:[{stroke,recognized,brush}],layers} to stdout. render also writes a new .png or .svg, one layer per stroke (highlighter at opacity 0.32, marker at 0.9), and adds the output path and byte count. Existing files are never overwritten.
+
+**التثبيت:** pip install Pillow
+
+**الوسوم:** smart-draw · shape assist · freehand · sketch · stroke recognition · snap to shape · rectangle · ellipse · line · highlighter · Ramer-Douglas-Peucker · رسم حر · التعرف على الأشكال · خربشة · مساعد الأشكال · قلم تحديد
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_smart_draw.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/smart_draw.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-29` رسم الشخصيات والمشاهد بالكود / Code Drawing Master storyboards (proven)
+- `TOOL-30` الرسم الإبداعي بالطبقات / Creative Paint layered renderer (proven)
+- `TOOL-32` فحص المشروع المحلي دون تشغيل / Local project static audit (proven)
+- `TOOL-33` تدقيق أدلة الكتالوج / Catalog Evidence Audit (ready)
+
+### `TOOL-32` — فحص المشروع المحلي دون تشغيل / Local project static audit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يجري جردًا ساكنًا للقراءة فقط لمجلد محلي دون تشغيل أي شيء، ويعيد تقرير JSON يتضمّن أعداد الملفات وامتداداتها وتصنيف وجهتها (مراجعة الشيفرة، أو ملفات ثنائية مرشّحة للتحليل بـ Ghidra أو REA، أو أرشيفات، أو وسائط) ومؤشرات مطابقة الأنماط وبصمات SHA-256 وإحصاءات أمان ملفات zip. — Performs a read-only static inventory of a local folder without executing anything and returns a JSON report of file counts, extensions, routes (source review, Ghidra/REA binary candidates, archives, media), regex indicators, SHA-256 hashes and zip-safety stats.
+
+**متى:** افحص مجلد المشروع هذا وقل لي محتواه بدون تشغيل أي شيء / Do a read-only triage of this local project folder
+
+**كيف:** scan: `python3 scripts/local_project_audit.py ./my-project`; scan-with-report: `python3 scripts/local_project_audit.py ./my-project --output ./audit/report.json --limit 20000`; library: `python3 -c "import sys; sys.path.insert(0,'scripts'); import local_project_audit as a; print(a.scan('templates')['routes'])"`; help: `python3 scripts/local_project_audit.py --help`. Full card: `python3 scripts/hub.py tool local-project-audit`. Limits: Static, file-level triage by extension and regex signatures only; it never executes or extracts anything and cannot prove runtime behavior, malware status or licensing.
+
+**المعاملات:** in: A local directory path (positional root). Optional --output gives a report path outside that directory. Optional --limit sets the maximum number of files, 1-1,000,000 (default 100000). · out: A one-line JSON summary on stdout (schema kosif.local-project-audit.v1, without samples or skipped items). With --output, the full report also holds up to 120 sample records: the first 80 files plus every Ghidra/REA candidate. Each record has the path, bytes, route, sha256 for files up to 4 MB, regex indicators for source files up to 2 MB, and zip entries, uncompressed bytes, ratio and unsafe_path_count. The report also lists up to 30 skipped entries.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** local-project-audit · project audit · static triage · folder inventory · file hashes · sha256 · zip slip · path traversal · binary candidates · Ghidra · REA · فحص مشروع · جرد الملفات · تحليل ساكن · ملفات تنفيذية · بصمة الملفات · أمان الأرشيف
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `engine:ghidra` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_local_project_audit.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/local_project_audit.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-30` الرسم الإبداعي بالطبقات / Creative Paint layered renderer (proven)
+- `TOOL-31` الرسم الذكي ومساعد الأشكال / Smart Draw shape assist (proven)
+- `TOOL-33` تدقيق أدلة الكتالوج / Catalog Evidence Audit (ready)
+- `TOOL-34` باني خريطة القدرات المترابطة / Capability Graph Builder (proven)
+
+### `TOOL-33` — تدقيق أدلة الكتالوج / Catalog Evidence Audit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يفحص كل سجل قدرة في data/powers/*.json دون تشغيل أي شيء، بحثًا عن المعرّفات المكررة والسجلات المعطوبة ومدى تغطية روابط الإثبات. ويكتفي بالتحقق من وجود المراجع المحلية 'kosif-tool/...'، ويُحصي الحالات ونطاقات الإثبات المعلنة. — Statically audits every power record in data/powers/*.json for duplicate ids, malformed records and proof-link coverage. It checks only whether local 'kosif-tool/...' references exist and counts the claimed statuses and proof scopes.
+
+**متى:** افحص كتالوج القدرات وشوف فيه سجلات مكررة أو روابط إثبات ناقصة / audit the powers catalog for duplicate ids and broken proof links
+
+**كيف:** audit: `python3 scripts/catalog_evidence_audit.py`; --skill: `python3 scripts/catalog_evidence_audit.py --skill .`. Full card: `python3 scripts/hub.py tool catalog-evidence-audit`. Limits: Checks only that local reference paths exist, never runs a capability, and leaves every URL, sibling-repo or archive reference unverified, so a clean report does not prove that anything works.
+
+**المعاملات:** in: Optional --skill path to a skill folder that contains data/powers/*.json (defaults to this skill). · out: JSON report on stdout. Exit 0 when there are no record integrity errors, 1 otherwise (a missing local reference does not change the exit code). A folder with no catalog crashes with a ValueError traceback, also exit 1.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** catalog-evidence-audit · catalog audit · evidence coverage · proof links · duplicate ids · integrity check · powers catalog · badges · static audit · تدقيق الكتالوج · أدلة الإثبات · روابط مكسورة · معرفات مكررة · سلامة البيانات · فحص القدرات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/catalog_evidence_audit.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-31` الرسم الذكي ومساعد الأشكال / Smart Draw shape assist (proven)
+- `TOOL-32` فحص المشروع المحلي دون تشغيل / Local project static audit (proven)
+- `TOOL-34` باني خريطة القدرات المترابطة / Capability Graph Builder (proven)
+- `TOOL-35` بوابة جودة خطة المونتاج / Reference-edit structural quality gate (proven)
+
+### `TOOL-34` — باني خريطة القدرات المترابطة / Capability Graph Builder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبني خريطة واحدة مترابطة للمهارة: الجذر ← المجالات ← العائلات ← المستلزمات التي تحتاجها، والسكربتات التي تنفّذها، والاختبارات التي تذكر تلك السكربتات. تأتي روابط الكود من تحليل محلي لعبارات الاستيراد عبر شجرة الصياغة المجرّدة (AST)، مدموجًا مع لقطة Graphify المحفوظة في المستودع. تُكتب الخريطة في data/capability_graph.json مع صفحة HTML قابلة للبحث تعمل دون اتصال، وتجيب الأداة عن استعلامات الإحصاء والعُقد المجاورة. — Builds one connected graph of the skill: root → domains → families → the requirements they need, the scripts that run them, and the tests that mention those scripts. Code edges come from a local AST import pass merged with the committed Graphify snapshot. The graph is written as data/capability_graph.json plus an offline, searchable HTML page, and the tool answers stats and neighbour queries on it.
+
+**متى:** ورّيني خريطة القدرات المترابطة للمهارة / show me the capability graph of the skill
+
+**كيف:** build: `python3 scripts/capability_graph.py build`; build --check: `python3 scripts/capability_graph.py build --check`; build --out-dir: `python3 scripts/capability_graph.py build --out-dir ./out/`; stats: `python3 scripts/capability_graph.py stats`. Full card: `python3 scripts/hub.py tool capability-graph`. Limits: Edges are inferred from text mentions (script paths in how/proof fields, file names inside tests) and import statements, so 'tested_by' means a test names the script, not that it passed; stats and path read the committed JSON, which may be stale.
+
+**المعاملات:** in: data/powers/*.json, data/requirements.json, data/graphify_code_layer.json (a local snapshot; no network), the scripts/ sources (AST), and tests/*.py plus evals/*.py\|*.mjs (scanned for script file names). path takes one key. · out: data/capability_graph.json (nodes and edges) and references/capability-graph.html (self-contained, no CDN, light and dark themes), or both files in --out-dir. Plus one-line build summaries, stats Counters or path edge listings on stdout.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** capability-graph · capability graph · knowledge graph · dependency map · families · requirements · scripts · test coverage · Graphify · AST imports · offline HTML · خريطة القدرات · رسم معرفي · المستلزمات · السكربتات · الاختبارات · خريطة مترابطة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `key:graphify` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `permission_denied` (صلاحية مرفوضة، ميزانية 1): من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن ← اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل) · البديل: سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه · تصعيد: لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_capability_graph.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/capability_graph.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-32` فحص المشروع المحلي دون تشغيل / Local project static audit (proven)
+- `TOOL-33` تدقيق أدلة الكتالوج / Catalog Evidence Audit (ready)
+- `TOOL-35` بوابة جودة خطة المونتاج / Reference-edit structural quality gate (proven)
+- `TOOL-36` تدقيق واجهة بايثون في Blender / Blender Python API audit (proven)
+
+### `TOOL-35` — بوابة جودة خطة المونتاج / Reference-edit structural quality gate
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يدقّق ملف خطة مونتاج مرجعي من KOSIF ‏(plan.json بمخطط kosif.reference-edit.v1). يتحقق من اتساق ساعة الإطارات، ومن تتابع اللقطات بلا فجوات ولا تداخل، ومن أن نبضات الإيقاع داخل حدود لقطاتها، ومن أنه لا توجد كلمة موقّتة تعبر قطعًا حادًا، ومن سلامة أسماء ملفات الوسائط المحلية (ومن وجودها فعلًا إن أُعطي مشروع Remotion)، ومن صدق مؤشرات الإثبات. ثم يكتب تقرير تدقيق JSON جديدًا حالته إما structurally_verified_render_pending (سليم بنيويًا وبانتظار التصيير) أو blocked (محجوب). — Audits a KOSIF reference-edit plan.json (schema kosif.reference-edit.v1). It checks the fps/frame clock, gap-free and overlap-free shot frames, bounded pulse cues, that no aligned word crosses a hard cut, safe local media names (and, with an optional Remotion project, that those files exist), and honest evidence flags. It writes a new audit JSON whose status is structurally_verified_render_pending or blocked.
+
+**متى:** افحص خطة المونتاج دي قبل الريندر: فيه فجوات بين اللقطات؟ / Run the quality gate on my Remotion reference-edit plan
+
+**كيف:** audit: `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json`; audit-with-project: `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --project-dir ./my-project --out ./out/quality-audit.json`; inspect_plan (import): `python3 -c "import sys,json; sys.path.insert(0,'scripts'); import creative_quality_gate as q; print(q.inspect_plan(json.load(open('./plan.json')))['status'])"`. Full card: `python3 scripts/hub.py tool creative-quality-gate`. Limits: It checks only the plan's structure and timing logic; it never renders or inspects the MP4's visuals, audio sync, rights or aesthetic quality.
+
+**المعاملات:** in: plan.json of schema kosif.reference-edit.v1 (made by scripts/reference_edit_engine.py, stored at <project>/src/plan.json). It must be a regular file, not a symlink, ≤2 MB, with duration 0.1–300 s, fps 24/25/30/60, totalFrames ≤18000, 1–80 shots and an alignedWords list (it may be empty, but a missing list blocks the word gate; at most 1500 entries). Optionally the generated Remotion project directory. · out: A new audit JSON (checks with pass/detail, failures, metrics such as shots/totalFrames/shortShotsUnderQuarterSecond/replacementAssetSlots, and an 'unverified' list) plus a one-line JSON summary on stdout. Exit 0 = structurally_verified_render_pending; exit 2 = blocked, invalid input or a bad --out path.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** creative-quality-gate · quality gate · plan.json · frame continuity · no gap no overlap · word timing · hard cut · Remotion · reference edit · audit · بوابة الجودة · استمرارية الإطارات · توقيت الكلمات · قطع حاد · تدقيق المونتاج · خطة المونتاج
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:remotion` ← npm ls remotion أو وجود node_modules/remotion
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_quality_gate.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_quality_gate.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-33` تدقيق أدلة الكتالوج / Catalog Evidence Audit (ready)
+- `TOOL-34` باني خريطة القدرات المترابطة / Capability Graph Builder (proven)
+- `TOOL-36` تدقيق واجهة بايثون في Blender / Blender Python API audit (proven)
+- `TOOL-37` جسر Blender الآمن / Safe headless Blender bridge (proven)
+
+### `TOOL-36` — تدقيق واجهة بايثون في Blender / Blender Python API audit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحلّل كل ملفات ‎.py في مجلد سكربتات Blender أو إضافاته أو شيفرته المصدرية تحليلًا ثابتًا بوحدة ast في بايثون، دون استيراد أي ملف أو تشغيله. يعدّ أصناف Operator وPanel وMenu وPropertyGroup وGizmoGroup من bpy.types واستدعاءات bpy.ops، ويصنّف الملفات في مجموعات موضوعية حسب أسمائها، ثم يطبع ملخصًا بصيغة JSON. — Statically parses every .py file under a Blender scripts, addon or source folder with Python's ast module, without importing or running anything. It counts bpy.types Operator, Panel, Menu, PropertyGroup and GizmoGroup classes, bpy.ops calls and topic groups by file name, and prints a JSON summary.
+
+**متى:** افحص سكربتات بايثون اللي مع Blender من غير ما تشغّلها / What bpy operators does this Blender addon folder call?
+
+**كيف:** --help: `python3 scripts/blender_api_audit.py --help`; audit: `python3 scripts/blender_api_audit.py ./blender-scripts/`; audit --output: `python3 scripts/blender_api_audit.py ./blender-scripts/ --output ./out/blender_api_audit.json`. Full card: `python3 scripts/hub.py tool blender-api-audit`. Limits: It produces static AST counts of bpy classes and bpy.ops calls in .py files only (at most 3,000 files); it does not run Blender, read C/C++ or prove runtime behaviour, and its topic counts are file-name substring heuristics.
+
+**المعاملات:** in: A directory of Blender Python sources (an installed Blender's scripts folder, an addon folder or a source checkout). Optional --output path for the full JSON report. · out: JSON on stdout (schema kosif.blender-api-audit.v1): files found and parsed, skipped files, counts of operator class types, topic file counts, source_not_executed=true and a caveat. With --output, a JSON file that also holds samples and the bpy_ops_calls counts.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** blender-api-audit · Blender · bpy · bpy.ops · addon audit · AST · static analysis · Python API · operators panels · بلندر · تحليل ثابت · إضافات بلندر · واجهة بايثون · تدقيق الشيفرة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_smart_draw.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_api_audit.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-34` باني خريطة القدرات المترابطة / Capability Graph Builder (proven)
+- `TOOL-35` بوابة جودة خطة المونتاج / Reference-edit structural quality gate (proven)
+- `TOOL-37` جسر Blender الآمن / Safe headless Blender bridge (proven)
+- `TOOL-38` رندر Cycles إلى فيديو مُتحقَّق منه / Cycles scene to verified video (proven)
+
+### `TOOL-37` — جسر Blender الآمن / Safe headless Blender bridge
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يتحقق من مشهد JSON محدود بصيغة kosif.blender.v1، ثم يشغّل Blender المثبّت مسبقًا لدى المستخدم في الخلفية (بإعدادات المصنع ومع تعطيل التنفيذ التلقائي) عبر blender_worker.py لإنتاج صورة PNG أو ملف ‎.blend قابل للتعديل أو ملف ‎.glb متحرك، أما الأمر doctor فيكتفي باكتشاف Blender. — Validates a bounded kosif.blender.v1 JSON scene and, when the user already has Blender installed, runs it headless (factory startup, autoexec disabled) through blender_worker.py to produce a PNG still, an editable .blend or an animated .glb; doctor only detects Blender.
+
+**متى:** عندي Blender متثبت، اعمل منه رندر PNG للمشهد ده / render this JSON scene with my installed Blender to a .blend or .glb
+
+**كيف:** doctor: `python3 scripts/blender_bridge.py doctor`; render (GLB): `python3 scripts/blender_bridge.py render --scene templates/blender-demo.json --output ./out/scene.glb`; render (.blend): `python3 scripts/blender_bridge.py render --scene templates/blender-demo.json --output ./out/scene.blend`; render (PNG, explicit Blender): `python3 scripts/blender_bridge.py render --scene templates/blender-demo.json --output ./out/still.png --blender /opt/blender/blender`. Full card: `python3 scripts/hub.py tool blender-bridge`. Limits: Fixed camera, one area light and location-only keyframes on primitives; doctor only detects Blender, and the repo records no real Blender render through this bridge.
+
+**المعاملات:** in: kosif.blender.v1 JSON: size 128–1920, fps 1–60, frames 1–240, 1–12 objects (cube, sphere, cylinder, cone, torus) with location (±100), scale (±20), RGBA colour 0–1 and ≤24 ordered location keyframes; --output a new .png/.blend/.glb in an existing folder; optional --blender path to an existing executable file. · out: The requested .png/.blend/.glb file plus one JSON line {executed, verified_file, engine, format, bytes, sha256, object_count, output}; doctor prints {blender_installed, path, formats, user_code_loaded:false, automatically_installs:false, render_verified:false}; errors as JSON {executed:false, error} on stderr with exit 1.
+
+**التثبيت:** needs on PATH: blender
+
+**الوسوم:** blender-bridge · Blender · headless · bridge · bpy · blend file · GLB export · PNG render · scene JSON · doctor · بلندر · جسر بلندر · رندر ثلاثي الأبعاد · ملف blend
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-35` بوابة جودة خطة المونتاج / Reference-edit structural quality gate (proven)
+- `TOOL-36` تدقيق واجهة بايثون في Blender / Blender Python API audit (proven)
+- `TOOL-38` رندر Cycles إلى فيديو مُتحقَّق منه / Cycles scene to verified video (proven)
+- `TOOL-39` منفّذ المشهد داخل Blender / Blender-side scene builder (install)
+
+### `TOOL-38` — رندر Cycles إلى فيديو مُتحقَّق منه / Cycles scene to verified video
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يُجري رندرًا لمشهد موجود (‎.blend أو ‎.glb أو ‎.gltf) بمحرك Cycles في Blender مع إزالة الضوضاء ومظهر AgX إلى إطارات PNG، ثم يرمّزها فيديو H.264 بصيغة MP4 أو MKV عبر FFmpeg، ويتحقق من الأبعاد وعدد الإطارات بـFFprobe ويكتب تقرير render-report.json؛ أما الأمر plan فيطبع خطة العمل وبصمة SHA-256 للمصدر دون رندر. — Renders an existing .blend/.glb/.gltf scene with Blender Cycles (denoised, AgX) to PNG frames, encodes them to an H.264 MP4/MKV with FFmpeg, checks size and frame count with FFprobe and writes a render-report.json; plan prints the job and the source SHA-256 without rendering.
+
+**متى:** رندر ملف .blend بتاعي لفيديو MP4 بـCycles واتأكد من عدد الفريمات / render my .blend scene to a verified MP4 with Cycles
+
+**كيف:** doctor: `python3 scripts/blender_cycles_render.py doctor`; plan: `python3 scripts/blender_cycles_render.py plan --scene ../../../proofs/blender-cat-rescue-20261019/cat_rescue_5s_editable.blend --out ./out/render.mp4 --frames 150 --fps 30 --width 540 --height 960 --samples 24`; render: `python3 scripts/blender_cycles_render.py render --scene ./scene.glb --out ./out/render.mp4 --frames 48 --fps 24 --width 640 --height 360 --samples 24 --device CPU`. Full card: `python3 scripts/hub.py tool blender-cycles-render`. Limits: Renders only what the scene already contains (adding at most a default camera and one area light), so it cannot make a scene realistic, and its frame-count check is skipped for .mkv output.
+
+**المعاملات:** in: --scene an existing .blend/.glb/.gltf (glTF is imported into an emptied factory scene), --out a new .mp4/.mkv path, --frames 1–3600 (default 150), --fps 1–120 (default 30), --width/--height even 64–4096 (default 640x360), --samples 4–512 (default 24), --device CPU\|GPU, optional --blender/--ffmpeg/--ffprobe paths or names. · out: Verified video at --out plus <stem>.render-report.json (source and video SHA-256, probe data, settings); stdout {video, report, status:VERIFIED_VIDEO}; doctor and plan print JSON only; failures print {error, status:FAILED} on stderr with exit 2 (argparse errors also exit 2).
+
+**التثبيت:** needs on PATH: blender, ffmpeg, ffprobe
+
+**الوسوم:** blender-cycles-render · Blender · Cycles · path tracing · render to MP4 · FFprobe QA · render report · GLB to video · blend to video · plan · رندر واقعي · سايكلز · فيديو ثلاثي الأبعاد · تحقق من الفيديو · بلندر
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_atlas_cycles_integration.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_cycles_render.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-36` تدقيق واجهة بايثون في Blender / Blender Python API audit (proven)
+- `TOOL-37` جسر Blender الآمن / Safe headless Blender bridge (proven)
+- `TOOL-39` منفّذ المشهد داخل Blender / Blender-side scene builder (install)
+- `TOOL-40` رندر ثلاثي الأبعاد مستقل عن Blender / Native 3D renderer (no Blender) (proven)
+
+### `TOOL-39` — منفّذ المشهد داخل Blender / Blender-side scene builder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📦 `install`: تحتاج حزمة أو برنامجًا أو نموذجًا أولًا |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُثبَّت (التثبيت النظامي بإذن) |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** سكربت يعمل داخل Blender المحلي فقط ويستدعيه blender_bridge.py عادةً، فيعيد التحقق من مشهد kosif.blender.v1 ويبني الأشكال الأساسية وخامات Principled والإطارات المفتاحية للموضع والكاميرا والإضاءة، ثم يحفظ صورة PNG أو ملف ‎.blend أو ملف ‎.glb متحركًا. — Blender-side script, run only inside a local Blender (normally by blender_bridge.py), that re-validates the kosif.blender.v1 JSON and builds primitive meshes, Principled materials, location keyframes, a camera and an area light, then saves a PNG still, a .blend or an animated .glb.
+
+**متى:** إيه السكربت اللي بيشتغل جوّه Blender لبناء المشهد؟ / what script does Blender execute for the KOSIF bridge
+
+**كيف:** run inside Blender: `blender --background --factory-startup --disable-autoexec --python-exit-code 3 --python scripts/blender_worker.py -- templates/blender-demo.json ./out/scene.glb`; via bridge (preferred): `python3 scripts/blender_bridge.py render --scene templates/blender-demo.json --output ./out/scene.blend`. Full card: `python3 scripts/hub.py tool blender-worker`. Limits: Only works inside Blender (bpy/mathutils), with a fixed camera at (8,-12,9), one area light and location-only keyframes, and it has never been executed in this repo's recorded tests.
+
+**المعاملات:** in: Two positional paths after '--' in Blender's argv: a kosif.blender.v1 scene JSON and an output path ending in .png, .blend or .glb. · out: The output file (PNG still via Blender's default engine, saved .blend, or GLB with animations) and a stdout line KOSIF_BLENDER_OUTPUT <bytes>; raises inside Blender on invalid input or missing output.
+
+**التثبيت:** needs on PATH: blender
+
+**الوسوم:** blender-worker · Blender worker · bpy · blender --background · --python · scene builder · primitives · keyframes · glTF export · بلندر · سكربت بلندر · بناء المشهد · تشغيل داخل بلندر
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_worker.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-37` جسر Blender الآمن / Safe headless Blender bridge (proven)
+- `TOOL-38` رندر Cycles إلى فيديو مُتحقَّق منه / Cycles scene to verified video (proven)
+- `TOOL-40` رندر ثلاثي الأبعاد مستقل عن Blender / Native 3D renderer (no Blender) (proven)
+- `TOOL-41` مُصدِّر GLB مستقل عن Blender / Native GLB exporter (no Blender) (proven)
+
+### `TOOL-40` — رندر ثلاثي الأبعاد مستقل عن Blender / Native 3D renderer (no Blender)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يرسم مشهدًا ثلاثي الأبعاد مكتوبًا بصيغة JSON ‏(kosif.native3d.v1) ضمن حدود ثابتة، مؤلفًا من أشكال أساسية بتظليل مسطح (مكعب وكرة وأسطوانة ومخروط وحلقة) مع إطارات مفتاحية للموضع والدوران حول المحور الرأسي وكاميرا بإسقاط متعامد، ويُخرجه صورة PNG أو فيديو MP4 بترميز H.264 باستخدام Python وPillow (وFFmpeg للفيديو) دون Blender. — Renders a bounded kosif.native3d.v1 JSON scene of flat-shaded primitives (cube, sphere, cylinder, cone, torus) with location/yaw keyframes and an orthographic camera to a PNG frame or an H.264 MP4, using pure Python + Pillow (FFmpeg for MP4) and no Blender.
+
+**متى:** اعمل لي أنيميشن 3D بسيط لمكعب وكرة من غير Blender / render a simple 3D primitives animation to MP4 without Blender
+
+**كيف:** doctor: `python3 scripts/native_3d.py doctor`; render (PNG still): `python3 scripts/native_3d.py render --scene templates/native-3d-demo.json --output ./out/frame.png --frame 60`; render (MP4): `python3 scripts/native_3d.py render --scene templates/native-3d-primitives-demo.json --output ./out/primitives.mp4`; render (z-buffer mode): `python3 scripts/native_3d.py render --scene templates/native-zbuffer-demo.json --output ./out/depth.png`. Full card: `python3 scripts/hub.py tool native-3d`. Limits: Flat-shaded orthographic primitives only: no perspective camera, textures, materials, shadows, imported meshes or Blender parity, and the pure-Python z-buffer slows down at large sizes.
+
+**المعاملات:** in: kosif.native3d.v1 JSON scene: width/height 128–1280, fps 1–60, frames 1–240, background hex colour, render_mode painter\|zbuffer, camera {position, target, ortho_scale 1–50}, 1–60 objects {shape cube\|sphere\|cylinder\|cone\|torus, location, scale, hex color, yaw, ≤32 strictly ordered keyframes with frame/location/yaw}; --output a new .png or .mp4 in an existing folder. · out: A new .png (one frame) or .mp4 (H.264, all frames) at --output; refuses to overwrite and the folder must already exist; stdout JSON {renderer, uses_blender:false, output, frames, bytes, sha256}; errors as JSON {ok:false, error} on stderr with exit 1.
+
+**التثبيت:** pip install Pillow · optional: bin:ffmpeg
+
+**الوسوم:** native-3d · 3D · native 3D · software renderer · z-buffer · primitives · keyframes · orthographic camera · MP4 · PNG · no Blender · ثلاثي الأبعاد · رندر · أشكال أساسية · أنيميشن ثلاثي الأبعاد · بدون بلندر
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_native_3d.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_native_zbuffer.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_native_primitives.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/native_3d.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-38` رندر Cycles إلى فيديو مُتحقَّق منه / Cycles scene to verified video (proven)
+- `TOOL-39` منفّذ المشهد داخل Blender / Blender-side scene builder (install)
+- `TOOL-41` مُصدِّر GLB مستقل عن Blender / Native GLB exporter (no Blender) (proven)
+- `TOOL-42` مختبر مطابقة الخطوط العربية / Arabic-aware font fidelity lab (proven)
+
+### `TOOL-41` — مُصدِّر GLB مستقل عن Blender / Native GLB exporter (no Blender)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل مشهد JSON محدودًا بصيغة kosif.blender.v1 (مكعب أو كرة بلون RGBA وموضع وحجم وإطارات مفتاحية خطية للموضع) إلى ملف glTF 2.0 ثنائي بامتداد ‎.glb باستخدام مكتبة Python القياسية وحدها ودون Blender. — Writes a bounded kosif.blender.v1 JSON scene (cube/sphere, RGBA colour, location, scale, linear position keyframes) to a binary glTF 2.0 .glb file using only the Python standard library, with no Blender.
+
+**متى:** عايز أصدّر مشهد 3D بسيط كملف GLB من غير ما أنزّل Blender / export a simple animated cube/sphere scene to .glb without Blender
+
+**كيف:** export: `python3 scripts/native_glb.py --scene templates/blender-demo.json --output ./out/scene.glb`. Full card: `python3 scripts/hub.py tool native-glb`. Limits: Exports cube and sphere geometry with translation animation only (no normals/UVs/textures, rotation or scale animation, cameras, lights or rendering) and copies the scene's Blender-style Z-up coordinates into Y-up glTF without conversion.
+
+**المعاملات:** in: kosif.blender.v1 JSON (same schema as blender_bridge): 1–12 objects with shape cube or sphere, color RGBA 0–1, location (±100), scale (±20), ≤24 ordered keyframes each with frame and location; fps 1–60, frames 1–240, size metadata 128–1920; --output a new .glb path in an existing folder. · out: A new .glb file (glTF 2.0 binary with JSON + BIN chunks) at --output; stdout JSON {engine, path, bytes, sha256}; byte-identical output for identical input; a non-.glb or existing output is an argparse error (exit 2), other failures are Python tracebacks (exit 1).
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** native-glb · GLB · glTF 2.0 · 3D export · binary glTF · keyframe animation · stdlib only · no Blender · three.js · تصدير ثلاثي الأبعاد · ملف glb · نموذج ثلاثي الأبعاد · بدون بلندر
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:three` ← npm ls three أو وجود node_modules/three
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_native_glb.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/native_glb.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-39` منفّذ المشهد داخل Blender / Blender-side scene builder (install)
+- `TOOL-40` رندر ثلاثي الأبعاد مستقل عن Blender / Native 3D renderer (no Blender) (proven)
+- `TOOL-42` مختبر مطابقة الخطوط العربية / Arabic-aware font fidelity lab (proven)
+- `TOOL-43` بحث مهارات أطلس الخارجية / Atlas external skill search (proven)
+
+### `TOOL-42` — مختبر مطابقة الخطوط العربية / Arabic-aware font fidelity lab
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يفحص خصائص OpenType لخط مرخّص: تغطية أحرف العبارة، وجداول GSUB وGPOS، والمحاور المتغيرة، واسم العائلة. ويرتّب مجلدًا من خطوط TTF/OTF مقارنةً بقصاصة دقيقة لنص مرجعي، إذ يرسم العبارة نفسها بتشكيل libraqm ويحسب نسبة تقاطع الأقنعة إلى اتحادها (IoU) بعد توحيد المقاس. والناتج قائمة مرشحين بصيغة JSON، لا ادعاء بتحديد الخط. — Inspects a licensed font's OpenType facts: cmap coverage of a phrase, GSUB/GPOS, variable axes and family name. It also ranks a folder of TTF/OTF fonts against a tight crop of reference text by rendering the same phrase with libraqm shaping and scoring normalized mask IoU. The output is JSON candidates, never a claimed identification.
+
+**متى:** إيه أقرب خط للكتابة اللي في الصورة دي؟ / Rank my licensed fonts against this cropped Arabic title
+
+**كيف:** inspect: `python3 scripts/font_fidelity_lab.py inspect proofs/_shared/fonts/Amiri-Regular.ttf --text "جمعة مباركة"`; rank: `python3 scripts/font_fidelity_lab.py rank ./crop.png --text "جمعة مباركة" --fonts proofs/_shared/fonts --top 5`. Full card: `python3 scripts/hub.py tool font-fidelity-lab`. Limits: It ranks how closely each candidate renders one phrase (binary mask IoU at 5 fixed sizes) and does not identify an unknown proprietary typeface or prove an exact match.
+
+**المعاملات:** in: inspect: a font file the user is licensed to use, plus a phrase. rank: a tightly cropped image of the reference text, the exact phrase, and a folder of licensed .ttf/.otf fonts. · out: JSON on stdout only (inspection, or ranking with metric and limitations notes). Exit 2 with 'FONT FIDELITY ERROR' on a wrong extension or missing file/folder.
+
+**التثبيت:** pip install Pillow · optional: pip:brotli, pip:fonttools
+
+**الوسوم:** font-fidelity-lab · font matching · font identification · Arabic font · typography · IoU · libraqm · GSUB · GPOS · variable font · مطابقة الخط · خط عربي · تحديد الخط · تغطية الحروف · تشكيل · قصاصة نص
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `fonts:arabic` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_font_fidelity_lab.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/font_fidelity_lab.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-40` رندر ثلاثي الأبعاد مستقل عن Blender / Native 3D renderer (no Blender) (proven)
+- `TOOL-41` مُصدِّر GLB مستقل عن Blender / Native GLB exporter (no Blender) (proven)
+- `TOOL-43` بحث مهارات أطلس الخارجية / Atlas external skill search (proven)
+- `TOOL-44` تدقيق بيانات أطلس الوصفية / Atlas metadata audit (proven)
+
+### `TOOL-43` — بحث مهارات أطلس الخارجية / Atlas external skill search
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يقرأ فهرس KOSIF Atlas المحلي لمهارات الجهات الخارجية (مع فهرس اختياري للمهارات ذات تراخيص الحقوق المتروكة copyleft)، ويطبع إحصاءات أو نتائج مرتبة بالكلمات المفتاحية مع نطاق الترخيص وعلامات الخطر وحكم المراجعة؛ ومع الخيار --skill-root يقرأ أيضًا عناوين ملف SKILL.md لكل نتيجة. ولا يشغّل أي شيء. — Reads a local KOSIF Atlas index of third-party skills (plus an optional copyleft index) and prints stats or keyword-ranked matches with licence scope, risk flags and verdicts; with --skill-root it also reads each match's SKILL.md headings. It never executes anything.
+
+**متى:** دوّر في أطلس المهارات على مهارة رندر بلندر / search the Atlas index for Blender rendering skills
+
+**كيف:** stats: `python3 scripts/atlas_external_bridge.py stats --index ./atlas_index.json --copyleft-index ./atlas_copyleft_index.json`; search: `python3 scripts/atlas_external_bridge.py search --index ./atlas_index.json --query "Blender render" --top 10 --skill-root ./atlas_skills/`. Full card: `python3 scripts/hub.py tool atlas-external-bridge`. Limits: Needs an external Atlas index JSON that this repo does not ship. It only ranks metadata (optionally reading SKILL.md headings) and never runs, installs or vets the listed skills.
+
+**المعاملات:** in: stats\|search; --index path to an Atlas index JSON (a list or {"skills":[...]}), or the KOSIF_ATLAS_INDEX env var; optional --copyleft-index; --query (required for search); --top (1–100, default 20); optional --skill-root folder holding the skills' files. · out: JSON on stdout: entry/scope/licence/verdict/domain counts and a risk-flag count, or matches with licence_scope, risk_flags, verdict, heuristic category, inspection (NOT_READ, READ_ONLY+headings, INVALID_PATH, SKILL_MD_MISSING, SKILL_MD_TOO_LARGE) and execution NOT_EXECUTED. An unreadable or malformed index exits 2 with {"error": ...} on stderr.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** atlas-external-bridge · atlas · skill index · third-party skills · copyleft · license scope · risk flags · Blender · SKILL.md · skill search · أطلس المهارات · مهارات خارجية · ترخيص · علامات الخطر · فهرس المهارات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_atlas_cycles_integration.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_external_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-41` مُصدِّر GLB مستقل عن Blender / Native GLB exporter (no Blender) (proven)
+- `TOOL-42` مختبر مطابقة الخطوط العربية / Arabic-aware font fidelity lab (proven)
+- `TOOL-44` تدقيق بيانات أطلس الوصفية / Atlas metadata audit (proven)
+- `TOOL-45` مستكشف المواقع بالمتصفح / Browser scout site survey (proven)
+
+### `TOOL-44` — تدقيق بيانات أطلس الوصفية / Atlas metadata audit
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يدقّق، دون تشغيل أي كود، فهرس مهارات KOSIF Atlas وفهرسه المرافق للمهارات ذات تراخيص الحقوق المتروكة (copyleft)، بحثًا عن مشكلات البنية والعدد والمعرّفات والحقول الإلزامية، ويعدّ السجلات التي لا يكون مصدرها رابط https. ويطبع تقرير JSON عن تسميات التراخيص والأحكام ونطاقات المصادر والأخطاء البنيوية، ويمكنه أيضًا حفظه في ملف جديد. — Statically audits a KOSIF Atlas skill index and its copyleft companion for schema, count, ID and required-field problems, and counts records whose source is not an https URL. It prints a JSON report of licence labels, verdicts, source hosts and structural errors, and can also save it to a new file.
+
+**متى:** افحص فهرس الأطلس وتأكد إن مفيش أخطاء في البنية / audit the Atlas index metadata before importing any skills
+
+**كيف:** audit: `python3 scripts/atlas_metadata_audit.py --index ./atlas_index.json --copyleft ./atlas_copyleft_index.json --output ./out/atlas_audit.json`. Full card: `python3 scripts/hub.py tool atlas-metadata-audit`. Limits: Checks index structure, labels, source URLs and verdict counts only; it does not read skill source code or verify licences, safety or behaviour.
+
+**المعاملات:** in: --index and --copyleft: Atlas JSON files shaped {"count": N, "skills": [...]}, both required; optional --output path to a new file in an existing folder. · out: JSON report on stdout (and in --output if given) with record counts, licence labels, verdicts, inventory counts (including missing_verified_source_url), top-15 source hosts, up to 40 structural errors and up to 12 source-URL problem samples; exit 1 if there are structural errors, the input is invalid, or --output already exists.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** atlas-metadata-audit · atlas audit · metadata audit · index validation · structural errors · license labels · verdicts · copyleft · source URLs · تدقيق · فحص الفهرس · أطلس المهارات · بيانات وصفية · أخطاء بنيوية · تراخيص
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_metadata_audit.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_metadata_audit.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-42` مختبر مطابقة الخطوط العربية / Arabic-aware font fidelity lab (proven)
+- `TOOL-43` بحث مهارات أطلس الخارجية / Atlas external skill search (proven)
+- `TOOL-45` مستكشف المواقع بالمتصفح / Browser scout site survey (proven)
+- `TOOL-46` بحث المصادر الإبداعية دون اتصال / Creative sources offline search (proven)
+
+### `TOOL-45` — مستكشف المواقع بالمتصفح / Browser scout site survey
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يعرض 26 هدفًا منتقًى عبر HTTPS ويفحص سجلاتها، منها تطبيقات رسم على الويب وأدوات ثلاثية الأبعاد ورسوم متحركة ومنتجات ذكاء اصطناعي ومتصفحات، من الملف data/integration-target-atlas.json. ويستطيع أن يلتقط، دون أي تفاعل، صورةً لإطار العرض في هدف واحد داخل سياق Playwright جديد بلا واجهة، يحجب الطلبات إلى النطاقات الأخرى والتنزيلات وعمّال الخدمة (service workers) ولا يحفظ ملفات تعريف الارتباط. — Lists and inspects 26 curated HTTPS targets (web drawing apps, 3D and animation tools, AI and browser products) from data/integration-target-atlas.json. It can take a read-only viewport screenshot of one target in a fresh headless Playwright context that blocks off-host requests, downloads, service workers and saved cookies.
+
+**متى:** صوّر لي واجهة Photopea عشان أدرس ميزاتها / Which web drawing apps are in the integration target atlas?
+
+**كيف:** doctor: `python3 scripts/browser_scout.py doctor`; list: `python3 scripts/browser_scout.py list`; inspect: `python3 scripts/browser_scout.py inspect autodraw`; capture: `python3 scripts/browser_scout.py capture autodraw --output ./out/autodraw.png --engine chromium`. Full card: `python3 scripts/hub.py tool browser-scout`. Limits: It captures only a viewport screenshot of one of 26 curated HTTPS targets (no arbitrary URLs, logins, clicks or crawling), and because off-host requests are blocked, pages that load assets from CDNs may render incomplete.
+
+**المعاملات:** in: A target id from data/integration-target-atlas.json. For capture: --output, the path of an unused .png in an existing folder, and --engine chromium, firefox or webkit. · out: JSON on stdout: doctor status, the target list or one target record. capture writes one PNG screenshot and prints its metadata (HTTP status, title, sha256, bytes, cookies_saved=false).
+
+**التثبيت:** optional: bin:chromium, pip:playwright
+
+**الوسوم:** browser-scout · browser · Playwright · screenshot · site survey · web apps · target atlas · Photopea · AutoDraw · read-only capture · متصفح · لقطة شاشة · استكشاف المواقع · تطبيقات الويب · بحث الميزات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_browser_scout.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/browser_scout.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-43` بحث مهارات أطلس الخارجية / Atlas external skill search (proven)
+- `TOOL-44` تدقيق بيانات أطلس الوصفية / Atlas metadata audit (proven)
+- `TOOL-46` بحث المصادر الإبداعية دون اتصال / Creative sources offline search (proven)
+- `TOOL-47` بوابة الوسائط المرخّصة / Licensed stock media gateway (proven)
+
+### `TOOL-46` — بحث المصادر الإبداعية دون اتصال / Creative sources offline search
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبحث بالكلمات المفتاحية في فهرس محلي يضم 1,000 مستودع عام على GitHub (تحرير الفيديو ومعالجته، والموشن جرافيك، وأدوات الصور، والرؤية الحاسوبية، والبرمجة الإبداعية) و1,000 موقع إبداعي مستخرَج من قوائم awesome منتقاة (أدوات التصميم، والموشن جرافيك، وأدوات الصور بالذكاء الاصطناعي، والبرمجة الإبداعية، وإنتاج الفيديو)، ويطبع نتائج JSON مرتبة موسومة بأنها بيانات وصفية فقط. — Keyword-searches an offline index of 1,000 public GitHub repositories (video editing and processing, motion graphics, image and photo tools, computer vision, creative coding) and 1,000 creative websites extracted from curated awesome lists (design tools, motion graphics, AI image tools, creative coding, video production), and prints ranked JSON matches labelled metadata-only.
+
+**متى:** دورلي على أدوات مفتوحة المصدر للمونتاج وإزالة الخلفية / find open-source repos for kinetic typography
+
+**كيف:** search: `python3 scripts/creative_external_search.py search "kinetic typography" --kind repo --top 5`; stats: `python3 scripts/creative_external_search.py stats`. Full card: `python3 scripts/hub.py tool creative-external-search`. Limits: Plain substring keyword scoring over a frozen offline index of public metadata and curated links; no entry was code-analysed, licence-verified, checked for availability or tested, and nothing is fetched live.
+
+**المعاملات:** in: search\|stats, a query in English or Arabic (required for search), --kind all\|repo\|site, --top; reads data/rea-creative-research/public_repos.json and creative_websites.json. · out: JSON on stdout with ensure_ascii (non-Latin text appears as \u escapes). Repo items carry name, url, summary, category, stars, SPDX licence metadata and discovery query; site items carry hostname, sample url, topic and source list; every item has rea_analysis, feature_status (DISCOVERED_METADATA_ONLY / CURATED_LINK_ONLY) and relevance_score. stats prints repo/site counts and repo category counts.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** creative-external-search · creative search · open source video tools · motion graphics repos · image editing · creative websites · discovery index · GitHub metadata · offline search · بحث إبداعي · أدوات مونتاج · مواقع تصميم · موشن جرافيك · تحرير الصور · مستودعات مفتوحة المصدر
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_creative_external_research.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_external_search.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-44` تدقيق بيانات أطلس الوصفية / Atlas metadata audit (proven)
+- `TOOL-45` مستكشف المواقع بالمتصفح / Browser scout site survey (proven)
+- `TOOL-47` بوابة الوسائط المرخّصة / Licensed stock media gateway (proven)
+- `TOOL-48` باني فهرس البحث الإبداعي / Creative research catalog builder (install)
+
+### `TOOL-47` — بوابة الوسائط المرخّصة / Licensed stock media gateway
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يعرض فهرسًا ثابتًا من 100 موقع للوسائط الجاهزة والمجموعات المفتوحة والخامات ويبحث فيه، ويطبع المتطلبات القانونية لأي رابط. ولا ينزّل أي ملف عبر fetch_video.py إلا بعد تقديم إثبات صريح لحقوق ذلك الملف بعينه، ويسجّل كل تنزيل مع بصمته SHA-256 وحقوقه في ملف asset_rights.jsonl. — Lists and searches a fixed catalog of 100 stock, open-collection and texture websites and prints the legal prerequisites for a URL. It downloads a single asset through fetch_video.py only after explicit per-asset rights evidence is supplied, and records each download with its SHA-256 and rights in asset_rights.jsonl.
+
+**متى:** فين ألاقي لقطات ستوك مجانية للمونتاج؟ / Find free stock video sites for B-roll
+
+**كيف:** list: `python3 scripts/media_sources.py list`; search: `python3 scripts/media_sources.py search pexels --type video_image`; plan: `python3 scripts/media_sources.py plan https://www.pexels.com/video/123/`; download-dry-run: `python3 scripts/media_sources.py download https://www.pexels.com/video/123/ --rights stock-license --evidence-url https://www.pexels.com/license/ --credit "Pexels" -o ./out/media --dry-run`. Full card: `python3 scripts/hub.py tool media-sources`. Limits: The rights check only confirms that evidence fields were supplied in the right shape; it does not open or verify the license page, grants no license, and real downloads need yt-dlp, which is missing here.
+
+**المعاملات:** in: The built-in catalog data/media_sources_100.json. For plan or download: a media or page URL. For download: --rights (owned\|cc0\|public-domain\|cc-by\|cc-by-sa\|stock-license\|direct-permission). An HTTPS --evidence-url is required unless the rights are owned, --creator and --credit are required for CC BY/SA, and --credit is required for stock-license. Optional --site (catalog domain for CDN URLs), --quality (best/2160/1080/720/480/audio) and -o (default ./media_assets). · out: Text lists, plan JSON or dry-run JSON on stdout. download writes the media plus manifest.json via fetch_video.py into --out, then appends asset_rights.jsonl. Exit 2 means a rights or --site check failed; a failed download returns fetch_video's exit code or 1.
+
+**التثبيت:** optional: bin:ffmpeg, pip:curl_cffi, pip:yt-dlp
+
+**الوسوم:** media-sources · stock footage · stock media · 100 sources · license · rights · CC0 · CC BY · provenance · sha256 · B-roll · لقطات جاهزة · مواقع الوسائط · ترخيص · حقوق الاستخدام · مصادر مجانية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `yt-dlp` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_media_sources_gateway.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/media_sources.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-45` مستكشف المواقع بالمتصفح / Browser scout site survey (proven)
+- `TOOL-46` بحث المصادر الإبداعية دون اتصال / Creative sources offline search (proven)
+- `TOOL-48` باني فهرس البحث الإبداعي / Creative research catalog builder (install)
+- `TOOL-49` إعادة موازنة فهرس المستودعات الإبداعية / Rebalance creative repo catalog (install)
+
+### `TOOL-48` — باني فهرس البحث الإبداعي / Creative research catalog builder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📦 `install`: تحتاج حزمة أو برنامجًا أو نموذجًا أولًا |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُثبَّت (التثبيت النظامي بإذن) |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبني فهارس الاكتشاف الإبداعي باستعلام GitHub عبر أداة gh: بحث المستودعات حسب الموضوع، واستخراج روابط المواقع من ملفات README لقوائم awesome منتقاة، وجرد مستودعات المالك وبيانات أشجارها في git. ويطبع ملخصًا بصيغة JSON في كل تشغيل، والأمر report وحده يعمل دون اتصال فيكتفي بعدّ الفهارس الموجودة. — Builds the creative discovery catalogs by querying GitHub through the gh CLI: topic searches for repos, outbound links extracted from curated awesome-list READMEs for sites, and the owner's repo inventory and git-tree metadata. Each run prints a JSON summary; only `report` works offline, counting the existing catalogs.
+
+**متى:** حدّث فهرس المستودعات الإبداعية من GitHub / rebuild the 1,000 creative websites list from the awesome lists
+
+**كيف:** report: `python3 scripts/rea_creative_research_atlas.py report`; repos: `python3 scripts/rea_creative_research_atlas.py repos --limit 1000 --pages 2`; sites: `python3 scripts/rea_creative_research_atlas.py sites --limit 1000`; own: `python3 scripts/rea_creative_research_atlas.py own --private-output ~/kosif-private/`. Full card: `python3 scripts/hub.py tool rea-creative-research-atlas`. Limits: Collects GitHub search metadata and links scraped from awesome-list READMEs only; despite its name it does not run REA, analyse code, or verify licences or site availability, and only `report` works offline.
+
+**المعاملات:** in: An action (own\|repos\|sites\|trees\|report); --limit (default 1000); --pages (default 2, repos only); --private-output folder (required for own and trees). Every action except report needs network access and an authenticated gh CLI. · out: repos and sites overwrite the tracked catalogs in data/rea-creative-research/ (public_repos.json, creative_websites.json, *_discovery_errors.json). own and trees write *_PRIVATE_LOCAL.json files into --private-output. Every action prints a JSON summary.
+
+**التثبيت:** needs on PATH: gh
+
+**الوسوم:** rea-creative-research-atlas · creative catalog · GitHub search · awesome lists · discovery catalog · owner inventory · repo tree · gh api · catalog builder · فهرس إبداعي · بحث GitHub · جرد المستودعات · اكتشاف المصادر · مواقع إبداعية · بناء الفهرس
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `gh` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/rea_creative_research_atlas.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-46` بحث المصادر الإبداعية دون اتصال / Creative sources offline search (proven)
+- `TOOL-47` بوابة الوسائط المرخّصة / Licensed stock media gateway (proven)
+- `TOOL-49` إعادة موازنة فهرس المستودعات الإبداعية / Rebalance creative repo catalog (install)
+- `TOOL-50` مستكشف مصادر المجتمع / Community source scout (proven)
+
+### `TOOL-49` — إعادة موازنة فهرس المستودعات الإبداعية / Rebalance creative repo catalog
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📦 `install`: تحتاج حزمة أو برنامجًا أو نموذجًا أولًا |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُثبَّت (التثبيت النظامي بإذن) |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** ينفّذ ثمانية استعلامات بحث إضافية حسب الموضوع على GitHub عبر أداة gh، ويدمج نتائجها في فهرس المستودعات الإبداعية. ثم يستبعد الصفوف التي تبدو ترويجًا لنماذج غير موثّقة، ويعيد كتابة الملف data/rea-creative-research/public_repos.json في 1,000 صف وفق حصص ثابتة لكل فئة. — Runs eight extra GitHub topic searches via gh and merges the results into the creative repo catalog. It drops rows that look like unverified-model marketing, then rewrites data/rea-creative-research/public_repos.json as 1,000 rows under fixed per-category quotas.
+
+**متى:** الفهرس فيه فيديو كتير وصور قليل، وازنه / rebalance the creative repo index so image tools are represented
+
+**كيف:** run: `python3 scripts/rebalance_creative_repos.py run`. Full card: `python3 scripts/hub.py tool rebalance-creative-repos`. Limits: Rewrites the catalog from GitHub search metadata using fixed quotas. It has no dry-run, no backup and no tests, and it analyses no code.
+
+**المعاملات:** in: None (no arguments). It reads data/rea-creative-research/public_repos.json and needs an authenticated gh CLI. · out: Overwrites data/rea-creative-research/public_repos.json (1,000 rows) and rebalance_errors.json, and prints JSON with the unique count, category counts, excluded-marketing count and query errors.
+
+**التثبيت:** needs on PATH: gh
+
+**الوسوم:** rebalance-creative-repos · rebalance catalog · creative repos · image editing · photo tools · category quotas · GitHub search · catalog maintenance · موازنة الفهرس · مستودعات إبداعية · تحرير الصور · حصص الفئات · صيانة الفهرس
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `gh` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/rebalance_creative_repos.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-47` بوابة الوسائط المرخّصة / Licensed stock media gateway (proven)
+- `TOOL-48` باني فهرس البحث الإبداعي / Creative research catalog builder (install)
+- `TOOL-50` مستكشف مصادر المجتمع / Community source scout (proven)
+- `TOOL-51` استوديو التنزيل Cinema C للآيفون / Cinema C iPhone downloader studio (install)
+
+### `TOOL-50` — مستكشف مصادر المجتمع / Community source scout
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبحث في سجلٍّ محلي منسَّق يضم 31 مستودعًا على GitHub جرت مراجعتها (مع لقطة مؤرَّخة لأعلى عشرة مستودعات Python من حيث عدد النجوم)، ويعيد بصيغة JSON مصادر مرجعية مرتبة مع ترخيص كلٍّ منها وتحذيراته وضوابط إعادة استخدام الكود. — Searches a curated offline registry of 31 reviewed GitHub repositories (plus a dated top-10 Python star snapshot) and returns ranked reference sources with licence, caution and code-reuse gates as JSON.
+
+**متى:** عايز مستودع مرجعي أتعلم منه إزاي أعمل محرر موشن بتايملاين / find a reference repo for persistent agent memory before we build it
+
+**كيف:** check: `python3 scripts/source_scout.py check`; list: `python3 scripts/source_scout.py list --domain creative`; show: `python3 scripts/source_scout.py show SRC-16`; suggest: `python3 scripts/source_scout.py suggest "keyframes timeline animation" --limit 3 --code-reuse`. Full card: `python3 scripts/hub.py tool source-scout`. Limits: Matches keywords against a fixed hand-reviewed list of 31 repositories and a dated star snapshot; it fetches nothing live and does not install, run or prove any listed repository works.
+
+**المعاملات:** in: Free-text query in English or Arabic (suggest), a source id like SRC-16 or owner/repo (show), optional --domain (agents, architecture, collaboration, creative, data, engineering, finance, learning, media, operations, prompts, python, research), --limit, --code-reuse; reads data/community_sources.json. · out: JSON on stdout: registry validation status, source lists, one source record, ranked suggestions with url/licence/why (Arabic)/reuse_gate/caution, or the Python top-10 snapshot. On an invalid registry or a `show` id that is not found it exits 2 and prints only {status: catalog_error, error_type} on stderr.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** source-scout · source scout · community sources · reference repositories · GitHub · license gate · code reuse · python top 10 · system design · مصادر المجتمع · مستودعات مرجعية · ترخيص · إعادة استخدام الكود · مستكشف المصادر · أفضل مستودعات بايثون
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_source_scout.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/source_scout.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-48` باني فهرس البحث الإبداعي / Creative research catalog builder (install)
+- `TOOL-49` إعادة موازنة فهرس المستودعات الإبداعية / Rebalance creative repo catalog (install)
+- `TOOL-51` استوديو التنزيل Cinema C للآيفون / Cinema C iPhone downloader studio (install)
+- `TOOL-52` موجّه عائلات REA / REA Family Router (proven)
+
+### `TOOL-51` — استوديو التنزيل Cinema C للآيفون / Cinema C iPhone downloader studio
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📦 `install`: تحتاج حزمة أو برنامجًا أو نموذجًا أولًا |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُثبَّت (التثبيت النظامي بإذن) |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** تطبيق تفاعلي مكتوب بلغة sh يعمل في a-Shell على الآيفون. ينزّل الفيديو أو الصوت عبر yt-dlp (رابط مفرد، أو دفعة روابط، أو جزء من فيديو، أو مع الترجمة، أو من صفحات فيسبوك بأفضل جهد ممكن)، وينشئ نسخ MP4 بترميز H.264/AAC متوافقة مع تطبيق الصور. ويوفّر استوديو ffmpeg يعمل دون اتصال (قص، وضغط إلى 16 أو 25 أو 50 ميغابايت، ومقاطع ريلز 9:16 بخلفية مموّهة، وGIF، وصورة غلاف، وضبط الجهارة على ‎-14 LUFS، وحذف فترات الصمت، وكتم الصوت، واستخراج الصوت وحده)، ومعملًا صوتيًا لفصل الصوت البشري عن الموسيقى. — An interactive POSIX-sh app for a-Shell on iPhone. It downloads video or audio with yt-dlp (single links, batches, part of a video, subtitles, best-effort Facebook profiles), makes Photos-safe H.264/AAC MP4 copies, and offers an offline ffmpeg Studio (trim, compress to 16/25/50 MB, 9:16 reels with blurred fill, GIF, cover JPG, -14 LUFS loudness, cut pauses, mute, audio only) and an Audio Lab for separating voice and music.
+
+**متى:** نزّل الفيديو ده على الآيفون من a-Shell / Download a TikTok on my iPhone with a-Shell and save it to Photos
+
+**كيف:** download (interactive): `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.com/watch?v=VIDEO_ID"`; --photos/--files/-N/--output: `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh --files -N 4 --output ./downloads "https://www.youtube.com/watch?v=VIDEO_ID"`; --batch: `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh --batch ./links.txt`; --studio: `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh --studio ./in.mp4`. Full card: `python3 scripts/hub.py tool repo-ashell-cinema`. Limits: It is built for a-Shell on iPhone and has never been run on a real iPhone (only container simulations are recorded); most flows are interactive menus rather than scriptable flags, and Facebook profile enumeration is best-effort.
+
+**المعاملات:** in: A video or reel URL, or a whole share text (or the clipboard via pbpaste). Optionally a links.txt file, local media files (from ~/Documents/Cinema_Downloads or a path), a Netscape cookies file and a Replicate token. Interactive menu choices are read from stdin. · out: Media files in ~/Documents/Cinema_Downloads (override with CINEMA_DOWNLOAD_DIR or --output), Photos-safe copies, Studio results in Cinema_Downloads/Studio (mp4, gif, jpg, m4a), Audio Lab results in Cinema_Downloads/Audio_Lab, history.txt, and state, cache and models in ~/Documents/.cinema.
+
+**التثبيت:** needs on PATH: ffmpeg, sh, yt-dlp · optional: bin:curl, bin:open, bin:pbpaste, bin:pip
+
+**الوسوم:** repo-ashell-cinema · a-Shell · iPhone · yt-dlp · video download · Photos safe · ffmpeg studio · reels 9:16 · loudness -14 LUFS · audio separation · تنزيل فيديو · آيفون · ريلز · ضغط الفيديو · فصل الصوت · استوديو
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `yt-dlp` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tools/a-shell/Cinema_C_V34_Studio_iPhone.sh`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-49` إعادة موازنة فهرس المستودعات الإبداعية / Rebalance creative repo catalog (install)
+- `TOOL-50` مستكشف مصادر المجتمع / Community source scout (proven)
+- `TOOL-52` موجّه عائلات REA / REA Family Router (proven)
+- `TOOL-53` تحليل REA لمستودعات المالك دفعةً واحدة / REA Owned-Repo Batch (install)
+
+### `TOOL-52` — موجّه عائلات REA / REA Family Router
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** موجّه للقراءة فقط يربط كلمة واحدة تصف الهدف من قائمة ثابتة فيها 29 كلمة (مثل dotnet وapk وhar وfirmware وsqlite) بواحدة من 16 عائلة قدرات في REA، ويذكر اسم الأداة الأصلية وحالة توفّرها. ويبيّن كذلك هل rea وnode موجودان في PATH. — Read-only router that maps one target keyword from a fixed 29-word list (dotnet, apk, har, firmware, sqlite and others) to one of 16 REA capability families, giving the upstream tool name and availability status. It also reports whether rea and node are on PATH.
+
+**متى:** أي أمر في REA يناسب ملف APK؟ / which REA tool handles a HAR network capture?
+
+**كيف:** list: `python3 scripts/rea_family_router.py list`; route: `python3 scripts/rea_family_router.py route dotnet`; doctor: `python3 scripts/rea_family_router.py doctor`. Full card: `python3 scripts/hub.py tool rea-family-router`. Limits: Maps one exact keyword from a fixed list to a REA family and tool name. It does not understand free text, never runs or installs REA and never confirms the tool exists in the installed version (verified is always false; provider_version is always 'unknown').
+
+**المعاملات:** in: An action (list, route or doctor). route also takes a single intent keyword from the built-in map: application-binary, native, binary, dotnet, c#, javascript, asar, source-map, apk, android, zip, ios-package, chrome, website, electron, v8, node, har, saz, qlog, network-capture, process, firmware, sqlite, go, rust, plist, app-graph or evidence. · out: JSON on stdout: the full family map, one routing record or an environment probe.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** rea-family-router · REA · router · موجّه · عائلات القدرات · هندسة عكسية · dotnet · apk · har · firmware · capability family · routing · تصنيف الهدف
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- `engine:android` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `engine:binwalk` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `os:macos` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_rea_family_router.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/rea_family_router.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-50` مستكشف مصادر المجتمع / Community source scout (proven)
+- `TOOL-51` استوديو التنزيل Cinema C للآيفون / Cinema C iPhone downloader studio (install)
+- `TOOL-53` تحليل REA لمستودعات المالك دفعةً واحدة / REA Owned-Repo Batch (install)
+- `TOOL-54` فحص المستودعات وحزمها / Repository Capability Packer (proven)
+
+### `TOOL-53` — تحليل REA لمستودعات المالك دفعةً واحدة / REA Owned-Repo Batch
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 📦 `install`: تحتاج حزمة أو برنامجًا أو نموذجًا أولًا |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُثبَّت (التثبيت النظامي بإذن) |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** تحليل REA ساكن على دفعات لمستودعات المستخدم على GitHub المكتوبة بـ JavaScript أو TypeScript أو HTML. يقرأ جردًا خاصًا يُنشئه الأمر rea_creative_research_atlas.py own، ثم يستنسخ بـ git أصغر المستودعات المؤهَّلة ضمن حدّ الحجم استنساخًا سطحيًا (عمق 1 وblob:none)، ويشغّل عليها أمر REA analyze-javascript-application عبر node. تبقى النسخ والأدلة في مجلد خاص محلي، ولا يطبع إلا الأعداد. — Batch static REA analysis of the user's own JavaScript, TypeScript and HTML GitHub repositories. It reads a private inventory (made by rea_creative_research_atlas.py own), shallow-clones the smallest eligible repos under a size cap with git (depth 1, blob:none) and runs REA's analyze-javascript-application on each through node. Clones and evidence stay in a local private folder, and only counts are printed.
+
+**متى:** حلّل مستودعاتي على GitHub بـ REA دفعة واحدة / run REA statically over all my owned JS repos
+
+**كيف:** run: `python3 scripts/rea_owned_repo_batch.py --private-output "$HOME/kosif-private" --rea-cli ./node_modules/rea-agents/scripts/rea.mjs --max-repos 16 --max-size-kb 8000`. Full card: `python3 scripts/hub.py tool rea-owned-repo-batch`. Limits: Analyzes only JS, TS and HTML repos under the size cap, using REA's static JavaScript analyzer. It does not verify runtime features, build the inventory or install REA.
+
+**المعاملات:** in: --private-output <existing local folder holding owner_repositories_PRIVATE_LOCAL.json; it must not itself contain .git> and --rea-cli <path to the installed REA CLI .mjs>. Optional: --max-size-kb (default 8000) and --max-repos (default 16). · out: Clones go to <private-output>/source_clones/, per-repo REA JSON to <private-output>/rea_evidence/, and a running rea_owned_repo_results_PRIVATE_LOCAL.json is kept. stdout gets START/RESULT progress lines and a public counts-only summary.
+
+**التثبيت:** npm install rea-agents · needs on PATH: git, node, python3
+
+**الوسوم:** rea-owned-repo-batch · REA · batch · دفعة · owned repos · مستودعاتي · github · git clone · static analysis · تحليل ساكن · javascript · typescript · private evidence · أدلة خاصة · هندسة عكسية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `git` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/rea_owned_repo_batch.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-51` استوديو التنزيل Cinema C للآيفون / Cinema C iPhone downloader studio (install)
+- `TOOL-52` موجّه عائلات REA / REA Family Router (proven)
+- `TOOL-54` فحص المستودعات وحزمها / Repository Capability Packer (proven)
+- `TOOL-55` خادم KOSIF Remote Commander / KOSIF Remote Commander MCP (proven)
+
+### `TOOL-54` — فحص المستودعات وحزمها / Repository Capability Packer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يفحص مجلد مستودع محليًا أو ملف ZIP للشيفرة المصدرية بحثًا عن اللغات وإشارات القدرات وملفات التراخيص، ويبني بصمة SHA-256 لكل ملف. ثم يحزم الشيفرة في ملف ZIP مُرشَّح يتكرّر ناتجه حرفيًا، ويرفق به تقرير JSON لنقل القدرات. يستبعد مجلدات البناء والأرشيفات والملفات التنفيذية والصوت والفيديو والمفاتيح وقواعد البيانات والملفات التي توحي أسماؤها بأسرار، ولا يشغّل أي شيفرة ولا يستوردها ولا يثبّتها. — Inspects a local repository folder or source ZIP for languages, capability signals, license files and a per-file SHA-256 manifest. It packs a deterministic, filtered source ZIP plus a JSON capability-transfer report, leaving out build caches, archives, executables, audio and video, keys, databases and files whose names suggest secrets. Nothing is run, imported or installed.
+
+**متى:** جهّز نسخة نظيفة من هذا المستودع لنقل قدراته / inspect a repo for reusable capabilities and licenses
+
+**كيف:** inspect: `python3 scripts/repository_capability_packer.py inspect ./repo --out ./repo-report.json`; pack: `python3 scripts/repository_capability_packer.py pack ./repo --out ./out/repo.zip --report ./out/report.json`. Full card: `python3 scripts/hub.py tool repository-capability-packer`. Limits: Infers candidate capabilities from file names and extensions only, and filters secrets by file name, not content. Images, fonts and PDFs stay in the ZIP. It never runs, imports, clones or licenses the code.
+
+**المعاملات:** in: A local source folder or an existing ZIP archive; for a GitHub source ZIP the single top folder is stripped. inspect takes an optional --out <json>; pack needs --out <zip> outside the input folder and takes an optional --report <json>. · out: A summary JSON report on stdout. inspect --out writes the full report with the sha256 manifest. pack writes the ZIP, overwriting any file already at --out, and with --report writes the report. Blocked inputs print 'repository pack blocked: …' to stderr and exit with code 2.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** repository-capability-packer · repository · مستودع · capability transfer · نقل القدرات · pack · حزم · sanitize · ZIP · licenses · تراخيص · sha256 manifest · deterministic · source audit
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_repository_capability_packer.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/repository_capability_packer.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-52` موجّه عائلات REA / REA Family Router (proven)
+- `TOOL-53` تحليل REA لمستودعات المالك دفعةً واحدة / REA Owned-Repo Batch (install)
+- `TOOL-55` خادم KOSIF Remote Commander / KOSIF Remote Commander MCP (proven)
+- `TOOL-56` فحص سلامة المهارة / Skill Health Check (ready)
+
+### `TOOL-55` — خادم KOSIF Remote Commander / KOSIF Remote Commander MCP
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** خادم MCP مستقل يعمل عبر stdio بالمكتبة القياسية وحدها، ويمنح عميل MCP إحدى عشرة أداة محصورة في مساحة عمل واحدة يوافق عليها المستخدم: الحالة، ومعلومات النظام، وسرد المجلد، وبيانات الملف، والقراءة، والبحث، ثم الإنشاء والكتابة والاستبدال والنقل وتشغيل أوامر من قائمة مسموحة. وتبقى الكتابة وتشغيل الأوامر معطّلين حتى يفعّلهما المستخدم بمتغيرات بيئة. — A self-contained stdio MCP server (standard library only) that gives an MCP client 11 tools scoped to one approved workspace: health, system info, list, file info, read, search, plus create, write, replace, move and an allowlisted command runner. Writes and commands stay off until the user sets an environment flag.
+
+**متى:** خلّي كلاود يقرأ ملفات مجلد مشروعي على جهازي / Give my MCP client read-only access to one project folder
+
+**كيف:** doctor: `python3 scripts/kosif_remote_superpowers.py doctor`; demo: `python3 scripts/kosif_remote_superpowers.py demo`; serve: `KOSIF_REMOTE_ROOT=./project python3 scripts/kosif_remote_superpowers.py serve`; tools/list (one-shot): `printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/list"}' \| KOSIF_REMOTE_ROOT=./project python3 scripts/kosif_remote_superpowers.py serve`. Full card: `python3 scripts/hub.py tool kosif-remote-commander`. Limits: It gives bounded local stdio access to one workspace (UTF-8 text files up to 512 KB, 300 lines per read, 150 listed entries, 500 files and 35 hits per search) plus six allowlisted status and version commands, with no remote relay, pairing, desktop or UI control, or arbitrary shell.
+
+**المعاملات:** in: JSON-RPC 2.0 lines on stdin. Environment: KOSIF_REMOTE_ROOT (the workspace; defaults to the current directory), KOSIF_ALLOW_WRITES=1 and KOSIF_ALLOW_EXEC=1 (opt-in). · out: JSON-RPC responses on stdout whose tool results are JSON text. doctor and demo print one JSON line. The write tools change files only inside the workspace, with atomic writes and a 512 KB cap.
+
+**التثبيت:** optional: bin:git, bin:node, bin:npm, bin:python
+
+**الوسوم:** kosif-remote-commander · MCP server · stdio · local files · workspace · read file · search text · consent gated · Desktop Commander alternative · خادم MCP · ملفات الجهاز · مساحة عمل · قراءة الملفات · بحث في الملفات · تحكم محلي · صلاحيات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `node` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_kosif_remote_superpowers.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/kosif_remote_superpowers.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-53` تحليل REA لمستودعات المالك دفعةً واحدة / REA Owned-Repo Batch (install)
+- `TOOL-54` فحص المستودعات وحزمها / Repository Capability Packer (proven)
+- `TOOL-56` فحص سلامة المهارة / Skill Health Check (ready)
+- `TOOL-57` تحزيم المهارة للرفع إلى claude.ai / Skill Packager for claude.ai (proven)
+
+### `TOOL-56` — فحص سلامة المهارة / Skill Health Check
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يفحص مهارة kosif-superpowers بأربعة عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدوات data/tools.json مع الملفات المولَّدة منه، وتطابق أعداد القدرات المذكورة في الوثائق الرئيسية، وبنية بروتوكول USIP (نواة PROTOCOL.md وملاحق references/protocol/)، وترتيب المراجع (كل ملف تحت references/ في قسم واحد من data/skill_layout.json). ويستطيع أيضًا تشغيل تقييمات التوجيه، ثم يطبع تقريرًا نصيًا أو بصيغة JSON ويخرج بالرمز 1 عند وجود أي خطأ. — Validates the kosif-superpowers skill with 14 read-only checks: SKILL.md frontmatter, power records, proof paths, relative Markdown links, contents headings, generated chapters, the counts marker, model names, secrets and leaked session paths, evals/evals.json, the data/tools.json registry with its generated hub files, power-count drift in the entry docs, the USIP protocol structure (PROTOCOL.md core and references/protocol/), and the reference layout (every file under references/ in exactly one section of data/skill_layout.json). It can also run the routing evals, then prints a text or JSON report and exits 1 on any error.
+
+**متى:** افحص المهارة قبل ما نعمل commit / validate the kosif-superpowers skill before packaging
+
+**كيف:** check: `python3 scripts/check_skill.py`; --strict: `python3 scripts/check_skill.py --strict`; --json: `python3 scripts/check_skill.py --json`; --evals: `python3 scripts/check_skill.py --evals`. Full card: `python3 scripts/hub.py tool check-skill`. Limits: It checks structure, links, counts and registry consistency only: the routing evals test search ranking, not whether any power works, and proofs outside this checkout are skipped rather than verified.
+
+**المعاملات:** in: No file arguments. It reads SKILL.md, data/powers/*.json, data/tools.json (through scripts/hub.py), references/, proofs/, evals/evals.json and the scripts/ listing in the skill, plus the repo's tools/ listing and entry docs (README.md, CLAUDE.md, AGENTS.md, CAPABILITIES.md, llms.txt). Proof paths are only tested for existence, relative to the folder that holds the repo (e.g. /home/user). · out: Text report on stdout, or one JSON object with --json. With --evals it adds a PASS/FAIL/SKIP table and the pass rate. Exit 0 = OK; exit 1 = errors, warnings under --strict, or routing below the threshold.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** check-skill · validate skill · skill lint · frontmatter · broken links · counts marker · routing evals · secret scan · tool registry check · CI gate · فحص المهارة · التحقق من المهارة · روابط مكسورة · تقييمات التوجيه · عدادات القدرات · فحص الأسرار
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/check_skill.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-54` فحص المستودعات وحزمها / Repository Capability Packer (proven)
+- `TOOL-55` خادم KOSIF Remote Commander / KOSIF Remote Commander MCP (proven)
+- `TOOL-57` تحزيم المهارة للرفع إلى claude.ai / Skill Packager for claude.ai (proven)
+- `TOOL-58` إعادة تصنيف نطاق الأدلة / Proof Scope Relabeler (ready)
+
+### `TOOL-57` — تحزيم المهارة للرفع إلى claude.ai / Skill Packager for claude.ai
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يتحقق من المهارة بالأداة check_skill.py، ثم يضغطها ضغطًا حتميًا في ملف kosif-superpowers.skill لرفعه إلى claude.ai. يضم الأرشيف مجلدًا علويًا واحدًا وملف SKILL.md واحدًا يُستبدل وصفه بالوصف القصير claude_ai_description (200 حرف على الأكثر). يستبعد dist/ ومجلدات الذاكرة المؤقتة وvendor/ وevals/، ويستبعد الوسائط أيضًا مع الخيار --lite، ثم يتحقق من الأرشيف الناتج. — Validates the skill with check_skill.py, then zips it deterministically into kosif-superpowers.skill for upload to claude.ai. The archive has a single top folder and one SKILL.md, whose description is replaced by the ≤200-character claude_ai_description. dist/, caches, vendor/, evals/ and (with --lite) media are left out, and the finished archive is re-verified.
+
+**متى:** حزّم المهارة عشان أرفعها على claude.ai / package the skill for upload to claude.ai
+
+**كيف:** package: `python3 scripts/package_skill.py`; --lite: `python3 scripts/package_skill.py --lite`; --out: `python3 scripts/package_skill.py --lite -o ~/out/`; --with-evals: `python3 scripts/package_skill.py --lite --with-evals -o ~/out/kosif-superpowers.skill`. Full card: `python3 scripts/hub.py tool package-skill`. Limits: It only builds the upload zip and never uploads anything; no claude.ai size cap is documented, so whether claude.ai accepts a large package is untested.
+
+**المعاملات:** in: The skill folder on disk: every file not excluded, including untracked ones. Options: -o/--out (a folder, or a .skill/.zip path outside the skill or under its dist/), --lite, --with-evals, --no-check, --list. · out: A zip named kosif-superpowers.skill or kosif-superpowers-lite.skill (default: dist/ inside the skill), with the top folder kosif-superpowers/ and fixed timestamps; plus a size summary on stdout. Exit 1 on validation failure, a destination inside the skill folder, a description longer than 200 characters, or archive problems (corrupt entry, wrong top folder, nested SKILL.md).
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** package-skill · package skill · zip · skill file · claude.ai upload · lite package · release · deterministic archive · distribution · تحزيم المهارة · رفع المهارة · ملف مضغوط · نسخة خفيفة · توزيع المهارة
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_superpowers_unified.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/package_skill.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-55` خادم KOSIF Remote Commander / KOSIF Remote Commander MCP (proven)
+- `TOOL-56` فحص سلامة المهارة / Skill Health Check (ready)
+- `TOOL-58` إعادة تصنيف نطاق الأدلة / Proof Scope Relabeler (ready)
+- `TOOL-59` استيراد الملفات الإبداعية / Creative brief importer (ready)
+
+### `TOOL-58` — إعادة تصنيف نطاق الأدلة / Proof Scope Relabeler
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يعيد حساب الحقل proof_scope لكل سجل قدرة بحسب المكان الذي تشير إليه أدلته على هذا الجهاز (repo ثم session ثم archive ثم sibling ثم receipt ثم style ثم url ثم missing/none)، ويعيد كتابة ملفات data/powers/*.json في مكانها. أما مع الخيار --check فيكتفي بالإبلاغ عن عدد السجلات التي ستتغير. — Recomputes the proof_scope field of every power record from where its proof entries resolve on this machine (repo > session > archive > sibling > receipt > style > url > missing/none) and rewrites data/powers/*.json in place. With --check it only reports how many records would change.
+
+**متى:** حدّث proof_scope لكل القدرات / recompute proof_scope on every power record
+
+**كيف:** relabel: `python3 scripts/relabel_proofs.py`; --check: `python3 scripts/relabel_proofs.py --check`. Full card: `python3 scripts/hub.py tool relabel-proofs`. Limits: It labels where a proof points, not whether the proof is valid: 'sibling' is assigned from the path shape alone without checking the other repository, and 'repo' only means the file exists.
+
+**المعاملات:** in: data/powers/*.json and the repository files that 'kosif-tool/...' proof paths point to (existence only). The only recognised argument is --check. · out: Updated data/powers/*.json (relabel mode) and two stdout lines: proven counts by scope, and the number of records relabelled or that would change.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** relabel-proofs · proof scope · evidence labels · proven · proof paths · relabel · catalog maintenance · verification · نطاق الدليل · الأدلة · القدرات المثبتة · إعادة التصنيف · صيانة الكتالوج
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/relabel_proofs.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-56` فحص سلامة المهارة / Skill Health Check (ready)
+- `TOOL-57` تحزيم المهارة للرفع إلى claude.ai / Skill Packager for claude.ai (proven)
+- `TOOL-59` استيراد الملفات الإبداعية / Creative brief importer (ready)
+- `TOOL-60` مزامنة الكتالوج مع PromptsMotion / PromptsMotion catalog sync (ready)
+
+### `TOOL-59` — استيراد الملفات الإبداعية / Creative brief importer
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يتحقق من ملفات JSON التي تضم دفعات من الملفات الإبداعية بصيغة {"briefs": [...]}، ويكتب styles/<id>/BRIEF.md لكل ملف مقبول، ويدمج حقول الملخص في catalog/styles.json وcatalog/prompts_motion.json وcatalog/briefs.json وفي ملف STYLE.json لكل أسلوب. — Validates batch JSON files of creative briefs ({"briefs": [...]}), writes styles/<id>/BRIEF.md for each accepted brief, and merges the brief summary fields into catalog/styles.json, catalog/prompts_motion.json, catalog/briefs.json and each STYLE.json.
+
+**متى:** استورد ملفات البريف الجديدة للكتالوج / Import a batch of creative briefs into the atlas
+
+**كيف:** import: `python3 tools/import_briefs.py ./briefs/`; --strict: `python3 tools/import_briefs.py ./briefs/ --strict`. Full card: `python3 scripts/hub.py tool repo-import-briefs`. Limits: It checks only shape and simple ranges, not originality or accuracy; without --strict it imports briefs that fail the range checks, it accepts only ids already in the catalog, and it does not rebuild SKILL.md or STYLE_INDEX.md (run build.py).
+
+**المعاملات:** in: A folder of *.json files, each {"briefs": [...]}. Required brief keys: id, title_ar, summary_ar, summary_en, concept_ar, concept_en, aspect, assumptions_en, scenes_en, scenes_ar, motion_rules_en, motion_rules_ar, stack, keywords, facts_from_source, duration_s and difficulty. revised_from_video (YYYY-MM-DD) is optional. Each id must already exist in catalog/styles.json. · out: Writes styles/<id>/BRIEF.md (bilingual, with a provenance note) and styles/<id>/STYLE.json, and rewrites catalog/styles.json, catalog/prompts_motion.json and catalog/briefs.json. Prints 'imported N briefs; M total in catalog/briefs.json' to stdout and any issues to stderr.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** repo-import-briefs · import briefs · creative brief · BRIEF.md · briefs.json · schema validation · catalog · batch JSON · strict mode · استيراد · ملف إبداعي · بريف · تحقق من الصيغة · الأطلس
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tools/import_briefs.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-57` تحزيم المهارة للرفع إلى claude.ai / Skill Packager for claude.ai (proven)
+- `TOOL-58` إعادة تصنيف نطاق الأدلة / Proof Scope Relabeler (ready)
+- `TOOL-60` مزامنة الكتالوج مع PromptsMotion / PromptsMotion catalog sync (ready)
+- `TOOL-61` مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام / KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search (proven)
+
+### `TOOL-60` — مزامنة الكتالوج مع PromptsMotion / PromptsMotion catalog sync
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يقرأ فهرس مكتبة PromptsMotion العامة وصفحات تفاصيلها ويخزّنها مؤقتًا في ‎.cache/promptsmotion/‎، ثم يستخرج البيانات الوصفية الواقعية فقط، ويعيد كتابة catalog/styles.json وcatalog/prompts_motion.json وملف STYLE.json لكل أسلوب، ويضع listed=false على الإدخالات التي خرجت من الفهرس. — Scrapes the public PromptsMotion library index and its detail pages (cached under .cache/promptsmotion/), extracts factual metadata only, rewrites catalog/styles.json, catalog/prompts_motion.json and every styles/<id>/STYLE.json, and flags entries that have left the index with listed=false.
+
+**متى:** حدّث كتالوج الأساليب من مكتبة PromptsMotion / Sync the style catalog with the PromptsMotion library
+
+**كيف:** sync: `python3 tools/sync_catalog.py`; --offline: `python3 tools/sync_catalog.py --offline`; --refetch: `python3 tools/sync_catalog.py --refetch`; --limit/--workers: `python3 tools/sync_catalog.py --limit 20 --workers 3`. Full card: `python3 scripts/hub.py tool repo-sync-catalog`. Limits: It parses only the site's current markup with regexes, stores metadata and links only, does not regenerate SKILL.md, STYLE_INDEX.md or briefs (build.py does), and drops every non-PromptsMotion record that is missing from its hard-coded BASE list.
+
+**المعاملات:** in: The public index at https://www.promptsmotion.com and its detail pages, or the cached copies under .cache/promptsmotion/ with --offline; also the existing catalog/styles.json (old fields are carried over) and catalog/categories.json (tag-to-category mapping). · out: Rewrites catalog/styles.json, catalog/prompts_motion.json and styles/<id>/STYLE.json for every record (it creates styles/<id>/ folders for new entries), and caches raw HTML under .cache/promptsmotion/ (gitignored). A summary (records, new, changed, unlisted) goes to stderr. Run python3 tools/build.py and python3 tools/validate.py afterwards.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** repo-sync-catalog · catalog sync · PromptsMotion · scraper · metadata · styles.json · STYLE.json · offline cache · weekly sync · listed=false · مزامنة الكتالوج · تحديث الأطلس · بيانات وصفية · مراجع جديدة · تخزين مؤقت
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tools/sync_catalog.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-58` إعادة تصنيف نطاق الأدلة / Proof Scope Relabeler (ready)
+- `TOOL-59` استيراد الملفات الإبداعية / Creative brief importer (ready)
+- `TOOL-61` مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام / KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search (proven)
+- `TOOL-62` دراسة تطبيق ويب عام بـ REA (حقائق فقط) / Web app study (public frontend, REA, facts only) (proven)
+
+### `TOOL-61` — مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام / KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** ابحث في فهرس بيانات 5,514 خطًا فريدًا من صادرات تيليجرام الخاصة بك (4,634 تدعم العربية): صف لكل عائلة بأوزانها، وكلمات الأنماط بالعربي (كوفي، رقعة، ديواني، ثلث، نسخ) مع تسامح الإملاء، وفلتر للرخص المفتوحة، و16 اتجاهًا تصميميًا أصليًا. الخطوط والرسائل والصور والمسارات تبقى على جهازك فقط. — Search a public metadata index of the 5,514 SHA-256-distinct fonts found in the user's own Telegram Desktop exports (4,634 with Arabic letters): one row per family with its styles, Arabic spelling-tolerant style words (كوفي، رقعة، ديواني، ثلث، نسخ), an open-license filter, and 16 original design directions. scan/enrich-zips rebuild the index on the user's machine (bounded, in-memory ZIP reads); refresh re-derives tags, name-based license flags, ideas and counts from the public index alone. Fonts, chats, images and local paths never leave the device.
+
+**متى:** اختار لي خط رقعة أو كوفي أو ديواني من مكتبة خطوطي لبوستر أو شعار مع حالة الرخصة / Pick an Arabic or Latin font for a logo, poster, brand, reel or kinetic text from the fonts the user already collected
+
+**كيف:** find: `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "خط رقعة" --arabic-only --limit 15`; find (open licenses only): `python3 scripts/telegram_typography_atlas.py find --index data/telegram-typography-catalog-complete-20261020.json "kufi logo" --arabic-only --latin --license open`; doctor: `python3 scripts/telegram_typography_atlas.py doctor`; refresh: `python3 scripts/telegram_typography_atlas.py refresh --index data/telegram-typography-catalog-complete-20261020.json --out ./refreshed.json`. Full card: `python3 scripts/hub.py tool telegram-typography-atlas`. Limits: Metadata and message keyword themes, not understanding of every photo (2,981 image headers read; 80 photos sampled once). 4 exports, 2,766 messages, 1,269 loose font files and 5,283 font members in 89 ZIPs gave 5,514 distinct font binaries (~2,412 family names). 1 ZIP unreadable and 36 ZIP fonts unparsed; EOT/.glyphs members, RAR, PDF and nested archives not indexed. Message-theme counts come from the original on-device tagger. License labels come from embedded names only and never grant permission (534 flagged restricted, 402 of them by trial/demo/personal-use/unlicensed names). find and refresh need only Python; scan needs fonttools, beautifulsoup4 and Pillow (optional list), WOFF2 in ZIPs needs brotli.
+
+**المعاملات:** in: Authorized user-supplied local Telegram Desktop ChatExport folders and local ZIP font archives; no scripts or executables run. · out: Public metadata index (no font bytes, chats, images, URLs or local paths) with 16 design directions, and a separate private local-only locator. redistribution_approved stays false for every font until a person checks the actual license.
+
+**التثبيت:** optional: pip:fonttools, pip:beautifulsoup4, pip:Pillow, pip:lxml, pip:brotli
+
+**الوسوم:** telegram-typography-atlas · OFL · arabic · diwani · font family · font pairing · fonts · glyphs · harfbuzz · idea · kids font · kufi · lettering · license · logo · metadata · naskh · open license · open type · poster · ruqah · shaping · telegram · typography · zip · بوستر · تايبوغرافي · تصميم الخطوط · ثلث · خطوط · ديواني · رقعة · شعار · فونت · كوفي · لوجو · مكتبة · نستعليق · نسخ
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `fonts:arabic` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-59` استيراد الملفات الإبداعية / Creative brief importer (ready)
+- `TOOL-60` مزامنة الكتالوج مع PromptsMotion / PromptsMotion catalog sync (ready)
+- `TOOL-62` دراسة تطبيق ويب عام بـ REA (حقائق فقط) / Web app study (public frontend, REA, facts only) (proven)
+- `TOOL-63` أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح / Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds (proven)
+
+### `TOOL-62` — دراسة تطبيق ويب عام بـ REA (حقائق فقط) / Web app study (public frontend, REA, facts only)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يدرس صفحة ويب عامة للقراءة فقط: متصفح بلا تسجيل دخول وملف شخصي جديد يُحذف بعد التشغيل، ثم يلتقط REA الصفحة وأدوات WebMCP المعلنة ولقطة شاشة والسكربتات العامة ببصمات SHA-256. التقرير حقائق فقط: الإطار وإصداره، ومكتبات اللوحة والمحرر والتزامن، والخدمات المستنتجة من أسماء مفاتيح التخزين، بدليل اسم ملف ومعرّف، وبلا أي كود. — Studies one public web page read-only: a logged-out headless Chromium with a fresh profile and background networking off (fresh profile, deleted afterwards), then REA captures the page, page-declared WebMCP tools, a screenshot and the public scripts, with SHA-256 receipts; optional bounded static JavaScript analysis. report turns a study folder into facts only: framework and versions, canvas/editor/realtime libraries, services inferred from storage key NAMES, WebMCP tools and page metrics, each with file-and-identifier evidence and never code. Written for the MagicPath study; runs on any desktop OS.
+
+**متى:** حلل واجهة موقع MagicPath العامة بـ REA واعرف مبني بإيه / Study a public web app's frontend stack and declared WebMCP tools without logging in
+
+**كيف:** doctor: `python3 scripts/web_app_study.py doctor`; run (plan only): `python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example --dry-run`; run: `python3 scripts/web_app_study.py run https://www.example.com --out ~/kosif-studies/example`; report: `python3 scripts/web_app_study.py report ~/kosif-studies/example`. Full card: `python3 scripts/hub.py tool web-app-study`. Limits: One page per run, logged out, so features behind sign-in are not observed; storage values, cookies and request bodies are never kept; library detection is identifier-based (a name can appear without the library being used — confidence is shown); the unbounded REA bundle analyzer is not used because it ran out of memory (about 8 GB, observed, not receipted) on MagicPath's 5.8 MB bundle. Exit code 2 when a required step failed or the profile could not be deleted.
+
+**المعاملات:** in: One public http(s) URL the user may study, plus optional extra exact origins · out: A study folder outside any git checkout: REA JSON artifacts, screenshot.png, exported public scripts (never commit them), receipts.json with SHA-256, report.json and report.md (facts only)
+
+**التثبيت:** needs on PATH: chromium, rea
+
+**الوسوم:** web-app-study · web app · website · frontend · stack · bundle · javascript · webmcp · rea · browser · cdp · screenshot · reverse engineering · تحليل موقع · واجهة · تطبيق ويب · هندسة عكسية · مبني بإيه · magicpath · tech stack detection
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `npm:rea` ← npm ls rea أو وجود node_modules/rea
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_web_app_study.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/web_app_study.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-60` مزامنة الكتالوج مع PromptsMotion / PromptsMotion catalog sync (ready)
+- `TOOL-61` مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام / KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search (proven)
+- `TOOL-63` أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح / Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds (proven)
+- `TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score (proven)
+
+### `TOOL-63` — أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح / Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبحث في 86 طريقة من أطلس Futurepedia في 14 عائلة (الشكل، الحركة، قواعد الشرح، الخطوط، الألوان، التقنيات، الأصوات)، ويدمج طريقتين 85/15، ويكتب موجز إنتاج بستوريبورد أولًا، ويُنشئ مشروع شرح جاهزًا على محرك KOSIF الأصلي. — Searches the 86 paraphrased Futurepedia AI Style Atlas methods in 14 families (look, motion, explainer grammar, fonts, palette, techniques, sounds), fuses up to two (85/15), writes a storyboard-first production brief, scaffolds an explainer project on the original KOSIF engine, and draws static SVG studies.
+
+**متى:** ادمج أساليب Futurepedia في الرسم / Find Futurepedia AI Style Atlas methods
+
+**كيف:** families: `python3 scripts/style_atlas_bridge.py families`; search: `python3 scripts/style_atlas_bridge.py search "سبورة"`; show: `python3 scripts/style_atlas_bridge.py show FA-45`; brief: `python3 scripts/style_atlas_bridge.py brief --topic "كيف تعمل البطارية" --style FA-45 --accent FA-16 --out out/atlas/brief.md`. Full card: `python3 scripts/hub.py tool style-atlas-bridge`. Limits: Method cards are paraphrases; a scaffold starts from the FA-23 chalkboard demo, so each other method's medium must still be drawn per project before rendering. Nothing is rendered until atlas_render.py runs.
+
+**المعاملات:** in: data/futurepedia_style_atlas_86.json and a user topic · out: Search results, method cards, briefs, fusion recipes, scaffolded explainer projects, SVG studies
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** style-atlas-bridge · ادمج أساليب Futurepedia في الرسم · توليفة سبورة ونيون لموشن جرافيك · Find Futurepedia AI Style Atlas methods · Create one static SVG style-study · style · atlas · bridge · فن · visual · رسم · مصادر · أسلوب · explainer · storyboard · طباشير · شرح · أطلس · 86
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_atlas_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/style_atlas_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-61` مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام / KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search (proven)
+- `TOOL-62` دراسة تطبيق ويب عام بـ REA (حقائق فقط) / Web app study (public frontend, REA, facts only) (proven)
+- `TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score (proven)
+- `TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude / AI for business: 9 functions, 64 workflows, Claude-native gated runbooks (proven)
+
+### `TOOL-64` — رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يشغّل صفحة شرح A15 في متصفح بلا واجهة: لوحة ستوريبورد، لقطات، فحص حتمية وسرعة، رندر MP4 إطارًا بإطار مع صوت مُركّب متزامن، وحزمة HTML واحدة. — Drives an A15 explainer page (window.seek/DURATION/scoreSound) in headless Chromium: storyboard grid PNG, single stills, a determinism and speed check, frame-by-frame H.264 render with the KSound score rendered offline and muxed as AAC, and a single-file HTML bundle.
+
+**متى:** رندر فيلم الشرح إلى MP4 / Render the explainer page to video
+
+**كيف:** check: `python3 scripts/atlas_render.py check`; storyboard: `python3 scripts/atlas_render.py storyboard --out out/atlas/storyboard.png`; render: `python3 scripts/atlas_render.py render --fps 30 --out out/atlas/film.mp4`; bundle: `python3 scripts/atlas_render.py bundle --out out/atlas/single.html`. Full card: `python3 scripts/hub.py tool atlas-render`. Limits: Needs Playwright with Chromium and ffmpeg; frame capture is ~4-6 fps of wall time at 1280x720; audio is the page's synthesized score (no voice-over mixing yet).
+
+**المعاملات:** in: An explainer HTML page following the A15 contract (default: templates/atlas_explainer.html) · out: PNG storyboard/stills, MP4 (h264+aac), single-file HTML, JSON reports
+
+**التثبيت:** pip install playwright · needs on PATH: ffmpeg
+
+**الوسوم:** atlas-render · render · explainer · storyboard · mp4 · رندر · ستوريبورد · فيلم شرح · atlas · canvas · seek
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_render.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_render.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-62` دراسة تطبيق ويب عام بـ REA (حقائق فقط) / Web app study (public frontend, REA, facts only) (proven)
+- `TOOL-63` أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح / Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds (proven)
+- `TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude / AI for business: 9 functions, 64 workflows, Claude-native gated runbooks (proven)
+- `TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity (proven)
+
+### `TOOL-65` — الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude / AI for business: 9 functions, 64 workflows, Claude-native gated runbooks
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبحث في مؤشر تبني الذكاء الاصطناعي لـ9 وظائف و64 خطة عمل، ويعيد توجيه كل خطوة إلى ما ينفذه Claude بنفسه أو إلى موصّل، ويكتب خطة تشغيل عربية ببوابات موافقة. — Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step from the named third-party tool to what Claude can do in the session or to a connector, measures native coverage, and writes an Arabic runbook with approval gates for send, post, spend and recording.
+
+**متى:** اعمل لي workflow للمبيعات بالذكاء الاصطناعي / Turn a podcast into a content plan with AI
+
+**كيف:** functions: `python3 scripts/business_workflows.py functions`; search: `python3 scripts/business_workflows.py search "بودكاست"`; coverage: `python3 scripts/business_workflows.py coverage`; plan: `python3 scripts/business_workflows.py plan --workflow FW-07 --context "حلقة بودكاست عربية" --out out/biz/plan.md`. Full card: `python3 scripts/hub.py tool business-workflows`. Limits: Facts only from the site (no prompts); third-party tool features and prices change; connector availability is checked at run time, not here.
+
+**المعاملات:** in: data/futurepedia_business_workflows.json and the user's situation · out: JSON listings and a Markdown runbook
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** business-workflows · business · workflow · sales · marketing · support · operations · فور بيزنس · أعمال · مبيعات · تسويق · خطة عمل · أتمتة · futurepedia
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `key:unspecified` ← حساب أو مفتاح: لا تطلب لصقه في المحادثة، واسأل قبل أي صرف
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+- `permission_denied` (صلاحية مرفوضة، ميزانية 1): من رفض: نظام الملفات أم الخدمة أم المستخدم في نافذة الإذن ← اكتب في مسار مسموح (مجلد مؤقت أو مجلد العمل) · البديل: سلّم الأمر جاهزًا ليشغّله المستخدم بنفسه · تصعيد: لا تتجاوز أي رفض بحيلة؛ اشرح ما يلزم وانتظر
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_business_workflows.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/business_workflows.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-63` أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح / Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds (proven)
+- `TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score (proven)
+- `TOOL-66` مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity (proven)
+
+### `TOOL-66` — مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت / Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبحث في 45 منهجًا مستخلصًا بكلماتنا من عشرة ملفات PDF، ويشغّل خمسة مساعدين: كلمات عشوائية محفّزة، وحساب بايزي بسجل أدلة بالديسيبل، وبوابة وضوح البرومنت، وفاحص قيود محاسبية، وبطاقة شخصية بالعوامل الخمسة. — Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card.
+
+**متى:** أعطني أفكار غير تقليدية لإعلان / Build a character's voice from a Big Five profile
+
+**كيف:** search: `python3 scripts/book_methods.py search "شخصية حوار"`; rest: `python3 scripts/book_methods.py rest --problem "إعلان لمقهى" --seed 7`; bayes: `python3 scripts/book_methods.py bayes --h fraud=0.01 --h ok=0.99 --e "flag:fraud=0.9,ok=0.05"`; clarity: `python3 scripts/book_methods.py clarity "صورة جميلة لشخص"`. Full card: `python3 scripts/hub.py tool book-methods`. Limits: Methods are summaries, not the books; clarity is a word-list heuristic; ledger is a draft check, not posting or an audit opinion; persona is for fiction and tone only.
+
+**المعاملات:** in: data/book_methods.json; a problem, hypotheses, a prompt, journal entries JSON or Big Five scores · out: JSON to stdout
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** book-methods · lateral thinking · random word · pragmatic programmer · bayes · bayesian · evidence · personality · big five · character · accounting · ifrs · ledger · vat · prompt clarity · تفكير جانبي · أفكار · احتمال · شخصية · محاسبة · قيود · ضريبة · وضوح البرومنت · شعر · كتب
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_book_methods.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/book_methods.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-64` رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب / Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score (proven)
+- `TOOL-65` الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude / AI for business: 9 functions, 64 workflows, Claude-native gated runbooks (proven)
+

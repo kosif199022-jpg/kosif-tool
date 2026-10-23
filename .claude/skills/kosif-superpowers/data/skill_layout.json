@@ -100,7 +100,7 @@
    "target": null,
    "files": [],
    "globs": [
-    "references/powers/*"
+    "references/powers/*", "references/library/*"
    ]
   },
   {
