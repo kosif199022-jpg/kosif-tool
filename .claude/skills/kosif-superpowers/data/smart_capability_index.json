@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5334,
+  "catalog_powers": 5389,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 132,
+  "tool_count": 133,
   "groups": [
     {
       "id": "research",
@@ -74,15 +74,15 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 291,
+      "count": 302,
       "status_counts": {
-        "documented": 272,
+        "documented": 283,
         "install": 2,
         "proven": 17
       },
       "family_counts": {
-        "atlas-mind": 44,
-        "atlas-strategy": 57,
+        "atlas-mind": 50,
+        "atlas-strategy": 62,
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 12,
@@ -189,9 +189,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 545,
+      "count": 555,
       "status_counts": {
-        "documented": 361,
+        "documented": 371,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -203,7 +203,7 @@
         "app-feature-transfer": 139,
         "apps-artifacts": 23,
         "atlas-build": 50,
-        "atlas-code": 216,
+        "atlas-code": 226,
         "code-engineering": 24,
         "ui-product-device": 93
       },
@@ -316,9 +316,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 303,
+      "count": 316,
       "status_counts": {
-        "documented": 79,
+        "documented": 92,
         "idea": 2,
         "install": 27,
         "key": 35,
@@ -328,7 +328,7 @@
       },
       "family_counts": {
         "ai-generation": 93,
-        "atlas-media": 14,
+        "atlas-media": 27,
         "color-palette-grading": 87,
         "media-image-audio": 41,
         "photo-video-footage": 68
@@ -677,16 +677,16 @@
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 110,
+      "count": 131,
       "status_counts": {
-        "documented": 66,
+        "documented": 87,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
-        "atlas-craft": 7,
-        "atlas-docs": 41,
+        "atlas-craft": 24,
+        "atlas-docs": 45,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -12334,6 +12334,164 @@
       "what": "إنشاء worktree لكل مهمة وحذف worktrees والفروع المدموجة دون إجبار. — Create sibling worktrees per task and remove worktrees and merged branches without force."
     },
     {
+      "id": "ACODE-217",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Agent tool design: the consumer is a model",
+      "name_ar": "تصميم أدوات الوكلاء: المستهلك نموذج لا إنسان",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12905-tool-design"
+      ],
+      "source": "atlas-code.json",
+      "what": "يصمم أدوات MCP والدوال بحيث يعرف النموذج متى يستدعيها وماذا يمرر وكيف يتعافى من الخطأ. — Designs MCP and function tools so the model knows when to call them, what to pass and how to recover from errors."
+    },
+    {
+      "id": "ACODE-218",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Tool trust boundary: injected secrets, permissions in code",
+      "name_ar": "حدود الثقة في الأدوات: الأسرار تُحقن والصلاحيات في الكود",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12911-tool-design-security"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحمي الأدوات من حقن الأوامر: لا مفاتيح ظاهرة للنموذج، وفحص الصلاحية للفعل والهدف يتم في الكود قبل التنفيذ. — Hardens tools against prompt injection: no model-visible keys, and permission checks for action and target run in code before execution."
+    },
+    {
+      "id": "ACODE-219",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Block secrets at commit time",
+      "name_ar": "منع رفع الأسرار عند الالتزام",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3346-prevent-committing-secrets/13861-prevent-committing-secrets"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفحص ما سيُلتزم به قبل الرفع بماسح أسرار، لأن المفتاح بعد الدفع لا يُحذف بل يُدوّر. — Scans what is about to be committed with a secret scanner, because once pushed a key cannot be deleted, only rotated."
+    },
+    {
+      "id": "ACODE-220",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Change-scoped security review vs posture audit",
+      "name_ar": "مراجعة أمان للتغيير لا للمستودع كله",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2582-security-audit/9949-security-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "يراجع فرقاً أو PR بحثاً عن ثغرات واثقة فقط، ويحوّل طلب تدقيق المستودع كاملاً إلى منهج مختلف. — Reviews a diff or PR for confident vulnerabilities only, and switches method when asked to audit a whole codebase."
+    },
+    {
+      "id": "ACODE-221",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Behaviour-level assertions per layer, with the repo's own commands",
+      "name_ar": "التحقق من السلوك لا من التفاصيل الداخلية، بأوامر المستودع نفسه",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2586-testing-philosophy/9953-testing-philosophy",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2110-base-dev-kit/7507-tdd"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكتب تحققات تشبه طريقة استخدام البرنامج فعلاً في كل طبقة، ويكتشف أوامر المستودع قبل أي شيء؛ دورة الأحمر والأخضر نفسها في CODE-08. — Asserts only what each layer's user can observe and discovers the repository's own commands first; the red-green loop itself is CODE-08."
+    },
+    {
+      "id": "ACODE-222",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Clean Architecture dependency rule",
+      "name_ar": "قاعدة الاعتماد في البنية النظيفة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14108-clean-architecture"
+      ],
+      "source": "atlas-code.json",
+      "what": "ينظم الكود في دوائر بحيث تشير الاعتمادات للداخل نحو قواعد العمل، فيمكن تبديل قاعدة البيانات أو الإطار دون لمس المنطق. — Organises code in circles whose dependencies point inward to business rules, so the database or framework can change without touching logic."
+    },
+    {
+      "id": "ACODE-223",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Web performance: latency before bandwidth",
+      "name_ar": "أداء الويب: الكمون قبل عرض النطاق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3436-systems-architecture/14110-high-perf-browser"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحسّن سرعة الموقع بتقليل الرحلات ذهاباً وإياباً، لأن الكمون لا عرض النطاق هو عنق الزجاجة غالباً. — Speeds up a site by cutting round trips, because latency rather than bandwidth is usually the bottleneck."
+    },
+    {
+      "id": "ACODE-224",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Measure improvement against a baseline captured before",
+      "name_ar": "قياس التحسين مقابل خط أساس مُلتقط قبل التغيير",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2481-verification/9633-measure"
+      ],
+      "source": "atlas-code.json",
+      "what": "لا يدّعي تحسناً إلا بقياس قبل التغيير وبعده بالشروط نفسها، وإن غاب القياس الأول يقول ذلك صراحة. — Claims an improvement only with before and after measurements under the same conditions, and says so when no baseline exists."
+    },
+    {
+      "id": "ACODE-225",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "jq filter mental model for JSON streams",
+      "name_ar": "jq: نموذج المرشّح لتدفق JSON",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1240-jq/2920-jq"
+      ],
+      "source": "atlas-code.json",
+      "what": "يعالج JSON من سطر الأوامر بفهم أن برنامج jq مرشّح يحوّل تدفق قيم إلى تدفق قيم. — Processes JSON on the command line by treating a jq program as a filter from a stream of values to a stream of values."
+    },
+    {
+      "id": "ACODE-226",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Apple platform design: choose the track first",
+      "name_ar": "تصميم تطبيقات Apple: اختر المسار أولاً",
+      "status": "documented",
+      "requires": [
+        "npm:react",
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1394-stark/3324-apple-design"
+      ],
+      "source": "atlas-code.json",
+      "what": "يسأل أولاً عن مسار البناء (SwiftUI صارم، SwiftUI بهوية، React Native، Flutter، Electron) لأن لكل مسار سقفاً بصرياً وتكلفة. — Asks first which build track (strict SwiftUI, branded SwiftUI, React Native, Flutter, Electron) because each has a different visual ceiling and cost."
+    },
+    {
       "id": "ACRAFT-01",
       "family": "atlas-craft",
       "group": "documents",
@@ -12446,6 +12604,279 @@
       ],
       "source": "atlas-craft.json",
       "what": "اختيار الخطوط والأحجام والمقاييس وطول السطر لمقروئية أفضل. — Choose typefaces, sizes, scales and line lengths for legible web typography."
+    },
+    {
+      "id": "ACRAFT-08",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Fixed-style doodle card-news: image prompt plus editable SVG twin",
+      "name_ar": "بطاقة إخبارية مرسومة بأسلوب ثابت (موجّه صورة + SVG قابل للتعديل)",
+      "status": "documented",
+      "requires": [
+        "fonts:arabic"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2417-akbun-draw-cartoon-b",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2416-akbun-draw-cardnews-cream"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يرسم بطاقة شرح أو تحذير بأسلوب ثابت لا يتغير، ويسلّم موجّه صورة إنجليزياً وملف SVG بالنص نفسه لتعديله في Figma أو Canva. — Draws an explainer or warning card in one locked house style and ships two twins: an English image-model prompt and an SVG with the same text as editable lay"
+    },
+    {
+      "id": "ACRAFT-09",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Webtoon / essay-toon pages with a locked character sheet",
+      "name_ar": "صفحات ويبتون بشخصية ثابتة وألوان باستيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2423-akbun-draw-webtoon-b",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2424-akbun-draw-webtoon-c"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يحوّل قصة أو خاطرة إلى صفحات ويبتون عمودية بشخصية ثابتة الملامح، مع سيناريو صفحات وموجّه صورة لكل صفحة وطبقة نص SVG. — Turns a story or short essay into vertical webtoon pages with a fixed-look character, a page script, one image prompt per page and an SVG text layer."
+    },
+    {
+      "id": "ACRAFT-10",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Documentary story scenes: interview first, verbatim CHARACTER sentence",
+      "name_ar": "قصة مصورة وثائقية: مقابلة أولاً وجملة شخصية تُنسخ حرفياً",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2425-akbun-draw-webtoon-d",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2421-akbun-draw-storytellingimage"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يرسم قصة حقيقية مشهداً بمشهد دون اختراع أحداث: يسأل أولاً ثم يثبّت وصف كل شخصية في جملة تُنسخ في كل موجّه. — Illustrates a real story scene by scene without inventing events: asks first, then pins each character in one sentence copied into every prompt."
+    },
+    {
+      "id": "ACRAFT-11",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Book and sketchbook-card illustration with fixed layout templates",
+      "name_ar": "رسم توضيحي للكتب بقوالب تخطيط ثابتة ونص محدد حرفياً",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2415-akbun-draw-book-illustration",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2420-akbun-draw-sketchbook-card"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يختار قالب تخطيط من مجموعة ثابتة (شريط أيقونات، تكبير، مقارنة…) ويرسم بأسلوب رمادي بنقطة لون واحدة، مع تحديد كل نص داخل الصورة حرفاً بحرف. — Picks one of a small fixed set of layouts (icon strip, zoom-in, comparison...) and draws in monogray with one accent, spelling out every in"
+    },
+    {
+      "id": "ACRAFT-12",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Quiet pencil scene with a single colour accent",
+      "name_ar": "مشهد قلم رصاص هادئ بلون واحد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يرسم لحظة ساكنة بقلم رصاص رمادي على ورق كريمي مع مساحة فارغة كبيرة ولون واحد فقط على قطعة صغيرة تحمل المعنى. — Draws one still moment in grey pencil on cream paper with large empty space and a single colour on one small meaningful prop."
+    },
+    {
+      "id": "ACRAFT-13",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Travel-blog illustration kit: thumbnail, route sketch, scene",
+      "name_ar": "رسومات مدونة سفر: مصغّرة وخريطة مسار ومشهد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1094-akbun-draw/2422-akbun-draw-travel-blog"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يولّد مصغرة وخريطة مسار مبسطة ومشهداً لمقالة سفر بألوان محددة الأدوار، ولا يضيف جغرافيا لم ترد في النص. — Produces a thumbnail, a simplified route map and scene art for a travel post with role-coded colours, never adding geography the text did not give."
+    },
+    {
+      "id": "ACRAFT-14",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Book visual system: art bible, code-rendered figures, art-director loop",
+      "name_ar": "نظام بصري للكتاب: دليل فني ورسوم بالكود وحلقة رفض",
+      "status": "documented",
+      "requires": [
+        "graphviz",
+        "pip:matplotlib",
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1376-velith/3231-book-visuals"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يضبط شكل كل صور الكتاب بدليل فني واحد، ويرسم المخططات والرسوم البيانية بالكود لا بنماذج التوليد، ويرفض الصور المخالفة ويعيدها. — Keeps every book image consistent through one art bible, renders diagrams and charts in code instead of diffusion, and rejects and regenerates off-spec"
+    },
+    {
+      "id": "ACRAFT-15",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Icon design by resemblance and Gestalt closure",
+      "name_ar": "تصميم الأيقونات بالتشابه والإغلاق البصري",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3761-iconic-resemblance",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3810-closure"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يصمم أيقونات تشبه ما تمثله أو تعتمد على إكمال العين للشكل الناقص، ويعرف متى يفشل التبسيط. — Designs icons that look like what they mean or let the eye complete a partial outline, and knows when simplification fails."
+    },
+    {
+      "id": "ACRAFT-16",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Semantic colour system: status ramps, one role per colour",
+      "name_ar": "نظام ألوان دلالي: درجات الحالة ودور واحد لكل لون",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3815-color-semantic-systems"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يبني ألوان الحالة والفئات والعلامة التجارية بحيث يعني كل لون شيئاً واحداً فقط. — Builds status, category and brand colours so each colour means exactly one thing."
+    },
+    {
+      "id": "ACRAFT-17",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Legibility and readability numbers: contrast, spacing, measure",
+      "name_ar": "مقاييس الوضوح والقراءة: التباين والتباعد وطول السطر",
+      "status": "documented",
+      "requires": [
+        "npm:axe"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3825-legibility-contrast-and-spacing",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3832-readability",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3529-ui-design/14313-visual-design-foundations"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يضبط تباين النص وتباعد الحروف والأسطر وطول السطر بقيم مرجعية قابلة للقياس. — Sets text contrast, tracking, leading and line length to measurable reference values."
+    },
+    {
+      "id": "ACRAFT-18",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Typographic hierarchy from a modular type scale",
+      "name_ar": "التدرج الطباعي بسلم مقاسات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3823-hierarchy-typographic"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يبني تسلسل العناوين والنص من سلم نسب ثابت ووزن الخط بدلاً من أحجام عشوائية. — Builds heading and body ranks from a fixed ratio scale plus weight instead of arbitrary sizes."
+    },
+    {
+      "id": "ACRAFT-19",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Brand archetypes for voice, mascot and character design",
+      "name_ar": "الأنماط الأصلية للعلامة والشخصية والتميمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3730-archetypes"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يختار نمطاً أصلياً واحداً من اثني عشر (الحكيم، المستكشف، المهرّج…) ليوجّه صوت العلامة وتصميم الشخصية أو التميمة. — Chooses one of twelve archetypes (Sage, Explorer, Jester...) to steer brand voice and mascot or character design."
+    },
+    {
+      "id": "ACRAFT-20",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "App icon drawn in code as flat layers",
+      "name_ar": "رسم أيقونة التطبيق بالكود",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1527-nativeapps/4178-macos-app-icons"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يرسم أيقونة التطبيق من 1-4 أشكال بسيطة بالكود، طبقة لكل شكل، ثم يقارنها بأيقونات النظام بكل المقاسات. — Draws the app icon from 1-4 simple shapes in code, one layer per shape, then previews it beside system icons at every size."
+    },
+    {
+      "id": "ACRAFT-21",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Anti-template interface design and a DESIGN.md north star",
+      "name_ar": "تصميم واجهة غير قالبي وملف DESIGN.md",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1420-frontend-design-skills/3376-anthropic-frontend-design",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4189-design-guide-authoring"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يتجنب الأشكال الافتراضية المكررة للواجهات، ويكتب ملف تصميم واحد واضح الرأي بالألوان والخطوط والتخطيط يرجع إليه البشر والنماذج. — Avoids the stock look of generated interfaces and writes one opinionated design file (palette, type, layout, principles) that people and models follow."
+    },
+    {
+      "id": "ACRAFT-22",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Microinteractions: trigger, rules, feedback, loops and modes",
+      "name_ar": "التفاعلات الدقيقة: المحفّز والقواعد والاستجابة والحلقات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14121-microinteractions"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يصمم التفاصيل الصغيرة للأزرار والمفاتيح والتحميل ويقيّمها بثمانية بنود. — Designs the small details of toggles, buttons and loaders and scores them on eight rows."
+    },
+    {
+      "id": "ACRAFT-23",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Visual explanation: one format chosen by the question",
+      "name_ar": "شرح بصري بصيغة واحدة مناسبة للسؤال",
+      "status": "documented",
+      "requires": [
+        "npm:mermaid"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8300-show-me"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يجيب عن «وضّح لي» برسم واحد مناسب (شجرة استدعاء، مخطط Mermaid، فرق كود…) مبني فقط على ما ثبت. — Answers 'show me' with one fitting visual (call tree, Mermaid diagram, focused diff...) built only from verified facts."
+    },
+    {
+      "id": "ACRAFT-24",
+      "family": "atlas-craft",
+      "group": "documents",
+      "domain": "craft",
+      "name_en": "Progressive disclosure of information and controls",
+      "name_ar": "الإفصاح التدريجي للمعلومات والأدوات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1503-universal-design-principles/3768-progressive-disclosure"
+      ],
+      "source": "atlas-craft.json",
+      "what": "يقسّم الواجهة أو الشرح إلى طبقات: ما يلزم للقرار الحالي أولاً، والباقي خلف خطوة واحدة. — Layers an interface or explanation: what the current decision needs first, the rest one step away."
     },
     {
       "id": "ADATA-01",
@@ -13885,6 +14316,66 @@
       "what": "يشرح أي موضوع في صفحة HTML بصرية بنص قليل وفكرة واحدة لكل رسم. — Explain any topic as a minimal-text visual HTML with one idea per diagram."
     },
     {
+      "id": "ADOCS-42",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Plain writing: everyday words, complete sentences",
+      "name_ar": "الكتابة البسيطة: كلمات يومية وجمل كاملة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2868-plain-writing/11578-plain-writing"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يكتب نصاً يُفهم من القراءة الأولى: كلمات شائعة، بلا مصطلحات مخترعة، بلا تفخيم فارغ، مع مثال قبل وبعد لكل قاعدة. — Writes text readable in one pass: common words, no invented jargon, no empty emphasis, with a before/after for each rule."
+    },
+    {
+      "id": "ADOCS-43",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Humanize by density, with an over-correction guard",
+      "name_ar": "أنسنة النص بالكثافة لا بقائمة حذف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3035-x-skills/13066-x-humanizer"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يزيل علامات النص الآلي التي يلاحظها القراء (المفردات والبنية) بقياس كثافتها، دون وعد بتجاوز كاشفات الذكاء الاصطناعي. — Removes the AI tells readers notice (vocabulary, structure) by scoring their density, without promising to beat AI detectors."
+    },
+    {
+      "id": "ADOCS-44",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Per-dimension documentation drift audit",
+      "name_ar": "تدقيق انحراف التوثيق عن الكود لكل بُعد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/95-docs-maintain-workflow"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يقارن التوثيق بالكود الفعلي بُعداً بُعداً (الأوامر، الإعدادات، الواجهات…) ويخطط الإصلاح قبل التنفيذ. — Compares documentation with the actual code dimension by dimension (commands, config, APIs...) and plans fixes before executing them."
+    },
+    {
+      "id": "ADOCS-45",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Transcreation routing for marketing translation",
+      "name_ar": "الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4128-translate-content"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يفرز في النص ما يحتاج ترجمة حرفية وما يحتاج إعادة إبداع (تعابير، تلاعب لفظي، فكاهة)، مع قائمة كلمات لا تُترجم. — Sorts what needs literal translation from what needs transcreation (idioms, wordplay, humour), with a do-not-translate list."
+    },
+    {
       "id": "AMEDIA-01",
       "family": "atlas-media",
       "group": "images",
@@ -14130,6 +14621,226 @@
       ],
       "source": "atlas-media.json",
       "what": "يحول الأوراق والأكواد إلى صور شرح 16:9 بسيطة بالأبيض والأسود. — Turn papers, code or concepts into minimal black-and-white 16:9 explainer images with sparse accent colour."
+    },
+    {
+      "id": "AMEDIA-15",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Spring-physics motion and a layered glass surface",
+      "name_ar": "حركة نابضية وسطح زجاجي لمواقع بمستوى Awwwards",
+      "status": "documented",
+      "requires": [
+        "npm:gsap",
+        "npm:animejs"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/95-awwwards-motion/204-awwwards-motion"
+      ],
+      "source": "atlas-media.json",
+      "what": "يحرّك العناصر بفيزياء النابض بدلاً من منحنيات المدة، ويبني السطح الزجاجي من أربع طبقات. — Animates with spring physics instead of duration curves and composes glass from four layers."
+    },
+    {
+      "id": "AMEDIA-16",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "GLSL shader mental model in React Three Fiber",
+      "name_ar": "نموذج الشيدر في React Three Fiber",
+      "status": "documented",
+      "requires": [
+        "npm:three",
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/95-awwwards-motion/204-awwwards-motion"
+      ],
+      "source": "atlas-media.json",
+      "what": "يشرح كيف تتكوّن المادة المخصصة من شيدر رؤوس وشيدر بكسلات، وكيف تمر البيانات عبر uniforms وvaryings. — Explains how a custom material is a vertex plus fragment program and how data flows through uniforms and varyings."
+    },
+    {
+      "id": "AMEDIA-17",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Kinetic inflated typography hero",
+      "name_ar": "هيرو بخط حركي منفوخ تتصادم حروفه",
+      "status": "documented",
+      "requires": [
+        "npm:matter"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/100-ui-motion/209-kinetic-inflated-hero"
+      ],
+      "source": "atlas-media.json",
+      "what": "يملأ الشاشة بحروف لينة منفوخة تتحرك وتتصادم وتتجنب النصوص والأزرار كعوائق، مع تأثير كلمة تختفي وتعود. — Fills the viewport with soft inflated letters that drift, collide and flow around copy and buttons as obstacles, with a disappearing-word effect."
+    },
+    {
+      "id": "AMEDIA-18",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Thermal finger-trail field in one fragment shader",
+      "name_ar": "حقل حراري يلطّخه الإصبع (شيدر واحد)",
+      "status": "documented",
+      "requires": [
+        "npm:three"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/100-ui-motion/211-thermal-finger-trail"
+      ],
+      "source": "atlas-media.json",
+      "what": "سطح يشبه كاميرا حرارية يسحب الإصبع ألوانه كطلاء مبلل ثم يعود، بشيدر واحد بلا قوام أو مخازن. — A heat-camera surface the pointer smears like wet paint that relaxes back, all in one fragment shader with no textures or buffers."
+    },
+    {
+      "id": "AMEDIA-19",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "React View Transitions chosen by meaning",
+      "name_ar": "انتقالات العرض في React حسب ما تعنيه الحركة",
+      "status": "documented",
+      "requires": [
+        "chromium",
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2931-react/12175-vercel-react-view-transitions"
+      ],
+      "source": "atlas-media.json",
+      "what": "يختار نوع الانتقال بين الصفحات والعناصر حسب ما يريد أن يقوله للمستخدم: نفس العنصر، بيانات وصلت، ترتيب جديد… — Chooses page and element transitions by what they tell the user: same thing deeper, data arrived, new arrangement..."
+    },
+    {
+      "id": "AMEDIA-20",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Brief-to-film handoff kit with a named upload order",
+      "name_ar": "حزمة تسليم من موجز إلى فيلم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2681-emulo/10272-video"
+      ],
+      "source": "atlas-media.json",
+      "what": "يحوّل طلباً من سطر واحد إلى مجلد جاهز لمحرك الفيديو: موجز، ترتيب رفع، أصول، إطارات مرجعية، وبيان بالعيوب. — Turns a one-line ask into a folder ready for a video engine: brief, upload order, assets, reference frames and a manifest of known defects."
+    },
+    {
+      "id": "AMEDIA-21",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Product demo video pipeline with fallback modes",
+      "name_ar": "فيديو عرض المنتج بأنماط احتياطية",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/166-demo-video/535-demo-video"
+      ],
+      "source": "atlas-media.json",
+      "what": "يصنع فيديو عرض أو شرح منتج من مشاهد HTML ولقطات وتعليق صوتي، ويتحول لوضع يدوي إن غابت الأدوات. — Builds a product demo from HTML scenes, screenshots and narration, falling back to a manual mode when tools are missing."
+    },
+    {
+      "id": "AMEDIA-22",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "FFmpeg diagnostics: VFR fix, aligned ABR HLS, stream health",
+      "name_ar": "تشخيص FFmpeg: إطار متغير، HLS متعدد الدقات، فحص التيار",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/754-ffmpeg"
+      ],
+      "source": "atlas-media.json",
+      "what": "يشخّص انزياح الصوت والصورة وأخطاء الطوابع الزمنية، ويبني بث HLS بعدة دقات بإطارات مفتاحية متوافقة. — Diagnoses A/V drift and timestamp errors and builds multi-rendition HLS with aligned keyframes."
+    },
+    {
+      "id": "AMEDIA-23",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Lossless keyframe-aligned cutting and smart cut",
+      "name_ar": "قص بلا فقد على الإطارات المفتاحية",
+      "status": "documented",
+      "requires": [
+        "ffmpeg"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/756-losslesscut"
+      ],
+      "source": "atlas-media.json",
+      "what": "يقص الفيديو بنسخ التيار دون إعادة ترميز، ويتجنب الشاشة السوداء بالقص على إطارات I أو بإعادة ترميز الجزء الصغير فقط. — Cuts video by stream copy without re-encoding, avoiding black starts by cutting on I-frames or re-encoding only the partial GOP."
+    },
+    {
+      "id": "AMEDIA-24",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Scripted After Effects comps: spec first, rigs, render queue",
+      "name_ar": "مشهد After Effects بالسكربت: المواصفات أولاً",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/751-adobe-after-effects"
+      ],
+      "source": "atlas-media.json",
+      "what": "ينشئ مشاهد After Effects بالسكربت بمواصفات محددة وأدوات تحكم قابلة لإعادة الاستخدام وطابور تصيير صريح. — Creates After Effects compositions by script with a fixed spec, reusable control rigs and an explicit render queue."
+    },
+    {
+      "id": "AMEDIA-25",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Video packaging: title and thumbnail text that never overlap",
+      "name_ar": "تغليف الفيديو: عنوان ونص مصغّرة لا يتكرران",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4132-video-packaging",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3067-youtube/13228-creator-thumbnail-agent"
+      ],
+      "source": "atlas-media.json",
+      "what": "يكتب عنوان الفيديو ونص الصورة المصغرة كزوج: العنوان يحمل الموضوع والكلمات المفتاحية، والمصغرة تحمل التوتر. — Writes title and thumbnail text as a pair: the title carries topic and keywords, the thumbnail carries the tension."
+    },
+    {
+      "id": "AMEDIA-26",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Substance Painter PBR colour space and baking",
+      "name_ar": "Substance Painter: مساحة لون PBR وخبز الخرائط",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/709-substance-painter"
+      ],
+      "source": "atlas-media.json",
+      "what": "يضبط ترميز الألوان الصحيح لقنوات PBR ويحل مشكلات خبز خرائط النورمال ويؤتمت التصدير. — Sets the right colour encoding per PBR channel, fixes normal-map baking artefacts and automates export."
+    },
+    {
+      "id": "AMEDIA-27",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Godot 4: typed GDScript, physics timing, headless export",
+      "name_ar": "Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة",
+      "status": "documented",
+      "requires": [
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/707-godot"
+      ],
+      "source": "atlas-media.json",
+      "what": "يكتب ألعاب Godot بأنواع صريحة ويضع الحركة في حلقة الفيزياء ويصدّر للويب والمنصات من سطر الأوامر. — Writes Godot games with static types, keeps movement in the physics loop and exports to web and desktop from the CLI."
     },
     {
       "id": "AMIND-01",
@@ -14862,6 +15573,98 @@
       ],
       "source": "atlas-mind.json",
       "what": "يتحقق من براهين المسابقات بمدقق في سياق جديد وثقة معايرة. — Verify olympiad-level proofs with a fresh-context verifier and calibrated confidence."
+    },
+    {
+      "id": "AMIND-45",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Doubt-driven development for non-trivial decisions",
+      "name_ar": "تطوير قائم على الشك: مراجعة عدائية للقرارات غير البديهية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3221-doubt-driven-development/13634-doubt-driven-development"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يخضع كل قرار غير بديهي لمراجعة عدائية بسياق جديد قبل اعتماده، ولا يطبقها على الأعمال الآلية. — Cross-examines each non-trivial decision with a fresh-context adversarial review before it stands, and skips mechanical work."
+    },
+    {
+      "id": "AMIND-46",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Heuer-style structured planning with tested premises",
+      "name_ar": "تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3243-heuer-planning/13679-heuer-planning"
+      ],
+      "source": "atlas-mind.json",
+      "what": "شريك تفكير منظم يبني الخطة ويهاجمها في الوقت نفسه، ويعامل كل ادعاء كفرضية حتى يثبت. — A structured thinking partner that builds the plan and attacks it at the same time, treating every claim as a hypothesis until it earns its place."
+    },
+    {
+      "id": "AMIND-47",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Requirements elicitation: elicit, do not invent",
+      "name_ar": "استخراج المتطلبات: اسأل ولا تخترع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3395-requirements-elicitation/13931-requirements-elicitation"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يقرأ وثيقة منتج ويستخرج ما ينقصها بأسئلة موجهة لكل طرف، دون أن يملأ الفراغات بافتراضات تقنية. — Reads a product document and surfaces what is missing as targeted questions per stakeholder, without filling gaps with invented technical detail."
+    },
+    {
+      "id": "AMIND-48",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Route to one specialist, read before answering",
+      "name_ar": "توجيه إلى أخصائي واحد مع إلزام القراءة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3056-staff-engineer-mode/13185-staff-engineer-mode"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يوجّه المسألة الهندسية إلى أخصائي واحد مناسب ويقرأ ملفه قبل أي إجابة؛ تحميل أخصائيين كثر يعني أن التوجيه فشل. — Routes an engineering question to one fitting specialist and reads its file before answering; loading many specialists means routing failed."
+    },
+    {
+      "id": "AMIND-49",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Reuse or openly replace: one way to do a thing",
+      "name_ar": "أعد الاستخدام أو استبدل علناً: لا طريقتين لشيء واحد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9423-reuse-or-replace"
+      ],
+      "source": "atlas-mind.json",
+      "what": "إذا وُجدت طريقة معتمدة لفعل شيء، يعيد العمل الجديد استخدامها أو يستبدلها صراحة، ولا يضيف طريقة موازية صامتة. — When an established way exists, new work reuses it or openly replaces it, never adds a silent parallel one."
+    },
+    {
+      "id": "AMIND-50",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Evidence-based roadmap update with an explicit scan mode",
+      "name_ar": "تحديث خارطة الطريق من الأدلة مع ذكر وضع الفحص",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2840-roadmapsmith/11548-roadmap-update"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يحدّث ملف خارطة الطريق بحسب ما في الكود فعلاً، ويصرّح هل فحص المستودع كاملاً أم اعتمد على سياق الجلسة. — Updates the roadmap file from what the code actually shows and states whether it did a full scan or relied on session context."
     },
     {
       "id": "AWEB-01",
@@ -15928,6 +16731,81 @@
       ],
       "source": "atlas-strategy.json",
       "what": "يدير حلقة تدريس بسؤال واحد وتلميحات عند الخطأ ويحكم بالإتقان عبر التطبيق المستقل. — Run a tutor loop with one pending question, hints on errors and mastery judged by independent application."
+    },
+    {
+      "id": "ASTRAT-58",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Jobs to Be Done with all three dimensions",
+      "name_ar": "الوظائف المطلوب إنجازها بأبعادها الثلاثة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3433-product-strategy/14093-jobs-to-be-done"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يفهم سبب «توظيف» العميل للمنتج: التقدم الذي يريده في ظرف معين، وظيفياً وعاطفياً واجتماعياً. — Understands why a customer 'hires' a product: the progress wanted in a circumstance, functional, emotional and social."
+    },
+    {
+      "id": "ASTRAT-59",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Positioning as context (Obviously Awesome canvas)",
+      "name_ar": "التموضع: السياق قبل الرسالة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3435-strategy-growth/14106-obviously-awesome"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد الفئة والبدائل والصفات الفريدة والقيمة والعميل الأنسب قبل كتابة أي رسالة تسويقية. — Defines category, alternatives, unique attributes, value and best-fit customer before writing any marketing message."
+    },
+    {
+      "id": "ASTRAT-60",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Conversion optimisation: discover, do not guess",
+      "name_ar": "تحسين التحويل: اكتشف ولا تخمّن",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3430-marketing-cro/14069-cro-methodology"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يبحث عن أسباب عدم تحويل الزوار (من هم، ما الذي يعيقهم، ما اعتراضاتهم) قبل أي اختبار A/B. — Researches why visitors do not convert (who they are, what blocks them, what objections stop them) before any A/B test."
+    },
+    {
+      "id": "ASTRAT-61",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "SEO, answer-engine and generative-engine visibility",
+      "name_ar": "تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/99-seo-aeo-geo/208-seo-aeo-geo"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحسّن ظهور المحتوى في محركات البحث وفي إجابات المساعدات الذكية، مستنداً إلى أبحاث حديثة لا إلى الموروث. — Improves visibility in search engines and AI assistant answers, grounded in current research rather than folklore."
+    },
+    {
+      "id": "ASTRAT-62",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Subtractive design review from the customer backwards",
+      "name_ar": "مراجعة تصميم بأسلوب الطرح حتى الجوهر",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14123-steve-jobs-design-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يراجع المنتج من تجربة العميل إلى التقنية، ويحذف حتى يصبح الحذف التالي كاسراً للمنتج. — Reviews a product from the customer experience back to the technology, subtracting until one more removal would break it."
     },
     {
       "id": "SYNC-01",

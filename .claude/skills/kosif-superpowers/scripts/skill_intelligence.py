@@ -556,7 +556,7 @@ def asset_libraries(task: str) -> list:
     return out
 VERIFY_TERMS = {
     "video": "verify video delivery gate ffprobe loudness frames qa", "audio": "loudness lufs verify audio qa",
-    "code": "tests test suite regression unit coverage test-driven pytest unittest code review",
+    "code": "tests test suite regression unit coverage test-driven pytest unittest code review evals",
     "reverse": "evidence originality tests golden parity",
     "image": "contrast legibility wcag golden still typography font qa", "3d": "frames verify render check",
     "data": "validation check numbers reconcile agreement anchor totals source tie-out",

@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** إدارة المنتج والتسويق وSEO والمبيعات والمال والتوظيف والتعليم كما تصفها مهارات أطلس. — Product management, marketing/SEO, sales, finance, hiring and teaching methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **57 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 57 · 💡 0.
+> **62 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 62 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المنتج والمال — Product & finance · **البادئة / prefix:** `ASTRAT` · **البيانات / data:** `data/powers/atlas-strategy.json` · **بحث / search:** `python3 scripts/powers.py family atlas-strategy`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -17,7 +17,7 @@
 - **واجهات API والخلفية — APIs, backends & auth** — ASTRAT-07 … ASTRAT-09 (3)
 - **بناء التطبيقات — App building, SaaS & product engineering** — ASTRAT-10 … ASTRAT-12 (3)
 - **البلوكتشين — Blockchain & web3** — ASTRAT-13 (1)
-- **الأعمال والمال — Business, finance & legal** — ASTRAT-14 … ASTRAT-22 (9)
+- **الأعمال والمال — Business, finance & legal** — ASTRAT-14 … ASTRAT-62 (14)
 - **تحليل البيانات — Data analysis & statistics** — ASTRAT-23 … ASTRAT-29 (7)
 - **هندسة البيانات — Data engineering & pipelines** — ASTRAT-30 (1)
 - **قواعد البيانات — Databases & storage** — ASTRAT-31 (1)
@@ -222,6 +222,46 @@
 - **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills` · `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): pm-product-strategy/business-model (#11653); pm-execution/strategy-red-team (#11616) · theme business-finance · 7 supporting skills · verifier read: skills/, skills/
+
+#### ASTRAT-58 · الوظائف المطلوب إنجازها بأبعادها الثلاثة · Jobs to Be Done with all three dimensions · 📄 موصوف / documented only
+- **ماذا / what:** يفهم سبب «توظيف» العميل للمنتج: التقدم الذي يريده في ظرف معين، وظيفياً وعاطفياً واجتماعياً. — Understands why a customer 'hires' a product: the progress wanted in a circumstance, functional, emotional and social.
+- **متى أستخدمها / when:** لماذا يشتري العميل، احتياج العميل، JTBD / why customers buy, jobs to be done, customer needs
+- **كيف / how:** 1) Define the job as progress in specific circumstances, not a goal or a solution; demographics do not define it. 2) Capture all three dimensions: functional (what to get done), emotional (how to feel), social (how to be seen). 3) Map hiring and firing: what they used before and why they switched. 4) Interview about past behaviour, not opinions about your idea (Mom Test). 5) Score seven diagnostic rows plus depth points.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3433-product-strategy/14093-jobs-to-be-done`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): product-strategy/jobs-to-be-done (#14093) · theme product-management · 1 supporting skills · SKILL.md read in full as inert text: skills/3433-product-strategy/14093-jobs-to-be-done
+
+#### ASTRAT-59 · التموضع: السياق قبل الرسالة · Positioning as context (Obviously Awesome canvas) · 📄 موصوف / documented only
+- **ماذا / what:** يحدد الفئة والبدائل والصفات الفريدة والقيمة والعميل الأنسب قبل كتابة أي رسالة تسويقية. — Defines category, alternatives, unique attributes, value and best-fit customer before writing any marketing message.
+- **متى أستخدمها / when:** تموضع المنتج، كيف نميز منتجنا، المنافسين / product positioning, differentiation, competitors
+- **كيف / how:** 1) List the real competitive alternatives customers would use instead (including spreadsheets or doing nothing). 2) Extract attributes only you have. 3) Translate attributes into value with proof. 4) Identify who cares most about that value. 5) Choose the market category that makes the value obvious. 6) Only then write messaging. 7) Score 0-10: 7-8 when all components are defined and the team agrees.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3435-strategy-growth/14106-obviously-awesome`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): strategy-growth/obviously-awesome (#14106) · theme product-management · 2 supporting skills · SKILL.md read in full as inert text: skills/3435-strategy-growth/14106-obviously-awesome
+
+#### ASTRAT-60 · تحسين التحويل: اكتشف ولا تخمّن · Conversion optimisation: discover, do not guess · 📄 موصوف / documented only
+- **ماذا / what:** يبحث عن أسباب عدم تحويل الزوار (من هم، ما الذي يعيقهم، ما اعتراضاتهم) قبل أي اختبار A/B. — Researches why visitors do not convert (who they are, what blocks them, what objections stop them) before any A/B test.
+- **متى أستخدمها / when:** الصفحة لا تبيع، تحسين التحويل، صفحة هبوط / landing page not converting, CRO, A/B test
+- **كيف / how:** 1) Define the success metric tied to business KPIs first. 2) Map the funnel to find high-traffic underperforming paths and missing stages. 3) Research visitors on three axes: who they are, UX blockers, objections (surveys, recordings, analytics). 4) Turn findings into hypotheses, prioritise, and test one change at a time with enough traffic. 5) Scale wins across pages; record losses too. **أرقام / params:** metric
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3430-marketing-cro/14069-cro-methodology`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): marketing-cro/cro-methodology (#14069) · theme marketing-seo · 1 supporting skills · SKILL.md read in full as inert text: skills/3430-marketing-cro/14069-cro-methodology
+
+#### ASTRAT-61 · تحسين الظهور في البحث ومحركات الإجابة والذكاء التوليدي · SEO, answer-engine and generative-engine visibility · 📄 موصوف / documented only
+- **ماذا / what:** يحسّن ظهور المحتوى في محركات البحث وفي إجابات المساعدات الذكية، مستنداً إلى أبحاث حديثة لا إلى الموروث. — Improves visibility in search engines and AI assistant answers, grounded in current research rather than folklore.
+- **متى أستخدمها / when:** سيو، الظهور في جوجل، الظهور في إجابات الذكاء الاصطناعي / SEO, AEO, GEO, AI search visibility
+- **كيف / how:** 1) Pull current research first; treat vendor-blog insights as lower trust than the durable model and weigh each on provenance. 2) Write answer-first sections that state the fact in the first sentence, with clear headings matching real questions. 3) Use structured data and clean entities so engines can cite you. 4) Earn mentions on sources assistants already cite. 5) Measure with search console data and citation checks, not guesses.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/99-seo-aeo-geo/208-seo-aeo-geo`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): seo-aeo-geo/seo-aeo-geo (#208) · theme marketing-seo · 1 supporting skills · SKILL.md read in full as inert text: skills/99-seo-aeo-geo/208-seo-aeo-geo
+
+#### ASTRAT-62 · مراجعة تصميم بأسلوب الطرح حتى الجوهر · Subtractive design review from the customer backwards · 📄 موصوف / documented only
+- **ماذا / what:** يراجع المنتج من تجربة العميل إلى التقنية، ويحذف حتى يصبح الحذف التالي كاسراً للمنتج. — Reviews a product from the customer experience back to the technology, subtracting until one more removal would break it.
+- **متى أستخدمها / when:** راجع تصميم منتجي، بسّط المنتج / design review, simplify product, product critique
+- **كيف / how:** 1) Start from what the customer sees, feels and does, then work back to the technology. 2) Remove elements until removing one more breaks the product; prefer one good default over a setting. 3) Count steps to value and cut them. 4) If it needs explaining, redesign it. 5) Score seven diagnostic rows: 7/7 = 10, 6/7 = 9, 5/7 = 7, 4/7 = 6.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3438-ux-design/14123-steve-jobs-design-review`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): ux-design/steve-jobs-design-review (#14123) · theme verification-review · 1 supporting skills · SKILL.md read in full as inert text: skills/3438-ux-design/14123-steve-jobs-design-review
 
 ## تحليل البيانات — Data analysis & statistics
 
@@ -534,7 +574,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (42) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under mixed MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (47) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (6) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (3) · method paraphrased from Atlas skills under check per-plugin; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0 / MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under mixed MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
