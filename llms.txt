@@ -1,6 +1,6 @@
 # KOSIF TOOL — Claude superpowers and Arabic-first motion-graphics atlas
 
-> A Claude Code skill that tells Claude what it can really do: 5,490 powers in 62 families and 10 domains, each with an evidence badge (930 proven by real runs), the requirements to run it, 145 runnable tools, executable thinking tools, and a 289-style motion-graphics atlas.
+> A Claude Code skill that tells Claude what it can really do: 5,512 powers in 62 families and 10 domains, each with an evidence badge (933 proven by real runs), the requirements to run it, 148 runnable tools, executable thinking tools, and a 289-style motion-graphics atlas.
 
 Start with CAPABILITIES.md, then the skill's SKILL.md. Inside Claude Code run `python3 .claude/skills/kosif-superpowers/scripts/boot.py`, then `python3 .claude/skills/kosif-superpowers/scripts/hub.py find "<task>"` (tools to run + powers + guides in one answer).
 

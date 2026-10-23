@@ -2121,6 +2121,28 @@
    }
   },
   {
+   "id": 99,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "نفّذ بأقصى قوة: اعمل مجلس من 100 شخصية يناقش خطة إطلاق منتجي",
+   "files": [],
+   "expected_behavior": [
+    "Runs think.py pro --depth max and council.py plan --seats 15 (or --full only because the user asked for 100), names the seated personas and their lanes",
+    "Runs members as real agents or labels the verdict COUNCIL_SIMULATED; never claims 100 experts ran without a verdict.json saying so"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "expect_domain": "build",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
    "id": 100,
    "lang": "ar",
    "domain": "build",
@@ -2138,6 +2160,93 @@
      "TOOL"
     ],
     "expect_domain": "build",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 101,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "عايز صورة لمكتبتي بأسلوب زليج النجوم، ابعت لي البرومنت ووصف الأسلوب",
+   "files": [],
+   "expected_behavior": [
+    "Runs scripts/style_library.py describe and prompt for KS-001 (Zellige Starfield) and returns the filled prompt",
+    "Says the KS styles are original descriptions with procedural swatches, not finished artwork, and asks before any paid image generation"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "PROMPT"
+    ],
+    "top_k": 8
+   }
+  },
+  {
+   "id": 151,
+   "lang": "ar",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "افحص البرومبت ده وقولي ناقصه إيه وإزاي أخليه دقيق جدًا",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names prompt_lab.py lint/refine for the prompt's kind and reports the score, band and missing slots",
+    "Says the score is a text proxy and that eval on real outputs proves an improvement"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "PROMPT"
+    ],
+    "expect_domain": "craft",
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 152,
+   "lang": "en",
+   "domain": "craft",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "is my new system prompt actually better than the old one? I have outputs from both",
+   "files": [],
+   "expected_behavior": [
+    "Uses prompt_lab.py eval with a baseline and keeps the new prompt only with a gain and no regression",
+    "Uses the order-swapped pairwise judge for qualities no assertion measures"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL",
+     "PROMPT"
+    ],
+    "top_k": 8,
+    "motion_output": false
+   }
+  },
+  {
+   "id": 153,
+   "lang": "ar",
+   "domain": "research",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "وريني أشهر مستودعات جيت هاب اللي ليها علاقة بالوكلاء وإيه اللي اتنقل منها",
+   "files": [],
+   "expected_behavior": [
+    "Runs or names github_top_repos.py find/show and reports decisions, licences and transferred ids",
+    "Says the top 1,000 is a merged ranking, not a census of GitHub"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
     "top_k": 8,
     "motion_output": false
    }

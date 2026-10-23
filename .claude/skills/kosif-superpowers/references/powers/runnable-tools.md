@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **67 powers follow** — ✅ 57 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **70 powers follow** — ✅ 60 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -14,7 +14,7 @@
 ## الفهرس / contents
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-34 (10)
-- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-66 (4)
+- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-69 (6)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-64 (9)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-35 (7)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-26 (2)
@@ -22,7 +22,7 @@
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-67 (6)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-60 (6)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-41 (6)
-- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-61 (2)
+- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-70 (3)
 - **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-51 (9)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
@@ -148,6 +148,23 @@
 - **كيف / how:** search: `python3 scripts/book_methods.py search "شخصية حوار"`; rest: `python3 scripts/book_methods.py rest --problem "إعلان لمقهى" --seed 7`; bayes: `python3 scripts/book_methods.py bayes --h fraud=0.01 --h ok=0.99 --e "flag:fraud=0.9,ok=0.05"`; clarity: `python3 scripts/book_methods.py clarity "صورة جميلة لشخص"`. Full card: `python3 scripts/hub.py tool book-methods`. Limits: Methods are summaries, not the books; clarity is a word-list heuristic; ledger is a draft check, not posting or an audit opinion; persona is for fiction and tone only. **أرقام / params:** in: data/book_methods.json; a problem, hypotheses, a prompt, journal entries JSON or Big Five scores · out: JSON to stdout
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_book_methods.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/book_methods.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-68 · مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يخطط لمجلس من خمسة أعضاء متعارضين (المبتكر، محامي الشيطان، المهندس العملي، صوت الجمهور، الحارس)، لكل منهم مسار أدلة مختلف وتخصص حسب مخرج الطلب، ويكتب مطالبة كل عضو في كل جولة (مواقف مستقلة، استجواب متبادل، تصويت بالدرجات)، ويتحقق من كل رد ويبصمه ويرفض الأسرار، ثم يحسب حكمًا بطريقة بوردا مع الرأي المخالف والتحذيرات وإيصال SHA-256. لا يستدعي أي نموذج: Claude يشغّل الأعضاء وكلاء منفصلين، أو يسميهم COUNCIL_SIMULATED. ومع --seats N (من 5 إلى 15) يُجلس مجلسًا مناسبًا للطلب بحتمية من data/council_100.json: مئة شخصية فريدة مخترعة، عشرون لكل مسار أدلة، لكل منها وصف مفصل وثلاث قدرات خارقة وثلاثة أسئلة توقيع ونقطة عمياء معلنة والدليل الذي تطلبه وخصم مقابل؛ و--personas يختارها بالمعرّف، و--full يُجلس المئة بطلب صريح، والمجالس فوق تسعة ترى ملخص ردود الآخرين، والأمر personas يعرض القائمة ويبحث فيها ويعرض بطاقة. — Plans a five-member adversarial council for a request (Visionary, Skeptic, Builder, Audience, Guardian, each with its own evidence lane and a specialisation from the brief's deliverable), writes every member's prompt for each round (independent positions, cross-examination, scored vote), validates and fingerprints each answer, refuses secrets, and computes a Borda verdict with recorded dissent, warnings and a SHA-256 receipt. It never calls a model: Claude runs the members as separate agents, or labels them COUNCIL_SIMULATED. With --seats N (5-15) it seats a deterministic, task-fitted council from data/council_100.json: 100 unique invented personas, 20 per evidence lane, each with a detailed character, three superpowers, three signature questions, a declared blind spot, the evidence it demands and a counterpart; --personas picks them by id, --full seats all 100 on explicit request, councils above nine see a digest of the other answers, and the personas command lists, searches or shows the roster.
+- **متى أستخدمها / when:** اعمل مجلس خمسة يتناقشوا في الفكرة دي قبل ما تقرر / Run a five-member adversarial council on these three plans
+- **كيف / how:** plan: `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C`; plan --seats: `python3 scripts/council.py plan "اعمل ريلز موشن عربي" --dir out/demo/council9 --seats 9 --no-roster`; prompts: `python3 scripts/council.py prompts --dir out/demo/council --round 1`; ingest: `python3 scripts/council.py ingest --dir out/demo/council --round 1 --member M1 --file m1.json`. Full card: `python3 scripts/hub.py tool council`. Limits: The council's quality depends on the members Claude runs; the script checks structure, evidence fields and votes, not whether an argument is correct, and a council without separate agents is only COUNCIL_SIMULATED. The 100 personas are invented stance prompts selected by keyword relevance; they add perspectives, not verified expertise, and a full 100-member council is 300 answers. **أرقام / params:** in: A request in the user's words, an optional USIP brief.json (options = its plans), and per-member JSON answers. · out: council.json, prompts_r1..3.json, verdict.json and minutes.md in the --dir folder; JSON on stdout; exit 2 with one line on stderr on any refusal.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-69 · محرك التفكير وقوالبه · Thinking engine scaffolds · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغات الضعيفة في المسودة. وأضاف USIP v5.4 أربع أدوات استدلال: ترتيب ثمانية أنماط استدلال للمهمة، وتحديث الاعتقاد بنسب الأرجحية مع اختبار حساسية بالتنصيف والمضاعفة، وحكم استمر/حوّل/أوقف/انتظر من عتبات مكتوبة مسبقًا، ودفتر ادعاء ← دليل للمسودة. وأضاف USIP v5.5 أربعة قوالب ذكاء: كشف نوع مخرج الطلب وتصنيف خاناته إلى مملوءة ومفترضة ومسؤولة (بميزانية أسئلة المستوى) وحاجبة، وفحص رسم المهام وحساب ترتيبه ومساره الحرج المتفائل والمتشائم وأبوابه التي لا رجعة فيها، ومعايير الجودة لاثني عشر نوع مخرج مع حكم ناجح/فاشل/ناقص من الإجابات، وسلم التعافي لكل صنف خطأ في FusionForge بميزانية محاولات. وأمر pro يطبع 4 أو 8 أو 12 طبقة ذكاء (قياسي، عميق، أقصى)، لكل طبقة سؤال ومخرج يُكتب واختبار إبطال يفرض الإعادة، ومعها مجلس مناسب من 5 أو 9 أو 15 شخصية ونمطا استدلال وثلاثة نماذج ذهنية. — Turns thinking procedures into checkable text scaffolds. It picks a reasoning level (L0–L6), writes a task contract, ranks 63 mental models, drafts a backcast plan, builds an idea matrix from catalog powers, scores a weighted decision with sensitivity, runs a Monte-Carlo Fermi estimate and flags weak wording in a draft. USIP v5.4 adds four reasoning tools: it ranks eight reasoning modes for a task, updates a belief by likelihood ratios with a halve/double sensitivity, gives a GO/PIVOT/KILL/HOLD verdict from thresholds written in advance, and builds a claim-to-evidence ledger for a draft. USIP v5.5 adds four intelligence scaffolds: it detects a request's deliverable kind and sorts its slots into filled, assumed, asked (within the level's question budget) and blocking; checks a task DAG and computes its order, optimistic and pessimistic critical path and one-way doors; prints the quality bar of twelve deliverable kinds and gives PASS, FAIL or INCOMPLETE from answers; and prints the recovery ladder for a FusionForge error class with an attempt budget. The Pro pass prints 4, 8 or 12 intelligence passes (standard, deep, max), each with a question, the artifact to write and a falsifier that forces a redo, plus a task-fitted council of 5, 9 or 15 personas, two reasoning modes and three mental models.
+- **متى أستخدمها / when:** فكّر بعمق في المهمة دي قبل ما تبدأ / Which option should I choose? Run a weighted decision with sensitivity
+- **كيف / how:** ladder: `python3 scripts/think.py ladder "design a 30-day plan for a course launch"`; frame: `python3 scripts/think.py frame "a 15 s reel at 30 fps"`; models: `python3 scripts/think.py models "pricing a new subscription" -n 3 --json`; plan: `python3 scripts/think.py plan "launch the course" --weeks 6`. Full card: `python3 scripts/hub.py tool think`. Limits: It produces templates and keyword-based rankings to think with; the blanks (…) still have to be filled and tested, it does not reason about or verify claims by itself, and critic is a plain regex sweep that misses Arabic words written with tanween (جدًا، دائمًا). modes ranks by keywords only, and bayes, gate and audit compute exactly what they are given: the priors, ratios, thresholds and evidence markers are the user's or Claude's judgement. **أرقام / params:** in: A task, problem, goal or seed sentence. decide takes a JSON file {"criteria": {name: weight}, "scores": {option: {criterion: score}}}. fermi takes an arithmetic expression plus --range name=lo:hi for every name. critic takes a text or Markdown file. bayes takes --prior and --lr NAME=RATIO items, or --json spec.json. gate takes a JSON file with go/pivot/kill criteria (name, op, threshold, observed). audit takes a Markdown report. · out: Text templates on stdout (ladder, frame, plan, ideas, and critic flags), or JSON (models --json, modes --json, decide, fermi, bayes, gate). Nothing is written to disk.
+- **تثبيت / install:** `needs on PATH: python3`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/tests/test_think.py` · `kosif-tool/tests/test_think_reasoning.py` · `kosif-tool/tests/test_think_intel.py` · `kosif-tool/tests/test_think_pro.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`
 - **المصدر / source:** data/tools.json
 
 ## Motion graphics and rendering / الموشن والرندر
@@ -539,6 +556,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-70 · مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يجد أي أسلوب من 586 بالرقم أو الاسم العربي أو الإنجليزي أو بكلمات حرة: 86 طريقة معاد صياغتها من أطلس Futurepedia و500 أسلوب أصلي من KOSIF في 20 مجموعة. يطبع بطاقة الأسلوب (الشكل والمنطق والألوان والملمس والتكوين)، ويملأ وصفة البرومنت لموضوعك مع أسلوب ثانٍ بنسبة 30% اختياريًا، ويرسم عينة SVG إجرائية ثابتة، ويبني كتالوجًا مصورًا HTML وPDF. — Looks up any of 586 visual styles by id, English or Arabic name or free words: the 86 paraphrased Futurepedia AI Style Atlas methods and 500 original KOSIF styles in 20 groups (Arabic heritage, world crafts, material fusion, scientific imaging, natural process, architecture, futures, print, optics, textile, edible media, toys, interfaces, cartography, motion and time, sound, folk art, type and calligraphy, generative systems, cinematic genres). Prints a style card (look, logic, palette, texture, composition), fills its prompt recipe for a subject with an optional 30% accent style, draws a deterministic procedural SVG swatch, and builds an illustrated catalog (HTML, and PDF through headless Chromium).
+- **متى أستخدمها / when:** عايز أسلوب زليج النجوم لصورة / Describe the Cyanotype Sunprint style and give me a prompt
+- **كيف / how:** groups: `python3 scripts/style_library.py groups`; find: `python3 scripts/style_library.py find "خط عربي نيون"`; describe: `python3 scripts/style_library.py describe KS-001`; prompt: `python3 scripts/style_library.py prompt KS-001 --subject "a reading corner" --mix FA-12`. Full card: `python3 scripts/hub.py tool style-library`. Limits: Swatches are procedural sketches of a style's palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a real film or image. For a finished frame, feed the prompt to an image tool you choose, or build the scene with the motion engines. **أرقام / params:** in: data/style_library_500.json, data/futurepedia_style_atlas_86.json, a style name or words, a subject · out: Style cards, filled prompts, SVG swatches, an illustrated HTML catalog and PDF
+- **تثبيت / install:** `optional: node + playwright (Chromium) for catalog --pdf`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/style_library.py`
+- **المصدر / source:** data/tools.json
+
 ## Sources and references / المصادر والمراجع
 
 #### TOOL-43 · بحث مهارات أطلس الخارجية · Atlas external skill search · ✅ مُثبت هنا / proven here
@@ -631,7 +657,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (67)
+- الرخص / licences: — (70)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

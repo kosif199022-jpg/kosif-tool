@@ -3,20 +3,21 @@
 
 > **قوتك هنا / what this gives you:** كتابة البرومبت وتحسينه واختباره لنماذج النص والصورة والفيديو. — Write, improve and test prompts for text, image and video models.
 > **أقوى دليل / strongest evidence:** **PROMPT-02** Preservation ledger with an automatic check (`kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md`)
-> **22 powers follow** — ✅ 1 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 21 · 💡 0.
+> **41 powers follow** — ✅ 1 · 🟢 8 · 📦 0 · 🔑 0 · 👁 0 · 📄 32 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** الكتابة واللغة — Writing & language · **البادئة / prefix:** `PROMPT` · **البيانات / data:** `data/powers/prompt-craft.json` · **بحث / search:** `python3 scripts/powers.py family prompt-craft`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [hubs.md](../hubs.md) · [prompt-optimizer.md](../prompt-optimizer.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [creativity.md](../creativity.md) · [github-top-1000.md](../github-top-1000.md) · [hubs.md](../hubs.md) · [owned-repos-map.md](../owned-repos-map.md) · [prompt-optimizer.md](../prompt-optimizer.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 
 - **التوجيه والحفظ — Route and preserve** — PROMPT-01 … PROMPT-16 (3)
 - **بناء البرومبت — Building the prompt** — PROMPT-03 … PROMPT-20 (7)
 - **محوّلات الأهداف — Target adapters** — PROMPT-06 … PROMPT-11 (6)
-- **الفحص والإثبات — Check and prove** — PROMPT-13 … PROMPT-22 (6)
+- **الفحص والإثبات — Check and prove** — PROMPT-13 … PROMPT-25 (9)
+- **أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)** — PROMPT-26 … PROMPT-41 (16)
 - المصادر والرخص / sources & licences
 
 ## التوجيه والحفظ — Route and preserve
@@ -189,9 +190,175 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** https://code.claude.com/docs/en/skills (paraphrased); https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices (paraphrased)
 
+#### PROMPT-23 · اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا · Ask for any visual style by name from a 586-style library · 🟢 جاهز / ready
+- **ماذا / what:** مكتبة أساليب بصرية: 86 طريقة من أطلس Futurepedia معاد صياغتها و500 أسلوب أصلي في 20 مجموعة، لكل أسلوب شكل ومنطق وألوان وملمس وتكوين ووصفة برومنت. — A visual style library: 86 paraphrased Futurepedia methods plus 500 original styles in 20 groups, each with look, logic, palette, texture, composition and a prompt recipe.
+- **متى أستخدمها / when:** عايز صورة أو مشهد بأسلوب معيّن، أو تدوّر على أسلوب بالاسم أو بالوصف / A request names a visual style or asks which style fits a subject.
+- **كيف / how:** python3 scripts/style_library.py find "<words>" → describe <KS-NNN|FA-NN|name> → prompt <id> --subject "<subject>". Treat the card as an art brief: keep the medium's surface, palette and composition on every frame, and change only the subject. The KS styles are descriptions, not produced films; say so when you hand one over.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- **المصدر / source:** KOSIF original library (data/style_library_500.json); 86 methods paraphrased from https://www.futurepedia.io/resources/ai-style-atlas/view
+
+#### PROMPT-24 · دمج أسلوبين 70/30 في برومنت واحد · Fuse two styles 70/30 in one prompt · 🟢 جاهز / ready
+- **ماذا / what:** أسلوب أساسي يحكم الخامة والتكوين، وأسلوب ثانٍ يضيف لمسة لون أو عنصر بنسبة 30% فقط. — One base style owns the medium and composition; a second adds about 30% accent (a colour or one motif), never more.
+- **متى أستخدمها / when:** عايز تمزج أسلوبين أو أسلوب بلمسة من غيره / Mixing two looks without losing either one's identity.
+- **كيف / how:** python3 scripts/style_library.py prompt <base> --subject "…" --mix <accent>. Keep the base's surface and finishing on every frame; take from the accent only its first look cue and one palette colour. A 50/50 mix usually reads as neither.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- **المصدر / source:** KOSIF original method (extends the 85/15 fusion of style_atlas_bridge.py plan)
+
+#### PROMPT-25 · كتالوج أساليب مصوّر PDF بعينات مولّدة · Illustrated style catalog PDF with generated swatches · 🟢 جاهز / ready
+- **ماذا / what:** كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group.
+- **متى أستخدمها / when:** عايز تشوف الأساليب كلها وتختار منها، أو ملف PDF للأساليب / Someone wants to browse and pick styles visually.
+- **كيف / how:** python3 scripts/style_library.py catalog --out <new dir> --pdf <file.pdf> [--split-groups]. Needs node + Playwright Chromium; without them the HTML catalog with SVG swatches still works. Swatches show palette, texture and composition only; never present them as finished artwork.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- **المصدر / source:** KOSIF original tool
+
+## أكبر مستودعات GitHub — Top GitHub repositories (2026-10-23)
+
+#### PROMPT-26 · برومبت يبدأ بالتوقيع · Signature-first prompt · 📄 موصوف / documented only
+- **ماذا / what:** اكتب أولًا الحقول الداخلة والخارجة بأسمائها وأنواعها وجملة قصد واحدة، ثم النثر. — Declare the named input and output fields with types and a one-line intent before any prose.
+- **متى أستخدمها / when:** برومبت يتكرر استعماله أو يغذي كودًا / a prompt that is reused or feeds code
+- **كيف / how:** Write `question: str, context: list[str] -> answer: str, citations: list[int]` plus one sentence of intent; every output field gets a type and a check (schema, regex, range). The prose only explains what the types cannot. Swapping models then means re-testing the same signature, not rewriting the prompt. Pairs with PROMPT-27 and PROMPT-36.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/stanfordnlp/dspy (MIT; signatures and modules) — method restated in our own words; data/github_top1000.json
+
+#### PROMPT-27 · تجميع البرومبت بمقياس · Metric-compiled few-shot · 📄 موصوف / documented only
+- **ماذا / what:** عرّف مقياس نجاح ومجموعة صغيرة معلَّمة، وجرّب صيغًا مرشحة، واحتفظ بالأمثلة المأخوذة من المحاولات الناجحة فقط. — Define a pass metric and a small labelled set, try candidate prompts, and keep only examples harvested from passing runs.
+- **متى أستخدمها / when:** برومبت ستُشغّله مئات المرات / a prompt that will run hundreds of times
+- **كيف / how:** 1 write the metric as code (exact match, schema, test); 2 split cases into train and a held-out set; 3 run the base prompt on train, keep the input/output pairs that pass as candidate demonstrations; 4 build 3-5 variants with different demonstration sets or instructions; 5 score every variant on the held-out set with `prompt_lab.py eval --baseline`; 6 ship the winner only if it beats the baseline with no regressions. Never tune on the held-out cases.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/stanfordnlp/dspy (MIT; optimizers that bootstrap demonstrations) — method restated in our own words
+
+#### PROMPT-28 · اختيار التقنية حسب نوع الفشل · Technique picker by failure mode · 📄 موصوف / documented only
+- **ماذا / what:** لا تضف تقنية لأنها مشهورة؛ شخّص الفشل أولًا ثم اختر التقنية التي تعالجه. — Diagnose the failure first, then add only the technique that treats it.
+- **متى أستخدمها / when:** برومبت يفشل ولا تعرف ماذا تضيف / a prompt fails and you do not know what to add
+- **كيف / how:** Wrong format → schema or 2-3 examples (PROMPT-36). Arithmetic or counting errors → program-aided answer (PROMPT-30). Different answers on reruns → self-consistency vote (PROMPT-29). Missing or invented facts → retrieval with cited passages, or ask the model to list what it knows first. Loses track in long tasks → prompt chaining: split into steps with a handoff format. Needs to explore alternatives → generate several plans, score, expand the best (tree of thoughts). Needs live data or actions → reason-act loop with tools (ReAct). Repeats the same mistake across attempts → write a lesson and retry (PROMPT-31). Log the diagnosis with the change so the eval can confirm it.
+- **يحتاج / needs:** [`npm:react`](../requirements.md#req-npm-react) · [`pip:chromadb`](../requirements.md#req-pip-chromadb)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; techniques chapter, promptingguide.ai/techniques read 2026-10-23) — catalogue regrouped by failure mode in our own words
+
+#### PROMPT-29 · تصويت الاتساق الذاتي · Self-consistency vote · 📄 موصوف / documented only
+- **ماذا / what:** اطلب عدة إجابات مستقلة ثم خذ الأغلبية على الإجابة النهائية فقط، وأبلغ بنسبة الاتفاق. — Sample several independent answers, take the majority on the final answer only, and report the agreement ratio.
+- **متى أستخدمها / when:** سؤال له إجابة واحدة صحيحة والنموذج يتذبذب / a question with one right answer where the model wavers
+- **كيف / how:** Run the same prompt 5 times (temperature above 0, or 5 differently worded prompts); extract only the final answer with a fixed format; majority wins; agreement below 3/5 is reported as uncertain instead of hidden. Costs 5x: use it for decisions, not prose. The order-swapped judge (PROMPT-41) is the pairwise version.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; self-consistency) — restated in our own words
+
+#### PROMPT-30 · الإجابة عبر برنامج · Program-aided answer · 📄 موصوف / documented only
+- **ماذا / what:** اجعل النموذج يكتب كودًا للحساب، ثم شغّله، وابنِ الإجابة من الناتج لا من الحساب الذهني. — Have the model write code for the computation, run it, and answer from the output, not from mental arithmetic.
+- **متى أستخدمها / when:** أرقام، تواريخ، عدّ، تحويل وحدات، مدد فيديو / numbers, dates, counting, unit conversion, video durations
+- **كيف / how:** Prompt: 'write a Python function that computes X from these inputs; print only the result'. Run it in a sandbox, then answer quoting the printed value. This is the prompt-side form of the numeric locks in references/protocol/A6-evidence-security-numbers.md: a number in the deliverable must come from a run.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; program-aided language models) — restated in our own words
+
+#### PROMPT-31 · ذاكرة الدروس بعد الفشل · Reflexion lesson memory · 📄 موصوف / documented only
+- **ماذا / what:** بعد كل محاولة فاشلة اكتب درسًا من سطر واحد (السبب ← القاعدة) وضعه قبل المحاولة التالية. — After each failed attempt write a one-line lesson (cause → rule) and put it in front of the next attempt.
+- **متى أستخدمها / when:** مهمة تُعاد عدة مرات أو وكيل يكرر نفس الخطأ / a task retried several times or an agent repeating a mistake
+- **كيف / how:** Lesson format: 'Failed because <observed cause>; next time <specific rule>'. Keep at most 5 lessons, newest first, and drop a lesson once a run passes without it. Lessons are evidence-backed (the failing output is cited). In this skill the durable store is `fusionforge.py lessons`; never store secrets or client data in a lesson.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; Reflexion) — restated in our own words; FusionForge lessons in scripts/fusionforge.py
+
+#### PROMPT-32 · ملف نمط بأقسام ثابتة · Pattern file with fixed sections · 📄 موصوف / documented only
+- **ماذا / what:** احفظ كل برومبت متكرر كملف نمط له أقسام ثابتة، مهمة واحدة لكل نمط، وركّب الأنماط بالتسلسل. — Save each recurring prompt as a pattern file with fixed sections, one job per pattern, and compose patterns in sequence.
+- **متى أستخدمها / when:** مكتبة برومبتات شخصية أو لفريق / a personal or team prompt library
+- **كيف / how:** Sections in this order: IDENTITY AND PURPOSE (who and why, two sentences), STEPS (numbered actions), OUTPUT INSTRUCTIONS (format, length, what to omit), INPUT (left empty, filled at run time). Name patterns verb_object (extract_claims, summarize_meeting, write_caption_ar). Chain them: the output format of one is the input of the next, and each link is checked (`prompt_lab.py lint --kind writing`).
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/danielmiessler/Fabric (MIT; pattern structure) — method restated in our own words, no pattern text copied
+
+#### PROMPT-33 · ترتيب يناسب التخزين المؤقت · Cache-friendly prompt layout · 📄 موصوف / documented only
+- **ماذا / what:** ضع الثابت أولًا (النظام، الأدوات، المستندات، الأمثلة) والمتغير أخيرًا (طلب المستخدم)، فتقل التكلفة والزمن. — Put stable content first (system, tools, documents, examples) and volatile content last (the user turn) so caching cuts cost and latency.
+- **متى أستخدمها / when:** برومبت طويل يُرسل مرارًا بنفس المستندات / a long prompt sent repeatedly with the same documents
+- **كيف / how:** Never put a timestamp, request id or user name at the top; they break the cached prefix. Long documents go before the question (also better for quality). Keep tool definitions in a stable order. Measure: cached-token counts in the API usage fields before and after the change.
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/anthropics/anthropic-cookbook (MIT; prompt caching and long-context recipes) — restated in our own words
+
+#### PROMPT-34 · مصفوفة تقييم بالتأكيدات · Assertion matrix eval · 🟢 جاهز / ready
+- **ماذا / what:** اختبر كل نسخة برومبت على نفس الحالات بتأكيدات حتمية (يحتوي، تعبير نمطي، JSON، طول) واحتفظ بالجديدة فقط إن فازت بلا تراجع. — Test every prompt variant on the same cases with deterministic assertions and keep the new one only if it wins with no regression.
+- **متى أستخدمها / when:** قبل أن تقول إن البرومبت الجديد أفضل / before claiming a new prompt is better
+- **كيف / how:** cases.json: [{id, input, assert:[{type: contains|icontains|not-contains|regex|not-regex|starts-with|max-chars|min-chars|is-json|json-keys|equals, value}]}]; outputs.json: {variant: {case_id: text}} saved from real runs. `python3 scripts/prompt_lab.py eval --cases cases.json --outputs outputs.json --baseline A` prints the pass table and keep=true only when gain > 0 and no case the baseline passed now fails. Rubric-only qualities go to an LLM judge (PROMPT-41).
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py`
+- **المصدر / source:** https://github.com/promptfoo/promptfoo (MIT; declarative test cases with assertions; outside the top 1,000) — idea restated, our own code in scripts/prompt_lab.py
+
+#### PROMPT-35 · قالب صورة بمتغيرات وأقفال · Parameterized image prompt template · 🟢 جاهز / ready
+- **ماذا / what:** اكتب برومبت الصور كقالب بخانات مسماة وسطر قفل ثابت لكل السلسلة، وغيّر محورًا واحدًا لكل نسخة. — Write image prompts as a template with named slots and one lock line repeated across the series, changing one axis per variant.
+- **متى أستخدمها / when:** سلسلة صور أو شخصية ثابتة عبر مشاهد / an image series or a character that must stay consistent
+- **كيف / how:** `python3 scripts/prompt_lab.py build --kind image --set subject=... --set action=... --set environment=... --set shot=... --set light=... --set style=... --set lock=... --set aspect=9:16 --set negative=...` renders the slots in the PROMPT-10 order; unfilled required slots appear as [[questions]]. Keep the lock text byte-identical across the series; vary only the named axis (pose, time of day, framing) and record it in the pack (prompt_pack.py).
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py`
+- **المصدر / source:** https://github.com/freestylefly/awesome-gpt-image-2 (MIT; 'prompt as code' templates) — idea restated, no template text copied
+
+#### PROMPT-36 · مخرجات مقيدة مع تحقق وإعادة · Constrained output with validate-and-retry · 📄 موصوف / documented only
+- **ماذا / what:** أعطِ مخططًا، وتحقق من الناتج، وعند الفشل أعد رسالة الخطأ نفسها مرة واحدة، ثم توقف. — Give a schema, validate the output, on failure send the validation error back once, then stop.
+- **متى أستخدمها / when:** ناتج يقرؤه كود (JSON، جدول، أوامر) / output that code will parse
+- **كيف / how:** Use the API's structured-output or tool-input schema when available; otherwise put the JSON schema in the prompt with one valid example. Validate with a real parser; on error send 'Your output failed: <exact error>. Return corrected JSON only.' at most 2 retries, then fail loudly. Valid is not correct: check values separately (ranges, ids that exist).
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/567-labs/instructor (MIT), https://github.com/dottxt-ai/outlines (Apache-2.0), https://github.com/guidance-ai/guidance (MIT) — validate-and-retry idea restated in our own words
+
+#### PROMPT-37 · توسيع البرومبت القصير مع قفل كلمات المستخدم · Short-prompt expansion with locked user words · 📄 موصوف / documented only
+- **ماذا / what:** وسّع وصف المستخدم القصير إلى برومبت كامل، لكن انسخ كلماته حرفيًا كقفل وعلّم كل إضافة. — Expand a short user description into a full prompt, but keep the user's own words verbatim as a lock and mark every addition.
+- **متى أستخدمها / when:** المستخدم كتب سطرًا قصيرًا لمولد صور أو فيديو / the user typed one short line for an image or video generator
+- **كيف / how:** 1 copy the user's words unchanged into the subject/action slots; 2 fill missing slots (shot, light, style, aspect) with defaults and list them as 'added: …' so the user can veto; 3 never add a new subject, brand, person or text; 4 run `prompt_lab.py lint --kind image` and `anchor_gate.py --mode prompt` to prove nothing of the user's was lost. GPL source: idea only, no code.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** GPL-3.0 (idea only)
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/lllyasviel/Fooocus (GPL-3.0; prompt expansion) — referenced, idea restated in our own words, nothing copied
+
+#### PROMPT-38 · برومبت يكتب برومبت ثم يُختبر · Meta-prompting with a test gate · 📄 موصوف / documented only
+- **ماذا / what:** اطلب من النموذج اقتراح عدة صيغ للتعليمات، ثم قيّمها كلها على نفس الحالات، ولا تشحن صيغة لم تُختبر. — Ask the model for several candidate instructions, score them all on the same cases, and never ship an untested one.
+- **متى أستخدمها / when:** لا تعرف أفضل صياغة لمهمة متكررة / you do not know the best wording for a recurring task
+- **كيف / how:** Give the model the task, 5 input/output pairs and the failure you see; ask for 5 distinct instructions (different strategies, not paraphrases). Generate outputs for each on the eval set, score with `prompt_lab.py eval`, keep the best only if it beats the current prompt with no regression (PROMPT-15). Record the losing variants too, so they are not retried.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** MIT
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** https://github.com/dair-ai/Prompt-Engineering-Guide (MIT; meta prompting, automatic prompt engineer) — restated in our own words
+
+#### PROMPT-39 · فحص البرومبت الحتمي · Deterministic prompt lint · 🟢 جاهز / ready
+- **ماذا / what:** يقيس البرومبت على 20 نقطة: وجود الخانات المطلوبة لنوعه، والأنماط الضارة، وبوابات الرفض (سر، طلب سلسلة التفكير، بيانات بلا فواصل). — Scores a prompt out of 20: the slots its kind needs, anti-patterns, and hard gates (a secret, a chain-of-thought request, undelimited pasted data).
+- **متى أستخدمها / when:** قبل تسليم أي برومبت مكتوب لغيرك أو لمولد / before handing over any prompt written for someone else or a generator
+- **كيف / how:** `python3 scripts/prompt_lab.py lint PROMPT.txt --kind system|agent|code|research|writing|judge|image|video [--json]` → score, band (ship ≥16, fix-lowest 12-15, rewrite <12, fail-gate), missing slots and fixes, English and Arabic word lists (vague words: حلو، جامد، شوية، إلخ). `refine` orders the fixes and prints the missing-slot skeleton. Exit 1 on rewrite or a gate. It reads text only; whether the prompt works is proved with eval.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py`
+- **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md §9 (PROMPT-13, PROMPT-14) made runnable in scripts/prompt_lab.py
+
+#### PROMPT-40 · قوالب حسب نوع البرومبت · Prompt templates by kind · 🟢 جاهز / ready
+- **ماذا / what:** ثمانية أنواع (نظام، وكيل، كود، بحث، كتابة، حَكَم، صورة، فيديو) لكل منها خاناته بالترتيب، والخانة الناقصة تظهر سؤالًا لا تخمينًا. — Eight kinds, each with its slots in order; an unfilled slot is shown as a question, never guessed.
+- **متى أستخدمها / when:** كتابة برومبت جديد من الصفر / writing a new prompt from scratch
+- **كيف / how:** `python3 scripts/prompt_lab.py kinds` lists them; `build --kind agent --goal "…" --set tools=… --set stop=…` renders XML-tagged sections for LLM kinds and one ordered line (+ Negative: line) for image and video; `--lang ar` adds the keep-dialect-and-numbers rule. Agent briefs always carry tools, stop conditions and budget slots.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py`
+- **المصدر / source:** kosif-tool/.claude/skills/kosif-superpowers/references/prompt-optimizer.md §4 and §8 (PROMPT-03, -07, -08, -10, -11) made runnable
+
+#### PROMPT-41 · حَكَم مقارن بترتيب معكوس (طريقة Jev) · Order-swapped pairwise judge (Jev method) · 🟢 جاهز / ready
+- **ماذا / what:** قارن ناتجي نسختين مرتين مع عكس الترتيب، ولا تحتسب إلا الحكم المتفق عليه، وأبلغ بحالات انحياز الموضع. — Judge two outputs twice with their order swapped, count only agreeing verdicts, and report position-bias cases.
+- **متى أستخدمها / when:** جودة لا يقيسها تأكيد حتمي (أسلوب، إقناع، وضوح) / quality no deterministic assertion can measure
+- **كيف / how:** `prompt_lab.py pairwise --plan --a A.txt --b B.txt --task "…"` prints the two judge prompts (A first, then B first); record each verdict as the variant named, then `pairwise --verdicts v.json` → winner from agreeing cases only, and stable=false when more than a quarter split. This is how the owner's Jev decision service judges (asked twice in reversed order, probabilities averaged); when its endpoint is configured it can replace the local judge, otherwise any model with a written rubric does.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الرخصة / license:** owner
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/prompt_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_prompt_lab.py`
+- **المصدر / source:** references/owned-repos-map.md (kosif-jev: choice judged twice in reversed order); QA-224, QA-226
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (21) · original (this skill) (1)
+- الرخص / licences: — (24) · MIT (12) · owner (3) · GPL-3.0 (idea only) (1) · original (this skill) (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

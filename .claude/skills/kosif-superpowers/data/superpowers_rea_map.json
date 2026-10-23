@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 95,
+  "evals": 99,
   "families": 62,
   "gaps": {
    "family_without_tool": 21
   },
-  "powers": 5490,
-  "py_edges": 255,
-  "repo_tests": 34,
+  "powers": 5512,
+  "py_edges": 264,
+  "repo_tests": 35,
   "roles": {
    "helper": 2,
-   "registered": 126
+   "registered": 130
   },
-  "scripts": 128,
-  "tools": 144
+  "scripts": 132,
+  "tools": 148
  },
  "families": [
   {
@@ -600,7 +600,7 @@
   {
    "id": "color-palette-grading",
    "powers": 87,
-   "tools": 5
+   "tools": 6
   },
   {
    "id": "creativity-engine",
@@ -640,7 +640,7 @@
   {
    "id": "hand-drawn-draw-on",
    "powers": 63,
-   "tools": 19
+   "tools": 20
   },
   {
    "id": "knowledge-graph",
@@ -699,8 +699,8 @@
   },
   {
    "id": "prompt-craft",
-   "powers": 22,
-   "tools": 3
+   "powers": 41,
+   "tools": 5
   },
   {
    "id": "qa-verification",
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 67,
+   "powers": 70,
    "tools": 0
   },
   {
@@ -720,7 +720,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 33
+   "tools": 34
   },
   {
    "id": "shapes-morph-geometry",
@@ -735,7 +735,7 @@
   {
    "id": "story-direction-ideas",
    "powers": 95,
-   "tools": 11
+   "tools": 12
   },
   {
    "id": "strategy-finance",
@@ -745,7 +745,7 @@
   {
    "id": "texture-material",
    "powers": 96,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "thinking-core",
@@ -775,7 +775,7 @@
   {
    "id": "verification-evals",
    "powers": 35,
-   "tools": 13
+   "tools": 14
   },
   {
    "id": "video-download",
@@ -790,7 +790,7 @@
   {
    "id": "web-research",
    "powers": 24,
-   "tools": 10
+   "tools": 11
   },
   {
    "id": "writing-humanizer",
@@ -885,7 +885,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "67 powers, no tools.json entry lists this family",
+   "detail": "70 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   },
@@ -1183,6 +1183,11 @@
    "from": "creative_reasoning_bridge",
    "kind": "imports",
    "to": "motion_director"
+  },
+  {
+   "from": "drawing_council",
+   "kind": "imports",
+   "to": "drawing_methods"
   },
   {
    "from": "fusionforge",
@@ -1497,6 +1502,11 @@
   {
    "from": "think",
    "kind": "imports",
+   "to": "council"
+  },
+  {
+   "from": "think",
+   "kind": "imports",
    "to": "powers"
   },
   {
@@ -1730,6 +1740,16 @@
    "to": "drawing_academy"
   },
   {
+   "from": "test_drawing_council",
+   "kind": "imports",
+   "to": "drawing_council"
+  },
+  {
+   "from": "test_drawing_council",
+   "kind": "imports",
+   "to": "drawing_methods"
+  },
+  {
    "from": "test_drawing_methods",
    "kind": "imports",
    "to": "drawing_methods"
@@ -1753,6 +1773,16 @@
    "from": "test_fusionforge",
    "kind": "invokes",
    "to": "fusionforge"
+  },
+  {
+   "from": "test_github_top_repos",
+   "kind": "imports",
+   "to": "github_top_repos"
+  },
+  {
+   "from": "test_github_top_repos",
+   "kind": "invokes",
+   "to": "github_top_repos"
   },
   {
    "from": "test_hub",
@@ -1873,6 +1903,16 @@
    "from": "test_perspective_color_lab",
    "kind": "imports",
    "to": "perspective_color_lab"
+  },
+  {
+   "from": "test_prompt_lab",
+   "kind": "imports",
+   "to": "prompt_lab"
+  },
+  {
+   "from": "test_prompt_lab",
+   "kind": "invokes",
+   "to": "prompt_lab"
   },
   {
    "from": "test_prompt_pack",
@@ -2068,6 +2108,11 @@
    "from": "test_style_atlas_bridge",
    "kind": "imports",
    "to": "style_atlas_bridge"
+  },
+  {
+   "from": "test_style_library",
+   "kind": "imports",
+   "to": "style_library"
   },
   {
    "from": "test_superpower_fusion",
@@ -3552,13 +3597,18 @@
   {
    "ci": false,
    "id": "council",
-   "imported_by": [],
+   "imported_by": [
+    "think"
+   ],
    "path": "scripts/council.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-68"
+   ],
    "role": "registered",
    "tests": [
-    "evals/test_council.py"
+    "evals/test_council.py",
+    "tests/test_think_pro.py"
    ],
    "tools": [
     "council"
@@ -3694,13 +3744,31 @@
   },
   {
    "ci": false,
-   "id": "drawing_methods",
+   "id": "drawing_council",
    "imported_by": [],
+   "path": "scripts/drawing_council.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_drawing_council.py"
+   ],
+   "tools": [
+    "drawing-council"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "drawing_methods",
+   "imported_by": [
+    "drawing_council"
+   ],
    "path": "scripts/drawing_methods.py",
    "power_count": 0,
    "powers": [],
    "role": "registered",
    "tests": [
+    "evals/test_drawing_council.py",
     "evals/test_drawing_methods.py"
    ],
    "tools": [
@@ -3804,8 +3872,10 @@
     "fusionforge_shared"
    ],
    "path": "scripts/fusionforge.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "PROMPT-31"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_fusionforge.py",
@@ -3833,6 +3903,21 @@
    ]
   },
   {
+   "ci": false,
+   "id": "github_top_repos",
+   "imported_by": [],
+   "path": "scripts/github_top_repos.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_github_top_repos.py"
+   ],
+   "tools": [
+    "github-top-repos"
+   ]
+  },
+  {
    "ci": true,
    "id": "hub",
    "imported_by": [
@@ -3845,7 +3930,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 67,
+   "power_count": 70,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -4375,6 +4460,27 @@
   },
   {
    "ci": false,
+   "id": "prompt_lab",
+   "imported_by": [],
+   "path": "scripts/prompt_lab.py",
+   "power_count": 5,
+   "powers": [
+    "PROMPT-34",
+    "PROMPT-35",
+    "PROMPT-39",
+    "PROMPT-40",
+    "PROMPT-41"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_prompt_lab.py"
+   ],
+   "tools": [
+    "prompt-lab"
+   ]
+  },
+  {
+   "ci": false,
    "id": "prompt_pack",
    "imported_by": [],
    "path": "scripts/prompt_pack.py",
@@ -4804,6 +4910,26 @@
   },
   {
    "ci": false,
+   "id": "style_library",
+   "imported_by": [],
+   "path": "scripts/style_library.py",
+   "power_count": 4,
+   "powers": [
+    "PROMPT-23",
+    "PROMPT-24",
+    "PROMPT-25",
+    "TOOL-70"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_style_library.py"
+   ],
+   "tools": [
+    "style-library"
+   ]
+  },
+  {
+   "ci": false,
    "id": "superpower_fusion",
    "imported_by": [
     "capability_mindmap",
@@ -4857,6 +4983,7 @@
     "tests/test_superpowers_unified.py",
     "tests/test_think.py",
     "tests/test_think_intel.py",
+    "tests/test_think_pro.py",
     "tests/test_think_reasoning.py",
     "tests/test_verify_source_audio.py"
    ],
@@ -4939,7 +5066,7 @@
     "powers"
    ],
    "path": "scripts/think.py",
-   "power_count": 10,
+   "power_count": 11,
    "powers": [
     "IDEA-26",
     "IDEA-29",
@@ -4950,12 +5077,14 @@
     "THINK-37",
     "THINK-38",
     "THINK-39",
-    "THINK-40"
+    "THINK-40",
+    "TOOL-69"
    ],
    "role": "registered",
    "tests": [
     "tests/test_think.py",
     "tests/test_think_intel.py",
+    "tests/test_think_pro.py",
     "tests/test_think_reasoning.py"
    ],
    "tools": [
@@ -5084,20 +5213,20 @@
   "areas": {
    "(root)": 8,
    "assets": 4,
-   "data": 116,
+   "data": 122,
    "dua-wednesday": 10,
-   "evals": 88,
+   "evals": 92,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 216,
+   "references": 220,
    "resources": 3,
    "schemas": 5,
-   "scripts": 159,
+   "scripts": 163,
    "templates": 16,
    "vendor": 76
   },
-  "bytes": 54712058,
+  "bytes": 56894034,
   "extensions": {
    "(none)": 8,
    ".bru": 7,
@@ -5105,17 +5234,17 @@
    ".html": 22,
    ".jpg": 23,
    ".js": 14,
-   ".json": 172,
-   ".md": 331,
+   ".json": 178,
+   ".md": 335,
    ".mjs": 9,
    ".png": 6,
-   ".py": 269,
+   ".py": 277,
    ".sh": 5,
    ".ttf": 14,
    ".txt": 54,
    ".woff2": 8
   },
-  "files": 954,
+  "files": 972,
   "symlinks": 0
  }
 }
