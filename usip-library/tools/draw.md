@@ -1,4 +1,4 @@
-# أدوات المجال `draw` (12 أداة)
+# أدوات المجال `draw` (13 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
