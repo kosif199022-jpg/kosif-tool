@@ -1,0 +1,34 @@
+name: Temporary KOSIF micro index repair for PR 123
+on:
+  push:
+    branches:
+      - claude/project-thread-pzgz3y
+    paths:
+      - .github/workflows/kosif-index-repair-pr123.yml
+permissions:
+  contents: write
+jobs:
+  regenerate-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build deterministic micro index on the feature branch
+        run: |
+          cd .claude/skills/kosif-superpowers
+          python3 scripts/micro_index.py build
+          python3 scripts/micro_index.py build --check
+      - name: Commit generated index changes
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .claude/skills/kosif-superpowers/data/micro_index.json .claude/skills/kosif-superpowers/references/micro-index/
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix(atlas): regenerate deterministic micro index for 5847 powers'
+            git push origin HEAD:refs/heads/claude/project-thread-pzgz3y
+          fi
