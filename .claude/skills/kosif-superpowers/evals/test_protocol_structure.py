@@ -28,6 +28,7 @@ CORE = C.PROTO_CORE
 SESSION = SK / "SESSION_PROMPT.md"
 SKILL_MD = SK / "SKILL.md"
 CLAUDE_MD = C.REPO / "CLAUDE.md"
+PORTABLE = C.PORTABLE
 FF = SK / "scripts" / "fusionforge.py"
 SI = SK / "scripts" / "skill_intelligence.py"
 FF_RE = re.compile(r"fusionforge\.py\s+([a-z][a-z-]*)")
@@ -427,7 +428,7 @@ class VersionAndMeaningTests(unittest.TestCase):
         self.assertEqual(C.protocol_version(), EXPECTED_VERSION, "PROTOCOL.md title")
         tag = f"USIP v{EXPECTED_VERSION}"
         self.assertIn(tag, C.md_section(read(CORE), C.PROTO_PASTE), "paste block")
-        for f in (SESSION, SKILL_MD, CLAUDE_MD):
+        for f in (SESSION, SKILL_MD, CLAUDE_MD, PORTABLE):
             if f == CLAUDE_MD and not f.is_file():
                 continue
             with self.subTest(file=f.name):
@@ -454,7 +455,7 @@ class VersionAndMeaningTests(unittest.TestCase):
             self.assertIn(s, phase6)
 
     def test_retired_plan_wordings_are_gone(self):
-        files = [f for f in protocol_files() if f.name != "CHANGELOG.md"] + [SESSION, SKILL_MD, FF] + ([CLAUDE_MD] if CLAUDE_MD.is_file() else [])
+        files = [f for f in protocol_files() if f.name != "CHANGELOG.md"] + [SESSION, SKILL_MD, PORTABLE, FF] + ([CLAUDE_MD] if CLAUDE_MD.is_file() else [])
         for f in files:
             text = read(f)
             for s in C.PLAN_DRIFT:
@@ -464,6 +465,49 @@ class VersionAndMeaningTests(unittest.TestCase):
     def test_check_skill_protocol_check_is_clean(self):
         errors = [m for lv, m in C.protocol_problems() if lv == "error"]
         self.assertEqual(errors, [])
+
+
+class PortableSyncTests(unittest.TestCase):
+    """USIP_PORTABLE.md is pasted into chats without the repository, so it must not fall behind the core."""
+
+    def problems_for(self, text: str) -> list:
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "USIP_PORTABLE.md"
+            f.write_text(text, encoding="utf-8")
+            saved, C.PORTABLE = C.PORTABLE, f
+            try:
+                return [m for lv, m in C.portable_problems() if lv == "error"]
+            finally:
+                C.PORTABLE = saved
+
+    def test_portable_is_clean(self):
+        self.assertEqual(self.problems_for(read(PORTABLE)), [])
+
+    def test_every_new_appendix_is_named(self):
+        text = read(PORTABLE)
+        for f in appendices():
+            if f.name == "CHANGELOG.md" or f.name.split("-")[0] in C.PORTABLE_FOLDED:
+                continue
+            with self.subTest(appendix=f.name):
+                self.assertIn(f.stem, text)
+
+    def test_a_missing_appendix_is_caught(self):
+        stem = "A13-pro-council"
+        errors = self.problems_for(read(PORTABLE).replace(stem, "A13-removed"))
+        self.assertTrue(any(stem in e for e in errors), errors)
+
+    def test_a_reworded_plan_letter_is_caught(self):
+        errors = self.problems_for(read(PORTABLE).replace("ليست B + إضافات", "B مع إضافات"))
+        self.assertTrue(any("canonical plan text" in e for e in errors), errors)
+
+    def test_a_stale_contents_list_is_caught(self):
+        text = read(PORTABLE).replace("## 19. ", "## 19b. ", 1)
+        errors = self.problems_for(text)
+        self.assertTrue(any("contents list" in e for e in errors), errors)
+
+    def test_power_counts_are_drift_checked(self):
+        self.assertIn("USIP_PORTABLE.md", C.DRIFT_FILES)
 
 
 class RetentionTests(unittest.TestCase):
@@ -811,6 +855,9 @@ V52_CONTAINED = (
 
 # (v5.2 unit, the v5.3 text(s) that replace it, why): the replacement must stay in the core or an appendix
 V52_REPLACED = (
+    ("فهرس القدرات (نحو 5,300 قدرة ذرية في 62 عائلة و15 مجموعة، مدمجة في نحو 450 قدرة خارقة) · نحو 115 أداة قابلة للتشغيل للبحث والتحليل والتصميم والمونتاج والموشن والثري دي والهندسة العكسية · مكتبات أصولي (أطلس خطوط تيليجرام) · البراهين والاختبارات والأدلة.",
+     "نحو 130 أداة قابلة للتشغيل للبحث والتحليل والتصميم والمونتاج والموشن والثري دي والهندسة العكسية",
+     "repo-origin: the tool registry grew from about 115 to 132 runnable tools"),
     ("KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.2)",
      "UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.3)",
      "banner: the title carries the current version"),
