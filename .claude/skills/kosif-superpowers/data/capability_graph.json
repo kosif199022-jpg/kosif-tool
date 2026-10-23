@@ -2001,6 +2001,16 @@
    "label": "scripts/creative_reasoning_bridge.py"
   },
   {
+   "id": "script:scripts/drawing_council.py",
+   "kind": "script",
+   "label": "scripts/drawing_council.py"
+  },
+  {
+   "id": "script:scripts/drawing_methods.py",
+   "kind": "script",
+   "label": "scripts/drawing_methods.py"
+  },
+  {
    "id": "script:scripts/fusionforge.py",
    "kind": "script",
    "label": "scripts/fusionforge.py"
@@ -2337,9 +2347,19 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_council.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_drawing_methods.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_drawing_methods.py"
   },
   {
    "id": "test:tests/test_reference_fetch_security.py",
@@ -6552,6 +6572,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/drawing_council.py",
+   "to": "script:scripts/drawing_methods.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/fusionforge.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -7350,8 +7376,26 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/drawing_council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/drawing_methods.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_methods.py",
    "rel": "tested_by",
    "w": 1
   },
