@@ -107,7 +107,7 @@ def clean(text) -> str:
     return s.replace("\r\n", "\n").replace("\n", "\n  ")
 
 
-GENERATED_REFS = {"INDEX.md", "requirements.md", "capability-atlas.md", "capability-map.md"}
+GENERATED_REFS = {"INDEX.md", "LAYOUT.md", "requirements.md", "capability-atlas.md", "capability-map.md"}
 
 
 def related_refs(stem: str, prefix: str, rows) -> list:

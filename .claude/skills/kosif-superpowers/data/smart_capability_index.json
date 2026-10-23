@@ -4,7 +4,7 @@
   "catalog_powers": 5408,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 140,
+  "tool_count": 141,
   "groups": [
     {
       "id": "research",
@@ -66917,7 +66917,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/check_skill.py"
       ],
       "source": "runnable-tools.json",
-      "what": "يفحص مهارة kosif-superpowers بثلاثة عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدو"
+      "what": "يفحص مهارة kosif-superpowers بأربعة عشر فحصًا لا تكتب شيئًا: ترويسة ملف SKILL.md، وسجلات القدرات، ومسارات الأدلة، وروابط Markdown النسبية، وعناوين المحتويات، والفصول المولَّدة، وعلامة العدّادات، وأسماء النماذج، والأسرار ومسارات الجلسات المسرَّبة، وملف evals/evals.json، وسجل الأدو"
     },
     {
       "id": "TOOL-57",

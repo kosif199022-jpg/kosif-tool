@@ -9,6 +9,11 @@
     python3 scripts/think.py decide decision.json        # weighted decision matrix + sensitivity (does the winner flip at ±1 weight?)
     python3 scripts/think.py fermi  "a*b*c" --range a=1:3 b=10:20 c=0.1:0.3   # Monte-Carlo range for a factor tree
     python3 scripts/think.py critic file.md             # anti-pattern sweep on a draft (hedges, unverifiable claims, missing numbers)
+    python3 scripts/think.py modes  "<task>" [-n 3]     # rank reasoning modes (data/reasoning_modes.json): procedure, trap, check
+    python3 scripts/think.py bayes  --prior 0.2 --lr "tests fail on main=4" "only one report=0.5" [--threshold 0.7]
+                                                        # Bayesian update by likelihood ratios + sensitivity (or --json spec.json)
+    python3 scripts/think.py gate   gate.json           # decision gate: GO / PIVOT / KILL / HOLD from pre-written thresholds
+    python3 scripts/think.py audit  report.md [--strict] # self-audit: claim → evidence ledger + calibration questions
 
 Stdlib only, deterministic with --seed. The output is a scaffold to think with, not the thinking itself: fill it, test it, then act.
 """
@@ -28,6 +33,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 SKILL = HERE.parent
 MODELS = SKILL / "data" / "mental_models.json"
+MODES = SKILL / "data" / "reasoning_modes.json"
 
 AR = re.compile(r"[؀-ۿ]")
 
@@ -356,6 +362,238 @@ def cmd_critic(path: str) -> int:
     return 0
 
 
+# ------------------------------------------------------------------ modes (USIP v5.4, appendix A24)
+def rank_modes(task: str, n: int) -> list:
+    ws, text = words(task), norm(task)
+    out = []
+    for m in json.loads(MODES.read_text(encoding="utf-8"))["modes"]:
+        s = 0.0
+        for k in m["keywords"]:
+            nk = norm(k)
+            if " " in nk or "/" in nk:
+                s += 2.0 if nk in text else 0
+            elif nk in ws or any(len(w) > 3 and len(nk) > 3 and (w.startswith(nk) or nk.startswith(w)) for w in ws):
+                s += 1.5
+        out.append((s, m))
+    out.sort(key=lambda x: -x[0])   # stable: ties keep the file order
+    picked = [m for s, m in out if s > 0][:n]
+    for mid in ("abductive", "causal", "bayesian"):   # a balanced default when the words say little
+        if len(picked) >= n:
+            break
+        m = next(x for _s, x in out if x["id"] == mid)
+        if m not in picked:
+            picked.append(m)
+    return picked
+
+
+def cmd_modes(task: str, n: int, as_json: bool) -> int:
+    ms = rank_modes(task, n)
+    if as_json:
+        print(json.dumps(ms, ensure_ascii=False, indent=1)); return 0
+    for m in ms:
+        print(f"{m['id']}  {m['en']} / {m['ar']} — {m['use_when']}")
+        for i, st in enumerate(m["procedure"], 1):
+            print(f"   {i}. {st}")
+        print(f"   ✗ trap: {m['trap']}\n   ✓ check: {m['check']}\n")
+    print("Use at most two modes per decision (A24); the ranking is a keyword hint, the choice is yours.")
+    return 0
+
+
+# ------------------------------------------------------------------ bayes
+def _prob(x, name: str) -> float:
+    v = float(x)
+    if not 0.0 < v < 1.0:
+        raise ValueError(f"{name} must be strictly between 0 and 1, got {x}")
+    return v
+
+
+def bayes_binary(prior: float, lrs: list, threshold=None) -> dict:
+    """prior P(H), lrs [(name, P(E|H)/P(E|¬H))] → posterior with per-item log-odds and a halve/double sensitivity."""
+    import math
+    prior = _prob(prior, "prior")
+    steps, odds = [], prior / (1 - prior)
+    for name, lr in lrs:
+        lr = float(lr)
+        if lr <= 0:
+            raise ValueError(f"likelihood ratio for {name!r} must be > 0")
+        odds *= lr
+        steps.append({"evidence": name, "lr": lr, "bits": round(math.log2(lr), 3), "posterior": round(odds / (1 + odds), 4)})
+    post = odds / (1 + odds)
+    def post_with(i, f):
+        o = prior / (1 - prior)
+        for j, (_n, lr) in enumerate(lrs):
+            o *= float(lr) * (f if j == i else 1)
+        return o / (1 + o)
+    sens = [{"evidence": n, "if_halved": round(post_with(i, 0.5), 4), "if_doubled": round(post_with(i, 2), 4)} for i, (n, _l) in enumerate(lrs)]
+    r = {"mode": "binary", "prior": prior, "steps": steps, "posterior": round(post, 4), "sensitivity": sens}
+    if threshold is not None:
+        t = _prob(threshold, "threshold")
+        r["threshold"] = t
+        r["decision"] = "ACT" if post >= t else "DO_NOT_ACT"
+        r["flips"] = [s["evidence"] for s in sens if (s["if_halved"] >= t) != (post >= t) or (s["if_doubled"] >= t) != (post >= t)]
+        r["robust"] = not r["flips"]
+    return r
+
+
+def bayes_multi(priors: dict, evidence: list) -> dict:
+    """priors {H: p} (normalised), evidence [{"name", "likelihood": {H: P(E|H)}}] → posterior per hypothesis."""
+    tot = sum(float(v) for v in priors.values())
+    if tot <= 0:
+        raise ValueError("priors must sum to more than 0")
+    cur = {h: float(v) / tot for h, v in priors.items()}
+    steps = []
+    for e in evidence:
+        lk = e["likelihood"]
+        missing = [h for h in cur if h not in lk]
+        if missing:
+            raise ValueError(f"evidence {e.get('name')!r} has no likelihood for {', '.join(missing)}")
+        z = sum(cur[h] * float(lk[h]) for h in cur)
+        if z <= 0:
+            raise ValueError(f"evidence {e.get('name')!r} is impossible under every hypothesis")
+        cur = {h: cur[h] * float(lk[h]) / z for h in cur}
+        steps.append({"evidence": e.get("name", "?"), "posterior": {h: round(v, 4) for h, v in cur.items()}})
+    best = max(cur, key=cur.get)
+    ranked = sorted(cur.values(), reverse=True)
+    return {"mode": "multi", "priors": {h: round(float(v) / tot, 4) for h, v in priors.items()}, "steps": steps,
+            "posterior": {h: round(v, 4) for h, v in cur.items()}, "leader": best,
+            "margin": round(ranked[0] - ranked[1], 4) if len(ranked) > 1 else None}
+
+
+def cmd_bayes(prior, lr_items: list, threshold, spec_path) -> int:
+    try:
+        if spec_path:
+            spec = json.loads(Path(spec_path).read_text(encoding="utf-8"))
+            if "priors" in spec:
+                r = bayes_multi(spec["priors"], spec.get("evidence", []))
+            else:
+                r = bayes_binary(spec["prior"], [(e["name"], e["lr"]) for e in spec.get("evidence", [])], spec.get("threshold"))
+        else:
+            if prior is None:
+                raise ValueError("give --prior (binary) or --json spec.json")
+            lrs = []
+            for it in lr_items:
+                name, _, val = it.rpartition("=")
+                if not name:
+                    raise ValueError(f"--lr item {it!r} must be NAME=RATIO")
+                lrs.append((name.strip(), float(val)))
+            r = bayes_binary(prior, lrs, threshold)
+    except (ValueError, KeyError) as e:
+        print(f"think.py bayes: {e}", file=sys.stderr)
+        return 2
+    print(json.dumps(r, ensure_ascii=False, indent=1))
+    if r.get("robust") is False:
+        print(f"\n⚠ the decision flips if {', '.join(r['flips'])} is halved or doubled: get better evidence on it before acting.", file=sys.stderr)
+    return 0
+
+
+# ------------------------------------------------------------------ gate
+GATE_OPS = {"<": operator.lt, "<=": operator.le, ">": operator.gt, ">=": operator.ge, "==": operator.eq, "!=": operator.ne}
+GATE_TEMPLATE = {
+    "decision": "ship the reorganised skill layout",
+    "reversible": True,
+    "go": [{"name": "check_skill errors", "op": "==", "threshold": 0, "observed": None},
+           {"name": "protocol tests failing", "op": "==", "threshold": 0, "observed": None}],
+    "pivot": [{"name": "files without a section", "op": ">", "threshold": 0, "observed": None}],
+    "kill": [{"name": "links broken by the move", "op": ">", "threshold": 20, "observed": None}],
+}
+
+
+def _gate_rows(rows: list) -> list:
+    out = []
+    for c in rows:
+        op = c.get("op", ">=")
+        if op not in GATE_OPS:
+            raise ValueError(f"criterion {c.get('name')!r}: unknown op {op!r}")
+        obs = c.get("observed")
+        met = None if obs is None else bool(GATE_OPS[op](float(obs), float(c["threshold"])))
+        out.append({"name": c.get("name", "?"), "rule": f"{op} {c['threshold']}", "observed": obs, "met": met})
+    return out
+
+
+def gate(spec: dict) -> dict:
+    """Pre-written thresholds → verdict. KILL beats PIVOT beats GO; any unobserved go-criterion holds the gate, and an
+    irreversible (one-way door) decision also holds while any criterion at all is unobserved."""
+    go, pivot, kill = _gate_rows(spec.get("go", [])), _gate_rows(spec.get("pivot", [])), _gate_rows(spec.get("kill", []))
+    if not go:
+        raise ValueError("a gate needs at least one go criterion written before the result is known")
+    reversible = bool(spec.get("reversible", True))
+    unknown = [r["name"] for r in go + pivot + kill if r["met"] is None]
+    if any(r["met"] for r in kill):
+        verdict = "KILL"
+    elif any(r["met"] for r in pivot):
+        verdict = "PIVOT"
+    elif any(r["met"] is None for r in go) or (not reversible and unknown):
+        verdict = "HOLD"
+    elif all(r["met"] for r in go):
+        verdict = "GO"
+    else:
+        verdict = "HOLD"
+    return {"decision": spec.get("decision", ""), "door": "two-way" if reversible else "one-way",
+            "verdict": verdict, "unobserved": unknown, "go": go, "pivot": pivot, "kill": kill,
+            "needs_explicit_approval": (not reversible) and verdict == "GO"}
+
+
+def cmd_gate(path, template: bool) -> int:
+    if template or not path:
+        print(json.dumps(GATE_TEMPLATE, ensure_ascii=False, indent=1)); return 0
+    try:
+        r = gate(json.loads(Path(path).read_text(encoding="utf-8")))
+    except (ValueError, KeyError) as e:
+        print(f"think.py gate: {e}", file=sys.stderr)
+        return 2
+    print(json.dumps(r, ensure_ascii=False, indent=1))
+    if r["needs_explicit_approval"]:
+        print("\n⚠ one-way door: GO only means the thresholds are met; the step still needs the user's explicit permission (law 17).", file=sys.stderr)
+    return 0 if r["verdict"] in ("GO", "HOLD") else 1
+
+
+# ------------------------------------------------------------------ audit
+CLAIM_PATTERNS = [
+    (r"\d", "number"),
+    (r"\b(verified|passed|works|fixed|tested|proven|complete[d]?|all|every|never|always|guaranteed)\b", "strong claim"),
+    (r"(تم|نجح|يعمل|مثبت|مختبر|اكتمل|كل|جميع|أبدا|ابدا|دائما|مضمون)", "strong claim"),
+    (r"\b(best|fastest|first|only|unique)\b|(أفضل|أسرع|الوحيد|الأول)", "superlative"),
+]
+EVIDENCE_RE = re.compile(r"`[^`]+`|\]\([^)]+\)|https?://|\b[\w./-]+\.(?:py|json|md|txt|log|mp4|csv|html)\b|\(evidence:|دليل:|←")
+CALIBRATION = [
+    "How confident am I in the headline result (0–100%), and what reference class is that number from?",
+    "What single observation would change my mind?",
+    "What is the strongest version of the opposite view (steelman), in one sentence?",
+    "Which assumption did I not test, and what would a five-minute test be?",
+    "What did I not open, run or measure, and does the report say so?",
+]
+
+
+def audit(text: str) -> dict:
+    rows, fence = [], False
+    for i, raw in enumerate(text.splitlines(), 1):
+        if raw.lstrip().startswith(("```", "~~~")):
+            fence = not fence
+            continue
+        line = re.sub("[ً-ْـ]", "", raw).strip()
+        if fence or not line or line.startswith("#") or set(line) <= set("|-: "):
+            continue
+        kinds = sorted({k for pat, k in CLAIM_PATTERNS if re.search(pat, line, re.I)})
+        if not kinds:
+            continue
+        rows.append({"line": i, "kinds": kinds, "evidence": bool(EVIDENCE_RE.search(line)), "text": line[:140]})
+    unsupported = [r for r in rows if not r["evidence"]]
+    return {"claims": len(rows), "with_evidence": len(rows) - len(unsupported), "unsupported": unsupported,
+            "calibration": CALIBRATION}
+
+
+def cmd_audit(path: str, strict: bool) -> int:
+    r = audit(Path(path).read_text(encoding="utf-8"))
+    for u in r["unsupported"]:
+        print(f"{path}:{u['line']}: [{', '.join(u['kinds'])}] no evidence on the line — {u['text']}")
+    print(f"\nclaims {r['claims']} · with evidence {r['with_evidence']} · unsupported {len(r['unsupported'])}")
+    print("evidence = a `command`, a link, a file path, '(evidence: …)' or '← tool' on the same line")
+    print("\ncalibration — answer each in the report before sending:")
+    for q in r["calibration"]:
+        print(f"  - {q}")
+    return 1 if strict and r["unsupported"] else 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -367,6 +605,10 @@ def main(argv=None) -> int:
     sub.add_parser("decide").add_argument("path")
     f = sub.add_parser("fermi"); f.add_argument("expr"); f.add_argument("--range", nargs="+", default=[]); f.add_argument("--samples", type=int, default=20000); f.add_argument("--seed", type=int, default=7)
     sub.add_parser("critic").add_argument("path")
+    mo = sub.add_parser("modes"); mo.add_argument("task"); mo.add_argument("-n", type=int, default=3); mo.add_argument("--json", action="store_true")
+    b = sub.add_parser("bayes"); b.add_argument("--prior", type=float); b.add_argument("--lr", nargs="*", default=[]); b.add_argument("--threshold", type=float); b.add_argument("--json", dest="spec")
+    g = sub.add_parser("gate"); g.add_argument("path", nargs="?"); g.add_argument("--template", action="store_true")
+    au = sub.add_parser("audit"); au.add_argument("path"); au.add_argument("--strict", action="store_true")
     a = ap.parse_args(argv)
     if a.cmd == "ladder": return cmd_ladder(a.task)
     if a.cmd == "frame": return cmd_frame(a.task)
@@ -375,6 +617,10 @@ def main(argv=None) -> int:
     if a.cmd == "ideas": return cmd_ideas(a.seed_text, a.n, a.seed)
     if a.cmd == "decide": return cmd_decide(a.path)
     if a.cmd == "fermi": return cmd_fermi(a.expr, a.range, a.samples, a.seed)
+    if a.cmd == "modes": return cmd_modes(a.task, a.n, a.json)
+    if a.cmd == "bayes": return cmd_bayes(a.prior, a.lr, a.threshold, a.spec)
+    if a.cmd == "gate": return cmd_gate(a.path, a.template)
+    if a.cmd == "audit": return cmd_audit(a.path, a.strict)
     return cmd_critic(a.path)
 
 

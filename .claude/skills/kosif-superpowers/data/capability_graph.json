@@ -1956,6 +1956,11 @@
    "label": "scripts/check_skill.py"
   },
   {
+   "id": "script:scripts/skill_layout.py",
+   "kind": "script",
+   "label": "scripts/skill_layout.py"
+  },
+  {
    "id": "script:scripts/cinematic_broll_render.py",
    "kind": "script",
    "label": "scripts/cinematic_broll_render.py"
@@ -2427,6 +2432,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_skill_intelligence.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_layout.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_skill_layout.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_sources_index.py"
@@ -2440,6 +2450,11 @@
    "id": "test:tests/test_think.py",
    "kind": "test",
    "label": "tests/test_think.py"
+  },
+  {
+   "id": "test:tests/test_think_reasoning.py",
+   "kind": "test",
+   "label": "tests/test_think_reasoning.py"
   },
   {
    "id": "test:tests/test_tools_extra.py",
@@ -6437,6 +6452,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/check_skill.py",
+   "to": "script:scripts/skill_layout.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/cinematic_broll_render.py",
    "to": "script:scripts/cinematic_cut_planner.py",
    "rel": "imports",
@@ -7523,6 +7544,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/skill_layout.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_skill_layout.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/smart_capabilities.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
    "rel": "tested_by",
@@ -7573,6 +7600,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_think_reasoning.py",
    "rel": "tested_by",
    "w": 1
   },
