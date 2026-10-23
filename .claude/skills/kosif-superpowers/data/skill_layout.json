@@ -24,6 +24,7 @@
     "START.md",
     "PROTOCOL.md",
     "USIP_PORTABLE.md",
+    "USIP_PASTE.md",
     "SESSION_PROMPT.md",
     "references/INDEX.md",
     "references/LAYOUT.md",
@@ -101,7 +102,8 @@
    "files": [],
    "globs": [
     "references/powers/*",
-    "references/library/*"
+    "references/library/*",
+    "references/micro-index/*"
    ]
   },
   {

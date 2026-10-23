@@ -67,6 +67,7 @@ python3 scripts/capability_mindmap.py build     # data/capability_mindmap.json +
 python3 scripts/owned_repos.py render           # references/owned-repos-map.md (its counts follow the catalog)
 python3 scripts/smart_capabilities.py library   # references/library/: one routing chapter per group (USIP v5.5, A28)
 python3 scripts/smart_capabilities.py cards     # usip-library/ (repo root): a protocol card per power and tool
+python3 scripts/micro_index.py build            # data/micro_index.json + references/micro-index/ (one line per power, tool, superpower)
 python3 scripts/hub.py build                    # again: manifest.json, references/INDEX.md, SKILL.md and guide tool blocks
 python3 scripts/boot.py --static --write        # CAPABILITIES.md + llms.txt at the repo root
 python3 scripts/rea_superpowers_map.py build    # data/superpowers_rea_map.json + references/superpowers-rea-map.{md,html} (not CI-checked)
@@ -77,7 +78,7 @@ python3 scripts/check_skill.py --evals          # structure, links, proofs, coun
 
 Then, from the repo root: `python3 tools/build.py && python3 tools/validate.py && python3 -m unittest discover -s tests`.
 
-Check-only versions (what CI runs; they write nothing): `requirements.py derive --check`, `relabel_proofs.py --check`, `build_chapters.py --check`, `requirements.py index --check`, `capability_graph.py build --check`, `capability_atlas.py build --check`, `powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check`, `hub.py build --check`, `boot.py --static --check`, `smart_capabilities.py library-check`, `smart_capabilities.py cards-check`, `tools/build.py --check`.
+Check-only versions (what CI runs; they write nothing): `requirements.py derive --check`, `relabel_proofs.py --check`, `build_chapters.py --check`, `requirements.py index --check`, `capability_graph.py build --check`, `capability_atlas.py build --check`, `powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check`, `hub.py build --check`, `boot.py --static --check`, `smart_capabilities.py library-check`, `smart_capabilities.py cards-check`, `micro_index.py build --check`, `tools/build.py --check`.
 
 The chapters (`build_chapters.py`) link related references but skip the generated ones (`INDEX.md`, `LAYOUT.md`, `requirements.md`, `capability-atlas.md`, `capability-map.md`), so one pass of the chain converges whatever order those are rebuilt in.
 

@@ -14,7 +14,7 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 751 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 752 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 3 | [`ffmpeg`](#req-ffmpeg) | bin | 447 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 4 | [`chromium`](#req-chromium) | bin | 364 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 751 powers
-- **بالحالة / by status:** proven 285 · documented 185 · ready 159 · install 106 · key 13 · seen 3
-- **العائلات / families:** runnable-tools (124), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (24), atlas-code (18), photo-video-footage (16)
+- **يفتح / unlocks:** 752 powers
+- **بالحالة / by status:** proven 286 · documented 185 · ready 159 · install 106 · key 13 · seen 3
+- **العائلات / families:** runnable-tools (125), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (24), atlas-code (18), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-npm-hyperframes"></a>

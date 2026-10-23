@@ -30,8 +30,8 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**5,581** قدرة · **62** عائلة · **10** مجالات · ✅ 995 مُثبتة بتشغيل فعلي · 🟢 664 جاهزة · 📦 980 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2086 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **155**.
+**5,582** قدرة · **62** عائلة · **10** مجالات · ✅ 996 مُثبتة بتشغيل فعلي · 🟢 664 جاهزة · 📦 980 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2086 طريقة موصوفة · 💡 71 فكرة.
+المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **156**.
 
 <a id="tools"></a>
 ## 3. الأدوات حسب المجال / tools by area
@@ -40,7 +40,7 @@
 
 | area | tools |
 |---|---|
-| [Discover and route / اكتشاف القدرات والتوجيه](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-5000` · `atlas-ledger` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` · `owned-repos` |
+| [Discover and route / اكتشاف القدرات والتوجيه](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-5000` · `atlas-ledger` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` · `micro-index` · `owned-repos` |
 | [Think, ideate and write / التفكير والأفكار والكتابة](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` · `council` · `see-pro-cognitive-gate` · `capability-mindmap` · `charter-ingest` · `business-workflows` · `book-methods` · `decision-math` · `stats-lab` |
 | [Motion graphics and rendering / الموشن والرندر](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/motion.md) | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-verify-video` · `starter-html-canvas` · `starter-remotion` · `unified-cinematic` · `style-atlas-bridge` · `atlas-render` · `particles` · `ui-beat` |
 | [Editing and reference video / المونتاج والفيديو المرجعي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/edit.md) | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` · `reel-factory` · `dua-wednesday` |
@@ -102,11 +102,11 @@
 | [اختبار واجهات API — API testing (Bruno)](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/api-testing.md) | API | 22 | 15 | API-01 Author an API collection as git-tracked Bru fi; API-02 Run a collection as automated acceptance tests; API-03 Declarative response assertions |
 | [الرسم المعرفي والخرائط الذهنية — Knowledge graph & mind maps](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/knowledge-graph.md) | GRAPH | 21 | 11 | GRAPH-01 Install Graphify locally (venv); GRAPH-02 Map a codebase offline; GRAPH-03 Query the graph instead of reading files |
 
-### التطبيقات والواجهات / build — 369 powers · ✅ 224
+### التطبيقات والواجهات / build — 370 powers · ✅ 225
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
-| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 155 | 122 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
+| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 156 | 123 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
 | [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 139 | 96 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
 | [أطلس: التطبيقات والواجهات والتكاملات — Atlas: apps, UI & integrations](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-build.md) | ABUILD | 52 | 0 | ABUILD-01 Autonomous phase-per-PR roadmap execution loop; ABUILD-02 Observation-only run telemetry recorder; ABUILD-03 Role-squad agent pipeline with stages, locks a |
 | [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 23 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
@@ -176,7 +176,7 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 751 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 752 | `apt-get install -y python3 python3-pip python3-venv` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
 | `ffmpeg` | bin | 447 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 364 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |

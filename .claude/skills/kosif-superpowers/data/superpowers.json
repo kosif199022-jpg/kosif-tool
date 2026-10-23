@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5581,
-"distinct_methods": 5301,
+"atoms": 5582,
+"distinct_methods": 5302,
 "twin_groups": 178,
 "superpowers": 460,
 "per_target": 12,
@@ -2964,7 +2964,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.193
+"sim": 0.195
 },
 {
 "id": "SP-0060",
@@ -15652,15 +15652,15 @@
 "discover",
 "kosif"
 ],
-"size": 37,
+"size": 38,
 "best": "proven",
 "status_mix": {
-"proven": 26,
+"proven": 27,
 "ready": 11
 },
-"ready_now": 37,
+"ready_now": 38,
 "families": {
-"runnable-tools": 37
+"runnable-tools": 38
 },
 "atlas_folded": 0,
 "requires": [
@@ -15711,22 +15711,22 @@
 "name_ar": "مراجعة ساكنة لنصوص مهارات الأطلس"
 },
 {
-"id": "TOOL-07",
-"status": "proven",
-"name_en": "Local-first no-clone entry",
-"name_ar": "مدخل محلي بلا استنساخ"
-},
-{
 "id": "TOOL-43",
 "status": "proven",
 "name_en": "Atlas external skill search",
 "name_ar": "بحث مهارات أطلس الخارجية"
 },
 {
-"id": "TOOL-63",
+"id": "TOOL-07",
 "status": "proven",
-"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
-"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
+"name_en": "Local-first no-clone entry",
+"name_ar": "مدخل محلي بلا استنساخ"
+},
+{
+"id": "TOOL-01",
+"status": "proven",
+"name_en": "Offline bilingual capability finder",
+"name_ar": "باحث القدرات ثنائي اللغة بلا اتصال"
 },
 {
 "id": "TOOL-44",
@@ -15735,10 +15735,10 @@
 "name_ar": "تدقيق بيانات أطلس الوصفية"
 },
 {
-"id": "TOOL-01",
+"id": "TOOL-63",
 "status": "proven",
-"name_en": "Offline bilingual capability finder",
-"name_ar": "باحث القدرات ثنائي اللغة بلا اتصال"
+"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
 },
 {
 "id": "TOOL-116",
@@ -15759,6 +15759,12 @@
 "name_ar": "فاحص سلامة أطلس الأنماط"
 },
 {
+"id": "TOOL-157",
+"status": "proven",
+"name_en": "Micro index: one line per power, tool and superpower",
+"name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة"
+},
+{
 "id": "TOOL-06",
 "status": "proven",
 "name_en": "KOSIF catalog MCP server",
@@ -15777,16 +15783,16 @@
 "name_ar": "باني خريطة القدرات المترابطة"
 },
 {
-"id": "TOOL-124",
-"status": "proven",
-"name_en": "Universal Skill Intelligence Protocol engine",
-"name_ar": "محرك بروتوكول ذكاء المهارات الشامل"
-},
-{
 "id": "TOOL-72",
 "status": "proven",
 "name_en": "Power requirements planner",
 "name_ar": "مخطط متطلبات القدرات"
+},
+{
+"id": "TOOL-124",
+"status": "proven",
+"name_en": "Universal Skill Intelligence Protocol engine",
+"name_ar": "محرك بروتوكول ذكاء المهارات الشامل"
 },
 {
 "id": "TOOL-129",
@@ -15849,16 +15855,16 @@
 "name_ar": "مناهج الأطلس المراجَعة"
 },
 {
-"id": "TOOL-110",
-"status": "ready",
-"name_en": "Atlas review summary",
-"name_ar": "ملخص مراجعة الأطلس"
-},
-{
 "id": "TOOL-113",
 "status": "ready",
 "name_en": "Atlas verified method transfer",
 "name_ar": "نقل مناهج الأطلس المثبتة"
+},
+{
+"id": "TOOL-110",
+"status": "ready",
+"name_en": "Atlas review summary",
+"name_ar": "ملخص مراجعة الأطلس"
 },
 {
 "id": "TOOL-109",
@@ -15911,28 +15917,28 @@
 [
 "TOOL-104",
 "TOOL-111",
-"TOOL-110",
 "TOOL-113",
+"TOOL-110",
 "TOOL-109"
 ]
 ],
-"distinct_methods": 32,
+"distinct_methods": 33,
 "links": [
 {
 "id": "SP-0327",
 "sim": 0.411
 },
 {
-"id": "SP-0023",
-"sim": 0.193
+"id": "SP-0127",
+"sim": 0.201
 },
 {
-"id": "SP-0127",
-"sim": 0.179
+"id": "SP-0023",
+"sim": 0.195
 },
 {
 "id": "SP-0270",
-"sim": 0.163
+"sim": 0.165
 }
 ]
 },
@@ -16539,8 +16545,8 @@
 "sim": 0.246
 },
 {
-"id": "SP-0023",
-"sim": 0.199
+"id": "SP-0123",
+"sim": 0.201
 }
 ]
 },
@@ -17325,7 +17331,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.139
+"sim": 0.137
 },
 {
 "id": "SP-0106",
@@ -35422,7 +35428,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.132
+"sim": 0.134
 }
 ]
 },
@@ -35701,7 +35707,7 @@
 },
 {
 "id": "SP-0123",
-"sim": 0.163
+"sim": 0.165
 },
 {
 "id": "SP-0019",

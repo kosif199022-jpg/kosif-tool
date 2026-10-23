@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 149 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 150 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **244** | |
+| **المجموع** | **245** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -54,6 +54,7 @@
 | `kosif-mcp` | خادم MCP لكتالوج KOSIF | `python3 scripts/kosif_mcp.py` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `local-first` | مدخل محلي بلا استنساخ | `python3 scripts/local_first.py doctor` | tested-here |
+| `micro-index` | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة | `python3 scripts/micro_index.py build` | tested-here |
 | `owned-repos` | خريطة مستودعات المالك وخريطة المهارات | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |
 | `probe-env` | فحص قدرات الجهاز | `python3 scripts/probe_env.py` | tested-elsewhere |
@@ -79,7 +80,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 155 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 156 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -147,6 +148,7 @@
 | `TOOL-153` | رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG | Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix | proven | python3, npm:axe |
 | `TOOL-154` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | Agent guard: shell preflight, transcript secret scan and worktree plans | proven | python3, git |
 | `TOOL-156` | البحث في كتالوج القدرات | Power catalog search | proven | python3, npm:mermaid |
+| `TOOL-157` | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة | Micro index: one line per power, tool and superpower | proven | python3 |
 | `TOOL-16` | إنشاء فيلم سبورة مرسوم وتصييره | Doodle film runtime and renderer | proven | ffmpeg, node, python3, chromium |
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |

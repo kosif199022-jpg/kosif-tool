@@ -2999,22 +2999,22 @@
 "hub": "agents",
 "stage": "understand",
 "stages": {
-"understand": 24,
+"understand": 25,
 "plan": 3,
 "verify": 5,
 "create": 4,
 "assemble": 1
 },
-"size": 37,
+"size": 38,
 "best": "proven",
-"ready_now": 37,
+"ready_now": 38,
 "links": [
 "SP-0327",
-"SP-0023",
 "SP-0127",
+"SP-0023",
 "SP-0270"
 ],
-"text": "atlas metadata capability miner منقّب قدرات الأطلس من البيانات الوصفية atlas-capability-miner atlas kosif capabilities provenance discover atlas ledger: one status for every atlas skill سجل الأطلس: حالة واحدة لكل مهارة atlas-ledger atlas ledger atlas review pending skills transferred skipped excluded duplicate سجل الأطلس مراجعة الأطلس اتنقلت اتسابت مهارات معلقة capability atlas search and planner أطلس القدرات للبحث والتخطيط capability-atlas capability atlas catalog search task planning capability id requirements check index freshness bilingual search أطلس القدرات بحث في الكتالوج تخطيط المهمة معرّف القدرة فحص المتطلبات فهرس kosif style atlas cli أداة سطر أوامر لأطلس أنماط kosif repo-kosif style atlas catalog search scaffold prompt generator motion graphics styles style.json brief.md أطلس الأنماط أنماط الموشن استايل بحث في الفهرس تجهيز مشروع طلب claude code إحصاءات الفهرس atlas-5000 coverage map خريطة تغطية أطلس الـ5000 مهارة atlas-5000 atlas 5000 5000 skills skill atlas coverage gaps learnable skills أطلس الـ5000 أطلس المهارات تغطية فجوات مهارات يمكن تعلمها atlas skill-body static audit مراجعة ساكنة لنصوص مهارات الأطلس atlas-body-audit atlas skill audit static review skill.md risk indicators prompt injection مراجعة الأطلس فحص المهارات مؤشرات خطر local-first no-clone entry مدخل محلي بلا استنساخ local-first offline no clone doctor auto mode style atlas catalog search standalone skill بدون استنساخ محلي بلا شبكة فحص المهارة أطلس الأساليب atlas external skill search بحث مهارات أطلس الخارجية atlas-external-bridge atlas skill index third-party skills copyleft license scope risk flags blender skill.md skill search أطلس المهارات مهارات خارجية ترخيص علامات الخطر فهرس المهارات futurepedia ai style atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح style-atlas-bridge ادمج أساليب futurepedia في الرسم توليفة سبورة ونيون لموشن جرافيك find futurepedia ai style atlas methods create one static svg style-study style atlas bridge فن visual رسم مصادر أسلوب explainer storyboard طباشير شرح أطلس 86 atlas metadata audit تدقيق بيانات أطلس الوصفية atlas-metadata-audit atlas audit metadata audit index validation structural errors license labels verdicts copyleft source urls تدقيق فحص الفهرس أطلس المهارات بيانات وصفية أخطاء بنيوية تراخيص offline bilingual capability finder باحث القدرات ثنائي اللغة بلا اتصال ai-tool-discovery capability finder offline ranking idf bilingual catalog d"
+"text": "atlas metadata capability miner منقّب قدرات الأطلس من البيانات الوصفية atlas-capability-miner atlas kosif capabilities provenance discover atlas ledger: one status for every atlas skill سجل الأطلس: حالة واحدة لكل مهارة atlas-ledger atlas ledger atlas review pending skills transferred skipped excluded duplicate سجل الأطلس مراجعة الأطلس اتنقلت اتسابت مهارات معلقة capability atlas search and planner أطلس القدرات للبحث والتخطيط capability-atlas capability atlas catalog search task planning capability id requirements check index freshness bilingual search أطلس القدرات بحث في الكتالوج تخطيط المهمة معرّف القدرة فحص المتطلبات فهرس kosif style atlas cli أداة سطر أوامر لأطلس أنماط kosif repo-kosif style atlas catalog search scaffold prompt generator motion graphics styles style.json brief.md أطلس الأنماط أنماط الموشن استايل بحث في الفهرس تجهيز مشروع طلب claude code إحصاءات الفهرس atlas-5000 coverage map خريطة تغطية أطلس الـ5000 مهارة atlas-5000 atlas 5000 5000 skills skill atlas coverage gaps learnable skills أطلس الـ5000 أطلس المهارات تغطية فجوات مهارات يمكن تعلمها atlas skill-body static audit مراجعة ساكنة لنصوص مهارات الأطلس atlas-body-audit atlas skill audit static review skill.md risk indicators prompt injection مراجعة الأطلس فحص المهارات مؤشرات خطر atlas external skill search بحث مهارات أطلس الخارجية atlas-external-bridge atlas skill index third-party skills copyleft license scope risk flags blender skill.md skill search أطلس المهارات مهارات خارجية ترخيص علامات الخطر فهرس المهارات local-first no-clone entry مدخل محلي بلا استنساخ local-first offline no clone doctor auto mode style atlas catalog search standalone skill بدون استنساخ محلي بلا شبكة فحص المهارة أطلس الأساليب offline bilingual capability finder باحث القدرات ثنائي اللغة بلا اتصال ai-tool-discovery capability finder offline ranking idf bilingual catalog discovery local index باحث القدرات ترتيب اكتشاف بدون إنترنت فهرس محلي عربي وإنجليزي atlas metadata audit تدقيق بيانات أطلس الوصفية atlas-metadata-audit atlas audit metadata audit index validation structural errors license labels verdicts copyleft source urls تدقيق فحص الفهرس أطلس المهارات بيانات وصفية أخطاء بنيوية تراخيص futurepedia ai style atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح style-atlas-bridge ادمج أساليب futurepedia في الرسم توليفة سبورة ونيون لموشن جرافيك find futurepedia ai style atlas methods create one static svg style-study st"
 },
 "SP-0124": {
 "id": "SP-0124",
@@ -3106,7 +3106,7 @@
 "SP-0296",
 "SP-0026",
 "SP-0062",
-"SP-0023"
+"SP-0123"
 ],
 "text": "skill layout map خريطة ترتيب المهارة skill-layout skill layout reference map sections trial balance reorganize ترتيب المهارة خريطة الملفات أقسام إعادة تنظيم owned-repositories map and skill map خريطة مستودعات المالك وخريطة المهارات owned-repos owned repos my repositories github account repo map skill map learnable gitingest digest مستودعاتي المستودعات خريطة المهارات قابل للتعلم حساب جيت هاب skill packager for claude.ai تحزيم المهارة للرفع إلى claude.ai package-skill package skill zip skill file claude.ai upload lite package release deterministic archive distribution تحزيم المهارة رفع المهارة ملف مضغوط نسخة خفيفة توزيع المهارة superpowers map, rea approach خريطة سوبر باور بمنهج rea rea-superpowers-map superpowers map rea map dependency graph import graph gaps orphan scripts untested coverage خريطة سوبر باور خريطة فجوات تبعيات سكربتات يتيمة external repository tool map خريطة المستودعات الخارجية superpowers repos.json tool map open-source repositories license notes doctor installed tools whisper ffmpeg خريطة الأدوات مستودعات مفتوحة المصدر الترخيص الأدوات المثبتة فحص البيئة task-stage capability mind map and duplicate audit الخريطة الذهنية المرحلية وتدقيق التكرار capability-mindmap mind map stages task map audit duplicates خريطة ذهنية مراحل تكرار خطة map plate: projection to pixels, choropleth classes and source ledger لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر geo-plate map projection mercator equirectangular choropleth jenks quantile per capita crs coordinates licence خريطة إسقاط مركاتور إحداثيات تصنيف فئات لكل فرد مصدر ترخيص kosif remote commander mcp خادم kosif remote commander kosif-remote-commander mcp server stdio local files workspace read file search text consent gated desktop commander alternative خادم mcp ملفات الجهاز مساحة عمل قراءة الملفات بحث في الملفات تحكم محلي صلاحيات skill health check فحص سلامة المهارة check-skill validate skill skill lint frontmatter broken links counts marker routing evals secret scan tool registry check ci gate فحص المهارة التحقق من المهارة روابط مكسورة تقييمات التوجيه عدادات القدرات فحص الأسرار fusionforge shared memory: reviewed cross-project skill structures ذاكرة fusionforge المشتركة بوصفات مهارات معزولة fusionforge-shared shared memory fusionforge promotion cross-project privacy qa skill reuse ذاكرة مشتركة توليف عزل الشركات proof scope relabeler إعادة تصنيف نطاق الأدلة relabel-proofs proof scope evidence labels proven proof paths relabel catalog maintenance verification نطاق الدليل ا"
 },
@@ -12086,11 +12086,11 @@
 }
 ],
 "audit": {
-"atoms": 5581,
+"atoms": 5582,
 "superpowers": 460,
 "twin_groups": 178,
 "twin_members": 458,
-"distinct_methods": 5301,
+"distinct_methods": 5302,
 "tiny_absorbed": 23,
 "same_name_groups": [
 {
@@ -13103,7 +13103,7 @@
 "create": 1891,
 "refine": 882,
 "assemble": 476,
-"understand": 784,
+"understand": 785,
 "verify": 464
 }
 }

@@ -6745,5 +6745,44 @@
   ],
   "section": "Discover and route / اكتشاف القدرات والتوجيه",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-157",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة",
+  "name_en": "Micro index: one line per power, tool and superpower",
+  "status": "proven",
+  "what": "يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة. — Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.",
+  "when": "اعرض لي الفهرس الدقيق لكل القدرات / Find every power, tool and superpower about loudness",
+  "how": "build: `python3 scripts/micro_index.py build`; find: `python3 scripts/micro_index.py find \"قص على الإيقاع\" --top 10`; show: `python3 scripts/micro_index.py show SP-0001`; stats: `python3 scripts/micro_index.py stats`. Full card: `python3 scripts/hub.py tool micro-index`. Limits: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.",
+  "params": "in: data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json · out: data/micro_index.json and references/micro-index/*.md; matches on stdout",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "micro-index",
+   "micro index",
+   "index",
+   "find",
+   "show",
+   "catalog",
+   "map",
+   "فهرس",
+   "فهرس دقيق",
+   "بحث",
+   "خريطة",
+   "قدرات"
+  ],
+  "section": "Discover and route / اكتشاف القدرات والتوجيه",
+  "source": "data/tools.json"
  }
 ]

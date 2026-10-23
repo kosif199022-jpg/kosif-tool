@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (155 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (156 بطاقة)
 
 > مكتبة بروتوكول USIP v5.5 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -75,6 +75,7 @@
 - [`TOOL-153` رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG](#tool-153--رموز-الهوية-ألوان-الشعار-ورموز-بثلاث-طبقات-ومصفوفة-تباين-wcag--brand-tokens-svg-palette-3-tier-design-tokens-and-wcag-contrast-matrix)
 - [`TOOL-154` حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية](#tool-154--حارس-الوكيل-فحص-الأوامر-قبل-تشغيلها-وكشف-الأسرار-وخطة-فروع-متوازية--agent-guard-shell-preflight-transcript-secret-scan-and-worktree-plans)
 - [`TOOL-156` البحث في كتالوج القدرات](#tool-156--البحث-في-كتالوج-القدرات--power-catalog-search)
+- [`TOOL-157` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة](#tool-157--الفهرس-الدقيق-سطر-لكل-قدرة-وأداة-وقدرة-خارقة--micro-index-one-line-per-power-tool-and-superpower)
 - [`TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره](#tool-16--إنشاء-فيلم-سبورة-مرسوم-وتصييره--doodle-film-runtime-and-renderer)
 - [`TOOL-17` مولّد مشاريع بداية لمحركات الحركة](#tool-17--مولّد-مشاريع-بداية-لمحركات-الحركة--third-party-motion-engine-scaffolder)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
@@ -5060,7 +5061,7 @@
 - `TOOL-152` تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML / TTS script prep: prosody-safe chunks, duration estimate and SSML (proven)
 - `TOOL-153` رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG / Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix (proven)
 - `TOOL-156` البحث في كتالوج القدرات / Power catalog search (proven)
-- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+- `TOOL-157` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
 
 ### `TOOL-156` — البحث في كتالوج القدرات / Power catalog search
 
@@ -5131,6 +5132,75 @@
 
 - `TOOL-153` رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG / Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix (proven)
 - `TOOL-154` حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية / Agent guard: shell preflight, transcript secret scan and worktree plans (proven)
+- `TOOL-157` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
+- `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
+
+### `TOOL-157` — الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة. — Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.
+
+**متى:** اعرض لي الفهرس الدقيق لكل القدرات / Find every power, tool and superpower about loudness
+
+**كيف:** build: `python3 scripts/micro_index.py build`; find: `python3 scripts/micro_index.py find "قص على الإيقاع" --top 10`; show: `python3 scripts/micro_index.py show SP-0001`; stats: `python3 scripts/micro_index.py stats`. Full card: `python3 scripts/hub.py tool micro-index`. Limits: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run.
+
+**المعاملات:** in: data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json · out: data/micro_index.json and references/micro-index/*.md; matches on stdout
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** micro-index · micro index · index · find · show · catalog · map · فهرس · فهرس دقيق · بحث · خريطة · قدرات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-157` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-154` حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية / Agent guard: shell preflight, transcript secret scan and worktree plans (proven)
+- `TOOL-156` البحث في كتالوج القدرات / Power catalog search (proven)
 - `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 
@@ -5201,8 +5271,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-154` حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية / Agent guard: shell preflight, transcript secret scan and worktree plans (proven)
 - `TOOL-156` البحث في كتالوج القدرات / Power catalog search (proven)
+- `TOOL-157` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 
@@ -5276,7 +5346,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-156` البحث في كتالوج القدرات / Power catalog search (proven)
+- `TOOL-157` الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة / Micro index: one line per power, tool and superpower (proven)
 - `TOOL-16` إنشاء فيلم سبورة مرسوم وتصييره / Doodle film runtime and renderer (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)

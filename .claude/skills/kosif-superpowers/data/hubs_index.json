@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5581,
+ "atoms": 5582,
  "superpowers": 460,
  "hubs": [
   {
@@ -407,9 +407,9 @@
      "id": "SP-0123",
      "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
      "name_en": "Atlas metadata capability miner",
-     "size": 37,
+     "size": 38,
      "best": "proven",
-     "ready_now": 37
+     "ready_now": 38
     },
     {
      "id": "SP-0125",
@@ -500,15 +500,15 @@
      "ready_now": 6
     }
    ],
-   "powers": 252,
+   "powers": 253,
    "status_mix": {
-    "proven": 149,
+    "proven": 150,
     "ready": 21,
     "install": 15,
     "key": 2,
     "documented": 65
    },
-   "ready_now": 170,
+   "ready_now": 171,
    "requires": [
     "python3",
     "ffmpeg",

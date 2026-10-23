@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **155 powers follow** — ✅ 122 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **156 powers follow** — ✅ 123 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -13,7 +13,7 @@
 
 ## الفهرس / contents
 
-- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-156 (25)
+- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-157 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-151 (13)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-150 (20)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-132 (13)
@@ -244,6 +244,14 @@
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:mermaid`](../requirements.md#req-npm-mermaid)
 - **الدليل / proof:** `kosif-tool/tests/test_superpowers.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_rea_routing.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_installer_triage.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-157 · الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة · Micro index: one line per power, tool and superpower · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى للقدرات الخارقة)؛ find يبحث فيه بالعربية أو الإنجليزية وshow يعرض أي معرّف مع جيرانه. الخيار --check يبلغ عن الملفات غير المحدّثة دون كتابة. — Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing.
+- **متى أستخدمها / when:** اعرض لي الفهرس الدقيق لكل القدرات / Find every power, tool and superpower about loudness
+- **كيف / how:** build: `python3 scripts/micro_index.py build`; find: `python3 scripts/micro_index.py find "قص على الإيقاع" --top 10`; show: `python3 scripts/micro_index.py show SP-0001`; stats: `python3 scripts/micro_index.py stats`. Full card: `python3 scripts/hub.py tool micro-index`. Limits: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run. **أرقام / params:** in: data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json · out: data/micro_index.json and references/micro-index/*.md; matches on stdout
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py`
 - **المصدر / source:** data/tools.json
 
 ## Think, ideate and write / التفكير والأفكار والكتابة
@@ -1391,7 +1399,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (155)
+- الرخص / licences: — (156)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
