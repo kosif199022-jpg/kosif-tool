@@ -909,5 +909,38 @@
   ],
   "section": "تصنيف الأعطال — Failure taxonomy",
   "source": "owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/SKILL.md §10 self-repair + §8 failure-isolated work (owner; rewritten); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-engineering-reliability gate 'no blind retry after an uncertain mutation'"
+ },
+ {
+  "id": "CHECK-30",
+  "family": "verification-evals",
+  "domain": "mind",
+  "name_ar": "حَكَم مغلق الخيارات مرتين بترتيب معكوس",
+  "name_en": "Closed-set judge asked twice with reversed options, a 'none' option and a declared fallback",
+  "status": "documented",
+  "what": "لاختيار بين مرشحين (مهارة، خطة، أداة) اسأل الحكم بخيارات مغلقة ومعها «لا شيء»، مرتين بالتوازي والترتيب معكوس في الثانية؛ الاتفاق = حكم ثابت، الاختلاف = متوسط الترتيبين، غياب الحكم = الترتيب الحتمي، وسجّل decided_by. — Pick among candidates with a closed-set judge asked twice (options reversed) plus 'none'; agreement is stable, disagreement averages the rankings, an unavailable judge falls back to the deterministic ranking, and the reply says which path decided.",
+  "when": "عند اختيار مهارة أو خطة أو أداة من عدة مرشحين بحكم نموذج / when a model judge picks among several candidates",
+  "how": "Validate the packet first: refuse approval questions about payment, deletion, publishing or sending; require non-empty evidence; redact keys, emails, phones and card numbers. Cache by packet digest. Report decided_by (stable / mean_ranking / deterministic) and a receipt per call. A judgement is an opinion, never permission (A2).",
+  "params": "2 calls, reversed order; 'none' always offered; cache 7 days",
+  "install": "",
+  "requires": [],
+  "license": "owner",
+  "proof": [],
+  "proof_scope": "none",
+  "styles": [],
+  "tags": [
+   "judge",
+   "حكم",
+   "stability",
+   "ثبات",
+   "closed set",
+   "خيارات مغلقة",
+   "jev",
+   "selection",
+   "اختيار",
+   "position bias",
+   "انحياز الترتيب"
+  ],
+  "section": "إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions",
+  "source": "owner-upload:KOSIF-handoff-2026-10-03-v3 §3 and §5 (kosif_jev_decide, kosif_skill_auto; owner; rewritten, no code copied)"
  }
 ]

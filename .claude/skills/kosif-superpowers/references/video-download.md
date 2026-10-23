@@ -38,6 +38,7 @@ python3 scripts/fetch_video.py --update                         # عند تغي�
 - **V34:** جزء فقط من الفيديو (`--download-sections`)، ترجمة عربية/إنجليزية SRT مدمجة كـmov_text، `c --batch` مع حفظ الروابط الفاشلة، `c --history`.
 - **الاستوديو `c --studio`** بوصفات من الكتالوج: قص بلا فقد أو دقيق، ضغط لحجم 16/25/50MB بمحاولة ثانية عند التجاوز، ريلز 9:16 بخلفية مموهة (FMT: gblur ثم boxblur ثم تصغير/تكبير)، GIF بميزانية 15MB (FMT palettegen)، غلاف JPG، جهارة -14 LUFS بمرورين (BEAT-01)، قص الصمت (silencedetect + select)، كتم، صوت فقط.
 - **الاختبار:** في الحاوية بمحاكي ffmpeg يرفض libx264 وVideoToolbox، وyt-dlp وهمي لمسارات التحميل، ومكتبة yt-dlp الحقيقية لاختيار الصيغ. لم يُشغَّل على آيفون حقيقي.
+- **سجل السلسلة V13 → V34:** ما تعلمته كل نسخة (التحقق والحجر في V22، إزالة ffprobe في V24، PhotosSafe في V25، فيسبوك في V26–V28) في [owner-uploads-review-20261023.md §3](owner-uploads-review-20261023.md#3-سلسلة-cinema-c-للآيفون--the-cinema-c-lineage-v13--v34) (DL-11).
 
 ## 100-source licensed media discovery — NEW
 

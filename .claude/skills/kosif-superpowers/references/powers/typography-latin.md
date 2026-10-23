@@ -862,3 +862,22 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** unknown (reference only)
 - **المصدر / source:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js`
 - **الدليل / proof:** `owner-upload:Claude_edit_skill_1/Claude edit skill/implementation/browser-reference/fonts.js` · `owner-upload:motion-saas_skill/higgsfield-motion-saas/references/client-taste.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### TYPE-U01 · خط Poppins مضمّن · Poppins bundled (OFL) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** Poppins Regular وBold مضمنان في proofs/_shared/fonts مع OFL-Poppins.txt؛ رسمتُهما بـPillow في إثبات الرفع. — Geometric sans for Latin captions and UI labels, bundled under OFL 1.1.
+- **متى أستخدمها / when:** خط لاتيني نظيف للترجمات واللوحات / a clean Latin font for captions
+- **كيف / how:** ImageFont.truetype('proofs/_shared/fonts/Poppins-Bold.ttf', size)
+- **الرخصة / license:** SIL OFL 1.1
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/Poppins-Bold.ttf` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/OFL-Poppins.txt` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg`
+
+#### TYPE-U02 · قواعد قراءة الترجمة فوق اللقطات · Caption readability rules over footage · 📄 موصوف / documented
+- **ماذا / what:** نص أبيض عريض بظل ناعم قوي وتدرج داكن أسفل الإطار؛ ترجمة ~56 px، عبارة مفتاح ~96 px، تسميات 32–40 px؛ أسفل الوسط لا أعلى الإطار؛ نفس الارتفاع للترجمات المتتالية؛ كبسولة الكلمة المفتاح موسّطة على حدود الحبر؛ لا قطع بين لقطتين والترجمة ظاهرة؛ كل كلمة تصعد قبل وقتها بـ0.04–0.1 ث. — Readability defaults learned from creator revisions.
+- **متى أستخدمها / when:** ترجمات أو عناوين فوق فيديو / captions or titles over footage
+- **كيف / how:** قِس حدود الحبر بـtextbbox لا صندوق التخطيط. **أرقام / params:** 56/96/32–40 px at 1080p; words lead by 0.04–0.1 s
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

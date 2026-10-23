@@ -811,3 +811,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** owner
 - **المصدر / source:** `owner-upload:kosif-tool-ultra/kosif-500-methods.json`
 - **الدليل / proof:** `session-2026-10-16:motion-leftovers#5` · `owner-upload:kosif-tool-ultra/kosif-500-methods.json`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### ARAB-U01 · خط El Messiri العربي مضمّن · El Messiri Arabic display font bundled (OFL) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** El Messiri متغير (Regular–Bold، v2.020) مضمّن في proofs/_shared/fonts مع OFL-ElMessiri.txt؛ رسمتُه بتشكيل raqm صحيح في إثبات الرفع. خط عرض عربي أنيق للعناوين والأفلام الغنائية. — Elegant Arabic display face for titles and lyric films.
+- **متى أستخدمها / when:** عنوان عربي أنيق أو فيلم أغنية / an elegant Arabic title or lyric film
+- **كيف / how:** ImageFont.truetype('proofs/_shared/fonts/ElMessiri[wght].ttf', size) مع direction='rtl', language='ar'
+- **الرخصة / license:** SIL OFL 1.1
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/ElMessiri[wght].ttf` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/_shared/fonts/OFL-ElMessiri.txt` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/sheet.jpg`

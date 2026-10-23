@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** أثبت قبل أن تدّعي: اختبارات وتقييمات ومعايير قبول وإيصالات تشغيل. — Prove before claiming: tests, evals, acceptance criteria and run receipts.
 > **أقوى دليل / strongest evidence:** **CHECK-02** Postcondition gate on the delivered file (ffprobe / verify_video.py / measured sync) (`kosif-tool/.claude/skills/kosif-superpowers/proofs/README.md`) · **CHECK-03** Look at the output: contact sheets, frames, screenshots (`kosif-tool/.claude/skills/kosif-superpowers/proofs/beat-sync/sheet.jpg`)
-> **29 powers follow** — ✅ 4 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 25 · 💡 0.
+> **30 powers follow** — ✅ 4 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 26 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** العقل والتفكير — Mind & thinking · **البادئة / prefix:** `CHECK` · **البيانات / data:** `data/powers/verification-evals.json` · **بحث / search:** `python3 scripts/powers.py family verification-evals`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [hubs.md](../hubs.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [cinematic-director-pro.md](../cinematic-director-pro.md) · [hubs.md](../hubs.md) · [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md) · [thinking.md](../thinking.md) · [verification.md](../verification.md)
 
 ## الفهرس / contents
 
@@ -19,6 +19,7 @@
 - **المراجعون المستقلون — Independent reviewers** — CHECK-15 … CHECK-17 (3)
 - **تطوير المهارة ذاتيًا — Skill self-evolution** — CHECK-21 … CHECK-26 (6)
 - **تصنيف الأعطال — Failure taxonomy** — CHECK-27 … CHECK-29 (3)
+- **إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions** — CHECK-30 (1)
 - المصادر والرخص / sources & licences
 
 ## حلقة التحقق — Verification loop
@@ -277,9 +278,19 @@
 - **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
 - **المصدر / source:** owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-see/SKILL.md §10 self-repair + §8 failure-isolated work (owner; rewritten); owner-upload:KOSIF_SEE_Humanizer_Optimize_Graphify_v1.7.5/skills/kosif-engineering-reliability gate 'no blind retry after an uncertain mutation'
 
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+#### CHECK-30 · حَكَم مغلق الخيارات مرتين بترتيب معكوس · Closed-set judge asked twice with reversed options, a 'none' option and a declared fallback · 📄 موصوف / documented only
+- **ماذا / what:** لاختيار بين مرشحين (مهارة، خطة، أداة) اسأل الحكم بخيارات مغلقة ومعها «لا شيء»، مرتين بالتوازي والترتيب معكوس في الثانية؛ الاتفاق = حكم ثابت، الاختلاف = متوسط الترتيبين، غياب الحكم = الترتيب الحتمي، وسجّل decided_by. — Pick among candidates with a closed-set judge asked twice (options reversed) plus 'none'; agreement is stable, disagreement averages the rankings, an unavailable judge falls back to the deterministic ranking, and the reply says which path decided.
+- **متى أستخدمها / when:** عند اختيار مهارة أو خطة أو أداة من عدة مرشحين بحكم نموذج / when a model judge picks among several candidates
+- **كيف / how:** Validate the packet first: refuse approval questions about payment, deletion, publishing or sending; require non-empty evidence; redact keys, emails, phones and card numbers. Cache by packet digest. Report decided_by (stable / mean_ranking / deterministic) and a receipt per call. A judgement is an opinion, never permission (A2). **أرقام / params:** 2 calls, reversed order; 'none' always offered; cache 7 days
+- **الرخصة / license:** owner
+- **الدليل / proof:** — (لا دليل تشغيل بعد / no run proof yet)
+- **المصدر / source:** owner-upload:KOSIF-handoff-2026-10-03-v3 §3 and §5 (kosif_jev_decide, kosif_skill_auto; owner; rewritten, no code copied)
+
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: owner (15) · MIT (12) · — (2)
+- الرخص / licences: owner (16) · MIT (12) · — (2)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

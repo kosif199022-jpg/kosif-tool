@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5390
+   "count": 5408
   },
   {
    "id": "dom:motion",
@@ -721,12 +721,12 @@
    "label": "Audio sync & captions",
    "ar": "التزامن مع الكلام والترجمة",
    "prefix": "SYNC",
-   "count": 60,
+   "count": 61,
    "proven": 20,
    "status": {
     "proven": 20,
     "ready": 9,
-    "documented": 18,
+    "documented": 19,
     "key": 1,
     "install": 7,
     "seen": 5
@@ -783,7 +783,7 @@
    "label": "Camera & composition",
    "ar": "الكاميرا والتكوين",
    "prefix": "CAM",
-   "count": 424,
+   "count": 425,
    "proven": 13,
    "status": {
     "proven": 13,
@@ -791,7 +791,7 @@
     "install": 122,
     "key": 14,
     "seen": 145,
-    "documented": 70,
+    "documented": 71,
     "idea": 15
    }
   },
@@ -970,10 +970,10 @@
    "label": "Diagrams, explainers & code",
    "ar": "المخططات والشرح والكود",
    "prefix": "EXPL",
-   "count": 65,
+   "count": 67,
    "proven": 2,
    "status": {
-    "documented": 26,
+    "documented": 28,
     "key": 1,
     "install": 11,
     "ready": 11,
@@ -1095,12 +1095,12 @@
    "label": "Hand-drawn & draw-on",
    "ar": "الرسم اليدوي والرسم الحي",
    "prefix": "DRAW",
-   "count": 62,
+   "count": 63,
    "proven": 17,
    "status": {
     "proven": 17,
     "ready": 15,
-    "documented": 18,
+    "documented": 19,
     "install": 6,
     "seen": 6
    }
@@ -1211,7 +1211,7 @@
    "label": "Music, beat & sound",
    "ar": "الموسيقى والإيقاع والمؤثرات",
    "prefix": "BEAT",
-   "count": 305,
+   "count": 306,
    "proven": 27,
    "status": {
     "proven": 27,
@@ -1219,7 +1219,7 @@
     "install": 74,
     "key": 22,
     "seen": 32,
-    "documented": 79,
+    "documented": 80,
     "idea": 12
    }
   },
@@ -1245,10 +1245,10 @@
    "label": "Particles, fluids & physics",
    "ar": "الجسيمات والسوائل والفيزياء",
    "prefix": "PART",
-   "count": 76,
-   "proven": 17,
+   "count": 77,
+   "proven": 18,
    "status": {
-    "proven": 17,
+    "proven": 18,
     "documented": 11,
     "install": 13,
     "seen": 20,
@@ -1263,10 +1263,10 @@
    "label": "Photos & footage",
    "ar": "الصور والفيديو الخام",
    "prefix": "FOOT",
-   "count": 68,
+   "count": 71,
    "proven": 20,
    "status": {
-    "documented": 19,
+    "documented": 22,
     "ready": 17,
     "install": 7,
     "proven": 20,
@@ -1333,10 +1333,10 @@
    "label": "QA & verification",
    "ar": "الجودة والتحقق",
    "prefix": "QA",
-   "count": 383,
-   "proven": 73,
+   "count": 384,
+   "proven": 74,
    "status": {
-    "proven": 73,
+    "proven": 74,
     "ready": 58,
     "install": 88,
     "key": 14,
@@ -1551,12 +1551,12 @@
    "label": "Story & direction",
    "ar": "القصة والإخراج",
    "prefix": "STORY",
-   "count": 94,
+   "count": 95,
    "proven": 14,
    "status": {
     "ready": 20,
     "proven": 14,
-    "documented": 46,
+    "documented": 47,
     "install": 2,
     "seen": 11,
     "key": 1
@@ -1621,10 +1621,10 @@
    "label": "Transitions & cuts",
    "ar": "الانتقالات والقطعات",
    "prefix": "TRANS",
-   "count": 473,
-   "proven": 28,
+   "count": 474,
+   "proven": 29,
    "status": {
-    "proven": 28,
+    "proven": 29,
     "ready": 58,
     "install": 175,
     "key": 1,
@@ -1644,10 +1644,10 @@
    "label": "Arabic typography",
    "ar": "الخط العربي المتحرك",
    "prefix": "ARAB",
-   "count": 98,
-   "proven": 22,
+   "count": 99,
+   "proven": 23,
    "status": {
-    "proven": 22,
+    "proven": 23,
     "documented": 21,
     "ready": 36,
     "install": 7,
@@ -1692,15 +1692,15 @@
    "label": "Latin & kinetic typography",
    "ar": "التايبوغرافي اللاتيني والحركي",
    "prefix": "TYPE",
-   "count": 92,
-   "proven": 2,
+   "count": 94,
+   "proven": 3,
    "status": {
-    "documented": 19,
+    "documented": 20,
     "install": 20,
     "key": 1,
     "ready": 13,
     "seen": 35,
-    "proven": 2,
+    "proven": 3,
     "idea": 2
    }
   },
@@ -1728,10 +1728,10 @@
    "label": "Verification & evals",
    "ar": "التحقق والتقييم",
    "prefix": "CHECK",
-   "count": 29,
+   "count": 30,
    "proven": 4,
    "status": {
-    "documented": 25,
+    "documented": 26,
     "proven": 4
    }
   },
@@ -1746,12 +1746,12 @@
    "label": "Video download",
    "ar": "تحميل الفيديو من الروابط",
    "prefix": "DL",
-   "count": 10,
+   "count": 11,
    "proven": 5,
    "status": {
     "proven": 5,
     "ready": 3,
-    "documented": 2
+    "documented": 3
    }
   },
   {
@@ -3356,13 +3356,13 @@
    "from": "dom:motion",
    "to": "fam:audio-sync-captions",
    "rel": "has",
-   "w": 60
+   "w": 61
   },
   {
    "from": "fam:audio-sync-captions",
    "to": "req:pip:faster-whisper",
    "rel": "needs",
-   "w": 12
+   "w": 13
   },
   {
    "from": "fam:audio-sync-captions",
@@ -3476,7 +3476,7 @@
    "from": "dom:motion",
    "to": "fam:camera-composition-layout",
    "rel": "has",
-   "w": 424
+   "w": 425
   },
   {
    "from": "fam:camera-composition-layout",
@@ -3938,7 +3938,7 @@
    "from": "dom:motion",
    "to": "fam:diagrams-explainers-code",
    "rel": "has",
-   "w": 65
+   "w": 67
   },
   {
    "from": "fam:diagrams-explainers-code",
@@ -4256,13 +4256,13 @@
    "from": "dom:motion",
    "to": "fam:hand-drawn-draw-on",
    "rel": "has",
-   "w": 62
+   "w": 63
   },
   {
    "from": "fam:hand-drawn-draw-on",
    "to": "req:python3",
    "rel": "needs",
-   "w": 11
+   "w": 12
   },
   {
    "from": "fam:hand-drawn-draw-on",
@@ -4592,7 +4592,7 @@
    "from": "dom:motion",
    "to": "fam:music-beat-sound",
    "rel": "has",
-   "w": 305
+   "w": 306
   },
   {
    "from": "fam:music-beat-sound",
@@ -4712,7 +4712,7 @@
    "from": "dom:motion",
    "to": "fam:particles-fluids-physics",
    "rel": "has",
-   "w": 76
+   "w": 77
   },
   {
    "from": "fam:particles-fluids-physics",
@@ -4772,7 +4772,7 @@
    "from": "dom:motion",
    "to": "fam:photo-video-footage",
    "rel": "has",
-   "w": 68
+   "w": 71
   },
   {
    "from": "fam:photo-video-footage",
@@ -4988,7 +4988,7 @@
    "from": "dom:motion",
    "to": "fam:qa-verification",
    "rel": "has",
-   "w": 383
+   "w": 384
   },
   {
    "from": "fam:qa-verification",
@@ -5450,7 +5450,7 @@
    "from": "dom:motion",
    "to": "fam:story-direction-ideas",
    "rel": "has",
-   "w": 94
+   "w": 95
   },
   {
    "from": "fam:story-direction-ideas",
@@ -5708,7 +5708,7 @@
    "from": "dom:motion",
    "to": "fam:transitions-cuts",
    "rel": "has",
-   "w": 473
+   "w": 474
   },
   {
    "from": "fam:transitions-cuts",
@@ -5780,19 +5780,19 @@
    "from": "dom:motion",
    "to": "fam:typography-arabic",
    "rel": "has",
-   "w": 98
+   "w": 99
   },
   {
    "from": "fam:typography-arabic",
    "to": "req:fonts:arabic",
    "rel": "needs",
-   "w": 26
+   "w": 27
   },
   {
    "from": "fam:typography-arabic",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 9
+   "w": 10
   },
   {
    "from": "fam:typography-arabic",
@@ -5876,7 +5876,7 @@
    "from": "dom:motion",
    "to": "fam:typography-latin",
    "rel": "has",
-   "w": 92
+   "w": 94
   },
   {
    "from": "fam:typography-latin",
@@ -5894,13 +5894,19 @@
    "from": "fam:typography-latin",
    "to": "req:fonts:arabic",
    "rel": "needs",
-   "w": 6
+   "w": 7
   },
   {
    "from": "fam:typography-latin",
    "to": "req:node",
    "rel": "needs",
    "w": 3
+  },
+  {
+   "from": "fam:typography-latin",
+   "to": "req:pip:pillow",
+   "rel": "needs",
+   "w": 2
   },
   {
    "from": "fam:typography-latin",
@@ -5917,12 +5923,6 @@
   {
    "from": "fam:typography-latin",
    "to": "req:npm:remotion",
-   "rel": "needs",
-   "w": 1
-  },
-  {
-   "from": "fam:typography-latin",
-   "to": "req:pip:pillow",
    "rel": "needs",
    "w": 1
   },
@@ -5996,7 +5996,7 @@
    "from": "dom:mind",
    "to": "fam:verification-evals",
    "rel": "has",
-   "w": 29
+   "w": 30
   },
   {
    "from": "fam:verification-evals",
@@ -6074,13 +6074,13 @@
    "from": "dom:motion",
    "to": "fam:video-download",
    "rel": "has",
-   "w": 10
+   "w": 11
   },
   {
    "from": "fam:video-download",
    "to": "req:yt-dlp",
    "rel": "needs",
-   "w": 10
+   "w": 11
   },
   {
    "from": "fam:video-download",
@@ -6092,7 +6092,7 @@
    "from": "fam:video-download",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 2
+   "w": 3
   },
   {
    "from": "fam:video-download",
