@@ -37,6 +37,7 @@
 |---|---|---|---|
 | `audio-cue-mapper` | مستخرج إشارات التوقيت من الصوت | `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json` | tested-here |
 | `blender-cinematic-bridge` | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت | `python3 scripts/blender_cinematic_bridge.py doctor` | tested-here |
+| `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `character-fullbody` | تحريك الشخصية بكامل الجسم | `python3 scripts/character_fullbody.py doctor` | tested-here |
 | `character-ik` | تحريك ذراع الشخصية بالحركية العكسية | `python3 scripts/character_ik.py doctor` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |

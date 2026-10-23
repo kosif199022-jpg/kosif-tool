@@ -20,37 +20,37 @@
 | 4 | [`chromium`](#req-chromium) | bin | 365 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, transitions-cuts |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 279 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 239 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
-| 7 | [`node`](#req-node) | bin | 177 | qa-verification, runnable-tools, atlas-code, engines-render-pipeline, color-palette-grading |  |
-| 8 | [`npm:three`](#req-npm-three) | npm | 177 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
-| 9 | [`key:unspecified`](#req-key-unspecified) | key | 177 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
-| 10 | [`pip:pillow`](#req-pip-pillow) | pip | 141 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
-| 11 | [`pip:numpy`](#req-pip-numpy) | pip | 138 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, runnable-tools |  |
+| 7 | [`node`](#req-node) | bin | 177 | qa-verification, runnable-tools, atlas-code, engines-render-pipeline, color-palette-grading | · `npm:three` |
+| 8 | [`npm:three`](#req-npm-three) | npm | 177 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial | · `key:unspecified` |
+| 9 | [`key:unspecified`](#req-key-unspecified) | key | 177 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification | · `node` |
+| 10 | [`pip:pillow`](#req-pip-pillow) | pip | 141 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic | · `pip:numpy` |
+| 11 | [`pip:numpy`](#req-pip-numpy) | pip | 138 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, runnable-tools | · `pip:pillow` |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 118 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
-| 13 | [`pip:opencv`](#req-pip-opencv) | pip | 101 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
-| 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 98 | typography-arabic, typography-latin, documents-office, audio-sync-captions, runnable-tools |  |
-| 15 | [`engine:ghidra`](#req-engine-ghidra) | bin | 87 | software-investigation, runnable-tools |  |
-| 16 | [`imagemagick`](#req-imagemagick) | bin | 86 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, qa-verification |  |
+| 13 | [`pip:opencv`](#req-pip-opencv) | pip | 101 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline | · `fonts:arabic` |
+| 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 98 | typography-arabic, typography-latin, documents-office, audio-sync-captions, runnable-tools | · `pip:opencv` |
+| 15 | [`engine:ghidra`](#req-engine-ghidra) | bin | 87 | software-investigation, runnable-tools | · `imagemagick` |
+| 16 | [`imagemagick`](#req-imagemagick) | bin | 86 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, qa-verification | · `engine:ghidra` |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 74 | agent-orchestration, thinking-core, atlas-mind, atlas-code, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 67 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
 | 19 | [`npm:react`](#req-npm-react) | npm | 57 | engines-render-pipeline, atlas-code, transitions-cuts, atlas-build, runnable-tools |  |
-| 20 | [`git`](#req-git) | bin | 50 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering |  |
-| 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 50 | audio-sync-captions, qa-verification, engines-render-pipeline, runnable-tools, photo-video-footage |  |
+| 20 | [`git`](#req-git) | bin | 50 | atlas-code, agent-orchestration, atlas-mind, atlas-docs, code-engineering | · `pip:faster-whisper` |
+| 21 | [`pip:faster-whisper`](#req-pip-faster-whisper) | model | 50 | audio-sync-captions, qa-verification, engines-render-pipeline, runnable-tools, photo-video-footage | · `git` |
 | 22 | [`pip:office`](#req-pip-office) | pip | 41 | documents-office, atlas-docs, self-discovery, runnable-tools, app-feature-transfer |  |
 | 23 | [`os:macos`](#req-os-macos) | os | 37 | software-investigation, ui-product-device, atlas-code, engines-render-pipeline, atlas-build |  |
-| 24 | [`blender`](#req-blender) | apt | 36 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
-| 25 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools |  |
-| 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools |  |
-| 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code |  |
-| 28 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph |  |
-| 29 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery |  |
-| 30 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation |  |
-| 31 | [`network`](#req-network) | os | 23 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety |  |
-| 32 | [`yt-dlp`](#req-yt-dlp) | pip | 22 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
-| 33 | [`key:graphify`](#req-key-graphify) | service | 22 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
-| 34 | [`npm:bruno`](#req-npm-bruno) | npm | 22 | api-testing |  |
-| 35 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media |  |
-| 36 | [`npm:d3`](#req-npm-d3) | npm | 20 | maps-geo, engines-render-pipeline, knowledge-graph, atlas-strategy, charts-data-infographic |  |
-| 37 | [`key:openai`](#req-key-openai) | key | 20 | ai-generation, atlas-code, audio-sync-captions, characters-rigs, prompt-craft |  |
+| 24 | [`blender`](#req-blender) | apt | 36 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery | · `engine:android` |
+| 25 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools | · `npm:axe` |
+| 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools | · `npm:esbuild` |
+| 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 25 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, texture-material, atlas-code | · `network` |
+| 28 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph | · `blender` |
+| 29 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery | · `engine:wakaru` |
+| 30 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation | · `npm:mermaid` |
+| 31 | [`network`](#req-network) | os | 23 | self-discovery, audio-sync-captions, web-research, media-image-audio, security-safety | · `key:graphify` |
+| 32 | [`yt-dlp`](#req-yt-dlp) | pip | 22 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline | · `npm:bruno` |
+| 33 | [`key:graphify`](#req-key-graphify) | service | 22 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety | · `tesseract` |
+| 34 | [`npm:bruno`](#req-npm-bruno) | npm | 22 | api-testing | · `pip:scipy` |
+| 35 | [`pip:scipy`](#req-pip-scipy) | pip | 20 | transitions-cuts, data-analysis, music-beat-sound, self-discovery, atlas-media | · `npm:d3` |
+| 36 | [`npm:d3`](#req-npm-d3) | npm | 20 | maps-geo, engines-render-pipeline, knowledge-graph, atlas-strategy, charts-data-infographic | · `key:openai` |
+| 37 | [`key:openai`](#req-key-openai) | key | 20 | ai-generation, atlas-code, audio-sync-captions, characters-rigs, prompt-craft | · `yt-dlp` |
 | 38 | [`key:elevenlabs`](#req-key-elevenlabs) | key | 19 | music-beat-sound, voice-tts, atlas-media, audio-sync-captions, formats-platforms |  |
 | 39 | [`docker`](#req-docker) | bin | 18 | engines-render-pipeline, self-discovery, atlas-code, atlas-build, atlas-docs |  |
 | 40 | [`pip:matplotlib`](#req-pip-matplotlib) | pip | 18 | engines-render-pipeline, data-analysis, media-image-audio, qa-verification, self-discovery |  |
@@ -329,6 +329,16 @@
 - **بالحالة / by status:** install 27 · documented 19 · proven 4 · ready 3 · key 2 · seen 2
 - **العائلات / families:** engines-render-pipeline (17), atlas-code (7), transitions-cuts (4), atlas-build (3), runnable-tools (3), 3d-spatial (2), apps-artifacts (2), atlas-media (2)
 - **أمثلة / examples:** `DATA-92` Chart palettes (categorical, sequential, semanti · `TOOL-17` Third-party motion engine scaffolder · `TOOL-22` Reference Edit Engine · `TRANS-07` Scene enter on view change · `3D-16` Remotion ThreeCanvas · `3D-17` Portals & render-to-texture
+
+<a id="req-pip-faster-whisper"></a>
+### `pip:faster-whisper` — تفريغ الصوت مع توقيت كل كلمة (عربي) / speech-to-text with word timestamps (Arabic)
+
+- **النوع / kind:** model (نموذج/أوزان)
+- **التثبيت / install:** `pip install faster-whisper  (models from huggingface.co: small 466 MB, large-v3 3.1 GB; CPU works)`
+- **يفتح / unlocks:** 51 powers
+- **بالحالة / by status:** proven 16 · install 11 · documented 10 · ready 7 · key 4 · seen 2 · idea 1
+- **العائلات / families:** audio-sync-captions (13), qa-verification (7), app-feature-transfer (4), engines-render-pipeline (4), photo-video-footage (2), runnable-tools (2), self-discovery (2), voice-tts (2)
+- **أمثلة / examples:** `APPX-13` Word-timed auto captions · `APPX-140` Caption lines with reading rules · `APPX-141` Screen speech-model inventions · `ENG-X06` Tool-map doctor before promising a stack · `FOOT-D03` Measure a reel's style from its frames · `SELF-14` No GPU: plan for CPU
 
 <a id="req-git"></a>
 ### `git` — إدارة الإصدارات / version control

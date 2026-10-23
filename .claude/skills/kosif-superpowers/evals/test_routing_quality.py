@@ -109,8 +109,11 @@ class RoutingQuality(unittest.TestCase):
                 self.assertFalse(has(picks, k), (tag, pre, k, picks))
         if e.get("rec_include_any"):
             self.assertTrue(any(has(rec_names, k) for k in e["rec_include_any"]), (tag, rec, e["rec_include_any"], rec_names))
+        # A superpower's display name is its medoid member, which can flip between near-tied members when the
+        # catalog grows; "the plan includes X" therefore also counts the members the brief says it matched.
+        rec_seen = rec_names + [c for x in b["plans"][rec]["superpowers"] for c in x.get("contains", [])] if rec else []
         for k in e.get("rec_include_all", []):
-            self.assertTrue(has(rec_names, k), (tag, rec, k, rec_names))
+            self.assertTrue(has(rec_seen, k), (tag, rec, k, rec_seen))
         for k in e.get("rec_exclude", []):
             self.assertFalse(has(rec_names, k), (tag, rec, k))
         if e.get("rec_verify_include_any"):
@@ -126,7 +129,7 @@ class RoutingQuality(unittest.TestCase):
         if e.get("verifiers_include_any"):
             self.assertTrue(any(has(ver, k) for k in e["verifiers_include_any"]), (tag, ver))
         if e.get("shortlist_top_include_any"):
-            top = [x["name_en"] for x in b["shortlist"][:e["shortlist_top_include_any"]["n"]]]
+            top = [n for x in b["shortlist"][:e["shortlist_top_include_any"]["n"]] for n in [x["name_en"], *x.get("contains", [])]]
             self.assertTrue(any(has(top, k) for k in e["shortlist_top_include_any"]["any"]), (tag, top))
         if "recommended_not" in e:
             self.assertNotEqual(rec, e["recommended_not"], tag)

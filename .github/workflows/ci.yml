@@ -142,6 +142,10 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_dua_wednesday.py' -v
       - name: Stream grabber
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_stream_grabber.py' -v
+      - name: Caption lines (reading rules, suspect-phrase screen, SRT/VTT/JSON)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_caption_lines.py' -v
+      - name: Look pipeline (one colour look; ffmpeg parity part skips without ffmpeg)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_look_pipeline.py' -v
       - name: Web app study guardrails and facts-only report (live browser part skips without REA)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_web_app_study.py' -v
       - name: Verify Blender-free native Z-buffer rasterizer

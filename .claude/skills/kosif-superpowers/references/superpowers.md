@@ -106,10 +106,10 @@
 | SP-0070 | فحص صفحة Electron · Passively inspect one Electron file page <sub>(electron, application, authenticated, evidence)</sub> | 11 | ✅ ✅3 📦8 | 3 | SP-0078 SP-0073 SP-0074 SP-0080 SP-0135 |
 | SP-0071 | فحص جاهزية REA · Check whether REA is ready <sub>(evidence-core, rea, evidence, core)</sub> | 11 | ✅ ✅3 📦8 | 3 | SP-0077 SP-0066 SP-0074 SP-0070 SP-0135 |
 | SP-0072 | REA MCP: حالة جلسة Frida · REA MCP tool `frida_session_status` <sub>(frida, rea, mcp, tool)</sub> | 9 | 📄 📄9 | 0 | SP-0066 SP-0081 SP-0075 SP-0071 SP-0135 |
-| SP-0073 | مراقبة جلسة ويب · Observe user-driven page navigation during a chosen window <sub>(observe, passively, page, web-js)</sub> | 8 | ✅ ✅3 📦4 📄1 | 3 | SP-0078 SP-0070 SP-0074 SP-0068 SP-0135 |
+| SP-0073 | مراقبة جلسة ويب · Observe user-driven page navigation during a chosen window <sub>(observe, passively, page, web-js)</sub> | 8 | ✅ ✅3 📦4 📄1 | 3 | SP-0078 SP-0070 SP-0074 SP-0068 SP-0135 · `frida_session_status` |
 | SP-0074 | مقارنة لقطات الشاشة ويب · Compare two self-verifying PNG artifact JSON values <sub>(compare, wasm, two, javascript)</sub> | 8 | 📦 📦6 📄2 | 0 | SP-0078 SP-0071 SP-0362 SP-0077 |
 | SP-0075 | REA MCP: أمر تصحيح Rizin · REA MCP tool `rizin_debug_command` <sub>(rizin, rea, mcp, cutter)</sub> | 8 | 📄 📄8 | 0 | SP-0066 SP-0081 SP-0072 SP-0071 SP-0135 |
-| SP-0076 | فحص صنف أندرويد · Inspect one exact APK class's member inventory <sub>(apk, inspect, class, sqlite)</sub> | 8 | 📦 📦4 📄4 | 0 | SP-0067 SP-0077 SP-0084 SP-0082 SP-0135 |
+| SP-0076 | فحص صنف أندرويد · Inspect one exact APK class's member inventory <sub>(apk, inspect, class, sqlite)</sub> | 8 | 📦 📦4 📄4 | 0 | SP-0067 SP-0077 SP-0084 SP-0082 SP-0135 · `rizin_debug_command` |
 | SP-0077 | فحص حزمة الأدلة · Inspect complete or selected discovery metadata from a local Evidence bundle <sub>(inspect, evidence, evidence-core, core)</sub> | 8 | ✅ ✅5 📦2 📄1 | 5 | SP-0071 SP-0082 SP-0076 SP-0079 SP-0135 |
 | SP-0078 | تتبّع موقع المصدر ويب · Trace one retained script position through an explicitly selected local source map <sub>(javascript, source, web-js, historical)</sub> | 7 | 📦 📦7 | 0 | SP-0074 SP-0070 SP-0073 SP-0068 SP-0135 |
 | SP-0079 | فحص قطعة مُدار (.NET) · Inspect PE/CLI identity without loading target code <sub>(managed, net, dotnet, inspect)</sub> | 7 | 📦 📦7 | 0 | SP-0077 SP-0068 SP-0070 SP-0076 SP-0135 |

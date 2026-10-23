@@ -119,7 +119,7 @@
 | SP-0114 فهرسة المكتبة والبحث · Photo catalog + search | 5 | ✅ | 4 |
 | SP-0115 جرد قدرات Blender الحي · Live Blender capability inventory | 4 | ✅ | 4 |
 
-…و37 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show software`
+…و38 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show software`
 
 <a id="hub-drawing"></a>
 ## الرسم والأشكال والتصميم — Drawing & visual composition (`drawing`)
@@ -259,7 +259,7 @@
 <a id="hub-type"></a>
 ## الخطوط والنصوص العربية واللاتينية — Typography & localization (`type`)
 
-- **الحجم / size:** 212 قدرة ذرية في 18 قدرة خارقة · ✅39 🟢49 📦31 🔑1 👁45 📄44 💡3
+- **الحجم / size:** 214 قدرة ذرية في 18 قدرة خارقة · ✅39 🟢50 📦32 🔑1 👁45 📄44 💡3
 - **ابدأ / start:** `python3 scripts/font_fidelity_lab.py --help` · خطة التثبيت: `python3 scripts/kosif_hubs.py install type`
 - **السكربتات / scripts:** `scripts/font_fidelity_lab.py` · `scripts/render_text.cjs`
 - **العائلات / families:** [arabic-language](powers/arabic-language.md) · [typography-arabic](powers/typography-arabic.md) · [typography-latin](powers/typography-latin.md)

@@ -41,8 +41,10 @@
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
 | `browser-scout` | مستكشف المواقع بالمتصفح | `python3 scripts/browser_scout.py doctor` | tested-here |
 | `capability-graph` | باني خريطة القدرات المترابطة | `python3 scripts/capability_graph.py build` | tested-here |
+| `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
+| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `mosamem-rea-fusion` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `motion-kit-bridge` | جسر توقيتات Motion Starter Kit | `python3 scripts/motion_kit_bridge.py styles` | tested-here |
 | `motion-stack` | مولّد مشاريع بداية لمحركات الحركة | `python3 scripts/motion_stack.py list` | tested-here |
@@ -60,7 +62,7 @@
 
 | العائلة | القدرات | الفصل |
 |---|---:|---|
-| `app-feature-transfer` | 139 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
+| `app-feature-transfer` | 155 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
 | `apps-artifacts` | 23 | [apps-artifacts.md](../powers/apps-artifacts.md) |
 | `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
 | `atlas-code` | 247 | [atlas-code.md](../powers/atlas-code.md) |
@@ -104,6 +106,10 @@
 | `APPX-12` | تنقية الكلام من الضجيج | Speech noise reduction | proven | ffmpeg |
 | `APPX-13` | ترجمة تلقائية بتوقيت الكلمات | Word-timed auto captions | proven | pip:faster-whisper |
 | `APPX-14` | إزالة خلفية صورة | Background removal on a still | proven | pip:opencv |
+| `APPX-140` | سطور ترجمة بقواعد قراءة | Caption lines with reading rules | proven | pip:faster-whisper |
+| `APPX-141` | تنقية هلوسة نموذج التفريغ | Screen speech-model inventions | proven | pip:faster-whisper |
+| `APPX-142` | لوك ألوان واحد لكل المحركات | One colour look for every renderer | proven | ffmpeg, python3 |
+| `APPX-143` | إثبات تطابق المعاينة والتصدير بالقياس | Measured preview/export colour parity | proven | ffmpeg, python3 |
 | `APPX-15` | تصدير EDL ومطابقته | EDL interchange and conform | proven | ffmpeg |
 | `APPX-16` | عكس المقطع وتجميد الإطار | Reverse and freeze frame | proven | ffmpeg |
 | `APPX-17` | اختيار الغلاف تلقائيًا | Automatic cover pick | proven | pip:opencv |
@@ -223,6 +229,18 @@
 | `APPX-137` | الرسم التقريبي الموسوم للبنية والمرجع للمظهر | Labeled rough sketch for structure; reference for look | documented | python3 |
 | `APPX-138` | جسر MCP باتجاهين مع تلميح التحديد الحالي | Two-way MCP bridge with a current-selection hint | documented | python3 |
 | `APPX-139` | المهارات: تحميل بالوصف وتثبيت صريح واستيراد نصي آمن | Skills: description-matched loading, explicit pinning, safe text-only import | documented | python3 |
+| `APPX-144` | مسار رئيسي مغناطيسي بانتقالات محسوبة | Magnetic main track with clamped transitions | documented | ffmpeg, python3 |
+| `APPX-145` | أي سرعة صوت بسلسلة atempo | Any audio speed with an atempo chain | documented | ffmpeg |
+| `APPX-146` | خلفية مموهة رخيصة للمقاس العمودي | Cheap blurred background fill | documented | ffmpeg |
+| `APPX-147` | نص عربي مرسوم بوحدات مرجعية | Arabic text raster in reference units | documented | ffmpeg |
+| `APPX-148` | تجهيز الوسائط لمحرر | Media prep for an editor | documented | ffmpeg |
+| `APPX-149` | ترميز بالعتاد مع رجوع للبرمجي | Hardware encoder with software fallback | documented | ffmpeg |
+| `APPX-150` | خادم محلي آمن لأداة مونتاج | A safe local editor server | documented |  |
+| `APPX-151` | تنزيل نماذج موثَّق | Verified model downloads | documented | network |
+| `APPX-152` | تراجع يجمع سحب المنزلقات | Undo that groups slider drags | documented |  |
+| `APPX-153` | اختبار ذاتي داخل المضيف الحقيقي | Self-test inside the real host | documented |  |
+| `APPX-154` | ذاكرة وسائط بالمحتوى واستئناف | Content-addressed media cache with resume | documented |  |
+| `APPX-155` | تفريغ عربي محلي بلا إنترنت | Offline Arabic speech stack | documented | pip:faster-whisper, network |
 | `APPX-18` | منتقي الشاشة للتسجيل | Display-media picker for screen recording | documented |  |
 | `APPX-19` | غرفة تحكم التسجيل | Recording mission-control and overlay windows | documented |  |
 | `APPX-20` | واجهة احتياطية بلا إنترنت | Offline fallback renderer | documented |  |

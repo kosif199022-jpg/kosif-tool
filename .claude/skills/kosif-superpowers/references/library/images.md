@@ -46,6 +46,7 @@
 | `image-local-ai` | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `kosif-timeline` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | `python3 scripts/kosif_timeline.py doctor` | tested-here |
 | `kosif-timeline-demo` | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة | `python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-demo` | tested-here |
+| `look-pipeline` | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `media-sources` | بوابة الوسائط المرخّصة | `python3 scripts/media_sources.py list` | tested-here |
 | `mimic` | محرك محاكاة الفيديو المرجعي | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm_analyze; mm_analyze.analyze('./in.mp4','./work')"` | tested-here |
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |

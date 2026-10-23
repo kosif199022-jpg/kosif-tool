@@ -63,7 +63,7 @@
 | البحث والمعرفة | `knowledge-graph` | 23 | 1,643 | [cards/research/knowledge-graph.md](cards/research/knowledge-graph.md) |
 | البحث والمعرفة | `web-research` | 26 | 1,789 | [cards/research/web-research.md](cards/research/web-research.md) |
 | التحليل العكسي وفحص البرامج | `software-investigation` | 258 | 19,140 | [cards/reverse/software-investigation.md](cards/reverse/software-investigation.md) |
-| البرمجة وبناء التطبيقات | `app-feature-transfer` | 139 | 10,422 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
+| البرمجة وبناء التطبيقات | `app-feature-transfer` | 155 | 11,584 | [cards/software/app-feature-transfer.md](cards/software/app-feature-transfer.md) |
 | البرمجة وبناء التطبيقات | `apps-artifacts` | 23 | 1,649 | [cards/software/apps-artifacts.md](cards/software/apps-artifacts.md) |
 | البرمجة وبناء التطبيقات | `atlas-build` | 52 | 3,767 | [cards/software/atlas-build.md](cards/software/atlas-build.md) |
 | البرمجة وبناء التطبيقات | `atlas-code` | 247 | 17,988 | [cards/software/atlas-code.md](cards/software/atlas-code.md) |
