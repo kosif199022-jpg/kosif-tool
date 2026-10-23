@@ -1,10 +1,8 @@
-# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.4)
+# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.5)
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
-> **USIP v5.4 — 23-10-2026:** أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي بأدوات مختبرة ([A24](references/protocol/A24-reasoning-modes-decision-gates.md))، وخريطة ترتيب واحدة لكل ملفات المهارة ([LAYOUT.md](references/LAYOUT.md)) يفحصها `check_skill`، ونُقلت الدروس الميدانية إلى [A19](references/protocol/A19-field-lessons-montage.md).
->
-> **USIP v5.3 — 21-10-2026.** نواة تُقرأ كاملة؛ الملاحق تستعاد حسب جدول المحفزات، والمسار القانوني واحد، وFusionForge v2 للتوليف والتعلم الإجرائي. تفاصيل ترحيل v5.2 محفوظة في [الأرشيف النصي](references/protocol/usip-v53-original-introduction-20261023.txt)، من دون ادعاء تثبيت SEE أو تشغيل Full Pro.
+> **USIP v5.5 — 23-10-2026:** ذكاء الاستقبال والتوضيح ([A25](references/protocol/A25-task-intake-clarification.md))، والتخطيط والتفكيك ([A26](references/protocol/A26-planning-decomposition.md))، والتحقق ومعايير الجودة ([A27](references/protocol/A27-verification-quality-standards.md))، واختيار الأدوات في أي بيئة مع مكتبة 15 مجموعة ([A28](references/protocol/A28-capability-routing.md))، والتعافي من الفشل ([A29](references/protocol/A29-failure-recovery.md))، بأوامر `think.py intake/decompose/qa/recover` المختبرة. v5.4 (A24 والترتيب) وv5.3 وما قبلها في [CHANGELOG](references/protocol/CHANGELOG.md).
 
 ## الفهرس / contents
 
@@ -57,6 +55,11 @@
 | [A19 دروس المونتاج الميدانية](references/protocol/A19-field-lessons-montage.md) | مونتاج أو موشن من رابط أو صوت مرفوع | الدروس الاثنا عشر | `stock_fetch.py`، `render_html.cjs` |
 | [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة | 45 منهجًا | `book_methods.py` |
 | [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال | جديد؛ موجّه مواد التفكير | `think.py modes/bayes/gate/audit` |
+| [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض | جديد؛ يفصّل المرحلة 1 | `think.py intake` |
+| [A26 التخطيط والتفكيك](references/protocol/A26-planning-decomposition.md) | خطة بمراحل واعتماديات وتقدير، أو إعادة تخطيط | جديد؛ المرحلتان 6 و9 | `think.py decompose` |
+| [A27 التحقق والجودة](references/protocol/A27-verification-quality-standards.md) | معايير النجاح، كيف تقيس، قبل أي «تم» أو تسليم | جديد؛ 12 نوع مخرج | `think.py qa` |
+| [A28 اختيار الأدوات](references/protocol/A28-capability-routing.md) | اختيار أداة أو مهارة أو مجموعة، أو العمل خارج المستودع | جديد؛ المكتبة `references/library/` | `hub.py`، `smart_capabilities.py library` |
+| [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة | جديد؛ البند 5 من المرحلة 9 | `think.py recover` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
@@ -192,7 +195,7 @@
 
 **جسر SEE:** البنود الثمانية هي حقول `Stage0Card`؛ احتفظ بجدول صغير `fact/assumption/unknown/evidence` وعيّن حاجة المهمة إلى `S0-03` (حساسية) و`S0-07` (تقييم) و`S0-10` (قفل عددي) و`S0-11` (سببية)، بلا استجواب طويل للمستخدم ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-1)).
 
-قبل البحث عن القدرات، اكتب بطاقة من ثمانية بنود، سطر لكل بند (وهي نفسها قسم «فهمي لطلبك» في التقرير):
+قبل البحث عن القدرات، اكتب بطاقة من ثمانية بنود، سطر لكل بند (وهي نفسها قسم «فهمي لطلبك» في التقرير). طبقات الفهم وأنواع الغموض و«اسأل أم افترض» في [A25](references/protocol/A25-task-intake-clarification.md):
 
 1. **المطلوب حرفيًا** بكلماتي.
 2. **النتيجة النهائية** التي سأستلمها (ملف؟ صيغة؟ مقاس؟ مدة؟ وأين تُسلَّم؟).
@@ -223,7 +226,7 @@
 
 ## المرحلة 2 — جرد 100% بإيصال، ثم قراءة عميقة وتنقيح المسودة
 
-**جسر SEE:** ثلاث طبقات لا تُجمع أعدادها: منهج SEE (حزمة أو متخصص ديناميكي واحد) · جرد قدرات Superpowers بالسكربت وإيصاله · أدوات التنفيذ المتاحة في المضيف؛ ولا تفترض أن عناصر SEE وAtlas ظهرت في `data/powers/*.json`، و`complete=true` لا يُنسب إلى غير ما عدّه السكربت ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-2)).
+**جسر SEE:** ثلاث طبقات لا تُجمع أعدادها: منهج SEE (حزمة أو متخصص ديناميكي واحد) · جرد قدرات Superpowers بالسكربت وإيصاله · أدوات التنفيذ المتاحة في المضيف؛ ولا تفترض أن عناصر SEE وAtlas ظهرت في `data/powers/*.json`، و`complete=true` لا يُنسب إلى غير ما عدّه السكربت ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-2)). ومبادئ اختيار الأداة في أي بيئة وفصول المجموعات الخمس عشرة في [A28](references/protocol/A28-capability-routing.md).
 
 ```bash
 mkdir -p out/<YYYYMMDD>-<اسم-قصير>                                                                                   # مجلد العمل (out/ مُدرج في .gitignore)؛ أنشئه قبل --out
@@ -332,7 +335,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 **جسر SEE:** لكل خطة: المخرج ومعيار قياسه، منهج مختلف فعلًا، سبب مباشر للنجاح، افتراض قادر على قلب القرار، بديل عدم التنفيذ عند جدواه، جدول اعتماديات ومسؤوليات، المخاطر ونقطة الإيقاف، ومرجع الدليل؛ وقبل التوصية: «لو فشلنا، ما الفرضية التي لم نختبرها؟» وتجربة صغيرة تقيسها ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-6)).
 
-المعاني الملزمة للخطط (هي نفسها في [المسرد](#المسرد--glossary) وفي `brief` وFusionForge):
+المعاني الملزمة للخطط (هي نفسها في [المسرد](#المسرد--glossary) وفي `brief` وFusionForge)، وتفكيك كل خطة رسمًا منمّطًا بترتيب الخطر أولًا في [A26](references/protocol/A26-planning-decomposition.md):
 
 | الخطة | الهدف | الحجم المرجعي (لمشروع كبير) |
 |---|---|---|
@@ -409,9 +412,9 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 2. ثبّت قائمة القدرات والأدوات التي ستُستدعى فعلًا، واحفظ `brief.json` والخطة وسجل القرارات والأدلة في مجلد العمل `out/<YYYYMMDD>-<اسم-قصير>/`؛ ومصادر المشروع القابلة للتعديل في مجلد مشروع أو فرع منفصل (المرحلة 0). وفي L2/L3 اربط منفّذ كل عقدة إن لم يكن صحيحًا: `fusionforge.py bind --project <slug> --id <FUSE-ID> --node N02 --executor tool:<id>`.
 3. **بوابة فحص** بعد كل مرحلة (آلية، بلا انتظار): اختبر ناتجها قبل التالية، واحفظ نقطة سليمة: commit محلي على فرع العمل أو نسخة من ملفات المرحلة في مجلد العمل. `تراجع` يعيد ملفات المهمة وحدها إلى آخر نقطة؛ بلا `git reset --hard` ولا `git stash` ولا مساس بملفات خارج المهمة أو بعمل وكيل آخر. وسجّل كل بوابة في الوصفة بما حدث فعلًا: `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما تم فعلًا>" --result passed --tool <ref> --output "<الناتج الوسيط>" --observed "<النتيجة المقيسة>" --evidence <ملف>`؛ و`--result skipped` يحتاج `--observed` بالسبب، والأداة البديلة تُسجَّل استبدالًا؛ ولا أسرار في أي حقل، ولا يكون سرد الخطوة إثبات QA.
 4. **نقطة مراجعة** (تنتظر ردي): في L3 مرة إلزامية بعد نموذج رخيص يمثل النتيجة (إطار أسلوب، مقطع خمس ثوانٍ، نموذج واجهة، صفحة واحدة) وقبل الجزء المكلف؛ وفي L2 عند تغيّر جوهري فقط. `كمّل بدوني` وحده يلغي نقاط المراجعة، ولا يلغي بوابات الفحص.
-5. **عند الفشل:** محاولة واحدة لكل سبب بعد معالجته، لا بتكرار الأمر نفسه؛ ثم البديل المكتوب للمرحلة؛ ثم توقف وأبلغني بما جرى. ودورة «إصلاح ← اختبار» في كود تكتبه مسموحة ما دامت كل محاولة تعالج سببًا جديدًا، بحد ثلاث محاولات للمرحلة. لا حلقات إعادة، ولا لمس للأصول الأصلية. وكل فشل `trace --result failed --error-class <الصنف>` بدليله.
+5. **عند الفشل:** محاولة واحدة لكل سبب بعد معالجته، لا بتكرار الأمر نفسه؛ ثم البديل المكتوب للمرحلة؛ ثم توقف وأبلغني بما جرى. ودورة «إصلاح ← اختبار» في كود تكتبه مسموحة ما دامت كل محاولة تعالج سببًا جديدًا، بحد ثلاث محاولات للمرحلة. لا حلقات إعادة، ولا لمس للأصول الأصلية. وكل فشل `trace --result failed --error-class <الصنف>` بدليله؛ وسلم التعافي في [A29](references/protocol/A29-failure-recovery.md).
 6. ادمج النتائج، ثم جولة تحسين إبداعي وتقني.
-7. **قِس كل معيار نجاح** من البطاقة بأداته (`verify_video.py`، الاختبارات، مطابقة الأرقام بالمصدر…). ما لم يُقس لا يُكتب ناجحًا.
+7. **قِس كل معيار نجاح** من البطاقة بأداته (`verify_video.py`، الاختبارات، مطابقة الأرقام بالمصدر…). ما لم يُقس لا يُكتب ناجحًا؛ ومعايير كل نوع مخرج وسلم V0–V5 في [A27](references/protocol/A27-verification-quality-standards.md).
 8. احفظ الأدلة والمصادر والملفات القابلة للتعديل، وسجّل حالة الوصفة: `fusionforge.py record --project <slug> --id <FUSE-ID> --status tested --evidence <تقرير القياس>` (يحتاج أثرًا واحدًا على الأقل)، أو `--status failed --evidence <الدليل> --note "<السبب>"`؛ وverified فقط عبر بوابة المحرك بعد QA حقيقي: `fusionforge.py record --project <slug> --id <FUSE-ID> --status verified --evidence <QA> --qa-pass [--baseline <ملف>]`؛ و`--baseline` (الحل السابق أو الأبسط) شرط VERIFIED في -1.37 حين يوجد ذلك الحل، والمحرك لا يفرضه، فهو حكمك قبل `--qa-pass`. verified وfailed نهائيتان؛ المحاولة الجديدة `fusionforge.py fork --project <slug> --id <FUSE-ID>`.
 9. **تقرير التسليم:** ما سُلّم (الملفات بمساراتها وصيغها) · جدول المعايير (المعيار · العتبة · المقيس فعلًا · الأداة · ✅/❌) · ما لم يُفحص ولماذا · الفروق عن الخطة المعتمدة وسببها · المخاطر الباقية · حالة التسليم (المسرد) · في L2/L3 رقم الوصفة `FUSE-…` ومكانها وحالتها ونتيجة `fusionforge.py validate` وسطر من `fusionforge.py lessons --project <slug>` · درس يُرجَّح تكراره إن وُجد (المرحلة 10) · خطوة تالية واحدة إن وُجدت.
 
@@ -466,7 +469,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 المعاني المعتمدة في كل ملف ومحرك (النواة، الملاحق، `SESSION_PROMPT.md`، `CLAUDE.md`، `SKILL.md`، `skill_intelligence.py`، `fusionforge.py`):
 
-**الإصدارات:** البروتوكول **USIP v5.4** (23-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
+**الإصدارات:** البروتوكول **USIP v5.5** (23-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
 
 **الخطط** (تعريفات المرحلة 6 هي المصدر الوحيد):
 - **A — الذكية السريعة:** أبسط مسار يحقق كل متطلب إلزامي (لا الأرخص؛ خطة تفوّت متطلبًا إلزاميًا ليست A). — `simplest path that meets every must-have`
@@ -494,8 +497,8 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> **USIP v5.4 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
+> **USIP v5.5 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
 
-> **USIP v5.4:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`. ترتيب ملفات المهارة في `references/LAYOUT.md`.
+> **USIP v5.5:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
 
 > **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده). المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.

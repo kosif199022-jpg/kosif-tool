@@ -14,6 +14,10 @@
                                                         # Bayesian update by likelihood ratios + sensitivity (or --json spec.json)
     python3 scripts/think.py gate   gate.json           # decision gate: GO / PIVOT / KILL / HOLD from pre-written thresholds
     python3 scripts/think.py audit  report.md [--strict] # self-audit: claim → evidence ledger + calibration questions
+    python3 scripts/think.py intake "<request>" [--level L2]  # deliverable kind, filled / assumed / asked / blocking slots (A25)
+    python3 scripts/think.py decompose plan.json         # task DAG check: order, critical path range, one-way doors (A26)
+    python3 scripts/think.py qa [<kind>] [--answers a.json]   # quality bar per deliverable kind; PASS / FAIL / INCOMPLETE (A27)
+    python3 scripts/think.py recover [<class>] [--attempts N] [--message "<error>"]   # recovery ladder (A29)
 
 Stdlib only, deterministic with --seed. The output is a scaffold to think with, not the thinking itself: fill it, test it, then act.
 """
@@ -34,6 +38,7 @@ HERE = Path(__file__).resolve().parent
 SKILL = HERE.parent
 MODELS = SKILL / "data" / "mental_models.json"
 MODES = SKILL / "data" / "reasoning_modes.json"
+INTEL = SKILL / "data" / "usip_intelligence.json"
 
 AR = re.compile(r"[؀-ۿ]")
 
@@ -594,6 +599,274 @@ def cmd_audit(path: str, strict: bool) -> int:
     return 1 if strict and r["unsupported"] else 0
 
 
+# ------------------------------------------------------------------ intake (USIP v5.5, appendix A25)
+def intel() -> dict:
+    return json.loads(INTEL.read_text(encoding="utf-8"))
+
+
+def detect_kinds(request: str, data: dict) -> list:
+    """Deliverable kinds whose keywords occur in the request, best first; [] when none does."""
+    ws, text = words(request), norm(request)
+    scored = []
+    for kid, k in data["kinds"].items():
+        s = 0
+        for kw in k["keywords"]:
+            nk = norm(kw)
+            if " " in nk:
+                s += 2 if nk in text else 0
+            elif nk in ws or (AR.search(nk) and len(nk) > 2 and any(w.startswith(nk) for w in ws)) or (not AR.search(nk) and re.search(rf"\b{re.escape(nk)}", text)):
+                s += 1
+        if s:
+            scored.append((s, kid))
+    scored.sort(key=lambda x: -x[0])   # stable: ties keep the file order
+    return [kid for _s, kid in scored]
+
+
+def intake(request: str, level: str = "L2", data: dict = None) -> dict:
+    """Slots of the detected deliverable kind(s): filled, assumed (with default), asked (within the level's budget), blocking."""
+    data = data or intel()
+    level = level.upper()
+    if level not in data["question_budget"]:
+        raise ValueError(f"level must be one of {', '.join(data['question_budget'])}")
+    budget = data["question_budget"][level]
+    kinds = detect_kinds(request, data)
+    text = norm(request)
+    sensitive = any(norm(m) in text for m in data["safe_default_markers"])
+    filled, assumed, asked, blockers = [], [], [], []
+    for kid in kinds[:2]:   # a request with more deliverables gets one card per deliverable (core, stage 1)
+        for s in data["kinds"][kid]["slots"]:
+            row = {"kind": kid, "slot": s["id"], "ar": s["ar"], "default": s["default"]}
+            if re.search(s["present"], request, re.I) or re.search(s["present"], text, re.I):
+                filled.append(row)
+            elif s["severity"] == "blocker":
+                blockers.append(row)
+            elif s["severity"] == "ask" and len(asked) < budget:
+                asked.append(row)
+            else:
+                assumed.append(row)
+    if level == "L0":
+        assumed += asked
+        asked = []
+    return {"level": level, "kinds": kinds, "question_budget": budget, "filled": filled, "assumed": assumed,
+            "questions": asked, "blockers": blockers, "sensitive": sensitive,
+            "rule": "ask only what changes the result; every question carries its suggested default; a spend, publish, "
+                    "personal-data or rights question gets the safe default only" + (" (sensitive words found)" if sensitive else "")}
+
+
+def cmd_intake(request: str, level: str, as_json: bool) -> int:
+    try:
+        r = intake(request, level)
+    except ValueError as e:
+        print(f"think.py intake: {e}", file=sys.stderr)
+        return 2
+    if as_json:
+        print(json.dumps(r, ensure_ascii=False, indent=1)); return 0
+    print(f"level {r['level']} · kinds: {', '.join(r['kinds']) or 'none detected (write the card by hand)'} · question budget {r['question_budget']}")
+    for title, key in (("filled", "filled"), ("assume (write in the assumptions line)", "assumed"),
+                       ("ask (inside the one report, with the suggested default)", "questions"), ("BLOCKING input", "blockers")):
+        if r[key]:
+            print(f"\n{title}:")
+            for x in r[key]:
+                print(f"  - [{x['kind']}] {x['ar']}" + ("" if key == "filled" else f" → {x['default']}"))
+    if r["sensitive"]:
+        print("\n⚠ sensitive step words found: the suggested default is the safe one (no spend, no publish, no sharing); the step itself needs explicit permission.")
+    print(f"\n{r['rule']}")
+    return 0
+
+
+# ------------------------------------------------------------------ decompose (appendix A26)
+DECOMPOSE_TEMPLATE = {
+    "goal": "Arabic 30-second reel from the uploaded voice",
+    "tasks": [
+        {"id": "T1", "title": "measure the audio (duration, loudness, words)", "deps": [], "est": [0.2, 0.5], "risk": 2,
+         "done": "words.json + duration known", "verify": "ffprobe + ebur128", "reversible": True},
+        {"id": "T2", "title": "storyboard 6 shots", "deps": ["T1"], "est": [0.5, 1], "risk": 1,
+         "done": "6 keyframes approved", "verify": "contact sheet", "reversible": True},
+        {"id": "T3", "title": "build the scene and preview", "deps": ["T2"], "est": [1, 3], "risk": 2,
+         "done": "5-second preview renders", "verify": "render_html --preview", "reversible": True},
+        {"id": "T4", "title": "final render and QA", "deps": ["T3"], "est": [0.5, 1.5], "risk": 1,
+         "done": "verify_video passes", "verify": "tools/verify_video.py", "reversible": True},
+        {"id": "T5", "title": "publish to the account", "deps": ["T4"], "est": [0.1, 0.2], "risk": 1,
+         "done": "posted", "verify": "post URL", "reversible": False}
+    ]
+}
+
+
+def decompose(spec: dict) -> dict:
+    """Check a task DAG and compute order, critical path (optimistic and pessimistic) and risk-first advice."""
+    tasks = spec.get("tasks") or []
+    if not tasks:
+        raise ValueError("no tasks")
+    ids = [t.get("id") for t in tasks]
+    problems = []
+    if len(ids) != len(set(ids)) or None in ids:
+        raise ValueError("every task needs a unique id")
+    by = {t["id"]: t for t in tasks}
+    for t in tasks:
+        for d in t.get("deps", []):
+            if d not in by:
+                problems.append(f"{t['id']}: depends on unknown task {d}")
+        if not str(t.get("done", "")).strip():
+            problems.append(f"{t['id']}: no done-criterion")
+        if not str(t.get("verify", "")).strip():
+            problems.append(f"{t['id']}: no verify step (how will you know it is done?)")
+        est = t.get("est", [1, 1])
+        if not (isinstance(est, list) and len(est) == 2 and 0 <= est[0] <= est[1]):
+            problems.append(f"{t['id']}: est must be [low, high] with 0 ≤ low ≤ high")
+    indeg = {i: 0 for i in ids}
+    for t in tasks:
+        for d in t.get("deps", []):
+            if d in by:
+                indeg[t["id"]] += 1
+    order, ready = [], sorted([i for i in ids if indeg[i] == 0], key=ids.index)
+    while ready:
+        n = ready.pop(0)
+        order.append(n)
+        for t in tasks:
+            if n in t.get("deps", []):
+                indeg[t["id"]] -= 1
+                if indeg[t["id"]] == 0:
+                    ready.append(t["id"])
+        ready.sort(key=ids.index)
+    if len(order) != len(ids):
+        raise ValueError("the dependencies have a cycle: " + ", ".join(i for i in ids if i not in order))
+
+    def path(k: int):
+        finish, prev = {}, {}
+        for n in order:
+            t = by[n]
+            est = t.get("est", [1, 1])
+            est = est if isinstance(est, list) and len(est) == 2 else [1, 1]
+            start, p = 0.0, None
+            for d in t.get("deps", []):
+                if d in finish and finish[d] > start:
+                    start, p = finish[d], d
+            finish[n], prev[n] = start + float(est[k]), p
+        end = max(finish, key=finish.get)
+        chain = [end]
+        while prev[chain[-1]]:
+            chain.append(prev[chain[-1]])
+        return round(finish[end], 3), chain[::-1]
+
+    lo, lo_chain = path(0)
+    hi, hi_chain = path(1)
+    one_way = [t["id"] for t in tasks if t.get("reversible") is False]
+    roots = [i for i in order if not by[i].get("deps")]
+    risky = sorted(tasks, key=lambda t: (-int(t.get("risk", 0)), order.index(t["id"])))
+    advice = []
+    top = risky[0]
+    if int(top.get("risk", 0)) >= 2 and order.index(top["id"]) > len(order) // 2:
+        advice.append(f"{top['id']} carries the highest risk ({top.get('risk')}) but runs late: probe it earlier with a cheap spike")
+    for i in one_way:
+        advice.append(f"{i} cannot be undone: gate it on the user's explicit permission and put it last")
+    if hi > 0 and lo > 0 and hi / lo >= 3:
+        advice.append(f"the estimate spreads ×{hi / lo:.1f}: the largest unknown deserves the first probe")
+    return {"goal": spec.get("goal", ""), "order": order, "roots": roots, "critical_path": {"optimistic": [lo, lo_chain], "pessimistic": [hi, hi_chain]},
+            "one_way_doors": one_way, "problems": problems, "advice": advice,
+            "verdict": "OK" if not problems else "FIX"}
+
+
+def cmd_decompose(path, template: bool) -> int:
+    if template or not path:
+        print(json.dumps(DECOMPOSE_TEMPLATE, ensure_ascii=False, indent=1)); return 0
+    try:
+        r = decompose(json.loads(Path(path).read_text(encoding="utf-8")))
+    except (ValueError, KeyError, TypeError) as e:
+        print(f"think.py decompose: {e}", file=sys.stderr)
+        return 2
+    print(json.dumps(r, ensure_ascii=False, indent=1))
+    return 0 if r["verdict"] == "OK" else 1
+
+
+# ------------------------------------------------------------------ qa (appendix A27)
+def qa(kind: str, answers: dict = None, data: dict = None) -> dict:
+    """The quality bar of a deliverable kind; with answers {check id: true|false|"n/a"} a PASS / FAIL / INCOMPLETE verdict."""
+    data = data or intel()
+    if kind not in data["kinds"]:
+        raise ValueError(f"unknown kind {kind!r}; one of: {', '.join(data['kinds'])}")
+    checks = data["kinds"][kind]["quality"]
+    if answers is None:
+        return {"kind": kind, "checks": checks, "verdict": "UNANSWERED"}
+    unknown = sorted(set(answers) - {c["id"] for c in checks})
+    if unknown:
+        raise ValueError(f"unknown check id(s) for {kind}: {', '.join(unknown)}")
+    rows, hard_fail, soft_fail, missing = [], [], [], []
+    for c in checks:
+        a = answers.get(c["id"])
+        if a is None:
+            missing.append(c["id"])
+        elif a is False:
+            (hard_fail if c["hard"] else soft_fail).append(c["id"])
+        elif a not in (True, "n/a"):
+            raise ValueError(f"{c['id']}: answer must be true, false or \"n/a\"")
+        elif a == "n/a" and c["hard"]:
+            missing.append(c["id"])   # a hard check cannot be waived by "n/a": measure it or report the gap
+        rows.append({**c, "answer": a})
+    verdict = "FAIL" if hard_fail else ("INCOMPLETE" if missing else "PASS")
+    return {"kind": kind, "checks": rows, "hard_fail": hard_fail, "soft_fail": soft_fail, "missing": missing, "verdict": verdict}
+
+
+def cmd_qa(kind, answers_path, as_json: bool) -> int:
+    data = intel()
+    if not kind:
+        for kid, k in data["kinds"].items():
+            print(f"{kid:12} {k['en']} / {k['ar']} ({len(k['quality'])} checks)")
+        return 0
+    try:
+        answers = json.loads(Path(answers_path).read_text(encoding="utf-8")) if answers_path else None
+        r = qa(kind, answers, data)
+    except (ValueError, OSError) as e:
+        print(f"think.py qa: {e}", file=sys.stderr)
+        return 2
+    if as_json:
+        print(json.dumps(r, ensure_ascii=False, indent=1))
+    else:
+        print(f"quality bar — {kind}: {data['kinds'][kind]['ar']}")
+        for c in r["checks"]:
+            mark = {True: "✅", False: "❌", "n/a": "—", None: "○"}.get(c.get("answer"), "○")
+            print(f"  {mark} {'HARD' if c['hard'] else 'soft'} {c['id']}: {c['ar']}  ← {c['tool']}")
+        print(f"\nverdict: {r['verdict']}" + (f" · hard fail {r['hard_fail']}" if r.get("hard_fail") else "")
+              + (f" · unmeasured {r['missing']}" if r.get("missing") else ""))
+    return {"FAIL": 1, "INCOMPLETE": 1}.get(r["verdict"], 0)
+
+
+# ------------------------------------------------------------------ recover (appendix A29)
+def recover(error_class: str = None, attempts: int = 0, message: str = "", data: dict = None) -> dict:
+    """The recovery ladder for an error class (guessed from the message when not given) and whether to stop."""
+    data = data or intel()
+    rec = data["recovery"]
+    guessed = False
+    if not error_class:
+        guessed = True
+        low = message.lower()
+        error_class = next((c for c, r in rec.items() if c != "other" and any(s.lower() in low for s in r["signals"])), "other")
+    if error_class not in rec:
+        raise ValueError(f"unknown error class {error_class!r}; one of: {', '.join(rec)}")
+    r = rec[error_class]
+    stop = attempts >= r["budget"]
+    return {"error_class": error_class, "guessed": guessed, **r, "attempts": attempts,
+            "next": ("STOP: budget spent — use the fallback once, then report with the reproduction and the numbers"
+                     if stop else f"attempt {attempts + 1} of {r['budget']}: diagnose, fix one proven cause, re-measure"),
+            "trace": f"fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action \"<what was tried>\" --result failed --error-class {error_class} --evidence <file>"}
+
+
+def cmd_recover(error_class, attempts: int, message: str, as_json: bool) -> int:
+    try:
+        r = recover(error_class, attempts, message)
+    except ValueError as e:
+        print(f"think.py recover: {e}", file=sys.stderr)
+        return 2
+    if as_json:
+        print(json.dumps(r, ensure_ascii=False, indent=1)); return 0
+    print(f"{r['error_class']} — {r['ar']}" + (" (guessed from the message)" if r["guessed"] else ""))
+    for title, key in (("diagnose", "diagnose"), ("fix", "fix")):
+        print(f"\n{title}:")
+        for i, s in enumerate(r[key], 1):
+            print(f"  {i}. {s}")
+    print(f"\nfallback: {r['fallback']}\nescalate: {r['escalate']}\n\n→ {r['next']}\nrecord: {r['trace']}")
+    return 1 if r["next"].startswith("STOP") else 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -609,6 +882,10 @@ def main(argv=None) -> int:
     b = sub.add_parser("bayes"); b.add_argument("--prior", type=float); b.add_argument("--lr", nargs="*", default=[]); b.add_argument("--threshold", type=float); b.add_argument("--json", dest="spec")
     g = sub.add_parser("gate"); g.add_argument("path", nargs="?"); g.add_argument("--template", action="store_true")
     au = sub.add_parser("audit"); au.add_argument("path"); au.add_argument("--strict", action="store_true")
+    it = sub.add_parser("intake"); it.add_argument("request"); it.add_argument("--level", default="L2"); it.add_argument("--json", action="store_true")
+    de = sub.add_parser("decompose"); de.add_argument("path", nargs="?"); de.add_argument("--template", action="store_true")
+    q = sub.add_parser("qa"); q.add_argument("kind", nargs="?"); q.add_argument("--answers"); q.add_argument("--json", action="store_true")
+    rc = sub.add_parser("recover"); rc.add_argument("error_class", nargs="?"); rc.add_argument("--attempts", type=int, default=0); rc.add_argument("--message", default=""); rc.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     if a.cmd == "ladder": return cmd_ladder(a.task)
     if a.cmd == "frame": return cmd_frame(a.task)
@@ -621,6 +898,10 @@ def main(argv=None) -> int:
     if a.cmd == "bayes": return cmd_bayes(a.prior, a.lr, a.threshold, a.spec)
     if a.cmd == "gate": return cmd_gate(a.path, a.template)
     if a.cmd == "audit": return cmd_audit(a.path, a.strict)
+    if a.cmd == "intake": return cmd_intake(a.request, a.level, a.json)
+    if a.cmd == "decompose": return cmd_decompose(a.path, a.template)
+    if a.cmd == "qa": return cmd_qa(a.kind, a.answers, a.json)
+    if a.cmd == "recover": return cmd_recover(a.error_class, a.attempts, a.message, a.json)
     return cmd_critic(a.path)
 
 
