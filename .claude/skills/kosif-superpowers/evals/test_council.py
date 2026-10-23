@@ -99,6 +99,83 @@ class CouncilTest(unittest.TestCase):
         r = run("verdict", "--dir", self.dir, ok=False)
         self.assertIn("ROUND_INCOMPLETE", r.stderr)
 
+    def test_roster_of_100_unique_personas(self):
+        doc = json.loads((SCRIPT.parents[1] / "data" / "council_100.json").read_text(encoding="utf-8"))
+        ps = doc["personas"]
+        self.assertEqual(doc["schema"], "kosif.council-personas.v1")
+        self.assertEqual(len(ps), 100)
+        for key in ("id", "name_ar", "name_en", "title_ar", "title_en", "character_ar", "lens_en", "blind_spot"):
+            self.assertEqual(len({p[key] for p in ps}), 100, f"{key} must be unique")
+        lanes = {}
+        for p in ps:
+            lanes[p["lane"]] = lanes.get(p["lane"], 0) + 1
+            self.assertEqual(len(p["superpowers"]), 3)
+            self.assertEqual(len(p["signature_questions"]), 3)
+            self.assertGreaterEqual(len(p["character_ar"]), 120, p["id"])
+            self.assertIn(p["counterpart"], {q["id"] for q in ps})
+            self.assertNotEqual(p["counterpart"], p["id"])
+        self.assertEqual(lanes, {l: 20 for l in ("cross_domain", "verification", "feasibility", "audience", "guardrails")})
+        powers = [x for p in ps for x in p["superpowers"]]
+        self.assertEqual(len(set(powers)), 300, "every superpower is distinct")
+
+    def test_seats_pick_a_task_fitted_council_with_every_lane(self):
+        out = json.loads(run("plan", "اعمل ريلز موشن جرافيك عربي على صوتي للتيك توك", "--dir", self.dir, "--seats", "7").stdout)
+        self.assertEqual((out["mode"], out["seats"]), ("seats", 7))
+        c = json.loads((Path(self.dir) / "council.json").read_text(encoding="utf-8"))
+        self.assertEqual(len({m["lane"] for m in c["roster"]}), 5)
+        self.assertEqual([m["id"] for m in c["roster"]], [f"M{i}" for i in range(1, 8)])
+        self.assertTrue(all(m["persona_id"].startswith("P") for m in c["roster"]))
+        again = self.root / "again"
+        run("plan", "اعمل ريلز موشن جرافيك عربي على صوتي للتيك توك", "--dir", str(again), "--seats", "7")
+        c2 = json.loads((again / "council.json").read_text(encoding="utf-8"))
+        self.assertEqual([m["persona_id"] for m in c["roster"]], [m["persona_id"] for m in c2["roster"]], "deterministic")
+        run("prompts", "--dir", self.dir, "--round", "1")
+        p1 = json.loads((Path(self.dir) / "prompts_r1.json").read_text(encoding="utf-8"))
+        self.assertIn("7-member KOSIF Pro council", p1["M1"])
+        self.assertIn("Your known blind spot", p1["M1"])
+        self.assertIn("signature questions", p1["M1"])
+
+    def test_seat_limits_picks_and_full_council(self):
+        r = run("plan", "x", "--dir", self.dir, "--seats", "3", ok=False)
+        self.assertIn("SEATS_RANGE", r.stderr)
+        r = run("plan", "x", "--dir", self.dir, "--seats", "7", "--full", ok=False)
+        self.assertIn("MODE_CONFLICT", r.stderr)
+        r = run("plan", "x", "--dir", self.dir, "--personas", "P001,P999,P003,P004,P005", ok=False)
+        self.assertIn("UNKNOWN_PERSONA", r.stderr)
+        out = json.loads(run("plan", "x", "--dir", self.dir, "--personas", "P001,P021,P041,P061,P081").stdout)
+        self.assertEqual(out["mode"], "picked")
+        full = self.root / "full"
+        out = json.loads(run("plan", "قرار كبير", "--dir", str(full), "--full", "--no-roster").stdout)
+        self.assertEqual((out["mode"], out["seats"]), ("full", 100))
+
+    def test_large_council_round_two_uses_a_digest_and_names_the_counterpart(self):
+        run("plan", "قرار", "--dir", self.dir, "--seats", "11", "--no-roster")
+        c = json.loads((Path(self.dir) / "council.json").read_text(encoding="utf-8"))
+        ids = [m["id"] for m in c["roster"]]
+        long_r1 = dict(R1, risks=["r" * 50] * 5)
+        for m in ids:
+            run("ingest", "--dir", self.dir, "--round", "1", "--member", m, "--file", self.put(f"{m}.json", long_r1))
+        run("prompts", "--dir", self.dir, "--round", "2")
+        p2 = json.loads((Path(self.dir) / "prompts_r2.json").read_text(encoding="utf-8"))
+        self.assertNotIn("r" * 50, p2["M1"], "large councils see a digest of round 1")
+        for m in ids:
+            run("ingest", "--dir", self.dir, "--round", "2", "--member", m, "--file", self.put(f"{m}2.json", R2))
+        for i, m in enumerate(ids):
+            run("ingest", "--dir", self.dir, "--round", "3", "--member", m,
+                "--file", self.put(f"{m}3.json", r3({"A": 3, "B": 4 if i % 2 else 3, "C": 2}, "risk" if i == 0 else "none")))
+        v = json.loads(run("verdict", "--dir", self.dir).stdout)
+        self.assertEqual((v["seats"], v["mode"], v["winner"]), (11, "seats", "B"))
+        self.assertEqual(len(v["personas"]), 11)
+
+    def test_personas_command(self):
+        out = json.loads(run("personas").stdout)
+        self.assertEqual(out["count"], 100)
+        one = json.loads(run("personas", "--id", "p021").stdout)
+        self.assertEqual(one["lane"], "verification")
+        fit = json.loads(run("personas", "--find", "راجع أمان الكود وتسريب المفاتيح", "--seats", "6").stdout)
+        self.assertEqual(fit["seats"], 6)
+        self.assertTrue(any("P083" in row for row in fit["council"]), "the secrets keeper sits on a secrets question")
+
 
 if __name__ == "__main__":
     unittest.main()

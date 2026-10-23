@@ -18,6 +18,7 @@
     python3 scripts/think.py decompose plan.json         # task DAG check: order, critical path range, one-way doors (A26)
     python3 scripts/think.py qa [<kind>] [--answers a.json]   # quality bar per deliverable kind; PASS / FAIL / INCOMPLETE (A27)
     python3 scripts/think.py recover [<class>] [--attempts N] [--message "<error>"]   # recovery ladder (A29)
+    python3 scripts/think.py pro "<task>" [--depth standard|deep|max] [--json]   # Pro intelligence passes + fitted council + modes + models (A30)
 
 Stdlib only, deterministic with --seed. The output is a scaffold to think with, not the thinking itself: fill it, test it, then act.
 """
@@ -867,6 +868,55 @@ def cmd_recover(error_class, attempts: int, message: str, as_json: bool) -> int:
     return 1 if r["next"].startswith("STOP") else 0
 
 
+# ------------------------------------------------------------------ pro (USIP v5.5, appendix A30)
+DEPTHS = ("standard", "deep", "max")
+
+
+def pro(task: str, depth: str = "deep", data: dict = None) -> dict:
+    """The Pro intelligence scaffold: the passes of a depth, a task-fitted council, two reasoning modes and three models."""
+    if depth not in DEPTHS:
+        raise ValueError(f"depth must be one of {', '.join(DEPTHS)}")
+    data = data or intel()
+    upto = DEPTHS.index(depth)
+    passes = [x for x in data["pro_passes"] if DEPTHS.index(x["depth"]) <= upto]
+    seats = data["pro_depths"][depth]["seats"]
+    council = []
+    try:
+        sys.path.insert(0, str(HERE))
+        import council as cn  # same folder
+        pool = cn.load_personas(cn.DEFAULT_PERSONAS)
+        primary = cn.primary_of(task, None)
+        council = [f"{p['id']} {p['name_ar']} — {p['title_ar']} [{p['lane']}]" for p in cn.select_personas(pool, task, primary, seats)]
+    except Exception as exc:  # the scaffold still works without the roster
+        council = [f"roster unavailable: {type(exc).__name__}"]
+    cmd = ("council.py plan \"<task>\" --dir out/<job>/council" + ("" if seats == 5 else f" --seats {seats}"))
+    return {"task": task, "depth": depth, "label": data["pro_depths"][depth]["ar"], "passes": passes,
+            "council": {"seats": seats, "members": council, "command": cmd,
+                        "note": "personas are stance prompts; the council counts only as real agents (else COUNCIL_SIMULATED)"},
+            "modes": [{"id": m["id"], "en": m["en"], "check": m["check"]} for m in rank_modes(task, 2)],
+            "models": [{"id": m["id"], "name_en": m["name_en"], "question": m["question"]} for m in rank_models(task, 3)],
+            "gate": "Every pass leaves its artifact; a pass whose falsifier holds is redone, not reported as done."}
+
+
+def cmd_pro(task: str, depth: str, as_json: bool) -> int:
+    try:
+        r = pro(task, depth)
+    except ValueError as exc:
+        print(f"think pro: error: {exc}", file=sys.stderr); return 2
+    if as_json:
+        print(json.dumps(r, ensure_ascii=False, indent=1)); return 0
+    print(f"PRO · {r['label']} · {len(r['passes'])} passes · council of {r['council']['seats']}\n")
+    for x in r["passes"]:
+        print(f"{x['id']} {x['en']} / {x['ar']}\n   ask: {x['question']}\n   → {x['artifact']}\n   ✗ redo if: {x['falsifier']}\n   tool: {x['tool']}")
+    print(f"\ncouncil ({r['council']['command']}):")
+    for m in r["council"]["members"]:
+        print(f"   {m}")
+    print("\nmodes: " + " · ".join(f"{m['id']} {m['en']}" for m in r["modes"]))
+    print("models: " + " · ".join(f"{m['id']} {m['name_en']}" for m in r["models"]))
+    print(f"\n{r['gate']}\n{r['council']['note']}")
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -886,6 +936,7 @@ def main(argv=None) -> int:
     de = sub.add_parser("decompose"); de.add_argument("path", nargs="?"); de.add_argument("--template", action="store_true")
     q = sub.add_parser("qa"); q.add_argument("kind", nargs="?"); q.add_argument("--answers"); q.add_argument("--json", action="store_true")
     rc = sub.add_parser("recover"); rc.add_argument("error_class", nargs="?"); rc.add_argument("--attempts", type=int, default=0); rc.add_argument("--message", default=""); rc.add_argument("--json", action="store_true")
+    pr = sub.add_parser("pro"); pr.add_argument("task"); pr.add_argument("--depth", choices=DEPTHS, default="deep"); pr.add_argument("--json", action="store_true")
     a = ap.parse_args(argv)
     if a.cmd == "ladder": return cmd_ladder(a.task)
     if a.cmd == "frame": return cmd_frame(a.task)
@@ -902,6 +953,7 @@ def main(argv=None) -> int:
     if a.cmd == "decompose": return cmd_decompose(a.path, a.template)
     if a.cmd == "qa": return cmd_qa(a.kind, a.answers, a.json)
     if a.cmd == "recover": return cmd_recover(a.error_class, a.attempts, a.message, a.json)
+    if a.cmd == "pro": return cmd_pro(a.task, a.depth, a.json)
     return cmd_critic(a.path)
 
 

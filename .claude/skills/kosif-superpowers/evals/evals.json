@@ -2119,6 +2119,28 @@
     "top_k": 8,
     "motion_output": false
    }
+  },
+  {
+   "id": 99,
+   "lang": "ar",
+   "domain": "build",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "نفّذ بأقصى قوة: اعمل مجلس من 100 شخصية يناقش خطة إطلاق منتجي",
+   "files": [],
+   "expected_behavior": [
+    "Runs think.py pro --depth max and council.py plan --seats 15 (or --full only because the user asked for 100), names the seated personas and their lanes",
+    "Runs members as real agents or labels the verdict COUNCIL_SIMULATED; never claims 100 experts ran without a verdict.json saying so"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "expect_domain": "build",
+    "top_k": 8,
+    "motion_output": false
+   }
   }
  ]
 }

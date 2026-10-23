@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5480
+   "count": 5482
   },
   {
    "id": "dom:motion",
@@ -1367,10 +1367,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 67,
-   "proven": 57,
+   "count": 69,
+   "proven": 59,
    "status": {
-    "proven": 57,
+    "proven": 59,
     "ready": 5,
     "install": 5
    }
@@ -2490,6 +2490,11 @@
    "id": "test:tests/test_think.py",
    "kind": "test",
    "label": "tests/test_think.py"
+  },
+  {
+   "id": "test:tests/test_think_pro.py",
+   "kind": "test",
+   "label": "tests/test_think_pro.py"
   },
   {
    "id": "test:tests/test_think_reasoning.py",
@@ -5133,13 +5138,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 67
+   "w": 69
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 54
+   "w": 56
   },
   {
    "from": "fam:runnable-tools",
@@ -5187,7 +5192,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 72
+   "w": 74
   },
   {
    "from": "fam:runnable-tools",
@@ -7087,6 +7092,12 @@
   },
   {
    "from": "script:scripts/think.py",
+   "to": "script:scripts/council.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
@@ -7730,6 +7741,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think_intel.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:tests/test_think_pro.py",
    "rel": "tested_by",
    "w": 1
   },

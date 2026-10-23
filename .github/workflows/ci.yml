@@ -109,6 +109,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_atlas_capability_miner.py' -v
       - name: Charter 500-expert index (council consults it as an index)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_charter_index.py' -v
+      - name: Pro council with the 100-persona roster (A13, A30)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_council.py' -v
       - name: Story question pack (A16)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_story_pack.py' -v
       - name: Prompt pack (warn-only lint, one code block per prompt)
