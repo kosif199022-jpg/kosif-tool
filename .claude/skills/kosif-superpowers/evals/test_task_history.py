@@ -153,6 +153,11 @@ class Gate(Base):
         self.assertRefused(entry(notes="send to someone@example.com"), "e-mail")
         self.assertRefused(entry(notes="call +20 100 123 4567"), "phone")
 
+    def test_saudi_iban_must_not_be_published(self):
+        # Synthetic account number; privacy check does not depend on checksum validity.
+        self.assertRefused(entry(notes="SA" + "0" * 22), "IBAN")
+        self.assertRefused(entry(params={"payment_ref": "iban sa" + "9" * 22}), "IBAN")
+
     def test_git_remotes_and_versions_are_not_personal_data(self):
         rec = entry(notes="git clone git@github.com:o/r.git; npm i react@18.3.1; 2026-10-23 at 1080x1920")
         self.assertEqual(self.add(rec)[0], 0)
