@@ -1,0 +1,120 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch3-mind",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 7,
+ "sources_read": 9,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 3,
+   "plugin": "agent-workflow-system",
+   "skill": "agent-drift-auditor",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2-agent-workflow-system/3-agent-drift-auditor",
+   "skill_md_sha256": "b63de8ef3c5fb1e02a80a0b25d7d88b335f290510239c7c35dfe8596473cdda7",
+   "bytes": 4038,
+   "read_in_full": true,
+   "power": "AMIND-61"
+  },
+  {
+   "atlas_id": 2,
+   "plugin": "agent-workflow-system",
+   "skill": "agent-debug-fixer",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/2-agent-workflow-system/2-agent-debug-fixer",
+   "skill_md_sha256": "fa515d47e9619eb5f30418dcae050456680251a3fd8300aedd40706bc7988263",
+   "bytes": 2999,
+   "read_in_full": true,
+   "power": "AMIND-61"
+  },
+  {
+   "atlas_id": 532,
+   "plugin": "collab-proof",
+   "skill": "collab-proof",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/163-collab-proof/532-collab-proof",
+   "skill_md_sha256": "0a06dd8a7db057c9bf3c3bcf054927e1e39f0e837fcb7867df4f2d6ac95c5f8d",
+   "bytes": 14554,
+   "read_in_full": true,
+   "power": "AMIND-62"
+  },
+  {
+   "atlas_id": 7164,
+   "plugin": "katalepsis",
+   "skill": "grasp",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/1996-katalepsis/7164-grasp",
+   "skill_md_sha256": "4c050d691ad9bdbfc3f4bc7f1f673314017d8b65522356ac8057ead68e678bda",
+   "bytes": 34121,
+   "read_in_full": true,
+   "power": "AMIND-63"
+  },
+  {
+   "atlas_id": 13144,
+   "plugin": "adlc-operate",
+   "skill": "learning-loop",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/3051-adlc-operate/13144-learning-loop",
+   "skill_md_sha256": "c0971a2760969a25139cca7d04404ecd89e3830298a81b6d848a7e74854d8fe2",
+   "bytes": 3344,
+   "read_in_full": true,
+   "power": "AMIND-64"
+  },
+  {
+   "atlas_id": 13147,
+   "plugin": "adlc-operate",
+   "skill": "mine-rejections",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/3051-adlc-operate/13147-mine-rejections",
+   "skill_md_sha256": "07e63b8d1496da26f1984cb1f02d6c10d047eb504cc76cc0c37f1f532cabd378",
+   "bytes": 1647,
+   "read_in_full": true,
+   "power": "AMIND-64"
+  },
+  {
+   "atlas_id": 13321,
+   "plugin": "estregenesis",
+   "skill": "eg-memsync",
+   "license": "Apache-2.0",
+   "theme": "agent-workflow",
+   "path": "skills/3113-estregenesis/13321-eg-memsync",
+   "skill_md_sha256": "267d4c7df62970eb11e5dff0a029aaf7590571972bfc83bac76310b9fefd9f9f",
+   "bytes": 6067,
+   "read_in_full": true,
+   "power": "AMIND-65"
+  },
+  {
+   "atlas_id": 13868,
+   "plugin": "session-transcript-mining",
+   "skill": "session-transcript-mining",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/3353-session-transcript-mining/13868-session-transcript-mining",
+   "skill_md_sha256": "de3005c073555c935d58133a14bb27700a2d7b3f784e506afce1d7ae94bfda61",
+   "bytes": 10790,
+   "read_in_full": true,
+   "power": "AMIND-66"
+  },
+  {
+   "atlas_id": 14472,
+   "plugin": "agent-harness-skills",
+   "skill": "work-state-and-delivery",
+   "license": "MIT",
+   "theme": "agent-workflow",
+   "path": "skills/3604-agent-harness-skills/14472-work-state-and-delivery",
+   "skill_md_sha256": "fb89e7903a0cd17611f0c7aca57af3f8c481977ad339ed638731812495ae6ad3",
+   "bytes": 5132,
+   "read_in_full": true,
+   "power": "AMIND-67"
+  }
+ ]
+}

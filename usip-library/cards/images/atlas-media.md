@@ -1,4 +1,4 @@
-# `atlas-media` — الصور والتحرير والتوليد (27 بطاقة)
+# `atlas-media` — الصور والتحرير والتوليد (30 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/atlas-media.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/images.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -31,6 +31,9 @@
 - [`AMEDIA-25` تغليف الفيديو: عنوان ونص مصغّرة لا يتكرران](#amedia-25--تغليف-الفيديو-عنوان-ونص-مصغّرة-لا-يتكرران--video-packaging-title-and-thumbnail-text-that-never-overlap)
 - [`AMEDIA-26` Substance Painter: مساحة لون PBR وخبز الخرائط](#amedia-26--substance-painter-مساحة-لون-pbr-وخبز-الخرائط--substance-painter-pbr-colour-space-and-baking)
 - [`AMEDIA-27` Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة](#amedia-27--godot-4-سكربت-مُنمّط-وفيزياء-وتصدير-بلا-واجهة--godot-4-typed-gdscript-physics-timing-headless-export)
+- [`AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor](#amedia-28--توليد-خط-زمني-لـfinal-cut-pro-برمجيًا-عبر-fcpxml-وتصدير-دفعي-بـcompressor--programmatic-final-cut-pro-timelines-via-fcpxml-and-batch-export-with-compressor)
+- [`AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص](#amedia-29--أتمتة-برامج-ثلاثية-الأبعاد-والتصميم-الهندسي-دون-واجهة-خبز-المحاكاة-تقليل-المضلعات-واستخراج-الخصائص--headless-automation-of-3d-and-cad-apps-simulation-baking-batch-decimation-property-extraction)
+- [`AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول](#amedia-30--ربط-الوكيل-الصوتي-بالهاتف-وتقييمه-sip-وdtmf-والتحويل-الدافئ-ونجاح-المهمة-كمقياس-أول--telephony-and-call-flow-integration-for-a-voice-agent-sip-dtmf-warm-transfer-and-task-success-as-the-primary-metric)
 
 ## البطاقات / cards
 
@@ -1838,6 +1841,7 @@
 - `AMEDIA-24` مشهد After Effects بالسكربت: المواصفات أولاً / Scripted After Effects comps: spec first, rigs, render queue (documented)
 - `AMEDIA-25` تغليف الفيديو: عنوان ونص مصغّرة لا يتكرران / Video packaging: title and thumbnail text that never overlap (documented)
 - `AMEDIA-27` Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة / Godot 4: typed GDScript, physics timing, headless export (documented)
+- `AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor (documented)
 
 ### `AMEDIA-27` — Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة / Godot 4: typed GDScript, physics timing, headless export
 
@@ -1905,4 +1909,216 @@
 
 - `AMEDIA-25` تغليف الفيديو: عنوان ونص مصغّرة لا يتكرران / Video packaging: title and thumbnail text that never overlap (documented)
 - `AMEDIA-26` Substance Painter: مساحة لون PBR وخبز الخرائط / Substance Painter PBR colour space and baking (documented)
+- `AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor (documented)
+- `AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص / Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction (documented)
+
+### `AMEDIA-28` — توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-media` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-media.md)) |
+| المجموعة | الصور والتحرير والتوليد (`images`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** يبني مشروع Final Cut Pro قابلًا للاستيراد من سكربت: ملف FCPXML يحدد صيغة المشروع والأصول والقصة الرئيسية بالصوت والصورة متزامنين والعناوين المتصلة وعلامات الفصول، ثم يصدّر عدة صيغ دفعة واحدة (ماستر ProRes، H.264 للويب، 4K) من سطر الأوامر، مع تنظيف ملفات العرض المؤقتة في المكتبة. — Builds an importable FCP project from code and batch-exports masters and web versions.
+
+**متى:** تسليم مونتاج قابل للتعديل لمحرر يعمل على Final Cut، تحويل قائمة قطع أو توقيت كلمات إلى خط زمني، تصدير عدة نسخ / handing an editable cut to a Final Cut editor
+
+**كيف:** 1) Choose the FCPXML version the target app imports and declare a format (frame size, frame rate as a rational frame duration, colour space). 2) Declare each asset with its media reference, duration and audio and video flags. 3) Build the project sequence on the primary storyline with clips using rational time values (offset, start, duration in frame-duration multiples) so cuts land on frame boundaries. 4) Attach titles, B-roll and music as connected clips with lanes, and add chapter and marker elements from word timing or a cut list. 5) Validate the XML against the DTD before handing over, and import a test copy. 6) Batch-export with the command-line encoder using saved settings for each deliverable (ProRes master, web H.264, a 4K platform version). 7) Purge generated render and optical-flow caches from the library to recover disk space, never original media. 8) Keep the user's audio untouched and report duration, frame rate and audio checks. Full original skill(s) with license: vendor/kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro.
+
+**المعاملات:** assets, cut list, format
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro ~/.claude/skills/final-cut-pro
+
+**الوسوم:** Final Cut Pro · FCPXML · NLE interchange · montage · video export · مونتاج · تصدير
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `imagemagick` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:AMEDIA-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/755-final-cut-pro`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMEDIA-26` Substance Painter: مساحة لون PBR وخبز الخرائط / Substance Painter PBR colour space and baking (documented)
+- `AMEDIA-27` Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة / Godot 4: typed GDScript, physics timing, headless export (documented)
+- `AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص / Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction (documented)
+- `AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric (documented)
+
+### `AMEDIA-29` — أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص / Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-media` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-media.md)) |
+| المجموعة | الصور والتحرير والتوليد (`images`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** نمط مشترك لبرامج الإنتاج الثقيلة (Houdini، ZBrush، CATIA، Fusion، Rhino، SOLIDWORKS): سكربت يعمل بلا واجهة عبر واجهة البرنامج البرمجية ليخبز محاكاة إلى ملفات، أو يقلل كثافة نماذج النحت دفعة واحدة ويصدّرها، أو يمر على شجرة تجميع ليستخرج الأبعاد والكتلة ويصدّر STEP، أو يولد نموذجًا بارامتريًا؛ مع جدول أعطال شائعة لكل برنامج. — Script heavy DCC and CAD apps without the GUI, with a per-app troubleshooting matrix.
+
+**متى:** مهام متكررة في Houdini أو ZBrush أو CATIA أو Fusion، خبز محاكاة على خادم، تجهيز نماذج للألعاب، تقارير خصائص التجميعات / repetitive work in 3D or CAD apps
+
+**كيف:** 1) Use each app's own scripting surface: the Houdini Python module through its headless interpreter, ZBrush macros, CATIA's COM automation from Python on Windows, Fusion's Python API in its script manager, RhinoCommon with Grasshopper and Rhino.Compute for headless runs, SOLIDWORKS through COM from Python. 2) For simulation, load the scene, set the frame range and substeps, cook the cache node to disk and log per-frame time; diagnose explosions by finer particle separation and more substeps before touching solver internals. 3) For sculpts, iterate visible subtools, decimate to a target count while preserving silhouette and normals, and export each with a predictable name; split very dense meshes by polygroup before display. 4) For CAD assemblies, traverse the product tree, compute bounding boxes and inertia, and export a neutral format; fix broken contextual links after renames before exporting. 5) For parametric models drive dimensions from a parameter table so the result regenerates; read red timeline features as lost references and re-constrain the sketch; in Rhino check naked edges and document tolerance before a boolean, and flatten or graft Grasshopper data trees instead of letting branches multiply; in SOLIDWORKS read the rebuild errors parent-first and use mate diagnostics for over-defined loops, and lightweight mode for very large assemblies. 6) Run scripts on copies, record versions of the app and plugins, and never overwrite the source file. Full original skill(s) with license: vendor/kosif-atlas/skills/228-mas-3d-games/708-houdini, vendor/kosif-atlas/skills/228-mas-3d-games/712-zbrush, vendor/kosif-atlas/skills/230-mas-cad-studio/724-catia, vendor/kosif-atlas/skills/230-mas-cad-studio/725-fusion-360, vendor/kosif-atlas/skills/230-mas-cad-studio/726-rhino, vendor/kosif-atlas/skills/230-mas-cad-studio/728-solidworks.
+
+**المعاملات:** app, task
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/228-mas-3d-games/708-houdini ~/.claude/skills/houdini ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/228-mas-3d-games/712-zbrush ~/.claude/skills/zbrush ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/724-catia ~/.claude/skills/catia ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/725-fusion-360 ~/.claude/skills/fusion-360 ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/726-rhino ~/.claude/skills/rhino ; mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/728-solidworks ~/.claude/skills/solidworks
+
+**الوسوم:** Houdini · ZBrush · CATIA · Fusion 360 · 3D automation · CAD · ثلاثي الأبعاد · أتمتة · Rhino · Grasshopper · SOLIDWORKS
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:AMEDIA-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/708-houdini`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/712-zbrush`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/724-catia`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/725-fusion-360`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/726-rhino`
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/728-solidworks`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMEDIA-27` Godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة / Godot 4: typed GDScript, physics timing, headless export (documented)
+- `AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor (documented)
+- `AMEDIA-30` ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric (documented)
+
+### `AMEDIA-30` — ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول / Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `atlas-media` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/atlas-media.md)) |
+| المجموعة | الصور والتحرير والتوليد (`images`) |
+| نوع المخرج (A25، A27) | صور وتصميم وشعار (`image`) |
+| الحالة في الكتالوج | 📄 `documented`: منهج موصوف يحتاج بناءً أو ربطًا قبل التشغيل |
+| سقف التحقق قبل العمل (A27) | V1 حتى تُبنى وتُشغَّل؛ لا تقدَّم جاهزة أبدًا |
+| نطاق الدليل | `url` |
+| الرخصة | card in our own words; the original skill folders are copied verbatim with their MIT license and SOURCE.md under vendor/kosif-atlas |
+
+**ما هي:** السباكة التي تصل الوكيل بالمتصلين الحقيقيين والأداة التي تثبت أنه يعمل: قناة الهاتف أو المتصفح بالترميز الصحيح، والتقاط أزرار لوحة المفاتيح، والمزج المقصود بين خطوات IVR الثابتة والمحادثة، وتحويل دافئ للإنسان مع السياق، وفروع لفشل المكالمة، ومجموعة تقييم بمعيار نجاح المهمة. — Wire and evaluate a phone voice agent.
+
+**متى:** ربط وكيل صوتي بخط هاتف، مركز اتصال آلي، تحويل للموظف، تقييم وكيل مكالمات / connecting a voice agent to phone calls
+
+**كيف:** 1) Channel: SIP or PSTN trunking with RTP media for phones, WebRTC for browser or app; confirm codec and sample rate so ASR and TTS receive the right format. 2) DTMF: confirm the provider's path (in-band tones, RFC 2833, SIP INFO differ). 3) Decide per step whether a deterministic IVR or keypad step (authentication, menus) beats conversation, and mix deliberately. 4) Routing and a warm transfer that hands the human agent the context; define escalation triggers up front. 5) Treat dropped calls, no answer, trunk failures and failed mid-call transfers as designed branches. 6) Evaluate on representative recorded conversations: task success first, then word error rate, end-to-end latency and barge-in handling, with a regression gate on changes; track connect and drop rates, DTMF reliability and warm-transfer success. 7) Recording consent, robocall rules and payment or health data are legal questions to route out, not engineering decisions; call audio and transcripts are sensitive data. Full original skill(s) with license: vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration.
+
+**المعاملات:** provider, call flow
+
+**التثبيت:** mkdir -p ~/.claude/skills && cp -r .claude/skills/kosif-superpowers/vendor/kosif-atlas/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration ~/.claude/skills/telephony-and-call-flow-integration
+
+**الوسوم:** voice agent · telephony · SIP · DTMF · IVR · call center · وكيل صوتي · مكالمات
+
+#### 1. الاستقبال (A25)
+
+- المقاس والاستخدام: افتراض مكتوب ← مقاس منصة الاستخدام المذكورة
+- الهوية والألوان والخطوط: افتراض مكتوب ← لوحة ألوان مقترحة بتباين WCAG AA
+- صيغة قابلة للتعديل: افتراض مكتوب ← SVG أو مصدر قابل للتعديل مع PNG
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- لا متطلبات مسجلة؛ افحص المسار والأداة بـ `hub.py doctor` قبل الشارة.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📄 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📄 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:AMEDIA-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: مقروء بمقاس صغير (اختبار التصغير) ← تصغير إلى 15%
+- إلزامي: تباين النص ≥ 4.5:1 ← حساب نسبة التباين
+- إلزامي: رخصة كل خط مؤكدة من مصدره ← ملف الرخصة
+- إلزامي: أصالة بلا نسخ لعمل آخر ← مقارنة بالمراجع
+- إلزامي: تشكيل الحروف العربية واتصالها صحيح ← رندر فعلي ونظرة
+- أمر الحكم في الوضع 1: `think.py qa image --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `wrong_input_kind` (نوع مدخل خاطئ، ميزانية 2): افحص المدخل الفعلي (file، ffprobe، أول بايتات، ترميز النص) ← أضف محوّلًا صريحًا بين العقدتين (مثلًا ffmpeg لتحويل الصيغة) واحفظ الأصل كما هو · البديل: اطلب المدخل بالصيغة الصحيحة مع أمر تحويل جاهز · تصعيد: إن كان التحويل يفقد جودة أو بيانات: اسأل قبل التحويل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration`
+
+#### 7. قدرات قريبة في العائلة
+
+- `AMEDIA-28` توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor / Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor (documented)
+- `AMEDIA-29` أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص / Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction (documented)
 

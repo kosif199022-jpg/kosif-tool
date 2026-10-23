@@ -1,7 +1,7 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5729,
+  "catalog_powers": 5848,
   "group_count": 15,
   "family_count": 62,
   "tool_count": 169,
@@ -74,16 +74,16 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 359,
+      "count": 402,
       "status_counts": {
-        "documented": 332,
+        "documented": 375,
         "install": 2,
         "proven": 17,
         "ready": 8
       },
       "family_counts": {
-        "atlas-mind": 60,
-        "atlas-strategy": 87,
+        "atlas-mind": 82,
+        "atlas-strategy": 108,
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 14,
@@ -190,9 +190,9 @@
         "الاختبار",
         "النشر"
       ],
-      "count": 630,
+      "count": 692,
       "status_counts": {
-        "documented": 441,
+        "documented": 503,
         "idea": 2,
         "install": 32,
         "key": 7,
@@ -203,8 +203,8 @@
       "family_counts": {
         "app-feature-transfer": 155,
         "apps-artifacts": 27,
-        "atlas-build": 52,
-        "atlas-code": 277,
+        "atlas-build": 60,
+        "atlas-code": 331,
         "code-engineering": 26,
         "ui-product-device": 93
       },
@@ -317,9 +317,9 @@
         "التوليد الاختياري",
         "تصدير النتيجة"
       ],
-      "count": 320,
+      "count": 323,
       "status_counts": {
-        "documented": 96,
+        "documented": 99,
         "idea": 2,
         "install": 27,
         "key": 35,
@@ -329,7 +329,7 @@
       },
       "family_counts": {
         "ai-generation": 94,
-        "atlas-media": 27,
+        "atlas-media": 30,
         "color-palette-grading": 87,
         "media-image-audio": 41,
         "photo-video-footage": 71
@@ -622,9 +622,9 @@
         "الرسم والخرائط",
         "التصدير"
       ],
-      "count": 262,
+      "count": 268,
       "status_counts": {
-        "documented": 105,
+        "documented": 111,
         "idea": 1,
         "install": 34,
         "key": 7,
@@ -633,7 +633,7 @@
         "seen": 48
       },
       "family_counts": {
-        "atlas-data": 56,
+        "atlas-data": 62,
         "charts-data-infographic": 105,
         "data-analysis": 39,
         "maps-geo": 62
@@ -678,16 +678,16 @@
       ],
       "keywords": "document pdf word excel office writing report مستند تقرير كتابة وورد",
       "workflow": [],
-      "count": 143,
+      "count": 148,
       "status_counts": {
-        "documented": 99,
+        "documented": 104,
         "install": 8,
         "key": 4,
         "proven": 32
       },
       "family_counts": {
         "atlas-craft": 26,
-        "atlas-docs": 55,
+        "atlas-docs": 60,
         "documents-office": 34,
         "writing-humanizer": 28
       },
@@ -9366,6 +9366,143 @@
       "what": "يحدد مكان عطل الشبكة (الشبكة المحلية، DNS، المسار، الخدمة نفسها) بأقل الأدلة وبأوامر قراءة فقط. — Localises a live connectivity failure to LAN, DNS, upstream path or the remote service with bounded, read-only probes."
     },
     {
+      "id": "ABUILD-53",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe",
+      "name_ar": "الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2374-robotics-autonomous-systems-engineering/9182-perception-and-state-estimation"
+      ],
+      "source": "atlas-build.json",
+      "what": "يبني تقدير حالة مستقرًا لروبوت: يوحد الزمن والإطارات المرجعية قبل الدمج، يختار حساسات يغطي كل منها أعطال الآخر، يختار المرشح حسب اللاخطية (EKF، UKF، مرشح جسيمات)، يقرر بين SLAM وتحديد الموقع على خريطة معروفة، يمرر عدم اليقين للمخطط، ويصمم الاستقلالية بفروع آمنة. — Builds a stable"
+    },
+    {
+      "id": "ABUILD-54",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release",
+      "name_ar": "تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار",
+      "status": "documented",
+      "requires": [
+        "lean"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/943-bootstrap-project/2228-bootstrap-project",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/963-refresh-project-scaffolding/2247-refresh-project-scaffolding",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/973-scaffold-new-repo/2257-scaffold-new-repo",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/970-scaffold-go-cli/2254-scaffold-go-cli",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/971-scaffold-go-library/2255-scaffold-go-library",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/974-scaffold-rust-cli/2258-scaffold-rust-cli",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/972-scaffold-lean-library/2256-scaffold-lean-library"
+      ],
+      "source": "atlas-build.json",
+      "what": "منسق يكتشف نوع المشروع والبنية الموجودة، ويبني خطة بترتيب محدد لمهارات الإعداد، ويعرضها قبل التنفيذ؛ ونسخة تحديث تقارن الملفات الموجودة بأحدث القوالب ولا تضيف أدوات لم تُستخدم؛ مع قوالب أساس مستقلة عن اللغة وهياكل Go وRust وZig وLean. — Ordered, plan-first repository setup and re"
+    },
+    {
+      "id": "ABUILD-55",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list",
+      "name_ar": "اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2281-developer-tooling/8708-choose-monorepo-tooling",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2944-turborepo/12208-turborepo"
+      ],
+      "source": "atlas-build.json",
+      "what": "لا توصية من اسم الأداة في الطلب: يجمع مزيج اللغات وعدد الحزم وزمن البناء الحالي ونوع الألم وهل نحتاج بناءً قابلًا للتكرار بايتًا ببايت، ثم يمشي شجرة قرار إلى أداة ومدير حزم، ويذكر الكلفة، وأهم مخرج غالبًا 'لا تتبنَّ Bazel الآن'. مع إعداد Turborepo وتشخيصه. — Measured monorepo too"
+    },
+    {
+      "id": "ABUILD-56",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Network device config: validate before applying, translate between vendor dialects through concepts, safe templates",
+      "name_ar": "إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2591-bertram/9958-net-config"
+      ],
+      "source": "atlas-build.json",
+      "what": "كل إعداد مولد أو منقول يمر بفحوص قبل اعتباره قابلًا للتطبيق: الأوامر الخطرة التي قد تقطع الاتصال، وتداخل الشبكات الفرعية، وتكرار العناوين والـVLAN، ومنطق قوائم التحكم، واكتمال خطوة الحفظ؛ والترجمة بين Cisco وRouterOS وPAN-OS وJunos وAruba تمر بطبقة المفهوم لا سطرًا بسطر. — Pre-de"
+    },
+    {
+      "id": "ABUILD-57",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt",
+      "name_ar": "ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/300-playground/913-playground"
+      ],
+      "source": "atlas-build.json",
+      "what": "صفحة واحدة يضبط فيها المستخدم شيئًا بصريًا (تصميم، ألوان، حركة، بنية بيانات، مفهوم) بأدوات تحكم، فتتحدث المعاينة فورًا ويتولد نص طلب طبيعي يذكر الخيارات غير الافتراضية فقط، مع زر نسخ وإعدادات مسبقة. — Configure visually, then copy a precise prompt."
+    },
+    {
+      "id": "ABUILD-58",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture",
+      "name_ar": "تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design"
+      ],
+      "source": "atlas-build.json",
+      "what": "قرار الشراء أم البناء أعلى قرار أثرًا في العتاد: تُسمى الوظيفة والطاقة والحجم والبيئة والواجهات والكمية والجدول والشهادات قبل اختيار المتحكم، ثم يُقرر بين وحدة جاهزة ولوحة مخصصة (ووحدة لاسلكية معتمدة مسبقًا تعيد استخدام شهادتها)، وتُرسم شجرة الطاقة وخطة الواجهات ووضعية ما قبل الا"
+    },
+    {
+      "id": "ABUILD-59",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from",
+      "name_ar": "رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14077-create-website",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3431-metaskills/14085-improve-website"
+      ],
+      "source": "atlas-build.json",
+      "what": "الزائر يقرر في خمس ثوانٍ هل يبقى، وهذا يعتمد على فهمه الفوري لما تقدمه ولماذا يهمه، فالوضوح أولًا والتصميم يخدمه. البناء عشر مراحل (التسويق في صفحة، الرسالة بالعميل بطلًا، جعلها لا تُنسى، تصميم لافت، طباعة مقروءة، تصميم منظم، سهولة الاستخدام، التحويل، جمع غير الجاهزين للشراء، مرا"
+    },
+    {
+      "id": "ABUILD-60",
+      "family": "atlas-build",
+      "group": "software",
+      "domain": "build",
+      "name_en": "Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection",
+      "name_ar": "إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/977-set-up-installers/2261-set-up-installers"
+      ],
+      "source": "atlas-build.json",
+      "what": "يجهز توزيع أداة سطر أوامر مكتوبة بـ Go أو Swift أو Rust أو Zig: يكتشف اللغة من go.mod وPackage.swift وCargo.toml وbuild.zig، يلاحظ وجود GoReleaser، يكشف قيود macOS فقط في Swift، ثم يكتب صيغة Homebrew وتعليمات README لطرق التثبيت المناسبة. — Distribution setup for Go, Swift, Rust "
+    },
+    {
       "id": "ACODE-01",
       "family": "atlas-code",
       "group": "software",
@@ -13980,6 +14117,936 @@
       "what": "تدقيق للقراءة فقط لكل ما يصل إلى الوكيل (ملفات التعليمات العامة والمشروع والمتداخلة، تعريفات الوكلاء، الخطافات، الصلاحيات، والموجّه الذي يُجمّع للوكيل البعيد)، يبدأ بقياس الحجم قبل الحكم، ثم يختبر كل قاعدة بدليل سلوكي هل أثّرت يومًا، ويقتبس طرفي كل تعارض بين الطبقات، ويكشف بوابات"
     },
     {
+      "id": "ACODE-278",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Reversible workspace hygiene: detect by default, quarantine instead of delete",
+      "name_ar": "تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/83-repo-hygiene/166-tidy-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "ينظف المستودع مما يقرره نظام الملفات وgit دون قراءة الشيفرة: ملفات قمامة، مخرجات بناء متتبعة في git، فجوات وقواعد قديمة في .gitignore، مجلدات تجريبية، أصول توثيق يتيمة، وحالة git مساعدة؛ يعرض فقط ما لم يُطلب التطبيق، وكل تغيير قابل للتراجع. — Workspace clean-up the filesystem and"
+    },
+    {
+      "id": "ACODE-279",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "No proof, no edit: prove the owner chain of visible output before fixing it",
+      "name_ar": "لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/346-unity-agent-workflows/1245-unity-agent-workflows"
+      ],
+      "source": "atlas-code.json",
+      "what": "لإصلاح خلل يظهر على الشاشة (نص، علامة تركيز، طبقة، واجهة في مشهد ما): يثبت أولًا من ينشئ الناتج ومن يحدّثه في وقت التشغيل، بالبحث عن النص أو مفتاح الترجمة الحرفي، ثم يرقع أصغر مالك مثبت فقط؛ ولنفس السلوك على عدة شاشات يثبت مالك كل شاشة على حدة. — For on-screen bugs: find who crea"
+    },
+    {
+      "id": "ACODE-280",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Design the agent harness, not just the prompt: ten-part blueprint",
+      "name_ar": "تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1211-claude-code-harness/2867-claude-code-harness"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحول فكرة وكيل إلى مخطط حزام تشغيل: حدود التفويض، طبقات الحزام، كيف يُجمّع الطلب، حلقة الدور، الأدوات كطبقة تشغيل ذات صلاحيات، نموذج السياق والذاكرة، بوابات الأمان، السجل والاسترداد، نقاط التوسعة، وتسلسل التنفيذ؛ ويقول صراحة إن كانت المهمة لا تحتاج حزامًا أصلًا. — Turns an agent "
+    },
+    {
+      "id": "ACODE-281",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Debug a conversational agent turn by turn, and regression-test whole conversations by simulation",
+      "name_ar": "تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1426-livekit-skills/3391-debugging-livekit-agents",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1426-livekit-skills/3394-running-livekit-simulations"
+      ],
+      "source": "atlas-code.json",
+      "what": "حلقة تصحيح رخيصة: شغّل الوكيل محليًا في وضع نصي، العب دور المستخدم سطرًا بسطر، واقرأ استدعاءات الأدوات ومعاملاتها لا الرد وحده، وأعد التشغيل بعد كل تعديل. ثم محاكاة: مستخدم مُحاكى يلعب سيناريو كاملًا وحَكَم يقيّم النتيجة والحالة النهائية؛ نصيًا للتكرار، وصوتيًا لقياس تبادل الأدوا"
+    },
+    {
+      "id": "ACODE-282",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop",
+      "name_ar": "إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2153-github-actions-plugin/7760-github-workflow-auto-fix",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2153-github-actions-plugin/7763-workflow-dev"
+      ],
+      "source": "atlas-code.json",
+      "what": "يركّب سير عمل يحلل فشل الفحوص ويقترح إصلاحًا في طلب دمج: نسخة مضمّنة لمستودع واحد أو قالب workflow_call تستدعيه عدة مستودعات، يحدد أي سير عمل يُراقب، ويتحقق من وجود السر المطلوب دون كشفه. وحلقة تطوير: شغّل الاختبارات، افتح مشكلة لكل فشل، اختر حسب الأولوية، أصلح بـTDD في فرع، افتح"
+    },
+    {
+      "id": "ACODE-283",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Voice-agent architecture and latency budget: cascade vs speech-to-speech",
+      "name_ar": "معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8618-voice-agent-architecture-and-latency"
+      ],
+      "source": "atlas-code.json",
+      "what": "القرار الأول والأغلى في وكلاء الصوت: شكل الخط (سلسلة تحويل الكلام لنص ثم نموذج ثم توليد صوت، أو نموذج كلام إلى كلام)، والقناة (هاتف، WebRTC، SDK)، والبناء على منصة أو إطار، وتوزيع ميزانية الزمن على كل مرحلة، مع تصميم تبادل الأدوار والمقاطعة والمسار البديل من البداية. — Sets the p"
+    },
+    {
+      "id": "ACODE-284",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups",
+      "name_ar": "العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2863-use-claude-limits-efficiently/11572-use-claude-limits-efficiently"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحافظ على عمل الوكيل الطويل أو المتوازي داخل نوافذ الاستخدام (الخمس ساعات والأسبوعية): ينفذ موجة محدودة من الوكلاء الفرعيين، ينتظر انتهاءها، يقرأ نسبة الاستخدام الفعلية من أداة المضيف نفسها، ويتوقف عند 95% ويجدول استئنافًا مكتفيًا بذاته يتحقق من تغير وقت إعادة الضبط. — Runs bound"
+    },
+    {
+      "id": "ACODE-285",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects",
+      "name_ar": "ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2954-workflow-sdk/12247-migrating-to-workflow-sdk"
+      ],
+      "source": "atlas-code.json",
+      "what": "لترحيل سير عمل من Temporal أو Inngest أو Trigger.dev أو Step Functions إلى منصة سير عمل دائمة أخرى: يجرد البنى (نقطة الدخول، الانتظار والمؤقتات، استدعاءات وموافقات خارجية، إعادة المحاولة، سير عمل فرعي وتفرع، بث التقدم، الآثار الخارجية)، يضع التنسيق في دوال حتمية والآثار في خطوات،"
+    },
+    {
+      "id": "ACODE-286",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Continuous AI: background repository agents whose output is a proposal, never a merge",
+      "name_ar": "وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13143-continuous-ai-workflows"
+      ],
+      "source": "atlas-code.json",
+      "what": "وكلاء يعملون في المستودع كما تعمل مهام CI لكن لمهام تحتاج تفكيرًا: فرز المشكلات، تحقيق في فشل CI، انحراف التوثيق، سد فجوات الاختبار، تنظيف الإنتروبيا، وتقرير صحة المستودع. القاعدة: مخرجات الوكيل تعليق أو مشكلة أو طلب دمج مسودة أو تقرير، ولا يدمج أو ينشر أبدًا. — Background agents"
+    },
+    {
+      "id": "ACODE-287",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "On-call shift handoff: five mandatory sections and a test alert before sign-off",
+      "name_ar": "تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3101-incident-response/13272-on-call-handoff-patterns"
+      ],
+      "source": "atlas-code.json",
+      "what": "تسليم مناوبة لا يضيع فيه شيء: الحوادث النشطة، التحقيقات الجارية، التغييرات الأخيرة، المشكلات المعروفة وحلولها المؤقتة، والأحداث القادمة؛ كل قسم فيه بند أو 'لا شيء' صريحة قبل اعتبار التسليم مكتملًا، مع تجربة تنبيه تصل للمستلم قبل انتهاء فترة التداخل. — A handoff gate where every s"
+    },
+    {
+      "id": "ACODE-288",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Fine-tuned checkpoint promotion: four ordered gates from data quality to canary",
+      "name_ar": "ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3104-llm-finetuning/13286-checkpoint-promotion"
+      ],
+      "source": "atlas-code.json",
+      "what": "نقطة تدريب تتفوق على مقياس المهمة لا تُشحن قبل أربع بوابات بالترتيب: جودة بيانات التدريب (تكرار، تسرب إجابات التقييم، ضجيج التسميات)، مجموعة انحراف قدرات مجمّدة مقارنة بخط أساس مع ميزانية انحراف، مقارنة مزدوجة مع النموذج الأساسي، ثم إطلاق تدريجي بنسبة صغيرة مع تراجع آلي. — Four o"
+    },
+    {
+      "id": "ACODE-289",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects",
+      "name_ar": "خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة",
+      "status": "documented",
+      "requires": [
+        "pip:chromadb"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3105-machine-learning-ops/13297-recsys-pipeline-architect"
+      ],
+      "source": "atlas-code.json",
+      "what": "معظم أنظمة 'أفضل K عناصر لمستخدم وسياق' ليست تعلم آلة غريبًا بل خطًا: جلب المرشحين من مصادر متوازية، إثراؤهم بالبيانات، إسقاط غير المؤهلين قبل التقييم المكلف، سلسلة مقيّمين (نموذج، تنويع، قواعد عمل)، اختيار الأعلى، ثم آثار جانبية غير متزامنة لا تعطل الرد. — The universal shape fo"
+    },
+    {
+      "id": "ACODE-290",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio",
+      "name_ar": "مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3289-cloudwatch-per-host-stat-single-host-vs/13803-cloudwatch-per-host-stat-single-host-vs"
+      ],
+      "source": "atlas-code.json",
+      "what": "مقاييس كل مضيف حين تُجمّع في سلسلة واحدة تخدع بطريقتين: المتوسط غير موزون عبر المضيفين فيجعل مضيفًا واحدًا بطيئًا يبدو انهيارًا عامًا، والوحدة ليست في اسم المقياس ولا يعيدها استعلام البيانات المجمّع. يحصل على الوحدة أولًا، ثم يحسب نسبة الحد الأقصى إلى المجموع ليعرف كم مضيفًا متأث"
+    },
+    {
+      "id": "ACODE-291",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "A custom LLM provider that never runs: dispatch on the bare model name wins first",
+      "name_ar": "مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM",
+      "status": "documented",
+      "requires": [
+        "key:openai"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3326-litellm-custom-provider-dispatch-order/13840-litellm-custom-provider-dispatch-order"
+      ],
+      "source": "atlas-code.json",
+      "what": "عند ربط خلفية بـLiteLLM كمزود مخصص واستدعائها باسم نموذج معروف (مثل اسم نموذج OpenAI)، تلتقط فروع سابقة في سلسلة التوجيه الاسم المجرد وترسله لمزود آخر، والاستثناء يحمل اسم مزودك فيبدو كأنه معطل؛ وإن كان مفتاح المزود الآخر صالحًا يأتي رد معقول مدفوع من حساب لم تقصده. — Diagnoses s"
+    },
+    {
+      "id": "ACODE-292",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Login-environment sync to launchd leaks the current session's variables",
+      "name_ar": "مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3324-launchd-env-sync-session-leak/13838-launchd-env-sync-session-leak"
+      ],
+      "source": "atlas-code.json",
+      "what": "سكربت ينقل متغيرات بيئة الطرفية إلى launchd على macOS لتراها التطبيقات والخدمات، إن قرأ البيئة الحية بدل ملف التعريف ينقل أيضًا متغيرات الجلسة التي شُغّل منها (معرفات جلسة الوكيل، مقبس الطرفية، مسارات مؤقتة، رموز)، فتظهر في كل تطبيق يُفتح بعدها. يشخص التسرب ويتراجع عنه ويضيف قائم"
+    },
+    {
+      "id": "ACODE-293",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output",
+      "name_ar": "عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر",
+      "status": "documented",
+      "requires": [
+        "claude:tools",
+        "lean"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12909-tool-design-interface",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12907-tool-design-errors",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12910-tool-design-output"
+      ],
+      "source": "atlas-code.json",
+      "what": "ثلاثة أجزاء من عقد أي أداة يستدعيها نموذج: الاسم والوصف والمعاملات (الوصف من أربعة أجزاء: ماذا تفعل، ومتى تُستخدم ومتى لا، وماذا يُستدعى أولًا، وماذا تعيد)، وتصنيف كل خطأ في فئة واحدة مع نص تعافٍ دقيق، وشكل نتيجة مسطح ثابت بأقل الحقول وترقيم بالمؤشر ونجاح جزئي لكل عنصر وتلميح بال"
+    },
+    {
+      "id": "ACODE-294",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder",
+      "name_ar": "تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12908-tool-design-execution",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3017-runtype-skills/12906-tool-design-composition"
+      ],
+      "source": "atlas-code.json",
+      "what": "الوكلاء يعيدون المحاولة دائمًا، فيجب أن يكون التكرار آمنًا والزمن محدودًا والحالة متسقة إذا فشلت عملية متعددة الخطوات في منتصفها؛ ثم يُرتب طقم الأدوات نفسه: عرض القدرة بأكثر من مستوى، وتجميع التسلسل المتكرر في أداة، وقبول القوائم، ووضع معاينة افتراضي، وتلميحات بما يُستدعى أولًا. "
+    },
+    {
+      "id": "ACODE-295",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score",
+      "name_ar": "واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3387-agent-cli/13909-agent-cli",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1216-ai-friendly-cli/2898-ai-friendly-cli"
+      ],
+      "source": "atlas-code.json",
+      "what": "طريقة بناء أو تقييم أداة سطر أوامر يستهلكها وكيل: الوكيل ليس مشغلًا موثوقًا فيُتحقق من كل مدخل ويُرفض عند الشك، وكل مخرج (نجاح أو فشل أو جزئي) يقول ما الخطوة التالية، وJSON عقد له إصدار، والطرفية تحدد الوضع، ثم حزمة معرفة للوكيل (CONTEXT.md وAGENTS.md وllms.txt) ومقياس من سبعة مح"
+    },
+    {
+      "id": "ACODE-296",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score",
+      "name_ar": "واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3390-human-cli/13926-human-cli"
+      ],
+      "source": "atlas-code.json",
+      "what": "النظير البشري لتصميم أداة الأوامر: أسماء سهلة التذكر، ومساعدة بترتيب واحد مع أمثلة، وكل خطأ يقول ماذا تفعل بعده، وتلوين وجداول تتوقف عند التوجيه إلى ملف أو مع NO_COLOR، ومؤشر تقدم لأي عملية أبطأ من ثانية، ومسارات XDG، وجسر للجمهورين حين يستخدمها بشر ووكلاء معًا. — Build or score "
+    },
+    {
+      "id": "ACODE-297",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "MCPB bundle for a local MCP server: manifest, install-time config, and the security you own",
+      "name_ar": "حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/297-mcp-server-dev/912-build-mcpb"
+      ],
+      "source": "atlas-code.json",
+      "what": "تغليف خادم MCP يجب أن يعمل على جهاز المستخدم (ملفات محلية، تطبيق سطح مكتب، خدمات localhost) في حزمة واحدة يثبتها المضيف، مع إعدادات تُسأل عند التثبيت ومفاتيح تُحفظ في سلسلة مفاتيح النظام، والتنبيه أن الحزمة بلا عزل فالتحقق من المسارات والأوامر مسؤوليتك. — Package a local stdio MC"
+    },
+    {
+      "id": "ACODE-298",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict",
+      "name_ar": "فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3049-adlc-govern/13125-extension-vetting",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3049-adlc-govern/13130-vet-extension",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13104-mcp-integration-plan"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة أي مهارة أو إضافة أو خادم MCP أو خطاف بقدر ما يستطيع فعله: المصدر والقدرات المطلوبة وقراءة كل ملف، مع فحص صريح لأنماط هجوم حديثة (تضخيم التقييمات، أسماء قريبة من المشهورة، نص مخفي بمحارف صفرية العرض أو ثنائية الاتجاه، تعليمات بلا كود، إصلاحات مزيفة بلصق base64، محفزات نائم"
+    },
+    {
+      "id": "ACODE-299",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json",
+      "name_ar": "نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3282-claude-json-mcp-migration-slice/13793-claude-json-mcp-migration-slice"
+      ],
+      "source": "atlas-code.json",
+      "what": "ملف ~/.claude.json يحمل إعداد MCP ومعه سجل المشاريع وتلميحات المحادثات والعدادات؛ نسخه كاملًا يسرّب حالة شخصية، ونسخ mcpServers العلوي وحده يسقط حالة المشروع. الشريحة الصحيحة أربعة مفاتيح في نطاقين. — The exact MCP slice of the Claude Code config."
+    },
+    {
+      "id": "ACODE-300",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy",
+      "name_ar": "اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy",
+      "status": "documented",
+      "requires": [
+        "lean"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/978-set-up-linters/2262-set-up-linters",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3519-shell-scripting/14290-shellcheck-configuration",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7928-biome-tooling",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2167-rust-plugin/7867-clippy-advanced"
+      ],
+      "source": "atlas-code.json",
+      "what": "يكتشف نوع المشروع ومدققاته الحالية (حتى التي تعمل في CI بلا ملف إعداد) ثم يقترح طقمًا بحسب أنواع الملفات الموجودة: مدقق لكل لغة، ومنسق مشترك، وEditorConfig، ومدققات Markdown وCSS وDockerfile وworkflows وTOML وYAML، ومدقق إملاء. — Detection-driven linter setup."
+    },
+    {
+      "id": "ACODE-301",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late",
+      "name_ar": "الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7805-tool-migration-cutover"
+      ],
+      "source": "atlas-code.json",
+      "what": "الفشل الشائع: إعداد الأداة الجديدة موجود ويبدو صحيحًا فيُحذف القديم، والجديد لم يعمل قط بسبب صلاحيات أو أسرار ناقصة، ولا يصدر أي خطأ عن 'لا شيء يحدّث التبعيات'. والفشل المعاكس: القديم يبقى في خطاف ما قبل الالتزام فيعيد تنسيق الكود بالأسلوب الخطأ في كل commit. — Gate removal of th"
+    },
+    {
+      "id": "ACODE-302",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively",
+      "name_ar": "بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1228-fuzzy-filter/2909-fuzzy-filter",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1261-ripgrep/2941-ripgrep",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1226-fd/2908-fd",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1230-fzf/2910-fzf"
+      ],
+      "source": "atlas-code.json",
+      "what": "مرحلتان: أداة regex تمشي الشجرة وتحترم .gitignore وتخرج الأسطر أو المسارات، ثم fzf --filter يبقي ما يطابق ضبابيًا ويرتبه، وrga لملفات PDF والمستندات والأرشيف؛ مع متى يكفي regex وحده ومتى نحتاج الاختيار التفاعلي. — A two-stage scan-then-rank search pipeline an agent can run."
+    },
+    {
+      "id": "ACODE-303",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Deduplicate layered config overlays, and prove the effective config did not change",
+      "name_ar": "تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3359-spring-profile-config-overlay-dedupe/13874-spring-profile-config-overlay-dedupe"
+      ],
+      "source": "atlas-code.json",
+      "what": "ملف إعداد خاص ببيئة (مثل application-prod.yml فوق application.yml) يتراكم فيه نسخ من قيم الأساس؛ يحذفها بعد التأكد أن الطبقات تُدمج فعلًا، ثم يقارن الإعداد المحسوب قبل وبعد ليثبت أن شيئًا لم يتغير. — Strip an overlay to the values that really differ."
+    },
+    {
+      "id": "ACODE-304",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis",
+      "name_ar": "نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله",
+      "status": "documented",
+      "requires": [
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3330-mcp-language-server-orphan-fd-exhaustion/13844-mcp-language-server-orphan-fd-exhaustion"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين يرفض كل برنامج فتح ملف، فالجدول العام للنواة ممتلئ وليس حد عملية واحدة؛ المذنب عادة عمليات مساعدة (مثل خوادم لغة يشغلها خادم MCP) بقيت بعد موت أبيها. ثلاثة أوامر للتشخيص ثم إنهاء اليتامى. — Diagnose and clear orphaned processes holding descriptors."
+    },
+    {
+      "id": "ACODE-305",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism",
+      "name_ar": "تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2691-circleci/10339-circleci-config"
+      ],
+      "source": "atlas-code.json",
+      "what": "يحسن سرعة واستقرار خط CI دون تغيير سلوك المنتج: يقيس أبطأ المهام وأكثرها تقلبًا، ويحذف المكرر، ويصمم مفاتيح الذاكرة المؤقتة والمساحات المشتركة، ثم يقسم الاختبارات بالتوقيت، ويسلم خطة تحقق وتراجع. — Baseline-first CI tuning, written for CircleCI and portable to other runners."
+    },
+    {
+      "id": "ACODE-306",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Mutual TLS between services: certificate hierarchy, rotation and handshake debugging",
+      "name_ar": "TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3458-cloud-infrastructure/14171-mtls-configuration"
+      ],
+      "source": "atlas-code.json",
+      "what": "يطبق التحقق المتبادل بالشهادات بين الخدمات في شبكة انعدام الثقة: جذر وسيط وشهادات خدمات قصيرة العمر، وتدوير آلي، وخطوات تشخيص فشل المصافحة. — mTLS setup and troubleshooting."
+    },
+    {
+      "id": "ACODE-307",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs",
+      "name_ar": "قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3300-cmux-tmux-compat-gap-probe/13814-cmux-tmux-compat-gap-probe"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين تقلد طبقة ما برنامجًا آخر جزئيًا (مثل طرفية تدّعي أنها tmux)، فتثبيت أداة تعتمد عليه وتشغيلها يكشف أول أمر ناقص فقط ويترك أثرًا على الجهاز. الأسلم: استخرج كل الأوامر التي تستدعيها الأداة من مصدرها، وقارنها بما تعلنه الطبقة، وجرّب الأوامر غير المغيرة حيًا، واكتب الفرق في ثلاث "
+    },
+    {
+      "id": "ACODE-308",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only",
+      "name_ar": "مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط",
+      "status": "documented",
+      "requires": [
+        "mcp:github"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/969-review-plan/2253-review-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3031-codex-reviewer/13040-feature-review-plan"
+      ],
+      "source": "atlas-code.json",
+      "what": "مراجعة للقراءة فقط لخطة تنفيذ قبل كتابة الكود: الخطة والمواد المرتبطة بيانات للمراجعة لا أوامر للتنفيذ؛ يتحقق من كل ادعاء تقوله الخطة عن ملفات التبعيات والدوال المساعدة والواجهات من مصدرها، ويبحث عن الافتراضات الضعيفة والتبعيات المخفية والترحيلات الخطرة واستراتيجية الاختبار الناق"
+    },
+    {
+      "id": "ACODE-309",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies",
+      "name_ar": "استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3281-claude-code-settings-spec-from-binary/13792-claude-code-settings-spec-from-binary"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين يوجد مفتاح إعداد على القرص ولا يصفه أي مخطط منشور، فالعقد كاملًا مضمّن في الملف التنفيذي مرتين: نص التعليمات الذي يولد الكتلة، ودوال التحقق التي ترفض الخاطئة. الأول يعطي النية والخانات، والثاني يعطي الحدود المطبقة فعلًا. مكتوب لإعدادات Claude Code وقابل للنقل لأي أداة. — Read"
+    },
+    {
+      "id": "ACODE-310",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift",
+      "name_ar": "تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3179-verify-skill/13525-verify-skill",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3178-verify-marketplace/13524-verify-marketplace"
+      ],
+      "source": "atlas-code.json",
+      "what": "المهارات والأسواق تتقادم بصمت: حقول أُهملت، وميزات أصبحت مدمجة، وروابط ماتت، ونسخ مستوردة ابتعدت عن مصدرها. يجلب الإرشادات الحالية أولًا ثم يفحص على أربعة محاور، ويجمع الأدلة الآلية قبل الحكم. — Freshness audit for skills and marketplaces."
+    },
+    {
+      "id": "ACODE-311",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle",
+      "name_ar": "هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "mcp:github"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3276-claude-code-plugin-from-existing-repo/13787-claude-code-plugin-from-existing-repo",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3274-claude-code-codex-plugin-parity/13785-claude-code-codex-plugin-parity",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3277-claude-code-plugin-publish-anthropic-mar/13788-claude-code-plugin-publish-anthropic-mar",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3280-claude-code-plugin-update-flow/13791-claude-code-plugin-update-flow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3278-claude-code-plugin-python-bootstrap/13789-claude-code-plugin-python-bootstrap",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3302-codex-hook-wire-schema-from-binary/13816-codex-hook-wire-schema-from-binary",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3341-personal-skills-shadow-bundle-audit/13855-personal-skills-shadow-bundle-audit"
+      ],
+      "source": "atlas-code.json",
+      "what": "دليل عملي لدورة حياة الإضافة: هيكل يسمح بالتعايش مع الطريقة القديمة، وملف السوق في جذر المستودع، وعدم تعريف الخطافات مرتين، والفرق الحقيقي مع Codex في بروتوكول الخطافات، ونموذج التقديم للسوق الرسمي، وأن التحديث مقارنة نص الإصدار فقط فلا يصل أي تغيير دون رفع الرقم، وتثبيت تبعيات ب"
+    },
+    {
+      "id": "ACODE-312",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence",
+      "name_ar": "جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3261-agent-host-skill-loading/13772-agent-host-skill-loading"
+      ],
+      "source": "atlas-code.json",
+      "what": "لتصل إجراءات مكتوبة مرة واحدة إلى كل وكيل تشغله، يقرأ المضيف الترويسة بمحلل YAML حقيقي، ويضع قائمة قصيرة (الاسم والوصف) في تعليمات النظام، ويعطي أداة تعيد المهارة كاملة عند الطلب، ويرتب مسارات البحث صراحة، ويعيد التحميل عند حدود الدور. — Skill loading for custom agent runtimes."
+    },
+    {
+      "id": "ACODE-313",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout",
+      "name_ar": "البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3045-adlc-agent-engineering/13088-prompt-versioning"
+      ],
+      "source": "atlas-code.json",
+      "what": "البرومبتات وأوصاف الأدوات وإعدادات النموذج التي تعيش في لوحات أو محادثات بلا تاريخ تكسر الإنتاج دون أثر. تُخزن بجانب الكود، وتُقولب، وتُراجع في PR مع نتائج التقييم، ويُثبت إصدار النموذج فترقيته تغيير يمر بمجموعة الانحدار، وتُطرح التغييرات الخطرة خلف علم وتُعاد بسرعة. — Version co"
+    },
+    {
+      "id": "ACODE-314",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse",
+      "name_ar": "تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2232-ai-red-teaming/8482-run-adversarial-attacks-and-jailbreaks"
+      ],
+      "source": "atlas-code.json",
+      "what": "للاختبار الأمني المصرح به لنظام ذكاء اصطناعي: لا اختبار بلا قواعد اشتباك (النطاق، الممنوع، أسرار وهمية بدل بيانات حقيقية، مفتاح إيقاف، الإفصاح)، ثم تصنيف مرتب بالأولوية، وكل نتيجة تُسجل بالحمولة والمحادثة والسلوك والتصنيف والخطورة، وما يتكرر يصبح حزمة آلية مع بوابة انحدار في CI. "
+    },
+    {
+      "id": "ACODE-315",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement",
+      "name_ar": "تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14469-repo-harness-assessment"
+      ],
+      "source": "atlas-code.json",
+      "what": "يقيس قدرة المستودع على أن يجد الوكيل قواعده ويغير بأمان ويتحقق وينتج أدلة قابلة للمراجعة: يحدد ملف تعليمات واحدًا معتمدًا ويصنف البقية (تجاوز لمجلد، رابط، نسخة مولدة، إشارة قصيرة)، ويبقي الجذر قصيرًا، ويربط الملفات الموجودة بأدوار الحزام، ويقترح أصغر خطوة مفيدة وما لا يُبنى الآن."
+    },
+    {
+      "id": "ACODE-316",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth",
+      "name_ar": "أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية",
+      "status": "documented",
+      "requires": [
+        "git",
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/42-react-development/63-react-best-practices",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1434-react-skills/3417-vercel-react-best-practices",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/82-react-development/164-review-react-workflow"
+      ],
+      "source": "atlas-code.json",
+      "what": "ترتيب قواعد أداء React حسب الأثر: (1) الشلالات غير المتزامنة و(2) حجم الحزمة حرجان، ثم أداء الخادم، ثم جلب العميل، ثم إعادة الرسم، ثم الرسم، ثم JavaScript الخام. المراجعة تبدأ من الملفات المتغيرة فقط ما لم يُطلب فحص كامل، وتأخذ ناتج ESLint كدليل لا يُتجاوز. — Impact-ordered React"
+    },
+    {
+      "id": "ACODE-317",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort",
+      "name_ar": "صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1530-webcraft/4194-react-development",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2654-web-tasuke/10087-react-use-effect",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2654-web-tasuke/10088-react-use-ref",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2654-web-tasuke/10085-react-component-convention",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3095-framework-migration/13263-react-modernization"
+      ],
+      "source": "atlas-code.json",
+      "what": "قواعد React العملية: افحص النسخ والمكان (خادم أو عميل) وReact Compiler قبل التعديل، احفظ تصميم وAPI المكونات، اتبع Rules of React، لا تنسخ الحالة نسختين، واجعل useEffect للمزامنة مع نظام خارجي فقط ومعزولًا في hook باسم مسؤوليته. ويشمل ترحيل الأصناف إلى hooks وترقيات React 17/18. "
+    },
+    {
+      "id": "ACODE-318",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options",
+      "name_ar": "Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3096-frontend-mobile-development/13264-nextjs-app-router-patterns",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3063-nextjs-developer/13220-nextjs-developer"
+      ],
+      "source": "atlas-code.json",
+      "what": "سلوك Next.js يختلف جذريًا بين 14 و15 و16 وبين App وPages Router، وتفعيل cacheComponents يغير نموذج التخزين المؤقت كله. البطاقة تفرض اكتشاف السياق ثم قواعد الحدود بين الخادم والعميل والتخزين المؤقت والتوجيه المتوازي. — Next.js routing, rendering and caching without version mix-ups"
+    },
+    {
+      "id": "ACODE-319",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named",
+      "name_ar": "اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/304-writing-csharp",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/305-writing-go",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/306-writing-java-kotlin",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/307-writing-python",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/308-writing-rust",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/117-programming/310-writing-typescript"
+      ],
+      "source": "atlas-code.json",
+      "what": "مجموعة افتراضيات مختصرة لـ Go وPython وRust وTypeScript وC#/.NET وJava/Kotlin، يحكمها مبدأ واحد: أعراف المشروع وملفات نسخته تتقدم على الافتراضيات، ولا تُستخدم ميزة لغة أحدث من المعلن. — Per-language defaults gated by the project's declared versions."
+    },
+    {
+      "id": "ACODE-320",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors",
+      "name_ar": "Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/987-write-go-code/2271-write-go-code",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2858-effective-go/11567-effective-go",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3526-systems-programming/14303-go-concurrency-patterns"
+      ],
+      "source": "atlas-code.json",
+      "what": "قواعد Go من Effective Go ودليل Google وCode Review Comments بترتيب حسم واضح عند التعارض (وضوح، بساطة، إيجاز، قابلية صيانة، اتساق)، مع أنماط التزامن الآمنة: من يرسل يغلق القناة، لا تسرب goroutines، context للإلغاء والمهل، والإيقاف اللطيف. — Go style and concurrency rules with a co"
+    },
+    {
+      "id": "ACODE-321",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates",
+      "name_ar": "Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1113-rust-coding/2535-rust-coding",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2167-rust-plugin/7869-rust-development"
+      ],
+      "source": "atlas-code.json",
+      "what": "منهج كتابة Rust: افهم الطلب، خطط هياكل البيانات بدقة (structs وenums وtraits)، اكتب تنفيذًا اصطلاحيًا موثقًا، استخدم الماكرو بحذر، واهتم بزمن البناء وتقسيم الوحدات، مع أدوات النظام البيئي الحديث وإصدار 2024. — Rust design and tooling workflow."
+    },
+    {
+      "id": "ACODE-322",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages",
+      "name_ar": "صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين",
+      "status": "documented",
+      "requires": [
+        "docker",
+        "pip:numpy",
+        "pip:pandas",
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2146-container-plugin/7718-go-containers",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2146-container-plugin/7719-nodejs-containers",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2146-container-plugin/7720-python-containers"
+      ],
+      "source": "atlas-code.json",
+      "what": "تحسينات خاصة بكل لغة فوق نمط البناء متعدد المراحل العام: Go من 846MB إلى بضعة MB، وNode بين 100-150MB، وPython بين 80-120MB، مع فخاخ حقيقية: venv لا ينتقل بين نسخ Python الصغرى، وAlpine يكسر عجلات numpy/pandas، وdistroless بلا shell. — Per-language Dockerfile optimisation with th"
+    },
+    {
+      "id": "ACODE-323",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist",
+      "name_ar": "فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1271-ty/2949-ty",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2166-python-plugin/7853-ty-type-checking",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7803-mypy-to-ty",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2160-migration-patterns-plugin/7799-black-to-ruff-format",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2166-python-plugin/7851-ruff-formatting",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2166-python-plugin/7861-vulture-dead-code"
+      ],
+      "source": "atlas-code.json",
+      "what": "ty سريع جدًا ويعمل على كود جزئي الأنواع، لكنه 0.0.x تتغير أعلامه وأسماء قواعده بين الإصدارات الصغيرة، فيجب تثبيت النسخة والتحقق من --help. الترحيلات تتم بتدقيق الإعداد الحالي ثم الاستبدال ثم التحقق، مع إبقاء mypy حين يعتمد المشروع على إضافاته. — Adopting ty, ruff-format and vultu"
+    },
+    {
+      "id": "ACODE-324",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow",
+      "name_ar": "سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "os:macos"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1112-python-scripting/2533-python-simple-scripts",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1112-python-scripting/2534-python-typing"
+      ],
+      "source": "atlas-code.json",
+      "what": "يفرق بين سكربت مساعد مؤقت يستعمله الوكيل وسكربت مطلوب كتسليم في المستودع. المساعد يستخدم المفسر المتاح والمكتبة القياسية ولا ينشئ pyproject أو venv أو lockfile ولا يترك ملفات cache، والتسليمي يتبع أعراف المشروع. والمدخلات غير الموثوقة تُعامل كـ object وتُضيّق بـ isinstance لا كـ "
+    },
+    {
+      "id": "ACODE-325",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml",
+      "name_ar": "مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7929-bun-add",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7932-bun-development",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7934-bun-lockfile-update",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7935-bun-outdated",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7936-bun-package-manager",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7937-bun-publish",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7938-bun-publishing",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2926-pnpm/12141-pnpm"
+      ],
+      "source": "atlas-code.json",
+      "what": "إدارة اعتماديات JavaScript بـ Bun (add، update، outdated، publish) وpnpm 11/12. أهم فخ: `bun add` بلا نسخة بعد تثبيت مجمد يأخذ وسم latest من السجل خارج ملف القفل. وفي pnpm الحديث الإعدادات بمفاتيح camelCase في pnpm-workspace.yaml و.npmrc للمصادقة فقط. — JS package manager hygiene"
+    },
+    {
+      "id": "ACODE-326",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code",
+      "name_ar": "Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11717-deno",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11718-migrate-to-deno",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11715-deno-frontend",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2898-deno/11716-deno-sandbox"
+      ],
+      "source": "atlas-code.json",
+      "what": "Deno 2.9+ يقرأ package.json ويكتب node_modules حقيقيًا ويشغل نفس السكربتات ووحدات node:، فالترحيل غالبًا لا يحتاج تعديل كود. الفرقان الحقيقيان: الصلاحيات، وسكربتات دورة حياة npm لا تعمل افتراضيًا. وDeno Sandbox يشغل كودًا غير موثوق في microVM معزول يُتخلص منه بـ await using. — De"
+    },
+    {
+      "id": "ACODE-327",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings",
+      "name_ar": "التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2174-typescript-plugin/7945-typescript-temporal"
+      ],
+      "source": "atlas-code.json",
+      "what": "Date يجمع تاريخًا تقويميًا ولحظة ومنطقة المضيف في كائن واحد قابل للتغيير، فتنتج أخطاء تمر من فاحص الأنواع (تاريخ الأمس بعد منتصف الليل، يوم ناقص غرب UTC). Temporal يعطي كل معنى نوعًا: PlainDate وPlainYearMonth وPlainTime وInstant وZonedDateTime وDuration. — Temporal types that ma"
+    },
+    {
+      "id": "ACODE-328",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants",
+      "name_ar": "تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ",
+      "status": "documented",
+      "requires": [
+        "node"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3360-standalone-typecheck-repro/13875-standalone-typecheck-repro"
+      ],
+      "source": "atlas-code.json",
+      "what": "حين لا يوجد node_modules والتثبيت بطيء أو يفشل بسبب نسخة Node، لا تدفع وتنتظر CI. أخطر خطأ هو grep على 'error TS' فإذا لم يعمل المترجم أصلًا بدا الفشل نجاحًا. — Offline typecheck reproduction that cannot fake a pass."
+    },
+    {
+      "id": "ACODE-329",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown",
+      "name_ar": "حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown",
+      "status": "documented",
+      "requires": [
+        "npm:esbuild"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2955-zod/12256-use-zod",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2940-tanstack/12197-use-tanstack",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2948-vite/12220-vite",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2943-tsdown/12203-tsdown",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3163-astro/13492-astro",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3061-angular-developer/13218-angular-developer"
+      ],
+      "source": "atlas-code.json",
+      "what": "مكتبات الويب تتغير بسرعة بين الإصدارات الصغيرة، والمعرفة المخزنة تكتب واجهات محذوفة. البطاقة تجمع أمثلة كسر حقيقية وتفرض: نسخة مثبتة أولًا، مراجع رسمية للنسخة، وتحقق بالبناء. — Version-accurate code for fast-moving web libraries."
+    },
+    {
+      "id": "ACODE-330",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards",
+      "name_ar": "Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة",
+      "status": "documented",
+      "requires": [
+        "npm:react"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2951-vue/12229-vue-best-practices",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2951-vue/12230-vue-router-best-practices",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2951-vue/12232-vue",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2922-pinia/12131-pinia"
+      ],
+      "source": "atlas-code.json",
+      "what": "سير عمل Vue مرتب: أكد البنية (Composition أو Options أو JSX)، اقرأ مراجع التفاعلية وSFC وتدفق البيانات وcomposables، ارسم خريطة مكونات بمسؤولية جملة واحدة وعقود props/emits، ثم نفذ. — Vue 3 feature workflow with explicit data flow."
+    },
+    {
+      "id": "ACODE-331",
+      "family": "atlas-code",
+      "group": "software",
+      "domain": "code",
+      "name_en": "jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format",
+      "name_ar": "jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال",
+      "status": "documented",
+      "requires": [
+        "node",
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10068-prefer-jq",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10069-prefer-yq"
+      ],
+      "source": "atlas-code.json",
+      "what": "المفسر العام (python -c، node -e) يستطيع أي شيء، فيجب على من يوافق على الأمر قراءة كل سكربت، وتتصادم علامات الاقتباس فيكثر الإعادة. jq وyq محصوران في تحويل البيانات فيسهل منحهما إذنًا عامًا، وyq يفهم البنية فلا يستبدل مفتاحًا في المستوى الخطأ كما يفعل sed. — Data-only CLI tools f"
+    },
+    {
       "id": "ACRAFT-01",
       "family": "atlas-craft",
       "group": "documents",
@@ -15308,6 +16375,101 @@
       "what": "يقرر كيف تُضمن جودة البيانات لمجموعة محددة: القاعدة المعروفة (لا قيم فارغة، فريدة، مرجعية) اختبار، والمجهول عبر الزمن (تأخر التحديث، الحجم، انحراف المخطط والتوزيع) مراقب، وضمان حدود المنتِج عقد؛ ثم الأداة ومكان التشغيل وسياسة الإيقاف أو التحذير والـSLA. — Decides the mix of tests"
     },
     {
+      "id": "ADATA-57",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Choose and build a reproducible genomics pipeline: engine, reference, tools, truth-set validation",
+      "name_ar": "اختيار وبناء خط تحليل جينومي قابل للتكرار: المحرك والمرجع والأدوات والتحقق بمجموعة حقيقة",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2246-bioinformatics-engineering/8549-choose-bioinformatics-pipeline-and-stack",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2246-bioinformatics-engineering/8551-implement-and-scale-bioinformatics-pipel"
+      ],
+      "source": "atlas-data.json",
+      "what": "يختار محرك سير العمل (Nextflow/nf-core، Snakemake، WDL، CWL) وبناء المرجع (GRCh38 أو T2T) وسلسلة الأدوات حسب نوع الفحص، ويفضّل خط مجتمعي منسّق قبل البناء من الصفر، ثم ينفذ عملية لكل خطوة بحاوية مثبتة الإصدار، ويوسّع بالتقسيم والتجميع، ويضع الخطوات القصيرة القابلة للاستئناف على حو"
+    },
+    {
+      "id": "ADATA-58",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "ML pipeline discipline: no training before earlier steps and explicit approval at each gate",
+      "name_ar": "انضباط خط تعلم الآلة: لا تدريب قبل اكتمال الخطوات السابقة وموافقة صريحة عند كل بوابة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1550-ml-pipeline/4304-ml-pipeline"
+      ],
+      "source": "atlas-data.json",
+      "what": "'درّب نموذجًا على هذه البيانات' طلب لبدء الخط من الخطوة الأولى لا من التدريب: خطوات بترتيب صارم (فهم البيانات، التنظيف، التقسيم دون تسرب، الهندسة، خط الأساس، النموذج، التقييم)، وبوابات يقف عندها الوكيل ويشرح بلغة بسيطة ما فُعل وما وُجد والقرارات وما التالي، ثم يطلب موافقة صريحة، "
+    },
+    {
+      "id": "ADATA-59",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Build a digital twin from live data: bind telemetry to the model, simulate from current state, validate fidelity and monitor drift",
+      "name_ar": "بناء التوأم الرقمي من البيانات الحية: ربط القياسات بالنموذج، ومحاكاة من الحالة الحالية، والتحقق من الدقة ومراقبة الانحراف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2283-digital-twin-engineering/8718-implement-twin-integration-and-simulatio"
+      ],
+      "source": "atlas-data.json",
+      "what": "من تصميم مختار إلى توأم حي مُتحقق منه: استقبال القياسات عبر MQTT أو OPC-UA أو Kafka وربط كل إشارة بخاصية في النموذج، ونموذج فيزيائي أو بديل مختصر أو هجين، ومحاكاة 'ماذا لو' تبدأ من الحالة الحالية، وعرض بالمستوى الذي يحتاجه القرار، ثم تحقق إلزامي من الدقة مقابل الأصل الحقيقي. — En"
+    },
+    {
+      "id": "ADATA-60",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Resilient web data extraction: structured data before selectors, a fallback per field, a validated schema, and observable breakage",
+      "name_ar": "استخراج بيانات الويب بمرونة: البيانات المنظمة قبل المحددات، وبدائل لكل حقل، ومخطط يُتحقق منه، وأعطال مرئية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2407-web-scraping-data-extraction/9332-resilient-extraction-and-parsing"
+      ],
+      "source": "atlas-data.json",
+      "what": "يستخرج من الواجهة البرمجية أو JSON-LD أو microdata أو بيانات الإطار المضمنة قبل اللجوء إلى محددات CSS أو XPath الهشة، ويثبت المحددات على خطافات مستقرة، ويعرف مخطط الهدف ويتحقق من كل سجل، ويطبع الأنواع عند الاستخراج، ويفرق بين الغائب والفارغ والصفر، ويتتبع نسبة الفشل في كل تشغيل. "
+    },
+    {
+      "id": "ADATA-61",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Choose a data pipeline orchestrator: gate on latency first, then asset vs task model, ops capacity and current cloud",
+      "name_ar": "اختيار منسق خطوط البيانات: بوابة زمن الاستجابة أولًا، ثم الأصول أم المهام، وحجم فريق التشغيل، والسحابة الحالية",
+      "status": "documented",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2269-data-orchestration/8648-choose-orchestrator"
+      ],
+      "source": "atlas-data.json",
+      "what": "يعيد صياغة الحمل (الحجم والتكرار وزمن الاستجابة وتعقيد التبعيات ونموذج التفكير وحجم الفريق والسحابة)، ويخرج من المسألة إن كان المطلوب أقل من دقيقة لأنها بث لا تنسيق، ثم يختار بين Dagster وAirflow وPrefect وMage وTemporal والخدمات المُدارة، ويسمي نموذج الجدولة ومحرك التنفيذ وشرطًا"
+    },
+    {
+      "id": "ADATA-62",
+      "family": "atlas-data",
+      "group": "data",
+      "domain": "data",
+      "name_en": "Design an event tracking plan from questions: object-action events, properties instead of event variants, the identity model first",
+      "name_ar": "تصميم خطة تتبع الأحداث من الأسئلة: أحداث بصيغة كائن ثم فعل، وخصائص بدل تكرار الأحداث، ونموذج الهوية أولًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2332-martech-event-instrumentation/8953-design-a-tracking-plan"
+      ],
+      "source": "atlas-data.json",
+      "what": "الأحداث تُشتق من أسئلة العمل والمنتج، وأي حدث لا يحتاجه سؤال لا يُتتبع؛ تسمية كائن ثم فعل بحالة أحرف ثابتة ومجموعة أفعال محدودة، ونسخ الحدث الواحد تصير خصائص، ونموذج الهوية من مجهول إلى معروف يُقرر قبل أي حدث، وكل حدث له فئة موافقة ومالك ووجهات. — The design half that precedes in"
+    },
+    {
       "id": "ADOCS-01",
       "family": "atlas-docs",
       "group": "documents",
@@ -16199,6 +17361,89 @@
       "what": "قبل نشر مقتنيات أو أرشيف على الإنترنت: بوابة حقوق (ملك عام، أو حقوق مُصرّح بها، أو غير مصرح فلا يُنشر إلا وصف وصورة مصغرة)، ثم بوابة حساسية ثقافية بالتشاور مع المجتمع المصدر، ثم قرار الوصول المفتوح أو المقيد بترخيص واضح، والبنية التقنية للنشر. — Rights gate, then community-consul"
     },
     {
+      "id": "ADOCS-56",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Tabbed project status page: refresh by deltas, not re-narration, with a state block embedded in every render",
+      "name_ar": "صفحة حالة المشروع بتبويبات: تحديث بالفروق لا إعادة سرد، وكتلة حالة مضمنة في كل نسخة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/303-project-artifact/921-project-artifact"
+      ],
+      "source": "atlas-docs.json",
+      "what": "صفحة حالة لمشروع أكبر من أن يتابَع من الذاكرة: نظرة عامة ومسارات عمل كعمود فقري، وتبويبات للقرارات والأسئلة فقط حين يوجد محتوى حقيقي، وملف إعداد لكل مشروع بمصادر الحالة الحية والمسؤولين، وتحديث يقرأ النسخة السابقة ويغير ما تغير فقط. — A living status artifact."
+    },
+    {
+      "id": "ADOCS-57",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "From meeting transcript to decision record: decision, rationale, rejected options, owner and open questions",
+      "name_ar": "من محضر الاجتماع إلى سجل قرارات: القرار والسبب والبدائل المرفوضة والمسؤول والأسئلة المفتوحة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/231-mas-common-sense-pack/733-summarize-meetings-into-decisions"
+      ],
+      "source": "atlas-docs.json",
+      "what": "بدل ملخص يسرد ما قيل بالترتيب، يستخرج من النص ما تقرر فعلًا مع سببه، والخيارات التي رُفضت صراحة ولماذا، ومن يملك كل إجراء وموعده، وما بقي معلقًا؛ وما لم يُحسم يُكتب معلقًا ولا يُخترع له قرار. — A decision log, not a chronological recap."
+    },
+    {
+      "id": "ADOCS-58",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Requirements to ticket-ready stories with Gherkin scenarios, plus a requirements quality audit before handoff",
+      "name_ar": "من المتطلبات إلى قصص جاهزة للتذاكر بسيناريوهات Gherkin، مع تدقيق جودة المتطلبات قبل التسليم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8305-gherkin-stories",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11619-user-stories",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2878-pm-execution/11620-wwas",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8315-requirements-quality"
+      ],
+      "source": "atlas-docs.json",
+      "what": "يفكك المتطلب المعتمد إلى أصغر قصص تحفظ النية (من أنا وماذا أريد ولماذا، وفق INVEST)، ويكتب لكل قصة سيناريو رئيسيًا يكون فيه Given حقيقة وWhen فعلًا واحدًا وThen نتيجة ملحوظة من الخارج، ويستبدل كلمات مثل 'بشكل صحيح' بنتيجة محددة، ويضيف أخطر الحالات البديلة؛ ويدقق المتطلبات في الغم"
+    },
+    {
+      "id": "ADOCS-59",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "Spec-driven development for coding agents: constitution, tech-free spec, ambiguity hunt, plan, tasks, and merging delta specs into the baseline",
+      "name_ar": "التطوير بالمواصفة للوكلاء: دستور ثم مواصفة بلا تقنية ثم صيد الغموض ثم خطة ثم مهام، ودمج تغييرات المواصفة في الأساس",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1497-spec-driven/3713-spec-workflow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13135-spec-driven-development",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13134-spec-clarification",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3050-adlc-intent/13132-agentic-prd",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8211-spec-writer",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2200-spec-superflow/8210-spec-merger"
+      ],
+      "source": "atlas-docs.json",
+      "what": "المواصفة لا الـprompt هي مصدر الحقيقة الدائم: مبادئ المشروع غير القابلة للتفاوض، ثم مواصفة تقول ماذا ولماذا دون تقنية بمعايير قبول بصيغة EARS، ثم صيد الغموض بأسئلة مع افتراض موصى به، ثم خطة تُفحص مقابل المبادئ، ثم مهام صغيرة مرتبة، ثم مزامنة المواصفة مع ما بُني فعلًا؛ ومواصفة جاه"
+    },
+    {
+      "id": "ADOCS-60",
+      "family": "atlas-docs",
+      "group": "documents",
+      "domain": "docs",
+      "name_en": "In-repo backlog of deferred work: one file per item, a worth yes/no/later field, closed by deleting the file in git",
+      "name_ar": "قائمة الأعمال المؤجلة في المستودع: ملف لكل بند، وحقل يستحق نعم أو لا أو لاحقًا، والإغلاق بحذف الملف في git",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3234-workflow/13651-backlog"
+      ],
+      "source": "atlas-docs.json",
+      "what": "مجلد docs/backlog يحفظ العمل الحقيقي غير المنفذ الآن: عيب لم يُدخله التغيير الحالي، انحراف بلا عرض ظاهر، إصلاح أكبر من قيمته، فكرة تستحق الحفظ؛ لكل بند ملف باسم العيب نفسه، وثلاثة حقول فقط، و'لا' تُحفظ حتى لا يُكتشف البند ويُناقش من جديد. — A dedupe-friendly backlog that never ga"
+    },
+    {
       "id": "AMEDIA-01",
       "family": "atlas-media",
       "group": "images",
@@ -16664,6 +17909,61 @@
       ],
       "source": "atlas-media.json",
       "what": "يكتب ألعاب Godot بأنواع صريحة ويضع الحركة في حلقة الفيزياء ويصدّر للويب والمنصات من سطر الأوامر. — Writes Godot games with static types, keeps movement in the physics loop and exports to web and desktop from the CLI."
+    },
+    {
+      "id": "AMEDIA-28",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Programmatic Final Cut Pro timelines via FCPXML and batch export with Compressor",
+      "name_ar": "توليد خط زمني لـFinal Cut Pro برمجيًا عبر FCPXML وتصدير دفعي بـCompressor",
+      "status": "documented",
+      "requires": [
+        "imagemagick"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/235-mas-video-lab/755-final-cut-pro"
+      ],
+      "source": "atlas-media.json",
+      "what": "يبني مشروع Final Cut Pro قابلًا للاستيراد من سكربت: ملف FCPXML يحدد صيغة المشروع والأصول والقصة الرئيسية بالصوت والصورة متزامنين والعناوين المتصلة وعلامات الفصول، ثم يصدّر عدة صيغ دفعة واحدة (ماستر ProRes، H.264 للويب، 4K) من سطر الأوامر، مع تنظيف ملفات العرض المؤقتة في المكتبة. "
+    },
+    {
+      "id": "AMEDIA-29",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Headless automation of 3D and CAD apps: simulation baking, batch decimation, property extraction",
+      "name_ar": "أتمتة برامج ثلاثية الأبعاد والتصميم الهندسي دون واجهة: خبز المحاكاة، تقليل المضلعات، واستخراج الخصائص",
+      "status": "documented",
+      "requires": [
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/708-houdini",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/228-mas-3d-games/712-zbrush",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/724-catia",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/725-fusion-360",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/726-rhino",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/230-mas-cad-studio/728-solidworks"
+      ],
+      "source": "atlas-media.json",
+      "what": "نمط مشترك لبرامج الإنتاج الثقيلة (Houdini، ZBrush، CATIA، Fusion، Rhino، SOLIDWORKS): سكربت يعمل بلا واجهة عبر واجهة البرنامج البرمجية ليخبز محاكاة إلى ملفات، أو يقلل كثافة نماذج النحت دفعة واحدة ويصدّرها، أو يمر على شجرة تجميع ليستخرج الأبعاد والكتلة ويصدّر STEP، أو يولد نموذجًا"
+    },
+    {
+      "id": "AMEDIA-30",
+      "family": "atlas-media",
+      "group": "images",
+      "domain": "media",
+      "name_en": "Telephony and call-flow integration for a voice agent: SIP, DTMF, warm transfer, and task success as the primary metric",
+      "name_ar": "ربط الوكيل الصوتي بالهاتف وتقييمه: SIP وDTMF والتحويل الدافئ ونجاح المهمة كمقياس أول",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration"
+      ],
+      "source": "atlas-media.json",
+      "what": "السباكة التي تصل الوكيل بالمتصلين الحقيقيين والأداة التي تثبت أنه يعمل: قناة الهاتف أو المتصفح بالترميز الصحيح، والتقاط أزرار لوحة المفاتيح، والمزج المقصود بين خطوات IVR الثابتة والمحادثة، وتحويل دافئ للإنسان مع السياق، وفروع لفشل المكالمة، ومجموعة تقييم بمعيار نجاح المهمة. — Wir"
     },
     {
       "id": "AMIND-01",
@@ -17639,6 +18939,362 @@
       ],
       "source": "atlas-mind.json",
       "what": "ملاحظات المستخدمين والمراجعين الخارجيين أرخص كاشف عيوب، بشرط انضباط الاستقبال: قراءة كاملة، معاملة الطلبات المضمنة كبيانات لا أوامر، حكم لكل ادعاء بالقياس (مؤكد، جزئي، مرفوض، غير قابل للقياس)، تصنيف (عيب، فجوة توثيق، طلب ميزة)، منع التكرار، تغطية باختبار، ثم رد على صاحب الملاحظة."
+    },
+    {
+      "id": "AMIND-61",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Read-only drift audit against truth files, with time signals and an escalation ladder",
+      "name_ar": "مدقق الانحراف للقراءة فقط: مقارنة العمل بملفات الحقيقة وإشارات الزمن وسلم تصعيد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/3-agent-drift-auditor",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2-agent-workflow-system/2-agent-debug-fixer"
+      ],
+      "source": "atlas-mind.json",
+      "what": "دور مدقق لا يعدّل شيئًا: يقارن ما يحدث في المشروع بملفات الحقيقة (المشروع، طابور المهام، القرارات، لقطة الحالة) ليكشف اتساع النطاق وتعدد المهام المتزامنة وتغيير التسميات أو المعمارية خفية والقرارات غير المسجلة وتحول الإصلاح إلى إعادة كتابة، ويضيف إشارات زمنية للمهام والقرارات الر"
+    },
+    {
+      "id": "AMIND-62",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Session contribution evidence: grade the signal first, record only what earns it",
+      "name_ar": "تقرير ما ساهم به الوكيل في الجلسة: مستوى الإشارة أولًا ثم ما يستحق التسجيل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/163-collab-proof/532-collab-proof"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يقرر إن كانت الجلسة تستحق التوثيق قبل كتابة أي شيء: إشارة عالية (ملف جديد، أربعة ملفات أو أكثر، مقارنة بدائل صريحة، نقاش طويل، أو خطأ شُرح سببه الجذري ولو في ملف واحد) تستحق سجل قرارات وتاريخ جلسة، متوسطة تستحق سطرًا في سجل العمل، ومنخفضة لا شيء. ثم يقيس أبعاد القصد (تعقيد تقني، "
+    },
+    {
+      "id": "AMIND-63",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Verified comprehension: intent-scented entry points and scenario probes",
+      "name_ar": "فهم مؤكد لا شرح فقط: مداخل حسب نية المستخدم واختبارات سيناريو تكشف سوء الفهم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1996-katalepsis/7164-grasp"
+      ],
+      "source": "atlas-mind.json",
+      "what": "حين يريد المستخدم أن يفهم فعلًا شيئًا أمامه (شيفرة، مستند، نتيجة كتبها الوكيل): يعرض حتى ثلاثة مداخل حسب ما سيفهمه أو يقرره (التوجّه، المبرر، الأثر، الموافقة، النقل)، ثم يسأل أسئلة سيناريو ملموسة فيها مسار صحيح وجزئي وخاطئ بعواقب حقيقية، ويصحح الجزء الخاطئ فقط مستشهدًا بمواضع محد"
+    },
+    {
+      "id": "AMIND-64",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Learning loop from rejected agent PRs: a mistake that happens twice becomes an artefact",
+      "name_ar": "حلقة التعلم من رفض طلبات الدمج: الخطأ الذي يتكرر مرتين يصبح أداة دائمة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13144-learning-loop",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3051-adlc-operate/13147-mine-rejections"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يجمع إشارات شهر (طلبات دمج مرفوضة أو متروكة، تعليقات مراجعة متكررة، تراجعات خلال أسبوعين، تعديلات بشرية على فروع الوكيل، أفعال محجوبة، حوادث)، يجمعها حسب السبب الجذري، ويحول كل عنقود إلى أرخص إصلاح دائم: سطر سياق، مهارة أو قاعدة lint، خطاف أو صلاحية، اختبار، حالة تقييم، أو تعديل "
+    },
+    {
+      "id": "AMIND-65",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Reconcile agent memory with project docs in both directions: five kinds of drift",
+      "name_ar": "مطابقة ذاكرة الوكيل مع وثائق المشروع في الاتجاهين: خمسة أنواع انحراف",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3113-estregenesis/13321-eg-memsync"
+      ],
+      "source": "atlas-mind.json",
+      "what": "ذاكرة الوكيل ووثائق الحوكمة (AGENTS.md وCLAUDE.md وملفات القواعد) تنحرف في الاتجاهين: الذاكرة تستوعب التصحيحات أسرع فتبقى الوثيقة على سياسة قديمة، والوثائق تتقدم فتبقى الذاكرة على حالة قديمة. يقرأ الطرفين كاملين ثم يبحث عن خمسة أنواع انحراف ويقترح لكل واحد تصحيحًا في الجهة الصحيح"
+    },
+    {
+      "id": "AMIND-66",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Periodic session-transcript mining: condense first, unharvested window, dedupe against catalogues",
+      "name_ar": "تنقيب سجلات الجلسات دوريًا: تكثيف قبل القراءة، نافذة غير محصودة، ومقارنة مع الكتالوج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3353-session-transcript-mining/13868-session-transcript-mining"
+      ],
+      "source": "atlas-mind.json",
+      "what": "سجلات جلسات الوكيل تحوي معرفة تضيع بانتهاء الجلسة. مسح دوري: يحدد النافذة التي لم تُحصد بعد، يكثف كل سجل إلى أسطر المستخدم والوكيل واستدعاءات الأدوات والأخطاء (أصغر عشر إلى أربعين مرة) قبل القراءة، يوزع التنقيب، ويقارن بالمهارات الموجودة ولا يُبقي إلا ما يتجاوز معيارًا عاليًا، مع"
+    },
+    {
+      "id": "AMIND-67",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "One owner per kind of truth: design, work state, execution plan, delivery evidence",
+      "name_ar": "مالك واحد لكل نوع حقيقة: التصميم، حالة العمل، خطة التنفيذ، ودليل التسليم",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3604-agent-harness-skills/14472-work-state-and-delivery"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يربط النية وحالة العمل ومعايير القبول ودليل التسليم دون مصادر حقيقة مكررة: يرسم كل سطح قائم حسب مسؤوليته لا اسم ملفه (التصميم يشرح لماذا وكيف، حالة العمل تملك الوضع والقبول، خطة التنفيذ تنسق العمل المعقد، دليل التسليم يسجل ما تغير وما أُثبت)، ويضيف الحد الأدنى فقط لما ينقص، ويحدد"
+    },
+    {
+      "id": "AMIND-68",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Pick for the problem, not the reflex: four selection sins and a native, official, vetted ladder",
+      "name_ar": "اختر الأداة للمشكلة لا بالعادة: أربع خطايا اختيار، وسلم أصلي ثم رسمي ثم طرف ثالث موثوق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9418-pick-for-the-problem"
+      ],
+      "source": "atlas-mind.json",
+      "what": "مصحح انحراف لاختيار أداة أو مكتبة أو إطار أو لغة: معظم الاختيارات غير المفحوصة ترجع إلى العادة أو المتاح أو الموجود سلفًا أو الحكم المسبق؛ البديل تعريف المشكلة أولًا ومسح أكثر من مرشح وصعود سلم التفضيل، وكل تبعية نقطة اقتران لها كلفة لاحقة. — A re-anchor for technology selection."
+    },
+    {
+      "id": "AMIND-69",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Script the deterministic work: three tiers, deterministic, detect-then-judge, reasoning-only",
+      "name_ar": "انقل العمل الحتمي إلى سكربت: ثلاث طبقات (حتمي، اكتشف ثم احكم، تفكير فقط)",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9424-script-the-deterministic-work"
+      ],
+      "source": "atlas-mind.json",
+      "what": "النموذج حاسبة ضعيفة وعدّاد أسطر أضعف؛ كل ما يُحسب أو يُعدّ أو يُقارن أو يُرتب أو يُحوّل آليًا يُكتب له سكربت ويُشغّل ثم يُفكَّر فوق مخرجه. وما يحتاج حكمًا يُسكربَت نصف الاكتشاف منه فقط، وما هو معنى أو نية لا يُسكربَت أبدًا. — Tiered rule for what to offload to code."
+    },
+    {
+      "id": "AMIND-70",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Read-only automation and tool advisor: which MCP servers, skills, hooks, subagents and plugins fit this repository",
+      "name_ar": "مستشار الأتمتة والأدوات للقراءة فقط: ماذا يناسب هذا المستودع من خوادم MCP ومهارات وخطافات ووكلاء فرعيين وإضافات",
+      "status": "documented",
+      "requires": [
+        "chromium",
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/278-claude-code-setup/901-claude-automation-recommender",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1362-tool-advisor/3094-tool-advisor"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يفحص المستودع والبيئة دون تعديل أي شيء، ثم يوصي بأفضل واحد أو اثنين من كل نوع أتمتة مع السبب، ويعرض للمهمة الحالية تركيبة الأدوات الأنسب وجملة 'تم حين...' وجدول خطوات أولى جاهزة للنسخ، ولا يثبت شيئًا دون موافقة. — Analyse first, recommend few, never execute."
+    },
+    {
+      "id": "AMIND-71",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "A plan a weaker model will execute without you: make every decision, write as little as possible",
+      "name_ar": "تفويض التنفيذ لنموذج أضعف دون حضورك: اتخذ كل قرار مسبقًا، واكتب أقل قدر ممكن",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/243-plan-for-dummies/780-plan-for-dummies"
+      ],
+      "source": "atlas-mind.json",
+      "what": "حين تخطط لنفسك تختصر ('اتبع النمط الموجود'، 'عالج الأخطاء بشكل مناسب')، وكل اختصار قرار سيتخذه منفذ أضعف بثقة وخطأ. والفشل المعاكس خطة أطول من المهمة. القاعدة: كل قرار يُتخذ في الخطة، والكلمات تُصرف فقط حيث يكون سوء الفهم واردًا، والخطة أقصر من الفرق الذي تنتجه. — Delegation plan"
+    },
+    {
+      "id": "AMIND-72",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Plan, then implement, under two authorities: technical direction is yours and logged, functional and operational direction is the user's and asked; the plan is the spec",
+      "name_ar": "من التخطيط إلى التنفيذ بسلطتين: التوجيه التقني لك ويُسجل، والوظيفي والتشغيلي للمستخدم ويُسأل، والخطة هي المواصفة",
+      "status": "documented",
+      "requires": [
+        "git"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2860-planning-flow/11569-planning-flow",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2859-implement-plan/11568-implement-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3612-zagrosi-forge/14531-zagrosi-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14489-executing-plans"
+      ],
+      "source": "atlas-mind.json",
+      "what": "التخطيط ينتج خطة واحدة حالية تُعاد كتابتها في مكانها، لقارئ لم يرَ الكود، تجد فيها الحقائق بنفسك وتسأل المستخدم فقط ما لا يجيب عنه الكود، سؤالًا واحدًا في كل رسالة؛ والتنفيذ يقيس العمل بندًا بندًا مقابل الخطة المتفق عليها، ويقسمها لشرائح ويرسل منفذين ويراجع المطابقة ويجري مراجعة "
+    },
+    {
+      "id": "AMIND-73",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Reasoning verifier: a traceability matrix from the original conditions to the conclusion, with each assumption classed given, verified, deduced, invented or unknown",
+      "name_ar": "مدقق الاستدلال: مصفوفة تتبع من الشروط الأصلية إلى الاستنتاج، وتصنيف كل افتراض معطى أو مُثبت أو مستنتج أو مخترع أو مجهول",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8357-reasoning-verifier"
+      ],
+      "source": "atlas-mind.json",
+      "what": "يفحص تحليلًا مكتملًا قبل تسليمه: يستخرج شروط الطلب الأصلية، ويعيد بناء سلسلة الاستدلال، ويربط كل شرط بما يغطيه، ويصنف الافتراضات، ويختبر كل حلقة منطقية وحساسية الاستنتاج، ثم يرتب العيوب حرجة أو كبيرة أو صغيرة. — Check an analysis before trusting its conclusion."
+    },
+    {
+      "id": "AMIND-74",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Reason, don't recite: inherited content describes what is and does not justify itself, so re-derive decisions coasting on precedent",
+      "name_ar": "استدل ولا تردد: الموروث يصف ما هو كائن ولا يبرر نفسه، فأعد اشتقاق القرارات التي تعيش على السابقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2431-discipline/9420-reason-dont-recite"
+      ],
+      "source": "atlas-mind.json",
+      "what": "مصحح انحراف: البنية الموجودة والقواعد المكتوبة والتعليقات دليل على الحال، لا سلطة تبرر نفسها. القاعدة التي سندها الوحيد 'هكذا هي' تستحق التحدي، والعرف الذي يستطيع أحد أن يشرح سببه الحي يختلف عن القصور الذاتي، وغياب الشيء اليوم لا يعني أنه خارج النطاق. — Re-anchor on reasons, not "
+    },
+    {
+      "id": "AMIND-75",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Brainstorm only as much as needed: minimal, compact or full triage, a five-line decision capsule, and a cheap context preflight before questions",
+      "name_ar": "عصف ذهني بقدر الحاجة: فرز بسيط أو مضغوط أو كامل، وكبسولة قرار من خمسة أسطر، وفحص سياق رخيص قبل الأسئلة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1397-brainstorm/3333-brainstorm",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14485-brainstorming"
+      ],
+      "source": "atlas-mind.json",
+      "what": "اختر أقل قدر من عمل التصميم يزيل عدم اليقين المهم؛ العمل الروتيني لا يتحول إلى مقابلة. العمل الآلي يُسجل ويُنفذ، والمحدود بافتراض مهم ينتج كبسولة قصيرة، والكامل فقط للعمل الشامل أو الواجهات العامة أو الترحيل أو الأمان أو الكلفة أو الهدف الغامض. — Default-and-proceed design thinki"
+    },
+    {
+      "id": "AMIND-76",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Elicit the decisions an intent turns on: show the whole map first, ask only what cannot be derived, treat input as material not truth",
+      "name_ar": "استخراج القرارات التي تقوم عليها النية: اعرض الخريطة كاملة أولًا، واسأل فقط ما لا يُشتق، والمدخلات مادة لا حقيقة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1991-euporia/7159-elicit",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1993-horismos/7161-bound",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2959-dryforge/12437-ready"
+      ],
+      "source": "atlas-mind.json",
+      "what": "حين يعرف الشخص الاتجاه ولا يعرف أي قرارات يقوم عليها، تُتتبع تلك القرارات من مواده (الكود، القواعد، جلسات سابقة) ومن قرارات المجال المعتادة، وتُعرض كخيارات يتعرف عليها بدل أن يتذكرها؛ ووثيقة المتطلبات الطويلة القادمة من أداة أخرى مادة قابلة للتحدي لا مصدر حقيقة، حتى يوافق عليها ا"
+    },
+    {
+      "id": "AMIND-77",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Choose agent execution rails: one owner per slot (spec, execution discipline, review, code security, setup governance)",
+      "name_ar": "اختيار مسار تنفيذ الوكلاء: مالك واحد لكل خانة (المواصفة، انضباط التنفيذ، المراجعة، أمان الكود، حوكمة الإعداد)",
+      "status": "documented",
+      "requires": [
+        "claude:tools"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3046-adlc-build/13093-execution-rail-selection"
+      ],
+      "source": "atlas-mind.json",
+      "what": "أطر العمل الجاهزة للوكلاء (Superpowers وSpec Kit وGSD وBMAD ووضع التخطيط المدمج) تتصارع إذا ادعى اثنان منها نفس الخانة على نفس ملفات الحالة؛ يجرد المثبت، ويسأل ثلاثة أسئلة، ويعين مالكًا واحدًا لكل خانة، ويوصل المواصفات والمهام وتعريف الإنجاز بها. — Avoid two frameworks fighting o"
+    },
+    {
+      "id": "AMIND-78",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Evaluate a skill like a function under test: a blind fresh agent per case, a separate judge applying the bar, and a ratchet that never accepts a lower score",
+      "name_ar": "تقييم مهارة كدالة تحت الاختبار: تشغيل أعمى بوكيل جديد لكل حالة، وحكم منفصل يطبق المعيار، وسقاطة لا تقبل تراجع الدرجة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1290-eval-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8301-skill-grader",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3601-skill-evolve/14445-skill-evolve"
+      ],
+      "source": "atlas-mind.json",
+      "what": "التقييم صادق فقط إذا كان أعمى: الوكيل المنفذ لا يحمل سياق المحادثة ولا يرى الناتج المتوقع. يحتاج ثلاثة مدخلات قبل البدء (مهارة حقيقية، حالة ذهبية واحدة على الأقل بمدخل فعلي، ومعيار لكل حالة يصف النتيجة الجيدة وروائح الفشل)، ثم حكمًا مستقلًا، ثم تعديلات تقودها الإخفاقات، مع مقارنة"
+    },
+    {
+      "id": "AMIND-79",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Authoring skills and curating the library: is it a skill at all, a description that says when not what, and keep/fix/cut by measured delta",
+      "name_ar": "تأليف المهارات وإدارة مكتبتها: هل هي مهارة أصلًا، ووصف يقول متى لا ماذا، وإبقاء أو إصلاح أو حذف حسب الفرق المقاس",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/360-skill-authoring/1291-write-skills",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2212-majestic-misc/8302-skill-structure",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13105-skill-library-management",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3606-hotl/14498-skill-authoring",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2588-write-a-skill/9955-write-a-skill",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1543-toolkit-ops/4233-toolkit-skill-standards"
+      ],
+      "source": "atlas-mind.json",
+      "what": "المهارة ليست مجانية: المهارات المركزة الخاصة بالمؤسسة تفيد، والعامة كثيرًا لا تضيف شيئًا وقد تدفع الوكيل لعمل زائد، ومجموعات صغيرة من مهارتين أو ثلاث تتفوق على الحزم الكبيرة. قبل الكتابة: هل الأنسب مهارة أم مرجع أم سكربت أم prompt أم لا شيء؟ ثم وصف يبدأ بـ'Use when' ويذكر المواقف"
+    },
+    {
+      "id": "AMIND-80",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Turn a repeated correction into a rule in the right place: context file, skill, path rule, hook or test",
+      "name_ar": "حوّل التصحيح المتكرر للوكيل إلى قاعدة في المكان الصحيح: ملف سياق أو مهارة أو قاعدة لمسار أو خطاف أو اختبار",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3047-adlc-context/13102-codify-conventions"
+      ],
+      "source": "atlas-mind.json",
+      "what": "كل تصحيح يتكرر للوكيل عرف لم يُكتب في مكانه. القصير الدائم في ملف السياق، والإجراء متعدد الخطوات المستخدم أحيانًا في مهارة، والخاص بمجلد أو نوع ملف في قاعدة لمسار، وما يجب أن يحدث كل مرة في خطاف أو مدقق أو فحص CI، وخاصية الصحة في اختبار. إذا كان كسره مكلفًا فلا تعتمد على التعليما"
+    },
+    {
+      "id": "AMIND-81",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Better names: blind generators from distinct lenses to break the anchor, ranked criteria led by 'the name must not lie', and the human always picks",
+      "name_ar": "أسماء أفضل: مولدات عمياء من زوايا مختلفة لكسر التثبيت، ومعايير مرتبة تبدأ بألا يكذب الاسم، والإنسان يختار دائمًا",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2457-naming/9514-name-it-better",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2650-programming-tasuke/10067-naming-rule"
+      ],
+      "source": "atlas-mind.json",
+      "what": "حين يُرفض اسم مقترح، فنفس السياق سينتج المزيد منه، فتعمل المولدات دون رؤية المحادثة ومن زوايا مختلفة، ثم تُقيم المرشحات بأعراف المشروع المعلنة أولًا، وإلا بمعايير عامة: الدقة الدلالية (الاسم المضلل أسوأ من المبهم)، ثم ملاءمة النطاق، ثم الوضوح، ثم سهولة الاستدعاء؛ مع تجنب كلمات بل"
+    },
+    {
+      "id": "AMIND-82",
+      "family": "atlas-mind",
+      "group": "thinking",
+      "domain": "mind",
+      "name_en": "Goal-driven ratchet optimisation loop: define the end, not the route; separate judge from worker; replace a stuck worker",
+      "name_ar": "حلقة تحسين بسقاطة يقودها الهدف: حدد النهاية لا الطريق، وافصل الحكم عن المنفذ، واستبدل الوكيل العالق",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3600-ratchet/14444-ratchet"
+      ],
+      "source": "atlas-mind.json",
+      "what": "نظام متعدد الوكلاء للتحسين المستمر: يُعرَّف ما يعتبر إنجازًا بشروط يمكن فحصها آليًا، فالرئيس يقيّم فقط ولا يعمل، والمنفذون يعملون ولا يقيّمون أنفسهم، وكل تحسن يُثبت ولا يُقبل تراجع، ومن يتوقف أو يدعي الانتهاء دون بلوغ المعيار يُستبدل بآخر جديد. — Independent evaluation, kept gain"
     },
     {
       "id": "AWEB-01",
@@ -19211,6 +20867,335 @@
       ],
       "source": "atlas-strategy.json",
       "what": "لقائد شركة مثقل أو مشتت: يحدد مرحلة الشركة ووظيفته الأساسية الآن وعنق الزجاجة الحالي، ثم النتائج الأعلى أثرًا لليوم والأسبوع والشهر، وما يُقطع أو يُفوض أو يُؤجل، ويعيد تشكيل التقويم حسب الغرض لا شكل الاجتماع، مع إيقاع مراجعة قصير. — For an overloaded leader: find the bottleneck, "
+    },
+    {
+      "id": "ASTRAT-88",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Workflow opportunity mapping: model the current work from evidence before proposing automation",
+      "name_ar": "خريطة فرص سير العمل: نمذجة العمل الحالي بالأدلة قبل اقتراح الأتمتة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8317-workflow-opportunity-mapping"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "قبل اقتراح أتمتة أو ذكاء اصطناعي: يرسم سير العمل الحالي (الفاعلون وصلاحيات القرار، العناصر وحالاتها، التسليمات، مصادر الحقيقة الرسمية وغير الرسمية، والاستثناءات) مع تصنيف كل مدخل ملاحَظ أو مُبلّغ أو مستنتج أو مجهول، ثم يحدد آلية العبء في كل خطوة، ويختار موقف التدخل بالترتيب: احذف"
+    },
+    {
+      "id": "ASTRAT-89",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Sales pipeline health and forecast diagnosis calibrated to history",
+      "name_ar": "تشخيص صحة خط المبيعات والتنبؤ: جودة البيانات أولًا وتغطية معايرة بالتاريخ",
+      "status": "documented",
+      "requires": [
+        "key:video-gen"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8362-pipeline-analysis"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يشخص خط مبيعات B2B: يقيّم اكتمال بيانات CRM أولًا، ثم التغطية والتحويل والسرعة والعمر والحركة، ويشتق التغطية المطلوبة من معدل الفوز التاريخي والوقت المتبقي بدل قاعدة ثابتة، ويصنف التنبؤ بقواعد دليل لا بثقة المندوب، ويفصل مشكلات نظافة البيانات وتوليد الفرص والتأهيل وخطط الإغلاق. —"
+    },
+    {
+      "id": "ASTRAT-90",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Grant pipeline: funder fit before effort, go/no-go gate, capacity-weighted priority",
+      "name_ar": "خط المنح: ملاءمة الممول قبل الجهد، بوابة تقدّم أو اعتذر، وترتيب حسب القدرة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2308-grants-management/8860-build-grant-pipeline-and-prospect-fit"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "لمنظمة غير ربحية أو فريق بحثي: يقيس ملاءمة كل ممول للبرنامج (الرسالة، الجغرافيا، الفئة، نوع التمويل، حجم المنحة المعتاد) قبل كتابة أي طلب، ثم يمرر كل فرصة ببوابة الأهلية والقدرة على التنفيذ وكلفة التقديم مقابل القيمة المتوقعة وعبء الالتزام، ويرتب ما يستحق التقديم حسب الطاقة والمو"
+    },
+    {
+      "id": "ASTRAT-91",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Commission model economics: split vs cap vs fee and the crossover point",
+      "name_ar": "اقتصاديات نماذج العمولة: النسبة أم السقف أم الرسوم، ونقطة التقاطع",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2371-residential-real-estate-brokerage/9170-commission-split-and-cap-economics"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يقارن نماذج تقاسم العمولة بين المؤسسة والوكيل (نسبة من كل صفقة، نسبة حتى سقف ثم شبه كامل للوكيل، رسوم ثابتة) على صافي ما يأخذه الوكيل وحصة المؤسسة، لا على النسبة المعلنة، ويحسب دخل الوكيل الذي يتساوى عنده نموذجان، ويوازن بين الاستقطاب والاحتفاظ. — Compares split, cap and fee mode"
+    },
+    {
+      "id": "ASTRAT-92",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Run usability and interview sessions without contaminating the findings",
+      "name_ar": "تشغيل جلسات قابلية الاستخدام والمقابلات دون تلويث النتائج",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2401-ux-research/9296-run-usability-and-interview-sessions"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يبني أداة البحث وينفذها: مهام مبنية على هدف لا على تعليمات، نص إدارة محايد مع التفكير بصوت عال، تعريف النجاح ومقياس الخطورة مسبقًا، ومراجعة الاستبيانات ضد الأسئلة الموحية والمزدوجة والرغبة الاجتماعية وتحيز العينة، مع فصل ما فعله المشارك عما قاله منذ لحظة التسجيل. — Goal-based tas"
+    },
+    {
+      "id": "ASTRAT-93",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Route and fleet optimisation for collection services: density, windshield time, cost per stop",
+      "name_ar": "تحسين مسارات الجمع والأسطول: كثافة المحطات ووقت القيادة غير المنتج وكلفة المحطة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2403-waste-recycling-operations/9305-optimize-collection-routes-and-fleet"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "لخدمات الجمع والتوزيع الميداني (نفايات، توصيل متكرر): يقيس خط الأساس (محطات في الساعة، وقت القيادة غير المنتج، توازن المسارات، كلفة المحطة)، يطابق نوع الشاحنة مع الخدمة، يرفع الكثافة ويوازن المسارات، يقلل رحلات التفريغ، ويختار التوجيه الثابت أو الديناميكي حسب نمط الطلب. — Measure"
+    },
+    {
+      "id": "ASTRAT-94",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "SDLC to agentic development lifecycle: who executes each stage and where human gates stay",
+      "name_ar": "من دورة تطوير البرمجيات إلى دورة تطوير بالوكلاء: من ينفذ كل مرحلة وأين تبقى البوابات البشرية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3048-adlc-foundations/13117-sdlc-to-adlc-mapping"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحافظ على مراحل التطوير المألوفة ويغير من ينفذها: يرسم كل خطوة من الفكرة للإنتاج (المالك، المدخل، المخرج، الأداة، المدة، الألم)، ويحولها إلى نظيرها مع الوكلاء (مواصفة نية، معمارية كقيود، تنفيذ الوكيل، تحقق سلوكي، مراجعة مطابقة، نشر ببوابة، حلقة تعلم)، ويرتب نقاط الدخول حسب الألم "
+    },
+    {
+      "id": "ASTRAT-95",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Decision lifecycle after approval: a 90-day execution plan, a cooldown freeze, and a retrospective that separates process from outcome",
+      "name_ar": "دورة حياة القرار بعد اعتماده: خطة 90 يومًا، وتجميد يمنع التراجع المتسرع، ومراجعة تفصل جودة العملية عن النتيجة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/467-execute",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/469-freeze",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/146-c-level-agents/473-post-mortem",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2215-majestic-reasoning/8354-decision-retrospective"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "معظم القرارات تموت بين 'قررنا' و'ماذا يوم الاثنين'. هذه الحلقة تحول القرار المعتمد إلى مسارات بمسؤول لكل منها ومعالم أسبوعية، وتجمده مدة محددة حتى لا يُعاد فتحه من إرهاق القرار، ثم تقيمه في اليوم 90 بمعايير النجاح والإيقاف المكتوبة قبل القرار، وتعيد قراءة رأي المعارضين. — Execute"
+    },
+    {
+      "id": "ASTRAT-96",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Company values derived from real episodes, not slogans: observable behaviour, hiring criteria and anti-patterns",
+      "name_ar": "قيم الشركة من وقائع حقيقية لا من شعارات: سلوك ملحوظ ومعايير توظيف وأنماط مرفوضة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2209-majestic-founder/8267-company-values"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يستخرج القيم مما فعلته الشركة فعلًا تحت الضغط: ماذا حمت، وأي مقايضة قبلت، وأي سلوك كوفئ أو صُحح؛ ويصنف كل ادعاء (مُثبت بواقعة، مُعلن بلا دليل، مقترح للمستقبل، متناقض، مجهول)، ثم يكتب كل قيمة كسلوك ملحوظ وسؤال توظيف ونمط مرفوض. — Values as evidenced decision rules."
+    },
+    {
+      "id": "ASTRAT-97",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Business plan review under one of four postures: expand, selectively expand, hold scope, reduce",
+      "name_ar": "مراجعة خطة عمل أو منتج بأربعة مواقف: توسيع، توسيع انتقائي، تثبيت النطاق، تقليص",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2209-majestic-founder/8277-strategic-plan-review"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "مراجعة تختار موقفًا قبل البدء: استكشاف نسخة أكثر قيمة بموافقة على كل إضافة، أو إبقاء الخطة أساسًا وعرض إضافات منفصلة، أو تثبيت النطاق ومراجعته بأقصى صرامة، أو إيجاد أصغر نسخة تثبت النتيجة الأساسية؛ ثم تتحدى الفرضية وتقارن البدائل وتصدر حكمًا. — Premise, scope, value and execution"
+    },
+    {
+      "id": "ASTRAT-98",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Early go-to-market: an organic marketing plan, an explicit paid-spend decision, and first customers by a warm, community or cold route",
+      "name_ar": "بداية الوصول للسوق: خطة تسويق عضوية، وقرار صريح عن الإعلان المدفوع، وأول العملاء بطريق دافئ أو مجتمعي أو بارد",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2211-majestic-marketing/8292-marketing-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2216-majestic-sales/8359-first-customers"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد الجمهور وقرار المحتوى أولًا، ويضيف القنوات ذات الصلة فقط، ويصمم حلقة تعلم، ثم يقرر صراحة: اختبار مدفوع محدود، أو تأجيل المدفوع، أو أدلة غير كافية؛ وللعملاء الأوائل يعرّف العميل المثالي والعرض والتسعير ويختار الطريق ويتتبع الأدلة أسبوعيًا. — Organic first, paid only when read"
+    },
+    {
+      "id": "ASTRAT-99",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Diagnose product decision deadlocks across teams: the decision sentence, the authority map and six alignment conditions",
+      "name_ar": "تشخيص تعطل قرارات المنتج بين الفرق: جملة القرار وخريطة الصلاحية وستة شروط للمحاذاة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2213-majestic-product/8309-product-decision-alignment"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "حين تتعطل القرارات أو تُنفذ بشكل خاطئ، يكتب القرار في جملة واحدة، ويحدد من يقرر ومن يُستشار، ويقيس ستة شروط: نتيجة مشتركة، أدلة ظاهرة، مصالح صريحة، صلاحية واضحة، طريقة معروفة، والتزام مسجل؛ ثم يميز نوع الخلاف ويختار أصغر إصلاح. — Smallest process repair for a stuck decision."
+    },
+    {
+      "id": "ASTRAT-100",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Packaging and tiering: every tier boundary is a fence customers self-select on, not a longer feature list",
+      "name_ar": "تصميم الباقات والمستويات: كل حد بين مستويين بُعد يختار عليه العميل، لا قائمة ميزات أطول",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2356-pricing-monetization/9088-packaging-and-tiering"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "الباقات الجيدة تجعل العميل يختار مستواه بنفسه: الحد بين المستويات يكون الحجم أو حالة الاستخدام أو الدعم أو الأمان والامتثال؛ ثلاثة مستويات وأحيانًا أربعة، والأوسط مصمم ليفوز، والميزات التي يريدها البعض إضافات لا مستوى جديد، ومستوى المؤسسات حقيقي وليس إخفاء لرقم. — Good-better-bes"
+    },
+    {
+      "id": "ASTRAT-101",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Risk-based internal audit plan and engagement: the audit universe, residual risk, and the risk and control matrix",
+      "name_ar": "خطة تدقيق داخلي مبنية على المخاطر وتنفيذ مهمة تدقيق: عالم التدقيق، والمخاطر المتبقية، ومصفوفة المخاطر والضوابط",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2322-internal-audit/8911-build-risk-based-audit-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2322-internal-audit/8912-plan-and-execute-audit-engagement"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يبني قائمة بكل ما يمكن تدقيقه بدقة متسقة، ويقيّم كل بند بالأثر والاحتمال والسرعة والتعرض للاحتيال ثم نضج الضوابط ليحصل على المخاطر المتبقية، ويختار التأكيد أو الاستشارة، ويوزع الساعات؛ ولمهمة واحدة: مذكرة تخطيط قبل العمل الميداني، ومصفوفة مخاطر وضوابط، وتجربة معاملة واحدة قبل اخت"
+    },
+    {
+      "id": "ASTRAT-102",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Plan a user research study: a research-theatre gate, a researchable question, method from the question, sample sized to the claim",
+      "name_ar": "تخطيط دراسة بحث مستخدمين: بوابة 'هل هذا بحث أم تبرير'، وسؤال قابل للبحث، وطريقة من السؤال، وعينة بحجم الادعاء",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2401-ux-research/9295-plan-the-research-study"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "قبل أي دراسة يسأل: هل هناك سؤال مفتوح فعلًا أم أن القرار اتُخذ ويُراد غطاء له؟ ثم يحول 'هل يحبونه' إلى سؤال محدد مرتبط بقرار، ويختار الطريقة من السؤال لا العكس، ويحدد حجم العينة بما يدعمه الادعاء، ويخطط التجنيد والموافقة وحماية البيانات الشخصية. — Study design tied to a decision."
+    },
+    {
+      "id": "ASTRAT-103",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Control plan and design verification plan linked to FMEA: a row per characteristic and a test for every high-priority failure mode",
+      "name_ar": "خطة التحكم وخطة التحقق من التصميم مرتبطتان بتحليل FMEA: صف لكل خاصية، واختبار لكل نمط فشل عالي الأولوية",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12641-control-plan-builder",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12656-control-plan",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12657-dvp-test-plan"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "خطة التحكم (نموذج أولي أو ما قبل الإنتاج التسلسلي أو إنتاج) تُبنى صفًا صفًا من خطوات العملية وضوابط PFMEA: الخاصية المضبوطة والمواصفة والمقياس وحجم العينة وتكرارها وطريقة التحكم وخطة رد الفعل؛ وخطة التحقق DVP&R تربط كل نمط فشل عالي الأولوية في DFMEA باختبار محدد بمعيار نجاح وعينة"
+    },
+    {
+      "id": "ASTRAT-104",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Measurement system analysis and Gauge R&R: choose the study, design it, read the result",
+      "name_ar": "تحليل نظام القياس وGauge R&R: اختيار نوع الدراسة وتصميمها وقراءة النتيجة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2989-quality-engineering-skills/12653-msa-gauge-rr"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "قبل الثقة بأي قياس يُقاس خطأ القياس نفسه: دراسة متقاطعة لمعظم البيانات الرقمية، ومتداخلة حين تُتلف القطعة، وتحليل للبيانات النوعية (مقبول/مرفوض)، ودراسات الانحياز والخطية والثبات؛ بعشر قطع تغطي التباين الحقيقي ومقيّمين اثنين أو ثلاثة وتجارب مكررة عشوائية. — Qualify a gauge before"
+    },
+    {
+      "id": "ASTRAT-105",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Production planning and unit cost: yield loss is a real cost, capacity is vessels and time, packaging gates the channel",
+      "name_ar": "تخطيط الإنتاج وتكلفة الوحدة: الفاقد تكلفة حقيقية، والطاقة تقاس بالأوعية والزمن، والتغليف يحدد القناة",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2263-craft-beverage-operations/8624-production-planning-and-cogs"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يفكك تكلفة الوحدة المنتهية (مادة خام، فاقد، تغليف، تحميل التكاليف غير المباشرة)، ويقرأ الطاقة كأوعية وزمن تخمير أو تعتيق يحبس رأس المال، ويخطط الدفعات على الطلب حسب القناة بهوامشها المختلفة. مكتوب لمصانع المشروبات وقابل للنقل لأي إنتاج بدفعات. — Batch production COGS and capacity"
+    },
+    {
+      "id": "ASTRAT-106",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Market sizing TAM, SAM and SOM, top-down and bottom-up, cross-checked",
+      "name_ar": "تقدير حجم السوق TAM وSAM وSOM من أعلى ومن أسفل والتحقق المتبادل",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2880-pm-market-research/11630-market-sizing"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "يحدد حدود السوق أولًا، ثم يقدر الحجم من رقم الصناعة نزولًا، ومن العملاء × السعر × التكرار صعودًا، ويقارن بينهما، ويحدد الجزء الذي يمكن خدمته فعلًا والحصة الممكنة خلال سنة إلى ثلاث، مع كل افتراض ومصدر. — Two independent estimates and their assumptions."
+    },
+    {
+      "id": "ASTRAT-107",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "Product discovery: ideas from three perspectives, XYZ hypotheses, low-effort experiments with success thresholds, opportunity-score ranking",
+      "name_ar": "اكتشاف المنتج: أفكار من ثلاث زوايا، وفرضية XYZ، وتجارب منخفضة الجهد بعتبة نجاح، وترتيب بدرجة الفرصة",
+      "status": "documented",
+      "requires": [
+        "pip:hypothesis"
+      ],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11641-brainstorm-experiments-new",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11640-brainstorm-experiments-existing",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11642-brainstorm-ideas-existing",
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2882-pm-product-discovery/11650-prioritize-features"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "توليد أفكار لمنتج قائم من زوايا مدير المنتج والمصمم والمهندس، ولمنتج جديد فرضية 'على الأقل X% من Y سيفعلون Z'، ثم تجارب صغيرة (صفحة هبوط، فيديو شرح، قائمة انتظار، نموذج يدوي) لكل افتراض بمقياس وعتبة نجاح، وترتيب الميزات بدرجة الفرصة (الأهمية × (1 − الرضا)) وICE أو RICE. — Assumpt"
+    },
+    {
+      "id": "ASTRAT-108",
+      "family": "atlas-strategy",
+      "group": "thinking",
+      "domain": "strategy",
+      "name_en": "The cold start problem for networked products: one atomic network, the hard side first, the tipping point, density metrics over totals",
+      "name_ar": "مشكلة البداية الباردة للمنتجات الشبكية: شبكة ذرية واحدة، والجانب الصعب أولًا، ونقطة الانقلاب، ومقاييس الكثافة لا الإجمالي",
+      "status": "documented",
+      "requires": [],
+      "proof": [
+        "https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3435-strategy-growth/14103-cold-start-problem"
+      ],
+      "source": "atlas-strategy.json",
+      "what": "أثر الشبكة يبدأ عبئًا لا ميزة: القيمة في الروابط بين المستخدمين، وفي اليوم الأول لا روابط. لا تنجو بالإطلاق للسوق كله بل ببناء شبكة صغيرة مكتملة تعمل وحدها ثم تكرارها. مقياس من 0 إلى 10 لخطط الإطلاق والنمو مع ما يلزم للوصول إلى 10. — Framework from Andrew Chen's book, in our word"
     },
     {
       "id": "SYNC-01",

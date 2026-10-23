@@ -24,12 +24,12 @@
 |---|---:|---|
 | `proven` | 115 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 17 | 🟢 ready: runnable without setup according to the catalog |
-| `documented` | 441 | 📄 documented: a described method; needs building or wiring before it runs |
+| `documented` | 503 | 📄 documented: a described method; needs building or wiring before it runs |
 | `seen` | 16 | 👁 seen: observed in a reference or demo, not executed here |
 | `install` | 32 | 📦 install: needs a package, binary or model first |
 | `key` | 7 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | `idea` | 2 | 💡 idea: not built |
-| **المجموع** | **630** | |
+| **المجموع** | **692** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -65,8 +65,8 @@
 |---|---:|---|
 | `app-feature-transfer` | 155 | [app-feature-transfer.md](../powers/app-feature-transfer.md) |
 | `apps-artifacts` | 27 | [apps-artifacts.md](../powers/apps-artifacts.md) |
-| `atlas-build` | 52 | [atlas-build.md](../powers/atlas-build.md) |
-| `atlas-code` | 277 | [atlas-code.md](../powers/atlas-code.md) |
+| `atlas-build` | 60 | [atlas-build.md](../powers/atlas-build.md) |
+| `atlas-code` | 331 | [atlas-code.md](../powers/atlas-code.md) |
 | `code-engineering` | 26 | [code-engineering.md](../powers/code-engineering.md) |
 | `ui-product-device` | 93 | [ui-product-device.md](../powers/ui-product-device.md) |
 
@@ -322,6 +322,14 @@
 | `ABUILD-50` | إصدار نسخة: وسم ونشر وتحقق | Cut a release: tag, GitHub release, verify | documented |  |
 | `ABUILD-51` | صياغة التذاكر وأوصاف PR بهيكل ماذا/لماذا/كيف | What/Why/How ticket and PR drafting | documented |  |
 | `ABUILD-52` | فرز أعطال الاتصال حسب مجال الخطأ دون تغيير الإعدادات | Fault-domain connectivity triage without touching config | documented |  |
+| `ABUILD-53` | الإدراك وتقدير الحالة للروبوت: مزامنة الزمن والإطارات أولًا ثم دمج حساسات تغطي أعطال بعضها | Robot perception and state estimation: time and frames first, fuse complementary sensors, fail safe | documented |  |
+| `ABUILD-54` | تجهيز مستودع جديد أو تحديث قديم بترتيب ثابت للخطوات: الأساس ثم هيكل اللغة ثم CI والمدققات والأسرار والإصدار | Bootstrap a new repository or refresh an old one in a fixed order: foundation, language scaffold, CI, linters, secrets, release | documented | lean |
+| `ABUILD-55` | اختيار أداة المستودع الأحادي من القياس: اللغات والحجم والألم والحاجة للإحكام، وقائمة ما لا نتبناه الآن | Choose monorepo tooling from measurements: language mix, scale, pain and hermeticity, plus a do-not-adopt-yet list | documented | node |
+| `ABUILD-56` | إعداد أجهزة الشبكة: تحقق قبل التطبيق، وترجمة بين لهجات المصنعين عبر المفاهيم، وقوالب آمنة | Network device config: validate before applying, translate between vendor dialects through concepts, safe templates | documented |  |
+| `ABUILD-57` | ملعب HTML تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ | Single-file interactive HTML playground: controls, live preview and a ready-to-copy prompt | documented |  |
+| `ABUILD-58` | تحديد معمارية جهاز إلكتروني قبل أي مخطط: المتطلبات قبل القطع، ووحدة جاهزة أم لوحة مخصصة، وشجرة الطاقة، والتوافق الكهرومغناطيسي | Scope a hardware design before any schematic: requirements before parts, module vs custom PCB, the power tree, EMC posture | documented |  |
+| `ABUILD-59` | رحلة بناء موقع أو تحسينه بترتيب ثابت: الرسالة ثم التصميم ثم التحويل، وكل إصلاح فرضية قابلة للاختبار، وملف تتبع يستأنف منه | Website creation or improvement as a fixed-order journey: message, then design, then conversion; every fix a testable hypothesis; a tracker to resume from | documented | pip:hypothesis |
+| `ABUILD-60` | إعداد طرق التثبيت لأداة CLI: صيغة Homebrew tap وgo install وcargo install مع كشف اللغة وGoReleaser والقيود الخاصة بالمنصة | Set up installers for a CLI: a Homebrew tap formula plus go install and cargo install support, with language, GoReleaser and platform detection | documented | os:macos |
 | `ACODE-01` | اختبار حدود الحقن وتسليم القرار للبشر | Agent injection boundary and human-handoff tests | documented |  |
 | `ACODE-02` | فحص أمان مسبق للوكيل بإيصال أخضر/أصفر/أحمر | Agent safety preflight with Green/Yellow/Red receipt | documented |  |
 | `ACODE-03` | تدقيق سجلات جلسات الوكلاء بحثًا عن أسرار مسرّبة | Audit agent transcripts for leaked credentials | documented |  |
@@ -527,12 +535,66 @@
 | `ACODE-275` | فرز فحص CI أحمر لمراجعة يقوم بها ذكاء اصطناعي: أربعة أسباب مختلفة | Triage a red AI-review CI check: four causes with opposite responses | documented |  |
 | `ACODE-276` | التحقق من إعدادات Home Assistant: YAML والأسرار والمفاتيح المكررة | Home Assistant configuration validation: YAML, secrets, duplicate keys | documented | docker |
 | `ACODE-277` | تدقيق طبقات التعليمات كلها: هل طُبّقت القاعدة يومًا؟ وأين تتعارض الطبقات؟ | Cross-layer instruction-stack audit: rule-firing evidence, conflicts, permission bypasses | documented |  |
+| `ACODE-278` | تنظيف مساحة العمل القابل للتراجع: كشف افتراضي وحجر بدل الحذف | Reversible workspace hygiene: detect by default, quarantine instead of delete | documented |  |
+| `ACODE-279` | لا تعديل بلا دليل على المالك: إثبات سلسلة من يرسم الناتج المرئي قبل إصلاحه | No proof, no edit: prove the owner chain of visible output before fixing it | documented |  |
 | `ACODE-28` | استخراج عميل API مستقل من تسجيل HAR | Derive standalone API client from HAR recording | documented |  |
+| `ACODE-280` | تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد | Design the agent harness, not just the prompt: ten-part blueprint | documented |  |
+| `ACODE-281` | تصحيح وكيل محادثة صوتي أو نصي دورًا بدور، ومحاكاة المحادثات الكاملة كاختبار انحدار | Debug a conversational agent turn by turn, and regression-test whole conversations by simulation | documented |  |
+| `ACODE-282` | إصلاح فشل CI آليًا بـClaude Code: سير عمل لمستودع واحد أو قالب مشترك، مع حلقة من الاختبار إلى طلب الدمج | Automated CI-failure fixing with an AI agent: inline or reusable workflow, and the issue-to-PR loop | documented |  |
+| `ACODE-283` | معمارية وكيل صوتي وميزانية الزمن: سلسلة STT→LLM→TTS أم كلام إلى كلام | Voice-agent architecture and latency budget: cascade vs speech-to-speech | documented |  |
+| `ACODE-284` | العمل الطويل داخل حدود الاستخدام: موجات محدودة، قراءة الاستخدام الحقيقي، وإيقاظ متسلسل | Long agent work inside usage windows: bounded waves, real usage reads, chained wake-ups | documented | claude:tools |
+| `ACODE-285` | ترحيل منسق سير عمل دائم: جرد البنى ثم فصل التنسيق عن الآثار الجانبية | Migrate a durable-workflow orchestrator: inventory constructs, split orchestration from side effects | documented |  |
+| `ACODE-286` | وكلاء الخلفية في المستودع: مخرجاتهم اقتراحات لا دمج، وأول المرشحين الآمنين | Continuous AI: background repository agents whose output is a proposal, never a merge | documented |  |
+| `ACODE-287` | تسليم المناوبة: خمسة أقسام إلزامية وتجربة تنبيه قبل خروج المناوب | On-call shift handoff: five mandatory sections and a test alert before sign-off | documented |  |
+| `ACODE-288` | ترقية نقطة تدريب نموذج: أربع بوابات بالترتيب من جودة البيانات إلى الإطلاق التدريجي | Fine-tuned checkpoint promotion: four ordered gates from data quality to canary | documented |  |
+| `ACODE-289` | خط التوصية والترتيب بست مراحل: مصادر، إثراء، تصفية، تقييم، اختيار، آثار غير متزامنة | Six-stage recommendation and ranking pipeline: source, hydrate, filter, score, select, side effects | documented | pip:chromadb |
 | `ACODE-29` | قائمة تحصين نقطة GraphQL | GraphQL endpoint hardening checklist | documented |  |
+| `ACODE-290` | مضيف مريض واحد أم الأسطول كله؟ وحدة المقياس ونسبة الحد الأقصى إلى المجموع | One sick host or the whole fleet? Get the metric unit and the Maximum-to-Sum ratio | documented |  |
+| `ACODE-291` | مزوّد مخصص لا يُستدعى أبدًا: التوجيه على اسم النموذج يسبق المزوّد في LiteLLM | A custom LLM provider that never runs: dispatch on the bare model name wins first | documented | key:openai |
+| `ACODE-292` | مزامنة متغيرات البيئة إلى launchd تسرّب متغيرات الجلسة: قائمة حظر قبل المزامنة | Login-environment sync to launchd leaks the current session's variables | documented | os:macos |
+| `ACODE-293` | عقد أداة الوكيل: واجهة تُكتب كأنها prompt، وأخطاء مصنفة تعلّم التعافي، ومخرجات مقتصدة مع ترقيم بالمؤشر | Agent tool contract: interface written as a prompt, classified errors that teach recovery, lean paginated output | documented | claude:tools, lean |
+| `ACODE-294` | تنفيذ أدوات الوكيل وتركيبها: مهلة محددة، ومهام غير متزامنة بمقبض، وقابلية التكرار الآمن، والتعويض، وسلم التجريد | Agent tool execution and composition: bounded time, async job handles, safe retries, compensation, the abstraction ladder | documented | claude:tools |
+| `ACODE-295` | واجهة أوامر للوكلاء أولًا: مخرجات منظمة كعقد بإصدار، وتحقق عند الحدود، ومقياس من 21 نقطة | Agent-first CLI: structured output as a versioned contract, validation at the boundary, a 21-point score | documented |  |
+| `ACODE-296` | واجهة أوامر ودودة للبشر: شكل ثابت للمساعدة والأخطاء، وتلوين يحترم الطرفية، ومقياس من 21 نقطة | Human-friendly CLI: fixed help and error layouts, TTY-aware visuals, a 21-point score | documented |  |
+| `ACODE-297` | حزمة MCPB لخادم MCP محلي: ملف التعريف وإعدادات التثبيت والأمان الذي يقع على عاتقك | MCPB bundle for a local MCP server: manifest, install-time config, and the security you own | documented | python3 |
+| `ACODE-298` | فحص الإضافات قبل التثبيت وخطة ربط MCP بأقل صلاحية: أنماط هجوم 2026 وقرار ثبّت أو قيّد أو ارفض | Extension vetting before install, and a least-privilege MCP integration plan: 2026 attack patterns and an install/restrict/reject verdict | documented |  |
+| `ACODE-299` | نقل إعداد MCP في Claude Code بين الأجهزة: أربعة مفاتيح فقط من ~/.claude.json | Move Claude Code's MCP setup between machines: exactly four keys of ~/.claude.json | documented |  |
 | `ACODE-30` | مصادقة JWT مع تدوير التحديث وصلاحيات الأدوار | JWT auth with refresh rotation and RBAC | documented | key:unspecified |
+| `ACODE-300` | اختيار طقم المدققات والمنسقات من الملفات الموجودة فعلًا، مع ShellCheck وBiome وClippy | Pick the linter and formatter stack from the files that actually exist, with ShellCheck, Biome and Clippy | documented | lean |
+| `ACODE-301` | الانتقال بين أداتين: لا تحذف القديمة إلا بإشارة تشغيل فعلية من الجديدة، ولا تتأخر في حذفها | Tool migration cutover: remove the incumbent only on an operational signal from the replacement, and not too late | documented |  |
+| `ACODE-302` | بحث الطرفية السريع: ripgrep وfd للمسح ثم fzf --filter للترتيب الضبابي دون تفاعل | Fast terminal search: ripgrep and fd to scan, then fzf --filter to fuzzy-rank non-interactively | documented |  |
+| `ACODE-303` | تنظيف ملفات الإعداد الطبقية: احذف من ملف البيئة ما يطابق الأساس، وأثبت أن الإعداد الفعلي لم يتغير | Deduplicate layered config overlays, and prove the effective config did not change | documented |  |
+| `ACODE-304` | نفاد جدول الملفات على مستوى النظام بسبب عمليات يتيمة: ENFILE أم EMFILE يحدد التشخيص كله | System-wide file table exhaustion from orphaned helper processes: ENFILE vs EMFILE decides the diagnosis | documented | os:macos |
+| `ACODE-305` | تحسين إعداد CircleCI بدءًا من خط أساس مقاس: الهدر أولًا ثم الذاكرة المؤقتة ثم التوازي الآمن | CircleCI config optimisation from a measured baseline: waste first, then caching, then safe parallelism | documented |  |
+| `ACODE-306` | TLS المتبادل بين الخدمات: سلسلة الشهادات والتدوير وتشخيص فشل المصافحة | Mutual TLS between services: certificate hierarchy, rotation and handshake debugging | documented |  |
+| `ACODE-307` | قِس فجوة التوافق قبل التثبيت: عدّد ما تطلبه الأداة، واقرأ العقد المعلن، وجرّب الأوامر الآمنة فقط | Measure a compatibility gap before installing: enumerate what the tool needs, read the declared contract, probe read-only verbs | documented |  |
+| `ACODE-308` | مراجعة جاهزية الخطة قبل بدء العمل بأدلة المستودع: تحقق من كل ادعاء عن الحالة الحالية، والعيوب الحقيقية فقط | Plan readiness review against repository evidence before work starts: verify every claim about current state, report real gaps only | documented | mcp:github |
+| `ACODE-309` | استرجاع عقد إعداد غير موثق من الملف التنفيذي المشحون: strings إلى ملف أولًا، ونص التعليمات ودوال التحقق معًا | Recover an undocumented settings contract from a shipped binary: strings to a file first, and read both the prompt text and the validator bodies | documented |  |
 | `ACODE-31` | إعداد مصادقة API بأقل صلاحيات والتحقق منها | Least-privilege API auth setup and verification | documented | key:unspecified |
+| `ACODE-310` | تحقق من مهارة أو سوق إضافات مقابل الوثائق الحالية المجلوبة حيًا: المطابقة والحداثة والصلاحية والانحراف عن الأصل | Verify a skill or plugin marketplace against current docs fetched live: conformance, currency, freshness and upstream drift | documented |  |
+| `ACODE-311` | هندسة إضافات Claude Code: تحويل مستودع أوامر وخطافات إلى إضافة، والتوافق مع Codex، والنشر، والتحديث برفع الإصدار، والنسخ الشخصية التي تحجب الحزمة | Claude Code plugin engineering: convert a commands-and-hooks repo, port to Codex, publish, ship updates by bumping the version, and audit personal copies that shadow the bundle | documented | python3, mcp:github |
+| `ACODE-312` | جعل أي وكيل آخر يحمّل ملفات SKILL.md: قائمة سطر لكل مهارة في التعليمات، وأداة load_skill للنص الكامل، وأولوية مسارات معلنة | Make any other agent host load SKILL.md files: a one-line menu in the system prompt, a load_skill tool for the full body, declared path precedence | documented |  |
+| `ACODE-313` | البرومبت ككود: ملفات في المستودع، وقوالب بمتغيرات صريحة، ومراجعة بنتائج تقييم قبل وبعد، وتثبيت إصدار النموذج، وطرح تدريجي | Prompts as code: files in the repo, explicit-variable templates, review with before-and-after evals, pinned model versions, staged rollout | documented |  |
+| `ACODE-314` | تنفيذ هجمات الفريق الأحمر على نظام ذكاء اصطناعي ضمن قواعد اشتباك: حقن مباشر وغير مباشر واستخراج وإساءة استخدام الأدوات | Run red-team attacks on an AI system under rules of engagement: direct and indirect injection, extraction, and tool abuse | documented |  |
+| `ACODE-315` | تقييم جاهزية المستودع للوكلاء: مدخل واحد معتمد، وأدوار الحزام (حالة العمل، السجل، العقود، التحقق، الأدلة)، وأصغر تحسين تالٍ | Assess a repository's agent harness: one canonical entrypoint, harness roles (work state, ledger, contracts, validation, evidence), and the next smallest improvement | documented |  |
+| `ACODE-316` | أداء React وNext.js بالأولوية: اقتل الشلالات والحزمة أولًا، ثم الخادم، ثم إعادة الرسم، ومراجعة بنمط diff أو كامل مع ESLint كحقيقة أرضية | React and Next.js performance by impact: kill waterfalls and bundle bloat first, then server work, then re-renders; review in diff or full mode with ESLint as ground truth | documented | git, npm:react |
+| `ACODE-317` | صحة مكونات React: عقد المشروع أولًا، الحالة عند مالكها، الاشتقاق أثناء الرسم، Effect فقط لمزامنة نظام خارجي داخل hook مسمى، وref كملاذ أخير | React component correctness: local contract first, state at its owner, derive during render, Effects only to sync an external system inside a named hook, refs as a last resort | documented | npm:react |
+| `ACODE-318` | Next.js App Router (حتى v16): اكتشف الراوتر والنسخة وcacheComponents قبل الكتابة، مكونات خادم افتراضيًا، 'use client' عند الحد فقط، و'use cache' بدل خيارات fetch | Next.js App Router up to v16: detect router, version and cacheComponents before writing; Server Components by default, 'use client' only at the boundary, 'use cache' instead of fetch options | documented | npm:react |
+| `ACODE-319` | اكتب بلغة المشروع حسب ملفات أدواته: اقرأ go.mod وpyproject وCargo.toml وtsconfig وcsproj والـCI قبل أي API مقيدة بنسخة، ثم افتراضيات كل لغة، و'تم' فقط بعد الفحوص أو بتسمية ما لم يعمل | Write each language from its toolchain files: read go.mod, pyproject, Cargo.toml, tsconfig, csproj and CI before any version-gated API, then per-language defaults; done only when checks pass or each unrun check is named | documented | python3 |
 | `ACODE-32` | استقبال OAuth محلي مع ملفات رموز محمية | Local OAuth callback with 0600 token files | documented | key:unspecified |
+| `ACODE-320` | Go الاصطلاحي والتزامن: الوضوح ثم البساطة ثم الإيجاز، أخطاء مبكرة بلا تداخل، ولكل goroutine مالك وسياق إلغاء ومخرج، وerrgroup للأخطاء المشتركة | Idiomatic Go and concurrency: clarity, then simplicity, then concision; early error returns; every goroutine has an owner, a context and an exit; errgroup for shared errors | documented |  |
+| `ACODE-321` | Rust اصطلاحي: صمم البيانات قبل الكود، ملكية واستعارة قبل clone، Tokio وSerde بحدود واضحة، وclippy وrustfmt وnextest وllvm-cov كبوابات | Idiomatic Rust: model data before code, ownership and borrowing before clone, Tokio and Serde with clear boundaries, clippy, rustfmt, nextest and llvm-cov as gates | documented |  |
+| `ACODE-322` | صور حاويات حسب اللغة: Go ثابت على scratch مع شهادات CA، وNode متعدد المراحل بذاكرة BuildKit واعتماديات إنتاج فقط، وPython على slim لا Alpine بنسخة واحدة للمرحلتين | Language-specific container images: static Go on scratch with CA certs, multi-stage Node with BuildKit cache and production-only deps, Python on slim not Alpine with one version for both stages | documented | docker, pip:numpy, pip:pandas, npm:react |
+| `ACODE-323` | فحوص Python السريعة من Astral وأخواتها: ty كمدقق أنواع تجريبي بنسخة مثبتة، وترحيل mypy إلى ty وblack إلى ruff format بخطاف محلي، وvulture للكود الميت بقائمة سماح | Fast Python checks: ty as a pinned beta type checker, mypy to ty and black to ruff-format migrations with a local pre-commit hook, vulture for dead code with a whitelist | documented | python3 |
+| `ACODE-324` | سكربت Python مساعد أصغر ما يمكن مقابل سكربت تسليمي: مكتبة قياسية وبلا تهيئة مشروع للمساعد، وحدود مكتوبة الأنواع تبدأ من object ثم تضيّق | Smallest trustworthy Python helper versus a deliverable script: stdlib and no project scaffolding for helpers, typed boundaries that start from object and narrow | documented | python3, os:macos |
+| `ACODE-325` | مديرا الحزم Bun وpnpm: إضافة مثبتة لا تتجاوز ملف القفل، تحديث آمن أو انتقائي، فحص القديم، ونشر npm بمعاينة dry-run وتوقيع provenance، وإعدادات pnpm في pnpm-workspace.yaml | Bun and pnpm package management: pinned adds that do not bypass the lockfile, safe or selective updates, outdated audits, npm publishing with dry-run and provenance, pnpm settings in pnpm-workspace.yaml | documented | node |
+| `ACODE-326` | Deno كبديل متوافق مع npm: تثبيت وتشغيل بلا إعادة كتابة، deno ci بالقفل، ترحيل على درجات قابلة للتراجع، صلاحيات ضيقة، وصناديق Deno المعزولة لتشغيل كود غير موثوق | Deno as an npm-compatible runtime: install and run without rewrites, deno ci from the lock, migration in reversible rungs, narrow permissions, and Deno Sandboxes for untrusted code | documented | node |
+| `ACODE-327` | التواريخ في TypeScript بـ Temporal: اختر النوع حسب المعنى، حوّل الطابع الزمني إلى تاريخ مرة واحدة عند الحد وبمنطقة زمنية مسماة، وخزّن نصوص ISO | Dates in TypeScript with Temporal: pick the type by meaning, convert a timestamp to a date once at the boundary in a named zone, store ISO strings | documented |  |
+| `ACODE-328` | تحقق من نوع TypeScript دون تثبيت المستودع الضخم: اقرأ رمز الخروج لا غياب الأخطاء، مترجم حقيقي بنسخة المستودع، رسم أنواع مصغر، خيارات tsconfig الأصلية، وثلاث نسخ | Verify a TypeScript fix without installing a huge monorepo: read the exit status, not absent errors; a real compiler at the repo's version; a minimal type graph; the repo's tsconfig options; three variants | documented | node |
+| `ACODE-329` | حارس انجراف نسخ المكتبات: اقرأ النسخة المثبتة من ملف القفل، حمّل المهارات والمراجع التي تشحنها الحزمة نفسها، ولا تثق بالذاكرة في Zod 4 وVite 8 وAstro 7 وAngular 20 وTanStack وtsdown | Library version-drift guard: read the installed version from the lockfile, load the skills and docs the package itself ships, and do not trust memory for Zod 4, Vite 8, Astro 7, Angular 20, TanStack or tsdown | documented | npm:esbuild |
 | `ACODE-33` | فوترة بالاستهلاك مع تسجيل غير مكرر | Metered billing with idempotent usage | documented |  |
+| `ACODE-330` | Vue 3 بخريطة مكونات قبل الكود: Composition API مع script setup وTypeScript، حالة واحدة مصدرية والباقي مشتق، props للأسفل وevents للأعلى، Pinia وVue Router بحراسة واضحة | Vue 3 with a component map before code: Composition API with script setup and TypeScript, one source of truth and derived state, props down and events up, Pinia and Vue Router with clear guards | documented | npm:react |
+| `ACODE-331` | jq للـ JSON وyq للـ YAML وTOML وXML بدل مفسر عام: أدوات ضيقة الصلاحية يسهل اعتمادها، تمرير القيم بـ --arg، والتحقق من أي تطبيق yq وصيغة الإدخال | jq for JSON and yq for YAML, TOML and XML instead of a general interpreter: narrow tools that are easy to approve, values passed with --arg, and checks for which yq and which input format | documented | node, python3 |
 | `ACODE-34` | مدفوعات آمنة: دفتر مزدوج وتسوية | Money-safe payments: ledger, idempotency, reconciliation | documented |  |
 | `ACODE-35` | تخطيط نمط OAuth والصلاحيات وتجديد الرموز | OAuth grant, scope and token-refresh planning | documented | key:unspecified |
 | `ACODE-36` | اختبار تكامل يعدّ عدد إصدارات التوكن | OAuth token-mint counting integration test | documented | key:unspecified |

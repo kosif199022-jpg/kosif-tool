@@ -2,7 +2,7 @@
  "schema": "kosif.manifest.v1",
  "generated_by": "scripts/hub.py build — edit data/tools.json and data/powers/*.json, never this file",
  "name": "kosif-superpowers",
- "description": "Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers and guides that fit, and says what this machine can run now. Covers what Claude can do in the current session (tools, connectors, installable libraries, surfaces), how to think, create and verify better, and a searchable catalog of 5,300+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video), each with requirements, an evidence badge and proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels, video edits, drawing, 3D, image design and lawful software investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.",
+ "description": "Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers and guides that fit, and says what this machine can run now. Covers what Claude can do in the current session (tools, connectors, installable libraries, surfaces), how to think, create and verify better, and a searchable catalog of 5,800+ powers in 10 domains (thinking, writing and Arabic, code, data, documents, research, apps, image and audio, product and finance, motion graphics and video), each with requirements, an evidence badge and proofs. Use at the start of any substantial or creative task, when asked what Claude can do, told to use its superpowers, or given this skill's repository link; and for motion graphics, montage, captions, reels, video edits, drawing, 3D, image design and lawful software investigation. Arabic triggers - قدراتك، القدرات الخارقة، تقدر تعمل ايه، فكّر بعمق، خريطة ذهنية، موشن جرافيك، مونتاج، ريلز.",
  "entrypoints": {
   "boot": "python3 scripts/boot.py",
   "find": "python3 scripts/hub.py find \"<task>\" --json",
@@ -15,13 +15,13 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5729,
+  "powers": 5848,
   "families": 62,
   "domains": 10,
   "tools": 169,
   "guides": 112,
   "statuses": {
-   "documented": 2206,
+   "documented": 2325,
    "idea": 71,
    "install": 980,
    "key": 176,
@@ -290,9 +290,9 @@
    "domain": "build",
    "title_ar": "أطلس: التطبيقات والواجهات والتكاملات",
    "title_en": "Atlas: apps, UI & integrations",
-   "count": 52,
+   "count": 60,
    "statuses": {
-    "documented": 52
+    "documented": 60
    },
    "chapter": "references/powers/atlas-build.md",
    "data": "data/powers/atlas-build.json"
@@ -303,9 +303,9 @@
    "domain": "code",
    "title_ar": "أطلس: الهندسة والكود",
    "title_en": "Atlas: engineering & code",
-   "count": 277,
+   "count": 331,
    "statuses": {
-    "documented": 277
+    "documented": 331
    },
    "chapter": "references/powers/atlas-code.md",
    "data": "data/powers/atlas-code.json"
@@ -329,9 +329,9 @@
    "domain": "data",
    "title_ar": "أطلس: البيانات والتعلم الآلي",
    "title_en": "Atlas: data, ML & charts",
-   "count": 56,
+   "count": 62,
    "statuses": {
-    "documented": 56
+    "documented": 62
    },
    "chapter": "references/powers/atlas-data.md",
    "data": "data/powers/atlas-data.json"
@@ -342,9 +342,9 @@
    "domain": "docs",
    "title_ar": "أطلس: المستندات والمخططات",
    "title_en": "Atlas: documents & diagrams",
-   "count": 55,
+   "count": 60,
    "statuses": {
-    "documented": 55
+    "documented": 60
    },
    "chapter": "references/powers/atlas-docs.md",
    "data": "data/powers/atlas-docs.json"
@@ -355,9 +355,9 @@
    "domain": "media",
    "title_ar": "أطلس: الصور والصوت والفيديو",
    "title_en": "Atlas: images, audio & video",
-   "count": 27,
+   "count": 30,
    "statuses": {
-    "documented": 27
+    "documented": 30
    },
    "chapter": "references/powers/atlas-media.md",
    "data": "data/powers/atlas-media.json"
@@ -368,9 +368,9 @@
    "domain": "mind",
    "title_ar": "أطلس: الوكلاء والتخطيط والمراجعة",
    "title_en": "Atlas: agent workflows, planning & review",
-   "count": 60,
+   "count": 82,
    "statuses": {
-    "documented": 60
+    "documented": 82
    },
    "chapter": "references/powers/atlas-mind.md",
    "data": "data/powers/atlas-mind.json"
@@ -394,9 +394,9 @@
    "domain": "strategy",
    "title_ar": "أطلس: المنتج والتسويق والأعمال",
    "title_en": "Atlas: product, marketing & business",
-   "count": 87,
+   "count": 108,
    "statuses": {
-    "documented": 87
+    "documented": 108
    },
    "chapter": "references/powers/atlas-strategy.md",
    "data": "data/powers/atlas-strategy.json"

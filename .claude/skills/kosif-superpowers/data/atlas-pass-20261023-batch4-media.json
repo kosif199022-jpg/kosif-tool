@@ -1,0 +1,24 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch4-media",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 1,
+ "sources_read": 1,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 8617,
+   "plugin": "conversational-ai-voice-engineering",
+   "skill": "telephony-and-call-flow-integration",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/2261-conversational-ai-voice-engineering/8617-telephony-and-call-flow-integration",
+   "skill_md_sha256": "407553b27217b8c3a9d17cc66a0e09eb29be25f827edfbb4850f70aabc90b92f",
+   "bytes": 4063,
+   "read_in_full": true,
+   "power": "AMEDIA-30"
+  }
+ ]
+}

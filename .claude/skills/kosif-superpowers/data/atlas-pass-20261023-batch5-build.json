@@ -1,0 +1,48 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "batch": "batch5-build",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "powers_added": 2,
+ "sources_read": 3,
+ "scope_note": "Each SKILL.md was read in full as inert text and its method summarised in our own words on the card; with the owner's approval the whole skill folder (text files only) is also copied verbatim with its license into vendor/kosif-atlas. Nothing from the Atlas was executed. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 8875,
+   "plugin": "hardware-electronics-engineering",
+   "skill": "scope-a-hardware-design",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/2313-hardware-electronics-engineering/8875-scope-a-hardware-design",
+   "skill_md_sha256": "78729a636919be1384574eb1699bad2d886a703ec9af958d1a4049c8c29c37f9",
+   "bytes": 2430,
+   "read_in_full": true,
+   "power": "ABUILD-58"
+  },
+  {
+   "atlas_id": 14077,
+   "plugin": "metaskills",
+   "skill": "create-website",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3431-metaskills/14077-create-website",
+   "skill_md_sha256": "2ec2d82e4ea3b23937cb35d3e8e22d141904d38c7d5073ff36c287c8911f918c",
+   "bytes": 23034,
+   "read_in_full": true,
+   "power": "ABUILD-59"
+  },
+  {
+   "atlas_id": 14085,
+   "plugin": "metaskills",
+   "skill": "improve-website",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3431-metaskills/14085-improve-website",
+   "skill_md_sha256": "2e7256bac97eea6c223b922a9999a073d1611eab83ea06fa085fe36cb3eee84f",
+   "bytes": 20651,
+   "read_in_full": true,
+   "power": "ABUILD-59"
+  }
+ ]
+}

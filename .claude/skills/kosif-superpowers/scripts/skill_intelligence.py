@@ -1310,7 +1310,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     plans = {}
     if an["level"] != "L0":
         ids_of = lambda p_: {x["id"] for x in p_["superpowers"]}
-        plans = {"A": plan("A", 1, verifiers[:1], 0), "B": plan("B", 2, verifiers[:2], 1)}
+        plans = {"A": plan("A", 1, verifiers[:1], 0, min_size=4), "B": plan("B", 2, verifiers[:2], 1)}
         b_ids = ids_of(plans["B"])
         fixed = must_ids | {v["id"] for v in verifiers}          # every plan must carry the must-haves; checks are listed apart
         b_core = frozenset(b_ids - fixed)

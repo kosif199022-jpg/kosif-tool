@@ -56,17 +56,17 @@
 | المجموعة | القدرات | متاح الآن | طرق | بالتثبيت | بالمفتاح | مستودعاتك | للتعلّم من مستودعاتك |
 |---|---|---|---|---|---|---|---|
 | research · البحث والمعرفة | 60 | 21 | 27 | 2 | 9 | kosif-atlas, think, kosif-omni, kosif-atlas-private | think, kosif-omni |
-| thinking · التفكير والتخطيط والاستراتيجية | 359 | 25 | 332 | 2 | 0 | 100-superskills, think, kosif-omni, CLOUDFLARE_API_TOKEN, new | think, kosif-omni |
+| thinking · التفكير والتخطيط والاستراتيجية | 402 | 25 | 375 | 2 | 0 | 100-superskills, think, kosif-omni, CLOUDFLARE_API_TOKEN, new | think, kosif-omni |
 | agents · الوكلاء والتوجيه الذكي | 267 | 185 | 65 | 15 | 2 | kosif-tool, kosif-one, kosif-atlas, fastify-motion-bro, cloude, see, think, kosif-omni, kosif-atlas-private, CLOUDFLARE_API_TOKEN, whatsapp-personal-bridge | cloude, see, think, kosif-omni |
-| software · البرمجة وبناء التطبيقات | 630 | 132 | 457 | 32 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-pro, see, whatsapp-personal-bridge, mafateeh-al-tharwa | kosif-earth-ci-fork, cloude, kosif-audit-pro, see, mafateeh-al-tharwa |
+| software · البرمجة وبناء التطبيقات | 692 | 132 | 519 | 32 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-pro, see, whatsapp-personal-bridge, mafateeh-al-tharwa | kosif-earth-ci-fork, cloude, kosif-audit-pro, see, mafateeh-al-tharwa |
 | drawing · الرسم والأشكال والتصميم | 306 | 108 | 155 | 31 | 4 | kosif-tool, kosif-studio, fastify-motion-bro | — |
-| images · الصور والتحرير والتوليد | 320 | 138 | 118 | 27 | 35 | 100-superskills, kosif-studio | — |
+| images · الصور والتحرير والتوليد | 323 | 138 | 121 | 27 | 35 | 100-superskills, kosif-studio | — |
 | 3d · الثري دي والمحاكاة والرندر | 758 | 263 | 202 | 258 | 31 | kosif-tool, kosif-one, kosif-render-lab | kosif-render-lab |
 | motion · الموشن والمونتاج والسينما | 1233 | 300 | 563 | 314 | 23 | kosif-tool, kosif-one, 100-superskills, kosif-studio, app, fastify-motion-bro, kosif-render-lab | kosif-render-lab |
 | audio · الصوت والموسيقى والتعليق | 422 | 133 | 159 | 82 | 36 | kosif-one, app, mafateeh-al-tharwa, mafateeh-al-tharwa2 | mafateeh-al-tharwa |
 | type · الخطوط والنصوص العربية واللاتينية | 215 | 89 | 91 | 31 | 1 | kosif-tool, kosif-one, app | — |
-| data · البيانات والرسوم والمواقع | 262 | 67 | 153 | 34 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon |
-| documents · المستندات والكتابة | 143 | 32 | 99 | 8 | 4 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review, mafateeh-al-tharwa, mafateeh-al-tharwa2, new | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, mafateeh-al-tharwa |
+| data · البيانات والرسوم والمواقع | 268 | 67 | 159 | 34 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon |
+| documents · المستندات والكتابة | 148 | 32 | 104 | 8 | 4 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, smart-trial-balance-review, mafateeh-al-tharwa, mafateeh-al-tharwa2, new | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, mafateeh-al-tharwa |
 | quality · الاختبارات والجودة والأمان | 469 | 152 | 203 | 94 | 15 | kosif-tool, kosif-atlas, kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab | kosif-earth-ci-fork, cloude, kosif-audit-studio, kosif-audit-pro, see, moon, kosif-render-lab |
 | reverse · التحليل العكسي وفحص البرامج | 258 | 30 | 180 | 48 | 0 | — | — |
 | misc · قدرات مساندة غير مصنفة | 27 | 12 | 11 | 2 | 2 | — | — |
