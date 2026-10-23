@@ -56,6 +56,8 @@ PENCIL_PASSES = [   # light to dark, the way a coloured-pencil drawing is layere
     {"name": "layer-4", "off": 90.0, "sp": 2.2, "ln": (8, 30), "w": 1.2, "a": 0.70, "tol": 0.10},
 ]
 
+DETAIL_PASS = {"name": "detail", "off": 20.0, "sp": 1.5, "ln": (5, 18), "w": 0.8, "a": 0.62, "tol": 0.07,
+               "blur": 0.8}
 PAPER = {"colored-pencil": (247, 244, 236), "oil": (176, 146, 112), "watercolor": (250, 249, 244)}
 
 
@@ -75,8 +77,29 @@ def srgb_to_oklab(c):
 def _target(ref):
     import cv2
     import numpy as np
-    rgb = cv2.cvtColor(cv2.bilateralFilter(ref, 0, 18, 3), cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
+    rgb = cv2.cvtColor(cv2.bilateralFilter(ref, 0, 10, 1.5), cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
     return rgb
+
+
+def _focus(labels, lm, L, person):
+    """Where the finest tools work (focal hierarchy, PM-06): the face and the subject's strongest edges."""
+    import cv2
+    import numpy as np
+    h, w = L.shape
+    m = np.zeros((h, w), np.uint8)
+    if person:
+        m |= (labels == 3).astype(np.uint8)
+        if lm is not None:     # brows, eyes and hairline belong to the face even where segmentation says hair
+            x0, y0 = lm.min(0).astype(int)
+            x1, y1 = lm.max(0).astype(int)
+            pad = int(0.08 * (x1 - x0))
+            m[max(0, y0 - 3 * pad):y1 + pad, max(0, x0 - pad):x1 + pad] |= np.isin(
+                labels[max(0, y0 - 3 * pad):y1 + pad, max(0, x0 - pad):x1 + pad], (1, 2, 3)).astype(np.uint8)
+    g = cv2.GaussianBlur(L, (0, 0), 1.0)
+    mag = np.hypot(cv2.Sobel(g, cv2.CV_32F, 1, 0, ksize=3), cv2.Sobel(g, cv2.CV_32F, 0, 1, ksize=3))
+    subject = labels > 0 if person else np.ones((h, w), bool)
+    m |= ((mag > np.percentile(mag[subject], 92)) & subject).astype(np.uint8)
+    return cv2.dilate(m, np.ones((5, 5), np.uint8)) > 0
 
 
 def _colour_bounds(T, labels, k=12):
@@ -163,10 +186,10 @@ class PencilCanvas:
                                  pts[:: max(1, n // 12)].round(1).tolist() + [pts[-1].round(1).tolist()]))
 
 
-def _need_map(cv, scale):
+def _need_map(cv, scale, sigma=1.6):
     import cv2
     import numpy as np
-    blur = cv2.GaussianBlur(cv.rgb, (0, 0), 1.6 * scale)
+    blur = cv2.GaussianBlur(cv.rgb, (0, 0), sigma * scale)
     d = np.sqrt(((srgb_to_oklab(blur) - cv.T_lab) ** 2 * [1.0, 1.6, 1.6]).sum(-1))
     return ((d - 0.05) * 4.0).astype(np.float32)
 
@@ -185,7 +208,7 @@ def pencil_pass(cv, P, L, labels, bounds, field, scale, rng, stats, region_mask=
     off = math.radians(P["off"])
     count = 0
     for rnd in range(2):
-        need = _need_map(cv, scale)
+        need = _need_map(cv, scale, P.get("blur", 1.6))
         if rnd:
             passcov[:] = 0                   # second round: a second layer in the same direction where still needed
         ix, iy = xs.astype(int), ys.astype(int)
@@ -252,6 +275,8 @@ def draw_pencil(ref, meas, person, args, stats, rng):
     for P in PENCIL_PASSES[2:]:
         pencil_pass(cv, P, L, labels, bounds, field, sc, rng, stats)
     burnish(cv, labels, args.blend * 0.35)
+    # a sharp pencil last, on the face and the strongest edges only: crisp features, loose surroundings
+    pencil_pass(cv, DETAIL_PASS, L, labels, bounds, field, sc, rng, stats, region_mask=_focus(labels, lm, L, person))
     pp.contour_lines(cv, ref, L, labels, sc, rng, stats)
     pp.feature_accents(cv, lm, L, labels, sc, rng, stats)
     if lm is not None:      # white pencil catchlights
@@ -354,23 +379,22 @@ def draw_oil(ref, meas, person, args, stats, rng):
     height = np.zeros((h, w), np.float32)
     base = max(h, w)
     radii = [base / 48, base / 96, base / 190, base / 380]
-    face = np.isin(labels, (3,)) if person else np.zeros((h, w), bool)
-    if face.any():
-        radii.append(base / 640)
+    focus = _focus(labels, lm, L, person)
+    radii += [base / 640, base / 950, base / 1500]      # small brushes: the face and the strongest edges only
     for li, R in enumerate(radii):
-        R = max(1.2, R)
+        R = max(1.4, R)
         ref_blur = cv2.GaussianBlur(T, (0, 0), max(0.6, R * 0.5))
         diff = np.abs(img - ref_blur).sum(-1)
         if li == 0:
             diff[:] = 1.0                                       # the first layer covers the whole ground
         g = max(1, int(R))
-        thr = 0.10 if li < len(radii) - 1 else 0.09
+        thr = 0.10 if li < 4 else 0.08
         seeds = []
         for yy in range(0, h, g):
             for xx in range(0, w, g):
                 cell = diff[yy:yy + g, xx:xx + g]
-                if li == len(radii) - 1 and len(radii) == 5 and not face[min(yy + g // 2, h - 1), min(xx + g // 2, w - 1)]:
-                    continue                                    # the finest brush works the face only
+                if li >= 4 and not focus[min(yy + g // 2, h - 1), min(xx + g // 2, w - 1)]:
+                    continue
                 if cell.mean() > thr:
                     j = int(cell.argmax())
                     seeds.append((xx + j % cell.shape[1], yy + j // cell.shape[1]))
@@ -431,11 +455,12 @@ def _flat_wash(resid, seg, tooth, rng, edge=0.35, gran=0.6, keep_light=0.97):
     return np.exp(-od).astype(np.float32)
 
 
-def _segments(img_rgb, k, rng, wobble=2.0):
+def _segments(img_rgb, k, rng, wobble=2.0, down=2):
     import cv2
     import numpy as np
     h, w = img_rgb.shape[:2]
-    small = cv2.resize((img_rgb * 255).astype(np.uint8), (max(1, w // 2), max(1, h // 2)), interpolation=cv2.INTER_AREA)
+    small = cv2.resize((img_rgb * 255).astype(np.uint8), (max(1, w // down), max(1, h // down)),
+                       interpolation=cv2.INTER_AREA)
     ms = cv2.pyrMeanShiftFiltering(small, 8, 18).astype(np.float32) / 255.0
     lab = srgb_to_oklab(ms).reshape(-1, 3) * [1.0, 1.5, 1.5]
     crit = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 20, 1e-3)
@@ -472,7 +497,9 @@ def draw_watercolor(ref, meas, person, args, stats, rng):
     pp.MED = dict(pp.MEDIUMS["graphite"])
     pp.construction(gcv, lm, labels, sc, stats)
     pp.contour_lines(gcv, ref, L, labels, sc, rng, stats)
-    under = 1 - 0.42 * np.clip(gcv.ink, 0, 1)
+    focus = _focus(labels, lm, L, person)
+    fsoft = cv2.GaussianBlur(focus.astype(np.float32), (0, 0), 4)
+    under = 1 - (0.42 + 0.2 * fsoft) * np.clip(gcv.ink, 0, 1)
     # 2. wet-in-wet: one soft wash that never goes darker than the lightest local value it covers
     dark = 1 - Tt
     soft = cv2.GaussianBlur(cv2.erode(dark, np.ones((int(9 * sc) | 1,) * 2, np.uint8)), (0, 0), max(h, w) / 90)
@@ -494,7 +521,13 @@ def draw_watercolor(ref, meas, person, args, stats, rng):
     seg4 = _segments(np.clip(cv2.GaussianBlur(resid, (0, 0), 0.8 * sc), 0, 1), 24, rng, wobble=0.8 * sc)
     g4 = np.stack([_flat_wash(resid[..., c], seg4, tooth, rng, edge=0.5, keep_light=0.9) for c in range(3)], -1)
     stats["wash-4 accents"] = int(seg4.max()) + 1
-    glaze = g1 * g2 * g3 * g4
+    # 6. a small brush on the face and the strongest edges: crisp little shapes, the rest stays loose
+    resid = np.clip(Tt / (g1 * g2 * g3 * g4), 0, 1)
+    seg5 = _segments(np.clip(cv2.GaussianBlur(resid, (0, 0), 0.6), 0, 1), 32, rng, wobble=0.4 * sc, down=1)
+    g5 = np.stack([_flat_wash(resid[..., c], seg5, tooth, rng, edge=0.4, keep_light=0.95) for c in range(3)], -1)
+    g5 = np.exp(np.log(np.clip(g5, 1e-3, 1)) * fsoft[..., None])
+    stats["wash-5 detail"] = int(seg5.max()) + 1
+    glaze = g1 * g2 * g3 * g4 * g5
     if person:   # vignette: the background is washed lighter and left unfinished towards the paper's edges
         bg = cv2.GaussianBlur((labels == 0).astype(np.float32), (0, 0), 6)
         yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
@@ -504,7 +537,7 @@ def draw_watercolor(ref, meas, person, args, stats, rng):
         strength = (1 - bg) + bg * 0.75 * edge             # optical density multiplier
         glaze = np.exp(np.log(np.clip(glaze, 1e-3, 1)) * strength[..., None])
     out = paper * (0.975 + 0.025 * tooth)[..., None] * glaze * under[..., None]
-    out = cv2.GaussianBlur(out, (0, 0), 0.5)        # the paper's fibre softens every edge a little
+    out = cv2.GaussianBlur(out, (0, 0), 0.3)        # the paper's fibre softens every edge a little
     return np.clip(out * 255, 0, 255).astype(np.uint8), None
 
 
@@ -518,7 +551,7 @@ def write_pencil_svg(path, cv, size, figure_parts, title):
     layers = {}
     for layer, width, alpha, pencil, pts in cv.strokes:
         layers.setdefault(layer, []).append((width, alpha, pencil, pts))
-    for layer in ["construction"] + [P["name"] for P in PENCIL_PASSES] + ["accents", "edges"]:
+    for layer in ["construction"] + [P["name"] for P in PENCIL_PASSES] + ["detail", "accents", "edges"]:
         if layer not in layers:
             continue
         out.append(f'<g id="{layer}" data-stage="{layer}" fill="none" stroke-linecap="round">')
