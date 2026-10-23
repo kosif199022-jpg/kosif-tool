@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5601
+   "count": 5602
   },
   {
    "id": "dom:motion",
@@ -1392,10 +1392,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 159,
-   "proven": 126,
+   "count": 160,
+   "proven": 127,
    "status": {
-    "proven": 126,
+    "proven": 127,
     "ready": 21,
     "install": 12
    }
@@ -2056,6 +2056,11 @@
    "label": "scripts/kosif_timeline.py"
   },
   {
+   "id": "script:scripts/micro_index.py",
+   "kind": "script",
+   "label": "scripts/micro_index.py"
+  },
+  {
    "id": "script:scripts/mimic/mm_common.py",
    "kind": "script",
    "label": "scripts/mimic/mm_common.py"
@@ -2441,6 +2446,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_local_first.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
   },
   {
    "id": "test:tests/test_mimic.py",
@@ -5235,13 +5245,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 159
+   "w": 160
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 126
+   "w": 127
   },
   {
    "from": "fam:runnable-tools",
@@ -5289,7 +5299,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 164
+   "w": 165
   },
   {
    "from": "fam:runnable-tools",
@@ -6750,6 +6760,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/micro_index.py",
+   "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/mimic/mm_analyze.py",
    "to": "script:scripts/mimic/mm_color.py",
    "rel": "imports",
@@ -7628,6 +7644,12 @@
   {
    "from": "script:scripts/media_sources.py",
    "to": "test:tests/test_media_sources_gateway.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
    "rel": "tested_by",
    "w": 1
   },

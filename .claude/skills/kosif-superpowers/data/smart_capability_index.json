@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5601,
+  "catalog_powers": 5602,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 159,
+  "tool_count": 160,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 248,
+      "count": 249,
       "status_counts": {
         "documented": 57,
         "install": 15,
         "key": 2,
-        "proven": 153,
+        "proven": 154,
         "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 46,
-        "runnable-tools": 159,
+        "runnable-tools": 160,
         "self-discovery": 43
       },
       "examples": [
@@ -70324,6 +70324,24 @@
       ],
       "source": "runnable-tools.json",
       "what": "يحفظ مراجعة أشهر 1000 مستودع عام على GitHub: لقطة حقائق (الترتيب والنجوم واللغة والترخيص والوصف، مدموجة من فهرس gitstar-ranking وسجلات deps.dev لقائمة مكملة لما يفوته)، وتصنيف آلي حسب الموضوع والترخيص، ومراجعة يدوية للاستبعادات والنقل. build يكتب data/github_top1000.json والجدول "
+    },
+    {
+      "id": "TOOL-161",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Micro index: one line per power, tool and superpower",
+      "name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يبني أدق خريطة للمهارة: لكل قدرة ذرية وأداة قابلة للتشغيل وقدرة خارقة مدخل واحد فيه مجموعتها ومجالها وعائلتها وقدرتها الخارقة وشارتها ومستلزماتها وأدوات عائلتها وفصلها وبطاقتها في المكتبة. يكتب data/micro_index.json وreferences/micro-index/ (صفحة لكل مجموعة وصفحة للأدوات وأخرى لل"
     },
     {
       "id": "SEC-01",

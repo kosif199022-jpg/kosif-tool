@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5601,
+ "atoms": 5602,
  "superpowers": 463,
  "hubs": [
   {
@@ -95,9 +95,9 @@
    "requires": [
     "key:graphify",
     "python3",
-    "key:unspecified",
     "claude:tools",
     "chromium",
+    "key:unspecified",
     "node",
     "npm:mermaid",
     "network",
@@ -411,9 +411,9 @@
      "id": "SP-0124",
      "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
      "name_en": "Atlas metadata capability miner",
-     "size": 33,
+     "size": 34,
      "best": "proven",
-     "ready_now": 33
+     "ready_now": 34
     },
     {
      "id": "SP-0125",
@@ -504,15 +504,15 @@
      "ready_now": 7
     }
    ],
-   "powers": 256,
+   "powers": 257,
    "status_mix": {
-    "proven": 153,
+    "proven": 154,
     "ready": 21,
     "install": 15,
     "key": 2,
     "documented": 65
    },
-   "ready_now": 174,
+   "ready_now": 175,
    "requires": [
     "python3",
     "ffmpeg",
@@ -1359,32 +1359,32 @@
     "SP-0293",
     "SP-0153",
     "SP-0261",
+    "SP-0251",
     "SP-0334",
     "SP-0398",
     "SP-0335",
     "SP-0245",
     "SP-0248",
-    "SP-0252",
-    "SP-0254",
+    "SP-0253",
     "SP-0260",
     "SP-0294",
-    "SP-0253",
+    "SP-0254",
     "SP-0256",
     "SP-0263",
     "SP-0399",
     "SP-0265",
     "SP-0295",
-    "SP-0251",
+    "SP-0252",
     "SP-0257",
     "SP-0397",
     "SP-0336",
     "SP-0154",
     "SP-0296",
     "SP-0400",
-    "SP-0266",
     "SP-0244",
     "SP-0246",
     "SP-0337",
+    "SP-0266",
     "SP-0155",
     "SP-0401",
     "SP-0255",
@@ -1567,8 +1567,8 @@
    "links": [
     "agents",
     "motion",
-    "images",
-    "software"
+    "software",
+    "images"
    ]
   },
   {
@@ -1666,7 +1666,7 @@
     "SP-0242",
     "SP-0405",
     "SP-0183",
-    "SP-0418",
+    "SP-0417",
     "SP-0187",
     "SP-0190",
     "SP-0425",
@@ -1679,7 +1679,7 @@
     "SP-0408",
     "SP-0182",
     "SP-0415",
-    "SP-0419",
+    "SP-0418",
     "SP-0420",
     "SP-0186",
     "SP-0421",
@@ -1698,7 +1698,7 @@
     "SP-0410",
     "SP-0412",
     "SP-0416",
-    "SP-0417",
+    "SP-0419",
     "SP-0188",
     "SP-0189",
     "SP-0192",
@@ -2062,9 +2062,9 @@
     "imagemagick",
     "pip:faster-whisper",
     "key:elevenlabs",
-    "key:unspecified",
     "key:video-gen",
     "npm:remotion",
+    "key:unspecified",
     "node",
     "pip:piper",
     "fonts:arabic",
@@ -2081,6 +2081,7 @@
     "yt-dlp",
     "os:macos",
     "npm:d3",
+    "npm:three",
     "pip:onnxruntime",
     "docker"
    ],
