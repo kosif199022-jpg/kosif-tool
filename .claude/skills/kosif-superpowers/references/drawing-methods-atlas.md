@@ -89,7 +89,7 @@ The rule all these books share: general to specific — action, then mass, then 
 | أنماط الأنمي | Ozawa، Date Naoto | SD وعادي وبطولي؛ هوية ثابتة من العين والشعر والنسبة والملابس | DM-43 |
 | الرصاص الواقعي | Lee Hammond (UBK-05)، Karen Reed (UBK-19) | الشكل أولًا، دمج بطبقات، إضاءة بالممحاة | DM-44 |
 | المشي والجري | Richard Williams (ART-092)، Thomas & Johnston | تلامس، هبوط، عبور، صعود؛ الذراعان عكس الساقين | DM-45 |
-| المخلوقات والألعاب | How to Character Design for Games (UBK-36) | عشرات السيلويتات ثم هيكل معقول ثم تجسيد خامة خامة | DM-46 |
+| المخلوقات والألعاب | Lee Dae-hoon — *Game Creature Design* (UBK-36) | عشرات السيلويتات ثم هيكل معقول ثم تجسيد خامة خامة | DM-46 |
 | ملمس الرصاص | Trudy Friend (UBK-34)، Hammond، Borgman | ضربة عريضة، ضع وادفع واسحب، تعرج لأوراق الشجر | DM-47 |
 | التراكب والخط الواثق | Tom Fox (UBK-25)، Bert Dodson (UBK-17)، Stanchfield | خطوط أقل وأوثق؛ التراكب يصنع العمق؛ فحص الخط الأوسط والسيلويت | DM-48 |
 
@@ -133,10 +133,10 @@ Forty-one books from the user's folder, read on 2026-10-23. Only title, author, 
 | UBK-30 | *A Comprehensive 13-Week Art Course (65 daily lessons)* — Date Naoto | 194 | نص | DM-07, DM-21, DM-22, DM-24, DM-34, DM-36, DM-41, DM-43 |
 | UBK-31 | *365 Days of Drawing* — Lorna Scobey | 322 | نص | DM-01, DM-02, DM-21, DM-41 |
 | UBK-32 | *How to Draw Disney Characters for Kids* — unknown | 234 | صفحات عينة | DM-42 |
-| UBK-33 | *Point Character Drawing Vol. 2 (Chinese edition)* — Taco | 223 | OCR | DM-10, DM-34 |
+| UBK-33 | *Point Character Drawing Vol. 2 (Chinese edition)* — Taco | 223 | OCR | DM-07, DM-10, DM-12, DM-34, DM-35 |
 | UBK-34 | *Drawing: The Complete Question Handbook* — Trudy Friend | 131 | OCR | DM-01, DM-32, DM-47 |
-| UBK-35 | *Drawn to Life Vol. 2 (Chinese edition)* — Walt Stanchfield (ART-098) | 346 | OCR | DM-30 |
-| UBK-36 | *How to Character Design for Games* — unknown | 276 | OCR | DM-46 |
+| UBK-35 | *Drawn to Life Vol. 2 (Chinese edition)* — Walt Stanchfield (ART-098) | 346 | OCR | DM-15, DM-30, DM-48 |
+| UBK-36 | *Game Creature Design (Chinese edition)* — Lee Dae-hoon | 276 | OCR | DM-46 |
 | UBK-37 | *Debt-Free Art Degree: Foundations in Drawing* — Quarry Books | 332 | نص | DM-02, DM-09, DM-12, DM-19, DM-29, DM-30 |
 | UBK-38 | *Human Anatomy for Artists* — Xiao Weichun | 328 | نص | DM-04, DM-08, DM-09, DM-35, DM-39, DM-46 |
 | UBK-39 | *How to Draw (Portuguese edition)* — Scott Robertson & Thomas Bertling (ART-047) | 211 | نص | DM-03, DM-04, DM-24, DM-37, DM-39 |
