@@ -2686,5 +2686,133 @@
   ],
   "section": "Software investigation / فحص البرامج",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-63",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح",
+  "name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+  "status": "proven",
+  "what": "يبحث في 86 طريقة من أطلس Futurepedia في 14 عائلة (الشكل، الحركة، قواعد الشرح، الخطوط، الألوان، التقنيات، الأصوات)، ويدمج طريقتين 85/15، ويكتب موجز إنتاج بستوريبورد أولًا، ويُنشئ مشروع شرح جاهزًا على محرك KOSIF الأصلي. — Searches the 86 paraphrased Futurepedia AI Style Atlas methods in 14 families (look, motion, explainer grammar, fonts, palette, techniques, sounds), fuses up to two (85/15), writes a storyboard-first production brief, scaffolds an explainer project on the original KOSIF engine, and draws static SVG studies.",
+  "when": "ادمج أساليب Futurepedia في الرسم / Find Futurepedia AI Style Atlas methods",
+  "how": "families: `python3 scripts/style_atlas_bridge.py families`; search: `python3 scripts/style_atlas_bridge.py search \"سبورة\"`; show: `python3 scripts/style_atlas_bridge.py show FA-45`; brief: `python3 scripts/style_atlas_bridge.py brief --topic \"كيف تعمل البطارية\" --style FA-45 --accent FA-16 --out out/atlas/brief.md`. Full card: `python3 scripts/hub.py tool style-atlas-bridge`. Limits: Method cards are paraphrases; a scaffold starts from the FA-23 chalkboard demo, so each other method's medium must still be drawn per project before rendering. Nothing is rendered until atlas_render.py runs.",
+  "params": "in: data/futurepedia_style_atlas_86.json and a user topic · out: Search results, method cards, briefs, fusion recipes, scaffolded explainer projects, SVG studies",
+  "install": "",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_atlas_bridge.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/style_atlas_bridge.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "style-atlas-bridge",
+   "ادمج أساليب Futurepedia في الرسم",
+   "توليفة سبورة ونيون لموشن جرافيك",
+   "Find Futurepedia AI Style Atlas methods",
+   "Create one static SVG style-study",
+   "style",
+   "atlas",
+   "bridge",
+   "فن",
+   "visual",
+   "رسم",
+   "مصادر",
+   "أسلوب",
+   "explainer",
+   "storyboard",
+   "طباشير",
+   "شرح",
+   "أطلس",
+   "86"
+  ],
+  "section": "Motion graphics and rendering / الموشن والرندر",
+  "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-64",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب",
+  "name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+  "status": "proven",
+  "what": "يشغّل صفحة شرح A15 في متصفح بلا واجهة: لوحة ستوريبورد، لقطات، فحص حتمية وسرعة، رندر MP4 إطارًا بإطار مع صوت مُركّب متزامن، وحزمة HTML واحدة. — Drives an A15 explainer page (window.seek/DURATION/scoreSound) in headless Chromium: storyboard grid PNG, single stills, a determinism and speed check, frame-by-frame H.264 render with the KSound score rendered offline and muxed as AAC, and a single-file HTML bundle.",
+  "when": "رندر فيلم الشرح إلى MP4 / Render the explainer page to video",
+  "how": "check: `python3 scripts/atlas_render.py check`; storyboard: `python3 scripts/atlas_render.py storyboard --out out/atlas/storyboard.png`; render: `python3 scripts/atlas_render.py render --fps 30 --out out/atlas/film.mp4`; bundle: `python3 scripts/atlas_render.py bundle --out out/atlas/single.html`. Full card: `python3 scripts/hub.py tool atlas-render`. Limits: Needs Playwright with Chromium and ffmpeg; frame capture is ~4-6 fps of wall time at 1280x720; audio is the page's synthesized score (no voice-over mixing yet).",
+  "params": "in: An explainer HTML page following the A15 contract (default: templates/atlas_explainer.html) · out: PNG storyboard/stills, MP4 (h264+aac), single-file HTML, JSON reports",
+  "install": "pip install playwright · needs on PATH: ffmpeg",
+  "requires": [
+   "ffmpeg",
+   "python3",
+   "chromium"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_render.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_render.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "atlas-render",
+   "render",
+   "explainer",
+   "storyboard",
+   "mp4",
+   "رندر",
+   "ستوريبورد",
+   "فيلم شرح",
+   "atlas",
+   "canvas",
+   "seek"
+  ],
+  "section": "Motion graphics and rendering / الموشن والرندر",
+  "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-65",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude",
+  "name_en": "AI for business: 9 functions, 64 workflows, Claude-native gated runbooks",
+  "status": "proven",
+  "what": "يبحث في مؤشر تبني الذكاء الاصطناعي لـ9 وظائف و64 خطة عمل، ويعيد توجيه كل خطوة إلى ما ينفذه Claude بنفسه أو إلى موصّل، ويكتب خطة تشغيل عربية ببوابات موافقة. — Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step from the named third-party tool to what Claude can do in the session or to a connector, measures native coverage, and writes an Arabic runbook with approval gates for send, post, spend and recording.",
+  "when": "اعمل لي workflow للمبيعات بالذكاء الاصطناعي / Turn a podcast into a content plan with AI",
+  "how": "functions: `python3 scripts/business_workflows.py functions`; search: `python3 scripts/business_workflows.py search \"بودكاست\"`; coverage: `python3 scripts/business_workflows.py coverage`; plan: `python3 scripts/business_workflows.py plan --workflow FW-07 --context \"حلقة بودكاست عربية\" --out out/biz/plan.md`. Full card: `python3 scripts/hub.py tool business-workflows`. Limits: Facts only from the site (no prompts); third-party tool features and prices change; connector availability is checked at run time, not here.",
+  "params": "in: data/futurepedia_business_workflows.json and the user's situation · out: JSON listings and a Markdown runbook",
+  "install": "",
+  "requires": [
+   "python3",
+   "key:unspecified"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_business_workflows.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/business_workflows.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "business-workflows",
+   "business",
+   "workflow",
+   "sales",
+   "marketing",
+   "support",
+   "operations",
+   "فور بيزنس",
+   "أعمال",
+   "مبيعات",
+   "تسويق",
+   "خطة عمل",
+   "أتمتة",
+   "futurepedia"
+  ],
+  "section": "Think, ideate and write / التفكير والأفكار والكتابة",
+  "source": "data/tools.json"
  }
 ]

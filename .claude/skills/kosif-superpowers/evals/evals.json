@@ -1825,6 +1825,66 @@
     ],
     "top_k": 8
    }
+  },
+  {
+   "id": 85,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل فيلم شرح بأسلوب الطباشير من أطلس Futurepedia",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the 86-style atlas bridge (TOOL-63) and the atlas renderer (TOOL-64)",
+    "Writes a storyboard-first brief before any render and uses paraphrased method cards, never copied material"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 86,
+   "lang": "ar",
+   "domain": "motion",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعرض لي الستوريبورد قبل ما ترندر فيلم الشرح MP4",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the atlas explainer renderer (TOOL-64): storyboard grid first, then a determinism check, then the MP4",
+    "Reports honestly when playwright or Chromium is missing instead of claiming a render"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "top_k": 3
+   }
+  },
+  {
+   "id": 87,
+   "lang": "ar",
+   "domain": "strategy",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "اعمل لي workflow للمبيعات بالذكاء الاصطناعي في شركتي",
+   "files": [],
+   "expected_behavior": [
+    "Routes to the Futurepedia business workflows tool (TOOL-65) and plans a workflow from its 64 entries",
+    "Maps each step to a Claude-native route or names the external tool without signing up, paying or publishing"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "top_k": 3
+   }
   }
  ]
 }
