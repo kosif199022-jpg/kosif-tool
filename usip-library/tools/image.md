@@ -1,4 +1,4 @@
-# أدوات المجال `image` (9 أداة)
+# أدوات المجال `image` (10 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -305,6 +305,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:mosamem-rea-fusion --evidence <ملف>`.
+
+### `prompt-forge` — مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة / Prompt forge: layered generator prompts, prompt lint and frame-exact shot lists
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/prompt_forge.py` (جذر: skill) |
+| المجال | `image` |
+| الدليل | `tested-here` |
+| العائلات | `ai-generation` |
+
+**ما تفعله:** يبني برومبتات الصور والفيديو والموسيقى والصوت من مواصفة طبقية واحدة، ويفحص البرومبت (كلمات المبالغة، الصفات المبهمة، التناقض، النفي فقط، غياب الموضوع أو الكاميرا، الطول) بالعربية والإنجليزية، ويقسم المدة على لقطات بإطارات مجموعها مضبوط.
+
+**What it does:** Builds still-image, video, music and voice prompts from one layered spec (subject, action, setting, style, camera, light, constraints) with no brand names; lints a prompt for hype words, vague adjectives, contradictions, negative-only phrasing, missing subject or camera and length in Arabic and English; splits a target duration into per-shot video prompts whose frame counts sum exactly to total x fps.
+
+#### متى تُستدعى
+
+- «اكتب لي برومبت صورة وفيديو لنفس المشهد»
+- «افحص البرومبت ده وقولي غلطه فين»
+- «قسّم فيديو 12 ثانية على 4 لقطات ببرومبت لكل لقطة»
+- «Write image and video prompts for this scene»
+- «Lint my generation prompt»
+- «Make a shot list whose durations add up to 15 seconds»
+
+#### الأوامر
+
+- **forge**: Per-target prompts from the layered spec, with word counts and warnings (--text prints only the prompts).
+  - `python3 scripts/prompt_forge.py forge /tmp/spec.json --targets still-image,video,music,voice`
+- **lint**: Findings with severity and fix, score 0-100 and pass/revise/fail verdict.
+  - `python3 scripts/prompt_forge.py lint /tmp/prompt.txt --target video`
+- **shotlist**: Per-shot video prompts with start/end frames; largest-remainder split so frames sum exactly to total*fps.
+  - `python3 scripts/prompt_forge.py shotlist /tmp/shots.json --fps 30 --total 12 --max-shot 10`
+- **self-test**: Offline self-check.
+  - `python3 scripts/prompt_forge.py --self-test`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Rule-based text checks and templates: it does not call any generator or judge image quality, its word lists are finite (Arabic and English only), and generator-specific parameters are left to the user.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_prompt_forge.py`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:prompt-forge --evidence <ملف>`.
 
 ### `prompt-pack` — حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط / Prompt pack: copyable prompts, one code block each, with a warn-only lint
 

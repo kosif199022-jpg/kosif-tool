@@ -43,7 +43,7 @@
 
 **ما هي:** نسخة مطبّعة للمطابقة فقط: بلا تشكيل ولا تطويل، ألف واحدة، ى→ي، ة→ه، وأرقام لاتينية؛ والنص الأصلي لا يُمس. — A matching-only copy without tashkeel or tatweel, one alef, ى→ي, ة→ه and ASCII digits; the original text is never changed.
 
-**متى:** Searching, deduplicating, comparing or regex-matching Arabic text; before diffing two Arabic versions.
+**متى:** عند البحث في نص عربي أو إزالة تكراره أو مقارنته أو مطابقته بتعبير نمطي، وقبل المقارنة بين نسختين عربيتين / Searching, deduplicating, comparing or regex-matching Arabic text; before diffing two Arabic versions.
 
 **كيف:** Python stdlib: unicodedata.normalize("NFKC", s); remove [\u064B-\u0652\u0670\u0640]; translate "أإآٱىة"→"اااايه"; translate ٠-٩ and ۰-۹ to 0-9. Ready code: tell_scan.norm_ar and anchor_gate.clean (scripts/). Tested: "ختامًا إلى مُستشفى المدينةِ" equals "ختاما الي مستشفي المدينه". Folding ة→ه and ى→ي is lossy: use it for keys, never for output. Motion-side alignment variant: ARAB-69.
 
@@ -109,7 +109,7 @@
 
 **ما هي:** خريطة مواضع حرفًا بحرف تربط النسخة المطبّعة بالأصل، فيظهر كل تطابق كما كتبه الكاتب بتشكيله. — A char-level offset map links the normalized copy to the source so every match is shown as written, tashkeel included.
 
-**متى:** Highlighting search hits, lint results or edits in Arabic text that has tashkeel, tatweel or presentation forms.
+**متى:** عند إبراز نتائج البحث أو نتائج الفحص أو التعديلات في نص عربي فيه تشكيل أو تطويل أو أشكال عرض / Highlighting search hits, lint results or edits in Arabic text that has tashkeel, tatweel or presentation forms.
 
 **كيف:** Normalize one source char at a time, record the source index of every output char, match on the normalized string, map [start, end) back, then extend end over trailing harakat. Implemented in tell_scan.norm_with_map. Tested: matches on "وفي الختامِ، تُعزّز" display as "وفي الختامِ" and "تُعزّز" (not "تعزز").
 
@@ -176,7 +176,7 @@
 
 **ما هي:** في بايثون \b و\w تعدّ الحروف العربية حروف كلمة، فيضيع "و٥" و"٢٠٢٤م" و"بالمصري"؛ استخدم حدودًا عربية صريحة مع سوابق اختيارية. — Python \b and \w treat Arabic letters as word chars, so clitic-glued forms are missed; use explicit Arabic boundaries with optional proclitics.
 
-**متى:** Writing any regex over Arabic: keyword lists, number extraction, name matching.
+**متى:** عند كتابة أي تعبير نمطي على العربية: قوائم كلمات مفتاحية، استخراج أرقام، مطابقة أسماء / Writing any regex over Arabic: keyword lists, number extraction, name matching.
 
 **كيف:** Word: (?<![\u0621-\u064A])(?:[وفبلك]?(?:ال)?\|لل)(?:WORD)(?![\u0621-\u064A]). Numbers: (?<![\d.,])\d+… with no letter lookarounds, so و٥ / بـ١٠٠ / ٢٠٢٤م are found. Names: not preceded or followed by a letter or digit, optional proclitic (so علي does not match inside عليها, but وأحمد matches أحمد). Tested: و٥→و٩ and ٢٠٢٤م→٢٠٢٥م flagged; يمارس is not the month مارس.
 
@@ -244,7 +244,7 @@
 
 **ما هي:** ٣ = 3 = ۳، و١٬٥٠٠٬٠٠٠ = 1,500,000 = 1500000، و٪١٥ = %15 = 15%، والرقم الملتصق بحرف يُقرأ. — Arabic-Indic and Persian digits, ٫ ٬ ، separators, prefix or suffix percent and glued digits all fold to one canonical value.
 
-**متى:** Extracting or comparing numbers in Arabic documents, invoices, OCR output or captions.
+**متى:** عند استخراج الأرقام أو مقارنتها في مستندات عربية أو فواتير أو مخرجات OCR أو ترجمات مرافقة / Extracting or comparing numbers in Arabic documents, invoices, OCR output or captions.
 
 **كيف:** Translate digits; fold ٫→. ٬→, ،→, ٪→%; strip thousands separators only when they group by three; move a prefix percent to a suffix. Implemented in anchor_gate.fold_num. Tested: "في عام ٢٠٢٤م" = "في عام 2024"; "1,500,000 ريال" = "1500000 ريال"; "٪١٥" = "15%". Formatting the other way (money, tabular digits) is ARAB-73/ARAB-74.
 
@@ -312,7 +312,7 @@
 
 **ما هي:** يتعرف على يناير/كانون الثاني/محرم وأيام الأسبوع بالعربية والإنجليزية ويقارنها بعد توحيد الهمزات. — Recognizes Gregorian, Levantine and Hijri month names and weekdays in Arabic and English, comparing after hamza folding.
 
-**متى:** Checking dates in rewritten, translated or OCRed Arabic text; building date parsers.
+**متى:** عند فحص التواريخ في نص عربي معاد كتابته أو مترجم أو ناتج عن OCR، وعند بناء محللات التواريخ / Checking dates in rewritten, translated or OCRed Arabic text; building date parsers.
 
 **كيف:** Lists in anchor_gate.AR_WORDS: يناير…ديسمبر (with أبريل/ابريل/إبريل, يونيو/يونية), كانون، شباط، آذار، نيسان، أيار، حزيران، تموز، آب، أيلول، تشرين; محرم، صفر، ربيع، جمادى، رجب، شعبان، رمضان، شوال، القعدة، الحجة; weekdays with Egyptian forms (اتنين، تلات); الأحد only with ال. Never convert Hijri↔Gregorian unless asked. Ambiguous words left out on purpose (نص، ست، ضعف).
 
@@ -379,7 +379,7 @@
 
 **ما هي:** المتصفح أو Pillow مع RAQM يشكّلان النص الخام مباشرة؛ arabic-reshaper مع python-bidi فقط للعارض الذي لا يشكّل؛ ولا تشكّل مرتين. — The browser or Pillow+RAQM shape raw text; reshaper+bidi only for renderers that do not shape; never shape twice.
 
-**متى:** Drawing Arabic into images, charts, PDFs or video frames outside a browser.
+**متى:** عند رسم العربية داخل صور أو رسوم بيانية أو ملفات PDF أو إطارات فيديو خارج المتصفح / Drawing Arabic into images, charts, PDFs or video frames outside a browser.
 
 **كيف:** Check: PIL.features.check("raqm") (True here, Pillow 12.3.0) → ImageFont.truetype(font, size, layout_engine=ImageFont.Layout.RAQM) and draw raw logical text with direction="rtl". matplotlib 3.11 also bundles libraqm (check matplotlib.ft2font.__libraqm_version__): pass raw text there too; adding reshaper+bidi on top reverses it (proofs/general-data, mpl_arabic_modes.png). Only for reportlab, or a Pillow/matplotlib build without raqm: arabic_reshaper.reshape(t) then bidi.get_display(), with a font that has Presentation Forms-B (Amiri, Noto Naskh). Tested: reshaper gives U+FEB3 U+FEFC U+FEE1 for "سلام"; RAQM shaped "سلام" in Amiri at 82 px width. Full routing and failure modes: ARAB-06.
 
@@ -452,7 +452,7 @@
 
 **ما هي:** علامات الاتجاه الخفية تُحذف قبل المعالجة وتُضاف عزلات الاتجاه عند العرض حول الكلمات اللاتينية والأرقام. — Strip invisible direction marks before processing; add direction isolates around Latin words and numbers when displaying.
 
-**متى:** Mixed Arabic/English UI strings, chat messages, CSV exports, captions with brand names or prices.
+**متى:** عند النصوص العربية/الإنجليزية المختلطة في واجهات المستخدم ورسائل الدردشة وملفات CSV المصدّرة والترجمات المرافقة التي فيها أسماء علامات أو أسعار / Mixed Arabic/English UI strings, chat messages, CSV exports, captions with brand names or prices.
 
 **كيف:** Processing: remove LRM U+200E, RLM U+200F, ALM U+061C, embeddings U+202A–202E, isolates U+2066–2069 and BOM before matching (anchor_gate does this; tested on OCR output). Display: wrap embedded runs in FSI U+2068 … PDI U+2069 (or <bdi> / dir="auto" in HTML), keep % and currency with their number, never reverse strings by hand. Renderer-specific isolation for motion: ARAB-72.
 
@@ -519,7 +519,7 @@
 
 **ما هي:** الحاوية لا تحمل خطًا عربيًا جيدًا افتراضيًا، لكن المهارة تحمل Amiri وCairo وTajawal وReem Kufi وAref Ruqaa وLalezar برخصة OFL. — The container has no good Arabic display face by default; the skill ships OFL Arabic fonts.
 
-**متى:** Before rendering any Arabic text to an image, PDF, chart or video.
+**متى:** قبل تصيير أي نص عربي إلى صورة أو PDF أو رسم بياني أو فيديو / Before rendering any Arabic text to an image, PDF, chart or video.
 
 **كيف:** Check system coverage: fc-list :lang=ar family (here: only DejaVu, FreeSerif, FreeMono, Unifont). Use the bundled fonts in proofs/_shared/fonts (Amiri for Naskh and full tashkeel, Cairo/Tajawal for UI, Reem Kufi and Lalezar for display, Aref Ruqaa for calligraphic titles). System-wide install when root is available: apt-get install fonts-noto-core fonts-kacst fonts-arabeyes (from the environment probe; not run here). Font choice and fallback chains: ARAB-11, ARAB-13.
 
@@ -587,7 +587,7 @@
 
 **ما هي:** احذف التشكيل للمطابقة، واحفظه كما هو في القرآن والحديث والشعر، وأضفه فقط حيث يرفع لبسًا. — Strip harakat for matching, keep them untouched in sacred text and poetry, add them only to resolve ambiguity.
 
-**متى:** Cleaning, searching, displaying or generating vowelled Arabic.
+**متى:** عند تنظيف العربية المشكولة أو البحث فيها أو عرضها أو توليدها / Cleaning, searching, displaying or generating vowelled Arabic.
 
 **كيف:** Matching: strip (ARL-01). Display: never "fix" or strip the diacritics of Quran, hadith or poetry; render full tashkeel with a font and engine that support it (Amiri + RAQM or a browser; leave headroom, ARAB-05). Writing: partial tashkeel only on words a reader could misread (عَلِم/عُلِم); random partial tashkeel on common words is a style tell. Automatic diacritization needs morphological models (ARL-11); review every result by eye and never auto-vowel sacred text. For speech alignment prefer vowelled source text over ASR output (ARAB-70).
 
@@ -655,7 +655,7 @@
 
 **ما هي:** تحويل Buckwalter ذهابًا وإيابًا، وحذف التشكيل، وتوحيد الألف، من camel-tools دون تثبيت torch وtransformers. — Buckwalter round trip, dediacritization and alef normalization from camel-tools without installing torch and transformers.
 
-**متى:** Lossless ASCII transliteration for NLP pipelines, or reliable normalization helpers, on a machine without heavy ML packages.
+**متى:** عند الحاجة إلى نقل حرفي ASCII دون فقدان لخطوط NLP، أو أدوات تطبيع موثوقة على جهاز بلا حزم تعلم آلي ثقيلة / Lossless ASCII transliteration for NLP pipelines, or reliable normalization helpers, on a machine without heavy ML packages.
 
 **كيف:** pip install --no-deps camel-tools emoji (emoji is imported by camel_tools.utils.charsets). Then: CharMapper.builtin_mapper("ar2bw")(s) and "bw2ar" (round trip exact on "مُحَمَّدٌ يَقْرَأُ القُرْآنَ" → "muHama~dN yaqora>u Alquro\|na"), also ar2safebw and ar2hsb; camel_tools.utils.dediac.dediac_ar; normalize_alef_ar, normalize_alef_maksura_ar, normalize_teh_marbuta_ar. A plain pip install pulls transformers and torch.
 
@@ -724,7 +724,7 @@
 
 **ما هي:** التحليل الصرفي وفك اللبس وتعرّف اللهجة والكيانات المسماة تحتاج camel-tools كاملة مع حزم بيانات تُحمَّل. — Morphological analysis, disambiguation, dialect identification and NER need the full camel-tools install plus downloaded data packages.
 
-**متى:** Lemmatizing, segmenting clitics, tagging parts of speech, detecting the dialect of a corpus, extracting names and places.
+**متى:** عند تحليل الجذوع وتقطيع اللواصق ووسم أقسام الكلام وتحديد لهجة مدونة واستخراج الأسماء والأماكن / Lemmatizing, segmenting clitics, tagging parts of speech, detecting the dialect of a corpus, extracting names and places.
 
 **كيف:** pip install camel-tools (pulls transformers and torch; CPU torch installs in about 21 s, 769 MB here per the arsenal run), then download the data packages the task needs with the data tool camel-tools provides (list them first; sizes vary). Not run in this session: verify on the target machine and record the run before claiming it. For light character work use ARL-10 instead.
 
@@ -792,7 +792,7 @@
 
 **ما هي:** حذف التشكيل والتطويل وتقطيع بسيط، مع تنبيه: الرخصة GPL، فاستخدمها أداةً ولا تضمّن كودها في مشروع مغلق. — Strip tashkeel and tatweel and simple tokenization; GPL, so use it as a tool and do not bundle its code into closed projects.
 
-**متى:** Quick Arabic cleanup scripts where GPL is acceptable.
+**متى:** عند سكربتات التنظيف السريعة للعربية حيث يقبل ترخيص GPL / Quick Arabic cleanup scripts where GPL is acceptable.
 
 **كيف:** pip install pyarabic; import pyarabic.araby as araby; araby.strip_tashkeel("مُحَمَّدٌ") → "محمد"; araby.strip_tatweel("عـــربي") → "عربي"; araby.tokenize(...) glues punctuation runs (":«", "»،"), so post-split punctuation if you count words. For MIT-only stacks use ARL-01 or ARL-10.
 
@@ -860,7 +860,7 @@
 
 **ما هي:** مقطّع ومحلل عربي يعمل عبر Java؛ حزمة farasapy بلا رخصة معلنة على PyPI، فتحقق من الشروط قبل أي استخدام تجاري. — A Java-based Arabic segmenter; farasapy lists no license on PyPI, so check terms before commercial use.
 
-**متى:** Clitic segmentation or POS tagging when camel-tools is not an option.
+**متى:** عند تقطيع اللواصق أو وسم أقسام الكلام حين لا يكون camel-tools خيارًا / Clitic segmentation or POS tagging when camel-tools is not an option.
 
 **كيف:** pip install farasapy; needs a Java runtime (apt-get install default-jre if missing). Not run in this session. Compare its segmentation with camel-tools on a sample before choosing.
 
@@ -927,7 +927,7 @@
 
 **ما هي:** tesseract مع حزمة ara يقرأ الكلمات العربية جيدًا لكنه يخطئ في الأرقام وعلامة % وقد يُسقط سطرًا كاملًا. — tesseract with ara reads Arabic words well but misreads digits and %, and can drop a whole line.
 
-**متى:** Extracting Arabic text from scans, screenshots, posters or video frames.
+**متى:** عند استخراج نص عربي من مسوحات أو لقطات شاشة أو ملصقات أو إطارات فيديو / Extracting Arabic text from scans, screenshots, posters or video frames.
 
 **كيف:** apt-get install -y tesseract-ocr tesseract-ocr-ara (root), then tesseract img.png out -l ara --psm 6 (add +eng for mixed text); Python: pytesseract (Apache-2.0). Tested on rendered lines: words right ("ارتفعت المبيعات … مارس", Cairo read الخميس, Amiri lost it), but ٢٥٪ → "ه5./" or "10", ٢٠٢٤ → "٠١74", 12 → ١١, and with Western digits the second line vanished; ×2 upscaling did not fix digits; output carries LRM/RLM marks. Always verify numbers (ARL-15) and look at the image. Scanned PDF pages: DOC-17. Pure-pip alternative: easyocr (Apache-2.0, needs torch, not run).
 
@@ -999,7 +999,7 @@
 
 **ما هي:** قارن ناتج OCR بنص مرجعي أو بقراءة ثانية عبر anchor_gate.py فيظهر كل رقم أو تاريخ أو نسبة قُرئت خطأ. — Diff OCR output against a reference or a second reading with anchor_gate.py to expose every misread number, date or percent.
 
-**متى:** Any OCR of invoices, tables, statistics or dates in Arabic.
+**متى:** عند أي OCR لفواتير أو جداول أو إحصاءات أو تواريخ بالعربية / Any OCR of invoices, tables, statistics or dates in Arabic.
 
 **كيف:** python3 -I scripts/anchor_gate.py --before truth_or_second_read.txt --after ocr.txt --text. Invisible bidi marks in OCR output are stripped, digit systems are equated. Tested: OCR of "٢٥٪ … ٢٠٢٤ … ١٢ مارس" → REVIEW_REQUIRED, dropped 12, 2024, 25%. With no reference, OCR twice (two fonts/scales or two engines) and diff the readings; disagreement marks the cells to check by eye.
 
@@ -1068,7 +1068,7 @@
 
 **ما هي:** "Ø³Ù„Ø§Ù…" نص UTF-8 قُرئ على أنه cp1252، ويُصلح بعكس الخطوة؛ والملفات القديمة بترميز Windows-1256 تُفك به. — UTF-8 read as cp1252 is reversed by re-encoding; legacy Windows-1256 files decode with cp1256.
 
-**متى:** CSV, subtitles, emails or database dumps where Arabic shows as Ø³Ù„… or as "???".
+**متى:** عند ظهور العربية في ملفات CSV أو ترجمات أو رسائل بريد أو نسخ قواعد بيانات على شكل Ø³Ù„… أو «???» / CSV, subtitles, emails or database dumps where Arabic shows as Ø³Ù„… or as "???".
 
 **كيف:** Python: garbled.encode("cp1252").decode("utf-8") (tested: "Ø³Ù„Ø§Ù… Ø¹Ù„ÙŠÙƒÙ…" → "سلام عليكم"). If bytes fail as UTF-8, try cp1256 (tested: d3e1c7e3 → "سلام"). Write CSV for spreadsheet apps as UTF-8 with BOM (encoding="utf-8-sig") so Arabic opens correctly. "???" means the text was already destroyed; go back to the source. File-name mojibake: ARAB-81.
 
@@ -1136,7 +1136,7 @@
 
 **ما هي:** حدد السجل قبل الكتابة (فصحى رسمية، فصحى مبسطة، مصرية، خليجية، شامية، حجازية، مغاربية) والتزم به، ولا تعامل اللهجات كلهجة واحدة. — Choose the register before writing and keep it; do not treat Arabic dialects as one.
 
-**متى:** Any Arabic output: captions, posts, scripts, UI text, replies to a user who writes in dialect.
+**متى:** عند أي مخرجات عربية: ترجمات مرافقة ومنشورات وسكربتات ونصوص واجهات وردود على مستخدم يكتب بلهجة / Any Arabic output: captions, posts, scripts, UI text, replies to a user who writes in dialect.
 
 **كيف:** Reply in the user's register unless asked otherwise. Egyptian markers: مش، هـ/حـ (future)، اللي، ده/دي/دول، إزاي، دلوقتي. Levantine: شو، هلّق، كتير، منيح. Gulf: وايد، شلون، زين. Maghrebi: برشا، بزاف. Do not Egyptianize other dialects or judge them by MSA rules; keep one spelling convention; no fake dialect sprinkles. Automatic dialect ID exists in full camel-tools (ARL-11, not run here). Rewriting between registers: WRITE-19.
 
@@ -1203,7 +1203,7 @@
 
 **ما هي:** Buckwalter للتحويل الآلي بلا فقد بين العربية والـASCII، أما أسماء الناس فتُكتب كما يكتبها أصحابها (Mohamed أو Muhammad). — Buckwalter for lossless machine transliteration; people's names keep the Latin spelling they use themselves.
 
-**متى:** Storing Arabic in ASCII-only systems, building NLP features, writing Arabic names in English text, reading Arabizi chat.
+**متى:** عند تخزين العربية في أنظمة ASCII فقط، وبناء ميزات NLP، وكتابة الأسماء العربية داخل نص إنجليزي، وقراءة محادثات Arabizi / Storing Arabic in ASCII-only systems, building NLP features, writing Arabic names in English text, reading Arabizi chat.
 
 **كيف:** Lossless: camel-tools ar2bw / bw2ar (round trip exact, ARL-10). Readers: use the spelling the person, brand or publication already uses; never "correct" a name's romanization; keep it in the anchor keep list (WRITE-08). Arabizi (Franco) chat uses digits for letters (3 for ع, 7 for ح, 2 for ء, 5 for خ); conventions vary by region, so confirm with the user and never auto-convert names.
 
@@ -1271,7 +1271,7 @@
 
 **ما هي:** كل نقل للفاعل أو تغيير للعدد يغيّر المطابقة: "قررت اللجنة" لكن "حضر الطلاب" ثم "الطلاب حضروا"، والعدد من 3 إلى 10 يخالف المعدود. — Moving the subject or changing a count changes agreement; numbers 3–10 take the opposite gender of the counted noun.
 
-**متى:** After rewriting, restructuring or templating Arabic sentences (verb-first ↔ subject-first, singular ↔ plural, inserted numbers).
+**متى:** بعد إعادة كتابة الجمل العربية أو إعادة هيكلتها أو قولبتها (فعلية ↔ اسمية، مفرد ↔ جمع، أرقام مُدرجة) / After rewriting, restructuring or templating Arabic sentences (verb-first ↔ subject-first, singular ↔ plural, inserted numbers).
 
 **كيف:** Verb before a plural subject stays singular (حضر الطلاب); after it, it agrees in number (الطلاب حضروا). Feminine subjects take feminine verbs (أجّلت اللجنة). Numbers 3–10 reverse gender (ثلاثة أيام، ثلاث ساعات); 11–99 take a singular accusative noun; dual nouns take dual agreement. For generated templates with counts, use the plural rules in ARAB-76. Read the final text once only for agreement.
 
@@ -1337,7 +1337,7 @@
 
 **ما هي:** تقطيع النص العربي واستخراج الجذور والتشكيل وتحديد اللهجة. — Tokenise, lemmatise, diacritise and dialect-identify Arabic text. (CAMeL Tools, ★0.6k, MIT).
 
-**متى:** arabic nlp tasks the user has the right to run
+**متى:** عند مهام معالجة العربية الطبيعية التي يحق للمستخدم تشغيلها / arabic nlp tasks the user has the right to run
 
 **كيف:** `pip install camel-tools && camel_data -i light`. Licence note: permissive.
 
@@ -1404,7 +1404,7 @@
 
 **ما هي:** تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع النماذج. — Tokenise Arabic and match rules (blank 'ar'); NER with downloaded models. (spaCy, ★34.0k, MIT).
 
-**متى:** nlp tasks the user has the right to run
+**متى:** عند مهام NLP التي يحق للمستخدم تشغيلها / nlp tasks the user has the right to run
 
 **كيف:** `pip install spacy`. Verified here 2026-10-18: 8 Arabic tokens; matched 'يوم الجمعة' (spacy 3.8.16). Licence note: permissive.
 
@@ -1472,7 +1472,7 @@
 
 **ما هي:** ترجمة عربي-إنجليزي دون اتصال تمامًا. — Translate Arabic↔English fully offline. (Argos Translate, ★6.6k, MIT).
 
-**متى:** translation tasks the user has the right to run
+**متى:** عند مهام الترجمة التي يحق للمستخدم تشغيلها / translation tasks the user has the right to run
 
 **كيف:** `pip install argostranslate (+ ar↔en package ~100 MB)`. Verified here 2026-10-18: import OK; install ar↔en package before translating (argostranslate ). Licence note: permissive.
 

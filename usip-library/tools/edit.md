@@ -386,17 +386,17 @@
 - **doctor**: Tools present and ready options.
   - `python3 scripts/montage_pro.py doctor`
 - **intake**: Measures the media into job1/intake.json.
-  - `python3 scripts/montage_pro.py intake ./voice.wav --job ./job1`
+  - `python3 scripts/montage_pro.py intake ./voice.wav --job ../../../out/job1`
 - **transcribe**: Decodes the audio with ffmpeg to 16 kHz mono and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them; skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words.
-  - `python3 scripts/montage_pro.py transcribe ./voice.m4a --job ./out/job1 --language ar --local-only`
+  - `python3 scripts/montage_pro.py transcribe ./voice.m4a --job ../../../out/job1 --language ar --local-only`
 - **intake with transcription**: Opt-in: transcribes right after the probe so the cue mapper imports the aligned words; plain intake is unchanged.
-  - `python3 scripts/montage_pro.py intake ./voice.m4a --job ./out/job1 --transcribe --local-only`
+  - `python3 scripts/montage_pro.py intake ./voice.m4a --job ../../../out/job1 --transcribe --local-only`
 - **options**: Option menu with team, pipeline, status and a stage plan.
-  - `python3 scripts/montage_pro.py options ./job1 --brief "ريلز حماسي"`
+  - `python3 scripts/montage_pro.py options ../../../out/job1 --brief "ريلز حماسي"`
 - **build**: Renders and verifies the option; optional separate -14 LUFS delivery copy.
-  - `python3 scripts/montage_pro.py build ./job1 --option kinetic-film --style kinetic --deliver-mix`
+  - `python3 scripts/montage_pro.py build ../../../out/job1 --option kinetic-film --style kinetic --deliver-mix`
 - **acquire**: Licence-gated download or stream grab into job1/footage with rights.json.
-  - `python3 scripts/montage_pro.py acquire https://example.com/clip.mp4 --job ./job1 --license "CC0" --source-page https://example.com/page`
+  - `python3 scripts/montage_pro.py acquire https://example.com/clip.mp4 --job ../../../out/job1 --license "CC0" --source-page https://example.com/page`
 
 #### المتطلبات والأمان
 
@@ -494,7 +494,7 @@
 - **build**: Plan, plate, scene, render, -c copy mux and verify_video --source-audio; writes OUT/reel.mp4, TEST_REPORT.md and build.json (inputs sha256, commands, results). Exit 4 when the build or the verification fails.
   - `python3 scripts/reel_factory.py build --audio ./voice.m4a --audio-rights direct-permission --audio-rights-evidence https://example.com/permission --transcribe --local-only --shots ./shots.json --credit "الصوت: @x" --style rose-dusk`
 - **draft**: Renders a 540x960 check copy with the same 9:16 checks.
-  - `python3 scripts/reel_factory.py build ... --draft`
+  - `python3 scripts/reel_factory.py build --audio ./voice.m4a --audio-rights owned --words ./words.json --shots ./shots.json --draft`
 
 #### المتطلبات والأمان
 

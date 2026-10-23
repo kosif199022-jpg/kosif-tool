@@ -676,13 +676,13 @@
 #### الأوامر
 
 - **add**: Indexes one file or URL into out/demo/sources_index.json and prints its id, imperative line numbers and secret locations.
-  - `python3 -I scripts/sources_index.py add charter.txt --dir out/demo`
+  - `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo`
 - **list**: Lists indexed sources with counts.
-  - `python3 -I scripts/sources_index.py list --dir out/demo`
+  - `python3 -I scripts/sources_index.py list --dir ../../../out/demo`
 - **show**: Prints one record (metadata, headings and flags, never body text).
-  - `python3 -I scripts/sources_index.py show SRC-0123456789 --dir out/demo`
+  - `python3 -I scripts/sources_index.py show SRC-0123456789 --dir ../../../out/demo`
 - **find**: Matches titles and headings and returns line ranges; --body also returns matching line numbers, never text.
-  - `python3 -I scripts/sources_index.py find "الباب الرابع" --dir out/demo`
+  - `python3 -I scripts/sources_index.py find "الباب الرابع" --dir ../../../out/demo`
 
 #### المتطلبات والأمان
 

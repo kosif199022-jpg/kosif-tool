@@ -42,7 +42,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (13)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -57,6 +57,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `charter-ingest` | Deterministically parses the user's charter roster (sectors «القطاع N», numbered entries with الدور/المهام/الخصائص) into data/experts_500.json (kosif.experts-index.v1): every entry keeps its role, tasks and traits, maps by keywords to catalog families, and is flagged (boilerplate traits, duplicate_of, sensitive consent/regulated). Refuses unless 50 sectors × 10 entries (or --allow-partial) and refuses credential-like text. The council's plan consults it as an index; no persona runs, votes or counts as evidence. | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `business-workflows` | Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step from the named third-party tool to what Claude can do in the session or to a connector, measures native coverage, and writes an Arabic runbook with approval gates for send, post, spend and recording. | `python3 scripts/business_workflows.py functions` | tested-here |
 | `book-methods` | Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card. | `python3 scripts/book_methods.py search "شخصية حوار"` | tested-here |
+| `decision-math` | Runs a seeded Monte Carlo over a profit model with triangular/uniform/normal inputs (P5/P10/P50/P90/P95 and probability of loss), computes break-even units and revenue, ranks a backlog by ICE, computes NPV and IRR by bisection, and finds by bisection the value of one assumption at which the go/no-go decision flips. | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high":13},"units":{"dist":"uniform","low":800,"high":1200},"cost":{"dist":"normal","mean":6,"sd":0.5},"fixed":2500},"profit":"(price - cost) * units - fixed"}' \| python3 scripts/decision_math.py montecarlo - --runs 20000 --seed 7` | tested-here |
+| `stats-lab` | Deterministic decision statistics with the standard library: a pooled two-proportion z-test with p-value, Wald CI of the difference and log risk-ratio CI of the lift; visitors per arm for a target lift, alpha and power; n, mean, median, sd, quartiles and IQR outliers (with row numbers) for a CSV column; and realized gains per sell from a trades CSV by FIFO, LIFO or HIFO lots with fees and exact decimals. | `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130` | tested-here |
 
 <!-- hub:area:think:end -->
 

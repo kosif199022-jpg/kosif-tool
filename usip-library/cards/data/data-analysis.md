@@ -60,7 +60,7 @@
 
 **ما هي:** اجمع ولخّص وأعِد تشكيل الجداول (groupby وpivot_table) على ملفات CSV أو Excel. — Group, summarise and pivot tabular data from CSV/Excel with pandas.
 
-**متى:** any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX
+**متى:** عند أي سؤال عن جدول: مجاميع لكل مجموعة، ونسب، وأعلى N، ومحاور شهر-قناة؛ أو رفع المستخدم CSV/XLSX / any table question: totals per group, shares, top-N, month-by-channel pivots; user uploads a CSV/XLSX
 
 **كيف:** pd.read_csv(path, encoding='utf-8-sig') -> df.groupby(key, sort=False)[cols].sum().sort_values(...) ; df.pivot_table(index, columns, values, aggfunc='sum'). Check shape against expectations (proof: 180 rows, pivot 12x3). pandas 3.x is current: check the installed version before you write code from memory.
 
@@ -85,7 +85,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -129,7 +129,7 @@
 
 **ما هي:** اكتب SQL كاملًا (CTE ودوال نافذة) على ملف CSV أو Parquet دون تحميله أو إنشاء قاعدة. — Run full SQL (CTEs, window functions) over CSV/Parquet files in-process, no server, no load step.
 
-**متى:** joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory
+**متى:** عند الربط والدوال النافذة (LAG وRANK والمجاميع الجارية) والمقارنة شهرًا بشهر، والملفات الأكبر من ذاكرة pandas المريحة / joins, window functions (LAG, RANK, running totals), month-over-month, files bigger than comfortable pandas memory
 
 **كيف:** con=duckdb.connect(); con.sql("WITH m AS (SELECT month, region, SUM(revenue) rev FROM read_csv('f.csv', header=true) GROUP BY 1,2) SELECT *, rev-LAG(rev) OVER (PARTITION BY region ORDER BY month) mom, RANK() OVER (PARTITION BY month ORDER BY rev DESC) rk FROM m").df(). Proof ran a CTE + LAG + RANK + NULLIF query on the raw CSV in 0.05 s.
 
@@ -154,7 +154,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -199,7 +199,7 @@
 
 **ما هي:** حوّل CSV إلى Parquet مضغوط بأنواع أعمدة ثابتة، وتحقق من عدد الصفوف بعد القراءة. — Convert CSV to typed, compressed Parquet and verify the row count on read-back.
 
-**متى:** handing data to another tool or session; repeated queries on the same data; keeping types stable
+**متى:** عند تسليم البيانات لأداة أو جلسة أخرى؛ وتكرار الاستعلامات على البيانات نفسها؛ وتثبيت الأنواع / handing data to another tool or session; repeated queries on the same data; keeping types stable
 
 **كيف:** duckdb: COPY (SELECT cols FROM read_csv('f.csv', header=true)) TO 'f.parquet' (FORMAT parquet); then SELECT COUNT(*) FROM 'f.parquet'. pyarrow alternative: pq.write_table / pq.read_table. Proof: 180 rows -> 3,590 B -> 180 rows.
 
@@ -222,7 +222,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -268,7 +268,7 @@
 
 **ما هي:** جداول سريعة بمحرك Rust واستعلامات كسولة؛ الإصدار 2.0 غيّر بعض الواجهات. — Rust-backed DataFrames with lazy queries; version 2.0 changed parts of the API.
 
-**متى:** multi-million-row files, memory pressure, or when a lazy query plan helps
+**متى:** عند ملفات بملايين الصفوف، أو ضغط الذاكرة، أو حين تفيد خطة استعلام كسولة / multi-million-row files, memory pressure, or when a lazy query plan helps
 
 **كيف:** pl.scan_csv(path).group_by('k').agg(pl.col('v').sum()).collect(). Before writing code from memory, check `python -c 'import polars;print(polars.__version__)'`: the 2026-10-16 snapshot had 2.0.0 and its API differs from 1.x.
 
@@ -291,7 +291,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -336,7 +336,7 @@
 
 **ما هي:** اكتب CSV بترميز UTF-8 مع BOM حتى يعرض Excel الحروف العربية، واقرأه بالترميز نفسه. — Write CSV as UTF-8 with BOM so Excel shows Arabic, and read it back with the same codec.
 
-**متى:** any CSV with Arabic headers or values that a person will open in Excel
+**متى:** عند أي CSV بعناوين أو قيم عربية سيفتحه شخص في Excel / any CSV with Arabic headers or values that a person will open in Excel
 
 **كيف:** open(p,'w',newline='',encoding='utf-8-sig') + csv.DictWriter; read with encoding='utf-8-sig' (otherwise the first header gets a \ufeff prefix). Proof wrote and re-read 180 Arabic rows; Excel itself was not opened.
 
@@ -359,7 +359,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -403,7 +403,7 @@
 
 **ما هي:** حُلّ المعادلات والاشتقاق والتكامل حلًا رمزيًا دقيقًا بدل الحساب الذهني. — Solve equations, derivatives and integrals exactly instead of doing mental arithmetic.
 
-**متى:** break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number
+**متى:** عند نقطة التعادل، وأمثل سعر، والإجابات بصيغة مغلقة، والتحقق من مُحسِّن عددي، وأي رقم «دقيق» / break-even, optimum price, closed-form answers, checking a numeric optimiser, any 'exact' number
 
 **كيف:** Q,p=sp.symbols('Q p',positive=True); sp.solve(sp.Eq(50*Q-30*Q-120000,0),Q) -> [6000]; sp.solve(sp.diff((p-20)*(1000-10*p),p),p) -> [60] and diff twice = -20 < 0 confirms a maximum; sp.integrate(sp.exp(-x**2),(x,-sp.oo,sp.oo)) -> sqrt(pi).
 
@@ -426,7 +426,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -472,7 +472,7 @@
 
 **ما هي:** قِس الاتجاه (انحدار خطي) وقارن مجموعتين باختبار Welch، وأبلغ عن الأثر والدلالة معًا. — Fit trends and compare groups (Welch t-test), reporting effect and significance together.
 
-**متى:** 'is this growing?', 'is A different from B?', before claiming a difference in a report
+**متى:** عند «هل هذا ينمو؟» و«هل A يختلف عن B؟»، وقبل الادعاء بوجود فرق في تقرير / 'is this growing?', 'is A different from B?', before claiming a difference in a report
 
 **كيف:** r=stats.linregress(x,y) -> slope, r^2=r.rvalue**2; stats.ttest_ind(a,b,equal_var=False). Proof: slope +8,018/month, r^2 0.706; Welch t=3.60, p=2.2e-3 on synthetic data. Report the slope or difference with units, not just p.
 
@@ -497,7 +497,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -542,7 +542,7 @@
 
 **ما هي:** انحدار OLS بجداول معاملات كاملة ونماذج سلاسل زمنية. — OLS with full coefficient tables, plus time-series models.
 
-**متى:** you need standard errors, confidence intervals and diagnostics, not just a slope
+**متى:** عند الحاجة إلى أخطاء معيارية وفترات ثقة وتشخيصات لا مجرد ميل / you need standard errors, confidence intervals and diagnostics, not just a slope
 
 **كيف:** sm.OLS(y, sm.add_constant(X)).fit().summary(). The arsenal smoke test recovered slope 2.0 on y=2x+1.
 
@@ -565,7 +565,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -610,7 +610,7 @@
 
 **ما هي:** حوّل الافتراضات غير المؤكدة إلى توزيعات، واحسب احتمال الخسارة والنسب المئوية بدل رقم واحد. — Turn uncertain assumptions into distributions and report P(loss) and percentiles instead of one point estimate.
 
-**متى:** plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'
+**متى:** عند الخطط والميزانيات والتوقعات القائمة على مدخلات مخمَّنة؛ و«ما مدى خطورة هذا؟» / plans, budgets and forecasts that rest on guessed inputs; 'how risky is this?'
 
 **كيف:** rng=np.random.default_rng(seed); draw demand ~N, price ~triangular, cost ~U (100k draws); profit=units*(price-cost)-fixed; report (profit<0).mean() and np.percentile(profit,[5,50,95]). Proof: P(loss)=0.356, P5 -33,252, P50 10,570, P95 61,457.
 
@@ -636,7 +636,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -681,7 +681,7 @@
 
 **ما هي:** رسوم PNG ثابتة بعناوين عربية صحيحة الاتصال بخطوط محلية (Tajawal/Amiri). — Static PNG charts with correctly joined Arabic titles and labels, using bundled fonts.
 
-**متى:** report figures, charts for docx/pptx/pdf, social images of data
+**متى:** عند أشكال التقارير، ومخططات docx/pptx/pdf، وصور وسائل التواصل للبيانات / report figures, charts for docx/pptx/pdf, social images of data
 
 **كيف:** font_manager.fontManager.addfont('Tajawal-Bold.ttf'); rcParams['font.family']=['Tajawal','DejaVu Sans']; title with loc='right' for RTL; label bars directly; spines top/right off; muted grid. Then open the PNG and look. Proof chart.png: 78 KB.
 
@@ -707,7 +707,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -752,7 +752,7 @@
 
 **ما هي:** matplotlib 3.11 وPillow 12 يشكّلان العربية بأنفسهما؛ إضافة reshaper+bidi فوقهما تعكس النص. — matplotlib 3.11 and Pillow 12 shape Arabic themselves; adding reshaper+bidi on top reverses the text.
 
-**متى:** before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
+**متى:** قبل رسم أي عربية في matplotlib أو Pillow؛ وعند رؤية عربية معكوسة أو غير متصلة / before drawing any Arabic in matplotlib or Pillow; when you see reversed or unjoined Arabic
 
 **كيف:** RAQM=getattr(matplotlib.ft2font,'__libraqm_version__',None); text = s if RAQM else get_display(arabic_reshaper.reshape(s)). For Pillow: PIL.features.check('raqm'). Proof: libraqm 0.10.5 in both wheels; mpl_arabic_modes.png shows raw (correct) vs reshaped (reversed).
 
@@ -777,7 +777,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -823,7 +823,7 @@
 
 **ما هي:** شغّل مدقق ألوان مهارة dataviz (التباين، شريط الإضاءة، عمى الألوان) بدل الحكم بالعين. — Run the dataviz skill's palette validator (contrast, lightness band, colour-blind separation) instead of eyeballing.
 
-**متى:** any chart with colour; always before multi-series categorical palettes
+**متى:** عند أي رسم بألوان؛ ودائمًا قبل لوحات الألوان الفئوية متعددة السلاسل / any chart with colour; always before multi-series categorical palettes
 
 **كيف:** Load the dataviz skill if the host lists it, then `node <skill>/scripts/validate_palette.js "#hex,#hex" --mode light` and again `--mode dark`. Fix every FAIL. Proof: #2a78d6 (light) and #3987e5 (dark) PASS all checks.
 
@@ -848,7 +848,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -893,7 +893,7 @@
 
 **ما هي:** رسوم تفاعلية بتلميحات وتكبير في ملف HTML؛ الحجم الافتراضي كبير لأن المكتبة تُضمَّن كاملة. — Interactive HTML charts with hover and zoom; by default the whole library is inlined, so the file is large.
 
-**متى:** an exploratory chart someone will open in a browser; not for print
+**متى:** عند مخطط استكشافي سيفتحه أحدهم في متصفح؛ وليس للطباعة / an exploratory chart someone will open in a browser; not for print
 
 **كيف:** px.bar(df,x,y).write_html('c.html', include_plotlyjs='cdn') to avoid inlining the library. The arsenal run inlined it and got 4.8 MB; the 'cdn' variant was not timed. PNG export needs kaleido + Chrome.
 
@@ -916,7 +916,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -961,7 +961,7 @@
 
 **ما هي:** رسم تصريحي يُخرج JSON بمواصفة Vega-Lite يمكن عرضه في صفحة ويب. — Declarative charts that emit a Vega-Lite JSON spec for a web page.
 
-**متى:** you want a portable chart spec rather than pixels
+**متى:** حين تريد مواصفة رسم قابلة للنقل بدل الصور النقطية / you want a portable chart spec rather than pixels
 
 **كيف:** alt.Chart(df).mark_bar().encode(x='k', y='v').to_json(). The arsenal run produced the JSON.
 
@@ -984,7 +984,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1029,7 +1029,7 @@
 
 **ما هي:** توزيعات وعلاقات بسطر واحد فوق matplotlib. — Distributions and relationships in one line, on top of matplotlib.
 
-**متى:** histograms, box/violin plots, pair plots in exploratory analysis
+**متى:** للمدرّجات التكرارية ومخططات الصندوق والكمان والرسوم الزوجية في التحليل الاستكشافي / histograms, box/violin plots, pair plots in exploratory analysis
 
 **كيف:** sns.histplot(data); sns.boxplot(x=,y=,data=). Then apply the same Arabic/font rules as matplotlib.
 
@@ -1052,7 +1052,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1097,7 +1097,7 @@
 
 **ما هي:** تصنيف وانحدار وتجميع بخطوط معالجة موحدة. — Classification, regression and clustering through uniform pipelines.
 
-**متى:** tabular prediction, clustering customers, baseline models before anything heavier
+**متى:** عند التنبؤ بالبيانات الجدولية أو تقسيم العملاء إلى مجموعات أو بناء نماذج أساس قبل أي نموذج أثقل / tabular prediction, clustering customers, baseline models before anything heavier
 
 **كيف:** Pipeline([('scale',StandardScaler()),('m',RandomForestClassifier(random_state=0))]); evaluate with cross_val_score, never with the training score. The arsenal smoke test fitted iris; its training score of 1.0 shows the API works and says nothing about accuracy.
 
@@ -1120,7 +1120,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1165,7 +1165,7 @@
 
 **ما هي:** أقوى خط أساس للبيانات الجدولية. — The strongest baseline for tabular data.
 
-**متى:** tabular prediction where a random forest plateaus
+**متى:** عند التنبؤ بالبيانات الجدولية حين تتوقف الغابة العشوائية عن التحسن / tabular prediction where a random forest plateaus
 
 **كيف:** xgb.XGBRegressor(n_estimators=...).fit(X,y); lgb.LGBMRegressor(verbose=-1). Use early stopping on a validation split. Both ran fit/predict in the arsenal snapshot.
 
@@ -1188,7 +1188,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1233,7 +1233,7 @@
 
 **ما هي:** احسب التوليفة المثلى تحت القيود بمحلّل HiGHS، وتحقق من الرأس بحل دقيق. — Find the optimal mix under constraints with HiGHS and confirm the vertex exactly.
 
-**متى:** allocation, product mix, schedules, budgets with limits
+**متى:** عند توزيع الموارد ومزيج المنتجات والجداول والميزانيات ذات القيود / allocation, product mix, schedules, budgets with limits
 
 **كيف:** optimize.linprog(c=[-40,-30], A_ub=[[1,1],[2,1]], b_ub=[40,60], bounds=[(0,None)]*2, method='highs') (negate to maximise) -> x=y=20, profit 1,400; confirm with sympy.solve on the two binding constraints.
 
@@ -1257,7 +1257,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1302,7 +1302,7 @@
 
 **ما هي:** محللات Google للبرمجة الخطية والصحيحة والقيود والمسارات. — Google's solvers for LP, MIP, constraint programming and routing.
 
-**متى:** integer decisions, scheduling, vehicle routing, assignment
+**متى:** عند القرارات الصحيحة (العددية) والجدولة وتوجيه المركبات والإسناد / integer decisions, scheduling, vehicle routing, assignment
 
 **كيف:** pywraplp.Solver.CreateSolver('GLOP') for LP, 'SCIP'/'CBC' for MIP; cp_model.CpModel() for CP-SAT. The arsenal GLOP run maximised 3x on [0,10] to 10.0. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 
@@ -1326,7 +1326,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1371,7 +1371,7 @@
 
 **ما هي:** الصيغة القديمة LpVariable وPULP_CBC_CMD تفشل في PuLP 4؛ المحلّل المتاح HiGHS. — The old LpVariable/PULP_CBC_CMD style fails in PuLP 4; the available solver is HiGHS.
 
-**متى:** any code you remember from PuLP 2.x/3.x
+**متى:** عند وجود أي شيفرة تتذكرها من PuLP 2.x/3.x / any code you remember from PuLP 2.x/3.x
 
 **كيف:** x=m.add_variable('x',0,4); m.solve(pulp.HiGHS(msg=False)); pulp.listSolvers(onlyAvailable=True) -> ['HiGHS']. If you need OR-Tools instead, run it in a separate process or venv. Do not import pulp 4 (highspy) and ortools in the same Python process: both bundle HiGHS, so ortools fails with ImportError (undefined symbol in libortools) or pulp reports "HiGHS: Not Available". Use separate processes or venvs.
 
@@ -1395,7 +1395,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1440,7 +1440,7 @@
 
 **ما هي:** صُغ مسائل التحسين المحدّب كما تُكتب رياضيًا. — Write convex optimisation problems the way they look on paper.
 
-**متى:** portfolio weights, least squares with constraints, regularised fits
+**متى:** لأوزان المحافظ والمربعات الصغرى بقيود والتهيئات المنتظمة / portfolio weights, least squares with constraints, regularised fits
 
 **كيف:** x=cp.Variable(); cp.Problem(cp.Minimize((x-2)**2)).solve() -> 2.0 (arsenal run).
 
@@ -1463,7 +1463,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1508,7 +1508,7 @@
 
 **ما هي:** أثبِت قيودًا منطقية وعددية أو جد حلولًا لها (ألغاز، جداول، تحقق). — Find or rule out solutions to logical/integer constraints (puzzles, rosters, verification).
 
-**متى:** 'is there any assignment that…', configuration checks, puzzles
+**متى:** عند سؤال «هل يوجد أي إسناد يحقق…» وفحص الإعدادات والألغاز / 'is there any assignment that…', configuration checks, puzzles
 
 **كيف:** a,b=z3.Ints('a b'); s=z3.Solver(); s.add(a+b==10,a-b==4); s.check(); s.model() -> a=7,b=3 (arsenal run). unsat is itself a proof of impossibility.
 
@@ -1531,7 +1531,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1576,7 +1576,7 @@
 
 **ما هي:** أقصر مسار ومركزية ومجتمعات على شبكات العلاقات. — Shortest paths, centrality and communities on relationship networks.
 
-**متى:** dependencies, org charts, routes, social graphs
+**متى:** للاعتماديات والهياكل التنظيمية والمسارات والشبكات الاجتماعية / dependencies, org charts, routes, social graphs
 
 **كيف:** nx.shortest_path(G,a,b); nx.pagerank(G); nx.community.louvain_communities(G). The arsenal run returned the shortest path on path_graph(5).
 
@@ -1599,7 +1599,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1644,7 +1644,7 @@
 
 **ما هي:** مساحات ومسافات وإسقاطات وتجميع مكاني على بيانات جغرافية. — Areas, distances, projections and spatial joins on geographic data.
 
-**متى:** per-city/area aggregation, distances, buffers; data feeding maps
+**متى:** عند التجميع لكل مدينة/منطقة وحساب المسافات والنطاقات المحيطة، وعند تغذية الخرائط بالبيانات / per-city/area aggregation, distances, buffers; data feeding maps
 
 **كيف:** gdf.to_crs(3857) before measuring metres; Transformer.from_crs(4326,3857,always_xy=True). The arsenal run gave Cairo lon 31.2 -> x 3,473,168 m.
 
@@ -1669,7 +1669,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1714,7 +1714,7 @@
 
 **ما هي:** تنبؤ بسلاسل زمنية فيها موسمية وأعياد. — Forecasts for seasonal time series with holidays.
 
-**متى:** weekly/daily business series with seasonality
+**متى:** للسلاسل الأسبوعية/اليومية في الأعمال ذات الموسمية / weekly/daily business series with seasonality
 
 **كيف:** Prophet().fit(df[['ds','y']]).predict(future). It pulls cmdstan (heavy), so try statsmodels first. Not installed or run here.
 
@@ -1737,7 +1737,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1782,7 +1782,7 @@
 
 **ما هي:** كل رقم دقيق يأتي من كود، ويُطابَق بطريقتين مستقلتين، ويُجمَّد في ملف، ثم يُكتب النص من الملف. — Every exact figure comes from code, is reconciled two independent ways, frozen to a file, and the prose is written from that file.
 
-**متى:** any answer, report, dashboard or slide that contains numbers
+**متى:** عند أي إجابة أو تقرير أو لوحة أو شريحة تحتوي أرقامًا / any answer, report, dashboard or slide that contains numbers
 
 **كيف:** 1) compute; 2) control totals: plain csv sum == pandas == SQL, and subtotals add back to the total; 3) write results.json; 4) generate text/HTML from results.json, never by retyping; 5) if something does not reconcile, report the gap and never plug it. Proof: 3,281,841 matched three ways and the dashboard reads the frozen numbers.
 
@@ -1807,7 +1807,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1852,7 +1852,7 @@
 
 **ما هي:** لا SELECT *، وأسماء CTE واضحة، وحماية من القسمة على صفر، وعدد صفوف متوقع يُتحقق منه. — No SELECT *, named CTEs, divide-by-zero guards, and an asserted expected row count.
 
-**متى:** every query whose result feeds a decision
+**متى:** عند كل استعلام تغذّي نتيجته قرارًا / every query whose result feeds a decision
 
 **كيف:** Name the columns; use NULLIF(den,0); assert COUNT(*) against the expected grain (12x5=60); compare SUM to an independent total; sample-check five rows by hand. Proof query follows all of these.
 
@@ -1875,7 +1875,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1919,7 +1919,7 @@
 
 **ما هي:** ولّد بيانات تجريبية ببذرة ثابتة واكتب «اصطناعية» على كل مخرج؛ مكتبة faker لا تضمن أسماء عربية. — Generate fixtures from a fixed seed and label every output as synthetic; faker's Arabic locales are unreliable.
 
-**متى:** demos, tests, proofs, examples without real data
+**متى:** في العروض والاختبارات والإثباتات والأمثلة دون بيانات حقيقية / demos, tests, proofs, examples without real data
 
 **كيف:** np.random.default_rng(7); write the seed in the output. faker('ar_EG').name() returned a Latin name in the arsenal run, so hand-write Arabic name lists. Proof chart and dashboard both say 'synthetic (seed 7)'.
 
@@ -1942,7 +1942,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1988,7 +1988,7 @@
 
 **ما هي:** فصل المدخلات عن الحسابات عن المخرجات، دون أرقام مثبّتة داخل المعادلات، مع خلايا فحص تساوي صفرًا. — Separate inputs, calculations and outputs; no hard-coded numbers inside formulas; check cells that must equal zero.
 
-**متى:** building or reviewing an Excel/Sheets model
+**متى:** عند بناء نموذج Excel/Sheets أو مراجعته / building or reviewing an Excel/Sheets model
 
 **كيف:** Sheets: Inputs (blue font, units, source), Calc (formulas only), Outputs (links only), Checks (balance - assets + liabilities = 0; sum of shares = 100%). Scenario overrides live on Inputs. Recalculate with LibreOffice (DOC-03) before you quote anything.
 
@@ -2011,7 +2011,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2056,7 +2056,7 @@
 
 **ما هي:** حل المعادلات وتبسيطها واشتقاقها وتكاملها بدقة رمزية وتصديرها LaTeX. — Solve, simplify, differentiate and integrate exactly; export LaTeX. (SymPy, ★15.0k, BSD-3-Clause).
 
-**متى:** symbolic math tasks the user has the right to run
+**متى:** في مهام الرياضيات الرمزية التي يحق للمستخدم تشغيلها / symbolic math tasks the user has the right to run
 
 **كيف:** `pip install sympy`. Verified here 2026-10-18: roots [2, 3], ∫sin²=π/2, LaTeX \frac{\pi}{2} (sympy 1.14.0). Licence note: permissive.
 
@@ -2080,7 +2080,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2127,7 +2127,7 @@
 
 **ما هي:** صياغة القيود وخصائص البرامج كمسائل SMT وإثباتها أو إيجاد مثال مضاد. — Encode constraints or program properties as SMT and prove them or get a counterexample. (Z3 SMT solver, ★12.8k, MIT).
 
-**متى:** formal proof tasks the user has the right to run
+**متى:** في مهام الإثبات الصوري التي يحق للمستخدم تشغيلها / formal proof tasks the user has the right to run
 
 **كيف:** `pip install z3-solver`. Verified here 2026-10-18: a+b=b+a proved (unsat negation); a²=49 ∧ a<0 → a=-7 (z3 ). Licence note: permissive.
 
@@ -2150,7 +2150,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2197,7 +2197,7 @@
 
 **ما هي:** كتابة براهين رياضية صورية والتحقق منها آليًا. — Write and machine-check formal proofs of theorems. (Lean 4, ★9.6k, Apache-2.0).
 
-**متى:** formal proof tasks the user has the right to run
+**متى:** في مهام الإثبات الصوري التي يحق للمستخدم تشغيلها / formal proof tasks the user has the right to run
 
 **كيف:** `curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh \| sh -s -- -y (Mathlib cache ~1–2 GB)`. Licence note: permissive.
 
@@ -2221,7 +2221,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2266,7 +2266,7 @@
 
 **ما هي:** تنفيذ SQL مباشرة على ملفات CSV وParquet وJSON ضخمة داخل العملية. — Run SQL directly over multi-GB CSV/Parquet/JSON files in-process. (DuckDB, ★42.2k, MIT).
 
-**متى:** sql engines tasks the user has the right to run
+**متى:** في مهام محركات SQL التي يحق للمستخدم تشغيلها / sql engines tasks the user has the right to run
 
 **كيف:** `pip install duckdb`. Verified here 2026-10-18: group-by over 100k rows → 7 groups (duckdb 1.5.6). Licence note: permissive.
 
@@ -2289,7 +2289,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2336,7 +2336,7 @@
 
 **ما هي:** تنظيف وتجميع جداول كبيرة بإطارات بيانات كسولة متعددة الخيوط. — Clean and aggregate large tables with lazy, multi-threaded dataframes. (Polars, ★40.1k, MIT).
 
-**متى:** dataframes tasks the user has the right to run
+**متى:** في مهام أطر البيانات التي يحق للمستخدم تشغيلها / dataframes tasks the user has the right to run
 
 **كيف:** `pip install polars`. Verified here 2026-10-18: lazy group_by sum a=4 b=7 c=4 (polars 2.0.0). Licence note: permissive.
 
@@ -2359,7 +2359,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2406,7 +2406,7 @@
 
 **ما هي:** تدريب نماذج التصنيف والانحدار على بيانات جدولية وتقييمها بالتحقق المتقاطع. — Train, cross-validate and explain classifiers and regressors on tabular data. (scikit-learn, ★67.7k, BSD-3-Clause).
 
-**متى:** machine learning tasks the user has the right to run
+**متى:** في مهام تعلّم الآلة التي يحق للمستخدم تشغيلها / machine learning tasks the user has the right to run
 
 **كيف:** `pip install scikit-learn`. Verified here 2026-10-18: iris RandomForest 5-fold accuracy 0.960 (sklearn 1.9.1). Licence note: permissive.
 
@@ -2429,7 +2429,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2476,7 +2476,7 @@
 
 **ما هي:** بناء توقعات AutoARIMA وETS مع فترات ثقة لسلاسل زمنية كثيرة. — Fit AutoARIMA/ETS forecasts with prediction intervals on many series. (StatsForecast, ★4.9k, Apache-2.0).
 
-**متى:** forecasting tasks the user has the right to run
+**متى:** في مهام التنبؤ التي يحق للمستخدم تشغيلها / forecasting tasks the user has the right to run
 
 **كيف:** `pip install statsforecast`. Verified here 2026-10-18: 6-month forecast, first 196.0 with 80% interval (statsforecast 2.1.1). Licence note: permissive.
 
@@ -2499,7 +2499,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2546,7 +2546,7 @@
 
 **ما هي:** ربط البيانات الجغرافية وإعادة إسقاطها بإحداثيات مترية حقيقية وتصديرها GeoJSON. — Join, buffer and reproject vector geodata in true metric CRSs and export GeoJSON. (GeoPandas, ★5.3k, BSD-3-Clause).
 
-**متى:** geospatial tasks the user has the right to run
+**متى:** في المهام الجغرافية المكانية التي يحق للمستخدم تشغيلها / geospatial tasks the user has the right to run
 
 **كيف:** `pip install geopandas`. Verified here 2026-10-18: 1 km buffer around Cairo in UTM 36N → 3.1413 km² (π expected); lon span 0.0207° (geopandas 1.2.0). Licence note: permissive.
 
@@ -2570,7 +2570,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2617,7 +2617,7 @@
 
 **ما هي:** قراءة FASTA وGenBank وترجمة التسلسلات ومحاذاتها. — Parse FASTA/GenBank, translate and align sequences. (Biopython, ★5.2k, Biopython License / BSD-3-Clause).
 
-**متى:** bioinformatics tasks the user has the right to run
+**متى:** في مهام المعلوماتية الحيوية التي يحق للمستخدم تشغيلها / bioinformatics tasks the user has the right to run
 
 **كيف:** `pip install biopython`. Verified here 2026-10-18: protein MAIVMGR, GC 0.56 (Bio 1.88). Licence note: permissive.
 
@@ -2640,7 +2640,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2686,7 +2686,7 @@
 
 **ما هي:** قراءة صيغ SMILES وحساب الواصفات الجزيئية ورسم الجزيئات. — Parse SMILES, compute molecular descriptors and draw molecules. (RDKit, ★3.6k, BSD-3-Clause).
 
-**متى:** chemistry tasks the user has the right to run
+**متى:** في مهام الكيمياء التي يحق للمستخدم تشغيلها / chemistry tasks the user has the right to run
 
 **كيف:** `pip install rdkit`. Verified here 2026-10-18: aspirin MW 180.16, 13 heavy atoms (rdkit 2026.09.1). Licence note: permissive.
 
@@ -2709,7 +2709,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `dataset` ← المخرج `report`، والمنفّذ `method:ANLY-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `repo-sync-catalog`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `stats-lab` · `repo-sync-catalog`.
 - مراحل النوع: فحص الملف ← تنظيف موثق ← حساب بسكربت ← تسوية المجاميع ← رسم يناسب السؤال ← تسليم مع السكربت.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

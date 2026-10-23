@@ -50,7 +50,7 @@
 
 **ما هي:** ولّد أفكارًا كثيرة دون حكم بثلاثة إلى خمسة مشغّلات، ثم قارب بمصفوفة تقييم، واحتفظ بخيار آمن وخيار جريء. — Generate many ideas without judging, using 3–5 operators, then converge with a rubric and keep one safe and one bold option.
 
-**متى:** Any creative, design, naming, campaign or 'give me ideas' request; the EXPLORE step of THINK-01.
+**متى:** عند أي طلب إبداعي أو تصميمي أو تسمية أو حملة أو «أعطني أفكارًا»؛ وخطوة الاستكشاف في THINK-01. / Any creative, design, naming, campaign or 'give me ideas' request; the EXPLORE step of THINK-01.
 
 **كيف:** Diverge: pick 3–5 operators (IDEA-02…IDEA-17) suited to the task, aim for 8–20 raw ideas, no judging while generating, write each idea as one line. Converge: score fit to done-criteria, feasibility with ✅/🟢 powers (check `python3 scripts/powers.py search`), novelty, risk (1–5 each); merge near-duplicates. Keep 1 safe + 1 bold; show both early (as stills or a one-paragraph treatment) when taste matters, then build the chosen one. Treat these operators as structured-diversity heuristics, not proven boosters.
 
@@ -117,7 +117,7 @@
 
 **ما هي:** جرّد المشكلة إلى هدفها الذي لا يُختزل وقيودها الحقيقية، ثم أعد البناء دون افتراضات موروثة. — Strip the problem to its irreducible goal and real constraints, then rebuild without inherited assumptions.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Ask 'what is this actually for?' three times; list true constraints vs habits; design from the true ones. General example: 'Make the weekly report faster': the goal is a decision, not a report → a one-number alert when the metric crosses a threshold. Motion/design example: 'Intro animation': the goal is two seconds of attention → one bold kinetic word on the first frame beats a six-second logo sting.
 
@@ -184,7 +184,7 @@
 
 **ما هي:** اسأل كيف تضمن الفشل، ثم تجنّب كل بند. — Ask how to guarantee failure, then avoid each item.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** List 5–10 ways to make it fail for sure; turn each into a rule or a check. General example: Onboarding fails if a password is demanded first → magic-link sign-in. Motion/design example: A reel fails if text is unreadable on a phone → minimum type size ≈6% of frame height and a safe zone; check at 360 px wide.
 
@@ -252,7 +252,7 @@
 
 **ما هي:** افترض أن العمل فشل فعلًا، واكتب أرجح ثلاثة أسباب، وعالجها الآن. — Assume the work has already failed, write the three likeliest reasons, and mitigate them now.
 
-**متى:** DECIDE step of THINK-06; before any long render, migration, launch or paid generation.
+**متى:** في خطوة القرار من THINK-06؛ وقبل أي تصيير طويل أو ترحيل أو إطلاق أو توليد مدفوع. / DECIDE step of THINK-06; before any long render, migration, launch or paid generation.
 
 **كيف:** Write 'it is next week and this failed because…' three times; add one mitigation per reason to the plan. General example: A data migration failed on time zones → write a time-zone test before migrating. Motion/design example: A render failed on audio drift → lock fps, then check duration and audio length with ffprobe before the final render.
 
@@ -321,7 +321,7 @@
 
 **ما هي:** فكّك المجهول إلى عوامل يمكن تخمينها واضربها، ثم تحقق من رتبة الحجم. — Break the unknown into guessable factors, multiply, and sanity-check the order of magnitude.
 
-**متى:** Feasibility checks in EXPLORE; any 'how long / how much / will it fit?'.
+**متى:** في فحوص الجدوى ضمن الاستكشاف؛ وعند أي سؤال «كم يستغرق / كم تكلفته / هل يتسع؟». / Feasibility checks in EXPLORE; any 'how long / how much / will it fit?'.
 
 **كيف:** Write the formula, guess each factor, compute in code (THINK-17), compare with any known anchor; keep it to orders of magnitude. General example: API cost = 10k users × 5 calls × 2k tokens ≈ 100M tokens/month → caching matters. Motion/design example: 60 s × 30 fps = 1,800 frames × 0.3 s/frame ≈ 9 min render → preview at half scale first.
 
@@ -389,7 +389,7 @@
 
 **ما هي:** مرّ على سبعة أفعال: استبدل، ادمج، كيّف، عدّل، استخدم لغرض آخر، احذف، اعكس؛ فكرة لكل حرف. — Walk seven verbs: substitute, combine, adapt, modify, put to other use, eliminate, reverse; one idea per letter.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Apply each verb to the current draft and write one variant per verb; keep the 2 strongest. General example: A CLI tool: Combine with chat, Eliminate the config file, Reverse it into push notifications. Motion/design example: Caption style: Substitute words with icons, Reverse so text exits before it enters, Eliminate the background box.
 
@@ -457,7 +457,7 @@
 
 **ما هي:** اكتب 3–5 أبعاد ولكل بعد خيارات، ثم جرّب تركيبات غير مألوفة. — List 3–5 dimensions with options each, then sample unusual combinations.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Make a table dimension × options; pick 3 random or deliberately odd rows; sketch each in one line. General example: Pricing: {per seat, usage, flat} × {monthly, annual} × {free tier yes/no} → try usage + annual + no free tier. Motion/design example: {type: serif / kufi / mono} × {motion: spring / glitch / draw-on} × {palette: duotone / neon / paper} → kufi + draw-on + paper.
 
@@ -525,7 +525,7 @@
 
 **ما هي:** ابحث عن مجال بعيد حلّ البنية نفسها وانقل آليته. — Find a distant domain that solved the same structure and port its mechanism.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Describe the problem abstractly ('a queue that must prioritise'), list 3 domains with that structure, borrow one mechanism. General example: A code-review queue modelled on hospital triage (severity first, then age). Motion/design example: Transitions borrowed from origami folds or a split-flap departure board.
 
@@ -593,7 +593,7 @@
 
 **ما هي:** أضف قيدًا صارمًا مصطنعًا يجبر على الجِدّة. — Add an artificial hard limit to force novelty.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Pick one limit (count, colour, words, time, tool) and produce a version that obeys it strictly. General example: Explain the feature in seven words, or with no screenshots. Motion/design example: The whole video in two colours and one font weight, or every cut on a beat.
 
@@ -661,7 +661,7 @@
 
 **ما هي:** اسأل: لو كان هذا القيد مجانيًا أو بلا حدود فماذا كنت سأفعل؟ ثم ابحث عن تقريب رخيص. — Ask 'if this constraint were free or infinite, what would I do?', then find a cheap approximation.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Name the binding constraint, imagine it gone, write the ideal, then approximate it with powers you have. General example: Unlimited support staff → an AI FAQ triage that answers the top 20 questions. Motion/design example: Infinite budget means live action → approximate with a 3D scene + depth of field + film grain.
 
@@ -729,7 +729,7 @@
 
 **ما هي:** ادفع معاملًا واحدًا إلى عشرة أضعافه أو إلى عُشره، وانظر ماذا يظهر. — Push one parameter to 10× or 0.1× and see what appears.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Choose a parameter (size, speed, frequency, count, duration); write the 10× and 0.1× versions; keep what surprises. General example: A report at 10× frequency becomes a live dashboard. Motion/design example: A word at 10× scale fills the frame and the camera flies through its letters.
 
@@ -797,7 +797,7 @@
 
 **ما هي:** أعد وصف المهمة بعيني صاحب مصلحة أو شخصية محددة. — Re-describe the task as a specific stakeholder or persona would.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Pick 2–3 personas (angriest customer, a child, the CFO, the viewer's thumb); write what each needs in one line. General example: Explain an outage the way the angriest customer would describe it, then answer that. Motion/design example: Storyboard from the viewer's thumb: what stops the scroll in frame 1?
 
@@ -865,7 +865,7 @@
 
 **ما هي:** ولّد أفكارًا سيئة عمدًا ثم اقلب كل واحدة. — Generate deliberately bad ideas, then flip each one.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Write 5 terrible ideas fast (removes fear of judging), then invert each into its opposite strength. General example: 'Hide the price' flips to 'price in the first line'. Motion/design example: 'Comic Sans everywhere' flips to a playful hand-drawn Arabic face used with intent.
 
@@ -933,7 +933,7 @@
 
 **ما هي:** اسحب كلمة أو صورة أو قوة عشوائية من الفهرس واجبر نفسك على ربطها بالمشكلة. — Pull a random word, image or catalog power and force a link to the problem.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Draw 3 random powers from the catalog (from the skill directory): `python3 -c "import json,glob,random; P=[r for f in glob.glob('data/powers/*.json') for r in json.load(open(f,encoding='utf-8'))]; [print(r['id'], r['name_en']) for r in random.sample(P,3)]"` — then write one idea per draw. Use a fixed seed (`random.seed(7)`) when you want it reproducible. General example: Random word 'tide' → a feature flag that rolls out and back like a tide. Motion/design example: A random particle power applied to a chart reveal: bars assemble from drifting particles.
 
@@ -1002,7 +1002,7 @@
 
 **ما هي:** أنتج عدة نسخ أو وكلاء، وقيّمها بمحكِّم وفق معايير، وادمج أفضل الأجزاء. — Produce N variants (or N subagents), score them with a rubric judge, merge the best parts.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Make 3 variants that differ on purpose; score each on 3–5 criteria (one criterion per judgement, CHECK-14); merge the winning parts; for important work use a fresh-context judge. General example: Three drafts of an email, a judge scores clarity and tone, merge the best opening and close. Motion/design example: Three style frames rendered as stills, judged on readability, brand and wow, then build the winner.
 
@@ -1071,7 +1071,7 @@
 
 **ما هي:** سمِّ مرجعين وخذ من كل منهما آلية واحدة وادمجهما، دون نسخ أي أصل. — Name two references, take one mechanism from each and combine them; never copy assets.
 
-**متى:** Diverge phase of IDEA-01; any 'more creative / different / better' ask.
+**متى:** في مرحلة التباعد من IDEA-01؛ وعند أي طلب «أكثر إبداعًا / مختلف / أفضل». / Diverge phase of IDEA-01; any 'more creative / different / better' ask.
 
 **كيف:** Write 'A's mechanism + B's mechanism'; describe each by its visible property, not by a living artist's name; credit references in notes. General example: Clear docs of a payments company + streaks of a language app → learning docs with streaks. Motion/design example: Swiss grid + Arabic calligraphic stroke reveal; check styles-atlas.md for watched references first.
 
@@ -1139,7 +1139,7 @@
 
 **ما هي:** خذ قوة من عائلة أو مجال آخر لم يطلبه المستخدم واسأل كيف تجعل المُسلَّم أفضل. — Take a power from another family or domain the user did not ask for and ask how it would make the deliverable better.
 
-**متى:** After the safe plan exists (THINK-16); whenever the output looks like what anyone would make.
+**متى:** بعد وجود الخطة الآمنة (THINK-16)؛ وكلما بدا المخرج كما يصنعه أي أحد. / After the safe plan exists (THINK-16); whenever the output looks like what anyone would make.
 
 **كيف:** List the families involved, then pick one from a different domain (`python3 scripts/powers.py stats` shows them); write one idea that uses it; keep it if it serves the done-criteria. General example: A plain CSV summary gains a published interactive dashboard (APP) with the numbers locked in code (ANLY). Motion/design example: A talking-head edit gains kinetic Arabic captions on word timing (SYNC) and a data counter (DATA).
 
@@ -1208,7 +1208,7 @@
 
 **ما هي:** بدل استبيان طويل عن الذوق اعرض ثلاث معاينات صغيرة مختلفة فعلًا ودع المستخدم يختار. — Instead of a long taste questionnaire, show three small, truly different previews and let the user pick.
 
-**متى:** Design, motion, deck or page requests where taste is open and the user gave little guidance.
+**متى:** عند طلبات التصميم أو الموشن أو العروض أو الصفحات حين يكون الذوق مفتوحًا وأعطى المستخدم توجيهًا قليلًا. / Design, motion, deck or page requests where taste is open and the user gave little guidance.
 
 **كيف:** Make 3 single-frame or single-slide previews (each small: <~100 lines of code or one still) that differ on a real axis (type, palette, motion grammar). Name each in two words. Ask one question: 'which direction?'. Then build the chosen one fully. Motion: render one still per direction via the scene's seek(t) and a contact sheet (QA-58).
 
@@ -1276,7 +1276,7 @@
 
 **ما هي:** افحص المسودة بحثًا عن الاختيارات الافتراضية المستهلكة واستبدل كل واحدة بقرار مقصود. — Scan the draft for worn default choices and replace each with a deliberate decision.
 
-**متى:** Before showing any visual, page, deck or motion draft.
+**متى:** قبل عرض أي مسودة بصرية أو صفحة أو عرض أو موشن. / Before showing any visual, page, deck or motion draft.
 
 **كيف:** Flag: gradients everywhere, default purple→blue, decorative blobs, purposeless glassmorphism, over-rounding, cards in cards, centered hero over a stock gradient, one-hue palettes, scroll animations everywhere, personality-less sans stack, vague hero copy. For each hit write the intent first (purpose, audience, tone words, one memorable detail), then change it. Motion add-ons: random easing, everything fading in, text split into letters (never for Arabic).
 
@@ -1344,7 +1344,7 @@
 
 **ما هي:** حوّل ملف بيانات إلى ثلاث حقائق محسوبة بالكود ثم إلى فيلم بيانات قصير تتطابق أرقامه مع الحساب. — Turn a data file into three code-computed facts, then into a short data film whose on-screen numbers match the computation.
 
-**متى:** 'Analyse this CSV and make it shareable', reports that need a reel, sales or KPI updates.
+**متى:** عند «حلل هذا CSV وأنشئ ما يمكن مشاركته»، وتقارير تحتاج ريلًا، وتحديثات المبيعات أو مؤشرات الأداء. / 'Analyse this CSV and make it shareable', reports that need a reel, sales or KPI updates.
 
 **كيف:** 1 ANLY: load with duckdb/pandas, compute 3 facts, freeze them (THINK-17). 2 Pick the chart by question (DATA-01). 3 Storyboard 3–5 beats: hook number → comparison → turn → takeaway (STORY-32). 4 Animate: bars on a damped spring with 75 ms stagger, odometer counter, Arabic-Indic digits when the audience is Arabic (as in proofs/data-story). 5 Verify: grab the frame where each number lands and compare with the frozen values; ffprobe the MP4 (CHECK-02).
 
@@ -1415,7 +1415,7 @@
 
 **ما هي:** نص يُصقل بأسلوب بشري مع تثبيت الأرقام والأسماء، ثم يُنطق، ثم تظهر كلماته على موعد نطقها. — A script polished in a human voice with numbers and names locked, then voiced, then its words appear on their spoken timing.
 
-**متى:** Explainers, announcements, poems, ads from a written idea; a user who sends text and wants a video.
+**متى:** عند الشروحات والإعلانات والقصائد والإعلانات التجارية من فكرة مكتوبة؛ وحين يرسل المستخدم نصًا ويريد فيديو. / Explainers, announcements, poems, ads from a written idea; a user who sends text and wants a video.
 
 **كيف:** 1 WRITE: draft the script; humanize with an anchor lock (numbers, names, links unchanged; diff them). Humanize before alignment, never after. 2 VOICE: keyless TTS (Piper, as in proofs/arabic-voice-kinetic) or a connected voice service 🔑 with consent. 3 words.json from TTS phoneme timing or forced alignment (Whisper alone drifts ≈±150 ms). 4 Kinetic captions: whole Arabic words, RTL, enter on their start time (SYNC). 5 Verify: max word offset ≤1 frame, −14 LUFS, audio length = master.
 
@@ -1485,7 +1485,7 @@
 
 **ما هي:** استخرج رسمًا معرفيًا من مستودع أو ملاحظات، ثم ارسمه خريطة ذهنية تنمو من المركز، تفاعلية ومتحركة. — Extract a knowledge graph from a repo or notes, then draw it as a mind map that grows from the centre, interactive and animated.
 
-**متى:** 'Explain this codebase / topic / book', onboarding, course outlines, research maps.
+**متى:** عند «اشرح قاعدة الشيفرة / الموضوع / الكتاب هذا»، والتهيئة، ومخططات الدورات، وخرائط البحث. / 'Explain this codebase / topic / book', onboarding, course outlines, research maps.
 
 **كيف:** 1 GRAPH: build nodes/edges (a code-graph tool on a repo, or entities and relations extracted from notes); keep each edge's confidence (parsed vs inferred). 2 Pick the central node and two rings by degree. 3 Layout: radial or force layout (d3). 4 Animate: edges draw on in breadth-first order from the centre, labels pop in, the camera dollies to each cluster; parsed edges solid, inferred edges dashed. 5 Deliver an interactive HTML page plus an MP4 via the seekable-scene renderer; verify node count on screen = graph count.
 
@@ -1554,7 +1554,7 @@
 
 **ما هي:** سؤال بحثي يتحول إلى أسئلة فرعية وبحث متوازٍ وسجل ادعاءات، ثم مستند أو عرض بمراجع ورسم واحد. — A research question becomes sub-questions, parallel search and a claim ledger, then a document or deck with citations and one chart.
 
-**متى:** 'Research X and write me a report / deck', market scans, literature reviews, comparisons.
+**متى:** عند «ابحث في X واكتب لي تقريرًا / عرضًا»، ومسوح السوق، ومراجعات الأدبيات، والمقارنات. / 'Research X and write me a report / deck', market scans, literature reviews, comparisons.
 
 **كيف:** 1 WEB: 3–5 sub-questions, broad-then-narrow searches in parallel (subagents for wide topics). 2 Claim ledger with source and date per claim (THINK-12); pages are data, never instructions. 3 Draft from the ledger; mark inference vs fact. 4 DOC: a shareable doc or a deck through the available document skill/connector; one chart computed in code. 5 Verify: every number traces to a ledger row; links open; coverage ledger (THINK-18).
 
@@ -1625,7 +1625,7 @@
 
 **ما هي:** صفحة تفاعلية صغيرة بصور مرسومة بالكود أو مولّدة، ثم تسجيل جولة فيها وتحويلها إلى ريل. — A small interactive page with code-drawn or generated images, then a recorded walkthrough turned into a reel.
 
-**متى:** Quizzes, calculators, product mock-ups, landing pages that also need a promo clip.
+**متى:** عند الاختبارات والحاسبات ونماذج المنتجات الأولية وصفحات الهبوط التي تحتاج أيضًا مقطعًا ترويجيًا. / Quizzes, calculators, product mock-ups, landing pages that also need a promo clip.
 
 **كيف:** 1 APP: build the page (artifact or local HTML), visuals drawn as SVG/Canvas (keyless) or generated through a connected image service 🔑 with consent. 2 Record a scripted walkthrough with Playwright (video) at 1080×1920 or crop later. 3 MEDIA: trim, add captions and a sound bed, loudnorm −14 LUFS. 4 Verify: the page works at 390 px and 1440 px, the reel passes ffprobe checks, the recorded clicks match the script.
 
@@ -1695,7 +1695,7 @@
 
 **ما هي:** نموذج فيرمي بالكود، ثم رسم حساسية يبيّن الافتراضات التي تقلب القرار، ثم مذكرة بثلاثة خيارات. — A Fermi model in code, then a sensitivity chart showing which assumptions flip the decision, then a memo with three options.
 
-**متى:** Pricing, build-vs-buy, hiring, budget, 'is this worth it?' questions.
+**متى:** عند أسئلة التسعير، والبناء مقابل الشراء، والتوظيف، والميزانية، و«هل يستحق هذا؟». / Pricing, build-vs-buy, hiring, budget, 'is this worth it?' questions.
 
 **كيف:** 1 PROD: options incl. do-nothing (THINK-29). 2 ANLY: model in python with named inputs; vary each input ±30% and record the outcome; compute the break-even of each flip-assumption (THINK-17). 3 Tornado chart sorted by impact. 4 Memo: decision first, three options, flip thresholds, kill criteria. 5 Optional: animate the tornado bars for a pitch (DATA family).
 
@@ -1762,9 +1762,9 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Twelve rows pairing a creative operator with a power: even rows fit the brief, odd rows come from distant domains for cross-over; fill, score novelty × feasibility, keep three.
+**ما هي:** اثنا عشر صفًا تقرن عاملًا إبداعيًا بقدرة: الصفوف الزوجية تناسب الموجز، والفردية من مجالات بعيدة للعبور؛ املأ، وقيّم الجدة × الجدوى، واحتفظ بثلاثة. — Twelve rows pairing a creative operator with a power: even rows fit the brief, odd rows come from distant domains for cross-over; fill, score novelty × feasibility, keep three.
 
-**متى:** any creative brief
+**متى:** عند أي موجز إبداعي / any creative brief
 
 **كيف:** `think.py ideas "<seed>" -n 12 --seed 7`.
 
@@ -1835,9 +1835,9 @@
 | نطاق الدليل | `none` |
 | الرخصة | owner |
 
-**ما هي:** Seed → expand → cluster → score → strengthen → prototype → critique → pitch.
+**ما هي:** بذرة ← توسيع ← تجميع ← تقييم ← تقوية ← نموذج أولي ← نقد ← عرض. — Seed → expand → cluster → score → strengthen → prototype → critique → pitch.
 
-**متى:** turning a sentence into a strong concept
+**متى:** عند تحويل جملة إلى مفهوم قوي / turning a sentence into a strong concept
 
 **كيف:** cognition.md §4.
 
@@ -1901,9 +1901,9 @@
 | نطاق الدليل | `none` |
 | الرخصة | owner |
 
-**ما هي:** For each shortlisted idea: strongest objection, one sharpening constraint, the 10× version.
+**ما هي:** لكل فكرة في القائمة المختصرة: أقوى اعتراض، وقيد واحد يصقلها، ونسخة 10×. — For each shortlisted idea: strongest objection, one sharpening constraint, the 10× version.
 
-**متى:** after shortlisting
+**متى:** بعد اختيار القائمة المختصرة / after shortlisting
 
 **كيف:** cognition.md §4 step 5; MODEL-22, MODEL-33.
 
@@ -1966,9 +1966,9 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Score feasibility from the requirement checklist of the power behind each idea (present now vs install vs key).
+**ما هي:** قيّم الجدوى من قائمة مستلزمات القدرة وراء كل فكرة (متوفرة الآن مقابل تثبيت مقابل مفتاح). — Score feasibility from the requirement checklist of the power behind each idea (present now vs install vs key).
 
-**متى:** scoring ideas
+**متى:** عند تقييم الأفكار / scoring ideas
 
 **كيف:** `requirements.py for <ID>` per idea row.
 

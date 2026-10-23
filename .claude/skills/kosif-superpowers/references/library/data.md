@@ -35,8 +35,10 @@
 
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
+| `geo-plate` | لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر | `python3 scripts/geo_plate.py project --proj equirect --size 2000x1000 31.2357,30.0444 -0.1276,51.5072` | tested-here |
 | `repo-sync-catalog` | مزامنة الكتالوج مع PromptsMotion | `python3 tools/sync_catalog.py` | untested |
 | `starter-remotion` | قالب فيلم Remotion | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | tested-elsewhere |
+| `stats-lab` | مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات | `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.
 

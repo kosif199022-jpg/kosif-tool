@@ -462,7 +462,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every film is one index.html whose root div carries data-composition-id, data-width, data-height, data-duration and data-fps, with GSAP timelines registered in window.__timelines and the motion-kit shim so either engine can seek it.
+**ما هي:** كل فيلم هو ملف index.html واحد يحمل عنصره الجذر data-composition-id وdata-width وdata-height وdata-duration وdata-fps، مع جداول GSAP الزمنية المسجّلة في window.__timelines ووصلة motion-kit ليتمكن أي محرك من التنقل فيه. — Every film is one index.html whose root div carries data-composition-id, data-width, data-height, data-duration and data-fps, with GSAP timelines registered in window.__timelines and the motion-kit shim so either engine can seek it.
 
 **متى:** عند بدء فيلم موشن جديد كصفحة HTML واحدة بخط زمني GSAP قابل للتقديم / when starting a new motion film as one HTML page with a seekable GSAP timeline
 
@@ -533,7 +533,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A scene is a JS module that sizes a canvas and exposes DURATION plus renderFrame(t); any renderer can photograph it frame by frame.
+**ما هي:** المشهد وحدة JS تضبط حجم اللوحة وتكشف DURATION مع renderFrame(t)؛ ويستطيع أي مُصيِّر تصويره إطارًا إطارًا. — A scene is a JS module that sizes a canvas and exposes DURATION plus renderFrame(t); any renderer can photograph it frame by frame.
 
 **متى:** حين تحتاج مشهد canvas يُصوَّر إطارًا بإطار ثم يتحول إلى فيديو / when a canvas scene must be captured frame by frame and encoded into a video
 
@@ -601,7 +601,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Assemble an edit purely in ffmpeg: each shot trimmed by frame range, timestamps reset, audio windows trimmed identically, then concatenated and mixed with music.
+**ما هي:** تجميع المونتاج كليًا في ffmpeg: كل لقطة تُقصّ بمدى الإطارات وتُعاد الطوابع الزمنية ويُقصّ الصوت بالنوافذ نفسها، ثم تُدمج اللقطات وتُمزج مع الموسيقى. — Assemble an edit purely in ffmpeg: each shot trimmed by frame range, timestamps reset, audio windows trimmed identically, then concatenated and mixed with music.
 
 **متى:** حين تريد مونتاج لقطات مقصوصة بدقة الإطار مع صوتها وموسيقى خلفية بـ ffmpeg فقط / when cutting and joining shots at exact frames with their audio and music using ffmpeg only
 
@@ -671,7 +671,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Patterns that keep a decorative 3D layer from hurting the page: never block on shader link, remember slow devices, cap pixel ratio, pause when hidden, free the context.
+**ما هي:** أنماط تمنع الطبقة ثلاثية الأبعاد الزخرفية من الإضرار بالصفحة: لا تنتظر ربط المظلّل، وراعِ الأجهزة البطيئة، وحدّد نسبة البكسل، وأوقف عند الإخفاء، وحرّر السياق. — Patterns that keep a decorative 3D layer from hurting the page: never block on shader link, remember slow devices, cap pixel ratio, pause when hidden, free the context.
 
 **متى:** عند إضافة طبقة ثلاثية الأبعاد زخرفية لصفحة ويب دون أن تبطئها على الأجهزة الضعيفة / when adding a decorative 3D layer to a web page without slowing weak devices
 
@@ -741,7 +741,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decorative clips play only on wide screens without reduced motion or data saving, poster stays as the still; the service worker never caches video or Range requests.
+**ما هي:** تعمل المقاطع الزخرفية على الشاشات العريضة فقط دون تقليل الحركة أو توفير البيانات، وتبقى الصورة الثابتة بديلًا؛ ولا يخزّن عامل الخدمة الفيديو ولا طلبات Range. — Decorative clips play only on wide screens without reduced motion or data saving, poster stays as the still; the service worker never caches video or Range requests.
 
 **متى:** حين تعرض فيديو زخرفيًا في موقع وتريده على الشاشات العريضة فقط ولا يخزنه الكاش / when a site's decorative video should play only on wide screens and never be cached by the service worker
 
@@ -808,7 +808,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds a 30 s 9:16 storyboard with palette, exact_background_lines=2, approval flags, sound policy and 5 scenes each holding its motion prompt; preview-project copies it into project/.
+**ما هي:** يبني لوحة قصصية 9:16 مدتها 30 ثانية بلوحة ألوان وexact_background_lines=2 وأعلام الموافقة وسياسة الصوت و5 مشاهد لكل منها موجّه الحركة؛ وpreview-project ينسخها إلى project/. — Builds a 30 s 9:16 storyboard with palette, exact_background_lines=2, approval flags, sound policy and 5 scenes each holding its motion prompt; preview-project copies it into project/.
 
 **متى:** عند تجهيز ستوري بورد لريلز عمودي 30 ثانية من خمسة مشاهد مع أوامر الحركة / when preparing a 30 s vertical 9:16 storyboard of five scenes with motion prompts
 
@@ -877,7 +877,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** ffprobe stand-in built on ffmpeg, exact frame counts, durations to 1/100 s.
+**ما هي:** بديل لـ ffprobe مبني على ffmpeg، بعدد إطارات دقيق ومدد بدقة 1/100 ثانية. — ffprobe stand-in built on ffmpeg, exact frame counts, durations to 1/100 s.
 
 **متى:** حين لا يتوفر ffprobe وتحتاج عدد الإطارات ومدة الفيديو بدقة / when ffprobe is missing and you need exact frame counts and video duration
 
@@ -944,7 +944,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Declarative edit: clips in/out, speed (pitch-kept) or exact ramps, Ken Burns, grades, fit cover/contain/blur, images, colour cards, 57 xfade transitions + acrossfade, Pillow Arabic overlays/lower thirds with entrances, progress bar, karaoke, ducking, −14 LUFS; picture/sound two passes.
+**ما هي:** مونتاج تصريحي: مقاطع بالدخول/الخروج، وسرعة (مع حفظ النغمة) أو منحنيات دقيقة، وKen Burns، وتدريجات لونية، وملاءمة cover/contain/blur، وصور وبطاقات ألوان، و57 انتقال xfade مع acrossfade، وطبقات عربية بـ Pillow وشرائط سفلية بدخولات، وشريط تقدم، وكاريوكي، وخفض الموسيقى، و−14 LUFS؛ بمرحلتين للصورة والصوت. — Declarative edit: clips in/out, speed (pitch-kept) or exact ramps, Ken Burns, grades, fit cover/contain/blur, images, colour cards, 57 xfade transitions + acrossfade, Pillow Arabic overlays/lower thirds with entrances, progress bar, karaoke, ducking, −14 LUFS; picture/sound two passes.
 
 **متى:** حين يطلب المستخدم مونتاجًا كاملًا بانتقالات ونصوص عربية وموسيقى من ملف JSON / when the user wants a full edit with transitions, Arabic overlays, karaoke and music from a JSON edit file
 
@@ -1013,7 +1013,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Task → plan → 2D film with Arabic titles via Pillow+FFmpeg.
+**ما هي:** مهمة ← خطة ← فيلم ثنائي الأبعاد بعناوين عربية عبر Pillow+FFmpeg. — Task → plan → 2D film with Arabic titles via Pillow+FFmpeg.
 
 **متى:** عند الحاجة لفيلم موشن ثنائي الأبعاد بعناوين عربية من وصف مهمة بدون متصفح / when you need a 2D motion film with Arabic titles from a task description without any browser
 
@@ -1082,7 +1082,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Bridges GSAP timelines to frame-exact renderers: window.render(t)/__ready, window.seek(t), __timelines, CSS animations and <video data-start> clips seek to t.
+**ما هي:** يربط جداول GSAP الزمنية بمُصيِّرات دقيقة الإطار: window.render(t)/__ready وwindow.seek(t) و__timelines، وتنتقل حركات CSS ومقاطع <video data-start> إلى الزمن t. — Bridges GSAP timelines to frame-exact renderers: window.render(t)/__ready, window.seek(t), __timelines, CSS animations and <video data-start> clips seek to t.
 
 **متى:** حين تريد تصيير خط زمني GSAP مع رسوم CSS ومقاطع فيديو بدقة الإطار / when a GSAP timeline with CSS animations and video clips must render frame-exactly
 
@@ -1151,7 +1151,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Declarative edit list (sources, clips in/out, speed, transition, audio_lead, music, loudnorm, LUT, captions) compiled into one ffmpeg command.
+**ما هي:** قائمة مونتاج تصريحية (مصادر، ومقاطع دخول/خروج، وسرعة، وانتقال، وaudio_lead، وموسيقى، وloudnorm، وLUT، وترجمات) تُجمَّع في أمر ffmpeg واحد. — Declarative edit list (sources, clips in/out, speed, transition, audio_lead, music, loudnorm, LUT, captions) compiled into one ffmpeg command.
 
 **متى:** عند تنفيذ مونتاج كامل من قائمة قص بقصاصات وسرعات وانتقالات وموسيقى وترجمة في أمر واحد / when a full edit list of clips, speeds, transitions, music and captions should compile into one ffmpeg command
 
@@ -1221,7 +1221,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Assembles PNG frames into H.264 yuv420p MP4, muxes optional audio, builds contact-sheet.png and optional GIF preview.
+**ما هي:** يجمع إطارات PNG في MP4 بـ H.264 yuv420p، ويدمج صوتًا اختياريًا، ويبني contact-sheet.png ومعاينة GIF اختيارية. — Assembles PNG frames into H.264 yuv420p MP4, muxes optional audio, builds contact-sheet.png and optional GIF preview.
 
 **متى:** عند تجميع إطارات PNG في فيديو MP4 مع لوحة مراجعة وصورة GIF للمعاينة / when assembling PNG frames into an MP4 plus a contact sheet and a GIF preview
 
@@ -1290,7 +1290,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Seeded random generator so particles/instancing are identical every render.
+**ما هي:** مولّد عشوائي مبذور فتتطابق الجسيمات/النسخ في كل تصيير. — Seeded random generator so particles/instancing are identical every render.
 
 **متى:** حين يجب أن تظهر الجسيمات أو النسخ المتكررة بنفس التوزيع في كل رندر / when particles or instanced copies must come out identical on every render
 
@@ -1357,7 +1357,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Skips re-rendering when every text source (html/js/css/json/svg/txt by content) and binary asset (name+size+mtime) plus render parameters hash to the same SHA-1 as the stamp next to the film.
+**ما هي:** يتخطى إعادة التصيير حين تعطي كل مصادر النص (html/js/css/json/svg/txt بالمحتوى) والأصول الثنائية (الاسم+الحجم+mtime) مع معاملات التصيير نفس SHA-1 للختم بجوار الفيلم. — Skips re-rendering when every text source (html/js/css/json/svg/txt by content) and binary asset (name+size+mtime) plus render parameters hash to the same SHA-1 as the stamp next to the film.
 
 **متى:** لتخطي إعادة الرندر وتوفير الوقت حين لم يتغير أي ملف أو أصل أو إعداد / to skip a re-render when no source file, asset or render setting has changed
 
@@ -1425,7 +1425,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Projects and films go to KOSIF_MOTION_HOME if set, else next to the tool when writable, else the working directory, so the tool runs from a read-only skill folder.
+**ما هي:** تذهب المشاريع والأفلام إلى KOSIF_MOTION_HOME إن وُجد، وإلا بجوار الأداة إن أمكن الكتابة، وإلا إلى مجلد العمل، فتعمل الأداة من مجلد مهارة للقراءة فقط. — Projects and films go to KOSIF_MOTION_HOME if set, else next to the tool when writable, else the working directory, so the tool runs from a read-only skill folder.
 
 **متى:** حين تعمل الأداة من مجلد مهارة للقراءة فقط وتحتاج مكانًا قابلًا للكتابة لحفظ المشاريع والأفلام / when the tool runs from a read-only skill folder and projects and films need a writable location
 
@@ -1491,7 +1491,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Rendering is made pixel-reproducible with fixed flags and context: no font hinting, no LCD text, sRGB colour profile, hidden scrollbars, locale ar, timezone UTC, light colour scheme.
+**ما هي:** يُجعل التصيير مطابقًا بالبكسل بأعلام وسياق ثابتين: دون تلميح خطوط ولا نص LCD، وملف ألوان sRGB، وأشرطة تمرير مخفية، ولغة ar، ومنطقة زمنية UTC، ومخطط ألوان فاتح. — Rendering is made pixel-reproducible with fixed flags and context: no font hinting, no LCD text, sRGB colour profile, hidden scrollbars, locale ar, timezone UTC, light colour scheme.
 
 **متى:** حين يجب أن تخرج إطارات المتصفح متطابقة بكسلًا ببكسل في كل رندر / when browser-rendered frames must be pixel-reproducible from run to run
 
@@ -1560,7 +1560,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Replaces Math.random inside the page with a mulberry32 PRNG before any page script runs, so random-driven animations reproduce.
+**ما هي:** يستبدل Math.random داخل الصفحة بمولّد mulberry32 قبل تشغيل أي سكربت للصفحة فتتكرر الحركات القائمة على العشوائية. — Replaces Math.random inside the page with a mulberry32 PRNG before any page script runs, so random-driven animations reproduce.
 
 **متى:** عند رندر صفحة تعتمد حركتها على Math.random ونريد نفس النتيجة كل مرة دون تعديل كودها / when a page's Math.random-driven animation must reproduce without editing its code
 
@@ -1627,7 +1627,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Before capture the renderer waits for load, networkidle (max 8 s), document.fonts.ready (15 s) and window.__kosifReady, then an optional --settle delay.
+**ما هي:** قبل الالتقاط ينتظر المُصيِّر load وnetworkidle (حتى 8 ث) وdocument.fonts.ready (15 ث) وwindow.__kosifReady، ثم تأخيرًا اختياريًا بـ --settle. — Before capture the renderer waits for load, networkidle (max 8 s), document.fonts.ready (15 s) and window.__kosifReady, then an optional --settle delay.
 
 **متى:** حين تظهر الخطوط أو العناصر ناقصة في أول إطار ويجب انتظار جاهزية الصفحة قبل الالتقاط / when fonts or assets are missing in the first frame and capture must wait until the page is ready
 
@@ -1692,7 +1692,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** No Math.random/Date.now/accumulated state; seed PRNGs.
+**ما هي:** لا Math.random ولا Date.now ولا حالة متراكمة؛ ابذر مولّدات PRNG. — No Math.random/Date.now/accumulated state; seed PRNGs.
 
 **متى:** عند كتابة أي حركة للرندر بحيث يكون كل إطار دالة في الزمن فقط دون عشوائية أو ساعة / when writing animation for rendering so each frame depends only on time, with no Math.random or Date.now
 
@@ -1762,7 +1762,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic HTML/Canvas/SVG → MP4 via Playwright Chromium calling window.__kosif.seek(t) per frame.
+**ما هي:** HTML/Canvas/SVG ← MP4 حتمي عبر Playwright Chromium يستدعي window.__kosif.seek(t) لكل إطار. — Deterministic HTML/Canvas/SVG → MP4 via Playwright Chromium calling window.__kosif.seek(t) per frame.
 
 **متى:** عند تحويل صفحة HTML أو كانفس أو SVG إلى فيديو MP4 إطارًا بإطار مع صوت تعليق اختياري / when rendering an HTML, Canvas or SVG page to MP4 frame by frame, optionally with a voice track
 
@@ -1832,7 +1832,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Render -> NaN guard -> bloom -> god rays -> bokeh DOF -> grade/CA/vignette -> film grain -> output, all uniforms animatable.
+**ما هي:** التصيير ← حارس NaN ← توهج ← أشعة إلهية ← عمق ميدان بوكيه ← تدريج/انحراف لوني/تعتيم الأطراف ← حبيبات فيلم ← المخرج، وكل المتغيرات قابلة للتحريك. — Render -> NaN guard -> bloom -> god rays -> bokeh DOF -> grade/CA/vignette -> film grain -> output, all uniforms animatable.
 
 **متى:** عند إضافة لمسة سينمائية لمشهد ثلاثي الأبعاد: توهج وأشعة شمس وعمق ميدان وحبيبات فيلم / for a cinematic finish on a 3D scene: bloom, god rays, depth of field, vignette and film grain
 
@@ -1899,7 +1899,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Render pages using CSS/WAAPI/GSAP animations without a seek hook by advancing Chromium's virtual clock.
+**ما هي:** تصيير الصفحات ذات حركات CSS/WAAPI/GSAP دون خطاف تنقل بتقديم الساعة الافتراضية في Chromium. — Render pages using CSS/WAAPI/GSAP animations without a seek hook by advancing Chromium's virtual clock.
 
 **متى:** حين تكون الصفحة متحركة بـ CSS أو GSAP أو WAAPI بلا دالة seek ونريد رندرها فيديو / when a page animated with CSS, WAAPI or GSAP has no seek hook but must be rendered to video
 
@@ -1967,7 +1967,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Pages expose window.__kosif = {duration, fps, seek(t)} plus optional window.__kosifReady promise.
+**ما هي:** تكشف الصفحات window.__kosif = {duration, fps, seek(t)} مع وعد window.__kosifReady اختياري. — Pages expose window.__kosif = {duration, fps, seek(t)} plus optional window.__kosifReady promise.
 
 **متى:** عند تجهيز صفحة HTML لتكون قابلة للرندر بتعريف المدة وعدد الإطارات ودالة seek / when preparing an HTML page for rendering by exposing duration, fps and a seek(t) function
 
@@ -2033,7 +2033,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Fetch each clip as Blob to bypass hosts lacking byte-range so seeks work.
+**ما هي:** جلب كل مقطع كـ Blob لتجاوز المضيفين الذين يفتقرون إلى نطاق البايتات فتعمل الانتقالات. — Fetch each clip as Blob to bypass hosts lacking byte-range so seeks work.
 
 **متى:** حين لا يعمل التقديم داخل مقطع فيديو لأن الخادم لا يدعم التحميل الجزئي / when seeking inside a clip fails because the host lacks byte-range support
 
@@ -2099,7 +2099,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Vanilla JS engine building DOM/CSS, lerped scroll->time, section copy fades, particles, mobile clips, reduced motion.
+**ما هي:** محرك JS بسيط يبني DOM/CSS وتمريرًا مُدرَّجًا إلى الزمن، وتلاشي نصوص الأقسام، وجسيمات، ومقاطع للجوال، وتقليل الحركة. — Vanilla JS engine building DOM/CSS, lerped scroll->time, section copy fades, particles, mobile clips, reduced motion.
 
 **متى:** عند بناء صفحة تتحرك مشاهدها مع التمرير بنصوص تتلاشى وجسيمات ومقاطع للجوال / when building a scroll-driven page whose scenes, copy fades and particles follow the scroll
 
@@ -2166,7 +2166,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Four primitives cover almost every property animation: go-to, come-from (entrances), explicit start+end, and instant set.
+**ما هي:** أربعة أصناف أولية تغطي تقريبًا كل تحريك للخصائص: go-to وcome-from (للدخول) والبداية+النهاية الصريحتان والضبط الفوري. — Four primitives cover almost every property animation: go-to, come-from (entrances), explicit start+end, and instant set.
 
 **متى:** عند تحريك أي خاصية لعنصر: دخول من حالة أو انتقال إلى حالة أو بداية ونهاية صريحتين أو ضبط فوري / when animating any element property: entrances, moves to a state, explicit start-to-end, or instant set
 
@@ -2234,7 +2234,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Rotate along a chosen direction, add or multiply relative to current values, and animate CSS custom properties (e.g. hue, variable-font axes).
+**ما هي:** التدوير باتجاه مختار، والجمع أو الضرب نسبةً إلى القيم الحالية، وتحريك متغيرات CSS المخصصة (مثل hue ومحاور الخطوط المتغيرة). — Rotate along a chosen direction, add or multiply relative to current values, and animate CSS custom properties (e.g. hue, variable-font axes).
 
 **متى:** حين يطلب المستخدم دورانًا باتجاه محدد أو تغييرًا نسبيًا أو تحريك لون أو وزن خط متغير / when rotating in a set direction, animating relative values, or tweening CSS variables like hue or font weight
 
@@ -2301,7 +2301,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** quickTo builds a reusable setter for high-frequency targets (cursor followers); matchMedia runs setups only under conditions such as desktop width or prefers-reduced-motion.
+**ما هي:** ينشئ quickTo مُعيِّنًا قابلًا لإعادة الاستخدام للأهداف عالية التردد (متتبعات المؤشر)؛ ويشغّل matchMedia الإعدادات فقط في شروط مثل عرض سطح المكتب أو prefers-reduced-motion. — quickTo builds a reusable setter for high-frequency targets (cursor followers); matchMedia runs setups only under conditions such as desktop width or prefers-reduced-motion.
 
 **متى:** عند بناء قطعة ويب تفاعلية تتبع المؤشر أو تتكيف مع عرض الشاشة وتفضيل تقليل الحركة / for interactive web pieces with cursor followers, screen-width conditions or reduced-motion support
 
@@ -2369,7 +2369,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Tween a plain object's time value and redraw a canvas in onUpdate, so procedural canvas art becomes seekable on the GSAP timeline.
+**ما هي:** تحريك قيمة الزمن لكائن بسيط وإعادة رسم اللوحة في onUpdate، فيصبح فن اللوحة الإجرائي قابلًا للتنقل على الخط الزمني لـ GSAP. — Tween a plain object's time value and redraw a canvas in onUpdate, so procedural canvas art becomes seekable on the GSAP timeline.
 
 **متى:** حين يكون الرسم على الكانفس إجرائيًا ونريد ربطه بتايملاين GSAP ليصبح قابلًا للتقديم / when procedural canvas art must be driven by a GSAP timeline and become seekable
 
@@ -2435,7 +2435,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** An HTML file with data-* timing attributes plus a paused GSAP timeline registered on window.__timelines is captured frame-by-frame by headless Chrome into MP4/WebM.
+**ما هي:** ملف HTML بسمات توقيت data-* وخط زمني GSAP متوقف مسجّل على window.__timelines يلتقطه Chrome دون واجهة إطارًا إطارًا إلى MP4/WebM. — An HTML file with data-* timing attributes plus a paused GSAP timeline registered on window.__timelines is captured frame-by-frame by headless Chrome into MP4/WebM.
 
 **متى:** عند صناعة فيديو من ملف HTML بتوقيتات وتايملاين GSAP وتصديره MP4 أو WebM / when making a video from an HTML file with timing attributes and a GSAP timeline, exported to MP4 or WebM
 
@@ -2507,7 +2507,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Split a long video into reusable composition files loaded into a root timeline; media and overlays live on numbered tracks.
+**ما هي:** تقسيم فيديو طويل إلى ملفات تركيب قابلة لإعادة الاستخدام تُحمَّل في خط زمني جذري؛ وتعيش الوسائط والطبقات العلوية على مسارات مرقّمة. — Split a long video into reusable composition files loaded into a root timeline; media and overlays live on numbered tracks.
 
 **متى:** حين يكون الفيديو طويلًا ونريد تقسيمه لمشاهد قابلة لإعادة الاستخدام على مسارات مرقمة / when a long video should be split into reusable scene files placed on numbered tracks
 
@@ -2573,7 +2573,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** three.js r186 and all 69 three-kit exports as one classic script, so 3D scenes run from file:// with no npm.
+**ما هي:** three.js r186 وجميع صادرات three-kit الـ69 في سكربت كلاسيكي واحد، فتعمل المشاهد ثلاثية الأبعاد من file:// دون npm. — three.js r186 and all 69 three-kit exports as one classic script, so 3D scenes run from file:// with no npm.
 
 **متى:** حين تريد تشغيل مشهد three.js من ملف محلي دون npm أو أدوات بناء / when a three.js scene must run from a local file with no npm install or build step
 
@@ -2645,7 +2645,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One CLI handles scaffold, lint, inspect, preview (hot reload studio), render, transcribe and TTS.
+**ما هي:** واجهة CLI واحدة تتولى الهيكلة والفحص والتفتيش والمعاينة (استوديو بإعادة تحميل فورية) والتصيير والتفريغ النصي وتحويل النص إلى كلام. — One CLI handles scaffold, lint, inspect, preview (hot reload studio), render, transcribe and TTS.
 
 **متى:** عند إنشاء أو فحص أو معاينة أو رندر تركيب HyperFrames من سطر الأوامر بقوالب جاهزة / when scaffolding, linting, previewing or rendering a HyperFrames composition from the CLI
 
@@ -2714,7 +2714,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Every value is a pure function of useCurrentFrame(); CSS transitions/animations and Tailwind animate classes do not render.
+**ما هي:** كل قيمة دالة خالصة في useCurrentFrame()؛ ولا تُصيَّر انتقالات CSS ولا حركاتها ولا أصناف animate في Tailwind. — Every value is a pure function of useCurrentFrame(); CSS transitions/animations and Tailwind animate classes do not render.
 
 **متى:** عند كتابة حركة في Remotion حيث يجب أن تحسب كل قيمة من رقم الإطار لا من انتقالات CSS / when animating in Remotion, where every value must come from the current frame, not CSS transitions
 
@@ -2785,7 +2785,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Place components in time with from/durationInFrames, chain them with Series, and premount to avoid load flashes.
+**ما هي:** ضع المكونات في الزمن بـ from/durationInFrames وسلسلها بـ Series وحمّلها مسبقًا لتجنب وميض التحميل. — Place components in time with from/durationInFrames, chain them with Series, and premount to avoid load flashes.
 
 **متى:** عند ترتيب المشاهد زمنيًا في Remotion وتسلسلها ومنع الوميض أثناء التحميل / when placing and chaining scenes in time in Remotion and avoiding load flashes
 
@@ -2854,7 +2854,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Play After Effects/Bodymovin JSON animations inside a rendered composition, synced to frames.
+**ما هي:** تشغيل رسوم After Effects/Bodymovin بصيغة JSON داخل تركيب مُصيَّر ومتزامنة مع الإطارات. — Play After Effects/Bodymovin JSON animations inside a rendered composition, synced to frames.
 
 **متى:** حين يريد المستخدم تشغيل أنيميشن لوتي من After Effects داخل الفيديو متزامنًا مع الإطارات / when an After Effects/Bodymovin Lottie JSON must play in sync inside a rendered video
 
@@ -2923,7 +2923,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Write keyframes inline in style props with individual transform properties and named Interactive elements so the Studio can expose drag, resize and easing edits.
+**ما هي:** اكتب الإطارات المفتاحية ضمن خصائص style مع خصائص تحويل منفردة وعناصر Interactive مسماة ليتيح الاستوديو السحب وتغيير الحجم وتعديل التخفيف. — Write keyframes inline in style props with individual transform properties and named Interactive elements so the Studio can expose drag, resize and easing edits.
 
 **متى:** عند كتابة كود التركيب بحيث يمكن تعديل العناصر بالسحب وتغيير الحجم والتسهيل من الاستوديو / when writing composition code so the Studio can expose drag, resize and easing edits
 
@@ -2991,7 +2991,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render DOM into a canvas to apply Canvas2D/WebGL effects to live HTML layers.
+**ما هي:** تصيير DOM داخل لوحة لتطبيق مؤثرات Canvas2D/WebGL على طبقات HTML الحية. — Render DOM into a canvas to apply Canvas2D/WebGL effects to live HTML layers.
 
 **متى:** حين نريد تطبيق مؤثرات كانفس أو WebGL على عناصر HTML حية / when applying Canvas2D or WebGL effects to live HTML layers
 
@@ -3059,7 +3059,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Declarative React animation: initial/animate/exit, gesture states, shared layoutId morphs, AnimatePresence, Reorder lists.
+**ما هي:** تحريك React تصريحي: initial/animate/exit وحالات الإيماءات وانتقالات layoutId المشتركة وAnimatePresence وقوائم Reorder. — Declarative React animation: initial/animate/exit, gesture states, shared layoutId morphs, AnimatePresence, Reorder lists.
 
 **متى:** عند بناء واجهة React تفاعلية بحركات نابضية وتحولات مشتركة بين العناصر وحالات المرور / for interactive React UIs with spring motion, shared-layout morphs, hover states and reorderable lists
 
@@ -3130,7 +3130,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** For each GFX marker on an editor timeline, write one composition HTML matching timeline width/height/fps, render it, and drop it back on the marker.
+**ما هي:** لكل علامة GFX على خط زمني للمحرر، اكتب HTML تركيب واحدًا بعرض/ارتفاع/fps الخط الزمني نفسه، وصيّره وأعده إلى العلامة. — For each GFX marker on an editor timeline, write one composition HTML matching timeline width/height/fps, render it, and drop it back on the marker.
 
 **متى:** عند تجهيز بطاقات جرافيك كعناوين الفصول وجداول قبل وبعد لوضعها على علامات المونتاج / when making graphic cards like chapter titles or before/after tables to drop on editor timeline markers
 
@@ -3196,7 +3196,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Put GPU atmosphere on its own layer under crisp DOM UI; keep a static CSS background beneath as fallback; give the shader enough exposed area to register or drop it.
+**ما هي:** ضع جوّ GPU في طبقة مستقلة تحت واجهة DOM الحادة؛ وأبقِ خلفية CSS ثابتة تحتها بديلًا؛ وامنح الشيدر مساحة ظاهرة كافية ليظهر أو أسقطه. — Put GPU atmosphere on its own layer under crisp DOM UI; keep a static CSS background beneath as fallback; give the shader enough exposed area to register or drop it.
 
 **متى:** حين نضع خلفية شيدر متحركة خلف واجهة منتج مع خلفية CSS ثابتة كبديل / when placing an animated GPU shader layer under crisp UI with a static CSS fallback
 
@@ -3264,7 +3264,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Lenis gives scroll a weighted glide used on award sites; for frame-accurate video it must be replaced by a deterministic scroll tween.
+**ما هي:** يمنح Lenis التمرير انزلاقًا ثقيلًا تستخدمه مواقع الجوائز؛ أما للفيديو دقيق الإطار فيجب استبداله بحركة تمرير حتمية. — Lenis gives scroll a weighted glide used on award sites; for frame-accurate video it must be replaced by a deterministic scroll tween.
 
 **متى:** عند إضافة تمرير ناعم لموقع، أو رندر صفحة تستخدمه حيث يجب ربط التمرير بزمن الإطار / when adding weighted smooth scroll to a site, or rendering such a page where scroll must follow frame time
 
@@ -3333,7 +3333,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A whole cinematic short is a JavaScript function sceneSVG(t) that returns a complete 1280×720 SVG string; no assets, fonts, packages or network.
+**ما هي:** فيلم سينمائي قصير كامل هو دالة JavaScript باسم sceneSVG(t) تعيد سلسلة SVG كاملة بحجم 1280×720؛ دون أصول أو خطوط أو حزم أو شبكة. — A whole cinematic short is a JavaScript function sceneSVG(t) that returns a complete 1280×720 SVG string; no assets, fonts, packages or network.
 
 **متى:** حين تريد فيلمًا قصيرًا مرسومًا بالكود بالكامل كـ SVG بلا أصول أو خطوط أو مكتبات / when a short cinematic film should be pure code drawn as SVG with no assets, fonts or libraries
 
@@ -3401,7 +3401,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Data-driven launch/demo films: one zod props schema, calculateMetadata for duration/size, Series for narrative and Sequence for overlays, footage modes none/placeholder/real, same logic for 16:9 and 9:16.
+**ما هي:** أفلام إطلاق/عرض مدفوعة بالبيانات: مخطط props واحد بـ zod، وcalculateMetadata للمدة والحجم، وSeries للسرد وSequence للطبقات العلوية، وأنماط لقطات none/placeholder/real، والمنطق نفسه لـ 16:9 و9:16. — Data-driven launch/demo films: one zod props schema, calculateMetadata for duration/size, Series for narrative and Sequence for overlays, footage modes none/placeholder/real, same logic for 16:9 and 9:16.
 
 **متى:** حين يطلب المستخدم فيديو إطلاق أو عرض منتج قائمًا على البيانات بنسختين أفقية وعمودية / when the user wants a data-driven launch or demo video in both 16:9 and 9:16
 
@@ -3470,7 +3470,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Declarative guide: meta (language, voice, resolution), brand colors/logo, intro, steps of type slide (title-card, bullet-points, outro) or screencast (navigate, wait, highlight, click, fill, scroll, hover, screenshot_pause), outro CTA.
+**ما هي:** دليل تصريحي: meta (اللغة والصوت والدقة)، وألوان العلامة/الشعار، ومقدمة، وخطوات من نوع شريحة (title-card وbullet-points وoutro) أو screencast (navigate وwait وhighlight وclick وfill وscroll وhover وscreenshot_pause)، وخاتمة بدعوة لإجراء. — Declarative guide: meta (language, voice, resolution), brand colors/logo, intro, steps of type slide (title-card, bullet-points, outro) or screencast (navigate, wait, highlight, click, fill, scroll, hover, screenshot_pause), outro CTA.
 
 **متى:** عند إعداد فيديو شرح لخطوات على الشاشة بنقرات وتظليل وتمرير مع شرائح وتعليق صوتي / when planning a screencast guide of on-screen steps (click, highlight, scroll) with slides and a voice
 
@@ -3540,7 +3540,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Where to pull primitives (then restyle): React/Tailwind animated kits, shader/canvas/3D helpers and motion infrastructure, each with license notes.
+**ما هي:** من أين تُسحب الوحدات الأولية (ثم تُعاد تهيئتها): حزم React/Tailwind المتحركة، ومساعدات الشيدر/اللوحة/الثلاثي الأبعاد، والبنية التحتية للحركة، مع ملاحظات الترخيص لكل منها. — Where to pull primitives (then restyle): React/Tailwind animated kits, shader/canvas/3D helpers and motion infrastructure, each with license notes.
 
 **متى:** حين نبحث عن مكتبة مكونات متحركة أو أدوات شيدر وكانفس وثلاثي الأبعاد ونحتاج معرفة رخصتها / when picking animated UI kits or shader, canvas and 3D helpers and checking each one's license
 
@@ -3610,7 +3610,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Data-driven React video: one zod props schema per composition, calculateMetadata deriving duration/size from inputs, Series for narrative order and Sequence for overlays, premountFor on asset-heavy sequences, footage modes none/placeholder/real so the timeline renders without real footage.
+**ما هي:** فيديو React مدفوع بالبيانات: مخطط props واحد بـ zod لكل تركيب، وcalculateMetadata يشتق المدة/الحجم من المدخلات، وSeries لترتيب السرد وSequence للطبقات العلوية، وpremountFor للمتتاليات الثقيلة بالأصول، وأنماط لقطات none/placeholder/real ليُصيَّر الخط الزمني دون لقطات حقيقية. — Data-driven React video: one zod props schema per composition, calculateMetadata deriving duration/size from inputs, Series for narrative order and Sequence for overlays, premountFor on asset-heavy sequences, footage modes none/placeholder/real so the timeline renders without real footage.
 
 **متى:** عند بناء فيديو React قائم على البيانات بمنطق واحد للأفقي والعمودي ويعمل دون لقطات حقيقية / when building a data-driven React video sharing logic across landscape and vertical, renderable without real footage
 
@@ -3679,7 +3679,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Markdown slides with click-stepped reveals (v-click, v-clicks with depth), hand-drawn emphasis marks (v-mark underline/circle/highlight/strike/box via Rough Notation), code morphs between blocks (Shiki magic-move with line highlights), v-motion initial/enter states, slide transitions (fade, slide-le…
+**ما هي:** شرائح Markdown بإظهار متدرج بالنقرات (v-click وv-clicks بعمق)، وعلامات تأكيد مرسومة باليد (v-mark: خط تحتي/دائرة/تمييز/شطب/صندوق عبر Rough Notation)، وتحويل الشيفرة بين الكتل (Shiki magic-move مع تمييز الأسطر)، وحالات v-motion الابتدائية/الدخول، وانتقالات الشرائح (fade وslide-le… — Markdown slides with click-stepped reveals (v-click, v-clicks with depth), hand-drawn emphasis marks (v-mark underline/circle/highlight/strike/box via Rough Notation), code morphs between blocks (Shiki magic-move with line highlights), v-motion initial/enter states, slide transitions (fade, slide-le…
 
 **متى:** عند صناعة شرائح تكشف النقاط بالنقرات مع تحديد يدوي للكلمات وتحول الكود لتسجيلها فيديو / for click-stepped slide reveals, hand-drawn emphasis marks and code morphs to record into a video
 
@@ -3749,7 +3749,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Never edit the source timeline or media: build a reference timeline A (chronological), duplicate to a working timeline B named <A>_edit_<YYYYMMDD_HHMM>, identify clips by filename + timeline TC (not index), test on one representative clip first, dry-run then apply, log every change in an edit-log ma…
+**ما هي:** لا تعدّل الخط الزمني المصدر ولا الوسائط: ابنِ خطًا مرجعيًا A (زمنيًا)، وانسخه إلى خط عمل B باسم <A>_edit_<YYYYMMDD_HHMM>، وحدّد المقاطع باسم الملف + TC الخط الزمني (لا بالفهرس)، وجرّب أولًا على مقطع تمثيلي واحد، ثم تشغيل تجريبي فتطبيق، وسجّل كل تغيير في سجل تحرير ma… — Never edit the source timeline or media: build a reference timeline A (chronological), duplicate to a working timeline B named <A>_edit_<YYYYMMDD_HHMM>, identify clips by filename + timeline TC (not index), test on one representative clip first, dry-run then apply, log every change in an edit-log ma…
 
 **متى:** عند تعديل مشروع مونتاج آليًا دون المساس بالتايملاين أو المواد الأصلية مع تجربة مسبقة وسجل / when editing a timeline by script without touching the source timeline or media, with dry-run and a log
 
@@ -3816,7 +3816,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Two editable structures: independently positioned clips (each <Video> hardcoded from/durationInFrames/trimBefore, gaps/overlaps allowed) or ripple editing via <TransitionSeries> where transitions overlap scenes and shorten total length while overlays (light leak) do not.
+**ما هي:** بنيتان قابلتان للتحرير: مقاطع موضوعة باستقلال (كل <Video> بقيم from/durationInFrames/trimBefore ثابتة، مع السماح بالفجوات والتداخل) أو تحرير متتابع عبر <TransitionSeries> حيث تتداخل الانتقالات مع المشاهد وتقصّر الطول الكلي بينما لا تفعل الطبقات العلوية (تسرّب الضوء) ذلك. — Two editable structures: independently positioned clips (each <Video> hardcoded from/durationInFrames/trimBefore, gaps/overlaps allowed) or ripple editing via <TransitionSeries> where transitions overlap scenes and shorten total length while overlays (light leak) do not.
 
 **متى:** عند بناء مونتاج في Remotion بمقاطع مستقلة أو تعديل متتابع بانتقالات تتداخل بين المشاهد / when building a Remotion edit with independent clips or ripple editing with overlapping transitions
 
@@ -3886,7 +3886,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** HTML+GSAP compositions rendered to video; draft while iterating, standard for review, high for final; WebM keeps alpha for overlay graphics.
+**ما هي:** تركيبات HTML+GSAP تُصيَّر فيديو؛ draft أثناء التكرار، وstandard للمراجعة، وhigh للنهائي؛ وWebM يحفظ الشفافية لرسوم الطبقات العلوية. — HTML+GSAP compositions rendered to video; draft while iterating, standard for review, high for final; WebM keeps alpha for overlay graphics.
 
 **متى:** عند اختيار جودة الرندر: مسودة أثناء العمل، وقياسية للمراجعة، وعالية للنهائي، أو WebM بشفافية / when choosing render quality (draft, review, final) or WebM with alpha for overlay graphics
 
@@ -3957,7 +3957,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Write GPU shaders as chained JavaScript nodes instead of GLSL strings, targeting WebGPU with WebGL2 fallback.
+**ما هي:** اكتب شيدر GPU كعقد JavaScript متسلسلة بدل سلاسل GLSL، موجّهة إلى WebGPU مع بديل WebGL2. — Write GPU shaders as chained JavaScript nodes instead of GLSL strings, targeting WebGPU with WebGL2 fallback.
 
 **متى:** حين نكتب شيدرات بعقد جافاسكربت بدل نصوص GLSL مع استهداف WebGPU / when writing GPU shaders as chained JavaScript nodes instead of GLSL, targeting WebGPU with WebGL2 fallback
 
@@ -4026,7 +4026,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Compose post effects as a node graph: scene pass -> effect nodes -> outputNode.
+**ما هي:** ركّب مؤثرات ما بعد المعالجة كمخطط عقد: تمرير المشهد ← عقد المؤثرات ← outputNode. — Compose post effects as a node graph: scene pass -> effect nodes -> outputNode.
 
 **متى:** عند إضافة مؤثرات ما بعد المعالجة لمشهد ثلاثي الأبعاد كشبكة عقد / when composing post effects for a 3D scene as a node graph (scene pass, effect nodes, output)
 
@@ -4094,7 +4094,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Example projects ship without library copies; one command copies motion-kit, GSAP, three-kit, shape-kit, lab-kit and only the kit fonts the page names.
+**ما هي:** تُشحن المشاريع النموذجية دون نسخ المكتبات؛ وأمر واحد ينسخ motion-kit وGSAP وthree-kit وshape-kit وlab-kit وخطوط الحزمة التي تسميها الصفحة فقط. — Example projects ship without library copies; one command copies motion-kit, GSAP, three-kit, shape-kit, lab-kit and only the kit fonts the page names.
 
 **متى:** عند تجهيز مشروع مثال خفيف بنسخ مكتبات العدّة والخطوط التي تستخدمها صفحته فقط / when preparing a lightweight example project by copying only the kit libraries and fonts its page uses
 
@@ -4164,7 +4164,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Built-in TSL screen-space passes for contact shadows, reflections, selection outlines and antialiasing.
+**ما هي:** تمريرات TSL مضمّنة في فضاء الشاشة للظلال التلامسية والانعكاسات وحدود التحديد ومضادّ التسنن. — Built-in TSL screen-space passes for contact shadows, reflections, selection outlines and antialiasing.
 
 **متى:** حين يحتاج المشهد ثلاثي الأبعاد ظلال تلامس أو انعكاسات أو حدودًا للعناصر المحددة أو تنعيم الحواف / when a 3D scene needs contact shadows, reflections, selection outlines or antialiasing
 
@@ -4232,7 +4232,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Inject raw WGSL code as callable nodes when TSL lacks a primitive.
+**ما هي:** حقن شيفرة WGSL الخام كعقد قابلة للاستدعاء حين يفتقر TSL إلى وحدة أولية. — Inject raw WGSL code as callable nodes when TSL lacks a primitive.
 
 **متى:** حين لا توفر TSL دالة نحتاجها فنكتب كود WGSL خامًا ونستدعيه كعقدة / when TSL lacks a primitive and raw WGSL code must be injected as a callable node
 
@@ -4298,7 +4298,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Plane mesh + custom vertex/fragment shader with memoized uniforms updated each frame.
+**ما هي:** شبكة مستوية + شيدر رؤوس/أجزاء مخصص بمتغيرات موحّدة محفوظة تُحدَّث كل إطار. — Plane mesh + custom vertex/fragment shader with memoized uniforms updated each frame.
 
 **متى:** عند بناء مستوى بشيدر مخصص في React Three Fiber بمتغيرات تتحدث كل إطار / when building a custom vertex/fragment shader plane in React Three Fiber with per-frame uniforms
 
@@ -4367,7 +4367,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Script a full scene (geometry, Principled material, camera, area light) and render stills or frame ranges.
+**ما هي:** برمجة مشهد كامل (هندسة، ومادة Principled، وكاميرا، وضوء مساحي) وتصيير صور ثابتة أو مدى إطارات. — Script a full scene (geometry, Principled material, camera, area light) and render stills or frame ranges.
 
 **متى:** حين يطلب المستخدم صورًا أو مقاطع ثلاثية الأبعاد مولدة بسكربت في بلندر دون واجهة / when the user wants 3D stills or frame ranges built by a script and rendered by Blender in the background
 
@@ -4437,7 +4437,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Three.js for custom scenes; deck.gl for big geo layers/trips/arcs; CesiumJS for globes/terrain; PixiJS for 2D sprites/particles; regl/TWGL for minimal custom shaders; Babylon for full engine.
+**ما هي:** Three.js للمشاهد المخصصة؛ وdeck.gl لطبقات جغرافية كبيرة/رحلات/أقواس؛ وCesiumJS للكرات الأرضية/التضاريس؛ وPixiJS للسبرايت والجسيمات ثنائية الأبعاد؛ وregl/TWGL للشيدر المخصص البسيط؛ وBabylon لمحرك كامل. — Three.js for custom scenes; deck.gl for big geo layers/trips/arcs; CesiumJS for globes/terrain; PixiJS for 2D sprites/particles; regl/TWGL for minimal custom shaders; Babylon for full engine.
 
 **متى:** عند اختيار المكتبة المناسبة لمشهد: ثلاثي الأبعاد أو خرائط وكرات أرضية أو جسيمات ثنائية الأبعاد / when choosing an engine per scene: custom 3D, big geo layers, globes, 2D sprites or minimal shaders
 
@@ -4503,7 +4503,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Cut font files to used glyphs to speed browser renders.
+**ما هي:** قصّ ملفات الخطوط إلى الحروف المستخدمة لتسريع تصيير المتصفح. — Cut font files to used glyphs to speed browser renders.
 
 **متى:** حين تكون ملفات الخطوط ثقيلة وتبطئ الرندر في المتصفح مع الحفاظ على خصائص تشكيل العربية / when font files are heavy and slow browser renders, keeping Arabic layout features
 
@@ -4570,7 +4570,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Play vector Lottie JSON animations deterministically inside a render.
+**ما هي:** تشغيل رسوم Lottie المتجهة بصيغة JSON حتميًا داخل التصيير. — Play vector Lottie JSON animations deterministically inside a render.
 
 **متى:** عند تشغيل ملف لوتي متجه داخل الرندر بشكل ثابت قابل للتكرار مع التحقق من رخصته / when playing a vector Lottie JSON animation deterministically inside a render
 
@@ -4642,7 +4642,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Settings that make Mapbox/MapLibre/MapTiler frames reproducible when captured frame by frame.
+**ما هي:** إعدادات تجعل إطارات Mapbox/MapLibre/MapTiler قابلة لإعادة الإنتاج عند التقاطها إطارًا إطارًا. — Settings that make Mapbox/MapLibre/MapTiler frames reproducible when captured frame by frame.
 
 **متى:** حين يطلب المستخدم فيديو خريطة متحركة يجب أن تخرج إطاراتها ثابتة عند الالتقاط إطارًا بإطار / when a Mapbox/MapLibre map video must give reproducible frames when captured frame by frame
 
@@ -4713,7 +4713,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** matplotlib/seaborn (optionally SciencePlots) to produce chart frames or overlays, then ffmpeg to assemble.
+**ما هي:** matplotlib/seaborn (واختياريًا SciencePlots) لإنتاج إطارات مخططات أو طبقات علوية، ثم ffmpeg للتجميع. — matplotlib/seaborn (optionally SciencePlots) to produce chart frames or overlays, then ffmpeg to assemble.
 
 **متى:** عند صناعة رسوم بيانية بالبايثون كإطارات أو طبقات فوق الفيديو ثم تجميعها بـ ffmpeg / when producing matplotlib/seaborn chart frames or overlays and assembling them with ffmpeg
 
@@ -4784,7 +4784,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Compact specs (data + marks + encodings + transforms) for standard charts; easy to validate and store.
+**ما هي:** مواصفات مختصرة (بيانات + علامات + ترميزات + تحويلات) للمخططات القياسية؛ يسهل التحقق منها وتخزينها. — Compact specs (data + marks + encodings + transforms) for standard charts; easy to validate and store.
 
 **متى:** عند رسم مخطط بياني قياسي بمواصفات مختصرة سهلة الحفظ والتحقق قبل اللجوء إلى D3 / for standard charts from compact data, marks and encodings specs before moving to D3 or Canvas
 
@@ -4853,7 +4853,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A project's frame range is split into contiguous shards with no gaps so several machines/pages can render in parallel.
+**ما هي:** يُقسَّم مدى إطارات المشروع إلى شظايا متصلة بلا فجوات ليصيّر عدة أجهزة/صفحات بالتوازي. — A project's frame range is split into contiguous shards with no gaps so several machines/pages can render in parallel.
 
 **متى:** حين يكون التصيير طويلًا وتريد توزيع الإطارات على عدة أجهزة أو صفحات بالتوازي / when a long render should be split into frame shards across several machines or pages in parallel
 
@@ -4920,7 +4920,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Use D3 for scales, shapes, layouts, geo projections and annotation geometry; let our timeline own rendering and time.
+**ما هي:** استخدم D3 للمقاييس والأشكال والتخطيطات والإسقاطات الجغرافية وهندسة التعليقات التوضيحية؛ وليتولَّ خطنا الزمني التصيير والزمن. — Use D3 for scales, shapes, layouts, geo projections and annotation geometry; let our timeline own rendering and time.
 
 **متى:** حين يحتاج المخطط مقاييس وأشكالًا وتخطيطات وإسقاطات جغرافية مع ترك الزمن والرسم للتايملاين / when a chart needs scales, shapes, layouts or geo projections while our timeline owns rendering and time
 
@@ -4988,7 +4988,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** ECharts, Chart.js, Recharts, visx, Plotly when speed of integration beats custom semantics; ECharts GL and Plotly WebGL for large data.
+**ما هي:** ECharts وChart.js وRecharts وvisx وPlotly حين تغلب سرعة التكامل الدلالات المخصصة؛ وECharts GL وPlotly WebGL للبيانات الكبيرة. — ECharts, Chart.js, Recharts, visx, Plotly when speed of integration beats custom semantics; ECharts GL and Plotly WebGL for large data.
 
 **متى:** حين تكون سرعة الإنجاز أهم من التخصيص فنستخدم مكتبة مخططات جاهزة، أو للبيانات الكبيرة / when speed of integration beats custom chart semantics, or the data is large
 
@@ -5058,7 +5058,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** ComfyUI graphs are JSON maps of string node ids to {class_type, inputs}, where inputs are literals or [source_id, output_index] links.
+**ما هي:** مخططات ComfyUI خرائط JSON من معرّفات عقد نصية إلى {class_type, inputs}، والمدخلات قيم حرفية أو روابط [source_id, output_index]. — ComfyUI graphs are JSON maps of string node ids to {class_type, inputs}, where inputs are literals or [source_id, output_index] links.
 
 **متى:** عند بناء أو تعديل سير عمل ComfyUI لتوليد الصور كملف JSON يرسل للـ API / when wiring a ComfyUI image-generation workflow as API-format JSON nodes
 
@@ -5125,7 +5125,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Queue, monitor and fetch ComfyUI jobs headlessly.
+**ما هي:** وضع مهام ComfyUI في الطابور ومراقبتها وجلبها دون واجهة. — Queue, monitor and fetch ComfyUI jobs headlessly.
 
 **متى:** حين نريد إرسال مهام ComfyUI ومتابعة تقدمها وجلب نتائجها آليًا دون واجهة / when queuing, monitoring and fetching ComfyUI jobs headlessly over REST and WebSocket
 
@@ -5194,7 +5194,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Package a stage (e.g. upscale + face fix) as a subgraph, publish it as a blueprint in the node library, or expose a simplified App Mode UI.
+**ما هي:** تغليف مرحلة (مثل رفع الدقة + إصلاح الوجه) كمخطط فرعي، أو نشرها كمخطط معتمد في مكتبة العقد، أو كشف واجهة App Mode مبسطة. — Package a stage (e.g. upscale + face fix) as a subgraph, publish it as a blueprint in the node library, or expose a simplified App Mode UI.
 
 **متى:** عند تغليف مرحلة متكررة مثل التكبير وإصلاح الوجه كقالب قابل لإعادة الاستخدام أو واجهة مبسطة / when packaging a repeated stage like upscale plus face fix as a reusable blueprint or a simple App Mode UI
 
@@ -5260,7 +5260,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** All tracks (main media, music, voice, SFX stems, montage segment audio) are mixed sample-accurately for the frame-accurate render.
+**ما هي:** تُمزج كل المسارات (الوسائط الرئيسية والموسيقى والصوت وجذوع المؤثرات الصوتية وصوت مقاطع المونتاج) بدقة العينة للتصيير دقيق الإطار. — All tracks (main media, music, voice, SFX stems, montage segment audio) are mixed sample-accurately for the frame-accurate render.
 
 **متى:** عند دمج الموسيقى والتعليق والمؤثرات وصوت المقاطع بدقة العينة قبل الرندر النهائي / when mixing music, voice, SFX and clip audio sample-accurately for a frame-accurate render
 
@@ -5329,7 +5329,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT-derived (motion-starter-kit) |
 
-**ما هي:** Turns a timed script into a whole-timeline film drawn by one of 11 procedural styles, with its own SFX stem, a music bed and an optional aligned voice-over.
+**ما هي:** يحوّل نصًا موقَّتًا إلى فيلم على الخط الزمني كاملًا يرسمه أحد 11 نمطًا إجرائيًا، مع جذع مؤثرات صوتية خاص به وطبقة موسيقى وتعليق صوتي محاذى اختياري. — Turns a timed script into a whole-timeline film drawn by one of 11 procedural styles, with its own SFX stem, a music bed and an optional aligned voice-over.
 
 **متى:** حين يريد المستخدم تحويل سكريبت بتوقيتات إلى فيلم كامل بستايل مرسوم كالسبورة أو الدودل / when turning a timed script into a whole film in a drawn style like whiteboard, doodle or infographic
 
@@ -5397,7 +5397,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Drop anything (video, audio, photos, PDF, DOCX, text, SRT, fonts, zip, JSON, links); each file gets a guessed role the user can change; documents become script sources.
+**ما هي:** أسقط أي شيء (فيديو وصوت وصور وPDF وDOCX ونص وSRT وخطوط وzip وJSON وروابط)؛ يأخذ كل ملف دورًا مخمّنًا يغيّره المستخدم؛ وتصبح المستندات مصادر للنص. — Drop anything (video, audio, photos, PDF, DOCX, text, SRT, fonts, zip, JSON, links); each file gets a guessed role the user can change; documents become script sources.
 
 **متى:** عند استقبال ملفات متنوعة من المستخدم (فيديو، صوت، صور، PDF، ترجمة) وتحديد دور كل ملف / when the user drops mixed files (video, audio, photos, PDF, DOCX, SRT) and each needs a role
 
@@ -5466,7 +5466,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Records the live canvas plus mixed audio in real time; MP4 when the browser supports it, otherwise WebM (named honestly).
+**ما هي:** يسجّل اللوحة الحية مع الصوت الممزوج في الزمن الحقيقي؛ MP4 إن دعمه المتصفح وإلا WebM (بتسمية صادقة). — Records the live canvas plus mixed audio in real time; MP4 when the browser supports it, otherwise WebM (named honestly).
 
 **متى:** حين يكفي تصدير سريع بالزمن الحقيقي للكانفس مع الصوت دون دقة إطار بإطار / when a quick real-time export of the live canvas with mixed audio is enough
 
@@ -5535,7 +5535,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (mp4-muxer MIT via CDN) |
 
-**ما هي:** Draws and encodes every frame on its own with media elements parked at exact times, mixes audio offline and muxes H.264 + AAC into MP4.
+**ما هي:** يرسم كل إطار ويرمّزه مستقلًا مع وضع عناصر الوسائط في أزمنة دقيقة، ويمزج الصوت دون اتصال ويجمّع H.264 + AAC في MP4. — Draws and encodes every frame on its own with media elements parked at exact times, mixes audio offline and muxes H.264 + AAC into MP4.
 
 **متى:** حين يجب تصدير الفيديو النهائي إطارًا بإطار بدقة 1080p أو 60 إطارًا مع صوت مدمج / when the final MP4 must be encoded frame by frame with WebCodecs at 720p/1080p and 30/60 fps
 
@@ -5605,7 +5605,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A local Starlette site exposes plan/validate/compile, a render job service with job tokens, recipe jobs, media, projects with path containment, timeline summaries and an MCP endpoint with motion and KOSIF tools; cross-origin writes are refused.
+**ما هي:** موقع Starlette محلي يوفّر التخطيط/التحقق/التجميع، وخدمة مهام تصيير برموز مهام، ومهام الوصفات، والوسائط، والمشاريع مع حصر المسارات، وملخصات الخط الزمني، ونقطة MCP بأدوات الحركة وKOSIF؛ وتُرفض الكتابات عبر الأصول المختلفة. — A local Starlette site exposes plan/validate/compile, a render job service with job tokens, recipe jobs, media, projects with path containment, timeline summaries and an MCP endpoint with motion and KOSIF tools; cross-origin writes are refused.
 
 **متى:** عند تشغيل استوديو موشن محلي في المتصفح لتخطيط المشاريع وتجميعها وتصييرها مع أدوات MCP / when running a local motion studio site to plan, compile and render projects with MCP tools
 
@@ -5671,7 +5671,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Projects save as JSON (style, captions, overlays, SVG stickers, scenes with code, cuts, fix) without media; autosave every 6 s; undo up to 25 steps; handoff export includes cuts, beats, BPM and the motion prompt.
+**ما هي:** تُحفظ المشاريع بـ JSON (النمط والترجمات والطبقات العلوية وملصقات SVG والمشاهد بالشيفرة والقطع والإصلاح) دون الوسائط؛ حفظ تلقائي كل 6 ثوانٍ؛ وتراجع حتى 25 خطوة؛ ويشمل تصدير التسليم القطع والضربات وBPM وموجّه الحركة. — Projects save as JSON (style, captions, overlays, SVG stickers, scenes with code, cuts, fix) without media; autosave every 6 s; undo up to 25 steps; handoff export includes cuts, beats, BPM and the motion prompt.
 
 **متى:** عند حفظ مشروع المونتاج واستعادته أو التراجع عن خطأ أو تسليم المشروع لشخص آخر / when saving or reopening an edit project, undoing mistakes or exporting a handoff file
 
@@ -5741,7 +5741,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every finished render is kept in IndexedDB with title, size, cost and thumbnail (last 30) for replay and download.
+**ما هي:** يُحفظ كل تصيير منتهٍ في IndexedDB بعنوانه وحجمه وكلفته وصورة مصغرة (آخر 30) لإعادة التشغيل والتنزيل. — Every finished render is kept in IndexedDB with title, size, cost and thumbnail (last 30) for replay and download.
 
 **متى:** حين يريد المستخدم الرجوع لفيديوهاته المصدرة سابقًا لمشاهدتها أو تنزيلها / when the user wants to replay or download previously rendered videos
 
@@ -5811,7 +5811,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Vite dev/preview middleware proxies Gemini and Anthropic with server-side keys and hosts helper routes; only public https hosts are allowed and every redirect hop is re-checked.
+**ما هي:** وسيط Vite للتطوير/المعاينة يمرّر Gemini وAnthropic بمفاتيح من جهة الخادم ويستضيف مسارات مساعدة؛ ولا يُسمح إلا بمضيفي https العامّين ويُعاد فحص كل قفزة توجيه. — Vite dev/preview middleware proxies Gemini and Anthropic with server-side keys and hosts helper routes; only public https hosts are allowed and every redirect hop is re-checked.
 
 **متى:** عند تمرير طلبات Gemini وAnthropic عبر الخادم بمفاتيح مخفية مع منع الوصول للعناوين الداخلية / when proxying Gemini and Anthropic calls with server-side keys while blocking private and local hosts
 
@@ -5878,7 +5878,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** React-based sequencing for long edits with Remotion Studio review, referencing motalim-ai/motion-starter-kit (MIT). Not wired in this repo.
+**ما هي:** تسلسل مبني على React للمونتاج الطويل مع مراجعة Remotion Studio، بالرجوع إلى motalim-ai/motion-starter-kit (MIT). غير موصول في هذا المستودع. — React-based sequencing for long edits with Remotion Studio review, referencing motalim-ai/motion-starter-kit (MIT). Not wired in this repo.
 
 **متى:** حين يكون المونتاج طويلًا ويحتاج تسلسلًا بـ React ومراجعة في Remotion Studio بعد تثبيته والتحقق منه / when a long edit needs React sequencing and Remotion Studio review, only once Remotion is installed
 
@@ -5946,7 +5946,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** HTML/CSS seekable compositions rendered to video (heygen-com/hyperframes, Apache-2.0); runtime not bundled; recent versions need Node >= 22.
+**ما هي:** تراكيب HTML/CSS قابلة للتنقل تُصيَّر فيديو (heygen-com/hyperframes، Apache-2.0)؛ بيئة التشغيل غير مضمّنة؛ والإصدارات الحديثة تتطلب Node >= 22. — HTML/CSS seekable compositions rendered to video (heygen-com/hyperframes, Apache-2.0); runtime not bundled; recent versions need Node >= 22.
 
 **متى:** عند رندر تركيبات HTML/CSS قابلة للتقديم إلى فيديو بعد تثبيت HyperFrames والتحقق من Node / when rendering seekable HTML/CSS compositions to video once HyperFrames is installed separately
 
@@ -6015,7 +6015,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders every frame by calling window.renderFrame(i/fps) in headless Chromium, grabs canvas PNG, and pipes it into FFmpeg as H.264.
+**ما هي:** يصيّر كل إطار باستدعاء window.renderFrame(i/fps) في Chromium دون واجهة، ويلتقط PNG للوحة، ويمرره إلى FFmpeg بترميز H.264. — Renders every frame by calling window.renderFrame(i/fps) in headless Chromium, grabs canvas PNG, and pipes it into FFmpeg as H.264.
 
 **متى:** عند تصدير ستوري بورد الكانفس إلى MP4 بإطارات ثابتة مع صوت ومقاس عمودي أو أفقي أو مربع / when exporting a canvas storyboard to MP4 with exact frames, optional audio and 9:16, 16:9 or square size
 
@@ -6086,7 +6086,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** During export no web server runs: Playwright fulfils requests to a fake host from local web/ and project/ only.
+**ما هي:** لا يعمل خادم ويب أثناء التصدير: يلبّي Playwright الطلبات إلى مضيف وهمي من web/ وproject/ المحليين فقط. — During export no web server runs: Playwright fulfils requests to a fake host from local web/ and project/ only.
 
 **متى:** حين يجب أن يعمل التصدير دون خادم ويب بتقديم ملفات المشروع المحلية فقط / when export must run with no web server, serving only local project files to the page
 
@@ -6155,7 +6155,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A video is a plain HTML file: a root element with data-composition-id plus width/height, and timed children carrying class=clip.
+**ما هي:** الفيديو ملف HTML بسيط: عنصر جذر بـ data-composition-id مع العرض/الارتفاع، وأبناء موقَّتون يحملون class=clip. — A video is a plain HTML file: a root element with data-composition-id plus width/height, and timed children carrying class=clip.
 
 **متى:** عند كتابة فيديو كملف HTML بسيط بعنصر جذر ومقاسات وعناصر موقوتة / when writing a video as a plain HTML file with a root element, size and timed clip children
 
@@ -6223,7 +6223,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Reusable scene files mounted inside the root with their own timeline window.
+**ما هي:** ملفات مشاهد قابلة لإعادة الاستخدام تُركَّب داخل الجذر بنافذة زمنية خاصة بها. — Reusable scene files mounted inside the root with their own timeline window.
 
 **متى:** حين نريد مشاهد قابلة لإعادة الاستخدام داخل الفيديو الرئيسي لكل منها نافذة زمنية خاصة / when reusable scene files must mount inside the root video with their own timeline window
 
@@ -6289,7 +6289,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Every frame is computed as time=floor(frame)/fps and all animations are seeked, never played; fps/size/variables locked before frame 0.
+**ما هي:** يُحسب كل إطار بالصيغة time=floor(frame)/fps وتُنقَل كل الحركات ولا تُشغَّل أبدًا؛ وتُثبَّت fps/الحجم/المتغيرات قبل الإطار 0. — Every frame is computed as time=floor(frame)/fps and all animations are seeked, never played; fps/size/variables locked before frame 0.
 
 **متى:** عند كتابة تركيب يحسب كل إطار من رقمه وتضبط فيه الحركات بالتقديم لا بالتشغيل / when every frame must be computed from frame/fps with timelines seeked, never played
 
@@ -6358,7 +6358,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The in-browser KOSIF Studio editor exports frame-accurate MP4 with WebCodecs and an MP4 muxer: exact frame plan, audio placement, codec fallback (AVC baseline → none; Opus for audio), keyframes every 2 s, cancel, loudness normalisation; plus a MediaRecorder WebM path with safe cancel.
+**ما هي:** محرر KOSIF Studio داخل المتصفح يصدّر MP4 دقيق الإطار بـ WebCodecs ومجمّع MP4: خطة إطارات دقيقة، وموضع الصوت، وبدائل الترميز (AVC baseline ← لا شيء؛ وOpus للصوت)، وإطارات مفتاحية كل ثانيتين، وإلغاء، وتسوية الجهارة؛ إضافة إلى مسار MediaRecorder WebM مع إلغاء آمن. — The in-browser KOSIF Studio editor exports frame-accurate MP4 with WebCodecs and an MP4 muxer: exact frame plan, audio placement, codec fallback (AVC baseline → none; Opus for audio), keyframes every 2 s, cancel, loudness normalisation; plus a MediaRecorder WebM path with safe cancel.
 
 **متى:** حين يريد المستخدم تصدير MP4 من محرر المتصفح بدقة الإطار مع الصوت دون تسجيل حي / when exporting a frame-accurate MP4 with audio from the in-browser editor instead of live recording
 
@@ -6426,7 +6426,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Runtime seeks several animation libraries; custom hosts implement init/seekFrame/destroy.
+**ما هي:** يتنقل وقت التشغيل في عدة مكتبات حركة؛ وتنفّذ المضيفات المخصصة init/seekFrame/destroy. — Runtime seeks several animation libraries; custom hosts implement init/seekFrame/destroy.
 
 **متى:** حين يجمع التركيب مكتبات حركة مختلفة مثل GSAP وCSS ولوتي وThree.js ويجب التقديم إلى أي إطار / when a composition mixes animation libraries (GSAP, CSS, Lottie, Three.js, WAAPI) that must seek to any frame
 
@@ -6496,7 +6496,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scaffold a project; --example, --resolution landscape\|portrait\|landscape-4k\|portrait-4k\|square\|square-4k, --video/--audio (auto Whisper captions), --tailwind, --non-interactive, --skip-transcribe, --model, --language.
+**ما هي:** إنشاء هيكل مشروع؛ --example، و--resolution landscape\|portrait\|landscape-4k\|portrait-4k\|square\|square-4k، و--video/--audio (ترجمات Whisper تلقائية)، و--tailwind، و--non-interactive، و--skip-transcribe، و--model، و--language. — Scaffold a project; --example, --resolution landscape\|portrait\|landscape-4k\|portrait-4k\|square\|square-4k, --video/--audio (auto Whisper captions), --tailwind, --non-interactive, --skip-transcribe, --model, --language.
 
 **متى:** عند بدء مشروع فيديو جديد بمقاس أفقي أو عمودي أو مربع مع ترجمة تلقائية من الصوت / when starting a new video project in landscape, portrait or square with auto captions from audio
 
@@ -6567,7 +6567,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Render to mp4\|webm\|mov\|gif\|png-sequence\|hls; --fps 1-240 or 30000/1001; --quality draft\|looks(CRF16)\|standard\|high\|delivery; --crf 0-51, --video-bitrate, --workers 1-24 (~256MB each), --gpu (NVENC/VideoToolbox/AMF/VAAPI/QSV), --docker, --hdr/--sdr, --resolution supersample, --gif-loop, --hls-segment…
+**ما هي:** التصيير إلى mp4\|webm\|mov\|gif\|png-sequence\|hls؛ --fps 1-240 أو 30000/1001؛ --quality draft\|looks(CRF16)\|standard\|high\|delivery؛ --crf 0-51، و--video-bitrate، و--workers 1-24 (نحو 256MB لكل منها)، و--gpu (NVENC/VideoToolbox/AMF/VAAPI/QSV)، و--docker، و--hdr/--sdr، و--resolution للعيّنة الفائقة، و--gif-loop، و--hls-segment… — Render to mp4\|webm\|mov\|gif\|png-sequence\|hls; --fps 1-240 or 30000/1001; --quality draft\|looks(CRF16)\|standard\|high\|delivery; --crf 0-51, --video-bitrate, --workers 1-24 (~256MB each), --gpu (NVENC/VideoToolbox/AMF/VAAPI/QSV), --docker, --hdr/--sdr, --resolution supersample, --gif-loop, --hls-segment…
 
 **متى:** عند تصدير الفيديو بصيغ مثل MP4 أو WebM أو GIF أو HLS مع ضبط الجودة والإطارات والترميز بكرت الشاشة / when exporting to mp4, webm, mov, gif, png sequence or hls with set quality, fps and GPU encoding
 
@@ -6637,7 +6637,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Studio preview server on port 3002; --background, --proxy transcodes HEVC/ProRes/AV1, --browser-gpu.
+**ما هي:** خادم معاينة Studio على المنفذ 3002؛ --background، و--proxy يحوّل HEVC/ProRes/AV1، و--browser-gpu. — Studio preview server on port 3002; --background, --proxy transcodes HEVC/ProRes/AV1, --browser-gpu.
 
 **متى:** عند مشاهدة التركيب في استوديو محلي قبل الرندر مع تحويل مقاطع HEVC أو ProRes بنسخ بروكسي / when previewing a composition in the studio server before rendering, with proxies for HEVC/ProRes/AV1
 
@@ -6706,7 +6706,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Capture a website into assets/screenshots (max 21) with AI image captioning, --video download mode.
+**ما هي:** التقاط موقع ويب إلى assets/screenshots (حتى 21) مع وصف الصور بالذكاء الاصطناعي، وبنمط تنزيل --video. — Capture a website into assets/screenshots (max 21) with AI image captioning, --video download mode.
 
 **متى:** حين يريد المستخدم لقطات شاشة لموقع ويب كمواد لفيديو مع وصف تلقائي للصور / when the user wants screenshots of a website as video assets, with AI image captioning
 
@@ -6775,7 +6775,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** List/search registry blocks & components (--type block\|component, --tag, --query, --on-device) and paste one into a project.
+**ما هي:** سرد/بحث كتل ومكونات السجل (--type block\|component و--tag و--query و--on-device) ولصق أحدها في مشروع. — List/search registry blocks & components (--type block\|component, --tag, --query, --on-device) and paste one into a project.
 
 **متى:** عند البحث عن بلوكات أو مكونات جاهزة في السجل وإضافتها لمشروع الفيديو / when searching registry blocks and components and pasting one into a project
 
@@ -6844,7 +6844,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Present or play a composition; publish to hosted project (--public, --space).
+**ما هي:** عرض تركيب أو تشغيله؛ ونشره كمشروع مستضاف (--public و--space). — Present or play a composition; publish to hosted project (--public, --space).
 
 **متى:** حين يريد المستخدم عرض التركيب أو تشغيله أو نشره كمشروع مستضاف / when presenting or playing a composition, or publishing it as a hosted project
 
@@ -6913,7 +6913,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Environment diagnosis, project info, benchmarks, cache cleanup, Chrome management.
+**ما هي:** تشخيص البيئة ومعلومات المشروع وقياسات الأداء وتنظيف الكاش وإدارة Chrome. — Environment diagnosis, project info, benchmarks, cache cleanup, Chrome management.
 
 **متى:** حين تحتاج بيئة hyperframes إلى تشخيص أو تنظيف الكاش أو قياس سرعة التصيير / when diagnosing the hyperframes environment, cleaning cache, benchmarking or managing Chrome
 
@@ -6982,7 +6982,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Hosted render (cloud render/list/get/delete) and self-hosted AWS Lambda / GCP Cloud Run deployment commands.
+**ما هي:** تصيير مستضاف (تصيير سحابي/سرد/جلب/حذف) وأوامر نشر ذاتي على AWS Lambda / GCP Cloud Run. — Hosted render (cloud render/list/get/delete) and self-hosted AWS Lambda / GCP Cloud Run deployment commands.
 
 **متى:** حين يريد المستخدم تصيير الفيديو على السحابة أو نشر التصيير على AWS Lambda أو Cloud Run بدل جهازه / when rendering video in the cloud or deploying renders to AWS Lambda / GCP Cloud Run
 
@@ -7051,7 +7051,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Figma import and Claude Design handoff commands.
+**ما هي:** أوامر استيراد Figma وتسليم Claude Design. — Figma import and Claude Design handoff commands.
 
 **متى:** حين يريد المستخدم استيراد تصميم من Figma أو استلام تصميم من Claude Design داخل مشروع الفيديو / when importing a Figma design or handing off from Claude Design into a hyperframes project
 
@@ -7120,7 +7120,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A loopback-only Starlette/uvicorn website that acts as the 'hands' of the montage engine: Arabic RTL tabs for media, recipes, projects, timeline, jobs, review, Workbench, Claude and environment; every file stays on the PC.
+**ما هي:** موقع Starlette/uvicorn على الحلقة المحلية فقط يعمل «يدَين» لمحرك المونتاج: تبويبات عربية من اليمين للوسائط والوصفات والمشاريع والخط الزمني والمهام والمراجعة وWorkbench وClaude والبيئة؛ وكل الملفات تبقى على الحاسوب. — A loopback-only Starlette/uvicorn website that acts as the 'hands' of the montage engine: Arabic RTL tabs for media, recipes, projects, timeline, jobs, review, Workbench, Claude and environment; every file stays on the PC.
 
 **متى:** عند تشغيل موقع محلي عربي لإدارة الوسائط والوصفات والمشاريع والمهام مع بقاء الملفات على الجهاز / when running a local Arabic RTL site to manage media, recipes, projects and jobs with all files kept on the PC
 
@@ -7191,7 +7191,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Producer drives headless Chrome (puppeteer) per worker, captures frames (BeginFrame/screenshot/fast draw-element), streams to FFmpeg.
+**ما هي:** يقود المنتِج Chrome دون واجهة (puppeteer) لكل عامل، ويلتقط الإطارات (BeginFrame/لقطة/رسم عنصر سريع)، ويبثها إلى FFmpeg. — Producer drives headless Chrome (puppeteer) per worker, captures frames (BeginFrame/screenshot/fast draw-element), streams to FFmpeg.
 
 **متى:** عند تصيير الفيديو محليًا بكروم بلا واجهة وFFmpeg مع ضبط عدد العمال أو على جهاز ذاكرته قليلة / when rendering locally via headless Chrome + FFmpeg, tuning workers or on a low-memory machine
 
@@ -7262,7 +7262,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** React/CodeMirror timeline editor; exposes ~12 WebMCP tools with commit stages refused/dispatched/saved/verified/failed.
+**ما هي:** محرر خط زمني بـ React/CodeMirror؛ يكشف نحو 12 أداة WebMCP بمراحل إيداع refused/dispatched/saved/verified/failed. — React/CodeMirror timeline editor; exposes ~12 WebMCP tools with commit stages refused/dispatched/saved/verified/failed.
 
 **متى:** حين يريد المستخدم تعديل التركيب على خط زمني في المتصفح أو يتحكم وكيل المتصفح بالاستوديو عبر WebMCP / when editing a composition on a browser timeline or letting a browser agent drive the Studio via WebMCP
 
@@ -7330,7 +7330,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Programmatic editing of compositions with persistence adapters.
+**ما هي:** تحرير التراكيب برمجيًا مع محوّلات الحفظ. — Programmatic editing of compositions with persistence adapters.
 
 **متى:** حين يحتاج المطور فتح التركيبات وتعديلها وحفظها برمجيًا من الكود بدل المحرر / for programmatically opening, editing and saving compositions from code via @hyperframes/sdk
 
@@ -7396,7 +7396,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Every registry component is an elastic HTML template with one paused GSAP timeline keyed by its name; hosts mount it as a clip and pass only changed variables.
+**ما هي:** كل مكوّن في السجل قالب HTML مرن بخط زمني GSAP واحد متوقف مفهرس باسمه؛ تركّبه المضيفات كمقطع وتمرّر المتغيرات المتغيرة فقط. — Every registry component is an elastic HTML template with one paused GSAP timeline keyed by its name; hosts mount it as a clip and pass only changed variables.
 
 **متى:** عند تركيب مكون جاهز من المكتبة كمقطع داخل المشهد وتمرير نصوصه ومتغيراته وتوقيت دخوله وخروجه / when mounting a registry component as a clip and passing its text, variables, cues and exit
 
@@ -7465,7 +7465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** On-device vector search over all installable registry items so the right block/component can be found by intent words.
+**ما هي:** بحث متجهي على الجهاز في كل عناصر السجل القابلة للتثبيت ليُعثر على الكتلة/المكوّن المناسب بكلمات النية. — On-device vector search over all installable registry items so the right block/component can be found by intent words.
 
 **متى:** حين يبحث المستخدم عن كتلة أو مكون مناسب بوصف ما يريده بالكلمات بدل معرفة اسمه / when finding the right registry block or component by intent words with on-device vector search
 
@@ -7536,7 +7536,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Live HTML (phone/laptop UIs, panels) is drawn into a canvas texture each frame so WebGL/3D models (GLTF iPhone/MacBook) can show real, editable UI on their screens.
+**ما هي:** يُرسم HTML الحي (واجهات الهاتف/الحاسوب واللوحات) في نسيج لوحة كل إطار ليعرض WebGL/نماذج 3D (GLTF لـ iPhone/MacBook) واجهة حقيقية قابلة للتحرير على شاشاتها. — Live HTML (phone/laptop UIs, panels) is drawn into a canvas texture each frame so WebGL/3D models (GLTF iPhone/MacBook) can show real, editable UI on their screens.
 
 **متى:** حين يريد المستخدم عرض واجهة تطبيق حقيقية قابلة للتعديل على شاشة موبايل أو لابتوب ثلاثي الأبعاد / when showing a live, editable app UI on a 3D phone or laptop screen in a video
 
@@ -7607,7 +7607,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** A video is one HTML file whose DOM carries timing in data-* attributes, animated by a seekable runtime; headless Chrome seeks every frame and FFmpeg encodes, so identical input gives identical frames.
+**ما هي:** الفيديو ملف HTML واحد يحمل DOM فيه التوقيت في سمات data-* وتحرّكه بيئة تشغيل قابلة للتنقل؛ ينتقل Chrome دون واجهة إلى كل إطار ويرمّز FFmpeg، فيعطي المدخل نفسه الإطارات نفسها. — A video is one HTML file whose DOM carries timing in data-* attributes, animated by a seekable runtime; headless Chrome seeks every frame and FFmpeg encodes, so identical input gives identical frames.
 
 **متى:** حين يريد المستخدم صنع فيديو موشن من ملف HTML واحد بتوقيتات وتصيير يعطي نفس الإطارات كل مرة / when making a motion video from a single HTML file with timed clips and deterministic frame rendering
 
@@ -7680,7 +7680,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Stages: blocks & assets (install registry once before parallel work), audio (voice + word timings + BGM + SFX -> audio_meta.json, carve the bed under voice), frames, duration sync (real voice length wins), assembly, transitions, captions, verify (lint + check + snapshot contact sheet), deliver (fina…
+**ما هي:** المراحل: كتل وأصول (ثبّت السجل مرة قبل العمل المتوازي)، وصوت (تعليق + أزمنة الكلمات + موسيقى خلفية + مؤثرات ← audio_meta.json، مع خفض الموسيقى تحت الصوت)، وإطارات، ومزامنة المدة (يغلب طول الصوت الحقيقي)، وتجميع، وانتقالات، وترجمات، وتحقق (lint + check + ورقة اتصال لقطات)، وتسليم (النهائي… — Stages: blocks & assets (install registry once before parallel work), audio (voice + word timings + BGM + SFX -> audio_meta.json, carve the bed under voice), frames, duration sync (real voice length wins), assembly, transitions, captions, verify (lint + check + snapshot contact sheet), deliver (fina…
 
 **متى:** عند التخطيط لإنتاج فيديو كامل بالترتيب: الصوت، الإطارات، مزامنة المدة، الانتقالات، الترجمة، التحقق / when planning a full video production in order: audio, frames, duration sync, transitions, captions, verify
 
@@ -7746,7 +7746,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Each scene is authored by a sub-agent from a packet (frame block + inlined blueprint + rule recipes + frame.md) into compositions/frames/NN-*.html; orchestrator lints the assembled project and re-dispatches failures.
+**ما هي:** يكتب كل مشهد وكيل فرعي من حزمة (كتلة إطار + مخطط معتمد مضمّن + وصفات القواعد + frame.md) إلى compositions/frames/NN-*.html؛ ويفحص المنسّق المشروع المجمّع بـ lint ويعيد توزيع الإخفاقات. — Each scene is authored by a sub-agent from a packet (frame block + inlined blueprint + rule recipes + frame.md) into compositions/frames/NN-*.html; orchestrator lints the assembled project and re-dispatches failures.
 
 **متى:** حين يتكون الفيديو من مشاهد كثيرة ويُراد توزيع كتابة كل مشهد على وكيل فرعي بالتوازي ثم تجميعها / when sub-agents should author each scene of a multi-scene video in parallel and failures get re-dispatched
 
@@ -7813,7 +7813,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** The Studio preview is a full browser editor (click to edit, drag/trim clips, export); the desktop app's assistant 'Framey' edits by chat and drawing on frames; after returning, `hyperframes catch-up` lists what changed.
+**ما هي:** معاينة Studio محرر متصفح كامل (انقر للتعديل، واسحب/قصّ المقاطع، وصدّر)؛ ومساعد تطبيق سطح المكتب 'Framey' يعدّل بالمحادثة والرسم على الإطارات؛ وبعد العودة يسرد `hyperframes catch-up` ما تغيّر. — The Studio preview is a full browser editor (click to edit, drag/trim clips, export); the desktop app's assistant 'Framey' edits by chat and drawing on frames; after returning, `hyperframes catch-up` lists what changed.
 
 **متى:** قبل التصيير النهائي حين يريد المستخدم معاينة الفيديو وسحب المقاطع وقصها بنفسه ثم معرفة ما غيّره / before the final render, when the user wants to preview, drag and trim clips themselves, then see what changed
 
@@ -7880,7 +7880,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 32 kmotion commands grouped in 5 groups (auto montage, v6 timeline/scenes/privacy/templates, films from code, quick tools, QA) are described with typed fields so the browser builds forms, MCP validates arguments and the server builds a safe argv.
+**ما هي:** 32 أمر kmotion في 5 مجموعات (مونتاج تلقائي، خط زمني/مشاهد/خصوصية/قوالب v6، أفلام من الشيفرة، أدوات سريعة، فحص الجودة) موصوفة بحقول مصنّفة ليبني المتصفح النماذج وتتحقق MCP من المعاملات ويبني الخادم argv آمنًا. — 32 kmotion commands grouped in 5 groups (auto montage, v6 timeline/scenes/privacy/templates, films from code, quick tools, QA) are described with typed fields so the browser builds forms, MCP validates arguments and the server builds a safe argv.
 
 **متى:** حين تريد تحويل أوامر kmotion إلى نماذج في المتصفح بحقول يُتحقق منها قبل التشغيل / when kmotion commands should become typed browser forms whose arguments are validated before running
 
@@ -7950,7 +7950,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Root div sized width/height 100% with data-composition-id, data-width, data-height, data-duration (read once at compile time = render length), optional data-fps; standalone root sits in <body> without <template>.
+**ما هي:** div جذر بعرض/ارتفاع 100% مع data-composition-id وdata-width وdata-height وdata-duration (يُقرأ مرة عند التجميع = طول التصيير) وdata-fps اختياري؛ والجذر المستقل يوضع في <body> دون <template>. — Root div sized width/height 100% with data-composition-id, data-width, data-height, data-duration (read once at compile time = render length), optional data-fps; standalone root sits in <body> without <template>.
 
 **متى:** عند كتابة العنصر الجذري للتركيب وتحديد مقاسه ومدته ومعدل الإطارات حتى يخرج الفيديو بالطول الصحيح / when writing the composition root with size, duration and optional fps so the render length is right
 
@@ -8020,7 +8020,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** class="clip" + data-start/data-duration mark timed elements; data-track-index is only a Studio lane (render ignores it, clips may overlap); img defaults 3 s; video/audio default to source length; data-media-start offsets source; data-volume 0..3.98 (+12 dB); data-has-audio keeps footage sound; data-…
+**ما هي:** class="clip" + data-start/data-duration تعلّم العناصر الموقَّتة؛ وdata-track-index مجرد مسار في Studio (التصيير يتجاهله وقد تتداخل المقاطع)؛ الصور افتراضيًا 3 ث؛ والفيديو/الصوت بطول المصدر؛ وdata-media-start يزيح المصدر؛ وdata-volume من 0 إلى 3.98 (+12 dB)؛ وdata-has-audio يبقي صوت اللقطات؛ وdata-… — class="clip" + data-start/data-duration mark timed elements; data-track-index is only a Studio lane (render ignores it, clips may overlap); img defaults 3 s; video/audio default to source length; data-media-start offsets source; data-volume 0..3.98 (+12 dB); data-has-audio keeps footage sound; data-…
 
 **متى:** عند توقيت الصور والفيديو والصوت كمقاطع وضبط بدايتها ومدتها وبداية المصدر ومستوى الصوت / when timing image, video and audio clips with start, duration, source offset and volume
 
@@ -8089,7 +8089,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Scenes live in separate files loaded via data-composition-src; the file is one <template> whose root carries data-composition-id; style/script must be inside the template (head is dropped); style root via #root never a class.
+**ما هي:** تعيش المشاهد في ملفات منفصلة تُحمَّل عبر data-composition-src؛ والملف <template> واحد يحمل جذره data-composition-id؛ ويجب أن يكون style/script داخل القالب (يُهمل head)؛ وتُنسَّق الجذر عبر #root لا بصنف. — Scenes live in separate files loaded via data-composition-src; the file is one <template> whose root carries data-composition-id; style/script must be inside the template (head is dropped); style root via #root never a class.
 
 **متى:** حين يُقسَّم الفيديو إلى مشاهد في ملفات منفصلة تُحمَّل داخل التركيب الرئيسي بمتغيرات لكل نسخة / when splitting a video into scene files loaded as sub-compositions with per-instance variables
 
@@ -8156,7 +8156,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Declared variables (data-composition-variables JSON on <html>) let one template render many variants; data-var-text binds text, data-var-src binds media src; CLI --variables overrides.
+**ما هي:** تتيح المتغيرات المعلنة (JSON في data-composition-variables على <html>) تصيير قالب واحد بنسخ كثيرة؛ وdata-var-text يربط النص وdata-var-src يربط src الوسائط؛ و--variables في CLI يتجاوزها. — Declared variables (data-composition-variables JSON on <html>) let one template render many variants; data-var-text binds text, data-var-src binds media src; CLI --variables overrides.
 
 **متى:** حين يريد المستخدم نسخًا كثيرة من نفس القالب بنصوص أو صور مختلفة أو تصييرًا جماعيًا من CSV / when one template must render many variants with different text or media, or batch render from CSV
 
@@ -8223,7 +8223,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** `init --tailwind` projects use the Tailwind v4 browser runtime; dynamic class safety and a render-proof that frame 0 does not flash unstyled.
+**ما هي:** تستخدم مشاريع `init --tailwind` بيئة تشغيل Tailwind v4 في المتصفح؛ مع أمان الأصناف الديناميكية وإثبات تصيير بأن الإطار 0 لا يومض غير منسَّق. — `init --tailwind` projects use the Tailwind v4 browser runtime; dynamic class safety and a render-proof that frame 0 does not flash unstyled.
 
 **متى:** عند استخدام Tailwind v4 في تركيب الفيديو مع التأكد أن أول إطار لا يظهر بلا تنسيق / when building compositions with Tailwind v4 and making sure frame 0 does not flash unstyled
 
@@ -8289,7 +8289,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Use x/y/scale/rotation aliases, never width/height/top/left for motion; will-change sparingly; stagger beats N tweens; precompute layout constants instead of getBoundingClientRect at tween time.
+**ما هي:** استخدم الأسماء المستعارة x/y/scale/rotation، ولا تستخدم width/height/top/left للحركة؛ وwill-change باعتدال؛ والتتابع أفضل من N حركات؛ واحسب ثوابت التخطيط مسبقًا بدل getBoundingClientRect وقت التحريك. — Use x/y/scale/rotation aliases, never width/height/top/left for motion; will-change sparingly; stagger beats N tweens; precompute layout constants instead of getBoundingClientRect at tween time.
 
 **متى:** عند تحريك العناصر بـ GSAP مع الحفاظ على أداء التصيير: x/y/scale/rotation بدل العرض والموضع / when animating with GSAP for good performance: x/y/scale/rotation, not width/height/top/left
 
@@ -8356,7 +8356,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Lightweight Anime.js v4 timelines registered on window.__hfAnime for seeking.
+**ما هي:** خطوط Anime.js v4 الزمنية الخفيفة المسجّلة على window.__hfAnime للتنقل. — Lightweight Anime.js v4 timelines registered on window.__hfAnime for seeking.
 
 **متى:** حين يريد المستخدم التحريك بمكتبة Anime.js الخفيفة مع إمكانية التقديم إطارًا بإطار عند التصيير / when animating with lightweight Anime.js v4 timelines that stay seekable for rendering
 
@@ -8422,7 +8422,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** CSS @keyframes become seekable via animation-delay/play-state/fill-mode control; good for shimmer and repeated motifs.
+**ما هي:** تصبح @keyframes في CSS قابلة للتنقل بالتحكم في animation-delay/play-state/fill-mode؛ جيدة للّمعان والزخارف المتكررة. — CSS @keyframes become seekable via animation-delay/play-state/fill-mode control; good for shimmer and repeated motifs.
 
 **متى:** حين تكفي حركة CSS بسيطة مثل اللمعان أو زخرفة متكررة ويجب جعلها قابلة للتقديم عند التصيير / when simple CSS @keyframes like shimmer or repeated motifs must be seekable for rendering
 
@@ -8488,7 +8488,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** element.animate() animations seeked via currentTime without a GSAP dependency.
+**ما هي:** حركات element.animate() يُنتقل فيها عبر currentTime دون اعتماد على GSAP. — element.animate() animations seeked via currentTime without a GSAP dependency.
 
 **متى:** حين تُكتب الحركة بـ element.animate() دون الاعتماد على GSAP وتحتاج تقديمها بالزمن عند التصيير / when animations use element.animate() without a GSAP dependency and must be seeked for rendering
 
@@ -8554,7 +8554,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** init -> catalog search -> author -> lint -> check -> snapshot -> preview --background -> render (after approval) -> verify with ffprobe -> feedback.
+**ما هي:** init ← بحث الكتالوج ← تأليف ← lint ← check ← لقطة ← preview --background ← تصيير (بعد الموافقة) ← تحقق بـ ffprobe ← ملاحظات. — init -> catalog search -> author -> lint -> check -> snapshot -> preview --background -> render (after approval) -> verify with ffprobe -> feedback.
 
 **متى:** حين يبدأ المستخدم فيديو موشن من الصفر ويريد خطوات العمل كاملة من الإنشاء والفحص والمعاينة حتى التصيير والتحقق / when going end to end: init, catalog search, lint, check, preview, render, ffprobe verify
 
@@ -8621,7 +8621,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every recipe runs as its own `python kmotion.py CMD …` process in a queue with N workers; the log streams to the browser over Server-Sent Events, persists to disk and the produced files are auto-detected from the log.
+**ما هي:** تُشغَّل كل وصفة كعملية `python kmotion.py CMD …` مستقلة في طابور بـ N عمّال؛ ويُبثّ السجل إلى المتصفح عبر Server-Sent Events ويُحفظ على القرص وتُكتشف الملفات الناتجة تلقائيًا من السجل. — Every recipe runs as its own `python kmotion.py CMD …` process in a queue with N workers; the log streams to the browser over Server-Sent Events, persists to disk and the produced files are auto-detected from the log.
 
 **متى:** عند تشغيل أوامر طويلة في الخلفية بطابور وعرض سجلها مباشرة في المتصفح والتقاط الملفات الناتجة / when running long commands in a background queue with a live browser log and auto-detected outputs
 
@@ -8691,7 +8691,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Creates a project (centered blank or example template) optionally with a video/audio file auto-transcribed by Whisper, Tailwind v4, resolution presets.
+**ما هي:** ينشئ مشروعًا (فارغًا مركزيًا أو قالب مثال)، واختياريًا مع ملف فيديو/صوت يُفرَّغ تلقائيًا بـ Whisper، وTailwind v4، وإعدادات دقة مسبقة. — Creates a project (centered blank or example template) optionally with a video/audio file auto-transcribed by Whisper, Tailwind v4, resolution presets.
 
 **متى:** حين يبدأ المستخدم مشروع فيديو جديدًا من قالب مثال أو بفيديو وصوت يُفرَّغ نصهما تلقائيًا بمقاس أفقي أو عمودي / when starting a new project from an example, optionally with media auto-transcribed by Whisper
 
@@ -8762,7 +8762,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Environment check (Node, FFmpeg, Chrome) and pinned Chrome download/path/clear.
+**ما هي:** فحص البيئة (Node وFFmpeg وChrome) وتنزيل Chrome المثبّت ومساره ومسحه. — Environment check (Node, FFmpeg, Chrome) and pinned Chrome download/path/clear.
 
 **متى:** عند فحص البيئة للتأكد من وجود Node وFFmpeg وChrome أو تنزيل نسخة Chrome المثبتة أو مسحها / when checking Node, FFmpeg and Chrome are present, or downloading, locating or clearing the pinned Chrome
 
@@ -8830,7 +8830,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Search the registry by plain-English description of a beat; local word tier or optional on-device ONNX embedding tier; query in English even for non-English videos; report misses.
+**ما هي:** ابحث في السجل بوصف إنجليزي بسيط للمقطع؛ طبقة كلمات محلية أو طبقة تضمين ONNX اختيارية على الجهاز؛ والاستعلام بالإنجليزية حتى للفيديو غير الإنجليزي؛ وبلّغ عن الإخفاقات. — Search the registry by plain-English description of a beat; local word tier or optional on-device ONNX embedding tier; query in English even for non-English videos; report misses.
 
 **متى:** حين يبحث المستخدم في المكتبة بوصف المشهد بكلمات عادية دون إنترنت ويبلغ عن النتائج الناقصة / when searching the registry offline by a plain description of a beat, and reporting search misses
 
@@ -8900,7 +8900,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Project metadata, version check, list compositions, docs, render benchmark, cache cleanup.
+**ما هي:** بيانات المشروع الوصفية، وفحص الإصدار، وسرد التراكيب، والوثائق، وقياس أداء التصيير، وتنظيف الكاش. — Project metadata, version check, list compositions, docs, render benchmark, cache cleanup.
 
 **متى:** حين يريد المستخدم بيانات المشروع أو التحقق من وجود تحديث أو سرد التركيبات أو قياس سرعة التصيير / when checking project info, upgrades, listing compositions, docs, render benchmark or cache cleanup
 
@@ -8966,7 +8966,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Every scene is a sub-composition; one caption track; one element kind per track via data-track-kind video/graphics/captions/audio.
+**ما هي:** كل مشهد تركيب فرعي؛ ومسار ترجمة واحد؛ ونوع عنصر واحد لكل مسار عبر data-track-kind: video/graphics/captions/audio. — Every scene is a sub-composition; one caption track; one element kind per track via data-track-kind video/graphics/captions/audio.
 
 **متى:** عند ترتيب مسارات المشروع في الاستوديو بمسار واحد للترجمة ونوع واحد من العناصر لكل مسار / when organizing Studio tracks: every scene a sub-composition, one caption track, one element kind per track
 
@@ -9032,7 +9032,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Installable catalog: blocks are standalone sub-compositions (charts, maps, device mockups, shaders, lower thirds, social cards, carousels), components are paste-in effect snippets; search before hand-building any named look.
+**ما هي:** كتالوج قابل للتثبيت: الكتل تراكيب فرعية مستقلة (مخططات وخرائط ونماذج أجهزة وشيدر وشرائط سفلية وبطاقات اجتماعية وكاروسيل)، والمكونات مقتطفات مؤثرات تُلصق؛ ابحث قبل بناء أي مظهر مسمّى يدويًا. — Installable catalog: blocks are standalone sub-compositions (charts, maps, device mockups, shaders, lower thirds, social cards, carousels), components are paste-in effect snippets; search before hand-building any named look.
 
 **متى:** قبل بناء رسم بياني أو خريطة أو موك أب أو لوور ثيرد أو بطاقة سوشيال يدويًا، ابحث عنه وأضفه من المكتبة / before hand-building charts, maps, device mockups, lower thirds or social cards, add a registry block
 
@@ -9102,7 +9102,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** hyperframes render of the caption layer then FFmpeg overlay of the subject matte to put embed words behind the speaker -> final.mp4.
+**ما هي:** hyperframes render لطبقة الترجمة ثم تراكب FFmpeg لقناع الشخصية لوضع كلمات التضمين خلف المتحدث ← final.mp4. — hyperframes render of the caption layer then FFmpeg overlay of the subject matte to put embed words behind the speaker -> final.mp4.
 
 **متى:** حين يريد المستخدم أن يظهر الكلام المكتوب خلف المتحدث بتركيب قناع الشخص فوق طبقة النص / when placing caption words behind the speaker by rendering the caption layer then overlaying the subject matte
 
@@ -9169,7 +9169,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Assembles frames as sub-compositions on tracks into index.html and injects/verifies registry transitions at boundaries.
+**ما هي:** يجمّع الإطارات كتراكيب فرعية على المسارات في index.html ويحقن انتقالات السجل عند الحدود ويتحقق منها. — Assembles frames as sub-compositions on tracks into index.html and injects/verifies registry transitions at boundaries.
 
 **متى:** عند تجميع الإطارات كمشاهد على المسارات في ملف واحد وإضافة الانتقالات بين المشاهد والتحقق منها / when assembling frames into index.html from a storyboard and injecting or verifying transitions at boundaries
 
@@ -9237,7 +9237,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One-way translation of a Remotion React composition: lint the source for blockers (useState, useEffect deps, async metadata, third-party React, Lambda config, custom hooks), plan, generate HTML, validate with render diff and frame strips, document gaps; refuse + interop when blocked.
+**ما هي:** ترجمة باتجاه واحد لتركيب Remotion React: فحص المصدر بحثًا عن العوائق (useState وتبعيات useEffect وبيانات وصفية غير متزامنة وReact من طرف ثالث وإعداد Lambda وخطافات مخصصة)، ثم التخطيط وتوليد HTML والتحقق بفروق التصيير وشرائط الإطارات وتوثيق الفجوات؛ والرفض مع التشغيل البيني عند الحظر. — One-way translation of a Remotion React composition: lint the source for blockers (useState, useEffect deps, async metadata, third-party React, Lambda config, custom hooks), plan, generate HTML, validate with render diff and frame strips, document gaps; refuse + interop when blocked.
 
 **متى:** حين يملك المستخدم مشروع Remotion بـ React ويريد تحويله إلى HTML مع فحص العوائق والتحقق بمقارنة التصيير / when porting a Remotion React composition to HyperFrames HTML, linting blockers and checking by render diff
 
@@ -9308,7 +9308,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Make a writable home ~/kosif-motion, fetch ffmpeg via imageio-ffmpeg and an ffprobe shim so kmotion runs without a PC.
+**ما هي:** أنشئ منزلًا قابلًا للكتابة ~/kosif-motion، وجلب ffmpeg عبر imageio-ffmpeg ووصلة ffprobe ليعمل kmotion دون حاسوب. — Make a writable home ~/kosif-motion, fetch ffmpeg via imageio-ffmpeg and an ffprobe shim so kmotion runs without a PC.
 
 **متى:** حين يعمل المستخدم من claude.ai بلا كمبيوتر ويحتاج مجلدًا قابلًا للكتابة وffmpeg وffprobe لتشغيل kmotion / when working on claude.ai without a PC and kmotion needs a writable home, ffmpeg and an ffprobe shim
 
@@ -9378,7 +9378,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Create a composition project (2D motion-kit, 3D three-kit, product lab, Canvas, motion template or compiled manifest), watch it self-play in an iframe, edit index.html / edit.json / verse.json / cues.json in a code box with automatic .bak, then run frames, draft, render or lint.
+**ما هي:** إنشاء مشروع تركيب (motion-kit ثنائي الأبعاد، أو three-kit ثلاثي الأبعاد، أو معمل منتجات، أو Canvas، أو قالب حركة، أو بيان مُجمَّع)، ومشاهدته يعمل ذاتيًا في iframe، وتحرير index.html / edit.json / verse.json / cues.json في صندوق شيفرة مع .bak تلقائي، ثم تشغيل الإطارات أو المسودة أو التصيير أو الفحص. — Create a composition project (2D motion-kit, 3D three-kit, product lab, Canvas, motion template or compiled manifest), watch it self-play in an iframe, edit index.html / edit.json / verse.json / cues.json in a code box with automatic .bak, then run frames, draft, render or lint.
 
 **متى:** حين يريد المستخدم إنشاء مشروع تركيب ومعاينته وتعديل ملفاته مباشرة ثم تصييره / when creating a composition project, previewing it live, editing its files in place and then rendering it
 
@@ -9447,7 +9447,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Root div with data-composition-id/width/height/start/duration/fps; clip class on timed elements; media need id; nested compositions via data-composition-src; variables via data-composition-variables.
+**ما هي:** div جذر بـ data-composition-id/width/height/start/duration/fps؛ وصنف clip على العناصر الموقَّتة؛ والوسائط تحتاج id؛ والتراكيب المتداخلة عبر data-composition-src؛ والمتغيرات عبر data-composition-variables. — Root div with data-composition-id/width/height/start/duration/fps; clip class on timed elements; media need id; nested compositions via data-composition-src; variables via data-composition-variables.
 
 **متى:** عند كتابة index.html لتركيب HyperFrames بالسمات الصحيحة للجذر والمقاطع والوسائط والمتغيرات قبل الفحص والتصيير / when writing a HyperFrames index.html with correct root, clip, media, nested and variable attributes
 
@@ -9515,7 +9515,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scaffold an HTML+GSAP composition with the motion kit.
+**ما هي:** هيكلة تركيب HTML+GSAP بمجموعة الحركة. — Scaffold an HTML+GSAP composition with the motion kit.
 
 **متى:** حين يريد المستخدم بدء مشروع موشن جرافيك ثنائي الأبعاد جديد بمدة ومقاس محددين / when starting a new flat 2D HTML+GSAP motion project with the motion kit and set seconds, fps and size
 
@@ -9582,7 +9582,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One page with window.seek(t) canvas drawing.
+**ما هي:** صفحة واحدة برسم لوحة عبر window.seek(t). — One page with window.seek(t) canvas drawing.
 
 **متى:** حين يريد المستخدم رسومًا متحركة مرسومة بالكود على كانفس في صفحة واحدة تُقدَّم بالزمن / when starting a canvas project: one page that draws to a canvas via window.seek(t)
 
@@ -9648,7 +9648,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Half-size 15 fps ultrafast draft ~10x faster than master, same composition.
+**ما هي:** مسودة بنصف الحجم و15 إطارًا/ث بأسرع إعداد، أسرع بنحو 10 أضعاف من النسخة الرئيسة، بالتركيب نفسه. — Half-size 15 fps ultrafast draft ~10x faster than master, same composition.
 
 **متى:** حين يريد المستخدم معاينة سريعة للفيديو قبل التصيير النهائي بنصف المقاس و15 إطارًا في الثانية / for a fast half-size 15 fps draft render of the same composition, about 10x faster than the master
 
@@ -9717,7 +9717,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Splits frames into contiguous chunks on N browser pages, each encodes H.264 segment, lossless concat.
+**ما هي:** يقسّم الإطارات إلى أجزاء متصلة على N صفحة متصفح، وكل منها يرمّز مقطع H.264، ثم دمج بلا فقد. — Splits frames into contiguous chunks on N browser pages, each encodes H.264 segment, lossless concat.
 
 **متى:** حين يُراد تسريع التصيير بتقسيم الإطارات على عدة صفحات متصفح ثم دمج المقاطع بلا فقد / when speeding up a render by splitting frames across N browser pages and concatenating H.264 segments losslessly
 
@@ -9786,7 +9786,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Page.captureScreenshot with optimizeForSpeed; PNG piped undecoded to FFmpeg; GPU process off for DOM pages (2x).
+**ما هي:** Page.captureScreenshot بـ optimizeForSpeed؛ ويمرَّر PNG دون فك إلى FFmpeg؛ وإيقاف عملية GPU لصفحات DOM (ضعفان). — Page.captureScreenshot with optimizeForSpeed; PNG piped undecoded to FFmpeg; GPU process off for DOM pages (2x).
 
 **متى:** عند الحاجة لتسريع التقاط الإطارات من المتصفح أو فرض تشغيل معالج الرسوميات أو إيقافه / when speeding up browser frame capture, or overriding GPU on/off with KOSIF_GPU
 
@@ -9856,7 +9856,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Unchanged sources+params serve the prior master instantly.
+**ما هي:** المصادر والمعاملات غير المتغيرة تعيد النسخة الرئيسة السابقة فورًا. — Unchanged sources+params serve the prior master instantly.
 
 **متى:** حين يُعاد التصيير دون تغيير في المصادر أو الإعدادات فيُقدَّم الملف السابق فورًا، أو يلزم فرض إعادته / when re-rendering unchanged sources and params should return the prior master instantly, or --force a redo
 
@@ -9924,7 +9924,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Sub-frames centred on the frame averaged in float, quantised once; 3D accumulates on GPU (window.__nativeBlur).
+**ما هي:** إطارات فرعية متمركزة حول الإطار تُمتوسَّط بالفاصلة العائمة وتُكمَّى مرة واحدة؛ ويتراكم الثلاثي الأبعاد على GPU (window.__nativeBlur). — Sub-frames centred on the frame averaged in float, quantised once; 3D accumulates on GPU (window.__nativeBlur).
 
 **متى:** حين يريد المستخدم ضبابية حركة على الأجسام السريعة في الفيديو بمتوسط إطارات فرعية عند التصيير / when fast motion needs motion blur via averaged sub-frames at render time (--blur)
 
@@ -9993,7 +9993,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Lossless PNG capture, libx264 slow CRF 16, short side ≥1080, poster baked, gate run.
+**ما هي:** التقاط PNG بلا فقد، وlibx264 بطيء بـ CRF 16، والضلع القصير ≥1080، وملصق مدمج، وتشغيل البوابة. — Lossless PNG capture, libx264 slow CRF 16, short side ≥1080, poster baked, gate run.
 
 **متى:** عند التسليم النهائي حين يريد المستخدم أعلى جودة للفيديو بالتقاط بلا فقد وترميز CRF 16 وصورة غلاف / for the final delivery render at top quality: lossless PNG capture, libx264 slow CRF 16, poster, gate
 
@@ -10061,7 +10061,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Starlette site on 127.0.0.1:8766 with media, recipes, projects, timeline, jobs, Workbench, Claude, env tabs; MCP /mcp with 14 studio tools; cross-origin guard.
+**ما هي:** موقع Starlette على 127.0.0.1:8766 بتبويبات الوسائط والوصفات والمشاريع والخط الزمني والمهام وWorkbench وClaude والبيئة؛ وMCP على /mcp بـ 14 أداة استوديو؛ وحارس الأصول المختلفة. — Starlette site on 127.0.0.1:8766 with media, recipes, projects, timeline, jobs, Workbench, Claude, env tabs; MCP /mcp with 14 studio tools; cross-origin guard.
 
 **متى:** حين يريد المستخدم واجهة ويب محلية لإدارة الوسائط والمشاريع والخط الزمني والمهام، أو ربطها بـ Claude عبر MCP / when running the local web studio for media, projects, timeline and jobs, or linking Claude via MCP
 
@@ -10128,7 +10128,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Compiles a valid plan into a kosif.motion.manifest.v1 (scenes with title, subtitle, camera, accent) and, for 2D intent, a single HTML page whose window.render(t) draws the frame deterministically — the same contract the local renderer drives.
+**ما هي:** يجمّع خطة صالحة في kosif.motion.manifest.v1 (مشاهد بعنوان وعنوان فرعي وكاميرا ولون مميز)، وللنية ثنائية الأبعاد صفحة HTML واحدة ترسم فيها window.render(t) الإطار حتميًا — وهو العقد نفسه الذي يشغّله المُصيِّر المحلي. — Compiles a valid plan into a kosif.motion.manifest.v1 (scenes with title, subtitle, camera, accent) and, for 2D intent, a single HTML page whose window.render(t) draws the frame deterministically — the same contract the local renderer drives.
 
 **متى:** عند تحويل خطة فيديو إلى manifest وصفحة HTML ثنائية الأبعاد ترسم كل إطار بدقة / when compiling a video plan into a manifest and a self-contained 2D HTML page that draws each frame
 
@@ -10196,7 +10196,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (mp4-muxer MIT) |
 
-**ما هي:** Browser montage editor; offline export via WebCodecs H.264 + AAC, mp4-muxer, BS.1770-4 meter to −14 LUFS under −1.5 dBFS peak.
+**ما هي:** محرر مونتاج في المتصفح؛ وتصدير دون اتصال عبر WebCodecs H.264 + AAC وmp4-muxer، ومقياس BS.1770-4 حتى −14 LUFS تحت ذروة −1.5 dBFS. — Browser montage editor; offline export via WebCodecs H.264 + AAC, mp4-muxer, BS.1770-4 meter to −14 LUFS under −1.5 dBFS peak.
 
 **متى:** حين يريد المستخدم مونتاجًا بقطعات مباشرة في المتصفح وتصدير MP4 دقيق دون إنترنت بصوت −14 LUFS / for a browser montage with hard cuts (up to 60 s) exported offline as frame-accurate MP4 at −14 LUFS
 
@@ -10267,7 +10267,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every project is one HTML page whose #root declares size, fps and duration and whose paused GSAP timeline is registered globally so any frame can be rendered by time, in any order.
+**ما هي:** كل مشروع صفحة HTML واحدة يعلن #root فيها الحجم وfps والمدة، ويُسجَّل خطها الزمني GSAP المتوقف عالميًا فيمكن تصيير أي إطار بالزمن وبأي ترتيب. — Every project is one HTML page whose #root declares size, fps and duration and whose paused GSAP timeline is registered globally so any frame can be rendered by time, in any order.
 
 **متى:** عند بناء مشروع موشن HTML يجب أن يُصيَّر أي إطار منه بالزمن وبأي ترتيب عبر خط زمني GSAP متوقف / when building an HTML motion page whose paused GSAP timeline lets any frame render by time, in any order
 
@@ -10338,7 +10338,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A WebGL canvas scene and HTML/CSS typography overlay share the same t: the overlay timeline is sought first, then the 3D frame is drawn, and the first frame waits for fonts and any async textures.
+**ما هي:** يتشارك مشهد لوحة WebGL وطبقة طباعة HTML/CSS الزمن t نفسه: يُنتقل أولًا في الخط الزمني للطبقة ثم يُرسم إطار الثلاثي الأبعاد، وينتظر الإطار الأول الخطوط وأي أنسجة غير متزامنة. — A WebGL canvas scene and HTML/CSS typography overlay share the same t: the overlay timeline is sought first, then the 3D frame is drawn, and the first frame waits for fonts and any async textures.
 
 **متى:** حين يجمع الفيديو مشهدًا ثلاثي الأبعاد مع نصوص وعناوين HTML فوقه ويجب أن يتحركا على نفس التوقيت / when a Three.js 3D scene and an HTML/CSS typography overlay must share one clock and wait for fonts
 
@@ -10408,7 +10408,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Node writes every frame as an SVG file, an external rasteriser (librsvg/Cairo) turns them into PNG and ffmpeg encodes H.264.
+**ما هي:** تكتب Node كل إطار ملف SVG، ويحوّلها مُنقِّط خارجي (librsvg/Cairo) إلى PNG، ويرمّز ffmpeg بـ H.264. — Node writes every frame as an SVG file, an external rasteriser (librsvg/Cairo) turns them into PNG and ffmpeg encodes H.264.
 
 **متى:** حين تُولَّد الإطارات ملفات SVG من Node ثم تُحوَّل إلى PNG وتُرمَّز فيديو MP4 / when generating every frame as SVG in Node, rasterising to PNG and encoding an H.264 MP4 with ffmpeg
 
@@ -10479,7 +10479,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Voice, music, ambience and real video plates are declared as <audio>/<video> elements with start, duration, volume, role and fade-out; the renderer mixes the audio and the shim seeks each video to composition time.
+**ما هي:** يُعلن الصوت والموسيقى والجو العام ولوحات الفيديو الحقيقية كعناصر <audio>/<video> بالبداية والمدة والجهارة والدور والتلاشي؛ ويمزج المُصيِّر الصوت وتنتقل الوصلة بكل فيديو إلى زمن التركيب. — Voice, music, ambience and real video plates are declared as <audio>/<video> elements with start, duration, volume, role and fade-out; the renderer mixes the audio and the shim seeks each video to composition time.
 
 **متى:** حين يضيف المستخدم تعليقًا صوتيًا وموسيقى وأصواتًا محيطة ولقطات فيديو حقيقية داخل صفحة الموشن بتوقيت وتلاشٍ / when adding voice, music, ambience and real video plates in the page with start, volume and fade-out
 
@@ -10549,7 +10549,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scenes that import three-kit.js as ES modules (and JSON/PNG data) are bundled into one classic assets/main.bundle.js so the page loads from file://.
+**ما هي:** تُجمَّع المشاهد التي تستورد three-kit.js كوحدات ES (وبيانات JSON/PNG) في assets/main.bundle.js كلاسيكي واحد لتُحمَّل الصفحة من file://. — Scenes that import three-kit.js as ES modules (and JSON/PNG data) are bundled into one classic assets/main.bundle.js so the page loads from file://.
 
 **متى:** حين تستورد صفحة المشهد وحدات ES ويجب تجميعها في ملف واحد لتعمل من file:// / when a scene importing ES modules (three-kit, JSON, PNG) must be bundled into one script to load from file://
 
@@ -10620,7 +10620,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The WebGL frame loop accumulates several sub-frames per output frame (average for motion blur, MAX/'lighten' for a long exposure), so moving lights draw trails and stars draw arcs.
+**ما هي:** تجمع حلقة إطار WebGL عدة إطارات فرعية لكل إطار مخرج (المتوسط لتمويه الحركة، وMAX/'lighten' للتعريض الطويل)، فترسم الأضواء المتحركة أثرًا وترسم النجوم أقواسًا. — The WebGL frame loop accumulates several sub-frames per output frame (average for motion blur, MAX/'lighten' for a long exposure), so moving lights draw trails and stars draw arcs.
 
 **متى:** حين يريد المستخدم أثر أضواء متحركة أو مسارات نجوم بتعريض طويل أو ضبابية حركة في مشهد WebGL / when moving lights should draw trails, stars draw arcs, or a WebGL scene needs sub-frame motion blur
 
@@ -10690,7 +10690,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** film.film_animate renders chunks of a page in several browser pages, encodes each as its own H.264 segment and concatenates them losslessly; frames must stay complete and in order.
+**ما هي:** يصيّر film.film_animate أجزاء من الصفحة في عدة صفحات متصفح، ويرمّز كلًا منها مقطع H.264 مستقلًا ويدمجها بلا فقد؛ ويجب أن تبقى الإطارات كاملة ومرتبة. — film.film_animate renders chunks of a page in several browser pages, encodes each as its own H.264 segment and concatenates them losslessly; frames must stay complete and in order.
 
 **متى:** عند تقسيم تصيير صفحة إلى أجزاء على عدة صفحات متصفح وترميز كل جزء ثم دمجها دون إعادة ترميز / when rendering a page in chunks across browser pages and joining H.264 segments losslessly, frames in order
 
@@ -10759,7 +10759,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A documented five-command loop for a 3D lab film: scaffold, synthesise the score with cues, pull review stills at chosen times, render with workers, inspect the MP4.
+**ما هي:** حلقة موثقة من خمسة أوامر لفيلم مختبر ثلاثي الأبعاد: هيكلة، وتركيب الموسيقى مع الإشارات، وسحب لقطات مراجعة في أزمنة مختارة، والتصيير بعمّال، وفحص MP4. — A documented five-command loop for a 3D lab film: scaffold, synthesise the score with cues, pull review stills at chosen times, render with workers, inspect the MP4.
 
 **متى:** حين يصنع المستخدم فيلمًا ثلاثي الأبعاد بخطوات جاهزة: إنشاء، موسيقى بإشارات، لقطات مراجعة، تصيير، فحص / for a 3D lab film via five commands: scaffold, score with cues, review stills, render with workers, inspect
 
@@ -10827,7 +10827,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** On a sandbox with no browser, a 2D motion film is made from a task through plan → manifest → Pillow frames → FFmpeg MP4.
+**ما هي:** على بيئة معزولة بلا متصفح يُصنع فيلم حركة ثنائي الأبعاد من مهمة عبر خطة ← بيان ← إطارات Pillow ← MP4 بـ FFmpeg. — On a sandbox with no browser, a 2D motion film is made from a task through plan → manifest → Pillow frames → FFmpeg MP4.
 
 **متى:** حين لا يتوفر متصفح في البيئة ويريد المستخدم فيلم موشن ثنائي الأبعاد من فكرة عبر إطارات Pillow وFFmpeg / when no browser is available and a 2D motion film must be made from a topic via Pillow frames and FFmpeg
 
@@ -10894,7 +10894,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders a silent 2D manifest frame by frame with Pillow, pipes raw RGB into FFmpeg H.264, then verifies the file with ffprobe (single h264 stream, exact size, exact frame count, duration within one frame).
+**ما هي:** يصيّر بيانًا ثنائي الأبعاد صامتًا إطارًا إطارًا بـ Pillow، ويمرّر RGB الخام إلى FFmpeg H.264، ثم يتحقق من الملف بـ ffprobe (مسار h264 واحد، وحجم دقيق، وعدد إطارات دقيق، ومدة ضمن إطار واحد). — Renders a silent 2D manifest frame by frame with Pillow, pipes raw RGB into FFmpeg H.264, then verifies the file with ffprobe (single h264 stream, exact size, exact frame count, duration within one frame).
 
 **متى:** حين تحتاج تصيير manifest صامت ثنائي الأبعاد إلى MP4 على الخادم مع فحص المقاس وعدد الإطارات / when rendering a silent 2D manifest to MP4 on the server and verifying size and frame count
 
@@ -10965,7 +10965,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** No CSS transform on GSAP-tweened nodes, fromTo initial states, x/y/scale/rotation only, no visibility tween on .clip, audio needs id, clip-path masks, no will-change, no getBoundingClientRect at tween time, no Math.random/clock/network, repeat:-1 only under finite duration.
+**ما هي:** لا تحويل CSS على عقد محرَّكة بـ GSAP، وحالات ابتدائية fromTo، وx/y/scale/rotation فقط، ولا حركة visibility على .clip، والصوت يحتاج id، وأقنعة clip-path، ولا will-change، ولا getBoundingClientRect وقت التحريك، ولا Math.random/ساعة/شبكة، وrepeat:-1 فقط تحت مدة منتهية. — No CSS transform on GSAP-tweened nodes, fromTo initial states, x/y/scale/rotation only, no visibility tween on .clip, audio needs id, clip-path masks, no will-change, no getBoundingClientRect at tween time, no Math.random/clock/network, repeat:-1 only under finite duration.
 
 **متى:** قبل التصيير لفحص كود الحركة: لا Math.random ولا ساعة ولا شبكة ولا تحويلات CSS على العناصر المتحركة / before rendering, lint motion code: no Math.random/clock/network, no CSS transform on tweened nodes
 
@@ -11033,7 +11033,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Install deps on claude.ai sandbox; no browser routes there.
+**ما هي:** تثبيت الاعتماديات على بيئة claude.ai المعزولة؛ ولا مسارات متصفح هناك. — Install deps on claude.ai sandbox; no browser routes there.
 
 **متى:** حين يعمل المستخدم داخل بيئة claude.ai ويحتاج تثبيت المتطلبات، مع أن مسارات المتصفح غير متاحة هناك / when installing dependencies on the claude.ai sandbox, where browser routes are not available
 
@@ -11101,7 +11101,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scaffold HTML composition with three-kit/motion-kit/shape-kit.
+**ما هي:** هيكلة تركيب HTML بـ three-kit/motion-kit/shape-kit. — Scaffold HTML composition with three-kit/motion-kit/shape-kit.
 
 **متى:** حين يبدأ المستخدم مشروع موشن جديدًا ثنائي أو ثلاثي الأبعاد بأدوات three-kit وmotion-kit وshape-kit / when scaffolding a new 2D or 3D HTML motion project with three-kit, motion-kit and shape-kit
 
@@ -11168,7 +11168,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Local Arabic RTL site with media, recipes, projects, timeline, jobs SSE, workbench, Claude tab.
+**ما هي:** موقع عربي محلي من اليمين بالوسائط والوصفات والمشاريع والخط الزمني وSSE للمهام وworkbench وتبويب Claude. — Local Arabic RTL site with media, recipes, projects, timeline, jobs SSE, workbench, Claude tab.
 
 **متى:** حين يريد المستخدم واجهة عربية محلية لإدارة الوسائط والوصفات والمشاريع والخط الزمني والمهام / when running the local Arabic RTL web studio for media, recipes, projects, timeline and jobs
 
@@ -11237,7 +11237,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Claude Code drives local site tools.
+**ما هي:** يقود Claude Code أدوات الموقع المحلي. — Claude Code drives local site tools.
 
 **متى:** حين يريد المستخدم أن يتحكم Claude Code في الاستوديو المحلي: كتابة المشروع وتشغيل المهام وفحص الخط الزمني / when Claude Code should drive the local studio via MCP: write projects, run jobs, check the timeline
 
@@ -11303,7 +11303,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Offline WebCodecs + mp4-muxer export in browser, -14 LUFS; studio import to timeline.
+**ما هي:** تصدير WebCodecs + mp4-muxer دون اتصال في المتصفح بـ −14 LUFS؛ واستيراد الاستوديو إلى الخط الزمني. — Offline WebCodecs + mp4-muxer export in browser, -14 LUFS; studio import to timeline.
 
 **متى:** حين يريد المستخدم تصدير MP4 من المتصفح دون إنترنت بصوت −14 LUFS أو استيراد مقطع إلى خط الاستوديو الزمني / when exporting an exact MP4 offline in the browser at −14 LUFS, or importing into the studio timeline
 
@@ -11372,7 +11372,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Split frame ranges across machines and join losslessly with gate.
+**ما هي:** تقسيم مدى الإطارات على أجهزة ودمجها بلا فقد مع البوابة. — Split frame ranges across machines and join losslessly with gate.
 
 **متى:** حين يُراد توزيع تصيير الفيديو على عدة أجهزة بتقسيم نطاقات الإطارات ثم دمجها بلا فقد / when splitting frame ranges across several machines and joining them losslessly with the gate
 
@@ -11440,7 +11440,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One JSON = whole edit (clips, overlays, audio) rendered by FFmpeg.
+**ما هي:** JSON واحد = المونتاج كاملًا (المقاطع والطبقات والصوت) يصيّره FFmpeg. — One JSON = whole edit (clips, overlays, audio) rendered by FFmpeg.
 
 **متى:** حين يريد المستخدم وصف المونتاج كله في ملف JSON واحد بالمقاطع والطبقات والصوت ليصيّره FFmpeg بأي نسبة عرض / when describing a whole edit (clips, overlays, audio) in one JSON for FFmpeg to render, e.g. 9:16 or 16:9
 
@@ -11510,7 +11510,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Editly أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Editly or another external code/timeline video engine (link only, not installed)
 
@@ -11576,7 +11576,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن FFCreator أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about FFCreator or another external code/timeline video engine (link only, not installed)
 
@@ -11642,7 +11642,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each manifest render job gets a random id and a separate 32-byte token; the token is compared in constant time and a wrong or missing token looks exactly like a missing job.
+**ما هي:** يأخذ كل مهمة تصيير للبيان معرّفًا عشوائيًا ورمزًا منفصلًا من 32 بايت؛ يُقارَن الرمز بزمن ثابت، ويبدو الرمز الخاطئ أو المفقود تمامًا كمهمة مفقودة. — Each manifest render job gets a random id and a separate 32-byte token; the token is compared in constant time and a wrong or missing token looks exactly like a missing job.
 
 **متى:** عند حماية مهام التصيير بحيث لا يجلب الفيديو أو يلغيه إلا من يحمل الرمز الصحيح / when render jobs must be protected so only the holder of the right token can fetch or cancel them
 
@@ -11712,7 +11712,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن fframes أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about fframes or another external code/timeline video engine (link only, not installed)
 
@@ -11778,7 +11778,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Manim Community أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Manim Community or another external code/timeline video engine (link only, not installed)
 
@@ -11844,7 +11844,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Motion Canvas أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Motion Canvas or another external code/timeline video engine (link only, not installed)
 
@@ -11910,7 +11910,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن MoviePy أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about MoviePy or another external code/timeline video engine (link only, not installed)
 
@@ -11976,7 +11976,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Remotion أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Remotion or another external code/timeline video engine (link only, not installed)
 
@@ -12043,7 +12043,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Rendervid أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Rendervid or another external code/timeline video engine (link only, not installed)
 
@@ -12109,7 +12109,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Revideo أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Revideo or another external code/timeline video engine (link only, not installed)
 
@@ -12175,7 +12175,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن VideoFlow أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about VideoFlow or another external code/timeline video engine (link only, not installed)
 
@@ -12241,7 +12241,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن VideoRenderingEngine أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about VideoRenderingEngine or another external code/timeline video engine (link only, not installed)
 
@@ -12307,7 +12307,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن VidPy أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about VidPy or another external code/timeline video engine (link only, not installed)
 
@@ -12373,7 +12373,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Plays the project in real time and records the canvas plus mixed audio; the tab must stay visible.
+**ما هي:** يشغّل المشروع في الزمن الحقيقي ويسجّل اللوحة مع الصوت الممزوج؛ ويجب أن تبقى التبويبة ظاهرة. — Plays the project in real time and records the canvas plus mixed audio; the tab must stay visible.
 
 **متى:** حين تريد تسجيل المشروع وهو يعمل بالوقت الحقيقي مع صوته وتنزيله WebM أو MP4 / when recording the project in real time with its mixed audio and downloading it as WebM or MP4
 
@@ -12442,7 +12442,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن WebMotion أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about WebMotion or another external code/timeline video engine (link only, not installed)
 
@@ -12508,7 +12508,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Diffusion Studio Core أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Diffusion Studio Core or another external code/timeline video engine (link only, not installed)
 
@@ -12574,7 +12574,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Etro أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Etro or another external code/timeline video engine (link only, not installed)
 
@@ -12640,7 +12640,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Movie Masher أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Movie Masher or another external code/timeline video engine (link only, not installed)
 
@@ -12706,7 +12706,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Twick أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Twick or another external code/timeline video engine (link only, not installed)
 
@@ -12772,7 +12772,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن WebAV أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about WebAV or another external code/timeline video engine (link only, not installed)
 
@@ -12838,7 +12838,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Creatomate أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Creatomate or another external code/timeline video engine (link only, not installed)
 
@@ -12904,7 +12904,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن iLoveVideoEditor أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about iLoveVideoEditor or another external code/timeline video engine (link only, not installed)
 
@@ -12970,7 +12970,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن JSON2Video أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about JSON2Video or another external code/timeline video engine (link only, not installed)
 
@@ -13036,7 +13036,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
+**ما هي:** أداة فيديو مباشرة بالشيفرة/الخط الزمني من كتالوج HyperFrames ذي 500 أداة (رابط فقط، غير مثبّتة). — Direct code/timeline video tool from the 500-tool HyperFrames catalog (link only, not installed).
 
 **متى:** حين يسأل المستخدم عن Shotstack أو عن محرك خارجي لصنع الفيديو بالكود أو بخط زمني (رابط فقط) / when asking about Shotstack or another external code/timeline video engine (link only, not installed)
 
@@ -13102,7 +13102,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders every frame after seeking media to the exact time, encodes H.264 with WebCodecs and muxes MP4 in memory; no dropped frames, no real time, no visible tab needed.
+**ما هي:** يصيّر كل إطار بعد الانتقال بالوسائط إلى الزمن الدقيق، ويرمّز H.264 بـ WebCodecs ويجمّع MP4 في الذاكرة؛ دون إطارات مفقودة أو زمن حقيقي أو حاجة لتبويبة ظاهرة. — Renders every frame after seeking media to the exact time, encodes H.264 with WebCodecs and muxes MP4 in memory; no dropped frames, no real time, no visible tab needed.
 
 **متى:** عند الحاجة لتصدير MP4 بلا إطارات مفقودة ولا انتظار للوقت الحقيقي ولا تبويب ظاهر / when you need an MP4 export with no dropped frames, no real-time wait and no visible tab
 
@@ -13171,7 +13171,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** ~110 libraries usable inside a HyperFrames page: canvas (Konva, p5, Two.js, Rough.js...), SVG draw-on (Vivus, Lazy Line Painter, Walkway), tweening (GSAP, Anime.js, Motion, Popmotion), CSS packs (Animate.css...), charts (D3, ECharts, Chart.js, Vega...), shaders (Hydra, KodeLife), 3D (Three, Babylon,…
+**ما هي:** نحو 110 مكتبات يمكن استخدامها داخل صفحة HyperFrames: اللوحة (Konva وp5 وTwo.js وRough.js...)، ورسم SVG التدريجي (Vivus وLazy Line Painter وWalkway)، والتحريك (GSAP وAnime.js وMotion وPopmotion)، وحزم CSS (Animate.css...)، والمخططات (D3 وECharts وChart.js وVega...)، والشيدر (Hydra وKodeLife)، والثلاثي الأبعاد (Three وBabylon،… — ~110 libraries usable inside a HyperFrames page: canvas (Konva, p5, Two.js, Rough.js...), SVG draw-on (Vivus, Lazy Line Painter, Walkway), tweening (GSAP, Anime.js, Motion, Popmotion), CSS packs (Animate.css...), charts (D3, ECharts, Chart.js, Vega...), shaders (Hydra, KodeLife), 3D (Three, Babylon,…
 
 **متى:** حين يحتاج المشهد مكتبة إضافية داخل الصفحة للكانفس أو رسم الخطوط أو الرسوم البيانية أو الشيدر أو 3D تُحمَّل من CDN / when a page needs an in-page library for canvas, SVG draw-on, tweening, charts, shaders or 3D via CDN
 
@@ -13241,7 +13241,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | source-available |
 
-**ما هي:** Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يسأل المستخدم عن مهارات Remotion للوكلاء ويحتاج رابط الإعداد الرسمي لأنها غير مثبتة هنا / when the user asks about Remotion Agent Skills and needs the official setup link (not installed here)
 
@@ -13307,7 +13307,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يسأل المستخدم عن إضافة مهارات HyperFrames ويحتاج رابط إعدادها الرسمي لأنها غير مثبتة هنا / when the user asks about the HyperFrames skills plugin and needs its official setup link (not installed here)
 
@@ -13373,7 +13373,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يسأل المستخدم عن PixiJS مع مهاراتها ويحتاج رابط الإعداد الرسمي لأنها غير مثبتة هنا / when the user asks about PixiJS with skills and needs the official setup link (not installed here)
 
@@ -13439,7 +13439,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** HyperFrames/GSAP compositions, 3D three-kit, canvas, lab routes; motion blur sub-frames, shutter, lighten stacking.
+**ما هي:** تراكيب HyperFrames/GSAP، وthree-kit ثلاثي الأبعاد، وcanvas، ومسارات المختبر؛ وإطارات فرعية لتمويه الحركة، والغالق، وتكديس lighten. — HyperFrames/GSAP compositions, 3D three-kit, canvas, lab routes; motion blur sub-frames, shutter, lighten stacking.
 
 **متى:** حين يريد المستخدم مشروع موشن HTML بـ GSAP أو 3D أو كانفس مع ضبابية حركة وتعريض طويل ومسودة سريعة / for an HTML motion project (GSAP, 3D three-kit, canvas, lab) with motion blur, shutter, lighten stacking, drafts
 
@@ -13509,7 +13509,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Edge/Chrome seeks window.render(t) and captures PNG.
+**ما هي:** ينتقل Edge/Chrome إلى window.render(t) ويلتقط PNG. — Edge/Chrome seeks window.render(t) and captures PNG.
 
 **متى:** حين تريد صورة PNG واحدة من صفحة HTML متحركة عند زمن محدد / when you need a single PNG still of an animated HTML page at a given time
 
@@ -13576,7 +13576,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Split frame ranges across machines and join losslessly.
+**ما هي:** تقسيم مدى الإطارات على أجهزة ودمجها بلا فقد. — Split frame ranges across machines and join losslessly.
 
 **متى:** عند تقسيم تصيير فيديو طويل على عدة أجهزة ثم دمج الأجزاء بلا فقد / when splitting a render's frame ranges across several machines and joining them losslessly
 
@@ -13644,7 +13644,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Headless browser opens the project page, calls render(t) for each frame time and screenshots the exact viewport to numbered PNGs.
+**ما هي:** يفتح متصفح دون واجهة صفحة المشروع، ويستدعي render(t) لكل زمن إطار، ويلتقط إطار العرض بدقة إلى ملفات PNG مرقّمة. — Headless browser opens the project page, calls render(t) for each frame time and screenshots the exact viewport to numbered PNGs.
 
 **متى:** حين تحتاج تحويل صفحة مشروع متحركة إلى إطارات PNG مرقمة بمتصفح Edge وتسريع كارت الشاشة / when capturing a project page to numbered PNG frames in headless Edge with GPU flags
 
@@ -13714,7 +13714,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The page exposes window.render(t) that draws the frame at time t without reading the wall clock, and sets window.__ready after fonts load; a headless browser steps t and screenshots every frame so preview and video match exactly.
+**ما هي:** تكشف الصفحة window.render(t) التي ترسم الإطار عند الزمن t دون قراءة ساعة الجدار، وتضبط window.__ready بعد تحميل الخطوط؛ ويتقدم متصفح دون واجهة بالزمن t ويلتقط كل إطار فتتطابق المعاينة والفيديو تمامًا. — The page exposes window.render(t) that draws the frame at time t without reading the wall clock, and sets window.__ready after fonts load; a headless browser steps t and screenshots every frame so preview and video match exactly.
 
 **متى:** حين يجب أن تطابق معاينة مشهد WebGL الفيديو النهائي إطارًا بإطار / when a WebGL page must look identical in preview and final video, frame by frame
 
@@ -13786,7 +13786,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A declarative edit: clips with in/out/speed/fit/mute/colour match/transition, image and text overlays with timing, fades and position expressions, and an audio block (voice, music, duck, LUFS), rendered to MP4 with parallel workers.
+**ما هي:** مونتاج تصريحي: مقاطع بـ in/out/speed/fit/mute/مطابقة اللون/الانتقال، وطبقات صور ونصوص بتوقيت وتلاشٍ وتعابير موضع، وكتلة صوت (صوت وموسيقى وخفض وLUFS)، تُصيَّر إلى MP4 بعمّال متوازين. — A declarative edit: clips with in/out/speed/fit/mute/colour match/transition, image and text overlays with timing, fades and position expressions, and an audio block (voice, music, duck, LUFS), rendered to MP4 with parallel workers.
 
 **متى:** حين تريد مونتاجًا من ملف JSON: قص لقطات وانتقالات ونصوص فوقها وتعليق صوتي وموسيقى / when building a declarative edit from a JSON timeline with clips, overlays, fades, voice and music
 
@@ -13855,7 +13855,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Picks the best H.264 profile the browser can encode at the size and rate: High, then Main, then Baseline, then a final Baseline 3.1.
+**ما هي:** يختار أفضل ملف H.264 يستطيع المتصفح ترميزه بالحجم والمعدل: High ثم Main ثم Baseline ثم Baseline 3.1 أخيرًا. — Picks the best H.264 profile the browser can encode at the size and rate: High, then Main, then Baseline, then a final Baseline 3.1.
 
 **متى:** حين يتعثر ترميز الفيديو في المتصفح وتحتاج أفضل ملف H.264 مدعوم للمقاس والمعدل / when browser video encoding needs the best supported H.264 profile for the size and frame rate
 
@@ -13922,7 +13922,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A single HTML file is a renderable composition: a root div with id/size/duration/fps data attributes, media elements with data-start/duration/volume, one paused GSAP timeline registered in window.__timelines, and M.shim to expose render(t)/__ready for KOSIF Studio's renderer.
+**ما هي:** ملف HTML واحد تركيب قابل للتصيير: div جذر بسمات data للمعرّف/الحجم/المدة/fps، وعناصر وسائط بـ data-start/duration/volume، وخط زمني GSAP واحد متوقف مسجّل في window.__timelines، وM.shim لكشف render(t)/__ready لمُصيِّر KOSIF Studio. — A single HTML file is a renderable composition: a root div with id/size/duration/fps data attributes, media elements with data-start/duration/volume, one paused GSAP timeline registered in window.__timelines, and M.shim to expose render(t)/__ready for KOSIF Studio's renderer.
 
 **متى:** عند بدء تركيب HyperFrames جديد في ملف HTML واحد بخط زمني GSAP وصوت / when starting a single-file HyperFrames composition with a paused GSAP timeline and audio
 
@@ -13993,7 +13993,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A small dependency-free animation core: one function sets every SVG attribute for time t using segment, eased segment, windowed fade and hex colour mix helpers; preview loops with click-to-pause, capture mode lets a recorder call render(t).
+**ما هي:** نواة تحريك صغيرة بلا اعتماديات: دالة واحدة تضبط كل سمات SVG للزمن t عبر مساعدات المقطع والمقطع المخفَّف وتلاشي النافذة ومزج ألوان hex؛ المعاينة تتكرر مع نقرة للإيقاف، ووضع الالتقاط يتيح للمسجّل استدعاء render(t). — A small dependency-free animation core: one function sets every SVG attribute for time t using segment, eased segment, windowed fade and hex colour mix helpers; preview loops with click-to-pause, capture mode lets a recorder call render(t).
 
 **متى:** حين تحتاج تحريك SVG بلا مكتبات مع تلاشي وتنعيم ومزج ألوان حسب الزمن / for animating SVG with no dependencies using time segments, easing, windowed fades and colour mixing
 
@@ -14060,7 +14060,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Screenshots the SVG stage frame by frame and encodes a high-quality H.264 file; checks that the web font actually loaded.
+**ما هي:** يلتقط مسرح SVG إطارًا إطارًا ويرمّز ملف H.264 عالي الجودة؛ ويتحقق من تحميل خط الويب فعلًا. — Screenshots the SVG stage frame by frame and encodes a high-quality H.264 file; checks that the web font actually loaded.
 
 **متى:** عند تحويل مشهد SVG متحرك إلى ملف MP4 عالي الجودة مع التأكد من تحميل الخط / when exporting an animated SVG stage to high-quality MP4 and checking the web font loaded
 
@@ -14130,7 +14130,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Same seed gives the same film: all scatter, particles and jitter come from a seeded generator or an integer hash, never Math.random.
+**ما هي:** البذر نفسه يعطي الفيلم نفسه: كل التبعثر والجسيمات والاهتزاز من مولّد مبذور أو تجزئة صحيحة، وليس Math.random أبدًا. — Same seed gives the same film: all scatter, particles and jitter come from a seeded generator or an integer hash, never Math.random.
 
 **متى:** حين يجب أن تخرج الجسيمات والاهتزاز والتوزيع العشوائي بنفس الشكل في كل تصيير / when particles, scatter and jitter must come out the same on every render
 
@@ -14197,7 +14197,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Bridges a GSAP composition to a frame-exact renderer: render(t) pauses every registered timeline and CSS animation at t, seeks any <video data-start> clip and flags __ready only after all seeks and two animation frames.
+**ما هي:** يربط تركيب GSAP بمُصيِّر دقيق الإطار: يوقف render(t) كل خط زمني مسجّل وحركة CSS عند t، وينتقل بأي مقطع <video data-start>، ولا يرفع __ready إلا بعد كل الانتقالات وإطاري حركة. — Bridges a GSAP composition to a frame-exact renderer: render(t) pauses every registered timeline and CSS animation at t, seeks any <video data-start> clip and flags __ready only after all seeks and two animation frames.
 
 **متى:** حين تربط تركيب GSAP فيه لقطات فيديو بمصيّر دقيق الإطار مع مزامنة الفيديو / when bridging a GSAP composition with video clips to a frame-exact renderer
 
@@ -14263,7 +14263,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Seeks the composition frame by frame in a headless browser and encodes with FFmpeg; muxes <audio> clips and normalises the mix.
+**ما هي:** ينتقل بالتركيب إطارًا إطارًا في متصفح دون واجهة ويرمّز بـ FFmpeg؛ ويدمج مقاطع <audio> ويطبّع المزيج. — Seeks the composition frame by frame in a headless browser and encodes with FFmpeg; muxes <audio> clips and normalises the mix.
 
 **متى:** عند إخراج التركيب إلى MP4 مع دمج الصوت وضبط علوه، أو معاينة سريعة بمسودة / when exporting a composition to MP4 with mixed, normalised audio, or a quick draft preview
 
@@ -14335,7 +14335,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Bundles src/main.js with three-kit into one IIFE so file:// renders work; inlines GLB/HDR/PNG/WAV as data URLs and JSON.
+**ما هي:** يجمّع src/main.js مع three-kit في IIFE واحد ليعمل التصيير من file://؛ ويضمّن GLB/HDR/PNG/WAV كروابط بيانات وJSON. — Bundles src/main.js with three-kit into one IIFE so file:// renders work; inlines GLB/HDR/PNG/WAV as data URLs and JSON.
 
 **متى:** حين يجب أن يعمل مشروع ثلاثي الأبعاد من file:// كملف واحد مع تضمين الأصول / when a 3D project must run from file:// as one bundle with its assets inlined
 
@@ -14406,7 +14406,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Writes a Python program (Pillow only) whose readable draw.polygon calls plus embedded original bytes reproduce the image exactly and self-check.
+**ما هي:** يكتب برنامج Python (Pillow فقط) تعيد استدعاءات draw.polygon المقروءة فيه مع البايتات الأصلية المضمّنة إنتاج الصورة تمامًا وتتحقق من نفسها. — Writes a Python program (Pillow only) whose readable draw.polygon calls plus embedded original bytes reproduce the image exactly and self-check.
 
 **متى:** حين يطلب المستخدم تحويل صورة إلى برنامج بايثون يعيد رسمها بدقة / when the user wants a picture turned into a Python program that redraws it exactly
 
@@ -14475,7 +14475,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Per-shot ffmpeg prep (trim, speed, CFR, fit, LUT) then one Python compositing pass piped to a single H.264 encode copying original audio; keeps frame count, fps, size.
+**ما هي:** تحضير ffmpeg لكل لقطة (قص وسرعة وCFR وملاءمة وLUT) ثم تمريرة تركيب Python واحدة تُمرَّر إلى ترميز H.264 واحد ينسخ الصوت الأصلي؛ ويحفظ عدد الإطارات وfps والحجم. — Per-shot ffmpeg prep (trim, speed, CFR, fit, LUT) then one Python compositing pass piped to a single H.264 encode copying original audio; keeps frame count, fps, size.
 
 **متى:** عند إعادة صنع فيديو لقطة بلقطة مع الحفاظ على عدد الإطارات والمقاس والصوت الأصلي / when remaking a video shot by shot while keeping frame count, fps, size and original audio
 
@@ -14544,7 +14544,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every visual is a pure function of time; page exposes window.render(t) and window.__ready after fonts load, so preview equals frames.
+**ما هي:** كل مرئي دالة خالصة في الزمن؛ وتكشف الصفحة window.render(t) وwindow.__ready بعد تحميل الخطوط، فتساوي المعاينة الإطارات. — Every visual is a pure function of time; page exposes window.render(t) and window.__ready after fonts load, so preview equals frames.
 
 **متى:** عند كتابة مشهد HTML يجب أن تطابق معاينته الإطارات المصدّرة تمامًا / when writing an HTML scene whose preview must equal its exported frames
 
@@ -14613,7 +14613,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Encodes the mix as AAC-LC when the browser can, otherwise Opus; with neither, the film is exported silent and the report says so.
+**ما هي:** يرمّز المزيج بـ AAC-LC إذا استطاع المتصفح وإلا Opus؛ وإن تعذّر كلاهما يُصدَّر الفيلم صامتًا ويذكر التقرير ذلك. — Encodes the mix as AAC-LC when the browser can, otherwise Opus; with neither, the film is exported silent and the report says so.
 
 **متى:** عند تصدير فيديو بصوت من متصفح قد لا يدعم ترميز AAC / when exporting a video with sound from a browser that may not support AAC encoding
 
@@ -14680,7 +14680,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Screenshots each frame of an HTML scene at true pixel size, optional selector and spot times.
+**ما هي:** يلتقط كل إطار من مشهد HTML بحجم البكسل الحقيقي، مع محدِّد اختياري وأزمنة نقطية. — Screenshots each frame of an HTML scene at true pixel size, optional selector and spot times.
 
 **متى:** حين تريد تصوير كل إطار من مشهد HTML بمقاسه الحقيقي أو لقطات عند أزمنة محددة / when screenshotting every frame of an HTML scene at true size, or stills at chosen times
 
@@ -14750,7 +14750,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Same principles in React: useCurrentFrame as only clock, interpolate with clamp, spring(), Sequence per scene, npx remotion render.
+**ما هي:** المبادئ نفسها في React: useCurrentFrame ساعةً وحيدة، وinterpolate مع clamp، وspring()، وSequence لكل مشهد، وnpx remotion render. — Same principles in React: useCurrentFrame as only clock, interpolate with clamp, spring(), Sequence per scene, npx remotion render.
 
 **متى:** حين يفضل المستخدم React فيُبنى نفس المشهد الحتمي في Remotion / when the user prefers React and the same deterministic scene is built in Remotion
 
@@ -14819,7 +14819,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Owner layer over vendored HyperFrames: motion.py CLI (new/frames/check/render/measure/lint/sheet/speed/study/channels/mocap/inspect), motion-kit.js helpers, three-kit.js realism, ambience/score/voice/montage scripts.
+**ما هي:** طبقة المالك فوق HyperFrames المضمّن: واجهة motion.py (new/frames/check/render/measure/lint/sheet/speed/study/channels/mocap/inspect)، ومساعدات motion-kit.js، وواقعية three-kit.js، وسكربتات ambience/score/voice/montage. — Owner layer over vendored HyperFrames: motion.py CLI (new/frames/check/render/measure/lint/sheet/speed/study/channels/mocap/inspect), motion-kit.js helpers, three-kit.js realism, ambience/score/voice/montage scripts.
 
 **متى:** عند الحاجة لطبقة KOSIF Motion فوق HyperFrames: إنشاء وفحص وتصيير وقياس ومونتاج / when you need the KOSIF Motion layer over HyperFrames: new, check, render, measure, montage
 
@@ -14889,7 +14889,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Commands for trimming, joining, burning subs, aspect change, output verification; H.264 yuv420p delivery.
+**ما هي:** أوامر القص والضم وحرق الترجمة وتغيير النسبة والتحقق من المخرج؛ وتسليم H.264 yuv420p. — Commands for trimming, joining, burning subs, aspect change, output verification; H.264 yuv420p delivery.
 
 **متى:** حين يطلب المستخدم قص أو دمج مقاطع أو حرق ترجمة أو تغيير أبعاد الفيديو / when the user wants to trim, join clips, burn subtitles or change a video's aspect ratio
 
@@ -14957,7 +14957,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Makes one HTML file render under HyperFrames (window.__timelines) and KOSIF Studio (window.render(t)/__ready/seek), and seeks <video data-start> clips exactly.
+**ما هي:** يجعل ملف HTML واحدًا يُصيَّر تحت HyperFrames (window.__timelines) وKOSIF Studio (window.render(t)/__ready/seek)، وينتقل بمقاطع <video data-start> بدقة. — Makes one HTML file render under HyperFrames (window.__timelines) and KOSIF Studio (window.render(t)/__ready/seek), and seeks <video data-start> clips exactly.
 
 **متى:** حين يجب أن يعمل ملف HTML واحد مع HyperFrames وKOSIF Studio معًا مع مزامنة لقطات الفيديو / when one HTML file must render under both HyperFrames and KOSIF Studio with exact video seeks
 
@@ -15026,7 +15026,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** render(t) that accumulates k sub-frames on the GPU in half float: average = motion blur, MaxEquation = lighten stack (light trails, star arcs).
+**ما هي:** render(t) يجمع k إطارًا فرعيًا على GPU بنصف الدقة العائمة: المتوسط = تمويه حركة، وMaxEquation = تكديس lighten (آثار الضوء وأقواس النجوم). — render(t) that accumulates k sub-frames on the GPU in half float: average = motion blur, MaxEquation = lighten stack (light trails, star arcs).
 
 **متى:** حين تريد ضبابية حركة أو تعريضًا طويلًا لخطوط الضوء ومسارات النجوم محسوبًا على كارت الشاشة / for GPU motion blur or long-exposure light trails and star arcs
 
@@ -15096,7 +15096,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner+MIT(three.js) |
 
-**ما هي:** three.js r186 + the whole kit as one classic script on window.K3 (plus K3.POST post classes), loadable from file:// with no npm.
+**ما هي:** three.js r186 + الحزمة كلها في سكربت كلاسيكي واحد على window.K3 (مع أصناف K3.POST لما بعد المعالجة)، يُحمَّل من file:// دون npm. — three.js r186 + the whole kit as one classic script on window.K3 (plus K3.POST post classes), loadable from file:// with no npm.
 
 **متى:** حين تحتاج three.js مع العدة في سكربت واحد يعمل من file:// بلا npm / when you need three.js and the kit as one classic script loadable from file:// without npm
 
@@ -15167,7 +15167,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** When the renderer sets window.__draftScale, GL buffers shrink so 3D drafts really render faster.
+**ما هي:** حين يضبط المُصيِّر window.__draftScale تتقلص مخازن GL فتُصيَّر مسودات الثلاثي الأبعاد أسرع فعلًا. — When the renderer sets window.__draftScale, GL buffers shrink so 3D drafts really render faster.
 
 **متى:** حين تريد مسودات ثلاثية الأبعاد أسرع بتصغير دقة التصيير مؤقتًا / when you want 3D drafts to render faster by shrinking the GL buffers
 
@@ -15233,7 +15233,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One HTML file, one canvas, a pure function of t: window.seek(t) paints any frame; includes closed-form spring, track, expo-out, exit ease, seeded rng, 120 BPM clock, scene list.
+**ما هي:** ملف HTML واحد ولوحة واحدة ودالة خالصة في t: window.seek(t) يرسم أي إطار؛ ويشمل نابضًا بصيغة مغلقة ومسارًا وexpo-out وتخفيف خروج وrng مبذورًا وساعة 120 BPM وقائمة مشاهد. — One HTML file, one canvas, a pure function of t: window.seek(t) paints any frame; includes closed-form spring, track, expo-out, exit ease, seeded rng, 120 BPM clock, scene list.
 
 **متى:** عند بدء فيلم حركة على كانفاس واحد في ملف HTML مع نوابض وتنعيم وإيقاع 120 BPM / when starting a single-canvas motion film with springs, easing, seeded rng and a 120 BPM clock
 
@@ -15302,7 +15302,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Default composition: data-* contract on #root, #cam stage, SVG scene gradient, title word reveal, sparkle, vignette .4, grain .06, camera push 1.06.
+**ما هي:** التركيب الافتراضي: عقد data-* على #root، ومسرح #cam، وتدرج مشهد SVG، وكشف كلمات العنوان، ولمعان، وتعتيم أطراف .4، وحبيبات .06، ودفع كاميرا 1.06. — Default composition: data-* contract on #root, #cam stage, SVG scene gradient, title word reveal, sparkle, vignette .4, grain .06, camera push 1.06.
 
 **متى:** عند إنشاء مشروع حركة جديد بالقالب الافتراضي فيه عنوان يظهر كلمة كلمة ودفع كاميرا وحبيبات / when creating a new motion project from the default template with word reveal, camera push and grain
 
@@ -15373,7 +15373,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Avoids lost or looping seeks: a newer seek waits while one is in flight, an already-reached target does not re-seek, and export waits for 'seeked' with an 8 s timeout.
+**ما هي:** يتجنب الانتقالات الضائعة أو المتكررة: ينتظر الانتقال الأحدث ما دام آخر قيد التنفيذ، ولا يُعاد الانتقال لهدف تحقق بالفعل، وينتظر التصدير حدث 'seeked' بمهلة 8 ثوانٍ. — Avoids lost or looping seeks: a newer seek waits while one is in flight, an already-reached target does not re-seek, and export waits for 'seeked' with an 8 s timeout.
 
 **متى:** حين تظهر في التصدير إطارات خاطئة أو مكررة بسبب قفزات فيديو ضائعة أو متكررة / when exported frames show wrong or repeated video because media seeks are lost or loop
 
@@ -15442,7 +15442,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Lint/validate, snapshot key frames, render at quality presets or 4k DPR upscale, environment doctor.
+**ما هي:** lint/التحقق، ولقطات للإطارات المفتاحية، والتصيير بإعدادات الجودة المسبقة أو رفع 4k DPR، وطبيب البيئة. — Lint/validate, snapshot key frames, render at quality presets or 4k DPR upscale, environment doctor.
 
 **متى:** عند فحص التركيب وأخذ لقطات للإطارات المهمة وتصديره بجودة مسودة أو تسليم أو 4K / when linting a composition, snapshotting key frames and rendering at draft, delivery or 4k quality
 
@@ -15510,7 +15510,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | mixed |
 
-**ما هي:** ~110 libraries that run inside a HyperFrames page: canvas (Konva, p5, Two.js, Pts, Rough.js), SVG draw-on (Vivus, Walkway, Lazy Line Painter), tweens (Anime.js, mo.js, Popmotion), text (SplitType, Typed.js, CountUp), charts (ECharts, D3, Vega-Lite, Chart.js), 3D (Babylon, OGL, R3F), shaders (Hydra, …
+**ما هي:** نحو 110 مكتبات تعمل داخل صفحة HyperFrames: اللوحة (Konva وp5 وTwo.js وPts وRough.js)، ورسم SVG التدريجي (Vivus وWalkway وLazy Line Painter)، والتحريك (Anime.js وmo.js وPopmotion)، والنص (SplitType وTyped.js وCountUp)، والمخططات (ECharts وD3 وVega-Lite وChart.js)، والثلاثي الأبعاد (Babylon وOGL وR3F)، والشيدر (Hydra، … — ~110 libraries that run inside a HyperFrames page: canvas (Konva, p5, Two.js, Pts, Rough.js), SVG draw-on (Vivus, Walkway, Lazy Line Painter), tweens (Anime.js, mo.js, Popmotion), text (SplitType, Typed.js, CountUp), charts (ECharts, D3, Vega-Lite, Chart.js), 3D (Babylon, OGL, R3F), shaders (Hydra, …
 
 **متى:** حين تبحث عن مكتبة رسم أو تحريك أو رسوم بيانية أو ثلاثي الأبعاد تعمل داخل صفحة HyperFrames / when picking a canvas, draw-on, tween, text, chart or 3D library for a HyperFrames page
 
@@ -15579,7 +15579,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A picture is an ordered list of Step objects, each holding vector ops (fill, glow, rim, relief, camera ops) drawn on a float RGB canvas; re-rendering at any scale keeps it sharp.
+**ما هي:** الصورة قائمة مرتّبة من كائنات Step، يحمل كل منها عمليات متجهة (تعبئة وتوهج وحافة وتجسيم وعمليات كاميرا) تُرسم على لوحة RGB عائمة؛ وإعادة التصيير بأي مقياس تبقيها حادة. — A picture is an ordered list of Step objects, each holding vector ops (fill, glow, rim, relief, camera ops) drawn on a float RGB canvas; re-rendering at any scale keeps it sharp.
 
 **متى:** حين تريد رسم لوحة متجهة بخطوات مرتبة تبقى حادة عند أي مقياس تصيير / when drawing a vector picture as ordered steps that stays sharp at any render scale
 
@@ -15650,7 +15650,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A Tkinter desktop app that streams paint jobs from a producer thread and lays changed pixels down in painter order with a moving brush cursor, step labels and pixel counts in Arabic.
+**ما هي:** تطبيق سطح مكتب Tkinter يبث مهام الرسم من خيط منتج ويضع البكسلات المتغيرة بترتيب الرسّام مع مؤشر فرشاة متحرك وتسميات خطوات وعدّادات بكسل بالعربية. — A Tkinter desktop app that streams paint jobs from a producer thread and lays changed pixels down in painter order with a moving brush cursor, step labels and pixel counts in Arabic.
 
 **متى:** حين يريد المستخدم مشاهدة الصورة وهي تُرسم بيكسلًا ببيكسل بفرشاة متحركة وتسميات عربية / when the user wants to watch a picture painted pixel by pixel with a moving brush and Arabic labels
 
@@ -15720,7 +15720,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Images and raster code are painted on a canvas exactly their own size; the view shrinks with area averaging and enlarges small pictures by whole numbers so pixels stay square.
+**ما هي:** تُرسم الصور وشيفرة النقطيات على لوحة بحجمها الأصلي تمامًا؛ ويتقلص العرض بمتوسط المساحة، وتُكبَّر الصور الصغيرة بأعداد صحيحة لتبقى البكسلات مربعة. — Images and raster code are painted on a canvas exactly their own size; the view shrinks with area averaging and enlarges small pictures by whole numbers so pixels stay square.
 
 **متى:** عند عرض صورة بمقاسها الأصلي مع تصغير ناعم وتكبير بمضاعفات صحيحة لتبقى البيكسلات مربعة / when showing a picture at native size with smooth shrink and integer zoom that keeps pixels square
 
@@ -15790,7 +15790,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Runs pasted picture code in its own process, detects its kind and turns the result into ordered paint jobs (npz + json) that the studio or film plays.
+**ما هي:** يشغّل شيفرة صورة ملصوقة في عملية مستقلة، ويكتشف نوعها ويحوّل النتيجة إلى مهام رسم مرتّبة (npz + json) يشغّلها الاستوديو أو الفيلم. — Runs pasted picture code in its own process, detects its kind and turns the result into ordered paint jobs (npz + json) that the studio or film plays.
 
 **متى:** حين يلصق المستخدم كود رسم من أي ذكاء اصطناعي (SVG أو بايثون أو HTML) ويريد تشغيله ورسمه / when the user pastes picture code from any AI (SVG, Python, HTML) and wants it run and painted
 
@@ -15861,7 +15861,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Code that plots with matplotlib is run on the Agg backend and its last figure saved; turtle drawings are captured from the screen after tracer(0,0); both are then painted in brush strokes.
+**ما هي:** تُشغَّل شيفرة الرسم بـ matplotlib على خلفية Agg ويُحفظ آخر شكل فيها؛ وتُلتقط رسوم turtle من الشاشة بعد tracer(0,0)؛ ثم يُرسم كلاهما بضربات فرشاة. — Code that plots with matplotlib is run on the Agg backend and its last figure saved; turtle drawings are captured from the screen after tracer(0,0); both are then painted in brush strokes.
 
 **متى:** حين يرسم الكود بـ matplotlib أو turtle ويُراد التقاط النتيجة ورسمها بضربات فرشاة / when code draws with matplotlib or turtle and the result should be captured and brush-painted
 
@@ -15931,7 +15931,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders a web page (WebGL, CSS, canvas) in headless Edge/Chrome after it signals readiness, optionally seeking a time; the frame is then painted pixel by pixel and can become Python code.
+**ما هي:** يصيّر صفحة ويب (WebGL وCSS وcanvas) في Edge/Chrome دون واجهة بعد أن تشير إلى جاهزيتها، مع انتقال زمني اختياري؛ ثم يُرسم الإطار بكسلًا ببكسل ويمكن أن يصبح شيفرة Python. — Renders a web page (WebGL, CSS, canvas) in headless Edge/Chrome after it signals readiness, optionally seeking a time; the frame is then painted pixel by pixel and can become Python code.
 
 **متى:** حين تريد إطارًا واحدًا دقيقًا من صفحة ويب أو Three.js عند زمن معين بعد جاهزيتها / when you need one exact frame of a web or Three.js page at a chosen time once it is ready
 
@@ -16003,7 +16003,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders time-driven HTML compositions frame by frame through headless Chromium and FFmpeg; scenes can also animate by defining build_t(t).
+**ما هي:** يصيّر تراكيب HTML المدفوعة بالزمن إطارًا إطارًا عبر Chromium دون واجهة وFFmpeg؛ ويمكن للمشاهد أيضًا أن تتحرك بتعريف build_t(t). — Renders time-driven HTML compositions frame by frame through headless Chromium and FFmpeg; scenes can also animate by defining build_t(t).
 
 **متى:** عند تحويل صفحة HTML متحركة بالزمن أو مشهد build_t إلى فيديو MP4 إطارًا بإطار / when turning a time-driven HTML page or a build_t scene into an MP4 frame by frame
 
@@ -16075,7 +16075,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Splits a timeline across several headless browsers (one process each), each encoding its own segment, then concatenates the MP4 segments without re-encoding.
+**ما هي:** يقسّم خطًا زمنيًا على عدة متصفحات دون واجهة (عملية لكل منها)، يرمّز كلٌّ مقطعه، ثم يدمج مقاطع MP4 دون إعادة ترميز. — Splits a timeline across several headless browsers (one process each), each encoding its own segment, then concatenates the MP4 segments without re-encoding.
 
 **متى:** حين يكون التصيير بطيئًا وتريد تقسيم الخط الزمني على عدة متصفحات ثم الدمج دون إعادة ترميز / when a render should split across several browsers and then concat without re-encoding
 
@@ -16147,7 +16147,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Standard-library MCP server exposing 65 deterministic tools over stdio and streamable HTTP, plus REST/OpenAPI for ChatGPT Actions, skill resources (kosif://skills/...), slash commands as MCP prompts and a browser console.
+**ما هي:** خادم MCP بالمكتبة القياسية يعرض 65 أداة حتمية عبر stdio وHTTP المتدفق، مع REST/OpenAPI لإجراءات ChatGPT، وموارد المهارات (kosif://skills/...)، والأوامر المائلة كموجّهات MCP، ووحدة تحكم في المتصفح. — Standard-library MCP server exposing 65 deterministic tools over stdio and streamable HTTP, plus REST/OpenAPI for ChatGPT Actions, skill resources (kosif://skills/...), slash commands as MCP prompts and a browser console.
 
 **متى:** عند ربط أدوات كوسيف بمساعد ذكي عبر خادم MCP أو بـ ChatGPT Actions عبر OpenAPI / when exposing KOSIF tools over an MCP server (stdio or HTTP) or REST/OpenAPI for ChatGPT Actions
 
@@ -16217,7 +16217,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Grabs page pixels with CDP Page.captureScreenshot optimizeForSpeed (fast zlib PNG, or JPEG q95 for drafts) and pipes PNG bytes straight to FFmpeg when no blending is needed.
+**ما هي:** يأخذ بكسلات الصفحة بـ CDP Page.captureScreenshot مع optimizeForSpeed (PNG سريع بـ zlib، أو JPEG q95 للمسودات) ويمرر بايتات PNG مباشرة إلى FFmpeg حين لا يلزم مزج. — Grabs page pixels with CDP Page.captureScreenshot optimizeForSpeed (fast zlib PNG, or JPEG q95 for drafts) and pipes PNG bytes straight to FFmpeg when no blending is needed.
 
 **متى:** حين يكون التقاط الإطارات عنق الزجاجة وتريد تمرير الصور مباشرة إلى FFmpeg / when frame grabbing is the bottleneck and PNG bytes should pipe straight into FFmpeg
 
@@ -16289,7 +16289,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A KOSIF scene becomes an animation by defining build_t(t) that returns steps for time t; each frame is a full re-render.
+**ما هي:** يصبح مشهد KOSIF رسمًا متحركًا بتعريف build_t(t) الذي يعيد خطوات الزمن t؛ ويُعاد تصيير كل إطار كاملًا. — A KOSIF scene becomes an animation by defining build_t(t) that returns steps for time t; each frame is a full re-render.
 
 **متى:** حين تريد تحويل مشهد KOSIF ثابت إلى حركة بتعريف دالة build_t للزمن / when turning a static KOSIF scene into an animation by defining build_t(t)
 
@@ -16357,7 +16357,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Headless entry points for rendering scenes, tracing images, writing image programs and opening code or images in the window.
+**ما هي:** نقاط دخول دون واجهة لتصيير المشاهد وتتبع الصور وكتابة برامج الصور وفتح الشيفرة أو الصور في النافذة. — Headless entry points for rendering scenes, tracing images, writing image programs and opening code or images in the window.
 
 **متى:** عند تشغيل الاستوديو من سطر الأوامر لتصيير مشهد أو تتبع صورة أو كتابة برنامجها أو فتح كود / when running the studio headless to render a scene, trace an image, write its program or open code
 
@@ -16424,7 +16424,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The drawing window's Animation menu launches the motion pipeline: new 2D/3D project, key frame drawn in the studio, render with optional sub-frame blur, lint, critique sheet, optical-flow speed, beat grid, reference-film study, talking-clip auto reel, burned-caption removal and transcription.
+**ما هي:** تطلق قائمة «الرسوم المتحركة» في نافذة الرسم مسار الحركة: مشروع 2D/3D جديد، وإطار مفتاحي مرسوم في الاستوديو، وتصيير بتمويه إطارات فرعية اختياري، وlint، وورقة نقد، وسرعة بالتدفق البصري، وشبكة إيقاع، ودراسة فيلم مرجعي، وريل تلقائي لمقاطع الحديث، وإزالة الترجمات المحروقة، والتفريغ النصي. — The drawing window's Animation menu launches the motion pipeline: new 2D/3D project, key frame drawn in the studio, render with optional sub-frame blur, lint, critique sheet, optical-flow speed, beat grid, reference-film study, talking-clip auto reel, burned-caption removal and transcription.
 
 **متى:** حين يريد المستخدم بدء مشروع حركة أو ريل تلقائي أو إزالة ترجمة محروقة أو تفريغ صوت من نافذة الرسم / when starting a motion project, auto reel, burned-caption removal or transcription from the drawing window
 
@@ -16494,7 +16494,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (contract idea credited to HyperFrames, Apache-2.0) |
 
-**ما هي:** Any page rendered by the studio sets window.__ready = true when a frame is fully drawn, exposes window.render(t) (or window.seek(t)) and window.__duration in seconds; no wall-clock animation.
+**ما هي:** أي صفحة يصيّرها الاستوديو تضبط window.__ready = true عند اكتمال رسم الإطار، وتكشف window.render(t) (أو window.seek(t)) وwindow.__duration بالثواني؛ ولا حركة بساعة الجدار. — Any page rendered by the studio sets window.__ready = true when a frame is fully drawn, exposes window.render(t) (or window.seek(t)) and window.__duration in seconds; no wall-clock animation.
 
 **متى:** عند كتابة صفحة HTML ليصيّرها الاستوديو: علامة الجاهزية ودالة الزمن والمدة بلا ساعة حقيقية / when writing a page for the studio renderer: ready flag, render(t) or seek(t) and duration
 
@@ -16562,7 +16562,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders a composition to MP4 either through the HyperFrames node CLI or through KOSIF Studio's own Playwright frame renderer (film.film_animate), with the composition's <audio> clips mixed afterwards.
+**ما هي:** يصيّر تركيبًا إلى MP4 إما عبر CLI الخاص بـ HyperFrames على node أو عبر مُصيِّر إطارات Playwright الخاص بـ KOSIF Studio (film.film_animate)، ثم تُمزج مقاطع <audio> الخاصة بالتركيب. — Renders a composition to MP4 either through the HyperFrames node CLI or through KOSIF Studio's own Playwright frame renderer (film.film_animate), with the composition's <audio> clips mixed afterwards.
 
 **متى:** عند الاختيار بين محرك HyperFrames ومصيّر الاستوديو للتصدير إلى MP4 مع دمج الصوت بعدها / when choosing between the HyperFrames CLI and the studio browser renderer, with audio mixed afterwards
 
@@ -16633,7 +16633,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A review render at half the pixels and 15 fps, JPEG frame capture and ultrafast encoding, always through the studio engine.
+**ما هي:** تصيير مراجعة بنصف البكسلات و15 إطارًا/ث والتقاط إطارات JPEG وترميز فائق السرعة، دائمًا عبر محرك الاستوديو. — A review render at half the pixels and 15 fps, JPEG frame capture and ultrafast encoding, always through the studio engine.
 
 **متى:** حين تريد معاينة سريعة للمراجعة بنصف الدقة و15 إطارًا في الثانية قبل التصيير النهائي / when you want a quick half-size, 15 fps review render before the final
 
@@ -16702,7 +16702,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each output frame stacks N sub-frames over an exposure window; averaging gives cinematic motion blur, lightening gives star trails and light painting.
+**ما هي:** يكدّس كل إطار مخرج N إطارًا فرعيًا على نافذة تعريض؛ فالمتوسط يعطي تمويه حركة سينمائيًا، والتفتيح يعطي آثار النجوم والرسم بالضوء. — Each output frame stacks N sub-frames over an exposure window; averaging gives cinematic motion blur, lightening gives star trails and light painting.
 
 **متى:** حين يطلب المستخدم ضبابية حركة سينمائية أو مسارات نجوم أو رسمًا بالضوء / when the user asks for cinematic motion blur, star trails or light painting
 
@@ -16772,7 +16772,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Frames render in several headless browsers at once because every frame is a pure function of t.
+**ما هي:** تُصيَّر الإطارات في عدة متصفحات دون واجهة معًا لأن كل إطار دالة خالصة في t. — Frames render in several headless browsers at once because every frame is a pure function of t.
 
 **متى:** عند تسريع التصيير بتشغيل عدة متصفحات معًا لأن كل إطار دالة في الزمن / when speeding up a render by running several headless browsers at once
 
@@ -16841,7 +16841,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Turns an ES-module Three.js scene into one classic script that loads from file:// with assets inlined, so no dev server or CORS is needed.
+**ما هي:** يحوّل مشهد Three.js بوحدات ES إلى سكربت كلاسيكي واحد يُحمَّل من file:// بأصول مضمّنة، فلا حاجة إلى خادم تطوير ولا CORS. — Turns an ES-module Three.js scene into one classic script that loads from file:// with assets inlined, so no dev server or CORS is needed.
 
 **متى:** حين يجب تحويل مشهد Three.js بوحدات ES إلى سكربت واحد يعمل من file:// بلا خادم / when an ES-module Three.js scene must become one script that runs from file:// without a dev server
 
@@ -16913,7 +16913,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds a full illustration as a list of SVG strings with gradients, patterns and blur filters, deterministic from a seed, so the picture is editable code and scales to any resolution.
+**ما هي:** يبني رسمًا توضيحيًا كاملًا كقائمة سلاسل SVG بتدرجات وأنماط ومرشحات تمويه، حتمي من بذرة، فتكون الصورة شيفرة قابلة للتحرير وتتسع لأي دقة. — Builds a full illustration as a list of SVG strings with gradients, patterns and blur filters, deterministic from a seed, so the picture is editable code and scales to any resolution.
 
 **متى:** حين يطلب المستخدم رسمة كاملة قابلة للتعديل والتكبير مولدة بالكود من بايثون / when the user wants a full illustration generated as editable, scalable SVG code from Python
 
@@ -16983,7 +16983,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Renders an HTML/Canvas/SVG page exposing window.__kosif.seek(t) to MP4 frame-exactly.
+**ما هي:** يصيّر صفحة HTML/Canvas/SVG تكشف window.__kosif.seek(t) إلى MP4 بدقة الإطار. — Renders an HTML/Canvas/SVG page exposing window.__kosif.seek(t) to MP4 frame-exactly.
 
 **متى:** حين يطلب المستخدم تحويل صفحة HTML أو Canvas أو SVG متحركة إلى MP4 بدقة الإطار مع ورقة معاينة / when the user wants an HTML/Canvas/SVG animation rendered to MP4 frame-exactly, with a preview sheet
 
@@ -17055,7 +17055,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Frame is a pure function of time.
+**ما هي:** الإطار دالة خالصة في الزمن. — Frame is a pure function of time.
 
 **متى:** عند ضمان أن كل إطار يخرج متطابقًا في كل تصيير: بذرة عشوائية وخطوط جاهزة وبلا شبكة / for making every frame identical across renders: seeded RNG, fonts ready, no network
 
@@ -17122,7 +17122,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner (MIT); Remotion itself has its own company license |
 
-**ما هي:** Remotion v4 composition 1080x1920, 30 fps, 12 s with props title/words/accent/lang; three Sequences (title 34%, chart 40%, logo rest) inside a CameraRig plus a captions layer.
+**ما هي:** تركيب Remotion v4 بحجم 1080x1920 و30 إطارًا/ث ومدة 12 ث مع props هي title/words/accent/lang؛ ثلاثة Sequence (العنوان 34% والمخطط 40% والشعار الباقي) داخل CameraRig مع طبقة ترجمات. — Remotion v4 composition 1080x1920, 30 fps, 12 s with props title/words/accent/lang; three Sequences (title 34%, chart 40%, logo rest) inside a CameraRig plus a captions layer.
 
 **متى:** حين تريد فيلمًا رأسيًا جاهزًا في Remotion بعنوان ورسم بياني وشعار وترجمة / when you want a ready vertical Remotion film with title, chart, logo and captions
 
@@ -17193,7 +17193,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** remotion.config.ts picks KOSIF_BROWSER or newest Playwright chromium_headless_shell then chromium under $PLAYWRIGHT_BROWSERS_PATH or /opt/pw-browsers, avoiding downloads.
+**ما هي:** يختار remotion.config.ts المتغير KOSIF_BROWSER أو أحدث chromium_headless_shell من Playwright ثم chromium تحت $PLAYWRIGHT_BROWSERS_PATH أو /opt/pw-browsers، تجنبًا للتنزيل. — remotion.config.ts picks KOSIF_BROWSER or newest Playwright chromium_headless_shell then chromium under $PLAYWRIGHT_BROWSERS_PATH or /opt/pw-browsers, avoiding downloads.
 
 **متى:** حين تريد تشغيل Remotion بمتصفح Chromium موجود على الجهاز بدل تنزيل متصفح جديد / when Remotion should reuse a local Chromium instead of downloading one
 
@@ -17260,7 +17260,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Request phrase for stack 'remotion': starters/remotion.
+**ما هي:** عبارة الطلب للحزمة 'remotion': starters/remotion. — Request phrase for stack 'remotion': starters/remotion.
 
 **متى:** حين يطلب المستخدم أن يُبنى الفيديو بتقنية Remotion من القالب الجاهز / when the user asks for the remotion stack and its starter project
 
@@ -17327,7 +17327,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Three.js scene where every transform is computed from t inside seek(t) and rendered once per frame.
+**ما هي:** مشهد Three.js تُحسب فيه كل التحويلات من t داخل seek(t) ويُصيَّر مرة واحدة لكل إطار. — Three.js scene where every transform is computed from t inside seek(t) and rendered once per frame.
 
 **متى:** حين تريد مشهد Three.js ثلاثي الأبعاد يُحسب من الزمن ويُصيَّر إطارًا بإطار مثل دوران كاميرا / when building a Three.js scene computed from t and rendered once per frame, e.g. a camera orbit
 
@@ -17397,7 +17397,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Use ThreeCanvas in Remotion and drive transforms from useCurrentFrame().
+**ما هي:** استخدم ThreeCanvas في Remotion وقُد التحويلات من useCurrentFrame(). — Use ThreeCanvas in Remotion and drive transforms from useCurrentFrame().
 
 **متى:** حين تريد مشهدًا ثلاثي الأبعاد داخل Remotion تتحرك عناصره حسب رقم الإطار / when you need a 3D scene inside Remotion driven by the current frame
 
@@ -17464,7 +17464,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Still, then render with props, then gate.
+**ما هي:** لقطة ثابتة، ثم تصيير بالـ props، ثم البوابة. — Still, then render with props, then gate.
 
 **متى:** عند تسليم فيلم Remotion: لقطة ثابتة للفحص ثم التصيير بالخصائص ثم بوابة الجودة / when delivering a Remotion film: a still check, a render with props, then a gate
 
@@ -17531,7 +17531,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Separate brief stating objective, verbatim copy, identity, scene summary, audio and which Hyperframes sub-skills to load.
+**ما هي:** موجز منفصل يذكر الهدف والنص الحرفي والهوية وملخص المشاهد والصوت ومهارات Hyperframes الفرعية الواجب تحميلها. — Separate brief stating objective, verbatim copy, identity, scene summary, audio and which Hyperframes sub-skills to load.
 
 **متى:** قبل بدء تركيب Hyperframes لكتابة موجز منفصل بالهدف والنص الحرفي والهوية والصوت / before a Hyperframes build, to write a separate brief with objective, verbatim copy, identity and audio
 
@@ -17597,7 +17597,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render tiers for iteration vs delivery.
+**ما هي:** مستويات تصيير للتكرار وللتسليم. — Render tiers for iteration vs delivery.
 
 **متى:** عند الاختيار بين تصيير مسودة سريع للتجربة وتصيير عالي الجودة للتسليم / when choosing a fast draft render for iteration or a high-quality render for delivery
 
@@ -17663,7 +17663,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One composition file renders under HyperFrames' runtime or KOSIF's own window.render(t) contract, and seeks <video data-start> footage frame-exactly.
+**ما هي:** ملف تركيب واحد يُصيَّر تحت بيئة HyperFrames أو عقد window.render(t) الخاص بـ KOSIF، ويتنقل في لقطات <video data-start> بدقة الإطار. — One composition file renders under HyperFrames' runtime or KOSIF's own window.render(t) contract, and seeks <video data-start> footage frame-exactly.
 
 **متى:** عند كتابة تركيب واحد يعمل على HyperFrames أو على مصيّر كوسيف مع لقطات فيديو بدقة الإطار / when one composition must render under HyperFrames or KOSIF's renderer with frame-exact video footage
 
@@ -17732,7 +17732,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | none |
 
-**ما هي:** Scroll mapped to continuous stop index w; active clip=floor(w); currentTime=(w-active)*duration clamped duration-0.05; seek only if diff>0.01.
+**ما هي:** يُحوَّل التمرير إلى فهرس توقف متصل w؛ المقطع النشط = floor(w)؛ وcurrentTime=(w-active)*duration مقصوصًا عند duration-0.05؛ ولا ينتقل إلا إذا تجاوز الفرق 0.01. — Scroll mapped to continuous stop index w; active clip=floor(w); currentTime=(w-active)*duration clamped duration-0.05; seek only if diff>0.01.
 
 **متى:** حين يجب أن يتقدم الفيديو مع تمرير الصفحة في موقع تفاعلي بمقاطع متتالية / when video clips should advance with page scroll on a scroll-driven site
 
@@ -17798,7 +17798,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | none |
 
-**ما هي:** Load clips one at a time sorted by distance to scroll, ahead-first; whole blob; skip on reduced-motion/saveData; iOS play()/pause() prime.
+**ما هي:** حمّل المقاطع واحدًا واحدًا مرتبة بالقرب من التمرير، الأمامي أولًا؛ بالكتلة كلها؛ وتخطَّ عند تقليل الحركة/saveData؛ وتهيئة play()/pause() في iOS. — Load clips one at a time sorted by distance to scroll, ahead-first; whole blob; skip on reduced-motion/saveData; iOS play()/pause() prime.
 
 **متى:** حين يحتوي موقع التمرير على مقاطع كثيرة يجب تحميلها حسب قربها من موضع التمرير / when a scroll site has many clips that should load by distance to the scroll position
 
@@ -17865,7 +17865,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** One Lambda + Step Functions fans chunks to parallel workers, S3 holds plan and outputs.
+**ما هي:** Lambda واحدة مع Step Functions توزّع الأجزاء على عمّال متوازين، ويحتفظ S3 بالخطة والمخرجات. — One Lambda + Step Functions fans chunks to parallel workers, S3 holds plan and outputs.
 
 **متى:** حين تريد توزيع تصيير الفيديو على عمال متوازين في AWS Lambda مع حفظ النتائج في S3 / when fanning a render out to parallel AWS Lambda workers with S3 holding plan and outputs
 
@@ -17936,7 +17936,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Server-side rendering via Node renderer, render server template, or AWS Lambda for parallel renders.
+**ما هي:** تصيير من جهة الخادم عبر مُصيِّر Node أو قالب خادم تصيير أو AWS Lambda للتصيير المتوازي. — Server-side rendering via Node renderer, render server template, or AWS Lambda for parallel renders.
 
 **متى:** حين تحتاج تصيير Remotion على الخادم أو بكميات كبيرة متوازية عبر AWS Lambda / when Remotion videos must render server-side or in parallel at scale via AWS Lambda
 
@@ -18005,7 +18005,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Script AE to build comps, layers, expressions and render queue items for users who finish in Adobe.
+**ما هي:** برمجة After Effects لبناء التراكيب والطبقات والتعابير وعناصر طابور التصيير للمستخدمين الذين يُنهون العمل في Adobe. — Script AE to build comps, layers, expressions and render queue items for users who finish in Adobe.
 
 **متى:** حين ينهي المستخدم عمله في أفتر إفكتس ويريد سكربتًا يبني التركيبات والطبقات وطابور التصيير / when the user finishes in After Effects and wants a script that builds comps, layers and render queue
 
@@ -18072,7 +18072,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Desktop NLE automation surfaces: After Effects ExtendScript (create comps with size/fps/duration, solids and text layers, expressions, controller null rigs, render queue output modules, .mogrt), Premiere Pro ExtendScript/UXP (sequence markers from lists, FCPXML/EDL/AAF interchange, AME presets), DaV…
+**ما هي:** واجهات أتمتة برامج المونتاج المكتبية: After Effects ExtendScript (إنشاء تراكيب بالحجم/fps/المدة، وطبقات صلبة ونصية، وتعابير، وأجهزة null للتحكم، ووحدات إخراج طابور التصيير، و.mogrt)، وPremiere Pro ExtendScript/UXP (علامات تسلسل من قوائم، وتبادل FCPXML/EDL/AAF، وإعدادات AME)، وDaV… — Desktop NLE automation surfaces: After Effects ExtendScript (create comps with size/fps/duration, solids and text layers, expressions, controller null rigs, render queue output modules, .mogrt), Premiere Pro ExtendScript/UXP (sequence markers from lists, FCPXML/EDL/AAF interchange, AME presets), DaV…
 
 **متى:** حين يعمل المستخدم في برنامج مونتاج مكتبي ويحتاج سكربتات أو ملفات تبادل مثل FCPXML وEDL / when the user edits in a desktop NLE and needs scripts or interchange files such as FCPXML or EDL
 
@@ -18142,7 +18142,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Premiere: ExtendScript/UXP against app.project.activeSequence (guard null) for markers and sequence building; export via AME .epr presets; interchange FCPXML (keeps more effects) vs EDL (cuts only). After Effects: ExtendScript to create comps (e.g. addComp(name,1920,1080,1,5,30)), text/solid layers,…
+**ما هي:** Premiere: ExtendScript/UXP على app.project.activeSequence (احمِ من null) للعلامات وبناء التسلسل؛ والتصدير عبر إعدادات AME .epr؛ والتبادل FCPXML (يحفظ مؤثرات أكثر) مقابل EDL (القطع فقط). After Effects: ExtendScript لإنشاء تراكيب (مثل addComp(name,1920,1080,1,5,30)) وطبقات النص/الصلبة،… — Premiere: ExtendScript/UXP against app.project.activeSequence (guard null) for markers and sequence building; export via AME .epr presets; interchange FCPXML (keeps more effects) vs EDL (cuts only). After Effects: ExtendScript to create comps (e.g. addComp(name,1920,1080,1,5,30)), text/solid layers,…
 
 **متى:** حين يريد المستخدم سكربتات لبريمير أو أفتر إفكتس يشغلها بنفسه للعلامات والتسلسلات والتركيبات / when the user wants Premiere or After Effects scripts to run themselves for markers, sequences or comps
 
@@ -18210,7 +18210,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Connect Python to a running Resolve to import media, build timelines, set render jobs; external scripting is Studio-only with Preferences > System > General > External scripting = Local (free version: in-app console only).
+**ما هي:** وصل Python بـ Resolve قيد التشغيل لاستيراد الوسائط وبناء الخطوط الزمنية وضبط مهام التصيير؛ والبرمجة الخارجية في إصدار Studio فقط مع Preferences > System > General > External scripting = Local (الإصدار المجاني: وحدة تحكم داخل التطبيق فقط). — Connect Python to a running Resolve to import media, build timelines, set render jobs; external scripting is Studio-only with Preferences > System > General > External scripting = Local (free version: in-app console only).
 
 **متى:** حين تريد التحكم في دافنشي ريزولف ببايثون لاستيراد الوسائط وبناء خط زمني وإضافة مهمة تصيير / when driving DaVinci Resolve from Python to import media, build timelines and queue renders
 
@@ -18279,7 +18279,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Observed in 21.1: no API to add/label grading nodes or move clips (order is set only when building a timeline); SetFades values reset to 0 after reopen; deleting with a stale item handle crashes Resolve (re-read GetItemListInTrack first); Text+ silently substitutes missing fonts; InsertFusionTitleIn…
+**ما هي:** لوحظ في 21.1: لا واجهة لإضافة/تسمية عقد التدريج أو نقل المقاطع (يُحدَّد الترتيب عند بناء الخط الزمني فقط)؛ وتعود قيم SetFades إلى 0 بعد إعادة الفتح؛ والحذف بمقبض عنصر قديم يُسقط Resolve (أعد قراءة GetItemListInTrack أولًا)؛ ويستبدل Text+ الخطوط المفقودة بصمت؛ وInsertFusionTitleIn… — Observed in 21.1: no API to add/label grading nodes or move clips (order is set only when building a timeline); SetFades values reset to 0 after reopen; deleting with a stale item handle crashes Resolve (re-read GetItemListInTrack first); Text+ silently substitutes missing fonts; InsertFusionTitleIn…
 
 **متى:** عند كتابة سكربت لريزولف ومواجهة مشكلات مثل ضياع التلاشي أو تعطل الحذف أو استبدال الخطوط / when a Resolve script hits pitfalls: fades resetting, stale-handle crashes or silent font substitution
 
@@ -18347,7 +18347,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** MCP courier pattern: ingest media, pass the user's edit words verbatim to a remote editing agent, relay timeline deltas and versions, export only on explicit request; export QC returns duration, fps, resolution, black segments, mean/peak dBFS.
+**ما هي:** نمط ساعي MCP: استقبل الوسائط، ومرّر كلمات تعديل المستخدم حرفيًا إلى وكيل تحرير بعيد، وانقل فروق الخط الزمني والنسخ، ولا تصدّر إلا عند الطلب الصريح؛ ويعيد فحص جودة التصدير المدة وfps والدقة والمقاطع السوداء ومتوسط/ذروة dBFS. — MCP courier pattern: ingest media, pass the user's edit words verbatim to a remote editing agent, relay timeline deltas and versions, export only on explicit request; export QC returns duration, fps, resolution, black segments, mean/peak dBFS.
 
 **متى:** حين يملك المستخدم حساب Cassette ويريد تمرير طلبات المونتاج كما هي لوكيل تحرير بعيد / when the user has a Cassette account and wants edit requests relayed verbatim to a remote editing agent
 
@@ -18414,7 +18414,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Where each production step lives: kmotion commands, HyperFrames skills (embedded-captions 35 styles, registry ~400 effects, 24 text effects), 100 Super Skills playbooks, KOSIF Omni tools.
+**ما هي:** أين تقع كل خطوة إنتاج: أوامر kmotion، ومهارات HyperFrames (embedded-captions 35 نمطًا، وسجل نحو 400 مؤثر، و24 مؤثر نص)، وكتب 100 Super Skills، وأدوات KOSIF Omni. — Where each production step lives: kmotion commands, HyperFrames skills (embedded-captions 35 styles, registry ~400 effects, 24 text effects), 100 Super Skills playbooks, KOSIF Omni tools.
 
 **متى:** حين تحتاج معرفة أي أمر أو مهارة يغطي كل خطوة في إنتاج الفيديو / when you need to know which command or skill covers each production step
 
@@ -18482,7 +18482,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Drive UE5 editor tools (assets, materials, Blueprints) through an MCP server for cinematic scenes.
+**ما هي:** قُد أدوات محرر UE5 (الأصول والمواد وBlueprints) عبر خادم MCP لمشاهد سينمائية. — Drive UE5 editor tools (assets, materials, Blueprints) through an MCP server for cinematic scenes.
 
 **متى:** حين يريد المستخدم مشاهد سينمائية في أنريل إنجن 5 تُدار أدواتها عبر خادم MCP / when the user wants cinematic scenes built in Unreal Engine 5 editor tools through an MCP server
 
@@ -18550,7 +18550,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Cesium's globe draws nothing in a plain headless Playwright page; it works when driven frame-by-frame through Remotion with four settings.
+**ما هي:** لا ترسم كرة Cesium شيئًا في صفحة Playwright عادية دون واجهة؛ وتعمل حين تُقاد إطارًا إطارًا عبر Remotion بأربعة إعدادات. — Cesium's globe draws nothing in a plain headless Playwright page; it works when driven frame-by-frame through Remotion with four settings.
 
 **متى:** حين لا تظهر الكرة الأرضية في Cesium عند التصيير دون واجهة وتريد تحريكها إطارًا بإطار عبر Remotion / when a Cesium globe renders blank headless and must be driven frame by frame via Remotion
 
@@ -18624,7 +18624,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Routes each job to Claude or Gemini by user preference, cost and availability, with per-task model, effort and token budgets; Gemini goes free-first through the app server with a hedged fallback chain.
+**ما هي:** يوجّه كل مهمة إلى Claude أو Gemini حسب تفضيل المستخدم والكلفة والتوافر، مع نموذج وجهد وميزانية رموز لكل مهمة؛ ويذهب Gemini مجانًا أولًا عبر خادم التطبيق مع سلسلة بدائل متحوّطة. — Routes each job to Claude or Gemini by user preference, cost and availability, with per-task model, effort and token budgets; Gemini goes free-first through the app server with a hedged fallback chain.
 
 **متى:** عند توزيع مهام التطبيق على Claude أو Gemini حسب التفضيل والتكلفة والتوفر مع ميزانية لكل مهمة / when routing app jobs to Claude or Gemini by preference, cost and availability with per-task budgets
 
@@ -18693,7 +18693,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The smart director plans 1-9 tool calls, shows each step live with engine and time, stops dependent steps when a critical one fails, and suggests follow-ups; a rule-based local plan runs when no AI answers.
+**ما هي:** يخطط المخرج الذكي لاستدعاء 1-9 أدوات، ويعرض كل خطوة مباشرة بالمحرك والزمن، ويوقف الخطوات المعتمدة حين تفشل خطوة حرجة، ويقترح متابعات؛ وتعمل خطة محلية قائمة على القواعد حين لا يجيب أي ذكاء اصطناعي. — The smart director plans 1-9 tool calls, shows each step live with engine and time, stops dependent steps when a critical one fails, and suggests follow-ups; a rule-based local plan runs when no AI answers.
 
 **متى:** حين يطلب المستخدم مهمة متعددة الخطوات ويريد رؤية كل أداة تعمل لحظيًا مع اقتراحات للتالي / when a multi-step request should run as planned tool calls shown live, with follow-up suggestions
 
@@ -18762,7 +18762,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Cloud Run + Workflows + GCS chunked render.
+**ما هي:** تصيير مجزأ على Cloud Run + Workflows + GCS. — Cloud Run + Workflows + GCS chunked render.
 
 **متى:** حين تريد تصيير الفيديو مقسمًا على Cloud Run في جوجل كلاود مع التخزين في GCS / when rendering in chunks on Google Cloud Run with Workflows and GCS
 
@@ -18831,7 +18831,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Example Dockerfile and job manifests for batch rendering.
+**ما هي:** Dockerfile ومانيفستات مهام نموذجية للتصيير الدفعي. — Example Dockerfile and job manifests for batch rendering.
 
 **متى:** حين تريد تشغيل تصيير دفعات على كوبرنيتس بملف Dockerfile ومهام جاهزة / when batch rendering on Kubernetes from an example Dockerfile and job manifests
 
@@ -18898,7 +18898,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Zero-infra render: zip, upload, render, download; OAuth or API key; 200 MB upload limit with .hyperframesignore.
+**ما هي:** تصيير بلا بنية تحتية: ضغط ورفع وتصيير وتنزيل؛ OAuth أو مفتاح API؛ وحد رفع 200 MB مع .hyperframesignore. — Zero-infra render: zip, upload, render, download; OAuth or API key; 200 MB upload limit with .hyperframesignore.
 
 **متى:** حين لا تملك خوادم وتريد رفع المشروع وتصييره سحابيًا ثم تنزيله / when you have no infrastructure and want to upload, render in the cloud and download
 
@@ -18968,7 +18968,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Same lifecycle on GCP Cloud Run.
+**ما هي:** دورة الحياة نفسها على GCP Cloud Run. — Same lifecycle on GCP Cloud Run.
 
 **متى:** حين تريد نشر التصيير وتشغيله وتتبعه ثم إزالته على Google Cloud Run / when deploying, running, tracking and tearing down renders on Google Cloud Run
 
@@ -19037,7 +19037,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Skills ship as a Claude Code plugin (marketplace heygen-com/hyperframes), Codex/Cursor/Gemini plugins and standalone skills via `npx skills add` or `npx hyperframes skills update` (core set; workflows install on demand).
+**ما هي:** تُشحن المهارات كإضافة Claude Code (السوق heygen-com/hyperframes)، وإضافات Codex/Cursor/Gemini، ومهارات مستقلة عبر `npx skills add` أو `npx hyperframes skills update` (المجموعة الأساسية؛ وتُثبَّت مسارات العمل عند الطلب). — Skills ship as a Claude Code plugin (marketplace heygen-com/hyperframes), Codex/Cursor/Gemini plugins and standalone skills via `npx skills add` or `npx hyperframes skills update` (core set; workflows install on demand).
 
 **متى:** حين تريد تثبيت مهارات hyperframes كإضافة في Claude Code أو Codex أو Cursor أو Gemini / when installing hyperframes skills as plugins for Claude Code, Codex, Cursor or Gemini
 
@@ -19109,7 +19109,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Consent-gated remote planning (KOSIF_SITE_TOKEN, --allow-remote) and remote 2D render client; fail closed.
+**ما هي:** تخطيط بعيد مشروط بالموافقة (KOSIF_SITE_TOKEN، --allow-remote) وعميل تصيير ثنائي الأبعاد بعيد؛ ويفشل مغلقًا. — Consent-gated remote planning (KOSIF_SITE_TOKEN, --allow-remote) and remote 2D render client; fail closed.
 
 **متى:** حين يوافق المستخدم صراحة على التخطيط أو التصيير ثنائي الأبعاد عن بعد عبر الموقع / when the user explicitly consents to remote planning or remote 2D rendering through the site
 
@@ -19178,7 +19178,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic randomness so the same seed renders the same film; Math.random is banned (tests assert it).
+**ما هي:** عشوائية حتمية فيصيّر البذر نفسه الفيلم نفسه؛ وMath.random محظور (تؤكده الاختبارات). — Deterministic randomness so the same seed renders the same film; Math.random is banned (tests assert it).
 
 **متى:** عند الحاجة لعشوائية ثابتة تعطي الفيلم نفسه في كل تصيير بالبذرة نفسها / when randomness must be repeatable so the same seed renders the same film
 
@@ -19244,7 +19244,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Submits a 2d_motion plan to hosted Site for silent 2D MP4; fails closed.
+**ما هي:** يرسل خطة 2d_motion إلى Site المستضاف لإنتاج MP4 ثنائي الأبعاد صامت؛ ويفشل مغلقًا. — Submits a 2d_motion plan to hosted Site for silent 2D MP4; fails closed.
 
 **متى:** حين تريد إرسال خطة حركة ثنائية الأبعاد للموقع المستضاف وجلب MP4 صامت قصير / when submitting a 2d_motion plan to the hosted site to get a short silent 2D MP4
 
@@ -19316,7 +19316,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** health/templates/plan/validate/compile/project against hosted workbench.
+**ما هي:** health/templates/plan/validate/compile/project على workbench المستضاف. — health/templates/plan/validate/compile/project against hosted workbench.
 
 **متى:** عند تخطيط مشروع حركة والتحقق منه وتجميعه عبر منصة العمل المستضافة بمقاس وإطارات محددة / when planning, validating and compiling a motion project against the hosted workbench
 
@@ -19387,7 +19387,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** kosif-render workflow in kosif-render-lab; no GPU; billing issues.
+**ما هي:** مسار kosif-render على kosif-render-lab؛ دون GPU؛ ومشكلات في الفوترة. — kosif-render workflow in kosif-render-lab; no GPU; billing issues.
 
 **متى:** حين تريد تشغيل تصيير مقسم على GitHub Actions مع العلم أنه بلا كارت شاشة / when running a sharded render on GitHub Actions, knowing it has no GPU
 
@@ -19454,7 +19454,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يذكر المستخدم Lottie Creator أو يحتاج أداة MCP له، وهو رابط مفهرس غير مثبت هنا / when the user mentions the Lottie Creator MCP; a catalogued link only, not installed here
 
@@ -19522,7 +19522,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | proprietary |
 
-**ما هي:** Catalogued skill/MCP/library (link only; not installed here).
+**ما هي:** مهارة/MCP/مكتبة مفهرسة (رابط فقط؛ غير مثبّتة هنا). — Catalogued skill/MCP/library (link only; not installed here).
 
 **متى:** حين يحتاج المستخدم منصة LottieFiles عبر MCP، وهي رابط مفهرس غير مثبت هنا / when the user needs the LottieFiles platform MCP; a catalogued link only, not installed here
 
@@ -19589,7 +19589,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Pointers (skill ids) the video-producer agent reads from the Atlas for programmatic video work.
+**ما هي:** مؤشرات (معرّفات مهارات) يقرؤها وكيل منتج الفيديو من الأطلس لأعمال الفيديو البرمجية. — Pointers (skill ids) the video-producer agent reads from the Atlas for programmatic video work.
 
 **متى:** حين يحتاج وكيل إنتاج الفيديو معرفات مهارات Remotion أو FFmpeg أو FCPXML من الأطلس / when the video-producer agent needs Atlas skill ids for remotion, ffmpeg, captions or FCPXML work
 
@@ -19661,7 +19661,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Drives DaVinci Resolve Studio via DaVinciResolveScript: doctor, clips by record date, duplicate timeline, named tracks, markers, render job, ffprobe verify.
+**ما هي:** يقود DaVinci Resolve Studio عبر DaVinciResolveScript: الفحص، والمقاطع بتاريخ التسجيل، ونسخ الخط الزمني، والمسارات المسماة، والعلامات، ومهمة التصيير، والتحقق بـ ffprobe. — Drives DaVinci Resolve Studio via DaVinciResolveScript: doctor, clips by record date, duplicate timeline, named tracks, markers, render job, ffprobe verify.
 
 **متى:** عند أتمتة دافنشي ريزولف ستوديو من سطر الأوامر: اللقطات بالتاريخ ونسخ الخط الزمني والعلامات والتصيير / when automating DaVinci Resolve Studio from a CLI: clips by date, timeline duplicate, markers, render
 
@@ -19730,7 +19730,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | mixed (see notes) |
 
-**ما هي:** Reference list of code/timeline video tools with licences: Editly, FFCreator, fframes (MIT), Manim (MIT), Motion Canvas, MoviePy, Remotion, Rendervid, Revideo, VideoFlow (Apache-2.0), VideoRenderingEngine, VidPy, WebMotion (MIT), Diffusion Studio Core, Etro (GPL-3.0), Movie Masher (MPL-2.0), Twick, …
+**ما هي:** قائمة مرجعية لأدوات الفيديو بالشيفرة/الخط الزمني مع تراخيصها: Editly وFFCreator وfframes (MIT) وManim (MIT) وMotion Canvas وMoviePy وRemotion وRendervid وRevideo وVideoFlow (Apache-2.0) وVideoRenderingEngine وVidPy وWebMotion (MIT) وDiffusion Studio Core وEtro (GPL-3.0) وMovie Masher (MPL-2.0) وTwick، … — Reference list of code/timeline video tools with licences: Editly, FFCreator, fframes (MIT), Manim (MIT), Motion Canvas, MoviePy, Remotion, Rendervid, Revideo, VideoFlow (Apache-2.0), VideoRenderingEngine, VidPy, WebMotion (MIT), Diffusion Studio Core, Etro (GPL-3.0), Movie Masher (MPL-2.0), Twick, …
 
 **متى:** حين يستخدم فريق المستخدم أداة فيديو بالكود أخرى ويحتاج قائمة الأدوات وتراخيصها / when the user's team uses another code-video stack and needs a list of tools with licences
 
@@ -19805,7 +19805,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Render whole chain cheaply (480p/mini) then final legs at 1080p.
+**ما هي:** تصيير السلسلة كلها بكلفة قليلة (480p/mini) ثم المراحل النهائية بدقة 1080p. — Render whole chain cheaply (480p/mini) then final legs at 1080p.
 
 **متى:** حين تريد تجربة السلسلة كاملة بدقة 480p رخيصة ثم تصيير النهائي بدقة 1080p / when previewing the whole chain cheaply at 480p before final legs at 1080p
 
@@ -19874,7 +19874,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** render 4 sub-frames per output frame by seeking t+k/(4·fps) and average with ffmpeg tmix (frames=4) for natural motion blur at 60 fps
+**ما هي:** تصيير 4 إطارات فرعية لكل إطار مخرج بالانتقال إلى t+k/(4·fps) ثم المتوسط بـ ffmpeg tmix (frames=4) لتمويه حركة طبيعي عند 60 إطارًا/ث — render 4 sub-frames per output frame by seeking t+k/(4·fps) and average with ffmpeg tmix (frames=4) for natural motion blur at 60 fps
 
 **متى:** حين تريد ضبابية حركة طبيعية عند 60 إطارًا بمتوسط إطارات فرعية عبر ffmpeg tmix / for natural motion blur at 60 fps by averaging sub-frames with ffmpeg tmix
 
@@ -19943,7 +19943,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every shape is rasterised at ss x ss resolution with Pillow polygons (Hole polygons erase) and box-reduced, giving clean antialiased coverage at any output size.
+**ما هي:** يُرسَم كل شكل بدقة ss x ss بمضلعات Pillow (مضلعات Hole تمحو) ثم يُصغَّر بالصناديق، فينتج تغطية ناعمة نظيفة بأي حجم إخراج. — Every shape is rasterised at ss x ss resolution with Pillow polygons (Hole polygons erase) and box-reduced, giving clean antialiased coverage at any output size.
 
 **متى:** حين تظهر حواف الأشكال مسننة في رسم Pillow وتحتاج أقنعة ناعمة بأي مقاس / when Pillow shapes show jagged edges and need smooth antialiased masks at any size
 
@@ -20013,7 +20013,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** import product React components into Remotion scenes
+**ما هي:** استيراد مكونات React الحقيقية للمنتج إلى مشاهد Remotion — import product React components into Remotion scenes
 
 **متى:** حين تريد استخدام مكونات React الحقيقية من منتجك داخل مشاهد Remotion / when reusing a product's real React components inside Remotion scenes
 
@@ -20080,7 +20080,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** GLSL SDF/ray-sphere intersection, Blinn-Phong specular, soft shadow on ground plane computed analytically
+**ما هي:** تقاطع شعاع مع كرة بـ GLSL SDF، وانعكاس Blinn-Phong، وظل ناعم على مستوى الأرض يُحسب تحليليًا — GLSL SDF/ray-sphere intersection, Blinn-Phong specular, soft shadow on ground plane computed analytically
 
 **متى:** حين تريد كرة لامعة بظل ناعم على الأرض مرسومة بشيدر GLSL / when drawing a glossy sphere with a soft contact shadow on the ground in a GLSL shader
 
@@ -20147,7 +20147,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Render each frame as a pure function of frame number using keyframe tables with interpolation, no timers or Math.random; capture with headless browser per frame and encode
+**ما هي:** تصيير كل إطار كدالة خالصة في رقم الإطار بجداول إطارات مفتاحية مع استيفاء، دون مؤقتات أو Math.random؛ والالتقاط بمتصفح دون واجهة لكل إطار ثم الترميز — Render each frame as a pure function of frame number using keyframe tables with interpolation, no timers or Math.random; capture with headless browser per frame and encode
 
 **متى:** حين يجب حساب كل إطار من رقمه بجداول مفاتيح ثم تصويره بمتصفح وترميزه / when each frame must be computed from its number via keyframe tables, captured headless and encoded
 
@@ -20215,7 +20215,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** write every keyframe as (frame, x, y, scale, blur, opacity) from a frame-counted reference; cuts placed a fixed 2 frames before beat k = offset + k*60/BPM
+**ما هي:** اكتب كل إطار مفتاحي بصيغة (frame, x, y, scale, blur, opacity) من مرجع معدود بالإطارات؛ وتوضع القطعات قبل الضربة k بإطارين ثابتين، حيث الضربة k = offset + k*60/BPM — write every keyframe as (frame, x, y, scale, blur, opacity) from a frame-counted reference; cuts placed a fixed 2 frames before beat k = offset + k*60/BPM
 
 **متى:** حين تحتاج تحديد كل حركة ولقطة برقم الإطار وضبط القطعات قبل الضربة الإيقاعية بإطارين / when writing an exact per-frame keyframe spec with cuts placed 2 frames before each beat
 
@@ -20282,7 +20282,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Precompute the event list with a seeded schedule; render(t) replays events <= t to derive state, so any frame can be screenshotted independently
+**ما هي:** احسب قائمة الأحداث مسبقًا بجدول مبذور؛ وتعيد render(t) تشغيل الأحداث <= t لاشتقاق الحالة، فيمكن التقاط أي إطار باستقلال — Precompute the event list with a seeded schedule; render(t) replays events <= t to derive state, so any frame can be screenshotted independently
 
 **متى:** عند بناء محاكاة يجب أن يعطي كل إطار فيها نفس الصورة حين يُصوَّر منفصلًا / for a simulation where any frame must render independently and identically from time t
 
@@ -20349,7 +20349,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** Render frames offline, generate/mix audio, burn subtitles and mux with ffmpeg; keep only final file
+**ما هي:** تصيير الإطارات دون اتصال، وتوليد/مزج الصوت، وحرق الترجمة والدمج بـ ffmpeg؛ مع الاحتفاظ بالملف النهائي فقط — Render frames offline, generate/mix audio, burn subtitles and mux with ffmpeg; keep only final file
 
 **متى:** حين يطلب المستخدم فيلمًا طويلًا بصوت وترجمة محروقة يُصيَّر إطارًا بإطار ثم يُدمج / when producing a long film with mixed audio and burned-in subtitles muxed into one final file
 
@@ -20417,7 +20417,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner-description |
 
-**ما هي:** no downloaded models/textures/audio: procedural geometry nodes, shader noise, synthesised audio, system fonts
+**ما هي:** لا نماذج أو أنسجة أو صوت منزّلة: هندسة إجرائية وضجيج شيدر وصوت مركّب وخطوط النظام — no downloaded models/textures/audio: procedural geometry nodes, shader noise, synthesised audio, system fonts
 
 **متى:** عند اشتراط ألا يُستخدم أي ملف جاهز من نماذج أو خامات أو أصوات وأن يُولَّد كل شيء بالكود / when a project must use no downloaded models, textures or audio, only procedural assets
 
@@ -20484,7 +20484,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** CSS/WAAPI, Motion, GSAP, SVG, Three/R3F, HyperFrames, Remotion selected by need.
+**ما هي:** يُختار CSS/WAAPI وMotion وGSAP وSVG وThree/R3F وHyperFrames وRemotion بحسب الحاجة. — CSS/WAAPI, Motion, GSAP, SVG, Three/R3F, HyperFrames, Remotion selected by need.
 
 **متى:** عند اختيار أداة التحريك المناسبة بين CSS وGSAP وSVG وThree وRemotion دون تعقيد زائد / when choosing the lightest animation engine that fits among CSS, GSAP, SVG, Three or Remotion
 
@@ -20554,7 +20554,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Frame-captured HTML must give the same pixels for the same time: no wall clock, no unseeded random, no infinite repeats, no async timeline building, no media play() calls.
+**ما هي:** يجب أن يعطي HTML الملتقط بالإطارات البكسلات نفسها للزمن نفسه: لا ساعة جدار، ولا عشوائية غير مبذورة، ولا تكرار لا نهائي، ولا بناء خط زمني غير متزامن، ولا استدعاءات play() للوسائط. — Frame-captured HTML must give the same pixels for the same time: no wall clock, no unseeded random, no infinite repeats, no async timeline building, no media play() calls.
 
 **متى:** حين يعطي تصيير HTML صورًا مختلفة لنفس الزمن بسبب العشوائية أو المؤقتات أو التكرار اللانهائي / when frame-captured HTML must give identical pixels per time: no unseeded random, timers or infinite repeats
 
@@ -20621,7 +20621,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Pure CSS/Web Animations patterns: fade+slide up, scale-in, slide-from-side, blur-in, split-text char reveal.
+**ما هي:** أنماط CSS/Web Animations الخالصة: تلاشٍ مع انزلاق للأعلى، ودخول بالتكبير، وانزلاق من الجانب، ودخول بالتمويه، وكشف الحروف في النص المقسّم. — Pure CSS/Web Animations patterns: fade+slide up, scale-in, slide-from-side, blur-in, split-text char reveal.
 
 **متى:** حين تريد ظهورًا بسيطًا للعناصر أو النص بتلاشٍ أو انزلاق أو تكبير أو ضبابية دون مكتبات / for simple fade, slide, scale, blur or per-letter text reveals using pure CSS or Web Animations
 
@@ -20689,7 +20689,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Turns any SVG (often written by an AI) into painting steps: rect (rounded), circle, ellipse, line, polyline, polygon, full path, text/tspan, g/svg/a/use/symbol, transforms incl. skew, inline style and <style> rules by tag/.class/#id, linear and radial gradients with see-through stops.
+**ما هي:** يحوّل أي SVG (كثيرًا ما يكتبه ذكاء اصطناعي) إلى خطوات رسم: rect (مستدير) وcircle وellipse وline وpolyline وpolygon وpath كامل وtext/tspan وg/svg/a/use/symbol، والتحويلات بما فيها الإمالة، وstyle المضمّن وقواعد <style> بالوسم و.class/#id، والتدرجات الخطية والدائرية بنقاط شفافة. — Turns any SVG (often written by an AI) into painting steps: rect (rounded), circle, ellipse, line, polyline, polygon, full path, text/tspan, g/svg/a/use/symbol, transforms incl. skew, inline style and <style> rules by tag/.class/#id, linear and radial gradients with see-through stops.
 
 **متى:** عند تحويل ملف SVG، ولو مولدًا بالذكاء الاصطناعي، إلى خطوات رسم متحركة بتدرجات ونص عربي / when turning an SVG, often AI-written, into animated drawing steps with gradients and Arabic text
 
@@ -20758,7 +20758,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** One HTML file per scene at 1920x1080, narration text per scene, a scenes.json manifest, then screenshot/render scenes, synthesize voice, and crossfade-concat with ffmpeg.
+**ما هي:** ملف HTML لكل مشهد بدقة 1920x1080، ونص تعليق لكل مشهد، ومانيفست scenes.json، ثم التقاط/تصيير المشاهد وتركيب الصوت ودمجها بتلاشٍ متقاطع بـ ffmpeg. — One HTML file per scene at 1920x1080, narration text per scene, a scenes.json manifest, then screenshot/render scenes, synthesize voice, and crossfade-concat with ffmpeg.
 
 **متى:** حين يُطلب فيديو عرض توضيحي من مشاهد HTML مع تعليق صوتي وانتقالات تلاشٍ متقاطع / when building a narrated demo video from per-scene HTML files, voice-over and a crossfaded ffmpeg concat
 
@@ -20829,7 +20829,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Animate transform and opacity; avoid layout properties; pre-blur instead of animating blur on many nodes; one engine per property; cap device pixel ratio; precompute ranges on resize; pause offscreen loops; remove will-change after use; no 'transition: all'.
+**ما هي:** حرّك transform وopacity؛ وتجنب خصائص التخطيط؛ وطبّق التمويه مسبقًا بدل تحريكه على عقد كثيرة؛ ومحركًا واحدًا لكل خاصية؛ وحدّد نسبة بكسل الجهاز؛ واحسب المدى مسبقًا عند تغيير الحجم؛ وأوقف الحلقات خارج الشاشة؛ وأزل will-change بعد الاستخدام؛ ولا 'transition: all'. — Animate transform and opacity; avoid layout properties; pre-blur instead of animating blur on many nodes; one engine per property; cap device pixel ratio; precompute ranges on resize; pause offscreen loops; remove will-change after use; no 'transition: all'.
 
 **متى:** عند بطء الحركة في المتصفح أو ظهور تشوهات رسم أثناء التصيير وتحتاج قواعد أداء للتحريك / when browser animations are heavy or show paint artifacts and need transform/opacity performance rules
 
@@ -20898,7 +20898,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Deliver at timeline frame rate with bitrates of H.264 45 Mbps / H.265 30 Mbps for <=30 fps and 68 / 45 Mbps for 60 fps; integrated loudness -14 LUFS +/-1 with true peak <= -1 dBTP; rendered duration within one frame of the timeline.
+**ما هي:** التسليم بمعدل إطارات الخط الزمني وبمعدلات بت H.264 45 Mbps / H.265 30 Mbps لما يصل إلى 30 إطارًا/ث و68 / 45 Mbps لـ 60 إطارًا/ث؛ وجهارة متكاملة -14 LUFS ±1 مع ذروة حقيقية <= -1 dBTP؛ ومدة مصيَّرة ضمن إطار واحد من الخط الزمني. — Deliver at timeline frame rate with bitrates of H.264 45 Mbps / H.265 30 Mbps for <=30 fps and 68 / 45 Mbps for 60 fps; integrated loudness -14 LUFS +/-1 with true peak <= -1 dBTP; rendered duration within one frame of the timeline.
 
 **متى:** حين تسلم فيديو يوتيوب بدقة 4K وتحتاج معدل البت الصحيح وفحص علو الصوت -14 LUFS / when delivering a 4K YouTube upload and checking bitrate, -14 LUFS loudness and true peak
 
@@ -20967,7 +20967,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Fixed track layout for voice-led edits: V1 screen clips, V2 graphics, V3 text overlays, A1 voice, A2 location sound, A3 SFX, A4 music; named colour markers (CHAPTER per beat, GFX for card slots, HOOK for hook segments, review markers for audio/visual issues).
+**ما هي:** تخطيط مسارات ثابت للمونتاج القائم على الصوت: V1 لقطات الشاشة، وV2 الرسوم، وV3 طبقات النص، وA1 الصوت، وA2 صوت الموقع، وA3 المؤثرات، وA4 الموسيقى؛ وعلامات ملونة مسماة (CHAPTER لكل ضربة، وGFX لمواضع البطاقات، وHOOK لمقاطع الخطاف، وعلامات مراجعة لمشكلات الصوت/الصورة). — Fixed track layout for voice-led edits: V1 screen clips, V2 graphics, V3 text overlays, A1 voice, A2 location sound, A3 SFX, A4 music; named colour markers (CHAPTER per beat, GFX for card slots, HOOK for hook segments, review markers for audio/visual issues).
 
 **متى:** عند تنظيم مسارات المونتاج لفيديو قائم على التعليق الصوتي ووضع علامات للفصول والجرافيك / for laying out edit tracks in a voice-led edit and naming colour markers for chapters, graphics and hooks
 
@@ -21033,7 +21033,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Final masters as H.264 High, yuv420p, CRF 17, preset slow, 60 fps with GOP 60, AAC 192k 48 kHz, faststart, two-pass loudnorm; GIF loops cross-fade the last 0.4 s into the first 0.4 s and use palette generation.
+**ما هي:** النسخ النهائية الرئيسة بـ H.264 High وyuv420p وCRF 17 وpreset slow و60 إطارًا/ث مع GOP 60 وAAC 192k عند 48 kHz وfaststart وloudnorm بمرورين؛ وحلقات GIF تمزج آخر 0.4 ث تلاشيًا في أول 0.4 ث وتولّد لوحة ألوان. — Final masters as H.264 High, yuv420p, CRF 17, preset slow, 60 fps with GOP 60, AAC 192k 48 kHz, faststart, two-pass loudnorm; GIF loops cross-fade the last 0.4 s into the first 0.4 s and use palette generation.
 
 **متى:** حين تُخرج النسخة النهائية لتريلر بجودة عالية أو تصنع جيف متكرر بلا قفزة ضمن حجم محدد / when exporting a final trailer master or making a seamless looping GIF under a size limit
 
@@ -21102,7 +21102,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Each scene is a 1920x1080 HTML file plus a narration text file; a scenes.json manifest lists order, durations and narration; a build script screenshots/records scenes, synthesizes narration, and concatenates with crossfades into one MP4 with an audio stream.
+**ما هي:** كل مشهد ملف HTML بدقة 1920x1080 مع ملف نص تعليق؛ ويسرد مانيفست scenes.json الترتيب والمدد والتعليق؛ ويلتقط سكربت البناء المشاهد أو يسجلها ويركّب التعليق الصوتي ويدمجها بتلاشٍ متقاطع في MP4 واحد بمسار صوت. — Each scene is a 1920x1080 HTML file plus a narration text file; a scenes.json manifest lists order, durations and narration; a build script screenshots/records scenes, synthesizes narration, and concatenates with crossfades into one MP4 with an audio stream.
 
 **متى:** حين تريد تحويل مجموعة مشاهد HTML مع نص التعليق إلى فيديو MP4 واحد بانتقالات وصوت / when turning a set of HTML scenes with narration into one MP4 with crossfades and an audio stream
 
@@ -21171,7 +21171,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Treat the whole film as one element tree rendered as a pure function of one authored time T: nothing mounts or unmounts at section boundaries, so any object can persist, travel and morph across the entire film; sections are named entries with durations and a one-sentence description; choreography ke…
+**ما هي:** عامل الفيلم كله شجرة عناصر واحدة تُصيَّر كدالة خالصة في زمن مؤلَّف واحد T: لا شيء يُركَّب أو يُزال عند حدود الأقسام، فيمكن لأي كائن أن يبقى وينتقل ويتحول عبر الفيلم كله؛ والأقسام مدخلات مسماة بمدد ووصف بجملة واحدة؛ وتخطيط الحركة… — Treat the whole film as one element tree rendered as a pure function of one authored time T: nothing mounts or unmounts at section boundaries, so any object can persist, travel and morph across the entire film; sections are named entries with durations and a one-sentence description; choreography ke…
 
 **متى:** حين تبني فيلم موشن تبقى فيه العناصر وتتنقل وتتحول عبر كل الأقسام على زمن واحد / for a motion film where objects persist, travel and morph across all sections on one time axis
 
@@ -21238,7 +21238,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** A single-file deck authored on a fixed 1920x1080 stage scaled as a whole (letterbox, never reflow), slides switched by visibility/opacity not display, keyboard navigation, export to PDF; also a perfect base for slide-motion videos.
+**ما هي:** عرض تقديمي في ملف واحد على مسرح ثابت 1920x1080 يُكبَّر كله (صناديق سوداء ولا إعادة تدفق)، وتُبدَّل الشرائح بـ visibility/opacity لا display، مع تنقل بلوحة المفاتيح وتصدير PDF؛ وأساس ممتاز أيضًا لفيديوهات حركة الشرائح. — A single-file deck authored on a fixed 1920x1080 stage scaled as a whole (letterbox, never reflow), slides switched by visibility/opacity not display, keyboard navigation, export to PDF; also a perfect base for slide-motion videos.
 
 **متى:** حين يطلب المستخدم عرضًا تقديميًا أو شرائح HTML بمقاس ثابت قابلة للتصدير PDF أو للتحويل لفيديو / when the user wants an HTML slide deck on a fixed 1920x1080 stage, exportable to PDF or slide-motion video
 
@@ -21306,7 +21306,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner-original (no LICENSE file; package prepared for the KOSIF Atlas owner) |
 
-**ما هي:** Plan to the user's tool and its limits: After Effects for layered masks, text and compound motion (verify version before naming properties or writing JSX; never script over an existing project); DaVinci Resolve/Fusion separates edit, colour and node compositing (don't translate AE effect names into …
+**ما هي:** خطط وفق أداة المستخدم وحدودها: After Effects للأقنعة المتعددة الطبقات والنص والحركة المركبة (تحقق من الإصدار قبل تسمية الخصائص أو كتابة JSX؛ ولا تبرمج فوق مشروع قائم)؛ وDaVinci Resolve/Fusion يفصل المونتاج واللون وتركيب العقد (لا تترجم أسماء مؤثرات AE إلى … — Plan to the user's tool and its limits: After Effects for layered masks, text and compound motion (verify version before naming properties or writing JSX; never script over an existing project); DaVinci Resolve/Fusion separates edit, colour and node compositing (don't translate AE effect names into …
 
 **متى:** عند تحديد برنامج التنفيذ حسب ما يملكه المستخدم مثل After Effects أو DaVinci Resolve أو التصيير الذاتي / when planning a job around the user's editor (After Effects, Resolve/Fusion) or rendering it yourself
 
@@ -21374,7 +21374,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Order finishing as editorial -> VFX -> colour -> sound -> conform -> deliver, with picture lock as the gate (grading before lock is rework); find the critical path that sets the delivery date; list deliverables (masters, formats, versions, captions, metadata), each traced to a finishing step with QC…
+**ما هي:** رتّب الإنهاء: مونتاج ← مؤثرات بصرية ← لون ← صوت ← مطابقة ← تسليم، وقفل الصورة هو البوابة (التدريج قبل القفل إعادة عمل)؛ وحدّد المسار الحرج الذي يضبط موعد التسليم؛ وسرد المُخرَجات (نسخ رئيسة وصيغ ونسخ وترجمات وبيانات وصفية) مع تتبع كل منها إلى خطوة إنهاء مع فحص الجودة… — Order finishing as editorial -> VFX -> colour -> sound -> conform -> deliver, with picture lock as the gate (grading before lock is rework); find the critical path that sets the delivery date; list deliverables (masters, formats, versions, captions, metadata), each traced to a finishing step with QC…
 
 **متى:** حين تخطط مراحل التشطيب من المونتاج إلى المؤثرات والألوان والصوت حتى التسليم وتحدد موعده / when ordering finishing from edit to VFX, colour, sound and delivery around picture lock and a deadline
 
@@ -21442,7 +21442,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Four starter templates: a flat GSAP+DOM composition, a cinematic Three.js scene on the three-kit, a single-canvas page driven by window.seek(t), and a product-lab scene with plush 3D characters, HUD and an orbiting lens.
+**ما هي:** أربعة قوالب بداية: تركيب GSAP+DOM مسطّح، ومشهد Three.js سينمائي على three-kit، وصفحة لوحة واحدة تقودها window.seek(t)، ومشهد معمل منتجات بشخصيات ثلاثية الأبعاد قطيفية وHUD وعدسة مدارية. — Four starter templates: a flat GSAP+DOM composition, a cinematic Three.js scene on the three-kit, a single-canvas page driven by window.seek(t), and a product-lab scene with plush 3D characters, HUD and an orbiting lens.
 
 **متى:** حين تبدأ مشروع موشن وتختار قالبًا: مسطح أو ثلاثي الأبعاد أو كانفس أو مختبر منتج / when starting a motion project and choosing a flat, 3D, canvas or product-lab starter
 
@@ -21514,7 +21514,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Swap MKV/MOV to MP4 or repair a broken header instantly by copying streams instead of re-encoding.
+**ما هي:** بدّل MKV/MOV إلى MP4 أو أصلح ترويسة تالفة فورًا بنسخ المسارات بدل إعادة الترميز. — Swap MKV/MOV to MP4 or repair a broken header instantly by copying streams instead of re-encoding.
 
 **متى:** حين تريد تحويل MKV أو MOV إلى MP4 فورًا بدون فقد جودة أو إصلاح رأس ملف فيديو تالف / when swapping MKV/MOV to MP4 instantly without re-encoding, or fixing a broken file header
 
@@ -21581,7 +21581,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** NVENC/QSV/VideoToolbox are fast but not always compiled in; check before use and fall back to libx264/libx265/SVT-AV1.
+**ما هي:** NVENC/QSV/VideoToolbox سريعة لكنها ليست مبنية دائمًا؛ تحقق قبل الاستخدام وارجع إلى libx264/libx265/SVT-AV1. — NVENC/QSV/VideoToolbox are fast but not always compiled in; check before use and fall back to libx264/libx265/SVT-AV1.
 
 **متى:** عند الرغبة في ترميز أسرع بكرت الشاشة مع التحقق من توفره والرجوع للمعالج إن لم يوجد / when you want GPU encoding (NVENC/QSV/VideoToolbox) but must check support and fall back to CPU encoders
 
@@ -21649,7 +21649,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Reserve tracks by role so later stages never collide with the main edit: video OVERLAY, GFX, SUBTITLE, HOOK_TEXT (top); audio AMBIENCE, SFX, MUSIC, HOOK; dialogue VOICE on A1. Find tracks by name, re-running must not add duplicates.
+**ما هي:** احجز المسارات بالدور كي لا تصطدم المراحل اللاحقة بالمونتاج الرئيسي: فيديو OVERLAY وGFX وSUBTITLE وHOOK_TEXT (في الأعلى)؛ وصوت AMBIENCE وSFX وMUSIC وHOOK؛ والحوار VOICE على A1. ابحث عن المسارات بالاسم، ويجب ألا تضيف إعادة التشغيل نسخًا مكررة. — Reserve tracks by role so later stages never collide with the main edit: video OVERLAY, GFX, SUBTITLE, HOOK_TEXT (top); audio AMBIENCE, SFX, MUSIC, HOOK; dialogue VOICE on A1. Find tracks by name, re-running must not add duplicates.
 
 **متى:** حين تضيف طبقات جرافيك وترجمة وموسيقى ومؤثرات دون أن تتصادم مع المونتاج الأساسي / when reserving named tracks by role (overlay, subtitles, SFX, music) so later passes don't collide with the main edit
 
@@ -21718,7 +21718,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Editorial -> VFX -> colour -> sound -> conform -> deliver, gated by picture lock; define deliverables (masters, versions, captions, metadata, QC) before finishing. In practice: cut -> colour -> privacy mosaic -> captions -> audio checks before render; any recut requires re-timing captions, cards, ch…
+**ما هي:** مونتاج ← مؤثرات بصرية ← لون ← صوت ← مطابقة ← تسليم، بوابتها قفل الصورة؛ وعرّف المُخرَجات (نسخ رئيسة وإصدارات وترجمات وبيانات وصفية وفحص جودة) قبل الإنهاء. عمليًا: قطع ← لون ← فسيفساء خصوصية ← ترجمات ← فحوص صوت قبل التصيير؛ وأي إعادة قطع تتطلب إعادة توقيت الترجمات والبطاقات… — Editorial -> VFX -> colour -> sound -> conform -> deliver, gated by picture lock; define deliverables (masters, versions, captions, metadata, QC) before finishing. In practice: cut -> colour -> privacy mosaic -> captions -> audio checks before render; any recut requires re-timing captions, cards, ch…
 
 **متى:** عند ترتيب خطوات الإنهاء: القص ثم الألوان ثم تمويه الخصوصية والترجمة وفحص الصوت قبل الرندر / for ordering finishing steps: cut, colour, privacy mosaic, captions and audio checks before render
 
@@ -21785,7 +21785,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Long-GOP H.265/4K stutters in editors: generate proxies (ProRes Proxy / DNxHR LB / low-res H.264) and switch back for the final render.
+**ما هي:** يتقطع H.265/4K بـ GOP طويل في المحررات: ولّد وسائط وكيلة (ProRes Proxy / DNxHR LB / H.264 منخفض الدقة) وارجع إلى الأصل للتصيير النهائي. — Long-GOP H.265/4K stutters in editors: generate proxies (ProRes Proxy / DNxHR LB / low-res H.264) and switch back for the final render.
 
 **متى:** حين يتقطع تشغيل فيديو 4K أو H.265 في برنامج المونتاج وتحتاج نسخًا خفيفة للتحرير / when long-GOP 4K or H.265 footage stutters in the editor and needs lightweight proxies
 
@@ -21852,7 +21852,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Audio reactivity must use pre-extracted data sampled per frame on the timeline — no Web Audio, Math.random or Date.now at render.
+**ما هي:** يجب أن تستخدم تفاعلية الصوت بيانات مستخرجة مسبقًا تؤخذ عيناتها لكل إطار على الخط الزمني — دون Web Audio أو Math.random أو Date.now عند التصيير. — Audio reactivity must use pre-extracted data sampled per frame on the timeline — no Web Audio, Math.random or Date.now at render.
 
 **متى:** حين تتحرك الرسوم مع الصوت وتريد تصييرًا ثابتًا من بيانات صوت مستخرجة مسبقًا لكل إطار / for audio-reactive visuals rendered from pre-extracted per-frame audio data, not live Web Audio
 
@@ -21918,7 +21918,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Exit 0 isn't audio: amix divides by inputs (use normalize=0), adelay needs per-channel values, c=2 means channel mask, aevalsrc has no comparison operators, NaN silences sum.
+**ما هي:** الخروج برمز 0 لا يعني سلامة الصوت: amix يقسم على المدخلات (استخدم normalize=0)، وadelay يحتاج قيمًا لكل قناة، وc=2 تعني قناع القنوات، وaevalsrc بلا عوامل مقارنة، وقيم NaN تُسكت المجموع. — Exit 0 isn't audio: amix divides by inputs (use normalize=0), adelay needs per-channel values, c=2 means channel mask, aevalsrc has no comparison operators, NaN silences sum.
 
 **متى:** حين يخرج صوت ffmpeg منخفضًا أو صامتًا أو متأخرًا في قناة واحدة رغم نجاح الأمر / when ffmpeg audio comes out quieter, silent or delayed on one channel only even though the command exited 0
 
@@ -21984,7 +21984,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** For live/browser audio: latency budget first; Web Audio AudioWorklet in browser; oversample nonlinearities 2-8x; no locks/allocs on audio thread.
+**ما هي:** للصوت الحي/في المتصفح: ابدأ بميزانية الكمون؛ وWeb Audio AudioWorklet في المتصفح؛ وزِد عيّنات اللاخطيات 2-8 أضعاف؛ ولا أقفال ولا تخصيصات في خيط الصوت. — For live/browser audio: latency budget first; Web Audio AudioWorklet in browser; oversample nonlinearities 2-8x; no locks/allocs on audio thread.
 
 **متى:** عند بناء معالجة صوت حية في المتصفح بزمن تأخير منخفض واختيار البنية المناسبة / when building live browser audio with a latency budget using AudioWorklet and small buffers
 
@@ -22052,7 +22052,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** For video export, replace clock.elapsedTime with frame/fps and step physics with fixed dt so every frame re-renders identically.
+**ما هي:** لتصدير الفيديو، استبدل clock.elapsedTime بـ frame/fps وخطوة الفيزياء بـ dt ثابت ليُعاد تصيير كل إطار بالتطابق. — For video export, replace clock.elapsedTime with frame/fps and step physics with fixed dt so every frame re-renders identically.
 
 **متى:** حين تصدّر مشهد شيدر أو فيزياء كفيديو وتريد أن يُعاد كل إطار بنفس الشكل تمامًا / when exporting a shader or physics scene to video so every frame re-renders identically from frame/fps
 
@@ -22122,7 +22122,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Frame capture before fonts load gives fallback glyphs; block until fonts are ready.
+**ما هي:** الالتقاط قبل تحميل الخطوط يعطي حروفًا بديلة؛ فانتظر حتى تجهز الخطوط. — Frame capture before fonts load gives fallback glyphs; block until fonts are ready.
 
 **متى:** حين تظهر خطوط بديلة أو خاطئة في الإطارات الأولى للفيديو المصيَّر من المتصفح / when headless captures show fallback glyphs because web fonts had not loaded before the first frame
 
@@ -22189,7 +22189,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One entry point wrapping every tool in five groups (create, sound, edit, check, draw) with an interactive numbered Arabic menu that asks for each argument.
+**ما هي:** نقطة دخول واحدة تغلّف كل أداة في خمس مجموعات (إنشاء، صوت، مونتاج، فحص، رسم) بقائمة عربية مرقّمة تفاعلية تسأل عن كل معامل. — One entry point wrapping every tool in five groups (create, sound, edit, check, draw) with an interactive numbered Arabic menu that asks for each argument.
 
 **متى:** عند تشغيل أي أداة موشن أو صوت أو مونتاج من أمر واحد بقائمة عربية مرقمة / when you want to run any motion, sound or edit tool from one command with a numbered Arabic menu
 
@@ -22259,7 +22259,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Format conversion, resize, crop, thumbnails, contact sheets for sprite/illustration assets.
+**ما هي:** تحويل الصيغ، وتغيير الحجم، والقص، والصور المصغرة، وأوراق الاتصال لأصول السبرايت والرسوم. — Format conversion, resize, crop, thumbnails, contact sheets for sprite/illustration assets.
 
 **متى:** حين تحتاج تحويل صيغ الصور أو تغيير حجمها وقصها وصنع صور مصغرة أو لوحة تجميعية دفعة واحدة / for batch image format conversion, resizing, cropping, thumbnails or contact sheets of sprite assets
 
@@ -22327,7 +22327,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Pick the lightest renderer that handles the mark count and motion, measured not assumed.
+**ما هي:** اختر أخف مُصيِّر يتحمل عدد العلامات والحركة، بالقياس لا بالافتراض. — Pick the lightest renderer that handles the mark count and motion, measured not assumed.
 
 **متى:** عند اختيار طريقة رسم البيانات أو الجسيمات بين SVG وCanvas وWebGL حسب عدد العناصر / when picking SVG, Canvas or WebGL for charts or particles based on how many marks must move
 
@@ -22397,7 +22397,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** All chart and map motion derives from the current frame/time, never wall-clock timers or CSS transitions, so renders are reproducible.
+**ما هي:** تُشتق كل حركة المخططات والخرائط من الإطار/الزمن الحالي، لا من مؤقتات ساعة الجدار ولا انتقالات CSS، فتكون التصييرات قابلة لإعادة الإنتاج. — All chart and map motion derives from the current frame/time, never wall-clock timers or CSS transitions, so renders are reproducible.
 
 **متى:** حين تحرك رسومًا بيانية أو خرائط في فيديو وتريد أن تُعاد بنفس النتيجة كل مرة / when animating charts or maps for video so motion is driven by the current frame, reproducible every render
 
@@ -22465,7 +22465,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 / MIT |
 
-**ما هي:** AI clips serve as B-roll; titles, UI, numbers, logos and captions are rendered programmatically (Remotion, Hyperframes, HTML) on top.
+**ما هي:** تعمل مقاطع الذكاء الاصطناعي كلقطات B-roll؛ وتُصيَّر العناوين والواجهات والأرقام والشعارات والترجمات برمجيًا (Remotion وHyperframes وHTML) فوقها. — AI clips serve as B-roll; titles, UI, numbers, logos and captions are rendered programmatically (Remotion, Hyperframes, HTML) on top.
 
 **متى:** حين تستخدم لقطات مولدة بالذكاء الاصطناعي كلقطات مساعدة وتضيف فوقها العناوين والشعارات والترجمة بالكود / when AI clips serve as B-roll and titles, UI, numbers, logos and captions are rendered on top in code
 
@@ -22534,7 +22534,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Delivers a sharper desktop copy of a 720p AI clip by local upscaling, explicitly labelled as not native 4K.
+**ما هي:** يسلّم نسخة مكتبية أحدّ من مقطع ذكاء اصطناعي بدقة 720p برفع دقة محلي، مع التصريح بأنها ليست 4K أصلية. — Delivers a sharper desktop copy of a 720p AI clip by local upscaling, explicitly labelled as not native 4K.
 
 **متى:** حين يُطلب رفع دقة مقطع 720p إلى 4K محليًا مع توضيح أنه تكبير وليس 4K أصليًا / when upscaling a 720p AI clip to 3840x2160 locally while labelling it as upscale, not native 4K
 
@@ -22603,7 +22603,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Decision table choosing between Native Canvas (implemented), Remotion, HyperFrames, KOSIF Motion, Higgsfield and scroll-world/brag directions based on availability and goals.
+**ما هي:** جدول قرار للاختيار بين Native Canvas (منفَّذ) وRemotion وHyperFrames وKOSIF Motion وHiggsfield واتجاهات scroll-world/brag بحسب التوافر والأهداف. — Decision table choosing between Native Canvas (implemented), Remotion, HyperFrames, KOSIF Motion, Higgsfield and scroll-world/brag directions based on availability and goals.
 
 **متى:** عند اختيار محرك التصيير المناسب بين Native Canvas وRemotion وHyperFrames وغيرها حسب المتاح والهدف / when choosing between Native Canvas, Remotion, HyperFrames, KOSIF Motion or Higgsfield by availability and goals
 
@@ -22672,7 +22672,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Routing target for audio2motion, karaoke captions, structural shape kit, voice analysis and local montage living in the owner's kosif-one / kosif-studio repos.
+**ما هي:** وجهة توجيه لـ audio2motion والترجمات الكاريوكي وطقم الأشكال البنيوي وتحليل الصوت والمونتاج المحلي الموجودة في مستودعَي المالك kosif-one / kosif-studio. — Routing target for audio2motion, karaoke captions, structural shape kit, voice analysis and local montage living in the owner's kosif-one / kosif-studio repos.
 
 **متى:** حين تحتاج ترجمة كاريوكي أو تحويل الصوت لحركة أو مونتاج محلي من أدوات kosif-one وkosif-studio / for karaoke captions, audio-to-motion, voice analysis or local montage via the kosif-one / kosif-studio tools
 
@@ -22740,7 +22740,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Sources with sparse GOP (>~1 s keyframe interval) freeze on seek under overlays; re-encode with keyframe interval = composition fps.
+**ما هي:** المصادر ذات GOP المتباعد (فاصل الإطارات المفتاحية > نحو ثانية) تتجمد عند الانتقال تحت الطبقات العلوية؛ أعد الترميز بفاصل إطارات مفتاحية = fps التركيب. — Sources with sparse GOP (>~1 s keyframe interval) freeze on seek under overlays; re-encode with keyframe interval = composition fps.
 
 **متى:** حين يتجمد الفيديو المصدر عند القفز فيه تحت الطبقات فتعيد ترميزه بإطارات مفتاحية كثيفة / when source footage freezes on seek under overlays and needs a re-encode with keyframe interval equal to fps
 
@@ -22808,7 +22808,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Each frame is a pure function of t; no requestAnimationFrame, Date.now or unseeded Math.random; use MOTION.rng(seed).
+**ما هي:** كل إطار دالة خالصة في t؛ ولا requestAnimationFrame ولا Date.now ولا Math.random غير مبذور؛ واستخدم MOTION.rng(seed). — Each frame is a pure function of t; no requestAnimationFrame, Date.now or unseeded Math.random; use MOTION.rng(seed).
 
 **متى:** عند كتابة تركيبة HTML يجب أن يكون كل إطار فيها دالة خالصة للزمن قبل تصييرها فيديو / when authoring an HTML composition where each frame is a pure function of t, ready for frame capture
 
@@ -22877,7 +22877,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Split frame ranges across machines, join losslessly; GitHub Actions in private kosif-render-lab.
+**ما هي:** قسّم مدى الإطارات على أجهزة وادمجها بلا فقد؛ وGitHub Actions في kosif-render-lab الخاص. — Split frame ranges across machines, join losslessly; GitHub Actions in private kosif-render-lab.
 
 **متى:** حين يطول التصيير فتقسّم نطاقات الإطارات على عدة أجهزة ثم تجمعها بلا فقد / when a long render should be split into frame ranges across machines and joined losslessly
 
@@ -22943,7 +22943,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Creates STYLE.md, PLAN.md, TEST_REPORT.md, words.json and a starter for any style id.
+**ما هي:** ينشئ STYLE.md وPLAN.md وTEST_REPORT.md وwords.json وبداية لأي معرّف نمط. — Creates STYLE.md, PLAN.md, TEST_REPORT.md, words.json and a starter for any style id.
 
 **متى:** عند بدء مشروع فيديو بأسلوب محدد وتريد ملفات الخطة والأسلوب والاختبار وقالب بداية / when starting a video project in a chosen style and you need plan, style and test files plus a starter
 
@@ -23011,7 +23011,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Use Edge/Chrome with ANGLE D3D11 and ignore-gpu-blocklist to render shaders on real GPU; HTML_RENDER_SOFTWARE=1 forces SwiftShader.
+**ما هي:** استخدم Edge/Chrome مع ANGLE D3D11 وignore-gpu-blocklist لتصيير الشيدر على GPU حقيقي؛ وHTML_RENDER_SOFTWARE=1 يفرض SwiftShader. — Use Edge/Chrome with ANGLE D3D11 and ignore-gpu-blocklist to render shaders on real GPU; HTML_RENDER_SOFTWARE=1 forces SwiftShader.
 
 **متى:** حين يكون تصيير الشيدر في المتصفح بطيئًا وتريد استخدام كرت الشاشة الحقيقي عبر Edge أو Chrome / when browser shader renders are slow and you want Edge/Chrome on the real GPU via ANGLE D3D11
 
@@ -23079,7 +23079,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Where ffprobe is missing, a Python stand-in answers the fields the kit reads (codec, size, frame rate, frames, sample rate, channels, duration, size) in JSON or CSV.
+**ما هي:** حيث يغيب ffprobe، يجيب بديل Python عن الحقول التي تقرؤها الحزمة (الترميز والحجم ومعدل الإطارات والإطارات ومعدل العينة والقنوات والمدة والحجم) بصيغة JSON أو CSV. — Where ffprobe is missing, a Python stand-in answers the fields the kit reads (codec, size, frame rate, frames, sample rate, channels, duration, size) in JSON or CSV.
 
 **متى:** حين لا يتوفر ffprobe في البيئة وتحتاج معرفة الترميز والمقاس ومعدل الإطارات والمدة / when ffprobe is missing and you still need codec, size, frame rate, sample rate, channels and duration
 
@@ -23146,7 +23146,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One seekable clock; seeded randomness; preload; sample first/peak/boundary/final frames, seek both ways.
+**ما هي:** ساعة واحدة قابلة للتنقل؛ وعشوائية مبذورة؛ وتحميل مسبق؛ وأخذ عينات من الإطار الأول/الذروة/الحدود/الأخير، والتنقل في الاتجاهين. — One seekable clock; seeded randomness; preload; sample first/peak/boundary/final frames, seek both ways.
 
 **متى:** حين تريد فيديو برمجيًا يمكن القفز فيه للأمام والخلف بنفس النتيجة مع فحص إطارات البداية والذروة والنهاية / for a coded video with one seekable clock and seeded randomness, checked by sampling key frames both ways
 
@@ -23212,7 +23212,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Measured times on i7-1165G7 for 5 s 3D 1080p.
+**ما هي:** أزمنة مقيسة على i7-1165G7 لـ 5 ث ثلاثية الأبعاد بدقة 1080p. — Measured times on i7-1165G7 for 5 s 3D 1080p.
 
 **متى:** عند تقدير مدة تصيير مشهد ثلاثي الأبعاد قصير بدقة 1080p من أزمنة مقاسة / when estimating render time for a short 1080p 3D clip in preview, JPEG, PNG and final blur modes
 
@@ -23277,7 +23277,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): index.html window.seek(t), Playwright per frame, FFmpeg.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): index.html مع window.seek(t)، وPlaywright لكل إطار، وFFmpeg. — Observed Opus motion wave technique (Sept-Oct 2026): index.html window.seek(t), Playwright per frame, FFmpeg.
 
 **متى:** حين تريد أن يكون الفيلم برنامجًا في صفحة HTML واحدة تُصوَّر إطارًا بإطار عبر seek(t) / when the film is a single index.html with window.seek(t), captured per frame by Playwright and encoded with FFmpeg
 
@@ -23346,7 +23346,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): sum of springs per change.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): مجموع نوابض لكل تغيير. — Observed Opus motion wave technique (Sept-Oct 2026): sum of springs per change.
 
 **متى:** حين تحرك تحولات الواجهة بنوابض محسوبة بمعادلة مغلقة مع جمع نابض لكل تغيير / for UI morph animations driven by closed-form springs, summing one spring per change
 
@@ -23413,7 +23413,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): --blur 4.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): --blur 4. — Observed Opus motion wave technique (Sept-Oct 2026): --blur 4.
 
 **متى:** حين تريد ضبابية حركة ناعمة بأخذ أربع عينات داخل كل إطار / when you want motion blur rendered from 4 sub-frame samples per frame (--blur 4)
 
@@ -23480,7 +23480,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): beat grid, hits on contact frames, -14 LUFS.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): شبكة إيقاع، وضربات على إطارات التلامس، و-14 LUFS. — Observed Opus motion wave technique (Sept-Oct 2026): beat grid, hits on contact frames, -14 LUFS.
 
 **متى:** حين تريد ضبط الصورة والصوت على ساعة واحدة بشبكة إيقاع وضربات صوتية عند لحظات التلامس / for driving picture and sound from one clock: a beat grid, hits on contact frames and -14 LUFS
 
@@ -23547,7 +23547,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): contact sheets, phone-width, 6-8 criteria, >=3 rounds.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): أوراق اتصال، وعرض الهاتف، و6-8 معايير، و>=3 جولات. — Observed Opus motion wave technique (Sept-Oct 2026): contact sheets, phone-width, 6-8 criteria, >=3 rounds.
 
 **متى:** حين تراجع جودة الفيديو بنفسك على لوحة إطارات بعرض الهاتف وبمعايير محددة لعدة جولات / when self-reviewing a render on contact sheets at phone width with 6-8 criteria over 3+ rounds
 
@@ -23614,7 +23614,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): median 20 min short, 4 h celebrated, $10 median tokens.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): وسيط 20 دقيقة للقصير، و4 ساعات للمحتفى به، ووسيط رموز بـ 10 دولارات. — Observed Opus motion wave technique (Sept-Oct 2026): median 20 min short, 4 h celebrated, $10 median tokens.
 
 **متى:** عند تقدير الجهد والوقت والتكلفة لإنتاج فيديو قصير بمستوى جهد مرتفع / when estimating effort, time and token cost for a short piece at xhigh/max effort
 
@@ -23681,7 +23681,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Seven-step chain: pick a style id, generate the request, scaffold a project folder, fill STYLE/PLAN, animate in a starter, preview contact sheet, final render with untouched audio, gate with verify_video and TEST_REPORT.
+**ما هي:** سلسلة من سبع خطوات: اختيار معرّف النمط، وتوليد الطلب، وإنشاء هيكل المشروع، وملء STYLE/PLAN، والتحريك في قالب بداية، ومعاينة ورقة الاتصال، والتصيير النهائي بصوت دون مساس، والمراجعة عبر verify_video وTEST_REPORT. — Seven-step chain: pick a style id, generate the request, scaffold a project folder, fill STYLE/PLAN, animate in a starter, preview contact sheet, final render with untouched audio, gate with verify_video and TEST_REPORT.
 
 **متى:** حين يطلب المستخدم فيديو موشن كاملًا من الطلب حتى التسليم بصوته الأصلي وفحص نهائي / when the user asks for a complete motion video from request to delivery with untouched audio and a final check
 
@@ -23753,7 +23753,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): video model base shots redrawn in JS.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): لقطات أساس من نموذج فيديو يُعاد رسمها بـ JS. — Observed Opus motion wave technique (Sept-Oct 2026): video model base shots redrawn in JS.
 
 **متى:** حين تولد لقطات أساسية بنموذج فيديو ثم تعيد رسمها بالكود في JavaScript / when generating base shots with a video model and then redrawing them in JS code
 
@@ -23820,7 +23820,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): per-frame audio channels, tape clock, spectrogram magma ground, glitch pass; motion.py channels, loopcheck.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): قنوات صوت لكل إطار، وساعة شريط، وأرضية ماجما من طيف الصوت، وتمريرة خلل؛ motion.py channels وloopcheck. — Observed Opus motion wave technique (Sept-Oct 2026): per-frame audio channels, tape clock, spectrogram magma ground, glitch pass; motion.py channels, loopcheck.
 
 **متى:** حين تبني حركة تستمع للصوت عبر قنوات صوتية لكل إطار وطيف ترددي وتأثير جليتش / for motion that listens to audio via per-frame channels, a spectrogram ground and a glitch pass
 
@@ -23888,7 +23888,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): motion.py mocap -> particle body, loadModel GLB.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): motion.py mocap ← جسم من جسيمات، وloadModel GLB. — Observed Opus motion wave technique (Sept-Oct 2026): motion.py mocap -> particle body, loadModel GLB.
 
 **متى:** حين تريد تحويل حركة حقيقية ملتقطة إلى جسم من الجسيمات أو تحميل نموذج GLB / when turning captured real motion (mocap) into a particle body or loading a GLB model
 
@@ -23956,7 +23956,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Observed Opus motion wave technique (Sept-Oct 2026): MOTION.revealWords masks, dir on text not html, karaoke per word.
+**ما هي:** تقنية لوحظت في موجة حركة Opus (سبتمبر-أكتوبر 2026): أقنعة MOTION.revealWords، وdir على النص لا على html، وكاريوكي لكل كلمة. — Observed Opus motion wave technique (Sept-Oct 2026): MOTION.revealWords masks, dir on text not html, karaoke per word.
 
 **متى:** حين تحرك نصًا عربيًا كلمة بكلمة بأقنعة أو كاريوكي مع ضبط الاتجاه على النص لا على الصفحة / for Arabic kinetic typography: word reveals with masks, per-word karaoke, dir set on text not html
 
@@ -24023,7 +24023,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders a timeline spec into a finished film with cuts, transitions, speed changes, Arabic text overlays and ducked music, then runs the delivery gate.
+**ما هي:** يصيّر مواصفة خط زمني إلى فيلم منجز بقطعات وانتقالات وتغييرات سرعة وطبقات نص عربية وموسيقى مخفوضة، ثم يشغّل بوابة التسليم. — Renders a timeline spec into a finished film with cuts, transitions, speed changes, Arabic text overlays and ducked music, then runs the delivery gate.
 
 **متى:** حين يُطلب مونتاج فيلم كامل من ملف تايملاين فيه قطعات وانتقالات وتغيير سرعة ونص عربي وموسيقى / when rendering a timeline spec into a film with cuts, transitions, speed changes, Arabic text and ducked music
 
@@ -24091,7 +24091,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Scaffolds a deterministic HTML composition project in 2D, 3D or the product lab.
+**ما هي:** يهيّئ مشروع تركيب HTML حتميًا بـ 2D أو 3D أو معمل المنتجات. — Scaffolds a deterministic HTML composition project in 2D, 3D or the product lab.
 
 **متى:** حين تبدأ مشروع أنيميشن جديد ثنائي أو ثلاثي الأبعاد بمقاس طولي أو أفقي أو مربع / when starting a new 2D, 3D or lab animation project at vertical, landscape or square size
 
@@ -24159,7 +24159,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders a quick draft at half size and 15 fps for timing checks.
+**ما هي:** يصيّر مسودة سريعة بنصف الحجم و15 إطارًا/ث لفحص التوقيت. — Renders a quick draft at half size and 15 fps for timing checks.
 
 **متى:** حين تريد مسودة سريعة بنصف الحجم و15 إطارًا في الثانية لمراجعة التوقيت / for a quick half-size, 15 fps draft render to check timing
 
@@ -24227,7 +24227,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Renders an HTML composition through parallel headless browsers with optional motion blur and a render cache.
+**ما هي:** يصيّر تركيب HTML عبر متصفحات متوازية دون واجهة مع تمويه حركة اختياري وكاش للتصيير. — Renders an HTML composition through parallel headless browsers with optional motion blur and a render cache.
 
 **متى:** حين تصيّر تركيبة HTML إلى فيلم بسرعة عبر متصفحات متوازية مع ضبابية حركة وذاكرة مؤقتة / when rendering an HTML composition to film through parallel headless browsers with motion blur and a cache
 
@@ -24296,7 +24296,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** Instead of the MP4, a reel can load the real composition bundle so size/position edits render for real; a thin adapter makes the player look like a <video> element.
+**ما هي:** بدل MP4 يمكن للريل تحميل حزمة التركيب الحقيقية فتُصيَّر تعديلات الحجم/الموضع فعليًا؛ ومحوّل رفيع يجعل المشغّل يبدو كعنصر <video>. — Instead of the MP4, a reel can load the real composition bundle so size/position edits render for real; a thin adapter makes the player look like a <video> element.
 
 **متى:** عند مراجعة الفيديو مع تعديل الحجم والموضع ورؤية النتيجة الحقيقية مباشرة بدل ملف MP4 / when reviewing a reel on the live composition bundle so size and position edits render for real
 
@@ -24364,7 +24364,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner + MIT (Motion OS, Jason Lee 2026) |
 
-**ما هي:** The Export button re-renders the film with the user's edits applied and saves a new MP4 without overwriting the original; progress is read from the job log.
+**ما هي:** يعيد زر «تصدير» تصيير الفيلم بتعديلات المستخدم ويحفظ MP4 جديدًا دون الكتابة فوق الأصلي؛ ويُقرأ التقدم من سجل المهمة. — The Export button re-renders the film with the user's edits applied and saves a new MP4 without overwriting the original; progress is read from the job log.
 
 **متى:** حين يريد المستخدم حفظ تعديلات المراجعة في ملف MP4 جديد دون المساس بالأصل / when the user wants their review edits baked into a new MP4 without overwriting the original
 
@@ -24432,7 +24432,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic HTML->MP4 where the page exposes window.__kosif={duration,fps?,seek(t)} and optional window.__kosifReady promise; the renderer calls seek(start+i/fps) per frame then screenshots via CDP Page.captureScreenshot.
+**ما هي:** HTML←MP4 حتمي حيث تكشف الصفحة window.__kosif={duration,fps?,seek(t)} ووعد window.__kosifReady اختياريًا؛ ويستدعي المُصيِّر seek(start+i/fps) لكل إطار ثم يلتقط الشاشة عبر CDP Page.captureScreenshot. — Deterministic HTML->MP4 where the page exposes window.__kosif={duration,fps?,seek(t)} and optional window.__kosifReady promise; the renderer calls seek(start+i/fps) per frame then screenshots via CDP Page.captureScreenshot.
 
 **متى:** عند تحويل صفحة HTML تكشف دالة seek إلى MP4 بإطارات حتمية / when converting an HTML page that exposes a seek(t) hook into a deterministic MP4
 
@@ -24503,7 +24503,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A declarative edit description: format, loudness target, grade preset, music with ducking, A-roll with zoom punches, B-roll overlay with crossfade, and word-split captions.
+**ما هي:** وصف مونتاج تصريحي: الصيغة، وهدف الجهارة، وإعداد تدريج مسبق، وموسيقى بخفض، وA-roll بنبضات تكبير، وطبقة B-roll بتلاشٍ متقاطع، وترجمات مقسمة بالكلمات. — A declarative edit description: format, loudness target, grade preset, music with ducking, A-roll with zoom punches, B-roll overlay with crossfade, and word-split captions.
 
 **متى:** حين تصف مونتاجًا كاملًا بملف JSON يحدد الصوت والتلوين والموسيقى والزوم واللقطات المساعدة والترجمة / when describing an edit in JSON: loudness, grade, ducked music, zoom punches, B-roll and captions
 
@@ -24573,7 +24573,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Distilled catalogue of code-to-video frameworks (Remotion, Motion Canvas, Manim, MoviePy, Editly, Revideo, WebMotion...) and integrations (Blender, Spline, Rive, Meshy, Tripo, Lottie, Figma, Canva, Theatre.js, Babylon, PixiJS, Paper Shaders) with when to choose which.
+**ما هي:** فهرس مختصر لأطر الفيديو بالشيفرة (Remotion وMotion Canvas وManim وMoviePy وEditly وRevideo وWebMotion...) والتكاملات (Blender وSpline وRive وMeshy وTripo وLottie وFigma وCanva وTheatre.js وBabylon وPixiJS وPaper Shaders) مع متى يُختار كل منها. — Distilled catalogue of code-to-video frameworks (Remotion, Motion Canvas, Manim, MoviePy, Editly, Revideo, WebMotion...) and integrations (Blender, Spline, Rive, Meshy, Tripo, Lottie, Figma, Canva, Theatre.js, Babylon, PixiJS, Paper Shaders) with when to choose which.
 
 **متى:** حين لا يكفي المحرك الأساسي وتحتاج اختيار أداة أو إطار عمل آخر لتحويل الكود إلى فيديو / when the house engine is not enough and you need to pick another code-to-video framework or integration
 
@@ -24644,7 +24644,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Encoder presets: web H.264, HEVC small, NVENC, HLS, image seq, GIF.
+**ما هي:** إعدادات مرمِّز مسبقة: H.264 للويب، وHEVC صغير، وNVENC، وHLS، وتسلسل صور، وGIF. — Encoder presets: web H.264, HEVC small, NVENC, HLS, image seq, GIF.
 
 **متى:** حين تحتاج إعدادات تصدير جاهزة للويب أو HEVC صغير أو NVENC أو HLS أو تسلسل صور أو GIF / when you need ready encoder presets for web H.264, small HEVC, NVENC, HLS, image sequences or GIF
 
@@ -24711,7 +24711,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Timeline A ordered by Date Recorded never touched; B = dated duplicate with 4 video + 4 audio named tracks (OVERLAY, GFX, SUBTITLE, AMBIENCE, SFX, MUSIC).
+**ما هي:** الخط الزمني A مرتب بتاريخ التسجيل ولا يُمس؛ وB = نسخة مؤرخة بـ 4 مسارات فيديو + 4 صوت مسماة (OVERLAY وGFX وSUBTITLE وAMBIENCE وSFX وMUSIC). — Timeline A ordered by Date Recorded never touched; B = dated duplicate with 4 video + 4 audio named tracks (OVERLAY, GFX, SUBTITLE, AMBIENCE, SFX, MUSIC).
 
 **متى:** حين تريد حماية التايملاين الأصلي دون لمس والعمل على نسخة مؤرخة بمسارات مسماة / when keeping the original timeline untouched and editing a dated duplicate with named tracks
 
@@ -24779,7 +24779,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** data-composition-id root, one paused GSAP timeline in window.__timelines['root'], MOTION.shim; kit revealWords/hideWords, drawPath with head, rain/vapour/sparkle seeded, camera, flash, grain, vignette; banned dir=rtl on html, audio without id, fonts without @font-face, Math.random, setTimeout, marke…
+**ما هي:** جذر data-composition-id، وخط زمني GSAP واحد متوقف في window.__timelines['root']، وMOTION.shim؛ وrevealWords/hideWords من الحزمة، وdrawPath مع رأس، ومطر/بخار/لمعان مبذور، وكاميرا، وفلاش، وحبيبات، وتعتيم أطراف؛ ويُحظر dir=rtl على html، والصوت دون id، والخطوط دون @font-face، وMath.random، وsetTimeout، وmarke… — data-composition-id root, one paused GSAP timeline in window.__timelines['root'], MOTION.shim; kit revealWords/hideWords, drawPath with head, rain/vapour/sparkle seeded, camera, flash, grain, vignette; banned dir=rtl on html, audio without id, fonts without @font-face, Math.random, setTimeout, marke…
 
 **متى:** عند كتابة تركيبة HyperFrames بتايملاين GSAP متوقف وأدوات كشف الكلمات ورسم المسارات والكاميرا / when authoring a HyperFrames composition with one paused GSAP timeline and its reveal, draw-path and camera kit
 
@@ -24849,7 +24849,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "Automation Scripts & CLI Tools" (own words): workflow guidance for automation scripts & cli tools; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة من بناء المالك «Automation Scripts & CLI Tools» (بصياغته): إرشاد سير عمل لسكربتات الأتمتة وأدوات CLI؛ ويفيد مهمة الفيديو معرفةً داعمة للتخطيط والإنتاج فقط. — Owner-built skill "Automation Scripts & CLI Tools" (own words): workflow guidance for automation scripts & cli tools; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين يحتاج العمل سكربت أتمتة بلغة Python أو Bash أو PowerShell أو أداة سطر أوامر / when a job needs an automation script in Python, Bash or PowerShell or a command-line tool
 
@@ -24914,7 +24914,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Stable selectors, proper waits, saved sessions, screenshots -> headless capture of HTML animations frame-by-frame (used by the repo capture path, Edge headless).
+**ما هي:** محددات ثابتة، وانتظارات سليمة، وجلسات محفوظة، ولقطات شاشة ← التقاط دون واجهة لحركات HTML إطارًا إطارًا (يستخدمه مسار الالتقاط في المستودع، Edge دون واجهة). — Stable selectors, proper waits, saved sessions, screenshots -> headless capture of HTML animations frame-by-frame (used by the repo capture path, Edge headless).
 
 **متى:** حين تحتاج تشغيل المتصفح آليًا لأخذ لقطات شاشة أو التقاط أنيميشن HTML إطارًا بإطار / when automating a browser for screenshots or headless frame-by-frame capture of HTML animations
 
@@ -24980,7 +24980,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "Docker & CI/CD" (own words): workflow guidance for docker & ci/cd; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة من بناء المالك «Docker & CI/CD» (بصياغته): إرشاد سير عمل لـ docker وCI/CD؛ ويفيد مهمة الفيديو معرفةً داعمة للتخطيط والإنتاج فقط. — Owner-built skill "Docker & CI/CD" (own words): workflow guidance for docker & ci/cd; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين تحتاج وضع مشروع داخل حاوية أو إعداد نشر مستمر كجزء داعم لعمل الفيديو / when a project needs containerising or a CI/CD setup as supporting work for a video job
 
@@ -25046,7 +25046,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Browser games with Canvas/Phaser/Three.js: game loop, state, input, simple physics, sound, localStorage save, touch -> same loop drives procedural animation frames for capture.
+**ما هي:** ألعاب متصفح بـ Canvas/Phaser/Three.js: حلقة اللعبة والحالة والمدخلات وفيزياء بسيطة وصوت وحفظ في localStorage ولمس ← الحلقة نفسها تقود إطارات حركة إجرائية للالتقاط. — Browser games with Canvas/Phaser/Three.js: game loop, state, input, simple physics, sound, localStorage save, touch -> same loop drives procedural animation frames for capture.
 
 **متى:** حين يطلب المستخدم لعبة متصفح أو حلقة لعبة تقود أنيميشن إجرائيًا لالتقاط الإطارات / when the user wants a browser game, or a game loop that drives procedural animation frames for capture
 
@@ -25112,7 +25112,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "Performance Optimization" (own words): workflow guidance for performance optimization; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة من بناء المالك «Performance Optimization» (بصياغته): إرشاد سير عمل لتحسين الأداء؛ ويفيد مهمة الفيديو معرفةً داعمة للتخطيط والإنتاج فقط. — Owner-built skill "Performance Optimization" (own words): workflow guidance for performance optimization; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين يكون موقع أو تطبيق أو استعلام بطيئًا ويحتاج تسريعًا كدعم لعمل الفيديو / when a site, app or query is slow and needs speeding up as supporting work for a video job
 
@@ -25177,7 +25177,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Renders unmodified animated pages by pausing Chromium's virtual clock and producing exactly one compositor frame per 1000/fps ms through HeadlessExperimental.beginFrame, so CSS animations, Web Animations, rAF timestamps, timers and Date.now are exact.
+**ما هي:** يصيّر الصفحات المتحركة دون تعديل بإيقاف الساعة الافتراضية في Chromium وإنتاج إطار مركِّب واحد بالضبط كل 1000/fps مللي ثانية عبر HeadlessExperimental.beginFrame، فتكون حركات CSS وWeb Animations وطوابع rAF والمؤقتات وDate.now دقيقة. — Renders unmodified animated pages by pausing Chromium's virtual clock and producing exactly one compositor frame per 1000/fps ms through HeadlessExperimental.beginFrame, so CSS animations, Web Animations, rAF timestamps, timers and Date.now are exact.
 
 **متى:** حين تريد تصيير صفحة متحركة جاهزة بـ CSS أو GSAP أو rAF إلى فيديو دون تعديلها / when rendering an unmodified animated page (CSS, Web Animations, GSAP, rAF) to video with exact frame timing
 
@@ -25248,7 +25248,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "Python Pro" (own words): workflow guidance for python pro; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة من بناء المالك «Python Pro» (بصياغته): إرشاد سير عمل لـ python pro؛ ويفيد مهمة الفيديو معرفةً داعمة للتخطيط والإنتاج فقط. — Owner-built skill "Python Pro" (own words): workflow guidance for python pro; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين تحتاج كتابة كود بايثون إنتاجي منظم يدعم تخطيط الفيديو أو إنتاجه / when you need production-quality Python code as supporting work for planning or producing a video
 
@@ -25314,7 +25314,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner (MIT repo; synthesised from MIT/Apache atlas sources) |
 
-**ما هي:** Owner-built skill "TypeScript & Node Pro" (own words): workflow guidance for typescript & node pro; helps a video job only as supporting planning/production knowledge.
+**ما هي:** مهارة من بناء المالك «TypeScript & Node Pro» (بصياغته): إرشاد سير عمل لـ typescript وnode pro؛ ويفيد مهمة الفيديو معرفةً داعمة للتخطيط والإنتاج فقط. — Owner-built skill "TypeScript & Node Pro" (own words): workflow guidance for typescript & node pro; helps a video job only as supporting planning/production knowledge.
 
 **متى:** حين تحتاج كود TypeScript صارمًا يعمل على Node أو Bun أو Deno كدعم لعمل الفيديو / when you need strict TypeScript for Node, Bun or Deno as supporting work for a video job
 
@@ -25379,7 +25379,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Hardware encode recipe and loudnorm/subtitle filtergraphs.
+**ما هي:** وصفة ترميز بالعتاد ومخططات مرشحات loudnorm والترجمة. — Hardware encode recipe and loudnorm/subtitle filtergraphs.
 
 **متى:** حين تريد ترميزًا عتاديًا سريعًا بكرت الشاشة مع مرشحات توحيد الصوت والترجمة / for hardware NVENC encoding with cuda flags plus loudnorm and subtitle filtergraphs
 
@@ -25448,7 +25448,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Only seekable animation sources; no wall clock or unseeded randomness; fromTo pitfalls.
+**ما هي:** مصادر حركة قابلة للتنقل فقط؛ ولا ساعة جدار ولا عشوائية غير مبذورة؛ ومزالق fromTo. — Only seekable animation sources; no wall clock or unseeded randomness; fromTo pitfalls.
 
 **متى:** حين تنكسر الحركة عند القفز في الزمن وتحتاج مصادر أنيميشن قابلة للقفز فقط / when animations break on seek and you need only seekable sources, no wall clock, random or fromTo pitfalls
 
@@ -25519,7 +25519,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Picks Chromium flags per page: real GPU through ANGLE/D3D11 on Windows, SwiftShader elsewhere, and --disable-gpu for pages that never touch WebGL (about 2x faster capture).
+**ما هي:** يختار أعلام Chromium لكل صفحة: GPU حقيقي عبر ANGLE/D3D11 على Windows، وSwiftShader في غيره، و--disable-gpu للصفحات التي لا تمس WebGL أبدًا (التقاط أسرع بنحو الضعف). — Picks Chromium flags per page: real GPU through ANGLE/D3D11 on Windows, SwiftShader elsewhere, and --disable-gpu for pages that never touch WebGL (about 2x faster capture).
 
 **متى:** عند تشغيل متصفح الالتقاط واختيار كرت الشاشة الحقيقي أو العرض البرمجي حسب استخدام الصفحة لـ WebGL / when launching the capture browser and choosing real GPU, SwiftShader or --disable-gpu per page's WebGL use
 
@@ -25591,7 +25591,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Device scale factor multiplies output pixels (width*scale x height*scale), e.g. 2x for crisp downscales.
+**ما هي:** يضاعف معامل مقياس الجهاز بكسلات المخرج (العرض*المقياس × الارتفاع*المقياس)، مثل 2x لتصغير حاد. — Device scale factor multiplies output pixels (width*scale x height*scale), e.g. 2x for crisp downscales.
 
 **متى:** حين تريد إخراجًا أوضح بمضاعفة عدد البكسلات ثم التصغير للحصول على حواف حادة / when you want crisper output by multiplying pixels with device scale (e.g. 2x) for clean downscales
 
@@ -25658,7 +25658,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Request phrase for stack 'three': Three.js real 3D scene with moving camera.
+**ما هي:** عبارة الطلب للحزمة 'three': مشهد Three.js ثلاثي الأبعاد حقيقي بكاميرا متحركة. — Request phrase for stack 'three': Three.js real 3D scene with moving camera.
 
 **متى:** حين يطلب المستخدم مشهدًا ثلاثي الأبعاد حقيقيًا بكاميرا متحركة باستخدام Three.js / when the user asks for a real 3D scene with a moving camera built in Three.js
 
@@ -25725,7 +25725,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** User approves a contact sheet and short motion clip before full render.
+**ما هي:** يوافق المستخدم على ورقة اتصال ومقطع حركة قصير قبل التصيير الكامل. — User approves a contact sheet and short motion clip before full render.
 
 **متى:** قبل الرندر النهائي حين يجب أن يوافق المستخدم على لوحة إطارات ومقطع حركة قصير / before the full render, when the user must approve a contact sheet and a short half-res motion clip
 
@@ -25793,7 +25793,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Screen capture drops frames and is not reproducible.
+**ما هي:** لا تسجيل شاشة للتسليم: يُسقط الالتقاط إطارات ولا يمكن إعادة إنتاجه. — Screen capture drops frames and is not reproducible.
 
 **متى:** حين يفكر أحد في تسليم الفيديو بتسجيل الشاشة بدل التصيير إطارًا بإطار / when tempted to deliver a video by screen recording, which drops frames and is not reproducible
 
@@ -25858,7 +25858,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** frame=f(t), seeded randomness, fonts loaded before frame 0 (window.__kosifReady), no network assets at render, fixed viewport/DPR.
+**ما هي:** frame=f(t)، وعشوائية مبذورة، وخطوط محمّلة قبل الإطار 0 (window.__kosifReady)، ولا أصول شبكة عند التصيير، وإطار عرض/DPR ثابت. — frame=f(t), seeded randomness, fonts loaded before frame 0 (window.__kosifReady), no network assets at render, fixed viewport/DPR.
 
 **متى:** قبل التصيير للتأكد من ثبات الإطارات: الزمن والعشوائية والخطوط والأصول ومقاس العرض / as a pre-render checklist: frame=f(t), seeded random, fonts ready, no network assets, fixed viewport/DPR
 
@@ -25924,7 +25924,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** With no --mode the renderer loads the page, checks for window.__kosif.seek and otherwise closes and relaunches Chromium with BeginFrame control under the virtual driver.
+**ما هي:** دون --mode يحمّل المُصيِّر الصفحة ويفحص window.__kosif.seek وإلا يغلق Chromium ويعيد تشغيله بتحكم BeginFrame تحت المشغّل الافتراضي. — With no --mode the renderer loads the page, checks for window.__kosif.seek and otherwise closes and relaunches Chromium with BeginFrame control under the virtual driver.
 
 **متى:** عند تصيير صفحة دون معرفة هل تدعم seek، ليختار المصيّر وضع الزمن الافتراضي تلقائيًا / when rendering a page without knowing if it has a seek hook, letting the renderer switch to virtual mode
 
@@ -25990,7 +25990,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Use preinstalled Playwright and Chromium; never run playwright install; Remotion uses headless_shell.
+**ما هي:** استخدم Playwright وChromium المثبّتين مسبقًا؛ ولا تشغّل playwright install أبدًا؛ ويستخدم Remotion headless_shell. — Use preinstalled Playwright and Chromium; never run playwright install; Remotion uses headless_shell.
 
 **متى:** حين تعمل على الجهاز السحابي وتحتاج مسار Playwright وChromium الجاهزين بدل تثبيتهما / when working on the cloud machine and needing the preinstalled Playwright and Chromium paths, never installing
 
@@ -26057,7 +26057,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** preview PNG → motion check clip → approval → final render with audio → verify_video gate → TEST_REPORT.
+**ما هي:** معاينة PNG ← مقطع فحص الحركة ← الموافقة ← تصيير نهائي بالصوت ← بوابة verify_video ← TEST_REPORT. — preview PNG → motion check clip → approval → final render with audio → verify_video gate → TEST_REPORT.
 
 **متى:** عند تسليم فيديو نهائي بخطوات: معاينة ثم مقطع فحص ثم موافقة ثم رندر بالصوت ثم فحص وتقرير / for delivering a final video: preview, motion check clip, approval, render with audio, verify gate, test report
 
@@ -26124,7 +26124,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Encode PNG frames + voice to MP4.
+**ما هي:** ترميز إطارات PNG + الصوت إلى MP4. — Encode PNG frames + voice to MP4.
 
 **متى:** حين تكون لديك صور إطارات PNG وملف صوت وتريد دمجها يدويًا في فيديو MP4 / when you have PNG frames and a voice file and want to encode them by hand into an MP4
 
@@ -26190,7 +26190,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Model builds whole video with local tools from a project or URL; no bundled assets.
+**ما هي:** يبني النموذج الفيديو كاملًا بأدوات محلية من مشروع أو رابط؛ دون أصول مضمّنة. — Model builds whole video with local tools from a project or URL; no bundled assets.
 
 **متى:** حين يبني النموذج فيديو كاملًا بأدوات محلية من مشروع أو رابط دون أصول مرفقة / when building a whole video with local tools from a project or URL, with no bundled assets
 
@@ -26258,7 +26258,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Native res, crf 20, GOP 8, unsharp, no audio, faststart; mobile 720w GOP 4 crf 23.
+**ما هي:** دقة أصلية وcrf 20 وGOP 8 وunsharp ودون صوت وfaststart؛ والجوال بعرض 720 وGOP 4 وcrf 23. — Native res, crf 20, GOP 8, unsharp, no audio, faststart; mobile 720w GOP 4 crf 23.
 
 **متى:** حين تحتاج فيديو يتحرك بسلاسة عند السحب في شريط التشغيل بحجم ملف معقول مع نسخة للموبايل / when encoding video that scrubs smoothly (short GOP) at a small file size, plus a mobile variant
 
@@ -26327,7 +26327,7 @@
 | نطاق الدليل | `style` |
 | الرخصة | owner |
 
-**ما هي:** Pure function of time captured by headless browser, ffmpeg mux.
+**ما هي:** دالة خالصة في الزمن يلتقطها متصفح دون واجهة، ودمج بـ ffmpeg. — Pure function of time captured by headless browser, ffmpeg mux.
 
 **متى:** حين تريد تصوير أنيميشن متصفح إطارًا بإطار بمتصفح بلا واجهة ثم دمجه بـ ffmpeg / for capturing a pure function-of-time animation frame by frame in a headless browser and muxing with ffmpeg
 
@@ -26394,7 +26394,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Aborts every http(s) request so only local/system fonts and assets are used; output fully reproducible but web fonts (Google Cairo) fall back.
+**ما هي:** يُجهض كل طلبات http(s) فلا تُستخدم إلا الخطوط والأصول المحلية/النظامية؛ المخرج قابل لإعادة الإنتاج تمامًا لكن خطوط الويب (Google Cairo) تُستبدل. — Aborts every http(s) request so only local/system fonts and assets are used; output fully reproducible but web fonts (Google Cairo) fall back.
 
 **متى:** حين تريد تصييرًا قابلًا للتكرار بلا إنترنت بالخطوط والملفات المحلية فقط / when you want a reproducible render with no network, using only local fonts and assets
 
@@ -26460,7 +26460,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** PNG frames are encoded with libx264 yuv420p faststart; supplied audio is muxed as AAC 192k with apad + -shortest so the video length decides the end and the voice samples are never retimed; odd sizes are padded to even.
+**ما هي:** تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُدمج الصوت المورَّد بـ AAC 192k مع apad و-shortest فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح زوجية. — PNG frames are encoded with libx264 yuv420p faststart; supplied audio is muxed as AAC 192k with apad + -shortest so the video length decides the end and the voice samples are never retimed; odd sizes are padded to even.
 
 **متى:** عند دمج تعليق صوتي مع الفيديو النهائي دون تغيير توقيت الصوت / when muxing a voiceover into the final H.264 video without retiming the voice
 
@@ -26527,7 +26527,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Renders only a time window of the film, e.g. the hardest scene, for quick review clips.
+**ما هي:** يصيّر نافذة زمنية من الفيلم فقط، مثل أصعب مشهد، لمقاطع مراجعة سريعة. — Renders only a time window of the film, e.g. the hardest scene, for quick review clips.
 
 **متى:** حين تريد مراجعة مشهد صعب بسرعة بتصيير جزء زمني من الفيلم فقط / when you want a quick review clip by rendering only a time window of the film
 
@@ -26592,7 +26592,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Keeps per-frame PNGs (frame_%06d.png) for compositing elsewhere or debugging.
+**ما هي:** يحتفظ بصور PNG لكل إطار (frame_%06d.png) للتركيب في مكان آخر أو لتصحيح الأخطاء. — Keeps per-frame PNGs (frame_%06d.png) for compositing elsewhere or debugging.
 
 **متى:** عند الحاجة لحفظ كل إطار PNG لتركيبه في برنامج آخر أو لتتبع مشكلة / when you need every frame saved as PNG for compositing elsewhere or debugging
 
@@ -26658,7 +26658,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** render_html resolves Playwright from cwd, then /opt/node-tools/node_modules/playwright, then $KOSIF_PLAYWRIGHT; never run playwright install on the cloud machine.
+**ما هي:** يحدد render_html مكان Playwright من cwd ثم /opt/node-tools/node_modules/playwright ثم $KOSIF_PLAYWRIGHT؛ ولا تشغّل playwright install على جهاز السحابة. — render_html resolves Playwright from cwd, then /opt/node-tools/node_modules/playwright, then $KOSIF_PLAYWRIGHT; never run playwright install on the cloud machine.
 
 **متى:** حين يفشل المصيّر في إيجاد Playwright أو المتصفح على الجهاز السحابي / when the renderer cannot find Playwright or Chromium, especially on the cloud machine
 
@@ -26725,7 +26725,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Dependency-free KOSIF.Timeline: scenes {id,t0,t1,el,draw(t,p,local)} are shown only inside their window, an always(t) hook runs every frame, play() loops via rAF; every frame is a pure function of t.
+**ما هي:** KOSIF.Timeline بلا اعتماديات: المشاهد {id,t0,t1,el,draw(t,p,local)} تظهر داخل نافذتها فقط، وخطاف always(t) يعمل كل إطار، وplay() يكرر عبر rAF؛ وكل إطار دالة خالصة في t. — Dependency-free KOSIF.Timeline: scenes {id,t0,t1,el,draw(t,p,local)} are shown only inside their window, an always(t) hook runs every frame, play() loops via rAF; every frame is a pure function of t.
 
 **متى:** عند بناء فيلم canvas من مشاهد مؤقتة بدون مكتبات حيث كل إطار دالة في الزمن / when building a dependency-free canvas film from timed scenes where every frame is a function of t
 
@@ -26793,7 +26793,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Creates STYLE.md, PLAN.md, TEST_REPORT.md (placeholders filled incl. frames=round(duration*fps)), words.json, REQUEST.md and a copy of the chosen starter without node_modules/out/media.
+**ما هي:** ينشئ STYLE.md وPLAN.md وTEST_REPORT.md (مع تعبئة العناصر النائبة ومنها frames=round(duration*fps)) وwords.json وREQUEST.md ونسخة من قالب البداية المختار دون node_modules/out/media. — Creates STYLE.md, PLAN.md, TEST_REPORT.md (placeholders filled incl. frames=round(duration*fps)), words.json, REQUEST.md and a copy of the chosen starter without node_modules/out/media.
 
 **متى:** عند إنشاء مجلد مشروع فيديو جديد بملفات الأسلوب والخطة والاختبار ونسخة نظيفة من القالب / when creating a new video project folder with style, plan and test files and a clean copy of the starter
 
@@ -26860,7 +26860,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Request phrase for stack 'auto': choose best: Remotion for editable sequences, Canvas/SVG for light vector, Three.js for spatial.
+**ما هي:** عبارة الطلب للحزمة 'auto': اختر الأفضل: Remotion للتسلسلات القابلة للتحرير، وCanvas/SVG للمتجهات الخفيفة، وThree.js للمكاني. — Request phrase for stack 'auto': choose best: Remotion for editable sequences, Canvas/SVG for light vector, Three.js for spatial.
 
 **متى:** حين لا يحدد المستخدم التقنية ويُترك الاختيار بين Remotion وCanvas/SVG وThree.js / when the user leaves the stack open and the best of Remotion, Canvas/SVG or Three.js should be chosen
 
@@ -26928,7 +26928,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Request phrase for stack 'canvas': starters/html-canvas + render_html.
+**ما هي:** عبارة الطلب للحزمة 'canvas': starters/html-canvas + render_html. — Request phrase for stack 'canvas': starters/html-canvas + render_html.
 
 **متى:** عند طلب فيديو موشن مبني على قالب html-canvas ويُصيَّر بـ render_html / when the request should use the html-canvas starter rendered with render_html
 
@@ -26994,7 +26994,7 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** Request phrase for stack 'svg': SVG + GSAP rendered in virtual-time mode.
+**ما هي:** عبارة الطلب للحزمة 'svg': SVG + GSAP مُصيَّرة بنمط الزمن الافتراضي. — Request phrase for stack 'svg': SVG + GSAP rendered in virtual-time mode.
 
 **متى:** حين يناسب الطلب رسومًا متجهة SVG مع GSAP تُصيَّر بوضع الزمن الافتراضي / when the request suits SVG vector motion with GSAP rendered in virtual-time mode
 
@@ -27061,7 +27061,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Detect whether browser+FFmpeg (A), FFmpeg only (B) or neither (C) exist and pick deliverable accordingly.
+**ما هي:** اكتشاف وجود المتصفح+FFmpeg (A) أو FFmpeg فقط (B) أو لا شيء (C) واختيار المُخرَج المناسب. — Detect whether browser+FFmpeg (A), FFmpeg only (B) or neither (C) exist and pick deliverable accordingly.
 
 **متى:** عند بدء العمل لمعرفة هل يتوفر متصفح وFFmpeg أو أحدهما أو لا شيء واختيار نوع التسليم / when starting work, to detect whether a browser and FFmpeg exist and pick the deliverable route
 
@@ -27131,7 +27131,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Runs a list of kmotion jobs from jobs.json, several at a time, each in its own process, and writes a report.
+**ما هي:** يشغّل قائمة مهام kmotion من jobs.json عدة مهام معًا، كلٌّ في عمليته، ويكتب تقريرًا. — Runs a list of kmotion jobs from jobs.json, several at a time, each in its own process, and writes a report.
 
 **متى:** حين تريد تشغيل عدة مهام kmotion دفعة واحدة بالتوازي مع تقرير نهائي / when running many kmotion jobs at once in parallel with a final report
 
@@ -27200,7 +27200,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Accumulates k sub-frames on the GPU per output frame across a shutter angle for real motion blur.
+**ما هي:** يجمع k إطارًا فرعيًا على GPU لكل إطار مخرج عبر زاوية غالق لتمويه حركة حقيقي. — Accumulates k sub-frames on the GPU per output frame across a shutter angle for real motion blur.
 
 **متى:** عند الحاجة لضبابية حركة حقيقية في مشهد ثلاثي الأبعاد سريع الحركة / when a fast-moving 3D scene needs real motion blur across a shutter angle
 
@@ -27270,7 +27270,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** One self-contained HTML file: inline CSS/JS, only fonts and the animation library from CDN, required sections, one h1, responsive breakpoints, gsap.set before any tween; validated by a regex structural checker.
+**ما هي:** ملف HTML واحد مكتفٍ ذاتيًا: CSS/JS مضمّنان، والخطوط ومكتبة التحريك فقط من CDN، وأقسام مطلوبة، وh1 واحد، ونقاط توقف متجاوبة، وgsap.set قبل أي حركة؛ ويتحقق منه فاحص بنيوي بالتعابير النمطية. — One self-contained HTML file: inline CSS/JS, only fonts and the animation library from CDN, required sections, one h1, responsive breakpoints, gsap.set before any tween; validated by a regex structural checker.
 
 **متى:** حين يطلب المستخدم صفحة هبوط متجاوبة في ملف HTML واحد أو تركيبًا حركيًا محمولًا للمصيّر / when building a responsive single-file landing page or a portable HTML motion composition
 
@@ -27341,7 +27341,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Design cards, tables and figures as self-contained HTML with a solid body background and padding, render at 2x in headless Chromium, then crop to content by comparing against the background colour and re-pad evenly - crisp stills for lower thirds, end cards and data cards.
+**ما هي:** تصميم البطاقات والجداول والأشكال كـ HTML مكتفٍ ذاتيًا بخلفية جسم صلبة وهوامش، وتصييرها بضعف الدقة في Chromium دون واجهة، ثم القص على المحتوى بالمقارنة بلون الخلفية وإعادة الحشو بالتساوي — صور ثابتة حادة للشرائط السفلية وبطاقات الختام وبطاقات البيانات. — Design cards, tables and figures as self-contained HTML with a solid body background and padding, render at 2x in headless Chromium, then crop to content by comparing against the background colour and re-pad evenly - crisp stills for lower thirds, end cards and data cards.
 
 **متى:** عند تصميم بطاقة أو جدول أو عنوان سفلي كصورة PNG حادة مقصوصة على المحتوى / when designing a card, table or lower third as a crisp PNG still trimmed to its content
 
@@ -27413,7 +27413,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Hand an edit to Final Cut Pro (or Resolve/Premiere import) as FCPXML with rational frame times to avoid drift (e.g. 100/2400s per frame at 24 fps, 100/3000s at 30).
+**ما هي:** تسليم المونتاج إلى Final Cut Pro (أو استيراد Resolve/Premiere) بصيغة FCPXML بأزمنة إطارات كسرية لتجنب الانحراف (مثل 100/2400 ث للإطار عند 24 إطارًا/ث، و100/3000 ث عند 30). — Hand an edit to Final Cut Pro (or Resolve/Premiere import) as FCPXML with rational frame times to avoid drift (e.g. 100/2400s per frame at 24 fps, 100/3000s at 30).
 
 **متى:** حين يريد المستخدم نقل المونتاج إلى Final Cut Pro أو Resolve أو Premiere دون انحراف في التوقيت / when handing an edit to Final Cut Pro, Resolve or Premiere without timing drift
 
@@ -27482,7 +27482,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | unknown |
 
-**ما هي:** Play vector animations (logo stings, icons) inside compositions synced to timeline.
+**ما هي:** تشغيل الرسوم المتجهة (ومضات الشعارات والأيقونات) داخل التراكيب متزامنة مع الخط الزمني. — Play vector animations (logo stings, icons) inside compositions synced to timeline.
 
 **متى:** عند إدخال شعار متحرك أو أيقونات Lottie داخل التركيب ومزامنتها مع الخط الزمني / when placing Lottie logo stings or icons inside a composition synced to the timeline
 
@@ -27548,7 +27548,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | MIT |
 
-**ما هي:** Canvas draws are immediate-mode, so state lives outside: records, scales, mark descriptors, cached Path2D; redraw deterministically per frame.
+**ما هي:** رسوم Canvas فورية النمط، فتعيش الحالة خارجها: السجلات والمقاييس وواصفات العلامات وPath2D المخزّن؛ ويُعاد الرسم حتميًا لكل إطار. — Canvas draws are immediate-mode, so state lives outside: records, scales, mark descriptors, cached Path2D; redraw deterministically per frame.
 
 **متى:** حين ترسم بيانات أو أشكالًا على canvas وتحتاج إعادة رسم كل إطار من حالة محفوظة لتدعم seek / when drawing marks on canvas and each frame must be redrawn from stored state for seek-based rendering
 
@@ -27616,7 +27616,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Exports the measured style as JSON, a readable Arabic style bible (Markdown) and a standalone Python script that rebuilds the edit on any footage with ffmpeg only.
+**ما هي:** يصدّر النمط المقيس بصيغة JSON ودليل نمط عربي مقروء (Markdown) وسكربت Python مستقل يعيد بناء المونتاج على أي لقطات بـ ffmpeg وحده. — Exports the measured style as JSON, a readable Arabic style bible (Markdown) and a standalone Python script that rebuilds the edit on any footage with ffmpeg only.
 
 **متى:** عند تصدير أسلوب مونتاج مقاس كـ JSON ودليل أسلوب عربي وسكربت ffmpeg يعيد بناءه على لقطات أخرى / when exporting a measured edit style as JSON, an Arabic style bible and an ffmpeg script to rebuild it on other footage
 
@@ -27687,7 +27687,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** drawFrame(canvas, story, t) paints a complete frame as a pure function of absolute time, so preview and export are deterministic.
+**ما هي:** ترسم drawFrame(canvas, story, t) إطارًا كاملًا كدالة خالصة في الزمن المطلق، فتكون المعاينة والتصدير حتميَّين. — drawFrame(canvas, story, t) paints a complete frame as a pure function of absolute time, so preview and export are deterministic.
 
 **متى:** حين تريد معاينة وتصديرًا متطابقين لفيلم canvas بعنوان عربي، كل إطار فيه دالة في الزمن / when preview and export of a canvas film with an Arabic title must match because each frame is a function of time
 
@@ -27756,7 +27756,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** RTL Arabic web page with canvas, play/pause, 0–1000 seek slider, mm:ss readout and scene jump buttons; loops playback.
+**ما هي:** صفحة ويب عربية من اليمين بلوحة وتشغيل/إيقاف ومنزلق بحث 0–1000 وعرض mm:ss وأزرار القفز بين المشاهد؛ ويتكرر التشغيل. — RTL Arabic web page with canvas, play/pause, 0–1000 seek slider, mm:ss readout and scene jump buttons; loops playback.
 
 **متى:** عند مراجعة الستوري بورد في المتصفح بتشغيل وإيقاف وشريط تقديم وقفز بين المشاهد / when reviewing the storyboard in the browser with play/pause, a seek slider and scene jump buttons
 
@@ -27826,7 +27826,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** The player routes to the editorial 2.5D renderer when storyboard.profile is 'viral-editorial-3d', otherwise to the native renderer, and exposes window.renderFrame / window.fmbReady for headless export.
+**ما هي:** يوجّه المشغّل إلى المُصيِّر التحريري 2.5D عندما يكون storyboard.profile هو 'viral-editorial-3d' وإلا إلى المُصيِّر الأصلي، ويكشف window.renderFrame / window.fmbReady للتصدير دون واجهة. — The player routes to the editorial 2.5D renderer when storyboard.profile is 'viral-editorial-3d', otherwise to the native renderer, and exposes window.renderFrame / window.fmbReady for headless export.
 
 **متى:** حين يجب أن يختار المشغل محرك الكولاج التحريري أو المحرك الأصلي حسب ملف الستوري بورد / when the player must pick the editorial collage renderer or the native one from the storyboard profile
 
@@ -27892,7 +27892,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Minimal Node HTTP server bound to 127.0.0.1 that only serves web/, project/, assets/ and examples/ with no-store caching and path-traversal guard.
+**ما هي:** خادم HTTP بسيط بـ Node مرتبط بـ 127.0.0.1 يخدم web/ وproject/ وassets/ وexamples/ فقط بتخزين no-store وحماية من اجتياز المسارات. — Minimal Node HTTP server bound to 127.0.0.1 that only serves web/, project/, assets/ and examples/ with no-store caching and path-traversal guard.
 
 **متى:** عند تشغيل خادم محلي بسيط وآمن لمعاينة المشروع في المتصفح دون تخزين مؤقت / when serving the project locally for browser preview with no caching and a path-traversal guard
 
@@ -27960,7 +27960,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Machine-readable timeline consumed by preview and render: version, brief, duration_seconds, aspect, fps, scenes[{id,start,end,title,text,visual,motion,sfx}], optional profile/palette/approval/sound.
+**ما هي:** خط زمني مقروء آليًا تستهلكه المعاينة والتصيير: version وbrief وduration_seconds وaspect وfps وscenes[{id,start,end,title,text,visual,motion,sfx}]، واختياريًا profile/palette/approval/sound. — Machine-readable timeline consumed by preview and render: version, brief, duration_seconds, aspect, fps, scenes[{id,start,end,title,text,visual,motion,sfx}], optional profile/palette/approval/sound.
 
 **متى:** حين تريد كتابة توقيت ونصوص المشاهد أو تعديلها في ملف واحد تقرؤه المعاينة والتصيير / when writing or editing scene timing and text in one machine-readable file used by preview and render
 
@@ -28030,7 +28030,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Second seekable Canvas renderer for the viral-editorial-3d profile: palette background, dot grid, two drifting lines, corner blob, ghost type, floating halftone hero card with icon, orbit + starburst, masked headline. Verified here: 6 distinct frames across 0.1–6.5 s.
+**ما هي:** مُصيِّر Canvas ثانٍ قابل للتنقل لنمط viral-editorial-3d: خلفية بلوحة ألوان، وشبكة نقاط، وخطان منجرفان، وبقعة زاوية، ونص شبحي، وبطاقة بطل عائمة بنقش نصف تونيّ مع أيقونة، ومدار وانفجار نجمي، وعنوان مقنَّع. تم التحقق هنا: 6 إطارات متمايزة بين 0.1 و6.5 ث. — Second seekable Canvas renderer for the viral-editorial-3d profile: palette background, dot grid, two drifting lines, corner blob, ghost type, floating halftone hero card with icon, orbit + starburst, masked headline. Verified here: 6 distinct frames across 0.1–6.5 s.
 
 **متى:** عند طلب فيديو بأسلوب كولاج تحريري: بطاقة هالفتون عائمة وعنوان مقنّع وخلفية منقطة / when a video needs an editorial collage look: floating halftone card, masked headline and dot grid
 
@@ -28098,7 +28098,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | Apache-2.0 |
 
-**ما هي:** Registry units derive every frame from timeline time alone (seeded hashes, closed-form noise, quantised boil, paused GSAP) so any frame renders identically in parallel capture.
+**ما هي:** تشتق وحدات السجل كل إطار من زمن الخط الزمني وحده (تجزئات مبذورة، وضجيج بصيغة مغلقة، وغليان مكمّى، وGSAP متوقف) فيُصيَّر أي إطار بالتطابق في الالتقاط المتوازي. — Registry units derive every frame from timeline time alone (seeded hashes, closed-form noise, quantised boil, paused GSAP) so any frame renders identically in parallel capture.
 
 **متى:** حين يجب أن يتطابق كل إطار عند الالتقاط المتوازي فتُحسب الجزيئات والاهتزاز من الزمن فقط / when every frame must match in parallel capture, so particles, shake and noise derive from time alone
 
@@ -28168,7 +28168,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Arabic-menu dispatcher over motion.py (new/frames/check/render/measure/lint/sheet/speed/beats/channels/inspect/montage/mocap), score.py, ambience.py, voice.py, reel.py, montage.py, decaption.py, transcribe.py; renders via HyperFrames CLI when installed else KOSIF Studio's own frame renderer.
+**ما هي:** موزّع بقائمة عربية فوق motion.py (new/frames/check/render/measure/lint/sheet/speed/beats/channels/inspect/montage/mocap) وscore.py وambience.py وvoice.py وreel.py وmontage.py وdecaption.py وtranscribe.py؛ ويصيّر عبر HyperFrames CLI إن ثُبّت وإلا بمُصيِّر إطارات KOSIF Studio نفسه. — Arabic-menu dispatcher over motion.py (new/frames/check/render/measure/lint/sheet/speed/beats/channels/inspect/montage/mocap), score.py, ambience.py, voice.py, reel.py, montage.py, decaption.py, transcribe.py; renders via HyperFrames CLI when installed else KOSIF Studio's own frame renderer.
 
 **متى:** عند الحاجة لصندوق أدوات واحد ينشئ ويصيّر ويقيس الإيقاع ويمنتج ويفرّغ الكلام / when one toolbox should create, render, detect beats, montage, add voice and transcribe from a single command
 
@@ -28237,7 +28237,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every tool behind one CLI; no args shows numbered Arabic menu.
+**ما هي:** كل الأدوات خلف CLI واحد؛ ودون معاملات تظهر قائمة عربية مرقّمة. — Every tool behind one CLI; no args shows numbered Arabic menu.
 
 **متى:** حين لا تعرف أي أمر تستخدم وتريد قائمة عربية مرقمة بكل الأدوات / when you are unsure which command to run and want a numbered Arabic menu of every tool
 
@@ -28304,7 +28304,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Any composition opened in a browser plays itself with play/pause/scrub, audio in sync — route C deliverable.
+**ما هي:** أي تركيب يُفتح في متصفح يعمل ذاتيًا مع تشغيل/إيقاف وتمرير وصوت متزامن — مُخرَج المسار C. — Any composition opened in a browser plays itself with play/pause/scrub, audio in sync — route C deliverable.
 
 **متى:** عند تسليم التركيب كصفحة تعمل وحدها في المتصفح بتشغيل وإيقاف وتقديم وصوت متزامن / when delivering a composition as a self-playing browser page with play/pause, scrub and synced audio (route C)
 
@@ -28369,7 +28369,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Studio project JSON → timeline spec for full FFmpeg render.
+**ما هي:** JSON مشروع Studio ← مواصفة خط زمني لتصيير FFmpeg كامل. — Studio project JSON → timeline spec for full FFmpeg render.
 
 **متى:** حين تريد تحويل مشروع Studio من المتصفح إلى ملف timeline لتصييره كاملًا بـ FFmpeg / when converting a browser Studio project JSON into a timeline spec for a full FFmpeg render
 
@@ -28436,7 +28436,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Builds full zip or ≤200-file claude.ai upload, description ≤1024 chars.
+**ما هي:** يبني zip كاملًا أو رفعًا إلى claude.ai بحد أقصى 200 ملف، والوصف ≤1024 حرفًا. — Builds full zip or ≤200-file claude.ai upload, description ≤1024 chars.
 
 **متى:** عند تجهيز ملف مضغوط للرفع على claude.ai بحد 200 ملف ووصف لا يتجاوز 1024 حرفًا / when packaging a zip for claude.ai upload within 200 files and a 1024-character description
 
@@ -28504,7 +28504,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Turns any function of time into GSAP keyframes so code-driven motion stays seek-safe.
+**ما هي:** يحوّل أي دالة في الزمن إلى إطارات مفتاحية GSAP فتبقى الحركة المبنية بالشيفرة آمنة للتنقل. — Turns any function of time into GSAP keyframes so code-driven motion stays seek-safe.
 
 **متى:** حين تكتب حركة بدالة في الزمن وتريد تحويلها إلى مفاتيح GSAP تبقى صالحة للتقديم / when motion is written as a function of time and must become GSAP keyframes that stay seek-safe
 
@@ -28572,7 +28572,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic random numbers so the same seed always gives the same film; no Math.random anywhere.
+**ما هي:** أرقام عشوائية حتمية فيعطي البذر نفسه الفيلم نفسه؛ ولا Math.random في أي مكان. — Deterministic random numbers so the same seed always gives the same film; no Math.random anywhere.
 
 **متى:** عند استخدام عشوائية في الحركة أو المشاهد ثلاثية الأبعاد مع ضمان النتيجة نفسها كل مرة / when using randomness in motion or 3D scenes while keeping the exact same film every render
 
@@ -28641,7 +28641,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Deterministic three.js renderer: shadows on, pixel ratio 1, preserveDrawingBuffer, choice of tone mapping.
+**ما هي:** مُصيِّر three.js حتمي: ظلال مفعّلة، ونسبة بكسل 1، وpreserveDrawingBuffer، واختيار تعيين النغمات. — Deterministic three.js renderer: shadows on, pixel ratio 1, preserveDrawingBuffer, choice of tone mapping.
 
 **متى:** حين تحتاج مصيّر three.js حتميًا بظلال واختيار tone mapping للنار والنيون أو للمنتجات / when a deterministic three.js renderer needs shadows and a tone-mapping choice for fire, neon or products
 
@@ -28710,7 +28710,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Bloom + grade/vignette/grain only, a fraction of makePost cost; same interface for makeFrameLoop; falls back to plain render.
+**ما هي:** توهج + تدريج/تعتيم أطراف/حبيبات فقط، بجزء من كلفة makePost؛ بالواجهة نفسها لـ makeFrameLoop؛ ويعود إلى التصيير العادي عند الفشل. — Bloom + grade/vignette/grain only, a fraction of makePost cost; same interface for makeFrameLoop; falls back to plain render.
 
 **متى:** عند الحاجة لتوهج وتلوين وحبيبات بتكلفة أقل من المعالجة الكاملة في مشهد ثلاثي الأبعاد / when a 3D scene needs bloom, grade, vignette and grain at a fraction of the full post stack's cost
 
@@ -28777,7 +28777,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** makePost tuned for fast software GL: bloom low, rays off, DOF opt-in.
+**ما هي:** makePost مضبوط لـ GL البرمجي السريع: توهج منخفض، وأشعة مطفأة، وعمق الميدان اختياري. — makePost tuned for fast software GL: bloom low, rays off, DOF opt-in.
 
 **متى:** حين يُصيَّر مشهد المختبر على GL برمجي بطيء ويحتاج معالجة خفيفة مع عمق ميدان اختياري / when a lab scene renders on slow software GL and needs light post with optional depth of field
 
@@ -28844,7 +28844,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** When film.py --draft sets window.__draftScale the GL buffer shrinks so 3D drafts render faster.
+**ما هي:** حين يضبط film.py --draft المتغير window.__draftScale تتقلص مخزن GL فتُصيَّر مسودات الثلاثي الأبعاد أسرع. — When film.py --draft sets window.__draftScale the GL buffer shrinks so 3D drafts render faster.
 
 **متى:** عند الحاجة لمسودة سريعة لمشهد ثلاثي الأبعاد قبل التصيير النهائي بالدقة الكاملة / when you need a quick lower-resolution draft of a 3D scene before the full final render
 
@@ -28912,7 +28912,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One canvas, a SCENES list of draw(t) functions, window.seek(t) paints any frame exactly; includes closed-form spring, expo-out, exit ease, seeded rng and a BPM clock.
+**ما هي:** لوحة واحدة وقائمة SCENES من دوال draw(t)، وwindow.seek(t) يرسم أي إطار بدقة؛ وتشمل نابضًا بصيغة مغلقة وexpo-out وتخفيف خروج وrng مبذورًا وساعة BPM. — One canvas, a SCENES list of draw(t) functions, window.seek(t) paints any frame exactly; includes closed-form spring, expo-out, exit ease, seeded rng and a BPM clock.
 
 **متى:** حين تبني فيلم canvas من مشاهد draw(t) مع زنبرك وتسهيل خروج وساعة إيقاع BPM / when building a canvas film from draw(t) scenes with spring, expo-out easing and a BPM clock
 
@@ -28981,7 +28981,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** 2D motion film drawn by Pillow, five-beat titles, cycled accents, works in cloud.
+**ما هي:** فيلم حركة ثنائي الأبعاد يرسمه Pillow، بعناوين من خمس ضربات وألوان مميزة متناوبة، ويعمل في السحابة. — 2D motion film drawn by Pillow, five-beat titles, cycled accents, works in cloud.
 
 **متى:** عند طلب فيلم موشن ثنائي الأبعاد بعناوين وألوان متناوبة يعمل على السحابة دون متصفح / when you need a 2D motion film with titles and cycled accent colours that runs in the cloud without a browser
 
@@ -29049,7 +29049,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Declarative edit with Arabic text overlays, lower thirds, logos, progress bar, karaoke, music.
+**ما هي:** مونتاج تصريحي بطبقات نص عربية وشرائط سفلية وشعارات وشريط تقدم وكاريوكي وموسيقى. — Declarative edit with Arabic text overlays, lower thirds, logos, progress bar, karaoke, music.
 
 **متى:** حين يريد المستخدم مونتاجًا بنصوص عربية وعناوين سفلية وشعار وكاريوكي وموسيقى من وصف JSON / when the user wants an edit with Arabic overlays, lower thirds, logo, karaoke and music from a JSON spec
 
@@ -29116,7 +29116,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Browser editor JSON → timeline spec for offline render.
+**ما هي:** JSON محرر المتصفح ← مواصفة خط زمني للتصيير دون اتصال. — Browser editor JSON → timeline spec for offline render.
 
 **متى:** عند تحويل مشروع محرر المتصفح JSON إلى ملف تعديل لتصييره خارج المتصفح / when turning a browser editor project JSON into an edit spec for an offline render
 
@@ -29184,7 +29184,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Classifies an existing composition so the right renderer is used: 3D if it uses three-kit or window.K3, canvas if it exposes window.seek, manifest if built from the Workbench, else 2D; reads data-width/data-height for size and the duration from the page.
+**ما هي:** يصنّف تركيبًا قائمًا ليُستخدم المُصيِّر الصحيح: ثلاثي الأبعاد إن استخدم three-kit أو window.K3، وcanvas إن كشف window.seek، وmanifest إن بُني من Workbench، وإلا ثنائي الأبعاد؛ ويقرأ data-width/data-height للحجم والمدة من الصفحة. — Classifies an existing composition so the right renderer is used: 3D if it uses three-kit or window.K3, canvas if it exposes window.seek, manifest if built from the Workbench, else 2D; reads data-width/data-height for size and the duration from the page.
 
 **متى:** حين يجب معرفة نوع تركيب موجود (ثلاثي الأبعاد أو canvas أو manifest أو ثنائي) لاختيار المصيّر / when an existing composition must be classified (3D, canvas, manifest, 2D) to pick the right renderer
 
@@ -29251,7 +29251,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** A five-button flow in the site: make a plan, validate it, compile the manifest, scrub a canvas preview, render a local MP4 and turn the manifest into an editable project.
+**ما هي:** مسار من خمسة أزرار في الموقع: إعداد خطة، والتحقق منها، وتجميع البيان، وتمرير معاينة اللوحة، وتصيير MP4 محلي، وتحويل البيان إلى مشروع قابل للتحرير. — A five-button flow in the site: make a plan, validate it, compile the manifest, scrub a canvas preview, render a local MP4 and turn the manifest into an editable project.
 
 **متى:** عند تحويل وصف مهمة إلى خطة ثم معاينة وMP4 ومشروع قابل للتعديل بخمسة أزرار في الموقع / when turning a task into a plan, preview, local MP4 and editable project through a five-button site flow
 
@@ -29319,7 +29319,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Any composition page that exposes window.render(t), window.__duration and window.__ready (and a ?capture mode without UI) can be rendered frame-exactly by the engine; preview players use requestAnimationFrame only for playback.
+**ما هي:** أي صفحة تركيب تكشف window.render(t) وwindow.__duration وwindow.__ready (ونمط ?capture دون واجهة) يستطيع المحرك تصييرها بدقة الإطار؛ وتستخدم مشغّلات المعاينة requestAnimationFrame للتشغيل فقط. — Any composition page that exposes window.render(t), window.__duration and window.__ready (and a ?capture mode without UI) can be rendered frame-exactly by the engine; preview players use requestAnimationFrame only for playback.
 
 **متى:** حين تكتب صفحة تركيب HTML وتريد أن يصيّرها المحرك بدقة الإطار عبر window.render / when writing an HTML composition page that the engine should render frame-exactly via window.render(t)
 
@@ -29386,7 +29386,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every HTML animation is written as a pure function of time so frame N always looks identical no matter how slowly it is captured; the page signals readiness with window.__ready.
+**ما هي:** تُكتب كل حركة HTML كدالة خالصة في الزمن فيبدو الإطار N متطابقًا مهما كان الالتقاط بطيئًا؛ وتشير الصفحة إلى جاهزيتها بـ window.__ready. — Every HTML animation is written as a pure function of time so frame N always looks identical no matter how slowly it is captured; the page signals readiness with window.__ready.
 
 **متى:** عند كتابة انيميشن HTML يجب أن يبدو كل إطار فيه متطابقًا مهما كان الالتقاط بطيئًا / when writing an HTML animation whose every frame must look identical no matter how slowly it is captured
 
@@ -29455,7 +29455,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** One command creates a ready-to-capture animation project folder from a 2D kinetic or 3D cinema template with title, size, duration and fps baked in.
+**ما هي:** أمر واحد ينشئ مجلد مشروع حركة جاهزًا للالتقاط من قالب حركي ثنائي الأبعاد أو سينما ثلاثية الأبعاد، مع العنوان والحجم والمدة وfps مدمجة فيه. — One command creates a ready-to-capture animation project folder from a 2D kinetic or 3D cinema template with title, size, duration and fps baked in.
 
 **متى:** حين يريد المستخدم بدء مشروع أنيميشن جديد ثنائي أو ثلاثي الأبعاد بمقاس ومدة محددين / when starting a new 2D or 3D animation project with a set ratio, duration and fps
 
@@ -29526,7 +29526,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Encodes the captured frame sequence into a phone-compatible MP4, optionally muxing a soundtrack, and writes a contact sheet.
+**ما هي:** يرمّز تسلسل الإطارات الملتقطة في MP4 متوافق مع الهاتف، ويدمج مقطعًا صوتيًا اختياريًا، ويكتب ورقة اتصال. — Encodes the captured frame sequence into a phone-compatible MP4, optionally muxing a soundtrack, and writes a contact sheet.
 
 **متى:** عند تحويل الإطارات الملتقطة إلى فيديو MP4 يعمل على الجوال مع دمج موسيقى اختياري / when turning captured PNG frames into a phone-ready MP4 with an optional soundtrack
 
@@ -29595,7 +29595,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Samples any function of t at 60 Hz into GSAP keyframes so complex procedural motion remains seekable.
+**ما هي:** يأخذ عينات من أي دالة في t بتردد 60 هرتز إلى إطارات GSAP مفتاحية فتبقى الحركة الإجرائية المعقدة قابلة للتنقل. — Samples any function of t at 60 Hz into GSAP keyframes so complex procedural motion remains seekable.
 
 **متى:** حين تكون الحركة معادلة رياضية معقدة ويجب أن تبقى قابلة للتقديم والترجيع على التايملاين / when complex procedural motion defined as a function of time must stay seekable on a GSAP timeline
 
@@ -29663,7 +29663,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Every random choice comes from a seeded generator so a re-render is identical frame for frame.
+**ما هي:** كل اختيار عشوائي يأتي من مولّد مبذور فتكون إعادة التصيير مطابقة إطارًا بإطار. — Every random choice comes from a seeded generator so a re-render is identical frame for frame.
 
 **متى:** حين يجب أن يخرج الرندر متطابقًا كل مرة رغم وجود اختيارات عشوائية / when random choices must still give an identical re-render frame for frame
 
@@ -29729,7 +29729,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Opened in a normal browser, a composition plays in real time with audio/footage, scaled to the window, with play/pause, scrub and space-bar.
+**ما هي:** عند فتحه في متصفح عادي يعمل التركيب بالزمن الحقيقي مع الصوت/اللقطات، مقيسًا إلى النافذة، مع تشغيل/إيقاف وتمرير ومفتاح المسافة. — Opened in a normal browser, a composition plays in real time with audio/footage, scaled to the window, with play/pause, scrub and space-bar.
 
 **متى:** عند معاينة التركيب في المتصفح مباشرة بتشغيل وإيقاف وسحب على الشريط قبل الرندر / when previewing a composition live in a browser with play, pause and scrubbing
 
@@ -29797,7 +29797,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** render(t) accumulates k sub-frames in a half-float target: averaged for true shutter blur, or max-blended ('lighten') for light trails / star trails / light painting.
+**ما هي:** يجمع render(t) عدد k إطارًا فرعيًا في هدف بنقطة عائمة نصفية الدقة: بالمتوسط لتمويه غالق حقيقي، أو بالدمج الأقصى ('lighten') لآثار الضوء والنجوم والرسم بالضوء. — render(t) accumulates k sub-frames in a half-float target: averaged for true shutter blur, or max-blended ('lighten') for light trails / star trails / light painting.
 
 **متى:** حين يطلب المستخدم تمويه حركة حقيقيًا أو آثار ضوء ممتدة مثل مسارات النجوم والرسم بالضوء / when the user wants real shutter motion blur, light trails, star trails or light painting
 
@@ -29866,7 +29866,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Creates a ready composition project from a template: flat HyperFrames/GSAP, cinematic Three.js on three-kit, a single-canvas seek(t) page, or the product-lab look.
+**ما هي:** ينشئ مشروع تركيب جاهزًا من قالب: HyperFrames/GSAP مسطّح، أو Three.js سينمائي على three-kit، أو صفحة لوحة واحدة seek(t)، أو مظهر معمل المنتجات. — Creates a ready composition project from a template: flat HyperFrames/GSAP, cinematic Three.js on three-kit, a single-canvas seek(t) page, or the product-lab look.
 
 **متى:** عند بدء تركيب موشن جديد من قالب جاهز مسطح أو سينمائي ثلاثي الأبعاد أو كانفس / when starting a new motion composition from a flat, cinematic 3D, canvas or lab template
 
@@ -29939,7 +29939,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Reports Python libs, FFmpeg, a Chromium-family browser, Node, faster-whisper models, OS voices, GPU, and picks a route.
+**ما هي:** يبلّغ عن مكتبات Python وFFmpeg ومتصفح من عائلة Chromium وNode ونماذج faster-whisper وأصوات النظام وGPU، ويختار مسارًا. — Reports Python libs, FFmpeg, a Chromium-family browser, Node, faster-whisper models, OS voices, GPU, and picks a route.
 
 **متى:** قبل أي رندر لمعرفة ما يتوفر على الجهاز من متصفح وFFmpeg وغيرهما واختيار المسار المناسب / before rendering, to see what the machine has (browser, FFmpeg, Node, GPU) and pick a route
 
@@ -30009,7 +30009,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Single entry point grouping create, sound, edit, check and draw commands with an Arabic numbered menu.
+**ما هي:** نقطة دخول واحدة تجمع أوامر الإنشاء والصوت والمونتاج والفحص والرسم بقائمة عربية مرقّمة. — Single entry point grouping create, sound, edit, check and draw commands with an Arabic numbered menu.
 
 **متى:** حين يريد المستخدم قائمة عربية مرقمة واحدة لكل أوامر الإنشاء والصوت والمونتاج والفحص والرسم / when the user wants one Arabic numbered menu for create, sound, edit, check and draw commands
 
@@ -30078,7 +30078,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Turns any AI-written SVG into paint steps (shapes, transforms, CSS, gradients, Arabic text) that render at any size.
+**ما هي:** يحوّل أي SVG كتبه ذكاء اصطناعي إلى خطوات رسم (أشكال وتحويلات وCSS وتدرجات ونص عربي) تُصيَّر بأي حجم. — Turns any AI-written SVG into paint steps (shapes, transforms, CSS, gradients, Arabic text) that render at any size.
 
 **متى:** عند تحويل ملف SVG كتبه ذكاء اصطناعي إلى خطوات رسم تظهر بأي مقاس / when turning an AI-written SVG into paint steps that render at any size
 
@@ -30145,7 +30145,7 @@
 | نطاق الدليل | `sibling` |
 | الرخصة | owner |
 
-**ما هي:** Runs SVG, KOSIF scenes, PIL (each draw command recorded in order), matplotlib or turtle code in its own process and emits paint jobs.
+**ما هي:** يشغّل شيفرة SVG ومشاهد KOSIF وPIL (يُسجَّل كل أمر رسم بالترتيب) وmatplotlib وturtle في عملية مستقلة ويصدر مهام رسم. — Runs SVG, KOSIF scenes, PIL (each draw command recorded in order), matplotlib or turtle code in its own process and emits paint jobs.
 
 **متى:** حين يعطي الذكاء الاصطناعي كود رسم بـ PIL أو matplotlib أو turtle ونريد تحويله لخطوات رسم مرتبة / when AI drawing code (SVG, PIL, matplotlib, turtle) must run and become ordered paint jobs
 
@@ -30634,7 +30634,7 @@
 
 **ما هي:** أمر واحد يبيّن أيّ أدوات خريطة الأدوات مثبّتة هنا (node، ffmpeg/ffprobe، Playwright وChromium، Remotion، git، yt-dlp، whisper وأصنافه، OpenCV، PySceneDetect، Pillow، numpy، arabic-reshaper، ImageMagick، Blender، GPU) مع تلميح التثبيت؛ الخطة لا تعِد إلا بما هو ✓. — One command lists which catalog tools exist on this machine with install hints; a plan promises only what is marked present.
 
-**متى:** before writing 'install first' or promising Remotion/Whisper/OpenCV in a plan
+**متى:** قبل كتابة «ثبّت أولًا» أو الوعد بـ Remotion/Whisper/OpenCV في خطة / before writing 'install first' or promising Remotion/Whisper/OpenCV in a plan
 
 **كيف:** `python3 .claude/skills/kosif-superpowers/scripts/superpowers.py doctor [--json \| --strict]`; the same CLI searches the 125-repository tool map: `list --capability voice`, `search محاذاة كلمات`, `show SYSTRAN/faster-whisper`, and keeps references/repos.md derived from repos.json with `build` / `check` (CI-safe).
 
@@ -30714,7 +30714,7 @@
 
 **ما هي:** خط أنابيب بايثون كامل داخل المهارة: تحليل المرجع (لقطات، انتقالات، طبقة نص بألفا حقيقية وظل بالمربعات الصغرى، مطابقة خط، مظهر لوني) ثم بناء بإطار واحد لكل إطار مرجعي: نقل لوني Reinhard كـLUT، كين بيرنز، الانتقال بمنحناه المقاس، تعتيم وحبيبات معايرة، والنص بالخط المطابَق وحركته المقاسة، والصوت الأصلي منسوخًا بلا إعادة ترميز. — A complete Python pipeline inside the skill: analyse the reference (shots, transitions, text layer with true alpha and least-squares shadow, font match, colour look) then rebuild frame for frame: Reinhard LUT grade, Ken Burns, the transition with its measured curve, solved vignette and calibrated grain, text in the matched font with its measured motion, and the original audio stream copied untouched.
 
-**متى:** the user says 'make me this video but with my clips' (Pinterest-style dua reels, quote videos)
+**متى:** حين يقول المستخدم «اصنع لي هذا الفيديو بمقاطعي» (ريلز أدعية بنمط Pinterest، وفيديوهات اقتباسات) / the user says 'make me this video but with my clips' (Pinterest-style dua reels, quote videos)
 
 **كيف:** Read `references/mimic.md`. `mm_analyze.analyze('ref.mp4','work')` → review `work/analysis.md` and `work/sheets/` → fill `shots[].replacement.path` from the user's or licensed clips (never scraped) → `mm_build.build('work', preview=True)` then full → `tools/verify_video.py`. `placeholder=True` drafts without footage.
 

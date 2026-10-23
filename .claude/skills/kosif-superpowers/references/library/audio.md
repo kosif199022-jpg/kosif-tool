@@ -55,6 +55,7 @@
 | `repo-words-convert` | محوّل الترجمات إلى توقيت الكلمات | `python3 tools/words_convert.py ./captions.srt ./words.json` | tested-here |
 | `starter-html-canvas` | قالب فيلم HTML Canvas | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `starter-remotion` | قالب فيلم Remotion | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | tested-elsewhere |
+| `tts-script` | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30` | tested-here |
 | `unified-cinematic` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `video-workflow-bridge` | جسر سير عمل الفيديو | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |
 
