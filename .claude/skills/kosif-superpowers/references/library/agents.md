@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 86 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 87 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 5 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 57 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 8 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **158** | |
+| **المجموع** | **159** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -78,7 +78,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 46 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 69 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 70 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -147,6 +147,7 @@
 | `TOOL-67` | مصحّح الامتحان الخفي التفاضلي | Differential hidden-exam scorer | proven | python3 |
 | `TOOL-68` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | proven | python3 |
 | `TOOL-69` | محرك التفكير وقوالبه | Thinking engine scaffolds | proven | python3 |
+| `TOOL-70` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog | proven | python3, chromium |
 | `SELF-05` | اقرأ قائمة أدواتك | Read your own tool list | proven | pip:higgsfield, key:graphify |
 | `SELF-06` | حمّل الأدوات المؤجلة بـToolSearch | Load deferred tools with ToolSearch | proven | claude:tools |
 | `SELF-07` | جرد خوادم MCP وتكلفتها | MCP server inventory with cost flags | proven | pip:higgsfield, key:unspecified |

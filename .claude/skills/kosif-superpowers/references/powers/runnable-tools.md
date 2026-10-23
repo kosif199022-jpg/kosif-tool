@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **69 powers follow** — ✅ 59 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **70 powers follow** — ✅ 60 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -22,7 +22,7 @@
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-67 (6)
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-60 (6)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-41 (6)
-- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-61 (2)
+- **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-70 (3)
 - **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-51 (9)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
@@ -556,6 +556,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_telegram_typography_atlas.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/telegram_typography_atlas.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-70 · مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يجد أي أسلوب من 586 بالرقم أو الاسم العربي أو الإنجليزي أو بكلمات حرة: 86 طريقة معاد صياغتها من أطلس Futurepedia و500 أسلوب أصلي من KOSIF في 20 مجموعة. يطبع بطاقة الأسلوب (الشكل والمنطق والألوان والملمس والتكوين)، ويملأ وصفة البرومنت لموضوعك مع أسلوب ثانٍ بنسبة 30% اختياريًا، ويرسم عينة SVG إجرائية ثابتة، ويبني كتالوجًا مصورًا HTML وPDF. — Looks up any of 586 visual styles by id, English or Arabic name or free words: the 86 paraphrased Futurepedia AI Style Atlas methods and 500 original KOSIF styles in 20 groups (Arabic heritage, world crafts, material fusion, scientific imaging, natural process, architecture, futures, print, optics, textile, edible media, toys, interfaces, cartography, motion and time, sound, folk art, type and calligraphy, generative systems, cinematic genres). Prints a style card (look, logic, palette, texture, composition), fills its prompt recipe for a subject with an optional 30% accent style, draws a deterministic procedural SVG swatch, and builds an illustrated catalog (HTML, and PDF through headless Chromium).
+- **متى أستخدمها / when:** عايز أسلوب زليج النجوم لصورة / Describe the Cyanotype Sunprint style and give me a prompt
+- **كيف / how:** groups: `python3 scripts/style_library.py groups`; find: `python3 scripts/style_library.py find "خط عربي نيون"`; describe: `python3 scripts/style_library.py describe KS-001`; prompt: `python3 scripts/style_library.py prompt KS-001 --subject "a reading corner" --mix FA-12`. Full card: `python3 scripts/hub.py tool style-library`. Limits: Swatches are procedural sketches of a style's palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a real film or image. For a finished frame, feed the prompt to an image tool you choose, or build the scene with the motion engines. **أرقام / params:** in: data/style_library_500.json, data/futurepedia_style_atlas_86.json, a style name or words, a subject · out: Style cards, filled prompts, SVG swatches, an illustrated HTML catalog and PDF
+- **تثبيت / install:** `optional: node + playwright (Chromium) for catalog --pdf`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/style_library.py`
+- **المصدر / source:** data/tools.json
+
 ## Sources and references / المصادر والمراجع
 
 #### TOOL-43 · بحث مهارات أطلس الخارجية · Atlas external skill search · ✅ مُثبت هنا / proven here
@@ -648,7 +657,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (69)
+- الرخص / licences: — (70)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

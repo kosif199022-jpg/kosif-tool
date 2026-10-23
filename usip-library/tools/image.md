@@ -1,4 +1,4 @@
-# أدوات المجال `image` (9 أداة)
+# أدوات المجال `image` (10 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -395,6 +395,61 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:render-text --evidence <ملف>`.
+
+### `style-library` — مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر / Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/style_library.py` (جذر: skill) |
+| المجال | `image` |
+| الدليل | `tested-here` |
+| العائلات | `prompt-craft`, `color-palette-grading`, `texture-material` |
+
+**ما تفعله:** يجد أي أسلوب من 586 بالرقم أو الاسم العربي أو الإنجليزي أو بكلمات حرة: 86 طريقة معاد صياغتها من أطلس Futurepedia و500 أسلوب أصلي من KOSIF في 20 مجموعة. يطبع بطاقة الأسلوب (الشكل والمنطق والألوان والملمس والتكوين)، ويملأ وصفة البرومنت لموضوعك مع أسلوب ثانٍ بنسبة 30% اختياريًا، ويرسم عينة SVG إجرائية ثابتة، ويبني كتالوجًا مصورًا HTML وPDF.
+
+**What it does:** Looks up any of 586 visual styles by id, English or Arabic name or free words: the 86 paraphrased Futurepedia AI Style Atlas methods and 500 original KOSIF styles in 20 groups (Arabic heritage, world crafts, material fusion, scientific imaging, natural process, architecture, futures, print, optics, textile, edible media, toys, interfaces, cartography, motion and time, sound, folk art, type and calligraphy, generative systems, cinematic genres). Prints a style card (look, logic, palette, texture, composition), fills its prompt recipe for a subject with an optional 30% accent style, draws a deterministic procedural SVG swatch, and builds an illustrated catalog (HTML, and PDF through headless Chromium).
+
+#### متى تُستدعى
+
+- «عايز أسلوب زليج النجوم لصورة»
+- «ورّيني أساليب الخط العربي النيون»
+- «ابعت لي كتالوج الأساليب PDF»
+- «Describe the Cyanotype Sunprint style and give me a prompt»
+- «Find a visual style for a food poster»
+
+#### الأوامر
+
+- **groups**: Lists the 34 groups (14 Futurepedia families + 20 KOSIF groups) with counts.
+  - `python3 scripts/style_library.py groups`
+- **find**: Ranks styles by Arabic or English words over names, look, logic, motif and group.
+  - `python3 scripts/style_library.py find "خط عربي نيون"`
+- **describe**: Prints one style card by id, slug, English or Arabic name.
+  - `python3 scripts/style_library.py describe KS-001`
+- **prompt**: Fills the style's prompt recipe for a subject, with an optional 30% accent style and a negative line.
+  - `python3 scripts/style_library.py prompt KS-001 --subject "a reading corner" --mix FA-12`
+- **swatch**: Writes one deterministic procedural SVG sample (refuses to overwrite).
+  - `python3 scripts/style_library.py swatch KS-001 --out out/styles/ks-001.svg`
+- **catalog**: Writes every swatch and an illustrated index.html; with --pdf renders JPEG swatches and an A4 PDF through headless Chromium, and --split-groups adds one PDF per group.
+  - `python3 scripts/style_library.py catalog --out out/styles/catalog --pdf out/styles/catalog.pdf --split-groups`
+- **self-test**: Offline checks of the data, lookups, prompts and swatch determinism.
+  - `python3 scripts/style_library.py self-test`
+
+#### المتطلبات والأمان
+
+- optional: node + playwright (Chromium) for catalog --pdf
+- الأمان: writes-files
+- الموافقة: Writes only to the output path or new/empty folder you name; refuses to overwrite; no network, no paid generator, no third-party media.
+- الحدود: Swatches are procedural sketches of a style's palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a real film or image. For a finished frame, feed the prompt to an image tool you choose, or build the scene with the motion engines.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_style_library.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/image.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A15-futurepedia-style-atlas.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:style-library --evidence <ملف>`.
 
 ### `telegram-typography-atlas` — مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام / KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search
 

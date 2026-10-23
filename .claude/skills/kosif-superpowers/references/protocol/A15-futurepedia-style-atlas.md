@@ -13,9 +13,10 @@
 5. [Finishing passes and render techniques](#finishing-passes-and-render-techniques)
 6. [Sound design](#sound-design)
 7. [Catalog: 86 methods in 14 families](#catalog-86-methods-in-14-families)
-8. [Commands](#commands)
-9. [Acceptance gates](#acceptance-gates)
-10. [Refreshing the catalog](#refreshing-the-catalog)
+8. [Beyond the 86: the 586-style library](#beyond-the-86-the-586-style-library)
+9. [Commands](#commands)
+10. [Acceptance gates](#acceptance-gates)
+11. [Refreshing the catalog](#refreshing-the-catalog)
 
 ## Provenance and boundary
 
@@ -233,6 +234,10 @@ Use `KSound` names that match the medium (chalk → `stroke {material:'chalk'}` 
 | FA-76 | Nail & Thread String Art | فن الخيوط والمسامير على خشب | Caveat | PX, BLUR, RAD, LIN, NOISE |
 | FA-81 | Guilloché Security Print | زخرفة غيلوشيه كالعملات الورقية | Cormorant Garamond, Courier Prime, Inter | LIN, GRAIN, PAPER, VIG, CLIP |
 | FA-86 | Multi-scale Truchet | تبليط تروشيه متعدد المقاييس | Rubik Mono One | PX, NOISE, GRAIN, VIG, CLIP |
+
+## Beyond the 86: the 586-style library
+
+The 86 methods also live in the style library (`scripts/style_library.py`), next to 500 original KOSIF styles in 20 groups, each with a look, its logic, a palette, a texture, a composition motif, a prompt recipe and a procedural swatch; `catalog --pdf` prints an illustrated catalog of all 586. Use the library to pick and describe a look; use this appendix's engine to turn it into an explainer film. Guide: [image.md § style library](../guides/image.md#مكتبة-الأساليب--style-library-586-styles).
 
 ## Commands
 

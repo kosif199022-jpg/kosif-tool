@@ -1,12 +1,12 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5492,
-"distinct_methods": 5223,
+"atoms": 5496,
+"distinct_methods": 5227,
 "twin_groups": 170,
 "superpowers": 454,
 "per_target": 12,
-"fusion_ratio": 12.1,
-"atlas_folded_into_native": 51,
+"fusion_ratio": 12.11,
+"atlas_folded_into_native": 52,
 "tiny_absorbed": 22,
 "lookalikes_unified": 7,
 "graph_components": 1,
@@ -1196,7 +1196,7 @@
 },
 {
 "id": "SP-0145",
-"sim": 0.048
+"sim": 0.049
 }
 ]
 },
@@ -1317,16 +1317,16 @@
 "requires": [],
 "pipeline": [
 {
-"id": "IDEA-19",
-"status": "documented",
-"name_en": "Anti-cliché sweep (generic 'AI look' check)",
-"name_ar": "مسح الكليشيهات"
-},
-{
 "id": "IDEA-18",
 "status": "documented",
 "name_en": "Show, don't ask: three style previews",
 "name_ar": "اعرض ولا تسأل: ثلاث معاينات"
+},
+{
+"id": "IDEA-19",
+"status": "documented",
+"name_en": "Anti-cliché sweep (generic 'AI look' check)",
+"name_ar": "مسح الكليشيهات"
 }
 ],
 "proof": [],
@@ -1343,11 +1343,11 @@
 },
 {
 "id": "SP-0155",
-"sim": 0.102
+"sim": 0.101
 },
 {
-"id": "SP-0343",
-"sim": 0.09
+"id": "SP-0034",
+"sim": 0.091
 }
 ]
 },
@@ -1559,16 +1559,16 @@
 "name_ar": "المبادئ الأولى"
 },
 {
-"id": "MODEL-26",
-"status": "documented",
-"name_en": "Critical path",
-"name_ar": "المسار الحرج"
-},
-{
 "id": "MODEL-09",
 "status": "documented",
 "name_en": "Base rates",
 "name_ar": "المعدلات الأساسية"
+},
+{
+"id": "MODEL-26",
+"status": "documented",
+"name_en": "Critical path",
+"name_ar": "المسار الحرج"
 },
 {
 "id": "MODEL-50",
@@ -1743,7 +1743,7 @@
 },
 {
 "id": "SP-0016",
-"sim": 0.306
+"sim": 0.307
 },
 {
 "id": "SP-0014",
@@ -1980,7 +1980,7 @@
 },
 {
 "id": "SP-0013",
-"sim": 0.306
+"sim": 0.307
 },
 {
 "id": "SP-0141",
@@ -2077,12 +2077,6 @@
 "name_ar": "تخطيط بأسلوب Heuer: اختبار الافتراضات دون مجاملة"
 },
 {
-"id": "PLAN-09",
-"status": "documented",
-"name_en": "Scenario grid and robust moves",
-"name_ar": "سيناريوهات المستقبل والحركات المتينة"
-},
-{
 "id": "PLAN-02",
 "status": "documented",
 "name_en": "Backcasting from the end state",
@@ -2093,6 +2087,12 @@
 "status": "documented",
 "name_en": "Parallel lanes for agents and workflows",
 "name_ar": "توزيع العمل على وكلاء متوازيين"
+},
+{
+"id": "PLAN-09",
+"status": "documented",
+"name_en": "Scenario grid and robust moves",
+"name_ar": "سيناريوهات المستقبل والحركات المتينة"
 },
 {
 "id": "PLAN-03",
@@ -2118,11 +2118,11 @@
 "sim": 0.145
 },
 {
-"id": "SP-0015",
+"id": "SP-0138",
 "sim": 0.141
 },
 {
-"id": "SP-0138",
+"id": "SP-0015",
 "sim": 0.141
 }
 ]
@@ -2438,7 +2438,7 @@
 "links": [
 {
 "id": "SP-0353",
-"sim": 0.181
+"sim": 0.18
 },
 {
 "id": "SP-0024",
@@ -3019,7 +3019,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.216
+"sim": 0.211
 },
 {
 "id": "SP-0061",
@@ -3395,11 +3395,11 @@
 "sim": 0.255
 },
 {
-"id": "SP-0035",
-"sim": 0.1
+"id": "SP-0124",
+"sim": 0.095
 },
 {
-"id": "SP-0124",
+"id": "SP-0034",
 "sim": 0.094
 },
 {
@@ -3488,16 +3488,16 @@
 "sim": 0.2
 },
 {
-"id": "SP-0035",
-"sim": 0.137
-},
-{
 "id": "SP-0056",
 "sim": 0.122
 },
 {
 "id": "SP-0340",
 "sim": 0.105
+},
+{
+"id": "SP-0027",
+"sim": 0.086
 }
 ]
 },
@@ -3549,16 +3549,16 @@
 "name_ar": "أدوات CAMeL Tools الخفيفة بلا نماذج"
 },
 {
-"id": "ARL-03",
-"status": "proven",
-"name_en": "Clitic-aware Arabic word boundaries",
-"name_ar": "حدود الكلمة العربية مع السوابق"
-},
-{
 "id": "ARL-21",
 "status": "proven",
 "name_en": "spaCy: Tokenise Arabic and match rules (blank 'ar'); NER with downloaded models",
 "name_ar": "spaCy: تقطيع العربية ومطابقة القواعد؛ واستخراج الكيانات مع"
+},
+{
+"id": "ARL-03",
+"status": "proven",
+"name_en": "Clitic-aware Arabic word boundaries",
+"name_ar": "حدود الكلمة العربية مع السوابق"
 },
 {
 "id": "ARL-02",
@@ -3654,19 +3654,19 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/README.md",
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/arabic_probe.py",
-"kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py",
-"kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md"
+"kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/README.md",
+"kosif-tool/.claude/skills/kosif-superpowers/proofs/toolbelt-smoke/smoke.py"
 ],
 "twins": [],
 "distinct_methods": 19,
 "links": [
 {
 "id": "SP-0353",
-"sim": 0.286
+"sim": 0.285
 },
 {
 "id": "SP-0425",
-"sim": 0.236
+"sim": 0.235
 },
 {
 "id": "SP-0100",
@@ -3674,7 +3674,7 @@
 },
 {
 "id": "SP-0312",
-"sim": 0.223
+"sim": 0.222
 }
 ]
 },
@@ -3728,7 +3728,7 @@
 "links": [
 {
 "id": "SP-0133",
-"sim": 0.349
+"sim": 0.35
 },
 {
 "id": "SP-0323",
@@ -3867,7 +3867,7 @@
 "links": [
 {
 "id": "SP-0119",
-"sim": 0.562
+"sim": 0.561
 },
 {
 "id": "SP-0051",
@@ -3879,7 +3879,7 @@
 },
 {
 "id": "SP-0214",
-"sim": 0.14
+"sim": 0.141
 }
 ]
 },
@@ -3985,90 +3985,38 @@
 },
 {
 "id": "SP-0346",
-"sim": 0.151
+"sim": 0.15
 }
 ]
 },
 {
 "id": "SP-0033",
 "domain": "craft",
-"family": "atlas-craft",
-"name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق",
-"name_en": "Extract a writing style into a reusable style guide",
-"focus": [
-"style",
-"writing",
-"guide",
-"reusable"
-],
-"size": 1,
-"best": "documented",
-"status_mix": {
-"documented": 1
-},
-"ready_now": 0,
-"families": {
-"atlas-craft": 1
-},
-"atlas_folded": 1,
-"requires": [],
-"pipeline": [
-{
-"id": "ACRAFT-26",
-"status": "documented",
-"name_en": "Extract a writing style into a reusable style guide",
-"name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق"
-}
-],
-"proof": [],
-"twins": [],
-"distinct_methods": 1,
-"links": [
-{
-"id": "SP-0354",
-"sim": 0.347
-},
-{
-"id": "SP-0155",
-"sim": 0.301
-},
-{
-"id": "SP-0379",
-"sim": 0.254
-},
-{
-"id": "SP-0165",
-"sim": 0.146
-}
-]
-},
-{
-"id": "SP-0034",
-"domain": "craft",
 "family": "prompt-craft",
 "name_ar": "برومبت مولّد الصور",
 "name_en": "Image-generator prompt",
 "focus": [
 "prompt",
-"optimize",
 "claude",
-"adapters"
+"adapters",
+"preserve"
 ],
-"size": 18,
+"size": 17,
 "best": "proven",
 "status_mix": {
 "proven": 1,
-"documented": 17
+"ready": 1,
+"documented": 15
 },
-"ready_now": 1,
+"ready_now": 2,
 "families": {
-"prompt-craft": 17,
+"prompt-craft": 16,
 "atlas-craft": 1
 },
 "atlas_folded": 1,
 "requires": [
-"claude:tools",
 "python3",
+"claude:tools",
 "key:video-gen",
 "key:openai"
 ],
@@ -4078,6 +4026,12 @@
 "status": "proven",
 "name_en": "Preservation ledger with an automatic check",
 "name_ar": "دفتر الحفظ وفحصه الآلي"
+},
+{
+"id": "PROMPT-24",
+"status": "ready",
+"name_en": "Fuse two styles 70/30 in one prompt",
+"name_ar": "دمج أسلوبين 70/30 في برومنت واحد"
 },
 {
 "id": "PROMPT-10",
@@ -4092,12 +4046,6 @@
 "name_ar": "برومبت مولّد الفيديو"
 },
 {
-"id": "PROMPT-01",
-"status": "documented",
-"name_en": "Route the request: optimize-only, do, both, or Claude-authored",
-"name_ar": "توجيه الطلب: تحسين فقط أم تنفيذ"
-},
-{
 "id": "PROMPT-07",
 "status": "documented",
 "name_en": "System prompt at the right altitude",
@@ -4110,22 +4058,28 @@
 "name_ar": "قائمة الأنماط المضادة في البرومبت"
 },
 {
+"id": "PROMPT-01",
+"status": "documented",
+"name_en": "Route the request: optimize-only, do, both, or Claude-authored",
+"name_ar": "توجيه الطلب: تحسين فقط أم تنفيذ"
+},
+{
 "id": "PROMPT-06",
 "status": "documented",
 "name_en": "Claude adapter",
 "name_ar": "محوّل Claude: نبرة هادئة وأسباب ووسوم"
 },
 {
-"id": "PROMPT-12",
-"status": "documented",
-"name_en": "Explicit /optimize deliverable",
-"name_ar": "تسليم /optimize"
-},
-{
 "id": "PROMPT-18",
 "status": "documented",
 "name_en": "Arabic prompts and dialect",
 "name_ar": "البرومبت العربي واللهجة"
+},
+{
+"id": "PROMPT-15",
+"status": "documented",
+"name_en": "Prompt A/B eval before claiming \"better\"",
+"name_ar": "اختبار A/B للبرومبت قبل إعلان التحسن"
 },
 {
 "id": "ACRAFT-25",
@@ -4138,12 +4092,6 @@
 "status": "documented",
 "name_en": "Pasted text is data, not instructions",
 "name_ar": "النص الملصوق بيانات لا أوامر"
-},
-{
-"id": "PROMPT-15",
-"status": "documented",
-"name_en": "Prompt A/B eval before claiming \"better\"",
-"name_ar": "اختبار A/B للبرومبت قبل إعلان التحسن"
 },
 {
 "id": "PROMPT-08",
@@ -4174,12 +4122,6 @@
 "status": "documented",
 "name_en": "Other-LLM adapter",
 "name_ar": "محوّل النماذج اللغوية الأخرى"
-},
-{
-"id": "PROMPT-04",
-"status": "documented",
-"name_en": "Fill honestly: stated assumption or one question",
-"name_ar": "الملء الأمين: افتراض مكتوب أو سؤال واحد"
 }
 ],
 "proof": [
@@ -4187,53 +4129,74 @@
 "kosif-tool/.claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py"
 ],
 "twins": [],
-"distinct_methods": 18,
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0149",
-"sim": 0.493
-},
-{
-"id": "SP-0346",
-"sim": 0.207
+"sim": 0.495
 },
 {
 "id": "SP-0035",
-"sim": 0.152
+"sim": 0.256
+},
+{
+"id": "SP-0346",
+"sim": 0.206
 },
 {
 "id": "SP-0379",
-"sim": 0.127
+"sim": 0.132
 }
 ]
 },
 {
-"id": "SP-0035",
+"id": "SP-0034",
 "domain": "craft",
 "family": "prompt-craft",
-"name_ar": "اختبارات التفعيل والتصادم",
-"name_en": "Trigger and collision evals",
+"name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+"name_en": "Ask for any visual style by name from a 586-style library",
 "focus": [
+"style",
+"prove",
 "triggers",
-"technique",
-"evals",
-"prove"
+"rubric"
 ],
-"size": 5,
-"best": "documented",
+"size": 7,
+"best": "ready",
 "status_mix": {
+"ready": 2,
 "documented": 5
 },
-"ready_now": 0,
+"ready_now": 2,
 "families": {
-"prompt-craft": 5
+"prompt-craft": 6,
+"atlas-craft": 1
 },
-"atlas_folded": 0,
+"atlas_folded": 1,
 "requires": [
-"key:video-gen",
-"python3"
+"python3",
+"chromium",
+"key:video-gen"
 ],
 "pipeline": [
+{
+"id": "PROMPT-23",
+"status": "ready",
+"name_en": "Ask for any visual style by name from a 586-style library",
+"name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا"
+},
+{
+"id": "PROMPT-25",
+"status": "ready",
+"name_en": "Illustrated style catalog PDF with generated swatches",
+"name_ar": "كتالوج أساليب مصوّر PDF بعينات مولّدة"
+},
+{
+"id": "ACRAFT-26",
+"status": "documented",
+"name_en": "Extract a writing style into a reusable style guide",
+"name_ar": "استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق"
+},
 {
 "id": "PROMPT-17",
 "status": "documented",
@@ -4257,33 +4220,92 @@
 "status": "documented",
 "name_en": "Keep model notes fresh",
 "name_ar": "إبقاء ملاحظات النماذج حديثة"
+}
+],
+"proof": [],
+"twins": [],
+"distinct_methods": 7,
+"links": [
+{
+"id": "SP-0155",
+"sim": 0.258
+},
+{
+"id": "SP-0354",
+"sim": 0.254
+},
+{
+"id": "SP-0379",
+"sim": 0.212
+},
+{
+"id": "SP-0124",
+"sim": 0.122
+}
+]
+},
+{
+"id": "SP-0035",
+"domain": "craft",
+"family": "prompt-craft",
+"name_ar": "تسليم /optimize",
+"name_en": "Explicit /optimize deliverable",
+"focus": [
+"optimize",
+"technique",
+"question",
+"deliverable"
+],
+"size": 3,
+"best": "documented",
+"status_mix": {
+"documented": 3
+},
+"ready_now": 0,
+"families": {
+"prompt-craft": 3
+},
+"atlas_folded": 0,
+"requires": [],
+"pipeline": [
+{
+"id": "PROMPT-12",
+"status": "documented",
+"name_en": "Explicit /optimize deliverable",
+"name_ar": "تسليم /optimize"
 },
 {
 "id": "PROMPT-05",
 "status": "documented",
 "name_en": "Technique ladder L0–L7",
 "name_ar": "سُلَّم التقنيات: الأرخص الذي ينجح"
+},
+{
+"id": "PROMPT-04",
+"status": "documented",
+"name_en": "Fill honestly: stated assumption or one question",
+"name_ar": "الملء الأمين: افتراض مكتوب أو سؤال واحد"
 }
 ],
 "proof": [],
 "twins": [],
-"distinct_methods": 5,
+"distinct_methods": 3,
 "links": [
 {
-"id": "SP-0034",
-"sim": 0.152
+"id": "SP-0033",
+"sim": 0.256
 },
 {
-"id": "SP-0028",
-"sim": 0.137
+"id": "SP-0149",
+"sim": 0.192
 },
 {
-"id": "SP-0140",
-"sim": 0.12
+"id": "SP-0430",
+"sim": 0.101
 },
 {
-"id": "SP-0027",
-"sim": 0.1
+"id": "SP-0120",
+"sim": 0.098
 }
 ]
 },
@@ -4390,11 +4412,11 @@
 "links": [
 {
 "id": "SP-0450",
-"sim": 0.2
+"sim": 0.201
 },
 {
-"id": "SP-0033",
-"sim": 0.096
+"id": "SP-0034",
+"sim": 0.09
 },
 {
 "id": "SP-0309",
@@ -4505,7 +4527,7 @@
 "links": [
 {
 "id": "SP-0353",
-"sim": 0.172
+"sim": 0.171
 },
 {
 "id": "SP-0029",
@@ -4517,7 +4539,7 @@
 },
 {
 "id": "SP-0425",
-"sim": 0.125
+"sim": 0.117
 }
 ]
 },
@@ -4714,16 +4736,16 @@
 "name_ar": "تأكيدات تعريفية على الاستجابة"
 },
 {
-"id": "API-06",
-"status": "proven",
-"name_en": "Auth: Bearer, Basic, OAuth 2.0 and more",
-"name_ar": "المصادقة: Bearer وBasic وOAuth2"
-},
-{
 "id": "API-13",
 "status": "proven",
 "name_en": "Import OpenAPI into a collection",
 "name_ar": "استيراد OpenAPI إلى مجموعة"
+},
+{
+"id": "API-06",
+"status": "proven",
+"name_en": "Auth: Bearer, Basic, OAuth 2.0 and more",
+"name_ar": "المصادقة: Bearer وBasic وOAuth2"
 },
 {
 "id": "API-02",
@@ -6276,7 +6298,7 @@
 },
 {
 "id": "SP-0225",
-"sim": 0.144
+"sim": 0.143
 },
 {
 "id": "SP-0095",
@@ -6592,7 +6614,7 @@
 "links": [
 {
 "id": "SP-0119",
-"sim": 0.429
+"sim": 0.428
 },
 {
 "id": "SP-0031",
@@ -6883,11 +6905,11 @@
 "sim": 0.124
 },
 {
-"id": "SP-0044",
+"id": "SP-0103",
 "sim": 0.099
 },
 {
-"id": "SP-0103",
+"id": "SP-0044",
 "sim": 0.099
 },
 {
@@ -7556,7 +7578,7 @@
 },
 {
 "id": "SP-0101",
-"sim": 0.079
+"sim": 0.08
 }
 ]
 },
@@ -8082,12 +8104,12 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0034",
-"sim": 0.09
+"id": "SP-0033",
+"sim": 0.094
 },
 {
 "id": "SP-0149",
-"sim": 0.083
+"sim": 0.082
 },
 {
 "id": "SP-0060",
@@ -8188,6 +8210,12 @@
 "name_ar": "REA MCP: عنوان"
 },
 {
+"id": "REA-180",
+"status": "documented",
+"name_en": "REA MCP tool `set_address_name`",
+"name_ar": "REA MCP: عنوان"
+},
+{
 "id": "REA-173",
 "status": "documented",
 "name_en": "REA MCP tool `procedure_info`",
@@ -8198,12 +8226,6 @@
 "status": "documented",
 "name_en": "REA MCP tool `binary_session`",
 "name_ar": "REA MCP: الثنائي"
-},
-{
-"id": "REA-180",
-"status": "documented",
-"name_en": "REA MCP tool `set_address_name`",
-"name_ar": "REA MCP: عنوان"
 },
 {
 "id": "REA-165",
@@ -8674,8 +8696,8 @@
 "REA-166",
 "REA-158",
 "REA-167",
-"REA-173",
 "REA-180",
+"REA-173",
 "REA-165",
 "REA-174",
 "REA-164",
@@ -9311,7 +9333,7 @@
 },
 {
 "id": "SP-0082",
-"sim": 0.199
+"sim": 0.2
 },
 {
 "id": "SP-0128",
@@ -9579,7 +9601,7 @@
 },
 {
 "id": "SP-0128",
-"sim": 0.152
+"sim": 0.153
 }
 ]
 },
@@ -11460,7 +11482,7 @@
 },
 {
 "id": "SP-0097",
-"sim": 0.161
+"sim": 0.162
 },
 {
 "id": "SP-0055",
@@ -12479,7 +12501,7 @@
 },
 {
 "id": "SP-0089",
-"sim": 0.161
+"sim": 0.162
 },
 {
 "id": "SP-0058",
@@ -12769,12 +12791,12 @@
 "sim": 0.133
 },
 {
-"id": "SP-0323",
-"sim": 0.1
+"id": "SP-0034",
+"sim": 0.116
 },
 {
-"id": "SP-0101",
-"sim": 0.09
+"id": "SP-0323",
+"sim": 0.099
 }
 ]
 },
@@ -13490,16 +13512,16 @@
 "name_ar": "الوضوح والملمس"
 },
 {
-"id": "APPX-70",
-"status": "proven",
-"name_en": "Background blur (portrait)",
-"name_ar": "تغبيش الخلفية"
-},
-{
 "id": "APPX-40",
 "status": "proven",
 "name_en": "Contact sheet / print templates",
 "name_ar": "ورقة تواصل وقوالب طباعة"
+},
+{
+"id": "APPX-70",
+"status": "proven",
+"name_en": "Background blur (portrait)",
+"name_ar": "تغبيش الخلفية"
 },
 {
 "id": "APPX-50",
@@ -13735,11 +13757,11 @@
 },
 {
 "id": "SP-0127",
-"sim": 0.046
+"sim": 0.045
 },
 {
 "id": "SP-0322",
-"sim": 0.04
+"sim": 0.039
 }
 ]
 },
@@ -13862,16 +13884,16 @@
 "name_ar": "واجهات RTL مبنية مسبقًا"
 },
 {
-"id": "APPX-52",
-"status": "documented",
-"name_en": "Settings compatibility chain",
-"name_ar": "سلسلة توافق للإعدادات القديمة"
-},
-{
 "id": "APPX-56",
 "status": "documented",
 "name_en": "Procedural digital assets",
 "name_ar": "أصول إجرائية بمعاملات"
+},
+{
+"id": "APPX-52",
+"status": "documented",
+"name_en": "Settings compatibility chain",
+"name_ar": "سلسلة توافق للإعدادات القديمة"
 },
 {
 "id": "APPX-26",
@@ -13911,7 +13933,7 @@
 },
 {
 "id": "SP-0120",
-"sim": 0.121
+"sim": 0.122
 },
 {
 "id": "SP-0137",
@@ -13985,16 +14007,16 @@
 "name_ar": "مفتاح الكروما (الشاشة الخضراء)"
 },
 {
-"id": "APPX-05",
-"status": "proven",
-"name_en": "Loudness normalisation (-14 LUFS)",
-"name_ar": "توحيد علوّ الصوت للسوشيال"
-},
-{
 "id": "APPX-13",
 "status": "proven",
 "name_en": "Word-timed auto captions",
 "name_ar": "ترجمة تلقائية بتوقيت الكلمات"
+},
+{
+"id": "APPX-05",
+"status": "proven",
+"name_en": "Loudness normalisation (-14 LUFS)",
+"name_ar": "توحيد علوّ الصوت للسوشيال"
 },
 {
 "id": "APPX-16",
@@ -14212,7 +14234,7 @@
 },
 {
 "id": "SP-0119",
-"sim": 0.069
+"sim": 0.068
 }
 ]
 },
@@ -14355,7 +14377,7 @@
 },
 {
 "id": "SP-0433",
-"sim": 0.105
+"sim": 0.104
 },
 {
 "id": "SP-0119",
@@ -14363,7 +14385,7 @@
 },
 {
 "id": "SP-0319",
-"sim": 0.093
+"sim": 0.092
 }
 ]
 },
@@ -14708,7 +14730,7 @@
 "links": [
 {
 "id": "SP-0264",
-"sim": 0.102
+"sim": 0.101
 },
 {
 "id": "SP-0105",
@@ -14809,8 +14831,8 @@
 "id": "SP-0116",
 "domain": "build",
 "family": "app-feature-transfer",
-"name_ar": "مشغل فيديو عمودي بالسحب",
-"name_en": "Vertical swipe video player (Android)",
+"name_ar": "كاميرا افتراضية من فيديو",
+"name_en": "Virtual camera from a video file",
 "focus": [
 "virtual",
 "player",
@@ -15305,11 +15327,11 @@
 "links": [
 {
 "id": "SP-0031",
-"sim": 0.562
+"sim": 0.561
 },
 {
 "id": "SP-0051",
-"sim": 0.429
+"sim": 0.428
 },
 {
 "id": "SP-0052",
@@ -15431,11 +15453,11 @@
 },
 {
 "id": "SP-0107",
-"sim": 0.121
+"sim": 0.122
 },
 {
-"id": "SP-0238",
-"sim": 0.092
+"id": "SP-0035",
+"sim": 0.098
 }
 ]
 },
@@ -15714,27 +15736,27 @@
 "search",
 "capability"
 ],
-"size": 22,
+"size": 23,
 "best": "proven",
 "status_mix": {
-"proven": 17,
+"proven": 18,
 "ready": 3,
 "install": 2
 },
-"ready_now": 20,
+"ready_now": 21,
 "families": {
-"runnable-tools": 22
+"runnable-tools": 23
 },
 "atlas_folded": 0,
 "requires": [
 "python3",
 "npm:rea",
 "node",
+"chromium",
 "gh",
 "pip:pillow",
 "pip:opencv",
-"blender",
-"key:graphify"
+"blender"
 ],
 "pipeline": [
 {
@@ -15750,16 +15772,16 @@
 "name_ar": "باحث القدرات ثنائي اللغة بلا اتصال"
 },
 {
-"id": "TOOL-43",
-"status": "proven",
-"name_en": "Atlas external skill search",
-"name_ar": "بحث مهارات أطلس الخارجية"
-},
-{
 "id": "TOOL-07",
 "status": "proven",
 "name_en": "Local-first no-clone entry",
 "name_ar": "مدخل محلي بلا استنساخ"
+},
+{
+"id": "TOOL-43",
+"status": "proven",
+"name_en": "Atlas external skill search",
+"name_ar": "بحث مهارات أطلس الخارجية"
 },
 {
 "id": "TOOL-06",
@@ -15786,6 +15808,12 @@
 "name_ar": "باني خريطة القدرات المترابطة"
 },
 {
+"id": "TOOL-63",
+"status": "proven",
+"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
+},
+{
 "id": "TOOL-04",
 "status": "proven",
 "name_en": "Capability runtime router",
@@ -15796,12 +15824,6 @@
 "status": "proven",
 "name_en": "KOSIF hub (front door)",
 "name_ar": "بوابة KOSIF الموحّدة"
-},
-{
-"id": "TOOL-63",
-"status": "proven",
-"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
-"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
 },
 {
 "id": "TOOL-54",
@@ -15820,6 +15842,12 @@
 "status": "proven",
 "name_en": "KOSIF Remote Commander MCP",
 "name_ar": "خادم KOSIF Remote Commander"
+},
+{
+"id": "TOOL-70",
+"status": "proven",
+"name_en": "Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog",
+"name_ar": "مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر"
 },
 {
 "id": "TOOL-61",
@@ -15877,23 +15905,23 @@
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/ai_tool_discovery.py"
 ],
 "twins": [],
-"distinct_methods": 22,
+"distinct_methods": 23,
 "links": [
 {
 "id": "SP-0321",
-"sim": 0.385
+"sim": 0.389
 },
 {
 "id": "SP-0264",
-"sim": 0.263
+"sim": 0.266
 },
 {
 "id": "SP-0024",
-"sim": 0.216
+"sim": 0.211
 },
 {
 "id": "SP-0242",
-"sim": 0.158
+"sim": 0.157
 }
 ]
 },
@@ -16284,8 +16312,8 @@
 "sim": 0.141
 },
 {
-"id": "SP-0034",
-"sim": 0.072
+"id": "SP-0033",
+"sim": 0.075
 },
 {
 "id": "SP-0063",
@@ -16394,7 +16422,7 @@
 },
 {
 "id": "SP-0071",
-"sim": 0.152
+"sim": 0.153
 }
 ]
 },
@@ -17018,7 +17046,7 @@
 "links": [
 {
 "id": "SP-0030",
-"sim": 0.349
+"sim": 0.35
 },
 {
 "id": "SP-0323",
@@ -17135,11 +17163,11 @@
 "links": [
 {
 "id": "SP-0346",
-"sim": 0.254
+"sim": 0.253
 },
 {
 "id": "SP-0150",
-"sim": 0.206
+"sim": 0.205
 },
 {
 "id": "SP-0135",
@@ -17248,7 +17276,7 @@
 "links": [
 {
 "id": "SP-0150",
-"sim": 0.156
+"sim": 0.155
 },
 {
 "id": "SP-0134",
@@ -17492,7 +17520,7 @@
 },
 {
 "id": "SP-0342",
-"sim": 0.171
+"sim": 0.172
 },
 {
 "id": "SP-0119",
@@ -19073,20 +19101,20 @@
 "distinct_methods": 33,
 "links": [
 {
-"id": "SP-0034",
-"sim": 0.493
+"id": "SP-0033",
+"sim": 0.495
 },
 {
 "id": "SP-0346",
-"sim": 0.247
+"sim": 0.246
 },
 {
 "id": "SP-0153",
-"sim": 0.214
+"sim": 0.215
 },
 {
-"id": "SP-0150",
-"sim": 0.19
+"id": "SP-0035",
+"sim": 0.192
 }
 ]
 },
@@ -19243,7 +19271,7 @@
 },
 {
 "id": "SP-0134",
-"sim": 0.206
+"sim": 0.205
 },
 {
 "id": "SP-0149",
@@ -19251,7 +19279,7 @@
 },
 {
 "id": "SP-0135",
-"sim": 0.156
+"sim": 0.155
 }
 ]
 },
@@ -19373,8 +19401,8 @@
 "sim": 0.067
 },
 {
-"id": "SP-0034",
-"sim": 0.049
+"id": "SP-0033",
+"sim": 0.051
 }
 ]
 },
@@ -19581,18 +19609,18 @@
 "links": [
 {
 "id": "SP-0149",
-"sim": 0.214
+"sim": 0.215
 },
 {
 "id": "SP-0150",
 "sim": 0.13
 },
 {
-"id": "SP-0354",
+"id": "SP-0039",
 "sim": 0.079
 },
 {
-"id": "SP-0039",
+"id": "SP-0354",
 "sim": 0.079
 }
 ]
@@ -19763,15 +19791,15 @@
 "links": [
 {
 "id": "SP-0354",
-"sim": 0.317
-},
-{
-"id": "SP-0033",
-"sim": 0.301
+"sim": 0.314
 },
 {
 "id": "SP-0379",
-"sim": 0.295
+"sim": 0.292
+},
+{
+"id": "SP-0034",
+"sim": 0.258
 },
 {
 "id": "SP-0215",
@@ -20906,7 +20934,7 @@
 "links": [
 {
 "id": "SP-0170",
-"sim": 0.198
+"sim": 0.199
 },
 {
 "id": "SP-0441",
@@ -20994,7 +21022,7 @@
 "links": [
 {
 "id": "SP-0360",
-"sim": 0.266
+"sim": 0.267
 },
 {
 "id": "SP-0426",
@@ -21005,8 +21033,12 @@
 "sim": 0.16
 },
 {
-"id": "SP-0033",
-"sim": 0.146
+"id": "SP-0152",
+"sim": 0.143
+},
+{
+"id": "SP-0031",
+"sim": 0.079
 }
 ]
 },
@@ -21597,7 +21629,7 @@
 "links": [
 {
 "id": "SP-0186",
-"sim": 0.38
+"sim": 0.381
 },
 {
 "id": "SP-0168",
@@ -22221,7 +22253,7 @@
 },
 {
 "id": "SP-0164",
-"sim": 0.198
+"sim": 0.199
 },
 {
 "id": "SP-0303",
@@ -23077,19 +23109,19 @@
 },
 {
 "id": "SP-0440",
-"sim": 0.109
+"sim": 0.108
 },
 {
 "id": "SP-0190",
-"sim": 0.098
+"sim": 0.097
 },
 {
 "id": "SP-0259",
-"sim": 0.091
+"sim": 0.09
 },
 {
 "id": "SP-0090",
-"sim": 0.045
+"sim": 0.046
 }
 ]
 },
@@ -23502,8 +23534,8 @@
 "sim": 0.123
 },
 {
-"id": "SP-0034",
-"sim": 0.035
+"id": "SP-0033",
+"sim": 0.036
 }
 ]
 },
@@ -24302,7 +24334,7 @@
 },
 {
 "id": "SP-0402",
-"sim": 0.175
+"sim": 0.176
 },
 {
 "id": "SP-0196",
@@ -24410,7 +24442,7 @@
 "links": [
 {
 "id": "SP-0167",
-"sim": 0.38
+"sim": 0.381
 },
 {
 "id": "SP-0116",
@@ -24718,7 +24750,7 @@
 "links": [
 {
 "id": "SP-0427",
-"sim": 0.232
+"sim": 0.233
 },
 {
 "id": "SP-0332",
@@ -24726,7 +24758,7 @@
 },
 {
 "id": "SP-0199",
-"sim": 0.127
+"sim": 0.128
 },
 {
 "id": "SP-0340",
@@ -24914,7 +24946,7 @@
 "links": [
 {
 "id": "SP-0248",
-"sim": 0.296
+"sim": 0.295
 },
 {
 "id": "SP-0413",
@@ -24929,8 +24961,8 @@
 "sim": 0.177
 },
 {
-"id": "SP-0034",
-"sim": 0.118
+"id": "SP-0033",
+"sim": 0.122
 }
 ]
 },
@@ -25301,7 +25333,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.085
+"sim": 0.083
 }
 ]
 },
@@ -25367,7 +25399,7 @@
 "links": [
 {
 "id": "SP-0402",
-"sim": 0.511
+"sim": 0.512
 },
 {
 "id": "SP-0401",
@@ -25375,7 +25407,7 @@
 },
 {
 "id": "SP-0425",
-"sim": 0.15
+"sim": 0.158
 },
 {
 "id": "SP-0235",
@@ -26065,12 +26097,12 @@
 "sim": 0.065
 },
 {
-"id": "SP-0033",
-"sim": 0.038
+"id": "SP-0155",
+"sim": 0.037
 },
 {
-"id": "SP-0155",
-"sim": 0.038
+"id": "SP-0379",
+"sim": 0.035
 }
 ]
 },
@@ -26673,11 +26705,11 @@
 },
 {
 "id": "SP-0209",
-"sim": 0.174
+"sim": 0.175
 },
 {
 "id": "SP-0447",
-"sim": 0.143
+"sim": 0.144
 },
 {
 "id": "SP-0195",
@@ -27034,7 +27066,7 @@
 },
 {
 "id": "SP-0206",
-"sim": 0.174
+"sim": 0.175
 },
 {
 "id": "SP-0318",
@@ -27647,11 +27679,11 @@
 },
 {
 "id": "SP-0354",
-"sim": 0.181
+"sim": 0.18
 },
 {
 "id": "SP-0031",
-"sim": 0.14
+"sim": 0.141
 },
 {
 "id": "SP-0219",
@@ -29026,7 +29058,7 @@
 },
 {
 "id": "SP-0048",
-"sim": 0.144
+"sim": 0.143
 },
 {
 "id": "SP-0172",
@@ -29598,7 +29630,7 @@
 },
 {
 "id": "SP-0248",
-"sim": 0.246
+"sim": 0.245
 },
 {
 "id": "SP-0173",
@@ -29880,7 +29912,7 @@
 "links": [
 {
 "id": "SP-0248",
-"sim": 0.252
+"sim": 0.251
 },
 {
 "id": "SP-0341",
@@ -31545,7 +31577,7 @@
 },
 {
 "id": "SP-0251",
-"sim": 0.14
+"sim": 0.139
 },
 {
 "id": "SP-0256",
@@ -31734,7 +31766,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.158
+"sim": 0.157
 }
 ]
 },
@@ -32733,7 +32765,7 @@
 },
 {
 "id": "SP-0191",
-"sim": 0.296
+"sim": 0.295
 },
 {
 "id": "SP-0125",
@@ -33442,7 +33474,7 @@
 },
 {
 "id": "SP-0335",
-"sim": 0.193
+"sim": 0.192
 },
 {
 "id": "SP-0158",
@@ -34225,7 +34257,7 @@
 },
 {
 "id": "SP-0175",
-"sim": 0.091
+"sim": 0.09
 }
 ]
 },
@@ -34456,7 +34488,7 @@
 },
 {
 "id": "SP-0125",
-"sim": 0.081
+"sim": 0.08
 }
 ]
 },
@@ -34652,12 +34684,8 @@
 "sim": 0.098
 },
 {
-"id": "SP-0170",
-"sim": 0.093
-},
-{
 "id": "SP-0132",
-"sim": 0.091
+"sim": 0.096
 }
 ]
 },
@@ -34734,7 +34762,7 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.263
+"sim": 0.266
 },
 {
 "id": "SP-0448",
@@ -34742,7 +34770,7 @@
 },
 {
 "id": "SP-0321",
-"sim": 0.169
+"sim": 0.168
 },
 {
 "id": "SP-0148",
@@ -35120,7 +35148,7 @@
 },
 {
 "id": "SP-0124",
-"sim": 0.126
+"sim": 0.123
 },
 {
 "id": "SP-0046",
@@ -35301,7 +35329,7 @@
 },
 {
 "id": "SP-0224",
-"sim": 0.093
+"sim": 0.094
 }
 ]
 },
@@ -36115,8 +36143,8 @@
 "sim": 0.144
 },
 {
-"id": "SP-0115",
-"sim": 0.043
+"id": "SP-0035",
+"sim": 0.071
 }
 ]
 },
@@ -36437,7 +36465,7 @@
 },
 {
 "id": "SP-0354",
-"sim": 0.104
+"sim": 0.103
 }
 ]
 },
@@ -36547,7 +36575,7 @@
 "links": [
 {
 "id": "SP-0425",
-"sim": 0.204
+"sim": 0.205
 },
 {
 "id": "SP-0402",
@@ -36767,7 +36795,7 @@
 },
 {
 "id": "SP-0389",
-"sim": 0.058
+"sim": 0.057
 }
 ]
 },
@@ -37832,8 +37860,8 @@
 "sim": 0.122
 },
 {
-"id": "SP-0034",
-"sim": 0.08
+"id": "SP-0033",
+"sim": 0.083
 }
 ]
 },
@@ -38935,7 +38963,7 @@
 "links": [
 {
 "id": "SP-0301",
-"sim": 0.352
+"sim": 0.353
 },
 {
 "id": "SP-0131",
@@ -39177,11 +39205,11 @@
 },
 {
 "id": "SP-0317",
-"sim": 0.235
+"sim": 0.234
 },
 {
 "id": "SP-0319",
-"sim": 0.18
+"sim": 0.179
 },
 {
 "id": "SP-0314",
@@ -39750,7 +39778,7 @@
 "links": [
 {
 "id": "SP-0297",
-"sim": 0.352
+"sim": 0.353
 },
 {
 "id": "SP-0302",
@@ -39766,7 +39794,7 @@
 },
 {
 "id": "SP-0131",
-"sim": 0.14
+"sim": 0.141
 }
 ]
 },
@@ -41224,11 +41252,11 @@
 "links": [
 {
 "id": "SP-0029",
-"sim": 0.223
+"sim": 0.222
 },
 {
 "id": "SP-0353",
-"sim": 0.22
+"sim": 0.219
 },
 {
 "id": "SP-0425",
@@ -41711,7 +41739,7 @@
 "links": [
 {
 "id": "SP-0298",
-"sim": 0.235
+"sim": 0.234
 },
 {
 "id": "SP-0414",
@@ -41723,7 +41751,7 @@
 },
 {
 "id": "SP-0300",
-"sim": 0.159
+"sim": 0.16
 },
 {
 "id": "SP-0126",
@@ -41880,7 +41908,7 @@
 },
 {
 "id": "SP-0298",
-"sim": 0.18
+"sim": 0.179
 },
 {
 "id": "SP-0314",
@@ -41892,7 +41920,7 @@
 },
 {
 "id": "SP-0110",
-"sim": 0.093
+"sim": 0.092
 }
 ]
 },
@@ -42114,11 +42142,11 @@
 "links": [
 {
 "id": "SP-0124",
-"sim": 0.385
+"sim": 0.389
 },
 {
 "id": "SP-0264",
-"sim": 0.169
+"sim": 0.168
 },
 {
 "id": "SP-0268",
@@ -42126,7 +42154,7 @@
 },
 {
 "id": "SP-0242",
-"sim": 0.122
+"sim": 0.121
 }
 ]
 },
@@ -43359,7 +43387,7 @@
 },
 {
 "id": "SP-0414",
-"sim": 0.419
+"sim": 0.42
 },
 {
 "id": "SP-0245",
@@ -43467,16 +43495,16 @@
 "name_ar": "لقطة متحدث تحت الرسوم"
 },
 {
-"id": "FOOT-02",
-"status": "ready",
-"name_en": "Open-footage downloader with provenance",
-"name_ar": "تنزيل لقطة مفتوحة مع إيصال مصدر"
-},
-{
 "id": "FOOT-30",
 "status": "ready",
 "name_en": "ImageMagick still post-processing",
 "name_ar": "معالجة الصور بـ ImageMagick"
+},
+{
+"id": "FOOT-02",
+"status": "ready",
+"name_en": "Open-footage downloader with provenance",
+"name_ar": "تنزيل لقطة مفتوحة مع إيصال مصدر"
 },
 {
 "id": "FOOT-52",
@@ -43799,11 +43827,11 @@
 "links": [
 {
 "id": "SP-0354",
-"sim": 0.148
+"sim": 0.149
 },
 {
 "id": "SP-0126",
-"sim": 0.133
+"sim": 0.132
 },
 {
 "id": "SP-0449",
@@ -43972,7 +44000,7 @@
 "links": [
 {
 "id": "SP-0253",
-"sim": 0.193
+"sim": 0.192
 },
 {
 "id": "SP-0453",
@@ -45599,7 +45627,7 @@
 "links": [
 {
 "id": "SP-0339",
-"sim": 0.122
+"sim": 0.121
 },
 {
 "id": "SP-0025",
@@ -46128,11 +46156,11 @@
 },
 {
 "id": "SP-0134",
-"sim": 0.254
+"sim": 0.253
 },
 {
 "id": "SP-0149",
-"sim": 0.247
+"sim": 0.246
 },
 {
 "id": "SP-0275",
@@ -46725,8 +46753,8 @@
 "sim": 0.105
 },
 {
-"id": "SP-0035",
-"sim": 0.094
+"id": "SP-0383",
+"sim": 0.091
 }
 ]
 },
@@ -47085,7 +47113,7 @@
 },
 {
 "id": "SP-0029",
-"sim": 0.286
+"sim": 0.285
 },
 {
 "id": "SP-0100",
@@ -47093,7 +47121,7 @@
 },
 {
 "id": "SP-0312",
-"sim": 0.22
+"sim": 0.219
 }
 ]
 },
@@ -47197,20 +47225,20 @@
 "distinct_methods": 8,
 "links": [
 {
-"id": "SP-0033",
-"sim": 0.347
-},
-{
 "id": "SP-0155",
-"sim": 0.317
+"sim": 0.314
 },
 {
 "id": "SP-0379",
-"sim": 0.269
+"sim": 0.267
+},
+{
+"id": "SP-0034",
+"sim": 0.254
 },
 {
 "id": "SP-0214",
-"sim": 0.181
+"sim": 0.18
 }
 ]
 },
@@ -47874,7 +47902,7 @@
 "links": [
 {
 "id": "SP-0165",
-"sim": 0.266
+"sim": 0.267
 },
 {
 "id": "SP-0152",
@@ -49490,12 +49518,12 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0170",
-"sim": 0.087
-},
-{
 "id": "SP-0429",
 "sim": 0.085
+},
+{
+"id": "SP-0170",
+"sim": 0.084
 },
 {
 "id": "SP-0228",
@@ -49507,7 +49535,7 @@
 },
 {
 "id": "SP-0003",
-"sim": 0.032
+"sim": 0.03
 }
 ]
 },
@@ -50071,19 +50099,19 @@
 "links": [
 {
 "id": "SP-0155",
-"sim": 0.295
+"sim": 0.292
 },
 {
 "id": "SP-0354",
-"sim": 0.269
+"sim": 0.267
 },
 {
-"id": "SP-0033",
-"sim": 0.254
+"id": "SP-0034",
+"sim": 0.212
 },
 {
 "id": "SP-0149",
-"sim": 0.176
+"sim": 0.174
 }
 ]
 },
@@ -50235,7 +50263,7 @@
 },
 {
 "id": "SP-0342",
-"sim": 0.13
+"sim": 0.131
 },
 {
 "id": "SP-0178",
@@ -50463,7 +50491,7 @@
 },
 {
 "id": "SP-0308",
-"sim": 0.091
+"sim": 0.092
 },
 {
 "id": "SP-0032",
@@ -51246,11 +51274,11 @@
 },
 {
 "id": "SP-0155",
-"sim": 0.081
+"sim": 0.08
 },
 {
-"id": "SP-0033",
-"sim": 0.073
+"id": "SP-0034",
+"sim": 0.064
 }
 ]
 },
@@ -51380,7 +51408,7 @@
 },
 {
 "id": "SP-0148",
-"sim": 0.086
+"sim": 0.085
 },
 {
 "id": "SP-0189",
@@ -51528,7 +51556,7 @@
 },
 {
 "id": "SP-0110",
-"sim": 0.064
+"sim": 0.063
 }
 ]
 },
@@ -53925,7 +53953,7 @@
 "links": [
 {
 "id": "SP-0196",
-"sim": 0.511
+"sim": 0.512
 },
 {
 "id": "SP-0401",
@@ -53933,11 +53961,11 @@
 },
 {
 "id": "SP-0425",
-"sim": 0.205
+"sim": 0.209
 },
 {
 "id": "SP-0185",
-"sim": 0.175
+"sim": 0.176
 },
 {
 "id": "SP-0114",
@@ -54602,7 +54630,7 @@
 },
 {
 "id": "SP-0410",
-"sim": 0.197
+"sim": 0.198
 },
 {
 "id": "SP-0130",
@@ -55218,7 +55246,7 @@
 },
 {
 "id": "SP-0403",
-"sim": 0.199
+"sim": 0.2
 },
 {
 "id": "SP-0116",
@@ -55608,7 +55636,7 @@
 },
 {
 "id": "SP-0125",
-"sim": 0.095
+"sim": 0.094
 }
 ]
 },
@@ -55719,7 +55747,7 @@
 },
 {
 "id": "SP-0330",
-"sim": 0.419
+"sim": 0.42
 },
 {
 "id": "SP-0303",
@@ -55971,7 +55999,7 @@
 },
 {
 "id": "SP-0395",
-"sim": 0.101
+"sim": 0.102
 },
 {
 "id": "SP-0007",
@@ -56776,12 +56804,6 @@
 "name_ar": "دخول الكلمة من العمق"
 },
 {
-"id": "ARAB-55",
-"status": "ready",
-"name_en": "Bilingual Arabic/English stacks & HUD",
-"name_ar": "مكدّس عربي/إنجليزي"
-},
-{
 "id": "ARAB-18",
 "status": "ready",
 "name_en": "Kinetic Arabic grammar",
@@ -56792,6 +56814,12 @@
 "status": "ready",
 "name_en": "*Asterisk* emphasis convention",
 "name_ar": "تمييز الكلمة بالنجمة"
+},
+{
+"id": "ARAB-55",
+"status": "ready",
+"name_en": "Bilingual Arabic/English stacks & HUD",
+"name_ar": "مكدّس عربي/إنجليزي"
 },
 {
 "id": "ARAB-72",
@@ -56872,6 +56900,12 @@
 "name_ar": "الكلمة المنطوقة تضيء"
 },
 {
+"id": "ARAB-56",
+"status": "seen",
+"name_en": "RTL character card",
+"name_ar": "بطاقة شخصية من اليمين"
+},
+{
 "id": "ARAB-32",
 "status": "seen",
 "name_en": "Ink-bleed / focus-pull word reveal",
@@ -56888,12 +56922,6 @@
 "status": "seen",
 "name_en": "Squiggle underline highlight",
 "name_ar": "خط متموّج تحت الكلمة المفتاحية"
-},
-{
-"id": "ARAB-56",
-"status": "seen",
-"name_en": "RTL character card",
-"name_ar": "بطاقة شخصية من اليمين"
 },
 {
 "id": "ARAB-X01",
@@ -57245,7 +57273,7 @@
 },
 {
 "id": "SP-0189",
-"sim": 0.232
+"sim": 0.233
 },
 {
 "id": "SP-0435",
@@ -57538,11 +57566,11 @@
 "links": [
 {
 "id": "SP-0425",
-"sim": 0.16
+"sim": 0.161
 },
 {
 "id": "SP-0427",
-"sim": 0.147
+"sim": 0.148
 },
 {
 "id": "SP-0283",
@@ -57553,8 +57581,8 @@
 "sim": 0.14
 },
 {
-"id": "SP-0029",
-"sim": 0.067
+"id": "SP-0035",
+"sim": 0.101
 }
 ]
 },
@@ -57726,7 +57754,7 @@
 },
 {
 "id": "SP-0433",
-"sim": 0.171
+"sim": 0.172
 },
 {
 "id": "SP-0130",
@@ -57952,7 +57980,7 @@
 },
 {
 "id": "SP-0432",
-"sim": 0.171
+"sim": 0.172
 },
 {
 "id": "SP-0031",
@@ -59744,7 +59772,7 @@
 },
 {
 "id": "SP-0206",
-"sim": 0.143
+"sim": 0.144
 },
 {
 "id": "SP-0179",
@@ -60305,7 +60333,7 @@
 },
 {
 "id": "SP-0450",
-"sim": 0.157
+"sim": 0.158
 },
 {
 "id": "SP-0452",
@@ -60573,12 +60601,12 @@
 "sim": 0.132
 },
 {
-"id": "SP-0425",
+"id": "SP-0356",
 "sim": 0.061
 },
 {
-"id": "SP-0356",
-"sim": 0.061
+"id": "SP-0312",
+"sim": 0.059
 }
 ]
 }

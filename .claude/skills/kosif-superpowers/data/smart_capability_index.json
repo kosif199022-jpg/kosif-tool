@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5492,
+  "catalog_powers": 5496,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 145,
+  "tool_count": 146,
   "groups": [
     {
       "id": "research",
@@ -74,11 +74,12 @@
       ],
       "keywords": "think reasoning idea brainstorm strategy plan finance decision تحليل تخطيط ابتكار قرار",
       "workflow": [],
-      "count": 316,
+      "count": 319,
       "status_counts": {
         "documented": 297,
         "install": 2,
-        "proven": 17
+        "proven": 17,
+        "ready": 3
       },
       "family_counts": {
         "atlas-mind": 54,
@@ -86,7 +87,7 @@
         "creativity-engine": 29,
         "mental-models": 63,
         "planning-execution": 12,
-        "prompt-craft": 22,
+        "prompt-craft": 25,
         "strategy-finance": 18,
         "thinking-core": 46
       },
@@ -129,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 158,
+      "count": 159,
       "status_counts": {
         "documented": 57,
         "install": 8,
         "key": 2,
-        "proven": 86,
+        "proven": 87,
         "ready": 5
       },
       "family_counts": {
         "agent-orchestration": 46,
-        "runnable-tools": 69,
+        "runnable-tools": 70,
         "self-discovery": 43
       },
       "examples": [
@@ -60181,6 +60182,58 @@
       "what": "الوصف وحده يبقى في السياق دائمًا، فاجعله محددًا بكلمات التفعيل وضع القواعد الحاسمة في أول الملف. — Only the description is always in context, so make it specific and put must-hold rules at the top of the file."
     },
     {
+      "id": "PROMPT-23",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Ask for any visual style by name from a 586-style library",
+      "name_ar": "اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "مكتبة أساليب بصرية: 86 طريقة من أطلس Futurepedia معاد صياغتها و500 أسلوب أصلي في 20 مجموعة، لكل أسلوب شكل ومنطق وألوان وملمس وتكوين ووصفة برومنت. — A visual style library: 86 paraphrased Futurepedia methods plus 500 original styles in 20 groups, each with look, logic, palette, te"
+    },
+    {
+      "id": "PROMPT-24",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Fuse two styles 70/30 in one prompt",
+      "name_ar": "دمج أسلوبين 70/30 في برومنت واحد",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "أسلوب أساسي يحكم الخامة والتكوين، وأسلوب ثانٍ يضيف لمسة لون أو عنصر بنسبة 30% فقط. — One base style owns the medium and composition; a second adds about 30% accent (a colour or one motif), never more."
+    },
+    {
+      "id": "PROMPT-25",
+      "family": "prompt-craft",
+      "group": "thinking",
+      "domain": "craft",
+      "name_en": "Illustrated style catalog PDF with generated swatches",
+      "name_ar": "كتالوج أساليب مصوّر PDF بعينات مولّدة",
+      "status": "ready",
+      "requires": [
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py"
+      ],
+      "source": "prompt-craft.json",
+      "what": "كتالوج A4 فيه اسم كل أسلوب بالعربي والإنجليزي ورقمه وعينة إجرائية أصلية، مقسوم بالمجموعات وقابل للتقسيم ملفًا لكل مجموعة. — An A4 catalog with each style's id, Arabic and English name and an original procedural swatch, grouped, optionally one PDF per group."
+    },
+    {
       "id": "QA-01",
       "family": "qa-verification",
       "group": "quality",
@@ -68082,6 +68135,25 @@
       ],
       "source": "runnable-tools.json",
       "what": "يحوّل إجراءات التفكير إلى قوالب نصية قابلة للفحص. يختار مستوى التفكير (L0–L6)، ويكتب عقد المهمة، ويرتّب 63 نموذجًا ذهنيًا، ويصوغ خطة بالتخطيط العكسي، ويبني مصفوفة أفكار من قدرات الكتالوج، ويقيّم قرارًا موزونًا مع اختبار الحساسية، ويجري تقدير فيرمي بطريقة مونت كارلو، ويرصد الصياغا"
+    },
+    {
+      "id": "TOOL-70",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog",
+      "name_ar": "مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_style_library.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/style_library.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يجد أي أسلوب من 586 بالرقم أو الاسم العربي أو الإنجليزي أو بكلمات حرة: 86 طريقة معاد صياغتها من أطلس Futurepedia و500 أسلوب أصلي من KOSIF في 20 مجموعة. يطبع بطاقة الأسلوب (الشكل والمنطق والألوان والملمس والتكوين)، ويملأ وصفة البرومنت لموضوعك مع أسلوب ثانٍ بنسبة 30% اختياريًا، وير"
     },
     {
       "id": "SEC-01",
