@@ -41,7 +41,7 @@ Read first: what the skill is, the protocol, the one-file copy and the maps. Sta
 
 USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table.
 
-`protocol` · 21 file(s)
+`protocol` · 22 file(s)
 
 - [references/protocol/A1-see-thinking.md](protocol/A1-see-thinking.md)
 - [references/protocol/A10-self-evolution.md](protocol/A10-self-evolution.md)
@@ -55,6 +55,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A18-futurepedia-business-workflows.md](protocol/A18-futurepedia-business-workflows.md)
 - [references/protocol/A19-field-lessons-montage.md](protocol/A19-field-lessons-montage.md)
 - [references/protocol/A2-executors-fullpro.md](protocol/A2-executors-fullpro.md)
+- [references/protocol/A20-book-distilled-methods.md](protocol/A20-book-distilled-methods.md)
 - [references/protocol/A24-reasoning-modes-decision-gates.md](protocol/A24-reasoning-modes-decision-gates.md)
 - [references/protocol/A3-release-bridge.md](protocol/A3-release-bridge.md)
 - [references/protocol/A4-fusionforge-composition.md](protocol/A4-fusionforge-composition.md)
@@ -69,7 +70,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 
 How to think, ideate, decide, write and check before and after acting. A24 is the router into this section.
 
-`cognition` · 9 file(s) · phase-2 folder `references/cognition/`
+`cognition` · 9 file(s) · planned folder `references/cognition/`
 
 - [references/cognition.md](cognition.md)
 - [references/thinking.md](thinking.md)
@@ -85,7 +86,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 
 The capability catalog in human form: fused superpowers, hubs, groups, maps, audits, requirements and what this machine can run.
 
-`catalog` · 18 file(s) · phase-2 folder `references/catalog/`
+`catalog` · 19 file(s) · planned folder `references/catalog/`
 
 - [references/superpowers.md](superpowers.md) · pinned (fixed path)
 - [references/hubs.md](hubs.md) · pinned (fixed path)
@@ -105,6 +106,7 @@ The capability catalog in human form: fused superpowers, hubs, groups, maps, aud
 - [references/superpowers-unification.md](superpowers-unification.md)
 - [references/claude-auto-local-first.md](claude-auto-local-first.md)
 - [references/remote-commander-mcp.md](remote-commander-mcp.md)
+- [references/owned-repos-map.md](owned-repos-map.md)
 
 ## 5. فصول القدرات المولّدة / Generated power chapters
 
@@ -197,7 +199,7 @@ Short how-to guides per kind of job (motion, edit, 3D, draw, audio, image, inves
 
 Executable motion, montage, rhythm, reference transfer and cinematic direction.
 
-`motion` · 17 file(s) · phase-2 folder `references/motion/`
+`motion` · 17 file(s) · planned folder `references/motion/`
 
 - [references/motion-runtime.md](motion-runtime.md)
 - [references/motion-starter-kit-bridge.md](motion-starter-kit-bridge.md)
@@ -221,7 +223,7 @@ Executable motion, montage, rhythm, reference transfer and cinematic direction.
 
 Code drawing, paint runtimes, unified draw/media, Blender bridges and the native 3D core.
 
-`draw-3d` · 14 file(s) · phase-2 folder `references/draw-3d/`
+`draw-3d` · 15 file(s) · planned folder `references/draw-3d/`
 
 - [references/code-drawing-master.md](code-drawing-master.md)
 - [references/creative-paint-runtime.md](creative-paint-runtime.md)
@@ -237,12 +239,13 @@ Code drawing, paint runtimes, unified draw/media, Blender bridges and the native
 - [references/native-primitives-and-research-v2.md](native-primitives-and-research-v2.md)
 - [references/native-zbuffer-rasterizer.md](native-zbuffer-rasterizer.md)
 - [references/cloud-browser-and-app-capability-matrix.md](cloud-browser-and-app-capability-matrix.md)
+- [references/drawing-methods-atlas.md](drawing-methods-atlas.md)
 
 ## 9. الخطوط والصور / Typography and images
 
 Font matching and fidelity, the private typography library index and the Arabic-first image editor.
 
-`type-image` · 4 file(s) · phase-2 folder `references/type-image/`
+`type-image` · 4 file(s) · planned folder `references/type-image/`
 
 - [references/font-matching.md](font-matching.md)
 - [references/font-innovation-50.md](font-innovation-50.md)
@@ -253,7 +256,7 @@ Font matching and fidelity, the private typography library index and the Arabic-
 
 Reverse engineering, code graphs, harnesses, repository and app capability transfer, library arsenals and community sources.
 
-`engineering` · 11 file(s) · phase-2 folder `references/engineering/`
+`engineering` · 11 file(s) · planned folder `references/engineering/`
 
 - [references/rea-reverse-engineering.md](rea-reverse-engineering.md)
 - [references/rea-upstream-capabilities.md](rea-upstream-capabilities.md)
@@ -271,7 +274,7 @@ Reverse engineering, code graphs, harnesses, repository and app capability trans
 
 Point-in-time research and audit receipts. Evidence, not instructions: re-check live before relying on a number.
 
-`studies` · 14 file(s) · phase-2 folder `references/studies/`
+`studies` · 17 file(s) · planned folder `references/studies/`
 
 - [references/REA_CREATIVE_DISCOVERY_2000_20261019.md](REA_CREATIVE_DISCOVERY_2000_20261019.md)
 - [references/atlas-deep-fusion-20261020.md](atlas-deep-fusion-20261020.md)
@@ -287,3 +290,6 @@ Point-in-time research and audit receipts. Evidence, not instructions: re-check 
 - [references/rea-ghidra-catalog-audit-20261019.md](rea-ghidra-catalog-audit-20261019.md)
 - [references/taaft-rea-discovery-audit.md](taaft-rea-discovery-audit.md)
 - [references/threejs-cinematic-motion-20261020.md](threejs-cinematic-motion-20261020.md)
+- [references/atlas-5000-mining-20261023.md](atlas-5000-mining-20261023.md)
+- [references/atlas-reviewed-audit.md](atlas-reviewed-audit.md)
+- [references/owner-uploads-review-20261023.md](owner-uploads-review-20261023.md)

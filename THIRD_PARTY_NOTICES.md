@@ -5,7 +5,7 @@ KOSIF TOOL's own code and text are under the MIT license in [LICENSE](LICENSE). 
 | Material | Where | License | Notes |
 |---|---|---|---|
 | FFmpeg `vf_xfade.c` transition formulas (NumPy port) | `.claude/skills/kosif-superpowers/scripts/mimic/mm_transitions.py` | LGPL-2.1-or-later | Keep the file separable in any product build; notice at the top of the file. Other mimic modules are MIT with the repo. |
-| Amiri (Khaled Hosny), Aref Ruqaa, Cairo, Lalezar, Reem Kufi, Tajawal | `.claude/skills/kosif-superpowers/proofs/_shared/fonts/` | SIL OFL 1.1 | Unmodified Google Fonts releases. |
+| Amiri (Khaled Hosny), Aref Ruqaa, Cairo, El Messiri, Lalezar, Poppins, Reem Kufi, Tajawal | `.claude/skills/kosif-superpowers/proofs/_shared/fonts/` | SIL OFL 1.1 | Unmodified Google Fonts releases. |
 | Amiri + Bodoni Moda (subset, instanced and merged as "KOSIF Jumuah") | `fonts/kosif-jumuah/` | SIL OFL 1.1 | Derived font; reserved font names respected, see its README and LICENSE. |
 | Google Fonts Arabic families fetched on demand | `scripts/mimic/mm_fonts_lib.py` cache | SIL OFL 1.1 per family | Downloaded by the user at run time; never committed. |
 | Tesseract `ara.traineddata` | optional `assets/tessdata/` cache | Apache-2.0 (tesseract-ocr/tessdata) | Fetched on demand; never committed. |

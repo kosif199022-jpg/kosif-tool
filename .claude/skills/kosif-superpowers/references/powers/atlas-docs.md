@@ -3,13 +3,13 @@
 
 > **قوتك هنا / what this gives you:** التوثيق وملفات المكتب وPDF والمخططات كما تصفها مهارات أطلس. — Documentation, office files, PDF and diagram methods from the Atlas.
 > **أقوى دليل / strongest evidence:** لا قوة مثبتة بعد في هذه العائلة — no ✅ power yet; the strongest badge here is 📄 documented.
-> **41 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 41 · 💡 0.
+> **45 powers follow** — ✅ 0 · 🟢 0 · 📦 0 · 🔑 0 · 👁 0 · 📄 45 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
 
 **المجال / domain:** المستندات — Documents · **البادئة / prefix:** `ADOCS` · **البيانات / data:** `data/powers/atlas-docs.json` · **بحث / search:** `python3 scripts/powers.py family atlas-docs`
-**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
+**مراجع ذات صلة / related references:** [CLAUDE_3_MINUTE_MAP.md](../CLAUDE_3_MINUTE_MAP.md) · [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md) · [capability-audit.md](../capability-audit.md) · [hubs.md](../hubs.md)
 
 ## الفهرس / contents
 
@@ -21,7 +21,7 @@
 - **هندسة النماذج اللغوية — LLM & AI engineering** — ADOCS-14 (1)
 - **القطاعات المنظّمة — Regulated industries & domain expertise** — ADOCS-15 … ADOCS-16 (2)
 - **المخططات — Diagrams & visual documentation** — ADOCS-17 … ADOCS-24 (8)
-- **التوثيق — Documentation** — ADOCS-25 … ADOCS-34 (10)
+- **التوثيق — Documentation** — ADOCS-25 … ADOCS-45 (14)
 - **تطوير الألعاب — Game development** — ADOCS-35 (1)
 - **Git والإصدار — Git, pull requests & releases** — ADOCS-36 (1)
 - **التعليم والتعلم — Teaching, learning & study** — ADOCS-37 … ADOCS-41 (5)
@@ -331,6 +331,38 @@
 - **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1221-comment-slop/2903-comment-slop`
 - **المصدر / source:** KOSIF Atlas mining 2026-10-20 (https://github.com/kosif199022-jpg/kosif-atlas): comment-slop/comment-slop (#2903) · theme documentation · 6 supporting skills · verifier read: skills/1221-comment-slop/2903-comment-slop,
 
+#### ADOCS-42 · الكتابة البسيطة: كلمات يومية وجمل كاملة · Plain writing: everyday words, complete sentences · 📄 موصوف / documented only
+- **ماذا / what:** يكتب نصاً يُفهم من القراءة الأولى: كلمات شائعة، بلا مصطلحات مخترعة، بلا تفخيم فارغ، مع مثال قبل وبعد لكل قاعدة. — Writes text readable in one pass: common words, no invented jargon, no empty emphasis, with a before/after for each rule.
+- **متى أستخدمها / when:** اكتب ببساطة، نص واضح، بدون حشو / plain language, simple writing, remove fluff
+- **كيف / how:** 1) Prefer the common word; avoid words AI tools overuse (delve, tapestry, landscape, robust, leverage). 2) No jargon or invented shorthand; if a term is not in a standard dictionary, explain it. 3) Drop empty emphasis (really, pivotal, renowned, a testament to) and state the fact instead. 4) Complete sentences, one idea each, short paragraphs. 5) Revise by reading once as a newcomer and fixing every place you had to reread.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/2868-plain-writing/11578-plain-writing`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): plain-writing/plain-writing (#11578) · theme writing-content · 1 supporting skills · SKILL.md read in full as inert text: skills/2868-plain-writing/11578-plain-writing
+
+#### ADOCS-43 · أنسنة النص بالكثافة لا بقائمة حذف · Humanize by density, with an over-correction guard · 📄 موصوف / documented only
+- **ماذا / what:** يزيل علامات النص الآلي التي يلاحظها القراء (المفردات والبنية) بقياس كثافتها، دون وعد بتجاوز كاشفات الذكاء الاصطناعي. — Removes the AI tells readers notice (vocabulary, structure) by scoring their density, without promising to beat AI detectors.
+- **متى أستخدمها / when:** النص يبدو آلياً، أنسنة تغريدة / sounds like AI, humanize tweet, AI tells
+- **كيف / how:** 1) Readers mostly cite vocabulary and sentence structure as tells; target those. 2) Score suspect words by density per length instead of deleting a fixed list. 3) Cap em dashes rather than banning them; treat forced rhythm (triplets, staccato fragments) as a tell, not a fix. 4) Add an over-correction guard: do not strip natural phrasing or facts while removing tells. 5) Be honest that rewrites do not make text pass trained detectors; on short texts their scores are noise.
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/3035-x-skills/13066-x-humanizer`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): x-skills/x-humanizer (#13066) · theme writing-content · 1 supporting skills · SKILL.md read in full as inert text: skills/3035-x-skills/13066-x-humanizer
+
+#### ADOCS-44 · تدقيق انحراف التوثيق عن الكود لكل بُعد · Per-dimension documentation drift audit · 📄 موصوف / documented only
+- **ماذا / what:** يقارن التوثيق بالكود الفعلي بُعداً بُعداً (الأوامر، الإعدادات، الواجهات…) ويخطط الإصلاح قبل التنفيذ. — Compares documentation with the actual code dimension by dimension (commands, config, APIs...) and plans fixes before executing them.
+- **متى أستخدمها / when:** التوثيق قديم، راجع ملفات README، تحديث الوثائق / outdated docs, docs drift, update README
+- **كيف / how:** 1) Inventory every doc. 2) For each dimension (install, commands, config keys, public API, architecture) check the claim against the code and record drift. 3) Plan: merge duplicates, surgical edits for outdated sections, link or archive orphans, fix broken references, add missing sections. 4) Ask before executing the plan. 5) After editing, verify no content was lost and links resolve. **أرقام / params:** dimensions
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/60-codebase-mapper/95-docs-maintain-workflow`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): codebase-mapper/docs-maintain-workflow (#95) · theme documentation · 2 supporting skills · SKILL.md read in full as inert text: skills/60-codebase-mapper/95-docs-maintain-workflow
+
+#### ADOCS-45 · الترجمة الإبداعية: متى نترجم ومتى نعيد الصياغة · Transcreation routing for marketing translation · 📄 موصوف / documented only
+- **ماذا / what:** يفرز في النص ما يحتاج ترجمة حرفية وما يحتاج إعادة إبداع (تعابير، تلاعب لفظي، فكاهة)، مع قائمة كلمات لا تُترجم. — Sorts what needs literal translation from what needs transcreation (idioms, wordplay, humour), with a do-not-translate list.
+- **متى أستخدمها / when:** ترجمة تسويقية، ترجمة إعلان، تعريب / marketing translation, transcreation, localize ad copy
+- **كيف / how:** 1) Inputs: content, target languages (codes or names), optional source language, formality, do-not-translate terms. 2) Flag idioms, wordplay, humour, cultural references and emotional hooks for transcreation instead of literal translation. 3) Keep brand and product names in the source language. 4) Route each language pair to the tool that handles it best and record why. 5) Quality-check meaning, tone and length; numbers, names and dates must survive (see KOSIF anchor_gate). **أرقام / params:** formality, DNT list
+- **الرخصة / license:** method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md
+- **الدليل / proof:** `https://github.com/kosif199022-jpg/kosif-atlas/tree/main/skills/1520-digital-marketing-pro/4128-translate-content`
+- **المصدر / source:** KOSIF Atlas-5000 mining 2026-10-23 (https://github.com/kosif199022-jpg/kosif-atlas @ 99bb108d): digital-marketing-pro/translate-content (#4128) · theme localization-language · 1 supporting skills · SKILL.md read in full as inert text: skills/1520-digital-marketing-pro/4128-translate-content
+
 ## تطوير الألعاب — Game development
 
 #### ADOCS-35 · كتابة سرد الألعاب المتفرع · Game narrative and branching writing · 📄 موصوف / documented only
@@ -397,7 +429,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (30) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / BSD-3-Clause; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT; one WTFPL; the skills keep their own licenses — see each folder's SOURCE.md (1)
+- الرخص / licences: method paraphrased from Atlas skills under MIT; the skills keep their own licenses — see each folder's SOURCE.md (34) · method paraphrased from Atlas skills under Apache-2.0 / MIT; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT / Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under MIT/Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (2) · method paraphrased from Atlas skills under Apache-2.0; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT (no copyleft seen among supporting ids); the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT / BSD-3-Clause; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT/Apache; the skills keep their own licenses — see each folder's SOURCE.md (1) · method paraphrased from Atlas skills under MIT; one WTFPL; the skills keep their own licenses — see each folder's SOURCE.md (1)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

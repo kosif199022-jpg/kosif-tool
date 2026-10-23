@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:draw:start -->
 
-**الأدوات / tools (9)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -20,7 +20,9 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `unified-draw` | Combines Smart Draw freehand stroke snapping, Creative Paint layered shapes and text, and keyframed GIF/MP4 animation behind one ordered scene and CLI. | `python3 scripts/unified_draw.py doctor` | tested-here |
 | `creative-principles` | Builds original SVG drawing stages, three-value tone breakdown, and intercut tonal distribution flags from supplied arrays. | `python3 scripts/creative_principles.py construct --input original-shapes.json --out-prefix out/stage` | tested-elsewhere |
 | `drawing-academy` | Eight source-anchored skill lessons, rights-scoped text keyword scans, scores tied to actual artifacts and provenance. | `python3 scripts/drawing_academy.py index` | tested-elsewhere |
+| `drawing-methods` | 48 original method cards distilled from drawing books, including 41 books from the user's own library read on 2026-10-23 (text, OCR or sample pages) (gesture, proportion, Loomis head, mannequin, shape language, silhouette, expression, light, cast shadows, hatching, anime heads, hair and cel shading, animation timing, walks, urban sketching, plants, products, creatures, practice); ranks them for an Arabic or English request, builds an ordered drawing plan or an image prompt, draws a head, figure, character, forms, a bouncing ball or a constructed cast shadow as a deterministic layered SVG (guide, construction, final, silhouette) and checks the drawing's geometry against the cards. | `python3 scripts/drawing_methods.py find "ارسم وش شخصية بتضحك"` | tested-here |
 | `perspective-color-lab` | Draws a geometrically constrained two-vanishing-point SVG and measures HSV/WCAG contrast of brand color swatches. | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
+| `drawing-visual-qa` | Routes art tasks to four original-book sections read in full chapter context, measures real raster three-value tone groups, transparency and color proxies, and checks that edited pixels remain in the user-authorized rectangular region. Separate from the PR92 SVG authoring engine; its PASS is not an aesthetic verdict. | `python3 scripts/drawing_visual_qa.py curriculum "ارسم شخصية كرتونية بمنظور وإضاءة" --out out/lessons.json` | tested-here |
 
 <!-- hub:area:draw:end -->
 
@@ -30,6 +32,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 2. [Creative Paint runtime — verified callable drawing and short animations (2026-10-19)](#creative-paint-runtime--verified-callable-drawing-and-short-animations-2026-10-19)
 3. [Verified character arm IK and word-triggered motion (2026-10-19)](#verified-character-arm-ik-and-word-triggered-motion-2026-10-19)
 4. [Original full-body character animation (2026-10-19)](#original-full-body-character-animation-2026-10-19)
+5. [Drawing-book methods atlas — كيف يفكر الرسام قبل أن يرسم](#drawing-book-methods-atlas--كيف-يفكر-الرسام-قبل-أن-يرسم)
 
 ## KOSIF Code Drawing Master — مهارة رسم وتحريك فعلية
 
@@ -54,3 +57,10 @@ For a request to **move a drawn character's arm, solve elbow/hand joints, animat
 ## Original full-body character animation (2026-10-19)
 
 For a Claude task requiring a drawn person to walk, run, wave, smile, blink or nod using time cues or verified word timings, use [KOSIF Full Body Animator](../fullbody-character-motion.md). Run scripts/character_fullbody.py doctor, inspect templates/fullbody-demo.json, and supply templates/fullbody-demo-words.json only for the synthetic example. Produces layered SVG, PNG, GIF and MP4, optionally stream-copying AAC narration with packet hash verification. This is original 2D IK and drawing code, not 3D mocap or Adobe/CapCut clone; no automatic transcription or lip sync. Local Windows tests 14/14 successful.
+
+## Drawing-book methods atlas — كيف يفكر الرسام قبل أن يرسم
+
+قبل رسم أي شخصية أو وجه أو جسم، شغّل `python3 scripts/drawing_methods.py plan "<الطلب>"` لتحصل على مناهج كتب الرسم المناسبة (الإيماءة، النسب بوحدة الرأس، بناء الرأس بالكرة، المانيكان، لغة الأشكال، السيلويت، التعبير، الضوء والقيم، الظل الساقط، التهشير، رأس الأنمي وشعره وتلوينه، توقيت التحريك والمشي، المدن والنبات والمنتجات والمخلوقات) مرتبة من النية إلى التحقق. ثم ابدأ من هيكل صحيح بـ `draw head|figure|character|forms|bounce|shadow --out <file.svg>` وافحصه بـ `check --svg <file.svg>`. للصور المولّدة استعمل `prompt` (لا يستدعي أي نموذج). التفاصيل والجدول الكامل للكتب في [أطلس مناهج كتب الرسم](../drawing-methods-atlas.md).
+
+Before drawing a character, face or figure, run `plan` for the matching drawing-book methods in order (gesture, head-unit proportion, ball-and-plane head, mannequin, shape language, silhouette, expression, light and value), start from a correct structure with `draw`, and verify it with `check`. The cards are original summaries, not copied book text; `check` measures geometry, not artistic quality.
+

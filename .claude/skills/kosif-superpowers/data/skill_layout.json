@@ -1,7 +1,7 @@
 {
  "schema": "kosif.skill-layout.v1",
  "protocol": "USIP v5.4",
- "about": "One section per reference file of the skill, in reading order. scripts/skill_layout.py builds references/LAYOUT.md from it and check_skill's layout check fails when a file under references/ has no section, two sections, or a listed file is missing. 'target' is the folder the section moves to in phase 2 of the reorganisation (null = stays where it is); 'pinned' files never move, because pasted prompts and raw GitHub links name their paths.",
+ "about": "One section per reference file of the skill, in reading order. scripts/skill_layout.py builds references/LAYOUT.md from it and check_skill's layout check fails when a file under references/ has no section, two sections, or a listed file is missing. 'target' is the folder the section would move to if the deferred move is approved (null = stays where it is; the move touches thousands of references, so it is a separate request); 'pinned' files never move, because pasted prompts and raw GitHub links name their paths.",
  "rules": [
   "Add every new reference file to exactly one section in the same commit.",
   "Dated research or audit receipts go to 'studies'; procedures Claude follows go to their domain section.",
@@ -85,7 +85,8 @@
     "references/repos.md",
     "references/superpowers-unification.md",
     "references/claude-auto-local-first.md",
-    "references/remote-commander-mcp.md"
+    "references/remote-commander-mcp.md",
+    "references/owned-repos-map.md"
    ],
    "globs": []
   },
@@ -158,7 +159,8 @@
     "references/native-glb-no-blender.md",
     "references/native-primitives-and-research-v2.md",
     "references/native-zbuffer-rasterizer.md",
-    "references/cloud-browser-and-app-capability-matrix.md"
+    "references/cloud-browser-and-app-capability-matrix.md",
+    "references/drawing-methods-atlas.md"
    ],
    "globs": []
   },
@@ -218,7 +220,10 @@
     "references/kosif-timeline-multitrack-20261020.md",
     "references/rea-ghidra-catalog-audit-20261019.md",
     "references/taaft-rea-discovery-audit.md",
-    "references/threejs-cinematic-motion-20261020.md"
+    "references/threejs-cinematic-motion-20261020.md",
+    "references/atlas-5000-mining-20261023.md",
+    "references/atlas-reviewed-audit.md",
+    "references/owner-uploads-review-20261023.md"
    ],
    "globs": []
   }

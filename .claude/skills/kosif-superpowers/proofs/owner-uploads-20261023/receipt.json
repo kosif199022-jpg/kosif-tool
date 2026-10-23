@@ -1,0 +1,50 @@
+{
+ "schema": "kosif.proof.receipt.v1",
+ "run": "owner-uploads-20261023",
+ "checks": {
+  "slider_curve": {
+   "monotone": true,
+   "p_at_0.8s": 0.466,
+   "crawl_span_0.9_2.2s": [
+    0.47,
+    0.552
+   ],
+   "crawl_never_stops": true,
+   "p_end": 1.0,
+   "pass": true
+  },
+  "reveal_field": {
+   "coverage_at_p": [
+    0.0,
+    0.062,
+    0.528,
+    0.949,
+    1.0
+   ],
+   "pass": true
+  },
+  "graphics_layer": {
+   "iou_vs_truth": 1.0,
+   "pass": true
+  },
+  "fonts": {
+   "raqm": true,
+   "el_messiri_ink_bbox": [
+    71,
+    617,
+    450,
+    660
+   ],
+   "pass": true
+  }
+ },
+ "outputs": {
+  "sheet.jpg": "9f2ff852eab6a7c48935699419f20522ca20f37e37b27123a8a216fe01c2ae0b"
+ },
+ "fonts_sha256": {
+  "ElMessiri[wght].ttf": "5d58d5259d2accccba39cffe12e1226e88b6afc5150e3605eb2a9c2fe06ccab0",
+  "Poppins-Regular.ttf": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba",
+  "Poppins-Bold.ttf": "983676516167748b74de6f4771fb384c664fd913acb8b471122ecacf5da5ea6c"
+ },
+ "pass": true
+}

@@ -495,3 +495,22 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa); Manim Community MIT
 - **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md`
 - **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/manim-video/SKILL.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### EXPL-U01 · قائمة الأساليب الخمسة للموشن بالكود · Five code-rendered motion-graphics styles menu · 📄 موصوف / documented
+- **ماذا / what:** اختر أسلوبًا وسمِّه قبل البناء: Editorial Explainer (ريلز 9:16 بطابع Vox، فحم وورق، لون تمييز أحمر واحد)، AI Film FX (رسوم داخل لقطات مولّدة)، 2D Animated Explainer (ظل 2.5D بشرائح لونية، من تعليق صوتي)، 3D Voxel Animation (زوم لوغاريتمي عبر المقاييس)، Cartoon Music Video. التبديل يغيّر اللوحة والخط والتخطيط والصوت معًا. — Name one of five styles before building; switching swaps palette, type, layouts and sound together.
+- **متى أستخدمها / when:** طلب موشن جرافيك مفتوح أو شرح متحرك / an open motion-graphics or explainer request
+- **كيف / how:** عند طلب مفتوح اعرض القائمة واسأل؛ ومع لقطات اقترح الأرجح. الأرقام في الملحق §4.
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`
+
+#### EXPL-U02 · لقطة التحليل المجمّدة · Frozen analysis beat overlay · 📄 موصوف / documented
+- **ماذا / what:** للحظة «التحليل» جمّد إطارًا حادًا واحدًا بدل الإبطاء، عتّمه 30٪ وانزع إشباعه 40٪، ثم شبكة أرض بيضاء بحد داكن، 20–30 نقطة مميزة، و3–4 صناديق بأقواس زوايا سميكة وبطاقات اسم وإحداثيات. — Hold one sharp frame, dim 30 % and desaturate 40 %, then grid, 20–30 feature points and 3–4 bracketed landmark boxes.
+- **متى أستخدمها / when:** لقطة تحليل داخل فيديو شرح / an analysis moment in an explainer
+- **كيف / how:** أقل وأجرأ أفضل من كثير ورفيع؛ امسحها قبل لقطات الحركة. **أرقام / params:** dim 0.30; desaturate 0.40; 20–30 points; 3–4 boxes
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

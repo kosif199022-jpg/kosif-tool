@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (22)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (24)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -27,6 +27,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `superpowers-unified` | Picks an ordered subset of the 15 vendored obra/superpowers v7 process skills (brainstorming, debugging, TDD, verification and others) for a task, checks the vendored sources, and can install KOSIF plus those skills into ~/.claude/skills with backups. | `python3 scripts/superpowers_unified.py doctor` | tested-here |
 | `repo-kosif` (repo root) | Searches, lists and shows records of the motion-graphics style atlas (289 records in catalog/styles.json). It also fills a ready-to-paste Claude Code request from templates/claude_request.<lang>.txt, scaffolds a project folder (STYLE.md, PLAN.md, TEST_REPORT.md, words.json, REQUEST.md and an optional starter copy), prints catalog statistics and runs the repository validator. | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
 | `atlas-capability-miner` | Indexes or queries metadata of third-party Atlas skills with an opt-in REA path; source presence is not execution proof. | `python3 scripts/atlas_capability_miner.py --help` | tested-here |
+| `atlas-5000` | Maps the 5,116-skill safe core of KOSIF Atlas (READ_ONLY_OK, permissive license, no risk flags) against the KOSIF catalog: per-theme coverage, the themes with the most undistilled skills and their next candidates, and a bilingual search that shows which power already covers each Atlas skill. | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-task-method-router` | Finds source-backed Atlas method candidates for a task without executing their code. | `python3 scripts/atlas_task_method_router.py --help` | untested |
 | `smart-capabilities` | Deterministically classifies all 5,185 KOSIF power IDs into 15 task-based integration candidate groups, finds matches for Arabic or English prompts, and checks source-to-index completeness without claiming runtime fusion. | `python3 scripts/smart_capabilities.py groups` | tested-here |
 | `skill-intelligence` | Before any substantial request: scans 100% of the catalog records with a SHA-256 coverage receipt that fails closed on unreadable or unclassified records, checks that every derived index is fresh, drafts a request analysis, ranks groups, fused superpowers, powers and runnable tools, scores candidates (fit 35, integration 20, feasibility 15, evidence 10, cost 10, creativity 10) and drafts plans A/B/C with a recommendation and the approval question. | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
@@ -34,12 +35,13 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `fusionforge-shared` | Audits verified project-private FusionForge v2 promotion proposals; counts independent QA proofs across distinct projects, requires separate human privacy/security/collision and baseline-improvement review before exporting only allowlisted structural skill graphs. Never exports client objectives, transcripts, evidence, secrets or project names. | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `superpower-fusion` | Partitions every catalog power into exactly one fused superpower (per-family TF-IDF k-means, near-identical powers unified, tiny groups absorbed), marks twin powers that do the same job, links each superpower to its nearest neighbours in one connected graph, and reports an honest status mix. | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `kosif-groups` | For each of the 15 smart groups lists its fused superpowers ordered by readiness, entry scripts, a start command, linked groups and a per-group install plan that separates pip/npm lines (run with --apply) from system tools and keys that need the user's approval. | `python3 scripts/kosif_hubs.py` | tested-here |
+| `owned-repos` | Joins every repository on the owner's GitHub account to the 15 smart capability groups: a curated purpose and state (integrated, partial, learnable, reference, archive, empty) per repo, a static gitingest-style digest of shallow clones (files, languages, SKILL.md, tests, CI, manifests, secret-like pattern counts without values), live catalog proof citations per repo, relations between repos and the live Cloudflare services they build (atlas edge API, Jev decision service, KOSIF Think Full Pro server) with their safety rules, and a have-now vs learnable table per capability group. | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 
 <!-- hub:area:discover:end -->
 
 <!-- hub:area:think:start -->
 
-**الأدوات / tools (10)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -53,6 +55,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `capability-mindmap` | Orders every superpower by task stage (understand, plan, create, refine, assemble, verify, deliver), builds stage plans for any request and 12 ready task maps with Mermaid flowcharts, and audits same-name groups, twins, cross-superpower look-alikes and pairs to develop together. | `python3 scripts/capability_mindmap.py build` | tested-here |
 | `charter-ingest` | Deterministically parses the user's charter roster (sectors «القطاع N», numbered entries with الدور/المهام/الخصائص) into data/experts_500.json (kosif.experts-index.v1): every entry keeps its role, tasks and traits, maps by keywords to catalog families, and is flagged (boilerplate traits, duplicate_of, sensitive consent/regulated). Refuses unless 50 sectors × 10 entries (or --allow-partial) and refuses credential-like text. The council's plan consults it as an index; no persona runs, votes or counts as evidence. | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `business-workflows` | Searches Futurepedia's business adoption index and 64 workflow playbooks (36 library + 28 creator), re-routes every step from the named third-party tool to what Claude can do in the session or to a connector, measures native coverage, and writes an Arabic runbook with approval gates for send, post, spend and recording. | `python3 scripts/business_workflows.py functions` | tested-here |
+| `book-methods` | Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card. | `python3 scripts/book_methods.py search "شخصية حوار"` | tested-here |
 
 <!-- hub:area:think:end -->
 
@@ -62,11 +65,12 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 1. [Claude Code permission-aware local-first bootstrap](#claude-code-permission-aware-local-first-bootstrap)
 2. [Original bilingual task-to-capability finder](#original-bilingual-task-to-capability-finder)
 3. [Capability Atlas — start here for every substantial task](#capability-atlas--start-here-for-every-substantial-task)
-4. [اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing](#اختر-قدرة-حقيقية-واعرف-صلاحياتها--capability-runtime-routing)
-5. [مراجع أخرى / other references](#مراجع-أخرى--other-references)
-6. [العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph](#العقل-الفائق-والمستلزمات-والخريطة--cognition-requirements-graph)
-7. [KOSIF Innovation lab — invention candidates](#kosif-innovation-lab--invention-candidates)
-8. [KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)](#kosif-superpowers-ultimate--integrated-obrasuperpowers-v7-process-layer-2026-10-19)
+4. [أطلس الـ5000 مهارة — what Claude knows from the Atlas and what it could still learn](#أطلس-الـ5000-مهارة--what-claude-knows-from-the-atlas-and-what-it-could-still-learn)
+5. [اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing](#اختر-قدرة-حقيقية-واعرف-صلاحياتها--capability-runtime-routing)
+6. [مراجع أخرى / other references](#مراجع-أخرى--other-references)
+7. [العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph](#العقل-الفائق-والمستلزمات-والخريطة--cognition-requirements-graph)
+8. [KOSIF Innovation lab — invention candidates](#kosif-innovation-lab--invention-candidates)
+9. [KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)](#kosif-superpowers-ultimate--integrated-obrasuperpowers-v7-process-layer-2026-10-19)
 
 ## The front door: hub.py
 
@@ -99,6 +103,10 @@ See [REA website investigation](../taaft-rea-discovery-audit.md).
 ## Capability Atlas — start here for every substantial task
 
 Use the **generated bilingual capability index** at [references/capability-atlas.md](../capability-atlas.md). Run `python scripts/capability_atlas.py plan "<user task>" --json` to select source-backed capability IDs, requirements, workflow skills and suggested execution routes. Drill into a selected ID with `python scripts/capability_atlas.py show <ID> --json`; run `doctor --json` to detect a stale index and `build` after catalog edits. Never treat catalog status as confirmation of live execution or silently install dependencies. See the full protocol in the guide.
+
+## أطلس الـ5000 مهارة — what Claude knows from the Atlas and what it could still learn
+
+The safe core of KOSIF Atlas (5,116 skills: READ_ONLY_OK, permissive license, no risk flags) is mapped against the catalog by `python3 scripts/atlas_5000.py`. `stats` shows per-theme coverage, `gaps` lists the themes with the most skills not yet distilled and the next candidates, `find "<task>"` shows matching Atlas skills with the power that already covers each (`--uncovered` for the rest), and `show <id>` prints one record. Covered means a power cites the Atlas folder, never that the skill ran. The 2026-10-23 batch, sources and boundaries are in [atlas-5000-mining-20261023.md](../atlas-5000-mining-20261023.md).
 
 ## اختر قدرة حقيقية واعرف صلاحياتها — Capability runtime routing
 
@@ -147,3 +155,7 @@ Read the suggested original process skill's `SKILL.md` from `vendor/obra-superpo
 The bundled 15 process skills are installed alongside the KOSIF main skill for Claude Code discovery via an explicitly invoked `superpowers_unified.py install`. Existing unrelated user skills are preserved; name conflicts are skipped unless separately authorized and backed up. Details, provenance, commands and rollback: [Superpowers unification](../superpowers-unification.md).
 
 **Do not confuse vendor source presence with actual installation, invocation, or proven task execution. No paid tools, outside publication, system-wide installs or external media uploads without authorization.**
+
+## Owned repositories — reuse what the owner already built
+
+Before building a capability from scratch, check whether one of the owner's own repositories already has it: `python3 scripts/owned_repos.py find "<task>"` (from the skill folder). `skills` prints, per capability group, what Claude has now (✅ proven + 🟢 ready), the methods it applies directly, what becomes available after an install or a key, and which owned repos are still `learnable`. The full table, relations and findings live in [owned-repos-map.md](../owned-repos-map.md). To refresh after the account changes: shallow-clone the repos outside the repository, run `digest` then `merge`, `render` and `verify`. Private repositories stay counts-only in this public skill.

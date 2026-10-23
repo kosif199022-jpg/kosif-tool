@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **65 powers follow** — ✅ 55 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **66 powers follow** — ✅ 56 · 🟢 5 · 📦 5 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -14,7 +14,7 @@
 ## الفهرس / contents
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-34 (10)
-- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-65 (3)
+- **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-66 (4)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-64 (9)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-35 (7)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-26 (2)
@@ -140,6 +140,14 @@
 - **كيف / how:** functions: `python3 scripts/business_workflows.py functions`; search: `python3 scripts/business_workflows.py search "بودكاست"`; coverage: `python3 scripts/business_workflows.py coverage`; plan: `python3 scripts/business_workflows.py plan --workflow FW-07 --context "حلقة بودكاست عربية" --out out/biz/plan.md`. Full card: `python3 scripts/hub.py tool business-workflows`. Limits: Facts only from the site (no prompts); third-party tool features and prices change; connector availability is checked at run time, not here. **أرقام / params:** in: data/futurepedia_business_workflows.json and the user's situation · out: JSON listings and a Markdown runbook
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`key:unspecified`](../requirements.md#req-key-unspecified)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_business_workflows.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/business_workflows.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-66 · مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت · Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبحث في 45 منهجًا مستخلصًا بكلماتنا من عشرة ملفات PDF، ويشغّل خمسة مساعدين: كلمات عشوائية محفّزة، وحساب بايزي بسجل أدلة بالديسيبل، وبوابة وضوح البرومنت، وفاحص قيود محاسبية، وبطاقة شخصية بالعوامل الخمسة. — Searches 45 methods distilled in our own words from ten uploaded PDFs (lateral-thinking course, The Pragmatic Programmer, Jaynes's Bayesian framework, the Cambridge Handbook of Personality Psychology, an IFRS/ISA accounting skill report, the owner's KOSIF v8 prompt spec, Shawqi's diwan, two English coursebooks), and runs five helpers: seeded random-word provocation, a Bayesian posterior with a decibel evidence ledger, a prompt clarity/context/specificity gate, a journal-entry checker (balance, integer minor units, VAT, duplicates, bank-receipt-is-settlement) and a Big Five character card.
+- **متى أستخدمها / when:** أعطني أفكار غير تقليدية لإعلان / Build a character's voice from a Big Five profile
+- **كيف / how:** search: `python3 scripts/book_methods.py search "شخصية حوار"`; rest: `python3 scripts/book_methods.py rest --problem "إعلان لمقهى" --seed 7`; bayes: `python3 scripts/book_methods.py bayes --h fraud=0.01 --h ok=0.99 --e "flag:fraud=0.9,ok=0.05"`; clarity: `python3 scripts/book_methods.py clarity "صورة جميلة لشخص"`. Full card: `python3 scripts/hub.py tool book-methods`. Limits: Methods are summaries, not the books; clarity is a word-list heuristic; ledger is a draft check, not posting or an audit opinion; persona is for fiction and tone only. **أرقام / params:** in: data/book_methods.json; a problem, hypotheses, a prompt, journal entries JSON or Big Five scores · out: JSON to stdout
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_book_methods.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/book_methods.py`
 - **المصدر / source:** data/tools.json
 
 ## Motion graphics and rendering / الموشن والرندر
@@ -614,7 +622,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (65)
+- الرخص / licences: — (66)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

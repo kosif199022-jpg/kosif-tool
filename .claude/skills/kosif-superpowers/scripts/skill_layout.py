@@ -8,7 +8,7 @@ every file on disk is in one section, and every listed file exists.
     python3 scripts/skill_layout.py build           # write references/LAYOUT.md
     python3 scripts/skill_layout.py check           # exit 1 on an unlisted, doubly listed or missing file, or a stale LAYOUT.md
     python3 scripts/skill_layout.py where <name>    # which section holds a file (substring match)
-    python3 scripts/skill_layout.py moves           # phase 2: the git mv commands that move each section to its target folder
+    python3 scripts/skill_layout.py moves           # the git mv commands that would move each section to its planned folder (a deferred, separate step)
     python3 scripts/skill_layout.py --self-test
 
 check_skill.py runs the same check as its "layout" check. Python 3.8+ standard library only; it never moves a file.
@@ -69,7 +69,7 @@ def render(layout: dict, root: Path = SK) -> str:
         members = list(s.get("files", []))
         members += [f for f in files if s["id"] in got.get(f, []) and f not in members]
         L += ["", f"## {n}. {s['ar']} / {s['en']}", "", s["about"], ""]
-        L.append(f"`{s['id']}` · {len(members)} file(s)" + (f" · phase-2 folder `{s['target']}/`" if s.get("target") else ""))
+        L.append(f"`{s['id']}` · {len(members)} file(s)" + (f" · planned folder `{s['target']}/`" if s.get("target") else ""))
         L.append("")
         pinned = set(layout.get("pinned", []))
         for f in members:

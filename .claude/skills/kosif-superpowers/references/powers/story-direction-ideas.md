@@ -674,3 +674,15 @@ _قدرات أُضيفت في الإصدار الثاني من حزم المال
 - **الرخصة / license:** MIT (ECC, (c) 2026 Affaan Mustafa)
 - **المصدر / source:** `https://github.com/affaan-m/ECC/tree/main/skills/frontend-slides/SKILL.md`
 - **الدليل / proof:** `https://github.com/affaan-m/ECC/tree/main/skills/frontend-slides/SKILL.md`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### STORY-U01 · خط فيلم الأغنية الكرتوني · Cartoon music-video pipeline · 📄 موصوف / documented
+- **ماذا / what:** أغنية ~40 ث (مقطع بين شخصيتين ولازمة واحدة معًا، سطور حرفية بسيطة) ← صفحة شخصيات وبيئات 2×2 ومؤثرات 5×2 مولّدة ← تُعاد رسمها بالكود ولا تُلصق ← رندر بقطع متداخلة قابلة للاستئناف ← لقطات ثابتة بأفواه مغلقة لمزامنة الشفاه. — Song → sheets → repaint in code → resumable render → lip-sync plates.
+- **متى أستخدمها / when:** فيديو أغنية كرتوني من الصفر / a cartoon music video from nothing
+- **كيف / how:** لكل قسم من الأغنية بيئة؛ كلمات بأسلوب «كود» متوهج؛ كاميرا مدارية. **أرقام / params:** ~40 s; env sheet 2×2; props 5×2
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/references/owner-uploads-review-20261023.md`

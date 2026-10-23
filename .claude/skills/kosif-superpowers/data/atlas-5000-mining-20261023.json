@@ -1,0 +1,661 @@
+{
+ "schema": "kosif.atlas-5000.mining-receipt.v1",
+ "date": "2026-10-23",
+ "atlas": "https://github.com/kosif199022-jpg/kosif-atlas",
+ "atlas_commit": "99bb108dff169880dd531359f474a01b73c4b233",
+ "sources_read": 65,
+ "powers_added": 55,
+ "scope_note": "Each SKILL.md was read as inert text and its method paraphrased; no Atlas script, package or instruction was executed or copied verbatim. Only READ_ONLY_OK, permissive-license, no-risk-flag skills were used.",
+ "sources": [
+  {
+   "atlas_id": 95,
+   "plugin": "codebase-mapper",
+   "skill": "docs-maintain-workflow",
+   "license": "MIT",
+   "theme": "documentation",
+   "path": "skills/60-codebase-mapper/95-docs-maintain-workflow",
+   "skill_md_sha256": "137554fa51991af387d074011e429d650cceb227fd947d7a89551868c7ea8576",
+   "power": "ADOCS-44"
+  },
+  {
+   "atlas_id": 204,
+   "plugin": "awwwards-motion",
+   "skill": "awwwards-motion",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/95-awwwards-motion/204-awwwards-motion",
+   "skill_md_sha256": "e08b590217f823c428b7efc80c9554ac7ab428c6b41dfaa06d69ec7ad97576ae",
+   "power": "AMEDIA-15"
+  },
+  {
+   "atlas_id": 204,
+   "plugin": "awwwards-motion",
+   "skill": "awwwards-motion",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/95-awwwards-motion/204-awwwards-motion",
+   "skill_md_sha256": "e08b590217f823c428b7efc80c9554ac7ab428c6b41dfaa06d69ec7ad97576ae",
+   "power": "AMEDIA-16"
+  },
+  {
+   "atlas_id": 208,
+   "plugin": "seo-aeo-geo",
+   "skill": "seo-aeo-geo",
+   "license": "MIT",
+   "theme": "marketing-seo",
+   "path": "skills/99-seo-aeo-geo/208-seo-aeo-geo",
+   "skill_md_sha256": "1fff372015456b54fe53a5407dc575b6ef76b83488229aaa4a025d7a1543bf1e",
+   "power": "ASTRAT-61"
+  },
+  {
+   "atlas_id": 209,
+   "plugin": "ui-motion",
+   "skill": "kinetic-inflated-hero",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/100-ui-motion/209-kinetic-inflated-hero",
+   "skill_md_sha256": "e5c94d90a9422db1b3773ba3b38c7e8d17a4f556d20c7e0d36150ae939ed4d8e",
+   "power": "AMEDIA-17"
+  },
+  {
+   "atlas_id": 211,
+   "plugin": "ui-motion",
+   "skill": "thermal-finger-trail",
+   "license": "MIT",
+   "theme": "game-dev",
+   "path": "skills/100-ui-motion/211-thermal-finger-trail",
+   "skill_md_sha256": "7b49781e27199e0fc3c22968d0c0e5b640e24a3dd8e7c26b51fbef1dae871bc4",
+   "power": "AMEDIA-18"
+  },
+  {
+   "atlas_id": 535,
+   "plugin": "demo-video",
+   "skill": "demo-video",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/166-demo-video/535-demo-video",
+   "skill_md_sha256": "1fd0bed0afa9965a6422005de8d930bdf17e1823d5319ca911a621be9e2c6d6d",
+   "power": "AMEDIA-21"
+  },
+  {
+   "atlas_id": 707,
+   "plugin": "mas-3d-games",
+   "skill": "godot",
+   "license": "MIT",
+   "theme": "game-dev",
+   "path": "skills/228-mas-3d-games/707-godot",
+   "skill_md_sha256": "d0ed8e1374abaa201915aefc27cd4a2891d66e3c4643adfbb40a0c945822beab",
+   "power": "AMEDIA-27"
+  },
+  {
+   "atlas_id": 709,
+   "plugin": "mas-3d-games",
+   "skill": "substance-painter",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/228-mas-3d-games/709-substance-painter",
+   "skill_md_sha256": "64beacab7f22e7879aea6448e6b3764ca70029da902178e08f16628286545103",
+   "power": "AMEDIA-26"
+  },
+  {
+   "atlas_id": 751,
+   "plugin": "mas-video-lab",
+   "skill": "adobe-after-effects",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/235-mas-video-lab/751-adobe-after-effects",
+   "skill_md_sha256": "169b8a4ae3cd55275b8728b7b2530a403a6ab0cdf01c6c72c8ef28814c6a6858",
+   "power": "AMEDIA-24"
+  },
+  {
+   "atlas_id": 754,
+   "plugin": "mas-video-lab",
+   "skill": "ffmpeg",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/235-mas-video-lab/754-ffmpeg",
+   "skill_md_sha256": "981721674026233c2c5afd7d630934a392878d63ad2ce2557f1282482226d0a2",
+   "power": "AMEDIA-22"
+  },
+  {
+   "atlas_id": 756,
+   "plugin": "mas-video-lab",
+   "skill": "losslesscut",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/235-mas-video-lab/756-losslesscut",
+   "skill_md_sha256": "392e748cf37e3bac324015850cff97204b37554db36ede5d58bc6ce007b6cc3d",
+   "power": "AMEDIA-23"
+  },
+  {
+   "atlas_id": 2415,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-book-illustration",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1094-akbun-draw/2415-akbun-draw-book-illustration",
+   "skill_md_sha256": "97ee69333b18db23f94c67f198786c0baf50fa48cdc1df6cef4d1b280840bda6",
+   "power": "ACRAFT-11"
+  },
+  {
+   "atlas_id": 2416,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-cardnews-cream",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1094-akbun-draw/2416-akbun-draw-cardnews-cream",
+   "skill_md_sha256": "68acd5f0f6a36fc6621771a620cac2fa38646b67bab447f0d363f37cd7e5f5c3",
+   "power": "ACRAFT-08"
+  },
+  {
+   "atlas_id": 2417,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-cartoon-b",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1094-akbun-draw/2417-akbun-draw-cartoon-b",
+   "skill_md_sha256": "d5dd1c83de0516dd28acf626683fe59bafd09bb96b1c2d081eb44b252c605e8a",
+   "power": "ACRAFT-08"
+  },
+  {
+   "atlas_id": 2419,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-quiet-pencil",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1094-akbun-draw/2419-akbun-draw-quiet-pencil",
+   "skill_md_sha256": "312c3df44cdea27a22d682ad854d09823e28426c7f1c539a16404278357a475c",
+   "power": "ACRAFT-12"
+  },
+  {
+   "atlas_id": 2420,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-sketchbook-card",
+   "license": "MIT",
+   "theme": "general-dev-workflow",
+   "path": "skills/1094-akbun-draw/2420-akbun-draw-sketchbook-card",
+   "skill_md_sha256": "a42074b85c46f8177a7d6e1532e559b0aacf4407bc8884df796c7b4c331be0fc",
+   "power": "ACRAFT-11"
+  },
+  {
+   "atlas_id": 2421,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-storytellingimage",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1094-akbun-draw/2421-akbun-draw-storytellingimage",
+   "skill_md_sha256": "5daa9c5a85976e9498ccb1eaa7222bb6c41c2497ff988b30e02d0c9a451fe7d8",
+   "power": "ACRAFT-10"
+  },
+  {
+   "atlas_id": 2422,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-travel-blog",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/1094-akbun-draw/2422-akbun-draw-travel-blog",
+   "skill_md_sha256": "fa59abea9d1ecce5ced55ac59eed19327ae7f4bea7c9d70bef40993ae047de92",
+   "power": "ACRAFT-13"
+  },
+  {
+   "atlas_id": 2423,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-webtoon-b",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1094-akbun-draw/2423-akbun-draw-webtoon-b",
+   "skill_md_sha256": "37c595cc753a9a47d5262f1122db65e6231c455cdaeb5ba42051484f3f196fde",
+   "power": "ACRAFT-09"
+  },
+  {
+   "atlas_id": 2424,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-webtoon-c",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1094-akbun-draw/2424-akbun-draw-webtoon-c",
+   "skill_md_sha256": "bf886134693146cb3de3296eaaf362cd7104d394cf0ef51f6b6a182e63a2bac0",
+   "power": "ACRAFT-09"
+  },
+  {
+   "atlas_id": 2425,
+   "plugin": "akbun-draw",
+   "skill": "akbun-draw-webtoon-d",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/1094-akbun-draw/2425-akbun-draw-webtoon-d",
+   "skill_md_sha256": "63dc186bb664ac1f31f2d59b089180bbf7e5104cd4b4e49fa9bff67611019a49",
+   "power": "ACRAFT-10"
+  },
+  {
+   "atlas_id": 2920,
+   "plugin": "jq",
+   "skill": "jq",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/1240-jq/2920-jq",
+   "skill_md_sha256": "b3838d0a965e6aaeb37baf82676936acd86d9f02fd25629a21cec99d474c5fe4",
+   "power": "ACODE-225"
+  },
+  {
+   "atlas_id": 3231,
+   "plugin": "velith",
+   "skill": "book-visuals",
+   "license": "Apache-2.0",
+   "theme": "image-design-media",
+   "path": "skills/1376-velith/3231-book-visuals",
+   "skill_md_sha256": "0ba524dcd19f685b34dd6ba3353504605a593bc2f373564a6e1f313ab51b3cdf",
+   "power": "ACRAFT-14"
+  },
+  {
+   "atlas_id": 3324,
+   "plugin": "stark",
+   "skill": "apple-design",
+   "license": "Apache-2.0",
+   "theme": "mobile",
+   "path": "skills/1394-stark/3324-apple-design",
+   "skill_md_sha256": "5f0525a73e46a07597bbd2f68d22baeba53604346aba3b23cf4514893c1ff42c",
+   "power": "ACODE-226"
+  },
+  {
+   "atlas_id": 3376,
+   "plugin": "frontend-design-skills",
+   "skill": "anthropic-frontend-design",
+   "license": "Apache-2.0",
+   "theme": "frontend-ui-design",
+   "path": "skills/1420-frontend-design-skills/3376-anthropic-frontend-design",
+   "skill_md_sha256": "36b5807c29d874b1c717aac4139cb4cd626d448572d6c83696b382f973ae1305",
+   "power": "ACRAFT-21"
+  },
+  {
+   "atlas_id": 3730,
+   "plugin": "universal-design-principles",
+   "skill": "archetypes",
+   "license": "MIT",
+   "theme": "marketing-seo",
+   "path": "skills/1503-universal-design-principles/3730-archetypes",
+   "skill_md_sha256": "70e44fe0796d69587b556903e1957a9e9fd8d251533db3fcfc221969a5bda81d",
+   "power": "ACRAFT-19"
+  },
+  {
+   "atlas_id": 3761,
+   "plugin": "universal-design-principles",
+   "skill": "iconic-resemblance",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1503-universal-design-principles/3761-iconic-resemblance",
+   "skill_md_sha256": "0751594d11ab95a546a7847df9829c36c67c4943cfcc7f95a214356d7e110746",
+   "power": "ACRAFT-15"
+  },
+  {
+   "atlas_id": 3768,
+   "plugin": "universal-design-principles",
+   "skill": "progressive-disclosure",
+   "license": "MIT",
+   "theme": "prompt-skill-engineering",
+   "path": "skills/1503-universal-design-principles/3768-progressive-disclosure",
+   "skill_md_sha256": "bc2920a4da7531ffa4eac5aa63e77f7b6c2048e9ef9da2e2663ea52fd84f2e09",
+   "power": "ACRAFT-24"
+  },
+  {
+   "atlas_id": 3810,
+   "plugin": "universal-design-principles",
+   "skill": "closure",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1503-universal-design-principles/3810-closure",
+   "skill_md_sha256": "379a2da5765ff7b26c8e27e878d5a0ffa020b8b9ac23b37e2427c35fb4acd06b",
+   "power": "ACRAFT-15"
+  },
+  {
+   "atlas_id": 3815,
+   "plugin": "universal-design-principles",
+   "skill": "color-semantic-systems",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1503-universal-design-principles/3815-color-semantic-systems",
+   "skill_md_sha256": "68fe37db924d1a133141c12296a9f08ef490a5b1a8c6a3a9df2c4efb170e787f",
+   "power": "ACRAFT-16"
+  },
+  {
+   "atlas_id": 3823,
+   "plugin": "universal-design-principles",
+   "skill": "hierarchy-typographic",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1503-universal-design-principles/3823-hierarchy-typographic",
+   "skill_md_sha256": "523905da9180c553f23d6730615758181960935e65cdfcdee356b9ef481b9d30",
+   "power": "ACRAFT-18"
+  },
+  {
+   "atlas_id": 3825,
+   "plugin": "universal-design-principles",
+   "skill": "legibility-contrast-and-spacing",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/1503-universal-design-principles/3825-legibility-contrast-and-spacing",
+   "skill_md_sha256": "0db70f1cab63315b85b43880c2e41d593e41a7edcc65dda7f60946e46683173a",
+   "power": "ACRAFT-17"
+  },
+  {
+   "atlas_id": 3832,
+   "plugin": "universal-design-principles",
+   "skill": "readability",
+   "license": "MIT",
+   "theme": "web-research",
+   "path": "skills/1503-universal-design-principles/3832-readability",
+   "skill_md_sha256": "5fceb9e812eda9905080b0248296f151412260e9756199c9f9a5998dc5347916",
+   "power": "ACRAFT-17"
+  },
+  {
+   "atlas_id": 4128,
+   "plugin": "digital-marketing-pro",
+   "skill": "translate-content",
+   "license": "MIT",
+   "theme": "localization-language",
+   "path": "skills/1520-digital-marketing-pro/4128-translate-content",
+   "skill_md_sha256": "29320398ecef5561fe132420c0f57f8b442b040017f70e26b7b67536724709e8",
+   "power": "ADOCS-45"
+  },
+  {
+   "atlas_id": 4132,
+   "plugin": "digital-marketing-pro",
+   "skill": "video-packaging",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/1520-digital-marketing-pro/4132-video-packaging",
+   "skill_md_sha256": "9cccbea141603ffde92dad2f684b8deaf491141083d5be0e074a1f69c1ed97a9",
+   "power": "AMEDIA-25"
+  },
+  {
+   "atlas_id": 4178,
+   "plugin": "nativeapps",
+   "skill": "macos-app-icons",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/1527-nativeapps/4178-macos-app-icons",
+   "skill_md_sha256": "a18f71cac5df694fea1a1cd9ceb8f28f9685bd0ca3779b36ef2f44d05e8a0083",
+   "power": "ACRAFT-20"
+  },
+  {
+   "atlas_id": 4189,
+   "plugin": "webcraft",
+   "skill": "design-guide-authoring",
+   "license": "MIT",
+   "theme": "documentation",
+   "path": "skills/1530-webcraft/4189-design-guide-authoring",
+   "skill_md_sha256": "953efbf9d8a040b079ec2ea90fd50c4d975f7df1c8760fc069af062ed8dd231c",
+   "power": "ACRAFT-21"
+  },
+  {
+   "atlas_id": 7507,
+   "plugin": "base-dev-kit",
+   "skill": "tdd",
+   "license": "MIT",
+   "theme": "testing-tdd",
+   "path": "skills/2110-base-dev-kit/7507-tdd",
+   "skill_md_sha256": "5517cbf3b66d201d2f4d680625f07cd1f529eb90620290422fca325c704f4ed2",
+   "power": "ACODE-221"
+  },
+  {
+   "atlas_id": 8300,
+   "plugin": "majestic-misc",
+   "skill": "show-me",
+   "license": "MIT",
+   "theme": "diagrams-visual-docs",
+   "path": "skills/2212-majestic-misc/8300-show-me",
+   "skill_md_sha256": "4efac28ed06ace04bfc7b24b439fbc7464184cf4101c5aa016080dd309466663",
+   "power": "ACRAFT-23"
+  },
+  {
+   "atlas_id": 9423,
+   "plugin": "discipline",
+   "skill": "reuse-or-replace",
+   "license": "MIT",
+   "theme": "refactoring-architecture",
+   "path": "skills/2431-discipline/9423-reuse-or-replace",
+   "skill_md_sha256": "b52f688bf50305595edd5d2bdb02c7479eef19a4efbd00cd07a9ed2fac2d4e11",
+   "power": "AMIND-49"
+  },
+  {
+   "atlas_id": 9633,
+   "plugin": "verification",
+   "skill": "measure",
+   "license": "MIT",
+   "theme": "performance",
+   "path": "skills/2481-verification/9633-measure",
+   "skill_md_sha256": "389c1b540041938c7d8228ff20c1b6355f632be1dd54d12884ace44b5c611427",
+   "power": "ACODE-224"
+  },
+  {
+   "atlas_id": 9949,
+   "plugin": "security-audit",
+   "skill": "security-audit",
+   "license": "MIT",
+   "theme": "security",
+   "path": "skills/2582-security-audit/9949-security-audit",
+   "skill_md_sha256": "f3eab6359c297163c1582979c97b7a7e19c9559d9bd834140de2b3867c2b3110",
+   "power": "ACODE-220"
+  },
+  {
+   "atlas_id": 9953,
+   "plugin": "testing-philosophy",
+   "skill": "testing-philosophy",
+   "license": "MIT",
+   "theme": "testing-tdd",
+   "path": "skills/2586-testing-philosophy/9953-testing-philosophy",
+   "skill_md_sha256": "64516da06939e6059ded9d8a6827693f779e6b98ebfed4f4fd2c84943d73009c",
+   "power": "ACODE-221"
+  },
+  {
+   "atlas_id": 10272,
+   "plugin": "emulo",
+   "skill": "video",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/2681-emulo/10272-video",
+   "skill_md_sha256": "33b21f6722ee21b5d1f43fbbfc1ef77182d954555a60a43b6d813e24b5ee550d",
+   "power": "AMEDIA-20"
+  },
+  {
+   "atlas_id": 11548,
+   "plugin": "roadmapsmith",
+   "skill": "roadmap-update",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/2840-roadmapsmith/11548-roadmap-update",
+   "skill_md_sha256": "3fca5ad57a9abd76c8b24e7e577a2550bbe4f780d10c9793d7b0274e7665396d",
+   "power": "AMIND-50"
+  },
+  {
+   "atlas_id": 11578,
+   "plugin": "plain-writing",
+   "skill": "plain-writing",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/2868-plain-writing/11578-plain-writing",
+   "skill_md_sha256": "e54956e60fe712fadc735fbce21ce434eb1de6267b066ca04e47122c439bc378",
+   "power": "ADOCS-42"
+  },
+  {
+   "atlas_id": 12175,
+   "plugin": "react",
+   "skill": "vercel-react-view-transitions",
+   "license": "MIT",
+   "theme": "video-motion",
+   "path": "skills/2931-react/12175-vercel-react-view-transitions",
+   "skill_md_sha256": "b4114e8ba2f66a1101178028cf6b002b22091cdaaaf50434e8405f8a64e6a64f",
+   "power": "AMEDIA-19"
+  },
+  {
+   "atlas_id": 12905,
+   "plugin": "runtype-skills",
+   "skill": "tool-design",
+   "license": "MIT",
+   "theme": "mcp-tooling",
+   "path": "skills/3017-runtype-skills/12905-tool-design",
+   "skill_md_sha256": "c76b0d52e72acfe08b7b898f239ba8d80a22ff9a53905c049db6a7ebdc38add5",
+   "power": "ACODE-217"
+  },
+  {
+   "atlas_id": 12911,
+   "plugin": "runtype-skills",
+   "skill": "tool-design-security",
+   "license": "MIT",
+   "theme": "security",
+   "path": "skills/3017-runtype-skills/12911-tool-design-security",
+   "skill_md_sha256": "c00809ecad465d119d3c2a49a48f1be0f7261219e61a11fcbc8215fe34c8e68f",
+   "power": "ACODE-218"
+  },
+  {
+   "atlas_id": 13066,
+   "plugin": "x-skills",
+   "skill": "x-humanizer",
+   "license": "MIT",
+   "theme": "writing-content",
+   "path": "skills/3035-x-skills/13066-x-humanizer",
+   "skill_md_sha256": "7c7d27d1f79ce86c861d8965f9fd04cd64a0efdf43b7266a4e7d7f97233a4a3b",
+   "power": "ADOCS-43"
+  },
+  {
+   "atlas_id": 13185,
+   "plugin": "staff-engineer-mode",
+   "skill": "staff-engineer-mode",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3056-staff-engineer-mode/13185-staff-engineer-mode",
+   "skill_md_sha256": "a0b63fd3c89bf00b7c6a19cfbb368122e95fa18dae37a09565d8ff44c6f8fd72",
+   "power": "AMIND-48"
+  },
+  {
+   "atlas_id": 13228,
+   "plugin": "youtube",
+   "skill": "creator-thumbnail-agent",
+   "license": "MIT",
+   "theme": "image-design-media",
+   "path": "skills/3067-youtube/13228-creator-thumbnail-agent",
+   "skill_md_sha256": "72330118cdcfad66deab49c497b1f66a560a6b29c958f51299de3bf2fd5ca69d",
+   "power": "AMEDIA-25"
+  },
+  {
+   "atlas_id": 13634,
+   "plugin": "doubt-driven-development",
+   "skill": "doubt-driven-development",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/3221-doubt-driven-development/13634-doubt-driven-development",
+   "skill_md_sha256": "59aef769adeae40aad67a1d54474aaf914ea7ecdfc2a4752a54840a8d29f80de",
+   "power": "AMIND-45"
+  },
+  {
+   "atlas_id": 13679,
+   "plugin": "heuer-planning",
+   "skill": "heuer-planning",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3243-heuer-planning/13679-heuer-planning",
+   "skill_md_sha256": "5ebc2548935e3a6a6fb9a9a8428e4e689c0c72c3ef3b1b05ee793759730630ce",
+   "power": "AMIND-46"
+  },
+  {
+   "atlas_id": 13861,
+   "plugin": "prevent-committing-secrets",
+   "skill": "prevent-committing-secrets",
+   "license": "MIT",
+   "theme": "security",
+   "path": "skills/3346-prevent-committing-secrets/13861-prevent-committing-secrets",
+   "skill_md_sha256": "d10976ba86e9d0998be9ed69ed0d4d9ea1a3de6839727f90902a6ca6466d09a0",
+   "power": "ACODE-219"
+  },
+  {
+   "atlas_id": 13931,
+   "plugin": "requirements-elicitation",
+   "skill": "requirements-elicitation",
+   "license": "MIT",
+   "theme": "planning-specs",
+   "path": "skills/3395-requirements-elicitation/13931-requirements-elicitation",
+   "skill_md_sha256": "4f029d668bc05896b71422ecd45a4e116a99584c5b0514c284014dad092ce4f2",
+   "power": "AMIND-47"
+  },
+  {
+   "atlas_id": 14069,
+   "plugin": "marketing-cro",
+   "skill": "cro-methodology",
+   "license": "MIT",
+   "theme": "marketing-seo",
+   "path": "skills/3430-marketing-cro/14069-cro-methodology",
+   "skill_md_sha256": "52bfedca17750ad117d838bfdcb5c5db190fb8a7c6e9b82abe44f939830e3897",
+   "power": "ASTRAT-60"
+  },
+  {
+   "atlas_id": 14093,
+   "plugin": "product-strategy",
+   "skill": "jobs-to-be-done",
+   "license": "MIT",
+   "theme": "product-management",
+   "path": "skills/3433-product-strategy/14093-jobs-to-be-done",
+   "skill_md_sha256": "cc227aa837bda4ae0910324e52a90d338354501d005f7ef2fbd0cff9fd73aaf1",
+   "power": "ASTRAT-58"
+  },
+  {
+   "atlas_id": 14106,
+   "plugin": "strategy-growth",
+   "skill": "obviously-awesome",
+   "license": "MIT",
+   "theme": "product-management",
+   "path": "skills/3435-strategy-growth/14106-obviously-awesome",
+   "skill_md_sha256": "403b215c80ce3b124947598e9547c11f6eff142cc18a4f7fe508e15ac8ec35e0",
+   "power": "ASTRAT-59"
+  },
+  {
+   "atlas_id": 14108,
+   "plugin": "systems-architecture",
+   "skill": "clean-architecture",
+   "license": "MIT",
+   "theme": "refactoring-architecture",
+   "path": "skills/3436-systems-architecture/14108-clean-architecture",
+   "skill_md_sha256": "fc9fe201ae040df80164bc7a407507882783e2c8cdbc0379a1fbdcf3719e4446",
+   "power": "ACODE-222"
+  },
+  {
+   "atlas_id": 14110,
+   "plugin": "systems-architecture",
+   "skill": "high-perf-browser",
+   "license": "MIT",
+   "theme": "performance",
+   "path": "skills/3436-systems-architecture/14110-high-perf-browser",
+   "skill_md_sha256": "fed643149198165eadf1bb3bf8b6bfb173e18ba29c886e7f3d6a7681ad03a57d",
+   "power": "ACODE-223"
+  },
+  {
+   "atlas_id": 14121,
+   "plugin": "ux-design",
+   "skill": "microinteractions",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/3438-ux-design/14121-microinteractions",
+   "skill_md_sha256": "6be3a21ff34d6fb0fa5213b728e2a9e50d7e7ec68dbaf090bef1c518d83a6e31",
+   "power": "ACRAFT-22"
+  },
+  {
+   "atlas_id": 14123,
+   "plugin": "ux-design",
+   "skill": "steve-jobs-design-review",
+   "license": "MIT",
+   "theme": "verification-review",
+   "path": "skills/3438-ux-design/14123-steve-jobs-design-review",
+   "skill_md_sha256": "0bbfdcaf8d00ab82877a247369ce08b3ac7c2646d08b28d76f93bbe9456fa2ad",
+   "power": "ASTRAT-62"
+  },
+  {
+   "atlas_id": 14313,
+   "plugin": "ui-design",
+   "skill": "visual-design-foundations",
+   "license": "MIT",
+   "theme": "frontend-ui-design",
+   "path": "skills/3529-ui-design/14313-visual-design-foundations",
+   "skill_md_sha256": "0c6970d14f5d5df55c63d1be995205d140489e2d0c39896657fabee6f6a5df84",
+   "power": "ACRAFT-17"
+  }
+ ]
+}

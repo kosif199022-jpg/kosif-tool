@@ -2243,3 +2243,15 @@ _قدرات أُثبتت في هذه الجلسة: مطابقة الخطوط و�
 - **كيف / how:** `cd $SKILL_DIR/scripts/mimic && python3 synthetic/make_reference.py $OUT/ref && python3 synthetic/run_synthetic.py $OUT/ref $OUT/work` prints the scorecard; `python3 -m unittest tests.test_mimic` from the repo root asserts it (skips unless numpy, Pillow, OpenCV, fontTools, ffmpeg and ffprobe are all present). **أرقام / params:** transitions 6/6 type and span ±1; text animation 5/5; fonts 5/5 of 18; timing ±2 frames 3/5 (blur exit −7, slide_up +4)
 - **الرخصة / license:** owner
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/README.md` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/mimic-synthetic/sheet.jpg` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/mimic/synthetic/run_synthetic.py` · `kosif-tool/tests/test_mimic.py`
+
+## إضافات مرفقات 2026-10-23 — 2026-10-23 upload additions
+
+_من مراجعة مرفقات المالك: [owner-uploads-review-20261023.md](../owner-uploads-review-20261023.md). — From the owner-upload review._
+
+
+#### QA-U01 · طبقة الرسوم وحدها من رندرين · Graphics-only layer from two aligned renders · ✅ مُثبت هنا / proven here
+- **ماذا / what:** diff = max_channel|graphics − original| و alpha = clip((diff − 0.10)/0.12) ثم توسيع 3 px وتنعيم 1 px: يعطي طبقة RGBA للرسوم وحدها لتسليمها للمحرر أو لفحص ما أُضيف. — Recover an RGBA graphics layer from a with/without render pair.
+- **متى أستخدمها / when:** تسليم طبقة رسوم شفافة أو فحص ما أضافه الرندر / delivering a transparent graphics layer
+- **كيف / how:** قسّمها بالمناطق (شريط النص، كتلة الرسم) إن احتجت طبقات منفصلة. **أرقام / params:** IoU 1.0 on a synthetic pair (receipt)
+- **الرخصة / license:** Claude AI Motion Graphics (Tao Prompts) — ideas and numbers only, code not copied
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/proof_uploads.py` · `kosif-tool/.claude/skills/kosif-superpowers/proofs/owner-uploads-20261023/receipt.json`

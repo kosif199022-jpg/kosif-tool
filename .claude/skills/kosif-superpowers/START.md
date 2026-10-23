@@ -18,24 +18,24 @@ python3 $SKILL_DIR/scripts/capability_mindmap.py task "<المهمة>" # 3. رت
 python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت الناقص (--apply لـ pip/npm فقط، واسأل قبل النظام والمفاتيح)
 ```
 
-الهيكل: **15 مجموعة** ← **445 قدرة خارقة مدمجة** ← **5,334 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
+الهيكل: **15 مجموعة** ← **451 قدرة خارقة مدمجة** ← **5,408 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
 
 | المجموعة | ماذا تغطي | قدرات | جاهز الآن | أول أمر |
 |---|---|---|---|---|
 | `research` | البحث والمعرفة — Research & knowledge | 54 | 21 | `python3 scripts/source_scout.py check` |
-| `thinking` | التفكير والتخطيط والاستراتيجية — Reasoning & strategy | 283 | 17 | `python3 scripts/think.py ladder "<المهمة>"` |
-| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 155 | 87 | `python3 scripts/hub.py doctor` |
-| `software` | البرمجة وبناء التطبيقات — Software & applications | 530 | 127 | `python3 scripts/hub.py find "<المهمة>"` |
-| `drawing` | الرسم والأشكال والتصميم — Drawing & visual composition | 300 | 108 | `python3 scripts/creative_paint.py doctor` |
-| `images` | الصور والتحرير والتوليد — Images & photo editing | 308 | 140 | `python3 scripts/app_studio.py doctor` |
-| `3d` | الثري دي والمحاكاة والرندر — 3D & rendering | 758 | 264 | `python3 scripts/native_3d.py doctor` |
-| `motion` | الموشن والمونتاج والسينما — Motion & video editing | 1216 | 293 | `python3 scripts/montage_pro.py doctor` |
-| `audio` | الصوت والموسيقى والتعليق — Audio & voice | 416 | 133 | `python3 scripts/audio_cue_mapper.py --help` |
-| `type` | الخطوط والنصوص العربية واللاتينية — Typography & localization | 209 | 86 | `python3 scripts/font_fidelity_lab.py --help` |
+| `thinking` | التفكير والتخطيط والاستراتيجية — Reasoning & strategy | 294 | 17 | `python3 scripts/think.py ladder "<المهمة>"` |
+| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 156 | 88 | `python3 scripts/hub.py doctor` |
+| `software` | البرمجة وبناء التطبيقات — Software & applications | 536 | 127 | `python3 scripts/hub.py find "<المهمة>"` |
+| `drawing` | الرسم والأشكال والتصميم — Drawing & visual composition | 302 | 108 | `python3 scripts/creative_paint.py doctor` |
+| `images` | الصور والتحرير والتوليد — Images & photo editing | 324 | 140 | `python3 scripts/app_studio.py doctor` |
+| `3d` | الثري دي والمحاكاة والرندر — 3D & rendering | 758 | 265 | `python3 scripts/native_3d.py doctor` |
+| `motion` | الموشن والمونتاج والسينما — Motion & video editing | 1218 | 294 | `python3 scripts/montage_pro.py doctor` |
+| `audio` | الصوت والموسيقى والتعليق — Audio & voice | 422 | 133 | `python3 scripts/audio_cue_mapper.py --help` |
+| `type` | الخطوط والنصوص العربية واللاتينية — Typography & localization | 212 | 88 | `python3 scripts/font_fidelity_lab.py --help` |
 | `data` | البيانات والرسوم والمواقع — Data & visual analytics | 257 | 67 | `python3 scripts/powers.py family data-analysis` |
-| `documents` | المستندات والكتابة — Documents & writing | 110 | 32 | `python3 scripts/tell_scan.py --help` |
-| `quality` | الاختبارات والجودة والأمان — QA & security | 465 | 151 | `python3 scripts/verify_video.py --help` |
-| `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | 246 | 30 | `python3 scripts/rea_bridge.py doctor` |
+| `documents` | المستندات والكتابة — Documents & writing | 131 | 32 | `python3 scripts/tell_scan.py --help` |
+| `quality` | الاختبارات والجودة والأمان — QA & security | 469 | 152 | `python3 scripts/verify_video.py --help` |
+| `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | 248 | 30 | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | 27 | 12 | `python3 scripts/powers.py family other` |
 
 **رفعت صوتًا أو فيديو للمونتاج أو الموشن؟** فريق مونتاج برو: `python3 $SKILL_DIR/scripts/montage_pro.py intake <ملف> --job <مجلد>` ثم `options` ثم `build` — [montage-pro/README.md](montage-pro/README.md).
