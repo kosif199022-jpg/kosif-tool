@@ -1,0 +1,35 @@
+name: Refresh Superpowers generated indexes (temporary)
+on:
+  push:
+    branches:
+      - feat/instagram-discovery-matrices-20261024
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regenerate from source-of-truth registries
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/hub.py build
+          python3 .claude/skills/kosif-superpowers/scripts/skill_layout.py build
+      - name: Commit derived files on the feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .claude/skills/kosif-superpowers/manifest.json
+          git add .claude/skills/kosif-superpowers/references/INDEX.md
+          git add .claude/skills/kosif-superpowers/SKILL.md
+          git add .claude/skills/kosif-superpowers/references/guides/sources.md
+          git add .claude/skills/kosif-superpowers/data/powers/runnable-tools.json
+          git add .claude/skills/kosif-superpowers/references/LAYOUT.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'build: regenerate Superpowers tool registry and layout'
+            git push origin HEAD:feat/instagram-discovery-matrices-20261024
+          fi
