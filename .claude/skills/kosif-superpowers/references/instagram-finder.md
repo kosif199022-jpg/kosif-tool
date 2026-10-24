@@ -40,6 +40,10 @@ instaloader -l MY_USERNAME                          # مرة واحدة على �
 python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40
 python3 scripts/instagram_finder.py add-posts https://www.instagram.com/reel/XXXX/ --cookies cookies.txt
 
+# أسهل وأأمن: استخدم تسجيل دخولك من المتصفح اللي على جهازك (الكوكيز ماتخرجش من الجهاز ومش بتتحفظ)
+python3 scripts/instagram_finder.py index --browser chrome
+python3 scripts/instagram_finder.py add-posts https://www.instagram.com/reel/XXXX/ --cookies-from-browser chrome
+
 python3 scripts/instagram_finder.py search "عطر سبلاش سلوموشن" --max-dur 30 --save out/instagram/hits.json
 python3 scripts/instagram_finder.py thumbs out/instagram/hits.json --top 8
 python3 scripts/instagram_finder.py download out/instagram/hits.json --pick 1,4 \
@@ -63,7 +67,8 @@ python3 scripts/instagram_finder.py download out/instagram/hits.json --top 3 --r
 وجود حساب هنا معناه إنه مصدر بنبحث فيه، **مش** ترخيص باستخدام محتواه.
 
 ## الحدود — Limits (اقرأها)
-- **تسجيل الدخول:** إنستجرام غالبًا بيطلب تسجيل دخول لقراءة صفحات الحسابات والهاشتاجات. استخدم جلستك أنت (`instaloader -l`) أو `cookies.txt` من متصفحك؛ ماتحفظهاش في المستودع وماتبعتهاش لحد.
+- **تسجيل الدخول:** إنستجرام غالبًا بيطلب تسجيل دخول لقراءة صفحات الحسابات والهاشتاجات. أسهل طريقة `--browser chrome` (للفهرسة) و`--cookies-from-browser chrome` (للروابط والتحميل): بتقرأ تسجيل دخولك من المتصفح اللي على جهازك من غير ما تنسخه أو تحفظه. أو جلستك (`instaloader -l`) أو `cookies.txt`. ماتلزقش الكوكيز في شات ولا تحفظها في المستودع: دي زي الباسورد. ويُفضّل حساب إنستجرام تاني مش الأساسي، لأن السحب الكتير ممكن يوقف الحساب مؤقتًا.
+- **الريلز العامة من غير حساب:** رابط ريل عام غالبًا بيتحمّل بـyt-dlp من غير تسجيل دخول؛ صفحات الحسابات والهاشتاجات لأ.
 - **الحسابات الخاصة:** مش هتشتغل غير لو حسابك متابعها ومقبول.
 - **مفيش API رسمي هنا:** Instagram Graph API بيبحث في الهاشتاجات لحسابات Business بس وبموافقة تطبيق؛ الأداة مش بتستخدمه. instaloader وyt-dlp بيقروا الصفحات العامة، فممكن يقفوا لما إنستجرام يغيّر حاجة (`pip install -U instaloader yt-dlp`).
 - **حدود المعدّل:** افتراضيًا 40 بوست لكل حساب (أقصى 200)، 8 ثواني بين الحسابات، 4 ثواني بين الروابط، 5 ثواني بين التحميلات، وأقصى 25 تحميل في التشغيلة (`--max` لحد 100). لو إنستجرام قال «استنى» (429) الأداة بتقف. ماتقلّلش الانتظار.

@@ -352,6 +352,8 @@
   - `python3 scripts/fetch_video.py https://example.com/video --quality audio -o ./out/audio`
 - **cookies**: Passes a Netscape cookies.txt exported from the user's own browser, for private or age-gated posts the user can access.
   - `python3 scripts/fetch_video.py https://example.com/video --cookies ./cookies.txt -o ./out/clips`
+- **cookies-from-browser**: Passes --cookies-from-browser to yt-dlp so the user's own local browser login is used without exporting a cookies file.
+  - `python3 scripts/fetch_video.py https://example.com/video --cookies-from-browser firefox -o ./out/clips`
 - **update**: Runs pip install --upgrade yt-dlp curl_cffi (network plus package install).
   - `python3 scripts/fetch_video.py --update`
 
@@ -458,6 +460,8 @@
   - `python3 scripts/instagram_finder.py plan "عطر رجالي"`
 - **index**: Reads recent posts of every saved account (or --accounts, --hashtag) with instaloader into out/instagram/index.json, incrementally, 8 s between accounts, at most 200 posts per account.
   - `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`
+- **browser-login**: Uses the user's Instagram login from a local browser (instaloader for index, --cookies-from-browser for add-posts and download); the cookies stay on the machine and are never written by the tool.
+  - `python3 scripts/instagram_finder.py index --browser firefox`
 - **add-posts**: Indexes single post or reel links with yt-dlp metadata (no download), 4 s apart.
   - `python3 scripts/instagram_finder.py add-posts https://www.instagram.com/reel/XXXX/`
 - **search**: Ranks indexed videos for the query and prints why each matched; filters by account, duration, date and photos.

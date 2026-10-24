@@ -147,11 +147,13 @@ class Pipeline(unittest.TestCase):
         rc, _, err = run("download", hits, "--pick", "1", "--rights", "permission")
         self.assertEqual(rc, 2)
         self.assertIn("--evidence", err)
-        rc, out, _ = run("download", hits, "--pick", "1", "--rights", "owned", "--dry-run", "-o", str(self.d / "v"))
+        rc, out, _ = run("download", hits, "--pick", "1", "--rights", "owned", "--dry-run", "-o", str(self.d / "v"),
+                         "--cookies-from-browser", "firefox")
         self.assertEqual(rc, 0)
         self.assertIn("fetch_video.py", out)
+        self.assertIn("--cookies-from-browser", out)
         rc, out, err = run("download", hits, "--pick", "1", "--rights", "permission", "--evidence", "DM 2026-10-24",
-                           "--no-safe", "--sleep", "0", "-o", str(self.d / "v"))
+                           "--no-safe", "--sleep", "0", "-o", str(self.d / "v"), "--cookies-from-browser", "firefox")
         self.assertEqual(rc, 0, err)
         log = [json.loads(l) for l in (self.d / "v" / "instagram_rights.jsonl").read_text().splitlines()]
         self.assertEqual(log[0]["credit"], "@suki.shotz")

@@ -7668,6 +7668,11 @@
      "does": "Passes a Netscape cookies.txt exported from the user's own browser, for private or age-gated posts the user can access."
     },
     {
+     "name": "cookies-from-browser",
+     "example": "python3 scripts/fetch_video.py https://example.com/video --cookies-from-browser firefox -o ./out/clips",
+     "does": "Passes --cookies-from-browser to yt-dlp so the user's own local browser login is used without exporting a cookies file."
+    },
+    {
      "name": "update",
      "example": "python3 scripts/fetch_video.py --update",
      "does": "Runs pip install --upgrade yt-dlp curl_cffi (network plus package install)."
@@ -7761,6 +7766,11 @@
      "name": "index",
      "example": "python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40",
      "does": "Reads recent posts of every saved account (or --accounts, --hashtag) with instaloader into out/instagram/index.json, incrementally, 8 s between accounts, at most 200 posts per account."
+    },
+    {
+     "name": "browser-login",
+     "example": "python3 scripts/instagram_finder.py index --browser firefox",
+     "does": "Uses the user's Instagram login from a local browser (instaloader for index, --cookies-from-browser for add-posts and download); the cookies stay on the machine and are never written by the tool."
     },
     {
      "name": "add-posts",

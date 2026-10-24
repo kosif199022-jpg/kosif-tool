@@ -11,6 +11,7 @@ built-in downloader scripts/fetch_video.py (yt-dlp).
   python3 instagram_finder.py add-account "https://www.instagram.com/name?igsh=..."
   python3 instagram_finder.py plan "عطر رجالي"               # keywords, hashtags, web searches (offline)
   python3 instagram_finder.py index --session-user ME        # read captions of saved accounts (instaloader)
+  python3 instagram_finder.py index --browser chrome         # same, with your local browser login
   python3 instagram_finder.py add-posts URL [URL ...]        # index single reels you found (yt-dlp)
   python3 instagram_finder.py search "perfume splash" --top 15 --save out/instagram/hits.json
   python3 instagram_finder.py thumbs out/instagram/hits.json # thumbnails to check visually first
@@ -185,13 +186,21 @@ def post_record(**kw) -> dict:
     return rec
 
 
-def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag: bool = False):
+def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag: bool = False,
+                      browser: str | None = None):
     """Yield post records newest first. Imported lazily (pip install instaloader)."""
     import instaloader  # noqa: PLC0415
     L = instaloader.Instaloader(download_pictures=False, download_videos=False, download_video_thumbnails=False,
                                 download_comments=False, save_metadata=False, quiet=True, max_connection_attempts=2)
     if session_user:
         L.load_session_from_file(session_user)
+    elif browser:  # the user's own browser login, read locally; never written to disk by this tool
+        from instaloader.__main__ import get_cookies_from_instagram  # noqa: PLC0415
+        cookies = get_cookies_from_instagram("instagram", browser, None)
+        if cookies:
+            L.context.update_cookies(cookies)
+            if not L.test_login():
+                raise RuntimeError(f"not logged in to Instagram in {browser}")
     if hashtag:
         it = instaloader.Hashtag.from_name(L.context, handle).get_posts_resumable()
     else:
@@ -208,7 +217,7 @@ def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag
                           source=("#" if hashtag else "@") + handle)
 
 
-def ytdlp_post(url: str, cookies: str | None) -> dict:
+def ytdlp_post(url: str, cookies: str | None, browser: str | None = None) -> dict:
     sys.path.insert(0, str(FETCHER.parent))
     from fetch_video import find_ytdlp  # noqa: PLC0415
     ytdlp = find_ytdlp()
@@ -217,6 +226,8 @@ def ytdlp_post(url: str, cookies: str | None) -> dict:
     cmd = ytdlp + ["--skip-download", "--dump-json", "--no-playlist", "--no-warnings"]
     if cookies:
         cmd += ["--cookies", cookies]
+    if browser:
+        cmd += ["--cookies-from-browser", browser]
     p = subprocess.run(cmd + ["--", url], text=True, capture_output=True, timeout=120)
     if p.returncode or not p.stdout.strip():
         raise RuntimeError((p.stderr or "no metadata").strip()[-300:])
@@ -376,7 +387,7 @@ def cmd_index(a) -> int:
             time.sleep(a.sleep)
         new = 0
         try:
-            for rec in instaloader_posts(name, limit, a.session_user, hashtag=is_tag):
+            for rec in instaloader_posts(name, limit, a.session_user, hashtag=is_tag, browser=a.browser):
                 if rec["shortcode"] in known and not a.full and not is_tag:
                     break  # profiles are newest first: the rest is already indexed
                 idx["posts"][rec["shortcode"]] = rec
@@ -417,7 +428,7 @@ def cmd_add_posts(a) -> int:
         if i:
             time.sleep(a.sleep)
         try:
-            rec = ytdlp_post(url, a.cookies)
+            rec = ytdlp_post(url, a.cookies, a.cookies_from_browser)
         except Exception as e:
             print(f"FAIL {url}: {e}", file=sys.stderr)
             rc = 1
@@ -500,6 +511,8 @@ def cmd_download(a) -> int:
         base.append("--safe")
     if a.cookies:
         base += ["--cookies", a.cookies]
+    if a.cookies_from_browser:
+        base += ["--cookies-from-browser", a.cookies_from_browser]
     if a.dry_run:
         print(json.dumps({"action": "dry_run_no_download", "rights": a.rights,
                           "commands": [base + [h["url"]] for h in chosen]}, ensure_ascii=False, indent=1))
@@ -568,12 +581,14 @@ def main(argv=None) -> int:
     s.add_argument("--hashtag", action="append", help="also index a hashtag (needs --session-user)")
     s.add_argument("--limit", type=int, default=40, help=f"posts per account (max {MAX_PER_ACCOUNT})")
     s.add_argument("--session-user", help="your Instagram username with a saved instaloader session (instaloader -l USER)")
+    s.add_argument("--browser", help="use your Instagram login from a local browser (chrome, firefox, edge, brave, safari…)")
     s.add_argument("--sleep", type=float, default=8.0, help="seconds between accounts (default 8)")
     s.add_argument("--full", action="store_true", help="re-read posts already indexed")
     s = sub.add_parser("add-posts", help="index single post/reel links with yt-dlp")
     s.add_argument("urls", nargs="*")
     s.add_argument("--urls", dest="urlfile")
     s.add_argument("--cookies")
+    s.add_argument("--cookies-from-browser", metavar="BROWSER", help="your login from a local browser")
     s.add_argument("--sleep", type=float, default=4.0)
     s = sub.add_parser("search", help="rank indexed videos for a product query (Arabic or English)")
     s.add_argument("query")
@@ -599,6 +614,7 @@ def main(argv=None) -> int:
             s.add_argument("--evidence", help="link or note proving permission/licence")
             s.add_argument("--quality", default="1080")
             s.add_argument("--cookies", help="your own Netscape cookies.txt (never commit it)")
+            s.add_argument("--cookies-from-browser", metavar="BROWSER", help="your login from a local browser")
             s.add_argument("--safe", action=argparse.BooleanOptionalAction, default=True)
             s.add_argument("--max", type=int, default=MAX_DOWNLOADS)
             s.add_argument("--dry-run", action="store_true")
