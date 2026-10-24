@@ -51,11 +51,11 @@ def expand(topic):
 
 def plan(topic, accounts_only=False):
     variants, jobs = expand(topic)[:2], []
-    if not accounts_only:
-        for v in variants:
+    # Round-robin: with a 3-query API budget include BOTH tracked creators.
+    for v in variants:
+        if not accounts_only:
             jobs.append({"scope":"public", "query":f'site:instagram.com/reel/ "{v}"'})
-    for c in creators():
-        for v in variants:
+        for c in creators():
             jobs.append({"scope":c["handle"],
                          "query":f'site:instagram.com/reel/ "{v}" "{c["handle"]}"'})
     for job in jobs:
