@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **170 powers follow** — ✅ 137 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **171 powers follow** — ✅ 138 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-160 (18)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-172 (19)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -1510,6 +1510,14 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_github_top_repos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/github_top_repos.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-172 · البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يسجّل حسابين مرجعيين، وينشئ روابط بحث عامة حسب المحتوى، ويفهرس الروابط التي يتحقق منها الباحث مع وصف عربي/إنجليزي داخل SQLite محليًا، ثم يولّد مقترحات بحثية للبنات المصفوفات الست وأقرب أساليب الأطلس الـ86 دون ادعاء مشاهدة أو تنفيذ الفيديو. — Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram.
+- **متى أستخدمها / when:** ابحث عن ريلز إنستجرام بتأثير معين / Find Instagram motion references for glowing particles and propose causal bricks
+- **كيف / how:** doctor: `python3 scripts/instagram_reference_bridge.py doctor`; sources: `python3 scripts/instagram_reference_bridge.py sources`; plan: `python3 scripts/instagram_reference_bridge.py plan "جسيمات ضوئية"`; add: `python3 scripts/instagram_reference_bridge.py add https://www.instagram.com/reel/REALCODE/ --topic "light particles" --state link_only`. Full card: `python3 scripts/hub.py tool instagram-reference-discovery`. Limits: The CLI cannot directly search inside all Instagram reels or verify a video's actual motion; web results must be discovered separately and manually checked. Source states only attest to submitted notes and evidence URI presence, not authenticity. Proposal is not a runnable KMX recipe. **أرقام / params:** in: User-provided Instagram reel/post URLs, researched public metadata or authorized frame notes; optional KMX 86-style catalog. No login/token required. · out: Search-provider URLs; local SQLite reference catalog; JSON search matches and evidence-labelled KMX hypothesis proposals.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_reference_bridge.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_reference_bridge.py`
+- **المصدر / source:** data/tools.json
+
 ## Local computer / الجهاز المحلي
 
 #### TOOL-55 · خادم KOSIF Remote Commander · KOSIF Remote Commander MCP · ✅ مُثبت هنا / proven here
@@ -1523,7 +1531,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (170)
+- الرخص / licences: — (171)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
