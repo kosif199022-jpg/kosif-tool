@@ -1,0 +1,1983 @@
+{
+ "batch": [
+  "tool:a-shell",
+  "script:color_media",
+  "script:creative_reasoning_bridge",
+  "script:creative_external_search",
+  "script:atlas_audit_synthesis",
+  "app:tikplayer",
+  "script:tell_scan",
+  "script:build_chapters",
+  "script:anchor_gate",
+  "app:instagram-link-collector"
+ ],
+ "coverage": {
+  "by_kind": {
+   "app": {
+    "reviewed": 2,
+    "total": 3
+   },
+   "playbook": {
+    "reviewed": 0,
+    "total": 17
+   },
+   "script": {
+    "reviewed": 7,
+    "total": 159
+   },
+   "skill": {
+    "reviewed": 0,
+    "total": 5
+   },
+   "tool": {
+    "reviewed": 1,
+    "total": 11
+   },
+   "workflow": {
+    "reviewed": 0,
+    "total": 2
+   }
+  },
+  "claimed": 0,
+  "fresh": 10,
+  "never": 187,
+  "pending": 0,
+  "percent": 5.1,
+  "reviewed": 10,
+  "simulated_reviews": 10,
+  "stale": 0,
+  "total": 197
+ },
+ "created_at": "2026-10-24T21:11:44+00:00",
+ "implement_next": [
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.85,
+   "effort": "S",
+   "evidence": [
+    ".github/workflows/ci.yml:23"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add a CI step to .github/workflows/ci.yml: python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py (it passes 62/62 here but no workflow runs it)",
+   "rank": 1,
+   "score": 4.25,
+   "severity": "high",
+   "title": "Run the 62-check writing runner in CI",
+   "unit": "script:anchor_gate",
+   "units": [
+    "script:anchor_gate",
+    "script:tell_scan"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "bug",
+   "confidence": 0.85,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_external_search.py:40"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "In terms(), match AR keys against whole tokens of the query (raw list), not substrings of the text; add a test that «قصة كرتون» does not expand to cut/editing",
+   "rank": 2,
+   "score": 4.25,
+   "severity": "high",
+   "title": "Arabic key 'قص' fires inside 'قصة'",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "bug",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:37"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Decode REA JSON as utf-8-sig first, then utf-16; count skipped files and print them in the summary instead of `except (...): pass`",
+   "rank": 3,
+   "score": 4.0,
+   "severity": "high",
+   "title": "UTF-8 REA files are silently dropped",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_reasoning_bridge.py:2"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add to the docstring: python3 scripts/audio_cue_mapper.py song.wav --out cues.json && python3 scripts/creative_reasoning_bridge.py cues.json --out sb.json --report report.json",
+   "rank": 4,
+   "score": 4.0,
+   "severity": "high",
+   "title": "Add a two-step usage line",
+   "unit": "script:creative_reasoning_bridge",
+   "units": [
+    "script:creative_reasoning_bridge"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/data/tools.json:7258"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add tests/test_ashell_cinema.py: sh -n tools/a-shell/Cinema_C_V34_Studio_iPhone.sh, then --help and --version with HOME set to a temp dir (skip when sh is missing)",
+   "rank": 5,
+   "score": 4.0,
+   "severity": "high",
+   "title": "Add a smoke test for the a-Shell script",
+   "unit": "tool:a-shell",
+   "units": [
+    "tool:a-shell"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "duplicate",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-instagram-discovery/SKILL.md"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Add one Instagram section to references/guides/sources.md: discover (skill), research library (skill), collect links (this app), download (instagram_finder get), reference bridge",
+   "rank": 6,
+   "score": 3.5,
+   "severity": "high",
+   "title": "Five Instagram units without one map",
+   "unit": "app:instagram-link-collector",
+   "units": [
+    "app:instagram-link-collector"
+   ]
+  },
+  {
+   "agree": 2,
+   "also": [
+    "Make the CI job that runs test_portrait_pipeline install opencv-python-headless, or add a numpy-only unit test of the colour maths"
+   ],
+   "category": "test",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py:38",
+    ".claude/skills/kosif-superpowers/scripts/color_media.py:64"
+   ],
+   "personas": [
+    "P1",
+    "P3"
+   ],
+   "proposed_change": "Add a numpy-only unit test for srgb_to_oklab (white -> L~1, black -> L~0) that runs even when cv2 is absent",
+   "rank": 7,
+   "score": 2.7,
+   "severity": "medium",
+   "title": "Colour media tests skip silently without opencv",
+   "unit": "script:color_media",
+   "units": [
+    "script:color_media"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:6"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add evals/test_atlas_audit_synthesis.py: two records + one REA file in a temp dir, check manifest counts and that runtime_verified stays false",
+   "rank": 8,
+   "score": 2.4,
+   "severity": "medium",
+   "title": "Add a unit test for atlas_audit_synthesis",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:2"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add a usage line to the docstring and help= text for --records, --rea-dir, --manifest-out and --report-out (what produces each input)",
+   "rank": 9,
+   "score": 2.4,
+   "severity": "medium",
+   "title": "Add usage and flag help",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "arabic",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_external_search.py:112"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Print with ensure_ascii=False so descriptions stay readable",
+   "rank": 10,
+   "score": 2.4,
+   "severity": "medium",
+   "title": "Arabic and Chinese print as \\u escapes",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  }
+ ],
+ "missing": [],
+ "note": "SIMULATED: the five personas were written in one Claude context, not run as separate agents",
+ "proposals": [
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.85,
+   "effort": "S",
+   "evidence": [
+    ".github/workflows/ci.yml:23"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add a CI step to .github/workflows/ci.yml: python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py (it passes 62/62 here but no workflow runs it)",
+   "rank": 1,
+   "score": 4.25,
+   "severity": "high",
+   "title": "Run the 62-check writing runner in CI",
+   "unit": "script:anchor_gate",
+   "units": [
+    "script:anchor_gate",
+    "script:tell_scan"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "bug",
+   "confidence": 0.85,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_external_search.py:40"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "In terms(), match AR keys against whole tokens of the query (raw list), not substrings of the text; add a test that «قصة كرتون» does not expand to cut/editing",
+   "rank": 2,
+   "score": 4.25,
+   "severity": "high",
+   "title": "Arabic key 'قص' fires inside 'قصة'",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "bug",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:37"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Decode REA JSON as utf-8-sig first, then utf-16; count skipped files and print them in the summary instead of `except (...): pass`",
+   "rank": 3,
+   "score": 4.0,
+   "severity": "high",
+   "title": "UTF-8 REA files are silently dropped",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_reasoning_bridge.py:2"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add to the docstring: python3 scripts/audio_cue_mapper.py song.wav --out cues.json && python3 scripts/creative_reasoning_bridge.py cues.json --out sb.json --report report.json",
+   "rank": 4,
+   "score": 4.0,
+   "severity": "high",
+   "title": "Add a two-step usage line",
+   "unit": "script:creative_reasoning_bridge",
+   "units": [
+    "script:creative_reasoning_bridge"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/data/tools.json:7258"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add tests/test_ashell_cinema.py: sh -n tools/a-shell/Cinema_C_V34_Studio_iPhone.sh, then --help and --version with HOME set to a temp dir (skip when sh is missing)",
+   "rank": 5,
+   "score": 4.0,
+   "severity": "high",
+   "title": "Add a smoke test for the a-Shell script",
+   "unit": "tool:a-shell",
+   "units": [
+    "tool:a-shell"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "duplicate",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-instagram-discovery/SKILL.md"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Add one Instagram section to references/guides/sources.md: discover (skill), research library (skill), collect links (this app), download (instagram_finder get), reference bridge",
+   "rank": 6,
+   "score": 3.5,
+   "severity": "high",
+   "title": "Five Instagram units without one map",
+   "unit": "app:instagram-link-collector",
+   "units": [
+    "app:instagram-link-collector"
+   ]
+  },
+  {
+   "agree": 2,
+   "also": [
+    "Make the CI job that runs test_portrait_pipeline install opencv-python-headless, or add a numpy-only unit test of the colour maths"
+   ],
+   "category": "test",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/evals/test_portrait_pipeline.py:38",
+    ".claude/skills/kosif-superpowers/scripts/color_media.py:64"
+   ],
+   "personas": [
+    "P1",
+    "P3"
+   ],
+   "proposed_change": "Add a numpy-only unit test for srgb_to_oklab (white -> L~1, black -> L~0) that runs even when cv2 is absent",
+   "rank": 7,
+   "score": 2.7,
+   "severity": "medium",
+   "title": "Colour media tests skip silently without opencv",
+   "unit": "script:color_media",
+   "units": [
+    "script:color_media"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:6"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add evals/test_atlas_audit_synthesis.py: two records + one REA file in a temp dir, check manifest counts and that runtime_verified stays false",
+   "rank": 8,
+   "score": 2.4,
+   "severity": "medium",
+   "title": "Add a unit test for atlas_audit_synthesis",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:2"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add a usage line to the docstring and help= text for --records, --rea-dir, --manifest-out and --report-out (what produces each input)",
+   "rank": 9,
+   "score": 2.4,
+   "severity": "medium",
+   "title": "Add usage and flag help",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "arabic",
+   "confidence": 0.8,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_external_search.py:112"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Print with ensure_ascii=False so descriptions stay readable",
+   "rank": 10,
+   "score": 2.4,
+   "severity": "medium",
+   "title": "Arabic and Chinese print as \\u escapes",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    "apps/instagram-link-collector/collector.js:20"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Move the /reel|p|tv/ href regex into a pure parseLink(href) and add a node --test for reel, post, tv and short ids",
+   "rank": 11,
+   "score": 2.1,
+   "severity": "medium",
+   "title": "Extract and test the link parser",
+   "unit": "app:instagram-link-collector",
+   "units": [
+    "app:instagram-link-collector"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/evals/test_creative_intelligence.py:54"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add a CLI test: same path for --out and --report, and an existing --out, must both exit 2 without writing",
+   "rank": 12,
+   "score": 2.1,
+   "severity": "medium",
+   "title": "CLI refusal paths are untested",
+   "unit": "script:creative_reasoning_bridge",
+   "units": [
+    "script:creative_reasoning_bridge"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/tell_scan.py:125"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Rename the H12 label to 'stock word' (and the Arabic equivalent) and print one line: 'editing aid, not an authorship detector'",
+   "rank": 13,
+   "score": 2.1,
+   "severity": "medium",
+   "title": "Label 'overused AI word' contradicts the disclaimer",
+   "unit": "script:tell_scan",
+   "units": [
+    "script:tell_scan"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    "tools/a-shell/Cinema_C_V34_Studio_iPhone.sh:2"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Put a 6-line install-and-run block first (copy to ~/Documents/bin in a-Shell, then `c <link>`), move the V34…V11 notes below it",
+   "rank": 14,
+   "score": 2.1,
+   "severity": "medium",
+   "title": "Top of the script is a changelog, not a how-to",
+   "unit": "tool:a-shell",
+   "units": [
+    "tool:a-shell"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.8,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py:64"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "Derive the date and totals from the records; move the fixed prose (14,793, the four manual examples) to an optional --notes file",
+   "rank": 15,
+   "score": 2.0,
+   "severity": "high",
+   "title": "Report hard-codes date, totals and reviewed examples",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    "apps/tikplayer/app/src/main/java/com/aghnam/tikplayer/Video.kt:30"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Start on the device's videos (or the picker) and keep the Google sample list behind a demo switch",
+   "rank": 16,
+   "score": 1.8,
+   "severity": "medium",
+   "title": "Opens on network demo videos with fake comments",
+   "unit": "app:tikplayer",
+   "units": [
+    "app:tikplayer"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_reasoning_bridge.py:143"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "Add --force to allow replacing existing --out/--report (keep the refusal as default)",
+   "rank": 17,
+   "score": 1.8,
+   "severity": "medium",
+   "title": "No --force: re-running the same command fails",
+   "unit": "script:creative_reasoning_bridge",
+   "units": [
+    "script:creative_reasoning_bridge"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.7,
+   "effort": "M",
+   "evidence": [
+    "apps/tikplayer/README.md:14"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Commit a Gradle wrapper (gradle wrapper --gradle-version 8.7) and add an optional workflow that runs ./gradlew assembleDebug",
+   "rank": 18,
+   "score": 1.75,
+   "severity": "high",
+   "title": "TikPlayer has never been built",
+   "unit": "app:tikplayer",
+   "units": [
+    "app:tikplayer"
+   ]
+  },
+  {
+   "agree": 2,
+   "also": [
+    "hub.py build --all: run build_chapters, capability_graph build and capability_atlas build after the registry build"
+   ],
+   "category": "architecture",
+   "confidence": 0.7,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/hub.py:852"
+   ],
+   "personas": [
+    "P3",
+    "P4"
+   ],
+   "proposed_change": "Add hub.py build --all that runs build_chapters.py, capability_graph.py build and capability_atlas.py build after the registry build",
+   "rank": 19,
+   "score": 1.57,
+   "severity": "medium",
+   "title": "Chain hub build with chapters, graph and atlas",
+   "unit": "script:build_chapters",
+   "units": [
+    "script:build_chapters"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    "apps/instagram-link-collector/collector.js:30"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Save handle, page, collected_at and links as JSON that kosif-instagram-video-research can ingest",
+   "rank": 20,
+   "score": 1.5,
+   "severity": "medium",
+   "title": "Export JSON for the research library",
+   "unit": "app:instagram-link-collector",
+   "units": [
+    "app:instagram-link-collector"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    "apps/instagram-link-collector/collector.js:37"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "If no link is found after the first idle rounds, show 'Instagram changed the page; update the selectors' in the popup",
+   "rank": 21,
+   "score": 1.5,
+   "severity": "medium",
+   "title": "Silent empty result after a DOM change",
+   "unit": "app:instagram-link-collector",
+   "units": [
+    "app:instagram-link-collector"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/anchor_gate.py:19"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "When PASS, print the ambiguous words found in BEFORE (نص، ست، ضعف) as 'not checked' so the user can look",
+   "rank": 22,
+   "score": 1.5,
+   "severity": "medium",
+   "title": "Say which words were not checked",
+   "unit": "script:anchor_gate",
+   "units": [
+    "script:anchor_gate"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/references/creative-intelligence-execution.md"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Add the audio_cue_mapper -> creative_reasoning_bridge chain, with both commands, to references/creative-intelligence-execution.md",
+   "rank": 23,
+   "score": 1.5,
+   "severity": "medium",
+   "title": "Document the audio -> storyboard chain in one place",
+   "unit": "script:creative_reasoning_bridge",
+   "units": [
+    "script:creative_reasoning_bridge"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "duplicate",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/references/video-download.md"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "In references/video-download.md add a 3-row table: iPhone (a-Shell script), desktop (fetch_video.py), streams (stream_grabber.py)",
+   "rank": 24,
+   "score": 1.5,
+   "severity": "medium",
+   "title": "Say when to use a-Shell vs desktop downloaders",
+   "unit": "tool:a-shell",
+   "units": [
+    "tool:a-shell"
+   ]
+  },
+  {
+   "agree": 2,
+   "also": [
+    "Fold the offline creative index into source_scout as a source (or document in references/guides/sources.md which one to use)"
+   ],
+   "category": "duplicate",
+   "confidence": 0.53,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/source_scout.py"
+   ],
+   "personas": [
+    "P3",
+    "P4"
+   ],
+   "proposed_change": "Make source_scout the single discovery front door and load data/rea-creative-research as one of its offline sources",
+   "rank": 25,
+   "score": 1.19,
+   "severity": "medium",
+   "title": "Merge creative_external_search into source_scout",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "test",
+   "confidence": 0.6,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/build_chapters.py:37"
+   ],
+   "personas": [
+    "P1"
+   ],
+   "proposed_change": "Add evals/test_build_chapters.py: a hand-made chapter without MARKER in a temp OUT must survive a build without --force",
+   "rank": 26,
+   "score": 0.9,
+   "severity": "medium",
+   "title": "Test the never-overwrite guard",
+   "unit": "script:build_chapters",
+   "units": [
+    "script:build_chapters"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.6,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/data/tools.json:7258"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "Rename to tools/a-shell/cinema_c.sh with VERSION inside, and update data/tools.json and the docs once",
+   "rank": 27,
+   "score": 0.9,
+   "severity": "medium",
+   "title": "Versioned filename breaks every link on release",
+   "unit": "tool:a-shell",
+   "units": [
+    "tool:a-shell"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    "apps/tikplayer/app/src/main/res/layout/item_video.xml"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add a toggle that draws the Reels/TikTok UI safe zones over the video",
+   "rank": 28,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "Reels safe-zone overlay",
+   "unit": "app:tikplayer",
+   "units": [
+    "app:tikplayer"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/proofs/general-writing/README.md"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Document tell_scan -> rewrite -> anchor_gate as one recipe in proofs/general-writing/README.md",
+   "rank": 29,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "One command for the scan-rewrite-gate loop",
+   "unit": "script:anchor_gate",
+   "units": [
+    "script:anchor_gate"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/anchor_gate.py:20"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add --mode translate (numbers, names, URLs, quotes must survive; month/weekday names may change language)",
+   "rank": 30,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "Translation mode",
+   "unit": "script:anchor_gate",
+   "units": [
+    "script:anchor_gate"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/atlas_body_audit.py"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Move the synthesis into atlas_body_audit.py synthesize (it consumes that tool's records.json) and keep a thin wrapper",
+   "rank": 31,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "Make it a subcommand of atlas_body_audit",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/color_media.py:13"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add --timelapse that writes every Nth stroke state as frames for an MP4",
+   "rank": 32,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "Time-lapse export from the stroke record",
+   "unit": "script:color_media",
+   "units": [
+    "script:color_media"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_external_search.py:64"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add a usable score from licence and REA status and sort by it before stars",
+   "rank": 33,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "Rank by usability, not stars",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/proofs/general-writing/README.md"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Document the loop as one recipe in proofs/general-writing/README.md (or add tell_scan.py --gate BEFORE AFTER that calls anchor_gate)",
+   "rank": 34,
+   "score": 0.75,
+   "severity": "medium",
+   "title": "One command for the scan-rewrite-gate loop",
+   "unit": "script:tell_scan",
+   "units": [
+    "script:tell_scan"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.7,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_external_search.py:2"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add: python3 scripts/creative_external_search.py search \"<query>\" [--kind repo|site] [--top 15] · stats",
+   "rank": 35,
+   "score": 0.7,
+   "severity": "low",
+   "title": "No usage line in the docstring",
+   "unit": "script:creative_external_search",
+   "units": [
+    "script:creative_external_search"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    "usip-library/cards/software/app-feature-transfer.md:8594"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Add apps/README.md listing the three apps, what each is for and how to build or load it",
+   "rank": 36,
+   "score": 0.6,
+   "severity": "low",
+   "title": "Add an apps/README.md index",
+   "unit": "app:tikplayer",
+   "units": [
+    "app:tikplayer"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/build_chapters.py:14"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Write the examples as python3 scripts/build_chapters.py … from the skill root, like the other tools",
+   "rank": 37,
+   "score": 0.6,
+   "severity": "low",
+   "title": "Examples assume cwd = scripts/",
+   "unit": "script:build_chapters",
+   "units": [
+    "script:build_chapters"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "docs",
+   "confidence": 0.6,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/color_media.py:22"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add 'needs numpy + opencv-python-headless' to the docstring's usage line so --help says it before a draw fails",
+   "rank": 38,
+   "score": 0.6,
+   "severity": "low",
+   "title": "Say opencv is needed in --help",
+   "unit": "script:color_media",
+   "units": [
+    "script:color_media"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "ux",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    "apps/instagram-link-collector/README.md:15"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Replace `cd .claude/skills/kosif-superpowers` + relative command with python3 .claude/skills/kosif-superpowers/scripts/instagram_finder.py get --urls …",
+   "rank": 39,
+   "score": 0.5,
+   "severity": "low",
+   "title": "Give the download command from the repo root",
+   "unit": "app:instagram-link-collector",
+   "units": [
+    "app:instagram-link-collector"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "security",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    "apps/tikplayer/app/src/main/AndroidManifest.xml:4"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "Drop android.permission.INTERNET once the network sample list is behind a demo switch (or removed)",
+   "rank": 40,
+   "score": 0.5,
+   "severity": "low",
+   "title": "INTERNET permission only for demo clips",
+   "unit": "app:tikplayer",
+   "units": [
+    "app:tikplayer"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "arabic",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/anchor_gate.py:169"
+   ],
+   "personas": [
+    "P2"
+   ],
+   "proposed_change": "Add an Arabic sentence to the argparse description (يقارن الأرقام والأسماء والاقتباسات قبل التعديل وبعده)",
+   "rank": 41,
+   "score": 0.5,
+   "severity": "low",
+   "title": "Arabic line in --help",
+   "unit": "script:anchor_gate",
+   "units": [
+    "script:anchor_gate"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.5,
+   "effort": "S",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/data/tools.json"
+   ],
+   "personas": [
+    "P4"
+   ],
+   "proposed_change": "Mark its data/tools.json entry kind=library and point its examples at portrait_pipeline.py --medium",
+   "rank": 42,
+   "score": 0.5,
+   "severity": "low",
+   "title": "Register color_media as a library of portrait_pipeline",
+   "unit": "script:color_media",
+   "units": [
+    "script:color_media"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "duplicate",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/references/humanizer.md"
+   ],
+   "personas": [
+    "P3"
+   ],
+   "proposed_change": "Generate the pattern table in references/humanizer.md from tell_scan's rules (or add a test that the IDs match)",
+   "rank": 43,
+   "score": 0.25,
+   "severity": "low",
+   "title": "Rule list duplicated with humanizer.md",
+   "unit": "script:tell_scan",
+   "units": [
+    "script:tell_scan"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.5,
+   "effort": "M",
+   "evidence": [
+    "tools/a-shell/Cinema_C_V34_Studio_iPhone.sh:4"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add c --preset reels|story|gif aliases for the menu-14 recipes and list them in --help",
+   "rank": 44,
+   "score": 0.25,
+   "severity": "low",
+   "title": "Named Studio presets",
+   "unit": "tool:a-shell",
+   "units": [
+    "tool:a-shell"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.4,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/data/atlas-reviewed/manifest.json"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Read the previous manifest and only re-synthesise records whose document_sha256 changed",
+   "rank": 45,
+   "score": 0.2,
+   "severity": "low",
+   "title": "Incremental audit by SHA-256",
+   "unit": "script:atlas_audit_synthesis",
+   "units": [
+    "script:atlas_audit_synthesis"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.4,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/creative_reasoning_bridge.py:16"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add --render that hands the validated storyboard to motion_director and writes a draft MP4",
+   "rank": 46,
+   "score": 0.2,
+   "severity": "low",
+   "title": "Render an animatic",
+   "unit": "script:creative_reasoning_bridge",
+   "units": [
+    "script:creative_reasoning_bridge"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "feature",
+   "confidence": 0.4,
+   "effort": "M",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/scripts/tell_scan.py:16"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Add a suggest field for strong tells in the JSON output",
+   "rank": 47,
+   "score": 0.2,
+   "severity": "low",
+   "title": "Suggestions per tell",
+   "unit": "script:tell_scan",
+   "units": [
+    "script:tell_scan"
+   ]
+  },
+  {
+   "agree": 1,
+   "also": [],
+   "category": "architecture",
+   "confidence": 0.3,
+   "effort": "L",
+   "evidence": [
+    ".claude/skills/kosif-superpowers/references/powers/runnable-tools.md"
+   ],
+   "personas": [
+    "P5"
+   ],
+   "proposed_change": "Serve chapters through hub.py tool/find at read time and stop committing references/powers/*.md",
+   "rank": 48,
+   "score": 0.07,
+   "severity": "low",
+   "title": "Render chapters on demand",
+   "unit": "script:build_chapters",
+   "units": [
+    "script:build_chapters"
+   ]
+  }
+ ],
+ "reviews_sha256": "cacc693a9f07a83457a9b9a99c6498ee304740580ed99f43e7afdb32cd91f8f4",
+ "run": "out/self-council/first-pass-20261024",
+ "schema": "kosif.self-council-report.v1",
+ "status": "SELF_COUNCIL_SIMULATED",
+ "units": {
+  "app:instagram-link-collector": {
+   "clarity": 5,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "lists a profile's links without touching cookies"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Parses, but its link parser is buried in DOM code and untested.",
+     "test_verdict": {
+      "ran": "node --check apps/instagram-link-collector/collector.js (OK)",
+      "status": "none"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 5,
+      "would_say": "عايز كل روابط الريلز من حساب إنستجرام"
+     },
+     "simulated": true,
+     "summary": "Best README in the batch: Egyptian Arabic, steps, limits and privacy."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "lists a profile's links without touching cookies"
+     },
+     "simulated": true,
+     "summary": "When Instagram changes its DOM, it finishes with an empty list and no explanation."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Five Instagram units and no single map of which does what.",
+     "wiring": {
+      "overlaps": [
+       "skill:kosif-instagram-discovery",
+       "skill:kosif-instagram-video-research",
+       "script:instagram_finder",
+       "script:instagram_reference_bridge"
+      ],
+      "should_call": [
+       "script:instagram_finder"
+      ]
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "The collected links stop at a text file.",
+     "ten_x": {
+      "first_step": "save a .json next to the .txt with handle, page and collected_at",
+      "idea": "one click from a profile to the research library"
+     }
+    }
+   }
+  },
+  "app:tikplayer": {
+   "clarity": 4,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "owner project; phone preview of reels"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Never built: there is no wrapper and no CI job, so nobody knows whether it compiles.",
+     "test_verdict": {
+      "ran": "not run (no JDK/Android SDK here, and the folder has no Gradle wrapper)",
+      "status": "none"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 4,
+      "would_say": "عايز أشوف الريلز بتاعتي على الموبايل زي تيك توك"
+     },
+     "simulated": true,
+     "summary": "README is clear; the app itself opens on demo videos from the internet."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "owner project; phone preview of reels"
+     },
+     "simulated": true,
+     "summary": "Low risk, but carries an INTERNET permission only for demo clips."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Apps are discoverable only through a catalog card.",
+     "wiring": {
+      "overlaps": [
+       "app:virtualcam"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "It can show how a reel looks; it cannot show what the Reels UI will cover.",
+     "ten_x": {
+      "first_step": "add a safe-zone overlay toggle to item_video.xml",
+      "idea": "a KOSIF preview player: open a render from the desktop on the phone with Reels safe-zone overlays"
+     }
+    }
+   }
+  },
+  "script:anchor_gate": {
+   "clarity": 4,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "a cheap factual guard for every rewrite"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Covered with exit codes, by a runner that CI never runs.",
+     "test_verdict": {
+      "ran": "python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py -> 62/62 passed (incl. exit codes 0/2/64)",
+      "status": "covered"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 4,
+      "would_say": "اتأكد إن الأرقام والأسماء ما اتغيرتش بعد ما عدّلت النص"
+     },
+     "simulated": true,
+     "summary": "Excellent docstring with exit codes; the --help description is English only."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "a cheap factual guard for every rewrite"
+     },
+     "simulated": true,
+     "summary": "Ambiguous Arabic words are skipped by design, so a dropped 'نص ساعة' passes silently."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Shares a test runner and a loop with tell_scan.",
+     "wiring": {
+      "overlaps": [
+       "script:tell_scan"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "The same anchors matter in translation.",
+     "ten_x": {
+      "first_step": "add --mode translate that ignores month/weekday language but keeps numbers and names",
+      "idea": "a translation gate: numbers, names and quotes survive EN<->AR translation"
+     }
+    }
+   }
+  },
+  "script:atlas_audit_synthesis": {
+   "clarity": 2,
+   "complete": true,
+   "findings": 6,
+   "keep_or_kill": {
+    "decision": "rewrite",
+    "why": "most of its report is fixed prose that ignores the input"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 6,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "No test, and a broad except silently drops REA files that are not UTF-16.",
+     "test_verdict": {
+      "ran": "python3 scripts/atlas_audit_synthesis.py --help (exit 0)",
+      "status": "none"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 2,
+      "would_say": "لخّصلي مراجعة الأطلس في تقرير"
+     },
+     "simulated": true,
+     "summary": "One-line docstring and four required flags with no help text."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "rewrite",
+      "why": "most of its report is fixed prose that ignores the input"
+     },
+     "simulated": true,
+     "summary": "The report would publish stale claims on any new run."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Consumes atlas_body_audit's records.json; belongs next to it.",
+     "wiring": {
+      "overlaps": [
+       "script:atlas_body_audit",
+       "script:atlas_review_summary",
+       "script:atlas_metadata_audit"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "Every run starts from zero.",
+     "ten_x": {
+      "first_step": "skip records whose sha256 already sits in data/atlas-reviewed/manifest.json",
+      "idea": "incremental audits keyed by SKILL.md SHA-256"
+     }
+    }
+   }
+  },
+  "script:build_chapters": {
+   "clarity": 4,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "check_skill and CI depend on it"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 4,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Determinism is checked by check_skill, but the never-overwrite guard is not.",
+     "test_verdict": {
+      "ran": "check_skill.py chapters check (imports build_chapters and compares output)",
+      "status": "partial"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 4,
+      "would_say": "حدّث فصول القدرات بعد ما ضفت أداة"
+     },
+     "simulated": true,
+     "summary": "Usage is clear for maintainers; the examples assume you are inside scripts/."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "check_skill and CI depend on it"
+     },
+     "simulated": true,
+     "summary": "Three manual follow-up steps after hub.py build are easy to forget."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Part of a four-step build chain run by hand.",
+     "wiring": {
+      "overlaps": [
+       "script:hub",
+       "script:capability_graph",
+       "script:capability_atlas"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "Committed generated files are churn.",
+     "ten_x": {
+      "first_step": "measure which references/powers/*.md files are actually opened",
+      "idea": "no committed chapters: render them on demand from the JSON"
+     }
+    }
+   }
+  },
+  "script:color_media": {
+   "clarity": 4,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "a unique pigment model; used by portrait_pipeline --medium"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 4,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Exercised end-to-end through portrait_pipeline, but on a box without opencv nothing checks it.",
+     "test_verdict": {
+      "ran": "python3 -c 'import cv2' -> ModuleNotFoundError; evals/test_portrait_pipeline.py drives --medium colored-pencil/oil/watercolor but is skipped without opencv",
+      "status": "partial"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 4,
+      "would_say": "ارسم صورتي بالألوان المائية"
+     },
+     "simulated": true,
+     "summary": "Docstring explains the three media and gives a command; a newcomer understands it."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "a unique pigment model; used by portrait_pipeline --medium"
+     },
+     "simulated": true,
+     "summary": "Green CI can mean colour media never ran."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Only reached through portrait_pipeline, yet registered as a standalone tool.",
+     "wiring": {
+      "overlaps": [
+       "script:portrait_pipeline",
+       "script:creative_paint"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "The stroke record is already there; a time-lapse is a reel by itself.",
+     "ten_x": {
+      "first_step": "write the stroke order to JSON and add --timelapse N frames",
+      "idea": "a time-lapse MP4 of the painting being made, from the stroke record"
+     }
+    }
+   }
+  },
+  "script:creative_external_search": {
+   "clarity": 3,
+   "complete": true,
+   "findings": 6,
+   "keep_or_kill": {
+    "decision": "merge",
+    "why": "a second repo-discovery front door beside source_scout and github_top_repos"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Arabic query expansion matches substrings, so a story query is read as a cutting/editing query.",
+     "test_verdict": {
+      "ran": "python3 scripts/creative_external_search.py search \"قصة كرتون\" --top 2 -> two video editors (freecut, flycut)",
+      "status": "partial"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 3,
+      "would_say": "دورلي على مستودعات مفتوحة للمونتاج"
+     },
+     "simulated": true,
+     "summary": "Accepts Arabic queries, then prints non-English text as \\u escapes."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "merge",
+      "why": "a second repo-discovery front door beside source_scout and github_top_repos"
+     },
+     "simulated": true,
+     "summary": "Duplicates other discovery tools and returns wrong hits for Arabic queries."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Three discovery tools overlap; one should own creative repositories.",
+     "wiring": {
+      "overlaps": [
+       "script:source_scout",
+       "script:github_top_repos",
+       "script:rea_creative_research_atlas"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "Stars are the only quality signal.",
+     "ten_x": {
+      "first_step": "join with rea_creative_research_atlas output to add a usable flag",
+      "idea": "rank by 'can KOSIF use it' (licence + REA-analysed + runnable) instead of stars"
+     }
+    }
+   }
+  },
+  "script:creative_reasoning_bridge": {
+   "clarity": 2,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "a deterministic storyboard step with a CI test"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "build_plan() is well tested; the CLI's output-path refusals are not.",
+     "test_verdict": {
+      "ran": "python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_creative_intelligence.py (OK)",
+      "status": "partial"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 2,
+      "would_say": "اعمل ستوري بورد للأغنية دي على الكلمات"
+     },
+     "simulated": true,
+     "summary": "I cannot tell from the help where the cues file comes from or what to run first."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "a deterministic storyboard step with a CI test"
+     },
+     "simulated": true,
+     "summary": "Re-running the same command always fails because outputs must be new."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "A two-step chain with no single entry point.",
+     "wiring": {
+      "overlaps": [
+       "script:audio_cue_mapper",
+       "script:music_rhythm_engine",
+       "script:motion_director"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "It stops at an unrendered storyboard.",
+     "ten_x": {
+      "first_step": "pass the validated storyboard to motion_director's render path",
+      "idea": "storyboard to animatic MP4 in one step"
+     }
+    }
+   }
+  },
+  "script:tell_scan": {
+   "clarity": 4,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "the only Arabic stock-phrase scanner here"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Well covered by a script-style runner, but that runner is not in CI.",
+     "test_verdict": {
+      "ran": "python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py -> 62/62 passed",
+      "status": "covered"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 4,
+      "would_say": "شوف النص ده فيه كلام شكله مكتوب بالذكاء الاصطناعي؟"
+     },
+     "simulated": true,
+     "summary": "Clear output, but its label says 'overused AI word', which reads as an authorship verdict the docstring forbids."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "the only Arabic stock-phrase scanner here"
+     },
+     "simulated": true,
+     "summary": "Its rule list mirrors references/humanizer.md by hand."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Scan -> rewrite -> gate is one loop split over two tools.",
+     "wiring": {
+      "overlaps": [
+       "script:anchor_gate"
+      ],
+      "should_call": [
+       "script:anchor_gate"
+      ]
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "It finds; it does not help fix.",
+     "ten_x": {
+      "first_step": "emit a 'suggest' field for strong tells in --json output",
+      "idea": "suggest the rewrite for each strong tell and verify it with anchor_gate"
+     }
+    }
+   }
+  },
+  "tool:a-shell": {
+   "clarity": 3,
+   "complete": true,
+   "findings": 5,
+   "keep_or_kill": {
+    "decision": "keep",
+    "why": "the only path that lands a download in the iPhone Photos app"
+   },
+   "personas": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "proposals": 5,
+   "voices": {
+    "P1": {
+     "simulated": true,
+     "summary": "Syntax is valid and manual runs are recorded, but no automated test guards a 2,907-line script.",
+     "test_verdict": {
+      "ran": "sh -n tools/a-shell/Cinema_C_V34_Studio_iPhone.sh (syntax OK); tools.json evidence_note lists manual --help/--version runs",
+      "status": "partial"
+     }
+    },
+    "P2": {
+     "first_minute": {
+      "clarity": 3,
+      "would_say": "عايز أنزّل فيديو تيك توك على الآيفون وأحفظه في الصور"
+     },
+     "simulated": true,
+     "summary": "Powerful, but the first 60 lines are release notes, not how to install and run it."
+    },
+    "P3": {
+     "keep_or_kill": {
+      "decision": "keep",
+      "why": "the only path that lands a download in the iPhone Photos app"
+     },
+     "simulated": true,
+     "summary": "Worth keeping, but its versioned filename turns every release into a rename."
+    },
+    "P4": {
+     "simulated": true,
+     "summary": "Separate world from the desktop downloaders; the guide should say which to use where.",
+     "wiring": {
+      "overlaps": [
+       "script:fetch_video",
+       "script:stream_grabber"
+      ],
+      "should_call": []
+     }
+    },
+    "P5": {
+     "simulated": true,
+     "summary": "The pieces exist in menu 14; named presets would make it one tap.",
+     "ten_x": {
+      "first_step": "expose the Studio menu presets as named flags (c --preset reels|story|gif) in --help",
+      "idea": "one command from link to a Reels-ready file in Photos: download, 9:16, captions, -14 LUFS"
+     }
+    }
+   }
+  }
+ }
+}

@@ -4,7 +4,7 @@
   "catalog_powers": 5851,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 172,
+  "tool_count": 174,
   "groups": [
     {
       "id": "research",
@@ -135,8 +135,8 @@
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 166,
-        "ready": 22
+        "proven": 167,
+        "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 55,
@@ -72246,6 +72246,7 @@
       ],
       "proof": [
         "kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py",
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py"
       ],
       "source": "runnable-tools.json",
@@ -72267,6 +72268,7 @@
         "kosif-tool/tests/test_think_reasoning.py",
         "kosif-tool/tests/test_think_intel.py",
         "kosif-tool/tests/test_think_pro.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py",
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py"
       ],
       "source": "runnable-tools.json",
@@ -72713,12 +72715,13 @@
       "domain": "build",
       "name_en": "Atlas audit to reviewed manifest",
       "name_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع",
-      "status": "ready",
+      "status": "proven",
       "requires": [
         "python3",
         "npm:rea"
       ],
       "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_audit_synthesis.py",
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py"
       ],
       "source": "runnable-tools.json",

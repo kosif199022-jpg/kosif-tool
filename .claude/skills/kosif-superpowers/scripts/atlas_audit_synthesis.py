@@ -3,6 +3,13 @@
 import argparse,collections,json
 from pathlib import Path
 
+def _read_rea(file):
+ """REA JSON as written on Windows (UTF-16), else UTF-8 (with or without BOM); a UTF-8 file is no longer dropped."""
+ try:
+  return json.loads(file.read_text(encoding='utf-16'))
+ except (UnicodeError,ValueError):
+  return json.loads(file.read_text(encoding='utf-8-sig'))
+
 def main():
  p=argparse.ArgumentParser()
  for flag in ['records','rea-dir','manifest-out','report-out']:
@@ -34,7 +41,7 @@ def main():
  rea=[]
  for file in sorted(Path(getattr(a,'rea_dir')).glob('rea_*.json')):
   try:
-   content=json.loads(file.read_text(encoding='utf-16'))
+   content=_read_rea(file)
    stats=content['normalized_result']['statistics']
    rea.append({'skill_id':file.stem.removeprefix('rea_'),
     'evidence_id':content.get('evidence_id'),

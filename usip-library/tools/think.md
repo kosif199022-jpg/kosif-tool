@@ -333,6 +333,7 @@
 #### الاختبارات والأدلة
 
 - `.claude/skills/kosif-superpowers/evals/test_council.py`
+- `.claude/skills/kosif-superpowers/evals/test_think_models.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A13-pro-council.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A30-council-100.md`
 
@@ -870,6 +871,7 @@
 - `tests/test_think_reasoning.py`
 - `tests/test_think_intel.py`
 - `tests/test_think_pro.py`
+- `.claude/skills/kosif-superpowers/evals/test_think_models.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/protocol/A24-reasoning-modes-decision-gates.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/cognition.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/discover.md`

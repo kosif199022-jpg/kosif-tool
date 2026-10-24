@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (26)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (27)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -38,6 +38,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `kosif-groups` | For each of the 15 smart groups lists its fused superpowers ordered by readiness, entry scripts, a start command, linked groups and a per-group install plan that separates pip/npm lines (run with --apply) from system tools and keys that need the user's approval. | `python3 scripts/kosif_hubs.py` | tested-here |
 | `owned-repos` | Joins every repository on the owner's GitHub account to the 15 smart capability groups: a curated purpose and state (integrated, partial, learnable, reference, archive, empty) per repo, a static gitingest-style digest of shallow clones (files, languages, SKILL.md, tests, CI, manifests, secret-like pattern counts without values), live catalog proof citations per repo, relations between repos and the live Cloudflare services they build (atlas edge API, Jev decision service, KOSIF Think Full Pro server) with their safety rules, and a have-now vs learnable table per capability group. | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
 | `micro-index` | Builds the finest-grained map of the skill: every atomic power, runnable tool and fused superpower gets one entry with its group, domain, family, superpower, badge, requirements, the tools of its family, its chapter and its library card. Writes data/micro_index.json and references/micro-index/ (one page per group plus tools and superpowers); find searches it in Arabic or English and show prints any id with its neighbours. --check reports stale files without writing. | `python3 scripts/micro_index.py build` | tested-here |
+| `skill-loader` | Writes LOADER.md, one small map of every skill under .claude/skills/, the 15 capability groups, every protocol appendix with its trigger and the line ranges of each SKILL.md section, so Claude reads one short file and then opens only the lines a task needs. need names the few files and line ranges for a task; full prints the full-power reading order. | `python3 scripts/skill_loader.py build --check` | tested-here |
 
 <!-- hub:area:discover:end -->
 

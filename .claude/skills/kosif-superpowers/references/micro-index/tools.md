@@ -70,6 +70,7 @@
 | `repo-kosif` | TOOL-73 | أداة سطر أوامر لأطلس أنماط KOSIF · KOSIF style atlas CLI | `python3 tools/kosif.py list --category charts --limit 10` | 2 |
 | `requirements` | TOOL-72 | مخطط متطلبات القدرات · Power requirements planner | `python3 scripts/requirements.py present --json` | 1 |
 | `skill-intelligence` | TOOL-124 | محرك بروتوكول ذكاء المهارات الشامل · Universal Skill Intelligence Protocol engine | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع…` | 3 |
+| `skill-loader` | — | خريطة التحميل الخفيف للمهارات · Light skill loader map | `python3 scripts/skill_loader.py build --check` | 1 |
 | `smart-capabilities` | TOOL-116 | فهرس ذكي للقدرات من أجل Claude · Smart capability index for Claude | `python3 scripts/smart_capabilities.py groups` | 1 |
 | `superpower-fusion` | TOOL-127 | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) | `python3 scripts/superpower_fusion.py build` | 1 |
 | `superpowers-unified` | TOOL-09 | موجّه مهارات العمل ومثبّتها · Process-skill router and installer | `python3 scripts/superpowers_unified.py doctor` | 1 |
@@ -173,6 +174,7 @@
 | `repo-import-briefs` | TOOL-59 | استيراد الملفات الإبداعية · Creative brief importer | `python3 tools/import_briefs.py ./briefs/` | 0 |
 | `repo-sync-catalog` | TOOL-60 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync | `python3 tools/sync_catalog.py` | 0 |
 | `repo-validate` | TOOL-103 | فاحص سلامة أطلس الأنماط · Style atlas repository validator | `python3 tools/validate.py` | 3 |
+| `self-council` | — | مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية · Self-Council: five Claude-derived critics review every skill and feature, with a coverage ledger | `python3 scripts/self_council.py inventory --summary` | 1 |
 | `skill-layout` | TOOL-100 | خريطة ترتيب المهارة · Skill Layout Map | `python3 scripts/skill_layout.py build` | 1 |
 
 ## motion
@@ -237,7 +239,7 @@
 | `business-workflows` | TOOL-65 | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude · AI for business: 9 functions, 64 workflows, Claude-native gated runbooks | `python3 scripts/business_workflows.py functions` | 1 |
 | `capability-mindmap` | TOOL-128 | الخريطة الذهنية المرحلية وتدقيق التكرار · Task-stage capability mind map and duplicate audit | `python3 scripts/capability_mindmap.py build` | 1 |
 | `charter-ingest` | TOOL-139 | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة · Charter roster ingest: the 500-expert council as a consultable index | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.j…` | 1 |
-| `council` | TOOL-68 | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/counc…` | 1 |
+| `council` | TOOL-68 | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/counc…` | 2 |
 | `decision-math` | TOOL-145 | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high…` | 1 |
 | `invention-lab` | TOOL-11 | مختبر الابتكار الهندسي · Invention Lab Candidates | `python3 scripts/invention_lab.py methods` | 1 |
 | `lesson-integrity` | TOOL-167 | فاحص أرقام الدروس والشروح · Lesson number integrity checker | `python3 scripts/lesson_integrity.py values --registry values.json` | 1 |
@@ -247,5 +249,5 @@
 | `stats-lab` | TOOL-151 | مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات · Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains | `python3 scripts/stats_lab.py abtest --a 1000,100 --b 1000,130` | 1 |
 | `task-history` | TOOL-170 | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا · Task history: record every finished task and repeat it later | `python3 scripts/task_history.py new --kind video` | 1 |
 | `tell-scan` | TOOL-75 | فاحص العبارات الكتابية النمطية · Writing Tell Scanner | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | 1 |
-| `think` | TOOL-69 | محرك التفكير وقوالبه · Thinking engine scaffolds | `python3 scripts/think.py ladder "design a 30-day plan for a course la…` | 4 |
+| `think` | TOOL-69 | محرك التفكير وقوالبه · Thinking engine scaffolds | `python3 scripts/think.py ladder "design a 30-day plan for a course la…` | 5 |
 

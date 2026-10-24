@@ -1407,10 +1407,10 @@
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
    "count": 172,
-   "proven": 139,
+   "proven": 140,
    "status": {
-    "proven": 139,
-    "ready": 21,
+    "proven": 140,
+    "ready": 20,
     "install": 12
    }
   },
@@ -2210,6 +2210,11 @@
    "label": "scripts/motion_reference_probe.py"
   },
   {
+   "id": "script:scripts/self_council.py",
+   "kind": "script",
+   "label": "scripts/self_council.py"
+  },
+  {
    "id": "script:scripts/telegram_typography_atlas.py",
    "kind": "script",
    "label": "scripts/telegram_typography_atlas.py"
@@ -2445,6 +2450,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_self_council.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_self_council.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
@@ -2633,6 +2643,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_task_history.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_task_history.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_think_models.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_think_models.py"
   },
   {
    "id": "test:tests/test_think.py",
@@ -6818,6 +6833,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "script:scripts/think.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_reasoning_bridge.py",
    "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
@@ -7264,6 +7285,12 @@
   {
    "from": "script:scripts/requirements.py",
    "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/self_council.py",
+   "to": "script:scripts/_secrets.py",
    "rel": "imports",
    "w": 1
   },
@@ -7724,6 +7751,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_self_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "rel": "tested_by",
@@ -8072,6 +8105,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/self_council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_self_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/skill_intelligence.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
    "rel": "tested_by",
@@ -8152,6 +8191,12 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/think.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_think_models.py",
    "rel": "tested_by",
    "w": 1
   },

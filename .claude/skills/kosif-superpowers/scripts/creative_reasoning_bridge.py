@@ -3,6 +3,10 @@
 
 The decision is deterministic and audit-able, NOT automatic interpretation of lyrics,
 not a neural model or a substitute for an art director. It uses no 3rd-party code.
+
+Usage (from the skill folder; the cues come from audio_cue_mapper.py first):
+  python3 scripts/audio_cue_mapper.py song.wav --out cues.json [--aligned-words words.json]
+  python3 scripts/creative_reasoning_bridge.py cues.json --out storyboard.json --report report.json [--style auto|doodle|cinematic|kinetic] [--landscape]
 """
 from __future__ import annotations
 import argparse

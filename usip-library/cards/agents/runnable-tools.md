@@ -10052,6 +10052,7 @@
 #### 6. الأدلة
 
 - `kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py`
 - `kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py`
 
 #### 7. قدرات قريبة في العائلة
@@ -10124,6 +10125,7 @@
 - `kosif-tool/tests/test_think_reasoning.py`
 - `kosif-tool/tests/test_think_intel.py`
 - `kosif-tool/tests/test_think_pro.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py`
 - `kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`
 
 #### 7. قدرات قريبة في العائلة
@@ -11619,7 +11621,7 @@
 - `TOOL-88` استوديو التطبيقات للصور والتصميم / App Studio photo & design CLI (proven)
 - `TOOL-89` حزمة الرسم في استوديو التطبيقات / App Studio painting batch (proven)
 - `TOOL-91` مراجعة ساكنة لنصوص مهارات الأطلس / Atlas skill-body static audit (proven)
-- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (ready)
+- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (proven)
 
 ### `TOOL-91` — مراجعة ساكنة لنصوص مهارات الأطلس / Atlas skill-body static audit
 
@@ -11687,7 +11689,7 @@
 
 - `TOOL-89` حزمة الرسم في استوديو التطبيقات / App Studio painting batch (proven)
 - `TOOL-90` أداة عرض النص بخطوط مرشّحة / Font candidate text renderer (install)
-- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (ready)
+- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (proven)
 - `TOOL-93` جلب المرجع المسموح وقياسه / Permitted reference fetch and measure (proven)
 
 ### `TOOL-92` — تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest
@@ -11697,8 +11699,8 @@
 | العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
 | المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
-| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
-| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
 | نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
@@ -11725,7 +11727,7 @@
 
 - `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `npm:rea` ← npm ls rea أو وجود node_modules/rea
-- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
 
@@ -11750,6 +11752,7 @@
 
 #### 6. الأدلة
 
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_audit_synthesis.py`
 - `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py`
 
 #### 7. قدرات قريبة في العائلة
@@ -11826,7 +11829,7 @@
 #### 7. قدرات قريبة في العائلة
 
 - `TOOL-91` مراجعة ساكنة لنصوص مهارات الأطلس / Atlas skill-body static audit (proven)
-- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (ready)
+- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (proven)
 - `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (install)
 - `TOOL-95` تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) / Keyless stock footage fetcher (Pexels, Mixkit) (proven)
 
@@ -11896,7 +11899,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (ready)
+- `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (proven)
 - `TOOL-93` جلب المرجع المسموح وقياسه / Permitted reference fetch and measure (proven)
 - `TOOL-95` تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) / Keyless stock footage fetcher (Pexels, Mixkit) (proven)
 - `TOOL-96` خريطة المستودعات الخارجية / External repository tool map (proven)

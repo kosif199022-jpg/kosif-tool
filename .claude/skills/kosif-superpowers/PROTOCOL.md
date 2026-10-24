@@ -1,5 +1,7 @@
 # KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.7)
 
+> **وضع التفعيل الكامل:** «فعّل كل القدرات» أو «الوضع الكامل» = كل المهارات المناسبة بكامل عمقها (L3، الملاحق المطابقة، المجلس ومحامي الشيطان، النماذج الذهنية، وكلاء متوازيين) والقوانين كما هي. **التحميل الخفيف:** اقرأ [`LOADER.md`](LOADER.md) أولًا ثم افتح الأسطر المطابقة فقط (`skill_loader.py need`).
+
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
 > **USIP v5.7 — 24-10-2026:** سياق المشروع، الإقلاع في محادثة جديدة، توجيه مختصر، التوزيع المتوازي على وكلاء، وقدرات #129–#136 ([A36](references/protocol/A36-v57-context-boot-parallel.md))؛ نسخة لصق مضغوطة `docs/protocol/USIP_PORTABLE_v5_7.md`. v5.6 (A34) وما قبلها في [CHANGELOG](references/protocol/CHANGELOG.md).
@@ -66,6 +68,7 @@
 | [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | تبحث عن قدرة أو أداة بعينها، أو تنسخ البروتوكول لمساعد آخر، أو تضيف أداة أو بطاقة أو تعدّل التوجيه، أو تعمل بطابور دمج | جديد؛ الفهرس الدقيق والنسخة المختصرة | `micro_index.py`، `USIP_PASTE.md` |
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» | جديد؛ ملف لكل مهمة على `main` في `history/` | `task_history.py` |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء | جديد | موثَّق؛ أداة Agent حين توجد |
+| [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» | جديد | `self_council.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة

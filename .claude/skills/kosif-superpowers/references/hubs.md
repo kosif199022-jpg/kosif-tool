@@ -71,7 +71,7 @@
 <a id="hub-agents"></a>
 ## الوكلاء والتوجيه الذكي — Agents & routing (`agents`)
 
-- **الحجم / size:** 285 قدرة ذرية في 23 قدرة خارقة · ✅166 🟢22 📦15 🔑2 📄80
+- **الحجم / size:** 285 قدرة ذرية في 23 قدرة خارقة · ✅167 🟢21 📦15 🔑2 📄80
 - **ابدأ / start:** `python3 scripts/hub.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install agents`
 - **السكربتات / scripts:** `scripts/skill_intelligence.py` · `scripts/hub.py` · `scripts/probe_env.py` · `scripts/superpowers_unified.py` · `scripts/capability_runtime_router.py`
 - **العائلات / families:** [agent-orchestration](powers/agent-orchestration.md) · [runnable-tools](powers/runnable-tools.md) · [self-discovery](powers/self-discovery.md)

@@ -1851,12 +1851,13 @@
       "consent": "",
       "limits": "It produces templates and keyword-based rankings to think with; the blanks (…) still have to be filled and tested, it does not reason about or verify claims by itself, and critic is a plain regex sweep that misses Arabic words written with tanween (جدًا، دائمًا). modes ranks by keywords only, and bayes, gate and audit compute exactly what they are given: the priors, ratios, thresholds and evidence markers are the user's or Claude's judgement.",
       "evidence": "tested-here",
-      "evidence_note": "9/9 passed (python3 -m unittest tests.test_think); 15/15 passed (python3 -m unittest tests.test_think_reasoning) on 2026-10-23; 3/3 passed (python3 -m unittest tests.test_think_pro) on 2026-10-23",
+      "evidence_note": "9/9 passed (python3 -m unittest tests.test_think); 15/15 passed (python3 -m unittest tests.test_think_reasoning) on 2026-10-23; 3/3 passed (python3 -m unittest tests.test_think_pro) on 2026-10-23; 6/6 passed (evals/test_think_models.py: diverse disciplines, reserved Inversion/second-order, lens fields) on 2026-10-24",
       "tests": [
         "tests/test_think.py",
         "tests/test_think_reasoning.py",
         "tests/test_think_intel.py",
-        "tests/test_think_pro.py"
+        "tests/test_think_pro.py",
+        ".claude/skills/kosif-superpowers/evals/test_think_models.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/protocol/A24-reasoning-modes-decision-gates.md",
@@ -1968,7 +1969,8 @@
       "consent": "Writes only inside the --dir folder; it runs no model, spends nothing and publishes nothing.",
       "limits": "The council's quality depends on the members Claude runs; the script checks structure, evidence fields and votes, not whether an argument is correct, and a council without separate agents is only COUNCIL_SIMULATED. The 100 personas are invented stance prompts selected by keyword relevance; they add perspectives, not verified expertise, and a full 100-member council is 300 answers.",
       "tests": [
-        ".claude/skills/kosif-superpowers/evals/test_council.py"
+        ".claude/skills/kosif-superpowers/evals/test_council.py",
+        ".claude/skills/kosif-superpowers/evals/test_think_models.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/protocol/A13-pro-council.md",
@@ -1980,7 +1982,7 @@
         "verification-evals"
       ],
       "evidence": "tested-here",
-      "evidence_note": "evals/test_council.py 11/11 passed on this checkout on 2026-10-23 (roster uniqueness, fitted seats, limits, digest, personas); one real five-agent council run on 22-10 (proofs/pro-council-20261022: COUNCIL_RUN, B 25 / A 17 / C 10).",
+      "evidence_note": "evals/test_council.py 17/17 passed on this checkout on 2026-10-24 (roster uniqueness, fitted seats, limits, digest, personas, devil's-advocate contract and unanswered-objection gate, groupthink/calibration/evidence quality, mental-model lenses); one real five-agent council run on 22-10 (proofs/pro-council-20261022: COUNCIL_RUN, B 25 / A 17 / C 10).",
       "power_id": "TOOL-68"
     },
     {
@@ -6130,7 +6132,7 @@
       "kind": "cli",
       "area": "sources",
       "tests": [
-        "tests/test_atlas_body_audit.py"
+        ".claude/skills/kosif-superpowers/evals/test_atlas_audit_synthesis.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/atlas-reviewed-audit.md",
@@ -6179,8 +6181,8 @@
       "safety": "writes-files",
       "consent": "Writes only the two output paths given; review the manifest for private paths before committing it.",
       "limits": "Only summarises what the audit and REA already recorded, so it adds no new verification; the counts describe the sample, not the whole Atlas.",
-      "evidence": "untested",
-      "evidence_note": "No direct test; its committed output data/atlas-reviewed/manifest.json is read by atlas_external_bridge.py, which tests/test_atlas_body_audit.py covers.",
+      "evidence": "tested-here",
+      "evidence_note": "1/1 passed (evals/test_atlas_audit_synthesis.py: UTF-16 and UTF-8 REA files) on 2026-10-24",
       "power_id": "TOOL-92"
     },
     {
@@ -15363,6 +15365,169 @@
         "creativity-engine"
       ],
       "power_id": "TOOL-172"
+    },
+    {
+      "id": "skill-loader",
+      "path": "scripts/skill_loader.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "discover",
+      "title_en": "Light skill loader map",
+      "title_ar": "خريطة التحميل الخفيف للمهارات",
+      "summary_en": "Writes LOADER.md, one small map of every skill under .claude/skills/, the 15 capability groups, every protocol appendix with its trigger and the line ranges of each SKILL.md section, so Claude reads one short file and then opens only the lines a task needs. need names the few files and line ranges for a task; full prints the full-power reading order.",
+      "summary_ar": "يكتب LOADER.md: خريطة صغيرة لكل مهارة في .claude/skills/ وللمجموعات الخمس عشرة ولكل ملحق بروتوكول بمحفّزه ولنطاقات أسطر أقسام كل SKILL.md، فيقرأ Claude ملفًا قصيرًا واحدًا ثم يفتح الأسطر التي تحتاجها المهمة فقط. need يسمّي الملفات ونطاقات الأسطر لمهمة، وfull يطبع ترتيب القراءة في وضع التفعيل الكامل.",
+      "use_when": [
+        "فعّل كل القدرات",
+        "اقرأ المهارات بسرعة من غير ما تحمّل كل حاجة",
+        "Which skill files should I open for this task?",
+        "Activate full power mode"
+      ],
+      "keywords": [
+        "loader",
+        "light loading",
+        "full power",
+        "all capabilities",
+        "تحميل خفيف",
+        "الوضع الكامل",
+        "كل القدرات",
+        "خريطة المهارات"
+      ],
+      "commands": [
+        {
+          "name": "build",
+          "example": "python3 scripts/skill_loader.py build --check",
+          "does": "Writes LOADER.md; with --check exits 1 when it is stale"
+        },
+        {
+          "name": "need",
+          "example": "python3 scripts/skill_loader.py need \"اعمل مونتاج ريلز\" -n 6",
+          "does": "Lists the groups, appendices, skills and SKILL.md line ranges that match a task, best first; --json for records"
+        },
+        {
+          "name": "full",
+          "example": "python3 scripts/skill_loader.py full",
+          "does": "Prints the full-power mode rule and the reading order"
+        }
+      ],
+      "inputs": "A task sentence for need; nothing for build and full.",
+      "outputs": "LOADER.md next to SKILL.md (build), or text/JSON on stdout.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "",
+      "limits": "need ranks by plain word overlap with titles, triggers and keywords; it narrows what to read and does not judge which skill is best.",
+      "evidence": "tested-here",
+      "evidence_note": "7/7 passed (python3 -m unittest discover -s evals -p test_skill_loader.py) on 2026-10-24",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_skill_loader.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/LOADER.md",
+        ".claude/skills/kosif-superpowers/PROTOCOL.md"
+      ],
+      "families": [
+        "agent-orchestration"
+      ]
+    },
+    {
+      "id": "self-council",
+      "path": "scripts/self_council.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "maintain",
+      "title_en": "Self-Council: five Claude-derived critics review every skill and feature, with a coverage ledger",
+      "title_ar": "مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية",
+      "summary_en": "Inventories every reviewable unit of the repository with a stable id (skills, this skill's scripts, apps, tools, playbooks, workflows) and cheap static signals (direct or indirect test, docstring and usage line, line count, tools.json registration, SKILL.md description, last CHANGELOG mention). It plans the next batch of the weakest unreviewed units, writes prompts for five fixed personas (Strict Engineer, New Egyptian User, Devil's Advocate, Architect, Innovator), validates each persona's review (severity, an evidence path that exists, proposed change, effort, confidence, a persona-specific field), refuses secrets, merges and dedupes the findings, and ranks proposals by severity, confidence, agreement and effort into an implement-next list. A ledger in data/self_council_ledger.json records which units were reviewed and at which content hash, so successive runs cover the whole app and changed units come back as stale. It never calls a model: Claude runs the personas as parallel subagents, or the report says SELF_COUNCIL_SIMULATED.",
+      "summary_ar": "يجرد كل وحدة قابلة للمراجعة في المستودع بمعرّف ثابت (المهارات، وسكربتات هذه المهارة، والتطبيقات، والأدوات، والأدلة، وسير العمل) مع إشارات رخيصة (اختبار مباشر أو غير مباشر، docstring وسطر تشغيل، عدد الأسطر، التسجيل في tools.json، وصف SKILL.md، آخر ذكر في CHANGELOG). ويخطط الدفعة التالية من أضعف الوحدات غير المراجعة، ويكتب مطالبات خمس شخصيات ثابتة (المهندس الصارم، المستخدم المصري الجديد، محامي الشيطان، المعماري، المبتكر)، ويتحقق من مراجعة كل شخصية (الشدة، ومسار دليل موجود، والتغيير المقترح، والجهد، والثقة، وحقل خاص بكل شخصية)، ويرفض الأسرار، ثم يدمج الملاحظات ويزيل المكرر ويرتب المقترحات بالشدة والثقة والاتفاق والجهد في قائمة «نفّذ التالي». وسجل data/self_council_ledger.json يحفظ ما رُوجع وببصمة أي محتوى، فتغطي الدفعات المتتالية التطبيق كله وتعود الوحدة المتغيرة للمراجعة. لا يستدعي أي نموذج: Claude يشغّل الشخصيات وكلاء متوازين، أو يقول التقرير SELF_COUNCIL_SIMULATED.",
+      "use_when": [
+        "اعمل مجلس من خمس شخصيات ينقد كل مهارة وكل ميزة في التطبيق ويقترح تحسينات",
+        "راجع كل الأدوات اللي في المستودع وقولي إيه اللي يتحسن الأول",
+        "Review every skill and script in this repo with five critics and rank the improvements",
+        "How much of the app has the self-council reviewed so far?",
+        "فاضل كام وحدة ما اتراجعتش؟"
+      ],
+      "keywords": [
+        "self-council",
+        "self review",
+        "critique",
+        "review every skill",
+        "coverage ledger",
+        "improvement proposals",
+        "مجلس المراجعة الذاتية",
+        "نقد",
+        "مراجعة كل المهارات",
+        "تحسينات",
+        "تغطية"
+      ],
+      "commands": [
+        {
+          "name": "inventory",
+          "example": "python3 scripts/self_council.py inventory --summary",
+          "does": "Lists every reviewable unit with its id, content hash and static signals; --summary prints counts by kind and the ten weakest."
+        },
+        {
+          "name": "plan",
+          "example": "python3 scripts/self_council.py plan --batch 10 --dir out/self-council/run1",
+          "does": "Picks the next batch of the weakest unreviewed or stale units, writes prompts/P1.md…P5.md and prompts.json, and claims the units in the ledger."
+        },
+        {
+          "name": "ingest",
+          "example": "python3 scripts/self_council.py ingest --dir out/self-council/run1 --persona P1 --file p1.json",
+          "does": "Validates one persona's review of the batch, refuses secrets and evidence paths that do not exist, fingerprints it and records it (--simulated marks a voice written in Claude's own context)."
+        },
+        {
+          "name": "report",
+          "example": "python3 scripts/self_council.py report --dir out/self-council/run1 --top 10",
+          "does": "Merges the five reviews per unit, dedupes and ranks the proposals, writes report.md and report.json (--out-md/--out-json copy them), and marks complete units reviewed in the ledger."
+        },
+        {
+          "name": "status",
+          "example": "python3 scripts/self_council.py status",
+          "does": "Prints coverage of the whole app (reviewed, stale, pending, by kind) and the next five units in line."
+        },
+        {
+          "name": "personas",
+          "example": "python3 scripts/self_council.py personas",
+          "does": "Prints the five personas, their checklists, required fields and the finding schema."
+        }
+      ],
+      "safe_commands": [
+        "inventory",
+        "status",
+        "personas"
+      ],
+      "inputs": "The repository itself (or --root), a run folder, and one JSON review per persona.",
+      "outputs": "run.json, prompts/P1..P5.md, prompts.json, reviews/P*.json, report.md and report.json in the --dir folder; data/self_council_ledger.json; JSON on stdout; exit 2 with one line on stderr on any refusal.",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Writes only the run folder, the report paths given and data/self_council_ledger.json; it runs no model, spends nothing and publishes nothing.",
+      "limits": "Static signals are heuristics (an indirect test is any test that imports or names the unit). The script checks structure and that evidence paths exist, not whether a critique is right; five voices written in one context are SELF_COUNCIL_SIMULATED, not independent reviews.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_self_council.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/protocol/A37-self-council.md"
+      ],
+      "families": [
+        "self-discovery",
+        "verification-evals",
+        "agent-orchestration"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_self_council.py 9/9 passed on this checkout on 2026-10-24 (inventory, plan, ingest refusals, report ranking, ledger coverage); first pass SIMULATED on 2026-10-24 (docs/self-council/FIRST_PASS_20261024.md)."
     }
   ]
 }
