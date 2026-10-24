@@ -1,0 +1,37 @@
+{
+  "registry_version": "1.0",
+  "purpose": "Public visual reference discovery; not media reuse permission",
+  "creators": [
+    {
+      "handle": "asirgokerr",
+      "url": "https://www.instagram.com/asirgokerr/",
+      "source": "user_provided_url",
+      "verification": "profile_not_directly_accessible",
+      "discovery_topics": [
+        "nature",
+        "travel",
+        "landscape",
+        "flamingos",
+        "sky",
+        "Turkey"
+      ],
+      "notes": "Nature/travel themes suggested by public secondary credits; individual Reels not inspected."
+    },
+    {
+      "handle": "brkn.land",
+      "url": "https://www.instagram.com/brkn.land/",
+      "source": "user_provided_url",
+      "verification": "profile_not_directly_accessible",
+      "discovery_topics": [
+        "cinematic nature",
+        "dreamscape",
+        "clouds",
+        "flowers",
+        "sea",
+        "sunset",
+        "night sky"
+      ],
+      "notes": "Public-indexed examples suggest these topics; edit method and AI generation not verified."
+    }
+  ]
+}
