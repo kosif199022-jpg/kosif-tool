@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5848,
+  "catalog_powers": 5849,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 169,
+  "tool_count": 170,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 267,
+      "count": 268,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 163,
+        "proven": 164,
         "ready": 22
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 169,
+        "runnable-tools": 170,
         "self-discovery": 43
       },
       "examples": [
@@ -74190,6 +74190,28 @@
       ],
       "source": "runnable-tools.json",
       "what": "ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة"
+    },
+    {
+      "id": "TOOL-171",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "KOSIF Infinite Matrices causal style engine",
+      "name_ar": "محرك المصفوفات اللانهائية للأساليب السببية",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "chromium",
+        "npm:rea"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py",
+        "kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py",
+        "kosif-tool/.claude/skills/kosif-infinite-matrices/scripts/kmx.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يبني نظامًا بصريًا جديدًا من لبنات سببية (حالة، عملية، قانون، زمن، ذاكرة، تغذية راجعة) مستخرجة من أساليب الأطلس الـ86، ويثبت قانونه بمقارنة مضادة أ/ب/ج عبر بذور متعددة ومنحنى جرعة، ويرندر مشهدًا قابلًا للتقليب ولقطات وفيديو MP4 بأدوات الأطلس، ويحفظ النتائج والأفكار والتقييمات وال"
     },
     {
       "id": "SEC-01",

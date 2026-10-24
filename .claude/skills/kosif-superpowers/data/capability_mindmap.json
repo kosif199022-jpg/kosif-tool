@@ -3397,21 +3397,21 @@
 "stage": "assemble",
 "stages": {
 "create": 5,
-"assemble": 6,
+"assemble": 7,
 "deliver": 2,
 "verify": 2,
 "plan": 2
 },
-"size": 17,
+"size": 18,
 "best": "proven",
-"ready_now": 13,
+"ready_now": 14,
 "links": [
 "SP-0262",
 "SP-0148",
 "SP-0268",
 "SP-0266"
 ],
-"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame count aspect check فحص الفيديو بوابة التسليم جهارة الصوت عدد الإطارات مدة الفيديو تقرير الاختبار motion physics فيزياء الحركة motion-physics spring spring physics cubic-bezier easing stagger keyframes overshoot settle time react-spring anime.js نابض ارتداد تسهيل تتابع فيزياء الحركة فريمات motion math toolkit مكتبة رياضيات الحركة motion-toolkit easing keyframes interpolation timeline تسهيل الحركة إطارات مفتاحية stroke reveal رسم الخط camera zoom pan walk cycle parallax hand-drawn jitter timecode word cues ترجمة بالكلمة frame contract seekable particles: closed-form bursts, budget check and svg frame جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار svg particles burst explosion seeded deterministic hash seek budget svg physics drag gravity جسيمات انفجار بذرة حتمي فيزياء جاذبية ميزانية إطار third-party motion engine scaffolder مولّد مشاريع بداية لمحركات الحركة motion-stack gsap remotion manim three.js pixijs p5.js rough.js vivus scaffold starter project motion engines محركات الحركة مشروع بداية قالب أنيمي"
+"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame count aspect check فحص الفيديو بوابة التسليم جهارة الصوت عدد الإطارات مدة الفيديو تقرير الاختبار motion physics فيزياء الحركة motion-physics spring spring physics cubic-bezier easing stagger keyframes overshoot settle time react-spring anime.js نابض ارتداد تسهيل تتابع فيزياء الحركة فريمات atlas explainer renderer: storyboard, determinism check and real mp4 with synthesized score رندر أفلام الشرح: ستوريبورد وفحص حتمية وmp4 حقيقي بصوت مُركّب atlas-render render explainer storyboard mp4 رندر ستوريبورد فيلم شرح atlas canvas seek motion math toolkit مكتبة رياضيات الحركة motion-toolkit easing keyframes interpolation timeline تسهيل الحركة إطارات مفتاحية stroke reveal رسم الخط camera zoom pan walk cycle parallax hand-drawn jitter timecode word cues ترجمة بالكلمة frame contract third-party motion engine scaffolder مولّد مشاريع بداية لمحركات الحركة motion-stack gsap remotion manim three.js pixijs p5.js rough.js vivus scaffold starter project motion engines محركات الحركة مشروع بداية قالب أنيميشن تحريك بالكود seekable parti"
 },
 "SP-0141": {
 "id": "SP-0141",
@@ -6206,9 +6206,9 @@
 "ready_now": 3,
 "links": [
 "SP-0142",
+"SP-0140",
 "SP-0263",
-"SP-0274",
-"SP-0356"
+"SP-0274"
 ],
 "text": "html-canvas deterministic timeline engine محرك الخط الزمني الحتمي تقسيم المشاهد انيميشن كانفس بدون مكتبات scene timeline canvas animation mimic engine: rebuild a reference video with new footage محرك المحاكاة: إعادة بناء فيديو مرجعي بلقطات جديدة محاكاة mimic rebuild reference remake pipeline audio copy mountscrollworld scrub engine محرك السحب بالتمرير تمرير سكرول صفحة تفاعلية scroll animation scrollytelling external engine: ilovevideoeditor محرك خارجي: ilovevideoeditor محرك تصيير أداة فيديو رابط خارجي video engine external tool external engine: json2video محرك خارجي: json2video محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: webav محرك خارجي: webav مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: shotstack محرك خارجي: shotstack مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: creatomate محرك خارجي: creatomate فيديو بالكود بديل خارجي خط زمني برمجي code video video tool external engine: motion canvas محرك خارجي: motion canvas محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: remotion محرك خارجي: remotion فيديو بالكود بديل خارجي خط زمني برمجي code video video tool external engine: rendervid محرك خارجي: rendervid محرك تصيير أداة فيديو رابط خارجي video engine external tool external engine: vidpy محرك خارجي: vidpy محرك تصيير أداة فيديو رابط خارجي video engine external tool external engine: moviepy محرك خارجي: moviepy مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: ffcreator محرك خارجي: ffcreator مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: editly محرك خارجي: editly محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: revideo محرك خارجي: revideo محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: twick محرك خارجي: twick محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: videorenderingengine محرك خارجي: videorenderingengine فيديو بالكود بديل خارجي خط زمني برمجي code video video tool external engine: diffusion studio core محرك خارجي: diffusion studio core مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: webmotion (mit) محرك خارجي: webmotion (mit) محرك فيديو فيديو بالكود أداة خارجية video engine mit license external engine: manim community (mit) محرك خارجي: manim community (mit) محرك تصيير أداة فيديو رابط خارجي video engine mit license external engine: videoflow (apache-2.0) محرك "
 },
@@ -6588,9 +6588,10 @@
 "ready_now": 5,
 "links": [
 "SP-0405",
-"SP-0140",
 "SP-0268",
-"SP-0303"
+"SP-0303",
+"SP-0448",
+"SP-0140"
 ],
 "text": "workbench no-browser 2d film فيلم بدون متصفح فيديو بدون متصفح عناوين عربية فيلم سريع pillow no browser image to standalone pillow program صورة إلى برنامج بايثون image to code pillow program صورة إلى كود pure-function svg film (no libraries) فيلم svg كدالة نقية بلا مكتبات رسم بالكود فيلم قصير بدون مكتبات svg animation parallax recipe catalogue as typed forms كتالوج الوصفات كنماذج نماذج إدخال وصفات جاهزة التحقق من المدخلات typed forms command builder workbench pillow film فيلم بدون متصفح فيديو سريع عناوين متحركة سحابة pillow cloud render browser-free 2d workbench film فيلم ثنائي الأبعاد بلا متصفح بدون متصفح فيديو عمودي عناوين عربية no browser pillow frames image -> standalone pillow program صورة إلى برنامج بايثون صورة إلى كود رسم بالكود مضلعات image to code pillow motion-kit film builder (11 styles) بناء فيلم بستايل من المكتبة فيديو سبورة وايت بورد رسوم متحركة whiteboard doodle mimic remake builder باني النسخة المقلّدة تقليد فيديو إعادة إنتاج لقطة بلقطة remake lut song-film render pipeline (seek → jpeg → ffmpeg, song untouched) خط رندر فيلم الأغنية song film playwright ffmpeg canvas فيلم أغنية رندر web game development ألعاب متصفح كاملة لعبة ألعاب ويب فيزياء بسيطة phaser game loop canvas game"
 },
@@ -7069,8 +7070,8 @@
 "best": "proven",
 "ready_now": 15,
 "links": [
-"SP-0140",
 "SP-0268",
+"SP-0140",
 "SP-0269",
 "SP-0453"
 ],
@@ -12600,11 +12601,11 @@
 }
 ],
 "audit": {
-"atoms": 5848,
+"atoms": 5849,
 "superpowers": 481,
 "twin_groups": 177,
 "twin_members": 458,
-"distinct_methods": 5567,
+"distinct_methods": 5568,
 "tiny_absorbed": 28,
 "same_name_groups": [
 {
@@ -13636,7 +13637,7 @@
 "deliver": 188,
 "create": 1941,
 "refine": 896,
-"assemble": 492,
+"assemble": 493,
 "understand": 831,
 "verify": 543
 }

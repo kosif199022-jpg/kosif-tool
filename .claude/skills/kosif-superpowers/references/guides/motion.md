@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:motion:start -->
 
-**الأدوات / tools (21)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (22)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -33,6 +33,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `particles` | Computes every particle of a seeded burst at any time t from a closed-form drag+gravity solution and a stateless lowbias32 hash RNG (so frames render identically in any order), checks a particle spec against the family's budget rules (sizes, colours, per-engine counts, burst size, seeding, layering), and writes one frame as SVG for visual review. | `python3 scripts/particles.py burst --seed 7 --count 40 --t 0.5 --visible-only` | tested-here |
 | `ui-beat` | Computes one cursor keyframe per frame along a bowed quadratic Bezier timed by a CSS cubic-bezier easing (solved by bisection), with press, release, UI-response (60-120 ms) and ripple timings; mirrors a UI layout for RTL (x' = W - x - w, left/right alignment flips, directional icon flip list); and checks that a loop's first and last states match, listing differing keys. | `python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur 0.8 --fps 30 --ease ease-in-out --arc 0.12` | tested-here |
 | `motion-physics` | Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files. | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` | tested-here |
+| `infinite-matrices` (repo root) | Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger. | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | tested-here |
 
 <!-- hub:area:motion:end -->
 
@@ -80,3 +81,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 - Use `scripts/motion_runtime.py` for deterministic motion runtime tasks, with `data/motion_engines.json` and `references/motion-runtime.md`; run `evals/test_motion_runtime.py` to validate this added engine before production use.
 - Keep existing `scripts/motion_director.py` and `resources/motion-runtime/` workflows as separate, compatible paths; don't replace either runtime. Verify rendered video and audio before delivery.
+
+## Causal style synthesis (KOSIF Infinite Matrices)
+
+When the request is a *new* look or motion system rather than an existing style, use the sibling skill `.claude/skills/kosif-infinite-matrices/` through `infinite-matrices` (`python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor`). It writes a recipe from three of the 86 atlas styles (structure, dynamics, finish), proves the recipe's law with an A/B/C counterfactual over several seeds and a dose sweep, renders the result with this skill's `assets/atlas_harness.js`, `assets/atlas_sound.js` and `tools/render_html.cjs`, and records the verdict in its hash-chained ledger. Its first experiment, glass that remembers light, is `experiments/EXP-0001-glass-remembers-light/` (confirmed inside the model, rendered, not yet human-rated). Read its `references/limits.md` before presenting any result as proven.
