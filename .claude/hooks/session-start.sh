@@ -5,8 +5,10 @@
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ] && [ -z "${KOSIF_AUTOINSTALL:-}" ]; then exit 0; fi
 if [ -n "${KOSIF_NO_AUTOINSTALL:-}" ]; then exit 0; fi
 DIR="${CLAUDE_PROJECT_DIR:-$(cd "$(dirname "$0")/../.." && pwd)}"
-timeout 300 python3 "$DIR/.claude/skills/kosif-superpowers/scripts/_deps.py" install >/dev/null 2>&1 || true
+# `timeout` is missing on stock macOS; _deps.py already caps each pip call, so run without it there
+T=""; command -v timeout >/dev/null 2>&1 && T="timeout 300"
+$T python3 "$DIR/.claude/skills/kosif-superpowers/scripts/_deps.py" install >/dev/null 2>&1 || true
 if ! command -v ffmpeg >/dev/null 2>&1 && command -v apt-get >/dev/null 2>&1 && [ "$(id -u)" = "0" ]; then
-  timeout 240 bash -c 'apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg' >/dev/null 2>&1 || true
+  $T bash -c 'apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq ffmpeg' >/dev/null 2>&1 || true
 fi
 exit 0
