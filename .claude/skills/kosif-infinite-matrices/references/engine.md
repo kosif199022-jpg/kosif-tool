@@ -73,3 +73,16 @@ It inlines `atlas_harness.js` (colour, noise, grain, layers), `atlas_sound.js` (
 ## Adding a recipe
 
 v1 implements one stimulus (`lemniscate_beam`), one structure (Voronoi tiles) and one dynamics law (gradient steering). A new recipe that only changes numbers, parents' prose or conditions runs as is. A recipe with a new mechanism (for example memory written by the motes themselves, or a fold operator) needs a new adapter in `kmx_engine.py` plus a test that its counterfactual isolates one factor. Keep the rule: one condition, one changed field.
+
+## Typed causal laws (v0.2 port, `scripts/kmx_laws.py`)
+
+A second, smaller engine runs four particle laws from the owner's v0.2 causal studio (SRC-024). Each law has a typed contract (input port → output port) and one causal edge; arm B is arm A with only that edge removed, same light and same start positions.
+
+| law | contract | edge removed in B |
+|---|---|---|
+| `trajectory_memory` | `ScalarField2D.grad → ParticleVelocity2D` | stored light → velocity |
+| `material_memory` | `ScalarField2D.sample → MaterialOpacity` | stored light → material luminance |
+| `elastic_memory` | `ScalarField2D.grad → ParticleDisplacement2D` | stored light → elastic displacement |
+| `self_imprinting` | `ParticlePositions2D → ScalarField2D` | particles writing into the memory field (both arms still read it) |
+
+`self_imprinting` is the "memory written by the motes" mechanism listed above as missing from v1. On top of v0.2's single A/B the port adds a dose sweep (gain × 0, 0.25, 0.5, 1): `CONFIRMED_IN_MODEL` needs zero effect at gain 0, an effect at full gain and Spearman ρ > 0.9. All four pass with ρ = 1.0. The arithmetic is unchanged from v0.2, so `tests/test_kmx_laws.py` checks the owner's demo metrics and SVG frame hashes exactly. `kmx.py laws run <recipe> --render <dir>` writes A/B SVG frames and a hash receipt (`laws verify <dir>/report.json`); keep those outputs out of git.

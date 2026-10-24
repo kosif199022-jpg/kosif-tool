@@ -1,0 +1,123 @@
+{
+ "schema": "kosif.causal-lab.candidates.v2",
+ "seed": 124,
+ "recipes": [
+  {
+   "parents": [
+    "FA-36",
+    "FA-71",
+    "FA-01"
+   ],
+   "families": [
+    "Light & Imaging",
+    "Painterly",
+    "Popular Explainer Looks"
+   ],
+   "concept_atoms": {
+    "geometry": {
+     "id": "MX-GEOMETRY-06",
+     "mechanism": "fractured circles"
+    },
+    "palette": {
+     "id": "MX-PALETTE-02",
+     "mechanism": "complementary sparks"
+    },
+    "material": {
+     "id": "MX-MATERIAL-14",
+     "mechanism": "riso ink texture"
+    },
+    "motion": {
+     "id": "MX-MOTION-09",
+     "mechanism": "fold and unfold"
+    },
+    "transition": {
+     "id": "MX-TRANSITION-12",
+     "mechanism": "object continuity"
+    },
+    "typography": {
+     "id": "MX-TYPOGRAPHY-02",
+     "mechanism": "morphing glyph"
+    },
+    "composition": {
+     "id": "MX-COMPOSITION-11",
+     "mechanism": "rotating tableau"
+    },
+    "narrative": {
+     "id": "MX-NARRATIVE-06",
+     "mechanism": "micro-scale adventure"
+    },
+    "sound": {
+     "id": "MX-SOUND-13",
+     "mechanism": "rhythmic footsteps"
+    },
+    "lighting": {
+     "id": "MX-LIGHTING-10",
+     "mechanism": "shadow-color contrast"
+    },
+    "camera": {
+     "id": "MX-CAMERA-14",
+     "mechanism": "reverse tracking"
+    },
+    "interaction": {
+     "id": "MX-INTERACTION-01",
+     "mechanism": "cursor guided journey"
+    }
+   },
+   "strategy": "physical_metaphor",
+   "law": "trajectory_memory",
+   "parameters": {
+    "gain": 0.36,
+    "decay": 0.98,
+    "geometry": "spiral",
+    "seed": 124
+   },
+   "causal_contract": {
+    "input": "ScalarField2D.grad",
+    "output": "ParticleVelocity2D",
+    "edge": "stored light → velocity"
+   },
+   "status": "PROPOSED_NOT_RENDERED",
+   "limits": [
+    "197 atoms remain conceptual, not executor implementations",
+    "visual novelty has not been verified"
+   ],
+   "id": "KMX2-b6c3f3a733cb4db4"
+  }
+ ],
+ "provenance": {
+  "source": "SRC-024",
+  "file": "trajectory_memory_recipe.json",
+  "parents_as_style_ids": [
+   "thermal-camera",
+   "pointillism",
+   "flat-space"
+  ],
+  "v0_2_demo_receipt": {
+   "recipe_sha256": "14a9c76a5bd995f70aa310e585bd3b20419564bf7840dbc7d13d7a3dcfa4314e",
+   "metrics": {
+    "law": "trajectory_memory",
+    "coupling_edge": "stored light → velocity",
+    "frames": 32,
+    "light_off_frame": 11,
+    "same_exogenous_light": true,
+    "same_initial_positions": true,
+    "only_one_channel_disabled": true,
+    "final_pos_difference": 0.422026552,
+    "final_material_difference": 0.0,
+    "mean_post_light_effect": 0.355857054,
+    "effect_detected": true,
+    "metric": "mean particle position displacement + absolute normalized material difference"
+   },
+   "frame_sha256": {
+    "a_coupled": {
+     "000.svg": "d009ead203eabd7fcd9b5b680c8d726289d04c2caed2420670a8f2eaabab6b48",
+     "031.svg": "77c111debdd50f6c6e5394745fc365fa03c9bca8533995200fd4a67b6d8f48f2"
+    },
+    "b_control": {
+     "000.svg": "632c2efb7fd2c3b752f33c8f6b660a611d35113fb7afcc10b36e940d47622b35",
+     "031.svg": "cac54b446f29e65ba307ed7feaf759230d5306d53c5cbb1c8c4a97e2a4b470c3"
+    }
+   }
+  }
+ }
+}

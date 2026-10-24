@@ -190,6 +190,8 @@
   - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py sources list`
 - **bricks**: summary or show ID from data/86_style_code_bricks.json: six bricks per style inferred from its code, REA function/call/relation counts and code-lineage neighbours.
   - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py bricks show flow-field`
+- **laws**: list / run RECIPE [--render DIR] / verify REPORT / atoms [--axis A]: four typed causal laws from the owner's v0.2 causal studio (trajectory, material and elastic memory, self-imprinting), each an A/B run with one edge switched off plus a gain dose sweep; --render writes A/B SVG frames with a sha256 receipt; atoms lists the 197 conceptual mechanism atoms.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py laws run .claude/skills/kosif-infinite-matrices/recipes/laws/self-imprinting.json`
 
 #### المتطلبات والأمان
 
@@ -197,7 +199,7 @@
 - optional: node, playwright, ffmpeg
 - الأمان: writes-files
 - الموافقة: --record, rate, ideate --record, hypotheses mark and sources add append to tracked files (memory/ledger.jsonl, sources/registry.json) that are meant to be committed as shared research memory; run them only for results the user wants kept.
-- الحدود: v1 has one stimulus, one structure and one dynamics law; its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating.
+- الحدود: v1 has one stimulus, one structure and one dynamics law (plus the four small v0.2 particle laws under `laws`); its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating.
 
 #### الاختبارات والأدلة
 

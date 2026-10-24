@@ -6,7 +6,8 @@
    "title": "The AI Style Atlas (Futurepedia) — 86 styles with full reference prompts and source",
    "names": [
     "ai-style-atlas-prompts-FULL.zip",
-    "ai-style-atlas-prompts-FULL.zip (second upload)"
+    "ai-style-atlas-prompts-FULL.zip (second upload)",
+    "ai-style-atlas-prompts-FULL.txt"
    ],
    "kind": "zip",
    "sha256": "65a13ab6184405a6c272fe8c9647528f3de0691aa846bbc42a30f3adbf94c0f3",
@@ -22,7 +23,19 @@
    ],
    "note": "",
    "added": "2026-10-24",
-   "content_in_repo": "none (metadata and derived measurements only)"
+   "content_in_repo": "none (metadata and derived measurements only)",
+   "uploads": [
+    {
+     "name": "ai-style-atlas-prompts-FULL.txt (third upload, unzipped)",
+     "date": "2026-10-24",
+     "provenance": "user upload",
+     "version": "86-style full prompt text",
+     "sha256": "a1107ac0a11917e95f3b5984ed5858e4cc5c45615c9926f7d0955c17c5669cad",
+     "bytes": 7744177,
+     "taken": "nothing new: index of 86 ids, names and families checked 86/86 against data/86_style_research_database.json (0 missing, 0 extra, 0 family mismatches); 86 STYLE CARD blocks present",
+     "lives_in": "not committed (third-party text); kmx_atlas_extract.py --archive accepts this .txt for local analysis"
+    }
+   ]
   },
   {
    "id": "SRC-002",
@@ -49,7 +62,8 @@
    "id": "SRC-003",
    "title": "KOSIF Infinite Matrices v0.1.0 prototype package (owner's earlier SVG A/B engine)",
    "names": [
-    "KOSIF_Infinite_Matrices_full.zip"
+    "KOSIF_Infinite_Matrices_full.zip",
+    "KOSIF_Infinite_Matrices_full (third upload, unzipped)"
    ],
    "kind": "zip",
    "sha256": "059665e28400631bfbe74e3a818cf5c2f0c73aa8d27bcfde0d986a69c9039d51",
@@ -65,7 +79,21 @@
    ],
    "note": "Its SVG engine was not copied; the new engine replaces it with a tested A/B/C + seeds + dose design.",
    "added": "2026-10-24",
-   "content_in_repo": "none (metadata and derived measurements only)"
+   "content_in_repo": "none (metadata and derived measurements only)",
+   "uploads": [
+    {
+     "name": "KOSIF_Infinite_Matrices_full/ (unzipped tree)",
+     "date": "2026-10-24",
+     "provenance": "user upload",
+     "version": "0.1.0",
+     "tree_sha256": "1efcc7f65304f164730c507b8aa930ced2d67b5db1343932ccb64c08fdcb5ff9",
+     "files": 74,
+     "bytes": 3696101,
+     "engine_sha256": "f352d372f4048ceec9afddf8aa11c09bc1ce9ff58dbba4bfa9d51f092a24f22c",
+     "taken": "nothing new: same v0.1.0 package already ported in SRC-003; its kosif_infinite_matrices.py is byte-identical to v0.2's legacy_svg_engine.py",
+     "lives_in": "already ported (kmx.py rate, Beta operator scores in ideate)"
+    }
+   ]
   },
   {
    "id": "SRC-004",
@@ -474,6 +502,54 @@
    "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
    "added": "2026-10-24",
    "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-024",
+   "title": "KOSIF Infinite Matrices v0.2.0 causal studio (owner's typed causal-design laboratory)",
+   "names": [
+    "KOSIF_Infinite_Matrices_v0_2.zip (unzipped)"
+   ],
+   "kind": "zip",
+   "sha256": "c0ce5ea5245dcd88a83fc0f4aa49e3fccbad0e79a7a4c67682edcce30ac625b7",
+   "bytes": 8311794,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "core",
+   "version": "0.2.0",
+   "provenance": "user upload",
+   "used_for": [
+    "four typed causal laws ported as scripts/kmx_laws.py (trajectory_memory, material_memory, elastic_memory, self_imprinting) with exact reproduction of the four demo receipts",
+    "the four demo recipes kept as recipes/laws/*.json with their receipt metrics and frame hashes",
+    "197 original mechanism atoms (12 axes) kept as data/197_mechanism_atoms.json",
+    "typed causal contract (input port -> output port, one edge switched off in the control)"
+   ],
+   "note": "sha256 is a tree digest of the unzipped upload (282 files; sorted path + file sha256), the zip bytes were not available. Not taken: legacy_svg_engine.py (identical to v0.1.0), infinite_matrices.py generator (the repo's ideate already covers it), source_index_86.json (same 86 ids as data/86_style_research_database.json), demo SVG frames (regenerable byte for byte with kmx_laws.py run --render).",
+   "added": "2026-10-24",
+   "content_in_repo": "ported code (owner's work), 4 recipes, 197 atom labels; no SVG frames"
+  },
+  {
+   "id": "SRC-025",
+   "title": "KOSIF Instagram Discovery prototype (owner's public-link search + SQLite catalog)",
+   "names": [
+    "KOSIF_Instagram_Discovery_Prototype.zip (unzipped)"
+   ],
+   "kind": "zip",
+   "sha256": "f0f21ef46b5819ad65adf6a74dad395083c9cce36884c1b368800592532d4a6d",
+   "bytes": 25878,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "method",
+   "version": "prototype (undated)",
+   "provenance": "user upload",
+   "used_for": [
+    "profile-scoped Reel URLs (instagram.com/<handle>/reel/<id>/) now canonicalized by kosif-instagram-video-research/instagram_research.py canonical()",
+    "confirmed the two registered creators (asirgokerr, brkn.land) match data/creator_registry.json; no new sources"
+   ],
+   "note": "sha256 is a tree digest of the unzipped upload (5 files). Everything else (search links, add/list SQLite catalog) is already a subset of kosif-instagram-video-research; the bundled catalog.sqlite3 had no videos and was not committed.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (one URL rule re-implemented)"
   }
  ]
 }

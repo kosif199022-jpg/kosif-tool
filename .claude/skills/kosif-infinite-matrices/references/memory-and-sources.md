@@ -25,7 +25,7 @@ Current state: 1 experiment (EXP-0001, glass that remembers light, `CONFIRMED_IN
 
 ## Source registry (`sources/registry.json`)
 
-Every file or link that fed the work, keyed by sha256: title, names it arrived under, kind, bytes, pages, URL, rights, relevance (`core`, `method`, `context`, `not_relevant`), what it was used for, and a note. Content is never stored in the repo. The same bytes uploaded again become an extra name on the existing record (six of this session's uploads were duplicates).
+Every file or link that fed the work, keyed by sha256: title, names it arrived under, kind, bytes, pages, URL, rights, relevance (`core`, `method`, `context`, `not_relevant`), what it was used for, and a note. Content is never stored in the repo. The same bytes uploaded again become an extra name on the existing record (six of this session's uploads were duplicates). A re-upload in another form (an unzipped tree or the bare `.txt` of a registered zip) is logged under that record's `uploads` list with its own hash, date, provenance, what was taken and where it lives; unzipped trees without the original archive are hashed as a tree digest (sorted relative path + file sha256).
 
 ```bash
 python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py sources add --file path/to/new.pdf \

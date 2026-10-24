@@ -88,7 +88,8 @@ def canonical(url):
         u = urlparse(str(url).strip())
         if u.scheme not in {"https","http"} or u.hostname not in {"instagram.com","www.instagram.com"}:
             return None
-        m = re.fullmatch(r"/(reel|reels|p|tv)/([A-Za-z0-9_-]{5,64})/?",u.path,re.I)
+        # Also accept profile-scoped links (/<handle>/reel/<id>/), as Instagram now shares them.
+        m = re.fullmatch(r"(?:/[A-Za-z0-9._]{1,30})?/(reel|reels|p|tv)/([A-Za-z0-9_-]{5,64})/?",u.path,re.I)
         return f"https://www.instagram.com/{m.group(1).lower()}/{m.group(2)}/" if m else None
     except (ValueError,TypeError):
         return None

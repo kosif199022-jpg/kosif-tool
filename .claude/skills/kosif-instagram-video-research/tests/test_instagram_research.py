@@ -27,7 +27,11 @@ class TestInstagramVideoResearch(unittest.TestCase):
         self.assertEqual(
             research.canonical("https://instagram.com/reel/C1234567/?igsh=test"),
             "https://www.instagram.com/reel/C1234567/")
+        self.assertEqual(
+            research.canonical("https://www.instagram.com/brkn.land/reel/C1234567/?igsh=x"),
+            "https://www.instagram.com/reel/C1234567/")
         for url in ["https://instagram.com.example.net/reel/C1234567/",
+                    "https://instagram.com/a/b/reel/C1234567/",
                     "file:///etc/passwd", "https://instagram.com/reel/a",
                     "https://instagram.com/private/"]:
             self.assertIsNone(research.canonical(url))
