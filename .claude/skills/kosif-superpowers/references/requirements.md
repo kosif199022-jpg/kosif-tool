@@ -146,7 +146,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
 - **يفتح / unlocks:** 803 powers
-- **بالحالة / by status:** proven 300 · documented 212 · ready 169 · install 106 · key 13 · seen 3
+- **بالحالة / by status:** proven 301 · documented 212 · ready 168 · install 106 · key 13 · seen 3
 - **العائلات / families:** runnable-tools (137), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
@@ -186,7 +186,7 @@
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)`
 - **يفتح / unlocks:** 280 powers
-- **بالحالة / by status:** documented 182 · install 51 · proven 46 · ready 1
+- **بالحالة / by status:** documented 182 · install 51 · proven 47
 - **العائلات / families:** software-investigation (258), runnable-tools (17), app-feature-transfer (4), verification-evals (1)
 - **أمثلة / examples:** `APPX-117` Live Blender capability inventory · `APPX-24` Electron fuse hardening · `APPX-57` Hidden installer payload detection · `REA-003` Statically reconstruct a local JavaScript/Electr · `REA-004` Capture and statically analyze a page bundle, de · `REA-007` List provider capabilities and side effects
 
