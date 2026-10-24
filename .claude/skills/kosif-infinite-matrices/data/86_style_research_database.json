@@ -1,0 +1,1306 @@
+{
+  "title": "KOSIF Infinite Matrices — 86-style compact causal index",
+  "date": "2026-10-24",
+  "source": "User supplied ai-style-atlas-prompts-FULL.zip; analytical tags adapted from local audit",
+  "data_scope": "COMPACT INDEX; original detailed 86-card research notes are NOT included in this public index",
+  "cautions": [
+    "E1/E2 only; renderer not verified",
+    "No source prompts or third party code reproduced",
+    "Tags are research annotations, not supported API calls"
+  ],
+  "family_count": 14,
+  "style_count": 86,
+  "observed_tag_count": 112,
+  "styles": [
+    {
+      "number": 1,
+      "style_id": "flat-space",
+      "index_title": "Flat-Vector Science",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "shape",
+        "gradient",
+        "light",
+        "parallax",
+        "ease"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 2,
+      "style_id": "watercolor",
+      "index_title": "Watercolor Wash",
+      "card_family": "Painterly",
+      "operator_tags": [
+        "field",
+        "diffuse",
+        "noise",
+        "layer",
+        "edge"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 3,
+      "style_id": "shadow-puppet",
+      "index_title": "Shadow Puppet Theatre",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "mask",
+        "projection",
+        "light",
+        "joint",
+        "occlude"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 4,
+      "style_id": "whiteboard",
+      "index_title": "Whiteboard Explainer",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "path",
+        "stroke",
+        "noise",
+        "reveal",
+        "erase"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 5,
+      "style_id": "psychedelic",
+      "index_title": "Psychedelic Poster",
+      "card_family": "Cosmic & Psychedelic",
+      "operator_tags": [
+        "symmetry",
+        "field",
+        "warp",
+        "gradient",
+        "type"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 6,
+      "style_id": "tech-glow",
+      "index_title": "Tech Glow Explainer",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "graph",
+        "path",
+        "glow",
+        "particles",
+        "camera"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 7,
+      "style_id": "papercraft",
+      "index_title": "Papercraft Models",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "mesh",
+        "fold",
+        "transform",
+        "shadow",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 8,
+      "style_id": "film-noir",
+      "index_title": "1940s Film Noir",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "mask",
+        "light",
+        "field",
+        "contrast",
+        "camera"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 9,
+      "style_id": "math-anim",
+      "index_title": "Manim-Style Math",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "path",
+        "morph",
+        "axis",
+        "type",
+        "ease"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 10,
+      "style_id": "illuminated",
+      "index_title": "Illuminated Manuscript",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "grid",
+        "stroke",
+        "layer",
+        "light",
+        "mask"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 11,
+      "style_id": "editorial-collage",
+      "index_title": "Editorial Essay Collage",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "mask",
+        "layer",
+        "parallax",
+        "halftone",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 12,
+      "style_id": "deep-sea",
+      "index_title": "Bioluminescent Deep Sea",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "particles",
+        "glow",
+        "field",
+        "parallax",
+        "pulse"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 13,
+      "style_id": "product-launch",
+      "index_title": "Product Launch Reveal",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "surface",
+        "light",
+        "reflection",
+        "camera",
+        "ease"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 14,
+      "style_id": "halftone-pop",
+      "index_title": "Halftone Pop Panel",
+      "card_family": "Print",
+      "operator_tags": [
+        "quantize",
+        "halftone",
+        "stroke",
+        "layer",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 15,
+      "style_id": "isometric",
+      "index_title": "Isometric Pastel",
+      "card_family": "Dimensional",
+      "operator_tags": [
+        "projection",
+        "mesh",
+        "light",
+        "transform",
+        "grid"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 16,
+      "style_id": "oscilloscope",
+      "index_title": "Oscilloscope Vector Art",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "path",
+        "sample",
+        "glow",
+        "decay",
+        "pulse"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 17,
+      "style_id": "risograph",
+      "index_title": "Risograph Zine",
+      "card_family": "Print",
+      "operator_tags": [
+        "print",
+        "layer",
+        "multiply",
+        "misregister",
+        "grain"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 18,
+      "style_id": "claymation",
+      "index_title": "Claymation Set",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "volume",
+        "deform",
+        "texture",
+        "step",
+        "shadow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 19,
+      "style_id": "neon-sign",
+      "index_title": "Neon Sign at Night",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "path",
+        "glow",
+        "reflection",
+        "noise",
+        "flicker"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 20,
+      "style_id": "kawaii",
+      "index_title": "Kawaii Anime",
+      "card_family": "Popular Explainer Looks",
+      "operator_tags": [
+        "shape",
+        "squash",
+        "step",
+        "glow",
+        "ease"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 21,
+      "style_id": "ukiyo-e",
+      "index_title": "Ukiyo-e Woodblock",
+      "card_family": "Art & Design Movements",
+      "operator_tags": [
+        "print",
+        "mask",
+        "gradient",
+        "grain",
+        "layer"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 22,
+      "style_id": "pixel-16bit",
+      "index_title": "16-Bit Pixel Odyssey",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "pixel",
+        "quantize",
+        "dither",
+        "parallax",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 23,
+      "style_id": "chalkboard",
+      "index_title": "Chalkboard Lesson",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "stroke",
+        "grain",
+        "particles",
+        "reveal",
+        "erase"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 24,
+      "style_id": "cut-paper",
+      "index_title": "Cut-Paper Diorama",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "mask",
+        "layer",
+        "occlude",
+        "parallax",
+        "shadow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 25,
+      "style_id": "stained-glass",
+      "index_title": "Cathedral Glass",
+      "card_family": "Painterly",
+      "operator_tags": [
+        "tessellate",
+        "mask",
+        "transmit",
+        "light",
+        "shadow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 26,
+      "style_id": "editorial-chart",
+      "index_title": "Editorial Chart",
+      "card_family": "Data & Information",
+      "operator_tags": [
+        "axis",
+        "path",
+        "map",
+        "type",
+        "reveal"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 27,
+      "style_id": "synthwave",
+      "index_title": "Synthwave Outrun",
+      "card_family": "Retro UI & Neon",
+      "operator_tags": [
+        "grid",
+        "projection",
+        "glow",
+        "reflection",
+        "camera"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 28,
+      "style_id": "origami",
+      "index_title": "Origami Studio",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "mesh",
+        "fold",
+        "hinge",
+        "light",
+        "transform"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 29,
+      "style_id": "linocut",
+      "index_title": "Linocut Relief Print",
+      "card_family": "Print",
+      "operator_tags": [
+        "engrave",
+        "mask",
+        "print",
+        "grain",
+        "layer"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 30,
+      "style_id": "holographic-foil",
+      "index_title": "Holographic Foil Card",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "surface",
+        "reflection",
+        "gradient",
+        "light",
+        "emboss"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 31,
+      "style_id": "voxel",
+      "index_title": "Voxel Diorama",
+      "card_family": "Dimensional",
+      "operator_tags": [
+        "voxel",
+        "grid",
+        "occlude",
+        "shadow",
+        "camera"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 32,
+      "style_id": "sumi-e",
+      "index_title": "Sumi-e Ink Wash",
+      "card_family": "Painterly",
+      "operator_tags": [
+        "stroke",
+        "diffuse",
+        "texture",
+        "field",
+        "fade"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 33,
+      "style_id": "etch-sketch",
+      "index_title": "Etch A Sketch Toy",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "path",
+        "constraint",
+        "trace",
+        "erase",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 34,
+      "style_id": "cosmic",
+      "index_title": "Cosmic Star Chart",
+      "card_family": "Cosmic & Psychedelic",
+      "operator_tags": [
+        "field",
+        "noise",
+        "orbit",
+        "glow",
+        "layer"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 35,
+      "style_id": "collage-zine",
+      "index_title": "Punk Zine Collage",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "mask",
+        "halftone",
+        "layer",
+        "noise",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 36,
+      "style_id": "thermal-camera",
+      "index_title": "Thermal Camera",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "field",
+        "map",
+        "gradient",
+        "edge",
+        "noise"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 37,
+      "style_id": "blueprint",
+      "index_title": "Engineering Blueprint",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "projection",
+        "path",
+        "hatch",
+        "grid",
+        "measure"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 38,
+      "style_id": "impasto-oil",
+      "index_title": "Impasto Night",
+      "card_family": "Painterly",
+      "operator_tags": [
+        "field",
+        "stroke",
+        "texture",
+        "height",
+        "light"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 39,
+      "style_id": "win95",
+      "index_title": "Win95 Desktop",
+      "card_family": "Retro UI & Neon",
+      "operator_tags": [
+        "grid",
+        "pixel",
+        "layer",
+        "step",
+        "trace"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 40,
+      "style_id": "low-poly",
+      "index_title": "Low-Poly Faceted",
+      "card_family": "Dimensional",
+      "operator_tags": [
+        "mesh",
+        "triangulate",
+        "light",
+        "fog",
+        "camera"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 41,
+      "style_id": "manga-panel",
+      "index_title": "Manga Page",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "panel",
+        "stroke",
+        "halftone",
+        "focus",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 42,
+      "style_id": "letterpress",
+      "index_title": "Wood Type Letterpress",
+      "card_family": "Print",
+      "operator_tags": [
+        "type",
+        "print",
+        "grain",
+        "pressure",
+        "stamp"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 43,
+      "style_id": "light-painting",
+      "index_title": "Light Painting",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "path",
+        "trace",
+        "light",
+        "accumulate",
+        "glow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 44,
+      "style_id": "felt-quilt",
+      "index_title": "Felt & Patchwork",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "stitch",
+        "path",
+        "texture",
+        "layer",
+        "shadow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 45,
+      "style_id": "crt-terminal",
+      "index_title": "Phosphor Terminal",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "grid",
+        "type",
+        "scan",
+        "distort",
+        "glow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 46,
+      "style_id": "glassmorphism",
+      "index_title": "Glassmorphism UI",
+      "card_family": "Dimensional",
+      "operator_tags": [
+        "blur",
+        "mask",
+        "layer",
+        "light",
+        "refraction"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 47,
+      "style_id": "tarot-card",
+      "index_title": "Tarot Card",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "symmetry",
+        "symbol",
+        "layer",
+        "foil",
+        "light"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 48,
+      "style_id": "transit-map",
+      "index_title": "Transit Map",
+      "card_family": "Data & Information",
+      "operator_tags": [
+        "graph",
+        "constraint",
+        "path",
+        "grid",
+        "reveal"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 49,
+      "style_id": "gouache-poster",
+      "index_title": "Gouache Travel Poster",
+      "card_family": "Painterly",
+      "operator_tags": [
+        "palette",
+        "layer",
+        "brush",
+        "parallax",
+        "shadow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 50,
+      "style_id": "napkin-sketch",
+      "index_title": "Napkin Sketch",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "stroke",
+        "diffuse",
+        "texture",
+        "crease",
+        "trace"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 51,
+      "style_id": "art-deco",
+      "index_title": "Art Deco Foil",
+      "card_family": "Art & Design Movements",
+      "operator_tags": [
+        "symmetry",
+        "grid",
+        "foil",
+        "light",
+        "transform"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 52,
+      "style_id": "x-ray",
+      "index_title": "Radiograph on Lightbox",
+      "card_family": "Light & Imaging",
+      "operator_tags": [
+        "density",
+        "transmit",
+        "layer",
+        "mask",
+        "glow"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 53,
+      "style_id": "vaporwave",
+      "index_title": "Vaporwave",
+      "card_family": "Retro UI & Neon",
+      "operator_tags": [
+        "scan",
+        "distort",
+        "noise",
+        "chromatic",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 54,
+      "style_id": "paper-marbling",
+      "index_title": "Ebru Paper Marbling",
+      "card_family": "Generative & Type",
+      "operator_tags": [
+        "field",
+        "fluid",
+        "warp",
+        "layer",
+        "trace"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 55,
+      "style_id": "isotype",
+      "index_title": "ISOTYPE Pictograms",
+      "card_family": "Data & Information",
+      "operator_tags": [
+        "symbol",
+        "grid",
+        "map",
+        "quantize",
+        "stamp"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 56,
+      "style_id": "soft-3d",
+      "index_title": "Soft 3D Clay",
+      "card_family": "Dimensional",
+      "operator_tags": [
+        "volume",
+        "squash",
+        "light",
+        "shadow",
+        "ease"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 57,
+      "style_id": "cross-stitch",
+      "index_title": "Cross-Stitch Sampler",
+      "card_family": "Paper & Craft",
+      "operator_tags": [
+        "grid",
+        "stitch",
+        "pixel",
+        "texture",
+        "trace"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 58,
+      "style_id": "constructivist",
+      "index_title": "Constructivist Propaganda",
+      "card_family": "Art & Design Movements",
+      "operator_tags": [
+        "shape",
+        "diagonal",
+        "halftone",
+        "mask",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 59,
+      "style_id": "gameboy",
+      "index_title": "Pocket Monochrome",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "pixel",
+        "palette",
+        "quantize",
+        "scan",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 60,
+      "style_id": "botanical-plate",
+      "index_title": "Botanical Plate",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "engrave",
+        "hatch",
+        "stroke",
+        "layer",
+        "measure"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 61,
+      "style_id": "kinetic-type",
+      "index_title": "Kinetic Type",
+      "card_family": "Generative & Type",
+      "operator_tags": [
+        "type",
+        "beat",
+        "transform",
+        "echo",
+        "glitch"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 62,
+      "style_id": "mosaic",
+      "index_title": "Byzantine Mosaic",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "tessellate",
+        "contour",
+        "layer",
+        "light",
+        "occlude"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 63,
+      "style_id": "y2k-chrome",
+      "index_title": "Y2K Liquid Chrome",
+      "card_family": "Retro UI & Neon",
+      "operator_tags": [
+        "metaball",
+        "field",
+        "reflection",
+        "warp",
+        "light"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 64,
+      "style_id": "sticky-notes",
+      "index_title": "Sticky-Note Wall",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "graph",
+        "layer",
+        "shadow",
+        "trace",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 65,
+      "style_id": "newsprint",
+      "index_title": "Vintage Newsprint",
+      "card_family": "Print",
+      "operator_tags": [
+        "grid",
+        "type",
+        "halftone",
+        "print",
+        "spin"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 66,
+      "style_id": "wireframe-terrain",
+      "index_title": "Hidden-Line Wireframe",
+      "card_family": "Dimensional",
+      "operator_tags": [
+        "mesh",
+        "projection",
+        "occlude",
+        "scan",
+        "camera"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 67,
+      "style_id": "memphis",
+      "index_title": "Memphis Group",
+      "card_family": "Art & Design Movements",
+      "operator_tags": [
+        "shape",
+        "pattern",
+        "contrast",
+        "step",
+        "transform"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 68,
+      "style_id": "ballpoint-notebook",
+      "index_title": "Ballpoint Notebook",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "stroke",
+        "hatch",
+        "pressure",
+        "trace",
+        "texture"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 69,
+      "style_id": "op-art",
+      "index_title": "Op Art Sphere",
+      "card_family": "Generative & Type",
+      "operator_tags": [
+        "grid",
+        "field",
+        "warp",
+        "contrast",
+        "pulse"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 70,
+      "style_id": "topographic",
+      "index_title": "Topographic Survey",
+      "card_family": "Data & Information",
+      "operator_tags": [
+        "field",
+        "contour",
+        "map",
+        "shade",
+        "measure"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 71,
+      "style_id": "pointillism",
+      "index_title": "Pointillist Afternoon",
+      "card_family": "Painterly",
+      "operator_tags": [
+        "point",
+        "sample",
+        "colour",
+        "noise",
+        "texture"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 72,
+      "style_id": "vector-arcade",
+      "index_title": "Vector Arcade 1980",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "path",
+        "trace",
+        "glow",
+        "decay",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 73,
+      "style_id": "patent-drawing",
+      "index_title": "Patent Drawing",
+      "card_family": "Illustration",
+      "operator_tags": [
+        "projection",
+        "stroke",
+        "hatch",
+        "label",
+        "measure"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 74,
+      "style_id": "bauhaus",
+      "index_title": "Bauhaus Poster",
+      "card_family": "Art & Design Movements",
+      "operator_tags": [
+        "grid",
+        "shape",
+        "contrast",
+        "type",
+        "transform"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 75,
+      "style_id": "ms-paint",
+      "index_title": "Bitmap Paint Doodle",
+      "card_family": "Retro UI & Neon",
+      "operator_tags": [
+        "pixel",
+        "floodfill",
+        "mask",
+        "noise",
+        "step"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 76,
+      "style_id": "string-art",
+      "index_title": "Nail & Thread String Art",
+      "card_family": "Generative & Type",
+      "operator_tags": [
+        "graph",
+        "chord",
+        "envelope",
+        "trace",
+        "light"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 77,
+      "style_id": "ridgeline",
+      "index_title": "Ridgeline",
+      "card_family": "Data & Information",
+      "operator_tags": [
+        "field",
+        "path",
+        "stack",
+        "occlude",
+        "sample"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 78,
+      "style_id": "sketchbook-pencil",
+      "index_title": "Sketchbook Graphite",
+      "card_family": "Hand-Drawn",
+      "operator_tags": [
+        "geometry",
+        "stroke",
+        "hatch",
+        "pressure",
+        "reveal"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 79,
+      "style_id": "teletext",
+      "index_title": "Teletext Page",
+      "card_family": "Retro UI & Neon",
+      "operator_tags": [
+        "grid",
+        "type",
+        "pixel",
+        "palette",
+        "scan"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 80,
+      "style_id": "screenprint-grid",
+      "index_title": "Silkscreen Grid",
+      "card_family": "Print",
+      "operator_tags": [
+        "print",
+        "grid",
+        "halftone",
+        "misregister",
+        "layer"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 81,
+      "style_id": "spirograph",
+      "index_title": "Guilloché Security Print",
+      "card_family": "Generative & Type",
+      "operator_tags": [
+        "parametric",
+        "path",
+        "periodic",
+        "engrave",
+        "trace"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 82,
+      "style_id": "ascii-render",
+      "index_title": "ASCII Demoscene",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "sdf",
+        "raymarch",
+        "sample",
+        "quantize",
+        "type"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 83,
+      "style_id": "swiss-grid",
+      "index_title": "International Typographic Style",
+      "card_family": "Art & Design Movements",
+      "operator_tags": [
+        "grid",
+        "type",
+        "align",
+        "symmetry",
+        "transform"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 84,
+      "style_id": "flow-field",
+      "index_title": "Flow Field",
+      "card_family": "Data & Information",
+      "operator_tags": [
+        "field",
+        "integrate",
+        "path",
+        "particles",
+        "trace"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 85,
+      "style_id": "mac-1bit",
+      "index_title": "MacPaint 1984",
+      "card_family": "Retro Digital",
+      "operator_tags": [
+        "pixel",
+        "quantize",
+        "dither",
+        "floodfill",
+        "scan"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    },
+    {
+      "number": 86,
+      "style_id": "truchet",
+      "index_title": "Multi-scale Truchet",
+      "card_family": "Generative & Type",
+      "operator_tags": [
+        "tile",
+        "topology",
+        "subdivide",
+        "floodfill",
+        "mask"
+      ],
+      "evidence": "E1_INDEXED_E2_OPERATOR_HYPOTHESIS",
+      "status": "NOT_RECONSTRUCTED"
+    }
+  ]
+}
