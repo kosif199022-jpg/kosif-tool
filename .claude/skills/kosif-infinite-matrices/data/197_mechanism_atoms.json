@@ -1,0 +1,1205 @@
+{
+ "schema": "kosif.matrices.atoms.v1",
+ "date": "2026-10-24",
+ "source": "SRC-024 (owner's Infinite Matrices v0.2, matrix_primitives.py)",
+ "count": 197,
+ "axes": {
+  "geometry": 18,
+  "palette": 18,
+  "material": 18,
+  "motion": 18,
+  "transition": 17,
+  "typography": 17,
+  "composition": 17,
+  "narrative": 17,
+  "sound": 17,
+  "lighting": 16,
+  "camera": 16,
+  "interaction": 8
+ },
+ "warning": "Original short design-mechanism descriptors by the owner. Concepts for proposals only: none is an implemented executor.",
+ "atoms": [
+  {
+   "id": "MX-GEOMETRY-01",
+   "axis": "geometry",
+   "mechanism": "nested contours",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-02",
+   "axis": "geometry",
+   "mechanism": "voronoi shards",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-03",
+   "axis": "geometry",
+   "mechanism": "braided ribbons",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-04",
+   "axis": "geometry",
+   "mechanism": "triangular tiling",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-05",
+   "axis": "geometry",
+   "mechanism": "concentric islands",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-06",
+   "axis": "geometry",
+   "mechanism": "fractured circles",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-07",
+   "axis": "geometry",
+   "mechanism": "hexagonal channels",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-08",
+   "axis": "geometry",
+   "mechanism": "offset spirals",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-09",
+   "axis": "geometry",
+   "mechanism": "delaunay facets",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-10",
+   "axis": "geometry",
+   "mechanism": "woven lattices",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-11",
+   "axis": "geometry",
+   "mechanism": "recursive branches",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-12",
+   "axis": "geometry",
+   "mechanism": "staggered grids",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-13",
+   "axis": "geometry",
+   "mechanism": "rounded monoliths",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-14",
+   "axis": "geometry",
+   "mechanism": "interlocking arcs",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-15",
+   "axis": "geometry",
+   "mechanism": "knot networks",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-16",
+   "axis": "geometry",
+   "mechanism": "topological seams",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-17",
+   "axis": "geometry",
+   "mechanism": "floating cutouts",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-GEOMETRY-18",
+   "axis": "geometry",
+   "mechanism": "radial spokes",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-01",
+   "axis": "palette",
+   "mechanism": "limited duotone",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-02",
+   "axis": "palette",
+   "mechanism": "complementary sparks",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-03",
+   "axis": "palette",
+   "mechanism": "split complementary",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-04",
+   "axis": "palette",
+   "mechanism": "analogous dusk",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-05",
+   "axis": "palette",
+   "mechanism": "monochrome warmth",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-06",
+   "axis": "palette",
+   "mechanism": "black-and-gold",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-07",
+   "axis": "palette",
+   "mechanism": "muted earth pigments",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-08",
+   "axis": "palette",
+   "mechanism": "high-key pastels",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-09",
+   "axis": "palette",
+   "mechanism": "deep chromatic shadows",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-10",
+   "axis": "palette",
+   "mechanism": "fluorescent accent",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-11",
+   "axis": "palette",
+   "mechanism": "ink and paper",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-12",
+   "axis": "palette",
+   "mechanism": "cold metallic",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-13",
+   "axis": "palette",
+   "mechanism": "oxidized copper",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-14",
+   "axis": "palette",
+   "mechanism": "warm candlelight",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-15",
+   "axis": "palette",
+   "mechanism": "sunrise haze",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-16",
+   "axis": "palette",
+   "mechanism": "electric cyan-magenta",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-17",
+   "axis": "palette",
+   "mechanism": "colorblind-safe coded",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-PALETTE-18",
+   "axis": "palette",
+   "mechanism": "low-saturation cinematic",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-01",
+   "axis": "material",
+   "mechanism": "fibrous recycled paper",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-02",
+   "axis": "material",
+   "mechanism": "matte ceramic",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-03",
+   "axis": "material",
+   "mechanism": "hand-cut felt",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-04",
+   "axis": "material",
+   "mechanism": "layered glass",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-05",
+   "axis": "material",
+   "mechanism": "polished stone",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-06",
+   "axis": "material",
+   "mechanism": "cold-press pigment",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-07",
+   "axis": "material",
+   "mechanism": "engraved brass",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-08",
+   "axis": "material",
+   "mechanism": "embroidered thread",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-09",
+   "axis": "material",
+   "mechanism": "rough graphite",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-10",
+   "axis": "material",
+   "mechanism": "soft chalk",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-11",
+   "axis": "material",
+   "mechanism": "volumetric mist",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-12",
+   "axis": "material",
+   "mechanism": "liquid chrome",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-13",
+   "axis": "material",
+   "mechanism": "glazed enamel",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-14",
+   "axis": "material",
+   "mechanism": "riso ink texture",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-15",
+   "axis": "material",
+   "mechanism": "translucent resin",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-16",
+   "axis": "material",
+   "mechanism": "folded cardstock",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-17",
+   "axis": "material",
+   "mechanism": "woodgrain relief",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MATERIAL-18",
+   "axis": "material",
+   "mechanism": "sand and dust",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-01",
+   "axis": "motion",
+   "mechanism": "spring settle",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-02",
+   "axis": "motion",
+   "mechanism": "staggered reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-03",
+   "axis": "motion",
+   "mechanism": "path following",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-04",
+   "axis": "motion",
+   "mechanism": "inertial drift",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-05",
+   "axis": "motion",
+   "mechanism": "elastic morph",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-06",
+   "axis": "motion",
+   "mechanism": "frame-by-frame draw",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-07",
+   "axis": "motion",
+   "mechanism": "increasing density",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-08",
+   "axis": "motion",
+   "mechanism": "orbit and parallax",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-09",
+   "axis": "motion",
+   "mechanism": "fold and unfold",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-10",
+   "axis": "motion",
+   "mechanism": "material growth",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-11",
+   "axis": "motion",
+   "mechanism": "fluid advection",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-12",
+   "axis": "motion",
+   "mechanism": "phase offsets",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-13",
+   "axis": "motion",
+   "mechanism": "focal pull",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-14",
+   "axis": "motion",
+   "mechanism": "particle convergence",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-15",
+   "axis": "motion",
+   "mechanism": "hinge rotation",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-16",
+   "axis": "motion",
+   "mechanism": "physical pendulum",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-17",
+   "axis": "motion",
+   "mechanism": "pulse propagation",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-MOTION-18",
+   "axis": "motion",
+   "mechanism": "controlled smear",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-01",
+   "axis": "transition",
+   "mechanism": "erased residue",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-02",
+   "axis": "transition",
+   "mechanism": "ink flood",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-03",
+   "axis": "transition",
+   "mechanism": "paper peel",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-04",
+   "axis": "transition",
+   "mechanism": "folded portal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-05",
+   "axis": "transition",
+   "mechanism": "dust dissolve",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-06",
+   "axis": "transition",
+   "mechanism": "lens refraction",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-07",
+   "axis": "transition",
+   "mechanism": "scanline sweep",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-08",
+   "axis": "transition",
+   "mechanism": "tile handoff",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-09",
+   "axis": "transition",
+   "mechanism": "thread pull",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-10",
+   "axis": "transition",
+   "mechanism": "shadow curtain",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-11",
+   "axis": "transition",
+   "mechanism": "mask inversion",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-12",
+   "axis": "transition",
+   "mechanism": "object continuity",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-13",
+   "axis": "transition",
+   "mechanism": "camera travel",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-14",
+   "axis": "transition",
+   "mechanism": "light wipe",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-15",
+   "axis": "transition",
+   "mechanism": "chart reflow",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-16",
+   "axis": "transition",
+   "mechanism": "fracture rejoin",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TRANSITION-17",
+   "axis": "transition",
+   "mechanism": "depth reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-01",
+   "axis": "typography",
+   "mechanism": "kinetic baseline",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-02",
+   "axis": "typography",
+   "mechanism": "morphing glyph",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-03",
+   "axis": "typography",
+   "mechanism": "hand-lettered stroke",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-04",
+   "axis": "typography",
+   "mechanism": "stamped title",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-05",
+   "axis": "typography",
+   "mechanism": "cutout letterforms",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-06",
+   "axis": "typography",
+   "mechanism": "vertical emphasis",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-07",
+   "axis": "typography",
+   "mechanism": "variable-width tracking",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-08",
+   "axis": "typography",
+   "mechanism": "annotated marginalia",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-09",
+   "axis": "typography",
+   "mechanism": "minimal swiss grid",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-10",
+   "axis": "typography",
+   "mechanism": "material-bound text",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-11",
+   "axis": "typography",
+   "mechanism": "displaced registration",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-12",
+   "axis": "typography",
+   "mechanism": "number odometer",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-13",
+   "axis": "typography",
+   "mechanism": "outlined counters",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-14",
+   "axis": "typography",
+   "mechanism": "bilingual safe zones",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-15",
+   "axis": "typography",
+   "mechanism": "right-to-left shaping",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-16",
+   "axis": "typography",
+   "mechanism": "circular lettering",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-TYPOGRAPHY-17",
+   "axis": "typography",
+   "mechanism": "negative-space wordmark",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-01",
+   "axis": "composition",
+   "mechanism": "asymmetric balance",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-02",
+   "axis": "composition",
+   "mechanism": "single focal hero",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-03",
+   "axis": "composition",
+   "mechanism": "micro-to-macro narrative",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-04",
+   "axis": "composition",
+   "mechanism": "layered foreground",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-05",
+   "axis": "composition",
+   "mechanism": "negative-space hierarchy",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-06",
+   "axis": "composition",
+   "mechanism": "diagonal journey",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-07",
+   "axis": "composition",
+   "mechanism": "centered reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-08",
+   "axis": "composition",
+   "mechanism": "modular grid",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-09",
+   "axis": "composition",
+   "mechanism": "split-diopter illusion",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-10",
+   "axis": "composition",
+   "mechanism": "near-far scale jump",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-11",
+   "axis": "composition",
+   "mechanism": "rotating tableau",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-12",
+   "axis": "composition",
+   "mechanism": "symmetry rupture",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-13",
+   "axis": "composition",
+   "mechanism": "visual breadcrumb trail",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-14",
+   "axis": "composition",
+   "mechanism": "floating data island",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-15",
+   "axis": "composition",
+   "mechanism": "minimal three-object stage",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-16",
+   "axis": "composition",
+   "mechanism": "deep nested frames",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-COMPOSITION-17",
+   "axis": "composition",
+   "mechanism": "isometric micro-world",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-01",
+   "axis": "narrative",
+   "mechanism": "question-to-discovery",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-02",
+   "axis": "narrative",
+   "mechanism": "cause-and-effect chain",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-03",
+   "axis": "narrative",
+   "mechanism": "visible experiment",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-04",
+   "axis": "narrative",
+   "mechanism": "misconception reversal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-05",
+   "axis": "narrative",
+   "mechanism": "object metamorphosis",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-06",
+   "axis": "narrative",
+   "mechanism": "micro-scale adventure",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-07",
+   "axis": "narrative",
+   "mechanism": "before-after reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-08",
+   "axis": "narrative",
+   "mechanism": "one continuous journey",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-09",
+   "axis": "narrative",
+   "mechanism": "build-and-payoff",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-10",
+   "axis": "narrative",
+   "mechanism": "visual analogy",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-11",
+   "axis": "narrative",
+   "mechanism": "constraint becomes hero",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-12",
+   "axis": "narrative",
+   "mechanism": "numbers as characters",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-13",
+   "axis": "narrative",
+   "mechanism": "hidden pattern revealed",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-14",
+   "axis": "narrative",
+   "mechanism": "two competing hypotheses",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-15",
+   "axis": "narrative",
+   "mechanism": "emotional contrast",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-16",
+   "axis": "narrative",
+   "mechanism": "zooming hierarchy",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-NARRATIVE-17",
+   "axis": "narrative",
+   "mechanism": "silent visual punchline",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-01",
+   "axis": "sound",
+   "mechanism": "quiet tactile strokes",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-02",
+   "axis": "sound",
+   "mechanism": "single musical motif",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-03",
+   "axis": "sound",
+   "mechanism": "counter ticks",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-04",
+   "axis": "sound",
+   "mechanism": "paper rustle",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-05",
+   "axis": "sound",
+   "mechanism": "mechanical winding",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-06",
+   "axis": "sound",
+   "mechanism": "spatial whooshes",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-07",
+   "axis": "sound",
+   "mechanism": "glass chimes",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-08",
+   "axis": "sound",
+   "mechanism": "soft analog synth",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-09",
+   "axis": "sound",
+   "mechanism": "granular shimmer",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-10",
+   "axis": "sound",
+   "mechanism": "minimal percussive hits",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-11",
+   "axis": "sound",
+   "mechanism": "breathy ambient bed",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-12",
+   "axis": "sound",
+   "mechanism": "muted room tone",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-13",
+   "axis": "sound",
+   "mechanism": "rhythmic footsteps",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-14",
+   "axis": "sound",
+   "mechanism": "tonal page turn",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-15",
+   "axis": "sound",
+   "mechanism": "character micro-foley",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-16",
+   "axis": "sound",
+   "mechanism": "fading harmonic tail",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-SOUND-17",
+   "axis": "sound",
+   "mechanism": "silence at payoff",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-01",
+   "axis": "lighting",
+   "mechanism": "soft rim separation",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-02",
+   "axis": "lighting",
+   "mechanism": "grazing texture light",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-03",
+   "axis": "lighting",
+   "mechanism": "subsurface impression",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-04",
+   "axis": "lighting",
+   "mechanism": "long theatrical shadow",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-05",
+   "axis": "lighting",
+   "mechanism": "diffused studio key",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-06",
+   "axis": "lighting",
+   "mechanism": "moire light interplay",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-07",
+   "axis": "lighting",
+   "mechanism": "bloomed highlight",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-08",
+   "axis": "lighting",
+   "mechanism": "noir side light",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-09",
+   "axis": "lighting",
+   "mechanism": "iridescent caustics",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-10",
+   "axis": "lighting",
+   "mechanism": "shadow-color contrast",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-11",
+   "axis": "lighting",
+   "mechanism": "candle flicker",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-12",
+   "axis": "lighting",
+   "mechanism": "underwater shafts",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-13",
+   "axis": "lighting",
+   "mechanism": "golden-hour edge",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-14",
+   "axis": "lighting",
+   "mechanism": "day-for-night contrast",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-15",
+   "axis": "lighting",
+   "mechanism": "projected patterns",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-LIGHTING-16",
+   "axis": "lighting",
+   "mechanism": "glowing silhouette",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-01",
+   "axis": "camera",
+   "mechanism": "slow dolly-in",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-02",
+   "axis": "camera",
+   "mechanism": "parallel track",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-03",
+   "axis": "camera",
+   "mechanism": "isometric pan",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-04",
+   "axis": "camera",
+   "mechanism": "orbit around object",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-05",
+   "axis": "camera",
+   "mechanism": "snap-to-detail",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-06",
+   "axis": "camera",
+   "mechanism": "book-page glide",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-07",
+   "axis": "camera",
+   "mechanism": "top-down reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-08",
+   "axis": "camera",
+   "mechanism": "miniature tilt-shift",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-09",
+   "axis": "camera",
+   "mechanism": "infinite zoom illusion",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-10",
+   "axis": "camera",
+   "mechanism": "rack focus",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-11",
+   "axis": "camera",
+   "mechanism": "layered 2.5D parallax",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-12",
+   "axis": "camera",
+   "mechanism": "controlled whip pan",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-13",
+   "axis": "camera",
+   "mechanism": "steadicam drift",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-14",
+   "axis": "camera",
+   "mechanism": "reverse tracking",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-15",
+   "axis": "camera",
+   "mechanism": "camera inside mechanism",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-CAMERA-16",
+   "axis": "camera",
+   "mechanism": "static theatre reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-01",
+   "axis": "interaction",
+   "mechanism": "cursor guided journey",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-02",
+   "axis": "interaction",
+   "mechanism": "drag to reveal",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-03",
+   "axis": "interaction",
+   "mechanism": "scroll-linked discovery",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-04",
+   "axis": "interaction",
+   "mechanism": "hover inspection",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-05",
+   "axis": "interaction",
+   "mechanism": "timeline scrub",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-06",
+   "axis": "interaction",
+   "mechanism": "tap to branch",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-07",
+   "axis": "interaction",
+   "mechanism": "responsive sound toggle",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  },
+  {
+   "id": "MX-INTERACTION-08",
+   "axis": "interaction",
+   "mechanism": "accessible keyboard controls",
+   "status": "CONCEPT_NOT_EXECUTABLE"
+  }
+ ]
+}

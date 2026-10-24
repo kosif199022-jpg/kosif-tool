@@ -23,6 +23,9 @@ python3 $K rate --experiment EXP-0001 --score 4 --by "<reviewer>" --notes "..."
 python3 $K ideate --count 10 --record                 # new parent triples, never a repeat, biased by feedback
 python3 $K sources list                               # every source by sha256, rights, relevance, use
 python3 $K bricks summary                             # REA + static-code decomposition of the 86 styles
+python3 $K laws list                                  # four typed causal laws (v0.2): trajectory, material, elastic, self-imprinting
+python3 $K laws run .claude/skills/kosif-infinite-matrices/recipes/laws/self-imprinting.json   # A/B + dose; add --render out/kmx/<slug>
+python3 $K laws atoms --axis motion                   # 197 mechanism atoms (concepts, not executors)
 python3 -m unittest discover -s .claude/skills/kosif-infinite-matrices/tests -v
 ```
 
@@ -51,9 +54,11 @@ From KOSIF Superpowers: `python3 .claude/skills/kosif-superpowers/scripts/hub.py
 | static code + REA decomposition of all 86 | `data/86_style_code_bricks.json` | `E2_STATIC_CODE`; 95.7% of checkable analyst tags supported by code |
 | engine (recipe → simulation → metrics) | `scripts/kmx_engine.py` | tested |
 | scene writer (atlas contract) | `scripts/kmx_scene.py`, `scripts/kmx_capture.cjs` | render-tested here |
+| four typed causal laws (trajectory / material / elastic memory, self-imprinting) | `scripts/kmx_laws.py`, `recipes/laws/*.json` | `CONFIRMED_IN_MODEL` (A/B + dose ρ = 1.0), `NUMERIC_TESTED`; reproduce the owner's v0.2 receipts byte for byte; not human-reviewed |
+| 197 mechanism atoms on 12 axes | `data/197_mechanism_atoms.json` | `CONCEPT_NOT_EXECUTABLE` (owner's v0.2 vocabulary) |
 | first experiment, glass that remembers light | `experiments/EXP-0001-glass-remembers-light/` | `CONFIRMED_IN_MODEL`, `RENDER_TESTED`, not yet human-rated |
 | research ledger | `memory/ledger.jsonl` | hash-chained, 1 experiment |
-| source registry | `sources/registry.json` | 23 sources, 29 file names |
+| source registry | `sources/registry.json` | 25 sources, 33 file names (uploads of 2026-10-24 under `uploads`, SRC-024, SRC-025) |
 | archive splitter (local only) | `scripts/kmx_atlas_extract.py` | writes third-party text outside git |
 
 ## Guardrails

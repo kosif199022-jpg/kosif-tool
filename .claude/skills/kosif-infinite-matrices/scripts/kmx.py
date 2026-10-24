@@ -272,6 +272,11 @@ def cmd_bricks(a):
     return kmx_bricks.main([a.action] + ([a.id] if a.id else []))
 
 
+def cmd_laws(a):
+    import kmx_laws
+    return kmx_laws.main(a.rest)
+
+
 def cmd_probe(a):
     import glass_memory_probe
     emit(glass_memory_probe.probe()); return 0
@@ -300,6 +305,8 @@ def main(argv=None):
     p.add_argument("--pages", type=int); p.set_defaults(fn=cmd_sources)
     p = sub.add_parser("bricks"); p.add_argument("action", choices=["summary", "show"]); p.add_argument("id", nargs="?"); p.set_defaults(fn=cmd_bricks)
     sub.add_parser("probe").set_defaults(fn=cmd_probe)
+    p = sub.add_parser("laws", help="four typed causal laws from v0.2: list | run <recipe> [--render DIR] | verify <report> | atoms")
+    p.add_argument("rest", nargs=argparse.REMAINDER); p.set_defaults(fn=cmd_laws)
     a = ap.parse_args(argv)
     if a.cmd == "sources" and a.action == "add" and not (a.title and a.relevance and a.rights):
         ap.error("sources add needs --title, --relevance and --rights")

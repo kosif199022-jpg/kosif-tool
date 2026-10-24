@@ -1,0 +1,123 @@
+{
+ "schema": "kosif.causal-lab.candidates.v2",
+ "seed": 124,
+ "recipes": [
+  {
+   "parents": [
+    "FA-36",
+    "FA-71",
+    "FA-01"
+   ],
+   "families": [
+    "Light & Imaging",
+    "Painterly",
+    "Popular Explainer Looks"
+   ],
+   "concept_atoms": {
+    "geometry": {
+     "id": "MX-GEOMETRY-06",
+     "mechanism": "fractured circles"
+    },
+    "palette": {
+     "id": "MX-PALETTE-02",
+     "mechanism": "complementary sparks"
+    },
+    "material": {
+     "id": "MX-MATERIAL-14",
+     "mechanism": "riso ink texture"
+    },
+    "motion": {
+     "id": "MX-MOTION-09",
+     "mechanism": "fold and unfold"
+    },
+    "transition": {
+     "id": "MX-TRANSITION-12",
+     "mechanism": "object continuity"
+    },
+    "typography": {
+     "id": "MX-TYPOGRAPHY-02",
+     "mechanism": "morphing glyph"
+    },
+    "composition": {
+     "id": "MX-COMPOSITION-11",
+     "mechanism": "rotating tableau"
+    },
+    "narrative": {
+     "id": "MX-NARRATIVE-06",
+     "mechanism": "micro-scale adventure"
+    },
+    "sound": {
+     "id": "MX-SOUND-13",
+     "mechanism": "rhythmic footsteps"
+    },
+    "lighting": {
+     "id": "MX-LIGHTING-10",
+     "mechanism": "shadow-color contrast"
+    },
+    "camera": {
+     "id": "MX-CAMERA-14",
+     "mechanism": "reverse tracking"
+    },
+    "interaction": {
+     "id": "MX-INTERACTION-01",
+     "mechanism": "cursor guided journey"
+    }
+   },
+   "strategy": "physical_metaphor",
+   "law": "self_imprinting",
+   "parameters": {
+    "gain": 0.36,
+    "decay": 0.98,
+    "geometry": "spiral",
+    "seed": 124
+   },
+   "causal_contract": {
+    "input": "ParticlePositions2D",
+    "output": "ScalarField2D",
+    "edge": "particle history → memory field → velocity"
+   },
+   "status": "PROPOSED_NOT_RENDERED",
+   "limits": [
+    "197 atoms remain conceptual, not executor implementations",
+    "visual novelty has not been verified"
+   ],
+   "id": "KMX2-126080eb08333441"
+  }
+ ],
+ "provenance": {
+  "source": "SRC-024",
+  "file": "self_imprinting_recipe.json",
+  "parents_as_style_ids": [
+   "thermal-camera",
+   "pointillism",
+   "flat-space"
+  ],
+  "v0_2_demo_receipt": {
+   "recipe_sha256": "fe10046402f451a6515d00eb71aa5828d0b84d1e37a9add69349133229358deb",
+   "metrics": {
+    "law": "self_imprinting",
+    "coupling_edge": "particle history → memory field → velocity",
+    "frames": 32,
+    "light_off_frame": 11,
+    "same_exogenous_light": true,
+    "same_initial_positions": true,
+    "only_one_channel_disabled": true,
+    "final_pos_difference": 0.315814644,
+    "final_material_difference": 0.0,
+    "mean_post_light_effect": 0.263448652,
+    "effect_detected": true,
+    "metric": "mean particle position displacement + absolute normalized material difference"
+   },
+   "frame_sha256": {
+    "a_coupled": {
+     "000.svg": "e8afcaae7a1add357ebcb0035ba70e737441434d4ffa579909511c0f31bb0701",
+     "031.svg": "6d765b983555c0b7fe1f2384c8c282986a7540459b1854b55500a0eacfb91d09"
+    },
+    "b_control": {
+     "000.svg": "bcbfd37005f41b91b26d4100295ba9170e171b2bed5244754351536202c8b73e",
+     "031.svg": "fcfa39ff3646277f1b5a6afe180f005c2f432f3cc705326e6e2089ca0d00a2d0"
+    }
+   }
+  }
+ }
+}

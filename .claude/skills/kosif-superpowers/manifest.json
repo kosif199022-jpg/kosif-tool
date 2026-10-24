@@ -16193,6 +16193,11 @@
      "name": "bricks",
      "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py bricks show flow-field",
      "does": "summary or show ID from data/86_style_code_bricks.json: six bricks per style inferred from its code, REA function/call/relation counts and code-lineage neighbours."
+    },
+    {
+     "name": "laws",
+     "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py laws run .claude/skills/kosif-infinite-matrices/recipes/laws/self-imprinting.json",
+     "does": "list / run RECIPE [--render DIR] / verify REPORT / atoms [--axis A]: four typed causal laws from the owner's v0.2 causal studio (trajectory, material and elastic memory, self-imprinting), each an A/B run with one edge switched off plus a gain dose sweep; --render writes A/B SVG frames with a sha256 receipt; atoms lists the 197 conceptual mechanism atoms."
     }
    ],
    "inputs": "A recipe JSON (kosif.matrices.recipe.v1), the committed 86-card index and code-brick data, and for sources a local file or URL.",
@@ -16212,9 +16217,9 @@
    },
    "safety": "writes-files",
    "consent": "--record, rate, ideate --record, hypotheses mark and sources add append to tracked files (memory/ledger.jsonl, sources/registry.json) that are meant to be committed as shared research memory; run them only for results the user wants kept.",
-   "limits": "v1 has one stimulus, one structure and one dynamics law; its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating.",
+   "limits": "v1 has one stimulus, one structure and one dynamics law (plus the four small v0.2 particle laws under `laws`); its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating.",
    "evidence": "tested-here",
-   "evidence_note": "21/21 unit tests passed; EXP-0001 rendered and video-verified on this checkout",
+   "evidence_note": "29/29 unit tests passed (incl. exact reproduction of the four v0.2 law receipts); EXP-0001 rendered and video-verified on this checkout",
    "tests": [
     ".claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py",
     ".claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py"
