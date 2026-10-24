@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (18 أداة)
+# أدوات المجال `sources` (19 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -427,6 +427,57 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:github-top-repos --evidence <ملف>`.
+
+### `instagram-reference-discovery` — البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/instagram_reference_bridge.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `web-research`, `story-direction-ideas`, `creativity-engine` |
+
+**ما تفعله:** يسجّل حسابين مرجعيين، وينشئ روابط بحث عامة حسب المحتوى، ويفهرس الروابط التي يتحقق منها الباحث مع وصف عربي/إنجليزي داخل SQLite محليًا، ثم يولّد مقترحات بحثية للبنات المصفوفات الست وأقرب أساليب الأطلس الـ86 دون ادعاء مشاهدة أو تنفيذ الفيديو.
+
+**What it does:** Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram.
+
+#### متى تُستدعى
+
+- «ابحث عن ريلز إنستجرام بتأثير معين»
+- «حلّل مراجع موشن من asirgokerr و brkn.land وحوّلها لأفكار في المصفوفات»
+- «Find Instagram motion references for glowing particles and propose causal bricks»
+- «فهرس فيديوهات ريلز حسب الستايل والحركة»
+
+#### الأوامر
+
+- **doctor**: Show indexed count, local database and no-network policy.
+  - `python3 scripts/instagram_reference_bridge.py doctor`
+- **sources**: Show the two user-specified unreviewed creator accounts.
+  - `python3 scripts/instagram_reference_bridge.py sources`
+- **plan**: Generate public Google and Bing search links, not search results.
+  - `python3 scripts/instagram_reference_bridge.py plan "جسيمات ضوئية"`
+- **add**: Store an explicitly supplied permalink with evidence metadata, without downloading a reel.
+  - `python3 scripts/instagram_reference_bridge.py add https://www.instagram.com/reel/REALCODE/ --topic "light particles" --state link_only`
+- **search**: Rank locally indexed observations by normalized Arabic/English matching.
+  - `python3 scripts/instagram_reference_bridge.py search "مؤثرات 3d"`
+- **propose**: Write a non-executable, evidence-gated KMX proposal with causal bricks and matching operator tags.
+  - `python3 scripts/instagram_reference_bridge.py propose https://www.instagram.com/reel/REALCODE/ --catalog ../kosif-infinite-matrices/data/86_style_research_database.json --out out/ideas.json`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: Writes to caller's isolated local SQLite catalog and only user-selected proposal output; refuses overwriting proposals. No external requests or media downloads. Shared research ledger not modified.
+- الحدود: The CLI cannot directly search inside all Instagram reels or verify a video's actual motion; web results must be discovered separately and manually checked. Source states only attest to submitted notes and evidence URI presence, not authenticity. Proposal is not a runnable KMX recipe.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_instagram_reference_bridge.py`
+- مرجع: `.claude/skills/kosif-instagram-discovery/SKILL.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/instagram-discovery.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:instagram-reference-discovery --evidence <ملف>`.
 
 ### `media-sources` — بوابة الوسائط المرخّصة / Licensed stock media gateway
 

@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 164 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 165 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 22 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **268** | |
+| **المجموع** | **269** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -83,7 +83,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 170 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 171 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -168,6 +168,7 @@
 | `TOOL-17` | مولّد مشاريع بداية لمحركات الحركة | Third-party motion engine scaffolder | proven | python3, npm:three, npm:gsap, npm:remotion |
 | `TOOL-170` | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا | Task history: record every finished task and repeat it later | proven | python3 |
 | `TOOL-171` | محرك المصفوفات اللانهائية للأساليب السببية | KOSIF Infinite Matrices causal style engine | proven | ffmpeg, python3, chromium, npm:rea |
+| `TOOL-172` | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية | Instagram Reference Discovery → Infinite Matrices | proven | python3 |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
