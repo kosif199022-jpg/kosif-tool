@@ -325,9 +325,9 @@ DELIVERABLES = [  # priority order: the first that matches is the primary delive
                 r"(?<![ء-ي])[وف]?فك (?:ال)?(?:تطبيق|ملف|برنامج)|app\.asar|\basar\b|electron|الكترون"),
     ("code", r"كود|برمجه|تطبيق|(?<![ء-ي])[وف]?(?:ال|ل|ب)?موقع(?:ي|نا|ك)?(?![ء-ي])|سكربت|\bbug\b|\bcode\b|\bapp\b|\bwebsites?\b|\bscripts?\b|"
              r"\bapi\b|\brepo(?:s|sitory|sitories)?\b|مستودع|برنامج|بايثون|\bpython\b|\bnode(?:\.?js)?\b|\breact\b|fastapi|django|"
-             r"\bbugs?\b|\bdebug|crash|memory leak|\blogin\b|تسجيل (?:ال)?دخول|ايرور|(?<![ء-ي])[وف]?(?:ال)?(?:بج|باج|بق)(?![ء-ي])|كراش|"
+             r"\bbugs?\b|\bdebug|memory leak|\blogin\b|تسجيل (?:ال)?دخول|ايرور|(?<![ء-ي])[وف]?(?:ال)?(?:بج|باج|بق)(?![ء-ي])|"
              r"\bfrontend\b|\bbackend\b|ثغر(?:ه|ات)|(?<![ء-ي])[وف]?(?:ال)?بوت(?![ء-ي])|\b(?:chat)?bots?\b"),
-    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b|\bintro\b|انترو|paper edit|rough cut"),
+    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|(?<![a-z])motion|animation|film|\bmp4\b|\bintro\b|انترو|paper edit|rough cut"),
     ("audio", r"بودكاست|موسيقي|اغني(?:ه|تي|ات)|نشيد|اناشيد|تلاوه|podcast|music|song|nasheed|\bsuno\b|سونو|\blyrics?\b|كلمات (?:ال)?اغني(?:ه|تي)"),
     ("3d", r"ثلاثي|\b3d\b|بلندر|blender|\bglb\b|three\.?js"),
     ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|(?<![ء-ي])[وف]?(?:ا)?رسم|ماسكوت|image|photo|poster|logo|design|illustrat|mascot|\bcard\b|invitation|\bcover\b(?!\s+letters?)|\bpng\b|\bjpg\b"),
@@ -387,6 +387,13 @@ NEW_WORK_RX = (r"(?<![ء-ي])[وف]?(?:اعمل|اكتب|صمم|جهز|حضر|ا
 # the request is a task with judgement in it, not a one-line dictated edit
 COMPOUND_RX = (r"(?<![ء-ي])و(?:راجع|حلل|قيم|اعمل|اكتب|صمم|قارن|اقترح|استخرج|حدد|طلع|افحص|ابحث|نفذ|ابني|صلح|عدل)(?:ه|ها|هم|لي|لنا)?(?![ء-ي])|"
                r"\band (?:then )?(?:review|analy[sz]e|flag|check|assess|compare|suggest|extract|build|write|fix|rewrite)\b")
+# a written piece names the deliverable even when its subject is data or sales («ايميل مبيعات», "a sales email")
+WRITTEN_PIECE_RX = r"\bemails?\b|ايميل|\bletters?\b|خطاب|\bnewsletter\b|\barticles?\b|مقال|\bblog posts?\b|\bpoems?\b|قصيده"
+# a business decision ("should we… or…", «هل… ولا…») about selling, pricing or customers is a strategy job even when
+# one option is an app; "should I use React or Vue" has no business word and stays code
+DECISION_LEAD_RX = r"\bshould (?:i|we)\b|\bwhether\b|^هل |(?<![ء-ي])ولا(?![ء-ي])|(?<![ء-ي])اختار بين"
+BUSINESS_RX = (r"\bsell(?:s|ing)?\b|\bpric(?:e|es|ing)\b|\bmarket(?:ing)?\b|\bbusiness\b|\bcustomers?\b|\brevenue\b|\bprofit|"
+               r"(?<![ء-ي])[وف]?(?:ا|ن)?بيع|اسعار|تسويق|عملاء|ارباح|(?<![ء-ي])[وف]?(?:ال)?(?:شركه|مشروع|بيزنس)(?![ء-ي])")
 STYLE_RX = {"cinematic": r"سينمائي|cinematic|فيلمي|film look"}   # a style steers families, never the level or the effort
 STYLE_FAMILIES = {"cinematic": ["3d-spatial", "light-glow-bloom", "camera-composition-layout", "color-palette-grading", "engines-render-pipeline"]}
 LONG_RX = r"طويل|مفصل|شامل|بالتفصيل|\blong(?:form)?\b|detailed|in-depth|comprehensive"
@@ -741,6 +748,10 @@ def analyse(task: str) -> dict:
         deliver = ["document"] + [d for d in deliver if d != "document"]   # a cover letter for a data job is a letter
     if re.match(RESEARCH_LEAD_RX, low.strip()) and not re.search(NEW_WORK_RX, low) and (not deliver or deliver[0] == "code"):
         deliver = ["research"] + [d for d in deliver if d != "research"]   # "find the best GitHub repos for…" is a search
+    if "document" in deliver and re.search(WRITTEN_PIECE_RX, low):
+        deliver = ["document"] + [d for d in deliver if d != "document"]   # a sales email is a letter, not a dataset
+    if "strategy" in deliver and re.search(DECISION_LEAD_RX, low) and re.search(BUSINESS_RX, low):
+        deliver = ["strategy"] + [d for d in deliver if d != "strategy"]   # "should we build an app or sell on Shopify?"
     named = list(deliver)       # deliverables the request names outright (an explain-question about git stays L0)
     meta = re.search(META_CODE_RX, low) or (re.search(META_WEAK_RX, low) and re.search(SOFTWARE_CTX_RX, low))
     if "code" not in deliver and meta and not (named and named[0] in ("research", "document")):

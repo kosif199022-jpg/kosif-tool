@@ -813,11 +813,94 @@
     "reverse"
    ],
    "batch": 3
+  },
+  {
+   "id": "G51",
+   "request": "write a marketing plan for our summer promotion",
+   "expect": {
+    "primary": "strategy"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G52",
+   "request": "should we build an app or sell on Shopify?",
+   "expect": {
+    "primary": "strategy"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G53",
+   "request": "write a sales email to new leads",
+   "expect": {
+    "primary": "document"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G54",
+   "request": "اكتب ايميل مبيعات للعملاء الجدد",
+   "expect": {
+    "primary": "document"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G55",
+   "request": "write a short story about a car crash",
+   "expect": {
+    "primary_not": "code"
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "software"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G56",
+   "request": "should I use React or Vue for the dashboard frontend?",
+   "expect": {
+    "primary": "code"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
   }
  ],
  "batches": {
   "1": "G01-G24: written before any change; the first fixes were made against them (no longer held-out)",
   "2": "G25-G36: written after the first fixes, before the catalog-vote fallback; two cases tuned afterwards (G25 start-a-business, G36 forecast)",
-  "3": "G37-G50: written after all changes and measured once; untouched held-out score"
+  "3": "G37-G50: written after all changes and measured once; untouched held-out score",
+  "4": "G51-G56: regressions found by the PR #135 bot review (promotion→motion, app-vs-business decision, sales email, car crash) plus a tech-choice control; fixed against them"
  }
 }

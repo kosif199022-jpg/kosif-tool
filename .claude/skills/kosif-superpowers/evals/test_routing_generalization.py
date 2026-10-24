@@ -3,6 +3,7 @@
 Batch 3 was written after the routing changes and measured once before this gate was set; keep adding untouched
 batches rather than tuning on a case and editing its label. Measured on 2026-10-24 (original → now):
   request card 26/50 → 46/50 · off-domain plan picks 46/337 → 2/312 · untouched batch 3: 8/14 → 10/14, 11/95 → 1/89.
+Batch 4 (6 regressions found by the PR review) brought the set to 52/56 correct, 2/351 off-domain.
 """
 import sys, unittest
 from pathlib import Path

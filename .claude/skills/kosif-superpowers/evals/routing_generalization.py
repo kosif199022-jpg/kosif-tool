@@ -26,6 +26,8 @@ def card_errors(an: dict, e: dict) -> list:
         errs.append(f"primary {an['primary']} != {e['primary']}")
     if "primary_in" in e and an["primary"] not in e["primary_in"]:
         errs.append(f"primary {an['primary']} not in {e['primary_in']}")
+    if "primary_not" in e and an["primary"] == e["primary_not"]:
+        errs.append(f"primary {an['primary']} is excluded")
     if "level_in" in e and an["level"] not in e["level_in"]:
         errs.append(f"level {an['level']} not in {e['level_in']}")
     if an["level"] in e.get("level_not", []):
@@ -62,7 +64,7 @@ def main(argv=None) -> int:
         return 0
     for r in res["cases"]:
         mark = "PASS" if r["card_ok"] and not r["off_domain"] else "FAIL"
-        print(f'{mark} {r["id"]} {r["level"]:<2} {r["primary"]:<11} {r["request"][:55]:<55} '
+        print(f'{mark} {r["id"]} {str(r["level"]):<2} {str(r["primary"]):<11} {r["request"][:55]:<55} '
               + "; ".join(r["errors"] + ([f'off-domain {len(r["off_domain"])}/{r["plan_picks"]}'] if r["off_domain"] else [])))
     print(f'\nrequest card: {res["card_ok"]}/{res["n"]} correct ({res["card_accuracy"]:.0%}) · '
           f'off-domain plan picks: {res["off_domain_picks"]}/{res["plan_picks"]} ({res["off_domain_rate"]:.0%})')
