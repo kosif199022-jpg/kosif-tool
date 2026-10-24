@@ -193,6 +193,12 @@ def post_record(**kw) -> dict:
 def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag: bool = False,
                       browser: str | None = None):
     """Yield post records newest first. Imported lazily (pip install instaloader)."""
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from _deps import ensure  # noqa: PLC0415
+        ensure(["instaloader"])
+    except Exception:  # noqa: BLE001 — best effort; the ImportError below explains the rest
+        pass
     import instaloader  # noqa: PLC0415
     L = instaloader.Instaloader(download_pictures=False, download_videos=False, download_video_thumbnails=False,
                                 download_comments=False, save_metadata=False, quiet=True, max_connection_attempts=2)
