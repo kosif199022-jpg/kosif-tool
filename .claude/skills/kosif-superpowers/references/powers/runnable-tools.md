@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **169 powers follow** — ✅ 136 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **170 powers follow** — ✅ 137 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-160 (18)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-171 (19)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -1501,6 +1501,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_github_top_repos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/github_top_repos.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-171 · البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف التلقائي للصورة. ويطلع خطة بحث ويب بدون شبكة، وينزّل الصور المصغّرة للمعاينة، ويحمّل المختار عبر fetch_video.py مع سجل حقوق. — Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log.
+- **متى أستخدمها / when:** دوّر لي في إنستجرام على فيديوهات تناسب منتج العطر ده ونزّلها / Find Instagram reels from my saved accounts that fit a watch commercial
+- **كيف / how:** accounts: `python3 scripts/instagram_finder.py accounts`; add-account: `python3 scripts/instagram_finder.py add-account "https://www.instagram.com/name?igsh=xyz" --tag product`; plan: `python3 scripts/instagram_finder.py plan "عطر رجالي"`; index: `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`. Full card: `python3 scripts/hub.py tool instagram-finder`. Limits: Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device. **أرقام / params:** in: A product query in Arabic or English; saved accounts in data/instagram_sources.json; optionally --session-user (an instaloader session the user created), --cookies (the user's cookies.txt), hashtags and reel links. · out: out/instagram/index.json (local index), search results JSON (--save), out/instagram/thumbs/*.jpg, out/instagram/videos/ with fetch_video.py files and manifest.json, and instagram_rights.jsonl.
+- **تثبيت / install:** `optional: pip:instaloader, pip:yt-dlp, bin:ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`yt-dlp`](../requirements.md#req-yt-dlp)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_finder.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_finder.py`
+- **المصدر / source:** data/tools.json
+
 ## Local computer / الجهاز المحلي
 
 #### TOOL-55 · خادم KOSIF Remote Commander · KOSIF Remote Commander MCP · ✅ مُثبت هنا / proven here
@@ -1514,7 +1523,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (169)
+- الرخص / licences: — (170)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

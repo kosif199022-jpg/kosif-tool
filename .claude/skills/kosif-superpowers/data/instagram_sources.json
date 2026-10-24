@@ -1,0 +1,11 @@
+{
+ "schema": "kosif.instagram_sources.v1",
+ "note": "Saved Instagram source accounts chosen by the owner. Profile URLs are stored clean: tracking query parameters (cplk, xtok, dlrf, obrf, rpxt, igsh, utm_*) are removed. Being listed here is not a license: download only what you own, have permission for, or keep as private reference.",
+ "accounts": [
+  {"handle": "mcydro", "url": "https://www.instagram.com/mcydro/", "added": "2026-10-24", "tags": []},
+  {"handle": "ayman_mamdouh_ph", "url": "https://www.instagram.com/ayman_mamdouh_ph/", "added": "2026-10-24", "tags": []},
+  {"handle": "suki.shotz", "url": "https://www.instagram.com/suki.shotz/", "added": "2026-10-24", "tags": []},
+  {"handle": "asirgokerr", "url": "https://www.instagram.com/asirgokerr/", "added": "2026-10-24", "tags": []},
+  {"handle": "brkn.land", "url": "https://www.instagram.com/brkn.land/", "added": "2026-10-24", "tags": []}
+ ]
+}

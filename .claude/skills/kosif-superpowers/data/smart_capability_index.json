@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5848,
+  "catalog_powers": 5849,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 169,
+  "tool_count": 170,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 267,
+      "count": 268,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 163,
+        "proven": 164,
         "ready": 22
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 169,
+        "runnable-tools": 170,
         "self-discovery": 43
       },
       "examples": [
@@ -74190,6 +74190,26 @@
       ],
       "source": "runnable-tools.json",
       "what": "ذاكرة مهام على GitHub: سجل JSON واحد لكل مهمة منجزة تحت history/tasks/ بجذر المستودع، فيه الطلب بكلمات المستخدم والوضع والخطة والأدوات والأوامر بمعاملاتها والمدخلات والمخرجات (مع sha256 للملفات المحلية) وطريقة الإعادة. list وshow يجيبان «إيه المهام اللي عملتها؟»، وreplay يطبع خطة"
+    },
+    {
+      "id": "TOOL-171",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Instagram product video finder",
+      "name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "yt-dlp"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_finder.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_finder.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف "
     },
     {
       "id": "SEC-01",

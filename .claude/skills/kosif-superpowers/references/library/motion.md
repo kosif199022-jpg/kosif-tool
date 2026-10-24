@@ -58,6 +58,7 @@
 | `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `fetch-reference` | جلب المرجع المسموح وقياسه | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
+| `instagram-finder` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | `python3 scripts/instagram_finder.py accounts` | tested-here |
 | `kosif-timeline` | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة | `python3 scripts/kosif_timeline.py doctor` | tested-here |
 | `kosif-timeline-demo` | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة | `python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-demo` | tested-here |
 | `media-sources` | بوابة الوسائط المرخّصة | `python3 scripts/media_sources.py list` | tested-here |

@@ -249,7 +249,7 @@ Short how-to guides per kind of job (motion, edit, 3D, draw, audio, image, inves
 
 Executable motion, montage, rhythm, reference transfer and cinematic direction.
 
-`motion` · 17 file(s) · planned folder `references/motion/`
+`motion` · 18 file(s) · planned folder `references/motion/`
 
 - [references/motion-runtime.md](motion-runtime.md)
 - [references/motion-starter-kit-bridge.md](motion-starter-kit-bridge.md)
@@ -261,6 +261,7 @@ Executable motion, montage, rhythm, reference transfer and cinematic direction.
 - [references/reference-visual-transfer.md](reference-visual-transfer.md)
 - [references/mimic.md](mimic.md)
 - [references/video-download.md](video-download.md)
+- [references/instagram-finder.md](instagram-finder.md)
 - [references/unified-cinematic-integration.md](unified-cinematic-integration.md)
 - [references/cinematic-director-pro.md](cinematic-director-pro.md)
 - [references/character-ik-motion.md](character-ik-motion.md)

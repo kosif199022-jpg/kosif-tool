@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (18 أداة)
+# أدوات المجال `sources` (19 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -427,6 +427,66 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:github-top-repos --evidence <ملف>`.
+
+### `instagram-finder` — البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/instagram_finder.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `video-download`, `photo-video-footage`, `formats-platforms` |
+
+**ما تفعله:** يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف التلقائي للصورة. ويطلع خطة بحث ويب بدون شبكة، وينزّل الصور المصغّرة للمعاينة، ويحمّل المختار عبر fetch_video.py مع سجل حقوق.
+
+**What it does:** Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log.
+
+#### متى تُستدعى
+
+- «دوّر لي في إنستجرام على فيديوهات تناسب منتج العطر ده ونزّلها»
+- «احفظ حسابات الإنستجرام دي كمصادر عشان ننزّل منها بعدين»
+- «Find Instagram reels from my saved accounts that fit a watch commercial»
+- «Search the saved Instagram accounts for coffee product videos and download the best two»
+
+#### الأوامر
+
+- **accounts**: Lists the saved source accounts from data/instagram_sources.json (no network).
+  - `python3 scripts/instagram_finder.py accounts`
+- **add-account**: Normalises profile links or @handles (query strings removed, instagram.com only) and saves new ones.
+  - `python3 scripts/instagram_finder.py add-account "https://www.instagram.com/name?igsh=xyz" --tag product`
+- **plan**: Offline: expands the query with bilingual synonyms and prints hashtag ideas, site:instagram.com/reel web searches and the saved account URLs.
+  - `python3 scripts/instagram_finder.py plan "عطر رجالي"`
+- **index**: Reads recent posts of every saved account (or --accounts, --hashtag) with instaloader into out/instagram/index.json, incrementally, 8 s between accounts, at most 200 posts per account.
+  - `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`
+- **add-posts**: Indexes single post or reel links with yt-dlp metadata (no download), 4 s apart.
+  - `python3 scripts/instagram_finder.py add-posts https://www.instagram.com/reel/XXXX/`
+- **search**: Ranks indexed videos for the query and prints why each matched; filters by account, duration, date and photos.
+  - `python3 scripts/instagram_finder.py search "perfume splash" --max-dur 30 --save out/instagram/hits.json`
+- **thumbs**: Downloads the thumbnails of chosen results for a visual check before downloading videos.
+  - `python3 scripts/instagram_finder.py thumbs out/instagram/hits.json --top 8`
+- **download**: Downloads picked results through fetch_video.py (edit-safe copy by default), 5 s apart, at most 25 per run, and appends instagram_rights.jsonl. --rights is required; permission and licensed need --evidence.
+  - `python3 scripts/instagram_finder.py download out/instagram/hits.json --pick 1,3 --rights owned --dry-run`
+- **doctor**: Reports instaloader, yt-dlp, the saved account count and the index size.
+  - `python3 scripts/instagram_finder.py doctor`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: pip:instaloader, pip:yt-dlp, bin:ffmpeg
+- الأمان: network
+- الموافقة: It reads Instagram with the user's own session and downloads third-party media: confirm the user owns it, has permission or a licence, or keeps it as private reference only. Never store, print or commit the session or cookies. Keep the default rate limits.
+- الحدود: Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_instagram_finder.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/instagram-finder.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/video-download.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:instagram-finder --evidence <ملف>`.
 
 ### `media-sources` — بوابة الوسائط المرخّصة / Licensed stock media gateway
 

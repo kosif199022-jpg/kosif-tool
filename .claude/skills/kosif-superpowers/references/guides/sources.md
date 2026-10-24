@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (18)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (19)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -20,6 +20,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `creative-external-search` | Keyword-searches an offline index of 1,000 public GitHub repositories (video editing and processing, motion graphics, image and photo tools, computer vision, creative coding) and 1,000 creative websites extracted from curated awesome lists (design tools, motion graphics, AI image tools, creative coding, video production), and prints ranked JSON matches labelled metadata-only. | `python3 scripts/creative_external_search.py search "kinetic typography" --kind repo --top 5` | tested-here |
 | `fetch-reference` | Discovers media URLs on a public web page (video and source tags, Open Graph and Twitter tags, JSON-LD, script text) or takes a direct file or an unencrypted HLS playlist. It downloads the media within a size cap into a git-ignored cache and measures it with ffmpeg (probe, contact sheet, scene cuts and dominant palette), plus a bilingual REPORT.md for STYLE.md. | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
+| `instagram-finder` | Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log. | `python3 scripts/instagram_finder.py accounts` | tested-here |
 | `stock-fetch` | Downloads free stock clips by id or page URL without an API key: Pexels through its public download endpoint (a 302 to videos.pexels.com) and Mixkit through its free 720p file. It writes manifest.json with the page, file URL, licence name, link and terms, size, dimensions, frame rate and duration, can skip oversized files, and has a probe that reports which stock sources answer from the current machine. | `python3 scripts/stock_fetch.py probe` | tested-here |
 | `media-sources` | Lists and searches a fixed catalog of 100 stock, open-collection and texture websites and prints the legal prerequisites for a URL. It downloads a single asset through fetch_video.py only after explicit per-asset rights evidence is supplied, and records each download with its SHA-256 and rights in asset_rights.jsonl. | `python3 scripts/media_sources.py list` | tested-here |
 | `rea-creative-research-atlas` | Builds the creative discovery catalogs by querying GitHub through the gh CLI: topic searches for repos, outbound links extracted from curated awesome-list READMEs for sites, and the owner's repo inventory and git-tree metadata. Each run prints a JSON summary; only `report` works offline, counting the existing catalogs. | `python3 scripts/rea_creative_research_atlas.py report` | tested-elsewhere |
@@ -44,6 +45,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 7. [REA Creative Research Atlas — 2,000 public sources (2026-10-19)](#rea-creative-research-atlas--2000-public-sources-2026-10-19)
 8. [Atlas external search (2026-10-20)](#atlas-external-search-2026-10-20)
 9. [أشهر 1000 مستودع على GitHub — GitHub top-1000 review (2026-10-23)](#أشهر-1000-مستودع-على-github--github-top-1000-review-2026-10-23)
+10. [بحث وتحميل فيديوهات إنستجرام لمنتج — Instagram product video finder (2026-10-24)](#بحث-وتحميل-فيديوهات-إنستجرام-لمنتج--instagram-product-video-finder-2026-10-24)
 
 ## Web apps and browser isolation research
 
@@ -164,4 +166,15 @@ Rules for a mining batch:
 5. **Exclusions are written down.** Leaked proprietary prompts, deepfake and face-swap tools, safety removal, activation bypass, people-search OSINT and pirated libraries are `skip` with the reason.
 
 The ranking merges the gitstar-ranking index (which misses some large repositories) with deps.dev records for a supplement list; it is the top 1,000 of that pool, not a census of GitHub. `refresh --out FILE` fetches a new snapshot for review and never overwrites the committed one.
+
+## بحث وتحميل فيديوهات إنستجرام لمنتج — Instagram product video finder (2026-10-24)
+
+`scripts/instagram_finder.py` builds a local index of the owner's saved Instagram source accounts (`data/instagram_sources.json`), hashtags and reel links, ranks the indexed videos for a product query in Arabic or English (bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description), shows thumbnails first, then downloads the picked results through `fetch_video.py` with a rights log. Full guide, limits and a worked example: [instagram-finder.md](../instagram-finder.md).
+
+```bash
+python3 scripts/instagram_finder.py plan "عطر رجالي"
+python3 scripts/instagram_finder.py index --session-user MY_USERNAME
+python3 scripts/instagram_finder.py search "perfume splash" --save out/instagram/hits.json
+python3 scripts/instagram_finder.py download out/instagram/hits.json --pick 1,3 --rights permission --evidence "<link>"
+```
 
