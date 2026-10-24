@@ -68,7 +68,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -135,7 +135,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -206,7 +206,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -276,7 +276,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -345,7 +345,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -418,7 +418,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -488,7 +488,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -557,7 +557,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -629,7 +629,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -699,7 +699,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -768,7 +768,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -837,7 +837,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -907,7 +907,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -977,7 +977,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1048,7 +1048,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1117,7 +1117,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1186,7 +1186,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1256,7 +1256,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1326,7 +1326,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1396,7 +1396,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1465,7 +1465,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1534,7 +1534,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1602,7 +1602,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `code`، والمنفّذ `method:SEC-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router` · `charter-ingest`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `atlas-metadata-audit` · `capability-runtime-router`.
 - مراحل النوع: قراءة الكود والاختبارات ← إعادة إنتاج أو اختبار جديد ← أصغر تغيير ← الاختبارات ← مراجعة الفرق ← فرع وPR.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

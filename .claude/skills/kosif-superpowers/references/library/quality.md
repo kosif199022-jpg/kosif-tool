@@ -37,7 +37,7 @@
 |---|---|---|---|
 | `agent-guard` | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية | `python3 scripts/agent_guard.py rules` | tested-here |
 | `anchor-gate` | بوابة حفظ الحقائق عند إعادة الصياغة | `python3 scripts/anchor_gate.py --before proofs/general-writing/pairs/en_before.txt --after proofs/general-writing/pairs/en_after_drift.txt --text` | tested-here |
-| `atlas-audit-synthesis` | تحويل مراجعة الأطلس إلى بيان مُراجَع | `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md` | untested |
+| `atlas-audit-synthesis` | تحويل مراجعة الأطلس إلى بيان مُراجَع | `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md` | tested-here |
 | `atlas-body-audit` | مراجعة ساكنة لنصوص مهارات الأطلس | `python3 scripts/atlas_body_audit.py --index ./atlas-index.json --out ./out/atlas-audit-private --limit 200` | tested-here |
 | `atlas-external-bridge` | بحث مهارات أطلس الخارجية | `python3 scripts/atlas_external_bridge.py stats --index ./atlas_index.json --copyleft-index ./atlas_copyleft_index.json` | tested-here |
 | `atlas-metadata-audit` | تدقيق بيانات أطلس الوصفية | `python3 scripts/atlas_metadata_audit.py --index ./atlas_index.json --copyleft ./atlas_copyleft_index.json --output ./out/atlas_audit.json` | tested-here |
@@ -66,6 +66,7 @@
 | `repo-render-html` | محوّل حتمي من HTML إلى فيديو MP4 | `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3` | tested-elsewhere |
 | `repo-validate` | فاحص سلامة أطلس الأنماط | `python3 tools/validate.py` | tested-here |
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
+| `self-council` | مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية | `python3 scripts/self_council.py inventory --summary` | tested-here |
 | `skill-layout` | خريطة ترتيب المهارة | `python3 scripts/skill_layout.py build` | tested-here |
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
 | `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |

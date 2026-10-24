@@ -192,7 +192,7 @@
 | SP-0136 | جلسات Playwright مسماة بمخرجات على القرص · Named-session Playwright CLI with disk artifacts <sub>(playwright, browser, apps, automation)</sub> | 11 | 📄 📄11 | 0 | SP-0273 SP-0272 SP-0388 SP-0154 |
 | SP-0137 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume <sub>(roadmap, agent, telemetry, orchestration)</sub> | 6 | 📄 📄6 | 0 | SP-0006 SP-0047 SP-0161 SP-0057 |
 | SP-0138 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook <sub>(kafka, postgres, backup, playbook)</sub> | 4 | 📄 📄4 | 0 | SP-0056 SP-0098 SP-0097 SP-0163 |
-| SP-0139 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner <sub>(atlas, discover, capability, kosif)</sub> | 33 | ✅ ✅24 🟢9 | 33 | SP-0347 SP-0144 SP-0027 SP-0143 |
+| SP-0139 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner <sub>(atlas, discover, capability, kosif)</sub> | 33 | ✅ ✅25 🟢8 | 33 | SP-0347 SP-0144 SP-0027 SP-0143 |
 | SP-0140 | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler <sub>(graphics, svg, motion, rendering)</sub> | 18 | ✅ ✅14 📦4 | 14 | SP-0262 SP-0148 SP-0268 SP-0266 |
 | SP-0141 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine <sub>(reference, video, editing, b-roll)</sub> | 17 | ✅ ✅17 | 17 | SP-0356 SP-0379 SP-0359 SP-0407 |
 | SP-0142 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies <sub>(drawing, characters, layered, svg)</sub> | 16 | ✅ ✅13 🟢3 | 16 | SP-0303 SP-0266 SP-0036 SP-0451 |

@@ -8,7 +8,7 @@
 |---|---|
 | المسار | `scripts/atlas_audit_synthesis.py` (جذر: skill) |
 | المجال | `sources` |
-| الدليل | `untested` |
+| الدليل | `tested-here` |
 | العائلات | `web-research`, `security-safety` |
 
 **ما تفعله:** يحوّل ملف records.json الخاص الناتج من atlas_body_audit.py ومجلد نتائج تحليل REA الساكن إلى بيان مُراجَع من البيانات الوصفية فقط (لكل مهارة: بصمة SHA-256 لـSKILL.md، وعدد ملفات الكود المقروءة، والمؤشرات، وادعاء الرخصة) وتقرير نتائج قصير. لا يُنسخ أي نص لطرف ثالث، فيمكن حفظ البيان في data/atlas-reviewed/manifest.json ليقرأه atlas_external_bridge.py ويعلّم نتائج البحث.
@@ -35,7 +35,7 @@
 
 #### الاختبارات والأدلة
 
-- `tests/test_atlas_body_audit.py`
+- `.claude/skills/kosif-superpowers/evals/test_atlas_audit_synthesis.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/atlas-reviewed-audit.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
 

@@ -54,6 +54,17 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_rea_*.py' -v
       - name: Mosamem x REA fusion bridge tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_mosamem_rea_fusion.py' -v
+      - name: Light skill loader map (LOADER.md) is current and routes every skill
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py build --check
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_loader.py' -v
+      - name: Self-council (A37), council devil's-advocate contract and diverse mental models
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_self_council.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_council.py' -v
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_think_models.py' -v
+      - name: Writing tells and anchor gate (62 checks)
+        run: python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py
       - name: Smart capability index is up to date
         run: python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py verify
       - name: Community source scout and safety regression tests

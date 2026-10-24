@@ -1,4 +1,4 @@
-# أدوات المجال `maintain` (13 أداة)
+# أدوات المجال `maintain` (14 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -597,6 +597,57 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-validate --evidence <ملف>`.
+
+### `self-council` — مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية / Self-Council: five Claude-derived critics review every skill and feature, with a coverage ledger
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/self_council.py` (جذر: skill) |
+| المجال | `maintain` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery`, `verification-evals`, `agent-orchestration` |
+
+**ما تفعله:** يجرد كل وحدة قابلة للمراجعة في المستودع بمعرّف ثابت (المهارات، وسكربتات هذه المهارة، والتطبيقات، والأدوات، والأدلة، وسير العمل) مع إشارات رخيصة (اختبار مباشر أو غير مباشر، docstring وسطر تشغيل، عدد الأسطر، التسجيل في tools.json، وصف SKILL.md، آخر ذكر في CHANGELOG). ويخطط الدفعة التالية من أضعف الوحدات غير المراجعة، ويكتب مطالبات خمس شخصيات ثابتة (المهندس الصارم، المستخدم المصري الجديد، محامي الشيطان، المعماري، المبتكر)، ويتحقق من مراجعة كل شخصية (الشدة، ومسار دليل موجود، والتغيير المقترح، والجهد، والثقة، وحقل خاص بكل شخصية)، ويرفض الأسرار، ثم يدمج الملاحظات ويزيل المكرر ويرتب المقترحات بالشدة والثقة والاتفاق والجهد في قائمة «نفّذ التالي». وسجل data/self_council_ledger.json يحفظ ما رُوجع وببصمة أي محتوى، فتغطي الدفعات المتتالية التطبيق كله وتعود الوحدة المتغيرة للمراجعة. لا يستدعي أي نموذج: Claude يشغّل الشخصيات وكلاء متوازين، أو يقول التقرير SELF_COUNCIL_SIMULATED.
+
+**What it does:** Inventories every reviewable unit of the repository with a stable id (skills, this skill's scripts, apps, tools, playbooks, workflows) and cheap static signals (direct or indirect test, docstring and usage line, line count, tools.json registration, SKILL.md description, last CHANGELOG mention). It plans the next batch of the weakest unreviewed units, writes prompts for five fixed personas (Strict Engineer, New Egyptian User, Devil's Advocate, Architect, Innovator), validates each persona's review (severity, an evidence path that exists, proposed change, effort, confidence, a persona-specific field), refuses secrets, merges and dedupes the findings, and ranks proposals by severity, confidence, agreement and effort into an implement-next list. A ledger in data/self_council_ledger.json records which units were reviewed and at which content hash, so successive runs cover the whole app and changed units come back as stale. It never calls a model: Claude runs the personas as parallel subagents, or the report says SELF_COUNCIL_SIMULATED.
+
+#### متى تُستدعى
+
+- «اعمل مجلس من خمس شخصيات ينقد كل مهارة وكل ميزة في التطبيق ويقترح تحسينات»
+- «راجع كل الأدوات اللي في المستودع وقولي إيه اللي يتحسن الأول»
+- «Review every skill and script in this repo with five critics and rank the improvements»
+- «How much of the app has the self-council reviewed so far?»
+- «فاضل كام وحدة ما اتراجعتش؟»
+
+#### الأوامر
+
+- **inventory**: Lists every reviewable unit with its id, content hash and static signals; --summary prints counts by kind and the ten weakest.
+  - `python3 scripts/self_council.py inventory --summary`
+- **plan**: Picks the next batch of the weakest unreviewed or stale units, writes prompts/P1.md…P5.md and prompts.json, and claims the units in the ledger.
+  - `python3 scripts/self_council.py plan --batch 10 --dir out/self-council/run1`
+- **ingest**: Validates one persona's review of the batch, refuses secrets and evidence paths that do not exist, fingerprints it and records it (--simulated marks a voice written in Claude's own context).
+  - `python3 scripts/self_council.py ingest --dir out/self-council/run1 --persona P1 --file p1.json`
+- **report**: Merges the five reviews per unit, dedupes and ranks the proposals, writes report.md and report.json (--out-md/--out-json copy them), and marks complete units reviewed in the ledger.
+  - `python3 scripts/self_council.py report --dir out/self-council/run1 --top 10`
+- **status**: Prints coverage of the whole app (reviewed, stale, pending, by kind) and the next five units in line.
+  - `python3 scripts/self_council.py status`
+- **personas**: Prints the five personas, their checklists, required fields and the finding schema.
+  - `python3 scripts/self_council.py personas`
+
+#### المتطلبات والأمان
+
+- الأمان: writes-files
+- الموافقة: Writes only the run folder, the report paths given and data/self_council_ledger.json; it runs no model, spends nothing and publishes nothing.
+- الحدود: Static signals are heuristics (an indirect test is any test that imports or names the unit). The script checks structure and that evidence paths exist, not whether a critique is right; five voices written in one context are SELF_COUNCIL_SIMULATED, not independent reviews.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_self_council.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A37-self-council.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:self-council --evidence <ملف>`.
 
 ### `skill-layout` — خريطة ترتيب المهارة / Skill Layout Map
 

@@ -2928,6 +2928,7 @@
   "license": "",
   "proof": [
    "kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py"
   ],
   "proof_scope": "repo",
@@ -2977,6 +2978,7 @@
    "kosif-tool/tests/test_think_reasoning.py",
    "kosif-tool/tests/test_think_intel.py",
    "kosif-tool/tests/test_think_pro.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py"
   ],
   "proof_scope": "repo",
@@ -4005,7 +4007,7 @@
   "domain": "build",
   "name_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع",
   "name_en": "Atlas audit to reviewed manifest",
-  "status": "ready",
+  "status": "proven",
   "what": "يحوّل ملف records.json الخاص الناتج من atlas_body_audit.py ومجلد نتائج تحليل REA الساكن إلى بيان مُراجَع من البيانات الوصفية فقط (لكل مهارة: بصمة SHA-256 لـSKILL.md، وعدد ملفات الكود المقروءة، والمؤشرات، وادعاء الرخصة) وتقرير نتائج قصير. لا يُنسخ أي نص لطرف ثالث، فيمكن حفظ البيان في data/atlas-reviewed/manifest.json ليقرأه atlas_external_bridge.py ويعلّم نتائج البحث. — Turns the private records.json from atlas_body_audit.py and a folder of REA static-analysis results into a metadata-only reviewed manifest (per skill: SKILL.md SHA-256, code files read, indicators, licence claim) and a short findings report. No third-party text is copied into the outputs, so the manifest can be committed as data/atlas-reviewed/manifest.json, which atlas_external_bridge.py reads to annotate search results.",
   "when": "حوّل نتائج مراجعة الأطلس إلى بيان نقدر نحفظه في الريبو / build the committed reviewed manifest from my private Atlas audit records",
   "how": "synthesize: `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md`. Full card: `python3 scripts/hub.py tool atlas-audit-synthesis`. Limits: Only summarises what the audit and REA already recorded, so it adds no new verification; the counts describe the sample, not the whole Atlas.",
@@ -4017,6 +4019,7 @@
   ],
   "license": "",
   "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_audit_synthesis.py",
    "kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py"
   ],
   "proof_scope": "repo",

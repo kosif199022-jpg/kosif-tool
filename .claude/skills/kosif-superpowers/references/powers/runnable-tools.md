@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **172 powers follow** — ✅ 139 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **172 powers follow** — ✅ 140 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -293,7 +293,7 @@
 - **متى أستخدمها / when:** اعمل مجلس خمسة يتناقشوا في الفكرة دي قبل ما تقرر / Run a five-member adversarial council on these three plans
 - **كيف / how:** plan: `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C`; plan --seats: `python3 scripts/council.py plan "اعمل ريلز موشن عربي" --dir out/demo/council9 --seats 9 --no-roster`; prompts: `python3 scripts/council.py prompts --dir out/demo/council --round 1`; ingest: `python3 scripts/council.py ingest --dir out/demo/council --round 1 --member M1 --file m1.json`. Full card: `python3 scripts/hub.py tool council`. Limits: The council's quality depends on the members Claude runs; the script checks structure, evidence fields and votes, not whether an argument is correct, and a council without separate agents is only COUNCIL_SIMULATED. The 100 personas are invented stance prompts selected by keyword relevance; they add perspectives, not verified expertise, and a full 100-member council is 300 answers. **أرقام / params:** in: A request in the user's words, an optional USIP brief.json (options = its plans), and per-member JSON answers. · out: council.json, prompts_r1..3.json, verdict.json and minutes.md in the --dir folder; JSON on stdout; exit 2 with one line on stderr on any refusal.
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py`
 - **المصدر / source:** data/tools.json
 
 #### TOOL-69 · محرك التفكير وقوالبه · Thinking engine scaffolds · ✅ مُثبت هنا / proven here
@@ -302,7 +302,7 @@
 - **كيف / how:** ladder: `python3 scripts/think.py ladder "design a 30-day plan for a course launch"`; frame: `python3 scripts/think.py frame "a 15 s reel at 30 fps"`; models: `python3 scripts/think.py models "pricing a new subscription" -n 3 --json`; plan: `python3 scripts/think.py plan "launch the course" --weeks 6`. Full card: `python3 scripts/hub.py tool think`. Limits: It produces templates and keyword-based rankings to think with; the blanks (…) still have to be filled and tested, it does not reason about or verify claims by itself, and critic is a plain regex sweep that misses Arabic words written with tanween (جدًا، دائمًا). modes ranks by keywords only, and bayes, gate and audit compute exactly what they are given: the priors, ratios, thresholds and evidence markers are the user's or Claude's judgement. **أرقام / params:** in: A task, problem, goal or seed sentence. decide takes a JSON file {"criteria": {name: weight}, "scores": {option: {criterion: score}}}. fermi takes an arithmetic expression plus --range name=lo:hi for every name. critic takes a text or Markdown file. bayes takes --prior and --lr NAME=RATIO items, or --json spec.json. gate takes a JSON file with go/pivot/kill criteria (name, op, threshold, observed). audit takes a Markdown report. · out: Text templates on stdout (ladder, frame, plan, ideas, and critic flags), or JSON (models --json, modes --json, decide, fermi, bayes, gate). Nothing is written to disk.
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
-- **الدليل / proof:** `kosif-tool/tests/test_think.py` · `kosif-tool/tests/test_think_reasoning.py` · `kosif-tool/tests/test_think_intel.py` · `kosif-tool/tests/test_think_pro.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`
+- **الدليل / proof:** `kosif-tool/tests/test_think.py` · `kosif-tool/tests/test_think_reasoning.py` · `kosif-tool/tests/test_think_intel.py` · `kosif-tool/tests/test_think_pro.py` · `kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/think.py`
 - **المصدر / source:** data/tools.json
 
 #### TOOL-74 · بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate · ✅ مُثبت هنا / proven here
@@ -1439,12 +1439,12 @@
 - **الدليل / proof:** `kosif-tool/tests/test_atlas_body_audit.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_body_audit.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-92 · تحويل مراجعة الأطلس إلى بيان مُراجَع · Atlas audit to reviewed manifest · 🟢 جاهز / ready
+#### TOOL-92 · تحويل مراجعة الأطلس إلى بيان مُراجَع · Atlas audit to reviewed manifest · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يحوّل ملف records.json الخاص الناتج من atlas_body_audit.py ومجلد نتائج تحليل REA الساكن إلى بيان مُراجَع من البيانات الوصفية فقط (لكل مهارة: بصمة SHA-256 لـSKILL.md، وعدد ملفات الكود المقروءة، والمؤشرات، وادعاء الرخصة) وتقرير نتائج قصير. لا يُنسخ أي نص لطرف ثالث، فيمكن حفظ البيان في data/atlas-reviewed/manifest.json ليقرأه atlas_external_bridge.py ويعلّم نتائج البحث. — Turns the private records.json from atlas_body_audit.py and a folder of REA static-analysis results into a metadata-only reviewed manifest (per skill: SKILL.md SHA-256, code files read, indicators, licence claim) and a short findings report. No third-party text is copied into the outputs, so the manifest can be committed as data/atlas-reviewed/manifest.json, which atlas_external_bridge.py reads to annotate search results.
 - **متى أستخدمها / when:** حوّل نتائج مراجعة الأطلس إلى بيان نقدر نحفظه في الريبو / build the committed reviewed manifest from my private Atlas audit records
 - **كيف / how:** synthesize: `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md`. Full card: `python3 scripts/hub.py tool atlas-audit-synthesis`. Limits: Only summarises what the audit and REA already recorded, so it adds no new verification; the counts describe the sample, not the whole Atlas. **أرقام / params:** in: --records the records.json from atlas_body_audit.py, --rea-dir a folder of REA JSON results, --manifest-out and --report-out output paths (all four required). · out: A metadata-only manifest JSON (schema kosif.atlas.reviewed-manifest.v1) and a Markdown findings report.
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:rea`](../requirements.md#req-npm-rea)
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_audit_synthesis.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_audit_synthesis.py`
 - **المصدر / source:** data/tools.json
 
 #### TOOL-93 · جلب المرجع المسموح وقياسه · Permitted reference fetch and measure · ✅ مُثبت هنا / proven here

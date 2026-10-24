@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (26 أداة)
+# أدوات المجال `discover` (27 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -1195,6 +1195,52 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:skill-intelligence --evidence <ملف>`.
+
+### `skill-loader` — خريطة التحميل الخفيف للمهارات / Light skill loader map
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/skill_loader.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `agent-orchestration` |
+
+**ما تفعله:** يكتب LOADER.md: خريطة صغيرة لكل مهارة في .claude/skills/ وللمجموعات الخمس عشرة ولكل ملحق بروتوكول بمحفّزه ولنطاقات أسطر أقسام كل SKILL.md، فيقرأ Claude ملفًا قصيرًا واحدًا ثم يفتح الأسطر التي تحتاجها المهمة فقط. need يسمّي الملفات ونطاقات الأسطر لمهمة، وfull يطبع ترتيب القراءة في وضع التفعيل الكامل.
+
+**What it does:** Writes LOADER.md, one small map of every skill under .claude/skills/, the 15 capability groups, every protocol appendix with its trigger and the line ranges of each SKILL.md section, so Claude reads one short file and then opens only the lines a task needs. need names the few files and line ranges for a task; full prints the full-power reading order.
+
+#### متى تُستدعى
+
+- «فعّل كل القدرات»
+- «اقرأ المهارات بسرعة من غير ما تحمّل كل حاجة»
+- «Which skill files should I open for this task?»
+- «Activate full power mode»
+
+#### الأوامر
+
+- **build**: Writes LOADER.md; with --check exits 1 when it is stale
+  - `python3 scripts/skill_loader.py build --check`
+- **need**: Lists the groups, appendices, skills and SKILL.md line ranges that match a task, best first; --json for records
+  - `python3 scripts/skill_loader.py need "اعمل مونتاج ريلز" -n 6`
+- **full**: Prints the full-power mode rule and the reading order
+  - `python3 scripts/skill_loader.py full`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: writes-files
+- الموافقة: —
+- الحدود: need ranks by plain word overlap with titles, triggers and keywords; it narrows what to read and does not judge which skill is best.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_skill_loader.py`
+- مرجع: `.claude/skills/kosif-superpowers/LOADER.md`
+- مرجع: `.claude/skills/kosif-superpowers/PROTOCOL.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:skill-loader --evidence <ملف>`.
 
 ### `smart-capabilities` — فهرس ذكي للقدرات من أجل Claude / Smart capability index for Claude
 

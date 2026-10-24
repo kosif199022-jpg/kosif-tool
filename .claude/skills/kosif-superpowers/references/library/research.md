@@ -33,7 +33,7 @@
 
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
-| `atlas-audit-synthesis` | تحويل مراجعة الأطلس إلى بيان مُراجَع | `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md` | untested |
+| `atlas-audit-synthesis` | تحويل مراجعة الأطلس إلى بيان مُراجَع | `python3 scripts/atlas_audit_synthesis.py --records ./out/atlas-audit-private/records.json --rea-dir ./out/rea --manifest-out ./out/manifest.json --report-out ./out/atlas-reviewed-audit.md` | tested-here |
 | `atlas-body-audit` | مراجعة ساكنة لنصوص مهارات الأطلس | `python3 scripts/atlas_body_audit.py --index ./atlas-index.json --out ./out/atlas-audit-private --limit 200` | tested-here |
 | `atlas-external-bridge` | بحث مهارات أطلس الخارجية | `python3 scripts/atlas_external_bridge.py stats --index ./atlas_index.json --copyleft-index ./atlas_copyleft_index.json` | tested-here |
 | `browser-scout` | مستكشف المواقع بالمتصفح | `python3 scripts/browser_scout.py doctor` | tested-here |

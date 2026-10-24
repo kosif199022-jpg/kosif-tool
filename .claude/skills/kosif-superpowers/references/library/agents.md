@@ -22,8 +22,8 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 166 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 22 | 🟢 ready: runnable without setup according to the catalog |
+| `proven` | 167 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
@@ -68,8 +68,10 @@
 | `repo-build` | مولّد ملفات أطلس الأساليب | `python3 tools/build.py` | untested |
 | `requirements` | مخطط متطلبات القدرات | `python3 scripts/requirements.py present --json` | tested-here |
 | `see-pro-cognitive-gate` | فاحص عقود التفكير والتوليف KOSIF SEE Pro | `python3 scripts/see_pro_cognitive_gate.py --self-test` | tested-here |
+| `self-council` | مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية | `python3 scripts/self_council.py inventory --summary` | tested-here |
 | `skill-intelligence` | محرك بروتوكول ذكاء المهارات الشامل | `python3 scripts/skill_intelligence.py brief "مونتاج ريلز على الإيقاع بترجمة عربية"` | tested-here |
 | `skill-layout` | خريطة ترتيب المهارة | `python3 scripts/skill_layout.py build` | tested-here |
+| `skill-loader` | خريطة التحميل الخفيف للمهارات | `python3 scripts/skill_loader.py build --check` | tested-here |
 | `smart-capabilities` | فهرس ذكي للقدرات من أجل Claude | `python3 scripts/smart_capabilities.py groups` | tested-here |
 | `superpower-fusion` | دمج القدرات في قدرات خارقة مترابطة | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `superpowers` | خريطة المستودعات الخارجية | `python3 scripts/superpowers.py list --capability voice --json` | tested-here |
@@ -227,6 +229,7 @@
 | `TOOL-88` | استوديو التطبيقات للصور والتصميم | App Studio photo & design CLI | proven | ffmpeg, chromium, pip:numpy, pip:pillow |
 | `TOOL-89` | حزمة الرسم في استوديو التطبيقات | App Studio painting batch | proven | chromium, pip:numpy, pip:pillow, pip:opencv |
 | `TOOL-91` | مراجعة ساكنة لنصوص مهارات الأطلس | Atlas skill-body static audit | proven | python3 |
+| `TOOL-92` | تحويل مراجعة الأطلس إلى بيان مُراجَع | Atlas audit to reviewed manifest | proven | python3, npm:rea |
 | `TOOL-93` | جلب المرجع المسموح وقياسه | Permitted reference fetch and measure | proven | ffmpeg, python3 |
 | `TOOL-95` | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) | Keyless stock footage fetcher (Pexels, Mixkit) | proven | ffmpeg, python3, key:unspecified |
 | `TOOL-96` | خريطة المستودعات الخارجية | External repository tool map | proven | ffmpeg, chromium, pip:faster-whisper |
@@ -278,7 +281,6 @@
 | `TOOL-59` | استيراد الملفات الإبداعية | Creative brief importer | ready | python3 |
 | `TOOL-60` | مزامنة الكتالوج مع PromptsMotion | PromptsMotion catalog sync | ready | python3 |
 | `TOOL-71` | فحص قدرات الجهاز | Machine capability probe | ready | node, python3, docker, gpu |
-| `TOOL-92` | تحويل مراجعة الأطلس إلى بيان مُراجَع | Atlas audit to reviewed manifest | ready | python3, npm:rea |
 | `TOOL-99` | مولّد فصول العائلات | Family Chapter Generator | ready | python3 |
 | `AGENT-01` | متى تفوّض ومتى تعمل بنفسك | Delegate or do it yourself | documented | claude:tools |
 | `AGENT-02` | حزمة التنفيذ: موجز تفويض كامل | Execution packet (delegation brief) | documented | claude:tools |

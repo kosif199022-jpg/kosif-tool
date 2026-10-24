@@ -6,6 +6,10 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 # قواك الخارقة — KOSIF Superpowers
 
+> **وضع التفعيل الكامل / Full-power mode:** لما المستخدم يقول «فعّل كل القدرات» أو «الوضع الكامل» أو "full power"، شغّل كل القدرات والمهارات المناسبة بكامل عمقها: مستوى L3، كل الملاحق التي يتحقق محفّزها، المجلس ومحامي الشيطان، النماذج الذهنية، ووكلاء متوازيين حيث توجد أداة Agent. القوانين لا تتغير: لا تدّعِ تشغيل ما لم تشغّله، ولا دفع أو تثبيت نظامي أو مفاتيح أو نشر بلا إذن.
+>
+> **التحميل الخفيف / light loading:** اقرأ [`LOADER.md`](LOADER.md) أولًا (خريطة كل المهارات والمجموعات والملاحق وأرقام أسطر أقسام كل `SKILL.md`)، ثم افتح الملف أو نطاق الأسطر المطابق فقط؛ `scripts/skill_loader.py need "<الطلب>"` يسمّيها لك. كل مهارة لها سطر هناك، فلا مهارة خارج الوصول.
+
 **Katana / Higgsfield — ANALYSIS ONLY (user constraint):** Use for image/reference-video analysis and textual responses only if a verified read-only, no-generation-credit analysis endpoint actually exists; otherwise analyze with native vision/FFmpeg/KOSIF and say Katana was not called. **Never** invoke Katana recreate/remix/render/generate, never spend Katana/Higgsfield image/video generation credits, never upload private reference assets without permission. See [A8 policy](references/protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد). This does not prohibit independent authorized rendering tools.
 
 
@@ -169,8 +173,8 @@ The owner's GitHub account holds 25 repositories; [references/owned-repos-map.md
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5851 families=62 domains=10 styles=289 watched=254 proven=1016 ready=674 install=980 key=176 seen=609 documented=2325 idea=71 -->
-**الأرقام / counts:** 5,851 قدرة في 62 عائلة و10 مجالات — ✅ 1,016 · 🟢 674 · 📦 980 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5851 families=62 domains=10 styles=289 watched=254 proven=1017 ready=673 install=980 key=176 seen=609 documented=2325 idea=71 -->
+**الأرقام / counts:** 5,851 قدرة في 62 عائلة و10 مجالات — ✅ 1,017 · 🟢 673 · 📦 980 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)
@@ -240,7 +244,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 <!-- hub:tools:start -->
 | المجال / area | الأدوات / tools (`hub.py tool <id>`) |
 |---|---|
-| Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-5000` · `atlas-ledger` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` · `owned-repos` · `micro-index` |
+| Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-5000` · `atlas-ledger` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` · `owned-repos` · `micro-index` · `skill-loader` |
 | Think, ideate and write / التفكير والأفكار والكتابة | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` · `council` · `see-pro-cognitive-gate` · `capability-mindmap` · `charter-ingest` · `business-workflows` · `book-methods` · `decision-math` · `stats-lab` · `prompt-lab` · `memory-ops` · `lesson-integrity` · `task-history` |
 | Motion graphics and rendering / الموشن والرندر | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-verify-video` · `starter-html-canvas` · `starter-remotion` · `unified-cinematic` · `style-atlas-bridge` · `atlas-render` · `particles` · `ui-beat` · `motion-physics` · `infinite-matrices` |
 | Editing and reference video / المونتاج والفيديو المرجعي | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` · `reel-factory` · `dua-wednesday` · `look-pipeline` · `fast-edit` |
@@ -251,7 +255,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 | Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `instagram-finder` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` · `github-top-repos` · `instagram-reference-discovery` |
 | Software investigation / فحص البرامج | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` · `differential-exam` · `repo-map` |
 | Local computer / الجهاز المحلي | `kosif-remote-commander` |
-| Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` · `agent-guard` |
+| Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` · `agent-guard` · `self-council` |
 <!-- hub:tools:end -->
 
 | افتح الدليل حين… / open the guide when… | الدليل / guide |
@@ -288,7 +292,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (647 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (648 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure

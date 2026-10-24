@@ -17693,8 +17693,8 @@
 "size": 33,
 "best": "proven",
 "status_mix": {
-"proven": 24,
-"ready": 9
+"proven": 25,
+"ready": 8
 },
 "ready_now": 33,
 "families": {
@@ -17753,6 +17753,12 @@
 "status": "proven",
 "name_en": "Atlas external skill search",
 "name_ar": "بحث مهارات أطلس الخارجية"
+},
+{
+"id": "TOOL-92",
+"status": "proven",
+"name_en": "Atlas audit to reviewed manifest",
+"name_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع"
 },
 {
 "id": "TOOL-44",
@@ -17891,12 +17897,6 @@
 "status": "ready",
 "name_en": "Atlas read-only method selector",
 "name_ar": "منتقي مناهج الأطلس للقراءة فقط"
-},
-{
-"id": "TOOL-92",
-"status": "ready",
-"name_en": "Atlas audit to reviewed manifest",
-"name_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع"
 },
 {
 "id": "TOOL-101",
@@ -19486,9 +19486,9 @@
 ],
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_council.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_think_models.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/council.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_charter_index.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/charter_ingest.py"
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_charter_index.py"
 ],
 "twins": [],
 "distinct_methods": 6,

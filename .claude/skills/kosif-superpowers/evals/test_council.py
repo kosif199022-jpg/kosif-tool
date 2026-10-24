@@ -177,5 +177,148 @@ class CouncilTest(unittest.TestCase):
         self.assertTrue(any("P083" in row for row in fit["council"]), "the secrets keeper sits on a secrets question")
 
 
+    # ------------------------------------------------------------------ devil's advocate, groupthink, calibration, lenses
+    DEVIL = {"target_option": "B",
+             "steelman": "B ships the Arabic reel this week with the measured sync tool already installed on this machine.",
+             "failure_modes": [
+                 {"mode": "the voice drifts out of sync after minute 1", "likelihood": 3, "impact": 5, "test": "verify_video.py on a 90 s cut", "evidence": "opinion"},
+                 {"mode": "the font licence forbids commercial reels", "likelihood": 2, "impact": 4, "test": "read the font licence file", "evidence": "fonts/LICENSE"},
+                 {"mode": "TikTok crops the captions", "likelihood": 4, "impact": 4, "test": "export a 9:16 frame and check safe zones", "evidence": "opinion"}],
+             "premortem": "It is six months later and B failed because the captions were cropped on every phone and nobody checked.",
+             "kill_criterion": "drop B if the sync drift exceeds 80 ms on the 90 s test cut"}
+
+    def rounds_1_2(self, r1=R1, simulated=False):
+        run("plan", "اعمل ريلز موشن عربي", "--dir", self.dir, "--options", "A,B,C")
+        extra = ["--simulated"] if simulated else []
+        for rnd, body in ((1, r1), (2, R2)):
+            for m in ("M1", "M2", "M3", "M4", "M5"):
+                run("ingest", "--dir", self.dir, "--round", str(rnd), "--member", m, "--file", self.put(f"{m}{rnd}.json", body), *extra)
+
+    def round3(self, scores, objections=None, answers=None):
+        for m, sc in scores.items():
+            obj = r3(sc, (objections or {}).get(m, "none"))
+            if answers and m in answers:
+                obj["devil_answers"] = answers[m]
+            run("ingest", "--dir", self.dir, "--round", "3", "--member", m, "--file", self.put(f"{m}3.json", obj))
+        return json.loads(run("verdict", "--dir", self.dir).stdout)
+
+    SCORES = {"M1": {"A": 2, "B": 4, "C": 5}, "M2": {"A": 3, "B": 5, "C": 2}, "M3": {"A": 4, "B": 5, "C": 1},
+              "M4": {"A": 3, "B": 4, "C": 4}, "M5": {"A": 5, "B": 4, "C": 2}}
+
+    def test_devil_prompt_contract_and_validation(self):
+        run("plan", "سؤال", "--dir", self.dir, "--options", "A,B,C")
+        r = run("devil", "--dir", self.dir, ok=False)
+        self.assertIn("ROUND_INCOMPLETE", r.stderr, "the devil needs round 1 first")
+        for m in ("M1", "M2", "M3", "M4", "M5"):
+            run("ingest", "--dir", self.dir, "--round", "1", "--member", m, "--file", self.put(f"{m}.json", dict(R1, top_choice="B" if m != "M5" else "A")))
+        out = json.loads(run("devil", "--dir", self.dir).stdout)
+        self.assertEqual((out["devil"], out["leading_option"], out["basis"]), ("M2", "B", "round-1 top choices"))
+        prompt = json.loads((Path(self.dir) / "prompts_devil.json").read_text(encoding="utf-8"))["M2"]
+        for need in ("steelman the leading option", "likelihood and impact", "DISCONFIRM", "six months later", "kill criterion"):
+            self.assertIn(need, prompt)
+        self.assertLess(prompt.index("steelman"), prompt.index("failure modes"), "steelman comes before the attack")
+        bad = dict(self.DEVIL, steelman="weak", failure_modes=self.DEVIL["failure_modes"][:2], kill_criterion="")
+        r = run("devil", "--dir", self.dir, "--file", self.put("bad.json", bad), ok=False)
+        self.assertIn("DEVIL_INVALID", r.stderr)
+        for frag in ("steelman", "at least 3", "kill_criterion"):
+            self.assertIn(frag, r.stderr)
+        worse = dict(self.DEVIL, failure_modes=[dict(f, likelihood=9) for f in self.DEVIL["failure_modes"]])
+        self.assertIn("likelihood must be an integer from 1 to 5", run("devil", "--dir", self.dir, "--file", self.put("w.json", worse), ok=False).stderr)
+        ok = json.loads(run("devil", "--dir", self.dir, "--file", self.put("d.json", self.DEVIL)).stdout)
+        self.assertEqual(ok["strongest_objection"], "TikTok crops the captions", "ranked by likelihood x impact (16 > 15 > 8)")
+        self.assertEqual([x.split(".")[0] for x in ok["ranked"]], ["1", "2", "3"])
+        self.assertEqual(ok["warnings"], [])
+
+    def test_unanswered_strongest_objection_blocks_a_clean_pass(self):
+        self.rounds_1_2()
+        run("devil", "--dir", self.dir, "--file", self.put("d.json", self.DEVIL))
+        run("prompts", "--dir", self.dir, "--round", "3")
+        p3 = json.loads((Path(self.dir) / "prompts_r3.json").read_text(encoding="utf-8"))
+        self.assertIn("devil_answers", p3["M1"])
+        self.assertIn("TikTok crops the captions", p3["M1"])
+        v = self.round3(self.SCORES, {"M2": "the sync is not measured"})
+        self.assertEqual(v["status"], "COUNCIL_CONTESTED")
+        self.assertFalse(v["clean_pass"])
+        self.assertIn("UNANSWERED_OBJECTION", v["clean_pass_blockers"])
+        self.assertEqual([u["rank"] for u in v["devil"]["unanswered"]], [1, 2, 3])
+        self.assertEqual(v["winner"], "B", "the vote itself is unchanged")
+        minutes = (Path(self.dir) / "minutes.md").read_text(encoding="utf-8")
+        self.assertIn("## الخلاصة", minutes)
+        self.assertIn("بلا جواب", minutes)
+        self.assertIn("معيار الإيقاف", minutes)
+        # an answer with evidence to the strongest objection lifts the block
+        r = run("answer", "--dir", self.dir, "--file", self.put("a.json", {"answers": [{"rank": 9, "answer": "x", "evidence": "y"}]}), ok=False)
+        self.assertIn("ANSWER_INVALID", r.stderr)
+        run("answer", "--dir", self.dir, "--file", self.put("a.json", {"answers": [
+            {"rank": 1, "by": "M4", "answer": "captions sit inside the 9:16 safe zone", "evidence": "ran safe_zone check on frame 0042.png"}]}))
+        v = json.loads(run("verdict", "--dir", self.dir).stdout)
+        self.assertEqual(v["status"], "COUNCIL_RUN")
+        self.assertTrue(v["clean_pass"], v["clean_pass_blockers"])
+        self.assertEqual(v["devil"]["answered_ranks"], [1])
+
+    def test_round3_devil_answers_count_and_target_mismatch_is_flagged(self):
+        self.rounds_1_2()
+        run("devil", "--dir", self.dir, "--file", self.put("d.json", dict(self.DEVIL, target_option="C")))
+        ans = {"M3": [{"rank": 1, "answer": "safe zones checked", "evidence": "opinion"}]}
+        v = self.round3(self.SCORES, {"M2": "risk"}, ans)
+        self.assertEqual(v["status"], "COUNCIL_RUN")
+        self.assertTrue(v["devil"]["strongest_answered"])
+        self.assertEqual(v["devil"]["answered_by_opinion_only"], [1])
+        self.assertTrue(any(w.startswith("DEVIL_TARGET_MISMATCH") for w in v["warnings"]))
+        self.assertFalse(v["clean_pass"], "the devil attacked C but B won")
+
+    def test_groupthink_calibration_and_evidence_quality(self):
+        r1 = {"position": "p", "proposal": "x", "risks": ["r"], "top_choice": "B",
+              "claims": [{"claim": "c1", "evidence": "opinion", "confidence": 0.9},
+                         {"claim": "c2", "evidence": "https://example.org/spec", "confidence": 0.7},
+                         {"claim": "c3", "evidence": "ran verify_video.py", "confidence": 0.8, "evidence_quality": "reproduced"}]}
+        self.rounds_1_2(r1)
+        same = {m: {"A": 2, "B": 5, "C": 1} for m in ("M1", "M2", "M3", "M4", "M5")}
+        v = self.round3(same)
+        self.assertTrue(any(g.startswith("EARLY_CONVERGENCE") for g in v["groupthink"]))
+        self.assertTrue(any(g.startswith("UNANIMOUS_NO_DISSENT") for g in v["groupthink"]))
+        self.assertEqual(v["evidence_quality"]["opinion"], 5)
+        self.assertEqual(v["evidence_quality"]["sourced"], 5)
+        self.assertEqual(v["evidence_quality"]["reproduced"], 5)
+        self.assertTrue(v["calibration"]["M1"]["overconfident"])
+        self.assertEqual(v["calibration"]["M1"]["evidenced_mean"], 0.75)
+        self.assertTrue(any(w.startswith("OVERCONFIDENT_OPINION") for w in v["warnings"]))
+        self.assertIn("NO_DEVIL_CASE", v["clean_pass_blockers"])
+        self.assertFalse(v["clean_pass"])
+        self.assertIn("تفكير القطيع", (Path(self.dir) / "minutes.md").read_text(encoding="utf-8"))
+
+    def test_optional_round_fields_are_validated(self):
+        run("plan", "سؤال", "--dir", self.dir)
+        for bad, frag in ((dict(R1, top_choice="Z"), "top_choice"),
+                          (dict(R1, claims=[{"claim": "c", "evidence": "e", "confidence": 1.5}]), "confidence"),
+                          (dict(R1, claims=[{"claim": "c", "evidence": "e", "evidence_quality": "vibes"}]), "evidence_quality")):
+            r = run("ingest", "--dir", self.dir, "--round", "1", "--member", "M1", "--file", self.put("b.json", bad), ok=False)
+            self.assertIn("MEMBER_INVALID", r.stderr)
+            self.assertIn(frag, r.stderr)
+
+    def test_members_get_distinct_mental_model_lenses_and_the_devil_seat(self):
+        out = json.loads(run("plan", "هل نطلق خطة التسعير الجديدة للعملاء؟", "--dir", self.dir, "--no-roster").stdout)
+        self.assertEqual(out["devil"], "M2")
+        self.assertEqual(out["lenses"]["M2"], ["MODEL-02 Inversion", "MODEL-24 Pre-mortem"])
+        allx = [x for v in out["lenses"].values() for x in v]
+        self.assertTrue(all(1 <= len(v) <= 2 for v in out["lenses"].values()))
+        self.assertEqual(len(allx), len(set(allx)), "no two members share a lens")
+        run("prompts", "--dir", self.dir, "--round", "1")
+        p1 = json.loads((Path(self.dir) / "prompts_r1.json").read_text(encoding="utf-8"))
+        self.assertIn("Your thinking lenses", p1["M3"])
+        self.assertIn("Misuse warning", p1["M3"])
+        self.assertIn("DEVIL'S ADVOCATE seat", p1["M2"])
+        self.assertNotIn("DEVIL'S ADVOCATE seat", p1["M1"])
+        big = self.root / "big"
+        out = json.loads(run("plan", "قرار", "--dir", str(big), "--seats", "15", "--no-roster").stdout)
+        c = json.loads((big / "council.json").read_text(encoding="utf-8"))
+        self.assertEqual(next(m for m in c["roster"] if m["id"] == out["devil"])["lane"], "verification")
+        allx = [x for v in out["lenses"].values() for x in v]
+        self.assertEqual(len(allx), len(set(allx)), "fifteen seats, thirty distinct lenses")
+        r = run("plan", "x", "--dir", str(self.root / "d2"), "--devil", "M9", ok=False)
+        self.assertIn("UNKNOWN_MEMBER", r.stderr)
+        self.assertEqual(json.loads(run("plan", "x", "--dir", str(self.root / "d3"), "--devil", "m4", "--no-roster").stdout)["devil"], "M4")
+
+
 if __name__ == "__main__":
     unittest.main()

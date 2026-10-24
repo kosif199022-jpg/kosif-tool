@@ -39,6 +39,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-72 | ✅ | مخطط متطلبات القدرات · Power requirements planner → `requirements` | SP-0139 Atlas metadata capability miner | node, python3, key:unspecified |
 | TOOL-73 | ✅ | أداة سطر أوامر لأطلس أنماط KOSIF · KOSIF style atlas CLI → `repo-kosif` | SP-0139 Atlas metadata capability miner | python3, npm:remotion |
 | TOOL-91 | ✅ | مراجعة ساكنة لنصوص مهارات الأطلس · Atlas skill-body static audit → `atlas-body-audit` | SP-0139 Atlas metadata capability miner | python3 |
+| TOOL-92 | ✅ | تحويل مراجعة الأطلس إلى بيان مُراجَع · Atlas audit to reviewed manifest → `atlas-audit-synthesis` | SP-0139 Atlas metadata capability miner | python3, npm:rea |
 | TOOL-101 | 🟢 | مولّد ملفات أطلس الأساليب · Style Atlas Builder → `repo-build` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-104 | 🟢 | تدقيق نصوص مصادر الأطلس · Atlas source-text audit → `atlas-bulk-source-audit` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-109 | 🟢 | منتقي مناهج الأطلس للقراءة فقط · Atlas read-only method selector → `atlas-deep-fusion` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
@@ -47,7 +48,6 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-112 | 🟢 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router → `atlas-task-method-router` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-113 | 🟢 | نقل مناهج الأطلس المثبتة · Atlas verified method transfer → `atlas-transfer` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-71 | 🟢 | فحص قدرات الجهاز · Machine capability probe → `probe-env` | SP-0139 Atlas metadata capability miner | node, python3, docker, gpu |
-| TOOL-92 | 🟢 | تحويل مراجعة الأطلس إلى بيان مُراجَع · Atlas audit to reviewed manifest → `atlas-audit-synthesis` | SP-0139 Atlas metadata capability miner | python3, npm:rea |
 | TOOL-13 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler → `motion-director` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
 | TOOL-14 | ✅ | محرك حركة SVG · SVG motion engine runtime → `motion-engine-js` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
 | TOOL-146 | ✅ | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame → `particles` | SP-0140 Audio-timed SVG motion compiler | python3, npm:three |

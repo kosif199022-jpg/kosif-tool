@@ -1,0 +1,314 @@
+{
+ "runs": {
+  "out/self-council/first-pass-20261024": {
+   "created_at": "2026-10-24T21:05:10+00:00",
+   "reported_at": "2026-10-24T21:11:44+00:00",
+   "units": [
+    "tool:a-shell",
+    "script:color_media",
+    "script:creative_reasoning_bridge",
+    "script:creative_external_search",
+    "script:atlas_audit_synthesis",
+    "app:tikplayer",
+    "script:tell_scan",
+    "script:build_chapters",
+    "script:anchor_gate",
+    "app:instagram-link-collector"
+   ]
+  }
+ },
+ "schema": "kosif.self-council-ledger.v1",
+ "units": {
+  "app:instagram-link-collector": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "fcf090b8800b62050e34c6d85722e9a8f36fe5bf7c7286a76059bd86b3ef23ba",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "app:tikplayer": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "cbfec6fa10eb8131332b31e2f58c8645f4496db86d331936a47762c7e84e9163",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:anchor_gate": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "a9bd14e27cde096cc3564a8620b90eb36e2d0afbc9076a2895e575a727cd77a4",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:atlas_audit_synthesis": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "75556bed77bfce34239ab61abe87f1dc419c697b1418b6ea41960ba2d558d438",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:build_chapters": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "d608823431cc2ad0915f97fa0e09dfcaedf4fce5cd8ff17ab1a329df6ea7ada6",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:color_media": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "271cad570131a363b17cabf555c8a9fbb463f599eb2d483f5d25583dfc8595b5",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:creative_external_search": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "db85fda9edcb3e62266777aa56941caefc930ec945f9fe7ff2b37b5846d5f11f",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:creative_reasoning_bridge": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "0a44e18c1a16fb5463b85bd0a92441ed2142c8b1a13e3cb2531dcbe97db30b5c",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "script:tell_scan": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "2b1a3a51ea1cbbf50c6712c50cc57c8851e4dd2ed8efdebbfdaeb17049b2cb21",
+   "simulated": true,
+   "state": "reviewed"
+  },
+  "tool:a-shell": {
+   "history": [
+    {
+     "at": "2026-10-24T21:10:47+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:10+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    },
+    {
+     "at": "2026-10-24T21:11:44+00:00",
+     "run": "out/self-council/first-pass-20261024",
+     "simulated": true,
+     "state": "reviewed"
+    }
+   ],
+   "personas": 5,
+   "planned_at": "2026-10-24T21:05:10+00:00",
+   "reviewed_at": "2026-10-24T21:11:44+00:00",
+   "run": "out/self-council/first-pass-20261024",
+   "sha256": "a3e4e0eb362f7156b1dd806780cbf4e7dd234e9c3461d14e3e0c23adf7d9b8d8",
+   "simulated": true,
+   "state": "reviewed"
+  }
+ },
+ "updated_at": "2026-10-24T21:11:44+00:00"
+}

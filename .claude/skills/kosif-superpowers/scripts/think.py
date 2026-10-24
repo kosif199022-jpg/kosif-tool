@@ -3,7 +3,7 @@
 
     python3 scripts/think.py ladder "<task>"            # pick the reasoning level the task needs (L0 recall … L6 wisdom) and its procedure
     python3 scripts/think.py frame  "<task>"            # contract: goal, reader, done-criteria, constraints, unknowns, first probe
-    python3 scripts/think.py models "<problem>" [-n 5]  # rank mental models (data/mental_models.json) for this problem; print their questions and steps
+    python3 scripts/think.py models "<problem>" [-n 5] [--plain]  # rank mental models (data/mental_models.json): diverse disciplines, question + do-now step + misuse warning
     python3 scripts/think.py plan   "<goal>" [--weeks N] # backcast milestones, WBS skeleton, pre-mortem prompts, kill criteria
     python3 scripts/think.py ideas  "<seed>" [-n 12] [--seed 7]  # idea matrix: creative operators × powers from distant catalog domains
     python3 scripts/think.py decide decision.json        # weighted decision matrix + sensitivity (does the winner flip at ±1 weight?)
@@ -134,44 +134,130 @@ def cmd_frame(task: str) -> int:
 
 
 # ------------------------------------------------------------------ models
+# Cues that make the two "always worth it" lenses relevant: Inversion for anything that can fail, second-order effects for
+# anything that changes a system, a policy or people. They are reserved a slot when the problem shows the cue.
+INVERSION_ID, SECOND_ORDER_ID = "MODEL-02", "MODEL-03"
+DECISION_CUES = ("decide", "choose", "should", "launch", "plan", "strategy", "risk", "fail", "commit", "invest", "migrate", "bet",
+                 "قرار", "قرر", "اختر", "اختيار", "خطة", "خطط", "اطلاق", "إطلاق", "مخاطر", "فشل", "استراتيجية", "نستثمر", "ايهما", "أيهما")
+CHANGE_CUES = ("change", "policy", "price", "pricing", "launch", "strategy", "team", "users", "market", "growth", "remove", "migrate",
+               "تغيير", "سياسة", "سعر", "تسعير", "اطلاق", "إطلاق", "فريق", "مستخدم", "سوق", "نمو", "حذف", "استراتيجية", "عملاء")
+DEFAULT_KIT = ("MODEL-01", "MODEL-02", "MODEL-24", "MODEL-49", "MODEL-03")
+
+
 def load_models():
     return json.loads(MODELS.read_text(encoding="utf-8"))
 
 
-def rank_models(problem: str, n: int):
+def _score_models(problem: str, models: list) -> list:
+    """(score, matched triggers, model) for every model; deterministic."""
     ws = words(problem)
     text = norm(problem)
     out = []
-    for m in load_models():
-        s = 0.0
+    for m in models:
+        s, hit = 0.0, []
         for t in m["triggers"]:
             nt = norm(t)
             if " " in nt:
-                s += 2.0 if nt in text else 0
+                if nt in text:
+                    s += 2.0; hit.append(t)
             elif nt in ws or any(w.startswith(nt) or nt.startswith(w) and len(w) > 3 for w in ws):
-                s += 1.5
+                s += 1.5; hit.append(t)
         s += 0.3 * len(ws & words(m["question"] + " " + m["name_en"]))
-        out.append((s, m))
-    out.sort(key=lambda x: (-x[0], x[1]["id"]))
-    picked = [m for s, m in out if s > 0][:n]
+        out.append((round(s, 2), hit, m))
+    out.sort(key=lambda x: (-x[0], x[2]["id"]))
+    return out
+
+
+def _has_cue(problem: str, cues) -> bool:
+    text, ws = norm(problem), words(problem)
+    return any((norm(c) in text) if " " in c else (norm(c) in ws or any(w.startswith(norm(c)) for w in ws if len(norm(c)) > 3))
+               for c in cues)
+
+
+def rank_models(problem: str, n: int, diverse: bool = True, exclude=()):
+    """The n most fitting models. diverse=True: at most one model per discipline (two only when the matches run out),
+    Inversion and Second-order effects get a reserved slot when the problem shows a decision/failure or a change cue,
+    and the balanced default kit fills what is left. diverse=False keeps the plain score order (the v1 behaviour)."""
+    models = [m for m in load_models() if m["id"] not in set(exclude)]
+    byid = {m["id"]: m for m in models}
+    scored = _score_models(problem, models)
+    info = {m["id"]: (s, hit) for s, hit, m in scored}
+    relevant = [m for s, _h, m in scored if s > 0]
+    if not diverse:
+        picked = relevant[:n]
+    else:
+        reserve = []
+        if n >= 3 and _has_cue(problem, DECISION_CUES) and INVERSION_ID in byid:
+            reserve.append(INVERSION_ID)
+        if n >= 4 and _has_cue(problem, CHANGE_CUES) and SECOND_ORDER_ID in byid:
+            reserve.append(SECOND_ORDER_ID)
+        picked, per = [], {}
+        for cap in (1, 2):  # first pass: one per discipline; second pass: allow a second one
+            for m in relevant:
+                if len(picked) >= n - sum(1 for r in reserve if byid[r] not in picked):
+                    break
+                if m in picked or m["id"] in reserve or per.get(m["discipline"], 0) >= cap:
+                    continue
+                if cap == 1 and not info[m["id"]][1]:
+                    continue  # the one-per-discipline pass takes trigger matches only, not a shared word in the question
+                picked.append(m); per[m["discipline"]] = per.get(m["discipline"], 0) + 1
+        for r in reserve:
+            if byid[r] not in picked and len(picked) < n:
+                picked.append(byid[r])
+        picked.sort(key=lambda m: (-info[m["id"]][0], m["id"]))
     if len(picked) < n:  # always give a balanced default kit
-        for mid in ("MODEL-01", "MODEL-02", "MODEL-24", "MODEL-49", "MODEL-03"):
-            m = next(x for x in load_models() if x["id"] == mid)
-            if m not in picked and len(picked) < n:
+        for mid in DEFAULT_KIT:
+            m = byid.get(mid)
+            if m and m not in picked and len(picked) < n:
                 picked.append(m)
-    return picked
+    for m in models:  # still short (a large n or an exclude list): the next models by score, diverse first
+        if len(picked) >= n:
+            break
+        if m not in picked and (not diverse or m["discipline"] not in {x["discipline"] for x in picked}):
+            picked.append(m)
+    for _s, _h, m in scored:
+        if len(picked) >= n:
+            break
+        if m not in picked:
+            picked.append(m)
+    return picked[:n]
 
 
-def cmd_models(problem: str, n: int, as_json: bool) -> int:
-    ms = rank_models(problem, n)
+def lens(m: dict, problem: str = "") -> dict:
+    """A model as a usable lens: the concrete question, one action step, the output, and a misuse warning."""
+    s, hit = (_score_models(problem, [m])[0][:2] if problem else (0.0, []))
+    return {"id": m["id"], "name_en": m["name_en"], "name_ar": m["name_ar"], "discipline": m["discipline"],
+            "question": m["question"], "action": m["steps"][0], "output": m["output"],
+            "misuse": f"Misuse warning: {m['pitfall']}",
+            "score": s, "matched": hit,
+            "why": ("matched: " + ", ".join(hit)) if hit else ("reserved lens" if problem and _reserved(m["id"], problem)
+                                                             else "related wording" if s > 0 else "default kit")}
+
+
+def _reserved(mid: str, problem: str) -> bool:
+    return ((mid == INVERSION_ID and _has_cue(problem, DECISION_CUES)) or (mid == SECOND_ORDER_ID and _has_cue(problem, CHANGE_CUES)))
+
+
+def lenses(problem: str, n: int = 5, exclude=()) -> list:
+    return [lens(m, problem) for m in rank_models(problem, n, exclude=exclude)]
+
+
+def cmd_models(problem: str, n: int, as_json: bool, plain: bool = False) -> int:
+    ms = rank_models(problem, n, diverse=not plain)
     if as_json:
-        print(json.dumps(ms, ensure_ascii=False, indent=1)); return 0
+        print(json.dumps([dict(m, lens=lens(m, problem)) for m in ms], ensure_ascii=False, indent=1)); return 0
     for m in ms:
-        print(f"{m['id']}  {m['name_en']} / {m['name_ar']}  [{m['discipline']}]")
+        L = lens(m, problem)
+        print(f"{m['id']}  {m['name_en']} / {m['name_ar']}  [{m['discipline']}]  ({L['why']})")
         print(f"   ask: {m['question']}")
         for i, s in enumerate(m["steps"], 1):
             print(f"   {i}. {s}")
-        print(f"   → output: {m['output']}   ✗ pitfall: {m['pitfall']}\n")
+        print(f"   ▶ do now: {L['action']}")
+        print(f"   → output: {m['output']}")
+        print(f"   ⚠ {L['misuse']}\n")
+    if not plain:
+        cats = sorted({m["discipline"] for m in ms})
+        print(f"disciplines covered: {len(cats)} ({', '.join(cats)})")
     return 0
 
 
@@ -923,6 +1009,7 @@ def main(argv=None) -> int:
     sub.add_parser("ladder").add_argument("task")
     sub.add_parser("frame").add_argument("task")
     m = sub.add_parser("models"); m.add_argument("problem"); m.add_argument("-n", type=int, default=5); m.add_argument("--json", action="store_true")
+    m.add_argument("--plain", action="store_true", help="plain score order, no discipline diversity or reserved lenses")
     p = sub.add_parser("plan"); p.add_argument("goal"); p.add_argument("--weeks", type=int, default=4)
     i = sub.add_parser("ideas"); i.add_argument("seed_text"); i.add_argument("-n", type=int, default=12); i.add_argument("--seed", type=int, default=7)
     sub.add_parser("decide").add_argument("path")
@@ -940,7 +1027,7 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if a.cmd == "ladder": return cmd_ladder(a.task)
     if a.cmd == "frame": return cmd_frame(a.task)
-    if a.cmd == "models": return cmd_models(a.problem, a.n, a.json)
+    if a.cmd == "models": return cmd_models(a.problem, a.n, a.json, a.plain)
     if a.cmd == "plan": return cmd_plan(a.goal, a.weeks)
     if a.cmd == "ideas": return cmd_ideas(a.seed_text, a.n, a.seed)
     if a.cmd == "decide": return cmd_decide(a.path)
