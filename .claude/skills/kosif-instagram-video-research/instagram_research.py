@@ -30,6 +30,16 @@ LEXICON = {
     "ورود": ["flowers", "roses"], "شلال": ["waterfall", "cascades"],
     "سينمائي": ["cinematic", "film look"],
     "درون": ["drone footage", "aerial"], "نجوم": ["stars", "night sky"],
+    "موشن": ["motion graphics", "animation", "animasyon", "hareketli grafik"],
+    "سبورة": ["whiteboard animation", "hand drawn", "tahta animasyon", "çizim"],
+    "رسم": ["drawing", "sketch", "illustration", "çizim"],
+    "مؤثرات": ["vfx", "visual effects", "görsel efekt"],
+    "ثلاثي": ["3d animation", "blender", "3d modelleme"],
+    "مونتاج": ["video editing", "transitions", "kurgu"],
+    "تايبوجرافي": ["kinetic typography", "typography", "tipografi"],
+    "ذكاء": ["ai video", "generative video", "yapay zeka"],
+    "جسيمات": ["particles", "particle simulation", "parçacık"],
+    "لوب": ["seamless loop", "loop animation", "döngü"],
 }
 
 def creators():
@@ -42,12 +52,19 @@ def tokens(value):
     return re.findall(r"[\w]+", s, flags=re.UNICODE)
 
 def expand(topic):
-    words = tokens(topic)
+    words = set(tokens(topic))
     variants = [topic.strip()]
-    for ar, terms in LEXICON.items():
-        if tokens(ar)[0] in words:
-            variants.extend(terms)
-    return list(dict.fromkeys(filter(None, variants)))[:4]
+    groups = []
+    for label, terms in LEXICON.items():
+        candidates = [label] + terms
+        if any(set(tokens(term)).issubset(words) for term in candidates if tokens(term)):
+            groups.append(terms)
+    if groups:
+        # Retain all matched concepts in the second translated search phrase.
+        variants.append(" ".join(group[0] for group in groups))
+        for group in groups:
+            variants.extend(group)
+    return list(dict.fromkeys(filter(None, variants)))[:12]
 
 def plan(topic, accounts_only=False):
     variants, jobs = expand(topic)[:2], []
@@ -83,8 +100,59 @@ def database(path):
         author TEXT, search_query TEXT, source TEXT NOT NULL, evidence TEXT NOT NULL,
         discovered_utc TEXT NOT NULL
     )""")
+    db.execute("""CREATE TABLE IF NOT EXISTS reviewed_reels (
+        url TEXT PRIMARY KEY REFERENCES reels(url),
+        reviewer TEXT NOT NULL,
+        reviewed_utc TEXT NOT NULL,
+        observed_tags TEXT NOT NULL,
+        observed_mechanisms TEXT NOT NULL,
+        observations TEXT NOT NULL
+    )""")
+    db.execute("PRAGMA foreign_keys=ON")
     db.commit()
     return db
+
+def csv_tags(value):
+    return list(dict.fromkeys(t.strip() for t in (value or "").split(",") if t.strip()))
+
+def review_reel(db, url, reviewer, tags, mechanisms, observations):
+    """An explicit HUMAN review: never inferred from search snippets."""
+    clean=canonical(url)
+    if not clean or not db.execute("SELECT 1 FROM reels WHERE url=?", (clean,)).fetchone():
+        raise ValueError("Index a real Instagram permalink before reviewing it")
+    if not reviewer.strip() or not observations.strip() or not csv_tags(mechanisms):
+        raise ValueError("Reviewer, observed mechanisms and evidence notes are required")
+    db.execute("""INSERT INTO reviewed_reels VALUES (?,?,?,?,?,?)
+        ON CONFLICT(url) DO UPDATE SET reviewer=excluded.reviewer,
+          reviewed_utc=excluded.reviewed_utc,
+          observed_tags=excluded.observed_tags,
+          observed_mechanisms=excluded.observed_mechanisms,
+          observations=excluded.observations""",
+        (clean,reviewer.strip(),dt.datetime.now(dt.timezone.utc).isoformat(),
+         json.dumps(csv_tags(tags),ensure_ascii=False),
+         json.dumps(csv_tags(mechanisms),ensure_ascii=False),observations.strip()))
+    db.commit()
+    return {"url":clean,"review_status":"verified_by_authorized_review",
+            "note":"Entered by named reviewer; no automatic media examination performed"}
+
+def export_reviews(db, output_path):
+    """Export human-observed mechanism evidence, usable for Infinite Matrices."""
+    rows=[]
+    sql="""SELECT r.url,r.title,r.description,r.author,v.reviewer,v.reviewed_utc,
+       v.observed_tags,v.observed_mechanisms,v.observations
+       FROM reels r JOIN reviewed_reels v ON r.url=v.url ORDER BY r.url"""
+    for (url,title,description,author,reviewer,when,tags,mechanisms,observations) in db.execute(sql):
+        rows.append({"url":url,"title":title,"description":description,"author":author,
+                     "reviewer":reviewer,"reviewed_utc":when,
+                     "observed_tags":json.loads(tags),
+                     "observed_mechanisms":json.loads(mechanisms),
+                     "observations":observations,
+                     "status":"USER_REVIEWED_REFERENCE_NOT_PROVEN_RENDER_MECHANISM"})
+    output_path.parent.mkdir(parents=True,exist_ok=True)
+    output_path.write_text(json.dumps({"count":len(rows),"references":rows,
+        "warning":"Causal laws must be independently reconstructed and tested; do not reuse copyrighted video without permission."},
+        ensure_ascii=False,indent=2),encoding="utf-8")
+    return {"exported":len(rows),"output":str(output_path)}
 
 def import_rows(db,rows,source="import",search_query=""):
     now=dt.datetime.now(dt.timezone.utc).isoformat()
@@ -100,7 +168,8 @@ def import_rows(db,rows,source="import",search_query=""):
             description=CASE WHEN length(excluded.description)>length(description)
                              THEN excluded.description ELSE description END,
             author=COALESCE(author,excluded.author), search_query=excluded.search_query,
-            source=excluded.source, evidence=excluded.evidence""",
+            source=CASE WHEN source='manual' THEN source ELSE excluded.source END,
+            evidence=CASE WHEN evidence='url_only_unverified' THEN evidence ELSE excluded.evidence END""",
             (url,str(item.get("title",""))[:400],str(item.get("description",item.get("snippet","")))[:2000],
              item.get("author"),search_query,source,evidence,now))
         count+=1
@@ -114,11 +183,21 @@ def find(db,topic,limit=30):
     results=[]
     for url,title,description,author,search_query,source,evidence,seen in db.execute("SELECT * FROM reels"):
         matching=len(query & set(tokens(" ".join([title,description,search_query or ""]))))
-        if not matching: continue
+        review=db.execute("SELECT observed_tags,observed_mechanisms,reviewer FROM reviewed_reels WHERE url=?",(url,)).fetchone()
+        observed_overlap=0
+        reviewer=None
+        if review:
+            tags,mechanisms,reviewer=review
+            observed_overlap=len(query & set(tokens(" ".join(json.loads(tags)+json.loads(mechanisms)))))
+        if not matching and not observed_overlap: continue
         score=matching*2 + (2 if author and author.lower().lstrip("@") in known else 0)
         score+=1 if "/reel/" in url or "/reels/" in url else 0
+        if review:
+            score+=observed_overlap*5+4
+            evidence="verified_by_authorized_review"
         results.append(dict(url=url,title=title,description=description,author=author,
-                            relevance=score,source=source,evidence=evidence,discovered_utc=seen))
+                            relevance=score,source=source,evidence=evidence,
+                            reviewer=reviewer,discovered_utc=seen))
     return sorted(results,key=lambda x:(-x["relevance"],x["url"]))[:limit]
 
 def public_web_search(key,jobs,max_queries=3,limit=10):
@@ -147,6 +226,10 @@ def main(argv=None):
     cmd=sub.add_parser("import");cmd.add_argument("json_file",type=Path)
     cmd=sub.add_parser("add");cmd.add_argument("url");cmd.add_argument("--title",default="")
     cmd.add_argument("--description",default="");cmd.add_argument("--author",default="")
+    cmd=sub.add_parser("review");cmd.add_argument("url");cmd.add_argument("--reviewer",required=True)
+    cmd.add_argument("--tags",default="");cmd.add_argument("--mechanisms",required=True)
+    cmd.add_argument("--observations",required=True)
+    cmd=sub.add_parser("export-reviewed");cmd.add_argument("output",type=Path)
     args=parser.parse_args(argv)
     if args.command=="sources":
         result={"creators":creators()}
@@ -165,6 +248,10 @@ def main(argv=None):
             elif args.command=="add":
                 result={"indexed":import_rows(db,[{"url":args.url,"title":args.title,
                     "description":args.description,"author":args.author}],"manual")}
+            elif args.command=="review":
+                result=review_reel(db,args.url,args.reviewer,args.tags,args.mechanisms,args.observations)
+            elif args.command=="export-reviewed":
+                result=export_reviews(db,args.output)
             else:
                 queries=plan(args.topic,args.accounts_only)
                 token=os.environ.get("BRAVE_SEARCH_API_KEY")
