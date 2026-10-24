@@ -199,15 +199,19 @@ def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag
         L.load_session_from_file(session_user)
     elif os.environ.get(SESSION_ENV) and not browser:
         L.context.update_cookies({"sessionid": os.environ[SESSION_ENV].strip()})
-        if not L.test_login():
+        user = L.test_login()
+        if not user:
             raise RuntimeError(f"{SESSION_ENV} is set but Instagram does not accept it (expired or logged out)")
+        L.context.username = user  # cookies alone leave instaloader in anonymous mode, which cloud IPs get redirected from
     elif browser:  # the user's own browser login, read locally; never written to disk by this tool
         from instaloader.__main__ import get_cookies_from_instagram  # noqa: PLC0415
         cookies = get_cookies_from_instagram("instagram", browser, None)
         if cookies:
             L.context.update_cookies(cookies)
-            if not L.test_login():
+            user = L.test_login()
+            if not user:
                 raise RuntimeError(f"not logged in to Instagram in {browser}")
+            L.context.username = user
     if hashtag:
         it = instaloader.Hashtag.from_name(L.context, handle).get_posts_resumable()
     else:
@@ -397,7 +401,9 @@ def cmd_plan(a) -> int:
 
 LOGIN_HINT = ("Instagram wants a login from this network (common on cloud and datacenter IPs). "
               "Run on your own computer with --browser chrome (index) or --cookies-from-browser chrome (add-posts). "
-              "| إنستجرام طالب تسجيل دخول من الشبكة دي؛ شغّل الأداة على جهازك مع --browser chrome.")
+              "INSTAGRAM_SESSIONID does not lift this: tested 2026-10-24, the session is accepted but profile pages "
+              "and post timelines still redirect from cloud IPs. "
+              "| إنستجرام طالب تسجيل دخول من الشبكة دي، وحتى INSTAGRAM_SESSIONID مش بيحل ده من سيرفر الكلاود؛ شغّل الأداة على جهازك مع --browser chrome.")
 
 
 def is_login_wall(e) -> bool:
