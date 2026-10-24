@@ -182,6 +182,7 @@
 | `aspects` | TOOL-77 | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver | `python3 -c "import sys; sys.path.insert(0,'scripts'); import aspects;…` | 1 |
 | `atlas-render` | TOOL-64 | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score | `python3 scripts/atlas_render.py check` | 1 |
 | `creative-reasoning-bridge` | TOOL-12 | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto…` | 1 |
+| `infinite-matrices` | TOOL-171 | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | 2 |
 | `motion-director` | TOOL-13 | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | `python3 scripts/motion_director.py doctor` | 2 |
 | `motion-engine-js` | TOOL-14 | محرك حركة SVG · SVG motion engine runtime | `python3 scripts/motion_director.py compile ./scene.json --out ./out/f…` | 3 |
 | `motion-kit-bridge` | TOOL-15 | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge | `python3 scripts/motion_kit_bridge.py styles` | 1 |
@@ -214,7 +215,7 @@
 | `fetch-reference` | TOOL-93 | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure | `python3 scripts/fetch_reference.py https://example.com/page --list --…` | 2 |
 | `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 0 |
 | `github-top-repos` | TOOL-160 | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker | `python3 scripts/github_top_repos.py build` | 1 |
-| `instagram-finder` | TOOL-171 | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder | `python3 scripts/instagram_finder.py accounts` | 1 |
+| `instagram-finder` | TOOL-172 | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder | `python3 scripts/instagram_finder.py accounts` | 1 |
 | `media-sources` | TOOL-47 | بوابة الوسائط المرخّصة · Licensed stock media gateway | `python3 scripts/media_sources.py list` | 1 |
 | `rea-creative-research-atlas` | TOOL-48 | باني فهرس البحث الإبداعي · Creative research catalog builder | `python3 scripts/rea_creative_research_atlas.py report` | 1 |
 | `rebalance-creative-repos` | TOOL-49 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog | `python3 scripts/rebalance_creative_repos.py run` | 0 |

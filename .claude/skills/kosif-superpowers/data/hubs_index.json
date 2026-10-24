@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5849,
+ "atoms": 5850,
  "superpowers": 481,
  "hubs": [
   {
@@ -399,9 +399,9 @@
    ],
    "superpowers": [
     "SP-0139",
-    "SP-0140",
-    "SP-0142",
     "SP-0141",
+    "SP-0142",
+    "SP-0140",
     "SP-0022",
     "SP-0143",
     "SP-0146",
@@ -432,7 +432,7 @@
      "ready_now": 33
     },
     {
-     "id": "SP-0140",
+     "id": "SP-0141",
      "name_ar": "محرك إعادة بناء المونتاج المرجعي",
      "name_en": "Reference Edit Engine",
      "size": 17,
@@ -448,12 +448,12 @@
      "ready_now": 16
     },
     {
-     "id": "SP-0141",
+     "id": "SP-0140",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
-     "size": 17,
+     "size": 18,
      "best": "proven",
-     "ready_now": 13
+     "ready_now": 14
     },
     {
      "id": "SP-0022",
@@ -520,15 +520,15 @@
      "ready_now": 7
     }
    ],
-   "powers": 283,
+   "powers": 284,
    "status_mix": {
-    "proven": 164,
+    "proven": 165,
     "ready": 22,
     "install": 15,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 186,
+   "ready_now": 187,
    "requires": [
     "python3",
     "ffmpeg",
@@ -587,9 +587,9 @@
     "pandoc",
     "pip:librosa",
     "pip:anthropic",
-    "pip:fonttools",
     "npm:animejs",
     "npm:esbuild",
+    "pip:fonttools",
     "pip:rdkit",
     "key:openai",
     "npm:lottie",
@@ -1595,8 +1595,8 @@
    ],
    "links": [
     "agents",
-    "software",
     "motion",
+    "software",
     "images"
    ]
   },

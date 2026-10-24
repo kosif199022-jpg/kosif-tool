@@ -449,6 +449,8 @@
 - «احفظ حسابات الإنستجرام دي كمصادر عشان ننزّل منها بعدين»
 - «Find Instagram reels from my saved accounts that fit a watch commercial»
 - «Search the saved Instagram accounts for coffee product videos and download the best two»
+- «نزّل لي الريل ده: https://www.instagram.com/reel/XXXX/»
+- «Collect every video link from this Instagram account and download them»
 
 #### الأوامر
 
@@ -462,6 +464,8 @@
   - `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`
 - **browser-login**: Uses the user's Instagram login from a local browser (instaloader for index, --cookies-from-browser for add-posts and download); the cookies stay on the machine and are never written by the tool.
   - `python3 scripts/instagram_finder.py index --browser firefox`
+- **get**: One step for links you already have: cleans each reel or post link (or a --urls links.txt from the Chrome extension apps/instagram-link-collector), downloads it through fetch_video.py and logs the rights (default reference-only). No index needed; tested from the cloud on 2026-10-24.
+  - `python3 scripts/instagram_finder.py get "https://www.instagram.com/reel/XXXX/"`
 - **add-posts**: Indexes single post or reel links with yt-dlp metadata (no download), 4 s apart.
   - `python3 scripts/instagram_finder.py add-posts https://www.instagram.com/reel/XXXX/`
 - **search**: Ranks indexed videos for the query and prints why each matched; filters by account, duration, date and photos.
