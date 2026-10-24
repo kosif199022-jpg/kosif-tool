@@ -159,6 +159,24 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(log[0]["credit"], "@suki.shotz")
         self.assertTrue(Path(log[0]["file"]).is_file())
 
+    def test_get_downloads_links_in_one_step(self):
+        links = self.d / "links.txt"
+        links.write_text("# from the Chrome extension\nhttps://www.instagram.com/reel/BBB222/?igsh=x\n"
+                         "https://www.instagram.com/reel/BBB222/\nhttps://example.com/nope\n")
+        rc, _, err = run("get", "--urls", str(links), "--rights", "licensed")
+        self.assertEqual(rc, 2)
+        self.assertIn("--evidence", err)
+        rc, out, _ = run("get", "--urls", str(links), "--dry-run")
+        self.assertEqual(rc, 2)  # the bad link is reported, the good one is still planned once
+        self.assertEqual(out.count("BBB222"), 1)
+        rc, out, err = run("get", "https://www.instagram.com/reel/CCC333/?cplk=abc", "--no-safe", "--sleep", "0",
+                           "-o", str(self.d / "g"))
+        self.assertEqual(rc, 0, err)
+        log = [json.loads(l) for l in (self.d / "g" / "instagram_rights.jsonl").read_text().splitlines()]
+        self.assertEqual(log[0]["url"], "https://www.instagram.com/reel/CCC333/")
+        self.assertEqual(log[0]["rights"], "reference-only")
+        self.assertTrue(Path(log[0]["file"]).is_file())
+
     def test_session_env_becomes_private_cookie_file(self):
         os.environ[ig.SESSION_ENV] = "abc123"
         try:

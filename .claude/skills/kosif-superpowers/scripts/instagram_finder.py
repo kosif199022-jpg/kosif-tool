@@ -12,6 +12,7 @@ built-in downloader scripts/fetch_video.py (yt-dlp).
   python3 instagram_finder.py plan "عطر رجالي"               # keywords, hashtags, web searches (offline)
   python3 instagram_finder.py index --session-user ME        # read captions of saved accounts (instaloader)
   python3 instagram_finder.py index --browser chrome         # same, with your local browser login
+  python3 instagram_finder.py get "https://www.instagram.com/reel/..."  # download a link you have, one step
   python3 instagram_finder.py add-posts URL [URL ...]        # index single reels you found (yt-dlp)
   python3 instagram_finder.py search "perfume splash" --top 15 --save out/instagram/hits.json
   python3 instagram_finder.py thumbs out/instagram/hits.json # thumbnails to check visually first
@@ -545,7 +546,33 @@ def cmd_download(a) -> int:
     if a.rights != "owned" and a.rights != "reference-only" and not a.evidence:
         print("RIGHTS CHECK: --rights permission/licensed needs --evidence (a link or note proving it)", file=sys.stderr)
         return 2
-    chosen = _pick(_load_hits(a.results), a.pick, a.top)
+    return _download(_pick(_load_hits(a.results), a.pick, a.top), a)
+
+
+def cmd_get(a) -> int:
+    """One step for a link you already have: clean it, download it, log the rights. No index needed."""
+    if a.rights != "owned" and a.rights != "reference-only" and not a.evidence:
+        print("RIGHTS CHECK: --rights permission/licensed needs --evidence (a link or note proving it)", file=sys.stderr)
+        return 2
+    raw = list(a.urls)
+    if a.urlfile:  # e.g. the .txt the Chrome extension "Instagram link collector" exports
+        raw += [l.strip() for l in Path(a.urlfile).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
+    chosen, rc, seen = [], 0, set()
+    for u in raw:
+        url = clean_post_url(u)
+        if not url:
+            print(f"SKIP not an Instagram post/reel link: {u[:80]}", file=sys.stderr)
+            rc = 2
+            continue
+        if url not in seen:
+            seen.add(url)
+            chosen.append({"url": url, "account": None})
+    if not chosen:
+        return rc or 2
+    return _download(chosen, a) or rc
+
+
+def _download(chosen: list, a) -> int:
     cap = min(a.max, 100)
     if len(chosen) > cap:
         print(f"refusing {len(chosen)} downloads in one run (cap {cap}); pick fewer or raise --max", file=sys.stderr)
@@ -581,7 +608,8 @@ def cmd_download(a) -> int:
             continue
         entry = {"downloaded_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
                  "url": h["url"], "account": h.get("account"), "file": rec["file"], "safe_file": rec.get("safe_file"),
-                 "rights": a.rights, "evidence": a.evidence, "credit": f"@{h.get('account')}",
+                 "rights": a.rights, "evidence": a.evidence,
+                 "credit": f"@{h['account']}" if h.get("account") else rec.get("uploader") or "see the post",
                  "note": "operator rights assertion, not a legal audit"}
         with log.open("a", encoding="utf-8") as f:
             f.write(json.dumps(entry, ensure_ascii=False) + "\n")
@@ -646,6 +674,20 @@ def main(argv=None) -> int:
     s.add_argument("--since", help="YYYY-MM-DD")
     s.add_argument("--save", help="write results JSON for thumbs/download")
     s.add_argument("--json", action="store_true")
+    s = sub.add_parser("get", help="download reel/post links you already have, in one step (no index needed)")
+    s.add_argument("urls", nargs="*", help="Instagram reel or post links (tracking parameters are removed)")
+    s.add_argument("--urls", dest="urlfile", help="a text file with one link per line (for example from the Chrome extension)")
+    s.add_argument("--rights", choices=RIGHTS, default="reference-only",
+                   help="owned | permission | licensed | reference-only (default: private study, not for publishing)")
+    s.add_argument("--evidence", help="link or note proving permission/licence")
+    s.add_argument("-o", "--out", default=str(Path("out") / "instagram" / "videos"))
+    s.add_argument("--quality", default="1080")
+    s.add_argument("--cookies", help="your own Netscape cookies.txt (never commit it)")
+    s.add_argument("--cookies-from-browser", metavar="BROWSER", help="your login from a local browser")
+    s.add_argument("--safe", action=argparse.BooleanOptionalAction, default=True)
+    s.add_argument("--sleep", type=float, default=5.0)
+    s.add_argument("--max", type=int, default=MAX_DOWNLOADS)
+    s.add_argument("--dry-run", action="store_true")
     for name in ("thumbs", "download"):
         s = sub.add_parser(name, help="thumbnails of chosen results" if name == "thumbs" else
                            "download chosen results through fetch_video.py")
@@ -670,7 +712,7 @@ def main(argv=None) -> int:
         a.cookies = env_cookiefile()  # None unless INSTAGRAM_SESSIONID is set
     fn = {"accounts": cmd_accounts, "add-account": cmd_add_account, "remove-account": cmd_remove_account,
           "plan": cmd_plan, "index": cmd_index, "add-posts": cmd_add_posts, "search": cmd_search,
-          "thumbs": cmd_thumbs, "download": cmd_download, "doctor": cmd_doctor}[a.cmd]
+          "thumbs": cmd_thumbs, "download": cmd_download, "get": cmd_get, "doctor": cmd_doctor}[a.cmd]
     return fn(a)
 
 
