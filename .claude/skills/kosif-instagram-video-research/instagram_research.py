@@ -177,17 +177,18 @@ def find(db,topic,limit=30):
     results=[]
     for url,title,description,author,search_query,source,evidence,seen in db.execute("SELECT * FROM reels"):
         matching=len(query & set(tokens(" ".join([title,description,search_query or ""]))))
-        if not matching: continue
-        score=matching*2 + (2 if author and author.lower().lstrip("@") in known else 0)
-        score+=1 if "/reel/" in url or "/reels/" in url else 0
         review=db.execute("SELECT observed_tags,observed_mechanisms,reviewer FROM reviewed_reels WHERE url=?",(url,)).fetchone()
+        observed_overlap=0
+        reviewer=None
         if review:
             tags,mechanisms,reviewer=review
-            extra=set(tokens(" ".join(json.loads(tags)+json.loads(mechanisms))))
-            score+=len(query&extra)*5+4
+            observed_overlap=len(query & set(tokens(" ".join(json.loads(tags)+json.loads(mechanisms)))))
+        if not matching and not observed_overlap: continue
+        score=matching*2 + (2 if author and author.lower().lstrip("@") in known else 0)
+        score+=1 if "/reel/" in url or "/reels/" in url else 0
+        if review:
+            score+=observed_overlap*5+4
             evidence="verified_by_authorized_review"
-        else:
-            reviewer=None
         results.append(dict(url=url,title=title,description=description,author=author,
                             relevance=score,source=source,evidence=evidence,
                             reviewer=reviewer,discovered_utc=seen))
