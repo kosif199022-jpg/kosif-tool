@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF Pro Council — an adversarial council for USIP Pro mode (USIP v5.6, appendices A13 and A30).
+"""KOSIF Pro Council — an adversarial council for USIP Pro mode (USIP v5.7, appendices A13 and A30).
 
 By default five opposing members; with --seats N (5–15) a task-fitted council drawn from the 100 unique personas of
 data/council_100.json (at least one per evidence lane, the rest by request relevance), with --personas P001,P044 a
@@ -81,7 +81,7 @@ PRIMARY_KEYS = {
     "strategy": ("استراتيجية", "strategy", "تسويق", "marketing", "تسعير", "pricing", "مالية", "finance", "أعمال", "business"),
 }
 GOVERNANCE_SECTOR = 50
-PROTOCOL = "USIP v5.6"
+PROTOCOL = "USIP v5.7"
 ROUNDS = (1, 2, 3)
 
 # Five opposing stances; each owns a different evidence lane so the debate rests on different facts.
@@ -346,7 +346,7 @@ def cmd_plan(a) -> dict:
 def member_prompt(c: dict, m: dict, rnd: int) -> str:
     who = m["persona"] + (f" — {m['specialist']}" if m.get("specialist") else "")
     n = len(c["roster"])
-    head = (f"You are council member {m['id']} «{who}» ({m['en']}) in a {n}-member KOSIF Pro council (USIP v5.6, appendices A13/A30).\n"
+    head = (f"You are council member {m['id']} «{who}» ({m['en']}) in a {n}-member KOSIF Pro council (USIP v5.7, appendices A13/A30).\n"
             f"Your stance: {m['stance']}.\n" + persona_block(c, m) +
             f"Your evidence lane: {m['evidence']}. Gather real evidence in that lane before you claim anything;"
             " label anything without evidence as 'opinion'. Never spend money, publish, or generate images or video "
