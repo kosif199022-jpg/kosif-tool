@@ -159,6 +159,19 @@ class Pipeline(unittest.TestCase):
         self.assertEqual(log[0]["credit"], "@suki.shotz")
         self.assertTrue(Path(log[0]["file"]).is_file())
 
+    def test_session_env_becomes_private_cookie_file(self):
+        os.environ[ig.SESSION_ENV] = "abc123"
+        try:
+            path = ig.env_cookiefile()
+        finally:
+            os.environ.pop(ig.SESSION_ENV, None)
+        self.assertTrue(path and Path(path).is_file())
+        self.assertIn("\tsessionid\tabc123", Path(path).read_text())
+        self.assertEqual(stat.S_IMODE(Path(path).stat().st_mode), 0o600)
+        self.assertIsNone(ig.env_cookiefile())  # unset → nothing written
+        rc, out, _ = run("--index", self.idx, "doctor")
+        self.assertNotIn("abc123", out)
+
     def test_download_cap(self):
         hits = self.d / "h.json"
         hits.write_text(json.dumps({"hits": [{"rank": i, "url": f"https://www.instagram.com/reel/X{i}abc/", "shortcode": f"X{i}"}

@@ -478,7 +478,7 @@
 - network: true
 - optional: pip:instaloader, pip:yt-dlp, bin:ffmpeg
 - الأمان: network
-- الموافقة: It reads Instagram with the user's own session and downloads third-party media: confirm the user owns it, has permission or a licence, or keeps it as private reference only. Never store, print or commit the session or cookies. Keep the default rate limits.
+- الموافقة: It reads Instagram with the user's own session and downloads third-party media: confirm the user owns it, has permission or a licence, or keeps it as private reference only. Never store, print or commit the session or cookies. Keep the default rate limits. INSTAGRAM_SESSIONID is a login credential: doctor reports only whether it is set, and the temporary cookies file it becomes is mode 0600 and deleted at exit.
 - الحدود: Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device.
 
 #### الاختبارات والأدلة

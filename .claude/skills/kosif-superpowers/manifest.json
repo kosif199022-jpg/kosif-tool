@@ -7798,7 +7798,7 @@
      "does": "Reports instaloader, yt-dlp, the saved account count and the index size."
     }
    ],
-   "inputs": "A product query in Arabic or English; saved accounts in data/instagram_sources.json; optionally --session-user (an instaloader session the user created), --cookies (the user's cookies.txt), hashtags and reel links.",
+   "inputs": "A product query in Arabic or English; saved accounts in data/instagram_sources.json; optionally --session-user (an instaloader session the user created), --cookies (the user's cookies.txt), hashtags and reel links; or the environment variable INSTAGRAM_SESSIONID (the sessionid cookie of the user's own, ideally secondary, account) for cloud runs.",
    "outputs": "out/instagram/index.json (local index), search results JSON (--save), out/instagram/thumbs/*.jpg, out/instagram/videos/ with fetch_video.py files and manifest.json, and instagram_rights.jsonl.",
    "requires": {
     "python": [],
@@ -7812,10 +7812,10 @@
     "network": true
    },
    "safety": "network",
-   "consent": "It reads Instagram with the user's own session and downloads third-party media: confirm the user owns it, has permission or a licence, or keeps it as private reference only. Never store, print or commit the session or cookies. Keep the default rate limits.",
+   "consent": "It reads Instagram with the user's own session and downloads third-party media: confirm the user owns it, has permission or a licence, or keeps it as private reference only. Never store, print or commit the session or cookies. Keep the default rate limits. INSTAGRAM_SESSIONID is a login credential: doctor reports only whether it is set, and the temporary cookies file it becomes is mode 0600 and deleted at exit.",
    "limits": "Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device.",
    "evidence": "tested-here",
-   "evidence_note": "evals/test_instagram_finder.py (9 tests) passed here with a fake yt-dlp: link cleaning of the owner's five accounts, Arabic/English ranking, plan, add-posts, the rights gate, the download cap and a full download through fetch_video.py. Live Instagram calls were not possible here (proxy 403).",
+   "evidence_note": "evals/test_instagram_finder.py (10 tests) passed here with a fake yt-dlp: link cleaning of the owner's five accounts, Arabic/English ranking, plan, add-posts, the rights gate, the download cap and a full download through fetch_video.py. Live Instagram calls were not possible here (proxy 403).",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_instagram_finder.py"
    ],

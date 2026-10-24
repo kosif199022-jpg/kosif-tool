@@ -25,12 +25,14 @@ or keep as private reference.
 from __future__ import annotations
 
 import argparse
+import atexit
 import datetime as dt
 import json
 import math
 import os
 import re
 import subprocess
+import tempfile
 import sys
 import time
 import unicodedata
@@ -47,6 +49,7 @@ RIGHTS = ("owned", "permission", "licensed", "reference-only")
 HANDLE_RE = re.compile(r"^[A-Za-z0-9._]{1,30}$")
 RESERVED = {"p", "reel", "reels", "tv", "explore", "stories", "accounts", "direct", "about", "legal"}
 POST_RE = re.compile(r"^/(?:[A-Za-z0-9._]+/)?(p|reel|reels|tv)/([A-Za-z0-9_-]{5,})/?")
+SESSION_ENV = "INSTAGRAM_SESSIONID"  # optional: the sessionid cookie of the user's own (ideally secondary) account
 MAX_PER_ACCOUNT = 200   # hard cap per account per run (rate limits)
 MAX_DOWNLOADS = 25      # hard cap per download run unless --max is raised (≤ 100)
 
@@ -194,6 +197,10 @@ def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag
                                 download_comments=False, save_metadata=False, quiet=True, max_connection_attempts=2)
     if session_user:
         L.load_session_from_file(session_user)
+    elif os.environ.get(SESSION_ENV) and not browser:
+        L.context.update_cookies({"sessionid": os.environ[SESSION_ENV].strip()})
+        if not L.test_login():
+            raise RuntimeError(f"{SESSION_ENV} is set but Instagram does not accept it (expired or logged out)")
     elif browser:  # the user's own browser login, read locally; never written to disk by this tool
         from instaloader.__main__ import get_cookies_from_instagram  # noqa: PLC0415
         cookies = get_cookies_from_instagram("instagram", browser, None)
@@ -215,6 +222,19 @@ def instaloader_posts(handle: str, limit: int, session_user: str | None, hashtag
                           views=p.video_view_count if p.is_video else None, likes=p.likes,
                           duration=p.video_duration if p.is_video else None, thumbnail=p.url,
                           source=("#" if hashtag else "@") + handle)
+
+
+def env_cookiefile() -> str | None:
+    """Write INSTAGRAM_SESSIONID to a private temporary Netscape cookies file for yt-dlp; deleted at exit."""
+    value = os.environ.get(SESSION_ENV, "").strip()
+    if not value or any(c in value for c in "\t\r\n"):
+        return None
+    fd, path = tempfile.mkstemp(prefix="ig-cookies-", suffix=".txt")
+    with os.fdopen(fd, "w", encoding="utf-8") as f:  # mkstemp creates the file with mode 0600
+        f.write("# Netscape HTTP Cookie File\n")
+        f.write(f".instagram.com\tTRUE\t/\tTRUE\t2147483647\tsessionid\t{value}\n")
+    atexit.register(lambda: os.path.exists(path) and os.remove(path))
+    return path
 
 
 def ytdlp_post(url: str, cookies: str | None, browser: str | None = None) -> dict:
@@ -575,6 +595,7 @@ def cmd_doctor(a) -> int:
     yt = find_ytdlp()
     print("instaloader:", il)
     print("yt-dlp:", " ".join(yt) if yt else "MISSING (pip install yt-dlp) — needed for add-posts and download")
+    print(f"{SESSION_ENV}:", "set (value hidden)" if os.environ.get(SESSION_ENV) else "not set (optional)")
     print("saved accounts:", len(load_sources(a.sources)["accounts"]))
     idx = load_index(Path(a.index))
     print("index:", a.index, f"({len(idx['posts'])} posts)")
@@ -639,6 +660,8 @@ def main(argv=None) -> int:
             s.add_argument("--dry-run", action="store_true")
     sub.add_parser("doctor")
     a = ap.parse_args(argv)
+    if hasattr(a, "cookies") and not a.cookies and not getattr(a, "cookies_from_browser", None):
+        a.cookies = env_cookiefile()  # None unless INSTAGRAM_SESSIONID is set
     fn = {"accounts": cmd_accounts, "add-account": cmd_add_account, "remove-account": cmd_remove_account,
           "plan": cmd_plan, "index": cmd_index, "add-posts": cmd_add_posts, "search": cmd_search,
           "thumbs": cmd_thumbs, "download": cmd_download, "doctor": cmd_doctor}[a.cmd]
