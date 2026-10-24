@@ -54,11 +54,17 @@ def tokens(value):
 def expand(topic):
     words = set(tokens(topic))
     variants = [topic.strip()]
+    groups = []
     for label, terms in LEXICON.items():
         candidates = [label] + terms
         if any(set(tokens(term)).issubset(words) for term in candidates if tokens(term)):
-            variants.extend(terms)
-    return list(dict.fromkeys(filter(None, variants)))[:6]
+            groups.append(terms)
+    if groups:
+        # Retain all matched concepts in the second translated search phrase.
+        variants.append(" ".join(group[0] for group in groups))
+        for group in groups:
+            variants.extend(group)
+    return list(dict.fromkeys(filter(None, variants)))[:12]
 
 def plan(topic, accounts_only=False):
     variants, jobs = expand(topic)[:2], []
