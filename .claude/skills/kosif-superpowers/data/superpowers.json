@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5849,
-"distinct_methods": 5568,
+"atoms": 5850,
+"distinct_methods": 5569,
 "twin_groups": 177,
 "superpowers": 481,
 "per_target": 12,
@@ -16856,8 +16856,8 @@
 "sim": 0.134
 },
 {
-"id": "SP-0141",
-"sim": 0.115
+"id": "SP-0140",
+"sim": 0.113
 }
 ]
 },
@@ -17954,6 +17954,189 @@
 "id": "SP-0140",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
+"name_en": "Audio-timed SVG motion compiler",
+"focus": [
+"graphics",
+"svg",
+"motion",
+"rendering"
+],
+"size": 18,
+"best": "proven",
+"status_mix": {
+"proven": 14,
+"install": 4
+},
+"ready_now": 14,
+"families": {
+"runnable-tools": 18
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"ffmpeg",
+"chromium",
+"node",
+"npm:react",
+"npm:three",
+"npm:gsap",
+"npm:remotion"
+],
+"pipeline": [
+{
+"id": "TOOL-13",
+"status": "proven",
+"name_en": "Audio-timed SVG motion compiler",
+"name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت"
+},
+{
+"id": "TOOL-14",
+"status": "proven",
+"name_en": "SVG motion engine runtime",
+"name_ar": "محرك حركة SVG"
+},
+{
+"id": "TOOL-16",
+"status": "proven",
+"name_en": "Doodle film runtime and renderer",
+"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
+},
+{
+"id": "TOOL-77",
+"status": "proven",
+"name_en": "Flexible aspect ratio resolver",
+"name_ar": "محلّل نِسَب أبعاد الفيديو"
+},
+{
+"id": "TOOL-79",
+"status": "proven",
+"name_en": "Video delivery gate",
+"name_ar": "بوابة فحص تسليم الفيديو"
+},
+{
+"id": "TOOL-80",
+"status": "proven",
+"name_en": "Flexible aspect ratio resolver",
+"name_ar": "محلّل نسب العرض المرن"
+},
+{
+"id": "TOOL-82",
+"status": "proven",
+"name_en": "Video delivery gate",
+"name_ar": "بوابة فحص تسليم الفيديو"
+},
+{
+"id": "TOOL-164",
+"status": "proven",
+"name_en": "Motion Physics",
+"name_ar": "فيزياء الحركة"
+},
+{
+"id": "TOOL-64",
+"status": "proven",
+"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
+},
+{
+"id": "TOOL-18",
+"status": "proven",
+"name_en": "Motion math toolkit",
+"name_ar": "مكتبة رياضيات الحركة"
+},
+{
+"id": "TOOL-17",
+"status": "proven",
+"name_en": "Third-party motion engine scaffolder",
+"name_ar": "مولّد مشاريع بداية لمحركات الحركة"
+},
+{
+"id": "TOOL-146",
+"status": "proven",
+"name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
+"name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
+},
+{
+"id": "TOOL-171",
+"status": "proven",
+"name_en": "KOSIF Infinite Matrices causal style engine",
+"name_ar": "محرك المصفوفات اللانهائية للأساليب السببية"
+},
+{
+"id": "TOOL-150",
+"status": "proven",
+"name_en": "UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check",
+"name_ar": "إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة"
+},
+{
+"id": "TOOL-78",
+"status": "install",
+"name_en": "HTML to MP4 renderer",
+"name_ar": "محوّل HTML إلى فيديو MP4"
+},
+{
+"id": "TOOL-83",
+"status": "install",
+"name_en": "HTML Canvas film starter",
+"name_ar": "قالب فيلم HTML Canvas"
+},
+{
+"id": "TOOL-81",
+"status": "install",
+"name_en": "Deterministic HTML-to-MP4 renderer",
+"name_ar": "محوّل حتمي من HTML إلى فيديو MP4"
+},
+{
+"id": "TOOL-84",
+"status": "install",
+"name_en": "Remotion film starter",
+"name_ar": "قالب فيلم Remotion"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_director.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_director.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_engine.mjs"
+],
+"twins": [
+[
+"TOOL-77",
+"TOOL-80"
+],
+[
+"TOOL-79",
+"TOOL-82"
+],
+[
+"TOOL-78",
+"TOOL-81"
+]
+],
+"distinct_methods": 15,
+"links": [
+{
+"id": "SP-0262",
+"sim": 0.284
+},
+{
+"id": "SP-0147",
+"sim": 0.237
+},
+{
+"id": "SP-0268",
+"sim": 0.207
+},
+{
+"id": "SP-0266",
+"sim": 0.197
+}
+]
+},
+{
+"id": "SP-0141",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "محرك إعادة بناء المونتاج المرجعي",
 "name_en": "Reference Edit Engine",
 "focus": [
@@ -18110,183 +18293,6 @@
 {
 "id": "SP-0407",
 "sim": 0.177
-}
-]
-},
-{
-"id": "SP-0141",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
-"name_en": "Audio-timed SVG motion compiler",
-"focus": [
-"graphics",
-"svg",
-"motion",
-"rendering"
-],
-"size": 17,
-"best": "proven",
-"status_mix": {
-"proven": 13,
-"install": 4
-},
-"ready_now": 13,
-"families": {
-"runnable-tools": 17
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"ffmpeg",
-"chromium",
-"node",
-"npm:react",
-"npm:three",
-"npm:gsap",
-"npm:remotion"
-],
-"pipeline": [
-{
-"id": "TOOL-13",
-"status": "proven",
-"name_en": "Audio-timed SVG motion compiler",
-"name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت"
-},
-{
-"id": "TOOL-16",
-"status": "proven",
-"name_en": "Doodle film runtime and renderer",
-"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
-},
-{
-"id": "TOOL-14",
-"status": "proven",
-"name_en": "SVG motion engine runtime",
-"name_ar": "محرك حركة SVG"
-},
-{
-"id": "TOOL-77",
-"status": "proven",
-"name_en": "Flexible aspect ratio resolver",
-"name_ar": "محلّل نِسَب أبعاد الفيديو"
-},
-{
-"id": "TOOL-79",
-"status": "proven",
-"name_en": "Video delivery gate",
-"name_ar": "بوابة فحص تسليم الفيديو"
-},
-{
-"id": "TOOL-80",
-"status": "proven",
-"name_en": "Flexible aspect ratio resolver",
-"name_ar": "محلّل نسب العرض المرن"
-},
-{
-"id": "TOOL-82",
-"status": "proven",
-"name_en": "Video delivery gate",
-"name_ar": "بوابة فحص تسليم الفيديو"
-},
-{
-"id": "TOOL-164",
-"status": "proven",
-"name_en": "Motion Physics",
-"name_ar": "فيزياء الحركة"
-},
-{
-"id": "TOOL-18",
-"status": "proven",
-"name_en": "Motion math toolkit",
-"name_ar": "مكتبة رياضيات الحركة"
-},
-{
-"id": "TOOL-146",
-"status": "proven",
-"name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
-"name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
-},
-{
-"id": "TOOL-17",
-"status": "proven",
-"name_en": "Third-party motion engine scaffolder",
-"name_ar": "مولّد مشاريع بداية لمحركات الحركة"
-},
-{
-"id": "TOOL-64",
-"status": "proven",
-"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
-"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
-},
-{
-"id": "TOOL-150",
-"status": "proven",
-"name_en": "UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check",
-"name_ar": "إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة"
-},
-{
-"id": "TOOL-78",
-"status": "install",
-"name_en": "HTML to MP4 renderer",
-"name_ar": "محوّل HTML إلى فيديو MP4"
-},
-{
-"id": "TOOL-83",
-"status": "install",
-"name_en": "HTML Canvas film starter",
-"name_ar": "قالب فيلم HTML Canvas"
-},
-{
-"id": "TOOL-81",
-"status": "install",
-"name_en": "Deterministic HTML-to-MP4 renderer",
-"name_ar": "محوّل حتمي من HTML إلى فيديو MP4"
-},
-{
-"id": "TOOL-84",
-"status": "install",
-"name_en": "Remotion film starter",
-"name_ar": "قالب فيلم Remotion"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_director.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_director.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
-],
-"twins": [
-[
-"TOOL-77",
-"TOOL-80"
-],
-[
-"TOOL-79",
-"TOOL-82"
-],
-[
-"TOOL-78",
-"TOOL-81"
-]
-],
-"distinct_methods": 14,
-"links": [
-{
-"id": "SP-0262",
-"sim": 0.29
-},
-{
-"id": "SP-0147",
-"sim": 0.242
-},
-{
-"id": "SP-0268",
-"sim": 0.207
-},
-{
-"id": "SP-0266",
-"sim": 0.2
 }
 ]
 },
@@ -19064,8 +19070,8 @@
 "sim": 0.273
 },
 {
-"id": "SP-0141",
-"sim": 0.242
+"id": "SP-0140",
+"sim": 0.237
 },
 {
 "id": "SP-0325",
@@ -19136,7 +19142,7 @@
 "name_ar": "متابعة أشهر 1000 مستودع"
 },
 {
-"id": "TOOL-171",
+"id": "TOOL-172",
 "status": "proven",
 "name_en": "Instagram product video finder",
 "name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
@@ -19178,7 +19184,7 @@
 "sim": 0.164
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.151
 },
 {
@@ -23373,7 +23379,7 @@
 "sim": 0.102
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.101
 },
 {
@@ -25516,7 +25522,7 @@
 "sim": 0.195
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.026
 }
 ]
@@ -27462,7 +27468,7 @@
 "sim": 0.13
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.024
 }
 ]
@@ -27573,7 +27579,7 @@
 "sim": 0.214
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.022
 }
 ]
@@ -27801,8 +27807,8 @@
 "sim": 0.093
 },
 {
-"id": "SP-0141",
-"sim": 0.054
+"id": "SP-0140",
+"sim": 0.053
 }
 ]
 },
@@ -27913,7 +27919,7 @@
 "sim": 0.223
 },
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.122
 }
 ]
@@ -31607,7 +31613,7 @@
 "sim": 0.139
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.044
 }
 ]
@@ -33254,8 +33260,8 @@
 "sim": 0.169
 },
 {
-"id": "SP-0141",
-"sim": 0.136
+"id": "SP-0140",
+"sim": 0.134
 }
 ]
 },
@@ -34032,8 +34038,12 @@
 "distinct_methods": 18,
 "links": [
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.122
+},
+{
+"id": "SP-0140",
+"sim": 0.094
 },
 {
 "id": "SP-0263",
@@ -34041,10 +34051,6 @@
 },
 {
 "id": "SP-0274",
-"sim": 0.086
-},
-{
-"id": "SP-0356",
 "sim": 0.086
 }
 ]
@@ -34256,8 +34262,8 @@
 "sim": 0.364
 },
 {
-"id": "SP-0141",
-"sim": 0.29
+"id": "SP-0140",
+"sim": 0.284
 },
 {
 "id": "SP-0272",
@@ -34462,7 +34468,7 @@
 "sim": 0.316
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.156
 },
 {
@@ -34683,8 +34689,8 @@
 "sim": 0.188
 },
 {
-"id": "SP-0141",
-"sim": 0.105
+"id": "SP-0140",
+"sim": 0.104
 }
 ]
 },
@@ -35080,8 +35086,8 @@
 "sim": 0.206
 },
 {
-"id": "SP-0141",
-"sim": 0.2
+"id": "SP-0140",
+"sim": 0.197
 }
 ]
 },
@@ -35448,7 +35454,7 @@
 "sim": 0.323
 },
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.207
 },
 {
@@ -35629,8 +35635,8 @@
 "sim": 0.107
 },
 {
-"id": "SP-0141",
-"sim": 0.102
+"id": "SP-0140",
+"sim": 0.1
 }
 ]
 },
@@ -35944,8 +35950,8 @@
 "sim": 0.303
 },
 {
-"id": "SP-0141",
-"sim": 0.14
+"id": "SP-0140",
+"sim": 0.139
 }
 ]
 },
@@ -36381,8 +36387,8 @@
 "sim": 0.171
 },
 {
-"id": "SP-0141",
-"sim": 0.135
+"id": "SP-0140",
+"sim": 0.132
 },
 {
 "id": "SP-0154",
@@ -36669,8 +36675,8 @@
 "sim": 0.102
 },
 {
-"id": "SP-0141",
-"sim": 0.07
+"id": "SP-0140",
+"sim": 0.069
 }
 ]
 },
@@ -36800,16 +36806,20 @@
 "sim": 0.175
 },
 {
-"id": "SP-0141",
-"sim": 0.131
-},
-{
 "id": "SP-0268",
 "sim": 0.13
 },
 {
 "id": "SP-0303",
 "sim": 0.126
+},
+{
+"id": "SP-0448",
+"sim": 0.125
+},
+{
+"id": "SP-0140",
+"sim": 0.125
 }
 ]
 },
@@ -37069,8 +37079,8 @@
 "sim": 0.143
 },
 {
-"id": "SP-0141",
-"sim": 0.142
+"id": "SP-0140",
+"sim": 0.139
 }
 ]
 },
@@ -37196,8 +37206,8 @@
 "sim": 0.096
 },
 {
-"id": "SP-0141",
-"sim": 0.046
+"id": "SP-0140",
+"sim": 0.048
 }
 ]
 },
@@ -37322,8 +37332,8 @@
 "sim": 0.117
 },
 {
-"id": "SP-0141",
-"sim": 0.086
+"id": "SP-0140",
+"sim": 0.085
 }
 ]
 },
@@ -37563,8 +37573,8 @@
 "sim": 0.11
 },
 {
-"id": "SP-0141",
-"sim": 0.105
+"id": "SP-0140",
+"sim": 0.103
 }
 ]
 },
@@ -37784,8 +37794,8 @@
 "sim": 0.16
 },
 {
-"id": "SP-0141",
-"sim": 0.104
+"id": "SP-0140",
+"sim": 0.102
 }
 ]
 },
@@ -37975,7 +37985,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.159
 },
 {
@@ -38369,8 +38379,8 @@
 "sim": 0.097
 },
 {
-"id": "SP-0141",
-"sim": 0.068
+"id": "SP-0140",
+"sim": 0.067
 }
 ]
 },
@@ -38877,7 +38887,7 @@
 "sim": 0.072
 },
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.032
 }
 ]
@@ -39140,12 +39150,12 @@
 "distinct_methods": 35,
 "links": [
 {
-"id": "SP-0141",
-"sim": 0.137
-},
-{
 "id": "SP-0268",
 "sim": 0.136
+},
+{
+"id": "SP-0140",
+"sim": 0.134
 },
 {
 "id": "SP-0269",
@@ -39809,8 +39819,8 @@
 "sim": 0.206
 },
 {
-"id": "SP-0141",
-"sim": 0.152
+"id": "SP-0140",
+"sim": 0.13
 },
 {
 "id": "SP-0345",
@@ -40051,8 +40061,8 @@
 "sim": 0.09
 },
 {
-"id": "SP-0141",
-"sim": 0.065
+"id": "SP-0140",
+"sim": 0.064
 }
 ]
 },
@@ -43137,7 +43147,7 @@
 "sim": 0.445
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.16
 }
 ]
@@ -45120,7 +45130,7 @@
 "sim": 0.29
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.051
 }
 ]
@@ -46839,7 +46849,7 @@
 "sim": 0.408
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.335
 },
 {
@@ -47031,7 +47041,7 @@
 "sim": 0.122
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.122
 }
 ]
@@ -47271,7 +47281,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.18
 },
 {
@@ -48210,8 +48220,8 @@
 "sim": 0.159
 },
 {
-"id": "SP-0141",
-"sim": 0.153
+"id": "SP-0140",
+"sim": 0.149
 }
 ]
 },
@@ -48919,8 +48929,8 @@
 "sim": 0.231
 },
 {
-"id": "SP-0141",
-"sim": 0.17
+"id": "SP-0140",
+"sim": 0.168
 }
 ]
 },
@@ -50595,7 +50605,7 @@
 "sim": 0.326
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.296
 },
 {
@@ -53739,7 +53749,7 @@
 "sim": 0.188
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.177
 }
 ]
@@ -53874,7 +53884,7 @@
 "sim": 0.186
 },
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.105
 }
 ]
@@ -55916,7 +55926,7 @@
 "sim": 0.125
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.072
 }
 ]
@@ -56121,7 +56131,7 @@
 "sim": 0.264
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.083
 }
 ]
@@ -59145,7 +59155,7 @@
 "sim": 0.169
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.125
 }
 ]
@@ -59268,7 +59278,7 @@
 "sim": 0.194
 },
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.073
 }
 ]
@@ -59391,7 +59401,7 @@
 "sim": 0.283
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.161
 }
 ]
@@ -59968,8 +59978,8 @@
 "sim": 0.092
 },
 {
-"id": "SP-0141",
-"sim": 0.038
+"id": "SP-0140",
+"sim": 0.037
 }
 ]
 },

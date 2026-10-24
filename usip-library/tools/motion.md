@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (21 أداة)
+# أدوات المجال `motion` (22 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -146,6 +146,71 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:creative-reasoning-bridge --evidence <ملف>`.
+
+### `infinite-matrices` — محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `.claude/skills/kosif-infinite-matrices/scripts/kmx.py` (جذر: repo) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `creativity-engine`, `particles-fluids-physics`, `light-glow-bloom`, `engines-render-pipeline` |
+
+**ما تفعله:** يبني نظامًا بصريًا جديدًا من لبنات سببية (حالة، عملية، قانون، زمن، ذاكرة، تغذية راجعة) مستخرجة من أساليب الأطلس الـ86، ويثبت قانونه بمقارنة مضادة أ/ب/ج عبر بذور متعددة ومنحنى جرعة، ويرندر مشهدًا قابلًا للتقليب ولقطات وفيديو MP4 بأدوات الأطلس، ويحفظ النتائج والأفكار والتقييمات والمصادر في سجل متسلسل بالهاش.
+
+**What it does:** Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger.
+
+#### متى تُستدعى
+
+- «اعمل أسلوب جديد بقانون سببي وقارن مع وبدون ذاكرة الضوء»
+- «طوّر فكرة الزجاج اللي بيتذكر الضوء ورندرها فيديو»
+- «Invent a new motion style from causal bricks and prove the effect with a counterfactual»
+- «Which of the 86 atlas styles really use a field to steer motion?»
+- «سجّل المصدر الجديد ده وابني على نتايج التجارب اللي فاتت»
+
+#### الأوامر
+
+- **doctor**: Reports python, node+Playwright, ffmpeg, the atlas assets, the 86-card index, the 283 hypothesis statuses, the ledger hash chain and the number of registered sources; exits 1 if the ledger chain is broken.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor`
+- **recipe validate**: Checks schema, all six bricks, three parents in the order structure/dynamics/finish from three families, operators tagged on each parent in the 86-card index, overrides that point at real fields, and no shared code lineage between parents (REA fingerprints). Prints the recipe hash.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py recipe validate .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json`
+- **experiment**: Simulates every condition from identical inputs, replicates over the recipe's seeds, sweeps the coupling gain, and returns CONFIRMED_IN_MODEL only when all checks pass (exit 3 otherwise). Writes report.json, report.md and scene.html; --render adds JPEG stills and a pixel A/B/C difference; --mp4 renders 1280x720 video with the offline atlas score; --record appends to the ledger (refuses a recipe hash already recorded unless --replication).
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py experiment --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass --render --mp4`
+- **scene**: Writes only the self-contained scene page (atlas contract: seek, DURATION, scoreSound, __ready, __kosif; views grid / one condition / storyboard).
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py scene --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass.html`
+- **ledger**: stats: events by type, chain check, the 283 hypothesis statuses, experiments and Beta operator scores; list: one line per event; verify: hash-chain check (exit 1 when broken).
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py ledger stats`
+- **rate**: Appends a human rating (0..5) for an experiment that exists in the ledger; ratings feed the operator scores used by ideate.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py rate --experiment EXP-0001 --score 4 --by "reviewer"`
+- **ideate**: Proposes parent/role triples from three families, skipping any signature already in the 283 seeds or the ledger and any pair of parents that share code (REA), ranked by ledger feedback; --record saves them as PROPOSED ideas.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py ideate --count 10`
+- **hypotheses**: stats / show ID / mark ID --status S --evidence FILE: the 283 seeds stay UNTESTED_UNRENDERED until marked with an evidence file whose sha256 is stored.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py hypotheses stats`
+- **sources**: list / verify --file F / add --file F --title T --relevance core\|method\|context\|not_relevant --rights R --used-for "a;b": the registry of every source by sha256; the same bytes under a new name become an alias.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py sources list`
+- **bricks**: summary or show ID from data/86_style_code_bricks.json: six bricks per style inferred from its code, REA function/call/relation counts and code-lineage neighbours.
+  - `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py bricks show flow-field`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- optional: node, playwright, ffmpeg
+- الأمان: writes-files
+- الموافقة: --record, rate, ideate --record, hypotheses mark and sources add append to tracked files (memory/ledger.jsonl, sources/registry.json) that are meant to be committed as shared research memory; run them only for results the user wants kept.
+- الحدود: v1 has one stimulus, one structure and one dynamics law; its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py`
+- `.claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py`
+- مرجع: `.claude/skills/kosif-infinite-matrices/SKILL.md`
+- مرجع: `.claude/skills/kosif-infinite-matrices/references/engine.md`
+- مرجع: `.claude/skills/kosif-infinite-matrices/references/limits.md`
+- مرجع: `.claude/skills/kosif-infinite-matrices/references/examples.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:infinite-matrices --evidence <ملف>`.
 
 ### `motion-director` — مُصرِّف حركة SVG المتزامنة مع الصوت / Audio-timed SVG motion compiler
 

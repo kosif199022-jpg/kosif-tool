@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **170 powers follow** — ✅ 137 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **171 powers follow** — ✅ 138 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -15,7 +15,7 @@
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-164 (21)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-171 (22)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-168 (15)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-171 (19)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-172 (19)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -579,6 +579,15 @@
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:animejs`](../requirements.md#req-npm-animejs) · [`npm:react`](../requirements.md#req-npm-react)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-171 · محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبني نظامًا بصريًا جديدًا من لبنات سببية (حالة، عملية، قانون، زمن، ذاكرة، تغذية راجعة) مستخرجة من أساليب الأطلس الـ86، ويثبت قانونه بمقارنة مضادة أ/ب/ج عبر بذور متعددة ومنحنى جرعة، ويرندر مشهدًا قابلًا للتقليب ولقطات وفيديو MP4 بأدوات الأطلس، ويحفظ النتائج والأفكار والتقييمات والمصادر في سجل متسلسل بالهاش. — Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger.
+- **متى أستخدمها / when:** اعمل أسلوب جديد بقانون سببي وقارن مع وبدون ذاكرة الضوء / Invent a new motion style from causal bricks and prove the effect with a counterfactual
+- **كيف / how:** doctor: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor`; recipe validate: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py recipe validate .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json`; experiment: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py experiment --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass --render --mp4`; scene: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py scene --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass.html`. Full card: `python3 scripts/hub.py tool infinite-matrices`. Limits: v1 has one stimulus, one structure and one dynamics law; its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating. **أرقام / params:** in: A recipe JSON (kosif.matrices.recipe.v1), the committed 86-card index and code-brick data, and for sources a local file or URL. · out: JSON on stdout; experiment writes report.json, report.md, scene.html, stills/*.jpg and an MP4 into --out; --record, rate, ideate --record, hypotheses mark and sources add write the tracked files memory/ledger.jsonl and sources/registry.json.
+- **تثبيت / install:** `needs on PATH: python3 · optional: node, playwright, ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py` · `kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py` · `kosif-tool/.claude/skills/kosif-infinite-matrices/scripts/kmx.py`
 - **المصدر / source:** data/tools.json
 
 ## Editing and reference video / المونتاج والفيديو المرجعي
@@ -1501,7 +1510,7 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_github_top_repos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/github_top_repos.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-171 · البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder · ✅ مُثبت هنا / proven here
+#### TOOL-172 · البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف التلقائي للصورة. ويطلع خطة بحث ويب بدون شبكة، وينزّل الصور المصغّرة للمعاينة، ويحمّل المختار عبر fetch_video.py مع سجل حقوق. — Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log.
 - **متى أستخدمها / when:** دوّر لي في إنستجرام على فيديوهات تناسب منتج العطر ده ونزّلها / Find Instagram reels from my saved accounts that fit a watch commercial
 - **كيف / how:** accounts: `python3 scripts/instagram_finder.py accounts`; add-account: `python3 scripts/instagram_finder.py add-account "https://www.instagram.com/name?igsh=xyz" --tag product`; plan: `python3 scripts/instagram_finder.py plan "عطر رجالي"`; index: `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`. Full card: `python3 scripts/hub.py tool instagram-finder`. Limits: Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device. **أرقام / params:** in: A product query in Arabic or English; saved accounts in data/instagram_sources.json; optionally --session-user (an instaloader session the user created), --cookies (the user's cookies.txt), hashtags and reel links; or the environment variable INSTAGRAM_SESSIONID (the sessionid cookie of the user's own, ideally secondary, account) for cloud runs. · out: out/instagram/index.json (local index), search results JSON (--save), out/instagram/thumbs/*.jpg, out/instagram/videos/ with fetch_video.py files and manifest.json, and instagram_rights.jsonl.
@@ -1523,7 +1532,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (170)
+- الرخص / licences: — (171)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

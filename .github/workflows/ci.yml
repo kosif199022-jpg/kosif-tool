@@ -23,6 +23,12 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: KOSIF Superpowers integrity + routing evaluations
         run: python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: KOSIF Infinite Matrices engine, ledger chain and source registry
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-infinite-matrices/tests -v
+          python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py ledger verify
+          python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py recipe validate .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json
+          node --check .claude/skills/kosif-infinite-matrices/scripts/kmx_capture.cjs
       - name: Skill layout map (USIP v5.4)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_skill_layout.py' -v
       - name: Prompt lab, GitHub top-1000 tracker, repo map, memory ops and motion physics

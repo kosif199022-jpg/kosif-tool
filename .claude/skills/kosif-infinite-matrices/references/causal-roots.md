@@ -23,4 +23,6 @@ Every one of the 86 cards should be represented as `{source_id, family, state, o
 
 **Status from audit, as research not production:** indexed 86/86 source cards; 112 analyst labels; 12 working families; 75 reproducible candidate *descriptions*. This does not verify 86 renders, 112 code modules, online/world originality, or autonomous learning.
 
+**Update 2026-10-24:** the 86 style sources were decomposed from their code with REA and a lexical scan (`data/86_style_code_bricks.json`, see [code-bricks.md](code-bricks.md)); 95.7% of checkable analyst tags are supported by code. The glass example above now runs as recipe KMX-R-0001 / experiment EXP-0001 with three conditions, eight seeds and a dose sweep, and is rendered (see [engine.md](engine.md)).
+
 **Next production gates:** typed interoperability → reproducible minimal renderer → A/B difference → aesthetic/semantic human review → cross-generation improvement tracking. Save successful, independently run recipes as new modules, not just prompt texts.

@@ -3201,7 +3201,7 @@
 "SP-0262",
 "SP-0116",
 "SP-0011",
-"SP-0141"
+"SP-0140"
 ],
 "text": "html to mp4 renderer (repo tool) من html إلى فيديو render html to video mp4 motion فيديو dependency-free rtl dashboard page لوحة rtl بلا مكتبات dashboard html svg rtl dark mode لوحة معلومات عربي phone-viewport screenshot + overflow check لقطة شاشة بمقاس الهاتف وفحص الفيض screenshot playwright mobile viewport qa لقطة شاشة جوال data apps (streamlit, gradio) تطبيقات بيانات سريعة streamlit gradio data app تطبيق بيانات pa11y: audit urls or local html for accessibility from the cli pa11y: تدقيق الروابط أو ملفات html المحلية لإمكانية accessibility pa11y toolbelt توسعة axe-core: run wcag checks on a rendered page and report violations axe-core: فحص صفحة معروضة وفق قواعد wcag والإبلاغ accessibility axe-core toolbelt توسعة publish a private interactive page (artifact) نشر صفحة تفاعلية خاصة artifact publish html page dashboard share صفحة نشر لوحة artifact runtime capabilities قدرات الصفحة أثناء التشغيل artifact database shared state capabilities قاعدة بيانات مشاركة artifactdata and artifactcomments tools صفوف وتعليقات الصفحة artifactdata comments records تعليقات single-file interactive html playground: controls, live preview and a ready-to-copy prompt ملعب html تفاعلي في ملف واحد: أدوات تحكم ومعاينة حية وprompt جاهز للنسخ playground interactive html prompt builder presets live preview صفحة تفاعلية منشئ الطلب check an interactive challenge is solvable before posing it تحدٍّ قابل للحل قبل عرضه solvable challenge feasibility learning game تحدٍّ هدف ممكن لعبة تعليمية a 1-2-5 gauge scale and a two-length glossary مقياس 1-2-5 وتعريف بطولين nice scale 1-2-5 gauge glossary tooltip مقياس عدّاد تعريف قصير motion and display preferences and an inline loader تفضيلات الحركة والعرض وشاشة تحميل فورية reduced motion accessibility projector mode webgl fallback loader تقليل الحركة إتاحة بروجكتر one sound sprite cut from real cc0 recordings مؤثرات من تسجيلات حقيقية في ملف واحد sound sprite sfx cc0 credits freesound مؤثرات صوتية اعتمادات رخصة"
 },
@@ -3391,6 +3391,30 @@
 },
 "SP-0140": {
 "id": "SP-0140",
+"name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
+"name_en": "Audio-timed SVG motion compiler",
+"hub": "agents",
+"stage": "assemble",
+"stages": {
+"create": 5,
+"assemble": 7,
+"deliver": 2,
+"verify": 2,
+"plan": 2
+},
+"size": 18,
+"best": "proven",
+"ready_now": 14,
+"links": [
+"SP-0262",
+"SP-0147",
+"SP-0268",
+"SP-0266"
+],
+"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame count aspect check فحص الفيديو بوابة التسليم جهارة الصوت عدد الإطارات مدة الفيديو تقرير الاختبار motion physics فيزياء الحركة motion-physics spring spring physics cubic-bezier easing stagger keyframes overshoot settle time react-spring anime.js نابض ارتداد تسهيل تتابع فيزياء الحركة فريمات atlas explainer renderer: storyboard, determinism check and real mp4 with synthesized score رندر أفلام الشرح: ستوريبورد وفحص حتمية وmp4 حقيقي بصوت مُركّب atlas-render render explainer storyboard mp4 رندر ستوريبورد فيلم شرح atlas canvas seek motion math toolkit مكتبة رياضيات الحركة motion-toolkit easing keyframes interpolation timeline تسهيل الحركة إطارات مفتاحية stroke reveal رسم الخط camera zoom pan walk cycle parallax hand-drawn jitter timecode word cues ترجمة بالكلمة frame contract third-party motion engine scaffolder مولّد مشاريع بداية لمحركات الحركة motion-stack gsap remotion manim three.js pixijs p5.js rough.js vivus scaffold starter project motion engines محركات الحركة مشروع بداية قالب أنيميشن تحريك بالكود seekable parti"
+},
+"SP-0141": {
+"id": "SP-0141",
 "name_ar": "محرك إعادة بناء المونتاج المرجعي",
 "name_en": "Reference Edit Engine",
 "hub": "agents",
@@ -3413,30 +3437,6 @@
 "SP-0407"
 ],
 "text": "reference edit engine محرك إعادة بناء المونتاج المرجعي reference-edit-engine reference edit cut rhythm remotion project editable timeline word-safe cuts replacement clips katana-style مونتاج مرجعي إيقاع القطعات مشروع ريموشن إعادة بناء المونتاج محاكاة مونتاج لقطات بديلة reference video timing probe فاحص توقيت الفيديو المرجعي motion-reference-probe cut detection scene change ffprobe video metadata reference video shot boundaries timing probe كشف القطعات تغيّر المشهد بيانات الفيديو الفيديو المرجعي حدود اللقطات مدة الفيديو kosif mimic reference rebuilder محرك محاكاة الفيديو المرجعي mimic reference video remake transition classification xfade text animation arabic text font matching colour transfer spec.json محاكاة فيديو مرجعي إعادة بناء انتقالات كتابة عربية متحركة مطابقة الخط reference visual fingerprint البصمة البصرية للفيديو المرجعي reference-visual-fingerprint visual fingerprint color palette luma contrast frame change camera pan candidate reference look بصمة بصرية لوحة الألوان الإضاءة التباين حركة الكاميرا ألوان الفيديو المرجعي footage-first cut planner مُخطِّط قطعات اللقطات الحقيقية cinematic-cut-planner edl edit decision list b-roll planning footage selection speech pause scenes licensed footage camera moves خطة مونتاج قائمة قرارات المونتاج توزيع اللقطات لقطات مرخصة وقفات الكلام kosif timeline: genuine multitrack video, image and audio editor محرر kosif timeline: مونتاج متعدد المسارات مع تراجع وإعادة kosif-timeline timeline multi track multitrack video editing photo image overlay trim cuts crossfade audio mix undo redo ffmpeg mp4 h264 aac مونتاج تايملاين فيديو صوت قص تراجع reference-edit structural quality gate بوابة جودة خطة المونتاج creative-quality-gate quality gate plan.json frame continuity no gap no overlap word timing hard cut remotion reference edit audit بوابة الجودة استمرارية الإطارات توقيت الكلمات قطع حاد تدقيق المونتاج خطة المونتاج cinematic b-roll renderer تصيير لقطات b-roll بحركة كاميرا cinematic-broll-render b-roll render ffmpeg zoompan ken burns camera motion audio stream copy video master edl render تصيير حركة كاميرا ماستر فيديو الصوت الأصلي لقطات مرخصة مونتاج حقيقي kosif timeline one-command synthetic media demo تجربة مونتاج kosif timeline تلقائية بملفات أصلية مولدة kosif-timeline-demo timeline demo proof ffmpeg video audio synthetic reproducible مونتاج تجربة فيديو اختبار reel factory: voice + word timings + licensed shots → verified 9:16 reel مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص reel-factory reel reels factory w"
-},
-"SP-0141": {
-"id": "SP-0141",
-"name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
-"name_en": "Audio-timed SVG motion compiler",
-"hub": "agents",
-"stage": "assemble",
-"stages": {
-"create": 5,
-"assemble": 6,
-"deliver": 2,
-"verify": 2,
-"plan": 2
-},
-"size": 17,
-"best": "proven",
-"ready_now": 13,
-"links": [
-"SP-0262",
-"SP-0147",
-"SP-0268",
-"SP-0266"
-],
-"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame count aspect check فحص الفيديو بوابة التسليم جهارة الصوت عدد الإطارات مدة الفيديو تقرير الاختبار motion physics فيزياء الحركة motion-physics spring spring physics cubic-bezier easing stagger keyframes overshoot settle time react-spring anime.js نابض ارتداد تسهيل تتابع فيزياء الحركة فريمات motion math toolkit مكتبة رياضيات الحركة motion-toolkit easing keyframes interpolation timeline تسهيل الحركة إطارات مفتاحية stroke reveal رسم الخط camera zoom pan walk cycle parallax hand-drawn jitter timecode word cues ترجمة بالكلمة frame contract seekable particles: closed-form bursts, budget check and svg frame جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار svg particles burst explosion seeded deterministic hash seek budget svg physics drag gravity جسيمات انفجار بذرة حتمي فيزياء جاذبية ميزانية إطار third-party motion engine scaffolder مولّد مشاريع بداية لمحركات الحركة motion-stack gsap remotion manim three.js pixijs p5.js rough.js vivus scaffold starter project motion engines محركات الحركة مشروع بداية قالب أنيمي"
 },
 "SP-0142": {
 "id": "SP-0142",
@@ -3568,7 +3568,7 @@
 "links": [
 "SP-0184",
 "SP-0185",
-"SP-0141",
+"SP-0140",
 "SP-0325"
 ],
 "text": "subtitle to words.json converter محوّل الترجمات إلى توقيت الكلمات repo-words-convert words.json srt vtt whisper word timing captions subtitle convert words.js توقيت الكلمات ترجمة تفريغ صوتي مزامنة الكلمات تحويل الترجمة كابشن audio-to-storyboard bridge جسر الصوت إلى لوحة القصة creative-reasoning-bridge storyboard audio sync word timing motion graphics voiceover scene plan kinetic typography doodle لوحة القصة مزامنة الصوت توقيت الكلمات موشن جرافيك تعليق صوتي ريلز wav audio cue mapper مستخرج إشارات التوقيت من الصوت audio-cue-mapper audio onsets energy envelope rms تحليل الصوت بدايات الأصوات word timing توقيت الكلمات whisperx wav audio sync مزامنة الصوت captions data cues.json transients motion starter kit timing bridge جسر توقيتات motion starter kit motion-kit-bridge motion starter kit words.json word timing storyboard doodle whiteboard plotter infographic arabic captions توقيت الكلمات لوحة قصة رسم يدوي سبورة تزامن صوتي caption lines: word timings to readable srt/vtt سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة caption-lines captions subtitles srt vtt whisper word timestamps hallucination reading speed ترجمة سطور تفريغ هلوسة سبتايتل character ik arm animator تحريك ذراع الشخصية بالحركية العكسية character-ik inverse kinematics ik two-bone arm elbow gesture word cue words.json aac stream copy character rig حركية عكسية ذراع كوع إيماءة توقيت الكلمات تحريك الشخصيات music rhythm hypotheses فرضيات إيقاع الموسيقى music-rhythm-engine bpm tempo estimate beat grid سرعة الإيقاع شبكة النبضات rhythm إيقاع music sync cut on beat القص على الإيقاع energy sections onsets half-time double-time unified cinematic: sound-clocked animation and video السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا unified-cinematic cinematic montage camera wav aac h264 pulse audio cues synchronization sound video music fade ken burns animation صوت مونتاج تحريك كاميرا فيديو سينما موسيقى tts script prep: prosody-safe chunks, duration estimate and ssml تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وssml tts-script tts text to speech ssml voice-over narration chunk prosody duration wpm break lang tag تعليق صوتي تحويل النص إلى كلام تقطيع مدة وقفات نطق سكريبت"
@@ -3592,7 +3592,7 @@
 "links": [
 "SP-0476",
 "SP-0115",
-"SP-0140",
+"SP-0141",
 "SP-0144"
 ],
 "text": "community source scout مستكشف مصادر المجتمع source-scout source scout community sources reference repositories github license gate code reuse python top 10 system design مصادر المجتمع مستودعات مرجعية ترخيص إعادة استخدام الكود مستكشف المصادر أفضل مستودعات بايثون creative sources offline search بحث المصادر الإبداعية دون اتصال creative-external-search creative search open source video tools motion graphics repos image editing creative websites discovery index github metadata offline search بحث إبداعي أدوات مونتاج مواقع تصميم موشن جرافيك تحرير الصور مستودعات مفتوحة المصدر sources index: per-work-dir index memory of the user's attachments فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل sources-index sources index attachments provenance prompt injection secret scan line range فهرس مصادر الذاكرة الفهرسية مرفقات dash/hls stream grabber for editing ملتقط بث dash وhls للمونتاج stream-grabber hls dash m3u8 mpd stream download segments subtitles بث تحميل مقاطع ترجمة github top-1000 tracker متابعة أشهر 1000 مستودع github-top-repos github top repositories most starred stars licence tracker mining open source مستودعات جيت هاب أشهر المستودعات تراخيص نجوم instagram product video finder البحث عن فيديوهات إنستجرام لمنتج وتحميلها instagram-finder instagram reels product video hashtag saved accounts instaloader search انستجرام إنستجرام ريلز فيديوهات منتج هاشتاج حسابات محفوظة بحث permitted reference fetch and measure جلب المرجع المسموح وقياسه fetch-reference reference video fetch hls m3u8 contact sheet scene cuts palette ffprobe style.md observe مرجع جلب لوحة إطارات قطعات لوحة ألوان رصد المرجع video link downloader for montage تنزيل الفيديو من الروابط للمونتاج fetch-video yt-dlp video download links montage edit-safe mp4 h.264 audio only cookies manifest تحميل فيديو تنزيل من رابط مونتاج صوت فقط نسخة آمنة cinema c iphone downloader studio استوديو التنزيل cinema c للآيفون repo-ashell-cinema a-shell iphone yt-dlp video download photos safe ffmpeg studio reels 9:16 loudness -14 lufs audio separation تنزيل فيديو آيفون ريلز ضغط الفيديو فصل الصوت استوديو"
@@ -4395,7 +4395,7 @@
 "links": [
 "SP-0037",
 "SP-0099",
-"SP-0140",
+"SP-0141",
 "SP-0356"
 ],
 "text": "topic-to-short pipeline with reviewable stages خط إنتاج من موضوع إلى فيديو قصير moneyprinter automation stock footage tts subtitles shorts فيديو قصير أتمتة مونتاج"
@@ -4680,7 +4680,7 @@
 "SP-0342",
 "SP-0209",
 "SP-0220",
-"SP-0140"
+"SP-0141"
 ],
 "text": "project 3d point to screen for hud callout إسقاط نقطة ثلاثية على الشاشة لوسم تعليق توضيحي خط إشارة شرح الأجزاء callout label tracking hud corner frame إطار hud زوايا تايم كود إطار بسيط corner brackets minimal hud hud frame overlay إطار hud عداد الإطارات تايم كود زوايا الإطار frame counter timecode overlay film hud overlay طبقة hud فيلمية إيقاع الموسيقى عداد الإيقاع تايم كود bpm counter music hud persistent hud reel frame إطار hud ثابت للشوريل إيقاع فصول الفيديو تايم كود beat counter chapter label paper hud frame إطار hud ورقي إطار زوايا تايم كود خلفية كريمية corner brackets timecode overlay showreel hud frame إطار hud للريل واجهة تقنية تايم كود شوريل reel overlay timecode hud frame chrome إطار معلومات hud خط تقدم إطار خفيف تايم كود progress line corner ticks chapter hud واجهة فصول فصول تايم كود سرعة الإيقاع bpm counter hud overlay hud showreel frame إطار hud للريل شوريل شريط تقدم اسم الفصل reel overlay progress bar production hud frame إطار hud إنتاجي مواصفات الفيديو عداد الإيقاع إطار تقني beat counter specs overlay hud corner frame with running timecode إطار hud بزوايا وعدّاد زمني تايم كود رابط الموقع زوايا ثابتة timecode safe area persistent cinematic hud frame إطار hud سينمائي ثابت عد تنازلي مازورة اسم الفنان music video bar counter numbered hud reel frame إطار hud مرقم للشوريل ترقيم الأقسام شوريل دقة الفيديو section counter reel frame viewfinder hud frame إطار معاينة بزوايا وتايمكود محدد المنظر شكل الكاميرا تايم كود camera ui corner labels showreel hud overlay إطار hud للشوريل ريل أعمال تراكب ثابت عداد إطارات showreel overlay viewfinder hud واجهة كاميرا شاشة الكاميرا نقطة التسجيل تايم كود rec camera frame cinematic hud chrome إطار hud سينمائي إطار سينمائي مؤشر التشغيل شريط الزمن playhead elapsed bar hud reel chrome إطار hud للريل ريل مسطرة زمنية رمز المشهد reel overlay scrubber persistent game hud frame إطار hud لعبة ثابت واجهة لعبة عداد نقاط مؤقت تنازلي game ui score counter camcorder hud frame إطار كاميرا تسجيل كاميرا فيديو نقطة التسجيل تايم كود rec dot camcorder look viewfinder hud chapters إطار عدسة كاميرا بفصول مرقمة محدد المنظر فيوفايندر نقاط تقدم viewfinder camera overlay fig-caption technical hud hud تقني بتسميات fig تعليق الشكل مواصفات تقنية مربعات الإيقاع figure caption technical overlay self-annotating hud hud يشرح التقنية شرح التقنية تعليق برمجي إيقاع code comment bpm scope hud with live readouts واجهة قراءات حية راسم إشارة قراءات حية أوسيلوسكوب oscilloscope live readout"
 },
@@ -4988,7 +4988,7 @@
 "SP-0218",
 "SP-0205",
 "SP-0278",
-"SP-0140"
+"SP-0141"
 ],
 "text": "shot vocabulary as deterministic 3d cameras مفردات اللقطات ككاميرات أنواع اللقطات وصف اللقطة لغة الإخراج shot types director veo shot language cameras (20 kinds) لغة اللقطات أنواع اللقطات لقطة واسعة لقطة قريبة shot types close-up low angle shot vocabulary camera (20 kinds) مفردات اللقطات أحجام اللقطات لغة المخرج زوايا التصوير shot size director veo shot vocabulary as cameras مفردات اللقطات ككاميرات أنواع اللقطات لقطة قريبة زاوية التصوير shot types veo shot from words لقطة من الكلمات وصف نصي نص إلى كاميرا لغة اللقطات text to camera prompt crane to top-down hero end card رفع الكاميرا للقطة علوية ختامية لقطة علوية شعار الختام كرين outro overhead shot shot sizes, angles and camera-move vocabulary مفردات اللقطات والزوايا وحركة الكاميرا قائمة لقطات زاوية التصوير حجم اللقطة shot list framing terms shot sizes + angles أحجام اللقطات والزوايا حجم اللقطة زاوية الكاميرا كلوز أب درون close-up pov faceless shot types table أنواع لقطات بدون وجه بدون وجه زوايا التصوير مسافة الكاميرا b-roll faceless shots face-free camera setups إعدادات تصوير بدون إظهار الوجه بدون وجه تصوير المكتب زاوية علوية faceless top-down over-shoulder"
 },
@@ -5011,7 +5011,7 @@
 "SP-0210",
 "SP-0342",
 "SP-0409",
-"SP-0140"
+"SP-0141"
 ],
 "text": "chapter hud frame إطار hud للفصول فصول رقم الفصل خط تقدم chapter frame progress line chapter progress bar شريط فصول رقم الفصل شريط علوي تقدم الفصول chapter strip chapter number chapter ruler timeline مسطرة زمنية للفصول مسطرة زمنية مؤشر أحمر علامات الفصول playhead chapter markers chapter hud + timeline marker عناوين فصول وشريط زمني فصول مسطرة زمنية مؤشر الموضع chapter label timeline marker chaptered hud frame إطار hud بفصول مرقمة فصول مرقمة مسطرة تقدم إطار زوايا chapter counter progress ruler chapter tag system نظام وسوم الفصول ترقيم الفصول خط تقدم أقسام الفيديو chapter counter corner label numbered chapter header ترويسة فصل مرقّمة عنوان الفصل ترقيم ظهور بتمويه chapter title section heading bottom nav progress شريط تنقل سفلي شريط سفلي أقسام الفيديو فصول chapter nav section bar chapter text card bottom-left بطاقة فصل أسفل اليسار بطاقة نصية رقم الفصل تلاشي متقاطع text card crossfade editor timeline hud شريط زمني بنقاط مفاتيح تايملاين مونتاج مؤشر التشغيل playhead keyframes"
 },
@@ -5056,7 +5056,7 @@
 "SP-0219",
 "SP-0302",
 "SP-0217",
-"SP-0141"
+"SP-0140"
 ],
 "text": "smart reframe إعادة تأطير ذكية تغيير المقاس قص الفيديو تحويل لعمودي reframe aspect ratio crop smart reframe (face / motion / blur pad) إعادة التأطير الذكي تحويل لعمودي قص الفيديو تتبع الوجه reframe vertical crop face crop crop / reframe with clip-path inset إعادة التأطير بالقص قص الفيديو كروب تأطير crop animation mask broadcast safe zones المناطق الآمنة للبث هوامش آمنة حواف الشاشة منطقة العنوان title safe action safe subject-follow reframing (bridge cv2) تتبع الشخص في القص إعادة تأطير تتبع الشخص قص ذكي reframe auto crop crop-mark frame إطار بعلامات قص علامات قص زوايا تأطير crop marks brand tag corner crop marks frame علامات قص زاوية للإطار علامات الطباعة زوايا رفيعة تأطير registration marks print marks stage curtain frame إطار ستارة مسرح خشبة تأطير theater curtain native vertical render over crop رندر عمودي أصلي بدلاً من القص فيديو عمودي فيديو طولي إعادة توزيع vertical video 9:16 remotion"
 },
@@ -5082,7 +5082,7 @@
 "SP-0368",
 "SP-0271",
 "SP-0408",
-"SP-0141"
+"SP-0140"
 ],
 "text": "living hold (breathe) ثبات حي لقطة ثابتة حركة خفيفة تنفس الإطار slow zoom idle motion beat motion primitive: mosaic-pack حركة إيقاعية: mosaic-pack موزاييك تجميع المربعات شبكة على الإيقاع tile grid beat sync beat motion primitive: dolly-zoom حركة إيقاعية: dolly-zoom تأثير الدوار بناء الموسيقى مزامنة الإيقاع vertigo music build full-screen motion with shared backgrounds حركة ملء الشاشة بخلفيات مشتركة خلفية ثابتة تبديل المشاهد طبقات persistent background scene layers sub-frame shutter motion blur and lighten stacking ضبابية الحركة بالإطارات الفرعية والتعريض الطويل بلور الحركة آثار الضوء تعريض طويل light trails star trails plates that arrive already moving (punch-in drift) لقطات تدخل وهي تتحرك صور ثابتة تحريك الصور قطع حاد photo montage still to motion evidence pair: typed vs instead مقارنة: ما كُتب مقابل البديل مقارنة قبل وبعد برومبت comparison prompt tips motion handoff contract عقد تسليم الحركة وصل المقاطع استمرارية الحركة برومبت مقاطع متتالية motion continuity prompt chaining continuity checklist (180-degree rule etc.) قائمة الاستمرارية استمرارية راكور اتجاه الشاشة مراجعة continuity screen direction"
 },
@@ -5795,7 +5795,7 @@
 "SP-0436",
 "SP-0430",
 "SP-0238",
-"SP-0140"
+"SP-0141"
 ],
 "text": "one-line project grades (muted ghorba, navy door + rtl mirror) تلوينات مشاريع بسطر واحد حزين هادئ كحلي عكس muted melancholy navy hflip rtl eq لوك حزين ألوان باهتة مساحة للنص desaturated mirror flip polarity flip ink↔paper at act boundaries قلب القطبية بين الفصول قلب القطبية داكن فاتح فصل polarity invert act break dark light عكس الألوان انتقال أبيض وأسود color invert transition gsap eleven ffmpeg grade presets أحد عشر لوكًا جاهزًا بـffmpeg تلوين لوك فلتر مونتاج grade color grading ffmpeg teal orange golden hour cyberpunk vintage blue hour preset لوك سينمائي كلرنج فلاتر جاهزة cinematic look film look kosif earth identity looks (14) مظاهر kosif earth نجد تراث واحة كحلي وذهبي najd heritage navy gold identity theme هوية عربية ألوان تراثية مظاهر جاهزة arabic style css tokens oasis full-bleed accent beat / brand flash fill ضربة لون كامل للإطار وميض لون الهوية ضربة brand flash full bleed accent beat punchline امتلاء الإطار لحظة الشعار نكتة color flash logo moment hard cut scope-target looks (japan summer, new york, still, tokyo night) لوكات مقاسة بأهداف السكوب سكوب قياس طوكيو ire vectorscope scopes measured look tokyo night فكتورسكوب لوك نيويورك صيف اليابان japan summer new york"
 },
@@ -6069,7 +6069,7 @@
 "SP-0368",
 "SP-0408",
 "SP-0285",
-"SP-0141"
+"SP-0140"
 ],
 "text": "role-based easing tokens motion.e رموز التسارع حسب الدور (17 منحنى) منحنيات تسارع easing tokens cubic-bezier gsap ease motion kit tested css motion tokens رموز حركة css مختبرة css tokens رموز الحركة durations cubic-bezier design tokens dependency-free easing set دوال تسهيل بلا مكتبات easing outcubic outexpo outback prog window01 canvas countdown template قالب العد التنازلي countdown عد تنازلي timer launch template browser-exact cubic-bezier sampling منحنى css محسوب كما يحسبه المتصفح cubic-bezier css easing sampling ease منحنى تسهيل css quiet-motion toggle & reduced motion زر تهدئة الحركة وتقليلها reduced motion accessibility quiet تقليل الحركة pacing medians of top launch films معايير الإيقاع من أفلام الإطلاق pacing shot length median إيقاع launch film shutter motion blur ضبابية الغالق الحقيقية shutter motion blur sub-frame accumulation easing curve shown on screen منحنى التسهيل على الشاشة easing graph curve editor comparison board منحنى التسهيل tutorial impact ripple & key hit-flash حلقة الأثر ووميض المفتاح ripple impact ring key press hit flash named curves: ae ↔ css table and intent eases جداول منحنيات بالاسم والنية cubic-bezier easing table camera ease after effects منحنيات جدول تسهيل agency curves & catalog style tokens منحنيات الاستوديوهات ورموز ستايل الكتالوج agency easing style tokens style.json out-expo motion spec build / breathe / resolve بناء ثم تنفس ثم حسم build breathe resolve scene structure مشهد beat-cut rule القص على الإيقاع 60/bpm beat cut bpm downbeat إيقاع موسيقي music edit"
 },
@@ -6204,10 +6204,10 @@
 "best": "proven",
 "ready_now": 3,
 "links": [
+"SP-0141",
 "SP-0140",
 "SP-0263",
-"SP-0274",
-"SP-0356"
+"SP-0274"
 ],
 "text": "html-canvas deterministic timeline engine محرك الخط الزمني الحتمي تقسيم المشاهد انيميشن كانفس بدون مكتبات scene timeline canvas animation mimic engine: rebuild a reference video with new footage محرك المحاكاة: إعادة بناء فيديو مرجعي بلقطات جديدة محاكاة mimic rebuild reference remake pipeline audio copy mountscrollworld scrub engine محرك السحب بالتمرير تمرير سكرول صفحة تفاعلية scroll animation scrollytelling external engine: ilovevideoeditor محرك خارجي: ilovevideoeditor محرك تصيير أداة فيديو رابط خارجي video engine external tool external engine: json2video محرك خارجي: json2video محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: webav محرك خارجي: webav مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: shotstack محرك خارجي: shotstack مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: creatomate محرك خارجي: creatomate فيديو بالكود بديل خارجي خط زمني برمجي code video video tool external engine: motion canvas محرك خارجي: motion canvas محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: remotion محرك خارجي: remotion فيديو بالكود بديل خارجي خط زمني برمجي code video video tool external engine: rendervid محرك خارجي: rendervid محرك تصيير أداة فيديو رابط خارجي video engine external tool external engine: vidpy محرك خارجي: vidpy محرك تصيير أداة فيديو رابط خارجي video engine external tool external engine: moviepy محرك خارجي: moviepy مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: ffcreator محرك خارجي: ffcreator مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: editly محرك خارجي: editly محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: revideo محرك خارجي: revideo محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: twick محرك خارجي: twick محرك فيديو فيديو بالكود أداة خارجية video engine code video external engine: videorenderingengine محرك خارجي: videorenderingengine فيديو بالكود بديل خارجي خط زمني برمجي code video video tool external engine: diffusion studio core محرك خارجي: diffusion studio core مونتاج برمجي محرك خارجي رابط أداة external tool timeline video external engine: webmotion (mit) محرك خارجي: webmotion (mit) محرك فيديو فيديو بالكود أداة خارجية video engine mit license external engine: manim community (mit) محرك خارجي: manim community (mit) محرك تصيير أداة فيديو رابط خارجي video engine mit license external engine: videoflow (apache-2.0) محرك "
 },
@@ -6230,7 +6230,7 @@
 "ready_now": 7,
 "links": [
 "SP-0131",
-"SP-0141",
+"SP-0140",
 "SP-0272",
 "SP-0469"
 ],
@@ -6254,7 +6254,7 @@
 "ready_now": 7,
 "links": [
 "SP-0356",
-"SP-0140",
+"SP-0141",
 "SP-0382",
 "SP-0349"
 ],
@@ -6280,7 +6280,7 @@
 "SP-0272",
 "SP-0278",
 "SP-0296",
-"SP-0141"
+"SP-0140"
 ],
 "text": "shard plan for parallel rendering تقسيم الإطارات لتصيير متوازٍ تصيير متوازي تسريع الرندر توزيع الإطارات parallel render sharding capability-token render jobs مهام التصيير برمز وصول أمان المهام رمز الوصول حماية الفيديو access token job security render fingerprint cache ذاكرة بصمة التصيير تسريع الرندر كاش تخطي إعادة الرندر cache skip render render sharding تقسيم التصيير توزيع التصيير عدة أجهزة تسريع الرندر distributed render split frames shard render تقسيم التصيير توزيع التصيير عدة أجهزة دمج بلا فقد distributed render multi machine cli: cloud / lambda / cloudrun أمر: التصيير السحابي تصيير سحابي رندر أونلاين نشر التصيير hosted render lambda deploy fingerprint render cache كاش بصمة التصيير كاش إعادة التصيير توفير الوقت render cache skip rerender hyperframes render settings إعدادات رندر hyperframes جودة الرندر خلفية شفافة تصدير نهائي alpha render quality deterministic render(t) scene contract عقد المشهد الحتمي render(t) مشهد حتمي قالب مشهد دالة الزمن pure function scene template quality-first final render التصيير النهائي عالي الجودة تصدير نهائي جودة عالية تسليم الفيديو final export high quality render + matte overlay composite التصيير ثم تركيب القناع نص خلف الشخص قناع فصل الشخص text behind subject matte google cloud run render التصيير على cloud run جوجل كلاود تصيير سحابي نشر gcp batch render github actions render تصيير على github جيت هب تصيير سحابي تقسيم ci render workflow aws lambda distributed render تصيير موزع على لامبدا تصيير سحابي سحابة أمازون cloud render aws gcp cloud run render تصيير على كلاود رن تصيير سحابي جوجل كلاود سحابة gcp chunked render remotion rendering at scale التصيير السحابي تصيير سحابي على الخادم إنتاج بالجملة ssr batch render external python render client عميل التصيير الخارجي تصيير عن بعد فيديو صامت ثنائي الأبعاد remote render 2d motion long-form render pipeline خط إنتاج لفيلم طويل مع صوت وترجمة فيلم طويل ترجمة محروقة دمج الصوت burn subtitles mux long video render farm shard تقسيم التصيير على أجهزة تقسيم التصيير عدة أجهزة مزرعة رندر render farm github actions shard parallel browser film render تصيير الفيلم بمتصفحات متوازية رندر متوازي تصيير نهائي ضبابية الحركة parallel render headless render cache deterministic render(t) contract عقد الزمن الحتمي render(t) دالة الزمن بذرة عشوائية عقد التصيير render(t) gsap timeline deterministic render farm timing table جدول أزمنة التصيير وقت الرندر مدة التصيير قياس الأداء benchmark render time ssim"
 },
@@ -6329,7 +6329,7 @@
 "SP-0142",
 "SP-0348",
 "SP-0303",
-"SP-0141"
+"SP-0140"
 ],
 "text": "kosif motion web local studio server استوديو kosif motion web المحلي موقع محلي واجهة عربية خصوصية الملفات local server starlette local studio web app + mcp server تطبيق الاستوديو المحلي وخادم mcp استوديو محلي واجهة ويب مهام التصيير mcp server render jobs svg importer (shapes, css, transforms, gradients, arabic text) مستورد svg رسم تدريجي استيراد رسمة تدرج لوني svg parser drawing steps procedural svg illustration from python رسم svg إجرائي ببايثون رسم بالكود رسم توضيحي متجهات vector art generative kosif omni mcp server (65 tools) خادم mcp لكوسيف أومني ربط الأدوات خادم أدوات مساعد ذكي mcp openapi chatgpt actions svg import as paint steps استيراد svg كخطوات رسم رسم متجهي فيكتور رسومات الذكاء الاصطناعي vector graphics svg import run any ai drawing code in painter order تشغيل كود الرسم من أي ذكاء اصطناعي كود رسم تنفيذ الكود رسم تدريجي drawing code paint jobs writable home for projects (kosif_motion_home) مجلد العمل القابل للكتابة مجلد الحفظ مسار المشاريع صلاحيات الكتابة output folder read-only kosif: kmotion one-command toolbox كوسف: أداة kmotion الموحدة أدوات المونتاج تفريغ الكلام إزالة الترجمة beats transcribe local kosif motion web studio الاستوديو المحلي واجهة عربية استوديو محلي لوحة تحكم arabic ui local site kosif motion web local studio استوديو الويب المحلي واجهة محلية موقع محلي إدارة المشاريع local studio web ui kosif-web mcp mcp الاستوديو ربط claude تحكم آلي أدوات الاستوديو mcp server automation pixel-by-pixel painting window (kosif studio) نافذة الرسم بيكسلاً ببيكسل رسم تدريجي فرشاة نافذة رسم painting app tkinter studio animation menu bridging to kosif motion قائمة الأنيميشن في الاستوديو قائمة الأنيميشن ريلز تفريغ صوتي إزالة الترجمة auto reel transcription kosif motion kit on hyperframes (delta) عدة kosif motion فوق hyperframes عدة الحركة سطر الأوامر موشن جرافيك motion cli toolkit any-ai code runner (svg / scene / pil / matplotlib / turtle / html / image code) مشغّل كود أي ذكاء اصطناعي تشغيل الكود كود رسم لصق كود run code code to image kosif picture program (step/ops vector renderer) برنامج الصورة: خطوات وعمليات متجهة رسم متجه لوحة رسم بالكود vector drawing high res svg render(t) template with seg/fadewin/mix helpers قالب svg حتمي بدوال مساعدة رسوم متجهة متحركة تلاشي مزج الألوان svg animation easing kosif motion route (target) مسار kosif motion كاريوكي مزامنة الكلمات تحليل الصوت audio2motion karaoke captions word sync renderer ladder svg -> canvas -> webgl سلم المصيّرات svg ثم canvas ثم webgl رسم بياني جسيمات عناصر كثيرة data viz pixijs particles"
 },
@@ -6373,7 +6373,7 @@
 "ready_now": 7,
 "links": [
 "SP-0269",
-"SP-0141",
+"SP-0140",
 "SP-0011",
 "SP-0262"
 ],
@@ -6399,7 +6399,7 @@
 "SP-0300",
 "SP-0298",
 "SP-0272",
-"SP-0141"
+"SP-0140"
 ],
 "text": "web-safe h.264 master ماستر h.264 آمن للويب ترميز h264 faststart bt709 yuv420p master encode تصدير الفيديو ألوان باهتة رندر نهائي mp4 export washed out colors ios h.264 encode with untouched audio mux تشفير h.264 مع دمج الصوت دون تعديل دمج الصوت تعليق صوتي تصدير نهائي audio mux voiceover aac h.264 profile fallback chain سلسلة احتياط ملف h.264 توافق الترميز جودة الفيديو ترميز codec fallback avc profile live recording export (mediarecorder) تصدير بالتسجيل المباشر تسجيل الفيديو تسجيل الكانفس تصدير سريع mediarecorder webm ffmpeg h.264 encode + contact sheet + gif تجميع mp4 ولوحة تحقق تصدير فيديو صورة متحركة لوحة مصغرات gif preview export cli: render أمر: تصيير تصدير صيغ الفيديو جودة الفيديو gif export gpu encode svg frame export + ffmpeg encode تصدير إطارات svg ثم ترميز mp4 رسوم متجهة تحويل إلى فيديو ترميز svg animation rasterize fast realtime render (mediarecorder) الريندر السريع تصدير سريع تسجيل الكانفس تسجيل مباشر webm quick export nvenc gpu encode ترميز gpu بـ nvenc gpu nvenc nvidia fast encode كرت الشاشة تسريع الرندر ترميز سريع hardware encode h264_nvenc nvenc encode flags (vendored) ترميز nvenc ترميز بكرت الشاشة توحيد الصوت ترجمة cuda h264_nvenc loudnorm hardware encoder fallback الترميز بالعتاد مع بديل برمجي كرت الشاشة ترميز سريع تسريع عتادي gpu encode nvenc libx264 manual ffmpeg encode from frames ترميز يدوي من الإطارات تجميع الصور لفيديو دمج الصوت صور إلى فيديو png sequence frames to video libx264 trailer encode and gif loop recipe وصفة ترميز التريلر وحلقة الجيف تصدير نهائي جيف متكرر تريلر gif loop loudnorm palettegen scrub-friendly encode ترميز مناسب للسحب سحب الفيديو تقديم وترجيع نسخة موبايل scrubbing short gop faststart interleaved render workers and a continuity gate عمال رندر متداخلون وبوابة استمرار parallel render workers frames encode رندر متوازٍ عمال dense-keyframe re-encode for seekable footage إعادة الترميز بإطارات مفتاحية كثيفة تجمد الفيديو إطارات مفتاحية إعادة ترميز gop keyframe interval seek freeze"
 },
@@ -6445,7 +6445,7 @@
 "SP-0433",
 "SP-0199",
 "SP-0212",
-"SP-0141"
+"SP-0140"
 ],
 "text": "gpu sub-frame motion blur ضبابية حركة حقيقية موشن بلر تمويه الحركة زاوية الغالق motion blur shutter angle gpu sub-frame motion blur and lighten stacking تمويه حركة حقيقي وتراكم الإضاءة موشن بلر تعريض طويل رسم بالضوء مسارات النجوم light trails long exposure shutter angle → shutter speed (motion blur) زاوية الغالق إلى سرعة الغالق زاوية الغالق ضبابية الحركة معدل الإطارات motion blur fps 180 degree equivalent exposure التعريض المكافئ التعريض فتحة العدسة سرعة الغالق exposure aperture iso seek-safe deterministic motion law قانون الحركة القابلة للتقديم جزيئات اهتزاز ستوب موشن parallel capture seek safe sub-frame motion blur and long exposure ضبابية الحركة والتعريض الطويل بلور حركة مسارات النجوم رسم بالضوء light painting shutter motion blur render pass تمويه الحركة ضبابية الحركة بلور نعومة الحركة blur subframes sub-frame motion blur and long-exposure stacking ضبابية حركة بإطارات فرعية وتعريض طويل تعريض طويل أثر الضوء مسار النجوم light trails star trails gpu motion-blur / long-exposure frame loop حلقة الإطار مع تمويه الحركة ضبابية الحركة بلور خطوط الضوء motion blur light trails sub-compositions and tracks تركيبات فرعية ومسارات تقسيم المشاهد مسارات طبقات scenes layers nested sub-compositions تراكيب فرعية متداخلة مشاهد إعادة استخدام تقسيم الفيديو scenes reusable gsap quickto / matchmedia / reduced motion quickto و matchmedia وتقليل الحركة تتبع المؤشر تصميم متجاوب إمكانية الوصول cursor follower responsive sub-frame motion blur ضبابية حركة بإطارات فرعية بلور حركة نعومة الحركة إطارات فرعية motion blur tmix trend: 4 sub-frame motion blur ترند: 4 sub-frame motion blur ضبابية الحركة موشن بلور نعومة الحركة motion blur subframe adaptive motion-blur sample count (180° shutter) ضبابية حركة تكيفية motion blur sub-frames shutter render ضبابية الحركة إطارات فرعية"
 },
@@ -6518,7 +6518,7 @@
 "links": [
 "SP-0356",
 "SP-0174",
-"SP-0141",
+"SP-0140",
 "SP-0154"
 ],
 "text": "remotion rule checklist قائمة قواعد remotion remotion react video captions transitions ريموشن remotion route (target) مسار remotion مونتاج طويل ريموشن مراجعة react video long edit remotion kosiffilm composition تركيبة kosiffilm في remotion فيديو رأسي قالب جاهز ترجمة vertical video react remotion equivalent path مسار remotion رياكت تسلسل المشاهد حركة نابضية react video spring remotion delivery path مسار تسليم remotion تسليم لقطة ثابتة فحص الجودة delivery props @remotion/three integration تكامل remotion مع three ثلاثي الأبعاد ثري دي رياكت 3d in react threecanvas remotion to hyperframes port تحويل مشاريع remotion تحويل مشروع نقل الكود ترحيل migration react to html parameterized remotion compositions تراكيب ريموشن قابلة للتهيئة فيديو بالبيانات قالب فيديو أفقي وعمودي data-driven video props schema remotion editable timeline patterns أنماط التايملاين في remotion مونتاج ترانزيشن قص المقاطع ripple edit transitions parameterized launch video in remotion فيديو إطلاق بمعاملات في ريموشن فيديو إطلاق إعلان منتج فيديو ديمو product launch demo video remotion frame-driven animation تحريك ريموشن المعتمد على رقم الإطار ريموشن رقم الإطار تسهيل الحركة interpolate easing standard 6-step delivery التسليم القياسي بست خطوات خطوات التسليم تسليم الفيديو فحص نهائي delivery verify video test report youtube 4k delivery spec and loudness check مواصفات تسليم يوتيوب 4k وفحص الجهارة رفع على يوتيوب علو الصوت معدل البت youtube upload lufs ebur128"
@@ -6567,7 +6567,7 @@
 "SP-0413",
 "SP-0288",
 "SP-0274",
-"SP-0141"
+"SP-0140"
 ],
 "text": "stack option: canvas خيار التقنية: canvas كانفس اختيار التقنية قالب الرسم html canvas stack stack option: auto خيار التقنية: auto اختيار التقنية اختيار الأداة تلقائي tech stack auto choose stack option: svg خيار التقنية: svg رسوم متجهة اختيار التقنية موشن متجه svg gsap vector animation cinematic post stack (makepost) سلسلة المعالجة السينمائية توهج عمق الميدان حبيبات الفيلم تلوين سينمائي bloom depth of field tool-map doctor before promising a stack فحص خريطة الأدوات قبل الوعد بأي حزمة doctor فحص tools catalog repos installed خريطة الأدوات lite post stack معالجة خفيفة توهج حبيبات أداء أسرع bloom film grain canvas route template (pure function of t) مسار الكانفس زنبرك منحنيات الحركة إيقاع spring easing bpm lab lightweight post معالجة المختبر معالجة سريعة توهج خفيف عمق الميدان software gl post processing stack option: remotion خيار التقنية: remotion اختيار التقنية رياكت قالب بداية stack starter tsl renderpipeline post stack سلسلة ما بعد المعالجة في tsl مؤثرات بوست بروسيسنج تأثيرات بصرية post-processing effects canvas route template قالب الكانفاس كانفاس قالب جاهز إيقاع canvas template spring stack option: three خيار التقنية: three ثلاثي الأبعاد كاميرا متحركة مشهد 3d threejs 3d scene camera move"
 },
@@ -6587,9 +6587,10 @@
 "ready_now": 5,
 "links": [
 "SP-0405",
-"SP-0141",
 "SP-0268",
-"SP-0303"
+"SP-0303",
+"SP-0448",
+"SP-0140"
 ],
 "text": "workbench no-browser 2d film فيلم بدون متصفح فيديو بدون متصفح عناوين عربية فيلم سريع pillow no browser image to standalone pillow program صورة إلى برنامج بايثون image to code pillow program صورة إلى كود pure-function svg film (no libraries) فيلم svg كدالة نقية بلا مكتبات رسم بالكود فيلم قصير بدون مكتبات svg animation parallax recipe catalogue as typed forms كتالوج الوصفات كنماذج نماذج إدخال وصفات جاهزة التحقق من المدخلات typed forms command builder workbench pillow film فيلم بدون متصفح فيديو سريع عناوين متحركة سحابة pillow cloud render browser-free 2d workbench film فيلم ثنائي الأبعاد بلا متصفح بدون متصفح فيديو عمودي عناوين عربية no browser pillow frames image -> standalone pillow program صورة إلى برنامج بايثون صورة إلى كود رسم بالكود مضلعات image to code pillow motion-kit film builder (11 styles) بناء فيلم بستايل من المكتبة فيديو سبورة وايت بورد رسوم متحركة whiteboard doodle mimic remake builder باني النسخة المقلّدة تقليد فيديو إعادة إنتاج لقطة بلقطة remake lut song-film render pipeline (seek → jpeg → ffmpeg, song untouched) خط رندر فيلم الأغنية song film playwright ffmpeg canvas فيلم أغنية رندر web game development ألعاب متصفح كاملة لعبة ألعاب ويب فيزياء بسيطة phaser game loop canvas game"
 },
@@ -6636,7 +6637,7 @@
 "SP-0283",
 "SP-0264",
 "SP-0262",
-"SP-0141"
+"SP-0140"
 ],
 "text": "render shim (seek contract) جسر التصيير تصيير دقيق مزامنة الفيديو رندر seek frame exact ffprobe shim بديل ffprobe مدة الفيديو عدد الإطارات فحص الفيديو video duration frame count robust media seeking for export تثبيت مواضع الوسائط عند التصدير مزامنة الفيديو إطارات مكررة قفز الفيديو video seek seeked event renderer shim + footage seeking جسر العرض ومزامنة الفيديو مزامنة الفيديو مزامنة اللقطات جسر التصيير video seek gsap bridge dual-renderer shim + footage seek جسر المحرّكين محركين توافق المحركات مزامنة الفيديو dual renderer compatibility server bridge with ssrf guard جسر السيرفر الآمن أمان مفاتيح api بروكسي proxy api keys composition brief handoff موجز التكوين لـhyperframes موجز بريف تخطيط الفيديو brief handoff site bridge planner جسر الموقع تخطيط المشروع مقاسات الفيديو منصة مستضافة planner aspect ratio site bridge / render client (remote) الجسر البعيد تصيير عن بعد موافقة جسر remote render consent sandbox ffprobe stand-in بديل ffprobe في البيئات المغلقة فحص الفيديو معلومات الملف مدة الفيديو ffprobe shim media info python"
 },
@@ -6660,7 +6661,7 @@
 "SP-0350",
 "SP-0284",
 "SP-0354",
-"SP-0141"
+"SP-0140"
 ],
 "text": "seeded rng (mulberry32) and hash عشوائية ببذرة عشوائية ثابتة تكرار النتيجة ضوضاء random seed deterministic seeded randomness (mulberry32 + hash) عشوائية ببذرة نتيجة ثابتة أرقام عشوائية بذرة random seed reproducible seeded randomness (mulberry32 rng + hash) عشوائية ببذرة ثابتة عشوائية بذرة رندر مطابق seed deterministic seeded prng (mulberry32) عشوائية مبذورة جسيمات عشوائية ثابتة توزيع عشوائي particles random seed seeded math.random in renderer (--seed) بذرة عشوائية ثابتة عشوائية تكرار الحركة رندر ثابت seed flag deterministic seeded rng and hash (mulberry32) عشوائية بذرية عشوائية ثابتة بذرة جسيمات random seed reproducible deterministic f(t) simulation محاكاة حتمية كدالة في الزمن محاكاة بذرة عشوائية إعادة تشغيل الأحداث seeded simulation canvas seekable-timeline determinism rules قواعد الحتمية للتصيير إطارًا بإطار تصيير ثابت عشوائية ببذرة تايملاين mulberry32 seekable gsap deterministic seekable video فيديو حتمي قابل للقفز قفز في الزمن ساعة واحدة فحص الإطارات seek seeded random preload 2d scenes with thousands of sprites رسم ثنائي الأبعاد بآلاف العناصر pixijs sprites atlas batching particles بكسي جسيمات أطلس"
 },
@@ -6683,7 +6684,7 @@
 "SP-0285",
 "SP-0253",
 "SP-0282",
-"SP-0141"
+"SP-0140"
 ],
 "text": "blob-url seekable video فيديو قابل للبحث عبر blob تقديم الفيديو مقطع لا يتقدم تحميل المقطع byte-range video seek anime.js adapter محول anime.js مكتبة تحريك تحريك خفيف تقديم الإطارات animation library seekable in-page animation library list مكتبات الحركة داخل الصفحة مكتبات الحركة رسوم بيانية رسم الخطوط animation libraries charts in-page motion/drawing library list مكتبات الحركة داخل الصفحة مكتبات تحريك رسم الخطوط رسوم بيانية cdn libraries draw-on frame adapters (gsap, css, anime.js, lottie, three.js, waapi, typegpu) محولات الإطارات مكتبات الحركة دمج المكتبات تقديم وترجيع seek animation libraries web animations api adapter محول واجهة الحركة في المتصفح حركة المتصفح بلا gsap تحريك أصلي waapi element.animate scene animation through build_t(t) تحريك المشهد عبر build_t(t) تحريك المشهد أنيميشن دالة الزمن animate scene per-frame render framer motion layout & spring فريمر موشن حركة نابضية واجهة تفاعلية تحريك الواجهات spring ui animation gsap tween trio (to / from / fromto / set) حركات gsap الأساسية تحريك العناصر حركة دخول أنيميشن tween entrance animation local video library مكتبة فيديوهاتي فيديوهات سابقة سجل التصدير تنزيل download render history"
 },
@@ -6730,7 +6731,7 @@
 "SP-0264",
 "SP-0262",
 "SP-0389",
-"SP-0141"
+"SP-0140"
 ],
 "text": "auto mode detection and relaunch اكتشاف الوضع تلقائيًا اختيار تلقائي وضع التصيير رندر auto mode fallback dual-engine shim (hyperframes or studio renderer) طبقة تشغيل مزدوجة توافق المحركات مزامنة الفيديو رندر seek engine compatibility renderer switch by storyboard.profile اختيار المحرك حسب الملف تبديل المحرك نمط تحريري تصدير بدون واجهة profile routing headless export project kind auto-detection كشف نوع المشروع تلقائيًا تصنيف المشروع اختيار المصيّر مقاس الفيديو project detection renderer choice editorial 2.5d collage renderer محرك الكولاج التحريري 2.5d ستايل تحريري هالفتون عنوان متحرك halftone masked headline dual-engine renderer (hyperframes cli or studio browser renderer) التصيير بمحركين اختيار المحرك تصدير رندر render engine audio mix parallel studio renderer المصيّر المتوازي تسريع التصيير رندر أسرع عمال التصيير parallel render workers ai router: task-to-model and effort توجيه المهام للموديلات اختيار النموذج توجيه المهام تكلفة model routing fallback brag-slim single-file mode وضع brag-slim فيديو من رابط أدوات محلية بدون أصول single file url to video slim review: live composition mode المراجعة: وضع التركيبة الحية مراجعة تعديل مباشر مشغل الفيديو live preview review seekto"
 },
@@ -6777,7 +6778,7 @@
 "SP-0172",
 "SP-0255",
 "SP-0262",
-"SP-0141"
+"SP-0140"
 ],
 "text": "render_html virtual-time driver (any css/waapi/gsap/raf page) وضع الزمن الافتراضي لأي صفحة متحركة تحويل صفحة لفيديو انيميشن css توقيت دقيق css animation html to video function-of-time to gsap keyframes (sampled) تحويل دالة زمنية إلى مفاتيح حركة إجرائية معادلة حركة تايم لاين keyframes procedural motion render_html virtual-time mode وضع الزمن الافتراضي أنيميشن css رندر بدون seek الساعة الافتراضية virtual clock css animation function-to-keyframes sampler (sampled) تحويل الدالة إلى مفاتيح كي فريمز حركة بالكود مفاتيح الحركة keyframes procedural motion css keyframes adapter محول إطارات css حركة css لمعان حركة متكررة css animation shimmer gsap directional rotation, relative values & css vars دوران موجه وقيم نسبية ومتغيرات css دوران تغيير اللون خط متغير variable font rotation gsap proxy object driving canvas كائن وسيط يحرك الكانفس كانفس رسم إجرائي تايم لاين canvas animation procedural art css/waapi keyframe reveals ظهور بإطارات css ظهور النص انزلاق تلاشي fade in slide up text reveal"
 },
@@ -6819,7 +6820,7 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0140",
+"SP-0141",
 "SP-0382",
 "SP-0198",
 "SP-0278"
@@ -6911,7 +6912,7 @@
 "SP-0371",
 "SP-0264",
 "SP-0368",
-"SP-0141"
+"SP-0140"
 ],
 "text": "film-only-where-it-should gating + sw bypass تشغيل الفيلم بشروط وتجاوز عامل الخدمة فيديو في الموقع توفير البيانات تقليل الحركة service worker lazy video smooth-scroll weight (lenis) and its render caveat التمرير الناعم وتحذير الرندر تمرير ناعم سكرول حركة الموقع smooth scroll scrolltrigger piecewise scroll->clip time mapping ربط التمرير بالزمن تمرير سكرول فيديو مع التمرير scroll video scrolltrigger proximity-priority clip loading تحميل حسب القرب تحميل المقاطع سرعة الموقع آيفون lazy loading reduced motion render bugs already paid for أخطاء رندر دُفع ثمنها render bugs fonts puppeteer canvas أخطاء الرندر خطوط"
 },
@@ -7045,7 +7046,7 @@
 "SP-0451",
 "SP-0171",
 "SP-0431",
-"SP-0141"
+"SP-0140"
 ],
 "text": "antialiased supersampled shape masks أقنعة أشكال مُنعّمة بالعيّنات الفائقة حواف ناعمة تنعيم الحواف قناع antialiasing jagged edges webgl renderer with tone curves مُصيّر webgl مع منحنيات الإضاءة إضاءة المشهد ظلال تصوير منتجات tone mapping aces exposure ssao / ssr / outline / fxaa / smaa nodes إطباق محيطي وانعكاسات وحدود ظلال تنعيم الحواف حدود العناصر antialiasing ambient occlusion reflections"
 },
@@ -7068,8 +7069,8 @@
 "best": "proven",
 "ready_now": 15,
 "links": [
-"SP-0141",
 "SP-0268",
+"SP-0140",
 "SP-0269",
 "SP-0453"
 ],
@@ -7190,7 +7191,7 @@
 "links": [
 "SP-0142",
 "SP-0266",
-"SP-0141",
+"SP-0140",
 "SP-0345"
 ],
 "text": "whiteboard سبورة بيضاء whiteboard سبورة marker lesson explainer svg stroke draw-on رسم المسار بإزاحة الشرطة draw on stroke-dashoffset رسم المسار pathlength svg self drawing svg import & vectorize to draw steps استيراد svg والتحويل إلى متجهات svg import vectorize logo draw steps متجهات drawing film (picture forming as mp4) فيلم الرسم drawing film timelapse painting video فيلم الرسم pen speed & lifts سرعة القلم والرفع pen speed px/s lift سرعة القلم plotter svg path sampler محوّل مسارات svg إلى نقاط svg sampler polyline path points python human draw order & draw-and-label ترتيب الرسم البشري ووصفة «ارسم وسمِّ» draw order draw and label outline fill ترتيب الرسم pen-tip followers: hand, marker, chalk رأس يتبع الخط: يد، ماركر، طباشيرة hand overlay marker chalk pen tip يد ماركر pil command recorder الرسم بترتيب الكود نفسه pil recorder code order pillow مسجل pen-drawn motion templates قوالب موشن بالقلم logo reveal bullet list checkmarks template قالب whiteboard cinematic سبورة سينمائية whiteboard cinematic camera dolly سبورة سينمائية plotter pen قلم البلوتر plotter بلوتر constant speed tech spark generated raster → hand vector recreation إعادة رسم مخرجات مولدة كمتجهات vector recreation svg parallax layers متجه chalkboard سبورة الطباشير chalkboard طباشير maths lesson frame-by-frame on twos إطار بإطار على اثنين frame by frame on twos traditional إطار بإطار wireframe draw → solid formation من مخطط سلكي إلى مجسم wireframe scan band schematic mesh draw سلكي doodle stories قصص الدودل doodle دودل story ink world kids hyperframes hand-drawn components مكونات hyperframes للرسم اليدوي hyperframes hw components annotate scribble transition speech bubble doodle annotations on footage خربشة توضيحية فوق الصورة annotation arrow doodle footage تعليق deterministic hand-drawn film via make_frame(t) فيلم يد مرسومة حتمي بـmake_frame(t) hand drawn يد مرسومة doodle دودل draw on رسم pen قلم whiteboard draw-over film on generated bases رسم فوق لقطات مولدة draw over generated video halftone two inks رسم فوق line boil غليان الخط boil jitter on twos غليان hand drawn drawing by mouse in windows paint الرسم بالفأرة في برنامج الرسام paint mouse drawing desktop windows الرسام seeded rough hand-drawn rendering رسم يدوي خشن ثابت البذرة excalidraw rough.js hand-drawn sketchy hachure seed رسم يدوي سبورة خشن hand-drawn route sketch map خريطة رحلة مرسومة باليد route map travel sketch map خريطة رحلة"
@@ -7235,7 +7236,7 @@
 "SP-0398",
 "SP-0247",
 "SP-0351",
-"SP-0141"
+"SP-0140"
 ],
 "text": "diagram edge draw-on with arrowhead رابط مخطط برأس سهم edge connector arrowhead flowchart رابط gold-pen arch draw-on المحراب بقلم ذهبي mihrab gold pen دعاء arch محراب river fill then flow نهر يمتلئ ثم يجري river flow dashes water cycle نهر ribbon kit drawpath with landing head & flowdash قلم مكتبة الحركة برأس يهبط drawpath arrowhead flowdash pen motion kit draw-on libraries مكتبات الرسم التدريجي vivus roughjs perfect-freehand remotion paths libraries svg draw-on safety سلامة رسم المسارات lint svg dasharray safety striped ribbon draw-on شريط مخطط يُرسم ribbon stripes flag شريط triple coastline water lines خطوط ماء موازية للساحل coastline water lines map ساحل drag momentum and rubber-band edges زخم السحب والارتداد المطاطي momentum rubber band scroll physics swiper ui animation زخم سحب ارتداد"
 },
@@ -7717,7 +7718,7 @@
 "SP-0327",
 "SP-0422",
 "SP-0328",
-"SP-0140"
+"SP-0141"
 ],
 "text": "beat-cut montage مونتاج على الإيقاع مونتاج على الإيقاع تقطيع على البيت فيديو ريلز beat cut music montage punch in beat-planned montage مونتاج على الإيقاع مونتاج على الأغنية ريلز تقطيع سريع beat montage reels edit photo montage auto edit list from bars and motion peaks قائمة قطع تلقائية من المازورات وذروات الحركة مونتاج تلقائي تقطيع على الإيقاع أفضل اللقطات auto edit edl beat cut music-to-video beat grid مونتاج على الإيقاع تقطيع على الإيقاع مونتاج موسيقي كلمات الأغنية beat sync lyric video beat/onset cut points نقاط قطع على الإيقاع تقطيع مونتاج إيقاعي اقتراح القطعات beat cuts onset detection beat freeze cut تجميد على الإيقاع فريز تجميد الكادر تسريع speed ramp freeze frame beat motion primitives without demo folders حركات إيقاعية موثقة فقط تبديل على الضربة تجميد أفكار حركة motion ideas content swap bpm beat cuts قطع على الإيقاع تقطيع على الإيقاع تبديل مشاهد مونتاج beat cuts scene timing beat montage مونتاج إيقاعي مونتاج سريع تقطيع قصات سريعة fast cuts edit beat-locked cuts قطع متزامن مع الإيقاع تقطيع مونتاج سريع قصات beat cuts fast edit flash-word beat montage مونتاج كلمات خاطفة على الإيقاع كلمات سريعة تايبوجرافي نص متحرك kinetic typography word flash beat-locked hard cuts قطعات حادة مضبوطة على الإيقاع قطع حاد ووش مونتاج hard cut whoosh bpm beat-cut word flashes كلمات تتبدل على الإيقاع كلمات سريعة فلاش ومضات word flash hard cuts explosion climax on beat انفجار ذروة متزامن مع الموسيقى عد تنازلي كرة نار وميض أبيض countdown fireball beat/sentence cut points from bpm قطع على الإيقاع نقاط القطع خطة مونتاج جمل cut points edit plan beat-cut montage to music مونتاج لقطات على إيقاع الموسيقى مونتاج سريع تلوين تجميع مقاطع montage color grade beat period math حساب طول الضربة حساب الإيقاع تقريب الإطارات فريم frame rounding beat math beat interval formula معادلة زمن النبضة مدة الضربة حساب الإيقاع زووم beat length downbeat mg-091/099 beat-locked words and phrase cuts mg-091/099 نص على الضربات وتقطيع على الجملة الموسيقية كلمة كلمة نص متحرك جملة موسيقية word reveal phrase cuts"
 },
@@ -8087,7 +8088,7 @@
 "SP-0326",
 "SP-0327",
 "SP-0209",
-"SP-0140"
+"SP-0141"
 ],
 "text": "bar-grid cutting القص على حدود المازورة تقطيع على المازورة قص على الموسيقى مونتاج إيقاعي cut on bars music edit bar length bar-counter hud واجهة عداد البارات الإيقاعية عداد بارات واجهة إيقاع تبديل المشاهد bpm hud bar counter beat/bar hud counter عدّاد مازورة وضربة في الواجهة تايم كود عداد ضربات واجهة timecode beat counter bar-locked chapter cuts قطع الفصول على المازورة فصول تقطيع مازورة chapter cuts bar sync bpm bar cut grid قطع على إيقاع البار قطع كل بار تقطيع مونتاج bar cuts tempo beat-bar hud with scramble labels إطار hud بعداد المقاطع ونصوص مشفرة تتفكك واجهة تقنية نص مشفر عداد hud text scramble"
 },
@@ -8408,7 +8409,7 @@
 "links": [
 "SP-0442",
 "SP-0326",
-"SP-0140",
+"SP-0141",
 "SP-0263"
 ],
 "text": "auto montage to music مونتاج تلقائي على الموسيقى مونتاج تلقائي auto montage beat cut music video grades مونتاج على الموسيقى تقطيع على البيت مونتاج صور وفيديو music sync kmotion json timeline compiler (cuts, ramps, overlays) مترجم تايملاين json تايملاين مونتاج timeline json edit speed ramp ffmpeg مواصفة مونتاج انتقالات نص على الفيديو edit spec lower third scene/shot detection → timeline كشف اللقطات إلى تايملاين كشف اللقطات قطعات scene detection scdet shots contact sheet تقسيم الفيديو مشاهد تقطيع تلقائي split video cut detection measure a reel's style from its frames قياس أسلوب ريل من الإطارات تحليل أسلوب قياس style analysis reference measurement mimic color mask تقليد ستايل نفس أسلوب الريل ألوان النص style spec lufs speed ramps & slow motion منحدرات السرعة والتصوير البطيء سرعة بطيء speed ramp slow motion atempo setpts سلو موشن تسريع الفيديو تبطيء اللقطة variable speed slow mo landscape in 9:16 over a blurred fill عرض الأفقي في 9:16 فوق نسخة مموهة 9:16 تمويه الخلفية blur fill vertical reframe تحويل لطولي فيديو أفقي خلفية مموهة landscape to vertical reels capcut-style transitions under fixed text انتقالات كاب كات على الصورة فقط انتقالات ضبابية مرآة blur transition mirror transition zoom blur capcut ترانزيشن كاب كات انتقال دوار spin transition zoom transition ken burns done well كين بيرنز الصحيح كين بيرنز ken burns zoompan push photo motion تحريك الصور زوم على الصورة زوم بطيء slow zoom pan directed-edit engine محرك المونتاج الموجّه مونتاج موجه directed edit talking head punch in زوم على الكلمات فصول مونتاج متحدث gsap keyword punches kosif studio browser montage editor محرر kosif studio في المتصفح محرر editor browser studio timeline ui محرر فيديو مونتاج في المتصفح معاينة حية video editor kosif studio one-command talking-clip reel ريل من مقطع كلام بأمر واحد ريل مقطع كلام talking reel auto edit shorts ترجمة كاريوكي تيك توك مونتاج تلقائي karaoke captions vertical video photo styles to scaffold أساليب الصور الجاهزة سكافولد parallax-2d viral mixed media editorial photos قوالب صور فيديو من صور أسلوب جاهز template photo montage video breakdown to beats تحليل فيديو مرجعي إلى نبضات تحليل breakdown palette tempo reference تفكيك فيديو لوحة ألوان تحليل مشاهد scene by scene beats tracked callout & attention ring تسمية متتبعة ودائرة اهتمام تتبع tracking callout attention ring opencv تتبع حركة دائرة تمييز تسمية متحركة motion tracking label motion-energy window picking اختيار أنشط نافذة في اللقطة طاقة الحركة motion energy best window shot picking أفضل جزء لقطة حيوية قطع على ال"
@@ -8434,7 +8435,7 @@
 "SP-0262",
 "SP-0374",
 "SP-0356",
-"SP-0140"
+"SP-0141"
 ],
 "text": "frame-accurate trims need a re-encode القص الدقيق بالإطار يحتاج إعادة ترميز trim keyframe gop ffmpeg stream copy قص إطار مفتاحي all-intra seekable footage plate لوح لقطات كل إطاراته مفتاحية لقطات all-intra seek video in html keyframes فيديو داخل الصفحة دقة الإطار إعادة ترميز frame exact motion-kit stabilisation (vidstab 2-pass) تثبيت الاهتزاز تثبيت اهتزاز stabilize vidstab deshake فيديو مهزوز لقطة مهتزة رعشة الكاميرا shaky video steady contact sheet & cover-frame mining لوحة لقطات واختيار الغلاف لوحة لقطات غلاف thumbnail contact sheet cover صورة مصغرة ثمبنيل اختيار إطار frame grab animated cover reference-reel study (mimic) دراسة ريل مرجعي بدقة الإطار محاكاة مرجع mimic reference reel boundaries تقليد ريل تحليل ريل نفس الستايل transitions shot lengths frame-accurate trim (re-encode) قص دقيق بالإطار قص trim frame accurate keyframe re-encode قص الفيديو تقطيع مقطع قص بالثانية cut clip frozen frames freeze frame & loop تجميد إطار وتكرار حلقة تجميد freeze frame hold loop تثبيت لقطة فريز تكرار المقطع seamless loop still frame keyframe-snapped lossless trim قص بدون فقد مضبوط على الإطار المفتاحي قص بدون فقد قص سريع إطار مفتاحي stream copy lossless cut keyframe real footage plate under graphics لقطة متحدث تحت الرسوم لوح متحدث footage plate talking head overlay رسوم فوق الفيديو موشن جرافيك جسيمات virtual camera captions imagemagick still post-processing معالجة الصور بـ imagemagick imagemagick convert قص شفافية crop transparent تجهيز الصور إزالة الأبيض تحويل الصيغة webp resize open-footage downloader with provenance تنزيل لقطة مفتوحة مع إيصال مصدر لقطات مفتوحة ويكيميديا open footage provenance wikimedia تنزيل فيديو تحميل لقطة إيصال المصدر download clip archive.org video & lottie inside html compositions فيديو ولوتي داخل html لوتي lottie video embed html composition رسوم متجهة إطار مستدير تضمين فيديو vector animation rounded frame cinemagraph سينماغراف سينماغراف cinemagraph living photo loop صورة متحركة صورة حية جزء متحرك moving photo seamless loop face & region privacy masks تمويه الوجوه والمناطق خصوصية تمويه الوجوه privacy face blur pixelate mosaic إخفاء الوجه تغبيش بكسلة anonymize blur region frame-accurate trim by re-encode قص دقيق للإطار بإعادة الترميز قص دقيق إعادة ترميز قص الفيديو frame accurate trim video ffmpeg jump-cut finder: cut on the frame before كاشف القفزات: اقطع قبل القفزة jump cut قفزة talking head cut قطع frame freeze the subject, keep the world moving تجميد الشخص والعالم يمشي تجميد freeze subject chronophotography ghost poses تجميد الشخص إيقاف الزمن"
 },
@@ -8479,7 +8480,7 @@
 "best": "proven",
 "ready_now": 1,
 "links": [
-"SP-0140",
+"SP-0141",
 "SP-0379",
 "SP-0148",
 "SP-0476"
@@ -8627,7 +8628,7 @@
 "SP-0329",
 "SP-0371",
 "SP-0374",
-"SP-0141"
+"SP-0140"
 ],
 "text": "delivery gate (inspect) بوابة التسليم فحص الفيديو قبل التسليم علو الصوت lufs final check verify_video delivery gate بوابة فحص التسليم مطابقة المواصفات تحقق الفيديو مقاس الفيديو spec check ffprobe ffprobe delivery gate + receipt بوابة فحص الجودة وإيصال الإنتاج إيصال الإنتاج تحقق الرندر صور المراجعة receipt sha256 test_report 16-check qa template تقرير الفحص بـ 16 بندًا تقرير الفحص قائمة تحقق جودة التسليم qa report checklist delivery qa from the decoded file فحص التسليم من الملف نفسه أخطاء الترميز مقاطع صامتة حجم الملف faststart decode errors typed final-render approval phrase عبارة اعتماد التصدير النهائي اعتماد نهائي موافقة المستخدم قفل التصدير approval gate final render storyboard gate بوابة الستوري بورد لوحة القصة مراجعة المشاهد كلمات الإطار storyboard check scene plan originality check فحص الأصالة أصالة النص نسخ المحتوى انتحال plagiarism copy check post-generation video qa فحص الفيديو المولد فيديو مولد تشوه اليدين ثبات الشخصية generated video continuity inspect delivery gate بوابة التسليم فحص التسليم إضاءة محروقة مستوى الصوت delivery check lufs kosif: delivery inspect gate and motion measures كوسف: بوابة التسليم وقياسات الحركة فحص بعد الرندر سرعة النص علو الصوت loudness speed cap preview-before-final-render gate بوابة المعاينة قبل التصدير اعتماد المعاينة ارندر موافقة قبل التصدير approval smoke render environment check فحص البيئة فحص الجهاز الإمكانيات المتاحة المتطلبات capabilities setup check export report object تقرير التصدير التحقق من الملف علو الصوت مواصفات الفيديو export check codec ffprobe qa receipt إيصال الفحص الفني تقرير الجودة فحص الملف إيصال الفحص qa report h264 check media job preflight (proplan) فحص مسبق لمهمة الوسائط تحقق قبل التنفيذ صدق الادعاءات تخطيط المهمة read-only check honest claims delivery gate بوابة التسليم قائمة تحقق قبل النشر فحص نهائي checklist pre-publish delivery verification فحص التسليم فحص الفيديو تسليم جهارة الصوت verify video lufs hyperframes check gate بوابة الفحص قبل الرندر تباين النص خروج العناصر فحص قبل التصدير contrast check overflow hyperframes keyframe gate frames بوابة الإطارات المفتاحية صور ثابتة فحص مبدئي كادرات stills preview frames final render + inspect gate التصيير النهائي والبوابة تصدير نهائي علو الصوت صورة الغلاف final export poster frame key frames gate بوابة الإطارات المفتاحية صور ثابتة من الفيديو معاينة سريعة قبل الرندر keyframe stills frame grabs realism gate (judge.py) بوابة الواقعية بوابة جودة قبول أو رفض واقعية الرندر pass revise render check caption decision gate (refuse bad clips) بوابة قرار الترجم"
 },
@@ -8702,7 +8703,7 @@
 "SP-0408",
 "SP-0212",
 "SP-0281",
-"SP-0141"
+"SP-0140"
 ],
 "text": "motion contract test اختبار عقد الحركة اختبار الحركة منحنيات الحركة مدة الأنيميشن easing css test reduced-motion contract عقد الحركة المخفضة تقليل الحركة إيقاف الأنيميشن حركة مخففة reduced motion animation off reduced-motion policy سياسة تقليل الحركة تقليل الحركة مشهد ثابت تخطي المقدمة reduced motion still frame regional motion clone (4x4 block motion) محاكاة حركة المناطق من المرجع تقليد الحركة فيديو مرجعي تتبع الحركة motion clone block matching motion energy measure قياس طاقة الحركة مقدار الحركة مشاهد ثابتة إيقاع الفيديو frame difference still share motion energy meter vs reference مقياس طاقة الحركة كمية الحركة تجمد إيقاع بصري motion analysis freeze temporal-change frame-hash proof إثبات التغير الزمني بالبصمة إثبات الحركة صورة ثابتة بصمة الإطار frame hash smoke test motion-library and interaction-model detection كشف مكتبات الحركة ونموذج التفاعل تحليل موقع مكتبات الأنيميشن حركة بالتمرير gsap scroll animation on-screen speed by optical flow سرعة الحركة على الشاشة قياس الحركة تدفق بصري بلور الحركة farneback px per frame on-screen speed gate (optical flow) قياس سرعة الحركة على الشاشة حركة سريعة ضبابية الحركة سرعة الأنيميشن motion blur optical flow animation map audit script سكربت خريطة الحركة للتدقيق تدقيق الحركة فترات ميتة تتابع gsap tween audit motion sidecar assertions (*.motion.json) تأكيدات الحركة الجانبية اختبار الحركة تحقق آلي تأكيدات motion test assertions animation map (choreography audit) خريطة الحركة لتدقيق الكوريغرافيا توقيت الحركة فترات ميتة تتابع الظهور tween audit stagger keyframe diagnostics cli (keyframes / --shot / --ghost / strip) أدوات تشخيص الحركة مسار الحركة سرعة ثابتة طبقات شبحية onion skin motion path figma motion fidelity gate (motion-energy psnr) بوابة دقة حركة فيجما تطابق الحركة انيميشن فيجما تطابق التوقيت easing design to video motion quality checklist قائمة جودة الحركة جودة الأنيميشن طبقات الحركة مراجعة الحركة follow-through lottie lottiefiles quality checklist قائمة جودة الحركة جودة الأنيميشن قائمة فحص الحركة تقليل الحركة lottie animation checklist speed limits حدود السرعة سرعة الحركة ضبابية الحركة قراءة النص motion blur px per frame frame-difference energy طاقة اختلاف الإطارات إيقاع الفيديو هدوء الحركة قياس الحركة pacing kmotion freeze test for fake motion اختبار التجميد حركة وهمية تدرجات متحركة اختبار الحركة gradient drift stillness reduced-motion respect احترام تقليل الحركة نص متحرك وضوح النص وميض readability flashing reduced-motion and static-frame fallback بديل الحركة المخففة والإطار الثابت إمكانية الوصول صورة غلاف بدون حركة"
 },
@@ -8959,7 +8960,7 @@
 "links": [
 "SP-0038",
 "SP-0181",
-"SP-0140",
+"SP-0141",
 "SP-0406"
 ],
 "text": "reference study دراسة فيلم مرجعي تحليل مرجع دليل أسلوب إيقاع المونتاج style guide shot length study reference دراسة مرجع تحليل مرجع طول اللقطات دليل الأسلوب reference analysis style guide reference capture for style matching التقاط إطارات مرجعية لمطابقة الأسلوب تقليد الستايل فيديو مرجعي استخراج إطارات style match reference frames reference film study دراسة فيلم مرجعي دليل أسلوب إيقاع المونتاج لوحة ألوان style guide cut rhythm reference film study (boundaries, looks, text zones) دراسة الفيديو المرجعي فيديو مرجعي تقليد فيديو تحليل المونتاج reference video imitate style mimic style dna deep reference study تحليل بصمة المرجع العميق بصمة الأسلوب حركة الكاميرا انتقالات ترانزيشن style analysis camera moves reference video analyser محلل الفيديو المرجعي تحليل فيديو نوع الانتقال ترانزيشن analyze reference style analysis batch style library مكتبة الأساليب مكتبة مراجع أسلوب موحد تحليل دفعي house style batch analysis style pack with statistical bands حزمة أسلوب بنطاقات إحصائية أسلوب الرسم اتساق الأسلوب ستايل style consistency drawn look video analyze breakdown تحليل الفيديو تفكيك فيديو ألوان سرعة الإيقاع bpm palette"
@@ -9609,7 +9610,7 @@
 "SP-0356",
 "SP-0246",
 "SP-0442",
-"SP-0140"
+"SP-0141"
 ],
 "text": "directed edit of a talking clip مونتاج مُخرَج لمقطع كلام مونتاج مُخرج مقطع كلام talking head directed edit keyword reel فيديو متكلم ترجمة كابشن captions talking video payoff-line detection كشف جملة الذروة ذروة لازمة payoff climax refrain stress جملة مهمة كلمات الأغنية إبراز lyrics key line motivational talking-reel arc (final_edit) قوس الريل التحفيزي (final_edit) تحفيزي ريل motivational talking reel arc premium edit فيديو تحفيزي مونتاج احترافي ريلز motivation speech reel wordless short: a guide and a leap قصة بلا كلام: مرشد وقفزة بلا كلام قصة قصيرة wordless silent short leap cat فيلم صامت بدون حوار قطة animated short no dialogue two-definitions-of-success voice explainer شرح «تعريفان للنجاح» على لوحات مولدة نجاح تنمية explainer voice cold warm question mark تعليق صوتي مال وسعادة مقارنة success gsap meaning-matched song montage (ghorba) مونتاج الغربة بمعنى الأغنية غربة أغنية montage song emotional order exile سفر حنين مونتاج أغنية music video vertical creative sub-agents & jev decisions وكلاء الإبداع الفرعيون وقرارات jev وكلاء subagents jev decision roles مخرج توزيع المهام فريق وكلاء personas agents bookends & loop endings الإطار المغلق والحلقة إطار مغلق حلقة bookend loop outro ending تكرار بداية ونهاية لوب looping video closing explainer structures هياكل الشرح شرح explainer how-to listicle narration faceless فيديو تعليمي شرح خطوات تعليق صوتي tutorial essay video silent-vlog hook anatomy خطاف الفلوج الصامت فلوج افتتاح بارد cold open vlog hook silent مقدمة فلوج تشويق بدون كلام teaser vlog intro creator-video shapes & faceless vo أشكال فيديو صانع المحتوى صانع محتوى بلا وجه creator faceless transcript first b-roll بدون وجه يوتيوبر تسجيل شاشة screen recording voiceover long-form edit style metrics (essay · diary · reflection) مقاييس أساليب المونتاج الطويل طول اللقطة إيقاع المونتاج asl cut rate essay vlog pacing مونتاج طويل سرعة القطع يوميات shot length long form deck & pitch arcs as video skeletons أقواس العروض التقديمية كهياكل فيديو عرض تقديمي pitch deck investor aida scqa عرض مستثمرين بيتش مبيعات presentation slides"
 },
@@ -9633,7 +9634,7 @@
 "SP-0212",
 "SP-0271",
 "SP-0255",
-"SP-0141"
+"SP-0140"
 ],
 "text": "style.md + plan.md: observed vs assumed + timed scene table style.md وplan.md: المرصود والمفترض والجدول الموقوت خطة أسلوب style sheet plan scene table scaffold جدول المشاهد ورقة الأسلوب توقيت المشاهد timing plan.md choreography rules (build · breathe · resolve, 1/3 rules) قواعد تصميم الحركة تصميم حركة choreography build breathe resolve stagger counter motion anti slideshow تتابع العناصر عرض شرائح حركة مضادة slideshow timing rules motion score table نوتة الحركة نوتة حركة motion score easing timing table ledger توقيت الحركة منحنى الحركة تتابع reduced motion animation spec one motion personality per film شخصية حركة واحدة لكل فيلم شخصية الحركة personality held breath real weight kinetic glitch طابع الحركة أسلوب الحركة اتساق motion style consistency beat direction with energy verbs إخراج النبضة بأفعال الطاقة إخراج النبضة energy verbs beat direction depth layers website film أفعال الحركة طبقات العمق إيقاع المشاهد foreground background rhythm scenario first: beat-grid shot table and trigger map السيناريو أولًا وخريطة المحفزات scenario storyboard trigger map shot list سيناريو خريطة محفزات قائمة لقطات amateur → pro motion lexicon (adjective → code direction) قاموس تحويل وصف الهواة إلى أوامر حركة lexicon vocabulary قاموس مصطلحات direction brief translation ناعم سلس مع الإيقاع smooth easing feeling → motion vocabulary map من الشعور إلى الأرقام فخم تقني مرح هادئ mood feeling archetype رسمي صحفي إحساس الفيديو luxury playful corporate motion-director method: thesis, motif, score منهج المخرج: أطروحة ونقش ونوتة أطروحة نقش thesis motif direction concept فكرة بصرية اتجاه إبداعي موشن جرافيك art direction visual idea city montage shot grammar قواعد مونتاج المدينة مدينة سفر city montage travel shot grammar downbeats فلوج سفر لقطات الشارع أحجام اللقطات travel vlog beat cuts creative review lenses & aesthetics council عدسات النقد قبل الرندر نقد مراجعة critique review contact sheet lenses تقييم نقد فني تكوين art direction quality check talk-before-build response table جدول الرد قبل البناء مراجعة ملاحظات feedback revision review loop تعديلات رأي العميل تحسين المسودة notes edits"
 },
@@ -9934,7 +9935,7 @@
 "SP-0424",
 "SP-0437",
 "SP-0428",
-"SP-0140"
+"SP-0141"
 ],
 "text": "ffmpeg xfade transitions in the timeline انتقالات xfade في التايملاين تايملاين انتقال بين المقاطع أسماء عربية timeline json transition names xfade transition palette مكتبة انتقالات xfade ترانزيشن انتقالات جاهزة دمج مقطعين ffmpeg transitions crossfade slides (xfade) سحب انزلاق دفع اللقطة سلايد slide push transition diagonals (xfade) قطري كشف من الزاوية مسح مائل انتقال قطري diagonal corner reveal wipes (xfade) مسح مسح وايب مسح من الزاوية wipe corner wipe circle and rect shapes (xfade) دوائر ومستطيلات قزحية دائرة مسح الساعة iris clock wipe smooth wipes (xfade) مسح ناعم حافة ناعمة ترانزيشن ناعم مسح متدرج smooth wipe soft edge squeeze, zoom, pixelize, blur (xfade) ضغط وزووم وبكسلة بكسلة زووم ضبابية pixelate zoom transition cover and reveal (xfade) تغطية وكشف تغطية كشف انزلاق فوقي cover reveal slices (xfade) شرائح ستائر تقطيع شرائح انتقال شرائح venetian blinds slice barn doors (xfade) أبواب تنفتح انقسام الكادر فتح وإغلاق أبواب barn door split reveal transitions (ffmpeg xfade) انتقالات الكشف كشف إزاحة سلايد reveal slide off wipe family (ffmpeg xfade) عائلة المسح مسح وايب ترانزيشن مسح wipe timeline transition slice transitions (ffmpeg xfade) انتقالات الشرائح شرائح ستائر تقطيع slices blinds ffmpeg xfade transition set (58) انتقالات xfade قائمة الانتقالات ترانزيشن مزج الصوت transition list timeline cover transitions (ffmpeg xfade) انتقالات التغطية تغطية انزلاق فوقي سلايد cover overlay slide distance transition (ffmpeg xfade) انتقال المسافة انتقال المسافة ذوبان مزج distance xfade slide family (ffmpeg xfade) عائلة الانزلاق انزلاق سلايد انتقال اتجاهي slide push cross-fade family (ffmpeg xfade) عائلة التلاشي تلاشي مزج ذوبان fade dissolve horizontal blur transition (ffmpeg xfade) انتقال الضبابية الأفقية ضبابية بلور تمويه blur transition hblur xfade transitions (57) انتقالات xfade ترانزيشن انتقال بين المقاطع تداخل الصوت crossfade audio crossfade zoom-in transition (ffmpeg xfade) انتقال الزووم للداخل زووم تكبير تقريب zoom transition push in pixelize transition (ffmpeg xfade) انتقال التبكسل بكسلة مربعات تكسير الصورة pixelate mosaic diagonal wipes (ffmpeg xfade) مسح قطري قطري مسح مائل زاوية diagonal wipe corner squeeze transitions (ffmpeg xfade) انتقالات الضغط ضغط انكماش تقلص squeeze squash smooth wipe family (ffmpeg xfade) عائلة المسح الناعم مسح ناعم انتقال ناعم حافة ناعمة smooth wipe soft wipe circle / rect / radial reveals (ffmpeg xfade) كشف دائري ومستطيل وشعاعي دائرة مسح شعاعي قزحية iris radial wipe wind transitions (ffmpeg xfade) انتقالات الريح ريح رياح انتقال اتجاهي wi"
 },
@@ -9958,7 +9959,7 @@
 "SP-0439",
 "SP-0442",
 "SP-0342",
-"SP-0140"
+"SP-0141"
 ],
 "text": "shot list sequencer (hard cuts) قائمة لقطات بقطعات قائمة لقطات حركة الكاميرا قطع حاد shot list camera cuts hard-cut concat (no crossfades) قطع حاد بلا تلاشي قطع مباشر دمج المقاطع بدون انتقال hard cut concat when to use shader vs css vs hard cut متى نستخدم انتقال شيدر أو css أو قطع حاد اختيار الانتقال قطع حاد ريلز تقطيع transition choice hard cut scene handover: hard cut vs fade تسليم المشاهد قطع أو تلاشي قطع حاد تلاشي تسليم المشاهد hard cut fade in out scene timing shot list sequence with hard cuts تسلسل اللقطات قائمة اللقطات قطع حاد تتابع اللقطات shot list camera cuts cut the curve قطع على المنحنى قطع بالسرعة تسارع قطع حاد velocity match speed cut hard cut with camera reframe قطع حاد مع إعادة تأطير الكاميرا إعادة تأطير قص الكادر زووم مفاجئ punch in reframe colour-flip hard cuts قطع بقلب الألوان خلفيات ملونة قطع على الإيقاع تبديل لوني color cuts beat hard dark/light section flip قطع حاد بين الظلام والنور قطع حاد تبديل الإضاءة مؤثر صوتي hard cut dark to light sfx colour-block cut قطع بالكتل اللونية خلفية ملونة قطع على الإيقاع ألوان سادة color block background swap rapid brand-card flashes ومضات بطاقات العلامات قطع سريع بطاقات براند hard cut beat sync rapid feature word cuts قطع كلمات المزايا السريع مزايا كلمات سريعة تقطيع سريع feature list fast text cuts colour-field cut rhythm إيقاع حقول لونية تبديل الألوان تقطيع على الإيقاع خلفية ملونة palette swap beat cuts strobe cut burst تقطيع وميضي تقطيع سريع ستروب ذروة strobe fast cuts code↔visual cut bursts قطع متبادل بين الشيفرة والصورة كود برمجة دروب code drop theme roll call cuts استعراض السمات بقطعات سريعة سمات سكنات لعبة skins themes game transition grammar: no crossfades, velocity-matched cuts قواعد الانتقالات تخطيط الانتقالات قطع حاد حركة مميزة beat sheet transition plan transition key: cut انتقال: قطع قطع مباشر خطة الفيلم جدول الانتقالات cut plan transition grammar (no crossfades) قواعد الانتقالات قواعد القطع قطع على الإيقاع بدون مزج hard cuts editing grammar director kb transition rules (12) قواعد الانتقالات في قاعدة المخرج أنواع الانتقالات متى أستخدم قواعد المونتاج transition guide cut types two-transition rule قاعدة انتقالين قطع ومزج تبسيط المونتاج نوعان فقط two transitions ffmpeg beat-locked hard cuts قطع على كل ضربة قطع على الضربة دروب مونتاج سريع beat cuts remotion bpm hard cuts on 120 bpm قطع على 120 نبضة سرعة الإيقاع مزامنة الموسيقى تقطيع على البيت bpm beat cuts"
 },
@@ -10378,7 +10379,7 @@
 "SP-0432",
 "SP-0437",
 "SP-0423",
-"SP-0140"
+"SP-0141"
 ],
 "text": "transition classification by re-synthesis تصنيف الانتقال بإعادة التركيب تحليل الانتقال التعرف على الترانزيشن فيديو مرجعي transition detection replicate transition transition classification by re-synthesis, shipped in-repo تصنيف الانتقال بإعادة التركيب داخل المستودع انتقال xfade re-synthesis classification capcut mimic محاكاة most-active window shot picker اختيار أنشط مقطع أنشط لقطة اختيار اللقطات حركة المقطع motion energy shot selection mimic reference reel محاكاة ريل تقليد ريل نسخ المونتاج فيديو مرجعي recreate reel reference video remake transition energy and mood mapping مطابقة الانتقال مع الطاقة والمزاج اختيار الانتقال مزاج الفيديو إيقاع المونتاج transition choice pacing mood transition by energy table اختيار الانتقال حسب الطاقة طاقة الفيديو اختيار الانتقال إيقاع المونتاج transition choice pacing energy transition meaning rule قاعدة معنى الانتقال معنى الانتقال نوعان فقط بساطة المونتاج transition meaning two types transition meaning map معنى كل انتقال معنى الانتقال مزاج الفيديو لغة المونتاج transition mood editing grammar transition semantics معاني الانتقالات دلالة الانتقال نية السرد لغة المونتاج narrative intent cut meaning every transition needs a nameable cause لكل انتقال سبب يُسمّى transition cause motivated cut no fades state change سبب الانتقال بلا تلاشي transition presets إعدادات انتقال جاهزة مدة الانتقال منحنى التسارع إعدادات جاهزة easing duration presets"
 },
@@ -10402,7 +10403,7 @@
 "SP-0326",
 "SP-0442",
 "SP-0328",
-"SP-0141"
+"SP-0140"
 ],
 "text": "native entry animations with @starting-style حركات الدخول الأصلية بـ starting-style نافذة منبثقة حركة دخول حركة خروج popover dialog animation css only beat motion primitive: staggered-exit حركة إيقاعية: staggered-exit خروج متتابع تفريغ الشاشة خروج العناصر stagger out cascade exit beat motion primitive: hypercut-whip حركة إيقاعية: hypercut-whip قطع على الإيقاع سوايب مونتاج موسيقي beat cut whip cut beat motion primitive: blur-resolve حركة إيقاعية: blur-resolve ضبابية توضيح تدريجي ختام blur in focus resolve beat motion primitive: flash-cut حركة إيقاعية: flash-cut فلاش ومضة دروب flash transition drop hit beat motion primitive: hard-cut حركة إيقاعية: hard-cut قطع حاد تقطيع على الإيقاع كلمة على الضربة hard cut beat sync beat motion primitive: iris-open حركة إيقاعية: iris-open فتح دائري قزحية كشف على الموسيقى iris open circle reveal beat motion primitive: mask-reveal حركة إيقاعية: mask-reveal كشف بقناع ماسك مسح mask wipe music sync motion-blur whip exit خروج سوطي بضبابية حركة خروج الشعار انزلاق جانبي بلور wordmark exit animation whip-out cards with motion blur كروت تطير بضبابية حركة خروج البطاقات دوران بلور cards exit fly out scene rules: transition is the exit قاعدة: الانتقال هو الخروج دخول العناصر خروج المشاهد قواعد المشاهد scene exit entrance animation gsap"
 },
@@ -10425,7 +10426,7 @@
 "SP-0356",
 "SP-0327",
 "SP-0422",
-"SP-0140"
+"SP-0141"
 ],
 "text": "beat montage command أمر مونتاج الإيقاع مونتاج على الموسيقى تقطيع ريلز music video edit reels auto edit beat-grid montage planner مخطط المونتاج على الإيقاع تقطيع على الإيقاع ضربات الموسيقى مونتاج سريع beat sync cut plan voice-first montage مونتاج يقوده الصوت مونتاج بودكاست مقابلة تقطيع على الكلام voiceover edit podcast interview prepend hook while music stays continuous إضافة خطاف في البداية مع استمرار الموسيقى خطاف البداية مقدمة الفيديو موسيقى خلفية hook intro music bed ripple insert beat-cut montage مونتاج على الإيقاع مونتاج على الأغنية تقطيع على الإيقاع مونتاج سريع beat sync music edit beat word-card montage مونتاج كلمات على الإيقاع كلمة واحدة بطاقات نصية تقطيع سريع word cards beat cuts style-range rapid montage مونتاج سريع لنطاق الأساليب استعراض أساليب مونتاج سريع قطع على الإيقاع style showcase fast cuts colour-inversion beat cards بطاقات صادمة بانعكاس الألوان هوك بيان شاشة سوداء hook statement card cut-on-beat rule القطع على الضربة القطع على الإيقاع توقيت القطع مزامنة الموسيقى beat sync cut timing music re-entry with tail & riser عودة الموسيقى بذيل ورايزر عودة الموسيقى رايزر صدى riser reverse swell music"
 },
@@ -10557,7 +10558,7 @@
 "SP-0277",
 "SP-0203",
 "SP-0405",
-"SP-0141"
+"SP-0140"
 ],
 "text": "exposure fade-in from black دخول تدريجي بالتعريض ظهور تدريجي افتتاحية تعريض fade in exposure ramp fade-from/to-black bookends بداية ونهاية بتلاشٍ من السواد وإليه تلاشي للأسود افتتاحية خاتمة fade to black intro outro film-leader countdown عد تنازلي بأسلوب شريط السينما عد تنازلي بداية الفيلم أرقام countdown film intro sliding film strip شريط فيلم ينزلق شريط فيلم إطارات متتالية ثقوب الفيلم film strip sprocket"
 },
@@ -11426,8 +11427,8 @@
 "SP-0005"
 ],
 "assemble": [
-"SP-0140",
 "SP-0141",
+"SP-0140",
 "SP-0145"
 ],
 "verify": [
@@ -12599,11 +12600,11 @@
 }
 ],
 "audit": {
-"atoms": 5849,
+"atoms": 5850,
 "superpowers": 481,
 "twin_groups": 177,
 "twin_members": 458,
-"distinct_methods": 5568,
+"distinct_methods": 5569,
 "tiny_absorbed": 28,
 "same_name_groups": [
 {
@@ -12810,7 +12811,7 @@
 "TOOL-80"
 ],
 "superpowers": [
-"SP-0141"
+"SP-0140"
 ]
 },
 {
@@ -12820,7 +12821,7 @@
 "TOOL-82"
 ],
 "superpowers": [
-"SP-0141"
+"SP-0140"
 ]
 }
 ],
@@ -13584,7 +13585,7 @@
 ]
 },
 {
-"a": "SP-0140",
+"a": "SP-0141",
 "b": "SP-0356",
 "sim": 0.335,
 "hubs": [
@@ -13635,7 +13636,7 @@
 "deliver": 188,
 "create": 1941,
 "refine": 896,
-"assemble": 492,
+"assemble": 493,
 "understand": 832,
 "verify": 543
 }
