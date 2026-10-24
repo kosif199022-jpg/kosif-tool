@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<style>
+  body { font: 14px system-ui, "Segoe UI", Tahoma, sans-serif; width: 320px; margin: 0; padding: 14px; color: #1d1d1f; background: #fff; }
+  h1 { font-size: 15px; margin: 0 0 8px; }
+  p { margin: 6px 0; line-height: 1.5; }
+  .row { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0; }
+  button { flex: 1; padding: 8px; border: 0; border-radius: 8px; background: #0a66ff; color: #fff; font: inherit; cursor: pointer; }
+  button.secondary { background: #eef1f6; color: #1d1d1f; }
+  button:disabled { opacity: .45; cursor: default; }
+  label { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
+  input[type=number] { width: 70px; }
+  #count { font-size: 22px; font-weight: 700; }
+  #msg { color: #555; min-height: 1.5em; }
+  code { direction: ltr; display: block; background: #f5f5f7; padding: 6px; border-radius: 6px; font-size: 11px; word-break: break-all; }
+</style>
+</head>
+<body>
+  <h1>اجمع روابط فيديوهات الحساب</h1>
+  <p id="where">افتح صفحة أي حساب على إنستجرام.</p>
+  <label><input type="checkbox" id="videosOnly" checked> فيديوهات بس (ريلز)</label>
+  <label>أقصى عدد <input type="number" id="max" value="1000" min="1" max="5000"></label>
+  <div class="row">
+    <button id="reels" class="secondary">افتح تبويب الريلز</button>
+    <button id="start">ابدأ الجمع</button>
+    <button id="stop" class="secondary" disabled>وقّف</button>
+  </div>
+  <p><span id="count">0</span> رابط</p>
+  <p id="msg"></p>
+  <div class="row">
+    <button id="copy" class="secondary" disabled>نسخ الروابط</button>
+    <button id="txt" class="secondary" disabled>حفظ ملف .txt</button>
+  </div>
+  <p>بعد الحفظ، حمّلهم بأمر واحد:</p>
+  <code id="cmd">python3 scripts/instagram_finder.py get --urls links.txt</code>
+  <script src="popup.js"></script>
+</body>
+</html>

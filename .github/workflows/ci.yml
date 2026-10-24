@@ -78,6 +78,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_edit_engine.py' -v
       - name: Fast edit (cut planning, voice and brighten filters; FFmpeg runs skip without ffmpeg)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fast_edit.py' -v
+      - name: Instagram product video finder (offline, fake yt-dlp)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_instagram_finder.py' -v
       - name: Motion Lab execution and safety regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
       - name: Motion engine JavaScript execution contract

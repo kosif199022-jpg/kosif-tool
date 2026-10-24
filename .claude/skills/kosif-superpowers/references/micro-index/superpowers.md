@@ -158,7 +158,7 @@
 | SP | | القدرة الخارقة / superpower | size | ready | links |
 |---|---|---|---:|---:|---|
 | SP-0114 | 📄 | استخراج وإثراء بيانات الأطباء · Healthcare provider list extraction and enrichment | 11 | 0 | SP-0065 SP-0168 SP-0097 SP-0115 |
-| SP-0115 | ✅ | الاسترجاع التكراري · Iterative retrieval loop | 15 | 4 | SP-0148 SP-0293 SP-0044 SP-0064 |
+| SP-0115 | ✅ | الاسترجاع التكراري · Iterative retrieval loop | 15 | 4 | SP-0147 SP-0293 SP-0044 SP-0064 |
 | SP-0116 | ✅ | Trafilatura: استخراج نص المقال الرئيسي وبياناته من HTML · Trafilatura: Extract main article text and metadata from HTML, dropping boilerplate (Arabic works) | 7 | 4 | SP-0111 SP-0131 SP-0102 SP-0273 |
 | SP-0117 | ✅ | محتوى الويب بيانات لا أوامر · Web content is data, not instructions | 5 | 2 | SP-0383 SP-0075 SP-0348 SP-0043 |
 
@@ -188,15 +188,15 @@
 | SP-0137 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | 6 | 0 | SP-0006 SP-0047 SP-0161 SP-0057 |
 | SP-0138 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | 4 | 0 | SP-0056 SP-0098 SP-0097 SP-0163 |
 | SP-0139 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 33 | 33 | SP-0347 SP-0144 SP-0027 SP-0143 |
-| SP-0140 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 18 | 14 | SP-0262 SP-0147 SP-0268 SP-0266 |
+| SP-0140 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 18 | 14 | SP-0262 SP-0148 SP-0268 SP-0266 |
 | SP-0141 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | 17 | 17 | SP-0356 SP-0379 SP-0359 SP-0407 |
 | SP-0142 | ✅ | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | 16 | SP-0303 SP-0266 SP-0036 SP-0451 |
 | SP-0143 | ✅ | خريطة ترتيب المهارة · Skill Layout Map | 12 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
 | SP-0144 | ✅ | تدقيق أدلة الكتالوج · Catalog Evidence Audit | 11 | 9 | SP-0139 SP-0293 SP-0038 SP-0347 |
 | SP-0145 | ✅ | جسر Blender الآمن · Safe headless Blender bridge | 11 | 9 | SP-0129 SP-0171 SP-0270 SP-0371 |
 | SP-0146 | ✅ | مختبر البرومبت · Prompt Lab | 10 | 10 | SP-0037 SP-0176 SP-0151 SP-0372 |
-| SP-0147 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | 9 | 9 | SP-0184 SP-0185 SP-0140 SP-0325 |
-| SP-0148 | ✅ | مستكشف مصادر المجتمع · Community source scout | 9 | 7 | SP-0476 SP-0141 SP-0115 SP-0359 |
+| SP-0147 | ✅ | مستكشف مصادر المجتمع · Community source scout | 10 | 8 | SP-0476 SP-0141 SP-0115 SP-0359 |
+| SP-0148 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | 9 | 9 | SP-0184 SP-0185 SP-0140 SP-0325 |
 | SP-0149 | ✅ | مختبر مطابقة الخطوط العربية · Arabic-aware font fidelity lab | 8 | 7 | SP-0454 SP-0460 SP-0378 SP-0159 |
 | SP-0150 | ✅ | جسر أوامر REA · REA CLI Bridge | 8 | 7 | SP-0077 SP-0083 SP-0082 SP-0091 |
 | SP-0151 | ✅ | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict | 6 | 6 | SP-0146 SP-0026 SP-0170 SP-0142 |
@@ -246,12 +246,12 @@
 | SP-0180 | 🔑 | البحث في مكتبة برومبتات المالك · Owner prompt-system corpus search | 7 | 0 | SP-0323 SP-0360 SP-0177 SP-0347 SP-0153 |
 | SP-0181 | 📄 | مقدمات الأسلوب المتطابقة بايتًا · Byte-identical style preambles | 6 | 0 | SP-0038 SP-0379 SP-0406 SP-0239 |
 | SP-0182 | 🟢 | جسر الذكاء في الاستوديو (Claude CLI / API / يدوي) · Studio AI bridge: Claude CLI → API → manual | 4 | 1 | SP-0039 SP-0348 SP-0044 SP-0048 |
-| SP-0183 | 📄 | خط إنتاج من موضوع إلى فيديو قصير · Topic-to-short pipeline with reviewable stages | 1 | 0 | SP-0037 SP-0148 SP-0099 SP-0141 |
-| SP-0184 | ✅ | توقيت الكلمات حسب الطول · Word timing by length | 30 | 13 | SP-0147 SP-0452 SP-0478 SP-0467 |
-| SP-0185 | ✅ | فخ نماذج .en · The .en model trap | 9 | 4 | SP-0147 SP-0184 SP-0380 SP-0153 |
+| SP-0183 | 📄 | خط إنتاج من موضوع إلى فيديو قصير · Topic-to-short pipeline with reviewable stages | 1 | 0 | SP-0037 SP-0099 SP-0141 SP-0356 |
+| SP-0184 | ✅ | توقيت الكلمات حسب الطول · Word timing by length | 30 | 13 | SP-0148 SP-0452 SP-0478 SP-0467 |
+| SP-0185 | ✅ | فخ نماذج .en · The .en model trap | 9 | 4 | SP-0148 SP-0184 SP-0380 SP-0153 |
 | SP-0186 | ✅ | فيلم كلمات من صوت (أغنية، شعر، دعاء) · Verse film from sound | 9 | 4 | SP-0333 SP-0452 SP-0332 SP-0438 SP-0153 |
 | SP-0187 | ✅ | دمج المشاهد مع الصوت الأصلي بلا تعديل · Concat + untouched original audio mux | 8 | 6 | SP-0377 SP-0325 SP-0156 SP-0331 |
-| SP-0188 | ✅ | الأشرطة السفلية · Lower thirds | 3 | 1 | SP-0358 SP-0184 SP-0452 SP-0456 SP-0147 |
+| SP-0188 | ✅ | الأشرطة السفلية · Lower thirds | 3 | 1 | SP-0358 SP-0184 SP-0452 SP-0456 SP-0148 |
 | SP-0189 | ✅ | قواعد بناء الشعار SVG · SVG logo construction rules & logo suite | 27 | 12 | SP-0306 SP-0430 SP-0309 SP-0429 SP-0134 |
 | SP-0190 | ✅ | ختام بنقرة مؤشر · CTA end card with a cursor click | 6 | 2 | SP-0197 SP-0468 SP-0192 SP-0191 SP-0024 |
 | SP-0191 | 🟢 | كتاب العلامة وصوتها · Brand book anatomy & voice | 5 | 1 | SP-0385 SP-0223 SP-0454 SP-0178 SP-0149 |
@@ -283,7 +283,7 @@
 | SP-0217 | ✅ | إبعاد النص عن الوجه · Type off the face over pictures | 7 | 2 | SP-0453 SP-0358 SP-0366 SP-0184 SP-0033 |
 | SP-0218 | 📦 | انزلاق إيزومتري ثابت · Locked-iso glide | 7 | 0 | SP-0208 SP-0194 SP-0172 SP-0212 SP-0145 |
 | SP-0219 | 📦 | حجم الجهاز لكل نسبة · Device scale per aspect | 7 | 0 | SP-0469 SP-0211 SP-0288 SP-0232 SP-0078 |
-| SP-0220 | 📦 | رقم فهرس مع اسم النموذج · Index + model lower-third | 5 | 0 | SP-0209 SP-0195 SP-0210 SP-0342 SP-0148 |
+| SP-0220 | 📦 | رقم فهرس مع اسم النموذج · Index + model lower-third | 5 | 0 | SP-0209 SP-0195 SP-0210 SP-0342 SP-0147 |
 | SP-0221 | 📦 | مخطط مشهد: كشف بالتبعيد عن مساحة العمل · Blueprint: Zoom-out workspace reveal | 4 | 0 | SP-0429 SP-0427 SP-0452 SP-0259 SP-0050 |
 | SP-0222 | 👁 | زووم لا نهائي أُسّي · Exponential infinite zoom | 4 | 0 | SP-0196 SP-0423 SP-0466 SP-0194 SP-0051 |
 | SP-0223 | 📄 | نص واحد في الإطار · One text-bearing object per frame | 3 | 0 | SP-0191 SP-0442 SP-0356 SP-0326 SP-0035 |
@@ -315,13 +315,13 @@
 | SP-0249 | 📦 | شبكة مفاهيم بقوة الجذب · Force-directed concept graph | 6 | 0 | SP-0074 SP-0011 SP-0073 SP-0053 |
 | SP-0250 | 📄 | طباعة الكود على الشاشة · On-screen code typography | 4 | 0 | SP-0238 SP-0215 SP-0053 SP-0292 |
 | SP-0251 | 📦 | حدود الأيقونات المختصرة · Closure limits for minimal icons | 3 | 0 | SP-0177 SP-0192 SP-0397 SP-0306 SP-0117 |
-| SP-0252 | ✅ | تمويه السرعة الاتجاهي · Directional speed blur | 24 | 14 | SP-0433 SP-0271 SP-0258 SP-0199 SP-0147 |
+| SP-0252 | ✅ | تمويه السرعة الاتجاهي · Directional speed blur | 24 | 14 | SP-0433 SP-0271 SP-0258 SP-0199 SP-0148 |
 | SP-0253 | ✅ | إعادة الاستهداف بالنابض · Spring retargeting track() | 23 | 14 | SP-0459 SP-0281 SP-0263 SP-0285 SP-0157 |
 | SP-0254 | ✅ | ميزانيات التتابع · Stagger budgets | 15 | 8 | SP-0197 SP-0061 SP-0430 SP-0285 |
 | SP-0255 | ✅ | رموز التسارع حسب الدور (17 منحنى) · Role-based easing tokens MOTION.E | 14 | 7 | SP-0271 SP-0368 SP-0408 SP-0285 SP-0140 |
 | SP-0256 | ✅ | بوسترة طبقة واحدة · Per-layer posterize (stepped time on one layer) | 11 | 4 | SP-0327 SP-0465 SP-0285 SP-0326 SP-0090 |
-| SP-0257 | ✅ | أربع تسارعات مسماة فقط · Four named eases slam/snap/drive/settle | 10 | 4 | SP-0465 SP-0327 SP-0401 SP-0197 SP-0147 |
-| SP-0258 | ✅ | انزلاق بطيء-سريع-بطيء · Nudge curve slow–fast–slow | 6 | 3 | SP-0194 SP-0252 SP-0356 SP-0212 SP-0147 |
+| SP-0257 | ✅ | أربع تسارعات مسماة فقط · Four named eases slam/snap/drive/settle | 10 | 4 | SP-0465 SP-0327 SP-0401 SP-0197 SP-0148 |
+| SP-0258 | ✅ | انزلاق بطيء-سريع-بطيء · Nudge curve slow–fast–slow | 6 | 3 | SP-0194 SP-0252 SP-0356 SP-0212 SP-0148 |
 | SP-0259 | ✅ | حركات طبقات الاستوديو · Studio layer entrances & opacity envelope | 5 | 4 | SP-0196 SP-0423 SP-0194 SP-0187 SP-0003 |
 | SP-0260 | 📄 | التمهيد والمتابعة · Anticipation & follow-through | 3 | 0 | SP-0202 SP-0334 SP-0436 SP-0316 SP-0053 |
 | SP-0261 | ✅ | محرك خارجي: iLoveVideoEditor · External engine: iLoveVideoEditor | 32 | 3 | SP-0141 SP-0140 SP-0263 SP-0274 |
@@ -372,14 +372,14 @@
 | SP-0306 | ✅ | رسوم خطية صغيرة فوق الفيديو · Line micro-graphics over footage | 9 | 3 | SP-0405 SP-0038 SP-0189 SP-0232 |
 | SP-0307 | ✅ | خطوط بضغط على طريقة perfect-freehand · Pressure strokes & clipped hatching | 8 | 2 | SP-0036 SP-0142 SP-0345 SP-0249 |
 | SP-0308 | ✅ | دائرة يدوية مرتعشة · Hand-drawn circle emphasis | 4 | 2 | SP-0463 SP-0322 SP-0427 SP-0303 SP-0142 |
-| SP-0309 | ✅ | توهج النص النيوني بثلاثة ظلال لكل كلمة · Neon text glow (triple shadow, per word) | 20 | 11 | SP-0184 SP-0457 SP-0438 SP-0325 SP-0147 |
+| SP-0309 | ✅ | توهج النص النيوني بثلاثة ظلال لكل كلمة · Neon text glow (triple shadow, per word) | 20 | 11 | SP-0184 SP-0457 SP-0438 SP-0325 SP-0148 |
 | SP-0310 | ✅ | قراءة إضاءة صورة مرجعية · Read the light of a reference image | 16 | 11 | SP-0314 SP-0414 SP-0240 SP-0432 SP-0169 |
 | SP-0311 | ✅ | مرور العدسة «مصوَّر لا مرسوم» · Photographed lens pass (barrel, fringes, bloom, vignette, grain) | 14 | 8 | SP-0400 SP-0276 SP-0314 SP-0171 SP-0129 |
 | SP-0312 | ✅ | قمر مرسوم بهالة · Painted moon with halo | 12 | 6 | SP-0245 SP-0417 SP-0240 SP-0310 SP-0126 |
 | SP-0313 | ✅ | لمعة البطاقة والزر وانعكاس الزجاج · UI sheen family: card scan, button glint, one-pass glass band | 10 | 5 | SP-0418 SP-0310 SP-0471 SP-0174 SP-0154 |
 | SP-0314 | ✅ | ألواح ضوء WebGPU جاهزة · WebGPU shader light plates (Godrays · LensFlare · LightEdge · Prism …) | 10 | 4 | SP-0310 SP-0241 SP-0207 SP-0432 SP-0005 |
 | SP-0315 | ✅ | وصفة البرق والقوس الكهربائي · Lightning bolt, electric arc & 3D double flash | 4 | 2 | SP-0436 SP-0392 SP-0310 SP-0320 SP-0143 |
-| SP-0316 | ✅ | انقسام RGB على الضربة · RGB-split hit jitter | 3 | 2 | SP-0425 SP-0444 SP-0205 SP-0363 SP-0148 |
+| SP-0316 | ✅ | انقسام RGB على الضربة · RGB-split hit jitter | 3 | 2 | SP-0425 SP-0444 SP-0205 SP-0363 SP-0147 |
 | SP-0317 | ✅ | هل نحتاج خريطة أصلًا · Map or not | 23 | 3 | SP-0143 SP-0318 SP-0074 SP-0322 |
 | SP-0318 | 📦 | أنماط VersaTiles المجانية · VersaTiles self-hosted styles | 11 | 0 | SP-0317 SP-0143 SP-0371 SP-0264 |
 | SP-0319 | ✅ | متى GeoJSON ومتى البلاطات المتجهة · GeoJSON vs vector-tile threshold | 11 | 3 | SP-0097 SP-0102 SP-0234 SP-0163 |
@@ -390,7 +390,7 @@
 | SP-0324 | ✅ | مكتبة المؤثرات · SFX kit 20 CC0 cues | 29 | 8 | SP-0335 SP-0345 SP-0153 SP-0340 |
 | SP-0325 | 🟢 | قنوات الصوت كمحرك للحركة · Audio channels as animation drivers | 21 | 9 | SP-0156 SP-0331 SP-0377 SP-0187 |
 | SP-0326 | 🟢 | قطع على الإيقاع · BPM beat cuts | 19 | 3 | SP-0442 SP-0327 SP-0422 SP-0328 SP-0141 |
-| SP-0327 | ✅ | شبكة الإيقاع · Beat grid clock (beats) | 17 | 4 | SP-0328 SP-0326 SP-0442 SP-0342 SP-0147 |
+| SP-0327 | ✅ | شبكة الإيقاع · Beat grid clock (beats) | 17 | 4 | SP-0328 SP-0326 SP-0442 SP-0342 SP-0148 |
 | SP-0328 | ✅ | كشف الإيقاع · Beat grid detection | 15 | 5 | SP-0327 SP-0326 SP-0465 SP-0442 SP-0156 |
 | SP-0329 | ✅ | تطبيع الجهارة -14 LUFS · Loudness normalisation -14 LUFS | 14 | 7 | SP-0377 SP-0156 SP-0331 SP-0300 |
 | SP-0330 | 🟢 | أعمدة طيف وموجة صوتية في ريموشن · Remotion spectrum bars & waveform | 14 | 2 | SP-0377 SP-0156 SP-0229 SP-0325 |
@@ -422,7 +422,7 @@
 | SP-0356 | ✅ | مونتاج تلقائي على الموسيقى · Auto montage to music | 23 | 16 | SP-0442 SP-0326 SP-0141 SP-0263 |
 | SP-0357 | ✅ | قص دقيق بالإطار · Frame-accurate trim (re-encode) | 19 | 11 | SP-0278 SP-0262 SP-0374 SP-0356 SP-0141 |
 | SP-0358 | ✅ | عنوان خلف المتحدث · Title behind the speaker | 13 | 4 | SP-0200 SP-0188 SP-0453 SP-0217 SP-0159 |
-| SP-0359 | ✅ | مجمع لقطات بأسئلة بحث ثنائية اللغة · Per-shot bilingual footage pool | 7 | 1 | SP-0141 SP-0148 SP-0379 SP-0476 |
+| SP-0359 | ✅ | مجمع لقطات بأسئلة بحث ثنائية اللغة · Per-shot bilingual footage pool | 7 | 1 | SP-0141 SP-0147 SP-0379 SP-0476 |
 | SP-0360 | ✅ | تشخيص قبل رفع الدقة · Upscale triage | 7 | 4 | SP-0372 SP-0288 SP-0215 SP-0420 SP-0022 |
 | SP-0361 | ✅ | إعدادات تسجيل الشاشة · Screen-capture defaults | 4 | 2 | SP-0278 SP-0272 SP-0480 SP-0187 SP-0130 |
 | SP-0362 | ✅ | مؤثرات بكسل بخطوات اللوحة · Pixel VFX by palette-step fades | 19 | 6 | SP-0225 SP-0414 SP-0309 SP-0364 SP-0155 |
@@ -501,7 +501,7 @@
 | SP-0435 | 📦 | انتقال: ذوبان · Transition key: dissolve | 14 | 0 | SP-0428 SP-0397 SP-0197 SP-0440 SP-0125 |
 | SP-0436 | ✅ | قطع وميضي · Flash cut | 13 | 1 | SP-0315 SP-0392 SP-0242 SP-0334 SP-0127 |
 | SP-0437 | 📦 | انتقال CSS: دفع انزلاقي · CSS transition: Push slide | 13 | 0 | SP-0194 SP-0434 SP-0433 SP-0424 SP-0130 |
-| SP-0438 | 🟢 | الكلمة كسطح انتقال · Word as the transition plane | 12 | 1 | SP-0452 SP-0422 SP-0184 SP-0326 SP-0147 |
+| SP-0438 | 🟢 | الكلمة كسطح انتقال · Word as the transition plane | 12 | 1 | SP-0452 SP-0422 SP-0184 SP-0326 SP-0148 |
 | SP-0439 | ✅ | قطع مطابق · Match Cut | 11 | 1 | SP-0422 SP-0438 SP-0446 SP-0447 SP-0033 |
 | SP-0440 | ✅ | اختيار الانتقال حسب الطاقة · Transition by energy table | 11 | 4 | SP-0431 SP-0432 SP-0437 SP-0423 SP-0141 |
 | SP-0441 | 🟢 | حركة إيقاعية: staggered-exit · Beat motion primitive: staggered-exit | 11 | 1 | SP-0212 SP-0326 SP-0442 SP-0328 SP-0140 |
@@ -526,9 +526,9 @@
 | SP-0460 | ✅ | أنظمة الأصوات الطباعية · Multi-voice type systems | 26 | 6 | SP-0454 SP-0149 SP-0206 SP-0462 |
 | SP-0461 | 🟢 | صعود من خلف خط القاعدة · Baseline mask rise (lines & words) | 17 | 3 | SP-0429 SP-0452 SP-0259 SP-0221 SP-0135 |
 | SP-0462 | 🟢 | نص بارز بظلال مكدسة · Extruded & stacked-shadow type | 12 | 1 | SP-0453 SP-0460 SP-0454 SP-0457 SP-0124 |
-| SP-0463 | 📦 | عنوان بلونين وكلمة لون · Two-tone lines & accent-word colour | 10 | 0 | SP-0308 SP-0184 SP-0438 SP-0452 SP-0147 |
+| SP-0463 | 📦 | عنوان بلونين وكلمة لون · Two-tone lines & accent-word colour | 10 | 0 | SP-0308 SP-0184 SP-0438 SP-0452 SP-0148 |
 | SP-0464 | 🟢 | كتابة بشرية: أخطاء ومسح ومؤشر ملوّن · Human typing: typos, backspace, caret swap | 9 | 3 | SP-0473 SP-0231 SP-0459 SP-0233 SP-0094 |
-| SP-0465 | ✅ | صدمة العنوان وضربة الكلمة على الإيقاع · Headline slam & beat word punch | 9 | 2 | SP-0328 SP-0326 SP-0327 SP-0442 SP-0147 |
+| SP-0465 | ✅ | صدمة العنوان وضربة الكلمة على الإيقاع · Headline slam & beat word punch | 9 | 2 | SP-0328 SP-0326 SP-0327 SP-0442 SP-0148 |
 | SP-0466 | 👁 | نص على حلقات ومدارات · Text rings & orbiting words | 7 | 0 | SP-0222 SP-0453 SP-0462 SP-0438 SP-0120 |
 | SP-0467 | ✅ | قواعد قراءة الترجمة فوق اللقطات · Caption readability rules over footage | 4 | 1 | SP-0184 SP-0454 SP-0453 SP-0216 SP-0121 |
 | SP-0468 | ✅ | المؤشر بطلًا · Cursor as protagonist | 23 | 6 | SP-0190 SP-0480 SP-0196 SP-0136 |
@@ -539,9 +539,9 @@
 | SP-0473 | 🟢 | طرفية ومحرر كود · Terminal & IDE scenes (24 theme blocks) | 7 | 2 | SP-0464 SP-0238 SP-0293 SP-0064 |
 | SP-0474 | ✅ | من التحميل إلى علامة صح · Spinner → success check | 6 | 1 | SP-0205 SP-0230 SP-0204 SP-0400 SP-0029 |
 | SP-0475 | 📦 | مكتبة مكوّنات HyperFrames للواجهات · HyperFrames UI component registry | 3 | 0 | SP-0197 SP-0293 SP-0397 SP-0172 SP-0060 |
-| SP-0476 | ✅ | تحميل فيديو من أي رابط · Download video from any URL | 11 | 8 | SP-0148 SP-0359 SP-0124 SP-0299 |
+| SP-0476 | ✅ | تحميل فيديو من أي رابط · Download video from any URL | 11 | 8 | SP-0147 SP-0359 SP-0124 SP-0299 |
 | SP-0477 | ✅ | أزياء صوتية للشخصيات · Character voice costumes | 26 | 8 | SP-0331 SP-0153 SP-0156 SP-0479 |
-| SP-0478 | ✅ | ميزانية الكلمات في الثانية · Words-per-second budget | 12 | 2 | SP-0184 SP-0147 SP-0452 SP-0477 |
+| SP-0478 | ✅ | ميزانية الكلمات في الثانية · Words-per-second budget | 12 | 2 | SP-0184 SP-0148 SP-0452 SP-0477 |
 | SP-0479 | ✅ | اختيار النموذج والصيغة حسب الاستخدام · Model & output-format choice | 9 | 2 | SP-0156 SP-0477 SP-0377 SP-0331 |
 | SP-0480 | 🟢 | التقاط ميكروفون نظيف · Clean mic capture constraints | 4 | 3 | SP-0331 SP-0361 SP-0468 SP-0272 SP-0124 |
 | SP-0481 | ✅ | مدرب اللغة الثنائي · Language Coach (AR/EN) skill | 3 | 2 | SP-0477 SP-0167 SP-0411 SP-0339 |

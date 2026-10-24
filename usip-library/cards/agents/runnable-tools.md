@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (171 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (172 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -93,6 +93,7 @@
 - [`TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا](#tool-170--سجل-المهام-سجل-لكل-مهمة-منجزة-لإعادتها-لاحقًا--task-history-record-every-finished-task-and-repeat-it-later)
 - [`TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية](#tool-171--محرك-المصفوفات-اللانهائية-للأساليب-السببية--kosif-infinite-matrices-causal-style-engine)
 - [`TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية](#tool-172--البحث-عن-مراجع-فيديو-إنستجرام-وربطها-بالمصفوفات-اللانهائية--instagram-reference-discovery--infinite-matrices)
+- [`TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها](#tool-173--البحث-عن-فيديوهات-إنستجرام-لمنتج-وتحميلها--instagram-product-video-finder)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
@@ -6347,7 +6348,7 @@
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
 - `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
 
 ### `TOOL-172` — البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices
 
@@ -6415,6 +6416,77 @@
 
 - `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
 - `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
+- `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-173` — البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف التلقائي للصورة. ويطلع خطة بحث ويب بدون شبكة، وينزّل الصور المصغّرة للمعاينة، ويحمّل المختار عبر fetch_video.py مع سجل حقوق. — Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log.
+
+**متى:** دوّر لي في إنستجرام على فيديوهات تناسب منتج العطر ده ونزّلها / Find Instagram reels from my saved accounts that fit a watch commercial
+
+**كيف:** accounts: `python3 scripts/instagram_finder.py accounts`; add-account: `python3 scripts/instagram_finder.py add-account "https://www.instagram.com/name?igsh=xyz" --tag product`; plan: `python3 scripts/instagram_finder.py plan "عطر رجالي"`; index: `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`. Full card: `python3 scripts/hub.py tool instagram-finder`. Limits: Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device.
+
+**المعاملات:** in: A product query in Arabic or English; saved accounts in data/instagram_sources.json; optionally --session-user (an instaloader session the user created), --cookies (the user's cookies.txt), hashtags and reel links; or the environment variable INSTAGRAM_SESSIONID (the sessionid cookie of the user's own, ideally secondary, account) for cloud runs. · out: out/instagram/index.json (local index), search results JSON (--save), out/instagram/thumbs/*.jpg, out/instagram/videos/ with fetch_video.py files and manifest.json, and instagram_rights.jsonl.
+
+**التثبيت:** optional: pip:instaloader, pip:yt-dlp, bin:ffmpeg
+
+**الوسوم:** instagram-finder · instagram · reels · product video · hashtag · saved accounts · instaloader · search · انستجرام · إنستجرام · ريلز · فيديوهات منتج · هاشتاج · حسابات محفوظة · بحث · download link · chrome extension · تحميل رابط · إضافة كروم
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `yt-dlp` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-173` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_finder.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_finder.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
+- `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6483,8 +6555,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
 - `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
+- `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -6553,7 +6625,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
+- `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)

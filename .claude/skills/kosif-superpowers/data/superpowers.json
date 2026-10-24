@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5850,
-"distinct_methods": 5569,
+"atoms": 5851,
+"distinct_methods": 5570,
 "twin_groups": 177,
 "superpowers": 481,
 "per_target": 12,
@@ -14840,7 +14840,7 @@
 "distinct_methods": 14,
 "links": [
 {
-"id": "SP-0148",
+"id": "SP-0147",
 "sim": 0.168
 },
 {
@@ -18120,7 +18120,7 @@
 "sim": 0.284
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.237
 },
 {
@@ -18968,6 +18968,126 @@
 "id": "SP-0147",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "مستكشف مصادر المجتمع",
+"name_en": "Community source scout",
+"focus": [
+"sources",
+"references",
+"instagram",
+"hls"
+],
+"size": 10,
+"best": "proven",
+"status_mix": {
+"proven": 8,
+"install": 2
+},
+"ready_now": 8,
+"families": {
+"runnable-tools": 10
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"ffmpeg",
+"yt-dlp",
+"npm:rea",
+"pip:office",
+"imagemagick"
+],
+"pipeline": [
+{
+"id": "TOOL-50",
+"status": "proven",
+"name_en": "Community source scout",
+"name_ar": "مستكشف مصادر المجتمع"
+},
+{
+"id": "TOOL-46",
+"status": "proven",
+"name_en": "Creative sources offline search",
+"name_ar": "بحث المصادر الإبداعية دون اتصال"
+},
+{
+"id": "TOOL-172",
+"status": "proven",
+"name_en": "Instagram Reference Discovery → Infinite Matrices",
+"name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
+},
+{
+"id": "TOOL-173",
+"status": "proven",
+"name_en": "Instagram product video finder",
+"name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
+},
+{
+"id": "TOOL-142",
+"status": "proven",
+"name_en": "Sources index: per-work-dir index memory of the user's attachments",
+"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
+},
+{
+"id": "TOOL-160",
+"status": "proven",
+"name_en": "GitHub Top-1000 Tracker",
+"name_ar": "متابعة أشهر 1000 مستودع"
+},
+{
+"id": "TOOL-133",
+"status": "proven",
+"name_en": "DASH/HLS stream grabber for editing",
+"name_ar": "ملتقط بث DASH وHLS للمونتاج"
+},
+{
+"id": "TOOL-93",
+"status": "proven",
+"name_en": "Permitted reference fetch and measure",
+"name_ar": "جلب المرجع المسموح وقياسه"
+},
+{
+"id": "TOOL-94",
+"status": "install",
+"name_en": "Video link downloader for montage",
+"name_ar": "تنزيل الفيديو من الروابط للمونتاج"
+},
+{
+"id": "TOOL-51",
+"status": "install",
+"name_en": "Cinema C iPhone downloader studio",
+"name_ar": "استوديو التنزيل Cinema C للآيفون"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_source_scout.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/source_scout.py",
+"kosif-tool/tests/test_creative_external_research.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_external_search.py"
+],
+"twins": [],
+"distinct_methods": 10,
+"links": [
+{
+"id": "SP-0476",
+"sim": 0.223
+},
+{
+"id": "SP-0141",
+"sim": 0.173
+},
+{
+"id": "SP-0115",
+"sim": 0.168
+},
+{
+"id": "SP-0359",
+"sim": 0.16
+}
+]
+},
+{
+"id": "SP-0148",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
 "name_en": "Subtitle to words.json converter",
 "focus": [
@@ -19076,120 +19196,6 @@
 {
 "id": "SP-0325",
 "sim": 0.222
-}
-]
-},
-{
-"id": "SP-0148",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "مستكشف مصادر المجتمع",
-"name_en": "Community source scout",
-"focus": [
-"sources",
-"references",
-"hls",
-"index"
-],
-"size": 9,
-"best": "proven",
-"status_mix": {
-"proven": 7,
-"install": 2
-},
-"ready_now": 7,
-"families": {
-"runnable-tools": 9
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"ffmpeg",
-"yt-dlp",
-"npm:rea",
-"pip:office",
-"imagemagick"
-],
-"pipeline": [
-{
-"id": "TOOL-50",
-"status": "proven",
-"name_en": "Community source scout",
-"name_ar": "مستكشف مصادر المجتمع"
-},
-{
-"id": "TOOL-46",
-"status": "proven",
-"name_en": "Creative sources offline search",
-"name_ar": "بحث المصادر الإبداعية دون اتصال"
-},
-{
-"id": "TOOL-142",
-"status": "proven",
-"name_en": "Sources index: per-work-dir index memory of the user's attachments",
-"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
-},
-{
-"id": "TOOL-133",
-"status": "proven",
-"name_en": "DASH/HLS stream grabber for editing",
-"name_ar": "ملتقط بث DASH وHLS للمونتاج"
-},
-{
-"id": "TOOL-160",
-"status": "proven",
-"name_en": "GitHub Top-1000 Tracker",
-"name_ar": "متابعة أشهر 1000 مستودع"
-},
-{
-"id": "TOOL-172",
-"status": "proven",
-"name_en": "Instagram Reference Discovery → Infinite Matrices",
-"name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
-},
-{
-"id": "TOOL-93",
-"status": "proven",
-"name_en": "Permitted reference fetch and measure",
-"name_ar": "جلب المرجع المسموح وقياسه"
-},
-{
-"id": "TOOL-94",
-"status": "install",
-"name_en": "Video link downloader for montage",
-"name_ar": "تنزيل الفيديو من الروابط للمونتاج"
-},
-{
-"id": "TOOL-51",
-"status": "install",
-"name_en": "Cinema C iPhone downloader studio",
-"name_ar": "استوديو التنزيل Cinema C للآيفون"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_source_scout.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/source_scout.py",
-"kosif-tool/tests/test_creative_external_research.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_external_search.py"
-],
-"twins": [],
-"distinct_methods": 9,
-"links": [
-{
-"id": "SP-0476",
-"sim": 0.181
-},
-{
-"id": "SP-0141",
-"sim": 0.173
-},
-{
-"id": "SP-0115",
-"sim": 0.168
-},
-{
-"id": "SP-0359",
-"sim": 0.157
 }
 ]
 },
@@ -23375,16 +23381,16 @@
 "sim": 0.145
 },
 {
-"id": "SP-0148",
-"sim": 0.106
-},
-{
 "id": "SP-0099",
 "sim": 0.102
 },
 {
 "id": "SP-0141",
 "sim": 0.101
+},
+{
+"id": "SP-0356",
+"sim": 0.097
 }
 ]
 },
@@ -23616,7 +23622,7 @@
 "distinct_methods": 30,
 "links": [
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.369
 },
 {
@@ -23736,7 +23742,7 @@
 "distinct_methods": 9,
 "links": [
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.273
 },
 {
@@ -24053,7 +24059,7 @@
 "sim": 0.099
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.078
 }
 ]
@@ -28724,7 +28730,7 @@
 "sim": 0.151
 },
 {
-"id": "SP-0148",
+"id": "SP-0147",
 "sim": 0.087
 }
 ]
@@ -32755,7 +32761,7 @@
 "sim": 0.173
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.115
 }
 ]
@@ -33516,7 +33522,7 @@
 "sim": 0.074
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.028
 }
 ]
@@ -33615,7 +33621,7 @@
 "sim": 0.147
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.066
 }
 ]
@@ -40551,7 +40557,7 @@
 "sim": 0.112
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.062
 }
 ]
@@ -41414,8 +41420,8 @@
 "sim": 0.187
 },
 {
-"id": "SP-0148",
-"sim": 0.049
+"id": "SP-0147",
+"sim": 0.048
 }
 ]
 },
@@ -43322,7 +43328,7 @@
 "sim": 0.291
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.068
 }
 ]
@@ -47285,8 +47291,8 @@
 "sim": 0.18
 },
 {
-"id": "SP-0148",
-"sim": 0.157
+"id": "SP-0147",
+"sim": 0.16
 },
 {
 "id": "SP-0379",
@@ -58893,7 +58899,7 @@
 "sim": 0.177
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.13
 }
 ]
@@ -61901,7 +61907,7 @@
 "sim": 0.102
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.039
 }
 ]
@@ -62130,7 +62136,7 @@
 "sim": 0.215
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.056
 }
 ]
@@ -63474,8 +63480,8 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0148",
-"sim": 0.181
+"id": "SP-0147",
+"sim": 0.223
 },
 {
 "id": "SP-0359",
@@ -63836,7 +63842,7 @@
 "sim": 0.288
 },
 {
-"id": "SP-0147",
+"id": "SP-0148",
 "sim": 0.213
 },
 {

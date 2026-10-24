@@ -2833,7 +2833,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0148",
+"SP-0147",
 "SP-0293",
 "SP-0044",
 "SP-0064"
@@ -3407,7 +3407,7 @@
 "ready_now": 14,
 "links": [
 "SP-0262",
-"SP-0147",
+"SP-0148",
 "SP-0268",
 "SP-0266"
 ],
@@ -3553,6 +3553,30 @@
 },
 "SP-0147": {
 "id": "SP-0147",
+"name_ar": "مستكشف مصادر المجتمع",
+"name_en": "Community source scout",
+"hub": "agents",
+"stage": "understand",
+"stages": {
+"verify": 1,
+"understand": 6,
+"create": 1,
+"plan": 1,
+"deliver": 1
+},
+"size": 10,
+"best": "proven",
+"ready_now": 8,
+"links": [
+"SP-0476",
+"SP-0141",
+"SP-0115",
+"SP-0359"
+],
+"text": "community source scout مستكشف مصادر المجتمع source-scout source scout community sources reference repositories github license gate code reuse python top 10 system design مصادر المجتمع مستودعات مرجعية ترخيص إعادة استخدام الكود مستكشف المصادر أفضل مستودعات بايثون creative sources offline search بحث المصادر الإبداعية دون اتصال creative-external-search creative search open source video tools motion graphics repos image editing creative websites discovery index github metadata offline search بحث إبداعي أدوات مونتاج مواقع تصميم موشن جرافيك تحرير الصور مستودعات مفتوحة المصدر instagram reference discovery → infinite matrices البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية instagram-reference-discovery instagram reels reel asirgokerr brkn.land video reference instagram discovery find videos by topic search clips motion reference causal handoff انستجرام إنستجرام ريلز ابحث عن فيديو مراجع فيديو بحث الفيديوهات بحث عن موشن مصفوفات لانهائية instagram product video finder البحث عن فيديوهات إنستجرام لمنتج وتحميلها instagram-finder instagram reels product video hashtag saved accounts instaloader search انستجرام إنستجرام ريلز فيديوهات منتج هاشتاج حسابات محفوظة بحث download link chrome extension تحميل رابط إضافة كروم sources index: per-work-dir index memory of the user's attachments فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل sources-index sources index attachments provenance prompt injection secret scan line range فهرس مصادر الذاكرة الفهرسية مرفقات github top-1000 tracker متابعة أشهر 1000 مستودع github-top-repos github top repositories most starred stars licence tracker mining open source مستودعات جيت هاب أشهر المستودعات تراخيص نجوم dash/hls stream grabber for editing ملتقط بث dash وhls للمونتاج stream-grabber hls dash m3u8 mpd stream download segments subtitles بث تحميل مقاطع ترجمة permitted reference fetch and measure جلب المرجع المسموح وقياسه fetch-reference reference video fetch hls m3u8 contact sheet scene cuts palette ffprobe style.md observe مرجع جلب لوحة إطارات قطعات لوحة ألوان رصد المرجع video link downloader for montage تنزيل الفيديو من الروابط للمونتاج fetch-video yt-dlp video download links montage edit-safe mp4 h.264 audio only cookies manifest تحميل فيديو تنزيل من رابط مونتاج صوت فقط نسخة آمنة cinema c iphone downloader studio استوديو التنزيل cinema c للآيفون repo-ashell-cinema a-shell iphone yt-dlp video download photos safe ffmpeg studio reels 9:16 loudness -14 lufs audio separation تنزيل فيديو آيفون ريلز ضغط الفيديو فصل الصوت ا"
+},
+"SP-0148": {
+"id": "SP-0148",
 "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
 "name_en": "Subtitle to words.json converter",
 "hub": "agents",
@@ -3572,30 +3596,6 @@
 "SP-0325"
 ],
 "text": "subtitle to words.json converter محوّل الترجمات إلى توقيت الكلمات repo-words-convert words.json srt vtt whisper word timing captions subtitle convert words.js توقيت الكلمات ترجمة تفريغ صوتي مزامنة الكلمات تحويل الترجمة كابشن audio-to-storyboard bridge جسر الصوت إلى لوحة القصة creative-reasoning-bridge storyboard audio sync word timing motion graphics voiceover scene plan kinetic typography doodle لوحة القصة مزامنة الصوت توقيت الكلمات موشن جرافيك تعليق صوتي ريلز wav audio cue mapper مستخرج إشارات التوقيت من الصوت audio-cue-mapper audio onsets energy envelope rms تحليل الصوت بدايات الأصوات word timing توقيت الكلمات whisperx wav audio sync مزامنة الصوت captions data cues.json transients motion starter kit timing bridge جسر توقيتات motion starter kit motion-kit-bridge motion starter kit words.json word timing storyboard doodle whiteboard plotter infographic arabic captions توقيت الكلمات لوحة قصة رسم يدوي سبورة تزامن صوتي caption lines: word timings to readable srt/vtt سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة caption-lines captions subtitles srt vtt whisper word timestamps hallucination reading speed ترجمة سطور تفريغ هلوسة سبتايتل character ik arm animator تحريك ذراع الشخصية بالحركية العكسية character-ik inverse kinematics ik two-bone arm elbow gesture word cue words.json aac stream copy character rig حركية عكسية ذراع كوع إيماءة توقيت الكلمات تحريك الشخصيات music rhythm hypotheses فرضيات إيقاع الموسيقى music-rhythm-engine bpm tempo estimate beat grid سرعة الإيقاع شبكة النبضات rhythm إيقاع music sync cut on beat القص على الإيقاع energy sections onsets half-time double-time unified cinematic: sound-clocked animation and video السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا unified-cinematic cinematic montage camera wav aac h264 pulse audio cues synchronization sound video music fade ken burns animation صوت مونتاج تحريك كاميرا فيديو سينما موسيقى tts script prep: prosody-safe chunks, duration estimate and ssml تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وssml tts-script tts text to speech ssml voice-over narration chunk prosody duration wpm break lang tag تعليق صوتي تحويل النص إلى كلام تقطيع مدة وقفات نطق سكريبت"
-},
-"SP-0148": {
-"id": "SP-0148",
-"name_ar": "مستكشف مصادر المجتمع",
-"name_en": "Community source scout",
-"hub": "agents",
-"stage": "understand",
-"stages": {
-"verify": 1,
-"understand": 5,
-"create": 1,
-"plan": 1,
-"deliver": 1
-},
-"size": 9,
-"best": "proven",
-"ready_now": 7,
-"links": [
-"SP-0476",
-"SP-0141",
-"SP-0115",
-"SP-0359"
-],
-"text": "community source scout مستكشف مصادر المجتمع source-scout source scout community sources reference repositories github license gate code reuse python top 10 system design مصادر المجتمع مستودعات مرجعية ترخيص إعادة استخدام الكود مستكشف المصادر أفضل مستودعات بايثون creative sources offline search بحث المصادر الإبداعية دون اتصال creative-external-search creative search open source video tools motion graphics repos image editing creative websites discovery index github metadata offline search بحث إبداعي أدوات مونتاج مواقع تصميم موشن جرافيك تحرير الصور مستودعات مفتوحة المصدر sources index: per-work-dir index memory of the user's attachments فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل sources-index sources index attachments provenance prompt injection secret scan line range فهرس مصادر الذاكرة الفهرسية مرفقات dash/hls stream grabber for editing ملتقط بث dash وhls للمونتاج stream-grabber hls dash m3u8 mpd stream download segments subtitles بث تحميل مقاطع ترجمة github top-1000 tracker متابعة أشهر 1000 مستودع github-top-repos github top repositories most starred stars licence tracker mining open source مستودعات جيت هاب أشهر المستودعات تراخيص نجوم instagram reference discovery → infinite matrices البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية instagram-reference-discovery instagram reels reel asirgokerr brkn.land video reference instagram discovery find videos by topic search clips motion reference causal handoff انستجرام إنستجرام ريلز ابحث عن فيديو مراجع فيديو بحث الفيديوهات بحث عن موشن مصفوفات لانهائية permitted reference fetch and measure جلب المرجع المسموح وقياسه fetch-reference reference video fetch hls m3u8 contact sheet scene cuts palette ffprobe style.md observe مرجع جلب لوحة إطارات قطعات لوحة ألوان رصد المرجع video link downloader for montage تنزيل الفيديو من الروابط للمونتاج fetch-video yt-dlp video download links montage edit-safe mp4 h.264 audio only cookies manifest تحميل فيديو تنزيل من رابط مونتاج صوت فقط نسخة آمنة cinema c iphone downloader studio استوديو التنزيل cinema c للآيفون repo-ashell-cinema a-shell iphone yt-dlp video download photos safe ffmpeg studio reels 9:16 loudness -14 lufs audio separation تنزيل فيديو آيفون ريلز ضغط الفيديو فصل الصوت استوديو"
 },
 "SP-0149": {
 "id": "SP-0149",
@@ -4394,9 +4394,9 @@
 "ready_now": 0,
 "links": [
 "SP-0037",
-"SP-0148",
 "SP-0099",
-"SP-0141"
+"SP-0141",
+"SP-0356"
 ],
 "text": "topic-to-short pipeline with reviewable stages خط إنتاج من موضوع إلى فيديو قصير moneyprinter automation stock footage tts subtitles shorts فيديو قصير أتمتة مونتاج"
 },
@@ -4418,7 +4418,7 @@
 "best": "proven",
 "ready_now": 13,
 "links": [
-"SP-0147",
+"SP-0148",
 "SP-0452",
 "SP-0478",
 "SP-0467"
@@ -4439,7 +4439,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0147",
+"SP-0148",
 "SP-0184",
 "SP-0380",
 "SP-0153"
@@ -4512,7 +4512,7 @@
 "SP-0184",
 "SP-0452",
 "SP-0456",
-"SP-0147"
+"SP-0148"
 ],
 "text": "canvas karaoke pill (html-canvas starter) كاريوكي الكبسولة في starter الكانفس كبسولة karaoke pill canvas starter كاريوكي إبراز الكلمة الحالية ترجمة متحركة html canvas pill highlight lower thirds الأشرطة السفلية شريط سفلي lower third name tag news ticker اسم المتحدث تعريف الضيف لقب title bar name strap embedded captions: rail + peak word behind the subject ترجمة مدمجة: شريط وكلمة ذروة خلف المتحدث مدمجة embedded captions behind subject themes podcast خلف الشخص مقطع متحدث كلمة بارزة matte talking head"
 },
@@ -5269,7 +5269,7 @@
 "SP-0195",
 "SP-0210",
 "SP-0342",
-"SP-0148"
+"SP-0147"
 ],
 "text": "recut card zones مناطق البطاقات الثلث السفلي لوحة جانبية مكان البطاقة lower third side panel index + model lower-third رقم فهرس مع اسم النموذج شريط سفلي ترقيم اسم النموذج lower third index label mono corner counters عدادات ركنية أحادية عداد ترقيم زاوية الشاشة index counter uppercase labels scene index hud مؤشر المشاهد رقم المشهد مؤشر تقدم عداد مشاهد scene counter progress indicator editorial header ترويسة تحريرية ترويسة طابع مجلة اسم القسم magazine header top bar"
 },
@@ -5998,7 +5998,7 @@
 "SP-0271",
 "SP-0258",
 "SP-0199",
-"SP-0147"
+"SP-0148"
 ],
 "text": "speed-shape model (r = speed ÷ mean speed) نموذج شكل السرعة speed graph ease needle cusp relay after effects influence منحنى السرعة تسهيل إبرة needle ease: the speed peak lands on the cut إبرة السرعة على القطع needle cut speed peak zoom whip قطع أقصى سرعة زوم match relative speed across a cut (rho) سرعة نسبية متطابقة عبر القطع relative speed rho match cut scale سرعة نسبية مطابقة القطع speed limits in px/frame حدود السرعة بالبكسل لكل إطار speed limit px per frame motion energy qa سرعة equal-slope curve pair across a cut زوج منحنيين بميل متساوٍ عند القطع bezier slope whip expo continuity ميل سوط استمرار السرعة directional speed blur تمويه السرعة الاتجاهي motion blur speed blur whip directional blur ضبابية directional speed blur تمويه السرعة الاتجاهي ضبابية الحركة بلور سرعة motion blur fast move svg blur directional speed blur ضبابية السرعة ضبابية الحركة بلور سرعة حركة سريعة motion blur svg blur arabic line timing without audio توقيت السطور العربية بلا صوت توقيت عربي سرعة القراءة arabic timing wps poem drawing-time model زمن الرسم حسب حجم الخطوة drawing time painter سرعة الرسم reveal speed cut timing modes & magnetic snapping أنماط توقيت القطع والمغناطيس cut list snapping zoom cuts speech cuts محرر typewriter speed table سرعات الكتابة الآلية typewriter cps caret كتابة آلية typeon press, hover & dialog entrances تفاعلات الضغط والمرور والنوافذ press hover dialog toast toggle micro interaction sine idle loops & breathing حلقات التنفس والطفو breathing idle float sine loop تنفس طفو extra timing libraries مكتبات توقيت إضافية animejs motion theatre.js lottie motion canvas libraries hyperframes timing components مكونات hyperframes للتوقيت hyperframes components registry spring pop shutter slam slit scan global slowness factor ts معامل بطء واحد للدرس كله معامل البطء سبورة slowness factor whiteboard step timing speed = weight tiers السرعة تعني الوزن speed weight duration tiers luxury urgency product-demo interaction timing جدول توقيت عرض المنتج product demo cursor dwell ui timing ديمو transition timing presets إعدادات توقيت الانتقال الستة transition presets snappy smooth luxe انتقال reading-hold formulas زمن القراءة من النص الفعلي زمن القراءة مدة الثبات reading time hold captions timing ui duration ladders سلالم مدد الواجهات ui durations ladder micro interaction modal button distance-sampled pointer trail تنعيم أثر المؤشر بالمسافة pointer trail cursor finger أثر المؤشر photo & feature-beat timings توقيتات الصور وضربات الميزات photo timing feature beat word entrance ads"
 },
@@ -6116,7 +6116,7 @@
 "SP-0327",
 "SP-0401",
 "SP-0197",
-"SP-0147"
+"SP-0148"
 ],
 "text": "transform/opacity-only contract التحويل والشفافية فقط transform opacity transition-all performance contract four named eases slam/snap/drive/settle أربع تسارعات مسماة فقط slam snap drive settle أربعة تسارعات house eases contact squash انضغاط التلامس squash stretch contact انضغاط landing blur pop-in / pop-out ظهور منبثق مع تمويه blur pop keyword منبثق chip stamp slam ختم يُطبع بقوة stamp slam ختم badge status tilt-in settle دخول بميل ثم استقرار tilt settle ميل prop rubber-stamp slam ختم أحمر يرتطم ختم stamp slam verdict shake ختم أحمر اهتزاز حكم rubber stamp camera shake drop + spring settle سقوط ثم استقرار drop settle gravity سقوط landing slam-and-settle word كلمة ترتطم وتستقر ارتطام ارتداد slam settle overshoot mg-011 افتتاحية إعلان سقوط الكلمة إعلان ad opener drop in beat-grid shot list with onset-snapped words قائمة لقطات على شبكة الإيقاع beat grid onset snap lyrics bar lines شبكة الإيقاع"
 },
@@ -6140,7 +6140,7 @@
 "SP-0252",
 "SP-0356",
 "SP-0212",
-"SP-0147"
+"SP-0148"
 ],
 "text": "exact speed ramps منحدرات سرعة بتكامل دقيق speed ramp slow motion setpts atempo تغيير السرعة optical-flow slow motion & frame interpolation حركة بطيئة بإطارات مولدة minterpolate optical flow rife frame interpolation slow motion u-speed shot لقطة السرعة u u-speed cruise shot enter exit montage contrast pacing: slow burn, calm hold بناء بطيء ثم ضربة slow burn contrast calm hold بناء بطيء nudge curve slow–fast–slow انزلاق بطيء-سريع-بطيء nudge slow fast slow reposition edit rhythm by genre إيقاع المونتاج حسب النوع asl edit rhythm cuts per minute مونتاج genre"
 },
@@ -7325,7 +7325,7 @@
 "SP-0457",
 "SP-0438",
 "SP-0325",
-"SP-0147"
+"SP-0148"
 ],
 "text": "neon text glow (triple shadow, per word) توهج النص النيوني بثلاثة ظلال لكل كلمة نيون ظل النص عنوان neon text text-shadow neon-tech cyber per word نص متوهج كتابة نيون خط مضيء glowing text css glow svg neon tube (4-stroke stack) أنبوب نيون svg بأربع طبقات نيون svg خطوط neon tube svg stroke stack line art city خط مضيء أنبوب نيون رسم متجه glow line vector neon svg blur-merge glow & blurred duplicate مرشح توهج svg ونسخة مموهة svg مرشح تمويه svg filter fegaussianblur femerge blurred duplicate glow توهج هالة شكل مضيء soft glow vector glow living arabic neon sign (ignition · wall light · wet reflection · synced hum) لافتة نيون عربية حيّة نيون لافتة توهج انعكاس مطر neon sign glow lighter reflection rain 9:16 arabic لافتة مضيئة يافطة نيون لافتة قهوة glowing sign neon ignition qa: glow on type is a tell التوهج على النص علامة توليد جودة فحص ظل النص qa lint text-shadow ai tell مراجعة أخطاء التصميم توهج النص design review text glow painter additive glow stack (blades, magic, embers) توهج مضاف متدرج في الرسم بالكود سيف سحر رسم بالكود blade magic painter additive render.py glow stack سيف مضيء جمر هالة سحرية glowing blade embers two-layer ass glow for arabic captions ترجمة عربية بتوهج ass مزدوج الطبقة ترجمة ass توهج libass ffmpeg captions glow arabic subtitles shaping سبتايتل عربي حرق الترجمة ترجمة متحركة burned subtitles subtitle styling burst word with glow & expanding ring كلمة تنفجر بتوهج وحلقة انفجار كلمة بطلة حلقة burst pop spring ring hero word كلمة قافزة ظهور كلمة تأكيد word pop expanding ring hero radial glow pool (bloom-in, bounded breathe, point origin) بركة ضوء شعاعية خلف العنوان هالة توهج خلفي شعار radial glow hero logo cta breathe backdrop إضاءة خلفية ظهور الشعار لوجو logo reveal soft light pool ignition & faulty-tube flicker schedule جدول الاشتعال والوميض المعطوب وميض اشتعال تشغيل طنين flicker ignition schedule hum sound sync neon لمبة بتقطع تزامن الصوت أنبوب معطوب faulty tube warm-up flicker timing thermal heat-ramp field & doppler-beamed glow حقل حراري وتلوين دوبلر حراري خريطة حرارة دوبلر thermal heat map fbm doppler black hole shader ثقب أسود تدرج حراري تلطيخ heat ramp domain warp active caption-word glow توهج الكلمة النشطة في الترجمة ترجمة كاريوكي كلمة نشطة captions karaoke active word neon caption highlight سبتايتل تمييز الكلمة ترجمة متوهجة word highlight subtitle glow gradient rim-glow border & hue-matched glow shadow حافة متدرجة متوهجة وظل بلون العنصر حافة بطاقة أيقونة ظل ملون rim glow border conic gradient focus icon shadow badge إطار متوهج حدود ملون"
 },
@@ -7487,7 +7487,7 @@
 "SP-0444",
 "SP-0205",
 "SP-0363",
-"SP-0148"
+"SP-0147"
 ],
 "text": "kelvin → rgb, gels & 19 named light sources حرارة اللون والجيلاتين ومصادر مسماة كلفن حرارة اللون جيلاتين kelvin color temperature gel cto ctb sodium light sources لون الضوء ضوء دافئ ضوء بارد warm light kelvin to rgb lens chromatic aberration (edge-weighted) الانحراف اللوني للعدسة انحراف لوني عدسة chromatic aberration lens edges rgb fringe تشوه العدسة حواف ملونة مظهر سينمائي color fringing lens effect rgb-split hit jitter انقسام rgb على الضربة انقسام ألوان غليتش ضربة rgb split glitch hit chromatic onion skin جليتش تشويش اهتزاز color split impact jitter"
 },
@@ -7742,7 +7742,7 @@
 "SP-0326",
 "SP-0442",
 "SP-0342",
-"SP-0147"
+"SP-0148"
 ],
 "text": "beat grid clock (beats) شبكة الإيقاع توقيت على الإيقاع شبكة البيت مزامنة الحركة beat sync bpm grid timing beat grid (beats) شبكة الإيقاع حركة على الإيقاع توقيت النبضات مزامنة beat timing tween on beat downbeats beat clock for picture (motion.beats) ساعة الإيقاع للصورة ساعة الإيقاع توقيت الحركة مزامنة البيت beat sync music timing motion timing review: beat grid with drop marker المراجعة: شبكة الإيقاع مع علامة الذروة مراجعة المونتاج علامة الدروب تايم لاين beat markers drop timeline review beat clock motion.beats ساعة الإيقاع توقيت الإيقاع ضربات تزامن bpm beat timing beat grid helper شبكة الإيقاع أزمنة الضربات تحويل bpm تزامن bpm downbeats beat-grid clock for a whole film ساعة شبكة إيقاع لفيلم كامل تزامن الصورة والموسيقى جدولة الأحداث توقيت bpm timeline beat-grid analyzer (audiomap.json) محلل شبكة الإيقاع تحليل الموسيقى طاقة الأغنية سكتات librosa onsets bpm beat grid timeline خط زمني مقفل على الإيقاع شبكة إيقاع جدولة الأحداث تايملاين beat grid timeline beat-grid cuts قطع على شبكة الإيقاع تبديل المشاهد مونتاج تقطيع منتظم scene change 120 bpm beat grid pulse شبكة تنبض مع الإيقاع شبكة نابضة معينات خلفية grid pulse pattern beat-grid cutting قطع على شبكة الإيقاع تقطيع متلعثم ذروة مونتاج سريع stutter cut climax beat-grid friendly bpm table جدول سرعات تناسب شبكة الإيقاع سرعة الإيقاع اختيار السرعة فريمات bpm table frame accurate beat-grid trailer edit مونتاج على شبكة الإيقاع تريلر اعلان تشويقي تقطيع trailer push in beat-grid trailer from a capture مقطع دعائي مقصوص على الإيقاع تريلر برومو كشف الإيقاع promo onset detection 110 bpm beat grid derivation شبكة 110 نبضة تبديل الفم تغيير الديكور شبكة ضربات mouth swap wipes frame-accurate beat reactions تفاعل على الإيقاع دقة الإطار جدول توقيت مزامنة frame accurate timing table"
 },
@@ -8481,7 +8481,7 @@
 "ready_now": 1,
 "links": [
 "SP-0141",
-"SP-0148",
+"SP-0147",
 "SP-0379",
 "SP-0476"
 ],
@@ -10331,7 +10331,7 @@
 "SP-0422",
 "SP-0184",
 "SP-0326",
-"SP-0147"
+"SP-0148"
 ],
 "text": "j-cut / l-cut قطع j وl قطع صوتي سبق الصوت تداخل الصوت j cut l cut split edit word as the transition plane الكلمة كسطح انتقال كلمة ضخمة انتقال بالنص تايبوجرافي text transition kinetic type chapter keyword transition plane كلمة الفصل كانتقال عنوان الفصل كلمة مفتاحية نص متحرك chapter title kinetic text keyword as transition plane الكلمة المفتاحية كمستوى انتقال كلمة مفتاحية متحدث للكاميرا نص ضخم talking head keyword text slash-split word كلمة تنشق بخط مائل شق الكلمة خط مائل قطع النص slash split text cut-burst word sequence تتابع كلمات بقطع سريع كلمات متتالية تقطيع سريع تايبوغرافي word cuts typography rapid word-cut burst انفجار كلمات سريع كلمات سريعة تقطيع خلفيات ملونة word cuts fast text diagonal banner slam شريط مائل يدخل بقوة بانر مائل شريط نصي عنوان banner diagonal text macro zoom word beats كلمات فوق تكبير شديد للرسم لقطات مقربة كلمة كلمة رسومات macro zoom word per cut turn banner لافتة الدور لافتة شريط عنوان بانر banner wipe label strip continuous ground line خط أرض مستمر ربط المشاهد خط مستمر استمرارية continuity anchor line j-cut / l-cut ambience قطع j و l للأصوات قطع صوتي صوت المحيط تداخل الصوت j cut l cut audio bridge"
 },
@@ -10908,7 +10908,7 @@
 "SP-0184",
 "SP-0438",
 "SP-0452",
-"SP-0147"
+"SP-0148"
 ],
 "text": "strike-through & replace شطب واستبدال strikethrough replace correction شطب استبدال highlighter & underline swipe قلم التظليل والخط السفلي highlighter underline marker emphasis تظليل خط سفلي تأكيد two-tone lines & accent-word colour عنوان بلونين وكلمة لون two-tone accent colour emphasis لونين لون التمييز inline avatars & icons inside a headline صور ووجوه وأيقونات داخل السطر avatars inline icon صور داخل السطر keyword pills كلمات داخل كبسولات pill capsule keyword كبسولة كلمة مفتاحية word performs its meaning الكلمة تؤدي معناها verb literal meaning الكلمة تؤدي معناها dim-previous stacks & active-item lists قوائم تخفت السابق list dim triad قائمة تخفيت gradient & metallic word fills تعبئة متدرجة ومعدنية gradient metallic fill تدرج معدني selection brackets & design-tool bounding box أقواس تحديد وصندوق أداة تصميم brackets bounding box selection أقواس تحديد full-stop dot & glyph substitution النقطة الختامية وإبدال الحرف full stop dot glyph نقطة إبدال حرف"
 },
@@ -10953,7 +10953,7 @@
 "SP-0326",
 "SP-0327",
 "SP-0442",
-"SP-0147"
+"SP-0148"
 ],
 "text": "lead / hero / tail beat splitter إيقاع البادئة/البطل/الذيل beat hero word kinetic script إيقاع كلمة بطلة تقسيم rgb-split glitch word كلمة بانفصال rgb وتشويش glitch rgb split chromatic تشويش غليتش headline slam & beat word punch صدمة العنوان وضربة الكلمة على الإيقاع slam punch beat hype صدمة ضربة إيقاع music-anchored type primitives & templates بدائيات حركة النص على الموسيقى music beat primitives templates موسيقى قوالب beat-slam sequences & stacked statements متتاليات الضرب وجمل تُبنى بالضربات beat slam sequence statement متتالية ضربات stamp, sticker & sfx word pop ختم وملصق وكلمة مؤثر صوتي stamp sticker sfx comic ختم ملصق مؤثر صوتي motion-blur slide, smear & stretch انزلاق بضبابية حركة ولطخة لونية motion blur smear stretch ضبابية حركة لطخة hook-line recipe & kinetic-type beats وصفة سطر الافتتاح hook opening recipe افتتاحية هوك held-frame stepped type نص بإطارات ممسوكة stepped held frames on twos إطارات ممسوكة صلصال"
 },
@@ -11208,7 +11208,7 @@
 "best": "proven",
 "ready_now": 8,
 "links": [
-"SP-0148",
+"SP-0147",
 "SP-0359",
 "SP-0124",
 "SP-0299"
@@ -11252,7 +11252,7 @@
 "ready_now": 2,
 "links": [
 "SP-0184",
-"SP-0147",
+"SP-0148",
 "SP-0452",
 "SP-0477"
 ],
@@ -11405,7 +11405,7 @@
 "SP-0139",
 "SP-0022",
 "SP-0144",
-"SP-0148",
+"SP-0147",
 "SP-0150",
 "SP-0023",
 "SP-0152"
@@ -11419,7 +11419,7 @@
 "SP-0142",
 "SP-0143",
 "SP-0021",
-"SP-0147",
+"SP-0148",
 "SP-0149",
 "SP-0001",
 "SP-0003",
@@ -12600,11 +12600,11 @@
 }
 ],
 "audit": {
-"atoms": 5850,
+"atoms": 5851,
 "superpowers": 481,
 "twin_groups": 177,
 "twin_members": 458,
-"distinct_methods": 5569,
+"distinct_methods": 5570,
 "tiny_absorbed": 28,
 "same_name_groups": [
 {
@@ -13432,7 +13432,7 @@
 ]
 },
 {
-"a": "SP-0147",
+"a": "SP-0148",
 "b": "SP-0184",
 "sim": 0.369,
 "hubs": [
@@ -13637,7 +13637,7 @@
 "create": 1941,
 "refine": 896,
 "assemble": 493,
-"understand": 832,
+"understand": 833,
 "verify": 543
 }
 }

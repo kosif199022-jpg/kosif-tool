@@ -618,7 +618,7 @@ chapter: [easing-timing-rhythm](../powers/easing-timing-rhythm.md) · card: `usi
 
 ## formats-platforms (motion)
 
-chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-library/cards/motion/formats-platforms.md` · tools: `aspects` · `blender-bridge` · `dua-wednesday` · `fetch-video` · `montage-pro` · `native-glb` · `reel-factory` · `render-html` …
+chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-library/cards/motion/formats-platforms.md` · tools: `aspects` · `blender-bridge` · `dua-wednesday` · `fetch-video` · `instagram-finder` · `montage-pro` · `native-glb` · `reel-factory` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -1279,7 +1279,7 @@ chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-librar
 
 ## video-download (motion)
 
-chapter: [video-download](../powers/video-download.md) · card: `usip-library/cards/motion/video-download.md` · tools: `fetch-reference` · `fetch-video` · `media-sources` · `repo-ashell-cinema` · `stock-fetch` · `stream-grabber`
+chapter: [video-download](../powers/video-download.md) · card: `usip-library/cards/motion/video-download.md` · tools: `fetch-reference` · `fetch-video` · `instagram-finder` · `media-sources` · `repo-ashell-cinema` · `stock-fetch` · `stream-grabber`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
