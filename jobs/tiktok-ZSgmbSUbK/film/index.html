@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="ar"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Neon Lyrics</title>
+<link rel="stylesheet" href="fonts/all.css">
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden}
+canvas{display:block;width:100vw;height:100vh;object-fit:contain}
+#play{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font:700 28px "Reem Kufi",sans-serif;background:rgba(0,0,0,.5);cursor:pointer}
+</style></head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<script src="lyrics.js"></script>
+<script>
+// Neon Arabic lyric film, 1080x1920. Rendering techniques (tube ghost/colour/core layers, low-res saturated halos,
+// sign-lit brick with rim light, wet-pavement reflection) adapted from the AI Style Atlas "Neon Sign at Night"
+// reference supplied by the user. Every frame is a pure function of t.
+'use strict';
+const W = 1080, HH = 1920, WALL = 1404, FPS = 30;
+const DATA = window.LYRICS;               // {duration, lines:[{p,y,size,font,c,w:[[word,t]]}], env30:[...]}
+const DUR = DATA.duration;
+
+// ---------- helpers (from the atlas H library) ----------
+const H = {};
+H.rng = function (seed = 1) {
+  let a = (seed >>> 0) || 1;
+  const r = () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  r.range = (lo, hi) => lo + r() * (hi - lo); return r;
+};
+H.makeNoise = function (seed = 1) {
+  const r = H.rng(seed), p = new Uint8Array(512), perm = [...Array(256).keys()];
+  for (let i = 255; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [perm[i], perm[j]] = [perm[j], perm[i]]; }
+  for (let i = 0; i < 512; i++) p[i] = perm[i & 255];
+  const fade = (t) => t * t * t * (t * (t * 6 - 15) + 10), lerp = (a, b, t) => a + (b - a) * t;
+  const g3 = (h, x, y, z) => { h &= 15; const u = h < 8 ? x : y, v = h < 4 ? y : h === 12 || h === 14 ? x : z; return ((h & 1) ? -u : u) + ((h & 2) ? -v : v); };
+  function n3(x, y, z) {
+    const X = Math.floor(x) & 255, Y = Math.floor(y) & 255, Z = Math.floor(z) & 255;
+    x -= Math.floor(x); y -= Math.floor(y); z -= Math.floor(z);
+    const u = fade(x), v = fade(y), w = fade(z);
+    const A = p[X] + Y, AA = p[A] + Z, AB = p[A + 1] + Z, B = p[X + 1] + Y, BA = p[B] + Z, BB = p[B + 1] + Z;
+    return lerp(lerp(lerp(g3(p[AA], x, y, z), g3(p[BA], x - 1, y, z), u), lerp(g3(p[AB], x, y - 1, z), g3(p[BB], x - 1, y - 1, z), u), v),
+      lerp(lerp(g3(p[AA + 1], x, y, z - 1), g3(p[BA + 1], x - 1, y, z - 1), u), lerp(g3(p[AB + 1], x, y - 1, z - 1), g3(p[BB + 1], x - 1, y - 1, z - 1), u), v), w);
+  }
+  return { n3, n2: (x, y) => n3(x, y, 0.5) };
+};
+H.lerp = (a, b, t) => a + (b - a) * t;
+H.clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
+H.smooth = (e0, e1, x) => { const t = H.clamp((x - e0) / (e1 - e0)); return t * t * (3 - 2 * t); };
+H.ease = { inOut: (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2), out: (t) => 1 - Math.pow(1 - t, 3) };
+H.rgba = (c, a = 1) => `rgba(${c[0] | 0},${c[1] | 0},${c[2] | 0},${a})`;
+H.mix = (a, b, t) => [0, 1, 2].map((i) => a[i] + (b[i] - a[i]) * t);
+H.layer = (w, h) => { const c = document.createElement('canvas'); c.width = w; c.height = h; return c; };
+
+const NX = { pink: [255, 70, 165], cyan: [70, 228, 255], warm: [255, 190, 70], red: [255, 48, 36], green: [90, 255, 120], violet: [175, 110, 255], white: [255, 236, 214] };
+const FONTS = { kufi: (s) => `600 ${s}px "Marhey"`, ruqaa: (s) => `700 ${s}px "Aref Ruqaa"`, marhey: (s) => `700 ${s}px "Marhey"` };
+const hs = (n) => { const v = Math.sin(n * 91.731 + 7.13) * 43758.5453; return v - Math.floor(v); };
+const sm = H.smooth, E = H.ease;
+
+// ---------- static textures (built once) ----------
+let brickTile = null, edgeTile = null, pave = null, grainTiles = null;
+const BR = { w: 108, h: 36, cols: 12, rows: 39, mort: 6 };
+function brickHash(a, b) { const s = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return s - Math.floor(s); }
+function buildBrick() {
+  const TW = BR.w * BR.cols, TH = BR.h * BR.rows, c = H.layer(TW, TH), x = c.getContext('2d'), img = x.createImageData(TW, TH), d = img.data;
+  const e = H.layer(TW, TH), ex = e.getContext('2d'), eimg = ex.createImageData(TW, TH), ed = eimg.data;
+  const R = H.rng(4401), nz = H.makeNoise(4402);
+  const cols = [[226, 104, 76], [198, 88, 64], [240, 128, 92], [176, 94, 76], [216, 118, 88], [136, 74, 60], [205, 112, 84]];
+  for (let y = 0; y < TH; y++) {
+    const row = Math.floor(y / BR.h), ly = y - row * BR.h, off = (row % 2) * (BR.w / 2);
+    for (let xx = 0; xx < TW; xx++) {
+      const col = Math.floor((xx + off) / BR.w) % BR.cols, lxp = (xx + off) % BR.w;
+      const h1 = brickHash(row, col), h2 = brickHash(col + 9, row + 3), g = R() - 0.5;
+      const ang = xx / TW * Math.PI * 2, st = nz.n3(Math.cos(ang) * 3, Math.sin(ang) * 3, y * 0.011) * 0.3;
+      const ej = (brickHash(xx >> 2, row) - 0.5) * 2.4;
+      const i = (y * TW + xx) * 4;
+      let r, gg, b;
+      if (ly < BR.mort + ej * 0.5 || lxp < BR.mort + ej * 0.6) { const m = 0.5 + g * 0.3; r = 188 * m; gg = 180 * m; b = 170 * m; }
+      else {
+        const c0 = cols[Math.floor(h1 * cols.length)];
+        const k = (0.85 + h2 * 0.3 + st) * (1 + g * 0.3) * (brickHash(xx * 0.37 | 0, y * 0.41 | 0) > 0.985 ? 0.55 : 1) * (ly - BR.mort < 3 ? 1.15 : BR.h - ly < 3 ? 0.75 : 1);
+        r = c0[0] * k; gg = c0[1] * k; b = c0[2] * k;
+        const top = ly - (BR.mort + ej * 0.5), bot = BR.h - ly;
+        if (top < 3.5) { ed[i] = ed[i + 1] = ed[i + 2] = 255; ed[i + 3] = 255 * (1 - top / 3.5) * (lxp - BR.mort < 2 ? 0.5 : 1); }
+        else if (bot < 3) { ed[i] = ed[i + 1] = ed[i + 2] = 255; ed[i + 3] = 140 * (1 - bot / 3); }
+      }
+      d[i] = r; d[i + 1] = gg; d[i + 2] = b; d[i + 3] = 255;
+    }
+  }
+  x.putImageData(img, 0, 0); ex.putImageData(eimg, 0, 0);
+  // rain streak darkening (wet wall)
+  x.globalCompositeOperation = 'multiply';
+  for (let k = 0; k < 90; k++) { const sx = R() * TW, w = 6 + R() * 30, g2 = x.createLinearGradient(0, 0, 0, TH); g2.addColorStop(0, 'rgba(120,110,120,0)'); g2.addColorStop(R(), 'rgba(120,110,130,0.5)'); g2.addColorStop(1, 'rgba(120,110,120,0)'); x.fillStyle = g2; x.fillRect(sx, 0, w, TH); }
+  brickTile = c; edgeTile = e;
+}
+function buildPave() {
+  const PW = W * 2, PH = HH - WALL, nz = H.makeNoise(4410), R = H.rng(4411);
+  const c = H.layer(PW, PH), x = c.getContext('2d'), img = x.createImageData(PW, PH), d = img.data;
+  const p = H.layer(PW, PH), px = p.getContext('2d'), pimg = px.createImageData(PW, PH), pd = pimg.data;
+  for (let y = 0; y < PH; y++) for (let xx = 0; xx < PW; xx++) {
+    const a = xx / PW * Math.PI * 2, cx0 = Math.cos(a), sx0 = Math.sin(a), persp = 1 + y / PH * 2;
+    const g = R() - 0.5, st = nz.n3(cx0 * 9, sx0 * 9, y * 0.03 / persp * 2) * 0.5 + nz.n3(cx0 * 40, sx0 * 40, y * 0.12) * 0.3;
+    let base = 22 + g * 12 + st * 9;
+    if (y < 6) base = 58 + g * 14 - y * 3; else if (y < 18) base = 42 + g * 14 - (y - 6) * 1.4;
+    base *= 1 - y / PH * 0.3;
+    const i = (y * PW + xx) * 4; d[i] = base * 0.92; d[i + 1] = base * 0.95; d[i + 2] = base * 1.1; d[i + 3] = 255;
+    const v = nz.n3(cx0 * 3.5, sx0 * 3.5, y * 0.012 + 20) + 0.4 * nz.n3(cx0 * 10, sx0 * 10, y * 0.03);
+    pd[i] = pd[i + 1] = pd[i + 2] = 255; pd[i + 3] = 255 * H.smooth(-0.15, 0.06, v) * H.smooth(10, 30, y);
+  }
+  x.putImageData(img, 0, 0); px.putImageData(pimg, 0, 0);
+  for (let k = 0; k < 4200; k++) { x.fillStyle = `rgba(200,200,220,${R() * 0.16})`; x.fillRect(R() * PW, 18 + Math.pow(R(), 0.8) * (PH - 18), 1 + R() * 1.5, 1); }
+  pave = { c, p, PW, PH };
+}
+function buildGrain() {
+  grainTiles = [];
+  for (let k = 0; k < 6; k++) {
+    const c = H.layer(540, 960), x = c.getContext('2d'), img = x.createImageData(540, 960), d = img.data, R = H.rng(900 + k);
+    for (let i = 0; i < d.length; i += 4) { const v = 128 + (R() - 0.5) * 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+    x.putImageData(img, 0, 0); grainTiles.push(c);
+  }
+}
+
+// ---------- reusable frame layers ----------
+const L = {};
+['col', 'txt', 'core', 'off', 'F'].forEach((k) => (L[k] = H.layer(W, HH)));
+const G = {}; for (const k in L) G[k] = L[k].getContext('2d');
+const scratch = H.layer(W, HH), sx2 = scratch.getContext('2d');
+function blurSmall(src, px, s, sat = 1, w = W, h = HH) {
+  const c = H.layer(Math.ceil(w * s), Math.ceil(h * s)), x = c.getContext('2d');
+  x.filter = `blur(${Math.max(0.5, px * s)}px)` + (sat !== 1 ? ` saturate(${sat})` : ''); x.drawImage(src, 0, 0, w, h, 0, 0, c.width, c.height); return c;
+}
+
+// ---------- layout of lyric lines (after fonts load) ----------
+const ctxM = G.txt;
+function layoutLines() {
+  for (const ln of DATA.lines) {
+    const fam = FONTS[ln.font || 'kufi'];
+    let size = ln.size;
+    const gap = () => size * 0.28;
+    const measure = () => { ctxM.font = fam(size); return ln.w.map(([s]) => ctxM.measureText(s).width); };
+    let ws = measure(), tot = ws.reduce((a, b) => a + b, 0) + gap() * (ws.length - 1);
+    const maxW = ln.maxW || 900;
+    if (tot > maxW) { size = Math.floor(size * maxW / tot); ws = measure(); tot = ws.reduce((a, b) => a + b, 0) + gap() * (ws.length - 1); }
+    // RTL: first word at the right
+    let x = (ln.x || 540) + tot / 2; ln.fontStr = fam(size); ln.fsize = size; ln.pos = [];
+    ws.forEach((w) => { ln.pos.push([x - w, w]); x -= w + gap(); });
+    ln.t0 = ln.w[0][1];
+  }
+}
+
+// ---------- scene ----------
+const PANEL_T = [0, 7.42, 15.22, 22.95, 30.2, 37.98];       // pan start times into panel i
+const PAN_LEN = [0, 0.38, 0.38, 0.38, 0.32, 0.3];
+function camAt(t) { let c = 0; for (let i = 1; i < PANEL_T.length; i++) c += W * E.inOut(sm(PANEL_T[i], PANEL_T[i] + PAN_LEN[i], t)); return c; }
+function envAt(t) { const e = DATA.env30 || []; if (!e.length) return 0.5; const i = H.clamp(t * 30, 0, e.length - 1), a = Math.floor(i), b = Math.min(e.length - 1, a + 1); return H.lerp(e[a], e[b], i - a); }
+
+function drawFrame(ctx, t) {
+  const cam = camAt(t);
+  const ign = (t0, len = 0.3) => t < t0 ? 0 : t - t0 > len ? 1 : (hs(Math.floor(t * 40) + t0 * 977) > 0.42 ? 1 : 0.06);
+  const down = (t1, len = 0.28) => t < t1 ? 1 : t - t1 > len ? 0 : (hs(Math.floor(t * 40) + t1 * 331) > 0.5 ? 1 : 0.1);
+  const END = DUR - 0.62; // everything but the last word + finale heart powers down here
+  const endK = down(END);
+  for (const k in G) { const g = G[k]; g.setTransform(1, 0, 0, 1, 0, 0); g.globalAlpha = 1; g.globalCompositeOperation = 'source-over'; g.filter = 'none'; g.clearRect(0, 0, W, HH); }
+  const { col: cx, txt: tx, core: kx, off: ox } = G;
+  [cx, tx, kx, ox].forEach((g) => { g.lineCap = 'round'; g.lineJoin = 'round'; g.translate(-cam, 0); });
+  cx.globalCompositeOperation = 'lighter'; kx.globalCompositeOperation = 'lighter';
+  let tb = null; // screen bbox of lit text, for core erosion
+  const HW = { clips: [], elec: [] };
+  const clip = (x, y, a = 0) => HW.clips.push([x, y, a]);
+  const elec = (x, y, a) => HW.elec.push([x, y, a]);
+  const seen = (X) => Math.abs(cam - X) < 1250;
+
+  // glass tube: dark unlit glass always, colour + hot core when lit; prog draws it on along its length
+  const tube = (pathFn, c, k, w = 7, prog = 1, len = 2400) => {
+    ox.strokeStyle = 'rgb(44,36,48)'; ox.lineWidth = w; pathFn(ox); ox.stroke();
+    ox.strokeStyle = 'rgba(170,160,180,0.2)'; ox.lineWidth = w * 0.3; ox.save(); ox.translate(-1, -1.5); pathFn(ox); ox.stroke(); ox.restore();
+    if (k <= 0 || prog <= 0) return;
+    const dash = prog < 1 ? [len * prog, len * 2] : [];
+    cx.setLineDash(dash); kx.setLineDash(dash);
+    cx.strokeStyle = H.rgba(c, Math.min(1, k)); cx.lineWidth = w * (k > 1 ? 1 + (k - 1) * 0.6 : 1); pathFn(cx); cx.stroke();
+    kx.strokeStyle = H.rgba(H.mix(c, [255, 255, 255], 0.82), Math.min(1, k)); kx.lineWidth = w * 0.36; pathFn(kx); kx.stroke();
+    cx.setLineDash([]); kx.setLineDash([]);
+  };
+  const word = (s, x, y, font, c, k, lw = 3.4) => {
+    ox.font = font; ox.textAlign = 'left'; ox.direction = 'rtl'; ox.lineWidth = lw; ox.fillStyle = ox.strokeStyle = 'rgb(44,36,48)';
+    ox.textAlign = 'left'; ox.direction = 'ltr'; ox.fillText(s, x, y); ox.strokeText(s, x, y);
+    if (k <= 0) return;
+    const fs = +(font.match(/(\d+)px/) || [0, 60])[1]; tx.font = font; const w = tx.measureText(s).width, pad = 14;
+    const b = [x - cam - pad, y - fs * 1.25 - pad, x - cam + w + pad, y + fs * 0.7 + pad];
+    tb = tb ? [Math.min(tb[0], b[0]), Math.min(tb[1], b[1]), Math.max(tb[2], b[2]), Math.max(tb[3], b[3])] : b;
+    const boost = Math.min(1, k);
+    for (const [g, cc, l] of [[cx, c, lw + (k > 1 ? (k - 1) * 8 : 0) + 3], [tx, H.mix(c, [255, 255, 255], 0.85), lw]]) {
+      g.font = font; g.textAlign = 'left'; g.direction = 'ltr'; g.lineWidth = l; g.fillStyle = g.strokeStyle = H.rgba(cc, boost);
+      g.fillText(s, x, y); g.strokeText(s, x, y);
+    }
+  };
+  const quadPt = (x0, y0, qx, qy, x1, y1, u) => [(1 - u) * (1 - u) * x0 + 2 * (1 - u) * u * qx + u * u * x1, (1 - u) * (1 - u) * y0 + 2 * (1 - u) * u * qy + u * u * y1];
+
+  // ---- lyric lines: words ignite on the sung word, overdrive flash, older lines rest dimmer ----
+  const lines = DATA.lines;
+  for (let li = 0; li < lines.length; li++) {
+    const ln = lines[li], X = ln.p * W;
+    if (!seen(X)) continue;
+    const later = lines.find((o, j) => j > li && o.p === ln.p && !o.overlay);
+    const rest = later && !ln.overlay ? 1 - 0.42 * sm(later.t0 - 0.05, later.t0 + 0.35, t) : 1;
+    const keep = ln.final ? 1 : endK;
+    ln.w.forEach(([s, t0, opt], i) => {
+      let k = ign(t0, 0.32);
+      if (k > 0) k *= 1 + 0.55 * Math.exp(-(t - t0) * 4.5);         // ignition overdrive on the sung word
+      if (opt === 'fail' && t > t0 + 0.4) k = hs(Math.floor(t * 11) + 3) > 0.33 ? 1 : 0.12; // the tube that never settles
+      if (opt === 'strike' && t > t0 + 0.4) k *= 0.55;
+      const c = opt === 'fail' ? NX.red : NX[ln.c];
+      word(s, X + ln.pos[i][0], ln.y, ln.fontStr, c, k * rest * keep, ln.lw || 3.4);
+      if (opt === 'strike') { // red strike-through tube on "كلام"
+        const x0 = X + ln.pos[i][0] - 14, x1 = x0 + ln.pos[i][1] + 28, yy = ln.y - ln.fsize * 0.32;
+        tube((g) => { g.beginPath(); g.moveTo(x1, yy - 10); g.lineTo(x0, yy + 12); }, NX.red, ign(t0 + 0.45) * keep, 9, sm(t0 + 0.45, t0 + 0.75, t), 300);
+        elec(x1 + 4, yy - 11, 0); elec(x0 - 4, yy + 13, Math.PI);
+      }
+    });
+    // electrodes at both ends of each sign line
+    const xr = X + ln.pos[0][0] + ln.pos[0][1] + 18, xl = X + ln.pos[ln.pos.length - 1][0] - 18;
+    elec(xr, ln.y - ln.fsize * 0.3, 0); elec(xl, ln.y - ln.fsize * 0.3, Math.PI);
+  }
+
+  // ================= P0: the two eyes (العينين سابقة الكلام / وأنا عيني ليك) =================
+  if (seen(0)) {
+    const blinkAt = [2.25, 4.55, 6.95, 9.0];
+    let open = sm(0.0, 0.7, t);
+    for (const b of blinkAt) open *= 1 - Math.exp(-Math.pow((t - b) / 0.07, 2));
+    const look = Math.sin(t * 0.9) * 22 + (t > 3.9 && t < 5.4 ? -14 : 0);
+    const draw = sm(0.0, 1.1, t), heartEyes = t > 3.94;
+    for (const [ex, side] of [[330, -1], [750, 1]]) {
+      const ey = 470, w2 = 165, hu = H.lerp(-62, 92, open), hl = 66;
+      const almond = (g) => { g.beginPath(); g.moveTo(ex - w2, ey); g.quadraticCurveTo(ex, ey - 2 * hu, ex + w2, ey); g.quadraticCurveTo(ex, ey + 2 * hl, ex - w2, ey); };
+      tube(almond, NX.cyan, ign(0.05) * endK, 9, draw, 900);
+      // lashes on the upper lid
+      for (let i = 0; i < 5; i++) {
+        const u = 0.2 + i * 0.15, p = quadPt(ex - w2, ey, ex, ey - 2 * hu, ex + w2, ey, u), nx = (u - 0.5) * 0.9;
+        const len = 30 * H.clamp(open * 1.3);
+        if (len > 2) tube((g) => { g.beginPath(); g.moveTo(p[0], p[1] - 6); g.lineTo(p[0] + nx * len, p[1] - 6 - len); }, NX.cyan, ign(0.4 + i * 0.05) * endK, 5);
+      }
+      if (open > 0.45) {
+        const ix = ex + look, iy = ey + 4, ik = ign(0.75) * H.clamp((open - 0.45) * 3) * endK;
+        tube((g) => { g.beginPath(); g.arc(ix, iy, 56, 0, Math.PI * 2); }, NX.warm, ik, 7);
+        if (heartEyes) { const s = 22 * (1 + 0.15 * Math.max(0, Math.sin(t * 8.6))); tube((g) => heartPath(g, ix, iy + 2, s), NX.pink, ign(3.94) * ik, 6); }
+        else tube((g) => { g.beginPath(); g.arc(ix, iy, 18, 0, Math.PI * 2); }, NX.warm, ik, 6);
+      }
+      // brow
+      tube((g) => { g.beginPath(); g.moveTo(ex - 130, ey - 150 - (side > 0 ? 6 : 0)); g.quadraticCurveTo(ex, ey - 205 - open * 10, ex + 130, ey - 150); }, NX.violet, ign(1.0) * endK, 7, sm(1.0, 1.6, t), 400);
+      elec(ex - w2 - 12, ey, Math.PI); clip(ex, ey + hl, 0);
+    }
+  }
+
+  // ================= P1: nights (نفسي أعيش كل الليالي وياك) =================
+  const X1 = W;
+  if (seen(X1)) {
+    const mx = X1 + 690, my = 410, mr = 175;
+    // crescent: outer circle minus an offset inner circle, joined at their two intersections
+    const ix = mx + 95, iy = my - 60, ir = mr * 0.88, dd = Math.hypot(ix - mx, iy - my), base = Math.atan2(iy - my, ix - mx);
+    const ao = Math.acos((mr * mr + dd * dd - ir * ir) / (2 * mr * dd)), ai = Math.acos((ir * ir + dd * dd - mr * mr) / (2 * ir * dd));
+    const moon = (g) => { g.beginPath(); g.arc(mx, my, mr, base + ao, base - ao + 2 * Math.PI, false); g.arc(ix, iy, ir, base + Math.PI + ai, base + Math.PI - ai, true); g.closePath(); };
+    tube(moon, NX.warm, ign(7.75) * endK, 9, sm(7.75, 8.9, t), 1700);
+    const stars = [[X1 + 250, 250, 34], [X1 + 410, 420, 22], [X1 + 200, 560, 26], [X1 + 900, 260, 20], [X1 + 440, 190, 16], [X1 + 920, 640, 24], [X1 + 330, 690, 15]];
+    stars.forEach(([sx, sy, r], i) => {
+      const t0 = 9.98 + i * 0.11, tw = 0.75 + 0.25 * Math.sin(t * 5 + i * 2.1);
+      tube((g) => starPath(g, sx, sy, r, t * 0.3 + i), i % 2 ? NX.cyan : NX.white, ign(t0) * tw * endK, 5);
+    });
+    // small zzz-free "nights" counter: a row of tick marks that light up per night (beat-synced)
+    for (let i = 0; i < 9; i++) {
+      const bx = X1 + 210 + i * 82, t0 = 10.56 + i * 0.2;
+      tube((g) => { g.beginPath(); g.moveTo(bx, 760); g.lineTo(bx + 34, 760); }, NX.violet, ign(t0) * endK, 6);
+    }
+    // heart around the big "وياك"
+    const hb = 1 + 0.06 * envAt(t) + 0.04 * Math.max(0, Math.sin((t - 12.45) * 7.4));
+    tube((g) => heartPath(g, X1 + 540, 1120, 205 * hb), NX.pink, ign(12.5) * endK, 8, sm(12.5, 13.6, t), 2200);
+    elec(X1 + 540, 1120 + 205 * 0.9 * hb + 10, Math.PI / 2);
+  }
+
+  // ================= P2: hands held (واللي قالوا هسيب إيديك / دول ضاحكين عليك) =================
+  const X2 = W * 2;
+  if (seen(X2)) {
+    const pull = sm(17.26, 17.7, t) * (1 - sm(18.9, 19.4, t));           // the rumour pulls them apart, then they hold on
+    const shake = pull > 0.01 ? Math.sin(t * 60) * 3 * pull : 0;
+    const sep = 46 * pull;
+    const figure = (fx, dir, c, t0) => {
+      const hx = fx - dir * sep, hy = 320;
+      tube((g) => { g.beginPath(); g.arc(hx, hy, 62, 0, Math.PI * 2); }, c, ign(t0) * endK, 8, sm(t0, t0 + 0.6, t), 420);
+      tube((g) => { g.beginPath(); g.moveTo(hx - 110, 700); g.quadraticCurveTo(hx - 120, 430, hx, 420); g.quadraticCurveTo(hx + 120, 430, hx + 110, 700); }, c, ign(t0 + 0.15) * endK, 8, sm(t0 + 0.15, t0 + 0.9, t), 800);
+      // arm reaching to the joined hands
+      const jx = X2 + 540, jy = 560 + shake;
+      tube((g) => { g.beginPath(); g.moveTo(hx + dir * 70, 470); g.quadraticCurveTo(hx + dir * 120, 600, jx - dir * (14 + sep * 0.9), jy); }, c, ign(t0 + 0.35) * endK, 8, sm(t0 + 0.35, t0 + 1.0, t), 400);
+    };
+    figure(X2 + 310, 1, NX.cyan, 15.5);
+    figure(X2 + 770, -1, NX.pink, 15.7);
+    const jx = X2 + 540, jy = 560 + shake, crack = pull > 0.2;
+    tube((g) => { g.beginPath(); g.arc(jx - sep * 0.45, jy, 22, 0, Math.PI * 2); g.moveTo(jx + sep * 0.45 + 22, jy); g.arc(jx + sep * 0.45, jy, 22, 0, Math.PI * 2); }, crack ? NX.red : NX.warm, ign(16.2) * endK, 7);
+    const hp = 1 + 0.18 * Math.max(0, Math.sin(t * 8.6)) * (1 - pull);
+    tube((g) => heartPath(g, jx, 470 - 20 * (1 - pull), 34 * hp), crack ? NX.red : NX.pink, (crack ? (hs(Math.floor(t * 20)) > 0.5 ? 1 : 0.15) : ign(16.36)) * endK, 6);
+    // the people laughing at you: "ههههه" signs blinking in laughing rhythm
+    const laughs = [[X2 + 120, 230, -0.2, 20.78], [X2 + 860, 205, 0.18, 20.95], [X2 + 130, 790, 0.12, 21.15], [X2 + 880, 770, -0.15, 21.35]];
+    laughs.forEach(([lx, ly, rot, t0], i) => {
+      const k = t < t0 ? 0 : ign(t0) * (hs(Math.floor(t * 9) + i * 7) > 0.3 ? 1 : 0.2) * (1 - sm(22.5, 22.8, t) * 0.75);
+      cx.save(); tx.save(); ox.save();
+      for (const g of [cx, tx, ox]) { g.translate(lx, ly); g.rotate(rot); }
+      word('ههههه', -95, 20, FONTS.marhey(62), i % 2 ? NX.green : NX.cyan, k * endK, 2.6);
+      cx.restore(); tx.restore(); ox.restore();
+      // erosion bbox for rotated text: widen
+      if (k > 0) { const b = [lx - cam - 140, ly - 90, lx - cam + 140, ly + 70]; tb = tb ? [Math.min(tb[0], b[0]), Math.min(tb[1], b[1]), Math.max(tb[2], b[2]), Math.max(tb[3], b[3])] : b; }
+    });
+  }
+
+  // ================= P3: my place is with you (مهما كان / دايمًا مكاني وياك / آه) =================
+  const X3 = W * 3;
+  if (seen(X3)) {
+    const drop = sm(23.1, 23.7, t), bounce = t > 23.7 ? Math.exp(-(t - 23.7) * 6) * Math.sin((t - 23.7) * 18) * 30 : 0;
+    const py = H.lerp(-400, 0, E.out(drop)) - bounce;
+    const pinX = X3 + 540, pinY = 400 + py;
+    const pin = (g) => { g.beginPath(); g.moveTo(pinX, pinY + 300); g.bezierCurveTo(pinX - 60, pinY + 200, pinX - 170, pinY + 120, pinX - 170, pinY); g.arc(pinX, pinY, 170, Math.PI, 0); g.bezierCurveTo(pinX + 170, pinY + 120, pinX + 60, pinY + 200, pinX, pinY + 300); };
+    tube(pin, NX.cyan, ign(23.2) * endK, 9);
+    const hk = ign(25.5) * endK, hbeat = 1 + 0.16 * Math.max(0, Math.sin((t - 25.5) * 8.6));
+    tube((g) => heartPath(g, pinX, pinY + 12, 70 * hbeat), NX.pink, hk, 8, sm(25.5, 26.1, t), 900);
+    // location pings from the base (one per beat once "دايمًا" is sung)
+    if (t > 24.6) {
+      for (let n = 0; n < 3; n++) {
+        const ph = ((t - 24.6) / 0.73 + n / 3) % 1;
+        const rx = 60 + ph * 300, ry = 18 + ph * 70, a = (1 - ph) * endK;
+        tube((g) => { g.beginPath(); g.ellipse(pinX, pinY + 312, rx, ry, 0, 0, Math.PI * 2); }, NX.violet, a, 5);
+      }
+    }
+    // "آه": a violet cry that overdrives the sign
+    const ahK = ign(30.05, 0.2) * (1 + 0.8 * Math.exp(-(t - 30.05) * 3)) * endK;
+    word('آه', X3 + 820, 260, FONTS.ruqaa(150), NX.violet, t > 30.05 ? ahK : 0, 3);
+    elec(pinX, pinY + 312, Math.PI / 2);
+  }
+
+  // ================= P4: the scale (ولا عاش ولا كان / ده أنا أبيع الناس ولا أفرّط فيك) =================
+  const X4 = W * 4;
+  if (seen(X4)) {
+    const px = X4 + 540, pyv = 300, arm = 360;
+    let a = 0;
+    if (t > 35.2) a = H.lerp(0, -0.17, E.out(sm(35.2, 36.1, t)));
+    if (t > 37.66) { const d = t - 37.66; a = 0.3 + (-0.17 - 0.3) * Math.exp(-d * 4.2) * Math.cos(d * 9); }
+    const k0 = ign(30.5) * endK;
+    tube((g) => { g.beginPath(); g.moveTo(px, pyv); g.lineTo(px, 760); g.moveTo(px - 120, 770); g.lineTo(px + 120, 770); }, NX.warm, k0, 8, sm(30.5, 31.3, t), 700);
+    tube((g) => { g.beginPath(); g.arc(px, pyv - 34, 18, 0, Math.PI * 2); }, NX.warm, k0, 6);
+    const lx = px - arm * Math.cos(a), ly = pyv - arm * Math.sin(a), rx = px + arm * Math.cos(a), ry = pyv + arm * Math.sin(a);
+    tube((g) => { g.beginPath(); g.moveTo(lx, ly); g.lineTo(rx, ry); }, NX.cyan, ign(30.82) * endK, 8, sm(30.82, 31.4, t), 800);
+    const pan = (hx, hy, c, k) => tube((g) => { g.beginPath(); g.moveTo(hx, hy); g.lineTo(hx - 105, hy + 170); g.moveTo(hx, hy); g.lineTo(hx + 105, hy + 170); g.moveTo(hx - 125, hy + 170); g.quadraticCurveTo(hx, hy + 260, hx + 125, hy + 170); g.lineTo(hx - 125, hy + 170); }, c, k, 6, sm(31.38, 31.9, t), 900);
+    pan(lx, ly, NX.cyan, ign(31.38) * endK); pan(rx, ry, NX.cyan, ign(31.38) * endK);
+    // the people (أبيع الناس): light up one by one, sold off one by one when the scale tips
+    for (let i = 0; i < 5; i++) {
+      const ppx = lx - 76 + i * 38, ppy = ly + 170;
+      const on = ign(35.2 + i * 0.1), off = t > 37.8 + i * 0.09 ? down(37.8 + i * 0.09, 0.2) : 1;
+      const k = on * off * endK;
+      if (k > 0 || t < 35.2) tube((g) => { g.beginPath(); g.arc(ppx, ppy - 50, 11, 0, Math.PI * 2); g.moveTo(ppx - 15, ppy - 4); g.quadraticCurveTo(ppx, ppy - 44, ppx + 15, ppy - 4); }, i % 2 ? NX.violet : NX.white, k, 4.5);
+    }
+    const hbeat = 1 + (t > 37.66 ? 0.22 * Math.exp(-(t - 37.66) * 1.2) * Math.max(0, Math.sin((t - 37.66) * 9)) : 0) + 0.05 * envAt(t);
+    tube((g) => heartPath(g, rx, ry + 140, 50 * hbeat), NX.pink, ign(31.82) * endK, 7);
+    elec(px, 770, Math.PI / 2); clip(px, 520, Math.PI / 2);
+  }
+
+  // ================= P5: cassette finale (بقى ده اسمه كلام؟ / يا حبيبي / الله يخليك / خليك) =================
+  const X5 = W * 5;
+  if (seen(X5)) {
+    const b0 = X5, dk = sm(38.0, 39.0, t), k = ign(38.05) * endK;
+    tube((g) => { g.beginPath(); g.roundRect(b0 + 210, 170, 660, 430, 36); }, NX.warm, k, 8, dk, 2300);
+    tube((g) => { g.beginPath(); g.roundRect(b0 + 260, 215, 560, 260, 20); }, NX.warm, ign(38.3) * endK, 5, sm(38.3, 39.1, t), 1700);
+    tube((g) => { g.beginPath(); g.roundRect(b0 + 360, 320, 360, 110, 46); }, NX.cyan, ign(38.5) * endK, 6);
+    tube((g) => { g.beginPath(); g.moveTo(b0 + 330, 600); g.lineTo(b0 + 372, 525); g.lineTo(b0 + 708, 525); g.lineTo(b0 + 750, 600); }, NX.warm, ign(38.6) * endK, 6);
+    const spin = t * 2.6, prog = sm(38.0, DUR, t);
+    [[b0 + 430, 375, 1 - prog], [b0 + 650, 375, prog]].forEach(([hx, hy, fill], j) => {
+      const rk = ign(38.7 + j * 0.08) * endK;
+      tube((g) => { g.beginPath(); g.arc(hx, hy, 30, 0, Math.PI * 2); }, NX.white, rk, 5);
+      tube((g) => { g.beginPath(); for (let s = 0; s < 6; s++) { const an = spin + s * Math.PI / 3; g.moveTo(hx + Math.cos(an) * 12, hy + Math.sin(an) * 12); g.lineTo(hx + Math.cos(an) * 26, hy + Math.sin(an) * 26); } }, NX.white, rk, 4);
+      tube((g) => { g.beginPath(); g.arc(hx, hy, 38 + fill * 10, 0, Math.PI * 2); }, NX.violet, rk * 0.7, 3);
+    });
+    for (const [sx, sy] of [[235, 195], [845, 195], [235, 575], [845, 575]]) tube((g) => { g.beginPath(); g.arc(b0 + sx, sy, 8, 0, Math.PI * 2); }, NX.warm, k * 0.8, 3.5);
+    // label heart lights on "الله يخليك" and beats with the song
+    const lh = 1 + 0.18 * Math.max(0, Math.sin((t - 41.28) * 8.6)) + 0.08 * envAt(t);
+    tube((g) => heartPath(g, b0 + 540, 268, 30 * lh), NX.pink, ign(41.28), 6);
+    elec(b0 + 210, 385, Math.PI); elec(b0 + 870, 385, 0);
+  }
+
+  // ---------- erode text to a thin hot core ----------
+  if (tb) {
+    const r = 3, x0 = Math.max(r, Math.floor(tb[0])), y0 = Math.max(r, Math.floor(tb[1])), x1 = Math.min(W - r, Math.ceil(tb[2])), y1 = Math.min(HH - r, Math.ceil(tb[3]));
+    if (x1 - x0 > 2 && y1 - y0 > 2) {
+      const bw = x1 - x0, bh = y1 - y0, c = H.layer(bw, bh), e = c.getContext('2d');
+      e.drawImage(L.txt, x0, y0, bw, bh, 0, 0, bw, bh); e.globalCompositeOperation = 'destination-in';
+      for (let q = 0; q < 8; q++) { const dx = Math.round(Math.cos(q * Math.PI / 4) * r), dy = Math.round(Math.sin(q * Math.PI / 4) * r); e.drawImage(L.txt, x0 - dx, y0 - dy, bw, bh, 0, 0, bw, bh); }
+      kx.setTransform(1, 0, 0, 1, 0, 0); kx.drawImage(c, x0, y0);
+    }
+  }
+
+  // ---------- compose into F (camera-space, before push-in) ----------
+  const f = G.F, col = L.col, pulse = 0.82 + 0.36 * envAt(t) + (t > 30.05 ? 0.7 * Math.exp(-(t - 30.05) * 3) : 0);
+  f.fillStyle = '#000'; f.fillRect(0, 0, W, HH);
+  const tw = brickTile.width, tx0 = -(((cam % tw) + tw) % tw);
+  for (let x = tx0; x < W; x += tw) f.drawImage(brickTile, x, 0);
+  // light the wall with the signs (low-res light map, multiply)
+  const LW8 = W / 8, LH8 = HH / 8, lm = H.layer(LW8, LH8), lx = lm.getContext('2d');
+  lx.fillStyle = 'rgb(44,44,64)'; lx.fillRect(0, 0, LW8, LH8);
+  lx.globalCompositeOperation = 'lighter';
+  lx.globalAlpha = Math.min(1, pulse); lx.filter = 'blur(10px)'; lx.drawImage(col, 0, 0, LW8, LH8); lx.drawImage(col, 0, 0, LW8, LH8);
+  lx.filter = 'blur(3px)'; lx.globalAlpha = 0.9; lx.drawImage(col, 0, 0, LW8, LH8);
+  f.save(); f.beginPath(); f.rect(0, 0, W, WALL); f.clip(); f.globalCompositeOperation = 'multiply'; f.drawImage(lm, 0, 0, W, HH); f.restore();
+  { // brick arrises catch the light
+    const rim = sx2; rim.setTransform(1, 0, 0, 1, 0, 0); rim.globalCompositeOperation = 'source-over'; rim.clearRect(0, 0, W, HH);
+    for (let x = tx0; x < W; x += tw) rim.drawImage(edgeTile, x, 0);
+    rim.globalCompositeOperation = 'source-in'; rim.filter = 'brightness(1.6)'; rim.drawImage(lm, 0, 0, W, HH); rim.filter = 'none';
+    f.save(); f.globalCompositeOperation = 'lighter'; f.globalAlpha = 0.55; f.drawImage(scratch, 0, 0, W, WALL, 0, 0, W, WALL); f.restore();
+  }
+  // tubes stand off the wall: contact shadow, then the glass
+  f.save(); f.globalCompositeOperation = 'multiply'; f.globalAlpha = 0.6; f.drawImage(blurSmall(L.off, 4, 0.25), 6, 11, W, HH); f.restore();
+  f.drawImage(L.off, 0, 0);
+  f.save(); f.translate(-cam, 0);
+  for (const [x, y, a] of HW.elec) {
+    if (x - cam < -40 || x - cam > W + 40) continue;
+    f.save(); f.translate(x, y); f.rotate(a);
+    f.fillStyle = '#0d0c0f'; f.beginPath(); f.roundRect(-8, -7, 26, 14, 4); f.fill();
+    f.fillStyle = 'rgba(255,255,255,0.18)'; f.fillRect(-5, -6, 18, 2); f.fillStyle = 'rgba(0,0,0,0.5)'; f.fillRect(15, -5, 5, 10);
+    f.restore();
+  }
+  f.restore();
+  // wet pavement
+  const px0 = -(((cam % pave.PW) + pave.PW) % pave.PW);
+  for (let x = px0; x < W; x += pave.PW) f.drawImage(pave.c, x, WALL);
+  f.fillStyle = 'rgba(255,255,255,0.06)'; f.fillRect(0, WALL, W, 3);
+  // halos: low-res, extra saturated
+  f.save(); f.globalCompositeOperation = 'lighter';
+  f.globalAlpha = 0.55 * pulse; f.drawImage(blurSmall(col, 70, 0.125, 1.6), 0, 0, W, HH);
+  f.globalAlpha = Math.min(1, 0.75 * pulse); f.drawImage(blurSmall(col, 20, 0.25, 1.8), 0, 0, W, HH);
+  f.globalAlpha = 0.6; f.drawImage(blurSmall(col, 6, 0.5, 2.2), 0, 0, W, HH);
+  f.globalAlpha = 1; f.drawImage(col, 0, 0); f.drawImage(L.core, 0, 0);
+  f.globalAlpha = 0.5; f.drawImage(blurSmall(L.core, 2.5, 0.5), 0, 0, W, HH);
+  f.restore();
+  // mounting clips
+  f.save(); f.translate(-cam, 0);
+  for (const [x, y, a] of HW.clips) { if (x - cam < -20 || x - cam > W + 20) continue; f.save(); f.translate(x, y); f.rotate(a); f.fillStyle = 'rgba(30,28,34,0.92)'; f.beginPath(); f.roundRect(-3, -9, 6, 18, 2); f.fill(); f.fillStyle = 'rgba(255,255,255,0.28)'; f.fillRect(-2, -8, 1, 16); f.restore(); }
+  f.restore();
+  // reflection in the wet pavement
+  {
+    const RS = 0.25, src = blurSmall(col, 6, RS), GH = HH - WALL, refl = H.layer(W, GH), rfx = refl.getContext('2d');
+    const k = 0.42;
+    for (let y = WALL + 4; y < HH; y += 2) {
+      const gy = y - WALL, sy = WALL - gy / k;
+      if (sy < 0) break;
+      const offx = Math.sin(y * 0.3 + t * 6) * (1.5 + gy * 0.03) + Math.sin(y * 0.09 - t * 2.3 + 1.7) * (1 + gy * 0.025);
+      rfx.drawImage(src, 0, sy * RS, src.width, (2 / k) * RS, offx, gy, W, 2);
+    }
+    const rm = H.layer(W, GH), rmx = rm.getContext('2d');
+    for (let x = px0; x < W; x += pave.PW) rmx.drawImage(pave.p, x, 0);
+    rmx.globalCompositeOperation = 'source-in'; rmx.drawImage(refl, 0, 0);
+    const smear = H.layer(W, 12), smx = smear.getContext('2d'); smx.filter = 'blur(1.5px)'; smx.drawImage(refl, 0, 4, W, GH - 4, 0, 0, W, 12);
+    f.save(); f.globalCompositeOperation = 'lighter';
+    f.globalAlpha = 0.4 * pulse; f.drawImage(smear, 0, 0, W, 12, 0, WALL + 4, W, GH - 4);
+    f.globalAlpha = 0.24; f.drawImage(refl, 0, WALL);
+    f.globalAlpha = 0.7; f.drawImage(rm, 0, WALL);
+    // raindrop ripples on the puddles
+    f.globalAlpha = 1; f.lineWidth = 1.5;
+    for (let n = 0; n < 26; n++) {
+      const per = 0.9, phase = hs(n * 3.7) * per, cyc = Math.floor((t + phase) / per), u = ((t + phase) / per) % 1;
+      const rx0 = hs(cyc * 13.1 + n) * W, ry0 = WALL + 40 + Math.pow(hs(cyc * 7.7 + n * 1.3), 0.8) * (GH - 60), sc = 0.5 + (ry0 - WALL) / GH;
+      f.strokeStyle = `rgba(210,215,255,${0.22 * (1 - u)})`;
+      f.beginPath(); f.ellipse(rx0, ry0, (6 + u * 46) * sc, (2 + u * 12) * sc, 0, 0, Math.PI * 2); f.stroke();
+    }
+    f.restore();
+  }
+  // rain in front of the wall (slight parallax with the camera)
+  {
+    const R = H.rng(77); f.save(); f.globalCompositeOperation = 'lighter'; f.lineCap = 'round';
+    for (let n = 0; n < 150; n++) {
+      const x0 = R() * W, y0 = R() * (HH + 300), sp = 1700 + R() * 900, len = 30 + R() * 60, a = 0.05 + R() * 0.12;
+      const y = ((y0 + t * sp) % (HH + 300)) - 150, x = (((x0 - cam * 0.25 - y * 0.06) % W) + W) % W;
+      f.strokeStyle = `rgba(215,220,255,${a})`; f.lineWidth = 1 + R() * 1.4;
+      f.beginPath(); f.moveTo(x, y); f.lineTo(x + len * 0.06, y + len); f.stroke();
+    }
+    f.restore();
+  }
+
+  // ---------- final: push-in, handheld drift, whip-pan smear, vignette, grain ----------
+  const nz = drawFrame.nz || (drawFrame.nz = H.makeNoise(5));
+  const panelStart = PANEL_T.filter((p) => p <= t).pop(), push = 1 + 0.035 * E.out(H.clamp((t - panelStart) / 7.5));
+  const shx = nz.n2(t * 0.35, 1) * 10, shy = nz.n2(1, t * 0.3) * 8;
+  const vel = (camAt(t) - camAt(t - 1 / FPS));
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over';
+  ctx.fillStyle = '#000'; ctx.fillRect(0, 0, W, HH);
+  const drawF = (dx, a) => { ctx.globalAlpha = a; ctx.setTransform(push, 0, 0, push, W / 2 - (W / 2) * push + shx + dx, HH * 0.42 - HH * 0.42 * push + shy); ctx.drawImage(L.F, 0, 0); };
+  if (Math.abs(vel) > 6) { const n = 6; for (let i = 0; i < n; i++) drawF(-vel * (i / n - 0.5) * 0.9, i === 0 ? 1 : 0.42); }
+  else drawF(0, 1);
+  ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
+  const vg = ctx.createRadialGradient(W / 2, HH * 0.45, W * 0.35, W / 2, HH * 0.45, Math.hypot(W, HH) * 0.62);
+  vg.addColorStop(0, 'rgba(4,2,10,0)'); vg.addColorStop(1, 'rgba(4,2,10,0.62)'); ctx.fillStyle = vg; ctx.fillRect(0, 0, W, HH);
+  ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = 0.16; ctx.drawImage(grainTiles[Math.floor(t * 24) % grainTiles.length], 0, 0, W, HH);
+  ctx.globalCompositeOperation = 'source-over'; ctx.globalAlpha = 1;
+}
+
+function heartPath(g, cx, cy, s) {
+  g.beginPath(); g.moveTo(cx, cy + s * 0.95);
+  g.bezierCurveTo(cx - s * 1.5, cy - s * 0.05, cx - s * 0.95, cy - s * 1.2, cx, cy - s * 0.5);
+  g.bezierCurveTo(cx + s * 0.95, cy - s * 1.2, cx + s * 1.5, cy - s * 0.05, cx, cy + s * 0.95);
+}
+function starPath(g, cx, cy, r, rot) {
+  g.beginPath();
+  for (let i = 0; i <= 10; i++) { const a = rot + i * Math.PI / 5 - Math.PI / 2, rr = i % 2 ? r * 0.45 : r; const x = cx + Math.cos(a) * rr, y = cy + Math.sin(a) * rr; i ? g.lineTo(x, y) : g.moveTo(x, y); }
+  g.closePath();
+}
+
+// ---------- boot ----------
+const canvas = document.getElementById('c'), ctx = canvas.getContext('2d');
+const ready = (async () => {
+  await Promise.all([FONTS.kufi(100), FONTS.ruqaa(100), FONTS.marhey(60), '400 100px "Marhey"'].map((f) => document.fonts.load(f, 'العينين وياك ههههه')));
+  await document.fonts.ready;
+  buildBrick(); buildPave(); buildGrain(); layoutLines();
+})();
+window.__kosifReady = ready;
+window.__kosif = { duration: DUR, fps: FPS, seek: async (t) => { await ready; drawFrame(ctx, t); } };
+// interactive preview with the song when opened in a browser
+if (!navigator.webdriver) {
+  ready.then(() => {
+    drawFrame(ctx, 0.6);
+    const btn = document.createElement('div'); btn.id = 'play'; btn.textContent = '▶ تشغيل'; document.body.appendChild(btn);
+    const au = new Audio(DATA.audio || 'audio.m4a');
+    btn.onclick = () => { btn.remove(); au.play(); const loop = () => { drawFrame(ctx, au.currentTime); if (!au.ended) requestAnimationFrame(loop); }; loop(); };
+  });
+}
+</script>
+</body></html>
