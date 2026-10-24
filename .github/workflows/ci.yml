@@ -32,6 +32,10 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_repo_map.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_memory_ops.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_physics.py' -v
+      - name: Routing generalization on fresh everyday requests (held-out request-card accuracy and off-domain plan picks)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_routing_generalization.py' -v
+      - name: Script-side unit tests (atlas, unified draw/media/cinematic, timeline, typography, Blender bridges)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/scripts -p 'test_*.py' -v
       - name: Permission-aware capability routing and honest host discovery
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_capability_runtime_router.py' -v
       - name: Creative audio-to-motion reasoning tests
