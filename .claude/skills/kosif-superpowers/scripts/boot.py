@@ -73,8 +73,27 @@ def summary(P, pw):
     return by_dom, fams
 
 
+def download_tools(as_json: bool) -> dict:
+    """In a cloud session, pip-install a missing yt-dlp / curl_cffi / instaloader before reporting (KOSIF_NO_AUTOINSTALL=1 skips)."""
+    out = {"installed_now": [], "still_missing": []}
+    try:
+        from _deps import DOWNLOAD_DEPS, autoinstall_allowed, ensure, missing  # noqa: PLC0415
+    except ImportError:
+        return out
+    before = missing()
+    if before and autoinstall_allowed():
+        if not as_json:
+            print("installing missing download tools: " + " ".join(DOWNLOAD_DEPS[m] for m in before) + " …", flush=True)
+        ensure(before)
+    after = missing()
+    out["installed_now"] = [DOWNLOAD_DEPS[m] for m in before if m not in after]
+    out["still_missing"] = [DOWNLOAD_DEPS[m] for m in after]
+    return out
+
+
 def live(as_json: bool) -> int:
     P, R, pw, reg = load()
+    dl = download_tools(as_json)
     pres = R.present(reg)
     by_dom, fams = summary(P, pw)
     ready = [p for p in pw if all(pres.get(k) == "present" for k in (p.get("requires") or []))]
@@ -95,14 +114,19 @@ def live(as_json: bool) -> int:
                           "ready_now": sum(1 for p in v if p in ready)} for d, v in sorted(by_dom.items(), key=lambda kv: -len(kv[1]))},
         "requirements": {s: sum(1 for v in pres.values() if v == s) for s in ("present", "missing", "unknown")},
         "top_unlocks": unlock,
+        "download_tools": dl,
     }
     if as_json:
         print(json.dumps(data, ensure_ascii=False, indent=1)); return 0
     m = data["machine"]
     print(f"# KOSIF Superpowers — boot ({m['os']}, python {m['python']}, node {'✓' if m['node'] else '✗'}, ffmpeg {'✓' if m['ffmpeg'] else '✗'}, GPU {'✓' if m['gpu'] else '✗'}, yt-dlp {'✓' if m['yt_dlp'] else '✗'})\n")
+    if dl["installed_now"]:
+        print("installed now: " + ", ".join(dl["installed_now"]))
     if not m["yt_dlp"]:
-        print("yt-dlp missing (only needed to download TikTok/YouTube/other links): pip install yt-dlp, then python3 -m yt_dlp <url>;"
-              " if the network blocks it, ask the user to upload the video file instead.")
+        print("yt-dlp missing (only needed to download TikTok/YouTube/other links): python3 scripts/_deps.py install"
+              " (or pip install yt-dlp curl_cffi); if there is no network, ask the user to upload the video file instead.")
+    print("downloads: use python3 scripts/fetch_video.py URL. If a site blocks the cloud machine (bot check), do not bypass it:"
+          " offer the user --cookies-from-browser on their own computer, or ask them to upload the video file.")
     print("tool check: this header is the check. Do not chain `which a b c` into a compound command; it exits 1 when any one tool is missing.\n")
     print(f"catalog: {len(pw):,} powers · {len(fams)} families · {len(by_dom)} domains · ✅ {st['proven']} proven · 🟢 {st['ready']} ready · 📦 {st['install']} install · 🔑 {st['key']} key")
     print(f"ready NOW on this machine (every requirement present): {data['ready_now_runnable']:,} runnable powers (✅🟢📦🔑)"

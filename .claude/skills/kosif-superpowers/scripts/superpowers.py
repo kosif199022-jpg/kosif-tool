@@ -314,7 +314,7 @@ DOCTOR_CHECKS = [
     ("chromium", "Chromium for Playwright", _chromium, "set PLAYWRIGHT_BROWSERS_PATH or run npx playwright install chromium locally"),
     ("remotion", "Remotion (starters/remotion)", lambda: _node_module("remotion"), "cd starters/remotion && npm install"),
     ("git", "git (worktrees for parallel scenes)", lambda: shutil.which("git"), ""),
-    ("yt-dlp", "yt-dlp (permitted reference downloads)", lambda: shutil.which("yt-dlp"), "pip install yt-dlp"),
+    ("yt-dlp", "yt-dlp (permitted reference downloads)", lambda: shutil.which("yt-dlp") or _py_module("yt_dlp"), "pip install yt-dlp curl_cffi"),
     ("whisper", "openai-whisper (word timestamps)", lambda: _py_module("whisper"), "pip install -U openai-whisper"),
     ("faster_whisper", "faster-whisper (CPU-friendly transcription)", lambda: _py_module("faster_whisper"), "pip install faster-whisper"),
     ("whisperx", "WhisperX (forced alignment)", lambda: _py_module("whisperx"), "pip install whisperx"),

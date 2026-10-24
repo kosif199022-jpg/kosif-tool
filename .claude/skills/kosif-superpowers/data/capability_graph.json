@@ -1978,6 +1978,11 @@
    "label": "scripts/blender_worker.py"
   },
   {
+   "id": "script:scripts/_deps.py",
+   "kind": "script",
+   "label": "scripts/_deps.py"
+  },
+  {
    "id": "script:scripts/capability_graph.py",
    "kind": "script",
    "label": "scripts/capability_graph.py"
@@ -2293,6 +2298,11 @@
    "id": "script:scripts/python_package_probe.py",
    "kind": "script",
    "label": "scripts/python_package_probe.py"
+  },
+  {
+   "id": "test:tests/test_download_deps.py",
+   "kind": "test",
+   "label": "tests/test_download_deps.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge.py",
@@ -6677,6 +6687,12 @@
   },
   {
    "from": "script:scripts/boot.py",
+   "to": "script:scripts/_deps.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/boot.py",
    "to": "script:scripts/powers.py",
    "rel": "imports",
    "w": 1
@@ -6820,6 +6836,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/fetch_video.py",
+   "to": "script:scripts/_deps.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/fusionforge.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -6852,6 +6874,12 @@
   {
    "from": "script:scripts/hub.py",
    "to": "script:scripts/requirements.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/instagram_finder.py",
+   "to": "script:scripts/_deps.py",
    "rel": "imports",
    "w": 1
   },
@@ -7468,6 +7496,12 @@
    "w": 0.85
   },
   {
+   "from": "script:scripts/_deps.py",
+   "to": "test:tests/test_download_deps.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_secrets.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge.py",
    "rel": "tested_by",
@@ -7596,6 +7630,12 @@
   {
    "from": "script:scripts/boot.py",
    "to": "test:tests/test_boot.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/boot.py",
+   "to": "test:tests/test_download_deps.py",
    "rel": "tested_by",
    "w": 1
   },

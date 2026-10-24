@@ -28,15 +28,37 @@ import sys
 from pathlib import Path
 
 
-def find_ytdlp() -> list[str] | None:
+def find_ytdlp(install: bool = True) -> list[str] | None:
+    """yt-dlp as a command; in a cloud session a missing yt-dlp (and curl_cffi) is pip-installed once, quietly."""
     exe = os.environ.get("YTDLP") or shutil.which("yt-dlp")
     if exe:
         return [exe]
+    if install:
+        try:
+            sys.path.insert(0, str(Path(__file__).resolve().parent))
+            from _deps import ensure  # noqa: PLC0415
+            ensure(["yt_dlp", "curl_cffi"], quiet=False)
+        except Exception:  # noqa: BLE001 — install is best effort; the message below covers the rest
+            pass
+        exe = shutil.which("yt-dlp")
+        if exe:
+            return [exe]
     try:
-        import yt_dlp  # noqa: F401
-        return [sys.executable, "-m", "yt_dlp"]
+        import importlib.util  # noqa: PLC0415
+        if importlib.util.find_spec("yt_dlp") is not None:
+            return [sys.executable, "-m", "yt_dlp"]
+    except (ImportError, ValueError):
+        pass
+    return None
+
+
+def blocked(err: str, url: str) -> dict | None:
+    """When a site refuses the cloud machine (bot check, IP block), say so plainly with the two honest ways forward."""
+    try:
+        from _deps import blocked_hint, is_blocked  # noqa: PLC0415
     except ImportError:
         return None
+    return {"blocked": True, "hint": blocked_hint(url)} if is_blocked(err) else None
 
 
 def sh(cmd: list[str], **kw) -> subprocess.CompletedProcess:
@@ -161,11 +183,13 @@ def download(url, a, ytdlp) -> dict:
                 s = edit_safe(p)
                 rec["safe_file"] = str(s) if s else None
             return rec
-    return {"url": url, "file": None, "error": err.strip()[-400:] or "download failed",
-            "hint": "run --update (site changed), or supply --cookies for private/age-restricted posts"}
+    rec = {"url": url, "file": None, "error": err.strip()[-400:] or "download failed",
+           "hint": "run --update (site changed), or supply --cookies for private/age-restricted posts"}
+    rec.update(blocked(err, url) or {})
+    return rec
 
 
-def doctor(ytdlp) -> int:
+def doctor(ytdlp) -> int:  # noqa: D103
     print("yt-dlp:", sh(ytdlp + ["--version"]).stdout.strip() if ytdlp else "MISSING (pip install yt-dlp curl_cffi)")
     print("ffmpeg:", "ok" if shutil.which("ffmpeg") else "MISSING")
     print("impersonation:", (impersonation(ytdlp) or "unavailable (pip install curl_cffi)") if ytdlp else "-")
@@ -193,7 +217,8 @@ def main(argv=None) -> int:
     if a.doctor:
         return doctor(ytdlp)
     if not ytdlp:
-        print("yt-dlp not found: pip install yt-dlp curl_cffi", file=sys.stderr)
+        print("yt-dlp not found and could not be installed: pip install yt-dlp curl_cffi"
+              " (no network? ask the user to upload the video file instead)", file=sys.stderr)
         return 1
     urls = list(a.urls)
     if a.urlfile:
@@ -210,6 +235,8 @@ def main(argv=None) -> int:
         r = download(u, a, ytdlp)
         results.append(r)
         print(("OK   " + r["file"]) if r.get("file") else f"FAIL {u}\n     {r.get('error')}")
+        if r.get("blocked"):
+            print("BLOCKED " + r["hint"])
     (Path(a.out) / "manifest.json").write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
     return 0 if all(r.get("file") for r in results) else 1
 

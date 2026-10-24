@@ -209,6 +209,9 @@ def jload(p: Path, default=None):
 # ------------------------------------------------------------------ stage 0
 def environment() -> dict:
     env = {"python": sys.version.split()[0], "tools": {b: bool(shutil.which(b)) for b in ("ffmpeg", "ffprobe", "node", "git", "rea", "blender", "yt-dlp")}}
+    if not env["tools"]["yt-dlp"]:  # pip may install the module without putting the CLI on PATH
+        import importlib.util  # noqa: PLC0415
+        env["tools"]["yt-dlp"] = importlib.util.find_spec("yt_dlp") is not None
     try:
         r = subprocess.run(["git", "-C", str(REPO), "rev-parse", "--abbrev-ref", "HEAD"], capture_output=True, text=True, timeout=10)
         env["git_branch"] = r.stdout.strip() or None
