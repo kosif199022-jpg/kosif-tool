@@ -45,3 +45,40 @@ Do not claim direct account access, creator ownership, video accessibility, gene
 
 ## Safety and portability
 No login automation, account cookies, private-account access, arbitrary scraping, DRM circumvention, media downloader or mass mirror. API quotas/fees belong to service provider. Keep keys in environment; never commit tokens. Static references do not prove active connectivity.
+
+
+## Update 2026-10-24 — evidence-based creative mechanism mining
+
+The two creator profiles are already registered in the existing `data/creator_registry.json` (canonical source of truth). Do not create a duplicate registry. The user supplied these handles for discovery; no claims about their unseen Reels are warranted.
+
+**Multilingual creative research:** `expand()` supports Arabic terms for whiteboard, motion, 3D, compositing, particles, cinematic media, video editing, and corresponding English/Turkish terms. Compound topics such as `موشن سبورة` retain both concepts in the translated query.
+
+**Controlled provenance bridge to Infinite Matrices:** A Reel surfaced via public web index is **not** reviewed. A human reviewer can add observed mechanisms only after inspecting the actual video through authorized means:
+
+```bash
+# First index a real public Reel URL found through the profile, search result or user.
+python .claude/skills/kosif-instagram-video-research/instagram_research.py add \
+ "https://www.instagram.com/reel/REAL_SHORTCODE/" \
+ --title "Actual verified title" --author "asirgokerr"
+
+# A real reviewer explicitly attests to mechanism observations:
+python .claude/skills/kosif-instagram-video-research/instagram_research.py review \
+ "https://www.instagram.com/reel/REAL_SHORTCODE/" \
+ --reviewer "researcher" \
+ --tags "motion,cinematic" \
+ --mechanisms "path reveal,parallax" \
+ --observations "Describe the actually observed shots, timing, causal relationships and evidence."
+
+# Search now includes observed mechanism tags, not just captions:
+python .claude/skills/kosif-instagram-video-research/instagram_research.py find "parallax"
+
+# Machine-readable evidence input for KOSIF Infinite Matrices:
+python .claude/skills/kosif-instagram-video-research/instagram_research.py export-reviewed \
+ "/tmp/kosif-reviewed-reel-references.json"
+
+python -m unittest discover -s .claude/skills/kosif-instagram-video-research/tests -v
+```
+
+The `reviewed_reels` SQLite table is separate from low-confidence public snippets, preserving human annotations on re-index. These exported observations become **research inputs**, not instantly validated renderer primitives; a proposed mechanism still requires independent reconstruction and A/B evaluation. Never auto-upgrade verification from search snippets or creator names. No automated login, video downloading, DRM bypass, bulk mirroring, copying others' creative works or unsolicited credentials.
+
+**Status / verification:** the Python changes and offline regression tests are committed. Live Instagram access, Brave-key presence, human video inspection, and successful visual reconstruction have not been demonstrated by the code alone.
