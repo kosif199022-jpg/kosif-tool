@@ -1,0 +1,906 @@
+{
+ "schema": "kosif.routing.generalization.v1",
+ "about": "Held-out generalization set: fresh everyday requests (business, data, code fixes, documents, media) whose labels were written BEFORE the routing changes they measure. Do not tune analyse() on a case and then edit its label; add new cases instead.",
+ "cases": [
+  {
+   "id": "G01",
+   "request": "اعمل لي فيديو إعلان 15 ثانية لمطعم شاورما بالعربي",
+   "expect": {
+    "primary": "video",
+    "level_in": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "data",
+    "software"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G02",
+   "request": "حلل ملف المبيعات sales.xlsx وقولي ليه الأرباح نزلت الشهر ده",
+   "expect": {
+    "primary": "data",
+    "level_in": [
+     "L1",
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G03",
+   "request": "اكتب سكربت بايثون يحول كل صور الفولدر لـ webp",
+   "expect": {
+    "primary": "code",
+    "level_in": [
+     "L1",
+     "L2"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G04",
+   "request": "عايز لوجو لشركة قهوة اسمها بُن",
+   "expect": {
+    "primary": "image"
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "data",
+    "software",
+    "audio"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G05",
+   "request": "ترجم العقد ده من الإنجليزي للعربي وراجع البنود الخطيرة",
+   "expect": {
+    "primary": "document",
+    "level_in": [
+     "L1",
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G06",
+   "request": "صلح البج اللي بيخلي صفحة تسجيل الدخول تقع على الموبايل",
+   "expect": {
+    "primary": "code",
+    "level_in": [
+     "L1",
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G07",
+   "request": "قارن بين Supabase و Firebase لمشروع ناشئ واختار واحد",
+   "expect": {
+    "primary_in": [
+     "research",
+     "code",
+     "strategy"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G08",
+   "request": "اعمل خطة تسويق لمتجر ملابس أونلاين لمدة 3 شهور",
+   "expect": {
+    "primary": "strategy",
+    "level_in": [
+     "L1",
+     "L2"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G09",
+   "request": "Build a REST API in FastAPI with JWT auth and tests",
+   "expect": {
+    "primary": "code",
+    "level_in": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G10",
+   "request": "should I raise prices by 10% given churn of 5%?",
+   "expect": {
+    "primary": "strategy",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse",
+    "drawing",
+    "images"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G11",
+   "request": "ارسم شخصية كرتون قطة بتلعب كورة واعملها انيميشن",
+   "expect": {
+    "primary": "video",
+    "level_in": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "data",
+    "software"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G12",
+   "request": "ايه الفرق بين الذكاء الاصطناعي والتعلم الآلي",
+   "expect": {
+    "level_in": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [],
+   "batch": 1
+  },
+  {
+   "id": "G13",
+   "request": "اعمل دراسة جدوى لمشروع مغسلة سيارات",
+   "expect": {
+    "primary": "strategy",
+    "level_in": [
+     "L1",
+     "L2"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse",
+    "drawing"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G14",
+   "request": "نظف البيانات دي وشيل التكرار",
+   "expect": {
+    "primary": "data"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G15",
+   "request": "Plan a 6-month content strategy for a dental clinic on Instagram",
+   "expect": {
+    "primary": "strategy"
+   },
+   "irrelevant_groups": [
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G16",
+   "request": "عايز أعرف أسعّر المنتج بتاعي بكام عشان أكسب",
+   "expect": {
+    "primary": "strategy",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse",
+    "drawing"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G17",
+   "request": "fix the memory leak in my Node.js server",
+   "expect": {
+    "primary": "code",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G18",
+   "request": "اعمل داشبورد للمصاريف الشهرية من ملف csv",
+   "expect": {
+    "primary": "data"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G19",
+   "request": "راجع الكود ده وقولي فيه ثغرات أمنية ولا لا",
+   "expect": {
+    "primary": "code",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G20",
+   "request": "اكتب إيميل اعتذار لعميل عن تأخير الطلب",
+   "expect": {
+    "primary": "document"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G21",
+   "request": "write a business plan for a coffee truck",
+   "expect": {
+    "primary": "strategy",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G22",
+   "request": "ايه أحسن وقت أنشر فيه على تيك توك",
+   "expect": {
+    "level_in": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [],
+   "batch": 1
+  },
+  {
+   "id": "G23",
+   "request": "حلل المنافسين بتوعي في سوق العطور واقترح ميزة تنافسية",
+   "expect": {
+    "primary": "strategy"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G24",
+   "request": "Debug why my React form submits twice",
+   "expect": {
+    "primary": "code",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 1
+  },
+  {
+   "id": "G25",
+   "request": "عايز أفتح كافيه صغير في المعادي، أبدأ منين وأحسب التكاليف إزاي",
+   "expect": {
+    "primary_in": [
+     "strategy",
+     "data"
+    ],
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G26",
+   "request": "هل أوسع شغلي لمحافظة تانية ولا أركز على القاهرة؟",
+   "expect": {
+    "primary": "strategy",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G27",
+   "request": "the checkout page throws a 500 error after the last deploy",
+   "expect": {
+    "primary": "code",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G28",
+   "request": "اعمل جدول مقارنة بين 3 عروض موردين وطلع الأرخص على المدى الطويل",
+   "expect": {
+    "primary_in": [
+     "data",
+     "strategy"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G29",
+   "request": "اكتب سياسة الخصوصية لتطبيقي",
+   "expect": {
+    "primary_in": [
+     "document",
+     "code"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G30",
+   "request": "حسّن معدل التحويل في صفحة الهبوط بتاعتي",
+   "expect": {
+    "primary_in": [
+     "strategy",
+     "code"
+    ],
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G31",
+   "request": "اعمل موشن جرافيك 30 ثانية يشرح خدمة التوصيل بتاعتنا",
+   "expect": {
+    "primary": "video",
+    "level_in": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "data",
+    "software"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G32",
+   "request": "Write unit tests for the payment module and make CI green",
+   "expect": {
+    "primary": "code",
+    "level_in": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G33",
+   "request": "اقترح أسماء لبراند عطور فاخر",
+   "expect": {
+    "level_not": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse",
+    "software"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G34",
+   "request": "merge these two CSV files on customer_id and find missing rows",
+   "expect": {
+    "primary": "data"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G35",
+   "request": "ايه هو الـ ROI",
+   "expect": {
+    "level_in": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [],
+   "batch": 2
+  },
+  {
+   "id": "G36",
+   "request": "build a simple budget forecast for next year from last year's numbers",
+   "expect": {
+    "primary_in": [
+     "data",
+     "strategy"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 2
+  },
+  {
+   "id": "G37",
+   "request": "عندي متجر على شوبيفاي والمبيعات واقفة، أعمل إيه؟",
+   "expect": {
+    "primary_in": [
+     "strategy",
+     "data"
+    ],
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G38",
+   "request": "اكتب مقال 1000 كلمة عن فوائد الصيام المتقطع",
+   "expect": {
+    "primary": "document"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G39",
+   "request": "the app crashes when I upload a big image on Android",
+   "expect": {
+    "primary": "code",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "3d",
+    "audio"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G40",
+   "request": "اعمل ريلز للمنتج الجديد بموسيقى هادية",
+   "expect": {
+    "primary": "video"
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "data",
+    "software"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G41",
+   "request": "Which KPIs should a SaaS startup track in its first year?",
+   "expect": {
+    "primary_in": [
+     "strategy",
+     "data",
+     "text"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G42",
+   "request": "حلل استبيان العملاء ده وطلع أهم 5 شكاوى",
+   "expect": {
+    "primary": "data",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G43",
+   "request": "ابني موقع بسيط لعيادة أسنان فيه حجز مواعيد",
+   "expect": {
+    "primary": "code",
+    "level_in": [
+     "L2",
+     "L3"
+    ]
+   },
+   "irrelevant_groups": [
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G44",
+   "request": "Should we hire a full-time designer or use freelancers?",
+   "expect": {
+    "primary": "strategy",
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G45",
+   "request": "اعمل بوستر لعرض الجمعة البيضاء",
+   "expect": {
+    "primary": "image"
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "data",
+    "software",
+    "audio"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G46",
+   "request": "refactor this function to be faster and add type hints",
+   "expect": {
+    "primary": "code"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G47",
+   "request": "اعمل عرض تقديمي للمستثمرين عن شركتي الناشئة",
+   "expect": {
+    "primary_in": [
+     "document",
+     "strategy"
+    ]
+   },
+   "irrelevant_groups": [
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G48",
+   "request": "ايه معنى الهامش الربحي",
+   "expect": {
+    "level_in": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [],
+   "batch": 3
+  },
+  {
+   "id": "G49",
+   "request": "احسب نقطة التعادل لمشروع فود تراك",
+   "expect": {
+    "primary_in": [
+     "strategy",
+     "data"
+    ],
+    "level_not": [
+     "L0"
+    ]
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G50",
+   "request": "find duplicate invoices in the attached excel and total them by vendor",
+   "expect": {
+    "primary": "data"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 3
+  },
+  {
+   "id": "G51",
+   "request": "write a marketing plan for our summer promotion",
+   "expect": {
+    "primary": "strategy"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G52",
+   "request": "should we build an app or sell on Shopify?",
+   "expect": {
+    "primary": "strategy"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G53",
+   "request": "write a sales email to new leads",
+   "expect": {
+    "primary": "document"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G54",
+   "request": "اكتب ايميل مبيعات للعملاء الجدد",
+   "expect": {
+    "primary": "document"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G55",
+   "request": "write a short story about a car crash",
+   "expect": {
+    "primary_not": "code"
+   },
+   "irrelevant_groups": [
+    "reverse",
+    "software"
+   ],
+   "batch": 4
+  },
+  {
+   "id": "G56",
+   "request": "should I use React or Vue for the dashboard frontend?",
+   "expect": {
+    "primary": "code"
+   },
+   "irrelevant_groups": [
+    "motion",
+    "3d",
+    "audio",
+    "reverse"
+   ],
+   "batch": 4
+  }
+ ],
+ "batches": {
+  "1": "G01-G24: written before any change; the first fixes were made against them (no longer held-out)",
+  "2": "G25-G36: written after the first fixes, before the catalog-vote fallback; two cases tuned afterwards (G25 start-a-business, G36 forecast)",
+  "3": "G37-G50: written after all changes and measured once; untouched held-out score",
+  "4": "G51-G56: regressions found by the PR #135 bot review (promotion→motion, app-vs-business decision, sales email, car crash) plus a tech-choice control; fixed against them"
+ }
+}

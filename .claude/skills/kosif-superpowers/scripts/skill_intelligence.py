@@ -103,6 +103,16 @@ ALIASES = {  # protocol-specific Arabic/Egyptian → English bridges (checked ag
     "مشهد": "scene", "سينمائي": "cinematic", "حرك": "animate animation",
     "مصاريف": "expense expenses budget spending", "مصروفات": "expense expenses budget spending", "نفقات": "expense expenses budget spending",
     "ميزانيه": "budget expense", "لعبه": "game", "العاب": "game games", "قواعد": "rules",
+    # everyday business, data-cleaning, bug-fix and contract words (generalization set, evals/routing_generalization.json)
+    "تسويق": "marketing go-to-market", "تسويقيه": "marketing go-to-market", "جدوي": "feasibility business case unit economics",
+    "تسعير": "pricing price", "اسعر": "pricing price", "اسعار": "pricing price", "سعر": "pricing price",
+    "منافسين": "competitors competitive analysis", "المنافسين": "competitors competitive analysis", "تنافسيه": "competitive advantage positioning",
+    "ارباح": "profit margin revenue", "الارباح": "profit margin revenue", "ايرادات": "revenue", "عملاء": "customers", "مشروع": "project business",
+    "نظف": "clean cleaning", "تنظيف": "clean cleaning", "تكرار": "duplicates deduplicate dedupe", "التكرار": "duplicates deduplicate dedupe",
+    "مكرر": "duplicates deduplicate", "لخص": "summarize summary", "ملخص": "summary summarize",
+    "عقد": "contract legal clauses", "العقد": "contract legal clauses", "بنود": "clauses contract terms", "البنود": "clauses contract terms",
+    "بج": "bug debug fix", "البج": "bug debug fix", "باج": "bug debug fix", "صلح": "fix debug", "موبايل": "mobile responsive",
+    "ثغرات": "vulnerabilities security", "امنيه": "security",
 }
 # homonyms whose dominant catalog sense differs from the user's. Each entry is (rules, default): a rule is
 # (context regex on the request, terms, keep_word) and the first rule whose context matches wins; otherwise the default
@@ -314,14 +324,21 @@ DELIVERABLES = [  # priority order: the first that matches is the primary delive
     ("reverse", r"هندسه عكسيه|جفرا|ghidra|\brea\b|reverse|binary|\.exe|\.dll|\.apk|\b(?:exe|dll|apk|ipa|dylib)\b|ملف تنفيذي|الملف التنفيذي|"
                 r"(?<![ء-ي])[وف]?فك (?:ال)?(?:تطبيق|ملف|برنامج)|app\.asar|\basar\b|electron|الكترون"),
     ("code", r"كود|برمجه|تطبيق|(?<![ء-ي])[وف]?(?:ال|ل|ب)?موقع(?:ي|نا|ك)?(?![ء-ي])|سكربت|\bbug\b|\bcode\b|\bapp\b|\bwebsites?\b|\bscripts?\b|"
-             r"\bapi\b|\brepo(?:s|sitory|sitories)?\b|مستودع|برنامج|(?<![ء-ي])[وف]?(?:ال)?بوت(?![ء-ي])|\b(?:chat)?bots?\b"),
-    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|motion|animation|film|\bmp4\b|\bintro\b|انترو|paper edit|rough cut"),
+             r"\bapi\b|\brepo(?:s|sitory|sitories)?\b|مستودع|برنامج|بايثون|\bpython\b|\bnode(?:\.?js)?\b|\breact\b|fastapi|django|"
+             r"\bbugs?\b|\bdebug|memory leak|\blogin\b|تسجيل (?:ال)?دخول|ايرور|(?<![ء-ي])[وف]?(?:ال)?(?:بج|باج|بق)(?![ء-ي])|"
+             r"\bfrontend\b|\bbackend\b|ثغر(?:ه|ات)|(?<![ء-ي])[وف]?(?:ال)?بوت(?![ء-ي])|\b(?:chat)?bots?\b"),
+    ("video", r"فيديو|مونتاج|ريلز|موشن|انيميشن|تحريك|(?<![ء-ي])[وف]?(?:حرك|متحرك|متحركه)(?![ء-ي])|فيلم|video|montage|\breels?\b|(?<![a-z])motion|animation|film|\bmp4\b|\bintro\b|انترو|paper edit|rough cut"),
     ("audio", r"بودكاست|موسيقي|اغني(?:ه|تي|ات)|نشيد|اناشيد|تلاوه|podcast|music|song|nasheed|\bsuno\b|سونو|\blyrics?\b|كلمات (?:ال)?اغني(?:ه|تي)"),
     ("3d", r"ثلاثي|\b3d\b|بلندر|blender|\bglb\b|three\.?js"),
     ("image", r"صوره|صور|تصميم|بوستر|شعار|لوجو|بطاقه|كارت|دعوه|غلاف|هويه بصريه|(?<![ء-ي])[وف]?(?:ا)?رسم|ماسكوت|image|photo|poster|logo|design|illustrat|mascot|\bcard\b|invitation|\bcover\b(?!\s+letters?)|\bpng\b|\bjpg\b"),
-    ("data", r"بيانات|اكسل|جدول|\bdata\b|\bcsv\b|excel|chart|dashboard"),
+    # business decisions and plans (marketing, pricing, feasibility, competitors, business plans): a reasoning deliverable
+    ("strategy", r"خط(?:ه|ط) (?:تسويق|مبيعات|عمل|نمو|محتوي|توسع)|استراتيجي|دراسه جدوي|جدوي|تسعير|(?<![ء-ي])اسعر(?![ء-ي])|"
+                 r"المنافسين|منافسين|ميزه تنافسيه|تنافسي|نموذج (?:عمل|ربح)|\bpric(?:e|es|ing)\b|\bchurn\b|business plan|"
+                 r"(?<![ء-ي])[وف]?(?:افتح|ابدا|اطلق)(?:\s+\S+){0,1}\s+(?:محل|كافيه|مطعم|مشروع|شركه|متجر|براند|بيزنس)|"
+                 r"\bstart(?:ing)? an? (?:\w+\s+)?(?:business|company|startup|shop|store|cafe)\b|\bstrategy\b|go-to-market|\bgtm\b|feasibility|competitors?\b|\bshould (?:i|we)\b|unit economics|\bmarketing plan\b"),
+    ("data", r"بيانات|اكسل|جدول|\bdata\b|\bcsv\b|\bxlsx?\b|excel|chart|dashboard|داشبورد|مبيعات|ارباح|ايرادات|\bsales\b|\brevenue\b|forecast|توقعات|تنبؤ"),
     ("document", r"تقرير|مستند|وورد|\bpdf\b|عرض تقديمي|شرائح|report|document|docx|slides|deck|مقال|article|\bdescriptions?\b|"
-                 r"\bemails?\b|ايميل|\bnewsletter\b|\bblog posts?\b|وصف (?:ال)?منتج|cover letters?|\bpoems?\b|قصيده|خطاب"),
+                 r"\bemails?\b|ايميل|\bnewsletter\b|\bblog posts?\b|(?<![ء-ي])[وف]?(?:ال)?عقد(?:ه|ها)?(?![ء-ي])|\bcontracts?\b|البنود|بنود|اتفاقي(?:ه|ات)|وصف (?:ال)?منتج|cover letters?|\bpoems?\b|قصيده|خطاب"),
     ("research", r"ابحث|مصادر|research|sources|قارن|compare"),
 ]
 # a weaker code signal: engineering words that make code the deliverable only when nothing stronger is named. The
@@ -334,7 +351,7 @@ SOFTWARE_CTX_RX = (r"كود|برمج|سكربت|\bscripts?\b|\bcode\b|github|ج�
                    r"python|بايثون|javascript|typescript|\bnode\b|remotion|\bjson\b|yaml|\bci\b|\bllm\b|توليف")
 SHORT_INTENTS = (r"^(ترجم|translate|اشرح|explain|عرف|define|ما معني|ايه معني|وش معني|ايش معني|شو معني|اش معني|ش معني|يعني ايه|يعني ايش|يعني شو|"
                  r"شو يعني|وش يعني|ايش يعني|ما المقصود|ما الفرق|ايه الفرق|وش الفرق|شو الفرق|ما هو|ما هي|ايه هو|ايه هي|ايش هو|ايش هي|وش هو|وش هي|"
-                 r"شو هو|شو هي|مين|من هو|من هي|متي|امتي|فين|وين|اين|كم|ليش|ليه|لماذا|"
+                 r"شو هو|شو هي|مين|من هو|من هي|متي|امتي|فين|وين|اين|كم|ليش|ليه|لماذا|ايه (?:احسن|افضل)|"
                  r"what does|what is|what's|whats|what are|who|when|where|why|how many|how much|difference between|the difference|meaning of|"
                  r"صحح|صلح|proofread|rename|اعد صياغه|لخص|summari[sz]e)")
 # a definition or how-to question: L0 even when it names a video, code, 3D or reverse-engineering term ("what does API mean?")
@@ -351,7 +368,7 @@ PRODUCE_RX = (r"(?<![ء-ي])[وف]?(?:اعمل|اكتب|صمم|انشر|جهز|�
               r"\b(?:create|make|write|publish|post|produce|generate|export|build|design|render|convert)\b|"
               rf"(?:علي شكل|في شكل|بشكل|بصيغه|(?<![ء-ي])ك)\s*(?:ال)?{_FMT}(?![ء-ي])|(?<![ء-ي])في\s+{_FMT}(?![ء-ي])(?!\s+ال)|"
               r"\b(?:as|in|into) an? (?:[a-z0-9-]+\s+){0,2}(?:article|report|deck|video|post|pdf|document|slides?|animation|reel|infographic)\b")
-HOWTO_RX = r"(?:ازاي|كيف|ازاى|how to|how do i|how can i|how should i)\s*$"
+HOWTO_RX = r"(?:ازاي|كيف|ازاى|how to|how do i|how can i|how should i|(?:احسن|افضل) (?:وقت|طريقه)(?: ا?ن)?|best (?:time|way) to)\s*$"
 RESEARCH_LEAD_RX = r"(?:find|search for|look for|look up|compare|research|ابحث|دور(?:لي| لي)?|قارن)\b"
 FAST_RX = r"(بسرعه|نسخه (بسيطه|سريعه)|مختصر|quick version|\bquick\b|\bfast\b|سطر واحد|one line)"
 # "max 30 seconds" / "maximum length" is a limit, not an ambition
@@ -366,6 +383,17 @@ PUBLISH_OBJ_RX = (r"\b(?:this|my|our|the|these)\b|(?<![ء-ي])(?:ده|دي|دا|
 NEW_WORK_RX = (r"(?<![ء-ي])[وف]?(?:اعمل|اكتب|صمم|جهز|حضر|ابني|انتج|ارسم|اصنع|سوي|عدل|حرر|طور|حسن|اضف|صلح|اختبر|قص|مونتج|ترجم)"
                r"(?:ه|ها|هم|لي|لنا)?(?![ء-ي])|\b(?:create|make|write|produce|generate|build|design|render|edit|cut|develop|improve|fix|add|"
                r"test|translate|refactor)\b")
+# a second piece of work joined to a short intent («ترجم العقد وراجع البنود», "translate and flag the risky clauses"):
+# the request is a task with judgement in it, not a one-line dictated edit
+COMPOUND_RX = (r"(?<![ء-ي])و(?:راجع|حلل|قيم|اعمل|اكتب|صمم|قارن|اقترح|استخرج|حدد|طلع|افحص|ابحث|نفذ|ابني|صلح|عدل)(?:ه|ها|هم|لي|لنا)?(?![ء-ي])|"
+               r"\band (?:then )?(?:review|analy[sz]e|flag|check|assess|compare|suggest|extract|build|write|fix|rewrite)\b")
+# a written piece names the deliverable even when its subject is data or sales («ايميل مبيعات», "a sales email")
+WRITTEN_PIECE_RX = r"\bemails?\b|ايميل|\bletters?\b|خطاب|\bnewsletter\b|\barticles?\b|مقال|\bblog posts?\b|\bpoems?\b|قصيده"
+# a business decision ("should we… or…", «هل… ولا…») about selling, pricing or customers is a strategy job even when
+# one option is an app; "should I use React or Vue" has no business word and stays code
+DECISION_LEAD_RX = r"\bshould (?:i|we)\b|\bwhether\b|^هل |(?<![ء-ي])ولا(?![ء-ي])|(?<![ء-ي])اختار بين"
+BUSINESS_RX = (r"\bsell(?:s|ing)?\b|\bpric(?:e|es|ing)\b|\bmarket(?:ing)?\b|\bbusiness\b|\bcustomers?\b|\brevenue\b|\bprofit|"
+               r"(?<![ء-ي])[وف]?(?:ا|ن)?بيع|اسعار|تسويق|عملاء|ارباح|(?<![ء-ي])[وف]?(?:ال)?(?:شركه|مشروع|بيزنس)(?![ء-ي])")
 STYLE_RX = {"cinematic": r"سينمائي|cinematic|فيلمي|film look"}   # a style steers families, never the level or the effort
 STYLE_FAMILIES = {"cinematic": ["3d-spatial", "light-glow-bloom", "camera-composition-layout", "color-palette-grading", "engines-render-pipeline"]}
 LONG_RX = r"طويل|مفصل|شامل|بالتفصيل|\blong(?:form)?\b|detailed|in-depth|comprehensive"
@@ -563,6 +591,7 @@ VERIFY_TERMS = {
     "data": "validation check numbers reconcile agreement anchor totals source tie-out",
     "document": "proofread review check anchor numbers quote citation", "research": "citation fact check sources quote",
     "text": "proofread review language", "unspecified": "verify evidence review check qa",
+    "strategy": "assumptions sensitivity scenario risk numbers reconcile pre-mortem",
 }
 # a verifier must come from a family that can judge this deliverable (a CI cost optimiser never verifies an article)
 VERIFY_FAMILIES = {
@@ -578,6 +607,7 @@ VERIFY_FAMILIES = {
     "research": {"web-research", "atlas-research", "knowledge-graph", "writing-humanizer", "documents-office"},
     "text": {"writing-humanizer", "arabic-language", "documents-office", "qa-verification"},
     "unspecified": {"qa-verification", "verification-evals"},
+    "strategy": {"strategy-finance", "atlas-strategy", "thinking-core", "mental-models", "data-analysis", "qa-verification", "verification-evals"},
 }
 SOUND_FAMILIES = {"music-beat-sound", "voice-tts"}   # a silent deliverable gets no loudness or voice checks
 ARCHETYPES = {
@@ -605,6 +635,14 @@ ARCHETYPES = {
                                                                       "atlas-research", "qa-verification"]),
                  "C": ("بحث عميق موثق + رسوم ومخططات + تصدير منسق", ["web-research", "atlas-research", "documents-office", "charts-data-infographic",
                                                                     "diagrams-explainers-code", "writing-humanizer"])},
+    # a business decision or plan: the deliverable is a defended recommendation, so every plan states assumptions,
+    # tests them with numbers and names what would change the answer
+    "strategy": {"stages": ["understand", "plan", "create", "verify", "deliver"],
+                 "A": ("إطار قرار واضح + أرقام أساسية + توصية واحدة", ["strategy-finance", "atlas-strategy", "thinking-core", "documents-office"]),
+                 "B": ("تحليل السوق والمنافسين + سيناريوهات وحساسية الأرقام + خطة تنفيذ بمؤشرات", ["strategy-finance", "atlas-strategy", "mental-models",
+                                                                                          "data-analysis", "web-research", "planning-execution", "qa-verification"]),
+                 "C": ("نموذج مالي قابل للتعديل + تجربة صغيرة تقيس الفرضية قبل الالتزام", ["data-analysis", "charts-data-infographic", "verification-evals",
+                                                                                     "strategy-finance", "apps-artifacts", "planning-execution"])},
     "research": {"stages": ["understand", "plan", "create", "verify", "deliver"],
                  "A": ("بحث موثق المصادر وجدول مقارنة", ["web-research", "atlas-research", "documents-office"]),
                  "B": ("بحث متوازٍ + معايير مقارنة + تحقق من المصادر", ["web-research", "atlas-research", "knowledge-graph", "qa-verification",
@@ -637,6 +675,9 @@ AFFINITY = {"code": {"motion": 0.4, "reverse": 0.4, "audio": 0.5, "3d": 0.6}, "r
             "data": {"motion": 0.5, "reverse": 0.4, "audio": 0.5, "3d": 0.5},
             "document": {"motion": 0.5, "reverse": 0.4, "audio": 0.5, "3d": 0.5}, "research": {"motion": 0.5, "reverse": 0.4, "audio": 0.6},
             "text": {"motion": 0.5, "reverse": 0.3, "audio": 0.5},
+            "strategy": {"motion": 0.4, "reverse": 0.3, "audio": 0.4, "3d": 0.4, "drawing": 0.5, "images": 0.6, "type": 0.6},
+            # nothing named: the motion half of the catalog must not win by size alone
+            "unspecified": {"motion": 0.7, "3d": 0.7, "audio": 0.8, "reverse": 0.5},
             # media deliverables: data science, software engineering and binary inspection are off-domain unless the
             # request is about them ("explain transformers in a video" is not a gradient-boosting job)
             "video": {"reverse": 0.3, "data": 0.5, "software": 0.6, "code": 0.6},
@@ -646,7 +687,7 @@ AFFINITY = {"code": {"motion": 0.4, "reverse": 0.4, "audio": 0.5, "3d": 0.6}, "r
 
 
 HOME_GROUPS = {"code": ["software"], "reverse": ["reverse"], "video": ["motion"], "audio": ["audio"], "3d": ["3d"],
-               "image": ["images", "drawing", "type"], "data": ["data"], "document": ["documents"], "research": ["research"], "text": ["documents"]}
+               "image": ["images", "drawing", "type"], "data": ["data"], "strategy": ["thinking"], "document": ["documents"], "research": ["research"], "text": ["documents"]}
 MEDIA_TIME_FAMILIES = {"music-beat-sound", "audio-sync-captions", "voice-tts", "transitions-cuts", "video-download"}
 MOVING_RX = r"montage|\breels?\b|\bfilm\b|footage|\bvideo\b|transition|camera move|drift|speed ramp"
 
@@ -707,6 +748,10 @@ def analyse(task: str) -> dict:
         deliver = ["document"] + [d for d in deliver if d != "document"]   # a cover letter for a data job is a letter
     if re.match(RESEARCH_LEAD_RX, low.strip()) and not re.search(NEW_WORK_RX, low) and (not deliver or deliver[0] == "code"):
         deliver = ["research"] + [d for d in deliver if d != "research"]   # "find the best GitHub repos for…" is a search
+    if "document" in deliver and re.search(WRITTEN_PIECE_RX, low):
+        deliver = ["document"] + [d for d in deliver if d != "document"]   # a sales email is a letter, not a dataset
+    if "strategy" in deliver and re.search(DECISION_LEAD_RX, low) and re.search(BUSINESS_RX, low):
+        deliver = ["strategy"] + [d for d in deliver if d != "strategy"]   # "should we build an app or sell on Shopify?"
     named = list(deliver)       # deliverables the request names outright (an explain-question about git stays L0)
     meta = re.search(META_CODE_RX, low) or (re.search(META_WEAK_RX, low) and re.search(SOFTWARE_CTX_RX, low))
     if "code" not in deliver and meta and not (named and named[0] in ("research", "document")):
@@ -723,7 +768,7 @@ def analyse(task: str) -> dict:
     heavy = set(named) & {"video", "code", "reverse", "3d"}
     publish = bool(re.search(PUBLISH_RX, low) and re.search(PUBLISH_DEST_RX, low) and re.search(PUBLISH_OBJ_RX, low)
                    and not re.search(NEW_WORK_RX, low))
-    if (re.search(SHORT_INTENTS, s) and not paths and ntok <= 14 and not produces(s)
+    if (re.search(SHORT_INTENTS, s) and not paths and ntok <= 14 and not produces(s) and not re.search(COMPOUND_RX, s)
             and (not heavy or (re.search(DEFINE_RX, s) and not re.search(EXISTING_OBJ_RX, s)))):
         level = "L0"   # a question, explanation or definition (also "what does API mean?" / «ما معنى موشن جرافيك؟»)
     elif ambition == "max":
@@ -900,6 +945,27 @@ def local_badge(atom, pres) -> str:
     return "📄"
 
 
+GROUP_DELIVERABLE = {"software": "code", "thinking": "strategy", "data": "data", "documents": "document", "research": "research"}
+
+
+def infer_primary(records, scores, fam2group, top: int = 40):
+    """When the request names no deliverable, let the catalog vote: the best-matching powers' groups, media and support
+    groups left out (no media word was named, or a deliverable would have matched). Returns (deliverable, votes) or
+    (None, votes) when no group leads clearly. The motion half of the catalog never wins by size: only the top
+    matches vote, each by its score."""
+    votes = collections.Counter()
+    for sc, r in sorted(((sc, r) for r, sc in zip(records, scores) if sc > 0), key=lambda x: (-x[0], x[1]["id"]))[:top]:
+        g = fam2group.get(r.get("family"), "misc")
+        if g in GROUP_DELIVERABLE:
+            votes[GROUP_DELIVERABLE[g]] += sc
+    ranked = votes.most_common(2)
+    if not ranked:
+        return None, {}
+    lead = ranked[0][1] / (ranked[1][1] if len(ranked) > 1 and ranked[1][1] else 1e-9)
+    rounded = {k: round(v, 1) for k, v in votes.items()}
+    return (ranked[0][0] if lead >= 1.25 else None), rounded
+
+
 def build_brief(task: str, details=False, terms: str = "") -> dict:
     t0 = time.time()
     scan = scan_catalog()
@@ -919,6 +985,12 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
     tools = tool_registry()
     pid2tool = {t.get("power_id"): t for t in tools.values() if t.get("power_id")}
     fam2group = fam_to_group()
+    # protocol / engine / workflow words without a software context are ambiguous on purpose (META_WEAK_RX): no vote
+    if an["primary"] == "unspecified" and an["level"] != "L0" and not re.search(META_WEAK_RX, norm_ar(task.lower())):
+        inferred, votes = infer_primary(records, scores, fam2group)
+        an["primary_votes"] = votes
+        if inferred:
+            an["primary"], an["deliverables"], an["primary_inferred"] = inferred, [inferred], True
 
     def plan_group(fams: dict, members) -> str:
         c = collections.Counter()
@@ -1007,7 +1079,7 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
         motion/audio/3D suites for a code, data, document or research deliverable that names no such medium."""
         if "software-investigation" in row["families"] and an["primary"] != "reverse" and "reverse" not in an["topics"]:
             return True
-        return row["group"] in ("motion", "audio", "3d") and an["primary"] in ("code", "reverse", "data", "document", "research", "text", "unspecified") \
+        return row["group"] in ("motion", "audio", "3d") and an["primary"] in ("code", "reverse", "data", "strategy", "document", "research", "text", "unspecified") \
             and row["group"] not in media_words and not (row["group"] == "motion" and "video" in media_words)
 
     for need in an["must_haves"]:
