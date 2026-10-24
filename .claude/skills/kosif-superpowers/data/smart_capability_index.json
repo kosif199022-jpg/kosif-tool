@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5849,
+  "catalog_powers": 5850,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 170,
+  "tool_count": 171,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 268,
+      "count": 269,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 164,
+        "proven": 165,
         "ready": 22
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 170,
+        "runnable-tools": 171,
         "self-discovery": 43
       },
       "examples": [
@@ -74212,6 +74212,24 @@
       ],
       "source": "runnable-tools.json",
       "what": "يبني نظامًا بصريًا جديدًا من لبنات سببية (حالة، عملية، قانون، زمن، ذاكرة، تغذية راجعة) مستخرجة من أساليب الأطلس الـ86، ويثبت قانونه بمقارنة مضادة أ/ب/ج عبر بذور متعددة ومنحنى جرعة، ويرندر مشهدًا قابلًا للتقليب ولقطات وفيديو MP4 بأدوات الأطلس، ويحفظ النتائج والأفكار والتقييمات وال"
+    },
+    {
+      "id": "TOOL-172",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Instagram Reference Discovery → Infinite Matrices",
+      "name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_reference_bridge.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_reference_bridge.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يسجّل حسابين مرجعيين، وينشئ روابط بحث عامة حسب المحتوى، ويفهرس الروابط التي يتحقق منها الباحث مع وصف عربي/إنجليزي داخل SQLite محليًا، ثم يولّد مقترحات بحثية للبنات المصفوفات الست وأقرب أساليب الأطلس الـ86 دون ادعاء مشاهدة أو تنفيذ الفيديو. — Offline-first source registration for "
     },
     {
       "id": "SEC-01",
