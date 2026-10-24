@@ -230,7 +230,9 @@ def ytdlp_post(url: str, cookies: str | None, browser: str | None = None) -> dic
         cmd += ["--cookies-from-browser", browser]
     p = subprocess.run(cmd + ["--", url], text=True, capture_output=True, timeout=120)
     if p.returncode or not p.stdout.strip():
-        raise RuntimeError((p.stderr or "no metadata").strip()[-300:])
+        err = (p.stderr or "no metadata").strip()
+        lines = [l for l in err.splitlines() if l.startswith("ERROR")]
+        raise RuntimeError((lines[-1] if lines else err)[:300])
     d = json.loads(p.stdout.strip().splitlines()[0])
     up = d.get("upload_date") or ""
     return post_record(shortcode=d.get("id") or url.rstrip("/").rsplit("/", 1)[-1], url=url,
@@ -373,6 +375,17 @@ def cmd_plan(a) -> int:
     return 0
 
 
+LOGIN_HINT = ("Instagram wants a login from this network (common on cloud and datacenter IPs). "
+              "Run on your own computer with --browser chrome (index) or --cookies-from-browser chrome (add-posts). "
+              "| إنستجرام طالب تسجيل دخول من الشبكة دي؛ شغّل الأداة على جهازك مع --browser chrome.")
+
+
+def is_login_wall(e) -> bool:
+    t = str(e).lower()
+    return any(k in t for k in ("302 found", "accounts/login", "require_login", "login required",
+                                "empty media response", "cookies", "401"))
+
+
 def cmd_index(a) -> int:
     path = Path(a.index)
     idx = load_index(path)
@@ -403,6 +416,9 @@ def cmd_index(a) -> int:
             if "429" in str(e) or "wait a few minutes" in str(e).lower():
                 print("Instagram asked us to slow down; stopping this run.", file=sys.stderr)
                 break
+            if is_login_wall(e):
+                print(LOGIN_HINT, file=sys.stderr)
+                break  # every other account will hit the same wall
             continue
         finally:
             save_index(idx, path)
@@ -430,8 +446,11 @@ def cmd_add_posts(a) -> int:
         try:
             rec = ytdlp_post(url, a.cookies, a.cookies_from_browser)
         except Exception as e:
-            print(f"FAIL {url}: {e}", file=sys.stderr)
+            print(f"FAIL {url}: {str(e)[:200]}", file=sys.stderr)
             rc = 1
+            if is_login_wall(e):
+                print(LOGIN_HINT, file=sys.stderr)
+                break  # the rest of the links will hit the same wall
             continue
         idx["posts"][rec["shortcode"]] = rec
         print(f"OK   {url} @{rec['account']}")
