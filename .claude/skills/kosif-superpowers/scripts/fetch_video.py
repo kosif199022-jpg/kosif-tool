@@ -9,6 +9,7 @@ Only the standard library is imported; yt-dlp and ffmpeg are used if present.
   python3 fetch_video.py URL [URL ...] [-o DIR] [--quality 1080|720|best|audio]
   python3 fetch_video.py --urls links.txt -o clips/
   python3 fetch_video.py URL --cookies cookies.txt      # private/age-gated, your own account
+  python3 fetch_video.py URL --cookies-from-browser chrome   # same, read from your local browser
   python3 fetch_video.py URL --safe                     # also build an edit-safe MP4 copy
   python3 fetch_video.py --doctor | --update
 
@@ -80,7 +81,7 @@ def impersonation(ytdlp: list[str]) -> str | None:
     return None
 
 
-def attempt(ytdlp, url, out_dir, fmt, extra, cookies, imp, connections, proxy):
+def attempt(ytdlp, url, out_dir, fmt, extra, cookies, imp, connections, proxy, browser=None):
     cmd = ytdlp + ["--no-playlist", "--continue", "--newline", "--no-part", "--no-progress",
                    "--concurrent-fragments", str(connections), "--retries", "10",
                    "--fragment-retries", "10", "--extractor-retries", "3", "--socket-timeout", "30",
@@ -91,6 +92,8 @@ def attempt(ytdlp, url, out_dir, fmt, extra, cookies, imp, connections, proxy):
         cmd += ["--js-runtimes", "node"]
     if cookies:
         cmd += ["--cookies", cookies]
+    if browser:  # read the user's own login from a local browser; the cookies never leave this machine
+        cmd += ["--cookies-from-browser", browser]
     if imp:
         cmd += ["--impersonate", imp]
     if proxy:
@@ -149,7 +152,8 @@ def download(url, a, ytdlp) -> dict:
         tries.append((fb, imp))
     err = ""
     for i, (f, im) in enumerate(tries):
-        path, err = attempt(ytdlp, url, out, f, extra, a.cookies, im, a.connections, a.proxy)
+        path, err = attempt(ytdlp, url, out, f, extra, a.cookies, im, a.connections, a.proxy,
+                            getattr(a, "cookies_from_browser", None))
         if path:
             p = Path(path)
             rec = {"url": url, "file": str(p), "attempt": i + 1, "impersonate": im, **probe(p), **info_for(p)}
@@ -175,6 +179,8 @@ def main(argv=None) -> int:
     ap.add_argument("-o", "--out", default="downloads")
     ap.add_argument("--quality", default="1080", type=norm_quality, help="best | 2160 | 1080 | 720 | 480 | audio (default 1080)")
     ap.add_argument("--cookies", help="Netscape-format cookies.txt exported from your own browser")
+    ap.add_argument("--cookies-from-browser", metavar="BROWSER",
+                    help="use your login from a local browser (chrome, firefox, edge, brave, safari…); nothing is copied or stored")
     ap.add_argument("--connections", type=int, default=8)
     ap.add_argument("--proxy")
     ap.add_argument("--safe", action="store_true", help="also write an edit-safe H.264/AAC copy (.safe.mp4)")

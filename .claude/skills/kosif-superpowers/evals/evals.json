@@ -2361,6 +2361,26 @@
     "top_k": 8,
     "motion_output": true
    }
+  },
+  {
+   "id": 159,
+   "lang": "ar",
+   "domain": "sources",
+   "skills": [
+    "kosif-superpowers"
+   ],
+   "query": "دوّر لي جوه الانستجرام على فيديوهات تناسب منتج العطر من الحسابات المحفوظة ونزّلها",
+   "files": [],
+   "expected_behavior": [
+    "Uses instagram_finder.py: plan, index the saved accounts, search the product, thumbs, then download through fetch_video.py with --rights",
+    "States the login, private-account and rate-limit limits and never commits the session or cookies"
+   ],
+   "routing": {
+    "expect_any": [
+     "TOOL"
+    ],
+    "top_k": 8
+   }
   }
  ]
 }

@@ -153,7 +153,7 @@ chapter: [atlas-mind](../powers/atlas-mind.md) · card: `usip-library/cards/thin
 
 ## creativity-engine (mind)
 
-chapter: [creativity-engine](../powers/creativity-engine.md) · card: `usip-library/cards/thinking/creativity-engine.md` · tools: `infinite-matrices` · `invention-lab` · `think`
+chapter: [creativity-engine](../powers/creativity-engine.md) · card: `usip-library/cards/thinking/creativity-engine.md` · tools: `infinite-matrices` · `instagram-reference-discovery` · `invention-lab` · `think`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5849,
+ "atoms": 5851,
  "superpowers": 481,
  "hubs": [
   {
@@ -433,19 +433,19 @@
     },
     {
      "id": "SP-0141",
+     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
+     "name_en": "Reference Edit Engine",
+     "size": 17,
+     "best": "proven",
+     "ready_now": 17
+    },
+    {
+     "id": "SP-0142",
      "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
      "name_en": "Staged drawing and original three-value visual studies",
      "size": 16,
      "best": "proven",
      "ready_now": 16
-    },
-    {
-     "id": "SP-0142",
-     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
-     "name_en": "Reference Edit Engine",
-     "size": 15,
-     "best": "proven",
-     "ready_now": 15
     },
     {
      "id": "SP-0140",
@@ -520,15 +520,15 @@
      "ready_now": 8
     }
    ],
-   "powers": 283,
+   "powers": 285,
    "status_mix": {
-    "proven": 164,
+    "proven": 166,
     "ready": 22,
     "install": 15,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 186,
+   "ready_now": 188,
    "requires": [
     "python3",
     "ffmpeg",
@@ -549,9 +549,9 @@
     "network",
     "npm:p5",
     "fonts:arabic",
+    "yt-dlp",
     "docker",
     "imagemagick",
-    "yt-dlp",
     "pip:pandas",
     "pip:torch",
     "tesseract",
@@ -589,8 +589,8 @@
     "pip:anthropic",
     "npm:animejs",
     "npm:esbuild",
-    "pip:rdkit",
     "pip:fonttools",
+    "pip:rdkit",
     "key:openai",
     "npm:lottie",
     "model:yunet",
@@ -2115,7 +2115,7 @@
     "images",
     "motion",
     "quality",
-    "agents"
+    "type"
    ]
   },
   {
