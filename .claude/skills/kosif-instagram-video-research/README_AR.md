@@ -11,21 +11,21 @@
 ## ما الذي تنفذه الأداة؟
 1. **Query understanding:** توسيع «غيوم» إلى clouds/cloudscape؛ «غروب» إلى sunset/golden hour.
 2. **Search planning:** استعلامات مستهدفة للـReels العامة، استعلامات لكل من الحسابين، ورابط البحث داخل تطبيق Instagram (قد يتطلب تسجيل دخول).
-3. **Optional automated discovery:** البحث في فهرس الويب العام عبر **Brave Search API** باستخدام \`BRAVE_SEARCH_API_KEY\` من البيئة، ثم حفظ الروابط العامة فقط.
+3. **Optional automated discovery:** البحث في فهرس الويب العام عبر **Brave Search API** باستخدام `BRAVE_SEARCH_API_KEY` من البيئة، ثم حفظ الروابط العامة فقط.
 4. **Local content reference index:** تخزين روابط الفيديوهات ووصفها ومصدرها ومستوى التحقق في SQLite مع إزالة التكرار.
 5. **Ranking:** ترتيب نصي أولي للمراجع حسب التطابق والناشر المعروف عند توفره.
 6. **Infinite Matrices handoff:** بعد التحقق بصريًا من الفيديو وبشكل قانوني، يصير مرجعًا بحثيًا لاستخراج آليات الحالة/العملية/القانون/الزمن/الذاكرة؛ لا نستنتجها من وصف فقط.
 
 ## التشغيل
-\`\`\`bash
+```bash
 python .claude/skills/kosif-instagram-video-research/instagram_research.py sources
 python .claude/skills/kosif-instagram-video-research/instagram_research.py plan 'شلال وسط غابة'
 python .claude/skills/kosif-instagram-video-research/instagram_research.py search 'غيوم' --accounts-only
 python .claude/skills/kosif-instagram-video-research/instagram_research.py find 'غروب'
 python -m unittest discover -s .claude/skills/kosif-instagram-video-research/tests -v
-\`\`\`
+```
 
-استخدم \`BRAVE_SEARCH_API_KEY\` في متغير بيئة فقط ولا تضعه في GitHub. بدون المفتاح تحصل على **روابط بحث، لا نتائج تم التحقق منها**.
+استخدم `BRAVE_SEARCH_API_KEY` في متغير بيئة فقط ولا تضعه في GitHub. بدون المفتاح تحصل على **روابط بحث، لا نتائج تم التحقق منها**.
 
 ## قيود صريحة
 - ليس لدى Instagram Graph API بحث عام حر وشامل بكل مقاطع Reels بالكلمات. توجد إمكانات رسمية محدودة لملفات أعمال/منشئي محتوى مصرح لها وللوسوم حسب الصلاحيات. [Meta Instagram API](https://www.postman.com/meta/instagram/documentation/6yqw8pt/instagram-api).
