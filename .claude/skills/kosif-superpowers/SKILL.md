@@ -288,7 +288,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (645 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (646 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure
