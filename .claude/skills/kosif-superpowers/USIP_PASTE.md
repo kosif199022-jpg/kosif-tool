@@ -63,5 +63,6 @@
 - قواعد السجل والإعادة (A35): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md
 - رسالة التفعيل المفصّلة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SESSION_PROMPT.md
 - نسخة البروتوكول في ملف واحد، لمن لا يستطيع فتح ملفات كثيرة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
+- النسخة المضغوطة v5.7 (أقل من 25KB، فيها سياق المشروع والإقلاع والتوزيع المتوازي): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v5_7.md
 
 إن لم تستطع فتح الروابط فقل ذلك في سطر واحد، واعمل بالخطوات أعلاه كما هي.
