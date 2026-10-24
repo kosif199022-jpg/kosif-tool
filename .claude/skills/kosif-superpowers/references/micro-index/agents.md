@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 269 powers
+[← الفهرس الدقيق / micro index](README.md) · 270 powers
 
 ## الفهرس / contents
 
@@ -143,24 +143,25 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-65 | ✅ | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude · AI for business: 9 functions, 64 workflows, Claude-native gated runbooks → `business-workflows` | SP-0146 Prompt Lab | python3, key:unspecified |
 | TOOL-69 | ✅ | محرك التفكير وقوالبه · Thinking engine scaffolds → `think` | SP-0146 Prompt Lab | python3 |
 | TOOL-74 | ✅ | بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate → `anchor-gate` | SP-0146 Prompt Lab | python3 |
-| TOOL-118 | ✅ | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video → `unified-cinematic` | SP-0147 Subtitle to words.json converter | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
-| TOOL-12 | ✅ | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge → `creative-reasoning-bridge` | SP-0147 Subtitle to words.json converter | python3 |
-| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0147 Subtitle to words.json converter | python3 |
-| TOOL-152 | ✅ | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML → `tts-script` | SP-0147 Subtitle to words.json converter | python3 |
-| TOOL-165 | ✅ | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT → `caption-lines` | SP-0147 Subtitle to words.json converter | pip:faster-whisper, key:openai |
-| TOOL-25 | ✅ | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper → `audio-cue-mapper` | SP-0147 Subtitle to words.json converter | pip:faster-whisper |
-| TOOL-26 | ✅ | فرضيات إيقاع الموسيقى · Music rhythm hypotheses → `music-rhythm-engine` | SP-0147 Subtitle to words.json converter | python3 |
-| TOOL-28 | ✅ | تحريك ذراع الشخصية بالحركية العكسية · Character IK arm animator → `character-ik` | SP-0147 Subtitle to words.json converter | ffmpeg, pip:pillow |
-| TOOL-86 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter → `repo-words-convert` | SP-0147 Subtitle to words.json converter | pip:faster-whisper |
-| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0148 Community source scout | ffmpeg, python3 |
-| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0148 Community source scout | pip:office |
-| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0148 Community source scout | python3 |
-| TOOL-172 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0148 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0148 Community source scout | python3, npm:rea |
-| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0148 Community source scout | python3 |
-| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0148 Community source scout | ffmpeg, python3 |
-| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0148 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0148 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
+| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0147 Community source scout | ffmpeg, python3 |
+| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0147 Community source scout | pip:office |
+| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0147 Community source scout | python3 |
+| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0147 Community source scout | python3 |
+| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0147 Community source scout | python3, npm:rea |
+| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0147 Community source scout | python3 |
+| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0147 Community source scout | ffmpeg, python3 |
+| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0147 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
+| TOOL-118 | ✅ | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video → `unified-cinematic` | SP-0148 Subtitle to words.json converter | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
+| TOOL-12 | ✅ | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge → `creative-reasoning-bridge` | SP-0148 Subtitle to words.json converter | python3 |
+| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0148 Subtitle to words.json converter | python3 |
+| TOOL-152 | ✅ | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML → `tts-script` | SP-0148 Subtitle to words.json converter | python3 |
+| TOOL-165 | ✅ | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT → `caption-lines` | SP-0148 Subtitle to words.json converter | pip:faster-whisper, key:openai |
+| TOOL-25 | ✅ | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper → `audio-cue-mapper` | SP-0148 Subtitle to words.json converter | pip:faster-whisper |
+| TOOL-26 | ✅ | فرضيات إيقاع الموسيقى · Music rhythm hypotheses → `music-rhythm-engine` | SP-0148 Subtitle to words.json converter | python3 |
+| TOOL-28 | ✅ | تحريك ذراع الشخصية بالحركية العكسية · Character IK arm animator → `character-ik` | SP-0148 Subtitle to words.json converter | ffmpeg, pip:pillow |
+| TOOL-86 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter → `repo-words-convert` | SP-0148 Subtitle to words.json converter | pip:faster-whisper |
 | TOOL-11 | ✅ | مختبر الابتكار الهندسي · Invention Lab Candidates → `invention-lab` | SP-0149 Arabic-aware font fidelity lab | pip:hypothesis |
 | TOOL-140 | ✅ | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره · Local image AI: remove background and smart fill with your own ONNX model → `image-local-ai` | SP-0149 Arabic-aware font fidelity lab | — |
 | TOOL-141 | ✅ | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط · Prompt pack: copyable prompts, one code block each, with a warn-only lint → `prompt-pack` | SP-0149 Arabic-aware font fidelity lab | python3, key:video-gen |

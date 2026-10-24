@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **171 powers follow** — ✅ 138 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **172 powers follow** — ✅ 139 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-172 (19)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-173 (20)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -1510,7 +1510,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_github_top_repos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/github_top_repos.py`
 - **المصدر / source:** data/tools.json
 
-#### TOOL-172 · البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder · ✅ مُثبت هنا / proven here
+#### TOOL-172 · البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يسجّل حسابين مرجعيين، وينشئ روابط بحث عامة حسب المحتوى، ويفهرس الروابط التي يتحقق منها الباحث مع وصف عربي/إنجليزي داخل SQLite محليًا، ثم يولّد مقترحات بحثية للبنات المصفوفات الست وأقرب أساليب الأطلس الـ86 دون ادعاء مشاهدة أو تنفيذ الفيديو. — Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram.
+- **متى أستخدمها / when:** ابحث عن ريلز إنستجرام بتأثير معين / Find Instagram motion references for glowing particles and propose causal bricks
+- **كيف / how:** doctor: `python3 scripts/instagram_reference_bridge.py doctor`; sources: `python3 scripts/instagram_reference_bridge.py sources`; plan: `python3 scripts/instagram_reference_bridge.py plan "جسيمات ضوئية"`; add: `python3 scripts/instagram_reference_bridge.py add https://www.instagram.com/reel/REALCODE/ --topic "light particles" --state link_only`. Full card: `python3 scripts/hub.py tool instagram-reference-discovery`. Limits: The CLI cannot directly search inside all Instagram reels or verify a video's actual motion; web results must be discovered separately and manually checked. Source states only attest to submitted notes and evidence URI presence, not authenticity. Proposal is not a runnable KMX recipe. **أرقام / params:** in: User-provided Instagram reel/post URLs, researched public metadata or authorized frame notes; optional KMX 86-style catalog. No login/token required. · out: Search-provider URLs; local SQLite reference catalog; JSON search matches and evidence-labelled KMX hypothesis proposals.
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_reference_bridge.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_reference_bridge.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-173 · البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder · ✅ مُثبت هنا / proven here
 - **ماذا / what:** يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف التلقائي للصورة. ويطلع خطة بحث ويب بدون شبكة، وينزّل الصور المصغّرة للمعاينة، ويحمّل المختار عبر fetch_video.py مع سجل حقوق. — Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log.
 - **متى أستخدمها / when:** دوّر لي في إنستجرام على فيديوهات تناسب منتج العطر ده ونزّلها / Find Instagram reels from my saved accounts that fit a watch commercial
 - **كيف / how:** accounts: `python3 scripts/instagram_finder.py accounts`; add-account: `python3 scripts/instagram_finder.py add-account "https://www.instagram.com/name?igsh=xyz" --tag product`; plan: `python3 scripts/instagram_finder.py plan "عطر رجالي"`; index: `python3 scripts/instagram_finder.py index --session-user MY_USERNAME --limit 40`. Full card: `python3 scripts/hub.py tool instagram-finder`. Limits: Instagram has no keyword search the tool may use, so it only searches what was indexed. Profiles and hashtags usually need a logged-in session, private accounts need an accepted follow, instaloader and yt-dlp break when Instagram changes, and instagram.com is blocked from the cloud container (proxy 403), so indexing and downloads run on the user's device. **أرقام / params:** in: A product query in Arabic or English; saved accounts in data/instagram_sources.json; optionally --session-user (an instaloader session the user created), --cookies (the user's cookies.txt), hashtags and reel links; or the environment variable INSTAGRAM_SESSIONID (the sessionid cookie of the user's own, ideally secondary, account) for cloud runs. · out: out/instagram/index.json (local index), search results JSON (--save), out/instagram/thumbs/*.jpg, out/instagram/videos/ with fetch_video.py files and manifest.json, and instagram_rights.jsonl.
@@ -1532,7 +1540,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (171)
+- الرخص / licences: — (172)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

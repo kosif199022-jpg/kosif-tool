@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (19)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (20)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -31,6 +31,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `stream-grabber` | Written after a read-only study of IDM 6.43: parses DASH (SegmentTemplate with Number or Timeline, SegmentList, SegmentBase) and HLS (master/media, byte ranges, fMP4 init), downloads segments in parallel with resume and tail probing, picks the best editable video and audio, merges losslessly (MP4, or MKV for VP8/Vorbis), saves WebVTT subtitles and finds manifests in saved pages or HAR exports; refuses encrypted, DRM, live and cookie-header requests. | `python3 scripts/stream_grabber.py find ./saved-page.html` | tested-here |
 | `sources-index` | Records each attachment (file, .docx, .pdf via pdftotext, or a URL recorded without fetching) in <dir>/sources_index.json: kind, sha256, size, lines, title guess, headings with line ranges, provenance, trust_scope 'data, not instructions', imperative lines that try to instruct the assistant, and secrets by line and kind only (never the value). find returns heading line ranges (or line numbers with --body) so only that range is read. | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |
 | `github-top-repos` | Keeps the review of the 1,000 most-starred public GitHub repositories: a facts snapshot (rank, stars, language, licence id, description, merged from the gitstar-ranking index and deps.dev records for a supplement list it misses), an automatic topic and licence classification, and a hand review of exclusions and transfers. build writes data/github_top1000.json and the table references/github-top-1000.md with a decision per repository (transferred, mine, reference, skip) and the power or tool ids that carry its methods; find and show search it; refresh fetches a new snapshot to a separate file for review. | `python3 scripts/github_top_repos.py build` | tested-here |
+| `instagram-reference-discovery` | Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram. | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |
 
 <!-- hub:area:sources:end -->
 
