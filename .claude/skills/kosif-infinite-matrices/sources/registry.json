@@ -1,0 +1,479 @@
+{
+ "schema": "kosif.matrices.sources.v1",
+ "sources": [
+  {
+   "id": "SRC-001",
+   "title": "The AI Style Atlas (Futurepedia) — 86 styles with full reference prompts and source",
+   "names": [
+    "ai-style-atlas-prompts-FULL.zip",
+    "ai-style-atlas-prompts-FULL.zip (second upload)"
+   ],
+   "kind": "zip",
+   "sha256": "65a13ab6184405a6c272fe8c9647528f3de0691aa846bbc42a30f3adbf94c0f3",
+   "bytes": 2432496,
+   "pages": null,
+   "url": "https://www.futurepedia.io/resources/ai-style-atlas/view",
+   "rights": "Third-party (Futurepedia). Analysed locally; no prompt or code text committed.",
+   "relevance": "core",
+   "used_for": [
+    "86-style index (styles, families)",
+    "static code decomposition kmx_bricks.py (lexical + REA)",
+    "parent styles of recipes"
+   ],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-002",
+   "title": "REA — reverse engineer anything (morluto/rea), npm rea-agents 6.7.0",
+   "names": [
+    "REA rea-agents 6.7.0 (npm)"
+   ],
+   "kind": "tool",
+   "sha256": null,
+   "bytes": null,
+   "pages": null,
+   "url": "https://github.com/morluto/rea",
+   "rights": "MIT (upstream); installed locally with --ignore-scripts, not vendored",
+   "relevance": "method",
+   "used_for": [
+    "rea import-reference-source (inventory receipt)",
+    "rea analyze-javascript-application on the 86 extracted style sources: functions, call sites, data-flow relations, normalized-AST fingerprints"
+   ],
+   "note": "Run per batch of 6 style files so the semantic graph is not truncated.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-003",
+   "title": "KOSIF Infinite Matrices v0.1.0 prototype package (owner's earlier SVG A/B engine)",
+   "names": [
+    "KOSIF_Infinite_Matrices_full.zip"
+   ],
+   "kind": "zip",
+   "sha256": "059665e28400631bfbe74e3a818cf5c2f0c73aa8d27bcfde0d986a69c9039d51",
+   "bytes": 967540,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "core",
+   "used_for": [
+    "design philosophy (five bricks, two kinds of memory)",
+    "human rating tied to a rendered receipt (ported as kmx.py rate)",
+    "rated recipes bias later proposals (ported as Beta operator scores in ideate)"
+   ],
+   "note": "Its SVG engine was not copied; the new engine replaces it with a tested A/B/C + seeds + dose design.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-004",
+   "title": "Lateral Thinking Course (Lateral Thinking Mind, 2014)",
+   "names": [
+    "Lateral-Thinking-Course.pdf",
+    "Lateral-Thinking-Course.pdf (second upload)"
+   ],
+   "kind": "pdf",
+   "sha256": "982feeba2433b1671fa54fd2d0532a8b7b0c28b656f0c66f6a9bf923fbfc5a71",
+   "bytes": 1581934,
+   "pages": 100,
+   "url": null,
+   "rights": "Copyrighted book; not redistributed, no text quoted",
+   "relevance": "method",
+   "used_for": [
+    "random-entry input -> ideate draws parents from a seeded random pool, not from similar names",
+    "challenge established concepts -> each recipe must name the assumption its counterfactual removes"
+   ],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-005",
+   "title": "Smart Thinking: How to Think Conceptually, Design Solutions and Make Decisions (Bryan Greetham, Palgrave 2016)",
+   "names": [
+    "Smart-Thinking-Greetham.pdf",
+    "Smart-Thinking-Greetham.pdf (second upload)"
+   ],
+   "kind": "pdf",
+   "sha256": "28f08244758c53334871eb2ae0772db03b3188e70d5fc82809c393a4af8d2b96",
+   "bytes": 15734529,
+   "pages": 329,
+   "url": null,
+   "rights": "Copyrighted book; not redistributed, no text quoted",
+   "relevance": "method",
+   "used_for": [
+    "conceptual analysis (a concept = its necessary characteristics) -> recipe validation demands all six bricks",
+    "synthesis of ideas -> one cross-role causal coupling instead of overlaying looks"
+   ],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-006",
+   "title": "The Pragmatic Programmer (Hunt & Thomas)",
+   "names": [
+    "the-pragmatic-programmer.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "7c8ad03780b2905e0cd47e3f5c60bd0474a718e7e7133ca226ef05828011ef20",
+   "bytes": 1676158,
+   "pages": 352,
+   "url": null,
+   "rights": "Copyrighted book; not redistributed, no text quoted",
+   "relevance": "method",
+   "used_for": [
+    "tracer bullet: one thin end-to-end path recipe->engine->scene->render->ledger before breadth",
+    "DRY: the engine is the single source of numbers, the scene only plays them back",
+    "orthogonality: structure / dynamics / finish adapters change independently"
+   ],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-007",
+   "title": "'Probability Theory: the Logic of Science' testbank listing (not the book itself)",
+   "names": [
+    "Testbank-Probability-Theory-the-Logic-of-Science.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "5c9f1c324e790dd93a170b4665d801612ff4cbd1ed2d097eae02f22435da8e52",
+   "bytes": 692955,
+   "pages": 258,
+   "url": null,
+   "rights": "Third-party sales/listing document; registered only",
+   "relevance": "method",
+   "used_for": [
+    "reminder to score feedback as probability: operator scores are Beta(1+wins,1+losses) posteriors (standard Bayesian practice, not taken from this file)"
+   ],
+   "note": "The file's readable pages are a product listing, so no method was extracted from its content.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-008",
+   "title": "KOSIF USIP v5.5 portable protocol (owner's)",
+   "names": [
+    "USIP_PORTABLE_v5_5.md",
+    "USIP_PORTABLE_v5_5.md (second upload)"
+   ],
+   "kind": "md",
+   "sha256": "f970efccbe785f9c763e627ac84582a29e3066939c39bb966e5324c56562cb2c",
+   "bytes": 131358,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "evidence ladder and plan levels referenced in SKILL.md",
+    " repo already carries the canonical v5.6 PROTOCOL.md"
+   ],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-009",
+   "title": "KOSIF USIP v5.6 portable protocol (owner's)",
+   "names": [
+    "USIP_PORTABLE_v5_6.md",
+    "USIP_PORTABLE_v5_6.md (second upload)"
+   ],
+   "kind": "md",
+   "sha256": "097c291e57f9dcb9012caad4422be235b989e361ec446a6ab8bdd812dc6dd53f",
+   "bytes": 135214,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "integration rules: hub.py tool registry entry, honest evidence labels, no claims without receipts"
+   ],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-010",
+   "title": "KOSIF SKILL v8 ENHANCED (owner's PDF)",
+   "names": [
+    "KOSIF_SKILL_v8_ENHANCED.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "ecda22767b1243b1d9f91499074615eec239538057507be2df76a83115e69328",
+   "bytes": 265506,
+   "pages": 12,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered only"
+   ],
+   "note": "Text layer extracts as garbled Arabic glyphs, so its content could not be read here.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-011",
+   "title": "The Cambridge Handbook of Personality Psychology",
+   "names": [
+    "Cambridge-Handbook-of-Personality-Psychology.pdf",
+    "Cambridge-Handbook (second upload)"
+   ],
+   "kind": "pdf",
+   "sha256": "321a220a3c18b8d99a4c2d7c9b43ddabcca9f318dd18b5e348a60b35ba791ced",
+   "bytes": 4397263,
+   "pages": 906,
+   "url": null,
+   "rights": "Copyrighted third-party file; registered by hash only, not used",
+   "relevance": "not_relevant",
+   "used_for": [],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-012",
+   "title": "Safari.pdf — Arabic translation of a stage play",
+   "names": [
+    "Safari.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "3b929e08204c19720a8018879bf398f8bef542950d396515ed94495fde6d7adc",
+   "bytes": 2263910,
+   "pages": 390,
+   "url": null,
+   "rights": "Copyrighted third-party file; registered by hash only, not used",
+   "relevance": "not_relevant",
+   "used_for": [],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-013",
+   "title": "Safari 3.pdf — English-language school textbook (Impact 1)",
+   "names": [
+    "Safari 3.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "96d5223d1eeacd0ada982ba1e221367d19b2a9595bb2641a67a368de00047f8a",
+   "bytes": 24660077,
+   "pages": 108,
+   "url": null,
+   "rights": "Copyrighted third-party file; registered by hash only, not used",
+   "relevance": "not_relevant",
+   "used_for": [],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-014",
+   "title": "Safari 4.pdf — English-language textbook unit excerpt",
+   "names": [
+    "Safari 4.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "539c138d96f084de5fb1991e7b2100c12b3a32e799829355ec3c6d8af1932972",
+   "bytes": 20159757,
+   "pages": 8,
+   "url": null,
+   "rights": "Copyrighted third-party file; registered by hash only, not used",
+   "relevance": "not_relevant",
+   "used_for": [],
+   "note": "",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-015",
+   "title": "AI-Powered Accounting Skill report (IFRS/ISA)",
+   "names": [
+    "AI_Powered_Accounting_Skill_IFRS_ISA_Expanded_Report.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "ab61144b240eff88dc825f0c9f51fb35c46e44c93db58c953df446e73e9e8373",
+   "bytes": 3536011,
+   "pages": 16,
+   "url": null,
+   "rights": "Owner's other project",
+   "relevance": "not_relevant",
+   "used_for": [],
+   "note": "Accounting domain; nothing applies to the visual engine.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-016",
+   "title": "KOSIF Audit Studio v3.2 source",
+   "names": [
+    "kosif-audit-studio-v3.2.zip"
+   ],
+   "kind": "zip",
+   "sha256": "016854ebf89b030166850ef0c1631fcca25ce20095653e3df69fffc773f1292e",
+   "bytes": 141637,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-017",
+   "title": "Kosif full application source export (mahmoud1990 repo)",
+   "names": [
+    "Kosif-Full-Application-Source.json"
+   ],
+   "kind": "json",
+   "sha256": "1e37d6eaeee42e0c035514add6a836062abfa9f864e16fe8057a7a100e6039ef",
+   "bytes": 18261405,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-018",
+   "title": "Comprehensive GitHub repositories audit for kosif199022-jpg (Arabic)",
+   "names": [
+    "GitHub-audit-kosif199022-jpg.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "8b2d2a11ea80a8c1cc4506c08ceafc476c45c1711863b1136e27d3bfc0b395e6",
+   "bytes": 249248,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-019",
+   "title": "Moon AI Audit Operating System master specification",
+   "names": [
+    "Moon_AI_Audit_Operating_System_Complete_Master_Specification2.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "2b37b94cec3795d60621f4d43f20fa655395bede89f691f78289af1e40d7ab99",
+   "bytes": 1718988,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-020",
+   "title": "kosif-stable-next source snapshot",
+   "names": [
+    "kosif-stable-next-main.zip"
+   ],
+   "kind": "zip",
+   "sha256": "4031490df0f6d50c09589ed73c8476ce83ec80c826e7d1671601f13956cc8cb2",
+   "bytes": 281343,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-021",
+   "title": "Kosif v36.2 defect-fix notes",
+   "names": [
+    "Text Document.txt"
+   ],
+   "kind": "txt",
+   "sha256": "e8847477906b3b9edd3dd4b8acc992becffac2bc89300d41d056611873d55fd8",
+   "bytes": 8015,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-022",
+   "title": "Comprehensive analytical report of discussed projects (Arabic)",
+   "names": [
+    "projects-analytical-report.pdf"
+   ],
+   "kind": "pdf",
+   "sha256": "6dd8204332be62f003d6b4137bd91364dda37fc4f58eed618375926221b14e51",
+   "bytes": 283294,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  },
+  {
+   "id": "SRC-023",
+   "title": "kosif-unified source snapshot",
+   "names": [
+    "kosif-unified-main.zip"
+   ],
+   "kind": "zip",
+   "sha256": "09584d14f2df75505b2562b2709a4875d5dba67c0ddd95e8849324d2d7c26c8d",
+   "bytes": 17594532,
+   "pages": null,
+   "url": null,
+   "rights": "Owner's own work",
+   "relevance": "context",
+   "used_for": [
+    "registered for traceability",
+    " read only far enough to confirm it does not cover the matrices engine"
+   ],
+   "note": "Searched for matrices/style-atlas content: none relevant to this increment.",
+   "added": "2026-10-24",
+   "content_in_repo": "none (metadata and derived measurements only)"
+  }
+ ]
+}

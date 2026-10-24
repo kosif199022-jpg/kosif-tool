@@ -14,11 +14,11 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 800 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
+| 1 | [`python3`](#req-python3) | bin | 801 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
 | 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 457 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
-| 4 | [`chromium`](#req-chromium) | bin | 372 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, runnable-tools |  |
-| 5 | [`npm:rea`](#req-npm-rea) | npm | 279 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
+| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 458 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 4 | [`chromium`](#req-chromium) | bin | 373 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, runnable-tools |  |
+| 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 247 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 186 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
 | 8 | [`node`](#req-node) | bin | 184 | qa-verification, atlas-code, runnable-tools, engines-render-pipeline, color-palette-grading |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 800 powers
-- **بالحالة / by status:** proven 297 · documented 212 · ready 169 · install 106 · key 13 · seen 3
-- **العائلات / families:** runnable-tools (134), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
+- **يفتح / unlocks:** 801 powers
+- **بالحالة / by status:** proven 298 · documented 212 · ready 169 · install 106 · key 13 · seen 3
+- **العائلات / families:** runnable-tools (135), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-npm-hyperframes"></a>
@@ -165,9 +165,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 457 powers
-- **بالحالة / by status:** documented 158 · proven 147 · ready 71 · install 58 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (39), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
+- **يفتح / unlocks:** 458 powers
+- **بالحالة / by status:** documented 158 · proven 148 · ready 71 · install 58 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (40), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-chromium"></a>
@@ -175,9 +175,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)`
-- **يفتح / unlocks:** 372 powers
-- **بالحالة / by status:** proven 119 · install 115 · documented 102 · ready 27 · key 6 · idea 2 · seen 1
-- **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), qa-verification (24), runnable-tools (22), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
+- **يفتح / unlocks:** 373 powers
+- **بالحالة / by status:** proven 120 · install 115 · documented 102 · ready 27 · key 6 · idea 2 · seen 1
+- **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), qa-verification (24), runnable-tools (23), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
 - **أمثلة / examples:** `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `APPX-31` Dehaze (ClearView-style) · `APPX-32` Tiered noise reduction · `APPX-33` Auto keystone / perspective · `APPX-34` Lens distortion correction
 
 <a id="req-npm-rea"></a>
@@ -185,9 +185,9 @@
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)`
-- **يفتح / unlocks:** 279 powers
-- **بالحالة / by status:** documented 182 · install 51 · proven 45 · ready 1
-- **العائلات / families:** software-investigation (258), runnable-tools (16), app-feature-transfer (4), verification-evals (1)
+- **يفتح / unlocks:** 280 powers
+- **بالحالة / by status:** documented 182 · install 51 · proven 46 · ready 1
+- **العائلات / families:** software-investigation (258), runnable-tools (17), app-feature-transfer (4), verification-evals (1)
 - **أمثلة / examples:** `APPX-117` Live Blender capability inventory · `APPX-24` Electron fuse hardening · `APPX-57` Hidden installer payload detection · `REA-003` Statically reconstruct a local JavaScript/Electr · `REA-004` Capture and statically analyze a page bundle, de · `REA-007` List provider capabilities and side effects
 
 <a id="req-npm-gsap"></a>

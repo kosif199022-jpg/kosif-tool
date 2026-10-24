@@ -188,7 +188,7 @@
 | SP-0137 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | 6 | 0 | SP-0006 SP-0047 SP-0161 SP-0057 |
 | SP-0138 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | 4 | 0 | SP-0056 SP-0098 SP-0097 SP-0163 |
 | SP-0139 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 33 | 33 | SP-0347 SP-0144 SP-0027 SP-0143 |
-| SP-0140 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 17 | 13 | SP-0262 SP-0148 SP-0268 SP-0266 |
+| SP-0140 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 18 | 14 | SP-0262 SP-0148 SP-0268 SP-0266 |
 | SP-0141 | ✅ | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | 16 | SP-0303 SP-0266 SP-0036 SP-0451 |
 | SP-0142 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | 15 | 15 | SP-0356 SP-0379 SP-0407 SP-0326 |
 | SP-0143 | ✅ | خريطة ترتيب المهارة · Skill Layout Map | 12 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
@@ -324,7 +324,7 @@
 | SP-0258 | ✅ | انزلاق بطيء-سريع-بطيء · Nudge curve slow–fast–slow | 6 | 3 | SP-0194 SP-0252 SP-0356 SP-0212 SP-0148 |
 | SP-0259 | ✅ | حركات طبقات الاستوديو · Studio layer entrances & opacity envelope | 5 | 4 | SP-0196 SP-0423 SP-0194 SP-0187 SP-0003 |
 | SP-0260 | 📄 | التمهيد والمتابعة · Anticipation & follow-through | 3 | 0 | SP-0202 SP-0334 SP-0436 SP-0316 SP-0053 |
-| SP-0261 | ✅ | محرك خارجي: iLoveVideoEditor · External engine: iLoveVideoEditor | 32 | 3 | SP-0142 SP-0263 SP-0274 SP-0356 |
+| SP-0261 | ✅ | محرك خارجي: iLoveVideoEditor · External engine: iLoveVideoEditor | 32 | 3 | SP-0142 SP-0140 SP-0263 SP-0274 |
 | SP-0262 | ✅ | رندر HTML حتمي · HTML seek renderer | 26 | 7 | SP-0131 SP-0140 SP-0272 SP-0469 |
 | SP-0263 | ✅ | مواصفة الخط الزمني · JSON timeline spec | 22 | 7 | SP-0356 SP-0142 SP-0382 SP-0349 |
 | SP-0264 | ✅ | تقسيم التصيير · Render sharding | 22 | 3 | SP-0371 SP-0272 SP-0278 SP-0296 SP-0140 |
@@ -340,7 +340,7 @@
 | SP-0274 | 📦 | قائمة قواعد Remotion · Remotion rule checklist | 13 | 0 | SP-0356 SP-0174 SP-0140 SP-0154 |
 | SP-0275 | ✅ | ترند: Self-critique on frames · Trend: Self-critique on frames | 13 | 1 | SP-0325 SP-0156 SP-0377 SP-0331 |
 | SP-0276 | ✅ | خيار التقنية: canvas · Stack option: canvas | 12 | 8 | SP-0311 SP-0413 SP-0288 SP-0274 SP-0140 |
-| SP-0277 | ✅ | فيلم بدون متصفح · workbench no-browser 2D film | 11 | 5 | SP-0405 SP-0140 SP-0268 SP-0303 |
+| SP-0277 | ✅ | فيلم بدون متصفح · workbench no-browser 2D film | 11 | 5 | SP-0405 SP-0268 SP-0303 SP-0448 SP-0140 |
 | SP-0278 | ✅ | تجميع اللقطات بنوافذ إطارات · Shot assembly by frame windows | 11 | 2 | SP-0357 SP-0264 SP-0187 SP-0361 SP-0156 |
 | SP-0279 | ✅ | جسر العرض ومزامنة الفيديو · Renderer shim + footage seeking | 10 | 3 | SP-0283 SP-0264 SP-0262 SP-0140 |
 | SP-0280 | ✅ | عشوائية ببذرة · Seeded randomness (mulberry32 + hash) | 10 | 5 | SP-0371 SP-0350 SP-0284 SP-0354 SP-0140 |
@@ -361,7 +361,7 @@
 | SP-0295 | 🟢 | إعداد السحابة · Cloud setup on claude.ai | 5 | 1 | SP-0113 SP-0264 SP-0021 SP-0045 |
 | SP-0296 | 🟢 | تشغيل دفعات · Batch jobs | 5 | 1 | SP-0264 SP-0367 SP-0174 SP-0371 SP-0163 |
 | SP-0297 | ✅ | إطباق محيطي وانعكاسات وحدود · SSAO / SSR / Outline / FXAA / SMAA nodes | 3 | 2 | SP-0283 SP-0451 SP-0171 SP-0431 SP-0140 |
-| SP-0298 | ✅ | ملف مفحوص لكل منصة · Checked per-platform delivery (8 platforms) | 35 | 15 | SP-0140 SP-0268 SP-0269 SP-0453 |
+| SP-0298 | ✅ | ملف مفحوص لكل منصة · Checked per-platform delivery (8 platforms) | 35 | 15 | SP-0268 SP-0140 SP-0269 SP-0453 |
 | SP-0299 | ✅ | مواصفات معاينة متجر التطبيقات · App-store preview video spec | 12 | 3 | SP-0375 SP-0135 SP-0265 SP-0192 |
 | SP-0300 | ✅ | صيغ الصوت للحلقات وتراخيص الموسيقى · Loop audio formats & music licence receipts | 8 | 5 | SP-0211 SP-0329 SP-0156 SP-0377 |
 | SP-0301 | ✅ | بريف الصورة المصغرة: 3 أفكار واختبار A/B · Thumbnail brief: 3 concepts + A/B | 7 | 5 | SP-0372 SP-0455 SP-0154 SP-0459 |

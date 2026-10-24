@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5848,
-"distinct_methods": 5567,
+"atoms": 5849,
+"distinct_methods": 5568,
 "twin_groups": 177,
 "superpowers": 481,
 "per_target": 12,
@@ -16857,7 +16857,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.115
+"sim": 0.113
 }
 ]
 },
@@ -17962,15 +17962,15 @@
 "motion",
 "rendering"
 ],
-"size": 17,
+"size": 18,
 "best": "proven",
 "status_mix": {
-"proven": 13,
+"proven": 14,
 "install": 4
 },
-"ready_now": 13,
+"ready_now": 14,
 "families": {
-"runnable-tools": 17
+"runnable-tools": 18
 },
 "atlas_folded": 0,
 "requires": [
@@ -17991,16 +17991,16 @@
 "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت"
 },
 {
-"id": "TOOL-16",
-"status": "proven",
-"name_en": "Doodle film runtime and renderer",
-"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
-},
-{
 "id": "TOOL-14",
 "status": "proven",
 "name_en": "SVG motion engine runtime",
 "name_ar": "محرك حركة SVG"
+},
+{
+"id": "TOOL-16",
+"status": "proven",
+"name_en": "Doodle film runtime and renderer",
+"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
 },
 {
 "id": "TOOL-77",
@@ -18033,16 +18033,16 @@
 "name_ar": "فيزياء الحركة"
 },
 {
+"id": "TOOL-64",
+"status": "proven",
+"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
+},
+{
 "id": "TOOL-18",
 "status": "proven",
 "name_en": "Motion math toolkit",
 "name_ar": "مكتبة رياضيات الحركة"
-},
-{
-"id": "TOOL-146",
-"status": "proven",
-"name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
-"name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
 },
 {
 "id": "TOOL-17",
@@ -18051,10 +18051,16 @@
 "name_ar": "مولّد مشاريع بداية لمحركات الحركة"
 },
 {
-"id": "TOOL-64",
+"id": "TOOL-146",
 "status": "proven",
-"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
-"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
+"name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
+"name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
+},
+{
+"id": "TOOL-171",
+"status": "proven",
+"name_en": "KOSIF Infinite Matrices causal style engine",
+"name_ar": "محرك المصفوفات اللانهائية للأساليب السببية"
 },
 {
 "id": "TOOL-150",
@@ -18091,7 +18097,7 @@
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_director.py",
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_director.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_runtime.py"
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_engine.mjs"
 ],
 "twins": [
 [
@@ -18107,15 +18113,15 @@
 "TOOL-81"
 ]
 ],
-"distinct_methods": 14,
+"distinct_methods": 15,
 "links": [
 {
 "id": "SP-0262",
-"sim": 0.29
+"sim": 0.284
 },
 {
 "id": "SP-0148",
-"sim": 0.242
+"sim": 0.237
 },
 {
 "id": "SP-0268",
@@ -18123,7 +18129,7 @@
 },
 {
 "id": "SP-0266",
-"sim": 0.2
+"sim": 0.197
 }
 ]
 },
@@ -19174,7 +19180,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.242
+"sim": 0.237
 },
 {
 "id": "SP-0325",
@@ -27797,7 +27803,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.054
+"sim": 0.053
 }
 ]
 },
@@ -33250,7 +33256,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.136
+"sim": 0.134
 }
 ]
 },
@@ -34031,15 +34037,15 @@
 "sim": 0.143
 },
 {
+"id": "SP-0140",
+"sim": 0.094
+},
+{
 "id": "SP-0263",
 "sim": 0.091
 },
 {
 "id": "SP-0274",
-"sim": 0.086
-},
-{
-"id": "SP-0356",
 "sim": 0.086
 }
 ]
@@ -34252,7 +34258,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.29
+"sim": 0.284
 },
 {
 "id": "SP-0272",
@@ -34679,7 +34685,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.105
+"sim": 0.104
 }
 ]
 },
@@ -35076,7 +35082,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.2
+"sim": 0.197
 }
 ]
 },
@@ -35625,7 +35631,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.102
+"sim": 0.1
 }
 ]
 },
@@ -35940,7 +35946,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.14
+"sim": 0.139
 }
 ]
 },
@@ -36377,7 +36383,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.135
+"sim": 0.132
 },
 {
 "id": "SP-0154",
@@ -36665,7 +36671,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.07
+"sim": 0.069
 }
 ]
 },
@@ -36795,16 +36801,20 @@
 "sim": 0.175
 },
 {
-"id": "SP-0140",
-"sim": 0.131
-},
-{
 "id": "SP-0268",
 "sim": 0.13
 },
 {
 "id": "SP-0303",
 "sim": 0.126
+},
+{
+"id": "SP-0448",
+"sim": 0.125
+},
+{
+"id": "SP-0140",
+"sim": 0.125
 }
 ]
 },
@@ -37065,7 +37075,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.142
+"sim": 0.139
 }
 ]
 },
@@ -37192,7 +37202,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.046
+"sim": 0.048
 }
 ]
 },
@@ -37318,7 +37328,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.086
+"sim": 0.085
 }
 ]
 },
@@ -37559,7 +37569,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.105
+"sim": 0.103
 }
 ]
 },
@@ -37780,7 +37790,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.104
+"sim": 0.102
 }
 ]
 },
@@ -38365,7 +38375,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.068
+"sim": 0.067
 }
 ]
 },
@@ -39135,12 +39145,12 @@
 "distinct_methods": 35,
 "links": [
 {
-"id": "SP-0140",
-"sim": 0.137
-},
-{
 "id": "SP-0268",
 "sim": 0.136
+},
+{
+"id": "SP-0140",
+"sim": 0.134
 },
 {
 "id": "SP-0269",
@@ -39805,7 +39815,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.152
+"sim": 0.13
 },
 {
 "id": "SP-0345",
@@ -40047,7 +40057,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.065
+"sim": 0.064
 }
 ]
 },
@@ -48206,7 +48216,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.153
+"sim": 0.149
 }
 ]
 },
@@ -48915,7 +48925,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.17
+"sim": 0.168
 }
 ]
 },
@@ -59964,7 +59974,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.038
+"sim": 0.037
 }
 ]
 },

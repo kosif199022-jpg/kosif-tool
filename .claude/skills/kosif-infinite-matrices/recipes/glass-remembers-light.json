@@ -1,0 +1,39 @@
+{
+  "schema": "kosif.matrices.recipe.v1",
+  "id": "KMX-R-0001",
+  "slug": "glass-remembers-light",
+  "title_ar": "الزجاج اللي بيتذكر الضوء",
+  "title_en": "Glass that remembers light",
+  "summary_en": "A beam writes a figure-eight into a stained-glass pane. Each glass tile stores the light it received (memory M) and leaks it slowly. Dust motes inside the glass climb the gradient of M, so after the beam switches off they keep drawing the path the light took.",
+  "summary_ar": "شعاع ضوء بيرسم رقم 8 على لوح زجاج معشّق. كل قطعة زجاج بتخزّن الضوء اللي وصلها (الذاكرة M) وبتفقده ببطء. ذرات الغبار جوه الزجاج بتطلع مع ميل M، فبعد ما الشعاع يطفي بتفضل ترسم المسار اللي الضوء مشي فيه.",
+  "parents": [
+    {"role": "structure", "style_id": "stained-glass", "family": "Painterly", "operator": "tessellate", "why": "Voronoi glass tiles set where memory can spread (lead lines block diffusion) and how strongly each tile absorbs light."},
+    {"role": "dynamics", "style_id": "flow-field", "family": "Data & Information", "operator": "integrate", "why": "Particles are integrated through a vector field; here the field is the gradient of stored light."},
+    {"role": "finish", "style_id": "light-painting", "family": "Light & Imaging", "operator": "accumulate", "why": "Long-exposure accumulation becomes a physical material state instead of a camera effect."}
+  ],
+  "bricks": {
+    "state": "Glass memory field M[x,y] in 0..1.5 on a 48x27 grid; tile id and absorption per cell; particle positions p_i and velocities v_i in grid units; light L[x,y,t].",
+    "operation": "write (L into M), leak (decay), diffuse inside a tile, sample gradient (bilinear central difference), integrate particles (semi-implicit Euler with drag), render (glow + motes + lead lines).",
+    "law": "M(t+dt) = clamp(M + dt*(absorb_tile*write*L - decay*M) + dt*diffusion*lap_tile(M), 0, 1.5);  v(t+dt) = (1-drag)*v + dt*(gain*grad M(p) + flow + jitter);  p(t+dt) = reflect(p + dt*v)",
+    "time": "30 steps per second, 1 step per frame, 10 s; beam ON from 0.0 to 4.0 s and OFF afterwards, so every effect seen after 4.0 s comes from history, not from the live stimulus.",
+    "memory": "Material memory = M (physical history inside the run). Research memory = the experiment ledger (memory/ledger.jsonl) that stores verdicts across runs.",
+    "feedback": "Particles read M (state -> dynamics). They do not write back to M in v1, so the causal chain is one-directional and testable: light -> M -> motion."
+  },
+  "grid": {"w": 48, "h": 27},
+  "fps": 30,
+  "duration": 10.0,
+  "particles": 160,
+  "seed": 20261024,
+  "stimulus": {"kind": "lemniscate_beam", "on": [0.0, 4.0], "center": [24.0, 13.5], "radius": [16.0, 8.5], "period": 4.0, "spot_sigma": 1.6},
+  "structure": {"tiles": 22, "absorb_min": 0.65, "absorb_max": 1.35},
+  "memory": {"mode": "persistent", "write": 3.2, "decay": 0.035, "diffusion": 0.35, "cap": 1.5},
+  "coupling": {"gain": 90.0, "drag": 0.10, "flow": [0.0, 0.0], "jitter": 2.2, "vmax": 9.0},
+  "finish": {"glass": "#0c1a24", "lead": "#05080b", "memory_low": "#b8742e", "memory_high": "#ffcf7a", "mote": "#fff4d6", "beam": "#ffffff"},
+  "conditions": {
+    "A_full": {"label_en": "A · memory + coupling", "label_ar": "أ · ذاكرة + اقتران", "set": {}},
+    "B_no_coupling": {"label_en": "B · memory, coupling off", "label_ar": "ب · ذاكرة بدون اقتران", "set": {"coupling.gain": 0.0}},
+    "C_no_memory": {"label_en": "C · no light memory", "label_ar": "ج · بدون ذاكرة ضوء", "set": {"memory.mode": "instant"}}
+  },
+  "metrics": {"trace_threshold": 0.4, "settle_after_off": 2.0},
+  "acceptance": {"min_capture_gain_vs_B": 0.15, "min_capture_gain_vs_C": 0.15, "seeds": [1, 2, 3, 4, 5, 6, 7, 8], "dose_gains": [0.0, 0.25, 0.5, 1.0, 1.5]}
+}

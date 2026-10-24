@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **169 powers follow** — ✅ 136 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **170 powers follow** — ✅ 137 · 🟢 21 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -15,7 +15,7 @@
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-164 (21)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-171 (22)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-168 (15)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
@@ -579,6 +579,15 @@
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`npm:animejs`](../requirements.md#req-npm-animejs) · [`npm:react`](../requirements.md#req-npm-react)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_physics.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_physics.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-171 · محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يبني نظامًا بصريًا جديدًا من لبنات سببية (حالة، عملية، قانون، زمن، ذاكرة، تغذية راجعة) مستخرجة من أساليب الأطلس الـ86، ويثبت قانونه بمقارنة مضادة أ/ب/ج عبر بذور متعددة ومنحنى جرعة، ويرندر مشهدًا قابلًا للتقليب ولقطات وفيديو MP4 بأدوات الأطلس، ويحفظ النتائج والأفكار والتقييمات والمصادر في سجل متسلسل بالهاش. — Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger.
+- **متى أستخدمها / when:** اعمل أسلوب جديد بقانون سببي وقارن مع وبدون ذاكرة الضوء / Invent a new motion style from causal bricks and prove the effect with a counterfactual
+- **كيف / how:** doctor: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor`; recipe validate: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py recipe validate .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json`; experiment: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py experiment --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass --render --mp4`; scene: `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py scene --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass.html`. Full card: `python3 scripts/hub.py tool infinite-matrices`. Limits: v1 has one stimulus, one structure and one dynamics law; its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating. **أرقام / params:** in: A recipe JSON (kosif.matrices.recipe.v1), the committed 86-card index and code-brick data, and for sources a local file or URL. · out: JSON on stdout; experiment writes report.json, report.md, scene.html, stills/*.jpg and an MP4 into --out; --record, rate, ideate --record, hypotheses mark and sources add write the tracked files memory/ledger.jsonl and sources/registry.json.
+- **تثبيت / install:** `needs on PATH: python3 · optional: node, playwright, ffmpeg`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py` · `kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py` · `kosif-tool/.claude/skills/kosif-infinite-matrices/scripts/kmx.py`
 - **المصدر / source:** data/tools.json
 
 ## Editing and reference video / المونتاج والفيديو المرجعي
@@ -1514,7 +1523,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (169)
+- الرخص / licences: — (170)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

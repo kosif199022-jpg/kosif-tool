@@ -15001,6 +15001,133 @@
       ],
       "evidence": "tested-here",
       "power_id": "TOOL-170"
+    },
+    {
+      "id": "infinite-matrices",
+      "path": ".claude/skills/kosif-infinite-matrices/scripts/kmx.py",
+      "root": "repo",
+      "kind": "cli",
+      "area": "motion",
+      "title_en": "KOSIF Infinite Matrices causal style engine",
+      "title_ar": "محرك المصفوفات اللانهائية للأساليب السببية",
+      "summary_en": "Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger.",
+      "summary_ar": "يبني نظامًا بصريًا جديدًا من لبنات سببية (حالة، عملية، قانون، زمن، ذاكرة، تغذية راجعة) مستخرجة من أساليب الأطلس الـ86، ويثبت قانونه بمقارنة مضادة أ/ب/ج عبر بذور متعددة ومنحنى جرعة، ويرندر مشهدًا قابلًا للتقليب ولقطات وفيديو MP4 بأدوات الأطلس، ويحفظ النتائج والأفكار والتقييمات والمصادر في سجل متسلسل بالهاش.",
+      "use_when": [
+        "اعمل أسلوب جديد بقانون سببي وقارن مع وبدون ذاكرة الضوء",
+        "طوّر فكرة الزجاج اللي بيتذكر الضوء ورندرها فيديو",
+        "Invent a new motion style from causal bricks and prove the effect with a counterfactual",
+        "Which of the 86 atlas styles really use a field to steer motion?",
+        "سجّل المصدر الجديد ده وابني على نتايج التجارب اللي فاتت"
+      ],
+      "keywords": [
+        "infinite matrices",
+        "causal style",
+        "counterfactual",
+        "A/B test",
+        "light memory",
+        "glass",
+        "style synthesis",
+        "86 styles",
+        "REA",
+        "research ledger",
+        "source registry",
+        "المصفوفات اللانهائية",
+        "أسلوب سببي",
+        "ذاكرة الضوء",
+        "الزجاج",
+        "مقارنة مع وبدون",
+        "سجل التجارب",
+        "سجل المصادر"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor",
+          "does": "Reports python, node+Playwright, ffmpeg, the atlas assets, the 86-card index, the 283 hypothesis statuses, the ledger hash chain and the number of registered sources; exits 1 if the ledger chain is broken."
+        },
+        {
+          "name": "recipe validate",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py recipe validate .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json",
+          "does": "Checks schema, all six bricks, three parents in the order structure/dynamics/finish from three families, operators tagged on each parent in the 86-card index, overrides that point at real fields, and no shared code lineage between parents (REA fingerprints). Prints the recipe hash."
+        },
+        {
+          "name": "experiment",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py experiment --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass --render --mp4",
+          "does": "Simulates every condition from identical inputs, replicates over the recipe's seeds, sweeps the coupling gain, and returns CONFIRMED_IN_MODEL only when all checks pass (exit 3 otherwise). Writes report.json, report.md and scene.html; --render adds JPEG stills and a pixel A/B/C difference; --mp4 renders 1280x720 video with the offline atlas score; --record appends to the ledger (refuses a recipe hash already recorded unless --replication)."
+        },
+        {
+          "name": "scene",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py scene --recipe .claude/skills/kosif-infinite-matrices/recipes/glass-remembers-light.json --out out/kmx/glass.html",
+          "does": "Writes only the self-contained scene page (atlas contract: seek, DURATION, scoreSound, __ready, __kosif; views grid / one condition / storyboard)."
+        },
+        {
+          "name": "ledger",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py ledger stats",
+          "does": "stats: events by type, chain check, the 283 hypothesis statuses, experiments and Beta operator scores; list: one line per event; verify: hash-chain check (exit 1 when broken)."
+        },
+        {
+          "name": "rate",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py rate --experiment EXP-0001 --score 4 --by \"reviewer\"",
+          "does": "Appends a human rating (0..5) for an experiment that exists in the ledger; ratings feed the operator scores used by ideate."
+        },
+        {
+          "name": "ideate",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py ideate --count 10",
+          "does": "Proposes parent/role triples from three families, skipping any signature already in the 283 seeds or the ledger and any pair of parents that share code (REA), ranked by ledger feedback; --record saves them as PROPOSED ideas."
+        },
+        {
+          "name": "hypotheses",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py hypotheses stats",
+          "does": "stats / show ID / mark ID --status S --evidence FILE: the 283 seeds stay UNTESTED_UNRENDERED until marked with an evidence file whose sha256 is stored."
+        },
+        {
+          "name": "sources",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py sources list",
+          "does": "list / verify --file F / add --file F --title T --relevance core|method|context|not_relevant --rights R --used-for \"a;b\": the registry of every source by sha256; the same bytes under a new name become an alias."
+        },
+        {
+          "name": "bricks",
+          "example": "python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py bricks show flow-field",
+          "does": "summary or show ID from data/86_style_code_bricks.json: six bricks per style inferred from its code, REA function/call/relation counts and code-lineage neighbours."
+        }
+      ],
+      "inputs": "A recipe JSON (kosif.matrices.recipe.v1), the committed 86-card index and code-brick data, and for sources a local file or URL.",
+      "outputs": "JSON on stdout; experiment writes report.json, report.md, scene.html, stills/*.jpg and an MP4 into --out; --record, rate, ideate --record, hypotheses mark and sources add write the tracked files memory/ledger.jsonl and sources/registry.json.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [
+          "node",
+          "playwright",
+          "ffmpeg"
+        ],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "--record, rate, ideate --record, hypotheses mark and sources add append to tracked files (memory/ledger.jsonl, sources/registry.json) that are meant to be committed as shared research memory; run them only for results the user wants kept.",
+      "limits": "v1 has one stimulus, one structure and one dynamics law; its causal claims hold inside the numerical model only, the 283 seeds are untested, code-brick labels are static inferences, and nothing is production-ready without a human rating.",
+      "evidence": "tested-here",
+      "evidence_note": "21/21 unit tests passed; EXP-0001 rendered and video-verified on this checkout",
+      "tests": [
+        ".claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py",
+        ".claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-infinite-matrices/SKILL.md",
+        ".claude/skills/kosif-infinite-matrices/references/engine.md",
+        ".claude/skills/kosif-infinite-matrices/references/limits.md",
+        ".claude/skills/kosif-infinite-matrices/references/examples.md"
+      ],
+      "families": [
+        "creativity-engine",
+        "particles-fluids-physics",
+        "light-glow-bloom",
+        "engines-render-pipeline"
+      ],
+      "power_id": "TOOL-171"
     }
   ]
 }
