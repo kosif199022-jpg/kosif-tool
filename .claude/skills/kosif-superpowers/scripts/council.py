@@ -78,6 +78,7 @@ PRIMARY_KEYS = {
     "image": ("صور", "صورة", "image", "تصميم", "design"),
     "document": ("كتابة", "writing", "نصوص", "مستند", "document", "مقال", "article"),
     "research": ("بحث", "research", "مصادر"),
+    "strategy": ("استراتيجية", "strategy", "تسويق", "marketing", "تسعير", "pricing", "مالية", "finance", "أعمال", "business"),
 }
 GOVERNANCE_SECTOR = 50
 PROTOCOL = "USIP v5.6"
@@ -110,6 +111,8 @@ SPECIALIZE = {
     "image": ("مصمم هوية", "ناقد بصري", "مصمم إنتاج", "جمهور العلامة", "مدقق رخص الخطوط والصور"),
     "document": ("كاتب مبدع", "محرّر صارم", "منسّق مستندات", "القارئ المستهدف", "مدقق المصادر والحقوق"),
     "research": ("باحث استكشافي", "مراجع منهجي", "باحث تطبيقي", "مستفيد من البحث", "مدقق المصادر"),
+    # a business decision: one seat argues against the plan and one checks the numbers before anyone commits money
+    "strategy": ("مستشار استراتيجي", "محامي الشيطان ضد الخطة", "مدير مالي", "العميل المستهدف", "مدقق الافتراضات والأرقام"),
 }
 MEMBER_FIELDS_R1 = ("position", "claims", "proposal", "risks")
 MEMBER_FIELDS_R2 = ("attacks", "steelman", "concessions")

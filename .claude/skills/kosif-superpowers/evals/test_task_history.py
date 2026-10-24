@@ -161,6 +161,16 @@ class Gate(Base):
     def test_any_iban_is_refused(self):
         self.assertRefused(entry(notes="pay DE89370400440532013000"), "IBAN")
 
+    def test_grouped_ibans_are_not_published(self):
+        # Synthetic values, representative of how bank statements format IBANs.
+        self.assertRefused(entry(notes="Transfer to SA 03 8000 0000 0000 1234 5678"), "IBAN")
+        self.assertRefused(entry(params={"bank_ref": "sa-03-8000-0000-0000-1234-5678"}), "IBAN")
+        self.assertRefused(entry(notes="DE89 3704 0044 0532 0130 00"), "IBAN")
+
+    def test_bank_privacy_gate_avoids_normal_developer_text(self):
+        rec = entry(notes="2026-10-23; 18:09; 1080x1920; https://github.com/kosif199022-jpg/kosif-tool")
+        self.assertEqual(self.add(rec)[0], 0)
+
     def test_git_remotes_and_versions_are_not_personal_data(self):
         rec = entry(notes="git clone git@github.com:o/r.git; npm i react@18.3.1; 2026-10-23 at 1080x1920")
         self.assertEqual(self.add(rec)[0], 0)
