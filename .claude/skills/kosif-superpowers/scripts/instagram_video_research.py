@@ -42,7 +42,7 @@ LEXICON = {
 def normalize(value: str) -> str:
     value = unicodedata.normalize("NFKC", value or "").casefold()
     value = re.sub(r"[\u064b-\u065f\u0670\u0640]", "", value)
-    value = value.translate(str.maketrans("أإآىؤئ", "اايوي"))
+    value = value.translate(str.maketrans("أإآىؤئ", "ااايوي"))
     return re.sub(r"[^\w]+", " ", value).strip()
 
 def tokens(value: str) -> set[str]:
@@ -124,10 +124,17 @@ def add_reel(db: sqlite3.Connection, args):
                        discovery_query,provenance,notes,created_utc,updated_utc)
     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)
     ON CONFLICT(shortcode) DO UPDATE SET url=excluded.url,username=excluded.username,
-       title=excluded.title,caption=excluded.caption,tags=excluded.tags,
-       mechanisms=excluded.mechanisms,status=excluded.status,
-       discovery_query=excluded.discovery_query,provenance=excluded.provenance,
-       notes=excluded.notes,updated_utc=excluded.updated_utc
+       title=CASE WHEN excluded.title<>'' THEN excluded.title ELSE reels.title END,
+       caption=CASE WHEN excluded.caption<>'' THEN excluded.caption ELSE reels.caption END,
+       tags=CASE WHEN excluded.tags<>'[]' THEN excluded.tags ELSE reels.tags END,
+       mechanisms=CASE WHEN excluded.mechanisms<>'[]' THEN excluded.mechanisms ELSE reels.mechanisms END,
+       status=CASE WHEN reels.status='visually_reviewed' THEN reels.status
+                   WHEN reels.status='metadata_reviewed' AND excluded.status='candidate' THEN reels.status
+                   ELSE excluded.status END,
+       discovery_query=CASE WHEN excluded.discovery_query<>'' THEN excluded.discovery_query ELSE reels.discovery_query END,
+       provenance=CASE WHEN excluded.provenance<>'manual' THEN excluded.provenance ELSE reels.provenance END,
+       notes=CASE WHEN excluded.notes<>'' THEN excluded.notes ELSE reels.notes END,
+       updated_utc=excluded.updated_utc
     """, (shortcode,url,username,args.title or "",args.caption or "",
           json.dumps(as_list(args.tags),ensure_ascii=False),
           json.dumps(as_list(args.mechanisms),ensure_ascii=False),
@@ -183,6 +190,10 @@ def plan(topic: str, account: str = "", limit: int = 12):
         seen.add(url)
         results.append({"kind":kind,"query":q,"account":username,
                         "url":url,"status":"SEARCH_PLAN_NOT_VERIFIED_RESULT"})
+    # Include unrestricted topical discovery alongside searches for seed accounts.
+    for w in variants[:2]:
+        q = f'site:instagram.com/reel/ "{w}"'
+        add("public_web_index", q, "https://www.google.com/search?"+urlencode({"q":q}))
     for source in candidates:
         user = source["username"]
         add("profile_reels", user, source["canonical_url"].rstrip("/") + "/reels/",user)
