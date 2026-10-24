@@ -1,0 +1,27 @@
+{
+  "schema": "kosif.instagram.sources.v1",
+  "date": "2026-10-24",
+  "accounts": [
+    {
+      "handle": "asirgokerr",
+      "url": "https://www.instagram.com/asirgokerr/",
+      "user_supplied": true,
+      "status": "unreviewed_source",
+      "reels_verified": 0
+    },
+    {
+      "handle": "brkn.land",
+      "url": "https://www.instagram.com/brkn.land/",
+      "user_supplied": true,
+      "status": "unreviewed_source",
+      "reels_verified": 0
+    }
+  ],
+  "policy": {
+    "no_scraping": true,
+    "no_download": true,
+    "do_not_claim_watched": true,
+    "permissions_required_for_official_api": true
+  },
+  "integration": ".claude/skills/kosif-infinite-matrices/SKILL.md"
+}
