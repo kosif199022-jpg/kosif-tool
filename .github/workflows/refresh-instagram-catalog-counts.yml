@@ -1,0 +1,55 @@
+name: Refresh Superpowers catalog counts (temporary)
+on:
+  push:
+    branches:
+      - feat/instagram-discovery-matrices-20261024
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Update proved count markers and rebuild generated chapters
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          paths = [
+            Path(".claude/skills/kosif-superpowers/SKILL.md"),
+            Path(".claude/skills/kosif-superpowers/START.md"),
+            Path(".claude/skills/kosif-superpowers/references/capability-map.md"),
+            Path("README.md"),Path("llms.txt")
+          ]
+          for p in paths:
+              text=p.read_text(encoding="utf-8")
+              old=text
+              text=text.replace("5,849","5,850").replace("5849","5850")
+              if p.name=="SKILL.md":
+                  text=text.replace("proven=1014","proven=1015")
+                  text=text.replace("645 proven records","646 proven records")
+              if text!=old:
+                  p.write_text(text,encoding="utf-8")
+          PY
+          python3 .claude/skills/kosif-superpowers/scripts/build_chapters.py
+          python3 .claude/skills/kosif-superpowers/scripts/hub.py build
+          python3 .claude/skills/kosif-superpowers/scripts/skill_layout.py build
+      - name: Commit generated docs and count updates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .claude/skills/kosif-superpowers/SKILL.md
+          git add .claude/skills/kosif-superpowers/START.md
+          git add .claude/skills/kosif-superpowers/manifest.json
+          git add .claude/skills/kosif-superpowers/references/INDEX.md
+          git add .claude/skills/kosif-superpowers/references/LAYOUT.md
+          git add .claude/skills/kosif-superpowers/references/guides/sources.md
+          git add .claude/skills/kosif-superpowers/data/powers/runnable-tools.json
+          git add .claude/skills/kosif-superpowers/references/powers/runnable-tools.md
+          git add .claude/skills/kosif-superpowers/references/capability-map.md README.md llms.txt
+          if ! git diff --cached --quiet; then
+            git commit -m 'build: synchronize power counts and generated chapters'
+            git push origin HEAD:feat/instagram-discovery-matrices-20261024
+          fi
