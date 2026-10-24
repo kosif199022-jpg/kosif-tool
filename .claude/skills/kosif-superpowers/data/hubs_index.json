@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5849,
+ "atoms": 5850,
  "superpowers": 481,
  "hubs": [
   {
@@ -408,8 +408,8 @@
     "SP-0021",
     "SP-0144",
     "SP-0145",
-    "SP-0148",
     "SP-0147",
+    "SP-0148",
     "SP-0149",
     "SP-0150",
     "SP-0151",
@@ -433,19 +433,19 @@
     },
     {
      "id": "SP-0141",
+     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
+     "name_en": "Reference Edit Engine",
+     "size": 17,
+     "best": "proven",
+     "ready_now": 17
+    },
+    {
+     "id": "SP-0142",
      "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
      "name_en": "Staged drawing and original three-value visual studies",
      "size": 16,
      "best": "proven",
      "ready_now": 16
-    },
-    {
-     "id": "SP-0142",
-     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
-     "name_en": "Reference Edit Engine",
-     "size": 15,
-     "best": "proven",
-     "ready_now": 15
     },
     {
      "id": "SP-0140",
@@ -504,7 +504,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0148",
+     "id": "SP-0147",
      "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
      "name_en": "Subtitle to words.json converter",
      "size": 9,
@@ -512,23 +512,23 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0147",
+     "id": "SP-0148",
      "name_ar": "مستكشف مصادر المجتمع",
      "name_en": "Community source scout",
-     "size": 10,
+     "size": 9,
      "best": "proven",
-     "ready_now": 8
+     "ready_now": 7
     }
    ],
-   "powers": 283,
+   "powers": 284,
    "status_mix": {
-    "proven": 164,
+    "proven": 165,
     "ready": 22,
     "install": 15,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 186,
+   "ready_now": 187,
    "requires": [
     "python3",
     "ffmpeg",
@@ -589,8 +589,8 @@
     "pip:anthropic",
     "npm:animejs",
     "npm:esbuild",
-    "pip:rdkit",
     "pip:fonttools",
+    "pip:rdkit",
     "key:openai",
     "npm:lottie",
     "model:yunet",
@@ -2115,7 +2115,7 @@
     "images",
     "motion",
     "quality",
-    "agents"
+    "type"
    ]
   },
   {

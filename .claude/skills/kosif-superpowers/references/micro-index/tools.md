@@ -215,6 +215,7 @@
 | `fetch-reference` | TOOL-93 | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure | `python3 scripts/fetch_reference.py https://example.com/page --list --…` | 2 |
 | `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 0 |
 | `github-top-repos` | TOOL-160 | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker | `python3 scripts/github_top_repos.py build` | 1 |
+| `instagram-reference-discovery` | TOOL-172 | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices | `python3 scripts/instagram_reference_bridge.py doctor` | 1 |
 | `media-sources` | TOOL-47 | بوابة الوسائط المرخّصة · Licensed stock media gateway | `python3 scripts/media_sources.py list` | 1 |
 | `rea-creative-research-atlas` | TOOL-48 | باني فهرس البحث الإبداعي · Creative research catalog builder | `python3 scripts/rea_creative_research_atlas.py report` | 1 |
 | `rebalance-creative-repos` | TOOL-49 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog | `python3 scripts/rebalance_creative_repos.py run` | 0 |

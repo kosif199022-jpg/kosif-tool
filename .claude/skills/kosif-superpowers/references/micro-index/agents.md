@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 268 powers
+[← الفهرس الدقيق / micro index](README.md) · 269 powers
 
 ## الفهرس / contents
 
@@ -66,37 +66,39 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-81 | 📦 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
 | TOOL-83 | 📦 | قالب فيلم HTML Canvas · HTML Canvas film starter → `starter-html-canvas` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
 | TOOL-84 | 📦 | قالب فيلم Remotion · Remotion film starter → `starter-remotion` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, npm:remotion, npm:react |
-| TOOL-115 | ✅ | الرسم الموحد: خطوط وأشكال وطبقات وتصدير · Unified Draw: freehand + geometry + layered export → `unified-draw` | SP-0141 Staged drawing and original three-value… | ffmpeg, pip:pillow |
-| TOOL-117 | ✅ | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو · Unified Media: photo adjustments + drawn overlays + GIF/MP4 → `unified-media` | SP-0141 Staged drawing and original three-value… | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
-| TOOL-136 | ✅ | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات · Drawing-book methods atlas with layered construction SVGs → `drawing-methods` | SP-0141 Staged drawing and original three-value… | python3, tesseract |
-| TOOL-144 | ✅ | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل · Book-chapter drawing coach and independent raster visual QA → `drawing-visual-qa` | SP-0141 Staged drawing and original three-value… | pip:pillow |
-| TOOL-149 | ✅ | تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية · Diagram layout: graph lint, deterministic layered layout and RTL-ready SVG → `diagram-layout` | SP-0141 Staged drawing and original three-value… | python3 |
-| TOOL-153 | ✅ | رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG · Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix → `brand-tokens` | SP-0141 Staged drawing and original three-value… | python3, npm:axe |
-| TOOL-157 | ✅ | نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية · Hand-drawn or hand-painted version of any photo or imagined scene: pencil, charcoal, ink, coloured pencil, oil brush or watercolour → `portrait-pipeline` | SP-0141 Staged drawing and original three-value… | chromium, blender, pip:numpy, pip:opencv … |
-| TOOL-169 | ✅ | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة · Colour media engine: coloured pencil, oil brush and watercolour painting of a photo → `color-media` | SP-0141 Staged drawing and original three-value… | chromium, pip:numpy, pip:opencv, pip:mediapipe |
-| TOOL-27 | ✅ | تحريك الشخصية بكامل الجسم · Full-body character animator → `character-fullbody` | SP-0141 Staged drawing and original three-value… | ffmpeg, pip:pillow, pip:rdkit |
-| TOOL-29 | ✅ | رسم الشخصيات والمشاهد بالكود · Code Drawing Master storyboards → `code-drawing-master` | SP-0141 Staged drawing and original three-value… | pip:faster-whisper |
-| TOOL-30 | ✅ | الرسم الإبداعي بالطبقات · Creative Paint layered renderer → `creative-paint` | SP-0141 Staged drawing and original three-value… | ffmpeg, pip:pillow |
-| TOOL-31 | ✅ | الرسم الذكي ومساعد الأشكال · Smart Draw shape assist → `smart-draw` | SP-0141 Staged drawing and original three-value… | pip:pillow |
-| TOOL-89 | ✅ | حزمة الرسم في استوديو التطبيقات · App Studio painting batch → `app-studio-paint` | SP-0141 Staged drawing and original three-value… | chromium, pip:numpy, pip:pillow, pip:opencv |
-| TOOL-134 | 🟢 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies → `creative-principles` | SP-0141 Staged drawing and original three-value… | python3 |
-| TOOL-135 | 🟢 | أكاديمية الرسم والدروس المبنية على مصادر · Source-aware drawing school and user-authorized book audits → `drawing-academy` | SP-0141 Staged drawing and original three-value… | python3 |
-| TOOL-137 | 🟢 | منظور هندسي ومقاييس التباين اللوني · Original two-point perspective and numeric palette analysis → `perspective-color-lab` | SP-0141 Staged drawing and original three-value… | python3, npm:axe |
-| TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0142 Reference Edit Engine | ffmpeg, pip:pillow |
-| TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0142 Reference Edit Engine | ffmpeg, pip:pillow |
-| TOOL-130 | ✅ | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) → `montage-pro` | SP-0142 Reference Edit Engine | ffmpeg, chromium, imagemagick, yt-dlp … |
-| TOOL-131 | ✅ | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel → `reel-factory` | SP-0142 Reference Edit Engine | ffmpeg, node, chromium, fonts:arabic |
-| TOOL-132 | ✅ | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine → `dua-wednesday` | SP-0142 Reference Edit Engine | ffmpeg, node, chromium, yt-dlp … |
-| TOOL-166 | ✅ | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL → `look-pipeline` | SP-0142 Reference Edit Engine | ffmpeg, python3 |
-| TOOL-168 | ✅ | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract → `fast-edit` | SP-0142 Reference Edit Engine | ffmpeg, python3 |
-| TOOL-19 | ✅ | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer → `cinematic-broll-render` | SP-0142 Reference Edit Engine | ffmpeg, python3 |
-| TOOL-20 | ✅ | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner → `cinematic-cut-planner` | SP-0142 Reference Edit Engine | python3 |
-| TOOL-21 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe → `motion-reference-probe` | SP-0142 Reference Edit Engine | ffmpeg, python3 |
-| TOOL-22 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine → `reference-edit-engine` | SP-0142 Reference Edit Engine | pip:higgsfield, npm:remotion, npm:react |
-| TOOL-23 | ✅ | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint → `reference-visual-fingerprint` | SP-0142 Reference Edit Engine | ffmpeg, python3 |
-| TOOL-24 | ✅ | جسر سير عمل الفيديو · Video Workflow Bridge → `video-workflow-bridge` | SP-0142 Reference Edit Engine | python3 |
-| TOOL-35 | ✅ | بوابة جودة خطة المونتاج · Reference-edit structural quality gate → `creative-quality-gate` | SP-0142 Reference Edit Engine | python3, npm:remotion |
-| TOOL-85 | ✅ | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder → `mimic` | SP-0142 Reference Edit Engine | ffmpeg, tesseract, pip:numpy, pip:pillow … |
+| TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0141 Reference Edit Engine | ffmpeg, pip:pillow |
+| TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0141 Reference Edit Engine | ffmpeg, pip:pillow |
+| TOOL-130 | ✅ | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) → `montage-pro` | SP-0141 Reference Edit Engine | ffmpeg, chromium, imagemagick, yt-dlp … |
+| TOOL-131 | ✅ | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel → `reel-factory` | SP-0141 Reference Edit Engine | ffmpeg, node, chromium, fonts:arabic |
+| TOOL-132 | ✅ | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine → `dua-wednesday` | SP-0141 Reference Edit Engine | ffmpeg, node, chromium, yt-dlp … |
+| TOOL-166 | ✅ | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL → `look-pipeline` | SP-0141 Reference Edit Engine | ffmpeg, python3 |
+| TOOL-168 | ✅ | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract → `fast-edit` | SP-0141 Reference Edit Engine | ffmpeg, python3 |
+| TOOL-19 | ✅ | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer → `cinematic-broll-render` | SP-0141 Reference Edit Engine | ffmpeg, python3 |
+| TOOL-20 | ✅ | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner → `cinematic-cut-planner` | SP-0141 Reference Edit Engine | python3 |
+| TOOL-21 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe → `motion-reference-probe` | SP-0141 Reference Edit Engine | ffmpeg, python3 |
+| TOOL-22 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine → `reference-edit-engine` | SP-0141 Reference Edit Engine | pip:higgsfield, npm:remotion, npm:react |
+| TOOL-23 | ✅ | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint → `reference-visual-fingerprint` | SP-0141 Reference Edit Engine | ffmpeg, python3 |
+| TOOL-24 | ✅ | جسر سير عمل الفيديو · Video Workflow Bridge → `video-workflow-bridge` | SP-0141 Reference Edit Engine | python3 |
+| TOOL-35 | ✅ | بوابة جودة خطة المونتاج · Reference-edit structural quality gate → `creative-quality-gate` | SP-0141 Reference Edit Engine | python3, npm:remotion |
+| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0141 Reference Edit Engine | ffmpeg, python3, yt-dlp |
+| TOOL-85 | ✅ | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder → `mimic` | SP-0141 Reference Edit Engine | ffmpeg, tesseract, pip:numpy, pip:pillow … |
+| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0141 Reference Edit Engine | ffmpeg, python3, key:unspecified |
+| TOOL-115 | ✅ | الرسم الموحد: خطوط وأشكال وطبقات وتصدير · Unified Draw: freehand + geometry + layered export → `unified-draw` | SP-0142 Staged drawing and original three-value… | ffmpeg, pip:pillow |
+| TOOL-117 | ✅ | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو · Unified Media: photo adjustments + drawn overlays + GIF/MP4 → `unified-media` | SP-0142 Staged drawing and original three-value… | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
+| TOOL-136 | ✅ | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات · Drawing-book methods atlas with layered construction SVGs → `drawing-methods` | SP-0142 Staged drawing and original three-value… | python3, tesseract |
+| TOOL-144 | ✅ | مدرب الرسم من فصول الكتب والتشخيص البصري المستقل · Book-chapter drawing coach and independent raster visual QA → `drawing-visual-qa` | SP-0142 Staged drawing and original three-value… | pip:pillow |
+| TOOL-149 | ✅ | تخطيط المخططات: فحص الرسم البياني وتخطيط طبقي حتمي وSVG جاهز للعربية · Diagram layout: graph lint, deterministic layered layout and RTL-ready SVG → `diagram-layout` | SP-0142 Staged drawing and original three-value… | python3 |
+| TOOL-153 | ✅ | رموز الهوية: ألوان الشعار ورموز بثلاث طبقات ومصفوفة تباين WCAG · Brand tokens: SVG palette, 3-tier design tokens and WCAG contrast matrix → `brand-tokens` | SP-0142 Staged drawing and original three-value… | python3, npm:axe |
+| TOOL-157 | ✅ | نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية · Hand-drawn or hand-painted version of any photo or imagined scene: pencil, charcoal, ink, coloured pencil, oil brush or watercolour → `portrait-pipeline` | SP-0142 Staged drawing and original three-value… | chromium, blender, pip:numpy, pip:opencv … |
+| TOOL-169 | ✅ | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة · Colour media engine: coloured pencil, oil brush and watercolour painting of a photo → `color-media` | SP-0142 Staged drawing and original three-value… | chromium, pip:numpy, pip:opencv, pip:mediapipe |
+| TOOL-27 | ✅ | تحريك الشخصية بكامل الجسم · Full-body character animator → `character-fullbody` | SP-0142 Staged drawing and original three-value… | ffmpeg, pip:pillow, pip:rdkit |
+| TOOL-29 | ✅ | رسم الشخصيات والمشاهد بالكود · Code Drawing Master storyboards → `code-drawing-master` | SP-0142 Staged drawing and original three-value… | pip:faster-whisper |
+| TOOL-30 | ✅ | الرسم الإبداعي بالطبقات · Creative Paint layered renderer → `creative-paint` | SP-0142 Staged drawing and original three-value… | ffmpeg, pip:pillow |
+| TOOL-31 | ✅ | الرسم الذكي ومساعد الأشكال · Smart Draw shape assist → `smart-draw` | SP-0142 Staged drawing and original three-value… | pip:pillow |
+| TOOL-89 | ✅ | حزمة الرسم في استوديو التطبيقات · App Studio painting batch → `app-studio-paint` | SP-0142 Staged drawing and original three-value… | chromium, pip:numpy, pip:pillow, pip:opencv |
+| TOOL-134 | 🟢 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies → `creative-principles` | SP-0142 Staged drawing and original three-value… | python3 |
+| TOOL-135 | 🟢 | أكاديمية الرسم والدروس المبنية على مصادر · Source-aware drawing school and user-authorized book audits → `drawing-academy` | SP-0142 Staged drawing and original three-value… | python3 |
+| TOOL-137 | 🟢 | منظور هندسي ومقاييس التباين اللوني · Original two-point perspective and numeric palette analysis → `perspective-color-lab` | SP-0142 Staged drawing and original three-value… | python3, npm:axe |
 | TOOL-100 | ✅ | خريطة ترتيب المهارة · Skill Layout Map → `skill-layout` | SP-0143 Skill Layout Map | python3 |
 | TOOL-108 | ✅ | خريطة سوبر باور بمنهج REA · Superpowers map, REA approach → `rea-superpowers-map` | SP-0143 Skill Layout Map | python3, npm:rea |
 | TOOL-128 | ✅ | الخريطة الذهنية المرحلية وتدقيق التكرار · Task-stage capability mind map and duplicate audit → `capability-mindmap` | SP-0143 Skill Layout Map | python3, npm:mermaid |
@@ -141,25 +143,24 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-65 | ✅ | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude · AI for business: 9 functions, 64 workflows, Claude-native gated runbooks → `business-workflows` | SP-0146 Prompt Lab | python3, key:unspecified |
 | TOOL-69 | ✅ | محرك التفكير وقوالبه · Thinking engine scaffolds → `think` | SP-0146 Prompt Lab | python3 |
 | TOOL-74 | ✅ | بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate → `anchor-gate` | SP-0146 Prompt Lab | python3 |
-| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0147 Community source scout | ffmpeg, python3 |
-| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0147 Community source scout | pip:office |
-| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0147 Community source scout | python3 |
-| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0147 Community source scout | python3, npm:rea |
-| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0147 Community source scout | python3 |
-| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0147 Community source scout | ffmpeg, python3 |
-| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0147 Community source scout | ffmpeg, python3, key:unspecified |
-| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0147 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
-| TOOL-118 | ✅ | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video → `unified-cinematic` | SP-0148 Subtitle to words.json converter | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
-| TOOL-12 | ✅ | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge → `creative-reasoning-bridge` | SP-0148 Subtitle to words.json converter | python3 |
-| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0148 Subtitle to words.json converter | python3 |
-| TOOL-152 | ✅ | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML → `tts-script` | SP-0148 Subtitle to words.json converter | python3 |
-| TOOL-165 | ✅ | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT → `caption-lines` | SP-0148 Subtitle to words.json converter | pip:faster-whisper, key:openai |
-| TOOL-25 | ✅ | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper → `audio-cue-mapper` | SP-0148 Subtitle to words.json converter | pip:faster-whisper |
-| TOOL-26 | ✅ | فرضيات إيقاع الموسيقى · Music rhythm hypotheses → `music-rhythm-engine` | SP-0148 Subtitle to words.json converter | python3 |
-| TOOL-28 | ✅ | تحريك ذراع الشخصية بالحركية العكسية · Character IK arm animator → `character-ik` | SP-0148 Subtitle to words.json converter | ffmpeg, pip:pillow |
-| TOOL-86 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter → `repo-words-convert` | SP-0148 Subtitle to words.json converter | pip:faster-whisper |
+| TOOL-118 | ✅ | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video → `unified-cinematic` | SP-0147 Subtitle to words.json converter | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
+| TOOL-12 | ✅ | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge → `creative-reasoning-bridge` | SP-0147 Subtitle to words.json converter | python3 |
+| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0147 Subtitle to words.json converter | python3 |
+| TOOL-152 | ✅ | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML → `tts-script` | SP-0147 Subtitle to words.json converter | python3 |
+| TOOL-165 | ✅ | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT → `caption-lines` | SP-0147 Subtitle to words.json converter | pip:faster-whisper, key:openai |
+| TOOL-25 | ✅ | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper → `audio-cue-mapper` | SP-0147 Subtitle to words.json converter | pip:faster-whisper |
+| TOOL-26 | ✅ | فرضيات إيقاع الموسيقى · Music rhythm hypotheses → `music-rhythm-engine` | SP-0147 Subtitle to words.json converter | python3 |
+| TOOL-28 | ✅ | تحريك ذراع الشخصية بالحركية العكسية · Character IK arm animator → `character-ik` | SP-0147 Subtitle to words.json converter | ffmpeg, pip:pillow |
+| TOOL-86 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter → `repo-words-convert` | SP-0147 Subtitle to words.json converter | pip:faster-whisper |
+| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0148 Community source scout | ffmpeg, python3 |
+| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0148 Community source scout | pip:office |
+| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0148 Community source scout | python3 |
+| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0148 Community source scout | python3 |
+| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0148 Community source scout | python3, npm:rea |
+| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0148 Community source scout | python3 |
+| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0148 Community source scout | ffmpeg, python3 |
+| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0148 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0148 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
 | TOOL-11 | ✅ | مختبر الابتكار الهندسي · Invention Lab Candidates → `invention-lab` | SP-0149 Arabic-aware font fidelity lab | pip:hypothesis |
 | TOOL-140 | ✅ | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره · Local image AI: remove background and smart fill with your own ONNX model → `image-local-ai` | SP-0149 Arabic-aware font fidelity lab | — |
 | TOOL-141 | ✅ | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط · Prompt pack: copyable prompts, one code block each, with a warn-only lint → `prompt-pack` | SP-0149 Arabic-aware font fidelity lab | python3, key:video-gen |

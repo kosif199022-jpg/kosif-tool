@@ -69,3 +69,19 @@ From KOSIF Superpowers: `python3 .claude/skills/kosif-superpowers/scripts/hub.py
 - Follow the [parent Superpowers protocol](../kosif-superpowers/PROTOCOL.md) for request levels, consent and publishing rules.
 
 More: [engine.md](references/engine.md) · [code-bricks.md](references/code-bricks.md) · [memory-and-sources.md](references/memory-and-sources.md) · [examples.md](references/examples.md) · [limits.md](references/limits.md) · [sources-applied.md](references/sources-applied.md) · [causal-roots.md](references/causal-roots.md)
+
+
+## Instagram reference research handoff (Superpowers TOOL-172)
+
+The owner provided two unreviewed Instagram reference accounts, `@asirgokerr` and `@brkn.land`. For requests like "find reels about a 3D character morphing into pencil strokes", use:
+
+```bash
+I=.claude/skills/kosif-superpowers/scripts/instagram_reference_bridge.py
+python3 $I plan "3D character transforms into pencil sketch"
+python3 $I search "3D character sketch"
+python3 $I propose https://www.instagram.com/reel/REALCODE/ --catalog .claude/skills/kosif-infinite-matrices/data/86_style_research_database.json --out out/ideas/KIG.json
+```
+
+`plan` generates third-party public search links, not results. Researchers must verify the reel and the right to view/analyse any footage first; `propose` maps metadata tags to candidate parent operators but is **not an executable recipe or validated discovery**. Only inspected frames should become observed mechanisms. Translate a reviewed proposal to the typed six-brick recipe in this skill, run a controlled A/B/C experiment, render, obtain human rating, and only then record an accepted capability in the KMX ledger. No Instagram scraping, media copying, or automatic promotion.
+
+See [Instagram Discovery skill](../kosif-instagram-discovery/SKILL.md).

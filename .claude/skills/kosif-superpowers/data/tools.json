@@ -15133,6 +15133,103 @@
         "engines-render-pipeline"
       ],
       "power_id": "TOOL-171"
+    },
+    {
+      "id": "instagram-reference-discovery",
+      "path": "scripts/instagram_reference_bridge.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "sources",
+      "title_en": "Instagram Reference Discovery → Infinite Matrices",
+      "title_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية",
+      "summary_en": "Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram.",
+      "summary_ar": "يسجّل حسابين مرجعيين، وينشئ روابط بحث عامة حسب المحتوى، ويفهرس الروابط التي يتحقق منها الباحث مع وصف عربي/إنجليزي داخل SQLite محليًا، ثم يولّد مقترحات بحثية للبنات المصفوفات الست وأقرب أساليب الأطلس الـ86 دون ادعاء مشاهدة أو تنفيذ الفيديو.",
+      "use_when": [
+        "ابحث عن ريلز إنستجرام بتأثير معين",
+        "حلّل مراجع موشن من asirgokerr و brkn.land وحوّلها لأفكار في المصفوفات",
+        "Find Instagram motion references for glowing particles and propose causal bricks",
+        "فهرس فيديوهات ريلز حسب الستايل والحركة"
+      ],
+      "keywords": [
+        "instagram",
+        "reels",
+        "reel",
+        "asirgokerr",
+        "brkn.land",
+        "video reference",
+        "instagram discovery",
+        "find videos by topic",
+        "search clips",
+        "motion reference",
+        "causal handoff",
+        "انستجرام",
+        "إنستجرام",
+        "ريلز",
+        "ابحث عن فيديو",
+        "مراجع فيديو",
+        "بحث الفيديوهات",
+        "بحث عن موشن",
+        "مصفوفات لانهائية"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/instagram_reference_bridge.py doctor",
+          "does": "Show indexed count, local database and no-network policy."
+        },
+        {
+          "name": "sources",
+          "example": "python3 scripts/instagram_reference_bridge.py sources",
+          "does": "Show the two user-specified unreviewed creator accounts."
+        },
+        {
+          "name": "plan",
+          "example": "python3 scripts/instagram_reference_bridge.py plan \"جسيمات ضوئية\"",
+          "does": "Generate public Google and Bing search links, not search results."
+        },
+        {
+          "name": "add",
+          "example": "python3 scripts/instagram_reference_bridge.py add https://www.instagram.com/reel/REALCODE/ --topic \"light particles\" --state link_only",
+          "does": "Store an explicitly supplied permalink with evidence metadata, without downloading a reel."
+        },
+        {
+          "name": "search",
+          "example": "python3 scripts/instagram_reference_bridge.py search \"مؤثرات 3d\"",
+          "does": "Rank locally indexed observations by normalized Arabic/English matching."
+        },
+        {
+          "name": "propose",
+          "example": "python3 scripts/instagram_reference_bridge.py propose https://www.instagram.com/reel/REALCODE/ --catalog ../kosif-infinite-matrices/data/86_style_research_database.json --out out/ideas.json",
+          "does": "Write a non-executable, evidence-gated KMX proposal with causal bricks and matching operator tags."
+        }
+      ],
+      "inputs": "User-provided Instagram reel/post URLs, researched public metadata or authorized frame notes; optional KMX 86-style catalog. No login/token required.",
+      "outputs": "Search-provider URLs; local SQLite reference catalog; JSON search matches and evidence-labelled KMX hypothesis proposals.",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Writes to caller's isolated local SQLite catalog and only user-selected proposal output; refuses overwriting proposals. No external requests or media downloads. Shared research ledger not modified.",
+      "limits": "The CLI cannot directly search inside all Instagram reels or verify a video's actual motion; web results must be discovered separately and manually checked. Source states only attest to submitted notes and evidence URI presence, not authenticity. Proposal is not a runnable KMX recipe.",
+      "evidence": "tested-here",
+      "evidence_note": "Offline local unit tests: 7/7 passed for search plans, HTTPS URL rejection and canonicalization, metadata search, evidence requirements, no silent downgrade, and 86-style operator matching.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_instagram_reference_bridge.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-instagram-discovery/SKILL.md",
+        ".claude/skills/kosif-superpowers/references/guides/instagram-discovery.md"
+      ],
+      "families": [
+        "web-research",
+        "story-direction-ideas",
+        "creativity-engine"
+      ],
+      "power_id": "TOOL-172"
     }
   ]
 }

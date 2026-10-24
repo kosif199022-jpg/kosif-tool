@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (170 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (171 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -92,6 +92,7 @@
 - [`TOOL-17` مولّد مشاريع بداية لمحركات الحركة](#tool-17--مولّد-مشاريع-بداية-لمحركات-الحركة--third-party-motion-engine-scaffolder)
 - [`TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا](#tool-170--سجل-المهام-سجل-لكل-مهمة-منجزة-لإعادتها-لاحقًا--task-history-record-every-finished-task-and-repeat-it-later)
 - [`TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية](#tool-171--محرك-المصفوفات-اللانهائية-للأساليب-السببية--kosif-infinite-matrices-causal-style-engine)
+- [`TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية](#tool-172--البحث-عن-مراجع-فيديو-إنستجرام-وربطها-بالمصفوفات-اللانهائية--instagram-reference-discovery--infinite-matrices)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
@@ -6273,7 +6274,7 @@
 - `TOOL-169` محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة / Colour media engine: coloured pencil, oil brush and watercolour painting of a photo (proven)
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 
 ### `TOOL-171` — محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine
 
@@ -6345,6 +6346,75 @@
 
 - `TOOL-17` مولّد مشاريع بداية لمحركات الحركة / Third-party motion engine scaffolder (proven)
 - `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
+- `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-172` — البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يسجّل حسابين مرجعيين، وينشئ روابط بحث عامة حسب المحتوى، ويفهرس الروابط التي يتحقق منها الباحث مع وصف عربي/إنجليزي داخل SQLite محليًا، ثم يولّد مقترحات بحثية للبنات المصفوفات الست وأقرب أساليب الأطلس الـ86 دون ادعاء مشاهدة أو تنفيذ الفيديو. — Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram.
+
+**متى:** ابحث عن ريلز إنستجرام بتأثير معين / Find Instagram motion references for glowing particles and propose causal bricks
+
+**كيف:** doctor: `python3 scripts/instagram_reference_bridge.py doctor`; sources: `python3 scripts/instagram_reference_bridge.py sources`; plan: `python3 scripts/instagram_reference_bridge.py plan "جسيمات ضوئية"`; add: `python3 scripts/instagram_reference_bridge.py add https://www.instagram.com/reel/REALCODE/ --topic "light particles" --state link_only`. Full card: `python3 scripts/hub.py tool instagram-reference-discovery`. Limits: The CLI cannot directly search inside all Instagram reels or verify a video's actual motion; web results must be discovered separately and manually checked. Source states only attest to submitted notes and evidence URI presence, not authenticity. Proposal is not a runnable KMX recipe.
+
+**المعاملات:** in: User-provided Instagram reel/post URLs, researched public metadata or authorized frame notes; optional KMX 86-style catalog. No login/token required. · out: Search-provider URLs; local SQLite reference catalog; JSON search matches and evidence-labelled KMX hypothesis proposals.
+
+**التثبيت:** لا خطوة تثبيت مسجلة
+
+**الوسوم:** instagram-reference-discovery · instagram · reels · reel · asirgokerr · brkn.land · video reference · instagram discovery · find videos by topic · search clips · motion reference · causal handoff · انستجرام · إنستجرام · ريلز · ابحث عن فيديو · مراجع فيديو · بحث الفيديوهات · بحث عن موشن · مصفوفات لانهائية
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-172` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_reference_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/instagram_reference_bridge.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
+- `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6413,8 +6483,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-170` سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا / Task history: record every finished task and repeat it later (proven)
 - `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
+- `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -6483,7 +6553,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
+- `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
