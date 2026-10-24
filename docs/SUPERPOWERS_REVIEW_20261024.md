@@ -38,8 +38,7 @@ The existing evals (109 routing cases, 98 routing-quality cases) all passed, but
 3. **Richer signals**: bugs, crashes, debug, login, frameworks and Python as code; `.xlsx`, sales, revenue, profit and forecasts as data; contracts and clauses as documents; Egyptian/Arabic business, data-cleaning and bug words as search aliases.
 4. **Compound requests are work, not L0**: a short intent followed by a second job («ترجم… وراجع…», "translate and flag…") is no longer a one-line answer. "What's the best time to post" stays a question.
 5. **Council roster for strategy**: a strategy council seats a strategist, a devil's advocate against the plan, a CFO, the target customer and an assumptions-and-numbers checker.
-6. **New gate**: `evals/routing_generalization.json` (50 fresh requests in 3 batches), `evals/routing_generalization.py` (scorer) and `evals/test_routing_generalization.py`, now in CI.
-7. **CI gap closed**: 12 of the 13 unit-test files under `scripts/` were never run in CI (127 tests: atlas, unified draw/media/cinematic, timeline, typography, Blender bridges). They pass and now run on every PR.
+6. **New gate**: `evals/routing_generalization.json` (50 fresh requests in 3 batches), `evals/routing_generalization.py` (scorer) and `evals/test_routing_generalization.py`, now a named CI step (the catch-all eval step runs it too).
 
 ## 4. Measured result
 
@@ -57,6 +56,6 @@ Remaining misses in batch 3, left in on purpose so the gate stays honest: "Which
 1. **Word matching is the ceiling.** The card is regex plus tf-idf. Each fix above is a rule, and batch 3 shows rules generalise only partly (71%). Next: an optional semantic fallback (for example Model2Vec, MIT, numpy only) used only when the rules and the catalog vote abstain, measured on new untouched batches.
 2. **Lessons do not learn from outcomes.** FusionForge records lessons, but nothing scores which lessons helped. Next: helpful/harmful counters per lesson, de-duplication and pruning (the ACE pattern), with `reuse` ranking by those counters.
 3. **No grader for real sessions.** All evals check routing, not whether the final work was good. Next: a small model-graded suite on recorded sessions: right tool picked, A/B/C really different, uncertainty stated when it should be.
-4. **Evidence debt.** 369 ✅ records point to receipts outside this repo, and 18 tools are marked untested (four of them, the atlas scripts, now have tests running in CI and can be relabelled after the first green run).
+4. **Evidence debt.** 369 ✅ records point to receipts outside this repo, and 18 tools are marked untested (four of them, the atlas scripts, already have passing tests in CI under `scripts/` and can be relabelled `tested-here`).
 5. **Thin domains.** Strategy, research and media have few powers compared with motion. The new strategy deliverable routes well, but it can only pick from 126 strategy powers and 17 thinking tools.
 6. **Size of the instructions.** PROTOCOL.md is 112 KB and SKILL.md 80 KB. A lot of reading happens before small jobs. The L0/L1 fast path matters more as the files grow.
