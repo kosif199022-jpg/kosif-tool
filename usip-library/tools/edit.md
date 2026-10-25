@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (15 أداة)
+# أدوات المجال `edit` (16 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -718,6 +718,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:reference-visual-fingerprint --evidence <ملف>`.
+
+### `script-storyboard` — من السيناريو إلى الستوري بورد والأنيماتك / Script-to-Storyboard Animatic
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/script_storyboard.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `transitions-cuts`, `camera-composition-layout`, `audio-sync-captions` |
+
+**ما تفعله:** يقرأ مسرحية أو سيناريو بالعربي أو الإنجليزي (نص أو PDF) ويكتب قائمة لقطات بصيغة kosif.storyboard.v1: الفصول والمشاهد، ولقطة واسعة تأسيسية لكل مشهد، ولقطات حوار يتغير حجمها مع تغيّر المتكلم أو الانفعال، وإرشادات المسرح، ومدة كل لقطة من عدد الكلمات، والشخصيات وعدد جملها، والأسماء المكتوبة بطريقتين، وإيقاع كل فصل، وتقسيم العمل لحلقات قصيرة تحت حد زمني. ثم يصيّر أنيماتك MP4 دقيق الإطارات من بطاقات لونية أو صور ولقطات المستخدم، مع صوت رئيسي اختياري، بمعيار تصدير KOSIF.
+
+**What it does:** Reads an Arabic or English play or screenplay (text or PDF) and writes a kosif.storyboard.v1 shot list: acts, scenes, an establishing wide shot per scene, dialogue shots that change size on a speaker change or emotional cue, stage directions, word-count durations, characters with line counts, likely duplicate spellings of a name, pacing per act and short-form episodes under a time limit. It then renders a frame-exact animatic MP4 from colour cards or the user's own images and clips, with an optional master audio track, at the KOSIF export standard.
+
+#### متى تُستدعى
+
+- «حوّل المسرحية دي لستوري بورد ولقطات»
+- «عندي سيناريو PDF عايز أقسمه لحلقات ريلز دقيقة ونص»
+- «اعمل أنيماتك بالتوقيت على التعليق الصوتي من الستوري بورد»
+- «Turn this screenplay into a shot list with durations»
+- «Split my play into 90-second episodes and render a timing animatic»
+
+#### الأوامر
+
+- **parse**: Extracts the text (pdftotext for PDF), cleans bidi marks and presentation forms, re-joins wrapped lines, builds acts/scenes/shots with sizes, camera moves and durations, and writes the storyboard with characters, warnings, pacing and episodes. Prints a one-line JSON summary.
+  - `python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90`
+- **blank**: Writes an empty storyboard template with evenly timed colour shots.
+  - `python3 scripts/script_storyboard.py blank --out ./out/storyboard.json --title Demo --duration 15 --shots 3`
+- **render**: Renders each shot (its source image/clip cropped to fill, or a colour card) on exact frame boundaries, concatenates them, scales the timeline to the master audio when given (stream-copying AAC/MP3/ALAC, else AAC 320k), and writes <out>.report.json with frames per shot.
+  - `python3 scripts/script_storyboard.py render --storyboard ./out/storyboard.json --episode 1 --audio ./voice.m4a --out ./out/episode1.mp4`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- optional: pdftotext
+- الأمان: writes-files
+- الموافقة: Nothing to approve; it reads only the script the user supplied and writes the files named by --out.
+- الحدود: Shot sizes and durations are rule-based suggestions from the text layout, not a director's reading; it writes no text on frames, generates no footage, and a script whose dialogue is not in 'NAME: line' form comes out as stage directions.
+
+#### الاختبارات والأدلة
+
+- `tests/test_script_storyboard.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/edit.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:script-storyboard --evidence <ملف>`.
 
 ### `video-workflow-bridge` — جسر سير عمل الفيديو / Video Workflow Bridge
 

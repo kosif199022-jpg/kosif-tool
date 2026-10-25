@@ -15,7 +15,7 @@
 
 ## camera-composition-layout (motion)
 
-chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · card: `usip-library/cards/motion/camera-composition-layout.md` · tools: `blender-cinema` · `blender-cinematic-bridge` · `cinematic-broll-render` · `cinematic-cut-planner` · `motion-toolkit` · `reference-visual-fingerprint` · `unified-cinematic`
+chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · card: `usip-library/cards/motion/camera-composition-layout.md` · tools: `blender-cinema` · `blender-cinematic-bridge` · `cinematic-broll-render` · `cinematic-cut-planner` · `motion-toolkit` · `reference-visual-fingerprint` · `script-storyboard` · `unified-cinematic`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
