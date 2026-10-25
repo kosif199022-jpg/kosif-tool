@@ -100,7 +100,7 @@ def execute_download(args, sites: list[dict]) -> int:
         print("download timed out; no success asserted", file=sys.stderr)
         return 1
     if done.returncode:
-        print("download failed: " + done.stderr[-1000:], file=sys.stderr)
+        print("download failed: " + ((done.stdout or "") + (done.stderr or "")).strip()[-1500:], file=sys.stderr)
         return done.returncode
     result = safe_output_manifest(out, args.url)
     if result is None:

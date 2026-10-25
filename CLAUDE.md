@@ -18,6 +18,10 @@ Read AGENTS.md, then the selected style's `styles/<style-id>/SKILL.md`, `STYLE.j
 
 Uploaded audio or video for montage or motion graphics: use the Montage Pro task force, `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py intake <file> --job <dir>` then `options` and `build` (guide: `.claude/skills/kosif-superpowers/montage-pro/README.md`).
 
+Downloading footage: any link (Pexels, Mixkit, Pixabay, Coverr or other direct `.mp4` files, plus every yt-dlp site) goes through `python3 .claude/skills/kosif-superpowers/scripts/fetch_video.py URL -o <dir>`, or `media_sources.py download URL --rights ...` for the 100-site gateway with a rights record. Stock pages are fetched by `stock_fetch.py` without yt-dlp (yt-dlp gets 403 on them); Pixabay needs a free `PIXABAY_API_KEY`. YouTube and some sites block cloud machines: report it and offer the user's own computer or an upload, never a bypass. Run each of these as one plain command from the repo root, with the exact paths above.
+
+If a Bash call fails with "The server-side auto mode classifier gave no verdict (error)": that is a temporary outage of Anthropic's safety check, not a bug in the command or this repo. Retry the same command once, unchanged. If it fails again, do not loop: carry on with work that needs no shell (reading, writing files, planning), come back to the command a few minutes later, and tell the user plainly that the check is down on Anthropic's side. Details: appendix A29 of the protocol.
+
 Rules:
 - Inspect the source video when your tools allow; never claim to have watched what you could not open.
 - Produce editable, real motion graphics (timelines, easing, camera, draw-on), never static slides.

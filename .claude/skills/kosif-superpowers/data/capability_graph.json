@@ -2073,6 +2073,11 @@
    "label": "scripts/drawing_methods.py"
   },
   {
+   "id": "script:scripts/stock_fetch.py",
+   "kind": "script",
+   "label": "scripts/stock_fetch.py"
+  },
+  {
    "id": "script:scripts/fusionforge.py",
    "kind": "script",
    "label": "scripts/fusionforge.py"
@@ -2633,6 +2638,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_sources_index.py"
+  },
+  {
+   "id": "test:tests/test_stock_fetch.py",
+   "kind": "test",
+   "label": "tests/test_stock_fetch.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
@@ -6863,6 +6873,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/fetch_video.py",
+   "to": "script:scripts/stock_fetch.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/fusionforge.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -8149,6 +8165,12 @@
   {
    "from": "script:scripts/sources_index.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/stock_fetch.py",
+   "to": "test:tests/test_stock_fetch.py",
    "rel": "tested_by",
    "w": 1
   },
