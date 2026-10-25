@@ -7547,5 +7547,48 @@
   ],
   "section": "Sources and references / المصادر والمراجع",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-174",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep",
+  "name_en": "Background job runner and waiter (no sleep waits)",
+  "status": "proven",
+  "what": "يشغّل رندر أو ترميز أو تحميل أو تثبيت طويل في الخلفية (اللوج ورقم العملية وكود الخروج في مجلد المهمة) وينتظره بدون `sleep N; check` الذي يمنعه Claude Code: الأمر `wait` يطبع سطر تقدّم كل فترة (فريم كذا من كذا، أو frame= من ffmpeg، أو نسبة مئوية) ثم DONE أو FAILED مع آخر سطور اللوج، ويخرج بكود المهمة، ليعمل داخل أداة Monitor أو مع run_in_background؛ و`status` نظرة بلا انتظار، و`stop` يوقفها. — Starts a long render, encode, download or install detached (log, pid and exit code in a job folder) and waits on it without `sleep N; check`, which Claude Code blocks: `wait` prints a throttled PROGRESS line (render_html.cjs `frame i/n`, ffmpeg `frame=`, percentages) then DONE or FAILED with the log tail and exits with the job's code, for the Monitor tool or Bash run_in_background; `status` peeks without waiting; `stop` ends it.",
+  "when": "رندر الفيديو كامل في الخلفية وقولي وصل لفين / Render the full video in the background and tell me the progress",
+  "how": "start: `python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4`; wait: `python3 tools/job.py wait --dir out/20261024-film/render`; status: `python3 tools/job.py status --dir out/20261024-film/render`; stop: `python3 tools/job.py stop --dir out/20261024-film/render`. Full card: `python3 scripts/hub.py tool repo-job-wait`. Limits: Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection).",
+  "params": "in: A job folder (--dir) and, for start, the command after `--`. · out: job.log, job.pid, job.exit and job.json in the job folder; STARTED/PROGRESS/WARN/DONE/FAILED/TIMEOUT lines on stdout; exit code = the job's exit code (124 on timeout, 2 when no job exists).",
+  "install": "",
+  "requires": [
+   "ffmpeg",
+   "node",
+   "python3",
+   "chromium"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/tests/test_job_wait.py",
+   "kosif-tool/tools/job.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "repo-job-wait",
+   "background job",
+   "wait",
+   "monitor",
+   "progress",
+   "run_in_background",
+   "sleep",
+   "long render",
+   "render log",
+   "مهمة في الخلفية",
+   "انتظار",
+   "تقدم الرندر",
+   "مراقبة"
+  ],
+  "section": "Motion graphics and rendering / الموشن والرندر",
+  "source": "data/tools.json"
  }
 ]

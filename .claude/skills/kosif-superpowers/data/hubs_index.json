@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5851,
+ "atoms": 5852,
  "superpowers": 481,
  "hubs": [
   {
@@ -451,9 +451,9 @@
      "id": "SP-0140",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
-     "size": 18,
+     "size": 19,
      "best": "proven",
-     "ready_now": 14
+     "ready_now": 15
     },
     {
      "id": "SP-0022",
@@ -520,23 +520,23 @@
      "ready_now": 8
     }
    ],
-   "powers": 285,
+   "powers": 286,
    "status_mix": {
-    "proven": 167,
+    "proven": 168,
     "ready": 21,
     "install": 15,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 188,
+   "ready_now": 189,
    "requires": [
     "python3",
     "ffmpeg",
     "chromium",
     "blender",
+    "node",
     "pip:pillow",
     "claude:tools",
-    "node",
     "npm:rea",
     "key:unspecified",
     "pip:numpy",
@@ -1595,8 +1595,8 @@
    ],
    "links": [
     "agents",
-    "motion",
     "software",
+    "motion",
     "images"
    ]
   },

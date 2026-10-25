@@ -188,7 +188,7 @@
 | SP-0137 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | 6 | 0 | SP-0006 SP-0047 SP-0161 SP-0057 |
 | SP-0138 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | 4 | 0 | SP-0056 SP-0098 SP-0097 SP-0163 |
 | SP-0139 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 33 | 33 | SP-0347 SP-0144 SP-0027 SP-0143 |
-| SP-0140 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 18 | 14 | SP-0262 SP-0148 SP-0268 SP-0266 |
+| SP-0140 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 19 | 15 | SP-0262 SP-0148 SP-0268 SP-0266 |
 | SP-0141 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | 17 | 17 | SP-0356 SP-0379 SP-0359 SP-0407 |
 | SP-0142 | ✅ | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | 16 | SP-0303 SP-0266 SP-0036 SP-0451 |
 | SP-0143 | ✅ | خريطة ترتيب المهارة · Skill Layout Map | 12 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
@@ -337,10 +337,10 @@
 | SP-0271 | 🟢 | ضبابية حركة حقيقية · GPU sub-frame motion blur | 15 | 5 | SP-0368 SP-0433 SP-0199 SP-0212 SP-0140 |
 | SP-0272 | ✅ | التقاط الإطارات عبر متصفح Edge وكارت الشاشة · Playwright Edge D3D11 frame capture | 15 | 2 | SP-0374 SP-0273 SP-0371 SP-0264 SP-0118 |
 | SP-0273 | ✅ | إيجاد Playwright و Chromium · Playwright/Chromium resolution order | 15 | 4 | SP-0136 SP-0272 SP-0371 SP-0264 |
-| SP-0274 | 📦 | قائمة قواعد Remotion · Remotion rule checklist | 13 | 0 | SP-0356 SP-0174 SP-0140 SP-0154 |
+| SP-0274 | 📦 | قائمة قواعد Remotion · Remotion rule checklist | 13 | 0 | SP-0356 SP-0174 SP-0154 SP-0140 |
 | SP-0275 | ✅ | ترند: Self-critique on frames · Trend: Self-critique on frames | 13 | 1 | SP-0325 SP-0156 SP-0377 SP-0331 |
 | SP-0276 | ✅ | خيار التقنية: canvas · Stack option: canvas | 12 | 8 | SP-0311 SP-0413 SP-0288 SP-0274 SP-0140 |
-| SP-0277 | ✅ | فيلم بدون متصفح · workbench no-browser 2D film | 11 | 5 | SP-0405 SP-0268 SP-0303 SP-0448 SP-0140 |
+| SP-0277 | ✅ | فيلم بدون متصفح · workbench no-browser 2D film | 11 | 5 | SP-0405 SP-0268 SP-0140 SP-0303 |
 | SP-0278 | ✅ | تجميع اللقطات بنوافذ إطارات · Shot assembly by frame windows | 11 | 2 | SP-0357 SP-0264 SP-0187 SP-0361 SP-0156 |
 | SP-0279 | ✅ | جسر العرض ومزامنة الفيديو · Renderer shim + footage seeking | 10 | 3 | SP-0283 SP-0264 SP-0262 SP-0140 |
 | SP-0280 | ✅ | عشوائية ببذرة · Seeded randomness (mulberry32 + hash) | 10 | 5 | SP-0371 SP-0350 SP-0284 SP-0354 SP-0140 |
@@ -366,7 +366,7 @@
 | SP-0300 | ✅ | صيغ الصوت للحلقات وتراخيص الموسيقى · Loop audio formats & music licence receipts | 8 | 5 | SP-0211 SP-0329 SP-0156 SP-0377 |
 | SP-0301 | ✅ | بريف الصورة المصغرة: 3 أفكار واختبار A/B · Thumbnail brief: 3 concepts + A/B | 7 | 5 | SP-0372 SP-0455 SP-0154 SP-0459 |
 | SP-0302 | ✅ | مسرح ثابت يُكبَّر ككتلة · Fixed stage scaled as one block | 6 | 3 | SP-0203 SP-0229 SP-0231 SP-0211 SP-0097 |
-| SP-0303 | ✅ | فيلم يد مرسومة حتمي بـmake_frame(t) · Deterministic hand-drawn film via make_frame(t) | 25 | 17 | SP-0142 SP-0266 SP-0140 SP-0345 |
+| SP-0303 | ✅ | فيلم يد مرسومة حتمي بـmake_frame(t) · Deterministic hand-drawn film via make_frame(t) | 25 | 17 | SP-0142 SP-0266 SP-0345 SP-0140 |
 | SP-0304 | ✅ | كتابة بقناع فرشاة من اليمين · Brush-mask write-on (RTL) | 10 | 3 | SP-0452 SP-0429 SP-0306 SP-0221 SP-0112 |
 | SP-0305 | 🟢 | شريط مخطط يُرسم · Striped ribbon draw-on | 9 | 4 | SP-0320 SP-0398 SP-0247 SP-0351 SP-0140 |
 | SP-0306 | ✅ | رسوم خطية صغيرة فوق الفيديو · Line micro-graphics over footage | 9 | 3 | SP-0405 SP-0038 SP-0189 SP-0232 |

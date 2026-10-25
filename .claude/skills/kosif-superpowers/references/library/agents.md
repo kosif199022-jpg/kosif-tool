@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 167 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 168 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **270** | |
+| **المجموع** | **271** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -85,7 +85,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 172 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 173 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -172,6 +172,7 @@
 | `TOOL-171` | محرك المصفوفات اللانهائية للأساليب السببية | KOSIF Infinite Matrices causal style engine | proven | ffmpeg, python3, chromium, npm:rea |
 | `TOOL-172` | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية | Instagram Reference Discovery → Infinite Matrices | proven | python3 |
 | `TOOL-173` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | Instagram product video finder | proven | ffmpeg, python3, yt-dlp |
+| `TOOL-174` | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep | Background job runner and waiter (no sleep waits) | proven | ffmpeg, node, python3, chromium |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
