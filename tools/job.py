@@ -76,12 +76,14 @@ def _state(d: Path) -> dict:
     if not p["pid"].exists():
         return {"state": "missing", "detail": f"no job in {d} (run `job.py start` first)"}
     lines = _tail(p["log"])
+    pid = int(p["pid"].read_text().strip() or 0)
+    # liveness first, exit file second: the job writes its exit code before it dies, so this order has no race
+    alive = bool(pid) and _alive(pid)
     if p["exit"].exists():
         txt = p["exit"].read_text().strip()
         code = int(txt) if txt.lstrip("-").isdigit() else 1
         return {"state": "done" if code == 0 else "failed", "code": code, "progress": _last(lines, PROGRESS_RE), "lines": lines}
-    pid = int(p["pid"].read_text().strip() or 0)
-    if pid and _alive(pid):
+    if alive:
         return {"state": "running", "pid": pid, "progress": _last(lines, PROGRESS_RE), "error": _last(lines[-20:], ERROR_RE), "lines": lines}
     return {"state": "failed", "code": 1, "detail": "job process is gone and left no exit code (killed?)", "lines": lines}
 
@@ -95,6 +97,8 @@ def cmd_run(args) -> int:  # internal: the detached supervisor
         except OSError as exc:
             log.write(f"[job] cannot start: {exc}\n".encode())
             code = 127
+    if code < 0:  # killed by a signal: report it the shell way (128 + signal number)
+        code = 128 - code
     tmp = p["exit"].with_suffix(".exit.tmp")
     tmp.write_text(str(code))
     os.replace(tmp, p["exit"])

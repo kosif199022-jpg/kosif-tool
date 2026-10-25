@@ -51,6 +51,13 @@ class JobTest(unittest.TestCase):
             self.assertIn("TIMEOUT", w.stdout)
             self.assertIn("STOPPED", run("stop", "--dir", d).stdout)
 
+    def test_signal_reported_as_128_plus_signal(self):
+        with tempfile.TemporaryDirectory() as d:
+            run("start", "--dir", d, "--", sys.executable, "-c", "import os, signal; os.kill(os.getpid(), signal.SIGTERM)")
+            w = run("wait", "--dir", d, "--poll", "0.1")
+            self.assertEqual(w.returncode, 143)
+            self.assertIn("FAILED exit=143", w.stdout)
+
     def test_missing_job(self):
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(run("status", "--dir", d).returncode, 2)
@@ -63,7 +70,8 @@ class HookTest(unittest.TestCase):
                     "sleep 2; sleep 2; sleep 2; ls",
                     "sleep 1m; ls",
                     'python3 -c "import time; time.sleep(60)"',
-                    "until test -f x; do sleep 1; done; sleep 60; cat x"):
+                    "until test -f x; do sleep 1; done; sleep 60; cat x",
+                    "for i in 1 2 3; do sleep 60; done; tail -1 render.log"):
             with self.subTest(cmd=cmd):
                 r = hook(cmd)
                 self.assertEqual(r.returncode, 2)

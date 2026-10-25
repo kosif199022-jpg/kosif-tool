@@ -12,7 +12,7 @@ import re
 import sys
 
 LIMIT = 3  # seconds
-SLEEP_RE = re.compile(r"(?:^|[;&|(\n]|\bthen\b|\belse\b)\s*sleep\s+(\d+(?:\.\d+)?)([smhd]?)\b")
+SLEEP_RE = re.compile(r"(?:^|[;&|(\n]|\bthen\b|\belse\b|\bdo\b)\s*sleep\s+(\d+(?:\.\d+)?)([smhd]?)\b")
 PY_SLEEP_RE = re.compile(r"time\.sleep\(\s*(\d+(?:\.\d+)?)\s*\)")
 UNIT = {"": 1, "s": 1, "m": 60, "h": 3600, "d": 86400}
 
@@ -30,8 +30,9 @@ HELP = (
 
 def seconds(cmd: str) -> float:
     """Total sleep outside while/until loop bodies, in seconds (chained short sleeps add up)."""
-    # a condition loop is the recommended pattern: ignore sleeps inside its do ... done body
-    cmd = re.sub(r"\bdo\b.*?\bdone\b", " ", cmd, flags=re.S)
+    # a while/until condition loop is the recommended pattern: ignore sleeps inside its body
+    # (a `for` loop with a sleep is a fixed wait and still counts)
+    cmd = re.sub(r"\b(?:while|until)\b.*?\bdo\b.*?\bdone\b", " ", cmd, flags=re.S)
     worst = 0.0
     for num, unit in SLEEP_RE.findall(cmd):
         worst += float(num) * UNIT[unit]

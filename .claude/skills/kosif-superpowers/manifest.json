@@ -4466,7 +4466,7 @@
    "consent": "",
    "limits": "Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection).",
    "evidence": "tested-here",
-   "evidence_note": "tests/test_job_wait.py 7/7 passed here (progress and DONE, failure exit code and log tail, timeout and stop, the no-sleep-wait hook's block and allow cases).",
+   "evidence_note": "tests/test_job_wait.py 8/8 passed here (progress and DONE, failure exit code and log tail, signal exit 128+N, timeout and stop, the no-sleep-wait hook's block and allow cases).",
    "tests": [
     "tests/test_job_wait.py"
    ],
