@@ -115,6 +115,7 @@
 | `reel-factory` | TOOL-131 | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-righ…` | 1 |
 | `reference-edit-engine` | TOOL-22 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./…` | 4 |
 | `reference-visual-fingerprint` | TOOL-23 | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cu…` | 2 |
+| `script-storyboard` | — | من السيناريو إلى الستوري بورد والأنيماتك · Script-to-Storyboard Animatic | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page…` | 1 |
 | `video-workflow-bridge` | TOOL-24 | جسر سير عمل الفيديو · Video Workflow Bridge | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave…` | 1 |
 
 ## image
