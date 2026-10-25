@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (173 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (174 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -95,6 +95,7 @@
 - [`TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية](#tool-172--البحث-عن-مراجع-فيديو-إنستجرام-وربطها-بالمصفوفات-اللانهائية--instagram-reference-discovery--infinite-matrices)
 - [`TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها](#tool-173--البحث-عن-فيديوهات-إنستجرام-لمنتج-وتحميلها--instagram-product-video-finder)
 - [`TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep](#tool-174--تشغيل-المهام-الطويلة-في-الخلفية-وانتظارها-بلا-sleep--background-job-runner-and-waiter-no-sleep-waits)
+- [`TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B](#tool-175--معمل-السينما-كشف-القطعات-حذف-الصمت-تايملاين-otioedl-ألوان-lut-تثبيت-الكاميرا-تأطير-ذكي-بالطول-حركة-كاميرا-مراجعة-ab--cinema-lab-scene-cuts-silence-cut-otioedl-timelines-lut-looks-stabilise-smart-portrait-reframe-camera-moves-ab-review)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
@@ -6489,7 +6490,7 @@
 - `TOOL-171` محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine (proven)
 - `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 - `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
 
 ### `TOOL-174` — تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits)
 
@@ -6560,6 +6561,78 @@
 
 - `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 - `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
+- `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-175` — معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** محركات تصوير ومونتاج مكتوبة بكودنا من أفكار PySceneDetect وAuto-Editor وOpenTimelineIO وOpenColorIO وOpenCV وvid.stab وMotion Canvas/Remotion وOpenRV، وتشتغل بـ FFmpeg وNumPy في السحابة: يكشف القطعات ويطلع ستوري بورد، يحذف الصمت مع الحفاظ على تزامن الصوت والصورة، يصدّر التايملاين OTIO وEDL لبرامج المونتاج، يعمل ألوان سينمائية بملفات .cube، يثبت الكاميرا المهزوزة ويقيس الاهتزاز قبل وبعد، يحوّل الفيديو العريض لطولي 1080x1920 بكاميرا ذكية بتتبع الحركة، يعمل حركات كاميرا ناعمة على صورة أو فيديو، ويطلع فيديو مقارنة A/B بتايم كود ومقاييس SSIM/PSNR. — Cinematography and editing engines rebuilt in our own code from ideas in PySceneDetect, Auto-Editor, OpenTimelineIO, OpenColorIO, OpenCV, vid.stab, Motion Canvas/Remotion and OpenRV, running on FFmpeg + NumPy in a cloud sandbox. Detects scene cuts (FFmpeg scdet, or the real PySceneDetect ContentDetector when installed) with a storyboard contact sheet; removes silences with frame-grid cuts that keep audio and video in sync; exports any segment plan as OpenTimelineIO JSON (read back with the opentimelineio package when present) and a CMX3600 EDL for Kdenlive/Shotcut/Resolve/Premiere; builds portable 33^3 .cube looks and applies them with lut3d; stabilises with two-pass vid.stab and measures shake before/after by phase correlation; reframes landscape footage to a 1080x1920 portrait crop by tracking motion and detail with a smoothed, speed-capped virtual camera that re-aims at scene cuts; renders eased push-in/pan/tilt/ken-burns camera moves on stills or clips; and makes A/B side-by-side or wipe review videos with burnt-in timecode and SSIM/PSNR.
+
+**متى:** اكشف القطعات والمشاهد في الفيديو واعملي ستوري بورد / Find every cut in this video and give me a storyboard of the scenes
+
+**كيف:** doctor: `python3 scripts/cinema_lab.py doctor`; scenes: `python3 scripts/cinema_lab.py scenes --input ./film.mp4 --out ./scenes --sheet --timeline`; silence-cut: `python3 scripts/cinema_lab.py silence-cut --input ./talk.mp4 --output ./tight.mp4 --timeline`; timeline: `python3 scripts/cinema_lab.py timeline --plan ./scenes/scenes.json --out ./edit`. Full card: `python3 scripts/hub.py tool cinema-lab`. Limits: Scene detection is a frame-difference score: soft dissolves and fast flashes can be missed or doubled, so check the storyboard. Silence cut re-encodes the audio (cutting changes timing) and works on loudness, not words; music beds hide pauses. Reframe tracks motion and detail energy, not faces or a named subject, and cannot recover action outside the crop. Looks are hand-built LUTs, not a calibrated ACES/OCIO pipeline. Stabilise cannot fix motion blur or rolling shutter. Camera moves are 2D crops, not 3D parallax.
+
+**المعاملات:** in: Local video, audio or image files the user owns or may edit; a kosif.segments.v1 plan for timeline export; optionally a .cube LUT. · out: New media files (H.264 CRF 17, yuv420p, 30 fps, +faststart; vertical outputs 1080x1920; audio copied when timing is unchanged), scenes.json / plan JSON, storyboard.jpg, .otio, .edl, .cube files and a kosif.cinema_lab.receipt.v1 JSON receipt with measurements and SHA-256.
+
+**التثبيت:** pip install numpy · needs on PATH: ffmpeg, ffprobe · optional: scenedetect[opencv], opentimelineio
+
+**الوسوم:** cinema-lab · scene detection · cut detection · pyscenedetect · storyboard · contact sheet · auto-editor · silence removal · jump cut · opentimelineio · otio · edl · cmx3600 · kdenlive · resolve · opencolorio · lut · cube · color grade · teal orange · bleach bypass · noir · stabilize · stabilise · vidstab · shaky · reframe · auto reframe · tracking · opencv · camera move · push in · ken burns · pan · tilt · motion canvas · remotion · openrv · a/b compare · wipe · timecode · ssim · psnr · كشف المشاهد · قطعات · ستوري بورد · حذف الصمت · تايملاين · لوت · تلوين · تثبيت · فيديو مهزوز · تأطير · حركة كاميرا · زووم · مقارنة · portrait crop · landscape to portrait
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:numpy` ← python3 -c "import numpy" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:opencv` ← python3 -c "import opencv" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `npm:remotion` ← npm ls remotion أو وجود node_modules/remotion
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-175` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_cinema_lab.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinema_lab.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
+- `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6628,8 +6701,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
 - `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
+- `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -6698,7 +6771,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
+- `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)

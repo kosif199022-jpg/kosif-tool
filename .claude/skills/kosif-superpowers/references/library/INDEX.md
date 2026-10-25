@@ -1,6 +1,6 @@
 # مكتبة البروتوكول — USIP v5.6 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,852 قدرة في 62 عائلة و15 مجموعة، و175 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,853 قدرة في 62 عائلة و15 مجموعة، و176 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -21,12 +21,12 @@
 |---|---:|---:|---:|---:|---|
 | البحث والمعرفة (`research`) | 60 | 21 | 0 | 15 | [research.md](research.md) |
 | التفكير والتخطيط والاستراتيجية (`thinking`) | 402 | 17 | 8 | 23 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 271 | 168 | 21 | 44 | [agents.md](agents.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 272 | 169 | 21 | 44 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 692 | 115 | 17 | 21 | [software.md](software.md) |
 | الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 26 | [drawing.md](drawing.md) |
-| الصور والتحرير والتوليد (`images`) | 323 | 96 | 42 | 31 | [images.md](images.md) |
+| الصور والتحرير والتوليد (`images`) | 323 | 96 | 42 | 32 | [images.md](images.md) |
 | الثري دي والمحاكاة والرندر (`3d`) | 758 | 122 | 141 | 30 | [3d.md](3d.md) |
-| الموشن والمونتاج والسينما (`motion`) | 1,233 | 117 | 183 | 56 | [motion.md](motion.md) |
+| الموشن والمونتاج والسينما (`motion`) | 1,233 | 117 | 183 | 57 | [motion.md](motion.md) |
 | الصوت والموسيقى والتعليق (`audio`) | 422 | 59 | 74 | 25 | [audio.md](audio.md) |
 | الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 13 | [type.md](type.md) |
 | البيانات والرسوم والمواقع (`data`) | 268 | 49 | 18 | 4 | [data.md](data.md) |
@@ -35,7 +35,7 @@
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 21 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 7,025 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 7,028 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 

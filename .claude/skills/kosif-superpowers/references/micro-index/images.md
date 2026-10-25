@@ -199,7 +199,7 @@ chapter: [ai-generation](../powers/ai-generation.md) · card: `usip-library/card
 
 ## color-palette-grading (motion)
 
-chapter: [color-palette-grading](../powers/color-palette-grading.md) · card: `usip-library/cards/images/color-palette-grading.md` · tools: `app-studio-paint` · `fetch-reference` · `look-pipeline` · `mimic` · `reference-edit-engine` · `reference-visual-fingerprint` · `style-library`
+chapter: [color-palette-grading](../powers/color-palette-grading.md) · card: `usip-library/cards/images/color-palette-grading.md` · tools: `app-studio-paint` · `cinema-lab` · `fetch-reference` · `look-pipeline` · `mimic` · `reference-edit-engine` · `reference-visual-fingerprint` · `style-library`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -293,7 +293,7 @@ chapter: [color-palette-grading](../powers/color-palette-grading.md) · card: `u
 
 ## photo-video-footage (motion)
 
-chapter: [photo-video-footage](../powers/photo-video-footage.md) · card: `usip-library/cards/images/photo-video-footage.md` · tools: `app-studio` · `app-studio-paint` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search` · `dua-wednesday` · `fast-edit` · `fetch-reference` …
+chapter: [photo-video-footage](../powers/photo-video-footage.md) · card: `usip-library/cards/images/photo-video-footage.md` · tools: `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search` · `dua-wednesday` · `fast-edit` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

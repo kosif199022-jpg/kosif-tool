@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **173 powers follow** — ✅ 141 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **174 powers follow** — ✅ 142 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -16,7 +16,7 @@
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
-- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-168 (15)
+- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-175 (16)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-162 (14)
@@ -730,6 +730,15 @@
 - **تثبيت / install:** `needs on PATH: ffmpeg, ffprobe`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_fast_edit.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/fast_edit.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-175 · معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review · ✅ مُثبت هنا / proven here
+- **ماذا / what:** محركات تصوير ومونتاج مكتوبة بكودنا من أفكار PySceneDetect وAuto-Editor وOpenTimelineIO وOpenColorIO وOpenCV وvid.stab وMotion Canvas/Remotion وOpenRV، وتشتغل بـ FFmpeg وNumPy في السحابة: يكشف القطعات ويطلع ستوري بورد، يحذف الصمت مع الحفاظ على تزامن الصوت والصورة، يصدّر التايملاين OTIO وEDL لبرامج المونتاج، يعمل ألوان سينمائية بملفات .cube، يثبت الكاميرا المهزوزة ويقيس الاهتزاز قبل وبعد، يحوّل الفيديو العريض لطولي 1080x1920 بكاميرا ذكية بتتبع الحركة، يعمل حركات كاميرا ناعمة على صورة أو فيديو، ويطلع فيديو مقارنة A/B بتايم كود ومقاييس SSIM/PSNR. — Cinematography and editing engines rebuilt in our own code from ideas in PySceneDetect, Auto-Editor, OpenTimelineIO, OpenColorIO, OpenCV, vid.stab, Motion Canvas/Remotion and OpenRV, running on FFmpeg + NumPy in a cloud sandbox. Detects scene cuts (FFmpeg scdet, or the real PySceneDetect ContentDetector when installed) with a storyboard contact sheet; removes silences with frame-grid cuts that keep audio and video in sync; exports any segment plan as OpenTimelineIO JSON (read back with the opentimelineio package when present) and a CMX3600 EDL for Kdenlive/Shotcut/Resolve/Premiere; builds portable 33^3 .cube looks and applies them with lut3d; stabilises with two-pass vid.stab and measures shake before/after by phase correlation; reframes landscape footage to a 1080x1920 portrait crop by tracking motion and detail with a smoothed, speed-capped virtual camera that re-aims at scene cuts; renders eased push-in/pan/tilt/ken-burns camera moves on stills or clips; and makes A/B side-by-side or wipe review videos with burnt-in timecode and SSIM/PSNR.
+- **متى أستخدمها / when:** اكشف القطعات والمشاهد في الفيديو واعملي ستوري بورد / Find every cut in this video and give me a storyboard of the scenes
+- **كيف / how:** doctor: `python3 scripts/cinema_lab.py doctor`; scenes: `python3 scripts/cinema_lab.py scenes --input ./film.mp4 --out ./scenes --sheet --timeline`; silence-cut: `python3 scripts/cinema_lab.py silence-cut --input ./talk.mp4 --output ./tight.mp4 --timeline`; timeline: `python3 scripts/cinema_lab.py timeline --plan ./scenes/scenes.json --out ./edit`. Full card: `python3 scripts/hub.py tool cinema-lab`. Limits: Scene detection is a frame-difference score: soft dissolves and fast flashes can be missed or doubled, so check the storyboard. Silence cut re-encodes the audio (cutting changes timing) and works on loudness, not words; music beds hide pauses. Reframe tracks motion and detail energy, not faces or a named subject, and cannot recover action outside the crop. Looks are hand-built LUTs, not a calibrated ACES/OCIO pipeline. Stabilise cannot fix motion blur or rolling shutter. Camera moves are 2D crops, not 3D parallax. **أرقام / params:** in: Local video, audio or image files the user owns or may edit; a kosif.segments.v1 plan for timeline export; optionally a .cube LUT. · out: New media files (H.264 CRF 17, yuv420p, 30 fps, +faststart; vertical outputs 1080x1920; audio copied when timing is unchanged), scenes.json / plan JSON, storyboard.jpg, .otio, .edl, .cube files and a kosif.cinema_lab.receipt.v1 JSON receipt with measurements and SHA-256.
+- **تثبيت / install:** `pip install numpy · needs on PATH: ffmpeg, ffprobe · optional: scenedetect[opencv], opentimelineio`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`npm:remotion`](../requirements.md#req-npm-remotion)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_cinema_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinema_lab.py`
 - **المصدر / source:** data/tools.json
 
 ## Audio and rhythm / الصوت والإيقاع
@@ -1548,7 +1557,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (173)
+- الرخص / licences: — (174)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

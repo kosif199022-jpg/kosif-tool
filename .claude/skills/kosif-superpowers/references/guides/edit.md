@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:edit:start -->
 
-**الأدوات / tools (15)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (16)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -27,6 +27,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `dua-wednesday` | Rebuilds the approved Wednesday-morning dua reel style on new footage and voice: one dua phrase per licensed shot cut just before the voice onset with nine different transitions (light leak, whip, gold ink reveal, zoom-through, gold iris, film burn, spin zoom, bokeh, slide), word-by-word Arabic text timed with faster-whisper and audio energy with a gold karaoke highlight, a gold Ruqaa day title under a drawn-on mihrab crowned by a crescent, golden dust, god rays, bloom, warm grade and grain. The voice is stream-copied and checked byte for byte. | `python3 scripts/dua_wednesday.py doctor` | tested-here |
 | `look-pipeline` | Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file. | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `fast-edit` | Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it. | `python3 scripts/fast_edit.py doctor` | tested-here |
+| `cinema-lab` | Cinematography and editing engines rebuilt in our own code from ideas in PySceneDetect, Auto-Editor, OpenTimelineIO, OpenColorIO, OpenCV, vid.stab, Motion Canvas/Remotion and OpenRV, running on FFmpeg + NumPy in a cloud sandbox. Detects scene cuts (FFmpeg scdet, or the real PySceneDetect ContentDetector when installed) with a storyboard contact sheet; removes silences with frame-grid cuts that keep audio and video in sync; exports any segment plan as OpenTimelineIO JSON (read back with the opentimelineio package when present) and a CMX3600 EDL for Kdenlive/Shotcut/Resolve/Premiere; builds portable 33^3 .cube looks and applies them with lut3d; stabilises with two-pass vid.stab and measures shake before/after by phase correlation; reframes landscape footage to a 1080x1920 portrait crop by tracking motion and detail with a smoothed, speed-capped virtual camera that re-aims at scene cuts; renders eased push-in/pan/tilt/ken-burns camera moves on stills or clips; and makes A/B side-by-side or wipe review videos with burnt-in timecode and SSIM/PSNR. | `python3 scripts/cinema_lab.py doctor` | tested-here |
 
 <!-- hub:area:edit:end -->
 
@@ -41,6 +42,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 7. [Global Video Platform Intelligence / Video Workflow Bridge (2026-10-19)](#global-video-platform-intelligence--video-workflow-bridge-2026-10-19)
 8. [دعاء يوم الأربعاء — Wednesday-morning dua reel (2026-10-21)](#دعاء-يوم-الأربعاء--wednesday-morning-dua-reel-2026-10-21)
 9. [التعديل السريع — Fast Edit: honest instant cut, voice presets, low-light lift (2026-10-23)](#التعديل-السريع--fast-edit-honest-instant-cut-voice-presets-low-light-lift-2026-10-23)
+10. [معمل السينما — Cinema Lab: 24 film repositories turned into runnable engines (2026-10-25)](#معمل-السينما--cinema-lab-24-film-repositories-turned-into-runnable-engines-2026-10-25)
 
 **Katana analysis-only policy:** إذا طلب المستخدم تحليل صور/مقاطع أو مرجع مونتاج، طبّق [سياسة Katana في A8](../protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد): النتيجة ردود وتحليل نصي، وليس إعادة إنشاء/إخراج صور أو فيديو عبر Katana، ولا استخدام أرصدة توليد Higgsfield. لا تفترض أن Katana لديها واجهة تحليل read-only؛ عند عدم إثباتها استخدم أدوات فحص KOSIF/FFmpeg أو الرؤية مباشرة مع تمييز المصدر.
 
@@ -117,3 +119,38 @@ footage, text, day title and dates, and add new animation on top only through `E
     python3 $SKILL_DIR/scripts/look_pipeline.py apply ./in.mp4 ./graded.mp4 --preset warm
 
 Background: [montaji.md](../app-studies/montaji.md).
+
+## معمل السينما — Cinema Lab: 24 film repositories turned into runnable engines (2026-10-25)
+
+The owner sent 24 well-known open-source film, editing and VFX projects and asked to use them. `cinema_lab.py` keeps what runs in a cloud sandbox and rebuilds each idea in our own code on FFmpeg + NumPy; the real library is used only when it is installed (`scenedetect`, `opentimelineio`). Delivery follows the export spec: 1080x1920 for vertical outputs, 30 fps, H.264 CRF 17, yuv420p, `+faststart`, audio copied whenever timing is unchanged. Every command prints a `kosif.cinema_lab.receipt.v1` receipt with measurements.
+
+    python3 $SKILL_DIR/scripts/cinema_lab.py doctor
+    python3 $SKILL_DIR/scripts/cinema_lab.py scenes --input ./film.mp4 --out ./scenes --sheet --timeline
+    python3 $SKILL_DIR/scripts/cinema_lab.py silence-cut --input ./talk.mp4 --output ./tight.mp4 --timeline
+    python3 $SKILL_DIR/scripts/cinema_lab.py grade --input ./clip.mp4 --output ./graded.mp4 --look teal-orange --cube-out ./teal.cube
+    python3 $SKILL_DIR/scripts/cinema_lab.py stabilize --input ./shaky.mp4 --output ./steady.mp4
+    python3 $SKILL_DIR/scripts/cinema_lab.py reframe --input ./wide.mp4 --output ./reel.mp4
+    python3 $SKILL_DIR/scripts/cinema_lab.py camera --input ./photo.jpg --output ./push.mp4 --move push-in
+    python3 $SKILL_DIR/scripts/cinema_lab.py review --a ./before.mp4 --b ./after.mp4 --output ./ab.mp4 --mode wipe --metrics
+
+A good chain for a reel from a wide film: `scenes --sheet` (look at the storyboard first) → `reframe` (the camera re-aims at each cut instead of panning across it) → `grade` → `review --mode wipe --metrics` against the ungraded reframe → `verify_video.py`.
+
+| repository | what we took | where |
+|---|---|---|
+| PySceneDetect | content-difference cut detection, minimum scene length, real ContentDetector when installed | `scenes` |
+| Storyboarder | one frame per shot with its time range as a storyboard sheet | `scenes --sheet` |
+| Auto-Editor | silence → keep speech with a margin → one clean render | `silence-cut` (cuts snapped to the frame grid so A/V stay in sync) |
+| OpenTimelineIO | the interchange timeline, written without the package and read back with it when present | `timeline`, `--timeline` |
+| Kdenlive, Shotcut | they import the CMX3600 EDL and OTIO we write, so a cut can be finished by hand | `.edl`, `.otio` |
+| LosslessCut | keyframe-aware stream-copy cutting | already in `fast_edit.py cut` |
+| FFmpeg | the engine under every command (scdet, silencedetect, lut3d, vid.stab, zoompan, sendcmd, ssim/psnr) | all |
+| OpenColorIO | looks as portable 3D LUTs (.cube) that OCIO, Resolve, Natron and Kdenlive read | `grade` |
+| OpenCV | motion and detail tracking for a virtual camera operator, phase-correlation shake measurement | `reframe`, `stabilize` |
+| Motion Canvas, Remotion | the camera as code: eased push-in, pan, tilt, ken-burns | `camera`; React/HTML scenes stay in `render_html.cjs` and the Remotion starters |
+| OpenRV | shot review: A/B side-by-side or wipe, burnt-in timecode, SSIM/PSNR | `review` |
+| Blender | already bridged (`blender_cinema.py`, `blender_motion_video.py`, `native_3d.py`) | — |
+| Natron | node compositing stays outside; it reads our .cube looks and EDL | — |
+| Nerfstudio, COLMAP | need a GPU and many photos of a real place; not practical in a CPU sandbox, run them on the owner's machine | — |
+| libgphoto2, OBS Studio | drive a physical camera or capture a screen; they need the owner's device, not a cloud session | — |
+
+Honest limits: scene detection is a difference score (soft dissolves can be missed, so look at the storyboard); silence cut works on loudness, not words, and re-encodes audio; reframe follows motion and detail, not faces; the looks are hand-built LUTs, not a calibrated ACES pipeline; stabilise cannot remove motion blur or rolling shutter; camera moves are 2D crops, not 3D parallax.

@@ -42,6 +42,7 @@
 | `blender-cinematic-bridge` | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت | `python3 scripts/blender_cinematic_bridge.py doctor` | tested-here |
 | `character-fullbody` | تحريك الشخصية بكامل الجسم | `python3 scripts/character_fullbody.py doctor` | tested-here |
 | `character-ik` | تحريك ذراع الشخصية بالحركية العكسية | `python3 scripts/character_ik.py doctor` | tested-here |
+| `cinema-lab` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | `python3 scripts/cinema_lab.py doctor` | tested-here |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
 | `code-drawing-master` | رسم الشخصيات والمشاهد بالكود | `python3 scripts/code_drawing_master.py --cast human+cat --expression happy --location street --action walk --out ./story.json --html ./story.html` | tested-here |
