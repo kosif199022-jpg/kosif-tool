@@ -1,4 +1,4 @@
-# Download and render permissions (proposed allow list)
+# Download and render permissions (allow list)
 
 When Claude Code runs in auto mode, every Bash command is checked by a server-side safety classifier.
 If that service has an outage, Bash fails with:
@@ -9,8 +9,8 @@ That error is on Anthropic's side and temporary. It is not a bug in this repo. W
 is in `CLAUDE.md` and in appendix A29 of the protocol: retry once, then continue with work that needs no shell.
 
 Commands that match an `allow` rule in `.claude/settings.json` run without asking the classifier, so they keep
-working during such an outage. Claude is not allowed to grant itself permissions, so **the repo owner adds this
-block by hand** to `.claude/settings.json` (merge it next to the existing `"hooks"` key):
+working during such an outage. This block is in `.claude/settings.json` (added with the repo owner's explicit
+approval on 2026-10-25). Change it only with the owner's approval:
 
 ```json
 "permissions": {
