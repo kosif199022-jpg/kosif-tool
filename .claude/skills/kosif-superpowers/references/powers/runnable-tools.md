@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **172 powers follow** — ✅ 140 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **173 powers follow** — ✅ 141 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -15,7 +15,7 @@
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-171 (22)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-168 (15)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
@@ -588,6 +588,14 @@
 - **تثبيت / install:** `needs on PATH: python3 · optional: node, playwright, ffmpeg`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium) · [`npm:rea`](../requirements.md#req-npm-rea)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_kmx_engine.py` · `kosif-tool/.claude/skills/kosif-infinite-matrices/tests/test_infinite_matrices.py` · `kosif-tool/.claude/skills/kosif-infinite-matrices/scripts/kmx.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-174 · تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يشغّل رندر أو ترميز أو تحميل أو تثبيت طويل في الخلفية (اللوج ورقم العملية وكود الخروج في مجلد المهمة) وينتظره بدون `sleep N; check` الذي يمنعه Claude Code: الأمر `wait` يطبع سطر تقدّم كل فترة (فريم كذا من كذا، أو frame= من ffmpeg، أو نسبة مئوية) ثم DONE أو FAILED مع آخر سطور اللوج، ويخرج بكود المهمة، ليعمل داخل أداة Monitor أو مع run_in_background؛ و`status` نظرة بلا انتظار، و`stop` يوقفها. — Starts a long render, encode, download or install detached (log, pid and exit code in a job folder) and waits on it without `sleep N; check`, which Claude Code blocks: `wait` prints a throttled PROGRESS line (render_html.cjs `frame i/n`, ffmpeg `frame=`, percentages) then DONE or FAILED with the log tail and exits with the job's code, for the Monitor tool or Bash run_in_background; `status` peeks without waiting; `stop` ends it.
+- **متى أستخدمها / when:** رندر الفيديو كامل في الخلفية وقولي وصل لفين / Render the full video in the background and tell me the progress
+- **كيف / how:** start: `python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4`; wait: `python3 tools/job.py wait --dir out/20261024-film/render`; status: `python3 tools/job.py status --dir out/20261024-film/render`; stop: `python3 tools/job.py stop --dir out/20261024-film/render`. Full card: `python3 scripts/hub.py tool repo-job-wait`. Limits: Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection). **أرقام / params:** in: A job folder (--dir) and, for start, the command after `--`. · out: job.log, job.pid, job.exit and job.json in the job folder; STARTED/PROGRESS/WARN/DONE/FAILED/TIMEOUT lines on stdout; exit code = the job's exit code (124 on timeout, 2 when no job exists).
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`node`](../requirements.md#req-node) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/tests/test_job_wait.py` · `kosif-tool/tools/job.py`
 - **المصدر / source:** data/tools.json
 
 ## Editing and reference video / المونتاج والفيديو المرجعي
@@ -1540,7 +1548,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (172)
+- الرخص / licences: — (173)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
