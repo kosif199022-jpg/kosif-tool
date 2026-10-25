@@ -1,6 +1,79 @@
-# أدوات المجال `edit` (16 أداة)
+# أدوات المجال `edit` (17 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
+
+### `cinema-lab` — معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/cinema_lab.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `transitions-cuts`, `camera-composition-layout`, `color-palette-grading` |
+
+**ما تفعله:** محركات تصوير ومونتاج مكتوبة بكودنا من أفكار PySceneDetect وAuto-Editor وOpenTimelineIO وOpenColorIO وOpenCV وvid.stab وMotion Canvas/Remotion وOpenRV، وتشتغل بـ FFmpeg وNumPy في السحابة: يكشف القطعات ويطلع ستوري بورد، يحذف الصمت مع الحفاظ على تزامن الصوت والصورة، يصدّر التايملاين OTIO وEDL لبرامج المونتاج، يعمل ألوان سينمائية بملفات .cube، يثبت الكاميرا المهزوزة ويقيس الاهتزاز قبل وبعد، يحوّل الفيديو العريض لطولي 1080x1920 بكاميرا ذكية بتتبع الحركة، يعمل حركات كاميرا ناعمة على صورة أو فيديو، ويطلع فيديو مقارنة A/B بتايم كود ومقاييس SSIM/PSNR.
+
+**What it does:** Cinematography and editing engines rebuilt in our own code from ideas in PySceneDetect, Auto-Editor, OpenTimelineIO, OpenColorIO, OpenCV, vid.stab, Motion Canvas/Remotion and OpenRV, running on FFmpeg + NumPy in a cloud sandbox. Detects scene cuts (FFmpeg scdet, or the real PySceneDetect ContentDetector when installed) with a storyboard contact sheet; removes silences with frame-grid cuts that keep audio and video in sync; exports any segment plan as OpenTimelineIO JSON (read back with the opentimelineio package when present) and a CMX3600 EDL for Kdenlive/Shotcut/Resolve/Premiere; builds portable 33^3 .cube looks and applies them with lut3d; stabilises with two-pass vid.stab and measures shake before/after by phase correlation; reframes landscape footage to a 1080x1920 portrait crop by tracking motion and detail with a smoothed, speed-capped virtual camera that re-aims at scene cuts; renders eased push-in/pan/tilt/ken-burns camera moves on stills or clips; and makes A/B side-by-side or wipe review videos with burnt-in timecode and SSIM/PSNR.
+
+#### متى تُستدعى
+
+- «Find every cut in this video and give me a storyboard of the scenes»
+- «Remove the silent pauses from this talking video automatically»
+- «Export the edit as an OTIO or EDL timeline I can open in Kdenlive, Resolve or Premiere»
+- «Give this clip a teal and orange cinematic look and save the LUT»
+- «Stabilise this shaky phone footage»
+- «Turn this wide 16:9 video into a portrait crop that follows the action»
+- «Add a slow cinematic push-in on this photo»
+- «Compare the original and the graded version side by side»
+- «اكشف القطعات والمشاهد في الفيديو واعملي ستوري بورد»
+- «احذف السكتات والصمت من الفيديو تلقائي»
+- «صدّر المونتاج تايملاين يفتح في كدينلايف أو ريزولف»
+- «اعمل للفيديو لون سينمائي تيل أورنج»
+- «ثبّت الفيديو المهزوز»
+- «حوّل الفيديو العريض لفيديو بالطول يتابع الحركة»
+- «اعمل زووم سينمائي بطيء على الصورة»
+- «قارن الأصلي بالمعدّل جنب بعض»
+
+#### الأوامر
+
+- **doctor**: Check ffmpeg filters (scdet, lut3d, vid.stab, zoompan, sendcmd, ssim), optional Python libraries and the export defaults.
+  - `python3 scripts/cinema_lab.py doctor`
+- **scenes**: Detect cuts (--engine auto\|ffmpeg\|pyscenedetect) into scenes.json, plus storyboard.jpg and scenes.otio/.edl.
+  - `python3 scripts/cinema_lab.py scenes --input ./film.mp4 --out ./scenes --sheet --timeline`
+- **silence-cut**: Find silences (--noise dB, --min-silence s), keep speech with a margin snapped to the frame grid, render one synced file (or --plan-only).
+  - `python3 scripts/cinema_lab.py silence-cut --input ./talk.mp4 --output ./tight.mp4 --timeline`
+- **timeline**: Turn a kosif.segments.v1 plan into edit.otio and edit.edl.
+  - `python3 scripts/cinema_lab.py timeline --plan ./scenes/scenes.json --out ./edit`
+- **grade**: Apply a named look (teal-orange, bleach-bypass, warm-film, cool-night, noir, golden-hour) or --lut file.cube; measures the frame before/after. --cube-out alone exports the LUT.
+  - `python3 scripts/cinema_lab.py grade --input ./clip.mp4 --output ./graded.mp4 --look teal-orange --strength 0.8 --cube-out ./teal.cube`
+- **stabilize**: Two-pass vid.stab (or --deshake), audio copied; reports mean and p95 frame-to-frame shift before and after.
+  - `python3 scripts/cinema_lab.py stabilize --input ./shaky.mp4 --output ./steady.mp4`
+- **reframe**: Track motion and detail, smooth the virtual camera, re-aim at scene cuts and crop to 1080x1920; writes the camera path.
+  - `python3 scripts/cinema_lab.py reframe --input ./wide.mp4 --output ./reel.mp4`
+- **camera**: Eased push-in, pull-out, pan, tilt or ken-burns on a still or a clip, supersampled to avoid jitter.
+  - `python3 scripts/cinema_lab.py camera --input ./photo.jpg --output ./push.mp4 --move push-in --duration 5`
+- **review**: Side-by-side or wipe A/B review with labels and timecode; --metrics adds SSIM and PSNR.
+  - `python3 scripts/cinema_lab.py review --a ./before.mp4 --b ./after.mp4 --output ./ab.mp4 --mode wipe --metrics`
+- **tests**: Run 23 tests (export settings checked against export_profile.py): planning maths, LUTs, tracking and real FFmpeg runs (skipped without ffmpeg/numpy).
+  - `python3 -m unittest discover -s evals -p 'test_cinema_lab.py' -v`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- optional: scenedetect[opencv], opentimelineio
+- python: numpy
+- الأمان: writes-files
+- الموافقة: Use only media the user owns or is licensed to edit; sources are never modified and outputs are new files.
+- الحدود: Scene detection is a frame-difference score: soft dissolves and fast flashes can be missed or doubled, so check the storyboard. Silence cut re-encodes the audio (cutting changes timing) and works on loudness, not words; music beds hide pauses. Reframe tracks motion and detail energy, not faces or a named subject, and cannot recover action outside the crop. Looks are hand-built creative LUTs, used only when a look is asked for (the export standard matches colour to the source by default), not a calibrated ACES/OCIO pipeline. Stabilise cannot fix motion blur or rolling shutter. Camera moves are 2D crops, not 3D parallax.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_cinema_lab.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/edit.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:cinema-lab --evidence <ملف>`.
 
 ### `cinematic-broll-render` — تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer
 

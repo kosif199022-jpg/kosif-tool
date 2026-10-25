@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5852,
+  "catalog_powers": 5853,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 177,
+  "tool_count": 178,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 271,
+      "count": 272,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 168,
+        "proven": 169,
         "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 173,
+        "runnable-tools": 174,
         "self-discovery": 43
       },
       "examples": [
@@ -74274,6 +74274,27 @@
       ],
       "source": "runnable-tools.json",
       "what": "يشغّل رندر أو ترميز أو تحميل أو تثبيت طويل في الخلفية (اللوج ورقم العملية وكود الخروج في مجلد المهمة) وينتظره بدون `sleep N; check` الذي يمنعه Claude Code: الأمر `wait` يطبع سطر تقدّم كل فترة (فريم كذا من كذا، أو frame= من ffmpeg، أو نسبة مئوية) ثم DONE أو FAILED مع آخر سطور اللو"
+    },
+    {
+      "id": "TOOL-175",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review",
+      "name_ar": "معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "pip:numpy",
+        "pip:opencv",
+        "npm:remotion"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/cinema_lab.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "محركات تصوير ومونتاج مكتوبة بكودنا من أفكار PySceneDetect وAuto-Editor وOpenTimelineIO وOpenColorIO وOpenCV وvid.stab وMotion Canvas/Remotion وOpenRV، وتشتغل بـ FFmpeg وNumPy في السحابة: يكشف القطعات ويطلع ستوري بورد، يحذف الصمت مع الحفاظ على تزامن الصوت والصورة، يصدّر التايملاين"
     },
     {
       "id": "SEC-01",

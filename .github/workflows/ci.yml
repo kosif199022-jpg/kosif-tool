@@ -101,6 +101,10 @@ jobs:
         run: node --test .claude/skills/kosif-superpowers/evals/test_motion_toolkit.mjs .claude/skills/kosif-superpowers/evals/test_motion_template.mjs
       - name: Install image, typography atlas and photo-pipeline dependencies
         run: python3 -m pip install --disable-pip-version-check 'Pillow==12.3.0' 'fonttools[woff]==4.60.1' 'beautifulsoup4==4.15.0' 'opencv-python-headless==4.12.0.88'
+      - name: Cinema Lab (scene cuts, silence cut, OTIO/EDL, LUT looks, stabilise, 9:16 reframe, camera moves, A/B review)
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg)
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_cinema_lab.py' -v
       - name: KOSIF Creative Paint PNG/SVG/GIF/MP4 functionality and safety
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_creative_paint.py' -v
       - name: KOSIF portrait pipeline (stroke-built graphite portrait, method cards, review gate)

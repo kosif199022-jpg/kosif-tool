@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5852,
+ "atoms": 5853,
  "superpowers": 481,
  "hubs": [
   {
@@ -404,12 +404,12 @@
     "SP-0140",
     "SP-0022",
     "SP-0143",
-    "SP-0146",
-    "SP-0021",
     "SP-0144",
-    "SP-0145",
-    "SP-0148",
     "SP-0147",
+    "SP-0021",
+    "SP-0145",
+    "SP-0146",
+    "SP-0148",
     "SP-0149",
     "SP-0150",
     "SP-0151",
@@ -433,16 +433,16 @@
     },
     {
      "id": "SP-0141",
-     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
-     "name_en": "Reference Edit Engine",
-     "size": 17,
+     "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
+     "name_en": "Staged drawing and original three-value visual studies",
+     "size": 16,
      "best": "proven",
-     "ready_now": 17
+     "ready_now": 16
     },
     {
      "id": "SP-0142",
-     "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
-     "name_en": "Staged drawing and original three-value visual studies",
+     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
+     "name_en": "Reference Edit Engine",
      "size": 16,
      "best": "proven",
      "ready_now": 16
@@ -472,7 +472,15 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0146",
+     "id": "SP-0144",
+     "name_ar": "مستكشف مصادر المجتمع",
+     "name_en": "Community source scout",
+     "size": 12,
+     "best": "proven",
+     "ready_now": 10
+    },
+    {
+     "id": "SP-0147",
      "name_ar": "مختبر البرومبت",
      "name_en": "Prompt Lab",
      "size": 10,
@@ -488,7 +496,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0144",
+     "id": "SP-0145",
      "name_ar": "تدقيق أدلة الكتالوج",
      "name_en": "Catalog Evidence Audit",
      "size": 11,
@@ -496,7 +504,7 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0145",
+     "id": "SP-0146",
      "name_ar": "جسر Blender الآمن",
      "name_en": "Safe headless Blender bridge",
      "size": 11,
@@ -510,25 +518,17 @@
      "size": 9,
      "best": "proven",
      "ready_now": 9
-    },
-    {
-     "id": "SP-0147",
-     "name_ar": "مستكشف مصادر المجتمع",
-     "name_en": "Community source scout",
-     "size": 10,
-     "best": "proven",
-     "ready_now": 8
     }
    ],
-   "powers": 286,
+   "powers": 287,
    "status_mix": {
-    "proven": 168,
+    "proven": 169,
     "ready": 21,
     "install": 15,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 189,
+   "ready_now": 190,
    "requires": [
     "python3",
     "ffmpeg",
@@ -543,8 +543,8 @@
     "pip:opencv",
     "engine:ghidra",
     "git",
-    "pip:office",
     "npm:remotion",
+    "pip:office",
     "pip:faster-whisper",
     "network",
     "npm:p5",
@@ -589,8 +589,8 @@
     "pip:anthropic",
     "npm:animejs",
     "npm:esbuild",
-    "pip:fonttools",
     "pip:rdkit",
+    "pip:fonttools",
     "key:openai",
     "npm:lottie",
     "model:yunet",
@@ -878,8 +878,8 @@
    "links": [
     "3d",
     "thinking",
-    "motion",
-    "quality"
+    "quality",
+    "motion"
    ]
   },
   {
@@ -1898,7 +1898,7 @@
     "3d",
     "software",
     "agents",
-    "images"
+    "audio"
    ]
   },
   {

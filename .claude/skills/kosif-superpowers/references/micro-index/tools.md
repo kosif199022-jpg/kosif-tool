@@ -101,6 +101,7 @@
 
 | tool | ID | الأداة / tool | أمر أول / first command | tests |
 |---|---|---|---|---|
+| `cinema-lab` | TOOL-175 | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | `python3 scripts/cinema_lab.py doctor` | 1 |
 | `cinematic-broll-render` | TOOL-19 | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest…` | 1 |
 | `cinematic-cut-planner` | TOOL-20 | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips…` | 2 |
 | `creative-quality-gate` | TOOL-35 | بوابة جودة خطة المونتاج · Reference-edit structural quality gate | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json -…` | 1 |
