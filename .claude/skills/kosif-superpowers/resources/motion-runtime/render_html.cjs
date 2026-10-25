@@ -100,7 +100,8 @@ Options
   --frames-dir <dir>  where PNG frames go (kept); default: a temp dir that is deleted
   --keep-frames       keep the temp frames dir
   --crf <n>           libx264 quality, lower = better     (default ${DEFAULTS.crf})
-  --scale <n>         device scale factor: output pixels = width*scale x height*scale (default ${DEFAULTS.scale})
+  --scale <n>         device scale factor: output pixels = width*scale x height*scale (default ${DEFAULTS.scale});
+                      above 1 needs seek mode (in virtual mode set --width/--height to the output size)
   --seed <n>          replace Math.random inside the page with a seeded PRNG
   --offline           abort every http(s) request (system fonts only, fully reproducible)
   --timeout <ms>      page load timeout                   (default ${DEFAULTS.timeout})
@@ -305,7 +306,13 @@ async function loadPage(page, url, { timeout, settle }) {
 // seek driver: the page draws the frame for time t when seek(t) is called,
 // then a normal screenshot is taken.
 class SeekDriver {
-  constructor(page, cdp) { this.page = page; this.cdp = cdp; this.name = 'seek'; }
+  constructor(page, cdp, { width, height, scale }) {
+    this.page = page; this.cdp = cdp; this.name = 'seek';
+    // Page.captureScreenshot without a clip returns CSS pixels in headless Chromium and
+    // ignores deviceScaleFactor, so --scale 2 gave 1080x1920. An explicit clip with
+    // scale captures at device pixels (same pixels as Playwright's own page.screenshot).
+    this.clip = { x: 0, y: 0, width, height, scale };
+  }
   async goTo(t) {
     await this.page.evaluate((time) => window.__kosif.seek(time), t);
   }
@@ -313,6 +320,7 @@ class SeekDriver {
     const { data } = await this.cdp.send('Page.captureScreenshot', {
       format: 'png', fromSurface: true, captureBeyondViewport: false,
       optimizeForSpeed: true, // still lossless PNG, faster zlib level (~6x quicker capture)
+      clip: this.clip,
     });
     fs.writeFileSync(file, Buffer.from(data, 'base64'));
   }
@@ -583,9 +591,13 @@ async function main() {
     const total = Math.round(duration * fps);
     if (total < 1) throw new UsageError('duration * fps must be at least one frame');
 
+    if (useVirtual && capScale > 1) {
+      // HeadlessExperimental.beginFrame screenshots are always taken at CSS pixels.
+      throw new UsageError(`--scale ${scale} only works in seek mode; in virtual mode use --width ${outWidth} --height ${outHeight} instead`);
+    }
     let driver;
     if (useVirtual) { driver = new VirtualDriver(page, cdp, fps); await driver.start(); }
-    else driver = new SeekDriver(page, cdp);
+    else driver = new SeekDriver(page, cdp, { width, height, scale: capScale });
 
     log(`mode: ${driver.name} | ${width}x${height} css px, scale ${scale} -> ${outWidth}x${outHeight} | ${fps} fps | ${total} frames | start ${fmtTime(start)} | duration ${fmtTime(duration)}`);
     const timeOf = (i) => start + i / fps;
