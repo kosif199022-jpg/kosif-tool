@@ -76,6 +76,10 @@ ffmpeg -framerate 30 -i frames/frame_%06d.png -i voice.mp3 \
 
 Seek contract for your own pages: `window.__kosif = { duration, fps, seek(t) }` plus optional `window.__kosifReady`. See `starters/html-canvas/index.html`.
 
+Photo films (a photo behind lyrics, Ken Burns, pans, parallax, handheld shake): draw every photo layer through `tools/photo_cover.js` (`KosifCover.drawPhoto(ctx, img, { W, H, zoom, fx, fy, ox, oy, rot, blur })`). It scales to cover (never to the frame width alone), floors the zoom at cover, raises it for rotation and blur, and clamps pans so no edge of the photo shows, for any photo aspect ratio. Before the preview, run `node tools/check_frame_cover.cjs --in film/index.html --variants "style=1;style=2;style=3;style=4;style=5" --samples 48`: it renders sample frames of every style and exits 3 if any frame shows an empty edge.
+
+**بالعربية (أفلام الصور):** ارسم كل طبقة صورة عبر `tools/photo_cover.js` حتى تغطي الصورة الإطار كله في كل حركة كاميرا ولأي مقاس صورة، ثم شغّل `tools/check_frame_cover.cjs` على كل الستايلات قبل المعاينة؛ يفشل لو ظهرت حافة فاضية في أي إطار.
+
 **بالعربية:** المواصفات في الجدول أعلاه: 9:16 بدقة 1080×1920 و30 إطارًا لريلز وتيك توك، و16:9 ليوتيوب، و1:1 أو 4:5 للخلاصات، كلها H.264 وyuv420p وصوت AAC بجهارة −14 LUFS.
 
 ## 6. Arabic and RTL notes — ملاحظات العربية
@@ -102,6 +106,7 @@ Mux the original audio without resampling (`-c:a aac` from the source, `-shortes
 8. First and last frames intentional?
 9. Editable sources delivered with the MP4?
 10. TEST_REPORT.md filled with measured values?
+11. Photo films: `check_frame_cover.cjs` passes for every style (no empty edge in any frame)?
 
 ## 9. Anti-patterns — أخطاء شائعة
 

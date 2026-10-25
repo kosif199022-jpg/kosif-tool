@@ -1,0 +1,24 @@
+name: Photo frame cover
+# Renders sample frames of every photo camera style and fails if any frame shows an empty edge.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  frame-cover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.49.1
+          npx playwright install --with-deps chromium
+      - name: Camera math, checker, five styles x six photo shapes, and the old bug must fail
+        run: node --test tests/test_photo_cover.mjs
+      - name: Photo films in the repo keep the frame covered
+        run: |
+          node tools/check_frame_cover.cjs --in projects/egypt-saudi-salute/index.html --samples 200
