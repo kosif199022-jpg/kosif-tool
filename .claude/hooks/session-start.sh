@@ -1,5 +1,5 @@
 #!/bin/bash
-# Installs the download tools (yt-dlp, curl_cffi, instaloader) at the start of every Claude Code cloud session,
+# Installs the download tools (yt-dlp, yt-dlp-ejs, curl_cffi, instaloader) at the start of every Claude Code cloud session,
 # so TikTok/YouTube/Instagram links work without a manual pip step. Never fails the session.
 # Local machines are left alone unless KOSIF_AUTOINSTALL=1; KOSIF_NO_AUTOINSTALL=1 turns it off everywhere.
 if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ] && [ -z "${KOSIF_AUTOINSTALL:-}" ]; then exit 0; fi

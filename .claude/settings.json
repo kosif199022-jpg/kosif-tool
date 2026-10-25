@@ -1,4 +1,34 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/stock_fetch.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/fetch_video.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/media_sources.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/fetch_reference.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/_deps.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/verify_video.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/boot.py *)",
+      "Bash(python3 .claude/skills/kosif-superpowers/scripts/hub.py *)",
+      "Bash(python3 tools/kosif.py *)",
+      "Bash(python3 tools/build.py *)",
+      "Bash(python3 tools/validate.py *)",
+      "Bash(python3 tools/verify_video.py *)",
+      "Bash(node tools/render_html.cjs *)",
+      "Bash(ffmpeg *)",
+      "Bash(ffprobe *)",
+      "Bash(yt-dlp *)",
+      "Bash(mkdir -p *)",
+      "Bash(tail *)"
+    ],
+    "deny": [
+      "Bash(yt-dlp *--exec*)",
+      "Bash(yt-dlp *--netrc-cmd*)",
+      "Bash(yt-dlp *--config-location*)",
+      "Bash(yt-dlp *--plugin-dirs*)",
+      "Bash(yt-dlp *--update*)"
+    ]
+  },
   "hooks": {
     "SessionStart": [
       {
