@@ -264,8 +264,8 @@ def export(scene,dest,frame=1):
             fps,frames=scene.get("fps",24),scene.get("frames",120)
             cmd=[exe,"-hide_banner","-loglevel","error","-y","-f","rawvideo",
                  "-pix_fmt","rgb24","-s",f"{w}x{h}","-r",str(fps),"-i","-",
-                 "-frames:v",str(frames),"-c:v","libx264","-preset","veryfast",
-                 "-crf","20","-pix_fmt","yuv420p","-movflags","+faststart",str(temp)]
+                 "-frames:v",str(frames),"-c:v","libx264","-preset","slow",
+                 "-crf","17","-pix_fmt","yuv420p","-movflags","+faststart",str(temp)]
             proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=subprocess.PIPE)
             try:
                 for f in range(1,frames+1):

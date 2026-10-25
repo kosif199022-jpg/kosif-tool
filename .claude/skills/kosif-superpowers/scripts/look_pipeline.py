@@ -236,8 +236,8 @@ def cmd_apply(a):
         raise SystemExit(f"look_pipeline: {out} exists; choose a new output name")
     c = pipeline(params_for(a.preset, a.amount, _overrides(a.set)))
     vf = to_ffmpeg(c) + ",format=yuv420p"
-    subprocess.run(["ffmpeg", "-v", "error", "-n", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-crf", "18",
-                    "-preset", "medium", "-c:a", "copy", "-movflags", "+faststart", str(out)], check=True)
+    subprocess.run(["ffmpeg", "-v", "error", "-n", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-crf", "17",
+                    "-preset", "slow", "-pix_fmt", "yuv420p", "-c:a", "copy", "-movflags", "+faststart", str(out)], check=True)
     print(f"{src.name} → {out} ({a.preset} × {a.amount})")
     return 0
 

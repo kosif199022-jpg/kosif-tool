@@ -618,7 +618,7 @@ chapter: [easing-timing-rhythm](../powers/easing-timing-rhythm.md) · card: `usi
 
 ## formats-platforms (motion)
 
-chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-library/cards/motion/formats-platforms.md` · tools: `aspects` · `blender-bridge` · `dua-wednesday` · `fetch-video` · `instagram-finder` · `montage-pro` · `native-glb` · `reel-factory` …
+chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-library/cards/motion/formats-platforms.md` · tools: `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder` · `montage-pro` · `native-glb` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

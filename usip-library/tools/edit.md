@@ -54,7 +54,7 @@
   - `python3 scripts/cinema_lab.py camera --input ./photo.jpg --output ./push.mp4 --move push-in --duration 5`
 - **review**: Side-by-side or wipe A/B review with labels and timecode; --metrics adds SSIM and PSNR.
   - `python3 scripts/cinema_lab.py review --a ./before.mp4 --b ./after.mp4 --output ./ab.mp4 --mode wipe --metrics`
-- **tests**: Run 23 tests: planning maths, LUTs, tracking and real FFmpeg runs (skipped without ffmpeg/numpy).
+- **tests**: Run 23 tests (export settings checked against export_profile.py): planning maths, LUTs, tracking and real FFmpeg runs (skipped without ffmpeg/numpy).
   - `python3 -m unittest discover -s evals -p 'test_cinema_lab.py' -v`
 
 #### المتطلبات والأمان
@@ -64,7 +64,7 @@
 - python: numpy
 - الأمان: writes-files
 - الموافقة: Use only media the user owns or is licensed to edit; sources are never modified and outputs are new files.
-- الحدود: Scene detection is a frame-difference score: soft dissolves and fast flashes can be missed or doubled, so check the storyboard. Silence cut re-encodes the audio (cutting changes timing) and works on loudness, not words; music beds hide pauses. Reframe tracks motion and detail energy, not faces or a named subject, and cannot recover action outside the crop. Looks are hand-built LUTs, not a calibrated ACES/OCIO pipeline. Stabilise cannot fix motion blur or rolling shutter. Camera moves are 2D crops, not 3D parallax.
+- الحدود: Scene detection is a frame-difference score: soft dissolves and fast flashes can be missed or doubled, so check the storyboard. Silence cut re-encodes the audio (cutting changes timing) and works on loudness, not words; music beds hide pauses. Reframe tracks motion and detail energy, not faces or a named subject, and cannot recover action outside the crop. Looks are hand-built creative LUTs, used only when a look is asked for (the export standard matches colour to the source by default), not a calibrated ACES/OCIO pipeline. Stabilise cannot fix motion blur or rolling shutter. Camera moves are 2D crops, not 3D parallax.
 
 #### الاختبارات والأدلة
 

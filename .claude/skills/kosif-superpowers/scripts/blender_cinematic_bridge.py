@@ -103,8 +103,8 @@ def compose_video(blender_video, scene_data, wav, output, fps=12, fade_frames=2,
         command=["ffmpeg","-hide_banner","-loglevel","error","-nostdin","-n",
                  "-framerate",str(fps),"-i",str(finished/"%05d.png"),"-i",str(wav),
                  "-map","0:v:0","-map","1:a:0",
-                 "-frames:v",str(n),"-c:v","libx264","-pix_fmt","yuv420p","-crf","18",
-                 "-c:a","aac","-b:a","192k","-af","aresample=async=1:first_pts=0",
+                 "-frames:v",str(n),"-c:v","libx264","-preset","slow","-pix_fmt","yuv420p","-crf","17",
+                 "-c:a","aac","-b:a","320k","-af","aresample=async=1:first_pts=0",
                  "-t",str(n/fps),"-movflags","+faststart",str(output)]
         subprocess.run(command,check=True,capture_output=True,timeout=120)
     delivered=probe(output)

@@ -95,6 +95,8 @@ class PlanTests(unittest.TestCase):
         self.assertIn("+faststart", args)
         self.assertIn("yuv420p", args)
         self.assertEqual(cl.VERTICAL, (1080, 1920))
+        self.assertEqual(args[args.index("-preset") + 1], "slow")  # follows export_profile.py
+        self.assertIn("bt709", args)
 
 
 @unittest.skipUnless(HAVE_NP, "numpy not installed")

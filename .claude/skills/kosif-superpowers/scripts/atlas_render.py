@@ -136,7 +136,7 @@ def cmd_render(a):
         with tempfile.TemporaryDirectory() as td:
             vid = Path(td) / "v.mp4"
             enc = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", str(a.fps), "-i", "-",
-                                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", str(a.crf), "-preset", "medium", str(vid)],
+                                    "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", str(a.crf), "-preset", "slow", str(vid)],
                                    stdin=subprocess.PIPE)
             for i in range(n):
                 enc.stdin.write(_frame_png(page, start + i / a.fps))
@@ -152,7 +152,7 @@ def cmd_render(a):
                 wav = Path(td) / "a.wav"
                 peak = _audio(page, wav, dur, voiceover=a.voiceover)
                 cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(vid), "-ss", "%.3f" % start, "-t", "%.3f" % (end - start), "-i", str(wav),
-                       "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)]
+                       "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "320k", "-shortest", "-movflags", "+faststart", str(out)]
                 if subprocess.run(cmd).returncode != 0:
                     raise SystemExit("ffmpeg mux failed")
     finally:
@@ -194,7 +194,7 @@ def main(argv=None):
             p.add_argument("--t", type=float, default=0.0)
         if name == "render":
             p.add_argument("--fps", type=int, default=30)
-            p.add_argument("--crf", type=int, default=18)
+            p.add_argument("--crf", type=int, default=17)
             p.add_argument("--start", type=float, default=0.0)
             p.add_argument("--end", type=float, default=0.0)
             p.add_argument("--no-audio", action="store_true")

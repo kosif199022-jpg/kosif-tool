@@ -207,7 +207,7 @@ def animate(scene,output,fps=24,duration=2):
                 im=paint(scene,i/fps)
                 backdrop=Image.new("RGBA",im.size,"white");backdrop.alpha_composite(im)
                 backdrop.convert("RGB").save(Path(td)/f'{i:05d}.png')
-            cmd=["ffmpeg","-hide_banner","-loglevel","error","-y","-framerate",str(fps),"-i",str(Path(td)/"%05d.png"),"-frames:v",str(frames),"-c:v","libx264","-pix_fmt","yuv420p","-crf","18",str(out)]
+            cmd=["ffmpeg","-hide_banner","-loglevel","error","-y","-framerate",str(fps),"-i",str(Path(td)/"%05d.png"),"-frames:v",str(frames),"-c:v","libx264","-pix_fmt","yuv420p","-preset","slow","-crf","17","-movflags","+faststart",str(out)]
             subprocess.run(cmd,check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     else:raise ValueError("Use .gif or .mp4")
     return {"output":str(out),"sha256":hash_file(out),"fps":fps,"frames":frames,"verified":out.stat().st_size>100}

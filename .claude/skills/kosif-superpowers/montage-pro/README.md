@@ -85,7 +85,7 @@ python3 $SKILL_DIR/scripts/montage_pro.py convert job1
 - **صفحة بث** (YouTube وVimeo وX وTikTok وHLS `.m3u8` وDASH `.mpd`): التقاط بـ yt-dlp/ffmpeg عبر `fetch_video.py` وتحويل إلى H.264/AAC صالح للمونتاج.
 - **مكتبات مرخصة:** `media_sources.py search` لـ100 موقع مع تلميح الرخصة.
 - كل ملف يُسجَّل في `rights.json` بالرابط وصفحة المصدر والرخصة والبصمة. **يرفض الأمر العمل بلا رخصة أو `--owner`**، ولا يتجاوز DRM أو تسجيل الدخول.
-- `convert` يحوّل كل شيء إلى ميزانين موحد (30fps CFR، H.264 CRF 18، AAC 48 kHz) وبروكسي 540p — دور «محوّل الفيديو» في IDM.
+- `convert` يحوّل كل شيء إلى ميزانين موحد (30fps CFR، H.264 CRF 17 preset slow، AAC 320k 48 kHz) وبروكسي 540p — دور «محوّل الفيديو» في IDM.
 
 ## ما تعلمناه من IDM بـ REA وGhidra / what we learnt from IDM
 

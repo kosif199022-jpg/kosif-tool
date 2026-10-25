@@ -27,7 +27,8 @@ copied from them; each optional library is used only when it is installed):
                timecode, plus SSIM/PSNR between the two.
 
 Delivery defaults follow the repo's export spec: 1080x1920 for vertical outputs, 30 fps, H.264
-CRF 17, yuv420p, +faststart, and the audio stream copied whenever timing is unchanged. Sources are
+CRF 17, yuv420p, +faststart, and the audio stream copied whenever timing is unchanged.
+All of it comes from export_profile.py (playbooks/export-standard.md), so it never drifts from the standard. Sources are
 never modified, an existing output is kept unless --force, and every command prints a JSON receipt.
 """
 from __future__ import annotations
@@ -43,12 +44,15 @@ import subprocess
 import sys
 import tempfile
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import export_profile as xp  # noqa: E402  (the owner's approved delivery settings)
+
 SCHEMA = "kosif.cinema_lab.receipt.v1"
 PLAN_SCHEMA = "kosif.segments.v1"
 TIMEOUT = 3600
-FPS = 30
-CRF = 17
-VERTICAL = (1080, 1920)
+FPS = xp.FPS
+CRF = xp.CRF
+VERTICAL = (xp.WIDTH, xp.HEIGHT)
 LOOKS = ("teal-orange", "bleach-bypass", "warm-film", "cool-night", "noir", "golden-hour")
 MOVES = ("push-in", "pull-out", "pan-left", "pan-right", "tilt-up", "tilt-down", "ken-burns")
 FONT_CANDIDATES = ("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -150,12 +154,18 @@ def parse_size(text, src_w=None, src_h=None):
 
 
 def encode_args(crf=CRF, fps=FPS):
-    return ["-c:v", "libx264", "-preset", "medium", "-crf", str(crf), "-pix_fmt", "yuv420p",
-            "-r", str(fps), "-movflags", "+faststart"]
+    """Delivery video settings from export_profile.py (H.264 High, CRF 17, slow, BT.709, faststart)."""
+    return [*xp.video_args(crf=crf, fps=fps), *xp.FASTSTART]
 
 
 def audio_copy_args(info):
-    return ["-map", "0:a:0?", "-c:a", "copy"] if audio_stream(info) else []
+    """Copy the user's audio byte for byte when MP4 can hold it, else the AAC 320k/48 kHz floor."""
+    a = audio_stream(info)
+    if not a:
+        return []
+    if a.get("codec_name") in xp.MP4_COPY_AUDIO:
+        return ["-map", "0:a:0", "-c:a", "copy"]
+    return ["-map", "0:a:0", *xp.AAC_FALLBACK]
 
 
 def font_file():
@@ -543,12 +553,12 @@ def cmd_silence_cut(a):
                      f"[0:a:0]aresample=48000,asetnsamples=n={48000 // FPS}:p=0,aselect='{expr}',asetpts=N/SR/TB[a]")
             script.write_text(graph, encoding="utf-8")
             ff(["-v", "error", "-i", str(src), "-filter_complex_script", str(script), "-map", "[v]", "-map", "[a]",
-                *encode_args(), "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-y", str(out)])
+                *encode_args(), *xp.AAC_FALLBACK, "-y", str(out)])
         else:
             script.write_text(f"[0:a:0]aresample=48000,asetnsamples=n={48000 // FPS}:p=0,aselect='{expr}',"
                               "asetpts=N/SR/TB[a]", encoding="utf-8")
             ff(["-v", "error", "-i", str(src), "-filter_complex_script", str(script), "-map", "[a]",
-                "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-y", str(out)])
+                *xp.AAC_FALLBACK, "-y", str(out)])
     finally:
         script.unlink(missing_ok=True)
     oi = probe(out)
@@ -558,7 +568,7 @@ def cmd_silence_cut(a):
         sync = round(float(vs["duration"]) - float(as_["duration"]), 4)
     return receipt("silence-cut", input=media_summary(src), silences=len(silent), segments=len(segs),
                    kept_s=round(kept, 3), removed_s=round(dur - kept, 3), plan=str(plan_path), rendered=True,
-                   av_duration_gap_s=sync, audio_note="audio re-encoded to AAC 192k/48 kHz because cutting changes timing",
+                   av_duration_gap_s=sync, audio_note="audio re-encoded to AAC 320k/48 kHz (export standard floor) because cutting changes timing",
                    **finish(out), **extra)
 
 
@@ -866,7 +876,7 @@ def cmd_camera(a):
     pre = (f"scale={tw * k}:{th * k}:force_original_aspect_ratio=increase:flags=lanczos,crop={tw * k}:{th * k}")
     zp = f"zoompan=z='{z}':x='{x}':y='{y}':d={n if is_still else 1}:s={tw}x{th}:fps={FPS}"
     args = ["-v", "error", "-i", str(src)]
-    args += ["-map", "0:v:0", "-vf", f"{'fps=' + str(FPS) + ',' if not is_still else ''}{pre},{zp},setsar=1",
+    args += ["-map", "0:v:0", "-vf", f"{'fps=' + str(FPS) + ',' if not is_still else ''}{pre},{zp},setsar=1{',' + xp.RGB_TO_709 if is_still else ''}",
              "-frames:v", str(n), *encode_args()]
     if not is_still:
         args += audio_copy_args(info)

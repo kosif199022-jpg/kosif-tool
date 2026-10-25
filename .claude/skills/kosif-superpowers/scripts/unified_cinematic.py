@@ -146,8 +146,8 @@ def produce(photo,scene_data,audio,output,fps=12,camera="static",fade_frames=2,p
         command=["ffmpeg","-hide_banner","-loglevel","error","-nostdin","-n",
                  "-framerate",str(fps),"-i",str(folder/"%05d.png"),
                  "-i",str(job["audio"]),"-map","0:v:0","-map","1:a:0",
-                 "-c:v","libx264","-pix_fmt","yuv420p","-crf","18",
-                 "-c:a","aac","-b:a","192k","-af","aresample=async=1:first_pts=0",
+                 "-c:v","libx264","-preset","slow","-pix_fmt","yuv420p","-crf","17",
+                 "-c:a","aac","-b:a","320k","-af","aresample=async=1:first_pts=0",
                  "-t",str(frames/fps),"-movflags","+faststart",str(job["dest"])]
         subprocess.run(command,check=True,capture_output=True,timeout=120)
     report=probe(job["dest"])

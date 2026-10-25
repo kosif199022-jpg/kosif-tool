@@ -163,7 +163,7 @@ def render(edl_file, manifest_file, audio_file, destination, width=1080, height=
             invoke(["ffmpeg","-hide_banner","-loglevel","error","-nostdin","-y",
                     "-i",str(selected[scene["footage_id"]]),
                     "-map","0:v:0","-an","-vf",filt,"-frames:v",str(n),
-                    "-c:v",codec,"-preset","fast","-crf","19","-pix_fmt","yuv420p",
+                    "-c:v",codec,"-preset","slow","-crf","17","-pix_fmt","yuv420p",
                     "-r",str(fps),"-video_track_timescale",str(fps*1000),str(out)])
             item=probe(out)
             frame_count=int(next(s for s in item["streams"] if s["codec_type"]=="video")["nb_frames"])

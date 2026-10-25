@@ -2033,6 +2033,16 @@
    "label": "scripts/skill_layout.py"
   },
   {
+   "id": "script:scripts/cinema_lab.py",
+   "kind": "script",
+   "label": "scripts/cinema_lab.py"
+  },
+  {
+   "id": "script:scripts/export_profile.py",
+   "kind": "script",
+   "label": "scripts/export_profile.py"
+  },
+  {
    "id": "script:scripts/cinematic_broll_render.py",
    "kind": "script",
    "label": "scripts/cinematic_broll_render.py"
@@ -2375,6 +2385,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
   },
   {
+   "id": "test:tests/test_export_profile.py",
+   "kind": "test",
+   "label": "tests/test_export_profile.py"
+  },
+  {
    "id": "test:tests/test_atlas_cycles_integration.py",
    "kind": "test",
    "label": "tests/test_atlas_cycles_integration.py"
@@ -2433,6 +2448,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_check_skill_json.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_check_skill_json.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_cinema_lab.py"
   },
   {
    "id": "test:tests/test_cinematic_cut_planner.py",
@@ -6813,6 +6833,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/cinema_lab.py",
+   "to": "script:scripts/export_profile.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/cinematic_broll_render.py",
    "to": "script:scripts/cinematic_cut_planner.py",
    "rel": "imports",
@@ -7641,6 +7667,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cycles_render.py",
    "to": "test:tests/test_atlas_cycles_integration.py",
    "rel": "tested_by",
@@ -7737,6 +7769,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/cinema_lab.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/cinematic_broll_render.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/cinematic_cut_planner.py",
    "to": "test:tests/test_cinematic_cut_planner.py",
    "rel": "tested_by",
@@ -7779,6 +7823,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/creative_paint.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/drawing_council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
    "rel": "tested_by",
@@ -7787,6 +7837,18 @@
   {
    "from": "script:scripts/drawing_methods.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_methods.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/export_profile.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/export_profile.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7899,8 +7961,20 @@
    "w": 1
   },
   {
+   "from": "script:scripts/kosif_timeline.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/local_first.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/look_pipeline.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8243,6 +8317,18 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think_reasoning.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_cinematic.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_media.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },

@@ -122,7 +122,7 @@ Background: [montaji.md](../app-studies/montaji.md).
 
 ## معمل السينما — Cinema Lab: 24 film repositories turned into runnable engines (2026-10-25)
 
-The owner sent 24 well-known open-source film, editing and VFX projects and asked to use them. `cinema_lab.py` keeps what runs in a cloud sandbox and rebuilds each idea in our own code on FFmpeg + NumPy; the real library is used only when it is installed (`scenedetect`, `opentimelineio`). Delivery follows the export spec: 1080x1920 for vertical outputs, 30 fps, H.264 CRF 17, yuv420p, `+faststart`, audio copied whenever timing is unchanged. Every command prints a `kosif.cinema_lab.receipt.v1` receipt with measurements.
+The owner sent 24 well-known open-source film, editing and VFX projects and asked to use them. `cinema_lab.py` keeps what runs in a cloud sandbox and rebuilds each idea in our own code on FFmpeg + NumPy; the real library is used only when it is installed (`scenedetect`, `opentimelineio`). Delivery settings come from `export_profile.py` ([export standard](../../../../../playbooks/export-standard.md)): 1080x1920 for vertical outputs, 30 fps, H.264 High CRF 17 preset slow, yuv420p, BT.709, `+faststart`, the audio copied whenever timing is unchanged and AAC 320k/48 kHz only when a cut forces a re-encode. `grade` is a creative look for when one is asked for; the standard's default stays colour matched to the source. Every command prints a `kosif.cinema_lab.receipt.v1` receipt with measurements.
 
     python3 $SKILL_DIR/scripts/cinema_lab.py doctor
     python3 $SKILL_DIR/scripts/cinema_lab.py scenes --input ./film.mp4 --out ./scenes --sheet --timeline
