@@ -19,7 +19,7 @@
  *   node tools/render_html.cjs --in <file.html|http URL> --out <out.mp4>
  *        [--aspect <spec>] [--width 1080] [--height 1920] [--fps 30] [--duration <s>] [--start 0]
  *        [--audio <file>] [--mode seek|virtual] [--preview] [--frames-dir <dir>]
- *        [--crf 18] [--scale 1] [--seed <n>] [--offline] [--keep-frames]
+ *        [--crf 17] [--scale 1] [--seed <n>] [--offline] [--keep-frames]
  *        [--timeout <ms>] [--settle <ms>]
  *
  * Node 22, CommonJS, no npm dependencies besides Playwright resolved at runtime.
@@ -41,7 +41,7 @@ const DEFAULTS = {
   height: 1920,
   fps: 30,
   start: 0,
-  crf: 18,
+  crf: 17, // KOSIF export standard (playbooks/export-standard.md): never raise it for delivery
   scale: 1,
   timeout: 60000,
   settle: 0,
@@ -93,7 +93,7 @@ Options
   --fps <n>           frames per second                   (default ${DEFAULTS.fps})
   --duration <s>      seconds to render (seek mode: defaults to window.__kosif.duration)
   --start <s>         film time of the first frame        (default ${DEFAULTS.start})
-  --audio <file>      mux this audio track (AAC 192k, sample timing untouched)
+  --audio <file>      mux this audio (copied as-is if AAC/MP3/ALAC, else AAC 320k)
   --mode seek|virtual driver; auto-detected when omitted (seek if window.__kosif exists)
   --preview           render 8 evenly spaced frames into a contact sheet PNG instead of a video,
                       written next to --out as <out name>_preview.png (out/p.mp4 -> out/p_preview.png)
@@ -387,7 +387,19 @@ class VirtualDriver {
 
 // ------------------------------------------------------------------ encoding
 
-function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height, capWidth, capHeight }) {
+// Codecs an MP4 carries as-is: the voice is copied byte for byte, never re-encoded.
+const MP4_COPY_AUDIO = new Set(['aac', 'mp3', 'alac']);
+
+function audioCodecOf(file) {
+  const r = runTool('ffprobe', ['-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=codec_name',
+    '-of', 'csv=p=0', file]);
+  return r.status === 0 ? String(r.stdout || '').trim().split(/\r?\n/)[0] || null : null;
+}
+
+// KOSIF export standard (playbooks/export-standard.md, scripts/export_profile.py):
+// H.264 High CRF 17 preset slow, yuv420p converted and tagged as BT.709, MP4 +faststart,
+// audio stream-copied when MP4 can hold it (AAC 320k 48 kHz only for WAV/FLAC sources).
+function encodeVideo({ framesDir, frames, fps, out, crf, audio, start, width, height, capWidth, capHeight }) {
   const args = ['-y', '-hide_banner', '-loglevel', 'error', '-nostats',
     '-framerate', String(fps), '-i', path.join(framesDir, 'frame_%06d.png')];
   if (audio) {
@@ -395,20 +407,36 @@ function encodeVideo({ framesDir, fps, out, crf, audio, start, width, height, ca
     args.push('-i', audio);
   }
   const vf = [];
-  if (capWidth && (capWidth !== width || capHeight !== height)) vf.push(`scale=${width}:${height}:flags=lanczos`);
+  // Chromium frames are sRGB PNGs; convert with the BT.709 matrix (ffmpeg's default is BT.601,
+  // which shifts reds and greens slightly on phones).
+  if (capWidth && (capWidth !== width || capHeight !== height)) {
+    vf.push(`scale=${width}:${height}:flags=lanczos:out_color_matrix=bt709:out_range=tv`);
+  } else {
+    vf.push('scale=out_color_matrix=bt709:out_range=tv');
+  }
   if (width % 2 || height % 2) {
     warn(`output size ${width}x${height} is odd; padding to even dimensions for yuv420p`);
     vf.push('pad=ceil(iw/2)*2:ceil(ih/2)*2:0:0:black');
   }
+  vf.push('format=yuv420p');
   args.push('-map', '0:v:0');
   if (audio) args.push('-map', '1:a:0');
-  if (vf.length) args.push('-vf', vf.join(','));
-  args.push('-c:v', 'libx264', '-preset', 'medium', '-crf', String(crf), '-pix_fmt', 'yuv420p',
+  args.push('-vf', vf.join(','));
+  args.push('-c:v', 'libx264', '-preset', 'slow', '-crf', String(crf), '-profile:v', 'high', '-pix_fmt', 'yuv420p',
+    '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
     '-r', String(fps), '-movflags', '+faststart');
   if (audio) {
-    // apad appends silence so -shortest ends exactly at the last video frame;
-    // the voice samples themselves are never resampled or retimed.
-    args.push('-c:a', 'aac', '-b:a', '192k', '-af', 'apad', '-shortest');
+    const codec = audioCodecOf(audio);
+    if (MP4_COPY_AUDIO.has(codec)) {
+      // Byte-for-byte copy of the user's audio, trimmed at the last video frame.
+      args.push('-c:a', 'copy', '-t', (frames / fps).toFixed(6));
+      log(`audio: ${codec} stream-copied (not re-encoded)`);
+    } else {
+      // apad appends silence so -shortest ends exactly at the last video frame;
+      // the voice samples themselves are never resampled or retimed.
+      args.push('-c:a', 'aac', '-b:a', '320k', '-af', 'apad', '-shortest');
+      log(`audio: ${codec || 'unknown'} cannot live in MP4 as-is; AAC 320k (keep your master)`);
+    }
   }
   args.push(out);
   const r = runTool('ffmpeg', args);
@@ -638,7 +666,7 @@ async function main() {
         }
       }
       log(`encoding ${total} frames -> ${outPath}`);
-      encodeVideo({ framesDir, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight, capWidth, capHeight });
+      encodeVideo({ framesDir, frames: total, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight, capWidth, capHeight });
       const probe = probeVideo(outPath);
       const want = { fps, frames: total, duration: total / fps, width: outWidth + (outWidth % 2), height: outHeight + (outHeight % 2), audio: !!audio };
       const problems = verifyProbe(probe, want);

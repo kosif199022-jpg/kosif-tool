@@ -51,6 +51,19 @@ DIRECT_EXT = (".mp4", ".mov", ".webm", ".mkv", ".m4a", ".mp3", ".wav", ".aac", "
               ".gif", ".zip", ".m4v", ".avi")
 
 
+# KOSIF export standard (playbooks/export-standard.md, export_profile.py): H.264 High CRF 17
+# preset slow, BT.709 tagged, MP4 +faststart, the user's audio copied whenever MP4 can carry it.
+COLOR_709 = ["-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709"]
+AAC_320 = ["-c:a", "aac", "-b:a", "320k", "-ar", "48000"]
+
+
+def delivery_audio(src: Path) -> list:
+    """Copy the source audio byte for byte when MP4 can hold it (AAC/MP3/ALAC), else AAC 320k."""
+    rc, out, _ = sh(["ffprobe", "-v", "error", "-select_streams", "a:0", "-show_entries", "stream=codec_name",
+                     "-of", "csv=p=0", str(src)], 120)
+    return ["-c:a", "copy"] if rc == 0 and out.strip() in ("aac", "mp3", "alac") else list(AAC_320)
+
+
 # ------------------------------------------------------------------ helpers
 def sh(cmd, timeout=1800, **kw):
     r = subprocess.run(cmd, capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=timeout, **kw)
@@ -634,7 +647,7 @@ def convert(job: Path, fps: int = 30) -> dict:
             continue
         m = mez / (p.stem + ".mp4")
         rc, _, err = sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(p), "-vf", f"fps={fps},format=yuv420p,scale=trunc(iw/2)*2:trunc(ih/2)*2",
-                         "-c:v", "libx264", "-crf", "18", "-preset", "medium", "-c:a", "aac", "-ar", "48000", "-b:a", "192k",
+                         "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, *AAC_320,
                          "-movflags", "+faststart", str(m)], 3600)
         if rc == 0:
             sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(m), "-vf", "scale=-2:540", "-c:v", "libx264", "-crf", "28", "-preset", "veryfast",
@@ -667,7 +680,7 @@ def deliver_mix(job: Path, out: Path) -> dict:
     """Sound designer: a separate -14 LUFS delivery copy; the master and the first render stay untouched."""
     dst = out.with_name(out.stem + "-deliver-14lufs.mp4")
     rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(out), "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
-                     "-ar", "48000", "-c:a", "aac", "-b:a", "192k", str(dst)], 3600)
+                     *AAC_320, "-movflags", "+faststart", str(dst)], 3600)
     if rc:
         return {"status": "failed", "stderr": se[-300:]}
     return {"output": str(dst), "verify": verify(job, dst)}
@@ -719,7 +732,7 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
         fc = (f"color=c=0x0b1020:s={w}x{h}:d={dur:.3f},geq=r='11+40*Y/H':g='16+10*Y/H':b='32+60*Y/H',format=yuv420p[bg];"
               f"[0:a]{vis},format=rgba[v];[bg][v]overlay=(W-w)/2:(H-h)/2:shortest=1{draw},format=yuv420p[o]")
         rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-filter_complex", fc, "-map", "[o]", "-map", "0:a",
-                         "-r", "30", "-c:v", "libx264", "-crf", "20", "-c:a", "aac", "-b:a", "192k", "-shortest", str(out)], 3600)
+                         "-r", "30", "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, *delivery_audio(src), "-shortest", "-movflags", "+faststart", str(out)], 3600)
         if rc:
             return {**res, "status": "failed", "stderr": se[-500:]}
         res["verify"] = verify(job, out, aspect="9:16", master=work / "master.wav")
@@ -728,7 +741,7 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
         fc = (f"[0:v]split[a][b];[a]scale={aw}:{ah}:force_original_aspect_ratio=increase,crop={aw}:{ah},boxblur=30:2,eq=brightness=-0.08[bg];"
               f"[b]scale={aw}:{ah}:force_original_aspect_ratio=decrease[fg];[bg][fg]overlay=(W-w)/2:(H-h)/2{draw},format=yuv420p[o]")
         rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-filter_complex", fc, "-map", "[o]", "-map", "0:a?",
-                         "-c:v", "libx264", "-crf", "20", "-c:a", "aac", "-b:a", "192k", str(out)], 3600)
+                         "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, *delivery_audio(src), "-movflags", "+faststart", str(out)], 3600)
         if rc:
             return {**res, "status": "failed", "stderr": se[-500:]}
         res["verify"] = verify(job, out, aspect=style or "9:16")
@@ -741,11 +754,11 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
         for k, (a, b) in enumerate(segs):
             p = work / f"seg{k:02d}.mp4"
             sh(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{a:.3f}", "-to", f"{b:.3f}", "-i", str(src), "-vf", "fps=30,format=yuv420p",
-                "-c:v", "libx264", "-crf", "20", "-c:a", "aac", "-ar", "48000", str(p)], 1800)
+                "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, *AAC_320, str(p)], 1800)
             parts.append(p)
         lst = work / "concat.txt"
         lst.write_text("".join(f"file '{p.as_posix()}'\n" for p in parts), encoding="utf-8")
-        rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", str(out)], 1800)
+        rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-c", "copy", "-movflags", "+faststart", str(out)], 1800)
         if rc:
             return {**res, "status": "failed", "stderr": se[-500:]}
         res["segments"] = [[round(a, 2), round(b, 2)] for a, b in segs]
@@ -756,7 +769,7 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
                  "mono": "hue=s=0,eq=contrast=1.15",
                  "film": "curves=preset=increase_contrast,eq=saturation=0.92"}
         vf = looks.get(style, looks["teal-orange"]) + ",noise=alls=6:allf=t,vignette=PI/5,format=yuv420p" + draw
-        rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-crf", "18", "-c:a", "copy", str(out)], 3600)
+        rc, so, se = sh(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-vf", vf, "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, "-c:a", "copy", "-movflags", "+faststart", str(out)], 3600)
         if rc:
             return {**res, "status": "failed", "stderr": se[-500:]}
         mid = max(dur / 2, 0)

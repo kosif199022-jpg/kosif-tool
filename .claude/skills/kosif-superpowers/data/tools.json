@@ -15608,6 +15608,68 @@
       ],
       "evidence": "tested-here",
       "evidence_note": "evals/test_self_council.py 9/9 passed on this checkout on 2026-10-24 (inventory, plan, ingest refusals, report ranking, ledger coverage); first pass SIMULATED on 2026-10-24 (docs/self-council/FIRST_PASS_20261024.md)."
+    },
+    {
+      "id": "export-profile",
+      "path": "scripts/export_profile.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "motion",
+      "title_en": "Export profile: the owner-approved delivery settings for every video",
+      "title_ar": "معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو",
+      "summary_en": "One source for the delivery export standard the owner approved: 1080x1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied byte for byte when MP4 can carry it (AAC 320k 48 kHz otherwise), MP4 +faststart, no 4K unless asked. Scripts import video_args(), audio_args(src) and FASTSTART instead of writing their own ffmpeg flags; running it prints the profile as JSON.",
+      "summary_ar": "مصدر واحد لمعيار التصدير المعتمد: 1080×1920، 30 فريم، H.264 High بجودة CRF 17 وpreset slow، ألوان BT.709، الصوت الأصلي منسوخ بالبايت لما الـMP4 يقدر يشيله (وإلا AAC 320k)، MP4 مع faststart، ومن غير 4K إلا لو اتطلب. السكريبتات بتستورد video_args وaudio_args بدل ما تكتب إعداداتها.",
+      "use_when": [
+        "صدّر الفيديو بنفس إعدادات داري يا قلبي",
+        "What ffmpeg settings should a delivery MP4 use?",
+        "عايز التصدير يبقى بأعلى جودة من غير 4K"
+      ],
+      "keywords": [
+        "export",
+        "delivery",
+        "crf",
+        "faststart",
+        "1080x1920",
+        "h264",
+        "bitrate",
+        "تصدير",
+        "جودة",
+        "إعدادات التصدير"
+      ],
+      "commands": [
+        {
+          "name": "print",
+          "does": "Print the export profile as JSON.",
+          "example": "python3 scripts/export_profile.py"
+        }
+      ],
+      "inputs": "None on the command line; from Python an audio or video path for audio_args().",
+      "outputs": "kosif.export-profile.v1 JSON, or ffmpeg argument lists from Python.",
+      "requires": {
+        "binaries": [
+          "ffprobe"
+        ],
+        "network": false,
+        "node": [],
+        "optional": [],
+        "python": []
+      },
+      "safety": "read-only",
+      "consent": "Reads only; writes nothing.",
+      "limits": "Sets encoder flags only; matching the colour grade to the source is a per-job measurement described in playbooks/export-standard.md.",
+      "tests": [
+        "tests/test_export_profile.py"
+      ],
+      "docs": [
+        "playbooks/export-standard.md",
+        "playbooks/render-pipeline.md"
+      ],
+      "families": [
+        "formats-platforms",
+        "engines-render-pipeline"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-25: tests/test_export_profile.py 6/6 on this checkout (ffmpeg 6)."
     }
   ]
 }

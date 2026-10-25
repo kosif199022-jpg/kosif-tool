@@ -48,7 +48,7 @@ Renders an animated HTML page to MP4 frame by frame with headless Chromium (Play
 | `--audio <file>` | muxed as AAC with `-shortest`; the audio is never resampled or time-stretched |
 | `--mode seek|virtual` | force the driver (auto-detected otherwise) |
 | `--preview` | render 8 evenly spaced frames into one labelled contact sheet |
-| `--crf`, `--scale` | H.264 quality (default 18) and device scale factor |
+| `--crf`, `--scale` | H.264 quality (default 17, the [export standard](../playbooks/export-standard.md); lower only) and device scale factor (`--scale 2` = 4K, only when the user asks) |
 | `--frames-dir`, `--keep-frames` | keep the PNG frames |
 | `--seed`, `--offline`, `--timeout`, `--settle` | determinism helpers (seeded `Math.random`, block network, load timeout, settle delay) |
 | `--help`, `-h` | print the options and exit 0 |

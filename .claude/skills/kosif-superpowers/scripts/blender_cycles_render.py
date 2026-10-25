@@ -124,7 +124,7 @@ def main():
             raise RuntimeError('Actual PNG frame count does not match requested frames')
         checked([engines['ffmpeg'],'-hide_banner','-loglevel','error','-nostdin',
                  '-framerate',str(a.fps),'-start_number','1','-i',str(frames/'frame_%04d.png'),
-                 '-c:v','libx264','-crf','18','-pix_fmt','yuv420p',
+                 '-c:v','libx264','-preset','slow','-crf','17','-pix_fmt','yuv420p',
                  '-movflags','+faststart','-an',str(out)])
     details=probe(engines['ffprobe'],out,a.width,a.height,a.frames)
     report.update(status='VERIFIED_VIDEO',video_sha256=digest(out),probe=details)

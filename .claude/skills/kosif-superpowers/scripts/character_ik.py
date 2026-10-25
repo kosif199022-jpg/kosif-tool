@@ -184,7 +184,7 @@ def export(prepared,out,fps=24,time=0,audio=None):
             else:
                 temp=folder/"silent.mp4"
                 cmd=["ffmpeg","-v","error","-y","-framerate",str(fps),"-i",str(folder/"%05d.png"),
-                    "-frames:v",str(n),"-c:v","libx264","-pix_fmt","yuv420p","-crf","18",str(temp)]
+                    "-frames:v",str(n),"-c:v","libx264","-pix_fmt","yuv420p","-preset","slow","-crf","17",str(temp)]
                 subprocess.run(cmd,check=True,capture_output=True)
                 if audio:
                     cmd=["ffmpeg","-v","error","-y","-i",str(temp),"-i",str(audio),

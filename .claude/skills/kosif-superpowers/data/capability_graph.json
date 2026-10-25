@@ -2375,6 +2375,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
   },
   {
+   "id": "test:tests/test_export_profile.py",
+   "kind": "test",
+   "label": "tests/test_export_profile.py"
+  },
+  {
    "id": "test:tests/test_atlas_cycles_integration.py",
    "kind": "test",
    "label": "tests/test_atlas_cycles_integration.py"
@@ -7641,6 +7646,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cycles_render.py",
    "to": "test:tests/test_atlas_cycles_integration.py",
    "rel": "tested_by",
@@ -7737,6 +7748,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/cinematic_broll_render.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/cinematic_cut_planner.py",
    "to": "test:tests/test_cinematic_cut_planner.py",
    "rel": "tested_by",
@@ -7775,6 +7792,12 @@
   {
    "from": "script:scripts/creative_paint.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/creative_paint.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7899,8 +7922,20 @@
    "w": 1
   },
   {
+   "from": "script:scripts/kosif_timeline.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/local_first.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/look_pipeline.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8243,6 +8278,18 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think_reasoning.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_cinematic.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_media.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },

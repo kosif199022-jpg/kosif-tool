@@ -188,7 +188,7 @@ def cmd_cut(a):
         args = ["-ss", f"{a.start:.6f}", "-i", str(src), "-t", f"{end - a.start:.6f}", "-map", "0:v:0?", "-map", "0:a?"]
         if has_video:
             args += ["-c:v", "libx264", "-preset", a.preset, "-crf", str(a.crf), "-pix_fmt", "yuv420p"]
-        args += ["-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(out)]
+        args += ["-c:a", "aac", "-b:a", "320k", "-ar", "48000", "-movflags", "+faststart", str(out)]
         ffmpeg(args)
         actual_start = a.start
     r = receipt("cut", src, out, plan=plan, actual_start=round(actual_start, 6),
@@ -225,7 +225,7 @@ def cmd_voice(a):
     args = ["-i", str(src)] + (["-map", "0:v:0", "-c:v", "copy"] if keep_video else ["-vn"])
     args += ["-map", "0:a:0", "-af", af, "-ar", str(rate)]
     codec = {".wav": ["-c:a", "pcm_s16le"], ".flac": ["-c:a", "flac"], ".mp3": ["-c:a", "libmp3lame", "-q:a", "2"]}
-    args += codec.get(ext, ["-c:a", "aac", "-b:a", "192k"]) + [str(out)]
+    args += codec.get(ext, ["-c:a", "aac", "-b:a", "320k"]) + [str(out)]
     ffmpeg(args)
     return receipt("voice", src, out, preset=a.preset, filter=af, sample_rate=rate,
                    input_duration=round(duration_of(info), 3),
@@ -303,7 +303,7 @@ def cmd_extract_audio(a):
         ffmpeg(["-i", str(src), "-map", "0:a:0", "-vn", "-c:a", "copy", str(out)])
     else:
         enc = {".wav": ["-c:a", "pcm_s16le"], ".flac": ["-c:a", "flac"], ".mp3": ["-c:a", "libmp3lame", "-q:a", "2"],
-               ".m4a": ["-c:a", "aac", "-b:a", "192k"], ".aac": ["-c:a", "aac", "-b:a", "192k"],
+               ".m4a": ["-c:a", "aac", "-b:a", "320k"], ".aac": ["-c:a", "aac", "-b:a", "320k"],
                ".opus": ["-c:a", "libopus", "-b:a", "128k"], ".ogg": ["-c:a", "libvorbis", "-q:a", "5"]}
         if ext not in enc:
             raise ValueError(f"unsupported audio extension {ext}")
@@ -334,8 +334,8 @@ def main(argv=None):
         p.add_argument("--force", action="store_true", help="replace an existing output file")
 
     def enc(p):
-        p.add_argument("--crf", type=int, default=18)
-        p.add_argument("--preset", default="medium")
+        p.add_argument("--crf", type=int, default=17)  # KOSIF export standard
+        p.add_argument("--preset", default="slow")
 
     c = sub.add_parser("cut", help="cut [start, end) by stream copy or exact re-encode")
     io(c); enc(c)
