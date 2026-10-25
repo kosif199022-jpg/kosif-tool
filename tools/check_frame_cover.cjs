@@ -46,8 +46,8 @@ function parseArgs(argv) {
     const k = argv[i], v = () => { const x = argv[++i]; if (x == null) throw new Error(`${k} needs a value`); return x; };
     if (k === '--in') a.in = v();
     else if (k === '--variants') a.variants = v().split(';').map((s) => s.trim().replace(/^\?/, ''));
-    else if (k === '--samples') a.samples = Math.max(1, parseInt(v(), 10));
-    else if (k === '--times') a.times = v().split(',').map(Number);
+    else if (k === '--samples') { a.samples = parseInt(v(), 10); if (!(a.samples >= 1)) throw new Error('--samples needs a whole number >= 1'); }
+    else if (k === '--times') { a.times = v().split(',').map(Number); if (!a.times.length || a.times.some((t) => !isFinite(t) || t < 0)) throw new Error('--times needs numbers >= 0'); }
     else if (k === '--root') a.root = v();
     else if (k === '--canvas') a.canvas = v();
     else if (k === '--frames-dir') a.framesDir = v();
@@ -75,7 +75,8 @@ function serve(root) {
   const srv = http.createServer((req, res) => {
     const p = decodeURIComponent(new URL(req.url, 'http://x').pathname);
     const f = path.resolve(root, '.' + p);
-    if (!f.startsWith(path.resolve(root))) { res.writeHead(403); return res.end(); }
+    const r0 = path.resolve(root);
+    if (f !== r0 && !f.startsWith(r0 + path.sep)) { res.writeHead(403); return res.end(); }
     fs.stat(f, (err, st) => {
       if (err || !st.isFile()) { res.writeHead(404); return res.end(); }
       res.writeHead(200, { 'content-type': MIME[path.extname(f).toLowerCase()] || 'application/octet-stream' });
@@ -89,12 +90,14 @@ function serve(root) {
 function probe() {
   const P = CanvasRenderingContext2D.prototype, orig = P.drawImage, origClear = P.clearRect, origFill = P.fillRect;
   const state = new WeakMap();          // canvas -> { covered }
-  const opaqueImg = new WeakMap();      // image -> bool
+  const opaqueImg = new WeakMap();      // image -> { key, ok } (key = its src, so a changed src is scanned again)
   const st = (cv) => { let s = state.get(cv); if (!s) { s = { covered: false }; state.set(cv, s); } return s; };
   let log = null, scan = null;
 
   function isOpaqueImage(img) {
-    if (opaqueImg.has(img)) return opaqueImg.get(img);
+    const key = img.currentSrc || img.src || '';
+    const hit = opaqueImg.get(img);
+    if (hit && hit.key === key) return hit.ok;
     let ok = false;
     try {
       const w = img.naturalWidth || img.videoWidth || img.width, h = img.naturalHeight || img.videoHeight || img.height;
@@ -110,7 +113,7 @@ function probe() {
       }
     } catch (e) { ok = false; }
     if (img instanceof HTMLImageElement && !img.complete) return ok;   // do not cache a half-loaded image
-    opaqueImg.set(img, ok);
+    opaqueImg.set(img, { key, ok });
     return ok;
   }
 
@@ -157,6 +160,7 @@ function probe() {
       const solid = this.globalAlpha >= 0.999 && (this.globalCompositeOperation === 'source-over' || this.globalCompositeOperation === 'copy');
       const covers = geomCovers && opaqueSrc && solid;
       if (covers) st(cv).covered = true;
+      else if (this.globalCompositeOperation === 'copy') st(cv).covered = false;   // 'copy' wipes everything outside the draw
       if (log && cv === log.canvas) {
         log.draws.push({ src: isCanvas ? 'canvas' : (src.currentSrc || src.src || src.constructor.name || 'image').toString().slice(-60),
           geomCovers, opaqueSrc, alpha: +this.globalAlpha.toFixed(3), op: this.globalCompositeOperation, blur: b / 2,
@@ -214,6 +218,7 @@ async function main() {
       const duration = await page.evaluate(() => +window.__kosif.duration || 0);
       const times = args.times || Array.from({ length: args.samples }, (_, i) =>
         args.samples === 1 ? 0 : +(Math.min(duration - 1e-3, (i * duration) / (args.samples - 1))).toFixed(3)).filter((t) => t >= 0);
+      if (!times.length) throw new Error(`${url}: no frames to check (duration ${duration}); pass --times or fix window.__kosif.duration`);
       const v = { variant: variant || '(default)', duration, frames: [], gaps: 0 };
       for (const t of times) {
         const res = await page.evaluate(async ({ t, sel }) => {

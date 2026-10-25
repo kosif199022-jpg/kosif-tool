@@ -54,6 +54,8 @@ test('checker CLI parses its options', () => {
   const a = parseArgs(['--in', 'x.html', '--variants', 'style=1;?style=2', '--samples', '5']);
   assert.deepEqual(a.variants, ['style=1', 'style=2']);
   assert.equal(a.samples, 5);
+  assert.throws(() => parseArgs(['--in', 'x.html', '--samples', 'abc']), /samples/);
+  assert.throws(() => parseArgs(['--in', 'x.html', '--times', '1,x']), /times/);
 });
 
 let hasPlaywright = false;

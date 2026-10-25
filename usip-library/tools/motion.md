@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (22 أداة)
+# أدوات المجال `motion` (23 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -734,6 +734,51 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-aspects --evidence <ملف>`.
+
+### `repo-check-frame-cover` — فحص تغطية الصورة للإطار / Photo frame-cover check
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `tools/check_frame_cover.cjs` (جذر: repo) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `qa-verification`, `engines-render-pipeline` |
+
+**ما تفعله:** يرندر فريمات عينة من فيلم صور HTML لكل ستايل (مثل ?style=1..5) ويفشل لو أي فريم ظهرت فيه حافة فاضية. بيسجّل كل رسم صورة بالتحويل والشفافية والبلور ويتأكد إن صورة معتمة بتغطي أركان الإطار الأربعة، فالصور الغامقة أو الأبيض والأسود ما بتعملش إنذار كاذب، وفجوة بكسل واحد بتفشل. يُستخدم مع tools/photo_cover.js، الكاميرا المشتركة اللي بتخلي الصورة مغطية الإطار في كل زوم وبان واهتزاز ودوران وبلور لأي مقاس صورة.
+
+**What it does:** Renders sample frames of an HTML photo film (window.__kosif.seek) for every variant such as ?style=1..5 and fails when any frame shows an empty edge. It records every drawImage with its transform, alpha, blend mode and blur and checks that an opaque photo covers all four canvas corners, so dark or black-and-white photos never raise false alarms and a one-pixel gap still fails. Pair it with tools/photo_cover.js, the shared camera that keeps a photo covering the frame through zoom, pan, shake, rotation and blur for any photo aspect ratio.
+
+#### متى تُستدعى
+
+- «The photo doesn't fill the top of the frame in some styles»
+- «Check that no empty edge shows in any of the five lyric video styles»
+- «الصورة مش مالية الفريم من فوق في بعض الستايلات»
+- «افحص إن الصورة مغطية الشاشة كلها في كل حركات الكاميرا»
+
+#### الأوامر
+
+- **check styles**: Renders 24 evenly spaced frames per variant and prints ok/FAIL per variant; exit 0 when every frame is covered, 3 when any frame shows an empty edge.
+  - `node tools/check_frame_cover.cjs --in tests/fixtures/photo-cover/index.html --variants "style=1;style=2;style=3;style=4;style=5" --samples 24`
+- **check exact times with evidence**: Checks the given times, saves a PNG of each failing frame and writes a JSON report with the uncovered photo quads.
+  - `node tools/check_frame_cover.cjs --in projects/egypt-saudi-salute/index.html --times 0,26.46,66.16 --frames-dir ./out/gaps --json ./out/cover.json`
+
+#### المتطلبات والأمان
+
+- binaries: chromium, node
+- node: playwright
+- الأمان: runs-external-programs
+- الموافقة: —
+- الحدود: Checks canvas drawImage geometry only: photos drawn as DOM/CSS images or through WebGL are not measured, and a photo composited through an offscreen canvas counts only when that canvas itself received a covering opaque photo.
+
+#### الاختبارات والأدلة
+
+- `tests/test_photo_cover.mjs`
+- مرجع: `playbooks/render-pipeline.md`
+- مرجع: `starters/html-canvas/README.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-check-frame-cover --evidence <ملف>`.
 
 ### `repo-render-html` — محوّل حتمي من HTML إلى فيديو MP4 / Deterministic HTML-to-MP4 renderer
 
