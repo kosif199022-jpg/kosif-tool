@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:motion:start -->
 
-**الأدوات / tools (23)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (24)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -35,6 +35,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `ui-beat` | Computes one cursor keyframe per frame along a bowed quadratic Bezier timed by a CSS cubic-bezier easing (solved by bisection), with press, release, UI-response (60-120 ms) and ripple timings; mirrors a UI layout for RTL (x' = W - x - w, left/right alignment flips, directional icon flip list); and checks that a loop's first and last states match, listing differing keys. | `python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur 0.8 --fps 30 --ease ease-in-out --arc 0.12` | tested-here |
 | `motion-physics` | Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files. | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` | tested-here |
 | `infinite-matrices` (repo root) | Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger. | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | tested-here |
+| `export-profile` | One source for the delivery export standard the owner approved: 1080x1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied byte for byte when MP4 can carry it (AAC 320k 48 kHz otherwise), MP4 +faststart, no 4K unless asked. Scripts import video_args(), audio_args(src) and FASTSTART instead of writing their own ffmpeg flags; running it prints the profile as JSON. | `python3 scripts/export_profile.py` | tested-here |
 
 <!-- hub:area:motion:end -->
 

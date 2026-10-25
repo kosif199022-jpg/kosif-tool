@@ -113,7 +113,7 @@ def export(photo, data, output, effect="none", exposure=0.0, fps=12, duration=2)
             command=["ffmpeg","-hide_banner","-loglevel","error","-n",
                      "-framerate",str(fps),"-i",str(Path(td)/"%05d.png"),
                      "-frames:v",str(frames),"-c:v","libx264","-pix_fmt","yuv420p",
-                     "-crf","18",str(dest)]
+                     "-preset","slow","-crf","17","-movflags","+faststart",str(dest)]
             subprocess.run(command, check=True,capture_output=True,timeout=120)
     return {"schema":"kosif.unified-media.v1","photo_effect":effect,
             "drawing_elements":len(details),"outputs":str(dest),

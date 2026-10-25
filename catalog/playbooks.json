@@ -64,6 +64,14 @@
   "words_en": 702
  },
  {
+  "key": "export-standard",
+  "title_en": "Export standard",
+  "title_ar": "معيار التصدير",
+  "path": "playbooks/export-standard.md",
+  "excerpt": "The owner approved these settings after the «داري يا قلبي» reel and asked for them on **every** future video export. Treat them as the floor: a change may raise quality (slower preset, lower CRF, better colour accuracy), never lower it.",
+  "words_en": 449
+ },
+ {
   "key": "hand-drawn",
   "title_en": "Hand-drawn, whiteboard and plotter",
   "title_ar": "الرسم اليدوي والسبورة والبلوتر",
@@ -125,7 +133,7 @@
   "title_ar": "خط أنابيب المعاينة والرندر",
   "path": "playbooks/render-pipeline.md",
   "excerpt": "This playbook describes how a KOSIF film goes from code to a verified MP4: deterministic rendering, previews before the final render, choosing between Remotion and Playwright + ffmpeg, platform encoding specs and the delivery gate.",
-  "words_en": 932
+  "words_en": 1034
  },
  {
   "key": "shapes",

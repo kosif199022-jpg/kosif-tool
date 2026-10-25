@@ -365,7 +365,7 @@ def build(project: Path, out: Path, preview=False, frames=None) -> dict:
         else:
             cmd += ["-c:a", "aac", "-b:a", "320k"]; audio_note = f"{codec} → AAC 320k (MP4 cannot carry {codec}; keep your master)"
         cmd += ["-t", f"{T:.3f}"]
-    cmd += ["-vf", f"scale={ow}:{oh}" if preview else "null", "-c:v", "libx264", "-crf", str(SPEC["output"]["crf"]), "-preset", "veryfast" if preview else "medium",
+    cmd += ["-vf", f"scale={ow}:{oh}" if preview else "null", "-c:v", "libx264", "-crf", str(SPEC["output"]["crf"]), "-preset", "veryfast" if preview else "slow",
             "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(out)]
     enc = subprocess.Popen(cmd, stdin=subprocess.PIPE)
     si = 0
