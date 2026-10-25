@@ -1,11 +1,11 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5851,
-"distinct_methods": 5570,
+"atoms": 5852,
+"distinct_methods": 5571,
 "twin_groups": 177,
 "superpowers": 481,
 "per_target": 12,
-"fusion_ratio": 12.16,
+"fusion_ratio": 12.17,
 "atlas_folded_into_native": 71,
 "tiny_absorbed": 28,
 "lookalikes_unified": 8,
@@ -16857,7 +16857,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.113
+"sim": 0.112
 }
 ]
 },
@@ -17958,19 +17958,19 @@
 "name_en": "Audio-timed SVG motion compiler",
 "focus": [
 "graphics",
-"svg",
+"rendering",
 "motion",
-"rendering"
+"svg"
 ],
-"size": 18,
+"size": 19,
 "best": "proven",
 "status_mix": {
-"proven": 14,
+"proven": 15,
 "install": 4
 },
-"ready_now": 14,
+"ready_now": 15,
 "families": {
-"runnable-tools": 18
+"runnable-tools": 19
 },
 "atlas_folded": 0,
 "requires": [
@@ -17997,16 +17997,16 @@
 "name_ar": "محرك حركة SVG"
 },
 {
-"id": "TOOL-16",
-"status": "proven",
-"name_en": "Doodle film runtime and renderer",
-"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
-},
-{
 "id": "TOOL-77",
 "status": "proven",
 "name_en": "Flexible aspect ratio resolver",
 "name_ar": "محلّل نِسَب أبعاد الفيديو"
+},
+{
+"id": "TOOL-16",
+"status": "proven",
+"name_en": "Doodle film runtime and renderer",
+"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
 },
 {
 "id": "TOOL-79",
@@ -18055,6 +18055,12 @@
 "status": "proven",
 "name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
 "name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
+},
+{
+"id": "TOOL-174",
+"status": "proven",
+"name_en": "Background job runner and waiter (no sleep waits)",
+"name_ar": "تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep"
 },
 {
 "id": "TOOL-171",
@@ -18113,23 +18119,23 @@
 "TOOL-81"
 ]
 ],
-"distinct_methods": 15,
+"distinct_methods": 16,
 "links": [
 {
 "id": "SP-0262",
-"sim": 0.284
+"sim": 0.282
 },
 {
 "id": "SP-0148",
-"sim": 0.237
+"sim": 0.238
 },
 {
 "id": "SP-0268",
-"sim": 0.207
+"sim": 0.219
 },
 {
 "id": "SP-0266",
-"sim": 0.197
+"sim": 0.195
 }
 ]
 },
@@ -19191,7 +19197,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.237
+"sim": 0.238
 },
 {
 "id": "SP-0325",
@@ -27814,7 +27820,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.053
+"sim": 0.054
 }
 ]
 },
@@ -27926,7 +27932,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.122
+"sim": 0.121
 }
 ]
 },
@@ -33267,7 +33273,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.134
+"sim": 0.132
 }
 ]
 },
@@ -34049,7 +34055,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.094
+"sim": 0.092
 },
 {
 "id": "SP-0263",
@@ -34269,7 +34275,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.284
+"sim": 0.282
 },
 {
 "id": "SP-0272",
@@ -34696,7 +34702,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.104
+"sim": 0.119
 }
 ]
 },
@@ -35093,7 +35099,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.197
+"sim": 0.195
 }
 ]
 },
@@ -35461,7 +35467,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.207
+"sim": 0.219
 },
 {
 "id": "SP-0011",
@@ -35642,7 +35648,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.1
+"sim": 0.106
 }
 ]
 },
@@ -35957,7 +35963,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.139
+"sim": 0.141
 }
 ]
 },
@@ -36393,12 +36399,12 @@
 "sim": 0.171
 },
 {
-"id": "SP-0140",
-"sim": 0.132
-},
-{
 "id": "SP-0154",
 "sim": 0.129
+},
+{
+"id": "SP-0140",
+"sim": 0.128
 }
 ]
 },
@@ -36682,7 +36688,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.069
+"sim": 0.067
 }
 ]
 },
@@ -36816,16 +36822,12 @@
 "sim": 0.13
 },
 {
+"id": "SP-0140",
+"sim": 0.13
+},
+{
 "id": "SP-0303",
 "sim": 0.126
-},
-{
-"id": "SP-0448",
-"sim": 0.125
-},
-{
-"id": "SP-0140",
-"sim": 0.125
 }
 ]
 },
@@ -37213,7 +37215,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.048
+"sim": 0.047
 }
 ]
 },
@@ -37801,7 +37803,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.102
+"sim": 0.103
 }
 ]
 },
@@ -38386,7 +38388,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.067
+"sim": 0.07
 }
 ]
 },
@@ -38894,7 +38896,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.032
+"sim": 0.031
 }
 ]
 },
@@ -39161,7 +39163,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.134
+"sim": 0.131
 },
 {
 "id": "SP-0269",
@@ -39825,11 +39827,11 @@
 "sim": 0.206
 },
 {
-"id": "SP-0140",
-"sim": 0.13
+"id": "SP-0345",
+"sim": 0.127
 },
 {
-"id": "SP-0345",
+"id": "SP-0140",
 "sim": 0.127
 }
 ]
@@ -40068,7 +40070,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.064
+"sim": 0.062
 }
 ]
 },
@@ -48227,7 +48229,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.149
+"sim": 0.148
 }
 ]
 },
@@ -48936,7 +48938,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.168
+"sim": 0.167
 }
 ]
 },
@@ -53891,7 +53893,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.105
+"sim": 0.104
 }
 ]
 },
@@ -59985,7 +59987,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.037
+"sim": 0.036
 }
 ]
 },

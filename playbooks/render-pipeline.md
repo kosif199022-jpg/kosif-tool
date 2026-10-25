@@ -74,6 +74,22 @@ ffmpeg -framerate 30 -i frames/frame_%06d.png -i voice.mp3 \
   -c:a aac -b:a 192k -shortest out/film.mp4
 ```
 
+### Waiting on a long render — انتظار رندر طويل
+
+Never wait with `sleep N; check` (`sleep 60; grep "^frame" render.log | tail -1`), chained sleeps or `python -c "time.sleep(60)"`: Claude Code blocks them, and so does the repo hook `.claude/hooks/no_sleep_wait.py`. Start the job detached and let it report its own progress:
+
+| step | command | how to run it |
+|---|---|---|
+| start | `python3 tools/job.py start --dir out/<job>/render -- node tools/render_html.cjs --in film.html --out out/film.mp4 --audio voice.mp3` | plain Bash, returns at once |
+| follow | `python3 tools/job.py wait --dir out/<job>/render` | Monitor tool: one `PROGRESS frame 120/450` line at most every 20 s, then `DONE exit=0` or `FAILED exit=N` with the log tail |
+| or: one notice | `python3 tools/job.py wait --dir out/<job>/render --quiet` | Bash with `run_in_background: true`: you are woken once when it ends |
+| peek now | `python3 tools/job.py status --dir out/<job>/render` | plain Bash, never waits |
+| stop | `python3 tools/job.py stop --dir out/<job>/render` | plain Bash |
+
+The same works for ffmpeg encodes, Remotion, yt-dlp downloads and installs. Other options: run the command itself with Bash `run_in_background: true`, or wait for a condition with a Monitor `until grep -q VERIFY out/<job>/render/job.log; do sleep 2; done`. A Monitor must also catch failure (`job.py wait` always ends with DONE or FAILED). Keep working on the next step while the job runs; do not chain shorter sleeps to get around the block.
+
+**بالعربية:** لا تنتظر أبدًا بـ `sleep 60; grep ...` ولا بسلسلة sleep: Claude Code يمنعها. شغّل الرندر بـ `tools/job.py start`، وتابعه بـ `job.py wait` داخل أداة Monitor (سطر تقدّم كل 20 ثانية ثم DONE أو FAILED) أو في الخلفية بـ `--quiet` (تنبيه واحد عند الانتهاء)، و`job.py status` لنظرة سريعة بلا انتظار.
+
 Seek contract for your own pages: `window.__kosif = { duration, fps, seek(t) }` plus optional `window.__kosifReady`. See `starters/html-canvas/index.html`.
 
 Photo films (a photo behind lyrics, Ken Burns, pans, parallax, handheld shake): draw every photo layer through `tools/photo_cover.js` (`KosifCover.drawPhoto(ctx, img, { W, H, zoom, fx, fy, ox, oy, rot, blur })`). It scales to cover (never to the frame width alone), floors the zoom at cover, raises it for rotation and blur, and clamps pans so no edge of the photo shows, for any photo aspect ratio. Before the preview, run `node tools/check_frame_cover.cjs --in film/index.html --variants "style=1;style=2;style=3;style=4;style=5" --samples 48`: it renders sample frames of every style and exits 3 if any frame shows an empty edge.
@@ -110,9 +126,9 @@ Mux the original audio without resampling (`-c:a aac` from the source, `-shortes
 
 ## 9. Anti-patterns — أخطاء شائعة
 
-Screen-recording a browser; rendering before approval; `Math.random()` per frame; fonts from a CDN that fails mid-render; odd dimensions; yuv444 output that phones cannot play; claiming checks that were not run.
+Screen-recording a browser; rendering before approval; `Math.random()` per frame; fonts from a CDN that fails mid-render; odd dimensions; yuv444 output that phones cannot play; claiming checks that were not run; waiting on a render with `sleep N; check` instead of `tools/job.py wait`.
 
-**بالعربية:** تسجيل الشاشة، الرندر قبل الموافقة، عشوائية في كل إطار، خطوط من شبكة تتعطل أثناء الرندر، أبعاد فردية، صيغة ألوان لا تعمل على الهواتف، وادعاء فحوص لم تُجرَ.
+**بالعربية:** تسجيل الشاشة، الرندر قبل الموافقة، عشوائية في كل إطار، خطوط من شبكة تتعطل أثناء الرندر، أبعاد فردية، صيغة ألوان لا تعمل على الهواتف، وادعاء فحوص لم تُجرَ، وانتظار الرندر بـ `sleep` بدل `tools/job.py wait`.
 
 ## 10. Related styles — استايلات ذات صلة
 

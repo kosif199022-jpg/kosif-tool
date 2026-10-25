@@ -64,6 +64,7 @@
 | `repo-check-frame-cover` | فحص تغطية الصورة للإطار | `node tools/check_frame_cover.cjs --in tests/fixtures/photo-cover/index.html --variants "style=1;style=2;style=3;style=4;style=5" --samples 24` | tested-here |
 | `repo-check-originality` | فاحص أصالة الملفات الإبداعية | `python3 tools/check_originality.py --briefs ./briefs/ --texts ./source-texts/` | untested |
 | `repo-import-briefs` | استيراد الملفات الإبداعية | `python3 tools/import_briefs.py ./briefs/` | untested |
+| `repo-job-wait` | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep | `python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4` | tested-here |
 | `repo-render-html` | محوّل حتمي من HTML إلى فيديو MP4 | `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3` | tested-elsewhere |
 | `repo-validate` | فاحص سلامة أطلس الأنماط | `python3 tools/validate.py` | tested-here |
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |

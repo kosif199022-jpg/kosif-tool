@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (23 أداة)
+# أدوات المجال `motion` (24 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -779,6 +779,54 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-check-frame-cover --evidence <ملف>`.
+
+### `repo-job-wait` — تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits)
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `tools/job.py` (جذر: repo) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `qa-verification`, `engines-render-pipeline` |
+
+**ما تفعله:** يشغّل رندر أو ترميز أو تحميل أو تثبيت طويل في الخلفية (اللوج ورقم العملية وكود الخروج في مجلد المهمة) وينتظره بدون `sleep N; check` الذي يمنعه Claude Code: الأمر `wait` يطبع سطر تقدّم كل فترة (فريم كذا من كذا، أو frame= من ffmpeg، أو نسبة مئوية) ثم DONE أو FAILED مع آخر سطور اللوج، ويخرج بكود المهمة، ليعمل داخل أداة Monitor أو مع run_in_background؛ و`status` نظرة بلا انتظار، و`stop` يوقفها.
+
+**What it does:** Starts a long render, encode, download or install detached (log, pid and exit code in a job folder) and waits on it without `sleep N; check`, which Claude Code blocks: `wait` prints a throttled PROGRESS line (render_html.cjs `frame i/n`, ffmpeg `frame=`, percentages) then DONE or FAILED with the log tail and exits with the job's code, for the Monitor tool or Bash run_in_background; `status` peeks without waiting; `stop` ends it.
+
+#### متى تُستدعى
+
+- «Render the full video in the background and tell me the progress»
+- «Wait for the ffmpeg encode to finish without sleep»
+- «رندر الفيديو كامل في الخلفية وقولي وصل لفين»
+- «استنى التحميل لحد ما يخلص من غير sleep»
+
+#### الأوامر
+
+- **start**: Launches the command detached, writes job.log/job.pid/job.exit into --dir and returns at once.
+  - `python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4`
+- **wait**: Blocks until the job ends: a PROGRESS line at most every 20 s (--every), WARN on new error lines, then DONE exit=0 or FAILED exit=N with the last 5 log lines; --quiet prints only the final line; --timeout N exits 124. Run it under the Monitor tool or Bash run_in_background.
+  - `python3 tools/job.py wait --dir out/20261024-film/render`
+- **status**: Prints RUNNING with the last progress line, DONE or FAILED, and returns immediately.
+  - `python3 tools/job.py status --dir out/20261024-film/render`
+- **stop**: Sends SIGTERM to the job's process group.
+  - `python3 tools/job.py stop --dir out/20261024-film/render`
+
+#### المتطلبات والأمان
+
+- الأمان: runs-external-programs
+- الموافقة: —
+- الحدود: Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection).
+
+#### الاختبارات والأدلة
+
+- `tests/test_job_wait.py`
+- مرجع: `playbooks/render-pipeline.md`
+- مرجع: `CLAUDE.md`
+- مرجع: `AGENTS.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-job-wait --evidence <ملف>`.
 
 ### `repo-render-html` — محوّل حتمي من HTML إلى فيديو MP4 / Deterministic HTML-to-MP4 renderer
 

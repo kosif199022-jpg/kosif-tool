@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5851,
+  "catalog_powers": 5852,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 174,
+  "tool_count": 175,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 270,
+      "count": 271,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 167,
+        "proven": 168,
         "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 172,
+        "runnable-tools": 173,
         "self-discovery": 43
       },
       "examples": [
@@ -74253,6 +74253,27 @@
       ],
       "source": "runnable-tools.json",
       "what": "يحفظ قائمة حسابات إنستجرام كمصادر (من غير باراميترات التتبع)، ويبني فهرسًا محليًا قابلًا للبحث من آخر بوستاتها (instaloader) ومن الهاشتاجات وروابط الريلز (yt-dlp)، ويرتّب الفيديوهات حسب منتج تكتبه بالعربي أو الإنجليزي بمرادفات ثنائية اللغة وتطبيع عربي والهاشتاجات والكابشن والوصف "
+    },
+    {
+      "id": "TOOL-174",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Background job runner and waiter (no sleep waits)",
+      "name_ar": "تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "node",
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "kosif-tool/tests/test_job_wait.py",
+        "kosif-tool/tools/job.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يشغّل رندر أو ترميز أو تحميل أو تثبيت طويل في الخلفية (اللوج ورقم العملية وكود الخروج في مجلد المهمة) وينتظره بدون `sleep N; check` الذي يمنعه Claude Code: الأمر `wait` يطبع سطر تقدّم كل فترة (فريم كذا من كذا، أو frame= من ffmpeg، أو نسبة مئوية) ثم DONE أو FAILED مع آخر سطور اللو"
     },
     {
       "id": "SEC-01",

@@ -3371,6 +3371,86 @@
       "power_id": "TOOL-82"
     },
     {
+      "id": "repo-job-wait",
+      "path": "tools/job.py",
+      "root": "repo",
+      "kind": "cli",
+      "area": "motion",
+      "title_en": "Background job runner and waiter (no sleep waits)",
+      "title_ar": "تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep",
+      "summary_en": "Starts a long render, encode, download or install detached (log, pid and exit code in a job folder) and waits on it without `sleep N; check`, which Claude Code blocks: `wait` prints a throttled PROGRESS line (render_html.cjs `frame i/n`, ffmpeg `frame=`, percentages) then DONE or FAILED with the log tail and exits with the job's code, for the Monitor tool or Bash run_in_background; `status` peeks without waiting; `stop` ends it.",
+      "summary_ar": "يشغّل رندر أو ترميز أو تحميل أو تثبيت طويل في الخلفية (اللوج ورقم العملية وكود الخروج في مجلد المهمة) وينتظره بدون `sleep N; check` الذي يمنعه Claude Code: الأمر `wait` يطبع سطر تقدّم كل فترة (فريم كذا من كذا، أو frame= من ffmpeg، أو نسبة مئوية) ثم DONE أو FAILED مع آخر سطور اللوج، ويخرج بكود المهمة، ليعمل داخل أداة Monitor أو مع run_in_background؛ و`status` نظرة بلا انتظار، و`stop` يوقفها.",
+      "use_when": [
+        "Render the full video in the background and tell me the progress",
+        "Wait for the ffmpeg encode to finish without sleep",
+        "رندر الفيديو كامل في الخلفية وقولي وصل لفين",
+        "استنى التحميل لحد ما يخلص من غير sleep"
+      ],
+      "keywords": [
+        "background job",
+        "wait",
+        "monitor",
+        "progress",
+        "run_in_background",
+        "sleep",
+        "long render",
+        "render log",
+        "مهمة في الخلفية",
+        "انتظار",
+        "تقدم الرندر",
+        "مراقبة"
+      ],
+      "commands": [
+        {
+          "name": "start",
+          "example": "python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4",
+          "does": "Launches the command detached, writes job.log/job.pid/job.exit into --dir and returns at once."
+        },
+        {
+          "name": "wait",
+          "example": "python3 tools/job.py wait --dir out/20261024-film/render",
+          "does": "Blocks until the job ends: a PROGRESS line at most every 20 s (--every), WARN on new error lines, then DONE exit=0 or FAILED exit=N with the last 5 log lines; --quiet prints only the final line; --timeout N exits 124. Run it under the Monitor tool or Bash run_in_background."
+        },
+        {
+          "name": "status",
+          "example": "python3 tools/job.py status --dir out/20261024-film/render",
+          "does": "Prints RUNNING with the last progress line, DONE or FAILED, and returns immediately."
+        },
+        {
+          "name": "stop",
+          "example": "python3 tools/job.py stop --dir out/20261024-film/render",
+          "does": "Sends SIGTERM to the job's process group."
+        }
+      ],
+      "inputs": "A job folder (--dir) and, for start, the command after `--`.",
+      "outputs": "job.log, job.pid, job.exit and job.json in the job folder; STARTED/PROGRESS/WARN/DONE/FAILED/TIMEOUT lines on stdout; exit code = the job's exit code (124 on timeout, 2 when no job exists).",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "runs-external-programs",
+      "consent": "",
+      "limits": "Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection).",
+      "evidence": "tested-here",
+      "evidence_note": "tests/test_job_wait.py 8/8 passed here (progress and DONE, failure exit code and log tail, signal exit 128+N, timeout and stop, the no-sleep-wait hook's block and allow cases).",
+      "tests": [
+        "tests/test_job_wait.py"
+      ],
+      "docs": [
+        "playbooks/render-pipeline.md",
+        "CLAUDE.md",
+        "AGENTS.md"
+      ],
+      "families": [
+        "qa-verification",
+        "engines-render-pipeline"
+      ],
+      "power_id": "TOOL-174"
+    },
+    {
       "id": "starter-html-canvas",
       "path": "starters/html-canvas/",
       "root": "repo",
