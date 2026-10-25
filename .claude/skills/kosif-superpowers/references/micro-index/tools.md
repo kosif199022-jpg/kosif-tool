@@ -195,6 +195,7 @@
 | `particles` | TOOL-146 | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame | `python3 scripts/particles.py burst --seed 7 --count 40 --t 0.5 --visi…` | 1 |
 | `render-html` | TOOL-78 | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer | `node resources/motion-runtime/render_html.cjs --in ./film.html --out…` | 0 |
 | `repo-aspects` | TOOL-80 | محلّل نسب العرض المرن · Flexible aspect ratio resolver | `python3 -c "import sys; sys.path.insert(0,'tools'); from aspects impo…` | 1 |
+| `repo-check-frame-cover` | — | فحص تغطية الصورة للإطار · Photo frame-cover check | `node tools/check_frame_cover.cjs --in tests/fixtures/photo-cover/inde…` | 1 |
 | `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 0 |
 | `repo-verify-video` | TOOL-82 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 -…` | 2 |
 | `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 0 |
