@@ -14,6 +14,7 @@ Total: 289 styles · 243 PromptsMotion references · 46 KOSIF base styles · 45 
 - [Charts and data stories — الرسوم البيانية وقصص البيانات](playbooks/charts.md)
 - [Code-driven and generative motion — الحركة البرمجية والتوليدية](playbooks/code.md)
 - [Diagrams and flows — المخططات والتدفقات](playbooks/diagrams.md)
+- [Export standard — معيار التصدير](playbooks/export-standard.md)
 - [Hand-drawn, whiteboard and plotter — الرسم اليدوي والسبورة والبلوتر](playbooks/hand-drawn.md)
 - [Kinetic typography — التايبوغرافي الحركي](playbooks/kinetic-type.md)
 - [Music and beat sync — الموسيقى والمزامنة الإيقاعية](playbooks/music.md)
