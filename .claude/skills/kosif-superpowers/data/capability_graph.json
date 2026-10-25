@@ -2225,6 +2225,11 @@
    "label": "scripts/motion_reference_probe.py"
   },
   {
+   "id": "script:scripts/script_storyboard.py",
+   "kind": "script",
+   "label": "scripts/script_storyboard.py"
+  },
+  {
    "id": "script:scripts/self_council.py",
    "kind": "script",
    "label": "scripts/self_council.py"
@@ -2638,6 +2643,11 @@
    "id": "test:tests/test_requirements.py",
    "kind": "test",
    "label": "tests/test_requirements.py"
+  },
+  {
+   "id": "test:tests/test_script_storyboard.py",
+   "kind": "test",
+   "label": "tests/test_script_storyboard.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
@@ -7331,6 +7341,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/script_storyboard.py",
+   "to": "script:scripts/export_profile.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/self_council.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -8191,6 +8207,12 @@
   {
    "from": "script:scripts/requirements.py",
    "to": "test:tests/test_requirements.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/script_storyboard.py",
+   "to": "test:tests/test_script_storyboard.py",
    "rel": "tested_by",
    "w": 1
   },

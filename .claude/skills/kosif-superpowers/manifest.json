@@ -18,7 +18,7 @@
   "powers": 5853,
   "families": 62,
   "domains": 10,
-  "tools": 177,
+  "tools": 178,
   "guides": 114,
   "statuses": {
    "documented": 2325,
@@ -16949,6 +16949,87 @@
    ],
    "evidence": "tested-here",
    "evidence_note": "2026-10-25: tests/test_export_profile.py 6/6 on this checkout (ffmpeg 6)."
+  },
+  {
+   "id": "script-storyboard",
+   "path": "scripts/script_storyboard.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Script-to-Storyboard Animatic",
+   "title_ar": "من السيناريو إلى الستوري بورد والأنيماتك",
+   "summary_en": "Reads an Arabic or English play or screenplay (text or PDF) and writes a kosif.storyboard.v1 shot list: acts, scenes, an establishing wide shot per scene, dialogue shots that change size on a speaker change or emotional cue, stage directions, word-count durations, characters with line counts, likely duplicate spellings of a name, pacing per act and short-form episodes under a time limit. It then renders a frame-exact animatic MP4 from colour cards or the user's own images and clips, with an optional master audio track, at the KOSIF export standard.",
+   "summary_ar": "يقرأ مسرحية أو سيناريو بالعربي أو الإنجليزي (نص أو PDF) ويكتب قائمة لقطات بصيغة kosif.storyboard.v1: الفصول والمشاهد، ولقطة واسعة تأسيسية لكل مشهد، ولقطات حوار يتغير حجمها مع تغيّر المتكلم أو الانفعال، وإرشادات المسرح، ومدة كل لقطة من عدد الكلمات، والشخصيات وعدد جملها، والأسماء المكتوبة بطريقتين، وإيقاع كل فصل، وتقسيم العمل لحلقات قصيرة تحت حد زمني. ثم يصيّر أنيماتك MP4 دقيق الإطارات من بطاقات لونية أو صور ولقطات المستخدم، مع صوت رئيسي اختياري، بمعيار تصدير KOSIF.",
+   "use_when": [
+    "حوّل المسرحية دي لستوري بورد ولقطات",
+    "عندي سيناريو PDF عايز أقسمه لحلقات ريلز دقيقة ونص",
+    "اعمل أنيماتك بالتوقيت على التعليق الصوتي من الستوري بورد",
+    "Turn this screenplay into a shot list with durations",
+    "Split my play into 90-second episodes and render a timing animatic"
+   ],
+   "keywords": [
+    "storyboard",
+    "shot list",
+    "screenplay",
+    "play script",
+    "animatic",
+    "episodes",
+    "dialogue coverage",
+    "ستوري بورد",
+    "سيناريو",
+    "مسرحية",
+    "قائمة لقطات",
+    "أنيماتك",
+    "حلقات",
+    "تقطيع المشاهد"
+   ],
+   "commands": [
+    {
+     "name": "parse",
+     "example": "python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90",
+     "does": "Extracts the text (pdftotext for PDF), cleans bidi marks and presentation forms, re-joins wrapped lines, builds acts/scenes/shots with sizes, camera moves and durations, and writes the storyboard with characters, warnings, pacing and episodes. Prints a one-line JSON summary."
+    },
+    {
+     "name": "blank",
+     "example": "python3 scripts/script_storyboard.py blank --out ./out/storyboard.json --title Demo --duration 15 --shots 3",
+     "does": "Writes an empty storyboard template with evenly timed colour shots."
+    },
+    {
+     "name": "render",
+     "example": "python3 scripts/script_storyboard.py render --storyboard ./out/storyboard.json --episode 1 --audio ./voice.m4a --out ./out/episode1.mp4",
+     "does": "Renders each shot (its source image/clip cropped to fill, or a colour card) on exact frame boundaries, concatenates them, scales the timeline to the master audio when given (stream-copying AAC/MP3/ALAC, else AAC 320k), and writes <out>.report.json with frames per shot."
+    }
+   ],
+   "inputs": "parse: a UTF-8 .txt or a .pdf script; dialogue as 'NAME: text' or 'NAME (direction): text'; act/scene headings الفصل/المشهد/ACT/SCENE/INT./EXT./داخلي/خارجي. render: the storyboard JSON, optional `source` per shot (image or video path relative to the storyboard), optional audio.",
+   "outputs": "storyboard JSON (kosif.storyboard.v1); MP4 animatic (default 1080x1920, 30 fps, H.264 CRF 17, BT.709, +faststart) and its kosif.animatic-report.v1 JSON.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [
+     "pdftotext"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Nothing to approve; it reads only the script the user supplied and writes the files named by --out.",
+   "limits": "Shot sizes and durations are rule-based suggestions from the text layout, not a director's reading; it writes no text on frames, generates no footage, and a script whose dialogue is not in 'NAME: line' form comes out as stage directions.",
+   "tests": [
+    "tests/test_script_storyboard.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/edit.md"
+   ],
+   "families": [
+    "transitions-cuts",
+    "camera-composition-layout",
+    "audio-sync-captions"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "10/10 passed here (tests/test_script_storyboard.py, both render tests with real ffmpeg). Scratch run on a 53-page Arabic play PDF: 8 scenes, 505 shots, 33 characters, 3 duplicate-spelling warnings, 25 episodes all under 90 s; episode 1 rendered against a 4 s AAC track gave exactly 120 frames at 30 fps with the audio stream-copied."
   }
  ],
  "guides": [
