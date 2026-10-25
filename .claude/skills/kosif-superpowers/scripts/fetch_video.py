@@ -37,7 +37,7 @@ def find_ytdlp(install: bool = True) -> list[str] | None:
         try:
             sys.path.insert(0, str(Path(__file__).resolve().parent))
             from _deps import ensure  # noqa: PLC0415
-            ensure(["yt_dlp", "curl_cffi"], quiet=False)
+            ensure(["yt_dlp", "yt_dlp_ejs", "curl_cffi"], quiet=False)
         except Exception:  # noqa: BLE001 — install is best effort; the message below covers the rest
             pass
         exe = shutil.which("yt-dlp")
@@ -163,6 +163,55 @@ def info_for(path: Path) -> dict:
     return {k: d.get(k) for k in ("title", "uploader", "id", "extractor_key", "license", "webpage_url", "upload_date")}
 
 
+def _is_stock(url: str) -> bool:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import stock_fetch as sf  # noqa: PLC0415
+    try:
+        return sf.stock_file_url(url) is not None
+    except (RuntimeError, ValueError):
+        return True
+
+
+def stock_download(url, a) -> dict | None:
+    """Pexels / Mixkit / Pixabay pages and direct media-file links, fetched without yt-dlp.
+
+    yt-dlp has no extractor for these stock sites and its generic extractor gets 403 on their pages,
+    so they go through stock_fetch.py (Pexels' public download redirect, Mixkit's free 720p file,
+    the Pixabay API). Returns None when the link is not one of them, so yt-dlp handles it."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import stock_fetch as sf  # noqa: PLC0415
+
+    try:
+        hit = sf.stock_file_url(url)
+    except (RuntimeError, ValueError) as e:
+        return {"url": url, "file": None, "error": str(e), "hint": "check the clip id / link, or the API key named above"}
+    if not hit:
+        return None
+    source, file_url, cid = hit
+    out = Path(a.out)
+    out.mkdir(parents=True, exist_ok=True)
+    fpath = Path(urllib.parse.urlsplit(file_url).path)
+    name = fpath.name or "clip.mp4"
+    if cid:
+        name = f"{source}-{cid}{Path(name).suffix or '.mp4'}"
+    elif fpath.parent.name:  # e.g. cdn.coverr.co/videos/<slug>/1080p.mp4 -> <slug>-1080p.mp4
+        name = f"{fpath.parent.name}-{name}"
+    dest = out / name
+    try:
+        if not dest.is_file() or not dest.stat().st_size:
+            sf.download(file_url, dest)
+    except Exception as e:  # noqa: BLE001 - report any network/HTTP failure as a failed row
+        return {"url": url, "file": None, "error": f"{source}: {e}", "source": source, "file_url": file_url}
+    rec = {"url": url, "file": str(dest), "attempt": 1, "via": "stock_fetch", "source": source,
+           "file_url": file_url, "id": cid, **probe(dest)}
+    if source in sf.LICENCES:
+        rec["license"], rec["license_url"] = sf.LICENCES[source][:2]
+    if a.safe and a.quality != "audio":
+        s = edit_safe(dest)
+        rec["safe_file"] = str(s) if s else None
+    return rec
+
+
 def download(url, a, ytdlp) -> dict:
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -213,10 +262,10 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     ytdlp = find_ytdlp()
     if a.update:
-        return subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", "yt-dlp", "curl_cffi"])
+        return subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", "yt-dlp", "yt-dlp-ejs", "curl_cffi"])
     if a.doctor:
         return doctor(ytdlp)
-    if not ytdlp:
+    if not ytdlp and not a.urlfile and not all(_is_stock(u) for u in a.urls if is_url(u)):
         print("yt-dlp not found and could not be installed: pip install yt-dlp curl_cffi"
               " (no network? ask the user to upload the video file instead)", file=sys.stderr)
         return 1
@@ -232,7 +281,9 @@ def main(argv=None) -> int:
         return 2
     results = []
     for u in urls:
-        r = download(u, a, ytdlp)
+        r = stock_download(u, a)
+        if r is None:
+            r = download(u, a, ytdlp) if ytdlp else {"url": u, "file": None, "error": "yt-dlp not installed: pip install yt-dlp curl_cffi"}
         results.append(r)
         print(("OK   " + r["file"]) if r.get("file") else f"FAIL {u}\n     {r.get('error')}")
         if r.get("blocked"):

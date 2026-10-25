@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Download dependencies: check them, install them, and explain a blocked download.
 
-    python3 scripts/_deps.py            # report yt-dlp, curl_cffi, instaloader, ffmpeg (never fails)
+    python3 scripts/_deps.py            # report yt-dlp, yt-dlp-ejs, curl_cffi, instaloader, ffmpeg (never fails)
     python3 scripts/_deps.py install    # pip install whatever is missing (quiet, never fails)
 
 Stdlib only. The SessionStart hook (.claude/hooks/session-start.sh) runs `install` in cloud sessions,
@@ -18,8 +18,9 @@ import site
 import subprocess
 import sys
 
-# python module -> pip package. All three are pure pip installs; no system-wide or paid installs here.
-DOWNLOAD_DEPS = {"yt_dlp": "yt-dlp", "curl_cffi": "curl_cffi", "instaloader": "instaloader"}
+# python module -> pip package. All four are pure pip installs; no system-wide or paid installs here.
+# yt-dlp-ejs carries the YouTube JS challenge solver; without it YouTube drops most formats (yt-dlp >= 2025.11).
+DOWNLOAD_DEPS = {"yt_dlp": "yt-dlp", "yt_dlp_ejs": "yt-dlp-ejs", "curl_cffi": "curl_cffi", "instaloader": "instaloader"}
 
 
 def has_module(mod: str) -> bool:

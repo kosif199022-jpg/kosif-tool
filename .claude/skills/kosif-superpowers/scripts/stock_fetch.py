@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keyless stock-footage fetcher for montage jobs (Pexels by id, Mixkit by id) with a licence manifest.
+"""Stock-footage fetcher for montage jobs (Pexels and Mixkit keyless, Pixabay with a free key) with a licence manifest.
 
 Field-tested in a cloud session on 2026-10-21, when Pexels had paused new API keys and
 pexels.com search pages returned 403 to scripts:
@@ -13,6 +13,11 @@ Subcommands:
   probe                  report which stock sources answer from this machine
   pexels <id|url> ...    resolve each clip (302), optionally download, write manifest.json
   mixkit <id|url> ...    download the free 720p file of each clip, write manifest.json
+  pixabay <id|url> ...   download through the Pixabay API (needs a free PIXABAY_API_KEY env var;
+                         pixabay.com pages answer 403 to scripts, the API does not)
+
+stock_file_url(url) is the router fetch_video.py uses before yt-dlp: yt-dlp has no extractor for
+these stock sites and its generic extractor gets 403 on their pages, so stock page links go here.
 
 Nothing here searches a site or bypasses a login: you pass ids you found yourself.
 """
@@ -24,7 +29,9 @@ import re
 import shutil
 import subprocess
 import sys
+import os
 import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -33,11 +40,19 @@ UA = ("Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
 PEXELS_DL = "https://www.pexels.com/download/video/{id}/"
 PEXELS_PAGE = "https://www.pexels.com/video/{id}/"
 MIXKIT_FILE = "https://assets.mixkit.co/videos/{id}/{id}-720.mp4"
+MIXKIT_PAGE = "https://mixkit.co/free-stock-video/{id}/"
+PIXABAY_API = "https://pixabay.com/api/videos/?key={key}&id={id}"
+PIXABAY_PAGE = "https://pixabay.com/videos/id-{id}/"
+# hosts that already serve the media file itself (no page to resolve)
+DIRECT_HOSTS = ("videos.pexels.com", "assets.mixkit.co", "cdn.pixabay.com", "cdn.coverr.co", "upload.wikimedia.org")
+MEDIA_EXT = (".mp4", ".mov", ".webm", ".m4v", ".mkv")
 LICENCES = {
     "pexels": ("Pexels License", "https://www.pexels.com/license/",
                "Free to use and modify, attribution optional; do not sell unaltered copies or imply endorsement."),
     "mixkit": ("Mixkit Free License", "https://mixkit.co/license/",
                "Free for commercial and personal projects; no redistribution as stock."),
+    "pixabay": ("Pixabay Content License", "https://pixabay.com/service/license-summary/",
+                "Free to use and modify, attribution optional; do not sell unaltered copies or imply endorsement."),
 }
 PROBES = {
     "mixkit-page": "https://mixkit.co/free-stock-video/mosque/",
@@ -95,6 +110,61 @@ def resolve_pexels(clip_id: str) -> str:
         raise RuntimeError(f"pexels {clip_id}: HTTP {e.code}") from None
 
 
+def resolve_pixabay(clip_id: str, key: str | None = None) -> str:
+    """Return the best video file URL for a Pixabay clip id through the official API."""
+    key = key or os.environ.get("PIXABAY_API_KEY")
+    if not key:
+        raise RuntimeError("pixabay needs a free API key: set PIXABAY_API_KEY (https://pixabay.com/api/docs/)")
+    try:
+        with _request(PIXABAY_API.format(key=urllib.parse.quote(key), id=clip_id)) as r:
+            hits = json.loads(r.read().decode("utf-8")).get("hits") or []
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"pixabay {clip_id}: HTTP {e.code}") from None
+    if not hits:
+        raise RuntimeError(f"pixabay {clip_id}: no such clip")
+    vids = hits[0].get("videos") or {}
+    for size in ("large", "medium", "small", "tiny"):
+        if (vids.get(size) or {}).get("url"):
+            return vids[size]["url"]
+    raise RuntimeError(f"pixabay {clip_id}: no downloadable file")
+
+
+def resolve(source: str, clip_id: str) -> str:
+    if source == "pexels":
+        return resolve_pexels(clip_id)
+    if source == "pixabay":
+        return resolve_pixabay(clip_id)
+    return MIXKIT_FILE.format(id=clip_id)
+
+
+def page_url(source: str, clip_id: str) -> str:
+    return {"pexels": PEXELS_PAGE, "pixabay": PIXABAY_PAGE}.get(source, MIXKIT_PAGE).format(id=clip_id)
+
+
+def stock_source(url: str) -> str | None:
+    """Name the stock source a page link belongs to (pexels/mixkit/pixabay), or None."""
+    host = (urllib.parse.urlsplit(url).hostname or "").lower()
+    for name, domain in (("pexels", "pexels.com"), ("mixkit", "mixkit.co"), ("pixabay", "pixabay.com")):
+        if host == domain or host.endswith("." + domain):
+            return name
+    return None
+
+
+def stock_file_url(url: str) -> tuple[str, str, str | None] | None:
+    """Map a stock link to (source, file_url, clip_id), or None when the link is not a known stock page/file.
+
+    Raises RuntimeError when the link is a stock page but cannot be resolved (bad id, no key)."""
+    parts = urllib.parse.urlsplit(url)
+    host = (parts.hostname or "").lower()
+    if host in DIRECT_HOSTS or (host and parts.path.lower().endswith(MEDIA_EXT)):
+        return (stock_source(url) or host, url, None)
+    src = stock_source(url)
+    if not src or "video" not in parts.path:
+        return None
+    cid = parse_id(parts.path)
+    return (src, resolve(src, cid), cid)
+
+
 def remote_size(url: str) -> int | None:
     try:
         with _request(url, "HEAD") as r:
@@ -133,10 +203,10 @@ def run_source(source: str, tokens: list[str], out: Path, max_mb: float, dry: bo
     for tok in tokens:
         try:
             cid = parse_id(tok)
-            file_url = resolve_pexels(cid) if source == "pexels" else MIXKIT_FILE.format(id=cid)
+            file_url = resolve(source, cid)
             size = remote_size(file_url)
             row = {"id": cid, "source": source, "file_url": file_url,
-                   "page": PEXELS_PAGE.format(id=cid) if source == "pexels" else f"https://mixkit.co/free-stock-video/{cid}/",
+                   "page": page_url(source, cid),
                    "licence": name, "licence_url": url, "licence_terms": terms,
                    "bytes": size, "file": None}
             if size and max_mb and size > max_mb * 1048576:
@@ -163,7 +233,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("probe", help="report which stock sources answer from this machine")
-    for src in ("pexels", "mixkit"):
+    for src in ("pexels", "mixkit", "pixabay"):
         p = sub.add_parser(src, help=f"fetch {src} clips by id or page URL")
         p.add_argument("clips", nargs="+", help="ids or page URLs")
         p.add_argument("-o", "--out", default="./stock", help="output folder (default ./stock)")
