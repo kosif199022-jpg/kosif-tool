@@ -1,0 +1,43 @@
+{
+  "id": "pm-rexan-wong-7d1b8e",
+  "name": "Professional motion workflow breakdown",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "product-ui",
+    "diagrams",
+    "kinetic-type",
+    "photos",
+    "music",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/rexan_wong/status/2103707054108299437",
+  "page": "https://www.promptsmotion.com/rexan-wong-7d1b8e",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/fb760739-dd60-4ec4-b25b-59eb8632a8cd/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/858aa10b-52de-4ae1-ab11-5a5a1dd2bf5b/poster.webp",
+  "aspect": {
+    "w": 960,
+    "h": 720
+  },
+  "aspect_label": "4:3",
+  "rank": 3,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 179,
+  "listed": true,
+  "skill": "styles/pm-rexan-wong-7d1b8e/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
+}

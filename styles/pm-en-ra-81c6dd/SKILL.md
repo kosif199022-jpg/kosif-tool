@@ -13,7 +13,7 @@ description: Create a new video using the motion design language referenced at t
 - Published on source: 2026-09-27 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 1:1 (1440×1440)
 - Creator's public prompt length: about 33 words (not reproduced here)
-- Popularity rank on source library: #150
+- Popularity rank on source library: #31
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

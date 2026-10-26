@@ -14,7 +14,7 @@ description: Create a new video using the motion design language referenced at t
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Shaders
 - Creator's public prompt length: about 548 words (not reproduced here)
-- Popularity rank on source library: #242
+- Popularity rank on source library: #74
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

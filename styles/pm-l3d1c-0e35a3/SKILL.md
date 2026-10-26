@@ -13,7 +13,7 @@ description: A vertical 15 s app ad where one selfie becomes an AI-generated twi
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 9:16 (1080×1920)
 - Creator's public prompt length: about 11 words (not reproduced here)
-- Popularity rank on source library: #37
+- Popularity rank on source library: #19
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

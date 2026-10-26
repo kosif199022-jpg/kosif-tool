@@ -1,0 +1,39 @@
+{
+  "id": "pm-achxvi-485c93",
+  "name": "Character-led Pocketsflow product explainer",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "product-ui",
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "characters"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/achxvi/status/2103918792845963545",
+  "page": "https://www.promptsmotion.com/achxvi-485c93",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/60fbeedf-e9ac-4c53-a40f-4231764d82f2/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/9075b21a-ec6d-493f-8085-e06b343c83de/poster.webp",
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 127,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 59,
+  "listed": true,
+  "skill": "styles/pm-achxvi-485c93/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/characters.md"
+  ]
+}

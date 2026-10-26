@@ -1,7 +1,7 @@
 # KOSIF TOOL — أطلس الموشن جرافيك لـ Claude Code
 
 <!-- stats:start -->
-**289** styles · **243** PromptsMotion references · **46** KOSIF base styles · **45** original briefs · **18** playbooks · **224** credited creators
+**297** styles · **251** PromptsMotion references · **46** KOSIF base styles · **45** original briefs · **18** playbooks · **225** credited creators
 <!-- stats:end -->
 
 ## ابدأ من هنا — خريطة المستودع / Start here

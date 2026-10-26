@@ -1,0 +1,27 @@
+{
+  "id": "pm-gavinpurcell-e6cd81",
+  "name": "A documentary about superintelligence",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [],
+  "creator": "unknown",
+  "creator_url": "https://x.com/gavinpurcell/status/2103304514329854102",
+  "page": "https://www.promptsmotion.com/gavinpurcell-e6cd81",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/ef548155-64be-4c7c-a329-4df66d6d2d00/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/4b89163d-701a-4c83-bad8-9fe8e155c45d/poster.webp",
+  "aspect": {
+    "w": 854,
+    "h": 480
+  },
+  "aspect_label": "16:9",
+  "rank": 130,
+  "published": "2026-09-25",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 8,
+  "listed": true,
+  "skill": "styles/pm-gavinpurcell-e6cd81/SKILL.md",
+  "playbooks": []
+}
