@@ -27,6 +27,8 @@ python3 tools/words_convert.py starters/html-canvas/words.json starters/html-can
 python3 tools/words_convert.py captions.srt my-film/words.js
 ```
 
+**صورة خلف الكلمات:** لو الفيلم فيه صورة بتتحرك (زوم، بان، اهتزاز)، ارسمها بـ `KosifCover.drawPhoto` من `tools/photo_cover.js` وافحص بـ `node tools/check_frame_cover.cjs --in <film>/index.html --samples 48`، فالصورة تفضل مغطية الإطار كله في كل الحركات.
+
 **الرندر:**
 
 ```bash
@@ -62,6 +64,8 @@ A 9:16 sample film (1080×1920, 30 fps, 12 s) built with HTML + Canvas + SVG and
 **Renderer contract:** the page exposes `window.__kosif = { duration, fps, seek(t) }` and `window.__kosifReady` (a promise that resolves after fonts load). `seek(t)` must draw the frame for time `t` synchronously (or return a promise). Controls hide automatically under the renderer (`navigator.webdriver`).
 
 **Words and timing:** edit `words.json`, then regenerate `words.js` with `python3 tools/words_convert.py starters/html-canvas/words.json starters/html-canvas/words.js` (also accepts SRT, VTT, Whisper JSON and CSV).
+
+**A photo behind the lyrics:** when a photo moves (zoom, pan, shake, parallax), draw it with `KosifCover.drawPhoto` from `tools/photo_cover.js` and check with `node tools/check_frame_cover.cjs --in <film>/index.html --samples 48`, so the photo covers the whole frame through every move.
 
 **Render:**
 

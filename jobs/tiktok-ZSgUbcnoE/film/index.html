@@ -63,10 +63,11 @@
     if (!im) return;
     const p = lin(t, s.cut, s.next);
     const base = Math.max(P.w / im.width, P.h / im.height);
-    const z = base * (1 + .06 * easeInOut(p)) * (o.scale || 1);
+    // cover the panel + 2% headroom; the drift is clamped so no edge shows (dx/dy are deliberate slides)
+    const z = base * (1.02 + .06 * easeInOut(p)) * Math.max(1, o.scale || 1);
     const dir = s.i % 2 ? 1 : -1;
     const w = im.width * z, h = im.height * z;
-    const x = P.x + (P.w - w) / 2 + dir * 14 * (p - .5) + (o.dx || 0), y = P.y + (P.h - h) / 2 + (o.dy || 0);
+    const x = clamp(P.x + (P.w - w) / 2 + dir * 14 * (p - .5), P.x + P.w - w, P.x) + (o.dx || 0), y = P.y + (P.h - h) / 2 + (o.dy || 0);
     ctx.globalAlpha = o.alpha == null ? 1 : o.alpha;
     ctx.drawImage(im, x, y, w, h);
     ctx.globalAlpha = 1;
