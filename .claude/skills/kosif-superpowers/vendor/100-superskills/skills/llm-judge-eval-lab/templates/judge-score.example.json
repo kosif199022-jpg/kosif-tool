@@ -1,0 +1,1 @@
+{"judge":"j3","role":"adversarial","vendor":"claude","scores":{"correctness":5,"security":3,"readability":7,"tests":8},"reasons":{"security":"CORS finding lacks evidence"}}

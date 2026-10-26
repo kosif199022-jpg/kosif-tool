@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>Bunny Structural Twin — KOSIF Motion 3D</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<script src="assets/three-kit.bundle.js"></script>
+<script src="assets/shape-kit.js"></script>
+<script src="assets/twin.js"></script>
+<script src="src/main.js"></script>
+<style>
+  @font-face { font-family: "Cairo"; src: url("assets/fonts/cairo-arabic-800-normal.woff2") format("woff2"); font-weight: 800; unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF, U+0660-0669; }
+  @font-face { font-family: "Cairo"; src: url("assets/fonts/cairo-arabic-600-normal.woff2") format("woff2"); font-weight: 600; unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF, U+0660-0669; }
+  @font-face { font-family: "Cairo"; src: url("assets/fonts/cairo-latin-800-normal.woff2") format("woff2"); font-weight: 800; unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Grotesk"; src: url("assets/fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+  @font-face { font-family: "Grotesk"; src: url("assets/fonts/space-grotesk-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  @font-face { font-family: "Mono"; src: url("assets/fonts/jetbrains-mono-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+  @font-face { font-family: "Mono"; src: url("assets/fonts/jetbrains-mono-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+  :root { --mint: #9dffb4; --lime: #d0ff6a; --soft: #99b7aa; --ink: #eaffed; --red: #ff907a; --gold: #ffda77; --line: rgba(157, 255, 180, .28); }
+  html, body { margin: 0; padding: 0; width: 1080px; height: 1920px; overflow: hidden; background: #040b0c; }
+  #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #040b0c; font-family: "Grotesk", sans-serif; color: var(--ink); }
+  #gl { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+  .hud { position: absolute; left: 64px; right: 64px; }
+  #bar { top: 286px; height: 76px; display: flex; align-items: center; justify-content: space-between; border: 2px solid var(--line); border-radius: 26px;
+         background: rgba(8, 26, 25, .62); padding: 0 30px; backdrop-filter: blur(6px); }
+  #bar .mark { display: flex; align-items: center; gap: 16px; font-weight: 700; font-size: 30px; letter-spacing: .06em; }
+  #bar .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 22px var(--lime); }
+  #bar .flag { font-family: "Mono"; font-size: 20px; color: var(--lime); border: 2px solid rgba(208, 255, 106, .45); border-radius: 40px; padding: 6px 16px; letter-spacing: .08em; }
+  #chips { top: 384px; display: flex; gap: 10px; }
+  .chip { flex: 1; text-align: center; font-family: "Mono"; font-weight: 700; font-size: 21px; letter-spacing: .06em; padding: 13px 0; border-radius: 14px;
+          border: 2px solid rgba(157, 255, 180, .22); color: rgba(234, 255, 237, .5); background: rgba(8, 26, 25, .55); }
+  .chip.done { color: var(--mint); border-color: rgba(157, 255, 180, .55); }
+  .chip.on { background: var(--lime); color: #102016; border-color: transparent; box-shadow: 0 0 34px rgba(208, 255, 106, .55); }
+  .chip.bad { background: var(--red); color: #2a0d07; box-shadow: 0 0 34px rgba(255, 144, 122, .6); }
+  #stats { top: 1252px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .stat { border: 2px solid var(--line); border-radius: 20px; background: rgba(8, 26, 25, .7); padding: 16px 20px; }
+  .stat .k { font-family: "Mono"; font-size: 17px; letter-spacing: .14em; color: #a7debe; }
+  .stat .v { font-family: "Mono"; font-weight: 700; font-size: 50px; line-height: 1.1; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .stat .u { font-size: 18px; color: var(--soft); }
+  #rank { top: 1252px; border: 2px solid rgba(208, 255, 106, .5); border-radius: 20px; background: rgba(8, 26, 25, .82); padding: 14px 24px; opacity: 0; }
+  #rank .h { font-family: "Mono"; font-size: 17px; letter-spacing: .14em; color: var(--lime); margin-bottom: 4px; }
+  #rank .row { display: flex; justify-content: space-between; font-family: "Mono"; font-size: 23px; padding: 7px 0; border-bottom: 1px solid rgba(157, 255, 180, .18); }
+  #rank .row:last-child { border-bottom: 0; }
+  #rank .row b { color: var(--mint); }
+  #cap { top: 1424px; text-align: center; }
+  #ar { direction: rtl; unicode-bidi: isolate; font-family: "Cairo", sans-serif; font-weight: 800; font-size: 62px; line-height: 1.35; padding: 6px 0 10px;
+        text-shadow: 0 4px 22px rgba(0, 0, 0, .7); }
+  #en { font-family: "Mono"; font-size: 21px; letter-spacing: .08em; color: var(--soft); margin-top: 4px; }
+  #tag { position: absolute; left: 0; top: 0; opacity: 0; pointer-events: none; }
+  #tag .line { position: absolute; left: 0; top: 0; height: 2px; background: currentColor; transform-origin: 0 50%; }
+  #tag .box { position: absolute; font-family: "Mono"; font-weight: 700; font-size: 22px; padding: 8px 14px; border-radius: 12px; white-space: nowrap;
+              border: 2px solid currentColor; background: rgba(8, 20, 20, .85); }
+  #note { position: absolute; left: 0; right: 0; top: 458px; text-align: center; font-family: "Mono"; font-size: 15px; letter-spacing: .1em; color: rgba(153, 183, 170, .75); }
+  #fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="5" data-fps="30">
+  <audio id="score" src="assets/score.wav" data-start="0" data-duration="5" data-volume="1" data-role="music" data-fade-out="0.25"></audio>
+  <canvas id="gl" width="1080" height="1920"></canvas>
+  <div id="bar" class="hud"><div class="mark"><span class="dot"></span><span>KOSIF <span style="color:var(--lime)">STRUCTURAL TWIN</span></span></div><span class="flag">3D · SIM</span></div>
+  <div id="chips" class="hud"><div class="chip">SHAPE</div><div class="chip">JOINT</div><div class="chip">LOAD</div><div class="chip">BREAK</div><div class="chip">SWAP</div><div class="chip">RANK</div></div>
+  <div id="stats" class="hud">
+    <div class="stat"><div class="k" id="k1">MESH</div><div class="v" id="v1">—</div><div class="u" id="u1">triangles</div></div>
+    <div class="stat"><div class="k" id="k2">PEAK UTIL</div><div class="v" id="v2">—</div><div class="u" id="u2">of strength</div></div>
+    <div class="stat"><div class="k" id="k3">FIRST LIMIT</div><div class="v" id="v3">—</div><div class="u" id="u3">× load</div></div>
+  </div>
+  <div id="rank" class="hud"><div class="h">RANK · WEAKEST FIRST · AFTER SWAP</div><div id="rows"></div></div>
+  <div id="cap" class="hud"><div id="ar"></div><div id="en"></div></div>
+  <div id="note">ILLUSTRATIVE 3D SPACE-TRUSS PROXY · CHOSEN VALUES · NOT A MEASURED TOY</div>
+  <div id="tag"><div class="line"></div><div class="box"></div></div>
+  <div id="fade"></div>
+
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s), TW = window.TWIN;
+    const three = window.__three.build($("#gl"), 1080, 1920);
+    const SEC = 5, B = { joint: 0.85, load: 1.65, brk: 2.55, swap: 3.35, rank: 4.15 };
+    const stages = [0, B.joint, B.load, B.brk, B.swap, B.rank, 99];
+    const fmt = (v, d = 2) => Number(v).toFixed(d);
+    const name = (id) => ({ "earL_out-crown": "L-EAR ROOT", "earL_front-crown": "L-EAR FRONT ROOT", "earL_in-earL_out": "L-EAR BASE · IN–OUT", "earL_out-earL_front": "L-EAR BASE · OUT–FRONT" }[id] || id.toUpperCase());
+    const AR = ["نحوّل الأرنب لمجسّم ثلاثي الأبعاد", `${TW ? Object.keys(TW.model.nodes).length : 0} مفصل · ${TW ? TW.model.elements.length : 0} عضو`,
+                "ضغطة خفيفة… والإجهاد يعلى", "جذر الأذن اليسرى انكسر أولاً", "نبدّل الجذر بقطعة أتخن", "الأرنب صمد — والحد ارتفع"];
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    const ease = (x) => { x = Math.min(1, Math.max(0, x)); return 1 - Math.pow(1 - x, 3); };
+    const rows = $("#rows");
+    TW.rank_after.forEach(([id, f, mode], i) => { const r = document.createElement("div"); r.className = "row";
+      r.innerHTML = `<span>${i + 1}. ${name(id)} · ${mode}</span><b>${fmt(f)}×</b>`; rows.appendChild(r); });
+
+    window.__hud = (t, d) => {
+      const s = stages.findIndex((x, i) => t >= x && t < stages[i + 1]);
+      chips.forEach((c, i) => { c.className = "chip" + (i < s ? " done" : "") + (i === s ? (i === 3 ? " on bad" : " on") : ""); });
+      // caption: Arabic line per stage, rising in over 0.18 s
+      const since = t - stages[s], rise = ease(since / 0.2);
+      $("#ar").textContent = AR[s]; $("#ar").style.transform = `translateY(${(1 - rise) * 26}px)`; $("#ar").style.opacity = rise;
+      $("#ar").style.color = s === 3 ? "#ffb4a2" : s === 5 ? "#d0ff6a" : "#eaffed";
+      const st = window.__bunnyStats || {};
+      const EN = [`SDF SCULPT → ${(st.triangles || 0).toLocaleString("en-US")} TRIS · CELL ${(((st.head && st.head.cell_m) || 0) * 1000).toFixed(1)} MM`, "PIN JOINTS · AXIAL MEMBERS · 3D",
+                  `LOAD ${fmt(d.L)}× · PAT 1.9 N + EAR POKE`, `${name(TW.break.steps[0].element)} @ ${fmt(TW.break.load_scale, 1)}× → MECHANISM`,
+                  `${name(TW.swap.id)} · AREA ×${fmt(TW.swap.factor, 1)}`, `FIRST LIMIT ${fmt(TW.first)}× → ${fmt(TW.after_first)}×`];
+      $("#en").textContent = EN[s]; $("#en").style.opacity = rise;
+      // stats
+      const showMesh = t < B.load;
+      $("#k1").textContent = showMesh ? "MESH" : "LOAD"; $("#v1").textContent = showMesh ? Math.round((st.triangles || 0) * Math.min(1, ease(t / 0.8))).toLocaleString("en-US") : fmt(d.L) + "×";
+      $("#u1").textContent = showMesh ? "triangles" : "× baseline";
+      const pk = d.peak * 100; $("#v2").textContent = t < B.load ? "—" : Math.round(pk) + "%";
+      $("#v2").style.color = pk >= 100 ? "#ff907a" : pk >= 72 ? "#ffe083" : "#eaffed";
+      $("#v3").textContent = t < B.load ? "—" : fmt(d.sw ? TW.after_first : TW.first) + "×";
+      $("#v3").style.color = d.sw ? "#9dffb4" : "#eaffed";
+      // the rank panel replaces the stats
+      const rk = ease((t - B.rank - 0.1) / 0.3);
+      $("#stats").style.opacity = 1 - rk; $("#stats").style.transform = `translateY(${-rk * 20}px)`;
+      $("#rank").style.opacity = rk; $("#rank").style.transform = `translateY(${(1 - rk) * 30}px)`;
+      Array.from(rows.children).forEach((r, i) => { const a = ease((t - B.rank - 0.2 - i * 0.08) / 0.25); r.style.opacity = a; r.style.transform = `translateX(${(1 - a) * 40}px)`; });
+      // the callout on the weak member
+      const tagOn = Math.min(ease((t - B.load - 0.35) / 0.2), 1 - ease((t - B.rank - 0.05) / 0.2));
+      const tag = $("#tag"), box = tag.querySelector(".box"), line = tag.querySelector(".line");
+      const broken = t >= 2.66 && t < B.swap + 0.32, fixed = t >= B.swap + 0.32;
+      const util = (fixed ? TW.util_after : TW.util)[TW.swap.id] * d.L;
+      tag.style.opacity = tagOn; tag.style.color = broken ? "#ff907a" : fixed ? "#9dffb4" : util >= 0.72 ? "#ffe083" : "#d0ff6a";
+      tag.style.transform = `translate(${d.sx}px, ${d.sy}px)`;
+      const dx = 150, dy = -150; line.style.width = Math.hypot(dx, dy) + "px"; line.style.transform = `rotate(${Math.atan2(dy, dx)}rad)`;
+      box.style.left = dx + "px"; box.style.top = (dy - 26) + "px";
+      box.textContent = broken ? "L-EAR ROOT · BROKEN" : fixed ? `SWAPPED · ${Math.round(util * 100)}%` : `L-EAR ROOT · ${Math.round(util * 100)}%`;
+      $("#fade").style.opacity = Math.max(0, (t - 4.86) / 0.14) * 0.85;
+    };
+
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: SEC });
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", SEC);
+    const seek = window.__kosifSeek;
+    window.render = (t) => { window.__ready = false; seek(t); three.render(t); requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; })); };
+    window.__ready = false;
+    Promise.all([document.fonts.load('800 62px "Cairo"', "الأرنب"), document.fonts.load('700 30px "Grotesk"'), document.fonts.load('700 50px "Mono"'),
+                 document.fonts.load('500 21px "Mono"'), document.fonts.load('500 30px "Grotesk"'), three.ready || Promise.resolve()])
+      .then(() => { seek(0); three.render(0); three.render(0); window.__ready = true; })
+      .catch((e) => console.error("scene failed to load", e));
+  </script>
+</div>
+</body>
+</html>

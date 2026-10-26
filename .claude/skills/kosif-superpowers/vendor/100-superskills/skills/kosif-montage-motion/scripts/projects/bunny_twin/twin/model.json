@@ -1,0 +1,1101 @@
+{
+ "name": "Plush bunny \u2014 illustrative 3D space-truss proxy (values chosen, not measured)",
+ "units": {
+  "length": "m",
+  "force": "N",
+  "stress": "Pa"
+ },
+ "nodes": {
+  "footL": [
+   -0.04,
+   0.0,
+   0.06
+  ],
+  "footR": [
+   0.04,
+   0.0,
+   0.06
+  ],
+  "seatL": [
+   -0.055,
+   0.0,
+   -0.005
+  ],
+  "seatR": [
+   0.055,
+   0.0,
+   -0.005
+  ],
+  "seatB": [
+   0.0,
+   0.0,
+   -0.045
+  ],
+  "hipL": [
+   -0.05,
+   0.06,
+   0.012
+  ],
+  "hipR": [
+   0.05,
+   0.06,
+   0.012
+  ],
+  "belly": [
+   0.0,
+   0.062,
+   0.062
+  ],
+  "back": [
+   0.0,
+   0.07,
+   -0.055
+  ],
+  "ribL": [
+   -0.045,
+   0.128,
+   0.002
+  ],
+  "ribR": [
+   0.045,
+   0.128,
+   0.002
+  ],
+  "chest": [
+   0.0,
+   0.124,
+   0.05
+  ],
+  "spine": [
+   0.0,
+   0.13,
+   -0.042
+  ],
+  "pawL": [
+   -0.03,
+   0.084,
+   0.066
+  ],
+  "pawR": [
+   0.03,
+   0.084,
+   0.066
+  ],
+  "neck": [
+   0.0,
+   0.162,
+   0.004
+  ],
+  "jawL": [
+   -0.062,
+   0.212,
+   0.004
+  ],
+  "jawR": [
+   0.062,
+   0.212,
+   0.004
+  ],
+  "snout": [
+   0.0,
+   0.202,
+   0.076
+  ],
+  "nape": [
+   0.0,
+   0.227,
+   -0.058
+  ],
+  "cheekL": [
+   -0.04,
+   0.187,
+   0.054
+  ],
+  "cheekR": [
+   0.04,
+   0.187,
+   0.054
+  ],
+  "crown": [
+   0.0,
+   0.287,
+   0.004
+  ],
+  "browL": [
+   -0.04,
+   0.262,
+   0.039
+  ],
+  "browR": [
+   0.04,
+   0.262,
+   0.039
+  ],
+  "earL_in": [
+   -0.018239,
+   0.277367,
+   -0.010285
+  ],
+  "earL_out": [
+   -0.041761,
+   0.272633,
+   -0.009715
+  ],
+  "earL_front": [
+   -0.030397,
+   0.278263,
+   0.000686
+  ],
+  "earL_mid": [
+   -0.043907,
+   0.343111,
+   -0.018213
+  ],
+  "earL_tip": [
+   -0.055827,
+   0.401492,
+   -0.025252
+  ],
+  "earR_in": [
+   0.018239,
+   0.277367,
+   -0.010285
+  ],
+  "earR_out": [
+   0.041761,
+   0.272633,
+   -0.009715
+  ],
+  "earR_front": [
+   0.030397,
+   0.278263,
+   0.000686
+  ],
+  "earR_mid": [
+   0.043907,
+   0.343111,
+   -0.018213
+  ],
+  "earR_tip": [
+   0.055827,
+   0.401492,
+   -0.025252
+  ]
+ },
+ "supports": {
+  "footL": [
+   "x",
+   "y",
+   "z"
+  ],
+  "footR": [
+   "x",
+   "y",
+   "z"
+  ],
+  "seatL": [
+   "x",
+   "y",
+   "z"
+  ],
+  "seatR": [
+   "x",
+   "y",
+   "z"
+  ],
+  "seatB": [
+   "x",
+   "y",
+   "z"
+  ]
+ },
+ "elements": [
+  {
+   "id": "footL-hipL",
+   "a": "footL",
+   "b": "hipL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "footL-belly",
+   "a": "footL",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "footR-hipR",
+   "a": "footR",
+   "b": "hipR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "footR-belly",
+   "a": "footR",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatL-hipL",
+   "a": "seatL",
+   "b": "hipL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatL-belly",
+   "a": "seatL",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatL-back",
+   "a": "seatL",
+   "b": "back",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatR-hipR",
+   "a": "seatR",
+   "b": "hipR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatR-belly",
+   "a": "seatR",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatR-back",
+   "a": "seatR",
+   "b": "back",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatB-hipL",
+   "a": "seatB",
+   "b": "hipL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatB-hipR",
+   "a": "seatB",
+   "b": "hipR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "seatB-back",
+   "a": "seatB",
+   "b": "back",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipL-belly",
+   "a": "hipL",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "belly-hipR",
+   "a": "belly",
+   "b": "hipR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipR-back",
+   "a": "hipR",
+   "b": "back",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "back-hipL",
+   "a": "back",
+   "b": "hipL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipL-hipR",
+   "a": "hipL",
+   "b": "hipR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "belly-back",
+   "a": "belly",
+   "b": "back",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribL-chest",
+   "a": "ribL",
+   "b": "chest",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "chest-ribR",
+   "a": "chest",
+   "b": "ribR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribR-spine",
+   "a": "ribR",
+   "b": "spine",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "spine-ribL",
+   "a": "spine",
+   "b": "ribL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribL-ribR",
+   "a": "ribL",
+   "b": "ribR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "chest-spine",
+   "a": "chest",
+   "b": "spine",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipL-ribL",
+   "a": "hipL",
+   "b": "ribL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipL-chest",
+   "a": "hipL",
+   "b": "chest",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "belly-chest",
+   "a": "belly",
+   "b": "chest",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "belly-ribR",
+   "a": "belly",
+   "b": "ribR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipR-ribR",
+   "a": "hipR",
+   "b": "ribR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "hipR-spine",
+   "a": "hipR",
+   "b": "spine",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "back-spine",
+   "a": "back",
+   "b": "spine",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "back-ribL",
+   "a": "back",
+   "b": "ribL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribL-neck",
+   "a": "ribL",
+   "b": "neck",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "chest-neck",
+   "a": "chest",
+   "b": "neck",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribR-neck",
+   "a": "ribR",
+   "b": "neck",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "spine-neck",
+   "a": "spine",
+   "b": "neck",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawL-chest",
+   "a": "pawL",
+   "b": "chest",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawL-ribL",
+   "a": "pawL",
+   "b": "ribL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawL-belly",
+   "a": "pawL",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawL-hipL",
+   "a": "pawL",
+   "b": "hipL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawR-chest",
+   "a": "pawR",
+   "b": "chest",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawR-ribR",
+   "a": "pawR",
+   "b": "ribR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawR-belly",
+   "a": "pawR",
+   "b": "belly",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "pawR-hipR",
+   "a": "pawR",
+   "b": "hipR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "neck-jawL",
+   "a": "neck",
+   "b": "jawL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "neck-jawR",
+   "a": "neck",
+   "b": "jawR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "neck-snout",
+   "a": "neck",
+   "b": "snout",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "neck-nape",
+   "a": "neck",
+   "b": "nape",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "neck-cheekL",
+   "a": "neck",
+   "b": "cheekL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "neck-cheekR",
+   "a": "neck",
+   "b": "cheekR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribL-jawL",
+   "a": "ribL",
+   "b": "jawL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "ribR-jawR",
+   "a": "ribR",
+   "b": "jawR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "chest-cheekL",
+   "a": "chest",
+   "b": "cheekL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "chest-cheekR",
+   "a": "chest",
+   "b": "cheekR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "spine-nape",
+   "a": "spine",
+   "b": "nape",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawL-cheekL",
+   "a": "jawL",
+   "b": "cheekL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawL-browL",
+   "a": "jawL",
+   "b": "browL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawL-nape",
+   "a": "jawL",
+   "b": "nape",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawL-snout",
+   "a": "jawL",
+   "b": "snout",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawR-cheekR",
+   "a": "jawR",
+   "b": "cheekR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawR-browR",
+   "a": "jawR",
+   "b": "browR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawR-nape",
+   "a": "jawR",
+   "b": "nape",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "jawR-snout",
+   "a": "jawR",
+   "b": "snout",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "snout-cheekL",
+   "a": "snout",
+   "b": "cheekL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "snout-cheekR",
+   "a": "snout",
+   "b": "cheekR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "snout-browL",
+   "a": "snout",
+   "b": "browL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "snout-browR",
+   "a": "snout",
+   "b": "browR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "nape-crown",
+   "a": "nape",
+   "b": "crown",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "nape-browL",
+   "a": "nape",
+   "b": "browL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "cheekL-browL",
+   "a": "cheekL",
+   "b": "browL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "cheekL-cheekR",
+   "a": "cheekL",
+   "b": "cheekR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "cheekR-browR",
+   "a": "cheekR",
+   "b": "browR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "crown-browL",
+   "a": "crown",
+   "b": "browL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "crown-browR",
+   "a": "crown",
+   "b": "browR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "crown-jawL",
+   "a": "crown",
+   "b": "jawL",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "browL-browR",
+   "a": "browL",
+   "b": "browR",
+   "area_m2": 0.00012,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_in-earL_out",
+   "a": "earL_in",
+   "b": "earL_out",
+   "area_m2": 4.2e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_out-earL_front",
+   "a": "earL_out",
+   "b": "earL_front",
+   "area_m2": 4.2e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_front-earL_in",
+   "a": "earL_front",
+   "b": "earL_in",
+   "area_m2": 4.2e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_in-earL_mid",
+   "a": "earL_in",
+   "b": "earL_mid",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_in-crown",
+   "a": "earL_in",
+   "b": "crown",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_out-earL_mid",
+   "a": "earL_out",
+   "b": "earL_mid",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_out-crown",
+   "a": "earL_out",
+   "b": "crown",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_front-earL_mid",
+   "a": "earL_front",
+   "b": "earL_mid",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_front-crown",
+   "a": "earL_front",
+   "b": "crown",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_out-browL",
+   "a": "earL_out",
+   "b": "browL",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_in-nape",
+   "a": "earL_in",
+   "b": "nape",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_front-browL",
+   "a": "earL_front",
+   "b": "browL",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_mid-earL_tip",
+   "a": "earL_mid",
+   "b": "earL_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_front-earL_tip",
+   "a": "earL_front",
+   "b": "earL_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_out-earL_tip",
+   "a": "earL_out",
+   "b": "earL_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earL_in-earL_tip",
+   "a": "earL_in",
+   "b": "earL_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_in-earR_out",
+   "a": "earR_in",
+   "b": "earR_out",
+   "area_m2": 4.2e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_out-earR_front",
+   "a": "earR_out",
+   "b": "earR_front",
+   "area_m2": 4.2e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_front-earR_in",
+   "a": "earR_front",
+   "b": "earR_in",
+   "area_m2": 4.2e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_in-earR_mid",
+   "a": "earR_in",
+   "b": "earR_mid",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_in-crown",
+   "a": "earR_in",
+   "b": "crown",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_out-earR_mid",
+   "a": "earR_out",
+   "b": "earR_mid",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_out-crown",
+   "a": "earR_out",
+   "b": "crown",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_front-earR_mid",
+   "a": "earR_front",
+   "b": "earR_mid",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_front-crown",
+   "a": "earR_front",
+   "b": "crown",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_out-browR",
+   "a": "earR_out",
+   "b": "browR",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_in-nape",
+   "a": "earR_in",
+   "b": "nape",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_front-browR",
+   "a": "earR_front",
+   "b": "browR",
+   "area_m2": 4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_mid-earR_tip",
+   "a": "earR_mid",
+   "b": "earR_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_front-earR_tip",
+   "a": "earR_front",
+   "b": "earR_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_out-earR_tip",
+   "a": "earR_out",
+   "b": "earR_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  },
+  {
+   "id": "earR_in-earR_tip",
+   "a": "earR_in",
+   "b": "earR_tip",
+   "area_m2": 3.4e-05,
+   "young_pa": 8000000.0,
+   "strength_pa": 2000000.0
+  }
+ ],
+ "loads": [
+  {
+   "node": "crown",
+   "fy_n": -1.9
+  },
+  {
+   "node": "earL_tip",
+   "fx_n": -0.12,
+   "fz_n": -0.048
+  },
+  {
+   "node": "earR_tip",
+   "fx_n": 0.032
+  }
+ ]
+}

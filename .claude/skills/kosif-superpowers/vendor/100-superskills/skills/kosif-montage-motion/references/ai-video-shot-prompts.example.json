@@ -1,0 +1,456 @@
+[
+ {
+  "shot": 1,
+  "args": {
+   "mode": "video",
+   "aspect": "9:16",
+   "fps": "30",
+   "negative": [
+    "text artifacts",
+    "logos",
+    "watermarks",
+    "real people",
+    "distorted pyramids",
+    "dystopia",
+    "smog",
+    "flags"
+   ],
+   "quality": [
+    "photoreal",
+    "cinematic",
+    "high detail",
+    "HDR"
+   ],
+   "locks": {
+    "style": "Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people"
+   },
+   "platforms": [
+    "veo",
+    "sora",
+    "kling",
+    "runway"
+   ],
+   "subject": "Egypt seen from low orbit at night, the Nile valley and delta glowing as a golden lotus of city lights",
+   "action": "the camera dives from orbit toward Cairo while thin cyan data-light threads pulse along the river",
+   "environment": "dark Earth, star field, Mediterranean coastline faintly glowing blue",
+   "time": "night",
+   "shot": "extreme wide orbital",
+   "angle": "top-down tilting to oblique",
+   "lens": "24mm",
+   "lighting": "city lights only, soft starlight",
+   "palette": "gold, warm white, cyan accents on near-black",
+   "camera_move": "fast descending dolly with slight roll",
+   "duration": "3s",
+   "motion": "light points shimmer, subtle atmospheric glow"
+  },
+  "result": {
+   "exit_code": 0,
+   "result": {
+    "mode": "video",
+    "prompts": {
+     "veo": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Egypt seen from low orbit at night, the Nile valley and delta glowing as a golden lotus of city lights, the camera dives from orbit toward Cairo while thin cyan data-light threads pulse along the river. Motion: light points shimmer, subtle atmospheric glow. Setting: dark Earth, star field, Mediterranean coastline faintly glowing blue, night. Camera: extreme wide orbital, top-down tilting to oblique, 24mm, fast descending dolly with slight roll. Lighting: city lights only, soft starlight. Palette: gold, warm white, cyan accents on near-black. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "Veo can add native audio: append 'Audio: …' with ambience and SFX; durations 4/6/8 s; for continuity feed the previous clip's last frame as the next first frame"
+     },
+     "sora": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Egypt seen from low orbit at night, the Nile valley and delta glowing as a golden lotus of city lights, the camera dives from orbit toward Cairo while thin cyan data-light threads pulse along the river. Motion: light points shimmer, subtle atmospheric glow. Setting: dark Earth, star field, Mediterranean coastline faintly glowing blue, night. Camera: extreme wide orbital, top-down tilting to oblique, 24mm, fast descending dolly with slight roll. Lighting: city lights only, soft starlight. Palette: gold, warm white, cyan accents on near-black. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "describe one continuous shot; keep physics plausible"
+     },
+     "kling": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Egypt seen from low orbit at night, the Nile valley and delta glowing as a golden lotus of city lights, the camera dives from orbit toward Cairo while thin cyan data-light threads pulse along the river. Motion: light points shimmer, subtle atmospheric glow. Setting: dark Earth, star field, Mediterranean coastline faintly glowing blue, night. Camera: extreme wide orbital, top-down tilting to oblique, 24mm, fast descending dolly with slight roll. Lighting: city lights only, soft starlight. Palette: gold, warm white, cyan accents on near-black. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": "text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags",
+      "notes": "use Start/End frames and the motion brush; keep 5–10 s per shot"
+     },
+     "runway": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, Egypt seen from low orbit at night, the Nile valley and delta glowing as a golden lotus of city lights, the camera dives from orbit toward Cairo while thin cyan data-light threads pulse along the river. Motion: light points shimmer, subtle atmospheric glow. Setting: dark Earth, star field, Mediterranean coastline faintly glowing blue, night. Camera: extreme wide orbital, top-down tilting to oblique, 24mm, fast descending dolly with slight roll. Lighting: city lights only, soft starlight. Palette: gold, warm white, cyan accents on near-black. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "start from an approved keyframe; describe actions in sequence; no negative phrasing (Runway ignores/inverts it)"
+     }
+    },
+    "warnings": [
+     "missing ['style']: prompts will be weaker",
+     "iron rule: lighting should state physics — source, direction and colour temperature (e.g. 'window key from left, 4300K')"
+    ],
+    "variations": {
+     "subtle": "same scene, gentler contrast, city lights only, soft starlight, muted palette",
+     "dramatic": "same scene, low-key chiaroscuro, hard rim light, deeper shadows, tighter framing",
+     "technical": "same scene, 24mm, exact exposure notes, named materials and textures"
+    },
+    "quality_rubric": {
+     "subject_clarity": 20,
+     "camera_and_lens": 20,
+     "lighting_physics": 20,
+     "materials_and_texture": 20,
+     "platform_fit": 20
+    },
+    "next": "lint each prompt: python3 prompt_lint.py (kosif-image-studio) with mode image/video and the contract + locks"
+   }
+  },
+  "error": false
+ },
+ {
+  "shot": 2,
+  "args": {
+   "mode": "video",
+   "aspect": "9:16",
+   "fps": "30",
+   "negative": [
+    "text artifacts",
+    "logos",
+    "watermarks",
+    "real people",
+    "distorted pyramids",
+    "dystopia",
+    "smog",
+    "flags"
+   ],
+   "quality": [
+    "photoreal",
+    "cinematic",
+    "high detail",
+    "HDR"
+   ],
+   "locks": {
+    "style": "Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people"
+   },
+   "platforms": [
+    "veo",
+    "sora",
+    "kling",
+    "runway"
+   ],
+   "subject": "The three Giza pyramids untouched at sunrise, a field of tilted solar mirrors in the foreground, a crescent of slim gold and glass solar towers on the far horizon, a concentrated-solar receiver glowing on its tower",
+   "action": "mirrors glint as the sun clears the horizon, small quiet drones glide with light trails across the sky",
+   "environment": "Giza plateau, fine desert dust in the air",
+   "time": "sunrise",
+   "shot": "wide establishing",
+   "angle": "low angle",
+   "lens": "35mm",
+   "lighting": "low side light from the east splitting pyramid faces into gold and shadow, cool sky fill",
+   "palette": "sand gold, deep blue sky, warm highlights",
+   "camera_move": "slow push-in with slight crane up",
+   "duration": "4s",
+   "motion": "drifting dust motes, drone trails"
+  },
+  "result": {
+   "exit_code": 0,
+   "result": {
+    "mode": "video",
+    "prompts": {
+     "veo": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. The three Giza pyramids untouched at sunrise, a field of tilted solar mirrors in the foreground, a crescent of slim gold and glass solar towers on the far horizon, a concentrated-solar receiver glowing on its tower, mirrors glint as the sun clears the horizon, small quiet drones glide with light trails across the sky. Motion: drifting dust motes, drone trails. Setting: Giza plateau, fine desert dust in the air, sunrise. Camera: wide establishing, low angle, 35mm, slow push-in with slight crane up. Lighting: low side light from the east splitting pyramid faces into gold and shadow, cool sky fill. Palette: sand gold, deep blue sky, warm highlights. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "Veo can add native audio: append 'Audio: …' with ambience and SFX; durations 4/6/8 s; for continuity feed the previous clip's last frame as the next first frame"
+     },
+     "sora": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. The three Giza pyramids untouched at sunrise, a field of tilted solar mirrors in the foreground, a crescent of slim gold and glass solar towers on the far horizon, a concentrated-solar receiver glowing on its tower, mirrors glint as the sun clears the horizon, small quiet drones glide with light trails across the sky. Motion: drifting dust motes, drone trails. Setting: Giza plateau, fine desert dust in the air, sunrise. Camera: wide establishing, low angle, 35mm, slow push-in with slight crane up. Lighting: low side light from the east splitting pyramid faces into gold and shadow, cool sky fill. Palette: sand gold, deep blue sky, warm highlights. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "describe one continuous shot; keep physics plausible"
+     },
+     "kling": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. The three Giza pyramids untouched at sunrise, a field of tilted solar mirrors in the foreground, a crescent of slim gold and glass solar towers on the far horizon, a concentrated-solar receiver glowing on its tower, mirrors glint as the sun clears the horizon, small quiet drones glide with light trails across the sky. Motion: drifting dust motes, drone trails. Setting: Giza plateau, fine desert dust in the air, sunrise. Camera: wide establishing, low angle, 35mm, slow push-in with slight crane up. Lighting: low side light from the east splitting pyramid faces into gold and shadow, cool sky fill. Palette: sand gold, deep blue sky, warm highlights. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": "text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags",
+      "notes": "use Start/End frames and the motion brush; keep 5–10 s per shot"
+     },
+     "runway": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, The three Giza pyramids untouched at sunrise, a field of tilted solar mirrors in the foreground, a crescent of slim gold and glass solar towers on the far horizon, a concentrated-solar receiver glowing on its tower, mirrors glint as the sun clears the horizon, small quiet drones glide with light trails across the sky. Motion: drifting dust motes, drone trails. Setting: Giza plateau, fine desert dust in the air, sunrise. Camera: wide establishing, low angle, 35mm, slow push-in with slight crane up. Lighting: low side light from the east splitting pyramid faces into gold and shadow, cool sky fill. Palette: sand gold, deep blue sky, warm highlights. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "start from an approved keyframe; describe actions in sequence; no negative phrasing (Runway ignores/inverts it)"
+     }
+    },
+    "warnings": [
+     "missing ['style']: prompts will be weaker"
+    ],
+    "variations": {
+     "subtle": "same scene, gentler contrast, low side light from the east splitting pyramid faces into gold and shadow, cool sky fill, muted palette",
+     "dramatic": "same scene, low-key chiaroscuro, hard rim light, deeper shadows, tighter framing",
+     "technical": "same scene, 35mm, exact exposure notes, named materials and textures"
+    },
+    "quality_rubric": {
+     "subject_clarity": 20,
+     "camera_and_lens": 20,
+     "lighting_physics": 20,
+     "materials_and_texture": 20,
+     "platform_fit": 20
+    },
+    "next": "lint each prompt: python3 prompt_lint.py (kosif-image-studio) with mode image/video and the contract + locks"
+   }
+  },
+  "error": false
+ },
+ {
+  "shot": 3,
+  "args": {
+   "mode": "video",
+   "aspect": "9:16",
+   "fps": "30",
+   "negative": [
+    "text artifacts",
+    "logos",
+    "watermarks",
+    "real people",
+    "distorted pyramids",
+    "dystopia",
+    "smog",
+    "flags"
+   ],
+   "quality": [
+    "photoreal",
+    "cinematic",
+    "high detail",
+    "HDR"
+   ],
+   "locks": {
+    "style": "Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people"
+   },
+   "platforms": [
+    "veo",
+    "sora",
+    "kling",
+    "runway"
+   ],
+   "subject": "The Nile valley in 2120: a blue river through patchwork green fields, vertical-farm towers with glowing green tiers on both banks, a white maglev train on an elevated guideway",
+   "action": "the maglev glides fast along the river leaving a cyan light trail; centre-pivot fields and solar arrays stretch into the desert",
+   "environment": "green belt along the Nile, desert beyond turned partly green",
+   "time": "golden hour",
+   "shot": "aerial wide",
+   "angle": "high oblique",
+   "lens": "28mm",
+   "lighting": "warm low sun, long soft shadows, sparkles on the river",
+   "palette": "emerald, river blue, sand gold, white",
+   "camera_move": "drone tracking shot alongside the train",
+   "duration": "4s",
+   "motion": "train motion blur, river shimmer"
+  },
+  "result": {
+   "exit_code": 0,
+   "result": {
+    "mode": "video",
+    "prompts": {
+     "veo": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. The Nile valley in 2120: a blue river through patchwork green fields, vertical-farm towers with glowing green tiers on both banks, a white maglev train on an elevated guideway, the maglev glides fast along the river leaving a cyan light trail; centre-pivot fields and solar arrays stretch into the desert. Motion: train motion blur, river shimmer. Setting: green belt along the Nile, desert beyond turned partly green, golden hour. Camera: aerial wide, high oblique, 28mm, drone tracking shot alongside the train. Lighting: warm low sun, long soft shadows, sparkles on the river. Palette: emerald, river blue, sand gold, white. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "Veo can add native audio: append 'Audio: …' with ambience and SFX; durations 4/6/8 s; for continuity feed the previous clip's last frame as the next first frame"
+     },
+     "sora": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. The Nile valley in 2120: a blue river through patchwork green fields, vertical-farm towers with glowing green tiers on both banks, a white maglev train on an elevated guideway, the maglev glides fast along the river leaving a cyan light trail; centre-pivot fields and solar arrays stretch into the desert. Motion: train motion blur, river shimmer. Setting: green belt along the Nile, desert beyond turned partly green, golden hour. Camera: aerial wide, high oblique, 28mm, drone tracking shot alongside the train. Lighting: warm low sun, long soft shadows, sparkles on the river. Palette: emerald, river blue, sand gold, white. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "describe one continuous shot; keep physics plausible"
+     },
+     "kling": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. The Nile valley in 2120: a blue river through patchwork green fields, vertical-farm towers with glowing green tiers on both banks, a white maglev train on an elevated guideway, the maglev glides fast along the river leaving a cyan light trail; centre-pivot fields and solar arrays stretch into the desert. Motion: train motion blur, river shimmer. Setting: green belt along the Nile, desert beyond turned partly green, golden hour. Camera: aerial wide, high oblique, 28mm, drone tracking shot alongside the train. Lighting: warm low sun, long soft shadows, sparkles on the river. Palette: emerald, river blue, sand gold, white. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": "text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags",
+      "notes": "use Start/End frames and the motion brush; keep 5–10 s per shot"
+     },
+     "runway": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, The Nile valley in 2120: a blue river through patchwork green fields, vertical-farm towers with glowing green tiers on both banks, a white maglev train on an elevated guideway, the maglev glides fast along the river leaving a cyan light trail; centre-pivot fields and solar arrays stretch into the desert. Motion: train motion blur, river shimmer. Setting: green belt along the Nile, desert beyond turned partly green, golden hour. Camera: aerial wide, high oblique, 28mm, drone tracking shot alongside the train. Lighting: warm low sun, long soft shadows, sparkles on the river. Palette: emerald, river blue, sand gold, white. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "start from an approved keyframe; describe actions in sequence; no negative phrasing (Runway ignores/inverts it)"
+     }
+    },
+    "warnings": [
+     "missing ['style']: prompts will be weaker",
+     "iron rule: lighting should state physics — source, direction and colour temperature (e.g. 'window key from left, 4300K')"
+    ],
+    "variations": {
+     "subtle": "same scene, gentler contrast, warm low sun, long soft shadows, sparkles on the river, muted palette",
+     "dramatic": "same scene, low-key chiaroscuro, hard rim light, deeper shadows, tighter framing",
+     "technical": "same scene, 28mm, exact exposure notes, named materials and textures"
+    },
+    "quality_rubric": {
+     "subject_clarity": 20,
+     "camera_and_lens": 20,
+     "lighting_physics": 20,
+     "materials_and_texture": 20,
+     "platform_fit": 20
+    },
+    "next": "lint each prompt: python3 prompt_lint.py (kosif-image-studio) with mode image/video and the contract + locks"
+   }
+  },
+  "error": false
+ },
+ {
+  "shot": 4,
+  "args": {
+   "mode": "video",
+   "aspect": "9:16",
+   "fps": "30",
+   "negative": [
+    "text artifacts",
+    "logos",
+    "watermarks",
+    "real people",
+    "distorted pyramids",
+    "dystopia",
+    "smog",
+    "flags"
+   ],
+   "quality": [
+    "photoreal",
+    "cinematic",
+    "high detail",
+    "HDR"
+   ],
+   "locks": {
+    "style": "Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people"
+   },
+   "platforms": [
+    "veo",
+    "sora",
+    "kling",
+    "runway"
+   ],
+   "subject": "Cairo in 2120 at night: a luminous lotus-shaped central tower ringed by holographic halos, obelisk-like spires with light tips, a dense city of lit windows",
+   "action": "air taxis stream along curved sky lanes leaving cyan, magenta and gold light trails around the lotus tower",
+   "environment": "futuristic Cairo skyline, light haze",
+   "time": "night",
+   "shot": "flythrough",
+   "angle": "slightly high",
+   "lens": "24mm",
+   "lighting": "practical city light, neon accents, soft volumetric haze",
+   "palette": "deep indigo, cyan, magenta, warm gold windows",
+   "camera_move": "fast flythrough rising toward the tower",
+   "duration": "4s",
+   "motion": "streaking light trails, rotating halos"
+  },
+  "result": {
+   "exit_code": 0,
+   "result": {
+    "mode": "video",
+    "prompts": {
+     "veo": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Cairo in 2120 at night: a luminous lotus-shaped central tower ringed by holographic halos, obelisk-like spires with light tips, a dense city of lit windows, air taxis stream along curved sky lanes leaving cyan, magenta and gold light trails around the lotus tower. Motion: streaking light trails, rotating halos. Setting: futuristic Cairo skyline, light haze, night. Camera: flythrough, slightly high, 24mm, fast flythrough rising toward the tower. Lighting: practical city light, neon accents, soft volumetric haze. Palette: deep indigo, cyan, magenta, warm gold windows. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "Veo can add native audio: append 'Audio: …' with ambience and SFX; durations 4/6/8 s; for continuity feed the previous clip's last frame as the next first frame"
+     },
+     "sora": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Cairo in 2120 at night: a luminous lotus-shaped central tower ringed by holographic halos, obelisk-like spires with light tips, a dense city of lit windows, air taxis stream along curved sky lanes leaving cyan, magenta and gold light trails around the lotus tower. Motion: streaking light trails, rotating halos. Setting: futuristic Cairo skyline, light haze, night. Camera: flythrough, slightly high, 24mm, fast flythrough rising toward the tower. Lighting: practical city light, neon accents, soft volumetric haze. Palette: deep indigo, cyan, magenta, warm gold windows. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "describe one continuous shot; keep physics plausible"
+     },
+     "kling": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Cairo in 2120 at night: a luminous lotus-shaped central tower ringed by holographic halos, obelisk-like spires with light tips, a dense city of lit windows, air taxis stream along curved sky lanes leaving cyan, magenta and gold light trails around the lotus tower. Motion: streaking light trails, rotating halos. Setting: futuristic Cairo skyline, light haze, night. Camera: flythrough, slightly high, 24mm, fast flythrough rising toward the tower. Lighting: practical city light, neon accents, soft volumetric haze. Palette: deep indigo, cyan, magenta, warm gold windows. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": "text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags",
+      "notes": "use Start/End frames and the motion brush; keep 5–10 s per shot"
+     },
+     "runway": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, Cairo in 2120 at night: a luminous lotus-shaped central tower ringed by holographic halos, obelisk-like spires with light tips, a dense city of lit windows, air taxis stream along curved sky lanes leaving cyan, magenta and gold light trails around the lotus tower. Motion: streaking light trails, rotating halos. Setting: futuristic Cairo skyline, light haze, night. Camera: flythrough, slightly high, 24mm, fast flythrough rising toward the tower. Lighting: practical city light, neon accents, soft volumetric haze. Palette: deep indigo, cyan, magenta, warm gold windows. Photoreal, cinematic, high detail, HDR. Duration 4 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "start from an approved keyframe; describe actions in sequence; no negative phrasing (Runway ignores/inverts it)"
+     }
+    },
+    "warnings": [
+     "missing ['style']: prompts will be weaker",
+     "iron rule: lighting should state physics — source, direction and colour temperature (e.g. 'window key from left, 4300K')"
+    ],
+    "variations": {
+     "subtle": "same scene, gentler contrast, practical city light, neon accents, soft volumetric haze, muted palette",
+     "dramatic": "same scene, low-key chiaroscuro, hard rim light, deeper shadows, tighter framing",
+     "technical": "same scene, 24mm, exact exposure notes, named materials and textures"
+    },
+    "quality_rubric": {
+     "subject_clarity": 20,
+     "camera_and_lens": 20,
+     "lighting_physics": 20,
+     "materials_and_texture": 20,
+     "platform_fit": 20
+    },
+    "next": "lint each prompt: python3 prompt_lint.py (kosif-image-studio) with mode image/video and the contract + locks"
+   }
+  },
+  "error": false
+ },
+ {
+  "shot": 5,
+  "args": {
+   "mode": "video",
+   "aspect": "9:16",
+   "fps": "30",
+   "negative": [
+    "text artifacts",
+    "logos",
+    "watermarks",
+    "real people",
+    "distorted pyramids",
+    "dystopia",
+    "smog",
+    "flags"
+   ],
+   "quality": [
+    "photoreal",
+    "cinematic",
+    "high detail",
+    "HDR"
+   ],
+   "locks": {
+    "style": "Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people"
+   },
+   "platforms": [
+    "veo",
+    "sora",
+    "kling",
+    "runway"
+   ],
+   "subject": "Alexandria in 2120 at blue hour: the ancient Pharos lighthouse reborn in its three-tier form with a sweeping light beam, floating glass domes glowing warm on the sea, offshore wind turbines",
+   "action": "the lighthouse beam sweeps over the water toward the camera, turbines turn slowly",
+   "environment": "Mediterranean sea, Corniche lights along the curved shore",
+   "time": "blue hour",
+   "shot": "wide",
+   "angle": "low over water",
+   "lens": "35mm",
+   "lighting": "deep blue ambient with warm practical lights and a bright beam",
+   "palette": "navy, warm amber, soft coral horizon",
+   "camera_move": "low glide over the water toward the lighthouse",
+   "duration": "3s",
+   "motion": "waves, rotating beam, turning blades"
+  },
+  "result": {
+   "exit_code": 0,
+   "result": {
+    "mode": "video",
+    "prompts": {
+     "veo": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Alexandria in 2120 at blue hour: the ancient Pharos lighthouse reborn in its three-tier form with a sweeping light beam, floating glass domes glowing warm on the sea, offshore wind turbines, the lighthouse beam sweeps over the water toward the camera, turbines turn slowly. Motion: waves, rotating beam, turning blades. Setting: Mediterranean sea, Corniche lights along the curved shore, blue hour. Camera: wide, low over water, 35mm, low glide over the water toward the lighthouse. Lighting: deep blue ambient with warm practical lights and a bright beam. Palette: navy, warm amber, soft coral horizon. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "Veo can add native audio: append 'Audio: …' with ambience and SFX; durations 4/6/8 s; for continuity feed the previous clip's last frame as the next first frame"
+     },
+     "sora": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Alexandria in 2120 at blue hour: the ancient Pharos lighthouse reborn in its three-tier form with a sweeping light beam, floating glass domes glowing warm on the sea, offshore wind turbines, the lighthouse beam sweeps over the water toward the camera, turbines turn slowly. Motion: waves, rotating beam, turning blades. Setting: Mediterranean sea, Corniche lights along the curved shore, blue hour. Camera: wide, low over water, 35mm, low glide over the water toward the lighthouse. Lighting: deep blue ambient with warm practical lights and a bright beam. Palette: navy, warm amber, soft coral horizon. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "describe one continuous shot; keep physics plausible"
+     },
+     "kling": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, no logos, no real people]. Alexandria in 2120 at blue hour: the ancient Pharos lighthouse reborn in its three-tier form with a sweeping light beam, floating glass domes glowing warm on the sea, offshore wind turbines, the lighthouse beam sweeps over the water toward the camera, turbines turn slowly. Motion: waves, rotating beam, turning blades. Setting: Mediterranean sea, Corniche lights along the curved shore, blue hour. Camera: wide, low over water, 35mm, low glide over the water toward the lighthouse. Lighting: deep blue ambient with warm practical lights and a bright beam. Palette: navy, warm amber, soft coral horizon. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": "text artifacts, logos, watermarks, real people, distorted pyramids, dystopia, smog, flags",
+      "notes": "use Start/End frames and the motion brush; keep 5–10 s per shot"
+     },
+     "runway": {
+      "prompt": "[Egypt 2120 — hopeful solarpunk realism: heritage untouched, clean energy everywhere, warm gold vs deep blue palette, Alexandria in 2120 at blue hour: the ancient Pharos lighthouse reborn in its three-tier form with a sweeping light beam, floating glass domes glowing warm on the sea, offshore wind turbines, the lighthouse beam sweeps over the water toward the camera, turbines turn slowly. Motion: waves, rotating beam, turning blades. Setting: Mediterranean sea, Corniche lights along the curved shore, blue hour. Camera: wide, low over water, 35mm, low glide over the water toward the lighthouse. Lighting: deep blue ambient with warm practical lights and a bright beam. Palette: navy, warm amber, soft coral horizon. Photoreal, cinematic, high detail, HDR. Duration 3 seconds, 30 fps, aspect ratio 9:16.",
+      "negative_prompt": null,
+      "notes": "start from an approved keyframe; describe actions in sequence; no negative phrasing (Runway ignores/inverts it)"
+     }
+    },
+    "warnings": [
+     "missing ['style']: prompts will be weaker",
+     "iron rule: lighting should state physics — source, direction and colour temperature (e.g. 'window key from left, 4300K')"
+    ],
+    "variations": {
+     "subtle": "same scene, gentler contrast, deep blue ambient with warm practical lights and a bright beam, muted palette",
+     "dramatic": "same scene, low-key chiaroscuro, hard rim light, deeper shadows, tighter framing",
+     "technical": "same scene, 35mm, exact exposure notes, named materials and textures"
+    },
+    "quality_rubric": {
+     "subject_clarity": 20,
+     "camera_and_lens": 20,
+     "lighting_physics": 20,
+     "materials_and_texture": 20,
+     "platform_fit": 20
+    },
+    "next": "lint each prompt: python3 prompt_lint.py (kosif-image-studio) with mode image/video and the contract + locks"
+   }
+  },
+  "error": false
+ }
+]

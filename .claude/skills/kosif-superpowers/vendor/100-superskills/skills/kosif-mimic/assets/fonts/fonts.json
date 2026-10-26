@@ -1,0 +1,194 @@
+[
+ {
+  "file": "Amiri-Regular.ttf",
+  "family": "Amiri",
+  "weight": 400,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "Amiri-Bold.ttf",
+  "family": "Amiri",
+  "weight": 700,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "ArefRuqaa-Regular.ttf",
+  "family": "Aref Ruqaa",
+  "weight": 400,
+  "style": "ruqaa",
+  "style_ar": "رقعة",
+  "source": "core"
+ },
+ {
+  "file": "ArefRuqaa-Bold.ttf",
+  "family": "Aref Ruqaa",
+  "weight": 700,
+  "style": "ruqaa",
+  "style_ar": "رقعة",
+  "source": "core"
+ },
+ {
+  "file": "NotoNaskhArabic-400.ttf",
+  "family": "Noto Naskh Arabic",
+  "weight": 400,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "NotoNaskhArabic-700.ttf",
+  "family": "Noto Naskh Arabic",
+  "weight": 700,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "Lateef-Regular.ttf",
+  "family": "Lateef",
+  "weight": 400,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "Lateef-Bold.ttf",
+  "family": "Lateef",
+  "weight": 700,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "Mirza-Bold.ttf",
+  "family": "Mirza",
+  "weight": 700,
+  "style": "naskh",
+  "style_ar": "نسخ",
+  "source": "core"
+ },
+ {
+  "file": "ReemKufi-400.ttf",
+  "family": "Reem Kufi",
+  "weight": 400,
+  "style": "kufi",
+  "style_ar": "كوفي",
+  "source": "core"
+ },
+ {
+  "file": "ReemKufi-700.ttf",
+  "family": "Reem Kufi",
+  "weight": 700,
+  "style": "kufi",
+  "style_ar": "كوفي",
+  "source": "core"
+ },
+ {
+  "file": "Cairo-400.ttf",
+  "family": "Cairo",
+  "weight": 400,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Cairo-700.ttf",
+  "family": "Cairo",
+  "weight": 700,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Cairo-900.ttf",
+  "family": "Cairo",
+  "weight": 900,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Tajawal-Regular.ttf",
+  "family": "Tajawal",
+  "weight": 400,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Tajawal-Bold.ttf",
+  "family": "Tajawal",
+  "weight": 700,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Tajawal-Black.ttf",
+  "family": "Tajawal",
+  "weight": 900,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Almarai-Bold.ttf",
+  "family": "Almarai",
+  "weight": 700,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "Changa-700.ttf",
+  "family": "Changa",
+  "weight": 700,
+  "style": "sans",
+  "style_ar": "حديث بسيط",
+  "source": "core"
+ },
+ {
+  "file": "ElMessiri-400.ttf",
+  "family": "El Messiri",
+  "weight": 400,
+  "style": "display",
+  "style_ar": "عناوين/زخرفي",
+  "source": "core"
+ },
+ {
+  "file": "ElMessiri-700.ttf",
+  "family": "El Messiri",
+  "weight": 700,
+  "style": "display",
+  "style_ar": "عناوين/زخرفي",
+  "source": "core"
+ },
+ {
+  "file": "Marhey-700.ttf",
+  "family": "Marhey",
+  "weight": 700,
+  "style": "hand",
+  "style_ar": "يدوي",
+  "source": "core"
+ },
+ {
+  "file": "Lalezar-Regular.ttf",
+  "family": "Lalezar",
+  "weight": 400,
+  "style": "display",
+  "style_ar": "عناوين/زخرفي",
+  "source": "core"
+ },
+ {
+  "file": "Rakkas-Regular.ttf",
+  "family": "Rakkas",
+  "weight": 400,
+  "style": "display",
+  "style_ar": "عناوين/زخرفي",
+  "source": "core"
+ }
+]

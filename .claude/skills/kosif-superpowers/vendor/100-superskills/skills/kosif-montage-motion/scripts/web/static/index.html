@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>KOSIF Motion Web — استوديو المونتاج المحلي</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<header class="top">
+  <div class="brand">KOSIF Motion Web <small>v6 · الاستوديو المحلي</small></div>
+  <div class="status" id="status">…</div>
+</header>
+<nav id="nav">
+  <div class="sep">الاستوديو</div>
+  <button data-view="media" class="active">🎞️ الوسائط</button>
+  <button data-view="recipes">⚡ الوصفات</button>
+  <button data-view="projects">🎬 المشاريع</button>
+  <button data-view="timeline">🧩 التايملاين</button>
+  <button data-view="jobs">📜 المهام</button>
+  <button data-view="review">🔎 المراجعة</button>
+  <a class="navlink" href="/studio/" target="_blank" rel="noopener">✂️ محرر Studio ↗</a>
+  <div class="sep">التخطيط والعقل</div>
+  <button data-view="workbench">📐 Workbench</button>
+  <button data-view="claude">🧠 Claude</button>
+  <div class="sep">النظام</div>
+  <button data-view="env">🩺 البيئة</button>
+</nav>
+<main>
+  <!-- ─────── media ─────── -->
+  <section class="view active" id="view-media">
+    <h2>الوسائط</h2>
+    <div class="card">
+      <div class="drop" id="drop">اسحب فيديو / صوت / صور هنا، أو اضغط للاختيار. الملفات تبقى على جهازك في مجلد workbench/media.</div>
+      <input type="file" id="file" multiple hidden />
+      <div class="muted" id="mediaDir"></div>
+    </div>
+    <div class="grid" id="mediaGrid"></div>
+  </section>
+  <!-- ─────── recipes ─────── -->
+  <section class="view" id="view-recipes">
+    <h2>الوصفات</h2>
+    <div class="cols">
+      <div class="card">
+        <div id="recipeGroups"></div>
+      </div>
+      <div class="card">
+        <h3 id="recipeTitle">اختر وصفة</h3>
+        <div id="recipeForm"></div>
+        <div class="row" id="recipeActions" style="display:none">
+          <button class="primary" id="runRecipe">▶ تشغيل</button>
+          <span class="mono muted" id="recipeCmd"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ─────── projects ─────── -->
+  <section class="view" id="view-projects">
+    <h2>المشاريع (التركيبات)</h2>
+    <div class="card">
+      <div class="row">
+        <input id="newName" placeholder="اسم المشروع" style="width:200px" />
+        <select id="newKind" style="width:220px">
+          <option value="new">2D (motion-kit)</option><option value="3d">3D (three-kit)</option><option value="lab">مختبر المنتج</option><option value="canvas">Canvas</option>
+          <option value="template">قالب موشن…</option>
+        </select>
+        <select id="newTemplate" style="width:160px;display:none"></select>
+        <input id="newSeconds" placeholder="المدة" value="6" style="width:80px" />
+        <select id="newSize" style="width:140px"><option>1080x1920</option><option>1920x1080</option><option>1080x1080</option><option>1080x1350</option></select>
+        <input id="newTitle" placeholder="العنوان / المعاملات key=value" style="width:300px" />
+        <button class="primary" id="createProject">＋ إنشاء</button>
+      </div>
+    </div>
+    <div class="cols">
+      <div><div class="grid" id="projectGrid"></div></div>
+      <div class="card" id="projectPanel"><div class="muted">اختر مشروعاً لمعاينته أو تعديله أو تصييره.</div></div>
+    </div>
+  </section>
+  <!-- ─────── timeline ─────── -->
+  <section class="view" id="view-timeline">
+    <h2>التايملاين</h2>
+    <div class="card">
+      <div class="row">
+        <input id="tlName" placeholder="اسم التايملاين" value="edit1" style="width:200px" />
+        <select id="tlList" style="width:220px"></select>
+        <button id="tlLoad">فتح</button>
+        <button id="tlExample">مثال</button>
+        <button id="tlCheck">✔ تحقق</button>
+        <button id="tlSave">💾 حفظ</button>
+        <button class="primary" id="tlRender">🎬 تصيير</button>
+        <button id="tlAsk">🧠 اطلب من Claude</button>
+        <button id="tlStudio">✂️ استيراد مشروع Studio</button>
+        <input type="file" id="tlStudioFile" accept=".json,application/json" hidden />
+      </div>
+      <div class="muted" id="tlInfo" style="margin-top:6px"></div>
+    </div>
+    <div class="card"><div class="strip" id="strip"></div></div>
+    <div class="cols">
+      <div class="card"><textarea id="tlSpec" class="code" spellcheck="false"></textarea></div>
+      <div class="card">
+        <h3>الانتقالات المتاحة</h3>
+        <div id="transitions" class="muted" style="max-height:180px;overflow:auto"></div>
+        <h3>كيف يُقرأ التايملاين</h3>
+        <div class="muted">clips: مقاطع بالترتيب (src/in/out أو image/dur أو color/dur) مع speed أو ramp وzoom وgrade وtransition إلى التالي ·
+          overlays: text / lower-third / image / progress / captions · audio: music (ducked) / voice / keep_clip_audio / lufs. أدرج مسارات الوسائط من المكتبة.</div>
+        <h3>الوسائط (اضغط لنسخ المسار)</h3>
+        <div id="tlMedia" class="muted mono" style="max-height:200px;overflow:auto"></div>
+      </div>
+    </div>
+  </section>
+  <!-- ─────── review (Motion OS page) ─────── -->
+  <section class="view" id="view-review">
+    <h2>المراجعة مشهد بمشهد</h2>
+    <p class="muted">افتح أي فيلم في صفحة المراجعة: عدّل النصوص والألوان والتوقيت، ثبّت ملاحظة على الإطار (N)، اعتمد المشاهد، ثم «Send to Claude» — تُحفظ الملاحظات هنا ليقرأها Claude (kmotion review feedback) ويطبّق المرتبط منها حرفياً (kmotion review apply). الصفحة: مشغّل Motion OS من Jason Lee (MIT).</p>
+    <div class="card">
+      <div class="row"><input id="rvTarget" placeholder="مسار مشروع (index.html) أو تايملاين .json أو فيديو" style="flex:1" /><input id="rvVideo" placeholder="الفيلم المصيَّر (اختياري)" style="flex:1" /><input id="rvName" placeholder="اسم (اختياري)" style="width:9em" /><button id="rvInit" class="primary">فتح للمراجعة</button></div>
+    </div>
+    <div class="card" id="rvList"></div>
+  </section>
+  <!-- ─────── jobs ─────── -->
+  <section class="view" id="view-jobs">
+    <h2>المهام</h2>
+    <div class="cols">
+      <div class="card" id="jobList"></div>
+      <div class="card">
+        <div class="row" style="justify-content:space-between">
+          <span id="jobTitle" class="mono muted"></span>
+          <span><button id="jobCancel" class="danger">■ إيقاف</button></span>
+        </div>
+        <div class="log" id="jobLog"></div>
+        <div class="outputs" id="jobOutputs"></div>
+        <div id="jobPreview"></div>
+      </div>
+    </div>
+  </section>
+  <!-- ─────── workbench ─────── -->
+  <section class="view" id="view-workbench">
+    <h2>Workbench — خطة → تحقق → manifest → معاينة → رندر محلي</h2>
+    <div class="card">
+      <div class="field"><label>وصف المهمة</label><input id="wbTask" value="مقدمة عربية أنيقة عن قوة الأفكار مع حركة نصوص وأشكال هندسية" /><span></span></div>
+      <div class="row">
+        <input id="wbSeconds" value="12" style="width:90px" /><select id="wbFps" style="width:90px"><option>24</option><option>25</option><option selected>30</option><option>50</option><option>60</option></select>
+        <select id="wbAspect" style="width:100px"><option>16:9</option><option>9:16</option><option>1:1</option><option>4:5</option></select>
+        <button class="primary" id="wbPlan">1 · خطة</button><button id="wbValidate">2 · تحقق</button><button id="wbCompile">3 · manifest</button>
+        <button id="wbRender">4 · رندر MP4 محلي</button><button id="wbProject">5 · مشروع من الـ manifest</button>
+      </div>
+      <div class="muted" id="wbInfo" style="margin-top:6px"></div>
+    </div>
+    <div class="cols">
+      <div class="card"><canvas class="wb" id="wbCanvas"></canvas><div class="row" style="margin-top:8px"><input type="range" id="wbTime" min="0" max="12" step="0.033" value="0" /><span class="mono" id="wbT">0.00</span><button id="wbPlay">▶</button></div>
+        <div id="wbVideo"></div></div>
+      <div class="card"><pre class="json" id="wbJson"></pre></div>
+    </div>
+  </section>
+  <!-- ─────── claude ─────── -->
+  <section class="view" id="view-claude">
+    <h2>🧠 Claude — عقل الاستوديو</h2>
+    <div class="card">
+      <div class="row"><span id="claudeStatus" class="muted">…</span></div>
+      <div class="muted" style="margin-top:6px">ثلاث طرق: <b>MCP</b> (Claude Code يتحكم بالموقع مباشرة: <code id="mcpUrl" class="mono"></code>) ·
+        <b>CLI</b> (claude -p إن كان مثبّتاً) · <b>نسخ/لصق</b> (انسخ الحزمة إلى أي محادثة Claude، وألصق الرد هنا). لا يُنفَّذ شيء قبل ضغط «تطبيق».</div>
+    </div>
+    <div class="cols">
+      <div class="card">
+        <textarea id="claudeTask" placeholder="اكتب ما تريد: مثلاً: اعمل ريلز 9:16 من الفيديو الموجود في المكتبة مع ترجمة تيك توك ولوحة عنوان في البداية…"></textarea>
+        <div class="row" style="margin-top:8px">
+          <label class="muted"><input type="checkbox" id="ctxMedia" checked style="width:auto" /> الوسائط</label>
+          <label class="muted"><input type="checkbox" id="ctxProjects" checked style="width:auto" /> المشاريع</label>
+          <label class="muted"><input type="checkbox" id="ctxTimeline" style="width:auto" /> التايملاين الحالي</label>
+          <input id="ctxProject" placeholder="مشروع لإرفاق index.html" style="width:220px" />
+          <button class="primary" id="claudeAsk">إرسال</button><button id="claudePackage">📋 نسخ الحزمة</button>
+        </div>
+        <h3>رد Claude (أو ألصقه هنا)</h3>
+        <textarea id="claudeReply" class="code" style="min-height:220px"></textarea>
+        <div class="row" style="margin-top:8px"><button class="primary" id="claudeApply">✅ تطبيق الخطة</button><span class="muted" id="claudeMsg"></span></div>
+      </div>
+      <div class="card">
+        <h3>ما سيُطبَّق</h3>
+        <pre class="json" id="claudePlan"></pre>
+        <h3>الإعدادات</h3>
+        <div class="field"><label>الطريقة</label><select id="setBackend"><option value="auto">تلقائي</option><option value="cli">CLI</option><option value="api">API</option><option value="mcp">MCP / نسخ ولصق</option></select><span></span></div>
+        <div class="field"><label>مفتاح API (يبقى محلياً)</label><input id="setKey" type="password" placeholder="sk-ant-… (اختياري)" /><span></span></div>
+        <div class="field"><label>النموذج</label><input id="setModel" value="claude-sonnet-5-5" /><span></span></div>
+        <button id="saveSettings">حفظ</button>
+      </div>
+    </div>
+  </section>
+  <!-- ─────── env ─────── -->
+  <section class="view" id="view-env">
+    <h2>البيئة</h2>
+    <div class="card"><pre class="json" id="envJson"></pre></div>
+  </section>
+</main>
+<div id="toast" class="toast" style="display:none"></div>
+<script src="/static/manifest-player.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

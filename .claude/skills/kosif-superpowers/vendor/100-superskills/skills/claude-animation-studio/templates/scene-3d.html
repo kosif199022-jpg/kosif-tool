@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="scene" content="w={{W}};h={{H}};fps={{FPS}};dur={{DUR}}">
+<title>{{TITLE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #F6C76B; --ink: #F4F7FF; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #frame { position: absolute; left: 50%; top: 50%; width: {{W}}px; height: {{H}}px; transform-origin: 50% 50%; overflow: hidden; background: #000; }
+  canvas { position: absolute; inset: 0; width: {{W}}px; height: {{H}}px; display: block; }
+  .ov { position: absolute; left: 0; right: 0; text-align: center; font-family: "Cairo", Tahoma, sans-serif; color: var(--ink); opacity: 0; will-change: transform, opacity; }
+  .ov .big { font-size: 120px; font-weight: 900; line-height: 1.05; color: var(--accent); filter: drop-shadow(0 0 30px rgba(246,199,107,.45)); }
+  .ov .sub { margin-top: 20px; font-size: 54px; font-weight: 700; text-shadow: 0 4px 28px rgba(0,0,0,.6); }
+</style>
+</head>
+<body>
+<div id="frame">
+  <canvas id="gl" width="{{W}}" height="{{H}}"></canvas>
+  <div id="t1" class="ov" style="top: 36%"><div class="big">{{TITLE}}</div><div class="sub">مشهد ثلاثي الأبعاد حي</div></div>
+  <div id="t2" class="ov" style="top: 66%"><div class="big">الختام</div><div class="sub">نداء واحد</div></div>
+</div>
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+               "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from "three";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+
+// ── عقد المشهد: render(t) حتمي؛ الكاميرا والحركة دوال في t ────────────────────────────────
+const W = {{W}}, H = {{H}}, DUR = {{DUR}};
+const HOOK = Math.min(3.6, DUR * .35), END = Math.min(2.5, DUR * .3);   // إيقاعات نسبية فلا تتداخل في المدد القصيرة
+const capture = new URLSearchParams(location.search).has("capture");
+const $ = (id) => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const seg = (t, a, b) => clamp((t - a) / (b - a));
+const lerp = (a, b, p) => a + (b - a) * p;
+const easeOut = (p) => 1 - Math.pow(1 - p, 3), easeIn = (p) => p * p * p;
+const easeInOut = (p) => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+const spring = (x) => { if (x <= 0) return 0; const w = Math.sqrt(300), z = 30 / (2 * w), wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * x) * (Math.cos(wd * x) + (z * w / wd) * Math.sin(wd * x)); };
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let r = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  r = r + Math.imul(r ^ r >>> 7, 61 | r) ^ r; return ((r ^ r >>> 14) >>> 0) / 4294967296; }; }
+
+// ── المحرّك والمعالجة اللاحقة ────────────────────────────────────────────────────────────────
+const renderer = new THREE.WebGLRenderer({ canvas: $("gl"), antialias: true, preserveDrawingBuffer: true, powerPreference: "high-performance" });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x0b1324, 0.055);
+const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 200);
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(W, H), 0.7, 0.6, 0.82); composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+// ── الإضاءة: مفتاح واحد باتجاه ثابت + تعبئة سماوية باردة + حافة دافئة ──────────────────────
+scene.background = new THREE.Color(0x0b1324);                       // ليست سوداء صمّاء: تُقرأ «لم يُحمَّل»
+scene.add(new THREE.HemisphereLight(0x7fb3ff, 0x1a1a2e, 1.1));
+const key = new THREE.DirectionalLight(0xffd9a0, 2.2); key.position.set(6, 9, 4); scene.add(key);
+const rim = new THREE.DirectionalLight(0xff9f5a, 1.0); rim.position.set(-6, 3, -5); scene.add(rim);
+
+// ── الهندسة: أرض + مدينة من مكعبات (InstancedMesh ببذرة ثابتة) + كرة بطل متوهجة ──────────────
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), new THREE.MeshStandardMaterial({ color: 0x0f1a2b, roughness: .9 }));
+ground.rotation.x = -Math.PI / 2; scene.add(ground);
+const R = rng(11), N = 400;
+const city = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshStandardMaterial({ color: 0x1d2d44, roughness: .6, metalness: .2, emissive: 0x2b86e0, emissiveIntensity: .12 }), N);
+const m = new THREE.Matrix4(), col = new THREE.Color();
+for (let i = 0; i < N; i++) {
+  const x = (R() - .5) * 80, z = -10 - R() * 70, h = 1 + R() * R() * 14, s = .8 + R() * 1.6;
+  m.compose(new THREE.Vector3(x, h / 2, z), new THREE.Quaternion(), new THREE.Vector3(s, h, s));
+  city.setMatrixAt(i, m);
+  city.setColorAt(i, col.setHSL(.58 + R() * .06, .4, .18 + R() * .15));
+}
+scene.add(city);
+const hero = new THREE.Mesh(new THREE.SphereGeometry(1.6, 64, 64), new THREE.MeshPhysicalMaterial({ color: 0xf6c76b, emissive: 0xf6c76b, emissiveIntensity: .9, roughness: .25, metalness: .1, clearcoat: 1 }));
+scene.add(hero);
+const stars = new THREE.Points(new THREE.BufferGeometry().setAttribute("position", new THREE.Float32BufferAttribute(
+  Array.from({ length: 1500 * 3 }, (_, i) => (i % 3 === 1) ? 20 + R() * 60 : (R() - .5) * 240), 3)),
+  new THREE.PointsMaterial({ color: 0xffffff, size: .25, transparent: true, opacity: .8 })); scene.add(stars);
+
+// ── النص ──────────────────────────────────────────────────────────────────────────────────────
+function showText(el, t, a, b, dir = 1) {
+  const p = Math.min(easeOut(seg(t, a, a + .55)), 1 - easeIn(seg(t, b - .3, b))), inP = spring(seg(t, a, a + .9));
+  el.style.opacity = p.toFixed(3);
+  el.style.transform = `translateY(${lerp(60 * dir, 0, inP) - 40 * easeIn(seg(t, b - .3, b))}px) scale(${lerp(.96, 1, inP)})`;
+}
+
+// ── render(t): حركة كاميرا واحدة (دخول بطيء + ارتفاع كرين) ─────────────────────────────────
+function render(t) {
+  t = clamp(t, 0, DUR);
+  const p = easeInOut(t / DUR);
+  camera.position.set(lerp(14, -4, p), lerp(9, 4, p), lerp(28, 6, p));
+  camera.lookAt(0, lerp(3, 2, p), -8);
+  hero.position.set(0, 3 + Math.sin(t * 1.3) * .35, -6);
+  hero.rotation.y = t * .6;
+  hero.material.emissiveIntensity = .7 + .3 * Math.sin(t * 2.2);
+  stars.rotation.y = t * .01;
+  bloom.strength = .6 + .25 * Math.sin(t * .9);
+  composer.render();
+  showText($("t1"), t, .15, HOOK, 1);
+  showText($("t2"), t, DUR - END, DUR + .01, -1);
+}
+window.render = render;
+
+function fit() { const s = Math.min(innerWidth / W, innerHeight / H); $("frame").style.transform = `translate(-50%,-50%) scale(${s})`; }
+addEventListener("resize", fit); fit();
+let playing = !capture, t0 = performance.now();
+addEventListener("click", () => { playing = !playing; t0 = performance.now(); });
+function loop(now) { if (playing) render(((now - t0) / 1000) % DUR); requestAnimationFrame(loop); }
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { render(0); window.__ready = true; if (!capture) requestAnimationFrame(loop); });
+</script>
+</body>
+</html>

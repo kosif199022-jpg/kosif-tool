@@ -1,0 +1,4 @@
+{"fps": 30, "size": [1080, 1920], "sources": {"a": "clipA.mp4", "b": "clipB.mp4", "music": "beeps.wav"},
+ "clips": [{"src": "a", "in": 0.5, "out": 3.0, "transition": {"type": "cut"}},
+           {"src": "b", "in": 1.0, "out": 4.0, "speed": 1.5, "transition": {"type": "fade", "duration": 0.5}, "audio_lead": 0.3}],
+ "music": {"src": "music", "gain_db": -18, "fade_out": 1.0}, "audio": {"loudnorm": {"I": -14, "TP": -1.0, "LRA": 11}}}

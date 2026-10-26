@@ -1,0 +1,12 @@
+{
+  "bpm": 120, "seconds": 5.0, "key": "E", "scale": "major",
+  "sections": [
+    {"from": 0, "to": 3.3, "hats": true, "pad": true, "pluck": [0, 2, 4, 7]},
+    {"from": 3.3, "to": 5.3, "kick": "four", "hats": true, "bass": true, "pad": true},
+    {"from": 5.3, "to": 6.7, "stop": true},
+    {"from": 6.7, "to": 10, "kick": "four", "clap": true, "hats": true, "bass": true, "pad": true, "lead": [4, 7, 9, 11]}
+  ],
+  "chords": [[0, "I"], [3.3, "vi"], [6.7, "IV"], [8.3, "V"]],
+  "risers": [[3.4, 5.3]], "booms": [5.32], "end_s": 4.98,
+  "tape_stops_s": [[2.62, 0.35]]
+}

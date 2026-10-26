@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (28 أداة)
+# أدوات المجال `discover` (29 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -1390,44 +1390,98 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:superpowers-unified --evidence <ملف>`.
 
-### `superskills-bridge` — جسر المهارات المئة: ابحث وافتح 114 مهارة مثبتة من وحدة 100-superskills / 100-superskills bridge: find and open the 114 pinned skills of the 100-superskills submodule
+### `superskills` — المهارات الخارقة: الـ114 مهارة الكاملة من مستودعك داخل سوبر باور / 100 Super Skills: the owner's 114 whole skills, vendored and routable
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/superskills.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery`, `agent-orchestration` |
+
+**ما تفعله:** يضع مستودعك 100-superskills كاملًا داخل سوبر باور: كل مجلدات الـ114 مهارة (110 مهارة خارقة مفهرسة ومعها kosif-one وkosif-social وkosif-mimic وkosif-montage-motion، أي 682 ملفًا و143 سكربتًا) منسوخة في vendor/100-superskills ببصمة SHA-256 لكل ملف. يختار المهارة المناسبة لأي طلب بالعربي أو الإنجليزي، ويعرض منهجها وسكربتاتها واختباراتها ومصادرها، ويثبّت أي مهارة في ~/.claude/skills، ويتحقق من كل ملف ببصمته، ويشغّل اختبارات المهارات نفسها في نسخة مؤقتة. و hub.py find بقى يعرض المهارات الخارقة المناسبة كمان.
+
+**What it does:** Holds the owner's repository kosif199022-jpg/100-superskills inside Superpowers: all 114 skill folders (110 catalogued super skills plus kosif-one, kosif-social, kosif-mimic and kosif-montage-motion, 682 files with 143 scripts) copied into vendor/100-superskills with a SHA-256 manifest. It finds the right super skill for a request in Arabic or English, shows its method, scripts, tests and sources, installs one into ~/.claude/skills, verifies every file against its hash and runs the skills' own unit tests in a temporary copy. hub.py find lists the matching super skills too.
+
+#### متى تُستدعى
+
+- «انقل قدرات مستودع الـ114 مهارة لسوبر باور»
+- «أنهي مهارة من المهارات الخارقة تنفع للطلب ده؟»
+- «ثبّت مهارة النماذج المالية في إكسل عندي»
+- «عايز مجلس خبراء لقرار صعب»
+- «Which of my 100 super skills fits this request?»
+- «Install the kinetic Arabic typography skill»
+
+#### الأوامر
+
+- **find**: Ranks the 114 super skills for the request (Arabic-aware: article and joined و/ب/ل prefixes dropped) and prints the best five with their domain and script count; --json for machines.
+  - `python3 scripts/superskills.py find "نموذج مالي في إكسل"`
+- **list**: Lists every super skill grouped into its ten domains (motion, image-video, prompts-ai, office-data, web-code, business, ultra, pixel, hyperframes, kosif-core).
+  - `python3 scripts/superskills.py list --domain motion`
+- **show**: Prints a skill's description, vendored path, scripts, tests, source skills and licences and the install command; --full adds the whole SKILL.md.
+  - `python3 scripts/superskills.py show genius-council-decision --full`
+- **install**: Copies one skill folder into ~/.claude/skills (or --dest); refuses to overwrite unless --force, and then keeps a .bak copy.
+  - `python3 scripts/superskills.py install kinetic-typography-arabic --dry-run`
+- **verify**: Checks every vendored file against the SHA-256 in vendor/100-superskills/KOSIF_INTEGRATION.json and reports unlisted files.
+  - `python3 scripts/superskills.py verify`
+- **selftest**: Runs the skills' own unit tests (pixel-studio-painter, kosif-montage-motion, kosif-one, kosif-social) in a temporary copy of the skills folder.
+  - `python3 scripts/superskills.py selftest kosif-one`
+- **sync**: Owner action: re-copies the skills from a 100-superskills checkout, re-applies the KOSIF patches, rewrites the manifest and data/superskills.json.
+  - `python3 scripts/superskills.py sync --src ../100-superskills`
+
+#### المتطلبات والأمان
+
+- optional: ffmpeg, opencv-python-headless, scipy, pillow, numpy
+- الأمان: writes-files
+- الموافقة: find, list, show and verify only read. install writes one folder under ~/.claude/skills (never overwrites without --force). selftest runs the vendored skills' own tests in a temporary copy. Nothing is published or downloaded.
+- الحدود: The ranking is keyword matching over titles and descriptions, not semantic search; broken Arabic plurals (فاتورة / فواتير) can miss. Nine large media files (videos, big PNGs, a tessdata model, demo WAVs) stay upstream and are listed per skill. vendor/ is left out of the claude.ai zip, so there only the index and descriptions travel. The selftest needs ffmpeg, opencv-python-headless, scipy, pillow and numpy for the full set.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_superskills.py`
+- مرجع: `.claude/skills/kosif-superpowers/vendor/100-superskills/KOSIF_README.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:superskills --evidence <ملف>`.
+
+### `superskills-bridge` — جسر المهارات الخارقة: بحث للقراءة فقط في فهرس الـ114 مهارة / 100 Super Skills bridge: read-only index lookup
 
 | الحقل | القيمة |
 |---|---|
 | المسار | `scripts/superskills_bridge.py` (جذر: skill) |
 | المجال | `discover` |
-| الدليل | `untested` |
-| العائلات | `self-discovery`, `agent-orchestration` |
+| الدليل | `tested-here` |
+| العائلات | `self-discovery` |
 
-**ما تفعله:** بحث للقراءة فقط في فهرس 114 مهارة من مستودع 100-superskills المثبت كوحدة git: doctor يعد الملفات الموجودة محليًا، وfind يرتب بالكلمات العربية والإنجليزية، وshow وpath يعرضان المهارة ومسارها.
+**ما تفعله:** بحث للقراءة فقط في data/100-superskills-index.json (فهرس الـ114 مهارة اللي اتضاف في PR #153): doctor يقول كام ملف SKILL.md موجود، وlist وfind وshow وpath يطبعوا المهارة وتصنيفها ومسارها. skill_loader.py need بيستخدم نفس الفهرس. للترتيب والتثبيت وفحص البصمات واختبارات المهارات استخدم superskills.
 
-**What it does:** Read-only discovery over data/100-superskills-index.json (114 skills from kosif199022-jpg/100-superskills pinned as a git submodule under vendor/100-superskills). doctor reports how many skill files are present locally and the pinned commit; list, find (Arabic/English token ranking over names and descriptions), show and path print a skill's entry and local SKILL.md path. It never installs dependencies or runs a skill.
+**What it does:** Read-only lookup over data/100-superskills-index.json (the 114-skill index added with PR #153): doctor reports how many SKILL.md files are present, list, find, show and path print entries with their category and vendored path. skill_loader.py need uses the same index. For ranking, install, hash checks and the skills' own tests use superskills.
 
 #### متى تُستدعى
 
-- «دور لي في المهارات المئة على مهارة مونتاج»
-- «superskills find financial model»
-- «افتح مهارة kosif-mimic»
+- «هل ملفات الـ114 مهارة موجودة؟»
+- «فين مسار مهارة kosif-mimic؟»
+- «Is every super skill file present in this checkout?»
 
 #### الأوامر
 
-- **doctor**: Catalog count, local files present, pinned commit.
+- **doctor**: Counts the catalogued skills and the SKILL.md files present under vendor/100-superskills.
   - `python3 scripts/superskills_bridge.py doctor`
-- **find**: Rank skills for a task.
-  - `python3 scripts/superskills_bridge.py find "مونتاج فيديو عربي"`
-- **show**: One skill's entry and local path.
-  - `python3 scripts/superskills_bridge.py show kosif-mimic`
+- **find**: Token match over slug, Arabic and English names and description.
+  - `python3 scripts/superskills_bridge.py find "excel"`
+- **path**: Prints the vendored SKILL.md path of one skill.
+  - `python3 scripts/superskills_bridge.py path kosif-mimic`
 
 #### المتطلبات والأمان
 
-- binaries: git
 - الأمان: read-only
-- الموافقة: Reads the index and the submodule checkout; writes nothing.
-- الحدود: Without the submodule checkout only the index is available (doctor shows 0 skill files); listing a skill does not install or verify it.
+- الموافقة: Reads the index and checks file presence only.
+- الحدود: Plain token overlap, no Arabic prefix handling; it does not install, verify hashes or run anything.
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/evals/test_superskills.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/100-superskills-integration.md`
 
 #### عند الفشل (A29)

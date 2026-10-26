@@ -1,0 +1,13 @@
+{
+  "bpm": 120, "seconds": 15, "key": "D", "scale": "minor", "seed": 11,
+  "chords": [[0, "i"], [8, "VI"], [16, "iii"], [20, "VII"], [24, "i"]],
+  "sections": [
+    {"from": 0, "to": 8, "kick": "half", "hats": true, "pad": true, "pluck": [0, null, 4, null, 2, null, 4, 7]},
+    {"from": 8, "to": 15.5, "kick": "four", "clap": true, "hats": true, "bass": true, "pad": true, "pluck": [0, 2, 4, 7, 4, 2, 0, 4]},
+    {"from": 15.5, "to": 16, "stop": true},
+    {"from": 16, "to": 24.4, "kick": "four", "clap": true, "hats": true, "bass": true, "pad": true, "lead": [7, 4, 5, 2]},
+    {"from": 24.4, "to": 26, "stop": true},
+    {"from": 26, "to": 30, "pad": true, "pluck": [0, null, null, 4, null, null, 7, null]}
+  ],
+  "risers": [[12, 16]], "booms": [16], "end_s": 13.8
+}

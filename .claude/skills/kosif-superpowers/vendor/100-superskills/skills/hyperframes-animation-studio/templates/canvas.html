@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{TITLE}} — KOSIF Motion (canvas)</title>
+<style>
+  html, body { margin: 0; padding: 0; width: {{W}}px; height: {{H}}px; overflow: hidden; background: #111312; }
+  #root { position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden; }
+  canvas { position: absolute; inset: 0; display: block; }
+</style>
+</head>
+<body>
+<!-- The canvas route: one file, one canvas, a pure function of time. window.seek(t) paints the exact frame for any t;
+     KOSIF Studio's renderer (motion.py render --engine studio) calls it per frame (and per sub-frame for --blur). -->
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <canvas id="c" width="{{W}}" height="{{H}}"></canvas>
+  <!-- <audio id="score" src="assets/score.wav" data-start="0" data-duration="{{SECONDS}}" data-volume="1"></audio> -->
+</div>
+<script>
+const W = {{W}}, H = {{H}}, DUR = {{SECONDS}};
+const g = document.getElementById("c").getContext("2d");
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const mix = (a, b, t) => a + (b - a) * t;
+const lmix = (a, b, t) => Math.exp(Math.log(a) + (Math.log(b) - Math.log(a)) * t);           // scale in log space
+
+/* closed-form damped spring 0 → 1 (stiffness k, damping d, mass 1): pure function of time, seekable */
+function spring(t, k = 170, d = 26) {
+  if (t <= 0) return 0;
+  const w0 = Math.sqrt(k), z = d / (2 * w0);
+  if (z < 1) { const wd = w0 * Math.sqrt(1 - z * z); return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + (z * w0 / wd) * Math.sin(wd * t)); }
+  return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+}
+/* a value with many targets: the first value plus one spring per change */
+const track = (t, keys, k, d) => keys.slice(1).reduce((v, [kt, kv], i) => v + (kv - keys[i][1]) * spring(t - kt, k, d), keys[0][1]);
+/* expo-out for arrivals, ease-in for exits into a cut */
+const out = (p) => (p >= 1 ? 1 : 1 - Math.pow(2, -10 * clamp(p)));
+const exitE = (p) => Math.pow(clamp(p), 2.8);
+/* seeded noise, never Math.random: the render is identical every run */
+function rng(seed) { return () => { seed |= 0; seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+const BPM = 120, BEAT = 60 / BPM;                                                          // one clock for picture and sound
+
+const SCENES = [
+  { from: 0, to: DUR, draw(t) {                                                          // replace with the film's shots
+      const s = spring(t - 0.1, 220, 24);
+      g.save(); g.translate(W / 2, H / 2); g.scale(0.7 + 0.3 * s, 0.7 + 0.3 * s);
+      g.globalAlpha = clamp(t * 5);
+      g.fillStyle = "#f2f0ea"; g.font = "700 150px 'Segoe UI', sans-serif"; g.textAlign = "center"; g.direction = "rtl";
+      g.fillText("{{TITLE}}", 0, 40);
+      g.fillStyle = "#e4342f"; g.fillRect(-260 * s, 90, 520 * s, 12);
+      g.restore();
+  } },
+];
+
+function draw(t) {
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.fillStyle = "#111312"; g.fillRect(0, 0, W, H);
+  for (const s of SCENES) if (t >= s.from && t < s.to) s.draw(t - s.from);
+}
+window.__duration = DUR;
+window.seek = (t) => { draw(t); return true; };
+window.render = (t) => { window.__ready = false; draw(t); requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; })); };
+window.__timelines = window.__timelines || {};                                             // HyperFrames' contract (a seekable stand-in)
+window.__timelines["root"] = { pause: (t) => draw(t || 0), duration: () => DUR };
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { draw(0); window.__ready = true; });
+</script>
+</body>
+</html>

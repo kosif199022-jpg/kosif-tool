@@ -1,0 +1,14 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const html=fs.readFileSync(__dirname+'/midnight-cat.original.html','utf8');
+const elements={};let callback;
+const context={document:{getElementById:id=>elements[id]??={innerHTML:'',textContent:'',value:0,setAttribute(){}},body:{classList:{add(){}}}},matchMedia:()=>({matches:true}),URLSearchParams,location:{search:''},requestAnimationFrame:fn=>callback=fn};context.window=context;
+vm.createContext(context);for(const match of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInContext(match[1],context);
+assert.equal(context.__duration,12);assert(elements.stage.innerHTML.includes('<svg'));
+assert.equal(elements.play.textContent,'تشغيل');
+elements.time.value='6.25';elements.time.oninput();assert.equal(elements.readout.textContent,'6.3 / 12.0 s');assert.equal(elements.play.textContent,'تشغيل');
+const frame=elements.stage.innerHTML;context.render(6.25);assert.equal(frame,elements.stage.innerHTML);
+context.render(12);elements.play.onclick();assert.equal(elements.time.value,0);assert.equal(elements.play.textContent,'إيقاف مؤقت');
+context.render(3);elements.restart.onclick();assert.equal(elements.time.value,0);
+context.render(11.98);callback(1000);callback(1042);assert.equal(elements.readout.textContent,'12.0 / 12.0 s');assert.equal(elements.play.textContent,'تشغيل');
+context.render(-20);assert.equal(elements.time.value,0);context.render(40);assert.equal(elements.time.value,12);
+console.log('PASS player initialization; reduced motion; seek; deterministic frame; play/pause; restart; automatic stop; bounds');

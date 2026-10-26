@@ -1,0 +1,14 @@
+# KOSIF Montage & Motion — Python libraries (install.bat runs this; claude.ai: scripts/cloud_setup.py --install)
+numpy
+pillow
+fonttools
+opencv-python
+scipy
+playwright
+starlette
+uvicorn
+python-multipart
+pyyaml
+imageio-ffmpeg      # an ffmpeg binary when none is on PATH
+yt-dlp              # kmotion fetch: Pinterest, TikTok, Instagram, Facebook, YouTube…
+faster-whisper      # optional: transcribe / reel / captions (large download)

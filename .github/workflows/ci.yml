@@ -205,6 +205,11 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/kosif_mcp.py --selftest
           python3 .claude/skills/kosif-superpowers/scripts/owned_repos.py --self-test
           python3 .claude/skills/kosif-superpowers/scripts/owned_repos.py verify
+      - name: 100 Super Skills (114 vendored skills, hashes, index, routing)
+        run: |
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_superskills.py' -v
+          python3 .claude/skills/kosif-superpowers/scripts/superskills.py build --check
+          python3 .claude/skills/kosif-superpowers/scripts/superskills.py verify
       - name: Generated skill files are current (every builder is deterministic)
         run: |
           python3 .claude/skills/kosif-superpowers/scripts/requirements.py derive --check

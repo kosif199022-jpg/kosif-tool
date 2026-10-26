@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>KOSIF Motion — showreel</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0f1211; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #0f1211; color: #f2f1ec;
+          font-family: "Segoe UI", Tahoma, sans-serif; }
+  #world { position: absolute; inset: 0; transform-origin: 50% 50%; }
+  .ar { direction: rtl; unicode-bidi: isolate; }
+  .t { position: absolute; left: 0; right: 0; text-align: center; visibility: hidden; white-space: nowrap; }
+  #w1 { top: 610px; font-size: 104px; font-weight: 700; letter-spacing: -0.01em; }
+  #dot { position: absolute; left: 0; top: 0; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: #e4342f; }
+  #pill { position: absolute; left: 760px; top: 490px; width: 400px; height: 100px; border-radius: 50px; background: #e4342f; visibility: hidden;
+          color: #fff; font-size: 40px; font-weight: 600; display: flex; align-items: center; justify-content: center; }
+  #pill span { display: inline-block; }
+  #bar { position: absolute; left: 560px; top: 528px; width: 800px; height: 24px; border-radius: 12px; background: #262b29; visibility: hidden; overflow: hidden; }
+  #fill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: #e4342f; border-radius: 12px; }
+  #frames { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font-size: 120px; font-weight: 700; visibility: hidden; letter-spacing: -0.02em; }
+  #frames small { font-size: 40px; font-weight: 400; color: #9aa29d; margin-inline-start: 18px; }
+  svg { position: absolute; inset: 0; overflow: visible; }
+  #lbl1 { top: 770px; font-size: 54px; font-weight: 600; color: #f2f1ec; }
+  #code { position: absolute; left: 0; right: 0; top: 440px; text-align: center; font-family: Consolas, "Cascadia Mono", monospace; font-size: 96px; color: #f2f1ec; visibility: hidden; direction: ltr; }
+  #law { top: 610px; font-size: 56px; font-weight: 600; color: #9aa29d; }
+  #card { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; visibility: hidden; border-radius: 0px; background: #0f1211; }
+  #card video { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; object-fit: cover; }
+  #claim { top: 860px; font-size: 76px; font-weight: 700; color: #fff; text-shadow: 0 2px 24px rgba(0,0,0,.35); }
+  .metric { position: absolute; left: 1250px; width: 560px; font-size: 44px; font-weight: 600; visibility: hidden; direction: ltr; text-align: left; }
+  .metric small { display: block; font-size: 26px; font-weight: 400; color: #9aa29d; margin-top: 4px; direction: rtl; text-align: left; }
+  #lock { position: absolute; left: 0; right: 0; top: 440px; text-align: center; font-size: 132px; font-weight: 700; letter-spacing: -0.03em; direction: ltr; visibility: hidden; }
+  #lock2 { top: 640px; font-size: 44px; font-weight: 400; color: #9aa29d; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-start="0" data-duration="15" data-fps="60">
+  <audio id="score" src="assets/score.wav" data-start="0" data-duration="15" data-volume="1"></audio>
+  <div id="world">
+    <div id="w1" class="t ar">كل إطار برنامج</div>
+    <div id="pill"><span id="pillTxt">Render</span></div>
+    <div id="bar"><div id="fill"></div></div>
+    <div id="frames"></div>
+    <svg width="1920" height="1080"><path id="curve" d="M360 760 C 520 760 560 300 760 300 S 960 640 1080 540 S 1300 470 1560 520" fill="none" stroke="#f2f1ec" stroke-width="6" stroke-linecap="round" opacity="0"/></svg>
+    <div id="lbl1" class="t ar">نابض، لا منحنى</div>
+    <div id="code"></div>
+    <div id="law" class="t ar">الإطار دالة في الزمن</div>
+    <div id="card"><video id="pond" src="assets/pond.mp4" muted playsinline data-start="7.9" data-duration="4.9"></video></div>
+    <div id="claimshade" style="position:absolute;left:0;right:0;bottom:0;height:420px;opacity:0;background:linear-gradient(180deg, rgba(8,12,10,0) 0%, rgba(8,12,10,.55) 100%)"></div>
+    <div id="claim" class="t ar">واقعية تُكتب بالكود</div>
+    <div class="metric" id="m1" style="top:330px"><span id="m1v">60 fps</span><small>ستون إطاراً في الثانية</small></div>
+    <div class="metric" id="m2" style="top:470px">4×<small>ضبابية حركة حقيقية</small></div>
+    <div class="metric" id="m3" style="top:610px">−14 LUFS<small>صوت على شبكة الإيقاع</small></div>
+    <div id="lock">KOSIF Motion</div>
+    <div id="lock2" class="t ar">استوديو الحركة الذي يكتب أفلامه بالكود</div>
+    <div id="dot"></div>
+  </div>
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const E = M.E, B = M.beats(120), b = B.at;               // one clock: beat n at n × 0.5 s
+    const tl = gsap.timeline({ paused: true });
+    const world = $("#world"), dot = $("#dot");
+    const cx = 960, cy = 540;
+
+    /* ── the device: one red dot travels through every shot (a sampled track, never a blink) ── */
+    const dotKeys = [[0, cx, -60], [0.42, cx, cy - 40], [2.0, cx, cy - 40], [2.35, cx, cy + 0]];
+    tl.set(dot, { x: cx, y: -60 }, 0);
+    tl.to(dot, { y: cy - 40, duration: 0.42, ease: E.contact }, 0);                         // falls into frame 0 already moving
+    M.squash(tl, dot, 0.42, { edge: "bottom", across: 0.22, along: 0.26, dur: 0.18 });       // the one landing (with its thump)
+    tl.to(dot, { scale: 1.25, duration: 0.06, ease: E.out }, b(1)); tl.to(dot, { scale: 1, duration: 0.22, ease: E.outSoft }, b(1) + 0.06);
+    tl.to(dot, { scale: 1.2, duration: 0.06, ease: E.out }, b(2)); tl.to(dot, { scale: 1, duration: 0.22, ease: E.outSoft }, b(2) + 0.06);
+
+    /* ── hook: the claim rises from a partial state on the beat ── */
+    M.riseWords(tl, $("#w1"), b(1), { stagger: 0.12, rise: 34, dur: 0.45 });
+    tl.to(M.words($("#w1")), { yPercent: -120, opacity: 0, duration: 0.24, stagger: 0.04, ease: E.exit }, b(3.5));
+
+    /* ── b4: the dot becomes a button; a cursor presses it on b6; it becomes a progress bar ── */
+    tl.to(dot, { x: cx, y: cy, duration: 0.3, ease: E.rest }, b(3.6));
+    tl.set("#pill", { visibility: "visible", scaleX: 44 / 400, scaleY: 0.44, borderRadius: "50px" }, b(4));
+    tl.set(dot, { opacity: 0 }, b(4));
+    tl.fromTo("#pill", { scaleX: 44 / 400, scaleY: 0.44 }, { scaleX: 1, scaleY: 1, duration: 0.42, ease: E.inOut, immediateRender: false }, b(4));
+    tl.fromTo("#pillTxt", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.25, ease: E.out, immediateRender: false }, b(4) + 0.24);
+    const cur = M.cursor($("#world"), { size: 34 });
+    M.moveCursor(tl, cur, [{ t: b(4.3), x: 1500, y: 900 }, { t: b(5.5), x: 1010, y: 560 }, { t: b(6), x: 990, y: 548 }], { hold: [b(6)] });
+    M.press(tl, cur, b(6), { target: $("#pill") });
+    tl.to(cur, { x: "+=180", y: "+=150", opacity: 0, duration: 0.3, ease: E.exit }, b(6.6));
+    tl.to("#pillTxt", { opacity: 0, duration: 0.12, ease: E.smooth }, b(6.4));
+    tl.to("#pill", { scaleX: 2.0, scaleY: 0.24, duration: 0.34, ease: E.inOut }, b(6.5));               // the button flattens into the bar
+    tl.set("#pill", { visibility: "hidden" }, b(6.5) + 0.34);
+    tl.set("#bar", { visibility: "visible" }, b(6.5) + 0.3);
+    tl.fromTo("#fill", { width: 0 }, { width: 800, duration: 1.1, ease: "none", immediateRender: false }, b(7));   // data is linear
+    M.counter(tl, $("#frames"), 0, 900, b(7), 1.1, { ease: E.out, sep: "," });
+    tl.set("#frames", { innerHTML: "" }, 0);
+
+    /* ── b9: the bar collapses into a spring curve drawn by a pen, the dot rides it ── */
+    tl.to(["#bar", "#frames"], { opacity: 0, y: -30, duration: 0.25, ease: E.exit }, b(9) - 0.1);
+    M.drawPath(tl, $("#curve"), b(9), 1.15, { ease: E.out });
+    M.riseWords(tl, $("#lbl1"), b(9.6), { stagger: 0.1, rise: 26 });
+    const path = $("#curve"), L = path.getTotalLength();
+    tl.set(dot, { opacity: 1, scale: 0.8 }, b(9));
+    tl.to(dot, { keyframes: M.sampled((t) => { const q = path.getPointAtLength(L * E.out(Math.min(1, (t - b(9)) / 1.15))); return { x: q.x, y: q.y }; }, b(9), b(9) + 1.15, 60) }, b(9));   // seek-safe ride along the curve
+    tl.to(["#curve", "#lbl1"], { opacity: 0, duration: 0.2, ease: E.exit }, b(11.6));
+
+    /* ── b12: seek(t) typed, then the law; the dot is the caret's period ── */
+    tl.to(dot, { x: 1386, y: 514, scale: 0.42, duration: 0.3, ease: E.whip }, b(11.7));
+    M.typeOn(tl, $("#code"), "seek(t) → frame", b(12), { cps: 22, hold: 0.5, caret: true });
+    M.riseWords(tl, $("#law"), b(13.2), { stagger: 0.1, rise: 24 });
+
+    /* ── b15.8: the drop — an iris opens from the dot onto the pond (real footage), the one full-bleed accent beat before it ── */
+    tl.to(["#code", "#law"], { opacity: 0, duration: 0.18, ease: E.exit }, b(15.5));
+    tl.to(dot, { x: cx, y: cy, scale: 1.4, duration: 0.25, ease: E.rest }, b(15.3));
+    M.iris(tl, $("#card"), b(15.8), { x: cx, y: cy, r0: 22, r: 1150, dur: 0.42 });
+    tl.set(dot, { opacity: 0 }, b(15.8) + 0.05);
+    tl.fromTo("#claimshade", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: E.smooth, immediateRender: false }, b(16.6));
+    M.riseWords(tl, $("#claim"), b(17), { stagger: 0.1, rise: 30 });
+    tl.to("#claimshade", { opacity: 0, duration: 0.3, ease: E.smooth }, b(20.6));
+    M.breathe(tl, $("#card"), b(16), 2.6, { creep: 0.012 });
+
+    /* ── b21: the pond becomes a card (one container, never cut); facts arrive beside it ── */
+    tl.to("#claim", { opacity: 0, y: -20, duration: 0.22, ease: E.exit }, b(20.6));
+    tl.to("#card", { x: -360, scale: 0.56, borderRadius: "44px", duration: 0.66, ease: E.inOut, transformOrigin: "50% 50%" }, b(21));
+    ["#m1", "#m2", "#m3"].forEach((id, i) => { tl.set(id, { visibility: "visible" }, b(21.6) + i * 0.12);
+      tl.fromTo(id, { x: 40, opacity: 0.4 }, { x: 0, opacity: 1, duration: 0.4, ease: E.out, immediateRender: false }, b(21.6) + i * 0.12); });
+    M.scramble(tl, $("#m1v"), "60 fps", b(21.6), { dur: 0.45 });
+
+    /* ── b24.6: everything implodes into the dot; a beat of silence; the lockup assembles around it ── */
+    tl.to(["#m1", "#m2", "#m3"], { opacity: 0, x: -30, duration: 0.2, stagger: 0.04, ease: E.exit }, b(24.4));
+    tl.to("#card", { x: 0, scale: 0.02, borderRadius: "600px", duration: 0.38, ease: E.in }, b(24.6));
+    tl.set(dot, { x: cx, y: cy, scale: 0.6, opacity: 1 }, b(24.6) + 0.36);
+    tl.set("#card", { visibility: "hidden" }, b(24.6) + 0.38);
+    tl.to(dot, { scale: 1.0, duration: 0.3, ease: E.outSoft }, b(25.4));
+    tl.set("#lock", { visibility: "visible" }, b(26));
+    tl.fromTo("#lock", { letterSpacing: "0.22em", opacity: 0.4, filter: "blur(8px)" }, { letterSpacing: "-0.03em", opacity: 1, filter: "blur(0px)", duration: 0.8, ease: E.out, immediateRender: false }, b(26));
+    tl.to(dot, { x: 1403, y: 584, scale: 0.42, duration: 0.6, ease: E.rest }, b(26.3));      // the dot becomes the lockup's full stop
+    M.riseWords(tl, $("#lock2"), b(27.2), { stagger: 0.08, rise: 22 });
+    M.push(tl, world, b(26), 1, 1.045, 2.6, { ease: E.dolly });                               // the end card keeps breathing
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", 15);
+  </script>
+</div>
+</body>
+</html>

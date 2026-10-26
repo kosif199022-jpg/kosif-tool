@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{AUTHOR}} — KOSIF Motion</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-arabic-800-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-arabic-600-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  html, body { margin: 0; padding: 0; width: {{W}}px; height: {{H}}px; overflow: hidden; background: {{BG2}}; }
+  #root { --u: calc(min({{W}}px, {{H}}px) / 100); position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden;
+          background: linear-gradient(180deg, {{BG1}} 0%, {{BG2}} 100%); font-family: "Cairo", "Segoe UI", Tahoma, sans-serif; color: #fff; }
+  #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+  .rtl { direction: rtl; unicode-bidi: isolate; }
+  #mark { position: absolute; left: 50%; top: 24%; transform: translate(-50%, -50%) scale(0); font-size: calc(var(--u) * 16); color: {{ACCENT}}; line-height: 1; opacity: 0; }
+  #quote { position: absolute; left: 9%; right: 9%; top: 34%; text-align: center; font-size: calc(var(--u) * 6.4); font-weight: 800; line-height: 1.5; }
+  #quote .line { opacity: 0; }
+  #author { position: absolute; left: 10%; right: 10%; top: 68%; text-align: center; font-size: calc(var(--u) * 3.8); font-weight: 600; color: {{ACCENT}}; visibility: hidden; }
+  #bar { position: absolute; left: 44%; width: 12%; top: 65%; height: 4px; background: {{ACCENT}}; transform: scaleX(0); transform-origin: 50% 50%; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <div id="cam">
+    <div id="mark">❝</div>
+    <div id="quote" class="rtl">{{QUOTE}}</div>
+    <div id="bar"></div>
+    <div id="author" class="rtl">{{AUTHOR}}</div>
+  </div>
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s), $$ = (s) => Array.from(document.querySelectorAll(s));
+    const W = {{W}}, H = {{H}}, D = {{SECONDS}};
+    const root = $("#root"), cam = $("#cam");
+    M.vignette(root, { strength: 0.42 });
+    M.grain(root, { opacity: 0.06, seed: 4 });
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    const lines = $$("#quote .line"), n = Math.max(1, lines.length);
+    // the mark springs in, then the lines rise out of their baselines one by one, then the author
+    tl.fromTo($("#mark"), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: M.spring("snappy"), immediateRender: false }, 0.2);
+    M.maskRise(tl, lines, 0.55, { dur: 0.6, stagger: 0.22, out: D - 1.1, outDur: 0.3 });
+    tl.fromTo($("#bar"), { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: M.E.out, immediateRender: false }, 0.55 + 0.22 * n + 0.2);
+    M.riseWords(tl, $("#author"), 0.55 + 0.22 * n + 0.35, { dur: 0.45, stagger: 0.08 });
+    M.push(tl, cam, 0.6, 1.0, 1.05, Math.max(1, D - 1.8), {});
+    M.hideWords(tl, $("#author"), D - 0.9, { dur: 0.35 });
+    tl.to([$("#bar"), $("#mark")], { opacity: 0, duration: 0.4, ease: M.E.in }, D - 0.8);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", D);
+  </script>
+</div>
+</body>
+</html>

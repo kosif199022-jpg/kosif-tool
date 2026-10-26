@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>FINAL EDIT — محدش معاك</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  @font-face { font-family: "DubaiK"; src: url("assets/fonts/DUBAI-BOLD.TTF"), local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF"); font-weight: 700; }
+  @font-face { font-family: "DubaiK"; src: url("assets/fonts/DUBAI-MEDIUM.TTF"), local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF"); font-weight: 500; }
+  @font-face { font-family: "DubaiK"; src: url("assets/fonts/DUBAI-LIGHT.TTF"), local("Dubai Light"), url("file:///C:/Windows/Fonts/DUBAI-LIGHT.TTF"); font-weight: 300; }
+  :root { --ivory: #F5F0E6; --ink: #121417; --accent: #E7B65A; --accent2: #F3D9A4; }
+  html, body { margin: 0; padding: 0; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+  #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; font-family: "DubaiK", "Segoe UI", sans-serif; }
+  #cam { position: absolute; inset: 0; transform-origin: 705px 700px; will-change: auto; }
+  #plate { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+  .layer { position: absolute; inset: 0; pointer-events: none; }
+  #dim { background: #07080a; opacity: 0; }
+  #scrim { background: linear-gradient(180deg, rgba(10,11,13,0) 52%, rgba(10,11,13,.42) 70%, rgba(10,11,13,.74) 100%); }
+  #bloom { background: radial-gradient(ellipse 380px 520px at 60px 300px, rgba(255,214,150,.5), rgba(255,200,130,.16) 45%, rgba(255,200,130,0) 72%); mix-blend-mode: screen; opacity: 0; }
+  #rays { background: repeating-conic-gradient(from 168deg at 590px -260px, rgba(255,236,200,.0) 0deg, rgba(255,236,200,.13) 2.2deg, rgba(255,236,200,0) 5deg, rgba(255,236,200,0) 9deg);
+          mix-blend-mode: screen; opacity: 0; -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.6) 45%, transparent 75%); mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.6) 45%, transparent 75%); }
+  #vig { background: radial-gradient(ellipse 72% 58% at 55% 40%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); opacity: .55; }
+  .t { position: absolute; left: 90px; right: 90px; text-align: center; direction: rtl; unicode-bidi: isolate; color: var(--ivory);
+       visibility: hidden; white-space: nowrap; text-shadow: 0 3px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.35); }
+  .l1 { font-weight: 500; font-size: 54px; line-height: 1.25; }
+  .l2 { font-weight: 700; font-size: 96px; line-height: 1.1; }
+  .l3 { font-weight: 700; font-size: 220px; line-height: 1.0; letter-spacing: 0; }
+  .acc { color: var(--accent); }
+  .soft { font-weight: 300; opacity: .9; }
+  .w { display: inline-block; }
+  .wm { display: inline-block; clip-path: inset(-0.25em -0.08em -0.1em -0.08em); padding: 0 .08em; }
+  #credit { position: absolute; left: 0; right: 0; top: 1606px; text-align: center; font: 300 25px "DubaiK", "Segoe UI"; color: rgba(245,240,230,.48); letter-spacing: .04em; direction: ltr; }
+  svg.g { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+  .sweep { background: linear-gradient(100deg, var(--ivory) 0%, var(--ivory) 40%, #fff7e2 47%, #ffffff 50%, #fff7e2 53%, var(--ivory) 60%, var(--ivory) 100%);
+           background-size: 300% 100%; background-position: 100% 0; -webkit-background-clip: text; background-clip: text; color: transparent;
+           text-shadow: none; filter: drop-shadow(0 4px 18px rgba(0,0,0,.5)); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="20.566" data-fps="30">
+  <audio id="voice" src="assets/voice.wav" data-start="0" data-duration="20.566" data-volume="1" data-role="voice"></audio>
+  <audio id="score" src="assets/score.wav" data-start="0" data-duration="20.566" data-volume="0.5" data-role="music" data-fade-out="0.4"></audio>
+
+  <div id="cam"><video id="plate" src="assets/plate.mp4" data-start="0" data-duration="20.566" muted playsinline preload="auto"></video></div>
+  <div class="layer" id="bloom"></div>
+  <div class="layer" id="rays"></div>
+  <div class="layer" id="scrim"></div>
+  <div class="layer" id="vig"></div>
+  <div class="layer" id="dim"></div>
+  <div class="layer" id="particles"></div>
+
+  <!-- graphics -->
+  <svg class="g" id="gfx" viewBox="0 0 1080 1920">
+    <defs>
+      <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <!-- 24-hour clock: beside him, in the open sky -->
+    <g id="clock" opacity="0">
+      <circle id="ring" cx="205" cy="640" r="150" fill="none" stroke="#F5F0E6" stroke-width="2.4" transform="rotate(-90 205 640)"/>
+      <g id="ticks"></g>
+      <line id="hand" x1="205" y1="640" x2="205" y2="518" stroke="#E7B65A" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="205" cy="640" r="5" fill="#E7B65A"/>
+    </g>
+    <!-- dream path rising from the gesture side -->
+    <path id="dream" d="M -20 1500 C 160 1380, 120 1120, 260 980 S 420 760, 360 520" fill="none" stroke="#E7B65A" stroke-width="3" stroke-linecap="round" filter="url(#glow)" opacity="0"/>
+    <!-- weight: a measurement rail with a sliding marker -->
+    <g id="scale" opacity="0">
+      <line x1="150" y1="470" x2="150" y2="930" stroke="#F5F0E6" stroke-width="2" opacity=".85"/>
+      <g id="scaleTicks"></g>
+      <g id="marker"><path d="M 168 0 L 188 -9 L 188 9 Z" fill="#E7B65A"/><line x1="150" y1="0" x2="168" y2="0" stroke="#E7B65A" stroke-width="2"/></g>
+    </g>
+    <!-- car: one line drawing, a road streak -->
+    <g id="car" opacity="0">
+      <path id="carBody" d="M 70 820 L 96 820 C 100 790, 140 790, 146 820 L 262 820 C 266 790, 306 790, 312 820 L 344 820 C 352 820, 356 812, 352 798 L 340 772 C 336 764, 328 760, 318 759 L 292 756 L 250 722 C 242 716, 232 713, 220 713 L 150 713 C 136 713, 126 718, 118 728 L 92 758 L 76 764 C 68 768, 64 776, 64 786 L 64 812 C 64 817, 66 820, 70 820 Z M 160 726 L 160 756 L 240 756 L 212 728 Z" fill="none" stroke="#F5F0E6" stroke-width="2.6" stroke-linejoin="round"/>
+      <circle id="w1" cx="121" cy="822" r="19" fill="none" stroke="#F5F0E6" stroke-width="2.6"/>
+      <circle id="w2" cx="287" cy="822" r="19" fill="none" stroke="#F5F0E6" stroke-width="2.6"/>
+      <g id="road"></g>
+    </g>
+    <!-- time draining under the wide-shot caption -->
+    <g id="timebar" opacity="0">
+      <line x1="230" y1="1088" x2="850" y2="1088" stroke="rgba(245,240,230,.25)" stroke-width="3" stroke-linecap="round"/>
+      <line id="timefill" x1="230" y1="1088" x2="850" y2="1088" stroke="#E7B65A" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <!-- the closing ring -->
+    <circle id="endring" cx="585" cy="700" r="330" fill="none" stroke="#F5F0E6" stroke-width="2" opacity="0" transform="rotate(-90 585 700)"/>
+  </svg>
+
+  <!-- typography: level 3 (keywords), level 2 (phrases), level 1 (speech) -->
+  <div class="t l3" id="hook" style="top:1196px"><span class="w big">محدش</span> <span class="w soft" style="font-size:150px">معاك</span></div>
+  <div class="t l1" id="h24" style="top:1452px"></div>
+  <div class="t l2" id="nafsak" style="top:1236px"></div>
+  <div class="t" id="n24" style="left:0;right:auto;width:410px;top:548px;font-weight:700;font-size:160px;line-height:1;color:var(--accent);direction:ltr">24</div>
+  <div class="t l1" id="saa" style="left:0;right:auto;width:410px;top:706px;font-size:36px;letter-spacing:.02em">ساعة</div>
+  <div class="t l1" id="c3" style="top:1452px"></div>
+  <div class="t l3 acc" id="helmak" style="top:1196px">حلمك</div>
+  <div class="t l1" id="c4" style="top:1452px"></div>
+  <div class="t" id="kg" style="left:198px;right:auto;width:220px;text-align:left;direction:ltr;font-weight:700;font-size:58px;top:0"></div>
+  <div class="t l1" id="c5" style="top:1452px"></div>
+  <div class="t l2" id="yaqdar" style="top:1236px">محدش يقدر</div>
+  <div class="t l3" id="itlaqan" style="top:1196px">إطلاقاً</div>
+  <div class="t l2" id="fanta" style="top:1110px;font-weight:300;font-size:80px">فإنت</div>
+  <div class="t l3 acc" id="wahid" style="top:1196px">الوحيد</div>
+  <div class="t l1" id="c7" style="top:1452px"></div>
+  <div class="t" id="kafeh" style="top:760px;font-weight:700;font-size:400px;line-height:1">كافح</div>
+  <div class="t l1" id="c10" style="top:1000px"></div>
+  <div class="t l2" id="kafeh3" style="top:300px;font-size:120px">كافح</div>
+  <div class="t" id="hott" style="top:1020px;font-weight:500;font-size:92px;opacity:.88">حُط نفسك</div>
+  <div class="t sweep" id="fel" style="top:1100px;font-weight:700;font-size:250px;line-height:1;padding:30px 0 90px">في الفعل</div>
+  <div class="t l1" id="c13" style="top:1400px"></div>
+  <div class="t l2 acc" id="akher" style="top:1480px">آخر لحظة</div>
+  <div id="credit">insta: the_arabicmotivation</div>
+
+<script>
+  const M = window.MOTION, $ = (s) => document.querySelector(s), E = M.E, S = 20.566;
+  const tl = gsap.timeline({ paused: true });
+  const OUT = "power3.out", IN = "power3.in", IO = "power2.inOut";
+  const NS = "http://www.w3.org/2000/svg";
+
+  /* ── camera: one move per idea, eased; origin follows the subject ── */
+  const cam = $("#cam");
+  gsap.set(cam, { scale: 1.10, x: 0, y: 0, transformOrigin: "705px 700px" });
+  tl.to(cam, { scale: 1.035, duration: 0.55, ease: "expo.out" }, 0.40)                 // the hook releases
+    .to(cam, { scale: 1.07, duration: 1.7, ease: IO }, 1.56)                           // 24: slow push
+    .to(cam, { scale: 1.095, x: -10, duration: 1.9, ease: IO }, 3.28)                  // dream: closer, still
+    .to(cam, { scale: 1.075, x: 18, duration: 2.0, ease: IO }, 5.22)                   // weight / car: lateral drift
+    .to(cam, { x: -16, duration: 2.2, ease: IO }, 7.24)
+    .to(cam, { scale: 1.12, x: 0, duration: 0.14, ease: "expo.out" }, 9.60)            // محدش يقدر — punch
+    .to(cam, { scale: 1.16, duration: 0.14, ease: "expo.out" }, 10.38)                 // second, harder
+    .to(cam, { scale: 1.19, duration: 0.12, ease: "expo.out" }, 10.90)                 // إطلاقاً
+    .to(cam, { scale: 1.06, duration: 0.42, ease: IO }, 11.12)                         // pull back before the lift
+    .to(cam, { scale: 1.10, duration: 1.8, ease: IO }, 11.54)
+    .set(cam, { scale: 1.42, x: 0, y: 0, transformOrigin: "585px 690px" }, 13.30)      // the cut: the world opens up
+    .to(cam, { scale: 1.10, duration: 0.6, ease: "expo.out" }, 13.30)
+    .to(cam, { scale: 1.16, duration: 2.4, ease: IO }, 13.9)
+    .to(cam, { scale: 1.22, duration: 1.2, ease: "power2.in" }, 16.06)                 // build toward the action
+    .to(cam, { scale: 1.30, duration: 0.18, ease: "expo.out" }, 17.26)                 // حط — punch
+    .to(cam, { scale: 1.35, duration: 0.16, ease: "expo.out" }, 18.02)                 // الفعل
+    .to(cam, { scale: 1.38, duration: 2.0, ease: "power1.inOut" }, 18.2);
+  // micro shake on إطلاقاً (seeded, 4 frames)
+  [[0, 6, -4], [1 / 30, -5, 3], [2 / 30, 3, -2], [3 / 30, 0, 0]].forEach(([d, x, y]) => tl.set(cam, { x, y }, 10.90 + d));
+
+  /* ── light and depth layers ── */
+  tl.fromTo("#dim", { opacity: 0.42 }, { opacity: 0, duration: 0.55, ease: OUT, immediateRender: true }, 0.40)
+    .to("#dim", { opacity: 0.22, duration: 0.1 }, 10.90).to("#dim", { opacity: 0, duration: 0.5 }, 11.15)
+    .to("#dim", { opacity: 0.30, duration: 0.2 }, 17.24).to("#dim", { opacity: 0.18, duration: 1.0 }, 18.6)
+    .to("#dim", { opacity: 1, duration: 0.32, ease: "power2.in" }, 20.06);              // the deliberate dip to black
+  tl.to("#plate", { filter: "saturate(1) brightness(1)", duration: 0.01 }, 0)
+    .fromTo("#plate", { filter: "saturate(.55) brightness(.92)" }, { filter: "saturate(1) brightness(1)", duration: 0.6, ease: OUT, immediateRender: true }, 0.40);
+  tl.to("#bloom", { opacity: 0.85, duration: 1.0, ease: OUT }, 3.6).to("#bloom", { opacity: 0.25, duration: 1.0 }, 5.3)
+    .to("#bloom", { opacity: 0, duration: 0.6 }, 9.5).to("#bloom", { opacity: 1, duration: 1.2, ease: OUT }, 11.55).to("#bloom", { opacity: 0, duration: 0.3 }, 13.2);
+  tl.to("#rays", { opacity: 0.45, duration: 1.0, ease: OUT }, 13.6).to("#rays", { opacity: 0.25, duration: 1.0 }, 14.8)
+    .to("#rays", { opacity: 1, duration: 1.2, ease: "power2.in" }, 16.0).to("#rays", { opacity: 0.35, duration: 0.6 }, 17.3).to("#rays", { opacity: 0, duration: 0.8 }, 19.6);
+  tl.to("#vig", { opacity: 0.85, duration: 1.2 }, 16.0).to("#vig", { opacity: 1, duration: 0.2 }, 17.26);
+  tl.to("#scrim", { opacity: 0.55, duration: 0.3 }, 13.3);                                // the wide shot needs less scrim
+
+  /* particles: seeded dust that drifts upward through the dream and the lift */
+  const rnd = M.rng(31), parts = [];
+  for (let i = 0; i < 34; i++) {
+    const d = document.createElement("div"), s = 4 + rnd() * 9, x = rnd() * 520, y = 300 + rnd() * 1100;
+    d.style.cssText = `position:absolute;left:${x}px;top:${y}px;width:${s}px;height:${s}px;border-radius:50%;background:radial-gradient(circle, rgba(255,232,190,.95), rgba(255,220,170,0) 70%);opacity:0;mix-blend-mode:screen`;
+    $("#particles").appendChild(d); parts.push(d);
+    const drift = 60 + rnd() * 140, delay = rnd() * 0.6;
+    tl.fromTo(d, { opacity: 0, y: 0 }, { opacity: 0.35 + rnd() * 0.5, y: -drift * 0.4, duration: 1.0, ease: OUT, immediateRender: false }, 3.7 + delay)
+      .to(d, { y: -drift, opacity: 0, duration: 1.6, ease: "none" }, 4.7 + delay)
+      .fromTo(d, { opacity: 0, y: 0 }, { opacity: 0.3 + rnd() * 0.5, y: -drift * 0.5, duration: 1.2, ease: OUT, immediateRender: false }, 11.6 + delay)
+      .to(d, { y: -drift * 1.1, opacity: 0, duration: 0.8, ease: "none" }, 12.6 + delay);
+  }
+
+  /* ── typography helpers ── */
+  // a speech caption whose words arrive on their spoken syllables: 18 px rise, blur → sharp, the keyword in the accent
+  function speech(el, words, accent) {
+    el.innerHTML = "";
+    const inners = words.map(([w], i) => { const m = document.createElement("span"); m.className = "wm"; const s = document.createElement("span"); s.className = "w";
+      s.textContent = w; if (accent && accent.includes(w)) s.classList.add("acc"); m.appendChild(s); el.appendChild(m); if (i < words.length - 1) el.appendChild(document.createTextNode(" ")); return s; });
+    tl.set(el, { visibility: "visible", opacity: 1 }, words[0][1] - 0.02);
+    words.forEach(([w, t], i) => tl.fromTo(inners[i], { y: 18, opacity: 0, filter: "blur(6px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.28, ease: OUT, immediateRender: true }, t - 0.04));
+    return inners;
+  }
+  const out = (el, at, d = 0.22) => tl.to(el, { opacity: 0, y: -14, duration: d, ease: IN }, at).set(el, { visibility: "hidden" }, at + d);
+  // a keyword with weight: scale 94 % → 100 %, rise, blur → sharp, a mask that opens upward
+  function slam(el, at, o = {}) {
+    tl.set(el, { visibility: "visible" }, at);
+    tl.fromTo(el, { opacity: 0, scale: o.from || 0.94, y: o.y == null ? 24 : o.y, filter: `blur(${o.blur == null ? 10 : o.blur}px)${o.tail || ""}`, clipPath: "inset(100% -10% -45% -10%)" },
+      { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" + (o.tail || ""), clipPath: "inset(-25% -10% -45% -10%)", duration: o.dur || 0.34, ease: o.ease || "expo.out", immediateRender: true }, at);
+  }
+
+  /* 0.00 HOOK — محدش معاك: frozen frame, darkened, the word lands with weight; motion resumes on معاك */
+  const hookBig = $("#hook .big"), hookSoft = $("#hook .soft");
+  tl.set("#hook", { visibility: "visible" }, 0);
+  tl.fromTo(hookBig, { opacity: 0, scale: 1.18, filter: "blur(14px)", y: -10 }, { opacity: 1, scale: 1, filter: "blur(0px)", y: 0, duration: 0.3, ease: "expo.out", immediateRender: true }, 0.03);
+  tl.fromTo(hookSoft, { opacity: 0, x: -40, filter: "blur(8px)" }, { opacity: 0.92, x: 0, filter: "blur(0px)", duration: 0.32, ease: OUT, immediateRender: true }, 0.44);
+  speech($("#h24"), [["24", 0.74], ["ساعة", 0.94]]);
+  out("#hook", 1.42, 0.2); out("#h24", 1.42, 0.2);
+
+  /* 1.56 — إنت مع نفسك 24 ساعة: the signature clock beside him */
+  speech($("#nafsak"), [["إنت", 1.56], ["مع", 1.86], ["نفسك", 2.02]], ["نفسك"]);
+  const ticks = $("#ticks"), tickEls = [];
+  for (let i = 0; i < 24; i++) { const a = (i / 24) * Math.PI * 2, r0 = i % 6 === 0 ? 128 : 136, r1 = 144;
+    const l = document.createElementNS(NS, "line"); l.setAttribute("x1", 205 + Math.sin(a) * r0); l.setAttribute("y1", 640 - Math.cos(a) * r0);
+    l.setAttribute("x2", 205 + Math.sin(a) * r1); l.setAttribute("y2", 640 - Math.cos(a) * r1); l.setAttribute("stroke", "#F5F0E6");
+    l.setAttribute("stroke-width", i % 6 === 0 ? 3 : 1.6); l.setAttribute("opacity", 0); ticks.appendChild(l); tickEls.push(l); }
+  tl.set("#clock", { opacity: 1 }, 1.86);
+  M.drawPath(tl, $("#ring"), 1.86, 1.0, { ease: "power2.inOut" });
+  tl.to(tickEls, { opacity: 0.9, duration: 0.08, stagger: 0.035, ease: "none" }, 1.95);
+  tl.fromTo("#hand", { rotation: 0, svgOrigin: "205 640" }, { rotation: 360, svgOrigin: "205 640", duration: 1.0, ease: "power2.inOut", immediateRender: true }, 2.38);
+  slam($("#n24"), 2.38, { blur: 8, y: 10, dur: 0.3 });
+  slam($("#saa"), 2.56, { blur: 4, y: 8, dur: 0.28 });
+  tl.to(["#clock", "#n24", "#saa"], { opacity: 0, scale: 0.9, transformOrigin: "205px 640px", duration: 0.3, ease: IN }, 3.18)
+    .set(["#n24", "#saa"], { visibility: "hidden" }, 3.5);
+  out("#nafsak", 3.14, 0.2);
+
+  /* 3.28 — محدش ممكن يعيش لك حلمك: the world softens, light behind him, a path rises from his gesture */
+  speech($("#c3"), [["محدش", 3.72], ["ممكن", 4.00], ["يعيش", 4.28], ["لك", 4.60]]);
+  M.drawPath(tl, $("#dream"), 4.45, 0.9, { ease: "power2.out", opacity: 0.9 });
+  slam($("#helmak"), 4.74, { blur: 12, dur: 0.45, ease: "power3.out" });
+  tl.to("#dream", { opacity: 0, duration: 0.4 }, 5.1);
+  out("#c3", 5.12); out("#helmak", 5.12, 0.26);
+
+  /* 5.22 — محدش ممكن ينزّل لك وزنك: a measurement rail, the number goes down (1.3 s) */
+  speech($("#c4"), [["محدش", 5.58], ["ممكن", 5.88], ["ينزّل", 6.16], ["لك", 6.64], ["وزنك", 6.80]], ["وزنك"]);
+  const st = $("#scaleTicks");
+  for (let i = 0; i <= 18; i++) { const y = 470 + i * (460 / 18), l = document.createElementNS(NS, "line");
+    l.setAttribute("x1", 150); l.setAttribute("x2", i % 3 === 0 ? 182 : 170); l.setAttribute("y1", y); l.setAttribute("y2", y); l.setAttribute("stroke", "#F5F0E6"); l.setAttribute("stroke-width", i % 3 === 0 ? 2 : 1.2); l.setAttribute("opacity", .7); st.appendChild(l); }
+  tl.fromTo("#scale", { opacity: 0, x: -24 }, { opacity: 1, x: 0, duration: 0.3, ease: OUT, immediateRender: true }, 6.10);
+  tl.fromTo("#marker", { y: 520 }, { y: 860, duration: 1.0, ease: "power2.inOut", immediateRender: true }, 6.16);
+  tl.set("#kg", { visibility: "visible" }, 6.10).fromTo("#kg", { opacity: 0, y: 490 }, { opacity: 1, y: 490, duration: 0.2, immediateRender: true }, 6.10)
+    .to("#kg", { y: 830, duration: 1.0, ease: "power2.inOut" }, 6.16);
+  M.counter(tl, $("#kg"), 94, 76, 6.16, 1.0, { suffix: " kg", sep: false, ease: "power2.inOut" });
+  tl.to(["#scale", "#kg"], { opacity: 0, x: -20, duration: 0.25, ease: IN }, 7.22).set("#kg", { visibility: "hidden" }, 7.5);
+  out("#c4", 7.16);
+
+  /* 7.24 — محدش ممكن يشتري عربيتك: one line drawing, then the road moves */
+  speech($("#c5"), [["محدش", 7.56], ["ممكن", 7.82], ["يشتري", 8.20], ["عربيتك", 9.16]], ["عربيتك"]);
+  tl.set("#car", { opacity: 1 }, 8.15);
+  M.drawPath(tl, $("#carBody"), 8.18, 0.75, { ease: "power2.inOut" });
+  M.drawPath(tl, $("#w1"), 8.5, 0.4); M.drawPath(tl, $("#w2"), 8.55, 0.4);
+  const road = $("#road");
+  for (let i = 0; i < 6; i++) { const l = document.createElementNS(NS, "line"); l.setAttribute("y1", 852); l.setAttribute("y2", 852); l.setAttribute("x1", 40 + i * 70); l.setAttribute("x2", 74 + i * 70);
+    l.setAttribute("stroke", "#E7B65A"); l.setAttribute("stroke-width", 2.4); l.setAttribute("stroke-linecap", "round"); road.appendChild(l); }
+  tl.fromTo(road, { x: 0, opacity: 0 }, { x: -70, opacity: 1, duration: 0.55, ease: "none", immediateRender: true }, 8.95)
+    .to("#car", { x: 60, duration: 0.55, ease: "power2.in" }, 9.05)
+    .to("#car", { opacity: 0, duration: 0.2 }, 9.42);
+  out("#c5", 9.44);
+
+  /* 9.50 — محدش يقدر … محدش يقدر إطلاقاً: pressure — punch, replace, then the hard stop */
+  slam($("#yaqdar"), 9.60, { blur: 6, dur: 0.22 });
+  tl.to("#yaqdar", { scale: 1.12, duration: 0.16, ease: "expo.out" }, 10.38)
+    .to("#yaqdar", { opacity: 0, y: -30, duration: 0.14, ease: IN }, 10.82).set("#yaqdar", { visibility: "hidden" }, 10.97);
+  slam($("#itlaqan"), 10.90, { from: 1.12, blur: 14, y: 0, dur: 0.18 });
+  out("#itlaqan", 11.22, 0.18);
+
+  /* 11.30 — فإنت الوحيد اللي ممكن تعيش حلمك: the lift — warmth returns, YOU in the accent */
+  slam($("#fanta"), 11.30, { blur: 6, dur: 0.3 });
+  slam($("#wahid"), 11.70, { blur: 12, dur: 0.42, ease: "power3.out" });
+  out("#fanta", 12.25); tl.to("#wahid", { y: -60, scale: 0.78, opacity: 0.9, duration: 0.4, ease: IO }, 12.2);
+  speech($("#c7"), [["اللي", 12.10], ["ممكن", 12.34], ["تعيش", 12.52], ["حلمك", 12.72]], ["حلمك"]);
+  out("#wahid", 13.02, 0.14); out("#c7", 13.02, 0.14);
+
+  /* 13.14 — كافح: the word becomes the transition plane; behind it the cut to the wide shot, then it flies up into the sky */
+  tl.set("#kafeh", { visibility: "visible" }, 13.12);
+  tl.fromTo("#kafeh", { opacity: 0, x: 140, scale: 1.25, filter: "blur(18px)" }, { opacity: 1, x: 0, scale: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out", immediateRender: true }, 13.12)
+    .to("#kafeh", { y: -440, scale: 0.36, duration: 0.55, ease: "power3.inOut" }, 13.42)
+    .to("#kafeh", { scale: 0.40, duration: 0.12, ease: OUT }, 13.86).to("#kafeh", { scale: 0.36, duration: 0.3, ease: OUT }, 13.98)   // the second كافح
+    .to("#kafeh", { opacity: 0, y: -470, duration: 0.3, ease: IN }, 14.5).set("#kafeh", { visibility: "hidden" }, 14.82);
+
+  /* 14.62 — متقعدش تضيّع وقتك على الفاضي: caption on the railing, time drains as he says it */
+  speech($("#c10"), [["متقعدش", 14.62], ["تضيّع", 15.04], ["وقتك", 15.26], ["على", 15.52], ["الفاضي", 15.62]], ["وقتك"]);
+  tl.fromTo("#timebar", { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: true }, 15.2)
+    .fromTo("#timefill", { attr: { x1: 230 } }, { attr: { x1: 850 }, duration: 0.85, ease: "power1.in", immediateRender: true }, 15.26)   // drains right-to-left
+    .to("#timebar", { opacity: 0, duration: 0.25 }, 16.0);
+  out("#c10", 15.98);
+
+  /* 16.02 — كافح: build — light from above, the camera starts its push */
+  slam($("#kafeh3"), 16.06, { blur: 10, dur: 0.4, ease: "power3.out" });
+  tl.to("#kafeh3", { scale: 1.06, duration: 1.0, ease: "power1.in" }, 16.4);
+  out("#kafeh3", 17.1, 0.16);
+
+  /* 17.26 — حُط نفسك في الفعل: the payoff — everything else is gone; light sweeps the action word */
+  tl.set("#credit", { opacity: 0 }, 17.2).set("#credit", { opacity: 1 }, 18.9);
+  slam($("#hott"), 17.26, { blur: 8, dur: 0.26 });
+  slam($("#fel"), 18.02, { from: 1.08, blur: 16, y: 0, dur: 0.24, tail: " drop-shadow(0 4px 18px rgba(0,0,0,.5))" });
+  tl.fromTo("#fel", { backgroundPosition: "100% 0" }, { backgroundPosition: "0% 0", duration: 0.75, ease: "power2.inOut", immediateRender: true }, 18.12);
+  tl.to("#hott", { opacity: 0, y: -20, duration: 0.25, ease: IN }, 18.45)
+    .to("#fel", { y: 40, opacity: 0, filter: "blur(10px) drop-shadow(0 4px 18px rgba(0,0,0,.5))", duration: 0.35, ease: IN }, 18.5);
+
+  /* 18.42 — اللحظة دي ممكن تكون آخر لحظة: the clock motif closes the piece */
+  speech($("#c13"), [["اللحظة", 18.46], ["دي", 18.88], ["ممكن", 18.98], ["تكون", 19.12]]);
+  slam($("#akher"), 19.32, { blur: 10, dur: 0.3, ease: "power3.out" });
+  tl.set("#endring", { opacity: 0.85 }, 19.30);
+  M.drawPath(tl, $("#endring"), 19.30, 0.62, { ease: "power2.inOut", opacity: 0.85 });
+  tl.to(["#fel", "#c13", "#akher", "#endring", "#credit"], { opacity: 0, duration: 0.3, ease: IN }, 20.02);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["root"] = tl;
+  M.shim("root", S);
+</script>
+</div>
+</body>
+</html>

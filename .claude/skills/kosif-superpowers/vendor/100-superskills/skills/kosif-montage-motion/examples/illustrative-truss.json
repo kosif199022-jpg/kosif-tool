@@ -1,0 +1,63 @@
+{
+  "name": "Illustrative triangular truss (not calibrated to a real object)",
+  "units": {
+    "length": "m",
+    "force": "N",
+    "stress": "Pa"
+  },
+  "nodes": {
+    "A": [
+      0,
+      0
+    ],
+    "B": [
+      1,
+      1
+    ],
+    "C": [
+      2,
+      0
+    ]
+  },
+  "supports": {
+    "A": [
+      "x",
+      "y"
+    ],
+    "C": [
+      "y"
+    ]
+  },
+  "elements": [
+    {
+      "id": "AB",
+      "a": "A",
+      "b": "B",
+      "area_m2": 0.0001,
+      "young_pa": 200000000000.0,
+      "strength_pa": 250000000.0
+    },
+    {
+      "id": "BC",
+      "a": "B",
+      "b": "C",
+      "area_m2": 0.0001,
+      "young_pa": 200000000000.0,
+      "strength_pa": 250000000.0
+    },
+    {
+      "id": "AC",
+      "a": "A",
+      "b": "C",
+      "area_m2": 0.0001,
+      "young_pa": 200000000000.0,
+      "strength_pa": 250000000.0
+    }
+  ],
+  "loads": [
+    {
+      "node": "B",
+      "fy_n": -12000
+    }
+  ]
+}

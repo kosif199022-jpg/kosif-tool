@@ -1,0 +1,4 @@
+[{"name":"Strike","dur":2.5,"desc":"The mark lands on the ground plate and throws colour across it","phrase":"سريع","body":"the mark dives","surface":"ATTACH/ground.png"},
+ {"name":"Open","dur":3,"desc":"The mark becomes an aperture and the camera pushes through","phrase":"بسيط","body":"the aperture opens","surface":"ATTACH/mark-layer2.png"},
+ {"name":"Mood","dur":2,"desc":"A sense of speed and possibility","phrase":"حرّ","body":"","surface":""},
+ {"name":"Lockup","dur":2.5,"desc":"The mark settles into the lockup and holds","phrase":"الاسم","body":"the mark settles","surface":"ATTACH/mark.png"}]
