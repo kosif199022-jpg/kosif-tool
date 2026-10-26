@@ -101,6 +101,7 @@
 
 | tool | ID | الأداة / tool | أمر أول / first command | tests |
 |---|---|---|---|---|
+| `cinema-lab` | TOOL-175 | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | `python3 scripts/cinema_lab.py doctor` | 1 |
 | `cinematic-broll-render` | TOOL-19 | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest…` | 1 |
 | `cinematic-cut-planner` | TOOL-20 | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips…` | 2 |
 | `creative-quality-gate` | TOOL-35 | بوابة جودة خطة المونتاج · Reference-edit structural quality gate | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json -…` | 1 |
@@ -115,6 +116,7 @@
 | `reel-factory` | TOOL-131 | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-righ…` | 1 |
 | `reference-edit-engine` | TOOL-22 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./…` | 4 |
 | `reference-visual-fingerprint` | TOOL-23 | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cu…` | 2 |
+| `script-storyboard` | — | من السيناريو إلى الستوري بورد والأنيماتك · Script-to-Storyboard Animatic | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page…` | 1 |
 | `video-workflow-bridge` | TOOL-24 | جسر سير عمل الفيديو · Video Workflow Bridge | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave…` | 1 |
 
 ## image
@@ -184,6 +186,7 @@
 | `aspects` | TOOL-77 | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver | `python3 -c "import sys; sys.path.insert(0,'scripts'); import aspects;…` | 1 |
 | `atlas-render` | TOOL-64 | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score | `python3 scripts/atlas_render.py check` | 1 |
 | `creative-reasoning-bridge` | TOOL-12 | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto…` | 1 |
+| `export-profile` | — | معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو · Export profile: the owner-approved delivery settings for every video | `python3 scripts/export_profile.py` | 1 |
 | `infinite-matrices` | TOOL-171 | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | 2 |
 | `motion-director` | TOOL-13 | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | `python3 scripts/motion_director.py doctor` | 2 |
 | `motion-engine-js` | TOOL-14 | محرك حركة SVG · SVG motion engine runtime | `python3 scripts/motion_director.py compile ./scene.json --out ./out/f…` | 3 |

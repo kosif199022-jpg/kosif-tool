@@ -1,0 +1,3 @@
+[submodule ".claude/skills/kosif-superpowers/vendor/100-superskills"]
+	path = .claude/skills/kosif-superpowers/vendor/100-superskills
+	url = https://github.com/kosif199022-jpg/100-superskills.git

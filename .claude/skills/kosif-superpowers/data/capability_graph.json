@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5852
+   "count": 5853
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 173,
-   "proven": 141,
+   "count": 174,
+   "proven": 142,
    "status": {
-    "proven": 141,
+    "proven": 142,
     "ready": 20,
     "install": 12
    }
@@ -1422,15 +1422,6 @@
    "en": "lawful software inspection (REA)",
    "install": "npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)",
    "req_kind": "npm"
-  },
-  {
-   "id": "req:engine:ghidra",
-   "kind": "requirement",
-   "label": "engine:ghidra",
-   "ar": "تفكيك الثنائيات الأصلية",
-   "en": "native binary disassembly/decompilation",
-   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
-   "req_kind": "bin"
   },
   {
    "id": "script:scripts/hub.py",
@@ -1554,6 +1545,15 @@
     "proven": 30,
     "install": 48
    }
+  },
+  {
+   "id": "req:engine:ghidra",
+   "kind": "requirement",
+   "label": "engine:ghidra",
+   "ar": "تفكيك الثنائيات الأصلية",
+   "en": "native binary disassembly/decompilation",
+   "install": "Ghidra 12.1 from github.com/NationalSecurityAgency/ghidra + GHIDRA_INSTALL_DIR; or Hopper (rea setup), IDA MCP, Kuna",
+   "req_kind": "bin"
   },
   {
    "id": "req:engine:android",
@@ -2033,6 +2033,16 @@
    "label": "scripts/skill_layout.py"
   },
   {
+   "id": "script:scripts/cinema_lab.py",
+   "kind": "script",
+   "label": "scripts/cinema_lab.py"
+  },
+  {
+   "id": "script:scripts/export_profile.py",
+   "kind": "script",
+   "label": "scripts/export_profile.py"
+  },
+  {
    "id": "script:scripts/cinematic_broll_render.py",
    "kind": "script",
    "label": "scripts/cinematic_broll_render.py"
@@ -2215,6 +2225,11 @@
    "label": "scripts/motion_reference_probe.py"
   },
   {
+   "id": "script:scripts/script_storyboard.py",
+   "kind": "script",
+   "label": "scripts/script_storyboard.py"
+  },
+  {
    "id": "script:scripts/self_council.py",
    "kind": "script",
    "label": "scripts/self_council.py"
@@ -2375,6 +2390,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_blender_cinema.py"
   },
   {
+   "id": "test:tests/test_export_profile.py",
+   "kind": "test",
+   "label": "tests/test_export_profile.py"
+  },
+  {
    "id": "test:tests/test_atlas_cycles_integration.py",
    "kind": "test",
    "label": "tests/test_atlas_cycles_integration.py"
@@ -2433,6 +2453,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_check_skill_json.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_check_skill_json.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_cinema_lab.py"
   },
   {
    "id": "test:tests/test_cinematic_cut_planner.py",
@@ -2618,6 +2643,11 @@
    "id": "test:tests/test_requirements.py",
    "kind": "test",
    "label": "tests/test_requirements.py"
+  },
+  {
+   "id": "test:tests/test_script_storyboard.py",
+   "kind": "test",
+   "label": "tests/test_script_storyboard.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
@@ -5400,7 +5430,7 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 173
+   "w": 174
   },
   {
    "from": "fam:runnable-tools",
@@ -5412,7 +5442,7 @@
    "from": "fam:runnable-tools",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 42
+   "w": 43
   },
   {
    "from": "fam:runnable-tools",
@@ -5446,7 +5476,7 @@
   },
   {
    "from": "fam:runnable-tools",
-   "to": "req:engine:ghidra",
+   "to": "req:pip:opencv",
    "rel": "needs",
    "w": 11
   },
@@ -5454,7 +5484,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 178
+   "w": 179
   },
   {
    "from": "fam:runnable-tools",
@@ -6813,6 +6843,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/cinema_lab.py",
+   "to": "script:scripts/export_profile.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/cinematic_broll_render.py",
    "to": "script:scripts/cinematic_cut_planner.py",
    "rel": "imports",
@@ -7305,6 +7341,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/script_storyboard.py",
+   "to": "script:scripts/export_profile.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/self_council.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -7641,6 +7683,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/blender_cinematic_bridge.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cycles_render.py",
    "to": "test:tests/test_atlas_cycles_integration.py",
    "rel": "tested_by",
@@ -7737,6 +7785,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/cinema_lab.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/cinematic_broll_render.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/cinematic_cut_planner.py",
    "to": "test:tests/test_cinematic_cut_planner.py",
    "rel": "tested_by",
@@ -7779,6 +7839,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/creative_paint.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/drawing_council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
    "rel": "tested_by",
@@ -7787,6 +7853,18 @@
   {
    "from": "script:scripts/drawing_methods.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_methods.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/export_profile.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_cinema_lab.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/export_profile.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7899,8 +7977,20 @@
    "w": 1
   },
   {
+   "from": "script:scripts/kosif_timeline.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/local_first.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_local_first.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/look_pipeline.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8121,6 +8211,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/script_storyboard.py",
+   "to": "test:tests/test_script_storyboard.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/self_council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_self_council.py",
    "rel": "tested_by",
@@ -8243,6 +8339,18 @@
   {
    "from": "script:scripts/think.py",
    "to": "test:tests/test_think_reasoning.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_cinematic.py",
+   "to": "test:tests/test_export_profile.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/unified_media.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },

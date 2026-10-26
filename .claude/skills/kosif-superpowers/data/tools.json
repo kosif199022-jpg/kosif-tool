@@ -15114,6 +15114,181 @@
       "power_id": "TOOL-168"
     },
     {
+      "id": "cinema-lab",
+      "path": "scripts/cinema_lab.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review",
+      "title_ar": "معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B",
+      "summary_en": "Cinematography and editing engines rebuilt in our own code from ideas in PySceneDetect, Auto-Editor, OpenTimelineIO, OpenColorIO, OpenCV, vid.stab, Motion Canvas/Remotion and OpenRV, running on FFmpeg + NumPy in a cloud sandbox. Detects scene cuts (FFmpeg scdet, or the real PySceneDetect ContentDetector when installed) with a storyboard contact sheet; removes silences with frame-grid cuts that keep audio and video in sync; exports any segment plan as OpenTimelineIO JSON (read back with the opentimelineio package when present) and a CMX3600 EDL for Kdenlive/Shotcut/Resolve/Premiere; builds portable 33^3 .cube looks and applies them with lut3d; stabilises with two-pass vid.stab and measures shake before/after by phase correlation; reframes landscape footage to a 1080x1920 portrait crop by tracking motion and detail with a smoothed, speed-capped virtual camera that re-aims at scene cuts; renders eased push-in/pan/tilt/ken-burns camera moves on stills or clips; and makes A/B side-by-side or wipe review videos with burnt-in timecode and SSIM/PSNR.",
+      "summary_ar": "محركات تصوير ومونتاج مكتوبة بكودنا من أفكار PySceneDetect وAuto-Editor وOpenTimelineIO وOpenColorIO وOpenCV وvid.stab وMotion Canvas/Remotion وOpenRV، وتشتغل بـ FFmpeg وNumPy في السحابة: يكشف القطعات ويطلع ستوري بورد، يحذف الصمت مع الحفاظ على تزامن الصوت والصورة، يصدّر التايملاين OTIO وEDL لبرامج المونتاج، يعمل ألوان سينمائية بملفات .cube، يثبت الكاميرا المهزوزة ويقيس الاهتزاز قبل وبعد، يحوّل الفيديو العريض لطولي 1080x1920 بكاميرا ذكية بتتبع الحركة، يعمل حركات كاميرا ناعمة على صورة أو فيديو، ويطلع فيديو مقارنة A/B بتايم كود ومقاييس SSIM/PSNR.",
+      "use_when": [
+        "Find every cut in this video and give me a storyboard of the scenes",
+        "Remove the silent pauses from this talking video automatically",
+        "Export the edit as an OTIO or EDL timeline I can open in Kdenlive, Resolve or Premiere",
+        "Give this clip a teal and orange cinematic look and save the LUT",
+        "Stabilise this shaky phone footage",
+        "Turn this wide 16:9 video into a portrait crop that follows the action",
+        "Add a slow cinematic push-in on this photo",
+        "Compare the original and the graded version side by side",
+        "اكشف القطعات والمشاهد في الفيديو واعملي ستوري بورد",
+        "احذف السكتات والصمت من الفيديو تلقائي",
+        "صدّر المونتاج تايملاين يفتح في كدينلايف أو ريزولف",
+        "اعمل للفيديو لون سينمائي تيل أورنج",
+        "ثبّت الفيديو المهزوز",
+        "حوّل الفيديو العريض لفيديو بالطول يتابع الحركة",
+        "اعمل زووم سينمائي بطيء على الصورة",
+        "قارن الأصلي بالمعدّل جنب بعض"
+      ],
+      "keywords": [
+        "scene detection",
+        "cut detection",
+        "pyscenedetect",
+        "storyboard",
+        "contact sheet",
+        "auto-editor",
+        "silence removal",
+        "jump cut",
+        "opentimelineio",
+        "otio",
+        "edl",
+        "cmx3600",
+        "kdenlive",
+        "resolve",
+        "opencolorio",
+        "lut",
+        "cube",
+        "color grade",
+        "teal orange",
+        "bleach bypass",
+        "noir",
+        "stabilize",
+        "stabilise",
+        "vidstab",
+        "shaky",
+        "reframe",
+        "auto reframe",
+        "tracking",
+        "opencv",
+        "camera move",
+        "push in",
+        "ken burns",
+        "pan",
+        "tilt",
+        "motion canvas",
+        "remotion",
+        "openrv",
+        "a/b compare",
+        "wipe",
+        "timecode",
+        "ssim",
+        "psnr",
+        "كشف المشاهد",
+        "قطعات",
+        "ستوري بورد",
+        "حذف الصمت",
+        "تايملاين",
+        "لوت",
+        "تلوين",
+        "تثبيت",
+        "فيديو مهزوز",
+        "تأطير",
+        "حركة كاميرا",
+        "زووم",
+        "مقارنة",
+        "portrait crop",
+        "landscape to portrait"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/cinema_lab.py doctor",
+          "does": "Check ffmpeg filters (scdet, lut3d, vid.stab, zoompan, sendcmd, ssim), optional Python libraries and the export defaults."
+        },
+        {
+          "name": "scenes",
+          "example": "python3 scripts/cinema_lab.py scenes --input ./film.mp4 --out ./scenes --sheet --timeline",
+          "does": "Detect cuts (--engine auto|ffmpeg|pyscenedetect) into scenes.json, plus storyboard.jpg and scenes.otio/.edl."
+        },
+        {
+          "name": "silence-cut",
+          "example": "python3 scripts/cinema_lab.py silence-cut --input ./talk.mp4 --output ./tight.mp4 --timeline",
+          "does": "Find silences (--noise dB, --min-silence s), keep speech with a margin snapped to the frame grid, render one synced file (or --plan-only)."
+        },
+        {
+          "name": "timeline",
+          "example": "python3 scripts/cinema_lab.py timeline --plan ./scenes/scenes.json --out ./edit",
+          "does": "Turn a kosif.segments.v1 plan into edit.otio and edit.edl."
+        },
+        {
+          "name": "grade",
+          "example": "python3 scripts/cinema_lab.py grade --input ./clip.mp4 --output ./graded.mp4 --look teal-orange --strength 0.8 --cube-out ./teal.cube",
+          "does": "Apply a named look (teal-orange, bleach-bypass, warm-film, cool-night, noir, golden-hour) or --lut file.cube; measures the frame before/after. --cube-out alone exports the LUT."
+        },
+        {
+          "name": "stabilize",
+          "example": "python3 scripts/cinema_lab.py stabilize --input ./shaky.mp4 --output ./steady.mp4",
+          "does": "Two-pass vid.stab (or --deshake), audio copied; reports mean and p95 frame-to-frame shift before and after."
+        },
+        {
+          "name": "reframe",
+          "example": "python3 scripts/cinema_lab.py reframe --input ./wide.mp4 --output ./reel.mp4",
+          "does": "Track motion and detail, smooth the virtual camera, re-aim at scene cuts and crop to 1080x1920; writes the camera path."
+        },
+        {
+          "name": "camera",
+          "example": "python3 scripts/cinema_lab.py camera --input ./photo.jpg --output ./push.mp4 --move push-in --duration 5",
+          "does": "Eased push-in, pull-out, pan, tilt or ken-burns on a still or a clip, supersampled to avoid jitter."
+        },
+        {
+          "name": "review",
+          "example": "python3 scripts/cinema_lab.py review --a ./before.mp4 --b ./after.mp4 --output ./ab.mp4 --mode wipe --metrics",
+          "does": "Side-by-side or wipe A/B review with labels and timecode; --metrics adds SSIM and PSNR."
+        },
+        {
+          "name": "tests",
+          "example": "python3 -m unittest discover -s evals -p 'test_cinema_lab.py' -v",
+          "does": "Run 23 tests (export settings checked against export_profile.py): planning maths, LUTs, tracking and real FFmpeg runs (skipped without ffmpeg/numpy)."
+        }
+      ],
+      "inputs": "Local video, audio or image files the user owns or may edit; a kosif.segments.v1 plan for timeline export; optionally a .cube LUT.",
+      "outputs": "New media files with the export standard from export_profile.py (H.264 High, CRF 17, preset slow, yuv420p, BT.709, 30 fps, +faststart; vertical outputs 1080x1920; audio copied when timing is unchanged, else AAC 320k/48 kHz), scenes.json / plan JSON, storyboard.jpg, .otio, .edl, .cube files and a kosif.cinema_lab.receipt.v1 JSON receipt with measurements and SHA-256.",
+      "requires": {
+        "python": [
+          "numpy"
+        ],
+        "binaries": [
+          "ffmpeg",
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [
+          "scenedetect[opencv]",
+          "opentimelineio"
+        ],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Use only media the user owns or is licensed to edit; sources are never modified and outputs are new files.",
+      "limits": "Scene detection is a frame-difference score: soft dissolves and fast flashes can be missed or doubled, so check the storyboard. Silence cut re-encodes the audio (cutting changes timing) and works on loudness, not words; music beds hide pauses. Reframe tracks motion and detail energy, not faces or a named subject, and cannot recover action outside the crop. Looks are hand-built creative LUTs, used only when a look is asked for (the export standard matches colour to the source by default), not a calibrated ACES/OCIO pipeline. Stabilise cannot fix motion blur or rolling shutter. Camera moves are 2D crops, not 3D parallax.",
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-25: 23/23 tests passed on this checkout with FFmpeg 6.1 and NumPy: synthetic cuts found at 2.0 s and 4.0 s, a 1.5 s silence removed with 0.3 ms A/V gap, noir dropped saturation over 80%, the reframe kept a moving box in frame at 1080x1920, a push-in still rendered 1.0 s at 30 fps, identical A/B gave SSIM > 0.999. On a real 62 s cinematic clip PySceneDetect found 14 cuts and the FFmpeg engine 13 (storyboard checked by eye), and the reframe re-aimed at 6 cuts in the first 20 s. Ideas only; no code copied from the studied projects.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_cinema_lab.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/edit.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "transitions-cuts",
+        "camera-composition-layout",
+        "color-palette-grading"
+      ],
+      "power_id": "TOOL-175"
+    },
+    {
       "id": "micro-index",
       "path": "scripts/micro_index.py",
       "root": "skill",
@@ -15681,6 +15856,149 @@
       ],
       "evidence": "tested-here",
       "evidence_note": "evals/test_self_council.py 9/9 passed on this checkout on 2026-10-24 (inventory, plan, ingest refusals, report ranking, ledger coverage); first pass SIMULATED on 2026-10-24 (docs/self-council/FIRST_PASS_20261024.md)."
+    },
+    {
+      "id": "export-profile",
+      "path": "scripts/export_profile.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "motion",
+      "title_en": "Export profile: the owner-approved delivery settings for every video",
+      "title_ar": "معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو",
+      "summary_en": "One source for the delivery export standard the owner approved: 1080x1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied byte for byte when MP4 can carry it (AAC 320k 48 kHz otherwise), MP4 +faststart, no 4K unless asked. Scripts import video_args(), audio_args(src) and FASTSTART instead of writing their own ffmpeg flags; running it prints the profile as JSON.",
+      "summary_ar": "مصدر واحد لمعيار التصدير المعتمد: 1080×1920، 30 فريم، H.264 High بجودة CRF 17 وpreset slow، ألوان BT.709، الصوت الأصلي منسوخ بالبايت لما الـMP4 يقدر يشيله (وإلا AAC 320k)، MP4 مع faststart، ومن غير 4K إلا لو اتطلب. السكريبتات بتستورد video_args وaudio_args بدل ما تكتب إعداداتها.",
+      "use_when": [
+        "صدّر الفيديو بنفس إعدادات داري يا قلبي",
+        "What ffmpeg settings should a delivery MP4 use?",
+        "عايز التصدير يبقى بأعلى جودة من غير 4K"
+      ],
+      "keywords": [
+        "export",
+        "delivery",
+        "crf",
+        "faststart",
+        "1080x1920",
+        "h264",
+        "bitrate",
+        "تصدير",
+        "جودة",
+        "إعدادات التصدير"
+      ],
+      "commands": [
+        {
+          "name": "print",
+          "does": "Print the export profile as JSON.",
+          "example": "python3 scripts/export_profile.py"
+        }
+      ],
+      "inputs": "None on the command line; from Python an audio or video path for audio_args().",
+      "outputs": "kosif.export-profile.v1 JSON, or ffmpeg argument lists from Python.",
+      "requires": {
+        "binaries": [
+          "ffprobe"
+        ],
+        "network": false,
+        "node": [],
+        "optional": [],
+        "python": []
+      },
+      "safety": "read-only",
+      "consent": "Reads only; writes nothing.",
+      "limits": "Sets encoder flags only; matching the colour grade to the source is a per-job measurement described in playbooks/export-standard.md.",
+      "tests": [
+        "tests/test_export_profile.py"
+      ],
+      "docs": [
+        "playbooks/export-standard.md",
+        "playbooks/render-pipeline.md"
+      ],
+      "families": [
+        "formats-platforms",
+        "engines-render-pipeline"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-25: tests/test_export_profile.py 6/6 on this checkout (ffmpeg 6)."
+    },
+    {
+      "id": "script-storyboard",
+      "path": "scripts/script_storyboard.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "Script-to-Storyboard Animatic",
+      "title_ar": "من السيناريو إلى الستوري بورد والأنيماتك",
+      "summary_en": "Reads an Arabic or English play or screenplay (text or PDF) and writes a kosif.storyboard.v1 shot list: acts, scenes, an establishing wide shot per scene, dialogue shots that change size on a speaker change or emotional cue, stage directions, word-count durations, characters with line counts, likely duplicate spellings of a name, pacing per act and short-form episodes under a time limit. It then renders a frame-exact animatic MP4 from colour cards or the user's own images and clips, with an optional master audio track, at the KOSIF export standard.",
+      "summary_ar": "يقرأ مسرحية أو سيناريو بالعربي أو الإنجليزي (نص أو PDF) ويكتب قائمة لقطات بصيغة kosif.storyboard.v1: الفصول والمشاهد، ولقطة واسعة تأسيسية لكل مشهد، ولقطات حوار يتغير حجمها مع تغيّر المتكلم أو الانفعال، وإرشادات المسرح، ومدة كل لقطة من عدد الكلمات، والشخصيات وعدد جملها، والأسماء المكتوبة بطريقتين، وإيقاع كل فصل، وتقسيم العمل لحلقات قصيرة تحت حد زمني. ثم يصيّر أنيماتك MP4 دقيق الإطارات من بطاقات لونية أو صور ولقطات المستخدم، مع صوت رئيسي اختياري، بمعيار تصدير KOSIF.",
+      "use_when": [
+        "حوّل المسرحية دي لستوري بورد ولقطات",
+        "عندي سيناريو PDF عايز أقسمه لحلقات ريلز دقيقة ونص",
+        "اعمل أنيماتك بالتوقيت على التعليق الصوتي من الستوري بورد",
+        "Turn this screenplay into a shot list with durations",
+        "Split my play into 90-second episodes and render a timing animatic"
+      ],
+      "keywords": [
+        "storyboard",
+        "shot list",
+        "screenplay",
+        "play script",
+        "animatic",
+        "episodes",
+        "dialogue coverage",
+        "ستوري بورد",
+        "سيناريو",
+        "مسرحية",
+        "قائمة لقطات",
+        "أنيماتك",
+        "حلقات",
+        "تقطيع المشاهد"
+      ],
+      "commands": [
+        {
+          "name": "parse",
+          "example": "python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90",
+          "does": "Extracts the text (pdftotext for PDF), cleans bidi marks and presentation forms, re-joins wrapped lines, builds acts/scenes/shots with sizes, camera moves and durations, and writes the storyboard with characters, warnings, pacing and episodes. Prints a one-line JSON summary."
+        },
+        {
+          "name": "blank",
+          "example": "python3 scripts/script_storyboard.py blank --out ./out/storyboard.json --title Demo --duration 15 --shots 3",
+          "does": "Writes an empty storyboard template with evenly timed colour shots."
+        },
+        {
+          "name": "render",
+          "example": "python3 scripts/script_storyboard.py render --storyboard ./out/storyboard.json --episode 1 --audio ./voice.m4a --out ./out/episode1.mp4",
+          "does": "Renders each shot (its source image/clip cropped to fill, or a colour card) on exact frame boundaries, concatenates them, scales the timeline to the master audio when given (stream-copying AAC/MP3/ALAC, else AAC 320k), and writes <out>.report.json with frames per shot."
+        }
+      ],
+      "inputs": "parse: a UTF-8 .txt or a .pdf script; dialogue as 'NAME: text' or 'NAME (direction): text'; act/scene headings الفصل/المشهد/ACT/SCENE/INT./EXT./داخلي/خارجي. render: the storyboard JSON, optional `source` per shot (image or video path relative to the storyboard), optional audio.",
+      "outputs": "storyboard JSON (kosif.storyboard.v1); MP4 animatic (default 1080x1920, 30 fps, H.264 CRF 17, BT.709, +faststart) and its kosif.animatic-report.v1 JSON.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "ffmpeg",
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [
+          "pdftotext"
+        ],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Nothing to approve; it reads only the script the user supplied and writes the files named by --out.",
+      "limits": "Shot sizes and durations are rule-based suggestions from the text layout, not a director's reading; it writes no text on frames, generates no footage, and a script whose dialogue is not in 'NAME: line' form comes out as stage directions.",
+      "tests": [
+        "tests/test_script_storyboard.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/edit.md"
+      ],
+      "families": [
+        "transitions-cuts",
+        "camera-composition-layout",
+        "audio-sync-captions"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "10/10 passed here (tests/test_script_storyboard.py, both render tests with real ffmpeg). Scratch run on a 53-page Arabic play PDF: 8 scenes, 505 shots, 33 characters, 3 duplicate-spelling warnings, 25 episodes all under 90 s; episode 1 rendered against a 4 s AAC track gave exactly 120 frames at 30 fps with the audio stream-copied."
     }
   ]
 }

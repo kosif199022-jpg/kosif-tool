@@ -26,6 +26,8 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 
 **Book-to-practice visual QA (A14):** After a source-backed drawing lesson or PR #92's 26-card `drawing_methods.py`, run `scripts/drawing_visual_qa.py curriculum "<task>"` to choose 4 chapter-verified exercises, `diagnose art.png` for independent measured tonal/alpha diagnostics, or `compare before.png after.png --roi X Y W H` to detect unintended edits outside the requested region. 14 independent synthetic raster tests passed on 2026-10-23; the existing 10 drawing-method tests also passed. This is diagnostic evidence, not a professional-art certification or retraining of Claude weights. Full texts of all 200 book candidates are NOT ingested. See `references/protocol/A14-drawing-cinematic-academy.md`.
 
+**Video export standard (owner-approved, every delivery):** 1080×1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied byte for byte (AAC 320k only for WAV/FLAC or mixed audio), MP4 `+faststart`, colour matched to the source, no 4K unless asked; same or better, never lower. Flags: `scripts/export_profile.py`; rationale: `playbooks/export-standard.md` at the repo root.
+
 **Drawing review gate before sending (PROTOCOL law 27):** never send a drawing until each body is one connected piece and every hand/foot touches what holds it: tag bodies `<g data-figure>`, pieces `data-part`, rests `data-contact`, run `scripts/drawing_methods.py review --svg scene.svg` to PASS, then open the rendered PNG and look (neck, waist, joints, limb count and bend, scale, shadows); fix, re-render, re-check, deliver with the review receipt. It measures touch geometry only, not beauty.
 
 ## SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
@@ -33,7 +35,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 Trigger: substantial L2/L3 task requiring deeper reasoning, explicit @kosif see Pro, or user requests merging SEE capabilities. After reading the single canonical PROTOCOL.md and its trigger matrix, open references/protocol/A12-see-pro-cognitive-fusion.md. Integrate SEE 11 Stage-0 lenses, all nine *covered-by-routing* method domains, independent critical review, causal assumption tests, three distinct plans, numeric determinism and project-isolated FusionForge evidence memory. Load only smallest relevant SEE packs (normal <=2 total, <=1 dynamic; Deep/Full Pro <=4, <=2 dynamic). One method pack never proves an executor or Full Pro. C500 roster metadata/Einstein/Jev are external roles with request-bound receipts, not installed in this repository. For complex structured decision packets use scripts/see_pro_cognitive_gate.py --self-test or check --file PACKET.json; a PASS checks structure and evidence metadata only. Never auto-copy proprietary SEE plugin code, private payloads or cross-company knowledge. 
 
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,852 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,853 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 
 ## FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
 
@@ -173,8 +175,8 @@ The owner's GitHub account holds 25 repositories; [references/owned-repos-map.md
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5852 families=62 domains=10 styles=289 watched=254 proven=1018 ready=673 install=980 key=176 seen=609 documented=2325 idea=71 -->
-**الأرقام / counts:** 5,852 قدرة في 62 عائلة و10 مجالات — ✅ 1,018 · 🟢 673 · 📦 980 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5853 families=62 domains=10 styles=289 watched=254 proven=1019 ready=673 install=980 key=176 seen=609 documented=2325 idea=71 -->
+**الأرقام / counts:** 5,853 قدرة في 62 عائلة و10 مجالات — ✅ 1,019 · 🟢 673 · 📦 980 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)
@@ -246,8 +248,8 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 |---|---|
 | Discover and route / اكتشاف القدرات والتوجيه | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-5000` · `atlas-ledger` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` · `owned-repos` · `micro-index` · `skill-loader` |
 | Think, ideate and write / التفكير والأفكار والكتابة | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` · `council` · `see-pro-cognitive-gate` · `capability-mindmap` · `charter-ingest` · `business-workflows` · `book-methods` · `decision-math` · `stats-lab` · `prompt-lab` · `memory-ops` · `lesson-integrity` · `task-history` |
-| Motion graphics and rendering / الموشن والرندر | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-check-frame-cover` · `repo-verify-video` · `repo-job-wait` · `starter-html-canvas` · `starter-remotion` · `unified-cinematic` · `style-atlas-bridge` · `atlas-render` · `particles` · `ui-beat` · `motion-physics` · `infinite-matrices` |
-| Editing and reference video / المونتاج والفيديو المرجعي | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` · `reel-factory` · `dua-wednesday` · `look-pipeline` · `fast-edit` |
+| Motion graphics and rendering / الموشن والرندر | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-check-frame-cover` · `repo-verify-video` · `repo-job-wait` · `starter-html-canvas` · `starter-remotion` · `unified-cinematic` · `style-atlas-bridge` · `atlas-render` · `particles` · `ui-beat` · `motion-physics` · `infinite-matrices` · `export-profile` |
+| Editing and reference video / المونتاج والفيديو المرجعي | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` · `reel-factory` · `dua-wednesday` · `look-pipeline` · `fast-edit` · `cinema-lab` · `script-storyboard` |
 | Audio and rhythm / الصوت والإيقاع | `audio-cue-mapper` · `music-rhythm-engine` · `repo-words-convert` · `tts-script` · `caption-lines` |
 | Drawing and characters / الرسم والشخصيات | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` · `unified-draw` · `creative-principles` · `drawing-academy` · `drawing-methods` · `perspective-color-lab` · `drawing-visual-qa` · `geo-plate` · `diagram-layout` · `brand-tokens` · `portrait-pipeline` · `color-media` · `drawing-council` |
 | 3D / ثلاثي الأبعاد | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` · `blender-cinematic-bridge` · `blender-rescue-scene` · `blender-cat-fur-upgrade` |
@@ -292,7 +294,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (649 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (650 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure
@@ -425,3 +427,11 @@ Do not claim full Blender equivalence; use narrow executable proofs.
 - [arsenal-general.md](references/arsenal-general.md) و[arsenal-libraries.md](references/arsenal-libraries.md) — المكتبات بإصداراتها ورخصها. [method-packs.md](references/method-packs.md) — البحث بالأدلة والتقييم والمال والمنتج وعقود الوكلاء.
 - [humanizer.md](references/humanizer.md) — كتابة بلا علامات آلية مع حراسة الحقائق (`scripts/tell_scan.py`، `scripts/anchor_gate.py`). [proofs/README.md](proofs/README.md) — أفلام وملفات الإثبات.
 - [atlas-reviewed-audit.md](references/atlas-reviewed-audit.md) — مراجعة ساكنة لـ1,000 من 14,793 مهارة في الأطلس (نصوص SKILL.md و862 ملف كود، وسبعة تحليلات REA)؛ `atlas_external_bridge.py` يضيف `content_audit` لنتائج البحث تلقائيًا. عيّنة لا تغطية كاملة ولا اختبارات تشغيل.
+
+## 100 Super Skills / الـ114 مهارة المدمجة
+
+- **مصدر المكتبة:** [kosif199022-jpg/100-superskills](https://github.com/kosif199022-jpg/100-superskills) مثبت عند commit `af7a5dc3778c0e68ef935349a5c1650d15688277` ضمن `.claude/skills/kosif-superpowers/vendor/100-superskills` بآلية Git submodule؛ **114 مجلد مهارة** مع السكربتات والأصول الأصلية (لا تقتصر على وصف المهارات).
+- **التثبيت بعد الاستنساخ:** `git submodule update --init --recursive` من جذر `kosif-tool`. بدون هذه الخطوة الفهرس متاح لكن السكربتات والملفات المرجعية غير مُحمّلة محليًا.
+- **الاستدعاء:** `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor` ثم `list` أو `find "مهمة"` أو `show <slug>`. ويمكن أيضًا الاستعلام عبر `skill_loader.py need "مهمة"`، الذي يضمّن المكتبة في ترشيحاته.
+- **الفهرس:** [الـ114 مهارة](references/100-superskills-integration.md)، والبيانات [data/100-superskills-index.json](data/100-superskills-index.json). افتح `skills/<slug>/SKILL.md` داخل submodule حسب التوجيه؛ اقرأ المراجع والسكربتات المطلوبة فقط ولا تنفّذ شيئًا لمجرد وجوده.
+- **عدم التكرار:** يبقى نظام KOSIF وأدواته الأصلية كما هو؛ المكتبة المضافة مصدر إضافي، وليس بديلًا أو إعلانًا بأن كل 114 سكربتًا قابل للتشغيل في الجلسة. تحقّق من حالة البيئة والمستلزمات وحقوق المحتوى وأي أذونات قبل التنفيذ.

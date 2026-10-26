@@ -15,7 +15,7 @@
 
 ## camera-composition-layout (motion)
 
-chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · card: `usip-library/cards/motion/camera-composition-layout.md` · tools: `blender-cinema` · `blender-cinematic-bridge` · `cinematic-broll-render` · `cinematic-cut-planner` · `motion-toolkit` · `reference-visual-fingerprint` · `unified-cinematic`
+chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · card: `usip-library/cards/motion/camera-composition-layout.md` · tools: `blender-cinema` · `blender-cinematic-bridge` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `motion-toolkit` · `reference-visual-fingerprint` · `script-storyboard` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -618,7 +618,7 @@ chapter: [easing-timing-rhythm](../powers/easing-timing-rhythm.md) · card: `usi
 
 ## formats-platforms (motion)
 
-chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-library/cards/motion/formats-platforms.md` · tools: `aspects` · `blender-bridge` · `dua-wednesday` · `fetch-video` · `instagram-finder` · `montage-pro` · `native-glb` · `reel-factory` …
+chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-library/cards/motion/formats-platforms.md` · tools: `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder` · `montage-pro` · `native-glb` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -797,7 +797,7 @@ chapter: [story-direction-ideas](../powers/story-direction-ideas.md) · card: `u
 
 ## transitions-cuts (motion)
 
-chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-library/cards/motion/transitions-cuts.md` · tools: `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo` · `mimic` …
+chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-library/cards/motion/transitions-cuts.md` · tools: `cinema-lab` · `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline` · `kosif-timeline-demo` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

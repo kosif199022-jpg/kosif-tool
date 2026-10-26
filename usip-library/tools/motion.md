@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (24 أداة)
+# أدوات المجال `motion` (25 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -146,6 +146,47 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:creative-reasoning-bridge --evidence <ملف>`.
+
+### `export-profile` — معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو / Export profile: the owner-approved delivery settings for every video
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/export_profile.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `formats-platforms`, `engines-render-pipeline` |
+
+**ما تفعله:** مصدر واحد لمعيار التصدير المعتمد: 1080×1920، 30 فريم، H.264 High بجودة CRF 17 وpreset slow، ألوان BT.709، الصوت الأصلي منسوخ بالبايت لما الـMP4 يقدر يشيله (وإلا AAC 320k)، MP4 مع faststart، ومن غير 4K إلا لو اتطلب. السكريبتات بتستورد video_args وaudio_args بدل ما تكتب إعداداتها.
+
+**What it does:** One source for the delivery export standard the owner approved: 1080x1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied byte for byte when MP4 can carry it (AAC 320k 48 kHz otherwise), MP4 +faststart, no 4K unless asked. Scripts import video_args(), audio_args(src) and FASTSTART instead of writing their own ffmpeg flags; running it prints the profile as JSON.
+
+#### متى تُستدعى
+
+- «صدّر الفيديو بنفس إعدادات داري يا قلبي»
+- «What ffmpeg settings should a delivery MP4 use?»
+- «عايز التصدير يبقى بأعلى جودة من غير 4K»
+
+#### الأوامر
+
+- **print**: Print the export profile as JSON.
+  - `python3 scripts/export_profile.py`
+
+#### المتطلبات والأمان
+
+- binaries: ffprobe
+- الأمان: read-only
+- الموافقة: Reads only; writes nothing.
+- الحدود: Sets encoder flags only; matching the colour grade to the source is a per-job measurement described in playbooks/export-standard.md.
+
+#### الاختبارات والأدلة
+
+- `tests/test_export_profile.py`
+- مرجع: `playbooks/export-standard.md`
+- مرجع: `playbooks/render-pipeline.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:export-profile --evidence <ملف>`.
 
 ### `infinite-matrices` — محرك المصفوفات اللانهائية للأساليب السببية / KOSIF Infinite Matrices causal style engine
 

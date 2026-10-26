@@ -58,20 +58,22 @@ Screen recording is never used for delivery: it drops frames and is not reproduc
 
 ## 5. Implementation — التنفيذ
 
-Encoding specs:
+Encoding specs follow the owner-approved **export standard** in [`export-standard.md`](export-standard.md) (same or better, never lower): 1080×1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied, MP4 `+faststart`, no 4K unless the user asks, colour matched to the source.
 
 | platform | aspect / size | fps | video | audio |
 |---|---|---|---|---|
-| Reels / TikTok / Shorts | 9:16, 1080×1920 | 30 | H.264 High, yuv420p, CRF 18–20, ≤ 60 s typical | AAC 48 kHz 192 kbps, −14 LUFS |
-| YouTube | 16:9, 1920×1080 (or 3840×2160) | 24/30/60 | H.264 CRF 16–18, `+faststart` | AAC 48 kHz 192–320 kbps |
-| Feed | 1:1 1080×1080 or 4:5 1080×1350 | 30 | H.264 CRF 18 | AAC 192 kbps |
+| Reels / TikTok / Shorts (default) | 9:16, 1080×1920 | 30 | H.264 High, yuv420p, BT.709, CRF 17, preset slow | user's track copied as-is; else AAC 48 kHz 320 kbps |
+| YouTube | 16:9, 1920×1080 (3840×2160 only when asked) | 24/30/60 | H.264 High CRF 17, preset slow, `+faststart` | copied as-is; else AAC 48 kHz 320 kbps |
+| Feed | 1:1 1080×1080 or 4:5 1080×1350 | 30 | H.264 High CRF 17, preset slow | copied as-is; else AAC 320 kbps |
 
-Manual encode from frames:
+Manual encode from frames (WAV voice: swap `-c:a copy -t …` for `-c:a aac -b:a 320k -ar 48000 -af apad -shortest`):
 
 ```bash
-ffmpeg -framerate 30 -i frames/frame_%06d.png -i voice.mp3 \
-  -c:v libx264 -pix_fmt yuv420p -crf 18 -preset slow -movflags +faststart \
-  -c:a aac -b:a 192k -shortest out/film.mp4
+ffmpeg -framerate 30 -i frames/frame_%06d.png -i voice.mp3 -map 0:v -map 1:a \
+  -vf "scale=out_color_matrix=bt709:out_range=tv,format=yuv420p" \
+  -c:v libx264 -preset slow -crf 17 -profile:v high -pix_fmt yuv420p \
+  -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv \
+  -c:a copy -t <video seconds> -movflags +faststart out/film.mp4
 ```
 
 ### Waiting on a long render — انتظار رندر طويل

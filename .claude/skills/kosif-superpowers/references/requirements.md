@@ -15,18 +15,18 @@
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
 | 1 | [`python3`](#req-python3) | bin | 804 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
-| 2 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 3 | [`ffmpeg`](#req-ffmpeg) | bin | 460 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 461 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 4 | [`chromium`](#req-chromium) | bin | 374 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, runnable-tools |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 247 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 186 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
 | 8 | [`node`](#req-node) | bin | 185 | qa-verification, atlas-code, runnable-tools, engines-render-pipeline, color-palette-grading |  |
 | 9 | [`key:unspecified`](#req-key-unspecified) | key | 167 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
-| 10 | [`pip:pillow`](#req-pip-pillow) | pip | 141 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
-| 11 | [`pip:numpy`](#req-pip-numpy) | pip | 140 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, runnable-tools |  |
-| 12 | [`npm:remotion`](#req-npm-remotion) | npm | 118 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
-| 13 | [`pip:opencv`](#req-pip-opencv) | pip | 102 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
+| 10 | [`pip:numpy`](#req-pip-numpy) | pip | 141 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, runnable-tools |  |
+| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 141 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
+| 12 | [`npm:remotion`](#req-npm-remotion) | npm | 119 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
+| 13 | [`pip:opencv`](#req-pip-opencv) | pip | 103 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
 | 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 98 | typography-arabic, typography-latin, documents-office, audio-sync-captions, runnable-tools |  |
 | 15 | [`imagemagick`](#req-imagemagick) | bin | 87 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, qa-verification |  |
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 87 | software-investigation, runnable-tools |  |
@@ -150,6 +150,16 @@
 - **العائلات / families:** runnable-tools (138), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
+<a id="req-ffmpeg"></a>
+### `ffmpeg` — قص ودمج وترميز وضبط علوّ الصوت وحرق الترجمات واستخراج الإطارات / cut, concat, transcode, loudnorm, burn captions, extract frames/audio
+
+- **النوع / kind:** bin (أداة)
+- **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
+- **يفتح / unlocks:** 461 powers
+- **بالحالة / by status:** documented 158 · proven 151 · ready 71 · install 58 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (43), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
+- **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
+
 <a id="req-npm-hyperframes"></a>
 ### `npm:hyperframes` — مُصيِّر HTML قابل للبحث الزمني مع مكونات / seekable-DOM HTML renderer with components
 
@@ -159,16 +169,6 @@
 - **بالحالة / by status:** install 368 · documented 26 · proven 22 · ready 16 · key 14 · seen 13 · idea 2
 - **العائلات / families:** transitions-cuts (112), engines-render-pipeline (88), camera-composition-layout (35), typography-latin (26), qa-verification (24), ui-product-device (23), light-glow-bloom (19), charts-data-infographic (11)
 - **أمثلة / examples:** `ARAB-02` RTL scoping for renderers · `ARAB-06` Shaping-engine routing · `EASE-30` Spring pop entrance · `ENG-01` HyperFrames composition contract · `ENG-32` Dual-engine shim (HyperFrames or studio renderer · `ENG-33` Step-to-skill map
-
-<a id="req-ffmpeg"></a>
-### `ffmpeg` — قص ودمج وترميز وضبط علوّ الصوت وحرق الترجمات واستخراج الإطارات / cut, concat, transcode, loudnorm, burn captions, extract frames/audio
-
-- **النوع / kind:** bin (أداة)
-- **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 460 powers
-- **بالحالة / by status:** documented 158 · proven 150 · ready 71 · install 58 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (42), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
-- **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-chromium"></a>
 ### `chromium` — رندر مشاهد HTML بالتقاط الإطارات ومراقبة الصفحات / capture HTML scenes frame by frame; observe pages
@@ -230,6 +230,16 @@
 - **العائلات / families:** engines-render-pipeline (27), atlas-code (17), ai-generation (14), camera-composition-layout (12), qa-verification (12), self-discovery (8), voice-tts (8), maps-geo (6)
 - **أمثلة / examples:** `API-06` Auth: Bearer, Basic, OAuth 2.0 and more · `ENG-24` Capability-token render jobs · `SELF-07` MCP server inventory with cost flags · `SELF-14` No GPU: plan for CPU · `SELF-17` Credentials by name only · `TOOL-65` AI for business: 9 functions, 64 workflows, Clau
 
+<a id="req-pip-numpy"></a>
+### `pip:numpy` — حسابات عددية على الإطارات والصوت / numeric work on frames and audio
+
+- **النوع / kind:** pip (حزمة بايثون)
+- **التثبيت / install:** `pip install numpy`
+- **يفتح / unlocks:** 141 powers
+- **بالحالة / by status:** proven 83 · documented 24 · ready 21 · install 8 · seen 3 · key 2
+- **العائلات / families:** app-feature-transfer (46), music-beat-sound (31), qa-verification (11), transitions-cuts (11), runnable-tools (10), media-image-audio (5), color-palette-grading (3), engines-render-pipeline (3)
+- **أمثلة / examples:** `ANLY-09` Seeded Monte Carlo risk check · `ANLY-28` Seeded, labelled synthetic data · `APPX-03` Auto reframe to 9:16 · `APPX-08` Beat markers from audio · `APPX-100` Distort: twist, bulge, polar inversion, dents, f · `APPX-101` Blurs: zoom, radial, motion, surface, unfocus, f
+
 <a id="req-pip-pillow"></a>
 ### `pip:pillow` — رسم الصور والنص العربي المشكَّل (raqm) / image drawing and shaped Arabic text (raqm)
 
@@ -240,24 +250,14 @@
 - **العائلات / families:** app-feature-transfer (37), runnable-tools (19), qa-verification (15), engines-render-pipeline (14), typography-arabic (10), media-image-audio (8), texture-material (5), color-palette-grading (3)
 - **أمثلة / examples:** `ANLY-11` Detect libraqm before shaping Arabic · `APPX-105` Blend modes (24) and layer stacks → PNG or OpenR · `APPX-113` Sticker: cut-out with white border and soft shad · `APPX-38` Watermark with exact opacity · `APPX-39` Perceptual JPEG recompression (JPEGmini-style) · `APPX-40` Contact sheet / print templates
 
-<a id="req-pip-numpy"></a>
-### `pip:numpy` — حسابات عددية على الإطارات والصوت / numeric work on frames and audio
-
-- **النوع / kind:** pip (حزمة بايثون)
-- **التثبيت / install:** `pip install numpy`
-- **يفتح / unlocks:** 140 powers
-- **بالحالة / by status:** proven 82 · documented 24 · ready 21 · install 8 · seen 3 · key 2
-- **العائلات / families:** app-feature-transfer (46), music-beat-sound (31), qa-verification (11), transitions-cuts (11), runnable-tools (9), media-image-audio (5), color-palette-grading (3), engines-render-pipeline (3)
-- **أمثلة / examples:** `ANLY-09` Seeded Monte Carlo risk check · `ANLY-28` Seeded, labelled synthetic data · `APPX-03` Auto reframe to 9:16 · `APPX-08` Beat markers from audio · `APPX-100` Distort: twist, bulge, polar inversion, dents, f · `APPX-101` Blurs: zoom, radial, motion, surface, unfocus, f
-
 <a id="req-npm-remotion"></a>
 ### `npm:remotion` — فيديو برمجي بـ React / programmatic video in React
 
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i remotion@4.0.536 @remotion/cli@4.0.536  (Remotion licence: free for individuals, company licence above 3 people)`
-- **يفتح / unlocks:** 118 powers
-- **بالحالة / by status:** install 40 · documented 31 · proven 27 · ready 8 · key 7 · idea 4 · seen 1
-- **العائلات / families:** engines-render-pipeline (39), music-beat-sound (7), runnable-tools (6), typography-arabic (6), easing-timing-rhythm (5), transitions-cuts (5), hand-drawn-draw-on (4), story-direction-ideas (4)
+- **يفتح / unlocks:** 119 powers
+- **بالحالة / by status:** install 40 · documented 31 · proven 28 · ready 8 · key 7 · idea 4 · seen 1
+- **العائلات / families:** engines-render-pipeline (39), music-beat-sound (7), runnable-tools (7), typography-arabic (6), easing-timing-rhythm (5), transitions-cuts (5), hand-drawn-draw-on (4), story-direction-ideas (4)
 - **أمثلة / examples:** `ARAB-06` Shaping-engine routing · `ARAB-09` Real type over generated plates · `ARAB-26` Spring word-stagger title · `COLOR-41` Starter palettes and palette slots · `COLOR-56` Style lock and reference style-DNA (+ exact hex  · `DRAW-06` Pen-tip followers: hand, marker, chalk
 
 <a id="req-pip-opencv"></a>
@@ -265,9 +265,9 @@
 
 - **النوع / kind:** pip (حزمة بايثون)
 - **التثبيت / install:** `pip install opencv-python-headless`
-- **يفتح / unlocks:** 102 powers
-- **بالحالة / by status:** proven 78 · install 14 · ready 5 · documented 4 · key 1
-- **العائلات / families:** app-feature-transfer (52), runnable-tools (10), transitions-cuts (9), media-image-audio (5), engines-render-pipeline (4), photo-video-footage (4), color-palette-grading (3), light-glow-bloom (3)
+- **يفتح / unlocks:** 103 powers
+- **بالحالة / by status:** proven 79 · install 14 · ready 5 · documented 4 · key 1
+- **العائلات / families:** app-feature-transfer (52), runnable-tools (11), transitions-cuts (9), media-image-audio (5), engines-render-pipeline (4), photo-video-footage (4), color-palette-grading (3), light-glow-bloom (3)
 - **أمثلة / examples:** `APPX-03` Auto reframe to 9:16 · `APPX-100` Distort: twist, bulge, polar inversion, dents, f · `APPX-101` Blurs: zoom, radial, motion, surface, unfocus, f · `APPX-102` Stylize: emboss, relief, edge detect, outline, p · `APPX-103` Julia and Mandelbrot fractals · `APPX-104` Adjustments: levels, posterize, sepia, invert, a
 
 <a id="req-fonts-arabic"></a>

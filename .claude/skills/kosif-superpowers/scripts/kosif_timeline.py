@@ -252,8 +252,8 @@ def render(project, output, *, dry_run=False):
     if with_audio:args+=["-map","[aout]"]
     else:args+=["-an"]
     args+=["-r",str(valid["fps"]),"-frames:v",str(math.ceil(valid["duration"]*valid["fps"])),
-           "-c:v","libx264","-crf","19","-pix_fmt","yuv420p"]
-    if with_audio:args+=["-c:a","aac","-b:a","192k"]
+           "-c:v","libx264","-preset","slow","-crf","17","-pix_fmt","yuv420p"]
+    if with_audio:args+=["-c:a","aac","-b:a","320k","-ar","48000"]  # mixed, so copy is impossible
     args+=["-movflags","+faststart","-t",f"{valid['duration']:.6f}",str(output)]
     if dry_run:
         return {"valid":True,"clips":len(valid["clips"]),"video_layers":sum(x["kind"]!="audio" for x in valid["clips"]),

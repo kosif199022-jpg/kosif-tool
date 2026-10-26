@@ -32,4 +32,6 @@ what this repository can do, and the motion-graphics production rules.
 
 11. Long jobs: never `sleep N; check` (Claude Code blocks it). Start with `python3 tools/job.py start --dir <dir> -- <command>`, wait with `python3 tools/job.py wait --dir <dir>` under the Monitor tool or Bash `run_in_background` (`--quiet` for one notification), peek with `job.py status`. See `playbooks/render-pipeline.md` section 5 (waiting on a long render).
 
-12. Capabilities: `.claude/skills/kosif-superpowers/` maps every power (thinking, writing, code, data, documents, research, apps, media, strategy, motion) with how-to and proof. Probe the session with `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` and search with `python3 .claude/skills/kosif-superpowers/scripts/powers.py suggest "<brief>"`.
+12. Video export standard (owner-approved, every delivery): 1080×1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied, MP4 `+faststart`, colour matched to the source, no 4K unless asked. Same or better, never lower. See `playbooks/export-standard.md`.
+
+13. Capabilities: `.claude/skills/kosif-superpowers/` maps every power (thinking, writing, code, data, documents, research, apps, media, strategy, motion) with how-to and proof. Probe the session with `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` and search with `python3 .claude/skills/kosif-superpowers/scripts/powers.py suggest "<brief>"`.

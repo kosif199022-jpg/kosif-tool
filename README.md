@@ -1,7 +1,7 @@
 # KOSIF TOOL — أطلس الموشن جرافيك لـ Claude Code
 
 <!-- stats:start -->
-**289** styles · **243** PromptsMotion references · **46** KOSIF base styles · **45** original briefs · **17** playbooks · **224** credited creators
+**289** styles · **243** PromptsMotion references · **46** KOSIF base styles · **45** original briefs · **18** playbooks · **224** credited creators
 <!-- stats:end -->
 
 ## ابدأ من هنا — خريطة المستودع / Start here
@@ -10,7 +10,7 @@
 
 | الطبقة / layer | ما هي / what | من أين تبدأ / start |
 |---|---|---|
-| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 5,852 قدرة في 10 مجالات، لكل قدرة مستلزماتها (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل، وأكثر من 90 أداة تُشغَّل فعلًا وباب واحد للبحث فيها | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الفهرس](.claude/skills/kosif-superpowers/references/INDEX.md) و[الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
+| **المهارة العامة** `.claude/skills/kosif-superpowers/` | تعرّف Claude بقدراته الحقيقية في كل جلسة وبطرق التفكير والإبداع والتحقق، مع كتالوج 5,853 قدرة في 10 مجالات، لكل قدرة مستلزماتها (التفكير، الكتابة والعربية، الكود، البيانات، المستندات، البحث، التطبيقات، الصور والصوت، المنتج والمال، الموشن) لكل منها شارة دليل، وأكثر من 90 أداة تُشغَّل فعلًا وباب واحد للبحث فيها | [SKILL.md](.claude/skills/kosif-superpowers/SKILL.md) ثم [الفهرس](.claude/skills/kosif-superpowers/references/INDEX.md) و[الخريطة الذهنية](.claude/skills/kosif-superpowers/references/capability-map.md) |
 | **أطلس الموشن** `styles/` `playbooks/` `catalog/` | 289 أسلوب موشن جرافيك، لكل منها SKILL.md وSTYLE.json وBRIEF.md، و17 دليل إنتاج | [STYLE_INDEX.md](STYLE_INDEX.md) · [AGENTS.md](AGENTS.md) |
 | **الأدوات** `tools/` `starters/` `templates/` | `kosif.py` (بحث وتجهيز مشروع)، `render_html.cjs` (رندر HTML إلى فيديو)، `verify_video.py` (فحص الناتج)، ومشروعا بداية html-canvas وRemotion | [tools/render_html.md](tools/render_html.md) |
 | **مهارة المونتاج التحريري** `.claude/skills/editorial-film-edit/` | مهارة مستقلة لمونتاج لقطات بأسلوب أرشيفي تحريري مع مراجع متصفح جاهزة | [SKILL.md](.claude/skills/editorial-film-edit/SKILL.md) |
@@ -130,3 +130,8 @@ The site is plain static files at the repository root and needs no build step. `
 - https://github.com/kosif199022-jpg/kosif-render-lab
 - https://github.com/kosif199022-jpg/kosif-omni
 - https://github.com/kosif199022-jpg/100-superskills
+
+## KOSIF Superpowers × 100 Super Skills (114 مهارة)
+
+تم ربط مكتبة [100-superskills](https://github.com/kosif199022-jpg/100-superskills) داخل KOSIF Superpowers بإصدار ثابت كـ Git submodule، بحيث تبقى جميع ملفات المهارات والمراجع والسكربتات والأصول محفوظة في مصدرها. عند استنساخ المستودع شغّل `git submodule update --init --recursive`.
+الفهرس والأوامر داخل [دليل دمج 114 مهارة](.claude/skills/kosif-superpowers/references/100-superskills-integration.md)؛ جرّب `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor` لتمييز المتاح فعليًا عمّا يتطلب تجهيزًا.

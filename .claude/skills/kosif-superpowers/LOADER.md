@@ -18,7 +18,7 @@
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
-| `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 79 KB · 428 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
+| `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 81 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 
 ## المجموعات (15) / capability groups
 
@@ -40,7 +40,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (33) / protocol appendices
+## ملاحق البروتوكول (34) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -77,6 +77,7 @@
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» |
+| [A38 مجلس المستشارين الخمسة الإلزامي](references/protocol/A38-llm-council-mandatory.md) | **إلزامي مع كل طلب L1+** بعد الخطط وقبل التقرير، أو «council this» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -117,49 +118,170 @@
 
 ### `.claude/skills/kosif-superpowers/SKILL.md`
 
-- 7–30: قواك الخارقة — KOSIF Superpowers
-- 31–37: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
-- 38–41: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 42–45: FusionForge v2 (USIP v5.7) — project-scoped composite workflow recipes
-- 46–49: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
-- 50–53: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
-- 54–57: Atlas Stratified Source Methods — verified provenance, not executable imports
-- 58–61: CapCut-to-KOSIF evidence-led capability planning (research, not imported code)
-- 62–65: Three.js Cinematic Motion — tested real WebGL + video exporter
-- 66–69: Claude Code permission-aware local-first bootstrap
-- 70–83: KOSIF local computer MCP (verified prototype)
-- 84–91: Blender independent headless bridge
-- 92–101: Built-in native 3D rendering without Blender
-- 102–109: Blender-source review and original Smart Draw
-- 110–122: Web apps and browser isolation research
-- 123–131: Verified native 3D depth buffer without Blender
-- 132–138: Blender-free KOSIF native 3D extensions
-- 139–146: Original bilingual task-to-capability finder
-- 147–150: Blender-free 3D GLB exporter (bounded, original)
-- 151–165: Atlas source-reviewed method guidance — 2026-10-20
-- 166–169: Capability Atlas — start here for every substantial task
-- 170–178: Owned repositories and the skill map — what you have, what you can learn
-- 179–190: الفهرس / contents
-- 191–209: 00. بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol
-- 210–227: 0. باب واحد لكل شيء / one front door
-- 228–239: 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
-- 240–274: 2. الأدوات والأدلة حسب المجال / tools and guides by area
-- 275–290: 3. خريطة المجالات / domain map
-- 291–297: 4. شارات الدليل / evidence badges
-- 298–305: 5. الموشن والمونتاج / motion & video procedure
-- 306–315: 6. قوانين لا تُكسر / never
-- 316–323: 7. التثبيت والصيانة / install and maintain
-- 324–327: Motion runtime bridge / جسر الرندر التنفيذي
-- 328–334: Reference-media inspector / فحص فيديو المرجع
-- 335–338: Mimic engine / محرك المحاكاة — rebuild a reference with new footage
-- 339–344: Auto media acquisition & editing assets / التحميل لمهام المونتاج
-- 345–352: KOSIF Innovation, REA v6.7, and Arabic font fidelity
-- 353–367: KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)
-- 368–375: REA-backed cinematic editor capability study and footage-first EDL (2026-10-19)
-- 376–381: Footage-first FFmpeg film rendering and REA-derived editor benchmark (2026-10-19)
-- 382–385: Creative Paint runtime — verified callable drawing and short animations (2026-10-19)
-- 386–388: Verified character arm IK and word-triggered motion (2026-10-19)
-- 389–392: Original full-body character animation (2026-10-19)
-- 393–408: REA Creative Research Atlas — 2,000 public sources (2026-10-19)
-- 409–420: Blender headless H.264 motion video
-- 421–427: 8. مراجع أخرى / other references
+- 7–32: قواك الخارقة — KOSIF Superpowers
+- 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
+- 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
+- 44–47: FusionForge v2 (USIP v5.7) — project-scoped composite workflow recipes
+- 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
+- 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
+- 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports
+- 60–63: CapCut-to-KOSIF evidence-led capability planning (research, not imported code)
+- 64–67: Three.js Cinematic Motion — tested real WebGL + video exporter
+- 68–71: Claude Code permission-aware local-first bootstrap
+- 72–85: KOSIF local computer MCP (verified prototype)
+- 86–93: Blender independent headless bridge
+- 94–103: Built-in native 3D rendering without Blender
+- 104–111: Blender-source review and original Smart Draw
+- 112–124: Web apps and browser isolation research
+- 125–133: Verified native 3D depth buffer without Blender
+- 134–140: Blender-free KOSIF native 3D extensions
+- 141–148: Original bilingual task-to-capability finder
+- 149–152: Blender-free 3D GLB exporter (bounded, original)
+- 153–167: Atlas source-reviewed method guidance — 2026-10-20
+- 168–171: Capability Atlas — start here for every substantial task
+- 172–180: Owned repositories and the skill map — what you have, what you can learn
+- 181–192: الفهرس / contents
+- 193–211: 00. بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol
+- 212–229: 0. باب واحد لكل شيء / one front door
+- 230–241: 1. ابدأ هنا — بروتوكول التشغيل / the power-up protocol
+- 242–276: 2. الأدوات والأدلة حسب المجال / tools and guides by area
+- 277–292: 3. خريطة المجالات / domain map
+- 293–299: 4. شارات الدليل / evidence badges
+- 300–307: 5. الموشن والمونتاج / motion & video procedure
+- 308–317: 6. قوانين لا تُكسر / never
+- 318–325: 7. التثبيت والصيانة / install and maintain
+- 326–329: Motion runtime bridge / جسر الرندر التنفيذي
+- 330–336: Reference-media inspector / فحص فيديو المرجع
+- 337–340: Mimic engine / محرك المحاكاة — rebuild a reference with new footage
+- 341–346: Auto media acquisition & editing assets / التحميل لمهام المونتاج
+- 347–354: KOSIF Innovation, REA v6.7, and Arabic font fidelity
+- 355–369: KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)
+- 370–377: REA-backed cinematic editor capability study and footage-first EDL (2026-10-19)
+- 378–383: Footage-first FFmpeg film rendering and REA-derived editor benchmark (2026-10-19)
+- 384–387: Creative Paint runtime — verified callable drawing and short animations (2026-10-19)
+- 388–390: Verified character arm IK and word-triggered motion (2026-10-19)
+- 391–394: Original full-body character animation (2026-10-19)
+- 395–410: REA Creative Research Atlas — 2,000 public sources (2026-10-19)
+- 411–422: Blender headless H.264 motion video
+- 423–430: 8. مراجع أخرى / other references
+- 431–437: 100 Super Skills / الـ114 مهارة المدمجة
+
+
+## مكتبة 100 Super Skills (114) / pinned submodule skills
+
+| المهارة | الفئة | SKILL.md |
+|---|---|---|
+| `ab-testing-experiments` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/ab-testing-experiments/SKILL.md` |
+| `accessibility-wcag` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/accessibility-wcag/SKILL.md` |
+| `accounting-ifrs-journal` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/accounting-ifrs-journal/SKILL.md` |
+| `ad-creative-30s` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/ad-creative-30s/SKILL.md` |
+| `agent-tool-instructions` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/agent-tool-instructions/SKILL.md` |
+| `ai-art-style-library` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/ai-art-style-library/SKILL.md` |
+| `arabic-copywriting` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/arabic-copywriting/SKILL.md` |
+| `audio-mastering-analysis` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/audio-mastering-analysis/SKILL.md` |
+| `audio-reactive-captions-studio` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/audio-reactive-captions-studio/SKILL.md` |
+| `automation-scripts-cli` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/automation-scripts-cli/SKILL.md` |
+| `backend-api-design` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/backend-api-design/SKILL.md` |
+| `book-to-skill-knowledge` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/book-to-skill-knowledge/SKILL.md` |
+| `brand-identity-logo` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/brand-identity-logo/SKILL.md` |
+| `browser-automation-playwright` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/browser-automation-playwright/SKILL.md` |
+| `business-plan-prd` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/business-plan-prd/SKILL.md` |
+| `character-animation-2d` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/character-animation-2d/SKILL.md` |
+| `cinema-director-7layers` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/cinema-director-7layers/SKILL.md` |
+| `cinematic-3d-scene` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/cinematic-3d-scene/SKILL.md` |
+| `claude-animation-studio` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/claude-animation-studio/SKILL.md` |
+| `cloudflare-edge-deploy` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/cloudflare-edge-deploy/SKILL.md` |
+| `code-review-refactor` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/code-review-refactor/SKILL.md` |
+| `comics-picture-books` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/comics-picture-books/SKILL.md` |
+| `context-window-budget` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/context-window-budget/SKILL.md` |
+| `curriculum-course-builder` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/curriculum-course-builder/SKILL.md` |
+| `custom-gpt-claude-project` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/custom-gpt-claude-project/SKILL.md` |
+| `dashboards-dataviz` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/dashboards-dataviz/SKILL.md` |
+| `data-in-motion` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/data-in-motion/SKILL.md` |
+| `database-schema-migrations` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/database-schema-migrations/SKILL.md` |
+| `davinci-resolve-pipeline` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/davinci-resolve-pipeline/SKILL.md` |
+| `debugging-root-cause` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/debugging-root-cause/SKILL.md` |
+| `diagrams-mermaid-architecture` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/diagrams-mermaid-architecture/SKILL.md` |
+| `docker-ci-devops` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/docker-ci-devops/SKILL.md` |
+| `ecommerce-store-listings` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/ecommerce-store-listings/SKILL.md` |
+| `excel-automation-power` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-automation-power/SKILL.md` |
+| `excel-data-cleaning-automation` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-data-cleaning-automation/SKILL.md` |
+| `excel-financial-models` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-financial-models/SKILL.md` |
+| `excel-model-architect` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-model-architect/SKILL.md` |
+| `excel-power-formulas` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-power-formulas/SKILL.md` |
+| `explainer-edu-animation` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/explainer-edu-animation/SKILL.md` |
+| `fact-checker-verifier` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/fact-checker-verifier/SKILL.md` |
+| `few-shot-dataset-curation` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/few-shot-dataset-curation/SKILL.md` |
+| `flashcards-quiz-exam-prep` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/flashcards-quiz-exam-prep/SKILL.md` |
+| `forecasting-probability` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/forecasting-probability/SKILL.md` |
+| `frontend-react-app` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/frontend-react-app/SKILL.md` |
+| `fullstack-saas-starter` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/fullstack-saas-starter/SKILL.md` |
+| `game-dev-web` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/game-dev-web/SKILL.md` |
+| `genius-council-decision` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/genius-council-decision/SKILL.md` |
+| `git-github-workflow` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/git-github-workflow/SKILL.md` |
+| `google-workspace-automation` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/google-workspace-automation/SKILL.md` |
+| `hyperframes-animation-studio` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/hyperframes-animation-studio/SKILL.md` |
+| `ideation-100-ideas` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/ideation-100-ideas/SKILL.md` |
+| `image-critique-reverse-prompt` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/image-critique-reverse-prompt/SKILL.md` |
+| `image-prompt-forge` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/image-prompt-forge/SKILL.md` |
+| `invoices-quotes-contracts` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/invoices-quotes-contracts/SKILL.md` |
+| `kinetic-typography-arabic` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/kinetic-typography-arabic/SKILL.md` |
+| `kosif-mimic` | `kosif-special` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-mimic/SKILL.md` |
+| `kosif-montage-motion` | `kosif-special` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-montage-motion/SKILL.md` |
+| `kosif-one` | `kosif-special` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-one/SKILL.md` |
+| `kosif-social` | `kosif-special` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-social/SKILL.md` |
+| `landing-page-premium` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/landing-page-premium/SKILL.md` |
+| `language-coach-arabic-english` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/language-coach-arabic-english/SKILL.md` |
+| `legacy-code-migration` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/legacy-code-migration/SKILL.md` |
+| `llm-judge-eval-lab` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/llm-judge-eval-lab/SKILL.md` |
+| `llm-judge-evals` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/llm-judge-evals/SKILL.md` |
+| `market-competitor-research` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/market-competitor-research/SKILL.md` |
+| `math-science-tutor` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/math-science-tutor/SKILL.md` |
+| `mobile-app-builder` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/mobile-app-builder/SKILL.md` |
+| `motion-director-pro` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/motion-director-pro/SKILL.md` |
+| `music-song-brief` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/music-song-brief/SKILL.md` |
+| `newsletter-email-marketing` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/newsletter-email-marketing/SKILL.md` |
+| `notebooks-python-analysis` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/notebooks-python-analysis/SKILL.md` |
+| `office-prompts-library` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/office-prompts-library/SKILL.md` |
+| `pdf-forms-reports` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/pdf-forms-reports/SKILL.md` |
+| `performance-optimization` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/performance-optimization/SKILL.md` |
+| `photo-lighting-plan` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/photo-lighting-plan/SKILL.md` |
+| `pitch-deck-investor` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/pitch-deck-investor/SKILL.md` |
+| `pixel-art-game-assets` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/pixel-art-game-assets/SKILL.md` |
+| `pixel-studio-painter` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/pixel-studio-painter/SKILL.md` |
+| `podcast-production` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/podcast-production/SKILL.md` |
+| `powerpoint-decks` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/powerpoint-decks/SKILL.md` |
+| `pro-video-editor-ffmpeg` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/pro-video-editor-ffmpeg/SKILL.md` |
+| `product-photo-mockups` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/product-photo-mockups/SKILL.md` |
+| `prompt-architect-reasoning-models` | `advanced` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/prompt-architect-reasoning-models/SKILL.md` |
+| `prompt-injection-defense` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/prompt-injection-defense/SKILL.md` |
+| `prompt-master-pro` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/prompt-master-pro/SKILL.md` |
+| `python-pro` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/python-pro/SKILL.md` |
+| `rag-knowledge-base` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/rag-knowledge-base/SKILL.md` |
+| `red-team-premortem` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/red-team-premortem/SKILL.md` |
+| `reels-shorts-factory` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/reels-shorts-factory/SKILL.md` |
+| `research-deep-citations` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/research-deep-citations/SKILL.md` |
+| `security-audit-stride` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/security-audit-stride/SKILL.md` |
+| `seo-content-architecture` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/seo-content-architecture/SKILL.md` |
+| `software-architecture-adr` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/software-architecture-adr/SKILL.md` |
+| `sql-data-analysis` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/sql-data-analysis/SKILL.md` |
+| `storyboard-shotlist` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/storyboard-shotlist/SKILL.md` |
+| `storytelling-scripts` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/storytelling-scripts/SKILL.md` |
+| `strategy-decision-sensitivity` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/strategy-decision-sensitivity/SKILL.md` |
+| `structured-output-json` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/structured-output-json/SKILL.md` |
+| `svg-illustration-icons` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/svg-illustration-icons/SKILL.md` |
+| `system-prompt-architect` | `ai-prompts` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/system-prompt-architect/SKILL.md` |
+| `technical-docs-readme` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/technical-docs-readme/SKILL.md` |
+| `testing-suite-complete` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/testing-suite-complete/SKILL.md` |
+| `thumbnail-social-graphics` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/thumbnail-social-graphics/SKILL.md` |
+| `translation-localization-ar` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/translation-localization-ar/SKILL.md` |
+| `trend-animation-styles` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/trend-animation-styles/SKILL.md` |
+| `typescript-node-pro` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/typescript-node-pro/SKILL.md` |
+| `ui-motion-microinteractions` | `motion-animation` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/ui-motion-microinteractions/SKILL.md` |
+| `video-editing-captions` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/video-editing-captions/SKILL.md` |
+| `video-prompt-director` | `image-video-design` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/video-prompt-director/SKILL.md` |
+| `voiceover-tts-direction` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/voiceover-tts-direction/SKILL.md` |
+| `web-scraping-automation` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/web-scraping-automation/SKILL.md` |
+| `website-design-system` | `software-development` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/website-design-system/SKILL.md` |
+| `word-documents-pro` | `office-data` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/word-documents-pro/SKILL.md` |
+| `youtube-channel-strategy` | `business-learning` | `.claude/skills/kosif-superpowers/vendor/100-superskills/skills/youtube-channel-strategy/SKILL.md` |

@@ -13,8 +13,8 @@ This report is filled with values **measured** by the commands in section 3, nev
 | المسار / Path | |
 | الحجم / Size (MB) | |
 | الحاوية / Container | MP4 |
-| فيديو / Video codec | H.264 (yuv420p) |
-| صوت / Audio codec | AAC |
+| فيديو / Video codec | H.264 High · CRF 17 · preset slow · yuv420p · BT.709 (`playbooks/export-standard.md`) |
+| صوت / Audio codec | الصوت الأصلي منسوخ كما هو (AAC/MP3) أو AAC 320k / source copied as-is, else AAC 320k |
 | المصدر القابل للتعديل / Editable source | |
 | المعاينة المعتمدة / Approved preview | |
 
