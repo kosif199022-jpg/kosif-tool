@@ -40,7 +40,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (33) / protocol appendices
+## ملاحق البروتوكول (34) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -77,6 +77,7 @@
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» |
+| [A38 مجلس المستشارين الخمسة الإلزامي](references/protocol/A38-llm-council-mandatory.md) | **إلزامي لكل L1+**، أو «council this» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
