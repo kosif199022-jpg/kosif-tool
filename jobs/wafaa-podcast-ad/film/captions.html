@@ -1,0 +1,26 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><style>
+@font-face{font-family:Cairo;src:url(fonts/Cairo.ttf);font-weight:200 1000}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(120% 80% at 50% 30%,#3a2a24,#120c0a);font-family:Cairo}
+#cap{position:absolute;left:90px;right:90px;top:1180px;height:360px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:6px 22px;direction:rtl}
+.w{font-weight:800;font-size:92px;line-height:1.25;color:#fff;opacity:0;transform:translateY(40px) scale(.9);text-shadow:0 6px 24px rgba(0,0,0,.55);filter:blur(6px)}
+.w.on{opacity:1;transform:none;filter:none}
+.w.hot{color:#ffcf8a}
+</style></head><body><div id="cap"></div><script>
+const W=[{"w": "الحكاية", "s": 0.354, "e": 0.899, "line": 0}, {"w": "فيها", "s": 0.899, "e": 1.241, "line": 0}, {"w": "إنّ", "s": 1.241, "e": 1.644, "line": 0}, {"w": "كل", "s": 2.462, "e": 2.649, "line": 1}, {"w": "واحد", "s": 2.649, "e": 2.908, "line": 1}, {"w": "فينا", "s": 2.908, "e": 3.123, "line": 1}, {"w": "جوّاه", "s": 3.123, "e": 3.382, "line": 1}, {"w": "حكاية", "s": 3.382, "e": 3.913, "line": 1}, {"w": "مستنية", "s": 4.449, "e": 4.887, "line": 2}, {"w": "حد", "s": 4.887, "e": 5.085, "line": 2}, {"w": "يسمعها", "s": 5.085, "e": 5.708, "line": 2}, {"w": "أنا", "s": 6.548, "e": 6.721, "line": 3}, {"w": "وفاء", "s": 6.721, "e": 6.935, "line": 3}, {"w": "يوسف", "s": 6.935, "e": 7.402, "line": 3}, {"w": "وقررت", "s": 7.921, "e": 8.255, "line": 4}, {"w": "أفتح", "s": 8.255, "e": 8.545, "line": 4}, {"w": "الميكروفون", "s": 8.545, "e": 9.343, "line": 4}, {"w": "بودكاست", "s": 10.387, "e": 10.895, "line": 5}, {"w": "الحكاية", "s": 10.895, "e": 11.315, "line": 5}, {"w": "فيها", "s": 11.315, "e": 11.63, "line": 5}, {"w": "إنّ", "s": 11.63, "e": 12.138, "line": 5}, {"w": "كلام", "s": 12.806, "e": 13.03, "line": 6}, {"w": "من", "s": 13.03, "e": 13.135, "line": 6}, {"w": "القلب", "s": 13.135, "e": 13.637, "line": 6}, {"w": "حكايات", "s": 14.214, "e": 14.581, "line": 7}, {"w": "حقيقية", "s": 14.581, "e": 15.23, "line": 7}, {"w": "ومن", "s": 15.846, "e": 15.995, "line": 8}, {"w": "غير", "s": 15.995, "e": 16.213, "line": 8}, {"w": "فلاتر", "s": 16.213, "e": 16.729, "line": 8}, {"w": "أول", "s": 17.446, "e": 17.659, "line": 9}, {"w": "حلقة", "s": 17.659, "e": 17.987, "line": 9}, {"w": "قريب", "s": 17.987, "e": 18.544, "line": 9}, {"w": "استنّوني", "s": 19.033, "e": 19.585, "line": 10}], D=20.2;
+const cap=document.getElementById('cap');
+const ease=x=>1-Math.pow(1-x,3);
+function seek(t){
+  const cur=W.filter(w=>w.s<=t+0.05).map(w=>w.line); const line=cur.length?cur[cur.length-1]:-1;
+  const ws=W.filter(w=>w.line===line);
+  const endT=ws.length?Math.max(...ws.map(w=>w.e)):0;
+  const nextStart=(W.find(w=>w.line===line+1)||{s:D}).s;
+  const out=Math.min(1,Math.max(0,(t-(Math.min(endT+0.35,nextStart-0.12)))/0.18));
+  cap.innerHTML='';
+  for(const w of ws){const el=document.createElement('span');el.className='w';el.textContent=w.w;
+    const p=ease(Math.min(1,Math.max(0,(t-w.s+0.06)/0.28)));
+    el.style.opacity=p*(1-out);el.style.transform=`translateY(${(1-p)*40-out*20}px) scale(${0.9+0.1*p})`;el.style.filter=`blur(${(1-p)*6}px)`;
+    if(t>=w.s&&t<=w.e+0.1) el.classList.add('hot');
+    cap.appendChild(el);}
+}
+window.__kosif={duration:D,seek};seek(0);
+</script></body></html>
