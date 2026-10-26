@@ -163,8 +163,9 @@
 - 391–394: Original full-body character animation (2026-10-19)
 - 395–410: REA Creative Research Atlas — 2,000 public sources (2026-10-19)
 - 411–422: Blender headless H.264 motion video
-- 423–429: 8. مراجع أخرى / other references
+- 423–430: 8. مراجع أخرى / other references
 - 431–437: 100 Super Skills / الـ114 مهارة المدمجة
+
 
 ## مكتبة 100 Super Skills (114) / pinned submodule skills
 

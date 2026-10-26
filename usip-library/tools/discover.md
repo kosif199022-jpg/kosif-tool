@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (27 أداة)
+# أدوات المجال `discover` (28 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -1389,4 +1389,48 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:superpowers-unified --evidence <ملف>`.
+
+### `superskills-bridge` — جسر المهارات المئة: ابحث وافتح 114 مهارة مثبتة من وحدة 100-superskills / 100-superskills bridge: find and open the 114 pinned skills of the 100-superskills submodule
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/superskills_bridge.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `untested` |
+| العائلات | `self-discovery`, `agent-orchestration` |
+
+**ما تفعله:** بحث للقراءة فقط في فهرس 114 مهارة من مستودع 100-superskills المثبت كوحدة git: doctor يعد الملفات الموجودة محليًا، وfind يرتب بالكلمات العربية والإنجليزية، وshow وpath يعرضان المهارة ومسارها.
+
+**What it does:** Read-only discovery over data/100-superskills-index.json (114 skills from kosif199022-jpg/100-superskills pinned as a git submodule under vendor/100-superskills). doctor reports how many skill files are present locally and the pinned commit; list, find (Arabic/English token ranking over names and descriptions), show and path print a skill's entry and local SKILL.md path. It never installs dependencies or runs a skill.
+
+#### متى تُستدعى
+
+- «دور لي في المهارات المئة على مهارة مونتاج»
+- «superskills find financial model»
+- «افتح مهارة kosif-mimic»
+
+#### الأوامر
+
+- **doctor**: Catalog count, local files present, pinned commit.
+  - `python3 scripts/superskills_bridge.py doctor`
+- **find**: Rank skills for a task.
+  - `python3 scripts/superskills_bridge.py find "مونتاج فيديو عربي"`
+- **show**: One skill's entry and local path.
+  - `python3 scripts/superskills_bridge.py show kosif-mimic`
+
+#### المتطلبات والأمان
+
+- binaries: git
+- الأمان: read-only
+- الموافقة: Reads the index and the submodule checkout; writes nothing.
+- الحدود: Without the submodule checkout only the index is available (doctor shows 0 skill files); listing a skill does not install or verify it.
+
+#### الاختبارات والأدلة
+
+- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- مرجع: `.claude/skills/kosif-superpowers/references/100-superskills-integration.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:superskills-bridge --evidence <ملف>`.
 

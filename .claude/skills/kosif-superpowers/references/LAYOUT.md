@@ -101,7 +101,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 
 The capability catalog in human form: fused superpowers, hubs, groups, maps, audits, requirements and what this machine can run.
 
-`catalog` · 24 file(s) · planned folder `references/catalog/`
+`catalog` · 25 file(s) · planned folder `references/catalog/`
 
 - [references/superpowers.md](superpowers.md) · pinned (fixed path)
 - [references/hubs.md](hubs.md) · pinned (fixed path)
@@ -126,6 +126,7 @@ The capability catalog in human form: fused superpowers, hubs, groups, maps, aud
 - [references/superpowers-rea-map.html](superpowers-rea-map.html)
 - [references/github-top-1000.md](github-top-1000.md)
 - [references/github-pulse-30d.md](github-pulse-30d.md)
+- [references/100-superskills-integration.md](100-superskills-integration.md)
 - [references/agents-memory-reasoning-repos.md](agents-memory-reasoning-repos.md)
 
 ## 5. فصول القدرات المولّدة / Generated power chapters

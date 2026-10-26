@@ -16117,6 +16117,73 @@
       "evidence_note": "--self-test and evals/test_v58_mastery.py passed on 2026-10-26; the first real run (five advisor and five reviewer subagents, COUNCIL5_RUN) is in docs/protocol/council-20261026-smart-council.md."
     },
     {
+      "id": "superskills-bridge",
+      "path": "scripts/superskills_bridge.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "discover",
+      "title_en": "100-superskills bridge: find and open the 114 pinned skills of the 100-superskills submodule",
+      "title_ar": "جسر المهارات المئة: ابحث وافتح 114 مهارة مثبتة من وحدة 100-superskills",
+      "summary_en": "Read-only discovery over data/100-superskills-index.json (114 skills from kosif199022-jpg/100-superskills pinned as a git submodule under vendor/100-superskills). doctor reports how many skill files are present locally and the pinned commit; list, find (Arabic/English token ranking over names and descriptions), show and path print a skill's entry and local SKILL.md path. It never installs dependencies or runs a skill.",
+      "summary_ar": "بحث للقراءة فقط في فهرس 114 مهارة من مستودع 100-superskills المثبت كوحدة git: doctor يعد الملفات الموجودة محليًا، وfind يرتب بالكلمات العربية والإنجليزية، وshow وpath يعرضان المهارة ومسارها.",
+      "use_when": [
+        "دور لي في المهارات المئة على مهارة مونتاج",
+        "superskills find financial model",
+        "افتح مهارة kosif-mimic"
+      ],
+      "keywords": [
+        "superskills",
+        "100-superskills",
+        "skills",
+        "submodule",
+        "bridge",
+        "المهارات المئة",
+        "مهارات",
+        "جسر"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/superskills_bridge.py doctor",
+          "does": "Catalog count, local files present, pinned commit."
+        },
+        {
+          "name": "find",
+          "example": "python3 scripts/superskills_bridge.py find \"مونتاج فيديو عربي\"",
+          "does": "Rank skills for a task."
+        },
+        {
+          "name": "show",
+          "example": "python3 scripts/superskills_bridge.py show kosif-mimic",
+          "does": "One skill's entry and local path."
+        }
+      ],
+      "inputs": "data/100-superskills-index.json; optionally the vendor/100-superskills submodule (git submodule update --init --recursive)",
+      "outputs": "text to stdout",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "git"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "Reads the index and the submodule checkout; writes nothing.",
+      "limits": "Without the submodule checkout only the index is available (doctor shows 0 skill files); listing a skill does not install or verify it.",
+      "tests": [],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/100-superskills-integration.md"
+      ],
+      "families": [
+        "self-discovery",
+        "agent-orchestration"
+      ],
+      "evidence": "untested",
+      "evidence_note": "Added by PR #153; registered here so the tool registry check passes. doctor ran on 2026-10-26 without the submodule (114 cataloged, 0 local files)."
+    },
+    {
       "id": "github-pulse",
       "path": "scripts/github_pulse.py",
       "root": "skill",

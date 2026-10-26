@@ -74,6 +74,7 @@
 | `smart-capabilities` | TOOL-116 | فهرس ذكي للقدرات من أجل Claude · Smart capability index for Claude | `python3 scripts/smart_capabilities.py groups` | 1 |
 | `superpower-fusion` | TOOL-127 | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) | `python3 scripts/superpower_fusion.py build` | 1 |
 | `superpowers-unified` | TOOL-09 | موجّه مهارات العمل ومثبّتها · Process-skill router and installer | `python3 scripts/superpowers_unified.py doctor` | 1 |
+| `superskills-bridge` | — | جسر المهارات المئة: ابحث وافتح 114 مهارة مثبتة من وحدة 100-superskills · 100-superskills bridge: find and open the 114 pinned skills of the 100-superskills submodule | `python3 scripts/superskills_bridge.py doctor` | 0 |
 
 ## draw
 
