@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="scene" content="w=1080;h=1920;fps=30;dur=10">
+<title>{{TITLE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #0D1321; --bg2: #1D2D44; --ink: #F0EBD8; --accent: #F6C76B; --second: #748CAB; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #frame { position: absolute; left: 50%; top: 50%; width: 1080px; height: 1920px; transform-origin: 50% 50%; overflow: hidden; background: var(--bg); }
+  canvas { position: absolute; inset: 0; }
+  #bg { z-index: 1; } #main { z-index: 2; }
+  .ov { position: absolute; left: 0; right: 0; text-align: center; font-family: "Cairo", Tahoma, sans-serif; color: var(--ink); z-index: 3; }
+  #title { top: 14%; font-size: 96px; font-weight: 900; color: var(--accent); }
+</style>
+</head>
+<body>
+<div id="frame">
+  <canvas id="bg" width="1080" height="1920"></canvas>
+  <canvas id="main" width="1080" height="1920"></canvas>
+  <div id="title" class="ov">{{TITLE}}</div>
+</div>
+<script>
+// ── بيانات الصوت تُحمَّل متزامنة (الخط الزمني حتمي قبل التصوير) ─────────────────────────────
+// Option A: ضمّن audio-data.json هنا:  const AUDIO = {...};
+// Option B: XHR متزامن (يعمل عبر http(s)؛ عبر file:// استخدم A):
+function loadSync(url) { try { const x = new XMLHttpRequest(); x.open("GET", url, false); x.send(); return JSON.parse(x.responseText); } catch (e) { return null; } }
+const AUDIO = window.AUDIO_DATA || loadSync("audio-data.json") || { fps: 30, totalFrames: 300, bpm: 120, beats: [], frames: [] };
+const W = 1080, H = 1920, FPS = AUDIO.fps || 30, DUR = AUDIO.totalFrames ? AUDIO.totalFrames / FPS : 10;
+const capture = new URLSearchParams(location.search).has("capture");
+const bg = document.getElementById("bg").getContext("2d"), g = document.getElementById("main").getContext("2d");
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+
+// ── تنعيم حتمي: يُعاد حسابه من الصفر حتى الإطار المطلوب فلا يعتمد على ترتيب الاستدعاء ───
+const SMOOTH = 0.25;   // 0.1-0.2 حاد · 0.3-0.5 انسيابي
+const cache = [];
+function smoothFrame(f) {
+  if (!AUDIO.frames.length) return { rms: 0.3, bands: new Array(16).fill(0.3) };
+  if (cache[f]) return cache[f];
+  let s = null;
+  for (let i = (cache.length ? cache.length - 1 : 0); i <= f; i++) {
+    const raw = AUDIO.frames[Math.min(i, AUDIO.frames.length - 1)];
+    const p = cache[i - 1] || s;
+    s = p ? { rms: p.rms * SMOOTH + raw.rms * (1 - SMOOTH), bands: raw.bands.map((b, k) => p.bands[k] * SMOOTH + b * (1 - SMOOTH)) }
+          : { rms: raw.rms, bands: [...raw.bands] };
+    cache[i] = s;
+  }
+  return cache[f];
+}
+// نبضة قريبة؟ (للدفعات)
+function beatPulse(t) { let best = 0; for (const b of AUDIO.beats || []) { const d = t - b; if (d >= 0 && d < 0.35) best = Math.max(best, 1 - d / 0.35); } return best * best; }
+
+// ── render(t): قاعدة «2-3 خصائص فقط»: الباص → مقياس/توهج، التريبل → تفاصيل، RMS → سطوع الخلفية ───
+function render(t) {
+  t = clamp(t, 0, DUR);
+  const f = Math.min(Math.floor(t * FPS), Math.max(0, (AUDIO.totalFrames || 1) - 1));
+  const a = smoothFrame(f);
+  const bass = Math.max(0.15, (a.bands[0] + a.bands[1] + a.bands[2]) / 3);
+  const treble = Math.max(0.1, a.bands.slice(10).reduce((s, v) => s + v, 0) / Math.max(1, a.bands.length - 10));
+  const energy = Math.max(0.2, a.rms);
+  const pulse = beatPulse(t);
+
+  // الخلفية: توهج يتبع RMS
+  bg.clearRect(0, 0, W, H);
+  const grad = bg.createRadialGradient(W / 2, H * .45, 0, W / 2, H * .45, W * (.45 + .35 * energy));
+  grad.addColorStop(0, css("--second") + Math.round(60 + 120 * energy).toString(16).padStart(2, "0")); grad.addColorStop(1, "rgba(0,0,0,0)");
+  bg.fillStyle = grad; bg.fillRect(0, 0, W, H);
+
+  // الطبقة الأمامية: دائرة تتنفّس مع الباص + أعمدة للحزم (الباص في المنتصف، التريبل للأطراف)
+  g.clearRect(0, 0, W, H);
+  const R = 180 + 160 * bass + 60 * pulse;
+  g.shadowBlur = 40 + 80 * bass; g.shadowColor = css("--accent");
+  g.fillStyle = css("--accent"); g.beginPath(); g.arc(W / 2, H * .45, R, 0, 6.283); g.fill();
+  g.shadowBlur = 0;
+  const n = a.bands.length, bw = 44, gap = 14, total = n * (bw + gap) - gap, x0 = (W - total) / 2, base = H * .78;
+  for (let i = 0; i < n; i++) {
+    const v = Math.max(0.05, a.bands[i]);
+    const h = 40 + v * 420;
+    g.fillStyle = i < 4 ? css("--accent") : css("--ink");
+    g.globalAlpha = 0.55 + 0.45 * v;
+    g.fillRect(x0 + i * (bw + gap), base - h, bw, h);
+  }
+  g.globalAlpha = 1;
+  // التريبل → لمعان صغير حول الدائرة
+  g.strokeStyle = css("--ink"); g.lineWidth = 2 + 6 * treble; g.globalAlpha = 0.3 + 0.6 * treble;
+  g.beginPath(); g.arc(W / 2, H * .45, R + 28 + 20 * treble, 0, 6.283); g.stroke(); g.globalAlpha = 1;
+  document.getElementById("title").style.transform = `scale(${1 + 0.06 * pulse})`;
+}
+window.render = render;
+function fit() { const s = Math.min(innerWidth / W, innerHeight / H); document.getElementById("frame").style.transform = `translate(-50%,-50%) scale(${s})`; }
+addEventListener("resize", fit); fit();
+let playing = !capture, t0 = performance.now();
+addEventListener("click", () => { playing = !playing; t0 = performance.now(); });
+function loop(now) { if (playing) render(((now - t0) / 1000) % DUR); requestAnimationFrame(loop); }
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { render(0); window.__ready = true; if (!capture) requestAnimationFrame(loop); });
+</script>
+</body>
+</html>

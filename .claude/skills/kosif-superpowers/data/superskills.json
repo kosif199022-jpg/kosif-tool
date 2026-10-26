@@ -1,0 +1,3580 @@
+{
+ "schema": "kosif.superskills.v1",
+ "upstream": "https://github.com/kosif199022-jpg/100-superskills",
+ "upstream_commit": "af7a5dc3778c0e68ef935349a5c1650d15688277",
+ "count": 114,
+ "domains": [
+  {
+   "id": "motion",
+   "ar": "الحركة والأنيميشن",
+   "en": "Motion & Animation",
+   "count": 8
+  },
+  {
+   "id": "image-video",
+   "ar": "الصورة والفيديو والسينما",
+   "en": "Image, Video & Cinema",
+   "count": 17
+  },
+  {
+   "id": "prompts-ai",
+   "ar": "البرومبتات والذكاء الاصطناعي",
+   "en": "Prompts & AI",
+   "count": 10
+  },
+  {
+   "id": "office-data",
+   "ar": "أدوات Office والبيانات",
+   "en": "Office & Data",
+   "count": 15
+  },
+  {
+   "id": "web-code",
+   "ar": "تصميم المواقع والبرمجة",
+   "en": "Web Design & Programming",
+   "count": 25
+  },
+  {
+   "id": "business",
+   "ar": "الكتابة والصوت والأعمال والتعليم والقرار",
+   "en": "Writing, Audio, Business, Learning & Decisions",
+   "count": 25
+  },
+  {
+   "id": "ultra",
+   "ar": "الدفعة المتقدمة جداً",
+   "en": "Ultra-Advanced: Editing, Prompts, Motion & Excel",
+   "count": 8
+  },
+  {
+   "id": "pixel",
+   "ar": "الرسم بالبيكسل",
+   "en": "Pixel Drawing Studio",
+   "count": 1
+  },
+  {
+   "id": "hyperframes",
+   "ar": "الأنيميشن الاحترافي",
+   "en": "HyperFrames Animation Studio",
+   "count": 1
+  },
+  {
+   "id": "kosif-core",
+   "ar": "مهارات KOSIF الأساسية",
+   "en": "KOSIF core skills",
+   "count": 4
+  }
+ ],
+ "skills": [
+  {
+   "slug": "claude-animation-studio",
+   "n": "01",
+   "domain": "motion",
+   "title_ar": "استوديو الأنيميشن بكلاود",
+   "title_en": "Claude Animation Studio",
+   "description": "Claude Animation Studio. يصنع فيديو أنيميشن كامل داخل كلاود بلا أي برنامج مونتاج: من الفكرة إلى DESIGN.md وSTORYBOARD.md، ثم مشهد HTML بخط زمني حتمي render(t)، ثم تصوير الإطارات بـ Playwright وتجميعها بـ ffmpeg مع لوحة تحقق. يدعم 2D (SVG/Canvas) و3D (Three.js) وGSAP، وبنسب 9:16 و16:9 و1:1. Use when the user asks for 'animation', 'animated video', 'motion video', 'render frames', 'make an animation', or in Arabic «انميشن»، «أنيميشن»، «فيديو متحرك»، «موشن»، «حركة»، «اعمل فيديو». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "يصنع فيديو أنيميشن كامل داخل كلاود بلا أي برنامج مونتاج: من الفكرة إلى DESIGN.md وSTORYBOARD.md، ثم مشهد HTML بخط زمني حتمي render(t)، ثم تصوير الإطارات بـ Playwright وتجميعها بـ ffmpeg مع لوحة تحقق. يدعم 2D (SVG/Canvas) و3D (Three.js) وGSAP، وبنسب 9:16 و16:9 و1:1.",
+   "path": "vendor/100-superskills/skills/claude-animation-studio",
+   "files": 9,
+   "bytes": 62460,
+   "scripts": [
+    "scripts/capture.py",
+    "scripts/encode.py",
+    "scripts/new_scene.py",
+    "scripts/qa.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "gsap",
+    "awwwards-motion",
+    "hyperframes",
+    "remotion-maps",
+    "animate",
+    "9525-animate",
+    "remotion-best-practices",
+    "remotion-video-builder"
+   ],
+   "install": "python3 scripts/superskills.py install claude-animation-studio"
+  },
+  {
+   "slug": "trend-animation-styles",
+   "n": "02",
+   "domain": "motion",
+   "title_ar": "أساليب الأنيميشن الترند",
+   "title_en": "Trending Animation Styles",
+   "description": "Trending Animation Styles. مكتبة الأساليب الرائجة جاهزة للتنفيذ بكلاود: الكينتك تايبوغرافي، وموشن الواجهات الزجاجية، وLo-fi، والـ Paper cut-out، والـ Isometric، والـ Line-art الذي يرسم نفسه، والـ Data-in-motion، والـ Glitch/Neon، وأسلوب الوثائقيات التوضيحية. لكل أسلوب: لوحة ألوان وخط وقواعد حركة ومقتطف كود. Use when the user asks for 'trending animation style', 'kinetic typography', 'cut-out animation', 'isometric animation', 'line art animation', 'glitch', or in Arabic «ستايل انميشن»، «أسلوب ترند»، «انميشن زي»، «كينتك»، «تايبوغرافي متحركة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مكتبة الأساليب الرائجة جاهزة للتنفيذ بكلاود: الكينتك تايبوغرافي، وموشن الواجهات الزجاجية، وLo-fi، والـ Paper cut-out، والـ Isometric، والـ Line-art الذي يرسم نفسه، والـ Data-in-motion، والـ Glitch/Neon، وأسلوب الوثائقيات التوضيحية. لكل أسلوب: لوحة ألوان وخط وقواعد حركة ومقتطف كود.",
+   "path": "vendor/100-superskills/skills/trend-animation-styles",
+   "files": 3,
+   "bytes": 34174,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "kinetic-inflated-hero",
+    "awwwards-motion",
+    "web-typography",
+    "scrollytelling-and-parallax-data-visualization",
+    "top-design",
+    "scroll-blur-manifesto",
+    "design-tokens",
+    "design-tokens"
+   ],
+   "install": "python3 scripts/superskills.py install trend-animation-styles"
+  },
+  {
+   "slug": "kinetic-typography-arabic",
+   "n": "03",
+   "domain": "motion",
+   "title_ar": "تايبوغرافي عربية متحركة",
+   "title_en": "Arabic Kinetic Typography",
+   "description": "Arabic Kinetic Typography. فيديوهات كلمات متحركة بالعربية (اقتباسات، شعارات، أرقام، كلمات أغانٍ) مع خطوط عربية صحيحة واتجاه RTL وتشكيل سليم، وإيقاع يتبع الكلام أو الموسيقى، بإخراج 9:16 للريلز. Use when the user asks for 'arabic kinetic text', 'animated quote', 'lyric video', 'text animation rtl', or in Arabic «كلمات متحركة»، «اقتباس متحرك»، «نص متحرك»، «تايبوغرافي عربي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "فيديوهات كلمات متحركة بالعربية (اقتباسات، شعارات، أرقام، كلمات أغانٍ) مع خطوط عربية صحيحة واتجاه RTL وتشكيل سليم، وإيقاع يتبع الكلام أو الموسيقى، بإخراج 9:16 للريلز.",
+   "path": "vendor/100-superskills/skills/kinetic-typography-arabic",
+   "files": 2,
+   "bytes": 20906,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "web-typography",
+    "font-opt",
+    "kinetic-inflated-hero",
+    "captions",
+    "remotion-captions",
+    "geist",
+    "design-tokens",
+    "design-tokens"
+   ],
+   "install": "python3 scripts/superskills.py install kinetic-typography-arabic"
+  },
+  {
+   "slug": "character-animation-2d",
+   "n": "04",
+   "domain": "motion",
+   "title_ar": "تحريك الشخصيات 2D",
+   "title_en": "2D Character Animation",
+   "description": "2D Character Animation. شخصيات كرتونية متحركة داخل المتصفح: تصميم الشخصية بأجزاء (rig) من SVG، ودورات المشي والحديث والتعبيرات، ومبادئ الأنيميشن الاثني عشر (الضغط والتمدد، والتوقع، والمتابعة)، وتزامن الشفاه مع الصوت تقريبياً. Use when the user asks for 'character animation', 'cartoon character', 'walk cycle', 'lip sync', 'rig', or in Arabic «شخصية كرتونية»، «كرتون متحرك»، «تحريك شخصية»، «كارتون». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "شخصيات كرتونية متحركة داخل المتصفح: تصميم الشخصية بأجزاء (rig) من SVG، ودورات المشي والحديث والتعبيرات، ومبادئ الأنيميشن الاثني عشر (الضغط والتمدد، والتوقع، والمتابعة)، وتزامن الشفاه مع الصوت تقريبياً.",
+   "path": "vendor/100-superskills/skills/character-animation-2d",
+   "files": 2,
+   "bytes": 26393,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "9525-animate",
+    "9527-sprite",
+    "sprite-pipeline",
+    "akbun-draw-cartoon-b",
+    "animate",
+    "klingai-image-to-video",
+    "create-shared-ui",
+    "rust-bevy-asset-pipeline"
+   ],
+   "install": "python3 scripts/superskills.py install character-animation-2d"
+  },
+  {
+   "slug": "explainer-edu-animation",
+   "n": "05",
+   "domain": "motion",
+   "title_ar": "أنيميشن تعليمي توضيحي",
+   "title_en": "Explainer Animation",
+   "description": "Explainer Animation. فيديوهات شرح مبسّطة (علوم، تاريخ، اقتصاد، منتجات) بأسلوب مسطّح واضح: فكرة واحدة لكل مشهد، ورسوم تخطيطية تتحرك مع الشرح، وشريط مراحل، وتعليق صوتي مقترح، ودقة علمية مفحوصة. Use when the user asks for 'explainer video', 'educational animation', 'whiteboard animation', 'how it works video', or in Arabic «فيديو تعليمي»، «شرح متحرك»، «انميشن تعليمي»، «درس متحرك». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "فيديوهات شرح مبسّطة (علوم، تاريخ، اقتصاد، منتجات) بأسلوب مسطّح واضح: فكرة واحدة لكل مشهد، ورسوم تخطيطية تتحرك مع الشرح، وشريط مراحل، وتعليق صوتي مقترح، ودقة علمية مفحوصة.",
+   "path": "vendor/100-superskills/skills/explainer-edu-animation",
+   "files": 2,
+   "bytes": 20757,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT",
+    "WTFPL"
+   ],
+   "sources": [
+    "diagram",
+    "process-infographic",
+    "teaching-block-synthesized",
+    "engineer-design-diagram",
+    "9459-eli5",
+    "skill-teaching",
+    "diagram",
+    "explainer"
+   ],
+   "install": "python3 scripts/superskills.py install explainer-edu-animation"
+  },
+  {
+   "slug": "cinematic-3d-scene",
+   "n": "06",
+   "domain": "motion",
+   "title_ar": "مشهد سينمائي ثلاثي الأبعاد",
+   "title_en": "Cinematic 3D Scene",
+   "description": "Cinematic 3D Scene. مشاهد Three.js سينمائية داخل المتصفح: إضاءة فيزيائية، وBloom وتدرّج ألوان، وضباب وجسيمات، وشيدرات بسيطة، وحركات كاميرا (دخول بطيء، أوربت، كرين)، وبيئات (مدينة، صحراء، فضاء) جاهزة للتصوير إطاراً بإطار. Use when the user asks for 'three.js scene', 'webgl cinematic', '3d animation', 'shader', 'bloom', 'orbit camera', or in Arabic «ثري دي»، «3D»، «مشهد سينمائي»، «three.js»، «مدينة مستقبلية». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مشاهد Three.js سينمائية داخل المتصفح: إضاءة فيزيائية، وBloom وتدرّج ألوان، وضباب وجسيمات، وشيدرات بسيطة، وحركات كاميرا (دخول بطيء، أوربت، كرين)، وبيئات (مدينة، صحراء، فضاء) جاهزة للتصوير إطاراً بإطار.",
+   "path": "vendor/100-superskills/skills/cinematic-3d-scene",
+   "files": 2,
+   "bytes": 25750,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "webgpu-threejs-tsl",
+    "three-webgl-game",
+    "web-3d-asset-pipeline",
+    "awwwards-motion",
+    "threejs-data-visualization",
+    "thermal-finger-trail",
+    "substance-painter",
+    "blender"
+   ],
+   "install": "python3 scripts/superskills.py install cinematic-3d-scene"
+  },
+  {
+   "slug": "data-in-motion",
+   "n": "07",
+   "domain": "motion",
+   "title_ar": "بيانات متحركة",
+   "title_en": "Data in Motion",
+   "description": "Data in Motion. رسوم بيانية متحركة للفيديو والعروض: أعمدة تنمو، وخطوط ترسم نفسها، وأرقام تعدّ، وخرائط تضيء، مع قواعد الوضوح والصدق الإحصائي وتصميم ألوان متاح للجميع. Use when the user asks for 'animated chart', 'data animation', 'counter animation', 'animated infographic', 'dataviz video', or in Arabic «رسم بياني متحرك»، «ارقام متحركة»، «احصائيات فيديو»، «انفوجرافيك متحرك». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "رسوم بيانية متحركة للفيديو والعروض: أعمدة تنمو، وخطوط ترسم نفسها، وأرقام تعدّ، وخرائط تضيء، مع قواعد الوضوح والصدق الإحصائي وتصميم ألوان متاح للجميع.",
+   "path": "vendor/100-superskills/skills/data-in-motion",
+   "files": 2,
+   "bytes": 25864,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "d3-data-visualization",
+    "data-visualization",
+    "client-rendered-dashboard-data-blob",
+    "end-of-period-dashboard",
+    "helm-chart-builder",
+    "dashboard",
+    "executive-dashboard",
+    "lens-chart"
+   ],
+   "install": "python3 scripts/superskills.py install data-in-motion"
+  },
+  {
+   "slug": "ui-motion-microinteractions",
+   "n": "08",
+   "domain": "motion",
+   "title_ar": "موشن الواجهات والتفاعلات الدقيقة",
+   "title_en": "UI Motion & Microinteractions",
+   "description": "UI Motion & Microinteractions. حركة واجهات بمستوى الجوائز: أزرار وقوائم وانتقالات صفحات بفيزياء النوابض، وFramer Motion وGSAP وCSS، وتنسيق الظهور المتدرّج، واحترام prefers-reduced-motion. Use when the user asks for 'ui animation', 'microinteraction', 'framer motion', 'page transition', 'spring animation', 'scroll trigger', or in Arabic «حركة الواجهة»، «انيميشن للموقع»، «تأثيرات تفاعلية»، «hover». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "حركة واجهات بمستوى الجوائز: أزرار وقوائم وانتقالات صفحات بفيزياء النوابض، وFramer Motion وGSAP وCSS، وتنسيق الظهور المتدرّج، واحترام prefers-reduced-motion.",
+   "path": "vendor/100-superskills/skills/ui-motion-microinteractions",
+   "files": 2,
+   "bytes": 22556,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "scroll-blur-manifesto",
+    "spring-profile-config-overlay-dedupe",
+    "spring",
+    "create-spring-boot-java-project",
+    "enterprise-spring-xml",
+    "gsap",
+    "backlog-transition",
+    "backlog-transition"
+   ],
+   "install": "python3 scripts/superskills.py install ui-motion-microinteractions"
+  },
+  {
+   "slug": "image-prompt-forge",
+   "n": "09",
+   "domain": "image-video",
+   "title_ar": "مصنع برومبتات الصور",
+   "title_en": "Image Prompt Forge",
+   "description": "Image Prompt Forge. برومبت صورة احترافي من مواصفة واحدة إلى كل منصة: Midjourney (المعاملات)، وFlux (لغة طبيعية)، وSDXL (أوزان وسلبي)، وDALL·E/ChatGPT (قيود أولاً)، وIdeogram (نص مقتبس)، وNanoBanana، مع فحص بالأداة وقفل الشخصية والأسلوب والمكان. Use when the user asks for 'image prompt', 'midjourney prompt', 'flux prompt', 'stable diffusion prompt', 'dalle prompt', 'ideogram', or in Arabic «برومبت صورة»، «اكتب برومبت»، «ميدجورني»، «صورة بالذكاء الاصطناعي»، «برومبت احترافي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "برومبت صورة احترافي من مواصفة واحدة إلى كل منصة: Midjourney (المعاملات)، وFlux (لغة طبيعية)، وSDXL (أوزان وسلبي)، وDALL·E/ChatGPT (قيود أولاً)، وIdeogram (نص مقتبس)، وNanoBanana، مع فحص بالأداة وقفل الشخصية والأسلوب والمكان.",
+   "path": "vendor/100-superskills/skills/image-prompt-forge",
+   "files": 3,
+   "bytes": 33059,
+   "scripts": [
+    "scripts/image_prompt_forge.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "comfyui-layer",
+    "ideogram-core-workflow-b",
+    "comfyui",
+    "prompt-governance",
+    "ideogram-ci-integration",
+    "prompt-eval-and-regression",
+    "prompt-pattern-selection",
+    "comfyui-api"
+   ],
+   "install": "python3 scripts/superskills.py install image-prompt-forge"
+  },
+  {
+   "slug": "video-prompt-director",
+   "n": "10",
+   "domain": "image-video",
+   "title_ar": "مخرج برومبتات الفيديو",
+   "title_en": "Video Prompt Director",
+   "description": "Video Prompt Director. برومبتات فيديو لمنصات Veo وSora وKling وRunway وLuma وPika وHailuo: لقطة بلقطة مع حركة الكاميرا وسرعتها والعدسة والإضاءة وحركة البيئة والمدة ومعدل الإطارات، وإطار مفتاحي أول لثبات الهوية، وخطة تكرار اللقطات الفاشلة. Use when the user asks for 'video prompt', 'sora prompt', 'veo prompt', 'kling', 'runway gen', 'luma', or in Arabic «برومبت فيديو»، «سورا»، «فيو»، «كلينغ»، «فيديو بالذكاء الاصطناعي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "برومبتات فيديو لمنصات Veo وSora وKling وRunway وLuma وPika وHailuo: لقطة بلقطة مع حركة الكاميرا وسرعتها والعدسة والإضاءة وحركة البيئة والمدة ومعدل الإطارات، وإطار مفتاحي أول لثبات الهوية، وخطة تكرار اللقطات الفاشلة.",
+   "path": "vendor/100-superskills/skills/video-prompt-director",
+   "files": 4,
+   "bytes": 34602,
+   "scripts": [
+    "scripts/video_prompt_forge.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "runway-core-workflow-a",
+    "runway-core-workflow-b",
+    "klingai-image-to-video",
+    "klingai-text-to-video",
+    "video",
+    "cfo-advisor",
+    "video-gen",
+    "together-video"
+   ],
+   "install": "python3 scripts/superskills.py install video-prompt-director"
+  },
+  {
+   "slug": "cinema-director-7layers",
+   "n": "11",
+   "domain": "image-video",
+   "title_ar": "المخرج السينمائي (7 طبقات)",
+   "title_en": "Cinema Director",
+   "description": "Cinema Director. تصميم مشاهد بصرية بسبع طبقات: الهوية، والعالم، والفعل والفيزياء، والكاميرا والعدسة، والإضاءة، والمواد والجو، واللون والقصة، مع أوراق مرجعية 360° للشخصيات والأماكن واستمرارية بين اللقطات. Use when the user asks for 'cinematic scene', 'character sheet', 'shot continuity', 'film look', 'director', or in Arabic «اخراج»، «مشهد سينمائي»، «ورقة شخصية»، «استمرارية»، «شوت ليست». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تصميم مشاهد بصرية بسبع طبقات: الهوية، والعالم، والفعل والفيزياء، والكاميرا والعدسة، والإضاءة، والمواد والجو، واللون والقصة، مع أوراق مرجعية 360° للشخصيات والأماكن واستمرارية بين اللقطات.",
+   "path": "vendor/100-superskills/skills/cinema-director-7layers",
+   "files": 2,
+   "bytes": 21912,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "audit-agency-continuity",
+    "brand-film",
+    "creator-visual-director",
+    "frontend-design-director",
+    "narrated-product-film",
+    "revision-continuity",
+    "series-continuity",
+    "klingai-camera-control"
+   ],
+   "install": "python3 scripts/superskills.py install cinema-director-7layers"
+  },
+  {
+   "slug": "storyboard-shotlist",
+   "n": "12",
+   "domain": "image-video",
+   "title_ar": "الستوري بورد وقائمة اللقطات",
+   "title_en": "Storyboard & Shot List",
+   "description": "Storyboard & Shot List. يحوّل أي فكرة أو سكربت إلى بنية إيقاعية (خطّاف، تمهيد، تصعيد، ذروة، نداء) ثم قائمة لقطات مرقّمة بالأزمنة ونوع اللقطة والحركة والصوت والنص على الشاشة، ولوحات مصغّرة SVG لكل لقطة. Use when the user asks for 'storyboard', 'shot list', 'beat sheet', 'scene breakdown', or in Arabic «ستوري بورد»، «قائمة لقطات»، «تقسيم المشاهد»، «بيت شيت». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "يحوّل أي فكرة أو سكربت إلى بنية إيقاعية (خطّاف، تمهيد، تصعيد، ذروة، نداء) ثم قائمة لقطات مرقّمة بالأزمنة ونوع اللقطة والحركة والصوت والنص على الشاشة، ولوحات مصغّرة SVG لكل لقطة.",
+   "path": "vendor/100-superskills/skills/storyboard-shotlist",
+   "files": 2,
+   "bytes": 25744,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "video-content-strategist",
+    "creator-script-agent",
+    "video-content-strategist",
+    "video-script",
+    "9424-script-the-deterministic-work",
+    "interview-script",
+    "gws-script-push",
+    "gws-script"
+   ],
+   "install": "python3 scripts/superskills.py install storyboard-shotlist"
+  },
+  {
+   "slug": "brand-identity-logo",
+   "n": "13",
+   "domain": "image-video",
+   "title_ar": "الهوية البصرية والشعار",
+   "title_en": "Brand Identity & Logo",
+   "description": "Brand Identity & Logo. هوية كاملة من الصفر: شعار SVG متجه بثلاث نسخ (أساسي، أيقونة، أحادي)، ولوحة ألوان بأدوار وتباينات مفحوصة، وخطوط عربية ولاتينية متناغمة، ونبرة صوت، وقوالب سوشيال، ودليل استخدام من صفحة واحدة. Use when the user asks for 'logo', 'brand identity', 'brand guidelines', 'color palette', 'brand kit', or in Arabic «شعار»، «لوجو»، «هوية بصرية»، «براند»، «دليل الهوية». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "هوية كاملة من الصفر: شعار SVG متجه بثلاث نسخ (أساسي، أيقونة، أحادي)، ولوحة ألوان بأدوار وتباينات مفحوصة، وخطوط عربية ولاتينية متناغمة، ونبرة صوت، وقوالب سوشيال، ودليل استخدام من صفحة واحدة.",
+   "path": "vendor/100-superskills/skills/brand-identity-logo",
+   "files": 2,
+   "bytes": 25952,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "brand-guidelines",
+    "brand-book-assembly",
+    "generate-logo",
+    "brand-voice-and-messaging",
+    "brand-landingpage",
+    "form-brand",
+    "discover-brand",
+    "design-tokens"
+   ],
+   "install": "python3 scripts/superskills.py install brand-identity-logo"
+  },
+  {
+   "slug": "svg-illustration-icons",
+   "n": "14",
+   "domain": "image-video",
+   "title_ar": "الرسوم المتجهة والأيقونات",
+   "title_en": "SVG Illustration & Icons",
+   "description": "SVG Illustration & Icons. رسوم SVG نظيفة من الكود: أيقونات متناسقة بشبكة 24px، ورسوم مسطّحة للمواقع والعروض، وشخصيات بسيطة، وأنماط خلفية، وتحويلها إلى PNG بأحجام متعددة وإلى favicon كامل. Use when the user asks for 'svg icon', 'icon set', 'vector illustration', 'favicon', 'flat illustration', or in Arabic «ايقونة»، «أيقونات»، «رسم svg»، «رسمة»، «فافيكون». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "رسوم SVG نظيفة من الكود: أيقونات متناسقة بشبكة 24px، ورسوم مسطّحة للمواقع والعروض، وشخصيات بسيطة، وأنماط خلفية، وتحويلها إلى PNG بأحجام متعددة وإلى favicon كامل.",
+   "path": "vendor/100-superskills/skills/svg-illustration-icons",
+   "files": 2,
+   "bytes": 24794,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "BSD-3-Clause",
+    "MIT",
+    "MIT-0"
+   ],
+   "sources": [
+    "generate-favicon",
+    "akbun-draw-book-illustration",
+    "svg-figure",
+    "diagram",
+    "vector",
+    "engineer-design-diagram",
+    "blog-figure-svg",
+    "9527-sprite"
+   ],
+   "install": "python3 scripts/superskills.py install svg-illustration-icons"
+  },
+  {
+   "slug": "diagrams-mermaid-architecture",
+   "n": "15",
+   "domain": "image-video",
+   "title_ar": "المخططات والرسوم الهندسية",
+   "title_en": "Diagrams & Architecture Drawings",
+   "description": "Diagrams & Architecture Drawings. مخططات Mermaid وSVG لتدفقات العمل والمعماريات وقواعد البيانات والتسلسلات والخرائط الذهنية، بقواعد وضوح: اتجاه واحد، وتسميات فعلية، وألوان بأدوار، وتصدير PNG/SVG. Use when the user asks for 'diagram', 'mermaid', 'flowchart', 'sequence diagram', 'architecture diagram', 'mindmap', or in Arabic «مخطط»، «دياجرام»، «رسم توضيحي»، «خريطة ذهنية»، «مخطط معماري». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مخططات Mermaid وSVG لتدفقات العمل والمعماريات وقواعد البيانات والتسلسلات والخرائط الذهنية، بقواعد وضوح: اتجاه واحد، وتسميات فعلية، وألوان بأدوار، وتصدير PNG/SVG.",
+   "path": "vendor/100-superskills/skills/diagrams-mermaid-architecture",
+   "files": 2,
+   "bytes": 27276,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT",
+    "WTFPL"
+   ],
+   "sources": [
+    "ln-25-architecture-diagram-builder",
+    "diagram",
+    "architecture-diagram",
+    "mermaid-cli",
+    "aws-architecture-diagram",
+    "akbun-draw-architecture",
+    "9367-map-flow",
+    "html-diagram"
+   ],
+   "install": "python3 scripts/superskills.py install diagrams-mermaid-architecture"
+  },
+  {
+   "slug": "pixel-art-game-assets",
+   "n": "16",
+   "domain": "image-video",
+   "title_ar": "بكسل آرت وأصول الألعاب",
+   "title_en": "Pixel Art & Game Assets",
+   "description": "Pixel Art & Game Assets. سبرايتات بكسل آرت وورق حركة (مشي، قفز، هجوم) بأربع أو ثماني جهات، وبلاطات أرضية، وواجهات، ومؤثرات، بلوحة ألوان مقفلة ومولّد إجرائي بـ Python، ومخرجات لمحركات RPG Maker وGodot وPICO-8. Use when the user asks for 'pixel art', 'sprite sheet', 'tileset', 'game asset', '8-bit', 'walk cycle sprite', or in Arabic «بكسل ارت»، «سبرايت»، «لعبة بكسل»، «شخصية لعبة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "سبرايتات بكسل آرت وورق حركة (مشي، قفز، هجوم) بأربع أو ثماني جهات، وبلاطات أرضية، وواجهات، ومؤثرات، بلوحة ألوان مقفلة ومولّد إجرائي بـ Python، ومخرجات لمحركات RPG Maker وGodot وPICO-8.",
+   "path": "vendor/100-superskills/skills/pixel-art-game-assets",
+   "files": 2,
+   "bytes": 22490,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "9528-tileset",
+    "phaser-2d-game",
+    "9527-sprite",
+    "godot-gdscript-patterns",
+    "unity-ecs-patterns",
+    "godot-gdscript-patterns",
+    "unity-ecs-patterns",
+    "sprite-pipeline"
+   ],
+   "install": "python3 scripts/superskills.py install pixel-art-game-assets"
+  },
+  {
+   "slug": "thumbnail-social-graphics",
+   "n": "17",
+   "domain": "image-video",
+   "title_ar": "الصور المصغّرة وتصاميم السوشيال",
+   "title_en": "Thumbnails & Social Graphics",
+   "description": "Thumbnails & Social Graphics. صور مصغّرة ليوتيوب ومنشورات وستوريات وأغلفة بقواعد الجذب: وجه أو عنصر واحد كبير، وثلاث كلمات كحد أقصى، وتباين عالٍ، وتصميم بـ HTML/CSS يُصوَّر بدقة عالية، مع نسخ A/B. Use when the user asks for 'thumbnail', 'social post', 'story design', 'cover image', 'og image', or in Arabic «ثمبنيل»، «صورة مصغرة»، «غلاف»، «منشور»، «ستوري»، «بوست». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "صور مصغّرة ليوتيوب ومنشورات وستوريات وأغلفة بقواعد الجذب: وجه أو عنصر واحد كبير، وثلاث كلمات كحد أقصى، وتباين عالٍ، وتصميم بـ HTML/CSS يُصوَّر بدقة عالية، مع نسخ A/B.",
+   "path": "vendor/100-superskills/skills/thumbnail-social-graphics",
+   "files": 2,
+   "bytes": 28868,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT",
+    "WTFPL"
+   ],
+   "sources": [
+    "creator-thumbnail-agent",
+    "youtube-search",
+    "youtube-full",
+    "youtube-api",
+    "youtube-transcript",
+    "cover-image",
+    "youtube-packaging",
+    "akbun-thumbnail-review"
+   ],
+   "install": "python3 scripts/superskills.py install thumbnail-social-graphics"
+  },
+  {
+   "slug": "photo-lighting-plan",
+   "n": "18",
+   "domain": "image-video",
+   "title_ar": "تخطيط الإضاءة للصور والفيديو",
+   "title_en": "Lighting Plan",
+   "description": "Lighting Plan. خطة إضاءة لأي تصوير أو مشهد مولّد: الهدف العاطفي، ونسبة المفتاح إلى التعبئة، ونوع المصادر وأحجامها ومواضعها، وكلفن، والجِل، وإعدادات التعريض، ومخطط SVG من الأعلى، وتشخيص الإضاءة السيئة في صورة موجودة. Use when the user asks for 'lighting plan', 'three point lighting', 'key light', 'exposure', 'relight', or in Arabic «اضاءة»، «خطة اضاءة»، «تصوير بورتريه»، «اضاءة منتج». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "خطة إضاءة لأي تصوير أو مشهد مولّد: الهدف العاطفي، ونسبة المفتاح إلى التعبئة، ونوع المصادر وأحجامها ومواضعها، وكلفن، والجِل، وإعدادات التعريض، ومخطط SVG من الأعلى، وتشخيص الإضاءة السيئة في صورة موجودة.",
+   "path": "vendor/100-superskills/skills/photo-lighting-plan",
+   "files": 2,
+   "bytes": 28270,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "vibe-portrait",
+    "chronograph-look-through-exposure-scan",
+    "exposure-effect",
+    "exposure-onboarding",
+    "akbun-davinciresolve-exposure",
+    "design-fx-and-interest-rate-hedge",
+    "fbt-prep",
+    "fx-review"
+   ],
+   "install": "python3 scripts/superskills.py install photo-lighting-plan"
+  },
+  {
+   "slug": "image-critique-reverse-prompt",
+   "n": "19",
+   "domain": "image-video",
+   "title_ar": "نقد الصور واستخراج البرومبت",
+   "title_en": "Image Critique & Reverse Prompt",
+   "description": "Image Critique & Reverse Prompt. تحليل أي صورة: التكوين، والإضاءة، واللون، والحدة، وعيوب الذكاء الاصطناعي (أيدٍ، نص، تماثل)، وقراءة النص OCR، ودرجة من 100 بمعايير، ثم إعادة هندسة برومبت يعيد إنتاج الصورة أو يحسّنها. Use when the user asks for 'critique image', 'analyze image', 'reverse prompt', 'what is wrong with this image', 'image score', or in Arabic «حلل الصورة»، «قيم الصورة»، «ما مشكلة الصورة»، «استخرج البرومبت». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تحليل أي صورة: التكوين، والإضاءة، واللون، والحدة، وعيوب الذكاء الاصطناعي (أيدٍ، نص، تماثل)، وقراءة النص OCR، ودرجة من 100 بمعايير، ثم إعادة هندسة برومبت يعيد إنتاج الصورة أو يحسّنها.",
+   "path": "vendor/100-superskills/skills/image-critique-reverse-prompt",
+   "files": 2,
+   "bytes": 24994,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "vision-inference-optimization",
+    "processing-computer-vision-tasks",
+    "product-vision",
+    "vision-sft",
+    "vision-sft",
+    "pdf-ocr-adding",
+    "huggingface-vision-trainer",
+    "computer-vision-pipeline"
+   ],
+   "install": "python3 scripts/superskills.py install image-critique-reverse-prompt"
+  },
+  {
+   "slug": "ai-art-style-library",
+   "n": "20",
+   "domain": "image-video",
+   "title_ar": "مكتبة الأساليب الفنية للتوليد",
+   "title_en": "AI Art Style Library",
+   "description": "AI Art Style Library. قاموس أساليب لتوليد الصور والفيديو: سينمائي واقعي، وأنمي، وكلاي، وأكواريل، وخط حبر، وإيزومتريك، وسايبر، وفيلم 35mm قديم، ورسم أطفال؛ لكل أسلوب كلمات المفتاح والإضاءة والعدسة والسلبيات وما يجب تجنّبه قانونياً. Use when the user asks for 'art style', 'anime style', 'claymation', 'watercolor prompt', 'isometric', 'film look', or in Arabic «ستايل صورة»، «اسلوب فني»، «انمي»، «واقعي سينمائي»، «اكواريل». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قاموس أساليب لتوليد الصور والفيديو: سينمائي واقعي، وأنمي، وكلاي، وأكواريل، وخط حبر، وإيزومتريك، وسايبر، وفيلم 35mm قديم، ورسم أطفال؛ لكل أسلوب كلمات المفتاح والإضاءة والعدسة والسلبيات وما يجب تجنّبه قانونياً.",
+   "path": "vendor/100-superskills/skills/ai-art-style-library",
+   "files": 2,
+   "bytes": 21952,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "style-extractor",
+    "style-writer",
+    "adhd-output-style",
+    "prior-art",
+    "style-pack",
+    "art",
+    "lora-qlora-recipes",
+    "lora-qlora-recipes"
+   ],
+   "install": "python3 scripts/superskills.py install ai-art-style-library"
+  },
+  {
+   "slug": "product-photo-mockups",
+   "n": "21",
+   "domain": "image-video",
+   "title_ar": "صور المنتجات والموك-أب",
+   "title_en": "Product Photos & Mockups",
+   "description": "Product Photos & Mockups. صور منتجات للمتاجر والإعلانات: برومبتات استوديو بخلفية نظيفة أو مشهد حياة، وإضاءة منتج (softbox، gradient)، وزوايا قياسية، وموك-أب HTML/CSS للأجهزة والتغليف، وقواعد أمازون/نون للصور. Use when the user asks for 'product photo', 'mockup', 'packshot', 'ecommerce image', 'device mockup', or in Arabic «صورة منتج»، «موك اب»، «تصوير منتج»، «صور للمتجر». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "صور منتجات للمتاجر والإعلانات: برومبتات استوديو بخلفية نظيفة أو مشهد حياة، وإضاءة منتج (softbox، gradient)، وزوايا قياسية، وموك-أب HTML/CSS للأجهزة والتغليف، وقواعد أمازون/نون للصور.",
+   "path": "vendor/100-superskills/skills/product-photo-mockups",
+   "files": 2,
+   "bytes": 22462,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "product-catalog-management",
+    "catalog",
+    "seo-ecommerce",
+    "shopify-migration-deep-dive",
+    "shopify-admin",
+    "shopify-app-pricing",
+    "shopify-advanced-troubleshooting",
+    "brainstorm-product"
+   ],
+   "install": "python3 scripts/superskills.py install product-photo-mockups"
+  },
+  {
+   "slug": "comics-picture-books",
+   "n": "22",
+   "domain": "image-video",
+   "title_ar": "القصص المصوّرة وكتب الأطفال",
+   "title_en": "Comics & Picture Books",
+   "description": "Comics & Picture Books. قصص مصوّرة وكتب أطفال من السكربت إلى الصفحات: تقسيم الصفحات واللوحات، وسكربت كومكس بالحوار والصوت، وأوراق شخصيات ثابتة الهوية، وبرومبتات لكل لوحة بالأقفال، وتخطيط الصفحة بـ HTML للطباعة. Use when the user asks for 'comic script', 'picture book', 'graphic novel', 'manga page', 'panel layout', or in Arabic «قصة مصورة»، «كومكس»، «كتاب اطفال»، «مانجا». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قصص مصوّرة وكتب أطفال من السكربت إلى الصفحات: تقسيم الصفحات واللوحات، وسكربت كومكس بالحوار والصوت، وأوراق شخصيات ثابتة الهوية، وبرومبتات لكل لوحة بالأقفال، وتخطيط الصفحة بـ HTML للطباعة.",
+   "path": "vendor/100-superskills/skills/comics-picture-books",
+   "files": 2,
+   "bytes": 27372,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "reader-panel",
+    "story-init",
+    "panel",
+    "internal-narrative",
+    "game-story-world-character",
+    "akbun-draw-book-illustration",
+    "counter-narrative",
+    "narrative-landscape"
+   ],
+   "install": "python3 scripts/superskills.py install comics-picture-books"
+  },
+  {
+   "slug": "ad-creative-30s",
+   "n": "23",
+   "domain": "image-video",
+   "title_ar": "الإعلان الإبداعي 30 ثانية",
+   "title_en": "30-Second Ad Creative",
+   "description": "30-Second Ad Creative. إعلان كامل لمنتج أو خدمة: 3 خطّافات بديلة، وبنية مشكلة-حل-إثبات-نداء، وسكربت تعليق صوتي بالعامية أو الفصحى، وقائمة لقطات، وبرومبتات توليد، ونسخة أنيميشن قابلة للتنفيذ بكلاود. Use when the user asks for 'ad spot', '30 second ad', 'commercial script', 'product ad', 'ugc ad', or in Arabic «اعلان»، «اعلان 30 ثانية»، «سبوت»، «اعلان منتج». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "إعلان كامل لمنتج أو خدمة: 3 خطّافات بديلة، وبنية مشكلة-حل-إثبات-نداء، وسكربت تعليق صوتي بالعامية أو الفصحى، وقائمة لقطات، وبرومبتات توليد، ونسخة أنيميشن قابلة للتنفيذ بكلاود.",
+   "path": "vendor/100-superskills/skills/ad-creative-30s",
+   "files": 2,
+   "bytes": 25727,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "launch-ad-campaign",
+    "ad-creative",
+    "paid-advertising",
+    "codex-hook-wire-schema-from-binary",
+    "test-a-commit-blocking-hook",
+    "commercial-policy",
+    "commercial-skills",
+    "ad-creative"
+   ],
+   "install": "python3 scripts/superskills.py install ad-creative-30s"
+  },
+  {
+   "slug": "reels-shorts-factory",
+   "n": "24",
+   "domain": "image-video",
+   "title_ar": "مصنع الريلز والشورتس",
+   "title_en": "Reels & Shorts Factory",
+   "description": "Reels & Shorts Factory. محتوى عمودي قصير بكميات: أفكار من ركيزة المحتوى، وخطّاف في الثانية الأولى، وسكربت 45 ثانية، وترجمة مرئية كبيرة، وتصميم غلاف، وجدول نشر، وقالب أنيميشن عمودي جاهز. Use when the user asks for 'reels', 'shorts', 'tiktok', 'short form', 'vertical video', or in Arabic «ريلز»، «شورتس»، «تيك توك»، «فيديو قصير»، «محتوى يومي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "محتوى عمودي قصير بكميات: أفكار من ركيزة المحتوى، وخطّاف في الثانية الأولى، وسكربت 45 ثانية، وترجمة مرئية كبيرة، وتصميم غلاف، وجدول نشر، وقالب أنيميشن عمودي جاهز.",
+   "path": "vendor/100-superskills/skills/reels-shorts-factory",
+   "files": 2,
+   "bytes": 23723,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "story-reels",
+    "social-video-hooks",
+    "davinciresolve-youtube-shorts",
+    "block-no-verify-hook",
+    "block-no-verify-hook",
+    "captions",
+    "social",
+    "hook-creator"
+   ],
+   "install": "python3 scripts/superskills.py install reels-shorts-factory"
+  },
+  {
+   "slug": "video-editing-captions",
+   "n": "25",
+   "domain": "image-video",
+   "title_ar": "خطة المونتاج والترجمة",
+   "title_en": "Edit Plan & Captions",
+   "description": "Edit Plan & Captions. خطة مونتاج احترافية لأي فيديو: القطع على الإيقاع، والانتقالات بمعنى، وتدرّج الألوان، والصوت على −14 LUFS، وملفات ترجمة SRT/VTT بقواعد القراءة، وأوامر ffmpeg جاهزة للقص والدمج والحرق. Use when the user asks for 'edit plan', 'captions', 'subtitles', 'srt', 'ffmpeg', 'color grade', or in Arabic «مونتاج»، «ترجمة فيديو»، «سبتايتل»، «قص فيديو»، «ffmpeg». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "خطة مونتاج احترافية لأي فيديو: القطع على الإيقاع، والانتقالات بمعنى، وتدرّج الألوان، والصوت على −14 LUFS، وملفات ترجمة SRT/VTT بقواعد القراءة، وأوامر ffmpeg جاهزة للقص والدمج والحرق.",
+   "path": "vendor/100-superskills/skills/video-editing-captions",
+   "files": 2,
+   "bytes": 22639,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "captions",
+    "ffmpeg",
+    "subtitles",
+    "ffmpeg",
+    "remotion-captions",
+    "hyperframes",
+    "transcoding-and-abr-ladder",
+    "joined-audio-transcript-drift"
+   ],
+   "install": "python3 scripts/superskills.py install video-editing-captions"
+  },
+  {
+   "slug": "prompt-master-pro",
+   "n": "26",
+   "domain": "prompts-ai",
+   "title_ar": "سيّد البرومبتات الاحترافي",
+   "title_en": "Prompt Master Pro",
+   "description": "Prompt Master Pro. كتابة أي برومبت باحترافية ألف: يصطاد النقاط العمياء أولاً (المعلوم غير المذكور والمجهول غير المدرك)، ثم يبني البرومبت بصيغة الأقسام الثمانية (الدور، والسياق، والمهمة، والمدخلات، والقيود، وصيغة الإخراج، والحالات الحرجة، ومعيار الجودة)، ثم يفحصه بأداة linting بدرجة من 100، ثم يختبره على 3 حالات (عادية، حرجة، عدائية)، ويسلّم نسخة v1 مع نسختي A/B. Use when the user asks for 'write a prompt', 'improve this prompt', 'prompt engineering', 'system prompt', 'refine prompt', 'better prompt', or in Arabic «برومبت»، «اكتب لي برومبت»، «حسن البرومبت»، «موجه»، «برومبت احترافي»، «prompt». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "كتابة أي برومبت باحترافية ألف: يصطاد النقاط العمياء أولاً (المعلوم غير المذكور والمجهول غير المدرك)، ثم يبني البرومبت بصيغة الأقسام الثمانية (الدور، والسياق، والمهمة، والمدخلات، والقيود، وصيغة الإخراج، والحالات الحرجة، ومعيار الجودة)، ثم يفحصه بأداة linting بدرجة من 100، ثم يختبره على 3 حالات (عادية، حرجة، عدائية)، ويسلّم نسخة v1 مع نسختي A/B.",
+   "path": "vendor/100-superskills/skills/prompt-master-pro",
+   "files": 6,
+   "bytes": 52914,
+   "scripts": [
+    "scripts/prompt_build.py",
+    "scripts/prompt_lint.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "prompt-engineering-patterns",
+    "prompt-engineering-patterns",
+    "enrich-prompt",
+    "prompt-pattern-selection",
+    "prompt-engineering",
+    "langchain-prompt-engineering",
+    "skill-meta-prompt",
+    "prompt-engineering"
+   ],
+   "install": "python3 scripts/superskills.py install prompt-master-pro"
+  },
+  {
+   "slug": "system-prompt-architect",
+   "n": "27",
+   "domain": "prompts-ai",
+   "title_ar": "مهندس برومبتات النظام",
+   "title_en": "System Prompt Architect",
+   "description": "System Prompt Architect. برومبتات نظام لمساعدين وGPTs مخصصة ومشاريع Claude: الشخصية والحدود والنبرة والأمثلة والرفض اللطيف وذاكرة السياق، مع ميزانية رموز لكل قسم وترتيب يراعي التخزين المؤقت وتأثير «المنتصف المفقود». Use when the user asks for 'system prompt', 'custom gpt instructions', 'assistant persona', 'project instructions', 'agent persona', or in Arabic «برومبت نظام»، «تعليمات GPT»، «شخصية المساعد»، «system prompt»، «تعليمات المشروع». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "برومبتات نظام لمساعدين وGPTs مخصصة ومشاريع Claude: الشخصية والحدود والنبرة والأمثلة والرفض اللطيف وذاكرة السياق، مع ميزانية رموز لكل قسم وترتيب يراعي التخزين المؤقت وتأثير «المنتصف المفقود».",
+   "path": "vendor/100-superskills/skills/system-prompt-architect",
+   "files": 2,
+   "bytes": 21999,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "persona-exec-assistant",
+    "persona-exec-assistant",
+    "grafana-assistant-cli",
+    "persona-ci-integration",
+    "persona-common-errors",
+    "assistant",
+    "guardrails",
+    "instructions-plugin"
+   ],
+   "install": "python3 scripts/superskills.py install system-prompt-architect"
+  },
+  {
+   "slug": "agent-tool-instructions",
+   "n": "28",
+   "domain": "prompts-ai",
+   "title_ar": "تعليمات الوكلاء والأدوات",
+   "title_en": "Agent & Tool Instructions",
+   "description": "Agent & Tool Instructions. برومبتات الوكلاء وأوصاف الأدوات وملفات SKILL.md وCLAUDE.md: الهدف، والأدوات المسموحة، وشرط التوقف، والميزانية، ونقاط التوقف البشرية، والشرط اللاحق المُثبِت للإنجاز؛ ولكل أداة: ماذا تفعل ومتى ومتى لا وكل بارامتر بنوعه ومثاله وآثاره الجانبية. Use when the user asks for 'agent prompt', 'tool description', 'skill file', 'claude.md', 'agent instructions', 'mcp tool description', or in Arabic «برومبت وكيل»، «وصف اداة»، «تعليمات agent»، «SKILL.md»، «CLAUDE.md»، «مهارة جديدة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "برومبتات الوكلاء وأوصاف الأدوات وملفات SKILL.md وCLAUDE.md: الهدف، والأدوات المسموحة، وشرط التوقف، والميزانية، ونقاط التوقف البشرية، والشرط اللاحق المُثبِت للإنجاز؛ ولكل أداة: ماذا تفعل ومتى ومتى لا وكل بارامتر بنوعه ومثاله وآثاره الجانبية.",
+   "path": "vendor/100-superskills/skills/agent-tool-instructions",
+   "files": 2,
+   "bytes": 25031,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "agent-host-skill-loading",
+    "setup-mcp-agent-analytics",
+    "agent-skill-init",
+    "agent-team-orchestration",
+    "agent-sync-check-workflow",
+    "agent-sync-generate-workflow",
+    "codex-subagent-codex-critique-workflow",
+    "codex-subagent-codex-implement-workflow"
+   ],
+   "install": "python3 scripts/superskills.py install agent-tool-instructions"
+  },
+  {
+   "slug": "structured-output-json",
+   "n": "29",
+   "domain": "prompts-ai",
+   "title_ar": "المخرجات المهيكلة JSON",
+   "title_en": "Structured Output & JSON",
+   "description": "Structured Output & JSON. إخراج قابل للتحليل برمجياً من أي نموذج: مخطط JSON Schema، واختيار آلية الإلزام (وضع JSON الأصلي، أو استدعاء أداة، أو نحو مقيّد، أو نص+محلّل)، ومسار تحليل-تحقق-إصلاح بمحاولات محدودة، وشكل الفشل والرفض و«لا أعرف». Use when the user asks for 'json output', 'structured output', 'json schema', 'extraction prompt', 'function calling output', 'parse llm output', or in Arabic «اخراج JSON»، «مخطط»، «schema»، «استخراج بيانات»، «output منظم». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "إخراج قابل للتحليل برمجياً من أي نموذج: مخطط JSON Schema، واختيار آلية الإلزام (وضع JSON الأصلي، أو استدعاء أداة، أو نحو مقيّد، أو نص+محلّل)، ومسار تحليل-تحقق-إصلاح بمحاولات محدودة، وشكل الفشل والرفض و«لا أعرف».",
+   "path": "vendor/100-superskills/skills/structured-output-json",
+   "files": 2,
+   "bytes": 22747,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "json-schema",
+    "structured-output-design",
+    "resilient-extraction-and-parsing",
+    "use-zod",
+    "mongodb-schema-design",
+    "schema-review",
+    "schema-markup",
+    "claude-json-mcp-migration-slice"
+   ],
+   "install": "python3 scripts/superskills.py install structured-output-json"
+  },
+  {
+   "slug": "llm-judge-evals",
+   "n": "30",
+   "domain": "prompts-ai",
+   "title_ar": "قاضي النماذج ومجموعات التقييم",
+   "title_en": "LLM Judge & Eval Suites",
+   "description": "LLM Judge & Eval Suites. تقييم أي ميزة ذكاء اصطناعي بأرقام: مواصفة المهمة، وطريقة التقييم (دقيق، قواعد، نموذج قاضٍ، بشري)، وقاضٍ بمعايير مسمّاة ومستويات مثبّتة لا «من 1 إلى 10»، ومعايرة على عينة بشرية، وفحص تحيزات الموضع والإطالة والتفضيل الذاتي، وبوابة شحن رقمية تُحدد قبل التشغيل. Use when the user asks for 'llm eval', 'judge prompt', 'evaluation suite', 'benchmark prompts', 'regression test prompts', 'rubric', or in Arabic «تقييم النموذج»، «اختبار البرومبت»، «eval»، «قياس الجودة»، «مقارنة نماذج». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تقييم أي ميزة ذكاء اصطناعي بأرقام: مواصفة المهمة، وطريقة التقييم (دقيق، قواعد، نموذج قاضٍ، بشري)، وقاضٍ بمعايير مسمّاة ومستويات مثبّتة لا «من 1 إلى 10»، ومعايرة على عينة بشرية، وفحص تحيزات الموضع والإطالة والتفضيل الذاتي، وبوابة شحن رقمية تُحدد قبل التشغيل.",
+   "path": "vendor/100-superskills/skills/llm-judge-evals",
+   "files": 2,
+   "bytes": 24788,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "prompt-eval-and-regression",
+    "eval-ladder",
+    "eval-regression",
+    "build-llm-judge",
+    "eval-harness-first",
+    "eval-harness-first",
+    "eval",
+    "audit-review-eval-validity"
+   ],
+   "install": "python3 scripts/superskills.py install llm-judge-evals"
+  },
+  {
+   "slug": "rag-knowledge-base",
+   "n": "31",
+   "domain": "prompts-ai",
+   "title_ar": "قاعدة المعرفة وRAG",
+   "title_en": "RAG & Knowledge Base",
+   "description": "RAG & Knowledge Base. بناء نظام أسئلة وأجوبة على ملفاتك: التقطيع بحسب البنية لا الطول فقط، والتضمين أو البحث النصي الكامل (FTS5 للعربية)، وإعادة الترتيب، وميزانية السياق، والإجابة بالاقتباس المباشر مع «ليس في المصدر» عند الغياب. Use when the user asks for 'rag', 'retrieval', 'knowledge base', 'chat with docs', 'embeddings', 'vector search', or in Arabic «ابحث في ملفاتي»، «قاعدة معرفة»، «RAG»، «اسأل الوثيقة»، «شات مع pdf». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "بناء نظام أسئلة وأجوبة على ملفاتك: التقطيع بحسب البنية لا الطول فقط، والتضمين أو البحث النصي الكامل (FTS5 للعربية)، وإعادة الترتيب، وميزانية السياق، والإجابة بالاقتباس المباشر مع «ليس في المصدر» عند الغياب.",
+   "path": "vendor/100-superskills/skills/rag-knowledge-base",
+   "files": 2,
+   "bytes": 23715,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "retrieval-review",
+    "rag-retrieval-audit",
+    "rag-audit-workflow",
+    "azuresql-db-rag",
+    "embedding-strategies",
+    "rag-implementation",
+    "embedding-strategies",
+    "rag-implementation"
+   ],
+   "install": "python3 scripts/superskills.py install rag-knowledge-base"
+  },
+  {
+   "slug": "prompt-injection-defense",
+   "n": "32",
+   "domain": "prompts-ai",
+   "title_ar": "الدفاع ضد حقن البرومبت",
+   "title_en": "Prompt Injection Defense",
+   "description": "Prompt Injection Defense. تأمين تطبيقات النماذج: تسوير المدخلات غير الموثوقة، وفصل الأوامر عن البيانات، وقوائم السماح للأدوات، ونقاط التوقف البشرية للأفعال الخطرة، واختبارات هجوم جاهزة (تجاوز، تسريب، إعادة توجيه)، وقواعد عدم تنفيذ تعليمات من محتوى مُلاحَظ. Use when the user asks for 'prompt injection', 'jailbreak defense', 'llm security', 'indirect injection', 'ai red team', or in Arabic «حقن برومبت»، «امان الذكاء الاصطناعي»، «جيلبريك»، «حماية البرومبت». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تأمين تطبيقات النماذج: تسوير المدخلات غير الموثوقة، وفصل الأوامر عن البيانات، وقوائم السماح للأدوات، ونقاط التوقف البشرية للأفعال الخطرة، واختبارات هجوم جاهزة (تجاوز، تسريب، إعادة توجيه)، وقواعد عدم تنفيذ تعليمات من محتوى مُلاحَظ.",
+   "path": "vendor/100-superskills/skills/prompt-injection-defense",
+   "files": 2,
+   "bytes": 24818,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "generating-security-audit-reports",
+    "finding-security-misconfigurations",
+    "checking-session-security",
+    "security-audit",
+    "security-requirement-extraction",
+    "scanning-api-security",
+    "auditing-wallet-security",
+    "scanning-database-security"
+   ],
+   "install": "python3 scripts/superskills.py install prompt-injection-defense"
+  },
+  {
+   "slug": "context-window-budget",
+   "n": "33",
+   "domain": "prompts-ai",
+   "title_ar": "ميزانية نافذة السياق",
+   "title_en": "Context Window Budget",
+   "description": "Context Window Budget. ما يدخل السياق وما لا يدخل: تصنيف كل مرشّح (ثابت، أو استرجاع عند الحاجة، أو تاريخ محادثة، أو أدوات)، وميزانية رموز لكل قسم، وترتيب يراعي التخزين المؤقت والمنتصف المفقود، وقاعدة إخلاء، وضغط التاريخ. Use when the user asks for 'context window', 'token budget', 'prompt caching', 'context engineering', 'compress history', 'lost in the middle', or in Arabic «السياق طويل»، «التوكنز»، «ضغط المحادثة»، «تكلفة النموذج»، «context». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "ما يدخل السياق وما لا يدخل: تصنيف كل مرشّح (ثابت، أو استرجاع عند الحاجة، أو تاريخ محادثة، أو أدوات)، وميزانية رموز لكل قسم، وترتيب يراعي التخزين المؤقت والمنتصف المفقود، وقاعدة إخلاء، وضغط التاريخ.",
+   "path": "vendor/100-superskills/skills/context-window-budget",
+   "files": 2,
+   "bytes": 24199,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "token-optimization",
+    "memory",
+    "tree-ring-memory",
+    "slack-app-token-rotation",
+    "tracking-token-launches",
+    "detecting-memory-leaks",
+    "memory-engineering",
+    "budget-memory-costs"
+   ],
+   "install": "python3 scripts/superskills.py install context-window-budget"
+  },
+  {
+   "slug": "few-shot-dataset-curation",
+   "n": "34",
+   "domain": "prompts-ai",
+   "title_ar": "تنسيق الأمثلة ومجموعات البيانات",
+   "title_en": "Few-Shot & Dataset Curation",
+   "description": "Few-Shot & Dataset Curation. أمثلة ومجموعات تدريب وتقييم عالية الجودة: اختيار الأمثلة المتنوعة المطابقة للصيغة تماماً، وتغطية الحالات الحرجة، وإزالة التكرار والتسرّب، وتوازن الفئات، وتنسيق JSONL لـ fine-tuning والتقييم، وبطاقة بيانات. Use when the user asks for 'few-shot examples', 'dataset curation', 'training data', 'jsonl dataset', 'fine-tune data', 'example selection', or in Arabic «امثلة للبرومبت»، «داتاسيت»، «بيانات تدريب»، «few shot»، «fine tuning». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "أمثلة ومجموعات تدريب وتقييم عالية الجودة: اختيار الأمثلة المتنوعة المطابقة للصيغة تماماً، وتغطية الحالات الحرجة، وإزالة التكرار والتسرّب، وتوازن الفئات، وتنسيق JSONL لـ fine-tuning والتقييم، وبطاقة بيانات.",
+   "path": "vendor/100-superskills/skills/few-shot-dataset-curation",
+   "files": 2,
+   "bytes": 21242,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "trace-to-training-data",
+    "trace-to-training-data",
+    "gcp-examples-expert",
+    "fine-tune",
+    "ai-evaluation-dataset",
+    "dataset-curation",
+    "dataset-curation",
+    "dataset-evaluation"
+   ],
+   "install": "python3 scripts/superskills.py install few-shot-dataset-curation"
+  },
+  {
+   "slug": "custom-gpt-claude-project",
+   "n": "35",
+   "domain": "prompts-ai",
+   "title_ar": "بناء GPT مخصص ومشروع Claude",
+   "title_en": "Custom GPT & Claude Project Builder",
+   "description": "Custom GPT & Claude Project Builder. يحوّل أي مهارة أو خبرة إلى مساعد قابل للنشر: تعليمات GPT (≤8000 حرف) مع ملفات معرفة وActions بـ OpenAPI، أو مشروع Claude بتعليمات ومهارات مرفوعة، مع مبادئ المحادثة، وأسئلة البداية، وخطة الاختبار. Use when the user asks for 'custom gpt', 'claude project', 'build an assistant', 'gpt actions', 'openapi action', 'chatbot persona', or in Arabic «GPT مخصص»، «مشروع كلاود»، «اعمل مساعد»، «بوت»، «custom gpt». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "يحوّل أي مهارة أو خبرة إلى مساعد قابل للنشر: تعليمات GPT (≤8000 حرف) مع ملفات معرفة وActions بـ OpenAPI، أو مشروع Claude بتعليمات ومهارات مرفوعة، مع مبادئ المحادثة، وأسئلة البداية، وخطة الاختبار.",
+   "path": "vendor/100-superskills/skills/custom-gpt-claude-project",
+   "files": 2,
+   "bytes": 25053,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "grafana-assistant-cli",
+    "actions-billing-usage",
+    "github-actions-auth-security",
+    "github-actions-startup-failure-triage",
+    "gh-actions-validator",
+    "assistant",
+    "openapi-gen",
+    "orpc-openapi"
+   ],
+   "install": "python3 scripts/superskills.py install custom-gpt-claude-project"
+  },
+  {
+   "slug": "excel-power-formulas",
+   "n": "36",
+   "domain": "office-data",
+   "title_ar": "إكسل: الصيغ والقوة",
+   "title_en": "Excel Power Formulas",
+   "description": "Excel Power Formulas. حل أي مشكلة إكسل: صيغ حديثة (XLOOKUP، FILTER، LET، LAMBDA، SUMIFS)، وجداول منظّمة، وتنسيق شرطي، والتحقق من البيانات، وتصحيح الأخطاء (#N/A و#REF)، ودعم العربية والتواريخ الهجرية، مع ملف .xlsx جاهز مولّد بـ openpyxl ومفحوص بإعادة الحساب. Use when the user asks for 'excel formula', 'spreadsheet', 'xlookup', 'sumifs', 'excel help', 'xlsx', or in Arabic «اكسل»، «صيغة اكسل»، «جدول اكسل»، «xlookup»، «دالة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "حل أي مشكلة إكسل: صيغ حديثة (XLOOKUP، FILTER، LET، LAMBDA، SUMIFS)، وجداول منظّمة، وتنسيق شرطي، والتحقق من البيانات، وتصحيح الأخطاء (#N/A و#REF)، ودعم العربية والتواريخ الهجرية، مع ملف .xlsx جاهز مولّد بـ openpyxl ومفحوص بإعادة الحساب.",
+   "path": "vendor/100-superskills/skills/excel-power-formulas",
+   "files": 4,
+   "bytes": 30121,
+   "scripts": [
+    "scripts/xlsx_check.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "excel-pivot-wizard",
+    "excel-dcf-modeler",
+    "render-xlsx",
+    "excel",
+    "adobe-anyexcel",
+    "google-sheets",
+    "spreadsheet",
+    "convert-file"
+   ],
+   "install": "python3 scripts/superskills.py install excel-power-formulas"
+  },
+  {
+   "slug": "excel-financial-models",
+   "n": "37",
+   "domain": "office-data",
+   "title_ar": "النماذج المالية في إكسل",
+   "title_en": "Excel Financial Models",
+   "description": "Excel Financial Models. نماذج مالية احترافية: التدفقات النقدية المخصومة (DCF)، والموازنة والتوقع، وتحليل التباين، وتحليل الحساسية بجداول البيانات، وقواعد التنسيق (أزرق للمدخلات، أسود للصيغ)، وفحص الاتساق (الميزانية تتوازن) بالكود. Use when the user asks for 'financial model', 'dcf', 'budget model', 'variance analysis', 'sensitivity table', 'forecast model', or in Arabic «نموذج مالي»، «DCF»، «موازنة»، «توقعات مالية»، «تحليل التباين». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "نماذج مالية احترافية: التدفقات النقدية المخصومة (DCF)، والموازنة والتوقع، وتحليل التباين، وتحليل الحساسية بجداول البيانات، وقواعد التنسيق (أزرق للمدخلات، أسود للصيغ)، وفحص الاتساق (الميزانية تتوازن) بالكود.",
+   "path": "vendor/100-superskills/skills/excel-financial-models",
+   "files": 2,
+   "bytes": 23499,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "excel-dcf-modeler",
+    "excel-lbo-modeler",
+    "dcf-valuation",
+    "chronograph-budget-vs-actuals-variance",
+    "cash-flow-snapshot",
+    "financial-analyst",
+    "excel",
+    "build-cash-forecast-and-liquidity-plan"
+   ],
+   "install": "python3 scripts/superskills.py install excel-financial-models"
+  },
+  {
+   "slug": "excel-data-cleaning-automation",
+   "n": "38",
+   "domain": "office-data",
+   "title_ar": "تنظيف البيانات وأتمتة إكسل",
+   "title_en": "Excel Data Cleaning & Automation",
+   "description": "Excel Data Cleaning & Automation. تحويل ملفات إكسل الفوضوية إلى بيانات نظيفة: إزالة التكرار، وتوحيد الأسماء والتواريخ والأرقام العربية/الإنجليزية، ودمج أوراق متعددة، وPower Query أو Python/pandas، وأتمتة التقارير الدورية بسكربت واحد قابل للتكرار. Use when the user asks for 'clean excel data', 'merge spreadsheets', 'dedupe', 'data cleaning', 'automate excel report', 'pandas excel', or in Arabic «نظف البيانات»، «دمج ملفات اكسل»، «تكرار»، «بيانات فوضوية»، «اتمتة اكسل». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تحويل ملفات إكسل الفوضوية إلى بيانات نظيفة: إزالة التكرار، وتوحيد الأسماء والتواريخ والأرقام العربية/الإنجليزية، ودمج أوراق متعددة، وPower Query أو Python/pandas، وأتمتة التقارير الدورية بسكربت واحد قابل للتكرار.",
+   "path": "vendor/100-superskills/skills/excel-data-cleaning-automation",
+   "files": 2,
+   "bytes": 26293,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "claude-code-plugin-release-automation",
+    "merge-main",
+    "gh-pr-merge-delete-branch-closes-dependent-pr",
+    "git-pr-merge-unblock",
+    "pr-amend-force-push-lost-to-racing-merge",
+    "merge-main",
+    "excel-dcf-modeler",
+    "excel-lbo-modeler"
+   ],
+   "install": "python3 scripts/superskills.py install excel-data-cleaning-automation"
+  },
+  {
+   "slug": "word-documents-pro",
+   "n": "39",
+   "domain": "office-data",
+   "title_ar": "مستندات وورد الاحترافية",
+   "title_en": "Word Documents Pro",
+   "description": "Word Documents Pro. مستندات Word كاملة التنسيق: أنماط عناوين، وجدول محتويات آلي، وترقيم، وجداول، وترويسات، واتجاه RTL صحيح للعربية مع خطوط مناسبة، وتعقّب التغييرات والتعليقات، وقوالب (تقرير، عقد، خطاب، سيرة) مولّدة بـ python-docx أو docx.js. Use when the user asks for 'word document', 'docx', 'format document', 'report template', 'letter template', 'track changes', or in Arabic «وورد»، «ملف وورد»، «تقرير وورد»، «docx»، «خطاب رسمي»، «تنسيق مستند». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مستندات Word كاملة التنسيق: أنماط عناوين، وجدول محتويات آلي، وترقيم، وجداول، وترويسات، واتجاه RTL صحيح للعربية مع خطوط مناسبة، وتعقّب التغييرات والتعليقات، وقوالب (تقرير، عقد، خطاب، سيرة) مولّدة بـ python-docx أو docx.js.",
+   "path": "vendor/100-superskills/skills/word-documents-pro",
+   "files": 2,
+   "bytes": 25447,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "infer-office",
+    "infer-report-structure",
+    "publish-report-board",
+    "dev-report",
+    "import-template",
+    "investigation-report",
+    "commit-report",
+    "report-upstream"
+   ],
+   "install": "python3 scripts/superskills.py install word-documents-pro"
+  },
+  {
+   "slug": "powerpoint-decks",
+   "n": "40",
+   "domain": "office-data",
+   "title_ar": "عروض باوربوينت",
+   "title_en": "PowerPoint Decks",
+   "description": "PowerPoint Decks. عروض تقديمية احترافية: بنية قصصية (مشكلة، رؤية، كيف، إثبات، طلب)، وشريحة واحدة لفكرة واحدة، وتصميم بشبكة وألوان الهوية، ورسوم بيانية صادقة، وملاحظات المتحدث، ومولّد pptx من Markdown مع فحص الفائض والتباين. Use when the user asks for 'powerpoint', 'slide deck', 'presentation', 'pptx', 'pitch deck slides', or in Arabic «بوربوينت»، «عرض تقديمي»، «شرائح»، «برزنتيشن»، «pptx». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "عروض تقديمية احترافية: بنية قصصية (مشكلة، رؤية، كيف، إثبات، طلب)، وشريحة واحدة لفكرة واحدة، وتصميم بشبكة وألوان الهوية، ورسوم بيانية صادقة، وملاحظات المتحدث، ومولّد pptx من Markdown مع فحص الفائض والتباين.",
+   "path": "vendor/100-superskills/skills/powerpoint-decks",
+   "files": 2,
+   "bytes": 23141,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "BSD-3-Clause",
+    "MIT"
+   ],
+   "sources": [
+    "pptx-deck-context",
+    "pptx-reference-deck-analysis",
+    "presentation-builder",
+    "create-presentation",
+    "edit-presentation",
+    "slides",
+    "html-deck",
+    "akbun-presentation-paper"
+   ],
+   "install": "python3 scripts/superskills.py install powerpoint-decks"
+  },
+  {
+   "slug": "google-workspace-automation",
+   "n": "41",
+   "domain": "office-data",
+   "title_ar": "أتمتة Google Workspace",
+   "title_en": "Google Workspace Automation",
+   "description": "Google Workspace Automation. أتمتة Sheets وDocs وSlides وDrive وGmail: صيغ Sheets المتقدمة (QUERY، ARRAYFORMULA، IMPORTRANGE)، وApps Script للمهام المتكررة، وقوالب Docs بحقول، وتنظيم Drive، وقواعد Gmail، مع احترام الصلاحيات ونقاط التأكيد قبل أي إرسال. Use when the user asks for 'google sheets', 'apps script', 'google docs template', 'drive organize', 'gmail filter', 'workspace automation', or in Arabic «جوجل شيت»، «google sheets»، «apps script»، «جوجل درايف»، «اتمتة جوجل». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "أتمتة Sheets وDocs وSlides وDrive وGmail: صيغ Sheets المتقدمة (QUERY، ARRAYFORMULA، IMPORTRANGE)، وApps Script للمهام المتكررة، وقوالب Docs بحقول، وتنظيم Drive، وقواعد Gmail، مع احترام الصلاحيات ونقاط التأكيد قبل أي إرسال.",
+   "path": "vendor/100-superskills/skills/google-workspace-automation",
+   "files": 2,
+   "bytes": 21210,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "google-workspace-cli",
+    "google-drive",
+    "gws-gmail-forward",
+    "gws-gmail-read",
+    "session-workspace",
+    "workspace-doctor",
+    "session-workspace",
+    "workspace-orchestrator"
+   ],
+   "install": "python3 scripts/superskills.py install google-workspace-automation"
+  },
+  {
+   "slug": "pdf-forms-reports",
+   "n": "42",
+   "domain": "office-data",
+   "title_ar": "ملفات PDF: النماذج والتقارير",
+   "title_en": "PDF Forms & Reports",
+   "description": "PDF Forms & Reports. كل ما يخص PDF: استخراج النص والجداول، وOCR للممسوح (عربي وإنجليزي)، وتعبئة النماذج، والدمج والتقسيم والضغط والعلامة المائية، وتوليد تقارير PDF مصمّمة من HTML بخطوط عربية صحيحة، والتوقيع والتشفير. Use when the user asks for 'pdf extract', 'merge pdf', 'fill pdf form', 'pdf report', 'ocr pdf', 'compress pdf', or in Arabic «pdf»، «استخرج من pdf»، «ادمج pdf»، «نموذج pdf»، «تقرير pdf»، «ocr». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "كل ما يخص PDF: استخراج النص والجداول، وOCR للممسوح (عربي وإنجليزي)، وتعبئة النماذج، والدمج والتقسيم والضغط والعلامة المائية، وتوليد تقارير PDF مصمّمة من HTML بخطوط عربية صحيحة، والتوقيع والتشفير.",
+   "path": "vendor/100-superskills/skills/pdf-forms-reports",
+   "files": 2,
+   "bytes": 25659,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "pdf-ocr-adding",
+    "pdf-report",
+    "pdf-xfa-extracting",
+    "audit-report",
+    "extracting-pdf",
+    "report-injection-guard",
+    "view-pdf",
+    "merge-main"
+   ],
+   "install": "python3 scripts/superskills.py install pdf-forms-reports"
+  },
+  {
+   "slug": "office-prompts-library",
+   "n": "43",
+   "domain": "office-data",
+   "title_ar": "مكتبة برومبتات أوفيس",
+   "title_en": "Office Prompts Library",
+   "description": "Office Prompts Library. برومبتات جاهزة ومُفحوصة لـ Copilot وChatGPT وClaude داخل إكسل ووورد وباوربوينت وأوتلوك: تلخيص التقارير، وشرح الصيغ، وتوليد الجداول، وإعادة صياغة الرسائل، وبنية العروض، مع متغيرات {{}} وتعليمات التنسيق والقيود، بالعربية والإنجليزية. Use when the user asks for 'excel prompt', 'word prompt', 'copilot prompt', 'office prompts', 'email rewrite prompt', 'powerpoint prompt', or in Arabic «برومبت اكسل»، «برومبت وورد»، «برومبت copilot»، «برومبتات اوفيس»، «برومبت ايميل». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "برومبتات جاهزة ومُفحوصة لـ Copilot وChatGPT وClaude داخل إكسل ووورد وباوربوينت وأوتلوك: تلخيص التقارير، وشرح الصيغ، وتوليد الجداول، وإعادة صياغة الرسائل، وبنية العروض، مع متغيرات {{}} وتعليمات التنسيق والقيود، بالعربية والإنجليزية.",
+   "path": "vendor/100-superskills/skills/office-prompts-library",
+   "files": 2,
+   "bytes": 22548,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "email-template-engineering",
+    "email-tmpl",
+    "copilot-agent-eval-harness",
+    "infer-office",
+    "resolve-copilot-pr-feedback",
+    "prompt-governance",
+    "prompt-eval-and-regression",
+    "prompt-pattern-selection"
+   ],
+   "install": "python3 scripts/superskills.py install office-prompts-library"
+  },
+  {
+   "slug": "dashboards-dataviz",
+   "n": "44",
+   "domain": "office-data",
+   "title_ar": "لوحات المعلومات والتصور البياني",
+   "title_en": "Dashboards & Data Visualization",
+   "description": "Dashboards & Data Visualization. لوحات معلومات ورسوم بيانية صادقة وأنيقة: اختيار الشكل من السؤال، ولوحة ألوان متاحة للجميع، ونفس النظام في الوضعين الفاتح والداكن، وبطاقات مؤشرات، وتفاعل (تلميحات، تصفية)، بـ HTML/Plotly/Chart.js أو Streamlit أو Excel. Use when the user asks for 'dashboard', 'chart', 'data visualization', 'kpi cards', 'plotly', 'streamlit dashboard', or in Arabic «لوحة معلومات»، «داشبورد»، «رسم بياني»، «تصور بيانات»، «مؤشرات». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "لوحات معلومات ورسوم بيانية صادقة وأنيقة: اختيار الشكل من السؤال، ولوحة ألوان متاحة للجميع، ونفس النظام في الوضعين الفاتح والداكن، وبطاقات مؤشرات، وتفاعل (تلميحات، تصفية)، بـ HTML/Plotly/Chart.js أو Streamlit أو Excel.",
+   "path": "vendor/100-superskills/skills/dashboards-dataviz",
+   "files": 2,
+   "bytes": 25741,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "kpi-dashboard-design",
+    "d3-data-visualization",
+    "gantt-chart-visualization",
+    "kpi-dashboard-design",
+    "dashboard-layout-review",
+    "analytics",
+    "lens-chart",
+    "health-report-dashboard"
+   ],
+   "install": "python3 scripts/superskills.py install dashboards-dataviz"
+  },
+  {
+   "slug": "sql-data-analysis",
+   "n": "45",
+   "domain": "office-data",
+   "title_ar": "SQL وتحليل البيانات",
+   "title_en": "SQL & Data Analysis",
+   "description": "SQL & Data Analysis. استعلامات SQL صحيحة وسريعة (PostgreSQL، MySQL، SQLite، BigQuery): من السؤال التجاري إلى CTEs واضحة، ودوال النوافذ، والفهارس، وشرح خطة التنفيذ، وتحليل بـ pandas مع كل رقم محسوب بالكود، وتقرير بالعربية. Use when the user asks for 'sql query', 'analyze data', 'window function', 'query optimization', 'pandas analysis', 'explain plan', or in Arabic «sql»، «استعلام»، «قاعدة بيانات»، «تحليل بيانات»، «كويري». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "استعلامات SQL صحيحة وسريعة (PostgreSQL، MySQL، SQLite، BigQuery): من السؤال التجاري إلى CTEs واضحة، ودوال النوافذ، والفهارس، وشرح خطة التنفيذ، وتحليل بـ pandas مع كل رقم محسوب بالكود، وتقرير بالعربية.",
+   "path": "vendor/100-superskills/skills/sql-data-analysis",
+   "files": 2,
+   "bytes": 25892,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "postgres-sql",
+    "sql-server-query",
+    "exploratory-data-analysis",
+    "write-query",
+    "ingesting-into-data-lake",
+    "ga4-data-api-query",
+    "validate-data",
+    "connecting-to-data-source"
+   ],
+   "install": "python3 scripts/superskills.py install sql-data-analysis"
+  },
+  {
+   "slug": "web-scraping-automation",
+   "n": "46",
+   "domain": "office-data",
+   "title_ar": "جمع البيانات من الويب",
+   "title_en": "Web Scraping & Automation",
+   "description": "Web Scraping & Automation. جمع بيانات عامة من المواقع باحترام الشروط: فحص robots وشروط الاستخدام، وPlaywright أو requests+BeautifulSoup، والترقيم والانتظار اللطيف، والتخزين في CSV/SQLite، وإعادة التشغيل من نقطة التوقف، والتوقف عند تسجيل الدخول وCAPTCHA. Use when the user asks for 'scrape', 'web scraping', 'crawl', 'extract data from website', 'playwright scraper', or in Arabic «اسحب بيانات»، «سكرابينج»، «جمع بيانات من موقع»، «scraping». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "جمع بيانات عامة من المواقع باحترام الشروط: فحص robots وشروط الاستخدام، وPlaywright أو requests+BeautifulSoup، والترقيم والانتظار اللطيف، والتخزين في CSV/SQLite، وإعادة التشغيل من نقطة التوقف، والتوقف عند تسجيل الدخول وCAPTCHA.",
+   "path": "vendor/100-superskills/skills/web-scraping-automation",
+   "files": 2,
+   "bytes": 24539,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT",
+    "MIT AND Apache-2.0"
+   ],
+   "sources": [
+    "playwright",
+    "286-browser-automation",
+    "313-browser-automation",
+    "340-browser-automation",
+    "agent-browser",
+    "9552-playwright",
+    "hermes-playwright-layer",
+    "agent-browser"
+   ],
+   "install": "python3 scripts/superskills.py install web-scraping-automation"
+  },
+  {
+   "slug": "notebooks-python-analysis",
+   "n": "47",
+   "domain": "office-data",
+   "title_ar": "دفاتر Python للتحليل",
+   "title_en": "Python Analysis Notebooks",
+   "description": "Python Analysis Notebooks. دفاتر Jupyter مرتبة للتحليل: تحميل وتنظيف واستكشاف ونمذجة بسيطة وتصور، بخلايا مسمّاة وبذور ثابتة وبيئة مثبّتة، وتصدير تقرير HTML/PDF، والتحويل إلى سكربت قابل للتشغيل. Use when the user asks for 'jupyter notebook', 'pandas analysis', 'eda', 'exploratory data analysis', 'python data', or in Arabic «jupyter»، «نوتبوك»، «تحليل بايثون»، «pandas»، «استكشاف بيانات». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "دفاتر Jupyter مرتبة للتحليل: تحميل وتنظيف واستكشاف ونمذجة بسيطة وتصور، بخلايا مسمّاة وبذور ثابتة وبيئة مثبّتة، وتصدير تقرير HTML/PDF، والتحويل إلى سكربت قابل للتشغيل.",
+   "path": "vendor/100-superskills/skills/notebooks-python-analysis",
+   "files": 2,
+   "bytes": 21477,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "jupyter-ml-notebook",
+    "jupyter-mcp",
+    "jupyter",
+    "macos-python-scripting",
+    "python-simple-scripts",
+    "python-guidelines",
+    "python-code-quality",
+    "python-development"
+   ],
+   "install": "python3 scripts/superskills.py install notebooks-python-analysis"
+  },
+  {
+   "slug": "forecasting-probability",
+   "n": "48",
+   "domain": "office-data",
+   "title_ar": "التوقع والاحتمالات",
+   "title_en": "Forecasting & Probability",
+   "description": "Forecasting & Probability. تقدير «ما احتمال؟» بطريقة منضبطة: معدلات الأساس، وتحديث بايزي، والقيمة المتوقعة، وفترات الثقة، والسلاسل الزمنية البسيطة، وتحليل الحساسية، مع كل رقم محسوب بالكود ومعايرة الثقة. Use when the user asks for 'how likely', 'forecast', 'probability', 'bayesian', 'expected value', 'time series forecast', or in Arabic «ما احتمال»، «توقع»، «احتمالية»، «تنبؤ»، «كم نسبة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تقدير «ما احتمال؟» بطريقة منضبطة: معدلات الأساس، وتحديث بايزي، والقيمة المتوقعة، وفترات الثقة، والسلاسل الزمنية البسيطة، وتحليل الحساسية، مع كل رقم محسوب بالكود ومعايرة الثقة.",
+   "path": "vendor/100-superskills/skills/forecasting-probability",
+   "files": 2,
+   "bytes": 21606,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "forecasting-time-series-data",
+    "forecast",
+    "build-forecast",
+    "chronograph-cashflow-forecast",
+    "churn-risk",
+    "risk-analysis",
+    "build-risk-based-audit-plan",
+    "build-cash-forecast-and-liquidity-plan"
+   ],
+   "install": "python3 scripts/superskills.py install forecasting-probability"
+  },
+  {
+   "slug": "ab-testing-experiments",
+   "n": "49",
+   "domain": "office-data",
+   "title_ar": "اختبارات A/B والتجارب",
+   "title_en": "A/B Testing & Experiments",
+   "description": "A/B Testing & Experiments. تصميم وتحليل التجارب: الفرضية والمقياس الأساسي، وحجم العينة بالقوة الإحصائية، والتوزيع العشوائي، ومدة التجربة، والتحليل (الفرق، وفترة الثقة، وp-value أو بايزي)، وأخطاء النظر المتكرر والمقاييس المتعددة. Use when the user asks for 'a/b test', 'experiment design', 'sample size', 'statistical significance', 'conversion test', or in Arabic «اختبار A/B»، «تجربة»، «حجم العينة»، «هل الفرق معنوي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تصميم وتحليل التجارب: الفرضية والمقياس الأساسي، وحجم العينة بالقوة الإحصائية، والتوزيع العشوائي، ومدة التجربة، والتحليل (الفرق، وفترة الثقة، وp-value أو بايزي)، وأخطاء النظر المتكرر والمقاييس المتعددة.",
+   "path": "vendor/100-superskills/skills/ab-testing-experiments",
+   "files": 2,
+   "bytes": 25827,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "experiment-analysis",
+    "setting-up-experiment-tracking",
+    "oss-contribution-shape-by-conversion-rate",
+    "surge-experiment",
+    "surge-experiment",
+    "diagnosing-experiment-results",
+    "run-chaos-experiment",
+    "ui5-typescript-conversion"
+   ],
+   "install": "python3 scripts/superskills.py install ab-testing-experiments"
+  },
+  {
+   "slug": "research-deep-citations",
+   "n": "50",
+   "domain": "office-data",
+   "title_ar": "البحث العميق بالمصادر",
+   "title_en": "Deep Research with Citations",
+   "description": "Deep Research with Citations. بحث متعدد المصادر على أي موضوع: مصادر أولية بتواريخ، واقتباسات مباشرة، وأدلة متضاربة جنباً إلى جنب، وتصنيف كل ادعاء (مدعوم، متناقض، غير قابل للتحقق)، وملخص تنفيذي بالعربية مع قائمة مراجع. Use when the user asks for 'research', 'deep dive', 'sources', 'cite', 'literature review', 'fact check', or in Arabic «ابحث عن»، «بحث معمق»، «مصادر»، «ادلة»، «دراسة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "بحث متعدد المصادر على أي موضوع: مصادر أولية بتواريخ، واقتباسات مباشرة، وأدلة متضاربة جنباً إلى جنب، وتصنيف كل ادعاء (مدعوم، متناقض، غير قابل للتحقق)، وملخص تنفيذي بالعربية مع قائمة مراجع.",
+   "path": "vendor/100-superskills/skills/research-deep-citations",
+   "files": 2,
+   "bytes": 25169,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "research-writing-literature",
+    "research-verify",
+    "13208-research-verify",
+    "deep-research",
+    "9413-do-your-research-deep",
+    "analytics-verify",
+    "research",
+    "citation-management"
+   ],
+   "install": "python3 scripts/superskills.py install research-deep-citations"
+  },
+  {
+   "slug": "landing-page-premium",
+   "n": "51",
+   "domain": "web-code",
+   "title_ar": "صفحة الهبوط الفاخرة",
+   "title_en": "Premium Landing Page",
+   "description": "Premium Landing Page. صفحة هبوط من ملف HTML واحد بمستوى الجوائز: استبيان إجباري من 4 أسئلة (المنتج والوعد، والجمهور، والهوية، والنبرة)، ثم نسخة إقناعية، وتصميم بحركة GSAP وعمق بارالاكس، وتوافق جوال وRTL، وSEO وأداء، وتصوير للتحقق. Use when the user asks for 'landing page', 'sales page', 'one-pager', 'product page', 'promo page', or in Arabic «صفحة هبوط»، «لاندنج»، «موقع لمنتج»، «صفحة بيع»، «صفحة تعريفية». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "صفحة هبوط من ملف HTML واحد بمستوى الجوائز: استبيان إجباري من 4 أسئلة (المنتج والوعد، والجمهور، والهوية، والنبرة)، ثم نسخة إقناعية، وتصميم بحركة GSAP وعمق بارالاكس، وتوافق جوال وRTL، وSEO وأداء، وتصوير للتحقق.",
+   "path": "vendor/100-superskills/skills/landing-page-premium",
+   "files": 2,
+   "bytes": 27625,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "landing-page-generator",
+    "landing-page-audit",
+    "visual-html-renderer",
+    "oss-contribution-shape-by-conversion-rate",
+    "tailwind-best-practices",
+    "markdown-html-orchestrator",
+    "generate-html",
+    "marketing-site"
+   ],
+   "install": "python3 scripts/superskills.py install landing-page-premium"
+  },
+  {
+   "slug": "website-design-system",
+   "n": "52",
+   "domain": "web-code",
+   "title_ar": "تصميم المواقع ونظام التصميم",
+   "title_en": "Website & Design System",
+   "description": "Website & Design System. تصميم موقع كامل من الهوية إلى المكوّنات: رموز التصميم (ألوان، ومسافات، وخطوط عربية ولاتينية)، والوضع الداكن، والشبكة، والمكوّنات (أزرار، ونماذج، وبطاقات، وتنقّل)، وRTL أصلي، وصفحات نموذجية، ووثيقة نظام التصميم. Use when the user asks for 'design a website', 'design system', 'ui kit', 'design tokens', 'dark mode', 'rtl website', or in Arabic «صمم موقع»، «تصميم ويب»، «نظام تصميم»، «واجهة الموقع»، «قالب موقع». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تصميم موقع كامل من الهوية إلى المكوّنات: رموز التصميم (ألوان، ومسافات، وخطوط عربية ولاتينية)، والوضع الداكن، والشبكة، والمكوّنات (أزرار، ونماذج، وبطاقات، وتنقّل)، وRTL أصلي، وصفحات نموذجية، ووثيقة نظام التصميم.",
+   "path": "vendor/100-superskills/skills/website-design-system",
+   "files": 2,
+   "bytes": 24493,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "tailwind-design-system",
+    "tailwind-design-system",
+    "tailwind-best-practices",
+    "ui-design-system",
+    "nuxt-ui",
+    "nuxt-ui",
+    "ui-designer/design-system",
+    "ui-designer/design-system"
+   ],
+   "install": "python3 scripts/superskills.py install website-design-system"
+  },
+  {
+   "slug": "frontend-react-app",
+   "n": "53",
+   "domain": "web-code",
+   "title_ar": "تطبيق واجهة React",
+   "title_en": "React Frontend App",
+   "description": "React Frontend App. تطبيقات واجهة حديثة بـ React/Next.js أو Vue: بنية مجلدات واضحة، وإدارة حالة بسيطة، وجلب بيانات مع التحميل والخطأ، ونماذج مع تحقق، ومسارات، وTypeScript، واختبارات مكوّنات، وتحقق في متصفح حقيقي. Use when the user asks for 'react app', 'next.js', 'frontend', 'component', 'vue app', 'typescript ui', or in Arabic «react»، «next.js»، «تطبيق ويب»، «واجهة»، «vue»، «frontend». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تطبيقات واجهة حديثة بـ React/Next.js أو Vue: بنية مجلدات واضحة، وإدارة حالة بسيطة، وجلب بيانات مع التحميل والخطأ، ونماذج مع تحقق، ومسارات، وTypeScript، واختبارات مكوّنات، وتحقق في متصفح حقيقي.",
+   "path": "vendor/100-superskills/skills/frontend-react-app",
+   "files": 2,
+   "bytes": 23492,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "react-state-management",
+    "react-state-management",
+    "react-component",
+    "react-component-craft",
+    "create-react-component",
+    "react-component-convention",
+    "react-refactor-component",
+    "review-frontend-workflow"
+   ],
+   "install": "python3 scripts/superskills.py install frontend-react-app"
+  },
+  {
+   "slug": "backend-api-design",
+   "n": "54",
+   "domain": "web-code",
+   "title_ar": "تصميم الواجهات الخلفية وAPI",
+   "title_en": "Backend & API Design",
+   "description": "Backend & API Design. واجهات API متينة (REST أو GraphQL): مواصفة OpenAPI أولاً، وتسمية موارد متسقة، وترقيم الصفحات، والأخطاء الموحّدة، والمصادقة، والحدود، والإصدارات، وتنفيذ بـ Node/Python/Workers مع اختبارات تكامل وتوثيق تلقائي. Use when the user asks for 'api design', 'rest api', 'backend', 'openapi', 'graphql', 'endpoint', or in Arabic «api»، «باك اند»، «خادم»، «rest»، «واجهة برمجية»، «endpoint». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "واجهات API متينة (REST أو GraphQL): مواصفة OpenAPI أولاً، وتسمية موارد متسقة، وترقيم الصفحات، والأخطاء الموحّدة، والمصادقة، والحدود، والإصدارات، وتنفيذ بـ Node/Python/Workers مع اختبارات تكامل وتوثيق تلقائي.",
+   "path": "vendor/100-superskills/skills/backend-api-design",
+   "files": 2,
+   "bytes": 25818,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "building-graphql-server",
+    "backend-dev",
+    "api-plugin-openapi-hygiene",
+    "aws-http-server-on-lambda-web-adapter",
+    "fastapi-app",
+    "backend/api-development",
+    "backend/api-development",
+    "generating-rest-apis"
+   ],
+   "install": "python3 scripts/superskills.py install backend-api-design"
+  },
+  {
+   "slug": "database-schema-migrations",
+   "n": "55",
+   "domain": "web-code",
+   "title_ar": "مخطط قاعدة البيانات والترحيلات",
+   "title_en": "Database Schema & Migrations",
+   "description": "Database Schema & Migrations. تصميم قواعد بيانات صحيحة: الكيانات والعلاقات، والتطبيع 3NF مع تطبيع عكسي مبرّر، والأنواع الدقيقة (NUMERIC للمال، TIMESTAMPTZ)، والفهارس من أنماط الاستعلام، والقيود، وترحيلات قابلة للتراجع، ومخطط ERD. Use when the user asks for 'database schema', 'migration', 'erd', 'normalize', 'postgres schema', 'prisma schema', or in Arabic «قاعدة بيانات»، «مخطط جداول»، «migration»، «erd»، «تصميم جداول». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تصميم قواعد بيانات صحيحة: الكيانات والعلاقات، والتطبيع 3NF مع تطبيع عكسي مبرّر، والأنواع الدقيقة (NUMERIC للمال، TIMESTAMPTZ)، والفهارس من أنماط الاستعلام، والقيود، وترحيلات قابلة للتراجع، ومخطط ERD.",
+   "path": "vendor/100-superskills/skills/database-schema-migrations",
+   "files": 2,
+   "bytes": 25942,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT",
+    "WTFPL"
+   ],
+   "sources": [
+    "prisma-database-setup",
+    "prisma-database-setup",
+    "azuresql-db-schema-migration",
+    "prisma-schema",
+    "database-migration",
+    "database-migration",
+    "schema-review",
+    "designing-database-schemas"
+   ],
+   "install": "python3 scripts/superskills.py install database-schema-migrations"
+  },
+  {
+   "slug": "fullstack-saas-starter",
+   "n": "56",
+   "domain": "web-code",
+   "title_ar": "منصة SaaS كاملة",
+   "title_en": "Full-Stack SaaS Starter",
+   "description": "Full-Stack SaaS Starter. تطبيق SaaS كامل من الصفر: مصادقة، ومستأجرون متعددون، ولوحة تحكم، وفوترة (وضع الاختبار)، وبريد، ولوجات، وتهيئة نشر على Cloudflare أو Vercel، مع قائمة الإطلاق والأمان. Use when the user asks for 'saas', 'full stack app', 'multi-tenant', 'subscription app', 'starter kit', 'web app from scratch', or in Arabic «ساس»، «تطبيق متكامل»، «منصة»، «اشتراكات»، «نظام كامل». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تطبيق SaaS كامل من الصفر: مصادقة، ومستأجرون متعددون، ولوحة تحكم، وفوترة (وضع الاختبار)، وبريد، ولوجات، وتهيئة نشر على Cloudflare أو Vercel، مع قائمة الإطلاق والأمان.",
+   "path": "vendor/100-superskills/skills/fullstack-saas-starter",
+   "files": 2,
+   "bytes": 25829,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "supabase-auth-storage-realtime-core",
+    "supabase-deploy-integration",
+    "supabase-js",
+    "stripe-developer",
+    "supabase",
+    "saas-scaffolder",
+    "supabase",
+    "supabase"
+   ],
+   "install": "python3 scripts/superskills.py install fullstack-saas-starter"
+  },
+  {
+   "slug": "mobile-app-builder",
+   "n": "57",
+   "domain": "web-code",
+   "title_ar": "تطبيقات الجوال",
+   "title_en": "Mobile App Builder",
+   "description": "Mobile App Builder. تطبيقات جوال بـ Flutter أو React Native/Expo: الشاشات من رحلة المستخدم، والتنقّل، والحالة، والتخزين المحلي، والإشعارات، ودعم العربية وRTL والخطوط، وبناء APK/IPA اختباري، وقائمة متطلبات المتاجر. Use when the user asks for 'mobile app', 'flutter', 'react native', 'expo', 'android app', 'ios app', or in Arabic «تطبيق جوال»، «تطبيق اندرويد»، «ايفون»، «flutter»، «react native». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تطبيقات جوال بـ Flutter أو React Native/Expo: الشاشات من رحلة المستخدم، والتنقّل، والحالة، والتخزين المحلي، والإشعارات، ودعم العربية وRTL والخطوط، وبناء APK/IPA اختباري، وقائمة متطلبات المتاجر.",
+   "path": "vendor/100-superskills/skills/mobile-app-builder",
+   "files": 2,
+   "bytes": 24269,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "reverse-engineer-react-native-hermes-app",
+    "flutter-app",
+    "expo-ui-swift-ui",
+    "ios-app-intents",
+    "android-design",
+    "android-design",
+    "testing-mobile-apps",
+    "form-mobile"
+   ],
+   "install": "python3 scripts/superskills.py install mobile-app-builder"
+  },
+  {
+   "slug": "cloudflare-edge-deploy",
+   "n": "58",
+   "domain": "web-code",
+   "title_ar": "النشر على Cloudflare والحافة",
+   "title_en": "Cloudflare & Edge Deployment",
+   "description": "Cloudflare & Edge Deployment. Workers وPages وD1 وKV وR2 وQueues: من wrangler.toml إلى النشر، مع الأسرار في متغيرات البيئة، والنطاقات، والتخزين المؤقت، والحدود، والسجلات، وبيئة معاينة قبل الإنتاج، وتجربة جافة قبل أي نشر. Use when the user asks for 'cloudflare workers', 'cloudflare pages', 'wrangler', 'd1 database', 'edge function', 'deploy to cloudflare', or in Arabic «cloudflare»، «workers»، «pages»، «انشر الموقع»، «d1»، «wrangler». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "Workers وPages وD1 وKV وR2 وQueues: من wrangler.toml إلى النشر، مع الأسرار في متغيرات البيئة، والنطاقات، والتخزين المؤقت، والحدود، والسجلات، وبيئة معاينة قبل الإنتاج، وتجربة جافة قبل أي نشر.",
+   "path": "vendor/100-superskills/skills/cloudflare-edge-deploy",
+   "files": 2,
+   "bytes": 25602,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "wrangler",
+    "wrangler",
+    "cloudflare",
+    "cloudflare",
+    "cloudflare-deploy",
+    "nextjs-on-cloudflare",
+    "wrangler",
+    "aws-serverless-deployment"
+   ],
+   "install": "python3 scripts/superskills.py install cloudflare-edge-deploy"
+  },
+  {
+   "slug": "docker-ci-devops",
+   "n": "59",
+   "domain": "web-code",
+   "title_ar": "Docker وCI/CD",
+   "title_en": "Docker & CI/CD",
+   "description": "Docker & CI/CD. حاوية ونشر مستمر لأي مشروع: Dockerfile متعدد المراحل صغير وآمن، وdocker-compose للتطوير، وGitHub Actions (فحص، اختبار، بناء، نشر) مع تخزين مؤقت وأسرار، وإصدارات دلالية، وتجارب جافة قبل أي دفع. Use when the user asks for 'dockerfile', 'docker compose', 'ci/cd', 'github actions', 'pipeline', 'containerize', or in Arabic «docker»، «دوكر»، «ci»، «github actions»، «نشر تلقائي»، «pipeline». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "حاوية ونشر مستمر لأي مشروع: Dockerfile متعدد المراحل صغير وآمن، وdocker-compose للتطوير، وGitHub Actions (فحص، اختبار، بناء، نشر) مع تخزين مؤقت وأسرار، وإصدارات دلالية، وتجارب جافة قبل أي دفع.",
+   "path": "vendor/100-superskills/skills/docker-ci-devops",
+   "files": 2,
+   "bytes": 20077,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "guidewire-ci-cd-pipeline",
+    "generating-docker-compose-files",
+    "ci-cd-integration",
+    "ci-pipeline-design",
+    "azure-kubernetes-app-deploy",
+    "azure-kubernetes-app-deploy",
+    "apify-ci-integration",
+    "multirepo-ci-cd"
+   ],
+   "install": "python3 scripts/superskills.py install docker-ci-devops"
+  },
+  {
+   "slug": "debugging-root-cause",
+   "n": "60",
+   "domain": "web-code",
+   "title_ar": "تصحيح الأخطاء من الجذر",
+   "title_en": "Root-Cause Debugging",
+   "description": "Root-Cause Debugging. إصلاح أي خطأ من جذره: إعادة الإنتاج أولاً، ثم العزل بالتنصيف، ثم الفرضية الواحدة والتجربة، ثم الإصلاح مع اختبار انحدار، ثم التحقق؛ لا يُقال «أُصلح» بلا تشغيل. Use when the user asks for 'debug', 'bug', 'error', 'stack trace', 'not working', 'root cause', or in Arabic «خطأ»، «باج»، «لا يعمل»، «error»، «stack trace»، «صلح». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "إصلاح أي خطأ من جذره: إعادة الإنتاج أولاً، ثم العزل بالتنصيف، ثم الفرضية الواحدة والتجربة، ثم الإصلاح مع اختبار انحدار، ثم التحقق؛ لا يُقال «أُصلح» بلا تشغيل.",
+   "path": "vendor/100-superskills/skills/debugging-root-cause",
+   "files": 2,
+   "bytes": 24980,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "debug",
+    "power-automate-debug",
+    "sentry-debug-issue",
+    "debug",
+    "lint-and-fix",
+    "troubleshoot",
+    "lint-and-fix",
+    "logging-tradeoffs"
+   ],
+   "install": "python3 scripts/superskills.py install debugging-root-cause"
+  },
+  {
+   "slug": "code-review-refactor",
+   "n": "61",
+   "domain": "web-code",
+   "title_ar": "مراجعة الكود وإعادة الهيكلة",
+   "title_en": "Code Review & Refactoring",
+   "description": "Code Review & Refactoring. مراجعة صحة أولاً: الأخطاء، والحالات الحرجة، والانحدارات، والاختبارات الناقصة، ثم التبسيط وإزالة التكرار وتحسين الأسماء، بتعليقات قابلة للتنفيذ مرتبة بالخطورة، وإعادة هيكلة آمنة بخطوات صغيرة مع الاختبارات. Use when the user asks for 'code review', 'refactor', 'review this pr', 'clean code', 'simplify', 'technical debt', or in Arabic «راجع الكود»، «مراجعة»، «refactor»، «نظف الكود»، «حسن الكود». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مراجعة صحة أولاً: الأخطاء، والحالات الحرجة، والانحدارات، والاختبارات الناقصة، ثم التبسيط وإزالة التكرار وتحسين الأسماء، بتعليقات قابلة للتنفيذ مرتبة بالخطورة، وإعادة هيكلة آمنة بخطوات صغيرة مع الاختبارات.",
+   "path": "vendor/100-superskills/skills/code-review-refactor",
+   "files": 2,
+   "bytes": 25832,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "code-review-and-quality",
+    "code-review-and-quality",
+    "code-review-and-quality",
+    "code-review-and-quality",
+    "code-review",
+    "clean-code-workflow",
+    "code-review-cadu",
+    "code-review"
+   ],
+   "install": "python3 scripts/superskills.py install code-review-refactor"
+  },
+  {
+   "slug": "testing-suite-complete",
+   "n": "62",
+   "domain": "web-code",
+   "title_ar": "منظومة الاختبارات الكاملة",
+   "title_en": "Complete Testing Suite",
+   "description": "Complete Testing Suite. اختبارات تثبت أن الكود يعمل: وحدة، وتكامل، ونهاية إلى نهاية بـ Playwright، وخصائص، وبيانات اختبار واقعية بحالات حرجة (فارغ، حدود، يونيكود، عدائي)، وتغطية مقاسة، وكشف الاختبارات المتقلبة. Use when the user asks for 'write tests', 'unit tests', 'e2e tests', 'playwright test', 'test coverage', 'pytest', or in Arabic «اختبارات»، «تست»، «unit test»، «e2e»، «تغطية»، «pytest». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "اختبارات تثبت أن الكود يعمل: وحدة، وتكامل، ونهاية إلى نهاية بـ Playwright، وخصائص، وبيانات اختبار واقعية بحالات حرجة (فارغ، حدود، يونيكود، عدائي)، وتغطية مقاسة، وكشف الاختبارات المتقلبة.",
+   "path": "vendor/100-superskills/skills/testing-suite-complete",
+   "files": 2,
+   "bytes": 23910,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "playwright-testing",
+    "analyzing-test-coverage",
+    "e2e-testing-patterns",
+    "unit-test",
+    "qa/e2e-playwright",
+    "qa/e2e-playwright",
+    "testing-philosophy",
+    "test-hygiene"
+   ],
+   "install": "python3 scripts/superskills.py install testing-suite-complete"
+  },
+  {
+   "slug": "security-audit-stride",
+   "n": "63",
+   "domain": "web-code",
+   "title_ar": "التدقيق الأمني STRIDE",
+   "title_en": "Security Audit (STRIDE)",
+   "description": "Security Audit (STRIDE). مراجعة أمنية دفاعية: نمذجة تهديدات STRIDE، والأسرار المسرّبة، والحقن (SQL، أوامر، XSS)، والمصادقة والجلسات، والتبعيات الضعيفة، والتهيئة، وترويسات الأمان، بدرجات خطورة وأدلة وإصلاحات، للقراءة فقط. Use when the user asks for 'security audit', 'threat model', 'vulnerability', 'owasp', 'secrets scan', 'security headers', or in Arabic «امان»، «ثغرات»، «تدقيق امني»، «security»، «اختراق»، «حماية الموقع». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مراجعة أمنية دفاعية: نمذجة تهديدات STRIDE، والأسرار المسرّبة، والحقن (SQL، أوامر، XSS)، والمصادقة والجلسات، والتبعيات الضعيفة، والتهيئة، وترويسات الأمان، بدرجات خطورة وأدلة وإصلاحات، للقراءة فقط.",
+   "path": "vendor/100-superskills/skills/security-audit-stride",
+   "files": 2,
+   "bytes": 25483,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "BSD-3-Clause",
+    "MIT"
+   ],
+   "sources": [
+    "security-audit",
+    "generating-security-audit-reports",
+    "analyzing-security-headers",
+    "security-audit",
+    "octopus-security-audit",
+    "river-review-security-audit",
+    "wstg-security-testing",
+    "dependency-audit"
+   ],
+   "install": "python3 scripts/superskills.py install security-audit-stride"
+  },
+  {
+   "slug": "git-github-workflow",
+   "n": "64",
+   "domain": "web-code",
+   "title_ar": "سير عمل Git وGitHub",
+   "title_en": "Git & GitHub Workflow",
+   "description": "Git & GitHub Workflow. إدارة المستودعات باحتراف: الفروع والرسائل الاصطلاحية، وطلبات الدمج بوصف واضح، وحل التعارضات، والإصدارات، وحماية الفروع، وCODEOWNERS، وإصلاح أخطاء Git الشائعة (rebase، reset، reflog) بأمان، ولا دفع أو نشر بلا موافقة. Use when the user asks for 'git', 'github', 'commit', 'pull request', 'merge conflict', 'rebase', or in Arabic «جيت»، «github»، «كومت»، «pull request»، «فرع»، «دمج». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "إدارة المستودعات باحتراف: الفروع والرسائل الاصطلاحية، وطلبات الدمج بوصف واضح، وحل التعارضات، والإصدارات، وحماية الفروع، وCODEOWNERS، وإصلاح أخطاء Git الشائعة (rebase، reset، reflog) بأمان، ولا دفع أو نشر بلا موافقة.",
+   "path": "vendor/100-superskills/skills/git-github-workflow",
+   "files": 2,
+   "bytes": 28347,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "git-pr-merge-unblock",
+    "git-commit",
+    "git-worktree-convention",
+    "git-merge-request",
+    "git-worktree",
+    "gh-pr-merge-delete-branch-closes-dependent-pr",
+    "git-worktree-add-relative-path-nests-inside-repo",
+    "git-default-branch-detection"
+   ],
+   "install": "python3 scripts/superskills.py install git-github-workflow"
+  },
+  {
+   "slug": "automation-scripts-cli",
+   "n": "65",
+   "domain": "web-code",
+   "title_ar": "سكربتات الأتمتة وأدوات سطر الأوامر",
+   "title_en": "Automation Scripts & CLI Tools",
+   "description": "Automation Scripts & CLI Tools. سكربتات Python/Bash/PowerShell وأدوات CLI صغيرة متينة: وسائط واضحة ومساعدة، ومعالجة أخطاء، وسجلات، وتجربة جافة، وتعامل آمن مع الملفات (لا حذف بلا تأكيد)، وتثبيت بسيط، واختبارات. Use when the user asks for 'script', 'cli tool', 'automate', 'bash script', 'powershell', 'batch rename', or in Arabic «سكربت»، «اتمتة»، «اداة سطر اوامر»، «bash»، «powershell»، «نظم الملفات». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "سكربتات Python/Bash/PowerShell وأدوات CLI صغيرة متينة: وسائط واضحة ومساعدة، ومعالجة أخطاء، وسجلات، وتجربة جافة، وتعامل آمن مع الملفات (لا حذف بلا تأكيد)، وتثبيت بسيط، واختبارات.",
+   "path": "vendor/100-superskills/skills/automation-scripts-cli",
+   "files": 2,
+   "bytes": 20475,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "go-cli-release-automation",
+    "google-workspace-cli",
+    "cli-design-and-arg-parsing",
+    "cli-cfg",
+    "add-scrut-cli-tests",
+    "scaffold-go-cli",
+    "scaffold-rust-cli",
+    "scaffold-zig-cli"
+   ],
+   "install": "python3 scripts/superskills.py install automation-scripts-cli"
+  },
+  {
+   "slug": "browser-automation-playwright",
+   "n": "66",
+   "domain": "web-code",
+   "title_ar": "أتمتة المتصفح بـ Playwright",
+   "title_en": "Browser Automation (Playwright)",
+   "description": "Browser Automation (Playwright). تشغيل المتصفح برمجياً للاختبار والجمع والتصوير: محددات ثابتة، وانتظارات صحيحة، وتسجيل الدخول بجلسة محفوظة يوفّرها المستخدم، وتصوير صفحات كاملة وPDF، ومعالجة النوافذ، والتوقف عند CAPTCHA والدفع والإرسال. Use when the user asks for 'playwright', 'browser automation', 'fill form', 'screenshot page', 'click through', 'headless browser', or in Arabic «افتح الموقع»، «اضغط»، «عبئ النموذج»، «اتمتة المتصفح»، «playwright»، «صور الصفحة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تشغيل المتصفح برمجياً للاختبار والجمع والتصوير: محددات ثابتة، وانتظارات صحيحة، وتسجيل الدخول بجلسة محفوظة يوفّرها المستخدم، وتصوير صفحات كاملة وPDF، ومعالجة النوافذ، والتوقف عند CAPTCHA والدفع والإرسال.",
+   "path": "vendor/100-superskills/skills/browser-automation-playwright",
+   "files": 2,
+   "bytes": 22771,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT",
+    "MIT AND Apache-2.0"
+   ],
+   "sources": [
+    "9552-playwright",
+    "playwright",
+    "agent-browser",
+    "e2e-automation",
+    "286-browser-automation",
+    "313-browser-automation",
+    "340-browser-automation",
+    "qa/e2e-playwright"
+   ],
+   "install": "python3 scripts/superskills.py install browser-automation-playwright"
+  },
+  {
+   "slug": "performance-optimization",
+   "n": "67",
+   "domain": "web-code",
+   "title_ar": "تحسين الأداء",
+   "title_en": "Performance Optimization",
+   "description": "Performance Optimization. تسريع المواقع والتطبيقات والاستعلامات بالقياس: Lighthouse وWeb Vitals، وتحليل الحزمة، والصور والخطوط، والتخزين المؤقت، وملفات تعريف الأداء للكود، وN+1 في قواعد البيانات، مع قبل/بعد بالأرقام. Use when the user asks for 'performance', 'slow', 'optimize', 'lighthouse', 'web vitals', 'bundle size', or in Arabic «بطيء»، «تحسين الاداء»، «سرعة الموقع»، «lighthouse»، «تحميل بطيء». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تسريع المواقع والتطبيقات والاستعلامات بالقياس: Lighthouse وWeb Vitals، وتحليل الحزمة، والصور والخطوط، والتخزين المؤقت، وملفات تعريف الأداء للكود، وN+1 في قواعد البيانات، مع قبل/بعد بالأرقام.",
+   "path": "vendor/100-superskills/skills/performance-optimization",
+   "files": 2,
+   "bytes": 25251,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "optimizing-cache-performance",
+    "optimize-build-and-cache",
+    "web-performance-optimization",
+    "alchemy-performance-tuning",
+    "canva-performance-tuning",
+    "firecrawl-performance-tuning",
+    "chrome-performance",
+    "frontend-performance"
+   ],
+   "install": "python3 scripts/superskills.py install performance-optimization"
+  },
+  {
+   "slug": "accessibility-wcag",
+   "n": "68",
+   "domain": "web-code",
+   "title_ar": "الإتاحة WCAG",
+   "title_en": "Accessibility (WCAG 2.2)",
+   "description": "Accessibility (WCAG 2.2). تدقيق وإصلاح الإتاحة: فحص آلي (axe) + تحقق يدوي (لوحة المفاتيح، وقارئ الشاشة، والتباين، والتكبير 200%، والحركة)، وRTL والعربية، والنماذج والأخطاء، بتقرير بمستوى A/AA وإصلاحات بالكود. Use when the user asks for 'accessibility', 'a11y', 'wcag', 'screen reader', 'keyboard navigation', 'contrast', or in Arabic «اتاحة»، «ذوي الاحتياجات»، «wcag»، «قارئ الشاشة»، «تباين». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تدقيق وإصلاح الإتاحة: فحص آلي (axe) + تحقق يدوي (لوحة المفاتيح، وقارئ الشاشة، والتباين، والتكبير 200%، والحركة)، وRTL والعربية، والنماذج والأخطاء، بتقرير بمستوى A/AA وإصلاحات بالكود.",
+   "path": "vendor/100-superskills/skills/accessibility-wcag",
+   "files": 2,
+   "bytes": 24989,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "pf-a11y-keyboard",
+    "accessibility-and-inclusive-visualization",
+    "accessibility-implementation",
+    "pf-a11y-test-gen",
+    "a11y-audit",
+    "pf-a11y-keyboard",
+    "ui5-best-practices-accessibility",
+    "accessibility"
+   ],
+   "install": "python3 scripts/superskills.py install accessibility-wcag"
+  },
+  {
+   "slug": "seo-content-architecture",
+   "n": "69",
+   "domain": "web-code",
+   "title_ar": "SEO وبنية المحتوى",
+   "title_en": "SEO & Content Architecture",
+   "description": "SEO & Content Architecture. ظهور في البحث بلا خدع: التدقيق التقني (الزحف، والفهرسة، والسرعة، والجوال)، والبنية (الصفحات الركيزة والعناقيد)، والكلمات بنية البحث، والعناوين والأوصاف، والبيانات المهيكلة JSON-LD المفحوصة، والمحتوى العربي المحسّن. Use when the user asks for 'seo', 'search ranking', 'keywords', 'json-ld', 'schema markup', 'site architecture', or in Arabic «سيو»، «seo»، «ظهور في جوجل»، «كلمات مفتاحية»، «بيانات مهيكلة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "ظهور في البحث بلا خدع: التدقيق التقني (الزحف، والفهرسة، والسرعة، والجوال)، والبنية (الصفحات الركيزة والعناقيد)، والكلمات بنية البحث، والعناوين والأوصاف، والبيانات المهيكلة JSON-LD المفحوصة، والمحتوى العربي المحسّن.",
+   "path": "vendor/100-superskills/skills/seo-content-architecture",
+   "files": 2,
+   "bytes": 25573,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "seo-schema",
+    "seo-schema",
+    "seo-backlinks",
+    "seo-backlinks",
+    "seo-implement",
+    "implement-technical-seo-and-structured-data",
+    "page-seo-analysis",
+    "nuxt-seo"
+   ],
+   "install": "python3 scripts/superskills.py install seo-content-architecture"
+  },
+  {
+   "slug": "technical-docs-readme",
+   "n": "70",
+   "domain": "web-code",
+   "title_ar": "التوثيق التقني وREADME",
+   "title_en": "Technical Docs & README",
+   "description": "Technical Docs & README. توثيق يُقرأ: README بنموذج (ماذا، لماذا، تثبيت في 3 أوامر، مثال، تهيئة، أسئلة)، وأدلة مستخدم، ومرجع API من الكود، وADRs للقرارات، وسجل تغييرات، وشروحات بالعربية بمصطلحات ثابتة. Use when the user asks for 'readme', 'documentation', 'docs', 'api reference', 'user guide', 'adr', or in Arabic «توثيق»، «readme»، «دليل الاستخدام»، «شرح الكود»، «وثّق». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "توثيق يُقرأ: README بنموذج (ماذا، لماذا، تثبيت في 3 أوامر، مثال، تهيئة، أسئلة)، وأدلة مستخدم، ومرجع API من الكود، وADRs للقرارات، وسجل تغييرات، وشروحات بالعربية بمصطلحات ثابتة.",
+   "path": "vendor/100-superskills/skills/technical-docs-readme",
+   "files": 2,
+   "bytes": 21635,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "generating-api-docs",
+    "technical-documentation",
+    "docs-create-workflow",
+    "documentation",
+    "diataxis-documentation",
+    "readme-craft",
+    "maintain-readme-workflow",
+    "readme-craft"
+   ],
+   "install": "python3 scripts/superskills.py install technical-docs-readme"
+  },
+  {
+   "slug": "python-pro",
+   "n": "71",
+   "domain": "web-code",
+   "title_ar": "بايثون المحترف",
+   "title_en": "Python Pro",
+   "description": "Python Pro. كود Python إنتاجي: بنية حزمة، وtyping، وdataclasses/pydantic، ومعالجة أخطاء واضحة، وasync عند الحاجة، وpytest، وruff، وبيئة uv/venv، وتعبئة pyproject، وأداء بالقياس. Use when the user asks for 'python', 'pytest', 'pydantic', 'asyncio', 'pyproject', 'python package', or in Arabic «بايثون»، «python»، «سكربت بايثون»، «مكتبة بايثون». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "كود Python إنتاجي: بنية حزمة، وtyping، وdataclasses/pydantic، ومعالجة أخطاء واضحة، وasync عند الحاجة، وpytest، وruff، وبيئة uv/venv، وتعبئة pyproject، وأداء بالقياس.",
+   "path": "vendor/100-superskills/skills/python-pro",
+   "files": 2,
+   "bytes": 22548,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "uv-package-manager",
+    "uv-package-manager",
+    "uv-package-manager",
+    "uv-python-versions",
+    "python-typing-reference",
+    "python-typing",
+    "python-scaffold-workflow",
+    "uv"
+   ],
+   "install": "python3 scripts/superskills.py install python-pro"
+  },
+  {
+   "slug": "typescript-node-pro",
+   "n": "72",
+   "domain": "web-code",
+   "title_ar": "TypeScript وNode المحترف",
+   "title_en": "TypeScript & Node Pro",
+   "description": "TypeScript & Node Pro. كود TypeScript صارم لـ Node وBun وDeno: tsconfig صارم، وأنواع من المخطط (zod)، وأخطاء مميّزة، وESM، واختبارات vitest، وESLint، وبناء بـ tsup، وأداء وذاكرة بالقياس. Use when the user asks for 'typescript', 'node.js', 'bun', 'deno', 'vitest', 'eslint', or in Arabic «typescript»، «node»، «جافاسكربت»، «npm»، «bun». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "كود TypeScript صارم لـ Node وBun وDeno: tsconfig صارم، وأنواع من المخطط (zod)، وأخطاء مميّزة، وESM، واختبارات vitest، وESLint، وبناء بـ tsup، وأداء وذاكرة بالقياس.",
+   "path": "vendor/100-superskills/skills/typescript-node-pro",
+   "files": 2,
+   "bytes": 25426,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "migrate-to-deno",
+    "migrate-to-deno",
+    "javascript-testing-patterns",
+    "javascript-testing-patterns",
+    "typescript-debugging",
+    "mastering-typescript",
+    "mastering-typescript",
+    "bun-publish"
+   ],
+   "install": "python3 scripts/superskills.py install typescript-node-pro"
+  },
+  {
+   "slug": "legacy-code-migration",
+   "n": "73",
+   "domain": "web-code",
+   "title_ar": "تحديث الكود القديم والترحيل",
+   "title_en": "Legacy Code Migration",
+   "description": "Legacy Code Migration. نقل الأنظمة القديمة بأمان: فهم السلوك الحالي باختبارات توصيف، وتقسيم الترحيل إلى شرائح (strangler)، وتحويل اللغات أو الأطر، وتوافق البيانات، وخطة تراجع، وقياس التكافؤ قبل القطع. Use when the user asks for 'legacy', 'migrate', 'convert code', 'framework migration', 'upgrade version', 'port to', or in Arabic «كود قديم»، «ترحيل»، «حوّل الكود»، «تحديث النظام»، «من php الى». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "نقل الأنظمة القديمة بأمان: فهم السلوك الحالي باختبارات توصيف، وتقسيم الترحيل إلى شرائح (strangler)، وتحويل اللغات أو الأطر، وتوافق البيانات، وخطة تراجع، وقياس التكافؤ قبل القطع.",
+   "path": "vendor/100-superskills/skills/legacy-code-migration",
+   "files": 2,
+   "bytes": 24018,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "strangler-fig-migration",
+    "assemblyai-upgrade-migration",
+    "bamboohr-upgrade-migration",
+    "techsmith-upgrade-migration",
+    "together-upgrade-migration",
+    "adobe-upgrade-migration",
+    "algolia-upgrade-migration",
+    "apify-upgrade-migration"
+   ],
+   "install": "python3 scripts/superskills.py install legacy-code-migration"
+  },
+  {
+   "slug": "software-architecture-adr",
+   "n": "74",
+   "domain": "web-code",
+   "title_ar": "هندسة البرمجيات والقرارات المعمارية",
+   "title_en": "Software Architecture & ADRs",
+   "description": "Software Architecture & ADRs. تصميم أنظمة قبل البناء: الحدود والواجهات ونماذج البيانات، والتوسع وأنماط الفشل، والمفاضلات، وADRs، ومخططات، وخطة تنفيذ مرحلية بمعايير قتل، مبنية على الكود الفعلي لا الافتراضات. Use when the user asks for 'architecture', 'system design', 'adr', 'boundaries', 'scalability', 'trade-off', or in Arabic «معمارية»، «تصميم النظام»، «architecture»، «بنية المشروع»، «قرار تقني». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تصميم أنظمة قبل البناء: الحدود والواجهات ونماذج البيانات، والتوسع وأنماط الفشل، والمفاضلات، وADRs، ومخططات، وخطة تنفيذ مرحلية بمعايير قتل، مبنية على الكود الفعلي لا الافتراضات.",
+   "path": "vendor/100-superskills/skills/software-architecture-adr",
+   "files": 2,
+   "bytes": 26490,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "system-design",
+    "ln-21-system-design-baseline-builder",
+    "clean-architecture",
+    "akbun-draw-architecture",
+    "ln-22-current-architecture-documenter",
+    "architecture",
+    "adr-authoring",
+    "adr-authoring"
+   ],
+   "install": "python3 scripts/superskills.py install software-architecture-adr"
+  },
+  {
+   "slug": "game-dev-web",
+   "n": "75",
+   "domain": "web-code",
+   "title_ar": "تطوير الألعاب للويب",
+   "title_en": "Web Game Development",
+   "description": "Web Game Development. ألعاب متصفح كاملة: حلقة لعب، وحالة، وإدخال، وفيزياء بسيطة، وأصول من pixel-art-game-assets، وصوت، وحفظ محلي، وجوال بلمس، بـ Canvas/Phaser/Three.js، وقابلة للنشر كملف HTML واحد. Use when the user asks for 'browser game', 'html5 game', 'phaser', 'canvas game', 'game loop', 'web game', or in Arabic «لعبة»، «اعمل لعبة»، «لعبة متصفح»، «phaser»، «game». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "ألعاب متصفح كاملة: حلقة لعب، وحالة، وإدخال، وفيزياء بسيطة، وأصول من pixel-art-game-assets، وصوت، وحفظ محلي، وجوال بلمس، بـ Canvas/Phaser/Three.js، وقابلة للنشر كملف HTML واحد.",
+   "path": "vendor/100-superskills/skills/game-dev-web",
+   "files": 2,
+   "bytes": 19517,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "phaser-2d-game",
+    "rust-bracket-game-loop",
+    "godot-gdscript-patterns",
+    "unity-ecs-patterns",
+    "godot-gdscript-patterns",
+    "unity-ecs-patterns",
+    "sprite-pipeline",
+    "unity-agent-workflows"
+   ],
+   "install": "python3 scripts/superskills.py install game-dev-web"
+  },
+  {
+   "slug": "arabic-copywriting",
+   "n": "76",
+   "domain": "business",
+   "title_ar": "الكتابة الإعلانية العربية",
+   "title_en": "Arabic Copywriting",
+   "description": "Arabic Copywriting. نصوص تسويقية عربية تبيع: عناوين، وصفحات، ورسائل، وإعلانات، ومنشورات، بالفصحى أو اللهجات (مصرية، خليجية، شامية، مغاربية)، بصيغ مثبتة (PAS، AIDA، 4U)، ونبرة العلامة، وقواعد الطباعة العربية الصحيحة. Use when the user asks for 'copywriting', 'arabic copy', 'headline', 'ad copy', 'marketing text', 'tagline', or in Arabic «اكتب نص اعلاني»، «كوبي»، «نص تسويقي»، «عنوان جذاب»، «منشور». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "نصوص تسويقية عربية تبيع: عناوين، وصفحات، ورسائل، وإعلانات، ومنشورات، بالفصحى أو اللهجات (مصرية، خليجية، شامية، مغاربية)، بصيغ مثبتة (PAS، AIDA، 4U)، ونبرة العلامة، وقواعد الطباعة العربية الصحيحة.",
+   "path": "vendor/100-superskills/skills/arabic-copywriting",
+   "files": 2,
+   "bytes": 25961,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "copywriting",
+    "marketing-psychology",
+    "copywriting",
+    "marketing-context",
+    "archetypes-brand-voice",
+    "content-engine",
+    "marketing-automation",
+    "marketing-plan"
+   ],
+   "install": "python3 scripts/superskills.py install arabic-copywriting"
+  },
+  {
+   "slug": "storytelling-scripts",
+   "n": "77",
+   "domain": "business",
+   "title_ar": "القصص والسكربتات",
+   "title_en": "Storytelling & Scripts",
+   "description": "Storytelling & Scripts. قصص وسكربتات بصراع حقيقي: الهدف والدافع والصراع والمخاطر، وأقواس الشخصيات، وبنية الفصول الثلاثة أو الإيقاعات، وحوار طبيعي، لفيديو وبودكاست وكتب وعلامات تجارية، مع فحص بنية القصة. Use when the user asks for 'story', 'script', 'screenplay', 'narrative', 'plot', 'character arc', or in Arabic «قصة»، «سكربت»، «سيناريو»، «حبكة»، «احكي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قصص وسكربتات بصراع حقيقي: الهدف والدافع والصراع والمخاطر، وأقواس الشخصيات، وبنية الفصول الثلاثة أو الإيقاعات، وحوار طبيعي، لفيديو وبودكاست وكتب وعلامات تجارية، مع فحص بنية القصة.",
+   "path": "vendor/100-superskills/skills/storytelling-scripts",
+   "files": 2,
+   "bytes": 24189,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "game-story-world-character",
+    "plot-structure",
+    "character-management",
+    "book-fiction",
+    "book-screenplay",
+    "archetypes-storytelling-arcs",
+    "internal-narrative",
+    "leaderize-storytelling-framework"
+   ],
+   "install": "python3 scripts/superskills.py install storytelling-scripts"
+  },
+  {
+   "slug": "translation-localization-ar",
+   "n": "78",
+   "domain": "business",
+   "title_ar": "الترجمة والتوطين العربي",
+   "title_en": "Arabic Translation & Localization",
+   "description": "Arabic Translation & Localization. ترجمة عربي ↔ إنجليزي بمعنى لا بحرف، وتوطين واجهات ومواقع وتطبيقات: مسرد مصطلحات، واتساق، وRTL، وتنسيق الأرقام والتواريخ والعملات، واللهجات، وفحص الطول في الواجهات، وملفات i18n. Use when the user asks for 'translate', 'translation', 'localize', 'arabic localization', 'i18n', 'rtl text', or in Arabic «ترجم»، «ترجمة»، «توطين»، «عرّب»، «localize». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "ترجمة عربي ↔ إنجليزي بمعنى لا بحرف، وتوطين واجهات ومواقع وتطبيقات: مسرد مصطلحات، واتساق، وRTL، وتنسيق الأرقام والتواريخ والعملات، واللهجات، وفحص الطول في الواجهات، وملفات i18n.",
+   "path": "vendor/100-superskills/skills/translation-localization-ar",
+   "files": 2,
+   "bytes": 24542,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "language-config",
+    "i18n-foundations-and-icu",
+    "localization-qa-and-pseudo-loc",
+    "language-audit",
+    "9454-curate-language",
+    "nuxt-i18n",
+    "mcp-language-server-orphan-fd-exhaustion",
+    "i18n-parity-i18n-parity-workflow"
+   ],
+   "install": "python3 scripts/superskills.py install translation-localization-ar"
+  },
+  {
+   "slug": "newsletter-email-marketing",
+   "n": "79",
+   "domain": "business",
+   "title_ar": "النشرات والبريد التسويقي",
+   "title_en": "Newsletters & Email Marketing",
+   "description": "Newsletters & Email Marketing. رسائل تُفتح وتُقرأ: مواضيع قصيرة مُختبَرة، ونص معاينة، وبنية الرسالة، وقوالب HTML متجاوبة تعمل في Outlook وGmail، وRTL، وسلاسل ترحيب وتنشيط، وقواعد الإلغاء وقائمة الحظر، بلا إرسال فعلي بلا موافقة. Use when the user asks for 'newsletter', 'email campaign', 'email template', 'drip sequence', 'subject line', 'html email', or in Arabic «نشرة بريدية»، «ايميل تسويقي»، «رسالة بريد»، «newsletter»، «سلسلة رسائل». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "رسائل تُفتح وتُقرأ: مواضيع قصيرة مُختبَرة، ونص معاينة، وبنية الرسالة، وقوالب HTML متجاوبة تعمل في Outlook وGmail، وRTL، وسلاسل ترحيب وتنشيط، وقواعد الإلغاء وقائمة الحظر، بلا إرسال فعلي بلا موافقة.",
+   "path": "vendor/100-superskills/skills/newsletter-email-marketing",
+   "files": 2,
+   "bytes": 20625,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "send-email-campaign",
+    "form-email",
+    "email-sequence",
+    "aimm-newsletter",
+    "email-template-engineering",
+    "email-tmpl",
+    "marketing-automation",
+    "copy-email"
+   ],
+   "install": "python3 scripts/superskills.py install newsletter-email-marketing"
+  },
+  {
+   "slug": "voiceover-tts-direction",
+   "n": "80",
+   "domain": "business",
+   "title_ar": "التعليق الصوتي وإخراج TTS",
+   "title_en": "Voice-over & TTS Direction",
+   "description": "Voice-over & TTS Direction. سكربتات تعليق صوتي بالعامية أو الفصحى جاهزة للتحويل إلى صوت: نطق الأرقام والعملات والتواريخ، والتشكيل حيث يلزم، ووسوم الأداء (توقف، تأكيد، سرعة)، والإيقاع بالكلمات في الثانية، وملاحظات الكاستنغ، وسكربتات الدبلجة بالتوقيتات. Use when the user asks for 'voice over', 'tts script', 'narration', 'dubbing script', 'pronunciation', 'voice direction', or in Arabic «تعليق صوتي»، «حوّل لصوت»، «فويس اوفر»، «دبلجة»، «tts»، «نطق». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "سكربتات تعليق صوتي بالعامية أو الفصحى جاهزة للتحويل إلى صوت: نطق الأرقام والعملات والتواريخ، والتشكيل حيث يلزم، ووسوم الأداء (توقف، تأكيد، سرعة)، والإيقاع بالكلمات في الثانية، وملاحظات الكاستنغ، وسكربتات الدبلجة بالتوقيتات.",
+   "path": "vendor/100-superskills/skills/voiceover-tts-direction",
+   "files": 2,
+   "bytes": 26263,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "elevenlabs-core-workflow-a",
+    "elevenlabs-hello-world",
+    "speech-recognition-and-synthesis",
+    "voice-agent-architecture-and-latency",
+    "twilio-voice-conversation-relay",
+    "human-voice",
+    "machine-voice",
+    "brand-voice-enforcement"
+   ],
+   "install": "python3 scripts/superskills.py install voiceover-tts-direction"
+  },
+  {
+   "slug": "podcast-production",
+   "n": "81",
+   "domain": "business",
+   "title_ar": "إنتاج البودكاست",
+   "title_en": "Podcast Production",
+   "description": "Podcast Production. بودكاست من الفكرة إلى النشر: الصيغة والمدة، ومخطط الحلقة بالأزمنة، وأسئلة الضيف، والمقدمة والخاتمة، وخطة الصوت (مستويات، وإزالة ضجيج، ومعادلة)، وملاحظات العرض، والترجمة، ومقاطع قصيرة للسوشيال. Use when the user asks for 'podcast', 'episode outline', 'interview questions', 'show notes', 'audio editing podcast', or in Arabic «بودكاست»، «حلقة»، «مقابلة صوتية»، «podcast». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "بودكاست من الفكرة إلى النشر: الصيغة والمدة، ومخطط الحلقة بالأزمنة، وأسئلة الضيف، والمقدمة والخاتمة، وخطة الصوت (مستويات، وإزالة ضجيج، ومعادلة)، وملاحظات العرض، والترجمة، ومقاطع قصيرة للسوشيال.",
+   "path": "vendor/100-superskills/skills/podcast-production",
+   "files": 2,
+   "bytes": 23340,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "joined-audio-transcript-drift",
+    "transcript-to-content-pipeline",
+    "write-realtime-audio-code",
+    "choose-audio-dsp-architecture",
+    "implement-and-optimize-realtime-audio",
+    "interview-me",
+    "session-transcript-mining",
+    "write-realtime-audio-code"
+   ],
+   "install": "python3 scripts/superskills.py install podcast-production"
+  },
+  {
+   "slug": "music-song-brief",
+   "n": "82",
+   "domain": "business",
+   "title_ar": "الأغاني وموجز الموسيقى",
+   "title_en": "Songs & Music Briefs",
+   "description": "Songs & Music Briefs. كلمات أغانٍ وموجزات موسيقية لمولّدات مثل Suno وUdio: البنية (مقطع، ولازمة، وجسر)، والوزن والقافية بالعربية، والمقام والإيقاع الشرقي عند الحاجة، وأوصاف الأسلوب والآلات والمزاج، ونسخ قصيرة للريلز. Use when the user asks for 'song lyrics', 'music prompt', 'suno', 'udio', 'jingle', 'soundtrack brief', or in Arabic «اغنية»، «كلمات اغنية»، «موسيقى»، «لحن»، «suno»، «مقام». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "كلمات أغانٍ وموجزات موسيقية لمولّدات مثل Suno وUdio: البنية (مقطع، ولازمة، وجسر)، والوزن والقافية بالعربية، والمقام والإيقاع الشرقي عند الحاجة، وأوصاف الأسلوب والآلات والمزاج، ونسخ قصيرة للريلز.",
+   "path": "vendor/100-superskills/skills/music-song-brief",
+   "files": 2,
+   "bytes": 25719,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "music",
+    "9607-suno",
+    "write-realtime-audio-code",
+    "choose-audio-dsp-architecture",
+    "implement-and-optimize-realtime-audio",
+    "joined-audio-transcript-drift",
+    "write-realtime-audio-code",
+    "vercel-composition-patterns"
+   ],
+   "install": "python3 scripts/superskills.py install music-song-brief"
+  },
+  {
+   "slug": "audio-mastering-analysis",
+   "n": "83",
+   "domain": "business",
+   "title_ar": "تحليل الصوت والماسترينغ",
+   "title_en": "Audio Analysis & Mastering",
+   "description": "Audio Analysis & Mastering. قياس وإصلاح الصوت بالكود: LUFS، والقمم الحقيقية، والتشبع، وBPM، والطيف، والضجيج، مع أهداف لكل منصة (يوتيوب، وسبوتيفاي، وبودكاست)، وسلسلة ماسترينغ (معادلة، وضغط، وحدّ) بأوامر ffmpeg أو Python. Use when the user asks for 'audio mastering', 'loudness', 'lufs', 'normalize audio', 'noise reduction', 'audio analysis', or in Arabic «صوت مشوش»، «ماسترينغ»، «مستوى الصوت»، «lufs»، «نظف الصوت». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قياس وإصلاح الصوت بالكود: LUFS، والقمم الحقيقية، والتشبع، وBPM، والطيف، والضجيج، مع أهداف لكل منصة (يوتيوب، وسبوتيفاي، وبودكاست)، وسلسلة ماسترينغ (معادلة، وضغط، وحدّ) بأوامر ffmpeg أو Python.",
+   "path": "vendor/100-superskills/skills/audio-mastering-analysis",
+   "files": 2,
+   "bytes": 25637,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "joined-audio-transcript-drift",
+    "sound",
+    "write-realtime-audio-code",
+    "choose-audio-dsp-architecture",
+    "implement-and-optimize-realtime-audio",
+    "write-realtime-audio-code",
+    "signal-to-noise-ratio",
+    "ffmpeg"
+   ],
+   "install": "python3 scripts/superskills.py install audio-mastering-analysis"
+  },
+  {
+   "slug": "youtube-channel-strategy",
+   "n": "84",
+   "domain": "business",
+   "title_ar": "استراتيجية قناة يوتيوب",
+   "title_en": "YouTube Channel Strategy",
+   "description": "YouTube Channel Strategy. نمو قناة بخطة: التموضع والجمهور، وأفكار بصيغة بحث ومتابعة، وعناوين وصور مصغّرة بنسخ A/B، وبنية الفيديو للاحتفاظ، وSEO الفيديو، وجدول نشر واقعي، وتحليل المقاييس (CTR، والاحتفاظ، والمشاهدة). Use when the user asks for 'youtube strategy', 'video ideas', 'youtube title', 'retention', 'channel growth', 'video seo', or in Arabic «قناة يوتيوب»، «يوتيوب»، «عنوان فيديو»، «افكار فيديوهات»، «نمو القناة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "نمو قناة بخطة: التموضع والجمهور، وأفكار بصيغة بحث ومتابعة، وعناوين وصور مصغّرة بنسخ A/B، وبنية الفيديو للاحتفاظ، وSEO الفيديو، وجدول نشر واقعي، وتحليل المقاييس (CTR، والاحتفاظ، والمشاهدة).",
+   "path": "vendor/100-superskills/skills/youtube-channel-strategy",
+   "files": 2,
+   "bytes": 24617,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "creator-thumbnail-agent",
+    "creator-seo-agent",
+    "youtube-channels",
+    "youtube-api",
+    "youtube-full",
+    "youtube-packaging",
+    "title-search-and-examination",
+    "plugin-creator"
+   ],
+   "install": "python3 scripts/superskills.py install youtube-channel-strategy"
+  },
+  {
+   "slug": "accounting-ifrs-journal",
+   "n": "85",
+   "domain": "business",
+   "title_ar": "المحاسبة والقيود وIFRS",
+   "title_en": "Accounting, Journal Entries & IFRS",
+   "description": "Accounting, Journal Entries & IFRS. قيود يومية صحيحة ومعايير IFRS/IAS مطبّقة: تحليل المعاملة، والقيد بالمدين والدائن المتوازن بالكود، والإيرادات (IFRS 15)، والإيجارات (IFRS 16)، والأصول، والمخصصات، وضريبة القيمة المضافة، والمطابقة البنكية، بمصطلحات عربية دقيقة. Use when the user asks for 'journal entry', 'accounting', 'ifrs', 'ias', 'vat', 'bank reconciliation', or in Arabic «قيد»، «قيود»، «محاسبة»، «ifrs»، «معيار»، «ضريبة القيمة المضافة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قيود يومية صحيحة ومعايير IFRS/IAS مطبّقة: تحليل المعاملة، والقيد بالمدين والدائن المتوازن بالكود، والإيرادات (IFRS 15)، والإيجارات (IFRS 16)، والأصول، والمخصصات، وضريبة القيمة المضافة، والمطابقة البنكية، بمصطلحات عربية دقيقة.",
+   "path": "vendor/100-superskills/skills/accounting-ifrs-journal",
+   "files": 2,
+   "bytes": 26302,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "tax-reconciliation",
+    "ias-prep",
+    "vat-prep",
+    "tres-ledger-link",
+    "accounting-inbox",
+    "reconciliation-automatch",
+    "reconciliation-summary",
+    "payment-reconciliation"
+   ],
+   "install": "python3 scripts/superskills.py install accounting-ifrs-journal"
+  },
+  {
+   "slug": "invoices-quotes-contracts",
+   "n": "86",
+   "domain": "business",
+   "title_ar": "الفواتير والعروض والعقود",
+   "title_en": "Invoices, Quotes & Contracts",
+   "description": "Invoices, Quotes & Contracts. وثائق أعمال جاهزة: فواتير وعروض أسعار بتصميم نظيف وحسابات مفحوصة (ضريبة، وخصم، وإجمالي)، ونماذج عقود وشروط بلغة واضحة مع تنبيه أنها قوالب تحتاج مراجعة قانونية، وتوليد PDF بالعربية والإنجليزية. Use when the user asks for 'invoice', 'quote', 'proposal', 'contract template', 'terms', 'agreement', or in Arabic «فاتورة»، «عرض سعر»، «عقد»، «اتفاقية»، «شروط». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "وثائق أعمال جاهزة: فواتير وعروض أسعار بتصميم نظيف وحسابات مفحوصة (ضريبة، وخصم، وإجمالي)، ونماذج عقود وشروط بلغة واضحة مع تنبيه أنها قوالب تحتاج مراجعة قانونية، وتوليد PDF بالعربية والإنجليزية.",
+   "path": "vendor/100-superskills/skills/invoices-quotes-contracts",
+   "files": 2,
+   "bytes": 24951,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "contract-to-billing",
+    "contract-and-proposal-writer",
+    "contract-review",
+    "box-legal-workflows-contract",
+    "implement-metered-billing",
+    "contract-review-and-redline",
+    "legal-intake-and-playbooks",
+    "legal-risk-assessment"
+   ],
+   "install": "python3 scripts/superskills.py install invoices-quotes-contracts"
+  },
+  {
+   "slug": "business-plan-prd",
+   "n": "87",
+   "domain": "business",
+   "title_ar": "خطة العمل ووثيقة المنتج",
+   "title_en": "Business Plan & PRD",
+   "description": "Business Plan & PRD. من الفكرة إلى وثيقة قابلة للتنفيذ: تأطير المشكلة، والشرائح، والقيمة، والمنافسون، ونموذج الإيراد، والـ PRD بثمانية أقسام (المشكلة، والأهداف، والمستخدمون، والحلول، والمتطلبات، والقياس، والمخاطر، والإطلاق) مع أسئلة الفجوات. Use when the user asks for 'business plan', 'prd', 'product requirements', 'feasibility', 'go to market', 'user stories', or in Arabic «خطة عمل»، «دراسة جدوى»، «prd»، «متطلبات المنتج»، «فكرة مشروع». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "من الفكرة إلى وثيقة قابلة للتنفيذ: تأطير المشكلة، والشرائح، والقيمة، والمنافسون، ونموذج الإيراد، والـ PRD بثمانية أقسام (المشكلة، والأهداف، والمستخدمون، والحلول، والمتطلبات، والقياس، والمخاطر، والإطلاق) مع أسئلة الفجوات.",
+   "path": "vendor/100-superskills/skills/business-plan-prd",
+   "files": 2,
+   "bytes": 25765,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "prd-roadmap",
+    "prd-stories",
+    "code-to-prd",
+    "create-prd",
+    "market-segments",
+    "market-sizing",
+    "analyzing-market-sentiment",
+    "9539-prd"
+   ],
+   "install": "python3 scripts/superskills.py install business-plan-prd"
+  },
+  {
+   "slug": "pitch-deck-investor",
+   "n": "88",
+   "domain": "business",
+   "title_ar": "عرض المستثمرين",
+   "title_en": "Investor Pitch Deck",
+   "description": "Investor Pitch Deck. عرض من 10 إلى 12 شريحة بترتيب مثبت: المشكلة، والحل، والسوق، والمنتج، والجذب، ونموذج العمل، والمنافسة، والفريق، والأرقام، والطلب؛ بسرد واحد، وأرقام مصدَرة، وتصميم من powerpoint-decks، وملاحظات للمتحدث وأسئلة المستثمرين المتوقعة. Use when the user asks for 'pitch deck', 'investor deck', 'fundraising deck', 'startup pitch', or in Arabic «عرض مستثمرين»، «بيتش»، «pitch deck»، «تمويل»، «عرض الشركة». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "عرض من 10 إلى 12 شريحة بترتيب مثبت: المشكلة، والحل، والسوق، والمنتج، والجذب، ونموذج العمل، والمنافسة، والفريق، والأرقام، والطلب؛ بسرد واحد، وأرقام مصدَرة، وتصميم من powerpoint-decks، وملاحظات للمتحدث وأسئلة المستثمرين المتوقعة.",
+   "path": "vendor/100-superskills/skills/pitch-deck-investor",
+   "files": 2,
+   "bytes": 31036,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "BSD-3-Clause",
+    "MIT"
+   ],
+   "sources": [
+    "build-investor-pipeline",
+    "presentation-builder",
+    "startup-financial-modeling",
+    "lf-member-pitch-deck",
+    "akbun-presentation-paper",
+    "akbun-presentation-visual",
+    "github-actions-startup-failure-triage",
+    "create-presentation"
+   ],
+   "install": "python3 scripts/superskills.py install pitch-deck-investor"
+  },
+  {
+   "slug": "market-competitor-research",
+   "n": "89",
+   "domain": "business",
+   "title_ar": "بحث السوق والمنافسين",
+   "title_en": "Market & Competitor Research",
+   "description": "Market & Competitor Research. صورة سوق قابلة للقرار: حجم السوق بطريقتين، والشرائح، والمنافسون بمصفوفة ميزات وأسعار وتموضع، وتحليل مراجعات العملاء للفجوات، والاتجاهات بمصادر مؤرّخة، وخلاصة «أين نلعب وكيف نفوز». Use when the user asks for 'market research', 'competitor analysis', 'market size', 'competitive matrix', 'positioning', or in Arabic «بحث سوق»، «المنافسين»، «تحليل السوق»، «حجم السوق»، «منافس». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "صورة سوق قابلة للقرار: حجم السوق بطريقتين، والشرائح، والمنافسون بمصفوفة ميزات وأسعار وتموضع، وتحليل مراجعات العملاء للفجوات، والاتجاهات بمصادر مؤرّخة، وخلاصة «أين نلعب وكيف نفوز».",
+   "path": "vendor/100-superskills/skills/market-competitor-research",
+   "files": 2,
+   "bytes": 25380,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "competitor-analysis",
+    "competitor-analysis",
+    "swot-analysis",
+    "competitive-positioning-analysis",
+    "competitor-positioning",
+    "competitor-analysis",
+    "page-seo-analysis",
+    "cohort-analysis"
+   ],
+   "install": "python3 scripts/superskills.py install market-competitor-research"
+  },
+  {
+   "slug": "ecommerce-store-listings",
+   "n": "90",
+   "domain": "business",
+   "title_ar": "المتجر الإلكتروني وأوصاف المنتجات",
+   "title_en": "E-commerce Store & Listings",
+   "description": "E-commerce Store & Listings. متجر يبيع: أوصاف منتجات بصيغة فوائد ومواصفات وأسئلة، وعناوين محسّنة للبحث داخل المنصة (أمازون، ونون، وسلة، وشوبيفاي)، وصور من product-photo-mockups، وتسعير، وصفحات سياسات، وسلسلة بريد ما بعد الشراء. Use when the user asks for 'product description', 'ecommerce', 'shopify', 'amazon listing', 'store page', 'product title', or in Arabic «متجر»، «وصف منتج»، «سلة»، «شوبيفاي»، «امازون»، «منتجات». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "متجر يبيع: أوصاف منتجات بصيغة فوائد ومواصفات وأسئلة، وعناوين محسّنة للبحث داخل المنصة (أمازون، ونون، وسلة، وشوبيفاي)، وصور من product-photo-mockups، وتسعير، وصفحات سياسات، وسلسلة بريد ما بعد الشراء.",
+   "path": "vendor/100-superskills/skills/ecommerce-store-listings",
+   "files": 2,
+   "bytes": 25213,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "shopify-app-store-review",
+    "design-shopify-build",
+    "ship-app-store-ready",
+    "shopify-custom-data",
+    "shopify-prod-checklist",
+    "shopify-advanced-troubleshooting",
+    "seo-ecommerce",
+    "amazon-location-service"
+   ],
+   "install": "python3 scripts/superskills.py install ecommerce-store-listings"
+  },
+  {
+   "slug": "curriculum-course-builder",
+   "n": "91",
+   "domain": "business",
+   "title_ar": "بناء المناهج والدورات",
+   "title_en": "Curriculum & Course Builder",
+   "description": "Curriculum & Course Builder. منهج تعلّم متكيّف لأي موضوع: من الهدف البعيد إلى وحدات بخمسة أجزاء (شرح بسيط، ومفاهيم، وتعميق، ومواد، وفحص فهم)، وأسئلة متدرجة (تذكّر، وتطبيق، وتركيب)، وسجل إجابات يعدّل الوحدات التالية، ومخرجات لمنصات الدورات. Use when the user asks for 'curriculum', 'course outline', 'learning path', 'teach me', 'syllabus', 'study plan', or in Arabic «منهج»، «دورة»، «خطة تعلم»، «علمني»، «كورس»، «مقرر». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "منهج تعلّم متكيّف لأي موضوع: من الهدف البعيد إلى وحدات بخمسة أجزاء (شرح بسيط، ومفاهيم، وتعميق، ومواد، وفحص فهم)، وأسئلة متدرجة (تذكّر، وتطبيق، وتركيب)، وسجل إجابات يعدّل الوحدات التالية، ومخرجات لمنصات الدورات.",
+   "path": "vendor/100-superskills/skills/curriculum-course-builder",
+   "files": 2,
+   "bytes": 25220,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "curriculum",
+    "training-machine-learning-models",
+    "deep-learning-book",
+    "syllabus",
+    "optimizing-deep-learning-models",
+    "adapting-transfer-learning-models",
+    "bible-study",
+    "teaching-block-synthesized"
+   ],
+   "install": "python3 scripts/superskills.py install curriculum-course-builder"
+  },
+  {
+   "slug": "flashcards-quiz-exam-prep",
+   "n": "92",
+   "domain": "business",
+   "title_ar": "البطاقات والاختبارات والتحضير للامتحان",
+   "title_en": "Flashcards, Quizzes & Exam Prep",
+   "description": "Flashcards, Quizzes & Exam Prep. تعلّم بالاستدعاء النشط: بطاقات بصيغة سؤال-جواب دقيقة من أي نص (Anki CSV)، واختبارات متعددة الخيارات بمشتتات ذكية وتفسيرات، وخطة مراجعة متباعدة، وامتحانات تجريبية مع تحليل الأخطاء. Use when the user asks for 'flashcards', 'quiz', 'exam prep', 'practice test', 'anki', 'multiple choice', or in Arabic «بطاقات»، «فلاش كارد»، «اختبار»، «اسئلة»، «امتحان»، «راجع معي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تعلّم بالاستدعاء النشط: بطاقات بصيغة سؤال-جواب دقيقة من أي نص (Anki CSV)، واختبارات متعددة الخيارات بمشتتات ذكية وتفسيرات، وخطة مراجعة متباعدة، وامتحانات تجريبية مع تحليل الأخطاء.",
+   "path": "vendor/100-superskills/skills/flashcards-quiz-exam-prep",
+   "files": 2,
+   "bytes": 25668,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "anki-flashcards",
+    "deep-learning-book",
+    "practice-health-check",
+    "practice-metrics",
+    "optimizing-deep-learning-models",
+    "adapting-transfer-learning-models",
+    "exam-flow-and-pretesting",
+    "bible-study"
+   ],
+   "install": "python3 scripts/superskills.py install flashcards-quiz-exam-prep"
+  },
+  {
+   "slug": "math-science-tutor",
+   "n": "93",
+   "domain": "business",
+   "title_ar": "معلّم الرياضيات والعلوم",
+   "title_en": "Math & Science Tutor",
+   "description": "Math & Science Tutor. شرح وحلّ خطوة بخطوة بالتحقق: المسألة بالرموز، والخطوات مبرّرة، والحساب بالكود لا بالذاكرة، والتحقق بالتعويض أو الوحدات، وبراهين مرتبة، ورسوم SVG للدوال والأشكال، وأسئلة تدريب متدرجة. Use when the user asks for 'solve', 'math problem', 'physics', 'proof', 'step by step', 'explain the concept', or in Arabic «حل المسألة»، «رياضيات»، «فيزياء»، «كيمياء»، «اشرح لي»، «برهان». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "شرح وحلّ خطوة بخطوة بالتحقق: المسألة بالرموز، والخطوات مبرّرة، والحساب بالكود لا بالذاكرة، والتحقق بالتعويض أو الوحدات، وبراهين مرتبة، ورسوم SVG للدوال والأشكال، وأسئلة تدريب متدرجة.",
+   "path": "vendor/100-superskills/skills/math-science-tutor",
+   "files": 2,
+   "bytes": 25837,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "math-unicode",
+    "long-form-math",
+    "collab-proof",
+    "red-green-proof",
+    "balance-sheet-explain",
+    "write-math",
+    "write-math",
+    "ce-proof"
+   ],
+   "install": "python3 scripts/superskills.py install math-science-tutor"
+  },
+  {
+   "slug": "language-coach-arabic-english",
+   "n": "94",
+   "domain": "business",
+   "title_ar": "مدرّب اللغات",
+   "title_en": "Language Coach",
+   "description": "Language Coach. تعلّم لغة بالممارسة: تشخيص المستوى، وخطة أسبوعية، ومحادثات تمثيلية بتصحيح لطيف، ومفردات بالسياق، وقواعد بالأمثلة لا بالمصطلحات، ونطق بالحروف العربية التقريبية، وبطاقات من flashcards-quiz-exam-prep. Use when the user asks for 'learn english', 'language practice', 'conversation practice', 'grammar correction', 'vocabulary', 'pronunciation', or in Arabic «علمني انجليزي»، «تعلم لغة»، «محادثة»، «قواعد»، «نطق»، «تصحيح لغوي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تعلّم لغة بالممارسة: تشخيص المستوى، وخطة أسبوعية، ومحادثات تمثيلية بتصحيح لطيف، ومفردات بالسياق، وقواعد بالأمثلة لا بالمصطلحات، ونطق بالحروف العربية التقريبية، وبطاقات من flashcards-quiz-exam-prep.",
+   "path": "vendor/100-superskills/skills/language-coach-arabic-english",
+   "files": 2,
+   "bytes": 19942,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "polyglot-language-coach",
+    "polyglot-language-coach",
+    "akbun-learning-english",
+    "agent-learning-coach",
+    "9454-curate-language",
+    "mcp-language-server-orphan-fd-exhaustion",
+    "optimizing-deep-learning-models",
+    "adapting-transfer-learning-models"
+   ],
+   "install": "python3 scripts/superskills.py install language-coach-arabic-english"
+  },
+  {
+   "slug": "book-to-skill-knowledge",
+   "n": "95",
+   "domain": "business",
+   "title_ar": "من الكتاب إلى مهارة",
+   "title_en": "Book-to-Skill Knowledge Compiler",
+   "description": "Book-to-Skill Knowledge Compiler. يحوّل كتاباً أو وثائق إلى مهارة قابلة للتحميل عند الحاجة: نواة صغيرة بالأطر والمبادئ، وملف لكل فصل، ومسرد، وأنماط بمفاضلاتها، وورقة قرارات؛ مع التمييز بين استخلاص البنية ونسخ النص المحمي. Use when the user asks for 'book to skill', 'summarize book', 'extract frameworks', 'knowledge base from document', 'compile notes', or in Arabic «لخص الكتاب»، «حوّل الكتاب لمهارة»، «استخرج الاطر»، «قاعدة معرفة من كتاب». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "يحوّل كتاباً أو وثائق إلى مهارة قابلة للتحميل عند الحاجة: نواة صغيرة بالأطر والمبادئ، وملف لكل فصل، ومسرد، وأنماط بمفاضلاتها، وورقة قرارات؛ مع التمييز بين استخلاص البنية ونسخ النص المحمي.",
+   "path": "vendor/100-superskills/skills/book-to-skill-knowledge",
+   "files": 2,
+   "bytes": 26016,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "deep-learning-book",
+    "second-brain",
+    "obsidian-power-user",
+    "customer-learning-notes",
+    "knowledge-compiler",
+    "9498-book-distill",
+    "obsidian-bases",
+    "obsidian-markdown"
+   ],
+   "install": "python3 scripts/superskills.py install book-to-skill-knowledge"
+  },
+  {
+   "slug": "genius-council-decision",
+   "n": "96",
+   "domain": "business",
+   "title_ar": "مجلس العباقرة للقرارات",
+   "title_en": "Genius Council Decisions",
+   "description": "Genius Council Decisions. قرار بآراء مستقلة: اختيار 5 إلى 9 خبراء متنوعي المنهج بحسب المسألة، ورأي مستقل من كل منهم، ثم فريق أحمر يهاجم، ثم مُحقِّق يفحص الأدلة، ثم رئيس يزن بجودة الأدلة لا بالأصوات ويصدر الحكم مع الرأي المخالف والثقة المعايرة. Use when the user asks for 'expert panel', 'second opinion', 'council', 'debate this', 'decision review', 'red team then verdict', or in Arabic «مجلس خبراء»، «رأي ثانٍ»، «اجمع المجلس»، «قرار صعب»، «ناقشوا». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قرار بآراء مستقلة: اختيار 5 إلى 9 خبراء متنوعي المنهج بحسب المسألة، ورأي مستقل من كل منهم، ثم فريق أحمر يهاجم، ثم مُحقِّق يفحص الأدلة، ثم رئيس يزن بجودة الأدلة لا بالأصوات ويصدر الحكم مع الرأي المخالف والثقة المعايرة.",
+   "path": "vendor/100-superskills/skills/genius-council-decision",
+   "files": 2,
+   "bytes": 22474,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "codex-advisor",
+    "fable-advisor",
+    "tool-advisor",
+    "business-investment-advisor",
+    "marketing-council",
+    "second-opinion",
+    "multi-model-debate-live",
+    "debate-kickoff"
+   ],
+   "install": "python3 scripts/superskills.py install genius-council-decision"
+  },
+  {
+   "slug": "red-team-premortem",
+   "n": "97",
+   "domain": "business",
+   "title_ar": "الفريق الأحمر وتشريح ما قبل الفشل",
+   "title_en": "Red Team & Pre-mortem",
+   "description": "Red Team & Pre-mortem. هجوم منظّم على أي خطة أو تصميم أو نص قبل إطلاقه: الاعتراضات القاتلة، والافتراضات الخفية، وسيناريوهات الفشل بعد سنة (pre-mortem)، ونقاط الفشل الوحيدة، وما نجا من الهجوم، مع إصلاح لكل نقطة. Use when the user asks for 'red team', 'pre-mortem', 'poke holes', 'what could go wrong', 'stress test the plan', 'devil's advocate', or in Arabic «اهجم على الخطة»، «نقاط الضعف»، «ما الذي قد يفشل»، «فريق احمر»، «انتقد». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "هجوم منظّم على أي خطة أو تصميم أو نص قبل إطلاقه: الاعتراضات القاتلة، والافتراضات الخفية، وسيناريوهات الفشل بعد سنة (pre-mortem)، ونقاط الفشل الوحيدة، وما نجا من الهجوم، مع إصلاح لكل نقطة.",
+   "path": "vendor/100-superskills/skills/red-team-premortem",
+   "files": 2,
+   "bytes": 24239,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "strategy-red-team",
+    "identify-assumptions-existing",
+    "pre-mortem",
+    "pre-mortem",
+    "identify-assumptions-new",
+    "stress-test",
+    "stress-test",
+    "frame-pipeline-risk"
+   ],
+   "install": "python3 scripts/superskills.py install red-team-premortem"
+  },
+  {
+   "slug": "fact-checker-verifier",
+   "n": "98",
+   "domain": "business",
+   "title_ar": "مدقّق الحقائق والمُحقِّق",
+   "title_en": "Fact-Checker & Verifier",
+   "description": "Fact-Checker & Verifier. فحص الادعاءات والأرقام والاقتباسات والاستشهادات قبل النشر: سجل لكل ادعاء (مدعوم، متناقض، غير قابل للتحقق) بمصدره الأولي، وكشف الاستشهادات الوهمية، ومعايرة الثقة، والحقيقة الناقصة الأكثر قيمة. Use when the user asks for 'fact check', 'verify', 'is this true', 'check the citation', 'verify claims', 'source check', or in Arabic «تحقق»، «هل هذا صحيح»، «دقق الحقائق»، «المصدر»، «هل الرقم صحيح». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "فحص الادعاءات والأرقام والاقتباسات والاستشهادات قبل النشر: سجل لكل ادعاء (مدعوم، متناقض، غير قابل للتحقق) بمصدره الأولي، وكشف الاستشهادات الوهمية، ومعايرة الثقة، والحقيقة الناقصة الأكثر قيمة.",
+   "path": "vendor/100-superskills/skills/fact-checker-verifier",
+   "files": 2,
+   "bytes": 24301,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "verify-claims",
+    "rp-source-evidence",
+    "rp-source-evidence",
+    "citation-management",
+    "hallucination-checks",
+    "analytics-verify",
+    "verify-release",
+    "zero-hallucination-coder"
+   ],
+   "install": "python3 scripts/superskills.py install fact-checker-verifier"
+  },
+  {
+   "slug": "strategy-decision-sensitivity",
+   "n": "99",
+   "domain": "business",
+   "title_ar": "الاستراتيجية وحساسية القرار",
+   "title_en": "Strategy & Decision Sensitivity",
+   "description": "Strategy & Decision Sensitivity. قرارات عالية الأثر بمنهج: الخيارات الحقيقية (بما فيها لا شيء)، والمفاضلات، والآثار من الدرجة الثانية، وحساسية الاختيار لافتراضاته (أي افتراض يقلب القرار)، وخطة مرحلية بمعايير قتل ونقاط مراجعة. Use when the user asks for 'strategy', 'what should we do', 'decision', 'options', 'trade-offs', 'should i', or in Arabic «ماذا افعل»، «استراتيجية»، «قرار»، «خيارات»، «هل اختار». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "قرارات عالية الأثر بمنهج: الخيارات الحقيقية (بما فيها لا شيء)، والمفاضلات، والآثار من الدرجة الثانية، وحساسية الاختيار لافتراضاته (أي افتراض يقلب القرار)، وخطة مرحلية بمعايير قتل ونقاط مراجعة.",
+   "path": "vendor/100-superskills/skills/strategy-decision-sensitivity",
+   "files": 2,
+   "bytes": 24162,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "seo-roadmap-prioritization",
+    "experimentation-strategy-roadmap",
+    "good-strategy-bad-strategy",
+    "interactive-planning",
+    "brand-strategy",
+    "planning-flow",
+    "product-strategy",
+    "heuer-planning"
+   ],
+   "install": "python3 scripts/superskills.py install strategy-decision-sensitivity"
+  },
+  {
+   "slug": "ideation-100-ideas",
+   "n": "100",
+   "domain": "business",
+   "title_ar": "مولّد الأفكار: 100 فكرة",
+   "title_en": "100-Ideas Generator",
+   "description": "100-Ideas Generator. توليد أفكار بكمية ثم جودة: 100 فكرة في 10 اتجاهات متعمدة (عكس، ودمج، وتقييد، ومبالغة، وتبديل الجمهور، ...)، ثم تصفية بمعايير معلنة إلى 10، ثم تطوير 3 بنموذج أولي وخطة اختبار سريعة، مع إزالة التكرار. Use when the user asks for 'brainstorm', 'ideas', 'ideation', '100 ideas', 'creative options', 'what if', or in Arabic «افكار»، «اقترح»، «عصف ذهني»، «100 فكرة»، «ابداع». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "توليد أفكار بكمية ثم جودة: 100 فكرة في 10 اتجاهات متعمدة (عكس، ودمج، وتقييد، ومبالغة، وتبديل الجمهور، ...)، ثم تصفية بمعايير معلنة إلى 10، ثم تطوير 3 بنموذج أولي وخطة اختبار سريعة، مع إزالة التكرار.",
+   "path": "vendor/100-superskills/skills/ideation-100-ideas",
+   "files": 2,
+   "bytes": 24315,
+   "scripts": [],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "brainstorm-ideas-existing",
+    "brainstorm-ideas-new",
+    "brainstorm",
+    "brainstorm",
+    "positioning-ideas",
+    "ce-brainstorm",
+    "marketing-ideas",
+    "ideation"
+   ],
+   "install": "python3 scripts/superskills.py install ideation-100-ideas"
+  },
+  {
+   "slug": "pro-video-editor-ffmpeg",
+   "n": "101",
+   "domain": "ultra",
+   "title_ar": "المونتير المحترف بالكود (ffmpeg)",
+   "title_en": "Pro Code-Driven Video Editor",
+   "description": "Pro Code-Driven Video Editor. مونتاج احترافي كامل بلا برنامج مونتاج: قائمة قرارات EDL بصيغة JSON تتحوّل إلى فيلم نهائي عبر ffmpeg، مع قصّ واعٍ بالإطارات المفتاحية (بلا تجميد)، وقصّ تلقائي للصمت، ونقاط قطع على الإيقاع من طاقة الصوت، وانتقالات xfade بأنواعها، وقطع J/L للصوت، وتغيير السرعة، وLUT للتدرّج اللوني، وحرق الترجمة، وتطبيع الصوت بمرورين على −14 LUFS، وتصدير بأكثر من نسبة، وفحص المخرج بـ ffprobe. Use when the user asks for 'edit video', 'cut video', 'ffmpeg', 'trim', 'concat', 'remove silence', or in Arabic «مونتاج»، «قص الفيديو»، «ركّب الفيديو»، «ادمج المقاطع»، «احذف الصمت»، «قطع على الإيقاع». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مونتاج احترافي كامل بلا برنامج مونتاج: قائمة قرارات EDL بصيغة JSON تتحوّل إلى فيلم نهائي عبر ffmpeg، مع قصّ واعٍ بالإطارات المفتاحية (بلا تجميد)، وقصّ تلقائي للصمت، ونقاط قطع على الإيقاع من طاقة الصوت، وانتقالات xfade بأنواعها، وقطع J/L للصوت، وتغيير السرعة، وLUT للتدرّج اللوني، وحرق الترجمة، وتطبيع الصوت بمرورين على −14 LUFS، وتصدير بأكثر من نسبة، وفحص المخرج بـ ffprobe.",
+   "path": "vendor/100-superskills/skills/pro-video-editor-ffmpeg",
+   "files": 8,
+   "bytes": 55801,
+   "scripts": [
+    "scripts/beat_cuts.py",
+    "scripts/edl_render.py",
+    "scripts/probe.py",
+    "scripts/silence_cut.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "ffmpeg",
+    "losslesscut",
+    "ffmpeg",
+    "low-latency-live-streaming",
+    "streaming-architecture-and-protocol-selection",
+    "joined-audio-transcript-drift",
+    "demo-video",
+    "video-pipeline-and-edge-deployment"
+   ],
+   "install": "python3 scripts/superskills.py install pro-video-editor-ffmpeg"
+  },
+  {
+   "slug": "davinci-resolve-pipeline",
+   "n": "102",
+   "domain": "ultra",
+   "title_ar": "خط إنتاج DaVinci Resolve الاحترافي",
+   "title_en": "DaVinci Resolve Pro Pipeline",
+   "description": "DaVinci Resolve Pro Pipeline. مونتاج وتلوين كامل داخل DaVinci Resolve بسكربتات Python (واجهة Scripting الرسمية): خط زمني مرتّب بوقت التصوير، ونسخة عمل محمية، وتراكات مسمّاة (OVERLAY، GFX، SUBTITLE، AMBIENCE، SFX، MUSIC)، وترتيب عقد التلوين EXPOSURE→WB→CST→CONTRAST→SAT→LOOK، وقياس بالـ Scopes عبر لقطات ثابتة، وسجل علامات ملوّنة موحّد، ومهام رندر مع تحقق ffprobe، وسجل عمل Markdown لكل تغيير؛ ويتحوّل إلى دليل يدوي عندما تغيب الواجهة. Use when the user asks for 'davinci resolve', 'resolve scripting', 'color grading nodes', 'timeline automation', 'render queue', 'fusion', or in Arabic «دافنشي»، «ريزولف»، «تلوين»، «color grading»، «خط زمني»، «رندر من دافنشي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "مونتاج وتلوين كامل داخل DaVinci Resolve بسكربتات Python (واجهة Scripting الرسمية): خط زمني مرتّب بوقت التصوير، ونسخة عمل محمية، وتراكات مسمّاة (OVERLAY، GFX، SUBTITLE، AMBIENCE، SFX، MUSIC)، وترتيب عقد التلوين EXPOSURE→WB→CST→CONTRAST→SAT→LOOK، وقياس بالـ Scopes عبر لقطات ثابتة، وسجل علامات ملوّنة موحّد، ومهام رندر مع تحقق ffprobe، وسجل عمل Markdown لكل تغيير؛ ويتحوّل إلى دليل يدوي عندما تغيب الواجهة.",
+   "path": "vendor/100-superskills/skills/davinci-resolve-pipeline",
+   "files": 5,
+   "bytes": 46719,
+   "scripts": [
+    "scripts/resolve_pipeline.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "davinci-resolve",
+    "render-networking",
+    "resolve-copilot-pr-feedback",
+    "resolve-copilot-pr-feedback",
+    "render-background-workers",
+    "render-blueprints",
+    "render-cli",
+    "fusion-360"
+   ],
+   "install": "python3 scripts/superskills.py install davinci-resolve-pipeline"
+  },
+  {
+   "slug": "prompt-architect-reasoning-models",
+   "n": "103",
+   "domain": "ultra",
+   "title_ar": "مهندس البرومبت لنماذج التفكير",
+   "title_en": "Prompt Architect for Reasoning Models",
+   "description": "Prompt Architect for Reasoning Models. أعلى مستوى في هندسة البرومبت: تصنيف النموذج أولاً (تفكير حدودي، مُفكّر هجين مفتوح، مفتوح صغير، قديم)، ولا سقالة تفكير على نماذج التفكير بل معايير نجاح دقيقة وإعداد effort، و14 نمط تفكير بتكلفتها (CoT، Step-Back، Self-Consistency، ToT، ReAct، Reflexion، Plan-and-Solve، Least-to-Most، Self-Ask، Skeleton، Chain of Draft، Concise CoT، Token-budget، Sketch-of-Thought)، وسلّم إلزام الإخراج المهيكل بأربع درجات مع حقيقة «الصلاحية ليست الصحة»، وجبهة الكفاءة مقابل الفعالية بثلاث نسخ مُسمّاة، واقتصاد التخزين المؤقت، ودفاع خماسي ضد الحقن. Use when the user asks for 'prompt optimize', 'reasoning model prompt', 'chain of thought', 'structured output', 'json schema prompt', 'token cost', or in Arabic «برومبت متقدم»، «حسّن البرومبت للنموذج»، «نموذج تفكير»، «structured output»، «JSON من النموذج»، «تكلفة التوكنز». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "أعلى مستوى في هندسة البرومبت: تصنيف النموذج أولاً (تفكير حدودي، مُفكّر هجين مفتوح، مفتوح صغير، قديم)، ولا سقالة تفكير على نماذج التفكير بل معايير نجاح دقيقة وإعداد effort، و14 نمط تفكير بتكلفتها (CoT، Step-Back، Self-Consistency، ToT، ReAct، Reflexion، Plan-and-Solve، Least-to-Most، Self-Ask، Skeleton، Chain of Draft، Concise CoT، Token-budget، Sketch-of-Thought)، وسلّم إلزام الإخراج المهيكل بأربع درجات مع حقيقة «الصلاحية ليست الصحة»، وجبهة الكفاءة مقابل الفعالية بثلاث نسخ مُسمّاة، واقتصاد التخزين المؤقت، ودفاع خماسي ضد الحقن.",
+   "path": "vendor/100-superskills/skills/prompt-architect-reasoning-models",
+   "files": 7,
+   "bytes": 65105,
+   "scripts": [
+    "scripts/injection_shield.py",
+    "scripts/prompt_frontier.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "prompt-engineering",
+    "reasoning",
+    "prompt-engineering",
+    "codex-reasoning-level-calibration",
+    "unslop-reasoning",
+    "prompt-engineering-patterns",
+    "prompt-engineering-patterns",
+    "reasoning-verifier"
+   ],
+   "install": "python3 scripts/superskills.py install prompt-architect-reasoning-models"
+  },
+  {
+   "slug": "llm-judge-eval-lab",
+   "n": "104",
+   "domain": "ultra",
+   "title_ar": "مختبر التقييم والقاضي الآلي",
+   "title_en": "LLM Judge & Eval Lab",
+   "description": "LLM Judge & Eval Lab. تقييم مخرجات الذكاء الاصطناعي بأرقام تصمد: معايير ثنائية بدليل مقتبس (لا «من 1 إلى 10»)، وقاضٍ واحد لكل معيار، ولجنة قياسية + قاضٍ خصومي مع كشف التحيز المشترك بـ σ، وتبديل الترتيب ضد تحيز الموضع، وقضاة من مورّدين مختلفين، وتأكيدات تنفيذية (أوامر، ملفات، أنماط) قبل أي قاضٍ، ومعايرة ضد البشر بـ Cohen's κ لكل معيار، وpass@k/pass^k، وبوابة انحدار تخرج برمز 3، وتكلفة الرموز لكل نقطة دقة. Use when the user asks for 'llm judge', 'rubric', 'eval suite', 'benchmark prompts', 'a/b compare outputs', 'calibrate judge', or in Arabic «قيّم المخرجات»، «قاضي»، «rubric»، «بنشمارك البرومبت»، «مقارنة A/B»، «معايرة القاضي». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "تقييم مخرجات الذكاء الاصطناعي بأرقام تصمد: معايير ثنائية بدليل مقتبس (لا «من 1 إلى 10»)، وقاضٍ واحد لكل معيار، ولجنة قياسية + قاضٍ خصومي مع كشف التحيز المشترك بـ σ، وتبديل الترتيب ضد تحيز الموضع، وقضاة من مورّدين مختلفين، وتأكيدات تنفيذية (أوامر، ملفات، أنماط) قبل أي قاضٍ، ومعايرة ضد البشر بـ Cohen's κ لكل معيار، وpass@k/pass^k، وبوابة انحدار تخرج برمز 3، وتكلفة الرموز لكل نقطة دقة.",
+   "path": "vendor/100-superskills/skills/llm-judge-eval-lab",
+   "files": 7,
+   "bytes": 43488,
+   "scripts": [
+    "scripts/eval_runner.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "MIT"
+   ],
+   "sources": [
+    "prompt-eval-and-regression",
+    "eval-ladder",
+    "eval-regression",
+    "eval",
+    "eval-harness-first",
+    "eval-harness-first",
+    "build-llm-judge",
+    "performing-regression-analysis"
+   ],
+   "install": "python3 scripts/superskills.py install llm-judge-eval-lab"
+  },
+  {
+   "slug": "motion-director-pro",
+   "n": "105",
+   "domain": "ultra",
+   "title_ar": "مخرج الموشن المحترف (فيلم لا شرائح)",
+   "title_en": "Motion Director Pro",
+   "description": "Motion Director Pro. منهج صناعة فيلم موشن حقيقي لا عرض شرائح متحركة: قائمة مشاهد مسمّاة بجمل فعلية، وسلسلة تحوّل بجسم واحد يحمل الفيلم (match anchors) بلا قطعات فارغة، وأرضية الحركة مقاسة إطاراً بإطار (نسبة الإطارات شبه الساكنة، والذروة، والكتل المتحركة) مقابل مرجع، وحدود تغطية البطل 25-45% من العرض، واختبار «الجسم» لكل إيقاع (عبارة + جسم يفعل فعلاً + سطح يفعله عليه)، وميزانية كاميرا 60/20/20 وحركات معدودة، ومجموعة أصول من أجزاء معزولة لا لقطات شاشة، وبوابة الثماني ثوانٍ قبل بناء البقية، و4 مساعدات حركة فقط. Use when the user asks for 'motion graphics film', 'brand film animation', 'motion design brief', 'why does my animation feel flat', 'storyboard motion', 'kinetic brand film', or in Arabic «فيلم موشن»، «موشن جرافيك احترافي»، «انميشن اعلان»، «انميشن سينمائي»، «ليه الانميشن ممل»، «ستوري بورد موشن». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "منهج صناعة فيلم موشن حقيقي لا عرض شرائح متحركة: قائمة مشاهد مسمّاة بجمل فعلية، وسلسلة تحوّل بجسم واحد يحمل الفيلم (match anchors) بلا قطعات فارغة، وأرضية الحركة مقاسة إطاراً بإطار (نسبة الإطارات شبه الساكنة، والذروة، والكتل المتحركة) مقابل مرجع، وحدود تغطية البطل 25-45% من العرض، واختبار «الجسم» لكل إيقاع (عبارة + جسم يفعل فعلاً + سطح يفعله عليه)، وميزانية كاميرا 60/20/20 وحركات معدودة، ومجموعة أصول من أجزاء معزولة لا لقطات شاشة، وبوابة الثماني ثوانٍ قبل بناء البقية، و4 مساعدات حركة فقط.",
+   "path": "vendor/100-superskills/skills/motion-director-pro",
+   "files": 8,
+   "bytes": 57098,
+   "scripts": [
+    "scripts/motion_energy.py",
+    "scripts/storyboard_gate.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "remotion-best-practices",
+    "remotion-create",
+    "remotion-video-builder",
+    "kinetic-inflated-hero",
+    "gsap",
+    "brand-film",
+    "vercel-react-view-transitions",
+    "remotion"
+   ],
+   "install": "python3 scripts/superskills.py install motion-director-pro"
+  },
+  {
+   "slug": "audio-reactive-captions-studio",
+   "n": "106",
+   "domain": "ultra",
+   "title_ar": "استوديو الصوت التفاعلي والترجمة المتحركة",
+   "title_en": "Audio-Reactive & Animated Captions Studio",
+   "description": "Audio-Reactive & Animated Captions Studio. أنيميشن يتنفّس مع الصوت وترجمة متحركة بأسلوب تيك توك: استخراج طاقة الصوت (RMS و16 حزمة ترددية) لكل إطار إلى JSON حتمي يقود الحركة (الباص للحركات الكبيرة، والتريبل للتفاصيل، وRMS للعموميات) مع تنعيم؛ وصفحات ترجمة من طوابع الكلمات (Whisper) بإبراز الكلمة المنطوقة، وSRT وASS كاريوكي، وآلة كاتبة بمؤشر ينبض، وقطع على الإيقاع بحساب BPM، ومرئي صوت (أعمدة، وموجة، ودائرة) على Canvas بطبقتين. Use when the user asks for 'audio reactive', 'music visualizer', 'animated captions', 'tiktok captions', 'word highlight', 'karaoke subtitles', or in Arabic «انميشن مع الموسيقى»، «يتحرك مع الصوت»، «ترجمة متحركة»، «كابشن تيك توك»، «كلمة بكلمة»، «موجة صوت». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "أنيميشن يتنفّس مع الصوت وترجمة متحركة بأسلوب تيك توك: استخراج طاقة الصوت (RMS و16 حزمة ترددية) لكل إطار إلى JSON حتمي يقود الحركة (الباص للحركات الكبيرة، والتريبل للتفاصيل، وRMS للعموميات) مع تنعيم؛ وصفحات ترجمة من طوابع الكلمات (Whisper) بإبراز الكلمة المنطوقة، وSRT وASS كاريوكي، وآلة كاتبة بمؤشر ينبض، وقطع على الإيقاع بحساب BPM، ومرئي صوت (أعمدة، وموجة، ودائرة) على Canvas بطبقتين.",
+   "path": "vendor/100-superskills/skills/audio-reactive-captions-studio",
+   "files": 8,
+   "bytes": 50133,
+   "scripts": [
+    "scripts/captions_pages.py",
+    "scripts/extract_audio_data.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "captions",
+    "whisper",
+    "subtitles",
+    "hyperframes",
+    "fetch-tiktok-mentions",
+    "remotion-captions",
+    "social-video-hooks",
+    "ad-creative"
+   ],
+   "install": "python3 scripts/superskills.py install audio-reactive-captions-studio"
+  },
+  {
+   "slug": "excel-model-architect",
+   "n": "107",
+   "domain": "ultra",
+   "title_ar": "مهندس النماذج المالية في إكسل",
+   "title_en": "Excel Financial Model Architect",
+   "description": "Excel Financial Model Architect. نماذج إكسل تصمد أمام مراجعة مجلس الإدارة: شجرة محرّكات (الحجم × السعر × المزيج) لا «ينمو 5%»، وفصل المدخلات عن الميكانيكا عن المخرجات في أوراق مستقلة، وتكامل القوائم الثلاث بصفوف فحص (BS_check وCF_check تساوي صفراً)، وسيناريوهات كتجاوزات محرّكات بمفتاح واحد لا نماذج منفصلة، وجداول حساسية ثنائية، ودورة التباين (فعلي، وأحدث توقع، وتوقع سابق مجمّد)، واصطلاحات IB (أزرق مدخلات، أسود صيغ، أخضر روابط، أصفر افتراضات حرجة، صفر «-»، سالب أحمر بأقواس، مضاعفات x)، ومولّد ومدقّق آليان بـ openpyxl مع بوابة إعادة حساب. Use when the user asks for 'financial model', 'three statement', 'dcf model', 'lbo model', 'driver-based forecast', 'scenario switch', or in Arabic «نموذج مالي»، «توقعات مالية»، «ثلاث قوائم»، «DCF»، «LBO»، «ميزانية تقديرية». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "نماذج إكسل تصمد أمام مراجعة مجلس الإدارة: شجرة محرّكات (الحجم × السعر × المزيج) لا «ينمو 5%»، وفصل المدخلات عن الميكانيكا عن المخرجات في أوراق مستقلة، وتكامل القوائم الثلاث بصفوف فحص (BS_check وCF_check تساوي صفراً)، وسيناريوهات كتجاوزات محرّكات بمفتاح واحد لا نماذج منفصلة، وجداول حساسية ثنائية، ودورة التباين (فعلي، وأحدث توقع، وتوقع سابق مجمّد)، واصطلاحات IB (أزرق مدخلات، أسود صيغ، أخضر روابط، أصفر افتراضات حرجة، صفر «-»، سالب أحمر بأقواس، مضاعفات x)، ومولّد ومدقّق آليان بـ openpyxl مع بوابة إعادة حساب.",
+   "path": "vendor/100-superskills/skills/excel-model-architect",
+   "files": 7,
+   "bytes": 65660,
+   "scripts": [
+    "scripts/model_audit.py",
+    "scripts/model_builder.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "chronograph-budget-vs-actuals-variance",
+    "build-cash-forecast-and-liquidity-plan",
+    "experiment-sensitivity-optimization",
+    "thirteen-week-cash-forecast",
+    "variance-analysis",
+    "forecast-and-alert",
+    "chronograph-cashflow-forecast",
+    "budget-optimizer"
+   ],
+   "install": "python3 scripts/superskills.py install excel-model-architect"
+  },
+  {
+   "slug": "excel-automation-power",
+   "n": "108",
+   "domain": "ultra",
+   "title_ar": "أتمتة إكسل المتقدمة (Power Query وLAMBDA وDAX)",
+   "title_en": "Advanced Excel Automation",
+   "description": "Advanced Excel Automation. إكسل كمنصّة أتمتة: Power Query بوصفات M (إلغاء التدوير، والدمج، والمعاملات، والطيّ إلى المصدر، والتحديث)، ومكتبة دوال LAMBDA مسمّاة تُحقن في الملف آلياً مع ورقة توثيق، ومصفوفات ديناميكية (FILTER/UNIQUE/SORT/MAP/REDUCE/SCAN/BYROW)، وأنماط DAX للقياسات الزمنية، وOffice Scripts وVBA عند الحاجة فقط، وPython في إكسل، وترجمة الصيغ بين Excel وGoogle Sheets وLark (ARRAYFORMULA والإسقاط ودلالات المصفوفات)، ومعادلات DMAIC الإحصائية وما لا يحسبه إكسل بدقة (Cpk الحقيقي)، وبوابة إعادة حساب وعرض PDF للفحص البصري. Use when the user asks for 'power query', 'm code', 'unpivot', 'lambda function', 'dax measure', 'vba macro', or in Arabic «power query»، «باور كويري»، «LAMBDA»، «دالة مخصصة»، «DAX»، «ماكرو». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "إكسل كمنصّة أتمتة: Power Query بوصفات M (إلغاء التدوير، والدمج، والمعاملات، والطيّ إلى المصدر، والتحديث)، ومكتبة دوال LAMBDA مسمّاة تُحقن في الملف آلياً مع ورقة توثيق، ومصفوفات ديناميكية (FILTER/UNIQUE/SORT/MAP/REDUCE/SCAN/BYROW)، وأنماط DAX للقياسات الزمنية، وOffice Scripts وVBA عند الحاجة فقط، وPython في إكسل، وترجمة الصيغ بين Excel وGoogle Sheets وLark (ARRAYFORMULA والإسقاط ودلالات المصفوفات)، ومعادلات DMAIC الإحصائية وما لا يحسبه إكسل بدقة (Cpk الحقيقي)، وبوابة إعادة حساب وعرض PDF للفحص البصري.",
+   "path": "vendor/100-superskills/skills/excel-automation-power",
+   "files": 9,
+   "bytes": 62537,
+   "scripts": [
+    "scripts/formula_translate.py",
+    "scripts/lambda_library.py",
+    "scripts/xlsx_recalc.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "aws-http-server-on-lambda-web-adapter",
+    "lambda",
+    "excel-pivot-wizard",
+    "aws-lambda-durable-functions",
+    "aws-lambda-managed-instances",
+    "lean-startup",
+    "akbun-davinciresolve-contrast",
+    "dt-obs-aws"
+   ],
+   "install": "python3 scripts/superskills.py install excel-automation-power"
+  },
+  {
+   "slug": "pixel-studio-painter",
+   "n": "109",
+   "domain": "pixel",
+   "title_ar": "استوديو الرسم بالبيكسل (KOSIF Studio)",
+   "title_en": "Pixel Studio Painter",
+   "description": "Pixel Studio Painter. برنامج رسم على سطح المكتب يرسم أي صورة أمامك بيكسلاً ببيكسل بترتيب الرسّام. يرسم كود أي ذكاء اصطناعي (SVG أو بايثون PIL أو matplotlib أو turtle أو مشهد KOSIF بالإضاءة والتوهّج)، ويسجّل أوامر PIL ليرسمها بترتيب الكود نفسه. يعيد رسم أي صورة مرفوعة من الصفر لتنتهي مطابقة للأصل تماماً (صفر بيكسل مختلف، ويتحقق بنفسه، ويختار Jev خطة الرسم للصور الفوتوغرافية)، أو يحوّلها إلى أشكال متجهة وSVG تُكبَّر بلا فقد. ويصدّر بدقة 3840×2560. Use when the user asks for 'draw this code', 'redraw this image', 'pixel by pixel', 'edit this picture', 'change the shirt colour', 'exact redraw', or in Arabic «ارسم الصورة بالبيكسل»، «ارسم كود الصورة»، «أعد رسم الصورة»، «عدّل الصورة»، «غيّر لون القميص في الصورة»، «صورة من وصف». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "برنامج رسم على سطح المكتب يرسم أي صورة أمامك بيكسلاً ببيكسل بترتيب الرسّام. يرسم كود أي ذكاء اصطناعي (SVG أو بايثون PIL أو matplotlib أو turtle أو مشهد KOSIF بالإضاءة والتوهّج)، ويسجّل أوامر PIL ليرسمها بترتيب الكود نفسه. يعيد رسم أي صورة مرفوعة من الصفر لتنتهي مطابقة للأصل تماماً (صفر بيكسل مختلف، ويتحقق بنفسه، ويختار Jev خطة الرسم للصور الفوتوغرافية)، أو يحوّلها إلى أشكال متجهة وSVG تُكبَّر بلا فقد. ويصدّر بدقة 3840×2560.",
+   "path": "vendor/100-superskills/skills/pixel-studio-painter",
+   "files": 29,
+   "bytes": 776690,
+   "scripts": [
+    "scripts/ai_bridge.py",
+    "scripts/edit_pack.py",
+    "scripts/exact.py",
+    "scripts/examples/broken_code.py",
+    "scripts/examples/matplotlib_flower.py",
+    "scripts/examples/pil_house.py",
+    "scripts/film.py",
+    "scripts/generate.py",
+    "scripts/html_render.py",
+    "scripts/jev_client.py",
+    "scripts/judge.py",
+    "scripts/render.py",
+    "scripts/runner.py",
+    "scripts/scenes/dragon_girl.py",
+    "scripts/scenes/duck_dragon.py",
+    "scripts/scenes/whale_dragon.py",
+    "scripts/studio.py",
+    "scripts/svg_import.py",
+    "scripts/to_python.py",
+    "scripts/vector_scene.py",
+    "scripts/vectorize.py"
+   ],
+   "test_dirs": [
+    "scripts/tests"
+   ],
+   "left_upstream": [],
+   "source_licenses": [
+    "BSD-3-Clause",
+    "MIT",
+    "MIT-0"
+   ],
+   "sources": [
+    "akbun-draw-book-illustration",
+    "blog-figure-svg",
+    "svg-figure",
+    "svg-primitives",
+    "raster-logo-svg",
+    "9526-scene",
+    "9527-sprite",
+    "akbun-draw-cartoon-b"
+   ],
+   "install": "python3 scripts/superskills.py install pixel-studio-painter"
+  },
+  {
+   "slug": "hyperframes-animation-studio",
+   "n": "110",
+   "domain": "hyperframes",
+   "title_ar": "استوديو الأنيميشن الاحترافي (HyperFrames + KOSIF Motion)",
+   "title_en": "HyperFrames Animation Studio",
+   "description": "HyperFrames Animation Studio. أنيميشن احترافي سينمائي بمدة محددة من طلب واحد — مسطّح (SVG/GSAP) أو ثلاثي الأبعاد واقعي (Three.js على GPU الجهاز): تركيب HTML واحد (صيغة HyperFrames: data-composition-id/width/height/duration، وخطوط GSAP الزمنية في window.__timelines بالثواني) مع عدّة KOSIF Motion (نص عربي بأقنعة كلمات، قلم يرسم المسارات، مطر وبخار وبريق بعشوائية مبذورة، كاميرا واحدة تتحرك ككتلة، وميض، حبيبات فيلم وفينييت) وصوت محيط مركّب بـ numpy؛ يُصيَّر حتمياً إطاراً بإطار بـ HyperFrames (Puppeteer + FFmpeg) أو بمصيّر KOSIF Studio (Playwright/Edge) من الملف نفسه، ويمرّ ببوابة الثماني ثوانٍ (إطارات مفتاحية تُفحص بالعين)، وفحص HyperFrames (lint + تشغيل + تباين)، وقياس طاقة الحركة؛ مبني على دليل 500 أداة لإنتاج الفيديو حول HyperFrames؛ KOSIF Motion v3: نظام حركة مقيس من أفلام الصف الأول، نوابض فيزيائية، موسيقى على شبكة الإيقاع، ضبابية حركة لكل صفحة، فحوص lint/sheet/speed/study، وواقعية ماء وكاوستكس وكائنات حية. v3.1: الصوت يقود العالم — قنوات لكل إطار من الموسيقى (كِك، باص، بدايات، صمت، توقف الشريط) وساعة شريط تُجمّد المشهد حين يتوقف التسجيل، وأرض من الطيف، وغلتش مفتاحه التحليل، والتقاط حركة حقيقية من فيديو إلى جسيمات؛ v3.2 من KOSIF Omni: مونتاج أي لقطات على الإيقاع مع زووم نبضي وتلوين وتخفيض موسيقى تحت الصوت وترجمة كاريوكي عربية، وبوابة تسليم (أسود/تجمّد/LUFS/ذروة/تعريض)، وإضاءة بالوقفات والكلفن. v3.3 من مكتبة الكتب: لغة لقطات حتمية من مفردات Veo (من أسفل، تتبّع، رافعة، دوران، دولي-زوم، يدوي، لوحة 360°)، وإضاءة رامبرانت/كلامشيل/حواف، ومنظور جوي بثلاث قنوات ورؤية ليلية وقناع ألوان (جورني)، وتعريض طويل يرسم مسارات الضوء. v3.4: أداة واحدة kmotion.py تجمع كل الأوامر بقائمة عربية، مع مونتاج تلقائي كامل (reel) وتفريغ الكلام (transcribe) وإزالة الترجمة المحروقة (decaption). Use when the user asks for 'make an animation', 'professional animation', '5 second animation', 'motion graphics video', 'explainer animation', 'hyperframes', or in Arabic «اعمل أنيميشن»، «انيميشن احترافي»، «أنيميشن 5 ثواني»، «فيديو موشن»، «موشن غرافيك»، «فيديو تعليمي متحرك». Part of «100 مهارة خارقة» (100 Super Skills), composed from the KOSIF Atlas.",
+   "summary_ar": "أنيميشن احترافي سينمائي بمدة محددة من طلب واحد — مسطّح (SVG/GSAP) أو ثلاثي الأبعاد واقعي (Three.js على GPU الجهاز): تركيب HTML واحد (صيغة HyperFrames: data-composition-id/width/height/duration، وخطوط GSAP الزمنية في window.__timelines بالثواني) مع عدّة KOSIF Motion (نص عربي بأقنعة كلمات، قلم يرسم المسارات، مطر وبخار وبريق بعشوائية مبذورة، كاميرا واحدة تتحرك ككتلة، وميض، حبيبات فيلم وفينييت) وصوت محيط مركّب بـ numpy؛ يُصيَّر حتمياً إطاراً بإطار بـ HyperFrames (Puppeteer + FFmpeg) أو بمصيّر KOSIF Studio (Playwright/Edge) من الملف نفسه، ويمرّ ببوابة الثماني ثوانٍ (إطارات مفتاحية تُفحص بالعين)، وفحص HyperFrames (lint + تشغيل + تباين)، وقياس طاقة الحركة؛ مبني على دليل 500 أداة لإنتاج الفيديو حول HyperFrames؛ KOSIF Motion v3: نظام حركة مقيس من أفلام الصف الأول، نوابض فيزيائية، موسيقى على شبكة الإيقاع، ضبابية حركة لكل صفحة، فحوص lint/sheet/speed/study، وواقعية ماء وكاوستكس وكائنات حية. v3.1: الصوت يقود العالم — قنوات لكل إطار من الموسيقى (كِك، باص، بدايات، صمت، توقف الشريط) وساعة شريط تُجمّد المشهد حين يتوقف التسجيل، وأرض من الطيف، وغلتش مفتاحه التحليل، والتقاط حركة حقيقية من فيديو إلى جسيمات؛ v3.2 من KOSIF Omni: مونتاج أي لقطات على الإيقاع مع زووم نبضي وتلوين وتخفيض موسيقى تحت الصوت وترجمة كاريوكي عربية، وبوابة تسليم (أسود/تجمّد/LUFS/ذروة/تعريض)، وإضاءة بالوقفات والكلفن. v3.3 من مكتبة الكتب: لغة لقطات حتمية من مفردات Veo (من أسفل، تتبّع، رافعة، دوران، دولي-زوم، يدوي، لوحة 360°)، وإضاءة رامبرانت/كلامشيل/حواف، ومنظور جوي بثلاث قنوات ورؤية ليلية وقناع ألوان (جورني)، وتعريض طويل يرسم مسارات الضوء. v3.4: أداة واحدة kmotion.py تجمع كل الأوامر بقائمة عربية، مع مونتاج تلقائي كامل (reel) وتفريغ الكلام (transcribe) وإزالة الترجمة المحروقة (decaption).",
+   "path": "vendor/100-superskills/skills/hyperframes-animation-studio",
+   "files": 46,
+   "bytes": 611944,
+   "scripts": [
+    "scripts/ambience.py",
+    "scripts/decaption.py",
+    "scripts/examples/blue_hour/src/main.js",
+    "scripts/examples/koi_pond/src/main.js",
+    "scripts/examples/sound_ground/src/main.js",
+    "scripts/examples/water_cycle/assets/motion-kit.js",
+    "scripts/examples/water_cycle_3d/assets/motion-kit.js",
+    "scripts/examples/water_cycle_3d/src/main.js",
+    "scripts/kit/motion-kit.js",
+    "scripts/kit/three-kit.js",
+    "scripts/kmotion.py",
+    "scripts/montage.py",
+    "scripts/motion.py",
+    "scripts/qa.py",
+    "scripts/reel.py",
+    "scripts/score.py",
+    "scripts/transcribe.py",
+    "scripts/voice.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [
+    "assets/water-cycle-3d-frames.png",
+    "assets/water-cycle-frames.png"
+   ],
+   "source_licenses": [
+    "Apache-2.0",
+    "MIT"
+   ],
+   "sources": [
+    "gsap",
+    "hyperframes",
+    "the-puppeteer-docs",
+    "kinetic-inflated-hero",
+    "explainer",
+    "ffmpeg",
+    "9574-pr-explainer",
+    "ffmpeg"
+   ],
+   "install": "python3 scripts/superskills.py install hyperframes-animation-studio"
+  },
+  {
+   "slug": "kosif-mimic",
+   "n": "",
+   "domain": "kosif-core",
+   "title_ar": "كوسيف ميمك: محاكاة فيديو مرجعي",
+   "title_en": "KOSIF Mimic",
+   "description": "مهارة المحاكاة (التقليد) — Remake a reference video with NEW footage while copying everything else exactly - original audio, same text with the same fonts, positions, colors and shadows, same text animations synced to the audio (fade, word-by-word, slide, pop, blur), same transitions with the same timing, same color mood. Finds similar clips on Pinterest (or builds an intermediary links page when Pinterest is unreachable). Use whenever the user uploads a video and wants one like it, a copy, remake, template, محاكاة، تقليد، نفس الفيديو بلقطات تانية، فيديو شبهه، أدعية، بنترست.",
+   "summary_ar": "إعادة بناء فيديو مرجعي بلقطات جديدة مع نفس الصوت ونفس النص والخطوط والمواضع والألوان ونفس حركة النص ونفس الانتقالات بنفس التوقيت ونفس مزاج الألوان، ولقطات مشابهة من بنترست، تقليد ريل",
+   "path": "vendor/100-superskills/skills/kosif-mimic",
+   "files": 44,
+   "bytes": 4257123,
+   "scripts": [
+    "scripts/mm_analyze.py",
+    "scripts/mm_build.py",
+    "scripts/mm_color.py",
+    "scripts/mm_common.py",
+    "scripts/mm_fonts.py",
+    "scripts/mm_fonts_lib.py",
+    "scripts/mm_img.py",
+    "scripts/mm_render_text.py",
+    "scripts/mm_sheets.py",
+    "scripts/mm_text.py",
+    "scripts/mm_textfx.py",
+    "scripts/mm_transitions.py",
+    "scripts/mm_video.py"
+   ],
+   "test_dirs": [],
+   "left_upstream": [
+    "assets/tessdata/ara.traineddata"
+   ],
+   "source_licenses": [],
+   "sources": [],
+   "install": "python3 scripts/superskills.py install kosif-mimic"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "n": "",
+   "domain": "kosif-core",
+   "title_ar": "كوسيف مونتاج وموشن",
+   "title_en": "KOSIF Montage & Motion",
+   "description": "KOSIF Montage & Motion v6.3 — Arabic-first motion graphics and video editing from one request, on a PC or claude.ai (scripts/cloud_setup.py). Motion films (2D/3D, kinetic Arabic type), mimic (a reel rebuilt shot for shot with new Pinterest footage), a JSON timeline → film (transitions, speed ramps, Arabic titles, ducked music, -14 LUFS), auto-edited reels of talking clips, lyric/poem/dua films from sound, Voice2Motion, beat-cut montage, colour grades, karaoke captions, silence cuts, smart 9:16, per-platform export, scene detection, face privacy, Arabic motion templates, a browser editor, a scene-by-scene review page, per-shot AI-video prompts, launch videos, reference-video breakdowns into generation prompts, and a delivery gate. Use for: animation, motion graphics, montage, mimic, reel, TikTok, captions, subtitles, color grade, transcribe, beat sync, thumbnail, explainer. Arabic: محاكاة، انميشن، موشن، مونتاج، فيديو، ريلز، ترجمة، سبتايتل، تلوين، تفريغ، قص الصمت، غلاف، شرح متحرك.",
+   "summary_ar": "موشن جرافيك ومونتاج عربي من طلب واحد: أفلام موشن 2D و3D وتايبوغرافي عربي متحرك، محاكاة ريل لقطة بلقطة، خط زمني JSON إلى فيلم بانتقالات وتسريع وعناوين عربية وموسيقى مخفوضة، ريلز تلقائية، فيديو كلمات أغنية",
+   "path": "vendor/100-superskills/skills/kosif-montage-motion",
+   "files": 274,
+   "bytes": 6111092,
+   "scripts": [
+    "scripts/aiprompts.py",
+    "scripts/ambience.py",
+    "scripts/analyze.py",
+    "scripts/audio2motion.py",
+    "scripts/audiolab.py",
+    "scripts/build_package.py",
+    "scripts/cloud_setup.py",
+    "scripts/decaption.py",
+    "scripts/direct.py",
+    "scripts/env_check.py",
+    "scripts/faces.py",
+    "scripts/fetch.py",
+    "scripts/ffprobe_shim.py",
+    "scripts/film.py",
+    "scripts/html_render.py",
+    "scripts/kit/gsap.min.js",
+    "scripts/kit/k3-entry.js",
+    "scripts/kit/lab-kit.js",
+    "scripts/kit/motion-kit.js",
+    "scripts/kit/shape-kit.js",
+    "scripts/kit/three-kit.js",
+    "scripts/kmotion.py",
+    "scripts/launch.py",
+    "scripts/mimic.py",
+    "scripts/montage.py",
+    "scripts/motion.py",
+    "scripts/mtemplates.py",
+    "scripts/omni/audio_analyze.py",
+    "scripts/omni/image_analyze.py",
+    "scripts/omni/light_calc.py",
+    "scripts/omni/story_lint.py",
+    "scripts/omniprompt.py",
+    "scripts/platforms.py",
+    "scripts/poster.py",
+    "scripts/privacy.py",
+    "scripts/proplan.py",
+    "scripts/qa.py",
+    "scripts/reel.py",
+    "scripts/render.py",
+    "scripts/render_client.py",
+    "scripts/review.py",
+    "scripts/scenes.py",
+    "scripts/score.py",
+    "scripts/shard.py",
+    "scripts/site_bridge.py",
+    "scripts/songreel.py",
+    "scripts/structural_twin.py",
+    "scripts/studio_import.py",
+    "scripts/test_audio2motion.py",
+    "scripts/timeline.py",
+    "scripts/tools.py",
+    "scripts/transcribe.py",
+    "scripts/twin_dashboard.py",
+    "scripts/verse.py",
+    "scripts/voice.py",
+    "scripts/web/__init__.py",
+    "scripts/web/build_studio_cloud.py",
+    "scripts/web/claude_bridge.py",
+    "scripts/web/jobs.py",
+    "scripts/web/recipes.py",
+    "scripts/web/server.py",
+    "scripts/web/wbcompat.py",
+    "scripts/workbench_cli.py"
+   ],
+   "test_dirs": [
+    "scripts",
+    "tests",
+    "tests/bridge"
+   ],
+   "left_upstream": [
+    "scripts/projects/bunny_twin/assets/score.wav",
+    "scripts/projects/five_sec/assets/score.wav",
+    "scripts/projects/night_boat/assets/ambience.wav",
+    "scripts/web/static/examples/cat.gif",
+    "scripts/web/static/examples/cat.mp4",
+    "scripts/web/static/examples/midnight-cat.mp4"
+   ],
+   "source_licenses": [],
+   "sources": [],
+   "install": "python3 scripts/superskills.py install kosif-montage-motion"
+  },
+  {
+   "slug": "kosif-one",
+   "n": "",
+   "domain": "kosif-core",
+   "title_ar": "كوسيف ون: طلب واحد وتوزيع تلقائي",
+   "title_en": "KOSIF One",
+   "description": "KOSIF One — the single front door for every KOSIF skill. The user writes ONE request (Arabic or English); this skill plans it, asks the live Jev arbiter for the production route, combines tools in one pipeline when needed (montage-motion, hyperframes, ultra-motion, motion-os, pixel studio, kosif-social, 100 Super Skills, KOSIF Omni) and delivers one gated result. Covers video, montage, reels, Pinterest/TikTok/YouTube downloads, 2D/3D motion, kinetic Arabic text, launch/ad videos, films from songs/poems/verses, reference breakdowns, AI video/image prompts, logos, thumbnails, pixel redraws, audio cleanup/mastering, UI motion, and social media (captions, hashtags, carousels, content calendars, posting times, A/B); anything else goes to KOSIF Omni. Use when the user says kosif one, كوسيف, «مهارة واحدة», «اعمل لي», or any creative/media request where the skill is unclear. Arabic: فيديو، مونتاج، ريل، موشن، انيميشن، تحميل، بنترست، صورة، لوجو، غلاف، صوت، برومبت، سوشيال، كابشن، هاشتاج، كاروسيل، خطة محتوى.",
+   "summary_ar": "الباب الواحد لكل مهارات KOSIF: طلب واحد يُخطط ويوزّع على المونتاج والموشن والبكسل والسوشيال ويسلّم نتيجة واحدة مفحوصة. فيديو مونتاج ريل موشن انيميشن تحميل بنترست تيك توك يوتيوب صورة لوجو غلاف صوت برومبت",
+   "path": "vendor/100-superskills/skills/kosif-one",
+   "files": 4,
+   "bytes": 54682,
+   "scripts": [
+    "scripts/plan.py"
+   ],
+   "test_dirs": [
+    "tests"
+   ],
+   "left_upstream": [],
+   "source_licenses": [],
+   "sources": [],
+   "install": "python3 scripts/superskills.py install kosif-one"
+  },
+  {
+   "slug": "kosif-social",
+   "n": "",
+   "domain": "kosif-core",
+   "title_ar": "كوسيف سوشيال: طبقة السوشيال ميديا",
+   "title_en": "KOSIF Social",
+   "description": "KOSIF Social — the social-media layer for every video and campaign, Arabic-first and measured: a post pack per platform (caption, hashtags, YouTube title/description, CTA, first comment, cover text, alt text) linted against each platform's limits; Instagram/TikTok/LinkedIn carousels rendered as PNG + PDF with correct Arabic shaping; a content calendar (CSV, Excel, Markdown, calendar .ics) built from content pillars; the best posting time computed from the account's OWN analytics export; A/B tests planned with the sample size they need and read with a significance test. Never posts, schedules on a platform or signs in. Use after any reel/video for 'caption', 'hashtags', 'post', 'carousel', 'content plan', 'posting schedule', 'best time to post', 'A/B'. Arabic: كابشن، وصف، هاشتاجات، بوست، كاروسيل، سلايدات انستا، خطة محتوى، جدول نشر، أحسن وقت للنشر، تجربة نسختين، سوشيال ميديا.",
+   "summary_ar": "كابشن وهاشتاجات لكل منصة، عنوان ووصف يوتيوب، كاروسيل إنستجرام وتيك توك ولينكدإن PNG وPDF بعربية صحيحة، خطة محتوى وتقويم نشر، أحسن وقت نشر، اختبار A/B",
+   "path": "vendor/100-superskills/skills/kosif-social",
+   "files": 9,
+   "bytes": 59430,
+   "scripts": [
+    "scripts/social.py"
+   ],
+   "test_dirs": [
+    "tests"
+   ],
+   "left_upstream": [],
+   "source_licenses": [],
+   "sources": [],
+   "install": "python3 scripts/superskills.py install kosif-social"
+  }
+ ]
+}

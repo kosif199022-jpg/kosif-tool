@@ -133,5 +133,5 @@ The site is plain static files at the repository root and needs no build step. `
 
 ## KOSIF Superpowers × 100 Super Skills (114 مهارة)
 
-تم ربط مكتبة [100-superskills](https://github.com/kosif199022-jpg/100-superskills) داخل KOSIF Superpowers بإصدار ثابت كـ Git submodule، بحيث تبقى جميع ملفات المهارات والمراجع والسكربتات والأصول محفوظة في مصدرها. عند استنساخ المستودع شغّل `git submodule update --init --recursive`.
+تم ربط مكتبة [100-superskills](https://github.com/kosif199022-jpg/100-superskills) داخل KOSIF Superpowers منسوخة بالكامل داخل المستودع في `.claude/skills/kosif-superpowers/vendor/100-superskills` (682 ملفًا ببصمة SHA-256، من غير أي خطوة إضافية بعد الاستنساخ). ابحث عن المهارة المناسبة بـ `python3 .claude/skills/kosif-superpowers/scripts/superskills.py find "<طلبك>"`.
 الفهرس والأوامر داخل [دليل دمج 114 مهارة](.claude/skills/kosif-superpowers/references/100-superskills-integration.md)؛ جرّب `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor` لتمييز المتاح فعليًا عمّا يتطلب تجهيزًا.

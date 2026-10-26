@@ -1,0 +1,1 @@
+{"name":"code-quality","pass_threshold":7,"criteria":{"correctness":0.3,"security":0.3,"readability":0.2,"tests":0.2}}

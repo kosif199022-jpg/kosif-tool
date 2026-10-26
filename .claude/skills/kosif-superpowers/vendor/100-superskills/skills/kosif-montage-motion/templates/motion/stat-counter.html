@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{LABEL}} — KOSIF Motion</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-arabic-800-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-arabic-600-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  html, body { margin: 0; padding: 0; width: {{W}}px; height: {{H}}px; overflow: hidden; background: {{BG2}}; }
+  #root { --u: calc(min({{W}}px, {{H}}px) / 100); position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden;
+          background: radial-gradient(circle at 50% 40%, {{BG1}} 0%, {{BG2}} 70%); font-family: "Cairo", "Segoe UI", Tahoma, sans-serif; color: #fff; }
+  #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+  .rtl { direction: rtl; unicode-bidi: isolate; }
+  #ring { position: absolute; left: 50%; top: 42%; width: calc(var(--u) * 62); height: calc(var(--u) * 62); transform: translate(-50%, -50%); }
+  #num { position: absolute; left: 0; right: 0; top: 42%; transform: translateY(-50%); text-align: center; font-size: calc(var(--u) * 15); font-weight: 800;
+         letter-spacing: -0.02em; visibility: hidden; direction: ltr; }
+  #label { position: absolute; left: 10%; right: 10%; top: 66%; text-align: center; font-size: calc(var(--u) * 4.6); font-weight: 600; visibility: hidden; }
+  #flash { position: absolute; inset: 0; background: {{ACCENT}}; opacity: 0; pointer-events: none; z-index: 60; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <div id="cam">
+    <svg id="ring" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" stroke="#ffffff" stroke-opacity=".12" stroke-width="3" fill="none"/>
+      <path id="arc" d="M 50 4 A 46 46 0 1 1 49.99 4" stroke="{{ACCENT}}" stroke-width="4" fill="none" stroke-linecap="round" opacity="0"/>
+    </svg>
+    <div id="num">0</div>
+    <div id="label" class="rtl">{{LABEL}}</div>
+    <div id="flash"></div>
+  </div>
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const W = {{W}}, H = {{H}}, D = {{SECONDS}};
+    const root = $("#root"), cam = $("#cam");
+    M.vignette(root, { strength: 0.35 });
+    M.grain(root, { opacity: 0.05, seed: 9 });
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    const target = {{VALUE}}, dec = {{DECIMALS}};
+    const count = Math.min(2.2, Math.max(1.0, D * 0.35));
+    // the ring draws while the number climbs on the same ease: picture and figure read as one measurement
+    M.drawPath(tl, $("#arc"), 0.3, count, { ease: M.E.out });
+    M.counter(tl, $("#num"), 0, target, 0.3, count, { decimals: dec, prefix: "{{PREFIX}}", suffix: "{{SUFFIX}}", ease: M.E.out });
+    tl.fromTo($("#num"), { scale: 0.86, opacity: 0.4 }, { scale: 1, opacity: 1, duration: 0.5, ease: M.E.out, immediateRender: false }, 0.3);
+    M.flash(tl, $("#flash"), 0.3 + count, { peak: 0.22, dur: 0.5 });
+    M.squash(tl, $("#num"), 0.3 + count, { along: 0.06, across: 0.04, dur: 0.16 });
+    M.riseWords(tl, $("#label"), 0.3 + count * 0.75, { dur: 0.5, stagger: 0.08 });
+    M.breathe(tl, cam, 0.3 + count, Math.max(0.6, D - 1.4 - count), { creep: 0.02 });
+    M.hideWords(tl, $("#label"), D - 0.9, { dur: 0.4 });
+    tl.to([$("#num"), $("#ring")], { opacity: 0, y: -24, duration: 0.45, ease: M.E.in }, D - 0.75);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", D);
+  </script>
+</div>
+</body>
+</html>

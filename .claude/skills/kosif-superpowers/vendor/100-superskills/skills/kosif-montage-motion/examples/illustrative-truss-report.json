@@ -1,0 +1,420 @@
+{
+  "schema": "kosif.structural-twin.v0.1",
+  "model": {
+    "name": "Illustrative triangular truss (not calibrated to a real object)",
+    "units": {
+      "length": "m",
+      "force": "N",
+      "stress": "Pa"
+    },
+    "nodes": {
+      "A": [
+        0,
+        0
+      ],
+      "B": [
+        1,
+        1
+      ],
+      "C": [
+        2,
+        0
+      ]
+    },
+    "supports": {
+      "A": [
+        "x",
+        "y"
+      ],
+      "C": [
+        "y"
+      ]
+    },
+    "elements": [
+      {
+        "id": "AB",
+        "a": "A",
+        "b": "B",
+        "area_m2": 0.0001,
+        "young_pa": 200000000000.0,
+        "strength_pa": 250000000.0
+      },
+      {
+        "id": "BC",
+        "a": "B",
+        "b": "C",
+        "area_m2": 0.0001,
+        "young_pa": 200000000000.0,
+        "strength_pa": 250000000.0
+      },
+      {
+        "id": "AC",
+        "a": "A",
+        "b": "C",
+        "area_m2": 0.0001,
+        "young_pa": 200000000000.0,
+        "strength_pa": 250000000.0
+      }
+    ],
+    "loads": [
+      {
+        "node": "B",
+        "fy_n": -12000
+      }
+    ]
+  },
+  "baseline": {
+    "schema": "kosif.structural-twin.v0.1",
+    "assumptions": "2D linear elastic, small-displacement, pin joints, axial stress only",
+    "load_scale": 1.0,
+    "displacements_m": {
+      "A": {
+        "x_m": 0.0,
+        "y_m": 0.0
+      },
+      "B": {
+        "x_m": 0.0003,
+        "y_m": -0.001148528137
+      },
+      "C": {
+        "x_m": 0.0006,
+        "y_m": 0.0
+      }
+    },
+    "reactions_n": {
+      "A.x": 0.0,
+      "A.y": 6000.0,
+      "C.y": 6000.0
+    },
+    "members": [
+      {
+        "id": "AB",
+        "a": "A",
+        "b": "B",
+        "length_m": 1.41421356,
+        "axial_n": -8485.2813742,
+        "stress_pa": -84852813.742386,
+        "utilization": 0.339411255,
+        "failure_load_multiplier": 2.94627825,
+        "mode": "compression",
+        "capacity_stress_pa": 250000000.0,
+        "area_m2": 0.0001
+      },
+      {
+        "id": "BC",
+        "a": "B",
+        "b": "C",
+        "length_m": 1.41421356,
+        "axial_n": -8485.2813742,
+        "stress_pa": -84852813.742386,
+        "utilization": 0.339411255,
+        "failure_load_multiplier": 2.94627825,
+        "mode": "compression",
+        "capacity_stress_pa": 250000000.0,
+        "area_m2": 0.0001
+      },
+      {
+        "id": "AC",
+        "a": "A",
+        "b": "C",
+        "length_m": 2.0,
+        "axial_n": 6000.0,
+        "stress_pa": 60000000.0,
+        "utilization": 0.24,
+        "failure_load_multiplier": 4.16666667,
+        "mode": "tension",
+        "capacity_stress_pa": 250000000.0,
+        "area_m2": 0.0001
+      }
+    ],
+    "ranked_failure_modes": [
+      {
+        "id": "AB",
+        "a": "A",
+        "b": "B",
+        "length_m": 1.41421356,
+        "axial_n": -8485.2813742,
+        "stress_pa": -84852813.742386,
+        "utilization": 0.339411255,
+        "failure_load_multiplier": 2.94627825,
+        "mode": "compression",
+        "capacity_stress_pa": 250000000.0,
+        "area_m2": 0.0001
+      },
+      {
+        "id": "BC",
+        "a": "B",
+        "b": "C",
+        "length_m": 1.41421356,
+        "axial_n": -8485.2813742,
+        "stress_pa": -84852813.742386,
+        "utilization": 0.339411255,
+        "failure_load_multiplier": 2.94627825,
+        "mode": "compression",
+        "capacity_stress_pa": 250000000.0,
+        "area_m2": 0.0001
+      },
+      {
+        "id": "AC",
+        "a": "A",
+        "b": "C",
+        "length_m": 2.0,
+        "axial_n": 6000.0,
+        "stress_pa": 60000000.0,
+        "utilization": 0.24,
+        "failure_load_multiplier": 4.16666667,
+        "mode": "tension",
+        "capacity_stress_pa": 250000000.0,
+        "area_m2": 0.0001
+      }
+    ],
+    "first_failure_multiplier": 2.94627825,
+    "failed_at_current_load": []
+  },
+  "hypothetical_failure_path": {
+    "load_scale": 3.2,
+    "steps": [
+      {
+        "step": 0,
+        "status": "idealized_member_removed",
+        "element": "AB",
+        "utilization_before_removal": 1.086116016
+      },
+      {
+        "step": 1,
+        "status": "unstable_after_removal",
+        "detail": "Unstable or ill-conditioned truss: insufficient supports/members"
+      }
+    ],
+    "removed_members": [
+      "AB"
+    ],
+    "warning": "Removal at strength threshold is hypothetical; no buckling, fracture, fatigue or dynamic redistribution."
+  },
+  "source_note": "Model parameters are user-supplied or illustrative, NEVER extracted from pixels as verified geometry or material properties.",
+  "scope_warning": "Illustrative engineering education ONLY; not validated for construction, medical, manufacturing or other safety decisions.",
+  "swap": {
+    "element_id": "AB",
+    "changes": {
+      "area_m2": 0.0002
+    },
+    "before": {
+      "schema": "kosif.structural-twin.v0.1",
+      "assumptions": "2D linear elastic, small-displacement, pin joints, axial stress only",
+      "load_scale": 1.0,
+      "displacements_m": {
+        "A": {
+          "x_m": 0.0,
+          "y_m": 0.0
+        },
+        "B": {
+          "x_m": 0.0003,
+          "y_m": -0.001148528137
+        },
+        "C": {
+          "x_m": 0.0006,
+          "y_m": 0.0
+        }
+      },
+      "reactions_n": {
+        "A.x": 0.0,
+        "A.y": 6000.0,
+        "C.y": 6000.0
+      },
+      "members": [
+        {
+          "id": "AB",
+          "a": "A",
+          "b": "B",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -84852813.742386,
+          "utilization": 0.339411255,
+          "failure_load_multiplier": 2.94627825,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "BC",
+          "a": "B",
+          "b": "C",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -84852813.742386,
+          "utilization": 0.339411255,
+          "failure_load_multiplier": 2.94627825,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "AC",
+          "a": "A",
+          "b": "C",
+          "length_m": 2.0,
+          "axial_n": 6000.0,
+          "stress_pa": 60000000.0,
+          "utilization": 0.24,
+          "failure_load_multiplier": 4.16666667,
+          "mode": "tension",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        }
+      ],
+      "ranked_failure_modes": [
+        {
+          "id": "AB",
+          "a": "A",
+          "b": "B",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -84852813.742386,
+          "utilization": 0.339411255,
+          "failure_load_multiplier": 2.94627825,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "BC",
+          "a": "B",
+          "b": "C",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -84852813.742386,
+          "utilization": 0.339411255,
+          "failure_load_multiplier": 2.94627825,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "AC",
+          "a": "A",
+          "b": "C",
+          "length_m": 2.0,
+          "axial_n": 6000.0,
+          "stress_pa": 60000000.0,
+          "utilization": 0.24,
+          "failure_load_multiplier": 4.16666667,
+          "mode": "tension",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        }
+      ],
+      "first_failure_multiplier": 2.94627825,
+      "failed_at_current_load": []
+    },
+    "after": {
+      "schema": "kosif.structural-twin.v0.1",
+      "assumptions": "2D linear elastic, small-displacement, pin joints, axial stress only",
+      "load_scale": 1.0,
+      "displacements_m": {
+        "A": {
+          "x_m": 0.0,
+          "y_m": 0.0
+        },
+        "B": {
+          "x_m": 0.000512132034,
+          "y_m": -0.000936396103
+        },
+        "C": {
+          "x_m": 0.0006,
+          "y_m": 0.0
+        }
+      },
+      "reactions_n": {
+        "A.x": -0.0,
+        "A.y": 6000.0,
+        "C.y": 6000.0
+      },
+      "members": [
+        {
+          "id": "AB",
+          "a": "A",
+          "b": "B",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -42426406.871193,
+          "utilization": 0.169705627,
+          "failure_load_multiplier": 5.89255651,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0002
+        },
+        {
+          "id": "BC",
+          "a": "B",
+          "b": "C",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -84852813.742386,
+          "utilization": 0.339411255,
+          "failure_load_multiplier": 2.94627825,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "AC",
+          "a": "A",
+          "b": "C",
+          "length_m": 2.0,
+          "axial_n": 6000.0,
+          "stress_pa": 60000000.0,
+          "utilization": 0.24,
+          "failure_load_multiplier": 4.16666667,
+          "mode": "tension",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        }
+      ],
+      "ranked_failure_modes": [
+        {
+          "id": "BC",
+          "a": "B",
+          "b": "C",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -84852813.742386,
+          "utilization": 0.339411255,
+          "failure_load_multiplier": 2.94627825,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "AC",
+          "a": "A",
+          "b": "C",
+          "length_m": 2.0,
+          "axial_n": 6000.0,
+          "stress_pa": 60000000.0,
+          "utilization": 0.24,
+          "failure_load_multiplier": 4.16666667,
+          "mode": "tension",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0001
+        },
+        {
+          "id": "AB",
+          "a": "A",
+          "b": "B",
+          "length_m": 1.41421356,
+          "axial_n": -8485.2813742,
+          "stress_pa": -42426406.871193,
+          "utilization": 0.169705627,
+          "failure_load_multiplier": 5.89255651,
+          "mode": "compression",
+          "capacity_stress_pa": 250000000.0,
+          "area_m2": 0.0002
+        }
+      ],
+      "first_failure_multiplier": 2.94627825,
+      "failed_at_current_load": []
+    },
+    "first_failure_multiplier_delta": 0.0,
+    "warning": "Comparisons are within the stated simplified model, not safety approval."
+  }
+}

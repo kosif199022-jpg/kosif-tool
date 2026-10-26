@@ -112,7 +112,7 @@ def appendices() -> list[dict]:
 
 
 def superskills() -> list[dict]:
-    """Standalone 114-skill catalogue, even without local submodule checkout."""
+    """Standalone 114-skill catalogue (files vendored under vendor/100-superskills)."""
     path = SKILL / "data" / "100-superskills-index.json"
     if not path.is_file():
         return []
@@ -151,7 +151,7 @@ def render() -> str:
         for sec in s["sections"]:
             L.append(f"- {sec['start']}–{sec['end']}: {short(sec['title'], 110)}")
         L.append("")
-    L += ["", f"## مكتبة 100 Super Skills ({len(superskills())}) / pinned submodule skills", "",
+    L += ["", f"## مكتبة 100 Super Skills ({len(superskills())}) / vendored skills", "",
           "| المهارة | الفئة | SKILL.md |", "|---|---|---|"]
     for item in superskills():
         L.append(f"| `{item['slug']}` | `{item['category']}` | `{item['path']}` |")
@@ -183,7 +183,7 @@ def need(task: str, n: int = 6) -> list[dict]:
         score = len(q & words(entry["slug"].replace("-", " ") + " " + entry["ar"] + " " + entry["en"] + " " + entry["description"]))
         if score:
             picks.append({"kind": "superskill", "id": entry["slug"], "open": entry["path"],
-                          "score": score, "note": "git submodule update --init --recursive may be required"})
+                          "score": score, "note": "vendored: read vendor/100-superskills/skills/<slug>/SKILL.md"})
     picks.sort(key=lambda p: (-p["score"], p["kind"], p["id"]))
     return picks[:n]
 

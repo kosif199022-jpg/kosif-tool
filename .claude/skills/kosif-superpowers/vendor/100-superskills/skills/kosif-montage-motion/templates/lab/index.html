@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{TITLE}} — KOSIF LAB</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<script src="assets/three-kit.bundle.js"></script>
+<script src="assets/lab-kit.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; width: {{W}}px; height: {{H}}px; overflow: hidden; background: #f1efe8; }
+  #root { position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden; background: #f1efe8; font-family: "IBM Plex Mono", "Consolas", "Courier New", monospace; }
+  #gl { position: absolute; inset: 0; width: {{W}}px; height: {{H}}px; display: block; }
+  #title { position: absolute; right: 0; left: 0; top: 40%; text-align: center; font-size: 72px; font-weight: 800; color: #0f1512; direction: rtl; unicode-bidi: isolate; visibility: hidden;
+           font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", sans-serif; z-index: 40; text-shadow: 0 2px 12px rgba(241,239,232,.9); }
+  #title { top: 58%; }
+  #kicker { position: absolute; right: 0; left: 0; top: 69%; text-align: center; font-size: 15px; letter-spacing: .3em; color: #0f1512; visibility: hidden; z-index: 40; }
+  #dip { position: absolute; inset: 0; background: #0f1512; opacity: 0; z-index: 90; pointer-events: none; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <audio id="score" src="assets/score.wav" data-start="0" data-duration="{{SECONDS}}" data-volume="0.8" data-fade-out="0.6" data-role="music"></audio> -->
+  <canvas id="gl" width="{{W}}" height="{{H}}"></canvas>
+  <div id="title">{{TITLE}}</div>
+  <div id="kicker">KOSIF LAB 01 · SHAPE · JOINT · LOAD · BREAK · SWAP · RANK</div>
+  <div id="dip"></div>
+  <script src="src/main.js"></script>
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const three = window.__three.build($("#gl"), {{W}}, {{H}});
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    const E = M.ease, S = {{SECONDS}};
+    M.revealWords(tl, $("#title"), 0.3, { dur: 0.9, stagger: 0.1, ease: E.settle });
+    M.hideWords(tl, $("#title"), 2.4, { dur: 0.45 });
+    M.revealWords(tl, $("#kicker"), 0.9, { dur: 0.6, stagger: 0.04, ease: E.settle });
+    M.hideWords(tl, $("#kicker"), 2.5, { dur: 0.4 });
+    tl.to("#dip", { opacity: 1, duration: 0.6, ease: "none" }, S - 0.6);          // a deliberate end: dip to ink
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", S);
+    const seek = window.__kosifSeek;
+    window.render = (t) => { window.__ready = false; seek(t); three.render(t); requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; })); };
+    window.__ready = false;
+    Promise.all([document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(), three.ready || Promise.resolve()])
+      .then(() => { seek(0); three.render(0); three.render(0); window.__ready = true; })
+      .catch((e) => console.error("scene failed to load", e));
+  </script>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "kosif-motion",
+  "private": true,
+  "description": "KOSIF Motion: HyperFrames + GSAP + three.js + esbuild for the hyperframes-animation-studio skill. Run: npm install",
+  "dependencies": {
+    "esbuild": "^0.27.0",
+    "gsap": "^3.14.0",
+    "hyperframes": "^0.8.139",
+    "three": "^0.186.0"
+  }
+}

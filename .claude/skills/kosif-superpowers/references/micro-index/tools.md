@@ -74,6 +74,8 @@
 | `smart-capabilities` | TOOL-116 | فهرس ذكي للقدرات من أجل Claude · Smart capability index for Claude | `python3 scripts/smart_capabilities.py groups` | 1 |
 | `superpower-fusion` | TOOL-127 | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) | `python3 scripts/superpower_fusion.py build` | 1 |
 | `superpowers-unified` | TOOL-09 | موجّه مهارات العمل ومثبّتها · Process-skill router and installer | `python3 scripts/superpowers_unified.py doctor` | 1 |
+| `superskills` | — | المهارات الخارقة: الـ114 مهارة الكاملة من مستودعك داخل سوبر باور · 100 Super Skills: the owner's 114 whole skills, vendored and routable | `python3 scripts/superskills.py find "نموذج مالي في إكسل"` | 1 |
+| `superskills-bridge` | — | جسر المهارات الخارقة: بحث للقراءة فقط في فهرس الـ114 مهارة · 100 Super Skills bridge: read-only index lookup | `python3 scripts/superskills_bridge.py doctor` | 1 |
 
 ## draw
 

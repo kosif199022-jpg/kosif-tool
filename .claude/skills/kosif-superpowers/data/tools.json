@@ -15926,6 +15926,184 @@
       ],
       "evidence": "tested-here",
       "evidence_note": "10/10 passed here (tests/test_script_storyboard.py, both render tests with real ffmpeg). Scratch run on a 53-page Arabic play PDF: 8 scenes, 505 shots, 33 characters, 3 duplicate-spelling warnings, 25 episodes all under 90 s; episode 1 rendered against a 4 s AAC track gave exactly 120 frames at 30 fps with the audio stream-copied."
+    },
+    {
+      "id": "superskills",
+      "path": "scripts/superskills.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "discover",
+      "title_en": "100 Super Skills: the owner's 114 whole skills, vendored and routable",
+      "title_ar": "المهارات الخارقة: الـ114 مهارة الكاملة من مستودعك داخل سوبر باور",
+      "summary_en": "Holds the owner's repository kosif199022-jpg/100-superskills inside Superpowers: all 114 skill folders (110 catalogued super skills plus kosif-one, kosif-social, kosif-mimic and kosif-montage-motion, 682 files with 143 scripts) copied into vendor/100-superskills with a SHA-256 manifest. It finds the right super skill for a request in Arabic or English, shows its method, scripts, tests and sources, installs one into ~/.claude/skills, verifies every file against its hash and runs the skills' own unit tests in a temporary copy. hub.py find lists the matching super skills too.",
+      "summary_ar": "يضع مستودعك 100-superskills كاملًا داخل سوبر باور: كل مجلدات الـ114 مهارة (110 مهارة خارقة مفهرسة ومعها kosif-one وkosif-social وkosif-mimic وkosif-montage-motion، أي 682 ملفًا و143 سكربتًا) منسوخة في vendor/100-superskills ببصمة SHA-256 لكل ملف. يختار المهارة المناسبة لأي طلب بالعربي أو الإنجليزي، ويعرض منهجها وسكربتاتها واختباراتها ومصادرها، ويثبّت أي مهارة في ~/.claude/skills، ويتحقق من كل ملف ببصمته، ويشغّل اختبارات المهارات نفسها في نسخة مؤقتة. و hub.py find بقى يعرض المهارات الخارقة المناسبة كمان.",
+      "use_when": [
+        "انقل قدرات مستودع الـ114 مهارة لسوبر باور",
+        "أنهي مهارة من المهارات الخارقة تنفع للطلب ده؟",
+        "ثبّت مهارة النماذج المالية في إكسل عندي",
+        "عايز مجلس خبراء لقرار صعب",
+        "Which of my 100 super skills fits this request?",
+        "Install the kinetic Arabic typography skill"
+      ],
+      "keywords": [
+        "super skills",
+        "superskills",
+        "100-superskills",
+        "114 skills",
+        "skill library",
+        "install skill",
+        "مهارات خارقة",
+        "المهارات الخارقة",
+        "114 مهارة",
+        "مكتبة المهارات",
+        "ثبت مهارة",
+        "kosif-one",
+        "kosif-mimic",
+        "kosif-social"
+      ],
+      "commands": [
+        {
+          "name": "find",
+          "example": "python3 scripts/superskills.py find \"نموذج مالي في إكسل\"",
+          "does": "Ranks the 114 super skills for the request (Arabic-aware: article and joined و/ب/ل prefixes dropped) and prints the best five with their domain and script count; --json for machines."
+        },
+        {
+          "name": "list",
+          "example": "python3 scripts/superskills.py list --domain motion",
+          "does": "Lists every super skill grouped into its ten domains (motion, image-video, prompts-ai, office-data, web-code, business, ultra, pixel, hyperframes, kosif-core)."
+        },
+        {
+          "name": "show",
+          "example": "python3 scripts/superskills.py show genius-council-decision --full",
+          "does": "Prints a skill's description, vendored path, scripts, tests, source skills and licences and the install command; --full adds the whole SKILL.md."
+        },
+        {
+          "name": "install",
+          "example": "python3 scripts/superskills.py install kinetic-typography-arabic --dry-run",
+          "does": "Copies one skill folder into ~/.claude/skills (or --dest); refuses to overwrite unless --force, and then keeps a .bak copy."
+        },
+        {
+          "name": "verify",
+          "example": "python3 scripts/superskills.py verify",
+          "does": "Checks every vendored file against the SHA-256 in vendor/100-superskills/KOSIF_INTEGRATION.json and reports unlisted files."
+        },
+        {
+          "name": "selftest",
+          "example": "python3 scripts/superskills.py selftest kosif-one",
+          "does": "Runs the skills' own unit tests (pixel-studio-painter, kosif-montage-motion, kosif-one, kosif-social) in a temporary copy of the skills folder."
+        },
+        {
+          "name": "sync",
+          "example": "python3 scripts/superskills.py sync --src ../100-superskills",
+          "does": "Owner action: re-copies the skills from a 100-superskills checkout, re-applies the KOSIF patches, rewrites the manifest and data/superskills.json."
+        }
+      ],
+      "safe_commands": [
+        "find",
+        "list",
+        "show",
+        "verify"
+      ],
+      "inputs": "A request in the user's words, a skill slug, or (for sync) a local checkout of kosif199022-jpg/100-superskills.",
+      "outputs": "Ranked skills and skill details on stdout (JSON with --json); install writes one skill folder; sync rewrites vendor/100-superskills and data/superskills.json; selftest prints one line per test folder.",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [
+          "ffmpeg",
+          "opencv-python-headless",
+          "scipy",
+          "pillow",
+          "numpy"
+        ],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "find, list, show and verify only read. install writes one folder under ~/.claude/skills (never overwrites without --force). selftest runs the vendored skills' own tests in a temporary copy. Nothing is published or downloaded.",
+      "limits": "The ranking is keyword matching over titles and descriptions, not semantic search; broken Arabic plurals (فاتورة / فواتير) can miss. Nine large media files (videos, big PNGs, a tessdata model, demo WAVs) stay upstream and are listed per skill. vendor/ is left out of the claude.ai zip, so there only the index and descriptions travel. The selftest needs ffmpeg, opencv-python-headless, scipy, pillow and numpy for the full set.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_superskills.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/vendor/100-superskills/KOSIF_README.md"
+      ],
+      "families": [
+        "self-discovery",
+        "agent-orchestration"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "On 2026-10-26 in this checkout: verify 682/682 files match; selftest passed all six test folders of the four skills that ship tests (215 tests: pixel-studio-painter 43, kosif-montage-motion 8+112+31, kosif-one 10, kosif-social 11) after the five recorded KOSIF patches; 115 of 129 vendored Python scripts answer --help (the rest need an input file, playwright, matplotlib, or are scene modules); evals/test_superskills.py passed."
+    },
+    {
+      "id": "superskills-bridge",
+      "path": "scripts/superskills_bridge.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "discover",
+      "title_en": "100 Super Skills bridge: read-only index lookup",
+      "title_ar": "جسر المهارات الخارقة: بحث للقراءة فقط في فهرس الـ114 مهارة",
+      "summary_en": "Read-only lookup over data/100-superskills-index.json (the 114-skill index added with PR #153): doctor reports how many SKILL.md files are present, list, find, show and path print entries with their category and vendored path. skill_loader.py need uses the same index. For ranking, install, hash checks and the skills' own tests use superskills.",
+      "summary_ar": "بحث للقراءة فقط في data/100-superskills-index.json (فهرس الـ114 مهارة اللي اتضاف في PR #153): doctor يقول كام ملف SKILL.md موجود، وlist وfind وshow وpath يطبعوا المهارة وتصنيفها ومسارها. skill_loader.py need بيستخدم نفس الفهرس. للترتيب والتثبيت وفحص البصمات واختبارات المهارات استخدم superskills.",
+      "use_when": [
+        "هل ملفات الـ114 مهارة موجودة؟",
+        "فين مسار مهارة kosif-mimic؟",
+        "Is every super skill file present in this checkout?"
+      ],
+      "keywords": [
+        "superskills bridge",
+        "100-superskills index",
+        "doctor",
+        "skill path",
+        "فهرس المهارات الخارقة"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/superskills_bridge.py doctor",
+          "does": "Counts the catalogued skills and the SKILL.md files present under vendor/100-superskills."
+        },
+        {
+          "name": "find",
+          "example": "python3 scripts/superskills_bridge.py find \"excel\"",
+          "does": "Token match over slug, Arabic and English names and description."
+        },
+        {
+          "name": "path",
+          "example": "python3 scripts/superskills_bridge.py path kosif-mimic",
+          "does": "Prints the vendored SKILL.md path of one skill."
+        }
+      ],
+      "safe_commands": [
+        "doctor",
+        "list",
+        "find",
+        "show",
+        "path"
+      ],
+      "inputs": "A query or a skill slug.",
+      "outputs": "Text or JSON (--json) on stdout.",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "Reads the index and checks file presence only.",
+      "limits": "Plain token overlap, no Arabic prefix handling; it does not install, verify hashes or run anything.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_superskills.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/100-superskills-integration.md"
+      ],
+      "families": [
+        "self-discovery"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "doctor on 2026-10-26 in this checkout: 114 catalogued, 114 SKILL.md files present (vendored copy); evals/test_superskills.py covers the shared vendor folder."
     }
   ]
 }

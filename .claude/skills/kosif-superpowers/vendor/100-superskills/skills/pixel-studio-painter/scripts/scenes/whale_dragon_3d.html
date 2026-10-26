@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<title>الحوت والتنين (3D)</title>
+<!--
+  Whale versus dragon as a real 3D shot, the HyperFrames way: one HTML page, one deterministic frame, seekable.
+  Physically based materials (wet clearcoat skin with procedural bump and roughness maps, translucent wing
+  membranes), a cold lightning key light with soft shadows, a warm fire light, exponential fog, additive
+  particles for fire, embers, steam and spray, rain as streaks, bloom, film grain and ACES tone mapping.
+  Contract: window.__ready = true when the frame is drawn; window.render(t) seeks; window.__duration in seconds.
+-->
+<style>html,body{margin:0;background:#000;overflow:hidden}canvas{display:block}</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"}}</script>
+</head>
+<body>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { FilmPass } from 'three/addons/postprocessing/FilmPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { ImprovedNoise } from 'three/addons/math/ImprovedNoise.js';
+
+const W = innerWidth, H = innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+renderer.setSize(W, H);
+renderer.setPixelRatio(devicePixelRatio);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.55;
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+document.body.appendChild(renderer.domElement);
+
+const noise = new ImprovedNoise();
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x05080d);
+scene.fog = new THREE.FogExp2(0x0d151f, 0.013);
+
+// ── camera: low, wide, beside the whale, looking up the diagonal to the dragon ────────────────────────────
+const camera = new THREE.PerspectiveCamera(46, W / H, 0.1, 500);
+camera.position.set(10, 1.8, 30);
+camera.lookAt(-1, 6.5, 0);
+
+// ── lights ─────────────────────────────────────────────────────────────────────────────────────────────────
+const cold = new THREE.DirectionalLight(0xcfe0ff, 3.2);
+cold.position.set(16, 30, -22); cold.castShadow = true;
+cold.shadow.mapSize.set(2048, 2048); cold.shadow.camera.left = -40; cold.shadow.camera.right = 40;
+cold.shadow.camera.top = 40; cold.shadow.camera.bottom = -40; cold.shadow.bias = -0.0004; cold.shadow.radius = 4;
+scene.add(cold);
+const MOUTH = new THREE.Vector3(-0.2, 9.6, 2.6), IMPACT = new THREE.Vector3(3.2, 7.4, 4.2);
+const fire = new THREE.PointLight(0xff8a3a, 140, 50, 2.0); fire.position.copy(IMPACT); fire.castShadow = true; scene.add(fire);
+const fireSpot = new THREE.SpotLight(0xffa050, 220, 50, 0.55, 0.5, 1.6); fireSpot.position.copy(MOUTH); fireSpot.target.position.copy(IMPACT);
+scene.add(fireSpot); scene.add(fireSpot.target);
+scene.add(new THREE.HemisphereLight(0x4a5e80, 0x070a10, 0.9));
+const boltGlow = new THREE.PointLight(0x8fb4ff, 60, 120, 1.6); boltGlow.position.set(14, 26, -28); scene.add(boltGlow);
+
+// ── procedural textures (deterministic): bump and roughness for skin and hide ─────────────────────────────
+function noiseTexture(size, scale, octaves, base = 128, amp = 60, seedZ = 0) {
+  const c = document.createElement('canvas'); c.width = c.height = size;
+  const g = c.getContext('2d'); const img = g.createImageData(size, size);
+  for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+    let v = 0, a = 1, f = scale;
+    for (let o = 0; o < octaves; o++) { v += noise.noise(x * f / size, y * f / size, seedZ + o * 3.7) * a; a *= 0.5; f *= 2; }
+    const p = (y * size + x) * 4; const k = Math.max(0, Math.min(255, base + v * amp));
+    img.data[p] = img.data[p + 1] = img.data[p + 2] = k; img.data[p + 3] = 255;
+  }
+  g.putImageData(img, 0, 0);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+}
+const skinBump = noiseTexture(512, 24, 5, 128, 70, 1.0); skinBump.repeat.set(3, 3);
+const skinRough = noiseTexture(256, 10, 4, 120, 90, 5.0); skinRough.repeat.set(2, 2);
+const hideBump = noiseTexture(512, 40, 5, 128, 90, 9.0); hideBump.repeat.set(4, 4);
+function softDisc(inner = 'rgba(255,255,255,1)', mid = 'rgba(255,220,160,0.8)', outer = 'rgba(255,120,40,0)') {
+  const c = document.createElement('canvas'); c.width = c.height = 64;
+  const g = c.getContext('2d'); const r = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+  r.addColorStop(0, inner); r.addColorStop(0.35, mid); r.addColorStop(1, outer);
+  g.fillStyle = r; g.fillRect(0, 0, 64, 64);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const disc = softDisc();
+const cloudDisc = softDisc('rgba(255,255,255,0.9)', 'rgba(255,255,255,0.45)', 'rgba(255,255,255,0)');
+
+// ── the sea: wave height field, white caps by height, wet reflective surface ──────────────────────────────
+const seaGeo = new THREE.PlaneGeometry(320, 320, 320, 320);
+const sp = seaGeo.attributes.position; const seaCol = [];
+for (let i = 0; i < sp.count; i++) {
+  const x = sp.getX(i), y = sp.getY(i);
+  let h = 0, a = 1.3, f = 0.09;
+  for (let o = 0; o < 4; o++) { h += noise.noise(x * f + 3.1, y * f + 7.7, o * 2.3) * a; a *= 0.5; f *= 2.1; }
+  h += Math.sin(x * 0.3 + y * 0.1) * 0.45;
+  sp.setZ(i, h);
+  const cap = THREE.MathUtils.smoothstep(h, 0.9, 1.7);
+  const c = new THREE.Color(0x14222e).lerp(new THREE.Color(0xdfe8f0), cap);
+  seaCol.push(c.r, c.g, c.b);
+}
+seaGeo.setAttribute('color', new THREE.Float32BufferAttribute(seaCol, 3));
+seaGeo.computeVertexNormals();
+const sea = new THREE.Mesh(seaGeo, new THREE.MeshPhysicalMaterial({ vertexColors: true, roughness: 0.24, metalness: 0.05,
+  clearcoat: 1, clearcoatRoughness: 0.12, specularIntensity: 1.3, specularColor: new THREE.Color(0xaec3e6) }));
+sea.rotation.x = -Math.PI / 2; sea.position.y = -1.2; sea.receiveShadow = true;
+scene.add(sea);
+
+// ── clouds: lit sprites, cold from the lightning, warm above the fire ─────────────────────────────────────
+for (let i = 0; i < 70; i++) {
+  const x = (rnd() - 0.5) * 140, y = 16 + rnd() * 16, z = -40 - rnd() * 50;
+  const dBolt = Math.hypot(x - 14, y - 24, z + 28), dFire = Math.hypot(x - IMPACT.x, y - IMPACT.y, z - IMPACT.z);
+  const c = new THREE.Color(0x0c1119).lerp(new THREE.Color(0x8fb0e0), Math.max(0, 1 - dBolt / 50) * 0.9)
+    .lerp(new THREE.Color(0xff8a3a), Math.max(0, 1 - dFire / 45) * 0.35);
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: cloudDisc, color: c, transparent: true, opacity: 0.85, depthWrite: false }));
+  s.position.set(x, y, z); s.scale.set(26 + rnd() * 30, 12 + rnd() * 10, 1); scene.add(s);
+}
+
+// ── the whale: humpback body with a flattened pleated belly, knobbed head, long white fin, flukes ─────────
+const whale = new THREE.Group();
+const prof = [[0,0],[0.3,1.0],[0.7,1.7],[1.25,2.25],[1.9,2.6],[2.7,2.8],[3.7,2.75],[4.7,2.4],[5.7,1.85],[6.5,1.3],[7.2,0.8],[7.7,0.38],[7.9,0]]
+  .map(([x, r]) => new THREE.Vector2(r, x - 4.0));              // y runs along the body from the tail (-4) to the snout (+3.9)
+const wGeo = new THREE.LatheGeometry(prof, 200, 0, Math.PI * 2);
+const wp = wGeo.attributes.position; const wCol = []; const col = new THREE.Color();
+for (let i = 0; i < wp.count; i++) {
+  const x = wp.getX(i), y = wp.getY(i), z = wp.getZ(i);
+  const r = Math.hypot(x, z) || 1e-6; const th = Math.atan2(z, x);         // belly toward +z (the camera)
+  const belly = Math.max(0, Math.sin(th)), back = Math.max(0, -Math.sin(th));
+  const u = (y + 4.0) / 7.9;                                                 // 0 tail .. 1 snout
+  let s = 1 + noise.noise(x * 1.6, y * 1.6, z * 1.6) * 0.05 + noise.noise(x * 6, y * 6, z * 6) * 0.015;
+  s *= 1 - belly * 0.18;                                                     // flatter underside
+  if (belly > 0.45 && u > 0.45) s += Math.sin(th * 34) * 0.005 * (belly - 0.45);   // throat pleats, subtle
+  if (back > 0.6 && u > 0.28 && u < 0.4) s += 0.16 * back * Math.sin((u - 0.28) / 0.12 * Math.PI); // dorsal hump
+  const w = 1.12;                                                            // wider than tall
+  wp.setXYZ(i, x * s * w, y, z * s);
+  const t = THREE.MathUtils.clamp(belly * 1.4 - 0.15, 0, 1);
+  col.setHex(0x3c4854).lerp(new THREE.Color(0xdde3e8), t * t);
+  wCol.push(col.r, col.g, col.b);
+}
+wGeo.setAttribute('color', new THREE.Float32BufferAttribute(wCol, 3));
+wGeo.computeVertexNormals();
+const skinMat = new THREE.MeshPhysicalMaterial({ vertexColors: true, roughness: 0.42, roughnessMap: skinRough, metalness: 0,
+  bumpMap: skinBump, bumpScale: 0.035, clearcoat: 0.85, clearcoatRoughness: 0.25, sheen: 0.35, sheenColor: new THREE.Color(0x9fb6d8) });
+const body = new THREE.Mesh(wGeo, skinMat); body.castShadow = body.receiveShadow = true; whale.add(body);
+// tubercles on the rostrum and jaw
+for (let i = 0; i < 26; i++) {
+  const u = 0.78 + rnd() * 0.2, ang = -0.9 + rnd() * 1.6 + (rnd() < 0.5 ? 0 : Math.PI);
+  const y = u * 7.9 - 4.0; const r = Math.max(0.2, 2.8 * Math.sin(Math.PI * Math.min(1, (1 - u) * 2.2)));
+  const k = new THREE.Mesh(new THREE.SphereGeometry(0.09 + rnd() * 0.05, 12, 12), skinMat);
+  k.position.set(Math.cos(ang) * r * 1.1, y, Math.sin(ang) * r * 0.95); whale.add(k);
+}
+// mouth line and eye
+const mouthPts = []; for (let k = 0; k <= 24; k++) { const u = 0.62 + k / 24 * 0.37; const y = u * 7.9 - 4.0; const r = 2.8 * Math.sin(Math.PI * Math.min(1, (1 - u) * 2.2)) * 0.98;
+  const th = 0.55 - k / 24 * 0.25; mouthPts.push(new THREE.Vector3(Math.cos(th) * r * 1.12, y, Math.sin(th) * r)); }
+whale.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(mouthPts), 48, 0.045, 8), new THREE.MeshPhysicalMaterial({ color: 0x05070a, roughness: 0.4 })));
+const eye = new THREE.Mesh(new THREE.SphereGeometry(0.13, 24, 24), new THREE.MeshPhysicalMaterial({ color: 0x05070a, roughness: 0.08, clearcoat: 1 }));
+eye.position.set(2.5, 0.95, 1.3); whale.add(eye);
+// pectoral fin: long, knobbed leading edge, white underside
+const finShape = new THREE.Shape();
+finShape.moveTo(0, 0); finShape.quadraticCurveTo(1.6, -0.4, 4.6, -1.6); finShape.quadraticCurveTo(3.0, 0.1, 0.4, 0.7); finShape.lineTo(0, 0);
+const finMat = new THREE.MeshPhysicalMaterial({ color: 0xe6ecf1, roughness: 0.3, bumpMap: skinBump, bumpScale: 0.02, clearcoat: 0.8, clearcoatRoughness: 0.2 });
+const fin = new THREE.Mesh(new THREE.ExtrudeGeometry(finShape, { depth: 0.22, bevelEnabled: true, bevelSize: 0.12, bevelThickness: 0.08, bevelSegments: 4 }), finMat);
+fin.position.set(0.6, 0.2, 2.5); fin.rotation.set(0.9, 0.2, -1.15); fin.scale.set(1.25, 1.25, 1); fin.castShadow = true; whale.add(fin);
+for (let i = 0; i < 7; i++) { const t = i / 6; const k = new THREE.Mesh(new THREE.SphereGeometry(0.1, 10, 10), finMat);
+  k.position.set(0.6 + t * 4.6 * 0.3, 0.2 - t * 1.6 * 0.9, 2.5 + t * 4.6 * 0.95 - 0.1); whale.add(k); }
+// flukes
+const flShape = new THREE.Shape();
+flShape.moveTo(0, 0); flShape.quadraticCurveTo(2.2, 0.5, 3.4, 1.7); flShape.quadraticCurveTo(2.6, 0.35, 2.3, -0.05);
+flShape.quadraticCurveTo(2.6, -0.5, 3.4, -1.7); flShape.quadraticCurveTo(2.2, -0.5, 0, 0);
+const fluke = new THREE.Mesh(new THREE.ExtrudeGeometry(flShape, { depth: 0.14, bevelEnabled: true, bevelSize: 0.06, bevelThickness: 0.05 }), skinMat);
+fluke.position.set(0, -4.2, 0); fluke.rotation.set(Math.PI / 2, 0, Math.PI / 2 + 0.3); fluke.scale.set(1.3, 1.3, 1); fluke.castShadow = true; whale.add(fluke);
+whale.position.set(5.5, 3.2, 3.0);
+whale.rotation.set(0.25, -0.35, -0.95);
+scene.add(whale);
+
+// ── the dragon: tapered scaled body, jaws, horns, back spikes, legs, leathery wings ────────────────────────
+const dragon = new THREE.Group();
+const spine = new THREE.CatmullRomCurve3([new THREE.Vector3(-17, 16, -14), new THREE.Vector3(-13.5, 14.2, -9.5), new THREE.Vector3(-10, 12.5, -5.5),
+  new THREE.Vector3(-7, 11.2, -2.5), new THREE.Vector3(-4.2, 10.3, 0.5), new THREE.Vector3(-1.8, 9.8, 2.2)]);
+const SEG = 140, RAD = 28;
+const bodyGeo = new THREE.TubeGeometry(spine, SEG, 1.0, RAD, false);
+const bp = bodyGeo.attributes.position;
+for (let i = 0; i < bp.count; i++) {
+  const seg = Math.floor(i / (RAD + 1)) / SEG;
+  const taper = 0.35 + 1.0 * Math.sin(Math.PI * Math.min(1, seg * 1.08 + 0.05));
+  const p = new THREE.Vector3(bp.getX(i), bp.getY(i), bp.getZ(i));
+  const c = spine.getPointAt(Math.min(1, seg)); const d = p.clone().sub(c);
+  const b = 1 + noise.noise(p.x * 2.5, p.y * 2.5, p.z * 2.5) * 0.07;
+  d.multiplyScalar(taper * b); bp.setXYZ(i, c.x + d.x, c.y + d.y, c.z + d.z);
+}
+bodyGeo.computeVertexNormals();
+const hide = new THREE.MeshPhysicalMaterial({ color: 0x3a2418, roughness: 0.6, metalness: 0.05, bumpMap: hideBump, bumpScale: 0.06,
+  clearcoat: 0.35, clearcoatRoughness: 0.45, sheen: 0.4, sheenColor: new THREE.Color(0xff8a3a) });
+const dbody = new THREE.Mesh(bodyGeo, hide); dbody.castShadow = true; dragon.add(dbody);
+// back spikes along the spine
+for (let k = 2; k < 26; k++) {
+  const u = k / 28; const c = spine.getPointAt(u); const tan = spine.getTangentAt(u);
+  const spike = new THREE.Mesh(new THREE.ConeGeometry(0.16 + 0.1 * Math.sin(u * Math.PI), 0.9 + 0.7 * Math.sin(u * Math.PI), 10), new THREE.MeshPhysicalMaterial({ color: 0x1a1416, roughness: 0.4, clearcoat: 0.6 }));
+  spike.position.copy(c).add(new THREE.Vector3(0, 0.9 + 0.5 * Math.sin(u * Math.PI), 0));
+  spike.rotation.z = -Math.atan2(tan.y, tan.x) * 0.3; dragon.add(spike);
+}
+// head: skull, upper and lower jaw open at the fire, brow, horns, eye
+const headMat = hide;
+const skull = new THREE.Mesh(new THREE.SphereGeometry(1.1, 48, 32), headMat); skull.scale.set(1.9, 0.95, 1.15); skull.position.set(-1.2, 10.1, 2.6); skull.rotation.set(0.1, 0.5, -0.2); skull.castShadow = true; dragon.add(skull);
+const upper = new THREE.Mesh(new THREE.ConeGeometry(0.7, 2.6, 24), headMat); upper.position.set(0.5, 9.9, 3.1); upper.rotation.set(0.2, 0.5, -1.75); dragon.add(upper);
+const lower = new THREE.Mesh(new THREE.ConeGeometry(0.55, 2.3, 24), headMat); lower.position.set(0.3, 9.0, 3.3); lower.rotation.set(0.2, 0.5, -2.25); dragon.add(lower);
+for (let i = 0; i < 5; i++) { const t = new THREE.Mesh(new THREE.ConeGeometry(0.06, 0.32, 8), new THREE.MeshPhysicalMaterial({ color: 0xe8dcc4, roughness: 0.3 }));
+  t.position.set(0.1 + i * 0.32, 9.55 - i * 0.08, 3.3 + i * 0.08); t.rotation.z = Math.PI; dragon.add(t); }
+for (const [sx, sy, sz, rz] of [[-2.2, 10.9, 2.0, 0.9], [-2.0, 11.0, 2.9, 0.6], [-2.6, 10.6, 2.4, 1.1]]) {
+  const horn = new THREE.Mesh(new THREE.ConeGeometry(0.2, 2.2, 12), new THREE.MeshPhysicalMaterial({ color: 0x1a1416, roughness: 0.35, clearcoat: 0.6 }));
+  horn.position.set(sx, sy, sz); horn.rotation.set(0.3, 0, rz); dragon.add(horn);
+}
+const eyeD = new THREE.Mesh(new THREE.SphereGeometry(0.14, 16, 16), new THREE.MeshBasicMaterial({ color: 0xffcf4a })); eyeD.position.set(-0.6, 10.35, 3.55); dragon.add(eyeD);
+const eyeGlow = new THREE.PointLight(0xffb040, 6, 6, 2); eyeGlow.position.copy(eyeD.position); dragon.add(eyeGlow);
+// legs
+for (const [x, y, z, s] of [[-6.5, 10.4, -1.5, 1], [-11, 12.6, -7, 0.85]]) {
+  const leg = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([new THREE.Vector3(x, y, z), new THREE.Vector3(x + 0.8, y - 1.6, z + 0.6), new THREE.Vector3(x + 0.3, y - 3.2, z + 1.2)]), 24, 0.42 * s, 12, false), hide);
+  leg.castShadow = true; dragon.add(leg);
+  for (let c = 0; c < 3; c++) { const claw = new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.6, 8), new THREE.MeshPhysicalMaterial({ color: 0x1a1416, roughness: 0.35 }));
+    claw.position.set(x + 0.3 + (c - 1) * 0.3, y - 3.6, z + 1.3 + c * 0.15); claw.rotation.x = 0.6; dragon.add(claw); }
+}
+// wings: leathery membranes between finger bones
+function wing(side) {
+  const g = new THREE.Group();
+  const shape = new THREE.Shape();
+  shape.moveTo(0, 0); shape.lineTo(3, 6); shape.lineTo(10.5, 8.5); shape.quadraticCurveTo(9.5, 5, 13, 2.5);
+  shape.quadraticCurveTo(10, 1.5, 10.5, -1.8); shape.quadraticCurveTo(7, 0, 4.5, -2.2); shape.lineTo(0, 0);
+  const mem = new THREE.Mesh(new THREE.ShapeGeometry(shape, 16), new THREE.MeshPhysicalMaterial({ color: 0x241a16, roughness: 0.75,
+    bumpMap: hideBump, bumpScale: 0.03, side: THREE.DoubleSide, transmission: 0.12, thickness: 0.4, sheen: 0.1, sheenColor: new THREE.Color(0xff8a3a) }));
+  mem.castShadow = true; g.add(mem);
+  for (const [x, y] of [[3, 6], [10.5, 8.5], [13, 2.5], [10.5, -1.8]]) {
+    const len = Math.hypot(x, y);
+    const bone = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.18, len, 10), new THREE.MeshPhysicalMaterial({ color: 0x1a1416, roughness: 0.5 }));
+    bone.position.set(x / 2, y / 2, 0.03); bone.rotation.z = Math.atan2(y, x) - Math.PI / 2; g.add(bone);
+  }
+  g.position.set(-9.5, 12.4, -4.5); g.rotation.set(0.95 * side, -0.35, 0.45 * side); g.scale.set(0.95, side * 0.95, 1);
+  return g;
+}
+dragon.add(wing(1)); dragon.add(wing(-1));
+dragon.scale.set(1.35, 1.35, 1.35);
+dragon.position.set(1.4, -4.0, -0.9);          // the jaws land on MOUTH after scaling
+scene.add(dragon);
+
+// ── fire, embers, steam, spray, rain, lightning ───────────────────────────────────────────────────────────
+function particles(n, size, color, from, to, spread, lift, opacity = 1) {
+  const pos = [];
+  for (let i = 0; i < n; i++) {
+    const t = rnd(); const p = from.clone().lerp(to, t);
+    pos.push(p.x + (rnd() - .5) * spread * (0.25 + t), p.y + (rnd() - .5) * spread * (0.25 + t) + rnd() * lift, p.z + (rnd() - .5) * spread * 0.7);
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  return new THREE.Points(g, new THREE.PointsMaterial({ size, map: disc, color, transparent: true, opacity, depthWrite: false, blending: THREE.AdditiveBlending, sizeAttenuation: true }));
+}
+scene.add(particles(1400, 1.1, 0xff4a12, MOUTH, IMPACT, 1.6, 0.5));
+scene.add(particles(700, 0.6, 0xff9326, MOUTH, IMPACT, 1.0, 0.3));
+scene.add(particles(320, 0.32, 0xffe7a2, MOUTH, IMPACT, 0.5, 0.2));
+scene.add(particles(900, 0.16, 0xffd27a, MOUTH, new THREE.Vector3(7, 9, 6), 5, 3.5));                       // embers
+scene.add(particles(700, 2.4, 0x6f7c90, IMPACT, new THREE.Vector3(5.5, 10, 5), 2.6, 2.2, 0.35));              // steam
+scene.add(particles(1100, 0.24, 0xdbe8fb, new THREE.Vector3(8, -1.2, 5), new THREE.Vector3(12, 2.5, 8), 3.5, 2.5));   // spray at the foot
+const rainPos = [];
+for (let i = 0; i < 1500; i++) { const x = (rnd() - .5) * 80, y = rnd() * 34 - 2, z = (rnd() - .5) * 50 + 6; rainPos.push(x, y, z, x - 0.08, y - 0.6, z); }
+const rainGeo = new THREE.BufferGeometry(); rainGeo.setAttribute('position', new THREE.Float32BufferAttribute(rainPos, 3));
+scene.add(new THREE.LineSegments(rainGeo, new THREE.LineBasicMaterial({ color: 0xa8bcd8, transparent: true, opacity: 0.2 })));
+const boltPts = []; let bx = 15, by = 30, bz = -30;
+while (by > 1) { boltPts.push(new THREE.Vector3(bx, by, bz)); bx += (rnd() - .55) * 1.6; by -= 1.1 + rnd(); bz += (rnd() - .5) * 0.6; }
+scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(boltPts), new THREE.LineBasicMaterial({ color: 0xf6f9ff })));
+
+// ── post: bloom, film grain, output ──────────────────────────────────────────────────────────────────────
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.32, 0.5, 0.88));
+const film = new FilmPass(0.22, false); composer.addPass(film);
+composer.addPass(new OutputPass());
+
+window.__duration = 6;
+window.render = (t) => {
+  whale.position.y = 3.2 + Math.sin(t * 0.9) * 0.35;
+  dragon.position.y = -4.0 - t * 0.3;
+  fire.intensity = 140 + Math.sin(t * 23) * 25;
+  composer.render();
+  window.__ready = true;
+};
+window.__ready = false;
+requestAnimationFrame(() => window.render(0));
+</script>
+</body>
+</html>

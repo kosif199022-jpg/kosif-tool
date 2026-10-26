@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>دورة المياه — KOSIF Motion</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  /* dir="rtl" must not sit on <html> (HyperFrames renders that blank); direction is scoped to the text elements */
+  html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: #0d1b2a; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #0d1b2a;
+          font-family: "Segoe UI", Tahoma, sans-serif; }
+  #title, #subtitle, #endtitle, .label, .loop-label { direction: rtl; unicode-bidi: isolate; }
+  #cam { position: absolute; inset: 0; transform-origin: 50% 50%; will-change: transform; }
+  #scene { position: absolute; inset: 0; width: 1920px; height: 1080px; }
+  .label { position: absolute; color: #fff; font-weight: 700; font-size: 46px; text-shadow: 0 4px 18px rgba(0,0,0,.5);
+           visibility: hidden; white-space: nowrap; direction: rtl; background: rgba(13,27,42,.5); padding: 12px 26px 14px; border-radius: 22px;
+           box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+  .label small { display: block; font-size: 27px; font-weight: 400; opacity: .92; margin-top: 6px; }
+  .num { display: inline-block; width: 56px; height: 56px; line-height: 56px; border-radius: 50%; background: #ffd166; color: #1b2a41; text-align: center;
+         font-size: 30px; margin-left: 14px; vertical-align: middle; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+  #title { position: absolute; right: 0; left: 0; top: 150px; text-align: center; color: #fff; font-size: 118px; font-weight: 800; visibility: hidden;
+           text-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  #subtitle { position: absolute; right: 0; left: 0; top: 310px; text-align: center; color: #ffe8c2; font-size: 42px; font-weight: 400; visibility: hidden;
+              text-shadow: 0 4px 20px rgba(0,0,0,.5); }
+  #endtitle { position: absolute; right: 0; left: 0; top: 60px; text-align: center; color: #fff; font-size: 84px; font-weight: 800; visibility: hidden;
+              text-shadow: 0 10px 40px rgba(0,0,0,.5); }
+  .loop-label { position: absolute; color: #fff; font-size: 40px; font-weight: 700; visibility: hidden; text-shadow: 0 4px 18px rgba(0,0,0,.55);
+                background: rgba(13,27,42,.55); padding: 6px 22px; border-radius: 40px; border: 2px solid rgba(255,209,102,.8); }
+  #flash { position: absolute; inset: 0; background: #ffffff; opacity: 0; pointer-events: none; z-index: 60; }
+  #grade { position: absolute; inset: 0; pointer-events: none; z-index: 61; mix-blend-mode: multiply;
+           background: linear-gradient(180deg, #ffd9a0 0%, #ffffff 45%, #cfe6ff 100%); opacity: .25; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-start="0" data-duration="17">
+  <audio id="ambience" src="assets/ambience.wav" data-start="0" data-duration="17" data-volume="0.9" data-fade-out="1"></audio>
+  <div id="cam">
+    <svg id="scene" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop id="sky0" offset="0" stop-color="#1b2a49"/>
+          <stop id="sky1" offset="0.55" stop-color="#d8713f"/>
+          <stop id="sky2" offset="1" stop-color="#f6c177"/>
+        </linearGradient>
+        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a9d8f"/><stop offset="1" stop-color="#14416b"/></linearGradient>
+        <linearGradient id="seaDark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f7f86"/><stop offset="1" stop-color="#0f3354"/></linearGradient>
+        <linearGradient id="mFar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b7fa6"/><stop offset="1" stop-color="#3d4f74"/></linearGradient>
+        <linearGradient id="mMid" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f6b8a"/><stop offset="1" stop-color="#2d3f5b"/></linearGradient>
+        <linearGradient id="mNear" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f5d52"/><stop offset="1" stop-color="#1f2f2a"/></linearGradient>
+        <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4c6b3f"/><stop offset="1" stop-color="#2b3d24"/></linearGradient>
+        <linearGradient id="soil" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a4232"/><stop offset="1" stop-color="#2e2119"/></linearGradient>
+        <radialGradient id="sunG" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff6d5"/><stop offset="0.6" stop-color="#ffd166"/><stop offset="1" stop-color="#ff9f1c"/></radialGradient>
+        <radialGradient id="sunHaloG" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#ffd166" stop-opacity=".55"/><stop offset="1" stop-color="#ffd166" stop-opacity="0"/></radialGradient>
+        <filter id="puff" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="15"/></filter>
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <clipPath id="aboveGround"><rect x="0" y="0" width="1920" height="860"/></clipPath>
+        <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#ffe8c2"/></marker>
+        <marker id="arrowY" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#ffd166"/></marker>
+      </defs>
+
+      <!-- sky & sun -->
+      <rect id="skyRect" x="0" y="0" width="1920" height="1080" fill="url(#sky)"/>
+      <g id="stars"></g>
+      <g id="sunG">
+        <circle id="sunHalo" cx="1400" cy="330" r="260" fill="url(#sunHaloG)"/>
+        <g id="rays" transform="translate(1400 330)"><g id="raysInner" opacity="0.35"></g></g>
+        <circle id="sun" cx="1400" cy="330" r="92" fill="url(#sunG)" filter="url(#glow)"/>
+      </g>
+
+      <!-- mountains -->
+      <path id="mFar" fill="url(#mFar)" d="M0 640 L160 560 L300 600 L430 470 L560 560 L700 520 L860 420 L1000 520 L1140 480 L1300 560 L1480 500 L1650 580 L1920 540 L1920 760 L0 760 Z"/>
+      <path id="mMid" fill="url(#mMid)" d="M-40 720 L200 600 L380 650 L520 540 L700 640 L900 590 L1040 680 L1200 620 L1380 700 L1560 650 L1760 720 L1960 700 L1960 820 L-40 820 Z"/>
+      <g id="peak">
+        <path fill="url(#mNear)" d="M-60 820 L120 700 L300 740 L470 560 L600 650 L760 600 L900 700 L1040 660 L1180 760 L1300 740 L1400 820 L1960 820 L1960 900 L-60 900 Z"/>
+        <path id="snow" fill="#eef6ff" opacity="0.55" d="M430 603 L470 560 L510 598 L492 606 L472 592 L452 610 Z"/>
+      </g>
+
+      <!-- ground, soil, sea -->
+      <path id="groundP" fill="url(#ground)" d="M0 820 L1920 820 L1920 905 L0 905 Z"/>
+      <path id="soilP" fill="url(#soil)" d="M0 900 L1920 900 L1920 1080 L0 1080 Z"/>
+      <g id="seaG">
+        <path id="wave3" fill="url(#seaDark)" d="M-200 835 Q-100 815 0 835 T200 835 T400 835 T600 835 T800 835 T1000 835 T1200 835 T1400 835 T1600 835 T1800 835 T2000 835 T2200 835 L2200 1080 L-200 1080 Z"/>
+        <path id="wave2" fill="url(#sea)" opacity="0.95" d="M-200 855 Q-100 830 0 855 T200 855 T400 855 T600 855 T800 855 T1000 855 T1200 855 T1400 855 T1600 855 T1800 855 T2000 855 T2200 855 L2200 1080 L-200 1080 Z"/>
+        <path id="wave1" fill="#3fb5a5" opacity="0.6" d="M-200 880 Q-100 860 0 880 T200 880 T400 880 T600 880 T800 880 T1000 880 T1200 880 T1400 880 T1600 880 T1800 880 T2000 880 T2200 880 L2200 1080 L-200 1080 Z"/>
+        <g id="glints"></g>
+      </g>
+      <path id="shore" fill="url(#ground)" d="M0 820 L760 820 Q820 860 760 900 L0 900 Z" opacity="0.98"/>
+
+      <!-- water cycle elements -->
+      <g id="vapour" filter="url(#puff)"></g>
+      <path id="evapArrow" d="M1300 800 C1240 700 1360 640 1300 520" fill="none" stroke="#ffe8c2" stroke-width="7" stroke-linecap="round" opacity="0"/>
+      <path id="evapArrow2" d="M1560 805 C1500 705 1620 650 1560 540" fill="none" stroke="#ffe8c2" stroke-width="7" stroke-linecap="round" opacity="0"/>
+      <polygon id="evapHead" points="1300,498 1284,530 1316,530" fill="#ffe8c2" opacity="0"/>
+      <polygon id="evapHead2" points="1560,518 1544,550 1576,550" fill="#ffe8c2" opacity="0"/>
+
+      <g id="clouds">
+        <g id="cloud1" class="cloud" transform="translate(1250 380)"><ellipse cx="0" cy="0" rx="150" ry="62" fill="#ffffff"/><circle cx="-70" cy="-30" r="62" fill="#ffffff"/><circle cx="20" cy="-48" r="78" fill="#ffffff"/><circle cx="95" cy="-22" r="56" fill="#ffffff"/></g>
+        <g id="cloud2" class="cloud" transform="translate(1520 330)"><ellipse cx="0" cy="0" rx="130" ry="54" fill="#ffffff"/><circle cx="-60" cy="-28" r="54" fill="#ffffff"/><circle cx="15" cy="-42" r="66" fill="#ffffff"/><circle cx="80" cy="-18" r="48" fill="#ffffff"/></g>
+        <g id="cloud3" class="cloud" transform="translate(1050 300)"><ellipse cx="0" cy="0" rx="110" ry="46" fill="#ffffff"/><circle cx="-50" cy="-24" r="46" fill="#ffffff"/><circle cx="12" cy="-36" r="56" fill="#ffffff"/><circle cx="68" cy="-14" r="40" fill="#ffffff"/></g>
+      </g>
+      <g id="rain" opacity="0" clip-path="url(#aboveGround)"></g>
+
+      <!-- river from the peak to the sea, and infiltration under ground -->
+      <path id="riverGlow" d="M470 600 C500 660 440 700 480 740 C520 790 600 790 640 830 C680 860 720 880 820 900" fill="none" stroke="#9fe3ff" stroke-width="22" stroke-linecap="round" opacity="0" filter="url(#glow)"/>
+      <path id="river" d="M470 600 C500 660 440 700 480 740 C520 790 600 790 640 830 C680 860 720 880 820 900" fill="none" stroke="#5ec8ff" stroke-width="10" stroke-linecap="round" opacity="0"/>
+      <path id="riverFlow" d="M470 600 C500 660 440 700 480 740 C520 790 600 790 640 830 C680 860 720 880 820 900" fill="none" stroke="#e6f7ff" stroke-width="4" stroke-linecap="round" opacity="0"/>
+      <path id="seep1" d="M300 905 C320 950 300 990 330 1030" fill="none" stroke="#7fd4ff" stroke-width="5" stroke-linecap="round" opacity="0"/>
+      <path id="seep2" d="M520 905 C540 950 520 990 560 1040" fill="none" stroke="#7fd4ff" stroke-width="5" stroke-linecap="round" opacity="0"/>
+      <path id="seep3" d="M700 905 C720 950 700 990 740 1040" fill="none" stroke="#7fd4ff" stroke-width="5" stroke-linecap="round" opacity="0"/>
+      <path id="aquifer" d="M250 1040 C500 1060 700 1060 980 1030 C1150 1010 1300 1000 1500 1010" fill="none" stroke="#5ec8ff" stroke-width="8" stroke-linecap="round" opacity="0"/>
+
+      <!-- the loop diagram -->
+      <path id="loop" d="M960 230 A300 300 0 1 1 959 230" fill="none" stroke="#ffd166" stroke-width="10" stroke-linecap="round" opacity="0"/>
+      <path id="loopFlow" d="M960 230 A300 300 0 1 1 959 230" fill="none" stroke="#fff6d5" stroke-width="4" stroke-linecap="round" opacity="0"/>
+      <polygon id="loopHead" points="984,230 952,212 952,248" fill="#ffd166" opacity="0"/>
+    </svg>
+
+    <!-- text (HTML keeps Arabic shaping and lets words move inside masks) -->
+    <div id="title">دورة المياه في الطبيعة</div>
+    <div id="subtitle">رحلة قطرة من البحر إلى السحاب وعودةً إلى البحر</div>
+    <div id="lbl1" class="label" style="right: 300px; top: 560px"><span class="num">١</span>التبخّر<small>حرارة الشمس ترفع بخار الماء من البحر</small></div>
+    <div id="lbl2" class="label" style="right: 300px; top: 120px"><span class="num">٢</span>التكاثف<small>يبرد البخار في الأعلى فيتحوّل إلى سحاب</small></div>
+    <div id="lbl3" class="label" style="left: 120px; top: 360px"><span class="num">٣</span>الهطول<small>تثقل السحب فتسقط مطراً وثلجاً على الجبال</small></div>
+    <div id="lbl4" class="label" style="right: 260px; top: 580px"><span class="num">٤</span>الجريان والتسرّب<small>تعود المياه أنهاراً فوق الأرض ومياهاً جوفية تحتها</small></div>
+    <div id="endtitle">دورة المياه لا تتوقف</div>
+    <div id="ll1" class="loop-label" style="left: 1300px; top: 500px">التبخّر</div>
+    <div id="ll2" class="loop-label" style="left: 880px; top: 170px">التكاثف</div>
+    <div id="ll3" class="loop-label" style="left: 470px; top: 500px">الهطول</div>
+    <div id="ll4" class="loop-label" style="left: 880px; top: 840px">الجريان</div>
+    <div id="flash"></div>
+  </div>
+  <div id="grade"></div>
+
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s), $$ = (s) => Array.from(document.querySelectorAll(s));
+    const root = $("#root"), cam = $("#cam");
+    M.vignette(root, { strength: 0.45, inner: 52 });
+    M.grain(root, { opacity: 0.07, seed: 3 });
+
+    // sun rays, stars and sea glints are built deterministically
+    const rays = $("#raysInner");
+    for (let i = 0; i < 16; i++) M.svgEl("path", { d: "M0 -120 L14 -330 L-14 -330 Z", fill: "#ffd166", transform: `rotate(${i * 22.5})` }, rays);
+    const stars = $("#stars"), rs = M.rng(21);
+    for (let i = 0; i < 70; i++) M.svgEl("circle", { cx: rs() * 1920, cy: rs() * 380, r: 1 + rs() * 1.8, fill: "#fff" }, stars);
+    const glints = $("#glints"), rg = M.rng(8);
+    for (let i = 0; i < 26; i++) M.svgEl("ellipse", { cx: 800 + rg() * 1100, cy: 840 + rg() * 220, rx: 10 + rg() * 20, ry: 2, fill: "#dff9ff" }, glints);
+
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    const E = M.ease;
+
+    /* ── 0–2.7 s: dawn. The sun rises, the sky warms, the title slams in ── */
+    gsap.set("#sunG", { y: 300 });
+    tl.to("#sunG", { y: 0, duration: 3.2, ease: "power2.out" }, 0);
+    tl.to("#stars", { opacity: 0, duration: 2.5, ease: "sine.inOut" }, 0.4);
+    tl.to("#sky0", { attr: { "stop-color": "#2a6f97" }, duration: 5, ease: "sine.inOut" }, 0.5);
+    tl.to("#sky1", { attr: { "stop-color": "#7fc3e6" }, duration: 5, ease: "sine.inOut" }, 0.5);
+    tl.to("#sky2", { attr: { "stop-color": "#dff3ff" }, duration: 5, ease: "sine.inOut" }, 0.5);
+    tl.to("#grade", { opacity: 0.12, duration: 5, ease: "sine.inOut" }, 0.5);
+    tl.to("#raysInner", { rotation: 40, duration: 17, ease: "none", transformOrigin: "0 0" }, 0);
+    tl.fromTo("#raysInner", { opacity: 0 }, { opacity: 0.35, duration: 2.5 }, 0.8);
+    // the sea breathes for the whole film: three layers drift at different speeds
+    tl.to("#wave1", { x: -200, duration: 6, ease: "none", repeat: 3 }, 0);
+    tl.to("#wave2", { x: 200, duration: 9, ease: "none", repeat: 2 }, 0);
+    tl.to("#wave3", { x: -200, duration: 13, ease: "none", repeat: 1 }, 0);
+    $$("#glints ellipse").forEach((g, i) => tl.fromTo(g, { opacity: 0.1 }, { opacity: 0.8, duration: 0.7 + (i % 5) * 0.2, yoyo: true, repeat: 30, ease: "sine.inOut" }, 0.2 + (i % 7) * 0.15));
+    M.revealWords(tl, $("#title"), 0.6, { dur: 0.9, stagger: 0.09 });
+    M.revealWords(tl, $("#subtitle"), 1.3, { dur: 0.7, stagger: 0.05, ease: E.settle });
+    M.hideWords(tl, $("#title"), 2.6, { dur: 0.5 });
+    M.hideWords(tl, $("#subtitle"), 2.7, { dur: 0.4 });
+
+    /* ── 2.8–6.4 s: evaporation. Vapour lifts from the sea, arrows draw upward ── */
+    gsap.set("#clouds .cloud", { scale: 0.15, opacity: 0, transformOrigin: "50% 50%" });
+    M.vapour(tl, $("#vapour"), { at: 2.8, dur: 3.6, n: 70, seed: 5, x0: 900, x1: 1850, y0: 835, r: 24, height: 420, drift: 140, rise: 2.6, spread: 1.4, color: "rgba(255,255,255,.42)" });
+    M.drawPath(tl, $("#evapArrow"), 3.3, 1.1, { head: $("#evapHead"), headOrigin: "1300px 530px" });
+    M.drawPath(tl, $("#evapArrow2"), 3.6, 1.1, { head: $("#evapHead2"), headOrigin: "1560px 550px" });
+    M.revealWords(tl, $("#lbl1"), 3.1, { dur: 0.8, stagger: 0.06 });
+    tl.to("#sunHalo", { attr: { r: 330 }, duration: 1.6, yoyo: true, repeat: 1, ease: "sine.inOut" }, 3.0);
+    tl.to(["#evapArrow", "#evapArrow2", "#evapHead", "#evapHead2"], { opacity: 0, duration: 0.5 }, 6.0);
+    M.hideWords(tl, $("#lbl1"), 6.2, { dur: 0.4 });
+
+    /* ── 6.2–9.4 s: condensation. Clouds snap into being, gather, darken ── */
+    tl.to("#cloud1", { scale: 1, opacity: 1, duration: 1.0, ease: E.snap }, 6.2);
+    tl.to("#cloud2", { scale: 1, opacity: 1, duration: 1.0, ease: E.snap }, 6.55);
+    tl.to("#cloud3", { scale: 1, opacity: 1, duration: 1.0, ease: E.snap }, 6.9);
+    M.revealWords(tl, $("#lbl2"), 6.8, { dur: 0.8, stagger: 0.06 });
+    tl.to("#cloud1", { x: -620, y: -40, duration: 3.0, ease: E.drive }, 7.4);
+    tl.to("#cloud2", { x: -760, y: -10, duration: 3.0, ease: E.drive }, 7.5);
+    tl.to("#cloud3", { x: -520, y: 10, duration: 3.0, ease: E.drive }, 7.6);
+    tl.to("#clouds .cloud ellipse, #clouds .cloud circle", { attr: { fill: "#8d9bb3" }, duration: 2.2, ease: "sine.inOut" }, 8.0);
+    tl.to("#sky0", { attr: { "stop-color": "#27394f" }, duration: 2.5, ease: "sine.inOut" }, 8.2);
+    tl.to("#sky1", { attr: { "stop-color": "#5a7489" }, duration: 2.5, ease: "sine.inOut" }, 8.2);
+    tl.to("#sky2", { attr: { "stop-color": "#9fb3c4" }, duration: 2.5, ease: "sine.inOut" }, 8.2);
+    tl.to("#raysInner", { opacity: 0.08, duration: 2 }, 8.2);
+    M.hideWords(tl, $("#lbl2"), 9.3, { dur: 0.4 });
+
+    /* ── 9.5–12.8 s: precipitation. Camera pushes to the peak; rain falls; lightning; snow brightens ── */
+    M.camera(tl, cam, 9.5, { x: 250, y: -40, scale: 1.3, dur: 1.6 });     // the peak lands left of centre; no edge shows
+    M.rain(tl, $("#rain"), { at: 9.7, dur: 3.3, n: 260, seed: 11, x0: 200, x1: 1000, y0: 300, y1: 850, fall: 0.5, len: 44, angle: -9 });
+    M.flash(tl, $("#flash"), 10.6, { peak: 0.75, dur: 0.4, again: true });
+    tl.to("#snow", { opacity: 1, duration: 1.5, ease: "sine.inOut" }, 10.4);
+    M.revealWords(tl, $("#lbl3"), 10.0, { dur: 0.8, stagger: 0.06 });
+    M.hideWords(tl, $("#lbl3"), 12.6, { dur: 0.4 });
+
+    /* ── 12.4–15.1 s: collection. Camera returns; the river draws down to the sea; water seeps into the ground ── */
+    M.camera(tl, cam, 12.4, { x: 0, y: 0, scale: 1, dur: 1.6 });
+    tl.to("#sky0", { attr: { "stop-color": "#2a6f97" }, duration: 2.5, ease: "sine.inOut" }, 12.6);
+    tl.to("#sky1", { attr: { "stop-color": "#7fc3e6" }, duration: 2.5, ease: "sine.inOut" }, 12.6);
+    tl.to("#sky2", { attr: { "stop-color": "#dff3ff" }, duration: 2.5, ease: "sine.inOut" }, 12.6);
+    tl.to("#raysInner", { opacity: 0.3, duration: 2 }, 12.8);
+    tl.to("#clouds .cloud ellipse, #clouds .cloud circle", { attr: { fill: "#ffffff" }, duration: 2.2, ease: "sine.inOut" }, 12.8);
+    tl.to("#clouds .cloud", { opacity: 0.35, duration: 2.4, ease: "sine.inOut" }, 13.2);
+    M.drawPath(tl, $("#riverGlow"), 12.7, 1.6);
+    M.drawPath(tl, $("#river"), 12.75, 1.6);
+    tl.set("#riverFlow", { opacity: 0.9 }, 14.2);
+    M.flowDash(tl, $("#riverFlow"), 14.2, 3.0, { pattern: "26 30", cycles: 5 });
+    M.revealWords(tl, $("#lbl4"), 13.0, { dur: 0.8, stagger: 0.06 });
+    M.drawPath(tl, $("#seep1"), 13.5, 0.9);
+    M.drawPath(tl, $("#seep2"), 13.7, 0.9);
+    M.drawPath(tl, $("#seep3"), 13.9, 0.9);
+    M.drawPath(tl, $("#aquifer"), 14.2, 1.3);
+    M.hideWords(tl, $("#lbl4"), 15.1, { dur: 0.4 });
+
+    /* ── 15.2–17 s: the loop. One golden ring draws through the four stages; the ending settles ── */
+    tl.to(["#river", "#riverGlow", "#riverFlow", "#seep1", "#seep2", "#seep3", "#aquifer"], { opacity: 0.35, duration: 0.8 }, 15.2);
+    M.drawPath(tl, $("#loop"), 15.2, 1.5, { ease: E.drive, head: $("#loopHead"), headOrigin: "960px 230px" });
+    tl.set("#loopFlow", { opacity: 0.9 }, 16.6);
+    M.flowDash(tl, $("#loopFlow"), 16.6, 1.0, { pattern: "18 44", cycles: 2 });
+    M.revealWords(tl, $("#ll1"), 15.35, { dur: 0.5, ease: E.snap });
+    M.revealWords(tl, $("#ll2"), 15.65, { dur: 0.5, ease: E.snap });
+    M.revealWords(tl, $("#ll3"), 15.95, { dur: 0.5, ease: E.snap });
+    M.revealWords(tl, $("#ll4"), 16.25, { dur: 0.5, ease: E.snap });
+    M.revealWords(tl, $("#endtitle"), 15.5, { dur: 0.9, stagger: 0.08, ease: E.settle });
+    tl.to("#grade", { opacity: 0.2, duration: 1.5 }, 15.4);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;                       // HyperFrames discovers the timeline here
+    M.shim("root", 17);                                    // KOSIF Studio's renderer: window.render(t)
+  </script>
+</div>
+</body>
+</html>

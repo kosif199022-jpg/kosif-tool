@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{TITLE}} — KOSIF Motion</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-arabic-800-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-latin-800-normal.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-arabic-600-normal.woff2") format("woff2"); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-latin-600-normal.woff2") format("woff2"); unicode-range: U+0000-00FF; }
+  html, body { margin: 0; padding: 0; width: {{W}}px; height: {{H}}px; overflow: hidden; background: {{BG2}}; }
+  #root { --u: calc(min({{W}}px, {{H}}px) / 100); position: relative; width: {{W}}px; height: {{H}}px; overflow: hidden;
+          background: linear-gradient(160deg, {{BG1}} 0%, {{BG2}} 100%); font-family: "Cairo", "Segoe UI", Tahoma, sans-serif; color: #fff; }
+  #cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+  #scene { position: absolute; inset: 0; width: {{W}}px; height: {{H}}px; }
+  .mk-lower-third { font-weight: 800; }
+  .mk-lt-sub { font-weight: 600; }
+</style>
+</head>
+<body>
+<!-- a lower third over a stand-in plate: replace the gradient with <video data-start> footage (kmotion footage) to use it for real -->
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <div id="cam">
+    <svg id="scene" viewBox="0 0 {{W}} {{H}}" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="key" cx="35%" cy="30%" r="55%"><stop offset="0" stop-color="#ffffff" stop-opacity=".14"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect x="0" y="0" width="{{W}}" height="{{H}}" fill="url(#key)"/>
+      <g id="particles"></g>
+    </svg>
+  </div>
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const W = {{W}}, H = {{H}}, D = {{SECONDS}};
+    const root = $("#root"), cam = $("#cam");
+    M.vignette(root, { strength: 0.3 });
+    M.grain(root, { opacity: 0.045, seed: 5 });
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    M.sparkle(tl, $("#particles"), { at: 0, n: 18, seed: 11, x0: 0, x1: W, y0: 0, y1: H * 0.55, color: "#ffffff" });
+    // the card: bar → name → role; it leaves `hold` seconds later (Arabic → right side, RTL on the box only)
+    const u = Math.min(W, H) / 100;
+    M.lowerThird(tl, cam, 0.5, { title: "{{TITLE}}", sub: "{{SUB}}", accent: "{{ACCENT}}", size: Math.round(u * 5.2), inset: Math.round(u * 7),
+                                 bottom: Math.round(H * (H > W ? 0.2 : 0.12)), barWidth: Math.round(u * 14), hold: Math.max(1.2, D - 2.0) });
+    M.breathe(tl, cam, 0.5, Math.max(1, D - 1.0), { creep: 0.012 });
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", D);
+  </script>
+</div>
+</body>
+</html>

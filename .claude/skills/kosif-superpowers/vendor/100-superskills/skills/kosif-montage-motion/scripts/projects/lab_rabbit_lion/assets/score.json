@@ -1,0 +1,5 @@
+{"bpm": 96, "seconds": 20, "key": "D", "scale": "minor",
+ "sections": [{"from": 0, "to": 5, "pad": true, "pluck": [0,3,5,7]},
+              {"from": 5, "to": 20, "kick": "four", "hats": true, "bass": true, "pad": true, "pluck": [7,5,3,0]},
+              {"from": 20, "to": 32, "kick": "four", "clap": true, "hats": true, "bass": true, "pad": true, "lead": [7,5,3,0]}],
+ "chords": [[0, "i"], [8, "VI"], [16, "III"], [24, "VII"]], "risers": [[26, 29]], "booms": [29], "end_s": 19.4}

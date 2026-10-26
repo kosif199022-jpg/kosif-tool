@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<title>MIDNIGHT — KOSIF Motion</title>
+<style>
+  /* the hand-authored 2.5D scene of the Workbench v4 source, wrapped as a KOSIF composition: no page chrome, no rAF loop */
+  html, body { margin: 0; padding: 0; width: 1280px; height: 720px; overflow: hidden; background: #07121d; }
+  #root { position: relative; width: 1280px; height: 720px; overflow: hidden; }
+  #root svg { display: block; width: 1280px; height: 720px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1280" data-height="720" data-start="0" data-duration="12" data-fps="24"></div>
+<script src="assets/scene.js"></script>
+<script>
+  // window.render(t) is the contract both renderers drive; the scene is a pure function of t (CinematicCat.sceneSVG).
+  const root = document.getElementById("root");
+  window.__duration = 12;
+  window.render = function (t) {
+    root.innerHTML = CinematicCat.sceneSVG(Math.max(0, Math.min(12, Number(t) || 0)));
+    window.__ready = true;
+  };
+  window.seek = window.render;   // the canvas-route name, for tools that look for it
+  window.render(0);
+  window.__ready = true;
+</script>
+</body>
+</html>

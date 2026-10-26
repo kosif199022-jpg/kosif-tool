@@ -441,6 +441,7 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
                      for s in sug["styles"][:5]]
     out["motion"] = sug["motion"]
     out["hints"] = [P.HINTS[h] for h in sug["hints"] if h in P.HINTS]
+    out["superskills"] = superskills_for(brief)
     nxt = []
     if tools:
         nxt.append(f"python3 scripts/hub.py tool {tools[0][1]['id']}")
@@ -449,6 +450,19 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
     nxt.append("python3 scripts/requirements.py plan " + shlex.quote(brief))
     out["next"] = nxt
     return out
+
+
+def superskills_for(brief: str, limit: int = 3, min_score: float = 2.0) -> list:
+    """The owner's 114 vendored super skills (vendor/100-superskills) that fit the brief; [] when not vendored."""
+    try:
+        import superskills as SS  # noqa: E402  (stdlib; reads data/superskills.json)
+        if not SS.DATA.is_file():
+            return []
+        return [{"slug": r["slug"], "title_ar": r["title_ar"], "title_en": r["title_en"], "score": sc,
+                 "path": r["path"] + "/SKILL.md", "show": f"python3 scripts/superskills.py show {r['slug']}"}
+                for sc, r in SS.find(brief, limit) if sc >= min_score]
+    except Exception:   # never let the optional layer break the front door
+        return []
 
 
 # ------------------------------------------------------------------ output helpers
@@ -494,6 +508,11 @@ def cmd_find(a) -> int:
         print("\n🎨 أساليب مرجعية / reference styles")
         for s in res["styles"]:
             print(f"  {s['id']}  {s['name']}")
+    if res.get("superskills"):
+        print("\n★ مهارات خارقة كاملة / super skills (100-superskills, read the SKILL.md and follow it)")
+        for k in res["superskills"]:
+            print(f"  {k['slug']:<34} {k['title_ar']} — {k['title_en']}")
+            print(f"     $ {shown(k['show'], {'root': 'skill'})}")
     for h in res["hints"]:
         print(f"\nhint: {h}")
     q = shlex.quote(a.brief)

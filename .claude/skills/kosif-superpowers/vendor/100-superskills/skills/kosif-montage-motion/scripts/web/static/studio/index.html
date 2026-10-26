@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080d16">
+<meta name="description" content="استوديو KOSIF المحلي: مونتاج فيديو وصور وصوت، نصوص متحركة، معاينة وتصدير من المتصفح دون رفع ملفاتك.">
+<title>KOSIF Studio — استوديو الحركة</title><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+ <a class="brand" href="/" aria-label="العودة إلى KOSIF"><span class="brand-symbol">K</span><span>KOSIF <b>STUDIO</b><small>مساحة صناعة الحركة · تجريبي</small></span></a>
+ <div class="local-badge"><i></i> يعمل على جهازك <span>• بلا رفع ملفات</span></div>
+ <div class="top-actions"><button id="open-project" class="ghost">فتح مشروع</button><button id="save-project" class="ghost">حفظ المشروع</button><button id="export" class="ghost" title="تسجيل مباشر بالزمن الحقيقي عبر MediaRecorder (WebM غالبًا)"><span>●</span> تسجيل مباشر</button><button id="export-mp4" class="primary" title="رندر إطار بإطار عبر WebCodecs: MP4 بلا إطارات ساقطة ولا يحتاج زمنًا حقيقيًا"><span>↗</span> تصدير MP4 دقيق</button></div>
+</header>
+<main>
+ <div class="projectbar"><div><span class="eyebrow">مساحتك الإبداعية / محرر محلي</span><input id="project-name" aria-label="اسم المشروع" maxlength="100" value="مشروعي الجديد"></div><div class="project-tools"><button id="undo" title="تراجع Ctrl+Z" aria-label="تراجع">↶</button><button id="redo" title="إعادة Ctrl+Shift+Z" aria-label="إعادة">↷</button><span class="divider"></span><span class="quality">720p <b>24 FPS</b></span></div></div>
+ <div class="workspace">
+ <aside class="library panel" aria-label="مكتبة الوسائط">
+  <div class="section-heading"><h2>مكتبتك</h2><span class="mini-tag" id="asset-count">0 ملف</span></div>
+  <button id="import-media" class="import-zone"><span class="import-icon">＋</span><strong>أضف ملفاتك</strong><small>فيديو، صور أو صوت</small><span>اختيار ملفات من جهازك</span></button>
+  <p class="subtle">تبقى الوسائط على جهازك. حد الملف 200 MB، الإجمالي 500 MB، والمشروع 60 ثانية.</p>
+  <div id="media-list" class="media-list"></div>
+  <div class="section-heading presets-title"><h2>ابدأ بحركة</h2><span class="subtle">قوالب جاهزة</span></div>
+  <div class="preset-list"><button class="preset aurora" data-preset="aurora"><span>01</span><strong>شفق رقمي</strong><small>ضوء • جزيئات • عمق</small></button><button class="preset sunset" data-preset="sunset"><span>02</span><strong>وهج سينمائي</strong><small>دفء • تدرّج • انسياب</small></button><button class="preset grid" data-preset="grid"><span>03</span><strong>مدار هندسي</strong><small>شبكة • أشكال • إيقاع</small></button></div>
+  <div class="examples"><span class="subtle">استكشف مثالًا</span><a href="/examples/cinematic-cat.html">القطة السينمائية <span>↗</span></a><a href="/examples/cat.html">قطة متحركة تفاعلية <span>↗</span></a></div>
+ </aside>
+ <section class="preview-panel panel" aria-label="معاينة الفيديو">
+  <div class="preview-toolbar"><div class="section-heading"><h2>المعاينة</h2><span class="live-dot"></span></div><div class="format-group"><label for="aspect">المقاس</label><select id="aspect"><option value="16:9">16:9 أفقي</option><option value="9:16">9:16 عمودي</option><option value="1:1">1:1 مربع</option></select><button id="fullscreen" title="ملء الشاشة" aria-label="ملء شاشة المعاينة">⛶</button></div></div>
+  <div class="canvas-wrap" id="canvas-wrap"><canvas id="preview" width="1280" height="720" aria-label="معاينة تكوين الفيديو. استخدم خصائص الطبقة لتغيير موضع النصوص والأشكال." tabindex="0"></canvas><div class="canvas-corner">KOSIF / LOCAL CANVAS</div></div>
+  <div class="transport"><div class="timecode" dir="ltr"><strong id="current-time">00:00.0</strong><span>/</span><span id="total-time">00:08.0</span></div><div class="play-controls"><button id="to-start" aria-label="العودة للبداية">↤</button><button id="play" class="play" aria-label="تشغيل">▶</button><button id="frame-next" aria-label="إطار للأمام">↦</button></div><span class="preview-note">مسافة للتشغيل</span></div>
+  <input id="seek" class="seek" type="range" min="0" max="8" value="0" step="0.01" aria-label="موضع التشغيل بالثواني">
+  <div class="export-progress" id="export-progress" hidden><div><strong id="export-label">جارٍ التصدير…</strong><button id="cancel-export">إلغاء</button></div><progress id="progress" max="100" value="0"></progress><small>اترك هذه الصفحة ظاهرة حتى ينتهي التسجيل. التصدير يعمل بالوقت الحقيقي.</small></div>
+  <div class="status" id="status" role="status" aria-live="polite">مشروع تجريبي جاهز. اضغط تشغيل، أو أضف ملفاتك لتبدأ.</div>
+ </section>
+ <aside class="inspector panel" aria-label="خصائص العنصر المحدد"><div class="section-heading"><h2>الخصائص</h2><span class="mini-tag" id="selection-type">نص</span></div><div id="inspector-body"></div></aside>
+ <section class="timeline-panel panel" aria-label="الخط الزمني"><div class="timeline-heading"><div><span class="eyebrow">كل شيء في مكانه</span><h2>الخط الزمني <span id="sequence-meta">مشهد واحد</span></h2></div><div class="layer-actions"><button id="add-text">＋ نص</button><button id="add-shape">＋ شكل</button><button id="clear-project" class="ghost">مشروع فارغ</button></div></div><div class="timeline-scroll"><div class="timeline-ruler" id="ruler" dir="ltr"></div><div class="track"><span class="track-label">المشاهد</span><div class="clip-track" id="clip-track" dir="ltr"></div></div><div class="track"><span class="track-label">الطبقات</span><div id="overlay-track" class="overlay-track" dir="ltr"></div></div><div class="track"><span class="track-label">الصوت</span><div id="audio-track" class="audio-track"></div></div></div><div class="timeline-footer"><span><i class="cyan-dot"></i> اختر مشهدًا أو طبقة لتعديلها</span><span>اسحب النص أو الشكل داخل المعاينة</span></div></section>
+ </div>
+ <footer class="page-footer"><span>مجاني ومحلي. لا خادم رندر ولا خدمات ذكاء اصطناعي متصلة.</span><span id="capability">جارٍ فحص إمكانات التصدير…</span></footer>
+</main>
+<input id="media-input" type="file" accept="video/*,image/*,audio/*" multiple hidden><input id="project-input" type="file" accept=".json,application/json" hidden>
+<script src="./vendor/mp4-muxer.min.js"></script>
+<script type="module" src="./app.mjs"></script>
+</body></html>

@@ -1,0 +1,4409 @@
+{
+ "name": "100 Super Skills (owner repository) vendored into KOSIF Superpowers",
+ "master_skill": "kosif-superpowers",
+ "upstream": "https://github.com/kosif199022-jpg/100-superskills",
+ "upstream_commit": "af7a5dc3778c0e68ef935349a5c1650d15688277",
+ "upstream_license": "MIT (c) 2026 Kosif; each skill's references/sources.md names the permissive sources it was composed from",
+ "integration_mode": "whole skill folders copied (text, plus small OFL fonts, sound effects and images); large media and bundles stay upstream and are listed per skill under left_upstream",
+ "policy": "text <= 1000000 bytes, binary <= 512000 bytes, no video, no caches; files are not executable; KOSIF runs nothing here except each skill's own tests in a temporary copy (selftest)",
+ "kosif_patches": [
+  {
+   "slug": "kosif-one",
+   "file": "scripts/plan.py",
+   "why": "find sibling super skills next to this folder (vendor/100-superskills/skills or ~/.claude/skills) instead of only the owner's Windows Desktop path"
+  },
+  {
+   "slug": "kosif-one",
+   "file": "scripts/plan.py",
+   "why": "a skill that is not installed in ~/.claude/skills but sits beside kosif-one still resolves (with its path)"
+  },
+  {
+   "slug": "kosif-one",
+   "file": "tests/test_plan.py",
+   "why": "installed-skill check accepts the sibling folder; skills from other packages (ultra-motion-montage, motion-os) are skipped when absent instead of failing"
+  },
+  {
+   "slug": "pixel-studio-painter",
+   "file": "scripts/tests/test_studio.py",
+   "why": "the Motion test class needs a scripts/motion/ folder that the upstream package never shipped (KOSIF Motion lives in hyperframes-animation-studio); skip it with that reason instead of 5 errors"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/ffprobe_shim.py",
+   "why": "ffmpeg 6+ prints no frame= line for a stream-copy pass, so nb_frames was missing; fall back to a decode pass"
+  }
+ ],
+ "skills_count": 114,
+ "skills": [
+  {
+   "slug": "ab-testing-experiments",
+   "path": "skills/ab-testing-experiments",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e6547654789dbf2929c8188909adc02da7a3ed12fc84d69f4e82bc7d4be7c672",
+     "bytes": 4712
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "b9508b22fbe0c8b6b063678b6df2ce1deb49f7cd529b2c14bf6469141861a4b3",
+     "bytes": 21115
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ab-testing-experiments"
+  },
+  {
+   "slug": "accessibility-wcag",
+   "path": "skills/accessibility-wcag",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e0face8559f7adba7d2bd6d205b42ef76137d520f3f2b571b465c7796d9f39ac",
+     "bytes": 4500
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "b47d36d3719dd5dd20b08b422acc6f6605ca11ff6ed42656139246db4404508b",
+     "bytes": 20489
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/accessibility-wcag"
+  },
+  {
+   "slug": "accounting-ifrs-journal",
+   "path": "skills/accounting-ifrs-journal",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "0cb91482d894de07057d7162fe8d0c3c4cdc49d195f76534ce6c372b7014bda8",
+     "bytes": 4750
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "e98388a066736640a3837453203139152b5779b9630ab0b677ece6feeeb046f9",
+     "bytes": 21552
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/accounting-ifrs-journal"
+  },
+  {
+   "slug": "ad-creative-30s",
+   "path": "skills/ad-creative-30s",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d21f8d06de476a8564f682edcad1f199358bf15bcb935ca546de5708d0934079",
+     "bytes": 4442
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "d364712d65c7bc9919baad56f9e7bdedb5b457ae8da070450eb5783f50158f8b",
+     "bytes": 21285
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ad-creative-30s"
+  },
+  {
+   "slug": "agent-tool-instructions",
+   "path": "skills/agent-tool-instructions",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "964cae8d08adaa98ae2b46bca8c937ec3e6e1f012f7b88d8f2bef8c424e8f559",
+     "bytes": 5242
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "f7f27f54649fc944bbc06e942162b9479daabf785455beca66cf32448c78b299",
+     "bytes": 19789
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/agent-tool-instructions"
+  },
+  {
+   "slug": "ai-art-style-library",
+   "path": "skills/ai-art-style-library",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "da9091adaff4f7574e378fdce9760f8f17323dc38e84027ac5e2b528aa1aa5c2",
+     "bytes": 4556
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "89710173f146362d4280773687cc216f126875360f6afebd4dd2d295d457765f",
+     "bytes": 17396
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ai-art-style-library"
+  },
+  {
+   "slug": "arabic-copywriting",
+   "path": "skills/arabic-copywriting",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f694b5be0a4cda692ca59d8f2da5e894ea1aaa0471cacd88280bf9f51efd2056",
+     "bytes": 4568
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "a7bc0baeab33630c2fe5ab20d7e4b1984f8d08afb90c7df7d032acb2bc53c519",
+     "bytes": 21393
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/arabic-copywriting"
+  },
+  {
+   "slug": "audio-mastering-analysis",
+   "path": "skills/audio-mastering-analysis",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1b6c0fbe05f89982704ec63cd2bbcbab94eb216f609774bb4f12612724815d4c",
+     "bytes": 4707
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "12898e6840f179ac55eeea36c26f36b581a4104f737655e32f73dfdec02fc1bf",
+     "bytes": 20930
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/audio-mastering-analysis"
+  },
+  {
+   "slug": "audio-reactive-captions-studio",
+   "path": "skills/audio-reactive-captions-studio",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "a940e5ec0338ff21f7d71633a2f2c8b6410fd93978d5e1f04efe8aab77410c2c",
+     "bytes": 8107
+    },
+    {
+     "path": "examples/words.example.json",
+     "sha256": "1302151b683c26db22b21343f79b78f4e73062608000c22ad5316873ca34e466",
+     "bytes": 436
+    },
+    {
+     "path": "references/captions-rules.md",
+     "sha256": "fbec1437a5e692e3850985285803a95557726572228022cdbc7a7c0036e34ed6",
+     "bytes": 4622
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "2b8ba65b2fb62bb6017259c0c5286326534ca6884857c0b2f7bc964c52e5b890",
+     "bytes": 17040
+    },
+    {
+     "path": "scripts/captions_pages.py",
+     "sha256": "cdc21fda1b701a39e1ac6b5a9007352a6175fa63dbaff20ff854ea6f26c105c0",
+     "bytes": 6548
+    },
+    {
+     "path": "scripts/extract_audio_data.py",
+     "sha256": "c8efbf4f161c6aad47cf6ffce447e701e1bcc99fcbf0c7f1c480071c9cd7eddb",
+     "bytes": 3777
+    },
+    {
+     "path": "templates/audio-reactive.html",
+     "sha256": "c7203c5382cff14f3c1560854b635a73cea0c8eef3fba5adf95258dea31f2b47",
+     "bytes": 5993
+    },
+    {
+     "path": "templates/captions.html",
+     "sha256": "e9e7857554129b83756dd7948209a4d158f1ccf48eb9578a6ce7eddb3c7d3cab",
+     "bytes": 3610
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/audio-reactive-captions-studio"
+  },
+  {
+   "slug": "automation-scripts-cli",
+   "path": "skills/automation-scripts-cli",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "de2fab7b3daf753864d59485b1e90850bfc6a924fd29fa9b3cd41e085c6d1d89",
+     "bytes": 4553
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "4216708e93f3f74c79fea88f0c25864fa54d9a5e5bdf2202e74a435ba209bfa4",
+     "bytes": 15922
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/automation-scripts-cli"
+  },
+  {
+   "slug": "backend-api-design",
+   "path": "skills/backend-api-design",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b64e49972710bdc52455fc235091e3f1810bf5096275d4170381acfecbc01c7e",
+     "bytes": 4721
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "663b7f5ade782db154f099b957b2a7621c55487a83d1f372137d6d3f61f21753",
+     "bytes": 21097
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/backend-api-design"
+  },
+  {
+   "slug": "book-to-skill-knowledge",
+   "path": "skills/book-to-skill-knowledge",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "9c8b1df9e41b6b178a3e85402458d6c32ad02fcaf3d357c49cb54d59c94e3aea",
+     "bytes": 4676
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1c23ff408c80dc710bedf13e482e9b32bddaf879786d2f515c1fb7ce56d46300",
+     "bytes": 21340
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/book-to-skill-knowledge"
+  },
+  {
+   "slug": "brand-identity-logo",
+   "path": "skills/brand-identity-logo",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "4500599e478da6f60549f9b64d6c9715ac3da20381234dca33ae1679cf422e53",
+     "bytes": 4542
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "c567fbbc747d2b6b334b60dfe138bea5a86132cf612f9ea13507be900a641db2",
+     "bytes": 21410
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/brand-identity-logo"
+  },
+  {
+   "slug": "browser-automation-playwright",
+   "path": "skills/browser-automation-playwright",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "1a49a4017af9c4e9599591d131c2512c931372332dc8334beb907d881f4aecf5",
+     "bytes": 4645
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "4c7414243b82fe154efca1748f496332044637426465d61f84391cf5be917d98",
+     "bytes": 18126
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/browser-automation-playwright"
+  },
+  {
+   "slug": "business-plan-prd",
+   "path": "skills/business-plan-prd",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "72aed54de474485c9f497b1aea1461f43a9dd62549d19d610babf34ae61d03a9",
+     "bytes": 4691
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "39860102de30485bb0a7d4b4e546d1b824f66283c9e7ab0fa60402f5b8c85a21",
+     "bytes": 21074
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/business-plan-prd"
+  },
+  {
+   "slug": "character-animation-2d",
+   "path": "skills/character-animation-2d",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c00c171e0300551f4ae9470fd557669820f5a86a51a610a8df356ca4593bee15",
+     "bytes": 4816
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "49b559b382361b23ddb8d0d641a578ed5df1ec8fe3e3fbd57942dbe66266b40e",
+     "bytes": 21577
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/character-animation-2d"
+  },
+  {
+   "slug": "cinema-director-7layers",
+   "path": "skills/cinema-director-7layers",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "38633b698c6ce5d8abf5f786fa421ada5325bbd5230c7986cf975e014c8446af",
+     "bytes": 4532
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "fe1824ede2e8ebc4217dda7e0e6b940069819dbaad2fd3d6994382c3f3689283",
+     "bytes": 17380
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/cinema-director-7layers"
+  },
+  {
+   "slug": "cinematic-3d-scene",
+   "path": "skills/cinematic-3d-scene",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "bd23ce3372d327557d89b24a005a6fe0289aa3c69929034651c3f43ba66ecc52",
+     "bytes": 4814
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "04c6b93bf2f2ecca451d365a50960d601eaa9243629530d90618f6fcd054d892",
+     "bytes": 20936
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/cinematic-3d-scene"
+  },
+  {
+   "slug": "claude-animation-studio",
+   "path": "skills/claude-animation-studio",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "97feef77679ca3e1417ea78901968c4de13ea88fdc35c80e104dd94dd7f88532",
+     "bytes": 7142
+    },
+    {
+     "path": "references/motion-rules.md",
+     "sha256": "b5ce6f27953d759998c6fd67457a1d6ffb0732b4afd0491d4a2277e633ad996d",
+     "bytes": 4318
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "ef7ccb960530e7ad9f00757a3f47237de008f02d2e73d730c75822147e8a9867",
+     "bytes": 16384
+    },
+    {
+     "path": "scripts/capture.py",
+     "sha256": "46215205f3acc0bf34fecd9b515c7895840433047ca4464b9b98d3dfc581873b",
+     "bytes": 5084
+    },
+    {
+     "path": "scripts/encode.py",
+     "sha256": "f35b68f5bfe7094015bd28988475ef3321b96d08f79edbf993f24920c055412a",
+     "bytes": 4005
+    },
+    {
+     "path": "scripts/new_scene.py",
+     "sha256": "d1bcd7ffb2afd1d2481458aed977075c8f281b0056522b160e57e6a91bb0475c",
+     "bytes": 4474
+    },
+    {
+     "path": "scripts/qa.py",
+     "sha256": "67c7ac6889108fe362eb6b5d61c3e63b05f087f2260243986f3b58f78d4dec90",
+     "bytes": 3894
+    },
+    {
+     "path": "templates/scene-2d.html",
+     "sha256": "c988c500d4f96378de5d4bce7f0e80b5252eb7d0d05646ffee3622ac3aed4843",
+     "bytes": 8804
+    },
+    {
+     "path": "templates/scene-3d.html",
+     "sha256": "6dfb47f58e42c78750106638aa4751e63e90db4d8b495db10e181347226a5be6",
+     "bytes": 8355
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/claude-animation-studio"
+  },
+  {
+   "slug": "cloudflare-edge-deploy",
+   "path": "skills/cloudflare-edge-deploy",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3d3f9424d6286b9b9ff82d26fe92708f4708f154c390a8016290b7daa8c2b3e7",
+     "bytes": 4638
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "6e89f6c7171d10f1d57abb8edac845a39f5ab8876785cf78c58625761da4ede2",
+     "bytes": 20964
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/cloudflare-edge-deploy"
+  },
+  {
+   "slug": "code-review-refactor",
+   "path": "skills/code-review-refactor",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "26bcf7646641eae85ef99aa1f411d29167f00caac6234098efeb4ec0df5e3962",
+     "bytes": 4777
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "4d6e34c20a3fe56ad45808003390b783e9a0abf780573acd42fcee8f09f5e302",
+     "bytes": 21055
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/code-review-refactor"
+  },
+  {
+   "slug": "comics-picture-books",
+   "path": "skills/comics-picture-books",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "5155e2320212e86649e4e5f2e6fec3c654a96b74a475296e78d5009548d54116",
+     "bytes": 4556
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "18a20d37935dd64048c9dc89fcea7e79949cf9a49cdef99aea1c8d2c8c92424a",
+     "bytes": 22816
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/comics-picture-books"
+  },
+  {
+   "slug": "context-window-budget",
+   "path": "skills/context-window-budget",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "20ce32bd2e8803f5f00342fc062586c5e5544978310b268d5ee7e82609a7935f",
+     "bytes": 4836
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "e56f22e04e47d5cd695358f25d791e7ed30a0387e3c627c4c0d3000b7b270758",
+     "bytes": 19363
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/context-window-budget"
+  },
+  {
+   "slug": "curriculum-course-builder",
+   "path": "skills/curriculum-course-builder",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "7d1f226a314f1628a52c5e139c31771b5bc8ce5b0c5d8c4d173cdb6659937459",
+     "bytes": 4723
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "4aff9fd463767d8de7f2e26e7d1a01939ec3466939a4e297eb75e377a71e22fd",
+     "bytes": 20497
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/curriculum-course-builder"
+  },
+  {
+   "slug": "custom-gpt-claude-project",
+   "path": "skills/custom-gpt-claude-project",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d09a13f9b73b0b66c6de3a7ad0c9b462f5e198edfe1da1e9df156bf12613aefc",
+     "bytes": 4672
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "954c775452ef48b6c263f55ff7435f9a29cabddd16a9293caf3b7ee8985a3b49",
+     "bytes": 20381
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/custom-gpt-claude-project"
+  },
+  {
+   "slug": "dashboards-dataviz",
+   "path": "skills/dashboards-dataviz",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "faf046c26c44fa02cde4b9241524895fcb52a6258f87a507ac628602e00c3efb",
+     "bytes": 4898
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "b05ea8a83365750c608face159606edf49aae112f50869ff0d24cdbd3c290bc9",
+     "bytes": 20843
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/dashboards-dataviz"
+  },
+  {
+   "slug": "data-in-motion",
+   "path": "skills/data-in-motion",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "26f90695d26d30c0a94c93fa7086fcfa5895df94993afda5bd1d7b48cb4e1190",
+     "bytes": 4603
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "794bb7d0180fe1daf795f7edee662c998881db97d5a9c9cd70399f93e91c2791",
+     "bytes": 21261
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/data-in-motion"
+  },
+  {
+   "slug": "database-schema-migrations",
+   "path": "skills/database-schema-migrations",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2e24cac83a0f04288e2795c87ca9d8f869d30a945d9cee8efea6a66868afef62",
+     "bytes": 4754
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "eb03dcd8769d000928b0916039b94c03e2eadaa70feedfd98308a49ccd9cc5ed",
+     "bytes": 21188
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/database-schema-migrations"
+  },
+  {
+   "slug": "davinci-resolve-pipeline",
+   "path": "skills/davinci-resolve-pipeline",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c9cd484839ec8ae4b84ca2457957ce2bfddf7a03da3e80bb3242e549cc863c93",
+     "bytes": 7622
+    },
+    {
+     "path": "references/color-grading-order.md",
+     "sha256": "557b066aa75332a61e9b76c79df2a48b3393ccfe5b851cf43a3e8a369d252cbc",
+     "bytes": 5255
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "89715e5d45acac39ee508fda339f97b2324576ca4018d3d08af6dc68362f691c",
+     "bytes": 20711
+    },
+    {
+     "path": "references/transitions-catalog.md",
+     "sha256": "e9cd17ab356a0e1029298830a047b2f97ec35c69074b7e12f03980e60b6515fe",
+     "bytes": 3182
+    },
+    {
+     "path": "scripts/resolve_pipeline.py",
+     "sha256": "94c9854d06966fcf2eda0b2d8e3d9b958891ff80c72b5e56d149ce50cf97a8f6",
+     "bytes": 9949
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/davinci-resolve-pipeline"
+  },
+  {
+   "slug": "debugging-root-cause",
+   "path": "skills/debugging-root-cause",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "52ca23e46230591c178ff2443807dbb98f10f1c22d30d8a593283ddadfcc9629",
+     "bytes": 4295
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "02d169175722eff809084952bb6083dd01aae55fc57af8e4f26e052ac926de5f",
+     "bytes": 20685
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/debugging-root-cause"
+  },
+  {
+   "slug": "diagrams-mermaid-architecture",
+   "path": "skills/diagrams-mermaid-architecture",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d6743ecfa0b3eac84993e15e78927113c601ffa444c7c959d3bf4b2a04cc31e7",
+     "bytes": 4456
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "0a0828c020347347a59a17e6d0baa3aa41262431d89d9e38897596d6500f920c",
+     "bytes": 22820
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/diagrams-mermaid-architecture"
+  },
+  {
+   "slug": "docker-ci-devops",
+   "path": "skills/docker-ci-devops",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "6c7a177291be1ad16370887e12ece36d8fd76f572428d36eb474cfef784fa5ae",
+     "bytes": 4471
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "12f1c8b96e2f1942e4bad87b52c88319b5a1de9f68b1a13e608ff75b15a7f83e",
+     "bytes": 15606
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/docker-ci-devops"
+  },
+  {
+   "slug": "ecommerce-store-listings",
+   "path": "skills/ecommerce-store-listings",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "7ffa600e860f71fc1187a6cca3a8d4d68ab29ed71dbc0236874dca65684b9404",
+     "bytes": 4714
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1016968110db609f6fae8a46808d3905653641946aea640360b1f87009a26b84",
+     "bytes": 20499
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ecommerce-store-listings"
+  },
+  {
+   "slug": "excel-automation-power",
+   "path": "skills/excel-automation-power",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "12201a016a21b18abcadcfbc9886fbc2d7d2ae1b9386f96a7079d28684dc9e4a",
+     "bytes": 9481
+    },
+    {
+     "path": "references/dax-patterns.md",
+     "sha256": "4a46d4257ff2b9da960a3dafaf0e7266b038a77d940062e2d02ad50101366721",
+     "bytes": 3342
+    },
+    {
+     "path": "references/formula-translation.md",
+     "sha256": "c7dcd299ac9f4325b970246c7ec62ccd3a8d3ba6382c251b0f41fedd69665d0c",
+     "bytes": 4624
+    },
+    {
+     "path": "references/lambda-catalog.md",
+     "sha256": "f88062aa27b27bd09110c372e5021c406ab38e9a84db367882934283ae268ce7",
+     "bytes": 3860
+    },
+    {
+     "path": "references/power-query-recipes.md",
+     "sha256": "bea6fd99a3578ce37caf7fdfc6c707673682a89bf3e36168a48ddb233825be48",
+     "bytes": 5473
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "5918a70e2a0dffcc169c93b3addc53450f2a5782c09037ec3a594e0cb990229b",
+     "bytes": 17426
+    },
+    {
+     "path": "scripts/formula_translate.py",
+     "sha256": "0ef2e296abbcad02e5f59d5308d4a788c86876f3f72de2adffefc0fad52f7579",
+     "bytes": 7690
+    },
+    {
+     "path": "scripts/lambda_library.py",
+     "sha256": "6e451287047c9c863c026605e4f75c49073693f2d2df07b1cd72d250fa8c6f5e",
+     "bytes": 6503
+    },
+    {
+     "path": "scripts/xlsx_recalc.py",
+     "sha256": "540d59b851969cade45744e82332034a8307d9c0ffbc37aa7f4b284f02179e83",
+     "bytes": 4138
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-automation-power"
+  },
+  {
+   "slug": "excel-data-cleaning-automation",
+   "path": "skills/excel-data-cleaning-automation",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "59f1e9bd8ad2479bfa41d14271cdad91b8388de4b9f99a992f41d65f88fb6bc8",
+     "bytes": 5042
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1dd59ee2a0bd9f3e84b2c39e10f8074cc7038f9dd7058fcf7ca175f02ef7835d",
+     "bytes": 21251
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-data-cleaning-automation"
+  },
+  {
+   "slug": "excel-financial-models",
+   "path": "skills/excel-financial-models",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "53abfc85b4ebb30e9b571d99108f4811d1b73e76a25fd0ab74c6dccfcdf7d6e3",
+     "bytes": 4791
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "c358c62b77e6cdf0c68f6d19e8172e0bfbce54bee8ccd7ef9052a88685575974",
+     "bytes": 18708
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-financial-models"
+  },
+  {
+   "slug": "excel-model-architect",
+   "path": "skills/excel-model-architect",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "917701e2898023909cc70c60b5e17ca73c03bcddb6da6e69778554ea2fac014d",
+     "bytes": 9349
+    },
+    {
+     "path": "references/driver-trees.md",
+     "sha256": "fcc4c3c8dddd205ff3a70f46f5e8d762bb64b26296e713ceaf88b9c05ae642fe",
+     "bytes": 5391
+    },
+    {
+     "path": "references/model-conventions.md",
+     "sha256": "dfe02e2ab93bfad9190e46900734e2fb6505aa053263e2bf2ee8a53c4447c172",
+     "bytes": 6346
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "72fc16faacb5f7a0bf594de39cae2e2dee179c2410dcac456c57417b461ba09b",
+     "bytes": 18361
+    },
+    {
+     "path": "scripts/model_audit.py",
+     "sha256": "85dd212d5fe033ce5a5f5f2ac003da7928f72bdfd633465be4d84612dd164703",
+     "bytes": 6419
+    },
+    {
+     "path": "scripts/model_builder.py",
+     "sha256": "3bdd9349fbcb06017b4bc106d78405b68169aeb8b0354f21a30df1b172a75ba0",
+     "bytes": 17058
+    },
+    {
+     "path": "templates/spec.example.json",
+     "sha256": "474bfa57758f5cbd3684c7ebb2a563f78b46ef33d1578a13806bb9574f867871",
+     "bytes": 2736
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-model-architect"
+  },
+  {
+   "slug": "excel-power-formulas",
+   "path": "skills/excel-power-formulas",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "024034264551c828a5138aeb649f4e619d503a327e97392dc0c60d56cdfb6c1e",
+     "bytes": 5311
+    },
+    {
+     "path": "references/excel-formulas.md",
+     "sha256": "7515ef29c0f462d6e8c771f9a613362e6e1edb95f8c5d5f2cc0745ca41d5e523",
+     "bytes": 4439
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "9978c89cd43910a93e6560e32e76a92f4158181fec578d65f0402ae19350f367",
+     "bytes": 15725
+    },
+    {
+     "path": "scripts/xlsx_check.py",
+     "sha256": "68cbed18b63f99f0f637a840cb14b74c7c1ee6d1c2a62fffd2eca3efef551fba",
+     "bytes": 4646
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-power-formulas"
+  },
+  {
+   "slug": "explainer-edu-animation",
+   "path": "skills/explainer-edu-animation",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b284be5212188a44ce987023d4ba8c60868b26012b71be0efa0cbe9f31078f0f",
+     "bytes": 4621
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "8796918552de5a608a89baccf75c1c05128bf96ca626e7e714dbc86bc71edd74",
+     "bytes": 16136
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/explainer-edu-animation"
+  },
+  {
+   "slug": "fact-checker-verifier",
+   "path": "skills/fact-checker-verifier",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "8d6b9edc463034a3c875b6bc75a767bf204b7a3a42ed6e2ccab48bf3be332424",
+     "bytes": 4609
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "34dd74be5e7b8f3224dc88f10896a0ecbe6c41e22f3b032c57e9fef9b0e04b76",
+     "bytes": 19692
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/fact-checker-verifier"
+  },
+  {
+   "slug": "few-shot-dataset-curation",
+   "path": "skills/few-shot-dataset-curation",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "5e26b1c020cddb15ef45289ef3139869337746b6d12d56d0d41fe80bdb4b52bb",
+     "bytes": 4845
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "7a9496256294095979c34def9ad2769ca3a03ccb37b63cb17264003de6dffde0",
+     "bytes": 16397
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/few-shot-dataset-curation"
+  },
+  {
+   "slug": "flashcards-quiz-exam-prep",
+   "path": "skills/flashcards-quiz-exam-prep",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c7c7a7dc14fe6cde801642b887e75a905c3f61fe6933dfb655ab44b296f83557",
+     "bytes": 4738
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1bba43f1c2cbe6afb8cf5d644a1508187dcd16af5f4f97d859addfae8f900685",
+     "bytes": 20930
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/flashcards-quiz-exam-prep"
+  },
+  {
+   "slug": "forecasting-probability",
+   "path": "skills/forecasting-probability",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "966bebac0b37ea04440cb188588122cd30e22eab314b567e454e3a85c8319e98",
+     "bytes": 4480
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "974423fcaf658b27b3a486e3e2a86b1ac9c8ccf52e8fa414625a417bc0fd10ef",
+     "bytes": 17126
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/forecasting-probability"
+  },
+  {
+   "slug": "frontend-react-app",
+   "path": "skills/frontend-react-app",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "a5229f89e71f75a9090b0eb508e102bad5c414899d937266d9f5c88f8700befb",
+     "bytes": 4535
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1e0e400ed19ba2752ed349450eea7cb727a080289c750590c58715349691fda5",
+     "bytes": 18957
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/frontend-react-app"
+  },
+  {
+   "slug": "fullstack-saas-starter",
+   "path": "skills/fullstack-saas-starter",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d652771dcdf8fc21fa9084e69fe46345f18e93d9c0f895ffbb02c86c5d919bff",
+     "bytes": 4488
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "c3ca51a17b2b16a198bee634a9c5b521300f5d14e075a7b8849520b0f84e33af",
+     "bytes": 21341
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/fullstack-saas-starter"
+  },
+  {
+   "slug": "game-dev-web",
+   "path": "skills/game-dev-web",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "9bbb75ab4da240c08f066b53e9807ad94e79b04d63b6a546f25a6243af17f3a1",
+     "bytes": 4356
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "fec85eb4f4f1134f9fd0a3d86a70e7bdc2338093b86c01aaa7c9ae2844297eaf",
+     "bytes": 15161
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/game-dev-web"
+  },
+  {
+   "slug": "genius-council-decision",
+   "path": "skills/genius-council-decision",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "7b7068aa84692676bb2b891633862403b3d04f0d47b0477c32f4107198e0bf4b",
+     "bytes": 4780
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "c8740d3ef7c334f1b4549dafdae85e13c389ce8df030c76cff2995f798fe542c",
+     "bytes": 17694
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/genius-council-decision"
+  },
+  {
+   "slug": "git-github-workflow",
+   "path": "skills/git-github-workflow",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "99624c4cd1d3a36cc60246779bcda673ae3ca9cf8ab802c394d1c093d5408ad1",
+     "bytes": 4726
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "3c4df7de918d326176b5894080e162f7d0254e261913a1a02f4aee36918ddcd4",
+     "bytes": 23621
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/git-github-workflow"
+  },
+  {
+   "slug": "google-workspace-automation",
+   "path": "skills/google-workspace-automation",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ffbfc965ac412649f286973134dc10db95de5417962665f706fdbb4ee4938336",
+     "bytes": 4636
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "5640f24476990454cfc718fed3667f06de3ceb50160720bb0322c4ec60713a1f",
+     "bytes": 16574
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/google-workspace-automation"
+  },
+  {
+   "slug": "hyperframes-animation-studio",
+   "path": "skills/hyperframes-animation-studio",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d29dbe0d056fd34e06cb6f8a1386c3f2f187ec17168ebd06e1446028b61dfab7",
+     "bytes": 32601
+    },
+    {
+     "path": "references/craft-numbers.md",
+     "sha256": "42bc72ad19c57a77f59f1d8d33d52a039c556dd1a92e138a5ba2412bcd9a08b2",
+     "bytes": 7006
+    },
+    {
+     "path": "references/hyperframes-authoring.md",
+     "sha256": "a2bfcc87fc2543af4ef550cb5e4e2bf3e6c3e562b9866f720dcb8313b0c6b732",
+     "bytes": 16680
+    },
+    {
+     "path": "references/motion-craft.md",
+     "sha256": "4b7506231f892635a7a3e91abe0fad632ccc2fa6e5e5a05182be92c65450ef63",
+     "bytes": 6841
+    },
+    {
+     "path": "references/motion-director.md",
+     "sha256": "86fabcdb871773757a85fb54269032195097b7503e18bf94171dc8c8d4133bbe",
+     "bytes": 8406
+    },
+    {
+     "path": "references/sources-ar.md",
+     "sha256": "ec77eae6ac091fb9f66679d3a60161afdcb896f205088f750adaf1079f78de32",
+     "bytes": 5997
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "9213755d7878beb8b5dfecf05f72bd4461f9289cce0043896e1028895f238746",
+     "bytes": 19304
+    },
+    {
+     "path": "references/tools-catalog-2.md",
+     "sha256": "e1624b7aa3dc57bbea41b019de1f52dabf25bc22382bf50aa0541e5a3e82c994",
+     "bytes": 51361
+    },
+    {
+     "path": "references/tools-catalog.md",
+     "sha256": "4e74fbdbda04ddc218ec3fcec465ce7d862ed7877f8da27efabd4623f87ad52b",
+     "bytes": 29072
+    },
+    {
+     "path": "references/x-trend-2026.md",
+     "sha256": "522dac5bdf9ebacc1cb5dfb2c9be7698638f13a27ad45ed8268162c5b7beaec1",
+     "bytes": 9633
+    },
+    {
+     "path": "scripts/ambience.py",
+     "sha256": "b7628c8f09b80e20591bf0c8d2fe7ef03988e7abed255f6ba32f252a2c78d173",
+     "bytes": 8795
+    },
+    {
+     "path": "scripts/decaption.py",
+     "sha256": "082bb1b1bcf5397de1b7c65dd6448e49bde1cb1074c25a019f136c9dc88b4da4",
+     "bytes": 11237
+    },
+    {
+     "path": "scripts/examples/blue_hour/README.md",
+     "sha256": "fdc44830005413d66cd33e853b4c82ea7d809c0a39a5d94c26e1f5b7dad62239",
+     "bytes": 1003
+    },
+    {
+     "path": "scripts/examples/blue_hour/index.html",
+     "sha256": "9004ae1d6b309b6b84a4cfd736048a8a07e6a55168d5221634c58177a11c3f99",
+     "bytes": 3913
+    },
+    {
+     "path": "scripts/examples/blue_hour/src/main.js",
+     "sha256": "348bb769830cef69ea2ab4cb1b8dbbf1ad08b4b07a62a4b4896ca1ef1cd10cbb",
+     "bytes": 12570
+    },
+    {
+     "path": "scripts/examples/koi_pond/index.html",
+     "sha256": "6d057b0cef9e5f96bf5ce604c4ec393e10a7782a5fba252246f80781f5488a90",
+     "bytes": 4228
+    },
+    {
+     "path": "scripts/examples/koi_pond/src/main.js",
+     "sha256": "993455c91c421a0fc3eb820d667b29f4df566cbb7cdd9a3ca806297dbe67fc14",
+     "bytes": 8668
+    },
+    {
+     "path": "scripts/examples/showreel/assets/cues.json",
+     "sha256": "9daedde87c623868f2f5dfd6489b817fc5fdaef665054a897e7f84f6695d9162",
+     "bytes": 859
+    },
+    {
+     "path": "scripts/examples/showreel/assets/score.json",
+     "sha256": "8399905cf8654696a64a8fab5ff3035f69f8b401e29b7addd3e7131adbb969e2",
+     "bytes": 770
+    },
+    {
+     "path": "scripts/examples/showreel/index.html",
+     "sha256": "0110b3b6de2cd0bb974a570076e5399cbaf66035a1c96a7995c82724dfcd612b",
+     "bytes": 11608
+    },
+    {
+     "path": "scripts/examples/sound_ground/README.md",
+     "sha256": "9976cce8fff943a095885e72a42e8de4dd2decd4e86216d86fd16632c964af30",
+     "bytes": 960
+    },
+    {
+     "path": "scripts/examples/sound_ground/assets/score.json",
+     "sha256": "e3cc8911363343743bdc9ca25a9cfb84fb8877a3629dc9845f353345d3c04010",
+     "bytes": 639
+    },
+    {
+     "path": "scripts/examples/sound_ground/index.html",
+     "sha256": "3d99175c03cbc26503f93a25e70f06930607a88957806c811af47cee15296763",
+     "bytes": 3824
+    },
+    {
+     "path": "scripts/examples/sound_ground/src/main.js",
+     "sha256": "4de3ab56ad23b262f68d06af143e2feaf101763e5e7a3e2e3dd155537754a4ea",
+     "bytes": 10562
+    },
+    {
+     "path": "scripts/examples/water_cycle/README.md",
+     "sha256": "552f6a0ddfbde9398fddb650d72f7627f2d629e1fca69f2abb7d63dc5f0ad382",
+     "bytes": 1372
+    },
+    {
+     "path": "scripts/examples/water_cycle/assets/motion-kit.js",
+     "sha256": "df7ae3289de5d8ea9fcf4a87357b4e6bab932a0e744754143ddd68e28b5c33a3",
+     "bytes": 13701
+    },
+    {
+     "path": "scripts/examples/water_cycle/index.html",
+     "sha256": "0e4bd9c195dc1efde1eb2c22aad52c0580f141339f3a23effde4424725b79005",
+     "bytes": 20503
+    },
+    {
+     "path": "scripts/examples/water_cycle_3d/README.md",
+     "sha256": "534a5aa31866179da70ee2e88e935b8f841850fa9e6f4987c6897051bef36194",
+     "bytes": 1582
+    },
+    {
+     "path": "scripts/examples/water_cycle_3d/assets/motion-kit.js",
+     "sha256": "df7ae3289de5d8ea9fcf4a87357b4e6bab932a0e744754143ddd68e28b5c33a3",
+     "bytes": 13701
+    },
+    {
+     "path": "scripts/examples/water_cycle_3d/index.html",
+     "sha256": "4ef1df105c69784fbdabd53d0a01c2043b01ae221c81d1beed91189d3ede745f",
+     "bytes": 6149
+    },
+    {
+     "path": "scripts/examples/water_cycle_3d/src/main.js",
+     "sha256": "e1c375e981114ccc7a96c2aa24caebb65f15f6a38aaa1fcbccf7765fb42b5b26",
+     "bytes": 7911
+    },
+    {
+     "path": "scripts/kit/motion-kit.js",
+     "sha256": "212f6ec67ff16b3caf6762f415c3683c65c2ed06baf3c836e3a78b861c1865dd",
+     "bytes": 39840
+    },
+    {
+     "path": "scripts/kit/three-kit.js",
+     "sha256": "30bf3f7694326052f96d73fb889d1b797dab5bed3b4607e677c24f5cc170d07e",
+     "bytes": 96207
+    },
+    {
+     "path": "scripts/kmotion.py",
+     "sha256": "51fb8bc5291163ea63539a93d38f1937e930730eff472aad76ca2ee5edeff336",
+     "bytes": 9433
+    },
+    {
+     "path": "scripts/montage.py",
+     "sha256": "025e3bfb3449e44328ee7aaaef42d379bf73e4b41bbc26b383172eb5cd6a4453",
+     "bytes": 19497
+    },
+    {
+     "path": "scripts/motion.py",
+     "sha256": "6e60165022e1ebf1927b2b0779cee969288d554ba679025ddc1335607b251c93",
+     "bytes": 25494
+    },
+    {
+     "path": "scripts/package.json",
+     "sha256": "a7983796c956dce75e4d3d44f195fe79a08d1dd62cf3b2636d0cc3f382a9c485",
+     "bytes": 312
+    },
+    {
+     "path": "scripts/qa.py",
+     "sha256": "f477e5117f1dab61d5a2d09c8ea537b6a4e26efbf5a5ed88a27c8315af5b98fc",
+     "bytes": 39278
+    },
+    {
+     "path": "scripts/reel.py",
+     "sha256": "4de850aa94bbc27f3d9858cec68d092543aba216fabb564614847dabb38e87e8",
+     "bytes": 8318
+    },
+    {
+     "path": "scripts/score.py",
+     "sha256": "aae1c97aabf398e30d2ead5a114c742e1d50ef304d8101917ba101b962128d38",
+     "bytes": 17413
+    },
+    {
+     "path": "scripts/transcribe.py",
+     "sha256": "bfc4c25eef6aa348bbea9214f1d77c26f26da7bd48256d1a39fb94a5a9ac9f0c",
+     "bytes": 3278
+    },
+    {
+     "path": "scripts/voice.py",
+     "sha256": "01859d0ff494af5047d49b355b285da74decbf033fa5cee8f1e648b311764826",
+     "bytes": 6807
+    },
+    {
+     "path": "templates/canvas.html",
+     "sha256": "4c4b9b8fe67eac41021f965ac60fccfbe2169e05c2d5c6e85ef017708d31b038",
+     "bytes": 3834
+    },
+    {
+     "path": "templates/composition.html",
+     "sha256": "19635b4c44fa2b585419db52558440b4173755aed416c604042a5f4e0c9ec748",
+     "bytes": 3345
+    },
+    {
+     "path": "templates/scene3d/index.html",
+     "sha256": "4583a9a055d5801eb1fda592bae68836950ad30f335f5eb344b74c362463f159",
+     "bytes": 3694
+    },
+    {
+     "path": "templates/scene3d/src/main.js",
+     "sha256": "e12e046b24f77c469c4b6c0761121400bae83dc7f7193aa95c2e79f248b1ab92",
+     "bytes": 3738
+    }
+   ],
+   "left_upstream": [
+    {
+     "path": "assets/water-cycle-3d-frames.png",
+     "bytes": 2532314,
+     "reason": "large-binary-left-upstream"
+    },
+    {
+     "path": "assets/water-cycle-frames.png",
+     "bytes": 1808386,
+     "reason": "large-binary-left-upstream"
+    }
+   ],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/hyperframes-animation-studio"
+  },
+  {
+   "slug": "ideation-100-ideas",
+   "path": "skills/ideation-100-ideas",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "fb523a3aedd84ecdf901b697b5bacd9798886e664e87164bab119375913df20d",
+     "bytes": 4485
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "677de1ab4bb678c2a67deed491ba472edb5aceb01c6b7eeabea2f9c5ac2c18ea",
+     "bytes": 19830
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ideation-100-ideas"
+  },
+  {
+   "slug": "image-critique-reverse-prompt",
+   "path": "skills/image-critique-reverse-prompt",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e2dc546e60433623f2338639dd8c85ff172d1bca28c2dc3ab0724ec034caf749",
+     "bytes": 4732
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "044ae53f1cc0f5d3a3f2fb1a1ccadfde8d9c150abf24d26429d080935fe6755d",
+     "bytes": 20262
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/image-critique-reverse-prompt"
+  },
+  {
+   "slug": "image-prompt-forge",
+   "path": "skills/image-prompt-forge",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "cb820223cb5d2d2832badc9acf974522972705e6d68f0b006f443b659617bd06",
+     "bytes": 5695
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "c526b28cfd3bd35f2e18fc550ac0ca017fbab65ddac368d1ca9139966b166aa3",
+     "bytes": 18607
+    },
+    {
+     "path": "scripts/image_prompt_forge.py",
+     "sha256": "ad7098ee19190aa589255a21a46b753f2b4a40b3f46a7531de939adcd4c14619",
+     "bytes": 8757
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/image-prompt-forge"
+  },
+  {
+   "slug": "invoices-quotes-contracts",
+   "path": "skills/invoices-quotes-contracts",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ef2c5bed1b939d2e1bf7d2a9cacb210900b48f7c1eba8e617baaacf8a1923414",
+     "bytes": 4713
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "a0517b149da7092479fa3f37693596d07cc2964c096829cd9dc9e1539e908ef1",
+     "bytes": 20238
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/invoices-quotes-contracts"
+  },
+  {
+   "slug": "kinetic-typography-arabic",
+   "path": "skills/kinetic-typography-arabic",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "bbc08d0780704de583cf341b3f7b4eeae7a900c0a56f0971a326162f52e56f2a",
+     "bytes": 4753
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "3b7777e47d146021de2395e8c0728d61bac585373b60f7bfb53ff592c35c726b",
+     "bytes": 16153
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kinetic-typography-arabic"
+  },
+  {
+   "slug": "kosif-mimic",
+   "path": "skills/kosif-mimic",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b862306a18cdea18bb836906e73002529b5bcc9a90cbc9c085eac241d67ce817",
+     "bytes": 3583
+    },
+    {
+     "path": "assets/fonts/Almarai-Bold.ttf",
+     "sha256": "06401391b5b39fbcf2bc0c6a6e03faf992435e7b011183a1861737e913af8613",
+     "bytes": 156672
+    },
+    {
+     "path": "assets/fonts/Amiri-Bold.ttf",
+     "sha256": "cfccb794268e7d573d857e6d6a67f89cf8a053e8ffd85dfa0c8ec1bb36fc4827",
+     "bytes": 413480
+    },
+    {
+     "path": "assets/fonts/Amiri-Regular.ttf",
+     "sha256": "ab391c4147d054c48976e98322ad0eefe1427aa0e0502a12a4c75d80a70cfcd7",
+     "bytes": 431116
+    },
+    {
+     "path": "assets/fonts/ArefRuqaa-Bold.ttf",
+     "sha256": "247071015b7eefd63f94d6e47949c5d10294ed31bd432f809ba9a219d93f91bb",
+     "bytes": 123852
+    },
+    {
+     "path": "assets/fonts/ArefRuqaa-Regular.ttf",
+     "sha256": "ceb786d83ba92f35e96efcd8623c2858d288e0c543c8761ba35b1020989464f9",
+     "bytes": 110696
+    },
+    {
+     "path": "assets/fonts/Cairo-400.ttf",
+     "sha256": "65c36653bfaa710785790696466ab5849f4d2d3d9369a336bca5c0e1c4638c4b",
+     "bytes": 164452
+    },
+    {
+     "path": "assets/fonts/Cairo-700.ttf",
+     "sha256": "aabef486061b73e0131ecd27c1da91d285f90dd48365ffa8faa99aa05ef48f78",
+     "bytes": 164600
+    },
+    {
+     "path": "assets/fonts/Cairo-900.ttf",
+     "sha256": "5a9fc0efb3046fafc44405514b49851e3ea46f79036963c5f695c73e9bf855f8",
+     "bytes": 164568
+    },
+    {
+     "path": "assets/fonts/Changa-700.ttf",
+     "sha256": "6b7fdecd345cec9db9decb643114700d92a534a2e9b8b15dd5833a138a807630",
+     "bytes": 70436
+    },
+    {
+     "path": "assets/fonts/ElMessiri-400.ttf",
+     "sha256": "93d1ecafe1dd6557c2c4a0f4c1c8433582694522c3660ff158d9f9d775c70567",
+     "bytes": 86604
+    },
+    {
+     "path": "assets/fonts/ElMessiri-700.ttf",
+     "sha256": "aff0a019c0e8922041bc3c034e8a1924ceac95a80dbc953e4a46ae4de51549c4",
+     "bytes": 86908
+    },
+    {
+     "path": "assets/fonts/Lalezar-Regular.ttf",
+     "sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9",
+     "bytes": 290016
+    },
+    {
+     "path": "assets/fonts/Lateef-Bold.ttf",
+     "sha256": "eee405eeb4e81491b0b659fb40dc016765292022d74406c616f72501e160afe2",
+     "bytes": 243260
+    },
+    {
+     "path": "assets/fonts/Lateef-Regular.ttf",
+     "sha256": "fcbd9e0227a4d7238880defa5fd74c012d69351150709e559a8577446145c2fc",
+     "bytes": 241092
+    },
+    {
+     "path": "assets/fonts/Marhey-700.ttf",
+     "sha256": "60cb5de684ff1d2a85eed9dffcde9923e7fae60454b18c438408925f6503195a",
+     "bytes": 132092
+    },
+    {
+     "path": "assets/fonts/Mirza-Bold.ttf",
+     "sha256": "306b412a39d9f93ca840c13ca62300eb5c7712e2afa94bd7ef2272b51131be6d",
+     "bytes": 177052
+    },
+    {
+     "path": "assets/fonts/NotoNaskhArabic-400.ttf",
+     "sha256": "ac6e5471e8f7f1f770838716e2d601053358fb5edfcf9095fe99c0ebabd6d071",
+     "bytes": 200324
+    },
+    {
+     "path": "assets/fonts/NotoNaskhArabic-700.ttf",
+     "sha256": "926dc12ce05283700872d996cd4e0c771e493417dee3e55505ad9f6dfd7da39c",
+     "bytes": 200468
+    },
+    {
+     "path": "assets/fonts/OFL-LICENSES.txt",
+     "sha256": "4e0b35faa9461a0b037a72430d22f303ce81b728b5ed17c1b0304f17f18450fc",
+     "bytes": 61972
+    },
+    {
+     "path": "assets/fonts/Rakkas-Regular.ttf",
+     "sha256": "54278882e4774c14d50c3b555f127d0fe586366d5b787316ebbcbd8108829e60",
+     "bytes": 146824
+    },
+    {
+     "path": "assets/fonts/ReemKufi-400.ttf",
+     "sha256": "77dfdd7e6ead8788dd2442bd34535d1885024ecb21046ed7b3fb5f4d58652f58",
+     "bytes": 89120
+    },
+    {
+     "path": "assets/fonts/ReemKufi-700.ttf",
+     "sha256": "4fbfce76b2263ef149fab2a64a15ef0e7f95603b899cd3a0d7ab3eb014113d18",
+     "bytes": 89112
+    },
+    {
+     "path": "assets/fonts/Tajawal-Black.ttf",
+     "sha256": "da582a579d3200869535dc994d2349608a8582042f8776b3679b157015db287c",
+     "bytes": 59028
+    },
+    {
+     "path": "assets/fonts/Tajawal-Bold.ttf",
+     "sha256": "0342ab6b74b6bd1b4b5bf7beda45a9734a2b3147a31e8a3a45b6a3417a52d9d7",
+     "bytes": 59988
+    },
+    {
+     "path": "assets/fonts/Tajawal-Regular.ttf",
+     "sha256": "6882892da3e03527d5db2bbab3b48bde6ef2e878a43f522d1a4eebda90010a19",
+     "bytes": 60364
+    },
+    {
+     "path": "assets/fonts/fonts.json",
+     "sha256": "0a3423113d39494f9f7320800a50b1aa363cdf71610238e512bde185758dd0e9",
+     "bytes": 3561
+    },
+    {
+     "path": "scripts/mm_analyze.py",
+     "sha256": "f56994b70fc873a85cf0f385bd54d5a3da595020450c56fd058f111ae7b8af5d",
+     "bytes": 30751
+    },
+    {
+     "path": "scripts/mm_build.py",
+     "sha256": "0d2ca34d9989abdf58ea9623ca03715ea46a9720e7e389a28b440c8ca0b8c84f",
+     "bytes": 18529
+    },
+    {
+     "path": "scripts/mm_color.py",
+     "sha256": "6240c07cbf83613e641b3438f11bbf6622be1deac0d95ea517e8c55d5b01d4dc",
+     "bytes": 7692
+    },
+    {
+     "path": "scripts/mm_common.py",
+     "sha256": "997545e3f1d3f63f4b857d2fa942532197fdca23b066d3a4919a2e64de3548cb",
+     "bytes": 10082
+    },
+    {
+     "path": "scripts/mm_fonts.py",
+     "sha256": "c2412f8245e506692fe70a2f105deb11bb8a82c69e313daa49f35f85ec2ab5ac",
+     "bytes": 8244
+    },
+    {
+     "path": "scripts/mm_fonts_lib.py",
+     "sha256": "f9431cafa07e2170de31a4d2a346681afb6227ddcb895eb098fe74284d07db81",
+     "bytes": 13996
+    },
+    {
+     "path": "scripts/mm_img.py",
+     "sha256": "c2af787d7d10c52d1576cb29493e9414ea9b07d1b279c439a7459eb9304f56de",
+     "bytes": 10392
+    },
+    {
+     "path": "scripts/mm_render_text.py",
+     "sha256": "bbef152780205a592b2e6dbea97b8e3f678dc7c933839b870db9f3bf7b230cc1",
+     "bytes": 13039
+    },
+    {
+     "path": "scripts/mm_sheets.py",
+     "sha256": "7cfe8a183361e81d39b66e0c0c36b9bcb1d1f07796b68b6c880f52dc6e1d5858",
+     "bytes": 5742
+    },
+    {
+     "path": "scripts/mm_text.py",
+     "sha256": "29711fb96c06133568b263f2238ddff687cd7201a7a2f0f09176f4d65066c6af",
+     "bytes": 43830
+    },
+    {
+     "path": "scripts/mm_textfx.py",
+     "sha256": "337182324bb710e28b6b553e4b7306141e8eabb46558564bd6c8ecda49c60441",
+     "bytes": 10768
+    },
+    {
+     "path": "scripts/mm_transitions.py",
+     "sha256": "45083c7b51290001c850d2a9e235db9cd8542370d2270d01bd9a3282c30837f1",
+     "bytes": 18155
+    },
+    {
+     "path": "scripts/mm_video.py",
+     "sha256": "295b367bc7bf386a3348187a4e213c298d868493921b50809cfad00d005988ea",
+     "bytes": 9027
+    },
+    {
+     "path": "tests/make_candidates.py",
+     "sha256": "6d4517a65e72cb0c0b1b63f2cb6384c5d3f558398ebf63499c0c7d8ebe956cc5",
+     "bytes": 3104
+    },
+    {
+     "path": "tests/make_reference.py",
+     "sha256": "053ce1e4f6eed4d6b8b6b502d73a5f9cfafab984a5ea3ec1f67ff6f362224315",
+     "bytes": 12227
+    },
+    {
+     "path": "tests/run_synthetic.py",
+     "sha256": "49ea1753d0c96022e8a8eb087c291d5ccb25fdfa436b88dc0b68c3dfb8f8c27f",
+     "bytes": 3357
+    },
+    {
+     "path": "tests/synth.py",
+     "sha256": "2d4e3156e8613c911d06320a31c12eed1c4d2119a4a79f7e1cf5a5d5ba5a73b0",
+     "bytes": 6948
+    }
+   ],
+   "left_upstream": [
+    {
+     "path": "assets/tessdata/ara.traineddata",
+     "bytes": 1432056,
+     "reason": "large-binary-left-upstream"
+    }
+   ],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-mimic"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "path": "skills/kosif-montage-motion",
+   "files": [
+    {
+     "path": ".gitignore",
+     "sha256": "4d9d7605cbea80247650ffd3fe9d332d39050d002601e963e806e68e31731dab",
+     "bytes": 72
+    },
+    {
+     "path": "CHANGELOG.md",
+     "sha256": "a2cab0198f2c0644a22c87f9ab36ac1205a5ae05798e541f1257626c2a505705",
+     "bytes": 28582
+    },
+    {
+     "path": "CHANGELOG_v1.2_structural.md",
+     "sha256": "62aca9432f9daa2d15b6a381125658d1f7c3c91e60246c88cc1b0e720dee7149",
+     "bytes": 1204
+    },
+    {
+     "path": "KOSIF Motion Web.bat",
+     "sha256": "a8fef73fd725211106f152017819df980010bbdddb778856e197b6ceb928e0a0",
+     "bytes": 163
+    },
+    {
+     "path": "KOSIF Motion.bat",
+     "sha256": "96d31cfbda9c9e89a47d6b76d20e055265ab14b9477f92d5c7956e9a7be57f26",
+     "bytes": 100
+    },
+    {
+     "path": "LEGACY_WORKFLOWS.md",
+     "sha256": "918fa578b19f1746c5a37549f41ac9c59727b8138a780a5e7efe262663f47763",
+     "bytes": 24848
+    },
+    {
+     "path": "PHYSICS_ADDENDUM_AR.md",
+     "sha256": "ea055c533f9aa24269fb4b47ee7f73646933c6c359ab725e9e386cae702e2304",
+     "bytes": 4615
+    },
+    {
+     "path": "README_AR.md",
+     "sha256": "9c84243d3cdf876aa3a05ed7bf3daa0483123d05f4f83a479130e9dede7b011b",
+     "bytes": 11951
+    },
+    {
+     "path": "SKILL.md",
+     "sha256": "82da03e6223fdc2a499eb9891c8d4203417c05ce8f24bb39538284f9a5109339",
+     "bytes": 44984
+    },
+    {
+     "path": "UPGRADE_REPORT.md",
+     "sha256": "2c7b6423683caa30d61b23437fe0798b645733c3594670f8c93cdcea97b5b6d7",
+     "bytes": 3863
+    },
+    {
+     "path": "VOICE2MOTION_CHANGELOG.md",
+     "sha256": "aa79aeff39b610bf3a569d4f70360f5c209b148350acfb47701dc068377e8c68",
+     "bytes": 1249
+    },
+    {
+     "path": "VOICE2MOTION_README_AR.md",
+     "sha256": "37821529f32e066cab21a22c410fb2f0346f1f990c6b861b41fe2831a63f9ff9",
+     "bytes": 2421
+    },
+    {
+     "path": "examples/illustrative-truss-report.json",
+     "sha256": "aaddb0403b20546955731f773277b1ec506b12fd2b975a0125fc017da076ed92",
+     "bytes": 10829
+    },
+    {
+     "path": "examples/illustrative-truss.json",
+     "sha256": "8d077ff1e58d3ea3c77bcf718c384c87f59de5769557f993efb3f77b0c7c1479",
+     "bytes": 917
+    },
+    {
+     "path": "examples/structural-twin-demo.html",
+     "sha256": "27e9d26b3f54bfe8cd5091e67dae6b04451ec346447fdd153e1b6039941c08a7",
+     "bytes": 20763
+    },
+    {
+     "path": "examples/voice2motion/assistant.cues.json",
+     "sha256": "7a38831ee01203f0a81aa6bfc70d702a1efe1bb4bcfd9a076d44aa51c16759ca",
+     "bytes": 1187
+    },
+    {
+     "path": "examples/voice2motion/assistant_transcript.txt",
+     "sha256": "10e85196333703b3478c8fd09bebb045922cd735b58eca5f4329addd9425465c",
+     "bytes": 466
+    },
+    {
+     "path": "examples/voice2motion/qa_report.json",
+     "sha256": "7733a77083fa67268c804ec77e2e888851cda13e4886dc913c1e7716f31b7e4c",
+     "bytes": 831
+    },
+    {
+     "path": "examples/voice2motion/storyboard.jpg",
+     "sha256": "ce5b1e4415a940ff0e6547a6a0f7a26f5bff23783d2c8aae0719d6c92175091f",
+     "bytes": 193793
+    },
+    {
+     "path": "install.bat",
+     "sha256": "3901da41ce1eb3622415c4f6c07262f485ebcbb92f71567edd203026ac7a0f6f",
+     "bytes": 488
+    },
+    {
+     "path": "references/KOSIF_SEE_INTEGRATION.md",
+     "sha256": "95216158aefbe91b069d4d0805d7d72740a808c72076c800f60f025f825b4827",
+     "bytes": 2866
+    },
+    {
+     "path": "references/STRUCTURAL_TWIN.md",
+     "sha256": "df6a133e28baab993effa8fdb808965bed37b53ad9888804651d7e755fe3a8e9",
+     "bytes": 5683
+    },
+    {
+     "path": "references/ai-video-shot-prompts.example.json",
+     "sha256": "3dff4a9d6815772f46946de774cf8d62813a40f8892ec7e5646bc97bb5648996",
+     "bytes": 32173
+    },
+    {
+     "path": "references/ai_video_models.md",
+     "sha256": "1d65ab86a6768747ad7f7c035614d9ea63d73970ccdefb87a5e76a2333f4e6f1",
+     "bytes": 2590
+    },
+    {
+     "path": "references/animation_craft.md",
+     "sha256": "f9a9b4b182b6e1d6b85fc54bd801286f9418243a25e16c1396ac0b9015cac69e",
+     "bytes": 4001
+    },
+    {
+     "path": "references/atlas-v6-sources.md",
+     "sha256": "e3aed36fe1fdaed5a4671e73c7b5837978908bbe2e488a707285353c4a73762f",
+     "bytes": 4520
+    },
+    {
+     "path": "references/atlas_15k_synthesis.md",
+     "sha256": "81dad81bdd6d5142f065e20682471a0c2bce89b24724690ae53b0563da666916",
+     "bytes": 2993
+    },
+    {
+     "path": "references/audit-v5.1.md",
+     "sha256": "6b7df27328b846fada12959ce877107e0c12496feed9a4e6abd3d75a041bee53",
+     "bytes": 6197
+    },
+    {
+     "path": "references/audit-v5.3-python.md",
+     "sha256": "e53730e4982956e97a03e65806f1fe729101105fbcc0d8b7983850acbdd00785",
+     "bytes": 3174
+    },
+    {
+     "path": "references/book-lessons.md",
+     "sha256": "e47e994aebbb1eae160a6a89dff4884864959c486ca5beba762ce5c9c23209d9",
+     "bytes": 7408
+    },
+    {
+     "path": "references/continuity-protocols.md",
+     "sha256": "f5f10a923a17638a99861604184159d332ad92e4aae51605a85a9550b92dd458",
+     "bytes": 2251
+    },
+    {
+     "path": "references/craft-numbers.md",
+     "sha256": "42bc72ad19c57a77f59f1d8d33d52a039c556dd1a92e138a5ba2412bcd9a08b2",
+     "bytes": 7006
+    },
+    {
+     "path": "references/hyperframes-authoring.md",
+     "sha256": "a2bfcc87fc2543af4ef550cb5e4e2bf3e6c3e562b9866f720dcb8313b0c6b732",
+     "bytes": 16680
+    },
+    {
+     "path": "references/launch-video.md",
+     "sha256": "ca2914fbc99ce518d90da0efaf160b89cd050880ffc3fc88bae342d93b681cc3",
+     "bytes": 3878
+    },
+    {
+     "path": "references/lighting-presets.md",
+     "sha256": "56c4ad330253ed23be2c4867cef75da1b856d0cb31691cee093ddab6113d4db3",
+     "bytes": 2851
+    },
+    {
+     "path": "references/mimic.md",
+     "sha256": "240bae44ab836117d4d855d46abf469b6365d536ce2b5a7332f140902b2847dc",
+     "bytes": 7478
+    },
+    {
+     "path": "references/montage_grammar.md",
+     "sha256": "f025e52f348ac09139e407ed6b3298e8b6709f7e986b04a8b08e109ab5c3d89e",
+     "bytes": 4750
+    },
+    {
+     "path": "references/motion-craft.md",
+     "sha256": "4b7506231f892635a7a3e91abe0fad632ccc2fa6e5e5a05182be92c65450ef63",
+     "bytes": 6841
+    },
+    {
+     "path": "references/motion-director.md",
+     "sha256": "86fabcdb871773757a85fb54269032195097b7503e18bf94171dc8c8d4133bbe",
+     "bytes": 8406
+    },
+    {
+     "path": "references/operating-manual.md",
+     "sha256": "bcf37b91718982bc6ecfa51488ee8f0be5c42845b70f7b4bcab5c08eec07618d",
+     "bytes": 6742
+    },
+    {
+     "path": "references/python-render.md",
+     "sha256": "549b09813dee6ea628337a406992abb21af2225261a877b130ce4b9c667b7187",
+     "bytes": 5870
+    },
+    {
+     "path": "references/render-farm.md",
+     "sha256": "c5440186508196f14dde7366d497d2838221fc46b6ce902b467f04ef30399c38",
+     "bytes": 2120
+    },
+    {
+     "path": "references/seven-layer-anatomy.md",
+     "sha256": "e74cd2a6aed5ff20b0bd4de75c0d8fa81a78b52fa3d8504148c31307d3cbf755",
+     "bytes": 2755
+    },
+    {
+     "path": "references/shape-kit.md",
+     "sha256": "8123778972e9f839119638767d1973cdb57dba8233c35162b75de6c35df30f2a",
+     "bytes": 4933
+    },
+    {
+     "path": "references/site-bridge.md",
+     "sha256": "e248256dfa05d8dd1ae89177a7b3375e733960f142bc87fd19ff44bf4f342c52",
+     "bytes": 5244
+    },
+    {
+     "path": "references/sources-ar.md",
+     "sha256": "ec77eae6ac091fb9f66679d3a60161afdcb896f205088f750adaf1079f78de32",
+     "bytes": 5997
+    },
+    {
+     "path": "references/story-conflict.md",
+     "sha256": "7f968b723068e7f146c81c2016cf3052d7da390fe6ca2b26624cf50029d10e35",
+     "bytes": 3283
+    },
+    {
+     "path": "references/timeline-schema.md",
+     "sha256": "9c8d8e918f1e4a732b0654bf4b83945518d2916a1731906497035a58862fcc6b",
+     "bytes": 4430
+    },
+    {
+     "path": "references/tools-catalog-2.md",
+     "sha256": "e1624b7aa3dc57bbea41b019de1f52dabf25bc22382bf50aa0541e5a3e82c994",
+     "bytes": 51361
+    },
+    {
+     "path": "references/tools-catalog.md",
+     "sha256": "4e74fbdbda04ddc218ec3fcec465ce7d862ed7877f8da27efabd4623f87ad52b",
+     "bytes": 29072
+    },
+    {
+     "path": "references/video-breakdown.md",
+     "sha256": "5fef5f495b4f3e04b5dd0f404b7d41facd57db762f282606363cf20ebd862978",
+     "bytes": 6268
+    },
+    {
+     "path": "references/visual-catalog.md",
+     "sha256": "b6a3de183632db035b54150c5817d596848de03126db86226f748585c4da1fe1",
+     "bytes": 4586
+    },
+    {
+     "path": "references/web-studio.md",
+     "sha256": "d526bf5ef1a967e42680459fa7fbf4181ae651fb5863da0d50046fcda9cafcca",
+     "bytes": 6819
+    },
+    {
+     "path": "references/x-trend-2026.md",
+     "sha256": "522dac5bdf9ebacc1cb5dfb2c9be7698638f13a27ad45ed8268162c5b7beaec1",
+     "bytes": 9633
+    },
+    {
+     "path": "requirements.txt",
+     "sha256": "3060bf5cf988277766cf291a00d32a217e7ce3d9d7b8165a5079b9991a96a8b8",
+     "bytes": 437
+    },
+    {
+     "path": "scripts/aiprompts.py",
+     "sha256": "04c116e116580bb8db338c96b9dc4be9011d26da6a784768fd568166cc42c9e5",
+     "bytes": 8667
+    },
+    {
+     "path": "scripts/ambience.py",
+     "sha256": "776212f85df3f09390b62d058dd1ffbe0aafdbf35aded535b0afec3697a773db",
+     "bytes": 8997
+    },
+    {
+     "path": "scripts/analyze.py",
+     "sha256": "2172757b270a810004a20a07638a0f981f7be0473a3d9365a646b65abf6bde8f",
+     "bytes": 25244
+    },
+    {
+     "path": "scripts/audio2motion.py",
+     "sha256": "d12fd057e5571d6aac8ab977344e1df9d8dfbc0a3239ff205675ec15654a8270",
+     "bytes": 16462
+    },
+    {
+     "path": "scripts/audiolab.py",
+     "sha256": "9113051134ebf9c464e1bab188f79791e3d7a62abccdfae9e4dd58754dc76e50",
+     "bytes": 7775
+    },
+    {
+     "path": "scripts/build_package.py",
+     "sha256": "f438a4a9d4c274274fd0cb8da5a3188e832a2e47430c5920c6fd79e319ddb8bc",
+     "bytes": 4292
+    },
+    {
+     "path": "scripts/cloud_setup.py",
+     "sha256": "b9097362ad031d4bb2a7a44294779b58c6b9cb87262ff9f857fe1d90b3a33fcb",
+     "bytes": 10207
+    },
+    {
+     "path": "scripts/decaption.py",
+     "sha256": "082bb1b1bcf5397de1b7c65dd6448e49bde1cb1074c25a019f136c9dc88b4da4",
+     "bytes": 11237
+    },
+    {
+     "path": "scripts/direct.py",
+     "sha256": "747d64f32fc74f2a6ccb6f274a1f1ee4a463d5bf494cae4d650b85fa741de597",
+     "bytes": 19526
+    },
+    {
+     "path": "scripts/env_check.py",
+     "sha256": "46200e6385e058f4163a1c3b576554caff8ce30e35ad245647be4ea87cc34e38",
+     "bytes": 5740
+    },
+    {
+     "path": "scripts/faces.py",
+     "sha256": "53932deffaf6432a4b7baa868ed9b5825c3efdea42884d7c33edccac7a7f23ce",
+     "bytes": 5235
+    },
+    {
+     "path": "scripts/fetch.py",
+     "sha256": "c5abb845b9ec2488cd49935953e1d625d024c7a83da8c8c66dc18aa778027a66",
+     "bytes": 11354
+    },
+    {
+     "path": "scripts/ffprobe_shim.py",
+     "sha256": "90c9a2d2c29ff51b09ce47a7447c88815d7d4d9151c2a98347ca8b699404a3db",
+     "bytes": 8793
+    },
+    {
+     "path": "scripts/film.py",
+     "sha256": "be61683e47649d410799884e4945264b617561a4f7f8c4a57369ed97f7b2c2e3",
+     "bytes": 24271
+    },
+    {
+     "path": "scripts/html_render.py",
+     "sha256": "f000d8ac71006e5edaa049ca2ba53798b78f9bffe577719c18c16e8c1a845ead",
+     "bytes": 7130
+    },
+    {
+     "path": "scripts/kit/fonts/OFL-Cairo.txt",
+     "sha256": "aa2b13bf0770c59a7fb7a3b793a7df5162c9cb5ad540ec81b0c0c1385946845d",
+     "bytes": 4379
+    },
+    {
+     "path": "scripts/kit/fonts/OFL-JetBrainsMono.txt",
+     "sha256": "bb1c26eb6fe1839e3759548777c8a35b9495ce4878a4b833b1b63d43ff313a4b",
+     "bytes": 4397
+    },
+    {
+     "path": "scripts/kit/fonts/OFL-SpaceGrotesk.txt",
+     "sha256": "18a4de52385f6b988782639d5d0cc1326e5a8c2de9a7f01d7b20d9aedcc60943",
+     "bytes": 4401
+    },
+    {
+     "path": "scripts/kit/fonts/cairo-arabic-600-normal.woff2",
+     "sha256": "7db1f16449e8c709a9663f077fb1ead2dd8cec168ecac2292b065783b041b617",
+     "bytes": 13828
+    },
+    {
+     "path": "scripts/kit/fonts/cairo-arabic-800-normal.woff2",
+     "sha256": "75f1a0a8fb96721a33848dd5d521f7afcb3519d59e213c3b5eecabdb960a6210",
+     "bytes": 13880
+    },
+    {
+     "path": "scripts/kit/fonts/cairo-latin-600-normal.woff2",
+     "sha256": "26400cd1ea38935ad4f1154941477d6dd1d57a6e0465d07654e91ad38f43128e",
+     "bytes": 15252
+    },
+    {
+     "path": "scripts/kit/fonts/cairo-latin-800-normal.woff2",
+     "sha256": "4a74c5425b3bc5ba8a7efe4495f7addc8e41055f1246efae01992328f3e8db0a",
+     "bytes": 15256
+    },
+    {
+     "path": "scripts/kit/fonts/jetbrains-mono-latin-500-normal.woff2",
+     "sha256": "4765dee1c0be507cde85c3de952bb24707b798f0e4002c360b9434d66c8bbc3c",
+     "bytes": 21820
+    },
+    {
+     "path": "scripts/kit/fonts/jetbrains-mono-latin-700-normal.woff2",
+     "sha256": "ed8b8f71b22bf3b6e1ec1cf9b24dd999785aae33d6256950c1f86c97e423b6ef",
+     "bytes": 21956
+    },
+    {
+     "path": "scripts/kit/fonts/space-grotesk-latin-500-normal.woff2",
+     "sha256": "f674168ce1553b0657a1a6d3719f99448a6160d163628ae780708ec0c0c0e905",
+     "bytes": 13320
+    },
+    {
+     "path": "scripts/kit/fonts/space-grotesk-latin-700-normal.woff2",
+     "sha256": "2731c236f3a1eda15fe8e5f9216e6d01a569cfe25bc32e0a83040cff62d0bdd5",
+     "bytes": 12784
+    },
+    {
+     "path": "scripts/kit/gsap.min.js",
+     "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+     "bytes": 72927
+    },
+    {
+     "path": "scripts/kit/k3-entry.js",
+     "sha256": "bd623fd7f5ade75b5c0c564985c4e67fe85797b8d0131d504ad297c662b4121c",
+     "bytes": 284
+    },
+    {
+     "path": "scripts/kit/lab-kit.js",
+     "sha256": "fde52dc3a3145862706b1f50f3666435105b98da7f988b340712b0a328024ca3",
+     "bytes": 27491
+    },
+    {
+     "path": "scripts/kit/motion-kit.js",
+     "sha256": "b4de6b7647f5cb9b1b2355d60595fdb2ebdb7eccca82857696d87da99eb6f353",
+     "bytes": 43986
+    },
+    {
+     "path": "scripts/kit/sfx/LICENSE-SFX.md",
+     "sha256": "8798321547d70fb8c852cd948518b7674823ee9ef97cea5b3aa861441bec0cde",
+     "bytes": 542
+    },
+    {
+     "path": "scripts/kit/sfx/bell-1.ogg",
+     "sha256": "94b8bb5f2d43ab65e4bcc32b28562416e9bc2c51d9fd4be1e333660ee52f977f",
+     "bytes": 13915
+    },
+    {
+     "path": "scripts/kit/sfx/bell-2.ogg",
+     "sha256": "5572ccdeb3b62373b86fa955355b3a222c36e815f0636ba16165189a21cf2514",
+     "bytes": 9429
+    },
+    {
+     "path": "scripts/kit/sfx/bong.ogg",
+     "sha256": "d21d0f0b782445db579d11e2506b24cd1ac9d664ee33aeaf807761aa7b6fd710",
+     "bytes": 4848
+    },
+    {
+     "path": "scripts/kit/sfx/card-place.ogg",
+     "sha256": "d8f26c33a665dcbdcc6f632f6050bc9dd548feb0d4942d4547615926d3926810",
+     "bytes": 9624
+    },
+    {
+     "path": "scripts/kit/sfx/card-slide.ogg",
+     "sha256": "006cf9822d15d7063f8899e56041f41646df30adb6fbd8b974ee5d5420012690",
+     "bytes": 8833
+    },
+    {
+     "path": "scripts/kit/sfx/catalog.json",
+     "sha256": "bce633d10f013ad393f59dde5ce6e0ecbcab41f9c6ffa00f20f70db4afac1bfc",
+     "bytes": 4099
+    },
+    {
+     "path": "scripts/kit/sfx/chips.ogg",
+     "sha256": "f41b3d106360fc68ebc061a211d4265b4cb5fa1fbe86e4d57d3673510e2c3784",
+     "bytes": 6356
+    },
+    {
+     "path": "scripts/kit/sfx/click.ogg",
+     "sha256": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292",
+     "bytes": 4371
+    },
+    {
+     "path": "scripts/kit/sfx/drop-1.ogg",
+     "sha256": "692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af",
+     "bytes": 5859
+    },
+    {
+     "path": "scripts/kit/sfx/drop-2.ogg",
+     "sha256": "4ac4d1cef7e936965cbf795852ca2020300b9e2ba7daa59f2bf4f1f7bf416218",
+     "bytes": 6411
+    },
+    {
+     "path": "scripts/kit/sfx/glitch.ogg",
+     "sha256": "1da06a2e63ce131f5e0316ca27c75fc0d672db7a8f9b986c70693f2bd992eabc",
+     "bytes": 5473
+    },
+    {
+     "path": "scripts/kit/sfx/key-1.wav",
+     "sha256": "7b873548c399b9aa0efbe63052fe1344c5317a9b23455b8be3523f47d434daf1",
+     "bytes": 25260
+    },
+    {
+     "path": "scripts/kit/sfx/key-2.wav",
+     "sha256": "f58f93430c1ad434feb341a89b89740ccad75e7a775d778d91b7f206e0acbe8e",
+     "bytes": 25260
+    },
+    {
+     "path": "scripts/kit/sfx/key-3.wav",
+     "sha256": "d67cf9547d99fc65c815c4c68fa9181e0af71419761cbb1d1f0a10eb8491a8d2",
+     "bytes": 25260
+    },
+    {
+     "path": "scripts/kit/sfx/key-4.wav",
+     "sha256": "29e1aea1fb841a0663ce75e9d83e675ddc7ae5cef00c623bdda65a72604fde7e",
+     "bytes": 25260
+    },
+    {
+     "path": "scripts/kit/sfx/key-5.wav",
+     "sha256": "619eb7e26571657b76fc9e1e3d99e85c3fc2259fa91c4c45f57384a85774ac24",
+     "bytes": 25260
+    },
+    {
+     "path": "scripts/kit/sfx/key-6.wav",
+     "sha256": "419bde001e7ed1cae63b84f60c803fb024a0254e1afe65e59d8c6d8ad4196eb7",
+     "bytes": 25260
+    },
+    {
+     "path": "scripts/kit/sfx/reveal-1.ogg",
+     "sha256": "7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf",
+     "bytes": 5506
+    },
+    {
+     "path": "scripts/kit/sfx/reveal-2.ogg",
+     "sha256": "5069e3571a77d7f7aae9ef71d0364aa245fb7d64a7c8cc9956f221d03088c089",
+     "bytes": 5358
+    },
+    {
+     "path": "scripts/kit/sfx/reveal-3.ogg",
+     "sha256": "b0a4dea90eed47accf50b768beff1166f2f1486fb139e4d025b2427637624bca",
+     "bytes": 5438
+    },
+    {
+     "path": "scripts/kit/sfx/select.ogg",
+     "sha256": "f703b6b1c62dae1c246a46d5c2442802588f68be2df4d17e0d65cf7e0dbfc826",
+     "bytes": 6339
+    },
+    {
+     "path": "scripts/kit/shape-kit.js",
+     "sha256": "291f9d78c3c7c59de18cf7af182c05ff9f3a3136b2e35532fc337056b56b3ab8",
+     "bytes": 38580
+    },
+    {
+     "path": "scripts/kit/three-kit.bundle.js",
+     "sha256": "2d27968f54e9927f86be64b2358425dc035b6212a0790cf28f9ee539db6422ee",
+     "bytes": 904567
+    },
+    {
+     "path": "scripts/kit/three-kit.js",
+     "sha256": "2bad2acab19eaa8ca1bb1207c43cd6ebb854c571ea6b5b4545a4c8e3c462a48a",
+     "bytes": 96444
+    },
+    {
+     "path": "scripts/kmotion.py",
+     "sha256": "3b643b625c3ec50e001495c45d2178bcfd9bfdd87ab82d144a64b07eed1b3df4",
+     "bytes": 22399
+    },
+    {
+     "path": "scripts/launch.py",
+     "sha256": "2e09eb8c24930f32fab8cdb803ef16cbf5f740d482fd9cd881edaed445570e96",
+     "bytes": 19530
+    },
+    {
+     "path": "scripts/mimic.py",
+     "sha256": "d853cd8eac50ca3597ee8e8549a18ddd317477a814b49a3013ca0e99dc1b030c",
+     "bytes": 65448
+    },
+    {
+     "path": "scripts/montage.py",
+     "sha256": "987a1c3cfc8a6715d42083979e874d41cd1c2beec5bbaa20bdf43c8d4dc0a30b",
+     "bytes": 25684
+    },
+    {
+     "path": "scripts/motion.py",
+     "sha256": "77e5ca7b2593f4e14cb66c6c177a9bd51a737d84ffbe4352169decedf870cf16",
+     "bytes": 38599
+    },
+    {
+     "path": "scripts/mtemplates.py",
+     "sha256": "66f3d83b7f2366ccc00fe8d02518ca06d39133f0783c5f56e20c2a82342468d5",
+     "bytes": 10065
+    },
+    {
+     "path": "scripts/omni/audio_analyze.py",
+     "sha256": "01721adbdaf9ee9ea647793fa8ff65880e32429f404d5574a9d6c53ad4de29b5",
+     "bytes": 13034
+    },
+    {
+     "path": "scripts/omni/image_analyze.py",
+     "sha256": "96b8b2fc0b48e98cb021d84ae73d75c2496864326ca0bb30a58f38580f4952e7",
+     "bytes": 13557
+    },
+    {
+     "path": "scripts/omni/light_calc.py",
+     "sha256": "9ec6f8018748f0f72af125d944994f4dc456096f72ac95d4563e7b1e6b3e8d90",
+     "bytes": 5307
+    },
+    {
+     "path": "scripts/omni/story_lint.py",
+     "sha256": "f73fa1d267131f7a7ddd659e4709a40bdc40b8c4eae4db6b7537c4789dfb623b",
+     "bytes": 4937
+    },
+    {
+     "path": "scripts/omniprompt.py",
+     "sha256": "6367c641ed84dc1bd797f7106143118da2b381a4c6d56d3454ba7c2dad2e7eac",
+     "bytes": 9744
+    },
+    {
+     "path": "scripts/package.json",
+     "sha256": "74388c1af7b0c78074e0bfc60ca065b0f4117d336f61a9e8857a5f42bedd7e3e",
+     "bytes": 371
+    },
+    {
+     "path": "scripts/platforms.py",
+     "sha256": "92f919ff071f9a26429df02bb6d1cf59308abac4539d1f41e663ccef780649a2",
+     "bytes": 5077
+    },
+    {
+     "path": "scripts/poster.py",
+     "sha256": "9d63b090c379f693199294070047ee7e7a0777abfdcdf4068d5ecd467290b216",
+     "bytes": 5819
+    },
+    {
+     "path": "scripts/privacy.py",
+     "sha256": "e3851ba72b6fa15b8b7feef819ec8105a6540be7724484db7de9c1a69b958935",
+     "bytes": 9791
+    },
+    {
+     "path": "scripts/projects/blue_hour/index.html",
+     "sha256": "9004ae1d6b309b6b84a4cfd736048a8a07e6a55168d5221634c58177a11c3f99",
+     "bytes": 3913
+    },
+    {
+     "path": "scripts/projects/blue_hour/src/main.js",
+     "sha256": "348bb769830cef69ea2ab4cb1b8dbbf1ad08b4b07a62a4b4896ca1ef1cd10cbb",
+     "bytes": 12570
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/cairo-arabic-600-normal.woff2",
+     "sha256": "7db1f16449e8c709a9663f077fb1ead2dd8cec168ecac2292b065783b041b617",
+     "bytes": 13828
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/cairo-arabic-800-normal.woff2",
+     "sha256": "75f1a0a8fb96721a33848dd5d521f7afcb3519d59e213c3b5eecabdb960a6210",
+     "bytes": 13880
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/cairo-latin-600-normal.woff2",
+     "sha256": "26400cd1ea38935ad4f1154941477d6dd1d57a6e0465d07654e91ad38f43128e",
+     "bytes": 15252
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/cairo-latin-800-normal.woff2",
+     "sha256": "4a74c5425b3bc5ba8a7efe4495f7addc8e41055f1246efae01992328f3e8db0a",
+     "bytes": 15256
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/jetbrains-mono-latin-500-normal.woff2",
+     "sha256": "4765dee1c0be507cde85c3de952bb24707b798f0e4002c360b9434d66c8bbc3c",
+     "bytes": 21820
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/jetbrains-mono-latin-700-normal.woff2",
+     "sha256": "ed8b8f71b22bf3b6e1ec1cf9b24dd999785aae33d6256950c1f86c97e423b6ef",
+     "bytes": 21956
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/space-grotesk-latin-500-normal.woff2",
+     "sha256": "f674168ce1553b0657a1a6d3719f99448a6160d163628ae780708ec0c0c0e905",
+     "bytes": 13320
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/fonts/space-grotesk-latin-700-normal.woff2",
+     "sha256": "2731c236f3a1eda15fe8e5f9216e6d01a569cfe25bc32e0a83040cff62d0bdd5",
+     "bytes": 12784
+    },
+    {
+     "path": "scripts/projects/bunny_twin/assets/twin.js",
+     "sha256": "e3d013f45de4503029160bfdf327d8ab0106f5b028384833e064aaa1b73d1e46",
+     "bytes": 13725
+    },
+    {
+     "path": "scripts/projects/bunny_twin/index.html",
+     "sha256": "5233d5ed6e4ab8fdc9e369ec6ed37a0ff5246110468d3baf66ab79ef0fc39c2c",
+     "bytes": 12668
+    },
+    {
+     "path": "scripts/projects/bunny_twin/src/main.js",
+     "sha256": "7dcd6ab2f3ca0967d95b1bf54d7d9cd5a7e815795e71a1e8785fefa69477c849",
+     "bytes": 15509
+    },
+    {
+     "path": "scripts/projects/bunny_twin/twin/build_truss.py",
+     "sha256": "55628e866ab37beb0bc434fb3228cb1cf16f1756a51d0c86958c1e183108b9b9",
+     "bytes": 8140
+    },
+    {
+     "path": "scripts/projects/bunny_twin/twin/cues.json",
+     "sha256": "d667d77ae566d2057275ca25e2622247970beaad38cd51e0698dae133af716cd",
+     "bytes": 650
+    },
+    {
+     "path": "scripts/projects/bunny_twin/twin/model.json",
+     "sha256": "df238f2878403ae46d839d0173a6c64f4be8a7f5e92d0bccf38be8b7043ea8e6",
+     "bytes": 18206
+    },
+    {
+     "path": "scripts/projects/bunny_twin/twin/report.json",
+     "sha256": "139ba9668900a109ce7467ad7e44e95a87a83a40f0db093f46f9b1f1694efd01",
+     "bytes": 249160
+    },
+    {
+     "path": "scripts/projects/bunny_twin/twin/score.json",
+     "sha256": "f25b13be151e158e5022a5fdfd428bac202ec38c29618f517127c24f8a6c58e7",
+     "bytes": 569
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/cairo-arabic-600-normal.woff2",
+     "sha256": "7db1f16449e8c709a9663f077fb1ead2dd8cec168ecac2292b065783b041b617",
+     "bytes": 13828
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/cairo-arabic-800-normal.woff2",
+     "sha256": "75f1a0a8fb96721a33848dd5d521f7afcb3519d59e213c3b5eecabdb960a6210",
+     "bytes": 13880
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/cairo-latin-600-normal.woff2",
+     "sha256": "26400cd1ea38935ad4f1154941477d6dd1d57a6e0465d07654e91ad38f43128e",
+     "bytes": 15252
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/cairo-latin-800-normal.woff2",
+     "sha256": "4a74c5425b3bc5ba8a7efe4495f7addc8e41055f1246efae01992328f3e8db0a",
+     "bytes": 15256
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/jetbrains-mono-latin-500-normal.woff2",
+     "sha256": "4765dee1c0be507cde85c3de952bb24707b798f0e4002c360b9434d66c8bbc3c",
+     "bytes": 21820
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/jetbrains-mono-latin-700-normal.woff2",
+     "sha256": "ed8b8f71b22bf3b6e1ec1cf9b24dd999785aae33d6256950c1f86c97e423b6ef",
+     "bytes": 21956
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/space-grotesk-latin-500-normal.woff2",
+     "sha256": "f674168ce1553b0657a1a6d3719f99448a6160d163628ae780708ec0c0c0e905",
+     "bytes": 13320
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/fonts/space-grotesk-latin-700-normal.woff2",
+     "sha256": "2731c236f3a1eda15fe8e5f9216e6d01a569cfe25bc32e0a83040cff62d0bdd5",
+     "bytes": 12784
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/gsap.min.js",
+     "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+     "bytes": 72927
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/motion-kit.js",
+     "sha256": "b4de6b7647f5cb9b1b2355d60595fdb2ebdb7eccca82857696d87da99eb6f353",
+     "bytes": 43986
+    },
+    {
+     "path": "scripts/projects/five_sec/index.html",
+     "sha256": "de21164f1a8e990628f949e7ba7733c7639c6102f849111e1eec19f48b7a17d3",
+     "bytes": 6383
+    },
+    {
+     "path": "scripts/projects/koi_pond/index.html",
+     "sha256": "6d057b0cef9e5f96bf5ce604c4ec393e10a7782a5fba252246f80781f5488a90",
+     "bytes": 4228
+    },
+    {
+     "path": "scripts/projects/koi_pond/src/main.js",
+     "sha256": "993455c91c421a0fc3eb820d667b29f4df566cbb7cdd9a3ca806297dbe67fc14",
+     "bytes": 8668
+    },
+    {
+     "path": "scripts/projects/lab_rabbit_lion/README.md",
+     "sha256": "ff2af80efa2a666f32e991cc9ee5cb65cb34938e7463678621358637c170f5a8",
+     "bytes": 839
+    },
+    {
+     "path": "scripts/projects/lab_rabbit_lion/assets/cues.json",
+     "sha256": "49d93345d77d268a38efef5b0c2196b7e86cc66255f92d853dec5b3221aba630",
+     "bytes": 394
+    },
+    {
+     "path": "scripts/projects/lab_rabbit_lion/assets/score.json",
+     "sha256": "38dcf11f2b20487c1b8bda7290a05b5263d6abd634e51360de9a3ff7e01b079e",
+     "bytes": 481
+    },
+    {
+     "path": "scripts/projects/lab_rabbit_lion/index.html",
+     "sha256": "b077a17f8bbc56da3181bf6bbeafd86d321cfef1e15277a747703f44a60dbf93",
+     "bytes": 3141
+    },
+    {
+     "path": "scripts/projects/lab_rabbit_lion/src/main.js",
+     "sha256": "050d6c1fe4637e32d7186afc1647251158b4a0d834a9cf2bd77f4eda69bb4dc9",
+     "bytes": 6394
+    },
+    {
+     "path": "scripts/projects/midnight_cat/README.txt",
+     "sha256": "a6c8a36c1231a38e7e52d0dbaf2a03df8fcc36e6c8398e715a8100f71e75f6a4",
+     "bytes": 1715
+    },
+    {
+     "path": "scripts/projects/midnight_cat/assets/scene.js",
+     "sha256": "014645f01acf946cc9be0112ab5c634cf2edb688c609e2e5aa0068c6d4b7d26b",
+     "bytes": 20829
+    },
+    {
+     "path": "scripts/projects/midnight_cat/build.cjs",
+     "sha256": "8761ea334ce8df5e0d70c05cf0345c36b36f7e9b871b631ebf0f5b260859a767",
+     "bytes": 4392
+    },
+    {
+     "path": "scripts/projects/midnight_cat/index.html",
+     "sha256": "a9fd8023a5137ca074448b4554a94866a81f4978663427f66c98213b75d8eaf5",
+     "bytes": 1198
+    },
+    {
+     "path": "scripts/projects/midnight_cat/midnight-cat.original.html",
+     "sha256": "3d15fbaedce28fee1c7a0cfb97c82a42ade75b28728943c409da3a9cf83c8bc2",
+     "bytes": 24739
+    },
+    {
+     "path": "scripts/projects/midnight_cat/player-test.cjs",
+     "sha256": "8afacbb1df033fce40ba8158e6497bc6a82fe0f782b3fe7acb4294db506406fb",
+     "bytes": 1616
+    },
+    {
+     "path": "scripts/projects/midnight_cat/test.cjs",
+     "sha256": "25b0392ef091b87b6c92aa7635f5b62f57072bd5a4ea163b5f6b101a1775d4a9",
+     "bytes": 896
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/fonts/cairo-arabic-600-normal.woff2",
+     "sha256": "7db1f16449e8c709a9663f077fb1ead2dd8cec168ecac2292b065783b041b617",
+     "bytes": 13828
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/fonts/cairo-arabic-800-normal.woff2",
+     "sha256": "75f1a0a8fb96721a33848dd5d521f7afcb3519d59e213c3b5eecabdb960a6210",
+     "bytes": 13880
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/gsap.min.js",
+     "sha256": "92bb9a96476f983d212a2bc4f54c889039c1696dd4461d40a736860938570fbb",
+     "bytes": 72927
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/motion-kit.js",
+     "sha256": "b4de6b7647f5cb9b1b2355d60595fdb2ebdb7eccca82857696d87da99eb6f353",
+     "bytes": 43986
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/shape-kit.js",
+     "sha256": "291f9d78c3c7c59de18cf7af182c05ff9f3a3136b2e35532fc337056b56b3ab8",
+     "bytes": 38580
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/three-kit.bundle.js",
+     "sha256": "2d27968f54e9927f86be64b2358425dc035b6212a0790cf28f9ee539db6422ee",
+     "bytes": 904567
+    },
+    {
+     "path": "scripts/projects/night_boat/index.html",
+     "sha256": "0091ef4275fbe637bee9a1d34a55303df185c633adfcb206019fdf651dcadb09",
+     "bytes": 6332
+    },
+    {
+     "path": "scripts/projects/night_boat/src/main.js",
+     "sha256": "e6e90806e35227c31edec523067fb4d9987b4404c004b269ec0ccad3dffeb491",
+     "bytes": 21321
+    },
+    {
+     "path": "scripts/projects/premium_edit/index.html",
+     "sha256": "40bfdaeaac593af84131b624a6c056cb25d742cea11aeb15f6e5e6f80ddc5094",
+     "bytes": 24595
+    },
+    {
+     "path": "scripts/projects/showreel/assets/cues.json",
+     "sha256": "9daedde87c623868f2f5dfd6489b817fc5fdaef665054a897e7f84f6695d9162",
+     "bytes": 859
+    },
+    {
+     "path": "scripts/projects/showreel/assets/score.channels.json",
+     "sha256": "e990d72a41d324c4a4fda23c2554408969e3322755b28ba99eed50d3260fff1f",
+     "bytes": 63924
+    },
+    {
+     "path": "scripts/projects/showreel/assets/score.json",
+     "sha256": "8399905cf8654696a64a8fab5ff3035f69f8b401e29b7addd3e7131adbb969e2",
+     "bytes": 770
+    },
+    {
+     "path": "scripts/projects/showreel/assets/spectrogram.png",
+     "sha256": "327487fd6530b60e426282329cf23049afda50983228c52ca2ef1ec026208174",
+     "bytes": 164448
+    },
+    {
+     "path": "scripts/projects/showreel/assets/spectrum_height.png",
+     "sha256": "489d7246940c63169a5ac4c3feabd9234245bfcd7584ab27c8b668adf5b6099c",
+     "bytes": 62249
+    },
+    {
+     "path": "scripts/projects/showreel/index.html",
+     "sha256": "0110b3b6de2cd0bb974a570076e5399cbaf66035a1c96a7995c82724dfcd612b",
+     "bytes": 11608
+    },
+    {
+     "path": "scripts/projects/sound_ground/assets/score.json",
+     "sha256": "e3cc8911363343743bdc9ca25a9cfb84fb8877a3629dc9845f353345d3c04010",
+     "bytes": 639
+    },
+    {
+     "path": "scripts/projects/sound_ground/index.html",
+     "sha256": "3d99175c03cbc26503f93a25e70f06930607a88957806c811af47cee15296763",
+     "bytes": 3824
+    },
+    {
+     "path": "scripts/projects/sound_ground/src/channels.json",
+     "sha256": "fe5f233387adba335842b2557349d7e4e6dc1af8cf879cbd32a4d611fb214e77",
+     "bytes": 41523
+    },
+    {
+     "path": "scripts/projects/sound_ground/src/main.js",
+     "sha256": "4de3ab56ad23b262f68d06af143e2feaf101763e5e7a3e2e3dd155537754a4ea",
+     "bytes": 10562
+    },
+    {
+     "path": "scripts/projects/sound_ground/src/spectrogram.png",
+     "sha256": "6b22079a7be61187445906fa70f969f45ef2f8146bd6858ff22668788c8c5aa2",
+     "bytes": 104176
+    },
+    {
+     "path": "scripts/projects/sound_ground/src/spectrum_height.png",
+     "sha256": "db1022e4b326a6fda67bfee4953a760237a8592d17c7489d1381762efcb0d7b9",
+     "bytes": 40059
+    },
+    {
+     "path": "scripts/projects/water_cycle_3d/index.html",
+     "sha256": "4ef1df105c69784fbdabd53d0a01c2043b01ae221c81d1beed91189d3ede745f",
+     "bytes": 6149
+    },
+    {
+     "path": "scripts/projects/water_cycle_3d/src/main.js",
+     "sha256": "e1c375e981114ccc7a96c2aa24caebb65f15f6a38aaa1fcbccf7765fb42b5b26",
+     "bytes": 7911
+    },
+    {
+     "path": "scripts/proplan.py",
+     "sha256": "079cb349e0393bf7b0e5d55a420b20631a4d1a307002b49bf4d7a379a88e0252",
+     "bytes": 9300
+    },
+    {
+     "path": "scripts/qa.py",
+     "sha256": "663b38499e3f7c3df8310c691183bac7d7dec2259661f048c7905a9b0183c4a3",
+     "bytes": 39708
+    },
+    {
+     "path": "scripts/reel.py",
+     "sha256": "9f67a5eea9147e427366f1450091093964b487d862b7c03a4e93e7c836df3d36",
+     "bytes": 10590
+    },
+    {
+     "path": "scripts/render.py",
+     "sha256": "1fb62ae18f37862af3962dd698e53f542dc2b10183891a9381bd8796c9262b4a",
+     "bytes": 38138
+    },
+    {
+     "path": "scripts/render_client.py",
+     "sha256": "f0791dda55cdeb9cb3de6ae3584c17b3643ae7f4e9e931c630d33b7c0be5bcf3",
+     "bytes": 12549
+    },
+    {
+     "path": "scripts/review.py",
+     "sha256": "b37de55ec4c151c30ab8a373c0238934340463278bf4b3f7ec5da0c2b35cbaa5",
+     "bytes": 23395
+    },
+    {
+     "path": "scripts/scenes.py",
+     "sha256": "d3db9fe7ab1ce4f88d544bb6d5d2d072647b4fa6661a1014c2b91c67529b9711",
+     "bytes": 7690
+    },
+    {
+     "path": "scripts/score.py",
+     "sha256": "cb721fc57417d1d7b87af87e3dc61a8a170c2937a6556a5f08f27dca22450fd5",
+     "bytes": 17615
+    },
+    {
+     "path": "scripts/shard.py",
+     "sha256": "cf994c47577ceb9b18005cec4685bac5204aad294b22c9990bcab7e227b005cd",
+     "bytes": 4540
+    },
+    {
+     "path": "scripts/site_bridge.py",
+     "sha256": "f9ec956010787897d91f21dd92bf49569adf9e38b7aa45f24215f051e5e16891",
+     "bytes": 9991
+    },
+    {
+     "path": "scripts/songreel.py",
+     "sha256": "801f63d50d7d30fc768ae60a42c4e3265cefa9e366f33e4e4d7a0cc7b443751c",
+     "bytes": 36318
+    },
+    {
+     "path": "scripts/structural_twin.py",
+     "sha256": "e9a0efbe9ec81c0f6f3cd043b519cd0e3ec9e37d7c66fc9c6cdc2fdc38b28c16",
+     "bytes": 14320
+    },
+    {
+     "path": "scripts/studio_import.py",
+     "sha256": "a34bbb6fbdb485152954ddcaaffc1fee4fa1d1d8d9dac635d46c95d5c8e8fc9a",
+     "bytes": 7998
+    },
+    {
+     "path": "scripts/test_audio2motion.py",
+     "sha256": "19e82cc4f18c826c50c99410ba1284af6d301dd0d5ba5f252536494780192fc7",
+     "bytes": 2787
+    },
+    {
+     "path": "scripts/timeline.py",
+     "sha256": "177e1dc9317f7595c6bfbf0eeae2d2f32993e3b5e14896ac36640d259a549827",
+     "bytes": 51707
+    },
+    {
+     "path": "scripts/tools.py",
+     "sha256": "ff106b7fcb52b7702a4d08180df2be3d9b7a1e10ba9f9238d605c916782343d0",
+     "bytes": 27575
+    },
+    {
+     "path": "scripts/transcribe.py",
+     "sha256": "0a1a15899b1f4f477f615b21a3272ff95c4e5cdf5d54dc2c8b0ba519221d4453",
+     "bytes": 8471
+    },
+    {
+     "path": "scripts/twin_dashboard.py",
+     "sha256": "bed41db2c9c4917c242b8c3dc47176e48eab85cab7010159596230c06f7f55ed",
+     "bytes": 11872
+    },
+    {
+     "path": "scripts/verse.py",
+     "sha256": "dec08b060e81377e26f2f0be0d301401ab679405596bc7d2bb0f2967f6b5cdb6",
+     "bytes": 33363
+    },
+    {
+     "path": "scripts/voice.py",
+     "sha256": "73ec2fa5878905fce4f80142c2f75dde11bfd332d60315c6472dcc2087af0dc4",
+     "bytes": 7009
+    },
+    {
+     "path": "scripts/web/__init__.py",
+     "sha256": "b03fb79f0cd5947f241c22944986c74f8ed31f8af4705593ac1084f5bb10932d",
+     "bytes": 99
+    },
+    {
+     "path": "scripts/web/build_studio_cloud.py",
+     "sha256": "48ca3db9f5125a85059a2567e4398e209afd4114a5b21d8348a9b2015a4835eb",
+     "bytes": 5043
+    },
+    {
+     "path": "scripts/web/claude_bridge.py",
+     "sha256": "a2205beb7e7b62eb6c0909d7f318faae32fde56e266f196f9589fadb1c60c9df",
+     "bytes": 8547
+    },
+    {
+     "path": "scripts/web/jobs.py",
+     "sha256": "d15d60fd48fabb2c3200e2b6b7b907f5c4c60d504a77df5c4aab4a1a7a8c6de7",
+     "bytes": 7156
+    },
+    {
+     "path": "scripts/web/recipes.py",
+     "sha256": "080195c666196231b02cecb50d16a83668e37c79056a1ccf897819a56ded2a15",
+     "bytes": 15268
+    },
+    {
+     "path": "scripts/web/server.py",
+     "sha256": "da80ee7c875f9fe3eb8cc837965d8061d3e092854dd6f172565e108c191c381a",
+     "bytes": 54547
+    },
+    {
+     "path": "scripts/web/static/app.js",
+     "sha256": "eece1e94ae9b865f7d64a96982c28f53cb85841dd00568a9fe5bd4a5fac43b6f",
+     "bytes": 28540
+    },
+    {
+     "path": "scripts/web/static/examples/cat.html",
+     "sha256": "d5286a56567ce916b1a797cce1feca9da6733c8852ad0c123ca4e9b5136ab3bb",
+     "bytes": 7426
+    },
+    {
+     "path": "scripts/web/static/examples/cinematic-cat.html",
+     "sha256": "3d15fbaedce28fee1c7a0cfb97c82a42ade75b28728943c409da3a9cf83c8bc2",
+     "bytes": 24739
+    },
+    {
+     "path": "scripts/web/static/index.html",
+     "sha256": "e5f520f342a9a5e03fe3ae1f46609bb359dabac8c209a8b4c633dee21bb432ba",
+     "bytes": 12184
+    },
+    {
+     "path": "scripts/web/static/manifest-player.js",
+     "sha256": "5c211fdaa8d390f027588295b74ca6e27ab4e9495dee651322435ece1d882ee1",
+     "bytes": 2600
+    },
+    {
+     "path": "scripts/web/static/review/LICENSE-motion-os.txt",
+     "sha256": "a7bb7bac82b24d5ad7c89d01121ff8a144bf147e043624811458266d4ed423bc",
+     "bytes": 1066
+    },
+    {
+     "path": "scripts/web/static/review/check.mjs",
+     "sha256": "75b315f1bff50a023c8ec936b03918b715bfabc8f9138af355af894295e239e4",
+     "bytes": 10457
+    },
+    {
+     "path": "scripts/web/static/review/index.html",
+     "sha256": "376198a7721d3f48d3bef0a6a6c302ad91d33dfafe316c20ce4d6d456a892149",
+     "bytes": 88420
+    },
+    {
+     "path": "scripts/web/static/studio/app.mjs",
+     "sha256": "462adf5a041efb30111d86e8050c8c1578ac965815836613c3f9abcc131f4e89",
+     "bytes": 38993
+    },
+    {
+     "path": "scripts/web/static/studio/index.html",
+     "sha256": "46918103fab4c8a8e42bbde350dc2e110ff755f2dfa88a1a49991a2869fda66f",
+     "bytes": 7393
+    },
+    {
+     "path": "scripts/web/static/studio/media.mjs",
+     "sha256": "f1205d90ea6d2945442cf5b68a4da5158407cac20647e99fa427caf6ae8e829f",
+     "bytes": 2177
+    },
+    {
+     "path": "scripts/web/static/studio/model.mjs",
+     "sha256": "ea6419715896166e39d747541994485f00fb60f7e4529fab5cf3c98ecd40b22c",
+     "bytes": 3785
+    },
+    {
+     "path": "scripts/web/static/studio/offline.mjs",
+     "sha256": "1c20e041fe47ce7539087568591f137003fa9f2fa2b5d53d6c9db1a6fead83d4",
+     "bytes": 11082
+    },
+    {
+     "path": "scripts/web/static/studio/style.css",
+     "sha256": "ea3c41fe3ca788781b3c8ef726b0ab5cdb1dd9c4a7295a2496237be52e95d878",
+     "bytes": 13930
+    },
+    {
+     "path": "scripts/web/static/studio/vendor/LICENSE-mp4-muxer.txt",
+     "sha256": "75c54aae7ef6ad652f684f9dd3b71e4dcef86ccebd88cf441ceed7f5eec037c5",
+     "bytes": 1065
+    },
+    {
+     "path": "scripts/web/static/studio/vendor/mp4-muxer.min.js",
+     "sha256": "c0c277a62ad740efed73bed1c50c1ae3a5eeacee003a014079172473a6db4bf4",
+     "bytes": 32191
+    },
+    {
+     "path": "scripts/web/static/style.css",
+     "sha256": "47130bd727a6fff63116099bfaecd64dcc9ad26a6dd0554203555253707ed685",
+     "bytes": 8181
+    },
+    {
+     "path": "scripts/web/wbcompat.py",
+     "sha256": "3e69956c90a611f20a1720f9493f25e507e5c66beec5a30c004792b22c7a0359",
+     "bytes": 20891
+    },
+    {
+     "path": "scripts/workbench_cli.py",
+     "sha256": "e3e949fa62c5e8c5caf9fa4ef40f02b057bd6a9950b4bd432a2ce76e3b43ca53",
+     "bytes": 4799
+    },
+    {
+     "path": "templates/canvas.html",
+     "sha256": "4c4b9b8fe67eac41021f965ac60fccfbe2169e05c2d5c6e85ef017708d31b038",
+     "bytes": 3834
+    },
+    {
+     "path": "templates/composition.html",
+     "sha256": "19635b4c44fa2b585419db52558440b4173755aed416c604042a5f4e0c9ec748",
+     "bytes": 3345
+    },
+    {
+     "path": "templates/directed.html",
+     "sha256": "893688e1d2218e84184b356c1df4fd8f14ef915decb8a0b82658b0bb92cf2925",
+     "bytes": 11289
+    },
+    {
+     "path": "templates/lab/index.html",
+     "sha256": "27ac7c303f442a1fad42f9f36a301a95f5668c24173130c1b3048b0861dfc6b6",
+     "bytes": 3185
+    },
+    {
+     "path": "templates/lab/main.js",
+     "sha256": "8e4d4536a9dbcff3a0079bf5cf76ed2ca3a8c76d4755e85db0de6a4bb783055e",
+     "bytes": 6403
+    },
+    {
+     "path": "templates/motion/bullet-list.html",
+     "sha256": "eee702976b8eb2438393beedc1adf60d23b30236cf553b39a47d0d37fd9d4d17",
+     "bytes": 4446
+    },
+    {
+     "path": "templates/motion/countdown.html",
+     "sha256": "02d8d9aef05bcc1b9113c73bce35fa62b8effeb959370a701c88f81ea0fd9056",
+     "bytes": 3888
+    },
+    {
+     "path": "templates/motion/end-card.html",
+     "sha256": "23b84ad1a2ee344fe9b69fab728336acfdc3847fc457f38229d291221c7a13b6",
+     "bytes": 5126
+    },
+    {
+     "path": "templates/motion/logo-reveal.html",
+     "sha256": "57351d9b703af15888d19398cd42f977a95a751db8e4d67529207f7a2906379a",
+     "bytes": 4209
+    },
+    {
+     "path": "templates/motion/lower-third.html",
+     "sha256": "af447336d6be19bc9071b29193b113b7919871e164698c0a6ee2ccbf681cee7f",
+     "bytes": 3357
+    },
+    {
+     "path": "templates/motion/quote-card.html",
+     "sha256": "0f3fbf6504744d950f6f9bcc1eb5d3a4456777c0bf9041f35126890976599324",
+     "bytes": 3817
+    },
+    {
+     "path": "templates/motion/stat-counter.html",
+     "sha256": "4c1be6946425a350eb0d44e9cfb30143a1d6dca2be65ca1de10a2391a75b7d0f",
+     "bytes": 4167
+    },
+    {
+     "path": "templates/motion/title-card.html",
+     "sha256": "6868ab623d22f8bbac5f17a6d52d657123776b22c5f1b1cbe9901d1e190776a1",
+     "bytes": 4460
+    },
+    {
+     "path": "templates/scene3d/index.html",
+     "sha256": "4583a9a055d5801eb1fda592bae68836950ad30f335f5eb344b74c362463f159",
+     "bytes": 3694
+    },
+    {
+     "path": "templates/scene3d/src/main.js",
+     "sha256": "e12e046b24f77c469c4b6c0761121400bae83dc7f7193aa95c2e79f248b1ab92",
+     "bytes": 3738
+    },
+    {
+     "path": "templates/verse.html",
+     "sha256": "71c06d1f190c28d354d30de0ce696e23402873d68b57b3b35eb214a197b1c006",
+     "bytes": 26124
+    },
+    {
+     "path": "tests/bridge/test_site_bridge.py",
+     "sha256": "6b05db9702bfff227eca33b2027084e7db84a3eacf6ae3cb6f1002694decb06f",
+     "bytes": 12344
+    },
+    {
+     "path": "tests/js/shape_kit_check.cjs",
+     "sha256": "aa0ea851ca227aa910d358432d1219f020840ed5bc354b475fde58dc7fa6d8da",
+     "bytes": 3035
+    },
+    {
+     "path": "tests/studio/export.mock.test.mjs",
+     "sha256": "15f4d147cf0470473c811cf7e6f13432b0b19cf3640099abc08bf177d9d8c865",
+     "bytes": 4610
+    },
+    {
+     "path": "tests/studio/media.test.mjs",
+     "sha256": "55b1325c4fd0cc598a71357a73aba063c095a6e20c70ebd8a1b0684090ed1448",
+     "bytes": 2869
+    },
+    {
+     "path": "tests/studio/model.test.mjs",
+     "sha256": "8f4755e240e54f2b67b38750aa1ec60897e2431cd25e5855214440a4b5b8f065",
+     "bytes": 3838
+    },
+    {
+     "path": "tests/studio/offline.test.mjs",
+     "sha256": "13e4fd414e6041885bbfb18e4f8229a3fd9fda2ce26706252ca48a7a635463d7",
+     "bytes": 6985
+    },
+    {
+     "path": "tests/test_analyze.py",
+     "sha256": "bc0bc2f1929e13412c2eca6005f6382cc46d7f29e01cc8c1b91c89eddc0f43e7",
+     "bytes": 5184
+    },
+    {
+     "path": "tests/test_cloud.py",
+     "sha256": "47005ce8eeb4b9f13f2f58d05f8f32649ba97aceba41fcb24d1339a6865481be",
+     "bytes": 6327
+    },
+    {
+     "path": "tests/test_core.py",
+     "sha256": "1dabb0cba6a57fb1bd0ab2b0adecd73f521d91eed5d63fe26b68f5a2f69ef762",
+     "bytes": 3501
+    },
+    {
+     "path": "tests/test_directors.py",
+     "sha256": "b2af75f2e50f5d6caa6a62d5b207443206d1271f172f46a896c2045455781eb6",
+     "bytes": 6395
+    },
+    {
+     "path": "tests/test_fast_render.py",
+     "sha256": "29268e7f5b49e35ecb743ed674417b9bcf0342f82cf4bdd6701e862298c7eb92",
+     "bytes": 2793
+    },
+    {
+     "path": "tests/test_fetch_lab.py",
+     "sha256": "6f22ee529ff4b19e69ec59aa96a63bada8245b50f7f682f5ef0ff6efedabed30",
+     "bytes": 6047
+    },
+    {
+     "path": "tests/test_launch.py",
+     "sha256": "39fa008efa813695152e0358775a37074df36a2de7842c427357ef37699cf5df",
+     "bytes": 6626
+    },
+    {
+     "path": "tests/test_mimic.py",
+     "sha256": "f8589413bca4f086ad5e3df926e2c65267d8767ed9e32c846166081583a9739d",
+     "bytes": 4869
+    },
+    {
+     "path": "tests/test_render_client.py",
+     "sha256": "59ec6c1b716816bae969b2960196a3e18e3ca8dac23d5ceaf9c196e343ec7edf",
+     "bytes": 6822
+    },
+    {
+     "path": "tests/test_review.py",
+     "sha256": "28d6e8fa2f6717050005291e39e9fdadd315fefc2616f0ebcc54eb0e20687228",
+     "bytes": 8955
+    },
+    {
+     "path": "tests/test_shape_kit.py",
+     "sha256": "88169f035bade7dc74599618699281f86d9dd467ef2866cc6305f905088f8d01",
+     "bytes": 2298
+    },
+    {
+     "path": "tests/test_songreel.py",
+     "sha256": "3796ec3d8bc7da2f8400aa4855a2962e1ddce9e3bbf6646bf3784ee8cb37169b",
+     "bytes": 5226
+    },
+    {
+     "path": "tests/test_space_truss.py",
+     "sha256": "ab7e158c2f1cc7e0ab24be2a45f43dd26cfa86bbe20c90f257977bedfda0a05d",
+     "bytes": 3041
+    },
+    {
+     "path": "tests/test_structural_twin.py",
+     "sha256": "6ef0e42584c20bc5374ebe5d8f16f96da081c69af79b3a2d86eaeebbcb07a80d",
+     "bytes": 4319
+    },
+    {
+     "path": "tests/test_v6.py",
+     "sha256": "2298feffda94947901376a0e2b53e650101eb3cab0fe66fad72375a8538b33cd",
+     "bytes": 14205
+    },
+    {
+     "path": "tests/test_web.py",
+     "sha256": "df04529b7b3a23a8dc756d5934c26f617fbdbb9da666b3894cf8f5356588ded1",
+     "bytes": 18934
+    }
+   ],
+   "left_upstream": [
+    {
+     "path": "scripts/projects/bunny_twin/assets/score.wav",
+     "bytes": 969644,
+     "reason": "large-binary-left-upstream"
+    },
+    {
+     "path": "scripts/projects/five_sec/assets/score.wav",
+     "bytes": 969644,
+     "reason": "large-binary-left-upstream"
+    },
+    {
+     "path": "scripts/projects/night_boat/assets/ambience.wav",
+     "bytes": 882044,
+     "reason": "large-binary-left-upstream"
+    },
+    {
+     "path": "scripts/web/static/examples/cat.gif",
+     "bytes": 1493690,
+     "reason": "large-binary-left-upstream"
+    },
+    {
+     "path": "scripts/web/static/examples/cat.mp4",
+     "bytes": 189997,
+     "reason": "video-left-upstream"
+    },
+    {
+     "path": "scripts/web/static/examples/midnight-cat.mp4",
+     "bytes": 3568946,
+     "reason": "video-left-upstream"
+    }
+   ],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-montage-motion"
+  },
+  {
+   "slug": "kosif-one",
+   "path": "skills/kosif-one",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "af61a5efcd6e534c060dc1586254b2705a6c428bf3346aa63d394f549079a103",
+     "bytes": 10976
+    },
+    {
+     "path": "references/catalog.md",
+     "sha256": "f79d05250a8ad81fe4245c4a0943c44685bb8119d9705706c2e66846477fe8e5",
+     "bytes": 7667
+    },
+    {
+     "path": "scripts/plan.py",
+     "sha256": "4b63ef306eaf8817c9775d42954fa65203c2ca85620ab37931743cb8a0b0af60",
+     "bytes": 30088
+    },
+    {
+     "path": "tests/test_plan.py",
+     "sha256": "63398a784fb456243d62e2d3678814a34d541ec96e7acb000420f7b254073640",
+     "bytes": 5951
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-one"
+  },
+  {
+   "slug": "kosif-social",
+   "path": "skills/kosif-social",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "994be50030792199bfc3e13ba065780b33a98a88da9ae3011aa0caa541d5f9f9",
+     "bytes": 6644
+    },
+    {
+     "path": "examples/ab.json",
+     "sha256": "f2835d1994e68c58e1eb54a76be14954d5f6c8aa56e065b8ebc6f78ed8ac3176",
+     "bytes": 288
+    },
+    {
+     "path": "examples/ab_results.example.csv",
+     "sha256": "dc4f2845199e65fccfd30d573048745475476c7158c4c2ca08c8d519f17f6e83",
+     "bytes": 132
+    },
+    {
+     "path": "examples/carousel.json",
+     "sha256": "400fe64c6cd2dfeff91245e746b7391f12b0c757461462e72e9605785c7228e4",
+     "bytes": 1162
+    },
+    {
+     "path": "examples/pack.example.json",
+     "sha256": "81a99c85b971be712825a3fcd6593ddf00b1eabd48425af2cd48917b7fa665d4",
+     "bytes": 1196
+    },
+    {
+     "path": "examples/plan.json",
+     "sha256": "824e5afb3cda1ec64a15860aad3a6e1ade2e644563eb9c3ee4dcbef35ec3b86b",
+     "bytes": 585
+    },
+    {
+     "path": "references/copy-guide.md",
+     "sha256": "c75b2570e765a9e0419383304a5dd147a89f4aa646ca317863ad34cb2ad1a965",
+     "bytes": 4056
+    },
+    {
+     "path": "scripts/social.py",
+     "sha256": "2f9cf7656b18d8ab2e120b0406e78f0a7b27fb86a82bd94939c863296587c9bd",
+     "bytes": 39929
+    },
+    {
+     "path": "tests/test_social.py",
+     "sha256": "c214620a8599070e2e99d689b8032bf234a0cf1fe5844505e7524a429f1e6168",
+     "bytes": 5438
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-social"
+  },
+  {
+   "slug": "landing-page-premium",
+   "path": "skills/landing-page-premium",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ce271a3e757f2f12e979283691adc91848ca94db2b95063f51412b4196a8f0ed",
+     "bytes": 5012
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "afa12daabb6968c2265bb2d0c66c3f6afa3a2150d2a5f5aeb95f23729421b591",
+     "bytes": 22613
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/landing-page-premium"
+  },
+  {
+   "slug": "language-coach-arabic-english",
+   "path": "skills/language-coach-arabic-english",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "92db178de932f3c688fe4a6a6bf69a3b77e2081d73b8d8a2f58d8267de48dae9",
+     "bytes": 4756
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "8506046f402fa20b3b8933093fe6ea94c3a961eb232231b65171759b071f096a",
+     "bytes": 15186
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/language-coach-arabic-english"
+  },
+  {
+   "slug": "legacy-code-migration",
+   "path": "skills/legacy-code-migration",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e27a26ea074fe87306dc73f3bf132464d50526cc3ec8a5af3d82296ec98bfb06",
+     "bytes": 4651
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "18f597d5198b47af53dfb3f8c34766f324caa103d9ea222d54943c62b323b7d7",
+     "bytes": 19367
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/legacy-code-migration"
+  },
+  {
+   "slug": "llm-judge-eval-lab",
+   "path": "skills/llm-judge-eval-lab",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "0cefa4ec06a39acc0a4bdab5c553f2fd69b3e9366dbfb5fc8d8da8c5a1c073b3",
+     "bytes": 7567
+    },
+    {
+     "path": "references/judge-design.md",
+     "sha256": "8993323df32c038f687130cd9ca46b6904eac3ae088574d0872311f9170c4ba9",
+     "bytes": 6237
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "afc73f91594474bc8027d442684cc6e0a9b7097b7629b2be416052b645af1c4b",
+     "bytes": 19673
+    },
+    {
+     "path": "scripts/eval_runner.py",
+     "sha256": "396a6a6010b6eba9d71d20e2d80532a571d11ac4515409a6af5c3f67d1a7e150",
+     "bytes": 9659
+    },
+    {
+     "path": "templates/assertions.example.json",
+     "sha256": "7da0cd90f056175f25f2fb5c4b01ce9a5cfca49111938bdd96a792d29895bf48",
+     "bytes": 60
+    },
+    {
+     "path": "templates/judge-score.example.json",
+     "sha256": "7a67d49f627a52fb41d0dab01ba6556065c7b17d13341c602688d4b23d047ff5",
+     "bytes": 173
+    },
+    {
+     "path": "templates/rubric.example.json",
+     "sha256": "1aca12b619f23464977ea5920bf8f5d48f058a65bca3b6c7a026e15834763dd2",
+     "bytes": 119
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/llm-judge-eval-lab"
+  },
+  {
+   "slug": "llm-judge-evals",
+   "path": "skills/llm-judge-evals",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "746fb018d2a4dafe807ae0c90a7585a639ae14b144e365501d13b0cebea8db3b",
+     "bytes": 5133
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "9af45fd74c14470fc42d66a9839e1be290fe685beee8f2e853be63f674840552",
+     "bytes": 19655
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/llm-judge-evals"
+  },
+  {
+   "slug": "market-competitor-research",
+   "path": "skills/market-competitor-research",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "33e25b3047bd754f00eefdc473f9dc015c3200b3399f86d43060fb5d53258d29",
+     "bytes": 4578
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "2d4a1056ef13b9aa9a864f07416afdb900ec0e7a83ef456e8d1bc5768a5d4b78",
+     "bytes": 20802
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/market-competitor-research"
+  },
+  {
+   "slug": "math-science-tutor",
+   "path": "skills/math-science-tutor",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c9df8fc76847306d0b4b2de925833b31878c70481489ecb86100011c53e10260",
+     "bytes": 4338
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1dd0a6e8472e5c9cdb4f2a9cb199df36ea737c1fcd88b17486c3113ae9d7e0d4",
+     "bytes": 21499
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/math-science-tutor"
+  },
+  {
+   "slug": "mobile-app-builder",
+   "path": "skills/mobile-app-builder",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c8d8cdefbb34c3b8b5d031adce4d86f4ee41de7345936196710fe3de25ae1f4c",
+     "bytes": 4565
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "5f82c0cc23d75789ea94a12d3fd3ddd8ad0ed922ffdef106383f2ab79dd3b522",
+     "bytes": 19704
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/mobile-app-builder"
+  },
+  {
+   "slug": "motion-director-pro",
+   "path": "skills/motion-director-pro",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "66c08e990064e40376d59359291036b6c418159d7541dd9fb082c2cef68736f2",
+     "bytes": 9551
+    },
+    {
+     "path": "references/film-brief-template.md",
+     "sha256": "44b698ea20a12ff9ea7e001c07ebcbe8fc97e795d5c1e0e2ed3231042b333efb",
+     "bytes": 8793
+    },
+    {
+     "path": "references/motion-floor.md",
+     "sha256": "2d42696cc26048b45a13eec37a43eea166bc1913f9a04dd942b9f2c5ccd88ffc",
+     "bytes": 7886
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "514637bcac6c60fd97cd43fa6803727164a5fa0d93b2954c82b70cf2a53f9b4c",
+     "bytes": 18209
+    },
+    {
+     "path": "scripts/motion_energy.py",
+     "sha256": "4e3cbc3208049698e6145066fe8b61e2cf8bdd6d26527fa53d26d2ad3cb8832d",
+     "bytes": 6430
+    },
+    {
+     "path": "scripts/storyboard_gate.py",
+     "sha256": "f91259b90218cabf8996df382f5cd07b8605ae9e31f9333ae0ae747019fe3cd8",
+     "bytes": 5016
+    },
+    {
+     "path": "templates/scenes.example.json",
+     "sha256": "707c438a96db351b888ec7b4147d75e14f5b41ec6730b0f0b52bfa0b9604cf89",
+     "bytes": 620
+    },
+    {
+     "path": "templates/storyboard.example.json",
+     "sha256": "e64d5d121b02046e63b7b0a8e8ceeb71324a0024f9cc5806fd432fc203e7e802",
+     "bytes": 593
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/motion-director-pro"
+  },
+  {
+   "slug": "music-song-brief",
+   "path": "skills/music-song-brief",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "fcc7040580c70089214c8f510c9c6d23b275b430c70ca483d27260ab122b5ad1",
+     "bytes": 4686
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "d3c420f0526b46d1a4fe52997fca18df522ba40d021e1f0ec1b670077c5d62e8",
+     "bytes": 21033
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/music-song-brief"
+  },
+  {
+   "slug": "newsletter-email-marketing",
+   "path": "skills/newsletter-email-marketing",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b2a75f22fbf9cc42c00db145f4af98f680fa42838f3b64c8e7c86b6648217c25",
+     "bytes": 4586
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "83545639ff45096ec0a930ceb93cc18f9ddd1cbcb59f5c685658cdf5714ada0a",
+     "bytes": 16039
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/newsletter-email-marketing"
+  },
+  {
+   "slug": "notebooks-python-analysis",
+   "path": "skills/notebooks-python-analysis",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "727611794f96cd51df86e3f02cc435975dd883cc6d15aefef54cf4dc3184c8aa",
+     "bytes": 4502
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "62ed233d8134c55c2a99091bf4ee8230d7f85ab6f623a88838126f883ff7ca8c",
+     "bytes": 16975
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/notebooks-python-analysis"
+  },
+  {
+   "slug": "office-prompts-library",
+   "path": "skills/office-prompts-library",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "07ae7e68373a5a05057a2aba5f925bd97b28788172b43dd00abc67022e531086",
+     "bytes": 4867
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "ba57dbb925593fabbf37d529f06a15230158fd253724cc46fb7844dd49ecdfc3",
+     "bytes": 17681
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/office-prompts-library"
+  },
+  {
+   "slug": "pdf-forms-reports",
+   "path": "skills/pdf-forms-reports",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3b030543333f6c48458ebed5200308d0704fce09100f5d0697f9d70f0237ab25",
+     "bytes": 4571
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "065a6f19525f6783c968f5703f0a115d97702a2c72c12b4b3940454385e1c276",
+     "bytes": 21088
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pdf-forms-reports"
+  },
+  {
+   "slug": "performance-optimization",
+   "path": "skills/performance-optimization",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "5b60a13ca10ee4518e215cc279d171d5fbbc1e92908968c904d1c6df477431f8",
+     "bytes": 4521
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "2c45706547ee98515baa142d255938395769f12ffafa292f7330e5c7af6295d1",
+     "bytes": 20730
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/performance-optimization"
+  },
+  {
+   "slug": "photo-lighting-plan",
+   "path": "skills/photo-lighting-plan",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "569af7a9d177693da206f5e8327d52d3426309c388a6710c98349c317e273ef2",
+     "bytes": 4695
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "af5990c95be8e494722d1b12906264713fd72b7cce7eaf37b9a25d8380b55a43",
+     "bytes": 23575
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/photo-lighting-plan"
+  },
+  {
+   "slug": "pitch-deck-investor",
+   "path": "skills/pitch-deck-investor",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "93ec0b448aaa4da4a8c5f88765c3ab6c91828a2a3d3d50fed064f6c12fa6cbc2",
+     "bytes": 4698
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "8a78fd3b2823841dbcb8b903d72f6434a896a0d8e20e2170bb6946ee74a0ed44",
+     "bytes": 26338
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pitch-deck-investor"
+  },
+  {
+   "slug": "pixel-art-game-assets",
+   "path": "skills/pixel-art-game-assets",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "c488e4bd691ee2982fa40f097493ccecfed916404106a01e5c67bf991cf2964b",
+     "bytes": 4457
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "5a83e59c76d1dc18afbb19b0216c5a0a7342497b8856caf5fd6ee2b6eb45e495",
+     "bytes": 18033
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pixel-art-game-assets"
+  },
+  {
+   "slug": "pixel-studio-painter",
+   "path": "skills/pixel-studio-painter",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "01e7a24566669861999dd75f490433a3cf2e08a47255bfebe91ebb843aa0a4e8",
+     "bytes": 13822
+    },
+    {
+     "path": "assets/zoom_compare.png",
+     "sha256": "a24e25878819bd4013cead8eb3e02d72993dded457fc0f4e22e218fa0258a5bc",
+     "bytes": 331157
+    },
+    {
+     "path": "references/drawing-guide.md",
+     "sha256": "7619984b45adab55e753cd13dd497cecfdc1a79971a8674bd91c0248be3145b5",
+     "bytes": 16205
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "d14a97ff0086390763e12a2c381a6d550e09bae2754966c98589ad8606813f12",
+     "bytes": 24264
+    },
+    {
+     "path": "references/studio-guide.md",
+     "sha256": "842b92b5151f054e6c1abe695f0879f74c36e09ad3468d5820e94f2494d06f0a",
+     "bytes": 19395
+    },
+    {
+     "path": "scripts/ai_bridge.py",
+     "sha256": "e488f8c2a09cf1293413e9b0111e375a53b77d0b547c86abb0609f13662bd972",
+     "bytes": 6173
+    },
+    {
+     "path": "scripts/edit_pack.py",
+     "sha256": "0c113f722497d9ef0e66d9b63c1bcc5d3856eeb65a6807e0c425be353d9ead92",
+     "bytes": 18290
+    },
+    {
+     "path": "scripts/exact.py",
+     "sha256": "0a24e48e9e605bb20073ea4ff8d35bb25b6bbff99da125cc8127a7f21659d8e9",
+     "bytes": 10771
+    },
+    {
+     "path": "scripts/examples/broken_code.py",
+     "sha256": "587df4d2f4cb7ca9b2592a58d846aa227e3b54c52eff9a0a53b7552c8a31f4cf",
+     "bytes": 210
+    },
+    {
+     "path": "scripts/examples/matplotlib_flower.py",
+     "sha256": "365a3eb74acb29042a47c4d4fed23a49ef87a719585801578e44280efbab448c",
+     "bytes": 310
+    },
+    {
+     "path": "scripts/examples/pil_house.py",
+     "sha256": "722f0c2639526d1ab83a270a36fbb85a65fd8a30abaa1c21465e714b9cfc64ad",
+     "bytes": 1082
+    },
+    {
+     "path": "scripts/examples/svg_rocket.svg",
+     "sha256": "47425abd190cbb3676aef775b0b28a2bb1e9dfe973c68e858bcbedf234d0a580",
+     "bytes": 1238
+    },
+    {
+     "path": "scripts/film.py",
+     "sha256": "f3fbf2900d810d742a6549844c2104f3436fd745f2526c40186a0a72b6afcf1e",
+     "bytes": 11849
+    },
+    {
+     "path": "scripts/generate.py",
+     "sha256": "9ffcb6aa5a3c751c3fc7d220ad5d33b1f41fc25cfb92c2b4f360f1b7790e6802",
+     "bytes": 4596
+    },
+    {
+     "path": "scripts/html_render.py",
+     "sha256": "7c75881fcd1791f3f8398fb368822f3cb003b810250bae443bcddfcc856b7350",
+     "bytes": 5436
+    },
+    {
+     "path": "scripts/jev_client.py",
+     "sha256": "41647a7395aa20584dc4d0680ca465bcb8051f50114db73d5e241020b1710e8b",
+     "bytes": 2060
+    },
+    {
+     "path": "scripts/judge.py",
+     "sha256": "aafa5824b8401ab8e07cb429750d115fb3edeefed3a926c1f5de5d4be555c870",
+     "bytes": 5796
+    },
+    {
+     "path": "scripts/render.py",
+     "sha256": "1fb62ae18f37862af3962dd698e53f542dc2b10183891a9381bd8796c9262b4a",
+     "bytes": 38138
+    },
+    {
+     "path": "scripts/runner.py",
+     "sha256": "2da86cac4bbcbf90073c56bbd0905e94e32898a5bf8317e3cb17ba04ffe7b953",
+     "bytes": 23707
+    },
+    {
+     "path": "scripts/scenes/dragon_girl.py",
+     "sha256": "19f43bb752f067ffc318e70610da88cfadd7e4e74b72e288256d126fb6878607",
+     "bytes": 24423
+    },
+    {
+     "path": "scripts/scenes/duck_dragon.py",
+     "sha256": "558576d78b8aa3e0aee3d6de467cac9654fdc00793e66941a67ead0ffa20ced9",
+     "bytes": 20476
+    },
+    {
+     "path": "scripts/scenes/whale_dragon.py",
+     "sha256": "0c8725ecdc8f49c94a87a6cf2ebd2687ed9b0fcb5f763ddb641580d01a347317",
+     "bytes": 18570
+    },
+    {
+     "path": "scripts/scenes/whale_dragon_3d.html",
+     "sha256": "e0a67fd9ccfe33adaba66861e663d52020f02149de31bb982f2057091ecbc901",
+     "bytes": 20890
+    },
+    {
+     "path": "scripts/studio.py",
+     "sha256": "fcba6a99358429baa2a905aaf135a50607d54eec6ec60d8dc527e873276abad0",
+     "bytes": 80425
+    },
+    {
+     "path": "scripts/svg_import.py",
+     "sha256": "98e5f2ebab1e9829b20a37908106249bc0d54b53b438feb2fee1d8f37004e625",
+     "bytes": 20423
+    },
+    {
+     "path": "scripts/tests/test_studio.py",
+     "sha256": "8306599fd38f374a464541a50ab5cd59d576d310165f97d5517826688141dac6",
+     "bytes": 36291
+    },
+    {
+     "path": "scripts/to_python.py",
+     "sha256": "259f3061ce4cf9ace2b0d29bf7c29a62ac09d84cc624ad3b5f55923b3432a1b0",
+     "bytes": 5670
+    },
+    {
+     "path": "scripts/vector_scene.py",
+     "sha256": "f1d867ebf76f44f9abafa497517f8c2a6de074351e712c54435224b65f963271",
+     "bytes": 1476
+    },
+    {
+     "path": "scripts/vectorize.py",
+     "sha256": "4189f321bb32ef9fb9a0db795e95491e5918d6a1d9be936f98d212d094d2d659",
+     "bytes": 13547
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pixel-studio-painter"
+  },
+  {
+   "slug": "podcast-production",
+   "path": "skills/podcast-production",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "082e5b4a88681c0b3cc7bea708ffd0aaa474311c86e80bc1476619f3456efd8c",
+     "bytes": 4737
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "bab531fc8dbfd28e33b1327202f88376830116d7a063c76ac1625bef5c91097b",
+     "bytes": 18603
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/podcast-production"
+  },
+  {
+   "slug": "powerpoint-decks",
+   "path": "skills/powerpoint-decks",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d69bd5655435c2d8048417b6cdfac1db021e18e90353530fda8a0cab1226c1d4",
+     "bytes": 4528
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "27228242cb138533bb2ae1fe81d681ea490232c54325ed5b1a5b79762d5a02e0",
+     "bytes": 18613
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/powerpoint-decks"
+  },
+  {
+   "slug": "pro-video-editor-ffmpeg",
+   "path": "skills/pro-video-editor-ffmpeg",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d671e60fccf086bef82b49585ca47873f1853dfb1e7e823718b3445b9e252906",
+     "bytes": 7973
+    },
+    {
+     "path": "references/ffmpeg-recipes.md",
+     "sha256": "7e459428357c4c660c8d582db5314555e8cf2a24f5aba6ebf85b8a161bffce70",
+     "bytes": 6836
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "ee98800404b9b42f967055298ed07337ecdb0e420d9a6488ab94df878827015b",
+     "bytes": 20819
+    },
+    {
+     "path": "scripts/beat_cuts.py",
+     "sha256": "1a4a5ff2e9325b7c625a36ba0f60254a260a94bd6bcbcf61da72be609f5d50d8",
+     "bytes": 3916
+    },
+    {
+     "path": "scripts/edl_render.py",
+     "sha256": "563e396bdda5fa6eff10ba920c47310ed49e0cd31331c34756b4a95242907b41",
+     "bytes": 8807
+    },
+    {
+     "path": "scripts/probe.py",
+     "sha256": "140812f76728a26c54cbde0e6729851f97fbd5414f82be63f597d7ca4be8ce10",
+     "bytes": 4330
+    },
+    {
+     "path": "scripts/silence_cut.py",
+     "sha256": "2a4be9837f29b0f76d21f6a83ce51ba8ce543cb83b1a60d4e781596f07271899",
+     "bytes": 2686
+    },
+    {
+     "path": "templates/edl.example.json",
+     "sha256": "096d25d65822616e516466b799deb9cdce7e936b7fd89079c1ff0c2c9be4c64d",
+     "bytes": 434
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pro-video-editor-ffmpeg"
+  },
+  {
+   "slug": "product-photo-mockups",
+   "path": "skills/product-photo-mockups",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2e41b8e85aa2e31192ec919fe63a9492e511658e1868a14fae52baae22adec9a",
+     "bytes": 4518
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "cada7e2d1338c35164193f0499ba538a8cd37b022d0db7effa41c01ba262d3f1",
+     "bytes": 17944
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/product-photo-mockups"
+  },
+  {
+   "slug": "prompt-architect-reasoning-models",
+   "path": "skills/prompt-architect-reasoning-models",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "31204f031dc56d20790368c504247758a09727eea0b916d882ac39badf222f11",
+     "bytes": 9042
+    },
+    {
+     "path": "references/model-guidance.md",
+     "sha256": "1113b8794f7bff6ee44c80502a1f2a859636fa656f2ed161eb7a067db06e4546",
+     "bytes": 5539
+    },
+    {
+     "path": "references/reasoning-patterns.md",
+     "sha256": "ad658a3214052416ba1bdb859f1b2d854e9be2723d0756b342288c81fbf791ef",
+     "bytes": 6203
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "7e0e276a4ee64715f593733a3bb3b2651db53c879571d6e03f39a49a46b9a9fb",
+     "bytes": 19543
+    },
+    {
+     "path": "references/structured-output-ladder.md",
+     "sha256": "e6358cad0de72c35d76192e7266f810762ae0f13a5aaf0ea3abf9fb58954452b",
+     "bytes": 5059
+    },
+    {
+     "path": "scripts/injection_shield.py",
+     "sha256": "91a52949faeed976b6de326dc87c7a621fa23dff64a38d5e3e42eae6baebb94c",
+     "bytes": 6796
+    },
+    {
+     "path": "scripts/prompt_frontier.py",
+     "sha256": "bea58a03a0f5da486bbece2a223eea9dfe28b57b30f7ac5d1a2701463bacc4d1",
+     "bytes": 12923
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/prompt-architect-reasoning-models"
+  },
+  {
+   "slug": "prompt-injection-defense",
+   "path": "skills/prompt-injection-defense",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f9e46358713dfe0ba1cae7a6c3e0affd49b6a91393cdffcce624419fc217c57e",
+     "bytes": 5240
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "1baf21dc670444a881f1162ab1a7ba2d94ea43b4050f77eb3d5c06e332842750",
+     "bytes": 19578
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/prompt-injection-defense"
+  },
+  {
+   "slug": "prompt-master-pro",
+   "path": "skills/prompt-master-pro",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e5d4cf1bd14bdb2066ae693e5ab15d0e532d5476194a08c0a5f51a7a44ae26a0",
+     "bytes": 7272
+    },
+    {
+     "path": "references/blindspot-questions.md",
+     "sha256": "cae2c2bb4d5d9beb76d2cc604a0e8395b3265dc2fee31f838170e00c72145897",
+     "bytes": 2814
+    },
+    {
+     "path": "references/formula.md",
+     "sha256": "70f017e88d039f6e2f128b01c1dc148945e640e249ac63955e492d99438cdffb",
+     "bytes": 5357
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "ec4fcf14e79c60f0af29e3caae089eef40e2fa198ff42259fa4e7b7e96ee4b05",
+     "bytes": 17558
+    },
+    {
+     "path": "scripts/prompt_build.py",
+     "sha256": "10ce487325782aec8dba3af591fb0cd5b7d0f686c9b5941091a69b55632776c6",
+     "bytes": 8666
+    },
+    {
+     "path": "scripts/prompt_lint.py",
+     "sha256": "b891f529b2d1e12816dda8df4d0695966f63255e3575a626568c316559da67ea",
+     "bytes": 11247
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/prompt-master-pro"
+  },
+  {
+   "slug": "python-pro",
+   "path": "skills/python-pro",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "3fd4931032fd26e64ed1bfc0d71c5e0e475aa188e36522b3800d8b4636bc1a60",
+     "bytes": 4140
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "853390ee938880e4b7cd4c427d87ca9869a39d72a517f0456e734cf1849190b8",
+     "bytes": 18408
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/python-pro"
+  },
+  {
+   "slug": "rag-knowledge-base",
+   "path": "skills/rag-knowledge-base",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "8570a15a9ae7e9636d924043e958fe295834abd6630a3b187d50fa266d8f4c0b",
+     "bytes": 4926
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "9e5b1e79c02e243c08a72db7074e67af7d31112496bdfaba7409e9c1baf50dd5",
+     "bytes": 18789
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/rag-knowledge-base"
+  },
+  {
+   "slug": "red-team-premortem",
+   "path": "skills/red-team-premortem",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d9c51a8682eeb4c7c420cf348f3f3fffc6902b6b6e4801e6ded0559e901a5c97",
+     "bytes": 4574
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "474e191c020e1a462d4d5c188580afeb5388035ea395e8d6dc73b023cd494b21",
+     "bytes": 19665
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/red-team-premortem"
+  },
+  {
+   "slug": "reels-shorts-factory",
+   "path": "skills/reels-shorts-factory",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "65a9beaeae8702ecfec5b49737aa2d8974ebd033367462b92109f377439890b1",
+     "bytes": 4297
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "cb6d75dab925665bb40e190a285ee9809e57bfd89446cfb9bf879b056785dc7d",
+     "bytes": 19426
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/reels-shorts-factory"
+  },
+  {
+   "slug": "research-deep-citations",
+   "path": "skills/research-deep-citations",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e94f25a43b930b2b1567a20866a40bb97103522b66f9abe03fe442089c5b7fa9",
+     "bytes": 4683
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "b7d81711a51f3f58ecc7903fa51b259fde871df2855a7354084470c95208f108",
+     "bytes": 20486
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/research-deep-citations"
+  },
+  {
+   "slug": "security-audit-stride",
+   "path": "skills/security-audit-stride",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2986097912eb15f4074aeba342d15a91797a5f50d9c17de15f2c7eb7bdb7d979",
+     "bytes": 4756
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "153175af4dfdfc6d034cf8b438e07af2090f971464a2055cc385a434301d6b10",
+     "bytes": 20727
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/security-audit-stride"
+  },
+  {
+   "slug": "seo-content-architecture",
+   "path": "skills/seo-content-architecture",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "2754c77b8b98b69a7a7e4131fa95e8208444f22c335a0b4d82e30ab02cdc93f9",
+     "bytes": 4697
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "9127708cae84bd8ef40accf8862dfb2b13d973a444c20cba6c5174357e27e86f",
+     "bytes": 20876
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/seo-content-architecture"
+  },
+  {
+   "slug": "software-architecture-adr",
+   "path": "skills/software-architecture-adr",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "8434f81f3d0e1ce539c136cc279b82633de0f182f963a9b0b1045f467c8b4ac2",
+     "bytes": 4710
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "593a029d237ad76e2308681b24b61e400afe8205a276b044117098d6c99bd3ff",
+     "bytes": 21780
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/software-architecture-adr"
+  },
+  {
+   "slug": "sql-data-analysis",
+   "path": "skills/sql-data-analysis",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "ab615578fe42c3247c12e83da50f2280cdd403badad789191d168ea676f735a2",
+     "bytes": 4681
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "d8422ea206eadc2ffe24d6b87eb93b7d1b51ca4c46e387156ec01beaf13e3b22",
+     "bytes": 21211
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/sql-data-analysis"
+  },
+  {
+   "slug": "storyboard-shotlist",
+   "path": "skills/storyboard-shotlist",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "4cac1ffce2ca4d60dc873a2c80f6413ca993fc826a0e07451c04321ba532b1a9",
+     "bytes": 4506
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "6974d933e694c1794aaa28a89e452e8405a4057c606bc6b6f3b2a2535d527151",
+     "bytes": 21238
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/storyboard-shotlist"
+  },
+  {
+   "slug": "storytelling-scripts",
+   "path": "skills/storytelling-scripts",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "58cca8ac430fafd01c5645053aac9d03a6667277aa7fc7a3924b31809233b6de",
+     "bytes": 4492
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "d244520137f098bbaa3d81b70c42535a75117fa7b74830d1d67e49467ec6e919",
+     "bytes": 19697
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/storytelling-scripts"
+  },
+  {
+   "slug": "strategy-decision-sensitivity",
+   "path": "skills/strategy-decision-sensitivity",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "03d580f5258be1cadbe8cfbdbfddf96dcabcf6bf219e46dc23ba8c92e86f3696",
+     "bytes": 4678
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "fc2036da7c451bb57f58ceb45fd43d22f9f1d6dab21d1c2cf8b8b912c212f4a1",
+     "bytes": 19484
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/strategy-decision-sensitivity"
+  },
+  {
+   "slug": "structured-output-json",
+   "path": "skills/structured-output-json",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "f0932b624160bef652a0fb20334d703b88b97a786c03155d3bd133d74c989715",
+     "bytes": 4889
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "7ae8298a05170d3eb68b635da7985bd72d8f636f4068b147dbdb0ec3f0a18e65",
+     "bytes": 17858
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/structured-output-json"
+  },
+  {
+   "slug": "svg-illustration-icons",
+   "path": "skills/svg-illustration-icons",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "df57c982dc968e8520b6d7d456615367ea4f33e56e35a044c9292472155b639d",
+     "bytes": 4259
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "505118c28c7cfbeb34664fab01f223806a32e48a089fda3444617e21d86fc697",
+     "bytes": 20535
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/svg-illustration-icons"
+  },
+  {
+   "slug": "system-prompt-architect",
+   "path": "skills/system-prompt-architect",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "72711a6af43fb9133834b2bf58eed984340863ebd2f6912b3faaddcf6998dca2",
+     "bytes": 4874
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "0c5a821c2f9c8af2372a9aa2c534f586ddbb24188e094f052f4f6419519b7738",
+     "bytes": 17125
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/system-prompt-architect"
+  },
+  {
+   "slug": "technical-docs-readme",
+   "path": "skills/technical-docs-readme",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "b81a0b167acefa5ac32e78a4a54ef964ed89d966c129d71913c27989299f828e",
+     "bytes": 4439
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "a62298b46c91ca5349961f6687b560e6f83d6bccb6cf9051ab766b08788a0869",
+     "bytes": 17196
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/technical-docs-readme"
+  },
+  {
+   "slug": "testing-suite-complete",
+   "path": "skills/testing-suite-complete",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "40ddb2569ab16264842029655af7c4787ae6c3b799f4d30e3e211c8209d5f860",
+     "bytes": 4591
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "88e1459f118935ce9c69cc40b094aca74a3160bef8bb6990fde0881cf0540fcf",
+     "bytes": 19319
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/testing-suite-complete"
+  },
+  {
+   "slug": "thumbnail-social-graphics",
+   "path": "skills/thumbnail-social-graphics",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "8b4d86c5ec09fda6910913a75e535b668728fe64092b5fdeb4697751d47005db",
+     "bytes": 4330
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "73f34af59b5827e5e7e07194e8cce57139b1e649edc83ab5c0de700ae47e4e15",
+     "bytes": 24538
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/thumbnail-social-graphics"
+  },
+  {
+   "slug": "translation-localization-ar",
+   "path": "skills/translation-localization-ar",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "40de74f50f0e66bad00530deb8017c562a07a0d7128cb20ad65a36d0172109ed",
+     "bytes": 4618
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "e20d23b2ed1e69d9d15f92967f66ebb75bc61af37d10d62449c465a57213150a",
+     "bytes": 19924
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/translation-localization-ar"
+  },
+  {
+   "slug": "trend-animation-styles",
+   "path": "skills/trend-animation-styles",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "aaafe1ef99a971f0fc530cee74f3eac6944e04c237d8dcac43cce8577e240427",
+     "bytes": 5630
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "b044154401e1dbd76d81d0752d330d59beb47a4ee5ea6f6362181a67b45a7814",
+     "bytes": 20877
+    },
+    {
+     "path": "references/styles.md",
+     "sha256": "d811b432082cd6acb2f9c75712f2b9bc59f0c05e66da5652a7b8f76200d19a92",
+     "bytes": 7667
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/trend-animation-styles"
+  },
+  {
+   "slug": "typescript-node-pro",
+   "path": "skills/typescript-node-pro",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "44d0283d54007ef672793ebfce71f9bfa4612e954103f620c76ed09aed86a853",
+     "bytes": 4127
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "add3869f6995147a1a42570d95513f21f4b82937608347c17ec00d0857982ed5",
+     "bytes": 21299
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/typescript-node-pro"
+  },
+  {
+   "slug": "ui-motion-microinteractions",
+   "path": "skills/ui-motion-microinteractions",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "41c0d93f3b47e01b2cbc0e38cad0676de7694be5742a0938b246b55b02f87783",
+     "bytes": 4573
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "26a13d2938a4790e4bf9cd4b65722da1adcf40b4415be0883c1d512fc003693b",
+     "bytes": 17983
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ui-motion-microinteractions"
+  },
+  {
+   "slug": "video-editing-captions",
+   "path": "skills/video-editing-captions",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "88517c491414a1330b28d027d49dc330367be03066904d8cdd031a8d7ce5611f",
+     "bytes": 4579
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "b643cfdcc73244a2612f08c05a4134b8041e12c48120d856bfe2b0a011c0a85e",
+     "bytes": 18060
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/video-editing-captions"
+  },
+  {
+   "slug": "video-prompt-director",
+   "path": "skills/video-prompt-director",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "4d89903f94b2036638c8426b2ac1b5ef68200a5727570c7546936611bfc20b52",
+     "bytes": 5379
+    },
+    {
+     "path": "references/platforms.md",
+     "sha256": "8b14554cecf8d6766a2e759ffc83acba5a1ab77bb6f024ac12a06371ce0161b7",
+     "bytes": 2376
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "8e8f31b86c47bc944f8071c8c869dac3fd488cb3235bd28b6dce4e114f31b344",
+     "bytes": 20623
+    },
+    {
+     "path": "scripts/video_prompt_forge.py",
+     "sha256": "7069ae85cf8f7a79bc2d5924040f8eca38f98b005c9a6c23368b7ba7ea9fccb7",
+     "bytes": 6224
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/video-prompt-director"
+  },
+  {
+   "slug": "voiceover-tts-direction",
+   "path": "skills/voiceover-tts-direction",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "38e107cff5c0c8c257f0767e8203e304fca93cf783aa33a8b5d04d701e8cae1f",
+     "bytes": 4905
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "3158733fb8e14fde2c8c20474cd990541dcc00488c021c538b6563502e155f72",
+     "bytes": 21358
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/voiceover-tts-direction"
+  },
+  {
+   "slug": "web-scraping-automation",
+   "path": "skills/web-scraping-automation",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "56281b6785f01b7ae16943ec70d5f5d1473c141c58474943ce81e9f610c2998f",
+     "bytes": 4625
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "28da2b7bd59325fd579c73b2edf45d62f329467c2d0352cc8b91968f02f4ed4f",
+     "bytes": 19914
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/web-scraping-automation"
+  },
+  {
+   "slug": "website-design-system",
+   "path": "skills/website-design-system",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "e59837c928b8756b18c51c39d1f3d145ad35719d2c9da50d9b5ad6474e345b1a",
+     "bytes": 4826
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "9250acc3bbf28ab885baac87983c44a993a8d99547214299c879b206eb2b901a",
+     "bytes": 19667
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/website-design-system"
+  },
+  {
+   "slug": "word-documents-pro",
+   "path": "skills/word-documents-pro",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "143e6c59969ed9ea74f773bad0cce9ed3e506ff9eb60f8ea973db95276eb66f3",
+     "bytes": 4783
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "867fa8bff8d0d555147cf3ef8369492041c6bfce6d2bc066bc87528c6dbed4a9",
+     "bytes": 20664
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/word-documents-pro"
+  },
+  {
+   "slug": "youtube-channel-strategy",
+   "path": "skills/youtube-channel-strategy",
+   "files": [
+    {
+     "path": "SKILL.md",
+     "sha256": "d111d4f6dd0ea202754e4bb9530f6459c017dbf657dc382b73dada8b32adf872",
+     "bytes": 4674
+    },
+    {
+     "path": "references/sources.md",
+     "sha256": "66733e7079811874b050d8cbae2d80aa33b4325891cc96d2987a761cea3043d5",
+     "bytes": 19943
+    }
+   ],
+   "left_upstream": [],
+   "upstream": "https://github.com/kosif199022-jpg/100-superskills/tree/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/youtube-channel-strategy"
+  }
+ ]
+}

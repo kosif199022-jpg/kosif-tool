@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>خمس ثوانٍ — KOSIF Motion</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<style>
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-arabic-800-normal.woff2") format("woff2"), url("assets/fonts/cairo-latin-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-arabic-600-normal.woff2") format("woff2"), url("assets/fonts/cairo-latin-600-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Space Grotesk"; font-weight: 700; src: url("assets/fonts/space-grotesk-latin-700-normal.woff2") format("woff2"); }
+  /* never put dir="rtl" on <html> (HyperFrames renders that blank): scope direction to text elements */
+  html, body { margin: 0; padding: 0; width: 1080px; height: 1920px; overflow: hidden; background: #0b1626; }
+  #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #0b1626;
+          font-family: "Cairo", "Segoe UI", Tahoma, sans-serif; color: #fff; }
+  #cam { position: absolute; inset: 0; transform-origin: 50% 50%; will-change: transform; }
+  #scene { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+  .line { position: absolute; left: 0; right: 0; text-align: center; direction: rtl; unicode-bidi: isolate; visibility: hidden;
+          text-shadow: 0 14px 50px rgba(0,0,0,.55); }
+  #l1 { top: 780px; font-size: 118px; font-weight: 800; line-height: 1.1; white-space: nowrap; }
+  #l2 { top: 950px; font-size: 84px; font-weight: 600; line-height: 1.2; color: #E7B65A; white-space: nowrap; }
+  #brand { position: absolute; left: 0; right: 0; top: 0; height: 1920px; visibility: hidden;
+           background: radial-gradient(circle at 50% 50%, #E7B65A 0%, #c9953f 48%, #a9772a 100%); }
+  #brand .w { position: absolute; left: 0; right: 0; text-align: center; color: #0b1626; }
+  #b1 { top: 840px; font-family: "Space Grotesk", "Segoe UI", sans-serif; font-size: 150px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; white-space: nowrap; }
+  #b2 { top: 1030px; font-size: 78px; font-weight: 800; direction: rtl; unicode-bidi: isolate; line-height: 1.2; white-space: nowrap; }
+  #flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; z-index: 60; }
+</style>
+</head>
+<body>
+<!-- 5 s, one idea: a gold ring draws itself (the carrier), two Arabic lines rise inside it, one slow push, then the ring
+     becomes the iris that floods the frame gold for the brand. ≤ 8 words on screen. Four easings. No wall clock. -->
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="5" data-fps="30">
+  <audio id="score" src="assets/score.wav" data-start="0" data-duration="5" data-volume="0.9" data-fade-out="0.6"></audio>
+  <div id="cam">
+    <svg id="scene" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2a49"/><stop offset="1" stop-color="#0b1626"/></linearGradient>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E7B65A" stop-opacity=".35"/><stop offset="1" stop-color="#E7B65A" stop-opacity="0"/></radialGradient>
+      </defs>
+      <rect x="0" y="0" width="1080" height="1920" fill="url(#bg)"/>
+      <g id="particles"></g>
+      <circle id="halo" cx="540" cy="930" r="520" fill="url(#glow)" opacity="0"/>
+      <circle id="ring" cx="540" cy="930" r="430" fill="none" stroke="#E7B65A" stroke-width="10" stroke-linecap="round"
+              transform="rotate(-90 540 930)" opacity="0"/>
+      <circle id="dot" cx="540" cy="500" r="16" fill="#E7B65A" opacity="0"/>
+    </svg>
+    <div id="l1" class="line">مونتاج وموشن</div>
+    <div id="l2" class="line">من طلب واحد</div>
+  </div>
+  <div id="brand">
+    <div id="b1" class="w">KOSIF Motion</div>
+    <div id="b2" class="w">نسخة ٥٫٢</div>
+  </div>
+  <div id="flash"></div>
+
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const root = $("#root"), cam = $("#cam");
+    M.vignette(root, { strength: 0.45 });
+    M.grain(root, { opacity: 0.05, seed: 7 });
+
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+
+    // ── beat 1 (0 – 1.2 s): the ring draws itself, the halo breathes on, the first line rises ──
+    M.sparkle(tl, $("#particles"), { at: 0, n: 48, seed: 5, x0: 0, x1: 1080, y0: 200, y1: 1700, color: "#ffe9b8" });
+    M.drawPath(tl, $("#ring"), 0.05, 0.9, { head: $("#dot"), ease: M.E.out });
+    tl.fromTo($("#halo"), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: M.E.smooth }, 0.3);
+    tl.to($("#dot"), { opacity: 0, duration: 0.3 }, 1.05);
+    M.riseWords(tl, $("#l1"), 0.55, { dur: 0.6, stagger: 0.12, rise: 40 });
+    M.riseWords(tl, $("#l2"), 0.95, { dur: 0.55, stagger: 0.1, rise: 30 });
+
+    // ── beat 2 (1.2 – 3.6 s): one slow push, the hold stays alive ──
+    M.push(tl, cam, 1.2, 1.0, 1.09, 2.4, { ease: M.E.dolly });
+    tl.to($("#ring"), { rotation: 8, transformOrigin: "50% 50%", duration: 2.4, ease: "none" }, 1.2);
+
+    // ── beat 3 (3.6 – 5 s): words leave upward, the ring becomes the iris, gold floods the frame, the brand lands ──
+    M.hideWords(tl, $("#l1"), 3.55, { dur: 0.4, stagger: 0.05 });
+    M.hideWords(tl, $("#l2"), 3.6, { dur: 0.4, stagger: 0.05 });
+    tl.to($("#ring"), { scale: 0.14, strokeWidth: 60, transformOrigin: "50% 50%", duration: 0.45, ease: M.E.in }, 3.65);
+    tl.to($("#halo"), { opacity: 0, duration: 0.3 }, 3.7);
+    M.iris(tl, $("#brand"), 4.05, { x: 540, y: 930, r0: 60, r: 2300, dur: 0.5 });
+    M.flash(tl, $("#flash"), 4.05, { peak: 0.6, dur: 0.3 });
+    M.revealWords(tl, $("#b1"), 4.15, { dur: 0.6, stagger: 0.06 });
+    M.revealWords(tl, $("#b2"), 4.35, { dur: 0.5, stagger: 0.08 });
+    tl.set({}, {}, 5);                                       // the timeline's end is the film's end
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;                        // HyperFrames discovers the timeline here
+    M.shim("root", 5);                                      // KOSIF Studio's renderer: window.render(t)
+  </script>
+</div>
+</body>
+</html>

@@ -2103,6 +2103,11 @@
    "label": "scripts/relabel_proofs.py"
   },
   {
+   "id": "script:scripts/superskills.py",
+   "kind": "script",
+   "label": "scripts/superskills.py"
+  },
+  {
    "id": "script:scripts/instagram_finder.py",
    "kind": "script",
    "label": "scripts/instagram_finder.py"
@@ -2678,6 +2683,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_superpower_fusion.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_superpower_fusion.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_superskills.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_superskills.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_task_history.py",
@@ -6951,6 +6961,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/hub.py",
+   "to": "script:scripts/superskills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/instagram_finder.py",
    "to": "script:scripts/_deps.py",
    "rel": "imports",
@@ -8291,6 +8307,12 @@
   {
    "from": "script:scripts/superpowers_unified.py",
    "to": "test:tests/test_superpowers_unified.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/superskills.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_superskills.py",
    "rel": "tested_by",
    "w": 1
   },

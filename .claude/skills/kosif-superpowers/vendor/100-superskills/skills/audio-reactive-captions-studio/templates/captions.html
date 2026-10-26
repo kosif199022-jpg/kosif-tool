@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="scene" content="w=1080;h=1920;fps=30;dur=10">
+<title>{{TITLE}}</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #101418; --ink: #FFFFFF; --hi: #39E508; --shadow: rgba(0,0,0,.75); }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #frame { position: absolute; left: 50%; top: 50%; width: 1080px; height: 1920px; transform-origin: 50% 50%; overflow: hidden; background: var(--bg); }
+  video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  /* المنطقة الآمنة للريلز: أسفل بـ 20% من الارتفاع وهامش جانبي 8% */
+  #cap { position: absolute; left: 8%; right: 8%; bottom: 20%; text-align: center; font-family: "Cairo", Tahoma, sans-serif; font-weight: 900; font-size: 72px; line-height: 1.25;
+         color: var(--ink); text-shadow: 0 3px 0 var(--shadow), 0 0 24px var(--shadow); white-space: pre-wrap; direction: rtl; }
+  #cap span { display: inline; transition: none; }
+  #cap .on { color: var(--hi); transform: scale(1.08); display: inline-block; }
+</style>
+</head>
+<body>
+<div id="frame">
+  <!-- ضع الفيديو المصدر هنا (اختياري): capture.py يصوّر الصفحة كاملة؛ أو اترك الخلفية ملوّنة وركّب الترجمة بـ ffmpeg -->
+  <!-- <video id="src" src="source.mp4" muted></video> -->
+  <div id="cap"></div>
+</div>
+<script>
+function loadSync(url) { try { const x = new XMLHttpRequest(); x.open("GET", url, false); x.send(); return JSON.parse(x.responseText); } catch (e) { return null; } }
+const CAP = window.CAPTIONS || loadSync("captions.json") || { pages: [] };
+const PAGES = CAP.pages || [];
+const W = 1080, H = 1920, FPS = 30;
+const DUR = PAGES.length ? PAGES[PAGES.length - 1].endMs / 1000 + 0.5 : 10;
+const capture = new URLSearchParams(location.search).has("capture");
+const cap = document.getElementById("cap");
+const vid = document.getElementById("src");
+let built = -1;
+function render(t) {
+  const ms = t * 1000;
+  let idx = -1;
+  for (let i = 0; i < PAGES.length; i++) { if (PAGES[i].startMs <= ms && ms < PAGES[i].endMs) { idx = i; break; } }
+  if (idx !== built) {  // أعد بناء الصفحة فقط عند تغيّرها (الكلمات تبقى بمسافاتها؛ whiteSpace: pre-wrap)
+    cap.innerHTML = "";
+    if (idx >= 0) for (const tok of PAGES[idx].tokens) { const s = document.createElement("span"); s.textContent = tok.text; s.dataset.from = tok.fromMs; s.dataset.to = tok.toMs; cap.appendChild(s); }
+    built = idx;
+  }
+  for (const s of cap.children) { const on = +s.dataset.from <= ms && ms < +s.dataset.to; s.classList.toggle("on", on); }
+  if (vid) { vid.currentTime = t; }  // في التصوير؛ للمعاينة الحية شغّل الفيديو واستخدم currentTime كمصدر زمن
+}
+window.render = render;
+function fit() { const s = Math.min(innerWidth / W, innerHeight / H); document.getElementById("frame").style.transform = `translate(-50%,-50%) scale(${s})`; }
+addEventListener("resize", fit); fit();
+let playing = !capture, t0 = performance.now();
+addEventListener("click", () => { playing = !playing; t0 = performance.now(); });
+function loop(now) { if (playing) render(((now - t0) / 1000) % DUR); requestAnimationFrame(loop); }
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { render(0); window.__ready = true; if (!capture) requestAnimationFrame(loop); });
+</script>
+</body>
+</html>

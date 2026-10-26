@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{TITLE}}</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<script src="edit.js"></script>
+<style>
+  @font-face { font-family: "KD"; src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF"), local("Noto Kufi Arabic Bold"), local("Noto Sans Arabic Bold"); font-weight: 700; }
+  @font-face { font-family: "KD"; src: local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF"), local("Noto Sans Arabic Medium"), local("Noto Sans Arabic"); font-weight: 500; }
+  @font-face { font-family: "KD"; src: local("Dubai Light"), url("file:///C:/Windows/Fonts/DUBAI-LIGHT.TTF"), local("Noto Sans Arabic Light"), local("Noto Sans Arabic"); font-weight: 300; }
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+  #root { position: relative; overflow: hidden; background: #000; font-family: "KD", "Segoe UI", "Noto Sans Arabic", sans-serif; }
+  #cam { position: absolute; inset: 0; }
+  #plate { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .layer { position: absolute; inset: 0; pointer-events: none; }
+  #dim { background: #07080a; opacity: 0; }
+  #scrim { background: linear-gradient(180deg, rgba(10,11,13,0) 50%, rgba(10,11,13,.40) 70%, rgba(10,11,13,.70) 100%); }
+  #vig { background: radial-gradient(ellipse 72% 58% at 50% 42%, rgba(0,0,0,0) 55%, rgba(0,0,0,.5) 100%); opacity: .5; }
+  .t { position: absolute; left: 7%; right: 7%; text-align: center; direction: rtl; unicode-bidi: isolate; visibility: hidden; white-space: nowrap;
+       text-shadow: 0 3px 16px rgba(0,0,0,.45), 0 1px 2px rgba(0,0,0,.35); }
+  .l1 { font-weight: 500; line-height: 1.3; }
+  .l3 { font-weight: 700; line-height: 1.05; padding: .12em 0 .32em; }
+  .soft { font-weight: 300; }
+  .wm { display: inline-block; clip-path: inset(-0.3em -0.08em -0.4em -0.08em); padding: 0 .08em; }
+  .w { display: inline-block; }
+  #credit { position: absolute; left: 0; right: 0; text-align: center; font-weight: 300; letter-spacing: .04em; direction: ltr; }
+  svg.g { position: absolute; left: 0; top: 0; overflow: visible; }
+  .sweep { -webkit-background-clip: text; background-clip: text; color: transparent !important; text-shadow: none; filter: drop-shadow(0 4px 18px rgba(0,0,0,.5)); background-size: 300% 100%; background-position: 100% 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <audio id="voice" src="assets/voice.wav" data-start="0" data-duration="{{SECONDS}}" data-volume="1" data-role="voice"></audio>{{MUSIC}}
+  <div id="cam"><video id="plate" src="assets/plate.mp4" data-start="0" data-duration="{{SECONDS}}" muted playsinline preload="auto"></video></div>
+  <div class="layer" id="scrim"></div>
+  <div class="layer" id="vig"></div>
+  <div class="layer" id="dim"></div>
+  <svg class="g" id="gfx"></svg>
+  <div id="text"></div>
+  <div id="credit"></div>
+<script>
+/* The directed-edit engine: window.EDIT (edit.js, written by direct.py and editable by hand) → one GSAP timeline.
+   Layers: camera (push / punch / pull-back on the subject), three text levels (speech, keyword, payoff), motifs
+   (number ring), chapters at cuts (the keyword becomes the transition plane), a deliberate end. */
+const D = window.EDIT, M = window.MOTION, $ = (s) => document.querySelector(s), NS = "http://www.w3.org/2000/svg";
+const W = D.W, H = D.H, S = D.duration, A = D.palette || {};
+const IV = A.ivory || "#F5F0E6", AC = A.accent || "#E7B65A";
+const root = $("#root");
+root.style.width = W + "px"; root.style.height = H + "px";
+document.documentElement.style.width = document.body.style.width = W + "px";
+document.documentElement.style.height = document.body.style.height = H + "px";
+const gfx = $("#gfx"); gfx.setAttribute("width", W); gfx.setAttribute("height", H); gfx.setAttribute("viewBox", `0 0 ${W} ${H}`);
+const k = W / 1080;                                                   // sizes are designed at 1080 px wide
+const tl = gsap.timeline({ paused: true });
+const OUT = "power3.out", IN = "power3.in", IO = "power2.inOut";
+
+/* camera: origin on the subject of each shot; a slow push per shot, punches on keywords, a pull-back before the payoff */
+const cam = $("#cam");
+const shotAt = (t) => D.shots.find((s) => t >= s.start && t < s.end) || D.shots[D.shots.length - 1];
+D.shots.forEach((s, i) => {
+  tl.set(cam, { transformOrigin: `${s.cx}px ${s.cy}px`, scale: s.from, x: 0, y: 0 }, s.start);
+  tl.to(cam, { scale: s.to, duration: Math.max(0.5, s.end - s.start), ease: "power1.inOut" }, s.start);
+});
+(D.camera || []).forEach((c) => tl.to(cam, { scale: `+=${c.punch}`, duration: c.dur || 0.14, ease: "expo.out" }, c.t)
+                                  .to(cam, { scale: `-=${c.punch * 0.6}`, duration: 0.6, ease: IO }, c.t + (c.dur || 0.14)));
+if (D.hook) tl.fromTo("#dim", { opacity: 0.38 }, { opacity: 0, duration: 0.55, ease: OUT, immediateRender: true }, D.hook.release);
+
+/* helpers */
+function textEl(cls, y, size, extra) { const d = document.createElement("div"); d.className = "t " + cls; d.style.top = y + "px"; d.style.fontSize = size + "px";
+  if (extra) Object.assign(d.style, extra); $("#text").appendChild(d); return d; }
+function speech(words, y, size) {                       // words arrive on their syllables: rise, blur → sharp; keywords in the accent
+  const el = textEl("l1", y, size);
+  const inner = words.map((w, i) => { const m = document.createElement("span"); m.className = "wm"; const s = document.createElement("span"); s.className = "w";
+    s.textContent = w.text; s.style.color = w.key ? AC : IV; m.appendChild(s); el.appendChild(m); if (i < words.length - 1) el.appendChild(document.createTextNode(" ")); return s; });
+  tl.set(el, { visibility: "visible", opacity: 1 }, words[0].t - 0.03);
+  words.forEach((w, i) => tl.fromTo(inner[i], { y: 18 * k, opacity: 0, filter: "blur(6px)" }, { y: 0, opacity: 1, filter: "blur(0px)", duration: 0.28, ease: OUT, immediateRender: true }, w.t - 0.04));
+  return el;
+}
+const out = (el, at, d = 0.22) => tl.to(el, { opacity: 0, y: -14 * k, duration: d, ease: IN }, at).set(el, { visibility: "hidden" }, at + d);
+function slam(el, at, o = {}) {                         // weight: 94 % → 100 %, rise, blur → sharp, a mask opening upward
+  tl.set(el, { visibility: "visible" }, at);
+  tl.fromTo(el, { opacity: 0, scale: o.from || 0.94, y: (o.y == null ? 24 : o.y) * k, filter: `blur(${o.blur == null ? 10 : o.blur}px)${o.tail || ""}`, clipPath: "inset(100% -10% -45% -10%)" },
+    { opacity: 1, scale: 1, y: 0, filter: "blur(0px)" + (o.tail || ""), clipPath: "inset(-25% -10% -45% -10%)", duration: o.dur || 0.34, ease: o.ease || "expo.out", immediateRender: true }, at);
+}
+
+/* speech captions (level 1), split into chunks of ≤ D.maxWords */
+(D.captions || []).forEach((c) => { const el = speech(c.words, c.y, (c.size || 54) * k); out(el, c.end, 0.2); });
+
+/* keywords (level 3): the stressed word of a sentence, large, with weight */
+(D.keys || []).forEach((kw) => { const el = textEl("l3", kw.y, (kw.size || 200) * k, { color: kw.accent ? AC : IV });
+  el.textContent = kw.text; slam(el, kw.t, { dur: 0.36 }); out(el, kw.end, 0.22); });
+
+/* motifs: a number becomes a clock ring beside the subject */
+(D.motifs || []).forEach((m) => {
+  if (m.type !== "ring") return;
+  const g = document.createElementNS(NS, "g"); g.setAttribute("opacity", 0); gfx.appendChild(g);
+  const r = m.r * k, cx = m.cx, cy = m.cy;
+  const ring = document.createElementNS(NS, "circle"); Object.entries({ cx, cy, r, fill: "none", stroke: IV, "stroke-width": 2.4 * k, transform: `rotate(-90 ${cx} ${cy})` }).forEach(([a, v]) => ring.setAttribute(a, v)); g.appendChild(ring);
+  const ticks = []; for (let i = 0; i < 24; i++) { const a = i / 24 * Math.PI * 2, r0 = (i % 6 ? 0.9 : 0.84) * r, r1 = 0.96 * r, l = document.createElementNS(NS, "line");
+    Object.entries({ x1: cx + Math.sin(a) * r0, y1: cy - Math.cos(a) * r0, x2: cx + Math.sin(a) * r1, y2: cy - Math.cos(a) * r1, stroke: IV, "stroke-width": (i % 6 ? 1.6 : 3) * k, opacity: 0 }).forEach(([q, v]) => l.setAttribute(q, v)); g.appendChild(l); ticks.push(l); }
+  const hand = document.createElementNS(NS, "line"); Object.entries({ x1: cx, y1: cy, x2: cx, y2: cy - 0.8 * r, stroke: AC, "stroke-width": 3 * k, "stroke-linecap": "round" }).forEach(([q, v]) => hand.setAttribute(q, v)); g.appendChild(hand);
+  const num = textEl("", cy - 0.55 * r, 0.95 * r, { left: (cx - 1.2 * r) + "px", right: "auto", width: 2.4 * r + "px", color: AC, fontWeight: 700, direction: "ltr", lineHeight: 1 }); num.textContent = m.text;
+  tl.set(g, { opacity: 1 }, m.t - 0.3); M.drawPath(tl, ring, m.t - 0.3, 0.9, { ease: "power2.inOut" });
+  tl.to(ticks, { opacity: 0.9, duration: 0.08, stagger: 0.03, ease: "none" }, m.t - 0.2);
+  tl.fromTo(hand, { rotation: 0, svgOrigin: `${cx} ${cy}` }, { rotation: 360, svgOrigin: `${cx} ${cy}`, duration: Math.max(0.8, m.end - m.t), ease: IO, immediateRender: true }, m.t);
+  slam(num, m.t, { blur: 8, y: 10, dur: 0.3 });
+  tl.to([g, num], { opacity: 0, duration: 0.3, ease: IN }, m.end).set(num, { visibility: "hidden" }, m.end + 0.3);
+});
+
+/* chapters: at a cut the keyword fills the frame as a transition plane, then flies up and settles small */
+(D.chapters || []).forEach((c) => { const el = textEl("l3", H * 0.40, 380 * k); el.textContent = c.text;
+  tl.set(el, { visibility: "visible" }, c.t - 0.18);
+  tl.fromTo(el, { opacity: 0, x: 140 * k, scale: 1.25, filter: "blur(18px)" }, { opacity: 1, x: 0, scale: 1, filter: "blur(0px)", duration: 0.2, ease: "expo.out", immediateRender: true }, c.t - 0.18)
+    .to(el, { y: -H * 0.23, scale: 0.36, duration: 0.55, ease: "power3.inOut" }, c.t + 0.12)
+    .to(el, { opacity: 0, duration: 0.3, ease: IN }, c.t + 1.2).set(el, { visibility: "hidden" }, c.t + 1.5); });
+
+/* payoff: everything else steps back; first line lighter, the action line dominant with a light sweep */
+if (D.payoff) { const p = D.payoff;
+  tl.to("#dim", { opacity: 0.3, duration: 0.2 }, p.t - 0.02).to("#vig", { opacity: 1, duration: 0.2 }, p.t);
+  const a = textEl("soft", p.y - 120 * k, 92 * k, { color: IV, opacity: 0.88 }); a.textContent = p.lines[0]; slam(a, p.t, { blur: 8, dur: 0.26 });
+  if (p.lines[1]) { const b = textEl("l3 sweep", p.y, 230 * k);
+    b.style.backgroundImage = `linear-gradient(100deg, ${IV} 0%, ${IV} 40%, #fff7e2 47%, #fff 50%, #fff7e2 53%, ${IV} 60%, ${IV} 100%)`;
+    b.textContent = p.lines[1]; slam(b, p.t2, { from: 1.08, blur: 16, y: 0, dur: 0.24, tail: " drop-shadow(0 4px 18px rgba(0,0,0,.5))" });
+    tl.fromTo(b, { backgroundPosition: "100% 0" }, { backgroundPosition: "0% 0", duration: 0.75, ease: IO, immediateRender: true }, p.t2 + 0.1);
+    out(b, p.end, 0.3); }
+  out(a, p.end, 0.3); }
+
+/* credit and the deliberate end */
+if (D.credit) { const c = $("#credit"); c.textContent = D.credit; c.style.top = (H * 0.86) + "px"; c.style.fontSize = 25 * k + "px"; c.style.color = "rgba(245,240,230,.48)"; }
+tl.to("#dim", { opacity: 1, duration: 0.32, ease: "power2.in" }, D.end);
+
+window.__timelines = window.__timelines || {};
+window.__timelines["root"] = tl;
+M.shim("root", S);
+</script>
+</div>
+</body>
+</html>

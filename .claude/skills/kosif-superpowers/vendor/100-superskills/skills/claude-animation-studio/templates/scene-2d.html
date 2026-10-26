@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="scene" content="w={{W}};h={{H}};fps={{FPS}};dur={{DUR}}">
+<title>{{TITLE}}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ── الألوان من DESIGN.md: غيّرها هنا فقط ───────────────────────────── */
+  :root { --bg: #0F1A2B; --bg2: #16294A; --ink: #F4F7FF; --accent: #F6C76B; --second: #2B86E0; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+  #frame { position: absolute; left: 50%; top: 50%; width: {{W}}px; height: {{H}}px; transform-origin: 50% 50%;
+           overflow: hidden; background: radial-gradient(120% 80% at 50% 20%, var(--bg2), var(--bg)); }
+  #stage { position: absolute; inset: 0; display: block; }
+  .ov { position: absolute; left: 0; right: 0; text-align: center; font-family: "Cairo", Tahoma, sans-serif; color: var(--ink);
+        will-change: transform, opacity; opacity: 0; }
+  .ov .big { font-size: 112px; font-weight: 900; line-height: 1.1; color: var(--accent); text-shadow: 0 6px 40px rgba(0,0,0,.45); }
+  .ov .sub { margin-top: 18px; font-size: 52px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div id="frame">
+  <canvas id="stage" width="{{W}}" height="{{H}}"></canvas>
+  <!-- طبقة النص: عنصر لكل ظهور؛ موضعه هو «إطار البطل» (الموضع النهائي)؛ الحركة تأتي إليه -->
+  <div id="t1" class="ov" style="top: 38%"><div class="big">{{TITLE}}</div><div class="sub">سطر فرعي يشرح الفكرة</div></div>
+  <div id="t2" class="ov" style="top: 42%"><div class="big">الختام</div><div class="sub">نداء واحد واضح</div></div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════════════════════════════════
+//  عقد المشهد: render(t) يرسم الإطار عند الزمن t (ثوانٍ). لا شيء يقرأ ساعة الجهاز.
+//  capture.py يستدعي render(t) لكل إطار؛ المعاينة الحية تستدعيه من requestAnimationFrame.
+// ════════════════════════════════════════════════════════════════════════════════════════════
+const W = {{W}}, H = {{H}}, DUR = {{DUR}}, FPS = {{FPS}};
+const capture = new URLSearchParams(location.search).has("capture");
+const cv = document.getElementById("stage"), g = cv.getContext("2d");
+const $ = (id) => document.getElementById(id);
+
+// ── أدوات التمهيد (easing) ─────────────────────────────────────────────────────────────────
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const seg = (t, a, b) => clamp((t - a) / (b - a));                 // 0→1 بين الزمنين a وb
+const lerp = (a, b, p) => a + (b - a) * p;
+const easeOut = (p) => 1 - Math.pow(1 - p, 3);                     // دخول: سريع ثم يتباطأ
+const easeIn = (p) => p * p * p;                                    // خروج: بطيء ثم يتسارع
+const easeInOut = (p) => p < .5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+// نابض بصيغة مغلقة (stiffness 300, damping 30, mass 1): تجاوز خفيف ثم استقرار؛ حتمي تماماً
+const spring = (x) => { if (x <= 0) return 0; const w = Math.sqrt(300), z = 30 / (2 * w), wd = w * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w * x) * (Math.cos(wd * x) + (z * w / wd) * Math.sin(wd * x)); };
+// نافذة ظهور: يدخل خلال fi ويخرج خلال fo
+const window01 = (t, a, b, fi = .4, fo = .25) => Math.min(easeOut(seg(t, a, a + fi)), 1 - easeIn(seg(t, b - fo, b)));
+// عشوائية ببذرة ثابتة (نفس النتيجة في كل تشغيل)
+function rng(seed) { return () => { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let r = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  r = r + Math.imul(r ^ r >>> 7, 61 | r) ^ r; return ((r ^ r >>> 14) >>> 0) / 4294967296; }; }
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+// ── الأصول الثابتة (تُبنى مرة واحدة) ─────────────────────────────────────────────────────
+const R = rng(7);
+const PARTICLES = Array.from({ length: 70 }, () => ({ x: R() * W, y: R() * H, r: 2 + R() * 4, s: .4 + R() * .8, ph: R() * 6.28 }));
+
+// ── إيقاعات STORYBOARD.md (الأزمنة بالثواني) ─────────────────────────────────────────────
+const HOOK = Math.min(3.0, DUR * .3), END = Math.min(2.5, DUR * .3);
+const BEATS = { hook: [0.0, HOOK], body: [HOOK, DUR - END], end: [DUR - END, DUR] };
+
+function showText(el, t, a, b, dir = 1) {
+  // دخول من الأسفل بالنابض، خروج للأعلى أسرع؛ dir = -1 يعكس الاتجاه
+  const p = window01(t, a, b, .55, .3);
+  const inP = spring(seg(t, a, a + .9));
+  el.style.opacity = p.toFixed(3);
+  el.style.transform = `translateY(${lerp(60 * dir, 0, inP) - 40 * easeIn(seg(t, b - .3, b))}px) scale(${lerp(.96, 1, inP)})`;
+}
+
+// ── الرسم: كل الإطار دالة في t ─────────────────────────────────────────────────────────────
+function render(t) {
+  t = clamp(t, 0, DUR);
+  g.clearRect(0, 0, W, H);
+
+  // 1) الخلفية الحية: توهج يتنفس + جسيمات تنجرف (طبقة لا تتوقف أبداً حتى في «التنفّس»)
+  const breathe = .5 + .5 * Math.sin(t * 1.1);
+  const glow = g.createRadialGradient(W * .5, H * .3, 0, W * .5, H * .3, W * (.55 + .08 * breathe));
+  glow.addColorStop(0, css("--second") + "55"); glow.addColorStop(1, "rgba(0,0,0,0)");
+  g.fillStyle = glow; g.fillRect(0, 0, W, H);
+  g.fillStyle = css("--accent");
+  for (const p of PARTICLES) {
+    const y = (p.y - t * 40 * p.s) % H, yy = y < 0 ? y + H : y;
+    g.globalAlpha = .25 + .35 * Math.sin(t * 2 + p.ph) ** 2;
+    g.beginPath(); g.arc(p.x + Math.sin(t * .7 + p.ph) * 20, yy, p.r, 0, 6.283); g.fill();
+  }
+  g.globalAlpha = 1;
+
+  // 2) عنصر بطل للإيقاع الأوسط: دائرة تنمو ثم خط يرسم نفسه (بدّله بعنصر فكرتك)
+  const [b0, b1] = BEATS.body;
+  const span = Math.max(b1 - b0, .5), grow = spring(seg(t, b0, b0 + Math.min(1.2, span * .4))), fadeOut = 1 - easeIn(seg(t, b1 - .4, b1));
+  if (t >= b0 && t <= b1) {
+    g.globalAlpha = fadeOut;
+    g.strokeStyle = css("--accent"); g.lineWidth = 10; g.lineCap = "round";
+    g.beginPath(); g.arc(W / 2, H * .5, 160 * grow, -Math.PI / 2, -Math.PI / 2 + 6.283 * easeInOut(seg(t, b0 + span * .15, b0 + span * .7))); g.stroke();
+    g.strokeStyle = css("--ink"); g.lineWidth = 6;
+    const lineP = easeInOut(seg(t, b0 + span * .5, b0 + span * .95));
+    g.beginPath(); g.moveTo(W * .2, H * .68); g.lineTo(lerp(W * .2, W * .8, lineP), H * .68); g.stroke();
+    g.globalAlpha = 1;
+  }
+
+  // 3) طبقة النص: الأهم يدخل أولاً، والخروج أسرع من الدخول
+  showText($("t1"), t, BEATS.hook[0] + .15, BEATS.hook[1] + .6, 1);
+  showText($("t2"), t, BEATS.end[0], BEATS.end[1] + .01, -1);
+}
+window.render = render;
+
+// ── المعاينة الحية (تُعطَّل أثناء التصوير) + الملاءمة داخل النافذة ──────────────────────────
+function fit() { const s = Math.min(innerWidth / W, innerHeight / H); $("frame").style.transform = `translate(-50%,-50%) scale(${s})`; }
+addEventListener("resize", fit); fit();
+let playing = !capture, t0 = performance.now();
+addEventListener("click", () => { playing = !playing; t0 = performance.now(); });
+function loop(now) { if (playing) render(((now - t0) / 1000) % DUR); requestAnimationFrame(loop); }
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(() => { render(0); window.__ready = true; if (!capture) requestAnimationFrame(loop); });
+</script>
+</body>
+</html>

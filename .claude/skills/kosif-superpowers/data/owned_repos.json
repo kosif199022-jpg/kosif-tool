@@ -168,8 +168,8 @@
     "thinking",
     "data"
    ],
-   "purpose_ar": "110 مهارة جاهزة لكلاود وChatGPT مركّبة من الأطلس: أنيميشن ترند، برومبتات صور وفيديو، إكسل، عروض، كود",
-   "purpose_en": "110 ready skills for Claude and ChatGPT distilled from the Atlas: trend animation, image/video prompts, Excel, decks, code",
+   "purpose_ar": "114 مهارة جاهزة لكلاود وChatGPT (110 مركّبة من الأطلس + kosif-one وkosif-social وkosif-mimic وkosif-montage-motion): أنيميشن ترند، برومبتات صور وفيديو، إكسل، عروض، كود. منسوخة كاملة في vendor/100-superskills وتتلاقى بـ superskills.py find",
+   "purpose_en": "114 ready skills for Claude and ChatGPT (110 distilled from the Atlas + kosif-one, kosif-social, kosif-mimic, kosif-montage-motion): trend animation, image/video prompts, Excel, decks, code. Vendored whole in vendor/100-superskills and routed by superskills.py find",
    "reusable": [
     "character-animation-2d",
     "svg-illustration-icons",
@@ -178,7 +178,7 @@
     "excel-financial-models",
     "prompt-master-pro"
    ],
-   "learn": "/plugin marketplace add kosif199022-jpg/100-superskills",
+   "learn": "python3 scripts/superskills.py find \"<task>\" (vendored); or /plugin marketplace add kosif199022-jpg/100-superskills",
    "keywords": [
     "skills",
     "prompt",
@@ -1208,7 +1208,7 @@
    "from": "kosif199022-jpg/100-superskills",
    "to": "kosif199022-jpg/kosif-atlas",
    "kind": "distilled-from",
-   "note": "110 skills built by reading the full Atlas"
+   "note": "110 of its 114 skills built by reading the full Atlas"
   },
   {
    "from": "kosif199022-jpg/kosif-earth-ci-fork",

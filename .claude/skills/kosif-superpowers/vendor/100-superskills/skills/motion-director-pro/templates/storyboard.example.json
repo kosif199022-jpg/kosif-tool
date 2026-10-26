@@ -1,0 +1,4 @@
+{"anchor":"the mark","camera_events":[{"at":[0,2.5],"what":"push-in"},{"at":[7,10],"what":"pull-back"}],
+ "frames":[{"t":1.2,"asset":"ATTACH/mark.png","coverage_pct":35,"moving_elements":2,"words":"سريع","anchor_visible":true},
+           {"t":4.0,"asset":"ATTACH/mark-layer2.png","coverage_pct":18,"moving_elements":1,"words":"هذه جملة طويلة جداً فيها أكثر من ثماني كلمات بلا شك","anchor_visible":false},
+           {"t":9.5,"asset":"ATTACH/mark.png","coverage_pct":45,"moving_elements":1,"hold":true,"words":"الاسم","anchor_visible":true}]}

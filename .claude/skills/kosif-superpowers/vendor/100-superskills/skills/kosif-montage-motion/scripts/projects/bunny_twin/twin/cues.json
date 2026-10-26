@@ -1,0 +1,7 @@
+[{"t": 0.08, "type": "whoosh", "gain": 0.7},
+ {"t": 0.92, "type": "tick", "gain": 0.6}, {"t": 1.02, "type": "tick", "gain": 0.6, "pan": -0.3}, {"t": 1.12, "type": "tick", "gain": 0.6, "pan": 0.3},
+ {"t": 1.22, "type": "tick", "gain": 0.6}, {"t": 1.32, "type": "tick", "gain": 0.7, "pan": -0.2},
+ {"t": 1.68, "type": "thump", "gain": 0.9},
+ {"t": 2.66, "type": "boom", "gain": 1.0}, {"t": 2.66, "type": "pop", "gain": 0.9, "pan": -0.4},
+ {"t": 3.47, "type": "swish", "gain": 0.8}, {"t": 3.68, "type": "chime", "gain": 0.8},
+ {"t": 4.22, "type": "click", "gain": 0.6}, {"t": 4.74, "type": "pop", "gain": 0.8}, {"t": 4.8, "type": "chime", "gain": 0.6}]

@@ -1,0 +1,165 @@
+{
+ "credit": "Kenney (kenney.nl, CC0) and Keyboard Soundpack #1 by unicae_games (opengameart.org, CC0); picked and analysed by /brag (MIT, latent-spaces/brag)",
+ "sounds": {
+  "reveal-1": {
+   "file": "reveal-1.ogg",
+   "use": "reveal / hard transition",
+   "source": "impact/impactSoft_medium_001.ogg",
+   "duration": 0.183,
+   "brightness": "warm",
+   "hf_risk": "low"
+  },
+  "reveal-2": {
+   "file": "reveal-2.ogg",
+   "use": "reveal / hard transition",
+   "source": "impact/impactSoft_medium_002.ogg",
+   "duration": 0.135,
+   "brightness": "warm",
+   "hf_risk": "low"
+  },
+  "reveal-3": {
+   "file": "reveal-3.ogg",
+   "use": "reveal / hard transition",
+   "source": "impact/impactSoft_medium_004.ogg",
+   "duration": 0.147,
+   "brightness": "warm",
+   "hf_risk": "low"
+  },
+  "bell-1": {
+   "file": "bell-1.ogg",
+   "use": "payoff / success / logo",
+   "source": "impact/impactBell_heavy_000.ogg",
+   "duration": 1.48,
+   "brightness": "warm",
+   "hf_risk": "medium"
+  },
+  "bell-2": {
+   "file": "bell-2.ogg",
+   "use": "outro / cinematic payoff",
+   "source": "impact/impactBell_heavy_003.ogg",
+   "duration": 0.654,
+   "brightness": "warm",
+   "hf_risk": "medium"
+  },
+  "bong": {
+   "file": "bong.ogg",
+   "use": "soft announcement (polished)",
+   "source": "interface/bong_001.ogg",
+   "duration": 0.123,
+   "brightness": "warm",
+   "hf_risk": "low"
+  },
+  "drop-1": {
+   "file": "drop-1.ogg",
+   "use": "element lands / gentle reveal",
+   "source": "interface/drop_001.ogg",
+   "duration": 0.11,
+   "brightness": "balanced",
+   "hf_risk": "medium"
+  },
+  "drop-2": {
+   "file": "drop-2.ogg",
+   "use": "label pop-in",
+   "source": "interface/drop_002.ogg",
+   "duration": 0.191,
+   "brightness": "warm",
+   "hf_risk": "medium"
+  },
+  "click": {
+   "file": "click.ogg",
+   "use": "tap / button / selection",
+   "source": "interface/click_003.ogg",
+   "duration": 0.01,
+   "brightness": "balanced",
+   "hf_risk": "low"
+  },
+  "select": {
+   "file": "select.ogg",
+   "use": "navigation / focus",
+   "source": "interface/select_008.ogg",
+   "duration": 0.047,
+   "brightness": "bright",
+   "hf_risk": "medium"
+  },
+  "glitch": {
+   "file": "glitch.ogg",
+   "use": "tech / AI accent (chaotic)",
+   "source": "interface/glitch_002.ogg",
+   "duration": 0.03,
+   "brightness": "bright",
+   "hf_risk": "low"
+  },
+  "card-slide": {
+   "file": "card-slide.ogg",
+   "use": "swipe / content slides in",
+   "source": "casino/card-slide-1.ogg",
+   "duration": 0.601,
+   "brightness": "balanced",
+   "hf_risk": "medium"
+  },
+  "card-place": {
+   "file": "card-place.ogg",
+   "use": "card lands",
+   "source": "casino/card-place-1.ogg",
+   "duration": 0.689,
+   "brightness": "bright",
+   "hf_risk": "high"
+  },
+  "chips": {
+   "file": "chips.ogg",
+   "use": "celebration / counter done",
+   "source": "casino/chips-collide-1.ogg",
+   "duration": 0.259,
+   "brightness": "bright",
+   "hf_risk": "high"
+  },
+  "key-1": {
+   "file": "key-1.wav",
+   "use": "typed text, one per character (rotate)",
+   "source": "keyboard/keypress-001.wav",
+   "duration": null,
+   "brightness": null,
+   "hf_risk": null
+  },
+  "key-2": {
+   "file": "key-2.wav",
+   "use": "typed text, one per character (rotate)",
+   "source": "keyboard/keypress-002.wav",
+   "duration": null,
+   "brightness": null,
+   "hf_risk": null
+  },
+  "key-3": {
+   "file": "key-3.wav",
+   "use": "typed text, one per character (rotate)",
+   "source": "keyboard/keypress-003.wav",
+   "duration": null,
+   "brightness": null,
+   "hf_risk": null
+  },
+  "key-4": {
+   "file": "key-4.wav",
+   "use": "typed text, one per character (rotate)",
+   "source": "keyboard/keypress-004.wav",
+   "duration": null,
+   "brightness": null,
+   "hf_risk": null
+  },
+  "key-5": {
+   "file": "key-5.wav",
+   "use": "typed text, one per character (rotate)",
+   "source": "keyboard/keypress-005.wav",
+   "duration": null,
+   "brightness": null,
+   "hf_risk": null
+  },
+  "key-6": {
+   "file": "key-6.wav",
+   "use": "typed text, one per character (rotate)",
+   "source": "keyboard/keypress-006.wav",
+   "duration": null,
+   "brightness": null,
+   "hf_risk": null
+  }
+ }
+}

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>{{TITLE}}</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<script src="verse.js"></script>
+<script src="sound.js"></script>
+<style>
+  @font-face { font-family: "KV"; src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF"), local("Noto Kufi Arabic Bold"), local("Noto Sans Arabic Bold"), local("DejaVu Sans Bold"); font-weight: 700; }
+  @font-face { font-family: "KV"; src: local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF"), local("Noto Sans Arabic Medium"), local("Noto Sans Arabic"), local("DejaVu Sans"); font-weight: 500; }
+  @font-face { font-family: "KV"; src: local("Dubai Light"), url("file:///C:/Windows/Fonts/DUBAI-LIGHT.TTF"), local("Noto Sans Arabic Light"), local("Noto Sans Arabic"), local("DejaVu Sans"); font-weight: 300; }
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #000; }
+  #root { position: relative; overflow: hidden; background: #000; font-family: "KV", "Segoe UI", "Noto Sans Arabic", sans-serif; }
+  canvas { position: absolute; left: 0; top: 0; }
+  .layer { position: absolute; inset: 0; pointer-events: none; }
+  .pic { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; visibility: hidden; }
+  .plate { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 46%; }
+  #flash { background: #FFF6E4; opacity: 0; mix-blend-mode: screen; }
+  #scrim { background: radial-gradient(ellipse 85% 60% at 50% 47%, rgba(0,0,0,.32) 0%, rgba(0,0,0,.62) 100%); opacity: 0; }
+  #vig { background: radial-gradient(ellipse 75% 62% at 50% 46%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+  #dim { background: #000; opacity: 0; }
+  .line { position: absolute; left: 8%; right: 8%; text-align: center; direction: rtl; unicode-bidi: isolate; visibility: hidden;
+          font-weight: 700; line-height: 1.55; text-wrap: balance; text-shadow: 0 4px 22px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.35); }
+  .w { display: inline-block; padding: .1em .02em .2em; }
+  .key { text-shadow: 0 0 26px var(--glow), 0 4px 22px rgba(0,0,0,.45); }
+  .sweep { color: transparent !important; text-shadow: none !important; -webkit-background-clip: text; background-clip: text; background-size: 300% 100%; }
+  .card { position: absolute; left: 6%; right: 6%; text-align: center; direction: rtl; unicode-bidi: isolate; visibility: hidden; }
+  .rule { position: absolute; height: 2px; left: 20%; right: 20%; transform-origin: 50% 50%; opacity: 0; }
+  #credit { position: absolute; left: 0; right: 0; text-align: center; font-weight: 300; letter-spacing: .04em; direction: ltr; }
+  svg.g { position: absolute; left: 0; top: 0; overflow: visible; }
+  /* v6.4 cinematic layer: a chosen display face (assets/display.ttf), gilded words that turn in from depth, a brand mark */
+  @font-face { font-family: "KVD"; src: url("assets/display.ttf"); font-weight: 400 900; }
+  #root.display .line { font-family: "KVD", "KV", sans-serif; }
+  #text { perspective: 1100px; perspective-origin: 50% 45%; }
+  #root.gild .w { color: transparent !important; -webkit-background-clip: text; background-clip: text; text-shadow: none;
+    background-image: linear-gradient(180deg, #FFFDF6 0%, #F7EBD0 55%, #E9D3A4 100%); }
+  #root.gild .w.key { background-image: linear-gradient(180deg, #FFF1BF 0%, #F4C766 45%, #C98A2B 100%); }
+  #leak { opacity: 0; mix-blend-mode: screen; background: radial-gradient(ellipse 60% 45% at 50% 50%, rgba(255,176,80,.75), rgba(255,120,40,.25) 45%, rgba(0,0,0,0) 70%); }
+  #brand { position: absolute; display: flex; align-items: center; gap: .55em; direction: ltr; color: #F7EBD0;
+    font-family: "Segoe UI", "KV", sans-serif; font-weight: 600; letter-spacing: .32em; opacity: 0; }
+  #brand i { display: block; height: 1px; background: linear-gradient(90deg, rgba(231,182,90,.0), rgba(231,182,90,.9)); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="{{W}}" data-height="{{H}}" data-start="0" data-duration="{{SECONDS}}" data-fps="{{FPS}}">
+  <audio id="song" src="assets/song.wav" data-start="0" data-duration="{{SECONDS}}" data-volume="1" data-role="voice"></audio>{{MUSIC}}
+  <canvas id="bg"></canvas>
+  <div class="layer" id="pics">{{PLATE}}</div>
+  <div class="layer" id="scrim"></div>
+  <div class="layer" id="flash"></div>
+  <canvas id="fx"></canvas>
+  <div class="layer" id="leak"></div>
+  <div class="layer" id="vig"></div>
+  <svg class="g" id="gfx"></svg>
+  <div class="layer" id="text"></div>
+  <div id="credit"></div>
+  <div id="brand"></div>
+  <div class="layer" id="dim"></div>
+<script>
+/* The verse engine: window.VERSE (verse.js, written by verse.py and editable) + window.SOUND (the track as light) → one
+   GSAP timeline for the type and a canvas drawn as a pure function of t for the light. Every frame is a function of t. */
+const V = window.VERSE, M = window.MOTION, $ = (s) => document.querySelector(s), NS = "http://www.w3.org/2000/svg";
+const W = V.W, H = V.H, S = V.duration, AC = V.accent || "#E7B65A";
+const k = Math.min(W, H) / 1080, portrait = H > W, CY = (portrait ? 0.47 : 0.5) * H;
+const root = $("#root");
+root.style.width = W + "px"; root.style.height = H + "px";
+document.documentElement.style.width = document.body.style.width = W + "px";
+document.documentElement.style.height = document.body.style.height = H + "px";
+for (const id of ["bg", "fx"]) { const c = $("#" + id); c.width = W; c.height = H; }
+const gfx = $("#gfx"); gfx.setAttribute("width", W); gfx.setAttribute("height", H); gfx.setAttribute("viewBox", `0 0 ${W} ${H}`);
+const tl = gsap.timeline({ paused: true });
+const OUT = "power3.out", IN = "power2.in", IO = "power2.inOut";
+const ch = M.channels(window.SOUND || { fps: 30, frames: 0 });
+
+/* moods: [hue, sat, light] for the sky's top and bottom, the halo and the motes; the film brightens along its arc and
+   each section steps the hue a little, so the light carries the structure without a cut */
+const MOODS = {
+  night: { top: [228, 45, 8], bot: [252, 36, 17], glow: [42, 80, 62], mote: [45, 90, 78] },
+  dawn:  { top: [236, 40, 12], bot: [14, 58, 38], glow: [32, 95, 62], mote: [38, 100, 82] },
+  gold:  { top: [30, 32, 5], bot: [32, 45, 15], glow: [40, 85, 55], mote: [44, 95, 72] },
+  sea:   { top: [206, 60, 7], bot: [188, 55, 19], glow: [176, 70, 55], mote: [180, 80, 82] },
+  ink:   { top: [0, 0, 4], bot: [0, 0, 11], glow: [0, 0, 70], mote: [0, 0, 92] },
+};
+const MO = MOODS[V.mood] || MOODS.night;
+const hsl = (c, dh = 0, ml = 1, a = 1) => `hsla(${(c[0] + dh + 360) % 360} ${c[1]}% ${Math.min(96, c[2] * ml)}% / ${a})`;
+const sectionAt = (t) => { let s = V.sections[0]; for (const x of V.sections) if (x.t <= t) s = x; return s; };
+const rnd = M.rng(7);
+const MOTES = Array.from({ length: 72 }, () => ({ x: rnd(), y: rnd(), r: 2 + rnd() * 7, v: 0.006 + rnd() * 0.02, f: 0.2 + rnd() * 0.5, ph: rnd() * 6.28, a: 0.25 + rnd() * 0.6 }));
+const state = { flare: 0 };
+const bg = $("#bg").getContext("2d"), fx = $("#fx").getContext("2d");
+const PLATE = V.plate ? $("#plate") : null, CUTS = (V.cuts && V.cuts.length) ? V.cuts : [0];
+const FX3D = V.fx3d !== false;                                    // v6.4: 3D words, depth dust, light rays, light leaks
+if (V.display_font) root.classList.add("display");
+if (V.gild !== false && FX3D) root.classList.add("gild");
+// depth dust: points in a 3D box flying slowly toward the lens, projected with perspective (near = big, soft, bright)
+const DUST = Array.from({ length: 140 }, () => ({ x: rnd() * 2 - 1, y: rnd() * 2 - 1, z: rnd(), v: 0.025 + rnd() * 0.05, r: 0.6 + rnd() * 1.8, ph: rnd() * 6.28 }));
+function drawDepth(t, rms, kick, dh) {
+  // god rays from a light above the frame, turning very slowly, breathing with the voice
+  const sx = W * (0.5 + 0.18 * Math.sin(t * 0.07)), sy = -0.12 * H, n = 9;
+  for (let i = 0; i < n; i++) {
+    const a = Math.PI / 2 + (i - (n - 1) / 2) * 0.13 + 0.05 * Math.sin(t * 0.11 + i), len = H * 1.35, wdt = 0.035 + 0.02 * Math.sin(i * 1.7 + t * 0.3);
+    const g = fx.createLinearGradient(sx, sy, sx + Math.cos(a) * len, sy + Math.sin(a) * len);
+    const al = (0.05 + 0.04 * rms + 0.05 * kick) * (0.6 + 0.4 * Math.sin(t * 0.5 + i * 2.1));
+    g.addColorStop(0, hsl(MO.glow, dh, 1.1, al)); g.addColorStop(1, hsl(MO.glow, dh, 1, 0));
+    fx.fillStyle = g; fx.beginPath(); fx.moveTo(sx, sy);
+    fx.lineTo(sx + Math.cos(a - wdt) * len, sy + Math.sin(a - wdt) * len); fx.lineTo(sx + Math.cos(a + wdt) * len, sy + Math.sin(a + wdt) * len); fx.fill();
+  }
+  for (const d of DUST) {
+    const z = ((d.z - t * d.v) % 1 + 1) % 1 + 0.06, f = 0.42 / z;
+    const x = W / 2 + d.x * W * f * 0.9 + 6 * k * Math.sin(t * 0.6 + d.ph), y = CY + d.y * H * f * 0.55;
+    if (x < -60 || x > W + 60 || y < -60 || y > H + 60) continue;
+    const r = d.r * k * f * (1 + 0.3 * kick), soft = z < 0.25 ? 3.2 : 2.2, a = Math.min(1, (1 - z) * 1.2) * (z < 0.18 ? (z - 0.06) / 0.12 : 1) * (0.35 + 0.35 * rms);
+    const rg = fx.createRadialGradient(x, y, 0, x, y, r * soft);
+    rg.addColorStop(0, hsl(MO.mote, dh, 1, a)); rg.addColorStop(1, hsl(MO.mote, dh, 1, 0));
+    fx.fillStyle = rg; fx.fillRect(x - r * soft, y - r * soft, 2 * r * soft, 2 * r * soft);
+  }
+}
+
+function draw(t) {
+  const sec = sectionAt(t), arc = 0.9 + 0.25 * Math.min(1, t / Math.max(1, S * 0.85));
+  const dh = (sec.i % 2 ? 7 : -5) * Math.min(1, sec.i);
+  const rms = ch.v("rms", t), bass = ch.v("bass", t), kick = ch.kick(t, 1, 5), on = ch.onset(t, 1, 4);
+  // sky
+  const g = bg.createLinearGradient(0, 0, 0, H);
+  g.addColorStop(0, hsl(MO.top, dh, arc)); g.addColorStop(1, hsl(MO.bot, dh, arc));
+  bg.fillStyle = g; bg.fillRect(0, 0, W, H);
+  // halo: breathes with the loudness, swells on the kick, flares at the payoff
+  const R = 0.62 * Math.min(W, H) * (1 + 0.05 * rms + 0.06 * kick + 0.25 * state.flare);
+  const hg = bg.createRadialGradient(W / 2, CY, 0, W / 2, CY, R * 1.4);
+  hg.addColorStop(0, hsl(MO.glow, dh, 1, 0.20 + 0.16 * rms + 0.14 * kick + 0.35 * state.flare));
+  hg.addColorStop(0.45, hsl(MO.glow, dh, 0.8, 0.07 + 0.05 * bass));
+  hg.addColorStop(1, hsl(MO.glow, dh, 0.6, 0));
+  bg.fillStyle = hg; bg.fillRect(0, 0, W, H);
+  // light: motes rising, lifted by onsets; rings sent out by the kicks of the last second
+  fx.clearRect(0, 0, W, H);
+  fx.globalCompositeOperation = "lighter";
+  if (FX3D) drawDepth(t, rms, kick, dh);
+  if (PLATE) {
+    // footage under the type: each shot pushes in slowly (alternate shots ease out), the kick nudges it, the payoff
+    // brightens it; the halo is drawn over the footage, lighter than over the sky
+    let c = 0; while (c + 1 < CUTS.length && CUTS[c + 1] <= t) c++;
+    const a = CUTS[c], b = c + 1 < CUTS.length ? CUTS[c + 1] : S, u = Math.min(1, Math.max(0, (t - a) / Math.max(0.3, b - a)));
+    const e = u * u * (3 - 2 * u), push = c % 2 ? 1.10 - 0.06 * e : 1.04 + 0.06 * e;
+    PLATE.style.transform = `scale(${(push * (1 + 0.018 * kick)).toFixed(4)})`;
+    PLATE.style.filter = `brightness(${(1 + 0.22 * state.flare + 0.05 * kick).toFixed(3)}) saturate(${(1 + 0.12 * state.flare).toFixed(3)})`;
+    const hg2 = fx.createRadialGradient(W / 2, CY, 0, W / 2, CY, R * 1.25);
+    hg2.addColorStop(0, hsl(MO.glow, dh, 1, 0.07 + 0.06 * rms + 0.08 * kick + 0.22 * state.flare));
+    hg2.addColorStop(1, hsl(MO.glow, dh, 0.6, 0));
+    fx.fillStyle = hg2; fx.fillRect(0, 0, W, H);
+  }
+  for (const m of MOTES) {
+    const y = (((m.y - t * m.v) % 1.15) + 1.15) % 1.15 - 0.075, x = m.x + 0.012 * Math.sin(t * m.f + m.ph);
+    const tw = 0.6 + 0.4 * Math.sin(t * (1.3 + m.f) + m.ph * 3);
+    const a = m.a * tw * (0.55 + 0.45 * on) * Math.min(1, arc), r = m.r * k * (1 + 0.35 * kick);
+    const rg = fx.createRadialGradient(x * W, y * H, 0, x * W, y * H, r * 3);
+    rg.addColorStop(0, hsl(MO.mote, dh, 1, a)); rg.addColorStop(1, hsl(MO.mote, dh, 1, 0));
+    fx.fillStyle = rg; fx.fillRect(x * W - r * 3, y * H - r * 3, r * 6, r * 6);
+  }
+  const kicks = (window.SOUND && window.SOUND.kicks) || [];
+  fx.lineWidth = 1.6 * k;
+  for (let i = kicks.length - 1; i >= 0; i--) {
+    const dt = t - kicks[i];
+    if (dt < 0) continue;
+    if (dt > 1.3) break;
+    fx.strokeStyle = hsl(MO.glow, dh, 1.1, 0.22 * (1 - dt / 1.3) ** 2);
+    fx.beginPath(); fx.arc(W / 2, CY, (0.16 + dt * 0.42) * Math.min(W, H), 0, Math.PI * 2); fx.stroke();
+  }
+  fx.globalCompositeOperation = "source-over";
+  // counters: the value is a function of t (seeks suppress tween callbacks, so never onUpdate)
+  for (const m of MOTIFS) if (m.count) { const x = Math.min(1, Math.max(0, (t - m.t) / 0.8)), v = m.target * (1 - (1 - x) ** 3);
+    m.count.textContent = Number.isInteger(m.target) ? Math.round(v).toLocaleString("en") : v.toFixed(1); }
+  // symbols breathe on the beat (a pure function of t, like everything drawn here)
+  for (const m of MOTIFS) if (m.g && t >= m.t && t <= m.end + 0.4) {
+    const b = 1 + 0.06 * ch.beat(t) + 0.04 * ch.v("rms", t), cx = W / 2, cy = m.my;
+    m.g.setAttribute("transform", `translate(${cx} ${cy}) scale(${b}) translate(${-cx} ${-cy}) ${m.base}`); }
+  // interlude rosettes breathe on the beat
+  for (const r of ROSETTES) if (t >= r.t - 0.5 && t <= r.end + 0.6) r.g.setAttribute("transform", `translate(${W / 2} ${CY}) rotate(${(t - r.t) * 9}) scale(${1 + 0.07 * ch.beat(t)})`);
+}
+
+/* footage plate (optional): a scrim keeps the type readable; a short light flash opens each new section */
+if (PLATE) {
+  tl.set("#scrim", { opacity: 1 }, 0);
+  V.sections.slice(1).forEach((s, i) => {
+    if (FX3D) {                                                   // a warm light leak drifts across the cut instead of a flat flash
+      const dir = i % 2 ? 1 : -1;
+      tl.fromTo("#leak", { opacity: 0, xPercent: -45 * dir, scale: 1.2 }, { opacity: 0.85, xPercent: 0, scale: 1, duration: 0.28, ease: OUT, immediateRender: false }, s.t - 0.12)
+        .to("#leak", { opacity: 0, xPercent: 40 * dir, duration: 0.7, ease: IN }, s.t + 0.16);
+    } else tl.fromTo("#flash", { opacity: 0.42 }, { opacity: 0, duration: 0.5, ease: OUT, immediateRender: false }, s.t);
+  });
+}
+/* brand mark, top corner: the maker's signature instead of a sources line (the sources stay in credits.txt) */
+if (V.brand) { const b = $("#brand"), fs = 26 * k;
+  b.innerHTML = (V.brand_side === "right" ? "" : "") + `<span>${V.brand.replace(/[<>&]/g, "")}</span><i style="width:${70 * k}px"></i>`;
+  b.style.fontSize = fs + "px"; b.style.top = (portrait ? 0.045 : 0.06) * H + "px";
+  if (V.brand_side === "right") { b.style.right = 0.06 * W + "px"; b.style.flexDirection = "row-reverse"; b.querySelector("i").style.background = "linear-gradient(270deg, rgba(231,182,90,0), rgba(231,182,90,.9))"; }
+  else b.style.left = 0.06 * W + "px";
+  tl.fromTo(b, { opacity: 0, x: -20 * k }, { opacity: 0.92, x: 0, duration: 0.9, ease: OUT, immediateRender: true }, 0.4);
+}
+/* pictures (optional): one per section, a hard cut on the section's start, a slow push through it, a scrim for the type */
+if (!PLATE && (V.images || []).length) {
+  tl.set("#scrim", { opacity: 1 }, 0);
+  V.sections.forEach((s, i) => { const im = document.createElement("img"); im.className = "pic"; im.src = V.images[i % V.images.length]; $("#pics").appendChild(im);
+    tl.set(im, { visibility: "visible" }, s.t).fromTo(im, { scale: 1.04 }, { scale: 1.13, duration: Math.max(0.5, s.end - s.t), ease: "none", immediateRender: false }, s.t)
+      .set(im, { visibility: "hidden" }, s.end); });
+}
+
+/* lines: words rise out of a blur on their own times; the keyword takes the accent and glows; the line leaves upward */
+function lineEl(ln) {
+  const el = document.createElement("div"); el.className = "line"; el.style.fontSize = (ln.size || 100) * k + "px";
+  el.style.top = (ln.y || sectionAt(ln.t + 0.01).ty || CY) + "px";                  // a section's picture may move the type off a face
+  el.style.setProperty("--glow", AC + "88");
+  const spans = ln.words.map((w, i) => { const s = document.createElement("span"); s.className = "w" + (w.key ? " key" : ""); s.textContent = w.text;
+    s.style.color = w.key ? AC : "#F7F2E8"; el.appendChild(s); if (i < ln.words.length - 1) el.appendChild(document.createTextNode(" ")); return s; });
+  $("#text").appendChild(el); gsap.set(el, { yPercent: -50 }); return [el, spans];
+}
+V.lines.forEach((ln) => {
+  const [el, spans] = lineEl(ln);
+  tl.set(el, { visibility: "visible", opacity: 1, y: 0, filter: "blur(0px)" }, ln.words[0].t - 0.08);
+  ln.words.forEach((w, i) => {
+    if (FX3D) {                                                  // the word turns up out of depth, a soft shadow keeps it legible
+      const sh = "drop-shadow(0px 5px 12px rgba(0,0,0,.65))";
+      tl.fromTo(spans[i], { opacity: 0, y: 46 * k, z: -220, rotationX: -78, transformPerspective: 900, transformOrigin: "50% 100%", filter: "blur(10px) " + sh },
+        { opacity: 1, y: 0, z: 0, rotationX: 0, filter: "blur(0px) " + sh, duration: 0.62, ease: "back.out(1.4)", immediateRender: true }, w.t - 0.1);
+    } else
+    tl.fromTo(spans[i], { opacity: 0, y: 30 * k, filter: "blur(9px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.42, ease: OUT, immediateRender: true }, w.t - 0.07);
+    if (w.key) tl.fromTo(spans[i], { scale: 1 }, { scale: 1.07, duration: 0.18, ease: "expo.out", yoyo: true, repeat: 1, immediateRender: false }, w.t + 0.12);
+  });
+  if (ln.payoff) {                                             // the payoff: a light passes through the line and the sky flares
+    const sw = el.cloneNode(true); sw.classList.add("sweep"); sw.querySelectorAll(".w").forEach((s) => { s.removeAttribute("style"); s.style.color = "transparent"; s.classList.remove("key"); });   // the clone must not keep the words' entry offsets and blur (a ghost word)
+    sw.style.backgroundImage = "linear-gradient(100deg, rgba(255,255,255,0) 40%, rgba(255,250,235,.95) 50%, rgba(255,255,255,0) 60%)";
+    $("#text").appendChild(sw); gsap.set(sw, { yPercent: -50 });
+    const last = ln.words[ln.words.length - 1].t + 0.3;
+    tl.set(sw, { visibility: "visible" }, last).fromTo(sw, { backgroundPosition: "100% 0" }, { backgroundPosition: "0% 0", duration: 1.0, ease: IO, immediateRender: true }, last)
+      .set(sw, { visibility: "hidden" }, last + 1.05);
+    tl.fromTo(state, { flare: 0 }, { flare: 1, duration: 0.5, ease: OUT, immediateRender: false }, ln.words[0].t).to(state, { flare: 0, duration: 2.2, ease: IO }, last + 0.6);
+  }
+  tl.to(el, { opacity: 0, y: -46 * k, filter: "blur(6px)", duration: 0.45, ease: IN }, ln.end).set(el, { visibility: "hidden" }, ln.end + 0.46);
+});
+
+/* cards: the title in the intro, the end card after the last line */
+function card(text, y, size, weight, color) { const d = document.createElement("div"); d.className = "card"; d.textContent = text; d.style.top = y + "px";
+  d.style.fontSize = size * k + "px"; d.style.fontWeight = weight; d.style.color = color; $("#text").appendChild(d); gsap.set(d, { yPercent: -50 }); return d; }
+function showCard(els, t0, t1) { els.forEach((e, i) => { tl.set(e, { visibility: "visible" }, t0 + i * 0.25)
+  .fromTo(e, { opacity: 0, y: 26 * k, filter: "blur(10px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.7, ease: OUT, immediateRender: true }, t0 + i * 0.25)
+  .to(e, { opacity: 0, y: -24 * k, duration: 0.45, ease: IN }, Math.max(t0 + 1, t1 - 0.45)).set(e, { visibility: "hidden" }, Math.max(t0 + 1.45, t1)); }); }
+if (V.cards && V.cards.title && V.title) { const c = V.cards.title;
+  showCard([card(V.title, CY - 20 * k, 128, 700, "#F7F2E8"), ...(V.sub ? [card(V.sub, CY + 110 * k, 42, 300, AC)] : [])], c.t, c.end); }
+if (V.cards && V.cards.header && V.title) { const c = V.cards.header;          // no intro to hold a card: the title as a quiet header
+  showCard([card(V.title, H * (portrait ? 0.19 : 0.14), 54, 500, "rgba(247,242,232,.82)")], c.t, c.end); }
+if (V.cards && V.cards.end) { const c = V.cards.end, els = [];
+  if (V.title) els.push(card(V.title, CY - 10 * k, 76, 700, "#F7F2E8"));
+  if (V.sub || V.credit) els.push(card(V.sub || V.credit, CY + 80 * k, 36, 300, AC));
+  if (els.length) showCard(els, c.t, c.end); }
+
+/* symbols by meaning (verse.py → line.motif): drawn in line above the text, breathing on the beat; a number counts up */
+const ICONS = {                                                  // 200×200 boxes, strokes only: drawn, never pasted
+  sun: ["M100 62a38 38 0 1 0 0.1 0", ...Array.from({ length: 12 }, (_, i) => { const a = i * Math.PI / 6, c = Math.cos(a), s = Math.sin(a);
+         return `M${100 + c * 54} ${100 + s * 54}L${100 + c * 76} ${100 + s * 76}`; })],
+  moon: ["M128 40a64 64 0 1 0 0 120a50 50 0 1 1 0-120Z", "M150 58l4 9 9 4-9 4-4 9-4-9-9-4 9-4Z"],
+  heart: ["M100 160C40 118 30 84 52 62c18-18 40-10 48 8c8-18 30-26 48-8c22 22 12 56-48 98Z"],
+  clock: ["M100 30a70 70 0 1 0 0.1 0", "M100 100L100 52", "M100 100L134 118"],
+  money: ["M52 140a48 14 0 1 0 96 0a48 14 0 1 0-96 0", "M52 140v-18a48 14 0 0 1 96 0v18", "M52 122v-18a48 14 0 0 1 96 0v18", "M52 104a48 14 0 0 1 96 0", "M100 76V36M84 50l16-16 16 16"],
+  trophy: ["M66 40h68v34a34 34 0 0 1-68 0Z", "M66 52H44a22 22 0 0 0 26 30", "M134 52h22a22 22 0 0 1-26 30", "M100 108v26", "M74 160h52l-6-26H80Z"],
+  road: ["M60 170L92 40", "M140 170L108 40", "M100 160v-18M100 124v-16M100 92v-14M100 64v-12", "M80 40l20-22 20 22"],
+  question: ["M70 70a30 30 0 1 1 44 26c-10 6-14 12-14 24", "M100 146v4"],
+  check: ["M100 30a70 70 0 1 0 0.1 0", "M66 102l24 24 46-50"],
+  home: ["M40 100L100 44l60 56", "M58 86v74h84V86", "M88 160v-40h24v40"],
+  rain: ["M60 110a26 26 0 0 1 8-50a36 36 0 0 1 68 6a22 22 0 0 1 4 44Z", "M70 128l-8 20M100 128l-8 20M130 128l-8 20"],
+  light: ["M100 150V96", ...[-60, -35, -12, 12, 35, 60].map((d) => { const a = (d - 90) * Math.PI / 180; return `M${100 + Math.cos(a) * 34} ${150 + Math.sin(a) * 34}L${100 + Math.cos(a) * 100} ${150 + Math.sin(a) * 100}`; }), "M60 150h80"],
+};
+const MOTIFS = [];
+V.lines.forEach((ln) => { const m = ln.motif; if (!m) return;
+  const lineY = ln.y || sectionAt(ln.t + 0.01).ty || CY, my = lineY - (lineY > H * 0.6 ? 0.2 : 0.17) * H, S2 = 200 * k * 1.15;
+  if (m.kind === "count") {                                       // the number said, counting up to its value
+    const el = card("0", my, 150, 700, AC); el.style.direction = "ltr"; const target = parseFloat(m.value) || 0, o = { v: 0 };
+    tl.set(el, { visibility: "visible" }, m.t).fromTo(el, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)", immediateRender: true }, m.t)
+      .to(el, { opacity: 0, y: -20 * k, duration: 0.35, ease: IN }, m.end).set(el, { visibility: "hidden" }, m.end + 0.36);
+    MOTIFS.push({ count: el, o, target, t: m.t });
+    return; }
+  const g = document.createElementNS(NS, "g"); g.setAttribute("opacity", 0); gfx.appendChild(g);
+  const paths = (ICONS[m.kind] || []).map((d) => { const p = document.createElementNS(NS, "path");
+    Object.entries({ d, fill: "none", stroke: AC, "stroke-width": 5, "stroke-linecap": "round", "stroke-linejoin": "round" }).forEach(([a, v]) => p.setAttribute(a, v));
+    g.appendChild(p); return p; });
+  const base = `translate(${W / 2 - S2 / 2} ${my - S2 / 2}) scale(${S2 / 200})`; g.setAttribute("transform", base);
+  tl.set(g, { opacity: 1 }, m.t); paths.forEach((p, i) => M.drawPath(tl, p, m.t + i * 0.06, 0.7, { ease: IO }));
+  tl.to(g, { opacity: 0, duration: 0.35, ease: IN }, m.end);
+  MOTIFS.push({ g, base, t: m.t, end: m.end, S2, my });
+});
+
+/* sections: a thin rule of light opens from the centre (the chapter's punctuation, not a transition effect) */
+V.sections.slice(1).forEach((s) => { const r = document.createElement("div"); r.className = "rule"; r.style.top = (CY + 0.17 * H) + "px";
+  r.style.background = `linear-gradient(90deg, transparent, ${AC}, transparent)`; $("#text").appendChild(r);
+  tl.fromTo(r, { opacity: 0, scaleX: 0 }, { opacity: 0.85, scaleX: 1, duration: 0.7, ease: OUT, immediateRender: true }, s.t).to(r, { opacity: 0, duration: 0.6, ease: IN }, s.t + 1.1); });
+
+/* interludes: an eight-point rosette drawn, breathing on the beat (draw()), then withdrawn */
+const ROSETTES = (V.interludes || []).map((it) => {
+  const g = document.createElementNS(NS, "g"); gfx.appendChild(g); const R = 150 * k, paths = [];
+  const sq = (rot) => { const p = document.createElementNS(NS, "rect"); Object.entries({ x: -R * 0.7, y: -R * 0.7, width: R * 1.4, height: R * 1.4, fill: "none", stroke: AC, "stroke-width": 2.2 * k, transform: `rotate(${rot})` }).forEach(([a, v]) => p.setAttribute(a, v)); g.appendChild(p); paths.push(p); };
+  sq(0); sq(45);
+  const c = document.createElementNS(NS, "circle"); Object.entries({ r: R * 0.42, fill: "none", stroke: "#F7F2E8", "stroke-width": 1.4 * k, opacity: 0.7 }).forEach(([a, v]) => c.setAttribute(a, v)); g.appendChild(c); paths.push(c);
+  g.setAttribute("opacity", 0); g.setAttribute("transform", `translate(${W / 2} ${CY})`);
+  tl.set(g, { opacity: 1 }, it.t); paths.forEach((p, i) => M.drawPath(tl, p, it.t + i * 0.12, 1.1, { ease: IO }));
+  tl.to(g, { opacity: 0, duration: 0.5, ease: IN }, it.end);
+  return { g, t: it.t, end: it.end };
+});
+
+if (V.credit) { const c = $("#credit"); c.textContent = V.credit; c.style.top = (H * (portrait ? 0.84 : 0.9)) + "px"; c.style.fontSize = 24 * k + "px"; c.style.color = "rgba(247,242,232,.45)"; }
+tl.fromTo("#dim", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: OUT, immediateRender: true }, 0);
+tl.to("#dim", { opacity: 1, duration: 0.4, ease: "power2.in" }, V.end);
+const clock = { t: 0 };                                          // keeps the timeline as long as the film
+tl.fromTo(clock, { t: 0 }, { t: S, duration: S, ease: "none", immediateRender: true }, 0);
+
+window.__timelines = window.__timelines || {};
+window.__timelines["root"] = tl;
+M.shim("root", S);
+/* the light is drawn from t itself after every seek: the renderer's render(t) and the preview player both pass here */
+const baseRender = window.render;
+if (baseRender) window.render = (t) => { baseRender(t); draw(t); };
+const baseSeek = window.seek;
+window.seek = (t) => { const r = baseSeek ? baseSeek(t) : true; draw(t); return r; };
+draw(0);
+</script>
+</div>
+</body>
+</html>

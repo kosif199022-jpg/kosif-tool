@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>دورة المياه — فيلم ثلاثي الأبعاد (KOSIF Motion)</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<script src="assets/main.bundle.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #000; font-family: "Segoe UI", Tahoma, sans-serif; }
+  #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  #title, #subtitle, #endtitle, .label { direction: rtl; unicode-bidi: isolate; color: #fff; visibility: hidden; position: absolute; }
+  #title { right: 0; left: 0; top: 120px; text-align: center; font-size: 112px; font-weight: 800; letter-spacing: -1px; text-shadow: 0 3px 14px rgba(0,0,0,.55); }
+  #subtitle { right: 0; left: 0; top: 285px; text-align: center; font-size: 38px; font-weight: 400; color: #ffe6c7; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+  #endtitle { right: 0; left: 0; top: 110px; text-align: center; font-size: 86px; font-weight: 800; text-shadow: 0 3px 14px rgba(0,0,0,.55); }
+  .label { font-size: 46px; font-weight: 700; white-space: nowrap; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+  .label small { display: block; font-size: 25px; font-weight: 300; opacity: .95; margin-top: 8px; letter-spacing: .2px; }
+  .label .num { display: inline-block; min-width: 54px; height: 54px; line-height: 54px; border-radius: 27px; background: rgba(255,255,255,.14);
+                border: 1.5px solid rgba(255,255,255,.75); text-align: center; font-size: 28px; margin-left: 16px; vertical-align: middle; backdrop-filter: blur(6px); }
+  .rule { position: absolute; height: 2px; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.9)); transform-origin: right center; visibility: hidden; }
+  #letterbox-top, #letterbox-bottom { position: absolute; left: 0; right: 0; height: 0px; background: #000; z-index: 70; }
+  #letterbox-top { top: 0; } #letterbox-bottom { bottom: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-start="0" data-duration="17" data-fps="30">
+  <audio id="ambience" src="assets/ambience.wav" data-start="0" data-duration="17" data-volume="0.9" data-fade-out="1"></audio>
+  <canvas id="gl" width="1920" height="1080"></canvas>
+  <div id="shade" style="position:absolute;left:0;right:0;top:0;height:520px;opacity:0;pointer-events:none;background:linear-gradient(180deg, rgba(5,10,18,.55) 0%, rgba(5,10,18,.25) 55%, rgba(5,10,18,0) 100%)"></div>
+  <div id="letterbox-top"></div><div id="letterbox-bottom"></div>
+
+  <div id="title">دورة المياه</div>
+  <div id="subtitle">رحلة لا تنتهي بين البحر والسحاب والجبال</div>
+  <div id="lbl1" class="label" style="right: 170px; top: 620px"><span class="num">١</span>التبخّر<small>حرارة الشمس ترفع الماء بخاراً من سطح البحر</small></div>
+  <div id="lbl2" class="label" style="right: 170px; top: 150px"><span class="num">٢</span>التكاثف<small>يبرد البخار في الأعالي فيصير سحاباً</small></div>
+  <div id="lbl3" class="label" style="left: 150px; top: 180px"><span class="num">٣</span>الهطول<small>تثقل السحب فتمطر وتثلج على القمم</small></div>
+  <div id="lbl4" class="label" style="left: 150px; top: 700px"><span class="num">٤</span>الجريان<small>تعود المياه أنهاراً إلى البحر، وتتسرّب إلى باطن الأرض</small></div>
+  <div id="endtitle">دورة المياه لا تتوقف</div>
+
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const root = $("#root");
+    const three = window.__three.build($("#gl"), 1920, 1080);   // grain comes from the WebGL FilmPass, not a DOM overlay
+
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    const E = M.ease;
+    // a quiet cinematic letterbox opens on the title, closes on the end
+    tl.fromTo(["#letterbox-top", "#letterbox-bottom"], { height: 70 }, { height: 0, duration: 2.2, ease: E.drive }, 2.4);
+    tl.to(["#letterbox-top", "#letterbox-bottom"], { height: 70, duration: 1.6, ease: E.drive }, 15.4);
+    tl.to("#shade", { opacity: 1, duration: 0.8 }, 0.3);
+    tl.to("#shade", { opacity: 0, duration: 0.8 }, 2.8);
+    tl.to("#shade", { opacity: 1, duration: 0.8 }, 15.5);
+    M.revealWords(tl, $("#title"), 0.5, { dur: 1.1, stagger: 0.12, ease: E.settle });
+    M.revealWords(tl, $("#subtitle"), 1.4, { dur: 0.8, stagger: 0.05, ease: E.settle });
+    M.hideWords(tl, $("#title"), 2.7, { dur: 0.5 });
+    M.hideWords(tl, $("#subtitle"), 2.8, { dur: 0.4 });
+
+    M.revealWords(tl, $("#lbl1"), 3.3, { dur: 0.8, stagger: 0.05, ease: E.settle });
+    M.hideWords(tl, $("#lbl1"), 6.1, { dur: 0.4 });
+    M.revealWords(tl, $("#lbl2"), 6.9, { dur: 0.8, stagger: 0.05, ease: E.settle });
+    M.hideWords(tl, $("#lbl2"), 9.3, { dur: 0.4 });
+    M.revealWords(tl, $("#lbl3"), 10.1, { dur: 0.8, stagger: 0.05, ease: E.settle });
+    M.hideWords(tl, $("#lbl3"), 12.5, { dur: 0.4 });
+    M.revealWords(tl, $("#lbl4"), 13.1, { dur: 0.8, stagger: 0.05, ease: E.settle });
+    M.hideWords(tl, $("#lbl4"), 15.1, { dur: 0.4 });
+    M.revealWords(tl, $("#endtitle"), 15.7, { dur: 1.0, stagger: 0.1, ease: E.settle });
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", 17);
+    // the 3D frame is part of the same clock: seek the overlay, then draw the scene at t
+    const seek = window.__kosifSeek;
+    window.render = (t) => { window.__ready = false; seek(t); three.render(t); requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; })); };
+    window.__ready = false;
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(() => { seek(0); three.render(0); three.render(0); window.__ready = true; });
+  </script>
+</div>
+</body>
+</html>

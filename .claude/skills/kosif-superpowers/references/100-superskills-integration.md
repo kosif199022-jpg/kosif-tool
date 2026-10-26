@@ -6,19 +6,19 @@
 **الفهرس:** `data/100-superskills-index.json` — 114 مدخلًا مطابقًا لمجلدات `skills/` في المصدر.
 
 ## ما الذي دُمج؟
-جميع ملفات `100-superskills` (114 مجلد مهارة، ومنها SKILL.md والمراجع والسكربتات والأصول ومحتوى README) متاحة عبر **Git submodule مثبت على commit محدد**. الربط مقصود للمحافظة على الملفات الثنائية وكامل تاريخ النسخة دون نسخ ناقص أو تكرار أدوات KOSIF الموجودة. المحتوى لا يتحول تلقائيًا إلى أدوات فعّالة ولا تعني إضافته تثبيت الاعتماديات.
+جميع ملفات `100-superskills` (114 مجلد مهارة، ومنها SKILL.md والمراجع والسكربتات والأصول ومحتوى README) **منسوخة داخل المستودع نفسه** من commit `af7a5dc3778c` (كانت submodule، واتحولت لنسخة مباشرة علشان جلسات Claude السحابية بتستنسخ المستودع من غير submodules). كل ملف نصي، والخطوط والمؤثرات الصغيرة، ببصمة SHA-256 في `vendor/100-superskills/KOSIF_INTEGRATION.json`، و9 ملفات وسائط كبيرة فضلت في المصدر. التفاصيل في `vendor/100-superskills/KOSIF_README.md`. المحتوى لا يتحول تلقائيًا إلى أدوات فعّالة ولا تعني إضافته تثبيت الاعتماديات.
 
 ## التثبيت والتشغيل
 من جذر `kosif-tool`:
 ```bash
-git submodule update --init --recursive
+python3 .claude/skills/kosif-superpowers/scripts/superskills.py verify
 python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor
 python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py list
 python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py find "مونتاج فيديو عربي"
 python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py show kosif-mimic
 python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "بناء نموذج مالي إكسل"
 ```
-بدون submodule مُهيّأ، يبقى الفهرس للبحث والتوجيه فقط، وليست السكربتات جاهزة للتنفيذ.
+الملفات موجودة بعد أي استنساخ. للتحديث من المصدر: `superskills.py sync --src ../100-superskills`.
 
 ## ضوابط التشغيل
 المهارات تعليمات وأدوات متفاوتة؛ لا تدّعِ تشغيل برنامج أو سكربت إلا عند التحقق. لا تثبّت برامج مدفوعة أو تُنفّذ نشرًا أو تنفق رصيدًا من غير تصريح. راعِ التراخيص وحقوق الوسائط ومصدر كل أصل. قبل أي مهمة، ابدأ بالتوجيه ثم افتح `SKILL.md` المناسب، واستخدم التحقق والتقييم الموجودين في KOSIF.

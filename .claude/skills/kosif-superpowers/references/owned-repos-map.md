@@ -26,7 +26,7 @@
 | `kosif199022-jpg/kosif-tool` | مدمج في سوبر باور | 2508 | بيت مهارة سوبر باور: الكتالوج والبروتوكول USIP وFusionForge وأطلس الأساليب وأدوات الرندر | agents, motion, drawing, 3d, type, quality | الكتالوج 5,334 قدرة؛ 132 أداة قابلة للتشغيل؛ أطلس الأساليب والقوالب |
 | `kosif199022-jpg/kosif-one` | مدمج في سوبر باور | 1610 | المستودع المرجعي الموحّد لأدوات الأنيميشن والمونتاج والكلام مع مشاريع مرجعية منفّذة | motion, audio, type, agents, 3d | kosif-montage-motion؛ kosif-mimic؛ kosif-social؛ مشاريع مرجعية: غربة، دعاء الخميس، دورة الماء؛ vendor: hyperframes |
 | `kosif199022-jpg/kosif-atlas` | مدمج في سوبر باور | 1391 | مكتبة أطلس: آلاف المهارات الخارجية بتراخيص تسمح بإعادة النشر، كل مهارة بملفاتها ومصدرها وترخيصها | research, agents, software, quality, documents, data | 15,121 SKILL.md؛ فهرس CSV/JSON بالمصدر والترخيص؛ تقارير الاستبعاد (copyleft) |
-| `kosif199022-jpg/100-superskills` | مدمج في سوبر باور | 1274 | 110 مهارة جاهزة لكلاود وChatGPT مركّبة من الأطلس: أنيميشن ترند، برومبتات صور وفيديو، إكسل، عروض، كود | motion, images, software, documents, thinking, data | character-animation-2d؛ svg-illustration-icons؛ comics-picture-books؛ pixel-art-game-assets؛ excel-financial-models؛ prompt-master-pro |
+| `kosif199022-jpg/100-superskills` | مدمج في سوبر باور | 1274 | 114 مهارة جاهزة لكلاود وChatGPT (110 مركّبة من الأطلس + kosif-one وkosif-social وkosif-mimic وkosif-montage-motion): أنيميشن ترند، برومبتات صور وفيديو، إكسل، عروض، كود. منسوخة كاملة في vendor/100-superskills وتتلاقى بـ superskills.py find | motion, images, software, documents, thinking, data | character-animation-2d؛ svg-illustration-icons؛ comics-picture-books؛ pixel-art-game-assets؛ excel-financial-models؛ prompt-master-pro |
 | `kosif199022-jpg/kosif-studio` 🔒 | مدمج في سوبر باور | 691 | برنامج رسم مكتبي يرسم الصورة بكسلًا بكسلًا بترتيب الرسام، من صورة أو كود أو وصف | drawing, images, motion | الرسم بترتيب الرسام؛ تصدير الصورة ككود |
 | `kosif199022-jpg/app` 🔒 | مدمج في سوبر باور | 233 | بصمة ستوديو: محرر فيديو وموشن جرافيك عربي أولًا | motion, type, audio | محرر ويب للمونتاج العربي |
 | `kosif199022-jpg/fastify-motion-bro` | مدمج في سوبر باور | 202 | استوديو موشن يبدأ بالأسئلة وينتهي بفيديو قابل للتحرير: intake ثم plan ثم preview ثم render | motion, drawing, agents | مسار intake/plan/preview/render؛ 27 SKILL.md لوكلاء البرمجة؛ ملفات AGENTS/CLAUDE/GEMINI |
@@ -95,7 +95,7 @@
 - `kosif199022-jpg/kosif-one` —contains→ `kosif199022-jpg/kosif-studio`: tools/kosif-studio carries the pixel painter
 - `kosif199022-jpg/kosif-omni` —vendors→ `kosif199022-jpg/whatsapp-personal-bridge`: modules/whatsapp-bridge, unmodified
 - `kosif199022-jpg/kosif-omni` —embeds→ `kosif199022-jpg/kosif-atlas`: the Atlas index is packed inside the MCP server
-- `kosif199022-jpg/100-superskills` —distilled-from→ `kosif199022-jpg/kosif-atlas`: 110 skills built by reading the full Atlas
+- `kosif199022-jpg/100-superskills` —distilled-from→ `kosif199022-jpg/kosif-atlas`: 110 of its 114 skills built by reading the full Atlas
 - `kosif199022-jpg/kosif-earth-ci-fork` —same-codebase→ `elkosif0-cmd/cloude`: same tree; the fork runs visual CI release checks
 - `kosif199022-jpg/CLOUDFLARE_API_TOKEN` —older-copy→ `kosif199022-jpg/kosif-omni`: kosif-think-pro-3 predates kosif-omni/skills/kosif-think-pro
 - `kosif199022-jpg/mafateeh-al-tharwa2` —older-copy→ `kosif199022-jpg/mafateeh-al-tharwa`: the first is the master v35 build

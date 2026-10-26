@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8" />
+<title>مركب في البحر ليلاً — KOSIF Motion 3D</title>
+<script src="assets/gsap.min.js"></script>
+<script src="assets/motion-kit.js"></script>
+<script src="assets/three-kit.bundle.js"></script>
+<script src="assets/shape-kit.js"></script>
+<script src="src/main.js"></script>
+<style>
+  @font-face { font-family: "Cairo"; font-weight: 800; src: url("assets/fonts/cairo-arabic-800-normal.woff2") format("woff2"); }
+  @font-face { font-family: "Cairo"; font-weight: 600; src: url("assets/fonts/cairo-arabic-600-normal.woff2") format("woff2"); }
+  :root { --lantern: #ff9a3c; --title: #f3ead8; --rule: #e0a35a; }
+  html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: #000; }
+  #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #000; font-family: "Cairo", "Segoe UI", Tahoma, sans-serif; }
+  #gl { position: absolute; inset: 0; width: 1920px; height: 1080px; display: block; }
+  #card { position: absolute; right: 150px; bottom: 140px; direction: rtl; unicode-bidi: isolate; text-align: right; }
+  #title { color: var(--title); font-size: 92px; font-weight: 800; line-height: 1.1; visibility: hidden; text-shadow: 0 4px 24px rgba(0,0,0,.6); }
+  #sub { color: var(--title); opacity: .82; font-size: 34px; font-weight: 600; margin-top: 10px; visibility: hidden; text-shadow: 0 2px 14px rgba(0,0,0,.7); }
+  #rule { height: 3px; width: 0; background: var(--rule); margin: 18px 0 0 auto; border-radius: 2px; box-shadow: 0 0 14px var(--rule); }
+  #letterbox-top, #letterbox-bottom { position: absolute; left: 0; right: 0; height: 0px; background: #000; z-index: 70; }
+  #letterbox-top { top: 0; } #letterbox-bottom { bottom: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1920" data-height="1080" data-start="0" data-duration="5.0" data-fps="30">
+  <audio id="ambience" src="assets/ambience.wav" data-start="0" data-duration="5.0" data-volume="1.0" data-fade-out="0.6"></audio>
+  <canvas id="gl" width="1920" height="1080"></canvas>
+  <div id="letterbox-top"></div><div id="letterbox-bottom"></div>
+  <div id="card"><div id="title"></div><div id="sub"></div><div id="rule"></div></div>
+
+<script type="application/json" id="kosif-props">{"title": "سكونُ البحر", "subtitle": "ليلٌ، وقمرٌ، ومركبٌ وحيد", "titleAt": 1.7}</script>
+<script type="application/json" id="kosif-reel">{
+ "ai": {"locks": {"style": "Quiet night at sea, photoreal 35mm film look, cool 4100K moonlight against one warm 1900K kerosene lantern, deep navy palette, no text"},
+        "environment": "open calm sea at night, low full moon behind the boat, far shore lights on the horizon", "time": "night, 2 hours after moonrise",
+        "lighting": "moon key from behind upper left at 4100K rimming the hull, warm 1900K lantern from the mast lighting the deck, cool sky fill", "fps": 24},
+ "scenes": [
+  {"id": "S1", "name": "الوصول — القمر والمركب", "t": [0, 1.7], "els": [],
+   "ai": {"subject": "a wooden felucca fishing boat painted teal and ochre, sail furled along its slanted yard", "action": "rides a slow swell, lantern swinging gently",
+          "shot": "wide", "angle": "low, just above the water", "lens": "50mm f/2", "camera_move": "slow push-in with a 10 degree orbit",
+          "atmosphere": "moon glitter path on the water, light haze at the horizon", "palette": "navy, silver, one ember orange"}},
+  {"id": "S2", "name": "العنوان — الصياد والسمكة", "t": [1.7, 5], "els": [
+    {"id": "title", "label": "العنوان", "t": [1.7, 5], "box": [56, 66, 36, 12], "props": {"text": {"type": "text", "label": "Text", "bind": "title"}}},
+    {"id": "subtitle", "label": "السطر الثاني", "t": [2.1, 5], "box": [60, 79, 32, 6], "props": {"text": {"type": "text", "label": "Text", "bind": "subtitle"}}},
+    {"id": "fish", "label": "قفزة السمكة", "t": [2.8, 4.2], "box": [8, 76, 26, 14], "props": {"motion": {"type": "motion", "label": "Motion", "v": "a small fish breaks the surface; two rings spread"}}}],
+   "ai": {"subject": "a lone fisherman sitting at the stern holding a rod over the side; a small fish breaks the moonlit surface off the bow", "action": "a splash, then two rings spread across the glitter path",
+          "shot": "medium wide", "angle": "low three-quarter", "lens": "50mm f/2", "camera_move": "continuing slow push-in that settles",
+          "atmosphere": "lantern glow pooling on the deck, spray catching the moonlight, ripples bending the lantern reflection", "palette": "navy, silver, ember orange", "sound": "soft swell, a single splash"}}
+ ]}</script>
+
+  <script>
+    const M = window.MOTION, $ = (s) => document.querySelector(s);
+    const three = window.__three.build($("#gl"), 1920, 1080);
+    const P = JSON.parse(document.getElementById("kosif-props").textContent);
+    $("#title").textContent = P.title; $("#sub").textContent = P.subtitle;
+    const tl = gsap.timeline({ paused: true, defaults: { ease: M.ease.drive } });
+    const E = M.ease, S = 5.0, T = P.titleAt || 1.7;
+    tl.fromTo(["#letterbox-top", "#letterbox-bottom"], { height: 64 }, { height: 64, duration: 0.01 }, 0);
+    M.revealWords(tl, $("#title"), T, { dur: 1.0, stagger: 0.14, ease: E.settle });
+    tl.fromTo("#rule", { width: 0 }, { width: 240, duration: 1.1, ease: E.settle }, T + 0.35);
+    M.revealWords(tl, $("#sub"), T + 0.45, { dur: 0.9, stagger: 0.09, ease: E.settle });
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+    M.shim("root", S);
+    const seek = window.__kosifSeek;
+    window.render = (t) => { window.__ready = false; seek(t); three.render(t); requestAnimationFrame(() => requestAnimationFrame(() => { window.__ready = true; })); };
+    window.__ready = false;
+    // build() may return { ready: Promise } when it loads textures, models or data first: the first frame waits for it
+    Promise.all([document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(), three.ready || Promise.resolve()])
+      .then(() => { seek(0); three.render(0); three.render(0); window.__ready = true; })
+      .catch((e) => console.error("scene failed to load", e));
+  </script>
+</div>
+</body>
+</html>

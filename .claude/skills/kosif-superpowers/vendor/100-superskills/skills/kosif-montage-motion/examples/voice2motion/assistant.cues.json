@@ -1,0 +1,16 @@
+{
+  "timing_quality": "estimated_from_listening_and_silence_detection; not forced aligned",
+  "cues": [
+    {"start":0.00,"end":1.25,"text":"Good morning!","kind":"weather"},
+    {"start":1.25,"end":3.95,"text":"It's 68 degrees and sunny outside.","kind":"weather"},
+    {"start":3.95,"end":6.90,"text":"Traffic on the bridge is already backing up a bit","kind":"traffic"},
+    {"start":6.90,"end":9.15,"text":"so I'd suggest heading out ten minutes early","kind":"traffic"},
+    {"start":9.15,"end":11.65,"text":"for your nine o'clock meeting.","kind":"traffic"},
+    {"start":11.65,"end":14.74,"text":"Now, regarding your support ticket from yesterday,","kind":"support"},
+    {"start":14.74,"end":17.80,"text":"I completely understand how frustrating","kind":"support"},
+    {"start":17.80,"end":20.90,"text":"that duplicate billing error was.","kind":"support"},
+    {"start":20.90,"end":23.87,"text":"The good news is, I've already submitted and confirmed","kind":"refund"},
+    {"start":23.87,"end":25.27,"text":"a full refund on your behalf.","kind":"refund"},
+    {"start":25.27,"end":28.84,"text":"You'll see those funds back within three business days.","kind":"refund"}
+  ]
+}

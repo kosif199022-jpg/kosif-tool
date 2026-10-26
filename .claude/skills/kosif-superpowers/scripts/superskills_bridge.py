@@ -60,7 +60,7 @@ def status(data, items):
         "pinned_source_commit": data["source_commit"],
         "checkout_head": commit,
         "pinned_commit_matches": commit == data["source_commit"] if commit else None,
-        "initialization_command": "git submodule update --init --recursive",
+        "initialization_command": "python3 scripts/superskills.py verify   # files are vendored in the repo; re-copy with: superskills.py sync --src ../100-superskills",
     }
 
 def main(argv=None):
@@ -94,7 +94,7 @@ def main(argv=None):
                    local_path=str(local_path(item)))
         if args.command == "path":
             if not local_path(item).is_file():
-                print("Submodule not checked out; run: git submodule update --init --recursive", file=sys.stderr)
+                print("Vendored skill files are missing; restore vendor/100-superskills from git or run: python3 scripts/superskills.py sync --src ../100-superskills", file=sys.stderr)
                 return 2
             print(local_path(item))
             return 0
@@ -102,7 +102,7 @@ def main(argv=None):
         print(json.dumps(out, ensure_ascii=False, indent=2))
     elif isinstance(out, list):
         for s in out:
-            print(f"{s['slug']} | {s['ar']} | {s['category']} | {s['path']} | {'ready' if local_path(s).is_file() else 'needs submodule'}")
+            print(f"{s['slug']} | {s['ar']} | {s['category']} | {s['path']} | {'ready' if local_path(s).is_file() else 'missing'}")
     elif args.command == "doctor":
         for k, v in out.items():
             print(f"{k}: {v}")
