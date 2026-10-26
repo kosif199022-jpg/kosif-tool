@@ -1,0 +1,1035 @@
+{
+  "schema": "kosif.superskills.v1",
+  "count": 114,
+  "source_repository": "kosif199022-jpg/100-superskills",
+  "source_commit": "af7a5dc3778c0e68ef935349a5c1650d15688277",
+  "vendor_path": ".claude/skills/kosif-superpowers/vendor/100-superskills",
+  "skills": [
+    {
+      "slug": "ab-testing-experiments",
+      "ar": "اختبارات A/B والتجارب",
+      "en": "A/B Testing & Experiments",
+      "description": "تصميم وتحليل التجارب: الفرضية والمقياس الأساسي، وحجم العينة بالقوة الإحصائية، والتوزيع العشوائي، ومدة التجربة، والتحليل (الفرق، وفترة الثقة، وp-value أو بايزي)، وأخطاء النظر المتكرر والمقاييس المتعددة.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ab-testing-experiments/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ab-testing-experiments/SKILL.md"
+    },
+    {
+      "slug": "accessibility-wcag",
+      "ar": "الإتاحة WCAG",
+      "en": "Accessibility (WCAG 2.2)",
+      "description": "تدقيق وإصلاح الإتاحة: فحص آلي (axe) + تحقق يدوي (لوحة المفاتيح، وقارئ الشاشة، والتباين، والتكبير 200%، والحركة)، وRTL والعربية، والنماذج والأخطاء، بتقرير بمستوى A/AA وإصلاحات بالكود.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/accessibility-wcag/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/accessibility-wcag/SKILL.md"
+    },
+    {
+      "slug": "accounting-ifrs-journal",
+      "ar": "المحاسبة والقيود وIFRS",
+      "en": "Accounting, Journal Entries & IFRS",
+      "description": "قيود يومية صحيحة ومعايير IFRS/IAS مطبّقة: تحليل المعاملة، والقيد بالمدين والدائن المتوازن بالكود، والإيرادات (IFRS 15)، والإيجارات (IFRS 16)، والأصول، والمخصصات، وضريبة القيمة المضافة، والمطابقة البنكية، بمصطلحات عربية دقيقة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/accounting-ifrs-journal/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/accounting-ifrs-journal/SKILL.md"
+    },
+    {
+      "slug": "ad-creative-30s",
+      "ar": "الإعلان الإبداعي 30 ثانية",
+      "en": "30-Second Ad Creative",
+      "description": "إعلان كامل لمنتج أو خدمة: 3 خطّافات بديلة، وبنية مشكلة-حل-إثبات-نداء، وسكربت تعليق صوتي بالعامية أو الفصحى، وقائمة لقطات، وبرومبتات توليد، ونسخة أنيميشن قابلة للتنفيذ بكلاود.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ad-creative-30s/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ad-creative-30s/SKILL.md"
+    },
+    {
+      "slug": "agent-tool-instructions",
+      "ar": "تعليمات الوكلاء والأدوات",
+      "en": "Agent & Tool Instructions",
+      "description": "برومبتات الوكلاء وأوصاف الأدوات وملفات SKILL.md وCLAUDE.md: الهدف، والأدوات المسموحة، وشرط التوقف، والميزانية، ونقاط التوقف البشرية، والشرط اللاحق المُثبِت للإنجاز؛ ولكل أداة: ماذا تفعل ومتى ومتى لا وكل بارامتر بنوعه ومثاله وآثاره الجانبية.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/agent-tool-instructions/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/agent-tool-instructions/SKILL.md"
+    },
+    {
+      "slug": "ai-art-style-library",
+      "ar": "مكتبة الأساليب الفنية للتوليد",
+      "en": "AI Art Style Library",
+      "description": "قاموس أساليب لتوليد الصور والفيديو: سينمائي واقعي، وأنمي، وكلاي، وأكواريل، وخط حبر، وإيزومتريك، وسايبر، وفيلم 35mm قديم، ورسم أطفال؛ لكل أسلوب كلمات المفتاح والإضاءة والعدسة والسلبيات وما يجب تجنّبه قانونياً.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ai-art-style-library/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ai-art-style-library/SKILL.md"
+    },
+    {
+      "slug": "arabic-copywriting",
+      "ar": "الكتابة الإعلانية العربية",
+      "en": "Arabic Copywriting",
+      "description": "نصوص تسويقية عربية تبيع: عناوين، وصفحات، ورسائل، وإعلانات، ومنشورات، بالفصحى أو اللهجات (مصرية، خليجية، شامية، مغاربية)، بصيغ مثبتة (PAS، AIDA، 4U)، ونبرة العلامة، وقواعد الطباعة العربية الصحيحة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/arabic-copywriting/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/arabic-copywriting/SKILL.md"
+    },
+    {
+      "slug": "audio-mastering-analysis",
+      "ar": "تحليل الصوت والماسترينغ",
+      "en": "Audio Analysis & Mastering",
+      "description": "قياس وإصلاح الصوت بالكود: LUFS، والقمم الحقيقية، والتشبع، وBPM، والطيف، والضجيج، مع أهداف لكل منصة (يوتيوب، وسبوتيفاي، وبودكاست)، وسلسلة ماسترينغ (معادلة، وضغط، وحدّ) بأوامر ffmpeg أو Python.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/audio-mastering-analysis/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/audio-mastering-analysis/SKILL.md"
+    },
+    {
+      "slug": "audio-reactive-captions-studio",
+      "ar": "استوديو الصوت التفاعلي والترجمة المتحركة",
+      "en": "Audio-Reactive & Animated Captions Studio",
+      "description": "أنيميشن يتنفّس مع الصوت وترجمة متحركة بأسلوب تيك توك: استخراج طاقة الصوت (RMS و16 حزمة ترددية) لكل إطار إلى JSON حتمي يقود الحركة (الباص للحركات الكبيرة، والتريبل للتفاصيل، وRMS للعموميات) مع تنعيم؛ وصفحات ترجمة من طوابع الكلمات (Whisper) بإبراز الكلمة المنطوقة، وSRT وASS كاريوكي، وآلة كاتبة بمؤشر ينبض، وقطع على الإيقاع بحساب BPM، ومرئي صوت (أعمدة، وموجة، ودائرة) على Canvas بطبقتين.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/audio-reactive-captions-studio/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/audio-reactive-captions-studio/SKILL.md"
+    },
+    {
+      "slug": "automation-scripts-cli",
+      "ar": "سكربتات الأتمتة وأدوات سطر الأوامر",
+      "en": "Automation Scripts & CLI Tools",
+      "description": "سكربتات Python/Bash/PowerShell وأدوات CLI صغيرة متينة: وسائط واضحة ومساعدة، ومعالجة أخطاء، وسجلات، وتجربة جافة، وتعامل آمن مع الملفات (لا حذف بلا تأكيد)، وتثبيت بسيط، واختبارات.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/automation-scripts-cli/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/automation-scripts-cli/SKILL.md"
+    },
+    {
+      "slug": "backend-api-design",
+      "ar": "تصميم الواجهات الخلفية وAPI",
+      "en": "Backend & API Design",
+      "description": "واجهات API متينة (REST أو GraphQL): مواصفة OpenAPI أولاً، وتسمية موارد متسقة، وترقيم الصفحات، والأخطاء الموحّدة، والمصادقة، والحدود، والإصدارات، وتنفيذ بـ Node/Python/Workers مع اختبارات تكامل وتوثيق تلقائي.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/backend-api-design/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/backend-api-design/SKILL.md"
+    },
+    {
+      "slug": "book-to-skill-knowledge",
+      "ar": "من الكتاب إلى مهارة",
+      "en": "Book-to-Skill Knowledge Compiler",
+      "description": "يحوّل كتاباً أو وثائق إلى مهارة قابلة للتحميل عند الحاجة: نواة صغيرة بالأطر والمبادئ، وملف لكل فصل، ومسرد، وأنماط بمفاضلاتها، وورقة قرارات؛ مع التمييز بين استخلاص البنية ونسخ النص المحمي.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/book-to-skill-knowledge/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/book-to-skill-knowledge/SKILL.md"
+    },
+    {
+      "slug": "brand-identity-logo",
+      "ar": "الهوية البصرية والشعار",
+      "en": "Brand Identity & Logo",
+      "description": "هوية كاملة من الصفر: شعار SVG متجه بثلاث نسخ (أساسي، أيقونة، أحادي)، ولوحة ألوان بأدوار وتباينات مفحوصة، وخطوط عربية ولاتينية متناغمة، ونبرة صوت، وقوالب سوشيال، ودليل استخدام من صفحة واحدة.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/brand-identity-logo/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/brand-identity-logo/SKILL.md"
+    },
+    {
+      "slug": "browser-automation-playwright",
+      "ar": "أتمتة المتصفح بـ Playwright",
+      "en": "Browser Automation (Playwright)",
+      "description": "تشغيل المتصفح برمجياً للاختبار والجمع والتصوير: محددات ثابتة، وانتظارات صحيحة، وتسجيل الدخول بجلسة محفوظة يوفّرها المستخدم، وتصوير صفحات كاملة وPDF، ومعالجة النوافذ، والتوقف عند CAPTCHA والدفع والإرسال.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/browser-automation-playwright/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/browser-automation-playwright/SKILL.md"
+    },
+    {
+      "slug": "business-plan-prd",
+      "ar": "خطة العمل ووثيقة المنتج",
+      "en": "Business Plan & PRD",
+      "description": "من الفكرة إلى وثيقة قابلة للتنفيذ: تأطير المشكلة، والشرائح، والقيمة، والمنافسون، ونموذج الإيراد، والـ PRD بثمانية أقسام (المشكلة، والأهداف، والمستخدمون، والحلول، والمتطلبات، والقياس، والمخاطر، والإطلاق) مع أسئلة الفجوات.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/business-plan-prd/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/business-plan-prd/SKILL.md"
+    },
+    {
+      "slug": "character-animation-2d",
+      "ar": "تحريك الشخصيات 2D",
+      "en": "2D Character Animation",
+      "description": "شخصيات كرتونية متحركة داخل المتصفح: تصميم الشخصية بأجزاء (rig) من SVG، ودورات المشي والحديث والتعبيرات، ومبادئ الأنيميشن الاثني عشر (الضغط والتمدد، والتوقع، والمتابعة)، وتزامن الشفاه مع الصوت تقريبياً.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/character-animation-2d/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/character-animation-2d/SKILL.md"
+    },
+    {
+      "slug": "cinema-director-7layers",
+      "ar": "المخرج السينمائي (7 طبقات)",
+      "en": "Cinema Director",
+      "description": "تصميم مشاهد بصرية بسبع طبقات: الهوية، والعالم، والفعل والفيزياء، والكاميرا والعدسة، والإضاءة، والمواد والجو، واللون والقصة، مع أوراق مرجعية 360° للشخصيات والأماكن واستمرارية بين اللقطات.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/cinema-director-7layers/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/cinema-director-7layers/SKILL.md"
+    },
+    {
+      "slug": "cinematic-3d-scene",
+      "ar": "مشهد سينمائي ثلاثي الأبعاد",
+      "en": "Cinematic 3D Scene",
+      "description": "مشاهد Three.js سينمائية داخل المتصفح: إضاءة فيزيائية، وBloom وتدرّج ألوان، وضباب وجسيمات، وشيدرات بسيطة، وحركات كاميرا (دخول بطيء، أوربت، كرين)، وبيئات (مدينة، صحراء، فضاء) جاهزة للتصوير إطاراً بإطار.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/cinematic-3d-scene/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/cinematic-3d-scene/SKILL.md"
+    },
+    {
+      "slug": "claude-animation-studio",
+      "ar": "استوديو الأنيميشن بكلاود",
+      "en": "Claude Animation Studio",
+      "description": "يصنع فيديو أنيميشن كامل داخل كلاود بلا أي برنامج مونتاج: من الفكرة إلى DESIGN.md وSTORYBOARD.md، ثم مشهد HTML بخط زمني حتمي render(t)، ثم تصوير الإطارات بـ Playwright وتجميعها بـ ffmpeg مع لوحة تحقق. يدعم 2D (SVG/Canvas) و3D (Three.js) وGSAP، وبنسب 9:16 و16:9 و1:1.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/claude-animation-studio/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/claude-animation-studio/SKILL.md"
+    },
+    {
+      "slug": "cloudflare-edge-deploy",
+      "ar": "النشر على Cloudflare والحافة",
+      "en": "Cloudflare & Edge Deployment",
+      "description": "Workers وPages وD1 وKV وR2 وQueues: من wrangler.toml إلى النشر، مع الأسرار في متغيرات البيئة، والنطاقات، والتخزين المؤقت، والحدود، والسجلات، وبيئة معاينة قبل الإنتاج، وتجربة جافة قبل أي نشر.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/cloudflare-edge-deploy/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/cloudflare-edge-deploy/SKILL.md"
+    },
+    {
+      "slug": "code-review-refactor",
+      "ar": "مراجعة الكود وإعادة الهيكلة",
+      "en": "Code Review & Refactoring",
+      "description": "مراجعة صحة أولاً: الأخطاء، والحالات الحرجة، والانحدارات، والاختبارات الناقصة، ثم التبسيط وإزالة التكرار وتحسين الأسماء، بتعليقات قابلة للتنفيذ مرتبة بالخطورة، وإعادة هيكلة آمنة بخطوات صغيرة مع الاختبارات.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/code-review-refactor/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/code-review-refactor/SKILL.md"
+    },
+    {
+      "slug": "comics-picture-books",
+      "ar": "القصص المصوّرة وكتب الأطفال",
+      "en": "Comics & Picture Books",
+      "description": "قصص مصوّرة وكتب أطفال من السكربت إلى الصفحات: تقسيم الصفحات واللوحات، وسكربت كومكس بالحوار والصوت، وأوراق شخصيات ثابتة الهوية، وبرومبتات لكل لوحة بالأقفال، وتخطيط الصفحة بـ HTML للطباعة.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/comics-picture-books/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/comics-picture-books/SKILL.md"
+    },
+    {
+      "slug": "context-window-budget",
+      "ar": "ميزانية نافذة السياق",
+      "en": "Context Window Budget",
+      "description": "ما يدخل السياق وما لا يدخل: تصنيف كل مرشّح (ثابت، أو استرجاع عند الحاجة، أو تاريخ محادثة، أو أدوات)، وميزانية رموز لكل قسم، وترتيب يراعي التخزين المؤقت والمنتصف المفقود، وقاعدة إخلاء، وضغط التاريخ.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/context-window-budget/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/context-window-budget/SKILL.md"
+    },
+    {
+      "slug": "curriculum-course-builder",
+      "ar": "بناء المناهج والدورات",
+      "en": "Curriculum & Course Builder",
+      "description": "منهج تعلّم متكيّف لأي موضوع: من الهدف البعيد إلى وحدات بخمسة أجزاء (شرح بسيط، ومفاهيم، وتعميق، ومواد، وفحص فهم)، وأسئلة متدرجة (تذكّر، وتطبيق، وتركيب)، وسجل إجابات يعدّل الوحدات التالية، ومخرجات لمنصات الدورات.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/curriculum-course-builder/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/curriculum-course-builder/SKILL.md"
+    },
+    {
+      "slug": "custom-gpt-claude-project",
+      "ar": "بناء GPT مخصص ومشروع Claude",
+      "en": "Custom GPT & Claude Project Builder",
+      "description": "يحوّل أي مهارة أو خبرة إلى مساعد قابل للنشر: تعليمات GPT (≤8000 حرف) مع ملفات معرفة وActions بـ OpenAPI، أو مشروع Claude بتعليمات ومهارات مرفوعة، مع مبادئ المحادثة، وأسئلة البداية، وخطة الاختبار.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/custom-gpt-claude-project/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/custom-gpt-claude-project/SKILL.md"
+    },
+    {
+      "slug": "dashboards-dataviz",
+      "ar": "لوحات المعلومات والتصور البياني",
+      "en": "Dashboards & Data Visualization",
+      "description": "لوحات معلومات ورسوم بيانية صادقة وأنيقة: اختيار الشكل من السؤال، ولوحة ألوان متاحة للجميع، ونفس النظام في الوضعين الفاتح والداكن، وبطاقات مؤشرات، وتفاعل (تلميحات، تصفية)، بـ HTML/Plotly/Chart.js أو Streamlit أو Excel.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/dashboards-dataviz/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/dashboards-dataviz/SKILL.md"
+    },
+    {
+      "slug": "data-in-motion",
+      "ar": "بيانات متحركة",
+      "en": "Data in Motion",
+      "description": "رسوم بيانية متحركة للفيديو والعروض: أعمدة تنمو، وخطوط ترسم نفسها، وأرقام تعدّ، وخرائط تضيء، مع قواعد الوضوح والصدق الإحصائي وتصميم ألوان متاح للجميع.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/data-in-motion/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/data-in-motion/SKILL.md"
+    },
+    {
+      "slug": "database-schema-migrations",
+      "ar": "مخطط قاعدة البيانات والترحيلات",
+      "en": "Database Schema & Migrations",
+      "description": "تصميم قواعد بيانات صحيحة: الكيانات والعلاقات، والتطبيع 3NF مع تطبيع عكسي مبرّر، والأنواع الدقيقة (NUMERIC للمال، TIMESTAMPTZ)، والفهارس من أنماط الاستعلام، والقيود، وترحيلات قابلة للتراجع، ومخطط ERD.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/database-schema-migrations/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/database-schema-migrations/SKILL.md"
+    },
+    {
+      "slug": "davinci-resolve-pipeline",
+      "ar": "خط إنتاج DaVinci Resolve الاحترافي",
+      "en": "DaVinci Resolve Pro Pipeline",
+      "description": "مونتاج وتلوين كامل داخل DaVinci Resolve بسكربتات Python (واجهة Scripting الرسمية): خط زمني مرتّب بوقت التصوير، ونسخة عمل محمية، وتراكات مسمّاة (OVERLAY، GFX، SUBTITLE، AMBIENCE، SFX، MUSIC)، وترتيب عقد التلوين EXPOSURE→WB→CST→CONTRAST→SAT→LOOK، وقياس بالـ Scopes عبر لقطات ثابتة، وسجل علامات ملوّنة موحّد، ومهام رندر مع تحقق ffprobe، وسجل عمل Markdown لكل تغيير؛ ويتحوّل إلى دليل يدوي عندما تغيب الواجهة.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/davinci-resolve-pipeline/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/davinci-resolve-pipeline/SKILL.md"
+    },
+    {
+      "slug": "debugging-root-cause",
+      "ar": "تصحيح الأخطاء من الجذر",
+      "en": "Root-Cause Debugging",
+      "description": "إصلاح أي خطأ من جذره: إعادة الإنتاج أولاً، ثم العزل بالتنصيف، ثم الفرضية الواحدة والتجربة، ثم الإصلاح مع اختبار انحدار، ثم التحقق؛ لا يُقال «أُصلح» بلا تشغيل.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/debugging-root-cause/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/debugging-root-cause/SKILL.md"
+    },
+    {
+      "slug": "diagrams-mermaid-architecture",
+      "ar": "المخططات والرسوم الهندسية",
+      "en": "Diagrams & Architecture Drawings",
+      "description": "مخططات Mermaid وSVG لتدفقات العمل والمعماريات وقواعد البيانات والتسلسلات والخرائط الذهنية، بقواعد وضوح: اتجاه واحد، وتسميات فعلية، وألوان بأدوار، وتصدير PNG/SVG.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/diagrams-mermaid-architecture/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/diagrams-mermaid-architecture/SKILL.md"
+    },
+    {
+      "slug": "docker-ci-devops",
+      "ar": "Docker وCI/CD",
+      "en": "Docker & CI/CD",
+      "description": "حاوية ونشر مستمر لأي مشروع: Dockerfile متعدد المراحل صغير وآمن، وdocker-compose للتطوير، وGitHub Actions (فحص، اختبار، بناء، نشر) مع تخزين مؤقت وأسرار، وإصدارات دلالية، وتجارب جافة قبل أي دفع.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/docker-ci-devops/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/docker-ci-devops/SKILL.md"
+    },
+    {
+      "slug": "ecommerce-store-listings",
+      "ar": "المتجر الإلكتروني وأوصاف المنتجات",
+      "en": "E-commerce Store & Listings",
+      "description": "متجر يبيع: أوصاف منتجات بصيغة فوائد ومواصفات وأسئلة، وعناوين محسّنة للبحث داخل المنصة (أمازون، ونون، وسلة، وشوبيفاي)، وصور من product-photo-mockups، وتسعير، وصفحات سياسات، وسلسلة بريد ما بعد الشراء.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ecommerce-store-listings/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ecommerce-store-listings/SKILL.md"
+    },
+    {
+      "slug": "excel-automation-power",
+      "ar": "أتمتة إكسل المتقدمة (Power Query وLAMBDA وDAX)",
+      "en": "Advanced Excel Automation",
+      "description": "إكسل كمنصّة أتمتة: Power Query بوصفات M (إلغاء التدوير، والدمج، والمعاملات، والطيّ إلى المصدر، والتحديث)، ومكتبة دوال LAMBDA مسمّاة تُحقن في الملف آلياً مع ورقة توثيق، ومصفوفات ديناميكية (FILTER/UNIQUE/SORT/MAP/REDUCE/SCAN/BYROW)، وأنماط DAX للقياسات الزمنية، وOffice Scripts وVBA عند الحاجة فقط، وPython في إكسل، وترجمة الصيغ بين Excel وGoogle Sheets وLark (ARRAYFORMULA والإسقاط ودلالات المصفوفات)، ومعادلات DMAIC الإحصائية وما لا يحسبه إكسل بدقة (Cpk الحقيقي)، وبوابة إعادة حساب وعرض PDF للفحص البصري.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-automation-power/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-automation-power/SKILL.md"
+    },
+    {
+      "slug": "excel-data-cleaning-automation",
+      "ar": "تنظيف البيانات وأتمتة إكسل",
+      "en": "Excel Data Cleaning & Automation",
+      "description": "تحويل ملفات إكسل الفوضوية إلى بيانات نظيفة: إزالة التكرار، وتوحيد الأسماء والتواريخ والأرقام العربية/الإنجليزية، ودمج أوراق متعددة، وPower Query أو Python/pandas، وأتمتة التقارير الدورية بسكربت واحد قابل للتكرار.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-data-cleaning-automation/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-data-cleaning-automation/SKILL.md"
+    },
+    {
+      "slug": "excel-financial-models",
+      "ar": "النماذج المالية في إكسل",
+      "en": "Excel Financial Models",
+      "description": "نماذج مالية احترافية: التدفقات النقدية المخصومة (DCF)، والموازنة والتوقع، وتحليل التباين، وتحليل الحساسية بجداول البيانات، وقواعد التنسيق (أزرق للمدخلات، أسود للصيغ)، وفحص الاتساق (الميزانية تتوازن) بالكود.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-financial-models/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-financial-models/SKILL.md"
+    },
+    {
+      "slug": "excel-model-architect",
+      "ar": "مهندس النماذج المالية في إكسل",
+      "en": "Excel Financial Model Architect",
+      "description": "نماذج إكسل تصمد أمام مراجعة مجلس الإدارة: شجرة محرّكات (الحجم × السعر × المزيج) لا «ينمو 5%»، وفصل المدخلات عن الميكانيكا عن المخرجات في أوراق مستقلة، وتكامل القوائم الثلاث بصفوف فحص (BS_check وCF_check تساوي صفراً)، وسيناريوهات كتجاوزات محرّكات بمفتاح واحد لا نماذج منفصلة، وجداول حساسية ثنائية، ودورة التباين (فعلي، وأحدث توقع، وتوقع سابق مجمّد)، واصطلاحات IB (أزرق مدخلات، أسود صيغ، أخضر روابط، أصفر افتراضات حرجة، صفر «-»، سالب أحمر بأقواس، مضاعفات x)، ومولّد ومدقّق آليان بـ openpyxl مع بوابة إعادة حساب.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-model-architect/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-model-architect/SKILL.md"
+    },
+    {
+      "slug": "excel-power-formulas",
+      "ar": "إكسل: الصيغ والقوة",
+      "en": "Excel Power Formulas",
+      "description": "حل أي مشكلة إكسل: صيغ حديثة (XLOOKUP، FILTER، LET، LAMBDA، SUMIFS)، وجداول منظّمة، وتنسيق شرطي، والتحقق من البيانات، وتصحيح الأخطاء (#N/A و#REF)، ودعم العربية والتواريخ الهجرية، مع ملف .xlsx جاهز مولّد بـ openpyxl ومفحوص بإعادة الحساب.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/excel-power-formulas/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/excel-power-formulas/SKILL.md"
+    },
+    {
+      "slug": "explainer-edu-animation",
+      "ar": "أنيميشن تعليمي توضيحي",
+      "en": "Explainer Animation",
+      "description": "فيديوهات شرح مبسّطة (علوم، تاريخ، اقتصاد، منتجات) بأسلوب مسطّح واضح: فكرة واحدة لكل مشهد، ورسوم تخطيطية تتحرك مع الشرح، وشريط مراحل، وتعليق صوتي مقترح، ودقة علمية مفحوصة.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/explainer-edu-animation/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/explainer-edu-animation/SKILL.md"
+    },
+    {
+      "slug": "fact-checker-verifier",
+      "ar": "مدقّق الحقائق والمُحقِّق",
+      "en": "Fact-Checker & Verifier",
+      "description": "فحص الادعاءات والأرقام والاقتباسات والاستشهادات قبل النشر: سجل لكل ادعاء (مدعوم، متناقض، غير قابل للتحقق) بمصدره الأولي، وكشف الاستشهادات الوهمية، ومعايرة الثقة، والحقيقة الناقصة الأكثر قيمة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/fact-checker-verifier/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/fact-checker-verifier/SKILL.md"
+    },
+    {
+      "slug": "few-shot-dataset-curation",
+      "ar": "تنسيق الأمثلة ومجموعات البيانات",
+      "en": "Few-Shot & Dataset Curation",
+      "description": "أمثلة ومجموعات تدريب وتقييم عالية الجودة: اختيار الأمثلة المتنوعة المطابقة للصيغة تماماً، وتغطية الحالات الحرجة، وإزالة التكرار والتسرّب، وتوازن الفئات، وتنسيق JSONL لـ fine-tuning والتقييم، وبطاقة بيانات.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/few-shot-dataset-curation/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/few-shot-dataset-curation/SKILL.md"
+    },
+    {
+      "slug": "flashcards-quiz-exam-prep",
+      "ar": "البطاقات والاختبارات والتحضير للامتحان",
+      "en": "Flashcards, Quizzes & Exam Prep",
+      "description": "تعلّم بالاستدعاء النشط: بطاقات بصيغة سؤال-جواب دقيقة من أي نص (Anki CSV)، واختبارات متعددة الخيارات بمشتتات ذكية وتفسيرات، وخطة مراجعة متباعدة، وامتحانات تجريبية مع تحليل الأخطاء.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/flashcards-quiz-exam-prep/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/flashcards-quiz-exam-prep/SKILL.md"
+    },
+    {
+      "slug": "forecasting-probability",
+      "ar": "التوقع والاحتمالات",
+      "en": "Forecasting & Probability",
+      "description": "تقدير «ما احتمال؟» بطريقة منضبطة: معدلات الأساس، وتحديث بايزي، والقيمة المتوقعة، وفترات الثقة، والسلاسل الزمنية البسيطة، وتحليل الحساسية، مع كل رقم محسوب بالكود ومعايرة الثقة.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/forecasting-probability/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/forecasting-probability/SKILL.md"
+    },
+    {
+      "slug": "frontend-react-app",
+      "ar": "تطبيق واجهة React",
+      "en": "React Frontend App",
+      "description": "تطبيقات واجهة حديثة بـ React/Next.js أو Vue: بنية مجلدات واضحة، وإدارة حالة بسيطة، وجلب بيانات مع التحميل والخطأ، ونماذج مع تحقق، ومسارات، وTypeScript، واختبارات مكوّنات، وتحقق في متصفح حقيقي.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/frontend-react-app/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/frontend-react-app/SKILL.md"
+    },
+    {
+      "slug": "fullstack-saas-starter",
+      "ar": "منصة SaaS كاملة",
+      "en": "Full-Stack SaaS Starter",
+      "description": "تطبيق SaaS كامل من الصفر: مصادقة، ومستأجرون متعددون، ولوحة تحكم، وفوترة (وضع الاختبار)، وبريد، ولوجات، وتهيئة نشر على Cloudflare أو Vercel، مع قائمة الإطلاق والأمان.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/fullstack-saas-starter/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/fullstack-saas-starter/SKILL.md"
+    },
+    {
+      "slug": "game-dev-web",
+      "ar": "تطوير الألعاب للويب",
+      "en": "Web Game Development",
+      "description": "ألعاب متصفح كاملة: حلقة لعب، وحالة، وإدخال، وفيزياء بسيطة، وأصول من pixel-art-game-assets، وصوت، وحفظ محلي، وجوال بلمس، بـ Canvas/Phaser/Three.js، وقابلة للنشر كملف HTML واحد.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/game-dev-web/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/game-dev-web/SKILL.md"
+    },
+    {
+      "slug": "genius-council-decision",
+      "ar": "مجلس العباقرة للقرارات",
+      "en": "Genius Council Decisions",
+      "description": "قرار بآراء مستقلة: اختيار 5 إلى 9 خبراء متنوعي المنهج بحسب المسألة، ورأي مستقل من كل منهم، ثم فريق أحمر يهاجم، ثم مُحقِّق يفحص الأدلة، ثم رئيس يزن بجودة الأدلة لا بالأصوات ويصدر الحكم مع الرأي المخالف والثقة المعايرة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/genius-council-decision/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/genius-council-decision/SKILL.md"
+    },
+    {
+      "slug": "git-github-workflow",
+      "ar": "سير عمل Git وGitHub",
+      "en": "Git & GitHub Workflow",
+      "description": "إدارة المستودعات باحتراف: الفروع والرسائل الاصطلاحية، وطلبات الدمج بوصف واضح، وحل التعارضات، والإصدارات، وحماية الفروع، وCODEOWNERS، وإصلاح أخطاء Git الشائعة (rebase، reset، reflog) بأمان، ولا دفع أو نشر بلا موافقة.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/git-github-workflow/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/git-github-workflow/SKILL.md"
+    },
+    {
+      "slug": "google-workspace-automation",
+      "ar": "أتمتة Google Workspace",
+      "en": "Google Workspace Automation",
+      "description": "أتمتة Sheets وDocs وSlides وDrive وGmail: صيغ Sheets المتقدمة (QUERY، ARRAYFORMULA، IMPORTRANGE)، وApps Script للمهام المتكررة، وقوالب Docs بحقول، وتنظيم Drive، وقواعد Gmail، مع احترام الصلاحيات ونقاط التأكيد قبل أي إرسال.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/google-workspace-automation/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/google-workspace-automation/SKILL.md"
+    },
+    {
+      "slug": "hyperframes-animation-studio",
+      "ar": "استوديو الأنيميشن الاحترافي (HyperFrames + KOSIF Motion)",
+      "en": "HyperFrames Animation Studio",
+      "description": "أنيميشن احترافي سينمائي بمدة محددة من طلب واحد — مسطّح (SVG/GSAP) أو ثلاثي الأبعاد واقعي (Three.js على GPU الجهاز): تركيب HTML واحد (صيغة HyperFrames: data-composition-id/width/height/duration، وخطوط GSAP الزمنية في window.__timelines بالثواني) مع عدّة KOSIF Motion (نص عربي بأقنعة كلمات، قلم يرسم المسارات، مطر وبخار وبريق بعشوائية مبذورة، كاميرا واحدة تتحرك ككتلة، وميض، حبيبات فيلم وفينييت) وصوت محيط مركّب بـ numpy؛ يُصيَّر حتمياً إطاراً بإطار بـ HyperFrames (Puppeteer + FFmpeg) أو بمصيّر KOSIF Studio (Playwright/Edge) من الملف نفسه، ويمرّ ببوابة الثماني ثوانٍ (إطارات مفتاحية تُفحص بالعين)، وفحص HyperFrames (lint + تشغيل + تباين)، وقياس طاقة الحركة؛ مبني على دليل 500 أداة لإنتاج الفيديو حول HyperFrames؛ KOSIF Motion v3: نظام حركة مقيس من أفلام الصف الأول، نوابض فيزيائية، موسيقى على شبكة الإيقاع، ضبابية حركة لكل صفحة، فحوص lint/sheet/speed/study، وواقعية ماء وكاوستكس وكائنات حية. v3.1: الصوت يقود العالم — قنوات لكل إطار من الموسيقى (كِك، باص، بدايات، صمت، توقف الشريط) وساعة شريط تُجمّد المشهد حين يتوقف التسجيل، وأرض من الطيف، وغلتش مفتاحه التحليل، والتقاط حركة حقيقية من فيديو إلى جسيمات؛ v3.2 من KOSIF Omni: مونتاج أي لقطات على الإيقاع مع زووم نبضي وتلوين وتخفيض موسيقى تحت الصوت وترجمة كاريوكي عربية، وبوابة تسليم (أسود/تجمّد/LUFS/ذروة/تعريض)، وإضاءة بالوقفات والكلفن. v3.3 من مكتبة الكتب: لغة لقطات حتمية من مفردات Veo (من أسفل، تتبّع، رافعة، دوران، دولي-زوم، يدوي، لوحة 360°)، وإضاءة رامبرانت/كلامشيل/حواف، ومنظور جوي بثلاث قنوات ورؤية ليلية وقناع ألوان (جورني)، وتعريض طويل يرسم مسارات الضوء. v3.4: أداة واحدة kmotion.py تجمع كل الأوامر بقائمة عربية، مع مونتاج تلقائي كامل (reel) وتفريغ الكلام (transcribe) وإزالة الترجمة المحروقة (decaption).",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/hyperframes-animation-studio/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/hyperframes-animation-studio/SKILL.md"
+    },
+    {
+      "slug": "ideation-100-ideas",
+      "ar": "مولّد الأفكار: 100 فكرة",
+      "en": "100-Ideas Generator",
+      "description": "توليد أفكار بكمية ثم جودة: 100 فكرة في 10 اتجاهات متعمدة (عكس، ودمج، وتقييد، ومبالغة، وتبديل الجمهور، ...)، ثم تصفية بمعايير معلنة إلى 10، ثم تطوير 3 بنموذج أولي وخطة اختبار سريعة، مع إزالة التكرار.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ideation-100-ideas/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ideation-100-ideas/SKILL.md"
+    },
+    {
+      "slug": "image-critique-reverse-prompt",
+      "ar": "نقد الصور واستخراج البرومبت",
+      "en": "Image Critique & Reverse Prompt",
+      "description": "تحليل أي صورة: التكوين، والإضاءة، واللون، والحدة، وعيوب الذكاء الاصطناعي (أيدٍ، نص، تماثل)، وقراءة النص OCR، ودرجة من 100 بمعايير، ثم إعادة هندسة برومبت يعيد إنتاج الصورة أو يحسّنها.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/image-critique-reverse-prompt/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/image-critique-reverse-prompt/SKILL.md"
+    },
+    {
+      "slug": "image-prompt-forge",
+      "ar": "مصنع برومبتات الصور",
+      "en": "Image Prompt Forge",
+      "description": "برومبت صورة احترافي من مواصفة واحدة إلى كل منصة: Midjourney (المعاملات)، وFlux (لغة طبيعية)، وSDXL (أوزان وسلبي)، وDALL·E/ChatGPT (قيود أولاً)، وIdeogram (نص مقتبس)، وNanoBanana، مع فحص بالأداة وقفل الشخصية والأسلوب والمكان.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/image-prompt-forge/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/image-prompt-forge/SKILL.md"
+    },
+    {
+      "slug": "invoices-quotes-contracts",
+      "ar": "الفواتير والعروض والعقود",
+      "en": "Invoices, Quotes & Contracts",
+      "description": "وثائق أعمال جاهزة: فواتير وعروض أسعار بتصميم نظيف وحسابات مفحوصة (ضريبة، وخصم، وإجمالي)، ونماذج عقود وشروط بلغة واضحة مع تنبيه أنها قوالب تحتاج مراجعة قانونية، وتوليد PDF بالعربية والإنجليزية.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/invoices-quotes-contracts/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/invoices-quotes-contracts/SKILL.md"
+    },
+    {
+      "slug": "kinetic-typography-arabic",
+      "ar": "تايبوغرافي عربية متحركة",
+      "en": "Arabic Kinetic Typography",
+      "description": "فيديوهات كلمات متحركة بالعربية (اقتباسات، شعارات، أرقام، كلمات أغانٍ) مع خطوط عربية صحيحة واتجاه RTL وتشكيل سليم، وإيقاع يتبع الكلام أو الموسيقى، بإخراج 9:16 للريلز.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kinetic-typography-arabic/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kinetic-typography-arabic/SKILL.md"
+    },
+    {
+      "slug": "kosif-mimic",
+      "ar": "KOSIF Mimic — محاكاة الفيديو",
+      "en": "KOSIF Mimic",
+      "description": "تحليل فيديو مرجعي وإعادة إنتاج أسلوبه وتوقيته بلقطات جديدة مع احترام الحقوق.",
+      "category": "kosif-special",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-mimic/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-mimic/SKILL.md"
+    },
+    {
+      "slug": "kosif-montage-motion",
+      "ar": "KOSIF Montage & Motion",
+      "en": "KOSIF Montage & Motion",
+      "description": "مونتاج احترافي وموشن، تعليق نصّي عربي، صوت، FFmpeg، مراجعة جودة وصناعة فيديوهات.",
+      "category": "kosif-special",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-montage-motion/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-montage-motion/SKILL.md"
+    },
+    {
+      "slug": "kosif-one",
+      "ar": "KOSIF One — موزّع المهام",
+      "en": "KOSIF One",
+      "description": "توزيع الطلب الواحد بين مهارات KOSIF والوسائط والأدوات المرتبطة، مع تخطيط وتحكيم حسب المتاح.",
+      "category": "kosif-special",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-one/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-one/SKILL.md"
+    },
+    {
+      "slug": "kosif-social",
+      "ar": "KOSIF Social — السوشيال",
+      "en": "KOSIF Social",
+      "description": "كابشن وهاشتاجات وكاروسيل وخطط نشر واختبارات A/B ومحتوى منصات التواصل.",
+      "category": "kosif-special",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/kosif-social/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/kosif-social/SKILL.md"
+    },
+    {
+      "slug": "landing-page-premium",
+      "ar": "صفحة الهبوط الفاخرة",
+      "en": "Premium Landing Page",
+      "description": "صفحة هبوط من ملف HTML واحد بمستوى الجوائز: استبيان إجباري من 4 أسئلة (المنتج والوعد، والجمهور، والهوية، والنبرة)، ثم نسخة إقناعية، وتصميم بحركة GSAP وعمق بارالاكس، وتوافق جوال وRTL، وSEO وأداء، وتصوير للتحقق.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/landing-page-premium/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/landing-page-premium/SKILL.md"
+    },
+    {
+      "slug": "language-coach-arabic-english",
+      "ar": "مدرّب اللغات",
+      "en": "Language Coach",
+      "description": "تعلّم لغة بالممارسة: تشخيص المستوى، وخطة أسبوعية، ومحادثات تمثيلية بتصحيح لطيف، ومفردات بالسياق، وقواعد بالأمثلة لا بالمصطلحات، ونطق بالحروف العربية التقريبية، وبطاقات من flashcards-quiz-exam-prep.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/language-coach-arabic-english/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/language-coach-arabic-english/SKILL.md"
+    },
+    {
+      "slug": "legacy-code-migration",
+      "ar": "تحديث الكود القديم والترحيل",
+      "en": "Legacy Code Migration",
+      "description": "نقل الأنظمة القديمة بأمان: فهم السلوك الحالي باختبارات توصيف، وتقسيم الترحيل إلى شرائح (strangler)، وتحويل اللغات أو الأطر، وتوافق البيانات، وخطة تراجع، وقياس التكافؤ قبل القطع.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/legacy-code-migration/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/legacy-code-migration/SKILL.md"
+    },
+    {
+      "slug": "llm-judge-eval-lab",
+      "ar": "مختبر التقييم والقاضي الآلي",
+      "en": "LLM Judge & Eval Lab",
+      "description": "تقييم مخرجات الذكاء الاصطناعي بأرقام تصمد: معايير ثنائية بدليل مقتبس (لا «من 1 إلى 10»)، وقاضٍ واحد لكل معيار، ولجنة قياسية + قاضٍ خصومي مع كشف التحيز المشترك بـ σ، وتبديل الترتيب ضد تحيز الموضع، وقضاة من مورّدين مختلفين، وتأكيدات تنفيذية (أوامر، ملفات، أنماط) قبل أي قاضٍ، ومعايرة ضد البشر بـ Cohen's κ لكل معيار، وpass@k/pass^k، وبوابة انحدار تخرج برمز 3، وتكلفة الرموز لكل نقطة دقة.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/llm-judge-eval-lab/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/llm-judge-eval-lab/SKILL.md"
+    },
+    {
+      "slug": "llm-judge-evals",
+      "ar": "قاضي النماذج ومجموعات التقييم",
+      "en": "LLM Judge & Eval Suites",
+      "description": "تقييم أي ميزة ذكاء اصطناعي بأرقام: مواصفة المهمة، وطريقة التقييم (دقيق، قواعد، نموذج قاضٍ، بشري)، وقاضٍ بمعايير مسمّاة ومستويات مثبّتة لا «من 1 إلى 10»، ومعايرة على عينة بشرية، وفحص تحيزات الموضع والإطالة والتفضيل الذاتي، وبوابة شحن رقمية تُحدد قبل التشغيل.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/llm-judge-evals/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/llm-judge-evals/SKILL.md"
+    },
+    {
+      "slug": "market-competitor-research",
+      "ar": "بحث السوق والمنافسين",
+      "en": "Market & Competitor Research",
+      "description": "صورة سوق قابلة للقرار: حجم السوق بطريقتين، والشرائح، والمنافسون بمصفوفة ميزات وأسعار وتموضع، وتحليل مراجعات العملاء للفجوات، والاتجاهات بمصادر مؤرّخة، وخلاصة «أين نلعب وكيف نفوز».",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/market-competitor-research/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/market-competitor-research/SKILL.md"
+    },
+    {
+      "slug": "math-science-tutor",
+      "ar": "معلّم الرياضيات والعلوم",
+      "en": "Math & Science Tutor",
+      "description": "شرح وحلّ خطوة بخطوة بالتحقق: المسألة بالرموز، والخطوات مبرّرة، والحساب بالكود لا بالذاكرة، والتحقق بالتعويض أو الوحدات، وبراهين مرتبة، ورسوم SVG للدوال والأشكال، وأسئلة تدريب متدرجة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/math-science-tutor/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/math-science-tutor/SKILL.md"
+    },
+    {
+      "slug": "mobile-app-builder",
+      "ar": "تطبيقات الجوال",
+      "en": "Mobile App Builder",
+      "description": "تطبيقات جوال بـ Flutter أو React Native/Expo: الشاشات من رحلة المستخدم، والتنقّل، والحالة، والتخزين المحلي، والإشعارات، ودعم العربية وRTL والخطوط، وبناء APK/IPA اختباري، وقائمة متطلبات المتاجر.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/mobile-app-builder/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/mobile-app-builder/SKILL.md"
+    },
+    {
+      "slug": "motion-director-pro",
+      "ar": "مخرج الموشن المحترف (فيلم لا شرائح)",
+      "en": "Motion Director Pro",
+      "description": "منهج صناعة فيلم موشن حقيقي لا عرض شرائح متحركة: قائمة مشاهد مسمّاة بجمل فعلية، وسلسلة تحوّل بجسم واحد يحمل الفيلم (match anchors) بلا قطعات فارغة، وأرضية الحركة مقاسة إطاراً بإطار (نسبة الإطارات شبه الساكنة، والذروة، والكتل المتحركة) مقابل مرجع، وحدود تغطية البطل 25-45% من العرض، واختبار «الجسم» لكل إيقاع (عبارة + جسم يفعل فعلاً + سطح يفعله عليه)، وميزانية كاميرا 60/20/20 وحركات معدودة، ومجموعة أصول من أجزاء معزولة لا لقطات شاشة، وبوابة الثماني ثوانٍ قبل بناء البقية، و4 مساعدات حركة فقط.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/motion-director-pro/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/motion-director-pro/SKILL.md"
+    },
+    {
+      "slug": "music-song-brief",
+      "ar": "الأغاني وموجز الموسيقى",
+      "en": "Songs & Music Briefs",
+      "description": "كلمات أغانٍ وموجزات موسيقية لمولّدات مثل Suno وUdio: البنية (مقطع، ولازمة، وجسر)، والوزن والقافية بالعربية، والمقام والإيقاع الشرقي عند الحاجة، وأوصاف الأسلوب والآلات والمزاج، ونسخ قصيرة للريلز.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/music-song-brief/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/music-song-brief/SKILL.md"
+    },
+    {
+      "slug": "newsletter-email-marketing",
+      "ar": "النشرات والبريد التسويقي",
+      "en": "Newsletters & Email Marketing",
+      "description": "رسائل تُفتح وتُقرأ: مواضيع قصيرة مُختبَرة، ونص معاينة، وبنية الرسالة، وقوالب HTML متجاوبة تعمل في Outlook وGmail، وRTL، وسلاسل ترحيب وتنشيط، وقواعد الإلغاء وقائمة الحظر، بلا إرسال فعلي بلا موافقة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/newsletter-email-marketing/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/newsletter-email-marketing/SKILL.md"
+    },
+    {
+      "slug": "notebooks-python-analysis",
+      "ar": "دفاتر Python للتحليل",
+      "en": "Python Analysis Notebooks",
+      "description": "دفاتر Jupyter مرتبة للتحليل: تحميل وتنظيف واستكشاف ونمذجة بسيطة وتصور، بخلايا مسمّاة وبذور ثابتة وبيئة مثبّتة، وتصدير تقرير HTML/PDF، والتحويل إلى سكربت قابل للتشغيل.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/notebooks-python-analysis/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/notebooks-python-analysis/SKILL.md"
+    },
+    {
+      "slug": "office-prompts-library",
+      "ar": "مكتبة برومبتات أوفيس",
+      "en": "Office Prompts Library",
+      "description": "برومبتات جاهزة ومُفحوصة لـ Copilot وChatGPT وClaude داخل إكسل ووورد وباوربوينت وأوتلوك: تلخيص التقارير، وشرح الصيغ، وتوليد الجداول، وإعادة صياغة الرسائل، وبنية العروض، مع متغيرات {{}} وتعليمات التنسيق والقيود، بالعربية والإنجليزية.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/office-prompts-library/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/office-prompts-library/SKILL.md"
+    },
+    {
+      "slug": "pdf-forms-reports",
+      "ar": "ملفات PDF: النماذج والتقارير",
+      "en": "PDF Forms & Reports",
+      "description": "كل ما يخص PDF: استخراج النص والجداول، وOCR للممسوح (عربي وإنجليزي)، وتعبئة النماذج، والدمج والتقسيم والضغط والعلامة المائية، وتوليد تقارير PDF مصمّمة من HTML بخطوط عربية صحيحة، والتوقيع والتشفير.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/pdf-forms-reports/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pdf-forms-reports/SKILL.md"
+    },
+    {
+      "slug": "performance-optimization",
+      "ar": "تحسين الأداء",
+      "en": "Performance Optimization",
+      "description": "تسريع المواقع والتطبيقات والاستعلامات بالقياس: Lighthouse وWeb Vitals، وتحليل الحزمة، والصور والخطوط، والتخزين المؤقت، وملفات تعريف الأداء للكود، وN+1 في قواعد البيانات، مع قبل/بعد بالأرقام.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/performance-optimization/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/performance-optimization/SKILL.md"
+    },
+    {
+      "slug": "photo-lighting-plan",
+      "ar": "تخطيط الإضاءة للصور والفيديو",
+      "en": "Lighting Plan",
+      "description": "خطة إضاءة لأي تصوير أو مشهد مولّد: الهدف العاطفي، ونسبة المفتاح إلى التعبئة، ونوع المصادر وأحجامها ومواضعها، وكلفن، والجِل، وإعدادات التعريض، ومخطط SVG من الأعلى، وتشخيص الإضاءة السيئة في صورة موجودة.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/photo-lighting-plan/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/photo-lighting-plan/SKILL.md"
+    },
+    {
+      "slug": "pitch-deck-investor",
+      "ar": "عرض المستثمرين",
+      "en": "Investor Pitch Deck",
+      "description": "عرض من 10 إلى 12 شريحة بترتيب مثبت: المشكلة، والحل، والسوق، والمنتج، والجذب، ونموذج العمل، والمنافسة، والفريق، والأرقام، والطلب؛ بسرد واحد، وأرقام مصدَرة، وتصميم من powerpoint-decks، وملاحظات للمتحدث وأسئلة المستثمرين المتوقعة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/pitch-deck-investor/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pitch-deck-investor/SKILL.md"
+    },
+    {
+      "slug": "pixel-art-game-assets",
+      "ar": "بكسل آرت وأصول الألعاب",
+      "en": "Pixel Art & Game Assets",
+      "description": "سبرايتات بكسل آرت وورق حركة (مشي، قفز، هجوم) بأربع أو ثماني جهات، وبلاطات أرضية، وواجهات، ومؤثرات، بلوحة ألوان مقفلة ومولّد إجرائي بـ Python، ومخرجات لمحركات RPG Maker وGodot وPICO-8.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/pixel-art-game-assets/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pixel-art-game-assets/SKILL.md"
+    },
+    {
+      "slug": "pixel-studio-painter",
+      "ar": "استوديو الرسم بالبيكسل (KOSIF Studio)",
+      "en": "Pixel Studio Painter",
+      "description": "برنامج رسم على سطح المكتب يرسم أي صورة أمامك بيكسلاً ببيكسل بترتيب الرسّام. يرسم كود أي ذكاء اصطناعي (SVG أو بايثون PIL أو matplotlib أو turtle أو مشهد KOSIF بالإضاءة والتوهّج)، ويسجّل أوامر PIL ليرسمها بترتيب الكود نفسه. يعيد رسم أي صورة مرفوعة من الصفر لتنتهي مطابقة للأصل تماماً (صفر بيكسل مختلف، ويتحقق بنفسه، ويختار Jev خطة الرسم للصور الفوتوغرافية)، أو يحوّلها إلى أشكال متجهة وSVG تُكبَّر بلا فقد. ويصدّر بدقة 3840×2560.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/pixel-studio-painter/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pixel-studio-painter/SKILL.md"
+    },
+    {
+      "slug": "podcast-production",
+      "ar": "إنتاج البودكاست",
+      "en": "Podcast Production",
+      "description": "بودكاست من الفكرة إلى النشر: الصيغة والمدة، ومخطط الحلقة بالأزمنة، وأسئلة الضيف، والمقدمة والخاتمة، وخطة الصوت (مستويات، وإزالة ضجيج، ومعادلة)، وملاحظات العرض، والترجمة، ومقاطع قصيرة للسوشيال.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/podcast-production/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/podcast-production/SKILL.md"
+    },
+    {
+      "slug": "powerpoint-decks",
+      "ar": "عروض باوربوينت",
+      "en": "PowerPoint Decks",
+      "description": "عروض تقديمية احترافية: بنية قصصية (مشكلة، رؤية، كيف، إثبات، طلب)، وشريحة واحدة لفكرة واحدة، وتصميم بشبكة وألوان الهوية، ورسوم بيانية صادقة، وملاحظات المتحدث، ومولّد pptx من Markdown مع فحص الفائض والتباين.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/powerpoint-decks/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/powerpoint-decks/SKILL.md"
+    },
+    {
+      "slug": "pro-video-editor-ffmpeg",
+      "ar": "المونتير المحترف بالكود (ffmpeg)",
+      "en": "Pro Code-Driven Video Editor",
+      "description": "مونتاج احترافي كامل بلا برنامج مونتاج: قائمة قرارات EDL بصيغة JSON تتحوّل إلى فيلم نهائي عبر ffmpeg، مع قصّ واعٍ بالإطارات المفتاحية (بلا تجميد)، وقصّ تلقائي للصمت، ونقاط قطع على الإيقاع من طاقة الصوت، وانتقالات xfade بأنواعها، وقطع J/L للصوت، وتغيير السرعة، وLUT للتدرّج اللوني، وحرق الترجمة، وتطبيع الصوت بمرورين على −14 LUFS، وتصدير بأكثر من نسبة، وفحص المخرج بـ ffprobe.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/pro-video-editor-ffmpeg/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/pro-video-editor-ffmpeg/SKILL.md"
+    },
+    {
+      "slug": "product-photo-mockups",
+      "ar": "صور المنتجات والموك-أب",
+      "en": "Product Photos & Mockups",
+      "description": "صور منتجات للمتاجر والإعلانات: برومبتات استوديو بخلفية نظيفة أو مشهد حياة، وإضاءة منتج (softbox، gradient)، وزوايا قياسية، وموك-أب HTML/CSS للأجهزة والتغليف، وقواعد أمازون/نون للصور.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/product-photo-mockups/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/product-photo-mockups/SKILL.md"
+    },
+    {
+      "slug": "prompt-architect-reasoning-models",
+      "ar": "مهندس البرومبت لنماذج التفكير",
+      "en": "Prompt Architect for Reasoning Models",
+      "description": "أعلى مستوى في هندسة البرومبت: تصنيف النموذج أولاً (تفكير حدودي، مُفكّر هجين مفتوح، مفتوح صغير، قديم)، ولا سقالة تفكير على نماذج التفكير بل معايير نجاح دقيقة وإعداد effort، و14 نمط تفكير بتكلفتها (CoT، Step-Back، Self-Consistency، ToT، ReAct، Reflexion، Plan-and-Solve، Least-to-Most، Self-Ask، Skeleton، Chain of Draft، Concise CoT، Token-budget، Sketch-of-Thought)، وسلّم إلزام الإخراج المهيكل بأربع درجات مع حقيقة «الصلاحية ليست الصحة»، وجبهة الكفاءة مقابل الفعالية بثلاث نسخ مُسمّاة، واقتصاد التخزين المؤقت، ودفاع خماسي ضد الحقن.",
+      "category": "advanced",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/prompt-architect-reasoning-models/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/prompt-architect-reasoning-models/SKILL.md"
+    },
+    {
+      "slug": "prompt-injection-defense",
+      "ar": "الدفاع ضد حقن البرومبت",
+      "en": "Prompt Injection Defense",
+      "description": "تأمين تطبيقات النماذج: تسوير المدخلات غير الموثوقة، وفصل الأوامر عن البيانات، وقوائم السماح للأدوات، ونقاط التوقف البشرية للأفعال الخطرة، واختبارات هجوم جاهزة (تجاوز، تسريب، إعادة توجيه)، وقواعد عدم تنفيذ تعليمات من محتوى مُلاحَظ.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/prompt-injection-defense/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/prompt-injection-defense/SKILL.md"
+    },
+    {
+      "slug": "prompt-master-pro",
+      "ar": "سيّد البرومبتات الاحترافي",
+      "en": "Prompt Master Pro",
+      "description": "كتابة أي برومبت باحترافية ألف: يصطاد النقاط العمياء أولاً (المعلوم غير المذكور والمجهول غير المدرك)، ثم يبني البرومبت بصيغة الأقسام الثمانية (الدور، والسياق، والمهمة، والمدخلات، والقيود، وصيغة الإخراج، والحالات الحرجة، ومعيار الجودة)، ثم يفحصه بأداة linting بدرجة من 100، ثم يختبره على 3 حالات (عادية، حرجة، عدائية)، ويسلّم نسخة v1 مع نسختي A/B.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/prompt-master-pro/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/prompt-master-pro/SKILL.md"
+    },
+    {
+      "slug": "python-pro",
+      "ar": "بايثون المحترف",
+      "en": "Python Pro",
+      "description": "كود Python إنتاجي: بنية حزمة، وtyping، وdataclasses/pydantic، ومعالجة أخطاء واضحة، وasync عند الحاجة، وpytest، وruff، وبيئة uv/venv، وتعبئة pyproject، وأداء بالقياس.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/python-pro/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/python-pro/SKILL.md"
+    },
+    {
+      "slug": "rag-knowledge-base",
+      "ar": "قاعدة المعرفة وRAG",
+      "en": "RAG & Knowledge Base",
+      "description": "بناء نظام أسئلة وأجوبة على ملفاتك: التقطيع بحسب البنية لا الطول فقط، والتضمين أو البحث النصي الكامل (FTS5 للعربية)، وإعادة الترتيب، وميزانية السياق، والإجابة بالاقتباس المباشر مع «ليس في المصدر» عند الغياب.",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/rag-knowledge-base/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/rag-knowledge-base/SKILL.md"
+    },
+    {
+      "slug": "red-team-premortem",
+      "ar": "الفريق الأحمر وتشريح ما قبل الفشل",
+      "en": "Red Team & Pre-mortem",
+      "description": "هجوم منظّم على أي خطة أو تصميم أو نص قبل إطلاقه: الاعتراضات القاتلة، والافتراضات الخفية، وسيناريوهات الفشل بعد سنة (pre-mortem)، ونقاط الفشل الوحيدة، وما نجا من الهجوم، مع إصلاح لكل نقطة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/red-team-premortem/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/red-team-premortem/SKILL.md"
+    },
+    {
+      "slug": "reels-shorts-factory",
+      "ar": "مصنع الريلز والشورتس",
+      "en": "Reels & Shorts Factory",
+      "description": "محتوى عمودي قصير بكميات: أفكار من ركيزة المحتوى، وخطّاف في الثانية الأولى، وسكربت 45 ثانية، وترجمة مرئية كبيرة، وتصميم غلاف، وجدول نشر، وقالب أنيميشن عمودي جاهز.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/reels-shorts-factory/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/reels-shorts-factory/SKILL.md"
+    },
+    {
+      "slug": "research-deep-citations",
+      "ar": "البحث العميق بالمصادر",
+      "en": "Deep Research with Citations",
+      "description": "بحث متعدد المصادر على أي موضوع: مصادر أولية بتواريخ، واقتباسات مباشرة، وأدلة متضاربة جنباً إلى جنب، وتصنيف كل ادعاء (مدعوم، متناقض، غير قابل للتحقق)، وملخص تنفيذي بالعربية مع قائمة مراجع.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/research-deep-citations/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/research-deep-citations/SKILL.md"
+    },
+    {
+      "slug": "security-audit-stride",
+      "ar": "التدقيق الأمني STRIDE",
+      "en": "Security Audit (STRIDE)",
+      "description": "مراجعة أمنية دفاعية: نمذجة تهديدات STRIDE، والأسرار المسرّبة، والحقن (SQL، أوامر، XSS)، والمصادقة والجلسات، والتبعيات الضعيفة، والتهيئة، وترويسات الأمان، بدرجات خطورة وأدلة وإصلاحات، للقراءة فقط.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/security-audit-stride/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/security-audit-stride/SKILL.md"
+    },
+    {
+      "slug": "seo-content-architecture",
+      "ar": "SEO وبنية المحتوى",
+      "en": "SEO & Content Architecture",
+      "description": "ظهور في البحث بلا خدع: التدقيق التقني (الزحف، والفهرسة، والسرعة، والجوال)، والبنية (الصفحات الركيزة والعناقيد)، والكلمات بنية البحث، والعناوين والأوصاف، والبيانات المهيكلة JSON-LD المفحوصة، والمحتوى العربي المحسّن.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/seo-content-architecture/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/seo-content-architecture/SKILL.md"
+    },
+    {
+      "slug": "software-architecture-adr",
+      "ar": "هندسة البرمجيات والقرارات المعمارية",
+      "en": "Software Architecture & ADRs",
+      "description": "تصميم أنظمة قبل البناء: الحدود والواجهات ونماذج البيانات، والتوسع وأنماط الفشل، والمفاضلات، وADRs، ومخططات، وخطة تنفيذ مرحلية بمعايير قتل، مبنية على الكود الفعلي لا الافتراضات.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/software-architecture-adr/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/software-architecture-adr/SKILL.md"
+    },
+    {
+      "slug": "sql-data-analysis",
+      "ar": "SQL وتحليل البيانات",
+      "en": "SQL & Data Analysis",
+      "description": "استعلامات SQL صحيحة وسريعة (PostgreSQL، MySQL، SQLite، BigQuery): من السؤال التجاري إلى CTEs واضحة، ودوال النوافذ، والفهارس، وشرح خطة التنفيذ، وتحليل بـ pandas مع كل رقم محسوب بالكود، وتقرير بالعربية.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/sql-data-analysis/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/sql-data-analysis/SKILL.md"
+    },
+    {
+      "slug": "storyboard-shotlist",
+      "ar": "الستوري بورد وقائمة اللقطات",
+      "en": "Storyboard & Shot List",
+      "description": "يحوّل أي فكرة أو سكربت إلى بنية إيقاعية (خطّاف، تمهيد، تصعيد، ذروة، نداء) ثم قائمة لقطات مرقّمة بالأزمنة ونوع اللقطة والحركة والصوت والنص على الشاشة، ولوحات مصغّرة SVG لكل لقطة.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/storyboard-shotlist/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/storyboard-shotlist/SKILL.md"
+    },
+    {
+      "slug": "storytelling-scripts",
+      "ar": "القصص والسكربتات",
+      "en": "Storytelling & Scripts",
+      "description": "قصص وسكربتات بصراع حقيقي: الهدف والدافع والصراع والمخاطر، وأقواس الشخصيات، وبنية الفصول الثلاثة أو الإيقاعات، وحوار طبيعي، لفيديو وبودكاست وكتب وعلامات تجارية، مع فحص بنية القصة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/storytelling-scripts/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/storytelling-scripts/SKILL.md"
+    },
+    {
+      "slug": "strategy-decision-sensitivity",
+      "ar": "الاستراتيجية وحساسية القرار",
+      "en": "Strategy & Decision Sensitivity",
+      "description": "قرارات عالية الأثر بمنهج: الخيارات الحقيقية (بما فيها لا شيء)، والمفاضلات، والآثار من الدرجة الثانية، وحساسية الاختيار لافتراضاته (أي افتراض يقلب القرار)، وخطة مرحلية بمعايير قتل ونقاط مراجعة.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/strategy-decision-sensitivity/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/strategy-decision-sensitivity/SKILL.md"
+    },
+    {
+      "slug": "structured-output-json",
+      "ar": "المخرجات المهيكلة JSON",
+      "en": "Structured Output & JSON",
+      "description": "إخراج قابل للتحليل برمجياً من أي نموذج: مخطط JSON Schema، واختيار آلية الإلزام (وضع JSON الأصلي، أو استدعاء أداة، أو نحو مقيّد، أو نص+محلّل)، ومسار تحليل-تحقق-إصلاح بمحاولات محدودة، وشكل الفشل والرفض و«لا أعرف».",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/structured-output-json/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/structured-output-json/SKILL.md"
+    },
+    {
+      "slug": "svg-illustration-icons",
+      "ar": "الرسوم المتجهة والأيقونات",
+      "en": "SVG Illustration & Icons",
+      "description": "رسوم SVG نظيفة من الكود: أيقونات متناسقة بشبكة 24px، ورسوم مسطّحة للمواقع والعروض، وشخصيات بسيطة، وأنماط خلفية، وتحويلها إلى PNG بأحجام متعددة وإلى favicon كامل.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/svg-illustration-icons/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/svg-illustration-icons/SKILL.md"
+    },
+    {
+      "slug": "system-prompt-architect",
+      "ar": "مهندس برومبتات النظام",
+      "en": "System Prompt Architect",
+      "description": "برومبتات نظام لمساعدين وGPTs مخصصة ومشاريع Claude: الشخصية والحدود والنبرة والأمثلة والرفض اللطيف وذاكرة السياق، مع ميزانية رموز لكل قسم وترتيب يراعي التخزين المؤقت وتأثير «المنتصف المفقود».",
+      "category": "ai-prompts",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/system-prompt-architect/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/system-prompt-architect/SKILL.md"
+    },
+    {
+      "slug": "technical-docs-readme",
+      "ar": "التوثيق التقني وREADME",
+      "en": "Technical Docs & README",
+      "description": "توثيق يُقرأ: README بنموذج (ماذا، لماذا، تثبيت في 3 أوامر، مثال، تهيئة، أسئلة)، وأدلة مستخدم، ومرجع API من الكود، وADRs للقرارات، وسجل تغييرات، وشروحات بالعربية بمصطلحات ثابتة.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/technical-docs-readme/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/technical-docs-readme/SKILL.md"
+    },
+    {
+      "slug": "testing-suite-complete",
+      "ar": "منظومة الاختبارات الكاملة",
+      "en": "Complete Testing Suite",
+      "description": "اختبارات تثبت أن الكود يعمل: وحدة، وتكامل، ونهاية إلى نهاية بـ Playwright، وخصائص، وبيانات اختبار واقعية بحالات حرجة (فارغ، حدود، يونيكود، عدائي)، وتغطية مقاسة، وكشف الاختبارات المتقلبة.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/testing-suite-complete/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/testing-suite-complete/SKILL.md"
+    },
+    {
+      "slug": "thumbnail-social-graphics",
+      "ar": "الصور المصغّرة وتصاميم السوشيال",
+      "en": "Thumbnails & Social Graphics",
+      "description": "صور مصغّرة ليوتيوب ومنشورات وستوريات وأغلفة بقواعد الجذب: وجه أو عنصر واحد كبير، وثلاث كلمات كحد أقصى، وتباين عالٍ، وتصميم بـ HTML/CSS يُصوَّر بدقة عالية، مع نسخ A/B.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/thumbnail-social-graphics/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/thumbnail-social-graphics/SKILL.md"
+    },
+    {
+      "slug": "translation-localization-ar",
+      "ar": "الترجمة والتوطين العربي",
+      "en": "Arabic Translation & Localization",
+      "description": "ترجمة عربي ↔ إنجليزي بمعنى لا بحرف، وتوطين واجهات ومواقع وتطبيقات: مسرد مصطلحات، واتساق، وRTL، وتنسيق الأرقام والتواريخ والعملات، واللهجات، وفحص الطول في الواجهات، وملفات i18n.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/translation-localization-ar/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/translation-localization-ar/SKILL.md"
+    },
+    {
+      "slug": "trend-animation-styles",
+      "ar": "أساليب الأنيميشن الترند",
+      "en": "Trending Animation Styles",
+      "description": "مكتبة الأساليب الرائجة جاهزة للتنفيذ بكلاود: الكينتك تايبوغرافي، وموشن الواجهات الزجاجية، وLo-fi، والـ Paper cut-out، والـ Isometric، والـ Line-art الذي يرسم نفسه، والـ Data-in-motion، والـ Glitch/Neon، وأسلوب الوثائقيات التوضيحية. لكل أسلوب: لوحة ألوان وخط وقواعد حركة ومقتطف كود.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/trend-animation-styles/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/trend-animation-styles/SKILL.md"
+    },
+    {
+      "slug": "typescript-node-pro",
+      "ar": "TypeScript وNode المحترف",
+      "en": "TypeScript & Node Pro",
+      "description": "كود TypeScript صارم لـ Node وBun وDeno: tsconfig صارم، وأنواع من المخطط (zod)، وأخطاء مميّزة، وESM، واختبارات vitest، وESLint، وبناء بـ tsup، وأداء وذاكرة بالقياس.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/typescript-node-pro/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/typescript-node-pro/SKILL.md"
+    },
+    {
+      "slug": "ui-motion-microinteractions",
+      "ar": "موشن الواجهات والتفاعلات الدقيقة",
+      "en": "UI Motion & Microinteractions",
+      "description": "حركة واجهات بمستوى الجوائز: أزرار وقوائم وانتقالات صفحات بفيزياء النوابض، وFramer Motion وGSAP وCSS، وتنسيق الظهور المتدرّج، واحترام prefers-reduced-motion.",
+      "category": "motion-animation",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/ui-motion-microinteractions/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/ui-motion-microinteractions/SKILL.md"
+    },
+    {
+      "slug": "video-editing-captions",
+      "ar": "خطة المونتاج والترجمة",
+      "en": "Edit Plan & Captions",
+      "description": "خطة مونتاج احترافية لأي فيديو: القطع على الإيقاع، والانتقالات بمعنى، وتدرّج الألوان، والصوت على −14 LUFS، وملفات ترجمة SRT/VTT بقواعد القراءة، وأوامر ffmpeg جاهزة للقص والدمج والحرق.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/video-editing-captions/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/video-editing-captions/SKILL.md"
+    },
+    {
+      "slug": "video-prompt-director",
+      "ar": "مخرج برومبتات الفيديو",
+      "en": "Video Prompt Director",
+      "description": "برومبتات فيديو لمنصات Veo وSora وKling وRunway وLuma وPika وHailuo: لقطة بلقطة مع حركة الكاميرا وسرعتها والعدسة والإضاءة وحركة البيئة والمدة ومعدل الإطارات، وإطار مفتاحي أول لثبات الهوية، وخطة تكرار اللقطات الفاشلة.",
+      "category": "image-video-design",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/video-prompt-director/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/video-prompt-director/SKILL.md"
+    },
+    {
+      "slug": "voiceover-tts-direction",
+      "ar": "التعليق الصوتي وإخراج TTS",
+      "en": "Voice-over & TTS Direction",
+      "description": "سكربتات تعليق صوتي بالعامية أو الفصحى جاهزة للتحويل إلى صوت: نطق الأرقام والعملات والتواريخ، والتشكيل حيث يلزم، ووسوم الأداء (توقف، تأكيد، سرعة)، والإيقاع بالكلمات في الثانية، وملاحظات الكاستنغ، وسكربتات الدبلجة بالتوقيتات.",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/voiceover-tts-direction/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/voiceover-tts-direction/SKILL.md"
+    },
+    {
+      "slug": "web-scraping-automation",
+      "ar": "جمع البيانات من الويب",
+      "en": "Web Scraping & Automation",
+      "description": "جمع بيانات عامة من المواقع باحترام الشروط: فحص robots وشروط الاستخدام، وPlaywright أو requests+BeautifulSoup، والترقيم والانتظار اللطيف، والتخزين في CSV/SQLite، وإعادة التشغيل من نقطة التوقف، والتوقف عند تسجيل الدخول وCAPTCHA.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/web-scraping-automation/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/web-scraping-automation/SKILL.md"
+    },
+    {
+      "slug": "website-design-system",
+      "ar": "تصميم المواقع ونظام التصميم",
+      "en": "Website & Design System",
+      "description": "تصميم موقع كامل من الهوية إلى المكوّنات: رموز التصميم (ألوان، ومسافات، وخطوط عربية ولاتينية)، والوضع الداكن، والشبكة، والمكوّنات (أزرار، ونماذج، وبطاقات، وتنقّل)، وRTL أصلي، وصفحات نموذجية، ووثيقة نظام التصميم.",
+      "category": "software-development",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/website-design-system/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/website-design-system/SKILL.md"
+    },
+    {
+      "slug": "word-documents-pro",
+      "ar": "مستندات وورد الاحترافية",
+      "en": "Word Documents Pro",
+      "description": "مستندات Word كاملة التنسيق: أنماط عناوين، وجدول محتويات آلي، وترقيم، وجداول، وترويسات، واتجاه RTL صحيح للعربية مع خطوط مناسبة، وتعقّب التغييرات والتعليقات، وقوالب (تقرير، عقد، خطاب، سيرة) مولّدة بـ python-docx أو docx.js.",
+      "category": "office-data",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/word-documents-pro/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/word-documents-pro/SKILL.md"
+    },
+    {
+      "slug": "youtube-channel-strategy",
+      "ar": "استراتيجية قناة يوتيوب",
+      "en": "YouTube Channel Strategy",
+      "description": "نمو قناة بخطة: التموضع والجمهور، وأفكار بصيغة بحث ومتابعة، وعناوين وصور مصغّرة بنسخ A/B، وبنية الفيديو للاحتفاظ، وSEO الفيديو، وجدول نشر واقعي، وتحليل المقاييس (CTR، والاحتفاظ، والمشاهدة).",
+      "category": "business-learning",
+      "path": ".claude/skills/kosif-superpowers/vendor/100-superskills/skills/youtube-channel-strategy/SKILL.md",
+      "source_url": "https://github.com/kosif199022-jpg/100-superskills/blob/af7a5dc3778c0e68ef935349a5c1650d15688277/skills/youtube-channel-strategy/SKILL.md"
+    }
+  ]
+}
