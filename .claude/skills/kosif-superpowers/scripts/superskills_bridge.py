@@ -24,7 +24,7 @@ def local_path(item):
     return VENDOR / "skills" / item["slug"] / "SKILL.md"
 
 def tokens(s):
-    return set(re.findall(r"[^\\W_]+", s.lower(), re.UNICODE))
+    return set(re.findall(r"[^\W_]+", s.lower(), re.UNICODE))
 
 def rank(query, items, limit):
     q = tokens(query)
