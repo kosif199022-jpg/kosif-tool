@@ -1,4 +1,4 @@
-"""Tests for scripts/skill_loader.py — the light loading map (USIP v5.7)."""
+"""Tests for scripts/skill_loader.py — the light loading map (USIP v5.8)."""
 import io
 import sys
 import unittest
@@ -46,7 +46,7 @@ class SkillLoaderTest(unittest.TestCase):
             self.assertEqual(sl.main(["build", "--check"]), 0)
 
     def test_protocol_and_portables_open_with_full_mode(self):
-        for f in (sl.SKILL / "PROTOCOL.md", sl.REPO / "docs/protocol/USIP_PORTABLE_v5_7.md", sl.SKILL / "USIP_PORTABLE.md"):
+        for f in (sl.SKILL / "PROTOCOL.md", sl.REPO / "docs/protocol/USIP_PORTABLE_v5_8.md", sl.SKILL / "USIP_PORTABLE.md"):
             head = f.read_text(encoding="utf-8")[:1500]
             self.assertIn("وضع التفعيل الكامل", head, f.name)
 

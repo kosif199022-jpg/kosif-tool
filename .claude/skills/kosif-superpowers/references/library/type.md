@@ -38,6 +38,7 @@
 | `anchor-gate` | بوابة حفظ الحقائق عند إعادة الصياغة | `python3 scripts/anchor_gate.py --before proofs/general-writing/pairs/en_before.txt --after proofs/general-writing/pairs/en_after_drift.txt --text` | tested-here |
 | `app-studio` | استوديو التطبيقات للصور والتصميم | `python3 scripts/app_studio.py --help` | tested-here |
 | `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
+| `design-tells` | كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS | `python3 scripts/design_tells.py audit index.html` | tested-here |
 | `font-fidelity-lab` | مختبر مطابقة الخطوط العربية | `python3 scripts/font_fidelity_lab.py inspect proofs/_shared/fonts/Amiri-Regular.ttf --text "جمعة مباركة"` | tested-here |
 | `image-local-ai` | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `mimic` | محرك محاكاة الفيديو المرجعي | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm_analyze; mm_analyze.analyze('./in.mp4','./work')"` | tested-here |

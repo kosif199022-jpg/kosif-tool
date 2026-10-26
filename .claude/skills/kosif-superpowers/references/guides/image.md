@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:image:start -->
 
-**الأدوات / tools (11)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (12)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -23,6 +23,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `image-local-ai` | Runs open image models on this machine with no network: a BiRefNet-style subject matte turned into an RGBA PNG (remove-bg) and MI-GAN-style inpainting of a masked area (inpaint). It lists the three models Mosamem pins (BiRefNet lite MIT, SAM 2.1 tiny Apache-2.0, MI-GAN MIT) with commit-pinned URLs, sizes and SHA-256, and checks a downloaded file against its pin. It never downloads: with no model it prints the URL and asks the user to fetch it. | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `prompt-pack` | Turns a list of prompts or a scene/story spec into PACK.md and pack.json: every English prompt in ONE fenced block (wrapped in dir="ltr" for RTL pages), the Arabic explanation outside it, and a per-engine suffix from data/prompt_engines.json (Midjourney V7 flags marked version-sensitive, generic image negative line, generic video 'No subtitles or on-screen text.'). The lint only warns (contradictions, unseparated subjects, studio/artist/brand names, quality hype, text-in-image, missing negative baseline) and never rewrites a word; credential-like values are refused. It calls no engine. | `python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney` | tested-here |
 | `prompt-forge` | Builds still-image, video, music and voice prompts from one layered spec (subject, action, setting, style, camera, light, constraints) with no brand names; lints a prompt for hype words, vague adjectives, contradictions, negative-only phrasing, missing subject or camera and length in Arabic and English; splits a target duration into per-shot video prompts whose frame counts sum exactly to total x fps. | `python3 scripts/prompt_forge.py forge /tmp/spec.json --targets still-image,video,music,voice` | tested-here |
+| `design-tells` | Scans HTML and CSS (inline, <style>, linked local sheets, CSS variables resolved) with 19 fixed rules: one generic sans for everything, purple-to-blue gradients, gradient heading text, cards nested in cards, grey text on colour, WCAG contrast below 4.5:1, an icon tile above every heading, emoji bullets, everything centred, one radius everywhere, heavy shadows, repeated glass blur, stock hype copy, placeholder images, Arabic text with a Latin-only font or without RTL, fade-in on everything, too many accent hues and no reduced-motion rule. Scores out of 100 with a fix per hit; exit 3 = REVISE. | `python3 scripts/design_tells.py audit index.html` | tested-here |
 
 <!-- hub:area:image:end -->
 
@@ -49,3 +50,16 @@ When asked to **match, imitate, identify or create typography** (including Arabi
 When a request names a style or asks which style fits, run `find` (Arabic or English words), then `describe` for the card (look, logic, palette, texture, composition) and `prompt --subject "…"` for a filled recipe, optionally with `--mix <id>` for a 30% accent. `catalog --out <new dir> --pdf <file>` builds the illustrated A4 catalog (`--split-groups` adds one PDF per group); it needs node with Playwright Chromium, and without them the HTML catalog with SVG swatches still works.
 
 What to say when handing a style over: the swatches are procedural sketches of palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a film. A finished frame comes from an image tool the user chooses (ask before any paid generator) or from the motion engines with the card as the art brief. Source data: `data/style_library_500.json` (KS styles, groups and the swatch settings and Arabic names of the 86 FA methods) and `data/futurepedia_style_atlas_86.json`.
+
+## توليد الصور عبر Higgsfield — calling the Higgsfield MCP correctly
+
+`mcp__Higgsfield__generate_image` (and `generate_video`, `generate_audio`, the `*_batch` tools) take two top-level fields: `params`, a JSON **object**, and `context`, one short sentence outside it. Everything about the generation (`model`, `prompt`, `aspect_ratio`, `count`, `use_unlim`, `medias`, `folder_id`) goes inside `params`.
+
+```json
+{"params": {"model": "gpt_image_2_5", "aspect_ratio": "9:16", "count": 2, "prompt": "Photorealistic cinematic night photograph, vertical 9:16. Two people on swings seen from behind, city lights far below, no text, no watermark.", "use_unlim": false}, "context": "Photoreal base plate for a lyric short."}
+```
+
+- Write the prompt as one line: no newlines, no `"` inside it (use `'` or rephrase), no lone `\`, no smart quotes. Keep it under about 1,500 characters.
+- Do not stringify `params`, and count the braces: the failure seen on 25-10-2026 ended with an extra `}` after `context`.
+- `InputValidationError ... could not be parsed as JSON` means the call never left Claude Code, so no credits were used. Rebuild it from scratch and send once; if it fails again, shorten the prompt, drop `context`, try one last time, then report. Full ladder: [A29](../protocol/A29-failure-recovery.md#خطأ-مدخلات-أداة-mcp-json-لا-يقرأ).
+

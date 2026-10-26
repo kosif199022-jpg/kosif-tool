@@ -39,6 +39,7 @@
 | `browser-scout` | مستكشف المواقع بالمتصفح | `python3 scripts/browser_scout.py doctor` | tested-here |
 | `capability-graph` | باني خريطة القدرات المترابطة | `python3 scripts/capability_graph.py build` | tested-here |
 | `creative-external-search` | بحث المصادر الإبداعية دون اتصال | `python3 scripts/creative_external_search.py search "kinetic typography" --kind repo --top 5` | tested-here |
+| `github-pulse` | نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | tested-here |
 | `github-top-repos` | متابعة أشهر 1000 مستودع | `python3 scripts/github_top_repos.py build` | tested-here |
 | `instagram-reference-discovery` | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |

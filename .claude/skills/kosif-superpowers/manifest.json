@@ -18,8 +18,8 @@
   "powers": 5853,
   "families": 62,
   "domains": 10,
-  "tools": 180,
-  "guides": 115,
+  "tools": 185,
+  "guides": 116,
   "statuses": {
    "documented": 2325,
    "idea": 71,
@@ -17032,6 +17032,514 @@
    "evidence_note": "10/10 passed here (tests/test_script_storyboard.py, both render tests with real ffmpeg). Scratch run on a 53-page Arabic play PDF: 8 scenes, 505 shots, 33 characters, 3 duplicate-spelling warnings, 25 episodes all under 90 s; episode 1 rendered against a 4 s AAC track gave exactly 120 frames at 30 fps with the audio stream-copied."
   },
   {
+   "id": "thinking-books",
+   "path": "scripts/thinking_books.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Thinking-books library: 64 methods from 40 famous books on how to think, routed to USIP phases",
+   "title_ar": "مكتبة كتب التفكير: 64 منهجًا من 40 كتابًا مشهورًا في طرق التفكير مربوطة بمراحل البروتوكول",
+   "summary_en": "Holds 64 methods restated in our own words from 40 widely known books on thinking (Kahneman, Tetlock, Pólya, de Bono, Meadows, Taleb, Minto, Klein, Rumelt, Galef, Sagan, Ibn Khaldun, Ibn al-Haytham, al-Ghazali and more), each with a stage, Arabic/English triggers, steps, a proof-of-use check and the trap it prevents. route ranks the best methods for a task from different books; stack picks one per stage mapped to USIP phases (adding the reuse-first ladder for code); debias sweeps a draft report for certainty without odds, a single option, no risks, numbers without a base rate, no sources, sunk cost and answer-last; plus Six Hats prompts, a TRIZ contradiction helper over the 40 principles, an outside-view forecast with capped adjustments and a Brier score.",
+   "summary_ar": "64 منهجًا بكلماتنا من 40 كتابًا في التفكير، لكل منهج مرحلة ومحفزات وخطوات ودليل تطبيق وفخ. route يختار الأنسب لمهمة، وstack منهجًا لكل مرحلة، وdebias يفحص التقرير للتحيزات، مع القبعات الست وتريز والتنبؤ بالنظرة الخارجية ودرجة براير.",
+   "use_when": [
+    "فكّر صح في القرار ده واستخدم مناهج الكتب",
+    "افحص التقرير ده من التحيزات قبل ما أبعته",
+    "قدّر مدة المشروع بالنظرة الخارجية",
+    "عايز أفكار لحل تعارض بين السرعة والجودة",
+    "Which thinking method fits this decision?"
+   ],
+   "keywords": [
+    "thinking",
+    "books",
+    "kahneman",
+    "tetlock",
+    "polya",
+    "de bono",
+    "six hats",
+    "triz",
+    "premortem",
+    "bias",
+    "debias",
+    "forecast",
+    "brier",
+    "base rate",
+    "mental models",
+    "كتب التفكير",
+    "تفكير",
+    "تحيز",
+    "قبعات",
+    "تريز",
+    "تنبؤ",
+    "قرار",
+    "منهج"
+   ],
+   "commands": [
+    {
+     "name": "stack",
+     "example": "python3 scripts/thinking_books.py stack \"عايز أطلق تطبيق جديد\"",
+     "does": "One method per stage mapped to USIP phases."
+    },
+    {
+     "name": "route",
+     "example": "python3 scripts/thinking_books.py route \"قدّر مدة المشروع\" -n 5",
+     "does": "Best methods for a task from different books."
+    },
+    {
+     "name": "debias",
+     "example": "python3 scripts/thinking_books.py debias report.md",
+     "does": "Bias sweep of a draft; exit 3 = REVISE."
+    },
+    {
+     "name": "triz",
+     "example": "python3 scripts/thinking_books.py triz --improve speed --worsen quality",
+     "does": "Contradiction to inventive principles."
+    },
+    {
+     "name": "forecast",
+     "example": "python3 scripts/thinking_books.py forecast --base 0.3 --adjust \"+0.1:strong team\"",
+     "does": "Outside view first, capped inside-view adjustments."
+    }
+   ],
+   "inputs": "data/thinking_books.json; a task in words or a draft report file",
+   "outputs": "text or JSON to stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Reads only the data file and the given draft; prints to stdout.",
+   "limits": "Methods are summaries written from public knowledge of the books, not the books; routing and debias are keyword heuristics; a scaffold is not proof that the thinking was done.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md"
+   ],
+   "families": [
+    "thinking-core",
+    "mental-models",
+    "planning-execution",
+    "creativity-engine"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_v58_mastery.py and --self-test passed on this checkout on 2026-10-26 (40 books, 64 methods)."
+  },
+  {
+   "id": "llm-council",
+   "path": "scripts/llm_council.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "think",
+   "title_en": "Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict",
+   "title_ar": "مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد",
+   "summary_en": "Runs USIP v5.8's mandatory council (A38 §7) without calling a model. gate sets the depth for every L1+ request (LIGHT at L1, STANDARD at L2, FULL at L3 or for money, publishing, personal data, architecture or irreversible steps, or on request) and never skips; frame derives the decision from the brief's plans A/B/C, gives at most four context files and splits inputs into evidence and named unknowns (REA's pattern), and gives the Outsider no context; ingest rejects an advisor answer with no evidence and no named unknown and records the plan it backs; review catches duplicate voices (word-set Jaccard > 0.6), detects a 4-of-5 consensus and writes anonymised reviewer prompts with a shuffled, per-question letter map; chair de-anonymises; verdict checks the five headings, a plan letter, no hedging and one first step, and records CHANGED or NO_DELTA against the brief; stats measures depth mix, receipts and how often the council changed the plan.",
+   "summary_ar": "ينفذ مجلس الخمسة الإلزامي بلا نداء نموذج: gate يحدد العمق لكل طلب L1+ ولا يتخطاه، وframe يشتق القرار من الخطط ويقسم المدخلات إلى أدلة ومجهولات والغريب بلا سياق، وreview يكشف الأصوات المكررة والإجماع ويخفي الأسماء، وverdict يفحص العناوين الخمسة وحرف الخطة والخطوة الواحدة ويسجل هل غيّر الحكم الخطة، وstats يقيس نفع المجلس.",
+   "use_when": [
+    "اعرض القرار ده على المجلس",
+    "council this",
+    "مجلس كامل على الخطة دي",
+    "pressure-test this decision",
+    "أي خطة أحسن: A ولا B ولا C؟"
+   ],
+   "keywords": [
+    "council",
+    "llm council",
+    "karpathy",
+    "advisors",
+    "peer review",
+    "anonymous",
+    "chairman",
+    "verdict",
+    "contrarian",
+    "first principles",
+    "expansionist",
+    "outsider",
+    "executor",
+    "مجلس",
+    "مجلس الخمسة",
+    "مستشارين",
+    "مراجعة",
+    "حكم",
+    "الرئيس",
+    "معارض"
+   ],
+   "commands": [
+    {
+     "name": "gate",
+     "example": "python3 scripts/llm_council.py gate --level L2 --from-brief out/<work>/brief.json",
+     "does": "Depth and reason for this request (never skips L1+)."
+    },
+    {
+     "name": "frame",
+     "example": "python3 scripts/llm_council.py frame \"<question>\" --dir out/<work>/council5 --from-brief out/<work>/brief.json --unknowns \"budget\"",
+     "does": "Derived question, evidence/unknowns, five advisor prompts."
+    },
+    {
+     "name": "review",
+     "example": "python3 scripts/llm_council.py review --dir out/<work>/council5",
+     "does": "Duplicate-voice and consensus checks, anonymised reviewer prompts."
+    },
+    {
+     "name": "verdict",
+     "example": "python3 scripts/llm_council.py verdict --dir out/<work>/council5 --file verdict.md",
+     "does": "Checks the verdict and writes the receipt with CHANGED/NO_DELTA; exit 3 = fix."
+    },
+    {
+     "name": "stats",
+     "example": "python3 scripts/llm_council.py stats --root out",
+     "does": "How often the council changed the plan, by depth and receipt."
+    }
+   ],
+   "inputs": "a question, optionally brief.json, advisor/reviewer/verdict text files",
+   "outputs": "council5.json, prompts/*.txt, VERDICT.md and a JSON receipt",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Writes only inside the given --dir; never calls a model or the network.",
+   "limits": "The voices are thinking styles run by Claude, not different models; LIGHT and SIMULATED receipts are not a run of agents. The checks test form and grounding words, not the quality of the reasoning; the user's explicit plan choice outranks the verdict.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md",
+    "docs/protocol/council-20261026-smart-council.md"
+   ],
+   "families": [
+    "thinking-core",
+    "mental-models",
+    "planning-execution"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "--self-test and evals/test_v58_mastery.py passed on 2026-10-26; the first real run (five advisor and five reviewer subagents, COUNCIL5_RUN) is in docs/protocol/council-20261026-smart-council.md."
+  },
+  {
+   "id": "superskills-bridge",
+   "path": "scripts/superskills_bridge.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "100 Super Skills bridge: read-only index lookup",
+   "title_ar": "جسر المهارات الخارقة: بحث للقراءة فقط في فهرس الـ114 مهارة",
+   "summary_en": "Read-only lookup over data/100-superskills-index.json (the 114-skill index added with PR #153): doctor reports how many SKILL.md files are present, list, find, show and path print entries with their category and vendored path. skill_loader.py need uses the same index. For ranking, install, hash checks and the skills' own tests use superskills.",
+   "summary_ar": "بحث للقراءة فقط في data/100-superskills-index.json (فهرس الـ114 مهارة اللي اتضاف في PR #153): doctor يقول كام ملف SKILL.md موجود، وlist وfind وshow وpath يطبعوا المهارة وتصنيفها ومسارها. skill_loader.py need بيستخدم نفس الفهرس. للترتيب والتثبيت وفحص البصمات واختبارات المهارات استخدم superskills.",
+   "use_when": [
+    "هل ملفات الـ114 مهارة موجودة؟",
+    "فين مسار مهارة kosif-mimic؟",
+    "Is every super skill file present in this checkout?"
+   ],
+   "keywords": [
+    "superskills bridge",
+    "100-superskills index",
+    "doctor",
+    "skill path",
+    "فهرس المهارات الخارقة"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/superskills_bridge.py doctor",
+     "does": "Counts the catalogued skills and the SKILL.md files present under vendor/100-superskills."
+    },
+    {
+     "name": "find",
+     "example": "python3 scripts/superskills_bridge.py find \"excel\"",
+     "does": "Token match over slug, Arabic and English names and description."
+    },
+    {
+     "name": "path",
+     "example": "python3 scripts/superskills_bridge.py path kosif-mimic",
+     "does": "Prints the vendored SKILL.md path of one skill."
+    }
+   ],
+   "safe_commands": [
+    "doctor",
+    "list",
+    "find",
+    "show",
+    "path"
+   ],
+   "inputs": "A query or a skill slug.",
+   "outputs": "Text or JSON (--json) on stdout.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Reads the index and checks file presence only.",
+   "limits": "Plain token overlap, no Arabic prefix handling; it does not install, verify hashes or run anything.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_superskills.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/100-superskills-integration.md"
+   ],
+   "families": [
+    "self-discovery"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "doctor on 2026-10-26 in this checkout: 114 catalogued, 114 SKILL.md files present (vendored copy); evals/test_superskills.py covers the shared vendor folder."
+  },
+  {
+   "id": "github-pulse",
+   "path": "scripts/github_pulse.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken",
+   "title_ar": "نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها",
+   "summary_en": "Ranks repositories by distinct people active in a 30-day window (GH Archive hourly events) plus total stars (deps.dev), keeps only those pushed or released in the window, classifies them into 14 domains with a minimum share for creative ones, labels licence classes, keeps cheats, cracks and bot-detection bypasses out, and records 24 ideas restated in our own words with where each now lives. build writes data/github_pulse.json and references/github-pulse-30d.md; top, find, show and ideas query it; collect, enrich and select refresh it into a work folder (network, curl).",
+   "summary_ar": "يرتب المستودعات بعدد الناس النشطين في 30 يومًا من أرشيف أحداث GitHub وبالنجوم الكلية، ويصنفها في 14 مجالًا، ويستبعد غير الآمن، ويسجل 24 فكرة منقولة ومكانها. التحديث بثلاثة أوامر شبكية في مجلد عمل.",
+   "use_when": [
+    "إيه أهم المستودعات اللي اتحدثت في آخر شهر في التصميم والموشن؟",
+    "هات أحدث أفكار GitHub ونستفيد منها",
+    "What is trending on GitHub this month for agents?",
+    "Refresh the 30-day GitHub list"
+   ],
+   "keywords": [
+    "github",
+    "trending",
+    "pulse",
+    "30 days",
+    "last month",
+    "repositories",
+    "gh archive",
+    "deps.dev",
+    "open source",
+    "مستودعات",
+    "جيت هاب",
+    "آخر 30 يوم",
+    "ترند",
+    "أحدث"
+   ],
+   "commands": [
+    {
+     "name": "top",
+     "example": "python3 scripts/github_pulse.py top --domain design-ui -n 15",
+     "does": "Leaders of a domain."
+    },
+    {
+     "name": "ideas",
+     "example": "python3 scripts/github_pulse.py ideas --status transferred",
+     "does": "Ideas taken and where they live."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/github_pulse.py show heygen-com/hyperframes",
+     "does": "One repository with its decision and ideas."
+    },
+    {
+     "name": "build",
+     "example": "python3 scripts/github_pulse.py build --check",
+     "does": "Rebuild or check the tracker and report."
+    },
+    {
+     "name": "collect",
+     "example": "python3 scripts/github_pulse.py collect --work /tmp/pulse --end 2026-10-26 --days 30",
+     "does": "Network: aggregate GH Archive hours into the work folder."
+    }
+   ],
+   "safe_commands": [
+    "build",
+    "stats",
+    "top",
+    "find",
+    "show",
+    "ideas"
+   ],
+   "inputs": "data/github_pulse_snapshot.json and data/github_pulse_review.json; for a refresh, a work folder",
+   "outputs": "data/github_pulse.json, references/github-pulse-30d.md; text or JSON",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "curl"
+    ],
+    "node": [],
+    "optional": [],
+    "network": true
+   },
+   "safety": "writes-files",
+   "consent": "Query commands are read-only; build writes the tracker and report; collect/enrich/select download public archives into --work only and refuse to overwrite the committed snapshot.",
+   "limits": "GH Archive captures far fewer events since 2026, so 30-day counts are a sample good for ranking; repositories deps.dev has not indexed show no total stars; domains are keyword rules fixed by hand in the review file.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md",
+    ".claude/skills/kosif-superpowers/references/github-pulse-30d.md"
+   ],
+   "families": [
+    "web-research",
+    "self-discovery"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "Snapshot built on 2026-10-26 from 720 GH Archive hours (2,991,245 active repositories, 2,451 candidates enriched); --self-test and evals/test_v58_mastery.py passed."
+  },
+  {
+   "id": "design-tells",
+   "path": "scripts/design_tells.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "image",
+   "title_en": "Design tells: deterministic audit of HTML/CSS for the look every AI-generated page shares",
+   "title_ar": "كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS",
+   "summary_en": "Scans HTML and CSS (inline, <style>, linked local sheets, CSS variables resolved) with 19 fixed rules: one generic sans for everything, purple-to-blue gradients, gradient heading text, cards nested in cards, grey text on colour, WCAG contrast below 4.5:1, an icon tile above every heading, emoji bullets, everything centred, one radius everywhere, heavy shadows, repeated glass blur, stock hype copy, placeholder images, Arabic text with a Latin-only font or without RTL, fade-in on everything, too many accent hues and no reduced-motion rule. Scores out of 100 with a fix per hit; exit 3 = REVISE.",
+   "summary_ar": "يفحص HTML وCSS بـ19 قاعدة (خط عام واحد، تدرج بنفسجي أزرق، بطاقات داخل بطاقات، تباين ضعيف، إيموجي، كل شيء في المنتصف، عبارات تسويقية جاهزة، عربي بلا خط عربي أو بلا RTL…) ويعطي درجة من 100 وإصلاحًا لكل علامة.",
+   "use_when": [
+    "افحص الصفحة دي هل شكلها معمول بالذكاء الاصطناعي",
+    "راجع تصميم الموقع قبل التسليم",
+    "Audit this landing page for AI-slop design",
+    "Is this Arabic page RTL with an Arabic font?"
+   ],
+   "keywords": [
+    "design",
+    "ai slop",
+    "landing page",
+    "html",
+    "css",
+    "contrast",
+    "wcag",
+    "rtl",
+    "arabic font",
+    "gradient",
+    "ui audit",
+    "تصميم",
+    "صفحة",
+    "موقع",
+    "تباين",
+    "خط عربي",
+    "واجهة"
+   ],
+   "commands": [
+    {
+     "name": "audit",
+     "example": "python3 scripts/design_tells.py audit index.html",
+     "does": "Score and fixes; exit 3 = REVISE."
+    },
+    {
+     "name": "rules",
+     "example": "python3 scripts/design_tells.py rules",
+     "does": "The rule table."
+    }
+   ],
+   "inputs": "HTML/CSS files or folders",
+   "outputs": "text or JSON report to stdout",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Reads only the given files; never edits them.",
+   "limits": "Pattern rules find candidates and can be wrong; layout, imagery and taste still need a browser look at phone and desktop width.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md"
+   ],
+   "families": [
+    "ui-product-device",
+    "qa-verification",
+    "typography-arabic"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "--self-test and evals/test_v58_mastery.py passed on 2026-10-26; run on the repo's index.html (score 96, one hit)."
+  },
+  {
+   "id": "video-eyes",
+   "path": "scripts/video_eyes.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Video eyes: contact strip, onion skin, motion-energy timeline with frozen-stretch detection, and per-second loudness",
+   "title_ar": "عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية",
+   "summary_en": "Turns a render into evidence a text model can read: a tiled strip of evenly spaced frames, an onion-skin blend that shows path and easing, a per-second motion-energy timeline that flags frozen stretches and hard cuts (a 'motion graphic' that is really a slide), and integrated loudness, true peak, silences and per-window momentary loudness. report writes all of it plus REPORT.md; exit 3 = REVIEW.",
+   "summary_ar": "يحوّل الفيديو لأدلة يقرأها النموذج: شريط إطارات، صورة طبقات للحركة، طاقة الحركة لكل ثانية مع كشف التجميد والقطعات، وارتفاع الصوت والذروة والصمت.",
+   "use_when": [
+    "اتأكد إن الفيديو مفيهوش أجزاء واقفة قبل التسليم",
+    "وريني الفيديو كإطارات",
+    "Check the render for frozen stretches and clipping",
+    "Show the easing of this movement"
+   ],
+   "keywords": [
+    "video",
+    "render",
+    "qa",
+    "contact sheet",
+    "onion skin",
+    "motion energy",
+    "frozen",
+    "static",
+    "loudness",
+    "lufs",
+    "true peak",
+    "فيديو",
+    "رندر",
+    "إطارات",
+    "تجميد",
+    "صوت",
+    "فحص"
+   ],
+   "commands": [
+    {
+     "name": "report",
+     "example": "python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes",
+     "does": "Strip, onion, motion, audio and REPORT.md; exit 3 = REVIEW."
+    },
+    {
+     "name": "motion",
+     "example": "python3 scripts/video_eyes.py motion film.mp4 --freeze 1.5",
+     "does": "Energy per second, frozen stretches, cuts."
+    },
+    {
+     "name": "strip",
+     "example": "python3 scripts/video_eyes.py strip film.mp4 --out strip.png",
+     "does": "Evenly spaced frames in one image."
+    }
+   ],
+   "inputs": "a video file",
+   "outputs": "PNG images, report.json and REPORT.md in --out; text or JSON",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Reads the video and writes only into the --out folder or the given image path.",
+   "limits": "Numbers say where to look, not whether a held frame is intended; a person still watches the film. Complements tools/verify_video.py (format, fps, audio preservation).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md"
+   ],
+   "families": [
+    "qa-verification",
+    "photo-video-footage",
+    "audio-sync-captions"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "--self-test (synthetic clip: frozen 2 s and silence found) and a run on the project's cinema-lab reel (true peak +1.9 dBTP flagged) on 2026-10-26."
+  },
+  {
    "id": "superskills",
    "path": "scripts/superskills.py",
    "root": "skill",
@@ -17138,76 +17646,6 @@
    ],
    "evidence": "tested-here",
    "evidence_note": "On 2026-10-26 in this checkout: verify 682/682 files match; selftest passed all six test folders of the four skills that ship tests (215 tests: pixel-studio-painter 43, kosif-montage-motion 8+112+31, kosif-one 10, kosif-social 11) after the recorded KOSIF patches (the six key-click WAVs are stored as lossless FLAC; montage tests pass apart from the opencv-version-dependent face detector test); 115 of 129 vendored Python scripts answer --help (the rest need an input file, playwright, matplotlib, or are scene modules); evals/test_superskills.py passed."
-  },
-  {
-   "id": "superskills-bridge",
-   "path": "scripts/superskills_bridge.py",
-   "root": "skill",
-   "kind": "cli",
-   "area": "discover",
-   "title_en": "100 Super Skills bridge: read-only index lookup",
-   "title_ar": "جسر المهارات الخارقة: بحث للقراءة فقط في فهرس الـ114 مهارة",
-   "summary_en": "Read-only lookup over data/100-superskills-index.json (the 114-skill index added with PR #153): doctor reports how many SKILL.md files are present, list, find, show and path print entries with their category and vendored path. skill_loader.py need uses the same index. For ranking, install, hash checks and the skills' own tests use superskills.",
-   "summary_ar": "بحث للقراءة فقط في data/100-superskills-index.json (فهرس الـ114 مهارة اللي اتضاف في PR #153): doctor يقول كام ملف SKILL.md موجود، وlist وfind وshow وpath يطبعوا المهارة وتصنيفها ومسارها. skill_loader.py need بيستخدم نفس الفهرس. للترتيب والتثبيت وفحص البصمات واختبارات المهارات استخدم superskills.",
-   "use_when": [
-    "هل ملفات الـ114 مهارة موجودة؟",
-    "فين مسار مهارة kosif-mimic؟",
-    "Is every super skill file present in this checkout?"
-   ],
-   "keywords": [
-    "superskills bridge",
-    "100-superskills index",
-    "doctor",
-    "skill path",
-    "فهرس المهارات الخارقة"
-   ],
-   "commands": [
-    {
-     "name": "doctor",
-     "example": "python3 scripts/superskills_bridge.py doctor",
-     "does": "Counts the catalogued skills and the SKILL.md files present under vendor/100-superskills."
-    },
-    {
-     "name": "find",
-     "example": "python3 scripts/superskills_bridge.py find \"excel\"",
-     "does": "Token match over slug, Arabic and English names and description."
-    },
-    {
-     "name": "path",
-     "example": "python3 scripts/superskills_bridge.py path kosif-mimic",
-     "does": "Prints the vendored SKILL.md path of one skill."
-    }
-   ],
-   "safe_commands": [
-    "doctor",
-    "list",
-    "find",
-    "show",
-    "path"
-   ],
-   "inputs": "A query or a skill slug.",
-   "outputs": "Text or JSON (--json) on stdout.",
-   "requires": {
-    "python": [],
-    "binaries": [],
-    "node": [],
-    "optional": [],
-    "network": false
-   },
-   "safety": "read-only",
-   "consent": "Reads the index and checks file presence only.",
-   "limits": "Plain token overlap, no Arabic prefix handling; it does not install, verify hashes or run anything.",
-   "tests": [
-    ".claude/skills/kosif-superpowers/evals/test_superskills.py"
-   ],
-   "docs": [
-    ".claude/skills/kosif-superpowers/references/100-superskills-integration.md"
-   ],
-   "families": [
-    "self-discovery"
-   ],
-   "evidence": "tested-here",
-   "evidence_note": "doctor on 2026-10-26 in this checkout: 114 catalogued, 114 SKILL.md files present (vendored copy); evals/test_superskills.py covers the shared vendor folder."
   }
  ],
  "guides": [
@@ -17581,6 +18019,12 @@
    "path": "references/fullbody-character-motion.md",
    "title": "fullbody-character-motion",
    "area": "draw",
+   "summary": ""
+  },
+  {
+   "path": "references/github-pulse-30d.md",
+   "title": "نبض GitHub في آخر 30 يومًا — GitHub 30-day pulse",
+   "area": "sources",
    "summary": ""
   },
   {

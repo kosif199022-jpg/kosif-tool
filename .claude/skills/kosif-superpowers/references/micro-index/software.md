@@ -648,7 +648,7 @@ chapter: [code-engineering](../powers/code-engineering.md) · card: `usip-librar
 
 ## ui-product-device (motion)
 
-chapter: [ui-product-device](../powers/ui-product-device.md) · card: `usip-library/cards/software/ui-product-device.md` · tools: `ui-beat`
+chapter: [ui-product-device](../powers/ui-product-device.md) · card: `usip-library/cards/software/ui-product-device.md` · tools: `design-tells` · `ui-beat`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
