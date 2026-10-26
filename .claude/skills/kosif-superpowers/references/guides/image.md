@@ -50,3 +50,16 @@ When asked to **match, imitate, identify or create typography** (including Arabi
 When a request names a style or asks which style fits, run `find` (Arabic or English words), then `describe` for the card (look, logic, palette, texture, composition) and `prompt --subject "…"` for a filled recipe, optionally with `--mix <id>` for a 30% accent. `catalog --out <new dir> --pdf <file>` builds the illustrated A4 catalog (`--split-groups` adds one PDF per group); it needs node with Playwright Chromium, and without them the HTML catalog with SVG swatches still works.
 
 What to say when handing a style over: the swatches are procedural sketches of palette, texture and composition, not finished artwork; the 500 KS styles are original descriptions written for this library and have not each been produced as a film. A finished frame comes from an image tool the user chooses (ask before any paid generator) or from the motion engines with the card as the art brief. Source data: `data/style_library_500.json` (KS styles, groups and the swatch settings and Arabic names of the 86 FA methods) and `data/futurepedia_style_atlas_86.json`.
+
+## توليد الصور عبر Higgsfield — calling the Higgsfield MCP correctly
+
+`mcp__Higgsfield__generate_image` (and `generate_video`, `generate_audio`, the `*_batch` tools) take two top-level fields: `params`, a JSON **object**, and `context`, one short sentence outside it. Everything about the generation (`model`, `prompt`, `aspect_ratio`, `count`, `use_unlim`, `medias`, `folder_id`) goes inside `params`.
+
+```json
+{"params": {"model": "gpt_image_2_5", "aspect_ratio": "9:16", "count": 2, "prompt": "Photorealistic cinematic night photograph, vertical 9:16. Two people on swings seen from behind, city lights far below, no text, no watermark.", "use_unlim": false}, "context": "Photoreal base plate for a lyric short."}
+```
+
+- Write the prompt as one line: no newlines, no `"` inside it (use `'` or rephrase), no lone `\`, no smart quotes. Keep it under about 1,500 characters.
+- Do not stringify `params`, and count the braces: the failure seen on 25-10-2026 ended with an extra `}` after `context`.
+- `InputValidationError ... could not be parsed as JSON` means the call never left Claude Code, so no credits were used. Rebuild it from scratch and send once; if it fails again, shorten the prompt, drop `context`, try one last time, then report. Full ladder: [A29](../protocol/A29-failure-recovery.md#خطأ-مدخلات-أداة-mcp-json-لا-يقرأ).
+
