@@ -4616,6 +4616,86 @@
       "power_id": "TOOL-86"
     },
     {
+      "id": "repo-transcribe-audio",
+      "path": "tools/transcribe_audio.py",
+      "root": "repo",
+      "kind": "cli",
+      "area": "audio",
+      "title_en": "Gemini audio transcription with readable errors",
+      "title_ar": "تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة",
+      "summary_en": "Transcribes an audio file with Gemini generateContent (inline under ~14 MB, Files API above). On failure it prints Google's own error message with a fix hint (invalid key, no access, missing model, quota, size), retries 429/5xx, tries the next model, and with --engine auto falls back to local faster-whisper. --check tests the key without audio.",
+      "summary_ar": "يفرّغ ملفًا صوتيًا عبر Gemini generateContent (داخل الطلب حتى نحو 14 ميجابايت، وعبر Files API لما هو أكبر). عند الفشل يطبع رسالة جوجل نفسها مع تلميح للحل (مفتاح غير صالح، لا صلاحية، نموذج غير موجود، حصة، حجم)، ويعيد المحاولة مع 429 و5xx، ويجرّب النموذج التالي، ومع --engine auto يرجع إلى faster-whisper محليًا. ويختبر --check المفتاح دون صوت.",
+      "use_when": [
+        "Transcribe this test voice clip to verify the content",
+        "My Gemini transcription failed with HTTP error, why?",
+        "فرّغ ملف الصوت ده واتأكد إن الكلام صح",
+        "اختبر مفتاح Gemini قبل التفريغ"
+      ],
+      "keywords": [
+        "transcribe",
+        "transcription",
+        "speech to text",
+        "Gemini",
+        "GEMINI_API_KEY",
+        "generateContent",
+        "HTTPError",
+        "faster-whisper",
+        "verify voice",
+        "تفريغ الصوت",
+        "تحويل الكلام لنص",
+        "مفتاح Gemini",
+        "التحقق من التعليق الصوتي"
+      ],
+      "commands": [
+        {
+          "name": "transcribe",
+          "example": "python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript.json",
+          "does": "Sends the audio to Gemini (models tried in order), prints the text and writes {engine, model, text}; exit 0 ok, 1 every engine failed, 2 bad input."
+        },
+        {
+          "name": "whisper only",
+          "example": "python3 tools/transcribe_audio.py ./voice.wav --engine whisper --language ar",
+          "does": "Transcribes locally with faster-whisper (small, int8, CPU); no key or network."
+        },
+        {
+          "name": "check",
+          "example": "python3 tools/transcribe_audio.py --check",
+          "does": "Reads the model record with the key and prints ok or Google's error with a hint; sends no audio."
+        }
+      ],
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [
+          "faster-whisper"
+        ],
+        "network": true
+      },
+      "safety": "network",
+      "consent": "Uploads the audio file to Google's Gemini API using the GEMINI_API_KEY in the environment (paid usage may apply); use --engine whisper to keep the audio local.",
+      "limits": "Needs a valid GEMINI_API_KEY for the Gemini path; the whisper fallback needs faster-whisper installed and gives text only (no dialect or speaker notes). It does not return word timestamps.",
+      "tests": [
+        "tests/test_transcribe_audio.py"
+      ],
+      "docs": [
+        "CLAUDE.md"
+      ],
+      "families": [
+        "voice-tts",
+        "audio-sync-captions"
+      ],
+      "evidence": "tested-here",
+      "evidence_note": "tests.test_transcribe_audio 9/9 passed (mocked HTTP: bad key, 404 model fallback, 429 retry, 413 on the last attempt switching to the Files API, Files API poll timeout, header and inline payload, blocked answer, missing key, missing file). Live against generativelanguage.googleapis.com with a dummy key: printed HTTP 400 API_KEY_INVALID with the fix hint and exited 1.",
+      "inputs": "An audio file (wav, mp3, m4a, flac, ogg, aiff, webm), optional --prompt, --model (repeatable), --engine auto|gemini|whisper, --language, --json.",
+      "outputs": "The transcript on stdout, status and errors on stderr, and an optional JSON file {engine, model, text}.",
+      "safe_commands": [
+        "check"
+      ]
+    },
+    {
       "id": "character-fullbody",
       "path": "scripts/character_fullbody.py",
       "root": "skill",

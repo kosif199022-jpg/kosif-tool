@@ -125,11 +125,14 @@ def upload_file(path: Path, key: str, mime: str) -> str:
                              "X-Goog-Upload-Command": "upload, finalize"}, timeout=600)
     info = json.load(done).get("file", {})
     name, uri = info.get("name"), info.get("uri")
-    for _ in range(30):  # audio is usually ACTIVE at once; poll briefly if not
-        if info.get("state") in (None, "ACTIVE"):
+    for polls in range(31):  # audio is usually ACTIVE at once; poll up to ~60 s if not
+        state = info.get("state")
+        if state in (None, "ACTIVE"):
             break
-        if info.get("state") == "FAILED":
+        if state == "FAILED":
             raise GeminiError(f"Files API could not process {path.name}")
+        if polls == 30:
+            raise GeminiError(f"Files API: {path.name} is still {state} after 60 s", retry=True)
         time.sleep(2)
         info = json.load(_request(f"{API}/v1beta/{name}", key, method="GET"))
     if not uri:
@@ -159,7 +162,8 @@ def gemini_transcribe(path: Path, prompt: str, models: list[str], key: str, retr
     file_uri = None
     last: GeminiError | None = None
     for model in models:
-        for attempt in range(retries + 1):
+        attempt = 0
+        while attempt <= retries:
             try:
                 if use_files and file_uri is None:
                     log(f"[gemini] {path.name} is {path.stat().st_size / 1e6:.1f} MB; uploading with the Files API")
@@ -174,7 +178,7 @@ def gemini_transcribe(path: Path, prompt: str, models: list[str], key: str, retr
             except urllib.error.HTTPError as err:
                 last = explain_http_error(err, model)
                 if err.code == 413 and not use_files:
-                    use_files = True
+                    use_files = True  # resend through the Files API; does not count as an attempt
                     log(f"[gemini] {last}")
                     continue
             except urllib.error.URLError as err:
@@ -188,6 +192,7 @@ def gemini_transcribe(path: Path, prompt: str, models: list[str], key: str, retr
             if not last.retry or attempt == retries:
                 break
             time.sleep(2 ** (attempt + 1))
+            attempt += 1
         if last is not None and not last.next_model:
             break  # a bad key or a refused file will fail on every model too
     raise last or GeminiError("no model was tried")

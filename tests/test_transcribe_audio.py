@@ -105,6 +105,38 @@ class TranscribeAudioTest(unittest.TestCase):
         with mock.patch("sys.stderr", new_callable=io.StringIO):
             self.assertEqual(ta.main([str(self.wav) + ".nope"]), 2)
 
+    def test_413_on_last_attempt_still_switches_to_files_api(self):
+        seq = [http_error(503, {"error": {"message": "busy"}}), http_error(413, {"error": {"message": "too big"}})]
+        urls = []
+
+        def fake(req, timeout=0):
+            urls.append(req.full_url)
+            if "upload/v1beta/files" in req.full_url and "upload_id" not in req.full_url:
+                return mock.Mock(headers={"X-Goog-Upload-URL": "https://up/upload_id=1"})
+            if "upload_id" in req.full_url:
+                return io.BytesIO(json.dumps({"file": {"name": "files/a", "uri": "gs://a", "state": "ACTIVE"}}).encode())
+            if seq:
+                raise seq.pop(0)
+            self.assertIn("fileData", req.data.decode())
+            return ok_response("كبير")
+
+        with mock.patch.object(ta.urllib.request, "urlopen", fake), mock.patch.object(ta.time, "sleep"):
+            text, _ = ta.gemini_transcribe(self.wav, "p", ["m1"], "k", retries=1, log=self.log.append)
+        self.assertEqual(text, "كبير")
+
+    def test_files_api_poll_timeout_raises(self):
+        def fake(req, timeout=0):
+            if "upload_id" in req.full_url:
+                return io.BytesIO(json.dumps({"file": {"name": "files/a", "uri": "gs://a", "state": "PROCESSING"}}).encode())
+            if req.get_method() == "GET":
+                return io.BytesIO(json.dumps({"name": "files/a", "uri": "gs://a", "state": "PROCESSING"}).encode())
+            return mock.Mock(headers={"X-Goog-Upload-URL": "https://up/upload_id=1"})
+
+        with mock.patch.object(ta.urllib.request, "urlopen", fake), mock.patch.object(ta.time, "sleep"):
+            with self.assertRaises(ta.GeminiError) as cm:
+                ta.upload_file(self.wav, "k", "audio/wav")
+        self.assertIn("still PROCESSING", str(cm.exception))
+
 
 if __name__ == "__main__":
     unittest.main()
