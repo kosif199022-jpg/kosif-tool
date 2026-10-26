@@ -4,7 +4,7 @@
 >
 > **التحميل الخفيف / light loading:** لا تقرأ ملفات المهارات الكبيرة كاملة. اقرأ الخريطة الخفيفة أولًا <https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/LOADER.md> (كل المهارات والمجموعات والملاحق وأرقام أسطر أقسام كل `SKILL.md`)، ثم افتح الملف أو نطاق الأسطر المطابق للطلب فقط. في المستودع: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`.
 
-> آخر تحديث: 23-10-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v5.7) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
+> آخر تحديث: 26-10-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v5.8) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
 
 ## الفهرس / contents
 - FusionForge v2 — وصفة لكل تجربة، وتعلّم من كل تجربة داخل المشروع نفسه
@@ -13,7 +13,7 @@
 
 ---
 
-فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v5.7** (مع محرك الوصفات FusionForge v2) باعتباره منهج العمل الأساسي في هذا المشروع.
+فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v5.8** (مع محرك الوصفات FusionForge v2) باعتباره منهج العمل الأساسي في هذا المشروع.
 
 **SEE Pro Cognitive Fusion:** في المهام L2/L3 المعقدة أو عندما أطلب تطوير الذكاء، اقرأ الملحق [A12 — SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) بعد النواة، وطبّق 11 عدسة Stage-0 بصورة متناسبة. اجمع قدرات Superpowers في Workflow سببي بأنواع مدخلات ومخرجات واضحة؛ اختر حزم SEE التسع حسب الحاجة فقط (Standard 2/1، Deep 4/2)، واعرض 3 خطط مختلفة واختبر baseline والحل الجديد، واسألني الأسئلة المؤثرة على الإبداع فقط. بوابة scripts/see_pro_cognitive_gate.py تفحص عقد التفكير ولا تزعم تشغيل أدوات. **Full Pro لا يُعتبر منفذًا إلا بإيصال خاص بنفس الطلب من مالكه KOSIF Think.** لا تنسخ بيانات الشركات أو أصول الخدمات الخارجية.
 
@@ -107,6 +107,8 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py lessons --projec
 - **الصوت:** يُدمج بنسخ التيار ومطابقة MD5. الرفع كسب موحّد بموافقتي فقط.
 - **المحرك:** HTML/Canvas مع `window.__kosif.seek(t)`، ثم `node tools/render_html.cjs --in <scene.html> --out <film.mp4> --preview` ثم الرندر. خطوط OFL: Amiri، Aref Ruqaa، Reem Kufi، Lalezar، Marhey، KOSIF Jumuah.
 - **التسليم:** `TEST_REPORT.md` بالمقيس فعلًا، وقل إن المراجعة كانت بلقطات ثابتة. الوسائط الثقيلة لا تُرفع إلى GitHub، فذكّرني بحفظ الفيديو.
+- **مجلس الخمسة الإلزامي (v5.8، A38 §7):** كل طلب L1+ يمر على `python3 scripts/llm_council.py gate --level <L> --from-brief <مجلد العمل>/brief.json` ثم `frame` و`review` و`chair` و`verdict` بعمق البوابة (LIGHT في L1، خمسة وكلاء في L2، الكامل بالمراجعة المجهولة في L3 أو ما لا رجعة فيه)؛ اذكر في التقرير العمق وسببه والإيصال وهل غيّر الحكم الخطة.
+- **قبل قول «خلص» (v5.8، A38):** فيديو الموشن يمر بـ `python3 scripts/video_eyes.py report <film.mp4> --out <مجلد>/eyes` (انظر شريط الإطارات، واسأل عن أي تجميد أطول من 1.5 ثانية، وأصلح ذروة صوت أعلى من -1 dBTP)، والصفحة بـ `design_tells.py audit`، والتقرير بـ `thinking_books.py debias`.
 - **التفاصيل الكاملة:** قسم «دروس ميدانية — مشاريع المونتاج والموشن» في `PROTOCOL.md`، و«Stock footage without an API key» في `references/guides/sources.md`.
 
 ابدأ الآن بفحص جاهزية البروتوكول، ثم أخبرني بحالته وما يحتاج إلى إعداد إضافي.

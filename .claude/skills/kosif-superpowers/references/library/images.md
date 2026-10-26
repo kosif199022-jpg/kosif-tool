@@ -67,6 +67,7 @@
 | `unified-cinematic` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `unified-media` | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو | `python3 scripts/unified_media.py doctor` | tested-here |
 | `verify-video` | بوابة فحص تسليم الفيديو | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --duration 15 --json ./out/report.json` | tested-here |
+| `video-eyes` | عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية | `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.
 

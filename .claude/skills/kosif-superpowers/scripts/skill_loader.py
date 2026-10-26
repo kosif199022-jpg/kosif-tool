@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF light skill loader — one small map instead of reading every big file (USIP v5.7).
+"""KOSIF light skill loader — one small map instead of reading every big file (USIP v5.8).
 
 The skill files are large (SKILL.md alone is ~80 KB). Reading them all at the start of a chat burns context and
 still leaves most skills unreached. This script writes LOADER.md: a one-screen-per-section map of every skill under

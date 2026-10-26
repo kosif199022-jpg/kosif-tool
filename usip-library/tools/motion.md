@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (25 أداة)
+# أدوات المجال `motion` (26 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -1318,4 +1318,49 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:verify-video --evidence <ملف>`.
+
+### `video-eyes` — عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية / Video eyes: contact strip, onion skin, motion-energy timeline with frozen-stretch detection, and per-second loudness
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/video_eyes.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `qa-verification`, `photo-video-footage`, `audio-sync-captions` |
+
+**ما تفعله:** يحوّل الفيديو لأدلة يقرأها النموذج: شريط إطارات، صورة طبقات للحركة، طاقة الحركة لكل ثانية مع كشف التجميد والقطعات، وارتفاع الصوت والذروة والصمت.
+
+**What it does:** Turns a render into evidence a text model can read: a tiled strip of evenly spaced frames, an onion-skin blend that shows path and easing, a per-second motion-energy timeline that flags frozen stretches and hard cuts (a 'motion graphic' that is really a slide), and integrated loudness, true peak, silences and per-window momentary loudness. report writes all of it plus REPORT.md; exit 3 = REVIEW.
+
+#### متى تُستدعى
+
+- «اتأكد إن الفيديو مفيهوش أجزاء واقفة قبل التسليم»
+- «وريني الفيديو كإطارات»
+- «Check the render for frozen stretches and clipping»
+- «Show the easing of this movement»
+
+#### الأوامر
+
+- **report**: Strip, onion, motion, audio and REPORT.md; exit 3 = REVIEW.
+  - `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes`
+- **motion**: Energy per second, frozen stretches, cuts.
+  - `python3 scripts/video_eyes.py motion film.mp4 --freeze 1.5`
+- **strip**: Evenly spaced frames in one image.
+  - `python3 scripts/video_eyes.py strip film.mp4 --out strip.png`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- الأمان: writes-files
+- الموافقة: Reads the video and writes only into the --out folder or the given image path.
+- الحدود: Numbers say where to look, not whether a held frame is intended; a person still watches the film. Complements tools/verify_video.py (format, fps, audio preservation).
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_v58_mastery.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:video-eyes --evidence <ملف>`.
 

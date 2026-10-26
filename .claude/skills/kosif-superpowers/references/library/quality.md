@@ -51,6 +51,7 @@
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
+| `design-tells` | كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS | `python3 scripts/design_tells.py audit index.html` | tested-here |
 | `differential-exam` | مصحّح الامتحان الخفي التفاضلي | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.json` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |
@@ -74,6 +75,7 @@
 | `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |
 | `tell-scan` | فاحص العبارات الكتابية النمطية | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | tested-here |
 | `verify-video` | بوابة فحص تسليم الفيديو | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --duration 15 --json ./out/report.json` | tested-here |
+| `video-eyes` | عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية | `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes` | tested-here |
 | `video-workflow-bridge` | جسر سير عمل الفيديو | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.

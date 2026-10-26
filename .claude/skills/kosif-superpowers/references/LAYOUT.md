@@ -71,7 +71,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A35-task-history.md](protocol/A35-task-history.md)
 - [references/protocol/A36-v57-context-boot-parallel.md](protocol/A36-v57-context-boot-parallel.md)
 - [references/protocol/A37-self-council.md](protocol/A37-self-council.md)
-- [references/protocol/A38-llm-council-mandatory.md](protocol/A38-llm-council-mandatory.md)
+- [references/protocol/A38-v58-thinking-books-github-pulse.md](protocol/A38-v58-thinking-books-github-pulse.md)
 - [references/protocol/A4-fusionforge-composition.md](protocol/A4-fusionforge-composition.md)
 - [references/protocol/A5-state-receipts.md](protocol/A5-state-receipts.md)
 - [references/protocol/A6-evidence-security-numbers.md](protocol/A6-evidence-security-numbers.md)
@@ -101,7 +101,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 
 The capability catalog in human form: fused superpowers, hubs, groups, maps, audits, requirements and what this machine can run.
 
-`catalog` · 23 file(s) · planned folder `references/catalog/`
+`catalog` · 25 file(s) · planned folder `references/catalog/`
 
 - [references/superpowers.md](superpowers.md) · pinned (fixed path)
 - [references/hubs.md](hubs.md) · pinned (fixed path)
@@ -125,6 +125,8 @@ The capability catalog in human form: fused superpowers, hubs, groups, maps, aud
 - [references/superpowers-rea-map.md](superpowers-rea-map.md)
 - [references/superpowers-rea-map.html](superpowers-rea-map.html)
 - [references/github-top-1000.md](github-top-1000.md)
+- [references/github-pulse-30d.md](github-pulse-30d.md)
+- [references/100-superskills-integration.md](100-superskills-integration.md)
 - [references/agents-memory-reasoning-repos.md](agents-memory-reasoning-repos.md)
 
 ## 5. فصول القدرات المولّدة / Generated power chapters

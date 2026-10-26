@@ -46,6 +46,7 @@
 | `infinite-matrices` | محرك المصفوفات اللانهائية للأساليب السببية | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | tested-here |
 | `instagram-reference-discovery` | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |
 | `invention-lab` | مختبر الابتكار الهندسي | `python3 scripts/invention_lab.py methods` | tested-here |
+| `llm-council` | مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد | `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work>/brief.json` | tested-here |
 | `prompt-lab` | مختبر البرومبت | `python3 scripts/prompt_lab.py kinds` | tested-here |
 | `prompt-pack` | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط | `python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney` | tested-here |
 | `repo-kosif` | أداة سطر أوامر لأطلس أنماط KOSIF | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
@@ -55,6 +56,7 @@
 | `style-library` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | `python3 scripts/style_library.py groups` | tested-here |
 | `superpowers-unified` | موجّه مهارات العمل ومثبّتها | `python3 scripts/superpowers_unified.py doctor` | tested-here |
 | `think` | محرك التفكير وقوالبه | `python3 scripts/think.py ladder "design a 30-day plan for a course launch"` | tested-here |
+| `thinking-books` | مكتبة كتب التفكير: 64 منهجًا من 40 كتابًا مشهورًا في طرق التفكير مربوطة بمراحل البروتوكول | `python3 scripts/thinking_books.py stack "عايز أطلق تطبيق جديد"` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.
 

@@ -23,6 +23,7 @@
    - **إن رفض نظام الأذونات أمرًا:** فلا تلتف عليه، لا بأمر آخر ولا بنسخ الكود يدويًا. أكمل ما يمكن بالقراءة، ثم توقف واشرح ما تحتاجه.
    - **بلا shell ولا جلب ويب:** اعمل بالمنهج نفسه بالتفكير، وقل ذلك صراحة.
 4. **فكّر بعمق قبل أن تقترح.** طبّق عدسات التفكير، وادمج قدرات من أكثر من مجال في سلسلة واضحة: مدخل ← أداة ← مخرج ← تحقق. في المهام الكبيرة اعقد **مجلس البرو**، وهو شخصيات متعارضة من قائمة المئة شخصية، كل واحدة بمسار أدلة مختلف، وينتهي بحكم بالدرجات ورأي مخالف مسجَّل. وإن لم تشغّل الأعضاء كوكلاء منفصلين فسمِّه «محاكاة».
+4أ. **مجلس الخمسة إلزامي في كل L1+ (A38).**
 5. **قدّم تقريرًا واحدًا** فيه:
    - تحليل الطلب.
    - ثلاث خطط مختلفة المنهج:
@@ -66,6 +67,6 @@
 - قواعد السجل والإعادة (A35): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md
 - رسالة التفعيل المفصّلة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SESSION_PROMPT.md
 - نسخة البروتوكول في ملف واحد، لمن لا يستطيع فتح ملفات كثيرة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
-- النسخة المضغوطة v5.7 (أقل من 25KB، فيها سياق المشروع والإقلاع والتوزيع المتوازي): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v5_7.md
+- النسخة المضغوطة v5.8 (نحو 26KB، فيها الإقلاع والتوازي والمجلس والإتقان): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v5_8.md
 
 إن لم تستطع فتح الروابط فقل ذلك في سطر واحد، واعمل بالخطوات أعلاه كما هي.

@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:motion:start -->
 
-**الأدوات / tools (25)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (26)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -37,6 +37,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `motion-physics` | Computes motion numbers instead of guessing them: a spring from stiffness, damping and mass (value per frame, damping ratio, settle time, overshoot, or CSS @keyframes), any CSS cubic-bezier or named easing sampled exactly as a browser does, stagger delays from an origin (first, last, center, edges or an index) on a row or a grid, and a keyframe track sampled per frame with an easing. Pure standard library; prints JSON or CSS and writes no files. | `python3 scripts/motion_physics.py spring --from 0 --to 1 --stiffness 170 --damping 26 --fps 30` | tested-here |
 | `infinite-matrices` (repo root) | Builds a new visual system from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 atlas styles, proves its law with an A/B/C counterfactual over seeds and a dose sweep, renders a scrubbable scene, stills and MP4 with the atlas harness and sound kit, and saves verdicts, ideas, ratings and sources in a hash-chained ledger. | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | tested-here |
 | `export-profile` | One source for the delivery export standard the owner approved: 1080x1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied byte for byte when MP4 can carry it (AAC 320k 48 kHz otherwise), MP4 +faststart, no 4K unless asked. Scripts import video_args(), audio_args(src) and FASTSTART instead of writing their own ffmpeg flags; running it prints the profile as JSON. | `python3 scripts/export_profile.py` | tested-here |
+| `video-eyes` | Turns a render into evidence a text model can read: a tiled strip of evenly spaced frames, an onion-skin blend that shows path and easing, a per-second motion-energy timeline that flags frozen stretches and hard cuts (a 'motion graphic' that is really a slide), and integrated loudness, true peak, silences and per-window momentary loudness. report writes all of it plus REPORT.md; exit 3 = REVIEW. | `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes` | tested-here |
 
 <!-- hub:area:motion:end -->
 
