@@ -49,11 +49,13 @@
 
   function drawShot(im, s, t, alpha = 1) {
     if (!im) return;
-    const p = lin(t, s.cut, s.next), z = 1 + .05 * easeInOut(p);
+    // cover + 2% headroom for the drift, and the drift clamped so no edge of the shot ever shows
+    const p = lin(t, s.cut, s.next), z = 1.02 + .05 * easeInOut(p);
     const base = Math.max(W / im.width, H / im.height) * z;
     const w = im.width * base, h = im.height * base, dir = s.i % 2 ? 1 : -1;
+    const x = clamp((W - w) / 2 + dir * 16 * (p - .5), W - w, 0), y = clamp((H - h) / 2 - 10 * p, H - h, 0);
     ctx.globalAlpha = alpha;
-    ctx.drawImage(im, (W - w) / 2 + dir * 16 * (p - .5), (H - h) / 2 - 10 * p, w, h);
+    ctx.drawImage(im, x, y, w, h);
     ctx.globalAlpha = 1;
   }
 

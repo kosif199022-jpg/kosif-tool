@@ -98,11 +98,14 @@
       const im = aImgs[k]; if (!im) return;
       ctx.globalAlpha = it.w;
       const base = Math.max(bw / im.width, bh / im.height);
-      const z = base * (1.0 + .075 * easeInOut(it.p));
+      // cover the arch + 2% headroom; the drift is clamped so no edge of the shot shows inside the arch
+      const z = base * (1.02 + .075 * easeInOut(it.p));
       const dir = it.s.i % 2 ? 1 : -1;
       const dx = dir * 18 * (it.p - .5), dy = -10 * it.p;
       const w = im.width * z, h = im.height * z;
-      ctx.drawImage(im, A.x0 + (bw - w) / 2 + dx, A.apex + (bh - h) / 2 + dy, w, h);
+      const x = Math.min(A.x0, Math.max(A.x1 - w, A.x0 + (bw - w) / 2 + dx));
+      const y = Math.min(A.apex, Math.max(A.bottom - h, A.apex + (bh - h) / 2 + dy));
+      ctx.drawImage(im, x, y, w, h);
     });
     ctx.globalAlpha = 1;
     // inner shading: bottom fade for the handle, soft top glow

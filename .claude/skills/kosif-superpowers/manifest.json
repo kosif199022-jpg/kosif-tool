@@ -18,7 +18,7 @@
   "powers": 5853,
   "families": 62,
   "domains": 10,
-  "tools": 185,
+  "tools": 186,
   "guides": 116,
   "statuses": {
    "documented": 2325,
@@ -4299,6 +4299,79 @@
     "formats-platforms"
    ],
    "power_id": "TOOL-81"
+  },
+  {
+   "id": "repo-check-frame-cover",
+   "path": "tools/check_frame_cover.cjs",
+   "root": "repo",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Photo frame-cover check",
+   "title_ar": "فحص تغطية الصورة للإطار",
+   "summary_en": "Renders sample frames of an HTML photo film (window.__kosif.seek) for every variant such as ?style=1..5 and fails when any frame shows an empty edge. It records every drawImage with its transform, alpha, blend mode and blur and checks that an opaque photo covers all four canvas corners, so dark or black-and-white photos never raise false alarms and a one-pixel gap still fails. Pair it with tools/photo_cover.js, the shared camera that keeps a photo covering the frame through zoom, pan, shake, rotation and blur for any photo aspect ratio.",
+   "summary_ar": "يرندر فريمات عينة من فيلم صور HTML لكل ستايل (مثل ?style=1..5) ويفشل لو أي فريم ظهرت فيه حافة فاضية. بيسجّل كل رسم صورة بالتحويل والشفافية والبلور ويتأكد إن صورة معتمة بتغطي أركان الإطار الأربعة، فالصور الغامقة أو الأبيض والأسود ما بتعملش إنذار كاذب، وفجوة بكسل واحد بتفشل. يُستخدم مع tools/photo_cover.js، الكاميرا المشتركة اللي بتخلي الصورة مغطية الإطار في كل زوم وبان واهتزاز ودوران وبلور لأي مقاس صورة.",
+   "use_when": [
+    "The photo doesn't fill the top of the frame in some styles",
+    "Check that no empty edge shows in any of the five lyric video styles",
+    "الصورة مش مالية الفريم من فوق في بعض الستايلات",
+    "افحص إن الصورة مغطية الشاشة كلها في كل حركات الكاميرا"
+   ],
+   "keywords": [
+    "frame cover",
+    "empty edge",
+    "letterbox",
+    "Ken Burns",
+    "photo zoom",
+    "pan clamp",
+    "object-fit cover",
+    "حافة فاضية",
+    "الصورة مش مالية الفريم",
+    "تغطية الإطار",
+    "زوم الصورة",
+    "حركة الكاميرا"
+   ],
+   "commands": [
+    {
+     "name": "check styles",
+     "example": "node tools/check_frame_cover.cjs --in tests/fixtures/photo-cover/index.html --variants \"style=1;style=2;style=3;style=4;style=5\" --samples 24",
+     "does": "Renders 24 evenly spaced frames per variant and prints ok/FAIL per variant; exit 0 when every frame is covered, 3 when any frame shows an empty edge."
+    },
+    {
+     "name": "check exact times with evidence",
+     "example": "node tools/check_frame_cover.cjs --in projects/egypt-saudi-salute/index.html --times 0,26.46,66.16 --frames-dir ./out/gaps --json ./out/cover.json",
+     "does": "Checks the given times, saves a PNG of each failing frame and writes a JSON report with the uncovered photo quads."
+    }
+   ],
+   "inputs": "--in a local HTML film that exposes window.__kosif = {duration, seek(t)}; optional --variants (query strings separated by ';'), --samples or --times, --root (served folder), --canvas selector, --frames-dir, --json, --timeout.",
+   "outputs": "One ok/FAIL line per variant with the uncovered times and the reason, a PASS/FAIL summary, optional PNGs of failing frames and a JSON report. Exit 0 all covered, 3 empty edges, 1 usage error, 2 page or render error (including Playwright missing).",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "chromium",
+     "node"
+    ],
+    "node": [
+     "playwright"
+    ],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "",
+   "limits": "Checks canvas drawImage geometry only: photos drawn as DOM/CSS images or through WebGL are not measured, and a photo composited through an offscreen canvas counts only when that canvas itself received a covering opaque photo.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_photo_cover.mjs 7/7 passed here: 20,000 random camera moves over 7 photo shapes, five fixture styles x six photo shapes render with no empty edge, and the old width-fit camera fails on 4 styles including the 941x1672 one-pixel band at t=0. projects/egypt-saudi-salute: 2/120 frames failed before its clamp fix, 400/400 covered after.",
+   "tests": [
+    "tests/test_photo_cover.mjs"
+   ],
+   "docs": [
+    "playbooks/render-pipeline.md",
+    "starters/html-canvas/README.md"
+   ],
+   "families": [
+    "qa-verification",
+    "engines-render-pipeline"
+   ]
   },
   {
    "id": "repo-verify-video",
