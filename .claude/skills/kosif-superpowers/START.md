@@ -46,7 +46,7 @@ python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت ال
 ## مكتبة 100 Super Skills المتصلة (114 مهارة)
 
 المسار: `.claude/skills/kosif-superpowers/vendor/100-superskills` (نسخة كاملة من `af7a5dc3778c` داخل المستودع).
-ابحث: `python3 scripts/superskills.py find "<الطلب>"` · افحص: `python3 scripts/superskills.py verify`.
+ابحث: `python3 $SKILL_DIR/scripts/superskills.py find "<الطلب>"` · افحص: `python3 $SKILL_DIR/scripts/superskills.py verify`.
 ابحث قبل اختيار مهارة: `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py find "طلب المستخدم"`.
 افحص التوافر: `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor`.
 الفهرس: [100-superskills-integration.md](references/100-superskills-integration.md). الربط لا يعني أن البرامج الخارجية مثبتة أو أن المهارات نُفِّذت بالفعل.
