@@ -145,6 +145,9 @@ class RecoverTest(unittest.TestCase):
         self.assertTrue(think.recover("timeout", attempts=0)["next"].startswith("attempt 1"))
         self.assertTrue(think.recover("permission_denied", attempts=1)["next"].startswith("STOP"))
         self.assertEqual(think.recover(message="something odd")["error_class"], "other")
+        mcp = think.recover(message="InputValidationError: mcp__Higgsfield__generate_image was called with input that could not be parsed as JSON.")
+        self.assertEqual(mcp["error_class"], "wrong_input_kind")
+        self.assertTrue(any("params" in s for s in mcp["fix"]))
         self.assertEqual(run("recover", "tool_error", "--attempts", "3").returncode, 1)
         with self.assertRaises(ValueError):
             think.recover("made_up")
