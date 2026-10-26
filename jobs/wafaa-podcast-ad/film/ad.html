@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>الحكاية فيها إنّ — إعلان</title>
+<style>
+@font-face{font-family:Cairo;src:url(fonts/Cairo.ttf);font-weight:200 1000}
+:root{--gold:#f2c56b;--gold2:#c98f2e;--ink:#0b0806}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--ink);font-family:Cairo}
+.bg{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;opacity:0}
+#shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.25) 0,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 52%,rgba(0,0,0,.72) 78%,rgba(0,0,0,.8) 100%)}
+#cap{position:absolute;left:80px;right:80px;top:1230px;height:330px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:4px 22px}
+.w{font-weight:800;font-size:88px;line-height:1.28;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.65),0 0 2px rgba(0,0,0,.8);will-change:transform,opacity}
+.w.hot{color:var(--gold)}
+#card{position:absolute;inset:0;opacity:0;background:radial-gradient(90% 60% at 50% 34%,#3b2a14 0,#140d07 55%,#070504 100%)}
+#logo{position:absolute;left:190px;top:250px;width:700px;height:700px;border-radius:50%;box-shadow:0 0 120px rgba(242,197,107,.35)}
+#ring{position:absolute;left:170px;top:230px;width:736px;height:736px;border-radius:50%;border:4px solid rgba(242,197,107,.0)}
+.ct{position:absolute;left:0;right:0;text-align:center;color:#fff}
+#with{top:1010px;font-size:58px;font-weight:600;color:#e9dcc6}
+#soon{top:1100px;font-size:96px;font-weight:900;color:var(--gold);text-shadow:0 0 40px rgba(242,197,107,.35)}
+#handles{top:1290px;font-size:44px;font-weight:700;direction:ltr;line-height:1.75;color:#f4ead8}
+#handles b{color:var(--gold);font-weight:800;margin-right:14px}
+</style>
+</head>
+<body>
+<img class="bg" id="bgA"><img class="bg" id="bgB">
+<div id="shade"></div>
+<div id="cap"></div>
+<div id="card">
+  <div id="ring"></div>
+  <img id="logo" src="assets/logo.jpg">
+  <div class="ct" id="with">مع وفاء يوسف</div>
+  <div class="ct" id="soon">أول حلقة قريبًا</div>
+  <div class="ct" id="handles">
+    <div><b>YouTube</b>@elhekayafeehaenn</div>
+    <div><b>TikTok</b>@wafaa_yousef_t</div>
+    <div><b>Links</b>inflink.ae/wafaayousef</div>
+  </div>
+</div>
+<script src="config.js"></script>
+<script>
+// CONFIG is injected by build: {duration, fps, words:[{w,s,e,line}], scenes:[{dir,frames,start,end,from}], card:{start}}
+const C = window.CONFIG;
+const $ = (id) => document.getElementById(id);
+const clamp = (x) => Math.max(0, Math.min(1, x));
+const ease = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const bgA = $('bgA'), bgB = $('bgB'), cap = $('cap'), card = $('card');
+const XF = 0.4; // scene cross-dissolve seconds
+
+function frameSrc(sc, t) {
+  const i = Math.min(sc.frames, Math.max(1, Math.floor((t - sc.start + (sc.from || 0)) * C.fps) + 1));
+  return `${sc.dir}/f_${String(i).padStart(4, '0')}.jpg`;
+}
+function setImg(el, src, op, scale) {
+  el.style.opacity = op; el.style.transform = `scale(${scale})`;
+  if (el.dataset.src === src) return Promise.resolve();
+  el.dataset.src = src; el.src = src;
+  return el.decode().catch(() => {});
+}
+function drawCaptions(t) {
+  const W = C.words, cardIn = C.card.start;
+  const cur = W.filter((w) => w.s <= t + 0.05);
+  const line = cur.length ? cur[cur.length - 1].line : -1;
+  const ws = W.filter((w) => w.line === line);
+  const endT = ws.length ? Math.max(...ws.map((w) => w.e)) : 0;
+  const next = (W.find((w) => w.line === line + 1) || { s: Math.min(cardIn, C.duration) }).s;
+  const out = clamp((t - Math.min(endT + 0.35, next - 0.12)) / 0.18);
+  cap.innerHTML = '';
+  for (const w of ws) {
+    const el = document.createElement('span'); el.className = 'w'; el.textContent = w.w;
+    const p = ease((t - w.s + 0.06) / 0.28);
+    el.style.opacity = p * (1 - out);
+    el.style.transform = `translateY(${(1 - p) * 38 - out * 18}px) scale(${0.9 + 0.1 * p})`;
+    el.style.filter = `blur(${(1 - p) * 6}px)`;
+    if (t >= w.s && t <= w.e + 0.1) el.classList.add('hot');
+    cap.appendChild(el);
+  }
+}
+function drawCard(t) {
+  const k = t - C.card.start;
+  card.style.opacity = ease(k / 0.6);
+  const lp = ease((k - 0.1) / 0.9);
+  $('logo').style.transform = `scale(${0.82 + 0.18 * lp}) rotate(${(1 - lp) * -8}deg)`;
+  $('logo').style.opacity = lp;
+  $('ring').style.borderColor = `rgba(242,197,107,${0.55 * lp})`;
+  $('ring').style.transform = `scale(${1 + 0.04 * Math.sin(k * 2.2)})`;
+  [['with', 0.7], ['soon', 1.0], ['handles', 1.4]].forEach(([id, d]) => {
+    const p = ease((k - d) / 0.6); const el = $(id);
+    el.style.opacity = p; el.style.transform = `translateY(${(1 - p) * 40}px)`;
+  });
+}
+async function seek(t) {
+  const S = C.scenes;
+  let i = S.findIndex((s) => t >= s.start && t < s.end); if (i < 0) i = S.length - 1;
+  const sc = S[i], nx = S[i + 1];
+  const zoom = (s) => 1.0 + 0.04 * clamp((t - s.start) / (s.end - s.start));
+  const jobs = [setImg(bgA, frameSrc(sc, t), 1, zoom(sc))];
+  if (nx && t > nx.start - XF) {
+    const p = clamp((t - (nx.start - XF)) / XF);
+    jobs.push(setImg(bgB, frameSrc(nx, Math.max(t, nx.start)), p, zoom(nx)));
+  } else { bgB.style.opacity = 0; }
+  drawCaptions(t);
+  if (t >= C.card.start) drawCard(t); else card.style.opacity = 0;
+  await Promise.all(jobs);
+}
+window.__kosif = { duration: C.duration, seek };
+</script>
+</body>
+</html>
