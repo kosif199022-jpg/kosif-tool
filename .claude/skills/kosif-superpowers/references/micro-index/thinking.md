@@ -189,7 +189,7 @@ chapter: [creativity-engine](../powers/creativity-engine.md) · card: `usip-libr
 
 ## mental-models (mind)
 
-chapter: [mental-models](../powers/mental-models.md) · card: `usip-library/cards/thinking/mental-models.md` · tools: `capability-mindmap` · `think` · `thinking-books`
+chapter: [mental-models](../powers/mental-models.md) · card: `usip-library/cards/thinking/mental-models.md` · tools: `capability-mindmap` · `llm-council` · `think` · `thinking-books`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -280,7 +280,7 @@ chapter: [planning-execution](../powers/planning-execution.md) · card: `usip-li
 
 ## thinking-core (mind)
 
-chapter: [thinking-core](../powers/thinking-core.md) · card: `usip-library/cards/thinking/thinking-core.md` · tools: `invention-lab` · `think` · `thinking-books`
+chapter: [thinking-core](../powers/thinking-core.md) · card: `usip-library/cards/thinking/thinking-core.md` · tools: `invention-lab` · `llm-council` · `think` · `thinking-books`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

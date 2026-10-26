@@ -69,5 +69,26 @@ class AppendixTest(unittest.TestCase):
             self.assertIn(tool, a38)
 
 
+class LlmCouncilTest(unittest.TestCase):
+    def test_self_test(self):
+        r = run("llm_council.py", "--self-test")
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+
+    def test_gate_never_skips_l1_plus(self):
+        sys.path.insert(0, str(SCRIPTS))
+        import llm_council as lc
+        self.assertEqual(lc.gate("L0")["depth"], "NONE")
+        for lvl in ("L1", "L2", "L3"):
+            self.assertIn(lc.gate(lvl, 0)["depth"], ("LIGHT", "STANDARD", "FULL"))
+        self.assertEqual(lc.gate("L1", 3, irreversible=True)["depth"], "FULL")
+
+    def test_council_is_mandatory_in_the_protocol(self):
+        core = (SK / "PROTOCOL.md").read_text()
+        self.assertIn("مجلس الخمسة", core)
+        a38 = (SK / "references/protocol/A38-v58-thinking-books-github-pulse.md").read_text()
+        self.assertIn("## 7. مجلس الخمسة الإلزامي", a38)
+        self.assertIn("llm_council.py gate", a38)
+
+
 if __name__ == "__main__":
     unittest.main()

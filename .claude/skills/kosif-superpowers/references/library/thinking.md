@@ -46,6 +46,7 @@
 | `infinite-matrices` | محرك المصفوفات اللانهائية للأساليب السببية | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | tested-here |
 | `instagram-reference-discovery` | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |
 | `invention-lab` | مختبر الابتكار الهندسي | `python3 scripts/invention_lab.py methods` | tested-here |
+| `llm-council` | مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد | `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work>/brief.json` | tested-here |
 | `prompt-lab` | مختبر البرومبت | `python3 scripts/prompt_lab.py kinds` | tested-here |
 | `prompt-pack` | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط | `python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney` | tested-here |
 | `repo-kosif` | أداة سطر أوامر لأطلس أنماط KOSIF | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |

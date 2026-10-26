@@ -1,4 +1,4 @@
-# أدوات المجال `think` (18 أداة)
+# أدوات المجال `think` (19 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -487,6 +487,56 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:lesson-integrity --evidence <ملف>`.
+
+### `llm-council` — مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد / Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/llm_council.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `thinking-core`, `mental-models`, `planning-execution` |
+
+**ما تفعله:** ينفذ مجلس الخمسة الإلزامي بلا نداء نموذج: gate يحدد العمق لكل طلب L1+ ولا يتخطاه، وframe يشتق القرار من الخطط ويقسم المدخلات إلى أدلة ومجهولات والغريب بلا سياق، وreview يكشف الأصوات المكررة والإجماع ويخفي الأسماء، وverdict يفحص العناوين الخمسة وحرف الخطة والخطوة الواحدة ويسجل هل غيّر الحكم الخطة، وstats يقيس نفع المجلس.
+
+**What it does:** Runs USIP v5.8's mandatory council (A38 §7) without calling a model. gate sets the depth for every L1+ request (LIGHT at L1, STANDARD at L2, FULL at L3 or for money, publishing, personal data, architecture or irreversible steps, or on request) and never skips; frame derives the decision from the brief's plans A/B/C, gives at most four context files and splits inputs into evidence and named unknowns (REA's pattern), and gives the Outsider no context; ingest rejects an advisor answer with no evidence and no named unknown and records the plan it backs; review catches duplicate voices (word-set Jaccard > 0.6), detects a 4-of-5 consensus and writes anonymised reviewer prompts with a shuffled, per-question letter map; chair de-anonymises; verdict checks the five headings, a plan letter, no hedging and one first step, and records CHANGED or NO_DELTA against the brief; stats measures depth mix, receipts and how often the council changed the plan.
+
+#### متى تُستدعى
+
+- «اعرض القرار ده على المجلس»
+- «council this»
+- «مجلس كامل على الخطة دي»
+- «pressure-test this decision»
+- «أي خطة أحسن: A ولا B ولا C؟»
+
+#### الأوامر
+
+- **gate**: Depth and reason for this request (never skips L1+).
+  - `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work>/brief.json`
+- **frame**: Derived question, evidence/unknowns, five advisor prompts.
+  - `python3 scripts/llm_council.py frame "<question>" --dir out/<work>/council5 --from-brief out/<work>/brief.json --unknowns "budget"`
+- **review**: Duplicate-voice and consensus checks, anonymised reviewer prompts.
+  - `python3 scripts/llm_council.py review --dir out/<work>/council5`
+- **verdict**: Checks the verdict and writes the receipt with CHANGED/NO_DELTA; exit 3 = fix.
+  - `python3 scripts/llm_council.py verdict --dir out/<work>/council5 --file verdict.md`
+- **stats**: How often the council changed the plan, by depth and receipt.
+  - `python3 scripts/llm_council.py stats --root out`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: Writes only inside the given --dir; never calls a model or the network.
+- الحدود: The voices are thinking styles run by Claude, not different models; LIGHT and SIMULATED receipts are not a run of agents. The checks test form and grounding words, not the quality of the reasoning; the user's explicit plan choice outranks the verdict.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_v58_mastery.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md`
+- مرجع: `docs/protocol/council-20261026-smart-council.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:llm-council --evidence <ملف>`.
 
 ### `memory-ops` — عمليات الذاكرة / Memory Ops
 

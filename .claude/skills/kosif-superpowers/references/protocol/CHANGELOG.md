@@ -33,6 +33,7 @@
 - **نسخة لصق مضغوطة:** `docs/protocol/USIP_PORTABLE_v5_8.md` (القانون 9 الجديد)، و`USIP_PORTABLE_v5_7.md` باقية بمسارها لمن يملك رابطها.
 - **رقم الإصدار:** `CLAUDE.md` و`SKILL.md` و`SESSION_PROMPT.md` و`USIP_PORTABLE.md` و`skill_intelligence.py` و`fusionforge.py` و`council.py` و`skill_loader.py` و`boot.py` واختباراتها.
 - **الأدوات:** أربع أدوات جديدة في `data/tools.json` (`thinking-books`، `github-pulse`، `design-tells`، `video-eyes`) واختبارها `evals/test_v58_mastery.py`.
+- **مجلس الخمسة الإلزامي (طلب المستخدم، A38 §7):** «ضيف المجلس بشكل إلزامي عند تفعيل البروتوكول» ثم «طوّر قدرات البروتوكول على استخدام المجلس بطريقة ذكية». المنهج من مستودع `aiwithremy/claude-skills-llm-council` (الفكرة فقط، بلا ملف رخصة) ونمط الدليل والمجهول من REA. عُقد المجلس أولًا على نفسه (5 مستشارين و5 مراجعين وكلاء، `COUNCIL5_RUN`، `docs/protocol/council-20261026-smart-council.md`) وحكم بأن الإلزام على البوابة: `scripts/llm_council.py gate` يحدد العمق لكل L1+ (LIGHT/STANDARD/FULL) ولا يتخطاه، والسؤال مشتق من الخطط، والغريب بلا سياق، والأصوات المكررة تُكشف، والحكم يسجل هل غيّر الخطة و`stats` يقيس ذلك. في النواة: القانون 28 وخطوة 7 من المسار وصف A38؛ وفي `CLAUDE.md` و`SESSION_PROMPT.md` و`USIP_PORTABLE.md` والنسخة المضغوطة.
 - **حُذف:** لا شيء من الأحكام.
 
 ## v5.7 — 2026-10-24

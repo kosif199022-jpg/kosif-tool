@@ -2485,6 +2485,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_self_council.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_v58_mastery.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_creative_paint.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_creative_paint.py"
@@ -7829,6 +7834,12 @@
   {
    "from": "script:scripts/council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_self_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_v58_mastery.py",
    "rel": "tested_by",
    "w": 1
   },

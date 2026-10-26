@@ -250,6 +250,7 @@
 | `decision-math` | TOOL-145 | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high…` | 1 |
 | `invention-lab` | TOOL-11 | مختبر الابتكار الهندسي · Invention Lab Candidates | `python3 scripts/invention_lab.py methods` | 1 |
 | `lesson-integrity` | TOOL-167 | فاحص أرقام الدروس والشروح · Lesson number integrity checker | `python3 scripts/lesson_integrity.py values --registry values.json` | 1 |
+| `llm-council` | — | مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد · Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict | `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work…` | 1 |
 | `memory-ops` | TOOL-163 | عمليات الذاكرة · Memory Ops | `python3 scripts/memory_ops.py propose --store memory.json --facts fac…` | 1 |
 | `prompt-lab` | TOOL-159 | مختبر البرومبت · Prompt Lab | `python3 scripts/prompt_lab.py kinds` | 1 |
 | `see-pro-cognitive-gate` | TOOL-76 | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier | `python3 scripts/see_pro_cognitive_gate.py --self-test` | 1 |
