@@ -47,7 +47,9 @@ MAX_TEXT = 1_000_000      # bytes; larger text files (bundles) are left upstream
 MAX_BINARY = 512_000      # bytes; small fonts (OFL), sound effects and images are copied
 SKIP_PARTS = {"__pycache__", ".git", "node_modules", "out", "outputs", ".cache"}
 SKIP_NAMES = {".DS_Store", "Thumbs.db"}
-SKIP_SUFFIX = {".pyc", ".mp4", ".webm", ".mov"}   # the repo .gitignore drops video files anyway
+SKIP_SUFFIX = {".pyc", ".mp4", ".webm", ".mov", ".mp3"}   # repo rule (tests/test_superpowers.py): no rendered media in the skill
+# Small WAV sound effects are kept, but re-encoded losslessly to FLAC (the same rule bans .wav files).
+FLAC_FROM = {".wav"}
 
 # README section heading -> domain id (the 110 catalogued skills), plus the four KOSIF core skills.
 DOMAINS = [
@@ -218,6 +220,22 @@ PATCHES.append({
             '    return hits[-1] if hits else None\n'),
 })
 
+PATCHES.append({
+    "slug": "kosif-montage-motion", "file": "scripts/kit/sfx/catalog.json",
+    "why": "the six key-*.wav clicks are stored as lossless FLAC here (no .wav files in the skill), so the catalog names the .flac files",
+    "old": '"file": "key-1.wav"',
+    "new": '"file": "key-1.flac"',
+})
+PATCHES.append({
+    "slug": "kosif-montage-motion", "file": "scripts/build_package.py",
+    "why": "the FLAC copies of the key clicks are full-package-only sound effects like the .ogg and .wav ones",
+    "old": 'rel.suffix.lower() in (".ogg", ".wav"):',
+    "new": 'rel.suffix.lower() in (".ogg", ".wav", ".flac"):',
+})
+for _i in range(2, 7):
+    PATCHES.append({"slug": "kosif-montage-motion", "file": "scripts/kit/sfx/catalog.json",
+                    "why": f"key-{_i}.wav stored as lossless FLAC", "old": f'"file": "key-{_i}.wav"', "new": f'"file": "key-{_i}.flac"'})
+
 
 def apply_patches(root: Path) -> list:
     done = []
@@ -246,6 +264,8 @@ def keep(path: Path, size: int) -> tuple:
     suf = path.suffix.lower()
     if suf in SKIP_SUFFIX:
         return False, "video-left-upstream"
+    if suf in FLAC_FROM:
+        return (True, "to-flac") if size <= MAX_BINARY else (False, "large-audio-left-upstream")
     if suf in TEXT_EXT:
         return (True, "text") if size <= MAX_TEXT else (False, "large-text-left-upstream")
     return (True, "binary") if size <= MAX_BINARY else (False, "large-binary-left-upstream")
@@ -279,7 +299,17 @@ def cmd_sync(a) -> int:
                 continue
             dst = SKILLS / sdir.name / r
             dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(p, dst)
+            if why == "to-flac":
+                ff = shutil.which("ffmpeg")
+                if not ff:
+                    left.append({"path": rel(r), "bytes": p.stat().st_size, "reason": "wav-needs-ffmpeg-to-convert"})
+                    continue
+                dst = dst.with_suffix(".flac")
+                subprocess.run([ff, "-nostdin", "-v", "error", "-y", "-i", str(p), "-map_metadata", "-1",
+                                "-fflags", "+bitexact", "-flags:a", "+bitexact", "-c:a", "flac", str(dst)], check=True)
+                r = r.with_suffix(".flac")
+            else:
+                shutil.copyfile(p, dst)
             os.chmod(dst, 0o644)
             files.append({"path": rel(r)})
         entries.append({"slug": sdir.name, "path": f"skills/{sdir.name}", "files": files,

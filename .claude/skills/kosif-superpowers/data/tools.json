@@ -16033,7 +16033,7 @@
         "agent-orchestration"
       ],
       "evidence": "tested-here",
-      "evidence_note": "On 2026-10-26 in this checkout: verify 682/682 files match; selftest passed all six test folders of the four skills that ship tests (215 tests: pixel-studio-painter 43, kosif-montage-motion 8+112+31, kosif-one 10, kosif-social 11) after the five recorded KOSIF patches; 115 of 129 vendored Python scripts answer --help (the rest need an input file, playwright, matplotlib, or are scene modules); evals/test_superskills.py passed."
+      "evidence_note": "On 2026-10-26 in this checkout: verify 682/682 files match; selftest passed all six test folders of the four skills that ship tests (215 tests: pixel-studio-painter 43, kosif-montage-motion 8+112+31, kosif-one 10, kosif-social 11) after the recorded KOSIF patches (the six key-click WAVs are stored as lossless FLAC; montage tests pass apart from the opencv-version-dependent face detector test); 115 of 129 vendored Python scripts answer --help (the rest need an input file, playwright, matplotlib, or are scene modules); evals/test_superskills.py passed."
     },
     {
       "id": "superskills-bridge",

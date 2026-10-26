@@ -3449,7 +3449,7 @@
    "summary_ar": "موشن جرافيك ومونتاج عربي من طلب واحد: أفلام موشن 2D و3D وتايبوغرافي عربي متحرك، محاكاة ريل لقطة بلقطة، خط زمني JSON إلى فيلم بانتقالات وتسريع وعناوين عربية وموسيقى مخفوضة، ريلز تلقائية، فيديو كلمات أغنية",
    "path": "vendor/100-superskills/skills/kosif-montage-motion",
    "files": 274,
-   "bytes": 6111092,
+   "bytes": 6077535,
    "scripts": [
     "scripts/aiprompts.py",
     "scripts/ambience.py",

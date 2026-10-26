@@ -45,7 +45,7 @@ def wanted(rel: Path, claude_ai: bool) -> bool:
         return False
     if in_projects and len(parts) > 4 and parts[3] == "assets" and (rel.name in KIT_COPIES or parts[4] == "fonts"):
         return False
-    if parts[:3] == ("scripts", "kit", "sfx") and rel.suffix.lower() in (".ogg", ".wav"):      # the CC0 effects: full package only
+    if parts[:3] == ("scripts", "kit", "sfx") and rel.suffix.lower() in (".ogg", ".wav", ".flac"):      # the CC0 effects: full package only
         return False
     if rel.name in HISTORY_DOCS:                                   # past changelogs and audit notes: kept in the full package only
         return False

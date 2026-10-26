@@ -31,6 +31,41 @@
    "slug": "kosif-montage-motion",
    "file": "scripts/ffprobe_shim.py",
    "why": "ffmpeg 6+ prints no frame= line for a stream-copy pass, so nb_frames was missing; fall back to a decode pass"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/kit/sfx/catalog.json",
+   "why": "the six key-*.wav clicks are stored as lossless FLAC here (no .wav files in the skill), so the catalog names the .flac files"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/build_package.py",
+   "why": "the FLAC copies of the key clicks are full-package-only sound effects like the .ogg and .wav ones"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/kit/sfx/catalog.json",
+   "why": "key-2.wav stored as lossless FLAC"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/kit/sfx/catalog.json",
+   "why": "key-3.wav stored as lossless FLAC"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/kit/sfx/catalog.json",
+   "why": "key-4.wav stored as lossless FLAC"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/kit/sfx/catalog.json",
+   "why": "key-5.wav stored as lossless FLAC"
+  },
+  {
+   "slug": "kosif-montage-motion",
+   "file": "scripts/kit/sfx/catalog.json",
+   "why": "key-6.wav stored as lossless FLAC"
   }
  ],
  "skills_count": 114,
@@ -1951,8 +1986,8 @@
     },
     {
      "path": "scripts/build_package.py",
-     "sha256": "f438a4a9d4c274274fd0cb8da5a3188e832a2e47430c5920c6fd79e319ddb8bc",
-     "bytes": 4292
+     "sha256": "70baf58fe028ea53e46874fea93d0cceac070bb15c5033dd85fd84135f4c4d06",
+     "bytes": 4301
     },
     {
      "path": "scripts/cloud_setup.py",
@@ -2106,8 +2141,8 @@
     },
     {
      "path": "scripts/kit/sfx/catalog.json",
-     "sha256": "bce633d10f013ad393f59dde5ce6e0ecbcab41f9c6ffa00f20f70db4afac1bfc",
-     "bytes": 4099
+     "sha256": "3edbe9e5b9bfa8b718679a195c89aaf069ee83aa90c798c1e972decf638ca04a",
+     "bytes": 4105
     },
     {
      "path": "scripts/kit/sfx/chips.ogg",
@@ -2135,34 +2170,34 @@
      "bytes": 5473
     },
     {
-     "path": "scripts/kit/sfx/key-1.wav",
-     "sha256": "7b873548c399b9aa0efbe63052fe1344c5317a9b23455b8be3523f47d434daf1",
-     "bytes": 25260
+     "path": "scripts/kit/sfx/key-1.flac",
+     "sha256": "62c9536fc8606551a3cf24dfe06298b638f9018f82b5db96b5dfdcb1d200d495",
+     "bytes": 20819
     },
     {
-     "path": "scripts/kit/sfx/key-2.wav",
-     "sha256": "f58f93430c1ad434feb341a89b89740ccad75e7a775d778d91b7f206e0acbe8e",
-     "bytes": 25260
+     "path": "scripts/kit/sfx/key-2.flac",
+     "sha256": "90fc7c0c77138ce144180cc9aa92652e52d461fd1f14885d76d00eb2554fa150",
+     "bytes": 19855
     },
     {
-     "path": "scripts/kit/sfx/key-3.wav",
-     "sha256": "d67cf9547d99fc65c815c4c68fa9181e0af71419761cbb1d1f0a10eb8491a8d2",
-     "bytes": 25260
+     "path": "scripts/kit/sfx/key-3.flac",
+     "sha256": "3669bd8c4d9398913f4e84edccc2ac686bf31af2611a4e629b7bcf22902184cb",
+     "bytes": 19254
     },
     {
-     "path": "scripts/kit/sfx/key-4.wav",
-     "sha256": "29e1aea1fb841a0663ce75e9d83e675ddc7ae5cef00c623bdda65a72604fde7e",
-     "bytes": 25260
+     "path": "scripts/kit/sfx/key-4.flac",
+     "sha256": "8f0c528497d74f6263dfac8c8b5a4f184c4010c19c31884f58ee39944ff2b45b",
+     "bytes": 19100
     },
     {
-     "path": "scripts/kit/sfx/key-5.wav",
-     "sha256": "619eb7e26571657b76fc9e1e3d99e85c3fc2259fa91c4c45f57384a85774ac24",
-     "bytes": 25260
+     "path": "scripts/kit/sfx/key-5.flac",
+     "sha256": "c75faffa38a076e05a06c70ef53e5c0063278edcf51c28e02f490a9d162e7230",
+     "bytes": 19603
     },
     {
-     "path": "scripts/kit/sfx/key-6.wav",
-     "sha256": "419bde001e7ed1cae63b84f60c803fb024a0254e1afe65e59d8c6d8ad4196eb7",
-     "bytes": 25260
+     "path": "scripts/kit/sfx/key-6.flac",
+     "sha256": "1aed9969b2603bf7075fe3b2190bfcf6d538538fcb046b84c59ef23c1ecd395a",
+     "bytes": 19357
     },
     {
      "path": "scripts/kit/sfx/reveal-1.ogg",
@@ -3024,17 +3059,17 @@
     {
      "path": "scripts/projects/bunny_twin/assets/score.wav",
      "bytes": 969644,
-     "reason": "large-binary-left-upstream"
+     "reason": "large-audio-left-upstream"
     },
     {
      "path": "scripts/projects/five_sec/assets/score.wav",
      "bytes": 969644,
-     "reason": "large-binary-left-upstream"
+     "reason": "large-audio-left-upstream"
     },
     {
      "path": "scripts/projects/night_boat/assets/ambience.wav",
      "bytes": 882044,
-     "reason": "large-binary-left-upstream"
+     "reason": "large-audio-left-upstream"
     },
     {
      "path": "scripts/web/static/examples/cat.gif",

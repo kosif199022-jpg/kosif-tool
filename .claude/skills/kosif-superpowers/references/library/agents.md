@@ -76,6 +76,8 @@
 | `superpower-fusion` | دمج القدرات في قدرات خارقة مترابطة | `python3 scripts/superpower_fusion.py build` | tested-here |
 | `superpowers` | خريطة المستودعات الخارجية | `python3 scripts/superpowers.py list --capability voice --json` | tested-here |
 | `superpowers-unified` | موجّه مهارات العمل ومثبّتها | `python3 scripts/superpowers_unified.py doctor` | tested-here |
+| `superskills` | المهارات الخارقة: الـ114 مهارة الكاملة من مستودعك داخل سوبر باور | `python3 scripts/superskills.py find "نموذج مالي في إكسل"` | tested-here |
+| `superskills-bridge` | جسر المهارات الخارقة: بحث للقراءة فقط في فهرس الـ114 مهارة | `python3 scripts/superskills_bridge.py doctor` | tested-here |
 | `task-history` | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا | `python3 scripts/task_history.py new --kind video` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.
