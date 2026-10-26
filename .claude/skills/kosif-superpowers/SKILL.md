@@ -427,3 +427,11 @@ Do not claim full Blender equivalence; use narrow executable proofs.
 - [arsenal-general.md](references/arsenal-general.md) و[arsenal-libraries.md](references/arsenal-libraries.md) — المكتبات بإصداراتها ورخصها. [method-packs.md](references/method-packs.md) — البحث بالأدلة والتقييم والمال والمنتج وعقود الوكلاء.
 - [humanizer.md](references/humanizer.md) — كتابة بلا علامات آلية مع حراسة الحقائق (`scripts/tell_scan.py`، `scripts/anchor_gate.py`). [proofs/README.md](proofs/README.md) — أفلام وملفات الإثبات.
 - [atlas-reviewed-audit.md](references/atlas-reviewed-audit.md) — مراجعة ساكنة لـ1,000 من 14,793 مهارة في الأطلس (نصوص SKILL.md و862 ملف كود، وسبعة تحليلات REA)؛ `atlas_external_bridge.py` يضيف `content_audit` لنتائج البحث تلقائيًا. عيّنة لا تغطية كاملة ولا اختبارات تشغيل.
+
+## 100 Super Skills / الـ114 مهارة المدمجة
+
+- **مصدر المكتبة:** [kosif199022-jpg/100-superskills](https://github.com/kosif199022-jpg/100-superskills) مثبت عند commit `af7a5dc3778c0e68ef935349a5c1650d15688277` ضمن `.claude/skills/kosif-superpowers/vendor/100-superskills` بآلية Git submodule؛ **114 مجلد مهارة** مع السكربتات والأصول الأصلية (لا تقتصر على وصف المهارات).
+- **التثبيت بعد الاستنساخ:** `git submodule update --init --recursive` من جذر `kosif-tool`. بدون هذه الخطوة الفهرس متاح لكن السكربتات والملفات المرجعية غير مُحمّلة محليًا.
+- **الاستدعاء:** `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor` ثم `list` أو `find "مهمة"` أو `show <slug>`. ويمكن أيضًا الاستعلام عبر `skill_loader.py need "مهمة"`، الذي يضمّن المكتبة في ترشيحاته.
+- **الفهرس:** [الـ114 مهارة](references/100-superskills-integration.md)، والبيانات [data/100-superskills-index.json](data/100-superskills-index.json). افتح `skills/<slug>/SKILL.md` داخل submodule حسب التوجيه؛ اقرأ المراجع والسكربتات المطلوبة فقط ولا تنفّذ شيئًا لمجرد وجوده.
+- **عدم التكرار:** يبقى نظام KOSIF وأدواته الأصلية كما هو؛ المكتبة المضافة مصدر إضافي، وليس بديلًا أو إعلانًا بأن كل 114 سكربتًا قابل للتشغيل في الجلسة. تحقّق من حالة البيئة والمستلزمات وحقوق المحتوى وأي أذونات قبل التنفيذ.
