@@ -74,6 +74,7 @@
 | `smart-capabilities` | TOOL-116 | فهرس ذكي للقدرات من أجل Claude · Smart capability index for Claude | `python3 scripts/smart_capabilities.py groups` | 1 |
 | `superpower-fusion` | TOOL-127 | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) | `python3 scripts/superpower_fusion.py build` | 1 |
 | `superpowers-unified` | TOOL-09 | موجّه مهارات العمل ومثبّتها · Process-skill router and installer | `python3 scripts/superpowers_unified.py doctor` | 1 |
+| `superskills-bridge` | — | جسر المهارات المئة: ابحث وافتح 114 مهارة مثبتة من وحدة 100-superskills · 100-superskills bridge: find and open the 114 pinned skills of the 100-superskills submodule | `python3 scripts/superskills_bridge.py doctor` | 0 |
 
 ## draw
 
@@ -125,6 +126,7 @@
 |---|---|---|---|---|
 | `app-studio` | TOOL-88 | استوديو التطبيقات للصور والتصميم · App Studio photo & design CLI | `python3 scripts/app_studio.py --help` | 2 |
 | `app-studio-paint` | TOOL-89 | حزمة الرسم في استوديو التطبيقات · App Studio painting batch | `python3 -c "import sys; sys.path.insert(0,'scripts'); import app_stud…` | 1 |
+| `design-tells` | — | كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS · Design tells: deterministic audit of HTML/CSS for the look every AI-generated page shares | `python3 scripts/design_tells.py audit index.html` | 1 |
 | `font-fidelity-lab` | TOOL-42 | مختبر مطابقة الخطوط العربية · Arabic-aware font fidelity lab | `python3 scripts/font_fidelity_lab.py inspect proofs/_shared/fonts/Ami…` | 1 |
 | `image-local-ai` | TOOL-140 | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره · Local image AI: remove background and smart fill with your own ONNX model | `python3 scripts/image_local_ai.py models --json` | 1 |
 | `mosamem-rea-fusion` | TOOL-138 | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن · Mosamem x REA source-safe image preflight and capability fusion | `python3 scripts/mosamem_rea_fusion.py doctor` | 1 |
@@ -207,6 +209,7 @@
 | `ui-beat` | TOOL-150 | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة · UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check | `python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur…` | 1 |
 | `unified-cinematic` | TOOL-118 | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video | `python3 scripts/unified_cinematic.py doctor` | 1 |
 | `verify-video` | TOOL-79 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --dur…` | 2 |
+| `video-eyes` | — | عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية · Video eyes: contact strip, onion skin, motion-energy timeline with frozen-stretch detection, and per-second loudness | `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes` | 1 |
 
 ## sources
 
@@ -220,6 +223,7 @@
 | `creative-external-search` | TOOL-46 | بحث المصادر الإبداعية دون اتصال · Creative sources offline search | `python3 scripts/creative_external_search.py search "kinetic typograph…` | 1 |
 | `fetch-reference` | TOOL-93 | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure | `python3 scripts/fetch_reference.py https://example.com/page --list --…` | 2 |
 | `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 0 |
+| `github-pulse` | — | نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها · GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | 1 |
 | `github-top-repos` | TOOL-160 | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker | `python3 scripts/github_top_repos.py build` | 1 |
 | `instagram-finder` | TOOL-173 | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder | `python3 scripts/instagram_finder.py accounts` | 1 |
 | `instagram-reference-discovery` | TOOL-172 | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices | `python3 scripts/instagram_reference_bridge.py doctor` | 1 |
@@ -247,6 +251,7 @@
 | `decision-math` | TOOL-145 | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high…` | 1 |
 | `invention-lab` | TOOL-11 | مختبر الابتكار الهندسي · Invention Lab Candidates | `python3 scripts/invention_lab.py methods` | 1 |
 | `lesson-integrity` | TOOL-167 | فاحص أرقام الدروس والشروح · Lesson number integrity checker | `python3 scripts/lesson_integrity.py values --registry values.json` | 1 |
+| `llm-council` | — | مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد · Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict | `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work…` | 1 |
 | `memory-ops` | TOOL-163 | عمليات الذاكرة · Memory Ops | `python3 scripts/memory_ops.py propose --store memory.json --facts fac…` | 1 |
 | `prompt-lab` | TOOL-159 | مختبر البرومبت · Prompt Lab | `python3 scripts/prompt_lab.py kinds` | 1 |
 | `see-pro-cognitive-gate` | TOOL-76 | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier | `python3 scripts/see_pro_cognitive_gate.py --self-test` | 1 |
@@ -254,4 +259,5 @@
 | `task-history` | TOOL-170 | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا · Task history: record every finished task and repeat it later | `python3 scripts/task_history.py new --kind video` | 1 |
 | `tell-scan` | TOOL-75 | فاحص العبارات الكتابية النمطية · Writing Tell Scanner | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | 1 |
 | `think` | TOOL-69 | محرك التفكير وقوالبه · Thinking engine scaffolds | `python3 scripts/think.py ladder "design a 30-day plan for a course la…` | 5 |
+| `thinking-books` | — | مكتبة كتب التفكير: 64 منهجًا من 40 كتابًا مشهورًا في طرق التفكير مربوطة بمراحل البروتوكول · Thinking-books library: 64 methods from 40 famous books on how to think, routed to USIP phases | `python3 scripts/thinking_books.py stack "عايز أطلق تطبيق جديد"` | 1 |
 

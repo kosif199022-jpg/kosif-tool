@@ -40,7 +40,7 @@ chapter: [arabic-language](../powers/arabic-language.md) · card: `usip-library/
 
 ## typography-arabic (motion)
 
-chapter: [typography-arabic](../powers/typography-arabic.md) · card: `usip-library/cards/type/typography-arabic.md` · tools: `app-studio` · `caption-lines` · `font-fidelity-lab` · `image-local-ai` · `mimic` · `motion-runtime` · `reel-factory` · `render-text` …
+chapter: [typography-arabic](../powers/typography-arabic.md) · card: `usip-library/cards/type/typography-arabic.md` · tools: `app-studio` · `caption-lines` · `design-tells` · `font-fidelity-lab` · `image-local-ai` · `mimic` · `motion-runtime` · `reel-factory` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

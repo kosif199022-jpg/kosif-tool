@@ -40,7 +40,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (33) / protocol appendices
+## ملاحق البروتوكول (34) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -77,6 +77,7 @@
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» |
+| [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -120,7 +121,7 @@
 - 7–32: قواك الخارقة — KOSIF Superpowers
 - 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
 - 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 44–47: FusionForge v2 (USIP v5.7) — project-scoped composite workflow recipes
+- 44–47: FusionForge v2 (USIP v5.8) — project-scoped composite workflow recipes
 - 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 - 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 - 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports
@@ -162,8 +163,9 @@
 - 391–394: Original full-body character animation (2026-10-19)
 - 395–410: REA Creative Research Atlas — 2,000 public sources (2026-10-19)
 - 411–422: Blender headless H.264 motion video
-- 423–429: 8. مراجع أخرى / other references
+- 423–430: 8. مراجع أخرى / other references
 - 431–437: 100 Super Skills / الـ114 مهارة المدمجة
+
 
 ## مكتبة 100 Super Skills (114) / pinned submodule skills
 

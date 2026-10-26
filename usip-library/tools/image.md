@@ -1,4 +1,4 @@
-# أدوات المجال `image` (11 أداة)
+# أدوات المجال `image` (12 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -162,6 +162,48 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:app-studio-paint --evidence <ملف>`.
+
+### `design-tells` — كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS / Design tells: deterministic audit of HTML/CSS for the look every AI-generated page shares
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/design_tells.py` (جذر: skill) |
+| المجال | `image` |
+| الدليل | `tested-here` |
+| العائلات | `ui-product-device`, `qa-verification`, `typography-arabic` |
+
+**ما تفعله:** يفحص HTML وCSS بـ19 قاعدة (خط عام واحد، تدرج بنفسجي أزرق، بطاقات داخل بطاقات، تباين ضعيف، إيموجي، كل شيء في المنتصف، عبارات تسويقية جاهزة، عربي بلا خط عربي أو بلا RTL…) ويعطي درجة من 100 وإصلاحًا لكل علامة.
+
+**What it does:** Scans HTML and CSS (inline, <style>, linked local sheets, CSS variables resolved) with 19 fixed rules: one generic sans for everything, purple-to-blue gradients, gradient heading text, cards nested in cards, grey text on colour, WCAG contrast below 4.5:1, an icon tile above every heading, emoji bullets, everything centred, one radius everywhere, heavy shadows, repeated glass blur, stock hype copy, placeholder images, Arabic text with a Latin-only font or without RTL, fade-in on everything, too many accent hues and no reduced-motion rule. Scores out of 100 with a fix per hit; exit 3 = REVISE.
+
+#### متى تُستدعى
+
+- «افحص الصفحة دي هل شكلها معمول بالذكاء الاصطناعي»
+- «راجع تصميم الموقع قبل التسليم»
+- «Audit this landing page for AI-slop design»
+- «Is this Arabic page RTL with an Arabic font?»
+
+#### الأوامر
+
+- **audit**: Score and fixes; exit 3 = REVISE.
+  - `python3 scripts/design_tells.py audit index.html`
+- **rules**: The rule table.
+  - `python3 scripts/design_tells.py rules`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: Reads only the given files; never edits them.
+- الحدود: Pattern rules find candidates and can be wrong; layout, imagery and taste still need a browser look at phone and desktop width.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_v58_mastery.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:design-tells --evidence <ملف>`.
 
 ### `font-fidelity-lab` — مختبر مطابقة الخطوط العربية / Arabic-aware font fidelity lab
 
