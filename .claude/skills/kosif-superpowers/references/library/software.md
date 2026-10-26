@@ -42,6 +42,7 @@
 | `browser-scout` | مستكشف المواقع بالمتصفح | `python3 scripts/browser_scout.py doctor` | tested-here |
 | `capability-graph` | باني خريطة القدرات المترابطة | `python3 scripts/capability_graph.py build` | tested-here |
 | `caption-lines` | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة | `python3 scripts/caption_lines.py group words.json -o captions.srt --rlm` | tested-here |
+| `design-tells` | كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS | `python3 scripts/design_tells.py audit index.html` | tested-here |
 | `installer-triage` | فرز المثبّتات | `python3 scripts/installer_triage.py scan ./setup.exe` | tested-here |
 | `kosif-remote-commander` | خادم KOSIF Remote Commander | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `lesson-integrity` | فاحص أرقام الدروس والشروح | `python3 scripts/lesson_integrity.py values --registry values.json` | tested-here |

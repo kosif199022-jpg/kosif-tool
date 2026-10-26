@@ -1,4 +1,4 @@
-# أدوات المجال `think` (17 أداة)
+# أدوات المجال `think` (18 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -886,4 +886,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:think --evidence <ملف>`.
+
+### `thinking-books` — مكتبة كتب التفكير: 64 منهجًا من 40 كتابًا مشهورًا في طرق التفكير مربوطة بمراحل البروتوكول / Thinking-books library: 64 methods from 40 famous books on how to think, routed to USIP phases
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/thinking_books.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات | `thinking-core`, `mental-models`, `planning-execution`, `creativity-engine` |
+
+**ما تفعله:** 64 منهجًا بكلماتنا من 40 كتابًا في التفكير، لكل منهج مرحلة ومحفزات وخطوات ودليل تطبيق وفخ. route يختار الأنسب لمهمة، وstack منهجًا لكل مرحلة، وdebias يفحص التقرير للتحيزات، مع القبعات الست وتريز والتنبؤ بالنظرة الخارجية ودرجة براير.
+
+**What it does:** Holds 64 methods restated in our own words from 40 widely known books on thinking (Kahneman, Tetlock, Pólya, de Bono, Meadows, Taleb, Minto, Klein, Rumelt, Galef, Sagan, Ibn Khaldun, Ibn al-Haytham, al-Ghazali and more), each with a stage, Arabic/English triggers, steps, a proof-of-use check and the trap it prevents. route ranks the best methods for a task from different books; stack picks one per stage mapped to USIP phases (adding the reuse-first ladder for code); debias sweeps a draft report for certainty without odds, a single option, no risks, numbers without a base rate, no sources, sunk cost and answer-last; plus Six Hats prompts, a TRIZ contradiction helper over the 40 principles, an outside-view forecast with capped adjustments and a Brier score.
+
+#### متى تُستدعى
+
+- «فكّر صح في القرار ده واستخدم مناهج الكتب»
+- «افحص التقرير ده من التحيزات قبل ما أبعته»
+- «قدّر مدة المشروع بالنظرة الخارجية»
+- «عايز أفكار لحل تعارض بين السرعة والجودة»
+- «Which thinking method fits this decision?»
+
+#### الأوامر
+
+- **stack**: One method per stage mapped to USIP phases.
+  - `python3 scripts/thinking_books.py stack "عايز أطلق تطبيق جديد"`
+- **route**: Best methods for a task from different books.
+  - `python3 scripts/thinking_books.py route "قدّر مدة المشروع" -n 5`
+- **debias**: Bias sweep of a draft; exit 3 = REVISE.
+  - `python3 scripts/thinking_books.py debias report.md`
+- **triz**: Contradiction to inventive principles.
+  - `python3 scripts/thinking_books.py triz --improve speed --worsen quality`
+- **forecast**: Outside view first, capped inside-view adjustments.
+  - `python3 scripts/thinking_books.py forecast --base 0.3 --adjust "+0.1:strong team"`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: Reads only the data file and the given draft; prints to stdout.
+- الحدود: Methods are summaries written from public knowledge of the books, not the books; routing and debias are keyword heuristics; a scaffold is not proof that the thinking was done.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_v58_mastery.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:thinking-books --evidence <ملف>`.
 

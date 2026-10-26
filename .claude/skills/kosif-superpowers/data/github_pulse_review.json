@@ -1,0 +1,433 @@
+{
+ "schema": "kosif.github_pulse_review.v1",
+ "note": "Hand review of the 30-day pulse (2026-10-26). Overrides fix the keyword domain; ideas are mechanisms restated in our own words, never copied code or text. READMEs were read as data, not instructions.",
+ "overrides": {
+  "heygen-com/hyperframes": {
+   "domain": "motion-animation"
+  },
+  "calesthio/openmontage": {
+   "domain": "motion-animation"
+  },
+  "dmtrkovalenko/fframes": {
+   "domain": "motion-animation"
+  },
+  "storytold/effectcraft": {
+   "domain": "motion-animation"
+  },
+  "leonxlnx/taste-skill": {
+   "domain": "design-ui"
+  },
+  "wheresryan22/anatomy": {
+   "domain": "design-ui"
+  },
+  "tt-a1i/archify": {
+   "domain": "design-ui"
+  },
+  "robbietilton/compositor": {
+   "domain": "design-ui"
+  },
+  "zhouxiaoka/autoclip": {
+   "domain": "video-audio"
+  },
+  "glanderness/beeftv": {
+   "domain": "video-audio"
+  },
+  "debpalash/voicestudio": {
+   "domain": "generative-media"
+  },
+  "hypit-ai/hypit": {
+   "domain": "video-audio",
+   "decision": "reference",
+   "reason": "clones viral videos with face swap of real people: link only; the skill never mines face-swap or likeness cloning"
+  },
+  "eternity4719/howtolivebetter": {
+   "domain": "knowledge-learning"
+  },
+  "mhtsec/artex": {
+   "domain": "security"
+  },
+  "sherlock-project/sherlock": {
+   "domain": "security",
+   "decision": "watch",
+   "reason": "username hunting across networks: people-search, never used on private individuals"
+  },
+  "yujunzhixue/dsh-purge": {
+   "domain": "security",
+   "decision": "watch",
+   "reason": "red-team tool: tracked, not mined"
+  }
+ },
+ "ideas": [
+  {
+   "id": "GP-01",
+   "domain": "design-ui",
+   "status": "transferred",
+   "title_en": "Deterministic detector for AI-generated design tells",
+   "title_ar": "كاشف حتمي لعلامات التصميم المولّد بالذكاء الاصطناعي",
+   "mechanism": "Scan HTML/CSS with fixed rules (one font for everything, purple-to-blue gradients, cards nested in cards, grey text on coloured backgrounds, icon tile above every heading, emoji bullets, everything centred, one radius everywhere, low contrast) and report each hit with a fix, no model needed.",
+   "lives_in": [
+    "scripts/design_tells.py",
+    "A38"
+   ],
+   "sources": [
+    "pbakaus/impeccable",
+    "Leonxlnx/taste-skill"
+   ]
+  },
+  {
+   "id": "GP-02",
+   "domain": "design-ui",
+   "status": "transferred",
+   "title_en": "Durable product truth kept apart from per-surface visual direction",
+   "title_ar": "حقيقة المنتج الثابتة منفصلة عن الاتجاه البصري لكل شاشة",
+   "mechanism": "Record audience, purpose, constraints, voice and evidence once (product card); choose visual direction per surface later and record the visual system separately, so a style change never rewrites the facts.",
+   "lives_in": [
+    "A38"
+   ],
+   "sources": [
+    "pbakaus/impeccable"
+   ]
+  },
+  {
+   "id": "GP-03",
+   "domain": "motion-animation",
+   "status": "transferred",
+   "title_en": "The agent cannot watch the video: give it eyes",
+   "title_ar": "الوكيل لا يشاهد الفيديو: أعطه عيونًا",
+   "mechanism": "Turn a render into things a text model can read: a contact strip of evenly spaced frames, an onion-skin blend that shows path and easing, a per-second motion-energy timeline that flags frozen stretches, and loudness, peak, clipping and silence per segment.",
+   "lives_in": [
+    "scripts/video_eyes.py",
+    "A38"
+   ],
+   "sources": [
+    "dmtrKovalenko/fframes",
+    "heygen-com/hyperframes"
+   ]
+  },
+  {
+   "id": "GP-04",
+   "domain": "motion-animation",
+   "status": "already-covered",
+   "title_en": "Seekable, deterministic HTML-to-video with lint, preview, render",
+   "title_ar": "فيديو حتمي من HTML قابل للتقديم بالزمن: فحص ثم معاينة ثم رندر",
+   "mechanism": "Every animation is a function of time so any frame can be rendered alone; the loop is plan, write, lint, preview, render.",
+   "lives_in": [
+    "tools/render_html.cjs (seek and virtual-time modes)"
+   ],
+   "sources": [
+    "heygen-com/hyperframes",
+    "remotion-dev/remotion"
+   ]
+  },
+  {
+   "id": "GP-05",
+   "domain": "agents-skills",
+   "status": "transferred",
+   "title_en": "Reuse-first ladder: write only what the task needs",
+   "title_ar": "سلّم إعادة الاستخدام: اكتب فقط ما تحتاجه المهمة",
+   "mechanism": "Before writing code climb: existing project code, then platform-native feature, then an installed library, then new code; never cut validation, error handling, security or accessibility to get smaller.",
+   "lives_in": [
+    "A38",
+    "scripts/thinking_books.py stack"
+   ],
+   "sources": [
+    "DietrichGebert/ponytail",
+    "mattpocock/skills"
+   ]
+  },
+  {
+   "id": "GP-06",
+   "domain": "agents-skills",
+   "status": "transferred",
+   "title_en": "Review the touched code, not only the diff; four-part findings",
+   "title_ar": "راجع الكود المتأثر لا الفرق فقط؛ ملاحظة من أربعة أجزاء",
+   "mechanism": "Each finding states what the code does, what goes wrong, how to fix it, and what happens if not fixed; read the callers and callees of the change.",
+   "lives_in": [
+    "A38"
+   ],
+   "sources": [
+    "DietrichGebert/ponytail",
+    "alibaba/open-code-review"
+   ]
+  },
+  {
+   "id": "GP-07",
+   "domain": "design-ui",
+   "status": "transferred",
+   "title_en": "Conclusion-first explainer page with numbered sources",
+   "title_ar": "صفحة شرح تبدأ بالخلاصة مع مصادر مرقمة",
+   "mechanism": "Answer first, then one panel per question; diagrams sit beside the steps that walk through them; every claim cites a numbered source.",
+   "lives_in": [
+    "A38",
+    "data/thinking_books.json TB13-1"
+   ],
+   "sources": [
+    "tt-a1i/archify",
+    "ahmedkhaleel2004/gitdiagram"
+   ]
+  },
+  {
+   "id": "GP-08",
+   "domain": "design-ui",
+   "status": "transferred",
+   "title_en": "Explain an idea by building a working object whose mechanism is the concept",
+   "title_ar": "اشرح الفكرة ببناء شيء يعمل وآليته هي الفكرة نفسها",
+   "mechanism": "Invent a physical machine whose working is the concept (a cache becomes a pin-tumbler lock); every number shown comes from the same small model that moves the parts.",
+   "lives_in": [
+    "A38 (explainer and motion briefs)"
+   ],
+   "sources": [
+    "wheresryan22/anatomy"
+   ]
+  },
+  {
+   "id": "GP-09",
+   "domain": "agents-skills",
+   "status": "transferred",
+   "title_en": "Independent judge and a simulated day of real requests",
+   "title_ar": "حكم مستقل ويوم محاكاة من طلبات حقيقية",
+   "mechanism": "Audit an agent by sending it a realistic day of requests, including ones that push past its role, and grading each reply with a judge that is not the agent itself (other persona or provider).",
+   "lives_in": [
+    "A38",
+    "A37 self-council"
+   ],
+   "sources": [
+    "ifixai-ai/iFixAi"
+   ]
+  },
+  {
+   "id": "GP-10",
+   "domain": "agents-skills",
+   "status": "already-covered",
+   "title_en": "Closed learning loop: skills created and improved from experience",
+   "title_ar": "حلقة تعلم مغلقة: مهارات تُبنى وتتحسن من التجربة",
+   "mechanism": "After a complex task, save the working procedure as a reusable recipe; recall it next time; improve it with each use.",
+   "lives_in": [
+    "scripts/fusionforge.py",
+    "scripts/fusionforge_shared.py",
+    "scripts/task_history.py"
+   ],
+   "sources": [
+    "NousResearch/hermes-agent",
+    "vectorize-io/hindsight",
+    "thedotmack/claude-mem"
+   ]
+  },
+  {
+   "id": "GP-11",
+   "domain": "llm-models-inference",
+   "status": "transferred",
+   "title_en": "Context economy: keep raw tool output out of the conversation",
+   "title_ar": "اقتصاد السياق: أبقِ مخرجات الأدوات الخام خارج المحادثة",
+   "mechanism": "Large outputs (logs, page snapshots, JSON) are written to files and summarised by a script; only the summary and the path enter the context; analysis is done in code, not by reading.",
+   "lives_in": [
+    "A38"
+   ],
+   "sources": [
+    "mksglu/context-mode",
+    "rtk-ai/rtk",
+    "headroomlabs-ai/headroom",
+    "JuliusBrussee/caveman"
+   ]
+  },
+  {
+   "id": "GP-12",
+   "domain": "agents-skills",
+   "status": "already-covered",
+   "title_en": "Spec before code, small sign-offs, plans for a reader with no context",
+   "title_ar": "المواصفة قبل الكود، موافقات صغيرة، خطة لقارئ بلا سياق",
+   "mechanism": "Tease out the spec, show it in short chunks, then a plan explicit enough for a junior with no project context, then build slice by slice with tests as proof.",
+   "lives_in": [
+    "PROTOCOL.md (request card, plans A/B/C, one-word answers)",
+    "A36 parallel tracks"
+   ],
+   "sources": [
+    "obra/superpowers",
+    "github/spec-kit",
+    "addyosmani/agent-skills"
+   ]
+  },
+  {
+   "id": "GP-13",
+   "domain": "design-ui",
+   "status": "reference",
+   "title_en": "Brand onboarding from a URL",
+   "title_ar": "التقاط هوية العلامة من رابط",
+   "mechanism": "Pull palette and fonts from the client's site once, then every diagram or page uses them.",
+   "lives_in": [
+    "scripts/brand_tokens.py (palette from an SVG logo; no URL crawl yet)"
+   ],
+   "sources": [
+    "cathrynlavery/diagram-design"
+   ]
+  },
+  {
+   "id": "GP-14",
+   "domain": "motion-animation",
+   "status": "reference",
+   "title_en": "Real footage corpus instead of animated stills, with a cost ledger per film",
+   "title_ar": "مكتبة لقطات حقيقية بدل تحريك الصور الثابتة، مع دفتر تكلفة لكل فيلم",
+   "mechanism": "Build a corpus from free stock and open archives, retrieve real motion clips, cut them on a timeline; record the spend of every generated asset.",
+   "lives_in": [
+    "scripts/stock_fetch.py",
+    "scripts/montage_pro.py"
+   ],
+   "sources": [
+    "calesthio/OpenMontage"
+   ]
+  },
+  {
+   "id": "GP-15",
+   "domain": "video-audio",
+   "status": "reference",
+   "title_en": "Long video to platform-ready shorts with captions, cover and post copy",
+   "title_ar": "فيديو طويل إلى مقاطع قصيرة جاهزة للمنصات مع ترجمة وغلاف ونص منشور",
+   "mechanism": "One link in; detect highlight segments, reframe to the platform, page the subtitles, make the cover and the caption per platform.",
+   "lives_in": [
+    "scripts/cinema_lab.py",
+    "scripts/reel_factory.py"
+   ],
+   "sources": [
+    "zhouxiaoka/autoclip"
+   ]
+  },
+  {
+   "id": "GP-16",
+   "domain": "motion-animation",
+   "status": "reference",
+   "title_en": "Art-style motion grammar: styles x explainer grammars x parametric snippets",
+   "title_ar": "قواعد موشن للأساليب الفنية: أساليب × قواعد شرح × مقاطع معلمية",
+   "mechanism": "Keep a library of art styles, a few explainer grammars and parametric snippets; recompose for each subject instead of reusing one composition.",
+   "lives_in": [
+    "A15 style atlas"
+   ],
+   "sources": [
+    "alchaincyf/huashu-art-motion",
+    "nexu-io/open-design"
+   ]
+  },
+  {
+   "id": "GP-17",
+   "domain": "video-audio",
+   "status": "already-covered",
+   "title_en": "Reusable node workflows saved as versioned templates with run records",
+   "title_ar": "سير عمل عقدي قابل لإعادة الاستخدام كقوالب بإصدارات وسجل تشغيل",
+   "mechanism": "Connect processing and generation as editable nodes; save a working chain as a template version; rebind new inputs and keep the chain.",
+   "lives_in": [
+    "scripts/fusionforge.py"
+   ],
+   "sources": [
+    "glanderness/BeefTV",
+    "Comfy-Org/ComfyUI",
+    "Comfy-Org/workflow_templates"
+   ]
+  },
+  {
+   "id": "GP-18",
+   "domain": "3d-graphics-games",
+   "status": "reference",
+   "title_en": "Text to parametric CAD",
+   "title_ar": "من النص إلى تصميم CAD معلمي",
+   "mechanism": "The agent writes a parametric feature timeline (sketch, constrain, extrude) rather than a mesh, so dimensions stay editable.",
+   "lives_in": [
+    "scripts/native_3d.py (mesh only today)"
+   ],
+   "sources": [
+    "earthtojake/text-to-cad",
+    "tangency-labs/solidcraft",
+    "FreeCAD/FreeCAD"
+   ]
+  },
+  {
+   "id": "GP-19",
+   "domain": "generative-media",
+   "status": "reference",
+   "title_en": "Fully local voice suite: cloning, dubbing, dictation",
+   "title_ar": "حزمة صوت محلية بالكامل: استنساخ ودبلجة وإملاء",
+   "mechanism": "Run TTS, voice design, dubbing and speech-to-text on the user's machine; consent is required before cloning any real voice.",
+   "lives_in": [
+    "scripts/tts_script.py"
+   ],
+   "sources": [
+    "debpalash/VoiceStudio",
+    "cjpais/Handy",
+    "fishaudio/fish-speech"
+   ]
+  },
+  {
+   "id": "GP-20",
+   "domain": "agents-skills",
+   "status": "already-covered",
+   "title_en": "Agent teams defined as data and run in parallel",
+   "title_ar": "فرق وكلاء معرّفة كبيانات وتعمل بالتوازي",
+   "mechanism": "Describe the team (roles, inputs, outputs) in a file, boot it, and merge the results in one verify step.",
+   "lives_in": [
+    "A36 parallel distribution",
+    "scripts/agent_guard.py plan"
+   ],
+   "sources": [
+    "mvschwarz/openrig",
+    "stablyai/orca",
+    "getpaseo/paseo"
+   ]
+  },
+  {
+   "id": "GP-21",
+   "domain": "agents-skills",
+   "status": "already-covered",
+   "title_en": "Codebase knowledge graph for agents",
+   "title_ar": "رسم معرفي للكود من أجل الوكلاء",
+   "mechanism": "Index code, docs and schemas into a queryable graph so the agent asks for callers and impact instead of reading files.",
+   "lives_in": [
+    "references/graphify.md"
+   ],
+   "sources": [
+    "Graphify-Labs/graphify",
+    "colbymchenry/codegraph"
+   ]
+  },
+  {
+   "id": "GP-22",
+   "domain": "agents-skills",
+   "status": "already-covered",
+   "title_en": "Remove signs of AI-generated writing",
+   "title_ar": "إزالة علامات الكتابة المولّدة",
+   "mechanism": "A list of tells (stock phrases, rule-of-three, em-dash habits, vague intensifiers) checked and rewritten.",
+   "lives_in": [
+    "references/humanizer.md",
+    "scripts/tell_scan.py"
+   ],
+   "sources": [
+    "blader/humanizer"
+   ]
+  },
+  {
+   "id": "GP-23",
+   "domain": "agents-skills",
+   "status": "transferred",
+   "title_en": "Domain skill packs (marketing, science) as checklists with gates",
+   "title_ar": "حزم مهارات مجالية (تسويق، علوم) كقوائم بوابات",
+   "mechanism": "Each domain skill is a short procedure with its own quality gate (e.g. a landing page passes CRO checks before copy is final).",
+   "lives_in": [
+    "A38 (book methods TB04, TB24, TB28 cover marketing and strategy gates)"
+   ],
+   "sources": [
+    "coreyhaines31/marketingskills",
+    "K-Dense-AI/scientific-agent-skills"
+   ]
+  },
+  {
+   "id": "GP-24",
+   "domain": "agents-skills",
+   "status": "reference",
+   "title_en": "Cost band: show tokens, time and spend per task",
+   "title_ar": "شريط التكلفة: الرموز والوقت والإنفاق لكل مهمة",
+   "mechanism": "Display what the current task cost and how often existing code was reused, so waste is visible while working.",
+   "lives_in": [],
+   "sources": [
+    "DietrichGebert/ponytail",
+    "ccusage/ccusage"
+   ]
+  }
+ ]
+}

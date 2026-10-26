@@ -1,0 +1,2026 @@
+{
+ "schema": "kosif.thinking_books.v1",
+ "note": "Methods restated in our own words from widely known books on thinking; no text is quoted. Each method is a scaffold, not proof that thinking happened.",
+ "stages": {
+  "frame": "Understand and define the problem (request card, MECE, systems map)",
+  "diverge": "Generate options before judging (ideas, analogies, contradictions)",
+  "converge": "Combine and evaluate viewpoints",
+  "forecast": "Estimate numbers and probabilities",
+  "decide": "Choose under uncertainty",
+  "execute": "Build, test and ship in small loops",
+  "verify": "Audit claims, risks and biases before delivery",
+  "communicate": "Structure and deliver the message",
+  "learn": "Review outcomes and update"
+ },
+ "books": [
+  {
+   "id": "TB01",
+   "title": "Thinking, Fast and Slow",
+   "title_ar": "التفكير السريع والبطيء",
+   "author": "Daniel Kahneman",
+   "year": 2011,
+   "field": "judgement",
+   "core_idea_en": "Two systems: fast intuition (System 1) produces most judgements and its errors are predictable; slow deliberate reasoning (System 2) is lazy and must be called on purpose.",
+   "core_idea_ar": "نظامان: حدس سريع يصدر أغلب الأحكام وأخطاؤه متوقعة، وتفكير بطيء متأنٍّ كسول لا يعمل إلا إذا استدعيته عمدًا."
+  },
+  {
+   "id": "TB02",
+   "title": "Noise: A Flaw in Human Judgment",
+   "title_ar": "الضوضاء: خلل في الحكم البشري",
+   "author": "Kahneman, Sibony, Sunstein",
+   "year": 2021,
+   "field": "judgement",
+   "core_idea_en": "Besides bias there is noise: unwanted variability between judges and between occasions. Decision hygiene reduces it.",
+   "core_idea_ar": "إلى جانب التحيز توجد الضوضاء: تباين غير مرغوب بين الحكّام وبين المرات. نظافة القرار تقللها."
+  },
+  {
+   "id": "TB03",
+   "title": "The Art of Thinking Clearly",
+   "title_ar": "فن التفكير الواضح",
+   "author": "Rolf Dobelli",
+   "year": 2013,
+   "field": "judgement",
+   "core_idea_en": "A field guide of short, named thinking errors; naming the error at the moment of decision is the defence.",
+   "core_idea_ar": "دليل ميداني لأخطاء تفكير مسماة؛ تسمية الخطأ لحظة القرار هي الوقاية."
+  },
+  {
+   "id": "TB04",
+   "title": "Influence: The Psychology of Persuasion",
+   "title_ar": "التأثير: سيكولوجية الإقناع",
+   "author": "Robert Cialdini",
+   "year": 1984,
+   "field": "persuasion",
+   "core_idea_en": "Six levers (reciprocity, commitment, social proof, liking, authority, scarcity) move people automatically; know them to use them honestly and to resist them.",
+   "core_idea_ar": "ست روافع تحرك الناس آليًا: المعاملة بالمثل، الالتزام، الدليل الاجتماعي، الإعجاب، السلطة، الندرة؛ اعرفها لتستخدمها بأمانة وتقاومها."
+  },
+  {
+   "id": "TB05",
+   "title": "Superforecasting",
+   "title_ar": "التنبؤ الفائق",
+   "author": "Philip Tetlock & Dan Gardner",
+   "year": 2015,
+   "field": "forecasting",
+   "core_idea_en": "Good forecasters break questions down, start from base rates, update in small steps, keep score and stay humble.",
+   "core_idea_ar": "المتنبئون الأفضل يفككون السؤال، يبدأون بالمعدل الأساسي، يحدّثون بخطوات صغيرة، يحتفظون بسجل نتائجهم ويظلون متواضعين."
+  },
+  {
+   "id": "TB06",
+   "title": "Thinking in Bets",
+   "title_ar": "التفكير بالرهانات",
+   "author": "Annie Duke",
+   "year": 2018,
+   "field": "decision",
+   "core_idea_en": "A decision is a bet under uncertainty; judge decisions by their process and information, not by the single outcome (avoid 'resulting').",
+   "core_idea_ar": "القرار رهان في ظل عدم اليقين؛ احكم على القرار بطريقته ومعلوماته لا بنتيجة واحدة."
+  },
+  {
+   "id": "TB07",
+   "title": "The Black Swan / Antifragile / Fooled by Randomness",
+   "title_ar": "البجعة السوداء وضد الهشاشة والخداع بالعشوائية",
+   "author": "Nassim Nicholas Taleb",
+   "year": 2007,
+   "field": "risk",
+   "core_idea_en": "Rare, high-impact events dominate outcomes and cannot be predicted; design for exposure (convex payoffs, redundancy, small bets) rather than for prediction.",
+   "core_idea_ar": "الأحداث النادرة عالية الأثر تهيمن ولا يمكن توقعها؛ صمم للتعرض (مكاسب محدبة، تكرار، رهانات صغيرة) لا للتنبؤ."
+  },
+  {
+   "id": "TB08",
+   "title": "Factfulness",
+   "title_ar": "الحقائقية",
+   "author": "Hans Rosling",
+   "year": 2018,
+   "field": "data",
+   "core_idea_en": "Ten dramatic instincts (gap, negativity, straight line, fear, size, generalization, destiny, single perspective, blame, urgency) distort the world; check with numbers and proportions.",
+   "core_idea_ar": "عشر غرائز درامية تشوّه رؤيتنا للعالم؛ صحح بالأرقام والنسب."
+  },
+  {
+   "id": "TB09",
+   "title": "How to Measure Anything",
+   "title_ar": "كيف تقيس أي شيء",
+   "author": "Douglas Hubbard",
+   "year": 2007,
+   "field": "measurement",
+   "core_idea_en": "Anything that matters can be measured in the sense of reducing uncertainty; small samples and calibrated ranges are often enough; measure what has the highest information value.",
+   "core_idea_ar": "كل ما يهم يمكن قياسه بمعنى تقليل عدم اليقين؛ العينات الصغيرة والنطاقات المعايرة تكفي غالبًا؛ قِس ما له أعلى قيمة معلوماتية."
+  },
+  {
+   "id": "TB10",
+   "title": "How to Solve It",
+   "title_ar": "كيف تحل المسألة",
+   "author": "George Pólya",
+   "year": 1945,
+   "field": "problem-solving",
+   "core_idea_en": "Four phases: understand the problem, devise a plan, carry out the plan, look back; with heuristics such as 'solve a simpler related problem' and 'work backwards'.",
+   "core_idea_ar": "أربع مراحل: افهم المسألة، ضع خطة، نفّذها، ثم انظر للخلف؛ مع حيل مثل حل مسألة أبسط مشابهة والعمل من النهاية."
+  },
+  {
+   "id": "TB11",
+   "title": "The 5 Elements of Effective Thinking",
+   "title_ar": "العناصر الخمسة للتفكير الفعال",
+   "author": "Edward Burger & Michael Starbird",
+   "year": 2012,
+   "field": "learning",
+   "core_idea_en": "Understand deeply (earth), fail on purpose (fire), raise questions (air), follow the flow of ideas (water), and keep changing (quintessence).",
+   "core_idea_ar": "افهم بعمق، افشل عمدًا لتتعلم، اطرح الأسئلة، تتبع تدفق الأفكار، واستمر في التغير."
+  },
+  {
+   "id": "TB12",
+   "title": "And Suddenly the Inventor Appeared (TRIZ)",
+   "title_ar": "وفجأة ظهر المخترع (تريز)",
+   "author": "Genrich Altshuller",
+   "year": 1984,
+   "field": "invention",
+   "core_idea_en": "Inventive problems are contradictions; resolve them with a small set of recurring inventive principles instead of compromise, aiming at the ideal final result.",
+   "core_idea_ar": "مسائل الاختراع تناقضات؛ احلها بمبادئ اختراع متكررة بدل الحل الوسط، مستهدفًا النتيجة المثالية."
+  },
+  {
+   "id": "TB13",
+   "title": "The Pyramid Principle",
+   "title_ar": "مبدأ الهرم",
+   "author": "Barbara Minto",
+   "year": 1987,
+   "field": "communication",
+   "core_idea_en": "Start with the answer, then group supporting arguments in MECE sets, each summarising the ideas below it; open with Situation-Complication-Question.",
+   "core_idea_ar": "ابدأ بالإجابة ثم اجمع الحجج الداعمة في مجموعات لا تتداخل وتغطي الكل، وابدأ بالموقف-التعقيد-السؤال."
+  },
+  {
+   "id": "TB14",
+   "title": "Bulletproof Problem Solving",
+   "title_ar": "حل المشكلات المحصّن",
+   "author": "Charles Conn & Robert McLean",
+   "year": 2018,
+   "field": "problem-solving",
+   "core_idea_en": "A seven-step loop: define, disaggregate, prioritise, plan work, analyse, synthesise, communicate; iterate with hypotheses.",
+   "core_idea_ar": "حلقة من سبع خطوات: عرّف، فكك، رتب الأولويات، خطط، حلل، اجمع، وصّل؛ مع فرضيات متكررة."
+  },
+  {
+   "id": "TB15",
+   "title": "Conceptual Blockbusting",
+   "title_ar": "تكسير الحواجز الذهنية",
+   "author": "James L. Adams",
+   "year": 1974,
+   "field": "creativity",
+   "core_idea_en": "Perceptual, emotional, cultural and intellectual blocks stop ideas; name the block to remove it.",
+   "core_idea_ar": "حواجز إدراكية وعاطفية وثقافية وفكرية تمنع الأفكار؛ سمِّ الحاجز لتزيله."
+  },
+  {
+   "id": "TB16",
+   "title": "Six Thinking Hats",
+   "title_ar": "قبعات التفكير الست",
+   "author": "Edward de Bono",
+   "year": 1985,
+   "field": "creativity",
+   "core_idea_en": "Separate thinking into six modes worn one at a time (facts, feelings, caution, benefits, creativity, process) so a group thinks in parallel instead of arguing.",
+   "core_idea_ar": "افصل التفكير إلى ستة أنماط تُلبس واحدًا تلو الآخر (حقائق، مشاعر، حذر، فوائد، إبداع، إدارة) ليفكر الفريق بالتوازي بدل الجدال."
+  },
+  {
+   "id": "TB17",
+   "title": "Lateral Thinking",
+   "title_ar": "التفكير الجانبي",
+   "author": "Edward de Bono",
+   "year": 1970,
+   "field": "creativity",
+   "core_idea_en": "Escape dominant patterns by provocation (PO), random entry, challenge and alternatives, separating generation from judgement.",
+   "core_idea_ar": "اهرب من الأنماط السائدة بالاستفزاز والمدخل العشوائي والتحدي والبدائل، وافصل التوليد عن الحكم."
+  },
+  {
+   "id": "TB18",
+   "title": "A Technique for Producing Ideas",
+   "title_ar": "طريقة لإنتاج الأفكار",
+   "author": "James Webb Young",
+   "year": 1940,
+   "field": "creativity",
+   "core_idea_en": "Ideas are new combinations of old elements; gather specific and general material, digest it, let it incubate, catch the idea, then shape it against reality.",
+   "core_idea_ar": "الأفكار تركيبات جديدة لعناصر قديمة: اجمع، اهضم، احتضن، التقط الفكرة، ثم شكّلها في الواقع."
+  },
+  {
+   "id": "TB19",
+   "title": "Thinkertoys",
+   "title_ar": "ألعاب التفكير",
+   "author": "Michael Michalko",
+   "year": 1991,
+   "field": "creativity",
+   "core_idea_en": "A toolbox of idea techniques; the best known is SCAMPER: Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse.",
+   "core_idea_ar": "صندوق أدوات للأفكار أشهرها SCAMPER: استبدل، ادمج، كيّف، عدّل، استخدم لغرض آخر، احذف، اعكس."
+  },
+  {
+   "id": "TB20",
+   "title": "Change by Design / Creative Confidence",
+   "title_ar": "التغيير بالتصميم والثقة الإبداعية",
+   "author": "Tim Brown; Tom & David Kelley (IDEO)",
+   "year": 2009,
+   "field": "design",
+   "core_idea_en": "Design thinking: empathise with people, define the need, ideate widely, prototype cheaply, test with users; diverge then converge (the double diamond).",
+   "core_idea_ar": "التفكير التصميمي: تعاطف مع الناس، عرّف الحاجة، ولّد أفكارًا كثيرة، انمذج بسرعة ورخص، واختبر مع المستخدمين؛ تباعد ثم تقارب."
+  },
+  {
+   "id": "TB21",
+   "title": "Steal Like an Artist",
+   "title_ar": "اسرق كفنان",
+   "author": "Austin Kleon",
+   "year": 2012,
+   "field": "creativity",
+   "core_idea_en": "Creativity grows from influences: collect, study the lineage of your heroes, transform and remix rather than copy, and show your work.",
+   "core_idea_ar": "الإبداع ينمو من المؤثرات: اجمع، ادرس سلسلة من تحبهم، حوّل وامزج بدل النسخ، واعرض عملك."
+  },
+  {
+   "id": "TB22",
+   "title": "Thinking in Systems",
+   "title_ar": "التفكير المنظومي",
+   "author": "Donella Meadows",
+   "year": 2008,
+   "field": "systems",
+   "core_idea_en": "Behaviour comes from structure: stocks, flows, feedback loops and delays; the leverage points range from parameters (weak) to goals and paradigms (strong).",
+   "core_idea_ar": "السلوك ينتج من البنية: مخزونات وتدفقات وحلقات تغذية راجعة وتأخيرات؛ ونقاط الرافعة من المعاملات (ضعيفة) إلى الأهداف والنماذج الفكرية (قوية)."
+  },
+  {
+   "id": "TB23",
+   "title": "The Fifth Discipline",
+   "title_ar": "الانضباط الخامس",
+   "author": "Peter Senge",
+   "year": 1990,
+   "field": "systems",
+   "core_idea_en": "Learning organisations practice personal mastery, mental models, shared vision, team learning and systems thinking; recurring problems follow archetypes.",
+   "core_idea_ar": "المنظمات المتعلمة تمارس الإتقان الشخصي والنماذج الذهنية والرؤية المشتركة وتعلم الفريق والتفكير المنظومي؛ والمشكلات المتكررة تتبع أنماطًا."
+  },
+  {
+   "id": "TB24",
+   "title": "Good Strategy Bad Strategy",
+   "title_ar": "استراتيجية جيدة واستراتيجية سيئة",
+   "author": "Richard Rumelt",
+   "year": 2011,
+   "field": "strategy",
+   "core_idea_en": "A good strategy has a kernel: a diagnosis of the challenge, a guiding policy, and coherent actions; bad strategy is fluff, goals posing as strategy, or failure to face the problem.",
+   "core_idea_ar": "للاستراتيجية الجيدة نواة: تشخيص التحدي، وسياسة موجهة، وأفعال متسقة؛ والسيئة حشو أو أهداف تتنكر كاستراتيجية."
+  },
+  {
+   "id": "TB25",
+   "title": "Sources of Power",
+   "title_ar": "مصادر القوة",
+   "author": "Gary Klein",
+   "year": 1998,
+   "field": "decision",
+   "core_idea_en": "Experts decide by recognising patterns and mentally simulating one option (recognition-primed decision); the pre-mortem harnesses this to find failure in advance.",
+   "core_idea_ar": "الخبراء يقررون بالتعرف على الأنماط ومحاكاة خيار واحد ذهنيًا؛ وتمرين «ما قبل الوفاة» يستغل ذلك لكشف الفشل مسبقًا."
+  },
+  {
+   "id": "TB26",
+   "title": "The Art of War",
+   "title_ar": "فن الحرب",
+   "author": "Sun Tzu",
+   "year": -500,
+   "field": "strategy",
+   "core_idea_en": "Know yourself and the other side, win before the battle by positioning, avoid strength and strike weakness, and adapt like water.",
+   "core_idea_ar": "اعرف نفسك وخصمك، انتصر قبل المعركة بالتموضع، تجنب القوة واضرب الضعف، وتكيّف كالماء."
+  },
+  {
+   "id": "TB27",
+   "title": "Decisive",
+   "title_ar": "الحسم",
+   "author": "Chip & Dan Heath",
+   "year": 2013,
+   "field": "decision",
+   "core_idea_en": "WRAP: Widen your options, Reality-test your assumptions, Attain distance before deciding, Prepare to be wrong.",
+   "core_idea_ar": "WRAP: وسّع الخيارات، اختبر الافتراضات بالواقع، ابتعد قبل القرار، واستعد للخطأ."
+  },
+  {
+   "id": "TB28",
+   "title": "The Lean Startup",
+   "title_ar": "الشركة الناشئة الرشيقة",
+   "author": "Eric Ries",
+   "year": 2011,
+   "field": "execution",
+   "core_idea_en": "Build-measure-learn loops with a minimum viable product, actionable metrics and explicit pivot-or-persevere decisions.",
+   "core_idea_ar": "حلقات بناء-قياس-تعلم بأقل منتج قابل للتجربة، ومقاييس قابلة للفعل، وقرار صريح بالتحول أو المثابرة."
+  },
+  {
+   "id": "TB29",
+   "title": "The Great Mental Models",
+   "title_ar": "النماذج الذهنية الكبرى",
+   "author": "Shane Parrish (Farnam Street)",
+   "year": 2019,
+   "field": "mental-models",
+   "core_idea_en": "A latticework of models from many disciplines: map is not territory, circle of competence, first principles, thought experiment, second-order thinking, probabilistic thinking, inversion, Occam's and Hanlon's razors.",
+   "core_idea_ar": "شبكة نماذج من تخصصات كثيرة: الخريطة ليست الأرض، دائرة الكفاءة، المبادئ الأولى، التجربة الذهنية، التفكير من الدرجة الثانية، الاحتمالات، القلب، شفرة أوكام وهانلون."
+  },
+  {
+   "id": "TB30",
+   "title": "The Scout Mindset",
+   "title_ar": "عقلية الكشّاف",
+   "author": "Julia Galef",
+   "year": 2021,
+   "field": "epistemics",
+   "core_idea_en": "Soldier mindset defends beliefs; scout mindset wants an accurate map. Tests: calibration, the double standard test, the outsider test, the selective sceptic test.",
+   "core_idea_ar": "عقلية الجندي تدافع عن معتقداتها، وعقلية الكشاف تريد خريطة دقيقة؛ مع اختبارات المعايير المزدوجة والغريب والمتشكك الانتقائي."
+  },
+  {
+   "id": "TB31",
+   "title": "Think Again",
+   "title_ar": "فكّر مرة أخرى",
+   "author": "Adam Grant",
+   "year": 2021,
+   "field": "epistemics",
+   "core_idea_en": "Think like a scientist (not preacher, prosecutor or politician): hold views as hypotheses, seek disconfirmation, and use a challenge network.",
+   "core_idea_ar": "فكّر كعالِم لا كواعظ أو مدّعٍ أو سياسي: اعتبر آراءك فرضيات، ابحث عما ينقضها، واستعن بشبكة تتحداك."
+  },
+  {
+   "id": "TB32",
+   "title": "The Demon-Haunted World",
+   "title_ar": "عالم تسكنه الشياطين",
+   "author": "Carl Sagan",
+   "year": 1995,
+   "field": "epistemics",
+   "core_idea_en": "The 'baloney detection kit': independent confirmation, debate, no arguments from authority, multiple hypotheses, quantify, every link must work, Occam's razor, falsifiability.",
+   "core_idea_ar": "عدة كشف الهراء: تأكيد مستقل، نقاش، لا حجة بالسلطة، فرضيات متعددة، قِس، كل حلقة يجب أن تعمل، شفرة أوكام، قابلية التكذيب."
+  },
+  {
+   "id": "TB33",
+   "title": "Algorithms to Live By",
+   "title_ar": "خوارزميات نعيش بها",
+   "author": "Brian Christian & Tom Griffiths",
+   "year": 2016,
+   "field": "decision",
+   "core_idea_en": "Computer-science results for everyday choices: optimal stopping (37% rule), explore/exploit, sorting and caching, scheduling, overfitting, relaxation and randomness.",
+   "core_idea_ar": "نتائج علوم الحاسب للقرارات اليومية: التوقف الأمثل (قاعدة 37%)، الاستكشاف مقابل الاستغلال، الترتيب والتخزين، الجدولة، الإفراط في التوافق، التخفيف والعشوائية."
+  },
+  {
+   "id": "TB34",
+   "title": "Range",
+   "title_ar": "المدى",
+   "author": "David Epstein",
+   "year": 2019,
+   "field": "learning",
+   "core_idea_en": "In wicked (messy, delayed-feedback) domains, breadth, analogical thinking and sampling beat early narrow specialisation; use distant analogies.",
+   "core_idea_ar": "في المجالات الفوضوية بطيئة التغذية الراجعة، يتفوق الاتساع والتفكير بالتشبيه وتجريب مجالات متعددة على التخصص المبكر الضيق."
+  },
+  {
+   "id": "TB35",
+   "title": "Deep Work",
+   "title_ar": "العمل العميق",
+   "author": "Cal Newport",
+   "year": 2016,
+   "field": "execution",
+   "core_idea_en": "Value comes from distraction-free concentration on cognitively demanding tasks; schedule it, protect it, and shut down shallow work deliberately.",
+   "core_idea_ar": "القيمة تأتي من التركيز الخالي من المشتتات على المهام الصعبة؛ جدوله واحمِه وأغلق العمل السطحي عمدًا."
+  },
+  {
+   "id": "TB36",
+   "title": "Made to Stick",
+   "title_ar": "صُنع ليلتصق",
+   "author": "Chip & Dan Heath",
+   "year": 2007,
+   "field": "communication",
+   "core_idea_en": "Sticky ideas are Simple, Unexpected, Concrete, Credible, Emotional and told as Stories (SUCCESs); beware the curse of knowledge.",
+   "core_idea_ar": "الأفكار الملتصقة: بسيطة، غير متوقعة، ملموسة، موثوقة، عاطفية، في قصة؛ واحذر لعنة المعرفة."
+  },
+  {
+   "id": "TB37",
+   "title": "The Checklist Manifesto",
+   "title_ar": "بيان قائمة التحقق",
+   "author": "Atul Gawande",
+   "year": 2009,
+   "field": "execution",
+   "core_idea_en": "Complex work fails on ignorance and ineptitude; short DO-CONFIRM or READ-DO checklists at pause points catch the killer items.",
+   "core_idea_ar": "العمل المعقد يفشل بسبب الجهل أو التقصير؛ قوائم قصيرة عند نقاط التوقف تلتقط البنود القاتلة."
+  },
+  {
+   "id": "TB38",
+   "title": "Al-Muqaddimah",
+   "title_ar": "المقدمة",
+   "author": "Ibn Khaldun",
+   "year": 1377,
+   "field": "epistemics",
+   "core_idea_en": "Reports must be checked not only by their chain of narrators but against the nature of things (what is possible in society and nature); history has causes and cycles.",
+   "core_idea_ar": "الأخبار لا تُفحص بسندها فقط بل بمطابقتها لطبائع العمران والممكن؛ وللتاريخ أسباب ودورات."
+  },
+  {
+   "id": "TB39",
+   "title": "Doubts concerning Ptolemy / Book of Optics",
+   "title_ar": "الشكوك على بطليموس وكتاب المناظر",
+   "author": "Ibn al-Haytham",
+   "year": 1028,
+   "field": "science",
+   "core_idea_en": "The seeker of truth does not trust the writings of predecessors because they are revered; he doubts, examines, and tests by experiment (i'tibar).",
+   "core_idea_ar": "طالب الحق لا يثق بكتب السابقين لمجرد تقديرها، بل يشك ويفحص ويختبر بالاعتبار (التجربة)."
+  },
+  {
+   "id": "TB40",
+   "title": "Al-Munqidh min al-Dalal",
+   "title_ar": "المنقذ من الضلال",
+   "author": "Al-Ghazali",
+   "year": 1100,
+   "field": "epistemics",
+   "core_idea_en": "A method of systematic doubt: test each source of knowledge (senses, reason, authority) for what can actually establish certainty.",
+   "core_idea_ar": "منهج شك منظم: اختبر كل مصدر للمعرفة (الحواس، العقل، التقليد) لما يمكنه فعلًا أن يثبت اليقين."
+  }
+ ],
+ "methods": [
+  {
+   "id": "TB01-1",
+   "book": "TB01",
+   "name_en": "Outside view first (reference class)",
+   "name_ar": "النظرة الخارجية أولًا (فئة المرجع)",
+   "stage": "forecast",
+   "use_when": "estimating time, cost, success odds or any number for a plan you are inside of",
+   "triggers": [
+    "estimate",
+    "how long",
+    "deadline",
+    "budget",
+    "success rate",
+    "chance",
+    "تقدير",
+    "كم ياخد",
+    "مدة",
+    "ميزانية",
+    "فرصة",
+    "نسبة نجاح"
+   ],
+   "steps": [
+    "Name the reference class: similar projects done by others.",
+    "Find the base rate in that class (median duration, typical overrun, share that succeeded).",
+    "Only then adjust for what is truly different here, and keep each adjustment small and stated."
+   ],
+   "check": "the estimate cites a base rate and lists each adjustment with its reason",
+   "trap": "planning fallacy: building the number from the inside story of this one plan"
+  },
+  {
+   "id": "TB01-2",
+   "book": "TB01",
+   "name_en": "WYSIATI check (what you see is all there is)",
+   "name_ar": "فحص «ما تراه هو كل ما هناك»",
+   "stage": "verify",
+   "use_when": "a confident conclusion was reached quickly from little information",
+   "triggers": [
+    "conclusion",
+    "sure",
+    "obvious",
+    "clearly",
+    "أكيد",
+    "واضح",
+    "طبعًا",
+    "استنتاج"
+   ],
+   "steps": [
+    "Write the conclusion in one sentence.",
+    "List the information you did NOT have that could flip it.",
+    "Ask: how good would this story have to be if half the facts were different? Lower confidence accordingly."
+   ],
+   "check": "the missing-information list is non-empty and confidence is stated after it",
+   "trap": "a coherent story feels true; coherence is not evidence"
+  },
+  {
+   "id": "TB01-3",
+   "book": "TB01",
+   "name_en": "Anchor and availability sweep",
+   "name_ar": "مسح المرساة والإتاحة",
+   "stage": "verify",
+   "use_when": "a number or judgement may have been pulled by the first figure seen or by a vivid recent case",
+   "triggers": [
+    "price",
+    "number",
+    "first offer",
+    "recent",
+    "viral",
+    "سعر",
+    "رقم",
+    "أول عرض",
+    "ترند",
+    "منتشر"
+   ],
+   "steps": [
+    "Note the first number you saw and every vivid example that came to mind.",
+    "Re-estimate from an independent source or a different starting point.",
+    "If the two estimates differ by more than your stated tolerance, report the range, not the anchor."
+   ],
+   "check": "two independently derived numbers are shown",
+   "trap": "adjusting insufficiently away from an anchor that has no evidential value"
+  },
+  {
+   "id": "TB01-4",
+   "book": "TB01",
+   "name_en": "Delayed intuition (structured judgement)",
+   "name_ar": "الحدس المؤجل (حكم منظم)",
+   "stage": "decide",
+   "use_when": "choosing between candidates, designs, hires or proposals where gut feel dominates",
+   "triggers": [
+    "choose",
+    "compare",
+    "candidate",
+    "evaluate",
+    "اختار",
+    "قارن",
+    "مرشح",
+    "تقييم",
+    "أحسن"
+   ],
+   "steps": [
+    "Pick 4-6 independent attributes before seeing the options in detail.",
+    "Score each attribute separately, one attribute at a time across all options.",
+    "Only after scoring, form a global intuition; if it disagrees with the scores, write why."
+   ],
+   "check": "attribute scores exist and were recorded before the overall verdict",
+   "trap": "halo effect: one strong attribute colouring every other score"
+  },
+  {
+   "id": "TB02-1",
+   "book": "TB02",
+   "name_en": "Noise audit",
+   "name_ar": "تدقيق الضوضاء",
+   "stage": "verify",
+   "use_when": "the same kind of judgement is made repeatedly (reviews, grading, pricing, QA scores)",
+   "triggers": [
+    "review",
+    "score",
+    "grade",
+    "rubric",
+    "consistency",
+    "تقييم",
+    "درجة",
+    "مراجعة",
+    "ثبات",
+    "اتساق"
+   ],
+   "steps": [
+    "Give the same case to two independent judges (or judge it twice, later, blind).",
+    "Measure the spread of the answers.",
+    "If the spread is larger than the decision tolerance, add a rubric or anchors and repeat."
+   ],
+   "check": "a measured spread is reported, not assumed",
+   "trap": "assuming agreement because nobody compared"
+  },
+  {
+   "id": "TB02-2",
+   "book": "TB02",
+   "name_en": "Mediating assessments protocol",
+   "name_ar": "بروتوكول التقييمات الوسيطة",
+   "stage": "decide",
+   "use_when": "a complex decision with several dimensions (a launch, an acquisition, a big design choice)",
+   "triggers": [
+    "decision",
+    "launch",
+    "go no go",
+    "قرار",
+    "إطلاق",
+    "نكمل ولا لأ"
+   ],
+   "steps": [
+    "Break the decision into independent assessments, each with a fact-based question.",
+    "Have each assessment made separately, ideally by different people or passes.",
+    "Combine at the end in a single meeting/pass; discuss only after independent ratings are in."
+   ],
+   "check": "each dimension has its own recorded rating before the combined decision",
+   "trap": "letting an early overall impression contaminate the sub-assessments"
+  },
+  {
+   "id": "TB02-3",
+   "book": "TB02",
+   "name_en": "Aggregate independent estimates",
+   "name_ar": "اجمع تقديرات مستقلة",
+   "stage": "forecast",
+   "use_when": "an estimate matters and more than one estimate can be obtained",
+   "triggers": [
+    "estimate",
+    "forecast",
+    "average",
+    "تقدير",
+    "توقع",
+    "متوسط"
+   ],
+   "steps": [
+    "Collect estimates independently (no discussion first).",
+    "Average them (or take the median when outliers exist).",
+    "Report the spread as uncertainty."
+   ],
+   "check": "the estimators did not see each other's numbers before answering",
+   "trap": "group discussion first, which correlates the errors"
+  },
+  {
+   "id": "TB03-1",
+   "book": "TB03",
+   "name_en": "Named-bias checklist before sending",
+   "name_ar": "قائمة التحيزات المسماة قبل الإرسال",
+   "stage": "verify",
+   "use_when": "about to deliver a recommendation, review or report",
+   "triggers": [
+    "recommend",
+    "report",
+    "final",
+    "deliver",
+    "توصية",
+    "تقرير",
+    "نهائي",
+    "تسليم"
+   ],
+   "steps": [
+    "Survivorship: am I only looking at winners?",
+    "Sunk cost: would I choose this if I were starting today?",
+    "Confirmation: what did I search for that could have proved me wrong?",
+    "Social proof / authority: is 'everyone uses it' or 'X said so' doing the work?",
+    "Story bias: would the claim survive without its narrative?"
+   ],
+   "check": "each question has a one-line answer in the audit",
+   "trap": "reading the list without answering it"
+  },
+  {
+   "id": "TB04-1",
+   "book": "TB04",
+   "name_en": "Honest persuasion map",
+   "name_ar": "خريطة الإقناع الأمين",
+   "stage": "communicate",
+   "use_when": "writing an ad, a landing page, a pitch, a call to action or a caption",
+   "triggers": [
+    "ad",
+    "marketing",
+    "landing",
+    "cta",
+    "pitch",
+    "sell",
+    "إعلان",
+    "تسويق",
+    "بيع",
+    "دعوة",
+    "عرض",
+    "كابشن"
+   ],
+   "steps": [
+    "For each of the six levers ask: do we have a TRUE fact that activates it (a real testimonial, a real deadline, a real credential)?",
+    "Use only levers backed by a true fact; drop the rest.",
+    "Write the claim and the fact that backs it side by side."
+   ],
+   "check": "every persuasion lever in the copy points to a verifiable fact",
+   "trap": "fake scarcity or invented social proof (deceptive, and refused by this skill)"
+  },
+  {
+   "id": "TB04-2",
+   "book": "TB04",
+   "name_en": "Persuasion-pressure detector",
+   "name_ar": "كاشف ضغط الإقناع",
+   "stage": "verify",
+   "use_when": "evaluating an offer, a vendor pitch or a source that wants a fast decision",
+   "triggers": [
+    "offer",
+    "deal",
+    "limited",
+    "vendor",
+    "عرض",
+    "صفقة",
+    "لفترة محدودة",
+    "مورد"
+   ],
+   "steps": [
+    "Mark each lever the message uses on you.",
+    "Strip the levers and restate the bare offer: price, terms, evidence.",
+    "Decide on the bare offer only."
+   ],
+   "check": "the decision note contains the stripped offer",
+   "trap": "deciding while the urgency is still active"
+  },
+  {
+   "id": "TB05-1",
+   "book": "TB05",
+   "name_en": "Fermi-ize the question",
+   "name_ar": "فكك السؤال على طريقة فيرمي",
+   "stage": "forecast",
+   "use_when": "a question looks unanswerable or needs a number with no direct data",
+   "triggers": [
+    "how many",
+    "market size",
+    "estimate",
+    "probability",
+    "كام",
+    "حجم السوق",
+    "احتمال"
+   ],
+   "steps": [
+    "Split the question into factors you can estimate separately.",
+    "Give each factor a range, not a point.",
+    "Multiply/add with the ranges (think.py fermi) and report the range."
+   ],
+   "check": "a factor tree with ranges exists",
+   "trap": "false precision: one number with no range"
+  },
+  {
+   "id": "TB05-2",
+   "book": "TB05",
+   "name_en": "Outside then inside, then update in small steps",
+   "name_ar": "خارجي ثم داخلي ثم تحديث بخطوات صغيرة",
+   "stage": "forecast",
+   "use_when": "giving a probability for a future event and new information keeps arriving",
+   "triggers": [
+    "probability",
+    "will it",
+    "forecast",
+    "odds",
+    "update",
+    "هل هيحصل",
+    "احتمال",
+    "توقع",
+    "تحديث"
+   ],
+   "steps": [
+    "Start from the base rate of the reference class.",
+    "Adjust for case specifics.",
+    "When news arrives, move the number by an amount proportional to how diagnostic the news is; avoid both freezing and lurching."
+   ],
+   "check": "the forecast history shows the starting base rate and each update with its reason",
+   "trap": "overreacting to vivid news or underreacting to strong evidence"
+  },
+  {
+   "id": "TB05-3",
+   "book": "TB05",
+   "name_en": "Keep score (Brier-style)",
+   "name_ar": "احتفظ بالنتيجة (على طريقة براير)",
+   "stage": "learn",
+   "use_when": "the same person or tool makes repeated predictions or estimates",
+   "triggers": [
+    "predict",
+    "estimate",
+    "accuracy",
+    "calibration",
+    "تنبؤ",
+    "دقة",
+    "معايرة"
+   ],
+   "steps": [
+    "Record every forecast as a probability with a date and a resolution rule.",
+    "When it resolves, score it: (probability - outcome)^2.",
+    "Review the average score and calibration buckets every N forecasts."
+   ],
+   "check": "a ledger of resolved forecasts exists",
+   "trap": "remembering hits and forgetting misses"
+  },
+  {
+   "id": "TB05-4",
+   "book": "TB05",
+   "name_en": "Dragonfly eye (synthesize views)",
+   "name_ar": "عين اليعسوب (اجمع وجهات النظر)",
+   "stage": "converge",
+   "use_when": "a question where reasonable people or sources disagree",
+   "triggers": [
+    "disagree",
+    "opinions",
+    "debate",
+    "مختلفين",
+    "آراء",
+    "جدل"
+   ],
+   "steps": [
+    "Collect the strongest version of each competing view.",
+    "Note what each view sees that the others miss.",
+    "Form a combined judgement that weights each view by its track record and evidence."
+   ],
+   "check": "at least two opposing views are steel-manned in the notes",
+   "trap": "picking a side first and collecting support later"
+  },
+  {
+   "id": "TB06-1",
+   "book": "TB06",
+   "name_en": "Anti-resulting review",
+   "name_ar": "مراجعة ضد «الحكم بالنتيجة»",
+   "stage": "learn",
+   "use_when": "reviewing a past decision after a good or bad outcome (post-mortem, retro)",
+   "triggers": [
+    "post-mortem",
+    "retro",
+    "why did it fail",
+    "lesson",
+    "ليه فشل",
+    "درس",
+    "مراجعة"
+   ],
+   "steps": [
+    "Separate: what did we know then, what did we decide, what happened.",
+    "Classify the outcome: skill, luck, or missing information we could have got cheaply.",
+    "Change the process only for the controllable parts."
+   ],
+   "check": "the review has the three columns and a luck/skill call",
+   "trap": "treating a bad outcome as proof of a bad decision"
+  },
+  {
+   "id": "TB06-2",
+   "book": "TB06",
+   "name_en": "Wanna bet? confidence check",
+   "name_ar": "تراهن؟ فحص الثقة",
+   "stage": "verify",
+   "use_when": "stating a belief or claim as certain",
+   "triggers": [
+    "certain",
+    "definitely",
+    "100%",
+    "أكيد",
+    "مستحيل",
+    "مضمون"
+   ],
+   "steps": [
+    "Ask: would I bet real money on this at even odds?",
+    "Restate the belief as a percentage.",
+    "Write what evidence would change it."
+   ],
+   "check": "the claim carries a percentage and a change-my-mind condition",
+   "trap": "binary certainty language for uncertain claims"
+  },
+  {
+   "id": "TB06-3",
+   "book": "TB06",
+   "name_en": "Ten-ten-ten / Ulysses contract",
+   "name_ar": "عشرة-عشرة-عشرة وعقد أوليسيس",
+   "stage": "decide",
+   "use_when": "a decision likely to be hijacked by emotion or short-term temptation",
+   "triggers": [
+    "impulse",
+    "angry",
+    "tempted",
+    "quit",
+    "متعصب",
+    "عايز أسيب",
+    "اندفاع"
+   ],
+   "steps": [
+    "Ask how you will feel about each option in 10 minutes, 10 months, 10 years.",
+    "Pre-commit: write the rule now that your future self must follow (e.g. no publishing after midnight)."
+   ],
+   "check": "a pre-commitment rule is written down",
+   "trap": "deciding at the emotional peak"
+  },
+  {
+   "id": "TB07-1",
+   "book": "TB07",
+   "name_en": "Barbell strategy",
+   "name_ar": "استراتيجية الدمبل (الحالتين المتطرفتين)",
+   "stage": "decide",
+   "use_when": "allocating time, money or effort under deep uncertainty",
+   "triggers": [
+    "invest",
+    "allocate",
+    "portfolio",
+    "risk",
+    "استثمار",
+    "توزيع",
+    "مخاطرة"
+   ],
+   "steps": [
+    "Put most resources in something very safe that cannot ruin you.",
+    "Put a small, capped share in many cheap bets with large upside.",
+    "Avoid the fragile middle that looks moderate but hides tail risk."
+   ],
+   "check": "the worst case of the whole allocation is survivable",
+   "trap": "medium-risk options that hide a ruin scenario"
+  },
+  {
+   "id": "TB07-2",
+   "book": "TB07",
+   "name_en": "Fragility test (via negativa)",
+   "name_ar": "اختبار الهشاشة (بالحذف)",
+   "stage": "verify",
+   "use_when": "checking a plan, system or pipeline for hidden ways to break",
+   "triggers": [
+    "robust",
+    "fail",
+    "single point",
+    "dependency",
+    "يتكسر",
+    "نقطة فشل",
+    "اعتمادية"
+   ],
+   "steps": [
+    "Ask what happens if each input doubles, halves or disappears.",
+    "List single points of failure and irreversible steps.",
+    "Improve first by removing (dependencies, steps, debt) before adding."
+   ],
+   "check": "a list of shocks and the system's response to each",
+   "trap": "adding features to fix fragility caused by too many features"
+  },
+  {
+   "id": "TB07-3",
+   "book": "TB07",
+   "name_en": "Skin in the game / silent evidence",
+   "name_ar": "الجلد في اللعبة والأدلة الصامتة",
+   "stage": "verify",
+   "use_when": "trusting advice, a case study or a success story",
+   "triggers": [
+    "case study",
+    "success story",
+    "advice",
+    "guru",
+    "قصة نجاح",
+    "نصيحة",
+    "خبير"
+   ],
+   "steps": [
+    "Does the source bear the cost if wrong?",
+    "Where are the failures that used the same method (silent graveyard)?",
+    "Discount accordingly."
+   ],
+   "check": "the note names who bears the downside and the missing failures",
+   "trap": "learning only from survivors"
+  },
+  {
+   "id": "TB08-1",
+   "book": "TB08",
+   "name_en": "Size and proportion check",
+   "name_ar": "فحص الحجم والنسبة",
+   "stage": "verify",
+   "use_when": "a single big number, a chart or a claim about trends",
+   "triggers": [
+    "statistic",
+    "number",
+    "trend",
+    "chart",
+    "growth",
+    "إحصائية",
+    "رقم",
+    "اتجاه",
+    "نمو"
+   ],
+   "steps": [
+    "Compare the number with a relevant total (per capita, per user, % of).",
+    "Look for the 80/20: which few items carry most of the total?",
+    "Check whether a straight-line extrapolation is justified or the curve bends."
+   ],
+   "check": "the claim states a denominator and a comparison",
+   "trap": "lonely numbers with no denominator"
+  },
+  {
+   "id": "TB09-1",
+   "book": "TB09",
+   "name_en": "Calibrated 90% range + value of information",
+   "name_ar": "نطاق 90% معاير + قيمة المعلومة",
+   "stage": "forecast",
+   "use_when": "deciding whether to research more before acting, or an 'unmeasurable' factor like brand value or quality",
+   "triggers": [
+    "measure",
+    "intangible",
+    "quality",
+    "worth researching",
+    "قياس",
+    "جودة",
+    "يستاهل بحث"
+   ],
+   "steps": [
+    "Give a 90% confidence interval for each uncertain variable.",
+    "Ask which variable, if known exactly, would most likely change the decision.",
+    "Measure only that one, with the cheapest small sample (rule of five: 5 samples give ~94% chance the median lies between min and max)."
+   ],
+   "check": "the research plan names the highest-value variable",
+   "trap": "measuring what is easy instead of what changes the decision"
+  },
+  {
+   "id": "TB10-1",
+   "book": "TB10",
+   "name_en": "Four-phase solve",
+   "name_ar": "الحل بأربع مراحل",
+   "stage": "frame",
+   "use_when": "any non-trivial technical or analytic problem (bug, algorithm, layout, calculation)",
+   "triggers": [
+    "problem",
+    "solve",
+    "bug",
+    "algorithm",
+    "math",
+    "مشكلة",
+    "حل",
+    "بج",
+    "خوارزمية",
+    "حساب"
+   ],
+   "steps": [
+    "Understand: what is the unknown, what is given, what are the conditions? Draw it.",
+    "Plan: have I seen a related problem? Can I solve a simpler or special case? Work backwards from the goal?",
+    "Carry out: check each step.",
+    "Look back: verify the result another way; can the method be reused?"
+   ],
+   "check": "the 'look back' verification is recorded",
+   "trap": "jumping to the plan before the unknown is stated"
+  },
+  {
+   "id": "TB10-2",
+   "book": "TB10",
+   "name_en": "Specialise, generalise, work backwards",
+   "name_ar": "خصص، عمم، اشتغل من النهاية",
+   "stage": "diverge",
+   "use_when": "stuck on a problem with no obvious path",
+   "triggers": [
+    "stuck",
+    "no idea",
+    "how to",
+    "مش عارف",
+    "واقف",
+    "إزاي"
+   ],
+   "steps": [
+    "Specialise: try the smallest concrete instance.",
+    "Generalise: is there a broader problem that is easier?",
+    "Work backwards: what would the step just before the goal look like?"
+   ],
+   "check": "at least one auxiliary problem was tried",
+   "trap": "staring at the full problem"
+  },
+  {
+   "id": "TB11-1",
+   "book": "TB11",
+   "name_en": "Fail on purpose",
+   "name_ar": "افشل عمدًا",
+   "stage": "diverge",
+   "use_when": "a first draft, design or solution is needed and perfectionism is blocking",
+   "triggers": [
+    "draft",
+    "first version",
+    "blocked",
+    "مسودة",
+    "أول نسخة",
+    "مش عارف أبدأ"
+   ],
+   "steps": [
+    "Produce a deliberately quick, imperfect attempt.",
+    "List exactly where and why it fails.",
+    "Each failure points at the next better attempt."
+   ],
+   "check": "a failure list drives version 2",
+   "trap": "polishing a first draft instead of learning from its failures"
+  },
+  {
+   "id": "TB11-2",
+   "book": "TB11",
+   "name_en": "Master the basics deeply",
+   "name_ar": "أتقن الأساسيات بعمق",
+   "stage": "frame",
+   "use_when": "learning a new tool, domain or codebase quickly",
+   "triggers": [
+    "learn",
+    "new to",
+    "understand",
+    "اتعلم",
+    "جديد",
+    "افهم"
+   ],
+   "steps": [
+    "Find the simplest core case and understand it completely.",
+    "Explain it without jargon.",
+    "Only then add the next layer."
+   ],
+   "check": "a plain-language explanation of the core exists",
+   "trap": "surface coverage of many features"
+  },
+  {
+   "id": "TB12-1",
+   "book": "TB12",
+   "name_en": "Contradiction → inventive principles",
+   "name_ar": "التناقض ← مبادئ الاختراع",
+   "stage": "diverge",
+   "use_when": "improving one property makes another worse (quality vs speed, size vs strength, detail vs file size)",
+   "triggers": [
+    "tradeoff",
+    "but then",
+    "conflict",
+    "faster but",
+    "contradiction",
+    "بس كده",
+    "تعارض",
+    "مقايضة",
+    "أسرع بس"
+   ],
+   "steps": [
+    "State the contradiction: improving X worsens Y.",
+    "Try principles: segmentation, taking out, local quality, asymmetry, merging, universality, nesting, prior action, dynamics, partial or excessive action, another dimension, feedback, self-service, copying, cheap short-living objects, inversion.",
+    "Prefer the idea that removes the contradiction over the one that compromises."
+   ],
+   "check": "at least three principles were tried and the chosen one removes rather than balances the conflict",
+   "trap": "settling for a midpoint compromise"
+  },
+  {
+   "id": "TB12-2",
+   "book": "TB12",
+   "name_en": "Ideal final result",
+   "name_ar": "النتيجة النهائية المثالية",
+   "stage": "frame",
+   "use_when": "designing a solution from scratch or simplifying a heavy one",
+   "triggers": [
+    "design",
+    "simplify",
+    "ideal",
+    "تصميم",
+    "تبسيط",
+    "مثالي"
+   ],
+   "steps": [
+    "Describe the result as if the function happened by itself with zero cost and no new parts.",
+    "Ask which existing resources (time, space, fields, waste) could do it.",
+    "Walk back from the ideal only as far as necessary."
+   ],
+   "check": "the solution reuses an existing resource",
+   "trap": "adding a new component for every function"
+  },
+  {
+   "id": "TB13-1",
+   "book": "TB13",
+   "name_en": "Answer-first pyramid (SCQA)",
+   "name_ar": "الهرم: الإجابة أولًا (موقف-تعقيد-سؤال-إجابة)",
+   "stage": "communicate",
+   "use_when": "writing a report, recommendation, email, README or summary",
+   "triggers": [
+    "report",
+    "summary",
+    "email",
+    "memo",
+    "proposal",
+    "تقرير",
+    "ملخص",
+    "إيميل",
+    "مقترح"
+   ],
+   "steps": [
+    "Situation: what the reader already accepts.",
+    "Complication: what changed.",
+    "Question: what the reader now asks.",
+    "Answer: the top line; then 2-4 supporting points, each MECE and each a summary of its own evidence."
+   ],
+   "check": "the first sentence is the answer and supporting points do not overlap",
+   "trap": "chronological storytelling of the work instead of the conclusion"
+  },
+  {
+   "id": "TB13-2",
+   "book": "TB13",
+   "name_en": "MECE issue tree",
+   "name_ar": "شجرة القضايا (لا تداخل ولا نقص)",
+   "stage": "frame",
+   "use_when": "breaking a big question into parts (why are sales down, how to grow, what to build)",
+   "triggers": [
+    "why",
+    "how to grow",
+    "breakdown",
+    "root cause",
+    "ليه",
+    "إزاي نكبر",
+    "تفكيك",
+    "السبب"
+   ],
+   "steps": [
+    "Write the question at the top.",
+    "Split into branches that are mutually exclusive and collectively exhaustive (e.g. price x volume).",
+    "Keep splitting until each leaf can be answered with one analysis."
+   ],
+   "check": "branches add up to the parent with no overlap",
+   "trap": "lists of causes that overlap and leave gaps"
+  },
+  {
+   "id": "TB14-1",
+   "book": "TB14",
+   "name_en": "Hypothesis-driven 7 steps",
+   "name_ar": "سبع خطوات بقيادة الفرضية",
+   "stage": "frame",
+   "use_when": "an ambiguous business, product or research problem with limited time",
+   "triggers": [
+    "strategy",
+    "business problem",
+    "research question",
+    "استراتيجية",
+    "مشكلة عمل",
+    "سؤال بحثي"
+   ],
+   "steps": [
+    "Define the problem precisely (who decides, criteria, timeframe, constraints).",
+    "Disaggregate with a logic tree.",
+    "Prioritise branches by impact x ability to influence; cut the rest.",
+    "Write a workplan with an early hypothesis per branch.",
+    "Analyse; synthesise into a so-what; communicate."
+   ],
+   "check": "the cut branches are listed with the reason they were cut",
+   "trap": "boiling the ocean: analysing every branch"
+  },
+  {
+   "id": "TB15-1",
+   "book": "TB15",
+   "name_en": "Block inventory",
+   "name_ar": "جرد الحواجز",
+   "stage": "diverge",
+   "use_when": "ideas keep coming out the same or the team is stuck",
+   "triggers": [
+    "same ideas",
+    "creative block",
+    "stuck",
+    "نفس الأفكار",
+    "مفيش إبداع",
+    "واقفين"
+   ],
+   "steps": [
+    "Perceptual: are we seeing the problem too narrowly?",
+    "Emotional: fear of looking foolish, need for quick closure?",
+    "Cultural: 'that is not done here'?",
+    "Intellectual/expressive: wrong language (try sketch, numbers, story)?",
+    "Change the representation and regenerate."
+   ],
+   "check": "the named block and the changed representation are recorded",
+   "trap": "trying harder with the same representation"
+  },
+  {
+   "id": "TB16-1",
+   "book": "TB16",
+   "name_en": "Hat sequence",
+   "name_ar": "تسلسل القبعات",
+   "stage": "converge",
+   "use_when": "evaluating an idea or plan with several viewpoints, or a council review",
+   "triggers": [
+    "review",
+    "evaluate idea",
+    "pros and cons",
+    "meeting",
+    "قيّم الفكرة",
+    "مميزات وعيوب",
+    "اجتماع"
+   ],
+   "steps": [
+    "Blue: define the focus and the sequence.",
+    "White: facts known and facts missing.",
+    "Green: alternatives and new ideas.",
+    "Yellow: benefits and why it could work.",
+    "Black: risks and why it could fail.",
+    "Red: gut feeling in one line, no justification.",
+    "Blue: summary and next step."
+   ],
+   "check": "each hat has its own output, black does not appear before yellow",
+   "trap": "mixing critique into idea generation"
+  },
+  {
+   "id": "TB17-1",
+   "book": "TB17",
+   "name_en": "PO provocation",
+   "name_ar": "الاستفزاز PO",
+   "stage": "diverge",
+   "use_when": "need a non-obvious idea for a campaign, a product, a visual or a story",
+   "triggers": [
+    "creative",
+    "new idea",
+    "unusual",
+    "campaign",
+    "فكرة جديدة",
+    "غير تقليدي",
+    "حملة",
+    "إبداعي"
+   ],
+   "steps": [
+    "Write a deliberately unreasonable statement (reverse, exaggerate, distort, wishful): 'PO the ad has no product in it'.",
+    "Move from it: what principle, benefit or feature does it suggest?",
+    "Shape the movement into a workable idea."
+   ],
+   "check": "the final idea traces back to a provocation",
+   "trap": "judging the provocation as if it were the proposal"
+  },
+  {
+   "id": "TB18-1",
+   "book": "TB18",
+   "name_en": "Five-stage idea production",
+   "name_ar": "إنتاج الأفكار بخمس مراحل",
+   "stage": "diverge",
+   "use_when": "a creative brief with time to research (ad concept, brand, film idea)",
+   "triggers": [
+    "brief",
+    "concept",
+    "brand",
+    "idea",
+    "بريف",
+    "كونسبت",
+    "براند",
+    "فكرة"
+   ],
+   "steps": [
+    "Gather: specific material about product/audience and general material from unrelated fields.",
+    "Digest: write fragments on cards and look for relations.",
+    "Incubate: switch to another task.",
+    "Catch: note the idea when it appears.",
+    "Shape: test it against the brief and the critics."
+   ],
+   "check": "the idea combines one specific fact with one general/outside element",
+   "trap": "skipping the gathering stage"
+  },
+  {
+   "id": "TB19-1",
+   "book": "TB19",
+   "name_en": "SCAMPER sweep",
+   "name_ar": "مسح SCAMPER",
+   "stage": "diverge",
+   "use_when": "improving an existing product, template, video, design or workflow",
+   "triggers": [
+    "improve",
+    "variation",
+    "remix",
+    "redesign",
+    "طوّر",
+    "نسخة",
+    "ريمكس",
+    "إعادة تصميم"
+   ],
+   "steps": [
+    "Substitute a part, Combine with something, Adapt from elsewhere, Modify/magnify, Put to another use, Eliminate a part, Reverse/rearrange.",
+    "Generate at least one variant per letter.",
+    "Keep the two strongest for testing."
+   ],
+   "check": "seven variants exist before selection",
+   "trap": "stopping at the first letter that works"
+  },
+  {
+   "id": "TB20-1",
+   "book": "TB20",
+   "name_en": "Double diamond",
+   "name_ar": "الماسة المزدوجة",
+   "stage": "frame",
+   "use_when": "designing an app, a page, a service or a product for real users",
+   "triggers": [
+    "app",
+    "ux",
+    "user",
+    "product",
+    "website",
+    "تطبيق",
+    "مستخدم",
+    "منتج",
+    "موقع",
+    "تجربة المستخدم"
+   ],
+   "steps": [
+    "Discover: observe or interview users; collect pains in their words.",
+    "Define: one 'How might we...' statement.",
+    "Develop: many concepts, then cheap prototypes.",
+    "Deliver: test with users, keep what works, iterate."
+   ],
+   "check": "a 'How might we' statement and at least one user test exist",
+   "trap": "building the solution before defining the need"
+  },
+  {
+   "id": "TB20-2",
+   "book": "TB20",
+   "name_en": "Cheap prototype before polish",
+   "name_ar": "نموذج رخيص قبل التلميع",
+   "stage": "execute",
+   "use_when": "an expensive build (render, app, animation) whose direction is not yet approved",
+   "triggers": [
+    "render",
+    "build",
+    "prototype",
+    "mockup",
+    "رندر",
+    "بناء",
+    "نموذج",
+    "موك اب"
+   ],
+   "steps": [
+    "Make the lowest-fidelity version that answers the open question (storyboard, wireframe, 5-second preview).",
+    "Show it, collect reactions.",
+    "Spend on fidelity only after the direction passes."
+   ],
+   "check": "an approved low-fidelity artefact precedes the expensive build",
+   "trap": "rendering the final before the direction is agreed"
+  },
+  {
+   "id": "TB21-1",
+   "book": "TB21",
+   "name_en": "Lineage remix (transform, never copy)",
+   "name_ar": "مزج السلالة (حوّل ولا تنسخ)",
+   "stage": "diverge",
+   "use_when": "creating in the style of a reference or a trend",
+   "triggers": [
+    "reference",
+    "style of",
+    "inspired by",
+    "trend",
+    "زي",
+    "ستايل",
+    "مستوحى",
+    "مرجع"
+   ],
+   "steps": [
+    "Name 3+ influences, not one.",
+    "Extract the principle from each (rhythm, palette logic, framing), not the asset.",
+    "Combine the principles into something none of them made; credit the influences."
+   ],
+   "check": "no asset is copied and at least three influences are named",
+   "trap": "copying one source closely (and licence problems)"
+  },
+  {
+   "id": "TB22-1",
+   "book": "TB22",
+   "name_en": "Stock-flow-loop map",
+   "name_ar": "خريطة المخزون والتدفق والحلقات",
+   "stage": "frame",
+   "use_when": "a recurring problem that keeps coming back, growth that stalls, or side effects",
+   "triggers": [
+    "keeps happening",
+    "growth",
+    "churn",
+    "feedback",
+    "loop",
+    "بيتكرر",
+    "نمو",
+    "تسرب العملاء",
+    "حلقة"
+   ],
+   "steps": [
+    "Name the stocks (what accumulates).",
+    "Name inflows and outflows.",
+    "Draw reinforcing and balancing loops and mark delays.",
+    "Ask which loop dominates now and which will dominate later."
+   ],
+   "check": "a loop diagram with at least one balancing loop and one delay",
+   "trap": "treating a symptom (a flow) instead of the structure"
+  },
+  {
+   "id": "TB22-2",
+   "book": "TB22",
+   "name_en": "Leverage-point ladder",
+   "name_ar": "سلم نقاط الرافعة",
+   "stage": "decide",
+   "use_when": "choosing where to intervene in a system (team, product, process, audience)",
+   "triggers": [
+    "intervene",
+    "fix",
+    "policy",
+    "change",
+    "تدخل",
+    "إصلاح",
+    "سياسة",
+    "تغيير"
+   ],
+   "steps": [
+    "List candidate interventions.",
+    "Rank: numbers/parameters < buffers < structure < delays < feedback strength < information flows < rules < self-organisation < goals < paradigm.",
+    "Prefer the highest feasible rung."
+   ],
+   "check": "the chosen intervention's rung is stated",
+   "trap": "tuning parameters when a rule or information flow is the real lever"
+  },
+  {
+   "id": "TB23-1",
+   "book": "TB23",
+   "name_en": "System archetype match",
+   "name_ar": "مطابقة النمط المنظومي",
+   "stage": "frame",
+   "use_when": "a 'fix' that worked briefly and then made things worse",
+   "triggers": [
+    "quick fix",
+    "worse",
+    "backfire",
+    "حل مؤقت",
+    "زاد سوء",
+    "رجع تاني"
+   ],
+   "steps": [
+    "Compare with archetypes: fixes that fail, shifting the burden, limits to growth, tragedy of the commons, escalation, success to the successful.",
+    "Name the match and its standard leverage (e.g. shifting the burden -> strengthen the fundamental solution)."
+   ],
+   "check": "an archetype is named with its leverage",
+   "trap": "repeating the quick fix"
+  },
+  {
+   "id": "TB24-1",
+   "book": "TB24",
+   "name_en": "Strategy kernel",
+   "name_ar": "نواة الاستراتيجية",
+   "stage": "frame",
+   "use_when": "a marketing plan, business plan, channel strategy or growth plan",
+   "triggers": [
+    "strategy",
+    "plan",
+    "marketing plan",
+    "growth",
+    "خطة",
+    "استراتيجية",
+    "خطة تسويق",
+    "نمو"
+   ],
+   "steps": [
+    "Diagnosis: what is the critical obstacle (one paragraph)?",
+    "Guiding policy: the approach chosen to overcome it, and what it rules out.",
+    "Coherent actions: 3-5 actions that reinforce each other."
+   ],
+   "check": "the plan names what it will NOT do",
+   "trap": "a list of goals and buzzwords with no diagnosis"
+  },
+  {
+   "id": "TB25-1",
+   "book": "TB25",
+   "name_en": "Pre-mortem",
+   "name_ar": "تمرين ما قبل الوفاة",
+   "stage": "verify",
+   "use_when": "before starting an important plan, render, release or launch",
+   "triggers": [
+    "plan",
+    "launch",
+    "release",
+    "before we start",
+    "خطة",
+    "إطلاق",
+    "نشر",
+    "قبل ما نبدأ"
+   ],
+   "steps": [
+    "Imagine it is six months later and the project failed badly.",
+    "Write every reason why it failed (each reviewer independently).",
+    "Turn the top reasons into checks or plan changes now."
+   ],
+   "check": "plan changes trace back to pre-mortem reasons",
+   "trap": "a generic risk list not tied to this plan"
+  },
+  {
+   "id": "TB25-2",
+   "book": "TB25",
+   "name_en": "Mental simulation of the chosen option",
+   "name_ar": "محاكاة ذهنية للخيار المختار",
+   "stage": "verify",
+   "use_when": "an option was picked quickly by intuition",
+   "triggers": [
+    "quick decision",
+    "go with",
+    "هنمشي بـ",
+    "اخترت"
+   ],
+   "steps": [
+    "Walk through the option step by step in its real context.",
+    "Note where the simulation snags (a step you cannot picture working).",
+    "Fix the snag or switch options."
+   ],
+   "check": "snags are listed",
+   "trap": "accepting an intuitive choice without simulating it"
+  },
+  {
+   "id": "TB26-1",
+   "book": "TB26",
+   "name_en": "Terrain and asymmetry scan",
+   "name_ar": "مسح الأرض واللاتماثل",
+   "stage": "frame",
+   "use_when": "competing for attention or market share against stronger players",
+   "triggers": [
+    "competitor",
+    "compete",
+    "market",
+    "منافس",
+    "منافسة",
+    "سوق"
+   ],
+   "steps": [
+    "Map own strengths and limits honestly.",
+    "Map competitors' strengths and where they cannot follow (cost structure, brand, speed).",
+    "Choose the ground where your strength meets their weakness; avoid head-on fights."
+   ],
+   "check": "the chosen position names a competitor constraint",
+   "trap": "copying the leader on the leader's own ground"
+  },
+  {
+   "id": "TB27-1",
+   "book": "TB27",
+   "name_en": "WRAP",
+   "name_ar": "WRAP: وسّع، اختبر، ابتعد، استعد",
+   "stage": "decide",
+   "use_when": "a whether-or-not decision ('should I X?') or a narrow choice",
+   "triggers": [
+    "should i",
+    "whether",
+    "yes or no",
+    "اعمل ولا لأ",
+    "هل أعمل",
+    "نعمل كده"
+   ],
+   "steps": [
+    "Widen: turn 'whether or not' into at least 3 options; ask 'what if this option vanished?'.",
+    "Reality-test: what would have to be true? run a small experiment (ooch).",
+    "Attain distance: what would I advise a friend? 10/10/10.",
+    "Prepare to be wrong: set a tripwire (a date or metric that triggers a rethink)."
+   ],
+   "check": "3+ options and a tripwire are written",
+   "trap": "narrow framing: a yes/no on a single option"
+  },
+  {
+   "id": "TB28-1",
+   "book": "TB28",
+   "name_en": "Riskiest assumption test (MVP)",
+   "name_ar": "اختبار أخطر افتراض",
+   "stage": "execute",
+   "use_when": "launching a product, feature, channel or content series",
+   "triggers": [
+    "mvp",
+    "launch",
+    "startup",
+    "test the idea",
+    "new feature",
+    "new app",
+    "new product",
+    "مشروع",
+    "إطلاق",
+    "أطلق",
+    "نطلق",
+    "تطبيق جديد",
+    "منتج جديد",
+    "نجرب الفكرة",
+    "ميزة جديدة"
+   ],
+   "steps": [
+    "List assumptions that must be true for success.",
+    "Pick the riskiest (most uncertain x most fatal).",
+    "Design the smallest experiment with a pass/fail metric set in advance.",
+    "Decide pivot or persevere on the result."
+   ],
+   "check": "the pass/fail threshold was written before the experiment",
+   "trap": "vanity metrics chosen after the fact"
+  },
+  {
+   "id": "TB29-1",
+   "book": "TB29",
+   "name_en": "Inversion",
+   "name_ar": "القلب (اعكس السؤال)",
+   "stage": "diverge",
+   "use_when": "a goal that is hard to reach directly (make it viral, make users stay, make the film great)",
+   "triggers": [
+    "how to succeed",
+    "viral",
+    "retention",
+    "great",
+    "ينجح",
+    "ينتشر",
+    "يفضلوا",
+    "عظيم"
+   ],
+   "steps": [
+    "Ask the inverse: how would we guarantee failure?",
+    "List the failure causes.",
+    "Remove or guard against each; what remains is the plan."
+   ],
+   "check": "a failure list was converted into guards",
+   "trap": "only brainstorming forward"
+  },
+  {
+   "id": "TB29-2",
+   "book": "TB29",
+   "name_en": "Second-order effects",
+   "name_ar": "آثار الدرجة الثانية",
+   "stage": "verify",
+   "use_when": "a change with obvious first effects (a price change, a new rule, a UI change, automation)",
+   "triggers": [
+    "price change",
+    "new rule",
+    "policy",
+    "automate",
+    "تغيير السعر",
+    "قاعدة جديدة",
+    "أتمتة"
+   ],
+   "steps": [
+    "Write the first-order effect.",
+    "Ask 'and then what?' twice for each affected group.",
+    "Check whether a second-order effect cancels the first."
+   ],
+   "check": "two levels of 'and then what' exist per group",
+   "trap": "stopping at the intended effect"
+  },
+  {
+   "id": "TB29-3",
+   "book": "TB29",
+   "name_en": "Circle of competence",
+   "name_ar": "دائرة الكفاءة",
+   "stage": "frame",
+   "use_when": "deciding whether to rely on own judgement or get an expert/tool",
+   "triggers": [
+    "expert",
+    "not sure",
+    "outside my field",
+    "legal",
+    "medical",
+    "خبير",
+    "مش متأكد",
+    "قانوني",
+    "طبي"
+   ],
+   "steps": [
+    "Mark what you know well, partly, and not at all for this task.",
+    "Inside: act. Edge: verify. Outside: get an expert, a source or a tool, and say so."
+   ],
+   "check": "claims outside the circle carry a source or a caveat",
+   "trap": "confidence spilling outside the circle"
+  },
+  {
+   "id": "TB30-1",
+   "book": "TB30",
+   "name_en": "Bias tests (double standard, outsider, conformity, status quo)",
+   "name_ar": "اختبارات التحيز: المعيار المزدوج، الغريب، المسايرة، الوضع القائم",
+   "stage": "verify",
+   "use_when": "evaluating own work, a favoured idea, or evidence that agrees with you",
+   "triggers": [
+    "my idea",
+    "i think",
+    "evidence",
+    "review my",
+    "فكرتي",
+    "أنا شايف",
+    "دليل",
+    "راجع شغلي"
+   ],
+   "steps": [
+    "Double standard: would I accept this evidence if it supported the other side?",
+    "Outsider: what would someone new to the situation conclude?",
+    "Conformity: would I hold this view if my peers didn't?",
+    "Status quo: if the current state were the proposal, would I choose it?"
+   ],
+   "check": "each test has a one-line answer",
+   "trap": "motivated reasoning dressed as analysis"
+  },
+  {
+   "id": "TB31-1",
+   "book": "TB31",
+   "name_en": "Scientist mode rethink",
+   "name_ar": "إعادة التفكير بعقلية العالِم",
+   "stage": "learn",
+   "use_when": "revisiting a plan, design or belief that has been in place for a while",
+   "triggers": [
+    "revisit",
+    "still right",
+    "update",
+    "rethink",
+    "نراجع",
+    "لسه صح",
+    "نعيد التفكير"
+   ],
+   "steps": [
+    "State the belief as a hypothesis.",
+    "Write what result would falsify it.",
+    "Look for that result (data, user feedback, a challenge-network critic).",
+    "Keep, revise or drop; log the change."
+   ],
+   "check": "a falsification condition and its check are recorded",
+   "trap": "preacher mode: defending instead of testing"
+  },
+  {
+   "id": "TB32-1",
+   "book": "TB32",
+   "name_en": "Baloney detection kit",
+   "name_ar": "عدة كشف الهراء",
+   "stage": "verify",
+   "use_when": "checking a claim from the web, a tool's marketing, a viral post or a research summary",
+   "triggers": [
+    "claim",
+    "is it true",
+    "source",
+    "fact check",
+    "viral",
+    "صح ولا غلط",
+    "مصدر",
+    "تحقق",
+    "إشاعة"
+   ],
+   "steps": [
+    "Is there independent confirmation of the facts?",
+    "Are there competing hypotheses, and were they tested?",
+    "Is it quantified and falsifiable?",
+    "Does every link in the chain hold, not just most?",
+    "Is authority the only support?"
+   ],
+   "check": "each claim in the deliverable has a source or is marked unverified",
+   "trap": "accepting a claim because it fits the narrative"
+  },
+  {
+   "id": "TB33-1",
+   "book": "TB33",
+   "name_en": "Explore/exploit budget",
+   "name_ar": "ميزانية الاستكشاف والاستغلال",
+   "stage": "decide",
+   "use_when": "choosing between a known-good option and trying new ones (tools, styles, suppliers, content formats)",
+   "triggers": [
+    "try new",
+    "stick with",
+    "which tool",
+    "experiment",
+    "نجرب جديد",
+    "نفضل على",
+    "أنهي أداة"
+   ],
+   "steps": [
+    "Estimate the remaining horizon (how many more uses).",
+    "Long horizon: explore more; short horizon: exploit the best known.",
+    "Set an explicit exploration share (e.g. 20% of runs try something new) and review results."
+   ],
+   "check": "an exploration share and a review point are set",
+   "trap": "never exploring (stagnation) or always exploring (no compounding)"
+  },
+  {
+   "id": "TB33-2",
+   "book": "TB33",
+   "name_en": "Optimal stopping (look-then-leap)",
+   "name_ar": "التوقف الأمثل (انظر ثم اقفز)",
+   "stage": "decide",
+   "use_when": "sequential choices where you cannot go back (candidates, offers, locations, takes)",
+   "triggers": [
+    "choose among",
+    "options one by one",
+    "hiring",
+    "offers",
+    "أختار من بين",
+    "عروض",
+    "توظيف"
+   ],
+   "steps": [
+    "Estimate the total number of options you can see.",
+    "Look at the first ~37% without committing, noting the best.",
+    "Then take the first option better than that benchmark."
+   ],
+   "check": "the benchmark set in the look phase is written",
+   "trap": "committing to the first decent option or searching forever"
+  },
+  {
+   "id": "TB33-3",
+   "book": "TB33",
+   "name_en": "Don't overfit",
+   "name_ar": "لا تُفرط في المطابقة",
+   "stage": "verify",
+   "use_when": "a model, rule, metric or creative formula tuned on few examples",
+   "triggers": [
+    "model",
+    "formula",
+    "metric",
+    "rule",
+    "نموذج",
+    "معادلة",
+    "مقياس"
+   ],
+   "steps": [
+    "Hold out examples not used for tuning.",
+    "Prefer the simpler rule unless the complex one wins on held-out cases.",
+    "Watch for optimising the metric instead of the goal (Goodhart)."
+   ],
+   "check": "a held-out check exists",
+   "trap": "a perfect fit on the training cases"
+  },
+  {
+   "id": "TB34-1",
+   "book": "TB34",
+   "name_en": "Distant analogies",
+   "name_ar": "التشبيهات البعيدة",
+   "stage": "diverge",
+   "use_when": "a novel problem with no established playbook",
+   "triggers": [
+    "new problem",
+    "never done",
+    "novel",
+    "مشكلة جديدة",
+    "أول مرة",
+    "مفيش طريقة"
+   ],
+   "steps": [
+    "List 3-5 analogies from distant fields (biology, sports, cooking, architecture...).",
+    "For each, extract the structural mechanism.",
+    "Test which mechanism transfers."
+   ],
+   "check": "at least one analogy is from a distant field",
+   "trap": "using only the closest, most obvious analogy"
+  },
+  {
+   "id": "TB35-1",
+   "book": "TB35",
+   "name_en": "Deep-block plan",
+   "name_ar": "خطة الكتلة العميقة",
+   "stage": "execute",
+   "use_when": "a long, demanding task (a full film edit, a refactor, a research report)",
+   "triggers": [
+    "long task",
+    "focus",
+    "big project",
+    "مهمة طويلة",
+    "تركيز",
+    "مشروع كبير"
+   ],
+   "steps": [
+    "Define the single outcome of the block.",
+    "Batch all shallow items (messages, checks) outside the block.",
+    "End with a shutdown note: what is done, what is next, where to resume."
+   ],
+   "check": "a resume note exists at the end of each block",
+   "trap": "interleaving many small checks inside the deep task"
+  },
+  {
+   "id": "TB36-1",
+   "book": "TB36",
+   "name_en": "SUCCESs message check",
+   "name_ar": "فحص الرسالة SUCCESs",
+   "stage": "communicate",
+   "use_when": "a hook, script, slogan, explainer video or presentation",
+   "triggers": [
+    "hook",
+    "script",
+    "slogan",
+    "explainer",
+    "presentation",
+    "هوك",
+    "سكريبت",
+    "شعار",
+    "شرح",
+    "عرض تقديمي"
+   ],
+   "steps": [
+    "Simple: the core message in one sentence.",
+    "Unexpected: what breaks the audience's guess?",
+    "Concrete: one sensory example.",
+    "Credible: a detail they can verify.",
+    "Emotional: why should this person care?",
+    "Story: a character, a problem, a turn."
+   ],
+   "check": "the script scores yes on at least 4 of 6",
+   "trap": "the curse of knowledge: abstract language the audience cannot picture"
+  },
+  {
+   "id": "TB37-1",
+   "book": "TB37",
+   "name_en": "Pause-point checklist",
+   "name_ar": "قائمة نقاط التوقف",
+   "stage": "verify",
+   "use_when": "a repeated, high-stakes procedure (export, release, render, publish, payment)",
+   "triggers": [
+    "export",
+    "release",
+    "publish",
+    "deploy",
+    "render",
+    "تصدير",
+    "نشر",
+    "رفع",
+    "رندر"
+   ],
+   "steps": [
+    "Pick the pause points (before start, before irreversible step, before delivery).",
+    "Write 5-9 killer items per point that experts still forget.",
+    "Run it as DO-CONFIRM: do the work, then confirm each item aloud/in the log."
+   ],
+   "check": "the checklist is short, item-specific and its run is logged",
+   "trap": "long, generic checklists nobody reads"
+  },
+  {
+   "id": "TB38-1",
+   "book": "TB38",
+   "name_en": "Plausibility against the nature of things",
+   "name_ar": "فحص الخبر بطبائع الأشياء",
+   "stage": "verify",
+   "use_when": "a surprising report, statistic or story, especially from a single source",
+   "triggers": [
+    "news",
+    "report",
+    "surprising",
+    "rumor",
+    "خبر",
+    "منقول",
+    "غريب",
+    "إشاعة"
+   ],
+   "steps": [
+    "Check the source chain (who saw it, who passed it on).",
+    "Independently, check possibility: does it fit known constraints (physics, economics, base rates, logistics)?",
+    "If it is impossible or extreme, require stronger evidence before using it."
+   ],
+   "check": "both the chain and the plausibility check are noted",
+   "trap": "trusting a reliable-sounding source for an implausible claim"
+  },
+  {
+   "id": "TB39-1",
+   "book": "TB39",
+   "name_en": "Doubt the authority, test by experiment",
+   "name_ar": "شك في المرجع واختبر بالتجربة",
+   "stage": "verify",
+   "use_when": "a tutorial, doc, popular repo or earlier session says something works",
+   "triggers": [
+    "docs say",
+    "tutorial",
+    "should work",
+    "according to",
+    "المفروض يشتغل",
+    "حسب",
+    "الشرح بيقول"
+   ],
+   "steps": [
+    "Restate the claim as a testable statement.",
+    "Design the smallest experiment that would show it false.",
+    "Run it here and record the observed result, not the documented one."
+   ],
+   "check": "a local run result is recorded next to the claim",
+   "trap": "reporting documented behaviour as observed behaviour"
+  },
+  {
+   "id": "TB40-1",
+   "book": "TB40",
+   "name_en": "Source-of-knowledge audit",
+   "name_ar": "تدقيق مصدر المعرفة",
+   "stage": "verify",
+   "use_when": "a deliverable mixes observed results, inferences and things taken on trust",
+   "triggers": [
+    "report",
+    "audit",
+    "claims",
+    "evidence",
+    "تقرير",
+    "تدقيق",
+    "ادعاءات",
+    "دليل"
+   ],
+   "steps": [
+    "Tag each claim: observed (I ran/saw it), inferred (reasoned), or received (someone said).",
+    "Raise or lower confidence by tag.",
+    "State received claims as such in the deliverable."
+   ],
+   "check": "every key claim carries an observed/inferred/received tag",
+   "trap": "presenting received claims as observed"
+  }
+ ]
+}

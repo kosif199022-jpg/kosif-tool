@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (20 أداة)
+# أدوات المجال `sources` (21 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -377,6 +377,57 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fetch-video --evidence <ملف>`.
+
+### `github-pulse` — نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها / GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/github_pulse.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `web-research`, `self-discovery` |
+
+**ما تفعله:** يرتب المستودعات بعدد الناس النشطين في 30 يومًا من أرشيف أحداث GitHub وبالنجوم الكلية، ويصنفها في 14 مجالًا، ويستبعد غير الآمن، ويسجل 24 فكرة منقولة ومكانها. التحديث بثلاثة أوامر شبكية في مجلد عمل.
+
+**What it does:** Ranks repositories by distinct people active in a 30-day window (GH Archive hourly events) plus total stars (deps.dev), keeps only those pushed or released in the window, classifies them into 14 domains with a minimum share for creative ones, labels licence classes, keeps cheats, cracks and bot-detection bypasses out, and records 24 ideas restated in our own words with where each now lives. build writes data/github_pulse.json and references/github-pulse-30d.md; top, find, show and ideas query it; collect, enrich and select refresh it into a work folder (network, curl).
+
+#### متى تُستدعى
+
+- «إيه أهم المستودعات اللي اتحدثت في آخر شهر في التصميم والموشن؟»
+- «هات أحدث أفكار GitHub ونستفيد منها»
+- «What is trending on GitHub this month for agents?»
+- «Refresh the 30-day GitHub list»
+
+#### الأوامر
+
+- **top**: Leaders of a domain.
+  - `python3 scripts/github_pulse.py top --domain design-ui -n 15`
+- **ideas**: Ideas taken and where they live.
+  - `python3 scripts/github_pulse.py ideas --status transferred`
+- **show**: One repository with its decision and ideas.
+  - `python3 scripts/github_pulse.py show heygen-com/hyperframes`
+- **build**: Rebuild or check the tracker and report.
+  - `python3 scripts/github_pulse.py build --check`
+- **collect**: Network: aggregate GH Archive hours into the work folder.
+  - `python3 scripts/github_pulse.py collect --work /tmp/pulse --end 2026-10-26 --days 30`
+
+#### المتطلبات والأمان
+
+- binaries: curl
+- network: true
+- الأمان: writes-files
+- الموافقة: Query commands are read-only; build writes the tracker and report; collect/enrich/select download public archives into --work only and refuse to overwrite the committed snapshot.
+- الحدود: GH Archive captures far fewer events since 2026, so 30-day counts are a sample good for ranking; repositories deps.dev has not indexed show no total stars; domains are keyword rules fixed by hand in the review file.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_v58_mastery.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/github-pulse-30d.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:github-pulse --evidence <ملف>`.
 
 ### `github-top-repos` — متابعة أشهر 1000 مستودع / GitHub Top-1000 Tracker
 

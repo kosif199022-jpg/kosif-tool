@@ -55,6 +55,7 @@
 | `style-library` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | `python3 scripts/style_library.py groups` | tested-here |
 | `superpowers-unified` | موجّه مهارات العمل ومثبّتها | `python3 scripts/superpowers_unified.py doctor` | tested-here |
 | `think` | محرك التفكير وقوالبه | `python3 scripts/think.py ladder "design a 30-day plan for a course launch"` | tested-here |
+| `thinking-books` | مكتبة كتب التفكير: 64 منهجًا من 40 كتابًا مشهورًا في طرق التفكير مربوطة بمراحل البروتوكول | `python3 scripts/thinking_books.py stack "عايز أطلق تطبيق جديد"` | tested-here |
 
 الأوامر نسبية إلى مجلد المهارة (أو جذر المستودع لأدوات `tools/`)؛ `python3 scripts/hub.py tool <id>` يعطي كل الأوامر والمتطلبات والحدود.
 

@@ -1,10 +1,10 @@
-# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.7)
+# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.8)
 
 > **وضع التفعيل الكامل:** «فعّل كل القدرات» أو «الوضع الكامل» = كل المهارات المناسبة بكامل عمقها (L3، الملاحق المطابقة، المجلس ومحامي الشيطان، النماذج الذهنية، وكلاء متوازيين) والقوانين كما هي. **التحميل الخفيف:** اقرأ [`LOADER.md`](LOADER.md) أولًا ثم افتح الأسطر المطابقة فقط (`skill_loader.py need`).
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
-> **USIP v5.7 — 24-10-2026:** سياق المشروع، الإقلاع في محادثة جديدة، توجيه مختصر، التوزيع المتوازي على وكلاء، وقدرات #129–#136 ([A36](references/protocol/A36-v57-context-boot-parallel.md))؛ نسخة لصق مضغوطة `docs/protocol/USIP_PORTABLE_v5_7.md`. v5.6 (A34) وما قبلها في [CHANGELOG](references/protocol/CHANGELOG.md).
+> **USIP v5.8 — 26-10-2026:** الإتقان ([A38](references/protocol/A38-v58-thinking-books-github-pulse.md)): كتب التفكير، نبض GitHub، بوابتا التصميم والفيديو.
 
 ## الفهرس / contents
 
@@ -69,6 +69,7 @@
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» | جديد؛ ملف لكل مهمة على `main` في `history/` | `task_history.py` |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء | جديد | موثَّق؛ أداة Agent حين توجد |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» | جديد | `self_council.py` |
+| [A38 الإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | تقدير أو قرار L2/L3، صفحة أو فيديو قبل «خلص»، «جديد GitHub» | جديد (v5.8) | `thinking_books.py` و`github_pulse.py` و`design_tells.py` و`video_eyes.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
@@ -476,12 +477,13 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 25. **الأدلة والتعلم:** لا `verified` لوصفة إلا عبر بوابة المحرك (`record --status verified --qa-pass` بدليل موجود بعد tested)، وبعد مقارنة بخط أساس `--baseline` حين يوجد حل سابق أو أبسط (المحرك لا يفحصها)، ولا تحرير يدوي لملفات الوصفات؛ ولا ترقية أو تعميم إلى الكتالوج أو مشروع آخر أو العموم بلا موافقتي (`promote` مقترح فقط)؛ ولا ادعاء «تعلّم» أو «حفظ» أو «تذكّر» إلا بعد قراءة الملف المكتوب نفسه (`show` أو `lessons` أو الحزمة المصدَّرة)، وليس تدريبًا أو تعديلًا لأوزان النموذج أبدًا.
 26. **Katana لتحليل الصور والفيديوهات المرجعية في الردود فقط**؛ ممنوع استدعاؤها لتوليد/إعادة إنشاء صور أو فيديو أو استهلاك رصيد إنتاج. عند غياب تحليل read-only مثبت استخدم أدوات تحليل أخرى، ولا تُنسب النتائج إلى Katana (A8)؛ وتحليل أدوات Higgsfield الأخرى المكلف بإذن لكل استدعاء (A13).
 27. **مراجعة الرسم قبل الإرسال:** لا يُرسل رسم قبل بوابته: كل جسم في `<g data-figure>` وأجزاؤه بـ`data-part` وما يرتكز عليه بـ`data-contact`، ثم `drawing_methods.py review --svg <ملف>` حتى PASS (جسم واحد متصل لكل شخصية، وكل يد أو قدم تلمس ما تمسكه أو تقف عليه)، ثم صيّر PNG وافتحه وانظر إليه فعلًا: الرقبة تصل الرأس بالصدر، والخصر يصل الصدر بالحوض، والأطراف تبدأ من مفاصلها وعددها وثنيها منطقي، والحجم والمنظور والظل متسقة. أي خلل: أصلح وأعد التصيير والفحص، ثم مجلس خبراء الرسم ([A31](references/protocol/A31-drawing-council.md)): أحد عشر خبيرًا من بطاقات الكتب الـ48 بـ`drawing_council.py` حتى PASS. وسلّم مع إيصالَي `review` والمجلس. والصورة المولّدة بلا SVG مراجعتها بصرية فقط وتُذكر كذلك؛ والفحص هندسي لا يحكم على الجمال، ولا «راجعت» دون فتح الصورة.
+28. **الإتقان (v5.8):** في L2/L3: فئة مرجعية لكل تقدير، ثلاثة خيارات، «ما قبل الوفاة»، وبوابات A38 §3 قبل الإرسال.
 
 ## المسرد / glossary
 
 المعاني المعتمدة في كل ملف ومحرك (النواة، الملاحق، `SESSION_PROMPT.md`، `CLAUDE.md`، `SKILL.md`، `skill_intelligence.py`، `fusionforge.py`):
 
-**الإصدارات:** البروتوكول **USIP v5.7** (24-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
+**الإصدارات:** البروتوكول **USIP v5.8** (26-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
 
 **الخطط** (تعريفات المرحلة 6 هي المصدر الوحيد):
 - **A — الذكية السريعة:** أبسط مسار يحقق كل متطلب إلزامي (لا الأرخص؛ خطة تفوّت متطلبًا إلزاميًا ليست A). — `simplest path that meets every must-have`
@@ -509,8 +511,8 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> **USIP v5.7 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
+> **USIP v5.8 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
 
-> **USIP v5.7:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
+> **USIP v5.8:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29، والإتقان في A38. ترتيب ملفات المهارة في `references/LAYOUT.md`.
 
-> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده)، أو المضغوطة `docs/protocol/USIP_PORTABLE_v5_7.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.
+> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده)، أو المضغوطة `docs/protocol/USIP_PORTABLE_v5_8.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.
