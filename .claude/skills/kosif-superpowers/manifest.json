@@ -18,7 +18,7 @@
   "powers": 5853,
   "families": 62,
   "domains": 10,
-  "tools": 187,
+  "tools": 188,
   "guides": 117,
   "statuses": {
    "documented": 2325,
@@ -4473,6 +4473,83 @@
     "formats-platforms"
    ],
    "power_id": "TOOL-82"
+  },
+  {
+   "id": "repo-overlap-rig",
+   "path": "tools/overlap_rig.py",
+   "root": "repo",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Overlapping camera rig checker",
+   "title_ar": "فاحص ريج الكاميرا المتداخلة",
+   "summary_en": "AE-style two-key eases (influence to curve, the five named speed graphs, CSS cubic-bezier) and the overlapping null-camera rig: the camera is the sum of one-axis null moves, and `check` fails a rig whose moves end before the next begins, whose handoffs fall outside the 83–95% slow tail, or whose combined speed stalls.",
+   "summary_ar": "تسهيلات بأسلوب After Effects (تحويل الـ Influence لمنحنى، والجرافات الخمسة، وما يقابلها في CSS) وريج الكاميرا بالنلاط المتداخلة: الكاميرا مجموع حركات نلاط كل واحدة على محور، والأمر check يرفض الريج لو حركة خلصت قبل اللي بعدها، أو التسليم برّه الذيل البطيء 83–95%، أو سرعة الكاميرا وقفت.",
+   "use_when": [
+    "Check my camera nulls overlap so the camera never stops",
+    "Give me the CSS cubic-bezier for AE influence 70% / 75%",
+    "اتأكد إن حركات الكاميرا داخلة في بعض ومفيش وقفة",
+    "إيه الجرافات الخمسة بتوع فارس بالأرقام؟"
+   ],
+   "keywords": [
+    "overlap",
+    "overlapping camera",
+    "null camera",
+    "speed graph",
+    "influence",
+    "keyframe velocity",
+    "cubic-bezier",
+    "after effects ease",
+    "أوفرلابنج",
+    "نلاط",
+    "الكاميرا المتداخلة",
+    "جراف السرعة",
+    "إيزينج"
+   ],
+   "commands": [
+    {
+     "name": "graphs",
+     "example": "python3 tools/overlap_rig.py graphs",
+     "does": "Lists the five speed graphs with Out/In influence, their CSS cubic-bezier and the feel."
+    },
+    {
+     "name": "check",
+     "example": "python3 tools/overlap_rig.py check --json",
+     "does": "Checks a rig JSON ({\"nulls\": [...]}, or the reference rig when no file is given): per-handoff progress of the previous move, overlap frames, min and peak camera speed; exit 0 OK, 1 FAIL."
+    },
+    {
+     "name": "css",
+     "example": "python3 tools/overlap_rig.py css 0.7 0.75",
+     "does": "Converts AE Out/In influence (0..1) to cubic-bezier(out, 0, 1 - in, 1)."
+    }
+   ],
+   "inputs": "Optional rig JSON: {\"nulls\": [{\"axis\": \"x\", \"d\": -544, \"f0\": 0, \"f1\": 40, \"graph\": [0.0001, 1]}, ...]}; influences as 0..1.",
+   "outputs": "Text or JSON report (handoffs, min_speed, peak_speed, issues). Exit 0 when the rig passes, 1 when it fails.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "",
+   "limits": "Checks timing math only (one-axis two-key nulls, speed 0 at the keys); it does not render, read After Effects projects or judge the composition.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_overlap_rig.py 7/7 passed here; on the reference rig it reports handoffs at 89/96/83% and min/peak speed 7.07/132.79 px/frame, matching the source measurements.",
+   "tests": [
+    "tests/test_overlap_rig.py"
+   ],
+   "docs": [
+    "playbooks/overlap-camera.md",
+    "playbooks/3d.md",
+    "playbooks/kinetic-type.md"
+   ],
+   "families": [
+    "easing-timing-rhythm",
+    "camera-composition-layout"
+   ]
   },
   {
    "id": "repo-job-wait",
