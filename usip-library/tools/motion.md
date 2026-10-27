@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (26 أداة)
+# أدوات المجال `motion` (27 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -868,6 +868,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-job-wait --evidence <ملف>`.
+
+### `repo-overlap-rig` — فاحص ريج الكاميرا المتداخلة / Overlapping camera rig checker
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `tools/overlap_rig.py` (جذر: repo) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `easing-timing-rhythm`, `camera-composition-layout` |
+
+**ما تفعله:** تسهيلات بأسلوب After Effects (تحويل الـ Influence لمنحنى، والجرافات الخمسة، وما يقابلها في CSS) وريج الكاميرا بالنلاط المتداخلة: الكاميرا مجموع حركات نلاط كل واحدة على محور، والأمر check يرفض الريج لو حركة خلصت قبل اللي بعدها، أو التسليم برّه الذيل البطيء 83–95%، أو سرعة الكاميرا وقفت.
+
+**What it does:** AE-style two-key eases (influence to curve, the five named speed graphs, CSS cubic-bezier) and the overlapping null-camera rig: the camera is the sum of one-axis null moves, and `check` fails a rig whose moves end before the next begins, whose handoffs fall outside the 83–95% slow tail, or whose combined speed stalls.
+
+#### متى تُستدعى
+
+- «Check my camera nulls overlap so the camera never stops»
+- «Give me the CSS cubic-bezier for AE influence 70% / 75%»
+- «اتأكد إن حركات الكاميرا داخلة في بعض ومفيش وقفة»
+- «إيه الجرافات الخمسة بتوع فارس بالأرقام؟»
+
+#### الأوامر
+
+- **graphs**: Lists the five speed graphs with Out/In influence, their CSS cubic-bezier and the feel.
+  - `python3 tools/overlap_rig.py graphs`
+- **check**: Checks a rig JSON ({"nulls": [...]}, or the reference rig when no file is given): per-handoff progress of the previous move, overlap frames, min and peak camera speed; exit 0 OK, 1 FAIL.
+  - `python3 tools/overlap_rig.py check --json`
+- **css**: Converts AE Out/In influence (0..1) to cubic-bezier(out, 0, 1 - in, 1).
+  - `python3 tools/overlap_rig.py css 0.7 0.75`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: Checks timing math only (one-axis two-key nulls, speed 0 at the keys); it does not render, read After Effects projects or judge the composition.
+
+#### الاختبارات والأدلة
+
+- `tests/test_overlap_rig.py`
+- مرجع: `playbooks/overlap-camera.md`
+- مرجع: `playbooks/3d.md`
+- مرجع: `playbooks/kinetic-type.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-overlap-rig --evidence <ملف>`.
 
 ### `repo-render-html` — محوّل حتمي من HTML إلى فيديو MP4 / Deterministic HTML-to-MP4 renderer
 

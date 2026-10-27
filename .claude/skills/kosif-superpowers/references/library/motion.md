@@ -85,6 +85,7 @@
 | `repo-build` | مولّد ملفات أطلس الأساليب | `python3 tools/build.py` | untested |
 | `repo-import-briefs` | استيراد الملفات الإبداعية | `python3 tools/import_briefs.py ./briefs/` | untested |
 | `repo-kosif` | أداة سطر أوامر لأطلس أنماط KOSIF | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
+| `repo-overlap-rig` | فاحص ريج الكاميرا المتداخلة | `python3 tools/overlap_rig.py graphs` | tested-here |
 | `repo-render-html` | محوّل حتمي من HTML إلى فيديو MP4 | `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3` | tested-elsewhere |
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
 | `script-storyboard` | من السيناريو إلى الستوري بورد والأنيماتك | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90` | tested-here |
