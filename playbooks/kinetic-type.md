@@ -33,6 +33,8 @@ Use kinetic type when the words are the content: quotes, hooks, manifestos, narr
 
 **بالعربية:** دخول الكلمة 300–450 مللي ثانية بإزاحة 40–70 بكسل ومنحنى `cubic-bezier(0.22, 1, 0.36, 1)`. التدرّج 70–120 مللي ثانية، أو بداية كل كلمة عند توقيتها في `words.json` ناقص 60 مللي ثانية. التأكيد بنبضة 280 مللي ثانية أو تغيير الوزن. القناع يمسح باتجاه القراءة (من اليمين للعربية). الخروج 200–300 مللي ثانية وأقصر دائمًا من الدخول. لا تباعد بين الحروف العربية أبدًا.
 
+- **Hook captions** (each word cuts in blurred and slides 127 px, blur 37.5 → 0 in 20 frames, sharp-start graph; key word bold green with glow; block cuts out together): see `playbooks/overlap-camera.md` section 5.
+
 ## 4. Scene recipes — وصفات المشاهد
 
 **A — Hook line (سطر الافتتاح)**

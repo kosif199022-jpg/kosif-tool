@@ -158,7 +158,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -237,7 +237,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -316,7 +316,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -394,7 +394,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -471,7 +471,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -549,7 +549,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -628,7 +628,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -705,7 +705,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -782,7 +782,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -862,7 +862,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -941,7 +941,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1021,7 +1021,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1100,7 +1100,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1179,7 +1179,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1258,7 +1258,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1338,7 +1338,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1417,7 +1417,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1496,7 +1496,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1572,7 +1572,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1651,7 +1651,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1727,7 +1727,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1806,7 +1806,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1884,7 +1884,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1962,7 +1962,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2040,7 +2040,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2120,7 +2120,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2200,7 +2200,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2277,7 +2277,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2355,7 +2355,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2433,7 +2433,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2513,7 +2513,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2590,7 +2590,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2669,7 +2669,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2746,7 +2746,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2825,7 +2825,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2903,7 +2903,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2980,7 +2980,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3057,7 +3057,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3133,7 +3133,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3212,7 +3212,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3290,7 +3290,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3368,7 +3368,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3446,7 +3446,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3523,7 +3523,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3600,7 +3600,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3675,7 +3675,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3752,7 +3752,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3831,7 +3831,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3909,7 +3909,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3987,7 +3987,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4064,7 +4064,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4142,7 +4142,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4220,7 +4220,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4297,7 +4297,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4377,7 +4377,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4455,7 +4455,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4532,7 +4532,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4609,7 +4609,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4685,7 +4685,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4762,7 +4762,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4841,7 +4841,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4920,7 +4920,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4998,7 +4998,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5077,7 +5077,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5155,7 +5155,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5232,7 +5232,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5311,7 +5311,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5390,7 +5390,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5467,7 +5467,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5545,7 +5545,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5622,7 +5622,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-71` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5702,7 +5702,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-72` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5781,7 +5781,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-73` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5861,7 +5861,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-74` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5938,7 +5938,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-75` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6018,7 +6018,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-76` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6097,7 +6097,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-77` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6177,7 +6177,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-78` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6256,7 +6256,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-79` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6332,7 +6332,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-80` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6410,7 +6410,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-81` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6488,7 +6488,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-82` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6565,7 +6565,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-83` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6641,7 +6641,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-84` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6718,7 +6718,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-85` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6796,7 +6796,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-86` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6875,7 +6875,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-87` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6952,7 +6952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-88` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7028,7 +7028,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-89` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7108,7 +7108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-90` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7189,7 +7189,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-91` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7265,7 +7265,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7342,7 +7342,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-G02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7419,7 +7419,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-G03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7495,7 +7495,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-G04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7571,7 +7571,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7648,7 +7648,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7725,7 +7725,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7802,7 +7802,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7879,7 +7879,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7957,7 +7957,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8033,7 +8033,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8109,7 +8109,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8185,7 +8185,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8264,7 +8264,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8338,7 +8338,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:EASE-X11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `unified-cinematic` · `starter-html-canvas`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `unified-cinematic`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

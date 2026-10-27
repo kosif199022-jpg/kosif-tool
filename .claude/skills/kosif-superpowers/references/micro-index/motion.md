@@ -15,7 +15,7 @@
 
 ## camera-composition-layout (motion)
 
-chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · card: `usip-library/cards/motion/camera-composition-layout.md` · tools: `blender-cinema` · `blender-cinematic-bridge` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `motion-toolkit` · `reference-visual-fingerprint` · `script-storyboard` …
+chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · card: `usip-library/cards/motion/camera-composition-layout.md` · tools: `blender-cinema` · `blender-cinematic-bridge` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `motion-toolkit` · `reference-visual-fingerprint` · `repo-overlap-rig` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -505,7 +505,7 @@ chapter: [characters-rigs](../powers/characters-rigs.md) · card: `usip-library/
 
 ## easing-timing-rhythm (motion)
 
-chapter: [easing-timing-rhythm](../powers/easing-timing-rhythm.md) · card: `usip-library/cards/motion/easing-timing-rhythm.md` · tools: `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `starter-html-canvas` · `unified-cinematic`
+chapter: [easing-timing-rhythm](../powers/easing-timing-rhythm.md) · card: `usip-library/cards/motion/easing-timing-rhythm.md` · tools: `creative-paint` · `motion-physics` · `motion-toolkit` · `music-rhythm-engine` · `repo-overlap-rig` · `starter-html-canvas` · `unified-cinematic`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

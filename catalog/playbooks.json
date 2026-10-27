@@ -5,7 +5,7 @@
   "title_ar": "المشاهد ثلاثية وشبه ثلاثية الأبعاد",
   "path": "playbooks/3d.md",
   "excerpt": "This playbook covers spatial motion: choosing between real 3D (Three.js) and layered 2.5D, isometric worlds, low-poly, camera paths and lenses, basic lighting and materials. Use it whenever a style's categories include `3d`.",
-  "words_en": 586
+  "words_en": 617
  },
  {
   "key": "ads",
@@ -85,7 +85,7 @@
   "title_ar": "التايبوغرافي الحركي",
   "path": "playbooks/kinetic-type.md",
   "excerpt": "This playbook fixes how words move in KOSIF films: timing per word and per line, emphasis beats, masks and wipes, and readability on a phone. Use it whenever a style's categories include `kinetic-type`, and read `playbooks/arabic-typography",
-  "words_en": 803
+  "words_en": 835
  },
  {
   "key": "music",
@@ -94,6 +94,14 @@
   "path": "playbooks/music.md",
   "excerpt": "This playbook covers films driven by music: BPM grids, cutting and accenting on beats, audio-reactive motion, lyric and poem films, ducking music under narration, and loudness delivery. Use it whenever a style's categories include `music`. ",
   "words_en": 643
+ },
+ {
+  "key": "overlap-camera",
+  "title_en": "Overlapping camera, speed graphs and hook captions",
+  "title_ar": "الكاميرا المتداخلة وجرافات السرعة وكابشن الهوك",
+  "path": "playbooks/overlap-camera.md",
+  "excerpt": "Technique credit: **Fares Toson** (the \"Fares Motion\" After Effects panel and its `pro-motion` skill, shared as a gift from a YouTube episode). The method and the measured numbers are restated here in KOSIF's own words; no code, images or p",
+  "words_en": 947
  },
  {
   "key": "particles",
