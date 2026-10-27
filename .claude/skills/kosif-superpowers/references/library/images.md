@@ -35,6 +35,7 @@
 
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
+| `adobe-mcp-bridges` | ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب) | `python3 scripts/adobe_mcp.py list` | tested-here |
 | `app-studio` | استوديو التطبيقات للصور والتصميم | `python3 scripts/app_studio.py --help` | tested-here |
 | `app-studio-paint` | حزمة الرسم في استوديو التطبيقات | `python3 -c "import sys; sys.path.insert(0,'scripts'); import app_studio; print(app_studio.PAINT_BATCH['effects'])"` | tested-here |
 | `cinema-lab` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | `python3 scripts/cinema_lab.py doctor` | tested-here |

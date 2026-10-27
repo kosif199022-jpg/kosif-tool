@@ -161,6 +161,7 @@
 
 | tool | ID | الأداة / tool | أمر أول / first command | tests |
 |---|---|---|---|---|
+| `adobe-mcp-bridges` | — | ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب) · Adobe MCP bridges (After Effects, Premiere Pro, Photoshop) | `python3 scripts/adobe_mcp.py list` | 1 |
 | `kosif-remote-commander` | TOOL-55 | خادم KOSIF Remote Commander · KOSIF Remote Commander MCP | `python3 scripts/kosif_remote_superpowers.py doctor` | 1 |
 
 ## maintain

@@ -101,6 +101,7 @@
 | تسويق، تسعير، جدوى | A18 + مجلس A13 |
 | حكم صعب أو قرار لا رجعة فيه | A24 |
 | اختيار أداة | A28 + A34 |
+| تحكم في أفتر إفكتس أو بريمير أو فوتوشوب على جهازي | `references/adobe-mcp-bridges.md` (+ A28) |
 | قبل أي «تم» | A27 (وA29 عند الفشل) |
 | دفع أو دمج أو نشر | A3 |
 | نهاية مهمة | A35 |
@@ -113,6 +114,21 @@
 - معاينة قبل الرندر النهائي، ثم فحص المدة والـ fps والصوت.
 - **الانتظار:** لا `sleep 60; grep ...` ولا سلسلة sleep أبدًا (Claude Code يمنعها). الرندر أو التحميل الطويل: `tools/job.py start --dir <مجلد> -- <الأمر>` ثم `job.py wait --dir <مجلد>` داخل Monitor، أو `--quiet` مع `run_in_background`، و`job.py status` لنظرة بلا انتظار. بلا shell: أنهِ الدور وانتظر.
 - لا تنسخ فيديو أو برومبت أو موسيقى لطرف ثالث: اربط بالمصدر وانسبه لصاحبه.
+
+### 2.5 برامج أدوبي على جهازي (أداة محلية اختيارية)
+
+أفتر إفكتس وبريمير وفوتوشوب يتربطوا بـ Claude عن طريق جسور MCP مفتوحة المصدر (رخصة MIT) أسطّبها أنا على جهازي (ويندوز أو ماك):
+
+| البرنامج | الجسر | التسطيب المختصر |
+|---|---|---|
+| After Effects 2022+ | `Dakkshin/after-effects-mcp` | `git clone` ثم `npm install` و`npm run build` و`npm run install-bridge`، وافتح Window › mcp-bridge-auto.jsx وفعّل Auto-run commands |
+| Premiere Pro 2020–2026 | `leancoderkavy/premiere-pro-mcp` | `npm install -g premiere-pro-mcp@1.15.1` ثم `premiere-pro-mcp --install-cep` و`--doctor`، وأول أداة `verify_premiere_connection` |
+| Photoshop | `alisaitteke/photoshop-mcp` | `claude mcp add photoshop -- npx -y @alisaitteke/photoshop-mcp` |
+| خمسة برامج معًا (تجريبي) | `mikechambers/adb-mcp` | Python + uv + بروكسي Node + إضافات UXP |
+
+- الخطوات والإعداد لكل عميل: `python3 .claude/skills/kosif-superpowers/scripts/adobe_mcp.py steps <id>` و`config <id> --client claude-code|claude-desktop` و`doctor`؛ السكربت يطبع فقط ولا يسطّب شيئًا.
+- التسطيب، وإضافة الجسر للعميل، وتشغيل سكربت ExtendScript حر، وأي توليد Firefly (رصيد أدوبي): كلها بإذني. لا مفتاح API ولا كلمة سر في أي إعداد.
+- في جلسة سحابية: جهّز الخطة والسكربتات والإعداد فقط، ولا تدّعِ أنك تحكمت في البرنامج. «اتعمل في أفتر إفكتس» تُقال فقط بنتيجة رجعت من الجسر.
 
 ## 3. التوزيع المتوازي للمهام / parallel task distribution
 

@@ -8,11 +8,12 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:local-computer:start -->
 
-**الأدوات / tools (1)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (2)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
 | `kosif-remote-commander` | A self-contained stdio MCP server (standard library only) that gives an MCP client 11 tools scoped to one approved workspace: health, system info, list, file info, read, search, plus create, write, replace, move and an allowlisted command runner. Writes and commands stay off until the user sets an environment flag. | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
+| `adobe-mcp-bridges` | Vetted local MCP servers that let Claude drive Adobe apps on the user's own computer: Dakkshin/after-effects-mcp (compositions, layers, keyframes, expressions, ExtendScript), leancoderkavy/premiere-pro-mcp (timeline editing, effects, colour, export) and alisaitteke/photoshop-mcp (layers, text, masks, filters, retouch recipes), plus mikechambers/adb-mcp as a five-app alternative. The stdlib helper prints install steps, the Claude Code command or Claude Desktop JSON, and checks node/npm/git/python/uv. It installs nothing and needs no API key. | `python3 scripts/adobe_mcp.py list` | tested-here |
 
 <!-- hub:area:local-computer:end -->
 
@@ -20,6 +21,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 1. [KOSIF local computer MCP (verified prototype)](#kosif-local-computer-mcp-verified-prototype)
 2. [KOSIF catalog MCP server (read-only discovery)](#kosif-catalog-mcp-server-read-only-discovery)
+3. [Adobe apps: After Effects, Premiere Pro, Photoshop](#adobe-apps-after-effects-premiere-pro-photoshop)
 
 ## KOSIF local computer MCP (verified prototype)
 
@@ -50,3 +52,19 @@ python3 scripts/hub.py mcp-config            # the `claude mcp add …` line and
 - **Anywhere else / other clients:** run `hub.py mcp-config` and paste the command or JSON it prints (it uses `python` on Windows and `python3` elsewhere, with the absolute path of this copy).
 
 Use Remote Commander (above) when the task needs the user's own files; use the catalog server when a client only needs to know which KOSIF tool or power fits.
+
+## Adobe apps: After Effects, Premiere Pro, Photoshop
+
+ربط Claude بأفتر إفكتس وبريمير وفوتوشوب على جهاز المستخدم (ويندوز أو ماك) عن طريق خوادم MCP مفتوحة المصدر تمت مراجعتها. السكربت يطبع الخطوات والإعداد فقط، والتسطيب نفسه بإذن المستخدم على جهازه.
+
+Optional local tools for the computer that has the Adobe apps. `scripts/adobe_mcp.py` prints the vetted bridge for each app, its install steps and the MCP client config, and checks the runtimes; it installs nothing and needs no API key.
+
+~~~bash
+python3 scripts/adobe_mcp.py list
+python3 scripts/adobe_mcp.py doctor
+python3 scripts/adobe_mcp.py steps after-effects --os win
+python3 scripts/adobe_mcp.py config premiere --client claude-code
+python3 scripts/adobe_mcp.py config photoshop --os mac
+~~~
+
+After Effects: [Dakkshin/after-effects-mcp](https://github.com/Dakkshin/after-effects-mcp). Premiere Pro: [leancoderkavy/premiere-pro-mcp](https://github.com/leancoderkavy/premiere-pro-mcp). Photoshop: [alisaitteke/photoshop-mcp](https://github.com/alisaitteke/photoshop-mcp). Five apps in one (proof of concept): [mikechambers/adb-mcp](https://github.com/mikechambers/adb-mcp). A cloud session can prepare the plan and config but cannot drive these apps. Full capabilities, limits and safety: [adobe-mcp-bridges.md](../adobe-mcp-bridges.md).

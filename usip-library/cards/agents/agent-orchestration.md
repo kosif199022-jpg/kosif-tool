@@ -101,7 +101,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -168,7 +168,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -236,7 +236,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -304,7 +304,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -373,7 +373,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -442,7 +442,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -511,7 +511,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -580,7 +580,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -647,7 +647,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -716,7 +716,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -784,7 +784,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -853,7 +853,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -922,7 +922,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -989,7 +989,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1058,7 +1058,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1126,7 +1126,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1196,7 +1196,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1264,7 +1264,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1330,7 +1330,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1399,7 +1399,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1465,7 +1465,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1534,7 +1534,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1606,7 +1606,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1674,7 +1674,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1742,7 +1742,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1810,7 +1810,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1876,7 +1876,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1945,7 +1945,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2013,7 +2013,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2080,7 +2080,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2147,7 +2147,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2215,7 +2215,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2281,7 +2281,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2351,7 +2351,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2418,7 +2418,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2484,7 +2484,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2551,7 +2551,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2620,7 +2620,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2687,7 +2687,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2753,7 +2753,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2819,7 +2819,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2885,7 +2885,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2951,7 +2951,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3017,7 +3017,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3083,7 +3083,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3150,7 +3150,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3216,7 +3216,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3282,7 +3282,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3348,7 +3348,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3414,7 +3414,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3482,7 +3482,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3548,7 +3548,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3614,7 +3614,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3681,7 +3681,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3746,7 +3746,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:AGENT-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge`.
 - مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
