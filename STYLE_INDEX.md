@@ -18,6 +18,7 @@ Total: 289 styles · 243 PromptsMotion references · 46 KOSIF base styles · 45 
 - [Hand-drawn, whiteboard and plotter — الرسم اليدوي والسبورة والبلوتر](playbooks/hand-drawn.md)
 - [Kinetic typography — التايبوغرافي الحركي](playbooks/kinetic-type.md)
 - [Music and beat sync — الموسيقى والمزامنة الإيقاعية](playbooks/music.md)
+- [Overlapping camera, speed graphs and hook captions — الكاميرا المتداخلة وجرافات السرعة وكابشن الهوك](playbooks/overlap-camera.md)
 - [Particles and fields — الجسيمات والحقول](playbooks/particles.md)
 - [Phone and device films — أفلام الهاتف والأجهزة](playbooks/phone.md)
 - [Photos and parallax — الصور والبارالاكس](playbooks/photos.md)
