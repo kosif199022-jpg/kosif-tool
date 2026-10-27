@@ -35,6 +35,7 @@
 
 | الأداة | ما تفعله | ابدأ بـ | الدليل |
 |---|---|---|---|
+| `adobe-mcp-bridges` | ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب) | `python3 scripts/adobe_mcp.py list` | tested-here |
 | `aspects` | محلّل نِسَب أبعاد الفيديو | `python3 -c "import sys; sys.path.insert(0,'scripts'); import aspects; print(aspects.resolve('2.35:1'))"` | tested-here |
 | `atlas-render` | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب | `python3 scripts/atlas_render.py check` | tested-here |
 | `blender-bridge` | جسر Blender الآمن | `python3 scripts/blender_bridge.py doctor` | tested-here |

@@ -117,7 +117,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -186,7 +186,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -259,7 +259,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -332,7 +332,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -404,7 +404,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -473,7 +473,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -544,7 +544,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -614,7 +614,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -687,7 +687,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -759,7 +759,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -834,7 +834,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -906,7 +906,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -978,7 +978,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1051,7 +1051,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1122,7 +1122,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1194,7 +1194,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1268,7 +1268,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1341,7 +1341,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1413,7 +1413,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1487,7 +1487,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1558,7 +1558,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1631,7 +1631,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1703,7 +1703,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1773,7 +1773,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1845,7 +1845,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1917,7 +1917,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1994,7 +1994,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2068,7 +2068,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2140,7 +2140,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2213,7 +2213,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2288,7 +2288,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2361,7 +2361,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2434,7 +2434,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2504,7 +2504,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2577,7 +2577,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2649,7 +2649,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2720,7 +2720,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2790,7 +2790,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2862,7 +2862,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2935,7 +2935,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3010,7 +3010,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3081,7 +3081,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3155,7 +3155,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3227,7 +3227,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3296,7 +3296,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3370,7 +3370,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3442,7 +3442,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3516,7 +3516,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3588,7 +3588,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3660,7 +3660,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3730,7 +3730,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3801,7 +3801,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3873,7 +3873,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3945,7 +3945,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4018,7 +4018,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4091,7 +4091,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4164,7 +4164,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4239,7 +4239,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4313,7 +4313,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-D01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4386,7 +4386,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-D02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4461,7 +4461,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-D03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4534,7 +4534,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-P01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4606,7 +4606,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-U01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4673,7 +4673,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-U02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4742,7 +4742,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-U03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4809,7 +4809,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4877,7 +4877,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-X02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4946,7 +4946,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-X03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5018,7 +5018,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-X04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5089,7 +5089,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-X05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5159,7 +5159,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `image`، والمنفّذ `method:FOOT-X06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner`.
 - مراحل النوع: المقاس والهوية ← ثلاث مصغرات ← تطوير المختارة ← اختبار التصغير والتباين ← تصدير قابل للتعديل + PNG.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

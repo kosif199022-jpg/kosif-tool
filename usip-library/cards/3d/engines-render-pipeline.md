@@ -492,7 +492,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -560,7 +560,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -629,7 +629,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -699,7 +699,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -767,7 +767,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -836,7 +836,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -904,7 +904,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -973,7 +973,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1042,7 +1042,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1110,7 +1110,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1180,7 +1180,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-100` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1250,7 +1250,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-101` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1318,7 +1318,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-102` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1385,7 +1385,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-103` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1451,7 +1451,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-104` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1519,7 +1519,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-105` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1588,7 +1588,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-106` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1653,7 +1653,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-107` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1720,7 +1720,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-108` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1791,7 +1791,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-109` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1860,7 +1860,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1926,7 +1926,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-110` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1993,7 +1993,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-111` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2059,7 +2059,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-112` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2127,7 +2127,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-113` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2194,7 +2194,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-114` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2260,7 +2260,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-115` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2329,7 +2329,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-116` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2395,7 +2395,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-117` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2466,7 +2466,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-118` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2533,7 +2533,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-119` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2603,7 +2603,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2674,7 +2674,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-120` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2743,7 +2743,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-121` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2813,7 +2813,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-122` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2882,7 +2882,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-123` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2949,7 +2949,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-124` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3019,7 +3019,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-125` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3089,7 +3089,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-126` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3156,7 +3156,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-127` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3224,7 +3224,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-128` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3292,7 +3292,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-129` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3361,7 +3361,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3429,7 +3429,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-130` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3499,7 +3499,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-131` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3570,7 +3570,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-132` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3639,7 +3639,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-133` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3707,7 +3707,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-134` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3775,7 +3775,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-135` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3844,7 +3844,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-136` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3916,7 +3916,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-137` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3985,7 +3985,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-138` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4054,7 +4054,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-139` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4123,7 +4123,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4192,7 +4192,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-140` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4258,7 +4258,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-141` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4327,7 +4327,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-142` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4397,7 +4397,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-143` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4463,7 +4463,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-144` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4529,7 +4529,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-145` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4601,7 +4601,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-146` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4671,7 +4671,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-147` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4742,7 +4742,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-148` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4811,7 +4811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-149` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4881,7 +4881,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4946,7 +4946,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-150` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5016,7 +5016,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-151` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5084,7 +5084,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-152` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5153,7 +5153,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-153` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5220,7 +5220,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-154` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5288,7 +5288,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-155` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5355,7 +5355,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-156` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5424,7 +5424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-157` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5494,7 +5494,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-158` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5563,7 +5563,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-159` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5631,7 +5631,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5699,7 +5699,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-160` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5769,7 +5769,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-161` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5837,7 +5837,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-162` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5905,7 +5905,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-163` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5974,7 +5974,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-164` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6045,7 +6045,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-165` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6114,7 +6114,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-166` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6183,7 +6183,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-167` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6249,7 +6249,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-168` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6317,7 +6317,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-169` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6384,7 +6384,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6456,7 +6456,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-170` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6526,7 +6526,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-171` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6596,7 +6596,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-172` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6665,7 +6665,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-173` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6734,7 +6734,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-174` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6803,7 +6803,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-175` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6872,7 +6872,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-176` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -6941,7 +6941,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-177` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7010,7 +7010,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-178` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7079,7 +7079,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-179` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7149,7 +7149,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7221,7 +7221,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-180` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7289,7 +7289,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-181` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7356,7 +7356,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-182` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7424,7 +7424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-183` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7494,7 +7494,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-184` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7565,7 +7565,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-185` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7638,7 +7638,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-186` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7706,7 +7706,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-187` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7772,7 +7772,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-188` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7839,7 +7839,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-189` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7908,7 +7908,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -7978,7 +7978,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-190` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8048,7 +8048,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-191` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8115,7 +8115,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-192` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8182,7 +8182,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-193` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8249,7 +8249,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-194` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8315,7 +8315,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-195` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8382,7 +8382,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-196` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8448,7 +8448,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-197` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8514,7 +8514,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-198` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8581,7 +8581,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-199` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8649,7 +8649,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8721,7 +8721,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-200` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8789,7 +8789,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-201` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8859,7 +8859,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-202` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8926,7 +8926,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-203` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -8992,7 +8992,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-204` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9060,7 +9060,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-205` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9129,7 +9129,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-206` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9195,7 +9195,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-207` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9266,7 +9266,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-208` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9337,7 +9337,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-209` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9406,7 +9406,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9475,7 +9475,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-210` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9542,7 +9542,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-211` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9608,7 +9608,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-212` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9676,7 +9676,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-213` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9745,7 +9745,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-214` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9816,7 +9816,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-215` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9884,7 +9884,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-216` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -9952,7 +9952,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-217` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10021,7 +10021,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-218` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10087,7 +10087,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-219` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10156,7 +10156,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10226,7 +10226,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-220` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10296,7 +10296,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-221` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10366,7 +10366,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-222` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10438,7 +10438,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-223` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10507,7 +10507,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-224` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10578,7 +10578,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-225` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10648,7 +10648,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-226` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10718,7 +10718,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-227` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10787,7 +10787,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-228` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10854,7 +10854,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-229` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10923,7 +10923,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -10993,7 +10993,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-230` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11059,7 +11059,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-231` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11127,7 +11127,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-232` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11196,7 +11196,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-233` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11263,7 +11263,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-234` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11331,7 +11331,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-235` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11398,7 +11398,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-236` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11468,7 +11468,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-237` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11536,7 +11536,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-238` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11602,7 +11602,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-239` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11670,7 +11670,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11738,7 +11738,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-240` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11804,7 +11804,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-241` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11870,7 +11870,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-242` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -11936,7 +11936,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-243` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12003,7 +12003,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-244` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12069,7 +12069,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-245` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12135,7 +12135,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-246` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12201,7 +12201,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-247` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12267,7 +12267,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-248` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12333,7 +12333,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-249` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12401,7 +12401,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12468,7 +12468,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-250` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12534,7 +12534,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-251` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12600,7 +12600,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-252` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12666,7 +12666,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-253` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12732,7 +12732,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-254` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12798,7 +12798,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-255` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12864,7 +12864,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-256` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12930,7 +12930,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-257` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -12996,7 +12996,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-258` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13062,7 +13062,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-259` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13130,7 +13130,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13201,7 +13201,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-260` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13267,7 +13267,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-261` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13333,7 +13333,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-262` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13399,7 +13399,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-263` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13469,7 +13469,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-264` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13536,7 +13536,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-265` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13604,7 +13604,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-266` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13673,7 +13673,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-267` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13744,7 +13744,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-268` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13814,7 +13814,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-269` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13883,7 +13883,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -13951,7 +13951,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-270` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14019,7 +14019,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-271` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14090,7 +14090,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-272` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14156,7 +14156,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-273` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14223,7 +14223,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-274` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14294,7 +14294,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-275` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14364,7 +14364,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-276` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14434,7 +14434,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-277` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14504,7 +14504,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-278` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14572,7 +14572,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-279` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14641,7 +14641,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14709,7 +14709,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-280` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14779,7 +14779,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-281` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14849,7 +14849,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-282` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14917,7 +14917,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-283` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -14985,7 +14985,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-284` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15054,7 +15054,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-285` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15126,7 +15126,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-286` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15193,7 +15193,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-287` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15261,7 +15261,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-288` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15332,7 +15332,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-289` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15401,7 +15401,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15470,7 +15470,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-290` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15539,7 +15539,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-291` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15608,7 +15608,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-292` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15678,7 +15678,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-293` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15748,7 +15748,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-294` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15819,7 +15819,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-295` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15889,7 +15889,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-296` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -15961,7 +15961,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-297` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16033,7 +16033,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-298` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16105,7 +16105,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-299` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16175,7 +16175,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16247,7 +16247,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-300` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16317,7 +16317,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-301` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16384,7 +16384,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-302` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16452,7 +16452,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-303` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16520,7 +16520,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-304` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16592,7 +16592,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-305` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16661,7 +16661,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-306` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16730,7 +16730,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-307` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16800,7 +16800,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-308` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16871,7 +16871,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-309` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -16941,7 +16941,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17013,7 +17013,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-310` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17081,7 +17081,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-311` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17151,7 +17151,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-312` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17220,7 +17220,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-313` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17286,7 +17286,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-314` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17356,7 +17356,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-315` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17424,7 +17424,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-316` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17490,7 +17490,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-317` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17557,7 +17557,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-318` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17623,7 +17623,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-319` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17691,7 +17691,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17758,7 +17758,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-320` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17824,7 +17824,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-321` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17892,7 +17892,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-322` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -17963,7 +17963,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-323` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18031,7 +18031,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-324` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18099,7 +18099,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-325` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18168,7 +18168,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-326` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18237,7 +18237,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-327` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18305,7 +18305,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-328` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18373,7 +18373,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-329` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18441,7 +18441,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18508,7 +18508,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-330` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18581,7 +18581,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-331` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18650,7 +18650,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-332` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18720,7 +18720,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-333` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18789,7 +18789,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-334` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18857,7 +18857,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-335` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18927,7 +18927,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-336` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -18995,7 +18995,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-337` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19066,7 +19066,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-338` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19136,7 +19136,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-339` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19204,7 +19204,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19273,7 +19273,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-340` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19345,7 +19345,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-341` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19413,7 +19413,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-342` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19481,7 +19481,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-343` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19548,7 +19548,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-344` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19619,7 +19619,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-345` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19689,7 +19689,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-346` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19764,7 +19764,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-347` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19833,7 +19833,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-348` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19902,7 +19902,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-349` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -19971,7 +19971,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20040,7 +20040,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-350` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20108,7 +20108,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-351` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20175,7 +20175,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-352` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20243,7 +20243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-353` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20310,7 +20310,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-354` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20377,7 +20377,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-355` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20445,7 +20445,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-356` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20512,7 +20512,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-357` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20580,7 +20580,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-358` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20649,7 +20649,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-359` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20717,7 +20717,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20788,7 +20788,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-360` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20857,7 +20857,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-361` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20926,7 +20926,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-362` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -20993,7 +20993,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-363` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21061,7 +21061,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-364` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21131,7 +21131,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-365` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21199,7 +21199,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-366` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21266,7 +21266,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-367` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21334,7 +21334,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-368` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21400,7 +21400,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-369` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21472,7 +21472,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21540,7 +21540,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-370` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21608,7 +21608,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-371` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21677,7 +21677,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-372` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21744,7 +21744,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-373` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21811,7 +21811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-374` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21878,7 +21878,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-375` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -21944,7 +21944,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-376` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22012,7 +22012,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-377` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22081,7 +22081,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-378` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22148,7 +22148,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-379` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22218,7 +22218,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22287,7 +22287,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-380` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22355,7 +22355,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-381` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22423,7 +22423,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-382` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22492,7 +22492,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-383` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22562,7 +22562,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-384` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22631,7 +22631,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-385` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22698,7 +22698,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-386` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22768,7 +22768,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-387` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22836,7 +22836,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-388` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22903,7 +22903,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-389` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -22970,7 +22970,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23039,7 +23039,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-390` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23106,7 +23106,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-391` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23172,7 +23172,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-392` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23238,7 +23238,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-393` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23306,7 +23306,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-394` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23374,7 +23374,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-395` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23441,7 +23441,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-396` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23508,7 +23508,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-397` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23575,7 +23575,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-398` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23642,7 +23642,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-399` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23711,7 +23711,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23781,7 +23781,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-400` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23848,7 +23848,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-401` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23916,7 +23916,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-402` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -23984,7 +23984,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-403` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24051,7 +24051,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-404` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24119,7 +24119,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-405` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24187,7 +24187,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-406` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24256,7 +24256,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-407` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24324,7 +24324,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-408` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24392,7 +24392,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-409` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24461,7 +24461,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24533,7 +24533,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-410` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24603,7 +24603,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-411` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24672,7 +24672,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-412` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24739,7 +24739,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-413` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24809,7 +24809,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-414` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24875,7 +24875,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-415` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -24940,7 +24940,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-416` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25006,7 +25006,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-417` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25072,7 +25072,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-418` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25138,7 +25138,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-419` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25206,7 +25206,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25274,7 +25274,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-420` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25340,7 +25340,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-421` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25408,7 +25408,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-422` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25478,7 +25478,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-423` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25549,7 +25549,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-424` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25619,7 +25619,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-425` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25684,7 +25684,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-426` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25753,7 +25753,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-427` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25819,7 +25819,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-428` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25884,7 +25884,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-429` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -25950,7 +25950,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26017,7 +26017,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-430` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26085,7 +26085,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-431` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26150,7 +26150,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-432` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26218,7 +26218,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-433` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26286,7 +26286,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-434` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26354,7 +26354,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-435` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26420,7 +26420,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26488,7 +26488,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26553,7 +26553,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26618,7 +26618,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26684,7 +26684,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26753,7 +26753,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26820,7 +26820,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26887,7 +26887,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -26954,7 +26954,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27020,7 +27020,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27090,7 +27090,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27159,7 +27159,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27228,7 +27228,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27299,7 +27299,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27371,7 +27371,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27442,7 +27442,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27508,7 +27508,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27576,7 +27576,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27645,7 +27645,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27715,7 +27715,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27784,7 +27784,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27852,7 +27852,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27920,7 +27920,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -27988,7 +27988,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28058,7 +28058,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28126,7 +28126,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28196,7 +28196,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-70` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28263,7 +28263,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-71` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28330,7 +28330,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-72` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28396,7 +28396,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-73` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28464,7 +28464,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-74` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28532,7 +28532,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-75` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28600,7 +28600,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-76` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28669,7 +28669,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-77` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28738,7 +28738,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-78` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28805,7 +28805,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-79` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28872,7 +28872,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-80` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -28940,7 +28940,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-81` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29009,7 +29009,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-82` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29076,7 +29076,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-83` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29144,7 +29144,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-84` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29212,7 +29212,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-85` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29279,7 +29279,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-86` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29345,7 +29345,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-87` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29414,7 +29414,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-88` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29484,7 +29484,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-89` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29555,7 +29555,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-90` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29623,7 +29623,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-91` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29689,7 +29689,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-92` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29757,7 +29757,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-93` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29825,7 +29825,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-94` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29897,7 +29897,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-95` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -29969,7 +29969,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-96` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30038,7 +30038,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-97` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30106,7 +30106,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-98` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30174,7 +30174,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-99` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30243,7 +30243,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-G01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30309,7 +30309,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-G02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30377,7 +30377,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-P01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30448,7 +30448,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30515,7 +30515,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30584,7 +30584,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30655,7 +30655,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30725,7 +30725,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30803,7 +30803,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -30878,7 +30878,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `spec` ← المخرج `model3d`، والمنفّذ `method:ENG-X07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene` · `character-fullbody`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `adobe-mcp-bridges` · `blender-bridge` · `blender-cat-fur-upgrade` · `blender-cinematic-bridge` · `blender-cycles-render` · `blender-rescue-scene`.
 - مراحل النوع: المقياس والوحدات ← المجسم ← الخامات والإضاءة ← معاينة منخفضة ← رندر ← فتح في عارض مستقل.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

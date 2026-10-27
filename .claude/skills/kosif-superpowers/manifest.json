@@ -18,8 +18,8 @@
   "powers": 5853,
   "families": 62,
   "domains": 10,
-  "tools": 186,
-  "guides": 116,
+  "tools": 187,
+  "guides": 117,
   "statuses": {
    "documented": 2325,
    "idea": 71,
@@ -17719,6 +17719,108 @@
    ],
    "evidence": "tested-here",
    "evidence_note": "On 2026-10-26 in this checkout: verify 682/682 files match; selftest passed all six test folders of the four skills that ship tests (215 tests: pixel-studio-painter 43, kosif-montage-motion 8+112+31, kosif-one 10, kosif-social 11) after the recorded KOSIF patches (the six key-click WAVs are stored as lossless FLAC; montage tests pass apart from the opencv-version-dependent face detector test); 115 of 129 vendored Python scripts answer --help (the rest need an input file, playwright, matplotlib, or are scene modules); evals/test_superskills.py passed."
+  },
+  {
+   "id": "adobe-mcp-bridges",
+   "path": "scripts/adobe_mcp.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "local-computer",
+   "title_en": "Adobe MCP bridges (After Effects, Premiere Pro, Photoshop)",
+   "title_ar": "ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب)",
+   "summary_en": "Vetted local MCP servers that let Claude drive Adobe apps on the user's own computer: Dakkshin/after-effects-mcp (compositions, layers, keyframes, expressions, ExtendScript), leancoderkavy/premiere-pro-mcp (timeline editing, effects, colour, export) and alisaitteke/photoshop-mcp (layers, text, masks, filters, retouch recipes), plus mikechambers/adb-mcp as a five-app alternative. The stdlib helper prints install steps, the Claude Code command or Claude Desktop JSON, and checks node/npm/git/python/uv. It installs nothing and needs no API key.",
+   "summary_ar": "خوادم MCP محلية تمت مراجعتها تخلّي Claude يتحكم في برامج أدوبي على جهاز المستخدم: after-effects-mcp للتكوينات والطبقات والكي فريمز والإكسبريشنز، وpremiere-pro-mcp للمونتاج على التايملاين والإفكتات والألوان والتصدير، وphotoshop-mcp للطبقات والنصوص والماسكات والفلاتر ووصفات الريتاتش، وadb-mcp بديل لخمسة برامج. السكربت يطبع خطوات التسطيب وأمر Claude Code أو إعداد Claude Desktop ويفحص المتطلبات، ولا يسطّب شيئًا ولا يحتاج مفتاح API.",
+   "use_when": [
+    "اربط كلاود بأفتر إفكتس على جهازي",
+    "عايز Claude يقص ويمنتج في بريمير",
+    "وصّل كلاود بفوتوشوب يعدّل الطبقات",
+    "Connect Claude to Adobe Premiere Pro",
+    "Let Claude animate layers in After Effects through MCP",
+    "How do I install a Photoshop MCP server for Claude Desktop"
+   ],
+   "keywords": [
+    "After Effects",
+    "Premiere Pro",
+    "Photoshop",
+    "Adobe",
+    "MCP server",
+    "ExtendScript",
+    "CEP",
+    "UXP",
+    "أفتر إفكتس",
+    "بريمير",
+    "فوتوشوب",
+    "أدوبي",
+    "مونتاج",
+    "موشن جرافيك",
+    "تسطيب"
+   ],
+   "commands": [
+    {
+     "name": "list",
+     "example": "python3 scripts/adobe_mcp.py list",
+     "does": "Lists the vetted bridge per app (repo, licence, stars seen, status) and the repositories that were not chosen, with why. --json for machine output."
+    },
+    {
+     "name": "show",
+     "example": "python3 scripts/adobe_mcp.py show after-effects",
+     "does": "Prints what Claude can do through one bridge, the supported app versions and its limits."
+    },
+    {
+     "name": "steps",
+     "example": "python3 scripts/adobe_mcp.py steps premiere --os win",
+     "does": "Prints the numbered install steps for one bridge (ids: after-effects, premiere, photoshop, adb-mcp)."
+    },
+    {
+     "name": "config",
+     "example": "python3 scripts/adobe_mcp.py config photoshop --client claude-code",
+     "does": "Prints the claude mcp add command, or the Claude Desktop mcpServers JSON and where the config file lives; --path sets the clone folder for After Effects."
+    },
+    {
+     "name": "doctor",
+     "example": "python3 scripts/adobe_mcp.py doctor",
+     "does": "Checks node, npm, git, python and uv versions on this machine and says which bridges are ready to install; notes that Adobe apps need Windows or macOS."
+    }
+   ],
+   "inputs": "A bridge id (after-effects, premiere, photoshop, adb-mcp), optional --os win|mac, --client claude-code|claude-desktop and --path.",
+   "outputs": "Text or JSON on stdout: bridge facts, numbered steps, a config snippet, or a runtime report. It writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:node",
+     "bin:npm",
+     "bin:git",
+     "bin:uv"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "The helper only prints. Installing a bridge, adding it to an MCP client, enabling ExtendScript file/network access in After Effects, and any Firefly generative call (Adobe credits) each need the user's explicit approval; never write an API key or Adobe credential into a config.",
+   "safe_commands": [
+    "list",
+    "show",
+    "steps",
+    "config",
+    "doctor"
+   ],
+   "limits": "It does not install or run any bridge, and no bridge was exercised against a live Adobe app here: the facts come from each project's README as of 2026-10-27, and Adobe apps run only on Windows or macOS, so a cloud session can prepare but not drive them.",
+   "evidence": "tested-here",
+   "evidence_note": "8/8 passed (python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_adobe_mcp.py); list, show, steps, config (both clients, both OSes) and doctor ran here on Linux.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_adobe_mcp.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/adobe-mcp-bridges.md",
+    ".claude/skills/kosif-superpowers/references/guides/local-computer.md"
+   ],
+   "families": [
+    "engines-render-pipeline",
+    "transitions-cuts",
+    "photo-video-footage",
+    "agent-orchestration"
+   ]
   }
  ],
  "guides": [
@@ -17798,6 +17900,12 @@
    "path": "references/100-superskills-integration.md",
    "title": "دمج 114 مهارة — KOSIF Superpowers × 100 Super Skills",
    "area": "discover",
+   "summary": ""
+  },
+  {
+   "path": "references/adobe-mcp-bridges.md",
+   "title": "Adobe MCP bridges — After Effects, Premiere Pro, Photoshop",
+   "area": "local-computer",
    "summary": ""
   },
   {
