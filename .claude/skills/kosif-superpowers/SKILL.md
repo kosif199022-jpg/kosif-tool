@@ -256,7 +256,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 | Image, design and fonts / الصور والتصميم والخطوط | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` · `unified-media` · `telegram-typography-atlas` · `style-library` · `mosamem-rea-fusion` · `image-local-ai` · `prompt-pack` · `prompt-forge` · `design-tells` |
 | Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `instagram-finder` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` · `github-top-repos` · `instagram-reference-discovery` · `github-pulse` |
 | Software investigation / فحص البرامج | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` · `differential-exam` · `repo-map` |
-| Local computer / الجهاز المحلي | `kosif-remote-commander` |
+| Local computer / الجهاز المحلي | `kosif-remote-commander` · `adobe-mcp-bridges` |
 | Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` · `agent-guard` · `self-council` |
 <!-- hub:tools:end -->
 
