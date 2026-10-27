@@ -153,10 +153,10 @@
 - **الشكل القانوني:**
 
 ```json
-{"command": "cd pay && sh encode.sh > encode.log 2>&1; echo done > encode.done", "background": true}
+{"command": "cd pay && rm -f encode.done encode.failed && if sh encode.sh > encode.log 2>&1; then echo ok > encode.done; else echo $? > encode.failed; fi", "background": true}
 ```
 
-ثم استدعاء قصير: `{"command": "cd pay && ls encode.done 2>/dev/null; tail -3 encode.log; ls -la cw.mp4 ct.mp4", "timeout_seconds": 20}`.
+ثم استدعاء قصير: `{"command": "cd pay && ls encode.done encode.failed 2>/dev/null; tail -3 encode.log; ls -la cw.mp4 ct.mp4", "timeout_seconds": 20}`. الأمر يمسح العلامتين القديمتين قبل البدء، و`encode.done` لا تُكتب إلا لو نجح الترميز؛ لو ظهر `encode.failed` اقرأ `encode.log` ولا تكمّل للفحوص.
 - **الميزانية:** صنف `timeout` (2): المحاولة الثانية تكون بالخلفية أو بتقسيم العمل، لا بتكبير `timeout_seconds`.
 
 ## الأداة think.py recover
