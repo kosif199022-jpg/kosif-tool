@@ -48,6 +48,16 @@ class RigTests(unittest.TestCase):
         rep = rig.check(bad)
         self.assertFalse(rep["ok"])
 
+    def test_long_move_covering_a_gap_is_not_a_stop(self):
+        nested = [
+            {"axis": "x", "d": -2000, "f0": 0, "f1": 100, "graph": [0.7, 0.75]},
+            {"axis": "y", "d": -300, "f0": 10, "f1": 30, "graph": [0.7, 0.75]},
+            {"axis": "y", "d": -300, "f0": 40, "f1": 60, "graph": [0.7, 0.75]},
+        ]
+        rep = rig.check(nested)
+        self.assertFalse(any("camera stops" in s for s in rep["issues"]), rep["issues"])
+        self.assertEqual([h["from"] for h in rep["handoffs"]], [1, 1])
+
     def test_bad_axis(self):
         rep = rig.check([{"axis": "w", "d": 1, "f0": 0, "f1": 10, "graph": [0.5, 0.5]}])
         self.assertFalse(rep["ok"])

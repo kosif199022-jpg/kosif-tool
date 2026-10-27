@@ -95,15 +95,17 @@ def check(nulls):
     order = sorted(nulls, key=lambda n: n["f0"])
     handoffs = []
     for i in range(1, len(order)):
-        prev, nxt = order[i - 1], order[i]
+        # The move still carrying the camera is the earlier null that ends last, not just the one sorted before.
+        j = max(range(i), key=lambda k: order[k]["f1"])
+        prev, nxt = order[j], order[i]
         done = null_progress(prev, nxt["f0"])
         frames = prev["f1"] - nxt["f0"]
-        entry = {"from": i, "to": i + 1, "prev_done": round(done, 3), "overlap_frames": frames}
+        entry = {"from": j + 1, "to": i + 1, "prev_done": round(done, 3), "overlap_frames": frames}
         if frames <= 0:
-            issues.append(f"null {i + 1} starts at {nxt['f0']} after null {i} ended at {prev['f1']}: the camera stops")
+            issues.append(f"null {i + 1} starts at {nxt['f0']} after null {j + 1} ended at {prev['f1']}: the camera stops")
         elif not OVERLAP_MIN <= done <= OVERLAP_MAX:
             issues.append(
-                f"null {i + 1} starts when null {i} is {done:.0%} done; aim for 83-95% (slow tail)"
+                f"null {i + 1} starts when null {j + 1} is {done:.0%} done; aim for 83-95% (slow tail)"
             )
         handoffs.append(entry)
     first, last = order[0]["f0"], max(n["f1"] for n in order)
