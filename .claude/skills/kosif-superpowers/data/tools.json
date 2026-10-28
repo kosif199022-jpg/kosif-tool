@@ -16882,6 +16882,114 @@
         "photo-video-footage",
         "agent-orchestration"
       ]
+    },
+    {
+      "id": "source-finder",
+      "path": "scripts/source_finder.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "sources",
+      "title_en": "Source finder: the original clips behind each shot of a reference video",
+      "title_ar": "البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي",
+      "summary_en": "Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha.",
+      "summary_ar": "يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم ينزّل فيديوهات الـpins بـyt-dlp ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت، ويستنى بين طلبات Yandex ويقف عند أول captcha.",
+      "use_when": [
+        "طلّع لي المصادر الأصلية للقطات الفيديو ده",
+        "الفيديو ده متجمّع من لقطات منين؟ دوّر على مصدر كل مشهد",
+        "Find the original source clips of each shot in this reel",
+        "Reverse search the shots of this edit and tell me where the footage came from",
+        "Which Pinterest video is this shot taken from?"
+      ],
+      "keywords": [
+        "source clips",
+        "original footage",
+        "footage source",
+        "reverse image search",
+        "reverse video search",
+        "yandex",
+        "pinterest",
+        "shot",
+        "scene cut",
+        "orb",
+        "ransac",
+        "feature matching",
+        "مصدر اللقطات",
+        "اللقطات الأصلية",
+        "مصدر الفيديو",
+        "بحث بالصورة",
+        "بحث عكسي",
+        "مشاهد",
+        "بنترست",
+        "ياندكس"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/source_finder.py doctor",
+          "does": "Offline: which parts can run here (OpenCV, numpy, ffmpeg, curl, yt-dlp)."
+        },
+        {
+          "name": "cuts",
+          "example": "python3 scripts/source_finder.py cuts reference.mp4 --out out/source-finder/cuts.json",
+          "does": "Offline: hard cuts from the mean HSV change between frames (threshold 27, shortest shot 0.4 s) as boundaries and a shot list."
+        },
+        {
+          "name": "frames",
+          "example": "python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop \"crop=iw:ih*0.6:0:ih*0.2\" --out out/source-finder/queries",
+          "does": "Offline (ffmpeg): three cropped query frames per shot kept away from the cuts, one full mid frame and frames.json. --crop accepts one ffmpeg crop filter only."
+        },
+        {
+          "name": "search",
+          "example": "python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg --delay 4 --out out/source-finder/s003.json",
+          "does": "Network: uploads each image to Yandex search-by-image, reads the sites and similar pages and lists Pinterest pin ids plus other video and stock leads; at least 2 s between calls, at most 40 images a run, exit 3 at a captcha."
+        },
+        {
+          "name": "match",
+          "example": "python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder",
+          "does": "Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; --no-download or a folder keeps it offline."
+        },
+        {
+          "name": "run",
+          "example": "python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop \"crop=iw:ih*0.6:0:ih*0.2\"",
+          "does": "The whole chain with cached searches and a partial report.json after every shot; a captcha stops it with exit 3 and a re-run continues. --candidates DIR skips the search and runs offline."
+        }
+      ],
+      "safe_commands": [
+        "doctor"
+      ],
+      "inputs": "A reference video (MP4, MOV, WebM); optionally an ffmpeg crop that removes captions and logos, a cuts.json or boundary list, query images, pin ids or links, or a folder of candidate clips",
+      "outputs": "<work>/cuts.json, queries/*.jpg with frames.json, search/<image>.json (cache), cand/p<pin>.mp4 (downloaded pins) and report.json: per shot the verdict, score, timestamp, pin URL and other leads, a ranked list of hits, a summary and a credit note",
+      "requires": {
+        "python": [
+          "numpy",
+          "opencv-python-headless"
+        ],
+        "binaries": [
+          "ffmpeg",
+          "curl",
+          "yt-dlp"
+        ],
+        "node": [],
+        "optional": [],
+        "network": true
+      },
+      "safety": "network",
+      "consent": "search and run upload frames of the user's reference video to Yandex (a third-party service), and match and run download third-party Pinterest videos: confirm the user wants both. Downloaded clips stay as private reference in the work folder; reusing one needs its creator's permission or a licence, and every found source is credited and linked. Keep the rate limit, and at a captcha stop rather than bypass it. No account, cookie or credential is used.",
+      "limits": "Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Found clips belong to their creators: credit and link them.",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_source_finder.py 17/17 passed offline on 2026-10-28: a warped noisy copy scores 612 inliers against 8 or fewer for unrelated images, cuts land on the exact frames of a synthetic three-shot video, fake Yandex answers give the pins, a captcha stops further calls, and the whole run chain reports the right shot. On cached real clips from this session, match re-scored the known source at 1757 against 28 and 11. Live Yandex and Pinterest calls were made by the prototype in this session, not by the test.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_source_finder.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/sources.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "video-download",
+        "web-research",
+        "transitions-cuts"
+      ]
     }
   ]
 }
