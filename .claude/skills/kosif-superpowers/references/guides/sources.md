@@ -48,6 +48,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 8. [Atlas external search (2026-10-20)](#atlas-external-search-2026-10-20)
 9. [أشهر 1000 مستودع على GitHub — GitHub top-1000 review (2026-10-23)](#أشهر-1000-مستودع-على-github--github-top-1000-review-2026-10-23)
 10. [بحث وتحميل فيديوهات إنستجرام لمنتج — Instagram product video finder (2026-10-24)](#بحث-وتحميل-فيديوهات-إنستجرام-لمنتج--instagram-product-video-finder-2026-10-24)
+11. [بوست صور تيك توك — TikTok photo posts (2026-10-28)](#بوست-صور-تيك-توك--tiktok-photo-posts-2026-10-28)
 
 ## Web apps and browser isolation research
 
@@ -179,4 +180,29 @@ python3 scripts/instagram_finder.py index --session-user MY_USERNAME
 python3 scripts/instagram_finder.py search "perfume splash" --save out/instagram/hits.json
 python3 scripts/instagram_finder.py download out/instagram/hits.json --pick 1,3 --rights permission --evidence "<link>"
 ```
+
+## بوست صور تيك توك — TikTok photo posts (2026-10-28)
+
+yt-dlp downloads TikTok videos but stops at a photo post (a slideshow) with `Unsupported URL .../photo/<id>`. `scripts/tiktok_photo.py` downloads one:
+
+```bash
+python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post   # images, sound, meta.json
+python3 scripts/tiktok_photo.py fetch "<link>" --out out/tiktok/post --html saved_page.html      # page saved on your device
+python3 scripts/tiktok_photo.py parse saved_page.html                                           # offline: the extracted JSON
+python3 scripts/tiktok_photo.py url "https://www.tiktok.com/@user/photo/7400000000000000001"    # offline: /photo/ and /video/ forms
+```
+
+How it works (the route that was reported working by hand on 2026-10-28):
+
+1. **Short link.** A `vt.tiktok.com`, `vm.tiktok.com` or `tiktok.com/t/…` link is followed through its redirects (what `curl -sIL` shows) to `https://www.tiktok.com/@<user>/photo/<id>`; the tracking query is dropped. A `/video/<id>` link is not refused on sight: its page is read, and only a post without `imagePost` is reported as a video post.
+2. **Page.** That page is fetched with a mobile Safari User-Agent. The post lives in the JSON of `<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__">`, under `__DEFAULT_SCOPE__["webapp.reflow.video.detail"].itemInfo.itemStruct` (the desktop key `webapp.video-detail` is tried second): `desc`, `author.uniqueId`, `music.title`, and `imagePost.images[]` with `imageURL.urlList`, `imageWidth`, `imageHeight`.
+3. **Images.** Each image is saved as `img00.jpg`, `img01.jpg` … from `urlList[0]`, then its mirrors, two tries each. The extension follows the real file type (a WebP stays `.webp`), an answer that is not an image is refused, every file is written to `.part` and renamed only when complete, and a rerun skips the files already there.
+4. **Sound.** The link is rewritten to `https://www.tiktok.com/@<user>/video/<id>`, which yt-dlp does read, and `yt-dlp -f ba` saves the post's sound as `audio.<ext>` (mp3 or m4a). Without yt-dlp the images still download and meta.json says the sound is missing.
+5. **meta.json** (`kosif.tiktok_photo.v1`): author, desc, music, the source and resolved links, each image's declared width and height with its bytes and SHA-256, the failed images, a credit line and the rights note. The signed CDN image links expire, so only their host is kept.
+
+Exit codes: `0` done, `2` partial (rerun the same command to resume), `3` a video post (use `python3 scripts/fetch_video.py "<link>"` or yt-dlp), `4` the page JSON is missing (a login wall, a bot check, a removed post or a changed page), `1` a bad link or a network error.
+
+Limits: TikTok can change its page structure at any time, and then the tool stops with exit 4 rather than guessing; private, removed and region-locked posts fail; some networks block tiktok.com, in which case save the page on your phone or computer and pass it with `--html` (the images still download from the CDN). No cookies or login are sent.
+
+Respect the creator: the post stays theirs. Keep the `credit` line from meta.json, link the post wherever you use it, and reuse the images or sound only with the creator's permission or a licence; otherwise keep them as private reference. Tests: `evals/test_tiktok_photo.py`, offline, on a hand-written synthetic page fixture (`evals/fixtures/tiktok_photo_minimal.html`) with no real TikTok content.
 
