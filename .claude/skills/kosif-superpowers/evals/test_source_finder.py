@@ -180,6 +180,41 @@ class SearchParsingOffline(unittest.TestCase):
         self.assertEqual(c.call_count, 1)
         self.assertEqual(json.loads((self.tmp / "s.json").read_text()), [])
 
+    def test_search_cache_is_keyed_by_the_image_bytes_not_its_name(self):
+        calls = []
+
+        def fake_search(image, pages=S.PAGES, delay=4.0):
+            body = Path(image).read_bytes().decode()
+            calls.append(body)
+            return {"image": str(image), "cbir_id": "x", "pages": {p: {} for p in pages}, "pins": [f"pins-for-{body}"],
+                    "pinterest": [], "leads": []}
+
+        q = self.tmp / "queries" / "s003_0.jpg"
+        q.parent.mkdir()
+        cache = self.tmp / "search"
+        # a cache file in the old name-only format must not be served for a new frame
+        cache.mkdir()
+        (cache / "s003_0.json").write_text(json.dumps({"pages": {"sites": {}, "similar": {}}, "pins": ["stale"]}))
+        with mock.patch.object(S, "yandex_search", fake_search), mock.patch.object(S, "_curl", no_network):
+            q.write_bytes(b"crop-A")
+            first = S.cached_search(q, cache)
+            q.write_bytes(b"crop-B")                     # rerun with another --crop: same name, new frame
+            second = S.cached_search(q, cache)
+            q.write_bytes(b"crop-A")                     # back to the first frame (a rerun after a captcha)
+            third = S.cached_search(q, cache)
+            fewer = S.cached_search(q, cache, pages=("sites",))
+        self.assertEqual(first["pins"], ["pins-for-crop-A"])
+        self.assertEqual(second["pins"], ["pins-for-crop-B"])
+        self.assertEqual(third["pins"], ["pins-for-crop-A"])
+        self.assertEqual(fewer["pins"], ["pins-for-crop-A"])
+        self.assertEqual(calls, ["crop-A", "crop-B"], "identical frames are never searched twice")
+        names = sorted(p.name for p in cache.glob("s003_0-*.json"))
+        self.assertEqual(len(names), 2, names)
+        self.assertTrue(all(len(n) == len("s003_0-") + 16 + len(".json") for n in names), names)
+        self.assertEqual(json.loads((cache / names[0]).read_text())["sha256"][:16], names[0][7:23])
+        with self.assertRaises(S.SourceFinderError):
+            S.cached_search(self.tmp / "missing.jpg", cache)
+
     def test_rate_limit_waits_between_calls_and_has_a_floor(self):
         waits = []
         with mock.patch.object(S.time, "sleep", waits.append), mock.patch.object(S.time, "monotonic", return_value=1000.0):
@@ -269,6 +304,37 @@ class MatchAndCuts(unittest.TestCase):
         self.assertTrue(all(r["verdict"] == "none" for r in res[1:]), res)
         still = [r for r in res if r["candidate"] == "still.jpg"][0]
         self.assertIsNone(still["t"])
+        self.assertTrue(all("error" not in r for r in res), res)
+
+    def test_an_undecodable_candidate_is_reported_and_the_rest_still_match(self):
+        d = self.tmp / "cands_broken"
+        d.mkdir()
+        target = scene(1)
+        write_video(d / "good.avi", moving(scene(5), 10) + [warp(target)] * 10)
+        (d / "broken.jpg").write_bytes(b"not really a jpeg")
+        (d / "broken.mp4").write_bytes(b"not really a video")
+        q = self.tmp / "query_broken.jpg"
+        cv2.imwrite(str(q), target)
+        res = S.match_candidates([q], S.resolve_candidates([d], self.tmp, download=False), self.m)
+        self.assertEqual(res[0]["candidate"], "good.avi")
+        self.assertEqual(res[0]["verdict"], "exact")
+        bad = {r["candidate"]: r for r in res[1:]}
+        self.assertEqual(set(bad), {"broken.jpg", "broken.mp4"})
+        for r in bad.values():
+            self.assertEqual((r["score"], r["verdict"], r["frames_checked"]), (0, "none", 0), r)
+        self.assertIn("cannot read image", bad["broken.jpg"]["error"])
+        self.assertIn("no frame could be decoded", bad["broken.mp4"]["error"])
+        out = self.tmp / "match_broken.json"
+        r = subprocess.run([sys.executable, str(SCRIPT), "match", str(q), "--candidates", str(d), "--work",
+                            str(self.tmp / "w_broken"), "--out", str(out)], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn("skipped candidate broken.jpg", r.stderr)
+        self.assertEqual(json.loads(out.read_text())["results"][0]["candidate"], "good.avi")
+        # an unreadable query frame is still an error for the whole call
+        bad_q = self.tmp / "bad_query.jpg"
+        bad_q.write_bytes(b"nope")
+        with self.assertRaises(S.SourceFinderError):
+            S.match_candidates([bad_q], S.resolve_candidates([d], self.tmp, download=False), self.m)
 
     def test_cuts_on_a_synthetic_video(self):
         v = write_video(self.tmp / "three.avi", moving(scene(11), 12) + moving(scene(12), 15) + moving(scene(13), 10))
@@ -325,6 +391,21 @@ class FramesAndRunChain(unittest.TestCase):
         self.assertEqual(rep["ranked"][0]["shot"], 1)
         self.assertIn("credit", rep["credit"].lower())
 
+    def test_run_offline_survives_a_corrupt_image_in_the_candidates_folder(self):
+        cands = self.tmp / "cands_with_junk"
+        shutil.copytree(self.cands, cands)
+        (cands / "broken.jpg").write_bytes(b"not really a jpeg")
+        work = self.tmp / "work_junk"
+        r = subprocess.run([sys.executable, str(SCRIPT), "run", str(self.ref), "--work", str(work), "--crop", self.CROP,
+                            "--candidates", str(cands)], capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stderr)
+        rep = json.loads((work / "report.json").read_text())
+        self.assertEqual([s["verdict"] for s in rep["shots"]], ["none", "exact", "none"])
+        self.assertEqual(rep["summary"]["searched"], 3)
+        junk = [t for t in rep["shots"][1]["top"] if t["candidate"] == "broken.jpg"]
+        self.assertEqual(len(junk), 1)
+        self.assertIn("cannot read image", junk[0]["error"])
+
     def test_run_search_path_with_fakes_and_captcha_stop(self):
         work = self.tmp / "work_search"
         calls = []
@@ -358,7 +439,7 @@ class FramesAndRunChain(unittest.TestCase):
         self.assertEqual(rep["summary"]["searched"], 2)
         self.assertEqual(calls.count("s002_0.jpg"), 1)
         self.assertNotIn("s002_1.jpg", calls)
-        self.assertTrue((work / "search" / "s001_full.json").is_file())
+        self.assertEqual(len(list((work / "search").glob("s001_full-*.json"))), 1)
         with mock.patch.object(S, "yandex_search", no_network), mock.patch.object(S, "download_pin", fake_dl):
             again = S.cached_search(work / "queries" / "s001_0.jpg", work / "search")
         self.assertEqual(again["pins"], ["123456789", "888888888"])

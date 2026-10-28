@@ -329,6 +329,20 @@ class Cli(unittest.TestCase):
             self.assertIn(word, proc.stdout)
         self.assertEqual(run("fetch", "--out", "x")[0], 1)  # neither a link nor --html
 
+    def test_usage_errors_exit_1_never_2_which_means_partial_download(self):
+        script = str(SKILL / "scripts" / "tiktok_photo.py")
+        for argv in (["fetch", "https://www.tiktok.com/@a/photo/7400000000000000001"],   # missing --out
+                     ["fetch", "x", "--max-images", "abc", "--out", "/nonexistent"],      # not an integer
+                     ["fetch", "x", "--out", "y", "--unknown-flag"],
+                     ["nope"], []):
+            proc = subprocess.run([sys.executable, script, *argv], capture_output=True, text=True, timeout=60)
+            self.assertEqual(proc.returncode, 1, (argv, proc.stderr))
+            self.assertIn("error:", proc.stderr)
+            self.assertIn("usage:", proc.stderr)
+            self.assertEqual(run(*argv)[0], 1, argv)
+        for argv in (["--help"], ["fetch", "--help"], ["url", "--help"]):
+            self.assertEqual(run(*argv)[0], 0, argv)
+
     def test_http_get_refuses_plain_http_before_connecting(self):
         with self.assertRaises(tp.FetchError):
             tp.http_get("http://www.tiktok.com/@a/photo/7400000000000000001")

@@ -96,7 +96,7 @@ test('free space comes from fs.statfsSync and degrades gracefully without it', (
   assert.ok(Number.isFinite(real.free) && real.free >= 0);
 });
 
-test('stale selection: only own kosif-frames-* folders older than 6 h, not running, not excluded', (t) => {
+test('stale selection: only own kosif-frames-XXXXXX folders older than 6 h, not running, not excluded', (t) => {
   const root = makeRoot(t);
   const now = Date.now();
   const dead = deadPid();
@@ -110,15 +110,35 @@ test('stale selection: only own kosif-frames-* folders older than 6 h, not runni
   fs.writeFileSync(join(root, 'kosif-frames-file'), 'not a folder');
   const target = frameDir(root, 'outside-target', { ageH: 40, bytes: 10, now });
   try { fs.symlinkSync(target, join(root, 'kosif-frames-link')); } catch { /* no symlinks here */ }
-  const nested = join(old, 'sub');
-  fs.mkdirSync(nested);
-  fs.writeFileSync(join(nested, 'x.png'), Buffer.alloc(500));
-  const when = new Date(now - 30 * HOUR);
-  fs.utimesSync(old, when, when);
+  // old, unmarked and temp-shaped, but holding what a render never writes: not this tool's folder
+  const nest = frameDir(root, 'kosif-frames-nest01', { ageH: 30, bytes: 10, now });
+  fs.mkdirSync(join(nest, 'sub'));
+  fs.writeFileSync(join(nest, 'sub', 'x.png'), Buffer.alloc(500));
+  const notes = frameDir(root, 'kosif-frames-notes1', { ageH: 30, bytes: 10, now });
+  fs.writeFileSync(join(notes, 'notes.txt'), 'mine');
+  frameDir(root, 'kosif-frames-toolong', { ageH: 30, bytes: 10, now }); // mkdtemp adds exactly 6 characters
+  frameDir(root, 'kosif-frames-ab-c_d', { ageH: 30, bytes: 10, now });
+  const user = frameDir(root, 'kosif-frames-user01', { ageH: 30, bytes: 10, now });
+  fs.writeFileSync(join(user, R.USER_FRAMES_MARKER), '');
+  // a render that started before the marker existed left only frames: still this tool's
+  const legacy = frameDir(root, 'kosif-frames-Ab3dE9', { ageH: 20, bytes: 70, now });
+  const previews = frameDir(root, 'kosif-frames-prev01', { ageH: 25, now });
+  fs.writeFileSync(join(previews, 'preview_raw_03.png'), Buffer.alloc(5));
+  fs.writeFileSync(join(previews, 'preview_tile_07.png'), Buffer.alloc(5));
+  for (const d of [nest, notes, user, previews]) fs.utimesSync(d, new Date(now - 30 * HOUR), new Date(now - 30 * HOUR));
+  fs.utimesSync(previews, new Date(now - 25 * HOUR), new Date(now - 25 * HOUR));
 
   const stale = R.findStaleFrameDirs({ tmpDir: root, now, exclude: [current] });
-  assert.deepEqual(stale.map((d) => d.name), ['kosif-frames-old000', 'kosif-frames-old111'], 'oldest first');
-  assert.deepEqual(stale.map((d) => d.bytes), [1000 + fs.statSync(join(older, R.RENDER_MARKER)).size, 3500]);
+  assert.deepEqual(stale.map((d) => d.name),
+    ['kosif-frames-old000', 'kosif-frames-old111', 'kosif-frames-prev01', 'kosif-frames-Ab3dE9'], 'oldest first');
+  assert.deepEqual(stale.map((d) => d.bytes), [1000 + fs.statSync(join(older, R.RENDER_MARKER)).size, 3000, 10, 70]);
+  assert.equal(R.dirBytes(nest), 510, 'sizes count nested files');
+  assert.equal(R.notOwnTempReason(old), null);
+  assert.equal(R.notOwnTempReason(legacy), null);
+  assert.match(R.notOwnTempReason(nest), /holds a folder \(sub\)/);
+  assert.match(R.notOwnTempReason(notes), /holds a file a render does not write \(notes\.txt\)/);
+  assert.match(R.notOwnTempReason(user), /a --frames-dir folder/);
+  assert.match(R.notOwnTempReason(join(root, 'kosif-frames-toolong')), /not named like a temp folder/);
   assert.ok(stale.every((d) => d.ageMs > 6 * HOUR));
 
   // the age limit is a parameter; without the exclusion the in-use folder would qualify
@@ -126,7 +146,7 @@ test('stale selection: only own kosif-frames-* folders older than 6 h, not runni
   assert.equal(R.findStaleFrameDirs({ tmpDir: root, now, maxAgeMs: 100 * HOUR }).length, 0);
   // a marker whose process still runs keeps even an old folder out of the list
   const all = R.findStaleFrameDirs({ tmpDir: root, now, exclude: [current], isAlive: () => true });
-  assert.deepEqual(all.map((d) => d.name), ['kosif-frames-old111']);
+  assert.deepEqual(all.map((d) => d.name), ['kosif-frames-old111', 'kosif-frames-prev01', 'kosif-frames-Ab3dE9']);
   assert.deepEqual(R.findStaleFrameDirs({ tmpDir: join(root, 'missing'), now }), [], 'missing temp dir lists nothing');
 });
 
@@ -145,6 +165,75 @@ test('removing stale folders deletes exactly those, never the excluded or a non-
   assert.equal(fs.existsSync(b), false);
   for (const p of [a, keep, stray]) assert.ok(fs.existsSync(p), p);
   assert.deepEqual(R.removeStaleFrameDirs([{ path: b }]), [], 'already gone');
+});
+
+test('paths overlap when equal or nested, and missing paths resolve through their existing parent', (t) => {
+  const root = makeRoot(t);
+  const a = join(root, 'kosif-frames-keep01');
+  assert.equal(R.pathsOverlap(a, a), true);
+  assert.equal(R.pathsOverlap(a, join(a, 'myframes')), true, 'the excluded folder lies inside the candidate');
+  assert.equal(R.pathsOverlap(join(a, 'myframes'), a), true, 'the candidate lies inside the excluded folder');
+  assert.equal(R.pathsOverlap(a, join(root, 'kosif-frames-keep011')), false, 'a shared name prefix is not nesting');
+  assert.equal(R.pathsOverlap(a, join(root, 'kosif-frames-other')), false);
+  assert.equal(R.pathsOverlap(root, join(root, '..x')), true, 'a child named ..x is inside, not a parent');
+  // a --frames-dir that does not exist yet still compares equal to its real location
+  const real = fs.realpathSync(root);
+  assert.equal(R.realPath(join(root, 'not', 'yet')), join(real, 'not', 'yet'));
+  try {
+    fs.symlinkSync(root, join(root, 'alias'));
+    assert.equal(R.realPath(join(root, 'alias', 'kosif-frames-keep01', 'new')), join(real, 'kosif-frames-keep01', 'new'));
+  } catch { /* no symlinks here */ }
+});
+
+test('--clean-stale never deletes a --frames-dir folder: nested in an old temp folder, or named like one', (t) => {
+  const root = makeRoot(t);
+  const now = Date.now();
+  // Layout 1: the frames folder in use sits inside an old, unmarked kosif-frames-* folder.
+  const parent = frameDir(root, 'kosif-frames-keep01', { ageH: 10, now });
+  const mine = join(parent, 'myframes');
+  fs.mkdirSync(mine);
+  fs.writeFileSync(join(mine, 'notes.txt'), 'keep me');
+  fs.utimesSync(parent, new Date(now - 10 * HOUR), new Date(now - 10 * HOUR));
+  // Layout 2: an earlier render's --frames-dir named exactly like a temp folder, holding only frames.
+  const earlier = join(root, 'kosif-frames-final');
+  const shaped = join(root, 'kosif-frames-final1');
+  for (const dir of [earlier, shaped]) {
+    R.prepareUserFramesDir(dir);
+    fs.writeFileSync(join(dir, 'frame_000000.png'), Buffer.alloc(100));
+    fs.utimesSync(dir, new Date(now - 7 * HOUR), new Date(now - 7 * HOUR));
+  }
+  assert.ok(fs.existsSync(join(shaped, R.USER_FRAMES_MARKER)), 'a --frames-dir folder is marked');
+  // a real leftover of a killed render is still found next to them
+  const leftover = frameDir(root, 'kosif-frames-x7Yq2Z', { ageH: 8, bytes: 64, marker: { pid: deadPid(), bytes: 1 }, now });
+
+  for (const exclude of [[mine], [], [join(parent, 'not-created-yet')]]) {
+    const stale = R.findStaleFrameDirs({ tmpDir: root, now, exclude });
+    assert.deepEqual(stale.map((d) => d.path), [leftover], JSON.stringify(exclude));
+    // even a hand-made list is re-checked before anything is deleted
+    const removed = R.removeStaleFrameDirs([{ path: parent }, { path: earlier }, { path: shaped }], { exclude });
+    assert.deepEqual(removed, []);
+  }
+  assert.equal(fs.readFileSync(join(mine, 'notes.txt'), 'utf8'), 'keep me');
+  for (const dir of [earlier, shaped]) assert.ok(fs.existsSync(join(dir, 'frame_000000.png')), dir);
+
+  // the same through the CLI (PATH without ffmpeg stops it right after the stale report)
+  const env = { ...process.env, TMPDIR: root, PATH: join(root, 'no-bin') };
+  const out = join(root, 'out', 'x.mp4');
+  for (const extra of [['--frames-dir', mine], []]) {
+    const r = spawnSync(process.execPath, [SCRIPT, '--in', PAGE, '--out', out, ...extra, '--clean-stale'], { cwd: ROOT, env, encoding: 'utf8' });
+    assert.equal(r.status, 2, r.stderr);
+    assert.match(r.stderr, /ffmpeg is required/);
+    assert.doesNotMatch(r.stdout, /keep01|final/, `${extra.join(' ')}: ${r.stdout}`);
+    assert.equal(fs.readFileSync(join(mine, 'notes.txt'), 'utf8'), 'keep me');
+    for (const dir of [earlier, shaped]) assert.ok(fs.existsSync(join(dir, 'frame_000000.png')), dir);
+  }
+  assert.equal(fs.existsSync(leftover), false, 'the killed render\'s folder was deleted on the first run');
+
+  // prepareUserFramesDir clears only the frames an earlier render left, never other files
+  fs.writeFileSync(join(shaped, 'preview_tile_01.png'), 'x');
+  fs.writeFileSync(join(shaped, 'frame_1.png'), 'x');
+  R.prepareUserFramesDir(shaped);
+  assert.deepEqual(fs.readdirSync(shaped).sort(), [R.USER_FRAMES_MARKER, 'frame_1.png']);
 });
 
 test('other running renders reserve what they still have to write on the same disk', (t) => {

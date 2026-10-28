@@ -27,6 +27,7 @@ from __future__ import annotations
 import argparse
 import concurrent.futures as cf
 import datetime as _dt
+import hashlib
 import html
 import json
 import re
@@ -372,16 +373,23 @@ def yandex_search(image, pages=PAGES, delay: float = 4.0) -> dict:
 
 
 def cached_search(image, cache_dir: Path, pages=PAGES, delay: float = 4.0) -> dict:
-    """yandex_search with a per-image JSON cache, so a re-run after a captcha does not repeat calls."""
-    cache = Path(cache_dir) / (Path(image).stem + ".json")
+    """yandex_search with a JSON cache keyed by the image's bytes (<stem>-<sha256[:16]>.json), so a re-run after a
+    captcha with the same frames repeats no call, while a frame that changed under the same name (another --crop,
+    shots renumbered by --threshold/--min-shot, another video in the same --work) is searched again."""
+    image = Path(image)
+    if not image.is_file():
+        raise SourceFinderError(f"no such image: {image}")
+    digest = hashlib.sha256(image.read_bytes()).hexdigest()
+    cache = Path(cache_dir) / f"{image.stem}-{digest[:16]}.json"
     if cache.is_file():
         try:
             data = json.loads(cache.read_text(encoding="utf-8"))
-            if set(pages) <= set(data.get("pages", {})):
+            if isinstance(data, dict) and data.get("sha256") == digest and set(pages) <= set(data.get("pages", {})):
                 return data
         except ValueError:
             pass
     data = yandex_search(image, pages, delay)
+    data["sha256"] = digest
     _write_json(cache, data)
     return data
 
@@ -554,13 +562,21 @@ def verdict(score: int, exact: int = EXACT, possible: int = POSSIBLE) -> str:
 
 def match_candidates(queries, candidates, matcher: Matcher | None = None, step: float = 0.5,
                      max_seconds: float = 180.0, exact: int = EXACT, possible: int = POSSIBLE) -> list:
-    """Best (score, time, query) per candidate, sorted by score; score = max over queries and sampled frames."""
+    """Best (score, time, query) per candidate, sorted by score; score = max over queries and sampled frames.
+    A candidate that cannot be decoded (a corrupt image, a video OpenCV cannot open) scores 0 with an "error"
+    and the others are still checked; an unreadable query image stops the whole call."""
     matcher = matcher or Matcher()
     qfeats = [(str(q), matcher.features(read_image(q))) for q in queries]
     results = []
     for c in candidates:
-        best = (0, None, None)
-        frames = [(None, read_image(c["file"]))] if c["kind"] == "image" else iter_video_frames(c["file"], step, max_seconds)
+        best, error = (0, None, None), None
+        if c["kind"] == "image":
+            try:
+                frames = [(None, read_image(c["file"]))]
+            except SourceFinderError as e:
+                frames, error = [], str(e)
+        else:
+            frames = iter_video_frames(c["file"], step, max_seconds)
         sampled = 0
         for t, frame in frames:
             sampled += 1
@@ -569,9 +585,14 @@ def match_candidates(queries, candidates, matcher: Matcher | None = None, step: 
                 s = matcher.score(qf, cf_)
                 if s > best[0]:
                     best = (s, t, qpath)
-        results.append({"candidate": c["label"], "url": c.get("url"), "file": c["file"], "score": best[0],
-                        "t": best[1], "query": best[2], "frames_checked": sampled,
-                        "verdict": verdict(best[0], exact, possible)})
+        if sampled == 0 and error is None:
+            error = f"no frame could be decoded from {c['file']}"
+        rec = {"candidate": c["label"], "url": c.get("url"), "file": c["file"], "score": best[0],
+               "t": best[1], "query": best[2], "frames_checked": sampled, "verdict": verdict(best[0], exact, possible)}
+        if error:
+            rec["error"] = error
+            log(f"skipped candidate {c['label']}: {error}")
+        results.append(rec)
     results.sort(key=lambda r: (-r["score"], r["candidate"]))
     return results
 

@@ -855,7 +855,7 @@
   - `python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop "crop=iw:ih*0.6:0:ih*0.2" --out out/source-finder/queries`
 - **search**: Network: uploads each image to Yandex search-by-image, reads the sites and similar pages and lists Pinterest pin ids plus other video and stock leads; at least 2 s between calls, at most 40 images a run, exit 3 at a captcha.
   - `python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg --delay 4 --out out/source-finder/s003.json`
-- **match**: Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; --no-download or a folder keeps it offline.
+- **match**: Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; a candidate that cannot be decoded scores 0 with an error and the rest are still checked; --no-download or a folder keeps it offline.
   - `python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder`
 - **run**: The whole chain with cached searches and a partial report.json after every shot; a captcha stops it with exit 3 and a re-run continues. --candidates DIR skips the search and runs offline.
   - `python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop "crop=iw:ih*0.6:0:ih*0.2"`

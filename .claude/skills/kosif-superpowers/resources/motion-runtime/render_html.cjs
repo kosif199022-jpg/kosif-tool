@@ -24,8 +24,9 @@
  *
  * Disk guard: PNG frames are big (about 3.4 MB per 1080x1920 frame), so before the first
  * frame the renderer checks that the frames folder's disk can hold them, lists stale
- * kosif-frames-* temp folders left by killed renders (--clean-stale deletes them), and
- * removes its own temp folder on SIGINT/SIGTERM/SIGHUP as well as on normal exit.
+ * kosif-frames-* temp folders left by killed renders (--clean-stale deletes them, never a
+ * --frames-dir folder), and removes its own temp folder on SIGINT/SIGTERM/SIGHUP as well
+ * as on normal exit.
  *
  * Node 22, CommonJS, no npm dependencies besides Playwright resolved at runtime.
  * License: MIT (part of KOSIF TOOL).
@@ -84,6 +85,11 @@ const BEGIN_FRAME_FLAGS = [
 // killed renders left 3-8 GB kosif-frames-* folders behind.
 const FRAMES_PREFIX = 'kosif-frames-';
 const RENDER_MARKER = '.kosif-render.json'; // {pid, bytes}: written only into temp frames folders this tool creates
+const USER_FRAMES_MARKER = '.kosif-user-frames'; // written into every --frames-dir folder: --clean-stale never deletes one
+// fs.mkdtempSync(FRAMES_PREFIX) appends six [A-Za-z0-9] characters: only names of that shape can be temp folders.
+const TEMP_DIR_NAME = new RegExp(`^${FRAMES_PREFIX}[A-Za-z0-9]{6}$`);
+// The only files a render writes into its frames folder (besides the two markers).
+const RENDER_FILE = /^(frame_\d{6}|preview_(raw|tile)_\d{2})\.png$/;
 const PNG_BYTES_PER_PIXEL = 1.7;            // observed upper end for Chromium PNG frames
 const SPACE_MARGIN = 0.10;
 const STALE_AGE_HOURS = 6;
@@ -112,14 +118,16 @@ Options
   --mode seek|virtual driver; auto-detected when omitted (seek if window.__kosif exists)
   --preview           render 8 evenly spaced frames into a contact sheet PNG instead of a video,
                       written next to --out as <out name>_preview.png (out/p.mp4 -> out/p_preview.png)
-  --frames-dir <dir>  where PNG frames go (kept); default: a temp dir (kosif-frames-*) that is deleted at the
-                      end, on errors and when the render is stopped with Ctrl+C, SIGTERM or SIGHUP
+  --frames-dir <dir>  where PNG frames go (kept; a ${USER_FRAMES_MARKER} file marks the folder so --clean-stale never
+                      deletes it); default: a temp dir (${FRAMES_PREFIX}XXXXXX) that is deleted at the end, on errors
+                      and when the render is stopped with Ctrl+C, SIGTERM or SIGHUP
   --keep-frames       keep the temp frames dir
   --no-space-check    skip the free-space check. By default the render stops before the first frame when the
                       frames folder's disk has less than frames x width x height x ${PNG_BYTES_PER_PIXEL} bytes + ${SPACE_MARGIN * 100}%
                       (about 3.7 MB per 1080x1920 frame) plus what other running renders still have to write
-  --clean-stale       delete ${FRAMES_PREFIX}* temp folders older than ${STALE_AGE_HOURS} h (left by killed renders or
-                      --keep-frames) before rendering; without it they are only listed. Never the folder in use.
+  --clean-stale       delete this tool's own temp folders (${FRAMES_PREFIX}XXXXXX holding only frames) older than
+                      ${STALE_AGE_HOURS} h (left by killed renders or --keep-frames) before rendering; without it they are only
+                      listed. Never a --frames-dir folder, nor a folder that holds, or lies inside, the one in use.
   --crf <n>           libx264 quality, lower = better     (default ${DEFAULTS.crf})
   --scale <n>         device scale factor: output pixels = width*scale x height*scale (default ${DEFAULTS.scale});
                       above 1 needs seek mode (in virtual mode set --width/--height to the output size)
@@ -275,8 +283,28 @@ function fmtBytes(n) {
   return (u === 0 ? String(Math.round(v)) : v.toFixed(1)) + ' ' + units[u];
 }
 
+// Symlinks resolved; for a path that does not exist yet, its nearest existing parent is resolved.
 function realPath(p) {
-  try { return fs.realpathSync(p); } catch (e) { return path.resolve(p); }
+  const abs = path.resolve(p);
+  try { return fs.realpathSync(abs); } catch (e) { /* not there yet */ }
+  const parent = path.dirname(abs);
+  return parent === abs ? abs : path.join(realPath(parent), path.basename(abs));
+}
+
+// True when a and b are the same folder or one lies inside the other.
+function pathsOverlap(a, b) {
+  const within = (outer, inner) => {
+    const rel = path.relative(outer, inner);
+    return rel === '' || (rel !== '..' && !rel.startsWith('..' + path.sep) && !path.isAbsolute(rel));
+  };
+  return within(a, b) || within(b, a);
+}
+
+// The excluded paths (resolved) that p equals, holds or lies inside.
+function isExcluded(p, resolvedExclude) {
+  if (!resolvedExclude.length) return false;
+  const real = realPath(p);
+  return resolvedExclude.some((x) => pathsOverlap(real, x));
 }
 
 // Free bytes an unprivileged user can write on the filesystem that holds dir.
@@ -331,6 +359,37 @@ function readRenderMarker(dir) {
   } catch (e) { return null; }
 }
 
+// Marks a --frames-dir folder as the user's: --clean-stale never deletes a folder holding this file.
+function writeUserFramesMarker(dir) {
+  try {
+    fs.writeFileSync(path.join(dir, USER_FRAMES_MARKER), 'Frames kept by tools/render_html.cjs --frames-dir; --clean-stale never deletes this folder.\n');
+  } catch (e) { warn(`could not write ${USER_FRAMES_MARKER} in ${dir}: ${e.code || e.message}`); }
+}
+
+// Creates a --frames-dir folder, marks it as the user's and removes the frames an earlier render left in it.
+function prepareUserFramesDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+  writeUserFramesMarker(dir);
+  for (const f of fs.readdirSync(dir)) {
+    if (RENDER_FILE.test(f)) fs.unlinkSync(path.join(dir, f));
+  }
+}
+
+// Why dir is not one of this tool's own temp frames folders, or null when it is: named like
+// fs.mkdtempSync output and holding nothing but files a render writes (frames, previews, the
+// render marker). A --frames-dir folder, a subfolder, a link or any other file keeps it.
+function notOwnTempReason(dir) {
+  if (!TEMP_DIR_NAME.test(path.basename(dir))) return `not named like a temp folder this tool creates (${FRAMES_PREFIX}XXXXXX)`;
+  let entries;
+  try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch (e) { return `unreadable (${e.code || e.message})`; }
+  for (const e of entries) {
+    if (e.name === USER_FRAMES_MARKER) return 'a --frames-dir folder';
+    if (!e.isFile()) return `holds ${e.isDirectory() ? 'a folder' : 'an entry that is not a file'} (${e.name})`;
+    if (e.name !== RENDER_MARKER && !RENDER_FILE.test(e.name)) return `holds a file a render does not write (${e.name})`;
+  }
+  return null;
+}
+
 function writeRenderMarker(dir, bytes) {
   try {
     fs.writeFileSync(path.join(dir, RENDER_MARKER), JSON.stringify({ pid: process.pid, bytes: Math.max(0, Math.round(bytes || 0)) }) + '\n');
@@ -377,27 +436,28 @@ function listFrameDirs(tmpDir, { now = Date.now(), isAlive = isPidAlive } = {}) 
   return out;
 }
 
-// kosif-frames-* folders not modified for maxAgeMs (default 6 h), whose render is not running,
-// minus the excluded paths (the folder this render uses). Oldest first, with their sizes.
+// This tool's own temp folders (see notOwnTempReason) not modified for maxAgeMs (default 6 h),
+// whose render is not running, minus any folder that equals, holds or lies inside an excluded
+// path (the folder this render uses). Oldest first, with their sizes.
 function findStaleFrameDirs({ tmpDir = os.tmpdir(), now = Date.now(), maxAgeMs = STALE_AGE_HOURS * 3600 * 1000,
   exclude = [], isAlive = isPidAlive } = {}) {
-  const skip = new Set(exclude.filter(Boolean).map(realPath));
+  const skip = exclude.filter(Boolean).map(realPath);
   return listFrameDirs(tmpDir, { now, isAlive })
-    .filter((d) => d.ageMs > maxAgeMs && !d.live && !skip.has(realPath(d.path)))
+    .filter((d) => d.ageMs > maxAgeMs && !d.live && !isExcluded(d.path, skip) && notOwnTempReason(d.path) === null)
     .map((d) => ({ ...d, bytes: dirBytes(d.path) }))
     .sort((a, b) => a.mtimeMs - b.mtimeMs || a.name.localeCompare(b.name));
 }
 
 // Deletes the given folders (normally findStaleFrameDirs' result). Re-checks each one: it must
-// still be a real kosif-frames-* directory and not an excluded path. Returns what was removed.
+// still be a real directory that is one of this tool's own temp folders and neither equal to,
+// nor holding, nor inside an excluded path. Returns what was removed.
 function removeStaleFrameDirs(dirs, { exclude = [] } = {}) {
-  const skip = new Set(exclude.filter(Boolean).map(realPath));
+  const skip = exclude.filter(Boolean).map(realPath);
   const removed = [];
   for (const d of dirs) {
-    if (!path.basename(d.path).startsWith(FRAMES_PREFIX) || skip.has(realPath(d.path))) continue;
     let st;
     try { st = fs.lstatSync(d.path); } catch (e) { continue; }
-    if (!st.isDirectory()) continue;
+    if (!st.isDirectory() || isExcluded(d.path, skip) || notOwnTempReason(d.path) !== null) continue;
     try { fs.rmSync(d.path, { recursive: true, force: true }); removed.push(d); }
     catch (e) { warn(`could not remove ${d.path}: ${e.code || e.message}`); }
   }
@@ -424,7 +484,7 @@ function reportStaleFrameDirs({ clean, exclude }) {
   if (clean) {
     const removed = removeStaleFrameDirs(stale, { exclude });
     for (const d of removed) log(`removed stale ${d.path} (${fmtBytes(d.bytes)}, ${hours(d)})`);
-    log(`--clean-stale: ${removed.length ? `freed about ${fmtBytes(removed.reduce((s, d) => s + d.bytes, 0))}` : `no ${FRAMES_PREFIX}* folder older than ${STALE_AGE_HOURS} h in ${tmpDir}`}`);
+    log(`--clean-stale: ${removed.length ? `freed about ${fmtBytes(removed.reduce((s, d) => s + d.bytes, 0))}` : `no temp frames folder of this tool (${FRAMES_PREFIX}XXXXXX) older than ${STALE_AGE_HOURS} h in ${tmpDir}`}`);
     return stale.filter((d) => !removed.includes(d)).reduce((s, d) => s + d.bytes, 0);
   }
   if (!stale.length) return 0;
@@ -808,10 +868,7 @@ async function main() {
   let tempFrames = false;
   if (userFramesDir) {
     framesDir = userFramesDir;
-    fs.mkdirSync(framesDir, { recursive: true });
-    for (const f of fs.readdirSync(framesDir)) {
-      if (/^(frame_\d{6}|preview_(raw|tile)_\d{2})\.png$/.test(f)) fs.unlinkSync(path.join(framesDir, f));
-    }
+    prepareUserFramesDir(framesDir);
   } else {
     framesDir = fs.mkdtempSync(path.join(os.tmpdir(), FRAMES_PREFIX));
     tempFrames = true;
@@ -969,6 +1026,7 @@ if (require.main === module) {
     // disk guard
     estimateFrameBytes, fmtBytes, freeSpace, spaceVerdict, spaceMessage, isPidAlive, dirBytes,
     listFrameDirs, findStaleFrameDirs, removeStaleFrameDirs, reservedByOtherRenders, installSignalCleanup,
-    FRAMES_PREFIX, RENDER_MARKER, PNG_BYTES_PER_PIXEL, SPACE_MARGIN, STALE_AGE_HOURS, SIGNAL_EXIT, DiskSpaceError,
+    realPath, pathsOverlap, notOwnTempReason, prepareUserFramesDir,
+    FRAMES_PREFIX, RENDER_MARKER, USER_FRAMES_MARKER, PNG_BYTES_PER_PIXEL, SPACE_MARGIN, STALE_AGE_HOURS, SIGNAL_EXIT, DiskSpaceError,
   };
 }

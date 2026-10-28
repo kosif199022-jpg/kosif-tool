@@ -479,8 +479,17 @@ def cmd_fetch(a) -> int:
     return 0
 
 
+class _Parser(argparse.ArgumentParser):
+    """argparse exits 2 on a usage error, but 2 means "partial download, rerun to resume" here: exit 1 instead.
+    Subcommand parsers inherit this class (add_subparsers uses the parent's type); --help still exits 0."""
+
+    def error(self, message):
+        self.print_usage(sys.stderr)
+        self.exit(1, f"{self.prog}: error: {message}\n")
+
+
 def build_parser() -> argparse.ArgumentParser:
-    ap = argparse.ArgumentParser(
+    ap = _Parser(
         prog="tiktok_photo.py",
         description="Download a TikTok photo post (slideshow) that yt-dlp rejects: images, sound and meta.json. "
                     "تحميل بوست صور تيك توك: الصور والصوت وملف وصف.",
