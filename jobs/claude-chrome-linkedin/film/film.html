@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>كلاود يظبط لينكد إن</title>
+<style>
+@font-face{font-family:Cairo;src:url(fonts/Cairo.ttf);font-weight:200 1000}
+:root{
+  --bg1:#0a1020; --bg2:#121b33; --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+  --blue:#2f6fed; --blue2:#7aa7ff; --coral:#e07a55; --coral2:#ffb48f;
+  --green:#22c55e; --red:#ef4444; --gold:#fbbf24; --white:#ffffff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;font-family:Cairo;color:#fff;
+  background:radial-gradient(120% 70% at 50% 25%,var(--bg2) 0,var(--bg1) 70%)}
+#grid{position:absolute;inset:0;opacity:.18;
+  background-image:linear-gradient(rgba(122,167,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(122,167,255,.25) 1px,transparent 1px);
+  background-size:72px 72px}
+.abs{position:absolute}
+.scene{position:absolute;left:0;top:0;width:1080px;height:1400px;opacity:0}
+#badge{left:50%;top:70px;transform:translateX(-50%);padding:8px 26px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);font-size:28px;font-weight:600;color:#cbd5e1;white-space:nowrap}
+
+/* profile card */
+.card{position:absolute;width:820px;background:#fff;border-radius:34px;color:var(--ink);overflow:hidden;
+  box-shadow:0 40px 90px rgba(0,0,0,.45)}
+.banner{height:150px;background:linear-gradient(120deg,#94a3b8,#cbd5e1)}
+.av{position:absolute;right:50px;top:78px;width:150px;height:150px;border-radius:50%;border:7px solid #fff;
+  background:linear-gradient(160deg,#cbd5e1,#94a3b8)}
+.av:after{content:"";position:absolute;left:38px;top:26px;width:60px;height:60px;border-radius:50%;background:#e2e8f0}
+.body{padding:96px 50px 40px}
+.name{font-size:52px;font-weight:900;line-height:1.1}
+.head{font-size:34px;font-weight:600;color:var(--muted);margin-top:8px;min-height:48px}
+.sec{margin-top:26px;border-top:2px solid var(--line);padding-top:18px;position:relative}
+.sec h4{margin:0 0 6px;font-size:28px;font-weight:800;color:#334155}
+.sec p{margin:0;font-size:28px;line-height:1.45;color:#475569;min-height:40px}
+.chips span{display:inline-block;margin:6px 0 0 10px;padding:4px 18px;border-radius:999px;background:#f1f5f9;font-size:24px;font-weight:700;color:#475569}
+.warn{position:absolute;left:30px;top:16px;width:46px;height:46px;border-radius:50%;background:var(--red);color:#fff;
+  font-weight:900;font-size:32px;text-align:center;line-height:46px;opacity:0}
+.hl{border-radius:12px;transition:none}
+
+/* browser */
+#browser{left:40px;top:240px;width:1000px;height:1110px;border-radius:30px;background:#e9eef6;overflow:hidden;
+  box-shadow:0 50px 110px rgba(0,0,0,.55)}
+#bar{height:86px;background:#dfe5ee;display:flex;align-items:center;gap:14px;padding:0 26px;direction:ltr}
+.dot{width:18px;height:18px;border-radius:50%}
+#url{flex:1;height:50px;border-radius:25px;background:#fff;color:#475569;font-size:24px;font-weight:600;line-height:50px;padding:0 24px;direction:ltr;text-align:left}
+#puzzle{width:50px;height:50px;border-radius:14px;background:#fff;color:#334155;font-size:30px;font-weight:900;text-align:center;line-height:50px}
+#page{position:absolute;left:0;top:86px;right:0;bottom:0}
+#store{position:absolute;left:120px;top:190px;width:720px;padding:46px;border-radius:30px;background:#fff;color:var(--ink);text-align:center;box-shadow:0 20px 50px rgba(15,23,42,.18)}
+.orb{width:150px;height:150px;border-radius:50%;margin:0 auto 22px;position:relative;
+  background:radial-gradient(circle at 35% 30%,#ffd2bd,var(--coral) 60%,#b9542f)}
+.orb svg{position:absolute;left:50%;top:50%;width:62%;height:62%;transform:translate(-50%,-50%)}
+#storeName{font-size:50px;font-weight:900;direction:ltr}
+#storeSub{font-size:28px;color:var(--muted);margin-top:6px}
+#addBtn{margin:30px auto 0;width:420px;height:88px;border-radius:44px;background:var(--blue);color:#fff;font-size:34px;font-weight:800;line-height:88px;position:relative;overflow:hidden}
+#plans{margin-top:26px;display:flex;gap:12px;justify-content:center;direction:ltr}
+#plans span{padding:6px 20px;border-radius:999px;background:#fff1ea;color:#b9542f;font-weight:800;font-size:26px;border:2px solid #ffd2bd}
+#login{margin-top:18px;font-size:30px;font-weight:800;color:#0f172a}
+
+/* side panel */
+#panel{position:absolute;left:0;top:0;bottom:0;width:420px;background:#fff;border-right:2px solid #e2e8f0;color:var(--ink);padding:26px 24px}
+#ph{display:flex;align-items:center;gap:14px;font-size:34px;font-weight:900}
+#ph .orb{width:56px;height:56px;margin:0}
+
+.bub{margin-top:20px;padding:18px 22px;border-radius:22px;font-size:26px;line-height:1.5;font-weight:700}
+#ask{background:#eef4ff;color:#1e3a8a;margin-right:40px;min-height:70px}
+.sug{background:#fff7f2;border:2px solid #ffd9c7;color:#7c2d12;opacity:0}
+.sug b{display:block;font-size:22px;color:#c2410c;margin-bottom:4px}
+#input{position:absolute;left:24px;right:24px;bottom:26px;height:80px;border-radius:22px;border:2px solid #cbd5e1;font-size:24px;line-height:76px;padding:0 20px;color:#94a3b8;font-weight:600}
+#pcard{left:436px;top:18px;transform-origin:top left}
+
+#scan{position:absolute;left:436px;width:556px;height:10px;border-radius:5px;background:linear-gradient(90deg,transparent,var(--coral2),transparent);box-shadow:0 0 40px var(--coral);opacity:0}
+
+/* approval */
+#approve{left:150px;top:520px;width:780px;padding:44px;border-radius:32px;background:#fff;color:var(--ink);box-shadow:0 40px 100px rgba(0,0,0,.55);text-align:center;opacity:0}
+#approve h3{margin:0;font-size:44px;font-weight:900}
+#approve p{margin:10px 0 0;font-size:30px;color:var(--muted);font-weight:600}
+#btns{display:flex;gap:22px;justify-content:center;margin-top:34px}
+#btns div{width:260px;height:90px;border-radius:45px;font-size:36px;font-weight:900;line-height:90px}
+#yes{background:var(--green);color:#fff}#no{background:#f1f5f9;color:#475569}
+#cursor{width:0;height:0;border-left:26px solid transparent;border-right:26px solid transparent;border-bottom:46px solid #fff;
+  filter:drop-shadow(0 6px 10px rgba(0,0,0,.5));transform-origin:50% 0;opacity:0}
+#ripple{width:40px;height:40px;border-radius:50%;border:5px solid #fff;opacity:0}
+
+/* review */
+#shield{left:390px;top:300px;width:300px;height:340px}
+#checks{left:150px;top:700px;width:780px}
+.ck{display:flex;align-items:center;gap:22px;margin-bottom:26px;font-size:40px;font-weight:800;opacity:0}
+.ck i{flex:none;width:64px;height:64px;border-radius:50%;border:5px solid #94a3b8;position:relative}
+.ck i b{position:absolute;inset:0;text-align:center;line-height:54px;font-size:44px;font-weight:900;color:var(--green);font-style:normal}
+#saveBtn{left:330px;top:1080px;width:420px;height:110px;border-radius:55px;background:var(--blue);font-size:44px;font-weight:900;text-align:center;line-height:110px;opacity:0}
+#decide{left:0;right:0;top:1230px;text-align:center;font-size:50px;font-weight:900;color:var(--gold);opacity:0}
+
+/* result */
+#meterWrap{left:130px;top:250px;width:820px}
+#meterLbl{display:flex;justify-content:space-between;font-size:34px;font-weight:800;margin-bottom:14px}
+#meter{height:34px;border-radius:17px;background:rgba(255,255,255,.12);overflow:hidden}
+#meterFill{height:100%;width:28%;border-radius:17px;background:var(--red)}
+#chart{left:130px;top:430px;width:820px;height:420px;display:flex;align-items:flex-end;gap:26px;direction:ltr;
+  border-bottom:3px solid rgba(255,255,255,.25)}
+#chart div{flex:1;border-radius:16px 16px 0 0;background:linear-gradient(to top,var(--blue),var(--blue2));height:0}
+#chartLbl{left:130px;top:870px;width:820px;text-align:center;font-size:32px;font-weight:700;color:#cbd5e1}
+#opps{left:110px;top:960px;width:860px;display:flex;flex-direction:column;gap:22px}
+.opp{padding:24px 34px;border-radius:26px;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);font-size:36px;font-weight:800;opacity:0;display:flex;justify-content:space-between}
+.opp em{font-style:normal;color:var(--green)}
+
+/* cta */
+#ctaOrb{position:absolute;left:390px;top:330px;width:300px;height:300px;margin:0}
+#hookOrb{position:absolute;margin:0}
+#ctaName{left:0;right:0;top:660px;text-align:center;font-size:84px;font-weight:900;direction:ltr}
+#ctaLine{left:0;right:0;top:790px;text-align:center;font-size:54px;font-weight:800;color:var(--coral2)}
+#ctaPlans{left:0;right:0;top:900px;text-align:center;font-size:32px;font-weight:600;color:#cbd5e1}
+.spark{position:absolute;width:16px;height:16px;border-radius:50%;background:var(--coral2);opacity:0}
+
+/* hook extras */
+#timer{left:330px;top:1040px;width:420px;height:110px;border-radius:55px;background:var(--coral);font-size:46px;font-weight:900;text-align:center;line-height:110px;opacity:0}
+
+/* captions */
+#cap{position:absolute;left:70px;right:70px;top:1440px;height:230px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:2px 18px}
+.w{font-weight:800;font-size:66px;line-height:1.3;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.7)}
+.w.hot{color:var(--coral2)}
+.w.ltr{direction:ltr;unicode-bidi:isolate}
+</style>
+</head>
+<body>
+<div id="grid"></div>
+<div class="abs" id="badge">تمثيل توضيحي · بيانات وهمية</div>
+
+<!-- S1/S2 hook: profile card alone -->
+<div class="scene" id="s1">
+  <div class="card" id="hcard" style="left:130px;top:250px">
+    <div class="banner"></div><div class="av"></div>
+    <div class="body">
+      <div class="name">سارة أحمد</div>
+      <div class="head">موظفة</div>
+      <div class="sec"><h4>نبذة</h4><p>—</p><div class="warn">!</div></div>
+      <div class="sec"><h4>الخبرات</h4><p>شغالة في شركة</p><div class="warn">!</div></div>
+      <div class="sec"><h4>المهارات</h4><div class="chips"><span>إكسيل</span></div><div class="warn">!</div></div>
+    </div>
+  </div>
+  <div class="abs orb" id="hookOrb" style="left:465px;top:120px;width:150px;height:150px;opacity:0"><svg viewBox="0 0 100 100"><g stroke="#fff" stroke-width="11" stroke-linecap="round"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/></g></svg></div>
+  <div class="abs" id="timer">⏱ في دقايق</div>
+</div>
+
+<!-- S3..S7 browser -->
+<div class="scene" id="sb">
+  <div class="abs" id="browser">
+    <div id="bar"><div class="dot" style="background:#f87171"></div><div class="dot" style="background:#fbbf24"></div><div class="dot" style="background:#34d399"></div>
+      <div id="url">chrome web store</div><div id="puzzle">⧉</div></div>
+    <div id="page">
+      <div id="store">
+        <div class="orb"><svg viewBox="0 0 100 100"><g stroke="#fff" stroke-width="11" stroke-linecap="round"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/></g></svg></div>
+        <div id="storeName">Claude in Chrome</div>
+        <div id="storeSub">إضافة لمتصفح كروم</div>
+        <div id="addBtn"><span id="addTxt">إضافة إلى كروم</span></div>
+        <div id="login">تسجيل الدخول بحساب مدفوع</div>
+        <div id="plans"><span>Pro</span><span>Max</span><span>Team</span><span>Enterprise</span></div>
+      </div>
+      <div id="prof" style="position:absolute;inset:0;opacity:0">
+        <div class="card" id="pcard" style="transform:scale(.68)">
+          <div class="banner" id="pBanner"></div><div class="av" id="pAv"></div>
+          <div class="body">
+            <div class="name">سارة أحمد</div>
+            <div class="head hl" id="fHead">موظفة</div>
+            <div class="sec" id="secAbout"><h4>نبذة</h4><p class="hl" id="fAbout">—</p></div>
+            <div class="sec" id="secExp"><h4>الخبرات</h4><p class="hl" id="fExp">شغالة في شركة</p></div>
+            <div class="sec" id="secSkills"><h4>المهارات</h4><div class="chips" id="fSkills"><span>إكسيل</span></div></div>
+          </div>
+        </div>
+        <div id="scan"></div>
+        <div id="panel">
+          <div id="ph"><div class="orb"><svg viewBox="0 0 100 100"><g stroke="#fff" stroke-width="11" stroke-linecap="round"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/></g></svg></div><span style="direction:ltr">Claude</span></div>
+          <div class="bub" id="ask"></div>
+          <div class="bub sug" id="sg1"><b>عنوان مقترح</b><span></span></div>
+          <div class="bub sug" id="sg2"><b>نبذة مقترحة</b><span></span></div>
+          <div class="bub sug" id="sg3"><b>خبرة بأرقام</b><span></span></div>
+          <div id="input">اكتبي لكلاود…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="abs" id="approve">
+    <h3>كلاود عايز يعدّل ٣ خانات</h3>
+    <p>العنوان · النبذة · الخبرات</p>
+    <div id="btns"><div id="no">لأ</div><div id="yes">وافقي</div></div>
+  </div>
+  <div class="abs" id="cursor"></div>
+  <div class="abs" id="ripple"></div>
+</div>
+
+<!-- S8 review -->
+<div class="scene" id="s8">
+  <svg class="abs" id="shield" viewBox="0 0 300 340">
+    <path id="shPath" d="M150 12 L280 62 L280 170 C280 250 220 305 150 330 C80 305 20 250 20 170 L20 62 Z" fill="rgba(251,191,36,.12)" stroke="#fbbf24" stroke-width="12" stroke-linejoin="round"/>
+    <text x="150" y="225" text-anchor="middle" font-size="170" font-weight="900" fill="#fbbf24" font-family="Cairo">!</text>
+  </svg>
+  <div class="abs" id="checks">
+    <div class="ck"><i></i>العنوان مظبوط ومش مبالغ فيه</div>
+    <div class="ck"><i></i>الأرقام حقيقية وتخصّك</div>
+    <div class="ck"><i></i>النبذة بصوتك انتي</div>
+  </div>
+  <div class="abs" id="saveBtn">حفظ</div>
+  <div class="abs" id="decide">القرار قرارك</div>
+</div>
+
+<!-- S9 result -->
+<div class="scene" id="s9">
+  <div class="abs" id="meterWrap"><div id="meterLbl"><span>قوة البروفايل</span><span id="meterNum" style="direction:ltr">28%</span></div><div id="meter"><div id="meterFill"></div></div></div>
+  <div class="abs" id="chart"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  <div class="abs" id="chartLbl">مشاهدات البروفايل (مثال توضيحي)</div>
+  <div class="abs" id="opps">
+    <div class="opp"><span>رسالة من مسؤولة توظيف</span><em>جديد</em></div>
+    <div class="opp"><span>دعوة لمقابلة</span><em>جديد</em></div>
+    <div class="opp"><span>ظهورك في البحث</span><em>↑</em></div>
+  </div>
+</div>
+
+<!-- S10 cta -->
+<div class="scene" id="s10">
+  <div class="abs orb" id="ctaOrb"><svg viewBox="0 0 100 100"><g stroke="#fff" stroke-width="11" stroke-linecap="round"><line x1="50" y1="6" x2="50" y2="94"/><line x1="6" y1="50" x2="94" y2="50"/><line x1="19" y1="19" x2="81" y2="81"/><line x1="81" y1="19" x2="19" y2="81"/></g></svg></div>
+  <div class="abs" id="ctaName">Claude in Chrome</div>
+  <div class="abs" id="ctaLine">بروفايل احترافي… في دقايق</div>
+  <div class="abs" id="ctaPlans">على الخطط المدفوعة · راجعي ووافقي بنفسك</div>
+</div>
+
+<div id="cap"></div>
+
+<script src="config.js"></script>
+<script>
+const C = window.CONFIG, W = C.words, S = C.segs;
+const $ = (id) => document.getElementById(id);
+const cl = (x) => Math.max(0, Math.min(1, x));
+const eo = (x) => 1 - Math.pow(1 - cl(x), 3);
+const eio = (x) => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const back = (x) => { x = cl(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, a, d) => cl((t - a) / d);
+const seg = (i) => S[i];
+// scene window opacity
+function win(t, a, b, fi = .35, fo = .35) { return Math.min(eo((t - a) / fi), 1 - eo((t - (b - fo)) / fo)); }
+function css(el, o) { for (const k in o) el.style[k] = o[k]; }
+function type(el, txt, p) { const n = Math.round(txt.length * cl(p)); const s = txt.slice(0, n); if (el.textContent !== s) el.textContent = s; }
+// times of key words inside segment 6 (العنوان، النبذة، الخبرات، المهارات)
+const segWords = (i) => W.filter((w) => w.seg === i);
+
+const NEW = {
+  head: 'محللة بيانات | Power BI · SQL | بحوّل الأرقام لقرارات',
+  about: 'بحب أحوّل البيانات لقصص واضحة تساعد الإدارة تاخد قرار أسرع، وشغالة دلوقتي على تحليل المبيعات في قطاع التجزئة.',
+  exp: 'بنيت لوحات Power BI وفّرت ١٢ ساعة أسبوعيًا ورفعت دقة التقارير ٣٥٪',
+};
+
+function drawCaptions(t) {
+  const cur = W.filter((w) => w.s <= t + 0.05);
+  const line = cur.length ? cur[cur.length - 1].line : -1;
+  const ws = W.filter((w) => w.line === line);
+  const endT = ws.length ? Math.max(...ws.map((w) => w.e)) : 0;
+  const next = (W.find((w) => w.line === line + 1) || { s: C.duration }).s;
+  const out = cl((t - Math.min(endT + 0.4, next - 0.1)) / 0.16);
+  const cap = $('cap'); cap.innerHTML = '';
+  for (const w of ws) {
+    const el = document.createElement('span'); el.className = 'w' + (/[A-Za-z]/.test(w.w) ? ' ltr' : ''); el.textContent = w.w;
+    const p = eo((t - w.s + 0.06) / 0.26);
+    css(el, { opacity: p * (1 - out), transform: `translateY(${(1 - p) * 34 - out * 16}px) scale(${0.9 + 0.1 * p})`, filter: `blur(${(1 - p) * 5}px)` });
+    if (t >= w.s && t <= w.e + 0.08) el.classList.add('hot');
+    cap.appendChild(el);
+  }
+}
+
+function hook(t) {
+  const s1 = $('s1'); const o = win(t, -1, 6.35, .3, .4); s1.style.opacity = o;
+  const card = $('hcard');
+  const pin = back(P(t + 0.35, 0.05, 0.6));
+  const shake = t < 3.6 ? Math.sin(t * 22) * 4 * cl((t - 1.2) / 0.3) * (1 - cl((t - 3.0) / 0.4)) : 0;
+  const glow = P(t, 4.0, 0.8);
+  css(card, { transform: `translateY(${(1 - pin) * 160}px) scale(${0.85 + 0.15 * pin}) rotate(${shake * 0.15}deg) translateX(${shake}px)`,
+    opacity: cl(pin * 1.5), boxShadow: `0 40px 90px rgba(0,0,0,.45), 0 0 ${120 * glow}px rgba(224,122,85,${0.55 * glow})` });
+  [...card.querySelectorAll('.warn')].forEach((el, i) => { const p = back(P(t, 1.0 + i * 0.35, 0.4)); css(el, { opacity: cl(p) * (1 - glow), transform: `scale(${p})` }); });
+  const orb = $('hookOrb'); const op = back(P(t, 3.75, 0.7));
+  css(orb, { opacity: cl(op), transform: `translateY(${(1 - op) * -200}px) scale(${0.4 + 0.6 * op})` }); orb.querySelector('svg').style.transform = `translate(-50%,-50%) rotate(${t * 30}deg)`;
+  const tm = back(P(t, 4.7, 0.5)); css($('timer'), { opacity: cl(tm), transform: `scale(${tm})` });
+}
+
+function browser(t) {
+  const sb = $('sb'); sb.style.opacity = win(t, 6.2, 34.35, .4, .45);
+  const br = $('browser'); const bi = eo(P(t, 6.2, 0.7));
+  css(br, { transform: `translateY(${(1 - bi) * 300}px) scale(${0.9 + 0.1 * bi})` });
+  // store phase 6.2 .. 11.9
+  const store = $('store'); const so = win(t, 6.5, 12.1, .4, .35);
+  css(store, { opacity: so, transform: `translateY(${(1 - eo(P(t, 6.5, .6))) * 60}px)` });
+  const press = P(t, 8.6, 0.25), done = t > 8.95;
+  css($('addBtn'), { transform: `scale(${1 - 0.06 * Math.sin(Math.PI * press)})`, background: done ? '#22c55e' : '#2f6fed' });
+  $('addTxt').textContent = done ? '✓ اتضافت' : 'إضافة إلى كروم';
+  const lg = eo(P(t, 9.9, 0.5)); css($('login'), { opacity: lg });
+  [...$('plans').children].forEach((el, i) => { const p = back(P(t, 10.3 + i * 0.15, 0.4)); css(el, { opacity: cl(p), transform: `scale(${p})` }); });
+  $('url').textContent = t < 11.9 ? 'chrome web store' : 'linkedin.com/in/sara-ahmed';
+  // profile + panel 11.9 ..
+  const pf = $('prof'); pf.style.opacity = eo(P(t, 11.9, 0.45));
+  css($('panel'), { transform: `translateX(${(1 - eo(P(t, 12.6, 0.6))) * -440}px)` });
+  // prompt typing during seg4
+  type($('ask'), 'راجع بروفايلي وخليه احترافي', P(t, seg(4).s, seg(4).e - seg(4).s));
+  $('input').style.opacity = t < seg(4).s ? 1 : 0.35;
+  // scan 16.9..21.9
+  const sc = $('scan'); const sp = P(t, 17.0, 4.6);
+  css(sc, { opacity: win(t, 16.95, 21.9, .2, .3), top: `${20 + 620 * eio(sp)}px` });
+  // highlight sections by spoken words in seg6
+  const sw = segWords(6); const ids = ['fHead', 'secAbout', 'secExp', 'secSkills'];
+  ids.forEach((id, i) => {
+    const w = sw[i]; const on = w && t >= w.s && t < 21.9;
+    $(id).style.boxShadow = on ? 'inset 0 0 0 4px rgba(224,122,85,.9)' : 'none';
+    $(id).style.background = on ? 'rgba(255,180,143,.18)' : 'transparent';
+  });
+  // suggestions in panel during seg7..seg9
+  [['sg1', NEW.head, 7], ['sg2', NEW.about, 8], ['sg3', NEW.exp, 9]].forEach(([id, txt, k]) => {
+    const g = seg(k); const el = $(id); const a = g.s - 0.15;
+    css(el, { opacity: eo(P(t, a, 0.35)), transform: `translateY(${(1 - eo(P(t, a, .35))) * 30}px)` });
+    type(el.querySelector('span'), txt, P(t, g.s, (g.e - g.s) * 0.95));
+  });
+  // approval 30.6..31.9 then apply
+  const ap = $('approve'); const apIn = back(P(t, seg(10).s - 0.1, 0.4)); const apOut = eo(P(t, 31.75, 0.3));
+  css(ap, { opacity: cl(apIn) * (1 - apOut), transform: `scale(${(0.8 + 0.2 * apIn) * (1 - 0.1 * apOut)})` });
+  // cursor path: to yes button, click at 31.45; then field to field
+  const cur = $('cursor'), rp = $('ripple');
+  const pts = [[820, 1150, 30.6], [374, 753, 31.35], [374, 753, 31.75], [750, 552, 32.3], [750, 640, 33.0], [750, 725, 33.7]];
+  let cx = pts[0][0], cy = pts[0][1];
+  for (let i = 1; i < pts.length; i++) { const [x0, y0, t0] = pts[i - 1], [x1, y1, t1] = pts[i]; if (t >= t0) { const p = eio((t - t0) / (t1 - t0)); cx = x0 + (x1 - x0) * p; cy = y0 + (y1 - y0) * p; } }
+  css(cur, { opacity: win(t, 30.6, 34.2, .2, .3), left: `${cx}px`, top: `${cy}px`, transform: `rotate(-28deg) scale(${1 - 0.15 * Math.sin(Math.PI * P(t, 31.4, .2))})` });
+  const rpp = P(t, 31.45, 0.45); css(rp, { opacity: rpp > 0 && rpp < 1 ? 1 - rpp : 0, left: `${380 - 30 * rpp}px`, top: `${733 - 30 * rpp}px`, transform: `scale(${1 + 3 * rpp})` });
+  // fields update during seg11
+  [['fHead', NEW.head, 32.0], ['fAbout', NEW.about, 32.7], ['fExp', NEW.exp, 33.4]].forEach(([id, txt, a]) => {
+    const el = $(id); const p = P(t, a, 0.6);
+    if (t < a) { if (id === 'fHead') el.textContent = 'موظفة'; if (id === 'fAbout') el.textContent = '—'; if (id === 'fExp') el.textContent = 'شغالة في شركة'; el.style.color = ''; }
+    else { type(el, txt, p); el.style.color = '#0f172a'; if (t < 21.9 || t > a) { el.style.boxShadow = t < a + 1.2 ? `inset 0 0 0 4px rgba(34,197,94,${1 - P(t, a + .6, .6)})` : 'none'; el.style.background = 'transparent'; } }
+  });
+  const skills = $('fSkills'); const sk = t > 33.9 ? ['إكسيل', 'Power BI', 'SQL', 'تحليل بيانات'] : ['إكسيل'];
+  if (skills.childElementCount !== sk.length) skills.innerHTML = sk.map((s) => `<span>${s}</span>`).join('');
+  const done2 = t > 32.0; $('pBanner').style.background = done2 ? 'linear-gradient(120deg,#2f6fed,#7aa7ff)' : '';
+  $('pAv').style.background = done2 ? 'linear-gradient(160deg,#ffd2bd,#e07a55)' : '';
+  // gentle zoom on the card during scan/suggest
+  const z = 0.68 + 0.006 * eio(P(t, 16.9, 4));
+  $('pcard').style.transform = `scale(${z})`;
+}
+
+function review(t) {
+  const s = $('s8'); s.style.opacity = win(t, 34.3, 39.05, .35, .35);
+  const sh = back(P(t, 34.4, 0.6)); css($('shield'), { transform: `scale(${sh}) rotate(${(1 - sh) * -12}deg)`, opacity: cl(sh) });
+  const g = seg(13); const marks = [g.s + 0.1, g.s + 1.1, g.s + 2.1];
+  [...document.querySelectorAll('.ck')].forEach((el, i) => {
+    const p = eo(P(t, marks[i] - 0.4, 0.4)); css(el, { opacity: p, transform: `translateX(${(1 - p) * -60}px)` });
+    const k = back(P(t, marks[i], 0.35)); el.querySelector('i').style.borderColor = k > 0.01 ? '#22c55e' : '#94a3b8';
+    el.querySelector('i').innerHTML = k > 0.01 ? `<b style="transform:scale(${k})">✓</b>` : '';
+    el.querySelector('i').style.background = k > 0.01 ? 'rgba(34,197,94,.15)' : 'transparent';
+  });
+  const sv = back(P(t, 36.6, 0.5)); css($('saveBtn'), { opacity: cl(sv), transform: `scale(${sv})` });
+  const dc = eo(P(t, 37.4, 0.5)); css($('decide'), { opacity: dc, transform: `translateY(${(1 - dc) * 30}px)` });
+}
+
+function result(t) {
+  const s = $('s9'); s.style.opacity = win(t, 38.95, 43.0, .35, .35);
+  const m = eio(P(t, 39.2, 1.6)); const v = Math.round(28 + 68 * m);
+  $('meterNum').textContent = v + '%';
+  css($('meterFill'), { width: `${v}%`, background: v < 50 ? '#ef4444' : v < 75 ? '#fbbf24' : '#22c55e' });
+  const H = [18, 24, 30, 52, 74, 96];
+  [...$('chart').children].forEach((b, i) => { const p = back(P(t, 40.0 + i * 0.12, 0.55)); b.style.height = `${H[i] * 4 * cl(p) + (p > 1 ? (p - 1) * 20 : 0)}px`; });
+  [...document.querySelectorAll('.opp')].forEach((el, i) => { const p = back(P(t, seg(16).s + i * 0.35, 0.45)); css(el, { opacity: cl(p), transform: `translateX(${(1 - cl(p)) * 80}px) scale(${0.9 + 0.1 * p})` }); });
+}
+
+function cta(t) {
+  const s = $('s10'); s.style.opacity = win(t, 42.9, C.duration + 1, .4, .1);
+  const o = back(P(t, 43.0, 0.7)); css($('ctaOrb'), { transform: `scale(${o})`, opacity: cl(o) }); $('ctaOrb').querySelector('svg').style.transform = `translate(-50%,-50%) rotate(${(t - 43) * 25}deg)`;
+  [['ctaName', 43.4], ['ctaLine', 43.9], ['ctaPlans', 44.5]].forEach(([id, a]) => { const p = eo(P(t, a, 0.5)); css($(id), { opacity: p, transform: `translateY(${(1 - p) * 40}px)` }); });
+}
+
+// sparks for the cta burst (deterministic)
+const sparks = [];
+(function () { const host = $('s10'); for (let i = 0; i < 18; i++) { const d = document.createElement('div'); d.className = 'spark'; host.appendChild(d); sparks.push({ el: d, a: (i / 18) * Math.PI * 2, r: 220 + (i % 3) * 70 }); } })();
+function drawSparks(t) {
+  const p = P(t, 43.2, 1.2);
+  sparks.forEach((s) => { const r = s.r * eo(p); css(s.el, { left: `${540 + Math.cos(s.a) * r - 8}px`, top: `${450 + Math.sin(s.a) * r - 8}px`, opacity: p > 0 ? 1 - p : 0 }); });
+}
+
+function seek(t) {
+  $('grid').style.backgroundPosition = `${t * 12}px ${t * 18}px`;
+  hook(t); browser(t); review(t); result(t); cta(t); drawSparks(t); drawCaptions(t);
+}
+window.__kosif = { duration: C.duration, seek };
+seek(0);
+</script>
+</body>
+</html>
