@@ -48,6 +48,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 8. [Atlas external search (2026-10-20)](#atlas-external-search-2026-10-20)
 9. [أشهر 1000 مستودع على GitHub — GitHub top-1000 review (2026-10-23)](#أشهر-1000-مستودع-على-github--github-top-1000-review-2026-10-23)
 10. [بحث وتحميل فيديوهات إنستجرام لمنتج — Instagram product video finder (2026-10-24)](#بحث-وتحميل-فيديوهات-إنستجرام-لمنتج--instagram-product-video-finder-2026-10-24)
+11. [مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)](#مصدر-كل-لقطة-في-فيديو-مرجعي--source-finder-for-the-shots-of-a-reference-video-2026-10-28)
 
 ## Web apps and browser isolation research
 
@@ -179,4 +180,41 @@ python3 scripts/instagram_finder.py index --session-user MY_USERNAME
 python3 scripts/instagram_finder.py search "perfume splash" --save out/instagram/hits.json
 python3 scripts/instagram_finder.py download out/instagram/hits.json --pick 1,3 --rights permission --evidence "<link>"
 ```
+
+## مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)
+
+`scripts/source_finder.py` looks for the **original clips** an edit was cut from: it splits the reference into shots, takes clean query frames from each shot, reverse-searches them on Yandex Images, downloads the Pinterest video pins that come back and **verifies** each candidate with feature matching, so a hit is the same footage and not a look-alike.
+
+بيدوّر على **اللقطات الأصلية** اللي الفيديو المرجعي متجمّع منها: يقسم الفيديو لمشاهد، ياخد صور نظيفة من كل مشهد، يبحث بيها في Yandex بالصورة، ينزّل فيديوهات Pinterest اللي ظهرت، ويتأكد من كل واحد بمطابقة النقاط عشان النتيجة تكون نفس اللقطة مش لقطة شبهها.
+
+```bash
+python3 scripts/source_finder.py doctor                                  # OpenCV, numpy, ffmpeg, curl, yt-dlp present?
+python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop "crop=iw:ih*0.6:0:ih*0.2"
+# step by step
+python3 scripts/source_finder.py cuts reference.mp4 --out out/source-finder/cuts.json
+python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop "crop=iw:ih*0.6:0:ih*0.2" --out out/source-finder/queries
+python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg out/source-finder/queries/s003_full.jpg --out out/source-finder/s003.json
+python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder
+# offline: score the shots against clips you already have
+python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --candidates ~/Downloads/clips
+```
+
+How it decides:
+
+1. **Cuts**: the mean HSV change between consecutive frames of a 96-px copy; a change of 27 or more (0-255 scale) is a cut, and shots shorter than 0.4 s are merged. Hard cuts only: dissolves and fades stay inside one shot, so check `cuts.json` against the video and give `frames` your own boundaries (`--cuts 0,2.0,3.97,...`) when needed.
+2. **Query frames**: three frames per shot kept 0.35 s away from its cuts, taken through `--crop` so burned-in captions, verse text and logos do not pull the search toward other edits; one uncropped mid frame is searched as well. `--crop` accepts a single ffmpeg `crop=` filter and nothing else.
+3. **Search**: each image is uploaded to Yandex search-by-image; the `sites` and `similar` pages are read and every Pinterest `/pin/<id>/` link is kept (TikTok, Instagram, YouTube and stock links go to `leads` for a manual look). Calls are at least 2 s apart (`--delay`, default 4 s), and searches are cached in `<work>/search/`, so a re-run after a captcha resumes instead of repeating calls. **At the first captcha everything stops** with exit code 3: wait, or solve it in a browser, then run the same command again. Never try to get around it.
+4. **Verify**: pins are downloaded with yt-dlp into `<work>/cand/` (a failure leaves a `p<id>.none` marker), and every 0.5 s of each clip is compared with the shot's frames: ORB (3,000 features) on a 540-px-wide grey copy, Lowe ratio 0.75, RANSAC homography with a 6-px tolerance. The score is the number of inliers.
+
+| score (inliers) | verdict | meaning |
+|---|---|---|
+| 150 or more | `exact` | the same footage (the first reel's four hits scored 514-1447; on cached clips the known source re-scored 1757) |
+| 40-149 | `possible` | open the pin at the timestamp and judge by eye |
+| below 40 | `none` | unrelated clips scored about 7-36 across six reels |
+
+`report.json` lists every shot with its verdict, the best pin URL and the second in it where the shot starts, the top five candidates and other leads, then a `ranked` list of all hits. A partial report is written after every shot.
+
+**Expect misses.** The tool can only find a source that is posted on Pinterest as a video pin and indexed by Yandex: in this repository's runs it found 4 of 13 shots on one reel, 1 of 4 on another and none on four more. Mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Yandex and Pinterest pages change without notice; when the upload stops returning a `cbirId` the tool says so instead of guessing.
+
+**Rights.** `search` uploads frames of the reference to Yandex and `match`/`run` download other people's videos, so ask first. A found clip belongs to its creator (a Pinterest pin is often a re-upload, so trace the original), keep downloads as private reference, credit and link every source, and reuse footage only with the owner's permission or a licence; then fetch it properly with `fetch_video.py` or `media_sources.py` and record the rights.
 
