@@ -4,7 +4,7 @@
   "catalog_powers": 5853,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 188,
+  "tool_count": 190,
   "groups": [
     {
       "id": "research",
@@ -133,9 +133,9 @@
       "count": 272,
       "status_counts": {
         "documented": 65,
-        "install": 15,
+        "install": 14,
         "key": 2,
-        "proven": 169,
+        "proven": 170,
         "ready": 21
       },
       "family_counts": {
@@ -40225,10 +40225,10 @@
       "status": "proven",
       "requires": [],
       "proof": [
-        "kosif-tool/tools/render_html.cjs:356"
+        "kosif-tool/tools/render_html.cjs:647"
       ],
       "source": "engines-render-pipeline.json",
-      "what": "تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُدمج الصوت المورَّد بـ AAC 192k مع apad و-shortest فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح زوجية. — PNG frames are encoded with libx264 yuv420p faststart; supplied audio is muxed as AAC"
+      "what": "تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُنسخ الصوت المورَّد بايتًا ببايت إن كان AAC أو MP3 أو ALAC ويُقص عند آخر إطار، وتُرمَّز الصيغ الأخرى (WAV وFLAC) إلى AAC 320k مع apad و-shortest، فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح"
     },
     {
       "id": "ENG-46",
@@ -72491,7 +72491,7 @@
       "domain": "build",
       "name_en": "Deterministic HTML-to-MP4 renderer",
       "name_ar": "محوّل حتمي من HTML إلى فيديو MP4",
-      "status": "install",
+      "status": "proven",
       "requires": [
         "ffmpeg",
         "python3",
@@ -72499,6 +72499,8 @@
         "npm:gsap"
       ],
       "proof": [
+        "kosif-tool/tests/test_render_html.mjs",
+        "kosif-tool/tests/test_render_html_disk.mjs",
         "kosif-tool/tools/render_html.cjs"
       ],
       "source": "runnable-tools.json",

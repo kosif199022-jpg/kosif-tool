@@ -440,8 +440,8 @@ chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · 
 | CAM-360 | 📄 | التشابه الجشطالتي باللون · Gestalt similarity via colour | SP-0238 Palette extraction, colour naming and ΔE | — |
 | CAM-361 | 📄 | التسلسل الهرمي باللون والدرجة · Hierarchy via colour and tone | SP-0238 Palette extraction, colour naming and ΔE | — |
 | CAM-50 | 🟢 | تمويه السرعة الاتجاهي · Directional speed blur | SP-0252 Directional speed blur | — |
-| CAM-46 | 🟢 | التعريض المكافئ · Equivalent exposure | SP-0271 GPU sub-frame motion blur | python3 |
-| CAM-47 | 🟢 | زاوية الغالق إلى سرعة الغالق · Shutter angle → shutter speed (motion blur) | SP-0271 GPU sub-frame motion blur | python3 |
+| CAM-46 | 🟢 | التعريض المكافئ · Equivalent exposure | SP-0270 GPU sub-frame motion blur | python3 |
+| CAM-47 | 🟢 | زاوية الغالق إلى سرعة الغالق · Shutter angle → shutter speed (motion blur) | SP-0270 GPU sub-frame motion blur | python3 |
 | CAM-25 | 🟢 | أغطية تدرّج لقراءة النص فوق الفيديو · Legibility veils over footage | SP-0453 Legibility veils over footage | — |
 | CAM-149 | 📦 | طبقة قراءة وحجاب خارج المحراب · Readability glass and arch veil | SP-0453 Legibility veils over footage | — |
 
@@ -622,8 +622,8 @@ chapter: [formats-platforms](../powers/formats-platforms.md) · card: `usip-libr
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| FMT-20 | ✅ | ماستر H.264 آمن للويب · Web-safe H.264 master | SP-0269 NVENC GPU encode | ffmpeg, python3 |
-| FMT-25 | 📄 | ترميز GPU بـ NVENC · NVENC GPU encode | SP-0269 NVENC GPU encode | npm:hyperframes, gpu |
+| FMT-20 | ✅ | ماستر H.264 آمن للويب · Web-safe H.264 master | SP-0272 NVENC GPU encode | ffmpeg, python3 |
+| FMT-25 | 📄 | ترميز GPU بـ NVENC · NVENC GPU encode | SP-0272 NVENC GPU encode | npm:hyperframes, gpu |
 | FMT-02 | ✅ | جدول المقاسات الموحد في أدواتك · Aspect presets across the owner tools | SP-0298 Checked per-platform delivery (8 platfo… | python3 |
 | FMT-08 | ✅ | المنطقة الآمنة في الإطار العمودي · 9:16 UI safe zone | SP-0298 Checked per-platform delivery (8 platfo… | — |
 | FMT-24 | ✅ | سلم جودات HLS · Multi-rendition HLS ladder | SP-0298 Checked per-platform delivery (8 platfo… | ffmpeg |
@@ -1279,7 +1279,7 @@ chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-librar
 
 ## video-download (motion)
 
-chapter: [video-download](../powers/video-download.md) · card: `usip-library/cards/motion/video-download.md` · tools: `fetch-reference` · `fetch-video` · `instagram-finder` · `media-sources` · `repo-ashell-cinema` · `stock-fetch` · `stream-grabber`
+chapter: [video-download](../powers/video-download.md) · card: `usip-library/cards/motion/video-download.md` · tools: `fetch-reference` · `fetch-video` · `instagram-finder` · `media-sources` · `repo-ashell-cinema` · `source-finder` · `stock-fetch` · `stream-grabber` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -1407,11 +1407,11 @@
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
    "count": 174,
-   "proven": 142,
+   "proven": 143,
    "status": {
-    "proven": 142,
+    "proven": 143,
     "ready": 20,
-    "install": 12
+    "install": 11
    }
   },
   {

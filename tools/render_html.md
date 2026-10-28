@@ -48,7 +48,7 @@ Renders an animated HTML page to MP4 frame by frame with headless Chromium (Play
 | `--width`, `--height` | viewport in CSS px (default 1080×1920; override `--aspect`) |
 | `--fps` | frames per second (default 30) |
 | `--duration`, `--start` | seconds; seek mode defaults to `window.__kosif.duration` |
-| `--audio <file>` | muxed as AAC with `-shortest`; the audio is never resampled or time-stretched |
+| `--audio <file>` | AAC, MP3 and ALAC are stream-copied byte for byte and cut at the last video frame; other codecs (WAV, FLAC …) are encoded to AAC 320k with `-shortest`; the audio is never resampled or time-stretched |
 | `--mode seek|virtual` | force the driver (auto-detected otherwise) |
 | `--preview` | render 8 evenly spaced frames into one labelled contact sheet |
 | `--crf`, `--scale` | H.264 quality (default 17, the [export standard](../playbooks/export-standard.md); lower only) and device scale factor (`--scale 2` = 4K, only when the user asks) |

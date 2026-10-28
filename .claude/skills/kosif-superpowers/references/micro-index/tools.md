@@ -205,7 +205,7 @@
 | `repo-check-frame-cover` | — | فحص تغطية الصورة للإطار · Photo frame-cover check | `node tools/check_frame_cover.cjs --in tests/fixtures/photo-cover/inde…` | 1 |
 | `repo-job-wait` | TOOL-174 | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) | `python3 tools/job.py start --dir out/20261024-film/render -- node too…` | 1 |
 | `repo-overlap-rig` | — | فاحص ريج الكاميرا المتداخلة · Overlapping camera rig checker | `python3 tools/overlap_rig.py graphs` | 1 |
-| `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 0 |
+| `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 2 |
 | `repo-verify-video` | TOOL-82 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 -…` | 2 |
 | `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 0 |
 | `starter-remotion` | TOOL-84 | قالب فيلم Remotion · Remotion film starter | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | 0 |
@@ -235,11 +235,13 @@
 | `rea-creative-research-atlas` | TOOL-48 | باني فهرس البحث الإبداعي · Creative research catalog builder | `python3 scripts/rea_creative_research_atlas.py report` | 1 |
 | `rebalance-creative-repos` | TOOL-49 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog | `python3 scripts/rebalance_creative_repos.py run` | 0 |
 | `repo-ashell-cinema` | TOOL-51 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.c…` | 0 |
+| `source-finder` | — | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي · Source finder: the original clips behind each shot of a reference video | `python3 scripts/source_finder.py doctor` | 1 |
 | `source-scout` | TOOL-50 | مستكشف مصادر المجتمع · Community source scout | `python3 scripts/source_scout.py check` | 1 |
 | `sources-index` | TOOL-142 | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../ou…` | 1 |
 | `stock-fetch` | TOOL-95 | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) | `python3 scripts/stock_fetch.py probe` | 1 |
 | `stream-grabber` | TOOL-133 | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing | `python3 scripts/stream_grabber.py find ./saved-page.html` | 1 |
 | `superpowers` | TOOL-96 | خريطة المستودعات الخارجية · External repository tool map | `python3 scripts/superpowers.py list --capability voice --json` | 1 |
+| `tiktok-photo` | — | تحميل بوست صور تيك توك (سلايد شو) · TikTok photo-post (slideshow) downloader | `python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/…` | 1 |
 
 ## think
 

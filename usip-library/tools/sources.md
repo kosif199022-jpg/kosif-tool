@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (21 أداة)
+# أدوات المجال `sources` (23 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -824,6 +824,60 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-ashell-cinema --evidence <ملف>`.
 
+### `source-finder` — البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي / Source finder: the original clips behind each shot of a reference video
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/source_finder.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `video-download`, `web-research`, `transitions-cuts` |
+
+**ما تفعله:** يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم ينزّل فيديوهات الـpins بـyt-dlp ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت، ويستنى بين طلبات Yandex ويقف عند أول captcha.
+
+**What it does:** Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha.
+
+#### متى تُستدعى
+
+- «طلّع لي المصادر الأصلية للقطات الفيديو ده»
+- «الفيديو ده متجمّع من لقطات منين؟ دوّر على مصدر كل مشهد»
+- «Find the original source clips of each shot in this reel»
+- «Reverse search the shots of this edit and tell me where the footage came from»
+- «Which Pinterest video is this shot taken from?»
+
+#### الأوامر
+
+- **doctor**: Offline: which parts can run here (OpenCV, numpy, ffmpeg, curl, yt-dlp).
+  - `python3 scripts/source_finder.py doctor`
+- **cuts**: Offline: hard cuts from the mean HSV change between frames (threshold 27, shortest shot 0.4 s) as boundaries and a shot list.
+  - `python3 scripts/source_finder.py cuts reference.mp4 --out out/source-finder/cuts.json`
+- **frames**: Offline (ffmpeg): three cropped query frames per shot kept away from the cuts, one full mid frame and frames.json. --crop accepts one ffmpeg crop filter only.
+  - `python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop "crop=iw:ih*0.6:0:ih*0.2" --out out/source-finder/queries`
+- **search**: Network: uploads each image to Yandex search-by-image, reads the sites and similar pages and lists Pinterest pin ids plus other video and stock leads; at least 2 s between calls, at most 40 images a run, exit 3 at a captcha.
+  - `python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg --delay 4 --out out/source-finder/s003.json`
+- **match**: Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; --no-download or a folder keeps it offline.
+  - `python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder`
+- **run**: The whole chain with cached searches and a partial report.json after every shot; a captcha stops it with exit 3 and a re-run continues. --candidates DIR skips the search and runs offline.
+  - `python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop "crop=iw:ih*0.6:0:ih*0.2"`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, curl, yt-dlp
+- network: true
+- python: numpy, opencv-python-headless
+- الأمان: network
+- الموافقة: search and run upload frames of the user's reference video to Yandex (a third-party service), and match and run download third-party Pinterest videos: confirm the user wants both. Downloaded clips stay as private reference in the work folder; reusing one needs its creator's permission or a licence, and every found source is credited and linked. Keep the rate limit, and at a captcha stop rather than bypass it. No account, cookie or credential is used.
+- الحدود: Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Found clips belong to their creators: credit and link them.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_source_finder.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:source-finder --evidence <ملف>`.
+
 ### `source-scout` — مستكشف مصادر المجتمع / Community source scout
 
 | الحقل | القيمة |
@@ -1071,4 +1125,52 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:superpowers --evidence <ملف>`.
+
+### `tiktok-photo` — تحميل بوست صور تيك توك (سلايد شو) / TikTok photo-post (slideshow) downloader
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/tiktok_photo.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `video-download`, `photo-video-footage`, `formats-platforms` |
+
+**ما تفعله:** ينزّل بوست الصور في تيك توك اللي yt-dlp بيرفضه (Unsupported URL .../photo/): يفك الرابط المختصر vt.tiktok.com بتتبع التحويلات، ويفتح صفحة البوست بهوية متصفح سفاري للموبايل، ويقرأ بيانات JSON المضمّنة في الصفحة (الوصف والحساب والصوت وروابط الصور ومقاساتها)، ويحفظ كل صورة img00.jpg و img01.jpg وهكذا (كتابة آمنة واستكمال لو التحميل اتقطع)، ويجيب صوت البوست بـ yt-dlp من رابط /video/ المقابل، ويكتب meta.json فيه الحساب والوصف والصوت والرابط والمقاسات وسطر نسب الحقوق. وأمرا parse و url يشتغلوا من غير إنترنت على صفحة محفوظة أو رابط.
+
+**What it does:** Downloads a TikTok photo post, which yt-dlp rejects with "Unsupported URL .../photo/<id>": it resolves a vt.tiktok.com or vm.tiktok.com short link by following redirects, fetches the /@user/photo/<id> page with a mobile Safari User-Agent, reads the JSON in <script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"> (itemStruct: desc, author, music, imagePost.images with sizes), saves every image as img00.jpg, img01.jpg ... (atomic writes, mirror links, resumable), gets the post's sound with yt-dlp -f ba on the rewritten /video/<id> link, and writes meta.json with author, desc, music, source link, image sizes and a credit line. parse and url work offline on a saved page or a link.
+
+#### متى تُستدعى
+
+- «نزّل صور البوست ده من تيك توك https://vt.tiktok.com/XXXXXXX/»
+- «yt-dlp بيقول Unsupported URL على رابط تيك توك فيه /photo/»
+- «عايز صور السلايد شو بتاعة تيك توك وصوتها»
+- «Download the images of this TikTok photo slideshow»
+- «yt-dlp says Unsupported URL for a TikTok /photo/ link»
+- «Get the slides and the sound from a TikTok photo post»
+
+#### الأوامر
+
+- **fetch**: Network: resolves the link, saves img00.jpg ..., audio.<ext> (yt-dlp -f ba on the /video/ link) and meta.json; exit 2 on a partial download (rerun to resume), 3 for a video post (use yt-dlp), 4 when the page JSON is missing. --html uses a page saved on your device, --no-audio skips the sound.
+  - `python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post`
+- **parse**: Offline: prints the post JSON extracted from a saved page (author, desc, music, image links and sizes, the /photo/ and /video/ links).
+  - `python3 scripts/tiktok_photo.py parse evals/fixtures/tiktok_photo_minimal.html`
+- **url**: Offline: classifies a link (photo, video, short, other) and prints its /photo/ and /video/ forms without the tracking query.
+  - `python3 scripts/tiktok_photo.py url "https://www.tiktok.com/@user/photo/7400000000000000001"`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: pip:yt-dlp
+- الأمان: network
+- الموافقة: It downloads a third-party creator's post: confirm the user owns it, has the creator's permission or a licence, or keeps it as private reference only; keep the credit line and link the post. It sends no cookies or login and writes only into --out.
+- الحدود: TikTok's page structure can change without notice (the tool then stops with a clear error, exit 4); private, removed, region-locked or login-walled posts fail, some networks block tiktok.com (save the page on your device and use --html), the sound needs yt-dlp and depends on its TikTok extractor, and the CDN image links are signed and expire, so meta.json keeps only their host. Respect creators: link and credit.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_tiktok_photo.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:tiktok-photo --evidence <ملف>`.
 

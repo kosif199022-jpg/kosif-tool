@@ -8,7 +8,7 @@
 
 - [البحث والمعرفة — Research & knowledge](#hub-research) · 62 قدرة · 6 خارقة · جاهز الآن 21
 - [التفكير والتخطيط والاستراتيجية — Reasoning & strategy](#hub-thinking) · 387 قدرة · 34 خارقة · جاهز الآن 25
-- [الوكلاء والتوجيه الذكي — Agents & routing](#hub-agents) · 287 قدرة · 23 خارقة · جاهز الآن 190
+- [الوكلاء والتوجيه الذكي — Agents & routing](#hub-agents) · 287 قدرة · 23 خارقة · جاهز الآن 191
 - [البرمجة وبناء التطبيقات — Software & applications](#hub-software) · 662 قدرة · 57 خارقة · جاهز الآن 132
 - [الرسم والأشكال والتصميم — Drawing & visual composition](#hub-drawing) · 307 قدرة · 28 خارقة · جاهز الآن 107
 - [الصور والتحرير والتوليد — Images & photo editing](#hub-images) · 327 قدرة · 29 خارقة · جاهز الآن 140
@@ -71,7 +71,7 @@
 <a id="hub-agents"></a>
 ## الوكلاء والتوجيه الذكي — Agents & routing (`agents`)
 
-- **الحجم / size:** 287 قدرة ذرية في 23 قدرة خارقة · ✅169 🟢21 📦15 🔑2 📄80
+- **الحجم / size:** 287 قدرة ذرية في 23 قدرة خارقة · ✅170 🟢21 📦14 🔑2 📄80
 - **ابدأ / start:** `python3 scripts/hub.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install agents`
 - **السكربتات / scripts:** `scripts/skill_intelligence.py` · `scripts/hub.py` · `scripts/probe_env.py` · `scripts/superpowers_unified.py` · `scripts/capability_runtime_router.py`
 - **العائلات / families:** [agent-orchestration](powers/agent-orchestration.md) · [runnable-tools](powers/runnable-tools.md) · [self-discovery](powers/self-discovery.md)
@@ -81,9 +81,9 @@
 | القدرة الخارقة | حجم | أفضل | جاهز |
 |---|---|---|---|
 | SP-0139 منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 33 | ✅ | 33 |
+| SP-0140 مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 19 | ✅ | 16 |
 | SP-0141 دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | ✅ | 16 |
 | SP-0142 محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | 16 | ✅ | 16 |
-| SP-0140 مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 19 | ✅ | 15 |
 | SP-0022 خطوط عربية قبل الرندر · Arabic font probe | 14 | ✅ | 12 |
 | SP-0143 خريطة ترتيب المهارة · Skill Layout Map | 12 | ✅ | 12 |
 | SP-0144 مستكشف مصادر المجتمع · Community source scout | 12 | ✅ | 10 |
@@ -184,7 +184,7 @@
 - **السكربتات / scripts:** `scripts/native_3d.py` · `scripts/native_glb.py` · `scripts/blender_bridge.py` · `scripts/blender_cinema.py` · `scripts/blender_motion_video.py` · `scripts/montage_pro.py`
 - **العائلات / families:** [3d-spatial](powers/3d-spatial.md) · [engines-render-pipeline](powers/engines-render-pipeline.md) · [light-glow-bloom](powers/light-glow-bloom.md) · [particles-fluids-physics](powers/particles-fluids-physics.md) · [texture-material](powers/texture-material.md)
 - **المستلزمات / needs:** `python3` · `npm:hyperframes` · `npm:three` · `chromium` · `ffmpeg` · `npm:gsap` · `npm:remotion` · `key:unspecified` · `npm:react` · `pip:pillow` · `imagemagick` · `node` · `npm:esbuild` · `npm:lottie`
-- **يتصل بـ / links:** [agents](#hub-agents) · [software](#hub-software) · [motion](#hub-motion) · [images](#hub-images)
+- **يتصل بـ / links:** [motion](#hub-motion) · [agents](#hub-agents) · [software](#hub-software) · [images](#hub-images)
 
 | القدرة الخارقة | حجم | أفضل | جاهز |
 |---|---|---|---|
@@ -198,7 +198,7 @@
 | SP-0265 معاينة مسودة · Draft preview render | 22 | ✅ | 8 |
 | SP-0267 مشروع أنيميشن جديد · New animation project (2D / 3D / lab) | 20 | ✅ | 8 |
 | SP-0311 مرور العدسة «مصوَّر لا مرسوم» · Photographed lens pass (barrel, fringes, bloom, vignette, grain) | 14 | ✅ | 8 |
-| SP-0276 خيار التقنية: canvas · Stack option: canvas | 12 | ✅ | 8 |
+| SP-0277 خيار التقنية: canvas · Stack option: canvas | 12 | ✅ | 8 |
 | SP-0262 رندر HTML حتمي · HTML seek renderer | 26 | ✅ | 7 |
 
 …و51 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show 3d`

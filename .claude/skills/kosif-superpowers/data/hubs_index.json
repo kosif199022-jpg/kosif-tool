@@ -399,9 +399,9 @@
    ],
    "superpowers": [
     "SP-0139",
+    "SP-0140",
     "SP-0141",
     "SP-0142",
-    "SP-0140",
     "SP-0022",
     "SP-0143",
     "SP-0144",
@@ -432,6 +432,14 @@
      "ready_now": 33
     },
     {
+     "id": "SP-0140",
+     "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
+     "name_en": "Audio-timed SVG motion compiler",
+     "size": 19,
+     "best": "proven",
+     "ready_now": 16
+    },
+    {
      "id": "SP-0141",
      "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
      "name_en": "Staged drawing and original three-value visual studies",
@@ -446,14 +454,6 @@
      "size": 16,
      "best": "proven",
      "ready_now": 16
-    },
-    {
-     "id": "SP-0140",
-     "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
-     "name_en": "Audio-timed SVG motion compiler",
-     "size": 19,
-     "best": "proven",
-     "ready_now": 15
     },
     {
      "id": "SP-0022",
@@ -522,13 +522,13 @@
    ],
    "powers": 287,
    "status_mix": {
-    "proven": 169,
+    "proven": 170,
     "ready": 21,
-    "install": 15,
+    "install": 14,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 190,
+   "ready_now": 191,
    "requires": [
     "python3",
     "ffmpeg",
@@ -1385,17 +1385,17 @@
     "SP-0265",
     "SP-0267",
     "SP-0311",
-    "SP-0276",
+    "SP-0277",
     "SP-0262",
     "SP-0263",
-    "SP-0268",
     "SP-0351",
     "SP-0416",
     "SP-0352",
+    "SP-0268",
+    "SP-0276",
     "SP-0312",
-    "SP-0269",
-    "SP-0271",
-    "SP-0277",
+    "SP-0270",
+    "SP-0272",
     "SP-0417",
     "SP-0280",
     "SP-0283",
@@ -1410,12 +1410,12 @@
     "SP-0285",
     "SP-0261",
     "SP-0264",
-    "SP-0270",
+    "SP-0269",
     "SP-0279",
     "SP-0354",
     "SP-0174",
     "SP-0419",
-    "SP-0272",
+    "SP-0271",
     "SP-0278",
     "SP-0286",
     "SP-0288",
@@ -1521,7 +1521,7 @@
      "ready_now": 8
     },
     {
-     "id": "SP-0276",
+     "id": "SP-0277",
      "name_ar": "خيار التقنية: canvas",
      "name_en": "Stack option: canvas",
      "size": 12,
@@ -1594,9 +1594,9 @@
     "pip:vtracer"
    ],
    "links": [
+    "motion",
     "agents",
     "software",
-    "motion",
     "images"
    ]
   },

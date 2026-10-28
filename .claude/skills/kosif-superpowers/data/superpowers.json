@@ -1370,7 +1370,7 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.163
+"sim": 0.168
 },
 {
 "id": "SP-0036",
@@ -6487,7 +6487,7 @@
 },
 {
 "id": "SP-0156",
-"sim": 0.073
+"sim": 0.074
 }
 ]
 },
@@ -7603,8 +7603,8 @@
 "sim": 0.086
 },
 {
-"id": "SP-0277",
-"sim": 0.082
+"id": "SP-0384",
+"sim": 0.08
 }
 ]
 },
@@ -9959,16 +9959,16 @@
 "name_ar": "REA موجّه: trace_crash"
 },
 {
-"id": "REA-255",
-"status": "documented",
-"name_en": "REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects",
-"name_ar": "REA: ترويسة pyc وكائنات الكود بلا بايثون"
-},
-{
 "id": "REA-246",
 "status": "documented",
 "name_en": "REA MCP tool `inspect_byte_entropy`: Shannon byte entropy profile",
 "name_ar": "REA: إنتروبيا البايتات لكشف المناطق المضغوطة أو المشفرة"
+},
+{
+"id": "REA-255",
+"status": "documented",
+"name_en": "REA MCP tool `inspect_python_pyc`: CPython .pyc header and code objects",
+"name_ar": "REA: ترويسة pyc وكائنات الكود بلا بايثون"
 },
 {
 "id": "REA-230",
@@ -12125,7 +12125,7 @@
 "sim": 0.201
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.133
 }
 ]
@@ -15254,7 +15254,7 @@
 "sim": 0.178
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.134
 },
 {
@@ -16650,7 +16650,7 @@
 "sim": 0.196
 },
 {
-"id": "SP-0270",
+"id": "SP-0269",
 "sim": 0.109
 }
 ]
@@ -16857,7 +16857,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.112
+"sim": 0.111
 }
 ]
 },
@@ -17509,7 +17509,7 @@
 "sim": 0.308
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.128
 },
 {
@@ -17965,10 +17965,10 @@
 "size": 19,
 "best": "proven",
 "status_mix": {
-"proven": 15,
-"install": 4
+"proven": 16,
+"install": 3
 },
-"ready_now": 15,
+"ready_now": 16,
 "families": {
 "runnable-tools": 19
 },
@@ -17979,8 +17979,8 @@
 "chromium",
 "node",
 "npm:react",
-"npm:three",
 "npm:gsap",
+"npm:three",
 "npm:remotion"
 ],
 "pipeline": [
@@ -17995,6 +17995,12 @@
 "status": "proven",
 "name_en": "SVG motion engine runtime",
 "name_ar": "محرك حركة SVG"
+},
+{
+"id": "TOOL-81",
+"status": "proven",
+"name_en": "Deterministic HTML-to-MP4 renderer",
+"name_ar": "محوّل حتمي من HTML إلى فيديو MP4"
 },
 {
 "id": "TOOL-77",
@@ -18087,12 +18093,6 @@
 "name_ar": "قالب فيلم HTML Canvas"
 },
 {
-"id": "TOOL-81",
-"status": "install",
-"name_en": "Deterministic HTML-to-MP4 renderer",
-"name_ar": "محوّل حتمي من HTML إلى فيديو MP4"
-},
-{
 "id": "TOOL-84",
 "status": "install",
 "name_en": "Remotion film starter",
@@ -18107,23 +18107,23 @@
 ],
 "twins": [
 [
+"TOOL-81",
+"TOOL-78"
+],
+[
 "TOOL-77",
 "TOOL-80"
 ],
 [
 "TOOL-79",
 "TOOL-82"
-],
-[
-"TOOL-78",
-"TOOL-81"
 ]
 ],
 "distinct_methods": 16,
 "links": [
 {
 "id": "SP-0262",
-"sim": 0.282
+"sim": 0.28
 },
 {
 "id": "SP-0148",
@@ -18131,11 +18131,11 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.219
+"sim": 0.225
 },
 {
 "id": "SP-0266",
-"sim": 0.195
+"sim": 0.196
 }
 ]
 },
@@ -18972,7 +18972,7 @@
 "sim": 0.319
 },
 {
-"id": "SP-0270",
+"id": "SP-0269",
 "sim": 0.238
 },
 {
@@ -19916,11 +19916,11 @@
 "sim": 0.103
 },
 {
-"id": "SP-0278",
-"sim": 0.095
+"id": "SP-0268",
+"sim": 0.1
 },
 {
-"id": "SP-0268",
+"id": "SP-0278",
 "sim": 0.095
 }
 ]
@@ -21962,7 +21962,7 @@
 "sim": 0.319
 },
 {
-"id": "SP-0270",
+"id": "SP-0269",
 "sim": 0.287
 },
 {
@@ -26262,7 +26262,7 @@
 "sim": 0.463
 },
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.314
 },
 {
@@ -27930,7 +27930,7 @@
 "sim": 0.304
 },
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.303
 },
 {
@@ -32762,7 +32762,7 @@
 "sim": 0.227
 },
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.192
 },
 {
@@ -33263,7 +33263,7 @@
 "distinct_methods": 14,
 "links": [
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.216
 },
 {
@@ -34282,10 +34282,10 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.282
+"sim": 0.28
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.175
 },
 {
@@ -34696,7 +34696,7 @@
 "sim": 0.423
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.213
 },
 {
@@ -34709,7 +34709,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.119
+"sim": 0.118
 }
 ]
 },
@@ -35106,7 +35106,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.195
+"sim": 0.196
 }
 ]
 },
@@ -35320,18 +35320,18 @@
 "focus": [
 "mp4",
 "export",
-"webcodecs",
-"ffmpeg"
+"ffmpeg",
+"webcodecs"
 ],
 "size": 17,
 "best": "proven",
 "status_mix": {
-"proven": 3,
+"proven": 2,
 "ready": 4,
-"install": 6,
+"install": 7,
 "documented": 4
 },
-"ready_now": 7,
+"ready_now": 6,
 "families": {
 "engines-render-pipeline": 17
 },
@@ -35340,8 +35340,8 @@
 "ffmpeg",
 "python3",
 "chromium",
-"pip:pillow",
 "node",
+"fonts:arabic",
 "pip:faster-whisper",
 "npm:hyperframes",
 "imagemagick"
@@ -35358,12 +35358,6 @@
 "status": "proven",
 "name_en": "Frame-accurate offline MP4 export (WebCodecs + mp4-muxer)",
 "name_ar": "تصدير MP4 دقيق بلا زمن حقيقي"
-},
-{
-"id": "ENG-23",
-"status": "proven",
-"name_en": "Pillow server-side manifest renderer with ffprobe verification",
-"name_ar": "مصيّر manifest على الخادم بـ Pillow"
 },
 {
 "id": "ENG-90",
@@ -35396,22 +35390,16 @@
 "name_ar": "تصدير MP4 دقيق"
 },
 {
-"id": "ENG-275",
-"status": "install",
-"name_en": "Render to MP4 (HyperFrames CLI or studio engine)",
-"name_ar": "تصيير إلى MP4"
-},
-{
 "id": "ENG-165",
 "status": "install",
 "name_en": "Deterministic Playwright->FFmpeg MP4 export",
 "name_ar": "تصدير MP4 حتمي"
 },
 {
-"id": "ENG-220",
+"id": "ENG-275",
 "status": "install",
-"name_en": "Browser Studio frame-accurate MP4",
-"name_ar": "محرر المتصفح بتصدير دقيق"
+"name_en": "Render to MP4 (HyperFrames CLI or studio engine)",
+"name_ar": "تصيير إلى MP4"
 },
 {
 "id": "ENG-272",
@@ -35420,10 +35408,22 @@
 "name_ar": "التقاط إطارات SVG إلى فيديو"
 },
 {
+"id": "ENG-220",
+"status": "install",
+"name_en": "Browser Studio frame-accurate MP4",
+"name_ar": "محرر المتصفح بتصدير دقيق"
+},
+{
 "id": "ENG-159",
 "status": "install",
 "name_en": "Frame-accurate MP4 render (WebCodecs + mp4-muxer)",
 "name_ar": "ريندر دقيق إطار بإطار"
+},
+{
+"id": "ENG-223",
+"status": "install",
+"name_en": "SVG frame export + ffmpeg encode",
+"name_ar": "تصدير إطارات SVG ثم ترميز MP4"
 },
 {
 "id": "ENG-409",
@@ -35432,16 +35432,16 @@
 "name_ar": "المراجعة: تصدير MP4 بالتعديلات"
 },
 {
-"id": "ENG-P01",
-"status": "documented",
-"name_en": "CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe",
-"name_ar": "مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر"
-},
-{
 "id": "ENG-370",
 "status": "documented",
 "name_en": "Lossless remux / container swap",
 "name_ar": "تغيير الحاوية بدون إعادة ترميز"
+},
+{
+"id": "ENG-P01",
+"status": "documented",
+"name_en": "CineGraph mini scene graph: JSON → Pillow frames → ffmpeg rawvideo pipe",
+"name_ar": "مخطط المشهد المصغّر CineGraph: JSON إلى MP4 بأنبوب مباشر"
 },
 {
 "id": "ENG-376",
@@ -35469,198 +35469,25 @@
 "distinct_methods": 15,
 "links": [
 {
-"id": "SP-0269",
-"sim": 0.323
+"id": "SP-0272",
+"sim": 0.307
 },
 {
 "id": "SP-0140",
-"sim": 0.219
+"sim": 0.225
 },
 {
 "id": "SP-0011",
-"sim": 0.163
+"sim": 0.168
 },
 {
-"id": "SP-0262",
-"sim": 0.141
+"id": "SP-0298",
+"sim": 0.148
 }
 ]
 },
 {
 "id": "SP-0269",
-"domain": "motion",
-"family": "engines-render-pipeline",
-"name_ar": "ترميز GPU بـ NVENC",
-"name_en": "NVENC GPU encode",
-"focus": [
-"encode",
-"nvenc",
-"h.264",
-"gif"
-],
-"size": 16,
-"best": "proven",
-"status_mix": {
-"proven": 4,
-"ready": 1,
-"install": 3,
-"documented": 8
-},
-"ready_now": 5,
-"families": {
-"engines-render-pipeline": 14,
-"formats-platforms": 2
-},
-"atlas_folded": 0,
-"requires": [
-"ffmpeg",
-"gpu",
-"python3",
-"npm:hyperframes",
-"docker",
-"node",
-"fonts:arabic"
-],
-"pipeline": [
-{
-"id": "FMT-20",
-"status": "proven",
-"name_en": "Web-safe H.264 master",
-"name_ar": "ماستر H.264 آمن للويب"
-},
-{
-"id": "ENG-45",
-"status": "proven",
-"name_en": "H.264 encode with untouched audio mux",
-"name_ar": "تشفير H.264 مع دمج الصوت دون تعديل"
-},
-{
-"id": "ENG-27",
-"status": "proven",
-"name_en": "H.264 profile fallback chain",
-"name_ar": "سلسلة احتياط ملف H.264"
-},
-{
-"id": "ENG-25",
-"status": "proven",
-"name_en": "Live recording export (MediaRecorder)",
-"name_ar": "تصدير بالتسجيل المباشر"
-},
-{
-"id": "ENG-101",
-"status": "ready",
-"name_en": "ffmpeg H.264 encode + contact sheet + GIF",
-"name_ar": "تجميع MP4 ولوحة تحقق"
-},
-{
-"id": "ENG-172",
-"status": "install",
-"name_en": "CLI: render",
-"name_ar": "أمر: تصيير"
-},
-{
-"id": "ENG-223",
-"status": "install",
-"name_en": "SVG frame export + ffmpeg encode",
-"name_ar": "تصدير إطارات SVG ثم ترميز MP4"
-},
-{
-"id": "ENG-158",
-"status": "install",
-"name_en": "Fast realtime render (MediaRecorder)",
-"name_ar": "الريندر السريع"
-},
-{
-"id": "FMT-25",
-"status": "documented",
-"name_en": "NVENC GPU encode",
-"name_ar": "ترميز GPU بـ NVENC"
-},
-{
-"id": "ENG-422",
-"status": "documented",
-"name_en": "NVENC encode flags (vendored)",
-"name_ar": "ترميز NVENC"
-},
-{
-"id": "ENG-371",
-"status": "documented",
-"name_en": "Hardware encoder fallback",
-"name_ar": "الترميز بالعتاد مع بديل برمجي"
-},
-{
-"id": "ENG-432",
-"status": "documented",
-"name_en": "Manual ffmpeg encode from frames",
-"name_ar": "ترميز يدوي من الإطارات"
-},
-{
-"id": "ENG-364",
-"status": "documented",
-"name_en": "Trailer encode and GIF loop recipe",
-"name_ar": "وصفة ترميز التريلر وحلقة الجيف"
-},
-{
-"id": "ENG-434",
-"status": "documented",
-"name_en": "Scrub-friendly encode",
-"name_ar": "ترميز مناسب للسحب"
-},
-{
-"id": "ENG-X02",
-"status": "documented",
-"name_en": "Interleaved render workers and a continuity gate",
-"name_ar": "عمال رندر متداخلون وبوابة استمرار"
-},
-{
-"id": "ENG-387",
-"status": "documented",
-"name_en": "Dense-keyframe re-encode for seekable footage",
-"name_ar": "إعادة الترميز بإطارات مفتاحية كثيفة"
-}
-],
-"proof": [
-"kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
-"kosif-studio/film.py:38",
-"kosif-studio/motion/tools.py:42",
-"kosif-tool/playbooks/render-pipeline.md:65"
-],
-"twins": [
-[
-"ENG-25",
-"ENG-158"
-],
-[
-"FMT-25",
-"ENG-422"
-]
-],
-"distinct_methods": 14,
-"links": [
-{
-"id": "SP-0268",
-"sim": 0.323
-},
-{
-"id": "SP-0300",
-"sim": 0.127
-},
-{
-"id": "SP-0298",
-"sim": 0.126
-},
-{
-"id": "SP-0272",
-"sim": 0.107
-},
-{
-"id": "SP-0140",
-"sim": 0.106
-}
-]
-},
-{
-"id": "SP-0270",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "حزمة ثلاثية الأبعاد جاهزة",
@@ -35820,7 +35647,7 @@
 ]
 },
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "ضبابية حركة حقيقية",
@@ -35975,7 +35802,7 @@
 ]
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "التقاط الإطارات عبر متصفح Edge وكارت الشاشة",
@@ -36131,6 +35958,171 @@
 ]
 },
 {
+"id": "SP-0272",
+"domain": "motion",
+"family": "engines-render-pipeline",
+"name_ar": "ترميز GPU بـ NVENC",
+"name_en": "NVENC GPU encode",
+"focus": [
+"encode",
+"nvenc",
+"h.264",
+"gif"
+],
+"size": 15,
+"best": "proven",
+"status_mix": {
+"proven": 4,
+"ready": 1,
+"install": 2,
+"documented": 8
+},
+"ready_now": 5,
+"families": {
+"engines-render-pipeline": 13,
+"formats-platforms": 2
+},
+"atlas_folded": 0,
+"requires": [
+"ffmpeg",
+"gpu",
+"python3",
+"npm:hyperframes",
+"docker"
+],
+"pipeline": [
+{
+"id": "FMT-20",
+"status": "proven",
+"name_en": "Web-safe H.264 master",
+"name_ar": "ماستر H.264 آمن للويب"
+},
+{
+"id": "ENG-45",
+"status": "proven",
+"name_en": "H.264 encode with untouched audio mux",
+"name_ar": "تشفير H.264 مع دمج الصوت دون تعديل"
+},
+{
+"id": "ENG-27",
+"status": "proven",
+"name_en": "H.264 profile fallback chain",
+"name_ar": "سلسلة احتياط ملف H.264"
+},
+{
+"id": "ENG-25",
+"status": "proven",
+"name_en": "Live recording export (MediaRecorder)",
+"name_ar": "تصدير بالتسجيل المباشر"
+},
+{
+"id": "ENG-101",
+"status": "ready",
+"name_en": "ffmpeg H.264 encode + contact sheet + GIF",
+"name_ar": "تجميع MP4 ولوحة تحقق"
+},
+{
+"id": "ENG-172",
+"status": "install",
+"name_en": "CLI: render",
+"name_ar": "أمر: تصيير"
+},
+{
+"id": "ENG-158",
+"status": "install",
+"name_en": "Fast realtime render (MediaRecorder)",
+"name_ar": "الريندر السريع"
+},
+{
+"id": "FMT-25",
+"status": "documented",
+"name_en": "NVENC GPU encode",
+"name_ar": "ترميز GPU بـ NVENC"
+},
+{
+"id": "ENG-422",
+"status": "documented",
+"name_en": "NVENC encode flags (vendored)",
+"name_ar": "ترميز NVENC"
+},
+{
+"id": "ENG-371",
+"status": "documented",
+"name_en": "Hardware encoder fallback",
+"name_ar": "الترميز بالعتاد مع بديل برمجي"
+},
+{
+"id": "ENG-364",
+"status": "documented",
+"name_en": "Trailer encode and GIF loop recipe",
+"name_ar": "وصفة ترميز التريلر وحلقة الجيف"
+},
+{
+"id": "ENG-432",
+"status": "documented",
+"name_en": "Manual ffmpeg encode from frames",
+"name_ar": "ترميز يدوي من الإطارات"
+},
+{
+"id": "ENG-434",
+"status": "documented",
+"name_en": "Scrub-friendly encode",
+"name_ar": "ترميز مناسب للسحب"
+},
+{
+"id": "ENG-X02",
+"status": "documented",
+"name_en": "Interleaved render workers and a continuity gate",
+"name_ar": "عمال رندر متداخلون وبوابة استمرار"
+},
+{
+"id": "ENG-387",
+"status": "documented",
+"name_en": "Dense-keyframe re-encode for seekable footage",
+"name_ar": "إعادة الترميز بإطارات مفتاحية كثيفة"
+}
+],
+"proof": [
+"kosif-atlas/skills/235-mas-video-lab/754-ffmpeg/SKILL.md",
+"kosif-studio/film.py:38",
+"kosif-studio/motion/tools.py:42",
+"kosif-tool/playbooks/render-pipeline.md:65"
+],
+"twins": [
+[
+"ENG-25",
+"ENG-158"
+],
+[
+"FMT-25",
+"ENG-422"
+]
+],
+"distinct_methods": 13,
+"links": [
+{
+"id": "SP-0268",
+"sim": 0.307
+},
+{
+"id": "SP-0300",
+"sim": 0.133
+},
+{
+"id": "SP-0298",
+"sim": 0.11
+},
+{
+"id": "SP-0271",
+"sim": 0.11
+},
+{
+"id": "SP-0156",
+"sim": 0.083
+}
+]
+},
+{
 "id": "SP-0273",
 "domain": "motion",
 "family": "engines-render-pipeline",
@@ -36269,7 +36261,7 @@
 "sim": 0.308
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.293
 },
 {
@@ -36410,7 +36402,7 @@
 "sim": 0.129
 },
 {
-"id": "SP-0142",
+"id": "SP-0140",
 "sim": 0.129
 }
 ]
@@ -36552,6 +36544,151 @@
 },
 {
 "id": "SP-0276",
+"domain": "motion",
+"family": "engines-render-pipeline",
+"name_ar": "فيلم بدون متصفح",
+"name_en": "Workbench Pillow film",
+"focus": [
+"pillow",
+"film",
+"workbench",
+"program"
+],
+"size": 12,
+"best": "proven",
+"status_mix": {
+"proven": 5,
+"ready": 1,
+"install": 4,
+"documented": 2
+},
+"ready_now": 6,
+"families": {
+"engines-render-pipeline": 11,
+"hand-drawn-draw-on": 1
+},
+"atlas_folded": 0,
+"requires": [
+"pip:pillow",
+"ffmpeg",
+"python3",
+"imagemagick",
+"chromium",
+"npm:three"
+],
+"pipeline": [
+{
+"id": "ENG-09",
+"status": "proven",
+"name_en": "workbench no-browser 2D film",
+"name_ar": "فيلم بدون متصفح"
+},
+{
+"id": "DRAW-52",
+"status": "proven",
+"name_en": "Image to standalone Pillow program",
+"name_ar": "صورة إلى برنامج بايثون"
+},
+{
+"id": "ENG-23",
+"status": "proven",
+"name_en": "Pillow server-side manifest renderer with ffprobe verification",
+"name_ar": "مصيّر manifest على الخادم بـ Pillow"
+},
+{
+"id": "ENG-13",
+"status": "proven",
+"name_en": "Pure-function SVG film (no libraries)",
+"name_ar": "فيلم SVG كدالة نقية بلا مكتبات"
+},
+{
+"id": "ENG-19",
+"status": "proven",
+"name_en": "Recipe catalogue as typed forms",
+"name_ar": "كتالوج الوصفات كنماذج"
+},
+{
+"id": "ENG-82",
+"status": "ready",
+"name_en": "Workbench Pillow film",
+"name_ar": "فيلم بدون متصفح"
+},
+{
+"id": "ENG-229",
+"status": "install",
+"name_en": "Browser-free 2D workbench film",
+"name_ar": "فيلم ثنائي الأبعاد بلا متصفح"
+},
+{
+"id": "ENG-277",
+"status": "install",
+"name_en": "Image -> standalone Pillow program",
+"name_ar": "صورة إلى برنامج بايثون"
+},
+{
+"id": "ENG-156",
+"status": "install",
+"name_en": "Motion-kit film builder (11 styles)",
+"name_ar": "بناء فيلم بستايل من المكتبة"
+},
+{
+"id": "ENG-278",
+"status": "install",
+"name_en": "Mimic remake builder",
+"name_ar": "باني النسخة المقلّدة"
+},
+{
+"id": "ENG-X04",
+"status": "documented",
+"name_en": "Song-film render pipeline (seek → JPEG → ffmpeg, song untouched)",
+"name_ar": "خط رندر فيلم الأغنية"
+},
+{
+"id": "ENG-418",
+"status": "documented",
+"name_en": "Web Game Development",
+"name_ar": "ألعاب متصفح كاملة"
+}
+],
+"proof": [
+"100-superskills/skills/kosif-montage-motion/SKILL.md",
+"kosif-studio/tests/test_studio.py:185",
+"100-superskills/skills/pixel-studio-painter/scripts/to_python.py",
+"100-superskills/skills/kosif-montage-motion/scripts/web/wbcompat.py:243"
+],
+"twins": [
+[
+"ENG-09",
+"ENG-82",
+"ENG-229"
+],
+[
+"DRAW-52",
+"ENG-277"
+]
+],
+"distinct_methods": 9,
+"links": [
+{
+"id": "SP-0405",
+"sim": 0.167
+},
+{
+"id": "SP-0140",
+"sim": 0.128
+},
+{
+"id": "SP-0448",
+"sim": 0.118
+},
+{
+"id": "SP-0268",
+"sim": 0.115
+}
+]
+},
+{
+"id": "SP-0277",
 "domain": "motion",
 "family": "engines-render-pipeline",
 "name_ar": "خيار التقنية: canvas",
@@ -36700,145 +36837,6 @@
 ]
 },
 {
-"id": "SP-0277",
-"domain": "motion",
-"family": "engines-render-pipeline",
-"name_ar": "فيلم بدون متصفح",
-"name_en": "workbench no-browser 2D film",
-"focus": [
-"pillow",
-"film",
-"workbench",
-"program"
-],
-"size": 11,
-"best": "proven",
-"status_mix": {
-"proven": 4,
-"ready": 1,
-"install": 4,
-"documented": 2
-},
-"ready_now": 5,
-"families": {
-"engines-render-pipeline": 10,
-"hand-drawn-draw-on": 1
-},
-"atlas_folded": 0,
-"requires": [
-"pip:pillow",
-"ffmpeg",
-"python3",
-"imagemagick",
-"chromium",
-"npm:three"
-],
-"pipeline": [
-{
-"id": "ENG-09",
-"status": "proven",
-"name_en": "workbench no-browser 2D film",
-"name_ar": "فيلم بدون متصفح"
-},
-{
-"id": "DRAW-52",
-"status": "proven",
-"name_en": "Image to standalone Pillow program",
-"name_ar": "صورة إلى برنامج بايثون"
-},
-{
-"id": "ENG-13",
-"status": "proven",
-"name_en": "Pure-function SVG film (no libraries)",
-"name_ar": "فيلم SVG كدالة نقية بلا مكتبات"
-},
-{
-"id": "ENG-19",
-"status": "proven",
-"name_en": "Recipe catalogue as typed forms",
-"name_ar": "كتالوج الوصفات كنماذج"
-},
-{
-"id": "ENG-82",
-"status": "ready",
-"name_en": "Workbench Pillow film",
-"name_ar": "فيلم بدون متصفح"
-},
-{
-"id": "ENG-229",
-"status": "install",
-"name_en": "Browser-free 2D workbench film",
-"name_ar": "فيلم ثنائي الأبعاد بلا متصفح"
-},
-{
-"id": "ENG-277",
-"status": "install",
-"name_en": "Image -> standalone Pillow program",
-"name_ar": "صورة إلى برنامج بايثون"
-},
-{
-"id": "ENG-156",
-"status": "install",
-"name_en": "Motion-kit film builder (11 styles)",
-"name_ar": "بناء فيلم بستايل من المكتبة"
-},
-{
-"id": "ENG-278",
-"status": "install",
-"name_en": "Mimic remake builder",
-"name_ar": "باني النسخة المقلّدة"
-},
-{
-"id": "ENG-X04",
-"status": "documented",
-"name_en": "Song-film render pipeline (seek → JPEG → ffmpeg, song untouched)",
-"name_ar": "خط رندر فيلم الأغنية"
-},
-{
-"id": "ENG-418",
-"status": "documented",
-"name_en": "Web Game Development",
-"name_ar": "ألعاب متصفح كاملة"
-}
-],
-"proof": [
-"100-superskills/skills/kosif-montage-motion/SKILL.md",
-"kosif-studio/tests/test_studio.py:185",
-"100-superskills/skills/pixel-studio-painter/scripts/to_python.py",
-"100-superskills/skills/kosif-montage-motion/scripts/projects/midnight_cat/assets/scene.js:124"
-],
-"twins": [
-[
-"ENG-09",
-"ENG-82",
-"ENG-229"
-],
-[
-"DRAW-52",
-"ENG-277"
-]
-],
-"distinct_methods": 8,
-"links": [
-{
-"id": "SP-0405",
-"sim": 0.175
-},
-{
-"id": "SP-0268",
-"sim": 0.13
-},
-{
-"id": "SP-0140",
-"sim": 0.13
-},
-{
-"id": "SP-0303",
-"sim": 0.126
-}
-]
-},
-{
 "id": "SP-0278",
 "domain": "motion",
 "family": "engines-render-pipeline",
@@ -36959,7 +36957,7 @@
 },
 {
 "id": "SP-0187",
-"sim": 0.18
+"sim": 0.181
 },
 {
 "id": "SP-0361",
@@ -37589,7 +37587,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.103
+"sim": 0.102
 }
 ]
 },
@@ -37810,7 +37808,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.103
+"sim": 0.102
 }
 ]
 },
@@ -37909,10 +37907,10 @@
 },
 {
 "id": "SP-0268",
-"sim": 0.109
+"sim": 0.11
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.104
 },
 {
@@ -38480,7 +38478,7 @@
 "sim": 0.101
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.09
 }
 ]
@@ -39166,15 +39164,15 @@
 "links": [
 {
 "id": "SP-0268",
-"sim": 0.136
+"sim": 0.148
 },
 {
 "id": "SP-0140",
 "sim": 0.131
 },
 {
-"id": "SP-0269",
-"sim": 0.126
+"id": "SP-0272",
+"sim": 0.11
 },
 {
 "id": "SP-0453",
@@ -39418,7 +39416,7 @@
 },
 {
 "id": "SP-0329",
-"sim": 0.234
+"sim": 0.235
 },
 {
 "id": "SP-0156",
@@ -40865,7 +40863,7 @@
 "sim": 0.186
 },
 {
-"id": "SP-0276",
+"id": "SP-0277",
 "sim": 0.166
 },
 {
@@ -42548,7 +42546,7 @@
 },
 {
 "id": "SP-0300",
-"sim": 0.163
+"sim": 0.164
 }
 ]
 },
@@ -43155,7 +43153,7 @@
 },
 {
 "id": "SP-0422",
-"sim": 0.455
+"sim": 0.454
 },
 {
 "id": "SP-0328",
@@ -43650,7 +43648,7 @@
 },
 {
 "id": "SP-0300",
-"sim": 0.234
+"sim": 0.235
 }
 ]
 },
@@ -45471,7 +45469,7 @@
 },
 {
 "id": "SP-0422",
-"sim": 0.118
+"sim": 0.117
 },
 {
 "id": "SP-0442",
@@ -47484,7 +47482,7 @@
 "sim": 0.169
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.132
 },
 {
@@ -48928,7 +48926,7 @@
 "distinct_methods": 21,
 "links": [
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.389
 },
 {
@@ -48945,7 +48943,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.167
+"sim": 0.168
 }
 ]
 },
@@ -49508,7 +49506,7 @@
 "sim": 0.234
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.225
 },
 {
@@ -49964,7 +49962,7 @@
 "distinct_methods": 14,
 "links": [
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.344
 },
 {
@@ -52090,11 +52088,11 @@
 "sim": 0.081
 },
 {
-"id": "SP-0276",
+"id": "SP-0277",
 "sim": 0.079
 },
 {
-"id": "SP-0270",
+"id": "SP-0269",
 "sim": 0.073
 },
 {
@@ -53466,8 +53464,8 @@
 "distinct_methods": 33,
 "links": [
 {
-"id": "SP-0277",
-"sim": 0.175
+"id": "SP-0276",
+"sim": 0.167
 },
 {
 "id": "SP-0306",
@@ -53891,7 +53889,7 @@
 "sim": 0.223
 },
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.191
 },
 {
@@ -54467,7 +54465,7 @@
 "sim": 0.12
 },
 {
-"id": "SP-0276",
+"id": "SP-0277",
 "sim": 0.109
 },
 {
@@ -56131,7 +56129,7 @@
 "links": [
 {
 "id": "SP-0326",
-"sim": 0.455
+"sim": 0.454
 },
 {
 "id": "SP-0439",
@@ -58150,7 +58148,7 @@
 "sim": 0.463
 },
 {
-"id": "SP-0271",
+"id": "SP-0270",
 "sim": 0.321
 },
 {
@@ -59827,7 +59825,7 @@
 },
 {
 "id": "SP-0422",
-"sim": 0.127
+"sim": 0.128
 },
 {
 "id": "SP-0400",
@@ -59981,8 +59979,8 @@
 "sim": 0.173
 },
 {
-"id": "SP-0277",
-"sim": 0.125
+"id": "SP-0276",
+"sim": 0.118
 },
 {
 "id": "SP-0203",
@@ -63852,7 +63850,7 @@
 },
 {
 "id": "SP-0148",
-"sim": 0.213
+"sim": 0.214
 },
 {
 "id": "SP-0452",
@@ -63963,7 +63961,7 @@
 "links": [
 {
 "id": "SP-0156",
-"sim": 0.282
+"sim": 0.281
 },
 {
 "id": "SP-0477",
@@ -63971,7 +63969,7 @@
 },
 {
 "id": "SP-0377",
-"sim": 0.262
+"sim": 0.263
 },
 {
 "id": "SP-0331",
@@ -64048,7 +64046,7 @@
 "sim": 0.128
 },
 {
-"id": "SP-0272",
+"id": "SP-0271",
 "sim": 0.113
 },
 {

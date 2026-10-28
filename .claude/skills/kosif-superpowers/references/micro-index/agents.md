@@ -62,9 +62,9 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0140 Audio-timed SVG motion compiler | python3 |
 | TOOL-79 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `verify-video` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3 |
 | TOOL-80 | ✅ | محلّل نسب العرض المرن · Flexible aspect ratio resolver → `repo-aspects` | SP-0140 Audio-timed SVG motion compiler | python3 |
+| TOOL-81 | ✅ | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
 | TOOL-82 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `repo-verify-video` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3 |
 | TOOL-78 | 📦 | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-81 | 📦 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
 | TOOL-83 | 📦 | قالب فيلم HTML Canvas · HTML Canvas film starter → `starter-html-canvas` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
 | TOOL-84 | 📦 | قالب فيلم Remotion · Remotion film starter → `starter-remotion` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, npm:remotion, npm:react |
 | TOOL-115 | ✅ | الرسم الموحد: خطوط وأشكال وطبقات وتصدير · Unified Draw: freehand + geometry + layered export → `unified-draw` | SP-0141 Staged drawing and original three-value… | ffmpeg, pip:pillow |

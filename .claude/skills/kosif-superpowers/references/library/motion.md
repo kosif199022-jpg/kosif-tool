@@ -86,13 +86,15 @@
 | `repo-import-briefs` | استيراد الملفات الإبداعية | `python3 tools/import_briefs.py ./briefs/` | untested |
 | `repo-kosif` | أداة سطر أوامر لأطلس أنماط KOSIF | `python3 tools/kosif.py list --category charts --limit 10` | tested-here |
 | `repo-overlap-rig` | فاحص ريج الكاميرا المتداخلة | `python3 tools/overlap_rig.py graphs` | tested-here |
-| `repo-render-html` | محوّل حتمي من HTML إلى فيديو MP4 | `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3` | tested-elsewhere |
+| `repo-render-html` | محوّل حتمي من HTML إلى فيديو MP4 | `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3` | tested-here |
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
 | `script-storyboard` | من السيناريو إلى الستوري بورد والأنيماتك | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90` | tested-here |
+| `source-finder` | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي | `python3 scripts/source_finder.py doctor` | tested-here |
 | `starter-html-canvas` | قالب فيلم HTML Canvas | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `stock-fetch` | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) | `python3 scripts/stock_fetch.py probe` | tested-here |
 | `stream-grabber` | ملتقط بث DASH وHLS للمونتاج | `python3 scripts/stream_grabber.py find ./saved-page.html` | tested-here |
 | `style-atlas-bridge` | أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح | `python3 scripts/style_atlas_bridge.py families` | tested-here |
+| `tiktok-photo` | تحميل بوست صور تيك توك (سلايد شو) | `python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post` | tested-here |
 | `unified-cinematic` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `verify-video` | بوابة فحص تسليم الفيديو | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --duration 15 --json ./out/report.json` | tested-here |
 | `video-workflow-bridge` | جسر سير عمل الفيديو | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |

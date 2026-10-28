@@ -18,14 +18,14 @@
   "powers": 5853,
   "families": 62,
   "domains": 10,
-  "tools": 188,
+  "tools": 190,
   "guides": 117,
   "statuses": {
    "documented": 2325,
    "idea": 71,
-   "install": 980,
+   "install": 979,
    "key": 176,
-   "proven": 1019,
+   "proven": 1020,
    "ready": 673,
    "seen": 609
   }
@@ -892,8 +892,8 @@
    "title_en": "Runnable KOSIF tools",
    "count": 174,
    "statuses": {
-    "install": 12,
-    "proven": 142,
+    "install": 11,
+    "proven": 143,
     "ready": 20
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -3927,8 +3927,8 @@
    "area": "motion",
    "title_en": "HTML to MP4 renderer",
    "title_ar": "محوّل HTML إلى فيديو MP4",
-   "summary_en": "The skill's bundled copy of KOSIF's deterministic HTML-to-MP4 renderer: it captures a local or http HTML film frame by frame in headless Chromium (through window.__kosif.seek(t) or Chromium virtual time), encodes H.264 with ffmpeg, optionally muxes untouched audio and checks fps, frames, duration, size and audio with ffprobe, or with --preview makes an 8-frame contact sheet instead.",
-   "summary_ar": "نسخة مضمّنة في المهارة من عارض KOSIF الحتمي لتحويل HTML إلى MP4: يلتقط فيلم HTML محليًا أو عبر رابط http إطارًا بإطار في Chromium بلا واجهة (عبر window.__kosif.seek(t) أو الزمن الافتراضي في Chromium)، ويرمّزه بصيغة H.264 عبر ffmpeg، ويدمج الصوت اختياريًا دون تعديله، ثم يتحقق بـ ffprobe من معدل الإطارات وعددها والمدة والأبعاد والصوت، أو يصنع بالخيار ‎--preview لوحة معاينة من 8 إطارات بدل الفيديو.",
+   "summary_en": "The skill's bundled copy of KOSIF's deterministic HTML-to-MP4 renderer: it captures a local or http HTML film frame by frame in headless Chromium (through window.__kosif.seek(t) or Chromium virtual time), encodes H.264 with ffmpeg, optionally muxes untouched audio and checks fps, frames, duration, size and audio with ffprobe, or with --preview makes an 8-frame contact sheet instead. Before the first frame it checks that the frames folder's disk can hold the PNG frames (frames x width x height x 1.7 bytes + 10%), lists kosif-frames-* temp folders older than 6 h left by killed renders (--clean-stale deletes them) and removes its own temp frames on SIGINT, SIGTERM and SIGHUP.",
+   "summary_ar": "نسخة مضمّنة في المهارة من عارض KOSIF الحتمي لتحويل HTML إلى MP4: يلتقط فيلم HTML محليًا أو عبر رابط http إطارًا بإطار في Chromium بلا واجهة (عبر window.__kosif.seek(t) أو الزمن الافتراضي في Chromium)، ويرمّزه بصيغة H.264 عبر ffmpeg، ويدمج الصوت اختياريًا دون تعديله، ثم يتحقق بـ ffprobe من معدل الإطارات وعددها والمدة والأبعاد والصوت، أو يصنع بالخيار ‎--preview لوحة معاينة من 8 إطارات بدل الفيديو. وقبل أول إطار يتحقق من أن قرص مجلد الإطارات يتّسع لصور PNG (عدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10%)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP.",
    "use_when": [
     "حوّل ملف film.html لفيديو MP4 مع التعليق الصوتي",
     "اعمل لي معاينة سريعة للأنيميشن قبل الرندر النهائي",
@@ -3958,7 +3958,7 @@
     {
      "name": "render",
      "example": "node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --fps 30 --audio ./voice.wav",
-     "does": "Renders every frame (seek mode if window.__kosif exists, otherwise it relaunches in virtual mode), encodes libx264 CRF 18 yuv420p, muxes the audio as AAC 192k padded to the video length, then prints a 'VERIFY OK|FAIL' line from ffprobe. Exits 3 on a mismatch."
+     "does": "Renders every frame (seek mode if window.__kosif exists, otherwise it relaunches in virtual mode) after checking that the frames fit on disk, encodes libx264 CRF 17 yuv420p, stream-copies AAC/MP3/ALAC audio (other codecs become AAC 320k padded to the video length, never retimed), then prints a 'VERIFY OK|FAIL' line from ffprobe. Exits 3 on a mismatch."
     },
     {
      "name": "preview",
@@ -3973,11 +3973,11 @@
     {
      "name": "help",
      "example": "node resources/motion-runtime/render_html.cjs --help",
-     "does": "Prints every option (--aspect, --width, --height, --fps, --duration, --start, --audio, --mode, --preview, --frames-dir, --keep-frames, --crf, --scale, --seed, --offline, --timeout, --settle) and the exit codes."
+     "does": "Prints every option (--aspect, --width, --height, --fps, --duration, --start, --audio, --mode, --preview, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout, --settle) and the exit codes."
     }
    ],
    "inputs": "A local .html file or an http(s) URL. In seek mode the page exposes window.__kosif = {duration, seek(t)} (and optionally window.__kosifReady); otherwise --duration is required. Optional audio file. Options: --aspect (9:16, 16:9, 4:5, 21:9, WxH or a name such as reel/square/cinema), --start for a partial render, fps, crf, scale, seed and others.",
-   "outputs": "An H.264 MP4 at --out (or <out-stem>_preview.png with --preview) and a VERIFY line with duration, fps, frames, size and audio. PNG frames go to --frames-dir if given, otherwise to a temp dir that is deleted unless --keep-frames is set. Exit codes: 0 ok, 1 usage, 2 render/encode failure, 3 ffprobe mismatch.",
+   "outputs": "An H.264 MP4 at --out (or <out-stem>_preview.png with --preview) and a VERIFY line with duration, fps, frames, size and audio. PNG frames go to --frames-dir if given, otherwise to a kosif-frames-* temp dir that is deleted at the end, on errors and on SIGINT/SIGTERM/SIGHUP unless --keep-frames is set. Exit codes: 0 ok, 1 usage, 2 render/encode failure or not enough disk space, 3 ffprobe mismatch, 130/143/129 stopped by a signal.",
    "requires": {
     "python": [],
     "binaries": [
@@ -3993,10 +3993,10 @@
     "network": true
    },
    "safety": "network",
-   "consent": "An http(s) --in URL, or a page that loads remote assets, contacts the network (use --offline to block it). It runs the page's own scripts in headless Chromium, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_######.png, preview_raw_NN.png and preview_tile_NN.png files in that folder.",
-   "limits": "Verifies only container metrics (fps, frame count, duration, size, audio presence), not visual or creative correctness, and it installs nothing, so Playwright Chromium and ffmpeg/ffprobe must already be present.",
+   "consent": "An http(s) --in URL, or a page that loads remote assets, contacts the network (use --offline to block it). It runs the page's own scripts in headless Chromium, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_######.png, preview_raw_NN.png and preview_tile_NN.png files in that folder. --clean-stale permanently deletes kosif-frames-* temp folders older than 6 h, including ones kept with --keep-frames.",
+   "limits": "Verifies only container metrics (fps, frame count, duration, size, audio presence), not visual or creative correctness, and it installs nothing, so Playwright Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate made once before the first frame, and a SIGKILL cannot be caught, so such a render's temp folder stays until --clean-stale removes it after 6 h.",
    "evidence": "tested-elsewhere",
-   "evidence_note": "No test in evals/ or tests/ executes this bundled copy. evals/test_motion_runtime.py mocks the render and, in a full repo, points at tools/render_html.cjs. Checked here: --help exits 0, and a missing --in file gives a usage error with exit 1. No render was run.",
+   "evidence_note": "No test in evals/ or tests/ executes this bundled copy. evals/test_motion_runtime.py mocks the render and, in a full repo, points at tools/render_html.cjs. Checked here: --help exits 0, and a missing --in file gives a usage error with exit 1. No render was run. It is byte-identical to tools/render_html.cjs (evals/test_hub.py BundledCopiesTest), whose disk guard tests/test_render_html_disk.mjs exercises without a browser.",
    "tests": [],
    "docs": [
     ".claude/skills/kosif-superpowers/references/motion-runtime.md",
@@ -4202,15 +4202,17 @@
    "area": "motion",
    "title_en": "Deterministic HTML-to-MP4 renderer",
    "title_ar": "محوّل حتمي من HTML إلى فيديو MP4",
-   "summary_en": "Renders a local or http HTML film frame by frame in headless Chromium (Playwright), driving the page through window.__kosif.seek(t) or, for any CSS/WAAPI/rAF/GSAP page, through paused Chromium virtual time. It encodes H.264 yuv420p with ffmpeg, can mux a supplied audio track re-encoded as AAC 192k without resampling or retiming it, and checks fps, frame count, duration, size and audio presence with ffprobe. With --preview it writes an 8-frame contact-sheet PNG instead of a video.",
-   "summary_ar": "يحوّل فيلم HTML محليًا أو عبر رابط http إلى فيديو إطارًا بإطار داخل متصفح Chromium بلا واجهة (Playwright)، إما بالدالة window.__kosif.seek(t) في الصفحة، وإما بإيقاف الزمن الافتراضي للمتصفح وتقديمه خطوة خطوة لأي صفحة تعتمد CSS أو WAAPI أو requestAnimationFrame أو GSAP. ثم يرمّز الإطارات بصيغة H.264 ‏yuv420p عبر ffmpeg، ويدمج الصوت المرفق بعد ترميزه AAC بمعدل 192k دون إعادة أخذ العينات أو تغيير توقيته، ويتحقق عبر ffprobe من معدل الإطارات وعددها والمدة والأبعاد ووجود الصوت. ومع ‎--preview يُخرج لوحة PNG من ثمانية إطارات بدلًا من الفيديو.",
+   "summary_en": "Renders a local or http HTML film frame by frame in headless Chromium (Playwright), driving the page through window.__kosif.seek(t) or, for any CSS/WAAPI/rAF/GSAP page, through paused Chromium virtual time. It encodes H.264 yuv420p with ffmpeg, muxes a supplied audio track without resampling or retiming it (AAC, MP3 and ALAC are stream-copied, other codecs become AAC 320k) and checks fps, frame count, duration, size and audio presence with ffprobe. With --preview it writes an 8-frame contact-sheet PNG instead of a video. A disk guard stops the render before the first frame when the frames folder's disk cannot hold frames x width x height x 1.7 bytes + 10% (after what other running renders still have to write), lists kosif-frames-* temp folders older than 6 h that killed renders left behind (--clean-stale deletes them), and removes its own temp frames on SIGINT, SIGTERM and SIGHUP (exit 130/143/129).",
+   "summary_ar": "يحوّل فيلم HTML محليًا أو عبر رابط http إلى فيديو إطارًا بإطار داخل متصفح Chromium بلا واجهة (Playwright)، إما بالدالة window.__kosif.seek(t) في الصفحة، وإما بإيقاف الزمن الافتراضي للمتصفح وتقديمه خطوة خطوة لأي صفحة تعتمد CSS أو WAAPI أو requestAnimationFrame أو GSAP. ثم يرمّز الإطارات بصيغة H.264 ‏yuv420p عبر ffmpeg، ويدمج الصوت المرفق دون إعادة أخذ العينات أو تغيير توقيته (يُنسخ AAC وMP3 وALAC كما هي، وما سواها يُرمَّز AAC بمعدل 320k)، ويتحقق عبر ffprobe من معدل الإطارات وعددها والمدة والأبعاد ووجود الصوت. ومع ‎--preview يُخرج لوحة PNG من ثمانية إطارات بدلًا من الفيديو. ويحمي القرص: يتوقف قبل أول إطار إذا لم يتّسع قرص مجلد الإطارات لعدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10% (بعد حساب ما ستكتبه عمليات رندر أخرى جارية)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP ويخرج بالرمز 130 أو 143 أو 129.",
    "use_when": [
     "حوّل صفحة الأنيميشن HTML لفيديو MP4 مع الصوت الأصلي",
     "اعمل لي معاينة إطارات قبل الرندر النهائي",
     "رندر الستارتر html-canvas بمقاس ريلز 9:16 و30 فريم",
     "render this GSAP/CSS animation page to a 30 fps MP4",
     "make a contact-sheet preview of my HTML film before the final render",
-    "render only seconds 4 to 7 at half size for a motion check"
+    "render only seconds 4 to 7 at half size for a motion check",
+    "الرندر وقف لأن القرص امتلأ (Unable to capture screenshot)، نظّف مجلدات الإطارات القديمة وأعد المحاولة",
+    "clean up the kosif-frames temp folders left by killed renders before a long render"
    ],
    "keywords": [
     "html to mp4",
@@ -4226,13 +4228,18 @@
     "معاينة إطارات",
     "دمج الصوت",
     "فيديو حتمي",
-    "موشن جرافيك"
+    "موشن جرافيك",
+    "disk space",
+    "مساحة القرص",
+    "kosif-frames",
+    "Unable to capture screenshot",
+    "clean-stale"
    ],
    "commands": [
     {
      "name": "render",
      "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3",
-     "does": "Full render: seek mode when window.__kosif exists, otherwise it relaunches in virtual mode. Muxes the audio as AAC 192k (apad + -shortest, no retiming) and prints an ffprobe 'VERIFY OK/FAIL' line; exit 3 means the output disagrees with the request."
+     "does": "Full render: seek mode when window.__kosif exists, otherwise it relaunches in virtual mode. It first checks that the frames fit on the frames folder's disk, then muxes the audio (AAC/MP3/ALAC stream-copied and trimmed at the last frame, other codecs AAC 320k with apad + -shortest, never retimed) and prints an ffprobe 'VERIFY OK/FAIL' line; exit 3 means the output disagrees with the request."
     },
     {
      "name": "preview",
@@ -4252,16 +4259,26 @@
     {
      "name": "frames-dir",
      "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --frames-dir ./out/frames",
-     "does": "Writes and keeps the PNG frames (frame_000000.png …) in the given folder after deleting older frame_NNNNNN.png and preview_raw/tile_NN.png files there; --keep-frames instead keeps the temporary folder."
+     "does": "Writes and keeps the PNG frames (frame_000000.png …) in the given folder after deleting older frame_NNNNNN.png and preview_raw/tile_NN.png files there; --keep-frames instead keeps the temporary folder. Point it at a bigger disk when the space check says the temp folder's disk is too small (about 3.7 MB per 1080x1920 frame)."
+    },
+    {
+     "name": "clean-stale",
+     "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --clean-stale",
+     "does": "Before rendering, deletes the kosif-frames-* folders in the temp folder (os.tmpdir(), usually /tmp) that this user owns, that were not modified for 6 h and whose render is no longer running. Without the flag every render only lists them with their sizes on stderr. The folder this render uses is never touched."
+    },
+    {
+     "name": "no-space-check",
+     "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --no-space-check",
+     "does": "Skips the free-space pre-flight. By default a render that does not fit exits 2 before the first frame and prints how much it needs, how much is free and the remedies (--frames-dir, freeing space, a shorter --start/--duration range)."
     },
     {
      "name": "help",
      "example": "node tools/render_html.cjs --help",
-     "does": "Prints the options and exit codes (0 ok, 1 usage, 2 render or encode failure, 3 ffprobe disagrees). Note: `-h` is not recognised and exits 1 with a usage error."
+     "does": "Prints the options and exit codes (0 ok, 1 usage, 2 render or encode failure or not enough disk space, 3 ffprobe disagrees, 130/143/129 stopped by SIGINT/SIGTERM/SIGHUP); -h does the same."
     }
    ],
-   "inputs": "--in takes a local .html file or an http(s) URL; --out takes an output .mp4 path. Optional: --aspect (W:H, WxH or a limited set of English names), --width/--height in CSS px, --fps, --duration (seek mode can read window.__kosif.duration), --start, --audio <file>, --mode seek|virtual, --preview, --frames-dir, --keep-frames, --crf, --scale, --seed, --offline, --timeout and --settle. Seek-mode pages expose window.__kosif = {duration, seek(t)} and an optional window.__kosifReady promise.",
-   "outputs": "An H.264 yuv420p MP4 with +faststart (AAC 192k when --audio is given), or a contact-sheet PNG named <out-basename>_preview.png in preview mode. It prints progress, a 'VERIFY OK|FAIL duration= fps= frames= size= audio=' line and up to 10 page console errors. Temporary frames are deleted unless --frames-dir or --keep-frames is given.",
+   "inputs": "--in takes a local .html file or an http(s) URL; --out takes an output .mp4 path. Optional: --aspect (W:H, WxH or a limited set of English names), --width/--height in CSS px, --fps, --duration (seek mode can read window.__kosif.duration), --start, --audio <file>, --mode seek|virtual, --preview, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout and --settle. Seek-mode pages expose window.__kosif = {duration, seek(t)} and an optional window.__kosifReady promise.",
+   "outputs": "An H.264 yuv420p MP4 with +faststart (audio stream-copied when MP4 can hold it, otherwise AAC 320k), or a contact-sheet PNG named <out-basename>_preview.png in preview mode. It prints a 'disk:' line (estimated frame bytes and free space), progress, a 'VERIFY OK|FAIL duration= fps= frames= size= audio=' line and up to 10 page console errors; stale kosif-frames-* folders are listed on stderr. Temporary frames are deleted at the end, on errors and on SIGINT/SIGTERM/SIGHUP unless --frames-dir or --keep-frames is given.",
    "requires": {
     "python": [],
     "binaries": [
@@ -4279,11 +4296,14 @@
     "network": true
    },
    "safety": "network",
-   "consent": "An http(s) --in URL, or a page that loads remote assets, contacts the network (the html-canvas starter loads Google Fonts); --offline blocks this. It runs the page's own scripts in headless Chromium with HTTPS errors ignored, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_NNNNNN.png and preview_raw/tile_NN.png files in that folder.",
-   "limits": "It verifies only container metrics (fps, frame count, duration, size, audio presence), not whether the visuals are right, and it installs nothing: Playwright, its Chromium and ffmpeg/ffprobe must already be present.",
-   "evidence": "tested-elsewhere",
-   "evidence_note": "Not run: no test renders with tools/render_html.cjs; skill evals test_hub.BundledCopiesTest only checks it is byte-identical to the skill copy (1/1 passed). Here --help (exit 0) and the usage-error paths were checked with a non-existent --in; every draft example's flags parse. No render was performed.",
-   "tests": [],
+   "consent": "An http(s) --in URL, or a page that loads remote assets, contacts the network (the html-canvas starter loads Google Fonts); --offline blocks this. It runs the page's own scripts in headless Chromium with HTTPS errors ignored, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_NNNNNN.png and preview_raw/tile_NN.png files in that folder. --clean-stale permanently deletes kosif-frames-* temp folders older than 6 h, including ones kept earlier with --keep-frames.",
+   "limits": "It verifies only container metrics (fps, frame count, duration, size, audio presence), not whether the visuals are right, and it installs nothing: Playwright, its Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate (1.7 bytes per pixel + 10%; very noisy frames can be larger) taken once before the first frame, and it only knows about other renders that write to this version's temp folders, not --frames-dir renders or other programs. SIGKILL and the out-of-memory killer cannot be caught, so their temp folders stay until --clean-stale removes them after 6 h; a signal that arrives during the ffmpeg encode is handled when ffmpeg returns. Without fs.statfsSync (Node older than 18.15) the space check is skipped with a warning.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_render_html.mjs 6/6 and tests/test_render_html_disk.mjs 9/9 passed on 2026-10-28; neither launches a browser (CLI parsing, aspect table, space estimate and verdict, stale-folder selection and --clean-stale, signal cleanup in a child process, and the out-of-space stop through the CLI, which skips without ffmpeg and the Playwright package). Also run by hand on this checkout: a 1 s 270x480 seek render of starters/html-canvas (VERIFY OK), an 8-frame preview, SIGTERM/SIGINT/SIGHUP during real renders (exit 143/130/129, temp folder removed, no Chromium left) and a second render refused while a first one was running. CI has no Playwright, so CI never renders.",
+   "tests": [
+    "tests/test_render_html.mjs",
+    "tests/test_render_html_disk.mjs"
+   ],
    "docs": [
     "tools/render_html.md",
     "playbooks/render-pipeline.md",
@@ -8073,6 +8093,94 @@
     "formats-platforms"
    ],
    "power_id": "TOOL-173"
+  },
+  {
+   "id": "tiktok-photo",
+   "path": "scripts/tiktok_photo.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "TikTok photo-post (slideshow) downloader",
+   "title_ar": "تحميل بوست صور تيك توك (سلايد شو)",
+   "summary_en": "Downloads a TikTok photo post, which yt-dlp rejects with \"Unsupported URL .../photo/<id>\": it resolves a vt.tiktok.com or vm.tiktok.com short link by following redirects, fetches the /@user/photo/<id> page with a mobile Safari User-Agent, reads the JSON in <script id=\"__UNIVERSAL_DATA_FOR_REHYDRATION__\"> (itemStruct: desc, author, music, imagePost.images with sizes), saves every image as img00.jpg, img01.jpg ... (atomic writes, mirror links, resumable), gets the post's sound with yt-dlp -f ba on the rewritten /video/<id> link, and writes meta.json with author, desc, music, source link, image sizes and a credit line. parse and url work offline on a saved page or a link.",
+   "summary_ar": "ينزّل بوست الصور في تيك توك اللي yt-dlp بيرفضه (Unsupported URL .../photo/): يفك الرابط المختصر vt.tiktok.com بتتبع التحويلات، ويفتح صفحة البوست بهوية متصفح سفاري للموبايل، ويقرأ بيانات JSON المضمّنة في الصفحة (الوصف والحساب والصوت وروابط الصور ومقاساتها)، ويحفظ كل صورة img00.jpg و img01.jpg وهكذا (كتابة آمنة واستكمال لو التحميل اتقطع)، ويجيب صوت البوست بـ yt-dlp من رابط /video/ المقابل، ويكتب meta.json فيه الحساب والوصف والصوت والرابط والمقاسات وسطر نسب الحقوق. وأمرا parse و url يشتغلوا من غير إنترنت على صفحة محفوظة أو رابط.",
+   "use_when": [
+    "نزّل صور البوست ده من تيك توك https://vt.tiktok.com/XXXXXXX/",
+    "yt-dlp بيقول Unsupported URL على رابط تيك توك فيه /photo/",
+    "عايز صور السلايد شو بتاعة تيك توك وصوتها",
+    "Download the images of this TikTok photo slideshow",
+    "yt-dlp says Unsupported URL for a TikTok /photo/ link",
+    "Get the slides and the sound from a TikTok photo post"
+   ],
+   "keywords": [
+    "tiktok",
+    "tik tok",
+    "photo post",
+    "slideshow",
+    "carousel",
+    "photo mode",
+    "images",
+    "unsupported url",
+    "vt.tiktok.com",
+    "short link",
+    "yt-dlp",
+    "download",
+    "تيك توك",
+    "تيكتوك",
+    "بوست صور",
+    "سلايد شو",
+    "صور",
+    "تحميل",
+    "رابط مختصر"
+   ],
+   "commands": [
+    {
+     "name": "fetch",
+     "example": "python3 scripts/tiktok_photo.py fetch \"https://vt.tiktok.com/XXXXXXX/\" --out out/tiktok/post",
+     "does": "Network: resolves the link, saves img00.jpg ..., audio.<ext> (yt-dlp -f ba on the /video/ link) and meta.json; exit 2 on a partial download (rerun to resume), 3 for a video post (use yt-dlp), 4 when the page JSON is missing. --html uses a page saved on your device, --no-audio skips the sound."
+    },
+    {
+     "name": "parse",
+     "example": "python3 scripts/tiktok_photo.py parse evals/fixtures/tiktok_photo_minimal.html",
+     "does": "Offline: prints the post JSON extracted from a saved page (author, desc, music, image links and sizes, the /photo/ and /video/ links)."
+    },
+    {
+     "name": "url",
+     "example": "python3 scripts/tiktok_photo.py url \"https://www.tiktok.com/@user/photo/7400000000000000001\"",
+     "does": "Offline: classifies a link (photo, video, short, other) and prints its /photo/ and /video/ forms without the tracking query."
+    }
+   ],
+   "safe_commands": [
+    "parse",
+    "url"
+   ],
+   "inputs": "A TikTok photo-post link (www.tiktok.com/@user/photo/<id>) or a vt.tiktok.com / vm.tiktok.com / tiktok.com/t/ short link; optionally a saved copy of the post page (--html).",
+   "outputs": "<out>/img00.jpg, img01.jpg ... (extension follows the real file type), <out>/audio.<ext> from yt-dlp, and <out>/meta.json (kosif.tiktok_photo.v1: author, desc, music, source and resolved links, image sizes, bytes and sha256, failed images, credit and rights lines).",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "pip:yt-dlp"
+    ],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "It downloads a third-party creator's post: confirm the user owns it, has the creator's permission or a licence, or keeps it as private reference only; keep the credit line and link the post. It sends no cookies or login and writes only into --out.",
+   "limits": "TikTok's page structure can change without notice (the tool then stops with a clear error, exit 4); private, removed, region-locked or login-walled posts fail, some networks block tiktok.com (save the page on your device and use --html), the sound needs yt-dlp and depends on its TikTok extractor, and the CDN image links are signed and expire, so meta.json keeps only their host. Respect creators: link and credit.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_tiktok_photo.py (22 tests) passed here on 2026-10-28, offline, with a hand-written synthetic page fixture, in-memory HTTP fakes and a fake yt-dlp: link rewriting, short-link flow, parse, a video post, a missing JSON, partial download and resume, mirror links and the --max-images cap. The live route (short link -> page -> images -> yt-dlp sound) is the one reported working by hand in the requesting session on 2026-10-28; this script itself has not yet been run against tiktok.com.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_tiktok_photo.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "video-download",
+    "photo-video-footage",
+    "formats-platforms"
+   ]
   },
   {
    "id": "stock-fetch",
@@ -17897,6 +18005,114 @@
     "transitions-cuts",
     "photo-video-footage",
     "agent-orchestration"
+   ]
+  },
+  {
+   "id": "source-finder",
+   "path": "scripts/source_finder.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "Source finder: the original clips behind each shot of a reference video",
+   "title_ar": "البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي",
+   "summary_en": "Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha.",
+   "summary_ar": "يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم ينزّل فيديوهات الـpins بـyt-dlp ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت، ويستنى بين طلبات Yandex ويقف عند أول captcha.",
+   "use_when": [
+    "طلّع لي المصادر الأصلية للقطات الفيديو ده",
+    "الفيديو ده متجمّع من لقطات منين؟ دوّر على مصدر كل مشهد",
+    "Find the original source clips of each shot in this reel",
+    "Reverse search the shots of this edit and tell me where the footage came from",
+    "Which Pinterest video is this shot taken from?"
+   ],
+   "keywords": [
+    "source clips",
+    "original footage",
+    "footage source",
+    "reverse image search",
+    "reverse video search",
+    "yandex",
+    "pinterest",
+    "shot",
+    "scene cut",
+    "orb",
+    "ransac",
+    "feature matching",
+    "مصدر اللقطات",
+    "اللقطات الأصلية",
+    "مصدر الفيديو",
+    "بحث بالصورة",
+    "بحث عكسي",
+    "مشاهد",
+    "بنترست",
+    "ياندكس"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/source_finder.py doctor",
+     "does": "Offline: which parts can run here (OpenCV, numpy, ffmpeg, curl, yt-dlp)."
+    },
+    {
+     "name": "cuts",
+     "example": "python3 scripts/source_finder.py cuts reference.mp4 --out out/source-finder/cuts.json",
+     "does": "Offline: hard cuts from the mean HSV change between frames (threshold 27, shortest shot 0.4 s) as boundaries and a shot list."
+    },
+    {
+     "name": "frames",
+     "example": "python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop \"crop=iw:ih*0.6:0:ih*0.2\" --out out/source-finder/queries",
+     "does": "Offline (ffmpeg): three cropped query frames per shot kept away from the cuts, one full mid frame and frames.json. --crop accepts one ffmpeg crop filter only."
+    },
+    {
+     "name": "search",
+     "example": "python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg --delay 4 --out out/source-finder/s003.json",
+     "does": "Network: uploads each image to Yandex search-by-image, reads the sites and similar pages and lists Pinterest pin ids plus other video and stock leads; at least 2 s between calls, at most 40 images a run, exit 3 at a captcha."
+    },
+    {
+     "name": "match",
+     "example": "python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder",
+     "does": "Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; --no-download or a folder keeps it offline."
+    },
+    {
+     "name": "run",
+     "example": "python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop \"crop=iw:ih*0.6:0:ih*0.2\"",
+     "does": "The whole chain with cached searches and a partial report.json after every shot; a captcha stops it with exit 3 and a re-run continues. --candidates DIR skips the search and runs offline."
+    }
+   ],
+   "safe_commands": [
+    "doctor"
+   ],
+   "inputs": "A reference video (MP4, MOV, WebM); optionally an ffmpeg crop that removes captions and logos, a cuts.json or boundary list, query images, pin ids or links, or a folder of candidate clips",
+   "outputs": "<work>/cuts.json, queries/*.jpg with frames.json, search/<image>.json (cache), cand/p<pin>.mp4 (downloaded pins) and report.json: per shot the verdict, score, timestamp, pin URL and other leads, a ranked list of hits, a summary and a credit note",
+   "requires": {
+    "python": [
+     "numpy",
+     "opencv-python-headless"
+    ],
+    "binaries": [
+     "ffmpeg",
+     "curl",
+     "yt-dlp"
+    ],
+    "node": [],
+    "optional": [],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "search and run upload frames of the user's reference video to Yandex (a third-party service), and match and run download third-party Pinterest videos: confirm the user wants both. Downloaded clips stay as private reference in the work folder; reusing one needs its creator's permission or a licence, and every found source is credited and linked. Keep the rate limit, and at a captcha stop rather than bypass it. No account, cookie or credential is used.",
+   "limits": "Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Found clips belong to their creators: credit and link them.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_source_finder.py 17/17 passed offline on 2026-10-28: a warped noisy copy scores 612 inliers against 8 or fewer for unrelated images, cuts land on the exact frames of a synthetic three-shot video, fake Yandex answers give the pins, a captcha stops further calls, and the whole run chain reports the right shot. On cached real clips from this session, match re-scored the known source at 1757 against 28 and 11. Live Yandex and Pinterest calls were made by the prototype in this session, not by the test.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_source_finder.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "photo-video-footage",
+    "video-download",
+    "web-research",
+    "transitions-cuts"
    ]
   }
  ],

@@ -175,8 +175,8 @@ The owner's GitHub account holds 25 repositories; [references/owned-repos-map.md
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5853 families=62 domains=10 styles=289 watched=254 proven=1019 ready=673 install=980 key=176 seen=609 documented=2325 idea=71 -->
-**الأرقام / counts:** 5,853 قدرة في 62 عائلة و10 مجالات — ✅ 1,019 · 🟢 673 · 📦 980 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5853 families=62 domains=10 styles=289 watched=254 proven=1020 ready=673 install=979 key=176 seen=609 documented=2325 idea=71 -->
+**الأرقام / counts:** 5,853 قدرة في 62 عائلة و10 مجالات — ✅ 1,020 · 🟢 673 · 📦 979 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)
@@ -254,7 +254,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 | Drawing and characters / الرسم والشخصيات | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` · `unified-draw` · `creative-principles` · `drawing-academy` · `drawing-methods` · `perspective-color-lab` · `drawing-visual-qa` · `geo-plate` · `diagram-layout` · `brand-tokens` · `portrait-pipeline` · `color-media` · `drawing-council` |
 | 3D / ثلاثي الأبعاد | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` · `blender-cinematic-bridge` · `blender-rescue-scene` · `blender-cat-fur-upgrade` |
 | Image, design and fonts / الصور والتصميم والخطوط | `app-studio` · `app-studio-paint` · `font-fidelity-lab` · `render-text` · `unified-media` · `telegram-typography-atlas` · `style-library` · `mosamem-rea-fusion` · `image-local-ai` · `prompt-pack` · `prompt-forge` · `design-tells` |
-| Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `instagram-finder` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` · `github-top-repos` · `instagram-reference-discovery` · `github-pulse` |
+| Sources and references / المصادر والمراجع | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `instagram-finder` · `tiktok-photo` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` · `github-top-repos` · `instagram-reference-discovery` · `github-pulse` · `source-finder` |
 | Software investigation / فحص البرامج | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` · `differential-exam` · `repo-map` |
 | Local computer / الجهاز المحلي | `kosif-remote-commander` · `adobe-mcp-bridges` |
 | Maintain and build / الصيانة والبناء | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` · `agent-guard` · `self-council` |
@@ -294,7 +294,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (650 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (651 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure

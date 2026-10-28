@@ -143,7 +143,7 @@ chapter: [hand-drawn-draw-on](../powers/hand-drawn-draw-on.md) · card: `usip-li
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| DRAW-52 | ✅ | صورة إلى برنامج بايثون · Image to standalone Pillow program | SP-0277 workbench no-browser 2D film | pip:pillow |
+| DRAW-52 | ✅ | صورة إلى برنامج بايثون · Image to standalone Pillow program | SP-0276 Workbench Pillow film | pip:pillow |
 | DRAW-01 | ✅ | رسم المسار بإزاحة الشرطة · SVG stroke draw-on | SP-0303 Deterministic hand-drawn film via make_… | — |
 | DRAW-03 | ✅ | سرعة القلم والرفع · Pen speed & lifts | SP-0303 Deterministic hand-drawn film via make_… | — |
 | DRAW-04 | ✅ | ترتيب الرسم البشري ووصفة «ارسم وسمِّ» · Human draw order & draw-and-label | SP-0303 Deterministic hand-drawn film via make_… | — |
