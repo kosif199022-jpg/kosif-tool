@@ -30,8 +30,8 @@
 <a id="numbers"></a>
 ## 2. الأرقام / numbers
 
-**5,853** قدرة · **62** عائلة · **10** مجالات · ✅ 1019 مُثبتة بتشغيل فعلي · 🟢 673 جاهزة · 📦 980 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2325 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **188**.
+**5,854** قدرة · **62** عائلة · **10** مجالات · ✅ 1020 مُثبتة بتشغيل فعلي · 🟢 673 جاهزة · 📦 980 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2325 طريقة موصوفة · 💡 71 فكرة.
+المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **189**.
 
 <a id="tools"></a>
 ## 3. الأدوات حسب المجال / tools by area
@@ -43,7 +43,7 @@
 | [Discover and route / اكتشاف القدرات والتوجيه](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `ai-tool-discovery` · `boot` · `capability-atlas` · `capability-graph` · `capability-runtime-router` · `hub` · `kosif-mcp` · `local-first` · `powers` · `probe-env` · `python-package-probe` · `requirements` · `superpowers-unified` · `repo-kosif` · `atlas-capability-miner` · `atlas-5000` · `atlas-ledger` · `atlas-task-method-router` · `smart-capabilities` · `skill-intelligence` · `fusionforge` · `fusionforge-shared` · `superpower-fusion` · `kosif-groups` · `owned-repos` · `micro-index` · `skill-loader` · `superskills-bridge` · `superskills` |
 | [Think, ideate and write / التفكير والأفكار والكتابة](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/discover.md) | `anchor-gate` · `architecture-sizer` · `invention-lab` · `tell-scan` · `think` · `council` · `see-pro-cognitive-gate` · `capability-mindmap` · `charter-ingest` · `business-workflows` · `book-methods` · `decision-math` · `stats-lab` · `prompt-lab` · `memory-ops` · `lesson-integrity` · `task-history` · `thinking-books` · `llm-council` |
 | [Motion graphics and rendering / الموشن والرندر](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/motion.md) | `aspects` · `creative-reasoning-bridge` · `motion-director` · `motion-engine-js` · `motion-kit-bridge` · `motion-runtime` · `motion-stack` · `motion-toolkit` · `render-html` · `verify-video` · `repo-aspects` · `repo-render-html` · `repo-check-frame-cover` · `repo-verify-video` · `repo-overlap-rig` · `repo-job-wait` · `starter-html-canvas` · `starter-remotion` · `unified-cinematic` · `style-atlas-bridge` · `atlas-render` · `particles` · `ui-beat` · `motion-physics` · `infinite-matrices` · `export-profile` · `video-eyes` |
-| [Editing and reference video / المونتاج والفيديو المرجعي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/edit.md) | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` · `reel-factory` · `dua-wednesday` · `look-pipeline` · `fast-edit` · `cinema-lab` · `script-storyboard` |
+| [Editing and reference video / المونتاج والفيديو المرجعي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/edit.md) | `cinematic-broll-render` · `cinematic-cut-planner` · `creative-quality-gate` · `mimic` · `motion-reference-probe` · `reference-edit-engine` · `reference-visual-fingerprint` · `video-workflow-bridge` · `kosif-timeline` · `kosif-timeline-demo` · `montage-pro` · `reel-factory` · `dua-wednesday` · `look-pipeline` · `fast-edit` · `nle-export` · `cinema-lab` · `script-storyboard` |
 | [Audio and rhythm / الصوت والإيقاع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/audio.md) | `audio-cue-mapper` · `music-rhythm-engine` · `repo-words-convert` · `tts-script` · `caption-lines` |
 | [Drawing and characters / الرسم والشخصيات](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/draw.md) | `character-fullbody` · `character-ik` · `code-drawing-master` · `creative-paint` · `smart-draw` · `unified-draw` · `creative-principles` · `drawing-academy` · `drawing-methods` · `perspective-color-lab` · `drawing-visual-qa` · `geo-plate` · `diagram-layout` · `brand-tokens` · `portrait-pipeline` · `color-media` · `drawing-council` |
 | [3D / ثلاثي الأبعاد](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/3d.md) | `blender-api-audit` · `blender-bridge` · `blender-cinema` · `blender-cycles-render` · `blender-worker` · `native-3d` · `native-glb` · `blender-motion-video` · `blender-cinematic-bridge` · `blender-rescue-scene` · `blender-cat-fur-upgrade` |
@@ -102,11 +102,11 @@
 | [الأمان والسلامة — Security & safety](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/security-safety.md) | SEC | 23 | 1 | SEC-14 Run foreign tools in a scrubbed sandbox; SEC-01 Untrusted content is data, not instructions; SEC-02 Hidden-text and payload scan |
 | [اختبار واجهات API — API testing (Bruno)](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/api-testing.md) | API | 22 | 15 | API-01 Author an API collection as git-tracked Bru fi; API-02 Run a collection as automated acceptance tests; API-03 Declarative response assertions |
 
-### التطبيقات والواجهات / build — 416 powers · ✅ 248
+### التطبيقات والواجهات / build — 417 powers · ✅ 249
 
 | family | prefix | powers | ✅ | examples (proven first) |
 |---|---|---|---|---|
-| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 174 | 142 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
+| [الأدوات القابلة للتشغيل — Runnable KOSIF tools](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/runnable-tools.md) | TOOL | 175 | 143 | TOOL-01 Offline bilingual capability finder; TOOL-02 Session boot briefing; TOOL-03 Capability Atlas search and planner |
 | [قدرات التطبيقات المحللة — Analyzed app capabilities](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/app-feature-transfer.md) | APPX | 155 | 100 | APPX-01 Speed curve (ramp); APPX-02 Chroma key; APPX-03 Auto reframe to 9:16 |
 | [أطلس: التطبيقات والواجهات والتكاملات — Atlas: apps, UI & integrations](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/atlas-build.md) | ABUILD | 60 | 0 | ABUILD-01 Autonomous phase-per-PR roadmap execution loop; ABUILD-02 Observation-only run telemetry recorder; ABUILD-03 Role-squad agent pipeline with stages, locks a |
 | [التطبيقات والواجهات — Apps & artifacts](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/powers/apps-artifacts.md) | APP | 27 | 6 | APP-04 Dependency-free RTL dashboard page; APP-05 Phone-viewport screenshot + overflow check; APP-06 HTML to MP4 renderer (repo tool) |
@@ -176,9 +176,9 @@
 
 | requirement | kind | powers | install |
 |---|---|---|---|
-| `python3` | bin | 804 | `apt-get install -y python3 python3-pip python3-venv` |
+| `python3` | bin | 805 | `apt-get install -y python3 python3-pip python3-venv` |
+| `ffmpeg` | bin | 462 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `npm:hyperframes` | npm | 461 | `npm i -D hyperframes@0.8.164  (Apache-2.0; some components load GSAP from a CDN)` |
-| `ffmpeg` | bin | 461 | `apt-get install -y ffmpeg  (or: conda install ffmpeg)` |
 | `chromium` | bin | 374 | `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)` |
 | `npm:rea` | npm | 280 | `npm install -g rea-agents@6.7.0  (Node 22.19+/24.11+/26+)` |
 | `npm:gsap` | npm | 247 | `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)` |
@@ -199,7 +199,7 @@
 | `git` | bin | 52 | `apt-get install -y git` |
 | `os:macos` | os | 43 | `a macOS machine with Xcode command-line tools` |
 | `pip:office` | pip | 41 | `pip install python-docx openpyxl python-pptx reportlab pypdf` |
-| `blender` | apt | 36 | `apt-get install -y blender  (or the official tarball)` |
+| `blender` | apt | 37 | `apt-get install -y blender  (or the official tarball)` |
 | `engine:android` | bin | 36 | `Android platform-tools (adb) + jadx-headless-mcp 0.7.1 JAR + apktool; device with USB debugging authorised` |
 
 <a id="think"></a>

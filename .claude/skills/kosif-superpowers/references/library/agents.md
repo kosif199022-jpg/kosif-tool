@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 169 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 170 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 15 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **272** | |
+| **المجموع** | **273** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -89,7 +89,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 174 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 175 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -178,6 +178,7 @@
 | `TOOL-173` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | Instagram product video finder | proven | ffmpeg, python3, yt-dlp |
 | `TOOL-174` | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep | Background job runner and waiter (no sleep waits) | proven | ffmpeg, node, python3, chromium |
 | `TOOL-175` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | proven | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
+| `TOOL-176` | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات | NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | proven | ffmpeg, python3, blender |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |

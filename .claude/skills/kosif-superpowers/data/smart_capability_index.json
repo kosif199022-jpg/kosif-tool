@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5853,
+  "catalog_powers": 5854,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 188,
+  "tool_count": 189,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 272,
+      "count": 273,
       "status_counts": {
         "documented": 65,
         "install": 15,
         "key": 2,
-        "proven": 169,
+        "proven": 170,
         "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 174,
+        "runnable-tools": 175,
         "self-discovery": 43
       },
       "examples": [
@@ -74295,6 +74295,26 @@
       ],
       "source": "runnable-tools.json",
       "what": "محركات تصوير ومونتاج مكتوبة بكودنا من أفكار PySceneDetect وAuto-Editor وOpenTimelineIO وOpenColorIO وOpenCV وvid.stab وMotion Canvas/Remotion وOpenRV، وتشتغل بـ FFmpeg وNumPy في السحابة: يكشف القطعات ويطلع ستوري بورد، يحذف الصمت مع الحفاظ على تزامن الصوت والصورة، يصدّر التايملاين"
+    },
+    {
+      "id": "TOOL-176",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut",
+      "name_ar": "تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "blender"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_nle_export.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/nle_export.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي، XML لبريمير ودافنشي، EDL لكل مسار، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT من words.json وقائمة قطع لكاب كات، مع إيصال فيه البصمة واللي الصيغة مقدرتش تنقله. —"
     },
     {
       "id": "SEC-01",

@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **174 powers follow** — ✅ 142 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **175 powers follow** — ✅ 143 · 🟢 20 · 📦 12 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -16,7 +16,7 @@
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
-- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-175 (16)
+- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-176 (17)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-162 (14)
@@ -739,6 +739,15 @@
 - **تثبيت / install:** `pip install numpy · needs on PATH: ffmpeg, ffprobe · optional: scenedetect[opencv], opentimelineio`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:opencv`](../requirements.md#req-pip-opencv) · [`npm:remotion`](../requirements.md#req-npm-remotion)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_cinema_lab.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinema_lab.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-176 · تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات · NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي، XML لبريمير ودافنشي، EDL لكل مسار، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT من words.json وقائمة قطع لكاب كات، مع إيصال فيه البصمة واللي الصيغة مقدرتش تنقله. — Turns a kosif.timeline.v1 project or a kosif.edl.v1 cut plan into editable timelines that point at the original media: FCPXML 1.9 (Final Cut Pro, Resolve), FCP7 XML v5 (Premiere Pro, Resolve), one CMX3600 EDL per track, a Blender Video Sequencer script that also carries fades and layout, SRT captions from words.json and a numbered CapCut cut list. Times are snapped to frames with the largest drift reported, and a receipt lists SHA-256 per file and what each format could not carry.
+- **متى أستخدمها / when:** افتح المونتاج ده في دافنشي ريزولف أو فاينال كت أو بريمير / Open this KOSIF edit in DaVinci Resolve / Final Cut Pro / Premiere so I can keep editing
+- **كيف / how:** export: `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json`; export (cut plan): `python3 scripts/nle_export.py export --project ./edit_plan.json --audio ./voice.wav --out ./nle`; formats: `python3 scripts/nle_export.py formats`; tests: `python3 -m unittest discover -s evals -p 'test_nle_export.py' -v`. Full card: `python3 scripts/hub.py tool nle-export`. Limits: Integer frame rates only (no 29.97/23.976 drop-frame). Fades and position/size reach Blender only; Resolve, Final Cut and Premiere get cuts, trims, tracks and volume, and HANDOFF.md lists what to redo there. EDL holds one track per file and no overlaps. CapCut has no public timeline import, so it gets a cut list plus SRT. Not opened in the commercial editors on this machine: the files are checked by parsing, by OpenTimelineIO's independent readers and by running the Blender script in Blender 5.2 (bpy); the script also handles the Blender 4.x trim API. **أرقام / params:** in: A kosif.timeline.v1 project (kosif_timeline.py) or a kosif.edl.v1 cut plan (cinematic_cut_planner.py) with local media paths, optionally words.json (list or kosif-words/1) and a voice-over file. · out: <name>.fcpxml, <name>.premiere.xml, <name>.<track>.edl, <name>.blender_vse.py, <name>.srt, <name>.capcut.md, HANDOFF.md and receipt.json (kosif.nle-export.v1). Media is referenced, never copied or re-encoded.
+- **تثبيت / install:** `optional: ffprobe (reads real source lengths and sizes), opentimelineio + otio-fcpx-xml-adapter, otio-fcp-adapter, otio-cmx3600-adapter (test read-back only), Blender 4.2+ or the bpy module (to run the generated script)`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`blender`](../requirements.md#req-blender)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_nle_export.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/nle_export.py`
 - **المصدر / source:** data/tools.json
 
 ## Audio and rhythm / الصوت والإيقاع
@@ -1557,7 +1566,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (174)
+- الرخص / licences: — (175)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

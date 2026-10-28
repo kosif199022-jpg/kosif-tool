@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (174 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (175 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -96,6 +96,7 @@
 - [`TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها](#tool-173--البحث-عن-فيديوهات-إنستجرام-لمنتج-وتحميلها--instagram-product-video-finder)
 - [`TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep](#tool-174--تشغيل-المهام-الطويلة-في-الخلفية-وانتظارها-بلا-sleep--background-job-runner-and-waiter-no-sleep-waits)
 - [`TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B](#tool-175--معمل-السينما-كشف-القطعات-حذف-الصمت-تايملاين-otioedl-ألوان-lut-تثبيت-الكاميرا-تأطير-ذكي-بالطول-حركة-كاميرا-مراجعة-ab--cinema-lab-scene-cuts-silence-cut-otioedl-timelines-lut-looks-stabilise-smart-portrait-reframe-camera-moves-ab-review)
+- [`TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات](#tool-176--تصدير-للبرامج-افتح-تايملاين-kosif-في-دافنشي-وفاينال-كت-وبريمير-وبلندر-وكاب-كات--nle-export-open-a-kosif-timeline-in-davinci-resolve-final-cut-pro-premiere-pro-blender-or-capcut)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
@@ -6562,7 +6563,7 @@
 - `TOOL-172` البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية / Instagram Reference Discovery → Infinite Matrices (proven)
 - `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
 - `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut (proven)
 
 ### `TOOL-175` — معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review
 
@@ -6633,6 +6634,77 @@
 
 - `TOOL-173` البحث عن فيديوهات إنستجرام لمنتج وتحميلها / Instagram product video finder (proven)
 - `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
+- `TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-176` — تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي، XML لبريمير ودافنشي، EDL لكل مسار، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT من words.json وقائمة قطع لكاب كات، مع إيصال فيه البصمة واللي الصيغة مقدرتش تنقله. — Turns a kosif.timeline.v1 project or a kosif.edl.v1 cut plan into editable timelines that point at the original media: FCPXML 1.9 (Final Cut Pro, Resolve), FCP7 XML v5 (Premiere Pro, Resolve), one CMX3600 EDL per track, a Blender Video Sequencer script that also carries fades and layout, SRT captions from words.json and a numbered CapCut cut list. Times are snapped to frames with the largest drift reported, and a receipt lists SHA-256 per file and what each format could not carry.
+
+**متى:** افتح المونتاج ده في دافنشي ريزولف أو فاينال كت أو بريمير / Open this KOSIF edit in DaVinci Resolve / Final Cut Pro / Premiere so I can keep editing
+
+**كيف:** export: `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json`; export (cut plan): `python3 scripts/nle_export.py export --project ./edit_plan.json --audio ./voice.wav --out ./nle`; formats: `python3 scripts/nle_export.py formats`; tests: `python3 -m unittest discover -s evals -p 'test_nle_export.py' -v`. Full card: `python3 scripts/hub.py tool nle-export`. Limits: Integer frame rates only (no 29.97/23.976 drop-frame). Fades and position/size reach Blender only; Resolve, Final Cut and Premiere get cuts, trims, tracks and volume, and HANDOFF.md lists what to redo there. EDL holds one track per file and no overlaps. CapCut has no public timeline import, so it gets a cut list plus SRT. Not opened in the commercial editors on this machine: the files are checked by parsing, by OpenTimelineIO's independent readers and by running the Blender script in Blender 5.2 (bpy); the script also handles the Blender 4.x trim API.
+
+**المعاملات:** in: A kosif.timeline.v1 project (kosif_timeline.py) or a kosif.edl.v1 cut plan (cinematic_cut_planner.py) with local media paths, optionally words.json (list or kosif-words/1) and a voice-over file. · out: <name>.fcpxml, <name>.premiere.xml, <name>.<track>.edl, <name>.blender_vse.py, <name>.srt, <name>.capcut.md, HANDOFF.md and receipt.json (kosif.nle-export.v1). Media is referenced, never copied or re-encoded.
+
+**التثبيت:** optional: ffprobe (reads real source lengths and sizes), opentimelineio + otio-fcpx-xml-adapter, otio-fcp-adapter, otio-cmx3600-adapter (test read-back only), Blender 4.2+ or the bpy module (to run the generated script)
+
+**الوسوم:** nle-export · fcpxml · final cut · final cut pro · davinci · davinci resolve · resolve · premiere · premiere pro · xml · xmeml · edl · cmx3600 · blender · vse · video sequencer · capcut · srt · subtitles · timeline export · nle · handoff · relink · دافنشي · فاينال كت · بريمير · بلندر · كاب كات · تايملاين · ترجمة · تصدير
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `blender` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-176` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_nle_export.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/nle_export.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
+- `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6701,8 +6773,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-174` تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep / Background job runner and waiter (no sleep waits) (proven)
 - `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
+- `TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -6771,7 +6843,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
+- `TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
