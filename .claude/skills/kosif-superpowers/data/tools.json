@@ -6971,6 +6971,94 @@
       "power_id": "TOOL-173"
     },
     {
+      "id": "tiktok-photo",
+      "path": "scripts/tiktok_photo.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "sources",
+      "title_en": "TikTok photo-post (slideshow) downloader",
+      "title_ar": "تحميل بوست صور تيك توك (سلايد شو)",
+      "summary_en": "Downloads a TikTok photo post, which yt-dlp rejects with \"Unsupported URL .../photo/<id>\": it resolves a vt.tiktok.com or vm.tiktok.com short link by following redirects, fetches the /@user/photo/<id> page with a mobile Safari User-Agent, reads the JSON in <script id=\"__UNIVERSAL_DATA_FOR_REHYDRATION__\"> (itemStruct: desc, author, music, imagePost.images with sizes), saves every image as img00.jpg, img01.jpg ... (atomic writes, mirror links, resumable), gets the post's sound with yt-dlp -f ba on the rewritten /video/<id> link, and writes meta.json with author, desc, music, source link, image sizes and a credit line. parse and url work offline on a saved page or a link.",
+      "summary_ar": "ينزّل بوست الصور في تيك توك اللي yt-dlp بيرفضه (Unsupported URL .../photo/): يفك الرابط المختصر vt.tiktok.com بتتبع التحويلات، ويفتح صفحة البوست بهوية متصفح سفاري للموبايل، ويقرأ بيانات JSON المضمّنة في الصفحة (الوصف والحساب والصوت وروابط الصور ومقاساتها)، ويحفظ كل صورة img00.jpg و img01.jpg وهكذا (كتابة آمنة واستكمال لو التحميل اتقطع)، ويجيب صوت البوست بـ yt-dlp من رابط /video/ المقابل، ويكتب meta.json فيه الحساب والوصف والصوت والرابط والمقاسات وسطر نسب الحقوق. وأمرا parse و url يشتغلوا من غير إنترنت على صفحة محفوظة أو رابط.",
+      "use_when": [
+        "نزّل صور البوست ده من تيك توك https://vt.tiktok.com/XXXXXXX/",
+        "yt-dlp بيقول Unsupported URL على رابط تيك توك فيه /photo/",
+        "عايز صور السلايد شو بتاعة تيك توك وصوتها",
+        "Download the images of this TikTok photo slideshow",
+        "yt-dlp says Unsupported URL for a TikTok /photo/ link",
+        "Get the slides and the sound from a TikTok photo post"
+      ],
+      "keywords": [
+        "tiktok",
+        "tik tok",
+        "photo post",
+        "slideshow",
+        "carousel",
+        "photo mode",
+        "images",
+        "unsupported url",
+        "vt.tiktok.com",
+        "short link",
+        "yt-dlp",
+        "download",
+        "تيك توك",
+        "تيكتوك",
+        "بوست صور",
+        "سلايد شو",
+        "صور",
+        "تحميل",
+        "رابط مختصر"
+      ],
+      "commands": [
+        {
+          "name": "fetch",
+          "example": "python3 scripts/tiktok_photo.py fetch \"https://vt.tiktok.com/XXXXXXX/\" --out out/tiktok/post",
+          "does": "Network: resolves the link, saves img00.jpg ..., audio.<ext> (yt-dlp -f ba on the /video/ link) and meta.json; exit 2 on a partial download (rerun to resume), 3 for a video post (use yt-dlp), 4 when the page JSON is missing. --html uses a page saved on your device, --no-audio skips the sound."
+        },
+        {
+          "name": "parse",
+          "example": "python3 scripts/tiktok_photo.py parse evals/fixtures/tiktok_photo_minimal.html",
+          "does": "Offline: prints the post JSON extracted from a saved page (author, desc, music, image links and sizes, the /photo/ and /video/ links)."
+        },
+        {
+          "name": "url",
+          "example": "python3 scripts/tiktok_photo.py url \"https://www.tiktok.com/@user/photo/7400000000000000001\"",
+          "does": "Offline: classifies a link (photo, video, short, other) and prints its /photo/ and /video/ forms without the tracking query."
+        }
+      ],
+      "safe_commands": [
+        "parse",
+        "url"
+      ],
+      "inputs": "A TikTok photo-post link (www.tiktok.com/@user/photo/<id>) or a vt.tiktok.com / vm.tiktok.com / tiktok.com/t/ short link; optionally a saved copy of the post page (--html).",
+      "outputs": "<out>/img00.jpg, img01.jpg ... (extension follows the real file type), <out>/audio.<ext> from yt-dlp, and <out>/meta.json (kosif.tiktok_photo.v1: author, desc, music, source and resolved links, image sizes, bytes and sha256, failed images, credit and rights lines).",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [
+          "pip:yt-dlp"
+        ],
+        "network": true
+      },
+      "safety": "network",
+      "consent": "It downloads a third-party creator's post: confirm the user owns it, has the creator's permission or a licence, or keeps it as private reference only; keep the credit line and link the post. It sends no cookies or login and writes only into --out.",
+      "limits": "TikTok's page structure can change without notice (the tool then stops with a clear error, exit 4); private, removed, region-locked or login-walled posts fail, some networks block tiktok.com (save the page on your device and use --html), the sound needs yt-dlp and depends on its TikTok extractor, and the CDN image links are signed and expire, so meta.json keeps only their host. Respect creators: link and credit.",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_tiktok_photo.py (22 tests) passed here on 2026-10-28, offline, with a hand-written synthetic page fixture, in-memory HTTP fakes and a fake yt-dlp: link rewriting, short-link flow, parse, a video post, a missing JSON, partial download and resume, mirror links and the --max-images cap. The live route (short link -> page -> images -> yt-dlp sound) is the one reported working by hand in the requesting session on 2026-10-28; this script itself has not yet been run against tiktok.com.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_tiktok_photo.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/sources.md"
+      ],
+      "families": [
+        "video-download",
+        "photo-video-footage",
+        "formats-platforms"
+      ]
+    },
+    {
       "id": "stock-fetch",
       "path": "scripts/stock_fetch.py",
       "root": "skill",
