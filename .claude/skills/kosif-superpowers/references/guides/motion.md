@@ -46,6 +46,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 1. [القدرة التنفيذية الجديدة — KOSIF Creative Motion Lab](#القدرة-التنفيذية-الجديدة--kosif-creative-motion-lab)
 2. [Motion runtime bridge / جسر الرندر التنفيذي](#motion-runtime-bridge--جسر-الرندر-التنفيذي)
+3. [Causal style synthesis (KOSIF Infinite Matrices)](#causal-style-synthesis-kosif-infinite-matrices)
+4. [Rendering without filling the disk / رندر دون امتلاء القرص](#rendering-without-filling-the-disk--رندر-دون-امتلاء-القرص)
 
 ## القدرة التنفيذية الجديدة — KOSIF Creative Motion Lab
 
@@ -90,3 +92,20 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 ## Causal style synthesis (KOSIF Infinite Matrices)
 
 When the request is a *new* look or motion system rather than an existing style, use the sibling skill `.claude/skills/kosif-infinite-matrices/` through `infinite-matrices` (`python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor`). It writes a recipe from three of the 86 atlas styles (structure, dynamics, finish), proves the recipe's law with an A/B/C counterfactual over several seeds and a dose sweep, renders the result with this skill's `assets/atlas_harness.js`, `assets/atlas_sound.js` and `tools/render_html.cjs`, and records the verdict in its hash-chained ledger. Its first experiment, glass that remembers light, is `experiments/EXP-0001-glass-remembers-light/` (confirmed inside the model, rendered, not yet human-rated). Read its `references/limits.md` before presenting any result as proven.
+
+## Rendering without filling the disk / رندر دون امتلاء القرص
+
+`tools/render_html.cjs` (and its byte-identical skill copy `resources/motion-runtime/render_html.cjs`) writes one PNG per frame before ffmpeg encodes them: about 3.4 MB per 1080×1920 frame, so 90 s at 30 fps needs roughly 10 GB. Two renders sharing a small `/tmp` once filled it; Chromium then failed with "Unable to capture screenshot" and the killed renders left 3–8 GB `kosif-frames-*` folders behind. The renderer now guards the disk itself:
+
+- **Before the first frame** it estimates `frames × width × height × 1.7 bytes + 10%`, compares it with the free space of the frames folder's disk (minus what other renders running now still have to write) and, if the frames do not fit, exits 2 with what is needed, what is free and the remedies. Read the `disk:` line it prints. `--no-space-check` skips the check.
+- **Stale temp folders** older than 6 hours (left by killed renders or `--keep-frames`) are listed on stderr at every start; `--clean-stale` deletes exactly those and never the folder in use.
+- **Ctrl+C, SIGTERM and SIGHUP** remove the temp frames and exit 130, 143 or 129. `kill -9` cannot be caught: its folder waits for `--clean-stale`.
+
+When the check fails, pick one: `--frames-dir <folder on a bigger disk>` (frames are kept there), `--clean-stale` or other cleanup, or render a shorter range with `--start`/`--duration` (`--preview` needs only 8 frames). Run long renders one after another on a small disk rather than in parallel.
+
+قبل الرندر الطويل: اقرأ سطر `disk:` في المخرجات؛ إن توقف الرندر بالرمز 2 لنقص المساحة فاختر `--frames-dir` على قرص أكبر، أو `--clean-stale` لحذف بقايا الرندر المقطوع الأقدم من 6 ساعات، أو رندر جزءًا أقصر بـ`--start` و`--duration`. ولا تشغّل رندرين طويلين معًا على قرص صغير. التفاصيل في [tools/render_html.md](../../../../../tools/render_html.md).
+
+```bash
+node tools/render_html.cjs --in film.html --out out/film.mp4 --clean-stale               # list and delete stale kosif-frames-* first
+node tools/render_html.cjs --in film.html --out out/film.mp4 --frames-dir /mnt/big/frames  # keep the frames on a bigger disk
+```
