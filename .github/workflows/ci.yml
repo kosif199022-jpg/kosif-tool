@@ -228,6 +228,8 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/hub.py build --check
           python3 .claude/skills/kosif-superpowers/scripts/boot.py --static --check
           python3 .claude/skills/kosif-superpowers/scripts/micro_index.py build --check
+      - name: HTML renderer disk guard (space pre-flight, stale kosif-frames-* folders, signal cleanup; no browser)
+        run: node --test tests/test_render_html.mjs tests/test_render_html_disk.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules
