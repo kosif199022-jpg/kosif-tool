@@ -71,7 +71,7 @@ class ExportTests(unittest.TestCase):
         return (self.out / name).read_text(encoding="utf-8")
 
     def test_every_format_written_with_receipt(self):
-        for suffix in (".fcpxml", ".premiere.xml", ".picture.edl", ".music.edl", ".blender_vse.py", ".srt",
+        for suffix in (".fcpxml", ".premiere.xml", ".picture.edl", ".music.edl", ".otio", ".blender_vse.py", ".srt",
                        ".capcut.md", "HANDOFF.md"):
             self.assertTrue(any(n.endswith(suffix) for n in self.files), suffix)
         r = json.loads((self.out / "receipt.json").read_text(encoding="utf-8"))
@@ -92,6 +92,48 @@ class ExportTests(unittest.TestCase):
         self.assertEqual(clips["a1"].find("adjust-volume").get("amount"), "-12.04dB")
         srcs = [m.get("src") for m in root.iter("media-rep")]
         self.assertIn((self.d / "لقطة 1.mp4").resolve().as_uri(), srcs)
+
+    def test_fcpxml_fades_and_layout(self):
+        ne.probe = lambda path: {"width": 400, "height": 200} if path.suffix == ".png" else {}
+        ne.export(ne.load(self.p), self.d / "fx", {"fcpxml"})
+        root = ET.fromstring((self.d / "fx" / "تجربة_reel.fcpxml").read_text(encoding="utf-8"))
+        clips = {c.get("name"): c for c in root.iter() if c.tag in ("asset-clip", "clip")}
+        g1 = clips["g1"]
+        self.assertEqual([x.tag for x in g1][:3], ["adjust-conform", "adjust-transform", "adjust-blend"])
+        self.assertEqual(g1.find("adjust-transform").get("position"), "0.0000 39.5833")   # 760 px up / 1920 * 100
+        self.assertEqual(g1.find("adjust-transform").get("scale"), "1.00000 1.00000")
+        keys = [(k.get("time"), k.get("value")) for k in g1.iter("keyframe")]
+        self.assertEqual(keys, [("0s", "0"), ("1/5s", "1")])
+        v1 = [(k.get("time"), k.get("value")) for k in clips["v1"].iter("keyframe")]
+        self.assertEqual(v1, [("11/5s", "1"), ("5/2s", "0")])     # clip-local time starts at the in point (1/2s)
+        self.assertEqual(clips["v1"].find("adjust-volume/param/fadeOut").get("duration"), "3/10s")
+        self.assertEqual(clips["a1"].find("adjust-volume/param/fadeIn").get("duration"), "1/2s")
+
+    def test_xmeml_fades_are_transitions(self):
+        root = ET.fromstring(self.read(".premiere.xml"))
+        items = [(t.findtext("start"), t.findtext("end"), t.findtext("alignment"), t.findtext("effect/name"))
+                 for t in root.iter("transitionitem")]
+        self.assertIn(("51", "60", "end-black", "Cross Dissolve"), items)
+        self.assertIn(("30", "36", "start-black", "Cross Dissolve"), items)
+        self.assertIn(("0", "15", "start-black", "Cross Fade (+3dB)"), items)
+
+    def test_otio_json_tracks(self):
+        doc = json.loads(self.read(".otio"))
+        self.assertEqual(doc["OTIO_SCHEMA"], "Timeline.1")
+        tracks = {t["name"]: t for t in doc["tracks"]["children"]}
+        self.assertEqual([(t["kind"]) for t in doc["tracks"]["children"]], ["Video", "Video", "Audio", "Audio"])
+        logo = tracks["logo"]["children"]
+        self.assertEqual((logo[0]["OTIO_SCHEMA"], logo[0]["source_range"]["duration"]["value"]), ("Gap.1", 30.0))
+        self.assertEqual(logo[1]["metadata"]["kosif"]["fade_in"], 6)
+
+    def test_rates(self):
+        self.assertEqual(ne.parse_rate(29.97, "fps"), ne.Fraction(30000, 1001))
+        self.assertEqual(ne.parse_rate(23.976, "fps"), ne.Fraction(24000, 1001))
+        self.assertEqual(ne.parse_rate(25, "fps"), 25)
+        with self.assertRaises(ValueError):
+            ne.parse_rate(27.5, "fps")
+        self.assertEqual(ne._t(1, ne.Fraction(30000, 1001)), "1001/30000s")
+        self.assertEqual(ne._t(15, 30), "1/2s")
 
     def test_xmeml_tracks_and_frames(self):
         root = ET.fromstring(self.read(".premiere.xml"))
@@ -163,7 +205,8 @@ class ExportTests(unittest.TestCase):
     def test_opentimelineio_reads_back(self):
         import opentimelineio as otio
         names = otio.adapters.available_adapter_names()
-        checks = [(".fcpxml", "fcpx_xml", {}), (".premiere.xml", "fcp_xml", {}), (".picture.edl", "cmx_3600", {"rate": 30})]
+        checks = [(".fcpxml", "fcpx_xml", {}), (".premiere.xml", "fcp_xml", {}), (".picture.edl", "cmx_3600", {"rate": 30}),
+                  (".otio", "otio_json", {})]
         for suffix, adapter, kw in checks:
             if adapter not in names:
                 continue
@@ -175,6 +218,34 @@ class ExportTests(unittest.TestCase):
                             for tr in tl.video_tracks() for c in tr if isinstance(c, otio.schema.Clip))
             self.assertIn((0, 15), frames, adapter)
             self.assertIn((60, 30), frames, adapter)
+            if adapter == "fcp_xml":    # fades arrive as dip-to/from-black transitions
+                fx = sorted((x.name, x.in_offset.to_frames(), x.out_offset.to_frames())
+                            for tr in tl.tracks for x in tr if isinstance(x, otio.schema.Transition))
+                self.assertIn(("Cross Dissolve", 0, 6), fx)
+                self.assertIn(("Cross Dissolve", 9, 0), fx)
+                self.assertIn(("Cross Fade (+3dB)", 0, 15), fx)
+
+    @unittest.skipUnless(HAVE_OTIO, "opentimelineio not installed")
+    def test_ntsc_rate_reads_back(self):
+        import opentimelineio as otio
+        doc = json.loads(self.p.read_text(encoding="utf-8"))
+        doc["fps"], doc["name"] = 29.97, "ntsc"
+        self.p.write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+        ne.export(ne.load(self.p), self.d / "ntsc", {"fcpxml", "xmeml", "otio"})
+        # the fcpx_xml adapter truncates 29.97 to 29 fps, so FCPXML is checked on its exact rational times instead
+        root = ET.fromstring((self.d / "ntsc" / "ntsc.fcpxml").read_text(encoding="utf-8"))
+        self.assertEqual(root.find(".//format").get("frameDuration"), "1001/30000s")
+        v2 = next(c for c in root.iter("asset-clip") if c.get("name") == "v2")
+        self.assertEqual((v2.get("offset"), v2.get("start")), ("1001/500s", "1001/1000s"))
+        for name, adapter in (("ntsc.premiere.xml", "fcp_xml"), ("ntsc.otio", "otio_json")):
+            tl = otio.adapters.read_from_file(str(self.d / "ntsc" / name), adapter_name=adapter)
+            if isinstance(tl, otio.schema.SerializableCollection):
+                tl = next(x for x in tl if isinstance(x, otio.schema.Timeline))
+            tr = tl.video_tracks()[0]
+            v2 = [c for c in tr if isinstance(c, otio.schema.Clip)][1]
+            # v2 starts at frame 60 on the timeline and frame 30 of the source: 2.002 s and 1.001 s at 29.97
+            self.assertAlmostEqual(tr.range_of_child(v2).start_time.to_seconds(), 60 * 1001 / 30000, places=2, msg=adapter)
+            self.assertAlmostEqual(v2.source_range.start_time.to_seconds(), 30 * 1001 / 30000, places=2, msg=adapter)
 
 
     @unittest.skipUnless(HAVE_BPY, "Blender's bpy module not installed")

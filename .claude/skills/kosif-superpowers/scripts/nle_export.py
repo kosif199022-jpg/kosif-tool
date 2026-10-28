@@ -8,11 +8,13 @@ at the ORIGINAL media files (nothing is copied or re-encoded):
   fcpxml   FCPXML 1.9   -> Final Cut Pro, DaVinci Resolve
   xmeml    FCP7 XML v5  -> Premiere Pro, DaVinci Resolve
   edl      CMX3600 EDL  -> DaVinci Resolve, Premiere Pro, Avid (one file per track)
+  otio     OTIO JSON    -> DaVinci Resolve 18.5+, OpenTimelineIO tools
   blender  bpy script   -> Blender Video Sequencer (fades and layout included)
   srt      captions     -> every editor, CapCut included (needs --words)
   capcut   CapCut pack  -> SRT + a numbered cut list (CapCut has no public timeline import)
 
-Every time is snapped to whole frames; the receipt reports the largest drift,
+Integer rates and the NTSC rates 23.976/29.97/47.952/59.94/119.88 (non-drop timecode)
+are supported. Every time is snapped to whole frames; the receipt reports the largest drift,
 what each format could not carry (fades, layout) and a SHA-256 per file.
 Standard library only; ffprobe is used when present to read source lengths.
 """
@@ -26,14 +28,16 @@ import re
 import shutil
 import subprocess
 import sys
+from fractions import Fraction
 from pathlib import Path
 from xml.sax.saxutils import escape, quoteattr
 
 TIMELINE_SCHEMA = "kosif.timeline.v1"
 EDL_SCHEMA = "kosif.edl.v1"
 RECEIPT_SCHEMA = "kosif.nle-export.v1"
-FORMATS = ("fcpxml", "xmeml", "edl", "blender", "srt", "capcut")
-DEFAULT_FORMATS = ("fcpxml", "xmeml", "edl", "blender")
+FORMATS = ("fcpxml", "xmeml", "edl", "otio", "blender", "srt", "capcut")
+DEFAULT_FORMATS = ("fcpxml", "xmeml", "edl", "otio", "blender")
+NTSC = {n: Fraction(n * 1000, 1001) for n in (24, 30, 48, 60, 120)}   # 23.976, 29.97, 47.952, 59.94, 119.88
 KINDS = {"video": {".mp4", ".mov", ".mkv", ".webm", ".m4v", ".mxf", ".avi"},
          "image": {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"},
          "audio": {".wav", ".mp3", ".m4a", ".aac", ".flac", ".aif", ".aiff"}}
@@ -55,6 +59,19 @@ def _int(value, name, lo, hi):
     if type(value) is not int or not lo <= value <= hi:
         raise ValueError(f"{name} must be an integer within {lo}..{hi}")
     return value
+
+
+def parse_rate(value, name):
+    """An integer rate, or a known NTSC rate given as 29.97 etc. Returns a Fraction."""
+    if type(value) is int:
+        return Fraction(_int(value, name, 1, 120))
+    v = _num(value, name, 1, 120)
+    if v.is_integer():
+        return Fraction(int(v))
+    for r in NTSC.values():
+        if abs(v - float(r)) < 0.01:
+            return r
+    raise ValueError(f"{name}: {v} is not supported (use an integer or 23.976, 29.97, 47.952, 59.94, 119.88)")
 
 
 def probe(path):
@@ -84,17 +101,20 @@ def probe(path):
 
 
 class Timeline:
-    def __init__(self, name, fps, width, height, duration):
-        self.name, self.fps, self.width, self.height = name, fps, width, height
-        self.frames = round(duration * fps)
+    def __init__(self, name, rate, width, height, duration):
+        self.name, self.width, self.height = name, width, height
+        self.rate = Fraction(rate)                 # exact frame rate, e.g. 30000/1001
+        self.fps = round(self.rate)                # timecode base (30 for 29.97)
+        self.ntsc = self.rate.denominator != 1
+        self.frames = round(duration * float(self.rate))
         self.tracks = []          # [{"id","kind","layer","clips":[...]}]
         self.media = {}           # resolved path -> probe info
         self.drift = 0.0          # largest |seconds - frames/fps| seen while snapping
         self.warnings = []
 
     def f(self, seconds):
-        frames = round(seconds * self.fps)
-        self.drift = max(self.drift, abs(seconds - frames / self.fps))
+        frames = round(seconds * float(self.rate))
+        self.drift = max(self.drift, abs(seconds - frames / float(self.rate)))
         return frames
 
     def info(self, path):
@@ -124,8 +144,8 @@ def _resolve(raw, base, kind, allow_missing):
 
 
 def from_timeline(doc, base, name, allow_missing):
-    fps = _int(doc.get("fps"), "fps", 1, 120)
-    tl = Timeline(name, fps, _int(doc.get("width"), "width", 16, 8192), _int(doc.get("height"), "height", 16, 8192),
+    rate = parse_rate(doc.get("fps"), "fps")
+    tl = Timeline(name, rate, _int(doc.get("width"), "width", 16, 8192), _int(doc.get("height"), "height", 16, 8192),
                   _num(doc.get("duration"), "duration", 0.04, MAX_SECONDS))
     tracks = doc.get("tracks")
     if not isinstance(tracks, list) or not tracks:
@@ -147,7 +167,7 @@ def from_timeline(doc, base, name, allow_missing):
             seen.add(cid)
             path = _resolve(cl.get("path"), base, tr["kind"], allow_missing)
             start = _num(cl.get("start", 0), f"{cid}.start", 0, MAX_SECONDS)
-            dur = _num(cl.get("duration"), f"{cid}.duration", 1 / fps, MAX_SECONDS)
+            dur = _num(cl.get("duration"), f"{cid}.duration", 1 / float(rate), MAX_SECONDS)
             src_in = _num(cl.get("in", 0), f"{cid}.in", 0, MAX_SECONDS)
             clip = {"id": cid, "path": path, "start": tl.f(start), "dur": max(1, tl.f(dur)), "in": tl.f(src_in),
                     "volume": _num(cl.get("volume", 1.0), f"{cid}.volume", 0, 4),
@@ -170,10 +190,10 @@ def from_timeline(doc, base, name, allow_missing):
 
 def from_cut_plan(doc, base, name, allow_missing, audio=None):
     video = doc.get("video") or {}
-    fps = _int(video.get("fps", 30), "video.fps", 1, 120)
+    rate = parse_rate(video.get("fps", 30), "video.fps")
     frames = _int(video.get("frame_count"), "video.frame_count", 1, MAX_SECONDS * 120)
-    tl = Timeline(name, fps, _int(video.get("width", 1080), "width", 16, 8192),
-                  _int(video.get("height", 1920), "height", 16, 8192), frames / fps)
+    tl = Timeline(name, rate, _int(video.get("width", 1080), "width", 16, 8192),
+                  _int(video.get("height", 1920), "height", 16, 8192), frames / float(rate))
     track = {"id": "V1", "kind": "video", "layer": 0, "order": 0, "clips": []}
     for sc in doc.get("scenes") or []:
         if not sc.get("footage_path"):
@@ -213,7 +233,7 @@ def source_frames(tl, clip, kind):
         return used
     dur = tl.info(clip["path"]).get("duration")
     if dur:
-        avail = int(math.floor(dur * tl.fps + 1e-6))
+        avail = int(math.floor(dur * float(tl.rate) + 1e-6))
         if avail < used:
             tl.warnings.append(f"{clip['id']}: uses {used} frames but the source has {avail}")
         return max(avail, used)
@@ -221,11 +241,12 @@ def source_frames(tl, clip, kind):
 
 
 # --------------------------------------------------------------------------- formats
-def _t(frames, fps):
-    if frames == 0:
+def _t(frames, rate):
+    """FCPXML rational seconds for a frame count at an exact rate (15 @ 30 -> 1/2s, 1 @ 29.97 -> 1001/30000s)."""
+    sec = Fraction(frames) / Fraction(rate)
+    if sec == 0:
         return "0s"
-    g = math.gcd(frames, fps)
-    return f"{frames // g}s" if fps // g == 1 else f"{frames // g}/{fps // g}s"
+    return f"{sec.numerator}s" if sec.denominator == 1 else f"{sec.numerator}/{sec.denominator}s"
 
 
 def _db(volume):
@@ -240,8 +261,41 @@ def _audio_order(tl):
     return [t for t in tl.tracks if t["kind"] == "audio"]
 
 
+def _fcpxml_adjust(tl, t, c, local0):
+    """adjust-* children (DTD order: conform, transform, blend, volume) for layout, opacity fades, level and audio fades."""
+    rate, parts = tl.rate, []
+    lay = c.get("layout")
+    if lay and t["kind"] != "audio":
+        info = tl.info(c["path"])
+        sw, sh = info.get("width"), info.get("height")
+        if sw and sh:
+            # FCPXML position: origin at frame centre, y up, units = percent of the frame height
+            px = (lay["x"] + lay["w"] / 2 - tl.width / 2) / tl.height * 100
+            py = (tl.height / 2 - (lay["y"] + lay["h"] / 2)) / tl.height * 100
+            parts.append('<adjust-conform type="none"/>')
+            parts.append(f'<adjust-transform position="{px:.4f} {py:.4f}" scale="{lay["w"] / sw:.5f} {lay["h"] / sh:.5f}"/>')
+        else:
+            tl.warnings.append(f"fcpxml: {c['id']} layout skipped (source size unknown without ffprobe)")
+    if t["kind"] != "audio" and (c["fade_in"] or c["fade_out"]):
+        keys = {}
+        if c["fade_in"]:
+            keys.update({0: 0, c["fade_in"]: 1})
+        if c["fade_out"]:
+            keys.setdefault(c["dur"] - c["fade_out"], 1)
+            keys[c["dur"]] = 0
+        kf = "".join(f'<keyframe time="{_t(local0 + k, rate)}" value="{v}"/>' for k, v in sorted(keys.items()))
+        parts.append(f'<adjust-blend><param name="amount"><keyframeAnimation>{kf}</keyframeAnimation></param></adjust-blend>')
+    if c["audio"] and (c["volume"] != 1.0 or c["fade_in"] or c["fade_out"]):
+        fades = (f'<fadeIn type="easeIn" duration="{_t(c["fade_in"], rate)}"/>' if c["fade_in"] else "") + \
+                (f'<fadeOut type="easeIn" duration="{_t(c["fade_out"], rate)}"/>' if c["fade_out"] else "")
+        amount = f'amount="{_db(c["volume"])}"'
+        parts.append(f'<adjust-volume {amount}><param name="amount">{fades}</param></adjust-volume>' if fades
+                     else f'<adjust-volume {amount}/>')
+    return "".join(parts)
+
+
 def write_fcpxml(tl):
-    fps = tl.fps
+    fps = tl.rate
     out = ['<?xml version="1.0" encoding="UTF-8"?>', "<!DOCTYPE fcpxml>", '<fcpxml version="1.9">', "  <resources>",
            f'    <format id="r1" frameDuration="{_t(1, fps)}" width="{tl.width}" height="{tl.height}" '
            f'colorSpace="1-1-1 (Rec. 709)"/>']
@@ -276,7 +330,7 @@ def write_fcpxml(tl):
             ref = ids[(c["path"], t["kind"])]
             if t["kind"] == "image":   # a still lives in a <clip> wrapper, as Final Cut Pro writes it
                 out.append(f'              <clip lane="{lane}" offset="{_t(c["start"], fps)}" name={quoteattr(c["id"])} '
-                           f'start="0s" duration="{_t(c["dur"], fps)}" format="r1">'
+                           f'start="0s" duration="{_t(c["dur"], fps)}" format="r1">{_fcpxml_adjust(tl, t, c, 0)}'
                            f'<video ref="{ref}" offset="0s" start="0s" duration="{_t(c["dur"], fps)}"/></clip>')
                 continue
             tag = "asset-clip"
@@ -286,19 +340,34 @@ def write_fcpxml(tl):
                 attrs.append(f'srcEnable="{"all" if c["audio"] else "video"}"')
             if t["kind"] == "audio":
                 attrs.append('audioRole="dialogue"' if t["id"].lower() in ("vo", "voice", "narration") else 'audioRole="music"')
-            body = f'<adjust-volume amount="{_db(c["volume"])}"/>' if c["audio"] and c["volume"] != 1.0 else ""
+            body = _fcpxml_adjust(tl, t, c, c["in"])
             out.append(f"              <{tag} {' '.join(attrs)}" + (f">{body}</{tag}>" if body else "/>"))
     out += ["            </gap>", "          </spine>", "        </sequence>", "      </project>", "    </event>",
             "  </library>", "</fcpxml>", ""]
     return "\n".join(out)
 
 
-def _rate(fps, pad):
-    return f"{pad}<rate><timebase>{fps}</timebase><ntsc>FALSE</ntsc></rate>"
+def _rate(tl, pad):
+    return f"{pad}<rate><timebase>{tl.fps}</timebase><ntsc>{'TRUE' if tl.ntsc else 'FALSE'}</ntsc></rate>"
+
+
+def _xmeml_fades(tl, c, media, pad):
+    """Fades as dip-to-black transitions, the way Final Cut 7 and Premiere write them."""
+    if media == "video":
+        eff = ("Cross Dissolve", "Cross Dissolve", "Dissolve")
+    else:
+        eff = ("Cross Fade (+3dB)", "KGAudioTransCrossFade3dB", "audiotransition")
+    def item(a, b, align):
+        return (f"{pad}<transitionitem>{_rate(tl, '')}<start>{a}</start><end>{b}</end><alignment>{align}</alignment>"
+                f"<effect><name>{eff[0]}</name><effectid>{eff[1]}</effectid><effectcategory>{eff[2]}</effectcategory>"
+                f"<effecttype>transition</effecttype><mediatype>{media}</mediatype></effect></transitionitem>")
+    before = [item(c["start"], c["start"] + c["fade_in"], "start-black")] if c["fade_in"] else []
+    end = c["start"] + c["dur"]
+    after = [item(end - c["fade_out"], end, "end-black")] if c["fade_out"] else []
+    return before, after
 
 
 def write_xmeml(tl):
-    fps = tl.fps
     files, fid = {}, 0
     clip_no = 0
 
@@ -318,7 +387,7 @@ def write_xmeml(tl):
             media.append(f"{pad}    <audio><samplecharacteristics><samplerate>{info.get('rate', 48000)}</samplerate>"
                          f"<depth>16</depth></samplecharacteristics><channelcount>{info.get('channels', 2)}</channelcount></audio>")
         return "\n".join([f'{pad}<file id="{files[key]}">', f"{pad}  <name>{escape(c['path'].name)}</name>",
-                          f"{pad}  <pathurl>{escape(c['path'].as_uri())}</pathurl>", _rate(fps, pad + "  "),
+                          f"{pad}  <pathurl>{escape(c['path'].as_uri())}</pathurl>", _rate(tl, pad + "  "),
                           f"{pad}  <duration>{source_frames(tl, c, t['kind'])}</duration>",
                           f"{pad}  <media>", *media, f"{pad}  </media>", f"{pad}</file>"])
 
@@ -327,7 +396,7 @@ def write_xmeml(tl):
         clip_no += 1
         lines = [f'{pad}<clipitem id="clipitem-{clip_no}">', f"{pad}  <name>{escape(c['id'])}</name>",
                  f"{pad}  <enabled>TRUE</enabled>", f"{pad}  <duration>{source_frames(tl, c, t['kind'])}</duration>",
-                 _rate(fps, pad + "  "), f"{pad}  <start>{c['start']}</start>",
+                 _rate(tl, pad + "  "), f"{pad}  <start>{c['start']}</start>",
                  f"{pad}  <end>{c['start'] + c['dur']}</end>", f"{pad}  <in>{c['in']}</in>",
                  f"{pad}  <out>{c['in'] + c['dur']}</out>", file_el(t, c, pad + "  ")]
         if audio_side:
@@ -341,12 +410,14 @@ def write_xmeml(tl):
         lines.append(f"{pad}</clipitem>")
         return "\n".join(lines)
 
-    v = ["      <video>", "        <format><samplecharacteristics>", _rate(fps, "          "),
+    v = ["      <video>", "        <format><samplecharacteristics>", _rate(tl, "          "),
          f"          <width>{tl.width}</width><height>{tl.height}</height>"
          f"<pixelaspectratio>square</pixelaspectratio>", "        </samplecharacteristics></format>"]
     for t in _video_order(tl):
         v.append("        <track>")
-        v += [clipitem(t, c, "          ") for c in t["clips"]]
+        for c in t["clips"]:
+            before, after = _xmeml_fades(tl, c, "video", "          ")
+            v += before + [clipitem(t, c, "          ")] + after
         v.append("        </track>")
     v.append("      </video>")
     a = ["      <audio>"]
@@ -354,17 +425,21 @@ def write_xmeml(tl):
         with_audio = [c for c in t["clips"] if c["audio"]]
         if with_audio:
             a.append("        <track>")
-            a += [clipitem(t, c, "          ", True) for c in with_audio]
+            for c in with_audio:
+                before, after = _xmeml_fades(tl, c, "audio", "          ")
+                a += before + [clipitem(t, c, "          ", True)] + after
             a.append("        </track>")
     for t in _audio_order(tl):
         a.append("        <track>")
-        a += [clipitem(t, c, "          ", True) for c in t["clips"]]
+        for c in t["clips"]:
+            before, after = _xmeml_fades(tl, c, "audio", "          ")
+            a += before + [clipitem(t, c, "          ", True)] + after
         a.append("        </track>")
     a.append("      </audio>")
     return "\n".join(['<?xml version="1.0" encoding="UTF-8"?>', "<!DOCTYPE xmeml>", '<xmeml version="5">',
                       '  <sequence id="sequence-1">', f"    <name>{escape(tl.name)}</name>",
-                      f"    <duration>{tl.frames}</duration>", _rate(fps, "    "),
-                      f"    <timecode>{_rate(fps, '')}<string>00:00:00:00</string><frame>0</frame>"
+                      f"    <duration>{tl.frames}</duration>", _rate(tl, "    "),
+                      f"    <timecode>{_rate(tl, '')}<string>00:00:00:00</string><frame>0</frame>"
                       f"<displayformat>NDF</displayformat></timecode>", "    <media>", *v, *a,
                       "    </media>", "  </sequence>", "</xmeml>", ""])
 
@@ -396,6 +471,68 @@ def write_edls(tl):
             lines.append("")
         files[f"{SAFE_NAME.sub('_', t['id'])}.edl"] = "\n".join(lines)
     return files
+
+
+def write_otio(tl):
+    """OpenTimelineIO JSON (Timeline.1). Overlapping clips on one KOSIF track are split onto extra OTIO tracks."""
+    rate = float(tl.rate)
+
+    def rt(v):
+        return {"OTIO_SCHEMA": "RationalTime.1", "rate": rate, "value": float(v)}
+
+    def rng(a, d):
+        return {"OTIO_SCHEMA": "TimeRange.1", "duration": rt(d), "start_time": rt(a)}
+
+    def item(schema, name, src, extra=None):
+        d = {"OTIO_SCHEMA": schema, "name": name, "metadata": extra or {}, "source_range": src,
+             "effects": [], "markers": [], "enabled": True}
+        return d
+
+    def lanes(clips):
+        out = []
+        for c in clips:
+            for lane in out:
+                if lane[-1]["start"] + lane[-1]["dur"] <= c["start"]:
+                    lane.append(c)
+                    break
+            else:
+                out.append([c])
+        return out
+
+    def track(name, kind, clips, suffix=""):
+        children, at = [], 0
+        for c in clips:
+            if c["start"] > at:
+                children.append(item("Gap.1", "", rng(0, c["start"] - at)))
+            ref = {"OTIO_SCHEMA": "ExternalReference.1", "name": c["path"].name, "metadata": {},
+                   "target_url": c["path"].as_uri(), "available_range": None, "available_image_bounds": None}
+            meta = {"kosif": {k: c[k] for k in ("volume", "fade_in", "fade_out") if c[k] not in (0, 1.0)}}
+            if c.get("layout"):
+                meta["kosif"]["layout"] = c["layout"]
+            clip = item("Clip.2", c["id"] + suffix, rng(c["in"], c["dur"]), meta)
+            clip.update({"media_references": {"DEFAULT_MEDIA": ref}, "active_media_reference_key": "DEFAULT_MEDIA"})
+            children.append(clip)
+            at = c["start"] + c["dur"]
+        tr = item("Track.1", name, None)
+        tr.update({"kind": kind, "children": children})
+        return tr
+
+    tracks = []
+    for t in _video_order(tl):
+        split = lanes(t["clips"])
+        if len(split) > 1:
+            tl.warnings.append(f"otio: {t['id']} has overlapping clips, split onto {len(split)} tracks")
+        tracks += [track(t["id"] + (f"-{i + 1}" if i else ""), "Video", lane) for i, lane in enumerate(split)]
+    for t in _video_order(tl) + _audio_order(tl):
+        clips = [c for c in t["clips"] if c["audio"]]
+        suffix = "-audio" if t["kind"] != "audio" else ""
+        tracks += [track(t["id"] + suffix + (f"-{i + 1}" if i else ""), "Audio", lane, suffix)
+                   for i, lane in enumerate(lanes(clips))]
+    stack = item("Stack.1", "tracks", None)
+    stack["children"] = tracks
+    doc = {"OTIO_SCHEMA": "Timeline.1", "name": tl.name, "global_start_time": rt(0), "tracks": stack,
+           "metadata": {"kosif": {"width": tl.width, "height": tl.height, "rate": f"{tl.rate.numerator}/{tl.rate.denominator}"}}}
+    return json.dumps(doc, ensure_ascii=False, indent=2) + "\n"
 
 
 BLENDER_TEMPLATE = r'''# Generated by KOSIF nle_export.py: builds the timeline in Blender's Video Sequencer.
@@ -437,7 +574,7 @@ def key(strip, prop, frame, value):
 def build(scene):
     r = scene.render
     r.resolution_x, r.resolution_y, r.resolution_percentage = DATA["width"], DATA["height"], 100
-    r.fps, r.fps_base = DATA["fps"], 1.0
+    r.fps, r.fps_base = DATA["fps"], DATA["fps_base"]
     scene.frame_start, scene.frame_end = 1, DATA["frames"]
     ed = scene.sequence_editor or scene.sequence_editor_create()
     coll = strips(ed)
@@ -488,7 +625,8 @@ if "--save" in argv:
 
 
 def write_blender(tl):
-    data = {"name": tl.name, "fps": tl.fps, "width": tl.width, "height": tl.height, "frames": tl.frames, "strips": []}
+    data = {"name": tl.name, "fps": tl.fps, "fps_base": round(tl.fps / float(tl.rate), 6), "width": tl.width,
+            "height": tl.height, "frames": tl.frames, "strips": []}
     channel = 1
     for t in _video_order(tl):
         for c in t["clips"]:
@@ -566,7 +704,7 @@ def write_cutlist(tl):
             "where your CapCut version offers it.", "",
             "كاب كات مفيهوش استيراد تايملاين رسمي: حط الملفات بالترتيب ده، قصّ كل واحد من (بداية/نهاية المصدر) "
             "وحطه عند وقت التايملاين. ملف الترجمة .srt بيتستورد من لوحة الكابشن لو نسختك بتدعمه.", "",
-            f"Project: {tl.name} · {tl.width}x{tl.height} · {tl.fps} fps · {_tc(tl.frames, tl.fps)}", "",
+            f"Project: {tl.name} · {tl.width}x{tl.height} · {float(tl.rate):g} fps · {_tc(tl.frames, tl.fps)}", "",
             "| # | track | clip | file | timeline in → out | source in → out |", "|---|---|---|---|---|---|"]
     n = 0
     for t in _video_order(tl) + _audio_order(tl):
@@ -588,6 +726,7 @@ All files point at the original media; nothing was copied or re-encoded. Keep th
 | Final Cut Pro | `{base}.fcpxml` | File → Import → XML… |
 | Premiere Pro | `{base}.premiere.xml` | File → Import… (FCP7 XML), or `*.edl` via File → Import |
 | Avid / any EDL tool | `<track>.edl` | one EDL per track, CMX3600 non-drop |
+| Resolve 18.5+ / OTIO tools | `{base}.otio` | File → Import → Timeline…, or `otioconvert` to any adapter |
 | Blender | `{base}.blender_vse.py` | `blender --background --python {base}.blender_vse.py -- --save {base}.blend`, or Scripting → Run Script |
 | CapCut | `{base}.capcut.md` (+ `.srt`) | no timeline import: follow the cut list |
 
@@ -607,6 +746,8 @@ def export(tl, out_dir, formats, words=None, force=False):
         files[f"{base}.premiere.xml"] = write_xmeml(tl)
     if "edl" in formats:
         files.update({f"{base}.{k}": v for k, v in write_edls(tl).items()})
+    if "otio" in formats:
+        files[f"{base}.otio"] = write_otio(tl)
     if "blender" in formats:
         files[f"{base}.blender_vse.py"] = write_blender(tl)
     phrases = None
@@ -615,16 +756,20 @@ def export(tl, out_dir, formats, words=None, force=False):
     if ("srt" in formats or "capcut" in formats) and phrases:
         files[f"{base}.srt"] = write_srt(phrases)
     elif "srt" in formats:
-        raise ValueError("srt needs --words words.json")
+        if set(formats) == {"srt"}:
+            raise ValueError("srt needs --words words.json")
+        tl.warnings.append("srt skipped: no --words words.json given")
     if "capcut" in formats:
         files[f"{base}.capcut.md"] = write_cutlist(tl)
     gaps = []
     fades = [c["id"] for _, c in tl.clips() if c["fade_in"] or c["fade_out"]]
     layout = [c["id"] for _, c in tl.clips() if c.get("layout")]
     if fades:
-        gaps.append(f"- fades on {', '.join(fades)}: Blender script only; add dissolves/opacity in Resolve/FCP/Premiere")
+        gaps.append(f"- fades on {', '.join(fades)}: carried by Blender (keyframes), FCPXML (opacity keyframes + audio "
+                    "fadeIn/fadeOut) and the Premiere XML (dissolve to/from black); add them by hand from an EDL or the OTIO file")
     if layout:
-        gaps.append(f"- position/size on {', '.join(layout)}: Blender script only; set Transform in the other editors")
+        gaps.append(f"- position/size on {', '.join(layout)}: carried by Blender and FCPXML (adjust-transform, check it "
+                    "in the app); set Transform by hand in Premiere or from an EDL/OTIO import")
     files["HANDOFF.md"] = HANDOFF.format(base=base, gaps="\n".join(gaps) or "- nothing: every clip is carried as-is")
     clash = [n for n in files if (out_dir / n).exists()]
     if clash and not force:
@@ -634,8 +779,9 @@ def export(tl, out_dir, formats, words=None, force=False):
         data = text.encode("utf-8")
         (out_dir / name).write_bytes(data)
         receipt_files.append({"file": name, "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()})
-    receipt = {"schema": RECEIPT_SCHEMA, "name": tl.name, "fps": tl.fps, "width": tl.width, "height": tl.height,
-               "frames": tl.frames, "seconds": round(tl.frames / tl.fps, 3),
+    receipt = {"schema": RECEIPT_SCHEMA, "name": tl.name, "fps": round(float(tl.rate), 3),
+               "rate": f"{tl.rate.numerator}/{tl.rate.denominator}", "timecode": "non-drop", "width": tl.width, "height": tl.height,
+               "frames": tl.frames, "seconds": round(tl.frames / float(tl.rate), 3),
                "tracks": [{"id": t["id"], "kind": t["kind"], "clips": len(t["clips"])} for t in tl.tracks],
                "clips": sum(len(t["clips"]) for t in tl.tracks), "formats": sorted(formats),
                "max_snap_drift_ms": round(tl.drift * 1000, 3), "probed": bool(shutil.which("ffprobe")),
@@ -664,7 +810,7 @@ def main(argv=None):
     sub.add_parser("formats", help="list the formats and which editor opens each")
     args = ap.parse_args(argv)
     if args.cmd == "formats":
-        for line in __doc__.splitlines()[6:12]:
+        for line in __doc__.splitlines()[6:13]:
             print(line.strip())
         return 0
     formats = set(FORMATS if args.formats == "all" else (f.strip() for f in args.formats.split(",") if f.strip()))
