@@ -59,6 +59,25 @@ class DepsTest(unittest.TestCase):
         self.assertTrue(rec["blocked"])
         self.assertIn("--cookies-from-browser", rec["hint"])
 
+    def test_drm_is_reported_and_stops_the_retries(self):
+        err = "ERROR: [soundcloud] 2239008890: This video is DRM protected"
+        self.assertTrue(_deps.is_drm(err))
+        self.assertFalse(_deps.is_drm("ERROR: [TikTok] Your IP address is blocked"))
+        a = mock.Mock(out=str(ROOT / "out" / "_test_dl"), quality="audio", cookies=None, connections=1, proxy=None,
+                      safe=False, cookies_from_browser=None)
+        calls = []
+        def fake_attempt(*args, **kw):
+            calls.append(args)
+            return None, err
+        with mock.patch.object(fetch_video, "impersonation", return_value="chrome"), \
+             mock.patch.object(fetch_video, "attempt", side_effect=fake_attempt):
+            rec = fetch_video.download("https://soundcloud.com/a/b", a, ["yt-dlp"])
+        self.assertIsNone(rec["file"])
+        self.assertTrue(rec["drm"])
+        self.assertNotIn("blocked", rec)
+        self.assertIn("DRM", rec["hint"])
+        self.assertEqual(len(calls), 1)   # no second format or impersonation try on a DRM lock
+
     def test_boot_reports_download_tools_and_exits_zero(self):
         env = {**os.environ, "KOSIF_NO_AUTOINSTALL": "1"}
         p = subprocess.run([sys.executable, str(SCRIPTS / "boot.py"), "--json"], capture_output=True, text=True, timeout=120, env=env)

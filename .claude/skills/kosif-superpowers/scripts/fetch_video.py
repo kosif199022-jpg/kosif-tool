@@ -57,9 +57,11 @@ def find_ytdlp(install: bool = True) -> list[str] | None:
 def blocked(err: str, url: str) -> dict | None:
     """When a site refuses the cloud machine (bot check, IP block), say so plainly with the two honest ways forward."""
     try:
-        from _deps import blocked_hint, is_blocked  # noqa: PLC0415
+        from _deps import blocked_hint, drm_hint, is_blocked, is_drm  # noqa: PLC0415
     except ImportError:
         return None
+    if is_drm(err):   # a publisher lock, not a cloud block: no cookies or own-computer route either
+        return {"drm": True, "hint": drm_hint(url)}
     return {"blocked": True, "hint": blocked_hint(url)} if is_blocked(err) else None
 
 
@@ -322,6 +324,8 @@ def download(url, a, ytdlp, once: bool = False) -> dict:
                 s = edit_safe(p)
                 rec["safe_file"] = str(s) if s else None
             return rec
+        if "drm" in (err or "").lower() and (blocked(err, url) or {}).get("drm"):
+            break   # DRM: the other format and impersonation tries would only knock on the same lock
     rec = {"url": url, "file": None, "error": err.strip()[-400:] or "download failed",
            "hint": "run --update (site changed), or supply --cookies for private/age-restricted posts"}
     rec.update(blocked(err, url) or {})
