@@ -165,6 +165,7 @@
 |---|---|---|---|---|
 | `adobe-mcp-bridges` | — | ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب) · Adobe MCP bridges (After Effects, Premiere Pro, Photoshop) | `python3 scripts/adobe_mcp.py list` | 1 |
 | `kosif-remote-commander` | TOOL-55 | خادم KOSIF Remote Commander · KOSIF Remote Commander MCP | `python3 scripts/kosif_remote_superpowers.py doctor` | 1 |
+| `photocraft-mcp` | — | PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude · PhotoCraft MCP (open-source Photoshop-style editor driven by Claude) | `python3 scripts/photocraft_mcp.py steps headless` | 1 |
 
 ## maintain
 

@@ -1,4 +1,4 @@
-"""Tests for scripts/skill_loader.py — the light loading map (USIP v5.8)."""
+"""Tests for scripts/skill_loader.py — the light loading map (USIP v5.9)."""
 import io
 import sys
 import unittest

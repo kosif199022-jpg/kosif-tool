@@ -18,7 +18,7 @@
   "powers": 5854,
   "families": 62,
   "domains": 10,
-  "tools": 192,
+  "tools": 193,
   "guides": 117,
   "statuses": {
    "documented": 2325,
@@ -18189,6 +18189,105 @@
    ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/adobe-mcp-bridges.md",
+    ".claude/skills/kosif-superpowers/references/guides/local-computer.md"
+   ],
+   "families": [
+    "engines-render-pipeline",
+    "transitions-cuts",
+    "photo-video-footage",
+    "agent-orchestration"
+   ]
+  },
+  {
+   "id": "photocraft-mcp",
+   "path": "scripts/photocraft_mcp.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "local-computer",
+   "title_en": "PhotoCraft MCP (open-source Photoshop-style editor driven by Claude)",
+   "title_ar": "PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude",
+   "summary_en": "Annex A39 helper for storytold/photocraft, a clean-room Rust image editor (MIT/Apache) whose 500+ commands are exposed over MCP: headless sessions (also in cloud sessions and Linux), command discovery and batches, layer-tree inspection, bounded PNG previews, PSD/PSB/TIFF/WebP/EXR export, layers-to-files, data sets, folder batches, .cube LUT export and a loopback bridge to the running desktop app. The stdlib helper prints install steps, the Claude Code command or MCP JSON with absolute read/write roots, sample action files and recipes, and checks whether photocraft-cli, cargo and ffmpeg are present. It installs nothing.",
+   "summary_ar": "أداة الملحق A39 لـ storytold/photocraft، محرر صور بـ Rust (رخصة MIT/Apache) بأكثر من 500 أمر متاحة عبر MCP: جلسة بلا شاشة حتى في السحابة ولينكس، اكتشاف الأوامر وتنفيذها دفعات، فحص شجرة الطبقات، معاينة PNG، تصدير PSD وTIFF وWebP وEXR، طبقة لكل ملف، قوالب بيانات، دفعات مجلدات، تصدير LUT بصيغة cube، وجسر للبرنامج المفتوح. السكربت يطبع خطوات التسطيب وأمر Claude Code أو إعداد MCP بجذور مطلقة وأمثلة أكشنز ووصفات، ويفحص وجود photocraft-cli وcargo وffmpeg، ولا يسطّب شيئًا.",
+   "use_when": [
+    "عدّل الصور دي من غير فوتوشوب في السحابة",
+    "اربط Claude ببرنامج تعديل صور مفتوح المصدر",
+    "طبّق نفس اللوك على كل صور المجلد",
+    "Edit a PSD headlessly with an MCP server",
+    "Export a .cube LUT from adjustment layers for my video",
+    "Set up PhotoCraft MCP for Claude Code"
+   ],
+   "keywords": [
+    "PhotoCraft",
+    "photocraft-cli",
+    "MCP server",
+    "PSD",
+    "Photoshop alternative",
+    "headless image editing",
+    "batch",
+    "LUT",
+    "cube",
+    "فوتوشوب مجاني",
+    "تعديل صور",
+    "طبقات",
+    "دفعة صور"
+   ],
+   "commands": [
+    {
+     "name": "steps",
+     "example": "python3 scripts/photocraft_mcp.py steps headless",
+     "does": "Prints numbered install/registration steps for headless, bridge or release installs; the first step is always to ask the user."
+    },
+    {
+     "name": "config",
+     "example": "python3 scripts/photocraft_mcp.py config --client claude-code --read-root /abs/in --write-root /abs/out",
+     "does": "Prints the claude mcp add command or the mcpServers JSON; refuses relative roots and a bridge without a token file."
+    },
+    {
+     "name": "doctor",
+     "example": "python3 scripts/photocraft_mcp.py doctor",
+     "does": "Reports whether photocraft-cli (with its version), cargo and ffmpeg are on PATH."
+    },
+    {
+     "name": "actions",
+     "example": "python3 scripts/photocraft_mcp.py actions grade",
+     "does": "Prints a sample actions.json for photocraft-cli batch."
+    },
+    {
+     "name": "recipes",
+     "example": "python3 scripts/photocraft_mcp.py recipes",
+     "does": "Lists the six A39 recipes (thumbnail, photo+video LUT, product batch, data sets, PSD split, generated-then-finished)."
+    }
+   ],
+   "inputs": "A mode (headless, bridge, release), --client claude-code|claude-desktop|json, absolute --read-root/--write-root, or --bridge host:port with --token-file.",
+   "outputs": "Text or JSON on stdout. It writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:photocraft-cli",
+     "bin:cargo",
+     "bin:ffmpeg"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "The helper only prints. Building or installing PhotoCraft runs third-party code, and opening the desktop control port, each need the user's explicit approval; keep the bearer token in a private file, never in a config, log or commit.",
+   "safe_commands": [
+    "steps",
+    "config",
+    "doctor",
+    "actions",
+    "recipes"
+   ],
+   "limits": "PhotoCraft itself was not built or run here (the build was not approved in this session); the tool list, limits and command ids come from the project's docs and engine source as of 2026-10-29, and it is an early-alpha editor, so check every output visually.",
+   "evidence": "tested-here",
+   "evidence_note": "6/6 passed (python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_photocraft_mcp.py); steps, config, doctor, actions and recipes ran here on Linux.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_photocraft_mcp.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A39-v59-photocraft-mcp.md",
     ".claude/skills/kosif-superpowers/references/guides/local-computer.md"
    ],
    "families": [

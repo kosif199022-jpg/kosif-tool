@@ -60,6 +60,7 @@
 | `memory-ops` | عمليات الذاكرة | `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json` | tested-here |
 | `micro-index` | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة | `python3 scripts/micro_index.py build` | tested-here |
 | `owned-repos` | خريطة مستودعات المالك وخريطة المهارات | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
+| `photocraft-mcp` | PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude | `python3 scripts/photocraft_mcp.py steps headless` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |
 | `probe-env` | فحص قدرات الجهاز | `python3 scripts/probe_env.py` | tested-elsewhere |
 | `python-package-probe` | فاحص وجود حزم بايثون | `python3 scripts/python_package_probe.py pandas numpy httpx` | tested-here |
