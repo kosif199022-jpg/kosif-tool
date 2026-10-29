@@ -160,6 +160,20 @@ class RecoveryMergeTests(Base):
         self.assertFalse(any("recovered" in x for x in d["dropped_segments"]))
         self.assertIs(d["engine"]["recover_dropped"], False)
 
+    def test_an_old_file_with_drops_is_up_to_date_under_no_recover(self):
+        _, d, dst = self.run_fake(0.0, "--no-recover")
+        for k in ("recover_dropped", "condition_on_previous_text", "decoder"):  # what transcribe wrote before them
+            d["engine"].pop(k, None)
+        self.assertTrue(d["dropped_segments"])
+        dst.write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
+        with mock.patch.object(M, "media_timing", side_effect=AssertionError("the model must not run again")):
+            rc, out, err = self.cli(self.media, "--out", dst, "--no-recover", fake=self.FAKE)
+        self.assertEqual((rc, json.loads(out)["status"]), (0, "up to date"), err)  # --no-recover = the old output
+        self.assertEqual(self.read(dst), d)
+        line, d2, _ = self.run_fake()  # with recovery on, the dropped spans can change the result: redone
+        self.assertEqual(line["status"], "written")
+        self.assertIs(d2["engine"]["recover_dropped"], True)
+
     def test_nothing_dropped_means_nothing_re_run(self):
         dst = self.tmp / "clean" / "words.json"
         rc, out, err = self.cli(self.media, "--out", dst, fake={"language": "ar", "segments": [KEPT], "recover": [R1]})

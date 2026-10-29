@@ -4,11 +4,12 @@
 مصادر فيديو مفتوحة الترخيص للمونتاج: قاعدة بيانات بالمواقع وترخيص كل موقع، وبحث وتحميل يحفظ مع كل لقطة ترخيصها وسطر النسب.
 
 Subcommands:
-  sources [--find WORD] [--status ok] [--searchable] [--json]
-          list or filter data/free_footage_sources.json (offline)
+  sources [--find WORD] [--status ok] [--searchable] [--commercial] [--no-attribution] [--include-paid] [--json]
+          list or filter data/free_footage_sources.json (offline; paid stock only with --include-paid)
   check   validate the database: required keys, enums, unique ids, template placeholders (offline)
   probe   [--sources a,b] [--out DIR]
-          live reachability check of every source's probe URLs; writes <out>/probe-<YYYYMMDD>.json (network)
+          live reachability check of every source's probe URLs, with the URL each one lands on after redirects
+          (a site now served from another domain is "moved"); writes <out>/probe-<YYYYMMDD>.json (network)
   search  QUERY [--sources a,b] [--min-height N] [--orientation portrait] [--limit N] [--commercial] [--no-ai]
           key-less APIs (Wikimedia Commons, Internet Archive, NASA), Pexels/Pixabay when PEXELS_API_KEY /
           PIXABAY_API_KEY are in the environment, and the Mixkit and Coverr search pages; saves the results to
@@ -22,7 +23,9 @@ Subcommands:
 Licences come from what each source declares (Commons extmetadata, the Archive's licenseurl, the Mixkit clip page's
 notice, the Coverr and Pexels/Pixabay licences, NASA's media guidelines). The tool records them; it does not grant
 them. ND licences are dropped by default (a montage is an adaptation); NC and Mixkit "Restricted" clips are kept but
-marked commercial=false, and --commercial drops them. Pinterest is never downloaded: it is not a licence source.
+marked commercial=false, and --commercial drops them, as it drops the retired CC Sampling, Sampling+ and Developing
+Nations licences (recorded unverified, credit required). Mixkit Free clips download at 2160p, else 1080p; Restricted
+clips at 720p only. Pinterest is never downloaded: it is not a licence source.
 
 Keys are read from the environment only, never printed or stored. One request per host per --delay seconds
 (default 1.0), a timeout on every request, a descriptive User-Agent, and a size cap on pages and files.
@@ -45,6 +48,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from http.client import HTTPException  # InvalidURL, IncompleteRead, RemoteDisconnected …: not URLError/ValueError
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -81,7 +85,7 @@ ENUMS = {
     "modification": ("yes", "no", "per-item", "n/a"),
     "tool.search": ("api", "api-key", "scrape", "none"),
     "tool.download": ("api", "direct", "none"),
-    "reachability.status": ("ok", "partial", "blocked", "timeout", "needs-key", "paid", "not-checked"),
+    "reachability.status": ("ok", "partial", "blocked", "timeout", "needs-key", "paid", "moved", "not-checked"),
 }
 TEMPLATE_FIELDS = ("title", "author", "source", "licence", "licence_url", "page_url")
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
@@ -101,9 +105,11 @@ class FootageError(Exception):
 
 
 class HttpError(FootageError):
-    def __init__(self, url: str, status, detail: str = ""):
+    def __init__(self, url: str, status, detail: str = "", final_url: str | None = None):
         self.url, self.status = url, status
-        super().__init__(f"HTTP {status} from {redact(url)}" + (f": {detail}" if detail else ""))
+        self.final_url = final_url or url  # where urllib ended up after following redirects
+        moved = f" (redirected to {redact(self.final_url)})" if self.final_url != url else ""
+        super().__init__(f"HTTP {status} from {redact(url)}{moved}" + (f": {detail}" if detail else ""))
 
 
 # ------------------------------------------------------------------------------------------------- database
@@ -288,13 +294,15 @@ class Http:
         while True:
             self._wait(host)
             self.calls += 1
-            req = urllib.request.Request(url, headers=hdrs, method=method)
+            final = url
             try:
+                req = urllib.request.Request(url, headers=hdrs, method=method)
                 resp = self.transport(req, self.timeout)
             except urllib.error.HTTPError as e:
                 status, retry_after = e.code, (e.headers.get("Retry-After") if e.headers else None)
+                final = _final_url(e, url)  # the URL of the answer, after any redirect
                 _close(e)
-            except (urllib.error.URLError, OSError, ValueError) as e:  # DNS, refused, TLS, timeout
+            except (urllib.error.URLError, OSError, ValueError, HTTPException) as e:  # DNS, refused, TLS, timeout, bad URL
                 reason = getattr(e, "reason", e)
                 raise HttpError(url, type(reason).__name__ if not isinstance(reason, str) else "error", str(reason)[:160]) from None
             else:
@@ -302,6 +310,7 @@ class Http:
                 retry_after = resp.headers.get("Retry-After") if getattr(resp, "headers", None) else None
                 if status < 400:
                     return resp
+                final = _final_url(resp, url)
                 _close(resp)
             if status in (429, 503) and attempt < self.retries:
                 attempt += 1
@@ -310,10 +319,11 @@ class Http:
                 except ValueError:
                     wait = self.delay * 4 or 2.0
                 if wait > MAX_RETRY_AFTER:
-                    raise HttpError(url, status, f"rate limited; Retry-After {retry_after}s is too long, try later")
+                    raise HttpError(url, status, f"rate limited; Retry-After {retry_after}s is too long, try later",
+                                    final_url=final)
                 self.sleep(max(wait, 0.5))
                 continue
-            raise HttpError(url, status)
+            raise HttpError(url, status, final_url=final)
 
     def get_bytes(self, url: str, headers: dict | None = None, cap_mb: float = PAGE_CAP_MB) -> bytes:
         resp = self.open(url, headers)
@@ -322,7 +332,7 @@ class Http:
             n = resp.headers.get("Content-Length") if getattr(resp, "headers", None) else None
             if n and n.isdigit() and int(n) > cap:
                 raise FootageError(f"{redact(url)} is {int(n) / 1048576:.1f} MB, over the {cap_mb:g} MB page cap")
-            body = resp.read(cap + 1)
+            body = read_or_fail(resp, cap + 1, url)
             if len(body) > cap:
                 raise FootageError(f"{redact(url)} is larger than the {cap_mb:g} MB page cap")
             return body
@@ -347,9 +357,29 @@ def _close(resp) -> None:
         pass
 
 
+def _final_url(resp, url: str) -> str:
+    """The URL a response really came from (urllib follows redirects silently), else the one requested."""
+    try:
+        return (resp.geturl() if hasattr(resp, "geturl") else None) or url
+    except Exception:
+        return url
+
+
+def read_or_fail(resp, n: int, url: str) -> bytes:
+    """resp.read(n), with a timeout, a reset or a cut-off body after the headers turned into a FootageError."""
+    try:
+        return resp.read(n)
+    except (OSError, HTTPException) as e:  # TimeoutError, ConnectionResetError, IncompleteRead …
+        raise FootageError(f"{redact(url)}: transfer failed ({type(e).__name__})") from None
+
+
 # ------------------------------------------------------------------------------------------------- licences
 
-CC_URL_RE = re.compile(r"creativecommons\.org/(licenses|publicdomain)/([a-z-]+)(?:/(\d(?:\.\d)?))?(/igo)?", re.I)
+CC_URL_RE = re.compile(r"creativecommons\.org/(licenses|publicdomain)/([a-z+-]+)(?:/(\d(?:\.\d)?))?(/igo)?", re.I)
+CC_ELEMENTS = {"by", "nc", "nd", "sa"}
+# retired or non-standard licences that live under creativecommons.org/licenses/ but are not BY-[NC-ND-SA] combinations
+CC_OTHER_NAMES = {"sampling": "Sampling", "sampling+": "Sampling+", "nc-sampling+": "NonCommercial Sampling+",
+                  "devnations": "Developing Nations", "gpl": "GNU GPL", "lgpl": "GNU LGPL"}
 CC_NAME_RE = re.compile(r"\bCC[- ]?(BY(?:[- ](?:NC|ND|SA))*)(?:[- ](\d\.\d))?(?:[- ](IGO))?\b", re.I)
 
 
@@ -380,7 +410,14 @@ def classify_licence(name=None, url=None) -> dict:
                                       derivatives=True, share_alike=False)
             return licence_record(raw_name or "Public domain", url, attribution=False, commercial=True,
                                   derivatives=True, share_alike=False)
-        return _cc_flags(parts.split("-"), ver, bool(igo), url)
+        elements = parts.split("-")
+        if "by" not in elements or not set(elements) <= CC_ELEMENTS:
+            # Sampling 1.0 allows no copying of the whole work, Sampling+ no commercial copying of it, Developing
+            # Nations applies only in developing countries, and all of them need credit: never read them as BY flags
+            name = "CC " + CC_OTHER_NAMES.get(parts, parts) + (f" {ver}" if ver else "")
+            return licence_record(name, url, attribution=True, commercial=None, derivatives=None, share_alike=None,
+                                  verified=False, note="retired or non-standard CC licence: read the deed before use")
+        return _cc_flags(elements, ver, bool(igo), url)
     low = raw_name.lower()
     if re.fullmatch(r"cc0(?: 1\.0)?(?: universal)?", low) or "public domain dedication" in low:
         return licence_record("CC0 1.0" if "1.0" in low or low == "cc0" else raw_name, url, attribution=False,
@@ -716,9 +753,21 @@ def parse_nasa_search(data: dict) -> list:
 NASA_VARIANTS = ("~orig.mp4", "~large.mp4", "~medium.mp4", "~mobile.mp4", "~small.mp4")
 
 
+def quote_path(url: str) -> str:
+    """url with its path percent-encoded exactly once. The NASA asset API returns links with raw spaces
+    (".../video/Causeway Main Launch dust removal/...~orig.mp4"), which http.client refuses (InvalidURL)."""
+    p = urllib.parse.urlsplit(url)
+    return urllib.parse.urlunsplit(p._replace(path=urllib.parse.quote(urllib.parse.unquote(p.path), safe="/~")))
+
+
+def nasa_page_url(nasa_id: str) -> str:
+    return "https://images.nasa.gov/details/" + urllib.parse.quote(str(nasa_id), safe="")
+
+
 def nasa_variants(asset: dict) -> tuple:
     """([video URLs, largest first], metadata.json URL) from https://images-api.nasa.gov/asset/<nasa_id>."""
-    hrefs = [https(i.get("href")) for i in ((asset or {}).get("collection") or {}).get("items") or [] if i.get("href")]
+    hrefs = [quote_path(https(i.get("href"))) for i in ((asset or {}).get("collection") or {}).get("items") or []
+             if isinstance(i.get("href"), str) and i.get("href")]
     meta = next((h for h in hrefs if h.endswith("/metadata.json")), None)
     vids = [h for tag in NASA_VARIANTS for h in hrefs if h.endswith(tag)]
     if not vids:
@@ -750,7 +799,7 @@ def nasa_result(db: dict, d: dict, video_url: str, dims: dict | None = None, alt
     author = d.get("secondary_creator") or d.get("photographer") or (f"NASA {d['center']}" if d.get("center") else "NASA")
     flags = ["check-third-party-credit"] if re.search(r"©|copyright", str(d.get("description", "")), re.I) else []
     dims = dims or {}
-    return make_result(db, "nasa", nid, title=d.get("title") or nid, page_url=f"https://images.nasa.gov/details/{nid}",
+    return make_result(db, "nasa", nid, title=d.get("title") or nid, page_url=nasa_page_url(nid),
                        file_url=video_url, licence=source_licence("nasa", sources_by_id(db).get("nasa")),
                        author=author, width=dims.get("width"), height=dims.get("height"),
                        duration=dims.get("duration"), mime="video/mp4", flags=flags,
@@ -924,11 +973,47 @@ def parse_mixkit(db: dict, page: str) -> list:
         lic = mixkit_licence(o.get("copyrightNotice"))
         w, h = c["dims"]
         flags = ([] if lic["verified"] else ["licence-checked-at-download"]) + (["size-from-thumbnail"] if w else [])
-        out.append(make_result(db, "mixkit", cid, title=c["title"] or o.get("name") or f"Mixkit clip {cid}",
-                               page_url=page_url, file_url=f"https://assets.mixkit.co/videos/{cid}/{cid}-720.mp4",
-                               licence=lic, quality=720, width=w, height=h, duration=o.get("duration"),
-                               mime="video/mp4", flags=flags))
+        out.append(mixkit_apply_files(make_result(
+            db, "mixkit", cid, title=c["title"] or o.get("name") or f"Mixkit clip {cid}", page_url=page_url,
+            file_url=mixkit_file(cid, 720), licence=lic, quality=720, width=w, height=h, duration=o.get("duration"),
+            mime="video/mp4", flags=flags)))
     return out
+
+
+MIXKIT_FREE_SIZES = (2160, 1080, 720)  # tried in this order; a size the clip lacks answers 403
+
+
+def mixkit_file(cid, short_side: int) -> str:
+    return f"https://assets.mixkit.co/videos/{cid}/{cid}-{short_side}.mp4"
+
+
+def mixkit_quality(url: str) -> int | None:
+    m = re.search(r"-(\d{3,4})\.mp4$", urllib.parse.urlsplit(url or "").path)
+    return int(m.group(1)) if m else None
+
+
+def mixkit_apply_files(rec: dict) -> dict:
+    """Point a Mixkit record at the files its licence lets a script fetch, largest first.
+
+    Free clips serve <id>-1080.mp4 to plain scripts and often <id>-2160.mp4 (measured 2026-10-29: 206 video/mp4);
+    Restricted clips answer 403 above 720p, and their free 720p file is for personal use only. A clip whose licence
+    has not been read yet gets the 720p file until confirm_licence reads its page. quality is the size a Free clip is
+    known to have (1080), so --min-height does not count on a 2160p file that may not exist."""
+    cid = rec["id"].split(":", 1)[-1]
+    if not cid.isdigit():  # a hand-made record for some other mixkit.co link (manual_record): keep its own file
+        return rec
+    free = (rec.get("licence") or {}).get("name") == MIXKIT_FREE
+    files = [mixkit_file(cid, q) for q in (MIXKIT_FREE_SIZES if free else (720,))]
+    quality = 1080 if free else 720
+    w, h, was = rec.get("width"), rec.get("height"), rec.get("quality")
+    if w and h and was and was != quality:
+        rec["width"], rec["height"] = _scale_to_short_side(w, h, quality)
+    rec.update(file_url=files[0], quality=quality)
+    if len(files) > 1:
+        rec["alternates"] = files[1:]
+    else:
+        rec.pop("alternates", None)
+    return rec
 
 
 def _scale_to_short_side(w: int, h: int, short: int) -> tuple:
@@ -947,12 +1032,20 @@ def mixkit_search_url(query: str) -> str:
 
 def search_mixkit(http: Http, db: dict, query: str, limit: int, opts: dict) -> list:
     found = parse_mixkit(db, http.get_text(mixkit_search_url(query)))
-    if opts.get("commercial") or opts.get("details"):
-        # the discover page does not name each clip's licence: read it from the pages of the clips that pass the
-        # other filters (one request each, at most 2 x limit)
-        rest = {**opts, "commercial": False}
-        for rec in [r for r in found if not r["licence"]["verified"] and keep(r, rest) is None][: limit * 2]:
-            confirm_licence(http, db, rec)
+    # the discover page does not name each clip's licence: read it from the pages of the clips that pass the other
+    # filters (one request each, at most 2 x limit) when --commercial or --details needs it, or when --min-height
+    # drops a clip at 720p that would pass at the 1080p a Free clip has
+    need, mh = opts.get("commercial") or opts.get("details"), opts.get("min_height")
+    rest = {**opts, "commercial": False, "min_height": None}
+    tall = {**rest, "min_height": mh}
+
+    def as_free(r):  # the same clip at the 1080p a Free licence gives
+        return mixkit_apply_files({**r, "licence": {"name": MIXKIT_FREE}})
+
+    todo = [r for r in found if not r["licence"]["verified"] and keep(r, rest) is None
+            and (need or (mh and keep(r, tall) is not None and keep(as_free(r), tall) is None))]
+    for rec in todo[: limit * 2]:
+        confirm_licence(http, db, rec)
     return found
 
 
@@ -1137,6 +1230,9 @@ def run_search(http: Http, db: dict, query: str, sources: list, limit: int, opts
             report["sources"][name] = {"status": "error", "detail": f"could not read the answer ({type(e).__name__}); "
                                        "the site may have changed"}
             continue
+        except (OSError, HTTPException) as e:  # backstop: a network failure Http did not word; the others go on
+            report["sources"][name] = {"status": "error", "detail": f"network failure ({type(e).__name__})"}
+            continue
         kept, dropped = [], {}
         for r in found:
             why = keep(r, opts)
@@ -1195,10 +1291,11 @@ def resolve_id(http: Http, db: dict, rid: str, opts: dict) -> dict:
             vids, _meta = nasa_variants(http.get_json(f"https://images-api.nasa.gov/asset/{urllib.parse.quote(native)}"))
             found = [nasa_result(db, docs[0], vids[0], alternates=vids)] if vids else []
     elif source == "mixkit" and native.isdigit():
+        # /free-stock-video/<id>/ redirects to a search page, but any "<slug>-<id>/" redirects to the clip's own page,
+        # whose licence notice confirm_licence reads (and whose canonical link replaces this page_url)
         found = [make_result(db, "mixkit", native, title=f"Mixkit clip {native}",
-                             page_url=f"https://mixkit.co/free-stock-video/{native}/",
-                             file_url=f"https://assets.mixkit.co/videos/{native}/{native}-720.mp4",
-                             licence=mixkit_licence(None), quality=720, mime="video/mp4")]
+                             page_url=f"https://mixkit.co/free-stock-video/clip-{native}/", file_url=mixkit_file(native, 720),
+                             licence=mixkit_licence(None), quality=720, mime="video/mp4")]  # sizes follow the licence
     elif source in ("pexels", "pixabay") and native.isdigit():
         return resolve_url(http, db, f"https://www.{source}.com/video/{native}/" if source == "pexels"
                            else f"https://pixabay.com/videos/id-{native}/", opts)
@@ -1249,6 +1346,9 @@ def resolve_url(http: Http, db: dict, url: str, opts: dict) -> dict | None:
             file_url = stock_fetch.resolve_pexels(cid)
         except RuntimeError as e:
             raise FootageError(f"pexels {cid}: {e}") from None
+        except (OSError, HTTPException) as e:  # URLError (DNS, refused, timeout) is an OSError
+            raise FootageError(f"pexels {cid}: the download endpoint did not answer "
+                               f"({type(getattr(e, 'reason', e)).__name__})") from None
         page = url if "/video/" in path else f"https://www.pexels.com/video/{cid}/"
         return make_result(db, "pexels", cid, title=pexels_title(page), page_url=page, file_url=file_url,
                            licence=source_licence("pexels", sources_by_id(db).get("pexels")), mime="video/mp4")
@@ -1319,6 +1419,11 @@ def confirm_licence(http: Http, db: dict, rec: dict) -> dict:
         rec["licence"]["note"] += f"; the clip page could not be read ({e})"
         return rec
     notice = mixkit_page_notice(page)
+    cid = rec["id"].split(":", 1)[1]
+    canon = re.search(r'<link[^>]*rel="canonical"[^>]*href="(https://mixkit\.co/free-stock-video/[^"]*-' + re.escape(cid)
+                      + r'/)"', page)
+    if canon:
+        rec["page_url"] = canon.group(1)  # the clip's real page, not the redirecting clip-<id>/ form
     if notice:
         lic = mixkit_licence(notice)
         rec["licence"] = lic
@@ -1331,6 +1436,7 @@ def confirm_licence(http: Http, db: dict, rec: dict) -> dict:
         rec["attribution"] = format_attribution(((sources_by_id(db).get("mixkit") or {}).get("attribution") or {}).get("template"),
                                                 title=rec.get("title"), source="Mixkit", licence=lic["name"],
                                                 licence_url=lic["url"], page_url=rec["page_url"])
+        mixkit_apply_files(rec)  # a Free clip is fetched at 1080p (2160p when it has it), a Restricted one at 720p
     return rec
 
 
@@ -1373,7 +1479,7 @@ def fetch_file(http: Http, url: str, dest: Path, max_mb: float) -> dict:
         first = True
         with open(tmp, "wb") as f:
             while True:
-                chunk = resp.read(1 << 20)
+                chunk = read_or_fail(resp, 1 << 20, url)  # a reset or a stalled read mid-file is a FootageError
                 if not chunk:
                     break
                 if first:
@@ -1451,6 +1557,8 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
         except FootageError:
             pass
     rec = confirm_licence(http, db, rec)
+    if rec["source"] == "mixkit":
+        mixkit_apply_files(rec)  # also for a results file written before Free clips were fetched above 720p
     lic = rec["licence"]
     if lic.get("derivatives") is False and not opts.get("allow_nd"):
         raise FootageError(f"{rec['id']}: {lic.get('name')} forbids edits (ND); a montage is an edit. "
@@ -1472,10 +1580,20 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
             try:
                 info = fetch_file(http, u, dest, opts.get("max_mb", 300))
             except FootageError as e:
-                if "--max-mb" in str(e) and i + 1 < len(urls):
-                    continue  # over the cap: try the next smaller variant (NASA ~large, ~medium, ~mobile)
+                missing = isinstance(e, HttpError) and e.status in (403, 404, 410)
+                if i + 1 < len(urls) and ("--max-mb" in str(e) or missing):
+                    # over the cap, or this size does not exist: try the next smaller variant
+                    # (NASA ~large, ~medium, ~mobile; a Mixkit Free clip without -2160 has -1080)
+                    continue
                 raise
-            if u != rec["file_url"]:
+            if rec["source"] == "mixkit":
+                q = mixkit_quality(u)
+                if q and rec.get("quality") and q < rec["quality"]:
+                    rec["flags"] = sorted(set(rec.get("flags", [])) | {"smaller-variant"})
+                if q and rec.get("width") and rec.get("height") and rec.get("quality") and q != rec["quality"]:
+                    rec["width"], rec["height"] = _scale_to_short_side(rec["width"], rec["height"], q)
+                rec["file_url"], rec["quality"] = u, q or rec.get("quality")
+            elif u != rec["file_url"]:
                 rec["flags"] = sorted(set(rec.get("flags", [])) | {"smaller-variant"})
                 rec["file_url"], rec["width"], rec["height"] = u, None, None
             break
@@ -1547,22 +1665,35 @@ def write_credits(folder: Path) -> Path:
 
 # ------------------------------------------------------------------------------------------------- probe
 
+def site_of(url: str) -> str:
+    """The registrable part of a URL's host, roughly: the last two labels (www.videvo.net -> videvo.net)."""
+    host = (urllib.parse.urlsplit(url or "").hostname or "").lower()
+    return ".".join(host.split(".")[-2:])
+
+
 def probe_source(http: Http, src: dict) -> dict:
     rows = []
     for p in src.get("probes") or []:
         t0 = time.monotonic()
         row = {"what": p["what"], "url": p["url"]}
+        final = p["url"]
         try:
             resp = http.open(p["url"], {"Range": "bytes=0-65535"} if p["url"].lower().endswith(VIDEO_EXT) else None)
             status = getattr(resp, "status", None) or 200
             ctype = resp.headers.get("Content-Type") if getattr(resp, "headers", None) else None
+            final = _final_url(resp, p["url"])
             _close(resp)
             row.update(http=status, content_type=ctype)
         except HttpError as e:
+            final = e.final_url
             row.update(http=e.status if isinstance(e.status, int) else None, error=None if isinstance(e.status, int) else str(e))
+        if final != p["url"]:
+            row["final_url"] = redact(final)  # urllib follows redirects silently; keep where it landed
         row["ms"] = int((time.monotonic() - t0) * 1000)
         code = row.get("http")
-        if isinstance(code, int) and code < 400:
+        if site_of(final) != site_of(p["url"]):
+            row["verdict"] = "moved"  # the site now answers from another domain (videvo.net -> freepik.com)
+        elif isinstance(code, int) and code < 400:
             row["verdict"] = "ok"
         elif isinstance(code, int) and code == p.get("expect"):
             row["verdict"] = "expected"
@@ -1572,7 +1703,9 @@ def probe_source(http: Http, src: dict) -> dict:
             row["verdict"] = "timeout" if re.search(r"time[sd]?\s?out", str(row.get("error", "")), re.I) else "error"
         rows.append(row)
     verdicts = [r["verdict"] for r in rows]
-    if verdicts and all(v == "ok" for v in verdicts):
+    if "moved" in verdicts:
+        status = "moved"  # whatever the new domain answers, this record describes a site that is gone
+    elif verdicts and all(v == "ok" for v in verdicts):
         status = "ok"
     elif "expected" in verdicts:
         status = "needs-key"  # the API answered as designed for a request without a key
@@ -1615,6 +1748,10 @@ def _source_list(db: dict, value: str | None) -> list:
     return names
 
 
+def is_paid(src: dict) -> bool:
+    return src.get("category") == "paid-stock" or (src.get("reachability") or {}).get("status") == "paid"
+
+
 def cmd_sources(args, db) -> int:
     rows = db["sources"]
     if args.id:
@@ -1625,6 +1762,8 @@ def cmd_sources(args, db) -> int:
         rows = [s for s in rows if s["reachability"]["status"] == args.status]
     if args.searchable:
         rows = [s for s in rows if s["tool"]["search"] != "none"]
+    if (args.no_attribution or args.commercial) and not args.include_paid:
+        rows = [s for s in rows if not is_paid(s)]  # a paid plan's licence is not free footage
     if args.no_attribution:
         rows = [s for s in rows if not s["attribution"]["required"]]
     if args.commercial:
@@ -1713,6 +1852,9 @@ def cmd_download(args, db) -> int:
         except FootageError as e:
             failed += 1
             print(f"{t}\tFAILED\t{redact(e)}", file=sys.stderr)
+        except (OSError, HTTPException) as e:  # backstop: one target's network or disk failure; the batch goes on
+            failed += 1
+            print(f"{t}\tFAILED\t{type(e).__name__}: {redact(str(e))[:200]}", file=sys.stderr)
     if args.json:
         print(json.dumps(done, ensure_ascii=False, indent=1))
     if done and not args.dry_run:
@@ -1746,6 +1888,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--searchable", action="store_true", help="only sources this tool can search")
     p.add_argument("--no-attribution", action="store_true", help="only sources that do not require credit")
     p.add_argument("--commercial", action="store_true", help="only sources whose licence allows commercial use")
+    p.add_argument("--include-paid", action="store_true",
+                   help="keep paid-stock sources (Storyblocks) in --commercial and --no-attribution lists")
     p.add_argument("--json", action="store_true")
     sub.add_parser("check", help="validate the database (offline)")
     p = sub.add_parser("probe", help="live reachability check of every source (network)")

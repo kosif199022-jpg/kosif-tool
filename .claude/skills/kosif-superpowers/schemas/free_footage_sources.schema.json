@@ -321,6 +321,7 @@
         "timeout",
         "needs-key",
         "paid",
+        "moved",
         "not-checked"
        ]
       },

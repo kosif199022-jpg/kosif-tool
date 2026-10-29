@@ -1,0 +1,13 @@
+{
+ "collection": {
+  "version": "1.1",
+  "href": "http://images-api.nasa.gov/asset/Synthetic%20Pad%20Dust%20Removal",
+  "items": [
+   {"href": "http://images-assets.nasa.gov/video/Synthetic Pad Dust Removal/Synthetic Pad Dust Removal~orig.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/Synthetic Pad Dust Removal/Synthetic Pad Dust Removal~large.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/Synthetic Pad Dust Removal/Synthetic Pad Dust Removal~preview.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/Synthetic Pad Dust Removal/metadata.json"},
+   {"href": "http://images-assets.nasa.gov/video/Synthetic Pad Dust Removal/Synthetic Pad Dust Removal~small.jpg"}
+  ]
+ }
+}

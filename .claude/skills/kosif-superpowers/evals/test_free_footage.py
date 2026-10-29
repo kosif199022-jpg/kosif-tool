@@ -16,6 +16,7 @@ import tempfile
 import unittest
 import urllib.error
 import urllib.parse
+from http.client import IncompleteRead, InvalidURL
 from pathlib import Path
 from unittest import mock
 
@@ -72,8 +73,22 @@ class Resp:
         return self.url
 
 
+class Failing(Resp):
+    """A response whose body breaks after `good` bytes, the way a stalled or reset connection does."""
+
+    def __init__(self, url, body, headers, error, good=0):
+        super().__init__(url, 200, body, headers)
+        self.error, self.good = error, good
+
+    def read(self, n=-1):
+        if self._pos >= self.good:
+            raise self.error
+        return super().read(min(n, self.good - self._pos) if n and n > 0 else self.good - self._pos)
+
+
 class Transport:
-    """Routes a request URL (regex) to (status, body, headers); records every call; refuses unknown URLs."""
+    """Routes a request URL (regex) to (status, body, headers); records every call; refuses unknown URLs. Like
+    http.client, it refuses a URL with raw spaces or control characters (InvalidURL) before anything is sent."""
 
     def __init__(self, routes):
         self.routes = list(routes)
@@ -82,10 +97,14 @@ class Transport:
     def __call__(self, req, timeout):
         url = req.full_url
         self.calls.append((url, dict(req.header_items()), timeout))
+        if re.search(r"[\x00-\x20\x7f]", url):
+            raise InvalidURL(f"URL can't contain control characters. {url!r}")
         for rx, answer in self.routes:
             if re.search(rx, url):
                 if callable(answer):
                     answer = answer(req)
+                if isinstance(answer, Resp):
+                    return answer
                 status, body, headers = (list(answer) + [{}])[:3] if isinstance(answer, tuple) else (200, answer, {})
                 body = body.encode("utf-8") if isinstance(body, str) else body
                 if status >= 400:
@@ -373,8 +392,15 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(rows[2]["title"], "Synthetic tide pool")
         self.assertFalse(rows[2]["licence"]["verified"])
         self.assertEqual(rows[0]["file_url"], "https://assets.mixkit.co/videos/30001/30001-720.mp4")
+        self.assertNotIn("alternates", rows[0])  # Restricted: the 720p file only (larger files answer 403)
         self.assertEqual(rows[0]["page_url"], "https://mixkit.co/free-stock-video/synthetic-gulls-over-the-sea-30001/")
         self.assertEqual((rows[0]["width"], rows[0]["height"]), (1280, 720))
+        free = rows[1]  # Free: 2160p first, then 1080p, then 720p; sized at the 1080p a Free clip is known to have
+        self.assertEqual(free["file_url"], "https://assets.mixkit.co/videos/30002/30002-2160.mp4")
+        self.assertEqual(free["alternates"], ["https://assets.mixkit.co/videos/30002/30002-1080.mp4",
+                                              "https://assets.mixkit.co/videos/30002/30002-720.mp4"])
+        self.assertEqual((free["quality"], free["width"], free["height"]), (1080, 1920, 1080))
+        self.assertEqual(rows[2]["file_url"], "https://assets.mixkit.co/videos/30003/30003-720.mp4")  # not read yet
 
     def test_mixkit_discover_page_titles_and_orientation(self):
         rows = FF.parse_mixkit(DB, fixture("mixkit_discover.html"))
@@ -723,18 +749,35 @@ class DownloadTest(unittest.TestCase):
 
 class ProbeAndCliTest(unittest.TestCase):
     def test_probe_statuses(self):
+        def freepik(req):  # urllib follows the 301 silently and raises the 403 of the page it landed on
+            raise urllib.error.HTTPError("https://www.freepik.com/videos", 403, "Forbidden", email.message.Message(),
+                                         io.BytesIO(b""))
         routes = [(r"pexels\.com/search", (403, "")), (r"api\.pexels\.com", (401, "")),
                   (r"commons\.wikimedia\.org", "{}"), (r"upload\.wikimedia\.org", (429, "", {"Retry-After": "600"})),
-                  (r"mixkit\.co", (206, MP4)), (r"videvo\.net", (403, ""))]
+                  (r"mixkit\.co", (206, MP4)), (r"videvo\.net", freepik), (r"videezy\.com", (403, "")),
+                  (r"mazwai\.com", lambda req: Resp("https://www.freepik.com/videos", 200, b"<html>", {}))]
         h, _, _ = http(routes)
-        rep = FF.run_probe(h, DB, ["pexels", "wikimedia", "mixkit", "videvo"])
+        rep = FF.run_probe(h, DB, ["pexels", "wikimedia", "mixkit", "videvo", "videezy", "mazwai"])
         st = {s["id"]: s for s in rep["sources"]}
         self.assertEqual(st["pexels"]["status"], "needs-key")
         self.assertEqual(st["wikimedia"]["status"], "partial")
         self.assertEqual(st["mixkit"]["status"], "ok")
-        self.assertEqual(st["videvo"]["status"], "blocked")
+        self.assertEqual(st["videezy"]["status"], "blocked")  # a 403 on its own domain is a block, not a move
+        self.assertNotIn("final_url", st["videezy"]["probes"][0])
+        for sid in ("videvo", "mazwai"):  # absorbed by another domain: "moved", whatever that domain answers
+            self.assertEqual(st[sid]["status"], "moved", sid)
+            self.assertEqual(st[sid]["probes"][0]["verdict"], "moved")
+            self.assertEqual(st[sid]["probes"][0]["final_url"], "https://www.freepik.com/videos")
+            self.assertFalse(st[sid]["changed"])  # the database already records the move
+        self.assertEqual(st["videvo"]["probes"][0]["http"], 403)
         self.assertFalse(st["pexels"]["changed"])
         self.assertEqual(rep["schema"], FF.PROBE_SCHEMA)
+
+    def test_a_same_site_redirect_is_not_a_move(self):
+        h, _, _ = http([(r"archive\.org", lambda req: Resp("https://ia800100.us.archive.org/x", 200, b"{}", {}))])
+        rep = FF.run_probe(h, DB, ["archive"])
+        self.assertEqual(rep["sources"][0]["status"], "ok")
+        self.assertEqual(rep["sources"][0]["probes"][0]["final_url"], "https://ia800100.us.archive.org/x")
 
     def test_probe_timeout(self):
         def boom(req, timeout):
@@ -781,6 +824,274 @@ class ProbeAndCliTest(unittest.TestCase):
             self.assertIn("invalid", se.getvalue())
             with mock.patch("sys.stdout", new_callable=io.StringIO):
                 self.assertEqual(FF.main(["--db", str(bad), "check"]), 1)
+
+    def test_paid_stock_is_not_listed_as_free(self):
+        run = lambda *a: subprocess.run([sys.executable, str(SCRIPT), *a], capture_output=True, text=True, timeout=60)  # noqa: E731
+        free = {r["id"] for r in json.loads(run("sources", "--commercial", "--no-attribution", "--json").stdout)}
+        self.assertEqual(free, {"pexels", "pixabay", "coverr", "lifeofvids"})
+        self.assertNotIn("storyblocks", {r["id"] for r in json.loads(run("sources", "--commercial", "--json").stdout)})
+        paid = {r["id"] for r in json.loads(run("sources", "--commercial", "--include-paid", "--json").stdout)}
+        self.assertIn("storyblocks", paid)
+        self.assertIn("storyblocks", run("sources").stdout)  # the plain list still shows it, marked paid
+
+
+# ------------------------------------------------------------------------------------------------- review fixes
+
+NASA_SPACED = [(r"images-api\.nasa\.gov/search", fixture("nasa_search_spaced.json")),
+               (r"images-api\.nasa\.gov/asset/", fixture("nasa_asset_spaced.json")),
+               (r"metadata\.json$", fixture("nasa_metadata.json"))]
+SPACED_ID = "Synthetic Pad Dust Removal"
+
+
+class NasaSpacedIdTest(unittest.TestCase):
+    """The NASA asset API returns links with raw spaces; http.client refuses them (InvalidURL, not a ValueError)."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.out = Path(self.tmp.name) / "clips"
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_variant_links_are_percent_encoded_once(self):
+        vids, meta = FF.nasa_variants(json.loads(fixture("nasa_asset_spaced.json")))
+        enc = "Synthetic%20Pad%20Dust%20Removal"
+        self.assertEqual(vids, [f"https://images-assets.nasa.gov/video/{enc}/{enc}~orig.mp4",
+                                f"https://images-assets.nasa.gov/video/{enc}/{enc}~large.mp4"])
+        self.assertEqual(meta, f"https://images-assets.nasa.gov/video/{enc}/metadata.json")
+        self.assertEqual(FF.quote_path(vids[0]), vids[0])  # already encoded links are not encoded twice
+
+    def test_filtered_search_with_spaced_ids_succeeds(self):
+        h, t, _ = http(NASA_SPACED)
+        rep = FF.run_search(h, DB, "launch", ["nasa"], 3, {"min_height": 1080})  # reads metadata.json too
+        self.assertEqual(rep["sources"]["nasa"]["status"], "ok", rep["sources"]["nasa"])
+        r = rep["results"][0]
+        self.assertEqual((r["id"], r["height"]), (f"nasa:{SPACED_ID}", 2160))
+        self.assertEqual(r["page_url"], "https://images.nasa.gov/details/Synthetic%20Pad%20Dust%20Removal")
+        self.assertIn(r["page_url"], r["attribution"])
+        self.assertFalse([u for u in t.urls() if " " in u])
+        self.assertTrue(any(u.endswith("/metadata.json") for u in t.urls()))
+
+    def test_download_of_a_spaced_id(self):
+        h, t, _ = http([(r"~orig\.mp4$", (200, MP4, {"Content-Type": "video/mp4"}))] + NASA_SPACED)
+        with mock.patch.object(FF, "measure", return_value={}):
+            r = FF.download_one(h, DB, f"nasa:{SPACED_ID}", self.out,
+                                {"results": self.out / "none.json", "max_mb": 50})
+        self.assertEqual(r["file"], "nasa-Synthetic_Pad_Dust_Removal.mp4")
+        side = json.loads(FF.sidecar_for(self.out / r["file"]).read_text(encoding="utf-8"))
+        self.assertIn("Synthetic%20Pad%20Dust%20Removal~orig.mp4", side["result"]["file_url"])
+        self.assertFalse([u for u in t.urls() if " " in u])
+
+    def test_an_invalid_url_is_an_http_error_not_a_traceback(self):
+        def strict(req, timeout):
+            raise InvalidURL("URL can't contain control characters")
+        h = FF.Http(delay=0, transport=strict, sleep=lambda s: None)
+        with self.assertRaisesRegex(FF.HttpError, "InvalidURL"):
+            h.get_json("https://images-assets.nasa.gov/video/a b/metadata.json")
+        rep = FF.run_search(h, DB, "launch", ["nasa", "wikimedia"], 3, {})
+        self.assertEqual({v["status"] for v in rep["sources"].values()}, {"error"})
+
+
+class NetworkFailureTest(unittest.TestCase):
+    """A read that times out, a reset or a cut-off body after the headers is a FootageError, never a traceback."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def test_a_stalled_read_on_one_source_keeps_the_search_and_its_save(self):
+        save = self.dir / "last.json"
+        stalled = lambda req: Failing(req.full_url, b"{}", {}, TimeoutError("The read operation timed out"))  # noqa: E731
+        fake = lambda args: FF.Http(delay=0, transport=Transport(  # noqa: E731
+            [(r"images-api\.nasa\.gov", stalled)] + ROUTES), sleep=lambda s: None)
+        with mock.patch.object(FF, "make_http", fake), mock.patch.dict(os.environ, NO_KEYS), \
+                mock.patch("sys.stdout", new_callable=io.StringIO):
+            rc = FF.main(["search", "city", "--sources", "wikimedia,nasa,archive", "--delay", "0", "--save", str(save)])
+        self.assertEqual(rc, 0)
+        data = json.loads(save.read_text(encoding="utf-8"))
+        self.assertEqual(data["sources"]["nasa"]["status"], "error")
+        self.assertIn("transfer failed (TimeoutError)", data["sources"]["nasa"]["detail"])
+        self.assertEqual(data["sources"]["wikimedia"]["status"], "ok")
+        self.assertEqual(data["sources"]["archive"]["status"], "ok")
+
+    def test_a_reset_mid_file_fails_one_target_and_the_batch_goes_on(self):
+        h, _, _ = http(ROUTES)
+        with mock.patch.dict(os.environ, NO_KEYS):
+            rep = FF.run_search(h, DB, "sea", ["coverr"], 10, {})
+        results = self.dir / "r.json"
+        results.write_text(json.dumps(rep), encoding="utf-8")
+        out = self.dir / "clips"
+        reset = lambda req: Failing(req.full_url, MP4, {"Content-Type": "video/mp4"},  # noqa: E731
+                                    ConnectionResetError(104, "Connection reset by peer"), good=64)
+        cut = lambda req: Failing(req.full_url, MP4, {"Content-Type": "video/mp4"}, IncompleteRead(b"", 100), good=64)  # noqa: E731
+        h, _, _ = http([(r"calm-waves-1111", reset), (r"waves-near-the-coast-2222", cut)])
+        for rid, name in (("coverr:AAAA111111", "ConnectionResetError"), ("coverr:BBBB222222", "IncompleteRead")):
+            with self.assertRaisesRegex(FF.FootageError, rf"transfer failed \({name}\)"):
+                FF.download_one(h, DB, rid, out, {"results": results, "max_mb": 50})
+        self.assertEqual(list(out.glob("*")), [])  # no .part file is left behind
+        fake = lambda args: FF.Http(delay=0, transport=Transport(  # noqa: E731
+            [(r"calm-waves-1111", reset), (r"cdn\.coverr\.co", (200, MP4, {"Content-Type": "video/mp4"}))]),
+            sleep=lambda s: None)
+        with mock.patch.object(FF, "make_http", fake), mock.patch.object(FF, "measure", return_value={}), \
+                mock.patch("sys.stdout", new_callable=io.StringIO), mock.patch("sys.stderr", new_callable=io.StringIO) as se:
+            rc = FF.main(["download", "coverr:AAAA111111", "coverr:BBBB222222", "--results", str(results), "--out", str(out)])
+        self.assertEqual(rc, 1)
+        self.assertIn("coverr:AAAA111111\tFAILED", se.getvalue())
+        self.assertTrue((out / "coverr-BBBB222222.mp4").is_file())  # the second target still downloaded
+
+    def test_pexels_endpoint_that_does_not_answer(self):
+        sf = FF._sibling("stock_fetch")
+        with mock.patch.dict(os.environ, NO_KEYS), \
+                mock.patch.object(sf, "resolve_pexels", side_effect=urllib.error.URLError(TimeoutError("timed out"))), \
+                mock.patch("sys.stderr", new_callable=io.StringIO) as se:
+            rc = FF.main(["download", "https://www.pexels.com/video/video-of-forest-1448735/", "--out", str(self.dir)])
+        self.assertEqual(rc, 1)
+        self.assertIn("pexels 1448735: the download endpoint did not answer (TimeoutError)", se.getvalue())
+
+    def test_run_search_backstop_for_unworded_network_errors(self):
+        h, _, _ = http(ROUTES)
+        with mock.patch.dict(FF.SEARCHERS, {"coverr": mock.Mock(side_effect=ConnectionResetError(104, "reset"))}):
+            rep = FF.run_search(h, DB, "sea", ["coverr", "wikimedia"], 3, {})
+        self.assertEqual(rep["sources"]["coverr"], {"status": "error", "detail": "network failure (ConnectionResetError)"})
+        self.assertEqual(rep["sources"]["wikimedia"]["status"], "ok")
+
+
+class RetiredLicenceTest(unittest.TestCase):
+    """Sampling, Sampling+, Developing Nations (and the CC-GPL/LGPL wrappers) are not BY-family licences."""
+    CASES = {
+        "http://creativecommons.org/licenses/sampling+/1.0/": "CC Sampling+ 1.0",
+        "https://creativecommons.org/licenses/sampling/1.0/": "CC Sampling 1.0",
+        "http://creativecommons.org/licenses/nc-sampling+/1.0/": "CC NonCommercial Sampling+ 1.0",
+        "http://creativecommons.org/licenses/devnations/2.0/": "CC Developing Nations 2.0",
+        "http://creativecommons.org/licenses/GPL/2.0/": "CC GNU GPL 2.0",
+        "http://creativecommons.org/licenses/LGPL/2.1/": "CC GNU LGPL 2.1",
+        "http://creativecommons.org/licenses/nc/1.0/": "CC nc 1.0",
+    }
+
+    def test_they_are_unverified_credit_required_and_fail_commercial(self):
+        for url, name in self.CASES.items():
+            with self.subTest(url=url):
+                lic = FF.classify_licence(None, url)
+                self.assertEqual(lic["name"], name)
+                self.assertFalse(lic["verified"])
+                self.assertIs(lic["attribution_required"], True)
+                self.assertIsNone(lic["commercial"])
+                self.assertIsNone(lic["derivatives"])
+                self.assertIn("read the deed", lic["note"])
+                rec = {"licence": lic, "flags": []}
+                self.assertIsNotNone(FF.keep(rec, {"commercial": True}))
+                self.assertIsNone(FF.keep(rec, {}))  # kept without --commercial, flagged "commercial ?"
+
+    def test_the_by_family_is_unchanged(self):
+        lic = FF.classify_licence(None, "http://creativecommons.org/licenses/by-nc-sa/3.0/")
+        self.assertEqual((lic["name"], lic["verified"], lic["commercial"]), ("CC BY-NC-SA 3.0", True, False))
+
+    def test_an_archive_item_under_sampling_plus(self):
+        meta = json.loads(fixture("archive_meta.json"))
+        meta["metadata"]["licenseurl"] = "http://creativecommons.org/licenses/sampling+/1.0/"
+        r = FF.archive_result(DB, {"identifier": "NYC"}, meta)
+        self.assertEqual(r["licence"]["name"], "CC Sampling+ 1.0")
+        self.assertIsNotNone(FF.keep(r, {"commercial": True}))
+        with tempfile.TemporaryDirectory() as d:
+            Path(d, "x.mp4.json").write_text(json.dumps({"schema": FF.ASSET_SCHEMA, "file": "x.mp4", "result": r,
+                                                         "licence": r["licence"], "attribution": r["attribution"]}),
+                                             encoding="utf-8")
+            text = FF.credits_markdown(Path(d))
+        self.assertIn("| CC Sampling+ 1.0 | yes | check |", text)
+        self.assertNotIn("*(optional)*", text)
+
+
+class MixkitSizesTest(unittest.TestCase):
+    """Free clips serve -1080 (often -2160) to scripts; Restricted clips only -720 (measured 2026-10-29)."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+        self.out = self.dir / "clips"
+        h, _, _ = http(ROUTES)
+        rep = FF.run_search(h, DB, "sea", ["mixkit"], 10, {})  # licences not read yet: both clips at -720
+        self.assertEqual({r["file_url"].rsplit("-", 1)[-1] for r in rep["results"]}, {"720.mp4"})
+        self.results = self.dir / "r.json"
+        self.results.write_text(json.dumps(rep), encoding="utf-8")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def get(self, rid, files):
+        h, t, _ = http(files + ROUTES)
+        with mock.patch.object(FF, "measure", return_value={}):
+            r = FF.download_one(h, DB, rid, self.out, {"results": self.results, "max_mb": 50})
+        side = json.loads(FF.sidecar_for(self.out / r["file"]).read_text(encoding="utf-8"))
+        return side["result"], [u for u in t.urls() if "assets.mixkit.co" in u]
+
+    def test_a_free_clip_without_a_4k_file_comes_at_1080p(self):
+        ok = (200, MP4, {"Content-Type": "video/mp4"})
+        rec, tried = self.get("mixkit:40002", [(r"-2160\.mp4", (403, "<Error/>", {"Content-Type": "application/xml"})),
+                                                (r"-1080\.mp4", ok)])
+        self.assertEqual([u.rsplit("/", 1)[-1] for u in tried], ["40002-2160.mp4", "40002-1080.mp4"])
+        self.assertEqual((rec["file_url"].rsplit("/", 1)[-1], rec["quality"]), ("40002-1080.mp4", 1080))
+        self.assertEqual((rec["width"], rec["height"]), (1920, 1080))
+        self.assertNotIn("smaller-variant", rec["flags"])  # 1080p is what a Free clip is expected to have
+        self.assertEqual(rec["licence"]["name"], FF.MIXKIT_FREE)
+
+    def test_a_free_clip_with_a_4k_file(self):
+        rec, tried = self.get("mixkit:40002", [(r"-2160\.mp4", (206, MP4, {"Content-Type": "video/mp4"}))])
+        self.assertEqual(len(tried), 1)
+        self.assertEqual((rec["quality"], rec["width"], rec["height"]), (2160, 3840, 2160))
+
+    def test_a_free_clip_falls_back_to_720p_and_says_so(self):
+        no = (403, "<Error/>", {"Content-Type": "application/xml"})
+        rec, tried = self.get("mixkit:40002", [(r"-2160\.mp4|-1080\.mp4", no),
+                                                (r"-720\.mp4", (200, MP4, {"Content-Type": "video/mp4"}))])
+        self.assertEqual(len(tried), 3)
+        self.assertEqual(rec["quality"], 720)
+        self.assertIn("smaller-variant", rec["flags"])
+
+    def test_a_restricted_clip_never_asks_for_more_than_720p(self):
+        rec, tried = self.get("mixkit:40001", [(r"-720\.mp4", (200, MP4, {"Content-Type": "video/mp4"}))])
+        self.assertEqual([u.rsplit("/", 1)[-1] for u in tried], ["40001-720.mp4"])
+        self.assertEqual(rec["licence"]["name"], FF.MIXKIT_RESTRICTED)
+
+    def test_a_bare_id_reads_the_licence_through_the_slug_redirect(self):
+        # /free-stock-video/<id>/ redirects to a search page; any "<slug>-<id>/" redirects to the clip page
+        canon = "https://mixkit.co/free-stock-video/synthetic-traffic-from-above-40002/"
+        page = fixture("mixkit_clip_free.html").replace("<head>", f'<head><link rel="canonical" href="{canon}" />')
+        h, t, _ = http([(r"free-stock-video/clip-40002/$", page), (r"-1080\.mp4", (200, MP4, {"Content-Type": "video/mp4"})),
+                        (r"-2160\.mp4", (403, "<Error/>"))])
+        with mock.patch.object(FF, "measure", return_value={}):
+            r = FF.download_one(h, DB, "mixkit:40002", self.out, {"results": self.dir / "none.json", "max_mb": 50})
+        side = json.loads(FF.sidecar_for(self.out / r["file"]).read_text(encoding="utf-8"))
+        self.assertEqual(t.urls()[0], "https://mixkit.co/free-stock-video/clip-40002/")
+        self.assertEqual(side["licence"]["name"], FF.MIXKIT_FREE)
+        self.assertEqual(side["result"]["page_url"], canon)
+        self.assertIn(canon, side["attribution"])
+        self.assertTrue(side["result"]["file_url"].endswith("40002-1080.mp4"))
+
+    def test_a_hand_made_mixkit_record_keeps_its_own_file(self):
+        rec = FF.manual_record(DB, "https://mixkit.co/some/odd/link.mp4",
+                               {"licence": "Mixkit Stock Video Free License", "licence_url": "https://mixkit.co/license/"})
+        self.assertEqual(rec["source"], "mixkit")
+        before = rec["file_url"]
+        rec["licence"] = {"name": FF.MIXKIT_FREE}
+        self.assertEqual(FF.mixkit_apply_files(rec)["file_url"], before)
+        self.assertNotIn("alternates", rec)
+
+    def test_min_height_reads_the_licence_of_clips_that_would_pass_at_1080p(self):
+        h, t, _ = http(ROUTES)
+        rep = FF.run_search(h, DB, "sea", ["mixkit"], 10, {"min_height": 1080})
+        self.assertEqual([u for u in t.urls() if "free-stock-video/synthetic" in u],
+                         ["https://mixkit.co/free-stock-video/synthetic-traffic-from-above-40002/"])  # 40001 passes at 720p
+        got = {r["id"]: (r["width"], r["height"]) for r in rep["results"]}
+        self.assertEqual(got, {"mixkit:40001": (720, 1280), "mixkit:40002": (1920, 1080)})
+        h, t, _ = http(ROUTES)
+        rep = FF.run_search(h, DB, "sea", ["mixkit"], 10, {"min_height": 1900, "orientation": "portrait"})
+        self.assertEqual([u for u in t.urls() if "free-stock-video/synthetic" in u],
+                         ["https://mixkit.co/free-stock-video/synthetic-night-walk-in-a-big-city-40001/"])
+        self.assertEqual(rep["results"], [])  # Restricted: 720x1280 only, under 1900
+        self.assertEqual(rep["sources"]["mixkit"]["dropped"], {"height 1280 < 1900": 1, "height 720 < 1900": 1})
 
 
 if __name__ == "__main__":

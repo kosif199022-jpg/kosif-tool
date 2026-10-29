@@ -623,8 +623,10 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
     if out.exists() and not ours and not force:  # hand-made or another tool's timings are never overwritten silently
         raise TranscribeError(f"{out} exists and was not written by transcribe; pass --force to replace it or --out another path")
     installed = None if fake else _fw_version()
-    # files from before these fields: conditioning was always on, and recovery changes nothing when nothing was dropped
-    same_recover = ours and (eng.get("recover_dropped") is rec or ("recover_dropped" not in eng and not old.get("dropped_segments")))
+    # files from before these fields: conditioning was always on, recovery never ran (so --no-recover reproduces them),
+    # and recovery changes nothing when nothing was dropped
+    same_recover = ours and (eng.get("recover_dropped", False) is rec
+                             or ("recover_dropped" not in eng and not old.get("dropped_segments")))
     if (not force and ours and (old.get("source") or {}).get("sha256") == digest and eng.get("name") == name
             and eng.get("model") == model and (lang is None or eng.get("language") == lang)
             and eng.get("vad_filter") is bool(vad) and eng.get("no_speech_threshold") == thr

@@ -6471,7 +6471,7 @@
    "assets": 4,
    "data": 163,
    "dua-wednesday": 10,
-   "evals": 145,
+   "evals": 147,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
@@ -6482,14 +6482,14 @@
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93204278,
+  "bytes": 93244444,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,
    ".html": 74,
    ".jpg": 24,
    ".js": 50,
-   ".json": 283,
+   ".json": 285,
    ".md": 2105,
    ".mjs": 18,
    ".ogg": 14,
@@ -6500,7 +6500,7 @@
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3374,
+  "files": 3376,
   "symlinks": 0
  }
 }

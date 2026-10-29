@@ -7,7 +7,9 @@ pexels.com search pages returned 403 to scripts:
   * Pexels: the public download endpoint https://www.pexels.com/download/video/<id>/ answers
     with a 302 to the file on videos.pexels.com, so a clip downloads by id with no API key.
     Ids come from a web search restricted to pexels.com (each result URL ends in -<id>/).
-  * Mixkit: https://assets.mixkit.co/videos/<id>/<id>-720.mp4 is free; 1080/2160 return 403.
+  * Mixkit: https://assets.mixkit.co/videos/<id>/<id>-720.mp4 is free; 1080/2160 return 403 on the
+    clips tried then (Restricted ones). Re-measured on 2026-10-29: clips under the Free licence serve
+    -1080 (some -2160) to scripts too; free_footage.py download reads the licence and fetches those.
 
 Subcommands:
   probe                  report which stock sources answer from this machine
