@@ -1,0 +1,35 @@
+{
+  "id": "pm-stefan-3d-ai-c5f9fd",
+  "name": "Old-school MMORPG built with Opus 5.5",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "photos",
+    "music",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/Stefan_3D_AI/status/2103778468660162615",
+  "page": "https://www.promptsmotion.com/stefan-3d-ai-c5f9fd",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/a8ee5003-bb48-4670-a7d6-31bc10edb740/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/b4affa0f-c827-4343-b9ad-00ecd0970fd0/poster.webp",
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 128,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 99,
+  "listed": true,
+  "skill": "styles/pm-stefan-3d-ai-c5f9fd/SKILL.md",
+  "playbooks": [
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
+}

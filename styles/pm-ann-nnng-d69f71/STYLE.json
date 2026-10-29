@@ -1,0 +1,41 @@
+{
+  "id": "pm-ann-nnng-d69f71",
+  "name": "Interactive glitter sticker with peel animation",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "product-ui",
+    "charts",
+    "kinetic-type",
+    "photos",
+    "music",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/ann_nnng/status/2104159923886244176",
+  "page": "https://www.promptsmotion.com/ann-nnng-d69f71",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/d58bb418-054a-43a2-8ea8-8888390897d2/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/98b8cb9c-1358-4a43-8bf0-3771d810c9aa/poster.webp",
+  "aspect": {
+    "w": 480,
+    "h": 636
+  },
+  "aspect_label": "other",
+  "rank": 129,
+  "published": "2026-09-27",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 533,
+  "listed": true,
+  "skill": "styles/pm-ann-nnng-d69f71/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
+}

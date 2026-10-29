@@ -14,7 +14,7 @@ description: Create a new video using the motion design language referenced at t
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Remotion
 - Creator's public prompt length: about 40 words (not reproduced here)
-- Popularity rank on source library: #128
+- Popularity rank on source library: #36
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

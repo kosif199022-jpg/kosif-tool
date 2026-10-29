@@ -13,7 +13,7 @@ description: Create a new video using the motion design language referenced at t
 - Published on source: 2026-07-16 · credited model: Kimi K3
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 5 words (not reproduced here)
-- Popularity rank on source library: #183
+- Popularity rank on source library: #133
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

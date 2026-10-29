@@ -14,7 +14,7 @@ description: A 30-second dark launch film for a forum marketing tool: it opens o
 - Reference aspect: 16:9 (1920×1080)
 - Technologies named by the source: Remotion, SVG
 - Creator's public prompt length: about 178 words (not reproduced here)
-- Popularity rank on source library: #95
+- Popularity rank on source library: #102
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

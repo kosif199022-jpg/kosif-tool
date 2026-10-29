@@ -13,7 +13,7 @@ description: A calm, roughly 45-second promo for an email tool on warm off-white
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 19 words (not reproduced here)
-- Popularity rank on source library: #10
+- Popularity rank on source library: #17
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

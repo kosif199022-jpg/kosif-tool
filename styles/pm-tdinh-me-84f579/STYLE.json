@@ -1,0 +1,39 @@
+{
+  "id": "pm-tdinh-me-84f579",
+  "name": "TypingMind product reel",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "product-ui",
+    "charts",
+    "kinetic-type",
+    "music",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/tdinh_me/status/2103703135902740699",
+  "page": "https://www.promptsmotion.com/tdinh-me-84f579",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/4eda7680-5bca-4d88-a3d9-fbb9557dd73c/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/30dd2652-91da-405b-842c-62a9013d6907/poster.webp",
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 4,
+  "published": "2026-09-26",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 63,
+  "listed": true,
+  "skill": "styles/pm-tdinh-me-84f579/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
+}

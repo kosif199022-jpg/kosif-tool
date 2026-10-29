@@ -14,7 +14,7 @@ description: Create a new video using the motion design language referenced at t
 - Reference aspect: 1:1 (1440×1440)
 - Technologies named by the source: CSS, Canvas, HTML, SVG
 - Creator's public prompt length: about 912 words (not reproduced here)
-- Popularity rank on source library: #2
+- Popularity rank on source library: #5
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

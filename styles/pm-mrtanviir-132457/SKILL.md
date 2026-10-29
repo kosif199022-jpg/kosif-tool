@@ -13,7 +13,7 @@ description: A fast 15-second motion-skills reel cut on a 120 BPM grid: dots, a 
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×720)
 - Creator's public prompt length: about 26 words (not reproduced here)
-- Popularity rank on source library: #33
+- Popularity rank on source library: #71
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

@@ -13,7 +13,7 @@ description: A 15-second tech brand reel cut to the beat: a halftone macro eye w
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 95 words (not reproduced here)
-- Popularity rank on source library: #35
+- Popularity rank on source library: #222
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

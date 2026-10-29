@@ -13,7 +13,7 @@ description: A walkable 3D scene inside the village of Starry Night rendered in 
 - Published on source: 2026-09-26 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1280×708)
 - Creator's public prompt length: about 28 words (not reproduced here)
-- Popularity rank on source library: #12
+- Popularity rank on source library: #41
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
