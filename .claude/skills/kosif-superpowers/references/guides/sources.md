@@ -264,7 +264,7 @@ python3 scripts/free_footage.py search "ocean waves" --commercial --no-ai --limi
 python3 scripts/free_footage.py search "seedling" --resolve --match any --no-people   # real Mixkit licences and sizes; titles that fit
 python3 scripts/free_footage.py search "rain" --retry-failed --wait-429 60            # ask again only the sources that failed (a 429)
 python3 scripts/free_footage.py preview out/free-footage/last_search.json --frames 4   # contact sheet: screen for people and text
-python3 scripts/free_footage.py download mixkit:100896 --dry-run                       # size, resolution and MB it would fetch
+python3 scripts/free_footage.py download mixkit:100896 --dry-run --out out/free-footage/clips   # size, resolution and MB it would fetch; writes nothing
 python3 scripts/free_footage.py download mixkit:40746 coverr:Pvvw8EyofT --quality 1080 --out out/free-footage/clips   # ids from any earlier search
 python3 scripts/free_footage.py download "https://www.pexels.com/video/<slug>-<id>/" --out out/free-footage/clips
 python3 scripts/free_footage.py download "<direct file link>" --licence "CC BY 4.0" --licence-url https://creativecommons.org/licenses/by/4.0/ --author "<creator>" --out out/free-footage/clips
@@ -311,7 +311,7 @@ Corrected after review (2026-10-29): the 720p-only rule for Mixkit holds for Res
 
 ## روابط بنترست — Pinterest pins, classified before download (2026-10-29)
 
-`scripts/_pinterest.py` is the one place where Pinterest is handled: `fetch_video.py` uses it for any pin link (`pinterest.<tld>/pin/<id>`, `pin.it/<code>`) and `source_finder.py` for the pins a reverse search returns. Before anything is downloaded, one `yt-dlp -J` call limited to yt-dlp's Pinterest extractor (`--use-extractors pinterest --ignore-no-formats-error`) says what the pin is, and only a video pin is downloaded. No pin is retried in a loop.
+`scripts/_pinterest.py` is the one place where Pinterest is handled: `fetch_video.py` uses it for any pin link (`pinterest.<tld>/pin/<id>`, `pin.it/<code>`) and `source_finder.py` for the pins a reverse search returns. Before anything is downloaded, one `yt-dlp -J` call limited to yt-dlp's Pinterest extractor (`--use-extractors pinterest --ignore-no-formats-error`) says what the pin is, and only a video pin is downloaded. No pin is retried in a loop. A pin.it link is followed first, so it gets the same `pinterest-<id>` file and sidecar as the full link to that pin. With `--quality audio` a pin is classified the same way and only a video pin's audio is fetched, in one yt-dlp attempt (no `.pin.json` for an audio fetch).
 
 أي رابط Pinterest بيعدّي على مساعد واحد: طلب `yt-dlp -J` واحد يقول الأول الـpin ده فيديو ولا صورة ولا GIF ولا يوتيوب مضمَّن ولا محذوف، ومفيش تنزيل إلا للفيديو، في فولدر مؤقت، وبعدين المقاس الحقيقي بيتقاس بـffprobe. ومفيش إعادة محاولة.
 
@@ -340,7 +340,7 @@ Checked live on 2026-10-29 with yt-dlp 2026.10.21, against a scout's report of a
 - **Deleted pins** (587508713882263842, 774337729672271619) answer 404 on the metadata.
 - **Fragments.** While downloading, yt-dlp writes files such as `p<ID>.fV_HLSV3_MOBILE-1839.mp4` next to its output. The helper downloads into `.<name>-*.tmp/` inside the destination, moves only the finished file, and removes the folder whatever happens, so a glob of `p*.mp4` during parallel downloads never picks up a fragment.
 
-**Audio.** Most video pins carry the creator's music. `source_finder.py` strips it on intake by default (`--keep-audio` keeps it), and `fetch_video.py --strip-audio` does the same for any link (the video stream is copied, not re-encoded). If ffmpeg is missing, the pin is not kept at all, so its music cannot reach a Quran or other dignified edit.
+**Audio.** Most video pins carry the creator's music. `source_finder.py` strips it on intake by default (`--keep-audio` keeps it), and `fetch_video.py --strip-audio` does the same for any link (the video stream is copied, not re-encoded). It fails closed for every link: if the audio cannot be removed (ffmpeg missing or failing), the clip is not handed out (`FAIL`, exit 1, no `.safe.mp4`); a file this run downloaded is deleted, and a file an earlier run left in the folder is not used. So its music cannot reach a Quran or other dignified edit.
 
 **Credit.** Every pin gets `<name>.pin.json` (schema `kosif.pinterest_pin.v1`): kind, reason, retry rule, label against measured size, audio state and a credit record with the pin URL, the uploader when Pinterest names one, and "licence unknown — credit and link". Pinterest is not a licence source (see the free-footage table above): a pin is often a re-upload, so trace the original creator before reusing footage and put the credit line wherever it appears.
 

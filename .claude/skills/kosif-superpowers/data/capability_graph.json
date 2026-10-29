@@ -8349,6 +8349,12 @@
   },
   {
    "from": "script:scripts/stock_fetch.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_pinterest.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/stock_fetch.py",
    "to": "test:tests/test_stock_fetch.py",
    "rel": "tested_by",
    "w": 1

@@ -477,7 +477,7 @@
    "family_without_tool": 11
   },
   "powers": 5854,
-  "py_edges": 368,
+  "py_edges": 369,
   "repo_tests": 41,
   "roles": {
    "helper": 4,
@@ -2233,6 +2233,11 @@
    "from": "test_pinterest",
    "kind": "imports",
    "to": "source_finder"
+  },
+  {
+   "from": "test_pinterest",
+   "kind": "imports",
+   "to": "stock_fetch"
   },
   {
    "from": "test_prompt_forge",
@@ -6082,6 +6087,7 @@
    ],
    "role": "registered",
    "tests": [
+    "evals/test_pinterest.py",
     "tests/test_stock_fetch.py"
    ],
    "tools": [
@@ -6589,7 +6595,7 @@
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93646894,
+  "bytes": 93672031,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,

@@ -31,7 +31,8 @@ them. ND licences are dropped by default (a montage is an adaptation); NC and Mi
 marked commercial=false, and --commercial drops them, as it drops the retired CC Sampling, Sampling+ and Developing
 Nations licences (recorded unverified, credit required). An Archive licence is the uploader's own claim; one on what
 looks like a music video, a film or TV rip or a YouTube re-upload is flagged suspicious-licence (unverified,
-commercial unknown). Mixkit Free clips download at their largest listed size (2160p, else 1080p), Restricted clips
+commercial unknown), and an Archive record from an older results file is checked again before it is downloaded.
+Mixkit Free clips download at their largest listed size (2160p, else 1080p), Restricted clips
 at 720p only; newer Mixkit clips have no <id>-<q>.mp4 file and are fetched through the clip page's own download
 options. Pinterest is never downloaded: it is not a licence source.
 
@@ -152,8 +153,10 @@ class ChallengeError(HttpError):
         super().__init__(url, status if status is not None else "challenge", detail, final_url)
 
 
-CHALLENGE_RE = re.compile(rb"<title>\s*Just a moment\.*\s*</title>|window\._cf_chl_opt|/cdn-cgi/challenge-platform/",
-                          re.I)
+CHALLENGE_RE = re.compile(rb"<title>\s*Just a moment\.*\s*</title>|window\._cf_chl_opt|"
+                          rb"/cdn-cgi/challenge-platform/h/[a-z]/orchestrate/", re.I)
+# not the bare /cdn-cgi/challenge-platform/ prefix: Cloudflare injects .../scripts/jsd/main.js and
+# .../scripts/precursor/main.js into ordinary pages, which are not browser checks
 
 
 def is_challenge_page(body: bytes) -> bool:
@@ -315,7 +318,8 @@ def api_key(source: str, environ=None) -> str | None:
 
 class Http:
     """Polite HTTP: one request per host per `delay` seconds, timeouts, a User-Agent, size caps, one retry on 429/503
-    (when Retry-After is at most `max_retry_after` seconds) and on a 500/502/504 from an Archive data node.
+    and on a 500/502/504 from an Archive data node, each only when its Retry-After (if any) is at most
+    `max_retry_after` seconds: the server never decides how long the tool sleeps.
 
     A Cloudflare browser check (the "Just a moment..." page, or a 403/503 with cf-mitigated: challenge) raises
     ChallengeError and marks the host, so no further request goes to it in this run; with `challenge_wait` > 0 the
@@ -392,11 +396,13 @@ class Http:
             if (status in (429, 503) or server_error) and attempt < self.retries:
                 attempt += 1
                 wait = ra if ra is not None else (self.delay * 4 or 2.0)
-                if status in (429, 503) and ra is not None and wait > self.max_retry_after:
+                if ra is not None and wait > self.max_retry_after:  # 429, 503 and an Archive 5xx alike
                     how = (f"rerun with --wait-429 {math.ceil(wait)}, or try later" if wait <= MAX_WAIT_429 else
                            f"longer than --wait-429 can wait ({MAX_WAIT_429:g} s): try later")
-                    raise HttpError(url, status, f"rate limited; Retry-After {retry_after}s is too long for "
-                                    f"--wait-429 {self.max_retry_after:g} ({how})", final_url=final, retry_after=wait)
+                    said = retry_after if _is_number(retry_after) else f"{math.ceil(wait)}"
+                    raise HttpError(url, status, f"{'rate limited' if status in (429, 503) else 'server error'}; "
+                                    f"Retry-After {said}s is too long for --wait-429 {self.max_retry_after:g} ({how})",
+                                    final_url=final, retry_after=wait)
                 self.sleep(max(wait, 0.5))
                 continue
             detail = ""
@@ -454,6 +460,14 @@ def _close(resp) -> None:
         resp.close()
     except Exception:
         pass
+
+
+def _is_number(value) -> bool:
+    try:
+        float(value)
+    except (TypeError, ValueError):
+        return False
+    return True
 
 
 def _seconds(value):
@@ -855,6 +869,30 @@ def archive_licence_suspicion(ident, title) -> str | None:
     return None
 
 
+def flag_suspicious_archive(lic: dict, why: str) -> dict:
+    """The licence of an Archive item that looks like someone else's work: commercial use unconfirmed, unverified."""
+    lic.update(commercial=None, verified=False,
+               note=f"looks like a {why}: the uploader's licence claim on what is probably someone else's "
+                    "copyrighted work; do not rely on it (trace the rights holder)")
+    return lic
+
+
+def recheck_archive_licence(rec: dict) -> dict:
+    """Apply the suspicious-licence check to an Archive record from a results file. Results are kept across searches,
+    so one saved before the check existed still says commercial=True for an uploader's CC BY on a music video;
+    download_one and merge_results re-check it here. Idempotent; other sources come back unchanged."""
+    lic = rec.get("licence") or {}
+    flags = list(rec.get("flags") or [])
+    if rec.get("source") != "archive" or "suspicious-licence" in flags or not lic.get("url"):
+        return rec
+    why = archive_licence_suspicion(str(rec.get("id") or "").partition(":")[2], rec.get("title"))
+    if not why:
+        return rec
+    native = {**(rec.get("native") or {}), "suspicious": why}
+    return {**rec, "licence": flag_suspicious_archive(dict(lic), why), "native": native,
+            "flags": sorted(set(flags) | {"uploader-licence", "suspicious-licence"})}
+
+
 def archive_result(db: dict, doc: dict, meta: dict, max_bytes: int | None = None, caps: dict | None = None) -> dict | None:
     ident = doc.get("identifier") or (meta.get("metadata") or {}).get("identifier")
     md = meta.get("metadata") or {}
@@ -869,9 +907,7 @@ def archive_result(db: dict, doc: dict, meta: dict, max_bytes: int | None = None
     why = archive_licence_suspicion(ident, title)
     if why and licurl:
         flags.append("suspicious-licence")
-        lic.update(commercial=None, verified=False,
-                   note=f"looks like a {why}: the uploader's licence claim on what is probably someone else's "
-                        "copyrighted work; do not rely on it (trace the rights holder)")
+        flag_suspicious_archive(lic, why)
     elif licurl:
         lic["note"] = ((lic.get("note") + "; ") if lic.get("note") else "") + \
             "set by the uploader, not checked by the Archive: trust the uploader? read the item page"
@@ -1784,7 +1820,7 @@ def merge_results(prev: dict | None, report: dict) -> dict:
     licence an earlier search read is not replaced by the same clip unread. The top-level query, sources and filters
     describe the newest search, as before."""
     merged = dict(report)
-    old = [r for r in (prev or {}).get("results", []) if isinstance(r, dict) and r.get("id")]
+    old = [recheck_archive_licence(r) for r in (prev or {}).get("results", []) if isinstance(r, dict) and r.get("id")]
     by_old = {r["id"]: r for r in old}
     new = []
     for r in report.get("results", []):
@@ -1823,6 +1859,13 @@ def answered_sources(prev: dict | None, query: str) -> dict:
             elif name in out:
                 out.pop(name)  # it failed in a later search of the same query
     return out
+
+
+def cached_results(prev: dict | None, query: str, sources) -> list:
+    """The earlier results of `sources` for this query (each result keeps the query that found it)."""
+    top = (prev or {}).get("query")
+    return [r for r in (prev or {}).get("results", []) if isinstance(r, dict) and r.get("id")
+            and r.get("source") in sources and _norm_query(r.get("query") or top) == _norm_query(query)]
 
 
 def resolve_id(http: Http, db: dict, rid: str, opts: dict) -> dict:
@@ -2231,6 +2274,7 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
         rec = resolve_url(http, db, target, opts) or manual_record(db, target, opts)
     else:
         rec = pick_from_results(opts["results"], target) or resolve_id(http, db, target, opts)
+    rec = recheck_archive_licence(rec)  # a results file saved before the suspicious-licence check
     if not rec.get("file_url"):
         raise FootageError(f"{rec.get('id')}: no downloadable file")
     if (sources_by_id(db).get(rec["source"]) or {}).get("licence_source") is False:
@@ -2243,7 +2287,7 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
         if (not cap or (smaller.get("bytes") or 0) <= cap) and \
                 (not caps or size_fits(smaller.get("width"), smaller.get("height"), None, **caps) is not False):
             smaller["query"] = rec.get("query")
-            rec = smaller
+            rec = recheck_archive_licence(smaller)
     if rec["source"] == "nasa" and "alternates" not in rec and not opts.get("dry_run"):
         try:  # a results file from before alternates were recorded: fetch the variant list once
             rec = {**resolve_id(http, db, rec["id"], opts), "query": rec.get("query")}
@@ -2773,7 +2817,10 @@ def cmd_search(args, db) -> int:
                                 "detail": f"answered at {when}; its results stay in the file (--retry-failed)"}
     data = None
     if not args.no_save:
-        data = save_results(path, report, replace=args.replace)
+        to_save = report
+        if args.replace and cached:  # --replace drops the earlier file: carry the skipped sources' results over
+            to_save = {**report, "results": report["results"] + cached_results(load_results(path), query, cached)}
+        data = save_results(path, to_save, replace=args.replace)
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=1))
     else:

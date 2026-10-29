@@ -2,6 +2,7 @@
 source_finder.py. No network: every yt-dlp answer comes from evals/fixtures/pinterest/<class>.json (shaped
 like `yt-dlp -J` output and stderr, synthetic ids and URLs), played back by a fake yt-dlp program that logs
 each call; the media files are synthetic clips made with ffmpeg (those tests skip without ffmpeg/ffprobe)."""
+import io
 import json
 import os
 import shutil
@@ -360,6 +361,114 @@ class FetchWithFakeYtdlp(unittest.TestCase):
         self.assertEqual(sorted(p.name for p in out.iterdir()),
                          sorted(["manifest.json", f"pinterest-{VIDEO_ID}.mp4", f"pinterest-{VIDEO_ID}.pin.json",
                                  "pinterest-100000000000000002.pin.json"]))
+
+    def test_fetch_video_names_a_pin_it_link_like_the_full_link(self):
+        """A pin.it link was named p<id> and the full link pinterest-<id>, so a permanent verdict saved under one name
+        was not honoured for the other and the pin was probed again."""
+        out = self.tmp / "clips"
+        image = "100000000000000002"
+        for pid in (VIDEO_ID, image):
+            with mock.patch.object(P, "expand_short_link", return_value=P.pin_url(pid)), mock.patch("sys.stdout"):
+                FV.main(["https://pin.it/AbCdEf123", "-o", str(out)])
+            P.reset_memory()                                                     # a later run, given the full link
+            with mock.patch("sys.stdout"):
+                FV.main([P.pin_url(pid), "-o", str(out)])
+            P.reset_memory()
+            self.assertEqual(len(self.calls("probe", pid)), 1, pid)
+        self.assertEqual(len(self.calls("download", VIDEO_ID)), 1)
+        self.assertEqual(sorted(p.name for p in out.iterdir()),
+                         sorted(["manifest.json", f"pinterest-{VIDEO_ID}.mp4", f"pinterest-{VIDEO_ID}.pin.json",
+                                 f"pinterest-{image}.pin.json"]))
+        self.assertEqual(P.fetch(VIDEO_ID, self.tmp / "sf", ytdlp=self.ytdlp)["file"],
+                         str(self.tmp / "sf" / f"p{VIDEO_ID}.mp4"))                # source_finder keeps p<id>
+
+    def test_fetch_video_pin_it_link_to_a_board_fails_cleanly(self):
+        out = self.tmp / "fresh"                                                 # the folder does not exist yet
+        with mock.patch.object(P, "expand_short_link", return_value="https://www.pinterest.com/someone/my-board/"), \
+                mock.patch("sys.stdout"):
+            code = FV.main(["https://pin.it/abc123", "-o", str(out)])
+        self.assertEqual(code, 1)
+        rec = json.loads((out / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertIsNone(rec["file"])
+        self.assertIn("not a Pinterest pin link", rec["error"])
+        self.assertEqual(self.calls(), [])
+
+    def test_fetch_video_audio_quality_classifies_the_pin_first(self):
+        """With --quality audio a pin skipped the helper: three yt-dlp attempts, no classification."""
+        out = self.tmp / "audio"
+        with mock.patch.object(FV, "attempt", side_effect=AssertionError("no download for an image pin")), \
+                mock.patch.object(FV, "impersonation", side_effect=AssertionError("no impersonation retry")), \
+                mock.patch("sys.stdout"):
+            code = FV.main([P.pin_url("100000000000000002"), "-o", str(out), "--quality", "audio"])
+        self.assertEqual(code, 1)
+        rec = json.loads((out / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertEqual((rec["via"], rec["kind"], rec["file"]), ("pinterest", "image", None))
+        self.assertTrue(rec["error"].startswith("image pin"))
+        self.assertEqual(len(self.calls("probe", "100000000000000002")), 1)
+        m4a = out / "pin audio [x].m4a"
+        shutil.copyfile(self.mp4, m4a)
+        with mock.patch.object(FV, "attempt", return_value=(str(m4a), "")) as att, \
+                mock.patch.object(FV, "impersonation", side_effect=AssertionError("no impersonation retry")), \
+                mock.patch("sys.stdout"):
+            code = FV.main([P.pin_url(VIDEO_ID), "-o", str(out), "--quality", "audio"])
+        self.assertEqual(code, 0)
+        self.assertEqual(att.call_count, 1)                                      # one attempt, never retried
+        self.assertEqual(att.call_args.args[1], P.pin_url(VIDEO_ID))
+        self.assertEqual(att.call_args.args[3], "ba/b")
+        rec = json.loads((out / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertEqual((rec["via"], rec["kind"], rec["file"], rec["url"]),
+                         ("pinterest", "video", str(m4a), P.pin_url(VIDEO_ID)))
+        self.assertNotIn("error", rec)
+        self.assertEqual(rec["credit"]["uploader"], "Example Creator")
+
+    def test_strip_audio_fails_closed_for_other_links_too(self):
+        """--strip-audio printed OK and exited 0 for a yt-dlp link whose audio could not be removed."""
+        out = self.tmp / "clips"
+        out.mkdir()
+
+        def fake_attempt(ytdlp, url, out_dir, *rest):                            # yt-dlp writes a new file
+            dst = Path(out_dir) / "clip [x1].mp4"
+            shutil.copyfile(self.mp4, dst)
+            return str(dst), ""
+        no_strip = mock.patch.object(P, "remove_audio", return_value=(False, "ffmpeg is not installed"))
+        with no_strip, mock.patch.object(FV, "attempt", side_effect=fake_attempt), \
+                mock.patch.object(FV, "impersonation", return_value=None), \
+                mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            code = FV.main(["https://www.tiktok.com/@a/video/1", "-o", str(out), "--strip-audio", "--safe"])
+        self.assertEqual(code, 1)
+        self.assertTrue(so.getvalue().startswith("FAIL "))
+        rec = json.loads((out / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertIsNone(rec["file"])
+        self.assertIn("music cannot leak", rec["error"])
+        self.assertEqual(rec["audio"], "NOT stripped: ffmpeg is not installed")
+        self.assertEqual(sorted(p.name for p in out.iterdir()), ["manifest.json"])  # deleted, and no .safe.mp4
+        kept = out / "clip [x1].mp4"                                             # an earlier run's file with audio
+        shutil.copyfile(self.mp4, kept)
+        with no_strip, mock.patch.object(FV, "attempt", return_value=(str(kept), "")), \
+                mock.patch.object(FV, "impersonation", return_value=None), mock.patch("sys.stdout"):
+            code = FV.main(["https://www.tiktok.com/@a/video/1", "-o", str(out), "--strip-audio"])
+        rec = json.loads((out / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertEqual((code, rec["file"]), (1, None))
+        self.assertIn("left alone but not used", rec["error"])
+        self.assertTrue(kept.is_file())                                          # not deleted either
+        sys.path.insert(0, str(SCRIPTS))
+        import stock_fetch as sf  # noqa: PLC0415 - the stock path (stock_fetch.py) takes the same rule
+        stock = self.tmp / "stock"
+        hit = ("mixkit", "https://assets.mixkit.co/videos/100896/100896-720.mp4", "100896")
+        with no_strip, mock.patch.object(sf, "stock_file_url", return_value=hit), \
+                mock.patch.object(sf, "download", side_effect=lambda u, d: shutil.copyfile(self.mp4, d)), \
+                mock.patch("sys.stdout"):
+            code = FV.main(["https://mixkit.co/free-stock-video/clip-100896/", "-o", str(stock), "--strip-audio", "--safe"])
+        rec = json.loads((stock / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertEqual((code, rec["file"]), (1, None))
+        self.assertEqual(sorted(p.name for p in stock.iterdir()), ["manifest.json"])
+        with mock.patch.object(sf, "stock_file_url", return_value=hit), \
+                mock.patch.object(sf, "download", side_effect=lambda u, d: shutil.copyfile(self.mp4, d)), \
+                mock.patch("sys.stdout"):
+            code = FV.main(["https://mixkit.co/free-stock-video/clip-100896/", "-o", str(stock), "--strip-audio"])
+        rec = json.loads((stock / "manifest.json").read_text(encoding="utf-8"))[0]
+        self.assertEqual((code, rec["audio"]), (0, "stripped"))                  # with ffmpeg it works as before
+        self.assertIsNone(P.probe_media(rec["file"])["acodec"])
 
     def test_fetch_video_youtube_pin_gets_the_blocked_hint(self):
         out = self.tmp / "clips"

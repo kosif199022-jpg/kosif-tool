@@ -1316,6 +1316,21 @@ class ChallengeTest(TempDirCase):
         self.assertTrue(FF.is_challenge_page(b"<html><head><title>Just a moment...</title></head></html>"))
         self.assertFalse(FF.is_challenge_page(fixture("mixkit_clip_hashed.html").encode()))
         self.assertFalse(FF.is_challenge_page(b""))
+        self.assertTrue(FF.is_challenge_page(b"<script src=\"/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1"
+                                             b"?ray=0000\"></script>"))
+
+    def test_an_ordinary_page_with_cloudflares_bot_script_is_not_a_check(self):
+        """Cloudflare injects a detection script into normal pages (seen on a Videezy clip page); a short page
+        carrying it is not a "Just a moment..." check, and its host must not be blocked for the run."""
+        for script in (b"/cdn-cgi/challenge-platform/scripts/precursor/main.js", b"/cdn-cgi/challenge-platform/scripts/jsd/main.js"):
+            page = (b"<html><head><title>Ocean waves in slow motion - Free HD Video Clips</title></head><body>"
+                    b"<video src=\"https://cdn.example.org/ocean.mp4\"></video><script>(function(){var s=document."
+                    b"createElement('script');s.src='" + script + b"';document.body.appendChild(s);})();</script>"
+                    b"</body></html>")
+            self.assertFalse(FF.is_challenge_page(page), script)
+            h, _, _ = http([(r"example\.org", (200, page))])
+            self.assertIn(b"ocean.mp4", h.get_bytes("https://www.example.org/clip/1"))
+            self.assertEqual(h.challenged, set())
 
     def test_a_challenged_route_is_reported_and_the_host_left_alone(self):
         t = Transport([(r"mixkit\.co/free-stock-video/download/", CHALLENGE)] + NEW_ROUTES)
@@ -1464,6 +1479,26 @@ class RateLimitTest(TempDirCase):
         self.assertEqual((rc, t.calls), (0, []))  # both answered now: nothing is asked again
         self.assertIn("nothing was asked again", out)
 
+    def test_retry_failed_with_replace_keeps_the_skipped_sources_results(self):
+        """`--retry-failed --replace` said 'its results stay in the file' and then saved 0 of them."""
+        save = self.dir / "r.json"
+        self.cli([(r"commons\.wikimedia\.org", (429, "slow", {"Retry-After": "600"}))] + ROUTES,
+                 "search", "sea", "--sources", "wikimedia,coverr", "--delay", "0", "--save", str(save))
+        self.cli(ROUTES, "search", "night", "--sources", "nasa", "--delay", "0", "--save", str(save))  # another query
+        coverr = sorted(r["id"] for r in json.loads(save.read_text(encoding="utf-8"))["results"]
+                        if r["source"] == "coverr" and r["query"] == "sea")
+        self.assertTrue(coverr)
+        rc, out, t, _ = self.cli(ROUTES, "search", "sea", "--sources", "wikimedia,coverr", "--delay", "0",
+                                 "--retry-failed", "--replace", "--save", str(save))
+        self.assertEqual(rc, 0)
+        self.assertFalse([u for u in t.urls() if "coverr.co" in u])
+        self.assertIn("its results stay in the file (--retry-failed)", out)
+        data = json.loads(save.read_text(encoding="utf-8"))
+        self.assertEqual(sorted(r["id"] for r in data["results"] if r["source"] == "coverr"), coverr)
+        self.assertTrue(any(r["source"] == "wikimedia" for r in data["results"]))
+        self.assertEqual({r["query"] for r in data["results"]}, {"sea"})  # the other query's results were replaced
+        self.assertEqual(len(data["searches"]), 1)
+
 
 class Archive5xxTest(TempDirCase):
     """`download archive:Flickr-8633486122` failed once with HTTP 500 from a data node and worked on a retry."""
@@ -1491,6 +1526,29 @@ class Archive5xxTest(TempDirCase):
         with self.assertRaises(FF.HttpError):
             h.get_text("https://example.org/x")
         self.assertEqual(len(t.calls), 1)  # elsewhere a 500 is not retried
+
+    def test_retry_after_on_a_5xx_is_bounded_like_a_429(self):
+        """A 502 with Retry-After 86400 slept a day, and an HTTP-date one about 73 years: the server never decides."""
+        far = email.utils.format_datetime(datetime.datetime(2099, 10, 21, 7, 28, tzinfo=datetime.timezone.utc))
+        for status, ra in ((502, "86400"), (500, far), (504, "901")):
+            h, t, sleeps = http([(r".", (status, "x", {"Retry-After": ra}))])
+            with self.assertRaisesRegex(FF.HttpError, r"server error; Retry-After \d+s is too long for --wait-429 30 "
+                                                      r"\(longer than --wait-429 can wait \(900 s\): try later\)"):
+                h.get_text("https://ia800.us.archive.org/0/items/a/b.mov")
+            self.assertEqual((len(t.calls), sleeps), (1, []), (status, ra))
+        h, t, sleeps = http([(r".", (502, "x", {"Retry-After": "120"}))])
+        with self.assertRaisesRegex(FF.HttpError, r"rerun with --wait-429 120"):
+            h.get_text("https://archive.org/download/a/b.mov")
+        self.assertEqual((len(t.calls), sleeps), (1, []))
+        h, t, sleeps = http([(r".", (502, "x", {"Retry-After": "120"}))])
+        h.max_retry_after = 300  # --wait-429 300 allows it: one wait of what the server asked, then one retry
+        with self.assertRaisesRegex(FF.HttpError, "server error, again after one retry"):
+            h.get_text("https://archive.org/download/a/b.mov")
+        self.assertEqual((len(t.calls), sleeps), (2, [120.0]))
+        h, t, sleeps = http([(r".", (502, "x", {"Retry-After": "3"}))])
+        with self.assertRaises(FF.HttpError):
+            h.get_text("https://archive.org/download/a/b.mov")
+        self.assertEqual((len(t.calls), sleeps), (2, [3.0]))
 
 
 def suspicious_meta(req):
@@ -1551,6 +1609,45 @@ class ArchiveSuspiciousTest(TempDirCase):
         with self.assertRaisesRegex(FF.FootageError, "suspicious uploader licence"):
             FF.download_one(h, DB, "archive:youtube-SYNTHabc123", self.out,
                             {"results": self.dir / "none.json", "max_mb": 300, "commercial": True})
+
+    def test_an_older_results_record_is_checked_again(self):
+        """Results are kept across searches, so a record saved before the check still said CC BY | commercial ok
+        and passed `download --commercial` without a new request."""
+        ident, title = "youtube-SYNTHabc123", "Synthetic Band - Song (Official Music Video)"
+        old = {"id": f"archive:{ident}", "source": "archive", "source_name": "Internet Archive", "title": title,
+               "page_url": f"https://archive.org/details/{ident}", "file_url": f"https://archive.org/download/{ident}/x.mp4",
+               "width": 640, "height": 360, "bytes": 10_000_000, "query": "rain", "attribution": "x", "flags": [],
+               "licence": FF.classify_licence(None, "https://creativecommons.org/licenses/by/4.0/")}
+        save = self.dir / "last_search.json"
+        save.write_text(json.dumps({"schema": FF.RESULTS_SCHEMA, "query": "rain", "searched_at": "2026-10-28T10:00:00Z",
+                                    "sources": {"archive": {"status": "ok", "count": 1}}, "results": [old]}),
+                        encoding="utf-8")
+        h, t, _ = http([(r"archive\.org/download", OK_MP4)])
+        with self.assertRaisesRegex(FF.FootageError, "CC BY 4.0 suspicious uploader licence"):
+            FF.download_one(h, DB, old["id"], self.out, {"results": save, "max_mb": 300, "commercial": True})
+        self.assertEqual(t.calls, [])
+        with mock.patch.object(FF, "make_http", lambda args: h), mock.patch("sys.stdout", new_callable=io.StringIO), \
+                mock.patch("sys.stderr", new_callable=io.StringIO) as se:
+            rc = FF.main(["download", old["id"], "--out", str(self.out), "--results", str(save), "--commercial",
+                          "--dry-run"])
+        self.assertEqual(rc, 1)
+        self.assertIn(f"{old['id']}\tFAILED", se.getvalue())
+        self.assertIn("suspicious uploader licence", se.getvalue())
+        FF.save_results(save, {"schema": FF.RESULTS_SCHEMA, "query": "ocean", "searched_at": "2026-10-29T10:00:00Z",
+                               "sources": {}, "results": []})
+        kept = next(r for r in json.loads(save.read_text(encoding="utf-8"))["results"] if r["id"] == old["id"])
+        self.assertEqual(kept["flags"], ["suspicious-licence", "uploader-licence"])  # the merge repairs the file too
+        self.assertIsNone(kept["licence"]["commercial"])
+        self.assertIn("looks like a YouTube re-upload", kept["licence"]["note"])
+        fresh = FF.recheck_archive_licence(kept)
+        self.assertEqual(fresh, kept)  # idempotent
+        clean = dict(old, id="archive:Flickr-1", title="Lettuce emerging")
+        self.assertIs(FF.recheck_archive_licence(clean), clean)
+        with mock.patch.object(FF, "measure", return_value={}):
+            r = FF.download_one(h, DB, old["id"], self.out, {"results": save, "max_mb": 300})
+        side = json.loads(FF.sidecar_for(self.out / r["file"]).read_text(encoding="utf-8"))
+        self.assertIn("suspicious-licence", side["result"]["flags"])  # the sidecar does not say commercial ok
+        self.assertIsNone(side["licence"]["commercial"])
 
 
 class DropReasonTest(unittest.TestCase):

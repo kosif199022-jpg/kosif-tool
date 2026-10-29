@@ -17,8 +17,9 @@ search), so both follow the same rules. Standard library only; yt-dlp, ffprobe a
      cdn-refused  the metadata exists but the video server refused the file (HTTP 403/404 on video data)
      blocked      Pinterest refused the metadata request itself (HTTP 403/429)
      error        anything else, with yt-dlp's last error line
-   The first five and `deleted` are permanent; `cdn-refused`, `blocked` and `error` are not retried in this
-   run (one probe and at most one download per pin per process) but may be tried again by a later run.
+   `image`, `gif`, `youtube`, `embedded` and `deleted` are permanent (never asked again, by any run); `video`
+   is reused once downloaded; `cdn-refused`, `blocked` and `error` are not retried in this run (one probe and
+   at most one download per pin per process) but may be tried again by a later run.
 2. Download a video pin into a private temp folder next to the destination, reusing the probe
    (`--load-info-json`, so Pinterest's API is not asked twice). yt-dlp's fragment files such as
    p<ID>.fV_HLSV3_MOBILE-1839.mp4 stay in that folder, only the finished file is moved out, and the folder
@@ -410,10 +411,13 @@ def _start(link) -> tuple[dict, str]:
     return rec, url
 
 
-def fetch(link, out_dir, *, name: str | None = None, ytdlp: list | None = None, strip_audio: bool = False,
-          extra=(), probe_timeout: float = 60, timeout: float = 300) -> dict:
+def fetch(link, out_dir, *, name: str | None = None, prefix: str = "p", ytdlp: list | None = None,
+          strip_audio: bool = False, extra=(), probe_timeout: float = 60, timeout: float = 300) -> dict:
     """Classify one pin, download it only when it is a video, measure it, optionally strip its audio, and write
     <out_dir>/<name>.pin.json. Returns the record; record["file"] is the finished video or None.
+
+    `name` defaults to `<prefix><pin id>`, built after a pin.it link is followed, so the same pin gets the same
+    file and sidecar names whether it was given as a pin.it link, a full link or a bare id.
 
     A pin is tried once per process; a later call (another run) skips pins whose sidecar holds a permanent
     kind and reuses a finished file. Nothing is ever retried in a loop."""
@@ -422,7 +426,7 @@ def fetch(link, out_dir, *, name: str | None = None, ytdlp: list | None = None, 
     if rec.get("kind"):
         return rec
     pid = rec["pin_id"]
-    name = name or f"p{pid}"
+    name = name or f"{prefix}{pid}"
     key = (str(out_dir.resolve()), pid)
     with _SEEN_LOCK:
         if key in _SEEN:

@@ -10,7 +10,7 @@ python3 scripts/fetch_video.py URL1 URL2 -o clips --quality 1080 --safe
 python3 scripts/fetch_video.py --urls links.txt -o clips        # قائمة روابط
 python3 scripts/fetch_video.py URL --quality audio              # صوت فقط m4a
 python3 scripts/fetch_video.py URL --cookies cookies.txt        # محتوى خاص من حساب المستخدم
-python3 scripts/fetch_video.py URL --strip-audio                # بدون صوت المقطع نفسه (مهام القرآن والمحتوى الوقور)
+python3 scripts/fetch_video.py URL --strip-audio                # بدون صوت المقطع نفسه (مهام القرآن والمحتوى الوقور)؛ لو الصوت ما اتشالش المقطع ما بيتسلّمش (FAIL)
 python3 scripts/fetch_video.py --classify PIN_URL ...           # Pinterest: نوع كل pin بدون تنزيل
 python3 scripts/fetch_video.py --update                         # عند تغيّر الموقع
 ```
@@ -28,7 +28,7 @@ python3 scripts/fetch_video.py --update                         # عند تغي�
 | Pinterest (2026-10-29) | ✅ pin فيديو: ملف 720x1280 رغم أن الصيغة مكتوب عليها 1080x1920، ومع `--strip-audio` بلا صوت؛ ⚠️ الصور وGIF واليوتيوب المضمَّن والمحذوفة تُصنَّف ولا تُنزَّل |
 
 ## Pinterest
-روابط الـpins تمرّ على المساعد المشترك `scripts/_pinterest.py` (نفس اللي يستعمله `source_finder.py`): طلب `yt-dlp -J` واحد يصنّف الـpin أولًا، والتنزيل للفيديو فقط في فولدر مؤقت، ثم قياس المقاس الحقيقي بـffprobe، و`pinterest-<id>.pin.json` فيه النوع والسبب وسطر النسب ("licence unknown — credit and link"). يوتيوب المضمَّن في pin لا يُحمَّل من خلاله أبدًا ولا يُتحايل عليه. التفاصيل والجدول: [guides/sources.md](guides/sources.md#روابط-بنترست--pinterest-pins-classified-before-download-2026-10-29).
+روابط الـpins تمرّ على المساعد المشترك `scripts/_pinterest.py` (نفس اللي يستعمله `source_finder.py`): طلب `yt-dlp -J` واحد يصنّف الـpin أولًا، والتنزيل للفيديو فقط في فولدر مؤقت، ثم قياس المقاس الحقيقي بـffprobe، و`pinterest-<id>.pin.json` فيه النوع والسبب وسطر النسب ("licence unknown — credit and link")، بنفس الاسم لرابط pin.it وللرابط الكامل. ومع `--quality audio` الـpin بيتصنّف برضه الأول، والصوت بيتنزّل للفيديو بس في محاولة واحدة. يوتيوب المضمَّن في pin لا يُحمَّل من خلاله أبدًا ولا يُتحايل عليه. التفاصيل والجدول: [guides/sources.md](guides/sources.md#روابط-بنترست--pinterest-pins-classified-before-download-2026-10-29).
 
 إن فشل رابط هنا: لا تدّعِ نجاحه. اطلب من المستخدم رفع الملف، أو أعطه الأمر ليشغّله على جهازه (يعمل غالبًا هناك) ثم يرفع الناتج.
 

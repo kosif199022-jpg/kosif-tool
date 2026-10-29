@@ -11,7 +11,8 @@ Only the standard library is imported; yt-dlp and ffmpeg are used if present.
   python3 fetch_video.py URL --cookies cookies.txt      # private/age-gated, your own account
   python3 fetch_video.py URL --cookies-from-browser chrome   # same, read from your local browser
   python3 fetch_video.py URL --safe                     # also build an edit-safe MP4 copy
-  python3 fetch_video.py URL --strip-audio              # drop the clip's own audio on intake (Quran/dignified jobs)
+  python3 fetch_video.py URL --strip-audio              # drop the clip's own audio on intake (Quran/dignified jobs);
+                                                        # a clip whose audio cannot be removed is not kept (FAIL)
   python3 fetch_video.py PIN_URL [PIN_URL ...] --classify   # Pinterest: say what each pin is, download nothing
   python3 fetch_video.py --doctor | --update
 
@@ -22,7 +23,9 @@ Pinterest pin links (pinterest.<tld>/pin/<id>, pin.it/<code>) go through the sha
 (source_finder.py uses it too): one yt-dlp -J call classifies the pin first (video, image, gif, embedded
 YouTube, other embed, deleted, CDN-refused, blocked), only a video pin is downloaded, into a temp folder,
 its real size is measured with ffprobe (Pinterest's "1080x1920" label is the display size; files are 720p
-at most), and <DIR>/pinterest-<id>.pin.json keeps the verdict and a credit record. Pins are never retried.
+at most), and <DIR>/pinterest-<id>.pin.json keeps the verdict and a credit record (the same name for a pin.it
+link and a full link). Pins are never retried. With --quality audio a pin is classified the same way and only a
+video pin's audio is fetched, in one yt-dlp attempt (no .pin.json then).
 """
 from __future__ import annotations
 
@@ -143,17 +146,29 @@ def _flag(a, name: str) -> bool:
     return getattr(a, name, False) is True
 
 
-def intake_audio(path: Path, a, rec: dict) -> dict:
-    """--strip-audio: drop the clip's own audio in place (video copied, no re-encode) and say so in the record."""
+def intake_audio(path: Path, a, rec: dict, fresh: bool = True) -> dict:
+    """--strip-audio: drop the clip's own audio in place (video copied, no re-encode) and say so in the record.
+
+    Fails closed, as the Pinterest path does: when the audio cannot be removed the clip is not handed out
+    (file None, an error, exit 1, no .safe.mp4). A file this run downloaded (`fresh`) is deleted, so its music
+    cannot leak into the edit; a file an earlier run left in the folder is not used and not deleted."""
     if not _flag(a, "strip_audio") or a.quality == "audio":
         return rec
     if not rec.get("acodec") and shutil.which("ffprobe"):
         rec["audio"] = "none (the file has no audio stream)"
         return rec
     ok, why = pinterest.remove_audio(path)
-    rec["audio"] = "stripped" if ok else f"NOT stripped: {why}"
     if ok:
-        rec["acodec"] = None
+        rec.update(audio="stripped", acodec=None)
+        return rec
+    if fresh:
+        Path(path).unlink(missing_ok=True)
+        kept = "the download was deleted, nothing kept"
+    else:
+        kept = f"the earlier download {Path(path).name} was left alone but not used"
+    rec.update(file=None, audio=f"NOT stripped: {why}",
+               error=f"--strip-audio: could not strip the clip's own audio ({why}); {kept}, so its music cannot leak "
+                     "into the edit (install ffmpeg, or drop --strip-audio to keep the audio on purpose)")
     return rec
 
 
@@ -184,11 +199,8 @@ def classify_pins(urls, a, ytdlp) -> int:
     return code
 
 
-def pin_download(url: str, a, ytdlp) -> dict:
-    """A Pinterest pin through the shared helper: classified first, downloaded only when it is a video, never retried."""
-    pid = pinterest.pin_id(url)
-    rec = pinterest.fetch(url, a.out, name=f"pinterest-{pid}" if pid else None, ytdlp=ytdlp,
-                          strip_audio=_flag(a, "strip_audio"), extra=_pin_extra(a))
+def _pin_row(url: str, rec: dict) -> dict:
+    """The manifest row of a pin: the helper's verdict, credit and measurements; an error when no file came of it."""
     out = {"url": url, "file": rec.get("file"), "via": "pinterest", "pin_id": rec.get("pin_id"), "kind": rec.get("kind"),
            "reason": rec.get("reason"), "retry": rec.get("retry"), "license": pinterest.LICENCE, "credit": rec.get("credit"),
            **{k: rec[k] for k in ("width", "height", "duration", "fps", "vcodec", "acodec", "audio", "label_size",
@@ -197,11 +209,33 @@ def pin_download(url: str, a, ytdlp) -> dict:
         out["error"] = rec.get("reason") or "pin not downloaded"
         if rec.get("kind") == "youtube":
             out.update(blocked(rec["reason"], rec.get("embed_url") or "youtube") or {})
+    return out
+
+
+def pin_download(url: str, a, ytdlp) -> dict:
+    """A Pinterest pin through the shared helper: classified first, downloaded only when it is a video, never retried.
+    Named pinterest-<id> after a pin.it link is followed, so both link forms share one file and one sidecar."""
+    rec = pinterest.fetch(url, a.out, prefix="pinterest-", ytdlp=ytdlp, strip_audio=_flag(a, "strip_audio"),
+                          extra=_pin_extra(a))
+    out = _pin_row(url, rec)
+    if not out["file"]:
         return out
     if a.safe:
         s = edit_safe(Path(out["file"]))
         out["safe_file"] = str(s) if s else None
     return out
+
+
+def pin_audio(url: str, a, ytdlp) -> dict:
+    """--quality audio on a pin: classified first like every pin (one yt-dlp -J call); only a video pin's audio is
+    fetched, in one yt-dlp attempt with no fallback or impersonation retry. No .pin.json is written for it."""
+    v = pinterest.classify_link(url, ytdlp, _pin_extra(a))
+    row = _pin_row(url, v)
+    if v.get("kind") != "video":
+        return row
+    got = download(v["url"], a, ytdlp, once=True)
+    row.pop("error", None)
+    return {**row, **{k: val for k, val in got.items() if k != "url"}, "via": "pinterest"}
 
 
 def info_for(path: Path) -> dict:
@@ -249,38 +283,42 @@ def stock_download(url, a) -> dict | None:
     elif fpath.parent.name:  # e.g. cdn.coverr.co/videos/<slug>/1080p.mp4 -> <slug>-1080p.mp4
         name = f"{fpath.parent.name}-{name}"
     dest = out / name
+    fresh = not dest.is_file() or not dest.stat().st_size
     try:
-        if not dest.is_file() or not dest.stat().st_size:
+        if fresh:
             sf.download(file_url, dest)
     except Exception as e:  # noqa: BLE001 - report any network/HTTP failure as a failed row
         return {"url": url, "file": None, "error": f"{source}: {e}", "source": source, "file_url": file_url}
     rec = intake_audio(dest, a, {"url": url, "file": str(dest), "attempt": 1, "via": "stock_fetch", "source": source,
-                                 "file_url": file_url, "id": cid, **probe(dest)})
+                                 "file_url": file_url, "id": cid, **probe(dest)}, fresh=fresh)
     if source in sf.LICENCES:
         rec["license"], rec["license_url"] = sf.LICENCES[source][:2]
-    if a.safe and a.quality != "audio":
+    if rec.get("file") and a.safe and a.quality != "audio":
         s = edit_safe(dest)
         rec["safe_file"] = str(s) if s else None
     return rec
 
 
-def download(url, a, ytdlp) -> dict:
+def download(url, a, ytdlp, once: bool = False) -> dict:
+    """yt-dlp with the format fallback chain and one impersonation retry; `once` makes it a single attempt."""
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     fmt, extra = selector(a.quality)
     fb = "ba/b/best" if a.quality == "audio" else "bv*+ba/b/best"
-    tries = [(fmt, None), (fb, None)]
-    imp = impersonation(ytdlp)
+    tries = [(fmt, None)] if once else [(fmt, None), (fb, None)]
+    imp = None if once else impersonation(ytdlp)
     if imp:
         tries.append((fb, imp))
+    before = {p.name for p in out.iterdir()}  # a file already here was not downloaded by this run
     err = ""
     for i, (f, im) in enumerate(tries):
         path, err = attempt(ytdlp, url, out, f, extra, a.cookies, im, a.connections, a.proxy,
                             getattr(a, "cookies_from_browser", None))
         if path:
             p = Path(path)
-            rec = intake_audio(p, a, {"url": url, "file": str(p), "attempt": i + 1, "impersonate": im, **probe(p), **info_for(p)})
-            if a.safe and a.quality != "audio":
+            rec = intake_audio(p, a, {"url": url, "file": str(p), "attempt": i + 1, "impersonate": im, **probe(p),
+                                      **info_for(p)}, fresh=p.name not in before)
+            if rec.get("file") and a.safe and a.quality != "audio":
                 s = edit_safe(p)
                 rec["safe_file"] = str(s) if s else None
             return rec
@@ -344,8 +382,8 @@ def main(argv=None) -> int:
     results = []
     no_ytdlp = {"file": None, "error": "yt-dlp not installed: pip install yt-dlp curl_cffi"}
     for u in urls:
-        if pinterest.is_pin_link(u) and a.quality != "audio":
-            r = pin_download(u, a, ytdlp) if ytdlp else {"url": u, **no_ytdlp}
+        if pinterest.is_pin_link(u):
+            r = (pin_audio if a.quality == "audio" else pin_download)(u, a, ytdlp) if ytdlp else {"url": u, **no_ytdlp}
         else:
             r = stock_download(u, a)
         if r is None:
@@ -356,6 +394,7 @@ def main(argv=None) -> int:
             print("     " + r["size_note"])
         if r.get("blocked"):
             print("BLOCKED " + r["hint"])
+    Path(a.out).mkdir(parents=True, exist_ok=True)  # a pin.it link to a board fails before anything is written
     (Path(a.out) / "manifest.json").write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
     return 0 if all(r.get("file") for r in results) else 1
 
