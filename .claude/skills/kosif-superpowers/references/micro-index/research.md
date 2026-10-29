@@ -59,7 +59,7 @@ chapter: [atlas-research](../powers/atlas-research.md) · card: `usip-library/ca
 
 ## web-research (research)
 
-chapter: [web-research](../powers/web-research.md) · card: `usip-library/cards/research/web-research.md` · tools: `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse` · `github-top-repos` · `instagram-reference-discovery` …
+chapter: [web-research](../powers/web-research.md) · card: `usip-library/cards/research/web-research.md` · tools: `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage` · `github-pulse` · `github-top-repos` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -11575,15 +11575,17 @@
       "area": "edit",
       "title_en": "Montage Pro task force (audio/video to montage or motion)",
       "title_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)",
-      "summary_en": "A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence and refusing to write into jobs/ or tracked paths.",
-      "summary_ar": "فريق من 13 دورًا لملف صوت أو فيديو مرفوع: يقيس المادة، ويعرض قائمة خيارات وخطة مراحل، ويجلب لقطات مرخصة بأسلوب IDM مع سجل حقوق، ويوحد الصيغ، وينتج فيلم موشن أو مصوّرًا صوتيًا أو إعادة تأطير أو ريلًا مختصرًا أو لوكًا سينمائيًا أو مشروع Remotion، مع فحص كل ناتج والحفاظ على الصوت الأصلي، وأمر transcribe يكتب توقيت الكلمات (words.json بصيغة kosif-words/1) محليًا بـ faster-whisper مع تخطي الصمت ورفض الكتابة داخل jobs/ أو الملفات المتتبعة.",
+      "summary_en": "A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence, re-running once without VAD the spans its silence filter dropped so sung or recited verses come back marked recovered, decoding with ffmpeg or PyAV, and refusing to write into jobs/ or tracked paths.",
+      "summary_ar": "فريق من 13 دورًا لملف صوت أو فيديو مرفوع: يقيس المادة، ويعرض قائمة خيارات وخطة مراحل، ويجلب لقطات مرخصة بأسلوب IDM مع سجل حقوق، ويوحد الصيغ، وينتج فيلم موشن أو مصوّرًا صوتيًا أو إعادة تأطير أو ريلًا مختصرًا أو لوكًا سينمائيًا أو مشروع Remotion، مع فحص كل ناتج والحفاظ على الصوت الأصلي، وأمر transcribe يكتب توقيت الكلمات (words.json بصيغة kosif-words/1) محليًا بـ faster-whisper مع تخطي الصمت، ويعيد تفريغ ما حذفه فلتر الصمت مرة بلا VAD فتعود كلمات التلاوة والأناشيد موسومة recovered، ويفك الصوت بـ ffmpeg أو PyAV، ويرفض الكتابة داخل jobs/ أو الملفات المتتبعة.",
       "use_when": [
         "رفعت فويس اعمل له موشن جرافيك",
         "اعمل ريلز من الفيديو ده على أقوى اللقطات",
         "Turn this interview into a 9:16 reel with a cinematic look",
         "حمّل اللقطة دي برخصتها وجهزها للمونتاج",
         "فرّغ الصوت ده كلمة كلمة بتوقيتها عشان الكتابة تمشي مع الصوت",
-        "Transcribe my Arabic voice-over into word timings for captions"
+        "Transcribe my Arabic voice-over into word timings for captions",
+        "التفريغ شال الآيات المرتلة رجّع كلماتها بتوقيتها",
+        "The sung lyrics were dropped from the transcript, get their word timings back"
       ],
       "keywords": [
         "montage",
@@ -11603,7 +11605,13 @@
         "faster-whisper",
         "words.json",
         "تفريغ",
-        "توقيت الكلمات"
+        "توقيت الكلمات",
+        "no-vad",
+        "recovered",
+        "lyrics",
+        "recitation",
+        "تلاوة",
+        "أناشيد"
       ],
       "commands": [
         {
@@ -11619,7 +11627,7 @@
         {
           "name": "transcribe",
           "example": "python3 scripts/montage_pro.py transcribe ./voice.m4a --job ../../../out/job1 --language ar --local-only",
-          "does": "Decodes the audio with ffmpeg to 16 kHz mono and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them; skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words."
+          "does": "Decodes the audio with ffmpeg to a 16 kHz mono array (PyAV opened directly when ffmpeg is missing or fails; the model never gets a path) and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them, then re-runs each dropped span once without VAD and without the previous text and merges the confident words back marked recovered: true (not invented phrases, avg_logprob >= -1, compression ratio <= 2.4, not silent), listing every window in recovery; --no-recover keeps the old output, --no-vad decodes the whole file without VAD or previous-text conditioning and re-checks its drops against the same bars without a second model call; loud stretches of 2 s or more that VAD left without a word are listed in vad_gaps with a warning to try --no-vad (measured, not re-run); skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when faster-whisper or the cached model is missing, or when neither ffmpeg nor PyAV can decode the file. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words."
         },
         {
           "name": "intake with transcription",
@@ -11662,13 +11670,15 @@
       },
       "safety": "runs-external-programs",
       "consent": "build runs ffmpeg/Chromium and writes new files in the job folder; acquire downloads only with a licence note and refuses DRM sources",
-      "limits": "broll-documentary, character and 3d-scene need words.json, clips or a scene JSON first; tests use synthetic media, not real user footage. Transcription word-timing accuracy is not measured against a reference: on the 14.7 s Arabic dua audio (medium, int8, 4 CPU cores) it took 14–28 s per run and three runs gave byte-identical words.json.",
+      "limits": "broll-documentary, character and 3d-scene need words.json, clips or a scene JSON first; tests use synthetic media, not real user footage. Transcription word-timing accuracy is not measured against a reference: on the 14.7 s Arabic dua audio (medium, int8, 4 CPU cores) it took 14–28 s per run and three runs gave byte-identical words.json. Recovery of dropped spans uses Whisper's own bars plus the caption_lines invented-phrase list, not a measured classifier, so a confident guess over music can come back (marked recovered: true; check those before captions); stretches VAD cut before the model are only reported (vad_gaps), not re-run, so songs need --no-vad; first-pass results on the same bytes, model and version differed between sessions (a 79.6 s song dropped 3 segments on 26-10 and none on 29-10).",
       "tests": [
-        ".claude/skills/kosif-superpowers/evals/test_montage_pro.py"
+        ".claude/skills/kosif-superpowers/evals/test_montage_pro.py",
+        ".claude/skills/kosif-superpowers/evals/test_transcribe_recover.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/montage-pro/README.md",
-        ".claude/skills/kosif-superpowers/montage-pro/IDM_STUDY.md"
+        ".claude/skills/kosif-superpowers/montage-pro/IDM_STUDY.md",
+        ".claude/skills/kosif-superpowers/references/guides/edit.md"
       ],
       "families": [
         "transitions-cuts",
@@ -11677,7 +11687,7 @@
         "formats-platforms"
       ],
       "evidence": "tested-here",
-      "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning.",
+      "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). evals/test_transcribe_recover.py 19/19 OK here (stub whisper model, no download or network; 9 skip without numpy, 1 without PyAV); it caught all 23 code mutations tried. Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning. Real model on 29-10 (medium, int8, --local-only): a 63 s recitation whose two verses the silence filter dropped → 49 words, 35 recovered, kept words untouched, two runs byte-identical, a third up to date in 0.05 s; a 60 s sung track → default 62 words with vad_gaps 3 (21.1 s, the lines VAD cut), --no-vad 78 words and nothing dropped (the 24-10 --no-vad run with previous-text conditioning kept 30 and dropped 15 lyric lines); without VAD medium wrote «اشتركوا في القناة» over digital silence and pink noise, which the recovery rejects.",
       "power_id": "TOOL-130"
     },
     {
@@ -17299,6 +17309,126 @@
         "video-download",
         "web-research",
         "transitions-cuts"
+      ]
+    },
+    {
+      "id": "free-footage",
+      "path": "scripts/free_footage.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "sources",
+      "title_en": "Free footage: open-licence video sources with search, download and credits",
+      "title_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
+      "summary_en": "Keeps a checked database of 17 free and open-licence video sources (data/free_footage_sources.json: licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size, measured reachability, with Pinterest marked not a licence source). It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice, Coverr's embedded state without premium clips). download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size) and rebuilds ATTRIBUTION.md; probe re-measures every source.",
+      "summary_ar": "قاعدة بيانات مفحوصة لـ17 موقع فيديو مجاني ومفتوح الترخيص (الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوة كل موقع، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر)، وفيها Pinterest متعلَّم عليه إنه مش مصدر ترخيص. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit وCoverr. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.",
+      "use_when": [
+        "اجمع لي فيديوهات مفتوحة المصدر للمونتاج عن البحر والمدينة بالليل",
+        "عايز لقطات مجانية من غير حقوق لفيديو تيك توك طولي",
+        "اعمل قاعدة مواقع فيها فيديوهات مفتوحة المصدر تساعدني في المونتاج",
+        "Find free open-licence b-roll of a city at night for my montage",
+        "Download CC0 or public-domain footage and record the licence and credit line",
+        "Which free stock video sites allow commercial use and which need attribution?"
+      ],
+      "keywords": [
+        "free footage",
+        "free stock video",
+        "stock footage",
+        "b-roll",
+        "open licence",
+        "open license",
+        "creative commons",
+        "cc0",
+        "cc by",
+        "public domain",
+        "royalty free",
+        "attribution",
+        "credits",
+        "wikimedia commons",
+        "internet archive",
+        "prelinger",
+        "nasa",
+        "mixkit",
+        "coverr",
+        "pexels",
+        "pixabay",
+        "dareful",
+        "vertical video",
+        "montage",
+        "فيديوهات مجانية",
+        "لقطات مجانية",
+        "مفتوحة المصدر",
+        "بدون حقوق",
+        "ترخيص",
+        "حقوق النشر",
+        "نسب الحقوق",
+        "مكتبة فيديو",
+        "مونتاج",
+        "لقطات"
+      ],
+      "commands": [
+        {
+          "name": "sources",
+          "example": "python3 scripts/free_footage.py sources --searchable",
+          "does": "Offline: lists the sources with recorded reachability, search mode, key variable, commercial use, credit rule and licence; --id shows one full record, --find WORD, --status, --no-attribution and --commercial filter (paid stock such as Storyblocks only with --include-paid), --json prints records."
+        },
+        {
+          "name": "check",
+          "example": "python3 scripts/free_footage.py check",
+          "does": "Offline: validates data/free_footage_sources.json against the rules of schemas/free_footage_sources.schema.json (required keys, enums, unique ids and names, https links, template placeholders, key variables, Pinterest-style non-licence sources); exit 1 on any problem."
+        },
+        {
+          "name": "probe",
+          "example": "python3 scripts/free_footage.py probe --out out/free-footage",
+          "does": "Network: requests each source's probe URLs (files with a byte range), one per host per --delay seconds, and writes probe-<YYYYMMDD>.json with HTTP codes, the URL each probe landed on after redirects, a status per source (ok, partial, needs-key, blocked, timeout, paid, or moved when the site now answers from another domain) and whether it changed since the database was checked."
+        },
+        {
+          "name": "search",
+          "example": "python3 scripts/free_footage.py search \"night city\" --orientation portrait --min-height 1280 --limit 6",
+          "does": "Network: Wikimedia Commons, the Internet Archive and NASA by API, Mixkit and Coverr by page, Pexels and Pixabay only when their key variables are set (otherwise reported as skipped, with no request). ND licences are dropped by default (--allow-nd keeps them for reference); --commercial drops NC, Mixkit Restricted, the retired CC Sampling/Sampling+/Developing Nations and other unconfirmed licences (it reads Mixkit clip pages to decide, as --min-height does for a Mixkit clip that would pass at the 1080p of a Free licence); --no-ai drops AI-generated clips. Prints id, size, duration, licence and credit rule, saves out/free-footage/last_search.json; one failing source (an HTTP error, a timeout or a reset mid-answer) never stops the others; exit 3 only when every source failed."
+        },
+        {
+          "name": "download",
+          "example": "python3 scripts/free_footage.py download wikimedia:81916645 --out out/free-footage/clips",
+          "does": "Network: a result id from the last search or a page/file link of a supported source (a Pexels link works without a key through stock_fetch.py); any other link needs --licence and --licence-url from its page. Writes <source>-<id>.<ext>, a <file>.json sidecar (licence, credit line, bytes, sha256, ffprobe size) and ATTRIBUTION.md; --max-mb 300 cap (Archive and NASA fall back to a smaller file); a Mixkit Free clip is fetched at 2160p, else 1080p, else 720p, a Restricted one at 720p; refuses web pages served instead of video, ND licences and Pinterest; a failed target (a reset or timeout mid-file leaves no .part) does not stop the others; exit 1 when any target failed."
+        },
+        {
+          "name": "credits",
+          "example": "python3 scripts/free_footage.py credits out/free-footage/clips",
+          "does": "Offline: rebuilds ATTRIBUTION.md (a table plus copy-ready credit lines) from the sidecars in the folder, for example after a clip was removed, and prints it."
+        }
+      ],
+      "safe_commands": [
+        "sources",
+        "check"
+      ],
+      "inputs": "A search query in English (most sources index English words), optional --sources ids, --orientation, --min-height, --limit, --commercial, --no-ai; result ids or page/file links for download; PEXELS_API_KEY / PIXABAY_API_KEY in the environment to add those two sources.",
+      "outputs": "out/free-footage/last_search.json (kosif.free_footage.results.v1), clips in --out with <file>.json sidecars (kosif.free_footage.asset.v1) and ATTRIBUTION.md, and probe-<YYYYMMDD>.json (kosif.free_footage.probe.v1).",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [
+          "bin:ffprobe",
+          "env:PEXELS_API_KEY",
+          "env:PIXABAY_API_KEY"
+        ],
+        "network": true
+      },
+      "safety": "network",
+      "consent": "search and probe send the query and plain requests to the listed sites, and download fetches third-party clips: confirm the user wants that. Keep each sidecar and ATTRIBUTION.md with the project and follow the licence (credit where required, no edits of ND clips, NC and Mixkit Restricted clips only in non-commercial work). Keys are read only from PEXELS_API_KEY / PIXABAY_API_KEY in the environment and are never printed or stored; never ask the user to paste a key into chat. Pinterest is never downloaded.",
+      "limits": "Licences are what each source declares (Commons extmetadata, the uploader's licenseurl on the Archive, the Mixkit clip page, the Pexels, Pixabay, Coverr and NASA terms); the tool records them but cannot verify or grant rights, and Archive items are often re-uploads. The Mixkit and Coverr adapters read page markup and embedded JSON that can change without notice (that source then reports an error and the others continue). Scripts get Mixkit Free clips at 1080p (2160p when the clip has a 4K file) and Restricted clips at 720p, and Coverr's 1080p file (vertical Coverr files are upscaled to 1920 wide); Pexels and Pixabay search needs the user's keys (on 2026-10-21 Pexels was not issuing new keys (field note); its docs on 2026-10-29 say keys are issued instantly); from this sandbox upload.wikimedia.org and then the Commons API answered 429. Videezy, Vecteezy, Dareful, Life of Vids, ESA and Openverse are listed with their licences but not searched (no API, a login wall or 403); videvo.net and mazwai.com now redirect to Freepik (probe reports them as moved).",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_free_footage.py (72 tests) passed here on 2026-10-29, offline, with hand-written synthetic answers shaped like each API and page and urlopen blocked: database schema, uniqueness and templates, licence extraction from CC URLs and names (the retired Sampling, Sampling+ and Developing Nations licences unverified), attribution with missing fields, every adapter, NASA ids with spaces, key gating (no request without a key, keys sent but never reported), the per-host rate limit and Retry-After, page and file size caps, read timeouts and resets after the headers, sidecars, ATTRIBUTION.md, the Archive, NASA and Mixkit smaller-file fallbacks, Mixkit licence reading, redirects to another domain in probe, paid stock kept out of the free lists, ND, Pinterest and unknown-link refusals. Separately, live from this cloud session on 2026-10-29: search returned results from Mixkit, Coverr, Commons, the Archive and NASA; downloads of a Mixkit 720p clip (measured 720x1280), a Coverr clip (measured 1920x3412), an Archive h.264 derivative chosen under --max-mb 25 and a NASA ~large file after ~orig (446.7 MB) exceeded the cap all wrote sidecars and credits; a key-less Pexels link resolved; upload.wikimedia.org answered 429 (Retry-After 600); byte-range requests for Mixkit Free clips' -1080 files and one -2160 file answered 206 video/mp4, and Restricted clips' larger files 403; download mixkit:40746 (a bare id, Free) fell back from -2160 (403) to -1080 and measured 1080x1920 h264; a NASA search for 'launch' with --min-height 1080 returned ids with spaces (Causeway Main Launch dust removal) at 3840x2160; probe reported videvo.net and mazwai.com as moved (301 to freepik.com/videos).",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_free_footage.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/sources.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "video-download",
+        "web-research"
       ]
     }
   ]

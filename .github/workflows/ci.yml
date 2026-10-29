@@ -189,6 +189,12 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_stream_grabber.py' -v
       - name: Source finder (offline; synthetic ORB+RANSAC match, cut detection, fake Yandex answers and captcha stop)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_finder.py' -v
+      - name: Free footage sources and search (offline; synthetic API and page answers, key gating, licence sidecars)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_free_footage.py' -v
+      - name: Install PyAV for the real decode test (numpy comes with opencv-python-headless above)
+        run: python3 -m pip install --disable-pip-version-check 'av==19.0.2'
+      - name: Montage Pro transcribe recovery (offline, stub whisper model; --no-vad/--no-recover plumbing, recovered-span merge, ffmpeg → PyAV decode fallback with a real PyAV decode)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_transcribe_recover.py' -v
       - name: Caption lines (reading rules, suspect-phrase screen, SRT/VTT/JSON)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_caption_lines.py' -v
       - name: Look pipeline (one colour look; ffmpeg parity part skips without ffmpeg)

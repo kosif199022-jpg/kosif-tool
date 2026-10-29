@@ -1,0 +1,1060 @@
+{
+ "schema": "kosif.free-footage-sources.v1",
+ "checked_on": "2026-10-29",
+ "about": "Open-licence and free video sources for montage, one record per source: licence and its link, attribution rule and template, commercial use, what the source is good for, its search URL, API and key, how a file URL is obtained, the largest size a script gets, and whether it answered from a cloud sandbox. Read by scripts/free_footage.py (sources, probe, search, download); schema: schemas/free_footage_sources.schema.json.",
+ "notice": "A source being listed here is not a licence for any clip. Licences are per clip on Wikimedia Commons, the Internet Archive, ESA, Mixkit, Videezy and Openverse, and on Freepik, where videvo.net and mazwai.com now redirect; read the clip's own page before publishing. Pinterest is not a licence source at all: credit and link only. Never paste an API key into chat; keys go in the environment (PEXELS_API_KEY, PIXABAY_API_KEY).",
+ "reachability_note": "reachability was measured from a claude.ai cloud sandbox behind its agent proxy on checked_on; your own computer may differ. Re-measure with: python3 scripts/free_footage.py probe",
+ "template_fields": [
+  "title",
+  "author",
+  "source",
+  "licence",
+  "licence_url",
+  "page_url"
+ ],
+ "sources": [
+  {
+   "id": "pexels",
+   "name": "Pexels Videos",
+   "url": "https://www.pexels.com/videos/",
+   "category": "free-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Pexels License",
+    "url": "https://www.pexels.com/license/",
+    "per_item": false,
+    "summary": "Free to use and modify, commercial use included, attribution not required. Not allowed: selling unaltered copies, implying that people or brands in the clip endorse you, showing identifiable people in an offensive way, re-uploading to other stock platforms."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": "Video by {author} from Pexels: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Allowed under the Pexels License within the restrictions above.",
+   "modification": "yes",
+   "video_kinds": [
+    "lifestyle",
+    "people",
+    "city",
+    "nature",
+    "aerial",
+    "vertical 9:16",
+    "4K"
+   ],
+   "strengths": "Large modern library with many vertical 1080x1920 and 4K clips; good for reels and lifestyle b-roll.",
+   "search_url": "https://www.pexels.com/search/videos/{query}/",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://api.pexels.com/videos/search",
+    "key_required": true,
+    "key_env": "PEXELS_API_KEY",
+    "docs": "https://www.pexels.com/api/documentation/",
+    "notes": "The key goes in the Authorization header. Default limits 200 requests an hour and 20,000 a month. Show a prominent link to Pexels and credit the videographer wherever results are shown. On 2026-10-21 Pexels was not issuing new keys (stock_fetch.py field note); its API documentation on 2026-10-29 says anyone with a Pexels account receives a key instantly."
+   },
+   "download": "With a key: the API's video_files[].link (the tool picks the largest MP4). Without a key, a page link or id goes through stock_fetch.py's public endpoint https://www.pexels.com/download/video/<id>/, a 302 to videos.pexels.com.",
+   "max_resolution": "4K UHD (3840x2160, or 2160x3840 vertical) on many clips",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "api-key",
+    "download": "api"
+   },
+   "probes": [
+    {
+     "what": "search page",
+     "url": "https://www.pexels.com/search/videos/ocean/"
+    },
+    {
+     "what": "API without a key",
+     "url": "https://api.pexels.com/videos/search?query=ocean",
+     "expect": 401
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "needs-key",
+    "http": 403,
+    "detail": "Search pages 403 to scripts; the API answers 401 without a key. The public download endpoint still answered (302 then 200 video/mp4)."
+   },
+   "notes": "Find clip ids with a web search restricted to pexels.com when there is no key (result URLs end in -<id>/), then download them with this tool or stock_fetch.py."
+  },
+  {
+   "id": "pixabay",
+   "name": "Pixabay Videos",
+   "url": "https://pixabay.com/videos/",
+   "category": "free-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Pixabay Content License",
+    "url": "https://pixabay.com/service/license-summary/",
+    "per_item": false,
+    "summary": "Free for commercial and non-commercial use, attribution not required. Not allowed: selling or distributing the content as it is (including as stock or wallpapers), showing identifiable people offensively, using it in a trademark, or implying endorsement."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": "Video by {author} from Pixabay: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Allowed under the Pixabay Content License within the restrictions above.",
+   "modification": "yes",
+   "video_kinds": [
+    "nature",
+    "abstract backgrounds",
+    "animation loops",
+    "city",
+    "people"
+   ],
+   "strengths": "Many abstract and animated background loops besides live-action footage.",
+   "search_url": "https://pixabay.com/videos/search/{query}/",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://pixabay.com/api/videos/",
+    "key_required": true,
+    "key_env": "PIXABAY_API_KEY",
+    "docs": "https://pixabay.com/api/docs/",
+    "notes": "The key travels in the query string; the tool never prints or stores it. About 100 requests per 60 s; cache results for 24 h; say where the videos come from when you show results; no permanent hotlinking of images (the API docs say videos may be embedded directly but recommend storing them on your server; the tool downloads them)."
+   },
+   "download": "API hits[].videos.large|medium|small|tiny.url on cdn.pixabay.com (the tool picks the largest available; large is an empty URL with size 0 when the clip has no 4K version).",
+   "max_resolution": "large 3840x2160 when the upload is 4K (else empty); medium 1920x1080 (1280x720 on older clips)",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "api-key",
+    "download": "api"
+   },
+   "probes": [
+    {
+     "what": "search page",
+     "url": "https://pixabay.com/videos/search/ocean/"
+    },
+    {
+     "what": "API without a key",
+     "url": "https://pixabay.com/api/videos/",
+     "expect": 400
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "needs-key",
+    "http": 403,
+    "detail": "Pages 403 to scripts; the API answers 400 without a key."
+   },
+   "notes": "Free key from https://pixabay.com/api/docs/ after signing in; store it as PIXABAY_API_KEY in the environment's secrets."
+  },
+  {
+   "id": "mixkit",
+   "name": "Mixkit",
+   "url": "https://mixkit.co/free-stock-video/",
+   "category": "free-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Mixkit Stock Video Free License or Mixkit Stock Video Restricted License (named per clip)",
+    "url": "https://mixkit.co/license/",
+    "per_item": true,
+    "summary": "Each clip page names one of two licences. 'Free' clips: \"for commercial or personal use, under the Mixkit Stock Video Free License\", no attribution, no redistribution as stock. 'Restricted' clips (most of the ocean results on 2026-10-29): \"Free Download - 720p Version for Personal Use only ... under the Mixkit Restricted License\"; commercial use of those goes through a paid Envato licence."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": "\"{title}\" from Mixkit ({licence}): {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Free licence: yes. Restricted licence: personal use only for the free 720p file. The tool reads the notice from the clip page and marks Restricted clips commercial=false.",
+   "modification": "yes",
+   "video_kinds": [
+    "lifestyle",
+    "nature",
+    "city",
+    "business",
+    "vertical backgrounds"
+   ],
+   "strengths": "Clean, well-shot stock with no sign-in; Free clips come at 1080p (2160p on some) and Restricted clips at 720p, all without an account.",
+   "search_url": "https://mixkit.co/free-stock-video/discover/{query}/",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No public API. The tool reads the search page: grid cards (data-item-grid--video-player-item-id-value, the overlay title and the clip link) and, on tag pages, the JSON-LD VideoObject entries (copyrightNotice, license, contentUrl)."
+   },
+   "download": "Depends on the clip's licence. Free clips: https://assets.mixkit.co/videos/<id>/<id>-2160.mp4 when the clip has a 4K file, else <id>-1080.mp4, else <id>-720.mp4 (tried in that order; a missing size answers 403). Restricted clips: only <id>-720.mp4 (their -1080 and -2160 files answer 403 to scripts). The tool reads the licence from the clip page before choosing.",
+   "max_resolution": "Free clips 1080p by script (2160p on some); Restricted clips 720p",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "scrape",
+    "download": "direct"
+   },
+   "probes": [
+    {
+     "what": "search page",
+     "url": "https://mixkit.co/free-stock-video/discover/ocean/"
+    },
+    {
+     "what": "public 720p file",
+     "url": "https://assets.mixkit.co/videos/15209/15209-720.mp4"
+    },
+    {
+     "what": "Free clip 1080p file",
+     "url": "https://assets.mixkit.co/videos/44399/44399-1080.mp4"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Search and tag pages 200; the 720p file 206/200 video/mp4. Byte-range requests for Free clips' -1080 files (44399, 2079, 4312, 40746) and 44399-2160 answered 206 video/mp4; 40746-2160 and Restricted clips' -1080/-2160 files (15209, 48525, 9998) answered 403."
+   },
+   "notes": "A Restricted clip's 720p is soft when a 16:9 clip is cropped to full-screen 9:16; show it in a framed panel instead (stock-footage field notes in references/guides/sources.md). A Free clip's 2160p file crops to a sharp 1080x1920."
+  },
+  {
+   "id": "coverr",
+   "name": "Coverr",
+   "url": "https://coverr.co/",
+   "category": "freemium-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Coverr License",
+    "url": "https://coverr.co/license",
+    "per_item": false,
+    "summary": "Free for commercial and non-commercial use; attribution not required (appreciated). Not allowed: building a service that competes with Coverr, using the videos to train AI models or in datasets, or redistributing them as they are. Coverr+ (premium) clips need a subscription."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": "\"{title}\" by {author} from Coverr: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Free clips: yes. Premium (Coverr+) clips are excluded by the tool.",
+   "modification": "yes",
+   "video_kinds": [
+    "lifestyle",
+    "nature",
+    "aerial",
+    "office",
+    "backgrounds"
+   ],
+   "strengths": "Many 4K-sourced clips with a public 1080p file; the search page carries full clip data (duration, size, premium and AI flags).",
+   "search_url": "https://coverr.co/s?q={query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://api.coverr.co/videos",
+    "key_required": true,
+    "key_env": "COVERR_API_KEY",
+    "docs": null,
+    "notes": "The API answers 401 without a key; the tool does not use it. It reads the search page's embedded state JSON (<script id=\"ng-state\">, search_coverr_videos.hits[]) instead, keeping only free clips and never the contributor's e-mail or other personal fields."
+   },
+   "download": "urls.mp4 from the page state: https://cdn.coverr.co/videos/<base>/1080p.mp4.",
+   "max_resolution": "1080p file by script (sources up to 4K; 4K through the website)",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "scrape",
+    "download": "direct"
+   },
+   "probes": [
+    {
+     "what": "search page",
+     "url": "https://coverr.co/s?q=ocean"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Search page 200 (about 11 MB of HTML); 1080p files 206/200 video/mp4."
+   },
+   "notes": "Some clips are AI-generated user uploads (isAiGenerated); the tool flags them as ai-generated and --no-ai drops them."
+  },
+  {
+   "id": "videvo",
+   "name": "Videvo (now Freepik Videos)",
+   "url": "https://www.videvo.net/",
+   "category": "freemium-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Freepik terms: free with credit, or a Premium plan without (videvo.net now redirects to Freepik)",
+    "url": "https://www.magnific.com/legal/terms-of-use",
+    "per_item": true,
+    "summary": "Every videvo.net page checked on 2026-10-29 (home, /search/ocean/) answers 301 to https://www.freepik.com/videos, so Videvo's own licence badges no longer describe new downloads. Freepik's terms (https://www.freepik.com/legal/terms-of-use redirects to this page, 'Terms of Use June 2026', operated by Magnific AI, S.L.U.): free use is conditional on crediting the website and, where applicable, the contributor; a Premium, Premium+ or Pro subscription removes the credit; content marked editorial-only must not be used commercially; content may not be resold as the main element of a product."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" by {author} from Freepik ({licence}): {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Freepik's free licence allows commercial projects with credit, except editorial-only items and products whose main element is the clip; read the clip page. Videvo's old badges do not apply to what is downloaded now.",
+   "modification": "per-item",
+   "video_kinds": [
+    "motion backgrounds",
+    "nature",
+    "city",
+    "sound effects"
+   ],
+   "strengths": "Formerly motion-graphics backgrounds and loops next to live-action clips; the domain now leads to Freepik Videos, usable only from a browser on your own device.",
+   "search_url": null,
+   "search_url_checked": false,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No public video API known; Freepik's own API was not checked."
+   },
+   "download": "From the Freepik clip page in a browser (an account is needed; Premium for some files); not automated.",
+   "max_resolution": "HD and 4K clips (per clip)",
+   "formats": [
+    "mp4",
+    "mov"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "home page",
+     "url": "https://www.videvo.net/"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "moved",
+    "http": 301,
+    "detail": "Home and search pages answer 301 to https://www.freepik.com/videos, which answers 403 to scripts from the sandbox (the 403 recorded earlier was Freepik's, not Videvo's)."
+   },
+   "notes": "Kept under its old name so a request for Videvo finds where it went. Search Freepik Videos in a normal browser on your own device and record the clip's licence and author with download --licence/--licence-url/--author when you fetch a direct file link."
+  },
+  {
+   "id": "videezy",
+   "name": "Videezy",
+   "url": "https://www.videezy.com/",
+   "category": "freemium-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Videezy Standard License (free, attribution required) or Videezy Pro License (named per clip)",
+    "url": "https://www.videezy.com/resources/35369/license_info_modal",
+    "per_item": true,
+    "summary": "There is no standalone licence page (/licenses, /license and /licensing answer 404); each clip names its licence in a modal at https://www.videezy.com/resources/<clip id>/license_info_modal (the link above is clip 35369's). 'Videezy Standard License': \"free for Personal and Commercial use, but you must give attribution\" (TV/broadcast: mention \"Videezy.com\" in the credits; web: a link to videezy.com); buying the file removes the credit. 'Videezy Pro License' clips need a paid licence; some clips are editorial only. The site terms (https://www.videezy.com/terms) limit downloads to personal, non-commercial use without written permission, so rely on the clip's own licence modal."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" by {author} from Videezy.com: {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Standard License clips: personal and commercial use with credit (10 of 12 clips sampled from /free-video/ocean on 2026-10-29); Pro License clips need a paid licence; editorial-only clips allow no commercial use.",
+   "modification": "per-item",
+   "video_kinds": [
+    "backgrounds",
+    "nature",
+    "city",
+    "abstract",
+    "4K"
+   ],
+   "strengths": "Large free section with motion backgrounds and 4K clips.",
+   "search_url": "https://www.videezy.com/free-video/{query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No public API."
+   },
+   "download": "Download button on each clip page (sign-in for some files); not automated.",
+   "max_resolution": "up to 4K (per clip)",
+   "formats": [
+    "mp4",
+    "mov"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "search page",
+     "url": "https://www.videezy.com/free-video/ocean"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Search pages 200."
+   },
+   "notes": "Check the clip's licence modal (Standard or Pro) and any editorial-use note on the clip page before using a clip; Standard clips need the credit line."
+  },
+  {
+   "id": "vecteezy",
+   "name": "Vecteezy Videos",
+   "url": "https://www.vecteezy.com/free-videos",
+   "category": "freemium-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Vecteezy Free License (attribution required) or Pro licences",
+    "url": "https://www.vecteezy.com/licensing-agreement",
+    "per_item": true,
+    "summary": "Free License: personal and some commercial projects with mandatory attribution to the creator, licensed to one individual, not on products for resale, with project limits listed in the agreement. Pro licences remove attribution and raise the limits."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": false,
+    "template": "\"{title}\" by {author} on Vecteezy: {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Limited commercial use under the Free License; read the agreement's limits.",
+   "modification": "yes",
+   "video_kinds": [
+    "backgrounds",
+    "abstract",
+    "nature",
+    "business"
+   ],
+   "strengths": "Big catalogue; useful for abstract and business backgrounds.",
+   "search_url": "https://www.vecteezy.com/free-videos/{query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No public free API."
+   },
+   "download": "Previews are watermarked; the file needs a signed-in download. Not usable unattended.",
+   "max_resolution": "up to 4K (per clip)",
+   "formats": [
+    "mp4",
+    "mov"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "search page",
+     "url": "https://www.vecteezy.com/free-videos/ocean"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Search pages and the licensing agreement 200."
+   },
+   "notes": "Never use a watermarked preview in a delivery."
+  },
+  {
+   "id": "dareful",
+   "name": "Dareful",
+   "url": "https://dareful.com/",
+   "category": "free-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "per_item": false,
+    "summary": "Every clip is under Creative Commons Attribution 4.0: free for personal, commercial and educational projects, edits allowed, credit required (the site suggests \"Video courtesy of Dareful\" with a link)."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": false,
+    "template": "\"{title}\", video courtesy of Dareful (https://dareful.com), CC BY 4.0: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Allowed with the CC BY 4.0 credit.",
+   "modification": "yes",
+   "video_kinds": [
+    "nature",
+    "aerial",
+    "landscapes",
+    "time-lapse",
+    "4K"
+   ],
+   "strengths": "Hundreds of 4K nature, aerial and time-lapse clips under one clear licence.",
+   "search_url": "https://dareful.com/?s={query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No API; a WordPress site with a search box."
+   },
+   "download": "Download button on each clip page (a direct file); not automated, pass the file link to download with --licence \"CC BY 4.0\".",
+   "max_resolution": "4K",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "home page",
+     "url": "https://dareful.com/"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Home and search pages 200."
+   },
+   "notes": "A small library (hundreds of clips), so check it per topic."
+  },
+  {
+   "id": "mazwai",
+   "name": "Mazwai (now Freepik Videos)",
+   "url": "https://mazwai.com/",
+   "category": "freemium-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Freepik terms: free with credit, or a Premium plan without (mazwai.com now redirects to Freepik)",
+    "url": "https://www.magnific.com/legal/terms-of-use",
+    "per_item": true,
+    "summary": "On 2026-10-29 https://mazwai.com/ answers 301 to https://www.freepik.com/videos and https://mazwai.com/license 301 to https://www.freepik.com, so Mazwai's own licence (Mazwai licence or CC BY per clip) no longer describes new downloads, and whether its clips are on Freepik was not checked (403). Freepik's terms (https://www.freepik.com/legal/terms-of-use redirects to this page, 'Terms of Use June 2026', operated by Magnific AI, S.L.U.): free use is conditional on crediting the website and, where applicable, the contributor; a Premium, Premium+ or Pro subscription removes the credit; editorial-only content must not be used commercially; content may not be resold as the main element of a product."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" by {author} from Freepik ({licence}): {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Freepik's free licence allows commercial projects with credit, except editorial-only items and products whose main element is the clip; read the clip page.",
+   "modification": "per-item",
+   "video_kinds": [
+    "cinematic",
+    "travel",
+    "nature",
+    "artistic"
+   ],
+   "strengths": "Formerly cinematic, artistic clips that looked less like generic stock; the domain now leads to Freepik Videos, usable only from a browser on your own device.",
+   "search_url": null,
+   "search_url_checked": false,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No public video API known; Freepik's own API was not checked."
+   },
+   "download": "From the Freepik clip page in a browser (an account is needed; Premium for some files); not automated.",
+   "max_resolution": "HD (per clip)",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "home page",
+     "url": "https://mazwai.com/"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "moved",
+    "http": 301,
+    "detail": "Home page 301 to https://www.freepik.com/videos and licence page 301 to https://www.freepik.com, both 403 to scripts from the sandbox (the 403 recorded earlier was Freepik's, not Mazwai's)."
+   },
+   "notes": "Kept under its old name so a request for Mazwai finds where it went. Credit the filmmaker by name even where the licence does not demand it."
+  },
+  {
+   "id": "lifeofvids",
+   "name": "Life of Vids",
+   "url": "https://www.lifeofvids.com/",
+   "category": "free-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Life of Vids terms (free clips and loops, no copyright restrictions per the site)",
+    "url": "https://www.lifeofvids.com/",
+    "per_item": false,
+    "summary": "The site states its clips and loops are free without copyright restrictions; credit is appreciated. Not re-verified from this sandbox (TLS handshake timeout), so confirm on the site before relying on it."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": "\"{title}\" from Life of Vids: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Per the site's statement; not re-verified on checked_on.",
+   "modification": "yes",
+   "video_kinds": [
+    "loops",
+    "lifestyle",
+    "nature"
+   ],
+   "strengths": "Short loops for backgrounds.",
+   "search_url": null,
+   "search_url_checked": false,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No API."
+   },
+   "download": "Download links on each clip page; not automated.",
+   "max_resolution": "HD (per clip)",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "home page",
+     "url": "https://www.lifeofvids.com/"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "timeout",
+    "http": null,
+    "detail": "TLS handshake timed out from the sandbox."
+   },
+   "notes": "Small, rarely updated library."
+  },
+  {
+   "id": "wikimedia",
+   "name": "Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/",
+   "category": "open-collection",
+   "licence_source": true,
+   "licence": {
+    "name": "Per file: CC0, public domain, CC BY, CC BY-SA and other free licences",
+    "url": "https://commons.wikimedia.org/wiki/Commons:Licensing",
+    "per_item": true,
+    "summary": "Commons accepts only free licences that allow commercial use and modification (no NC or ND). Each file's licence, author and whether attribution is required come from the API's extmetadata. Share-alike (BY-SA) files make the edit share-alike too; personality, trademark and other non-copyright rights can still apply."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" by {author}, {licence} ({licence_url}), via Wikimedia Commons: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Every Commons licence allows commercial use; respect share-alike and attribution per file.",
+   "modification": "yes",
+   "video_kinds": [
+    "documentary",
+    "historic",
+    "science",
+    "events",
+    "places",
+    "nature"
+   ],
+   "strengths": "Documentary, historic and place footage with machine-readable licence and author per file.",
+   "search_url": "https://commons.wikimedia.org/w/index.php?title=Special:MediaSearch&type=video&search={query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://commons.wikimedia.org/w/api.php",
+    "key_required": false,
+    "key_env": null,
+    "docs": "https://www.mediawiki.org/wiki/API:Imageinfo",
+    "notes": "generator=search with 'filetype:video' in namespace 6, prop=imageinfo with url|size|mime|mediatype|extmetadata (LicenseShortName, LicenseUrl, Artist, AttributionRequired, UsageTerms). Send a descriptive User-Agent and one request at a time; a shared cloud IP got 429 on 2026-10-21."
+   },
+   "download": "imageinfo url: the original file on upload.wikimedia.org (the tool drops the utm tracking query).",
+   "max_resolution": "as uploaded (up to 4K)",
+   "formats": [
+    "webm",
+    "ogv"
+   ],
+   "tool": {
+    "search": "api",
+    "download": "api"
+   },
+   "probes": [
+    {
+     "what": "API",
+     "url": "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srsearch=ocean&srnamespace=6&srlimit=1"
+    },
+    {
+     "what": "file host",
+     "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Ocean_in_Sommaroy.webm"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "partial",
+    "http": 429,
+    "detail": "API 200 with imageinfo extmetadata (licence, author, attribution flag, duration) at first; upload.wikimedia.org answered 429 with Retry-After 600 to the sandbox's shared IP for every User-Agent, and after about twenty requests the API answered 429 as well. Search when it answers, then download from your own computer or retry later, one request at a time."
+   },
+   "notes": "Files are WebM or Ogg; transcode to H.264 for editing with ffmpeg. Many files are uploads from YouTube under CC BY: credit the channel named in Artist."
+  },
+  {
+   "id": "archive",
+   "name": "Internet Archive (moving images)",
+   "url": "https://archive.org/details/movies",
+   "category": "open-collection",
+   "licence_source": true,
+   "licence": {
+    "name": "Per item: the uploader's licenseurl (Creative Commons licences, Public Domain Mark, CC0) or none",
+    "url": "https://archive.org/about/terms",
+    "per_item": true,
+    "summary": "Each item's licence is the licenseurl its uploader set; items without one have unknown rights and the tool skips them. NC licences forbid commercial use and ND licences forbid edits (the tool drops ND by default). Many items are re-uploads, so trace the original source named in the description."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" by {author}, {licence} ({licence_url}), via the Internet Archive: {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Public domain, CC0, CC BY and CC BY-SA allow it; NC does not.",
+   "modification": "per-item",
+   "video_kinds": [
+    "historic film",
+    "public-domain films (Prelinger)",
+    "news",
+    "home movies",
+    "Flickr video mirrors"
+   ],
+   "strengths": "Historic and public-domain film; the Prelinger Archives are the classic source of public-domain archive footage.",
+   "search_url": "https://archive.org/search?query={query}&and%5B%5D=mediatype%3A%22movies%22",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://archive.org/advancedsearch.php",
+    "key_required": false,
+    "key_env": null,
+    "docs": "https://archive.org/developers/",
+    "notes": "advancedsearch with mediatype:movies AND licenseurl:* returns identifier, title, creator and licenseurl; https://archive.org/metadata/<identifier> lists the files with format, size, width, height and length."
+   },
+   "download": "https://archive.org/download/<identifier>/<file> for the largest video file in the metadata (an original or an h.264 derivative).",
+   "max_resolution": "as uploaded (often SD for historic film, up to 4K for recent uploads)",
+   "formats": [
+    "mp4",
+    "mov",
+    "ogv",
+    "mpeg",
+    "mkv"
+   ],
+   "tool": {
+    "search": "api",
+    "download": "api"
+   },
+   "probes": [
+    {
+     "what": "advancedsearch API",
+     "url": "https://archive.org/advancedsearch.php?q=ocean+AND+mediatype%3Amovies&fl%5B%5D=identifier&rows=1&output=json"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "advancedsearch and metadata APIs 200."
+   },
+   "notes": "Archive items are large; keep --max-mb and prefer the h.264 derivative when the original is huge."
+  },
+  {
+   "id": "nasa",
+   "name": "NASA Image and Video Library",
+   "url": "https://images.nasa.gov/",
+   "category": "public-agency",
+   "licence_source": true,
+   "licence": {
+    "name": "NASA Images and Media Usage Guidelines (generally not copyrighted in the US)",
+    "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "per_item": false,
+    "summary": "NASA media is generally not subject to US copyright; acknowledge NASA as the source. Commercial use must not state or imply NASA endorsement; NASA logos and NASA employees in promotional use need clearance; third-party copyrighted material is marked with its holder and needs their permission."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": false,
+    "template": "\"{title}\", courtesy NASA ({author}): {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Allowed without implied endorsement; no NASA logos or insignia as branding.",
+   "modification": "yes",
+   "video_kinds": [
+    "space",
+    "earth from orbit",
+    "launches",
+    "science visualisation",
+    "aerospace"
+   ],
+   "strengths": "Space, Earth-from-orbit and launch footage with a key-less API.",
+   "search_url": "https://images.nasa.gov/search?q={query}&media=video",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://images-api.nasa.gov/search",
+    "key_required": false,
+    "key_env": null,
+    "docs": "https://images.nasa.gov/docs/images.nasa.gov_api_docs.pdf",
+    "notes": "search?q=...&media_type=video gives nasa_id, title, center, description and secondary_creator; asset/<nasa_id> lists the files; metadata.json on images-assets.nasa.gov has width, height and duration."
+   },
+   "download": "The ~orig.mp4 (else ~large.mp4) listed by https://images-api.nasa.gov/asset/<nasa_id>.",
+   "max_resolution": "as delivered by the centre (~orig is often 1080p, some 4K)",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "api",
+    "download": "api"
+   },
+   "probes": [
+    {
+     "what": "search API",
+     "url": "https://images-api.nasa.gov/search?q=ocean&media_type=video&page_size=1"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "search, asset and metadata.json 200."
+   },
+   "notes": "Check the description for third-party credits (for example ESA, JAXA or a university) before using a clip commercially."
+  },
+  {
+   "id": "esa",
+   "name": "ESA Multimedia (videos)",
+   "url": "https://www.esa.int/ESA_Multimedia/Videos",
+   "category": "public-agency",
+   "licence_source": true,
+   "licence": {
+    "name": "ESA Standard Licence, or CC BY-SA 3.0 IGO where the item says so",
+    "url": "https://www.esa.int/ESA_Multimedia/Terms_and_conditions_of_use_of_images_and_videos_available_on_the_esa_website",
+    "per_item": true,
+    "summary": "Items marked CC BY-SA 3.0 IGO (https://creativecommons.org/licenses/by-sa/3.0/igo/) can be reused, commercially too, with credit and share-alike. Everything else is for non-commercial informational or educational use; commercial use (entertainment, advertising, merchandising) needs ESA's written authorisation."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\", {author}, {licence}: {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Only CC BY-SA 3.0 IGO items without separate authorisation.",
+   "modification": "per-item",
+   "video_kinds": [
+    "space",
+    "earth observation",
+    "launches",
+    "science animation"
+   ],
+   "strengths": "European space footage and animations; the credit line is printed on each item.",
+   "search_url": "https://www.esa.int/ESA_Multimedia/Search?SearchText={query}&result_type=videos",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": null,
+    "key_required": false,
+    "key_env": null,
+    "docs": null,
+    "notes": "No public API; search on the site."
+   },
+   "download": "Download link on each item page; not automated.",
+   "max_resolution": "up to 4K (per item)",
+   "formats": [
+    "mp4",
+    "mov"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "videos page",
+     "url": "https://www.esa.int/ESA_Multimedia/Videos"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Videos, search and terms pages 200."
+   },
+   "notes": "Copy the item's own credit line (for example ESA/ATG medialab) as the author."
+  },
+  {
+   "id": "openverse",
+   "name": "Openverse",
+   "url": "https://openverse.org/",
+   "category": "media-api",
+   "licence_source": true,
+   "licence": {
+    "name": "Per item: Creative Commons licences and public domain marks",
+    "url": "https://creativecommons.org/licenses/",
+    "per_item": true,
+    "summary": "An index of openly licensed images and audio with licence, creator and source per item. It has no video: use it for stills, textures and sound effects next to the footage."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" by {author}, {licence} ({licence_url}): {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Filter by licence (the API takes license_type=commercial).",
+   "modification": "per-item",
+   "video_kinds": [
+    "images only",
+    "audio only"
+   ],
+   "strengths": "Licence-clean stills and sound effects with ready attribution data.",
+   "search_url": "https://openverse.org/search/?q={query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://api.openverse.org/v1/images/",
+    "key_required": false,
+    "key_env": null,
+    "docs": "https://api.openverse.org/v1/",
+    "notes": "Anonymous use is rate limited; /v1/audio/ is the audio index; /v1/videos/ does not exist (404)."
+   },
+   "download": "Each result's url field (images, audio); not handled by this video tool.",
+   "max_resolution": "n/a (no video)",
+   "formats": [
+    "jpg",
+    "png",
+    "mp3",
+    "ogg"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "images API",
+     "url": "https://api.openverse.org/v1/images/?q=ocean&page_size=1"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "API 200 (images and audio only); the web search page answered 403 to scripts; /v1/videos/ 404."
+   },
+   "notes": "Good companion for still overlays, textures and SFX in a montage."
+  },
+  {
+   "id": "pinterest",
+   "name": "Pinterest",
+   "url": "https://www.pinterest.com/",
+   "category": "discovery-only",
+   "licence_source": false,
+   "licence": {
+    "name": "Not a licence source: credit/link only",
+    "url": "https://policy.pinterest.com/en/copyright",
+    "per_item": true,
+    "summary": "Pinterest grants no licence to reuse pins; most video pins are re-uploads of someone else's work. Use it to discover a clip and trace its original creator (scripts/source_finder.py), then license the clip from that owner or keep it as private reference, and always credit and link."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "Found via Pinterest ({page_url}); original creator: {author}"
+   },
+   "commercial_use": "n/a",
+   "commercial_note": "No reuse right comes from Pinterest itself.",
+   "modification": "n/a",
+   "video_kinds": [
+    "mood references",
+    "trend references",
+    "aesthetic edits"
+   ],
+   "strengths": "Finding where a clip came from and what an aesthetic looks like.",
+   "search_url": "https://www.pinterest.com/search/videos/?q={query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://api.pinterest.com/v5/",
+    "key_required": true,
+    "key_env": null,
+    "docs": "https://developers.pinterest.com/docs/api/v5/",
+    "notes": "OAuth app access only; not used. The tool never downloads from Pinterest."
+   },
+   "download": "None by this tool. Trace the original and fetch it from a licensed source, or keep a downloaded pin as private reference.",
+   "max_resolution": "n/a",
+   "formats": [],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "home page",
+     "url": "https://www.pinterest.com/"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "ok",
+    "http": 200,
+    "detail": "Pages 200 (content rendered by JavaScript)."
+   },
+   "notes": "Listed so that nobody treats a pin as licensed footage."
+  },
+  {
+   "id": "storyblocks",
+   "name": "Storyblocks",
+   "url": "https://www.storyblocks.com/",
+   "category": "paid-stock",
+   "licence_source": true,
+   "licence": {
+    "name": "Storyblocks subscription licence",
+    "url": "https://www.storyblocks.com/license",
+    "per_item": false,
+    "summary": "Paid subscription stock: clips downloaded during an active plan carry its licence. Not free footage; listed so it is not mistaken for a free source."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": null
+   },
+   "commercial_use": "yes",
+   "commercial_note": "Only with a paid plan.",
+   "modification": "yes",
+   "video_kinds": [
+    "general stock",
+    "templates",
+    "4K"
+   ],
+   "strengths": "Large paid library; outside the free scope.",
+   "search_url": "https://www.storyblocks.com/video/search/{query}",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": null,
+    "key_required": true,
+    "key_env": null,
+    "docs": null,
+    "notes": "Enterprise API only; not used."
+   },
+   "download": "Signed-in download with a subscription; not automated. Spending money needs the user's explicit permission.",
+   "max_resolution": "4K",
+   "formats": [
+    "mp4",
+    "mov"
+   ],
+   "tool": {
+    "search": "none",
+    "download": "none"
+   },
+   "probes": [
+    {
+     "what": "home page",
+     "url": "https://www.storyblocks.com/"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-10-29",
+    "status": "paid",
+    "http": 200,
+    "detail": "Pages 200; downloads need a paid subscription."
+   },
+   "notes": "Do not suggest a subscription unless the user asks; free sources come first."
+  }
+ ]
+}

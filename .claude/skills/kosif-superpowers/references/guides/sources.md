@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (23)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (24)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -35,6 +35,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `instagram-reference-discovery` | Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram. | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |
 | `github-pulse` | Ranks repositories by distinct people active in a 30-day window (GH Archive hourly events) plus total stars (deps.dev), keeps only those pushed or released in the window, classifies them into 14 domains with a minimum share for creative ones, labels licence classes, keeps cheats, cracks and bot-detection bypasses out, and records 24 ideas restated in our own words with where each now lives. build writes data/github_pulse.json and references/github-pulse-30d.md; top, find, show and ideas query it; collect, enrich and select refresh it into a work folder (network, curl). | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | tested-here |
 | `source-finder` | Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha. | `python3 scripts/source_finder.py doctor` | tested-here |
+| `free-footage` | Keeps a checked database of 17 free and open-licence video sources (data/free_footage_sources.json: licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size, measured reachability, with Pinterest marked not a licence source). It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice, Coverr's embedded state without premium clips). download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size) and rebuilds ATTRIBUTION.md; probe re-measures every source. | `python3 scripts/free_footage.py sources --searchable` | tested-here |
 
 <!-- hub:area:sources:end -->
 
@@ -52,6 +53,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 10. [بحث وتحميل فيديوهات إنستجرام لمنتج — Instagram product video finder (2026-10-24)](#بحث-وتحميل-فيديوهات-إنستجرام-لمنتج--instagram-product-video-finder-2026-10-24)
 11. [بوست صور تيك توك — TikTok photo posts (2026-10-28)](#بوست-صور-تيك-توك--tiktok-photo-posts-2026-10-28)
 12. [مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)](#مصدر-كل-لقطة-في-فيديو-مرجعي--source-finder-for-the-shots-of-a-reference-video-2026-10-28)
+13. [مكتبة اللقطات المفتوحة الترخيص — Free footage sources, search and credits (2026-10-29)](#مكتبة-اللقطات-المفتوحة-الترخيص--free-footage-sources-search-and-credits-2026-10-29)
 
 ## Web apps and browser isolation research
 
@@ -114,8 +116,8 @@ Field notes from three delivered montage jobs (2026-10-21, cloud session). Run `
 |---|---|---|
 | Pexels search pages | 403 to scripts | find ids with a web search restricted to `pexels.com` (result URLs end in `-<id>/`) |
 | Pexels download endpoint | **302 → videos.pexels.com** | `stock_fetch.py pexels <id|url> …` — no key; vertical 1080×1920 and 4K clips exist |
-| Pexels API | 401 without a key; **new keys paused** by Pexels on 2026-10-21 | do not ask the user for a key; never ask them to paste a key into chat (keys go in the environment's secrets) |
-| Mixkit | pages 200, `<id>-720.mp4` 200, 1080/2160 **403** | `stock_fetch.py mixkit <id> …`; 720p only, so do not crop 16:9 to full-screen 9:16 (2.7× upscale looks soft) |
+| Pexels API | 401 without a key; on 2026-10-21 Pexels was not issuing new keys (field note); its docs on 2026-10-29 say keys are issued instantly | the user may request a free key on their own account and store it as `PEXELS_API_KEY` in the environment's secrets; never ask them to paste a key into chat |
+| Mixkit | pages 200, `<id>-720.mp4` 200; 1080/2160 **403 on Restricted clips**, 206 on Free clips (2026-10-29) | `stock_fetch.py mixkit <id> …` gets the 720p file; `free_footage.py download mixkit:<id>` reads the clip's licence and gets a Free clip at 2160p, else 1080p. At 720p do not crop 16:9 to full-screen 9:16 (2.7× upscale looks soft). "Restricted" clips are personal use only at 720p (2026-10-29), so check with `free_footage.py` before commercial work |
 | Pixabay API | 400 without a key; pages 403 | needs the user's key in the environment |
 | Wikimedia API | **429** (shared-IP rate limit) | retry later, one request at a time |
 | Vecteezy | previews are watermarked; downloads need login | not usable unattended |
@@ -246,3 +248,54 @@ How it decides:
 
 **Rights.** `search` uploads frames of the reference to Yandex and `match`/`run` download other people's videos, so ask first. A found clip belongs to its creator (a Pinterest pin is often a re-upload, so trace the original), keep downloads as private reference, credit and link every source, and reuse footage only with the owner's permission or a licence; then fetch it properly with `fetch_video.py` or `media_sources.py` and record the rights.
 
+## مكتبة اللقطات المفتوحة الترخيص — Free footage sources, search and credits (2026-10-29)
+
+`scripts/free_footage.py` keeps **one database of free and open-licence video sources** (`data/free_footage_sources.json`, schema `schemas/free_footage_sources.schema.json`) and searches and downloads from the ones a script can reach, writing the licence and a ready credit line next to every clip.
+
+قاعدة بيانات واحدة لمواقع الفيديو المجانية ومفتوحة الترخيص: ترخيص كل موقع ورابطه، هل لازم تكتب اسم صاحب اللقطة وإزاي، هل الاستخدام التجاري مسموح، والموقع بيرد من السيرفر ولا لأ. وبتبحث وتنزّل من المواقع اللي ينفع توصلها بسكربت، وكل لقطة بتتحفظ ومعاها ترخيصها وسطر النسب جاهز.
+
+```bash
+python3 scripts/free_footage.py sources --searchable                  # what this tool can search, with licence and credit rule
+python3 scripts/free_footage.py sources --id dareful                  # one source in full (licence, API, key, download route)
+python3 scripts/free_footage.py probe                                 # reachability now: out/free-footage/probe-<YYYYMMDD>.json
+python3 scripts/free_footage.py search "night city" --orientation portrait --min-height 1280
+python3 scripts/free_footage.py search "ocean waves" --commercial --no-ai --limit 4
+python3 scripts/free_footage.py download mixkit:40746 coverr:Pvvw8EyofT --out out/free-footage/clips   # ids from the last search
+python3 scripts/free_footage.py download "https://www.pexels.com/video/<slug>-<id>/" --out out/free-footage/clips
+python3 scripts/free_footage.py download "<direct file link>" --licence "CC BY 4.0" --licence-url https://creativecommons.org/licenses/by/4.0/ --author "<creator>" --out out/free-footage/clips
+python3 scripts/free_footage.py credits out/free-footage/clips          # rebuild ATTRIBUTION.md after removing a clip
+```
+
+What each source gives, measured from a cloud sandbox on 2026-10-29 (`probe` re-measures; your own computer may differ):
+
+| source | licence | credit | commercial | from the sandbox | in the tool |
+|---|---|---|---|---|---|
+| Wikimedia Commons | per file (CC0, PD, CC BY, CC BY-SA) | per file | yes | API 200 at first, then 429; file host 429 (Retry-After 600) | search by API (licence, author, attribution flag from extmetadata); download |
+| Internet Archive | per item `licenseurl` | per item | per item (NC exists) | 200 | search by API (items without a licence skipped); download, smaller derivative under `--max-mb` |
+| NASA | media guidelines, not copyrighted in the US | acknowledge NASA | yes, no implied endorsement | 200 | search by API; download `~orig`, else `~large`/`~medium` under the cap |
+| Mixkit | Free or Restricted, per clip | no | Free yes; **Restricted: personal use only** | 200 | search page; licence read from the clip page; Free: 2160p file, else 1080p; Restricted: 720p |
+| Coverr | Coverr License | no | yes (no AI training, no premium) | 200 | search page state; 1080p file; premium skipped, AI clips flagged |
+| Pexels | Pexels License | no | yes | pages 403, API needs `PEXELS_API_KEY` | search with the key; a page link downloads without a key (stock_fetch.py) |
+| Pixabay | Pixabay Content License | no | yes | pages 403, API needs `PIXABAY_API_KEY` | search and download with the key |
+| Dareful | CC BY 4.0 | yes | yes | 200 | listed; pass a file link with `--licence "CC BY 4.0"` |
+| Videezy | Videezy Standard License (free, credit) or Pro, per clip | yes | yes with credit (Standard) | 200 | listed only; the licence is in each clip's licence modal |
+| Vecteezy | free licence with credit, or Pro | yes | limited | 200 (downloads need a login) | listed only |
+| Videvo, Mazwai | **moved**: both domains 301 to freepik.com/videos (Freepik terms: free with credit, or Premium) | yes (free) | with credit, not editorial-only items | 301, then 403 | listed so a request for them finds Freepik |
+| Life of Vids | site terms (no restrictions stated) | no | yes | TLS timeout | listed only |
+| ESA | ESA Standard Licence, or CC BY-SA 3.0 IGO when marked | yes | only CC BY-SA items | 200 | listed only |
+| Openverse | per item CC/PD | per item | per item | API 200 | listed only: images and audio, no video |
+| Pinterest | **not a licence source: credit/link only** | — | — | 200 | never downloaded; trace the original with `source_finder.py` |
+| Storyblocks | paid subscription | — | with a plan | 200 | listed so it is not mistaken for free |
+
+Rules the tool follows, and you should too:
+
+1. **The licence is the clip's, not the site's.** Commons, the Archive, Mixkit, ESA, Videezy and Freepik (where Videvo and Mazwai now lead) license clip by clip. The tool reads what the source declares and stores it in `<file>.json`; it does not verify or grant rights. Archive items are often re-uploads: trace the original named in the description.
+2. **A montage is an edit.** ND (no-derivatives) licences are dropped from search and refused by download unless `--allow-nd` (keep such a clip unedited, as reference). NC licences and Mixkit Restricted clips are kept but marked `commercial=false`; `--commercial` drops them and every licence that does not confirm commercial use.
+3. **Credit from the sidecars.** Every download rebuilds `ATTRIBUTION.md` in the clip folder: a table (file, source, licence, credit required, commercial use) and one credit line per clip, built from the source's template in the database (title, author, licence, licence link, page). Lines the licence does not require are marked *optional*; keep them anyway when there is room.
+4. **Keys stay in the environment.** Pexels and Pixabay are searched only when `PEXELS_API_KEY` / `PIXABAY_API_KEY` are set; otherwise they are reported as skipped and no request is made. The tool never prints or stores a key and redacts `key=` from every message. Never ask the user to paste a key into chat.
+5. **Polite by default.** One request per host per `--delay` seconds (1.0), a timeout on every request, a descriptive User-Agent, one retry after a 429 or 503 only when `Retry-After` is 30 s or less, a 40 MB cap on pages and `--max-mb` (300) on files. A web page served in place of a video (a login wall, a block page) is refused, and nothing half-written is left behind.
+6. **Sizes are honest.** Mixkit gives scripts a Free clip's 1080p file, or its 2160p file when it has one (tried first; a missing size answers 403 and the next one is tried), and a Restricted clip's 720p file only; orientation comes from the thumbnail, and `--min-height` reads the licence of a clip that would pass only at 1080p. Show a 720p clip in a framed panel in a 9:16 edit. Coverr's `1080p.mp4` is 1920 px wide whatever the orientation, so a vertical clip from a 1152×2048 source comes out 1920×3412, an upscale; `--min-height` compares against the source height. ffprobe measures every download when it is installed.
+
+Found while building it (2026-10-29): most Mixkit clips on the ocean and city pages were **Restricted** ("Free Download - 720p Version for Personal Use only"), which the stock-footage notes above did not distinguish; Coverr marks premium and AI-generated clips in its page state; upload.wikimedia.org rate-limits the shared cloud IP for every User-Agent, so search Commons here and download from your own computer or later; the Pexels download endpoint still answered without a key. Tests: `evals/test_free_footage.py`, offline, with hand-written synthetic answers for every API and page (`evals/fixtures/free_footage/`) and the network blocked.
+
+Corrected after review (2026-10-29): the 720p-only rule for Mixkit holds for Restricted clips alone (Free clips answered 206 for `-1080.mp4`, and some for `-2160.mp4`; `download mixkit:40746` now measures 1080×1920); a bare `mixkit:<id>` reads its licence through `/free-stock-video/clip-<id>/`, which redirects to the clip's page (`/free-stock-video/<id>/` leads to a search page instead); videvo.net and mazwai.com 301 to freepik.com/videos, so the 403 first recorded for them was Freepik's, and `probe` now records where each probe lands and reports a domain change as `moved`; the NASA asset API returns links with raw spaces (12 of 20 live "launch" hits), which the tool now percent-encodes; Archive items under the retired CC Sampling, Sampling+ and Developing Nations licences (193 movies on 2026-10-29) are recorded as unverified and credit-required, so `--commercial` drops them; a read that stalls or resets after the headers fails that source or that file only; `sources --commercial` and `--no-attribution` leave out paid stock unless `--include-paid`.

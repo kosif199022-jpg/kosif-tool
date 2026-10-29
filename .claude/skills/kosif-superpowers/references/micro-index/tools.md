@@ -114,7 +114,7 @@
 | `kosif-timeline-demo` | TOOL-123 | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo | `python3 scripts/kosif_timeline_demo.py --dir ./fresh-kosif-timeline-d…` | 1 |
 | `look-pipeline` | TOOL-166 | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL | `python3 scripts/look_pipeline.py presets` | 1 |
 | `mimic` | TOOL-85 | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm…` | 1 |
-| `montage-pro` | TOOL-130 | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) | `python3 scripts/montage_pro.py doctor` | 1 |
+| `montage-pro` | TOOL-130 | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) | `python3 scripts/montage_pro.py doctor` | 2 |
 | `motion-reference-probe` | TOOL-21 | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | `python3 scripts/motion_reference_probe.py ./in.mp4` | 2 |
 | `nle-export` | TOOL-176 | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات · NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | `python3 scripts/nle_export.py export --project ./project.json --out .…` | 1 |
 | `reel-factory` | TOOL-131 | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-righ…` | 1 |
@@ -230,6 +230,7 @@
 | `creative-external-search` | TOOL-46 | بحث المصادر الإبداعية دون اتصال · Creative sources offline search | `python3 scripts/creative_external_search.py search "kinetic typograph…` | 1 |
 | `fetch-reference` | TOOL-93 | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure | `python3 scripts/fetch_reference.py https://example.com/page --list --…` | 2 |
 | `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 0 |
+| `free-footage` | — | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits | `python3 scripts/free_footage.py sources --searchable` | 1 |
 | `github-pulse` | — | نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها · GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | 1 |
 | `github-top-repos` | TOOL-160 | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker | `python3 scripts/github_top_repos.py build` | 1 |
 | `instagram-finder` | TOOL-173 | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder | `python3 scripts/instagram_finder.py accounts` | 1 |
