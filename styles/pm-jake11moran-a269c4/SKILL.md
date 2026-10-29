@@ -13,7 +13,7 @@ description: A warm, ink-outlined cartoon of about 53 seconds in a single fixed 
 - Published on source: 2026-09-24 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 31 words (not reproduced here)
-- Popularity rank on source library: #79
+- Popularity rank on source library: #24
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

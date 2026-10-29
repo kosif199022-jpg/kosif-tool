@@ -14,7 +14,7 @@ description: Create a new video using the motion design language referenced at t
 - Reference aspect: 9:16 (1080×1920)
 - Technologies named by the source: Three.js
 - Creator's public prompt length: about 56 words (not reproduced here)
-- Popularity rank on source library: #240
+- Popularity rank on source library: #67
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

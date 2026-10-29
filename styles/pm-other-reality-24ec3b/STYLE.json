@@ -1,0 +1,47 @@
+{
+  "id": "pm-other-reality-24ec3b",
+  "name": "Opus visual design test",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Prompt",
+  "category": [
+    "charts",
+    "diagrams",
+    "kinetic-type",
+    "shapes",
+    "particles",
+    "characters",
+    "photos",
+    "music",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/other__reality/status/2102514581684052169",
+  "page": "https://www.promptsmotion.com/other-reality-24ec3b",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/f1a337fa-f573-4aeb-9c22-2ba5b386598a/video.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/a70cef27-dccf-4351-8cd9-44476f44e77b/poster.webp",
+  "aspect": {
+    "w": 1280,
+    "h": 720
+  },
+  "aspect_label": "16:9",
+  "rank": 2,
+  "published": "2026-09-22",
+  "model": "Opus 5.5",
+  "effort": "Max",
+  "tech": [],
+  "source_prompt_words": 1732,
+  "listed": true,
+  "skill": "styles/pm-other-reality-24ec3b/SKILL.md",
+  "playbooks": [
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/shapes.md",
+    "playbooks/particles.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
+}

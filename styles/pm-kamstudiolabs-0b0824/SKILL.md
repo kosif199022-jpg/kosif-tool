@@ -13,7 +13,7 @@ description: A dialogue-free short of about 46 seconds in a 2.35:1 frame: a wide
 - Published on source: 2026-09-23 · credited model: Opus 5.5 · effort: Max
 - Reference aspect: 21:9 (1920×816)
 - Creator's public prompt length: about 18 words (not reproduced here)
-- Popularity rank on source library: #59
+- Popularity rank on source library: #205
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

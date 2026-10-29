@@ -14,7 +14,7 @@ description: A 30-second square explainer that builds a Negroni ingredient by in
 - Reference aspect: 1:1 (1080×1080)
 - Technologies named by the source: HTML
 - Creator's public prompt length: about 65 words (not reproduced here)
-- Popularity rank on source library: #3
+- Popularity rank on source library: #168
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

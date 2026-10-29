@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>الغرف اليونانية</title>
+<style>
+@font-face{font-family:Cairo;src:url(fonts/Cairo.ttf);font-weight:200 1000}
+:root{--night:#0b1026;--night2:#1a2148;--marble:#f3ecdf;--gold:#e8b960;--gold2:#ffd98a;--terra:#c8553d;--sea:#3f7cac;--green:#4ade80;--muted:#a9b0c8}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;position:fixed;left:0;top:0;font-family:Cairo;color:#fff;
+  background:radial-gradient(120% 75% at 50% 22%,var(--night2) 0,var(--night) 72%)}
+.abs{position:absolute}
+.scene{position:absolute;left:0;top:0;width:1080px;height:1420px;opacity:0}
+#stars{position:absolute;inset:0}
+.star{position:absolute;width:4px;height:4px;border-radius:50%;background:#fff}
+#meander{position:absolute;left:0;right:0;top:0;height:46px;opacity:.55;
+  background:repeating-linear-gradient(90deg,transparent 0 10px,var(--gold) 10px 14px,transparent 14px 34px)}
+#meander2{position:absolute;left:0;right:0;top:1395px;height:8px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
+.title{position:absolute;left:0;right:0;text-align:center;font-weight:900}
+.chip{position:absolute;width:120px;height:120px;border-radius:26px;background:var(--marble);color:var(--night);text-align:center;
+  font-size:58px;font-weight:900;line-height:120px;direction:ltr;box-shadow:0 14px 40px rgba(0,0,0,.45)}
+.pin{position:absolute;width:86px;height:86px;margin:-86px 0 0 -43px;opacity:0}
+.plabel{position:absolute;transform:translateX(-50%);font-size:36px;font-weight:800;color:var(--gold2);white-space:nowrap;opacity:0}
+.fun{position:absolute;transform:translateX(-50%);width:330px;padding:16px 20px;border-radius:22px;background:rgba(243,236,223,.95);color:var(--night);
+  font-size:28px;font-weight:800;text-align:center;line-height:1.35;opacity:0;box-shadow:0 14px 30px rgba(0,0,0,.4)}
+.card{position:absolute;border-radius:34px;background:rgba(255,255,255,.07);border:2px solid rgba(232,185,96,.45);padding:34px 40px}
+#cap{position:absolute;left:70px;right:70px;top:1450px;height:230px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:2px 18px}
+.w{font-weight:800;font-size:68px;line-height:1.3;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.75)}
+.w.hot{color:var(--gold2)}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<div id="meander"></div><div id="meander2"></div>
+
+<!-- S1-S4: the banquet story -->
+<div class="scene" id="sStory">
+  <div class="title" id="era" style="top:120px;font-size:46px;color:var(--gold2);opacity:0">اليونان · حوالي ٥٠٠ قبل الميلاد</div>
+  <svg class="abs" id="hall" style="left:90px;top:260px" width="900" height="900" viewBox="0 0 900 900">
+    <g id="roof"><path class="draw" d="M40 250 L450 60 L860 250 Z" fill="none" stroke="#f3ecdf" stroke-width="10" stroke-linejoin="round"/>
+      <path class="draw" d="M30 262 H870" stroke="#f3ecdf" stroke-width="12"/></g>
+    <g id="cols">
+      <g class="col"><path class="draw" d="M110 290 V700" stroke="#f3ecdf" stroke-width="26"/></g>
+      <g class="col"><path class="draw" d="M270 290 V700" stroke="#f3ecdf" stroke-width="26"/></g>
+      <g class="col"><path class="draw" d="M630 290 V700" stroke="#f3ecdf" stroke-width="26"/></g>
+      <g class="col"><path class="draw" d="M790 290 V700" stroke="#f3ecdf" stroke-width="26"/></g>
+    </g>
+    <path class="draw" id="floor" d="M30 720 H870" stroke="#f3ecdf" stroke-width="12"/>
+    <g id="table"><rect x="330" y="560" width="240" height="22" rx="8" fill="#c8553d"/>
+      <g id="guests" fill="#e8d5b5"></g></g>
+    <rect id="door" x="388" y="440" width="124" height="0" fill="#ffd98a" opacity=".0"/>
+    <g id="poet"><circle cx="0" cy="-118" r="26" fill="#ffd98a"/><path d="M-30 -86 Q0 -100 30 -86 L22 0 H-22 Z" fill="#e8b960"/></g>
+  </svg>
+  <div id="dust" class="abs" style="left:0;top:0;width:1080px;height:1420px"></div>
+  <div class="title" id="who" style="top:1180px;font-size:120px;color:var(--gold2);opacity:0">؟</div>
+</div>
+
+<!-- S5: seating memory map -->
+<div class="scene" id="sMap">
+  <svg class="abs" style="left:140px;top:300px" width="800" height="800" viewBox="0 0 800 800" id="mapSvg">
+    <rect x="250" y="160" width="300" height="480" rx="30" fill="none" stroke="#c8553d" stroke-width="10"/>
+    <g id="seats"></g>
+    <g id="links"></g>
+    <g id="mind"><circle cx="400" cy="40" r="38" fill="#ffd98a"/></g>
+  </svg>
+  <div class="title" style="top:1150px;font-size:44px;color:var(--muted)" id="mapNote">افتكر كل واحد… من مكانه</div>
+</div>
+
+<!-- S6: title -->
+<div class="scene" id="sTitle">
+  <svg class="abs" id="palace" style="left:290px;top:250px" width="500" height="420" viewBox="0 0 500 420">
+    <path d="M30 150 L250 30 L470 150 Z" fill="none" stroke="#e8b960" stroke-width="12" stroke-linejoin="round" class="draw"/>
+    <path d="M20 165 H480" stroke="#e8b960" stroke-width="12" class="draw"/>
+    <path d="M80 185 V360 M170 185 V360 M330 185 V360 M420 185 V360" stroke="#e8b960" stroke-width="20" class="draw"/>
+    <path d="M10 380 H490" stroke="#e8b960" stroke-width="14" class="draw"/>
+    <rect x="215" y="230" width="70" height="130" rx="6" fill="#ffd98a" id="palDoor" opacity="0"/>
+  </svg>
+  <div class="title" id="t1" style="top:740px;font-size:120px;color:var(--marble)">الغرف اليونانية</div>
+  <div class="title" id="t2" style="top:900px;font-size:58px;color:var(--gold2)">أو قصر الذاكرة</div>
+  <div class="title" id="t3" style="top:990px;font-size:40px;color:var(--muted);direction:ltr">Method of Loci</div>
+</div>
+
+<!-- S7: places beat words -->
+<div class="scene" id="sBrain">
+  <svg class="abs" style="left:190px;top:260px" width="700" height="560" viewBox="0 0 700 560">
+    <path id="brainPath" class="draw" d="M350 60 C250 10 120 40 100 140 C30 160 30 280 90 320 C70 420 170 490 260 460 C300 520 400 520 440 460 C540 490 640 420 610 320 C680 270 660 150 590 140 C570 40 440 10 350 60 Z M350 60 V470" fill="none" stroke="#f3ecdf" stroke-width="10" stroke-linejoin="round"/>
+    <g id="bPin" transform="translate(220 270)"><path d="M0 -90 C-48 -90 -70 -50 -70 -22 C-70 22 0 80 0 80 C0 80 70 22 70 -22 C70 -50 48 -90 0 -90 Z" fill="#e8b960"/><circle cx="0" cy="-26" r="24" fill="#0b1026"/></g>
+    <g id="bText" transform="translate(480 250)" fill="#a9b0c8"><rect x="-70" y="-50" width="140" height="14" rx="7"/><rect x="-70" y="-15" width="110" height="14" rx="7"/><rect x="-70" y="20" width="130" height="14" rx="7"/><rect x="-70" y="55" width="90" height="14" rx="7"/></g>
+  </svg>
+  <div class="title" id="vs" style="top:880px;font-size:66px;opacity:0"><span style="color:var(--gold2)">أماكن</span> &nbsp;أقوى من&nbsp; <span style="color:var(--muted)">كلام</span></div>
+</div>
+
+<!-- S8-S10: the house -->
+<div class="scene" id="sHouse">
+  <div class="title" id="ex" style="top:120px;font-size:40px;color:var(--gold2);opacity:0">مثال: أول ٤ عناصر في الجدول الدوري</div>
+  <svg class="abs" id="plan" style="left:90px;top:230px" width="900" height="1000" viewBox="0 0 900 1000">
+    <g fill="none" stroke="#f3ecdf" stroke-width="10" stroke-linejoin="round">
+      <path class="draw" d="M40 40 H860 V960 H40 Z"/>
+      <path class="draw" d="M450 40 V430 M40 500 H600 M680 500 H860 M450 580 V960"/>
+    </g>
+    <g fill="#a9b0c8" font-family="Cairo" font-size="30" font-weight="700" text-anchor="middle">
+      <text x="245" y="100" class="room">الصالة</text><text x="655" y="100" class="room">المطبخ</text>
+      <text x="245" y="640" class="room">المدخل</text><text x="655" y="640" class="room">أوضة النوم</text>
+    </g>
+    <path id="route" d="M245 930 C245 820 245 700 245 560 C245 420 300 330 380 300 C520 250 640 330 690 420 C720 520 700 640 660 760" fill="none" stroke="#e8b960" stroke-width="8" stroke-dasharray="4 22" stroke-linecap="round" opacity="0"/>
+    <circle id="walker" r="22" fill="#ffd98a" opacity="0"/>
+  </svg>
+  <div id="pins"></div>
+  <div class="card" id="exam" style="left:330px;top:1230px;width:420px;height:120px;padding:0;text-align:center;font-size:44px;font-weight:900;line-height:116px;opacity:0">الامتحان</div>
+</div>
+
+<!-- S11-S13: the study -->
+<div class="scene" id="sStudy">
+  <div class="title" id="stTitle" style="top:150px;font-size:64px;color:var(--gold2)">دراسة ٢٠١٧</div>
+  <div class="abs" id="days" style="left:190px;top:280px;width:700px;display:grid;grid-template-columns:repeat(8,1fr);gap:14px"></div>
+  <div class="title" id="daysLbl" style="top:720px;font-size:44px;color:var(--marble)">٤٠ يوم · نص ساعة كل يوم</div>
+  <div class="abs" id="bars" style="left:200px;top:300px;width:680px;height:620px;opacity:0">
+    <div class="abs" style="left:60px;bottom:90px;width:200px;height:440px;border-radius:20px;background:rgba(255,255,255,.08)"></div>
+    <div class="abs" style="right:60px;bottom:90px;width:200px;height:440px;border-radius:20px;background:rgba(255,255,255,.08)"></div>
+    <div class="abs" id="barA" style="right:60px;bottom:90px;width:200px;height:0;border-radius:20px;background:#7d86a8"></div>
+    <div class="abs" id="barB" style="left:60px;bottom:90px;width:200px;height:0;border-radius:20px;background:linear-gradient(to top,#c8553d,#e8b960)"></div>
+    <div class="abs" id="numA" style="right:60px;width:200px;text-align:center;font-size:76px;font-weight:900">٠</div>
+    <div class="abs" id="numB" style="left:60px;width:200px;text-align:center;font-size:76px;font-weight:900;color:var(--gold2)">٠</div>
+    <div class="abs" style="right:60px;bottom:20px;width:200px;text-align:center;font-size:36px;font-weight:800;color:var(--muted)">قبل</div>
+    <div class="abs" style="left:60px;bottom:20px;width:200px;text-align:center;font-size:36px;font-weight:800;color:var(--gold2)">بعد</div>
+  </div>
+  <div class="title" id="of72" style="top:950px;font-size:46px;color:var(--marble);opacity:0">كلمة من أصل ٧٢</div>
+  <div class="title" id="later" style="top:1040px;font-size:50px;color:var(--green);opacity:0">بعد ٤ شهور: لسه حوالي +٢٢ كلمة عن البداية</div>
+  <div class="title" id="src" style="top:1170px;font-size:30px;color:var(--muted);opacity:0;line-height:1.5">المصدر: Dresler وزملاؤه · مجلة Neuron · 2017<br>تجربة على متطوعين بالغين · النتيجة مش وعد لكل حد</div>
+</div>
+
+<!-- S14: who it helps -->
+<div class="scene" id="sWho">
+  <div class="card" id="cardHS" style="left:110px;top:300px;width:860px;opacity:0">
+    <div style="font-size:60px;font-weight:900;color:var(--gold2)">ثانوية عامة</div>
+    <div style="font-size:44px;font-weight:700;margin-top:10px">تواريخ · قوانين</div>
+  </div>
+  <div class="card" id="cardUni" style="left:110px;top:640px;width:860px;opacity:0">
+    <div style="font-size:60px;font-weight:900;color:var(--gold2)">جامعة</div>
+    <div style="font-size:44px;font-weight:700;margin-top:10px">مصطلحات · خطوات</div>
+  </div>
+</div>
+
+<!-- S15: memorize is not understand -->
+<div class="scene" id="sNote">
+  <div class="abs" id="memo" style="left:630px;top:480px;width:300px;height:300px;border-radius:50%;background:rgba(232,185,96,.18);border:6px solid var(--gold);text-align:center;line-height:288px;font-size:72px;font-weight:900">حفظ</div>
+  <div class="abs" id="under" style="left:150px;top:480px;width:300px;height:300px;border-radius:50%;background:rgba(63,124,172,.2);border:6px solid var(--sea);text-align:center;line-height:288px;font-size:72px;font-weight:900">فهم</div>
+  <div class="abs" id="neq" style="left:490px;top:560px;width:100px;font-size:120px;font-weight:900;text-align:center;color:#fff;opacity:0">≠</div>
+  <div class="title" id="both" style="top:880px;font-size:52px;color:var(--marble);opacity:0">الاتنين مع بعض</div>
+</div>
+
+<!-- S16: CTA -->
+<div class="scene" id="sCta">
+  <svg class="abs" style="left:240px;top:250px" width="600" height="520" viewBox="0 0 600 520">
+    <path d="M40 220 L300 40 L560 220" fill="none" stroke="#e8b960" stroke-width="12" stroke-linejoin="round" class="draw" id="ctaRoof"/>
+    <g id="dots"></g>
+  </svg>
+  <div class="title" id="cta1" style="top:820px;font-size:96px;color:var(--marble);opacity:0">جرّبوها النهارده</div>
+  <div class="title" id="cta2" style="top:960px;font-size:56px;color:var(--gold2);opacity:0">١٠ حاجات بس… وشوفوا الفرق</div>
+</div>
+
+<div id="flash"></div>
+<div id="cap"></div>
+
+<script src="config.js"></script>
+<script>
+const C = window.CONFIG, W = C.words, S = C.segs;
+const $ = (id) => document.getElementById(id);
+const cl = (x) => Math.max(0, Math.min(1, x));
+const eo = (x) => 1 - Math.pow(1 - cl(x), 3);
+const eio = (x) => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const back = (x) => { x = cl(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, a, d) => cl((t - a) / d);
+const sg = (i) => S[i];
+const win = (t, a, b, fi = .4, fo = .4) => Math.min(eo((t - a) / fi), 1 - eo((t - (b - fo)) / fo));
+const css = (el, o) => { for (const k in o) el.style[k] = o[k]; };
+const AR = (n) => String(n).replace(/[0-9]/g, (d) => '٠١٢٣٤٥٦٧٨٩'[d]);
+// seeded random
+let seed = 7; const rnd = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; };
+
+// line-draw helper: every .draw path gets its length
+function prepDraw(root) { root.querySelectorAll('.draw').forEach((p) => { const L = p.getTotalLength ? p.getTotalLength() : 1000; p.style.strokeDasharray = L; p.style.strokeDashoffset = L; p.dataset.len = L; }); }
+function drawP(paths, p) { paths.forEach((el, i) => { const n = paths.length; const q = cl(p * n - i * 0.6); el.style.strokeDashoffset = el.dataset.len * (1 - eio(q)); }); }
+
+// build stars
+(function () { const h = $('stars'); for (let i = 0; i < 70; i++) { const d = document.createElement('div'); d.className = 'star'; d.style.left = rnd() * 1080 + 'px'; d.style.top = rnd() * 1300 + 'px'; d.dataset.ph = rnd() * 6; d.dataset.sz = 2 + rnd() * 4; h.appendChild(d); } })();
+// guests around table (front view: heads above table)
+(function () { const g = $('guests'); for (let i = 0; i < 7; i++) { const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', 350 + i * 33); c.setAttribute('cy', 540); c.setAttribute('r', 15); g.appendChild(c); } })();
+// dust
+const dust = []; (function () { const h = $('dust'); for (let i = 0; i < 60; i++) { const d = document.createElement('div'); d.className = 'abs'; css(d, { width: (6 + rnd() * 16) + 'px', height: (6 + rnd() * 16) + 'px', borderRadius: '50%', background: '#cfc3ad', opacity: 0 }); h.appendChild(d); dust.push({ el: d, x: 200 + rnd() * 680, y: 520 + rnd() * 120, vx: (rnd() - .5) * 420, vy: -120 - rnd() * 380 }); } })();
+// seating map
+const seatPos = []; (function () { const g = $('seats'), l = $('links'); const pts = [[200, 230], [200, 400], [200, 570], [600, 230], [600, 400], [600, 570], [400, 700], [400, 110]];
+  pts.forEach(([x, y], i) => { seatPos.push([x, y]); const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', 40); c.setAttribute('fill', 'rgba(255,255,255,.08)'); c.setAttribute('stroke', '#a9b0c8'); c.setAttribute('stroke-width', 5); g.appendChild(c);
+    const t = document.createElementNS('http://www.w3.org/2000/svg', 'text'); t.setAttribute('x', x); t.setAttribute('y', y + 14); t.setAttribute('text-anchor', 'middle'); t.setAttribute('font-size', 40); t.setAttribute('font-weight', 900); t.setAttribute('fill', '#0b1026'); t.setAttribute('font-family', 'Cairo'); t.textContent = AR(i + 1); t.setAttribute('opacity', 0); g.appendChild(t);
+    const ln = document.createElementNS('http://www.w3.org/2000/svg', 'line'); ln.setAttribute('x1', 400); ln.setAttribute('y1', 40); ln.setAttribute('x2', x); ln.setAttribute('y2', y); ln.setAttribute('stroke', '#ffd98a'); ln.setAttribute('stroke-width', 4); ln.setAttribute('stroke-dasharray', '8 10'); ln.setAttribute('opacity', 0); l.appendChild(ln); }); })();
+// house pins (page coords) + chips + funny cards
+const LOC = [
+  { key: 'الباب', x: 335, y: 1000, el: 'H', fun: 'باب بيطرطش مية\n(الهيدروجين في المية)' },
+  { key: 'الكنبة', x: 335, y: 520, el: 'He', fun: 'كنبة طايرة ببلالين\n(الهيليوم)' },
+  { key: 'التلاجة', x: 745, y: 520, el: 'Li', fun: 'بطارية ليثيوم\nساقعة في التلاجة' },
+  { key: 'السرير', x: 745, y: 1000, el: 'Be', fun: 'توت (Berry)\nعلى السرير = Be' },
+];
+(function () { const h = $('pins'); LOC.forEach((L, i) => {
+  const pin = document.createElement('div'); pin.className = 'pin'; pin.innerHTML = '<svg viewBox="0 0 100 100" width="86" height="86"><path d="M50 4 C25 4 12 24 12 42 C12 66 50 96 50 96 C50 96 88 66 88 42 C88 24 75 4 50 4 Z" fill="#e8b960"/><circle cx="50" cy="40" r="15" fill="#0b1026"/></svg>'; pin.style.left = L.x + 'px'; pin.style.top = L.y + 'px'; h.appendChild(pin); L.pin = pin;
+  const lb = document.createElement('div'); lb.className = 'plabel'; lb.textContent = L.key; lb.style.left = L.x + 'px'; lb.style.top = (L.y + 6) + 'px'; h.appendChild(lb); L.lb = lb;
+  const ch = document.createElement('div'); ch.className = 'chip'; ch.textContent = L.el; ch.style.opacity = 0; h.appendChild(ch); L.ch = ch;
+  const fn = document.createElement('div'); fn.className = 'fun'; fn.innerHTML = L.fun.replace('\n', '<br>'); fn.style.left = L.x + 'px'; fn.style.top = (L.y + 70) + 'px'; h.appendChild(fn); L.fn = fn; }); })();
+// study day grid
+(function () { const g = $('days'); for (let i = 0; i < 40; i++) { const d = document.createElement('div'); css(d, { height: '70px', borderRadius: '14px', background: 'rgba(255,255,255,.08)', border: '2px solid rgba(232,185,96,.25)' }); g.appendChild(d); } })();
+// cta dots inside house shape
+(function () { const g = $('dots'); const pts = [[140, 260], [230, 260], [320, 260], [410, 260], [460, 340], [410, 420], [320, 420], [230, 420], [140, 420], [100, 340]];
+  pts.forEach(([x, y]) => { const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle'); c.setAttribute('cx', x + 20); c.setAttribute('cy', y); c.setAttribute('r', 30); c.setAttribute('fill', 'rgba(255,255,255,.1)'); c.setAttribute('stroke', '#e8b960'); c.setAttribute('stroke-width', 4); g.appendChild(c); }); })();
+document.querySelectorAll('svg').forEach(prepDraw);
+
+function captions(t) {
+  const cur = W.filter((w) => w.s <= t + 0.05); const line = cur.length ? cur[cur.length - 1].line : -1;
+  const ws = W.filter((w) => w.line === line); const endT = ws.length ? Math.max(...ws.map((w) => w.e)) : 0;
+  const next = (W.find((w) => w.line === line + 1) || { s: C.duration }).s;
+  const out = cl((t - Math.min(endT + 0.45, next - 0.1)) / 0.16);
+  const cap = $('cap'); cap.innerHTML = '';
+  for (const w of ws) { const el = document.createElement('span'); el.className = 'w'; el.textContent = w.w;
+    const p = eo((t - w.s + 0.06) / 0.26);
+    css(el, { opacity: p * (1 - out), transform: `translateY(${(1 - p) * 34 - out * 16}px) scale(${0.9 + 0.1 * p})`, filter: `blur(${(1 - p) * 5}px)` });
+    if (t >= w.s && t <= w.e + 0.08) el.classList.add('hot'); cap.appendChild(el); }
+}
+
+function story(t) {
+  const sc = $('sStory'); const sc2 = 0; sc.style.opacity = win(t, -1, sg(7).e + .35, .3, .4);
+  css($('era'), { opacity: win(t, 0.3, 6.5, .6, .5), transform: `translateY(${(1 - eo(P(t, .3, .8))) * 30}px)` });
+  const hall = $('hall'); drawP([...hall.querySelectorAll('#roof .draw, #cols .draw, #floor')], P(t, 0.2, 4.2));
+  // guests appear with seg2, poet at door
+  const g = P(t, sg(2).s, 1.0); $('guests').style.opacity = eo(g) * (1 - P(t, 10.8, .3));
+  $('table').style.opacity = eo(P(t, sg(2).s - .3, .8));
+  const walk = eio(P(t, sg(3).s, sg(3).e - sg(3).s));
+  const px = 450 + walk * 330, py = 700; const bob = Math.sin(t * 14) * 5 * (walk > 0 && walk < 1 ? 1 : 0);
+  $('poet').setAttribute('transform', `translate(${px} ${py + bob}) scale(${1 - 0.1 * walk})`);
+  $('poet').style.opacity = eo(P(t, sg(2).s, .6)) * (t > 12.6 && t < sg(7).s ? 0.25 : 1);
+  // collapse at seg5
+  const k = P(t, sg(5).s, 0.9), ke = eio(k);
+  const shake = t > sg(4).s && t < sg(5).s + 1.4 ? Math.sin(t * 60) * 10 * (1 - P(t, sg(5).s + .6, .8)) : 0;
+  hall.style.transform = `translate(${shake}px, ${Math.cos(t * 53) * shake * .6}px)`;
+  $('roof').setAttribute('transform', `translate(0 ${ke * 430}) rotate(${ke * 7} 450 160)`);
+  [...hall.querySelectorAll('.col')].forEach((c, i) => c.setAttribute('transform', `rotate(${ke * (i % 2 ? 1 : -1) * (10 + i * 4)} ${[110, 270, 630, 790][i]} 700)`));
+  hall.style.opacity = 1 - 0.55 * P(t, sg(6).s, .6);
+  $('flash').style.opacity = 0.8 * (1 - P(t, sg(5).s, .35)) * (t >= sg(5).s ? 1 : 0);
+  dust.forEach((d) => { const tt = t - sg(5).s - 0.15; if (tt < 0) { d.el.style.opacity = 0; return; }
+    css(d.el, { left: (90 + d.x + d.vx * tt * .55) + 'px', top: (260 + d.y + d.vy * tt * .55 + 260 * tt * tt * .5) + 'px', opacity: Math.max(0, 0.85 - tt * .45) }); });
+  const q = back(P(t, sg(6).s + .2, .5)); css($('who'), { opacity: cl(q) * (1 - P(t, sg(7).s, .3)), transform: `scale(${q})` });
+}
+
+function seating(t) {
+  const sc = $('sMap'); sc.style.opacity = win(t, sg(7).e + .05, sg(9).s + .15, .4, .45);
+  const a = sg(8).s, d = sg(8).e - a;
+  const seats = $('seats').children;
+  for (let i = 0; i < 8; i++) { const p = P(t, a + d * (i / 8) * 0.95, .35); const c = seats[i * 2], tx = seats[i * 2 + 1];
+    c.setAttribute('fill', `rgba(232,185,96,${0.95 * eo(p)})`); c.setAttribute('r', 40 + 8 * Math.sin(Math.PI * p)); tx.setAttribute('opacity', eo(p));
+    $('links').children[i].setAttribute('opacity', 0.8 * eo(p)); }
+  const m = back(P(t, sg(7).e + .1, .5)); $('mind').setAttribute('transform', `translate(400 40) scale(${m}) translate(-400 -40)`);
+  $('mapNote').style.opacity = eo(P(t, a + .3, .5));
+}
+
+function titleScene(t) {
+  const sc = $('sTitle'); sc.style.opacity = win(t, sg(9).s - .1, sg(11).s + .1, .4, .4);
+  drawP([...$('palace').querySelectorAll('.draw')], P(t, sg(9).s, 1.6));
+  $('palDoor').setAttribute('opacity', eo(P(t, sg(9).s + 1.5, .5)));
+  [['t1', sg(9).s + .9], ['t2', sg(10).s], ['t3', sg(10).s + .4]].forEach(([id, a]) => { const p = eo(P(t, a, .5)); css($(id), { opacity: p, transform: `translateY(${(1 - p) * 40}px)` }); });
+}
+
+function brain(t) {
+  const sc = $('sBrain'); sc.style.opacity = win(t, sg(11).s - .1, sg(13).s + .05, .4, .4);
+  drawP([$('brainPath')], P(t, sg(11).s, 1.2));
+  const a = sg(12).s; const pin = back(P(t, a, .6)); const glow = 1 + 0.08 * Math.sin(t * 6);
+  $('bPin').setAttribute('transform', `translate(220 270) scale(${pin * glow})`);
+  const fade = P(t, a + 1.2, 1.2); $('bText').setAttribute('opacity', (1 - 0.7 * fade) * eo(P(t, a, .4)));
+  $('bText').setAttribute('transform', `translate(480 250) scale(${1 - 0.35 * fade})`);
+  css($('vs'), { opacity: eo(P(t, a + 1.0, .5)) });
+}
+
+function house(t) {
+  const sc = $('sHouse'); sc.style.opacity = win(t, sg(13).s - .1, sg(22).e + .45, .4, .4);
+  drawP([...$('plan').querySelectorAll('.draw')], P(t, sg(13).s, 2.0));
+  [...$('plan').querySelectorAll('.room')].forEach((r, i) => r.setAttribute('opacity', eo(P(t, sg(13).s + 1.4 + i * .15, .4))));
+  css($('ex'), { opacity: eo(P(t, sg(14).s, .5)) });
+  // pins at each spoken place word
+  const placeW = W.filter((w) => w.seg === 15 || w.seg === 16);
+  LOC.forEach((L, i) => {
+    const w = placeW[i]; const a = w ? w.s : sg(15).s + i * .6;
+    const p = back(P(t, a - .05, .45)); css(L.pin, { opacity: cl(p), transform: `scale(${p})` }); css(L.lb, { opacity: eo(P(t, a, .35)) });
+    // chip flies from top to pin right after
+    const f = eio(P(t, a + .15, .55)); const sx = 480, sy = 140; const ex = L.x - 60, ey = L.y - 210;
+    const wob = t > sg(17).s && t < sg(19).e ? Math.sin(t * 9 + i) * 8 : 0;
+    css(L.ch, { opacity: cl(f * 3) * (t > sg(21).s - .2 && t < sg(22).s + i * .45 ? 0.25 : 1), left: (sx + (ex - sx) * f) + 'px', top: (sy + (ey - sy) * f) + 'px', transform: `rotate(${wob}deg) scale(${0.7 + 0.3 * f})` });
+    // funny image cards during seg17..19
+    const fa = sg(17).s + i * 0.75; const fp = back(P(t, fa, .45)); const fo = P(t, sg(20).s - .3, .3);
+    css(L.fn, { opacity: cl(fp) * (1 - fo), transform: `translateX(-50%) scale(${0.6 + 0.4 * fp}) rotate(${(i % 2 ? 1 : -1) * 3}deg)` });
+  });
+  // exam walk
+  const route = $('route'); const rw = P(t, sg(21).s, (sg(22).e - sg(21).s));
+  route.setAttribute('opacity', eo(P(t, sg(20).s, .4)) * 0.9);
+  const L = route.getTotalLength(); const pt = route.getPointAtLength(L * eio(rw));
+  const wk = $('walker'); wk.setAttribute('cx', pt.x); wk.setAttribute('cy', pt.y); wk.setAttribute('opacity', eo(P(t, sg(21).s - .2, .3)));
+  const ex = back(P(t, sg(20).s, .5)); css($('exam'), { opacity: cl(ex), transform: `scale(${ex})` });
+}
+
+function study(t) {
+  const sc = $('sStudy'); sc.style.opacity = win(t, sg(23).s - .1, sg(27).e + .45, .4, .4);
+  const a = sg(23).s, e = sg(23).e;
+  const gridOut = P(t, sg(24).s - .4, .4);
+  css($('days'), { opacity: 1 - gridOut }); css($('daysLbl'), { opacity: eo(P(t, a + 3.2, .5)) * (1 - gridOut) });
+  [...$('days').children].forEach((d, i) => { const p = P(t, a + 2.6 + i * 0.07, .25); d.style.background = p > 0 ? `rgba(232,185,96,${0.25 + 0.65 * p})` : 'rgba(255,255,255,.08)'; d.style.transform = `scale(${1 + 0.15 * Math.sin(Math.PI * p)})`; });
+  css($('stTitle'), { opacity: eo(P(t, a + .9, .5)) });
+  const bars = $('bars'); bars.style.opacity = eo(P(t, sg(24).s - .3, .4));
+  const H = 440; const b1 = eio(P(t, sg(24).s, 1.0)), b2 = eio(P(t, sg(24).s + 1.4, 1.4));
+  const vA = Math.round(26 * b1), vB = Math.round(62 * b2);
+  $('barA').style.height = (H * vA / 72) + 'px'; $('barB').style.height = (H * vB / 72) + 'px';
+  $('numA').textContent = AR(vA); $('numB').textContent = AR(vB);
+  $('numA').style.bottom = (100 + H * vA / 72) + 'px'; $('numB').style.bottom = (100 + H * vB / 72) + 'px';
+  css($('of72'), { opacity: eo(P(t, sg(25).s, .4)) });
+  const lt = eo(P(t, sg(26).s, .5)); css($('later'), { opacity: lt, transform: `translateY(${(1 - lt) * 30}px)` });
+  css($('src'), { opacity: eo(P(t, sg(24).s + .5, .6)) });
+}
+
+function who(t) {
+  const sc = $('sWho'); sc.style.opacity = win(t, sg(28).s - .15, sg(30).e + .4, .4, .4);
+  [['cardHS', sg(28).s], ['cardUni', sg(29).s]].forEach(([id, a]) => { const p = back(P(t, a, .55)); css($(id), { opacity: cl(p), transform: `translateX(${(1 - cl(p)) * 120}px) scale(${0.92 + 0.08 * p})` }); });
+}
+
+function note(t) {
+  const sc = $('sNote'); sc.style.opacity = win(t, sg(31).s - .1, sg(33).e + .45, .4, .4);
+  const m = back(P(t, sg(32).s - .2, .5)), u = back(P(t, sg(33).s - .1, .5));
+  css($('memo'), { transform: `scale(${m})`, opacity: cl(m) }); css($('under'), { transform: `scale(${u})`, opacity: cl(u) });
+  const n = back(P(t, sg(33).s + .2, .4)); css($('neq'), { opacity: cl(n), transform: `scale(${n})` });
+  css($('both'), { opacity: eo(P(t, sg(33).s + .8, .5)) });
+}
+
+function cta(t) {
+  const sc = $('sCta'); sc.style.opacity = win(t, sg(34).s - .15, C.duration + 1, .4, .1);
+  drawP([$('ctaRoof')], P(t, sg(34).s, .8));
+  const dots = $('dots').children; const a = sg(35).s, d = sg(35).e - a;
+  for (let i = 0; i < 10; i++) { const p = P(t, a + d * i / 10, .25); dots[i].setAttribute('fill', p > 0 ? `rgba(232,185,96,${0.95 * eo(p)})` : 'rgba(255,255,255,.1)'); dots[i].setAttribute('r', 30 + 6 * Math.sin(Math.PI * p)); }
+  css($('cta1'), { opacity: eo(P(t, sg(34).s + .1, .5)), transform: `translateY(${(1 - eo(P(t, sg(34).s + .1, .5))) * 40}px)` });
+  const c2 = back(P(t, sg(36).s, .5)); css($('cta2'), { opacity: cl(c2), transform: `scale(${0.9 + 0.1 * c2})` });
+}
+
+function seek(t) {
+  window.scrollTo(0, 0); document.documentElement.scrollLeft = 0; document.body.scrollLeft = 0;
+  document.querySelectorAll('.star').forEach((s) => { const ph = +s.dataset.ph, sz = +s.dataset.sz; s.style.opacity = 0.25 + 0.55 * (0.5 + 0.5 * Math.sin(t * 1.3 + ph)); s.style.width = s.style.height = sz + 'px'; });
+  $('meander').style.backgroundPosition = `${t * 30}px 0`;
+  story(t); seating(t); titleScene(t); brain(t); house(t); study(t); who(t); note(t); cta(t); captions(t);
+}
+window.__kosif = { duration: C.duration, seek };
+seek(0);
+</script>
+</body>
+</html>

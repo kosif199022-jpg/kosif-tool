@@ -14,7 +14,7 @@ description: Create a new video using the motion design language referenced at t
 - Reference aspect: other (1152×720)
 - Technologies named by the source: HTML
 - Creator's public prompt length: about 37 words (not reproduced here)
-- Popularity rank on source library: #163
+- Popularity rank on source library: #10
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 

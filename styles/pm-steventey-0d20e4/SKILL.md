@@ -13,7 +13,7 @@ description: A 15-second SaaS launch film that squeezes a long URL into a short 
 - Published on source: 2026-09-25 · credited model: Opus 5.5 · effort: High
 - Reference aspect: 16:9 (1920×1080)
 - Creator's public prompt length: about 35 words (not reproduced here)
-- Popularity rank on source library: #5
+- Popularity rank on source library: #163
 
 Observe this exact reference before implementing when browser or video tools permit. Analyze sampled frames, scale, easing, transitions, framing, camera, acting, palette and typography. If you cannot watch it, say so; this guide alone does not prove visual similarity.
 
