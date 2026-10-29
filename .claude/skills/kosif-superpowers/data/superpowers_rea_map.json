@@ -6611,7 +6611,6 @@
  "structure": {
   "areas": {
    "(root)": 10,
-   ".ruff_cache": 6,
    "assets": 4,
    "data": 163,
    "dua-wednesday": 10,
@@ -6626,9 +6625,9 @@
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93964952,
+  "bytes": 93975062,
   "extensions": {
-   "(none)": 39,
+   "(none)": 34,
    ".cjs": 10,
    ".html": 80,
    ".jpg": 24,
@@ -6644,7 +6643,7 @@
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3413,
+  "files": 3407,
   "symlinks": 0
  }
 }

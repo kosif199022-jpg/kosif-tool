@@ -167,7 +167,8 @@ def read_brief(path) -> dict:
                       for k, v in sorted(plans.items())},
             "recommended": b.get("recommended"),
             "reason": b.get("recommended_reason") or "",
-            "request": ((b.get("analysis") or {}).get("request") or (b.get("analysis") or {}).get("text") or "")}
+            "request": ((b.get("analysis") or {}).get("request") or (b.get("analysis") or {}).get("text") or ""),
+            "sensitive": list((b.get("analysis") or {}).get("sensitive") or [])}
 
 
 # ---------------------------------------------------------------------------------------------- gate
@@ -198,7 +199,8 @@ def gate(level: str, options: int = 0, irreversible: bool = False, force_full: b
 def cmd_gate(a) -> dict:
     br = read_brief(a.from_brief)
     options = a.options if a.options is not None else len(br.get("plans") or {})
-    irreversible = a.irreversible or bool(IRREVERSIBLE_HINTS.search(br.get("request", "")))
+    irreversible = (a.irreversible or bool(IRREVERSIBLE_HINTS.search(br.get("request", "")))
+                    or "personal_data" in br.get("sensitive", []))   # the brief saw another person's account/photos
     g = gate(a.level, options, irreversible, a.force_full, a.full_power)
     g.update({"level": a.level, "options": options, "at": now_iso()})
     if a.dir:
@@ -243,10 +245,38 @@ def constraints_block(constraints: list) -> str:
     return CONSTRAINTS_HEAD + "\n" + "\n".join(f"- {k}" for k in constraints) + "\n"
 
 
+# An option the question defines itself: a letter A-D right after a start, space or punctuation, then ':' or ')'.
+QUESTION_OPTION = re.compile(r"(?:^|(?<=[\s(\[«\"'.;،؛:]))([A-D])\s*[:：)]\s*(?=\S)")
+TIER_NAMES = ("simplest / الأبسط", "balanced / المتوازن", "other engine / محرك مختلف", "merge / دمج")
+
+
+def question_options(question: str) -> dict:
+    """The lettered options a question defines itself ("A: ... B: ... C: ..."), letter -> text.
+    Fewer than two distinct letters means the question defines no menu of its own."""
+    hits = list(QUESTION_OPTION.finditer(question))
+    out = {}
+    for n, m in enumerate(hits):
+        end = hits[n + 1].start() if n + 1 < len(hits) else len(question)
+        k = m.group(1).upper()
+        if k not in out:
+            out[k] = question[m.end():end].strip(" \n.;،؛")
+    return out if len(out) >= 2 else {}
+
+
 def derive_question(question: str, br: dict) -> str:
     plans = br.get("plans") or {}
     if len(plans) < 2:
         return question.strip()
+    own = question_options(question)
+    if own:
+        # One menu only: the question's own letters are the options. The brief's plans (production tiers)
+        # stay as background with no letters, so "B" can only mean the question's B.
+        tiers = "; ".join(f"{TIER_NAMES[i] if i < len(TIER_NAMES) else k}: {v}"
+                          for i, (k, v) in enumerate(plans.items()))
+        return (f"{question.strip()}\nDecision / القرار: between the options this question defines "
+                f"({', '.join(own)}) — under this request's constraints, which option, what does it miss, and "
+                f"what would change the choice?\nBackground, not a second menu / خلفية لا قائمة ثانية: "
+                f"the brief's production tiers — {tiers}.")
     opts = "; ".join(f"{k}: {v}" for k, v in plans.items())
     rec = f" The brief currently recommends {br['recommended']}." if br.get("recommended") else ""
     return (f"{question.strip()}\nDecision / القرار: between {opts} — under this request's constraints, which plan, "
@@ -309,14 +339,21 @@ def new_council(a, level: str, gate_info: dict) -> tuple:
     framed = framed_text(question, context, a.stakes, ev, un, constraints=hard)
     bare = framed_text(question, [], a.stakes, [], [], with_context=False, constraints=hard)
     warns = context_warnings(root, user_ctx, dropped)
+    own = question_options(a.question) if len(br.get("plans") or {}) >= 2 else {}
+    if own:
+        warns.append(f"the question defines its own options ({', '.join(own)}); the brief's plans were folded "
+                     "in as unlettered background tiers so the council sees one menu. Use the same letters in "
+                     "the report, or map them onto the brief's plans with FusionForge set-graph.")
     for w in warns:
         print(f"llm_council: warning: {w}", file=sys.stderr)
     c = {"schema": SCHEMA, "source": SOURCE, "created": now_iso(), "question": question, "level": level,
          "depth": gate_info["depth"], "gate": gate_info, "framed": framed, "framed_outsider": bare,
          "constraints": hard, "context": context, "dropped_context": dropped,
          "dropped_user_context": [x for x in dropped if x in user_ctx], "warnings": warns,
-         "evidence": ev, "unknowns": un, "plans": br.get("plans") or {},
-         "brief_recommended": br.get("recommended"), "advisors": {}, "reviews": {}, "map": None,
+         "evidence": ev, "unknowns": un, "plans": own or br.get("plans") or {},
+         "plans_source": "question" if own else ("brief" if br.get("plans") else None),
+         "brief_plans": br.get("plans") or {},
+         "brief_recommended": None if own else br.get("recommended"), "advisors": {}, "reviews": {}, "map": None,
          "consensus": None, "duplicates": [], "verdict": None}
     return c, framed, bare
 
@@ -481,8 +518,14 @@ def chair_prompt(c: dict) -> str:
     adv = "\n\n".join(f"**{BY_ID[i]['name']} ({BY_ID[i]['ar']}){tag(i)}:**\n{c['advisors'][i]['text']}" for i in IDS)
     rev = "\n\n".join(f"**Review {r}:**\n{c['reviews'][r]['text']}" for r in REVIEWERS if r in c["reviews"]) \
         or "(no review round: 4 of 5 advisors backed the same plan)"
-    plan_rule = (" Name the plan letter you recommend, and say if it differs from the brief's recommendation "
-                 f"({c['brief_recommended']}).") if c.get("plans") else ""
+    if not c.get("plans"):
+        plan_rule = ""
+    elif c.get("brief_recommended"):
+        plan_rule = (" Name the plan letter you recommend, and say if it differs from the brief's recommendation "
+                     f"({c['brief_recommended']}).")
+    else:
+        plan_rule = (" Name the letter of the option you recommend, from the question's own options ("
+                     + ", ".join(c["plans"]) + "); the brief's tiers are background, not options.")
     if c.get("constraints"):
         plan_rule += (" The hard constraints (قيود ملزمة) are the user's rules: the recommendation and the first "
                       "step keep every one of them, and an advisor who breaks one is overruled on that point.")
@@ -664,12 +707,39 @@ def self_test() -> int:
         g = cmd_gate(ns(level="L2", from_brief=str(brief), options=None, irreversible=False, force_full=False,
                         full_power=False, dir=None))
         assert g["depth"] == "FULL" and g["options"] == 3, g          # "publish" makes it irreversible
+        pd_brief = tp / "brief_pd.json"
+        pd_brief.write_text(json.dumps({"plans": {"A": {"idea": "no photos"}, "B": {"idea": "her photos"}},
+                                        "analysis": {"request": "a reel for her", "sensitive": ["personal_data"]}}),
+                            encoding="utf-8")
+        g2 = cmd_gate(ns(level="L2", from_brief=str(pd_brief), options=None, irreversible=False, force_full=False,
+                         full_power=False, dir=None))
+        assert g2["depth"] == "FULL", g2                              # personal data in the brief -> FULL
         d = tp / "c"
         cmd_frame(ns(question="Which way for the launch video?", dir=str(d), level="L3", context=[], stakes="",
                      root=t, from_brief=str(brief), evidence=["brief.json: 3 plans"], unknowns=["budget"],
                      irreversible=False, force_full=False))
+        # a question with its own lettered options: one menu, the brief's plans become unlettered background
+        own_q = "Which video? A: no photos, stock shots. B: her photos, sent by the user with consent. C: text card."
+        assert question_options(own_q) == {"A": "no photos, stock shots", "C": "text card",
+                                           "B": "her photos, sent by the user with consent"}
+        assert question_options("Plan B looks fine. Use ratio 9:16") == {}
+        with tempfile.TemporaryDirectory() as t1:          # its own folder: `stats` below counts councils in t
+            d1 = Path(t1) / "c_own"
+            r1 = cmd_frame(ns(question=own_q, dir=str(d1), level="L3", context=[], stakes="", root=t,
+                              from_brief=str(brief), evidence=[], unknowns=[], irreversible=False,
+                              force_full=False))
+            c1 = load(d1)
+        assert "between A: templates" not in c1["question"] and "A: templates" not in c1["question"], c1["question"]
+        assert "simplest / الأبسط: templates" in c1["question"] and "options this question defines (A, B, C)" \
+            in c1["question"]
+        assert sorted(c1["plans"]) == ["A", "B", "C"] and c1["plans_source"] == "question"
+        assert c1["brief_plans"]["A"] == "templates" and c1["brief_recommended"] is None
+        assert any("defines its own options" in w for w in r1["warnings"]), r1
+        assert "question's own options (A, B, C)" in chair_prompt({**c1, "advisors": {i: {"text": "x"} for i in IDS},
+                                                                   "reviews": {}, "map": None})
         c = load(d)
         assert "between A: templates" in c["question"] and c["brief_recommended"] == "A"
+        assert c["plans_source"] == "brief"
         outsider = (d / "prompts" / "advisor_outsider.txt").read_text(encoding="utf-8")
         assert "Context worth reading" not in outsider and "Unknown / مجهول" not in outsider
         assert "Context worth reading" in (d / "prompts" / "advisor_executor.txt").read_text(encoding="utf-8")
