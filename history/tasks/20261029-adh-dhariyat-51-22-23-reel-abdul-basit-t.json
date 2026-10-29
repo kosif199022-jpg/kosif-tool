@@ -1,0 +1,116 @@
+{
+  "schema": "kosif.task-history.v1",
+  "id": "20261029-adh-dhariyat-51-22-23-reel-abdul-basit-t",
+  "date": "2026-10-29",
+  "title": "Adh-Dhariyat 51:22-23 reel, Abdul Basit — the cycle of provision (29-10)",
+  "request": "https://vt.tiktok.com/ZSgGYK8kg/ أعمل البروتوكول بكامل قدراته واستخدم كل إمكانيات البروتوكول بكل قدراته. عايزك تبدأ أي حاجة تواجهك وأنت شغال صلحها وطور البروتوكول وطور سوبر باور وطور كل حاجة أو أي عقبات تواجهك. عايز يكون في إبداع رهيب جدا في الفيديو ومش جرافيك جدا تعمله. اسمح لك تستخدم أي حاجة أنت شايفها مناسبة.",
+  "kind": "video",
+  "mode": "موافق",
+  "steps": [
+    {
+      "n": 1,
+      "what": "download reference and extract audio untouched",
+      "tool": "yt-dlp + ffmpeg",
+      "command": "yt-dlp -o src/tt.%(ext)s URL; ffmpeg -i src/tt.mp4 -vn -c:a copy audio.m4a",
+      "params": {}
+    },
+    {
+      "n": 2,
+      "what": "exact verse text, pauses, word alignment",
+      "tool": "quran-text",
+      "command": "quran_text.py fetch 51:22-23 --out qt; quran_text.py align --verses qt/verses.json --words job_novad/words.json --audio audio.m4a --out qt/timing.json",
+      "params": {}
+    },
+    {
+      "n": 3,
+      "what": "full council and creative judge spec",
+      "tool": "llm-council",
+      "command": "llm_council.py frame/ingest/review/ingest-review/chair/verdict --dir council (COUNCIL5_RUN FULL, 5/5 B)",
+      "params": {}
+    },
+    {
+      "n": 4,
+      "what": "grade native 4K columns into JPG plates",
+      "tool": "ffmpeg",
+      "command": "crop=1080:2160:<x>:0 + per-plate eq/curves/colorbalance, -q:v 2",
+      "params": {}
+    },
+    {
+      "n": 5,
+      "what": "render canvas film, audio stream-copied",
+      "tool": "render-html",
+      "command": "node tools/render_html.cjs --in film/index.html --out raw.mp4 --audio audio.m4a --fps 30 --crf 17",
+      "params": {}
+    }
+  ],
+  "outputs": [
+    {
+      "path": "out/20261029-clone15/dhariyat_final.mp4",
+      "kind": "video",
+      "deterministic": true,
+      "measured": {
+        "duration_s": 35.967,
+        "fps": 30
+      }
+    },
+    {
+      "path": "out/20261029-clone15/dhariyat_iphone.mp4",
+      "kind": "video",
+      "deterministic": false,
+      "measured": {
+        "duration_s": 35.967,
+        "fps": 30
+      }
+    }
+  ],
+  "reproduce": {
+    "how": "Download the reference, extract audio, fetch the plates with free_footage.py (Mixkit 118, 21581, 44269), rebuild film/index.html from film/index.tpl.html with qt/verses.json, render with render_html.cjs. Output is deterministic given the same plates.",
+    "prerequisites": [
+      "ffmpeg",
+      "node + playwright chromium",
+      "fonts ScheherazadeNew-Bold, Cairo"
+    ],
+    "commands": []
+  },
+  "level": "L3",
+  "plan": "B",
+  "status": "DONE_VERIFIED",
+  "agent": "Claude Code cloud session (USIP v5.9 full mode)",
+  "tools": [
+    "skill_intelligence.py brief",
+    "llm_council.py (FULL)",
+    "fusionforge.py",
+    "montage_pro.py transcribe --no-vad",
+    "quran_text.py",
+    "free_footage.py",
+    "render_html.cjs",
+    "video_eyes.py",
+    "ffmpeg"
+  ],
+  "params": {
+    "size": "1080x1920",
+    "fps": 30,
+    "crf": 17,
+    "plates": "Mixkit 118, 21581, 44269 (native 4K columns, no upscale)",
+    "credits_spent": 0,
+    "translation": "none (user order)",
+    "font": "ScheherazadeNew-Bold"
+  },
+  "inputs": [
+    {
+      "name": "reference reel",
+      "url": "https://vt.tiktok.com/ZSgGYK8kg/",
+      "kind": "video"
+    }
+  ],
+  "evidence": [
+    "out/20261029-clone15/qa.json",
+    "out/fusionforge/elkosif-quran-reels/recipes/FUSE-20261029-f3b535a10e.json"
+  ],
+  "lessons": [
+    "The renderer's MP4 is the master: never re-mux with -shortest (it dropped the last AAC packet before).",
+    "Use --no-vad for recitation: the default kept 7 of 14 words.",
+    "Snap long words to RMS dips; whisper starts can be 0.3-2 s late.",
+    "A held beat below video_eyes' motion floor needs a slow world clock (0.4x) plus a slight push, not 0.15x."
+  ]
+}
