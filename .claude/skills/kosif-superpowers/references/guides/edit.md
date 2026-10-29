@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:edit:start -->
 
-**الأدوات / tools (17)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (18)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -27,6 +27,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `dua-wednesday` | Rebuilds the approved Wednesday-morning dua reel style on new footage and voice: one dua phrase per licensed shot cut just before the voice onset with nine different transitions (light leak, whip, gold ink reveal, zoom-through, gold iris, film burn, spin zoom, bokeh, slide), word-by-word Arabic text timed with faster-whisper and audio energy with a gold karaoke highlight, a gold Ruqaa day title under a drawn-on mihrab crowned by a crescent, golden dust, god rays, bloom, warm grade and grain. The voice is stream-copied and checked byte for byte. | `python3 scripts/dua_wednesday.py doctor` | tested-here |
 | `look-pipeline` | Written after a read-only study of the Montaji Arabic video editor: eleven colour looks (natural, vivid, bright, warm, cool, cinematic, vintage, faded, dramatic, mono, night-dua) and eight parameters become one per-channel affine step plus one 3x3 matrix, emitted with the same numbers as an ffmpeg chain (lutrgb + colorchannelmixer + vignette), an SVG filter, CSS and a GLSL shader. verify pushes a test frame through ffmpeg and compares every pixel with the reference maths; apply grades a video into a new file. | `python3 scripts/look_pipeline.py presets` | tested-here |
 | `fast-edit` | Single-file FFmpeg operations with JSON receipts: lists keyframes; cuts by stream copy when the start sits on (or within a tolerance of) a keyframe and by exact re-encode otherwise, reporting how far a copy would have drifted; applies voice presets (chipmunk, deep, robot, echo, radio, telephone) at the file's real sample rate with the length kept and video stream-copied; lifts low-light video with an optional denoise and measures mean luma before and after, skipping clips that are already bright; extracts audio bit-exact when the container allows it. | `python3 scripts/fast_edit.py doctor` | tested-here |
+| `nle-export` | Turns a kosif.timeline.v1 project or a kosif.edl.v1 cut plan into editable timelines that point at the original media: FCPXML 1.9 (Final Cut Pro, Resolve) with opacity keyframes, audio fades and position/size, FCP7 XML v5 (Premiere Pro, Resolve) with fades as dip-to-black transitions, one CMX3600 EDL per track, OpenTimelineIO JSON (Resolve 18.5+), a Blender Video Sequencer script with fades and layout, SRT captions from words.json and a numbered CapCut cut list. Integer and NTSC rates (23.976, 29.97, 59.94) are exact; times snap to frames with the largest drift reported, and a receipt lists SHA-256 per file and what each format could not carry. | `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json` | tested-here |
 | `cinema-lab` | Cinematography and editing engines rebuilt in our own code from ideas in PySceneDetect, Auto-Editor, OpenTimelineIO, OpenColorIO, OpenCV, vid.stab, Motion Canvas/Remotion and OpenRV, running on FFmpeg + NumPy in a cloud sandbox. Detects scene cuts (FFmpeg scdet, or the real PySceneDetect ContentDetector when installed) with a storyboard contact sheet; removes silences with frame-grid cuts that keep audio and video in sync; exports any segment plan as OpenTimelineIO JSON (read back with the opentimelineio package when present) and a CMX3600 EDL for Kdenlive/Shotcut/Resolve/Premiere; builds portable 33^3 .cube looks and applies them with lut3d; stabilises with two-pass vid.stab and measures shake before/after by phase correlation; reframes landscape footage to a 1080x1920 portrait crop by tracking motion and detail with a smoothed, speed-capped virtual camera that re-aims at scene cuts; renders eased push-in/pan/tilt/ken-burns camera moves on stills or clips; and makes A/B side-by-side or wipe review videos with burnt-in timecode and SSIM/PSNR. | `python3 scripts/cinema_lab.py doctor` | tested-here |
 | `script-storyboard` | Reads an Arabic or English play or screenplay (text or PDF) and writes a kosif.storyboard.v1 shot list: acts, scenes, an establishing wide shot per scene, dialogue shots that change size on a speaker change or emotional cue, stage directions, word-count durations, characters with line counts, likely duplicate spellings of a name, pacing per act and short-form episodes under a time limit. It then renders a frame-exact animatic MP4 from colour cards or the user's own images and clips, with an optional master audio track, at the KOSIF export standard. | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90` | tested-here |
 
@@ -45,6 +46,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 9. [التعديل السريع — Fast Edit: honest instant cut, voice presets, low-light lift (2026-10-23)](#التعديل-السريع--fast-edit-honest-instant-cut-voice-presets-low-light-lift-2026-10-23)
 10. [من السيناريو إلى الستوري بورد — Script to storyboard and animatic (2026-10-25)](#من-السيناريو-إلى-الستوري-بورد--script-to-storyboard-and-animatic-2026-10-25)
 11. [معمل السينما — Cinema Lab: 24 film repositories turned into runnable engines (2026-10-25)](#معمل-السينما--cinema-lab-24-film-repositories-turned-into-runnable-engines-2026-10-25)
+12. [التسليم لبرامج المونتاج — NLE Export: DaVinci, Final Cut, Premiere, Blender, CapCut (2026-10-28)](#التسليم-لبرامج-المونتاج--nle-export-davinci-final-cut-premiere-blender-capcut-2026-10-28)
 
 **Katana analysis-only policy:** إذا طلب المستخدم تحليل صور/مقاطع أو مرجع مونتاج، طبّق [سياسة Katana في A8](../protocol/A8-motion-brain.md#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد): النتيجة ردود وتحليل نصي، وليس إعادة إنشاء/إخراج صور أو فيديو عبر Katana، ولا استخدام أرصدة توليد Higgsfield. لا تفترض أن Katana لديها واجهة تحليل read-only؛ عند عدم إثباتها استخدم أدوات فحص KOSIF/FFmpeg أو الرؤية مباشرة مع تمييز المصدر.
 
@@ -167,3 +169,26 @@ A good chain for a reel from a wide film: `scenes --sheet` (look at the storyboa
 | libgphoto2, OBS Studio | drive a physical camera or capture a screen; they need the owner's device, not a cloud session | — |
 
 Honest limits: scene detection is a difference score (soft dissolves can be missed, so look at the storyboard); silence cut works on loudness, not words, and re-encodes audio; reframe follows motion and detail, not faces; the looks are hand-built LUTs, not a calibrated ACES pipeline; stabilise cannot remove motion blur or rolling shutter; camera moves are 2D crops, not 3D parallax.
+
+## التسليم لبرامج المونتاج — NLE Export: DaVinci, Final Cut, Premiere, Blender, CapCut (2026-10-28)
+
+لما المستخدم يحب يكمّل المونتاج بإيده في برنامجه، متسلّمش MP4 بس: سلّم التايملاين نفسه. `scripts/nle_export.py` بياخد مشروع `kosif.timeline.v1` (من `kosif_timeline.py`) أو خطة قطع `kosif.edl.v1` (من `cinematic_cut_planner.py`) ويكتب ملفات بتشاور على الميديا الأصلية من غير نسخ ولا إعادة ترميز.
+
+When the user wants to keep editing by hand, hand over the timeline, not only the MP4 (for a single segment plan as OTIO JSON or one EDL, `cinema_lab.py` already does it; this tool carries a full multitrack project):
+
+```bash
+python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json
+python3 scripts/nle_export.py export --project ./edit_plan.json --audio ./voice.wav --out ./nle   # from a cut plan
+```
+
+| editor | file | open with |
+|---|---|---|
+| DaVinci Resolve | `.fcpxml`, `.premiere.xml`, `.otio` (18.5+) or `.edl` | File → Import → Timeline |
+| Final Cut Pro | `.fcpxml` (version 1.9) | File → Import → XML |
+| Premiere Pro | `.premiere.xml` (FCP7 XML v5) or `.edl` | File → Import |
+| Blender | `.blender_vse.py` | `blender --background --python X.blender_vse.py -- --save X.blend` |
+| CapCut | `.capcut.md` + `.srt` | no timeline import exists; rebuild from the numbered list |
+
+What travels everywhere: cuts, trims (source in/out), track order (video layers as lanes/tracks, audio below), per-clip volume, and video clips with or without their own sound. Fades: Blender (keyframed `blend_alpha`/`volume`), FCPXML (opacity keyframes in clip-local time and audio `fadeIn`/`fadeOut`) and the Premiere XML (Cross Dissolve / Cross Fade to and from black). Position/size: Blender and FCPXML (`adjust-conform none` + `adjust-transform`, position in percent of the frame height with the origin at the centre). EDL and OTIO carry cuts only; OTIO keeps fades and layout as metadata and splits overlapping clips onto extra tracks. `HANDOFF.md` lists what to redo by hand per editor. Rates: integers plus 23.976, 29.97, 47.952, 59.94 and 119.88 as exact rationals (`1001/30000s`, `<ntsc>TRUE`, Blender `fps_base` 1.001), non-drop timecode. Times snap to whole frames and `receipt.json` reports the largest drift, a SHA-256 per file and every warning.
+
+Verification on this checkout: the tests parse each format, check frame maths, and, when OpenTimelineIO is installed, read the FCPXML, FCP7 XML, EDL and OTIO back through its independent adapters (including the Premiere dissolves and a 29.97 fps export); with `bpy` installed they build the sequencer in real Blender. Say plainly that the files were not opened in the commercial editors here.

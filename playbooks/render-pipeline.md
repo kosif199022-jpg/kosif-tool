@@ -90,6 +90,8 @@ Never wait with `sleep N; check` (`sleep 60; grep "^frame" render.log | tail -1`
 
 The same works for ffmpeg encodes, Remotion, yt-dlp downloads and installs. Other options: run the command itself with Bash `run_in_background: true`, or wait for a condition with a Monitor `until grep -q VERIFY out/<job>/render/job.log; do sleep 2; done`. A Monitor must also catch failure (`job.py wait` always ends with DONE or FAILED). Keep working on the next step while the job runs; do not chain shorter sleeps to get around the block.
 
+**Remote sandboxes over MCP (Higgsfield `sandbox_exec`):** the client cuts each call at 60 s even with `timeout_seconds: 120`, and the standard sandbox has a single CPU. Start encodes with `background: true` (one encode per call, `-preset slow` or `medium`, never `veryslow` there), poll the returned status/log files with short calls, and run `ffprobe`/`md5sum`/`split` only after the job is done. See appendix A29, section «مهلة أداة MCP».
+
 **بالعربية:** لا تنتظر أبدًا بـ `sleep 60; grep ...` ولا بسلسلة sleep: Claude Code يمنعها. شغّل الرندر بـ `tools/job.py start`، وتابعه بـ `job.py wait` داخل أداة Monitor (سطر تقدّم كل 20 ثانية ثم DONE أو FAILED) أو في الخلفية بـ `--quiet` (تنبيه واحد عند الانتهاء)، و`job.py status` لنظرة سريعة بلا انتظار.
 
 Seek contract for your own pages: `window.__kosif = { duration, fps, seek(t) }` plus optional `window.__kosifReady`. See `starters/html-canvas/index.html`.

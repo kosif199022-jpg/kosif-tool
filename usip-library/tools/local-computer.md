@@ -1,4 +1,4 @@
-# أدوات المجال `local-computer` (2 أداة)
+# أدوات المجال `local-computer` (3 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -102,4 +102,56 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:kosif-remote-commander --evidence <ملف>`.
+
+### `photocraft-mcp` — PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude / PhotoCraft MCP (open-source Photoshop-style editor driven by Claude)
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/photocraft_mcp.py` (جذر: skill) |
+| المجال | `local-computer` |
+| الدليل | `tested-here` |
+| العائلات | `engines-render-pipeline`, `transitions-cuts`, `photo-video-footage`, `agent-orchestration` |
+
+**ما تفعله:** أداة الملحق A39 لـ storytold/photocraft، محرر صور بـ Rust (رخصة MIT/Apache) بأكثر من 500 أمر متاحة عبر MCP: جلسة بلا شاشة حتى في السحابة ولينكس، اكتشاف الأوامر وتنفيذها دفعات، فحص شجرة الطبقات، معاينة PNG، تصدير PSD وTIFF وWebP وEXR، طبقة لكل ملف، قوالب بيانات، دفعات مجلدات، تصدير LUT بصيغة cube، وجسر للبرنامج المفتوح. السكربت يطبع خطوات التسطيب وأمر Claude Code أو إعداد MCP بجذور مطلقة وأمثلة أكشنز ووصفات، ويفحص وجود photocraft-cli وcargo وffmpeg، ولا يسطّب شيئًا.
+
+**What it does:** Annex A39 helper for storytold/photocraft, a clean-room Rust image editor (MIT/Apache) whose 500+ commands are exposed over MCP: headless sessions (also in cloud sessions and Linux), command discovery and batches, layer-tree inspection, bounded PNG previews, PSD/PSB/TIFF/WebP/EXR export, layers-to-files, data sets, folder batches, .cube LUT export and a loopback bridge to the running desktop app. The stdlib helper prints install steps, the Claude Code command or MCP JSON with absolute read/write roots, sample action files and recipes, and checks whether photocraft-cli, cargo and ffmpeg are present. It installs nothing.
+
+#### متى تُستدعى
+
+- «عدّل الصور دي من غير فوتوشوب في السحابة»
+- «اربط Claude ببرنامج تعديل صور مفتوح المصدر»
+- «طبّق نفس اللوك على كل صور المجلد»
+- «Edit a PSD headlessly with an MCP server»
+- «Export a .cube LUT from adjustment layers for my video»
+- «Set up PhotoCraft MCP for Claude Code»
+
+#### الأوامر
+
+- **steps**: Prints numbered install/registration steps for headless, bridge or release installs; the first step is always to ask the user.
+  - `python3 scripts/photocraft_mcp.py steps headless`
+- **config**: Prints the claude mcp add command or the mcpServers JSON; refuses relative roots and a bridge without a token file.
+  - `python3 scripts/photocraft_mcp.py config --client claude-code --read-root /abs/in --write-root /abs/out`
+- **doctor**: Reports whether photocraft-cli (with its version), cargo and ffmpeg are on PATH.
+  - `python3 scripts/photocraft_mcp.py doctor`
+- **actions**: Prints a sample actions.json for photocraft-cli batch.
+  - `python3 scripts/photocraft_mcp.py actions grade`
+- **recipes**: Lists the six A39 recipes (thumbnail, photo+video LUT, product batch, data sets, PSD split, generated-then-finished).
+  - `python3 scripts/photocraft_mcp.py recipes`
+
+#### المتطلبات والأمان
+
+- optional: bin:photocraft-cli, bin:cargo, bin:ffmpeg
+- الأمان: read-only
+- الموافقة: The helper only prints. Building or installing PhotoCraft runs third-party code, and opening the desktop control port, each need the user's explicit approval; keep the bearer token in a private file, never in a config, log or commit.
+- الحدود: PhotoCraft itself was not built or run here (the build was not approved in this session); the tool list, limits and command ids come from the project's docs and engine source as of 2026-10-29, and it is an early-alpha editor, so check every output visually.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_photocraft_mcp.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A39-v59-photocraft-mcp.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/local-computer.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:photocraft-mcp --evidence <ملف>`.
 

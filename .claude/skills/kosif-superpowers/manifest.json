@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5853,
+  "powers": 5854,
   "families": 62,
   "domains": 10,
-  "tools": 190,
+  "tools": 193,
   "guides": 117,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 979,
    "key": 176,
-   "proven": 1020,
+   "proven": 1021,
    "ready": 673,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 174,
+   "count": 175,
    "statuses": {
     "install": 11,
-    "proven": 143,
+    "proven": 144,
     "ready": 20
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -5815,6 +5815,86 @@
     "audio-sync-captions"
    ],
    "power_id": "TOOL-86"
+  },
+  {
+   "id": "repo-transcribe-audio",
+   "path": "tools/transcribe_audio.py",
+   "root": "repo",
+   "kind": "cli",
+   "area": "audio",
+   "title_en": "Gemini audio transcription with readable errors",
+   "title_ar": "تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة",
+   "summary_en": "Transcribes an audio file with Gemini generateContent (inline under ~14 MB, Files API above). On failure it prints Google's own error message with a fix hint (invalid key, no access, missing model, quota, size), retries 429/5xx, tries the next model, and with --engine auto falls back to local faster-whisper. --check tests the key without audio.",
+   "summary_ar": "يفرّغ ملفًا صوتيًا عبر Gemini generateContent (داخل الطلب حتى نحو 14 ميجابايت، وعبر Files API لما هو أكبر). عند الفشل يطبع رسالة جوجل نفسها مع تلميح للحل (مفتاح غير صالح، لا صلاحية، نموذج غير موجود، حصة، حجم)، ويعيد المحاولة مع 429 و5xx، ويجرّب النموذج التالي، ومع --engine auto يرجع إلى faster-whisper محليًا. ويختبر --check المفتاح دون صوت.",
+   "use_when": [
+    "Transcribe this test voice clip to verify the content",
+    "My Gemini transcription failed with HTTP error, why?",
+    "فرّغ ملف الصوت ده واتأكد إن الكلام صح",
+    "اختبر مفتاح Gemini قبل التفريغ"
+   ],
+   "keywords": [
+    "transcribe",
+    "transcription",
+    "speech to text",
+    "Gemini",
+    "GEMINI_API_KEY",
+    "generateContent",
+    "HTTPError",
+    "faster-whisper",
+    "verify voice",
+    "تفريغ الصوت",
+    "تحويل الكلام لنص",
+    "مفتاح Gemini",
+    "التحقق من التعليق الصوتي"
+   ],
+   "commands": [
+    {
+     "name": "transcribe",
+     "example": "python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript.json",
+     "does": "Sends the audio to Gemini (models tried in order), prints the text and writes {engine, model, text}; exit 0 ok, 1 every engine failed, 2 bad input."
+    },
+    {
+     "name": "whisper only",
+     "example": "python3 tools/transcribe_audio.py ./voice.wav --engine whisper --language ar",
+     "does": "Transcribes locally with faster-whisper (small, int8, CPU); no key or network."
+    },
+    {
+     "name": "check",
+     "example": "python3 tools/transcribe_audio.py --check",
+     "does": "Reads the model record with the key and prints ok or Google's error with a hint; sends no audio."
+    }
+   ],
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "faster-whisper"
+    ],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "Uploads the audio file to Google's Gemini API using the GEMINI_API_KEY in the environment (paid usage may apply); use --engine whisper to keep the audio local.",
+   "limits": "Needs a valid GEMINI_API_KEY for the Gemini path; the whisper fallback needs faster-whisper installed and gives text only (no dialect or speaker notes). It does not return word timestamps.",
+   "tests": [
+    "tests/test_transcribe_audio.py"
+   ],
+   "docs": [
+    "CLAUDE.md"
+   ],
+   "families": [
+    "voice-tts",
+    "audio-sync-captions"
+   ],
+   "evidence": "tested-here",
+   "evidence_note": "tests.test_transcribe_audio 9/9 passed (mocked HTTP: bad key, 404 model fallback, 429 retry, 413 on the last attempt switching to the Files API, Files API poll timeout, header and inline payload, blocked answer, missing key, missing file). Live against generativelanguage.googleapis.com with a dummy key: printed HTTP 400 API_KEY_INVALID with the fix hint and exited 1.",
+   "inputs": "An audio file (wav, mp3, m4a, flac, ogg, aiff, webm), optional --prompt, --model (repeatable), --engine auto|gemini|whisper, --language, --json.",
+   "outputs": "The transcript on stdout, status and errors on stderr, and an optional JSON file {engine, model, text}.",
+   "safe_commands": [
+    "check"
+   ]
   },
   {
    "id": "character-fullbody",
@@ -16403,6 +16483,117 @@
    "power_id": "TOOL-168"
   },
   {
+   "id": "nle-export",
+   "path": "scripts/nle_export.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut",
+   "title_ar": "تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات",
+   "summary_en": "Turns a kosif.timeline.v1 project or a kosif.edl.v1 cut plan into editable timelines that point at the original media: FCPXML 1.9 (Final Cut Pro, Resolve) with opacity keyframes, audio fades and position/size, FCP7 XML v5 (Premiere Pro, Resolve) with fades as dip-to-black transitions, one CMX3600 EDL per track, OpenTimelineIO JSON (Resolve 18.5+), a Blender Video Sequencer script with fades and layout, SRT captions from words.json and a numbered CapCut cut list. Integer and NTSC rates (23.976, 29.97, 59.94) are exact; times snap to frames with the largest drift reported, and a receipt lists SHA-256 per file and what each format could not carry.",
+   "summary_ar": "يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي بالتلاشي والمكان والحجم، XML لبريمير ودافنشي بالتلاشي كانتقالات، EDL لكل مسار، OTIO لدافنشي 18.5+، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT وقائمة قطع لكاب كات، ويدعم 29.97 و23.976 و59.94 فريم بالظبط، مع إيصال فيه البصمة واللي الصيغة مقدرتش تنقله.",
+   "use_when": [
+    "Open this KOSIF edit in DaVinci Resolve / Final Cut Pro / Premiere so I can keep editing",
+    "Export the timeline as FCPXML, XML or EDL",
+    "Build this cut in Blender's video sequencer",
+    "افتح المونتاج ده في دافنشي ريزولف أو فاينال كت أو بريمير",
+    "صدّر التايملاين لبلندر أو كاب كات وطلّع ملف ترجمة SRT"
+   ],
+   "keywords": [
+    "23.976",
+    "29.97",
+    "blender",
+    "capcut",
+    "cmx3600",
+    "davinci",
+    "davinci resolve",
+    "dissolve",
+    "edl",
+    "fade",
+    "fcpxml",
+    "final cut",
+    "final cut pro",
+    "handoff",
+    "nle",
+    "ntsc",
+    "opentimelineio",
+    "otio",
+    "premiere",
+    "premiere pro",
+    "relink",
+    "resolve",
+    "srt",
+    "subtitles",
+    "timeline export",
+    "video sequencer",
+    "vse",
+    "xmeml",
+    "xml",
+    "بريمير",
+    "بلندر",
+    "تايملاين",
+    "ترجمة",
+    "تصدير",
+    "تلاشي",
+    "دافنشي",
+    "فاينال كت",
+    "كاب كات"
+   ],
+   "commands": [
+    {
+     "name": "export",
+     "example": "python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json",
+     "does": "Write the timelines (fcpxml, xmeml, edl, otio, blender, srt, capcut; default the first five), HANDOFF.md with the import steps per editor and receipt.json; srt is skipped with a warning when no --words is given; refuses to overwrite unless --force."
+    },
+    {
+     "name": "export (cut plan)",
+     "example": "python3 scripts/nle_export.py export --project ./edit_plan.json --audio ./voice.wav --out ./nle",
+     "does": "Same from a cinematic_cut_planner.py kosif.edl.v1 plan, adding the voice-over as an audio track; scenes without footage stay as gaps with a warning."
+    },
+    {
+     "name": "formats",
+     "example": "python3 scripts/nle_export.py formats",
+     "does": "List the formats and which editor opens each."
+    },
+    {
+     "name": "tests",
+     "example": "python3 -m unittest discover -s evals -p 'test_nle_export.py' -v",
+     "does": "Run 16 tests: every format's structure and frame maths, FCPXML fades and layout, Premiere dissolves, OTIO JSON, NTSC rates, overwrite refusal, cut-plan input, the CLI, a read-back through OpenTimelineIO and a real Blender sequencer build, each skipped when that library is missing."
+    }
+   ],
+   "inputs": "A kosif.timeline.v1 project (kosif_timeline.py) or a kosif.edl.v1 cut plan (cinematic_cut_planner.py) with local media paths, optionally words.json (list or kosif-words/1) and a voice-over file.",
+   "outputs": "<name>.fcpxml, <name>.premiere.xml, <name>.<track>.edl, <name>.otio, <name>.blender_vse.py, <name>.srt, <name>.capcut.md, HANDOFF.md and receipt.json (kosif.nle-export.v1). Media is referenced, never copied or re-encoded.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "ffprobe (reads real source lengths and sizes)",
+     "opentimelineio + otio-fcpx-xml-adapter, otio-fcp-adapter, otio-cmx3600-adapter (test read-back only)",
+     "Blender 4.2+ or the bpy module (to run the generated script)"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Use only media the user owns or may edit; the timelines only reference files, they do not copy them.",
+   "limits": "Non-drop timecode only (no drop-frame). Fades reach Blender, FCPXML and the Premiere XML; position/size reach Blender and FCPXML (the FCPXML transform is written to Apple's coordinate rules but was not opened in Final Cut or Resolve here). EDL and OTIO carry cuts only, with fades and layout in OTIO metadata. EDL holds one track per file and no overlaps; OTIO splits overlapping clips onto extra tracks. CapCut has no public timeline import, so it gets a cut list plus SRT. Not opened in the commercial editors on this machine: the files are checked by parsing, by OpenTimelineIO's independent readers and by running the Blender script in Blender 5.2 (bpy); the script also handles the Blender 4.x trim API.",
+   "evidence": "tested-here",
+   "evidence_note": "2026-10-28: 16/16 tests passed. OpenTimelineIO 0.18.1 read FCPXML, FCP7 XML, EDL and OTIO back with the expected record and source frames, read the Premiere fades as Cross Dissolve / Cross Fade transitions of the right length, and read a 29.97 fps export at the exact times (its fcpx_xml adapter truncates 29.97 to 29, so FCPXML NTSC times are checked on the rational values). Blender 5.2.3 LTS (bpy) built the sequencer on real FFmpeg media at 30 and 29.97 fps, the .blend saved, and a rendered frame showed the logo at its set position and size.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_nle_export.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/edit.md"
+   ],
+   "families": [
+    "photo-video-footage",
+    "transitions-cuts",
+    "audio-sync-captions",
+    "engines-render-pipeline"
+   ],
+   "power_id": "TOOL-176"
+  },
+  {
    "id": "cinema-lab",
    "path": "scripts/cinema_lab.py",
    "root": "skill",
@@ -17998,6 +18189,105 @@
    ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/adobe-mcp-bridges.md",
+    ".claude/skills/kosif-superpowers/references/guides/local-computer.md"
+   ],
+   "families": [
+    "engines-render-pipeline",
+    "transitions-cuts",
+    "photo-video-footage",
+    "agent-orchestration"
+   ]
+  },
+  {
+   "id": "photocraft-mcp",
+   "path": "scripts/photocraft_mcp.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "local-computer",
+   "title_en": "PhotoCraft MCP (open-source Photoshop-style editor driven by Claude)",
+   "title_ar": "PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude",
+   "summary_en": "Annex A39 helper for storytold/photocraft, a clean-room Rust image editor (MIT/Apache) whose 500+ commands are exposed over MCP: headless sessions (also in cloud sessions and Linux), command discovery and batches, layer-tree inspection, bounded PNG previews, PSD/PSB/TIFF/WebP/EXR export, layers-to-files, data sets, folder batches, .cube LUT export and a loopback bridge to the running desktop app. The stdlib helper prints install steps, the Claude Code command or MCP JSON with absolute read/write roots, sample action files and recipes, and checks whether photocraft-cli, cargo and ffmpeg are present. It installs nothing.",
+   "summary_ar": "أداة الملحق A39 لـ storytold/photocraft، محرر صور بـ Rust (رخصة MIT/Apache) بأكثر من 500 أمر متاحة عبر MCP: جلسة بلا شاشة حتى في السحابة ولينكس، اكتشاف الأوامر وتنفيذها دفعات، فحص شجرة الطبقات، معاينة PNG، تصدير PSD وTIFF وWebP وEXR، طبقة لكل ملف، قوالب بيانات، دفعات مجلدات، تصدير LUT بصيغة cube، وجسر للبرنامج المفتوح. السكربت يطبع خطوات التسطيب وأمر Claude Code أو إعداد MCP بجذور مطلقة وأمثلة أكشنز ووصفات، ويفحص وجود photocraft-cli وcargo وffmpeg، ولا يسطّب شيئًا.",
+   "use_when": [
+    "عدّل الصور دي من غير فوتوشوب في السحابة",
+    "اربط Claude ببرنامج تعديل صور مفتوح المصدر",
+    "طبّق نفس اللوك على كل صور المجلد",
+    "Edit a PSD headlessly with an MCP server",
+    "Export a .cube LUT from adjustment layers for my video",
+    "Set up PhotoCraft MCP for Claude Code"
+   ],
+   "keywords": [
+    "PhotoCraft",
+    "photocraft-cli",
+    "MCP server",
+    "PSD",
+    "Photoshop alternative",
+    "headless image editing",
+    "batch",
+    "LUT",
+    "cube",
+    "فوتوشوب مجاني",
+    "تعديل صور",
+    "طبقات",
+    "دفعة صور"
+   ],
+   "commands": [
+    {
+     "name": "steps",
+     "example": "python3 scripts/photocraft_mcp.py steps headless",
+     "does": "Prints numbered install/registration steps for headless, bridge or release installs; the first step is always to ask the user."
+    },
+    {
+     "name": "config",
+     "example": "python3 scripts/photocraft_mcp.py config --client claude-code --read-root /abs/in --write-root /abs/out",
+     "does": "Prints the claude mcp add command or the mcpServers JSON; refuses relative roots and a bridge without a token file."
+    },
+    {
+     "name": "doctor",
+     "example": "python3 scripts/photocraft_mcp.py doctor",
+     "does": "Reports whether photocraft-cli (with its version), cargo and ffmpeg are on PATH."
+    },
+    {
+     "name": "actions",
+     "example": "python3 scripts/photocraft_mcp.py actions grade",
+     "does": "Prints a sample actions.json for photocraft-cli batch."
+    },
+    {
+     "name": "recipes",
+     "example": "python3 scripts/photocraft_mcp.py recipes",
+     "does": "Lists the six A39 recipes (thumbnail, photo+video LUT, product batch, data sets, PSD split, generated-then-finished)."
+    }
+   ],
+   "inputs": "A mode (headless, bridge, release), --client claude-code|claude-desktop|json, absolute --read-root/--write-root, or --bridge host:port with --token-file.",
+   "outputs": "Text or JSON on stdout. It writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:photocraft-cli",
+     "bin:cargo",
+     "bin:ffmpeg"
+    ],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "The helper only prints. Building or installing PhotoCraft runs third-party code, and opening the desktop control port, each need the user's explicit approval; keep the bearer token in a private file, never in a config, log or commit.",
+   "safe_commands": [
+    "steps",
+    "config",
+    "doctor",
+    "actions",
+    "recipes"
+   ],
+   "limits": "PhotoCraft itself was not built or run here (the build was not approved in this session); the tool list, limits and command ids come from the project's docs and engine source as of 2026-10-29, and it is an early-alpha editor, so check every output visually.",
+   "evidence": "tested-here",
+   "evidence_note": "6/6 passed (python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p test_photocraft_mcp.py); steps, config, doctor, actions and recipes ran here on Linux.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_photocraft_mcp.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A39-v59-photocraft-mcp.md",
     ".claude/skills/kosif-superpowers/references/guides/local-computer.md"
    ],
    "families": [

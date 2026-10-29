@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 170 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 171 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 14 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **272** | |
+| **المجموع** | **273** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -60,6 +60,7 @@
 | `memory-ops` | عمليات الذاكرة | `python3 scripts/memory_ops.py propose --store memory.json --facts facts.json --out plan.json` | tested-here |
 | `micro-index` | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة | `python3 scripts/micro_index.py build` | tested-here |
 | `owned-repos` | خريطة مستودعات المالك وخريطة المهارات | `python3 scripts/owned_repos.py find "رسم شخصيات"` | tested-here |
+| `photocraft-mcp` | PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude | `python3 scripts/photocraft_mcp.py steps headless` | tested-here |
 | `powers` | البحث في كتالوج القدرات | `python3 scripts/powers.py stats --domain motion --json` | tested-here |
 | `probe-env` | فحص قدرات الجهاز | `python3 scripts/probe_env.py` | tested-elsewhere |
 | `python-package-probe` | فاحص وجود حزم بايثون | `python3 scripts/python_package_probe.py pandas numpy httpx` | tested-here |
@@ -89,7 +90,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 174 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 175 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -178,6 +179,7 @@
 | `TOOL-173` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | Instagram product video finder | proven | ffmpeg, python3, yt-dlp |
 | `TOOL-174` | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep | Background job runner and waiter (no sleep waits) | proven | ffmpeg, node, python3, chromium |
 | `TOOL-175` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | proven | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
+| `TOOL-176` | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات | NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | proven | ffmpeg, python3, blender |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |

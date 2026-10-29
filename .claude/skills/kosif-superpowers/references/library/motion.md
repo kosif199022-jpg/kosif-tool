@@ -74,7 +74,9 @@
 | `motion-toolkit` | مكتبة رياضيات الحركة | `node --input-type=module -e "import {ease, timeCode} from './resources/motion-runtime/motion_toolkit.mjs'; console.log(ease(0.5,'cubic'), timeCode(2.5,30))"` | tested-here |
 | `music-rhythm-engine` | فرضيات إيقاع الموسيقى | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json` | tested-here |
 | `native-glb` | مُصدِّر GLB مستقل عن Blender | `python3 scripts/native_glb.py --scene templates/blender-demo.json --output ./out/scene.glb` | tested-here |
+| `nle-export` | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات | `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json` | tested-here |
 | `perspective-color-lab` | منظور هندسي ومقاييس التباين اللوني | `python3 scripts/perspective_color_lab.py perspective --input scene.json --out out/scene.svg` | tested-elsewhere |
+| `photocraft-mcp` | PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude | `python3 scripts/photocraft_mcp.py steps headless` | tested-here |
 | `portrait-pipeline` | نسخة مرسومة أو ملوّنة باليد لأي صورة أو مشهد متخيَّل: رصاص، فحم، حبر، ألوان خشبية، فرشاة زيت أو ألوان مائية | `python3 scripts/portrait_pipeline.py draw --photo photo.png --out out/portrait --models <dir with face_landmarker.task and selfie_multiclass.tflite>` | tested-here |
 | `reel-factory` | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 | `reference-edit-engine` | محرك إعادة بناء المونتاج المرجعي | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./new-edit` | tested-here |

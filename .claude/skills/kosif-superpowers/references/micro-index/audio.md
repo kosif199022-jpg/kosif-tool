@@ -392,7 +392,7 @@ chapter: [music-beat-sound](../powers/music-beat-sound.md) · card: `usip-librar
 
 ## voice-tts (motion)
 
-chapter: [voice-tts](../powers/voice-tts.md) · card: `usip-library/cards/audio/voice-tts.md` · tools: `tts-script`
+chapter: [voice-tts](../powers/voice-tts.md) · card: `usip-library/cards/audio/voice-tts.md` · tools: `repo-transcribe-audio` · `tts-script`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

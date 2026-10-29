@@ -83,6 +83,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_business_workflows.py' -v
       - name: Adobe MCP bridges (After Effects, Premiere, Photoshop setup helper)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_adobe_mcp.py' -v
+      - name: PhotoCraft MCP helper tests (A39)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_photocraft_mcp.py' -v
       - name: Book-distilled methods (A20)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_book_methods.py' -v
       - name: Reference visual observation and color-to-edit integration tests
@@ -91,6 +93,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_reference_edit_engine.py' -v
       - name: Fast edit (cut planning, voice and brighten filters; FFmpeg runs skip without ffmpeg)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fast_edit.py' -v
+      - name: NLE export (FCPXML, FCP7 XML, EDL, Blender VSE script, SRT, CapCut list)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_nle_export.py' -v
       - name: Instagram product video finder (offline, fake yt-dlp)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_instagram_finder.py' -v
       - name: TikTok photo-post downloader (offline, synthetic page fixture, fake HTTP and yt-dlp)

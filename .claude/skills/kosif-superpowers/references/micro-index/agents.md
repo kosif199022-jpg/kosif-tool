@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 272 powers
+[← الفهرس الدقيق / micro index](README.md) · 273 powers
 
 ## الفهرس / contents
 
@@ -111,40 +111,41 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-102 | 🟢 | فاحص أصالة الملفات الإبداعية · Brief originality checker → `repo-check-originality` | SP-0143 Skill Layout Map | python3 |
 | TOOL-126 | 🟢 | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة · FusionForge Shared Memory: reviewed cross-project skill structures → `fusionforge-shared` | SP-0143 Skill Layout Map | python3 |
 | TOOL-56 | 🟢 | فحص سلامة المهارة · Skill Health Check → `check-skill` | SP-0143 Skill Layout Map | python3 |
-| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0144 Community source scout | ffmpeg, python3 |
-| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0144 Community source scout | pip:office |
-| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0144 Community source scout | python3 |
-| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0144 Community source scout | python3 |
-| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0144 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0144 Community source scout | python3, npm:rea |
-| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0144 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0144 Community source scout | python3 |
-| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0144 Community source scout | ffmpeg, python3 |
-| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0144 Community source scout | ffmpeg, python3, key:unspecified |
-| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0144 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0144 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
-| TOOL-103 | ✅ | فاحص سلامة أطلس الأنماط · Style atlas repository validator → `repo-validate` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-124 | ✅ | محرك بروتوكول ذكاء المهارات الشامل · Universal Skill Intelligence Protocol engine → `skill-intelligence` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0145 Catalog Evidence Audit | python3, npm:mermaid |
-| TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0145 Catalog Evidence Audit | python3, chromium |
-| TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-59 | 🟢 | استيراد الملفات الإبداعية · Creative brief importer → `repo-import-briefs` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0145 Catalog Evidence Audit | python3 |
-| TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0145 Catalog Evidence Audit | python3, gh, npm:rea |
-| TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0145 Catalog Evidence Audit | python3, gh, npm:rea |
-| TOOL-119 | ✅ | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت · Blender Cycles + KOSIF Cinematic compositor → `blender-cinematic-bridge` | SP-0146 Safe headless Blender bridge | ffmpeg, blender, pip:pillow, npm:rea … |
-| TOOL-120 | ✅ | إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender · Create an editable Blender 3D cat rescue demo → `blender-rescue-scene` | SP-0146 Safe headless Blender bridge | python3, blender |
-| TOOL-121 | ✅ | تطوير فرو القطة والملامح في Blender Cycles · Blender Cat Fur Upgrade: renderable hair geometry and character detail → `blender-cat-fur-upgrade` | SP-0146 Safe headless Blender bridge | python3, blender |
-| TOOL-36 | ✅ | تدقيق واجهة بايثون في Blender · Blender Python API audit → `blender-api-audit` | SP-0146 Safe headless Blender bridge | python3, blender |
-| TOOL-37 | ✅ | جسر Blender الآمن · Safe headless Blender bridge → `blender-bridge` | SP-0146 Safe headless Blender bridge | python3, chromium, blender |
-| TOOL-38 | ✅ | رندر Cycles إلى فيديو مُتحقَّق منه · Cycles scene to verified video → `blender-cycles-render` | SP-0146 Safe headless Blender bridge | ffmpeg, python3, blender |
-| TOOL-40 | ✅ | رندر ثلاثي الأبعاد مستقل عن Blender · Native 3D renderer (no Blender) → `native-3d` | SP-0146 Safe headless Blender bridge | ffmpeg, blender, pip:pillow |
-| TOOL-41 | ✅ | مُصدِّر GLB مستقل عن Blender · Native GLB exporter (no Blender) → `native-glb` | SP-0146 Safe headless Blender bridge | python3, blender, npm:three |
-| TOOL-114 | 🟢 | مساعد فيديو الحركة في Blender · Blender motion video helper → `blender-motion-video` | SP-0146 Safe headless Blender bridge | python3, blender, engine:ghidra |
-| TOOL-39 | 📦 | منفّذ المشهد داخل Blender · Blender-side scene builder → `blender-worker` | SP-0146 Safe headless Blender bridge | python3, blender |
-| TOOL-87 | 📦 | رندر سينمائي بـBlender Cycles · Blender Cycles cinematic renders → `blender-cinema` | SP-0146 Safe headless Blender bridge | ffmpeg, blender |
+| TOOL-119 | ✅ | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت · Blender Cycles + KOSIF Cinematic compositor → `blender-cinematic-bridge` | SP-0144 Safe headless Blender bridge | ffmpeg, blender, pip:pillow, npm:rea … |
+| TOOL-120 | ✅ | إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender · Create an editable Blender 3D cat rescue demo → `blender-rescue-scene` | SP-0144 Safe headless Blender bridge | python3, blender |
+| TOOL-121 | ✅ | تطوير فرو القطة والملامح في Blender Cycles · Blender Cat Fur Upgrade: renderable hair geometry and character detail → `blender-cat-fur-upgrade` | SP-0144 Safe headless Blender bridge | python3, blender |
+| TOOL-176 | ✅ | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات · NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut → `nle-export` | SP-0144 Safe headless Blender bridge | ffmpeg, python3, blender |
+| TOOL-36 | ✅ | تدقيق واجهة بايثون في Blender · Blender Python API audit → `blender-api-audit` | SP-0144 Safe headless Blender bridge | python3, blender |
+| TOOL-37 | ✅ | جسر Blender الآمن · Safe headless Blender bridge → `blender-bridge` | SP-0144 Safe headless Blender bridge | python3, chromium, blender |
+| TOOL-38 | ✅ | رندر Cycles إلى فيديو مُتحقَّق منه · Cycles scene to verified video → `blender-cycles-render` | SP-0144 Safe headless Blender bridge | ffmpeg, python3, blender |
+| TOOL-40 | ✅ | رندر ثلاثي الأبعاد مستقل عن Blender · Native 3D renderer (no Blender) → `native-3d` | SP-0144 Safe headless Blender bridge | ffmpeg, blender, pip:pillow |
+| TOOL-41 | ✅ | مُصدِّر GLB مستقل عن Blender · Native GLB exporter (no Blender) → `native-glb` | SP-0144 Safe headless Blender bridge | python3, blender, npm:three |
+| TOOL-114 | 🟢 | مساعد فيديو الحركة في Blender · Blender motion video helper → `blender-motion-video` | SP-0144 Safe headless Blender bridge | python3, blender, engine:ghidra |
+| TOOL-39 | 📦 | منفّذ المشهد داخل Blender · Blender-side scene builder → `blender-worker` | SP-0144 Safe headless Blender bridge | python3, blender |
+| TOOL-87 | 📦 | رندر سينمائي بـBlender Cycles · Blender Cycles cinematic renders → `blender-cinema` | SP-0144 Safe headless Blender bridge | ffmpeg, blender |
+| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0145 Community source scout | ffmpeg, python3 |
+| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0145 Community source scout | pip:office |
+| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0145 Community source scout | python3 |
+| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0145 Community source scout | python3 |
+| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0145 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0145 Community source scout | python3, npm:rea |
+| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0145 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0145 Community source scout | python3 |
+| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0145 Community source scout | ffmpeg, python3 |
+| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0145 Community source scout | ffmpeg, python3, key:unspecified |
+| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0145 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0145 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
+| TOOL-103 | ✅ | فاحص سلامة أطلس الأنماط · Style atlas repository validator → `repo-validate` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-124 | ✅ | محرك بروتوكول ذكاء المهارات الشامل · Universal Skill Intelligence Protocol engine → `skill-intelligence` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0146 Catalog Evidence Audit | python3, npm:mermaid |
+| TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0146 Catalog Evidence Audit | python3, chromium |
+| TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-59 | 🟢 | استيراد الملفات الإبداعية · Creative brief importer → `repo-import-briefs` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0146 Catalog Evidence Audit | python3 |
+| TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0146 Catalog Evidence Audit | python3, gh, npm:rea |
+| TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0146 Catalog Evidence Audit | python3, gh, npm:rea |
 | TOOL-10 | ✅ | مقدّر سعة الأنظمة · System Capacity Sizer → `architecture-sizer` | SP-0147 Prompt Lab | python3 |
 | TOOL-145 | ✅ | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds → `decision-math` | SP-0147 Prompt Lab | python3, npm:p5 |
 | TOOL-148 | ✅ | مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة · Prompt forge: layered generator prompts, prompt lint and frame-exact shot lists → `prompt-forge` | SP-0147 Prompt Lab | python3 |
