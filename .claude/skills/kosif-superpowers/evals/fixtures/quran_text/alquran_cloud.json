@@ -1,0 +1,398 @@
+{
+ "_note": "Answers of https://api.alquran.cloud/v1/ayah/<ref>/<edition> captured on 2026-10-29, keyed by URL, for offline tests of scripts/quran_text.py. Quran text: Tanzil Project (tanzil.net, CC BY 3.0), copied verbatim. Translation: M. Pickthall (public domain).",
+ "answers": {
+  "https://api.alquran.cloud/v1/ayah/51:22/quran-simple": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4697,
+     "text": "وَفِي السَّمَاءِ رِزْقُكُمْ وَمَا تُوعَدُونَ",
+     "edition": {
+      "identifier": "quran-simple",
+      "language": "ar",
+      "name": "القرآن الكريم المبسط (تشكيل بسيط) (simple)",
+      "englishName": "Simple",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 51,
+      "name": "سُورَةُ الذَّارِيَاتِ",
+      "englishName": "Adh-Dhaariyat",
+      "englishNameTranslation": "The Winnowing Winds",
+      "numberOfAyahs": 60,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 22,
+     "juz": 26,
+     "manzil": 7,
+     "page": 521,
+     "ruku": 455,
+     "hizbQuarter": 208,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/51:23/quran-simple": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4698,
+     "text": "فَوَرَبِّ السَّمَاءِ وَالْأَرْضِ إِنَّهُ لَحَقٌّ مِثْلَ مَا أَنَّكُمْ تَنْطِقُونَ",
+     "edition": {
+      "identifier": "quran-simple",
+      "language": "ar",
+      "name": "القرآن الكريم المبسط (تشكيل بسيط) (simple)",
+      "englishName": "Simple",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 51,
+      "name": "سُورَةُ الذَّارِيَاتِ",
+      "englishName": "Adh-Dhaariyat",
+      "englishNameTranslation": "The Winnowing Winds",
+      "numberOfAyahs": 60,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 23,
+     "juz": 26,
+     "manzil": 7,
+     "page": 521,
+     "ruku": 455,
+     "hizbQuarter": 208,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/53:39/quran-simple": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4823,
+     "text": "وَأَنْ لَيْسَ لِلْإِنْسَانِ إِلَّا مَا سَعَىٰ",
+     "edition": {
+      "identifier": "quran-simple",
+      "language": "ar",
+      "name": "القرآن الكريم المبسط (تشكيل بسيط) (simple)",
+      "englishName": "Simple",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 53,
+      "name": "سُورَةُ النَّجۡمِ",
+      "englishName": "An-Najm",
+      "englishNameTranslation": "The Star",
+      "numberOfAyahs": 62,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 39,
+     "juz": 27,
+     "manzil": 7,
+     "page": 527,
+     "ruku": 462,
+     "hizbQuarter": 211,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/53:40/quran-simple": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4824,
+     "text": "وَأَنَّ سَعْيَهُ سَوْفَ يُرَىٰ",
+     "edition": {
+      "identifier": "quran-simple",
+      "language": "ar",
+      "name": "القرآن الكريم المبسط (تشكيل بسيط) (simple)",
+      "englishName": "Simple",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 53,
+      "name": "سُورَةُ النَّجۡمِ",
+      "englishName": "An-Najm",
+      "englishNameTranslation": "The Star",
+      "numberOfAyahs": 62,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 40,
+     "juz": 27,
+     "manzil": 7,
+     "page": 527,
+     "ruku": 462,
+     "hizbQuarter": 211,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/53:41/quran-simple": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4825,
+     "text": "ثُمَّ يُجْزَاهُ الْجَزَاءَ الْأَوْفَىٰ",
+     "edition": {
+      "identifier": "quran-simple",
+      "language": "ar",
+      "name": "القرآن الكريم المبسط (تشكيل بسيط) (simple)",
+      "englishName": "Simple",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 53,
+      "name": "سُورَةُ النَّجۡمِ",
+      "englishName": "An-Najm",
+      "englishNameTranslation": "The Star",
+      "numberOfAyahs": 62,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 41,
+     "juz": 27,
+     "manzil": 7,
+     "page": 527,
+     "ruku": 462,
+     "hizbQuarter": 211,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/53:39/en.pickthall": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4823,
+     "text": "And that man hath only that for which he maketh effort,",
+     "edition": {
+      "identifier": "en.pickthall",
+      "language": "en",
+      "name": "Pickthall",
+      "englishName": "Mohammed Marmaduke William Pickthall",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+     },
+     "surah": {
+      "number": 53,
+      "name": "سُورَةُ النَّجۡمِ",
+      "englishName": "An-Najm",
+      "englishNameTranslation": "The Star",
+      "numberOfAyahs": 62,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 39,
+     "juz": 27,
+     "manzil": 7,
+     "page": 527,
+     "ruku": 462,
+     "hizbQuarter": 211,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/53:40/en.pickthall": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4824,
+     "text": "And that his effort will be seen.",
+     "edition": {
+      "identifier": "en.pickthall",
+      "language": "en",
+      "name": "Pickthall",
+      "englishName": "Mohammed Marmaduke William Pickthall",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+     },
+     "surah": {
+      "number": 53,
+      "name": "سُورَةُ النَّجۡمِ",
+      "englishName": "An-Najm",
+      "englishNameTranslation": "The Star",
+      "numberOfAyahs": 62,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 40,
+     "juz": 27,
+     "manzil": 7,
+     "page": 527,
+     "ruku": 462,
+     "hizbQuarter": 211,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/53:41/en.pickthall": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 4825,
+     "text": "And afterward he will be repaid for it with fullest payment;",
+     "edition": {
+      "identifier": "en.pickthall",
+      "language": "en",
+      "name": "Pickthall",
+      "englishName": "Mohammed Marmaduke William Pickthall",
+      "format": "text",
+      "type": "translation",
+      "direction": "ltr"
+     },
+     "surah": {
+      "number": 53,
+      "name": "سُورَةُ النَّجۡمِ",
+      "englishName": "An-Najm",
+      "englishNameTranslation": "The Star",
+      "numberOfAyahs": 62,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 41,
+     "juz": 27,
+     "manzil": 7,
+     "page": 527,
+     "ruku": 462,
+     "hizbQuarter": 211,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/2:1/quran-uthmani": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 8,
+     "text": "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ الٓمٓ",
+     "edition": {
+      "identifier": "quran-uthmani",
+      "language": "ar",
+      "name": "القرآن الكريم برسم العثماني (uthmani)",
+      "englishName": "Uthmani",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 2,
+      "name": "سُورَةُ البَقَرَةِ",
+      "englishName": "Al-Baqara",
+      "englishNameTranslation": "The Cow",
+      "numberOfAyahs": 286,
+      "revelationType": "Medinan"
+     },
+     "numberInSurah": 1,
+     "juz": 1,
+     "manzil": 1,
+     "page": 2,
+     "ruku": 2,
+     "hizbQuarter": 1,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/2:2/quran-uthmani": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 9,
+     "text": "ذَٰلِكَ ٱلْكِتَٰبُ لَا رَيْبَ ۛ فِيهِ ۛ هُدًۭى لِّلْمُتَّقِينَ",
+     "edition": {
+      "identifier": "quran-uthmani",
+      "language": "ar",
+      "name": "القرآن الكريم برسم العثماني (uthmani)",
+      "englishName": "Uthmani",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 2,
+      "name": "سُورَةُ البَقَرَةِ",
+      "englishName": "Al-Baqara",
+      "englishNameTranslation": "The Cow",
+      "numberOfAyahs": 286,
+      "revelationType": "Medinan"
+     },
+     "numberInSurah": 2,
+     "juz": 1,
+     "manzil": 1,
+     "page": 2,
+     "ruku": 2,
+     "hizbQuarter": 1,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/1:1/quran-simple": {
+   "status": 200,
+   "body": {
+    "code": 200,
+    "status": "OK",
+    "data": {
+     "number": 1,
+     "text": "﻿بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ",
+     "edition": {
+      "identifier": "quran-simple",
+      "language": "ar",
+      "name": "القرآن الكريم المبسط (تشكيل بسيط) (simple)",
+      "englishName": "Simple",
+      "format": "text",
+      "type": "quran",
+      "direction": "rtl"
+     },
+     "surah": {
+      "number": 1,
+      "name": "سُورَةُ ٱلْفَاتِحَةِ",
+      "englishName": "Al-Faatiha",
+      "englishNameTranslation": "The Opening",
+      "numberOfAyahs": 7,
+      "revelationType": "Meccan"
+     },
+     "numberInSurah": 1,
+     "juz": 1,
+     "manzil": 1,
+     "page": 1,
+     "ruku": 1,
+     "hizbQuarter": 1,
+     "sajda": false
+    }
+   }
+  },
+  "https://api.alquran.cloud/v1/ayah/51:99/quran-simple": {
+   "status": 404,
+   "body": {
+    "code": 404,
+    "status": "NOT FOUND",
+    "data": "Please specify a valid surah reference in the format Surah:Ayat (2:255)."
+   }
+  }
+ }
+}
