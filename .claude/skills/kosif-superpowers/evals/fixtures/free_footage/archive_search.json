@@ -1,0 +1,12 @@
+{
+ "responseHeader": {"status": 0, "QTime": 5},
+ "response": {
+  "numFound": 3,
+  "start": 0,
+  "docs": [
+   {"identifier": "synthetic-coast-film", "title": "Synthetic coast film", "creator": ["Example Archive Group", "Second Maker"], "licenseurl": "https://creativecommons.org/licenses/by/4.0/", "year": 1961},
+   {"identifier": "synthetic-nd-reel", "title": "Synthetic no-derivatives reel", "creator": "Example ND Owner", "licenseurl": "https://creativecommons.org/licenses/by-nd/4.0/", "year": 2010},
+   {"identifier": "synthetic-pd-newsreel", "title": "Synthetic public-domain newsreel", "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/", "year": 1948}
+  ]
+ }
+}
