@@ -1,0 +1,10 @@
+{
+ "class": "blocked",
+ "note": "Synthetic. Pinterest refuses the metadata request itself (rate limit), which is not the same as a deleted pin: not retried in this run, a later run may try once more.",
+ "expect": {"probe": "blocked", "final": "blocked"},
+ "probe": {
+  "returncode": 1,
+  "stdout": null,
+  "stderr": "ERROR: [Pinterest] 100000000000000009: Unable to download JSON metadata: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)\n"
+ }
+}

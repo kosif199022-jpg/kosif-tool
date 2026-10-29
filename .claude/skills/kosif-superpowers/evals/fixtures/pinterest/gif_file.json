@@ -1,0 +1,7 @@
+{
+ "class": "gif",
+ "note": "Synthetic. The metadata looks like a video pin, but the file that arrives is an animated GIF: the extension and ffprobe's codec (gif) decide, and the pin is treated as an image, nothing kept.",
+ "expect": {"probe": "video", "final": "gif"},
+ "probe": {"returncode": 0, "stderr": "", "stdout_from": "video.json"},
+ "download": {"returncode": 0, "stderr": "", "writes": "gif"}
+}

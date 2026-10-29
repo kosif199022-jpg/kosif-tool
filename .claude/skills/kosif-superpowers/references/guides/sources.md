@@ -54,6 +54,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 11. [بوست صور تيك توك — TikTok photo posts (2026-10-28)](#بوست-صور-تيك-توك--tiktok-photo-posts-2026-10-28)
 12. [مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)](#مصدر-كل-لقطة-في-فيديو-مرجعي--source-finder-for-the-shots-of-a-reference-video-2026-10-28)
 13. [مكتبة اللقطات المفتوحة الترخيص — Free footage sources, search and credits (2026-10-29)](#مكتبة-اللقطات-المفتوحة-الترخيص--free-footage-sources-search-and-credits-2026-10-29)
+14. [روابط بنترست — Pinterest pins, classified before download (2026-10-29)](#روابط-بنترست--pinterest-pins-classified-before-download-2026-10-29)
 
 ## Web apps and browser isolation research
 
@@ -234,7 +235,7 @@ How it decides:
 1. **Cuts**: the mean HSV change between consecutive frames of a 96-px copy; a change of 27 or more (0-255 scale) is a cut, and shots shorter than 0.4 s are merged. Hard cuts only: dissolves and fades stay inside one shot, so check `cuts.json` against the video and give `frames` your own boundaries (`--cuts 0,2.0,3.97,...`) when needed.
 2. **Query frames**: three frames per shot kept 0.35 s away from its cuts, taken through `--crop` so burned-in captions, verse text and logos do not pull the search toward other edits; one uncropped mid frame is searched as well. `--crop` accepts a single ffmpeg `crop=` filter and nothing else.
 3. **Search**: each image is uploaded to Yandex search-by-image; the `sites` and `similar` pages are read and every Pinterest `/pin/<id>/` link is kept (TikTok, Instagram, YouTube and stock links go to `leads` for a manual look). Calls are at least 2 s apart (`--delay`, default 4 s), and searches are cached in `<work>/search/` under the frame's name plus a hash of its bytes, so a re-run after a captcha resumes instead of repeating calls, while a re-run with another `--crop`, other cut settings or another video in the same `--work` searches the new frames. **At the first captcha everything stops** with exit code 3: wait, or solve it in a browser, then run the same command again. Never try to get around it.
-4. **Verify**: pins are downloaded with yt-dlp into `<work>/cand/` (a failure leaves a `p<id>.none` marker), and every 0.5 s of each clip is compared with the shot's frames: ORB (3,000 features) on a 540-px-wide grey copy, Lowe ratio 0.75, RANSAC homography with a 6-px tolerance. The score is the number of inliers. A candidate that cannot be decoded (a corrupt image or a video OpenCV cannot open, common in a downloads folder) scores 0 with an `error` field and the others are still checked.
+4. **Verify**: each pin is first classified by the shared Pinterest helper (see [Pinterest pins](#روابط-بنترست--pinterest-pins-classified-before-download-2026-10-29)) and only video pins are downloaded into `<work>/cand/`, with their own audio stripped unless `--keep-audio`; `cand/p<id>.pin.json` says what happened to every pin, and `report.json` counts the kinds per shot (`pin_kinds`, `pins_skipped`). Every 0.5 s of each clip is compared with the shot's frames: ORB (3,000 features) on a 540-px-wide grey copy, Lowe ratio 0.75, RANSAC homography with a 6-px tolerance. The score is the number of inliers. A candidate that cannot be decoded (a corrupt image or a video OpenCV cannot open, common in a downloads folder) scores 0 with an `error` field and the others are still checked.
 
 | score (inliers) | verdict | meaning |
 |---|---|---|
@@ -299,3 +300,40 @@ Rules the tool follows, and you should too:
 Found while building it (2026-10-29): most Mixkit clips on the ocean and city pages were **Restricted** ("Free Download - 720p Version for Personal Use only"), which the stock-footage notes above did not distinguish; Coverr marks premium and AI-generated clips in its page state; upload.wikimedia.org rate-limits the shared cloud IP for every User-Agent, so search Commons here and download from your own computer or later; the Pexels download endpoint still answered without a key. Tests: `evals/test_free_footage.py`, offline, with hand-written synthetic answers for every API and page (`evals/fixtures/free_footage/`) and the network blocked.
 
 Corrected after review (2026-10-29): the 720p-only rule for Mixkit holds for Restricted clips alone (Free clips answered 206 for `-1080.mp4`, and some for `-2160.mp4`; `download mixkit:40746` now measures 1080×1920); a bare `mixkit:<id>` reads its licence through `/free-stock-video/clip-<id>/`, which redirects to the clip's page (`/free-stock-video/<id>/` leads to a search page instead); videvo.net and mazwai.com 301 to freepik.com/videos, so the 403 first recorded for them was Freepik's, and `probe` now records where each probe lands and reports a domain change as `moved`; the NASA asset API returns links with raw spaces (12 of 20 live "launch" hits), which the tool now percent-encodes; Archive items under the retired CC Sampling, Sampling+ and Developing Nations licences (193 movies on 2026-10-29) are recorded as unverified and credit-required, so `--commercial` drops them; a read that stalls or resets after the headers fails that source or that file only; `sources --commercial` and `--no-attribution` leave out paid stock unless `--include-paid`.
+
+## روابط بنترست — Pinterest pins, classified before download (2026-10-29)
+
+`scripts/_pinterest.py` is the one place where Pinterest is handled: `fetch_video.py` uses it for any pin link (`pinterest.<tld>/pin/<id>`, `pin.it/<code>`) and `source_finder.py` for the pins a reverse search returns. Before anything is downloaded, one `yt-dlp -J` call limited to yt-dlp's Pinterest extractor (`--use-extractors pinterest --ignore-no-formats-error`) says what the pin is, and only a video pin is downloaded. No pin is retried in a loop.
+
+أي رابط Pinterest بيعدّي على مساعد واحد: طلب `yt-dlp -J` واحد يقول الأول الـpin ده فيديو ولا صورة ولا GIF ولا يوتيوب مضمَّن ولا محذوف، ومفيش تنزيل إلا للفيديو، في فولدر مؤقت، وبعدين المقاس الحقيقي بيتقاس بـffprobe. ومفيش إعادة محاولة.
+
+```bash
+python3 scripts/fetch_video.py --classify https://www.pinterest.com/pin/<id>/ https://pin.it/<code>   # what each pin is; nothing downloaded or written
+python3 scripts/fetch_video.py https://www.pinterest.com/pin/<id>/ -o out/clips --strip-audio         # a video pin without the creator's music
+python3 scripts/source_finder.py match q/s003_0.jpg --candidates <pin ids or search.json> --work out/source-finder   # audio stripped by default; --keep-audio
+```
+
+| kind | what yt-dlp gives | what the tool does | tried again |
+|---|---|---|---|
+| `video` | formats with video | downloads into a temp folder inside the destination, moves only the finished file, measures it with ffprobe | — |
+| `image` | metadata with no formats (without `--ignore-no-formats-error`: `No video formats found!`, which is expected, not a yt-dlp bug) | nothing downloaded; the image URL is recorded | never |
+| `gif` | the pin embeds an `i.pinimg.com/....gif`, a format with ext `gif`, or the downloaded file is a GIF by extension or codec | treated as an image, nothing kept | never |
+| `youtube` | `No suitable extractor found for URL …youtube.com/embed/<id>…` (YouTube is never contacted) | "embedded YouTube, blocked on cloud": the watch link is recorded; get it on your own computer or ask for an upload | never, and never bypassed |
+| `embedded` | the same line for another site (Vimeo …) | the embed link is recorded: fetch it from that site | never |
+| `deleted` | `Unable to download JSON metadata: HTTP Error 404` | reported | never |
+| `cdn-refused` | the metadata is fine, then `unable to download video data: HTTP Error 403` | reported; the temp folder and its fragments are removed | not in this run; a later run tries once |
+| `blocked` | the metadata request itself is refused (HTTP 403/429) | reported | not in this run |
+
+Checked live on 2026-10-29 with yt-dlp 2026.10.21, against a scout's report of about 140 pins:
+
+- **Size.** Pin 782359766544232782 lists `V_720P mp4 1080x1920`, the pin's display size; the file is 720x1280 (ffprobe), and its largest HLS stream is 720x1280 too. Pinterest serves video at 720p at most. Each record keeps `label_size` next to the measured `width`/`height` and a `size_note`; trust only the measured numbers.
+- **The "403" pins were YouTube.** The three pins logged as `unable to download video data: HTTP Error 403` (357332551654730370, 56998751507021275, 6403624444785202) all embed YouTube, so the refusal came from YouTube, not from Pinterest's CDN. They now come out as `youtube` at the first call, like 785596728743121649 and 236157574185791515. A real CDN refusal after good metadata is still its own kind.
+- **GIF pins** (175851560437593851, 306315212174801395) embed the .gif itself; an unrestricted yt-dlp passed them to its generic extractor, which is how `.gif` files arrived under a `%(ext)s` template.
+- **Deleted pins** (587508713882263842, 774337729672271619) answer 404 on the metadata.
+- **Fragments.** While downloading, yt-dlp writes files such as `p<ID>.fV_HLSV3_MOBILE-1839.mp4` next to its output. The helper downloads into `.<name>-*.tmp/` inside the destination, moves only the finished file, and removes the folder whatever happens, so a glob of `p*.mp4` during parallel downloads never picks up a fragment.
+
+**Audio.** Most video pins carry the creator's music. `source_finder.py` strips it on intake by default (`--keep-audio` keeps it), and `fetch_video.py --strip-audio` does the same for any link (the video stream is copied, not re-encoded). If ffmpeg is missing, the pin is not kept at all, so its music cannot reach a Quran or other dignified edit.
+
+**Credit.** Every pin gets `<name>.pin.json` (schema `kosif.pinterest_pin.v1`): kind, reason, retry rule, label against measured size, audio state and a credit record with the pin URL, the uploader when Pinterest names one, and "licence unknown — credit and link". Pinterest is not a licence source (see the free-footage table above): a pin is often a re-upload, so trace the original creator before reusing footage and put the credit line wherever it appears.
+
+Tests: `evals/test_pinterest.py`, offline. One fixture per pin class in `evals/fixtures/pinterest/` (shaped like `yt-dlp -J` output and stderr, synthetic ids and URLs) is played back by a fake yt-dlp, with synthetic clips made by ffmpeg.

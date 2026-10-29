@@ -1,0 +1,10 @@
+{
+ "class": "embedded",
+ "note": "Synthetic. A pin that embeds a Vimeo video (yt-dlp's own Pinterest test case 441282463481903715 is one): named as an embed of vimeo.com and never fetched through Pinterest.",
+ "expect": {"probe": "embedded", "final": "embedded", "embed_url": "https://player.vimeo.com/video/111111111"},
+ "probe": {
+  "returncode": 1,
+  "stdout": null,
+  "stderr": "ERROR: No suitable extractor found for URL https://player.vimeo.com/video/111111111\n"
+ }
+}
