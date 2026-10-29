@@ -1,0 +1,13 @@
+{
+ "responseHeader": {"status": 0, "QTime": 4},
+ "response": {
+  "numFound": 4,
+  "start": 0,
+  "docs": [
+   {"identifier": "youtube-SYNTHabc123", "title": "Example Artist - Synthetic Song (Official Music Video)", "creator": "Example Uploader", "licenseurl": "https://creativecommons.org/licenses/by/4.0/"},
+   {"identifier": "y-2mate.so-top-20-synthetic-moments-of-a-game", "title": "y2mate.so - Top 20 synthetic moments of a game", "licenseurl": "http://creativecommons.org/publicdomain/zero/1.0/"},
+   {"identifier": "synthetic-whale-movie-music-video-1993-hd-vhs-rip", "title": "Synthetic whale movie music video 1993 HD VHS rip", "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/"},
+   {"identifier": "Flickr-0000000001", "title": "Synthetic lettuce emerging", "creator": "Example Gardener", "licenseurl": "https://creativecommons.org/licenses/by/2.0/"}
+  ]
+ }
+}

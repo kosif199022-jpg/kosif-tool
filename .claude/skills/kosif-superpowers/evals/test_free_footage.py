@@ -5,11 +5,14 @@ so nothing leaves the machine.
 
     python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_free_footage.py' -v
 """
+import datetime
 import email.message
+import email.utils
 import io
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -728,9 +731,14 @@ class DownloadTest(unittest.TestCase):
         self.assertEqual(r["file"], "pexels-9112700.mp4")
 
     def test_dry_run_writes_nothing(self):
-        h, t, _ = http(ROUTES)
+        def head(req):  # only a HEAD request is allowed: the size is asked, the file is not fetched
+            self.assertEqual(req.get_method(), "HEAD")
+            return (200, b"", {"Content-Type": "video/mp4", "Content-Length": str(12 * 1048576)})
+        h, t, _ = http([(r"cdn\.coverr\.co", head)] + ROUTES)
         r = FF.download_one(h, DB, "coverr:AAAA111111", self.out, self.opts(dry_run=True))
         self.assertTrue(r["dry_run"])
+        self.assertEqual((r["width"], r["height"], r["bytes"], r["size_from"]), (1920, 1080, 12 * 1048576, "HEAD"))
+        self.assertIn("1920x1080, 12.0 MB (HEAD)", FF._dry_text(r))
         self.assertFalse(any(p.is_file() for p in self.out.rglob("*")) if self.out.exists() else False)
 
     def test_sidecar_never_holds_a_key(self):
@@ -1092,6 +1100,762 @@ class MixkitSizesTest(unittest.TestCase):
                          ["https://mixkit.co/free-stock-video/synthetic-night-walk-in-a-big-city-40001/"])
         self.assertEqual(rep["results"], [])  # Restricted: 720x1280 only, under 1900
         self.assertEqual(rep["sources"]["mixkit"]["dropped"], {"height 1280 < 1900": 1, "height 720 < 1900": 1})
+
+
+# ------------------------------------------------------------------------------------------------- field report fixes
+# Bugs hit live on 2026-10-29 by a footage scout downloading 17 licensed clips (each test names the symptom).
+
+OK_MP4 = (200, MP4, {"Content-Type": "video/mp4"})
+NO_FILE = (403, "<Error/>", {"Content-Type": "application/xml"})
+CHALLENGE = fixture("cloudflare_challenge.html")
+HASHES = {"2160p": "synthhash2160aaaaaaaaaaaaaa", "1080p": "synthhash1080bbbbbbbbbbbbbb",
+          "720p": "synthhash0720cccccccccccccc"}
+
+
+def modal(req):
+    """The small page a Mixkit download route answers, naming the hashed file of that size."""
+    t = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(req.full_url).query)).get("type", "720p")
+    cid = re.search(r"/download/(\d+)/", req.full_url).group(1)
+    return fixture("mixkit_download_modal.html").replace("{hash}", HASHES[t]).replace("{id}", cid).replace("{type}", t)
+
+
+NEW_ROUTES = [
+    (r"mixkit\.co/free-stock-video/download/", modal),
+    (r"free-stock-video/(clip-50001|synthetic-droplet-on-a-leaf-50001)/$", fixture("mixkit_clip_hashed.html")),
+    (r"free-stock-video/(clip-50002|synthetic-misty-hills-50002)/$", fixture("mixkit_clip_active_storage.html")),
+    (r"free-stock-video/clip-50003/$", fixture("mixkit_clip_restricted_button.html")),
+    (r"synthetic-woman-sending-messages-on-a-phone-50004/$", fixture("mixkit_clip_free.html")),
+    (r"mixkit\.co/free-stock-video/discover/", fixture("mixkit_discover_new.html")),
+    (r"assets\.mixkit\.co/videos/5000\d/", NO_FILE),  # newer clips have no <id>-<q>.mp4 file
+]
+
+
+def mixkit_get(case, rid, extra=(), **opts):
+    """download_one of a Mixkit id with no results file; returns (result, sidecar or None, transport)."""
+    h, t, _ = http(list(extra) + NEW_ROUTES)
+    with mock.patch.object(FF, "measure", return_value={}):
+        r = FF.download_one(h, DB, rid, case.out, {"results": case.dir / "none.json", "max_mb": 300, **opts})
+    side = None if r.get("dry_run") else json.loads(FF.sidecar_for(case.out / r["file"]).read_text(encoding="utf-8"))
+    return r, side, t
+
+
+class TempDirCase(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.dir = Path(self.tmp.name)
+        self.out = self.dir / "clips"
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+
+class MixkitNewClipsTest(TempDirCase):
+    """`download mixkit:100896` failed with HTTP 403 from .../100896-720.mp4: newer clips use hashed file links
+    (assets.mixkit.co/<hash>) or .../active_storage/video_items/<id>/<ts>/<id>-video-<q>.mp4, offered by the clip
+    page's download options."""
+
+    def test_page_download_options(self):
+        vs = FF.mixkit_page_variants(fixture("mixkit_clip_hashed.html"), 50001)
+        self.assertEqual([v["quality"] for v in vs], [2160, 1080, 720])
+        self.assertEqual([v["label"] for v in vs], ["4K", "Full HD", "HD Ready"])
+        self.assertEqual([v["mb"] for v in vs], [58.21, 44.59, 4.03])
+        self.assertEqual(vs[0]["bytes"], round(58.21 * 1048576))
+        # the listed 4096x2160 and 1920x1080 are kept; the site's "1080x720" for the 720p file is scaled instead
+        self.assertEqual([(v["width"], v["height"]) for v in vs], [(4096, 2160), (1920, 1080), (1280, 720)])
+        self.assertEqual(vs[1]["route"], "https://mixkit.co/free-stock-video/download/50001/?context=sidebar&type=1080p")
+        btn = FF.mixkit_page_variants(fixture("mixkit_clip_restricted_button.html"), 50003)
+        self.assertEqual([(v["quality"], v["route"]) for v in btn],
+                         [(720, "https://mixkit.co/free-stock-video/download/50003/?context=sidebar")])
+        self.assertEqual(FF.mixkit_page_variants(fixture("mixkit_clip_free.html"), 40002), [])
+        self.assertEqual(FF.mixkit_pattern(50001, "https://assets.mixkit.co/synthcontentbbbbbbbbbbbbbb"), ("hashed", None))
+        base = "https://assets.mixkit.co/active_storage/video_items/50002/1721168872/50002-video"
+        self.assertEqual(FF.mixkit_pattern(50002, base + "-720.mp4"), ("active_storage", base))
+        self.assertEqual(FF.mixkit_pattern(15209, "https://assets.mixkit.co/videos/15209/15209-720.mp4"), ("legacy", None))
+        self.assertEqual(FF.mixkit_file(50002, 1080, "active_storage", base), base + "-1080.mp4")
+        self.assertIsNone(FF.mixkit_file(50001, 1080, "hashed"))
+
+    def test_a_hashed_clip_downloads_through_its_download_route(self):
+        r, side, t = mixkit_get(self, "mixkit:50001", [(r"assets\.mixkit\.co/synthhash2160", OK_MP4)])
+        self.assertEqual(t.urls(), ["https://mixkit.co/free-stock-video/clip-50001/",
+                                    "https://mixkit.co/free-stock-video/download/50001/?context=sidebar&type=2160p",
+                                    "https://assets.mixkit.co/synthhash2160aaaaaaaaaaaaaa"])  # the template is never tried
+        res = side["result"]
+        self.assertEqual(res["file_url"], "https://assets.mixkit.co/synthhash2160aaaaaaaaaaaaaa")
+        self.assertEqual((res["quality"], res["width"], res["height"]), (2160, 4096, 2160))
+        self.assertTrue(res["native"]["download_route"].endswith("type=2160p"))
+        self.assertEqual(side["licence"]["name"], FF.MIXKIT_FREE)
+        self.assertEqual(res["page_url"], "https://mixkit.co/free-stock-video/synthetic-droplet-on-a-leaf-50001/")
+        self.assertEqual(res["thumb_url"], "https://assets.mixkit.co/synththumbaaaaaaaaaaaaaaaa1")
+        self.assertEqual(res["preview_url"], "https://assets.mixkit.co/synthembedcccccccccccccccccc")
+        self.assertNotIn("smaller-variant", res["flags"])
+        self.assertEqual(r["quality"], 2160)
+
+    def test_quality_cap_and_budget_use_the_listed_sizes(self):
+        _, side, t = mixkit_get(self, "mixkit:50001", [(r"synthhash1080", OK_MP4)], max_quality=1080)
+        self.assertFalse([u for u in t.urls() if "2160" in u])
+        self.assertEqual((side["result"]["quality"], side["result"]["width"]), (1080, 1920))
+        self.assertNotIn("smaller-variant", side["result"]["flags"])  # the size the user asked for
+        shutil.rmtree(self.out)
+        _, side, t = mixkit_get(self, "mixkit:50001", [(r"synthhash1080", OK_MP4)], max_mb=50)
+        self.assertFalse([u for u in t.urls() if "2160" in u])  # 58.21 MB > 50: skipped without a request
+        self.assertIn("smaller-variant", side["result"]["flags"])
+        with self.assertRaisesRegex(FF.FootageError, r"every size is over --max-mb 3 \(the smallest is 4.0 MB\)"):
+            mixkit_get(self, "mixkit:50001", max_mb=3)
+        with self.assertRaisesRegex(FF.FootageError, "no file within --quality 480; it comes at 2160p 4096x2160"):
+            mixkit_get(self, "mixkit:50001", max_quality=480)
+        shutil.rmtree(self.out)
+        _, side, _ = mixkit_get(self, "mixkit:50001", [(r"synthhash0720", OK_MP4)], max_height=1000)
+        self.assertEqual((side["result"]["quality"], side["result"]["height"]), (720, 720))
+
+    def test_dry_run_prints_the_listed_size_without_fetching(self):
+        r, _, t = mixkit_get(self, "mixkit:50001", dry_run=True)
+        self.assertEqual(t.urls(), ["https://mixkit.co/free-stock-video/clip-50001/"])  # the page only
+        self.assertEqual((r["quality"], r["width"], r["height"], r["bytes"]), (2160, 4096, 2160, round(58.21 * 1048576)))
+        self.assertEqual(FF._dry_text(r), "dry run: 2160p 4096x2160, 58.2 MB (listed by the source)")
+        self.assertFalse(r["over_max_mb"])
+
+    def test_active_storage_files_are_named_from_the_page(self):
+        _, side, t = mixkit_get(self, "mixkit:50002", [(r"active_storage/.*50002-video-1080\.mp4$", OK_MP4)])
+        self.assertEqual([u for u in t.urls() if "assets.mixkit.co" in u],
+                         ["https://assets.mixkit.co/active_storage/video_items/50002/1721168872/50002-video-1080.mp4"])
+        self.assertFalse([u for u in t.urls() if "/download/" in u])  # a direct file: no route needed
+        self.assertEqual((side["result"]["quality"], side["result"]["width"], side["result"]["height"]), (1080, 1920, 1080))
+
+    def test_a_template_that_answers_403_falls_back_to_the_route(self):
+        page = fixture("mixkit_clip_hashed.html").replace("https://assets.mixkit.co/synthcontentbbbbbbbbbbbbbb",
+                                                           "https://assets.mixkit.co/videos/50001/50001-720.mp4")
+        _, side, t = mixkit_get(self, "mixkit:50001", [(r"free-stock-video/clip-50001/$", page),
+                                                        (r"synthhash2160", OK_MP4)])
+        self.assertEqual(t.urls()[1:], ["https://assets.mixkit.co/videos/50001/50001-2160.mp4",  # 403
+                                        "https://mixkit.co/free-stock-video/download/50001/?context=sidebar&type=2160p",
+                                        "https://assets.mixkit.co/synthhash2160aaaaaaaaaaaaaa"])
+        self.assertEqual(side["result"]["quality"], 2160)
+
+    def test_a_restricted_clip_with_one_button_stays_at_720p(self):
+        _, side, t = mixkit_get(self, "mixkit:50003", [(r"/videos/50003/50003-720\.mp4$", OK_MP4)])
+        self.assertEqual([u for u in t.urls() if "assets.mixkit.co" in u], ["https://assets.mixkit.co/videos/50003/50003-720.mp4"])
+        self.assertEqual((side["licence"]["name"], side["result"]["quality"]), (FF.MIXKIT_RESTRICTED, 720))
+
+    def test_a_hashed_clip_whose_page_fails_says_why(self):
+        routes = [(r"free-stock-video/clip-50001/$", (500, "down"))]
+        with self.assertRaisesRegex(FF.FootageError, "newer Mixkit clips have no <id>-<size>.mp4 file .* could not be read"):
+            mixkit_get(self, "mixkit:50001", routes)
+
+    def test_search_resolve_reads_licence_size_and_previews(self):
+        h, t, _ = http(NEW_ROUTES)
+        plain = FF.run_search(h, DB, "leaf", ["mixkit"], 10, {})
+        r = {x["id"]: x for x in plain["results"]}
+        self.assertFalse(r["mixkit:50001"]["licence"]["verified"])
+        self.assertIn("size-from-thumbnail", r["mixkit:50001"]["flags"])
+        self.assertEqual(r["mixkit:50001"]["thumb_url"], "https://assets.mixkit.co/synththumbaaaaaaaaaaaaaaaa1")
+        self.assertEqual(r["mixkit:50002"]["preview_url"],
+                         "https://assets.mixkit.co/active_storage/video_items/50002/1721168872/50002-video-360.mp4")
+        self.assertEqual(r["mixkit:50002"]["file_url"],  # named from the card, not the <id>-720.mp4 template
+                         "https://assets.mixkit.co/active_storage/video_items/50002/1721168872/50002-video-720.mp4")
+        self.assertFalse([u for u in t.urls() if "free-stock-video/synthetic" in u or "clip-" in u])
+        with mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            FF.print_results(plain)
+        self.assertIn("~1280x720", so.getvalue())
+        self.assertIn("--resolve reads each clip page", so.getvalue())
+        h, t, _ = http(NEW_ROUTES)
+        rep = FF.run_search(h, DB, "leaf", ["mixkit"], 10, {"resolve": True})
+        r = {x["id"]: x for x in rep["results"]}
+        self.assertTrue(all(x["licence"]["verified"] for x in r.values()))
+        self.assertEqual((r["mixkit:50001"]["width"], r["mixkit:50001"]["height"], r["mixkit:50001"]["quality"]),
+                         (4096, 2160, 2160))
+        self.assertNotIn("size-from-thumbnail", r["mixkit:50001"]["flags"])
+        self.assertEqual(r["mixkit:50001"]["bytes"], round(58.21 * 1048576))
+        self.assertEqual(len([u for u in t.urls() if "free-stock-video/synthetic" in u]), 3)
+        self.assertEqual(rep["filters"], {"resolve": True})
+        h, t, _ = http(NEW_ROUTES)
+        FF.run_search(h, DB, "leaf", ["mixkit"], 1, {"resolve": True})
+        self.assertEqual(len([u for u in t.urls() if "free-stock-video/synthetic" in u]), 1)  # stops once 1 is kept
+
+    def test_match_and_no_people(self):
+        h, _, _ = http(NEW_ROUTES)
+        rep = FF.run_search(h, DB, "leaf", ["mixkit"], 10, {"match": "any", "no_people": True})
+        self.assertEqual([r["id"] for r in rep["results"]], ["mixkit:50001"])
+        self.assertEqual(rep["results"][0]["relevance"], 1.0)
+        self.assertEqual(rep["sources"]["mixkit"]["dropped"], {"title matches no query word (--match any)": 1,
+                                                               "people named in the title (--no-people)": 1})
+
+
+class RelevanceTest(unittest.TestCase):
+    """`search "seedling" --sources mixkit` returned 'Woman sending messages on Whatsapp' and 'Two cars speeding'."""
+
+    def test_title_relevance(self):
+        rel = lambda title, q, **kw: FF.relevance({"title": title, **kw}, q)  # noqa: E731
+        self.assertEqual(rel("Woman sending messages on Whatsapp", "seedling"), 0)
+        self.assertEqual(rel("Two cars speeding", "seedling"), 0)
+        self.assertEqual(rel("Seedlings growing in soil", "seedling"), 1.0)
+        self.assertEqual(rel("Cloud time-lapse over hills", "cloud timelapse"), 1.0)
+        self.assertEqual(rel("Timelapse of clouds", "time lapse clouds"), 1.0)
+        self.assertEqual(rel("Red sunset over the ocean", "sun rays clouds"), 0)
+        self.assertEqual(rel("Rain on a window", "heavy rain"), 0.5)
+        self.assertEqual(rel("Orbit", "aurora", native={"keywords": ["Aurora", "ISS"]}), 1.0)
+        self.assertEqual(FF.query_terms("the video of rain"), ["rain"])
+        self.assertIsNone(rel("x", ""))
+        rec = {"title": "Rain on a window", "licence": {}, "flags": []}
+        self.assertIsNone(FF.keep(rec, {"match": "any", "query": "heavy rain"}))
+        self.assertEqual(FF.keep(rec, {"match": "all", "query": "heavy rain"}), "title misses a query word (--match all)")
+
+    def test_people_words(self):
+        self.assertEqual(FF.people_word({"title": "Couple walking on the beach"}), "couple")
+        self.assertEqual(FF.people_word({"title": "Hands planting a seedling"}), "hands")
+        self.assertEqual(FF.people_word({"title": "Scary woman seeing through the window"}), "woman")
+        self.assertIsNone(FF.people_word({"title": "Leaf in the rain"}))
+        self.assertIsNone(FF.people_word({"title": "Manta ray"}))  # whole words only
+
+
+class ChallengeTest(TempDirCase):
+    """The Mixkit download route sometimes answered a Cloudflare 'Just a moment...' page (HTML 200) that cleared
+    about 3 minutes later. It is reported, never worked around."""
+
+    def test_detects_the_interstitial(self):
+        self.assertTrue(FF.is_challenge_page(CHALLENGE.encode()))
+        self.assertTrue(FF.is_challenge_page(b"<html><head><title>Just a moment...</title></head></html>"))
+        self.assertFalse(FF.is_challenge_page(fixture("mixkit_clip_hashed.html").encode()))
+        self.assertFalse(FF.is_challenge_page(b""))
+
+    def test_a_challenged_route_is_reported_and_the_host_left_alone(self):
+        t = Transport([(r"mixkit\.co/free-stock-video/download/", CHALLENGE)] + NEW_ROUTES)
+        fake = lambda args: FF.Http(delay=0, transport=t, sleep=lambda s: None)  # noqa: E731
+        with mock.patch.object(FF, "make_http", fake), mock.patch.object(FF, "measure", return_value={}), \
+                mock.patch("sys.stdout", new_callable=io.StringIO), mock.patch("sys.stderr", new_callable=io.StringIO) as se:
+            rc = FF.main(["download", "mixkit:50001", "mixkit:50002", "--out", str(self.out),
+                          "--results", str(self.dir / "none.json")])
+        self.assertEqual(rc, 1)
+        err = se.getvalue()
+        self.assertIn('mixkit.co answered with a Cloudflare "Just a moment..." browser check', err)
+        self.assertIn("does not try to get past it", err)
+        self.assertIn("mixkit:50002\tFAILED", err)
+        self.assertIn("earlier in this run", err)
+        self.assertIn("2 target(s) not fetched: mixkit.co answered with a Cloudflare browser check", err)
+        self.assertEqual([u for u in t.urls() if urllib.parse.urlsplit(u).hostname == "mixkit.co"],
+                         ["https://mixkit.co/free-stock-video/clip-50001/",
+                          "https://mixkit.co/free-stock-video/download/50001/?context=sidebar&type=2160p"])
+        self.assertFalse(list(self.out.glob("*.mp4")) if self.out.exists() else [])
+
+    def test_retry_challenge_waits_once_then_asks_again(self):
+        answers = iter([CHALLENGE])
+        route = lambda req: next(answers, None) or modal(req)  # noqa: E731
+        sleeps = []
+        h = FF.Http(delay=0, transport=Transport([(r"/download/", route)]), sleep=sleeps.append, challenge_wait=180)
+        url = FF.mixkit_follow_route(h, "https://mixkit.co/free-stock-video/download/50001/?context=sidebar&type=1080p")
+        self.assertEqual(url, "https://assets.mixkit.co/synthhash1080bbbbbbbbbbbbbb")
+        self.assertEqual(sleeps, [180.0])
+        sleeps2 = []
+        h2 = FF.Http(delay=0, transport=Transport([(r".", CHALLENGE)]), sleep=sleeps2.append, challenge_wait=180)
+        with self.assertRaises(FF.ChallengeError):
+            h2.get_text("https://mixkit.co/free-stock-video/download/1/?type=720p")
+        with self.assertRaisesRegex(FF.ChallengeError, "earlier in this run"):
+            h2.get_text("https://mixkit.co/free-stock-video/clip-1/")
+        self.assertEqual(sleeps2, [180.0])  # waited once, then left the host alone
+        self.assertEqual(FF.Http(challenge_wait=5000).challenge_wait, FF.MAX_CHALLENGE_WAIT)
+
+    def test_header_challenge_search_and_probe(self):
+        hdr = (403, "<html></html>", {"cf-mitigated": "challenge"})
+        h, t, sleeps = http([(r"mixkit\.co", hdr)])
+        rep = FF.run_search(h, DB, "sea", ["mixkit"], 5, {})
+        st = rep["sources"]["mixkit"]
+        self.assertEqual((st["status"], st["challenge"]), ("error", True))
+        self.assertIn("browser check", st["detail"])
+        self.assertEqual((len(t.calls), sleeps), (1, []))  # no retry
+        h, _, _ = http([(r"mixkit\.co/free-stock-video/discover/", CHALLENGE)])
+        st = FF.run_search(h, DB, "sea", ["mixkit"], 5, {})["sources"]["mixkit"]
+        self.assertTrue(st["challenge"])
+        h, _, _ = http([(r"mixkit\.co", hdr)])
+        p = FF.run_probe(h, DB, ["mixkit"])["sources"][0]
+        self.assertEqual(p["status"], "blocked")
+        self.assertTrue(p["probes"][0]["challenge"])
+
+    def test_a_challenge_served_instead_of_a_file(self):
+        h, _, _ = http([(r"cdn\.example\.org", (200, CHALLENGE, {"Content-Type": "text/html"}))])
+        with self.assertRaises(FF.ChallengeError):
+            FF.fetch_file(h, "https://cdn.example.org/a.mp4", self.dir / "a.mp4", 10)
+        self.assertIn("cdn.example.org", h.challenged)
+        self.assertFalse(list(self.dir.glob("a.mp4*")))
+
+
+class RateLimitTest(TempDirCase):
+    """`search "rain"` printed a bare `# wikimedia error HTTP 429` (Retry-After 46 > 30), and the other sources'
+    results had to be found again."""
+
+    def cli(self, routes, *argv):
+        t, sleeps, real = Transport(routes), [], FF.make_http
+
+        def fake(args):
+            h = real(args)
+            h.transport, h.sleep = t, sleeps.append
+            return h
+        with mock.patch.object(FF, "make_http", fake), mock.patch.dict(os.environ, NO_KEYS), \
+                mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            rc = FF.main(list(argv))
+        return rc, so.getvalue(), t, sleeps
+
+    def test_search_summary_names_the_retry_after_and_keeps_the_rest(self):
+        save = self.dir / "r.json"
+        routes = [(r"commons\.wikimedia\.org", (429, "slow", {"Retry-After": "46"}))] + ROUTES
+        rc, out, _, sleeps = self.cli(routes, "search", "sea", "--sources", "wikimedia,coverr", "--delay", "0",
+                                      "--save", str(save))
+        self.assertEqual(rc, 0)
+        self.assertIn("Retry-After 46s is too long for --wait-429 30 (rerun with --wait-429 46", out)
+        data = json.loads(save.read_text(encoding="utf-8"))
+        self.assertEqual(data["sources"]["wikimedia"]["retry_after"], 46.0)
+        self.assertTrue(any(r["source"] == "coverr" for r in data["results"]))
+        self.assertEqual(sleeps, [])
+        answers = iter([(429, "slow", {"Retry-After": "46"})])
+        wiki = lambda req: next(answers, None) or (200, fixture("wikimedia_search.json"))  # noqa: E731
+        rc, out, _, sleeps = self.cli([(r"commons\.wikimedia\.org", wiki)] + ROUTES, "search", "sea", "--sources",
+                                      "wikimedia", "--delay", "0", "--wait-429", "60", "--save", str(save))
+        self.assertIn(46.0, sleeps)
+        self.assertEqual(json.loads(save.read_text(encoding="utf-8"))["sources"]["wikimedia"]["status"], "ok")
+
+    def test_the_summary_hint_after_one_wait(self):
+        h, _, sleeps = http([(r".", (429, "no", {"Retry-After": "3"}))])
+        with self.assertRaises(FF.HttpError) as cm:
+            h.get_json("https://commons.wikimedia.org/w/api.php?x=1")
+        self.assertIn("rate limited; Retry-After 3s (again after one wait)", str(cm.exception))
+        self.assertEqual((cm.exception.retry_after, sleeps), (3.0, [3.0]))
+        rep = {"sources": {"wikimedia": {"status": "error", "detail": str(cm.exception), "retry_after": 3.0}}, "results": []}
+        with mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            FF.print_results(rep)
+        self.assertIn("[Retry-After 3s: --wait-429 3 waits for it (at most 900), or search again later with "
+                      "--retry-failed]", so.getvalue())
+        h, _, _ = http([(r".", (429, "no", {"Retry-After": "3600"}))])
+        with self.assertRaisesRegex(FF.HttpError, r"longer than --wait-429 can wait \(900 s\): try later"):
+            h.get_json("https://upload.wikimedia.org/x.webm")
+        h, _, sleeps = http([(r".", (429, "no"))])  # no Retry-After and --wait-429 0: one short wait, then the error
+        h.max_retry_after = 0
+        with self.assertRaisesRegex(FF.HttpError, r"HTTP 429 .*: rate limited \(again after one wait\)$"):
+            h.get_json("https://commons.wikimedia.org/w/api.php")
+        self.assertEqual(sleeps, [2.0])
+
+    def test_wait_429_is_bounded(self):
+        with mock.patch("sys.stderr", new_callable=io.StringIO) as se, self.assertRaises(SystemExit) as cm:
+            FF.build_parser().parse_args(["search", "x", "--wait-429", "1000"])
+        self.assertEqual(cm.exception.code, 2)
+        self.assertIn("between 0 and 900 seconds", se.getvalue())
+        self.assertEqual(FF.Http(max_retry_after=5000).max_retry_after, FF.MAX_WAIT_429)
+
+    def test_retry_after_as_a_date(self):
+        when = email.utils.format_datetime(datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(seconds=120))
+        self.assertTrue(100 <= FF._seconds(when) <= 121)
+        self.assertEqual(FF._seconds("7"), 7.0)
+        self.assertIsNone(FF._seconds("soon"))
+
+    def test_retry_failed_asks_only_the_sources_that_failed(self):
+        save = self.dir / "r.json"
+        self.cli([(r"commons\.wikimedia\.org", (429, "slow", {"Retry-After": "600"}))] + ROUTES,
+                 "search", "sea", "--sources", "wikimedia,coverr", "--delay", "0", "--save", str(save))
+        rc, out, t, _ = self.cli(ROUTES, "search", "sea", "--sources", "wikimedia,coverr", "--delay", "0",
+                                 "--retry-failed", "--save", str(save))
+        self.assertEqual(rc, 0)
+        self.assertFalse([u for u in t.urls() if "coverr.co" in u])  # coverr answered last time
+        data = json.loads(save.read_text(encoding="utf-8"))
+        self.assertEqual(data["sources"]["coverr"]["status"], "cached")
+        self.assertEqual(data["sources"]["wikimedia"]["status"], "ok")
+        ids = {r["id"].split(":")[0] for r in data["results"]}
+        self.assertEqual(ids, {"coverr", "wikimedia"})
+        self.assertEqual(len(data["searches"]), 2)
+        self.assertIn("coverr     cached", out)
+        rc, out, t, _ = self.cli(ROUTES, "search", "sea", "--sources", "wikimedia,coverr", "--retry-failed",
+                                 "--save", str(save))
+        self.assertEqual((rc, t.calls), (0, []))  # both answered now: nothing is asked again
+        self.assertIn("nothing was asked again", out)
+
+
+class Archive5xxTest(TempDirCase):
+    """`download archive:Flickr-8633486122` failed once with HTTP 500 from a data node and worked on a retry."""
+
+    def test_one_retry_on_a_data_node_500(self):
+        calls = []
+
+        def node(req):
+            calls.append(req.full_url)
+            if len(calls) == 1:  # urllib followed the redirect to the data node, which answered 500
+                raise urllib.error.HTTPError("https://dn000000.ca.archive.org/0/items/synthetic-coast-film/x.mov", 500,
+                                             "Internal Server Error", email.message.Message(), io.BytesIO(b""))
+            return OK_MP4
+        h, _, sleeps = http([(r"archive\.org/download", node)] + ROUTES)
+        with mock.patch.object(FF, "measure", return_value={}):
+            r = FF.download_one(h, DB, "archive:synthetic-coast-film", self.out,
+                                {"results": self.dir / "none.json", "max_mb": 300})
+        self.assertEqual((len(calls), len(sleeps)), (2, 1))
+        self.assertTrue((self.out / r["file"]).is_file())
+        h, t, _ = http([(r".", (500, "x"))])
+        with self.assertRaisesRegex(FF.HttpError, "server error, again after one retry"):
+            h.get_text("https://archive.org/download/a/b.mov")
+        self.assertEqual(len(t.calls), 2)
+        h, t, _ = http([(r".", (500, "x"))])
+        with self.assertRaises(FF.HttpError):
+            h.get_text("https://example.org/x")
+        self.assertEqual(len(t.calls), 1)  # elsewhere a 500 is not retried
+
+
+def suspicious_meta(req):
+    ident = urllib.parse.unquote(req.full_url.rsplit("/", 1)[-1])
+    docs = {d["identifier"]: d for d in json.loads(fixture("archive_search_suspicious.json"))["response"]["docs"]}
+    meta = json.loads(fixture("archive_meta.json"))
+    doc = docs.get(ident, {})
+    meta["metadata"].update(identifier=ident, licenseurl=doc.get("licenseurl"), title=doc.get("title", ident))
+    return (200, json.dumps(meta), {})
+
+
+SUSPICIOUS_ROUTES = [(r"archive\.org/advancedsearch\.php", fixture("archive_search_suspicious.json")),
+                     (r"archive\.org/metadata/", suspicious_meta)]
+
+
+class ArchiveSuspiciousTest(TempDirCase):
+    """`search "heavy rain"` kept 'Prince - Musicology (Official Music Video)' as CC BY 4.0 | commercial ok."""
+    BAD = ("archive:youtube-SYNTHabc123", "archive:y-2mate.so-top-20-synthetic-moments-of-a-game",
+           "archive:synthetic-whale-movie-music-video-1993-hd-vhs-rip")
+
+    def test_patterns(self):
+        s = FF.archive_licence_suspicion
+        self.assertEqual(s("youtube-zILabWVdIMs", "Prince - Musicology (Official Music Video)"), "YouTube re-upload")
+        self.assertEqual(s("y-2mate.so-top-20-satisfying-deaths-of-hated-video-game-characters", ""), "downloader rip")
+        self.assertEqual(s("free-willy-movie-michael-jackson-purple-rain-music-video-1993-hd-vhs-rip", ""), "music video")
+        self.assertEqual(s("some-show", "Some Show S01E02 full episode"), "film or TV rip")
+        self.assertIsNone(s("Flickr-8633486122", "Lettuce emerging"))
+        self.assertIsNone(s("duck_and_cover_1951", "Duck and Cover (1951)"))
+        self.assertIsNone(s("home-movies-1950s", "Home movies of a garden"))  # "movies" is not "movie"
+
+    def test_search_flags_them_and_commercial_drops_them(self):
+        h, _, _ = http(SUSPICIOUS_ROUTES)
+        rep = FF.run_search(h, DB, "rain", ["archive"], 10, {})
+        by = {r["id"]: r for r in rep["results"]}
+        for rid in self.BAD:
+            lic = by[rid]["licence"]
+            self.assertIn("suspicious-licence", by[rid]["flags"], rid)
+            self.assertIsNone(lic["commercial"], rid)
+            self.assertFalse(lic["verified"], rid)
+            self.assertIn("uploader's licence claim", lic["note"])
+        ok = by["archive:Flickr-0000000001"]
+        self.assertIs(ok["licence"]["commercial"], True)
+        self.assertEqual(ok["flags"], ["uploader-licence"])
+        self.assertIn("trust the uploader?", ok["licence"]["note"])
+        self.assertEqual(ok["thumb_url"], "https://archive.org/services/img/Flickr-0000000001")
+        self.assertTrue(any("3 look like music videos" in w for w in rep["warnings"]))
+        with mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            FF.print_results(rep)
+        self.assertIn("CC BY 4.0 SUSPICIOUS (uploader's claim) | commercial ?", so.getvalue())
+        self.assertIn("CC BY 2.0 (uploader's claim) | commercial ok", so.getvalue())
+        h, _, _ = http(SUSPICIOUS_ROUTES)
+        rep = FF.run_search(h, DB, "rain", ["archive"], 10, {"commercial": True})
+        self.assertEqual([r["id"] for r in rep["results"]], ["archive:Flickr-0000000001"])
+        self.assertEqual(rep["sources"]["archive"]["dropped"], {"suspicious uploader licence (music video, film or rip)": 3})
+
+    def test_download_with_commercial_refuses_them(self):
+        h, _, _ = http([(r"archive\.org/download", OK_MP4)] + SUSPICIOUS_ROUTES)
+        with self.assertRaisesRegex(FF.FootageError, "suspicious uploader licence"):
+            FF.download_one(h, DB, "archive:youtube-SYNTHabc123", self.out,
+                            {"results": self.dir / "none.json", "max_mb": 300, "commercial": True})
+
+
+class DropReasonTest(unittest.TestCase):
+    """`dropped: 22 commercial use not allowed or not confirmed` did not separate Restricted from unread."""
+
+    def test_counts_say_why(self):
+        h, _, _ = http(ROUTES)
+        rep = FF.run_search(h, DB, "sea", ["mixkit"], 10, {"commercial": True})
+        self.assertEqual(rep["sources"]["mixkit"]["dropped"], {"Mixkit Restricted (personal use only)": 1})
+        h, _, _ = http([(r"synthetic-night-walk", (500, "down"))] + ROUTES)
+        rep = FF.run_search(h, DB, "sea", ["mixkit"], 10, {"commercial": True})
+        self.assertEqual(rep["sources"]["mixkit"]["dropped"], {"Mixkit licence not read (the clip page did not answer)": 1})
+        nc = {"licence": FF.classify_licence(None, "https://creativecommons.org/licenses/by-nc/4.0/"), "flags": []}
+        self.assertEqual(FF.keep(nc, {"commercial": True}), "non-commercial licence")
+        odd = {"licence": FF.classify_licence(None, "http://creativecommons.org/licenses/sampling+/1.0/"), "flags": []}
+        self.assertEqual(FF.keep(odd, {"commercial": True}), "commercial use not confirmed")
+
+
+class ResultsMergeTest(TempDirCase):
+    """Each search overwrote last_search.json, so ids from earlier searches no longer resolved."""
+
+    def search(self, *argv):
+        fake = lambda args: FF.Http(delay=0, transport=Transport(ROUTES), sleep=lambda s: None)  # noqa: E731
+        with mock.patch.object(FF, "make_http", fake), mock.patch.dict(os.environ, NO_KEYS), \
+                mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            self.assertEqual(FF.main(["search", *argv, "--save", str(self.dir / "last.json")]), 0)
+        return json.loads((self.dir / "last.json").read_text(encoding="utf-8")), so.getvalue()
+
+    def test_searches_merge_by_id(self):
+        self.search("sea", "--sources", "coverr")
+        data, out = self.search("night", "--sources", "wikimedia")
+        self.assertEqual(data["query"], "night")  # the top level is the newest search, as before
+        self.assertTrue(data["results"][0]["id"].startswith("wikimedia:"))
+        self.assertEqual({r["id"].split(":")[0] for r in data["results"]}, {"coverr", "wikimedia"})
+        self.assertEqual([s["query"] for s in data["searches"]], ["sea", "night"])
+        self.assertIsNotNone(FF.pick_from_results(self.dir / "last.json", "coverr:AAAA111111"))
+        self.assertIn("from earlier searches: 2 searches in the file", out)
+        data, _ = self.search("sea", "--sources", "coverr", "--replace")
+        self.assertEqual({r["id"].split(":")[0] for r in data["results"]}, {"coverr"})
+        self.assertEqual(len(data["searches"]), 1)
+
+    def test_an_older_file_and_a_read_mixkit_licence(self):
+        old = {"schema": FF.RESULTS_SCHEMA, "query": "a", "searched_at": "2026-10-28T00:00:00Z", "sources": {},
+               "results": [{"id": "mixkit:1", "source": "mixkit", "licence": {"name": FF.MIXKIT_FREE, "verified": True},
+                            "query": "a"}, {"id": "nasa:x", "source": "nasa", "licence": {}, "query": "a"}]}
+        new = {"schema": FF.RESULTS_SCHEMA, "query": "b", "sources": {},
+               "results": [{"id": "mixkit:1", "source": "mixkit", "licence": {"verified": False}, "query": "b"}]}
+        m = FF.merge_results(old, new)
+        self.assertEqual([r["id"] for r in m["results"]], ["mixkit:1", "nasa:x"])
+        self.assertEqual((m["results"][0]["licence"]["name"], m["results"][0]["query"]), (FF.MIXKIT_FREE, "b"))
+        self.assertEqual([s["query"] for s in m["searches"]], ["a", "b"])  # a file without history gets one
+
+
+class SizesAndCapsTest(TempDirCase):
+    """`download mixkit:2066 --dry-run` did not say it would take 2160p at 68 MB, and there was no --quality."""
+
+    def setUp(self):
+        super().setUp()
+        h, _, _ = http(ROUTES)
+        with mock.patch.dict(os.environ, NO_KEYS):
+            rep = FF.run_search(h, DB, "sea", ["wikimedia", "archive", "nasa", "coverr"], 10, {"allow_nd": True})
+        rep["results"] += FF.parse_pexels(DB, json.loads(fixture("pexels_search.json")))
+        rep["results"] += FF.parse_pixabay(DB, json.loads(fixture("pixabay_search.json")))
+        self.results = self.dir / "r.json"
+        self.results.write_text(json.dumps(rep), encoding="utf-8")
+
+    def get(self, rid, routes, **opts):
+        h, t, _ = http(list(routes) + ROUTES)
+        with mock.patch.object(FF, "measure", return_value={}):
+            r = FF.download_one(h, DB, rid, self.out, {"results": self.results, "max_mb": 300, **opts})
+        side = None if r.get("dry_run") else json.loads(FF.sidecar_for(self.out / r["file"]).read_text(encoding="utf-8"))
+        return r, side, t
+
+    def test_dry_run_listed_sizes_and_head(self):
+        r, _, t = self.get("wikimedia:9000002", [], dry_run=True)
+        self.assertEqual((r["quality"], r["width"], r["height"], r["bytes"], r["size_from"]),
+                         (1080, 1080, 1920, 4200000, "listed by the source"))
+        self.assertEqual(t.calls, [])
+        heads = [(r"~orig\.mp4", NO_FILE), (r"~large\.mp4", (200, b"", {"Content-Length": str(80 * 1048576)}))]
+        r, _, t = self.get("nasa:SYNTH_20260101_Ocean_Orbit", heads, dry_run=True)
+        self.assertTrue(r["file_url"].endswith("~large.mp4"))
+        self.assertEqual((r["bytes"], r["size_from"]), (80 * 1048576, "HEAD"))
+        self.assertIn("80.0 MB (HEAD)", FF._dry_text(r))
+        big = [(r"~(orig|large|medium)\.mp4", (200, b"", {"Content-Length": str(80 * 1048576)}))]
+        r, _, t = self.get("nasa:SYNTH_20260101_Ocean_Orbit", big, dry_run=True, max_mb=50)
+        self.assertEqual(len(t.calls), 3)  # each variant asked once, the smallest reported
+        self.assertTrue(r["file_url"].endswith("~medium.mp4"))
+        self.assertTrue(r["over_max_mb"])  # every variant is over the cap: said, not hidden
+        self.assertIn("OVER --max-mb", FF._dry_text(r))
+
+    def test_quality_and_max_height(self):
+        ok = [(r"videos\.pexels\.com|cdn\.pixabay\.com|archive\.org/download", OK_MP4)]
+        _, side, t = self.get("pexels:1000001", ok, max_quality=1080)
+        self.assertTrue(side["result"]["file_url"].endswith("1000001-hd_1080_1920_25fps.mp4"))
+        self.assertEqual((side["result"]["width"], side["result"]["height"], side["result"]["quality"]), (1080, 1920, 1080))
+        self.assertNotIn("smaller-variant", side["result"]["flags"])
+        shutil.rmtree(self.out)
+        _, side, _ = self.get("pexels:1000001", ok, max_height=1280)
+        self.assertTrue(side["result"]["file_url"].endswith("sd_360_640_25fps.mp4"))
+        _, side, _ = self.get("pixabay:2000001", ok, max_quality=540)
+        self.assertTrue(side["result"]["file_url"].endswith("2000001-small.mp4"))
+        _, side, t = self.get("archive:synthetic-coast-film", ok, max_quality=360)
+        self.assertTrue(side["result"]["file_url"].endswith("Coast%20Film%20Original.mp4"))  # 640x360, not the .mov
+        with self.assertRaisesRegex(FF.FootageError, r"its file is 1920x3412, over --quality 1080 \(Coverr offers no smaller"):
+            self.get("coverr:BBBB222222", [], max_quality=1080)
+        r, _, _ = self.get("nasa:SYNTH_20260101_Ocean_Orbit", [(r"~orig\.mp4", OK_MP4)], max_quality=1080)
+        self.assertIn("--quality 1080 not checked", r["note"])
+
+    def test_full_range_quicktime_is_flagged_in_the_sidecar(self):
+        m = {"width": 1920, "height": 1080, "codec": "mjpeg", "pix_fmt": "yuvj420p", "color_range": "pc",
+             "container": "mov,mp4,m4a,3gp,3g2,mj2"}
+        h, _, _ = http([(r"archive\.org/download", OK_MP4)] + ROUTES)
+        with mock.patch.object(FF, "measure", return_value=m):
+            r = FF.download_one(h, DB, "archive:synthetic-coast-film", self.out, {"results": self.results, "max_mb": 300})
+        side = json.loads(FF.sidecar_for(self.out / r["file"]).read_text(encoding="utf-8"))
+        self.assertTrue(r["file"].endswith(".mov"))
+        self.assertIn("full-range", side["result"]["flags"])
+        self.assertIn("full-range QuickTime video (yuvj420p, color_range pc)", side["warnings"][0])
+        self.assertIn("scale=in_range=pc:out_range=tv", side["warnings"][0])
+        self.assertEqual(r["warnings"], side["warnings"])
+        self.assertEqual(FF.range_warnings({"pix_fmt": "yuv420p", "color_range": "tv"}, "a.mp4"), [])
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "needs ffmpeg")
+    def test_measure_reads_the_pixel_format_and_range(self):
+        src = self.dir / "fr.mov"
+        made = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-f", "lavfi", "-i", "testsrc=duration=1:size=160x90:rate=5",
+                               "-c:v", "mjpeg", "-pix_fmt", "yuvj420p", str(src)], capture_output=True, timeout=60)
+        if made.returncode:
+            self.skipTest("this ffmpeg cannot write mjpeg")
+        m = FF.measure(src)
+        self.assertEqual(m.get("pix_fmt"), "yuvj420p")
+        self.assertTrue(FF.range_warnings(m, src.name))
+
+
+class CreditsPathTest(unittest.TestCase):
+    """ATTRIBUTION.md said `run python3 scripts/free_footage.py credits <this folder>`, which fails from the root."""
+
+    def test_the_header_names_a_path_that_works_from_the_repo_root(self):
+        with tempfile.TemporaryDirectory() as d:
+            text = FF.credits_markdown(Path(d))
+        m = re.search(r"run `python3 (\S+) credits <this folder>` from the repository root", text)
+        self.assertIsNotNone(m, text[:300])
+        self.assertTrue((SK.parents[2] / m.group(1)).is_file())
+        self.assertNotIn("`python3 scripts/free_footage.py", text)
+
+
+JPEG = b"\xff\xd8\xff\xe0\x00\x10JFIF\x00" + b"\x00" * 200
+
+
+class PreviewTest(TempDirCase):
+    """No thumbnail or preview links were recorded, so clips could not be screened for people or text first."""
+
+    def setUp(self):
+        super().setUp()
+        lic = FF.source_licence("coverr", FF.sources_by_id(DB)["coverr"])
+        mk = lambda nid, **kw: FF.make_result(DB, "coverr", nid, title=kw.pop("title", f"Clip {nid}"),  # noqa: E731
+                                              page_url=f"https://coverr.co/videos/{nid}",
+                                              file_url=f"https://cdn.example.org/{nid}.mp4", licence=lic,
+                                              width=1920, height=1080, **kw)
+        recs = [mk("A1", title='Rain & "leaf" <x', thumb_url="https://img.example.org/a.jpg"),
+                mk("B1", thumb_url="https://img.example.org/b.jpg"), mk("C1"),
+                mk("D1", preview_url="https://cdn.example.org/d-360p.mp4")]
+        self.results = self.dir / "r.json"
+        self.results.write_text(json.dumps({"schema": FF.RESULTS_SCHEMA, "query": "rain", "results": recs}), encoding="utf-8")
+
+    def routes(self, extra=()):
+        return list(extra) + [(r"img\.example\.org/a\.jpg", (200, JPEG, {"Content-Type": "image/jpeg"})),
+                              (r"img\.example\.org/b\.jpg", (200, "<html>no</html>", {"Content-Type": "text/html"}))]
+
+    def test_html_sheet_without_ffmpeg(self):
+        h, t, _ = http(self.routes())
+        with mock.patch.object(FF.shutil, "which", return_value=None):
+            s = FF.build_preview(h, FF.preview_items(self.results), self.dir / "pv")
+        rows = {r["id"]: r for r in s["items"]}
+        self.assertEqual(rows["coverr:A1"]["from"], "thumbnail")
+        self.assertEqual((self.dir / "pv" / rows["coverr:A1"]["image"]).read_bytes(), JPEG)
+        self.assertIn("did not answer with an image", rows["coverr:B1"]["errors"][0])
+        self.assertIsNone(rows["coverr:C1"]["image"])
+        self.assertIsNone(rows["coverr:D1"]["image"])  # its preview video needs ffmpeg
+        self.assertIsNone(s["jpg"])
+        html = (self.dir / "pv" / "contact_sheet.html").read_text(encoding="utf-8")
+        self.assertIn("Rain &amp; &quot;leaf&quot; &lt;x", html)
+        self.assertNotIn('"leaf" <x', html)
+        self.assertFalse([u for u in t.urls() if "cdn.example.org" in u])  # never a clip
+        self.assertEqual(json.loads((self.dir / "pv" / "contact_sheet.json").read_text(encoding="utf-8"))["schema"],
+                         "kosif.free_footage.preview.v1")
+        self.assertEqual([r[0]["id"] for r in FF.preview_items(self.results, ids=["coverr:C1"])], ["coverr:C1"])
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "needs ffmpeg")
+    def test_jpg_sheet_and_strips_with_ffmpeg(self):
+        jpg, mp4 = self.dir / "a.jpg", self.dir / "d.mp4"
+        for args in (["-f", "lavfi", "-i", "color=c=red:s=640x360", "-frames:v", "1", str(jpg)],
+                     ["-f", "lavfi", "-i", "testsrc=duration=3:size=320x180:rate=10", "-pix_fmt", "yuv420p", str(mp4)]):
+            subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", *args], check=True, capture_output=True, timeout=60)
+        routes = self.routes([(r"img\.example\.org/a\.jpg", (200, jpg.read_bytes(), {"Content-Type": "image/jpeg"})),
+                              (r"cdn\.example\.org/d-360p\.mp4", (200, mp4.read_bytes(), {"Content-Type": "video/mp4"}))])
+        h, t, _ = http(routes)
+        s = FF.build_preview(h, FF.preview_items(self.results), self.dir / "pv")
+        rows = {r["id"]: r for r in s["items"]}
+        self.assertEqual((rows["coverr:A1"]["from"], rows["coverr:D1"]["from"]), ("thumbnail", "preview video"))
+        self.assertEqual(s["jpg"], "contact_sheet.jpg")
+        sheet = FF.measure(self.dir / "pv" / "contact_sheet.jpg")
+        self.assertEqual((sheet.get("width"), sheet.get("height")), (4 * 320 + 3 * 4 + 2 * 4, 180 + 2 * 4))
+        self.assertFalse(list((self.dir / "pv").rglob("*.preview.mp4")))  # the preview file is deleted after use
+        self.assertFalse((self.dir / "pv" / "cells").exists())
+        h, _, _ = http(routes)
+        s3 = FF.build_preview(h, FF.preview_items(self.results, ids=["coverr:D1"]), self.dir / "pv3", frames=3)
+        strip = FF.measure(self.dir / "pv3" / s3["items"][0]["image"])
+        self.assertEqual((strip.get("width"), strip.get("height")), (960, 180))
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "needs ffmpeg")
+    def test_thumbnails_in_mixed_pixel_formats_all_reach_the_sheet(self):
+        # live 2026-10-29: Archive thumbnails came as yuvj420p and yuvj422p; the format change restarted ffmpeg's
+        # tile filter and a 6-cell sheet showed only cells 5 and 6
+        imgs = {}
+        for name, colour, fmt in (("a", "red", "yuvj420p"), ("b", "blue", "yuvj422p"), ("c", "green", "yuvj420p")):
+            p = self.dir / f"{name}.jpg"
+            subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "lavfi", "-i", f"color=c={colour}:s=640x360",
+                            "-frames:v", "1", "-pix_fmt", fmt, str(p)], check=True, capture_output=True, timeout=60)
+            imgs[name] = p.read_bytes()
+        lic = FF.source_licence("coverr", FF.sources_by_id(DB)["coverr"])
+        recs = [FF.make_result(DB, "coverr", k, title=k, page_url=f"https://coverr.co/videos/{k}", file_url="https://x/y.mp4",
+                               licence=lic, thumb_url=f"https://img.example.org/{k}.jpg") for k in imgs]
+        items = [(r, None) for r in recs]
+        h, _, _ = http([(rf"img\.example\.org/{k}\.jpg", (200, v, {"Content-Type": "image/jpeg"})) for k, v in imgs.items()])
+        s = FF.build_preview(h, items, self.dir / "pv")
+        raw = subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-i", str(self.dir / "pv" / s["jpg"]), "-f", "rawvideo",
+                              "-pix_fmt", "rgb24", "-"], check=True, capture_output=True, timeout=60).stdout
+        width = 4 * 320 + 3 * 4 + 2 * 4
+
+        def pixel(cell):
+            x, y = 4 + cell * (320 + 4) + 160, 4 + 90
+            return tuple(raw[(y * width + x) * 3:(y * width + x) * 3 + 3])
+        r, g, b = pixel(0)
+        self.assertTrue(r > 200 and g < 60 and b < 60, pixel(0))
+        r, g, b = pixel(1)
+        self.assertTrue(b > 200 and r < 60 and g < 60, pixel(1))
+        r, g, b = pixel(2)
+        self.assertTrue(g > 90 and r < 60 and b < 60, pixel(2))
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"), "needs ffmpeg")
+    def test_a_folder_of_downloads_uses_the_local_clips(self):
+        self.out.mkdir()
+        clip = self.out / "coverr-A1.mp4"
+        subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-f", "lavfi", "-i",
+                        "testsrc=duration=2:size=320x180:rate=10", "-pix_fmt", "yuv420p", str(clip)],
+                       check=True, capture_output=True, timeout=60)
+        rec = json.loads(self.results.read_text(encoding="utf-8"))["results"][0]
+        FF.sidecar_for(clip).write_text(json.dumps({"schema": FF.ASSET_SCHEMA, "file": clip.name, "result": rec,
+                                                    "licence": rec["licence"]}), encoding="utf-8")
+        fake = lambda args: FF.Http(delay=0, transport=Transport([]), sleep=lambda s: None)  # noqa: E731
+        with mock.patch.object(FF, "make_http", fake), mock.patch("sys.stdout", new_callable=io.StringIO) as so:
+            self.assertEqual(FF.main(["preview", str(self.out)]), 0)
+        data = json.loads((self.out / "preview" / "contact_sheet.json").read_text(encoding="utf-8"))
+        self.assertEqual(data["items"][0]["from"], "the downloaded clip")
+        self.assertIn("# contact sheet:", so.getvalue())
+
+
+class ThumbAndPreviewFieldsTest(unittest.TestCase):
+    def test_every_adapter_records_them(self):
+        cv, _ = FF.parse_coverr(DB, fixture("coverr_search.html"))
+        self.assertEqual(cv[0]["preview_url"], "https://cdn.coverr.co/videos/coverr-synthetic-calm-waves-1111/360p.mp4")
+        self.assertEqual(cv[1]["preview_url"], "https://cdn.coverr.co/videos/coverr-synthetic-waves-near-the-coast-2222/360p.mp4")
+        px = FF.parse_pexels(DB, json.loads(fixture("pexels_search.json")))[0]
+        self.assertEqual(px["thumb_url"], "https://images.pexels.com/videos/1000001/synthetic.jpeg")
+        self.assertTrue(px["preview_url"].endswith("sd_360_640_25fps.mp4"))
+        self.assertEqual([v["quality"] for v in px["variants"]], [2160, 1080, 360])
+        pb = FF.parse_pixabay(DB, json.loads(fixture("pixabay_search.json")))[0]
+        self.assertTrue(pb["thumb_url"].endswith("2000001-medium.jpg"))
+        self.assertTrue(pb["preview_url"].endswith("2000001-tiny.mp4"))
+        self.assertEqual([(v["width"], v["bytes"]) for v in pb["variants"]], [(1280, 5242880), (960, 2621440), (640, 1048576)])
+        asset = json.loads(fixture("nasa_asset.json"))
+        doc = FF.parse_nasa_search(json.loads(fixture("nasa_search.json")))[0]
+        vids, _ = FF.nasa_variants(asset)
+        nasa = FF.nasa_result(DB, doc, vids[0], alternates=vids, preview=FF.nasa_preview(asset))
+        self.assertTrue(nasa["thumb_url"].endswith("~large.jpg"))
+        self.assertTrue(nasa["preview_url"].startswith("https://") and nasa["preview_url"].endswith("~preview.mp4"))
+        arch = FF.archive_result(DB, {"identifier": "synthetic-coast-film"}, json.loads(fixture("archive_meta.json")))
+        self.assertEqual(arch["thumb_url"], "https://archive.org/services/img/synthetic-coast-film")
+        wm = json.loads(fixture("wikimedia_search.json"))
+        wm["query"]["pages"][0]["imageinfo"][0]["thumburl"] = \
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H.webm/480px--H.webm.jpg?utm_source=x"
+        w = {r["id"]: r for r in FF.parse_wikimedia(DB, wm)}
+        self.assertEqual(w["wikimedia:9000002"]["thumb_url"],
+                         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/H.webm/480px--H.webm.jpg")
+        self.assertIsNone(w["wikimedia:9000001"]["thumb_url"])
+        self.assertIn("iiurlwidth=480", FF.commons_search_url("sea", 5))
+        mk = FF.parse_mixkit(DB, fixture("mixkit_discover.html"))[0]
+        self.assertEqual(mk["thumb_url"], "https://assets.mixkit.co/videos/40001/40001-thumb-360-0.jpg")
+        for rec in (cv[2], px, pb, nasa, arch, mk):
+            self.assertIn("thumb_url", rec)
+            self.assertIn("preview_url", rec)
+
+    def test_cli_help_lists_the_new_options(self):
+        run = lambda *a: subprocess.run([sys.executable, str(SCRIPT), *a], capture_output=True, text=True, timeout=60)  # noqa: E731
+        self.assertIn("preview", run("--help").stdout)
+        self.assertEqual(run("preview", "--help").returncode, 0)
+        search = run("search", "--help").stdout
+        for opt in ("--resolve", "--match", "--no-people", "--retry-failed", "--replace", "--wait-429",
+                    "--retry-challenge"):
+            self.assertIn(opt, search)
+        self.assertIn("reads each Mixkit clip page", search)
+        download = run("download", "--help").stdout
+        for opt in ("--quality", "--max-height", "--wait-429", "--retry-challenge"):
+            self.assertIn(opt, download)
 
 
 if __name__ == "__main__":

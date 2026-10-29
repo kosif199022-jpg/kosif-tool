@@ -11,12 +11,17 @@ Subcommands:
           live reachability check of every source's probe URLs, with the URL each one lands on after redirects
           (a site now served from another domain is "moved"); writes <out>/probe-<YYYYMMDD>.json (network)
   search  QUERY [--sources a,b] [--min-height N] [--orientation portrait] [--limit N] [--commercial] [--no-ai]
+          [--resolve] [--match any|all] [--no-people] [--wait-429 S] [--retry-failed] [--replace]
           key-less APIs (Wikimedia Commons, Internet Archive, NASA), Pexels/Pixabay when PEXELS_API_KEY /
-          PIXABAY_API_KEY are in the environment, and the Mixkit and Coverr search pages; saves the results to
-          out/free-footage/last_search.json (network)
-  download TARGET... --out DIR
-          a result id from the last search (wikimedia:81916645) or a page/file URL; saves the file, a sidecar
-          <file>.json with licence and attribution, and rebuilds <out>/ATTRIBUTION.md (network)
+          PIXABAY_API_KEY are in the environment, and the Mixkit and Coverr search pages; merges the results by id
+          into out/free-footage/last_search.json, so ids from earlier searches still download (network)
+  download TARGET... --out DIR [--quality 1080] [--max-height N] [--max-mb MB] [--dry-run]
+          a result id from the results file (wikimedia:81916645) or a page/file URL; saves the file, a sidecar
+          <file>.json with licence and attribution, and rebuilds <out>/ATTRIBUTION.md; --dry-run prints the size,
+          resolution and file size it would fetch (network)
+  preview RESULTS.json|DIR [--out DIR] [--frames N]
+          a contact sheet (HTML, plus a JPG when ffmpeg is installed) from each result's thumbnail or small preview
+          file, or from the clips already in DIR, to screen for people and text before downloading full files (network)
   credits DIR
           rebuild DIR/ATTRIBUTION.md from the sidecars (offline)
 
@@ -24,21 +29,27 @@ Licences come from what each source declares (Commons extmetadata, the Archive's
 notice, the Coverr and Pexels/Pixabay licences, NASA's media guidelines). The tool records them; it does not grant
 them. ND licences are dropped by default (a montage is an adaptation); NC and Mixkit "Restricted" clips are kept but
 marked commercial=false, and --commercial drops them, as it drops the retired CC Sampling, Sampling+ and Developing
-Nations licences (recorded unverified, credit required). Mixkit Free clips download at 2160p, else 1080p; Restricted
-clips at 720p only. Pinterest is never downloaded: it is not a licence source.
+Nations licences (recorded unverified, credit required). An Archive licence is the uploader's own claim; one on what
+looks like a music video, a film or TV rip or a YouTube re-upload is flagged suspicious-licence (unverified,
+commercial unknown). Mixkit Free clips download at their largest listed size (2160p, else 1080p), Restricted clips
+at 720p only; newer Mixkit clips have no <id>-<q>.mp4 file and are fetched through the clip page's own download
+options. Pinterest is never downloaded: it is not a licence source.
 
 Keys are read from the environment only, never printed or stored. One request per host per --delay seconds
-(default 1.0), a timeout on every request, a descriptive User-Agent, and a size cap on pages and files.
-Python 3.8+ standard library only (ffprobe is used when present to measure downloads).
+(default 1.0), a timeout on every request, a descriptive User-Agent, and a size cap on pages and files. A Cloudflare
+"Just a moment..." browser check is reported, never worked around: the host is left alone for the rest of the run.
+Python 3.8+ standard library only (ffprobe/ffmpeg are used when present to measure downloads and draw contact sheets).
 """
 from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import email.utils
 import hashlib
 import html as _html
 import importlib
 import json
+import math
 import os
 import re
 import shutil
@@ -60,10 +71,22 @@ RESULTS_SCHEMA = "kosif.free_footage.results.v1"
 ASSET_SCHEMA = "kosif.free_footage.asset.v1"
 PROBE_SCHEMA = "kosif.free_footage.probe.v1"
 DEFAULT_RESULTS = Path("out") / "free-footage" / "last_search.json"
+# How to run this script again from where people run it: the repository root, when the skill sits at
+# <root>/.claude/skills/<name>/ (ATTRIBUTION.md once said `scripts/free_footage.py`, which fails from the root).
+if SK.parent.name == "skills" and SK.parent.parent.name == ".claude":
+    SCRIPT_FROM_ROOT, SCRIPT_FROM_WHERE = f".claude/skills/{SK.name}/scripts/free_footage.py", " from the repository root"
+else:
+    SCRIPT_FROM_ROOT, SCRIPT_FROM_WHERE = "scripts/free_footage.py", " from the skill folder"
 DEFAULT_PROBE_DIR = Path("out") / "free-footage"
 UA = "KOSIF-free-footage/1.0 (+https://github.com/kosif199022-jpg/kosif-tool; open-licence footage for montage)"
 PAGE_CAP_MB = 40          # the Coverr search page alone is about 11 MB
-MAX_RETRY_AFTER = 30.0    # seconds we are willing to wait after a 429/503
+MAX_RETRY_AFTER = 30.0    # seconds we wait after a 429/503 by default (--wait-429 raises it)
+MAX_WAIT_429 = 900.0      # the most --wait-429 accepts (upload.wikimedia.org asked for 600 s on 2026-10-29)
+MAX_CHALLENGE_WAIT = 600.0  # the most --retry-challenge accepts
+RETRY_5XX_SITES = ("archive.org",)  # its data nodes answer a transient 500 that clears on one retry
+THUMB_CAP_MB = 5
+PREVIEW_CAP_MB = 25       # a 360p preview file, never the full clip
+RESULTS_HISTORY = 100     # searches remembered in the results file
 VIDEO_EXT = (".mp4", ".m4v", ".mov", ".webm", ".mkv", ".ogv", ".ogg", ".mpeg", ".mpg", ".avi")
 KEY_ENV = {"pexels": "PEXELS_API_KEY", "pixabay": "PIXABAY_API_KEY"}
 
@@ -105,11 +128,37 @@ class FootageError(Exception):
 
 
 class HttpError(FootageError):
-    def __init__(self, url: str, status, detail: str = "", final_url: str | None = None):
-        self.url, self.status = url, status
+    def __init__(self, url: str, status, detail: str = "", final_url: str | None = None, retry_after=None):
+        self.url, self.status, self.retry_after = url, status, retry_after
         self.final_url = final_url or url  # where urllib ended up after following redirects
         moved = f" (redirected to {redact(self.final_url)})" if self.final_url != url else ""
         super().__init__(f"HTTP {status} from {redact(url)}{moved}" + (f": {detail}" if detail else ""))
+
+
+class ChallengeError(HttpError):
+    """A Cloudflare "Just a moment..." browser check came back instead of the page. The tool never solves it or works
+    around it: it says so, leaves that host alone for the rest of the run, and the user retries later."""
+
+    def __init__(self, url: str, status=None, final_url: str | None = None, earlier: bool = False):
+        host = (urllib.parse.urlsplit(url).hostname or "the site").lower()
+        if earlier:
+            detail = (f"skipped: {host} answered with a Cloudflare browser check earlier in this run; "
+                      "run the command again in a few minutes")
+        else:
+            detail = (f"{host} answered with a Cloudflare \"Just a moment...\" browser check instead of the page "
+                      "(a bot challenge). The tool does not try to get past it: run the same command again in a few "
+                      "minutes (on 2026-10-29 it cleared after about 3 minutes), add --retry-challenge 180 to wait "
+                      "once, or open the page in a browser")
+        super().__init__(url, status if status is not None else "challenge", detail, final_url)
+
+
+CHALLENGE_RE = re.compile(rb"<title>\s*Just a moment\.*\s*</title>|window\._cf_chl_opt|/cdn-cgi/challenge-platform/",
+                          re.I)
+
+
+def is_challenge_page(body: bytes) -> bool:
+    """True for a Cloudflare interstitial ("Just a moment...", served with 200, 403 or 503)."""
+    return bool(body) and bool(CHALLENGE_RE.search(body[:65536]))
 
 
 # ------------------------------------------------------------------------------------------------- database
@@ -265,18 +314,27 @@ def api_key(source: str, environ=None) -> str | None:
 # ------------------------------------------------------------------------------------------------- HTTP
 
 class Http:
-    """Polite HTTP: one request per host per `delay` seconds, timeouts, a User-Agent, size caps, one retry on 429/503.
+    """Polite HTTP: one request per host per `delay` seconds, timeouts, a User-Agent, size caps, one retry on 429/503
+    (when Retry-After is at most `max_retry_after` seconds) and on a 500/502/504 from an Archive data node.
 
-    `transport(request, timeout)` returns a urlopen-like response; tests pass a fake. `sleep` and `clock` are
-    injectable so the rate limit is testable without waiting."""
+    A Cloudflare browser check (the "Just a moment..." page, or a 403/503 with cf-mitigated: challenge) raises
+    ChallengeError and marks the host, so no further request goes to it in this run; with `challenge_wait` > 0 the
+    tool waits that long once per host and asks again, as a person would. `transport(request, timeout)` returns a
+    urlopen-like response; tests pass a fake. `sleep` and `clock` are injectable so the rate limit is testable
+    without waiting."""
 
     def __init__(self, delay: float = 1.0, timeout: float = 20.0, transport=None, sleep=time.sleep,
-                 clock=time.monotonic, retries: int = 1):
+                 clock=time.monotonic, retries: int = 1, max_retry_after: float = MAX_RETRY_AFTER,
+                 challenge_wait: float = 0.0):
         self.delay, self.timeout, self.retries = max(0.0, float(delay)), float(timeout), int(retries)
+        self.max_retry_after = min(max(0.0, float(max_retry_after)), MAX_WAIT_429)
+        self.challenge_wait = min(max(0.0, float(challenge_wait or 0)), MAX_CHALLENGE_WAIT)
         self.transport = transport or (lambda req, timeout: urllib.request.urlopen(req, timeout=timeout))
         self.sleep, self.clock = sleep, clock
         self._last = {}
         self.calls = 0
+        self.challenged = set()        # hosts that answered with a browser check in this run
+        self._challenge_retried = set()
 
     def _wait(self, host: str) -> None:
         last = self._last.get(host)
@@ -286,8 +344,19 @@ class Http:
                 self.sleep(gap)
         self._last[host] = self.clock()
 
+    def _challenge(self, host: str, url: str, status, final: str) -> None:
+        """Wait once (challenge_wait) and return so the caller asks again, or raise ChallengeError."""
+        if self.challenge_wait > 0 and host not in self._challenge_retried:
+            self._challenge_retried.add(host)
+            self.sleep(self.challenge_wait)
+            return
+        self.challenged.add(host)
+        raise ChallengeError(url, status, final_url=final)
+
     def open(self, url: str, headers: dict | None = None, method: str = "GET"):
         host = (urllib.parse.urlsplit(url).hostname or "").lower()
+        if host in self.challenged:
+            raise ChallengeError(url, earlier=True)
         hdrs = {"User-Agent": UA, "Accept": "*/*"}
         hdrs.update(headers or {})
         attempt = 0
@@ -299,7 +368,7 @@ class Http:
                 req = urllib.request.Request(url, headers=hdrs, method=method)
                 resp = self.transport(req, self.timeout)
             except urllib.error.HTTPError as e:
-                status, retry_after = e.code, (e.headers.get("Retry-After") if e.headers else None)
+                status, rh = e.code, e.headers
                 final = _final_url(e, url)  # the URL of the answer, after any redirect
                 _close(e)
             except (urllib.error.URLError, OSError, ValueError, HTTPException) as e:  # DNS, refused, TLS, timeout, bad URL
@@ -307,35 +376,65 @@ class Http:
                 raise HttpError(url, type(reason).__name__ if not isinstance(reason, str) else "error", str(reason)[:160]) from None
             else:
                 status = getattr(resp, "status", None) or getattr(resp, "code", 200)
-                retry_after = resp.headers.get("Retry-After") if getattr(resp, "headers", None) else None
+                rh = getattr(resp, "headers", None)
                 if status < 400:
                     return resp
                 final = _final_url(resp, url)
                 _close(resp)
-            if status in (429, 503) and attempt < self.retries:
+            retry_after = rh.get("Retry-After") if rh else None
+            if status in (403, 429, 503) and str((rh.get("cf-mitigated") if rh else "") or "").lower() == "challenge":
+                self._challenge(host, url, status, final)  # raises, or waited once
+                continue
+            final_host = (urllib.parse.urlsplit(final).hostname or "").lower()
+            server_error = status in (500, 502, 504) and any(
+                h == s or h.endswith("." + s) for s in RETRY_5XX_SITES for h in (host, final_host))
+            ra = _seconds(retry_after)
+            if (status in (429, 503) or server_error) and attempt < self.retries:
                 attempt += 1
-                try:
-                    wait = float(retry_after) if retry_after else self.delay * 4 or 2.0
-                except ValueError:
-                    wait = self.delay * 4 or 2.0
-                if wait > MAX_RETRY_AFTER:
-                    raise HttpError(url, status, f"rate limited; Retry-After {retry_after}s is too long, try later",
-                                    final_url=final)
+                wait = ra if ra is not None else (self.delay * 4 or 2.0)
+                if status in (429, 503) and ra is not None and wait > self.max_retry_after:
+                    how = (f"rerun with --wait-429 {math.ceil(wait)}, or try later" if wait <= MAX_WAIT_429 else
+                           f"longer than --wait-429 can wait ({MAX_WAIT_429:g} s): try later")
+                    raise HttpError(url, status, f"rate limited; Retry-After {retry_after}s is too long for "
+                                    f"--wait-429 {self.max_retry_after:g} ({how})", final_url=final, retry_after=wait)
                 self.sleep(max(wait, 0.5))
                 continue
-            raise HttpError(url, status, final_url=final)
+            detail = ""
+            if status in (429, 503):
+                detail = "rate limited" + (f"; Retry-After {retry_after}s" if retry_after else "") + \
+                    (" (again after one wait)" if attempt else "")
+            elif server_error:
+                detail = "server error, again after one retry"
+            raise HttpError(url, status, detail, final_url=final, retry_after=ra)
 
     def get_bytes(self, url: str, headers: dict | None = None, cap_mb: float = PAGE_CAP_MB) -> bytes:
-        resp = self.open(url, headers)
-        try:
-            cap = int(cap_mb * 1048576)
-            n = resp.headers.get("Content-Length") if getattr(resp, "headers", None) else None
-            if n and n.isdigit() and int(n) > cap:
-                raise FootageError(f"{redact(url)} is {int(n) / 1048576:.1f} MB, over the {cap_mb:g} MB page cap")
-            body = read_or_fail(resp, cap + 1, url)
-            if len(body) > cap:
-                raise FootageError(f"{redact(url)} is larger than the {cap_mb:g} MB page cap")
+        host = (urllib.parse.urlsplit(url).hostname or "").lower()
+        while True:
+            resp = self.open(url, headers)
+            try:
+                cap = int(cap_mb * 1048576)
+                n = resp.headers.get("Content-Length") if getattr(resp, "headers", None) else None
+                if n and n.isdigit() and int(n) > cap:
+                    raise FootageError(f"{redact(url)} is {int(n) / 1048576:.1f} MB, over the {cap_mb:g} MB page cap")
+                body = read_or_fail(resp, cap + 1, url)
+                if len(body) > cap:
+                    raise FootageError(f"{redact(url)} is larger than the {cap_mb:g} MB page cap")
+                status, final = getattr(resp, "status", None) or 200, _final_url(resp, url)
+            finally:
+                _close(resp)
+            if is_challenge_page(body):
+                self._challenge(host, url, status, final)  # raises, or waited once
+                continue
             return body
+
+    def head(self, url: str) -> dict:
+        """{bytes, content_type} from a HEAD request (bytes None when the server does not say)."""
+        resp = self.open(url, method="HEAD")
+        try:
+            h = getattr(resp, "headers", None)
+            n = h.get("Content-Length") if h else None
+            return {"bytes": int(n) if n and str(n).isdigit() else None,
+                    "content_type": (h.get("Content-Type") if h else None) or None}
         finally:
             _close(resp)
 
@@ -355,6 +454,21 @@ def _close(resp) -> None:
         resp.close()
     except Exception:
         pass
+
+
+def _seconds(value):
+    """Retry-After as seconds (a number or an HTTP date), else None."""
+    if value in (None, ""):
+        return None
+    try:
+        return max(0.0, float(value))
+    except (TypeError, ValueError):
+        pass
+    try:  # Python 3.8/3.9 return None for an unreadable date, later versions raise
+        when = email.utils.parsedate_to_datetime(str(value))
+        return max(0.0, (when - _dt.datetime.now(when.tzinfo or _dt.timezone.utc)).total_seconds())
+    except (TypeError, ValueError, IndexError, AttributeError):
+        return None
 
 
 def _final_url(resp, url: str) -> str:
@@ -506,7 +620,7 @@ def format_attribution(template, *, title=None, author=None, source=None, licenc
 
 def make_result(db: dict, source: str, native_id, *, title, page_url, file_url, licence: dict, author=None,
                 width=None, height=None, duration=None, mime=None, size=None, quality=None, flags=(),
-                extra=None) -> dict:
+                extra=None, thumb_url=None, preview_url=None) -> dict:
     src = sources_by_id(db).get(source) or {}
     tpl = (src.get("attribution") or {}).get("template")
     title = clean_text(title) or None
@@ -530,6 +644,8 @@ def make_result(db: dict, source: str, native_id, *, title, page_url, file_url, 
                                           licence=licence.get("name"), licence_url=licence.get("url"),
                                           page_url=page_url),
         "flags": sorted(set(flags)),
+        "thumb_url": https(thumb_url) or None,      # a still (JPEG/PNG) for screening before any download
+        "preview_url": https(preview_url) or None,  # a small preview video (360p or so), never the full file
     }
     if extra:
         rec.update(extra)
@@ -582,18 +698,20 @@ def https(url):
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 COMMONS_IIPROP = "url|size|mime|mediatype|extmetadata"
 COMMONS_META = "ObjectName|LicenseShortName|LicenseUrl|Artist|Credit|AttributionRequired|UsageTerms|License"
+COMMONS_THUMB_W = "480"  # imageinfo then also returns thumburl, a still of the video
 
 
 def commons_search_url(query: str, limit: int) -> str:
     q = {"action": "query", "format": "json", "formatversion": "2", "generator": "search",
          "gsrsearch": f"{query} filetype:video", "gsrnamespace": "6", "gsrlimit": str(max(1, min(limit, 50))),
-         "prop": "imageinfo", "iiprop": COMMONS_IIPROP, "iiextmetadatafilter": COMMONS_META}
+         "prop": "imageinfo", "iiprop": COMMONS_IIPROP, "iiextmetadatafilter": COMMONS_META,
+         "iiurlwidth": COMMONS_THUMB_W}
     return COMMONS_API + "?" + urllib.parse.urlencode(q)
 
 
 def commons_lookup_url(*, titles=None, pageids=None) -> str:
     q = {"action": "query", "format": "json", "formatversion": "2", "prop": "imageinfo", "iiprop": COMMONS_IIPROP,
-         "iiextmetadatafilter": COMMONS_META}
+         "iiextmetadatafilter": COMMONS_META, "iiurlwidth": COMMONS_THUMB_W}
     if titles:
         q["titles"] = titles
     if pageids:
@@ -625,6 +743,7 @@ def parse_wikimedia(db: dict, data: dict) -> list:
                                page_url=info.get("descriptionurl"), file_url=strip_tracking(info.get("url", "")),
                                licence=lic, author=mv("Artist"), width=info.get("width"), height=info.get("height"),
                                duration=info.get("duration"), mime=mime, size=info.get("size"),
+                               thumb_url=strip_tracking(info["thumburl"]) if info.get("thumburl") else None,
                                extra={"native": {"file_title": p.get("title")}}))
     return out
 
@@ -670,8 +789,28 @@ def parse_archive_search(data: dict) -> list:
     return [d for d in (((data or {}).get("response") or {}).get("docs") or []) if d.get("identifier")]
 
 
-def pick_archive_file(files: list, max_bytes: int | None = None) -> dict | None:
-    """The best video file of an item: highest resolution that fits under max_bytes (else the smallest one)."""
+def size_fits(width, height, quality=None, max_quality=None, max_height=None) -> bool | None:
+    """Whether a file is within --quality (its short side, so 1080 means 1080p in either orientation) and
+    --max-height (its frame height). None when the size needed for the check is unknown."""
+    short = quality or (min(width, height) if width and height else None)
+    if max_quality:
+        if short is None:
+            return None
+        if short > max_quality:
+            return False
+    if max_height:
+        if height:
+            return height <= max_height
+        if short and short > max_height:
+            return False  # the short side is a lower bound for the height
+        return None
+    return True
+
+
+def pick_archive_file(files: list, max_bytes: int | None = None, max_quality: int | None = None,
+                      max_height: int | None = None) -> dict | None:
+    """The best video file of an item: highest resolution that fits under max_bytes (else the smallest one), and
+    within --quality / --max-height when given (else the smallest file of known size)."""
     vids = []
     for f in files or []:
         name = str(f.get("name") or "")
@@ -682,6 +821,10 @@ def pick_archive_file(files: list, max_bytes: int | None = None) -> dict | None:
         vids.append(((h, w, mp4, f.get("source") == "original"), size, f))
     if not vids:
         return None
+    if max_quality or max_height:
+        fit = [v for v in vids if size_fits(v[0][1], v[0][0], None, max_quality, max_height)]
+        known = [v for v in vids if v[0][0]]
+        vids = fit or ([min(known, key=lambda v: v[0][0])] if known else vids)
     vids.sort(key=lambda v: v[0], reverse=True)
     if max_bytes:
         for _key, size, f in vids:
@@ -691,25 +834,60 @@ def pick_archive_file(files: list, max_bytes: int | None = None) -> dict | None:
     return vids[0][2]
 
 
-def archive_result(db: dict, doc: dict, meta: dict, max_bytes: int | None = None) -> dict | None:
+# An Archive licence is whatever the uploader typed. These identifiers and titles mark copyrighted works re-uploaded
+# under a licence their uploader cannot grant (seen live on 2026-10-29: "youtube-zILabWVdIMs Prince - Musicology
+# (Official Music Video)" as CC BY 4.0, a y2mate rip as CC0, a "Free Willy ... music video ... VHS rip" as PDM).
+SUSPICIOUS_ARCHIVE = (
+    ("YouTube re-upload", re.compile(r"^youtube |\byoutube (?:video )?[a-z0-9_]{11}\b")),
+    ("downloader rip", re.compile(r"\by ?2 ?mate\b|\bytmp[34]\b|\bsavefrom\b|\bsnaptube\b|\bclipconverter\b")),
+    ("music video", re.compile(r"\bofficial (?:music )?video\b|\bmusic video\b|\blyrics? video\b|\bofficial audio\b")),
+    ("film or TV rip", re.compile(r"\b(?:vhs|dvd|bd|br|web|hd|tv) ?rip\b|\bblu ?ray\b|\bfull episode\b|"
+                                  r"\bepisode \d+\b|\bs\d{1,2} ?e\d{1,2}\b|\bfull movie\b|\bmovie\b|\btrailer\b")),
+)
+
+
+def archive_licence_suspicion(ident, title) -> str | None:
+    """Why an Archive item's licence looks like an uploader's claim on someone else's work, else None."""
+    text = re.sub(r"[\W_]+", " ", f"{ident or ''} {title or ''}".lower()).strip()
+    for why, rx in SUSPICIOUS_ARCHIVE:
+        if rx.search(text):
+            return why
+    return None
+
+
+def archive_result(db: dict, doc: dict, meta: dict, max_bytes: int | None = None, caps: dict | None = None) -> dict | None:
     ident = doc.get("identifier") or (meta.get("metadata") or {}).get("identifier")
     md = meta.get("metadata") or {}
-    f = pick_archive_file(meta.get("files") or [], max_bytes)
+    f = pick_archive_file(meta.get("files") or [], max_bytes, **(caps or {}))
     if not ident or not f:
         return None
     licurl = doc.get("licenseurl") or md.get("licenseurl")
     lic = classify_licence(None, licurl) if licurl else licence_record(
         "unknown (no licenseurl)", None, verified=False, note="the uploader set no licence: rights unknown")
+    title = doc.get("title") or md.get("title") or ident
+    flags = ["uploader-licence"]
+    why = archive_licence_suspicion(ident, title)
+    if why and licurl:
+        flags.append("suspicious-licence")
+        lic.update(commercial=None, verified=False,
+                   note=f"looks like a {why}: the uploader's licence claim on what is probably someone else's "
+                        "copyrighted work; do not rely on it (trace the rights holder)")
+    elif licurl:
+        lic["note"] = ((lic.get("note") + "; ") if lic.get("note") else "") + \
+            "set by the uploader, not checked by the Archive: trust the uploader? read the item page"
     creator = doc.get("creator") or md.get("creator")
     if isinstance(creator, list):
         creator = ", ".join(map(str, creator))
     fname = f["name"]
-    return make_result(db, "archive", ident, title=doc.get("title") or md.get("title") or ident,
+    q = urllib.parse.quote(ident)
+    return make_result(db, "archive", ident, title=title,
                        page_url=f"https://archive.org/details/{ident}",
-                       file_url=f"https://archive.org/download/{urllib.parse.quote(ident)}/{urllib.parse.quote(fname)}",
+                       file_url=f"https://archive.org/download/{q}/{urllib.parse.quote(fname)}",
                        licence=lic, author=creator, width=f.get("width"), height=f.get("height"),
-                       duration=f.get("length"), size=f.get("size"),
-                       extra={"native": {"file": fname, "format": f.get("format")}})
+                       duration=f.get("length"), size=f.get("size"), flags=flags,
+                       thumb_url=f"https://archive.org/services/img/{q}",
+                       extra={"native": {"file": fname, "format": f.get("format"),
+                                         **({"suspicious": why} if why and licurl else {})}})
 
 
 def search_archive(http: Http, db: dict, query: str, limit: int, opts: dict) -> list:
@@ -746,7 +924,9 @@ def parse_nasa_search(data: dict) -> list:
     for it in ((data or {}).get("collection") or {}).get("items") or []:
         d = (it.get("data") or [{}])[0]
         if d.get("media_type") == "video" and d.get("nasa_id"):
-            out.append(d)
+            img = next((ln.get("href") for ln in it.get("links") or [] if isinstance(ln, dict)
+                        and ln.get("rel") == "preview" and isinstance(ln.get("href"), str)), None)
+            out.append({**d, **({"_preview_image": quote_path(https(img))} if img else {})})
     return out
 
 
@@ -775,6 +955,13 @@ def nasa_variants(asset: dict) -> tuple:
     return vids, meta
 
 
+def nasa_preview(asset: dict) -> str | None:
+    """The small ~preview.mp4 (else ~mobile/~small) of a NASA asset, for contact sheets."""
+    hrefs = [quote_path(https(i.get("href"))) for i in ((asset or {}).get("collection") or {}).get("items") or []
+             if isinstance(i.get("href"), str) and i.get("href")]
+    return next((h for tag in ("~preview.mp4", "~mobile.mp4", "~small.mp4") for h in hrefs if h.endswith(tag)), None)
+
+
 def pick_nasa_asset(asset: dict) -> tuple:
     """(video URL, metadata.json URL): ~orig.mp4, else the next largest variant."""
     vids, meta = nasa_variants(asset)
@@ -794,7 +981,7 @@ def parse_nasa_metadata(meta: dict) -> dict:
     return {"width": _int(w), "height": _int(h), "duration": _float(dur)}
 
 
-def nasa_result(db: dict, d: dict, video_url: str, dims: dict | None = None, alternates=()) -> dict:
+def nasa_result(db: dict, d: dict, video_url: str, dims: dict | None = None, alternates=(), preview=None) -> dict:
     nid = d["nasa_id"]
     author = d.get("secondary_creator") or d.get("photographer") or (f"NASA {d['center']}" if d.get("center") else "NASA")
     flags = ["check-third-party-credit"] if re.search(r"©|copyright", str(d.get("description", "")), re.I) else []
@@ -803,7 +990,9 @@ def nasa_result(db: dict, d: dict, video_url: str, dims: dict | None = None, alt
                        file_url=video_url, licence=source_licence("nasa", sources_by_id(db).get("nasa")),
                        author=author, width=dims.get("width"), height=dims.get("height"),
                        duration=dims.get("duration"), mime="video/mp4", flags=flags,
-                       extra={"native": {"center": d.get("center"), "date_created": d.get("date_created")},
+                       thumb_url=d.get("_preview_image"), preview_url=preview,
+                       extra={"native": {"center": d.get("center"), "date_created": d.get("date_created"),
+                                         **({"keywords": d["keywords"]} if isinstance(d.get("keywords"), list) else {})},
                               **({"alternates": [a for a in alternates if a != video_url]} if alternates else {})})
 
 
@@ -811,16 +1000,18 @@ def search_nasa(http: Http, db: dict, query: str, limit: int, opts: dict) -> lis
     out = []
     for d in parse_nasa_search(http.get_json(nasa_search_url(query, limit * 2)))[: limit * 2]:
         try:
-            vids, meta_url = nasa_variants(http.get_json(f"https://images-api.nasa.gov/asset/{urllib.parse.quote(d['nasa_id'])}"))
+            asset = http.get_json(f"https://images-api.nasa.gov/asset/{urllib.parse.quote(d['nasa_id'])}")
+            vids, meta_url = nasa_variants(asset)
             video = vids[0] if vids else None
             dims = {}
-            if video and meta_url and (opts.get("min_height") or opts.get("orientation") or opts.get("details")):
+            if video and meta_url and (opts.get("min_height") or opts.get("orientation") or opts.get("details")
+                                       or opts.get("resolve")):
                 dims = parse_nasa_metadata(http.get_json(meta_url))
         except FootageError as e:
             opts.setdefault("warnings", []).append(f"nasa {d['nasa_id']}: {e}")
             continue
         if video:
-            out.append(nasa_result(db, d, video, dims, vids))
+            out.append(nasa_result(db, d, video, dims, vids, nasa_preview(asset)))
     return out
 
 
@@ -837,13 +1028,18 @@ def pexels_video(db: dict, v: dict) -> dict | None:
     files = [f for f in v.get("video_files") or [] if f.get("link") and "mp4" in str(f.get("file_type", "mp4"))]
     if not files:
         return None
-    best = max(files, key=lambda f: ((_int(f.get("height")) or 0) * (_int(f.get("width")) or 0)))
+    area = lambda f: (_int(f.get("height")) or 0) * (_int(f.get("width")) or 0)  # noqa: E731
+    best, small = max(files, key=area), min(files, key=area)
     user = v.get("user") or {}
     return make_result(db, "pexels", v.get("id"), title=pexels_title(v.get("url", "")), page_url=v.get("url"),
                        file_url=best["link"], licence=source_licence("pexels", sources_by_id(db).get("pexels")),
                        author=user.get("name"), width=best.get("width"), height=best.get("height"),
                        duration=v.get("duration"), mime=best.get("file_type"),
-                       extra={"native": {"author_url": user.get("url")}})
+                       thumb_url=v.get("image") if isinstance(v.get("image"), str) else None,
+                       preview_url=small["link"] if small is not best else None,
+                       extra={"native": {"author_url": user.get("url")},
+                              "variants": file_variants((f["link"], f.get("width"), f.get("height"), None)
+                                                        for f in files)})
 
 
 def parse_pexels(db: dict, data: dict) -> list:
@@ -861,15 +1057,32 @@ def search_pexels(http: Http, db: dict, query: str, limit: int, opts: dict) -> l
 
 def pixabay_hit(db: dict, h: dict) -> dict | None:
     vids = h.get("videos") or {}
-    best = next((vids[s] for s in ("large", "medium", "small", "tiny") if (vids.get(s) or {}).get("url")), None)
-    if not best:
+    have = [vids[s] for s in ("large", "medium", "small", "tiny") if (vids.get(s) or {}).get("url")]
+    if not have:
         return None
+    best = have[0]
+    thumb = next((x["thumbnail"] for x in have if isinstance(x.get("thumbnail"), str) and x["thumbnail"]), None)
     tags = str(h.get("tags") or "").strip()
     return make_result(db, "pixabay", h.get("id"), title=tags.capitalize() if tags else "Pixabay clip",
                        page_url=h.get("pageURL"), file_url=best["url"],
                        licence=source_licence("pixabay", sources_by_id(db).get("pixabay")), author=h.get("user"),
                        width=best.get("width"), height=best.get("height"), duration=h.get("duration"),
-                       size=best.get("size"), mime="video/mp4")
+                       size=best.get("size"), mime="video/mp4", thumb_url=thumb,
+                       preview_url=have[-1]["url"] if len(have) > 1 else None,
+                       extra={"variants": file_variants((x["url"], x.get("width"), x.get("height"), x.get("size"))
+                                                        for x in have)})
+
+
+def file_variants(items) -> list:
+    """[{quality, width, height, bytes, url}] largest first, from (url, width, height, bytes) tuples; quality is
+    the short side (1080 for a 1080x1920 file)."""
+    out = []
+    for url, w, h, size in items:
+        w, h = _int(w) or None, _int(h) or None
+        out.append({"quality": min(w, h) if w and h else None, "width": w, "height": h,
+                    "bytes": _int(size) or None, "url": url})
+    out.sort(key=lambda v: (v["width"] or 0) * (v["height"] or 0), reverse=True)
+    return out
 
 
 def parse_pixabay(db: dict, data: dict) -> list:
@@ -958,14 +1171,18 @@ def parse_mixkit(db: dict, page: str) -> list:
         thumb = re.search(r'<img[^>]*class="item-grid-video-player__thumb"[^>]*>', chunk)
         tw = re.search(r'\swidth="(\d+)"', thumb.group(0)) if thumb else None
         th = re.search(r'\sheight="(\d+)"', thumb.group(0)) if thumb else None
+        tsrc = re.search(r'\ssrc="(https://assets\.mixkit\.co/[^"]+)"', thumb.group(0)) if thumb else None
+        video = re.search(r'<video[^>]*\ssrc="(https://assets\.mixkit\.co/[^"]+)"', chunk)
         if cid not in cards:
             order.append(cid)
             cards[cid] = {"title": title, "page": "https://mixkit.co" + link.group(1) if link else None,
-                          "dims": _scale_to_short_side(int(tw.group(1)), int(th.group(1)), 720) if tw and th else (None, None)}
+                          "dims": _scale_to_short_side(int(tw.group(1)), int(th.group(1)), 720) if tw and th else (None, None),
+                          "thumb": _html.unescape(tsrc.group(1)) if tsrc else None,
+                          "preview": _html.unescape(video.group(1)) if video else None}
     for cid in ld:
         if cid not in cards:
             order.append(cid)
-            cards[cid] = {"title": None, "page": None, "dims": (None, None)}
+            cards[cid] = {"title": None, "page": None, "dims": (None, None), "thumb": None, "preview": None}
     out = []
     for cid in order:
         o, c = ld.get(cid) or {}, cards[cid]
@@ -973,17 +1190,55 @@ def parse_mixkit(db: dict, page: str) -> list:
         lic = mixkit_licence(o.get("copyrightNotice"))
         w, h = c["dims"]
         flags = ([] if lic["verified"] else ["licence-checked-at-download"]) + (["size-from-thumbnail"] if w else [])
+        thumb = c["thumb"] or _ld_url(o.get("thumbnailUrl"))
+        preview = c["preview"] or _ld_url(o.get("embedUrl"))
+        kind, base = mixkit_pattern(cid, _ld_url(o.get("contentUrl")), preview, thumb)
         out.append(mixkit_apply_files(make_result(
             db, "mixkit", cid, title=c["title"] or o.get("name") or f"Mixkit clip {cid}", page_url=page_url,
             file_url=mixkit_file(cid, 720), licence=lic, quality=720, width=w, height=h, duration=o.get("duration"),
-            mime="video/mp4", flags=flags)))
+            mime="video/mp4", flags=flags, thumb_url=thumb, preview_url=preview,
+            extra={"native": {"files": kind, **({"files_base": base} if base else {})}} if kind else None)))
     return out
 
 
+def _ld_url(v) -> str | None:
+    if isinstance(v, list):
+        v = next((x for x in v if isinstance(x, str)), None)
+    if isinstance(v, dict):
+        v = v.get("url") or v.get("contentUrl")
+    return v if isinstance(v, str) and v.startswith(("https://", "http://")) else None
+
+
 MIXKIT_FREE_SIZES = (2160, 1080, 720)  # tried in this order; a size the clip lacks answers 403
+MIXKIT_ROUTE_RE = re.compile(r"^https://mixkit\.co/free-stock-video/download/\d+/")
 
 
-def mixkit_file(cid, short_side: int) -> str:
+def mixkit_pattern(cid, *urls) -> tuple:
+    """How a Mixkit clip's files are named, from any of its asset links (content, preview, thumbnail):
+    ("legacy", None) for assets.mixkit.co/videos/<id>/<id>-<q>.mp4; ("active_storage", base) for
+    .../active_storage/video_items/<id>/<ts>/<id>-video-<q>.mp4; ("hashed", None) for opaque assets.mixkit.co/<hash>
+    links, whose per-size files are only named by the clip page's download route; (None, None) when unknown."""
+    cid = str(cid)
+    hashed = False
+    for u in urls:
+        if not isinstance(u, str):
+            continue
+        if re.search(rf"assets\.mixkit\.co/videos/{cid}/{cid}-", u):
+            return "legacy", None
+        m = re.match(rf"(https?://assets\.mixkit\.co/active_storage/video_items/{cid}/\d+/{cid}-video)-", u)
+        if m:
+            return "active_storage", https(m.group(1))
+        if re.match(r"https?://assets\.mixkit\.co/[a-z0-9]{16,}/?$", u):
+            hashed = True
+    return ("hashed", None) if hashed else (None, None)
+
+
+def mixkit_file(cid, short_side: int, kind: str | None = None, base: str | None = None) -> str | None:
+    """The direct file of one size: the <id>-<q>.mp4 template, the active_storage name, or None for hashed links."""
+    if kind == "active_storage" and base:
+        return f"{base}-{short_side}.mp4"
+    if kind == "hashed":
+        return None
     return f"https://assets.mixkit.co/videos/{cid}/{cid}-{short_side}.mp4"
 
 
@@ -992,23 +1247,121 @@ def mixkit_quality(url: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+def _attr(tag: str, name: str) -> str | None:
+    m = re.search(r'\s' + re.escape(name) + r'="([^"]*)"', tag)
+    return _html.unescape(m.group(1)) if m else None
+
+
+def mixkit_page_variants(page: str, cid) -> list:
+    """The sizes a Mixkit clip page offers, largest first: [{quality, label, mb, bytes, width, height, route}].
+
+    Free clips list radio inputs (data-label="Full HD", data-size="44.59" MB, value="/free-stock-video/download/<id>/
+    ?context=sidebar&type=1080p") followed by the resolution; a Restricted clip has one "Download low resolution for
+    free" button whose route has no type (its free file is 720p). The route answers a small page naming the file
+    (data-download--modal-url-value="https://assets.mixkit.co/<hash>"); see mixkit_follow_route."""
+    cid = str(cid)
+    out = []
+    for m in re.finditer(r'\svalue="(/free-stock-video/download/' + re.escape(cid) + r'/[^"]*)"', page):
+        start = page.rfind("<", 0, m.start())
+        end = page.find(">", m.end())
+        tag = page[start:end + 1]
+        if not tag.startswith("<input"):
+            continue
+        route = "https://mixkit.co" + _html.unescape(m.group(1))
+        q = re.search(r"[?&]type=(\d{3,4})p\b", route)
+        after = page[end + 1:end + 600]
+        after = after.split("<input", 1)[0]
+        res = re.search(r'download-resolution">\s*(\d{3,5})\s*[x×]\s*(\d{3,5})', after)
+        mb = _float(_attr(tag, "data-size"))
+        out.append({"quality": int(q.group(1)) if q else None, "label": _attr(tag, "data-label"), "mb": mb,
+                    "bytes": int(round(mb * 1048576)) if mb else None,
+                    "listed": f"{res.group(1)}x{res.group(2)}" if res else None,
+                    "width": None, "height": None, "route": route})
+    if not out:
+        m = re.search(r'data-download--button-modal-url-value="(/free-stock-video/download/' + re.escape(cid) + r'/[^"]*)"',
+                      page)
+        if m:
+            route = "https://mixkit.co" + _html.unescape(m.group(1))
+            q = re.search(r"[?&]type=(\d{3,4})p\b", route)
+            out.append({"quality": int(q.group(1)) if q else 720, "label": "free low resolution", "mb": None,
+                        "bytes": None, "listed": None, "width": None, "height": None, "route": route})
+    out = [v for v in out if v["quality"]]
+    out.sort(key=lambda v: v["quality"], reverse=True)
+    # Width and height from the listed resolution when its short side is the size and its aspect is within 10% of
+    # the next larger size's (4096x2160 then 1920x1080 is fine); the site lists the 720p file of a 16:9 clip as
+    # "1080x720", so such a size is scaled from the next larger one instead (1280x720).
+    ref = None
+    for v in out:
+        dims = tuple(map(int, v["listed"].split("x"))) if v["listed"] else None
+        ok = bool(dims) and min(dims) == v["quality"]
+        if ok and ref and abs(dims[0] / dims[1] - ref[0] / ref[1]) > 0.10 * ref[0] / ref[1]:
+            ok = False
+        if ok:
+            v["width"], v["height"] = dims
+        elif ref:
+            v["width"], v["height"] = _scale_to_short_side(ref[0], ref[1], v["quality"])
+        if v["width"] and v["height"]:
+            ref = (v["width"], v["height"])
+    return out
+
+
+def mixkit_follow_route(http: Http, route: str) -> str:
+    """The file a Mixkit download route names (the link the site's own download button follows)."""
+    page = http.get_text(route)  # a Cloudflare check raises ChallengeError here
+    m = re.search(r'data-download--modal-url-value="(https://assets\.mixkit\.co/[^"]+)"', page)
+    if not m:
+        raise FootageError(f"{route}: the download page names no file (the site changed or sent another page)")
+    return _html.unescape(m.group(1))
+
+
+def is_mixkit_route(url) -> bool:
+    return bool(MIXKIT_ROUTE_RE.match(str(url or "")))
+
+
+def allowed_variants(rec: dict) -> list:
+    """The file sizes a record may be fetched at: every listed size, except that a Mixkit clip that is not Free
+    (Restricted, or its licence unread) gets 720p and below only."""
+    vs = [v for v in rec.get("variants") or [] if isinstance(v, dict)]
+    if rec.get("source") == "mixkit" and (rec.get("licence") or {}).get("name") != MIXKIT_FREE:
+        vs = [v for v in vs if (v.get("quality") or 0) <= 720]
+    return vs
+
+
 def mixkit_apply_files(rec: dict) -> dict:
     """Point a Mixkit record at the files its licence lets a script fetch, largest first.
 
-    Free clips serve <id>-1080.mp4 to plain scripts and often <id>-2160.mp4 (measured 2026-10-29: 206 video/mp4);
-    Restricted clips answer 403 above 720p, and their free 720p file is for personal use only. A clip whose licence
-    has not been read yet gets the 720p file until confirm_licence reads its page. quality is the size a Free clip is
-    known to have (1080), so --min-height does not count on a 2160p file that may not exist."""
+    With the clip page read (rec["variants"], from mixkit_page_variants), the sizes are the ones the page offers:
+    each as its direct file when the naming is known (the <id>-<q>.mp4 template or the active_storage name), then its
+    download route, which is the only way to a newer clip's hashed file. Without them: Free clips serve
+    <id>-1080.mp4 to plain scripts and often <id>-2160.mp4 (measured 2026-10-29: 206 video/mp4); Restricted clips
+    answer 403 above 720p, and their free 720p file is for personal use only. A clip whose licence has not been read
+    yet gets the 720p file until confirm_licence reads its page. quality is the size a Free clip is known to have
+    (the largest listed, else 1080), so --min-height does not count on a 2160p file that may not exist."""
     cid = rec["id"].split(":", 1)[-1]
     if not cid.isdigit():  # a hand-made record for some other mixkit.co link (manual_record): keep its own file
         return rec
     free = (rec.get("licence") or {}).get("name") == MIXKIT_FREE
-    files = [mixkit_file(cid, q) for q in (MIXKIT_FREE_SIZES if free else (720,))]
-    quality = 1080 if free else 720
-    w, h, was = rec.get("width"), rec.get("height"), rec.get("quality")
-    if w and h and was and was != quality:
-        rec["width"], rec["height"] = _scale_to_short_side(w, h, quality)
-    rec.update(file_url=files[0], quality=quality)
+    nat = rec.get("native") or {}
+    kind, base = nat.get("files"), nat.get("files_base")
+    vs = allowed_variants(rec)
+    if vs:
+        for v in vs:
+            v["url"] = v.get("url") or mixkit_file(cid, v["quality"], kind, base)
+        files = [u for v in vs for u in (v.get("url"), v.get("route")) if u]
+        top = vs[0]
+        rec.update(file_url=files[0], quality=top["quality"], bytes=top.get("bytes") or rec.get("bytes"))
+        if top.get("width") and top.get("height"):
+            rec["width"], rec["height"] = top["width"], top["height"]
+            rec["flags"] = [f for f in rec.get("flags", []) if f != "size-from-thumbnail"]
+    else:
+        files = [u for u in (mixkit_file(cid, q, kind, base) for q in (MIXKIT_FREE_SIZES if free else (720,))) if u]
+        if not files:  # a hashed clip whose page was not read: the 720p template, which download explains if it fails
+            files = [mixkit_file(cid, 720)]
+        quality = 1080 if free else 720
+        w, h, was = rec.get("width"), rec.get("height"), rec.get("quality")
+        if w and h and was and was != quality:
+            rec["width"], rec["height"] = _scale_to_short_side(w, h, quality)
+        rec.update(file_url=files[0], quality=quality)
     if len(files) > 1:
         rec["alternates"] = files[1:]
     else:
@@ -1032,20 +1385,32 @@ def mixkit_search_url(query: str) -> str:
 
 def search_mixkit(http: Http, db: dict, query: str, limit: int, opts: dict) -> list:
     found = parse_mixkit(db, http.get_text(mixkit_search_url(query)))
-    # the discover page does not name each clip's licence: read it from the pages of the clips that pass the other
-    # filters (one request each, at most 2 x limit) when --commercial or --details needs it, or when --min-height
-    # drops a clip at 720p that would pass at the 1080p a Free clip has
-    need, mh = opts.get("commercial") or opts.get("details"), opts.get("min_height")
+    # the discover page does not name each clip's licence or real size: read them from the pages of the clips that
+    # pass the other filters (one request each, at most 2 x limit, and no more once `limit` clips are kept) when
+    # --resolve, --commercial or --details asks for it, or when --min-height drops a clip at 720p that would pass at
+    # the 1080p a Free clip has
+    need, mh = opts.get("commercial") or opts.get("details") or opts.get("resolve"), opts.get("min_height")
     rest = {**opts, "commercial": False, "min_height": None}
     tall = {**rest, "min_height": mh}
 
     def as_free(r):  # the same clip at the 1080p a Free licence gives
-        return mixkit_apply_files({**r, "licence": {"name": MIXKIT_FREE}})
+        return mixkit_apply_files({**r, "licence": {"name": MIXKIT_FREE}, "native": {}, "variants": []})
 
-    todo = [r for r in found if not r["licence"]["verified"] and keep(r, rest) is None
-            and (need or (mh and keep(r, tall) is not None and keep(as_free(r), tall) is None))]
-    for rec in todo[: limit * 2]:
-        confirm_licence(http, db, rec)
+    read = kept = 0
+    for rec in found:
+        if read >= limit * 2 or kept >= limit:
+            break
+        if not rec["licence"]["verified"] and keep(rec, rest) is None and \
+                (need or (mh and keep(rec, tall) is not None and keep(as_free(rec), tall) is None)):
+            confirm_licence(http, db, rec)
+            read += 1
+            if "mixkit.co" in http.challenged:  # no more requests to it in this run
+                opts.setdefault("warnings", []).append(
+                    "mixkit: mixkit.co answered with a Cloudflare browser check; the other clips' licences were "
+                    "left unread (run the search again in a few minutes)")
+                break
+        if keep(rec, opts) is None:
+            kept += 1
     return found
 
 
@@ -1121,10 +1486,17 @@ def parse_coverr(db: dict, page: str) -> tuple:
         if w and _int(v.get("maxWidth")) and w > _int(v.get("maxWidth")):
             flags.append("upscaled-file")
         slug = v.get("slug") or vid
+        urls = v.get("urls") if isinstance(v.get("urls"), dict) else {}
+        preview = urls.get("mp4Preview") or urls.get("mp4_preview")
+        if not isinstance(preview, str) and re.search(r"/\d{3,4}p\.mp4$", mp4):
+            preview = re.sub(r"/\d{3,4}p\.mp4$", "/360p.mp4", mp4)  # Coverr serves every clip at 360p too
+        thumb = next((x for x in (v.get("thumbnail"), v.get("poster"), urls.get("thumbnail"), urls.get("poster"))
+                      if isinstance(x, str) and x.startswith("http")), None)
         out.append(make_result(db, "coverr", vid, title=(v.get("title") or "").strip() or slug,
                                page_url=f"https://coverr.co/videos/{slug}", file_url=mp4,
                                licence=source_licence("coverr", sources_by_id(db).get("coverr")), author=author,
                                width=w, height=h, duration=v.get("duration"), mime="video/mp4", flags=flags,
+                               thumb_url=thumb, preview_url=preview if isinstance(preview, str) else None,
                                extra={"native": {"source_width": _int(v.get("maxWidth")),
                                                  "source_height": _int(v.get("maxHeight")),
                                                  "fps": v.get("fps"), "has_audio": v.get("hasAudio")}}))
@@ -1158,17 +1530,89 @@ def orientation_of(r: dict) -> str | None:
     return "square" if abs(w - h) <= 0.05 * max(w, h) else ("portrait" if h > w else "landscape")
 
 
+STOP_WORDS = {"a", "an", "the", "of", "in", "on", "at", "and", "or", "with", "for", "to", "from", "by", "into",
+              "over", "under", "video", "videos", "footage", "clip", "clips", "stock", "free", "hd", "4k"}
+# Title words that name a person or a body part. A title heuristic only: a clip can show people its title does not
+# name, so screen the contact sheet (preview) as well.
+PEOPLE_WORDS = set("""
+woman women man men girl girls boy boys couple couples portrait portraits person persons people child children kid
+kids baby babies toddler toddlers family families lady ladies guy guys teen teens teenager teenagers face faces
+selfie model models dancer dancers dancing crowd crowds friend friends businessman businessmen businesswoman
+businesswomen mother father mom dad daughter son bride groom wedding player players athlete athletes worker workers
+tourist tourists student students doctor nurse grandmother grandfather husband wife boyfriend girlfriend lover lovers
+someone somebody human humans hiker hikers surfer surfers skater skaters runner runners cyclist cyclists chef farmer
+farmers soldier soldiers silhouette silhouettes hand hands finger fingers feet foot legs she he her his
+""".split())
+
+
+def _stem(w: str) -> str:
+    for suf in ("ing", "es", "s", "ed"):
+        if w.endswith(suf) and len(w) - len(suf) >= 3:
+            return w[: -len(suf)]
+    return w
+
+
+def query_terms(query: str) -> list:
+    words = re.findall(r"[a-z0-9]+", str(query or "").lower())
+    kept = [w for w in words if w not in STOP_WORDS] or words
+    return list(dict.fromkeys(_stem(w) for w in kept))
+
+
+def relevance(r: dict, query: str) -> float | None:
+    """The share of the query's words (stemmed, stop words left out) found in the result's title or keywords, 0..1;
+    None when the query has no words. Sites match loosely (a Mixkit "seedling" search returned "Woman sending
+    messages on Whatsapp"), so 0 means the title shares nothing with the query."""
+    terms = query_terms(query)
+    if not terms:
+        return None
+    nat = r.get("native") or {}
+    hay = " ".join([str(r.get("title") or "")] + [str(k) for k in nat.get("keywords") or []]).lower()
+    words = {_stem(w) for w in re.findall(r"[a-z0-9]+", hay)}
+    squashed = re.sub(r"[^a-z0-9]+", "", hay)
+    hits = 0
+    for t in terms:
+        if t in words or (len(t) >= 5 and t in squashed) or \
+                (len(t) >= 4 and any(len(w) >= 4 and (w.startswith(t) or t.startswith(w)) for w in words)):
+            hits += 1
+    return round(hits / len(terms), 2)
+
+
+def people_word(r: dict) -> str | None:
+    """The first title word that names a person (woman, man, couple, portrait, hands ...), else None."""
+    return next((w for w in re.findall(r"[a-z]+", str(r.get("title") or "").lower()) if w in PEOPLE_WORDS), None)
+
+
+def commercial_drop_reason(r: dict) -> str:
+    """Why --commercial drops a result, one reason per cause so the counts say what to do next."""
+    lic, flags = r.get("licence") or {}, r.get("flags") or []
+    if lic.get("commercial") is False:
+        return "Mixkit Restricted (personal use only)" if lic.get("name") == MIXKIT_RESTRICTED else "non-commercial licence"
+    if "suspicious-licence" in flags:
+        return "suspicious uploader licence (music video, film or rip)"
+    if r.get("source") == "mixkit" and not lic.get("verified"):
+        return "Mixkit licence not read (the clip page did not answer)"
+    return "commercial use not confirmed"
+
+
 def keep(r: dict, opts: dict) -> str | None:
     """None when the result passes the filters, else the reason it is dropped."""
     lic = r.get("licence") or {}
     if lic.get("derivatives") is False and not opts.get("allow_nd"):
         return "no-derivatives licence (a montage is an edit)"
     if opts.get("commercial") and lic.get("commercial") is not True:
-        return "commercial use not allowed or not confirmed"
+        return commercial_drop_reason(r)
     if not opts.get("any_licence") and lic.get("name", "").startswith("unknown"):
         return "unknown licence"
     if opts.get("no_ai") and "ai-generated" in r.get("flags", []):
         return "AI-generated"
+    if opts.get("no_people") and people_word(r):
+        return "people named in the title (--no-people)"
+    match = opts.get("match")
+    if match in ("any", "all"):
+        rel = relevance(r, opts.get("query") or "")
+        if rel is not None and (rel == 0 if match == "any" else rel < 1):
+            return "title matches no query word (--match any)" if match == "any" else \
+                "title misses a query word (--match all)"
     mh = opts.get("min_height")
     if mh:
         h = r.get("height")
@@ -1207,8 +1651,9 @@ def run_search(http: Http, db: dict, query: str, sources: list, limit: int, opts
     report = {"schema": RESULTS_SCHEMA, "query": query,
               "searched_at": _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
               "filters": {k: opts.get(k) for k in ("min_height", "orientation", "commercial", "allow_nd", "any_licence",
-                                                  "no_ai") if opts.get(k)},
+                                                  "no_ai", "no_people", "match", "resolve") if opts.get(k)},
               "limit_per_source": limit, "sources": {}, "results": [], "warnings": []}
+    opts = {**opts, "query": query}
     by_id = sources_by_id(db)
     for name in sources:
         src = by_id.get(name)
@@ -1225,6 +1670,11 @@ def run_search(http: Http, db: dict, query: str, sources: list, limit: int, opts
             found = SEARCHERS[name](http, db, query, limit, local)
         except FootageError as e:
             report["sources"][name] = {"status": "error", "detail": redact(e)}
+            if getattr(e, "retry_after", None) is not None:
+                report["sources"][name]["retry_after"] = e.retry_after
+            if isinstance(e, ChallengeError):
+                report["sources"][name]["challenge"] = True
+            report["warnings"].extend(redact(w) for w in local.get("warnings", []))
             continue
         except (KeyError, TypeError, ValueError, AttributeError) as e:  # a changed page or API shape
             report["sources"][name] = {"status": "error", "detail": f"could not read the answer ({type(e).__name__}); "
@@ -1240,12 +1690,26 @@ def run_search(http: Http, db: dict, query: str, sources: list, limit: int, opts
                 dropped[why] = dropped.get(why, 0) + 1
             elif len(kept) < limit:
                 r["query"] = query
+                r["relevance"] = relevance(r, query)
                 kept.append(r)
         report["results"].extend(kept)
         report["sources"][name] = {"status": "ok", "count": len(kept), "found": len(found),
                                    **({"dropped": dropped} if dropped else {})}
+        if name == "archive" and kept:
+            sus = sum("suspicious-licence" in r.get("flags", []) for r in kept)
+            report["warnings"].append(
+                "archive: every licence is the uploader's own claim, not checked by the Archive (trust the uploader?)"
+                + (f"; {sus} look like music videos, films, TV or YouTube rips and are marked suspicious-licence "
+                   "(commercial ?)" if sus else ""))
         report["warnings"].extend(redact(w) for w in local.get("warnings", []))
     return report
+
+
+def _size_text(r: dict) -> str:
+    if r.get("width") and r.get("height"):
+        est = "~" if "size-from-thumbnail" in (r.get("flags") or []) else ""
+        return f"{est}{r['width']}x{r['height']}"
+    return f"{r['quality']}p" if r.get("quality") else "?"
 
 
 def print_results(report: dict) -> None:
@@ -1253,16 +1717,37 @@ def print_results(report: dict) -> None:
         extra = f"{st.get('count', 0)} kept of {st.get('found', 0)}" if st["status"] == "ok" else st.get("detail", "")
         if st.get("dropped"):
             extra += " (dropped: " + ", ".join(f"{v} {k}" for k, v in st["dropped"].items()) + ")"
+        ra = st.get("retry_after")
+        if st["status"] == "error" and ra is not None and "--wait-429" not in extra:
+            extra += (f" [Retry-After {ra:g}s: --wait-429 {math.ceil(ra)} waits for it (at most {MAX_WAIT_429:g})"
+                      if ra <= MAX_WAIT_429 else f" [Retry-After {ra:g}s: longer than --wait-429 can wait") + \
+                ", or search again later with --retry-failed]"
         print(f"# {name:10} {st['status']:11} {extra}")
     for w in report.get("warnings", []):
         print(f"# warning: {w}")
+    unread = loose = 0
     for r in report["results"]:
-        size = f"{r['width']}x{r['height']}" if r.get("width") and r.get("height") else (f"{r['quality']}p" if r.get("quality") else "?")
         dur = f"{r['duration']:.0f}s" if r.get("duration") else "?"
         lic = r["licence"]
+        flags = r.get("flags") or []
         com = {True: "commercial ok", False: "NON-commercial", None: "commercial ?"}[lic.get("commercial")]
         att = "credit required" if lic.get("attribution_required") else ("credit optional" if lic.get("attribution_required") is False else "credit ?")
-        print(f"{r['id']}\t{size}\t{dur}\t{lic.get('name')} | {com} | {att}\t{(r.get('title') or '')[:70]}")
+        name = lic.get("name")
+        if "suspicious-licence" in flags:
+            name = f"{name} SUSPICIOUS (uploader's claim)"
+        elif "uploader-licence" in flags:
+            name = f"{name} (uploader's claim)"
+        if r.get("source") == "mixkit" and not lic.get("verified"):
+            unread += 1
+        if r.get("relevance") == 0:
+            loose += 1
+        print(f"{r['id']}\t{_size_text(r)}\t{dur}\t{name} | {com} | {att}\t{(r.get('title') or '')[:70]}")
+    if unread:
+        print(f"# note: {unread} Mixkit licence(s) and real sizes are not read yet (~ sizes are thumbnail guesses): "
+              "--resolve reads each clip page (one request per clip); --commercial does too")
+    if loose:
+        print(f"# note: {loose} result(s) share no word with the query in their title (the site matched loosely); "
+              "--match any drops them")
 
 
 # ------------------------------------------------------------------------------------------------- download
@@ -1272,7 +1757,72 @@ def pick_from_results(results_path: Path, rid: str) -> dict | None:
         data = json.loads(Path(results_path).read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return None
-    return next((r for r in data.get("results", []) if r.get("id") == rid), None)
+    return next((r for r in data.get("results", []) if isinstance(r, dict) and r.get("id") == rid), None)
+
+
+def load_results(path: Path) -> dict | None:
+    """An earlier results file (kosif.free_footage.results.v1), else None."""
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return data if isinstance(data, dict) and data.get("schema") == RESULTS_SCHEMA else None
+
+
+def _norm_query(q) -> str:
+    return re.sub(r"\s+", " ", str(q or "").strip().lower())
+
+
+def search_entry(report: dict) -> dict:
+    return {"query": report.get("query"), "searched_at": report.get("searched_at"), "filters": report.get("filters", {}),
+            "sources": report.get("sources", {}), "ids": [r.get("id") for r in report.get("results", [])]}
+
+
+def merge_results(prev: dict | None, report: dict) -> dict:
+    """The new search on top of the earlier results file: this search's results first, then every earlier result
+    whose id it did not return (each keeps the query that found it), and a `searches` history. A Mixkit result whose
+    licence an earlier search read is not replaced by the same clip unread. The top-level query, sources and filters
+    describe the newest search, as before."""
+    merged = dict(report)
+    old = [r for r in (prev or {}).get("results", []) if isinstance(r, dict) and r.get("id")]
+    by_old = {r["id"]: r for r in old}
+    new = []
+    for r in report.get("results", []):
+        o = by_old.get(r.get("id"))
+        if o and r.get("source") == "mixkit" and not (r.get("licence") or {}).get("verified") \
+                and (o.get("licence") or {}).get("verified"):
+            r = {**o, "query": r.get("query"), "relevance": r.get("relevance")}
+        new.append(r)
+    seen = {r.get("id") for r in new}
+    merged["results"] = new + [r for r in old if r["id"] not in seen]
+    history = list((prev or {}).get("searches") or ([search_entry(prev)] if prev else []))
+    merged["searches"] = (history + [search_entry(report)])[-RESULTS_HISTORY:]
+    return merged
+
+
+def save_results(path: Path, report: dict, replace: bool = False) -> dict:
+    """Write the results file, merged with the earlier one unless replace (the old overwrite)."""
+    path = Path(path)
+    data = {**report, "searches": [search_entry(report)]} if replace else merge_results(load_results(path), report)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    tmp.replace(path)
+    return data
+
+
+def answered_sources(prev: dict | None, query: str) -> dict:
+    """{source: (status record, searched_at)} for the sources that answered the last time this query was saved."""
+    out = {}
+    for entry in (prev or {}).get("searches") or ([search_entry(prev)] if prev else []):
+        if _norm_query(entry.get("query")) != _norm_query(query):
+            continue
+        for name, st in (entry.get("sources") or {}).items():
+            if isinstance(st, dict) and st.get("status") in ("ok", "cached"):
+                out[name] = (st, entry.get("searched_at"))
+            elif name in out:
+                out.pop(name)  # it failed in a later search of the same query
+    return out
 
 
 def resolve_id(http: Http, db: dict, rid: str, opts: dict) -> dict:
@@ -1283,13 +1833,15 @@ def resolve_id(http: Http, db: dict, rid: str, opts: dict) -> dict:
         found = parse_wikimedia(db, http.get_json(commons_lookup_url(pageids=native)))
     elif source == "archive":
         meta = http.get_json(f"https://archive.org/metadata/{urllib.parse.quote(native)}")
-        found = [r for r in [archive_result(db, {"identifier": native}, meta, opts.get("max_bytes"))] if r]
+        caps = {k: opts.get(k) for k in ("max_quality", "max_height") if opts.get(k)}
+        found = [r for r in [archive_result(db, {"identifier": native}, meta, opts.get("max_bytes"), caps)] if r]
     elif source == "nasa":
         docs = [d for d in parse_nasa_search(http.get_json(nasa_search_url(nasa_id=native, limit=1))) if d["nasa_id"] == native]
         found = []
         if docs:
-            vids, _meta = nasa_variants(http.get_json(f"https://images-api.nasa.gov/asset/{urllib.parse.quote(native)}"))
-            found = [nasa_result(db, docs[0], vids[0], alternates=vids)] if vids else []
+            asset = http.get_json(f"https://images-api.nasa.gov/asset/{urllib.parse.quote(native)}")
+            vids, _meta = nasa_variants(asset)
+            found = [nasa_result(db, docs[0], vids[0], alternates=vids, preview=nasa_preview(asset))] if vids else []
     elif source == "mixkit" and native.isdigit():
         # /free-stock-video/<id>/ redirects to a search page, but any "<slug>-<id>/" redirects to the clip's own page,
         # whose licence notice confirm_licence reads (and whose canonical link replaces this page_url)
@@ -1409,14 +1961,26 @@ def manual_record(db: dict, url: str, opts: dict) -> dict:
     return rec
 
 
-def confirm_licence(http: Http, db: dict, rec: dict) -> dict:
-    """Mixkit: read the clip page's own licence notice before downloading (Free vs Restricted)."""
-    if rec.get("source") != "mixkit" or (rec.get("licence") or {}).get("verified"):
+def confirm_licence(http: Http, db: dict, rec: dict, files: bool = False) -> dict:
+    """Mixkit: read the clip page's own licence notice before downloading (Free vs Restricted), and with it the sizes
+    the page offers (rec["variants"]), the thumbnail and the preview. files=True reads the page even when the licence
+    is already known, for a record that has no sizes yet (results written before sizes were recorded)."""
+    if rec.get("source") != "mixkit" or not rec["id"].split(":", 1)[-1].isdigit():
+        return rec
+    if (rec.get("licence") or {}).get("verified") and not (files and "variants" not in rec):
         return rec
     try:
         page = http.get_text(rec["page_url"])
+    except ChallengeError:
+        if files and not (rec.get("licence") or {}).get("verified"):
+            raise  # download without a known licence: stop this target and say so, rather than guess
+        rec["licence"]["note"] = (rec["licence"].get("note") or "") + \
+            "; the clip page answered with a Cloudflare browser check (not read)"
+        rec.setdefault("native", {})["page_error"] = "Cloudflare browser check"
+        return rec
     except FootageError as e:
-        rec["licence"]["note"] += f"; the clip page could not be read ({e})"
+        rec["licence"]["note"] = (rec["licence"].get("note") or "") + f"; the clip page could not be read ({e})"
+        rec.setdefault("native", {})["page_error"] = str(redact(e))[:300]
         return rec
     notice = mixkit_page_notice(page)
     cid = rec["id"].split(":", 1)[1]
@@ -1424,19 +1988,32 @@ def confirm_licence(http: Http, db: dict, rec: dict) -> dict:
                       + r'/)"', page)
     if canon:
         rec["page_url"] = canon.group(1)  # the clip's real page, not the redirecting clip-<id>/ form
+    vo = next((o for o in _ld_objects(page) if o.get("@type") == "VideoObject"), {})
+    nat = rec.setdefault("native", {})
+    nat.pop("page_error", None)
+    content, embed, thumb = _ld_url(vo.get("contentUrl")), _ld_url(vo.get("embedUrl")), _ld_url(vo.get("thumbnailUrl"))
+    kind, base = mixkit_pattern(cid, content, embed, thumb)
+    if kind:
+        nat["files"] = kind
+        if base:
+            nat["files_base"] = base
+        else:
+            nat.pop("files_base", None)
+    rec["thumb_url"] = https(thumb) or rec.get("thumb_url")
+    rec["preview_url"] = https(embed) or rec.get("preview_url")
+    rec["variants"] = mixkit_page_variants(page, cid)  # [] when the page lists none (the template sizes apply)
+    if vo.get("name") and str(rec.get("title") or "").startswith("Mixkit clip"):
+        rec["title"] = clean_text(vo["name"])
+    if rec.get("duration") is None and vo.get("duration"):
+        rec["duration"] = _float(vo["duration"])
     if notice:
         lic = mixkit_licence(notice)
         rec["licence"] = lic
-        vo = next((o for o in _ld_objects(page) if o.get("@type") == "VideoObject"), {})
-        if vo.get("name") and str(rec.get("title") or "").startswith("Mixkit clip"):
-            rec["title"] = clean_text(vo["name"])
-        if rec.get("duration") is None and vo.get("duration"):
-            rec["duration"] = _float(vo["duration"])
         rec["flags"] = [f for f in rec.get("flags", []) if f != "licence-checked-at-download"]
         rec["attribution"] = format_attribution(((sources_by_id(db).get("mixkit") or {}).get("attribution") or {}).get("template"),
                                                 title=rec.get("title"), source="Mixkit", licence=lic["name"],
                                                 licence_url=lic["url"], page_url=rec["page_url"])
-        mixkit_apply_files(rec)  # a Free clip is fetched at 1080p (2160p when it has it), a Restricted one at 720p
+    mixkit_apply_files(rec)  # a Free clip at its largest listed size (else 2160p/1080p), a Restricted one at 720p
     return rec
 
 
@@ -1484,6 +2061,10 @@ def fetch_file(http: Http, url: str, dest: Path, max_mb: float) -> dict:
                     break
                 if first:
                     if not looks_like_video(chunk[:512], ctype):
+                        if is_challenge_page(chunk):
+                            host = (urllib.parse.urlsplit(url).hostname or "").lower()
+                            http.challenged.add(host)
+                            raise ChallengeError(url, getattr(resp, "status", None) or 200, final_url=_final_url(resp, url))
                         raise FootageError("the server sent a web page or other data, not a video "
                                            "(a login wall, a block page or a moved file)")
                     first = False
@@ -1511,15 +2092,33 @@ def measure(path: Path) -> dict:
         return {}
     try:
         out = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
-                              "stream=width,height,codec_name,r_frame_rate:format=duration", "-of", "json", str(path)],
+                              "stream=width,height,codec_name,r_frame_rate,pix_fmt,color_range,color_space,"
+                              "color_transfer,color_primaries:format=duration,format_name", "-of", "json", str(path)],
                              capture_output=True, text=True, timeout=60)
         d = json.loads(out.stdout or "{}")
         s = (d.get("streams") or [{}])[0]
+        f = d.get("format") or {}
         return {k: v for k, v in {"width": s.get("width"), "height": s.get("height"), "codec": s.get("codec_name"),
-                                  "fps": s.get("r_frame_rate"),
-                                  "duration": _float((d.get("format") or {}).get("duration"))}.items() if v}
+                                  "fps": s.get("r_frame_rate"), "duration": _float(f.get("duration")),
+                                  "pix_fmt": s.get("pix_fmt"), "color_range": s.get("color_range"),
+                                  "color_space": s.get("color_space"), "color_transfer": s.get("color_transfer"),
+                                  "color_primaries": s.get("color_primaries"),
+                                  "container": f.get("format_name")}.items() if v and v != "unknown"}
     except (OSError, ValueError, subprocess.SubprocessError):
         return {}
+
+
+def range_warnings(measured: dict, file_name: str) -> list:
+    """A note when a download is full-range (yuvj420p, or color_range pc), as QuickTime .mov files from the Archive
+    often are: converting it as if it were limited range crushes the blacks and clips the whites."""
+    pix, rng = str(measured.get("pix_fmt") or ""), str(measured.get("color_range") or "").lower()
+    if not (pix.startswith("yuvj") or rng in ("pc", "jpeg", "full")):
+        return []
+    kind = "QuickTime " if "mov" in str(measured.get("container") or "") or file_name.lower().endswith(".mov") else ""
+    matrix = measured.get("color_space") or "not tagged"
+    return [f"full-range {kind}video ({pix or 'pix_fmt ?'}, color_range {rng or '?'}): convert it range-aware, e.g. "
+            f"ffmpeg -i {file_name} -vf \"scale=in_range=pc:out_range=tv,format=yuv420p\" -color_range tv ... "
+            f"(colour matrix: {matrix}; set in_color_matrix/out_color_matrix when it is not the one you deliver)"]
 
 
 def _redact_all(obj):
@@ -1536,6 +2135,97 @@ def sidecar_for(media: Path) -> Path:
     return media.with_name(media.name + ".json")
 
 
+def _caps(opts: dict) -> dict:
+    return {k: opts.get(k) for k in ("max_quality", "max_height") if opts.get(k)}
+
+
+def _caps_text(opts: dict) -> str:
+    return " and ".join(t for t in (f"--quality {opts['max_quality']}" if opts.get("max_quality") else "",
+                                    f"--max-height {opts['max_height']}" if opts.get("max_height") else "") if t)
+
+
+def download_candidates(rec: dict, opts: dict) -> list:
+    """The files download tries, in order: [{url, route, quality, width, height, bytes}].
+
+    A record with sizes (rec["variants"]: a Mixkit clip page's download options, Pexels and Pixabay files) gives
+    each allowed size within --quality / --max-height, largest first, as its direct file and then (Mixkit) its
+    download route; sizes known to be over --max-mb are left out. Any other record gives file_url, then its
+    alternates (NASA ~large/~medium, the Mixkit size templates). A size that is unknown is not ruled out."""
+    caps = _caps(opts)
+    cap_bytes = int(opts["max_mb"] * 1048576) if opts.get("max_mb") else None
+    fits = lambda c: size_fits(c.get("width"), c.get("height"), c.get("quality"), caps.get("max_quality"),  # noqa: E731
+                               caps.get("max_height")) is not False
+    vs = allowed_variants(rec)
+    if vs:
+        fit = [v for v in vs if fits(v)]
+        if not fit:
+            offered = ", ".join(f"{v.get('quality')}p" + (f" {v['width']}x{v['height']}" if v.get("width") else "")
+                                for v in vs)
+            raise FootageError(f"{rec['id']}: no file within {_caps_text(opts)}; it comes at {offered}")
+        small = [v for v in fit if not (cap_bytes and v.get("bytes") and v["bytes"] > cap_bytes)]
+        if not small:
+            least = min(v["bytes"] for v in fit)
+            raise FootageError(f"{rec['id']}: every size is over --max-mb {opts['max_mb']:g} "
+                               f"(the smallest is {least / 1048576:.1f} MB)")
+        out = []
+        for v in small:
+            base = {k: v.get(k) for k in ("quality", "width", "height", "bytes", "label")}
+            if v.get("url"):
+                out.append({**base, "url": v["url"], "route": False})
+            if v.get("route"):
+                out.append({**base, "url": v["route"], "route": True})
+        return out
+    mixkit = rec.get("source") == "mixkit"
+    out = []
+    for i, u in enumerate([rec["file_url"]] + list(rec.get("alternates") or [])):
+        c = {"url": u, "route": is_mixkit_route(u), "quality": None, "width": None, "height": None, "bytes": None}
+        if mixkit:
+            c["quality"] = mixkit_quality(u)
+            if c["quality"] and rec.get("width") and rec.get("height"):
+                c["width"], c["height"] = _scale_to_short_side(rec["width"], rec["height"], c["quality"])
+        elif i == 0:
+            c.update(width=rec.get("width"), height=rec.get("height"), quality=rec.get("quality"),
+                     bytes=rec.get("bytes"))
+        out.append(c)
+    if caps:
+        fit = [c for c in out if fits(c)]
+        if not fit:
+            first = out[0]
+            size = f"{first['width']}x{first['height']}" if first.get("width") else f"{first.get('quality')}p"
+            raise FootageError(f"{rec['id']}: its file is {size}, over {_caps_text(opts)} "
+                               f"({rec.get('source_name') or rec.get('source')} offers no smaller size here)")
+        out = fit
+    return out
+
+
+def dry_run_pick(http: Http, cands: list, cap: int | None) -> dict | None:
+    """The candidate download would end up with, without fetching it: a size the source lists is taken as is; any
+    other is asked with HEAD (a missing size, 403/404/410, moves on to the next; so does one over --max-mb)."""
+    for i, c in enumerate(cands):
+        last = i + 1 == len(cands)
+        if c.get("bytes"):
+            if cap and c["bytes"] > cap and not last:
+                continue
+            return {**c, "size_from": "listed by the source"}
+        u = c["url"]
+        try:
+            if c.get("route"):
+                u = mixkit_follow_route(http, u)
+            h = http.head(u)
+        except ChallengeError:
+            raise
+        except HttpError as e:
+            if e.status in (403, 404, 410) and not last:
+                continue
+            if e.status in (405, 501):  # HEAD not allowed: the size stays unknown
+                return {**c, "url": u, "size_from": None}
+            raise
+        if cap and h["bytes"] and h["bytes"] > cap and not last:
+            continue
+        return {**c, "url": u, "bytes": h["bytes"], "size_from": "HEAD" if h["bytes"] else None}
+    return None
+
+
 def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> dict:
     if re.match(r"^https?://", target, re.I):
         rec = resolve_url(http, db, target, opts) or manual_record(db, target, opts)
@@ -1546,9 +2236,12 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
     if (sources_by_id(db).get(rec["source"]) or {}).get("licence_source") is False:
         raise FootageError(f"{rec['source']} is not a licence source")
     cap = int(opts["max_mb"] * 1048576) if opts.get("max_mb") else None
-    if rec["source"] == "archive" and cap and (rec.get("bytes") or 0) > cap:
+    caps = _caps(opts)
+    over_caps = caps and size_fits(rec.get("width"), rec.get("height"), rec.get("quality"), **caps) is False
+    if rec["source"] == "archive" and ((cap and (rec.get("bytes") or 0) > cap) or over_caps):
         smaller = resolve_id(http, db, rec["id"], {**opts, "max_bytes": cap})  # the item's smaller derivative
-        if (smaller.get("bytes") or 0) <= cap:
+        if (not cap or (smaller.get("bytes") or 0) <= cap) and \
+                (not caps or size_fits(smaller.get("width"), smaller.get("height"), None, **caps) is not False):
             smaller["query"] = rec.get("query")
             rec = smaller
     if rec["source"] == "nasa" and "alternates" not in rec and not opts.get("dry_run"):
@@ -1556,7 +2249,7 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
             rec = {**resolve_id(http, db, rec["id"], opts), "query": rec.get("query")}
         except FootageError:
             pass
-    rec = confirm_licence(http, db, rec)
+    rec = confirm_licence(http, db, rec, files=True)  # Mixkit: licence, sizes and the download route from the page
     if rec["source"] == "mixkit":
         mixkit_apply_files(rec)  # also for a results file written before Free clips were fetched above 720p
     lic = rec["licence"]
@@ -1564,39 +2257,77 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
         raise FootageError(f"{rec['id']}: {lic.get('name')} forbids edits (ND); a montage is an edit. "
                            "Pass --allow-nd only to keep it unedited as reference")
     if opts.get("commercial") and lic.get("commercial") is not True:
-        raise FootageError(f"{rec['id']}: {lic.get('name')} does not allow (or does not confirm) commercial use")
+        why = "suspicious uploader licence on what looks like someone else's work" \
+            if "suspicious-licence" in rec.get("flags", []) else "does not allow (or does not confirm) commercial use"
+        raise FootageError(f"{rec['id']}: {lic.get('name')} {why}")
     out.mkdir(parents=True, exist_ok=True)
     dest = out / safe_name(rec)
+    cands = download_candidates(rec, opts)
+    # the size this clip is expected at: the largest listed one within --quality/--max-height (not --max-mb, so a
+    # budget fallback is flagged smaller-variant), else the first candidate's; a Mixkit Free clip without listed
+    # sizes is expected at 1080p (its 2160p file may not exist)
+    within = [v["quality"] for v in allowed_variants(rec) if v.get("quality") and
+              size_fits(v.get("width"), v.get("height"), v.get("quality"), **caps) is not False]
+    qs = [c["quality"] for c in cands if c.get("quality")]
+    top = within[0] if within else (qs[0] if qs else None)
+    expected = min([q for q in (rec.get("quality"), top) if q] or [0]) or None
+    note = "" if not caps or any(c.get("quality") or c.get("height") for c in cands) else \
+        f"{_caps_text(opts)} not checked: {rec.get('source_name') or rec['source']} does not list this file's size"
     if opts.get("dry_run"):
-        return {"id": rec["id"], "file": dest.name, "dry_run": True, "file_url": redact(rec["file_url"]),
-                "licence": lic.get("name"), "attribution": rec["attribution"]}
+        pick = dry_run_pick(http, cands, cap) or {**cands[0], "size_from": None}
+        q = pick.get("quality") or (mixkit_quality(pick["url"]) if rec["source"] == "mixkit" else None) or \
+            (min(pick["width"], pick["height"]) if pick.get("width") and pick.get("height") else None)
+        return {"id": rec["id"], "file": dest.name, "dry_run": True, "file_url": redact(pick["url"]),
+                "licence": lic.get("name"), "attribution": rec["attribution"],
+                "quality": q, "width": pick.get("width"), "height": pick.get("height"), "bytes": pick.get("bytes"),
+                "size_from": pick.get("size_from"), "over_max_mb": bool(cap and pick.get("bytes") and pick["bytes"] > cap),
+                "candidates": len(cands), **({"note": note} if note else {})}
     info = {}
     if dest.exists() and not opts.get("force"):
         data = dest.read_bytes()
         info = {"bytes": len(data), "sha256": hashlib.sha256(data).hexdigest(), "content_type": None, "reused": True}
     else:
-        urls = [rec["file_url"]] + list(rec.get("alternates") or [])
-        for i, u in enumerate(urls):
+        for i, c in enumerate(cands):
+            u = c["url"]
             try:
+                if c.get("route"):
+                    u = mixkit_follow_route(http, u)  # the hashed file a newer clip's download option names
                 info = fetch_file(http, u, dest, opts.get("max_mb", 300))
+            except ChallengeError:
+                raise  # never worked around; the message says to retry later
             except FootageError as e:
                 missing = isinstance(e, HttpError) and e.status in (403, 404, 410)
-                if i + 1 < len(urls) and ("--max-mb" in str(e) or missing):
-                    # over the cap, or this size does not exist: try the next smaller variant
-                    # (NASA ~large, ~medium, ~mobile; a Mixkit Free clip without -2160 has -1080)
+                if i + 1 < len(cands) and ("--max-mb" in str(e) or missing or
+                                           (c.get("route") and "names no file" in str(e))):
+                    # over the cap, or this size does not exist: try the next file (this size's download route,
+                    # or the next smaller size: NASA ~large, ~medium; a Mixkit Free clip without -2160 has -1080)
                     continue
+                if rec["source"] == "mixkit" and missing and not rec.get("variants"):
+                    err = (rec.get("native") or {}).get("page_error")
+                    raise FootageError(
+                        f"{e}; newer Mixkit clips have no <id>-<size>.mp4 file and are fetched through the clip "
+                        "page's download options, " + (f"but the clip page could not be read ({err})" if err else
+                                                      "which this clip page did not list")) from None
                 raise
-            if rec["source"] == "mixkit":
-                q = mixkit_quality(u)
-                if q and rec.get("quality") and q < rec["quality"]:
+            q = c.get("quality") or (mixkit_quality(u) if rec["source"] == "mixkit" else None)
+            if rec["source"] == "mixkit" or rec.get("variants"):
+                if q and expected and q < expected:
                     rec["flags"] = sorted(set(rec.get("flags", [])) | {"smaller-variant"})
-                if q and rec.get("width") and rec.get("height") and rec.get("quality") and q != rec["quality"]:
+                if c.get("width") and c.get("height"):
+                    rec["width"], rec["height"] = c["width"], c["height"]
+                elif q and rec.get("width") and rec.get("height") and rec.get("quality") and q != rec["quality"]:
                     rec["width"], rec["height"] = _scale_to_short_side(rec["width"], rec["height"], q)
                 rec["file_url"], rec["quality"] = u, q or rec.get("quality")
+                if c.get("route"):
+                    rec.setdefault("native", {})["download_route"] = c["url"]
             elif u != rec["file_url"]:
                 rec["flags"] = sorted(set(rec.get("flags", [])) | {"smaller-variant"})
                 rec["file_url"], rec["width"], rec["height"] = u, None, None
             break
+    measured = measure(dest)
+    warnings = range_warnings(measured, dest.name)
+    if warnings:
+        rec["flags"] = sorted(set(rec.get("flags", [])) | {"full-range"})
     sidecar = {
         "schema": ASSET_SCHEMA,
         "file": dest.name,
@@ -1606,7 +2337,8 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
         "result": _redact_all(rec),
         "licence": lic,
         "attribution": rec["attribution"],
-        "measured": measure(dest),
+        "measured": measured,
+        **({"warnings": warnings} if warnings else {}),
         "rights_note": "Licence as declared by the source when downloaded; it is not legal advice. Read the clip page "
                        "before publishing, keep this file with the project, and credit as the attribution line says.",
     }
@@ -1619,7 +2351,10 @@ def download_one(http: Http, db: dict, target: str, out: Path, opts: dict) -> di
     sidecar_for(dest).write_text(json.dumps(sidecar, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     write_credits(out)
     return {"id": rec["id"], "file": dest.name, "bytes": info["bytes"], "licence": lic.get("name"),
-            "attribution": rec["attribution"], "reused": bool(info.get("reused"))}
+            "attribution": rec["attribution"], "reused": bool(info.get("reused")),
+            "quality": rec.get("quality"), "width": measured.get("width") or rec.get("width"),
+            "height": measured.get("height") or rec.get("height"),
+            **({"warnings": warnings} if warnings else {}), **({"note": note} if note else {})}
 
 
 def _cell(s) -> str:
@@ -1637,8 +2372,8 @@ def credits_markdown(folder: Path) -> str:
             rows.append(d)
     rows.sort(key=lambda d: d.get("file", ""))
     lines = ["# Attribution — footage credits", "",
-             "Generated by `scripts/free_footage.py` from the `*.json` sidecars in this folder "
-             "(run `python3 scripts/free_footage.py credits <this folder>` after removing a clip).", "",
+             f"Generated by `{SCRIPT_FROM_ROOT}` from the `*.json` sidecars in this folder "
+             f"(after removing a clip, run `python3 {SCRIPT_FROM_ROOT} credits <this folder>`{SCRIPT_FROM_WHERE}).", "",
              "| file | source | licence | credit required | commercial use |", "|---|---|---|---|---|"]
     yn = {True: "yes", False: "no", None: "check"}
     for d in rows:
@@ -1661,6 +2396,204 @@ def write_credits(folder: Path) -> Path:
     path = Path(folder) / "ATTRIBUTION.md"
     path.write_text(credits_markdown(folder), encoding="utf-8")
     return path
+
+
+# ------------------------------------------------------------------------------------------------- preview
+
+CELL_W, CELL_H = 320, 180
+
+
+def image_ext(head: bytes) -> str | None:
+    """.jpg/.png/.gif/.webp from an image's first bytes, else None (a web page, an error, anything else)."""
+    if head[:3] == b"\xff\xd8\xff":
+        return ".jpg"
+    if head[:8] == b"\x89PNG\r\n\x1a\n":
+        return ".png"
+    if head[:4] == b"GIF8":
+        return ".gif"
+    if head[:4] == b"RIFF" and head[8:12] == b"WEBP":
+        return ".webp"
+    return None
+
+
+def preview_items(src: Path, ids=None, query=None, limit: int = 40) -> list:
+    """[(record, local media file or None)] from a results file, or from a folder of downloads and their sidecars."""
+    items = []
+    if src.is_dir():
+        for p in sorted(src.glob("*.json")):
+            try:
+                d = json.loads(p.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                continue
+            if not isinstance(d, dict) or d.get("schema") != ASSET_SCHEMA:
+                continue
+            media = p.with_name(p.name[: -len(".json")])
+            rec = dict(d.get("result") or {})
+            rec.setdefault("id", d.get("file"))
+            rec.setdefault("licence", d.get("licence") or {})
+            items.append((rec, media if media.is_file() else None))
+    else:
+        data = load_results(src)
+        if data is None:
+            raise FootageError(f"{src} is neither a free_footage results file nor a folder of downloads")
+        items = [(r, None) for r in data.get("results", []) if isinstance(r, dict)]
+    if ids:
+        wanted = set(ids)
+        items = [it for it in items if it[0].get("id") in wanted]
+    if query:
+        items = [it for it in items if _norm_query(it[0].get("query")) == _norm_query(query)]
+    return items[: max(1, limit)]
+
+
+def _ffmpeg(args: list, timeout: int = 120) -> bool:
+    try:
+        return subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", *args], capture_output=True,
+                              timeout=timeout).returncode == 0
+    except (OSError, subprocess.SubprocessError):
+        return False
+
+
+def _fit(w: int, h: int) -> str:
+    return f"scale={w}:{h}:force_original_aspect_ratio=decrease,pad={w}:{h}:(ow-iw)/2:(oh-ih)/2:color=black"
+
+
+ONE_IMAGE = ["-frames:v", "1", "-update", "1"]  # write a single image, not an image sequence
+
+
+def video_frames(video: Path, dest: Path, frames: int = 1) -> bool:
+    """A still a third of the way in (frames=1), or a strip of `frames` evenly spaced stills, as a JPEG."""
+    dur = measure(video).get("duration") or 0
+    if frames <= 1:
+        return _ffmpeg(["-ss", f"{dur / 3:.2f}", "-i", str(video), *ONE_IMAGE, "-vf", _fit(CELL_W, CELL_H), str(dest)])
+    rate = frames / dur if dur else 1.0
+    return _ffmpeg(["-i", str(video), "-vf", f"fps={rate:.6f},{_fit(CELL_W, CELL_H)},format=yuvj420p,"
+                    f"tile={frames}x1", *ONE_IMAGE, str(dest)])
+
+
+def fetch_image(http: Http, url: str, stem: Path) -> Path:
+    body = http.get_bytes(url, {"Accept": "image/*"}, cap_mb=THUMB_CAP_MB)
+    ext = image_ext(body[:16])
+    if not ext:
+        raise FootageError(f"{redact(url)} did not answer with an image")
+    path = stem.with_name(stem.name + ext)
+    path.write_bytes(body)
+    return path
+
+
+def contact_sheet_jpg(rows: list, out: Path, frames: int, cols: int) -> Path | None:
+    """One JPEG of every cell (numbered like the HTML page), drawn by ffmpeg; None when ffmpeg failed."""
+    w, h = CELL_W * max(1, frames), CELL_H
+    cells = out / "cells"
+    cells.mkdir(exist_ok=True)
+    try:
+        for i, row in enumerate(rows, 1):
+            dest = cells / f"{i:04d}.jpg"
+            src = ["-i", str(out / row["image"])] if row.get("image") else ["-f", "lavfi", "-i", f"color=c=black:s={w}x{h}"]
+            label = f",drawtext=text='{row['n']}':x=8:y=8:fontsize=24:fontcolor=white:box=1:boxcolor=black@0.6"
+            # one pixel format for every cell: thumbnails come as yuvj420p and yuvj422p, and a format change in
+            # the middle of the sequence makes ffmpeg rebuild the filter graph, so tile would start over
+            # (seen live: a 6-cell sheet showed only cells 5 and 6)
+            same = ",format=yuvj420p"
+            if not (_ffmpeg([*src, *ONE_IMAGE, "-vf", _fit(w, h) + label + same, str(dest)]) or
+                    _ffmpeg([*src, *ONE_IMAGE, "-vf", _fit(w, h) + same, str(dest)])):  # no fonts: no numbers
+                return None
+        c = max(1, cols if frames <= 1 else 1)
+        sheet = out / "contact_sheet.jpg"
+        ok = _ffmpeg(["-framerate", "1", "-i", str(cells / "%04d.jpg"), "-vf",
+                      f"format=yuvj420p,tile={c}x{math.ceil(len(rows) / c)}:padding=4:margin=4", *ONE_IMAGE, str(sheet)])
+        return sheet if ok else None
+    finally:
+        shutil.rmtree(cells, ignore_errors=True)
+
+
+def build_preview(http: Http, items: list, out: Path, frames: int = 1, cols: int = 4) -> dict:
+    """A contact sheet of the items: each one's thumbnail, else a still (or a strip of `frames` stills) from its
+    small preview video or from the local clip. Writes contact_sheet.html (always), contact_sheet.jpg (with ffmpeg)
+    and contact_sheet.json. Never fetches a full clip: previews are capped at PREVIEW_CAP_MB and deleted after use."""
+    out.mkdir(parents=True, exist_ok=True)
+    thumbs = out / "thumbs"
+    thumbs.mkdir(exist_ok=True)
+    have_ff = bool(shutil.which("ffmpeg") and shutil.which("ffprobe"))
+    rows = []
+    for n, (rec, media) in enumerate(items, 1):
+        stem = thumbs / f"{n:03d}-{re.sub(r'[^A-Za-z0-9._-]+', '_', str(rec.get('id') or n))[:60]}"
+        lic = rec.get("licence") or {}
+        row = {"n": n, "id": rec.get("id"), "title": rec.get("title"), "page_url": rec.get("page_url"),
+               "size": _size_text(rec), "duration": rec.get("duration"), "licence": lic.get("name"),
+               "commercial": lic.get("commercial"), "flags": rec.get("flags") or [], "relevance": rec.get("relevance"),
+               "image": None, "from": None, "errors": []}
+        order = []
+        if media is not None and have_ff:
+            order.append("local")
+        tries = ["preview", "thumb"] if frames > 1 else ["thumb", "preview"]
+        order += [t for t in tries if (t == "thumb" and rec.get("thumb_url")) or
+                  (t == "preview" and rec.get("preview_url") and have_ff)]
+        for how in order:
+            try:
+                if how == "local":
+                    img = stem.with_name(stem.name + ".jpg")
+                    if not video_frames(media, img, frames):
+                        raise FootageError("ffmpeg could not read the local clip")
+                elif how == "thumb":
+                    img = fetch_image(http, rec["thumb_url"], stem)
+                else:
+                    tmp = stem.with_name(stem.name + ".preview.mp4")
+                    try:
+                        fetch_file(http, rec["preview_url"], tmp, PREVIEW_CAP_MB)
+                        img = stem.with_name(stem.name + ".jpg")
+                        if not video_frames(tmp, img, frames):
+                            raise FootageError("ffmpeg could not read the preview file")
+                    finally:
+                        if tmp.exists():
+                            tmp.unlink()
+            except FootageError as e:
+                row["errors"].append(f"{how}: {redact(e)}"[:240])
+                continue
+            row.update(image=img.relative_to(out).as_posix(), **{"from": {"local": "the downloaded clip",
+                                                                         "thumb": "thumbnail",
+                                                                         "preview": "preview video"}[how]})
+            break
+        if not order:
+            row["errors"].append("no thumbnail or preview link" + ("" if have_ff else " usable without ffmpeg"))
+        rows.append(row)
+    html_path = out / "contact_sheet.html"
+    html_path.write_text(contact_sheet_html(rows, frames), encoding="utf-8")
+    jpg = contact_sheet_jpg(rows, out, frames, cols) if have_ff and rows else None
+    summary = {"schema": "kosif.free_footage.preview.v1",
+               "made_at": _dt.datetime.now(_dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+               "frames": frames, "html": html_path.name, "jpg": jpg.name if jpg else None, "items": rows}
+    (out / "contact_sheet.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return summary
+
+
+def contact_sheet_html(rows: list, frames: int) -> str:
+    e = lambda s: _html.escape(str(s if s is not None else ""), quote=True)  # noqa: E731
+    com = {True: "commercial ok", False: "NON-commercial", None: "commercial ?"}
+    cards = []
+    for r in rows:
+        img = f'<img src="{e(r["image"])}" alt="{e(r["title"])}" loading="lazy">' if r.get("image") else \
+            '<div class="none">no picture</div>'
+        flags = " ".join(f'<span class="flag">{e(f)}</span>' for f in r.get("flags") or [])
+        dur = f"{r['duration']:.0f}s" if isinstance(r.get("duration"), (int, float)) else "?"
+        link = f'<a href="{e(r["page_url"])}">page</a>' if str(r.get("page_url") or "").startswith("https://") else ""
+        cards.append(f'<figure class="card"><div class="n">{r["n"]}</div>{img}<figcaption><b>{e(r["id"])}</b> '
+                     f'{link}<br>{e(r["title"])}<br>{e(r["size"])} · {e(dur)} · {e(r["licence"])} · '
+                     f'{e(com.get(r.get("commercial"), "commercial ?"))}<br>{flags}'
+                     + (f'<br><small>{e("; ".join(r["errors"]))}</small>' if r.get("errors") and not r.get("image") else "")
+                     + "</figcaption></figure>")
+    width = CELL_W * max(1, frames)
+    return ("<!doctype html>\n<html lang=\"en\"><head><meta charset=\"utf-8\">"
+            "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><title>Footage contact sheet</title>"
+            "<style>body{font:14px/1.4 system-ui,sans-serif;margin:16px;background:#111;color:#eee}"
+            f".grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax({min(width, 960)}px,1fr));gap:12px}}"
+            ".card{margin:0;background:#1d1d1d;border-radius:6px;overflow:hidden;position:relative}"
+            ".card img{width:100%;display:block}.none{aspect-ratio:16/9;display:grid;place-items:center;color:#888}"
+            ".n{position:absolute;left:6px;top:6px;background:#000a;padding:0 6px;border-radius:4px}"
+            "figcaption{padding:8px}a{color:#8cf}.flag{background:#333;border-radius:3px;padding:0 4px;margin-right:4px;"
+            "font-size:12px}small{color:#f99}</style></head><body>"
+            "<h1>Footage contact sheet</h1><p>Screen each clip for people, faces and text before downloading it. "
+            "Licences are what each source declares; read the clip page before publishing.</p>"
+            f"<div class=\"grid\">{''.join(cards)}</div></body></html>\n")
 
 
 # ------------------------------------------------------------------------------------------------- probe
@@ -1687,11 +2620,15 @@ def probe_source(http: Http, src: dict) -> dict:
         except HttpError as e:
             final = e.final_url
             row.update(http=e.status if isinstance(e.status, int) else None, error=None if isinstance(e.status, int) else str(e))
+            if isinstance(e, ChallengeError):
+                row.update(challenge=True, error=str(e))
         if final != p["url"]:
             row["final_url"] = redact(final)  # urllib follows redirects silently; keep where it landed
         row["ms"] = int((time.monotonic() - t0) * 1000)
         code = row.get("http")
-        if site_of(final) != site_of(p["url"]):
+        if row.get("challenge"):
+            row["verdict"] = "blocked"  # a Cloudflare browser check: reachable by a person, not by this script now
+        elif site_of(final) != site_of(p["url"]):
             row["verdict"] = "moved"  # the site now answers from another domain (videvo.net -> freepik.com)
         elif isinstance(code, int) and code < 400:
             row["verdict"] = "ok"
@@ -1794,7 +2731,9 @@ def cmd_check(args, db) -> int:
 
 
 def make_http(args) -> Http:
-    return Http(delay=args.delay, timeout=args.timeout)
+    return Http(delay=args.delay, timeout=args.timeout,
+                max_retry_after=getattr(args, "wait_429", None) if getattr(args, "wait_429", None) is not None
+                else MAX_RETRY_AFTER, challenge_wait=getattr(args, "retry_challenge", 0) or 0)
 
 
 def cmd_probe(args, db) -> int:
@@ -1817,23 +2756,47 @@ def cmd_probe(args, db) -> int:
 
 def cmd_search(args, db) -> int:
     names = _source_list(db, args.sources) or default_sources(db)
+    query = " ".join(args.query)
     opts = {"min_height": args.min_height, "orientation": args.orientation, "commercial": args.commercial,
             "allow_nd": args.allow_nd, "any_licence": args.any_licence, "no_ai": args.no_ai,
-            "max_bytes": int(args.max_mb * 1048576) if args.max_mb else None, "details": args.details}
-    report = run_search(make_http(args), db, " ".join(args.query), names, max(1, min(args.limit, 50)), opts)
+            "max_bytes": int(args.max_mb * 1048576) if args.max_mb else None, "details": args.details,
+            "resolve": args.resolve, "match": args.match, "no_people": args.no_people}
+    path = Path(args.save)
+    cached = {}
+    if args.retry_failed:
+        done = answered_sources(load_results(path), query)
+        cached = {n: done[n] for n in names if n in done}
+        names = [n for n in names if n not in cached]
+    report = run_search(make_http(args), db, query, names, max(1, min(args.limit, 50)), opts)
+    for n, (st, when) in cached.items():
+        report["sources"][n] = {"status": "cached", "count": st.get("count", 0), "found": st.get("found", 0),
+                                "detail": f"answered at {when}; its results stay in the file (--retry-failed)"}
+    data = None
     if not args.no_save:
-        path = Path(args.save)
-        path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(json.dumps(report, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        data = save_results(path, report, replace=args.replace)
     if args.json:
         print(json.dumps(report, ensure_ascii=False, indent=1))
     else:
+        if args.retry_failed and cached and not names:
+            print("# --retry-failed: every source answered the last time this query was saved; nothing was asked again")
         print_results(report)
-        if not args.no_save:
-            print(f"# saved {len(report['results'])} results to {args.save}; "
-                  "download with: free_footage.py download <id> --out <dir>")
+        if data is not None:
+            older = len(data["results"]) - len(report["results"])
+            print(f"# saved {len(report['results'])} results to {args.save}"
+                  + (f" (with {older} from earlier searches: {len(data.get('searches') or [])} searches in the file)"
+                     if older > 0 else "")
+                  + "; download with: free_footage.py download <id> --out <dir>; screen first with: "
+                  f"free_footage.py preview {args.save}")
     statuses = [v["status"] for v in report["sources"].values()]
     return 3 if statuses and all(s == "error" for s in statuses) else 0
+
+
+def _dry_text(r: dict) -> str:
+    q = f"{r['quality']}p" if r.get("quality") else "?p"
+    dims = f" {r['width']}x{r['height']}" if r.get("width") and r.get("height") else ""
+    mb = f"{r['bytes'] / 1048576:.1f} MB" if r.get("bytes") else "size unknown"
+    src = f" ({r['size_from']})" if r.get("size_from") else ""
+    return f"dry run: {q}{dims}, {mb}{src}" + (" OVER --max-mb" if r.get("over_max_mb") else "")
 
 
 def cmd_download(args, db) -> int:
@@ -1841,14 +2804,25 @@ def cmd_download(args, db) -> int:
     opts = {"results": Path(args.results), "max_mb": args.max_mb, "licence": args.licence,
             "licence_url": args.licence_url, "author": args.author, "title": args.title, "page_url": args.page_url,
             "allow_nd": args.allow_nd, "commercial": args.commercial, "dry_run": args.dry_run, "force": args.force,
-            "max_bytes": int(args.max_mb * 1048576) if args.max_mb else None}
-    out, failed, done = Path(args.out), 0, []
+            "max_bytes": int(args.max_mb * 1048576) if args.max_mb else None,
+            "max_quality": args.quality, "max_height": args.max_height}
+    out, failed, done, challenged = Path(args.out), 0, [], 0
     for t in args.targets:
         try:
             r = download_one(http, db, t, out, opts)
             done.append(r)
-            note = "dry run" if r.get("dry_run") else (f"{r['bytes'] / 1048576:.1f} MB" + (" (kept)" if r.get("reused") else ""))
+            note = _dry_text(r) if r.get("dry_run") else (
+                f"{r['bytes'] / 1048576:.1f} MB" + (f" {r['quality']}p" if r.get("quality") else "")
+                + (" (kept)" if r.get("reused") else ""))
             print(f"{r['id']}\t{r['file']}\t{note}\t{r['licence']}")
+            for w in r.get("warnings") or []:
+                print(f"# warning: {r['file']}: {w}")
+            if r.get("note"):
+                print(f"# note: {r['id']}: {r['note']}")
+        except ChallengeError as e:
+            failed += 1
+            challenged += 1
+            print(f"{t}\tFAILED\t{redact(e)}", file=sys.stderr)
         except FootageError as e:
             failed += 1
             print(f"{t}\tFAILED\t{redact(e)}", file=sys.stderr)
@@ -1859,7 +2833,30 @@ def cmd_download(args, db) -> int:
         print(json.dumps(done, ensure_ascii=False, indent=1))
     if done and not args.dry_run:
         print(f"# credits: {out / 'ATTRIBUTION.md'}")
+    if challenged:
+        print(f"# {challenged} target(s) not fetched: {', '.join(sorted(http.challenged))} answered with a Cloudflare "
+              "browser check. Run the same command again in a few minutes (files already saved are kept), or add "
+              "--retry-challenge 180 to wait once.", file=sys.stderr)
     return 1 if failed else 0
+
+
+def cmd_preview(args, db) -> int:
+    src = Path(args.source)
+    ids = [x.strip() for x in (args.ids or "").split(",") if x.strip()]
+    items = preview_items(src, ids or None, args.query, args.limit)
+    if not items:
+        raise FootageError(f"nothing to preview in {src}" + (" for those ids" if ids else ""))
+    out = Path(args.out) if args.out else (src if src.is_dir() else src.parent) / "preview"
+    summary = build_preview(make_http(args), items, out, max(1, min(args.frames, 12)), max(1, min(args.cols, 8)))
+    if args.json:
+        print(json.dumps(summary, ensure_ascii=False, indent=1))
+        return 0
+    for r in summary["items"]:
+        how = r["from"] or ("FAILED: " + "; ".join(r["errors"]))[:160]
+        print(f"{r['n']:3}  {r['id']}\t{r['size']}\t{how}\t{(r.get('title') or '')[:60]}")
+    print(f"# contact sheet: {out / summary['html']}" + (f" and {out / summary['jpg']}" if summary["jpg"] else
+                                                         " (install ffmpeg for a JPG sheet and video stills)"))
+    return 0 if any(r["image"] for r in summary["items"]) else 1
 
 
 def cmd_credits(args, db) -> int:
@@ -1877,9 +2874,26 @@ def build_parser() -> argparse.ArgumentParser:
     ap.add_argument("--db", default=str(DB_PATH), help="sources database (default data/free_footage_sources.json)")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
+    def bounded(maximum):
+        def conv(text):
+            try:
+                v = float(text)
+            except ValueError:
+                raise argparse.ArgumentTypeError(f"{text!r} is not a number of seconds") from None
+            if not 0 <= v <= maximum:
+                raise argparse.ArgumentTypeError(f"must be between 0 and {maximum:g} seconds")
+            return v
+        return conv
+
     def net(p):
         p.add_argument("--delay", type=float, default=1.0, help="seconds between requests to one host (default 1.0)")
         p.add_argument("--timeout", type=float, default=20.0, help="seconds per request (default 20)")
+        p.add_argument("--wait-429", type=bounded(MAX_WAIT_429), default=None, metavar="SECONDS",
+                       help=f"wait once for a 429/503 whose Retry-After is up to this long (default "
+                            f"{MAX_RETRY_AFTER:g}, at most {MAX_WAIT_429:g}); longer waits fail with the Retry-After")
+        p.add_argument("--retry-challenge", type=bounded(MAX_CHALLENGE_WAIT), default=0, metavar="SECONDS",
+                       help="when a site answers with a Cloudflare 'Just a moment...' check, wait this long once and "
+                            f"ask again (default 0: report it and stop asking that site; at most {MAX_CHALLENGE_WAIT:g})")
 
     p = sub.add_parser("sources", help="list or filter the sources database (offline)")
     p.add_argument("--id", help="show one source in full")
@@ -1903,13 +2917,29 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--limit", type=int, default=6, help="results kept per source (default 6, max 50)")
     p.add_argument("--min-height", type=int, help="keep clips at least this many pixels tall (1920 for vertical 1080p)")
     p.add_argument("--orientation", choices=("portrait", "landscape", "square"))
-    p.add_argument("--commercial", action="store_true", help="drop NC, Restricted and unconfirmed licences")
+    p.add_argument("--commercial", action="store_true",
+                   help="drop NC, Mixkit Restricted, suspicious and unconfirmed licences; reads each Mixkit clip page "
+                        "to tell Free from Restricted (one request per clip, as --resolve)")
+    p.add_argument("--resolve", action="store_true",
+                   help="read each Mixkit clip page (licence, real sizes and file sizes, thumbnail) and NASA "
+                        "metadata.json for the results kept; one request per clip")
+    p.add_argument("--match", choices=("any", "all"),
+                   help="drop results whose title shares no query word (any) or misses one (all); sites match loosely")
+    p.add_argument("--no-people", action="store_true",
+                   help="drop results whose title names people (woman, man, couple, portrait, hands ...): a title "
+                        "heuristic, so screen the contact sheet too (preview)")
     p.add_argument("--allow-nd", action="store_true", help="keep no-derivatives licences (reference only)")
     p.add_argument("--any-licence", action="store_true", help="keep Archive items with no licence (rights unknown)")
     p.add_argument("--no-ai", action="store_true", help="drop clips flagged as AI-generated")
     p.add_argument("--details", action="store_true", help="NASA: also read each clip's size (one request more)")
     p.add_argument("--max-mb", type=float, default=300, help="Archive: prefer a file under this size (default 300)")
-    p.add_argument("--save", default=str(DEFAULT_RESULTS), help="results file (default out/free-footage/last_search.json)")
+    p.add_argument("--save", default=str(DEFAULT_RESULTS),
+                   help="results file; new results are merged into it by id, so earlier ids keep working "
+                        "(default out/free-footage/last_search.json)")
+    p.add_argument("--replace", action="store_true", help="overwrite the results file instead of merging")
+    p.add_argument("--retry-failed", action="store_true",
+                   help="ask only the sources that did not answer the last time this query was saved (a 429, a "
+                        "timeout); the others' saved results are kept")
     p.add_argument("--no-save", action="store_true")
     p.add_argument("--json", action="store_true")
     net(p)
@@ -1917,7 +2947,13 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("targets", nargs="+", help="result ids (wikimedia:81916645) or page/file URLs")
     p.add_argument("--out", required=True, help="folder for the clips, sidecars and ATTRIBUTION.md")
     p.add_argument("--results", default=str(DEFAULT_RESULTS), help="results file from search")
-    p.add_argument("--max-mb", type=float, default=300, help="refuse files larger than this (default 300; 0 = no cap)")
+    p.add_argument("--max-mb", type=float, default=300,
+                   help="refuse files larger than this (default 300; 0 = no cap); takes the next smaller size instead "
+                        "where the source has one (Mixkit, Archive, NASA, Pexels, Pixabay)")
+    p.add_argument("--quality", type=int, metavar="P",
+                   help="largest size to fetch, as the short side (1080 = 1080p, also for a vertical clip), where "
+                        "the source lists sizes (Mixkit, Archive, Pexels, Pixabay)")
+    p.add_argument("--max-height", type=int, metavar="PX", help="largest frame height to fetch, where sizes are known")
     p.add_argument("--licence", help="licence name for a link from an unsupported site (from its page)")
     p.add_argument("--licence-url", help="licence URL for a link from an unsupported site")
     p.add_argument("--author")
@@ -1925,8 +2961,21 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--page-url")
     p.add_argument("--allow-nd", action="store_true", help="allow a no-derivatives licence (keep the clip unedited)")
     p.add_argument("--commercial", action="store_true", help="refuse clips whose licence does not confirm commercial use")
-    p.add_argument("--dry-run", action="store_true", help="resolve and print, write nothing")
+    p.add_argument("--dry-run", action="store_true",
+                   help="resolve and print the size, resolution and file size it would fetch (a HEAD request when "
+                        "the source does not list the size); write nothing")
     p.add_argument("--force", action="store_true", help="download again even when the file exists")
+    p.add_argument("--json", action="store_true")
+    net(p)
+    p = sub.add_parser("preview", help="contact sheet from thumbnails or small previews, before downloading (network)")
+    p.add_argument("source", help="a results file from search, or a folder of downloads (their sidecars)")
+    p.add_argument("--out", help="folder for contact_sheet.html/.jpg/.json (default: <results folder>/preview)")
+    p.add_argument("--frames", type=int, default=1,
+                   help="stills per clip: 1 = the thumbnail; 2-12 = a strip from the small preview file (needs ffmpeg)")
+    p.add_argument("--cols", type=int, default=4, help="columns in the JPG sheet (default 4)")
+    p.add_argument("--limit", type=int, default=40, help="at most this many clips (default 40)")
+    p.add_argument("--ids", help="comma-separated result ids to show (default: all)")
+    p.add_argument("--query", help="only the results found by this query (in a merged results file)")
     p.add_argument("--json", action="store_true")
     net(p)
     p = sub.add_parser("credits", help="rebuild DIR/ATTRIBUTION.md from the sidecars (offline)")
@@ -1948,7 +2997,7 @@ def main(argv=None) -> int:
             return 1
     try:
         return {"sources": cmd_sources, "check": cmd_check, "probe": cmd_probe, "search": cmd_search,
-                "download": cmd_download, "credits": cmd_credits}[args.cmd](args, db)
+                "download": cmd_download, "preview": cmd_preview, "credits": cmd_credits}[args.cmd](args, db)
     except FootageError as e:
         print(f"error: {redact(e)}", file=sys.stderr)
         return 1
