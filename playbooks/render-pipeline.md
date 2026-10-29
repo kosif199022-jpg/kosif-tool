@@ -110,9 +110,9 @@ Fonts must be local or loaded before rendering; a fallback font in the final ren
 
 ## 7. Audio sync — المزامنة مع الصوت
 
-Mux the original audio without resampling (`-c:a aac` from the source, `-shortest`), set the film duration to the audio duration, and confirm with `verify_video.py --audio` that lengths match within 50 ms.
+Mux the original audio without resampling, set the film duration to the audio duration, and confirm with `verify_video.py --audio` that lengths match within 50 ms. Mux it in the render itself (`render_html.cjs --audio voice.m4a`): AAC, MP3 and ALAC are stream-copied, and the VERIFY line proves it with `audio_md5=match` (or `differs (src N packets, out M packets)` with stderr saying whether packets were only cut after the last video frame, which is allowed, or changed). Do not re-mux the delivery afterwards with `ffmpeg ... -shortest`: that once dropped the last AAC packet while the renderer's own file was byte-identical. For any other file, `verify_video.py --source-audio voice.m4a` runs the same packet check. Stills at chosen times for review: `render_html.cjs --stills 0,1.5,3.2` (see [tools/render_html.md](../tools/render_html.md)).
 
-**بالعربية:** ادمج الصوت الأصلي دون إعادة أخذ عينات، واجعل مدة الفيلم مساوية لمدة الصوت، وتحقق أن الفرق أقل من 50 مللي ثانية.
+**بالعربية:** ادمج الصوت الأصلي دون إعادة أخذ عينات، واجعل مدة الفيلم مساوية لمدة الصوت، وتحقق أن الفرق أقل من 50 مللي ثانية. ادمجه داخل الرندر نفسه بـ`--audio` واقرأ `audio_md5=` في سطر VERIFY (`match` يعني أنه صوتك بايتًا ببايت)، ولا تُعِد دمجه بعد الرندر بـ`-shortest` فهذا أسقط آخر حزمة AAC من قبل.
 
 ## 8. Quality checklist — قائمة الفحص
 
@@ -121,7 +121,7 @@ Mux the original audio without resampling (`-c:a aac` from the source, `-shortes
 3. Fonts loaded before frame 0?
 4. Duration, fps and frame count match the request?
 5. yuv420p and even dimensions?
-6. Audio present, AAC, untouched?
+6. Audio present, AAC, untouched (VERIFY `audio_md5=match`, or `differs` with only a cut after the last frame)?
 7. −14 LUFS ±1.5, true peak ≤ −1 dBTP?
 8. First and last frames intentional?
 9. Editable sources delivered with the MP4?

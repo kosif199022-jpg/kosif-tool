@@ -235,8 +235,8 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py cards-check
           python3 .claude/skills/kosif-superpowers/scripts/github_top_repos.py build --check
           python3 .claude/skills/kosif-superpowers/scripts/micro_index.py build --check
-      - name: HTML renderer disk guard (space pre-flight, stale kosif-frames-* folders, signal cleanup; no browser)
-        run: node --test tests/test_render_html.mjs tests/test_render_html_disk.mjs
+      - name: HTML renderer (disk guard, --stills grid, audio_md5 packet proof; ffmpeg only, the Chromium runs skip without Playwright)
+        run: node --test tests/test_render_html.mjs tests/test_render_html_disk.mjs tests/test_render_html_audio.mjs tests/test_render_html_stills.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules

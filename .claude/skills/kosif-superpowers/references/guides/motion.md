@@ -48,6 +48,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 2. [Motion runtime bridge / جسر الرندر التنفيذي](#motion-runtime-bridge--جسر-الرندر-التنفيذي)
 3. [Causal style synthesis (KOSIF Infinite Matrices)](#causal-style-synthesis-kosif-infinite-matrices)
 4. [Rendering without filling the disk / رندر دون امتلاء القرص](#rendering-without-filling-the-disk--رندر-دون-امتلاء-القرص)
+5. [Checking a film: stills and the audio proof / فحص الفيلم: لقطات وإثبات الصوت](#checking-a-film-stills-and-the-audio-proof--فحص-الفيلم-لقطات-وإثبات-الصوت)
 
 ## القدرة التنفيذية الجديدة — KOSIF Creative Motion Lab
 
@@ -108,4 +109,19 @@ When the check fails, pick one: `--frames-dir <folder on a bigger disk>` (frames
 ```bash
 node tools/render_html.cjs --in film.html --out out/film.mp4 --clean-stale               # list and delete stale kosif-frames-* first
 node tools/render_html.cjs --in film.html --out out/film.mp4 --frames-dir /mnt/big/frames  # keep the frames on a bigger disk
+```
+
+## Checking a film: stills and the audio proof / فحص الفيلم: لقطات وإثبات الصوت
+
+Two checks that used to need extra scripts are now part of the renderer (both copies, `tools/render_html.cjs` and `resources/motion-runtime/render_html.cjs`).
+
+**Stills at exact times.** `--stills <t1,t2,...>` loads the page once, seeks to each film time in order and saves `still_<t>.png` (t with 3 decimals), one grid `stills_grid.png` with the time printed on every tile, and `stills.json`; it encodes no video. Times are seconds (`1.5`, `2.25s`) or `m:ss` (`1:04`), read to the millisecond, at most 64. The default folder is `<out name>_stills/` next to `--out`; `--stills-dir <dir>` puts them elsewhere (then `--out` may be omitted). Seek-mode pages are drawn at exactly that time; virtual-mode pages stop on the nearest frame at `--fps` (labelled `#n`). Labels use ffmpeg `drawtext`, or built-in `drawbox` digits when drawtext is missing, so the grid is always readable. Look at the grid (and the stills you doubt) before the full render, and again after a fix.
+
+**The audio proof.** With `--audio` stream-copied (AAC, MP3, ALAC), the VERIFY line ends with `audio_md5=match` when the output's audio packets are the source's byte for byte (packet MD5 through `ffmpeg -map 0:a:0 -c copy -f md5 -`, AAC through `aac_adtstoasc` on both sides as `scripts/verify_video.py --source-audio` does). `audio_md5=differs (src N packets, out M packets)` comes with a loud stderr block: either every kept packet is identical and the voice was only cut after the last video frame (or before `--start`), which is allowed and never fails the render, or a packet's bytes changed, which means re-render from the untouched source. A WAV or FLAC voice is encoded to AAC and says `audio_md5=reencoded`. Never re-mux the delivery afterwards (`ffmpeg ... -shortest` once dropped the last AAC packet while the renderer's own file was identical); `--report <file.json>` keeps the proof as JSON for the test report.
+
+قبل الرندر الكامل: `--stills` يعطيك لقطات عند الأزمنة التي تريدها ولوحة مكتوب عليها الأزمنة، بلا فيديو وبلا سكربت مؤقت. وبعد الرندر اقرأ `audio_md5=` في سطر `VERIFY`: `match` يعني أن الصوت هو صوت المستخدم بايتًا ببايت؛ و`differs` يعني قصًّا بعد آخر إطار (مسموح، والشرح على stderr) أو تغيّرًا في البايتات (أعد الرندر من الملف الأصلي)؛ و`reencoded` لملفات WAV وFLAC. لا تُعِد دمج الصوت بعد الرندر.
+
+```bash
+node tools/render_html.cjs --in film.html --out out/film.mp4 --stills 0,1.5,3.2,7.9      # out/film_stills/stills_grid.png
+node tools/render_html.cjs --in film.html --out out/film.mp4 --audio voice.m4a --report out/film.report.json
 ```
