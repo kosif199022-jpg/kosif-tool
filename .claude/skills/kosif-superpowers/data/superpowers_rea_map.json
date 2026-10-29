@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 137,
+  "evals": 139,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5853,
-  "py_edges": 357,
-  "repo_tests": 40,
+  "powers": 5854,
+  "py_edges": 361,
+  "repo_tests": 41,
   "roles": {
    "helper": 3,
-   "registered": 169
+   "registered": 171
   },
-  "scripts": 172,
-  "tools": 191
+  "scripts": 174,
+  "tools": 194
  },
  "families": [
   {
@@ -495,7 +495,7 @@
   {
    "id": "agent-orchestration",
    "powers": 55,
-   "tools": 15
+   "tools": 16
   },
   {
    "id": "ai-generation",
@@ -570,7 +570,7 @@
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 25
+   "tools": 27
   },
   {
    "id": "brand-logo-identity",
@@ -630,7 +630,7 @@
   {
    "id": "engines-render-pipeline",
    "powers": 445,
-   "tools": 28
+   "tools": 30
   },
   {
    "id": "formats-platforms",
@@ -685,7 +685,7 @@
   {
    "id": "photo-video-footage",
    "powers": 71,
-   "tools": 30
+   "tools": 32
   },
   {
    "id": "pixel-retro-stylized",
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 174,
+   "powers": 175,
    "tools": 0
   },
   {
@@ -755,7 +755,7 @@
   {
    "id": "transitions-cuts",
    "powers": 475,
-   "tools": 17
+   "tools": 19
   },
   {
    "id": "typography-arabic",
@@ -785,7 +785,7 @@
   {
    "id": "voice-tts",
    "powers": 55,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "web-research",
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "174 powers, no tools.json entry lists this family",
+   "detail": "175 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -2165,6 +2165,16 @@
    "to": "native_3d"
   },
   {
+   "from": "test_nle_export",
+   "kind": "imports",
+   "to": "nle_export"
+  },
+  {
+   "from": "test_nle_export",
+   "kind": "invokes",
+   "to": "nle_export"
+  },
+  {
    "from": "test_owned_repos",
    "kind": "imports",
    "to": "owned_repos"
@@ -2178,6 +2188,16 @@
    "from": "test_perspective_color_lab",
    "kind": "imports",
    "to": "perspective_color_lab"
+  },
+  {
+   "from": "test_photocraft_mcp",
+   "kind": "imports",
+   "to": "photocraft_mcp"
+  },
+  {
+   "from": "test_photocraft_mcp",
+   "kind": "invokes",
+   "to": "photocraft_mcp"
   },
   {
    "from": "test_prompt_forge",
@@ -4682,7 +4702,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 174,
+   "power_count": 175,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5251,6 +5271,23 @@
    ]
   },
   {
+   "ci": false,
+   "id": "nle_export",
+   "imported_by": [],
+   "path": "scripts/nle_export.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-176"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_nle_export.py"
+   ],
+   "tools": [
+    "nle-export"
+   ]
+  },
+  {
    "ci": true,
    "id": "owned_repos",
    "imported_by": [],
@@ -5316,6 +5353,21 @@
    ],
    "tools": [
     "perspective-color-lab"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "photocraft_mcp",
+   "imported_by": [],
+   "path": "scripts/photocraft_mcp.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_photocraft_mcp.py"
+   ],
+   "tools": [
+    "photocraft-mcp"
    ]
   },
   {
@@ -6471,18 +6523,18 @@
    "assets": 4,
    "data": 163,
    "dua-wednesday": 10,
-   "evals": 147,
+   "evals": 149,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 253,
+   "references": 255,
    "resources": 3,
    "schemas": 6,
-   "scripts": 203,
+   "scripts": 205,
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93244444,
+  "bytes": 93408632,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,
@@ -6490,17 +6542,17 @@
    ".jpg": 24,
    ".js": 50,
    ".json": 285,
-   ".md": 2105,
+   ".md": 2107,
    ".mjs": 18,
    ".ogg": 14,
    ".png": 11,
-   ".py": 509,
+   ".py": 513,
    ".ttf": 38,
    ".txt": 64,
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3376,
+  "files": 3382,
   "symlinks": 0
  }
 }

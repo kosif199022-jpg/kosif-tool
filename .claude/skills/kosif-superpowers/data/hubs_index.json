@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5853,
+ "atoms": 5854,
  "superpowers": 481,
  "hubs": [
   {
@@ -405,9 +405,9 @@
     "SP-0022",
     "SP-0143",
     "SP-0144",
+    "SP-0145",
     "SP-0147",
     "SP-0021",
-    "SP-0145",
     "SP-0146",
     "SP-0148",
     "SP-0149",
@@ -473,6 +473,14 @@
     },
     {
      "id": "SP-0144",
+     "name_ar": "جسر Blender الآمن",
+     "name_en": "Safe headless Blender bridge",
+     "size": 12,
+     "best": "proven",
+     "ready_now": 10
+    },
+    {
+     "id": "SP-0145",
      "name_ar": "مستكشف مصادر المجتمع",
      "name_en": "Community source scout",
      "size": 12,
@@ -496,17 +504,9 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0145",
+     "id": "SP-0146",
      "name_ar": "تدقيق أدلة الكتالوج",
      "name_en": "Catalog Evidence Audit",
-     "size": 11,
-     "best": "proven",
-     "ready_now": 9
-    },
-    {
-     "id": "SP-0146",
-     "name_ar": "جسر Blender الآمن",
-     "name_en": "Safe headless Blender bridge",
      "size": 11,
      "best": "proven",
      "ready_now": 9
@@ -520,15 +520,15 @@
      "ready_now": 9
     }
    ],
-   "powers": 287,
+   "powers": 288,
    "status_mix": {
-    "proven": 170,
+    "proven": 171,
     "ready": 21,
     "install": 14,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 191,
+   "ready_now": 192,
    "requires": [
     "python3",
     "ffmpeg",

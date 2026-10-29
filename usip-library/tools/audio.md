@@ -1,4 +1,4 @@
-# أدوات المجال `audio` (5 أداة)
+# أدوات المجال `audio` (6 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -139,6 +139,53 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:music-rhythm-engine --evidence <ملف>`.
+
+### `repo-transcribe-audio` — تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة / Gemini audio transcription with readable errors
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `tools/transcribe_audio.py` (جذر: repo) |
+| المجال | `audio` |
+| الدليل | `tested-here` |
+| العائلات | `voice-tts`, `audio-sync-captions` |
+
+**ما تفعله:** يفرّغ ملفًا صوتيًا عبر Gemini generateContent (داخل الطلب حتى نحو 14 ميجابايت، وعبر Files API لما هو أكبر). عند الفشل يطبع رسالة جوجل نفسها مع تلميح للحل (مفتاح غير صالح، لا صلاحية، نموذج غير موجود، حصة، حجم)، ويعيد المحاولة مع 429 و5xx، ويجرّب النموذج التالي، ومع --engine auto يرجع إلى faster-whisper محليًا. ويختبر --check المفتاح دون صوت.
+
+**What it does:** Transcribes an audio file with Gemini generateContent (inline under ~14 MB, Files API above). On failure it prints Google's own error message with a fix hint (invalid key, no access, missing model, quota, size), retries 429/5xx, tries the next model, and with --engine auto falls back to local faster-whisper. --check tests the key without audio.
+
+#### متى تُستدعى
+
+- «Transcribe this test voice clip to verify the content»
+- «My Gemini transcription failed with HTTP error, why?»
+- «فرّغ ملف الصوت ده واتأكد إن الكلام صح»
+- «اختبر مفتاح Gemini قبل التفريغ»
+
+#### الأوامر
+
+- **transcribe**: Sends the audio to Gemini (models tried in order), prints the text and writes {engine, model, text}; exit 0 ok, 1 every engine failed, 2 bad input.
+  - `python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript.json`
+- **whisper only**: Transcribes locally with faster-whisper (small, int8, CPU); no key or network.
+  - `python3 tools/transcribe_audio.py ./voice.wav --engine whisper --language ar`
+- **check**: Reads the model record with the key and prints ok or Google's error with a hint; sends no audio.
+  - `python3 tools/transcribe_audio.py --check`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- network: true
+- optional: faster-whisper
+- الأمان: network
+- الموافقة: Uploads the audio file to Google's Gemini API using the GEMINI_API_KEY in the environment (paid usage may apply); use --engine whisper to keep the audio local.
+- الحدود: Needs a valid GEMINI_API_KEY for the Gemini path; the whisper fallback needs faster-whisper installed and gives text only (no dialect or speaker notes). It does not return word timestamps.
+
+#### الاختبارات والأدلة
+
+- `tests/test_transcribe_audio.py`
+- مرجع: `CLAUDE.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-transcribe-audio --evidence <ملف>`.
 
 ### `repo-words-convert` — محوّل الترجمات إلى توقيت الكلمات / Subtitle to words.json converter
 

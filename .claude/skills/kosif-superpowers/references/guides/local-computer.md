@@ -8,12 +8,13 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:local-computer:start -->
 
-**الأدوات / tools (2)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (3)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
 | `kosif-remote-commander` | A self-contained stdio MCP server (standard library only) that gives an MCP client 11 tools scoped to one approved workspace: health, system info, list, file info, read, search, plus create, write, replace, move and an allowlisted command runner. Writes and commands stay off until the user sets an environment flag. | `python3 scripts/kosif_remote_superpowers.py doctor` | tested-here |
 | `adobe-mcp-bridges` | Vetted local MCP servers that let Claude drive Adobe apps on the user's own computer: Dakkshin/after-effects-mcp (compositions, layers, keyframes, expressions, ExtendScript), leancoderkavy/premiere-pro-mcp (timeline editing, effects, colour, export) and alisaitteke/photoshop-mcp (layers, text, masks, filters, retouch recipes), plus mikechambers/adb-mcp as a five-app alternative. The stdlib helper prints install steps, the Claude Code command or Claude Desktop JSON, and checks node/npm/git/python/uv. It installs nothing and needs no API key. | `python3 scripts/adobe_mcp.py list` | tested-here |
+| `photocraft-mcp` | Annex A39 helper for storytold/photocraft, a clean-room Rust image editor (MIT/Apache) whose 500+ commands are exposed over MCP: headless sessions (also in cloud sessions and Linux), command discovery and batches, layer-tree inspection, bounded PNG previews, PSD/PSB/TIFF/WebP/EXR export, layers-to-files, data sets, folder batches, .cube LUT export and a loopback bridge to the running desktop app. The stdlib helper prints install steps, the Claude Code command or MCP JSON with absolute read/write roots, sample action files and recipes, and checks whether photocraft-cli, cargo and ffmpeg are present. It installs nothing. | `python3 scripts/photocraft_mcp.py steps headless` | tested-here |
 
 <!-- hub:area:local-computer:end -->
 

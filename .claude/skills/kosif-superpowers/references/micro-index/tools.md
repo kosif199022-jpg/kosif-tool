@@ -40,6 +40,7 @@
 | `audio-cue-mapper` | TOOL-25 | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper | `python3 scripts/audio_cue_mapper.py ./voice.wav --out ./out/cues.json` | 1 |
 | `caption-lines` | TOOL-165 | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT | `python3 scripts/caption_lines.py group words.json -o captions.srt --r…` | 1 |
 | `music-rhythm-engine` | TOOL-26 | فرضيات إيقاع الموسيقى · Music rhythm hypotheses | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rh…` | 1 |
+| `repo-transcribe-audio` | — | تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة · Gemini audio transcription with readable errors | `python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript…` | 1 |
 | `repo-words-convert` | TOOL-86 | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | `python3 tools/words_convert.py ./captions.srt ./words.json` | 1 |
 | `tts-script` | TOOL-152 | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثاني…` | 1 |
 
@@ -115,6 +116,7 @@
 | `mimic` | TOOL-85 | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm…` | 1 |
 | `montage-pro` | TOOL-130 | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) | `python3 scripts/montage_pro.py doctor` | 2 |
 | `motion-reference-probe` | TOOL-21 | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | `python3 scripts/motion_reference_probe.py ./in.mp4` | 2 |
+| `nle-export` | TOOL-176 | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات · NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | `python3 scripts/nle_export.py export --project ./project.json --out .…` | 1 |
 | `reel-factory` | TOOL-131 | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-righ…` | 1 |
 | `reference-edit-engine` | TOOL-22 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./…` | 4 |
 | `reference-visual-fingerprint` | TOOL-23 | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cu…` | 2 |
@@ -163,6 +165,7 @@
 |---|---|---|---|---|
 | `adobe-mcp-bridges` | — | ربط Claude ببرامج أدوبي (أفتر إفكتس وبريمير وفوتوشوب) · Adobe MCP bridges (After Effects, Premiere Pro, Photoshop) | `python3 scripts/adobe_mcp.py list` | 1 |
 | `kosif-remote-commander` | TOOL-55 | خادم KOSIF Remote Commander · KOSIF Remote Commander MCP | `python3 scripts/kosif_remote_superpowers.py doctor` | 1 |
+| `photocraft-mcp` | — | PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude · PhotoCraft MCP (open-source Photoshop-style editor driven by Claude) | `python3 scripts/photocraft_mcp.py steps headless` | 1 |
 
 ## maintain
 

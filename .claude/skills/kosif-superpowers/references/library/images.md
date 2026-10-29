@@ -57,6 +57,8 @@
 | `montage-pro` | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) | `python3 scripts/montage_pro.py doctor` | tested-here |
 | `mosamem-rea-fusion` | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن | `python3 scripts/mosamem_rea_fusion.py doctor` | tested-here |
 | `motion-reference-probe` | فاحص توقيت الفيديو المرجعي | `python3 scripts/motion_reference_probe.py ./in.mp4` | tested-here |
+| `nle-export` | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات | `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json` | tested-here |
+| `photocraft-mcp` | PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude | `python3 scripts/photocraft_mcp.py steps headless` | tested-here |
 | `prompt-forge` | مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة | `python3 scripts/prompt_forge.py forge /tmp/spec.json --targets still-image,video,music,voice` | tested-here |
 | `rebalance-creative-repos` | إعادة موازنة فهرس المستودعات الإبداعية | `python3 scripts/rebalance_creative_repos.py run` | tested-elsewhere |
 | `reference-edit-engine` | محرك إعادة بناء المونتاج المرجعي | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./new-edit` | tested-here |

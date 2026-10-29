@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5853,
-"distinct_methods": 5572,
+"atoms": 5854,
+"distinct_methods": 5573,
 "twin_groups": 177,
 "superpowers": 481,
 "per_target": 12,
@@ -3770,7 +3770,7 @@
 "sim": 0.197
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.133
 },
 {
@@ -4758,7 +4758,7 @@
 "sim": 0.349
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.235
 }
 ]
@@ -14840,7 +14840,7 @@
 "distinct_methods": 14,
 "links": [
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.158
 },
 {
@@ -16569,7 +16569,7 @@
 "sim": 0.101
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.091
 }
 ]
@@ -16638,7 +16638,7 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0146",
+"id": "SP-0144",
 "sim": 0.735
 },
 {
@@ -17937,7 +17937,7 @@
 "sim": 0.396
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.339
 },
 {
@@ -18592,6 +18592,146 @@
 "id": "SP-0144",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "جسر Blender الآمن",
+"name_en": "Safe headless Blender bridge",
+"focus": [
+"blender",
+"cycles",
+"glb",
+"cat"
+],
+"size": 12,
+"best": "proven",
+"status_mix": {
+"proven": 9,
+"ready": 1,
+"install": 2
+},
+"ready_now": 10,
+"families": {
+"runnable-tools": 12
+},
+"atlas_folded": 0,
+"requires": [
+"blender",
+"python3",
+"ffmpeg",
+"pip:pillow",
+"engine:ghidra",
+"chromium",
+"npm:rea",
+"npm:three"
+],
+"pipeline": [
+{
+"id": "TOOL-37",
+"status": "proven",
+"name_en": "Safe headless Blender bridge",
+"name_ar": "جسر Blender الآمن"
+},
+{
+"id": "TOOL-120",
+"status": "proven",
+"name_en": "Create an editable Blender 3D cat rescue demo",
+"name_ar": "إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender"
+},
+{
+"id": "TOOL-119",
+"status": "proven",
+"name_en": "Blender Cycles + KOSIF Cinematic compositor",
+"name_ar": "دمج رندر Blender Cycles مع مونتاج KOSIF والصوت"
+},
+{
+"id": "TOOL-40",
+"status": "proven",
+"name_en": "Native 3D renderer (no Blender)",
+"name_ar": "رندر ثلاثي الأبعاد مستقل عن Blender"
+},
+{
+"id": "TOOL-41",
+"status": "proven",
+"name_en": "Native GLB exporter (no Blender)",
+"name_ar": "مُصدِّر GLB مستقل عن Blender"
+},
+{
+"id": "TOOL-36",
+"status": "proven",
+"name_en": "Blender Python API audit",
+"name_ar": "تدقيق واجهة بايثون في Blender"
+},
+{
+"id": "TOOL-38",
+"status": "proven",
+"name_en": "Cycles scene to verified video",
+"name_ar": "رندر Cycles إلى فيديو مُتحقَّق منه"
+},
+{
+"id": "TOOL-121",
+"status": "proven",
+"name_en": "Blender Cat Fur Upgrade: renderable hair geometry and character detail",
+"name_ar": "تطوير فرو القطة والملامح في Blender Cycles"
+},
+{
+"id": "TOOL-176",
+"status": "proven",
+"name_en": "NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut",
+"name_ar": "تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات"
+},
+{
+"id": "TOOL-114",
+"status": "ready",
+"name_en": "Blender motion video helper",
+"name_ar": "مساعد فيديو الحركة في Blender"
+},
+{
+"id": "TOOL-39",
+"status": "install",
+"name_en": "Blender-side scene builder",
+"name_ar": "منفّذ المشهد داخل Blender"
+},
+{
+"id": "TOOL-87",
+"status": "install",
+"name_en": "Blender Cycles cinematic renders",
+"name_ar": "رندر سينمائي بـBlender Cycles"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_bridge.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_rescue_scene.py"
+],
+"twins": [
+[
+"TOOL-119",
+"TOOL-87"
+]
+],
+"distinct_methods": 11,
+"links": [
+{
+"id": "SP-0129",
+"sim": 0.735
+},
+{
+"id": "SP-0171",
+"sim": 0.312
+},
+{
+"id": "SP-0269",
+"sim": 0.223
+},
+{
+"id": "SP-0371",
+"sim": 0.151
+}
+]
+},
+{
+"id": "SP-0145",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "مستكشف مصادر المجتمع",
 "name_en": "Community source scout",
 "focus": [
@@ -18722,7 +18862,7 @@
 ]
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "تدقيق أدلة الكتالوج",
@@ -18844,140 +18984,6 @@
 {
 "id": "SP-0347",
 "sim": 0.22
-}
-]
-},
-{
-"id": "SP-0146",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "جسر Blender الآمن",
-"name_en": "Safe headless Blender bridge",
-"focus": [
-"blender",
-"cycles",
-"glb",
-"cat"
-],
-"size": 11,
-"best": "proven",
-"status_mix": {
-"proven": 8,
-"ready": 1,
-"install": 2
-},
-"ready_now": 9,
-"families": {
-"runnable-tools": 11
-},
-"atlas_folded": 0,
-"requires": [
-"blender",
-"python3",
-"ffmpeg",
-"pip:pillow",
-"engine:ghidra",
-"chromium",
-"npm:rea",
-"npm:three"
-],
-"pipeline": [
-{
-"id": "TOOL-37",
-"status": "proven",
-"name_en": "Safe headless Blender bridge",
-"name_ar": "جسر Blender الآمن"
-},
-{
-"id": "TOOL-120",
-"status": "proven",
-"name_en": "Create an editable Blender 3D cat rescue demo",
-"name_ar": "إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender"
-},
-{
-"id": "TOOL-119",
-"status": "proven",
-"name_en": "Blender Cycles + KOSIF Cinematic compositor",
-"name_ar": "دمج رندر Blender Cycles مع مونتاج KOSIF والصوت"
-},
-{
-"id": "TOOL-40",
-"status": "proven",
-"name_en": "Native 3D renderer (no Blender)",
-"name_ar": "رندر ثلاثي الأبعاد مستقل عن Blender"
-},
-{
-"id": "TOOL-41",
-"status": "proven",
-"name_en": "Native GLB exporter (no Blender)",
-"name_ar": "مُصدِّر GLB مستقل عن Blender"
-},
-{
-"id": "TOOL-36",
-"status": "proven",
-"name_en": "Blender Python API audit",
-"name_ar": "تدقيق واجهة بايثون في Blender"
-},
-{
-"id": "TOOL-38",
-"status": "proven",
-"name_en": "Cycles scene to verified video",
-"name_ar": "رندر Cycles إلى فيديو مُتحقَّق منه"
-},
-{
-"id": "TOOL-121",
-"status": "proven",
-"name_en": "Blender Cat Fur Upgrade: renderable hair geometry and character detail",
-"name_ar": "تطوير فرو القطة والملامح في Blender Cycles"
-},
-{
-"id": "TOOL-114",
-"status": "ready",
-"name_en": "Blender motion video helper",
-"name_ar": "مساعد فيديو الحركة في Blender"
-},
-{
-"id": "TOOL-39",
-"status": "install",
-"name_en": "Blender-side scene builder",
-"name_ar": "منفّذ المشهد داخل Blender"
-},
-{
-"id": "TOOL-87",
-"status": "install",
-"name_en": "Blender Cycles cinematic renders",
-"name_ar": "رندر سينمائي بـBlender Cycles"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_blender_bridge.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_bridge.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_rescue_scene.py"
-],
-"twins": [
-[
-"TOOL-119",
-"TOOL-87"
-]
-],
-"distinct_methods": 10,
-"links": [
-{
-"id": "SP-0129",
-"sim": 0.735
-},
-{
-"id": "SP-0171",
-"sim": 0.319
-},
-{
-"id": "SP-0269",
-"sim": 0.238
-},
-{
-"id": "SP-0371",
-"sim": 0.147
 }
 ]
 },
@@ -21958,8 +21964,8 @@
 "distinct_methods": 23,
 "links": [
 {
-"id": "SP-0146",
-"sim": 0.319
+"id": "SP-0144",
+"sim": 0.312
 },
 {
 "id": "SP-0269",
@@ -23394,7 +23400,7 @@
 "sim": 0.145
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.129
 },
 {
@@ -27598,7 +27604,7 @@
 "sim": 0.214
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.02
 }
 ]
@@ -28564,8 +28570,8 @@
 "sim": 0.095
 },
 {
-"id": "SP-0146",
-"sim": 0.044
+"id": "SP-0144",
+"sim": 0.042
 }
 ]
 },
@@ -28743,7 +28749,7 @@
 "sim": 0.151
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.072
 }
 ]
@@ -35633,8 +35639,8 @@
 "sim": 0.287
 },
 {
-"id": "SP-0146",
-"sim": 0.238
+"id": "SP-0144",
+"sim": 0.223
 },
 {
 "id": "SP-0430",
@@ -38549,7 +38555,7 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.312
 },
 {
@@ -41427,7 +41433,7 @@
 "sim": 0.187
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.05
 }
 ]
@@ -45623,7 +45629,7 @@
 "sim": 0.396
 },
 {
-"id": "SP-0145",
+"id": "SP-0146",
 "sim": 0.22
 },
 {
@@ -47294,7 +47300,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.19
 },
 {
@@ -51077,7 +51083,7 @@
 "sim": 0.09
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.081
 }
 ]
@@ -57658,8 +57664,8 @@
 "sim": 0.131
 },
 {
-"id": "SP-0146",
-"sim": 0.104
+"id": "SP-0144",
+"sim": 0.1
 }
 ]
 },
@@ -63487,7 +63493,7 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.224
 },
 {

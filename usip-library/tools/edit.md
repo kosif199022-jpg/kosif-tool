@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (17 أداة)
+# أدوات المجال `edit` (18 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -647,6 +647,54 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:motion-reference-probe --evidence <ملف>`.
+
+### `nle-export` — تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/nle_export.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `transitions-cuts`, `audio-sync-captions`, `engines-render-pipeline` |
+
+**ما تفعله:** يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي بالتلاشي والمكان والحجم، XML لبريمير ودافنشي بالتلاشي كانتقالات، EDL لكل مسار، OTIO لدافنشي 18.5+، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT وقائمة قطع لكاب كات، ويدعم 29.97 و23.976 و59.94 فريم بالظبط، مع إيصال فيه البصمة واللي الصيغة مقدرتش تنقله.
+
+**What it does:** Turns a kosif.timeline.v1 project or a kosif.edl.v1 cut plan into editable timelines that point at the original media: FCPXML 1.9 (Final Cut Pro, Resolve) with opacity keyframes, audio fades and position/size, FCP7 XML v5 (Premiere Pro, Resolve) with fades as dip-to-black transitions, one CMX3600 EDL per track, OpenTimelineIO JSON (Resolve 18.5+), a Blender Video Sequencer script with fades and layout, SRT captions from words.json and a numbered CapCut cut list. Integer and NTSC rates (23.976, 29.97, 59.94) are exact; times snap to frames with the largest drift reported, and a receipt lists SHA-256 per file and what each format could not carry.
+
+#### متى تُستدعى
+
+- «Open this KOSIF edit in DaVinci Resolve / Final Cut Pro / Premiere so I can keep editing»
+- «Export the timeline as FCPXML, XML or EDL»
+- «Build this cut in Blender's video sequencer»
+- «افتح المونتاج ده في دافنشي ريزولف أو فاينال كت أو بريمير»
+- «صدّر التايملاين لبلندر أو كاب كات وطلّع ملف ترجمة SRT»
+
+#### الأوامر
+
+- **export**: Write the timelines (fcpxml, xmeml, edl, otio, blender, srt, capcut; default the first five), HANDOFF.md with the import steps per editor and receipt.json; srt is skipped with a warning when no --words is given; refuses to overwrite unless --force.
+  - `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json`
+- **export (cut plan)**: Same from a cinematic_cut_planner.py kosif.edl.v1 plan, adding the voice-over as an audio track; scenes without footage stay as gaps with a warning.
+  - `python3 scripts/nle_export.py export --project ./edit_plan.json --audio ./voice.wav --out ./nle`
+- **formats**: List the formats and which editor opens each.
+  - `python3 scripts/nle_export.py formats`
+- **tests**: Run 16 tests: every format's structure and frame maths, FCPXML fades and layout, Premiere dissolves, OTIO JSON, NTSC rates, overwrite refusal, cut-plan input, the CLI, a read-back through OpenTimelineIO and a real Blender sequencer build, each skipped when that library is missing.
+  - `python3 -m unittest discover -s evals -p 'test_nle_export.py' -v`
+
+#### المتطلبات والأمان
+
+- optional: ffprobe (reads real source lengths and sizes), opentimelineio + otio-fcpx-xml-adapter, otio-fcp-adapter, otio-cmx3600-adapter (test read-back only), Blender 4.2+ or the bpy module (to run the generated script)
+- الأمان: writes-files
+- الموافقة: Use only media the user owns or may edit; the timelines only reference files, they do not copy them.
+- الحدود: Non-drop timecode only (no drop-frame). Fades reach Blender, FCPXML and the Premiere XML; position/size reach Blender and FCPXML (the FCPXML transform is written to Apple's coordinate rules but was not opened in Final Cut or Resolve here). EDL and OTIO carry cuts only, with fades and layout in OTIO metadata. EDL holds one track per file and no overlaps; OTIO splits overlapping clips onto extra tracks. CapCut has no public timeline import, so it gets a cut list plus SRT. Not opened in the commercial editors on this machine: the files are checked by parsing, by OpenTimelineIO's independent readers and by running the Blender script in Blender 5.2 (bpy); the script also handles the Blender 4.x trim API.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_nle_export.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/edit.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:nle-export --evidence <ملف>`.
 
 ### `reel-factory` — مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص / Reel factory: voice + word timings + licensed shots → verified 9:16 reel
 

@@ -42,7 +42,7 @@ Read first: what the skill is, the protocol, the one-file copy and the maps. Sta
 
 USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table.
 
-`protocol` · 35 file(s)
+`protocol` · 37 file(s)
 
 - [references/protocol/A1-see-thinking.md](protocol/A1-see-thinking.md)
 - [references/protocol/A10-self-evolution.md](protocol/A10-self-evolution.md)
@@ -72,7 +72,9 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A36-v57-context-boot-parallel.md](protocol/A36-v57-context-boot-parallel.md)
 - [references/protocol/A37-self-council.md](protocol/A37-self-council.md)
 - [references/protocol/A38-v58-thinking-books-github-pulse.md](protocol/A38-v58-thinking-books-github-pulse.md)
+- [references/protocol/A39-v59-photocraft-mcp.md](protocol/A39-v59-photocraft-mcp.md)
 - [references/protocol/A4-fusionforge-composition.md](protocol/A4-fusionforge-composition.md)
+- [references/protocol/A40-v59-living-site.md](protocol/A40-v59-living-site.md)
 - [references/protocol/A5-state-receipts.md](protocol/A5-state-receipts.md)
 - [references/protocol/A6-evidence-security-numbers.md](protocol/A6-evidence-security-numbers.md)
 - [references/protocol/A7-pmo.md](protocol/A7-pmo.md)

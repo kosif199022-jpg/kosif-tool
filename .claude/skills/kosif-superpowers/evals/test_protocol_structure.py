@@ -23,7 +23,7 @@ SK = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SK / "scripts"))
 import check_skill as C  # noqa: E402
 
-EXPECTED_VERSION = "5.8"
+EXPECTED_VERSION = "5.9"
 CORE = C.PROTO_CORE
 SESSION = SK / "SESSION_PROMPT.md"
 SKILL_MD = SK / "SKILL.md"
@@ -419,7 +419,7 @@ class FileStructureTests(unittest.TestCase):
                 self.assertTrue(first.startswith(C.gh_slug(sid + " ")), f"{sid} maps to {first!r}")
         log = read(base / "CHANGELOG.md")
         versions = [m.group(1) for m in re.finditer(r"^## v(\d+(?:\.\d+)*)", log, re.M)]
-        self.assertEqual(versions[:6], ["5.8", "5.7", "5.6", "5.5", "5.4", "5.3"], "CHANGELOG is newest first")
+        self.assertEqual(versions[:6], ["5.9", "5.8", "5.7", "5.6", "5.5", "5.4"], "CHANGELOG is newest first")
         self.assertIn("2", versions)
 
 
@@ -859,7 +859,7 @@ V52_REPLACED = (
      "نحو 170 أداة قابلة للتشغيل للبحث والتحليل والتصميم والمونتاج والموشن والثري دي والهندسة العكسية",
      "repo-origin: the tool registry grew from about 115 to 132, then 170 (v5.7, hub.py list) runnable tools"),
     ("KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.2)",
-     "UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.8)",
+     "UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.9)",
      "banner: the title carries the current version"),
     ("نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).",
      "نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة",
