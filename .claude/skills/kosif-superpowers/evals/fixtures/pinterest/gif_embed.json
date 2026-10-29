@@ -1,0 +1,10 @@
+{
+ "class": "gif",
+ "note": "Synthetic. Live on 2026-10-29 a GIF pin's data embeds the .gif itself, so yt-dlp hands it on as an embed; limited to the Pinterest extractor it stops with this line (unrestricted, its generic extractor downloads the .gif, which is how a 250x250 .gif ended up among the clips). stdout is null.",
+ "expect": {"probe": "gif", "final": "gif"},
+ "probe": {
+  "returncode": 1,
+  "stdout": null,
+  "stderr": "ERROR: No suitable extractor found for URL https://i.pinimg.com/originals/00/00/00/100000000000000003.gif\n"
+ }
+}

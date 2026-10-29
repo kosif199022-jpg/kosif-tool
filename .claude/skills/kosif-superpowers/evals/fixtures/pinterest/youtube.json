@@ -1,0 +1,10 @@
+{
+ "class": "youtube",
+ "note": "Synthetic id. The exact line yt-dlp printed live on 2026-10-29 for pins that embed YouTube (785596728743121649 and the three pins logged earlier as 'HTTP Error 403', 357332551654730370, 56998751507021275 and 6403624444785202), when limited to the Pinterest extractor: YouTube is never contacted. stdout is null.",
+ "expect": {"probe": "youtube", "final": "youtube", "embed_url": "https://www.youtube.com/watch?v=AAAAAAAAAAA"},
+ "probe": {
+  "returncode": 1,
+  "stdout": null,
+  "stderr": "ERROR: No suitable extractor found for URL http://www.youtube.com/embed/AAAAAAAAAAA?autohide=1&theme=light&hd=1&modestbranding=1&rel=0&showinfo=0&showsearch=0&wmode=transparent&autoplay=1\n"
+ }
+}

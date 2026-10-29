@@ -1,0 +1,7 @@
+{
+ "class": "cdn-refused",
+ "note": "Synthetic. The metadata exists (a normal video pin) but the video server refuses the file: yt-dlp's download stops with this line after it has written a fragment. Not retried in the same run; a later run may try once more.",
+ "expect": {"probe": "video", "final": "cdn-refused"},
+ "probe": {"returncode": 0, "stderr": "", "stdout_from": "video.json"},
+ "download": {"returncode": 1, "stderr": "ERROR: unable to download video data: HTTP Error 403: Forbidden\n"}
+}

@@ -1,0 +1,10 @@
+{
+ "class": "youtube",
+ "note": "Synthetic id. What an unrestricted yt-dlp printed in the scout run: the pin was handed to the YouTube extractor, which the cloud machine cannot pass. Still classified as embedded YouTube, never retried.",
+ "expect": {"probe": "youtube", "final": "youtube", "embed_url": "https://www.youtube.com/watch?v=BBBBBBBBBBB"},
+ "probe": {
+  "returncode": 1,
+  "stdout": null,
+  "stderr": "[Pinterest] Extracting URL: https://www.pinterest.com/pin/100000000000000006/\n[youtube] Extracting URL: http://www.youtube.com/embed/BBBBBBBBBBB?autoplay=1\nERROR: [youtube] BBBBBBBBBBB: Sign in to confirm you're not a bot. Use --cookies-from-browser or --cookies for the authentication.\n"
+ }
+}

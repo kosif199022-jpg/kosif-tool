@@ -1,0 +1,10 @@
+{
+ "class": "deleted",
+ "note": "Synthetic id. The exact line yt-dlp printed live on 2026-10-29 for a deleted pin (587508713882263842): the pin's metadata answers 404. stdout is null. Never retried.",
+ "expect": {"probe": "deleted", "final": "deleted"},
+ "probe": {
+  "returncode": 1,
+  "stdout": null,
+  "stderr": "ERROR: [Pinterest] 100000000000000007: Unable to download JSON metadata: HTTP Error 404: Not Found (caused by <HTTPError 404: Not Found>)\n"
+ }
+}

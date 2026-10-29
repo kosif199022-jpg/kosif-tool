@@ -6844,14 +6844,16 @@
       "area": "sources",
       "title_en": "Video link downloader for montage",
       "title_ar": "تنزيل الفيديو من الروابط للمونتاج",
-      "summary_en": "Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes.",
-      "summary_ar": "غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، ويكتب ملف manifest.json فيه الملف والمدة والأبعاد ومعدل الإطارات والترميز والعنوان والناشر والترخيص إن كشفه الموقع.",
+      "summary_en": "Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy, can drop each clip's own audio on intake (--strip-audio), and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. Pinterest pin links go through the shared helper scripts/_pinterest.py: one yt-dlp -J call classifies the pin first (video, image, GIF, embedded YouTube, other embed, deleted, CDN-refused, blocked) with a one-line reason, only a video pin is downloaded, in a temp folder, its real size is measured with ffprobe, and a .pin.json credit record is written; --classify only reports what each pin is.",
+      "summary_ar": "غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، وشيل صوت المقطع نفسه عند الاستلام (‎--strip-audio‎)، ويكتب ملف manifest.json فيه الملف والمدة والأبعاد ومعدل الإطارات والترميز والعنوان والناشر والترخيص إن كشفه الموقع. روابط Pinterest بتعدّي على المساعد المشترك scripts/_pinterest.py: طلب yt-dlp -J واحد يصنّف الـpin الأول (فيديو، صورة، GIF، يوتيوب مضمَّن، تضمين من موقع تاني، محذوف، سيرفر الفيديو رافض، محجوب) مع سبب في سطر، ومفيش تنزيل إلا للفيديو وفي فولدر مؤقت، والمقاس الحقيقي بيتقاس بـffprobe، وبيتكتب سجل نسب ‎.pin.json‎؛ و‎--classify‎ بيقول نوع كل pin بس.",
       "use_when": [
         "نزّل الفيديوهات دي من الروابط عشان المونتاج",
         "حمّل لي الصوت بس من هالرابط",
         "Download these video links at 1080p with an edit-safe MP4 copy",
         "Batch-download the URLs in links.txt into clips/",
-        "Check whether yt-dlp and ffmpeg are ready for downloading"
+        "Check whether yt-dlp and ffmpeg are ready for downloading",
+        "نزّل فيديو الـpin ده من بنترست من غير المزيكا بتاعته",
+        "Which of these Pinterest pins are videos and which are images or embedded YouTube?"
       ],
       "keywords": [
         "yt-dlp",
@@ -6863,11 +6865,16 @@
         "audio only",
         "cookies",
         "manifest",
+        "pinterest",
+        "pin",
+        "strip audio",
         "تحميل فيديو",
         "تنزيل من رابط",
         "مونتاج",
         "صوت فقط",
-        "نسخة آمنة"
+        "نسخة آمنة",
+        "بنترست",
+        "شيل الصوت"
       ],
       "commands": [
         {
@@ -6878,7 +6885,7 @@
         {
           "name": "download",
           "example": "python3 scripts/fetch_video.py https://example.com/video -o ./out/clips --quality 1080 --safe",
-          "does": "Downloads each URL (requested format, then a fallback format, then an impersonation retry if available), probes it, optionally writes <name>.safe.mp4, and writes ./out/clips/manifest.json."
+          "does": "Downloads each URL (requested format, then a fallback format, then an impersonation retry if available; a Pinterest pin instead gets one classification and at most one download, with no retry), probes it, optionally writes <name>.safe.mp4, and writes ./out/clips/manifest.json."
         },
         {
           "name": "batch",
@@ -6901,13 +6908,23 @@
           "does": "Passes --cookies-from-browser to yt-dlp so the user's own local browser login is used without exporting a cookies file."
         },
         {
+          "name": "strip-audio",
+          "example": "python3 scripts/fetch_video.py https://www.pinterest.com/pin/<id>/ -o ./out/clips --strip-audio",
+          "does": "Drops each downloaded clip's own audio with ffmpeg (video stream copied, no re-encode) and records audio: stripped in the manifest; for Quran and other dignified jobs, since Pinterest video pins usually carry the creator's music. Refused with --quality audio."
+        },
+        {
+          "name": "classify",
+          "example": "python3 scripts/fetch_video.py --classify https://www.pinterest.com/pin/<id>/ https://pin.it/<code>",
+          "does": "Pinterest pins only: one yt-dlp -J call per pin (Pinterest extractor only, so an embedded YouTube video is named without contacting YouTube) prints kind, pin id and a one-line reason; nothing is downloaded or written. Exit 1 when a link is not a pin or a pin could not be classified."
+        },
+        {
           "name": "update",
           "example": "python3 scripts/fetch_video.py --update",
           "does": "Runs pip install --upgrade yt-dlp curl_cffi (network plus package install)."
         }
       ],
-      "inputs": "One or more HTTP(S) video URLs, or a text file of URLs (--urls). Optional --quality (best|audio|a height, aliases 4k/2k/uhd/fhd/hd, or e.g. 1080p; default 1080), --cookies, --proxy, --connections (default 8) and -o (default ./downloads relative to the cwd).",
-      "outputs": "<out>/<title> [<id>].<ext>, .info.json sidecars, optional <name>.safe.mp4, and <out>/manifest.json (overwritten each run). Exit 0 only when every URL succeeded; 1 on any failure or missing yt-dlp; 2 when no valid URL was given.",
+      "inputs": "One or more HTTP(S) video URLs, or a text file of URLs (--urls); Pinterest pin links (pinterest.<tld>/pin/<id>, pin.it/<code>) take the pin path. Optional --quality (best|audio|a height, aliases 4k/2k/uhd/fhd/hd, or e.g. 1080p; default 1080; pins ignore it, Pinterest serves 720p at most), --strip-audio, --classify, --cookies, --proxy, --connections (default 8) and -o (default ./downloads relative to the cwd).",
+      "outputs": "<out>/<title> [<id>].<ext>, .info.json sidecars, optional <name>.safe.mp4, and <out>/manifest.json (overwritten each run). A Pinterest pin gives <out>/pinterest-<id>.mp4 (video pins only) and <out>/pinterest-<id>.pin.json for every pin: kind, reason, retry rule, label_size (Pinterest's display-size label) against the ffprobe-measured width and height, audio state, and a credit record (pin URL, uploader if known, 'licence unknown — credit and link'). Exit 0 only when every URL gave a file; 1 on any failure, any non-video pin or missing yt-dlp; 2 when no valid URL was given.",
       "requires": {
         "python": [
           "yt-dlp"
@@ -6926,10 +6943,14 @@
       },
       "safety": "network",
       "consent": "It downloads third-party media, so confirm the user has the right to use it. --cookies uses the user's own session (never store, print or commit it). --update pip-installs yt-dlp and curl_cffi.",
-      "limits": "It is only a yt-dlp wrapper: it does not bypass DRM or paywalls, does not verify licenses, and many platforms (YouTube 403, Vimeo login, Wikimedia 403) failed from cloud hosts.",
-      "evidence": "tested-elsewhere",
-      "evidence_note": "No test executes this script. --doctor ran here and reported 'yt-dlp: MISSING' and 'ffmpeg: ok' (exit 1); --help parsed fine and an invalid --quality 8k was rejected by the parser. tests/test_media_sources_gateway.py (8/8 passed) only asserts that the media_sources dry-run command names fetch_video.py.",
-      "tests": [],
+      "limits": "It is only a yt-dlp wrapper: it does not bypass DRM or paywalls, does not verify licenses, and many platforms (YouTube 403, Vimeo login, Wikimedia 403) failed from cloud hosts. Pinterest is not a licence source: a pin is often a re-upload of unknown licence, its video is 720p at most whatever the 1080x1920 label says, and image, GIF, embedded-YouTube and deleted pins give no file (each is reported once, never retried; an embedded YouTube video is never fetched through the pin, use the YouTube link on your own computer).",
+      "evidence": "tested-here",
+      "evidence_note": "evals/test_pinterest.py (20 tests) passed here on 2026-10-29, offline: fixture yt-dlp -J output and stderr for each pin class played back by a fake yt-dlp, synthetic ffmpeg clips; it runs fetch_video.main on pins (manifest, pinterest-<id>.mp4 measured 720x1280 against the 1080x1920 label, --strip-audio leaving no audio stream, the image pin's one-line reason, the YouTube pin's blocked hint) and --classify (nothing downloaded). evals/test_instagram_finder.py downloads through fetch_video.py with a fake yt-dlp, and tests/test_download_deps.py checks the blocked message. Live here on 2026-10-29 with yt-dlp 2026.10.21: --classify named 8 of the scout's pins correctly (1 video, 3 embedded YouTube, 2 deleted, 2 GIF), and one public video pin downloaded to a 720x1280 H.264 file with --strip-audio (no audio stream left, no temp or fragment files). Non-Pinterest live downloads were not re-run for this change.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_pinterest.py",
+        ".claude/skills/kosif-superpowers/evals/test_instagram_finder.py",
+        "tests/test_download_deps.py"
+      ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/video-download.md",
         ".claude/skills/kosif-superpowers/references/stock-media-100.md",
@@ -17211,8 +17232,8 @@
       "area": "sources",
       "title_en": "Source finder: the original clips behind each shot of a reference video",
       "title_ar": "البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي",
-      "summary_en": "Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha.",
-      "summary_ar": "يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم ينزّل فيديوهات الـpins بـyt-dlp ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت، ويستنى بين طلبات Yandex ويقف عند أول captcha.",
+      "summary_en": "Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then classifies each pin with the shared helper scripts/_pinterest.py (one yt-dlp -J call: video, image, GIF, embedded YouTube, other embed, deleted, CDN-refused, blocked; never retried), downloads only the video pins (temp folder, real size measured with ffprobe, the pin's own audio stripped unless --keep-audio, a .pin.json credit record per pin) and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp, plus how many pins of each kind were found and why the others were skipped; it waits between Yandex calls and stops at the first captcha.",
+      "summary_ar": "يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم يصنّف كل pin بالمساعد المشترك scripts/_pinterest.py (طلب yt-dlp -J واحد: فيديو، صورة، GIF، يوتيوب مضمَّن، تضمين تاني، محذوف، سيرفر الفيديو رافض، محجوب؛ من غير إعادة محاولة) وينزّل الفيديوهات بس (في فولدر مؤقت، ويقيس المقاس الحقيقي بـffprobe، ويشيل صوت الـpin نفسه إلا مع ‎--keep-audio‎، ويكتب سجل نسب ‎.pin.json‎ لكل pin)، ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت وعدد الـpins من كل نوع وسبب استبعاد الباقي، ويستنى بين طلبات Yandex ويقف عند أول captcha.",
       "use_when": [
         "طلّع لي المصادر الأصلية للقطات الفيديو ده",
         "الفيديو ده متجمّع من لقطات منين؟ دوّر على مصدر كل مشهد",
@@ -17246,7 +17267,7 @@
         {
           "name": "doctor",
           "example": "python3 scripts/source_finder.py doctor",
-          "does": "Offline: which parts can run here (OpenCV, numpy, ffmpeg, curl, yt-dlp)."
+          "does": "Offline: which parts can run here (OpenCV, numpy, ffmpeg, ffprobe, curl, yt-dlp)."
         },
         {
           "name": "cuts",
@@ -17266,7 +17287,7 @@
         {
           "name": "match",
           "example": "python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder",
-          "does": "Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; a candidate that cannot be decoded scores 0 with an error and the rest are still checked; --no-download or a folder keeps it offline."
+          "does": "Classifies the pins first and downloads only the video pins (cached in <work>/cand with a p<id>.pin.json per pin; image, GIF, embedded-YouTube and deleted pins are never asked again, CDN-refused ones at most once per run; audio stripped unless --keep-audio) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; a candidate that cannot be decoded scores 0 with an error and the rest are still checked; the output counts the pins of each kind; --no-download or a folder keeps it offline."
         },
         {
           "name": "run",
@@ -17278,7 +17299,7 @@
         "doctor"
       ],
       "inputs": "A reference video (MP4, MOV, WebM); optionally an ffmpeg crop that removes captions and logos, a cuts.json or boundary list, query images, pin ids or links, or a folder of candidate clips",
-      "outputs": "<work>/cuts.json, queries/*.jpg with frames.json, search/<image>-<sha256 prefix>.json (cache keyed by the frame's bytes), cand/p<pin>.mp4 (downloaded pins) and report.json: per shot the verdict, score, timestamp, pin URL and other leads, a ranked list of hits, a summary and a credit note",
+      "outputs": "<work>/cuts.json, queries/*.jpg with frames.json, search/<image>-<sha256 prefix>.json (cache keyed by the frame's bytes), cand/p<pin>.mp4 (downloaded video pins, audio stripped by default) with cand/p<pin>.pin.json for every pin (kind, one-line reason, retry rule, ffprobe-measured size against Pinterest's label, audio state, credit record: pin URL, uploader if known, 'licence unknown — credit and link') and report.json: per shot the verdict, score, timestamp, pin URL and other leads, pin_kinds counts and pins_skipped with reasons, a ranked list of hits, a summary and a credit note",
       "requires": {
         "python": [
           "numpy",
@@ -17286,6 +17307,7 @@
         ],
         "binaries": [
           "ffmpeg",
+          "ffprobe",
           "curl",
           "yt-dlp"
         ],
@@ -17295,11 +17317,12 @@
       },
       "safety": "network",
       "consent": "search and run upload frames of the user's reference video to Yandex (a third-party service), and match and run download third-party Pinterest videos: confirm the user wants both. Downloaded clips stay as private reference in the work folder; reusing one needs its creator's permission or a licence, and every found source is credited and linked. Keep the rate limit, and at a captcha stop rather than bypass it. No account, cookie or credential is used.",
-      "limits": "Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Found clips belong to their creators: credit and link them.",
+      "limits": "Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Most pins a search returns are not usable footage (in the 2026-10-29 scout run of about 140 pins, about 60% were images, and others were GIFs, embedded YouTube or deleted); Pinterest video is 720p at most whatever its 1080x1920 label says. Found clips belong to their creators: credit and link them.",
       "evidence": "tested-here",
-      "evidence_note": "evals/test_source_finder.py 20/20 passed offline on 2026-10-28: a warped noisy copy scores 612 inliers against 8 or fewer for unrelated images, cuts land on the exact frames of a synthetic three-shot video, fake Yandex answers give the pins, a captcha stops further calls, the search cache serves a frame only for identical bytes (a new crop under the same name is searched again), a corrupt image or video in the candidates folder is reported and skipped by match and run, and the whole run chain reports the right shot. On cached real clips from this session, match re-scored the known source at 1757 against 28 and 11. Live Yandex and Pinterest calls were made by the prototype in this session, not by the test.",
+      "evidence_note": "evals/test_source_finder.py 20/20 passed offline on 2026-10-29: a warped noisy copy scores 612 inliers against 8 or fewer for unrelated images, cuts land on the exact frames of a synthetic three-shot video, fake Yandex answers give the pins, a captcha stops further calls, the search cache serves a frame only for identical bytes (a new crop under the same name is searched again), a corrupt image or video in the candidates folder is reported and skipped by match and run, and the whole run chain reports the right shot. evals/test_pinterest.py (20 tests, offline, fixture yt-dlp -J output per pin class and a fake yt-dlp) covers the pin path: seven pins resolved with 4 parallel jobs give exactly the five video files and seven .pin.json records in cand/ (no fragment files, one temp folder per pin), the audio is stripped by default and kept with strip_audio=False, and the counts per kind are reported. On cached real clips from this session, match re-scored the known source at 1757 against 28 and 11. Live Yandex and Pinterest calls were made by the prototype in the earlier session, and on 2026-10-29 the shared pin helper classified and downloaded live pins through fetch_video.py (see fetch-video), not through this test.",
       "tests": [
-        ".claude/skills/kosif-superpowers/evals/test_source_finder.py"
+        ".claude/skills/kosif-superpowers/evals/test_source_finder.py",
+        ".claude/skills/kosif-superpowers/evals/test_pinterest.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/guides/sources.md"

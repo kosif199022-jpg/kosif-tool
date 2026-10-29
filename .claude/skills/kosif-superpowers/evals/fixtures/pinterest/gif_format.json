@@ -1,0 +1,29 @@
+{
+ "class": "gif",
+ "note": "Synthetic. A pin whose only media format is an animated GIF (ext gif, from a .gif URL in its video list), as yt-dlp's Pinterest extractor reports it.",
+ "expect": {"probe": "gif", "final": "gif"},
+ "probe": {
+  "returncode": 0,
+  "stderr": "",
+  "stdout": {
+   "id": "100000000000000004",
+   "formats": [
+    {"url": "https://i.pinimg.com/originals/00/00/00/100000000000000004.gif", "format_id": "V_GIF", "width": 250, "height": 250, "duration": 2.0, "protocol": "https", "ext": "gif", "video_ext": "gif", "audio_ext": "none", "resolution": "250x250", "format": "V_GIF - 250x250"}
+   ],
+   "duration": 2.0,
+   "webpage_url": "https://www.pinterest.com/pin/100000000000000004/",
+   "extractor_key": "Pinterest",
+   "extractor": "Pinterest",
+   "title": "Example GIF pin",
+   "thumbnails": [{"url": "https://i.pinimg.com/originals/00/00/00/100000000000000004.gif", "width": 250, "height": 250, "id": "0", "resolution": "250x250"}],
+   "uploader": "Example Creator",
+   "uploader_id": "900000000000000001",
+   "url": "https://i.pinimg.com/originals/00/00/00/100000000000000004.gif",
+   "format_id": "V_GIF",
+   "width": 250,
+   "height": 250,
+   "ext": "gif",
+   "_type": "video"
+  }
+ }
+}
