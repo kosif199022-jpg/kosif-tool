@@ -84,6 +84,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 7. [العقل الفائق والمستلزمات والخريطة — Cognition, requirements, graph](#العقل-الفائق-والمستلزمات-والخريطة--cognition-requirements-graph)
 8. [KOSIF Innovation lab — invention candidates](#kosif-innovation-lab--invention-candidates)
 9. [KOSIF Superpowers Ultimate — integrated obra/superpowers v7 process layer (2026-10-19)](#kosif-superpowers-ultimate--integrated-obrasuperpowers-v7-process-layer-2026-10-19)
+10. [Owned repositories — reuse what the owner already built](#owned-repositories--reuse-what-the-owner-already-built)
+11. [The five-member council: hard constraints — قيود المجلس الملزمة](#the-five-member-council-hard-constraints--قيود-المجلس-الملزمة)
 
 ## The front door: hub.py
 
@@ -174,3 +176,18 @@ The bundled 15 process skills are installed alongside the KOSIF main skill for C
 ## Owned repositories — reuse what the owner already built
 
 Before building a capability from scratch, check whether one of the owner's own repositories already has it: `python3 scripts/owned_repos.py find "<task>"` (from the skill folder). `skills` prints, per capability group, what Claude has now (✅ proven + 🟢 ready), the methods it applies directly, what becomes available after an install or a key, and which owned repos are still `learnable`. The full table, relations and findings live in [owned-repos-map.md](../owned-repos-map.md). To refresh after the account changes: shallow-clone the repos outside the repository, run `digest` then `merge`, `render` and `verify`. Private repositories stay counts-only in this public skill.
+
+## The five-member council: hard constraints — قيود المجلس الملزمة
+
+`scripts/llm_council.py` (tool `llm-council`, appendix A38 §7) frames one decision for five advisors. Two inputs look alike and behave differently:
+
+- `--constraints "rule" ...` holds the user's explicit rules («لا ترجمة للآيات», "no audio-reactive pulsing"). They are never truncated and get their own section, `Hard constraints / قيود ملزمة`, right after the question in every prompt: the five advisors (the Outsider's bare prompt too), the reviewers (a response that breaks one cannot be the strongest), the chairman (the recommendation and the first step keep every rule) and LIGHT.
+- `--context FILE ...` holds files worth reading. At most four are kept (`MAX_CONTEXT`, the brief first). Whatever the cap drops is listed in `dropped_context` in the JSON output; when one of the user's own `--context` items is cut, or an item is not a file, a warning goes to stderr and names it.
+
+```bash
+python3 scripts/llm_council.py frame "Which look for the recitation reel?" --dir out/<work>/council5 \
+  --from-brief out/<work>/brief.json --constraints "لا ترجمة للآيات" "no audio-reactive pulsing" --context notes.md
+grep -c "لا ترجمة للآيات" out/<work>/council5/prompts/advisor_outsider.txt   # 1: the rule reached the Outsider
+```
+
+**بالعربية:** قاعدة قالها المستخدم صراحة تُمرَّر بـ `--constraints` لا بـ `--context`: تصل كاملة إلى كل مطالبة بعد السؤال مباشرة، حتى الغريب والمراجعين والرئيس. أما `--context` فللملفات، يقف عند أربعة، وما يسقط منه يظهر في `dropped_context` مع تحذير. السكربت يضع القيد في كل مطالبة لكنه لا يفحص أن الرأي أو الحكم التزم به؛ ذلك على من يقرأ الحكم. Tests: `evals/test_llm_council.py` and `--self-test`.

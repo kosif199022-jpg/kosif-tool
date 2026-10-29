@@ -6,9 +6,9 @@ This playbook is mandatory whenever a film contains Arabic text. It covers lette
 
 ## 1. When to use — متى تستخدمه
 
-Always, for any Arabic title, caption, label, lyric or UI text in a KOSIF film.
+Always, for any Arabic title, caption, label, lyric or UI text in a KOSIF film. A reel with Quran recitation or ayah text also follows section 11.
 
-**بالعربية:** دائمًا، لأي عنوان أو ترجمة أو تسمية أو كلمات أغنية أو نص واجهة بالعربية.
+**بالعربية:** دائمًا، لأي عنوان أو ترجمة أو تسمية أو كلمات أغنية أو نص واجهة بالعربية. وريل التلاوة أو نص الآيات يتبع القسم 11 أيضًا.
 
 ## 2. Visual grammar — القواعد البصرية
 
@@ -92,6 +92,7 @@ Arabic words in `words.json` are whole words; highlight each as it is spoken, 40
 8. Wipes and entrances from the right?
 9. Arabic punctuation used?
 10. Checked at phone size on a real screenshot?
+11. Quran reels: every rule of section 11 checked?
 
 ## 9. Anti-patterns — أخطاء شائعة
 
@@ -106,3 +107,25 @@ Letters flying in one by one (disconnected glyphs); reversed text from fonts or 
 - handwriting-reveal — كتابة يدوية
 - typewriter — آلة كتابة
 - editorial — مونتاج تحريري
+
+## 11. Quran recitation reels — ريلز التلاوة القرآنية
+
+Lessons of a delivered recitation reel (2026-10-29). Each rule has its check.
+
+1. **Exact text, never retyped.** Fetch every ayah from `https://api.alquran.cloud/v1/ayah/<surah>:<ayah>/quran-uthmani`, save the JSON in the job folder and draw its `data.text` string as is: never typed by hand, never taken from the transcript, never "corrected". If the first ayah of a surah arrives with the basmala in front, cut it from the fetched string; do not retype the rest. Check: the drawn string equals the saved field (compare in code).
+2. **Font: ScheherazadeNew-Bold** (SIL, OFL; in the repo at `styles/dua/kit/fonts/ScheherazadeNew-Bold.ttf`) for Quran text. Amiri lifts the dagger alef (U+0670) so high that it reads like the digit «١». Check: a contact-sheet crop of a word with U+0670 (such as ٱلرَّحْمَٰنِ) at the final size.
+3. **Ornate brackets as two separate LTR glyphs:** U+FD3F «﴿» on the right of the ayah, U+FD3E «﴾» on the left, each drawn on its own with `direction = 'ltr'` at a measured position, never inside the RTL string where the bidi pass and the font decide where they land. Check: the right-hand bracket in the frame is U+FD3F.
+4. **No on-screen translation unless the user asks.** When asked, use only a public-domain translation (Pickthall, edition `en.pickthall` on the same API) and credit it on screen. Check: no Latin text on screen except credits, or the Pickthall line.
+5. **Scene changes only inside the reciter's measured breaths.** Measure the pauses (`ffmpeg -af silencedetect=noise=-35dB:d=0.25` on the recitation, or the gaps in `words.json`) and put every cut and transition inside one; never mid-word or mid-ayah. Check: every cut time lies inside a measured pause.
+6. **Never fire, flare or burst effects on words of promise or recompense** (وَعْد، جَزَاء، أَجْر). Emphasis stays quiet: colour or weight of the whole word. Check: the effect list of the scene code has no fire/flare on those words.
+7. **No audio-reactive pulsing.** Nothing scales, glows or shakes with the recitation's loudness or spectrum; motion follows the meaning and the breaths. Check: no loudness envelope or analyser feeds a transform in the scene code.
+
+**بالعربية:**
+
+1. **النص كما هو بلا إعادة كتابة:** اجلب كل آية من `api.alquran.cloud` (الإصدار `quran-uthmani`) واحفظ JSON في مجلد المهمة وارسم `data.text` كما جاء: لا كتابة باليد ولا من التفريغ ولا «تصحيح». وإن جاءت الآية الأولى من السورة وقبلها البسملة فاقطعها من النص المجلوب ولا تُعد كتابة الباقي. الفحص: النص المرسوم يساوي الحقل المحفوظ.
+2. **الخط ScheherazadeNew-Bold** (رخصة OFL، في `styles/dua/kit/fonts/`) لنص القرآن؛ Amiri يرفع الألف الخنجرية (U+0670) فتُقرأ كالرقم «١». الفحص: قصاصة من لوحة اللقطات لكلمة فيها ألف خنجرية بالمقاس النهائي.
+3. **﴿ ﴾ حرفان منفصلان باتجاه LTR:** U+FD3F «﴿» يمين الآية وU+FD3E «﴾» يسارها، كل منهما يُرسم وحده في موضع مقيس، لا داخل النص RTL. الفحص: القوس الأيمن في الإطار هو U+FD3F.
+4. **لا ترجمة على الشاشة إلا بطلب المستخدم،** وحينها ترجمة ملك عام فقط (Pickthall، الإصدار `en.pickthall`) مع ذكرها على الشاشة.
+5. **تغيير المشهد داخل أنفاس القارئ المقيسة فقط:** قس الوقفات (`silencedetect` أو فجوات `words.json`) وضع كل قطع وانتقال داخل وقفة، لا وسط كلمة ولا وسط آية.
+6. **لا نار ولا وهج ولا انفجار على كلمات الوعد والجزاء** (وَعْد، جَزَاء، أَجْر)؛ الإبراز هادئ: لون الكلمة كاملة أو وزنها.
+7. **لا نبض مع الصوت:** لا تكبير ولا توهج ولا اهتزاز يتبع جهارة التلاوة أو طيفها؛ الحركة تتبع المعنى والأنفاس.

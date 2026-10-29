@@ -110,9 +110,14 @@ Fonts must be local or loaded before rendering; a fallback font in the final ren
 
 ## 7. Audio sync — المزامنة مع الصوت
 
-Mux the original audio without resampling (`-c:a aac` from the source, `-shortest`), set the film duration to the audio duration, and confirm with `verify_video.py --audio` that lengths match within 50 ms.
+Set the film duration to the audio duration and let the renderer mux the audio in its one pass: `render_html.cjs --audio voice.m4a` stream-copies an AAC/MP3/ALAC track byte for byte (only WAV/FLAC become AAC 320k). Confirm with `verify_video.py --audio` that lengths match within 50 ms.
 
-**بالعربية:** ادمج الصوت الأصلي دون إعادة أخذ عينات، واجعل مدة الفيلم مساوية لمدة الصوت، وتحقق أن الفرق أقل من 50 مللي ثانية.
+**The renderer's MP4 is the master (lesson of 2026-10-29):**
+
+1. Never re-mux the master with `-shortest`. It ends the file at the shorter stream, so it can cut the last breath or word of the audio, and the audio is no longer the source. Fix a length problem in the scene (duration = audio duration) and render again; never in a second ffmpeg pass.
+2. Check the delivered audio against the source by MD5: `python3 tools/verify_video.py out/film.mp4 --aspect 9:16 --fps 30 --duration <s> --source-audio voice.m4a` must report `"md5_match": true`. A WAV/FLAC source is re-encoded, so it cannot match: say so in `TEST_REPORT.md` and check the length with `--audio` instead.
+
+**بالعربية:** اجعل مدة الفيلم مساوية لمدة الصوت، واترك الرندر يدمج الصوت في مروره الوحيد (`--audio` ينسخ تيار AAC/MP3/ALAC كما هو)، وتحقق أن الفرق أقل من 50 مللي ثانية. **ملف المُرندر هو الماستر:** (1) لا يُعاد دمجه بـ `-shortest` أبدًا، فهو يُنهي الملف عند أقصر تيار وقد يقص آخر نفَس أو كلمة من الصوت فلا يعود الصوت هو المصدر؛ أصلح المدة في المشهد وأعد الرندر، لا في تمريرة ffmpeg ثانية. (2) طابق بصمة MD5 للصوت مع المصدر بـ `verify_video.py --source-audio` ويجب أن تكون `md5_match` صحيحة؛ مصدر WAV/FLAC يُعاد ترميزه فلا يطابق، فاذكر ذلك في `TEST_REPORT.md` وافحص المدة بـ `--audio`.
 
 ## 8. Quality checklist — قائمة الفحص
 
@@ -127,12 +132,13 @@ Mux the original audio without resampling (`-c:a aac` from the source, `-shortes
 9. Editable sources delivered with the MP4?
 10. TEST_REPORT.md filled with measured values?
 11. Photo films: `check_frame_cover.cjs` passes for every style (no empty edge in any frame)?
+12. The delivered file is the renderer's MP4, never re-muxed with `-shortest`, and `verify_video.py --source-audio` reports `md5_match: true` (or TEST_REPORT.md says why it cannot)?
 
 ## 9. Anti-patterns — أخطاء شائعة
 
-Screen-recording a browser; rendering before approval; `Math.random()` per frame; fonts from a CDN that fails mid-render; odd dimensions; yuv444 output that phones cannot play; claiming checks that were not run; waiting on a render with `sleep N; check` instead of `tools/job.py wait`.
+Screen-recording a browser; rendering before approval; `Math.random()` per frame; fonts from a CDN that fails mid-render; odd dimensions; yuv444 output that phones cannot play; claiming checks that were not run; waiting on a render with `sleep N; check` instead of `tools/job.py wait`; re-muxing the renderer's MP4 with `-shortest` (it can cut the audio's tail).
 
-**بالعربية:** تسجيل الشاشة، الرندر قبل الموافقة، عشوائية في كل إطار، خطوط من شبكة تتعطل أثناء الرندر، أبعاد فردية، صيغة ألوان لا تعمل على الهواتف، وادعاء فحوص لم تُجرَ، وانتظار الرندر بـ `sleep` بدل `tools/job.py wait`.
+**بالعربية:** تسجيل الشاشة، الرندر قبل الموافقة، عشوائية في كل إطار، خطوط من شبكة تتعطل أثناء الرندر، أبعاد فردية، صيغة ألوان لا تعمل على الهواتف، وادعاء فحوص لم تُجرَ، وانتظار الرندر بـ `sleep` بدل `tools/job.py wait`، وإعادة دمج ملف المُرندر بـ `-shortest` (قد يقص ذيل الصوت).
 
 ## 10. Related styles — استايلات ذات صلة
 
