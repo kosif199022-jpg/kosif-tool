@@ -229,7 +229,7 @@
 | `browser-scout` | TOOL-45 | مستكشف المواقع بالمتصفح · Browser scout site survey | `python3 scripts/browser_scout.py doctor` | 1 |
 | `creative-external-search` | TOOL-46 | بحث المصادر الإبداعية دون اتصال · Creative sources offline search | `python3 scripts/creative_external_search.py search "kinetic typograph…` | 1 |
 | `fetch-reference` | TOOL-93 | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure | `python3 scripts/fetch_reference.py https://example.com/page --list --…` | 2 |
-| `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 0 |
+| `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 3 |
 | `free-footage` | — | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits | `python3 scripts/free_footage.py sources --searchable` | 1 |
 | `github-pulse` | — | نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها · GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | 1 |
 | `github-top-repos` | TOOL-160 | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker | `python3 scripts/github_top_repos.py build` | 1 |
@@ -239,7 +239,7 @@
 | `rea-creative-research-atlas` | TOOL-48 | باني فهرس البحث الإبداعي · Creative research catalog builder | `python3 scripts/rea_creative_research_atlas.py report` | 1 |
 | `rebalance-creative-repos` | TOOL-49 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog | `python3 scripts/rebalance_creative_repos.py run` | 0 |
 | `repo-ashell-cinema` | TOOL-51 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.c…` | 0 |
-| `source-finder` | — | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي · Source finder: the original clips behind each shot of a reference video | `python3 scripts/source_finder.py doctor` | 1 |
+| `source-finder` | — | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي · Source finder: the original clips behind each shot of a reference video | `python3 scripts/source_finder.py doctor` | 2 |
 | `source-scout` | TOOL-50 | مستكشف مصادر المجتمع · Community source scout | `python3 scripts/source_scout.py check` | 1 |
 | `sources-index` | TOOL-142 | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../ou…` | 1 |
 | `stock-fetch` | TOOL-95 | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) | `python3 scripts/stock_fetch.py probe` | 1 |

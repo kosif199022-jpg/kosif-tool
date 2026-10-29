@@ -325,12 +325,12 @@
 |---|---|
 | المسار | `scripts/fetch_video.py` (جذر: skill) |
 | المجال | `sources` |
-| الدليل | `tested-elsewhere` |
+| الدليل | `tested-here` |
 | العائلات | `video-download`, `photo-video-footage`, `formats-platforms` |
 
-**ما تفعله:** غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، ويكتب ملف manifest.json فيه الملف والمدة والأبعاد ومعدل الإطارات والترميز والعنوان والناشر والترخيص إن كشفه الموقع.
+**ما تفعله:** غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، وشيل صوت المقطع نفسه عند الاستلام (‎--strip-audio‎)، ويكتب ملف manifest.json فيه الملف والمدة والأبعاد ومعدل الإطارات والترميز والعنوان والناشر والترخيص إن كشفه الموقع. روابط Pinterest بتعدّي على المساعد المشترك scripts/_pinterest.py: طلب yt-dlp -J واحد يصنّف الـpin الأول (فيديو، صورة، GIF، يوتيوب مضمَّن، تضمين من موقع تاني، محذوف، سيرفر الفيديو رافض، محجوب) مع سبب في سطر، ومفيش تنزيل إلا للفيديو وفي فولدر مؤقت، والمقاس الحقيقي بيتقاس بـffprobe، وبيتكتب سجل نسب ‎.pin.json‎؛ و‎--classify‎ بيقول نوع كل pin بس.
 
-**What it does:** Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes.
+**What it does:** Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy, can drop each clip's own audio on intake (--strip-audio), and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. Pinterest pin links go through the shared helper scripts/_pinterest.py: one yt-dlp -J call classifies the pin first (video, image, GIF, embedded YouTube, other embed, deleted, CDN-refused, blocked) with a one-line reason, only a video pin is downloaded, in a temp folder, its real size is measured with ffprobe, and a .pin.json credit record is written; --classify only reports what each pin is.
 
 #### متى تُستدعى
 
@@ -339,12 +339,14 @@
 - «Download these video links at 1080p with an edit-safe MP4 copy»
 - «Batch-download the URLs in links.txt into clips/»
 - «Check whether yt-dlp and ffmpeg are ready for downloading»
+- «نزّل فيديو الـpin ده من بنترست من غير المزيكا بتاعته»
+- «Which of these Pinterest pins are videos and which are images or embedded YouTube?»
 
 #### الأوامر
 
 - **doctor**: Reports the yt-dlp version, ffmpeg presence and impersonation support (runs yt-dlp locally; no download). Exits 1 if yt-dlp is missing.
   - `python3 scripts/fetch_video.py --doctor`
-- **download**: Downloads each URL (requested format, then a fallback format, then an impersonation retry if available), probes it, optionally writes <name>.safe.mp4, and writes ./out/clips/manifest.json.
+- **download**: Downloads each URL (requested format, then a fallback format, then an impersonation retry if available; a Pinterest pin instead gets one classification and at most one download, with no retry), probes it, optionally writes <name>.safe.mp4, and writes ./out/clips/manifest.json.
   - `python3 scripts/fetch_video.py https://example.com/video -o ./out/clips --quality 1080 --safe`
 - **batch**: Reads one URL per line (blank lines and lines starting with # are skipped) and downloads all of them. Non-HTTP(S) entries are skipped with a warning.
   - `python3 scripts/fetch_video.py --urls ./links.txt -o ./out/clips`
@@ -354,6 +356,10 @@
   - `python3 scripts/fetch_video.py https://example.com/video --cookies ./cookies.txt -o ./out/clips`
 - **cookies-from-browser**: Passes --cookies-from-browser to yt-dlp so the user's own local browser login is used without exporting a cookies file.
   - `python3 scripts/fetch_video.py https://example.com/video --cookies-from-browser firefox -o ./out/clips`
+- **strip-audio**: Drops each downloaded clip's own audio with ffmpeg (video stream copied, no re-encode) and records audio: stripped in the manifest; for Quran and other dignified jobs, since Pinterest video pins usually carry the creator's music. Refused with --quality audio.
+  - `python3 scripts/fetch_video.py https://www.pinterest.com/pin/<id>/ -o ./out/clips --strip-audio`
+- **classify**: Pinterest pins only: one yt-dlp -J call per pin (Pinterest extractor only, so an embedded YouTube video is named without contacting YouTube) prints kind, pin id and a one-line reason; nothing is downloaded or written. Exit 1 when a link is not a pin or a pin could not be classified.
+  - `python3 scripts/fetch_video.py --classify https://www.pinterest.com/pin/<id>/ https://pin.it/<code>`
 - **update**: Runs pip install --upgrade yt-dlp curl_cffi (network plus package install).
   - `python3 scripts/fetch_video.py --update`
 
@@ -365,11 +371,13 @@
 - python: yt-dlp
 - الأمان: network
 - الموافقة: It downloads third-party media, so confirm the user has the right to use it. --cookies uses the user's own session (never store, print or commit it). --update pip-installs yt-dlp and curl_cffi.
-- الحدود: It is only a yt-dlp wrapper: it does not bypass DRM or paywalls, does not verify licenses, and many platforms (YouTube 403, Vimeo login, Wikimedia 403) failed from cloud hosts.
+- الحدود: It is only a yt-dlp wrapper: it does not bypass DRM or paywalls, does not verify licenses, and many platforms (YouTube 403, Vimeo login, Wikimedia 403) failed from cloud hosts. Pinterest is not a licence source: a pin is often a re-upload of unknown licence, its video is 720p at most whatever the 1080x1920 label says, and image, GIF, embedded-YouTube and deleted pins give no file (each is reported once, never retried; an embedded YouTube video is never fetched through the pin, use the YouTube link on your own computer).
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/evals/test_pinterest.py`
+- `.claude/skills/kosif-superpowers/evals/test_instagram_finder.py`
+- `tests/test_download_deps.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/video-download.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/stock-media-100.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
@@ -387,18 +395,20 @@
 | الدليل | `tested-here` |
 | العائلات | `photo-video-footage`, `video-download`, `web-research` |
 
-**ما تفعله:** قاعدة بيانات مفحوصة لـ17 موقع فيديو مجاني ومفتوح الترخيص (الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوة كل موقع، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر)، وفيها Pinterest متعلَّم عليه إنه مش مصدر ترخيص. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit وCoverr. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.
+**ما تفعله:** قاعدة بيانات مفحوصة لـ17 موقع فيديو مجاني ومفتوح الترخيص (الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوة كل موقع، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر)، وفيها Pinterest متعلَّم عليه إنه مش مصدر ترخيص. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.
 
-**What it does:** Keeps a checked database of 17 free and open-licence video sources (data/free_footage_sources.json: licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size, measured reachability, with Pinterest marked not a licence source). It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice, Coverr's embedded state without premium clips). download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size) and rebuilds ATTRIBUTION.md; probe re-measures every source.
+**What it does:** Keeps a checked database of 17 free and open-licence video sources (data/free_footage_sources.json: licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size, measured reachability, with Pinterest marked not a licence source). It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.
 
 #### متى تُستدعى
 
 - «اجمع لي فيديوهات مفتوحة المصدر للمونتاج عن البحر والمدينة بالليل»
 - «عايز لقطات مجانية من غير حقوق لفيديو تيك توك طولي»
 - «اعمل قاعدة مواقع فيها فيديوهات مفتوحة المصدر تساعدني في المونتاج»
+- «ورّيني صور مصغّرة للقطات قبل ما أنزّلها عشان أشوف فيها ناس ولا كتابة»
 - «Find free open-licence b-roll of a city at night for my montage»
 - «Download CC0 or public-domain footage and record the licence and credit line»
 - «Which free stock video sites allow commercial use and which need attribution?»
+- «Make a contact sheet of the footage results so I can screen out people and text before downloading»
 
 #### الأوامر
 
@@ -408,10 +418,12 @@
   - `python3 scripts/free_footage.py check`
 - **probe**: Network: requests each source's probe URLs (files with a byte range), one per host per --delay seconds, and writes probe-<YYYYMMDD>.json with HTTP codes, the URL each probe landed on after redirects, a status per source (ok, partial, needs-key, blocked, timeout, paid, or moved when the site now answers from another domain) and whether it changed since the database was checked.
   - `python3 scripts/free_footage.py probe --out out/free-footage`
-- **search**: Network: Wikimedia Commons, the Internet Archive and NASA by API, Mixkit and Coverr by page, Pexels and Pixabay only when their key variables are set (otherwise reported as skipped, with no request). ND licences are dropped by default (--allow-nd keeps them for reference); --commercial drops NC, Mixkit Restricted, the retired CC Sampling/Sampling+/Developing Nations and other unconfirmed licences (it reads Mixkit clip pages to decide, as --min-height does for a Mixkit clip that would pass at the 1080p of a Free licence); --no-ai drops AI-generated clips. Prints id, size, duration, licence and credit rule, saves out/free-footage/last_search.json; one failing source (an HTTP error, a timeout or a reset mid-answer) never stops the others; exit 3 only when every source failed.
-  - `python3 scripts/free_footage.py search "night city" --orientation portrait --min-height 1280 --limit 6`
-- **download**: Network: a result id from the last search or a page/file link of a supported source (a Pexels link works without a key through stock_fetch.py); any other link needs --licence and --licence-url from its page. Writes <source>-<id>.<ext>, a <file>.json sidecar (licence, credit line, bytes, sha256, ffprobe size) and ATTRIBUTION.md; --max-mb 300 cap (Archive and NASA fall back to a smaller file); a Mixkit Free clip is fetched at 2160p, else 1080p, else 720p, a Restricted one at 720p; refuses web pages served instead of video, ND licences and Pinterest; a failed target (a reset or timeout mid-file leaves no .part) does not stop the others; exit 1 when any target failed.
-  - `python3 scripts/free_footage.py download wikimedia:81916645 --out out/free-footage/clips`
+- **search**: Network: Wikimedia Commons, the Internet Archive and NASA by API, Mixkit and Coverr by page, Pexels and Pixabay only when their key variables are set (otherwise reported as skipped, with no request). ND licences are dropped by default (--allow-nd keeps them for reference); --commercial drops NC, Mixkit Restricted, suspicious Archive uploader claims, the retired CC Sampling/Sampling+/Developing Nations and other unconfirmed licences, and counts each reason apart (it reads Mixkit clip pages to decide, as --resolve does: licence, real sizes and file sizes; a plain search shows Mixkit sizes as ~thumbnail guesses); --match any\|all drops titles that share no query word; --no-people drops titles naming people; --no-ai drops AI-generated clips. Prints id, size, duration, licence and credit rule, and merges the results by id into out/free-footage/last_search.json (--replace overwrites), with thumb_url, preview_url and relevance per result. A 429 names its Retry-After; --wait-429 waits for up to 900 s and --retry-failed asks only the sources that failed last time. One failing source never stops the others; exit 3 only when every source failed.
+  - `python3 scripts/free_footage.py search "night city" --orientation portrait --min-height 1280 --resolve --limit 6`
+- **download**: Network: a result id from the results file or a page/file link of a supported source (a Pexels link works without a key through stock_fetch.py); any other link needs --licence and --licence-url from its page. Writes <source>-<id>.<ext>, a <file>.json sidecar (licence, credit line, bytes, sha256, ffprobe size, pixel format and range, a full-range warning for yuvj420p files) and ATTRIBUTION.md; --max-mb 300 cap and --quality / --max-height caps where sizes are listed (Mixkit, Archive, Pexels, Pixabay; the next smaller file is taken); a Mixkit Free clip comes at its largest listed size, a Restricted one at 720p, and newer Mixkit clips through the clip page's download route; --dry-run prints the size, resolution and file size (listed, or by HEAD); a Cloudflare browser check is reported and that host left alone (--retry-challenge waits once); one retry on an Archive data node's 500; refuses web pages served instead of video, ND licences and Pinterest; a failed target does not stop the others; exit 1 when any target failed.
+  - `python3 scripts/free_footage.py download wikimedia:81916645 mixkit:100896 --quality 1080 --out out/free-footage/clips`
+- **preview**: Network (thumbnails and small previews only): builds contact_sheet.html (and contact_sheet.jpg plus video stills with ffmpeg) and contact_sheet.json from each result's thumbnail, or a strip of --frames stills from its 360p preview file (capped at 25 MB, deleted after use), or from the clips already downloaded in a folder; --ids and --query pick results. It never fetches a full clip.
+  - `python3 scripts/free_footage.py preview out/free-footage/last_search.json --frames 4`
 - **credits**: Offline: rebuilds ATTRIBUTION.md (a table plus copy-ready credit lines) from the sidecars in the folder, for example after a clip was removed, and prints it.
   - `python3 scripts/free_footage.py credits out/free-footage/clips`
 
@@ -420,8 +432,8 @@
 - network: true
 - optional: bin:ffprobe, env:PEXELS_API_KEY, env:PIXABAY_API_KEY
 - الأمان: network
-- الموافقة: search and probe send the query and plain requests to the listed sites, and download fetches third-party clips: confirm the user wants that. Keep each sidecar and ATTRIBUTION.md with the project and follow the licence (credit where required, no edits of ND clips, NC and Mixkit Restricted clips only in non-commercial work). Keys are read only from PEXELS_API_KEY / PIXABAY_API_KEY in the environment and are never printed or stored; never ask the user to paste a key into chat. Pinterest is never downloaded.
-- الحدود: Licences are what each source declares (Commons extmetadata, the uploader's licenseurl on the Archive, the Mixkit clip page, the Pexels, Pixabay, Coverr and NASA terms); the tool records them but cannot verify or grant rights, and Archive items are often re-uploads. The Mixkit and Coverr adapters read page markup and embedded JSON that can change without notice (that source then reports an error and the others continue). Scripts get Mixkit Free clips at 1080p (2160p when the clip has a 4K file) and Restricted clips at 720p, and Coverr's 1080p file (vertical Coverr files are upscaled to 1920 wide); Pexels and Pixabay search needs the user's keys (on 2026-10-21 Pexels was not issuing new keys (field note); its docs on 2026-10-29 say keys are issued instantly); from this sandbox upload.wikimedia.org and then the Commons API answered 429. Videezy, Vecteezy, Dareful, Life of Vids, ESA and Openverse are listed with their licences but not searched (no API, a login wall or 403); videvo.net and mazwai.com now redirect to Freepik (probe reports them as moved).
+- الموافقة: search, preview and probe send the query and plain requests to the listed sites (preview fetches thumbnails and small preview files), and download fetches third-party clips: confirm the user wants that. Keep each sidecar and ATTRIBUTION.md with the project and follow the licence (credit where required, no edits of ND clips, NC and Mixkit Restricted clips only in non-commercial work, no reliance on a suspicious Archive licence). Keys are read only from PEXELS_API_KEY / PIXABAY_API_KEY in the environment and are never printed or stored; never ask the user to paste a key into chat. Pinterest is never downloaded, and a Cloudflare browser check is never worked around.
+- الحدود: Licences are what each source declares (Commons extmetadata, the uploader's licenseurl on the Archive, the Mixkit clip page, the Pexels, Pixabay, Coverr and NASA terms); the tool records them but cannot verify or grant rights. Archive items are often re-uploads: the suspicious-licence flag catches only titles and identifiers that look like music videos, film or TV rips or YouTube downloads, so every Archive licence stays the uploader's claim. --match and --no-people read titles only (a clip can show people its title does not name): screen the contact sheet. The Mixkit and Coverr adapters read page markup and embedded JSON that can change without notice (that source then reports an error and the others continue), and the Mixkit download route can answer a Cloudflare browser check, which the tool reports and does not work around (retry later). Scripts get Mixkit Free clips at their largest listed size (1080p, 2160p on some) and Restricted clips at 720p, and Coverr's 1080p file (vertical Coverr files are upscaled to 1920 wide); --quality/--max-height apply only where a source lists sizes (not NASA, Coverr or Commons, which offer one file here). Pexels and Pixabay search needs the user's keys (on 2026-10-21 Pexels was not issuing new keys (field note); its docs on 2026-10-29 say keys are issued instantly); from this sandbox upload.wikimedia.org and the Commons API answered 429 (Retry-After 46 s and 600 s), and --wait-429 waits at most 900 s. Videezy, Vecteezy, Dareful, Life of Vids, ESA and Openverse are listed with their licences but not searched (no API, a login wall or 403); videvo.net and mazwai.com now redirect to Freepik (probe reports them as moved).
 
 #### الاختبارات والأدلة
 
@@ -887,9 +899,9 @@
 | الدليل | `tested-here` |
 | العائلات | `photo-video-footage`, `video-download`, `web-research`, `transitions-cuts` |
 
-**ما تفعله:** يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم ينزّل فيديوهات الـpins بـyt-dlp ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت، ويستنى بين طلبات Yandex ويقف عند أول captcha.
+**ما تفعله:** يقسم الفيديو المرجعي إلى مشاهد بفرق الإطارات في OpenCV، ويأخذ من كل مشهد صورًا للبحث بقصّ ffmpeg يشيل الكتابة المحروقة على الفيديو، ويبحث بكل صورة في Yandex بالرفع ويجمع روابط Pinterest، ثم يصنّف كل pin بالمساعد المشترك scripts/_pinterest.py (طلب yt-dlp -J واحد: فيديو، صورة، GIF، يوتيوب مضمَّن، تضمين تاني، محذوف، سيرفر الفيديو رافض، محجوب؛ من غير إعادة محاولة) وينزّل الفيديوهات بس (في فولدر مؤقت، ويقيس المقاس الحقيقي بـffprobe، ويشيل صوت الـpin نفسه إلا مع ‎--keep-audio‎، ويكتب سجل نسب ‎.pin.json‎ لكل pin)، ويتحقق من كل مرشح كل نصف ثانية بنقاط ORB ومطابقة RANSAC. أمر run يربط الخطوات ويكتب تقريرًا مرتبًا لكل مشهد: مطابق تمامًا (150 نقطة فأكثر) أو محتمل (40 فأكثر) أو لا شيء، مع الرابط والتوقيت وعدد الـpins من كل نوع وسبب استبعاد الباقي، ويستنى بين طلبات Yandex ويقف عند أول captcha.
 
-**What it does:** Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha.
+**What it does:** Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then classifies each pin with the shared helper scripts/_pinterest.py (one yt-dlp -J call: video, image, GIF, embedded YouTube, other embed, deleted, CDN-refused, blocked; never retried), downloads only the video pins (temp folder, real size measured with ffprobe, the pin's own audio stripped unless --keep-audio, a .pin.json credit record per pin) and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp, plus how many pins of each kind were found and why the others were skipped; it waits between Yandex calls and stops at the first captcha.
 
 #### متى تُستدعى
 
@@ -901,7 +913,7 @@
 
 #### الأوامر
 
-- **doctor**: Offline: which parts can run here (OpenCV, numpy, ffmpeg, curl, yt-dlp).
+- **doctor**: Offline: which parts can run here (OpenCV, numpy, ffmpeg, ffprobe, curl, yt-dlp).
   - `python3 scripts/source_finder.py doctor`
 - **cuts**: Offline: hard cuts from the mean HSV change between frames (threshold 27, shortest shot 0.4 s) as boundaries and a shot list.
   - `python3 scripts/source_finder.py cuts reference.mp4 --out out/source-finder/cuts.json`
@@ -909,23 +921,24 @@
   - `python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop "crop=iw:ih*0.6:0:ih*0.2" --out out/source-finder/queries`
 - **search**: Network: uploads each image to Yandex search-by-image, reads the sites and similar pages and lists Pinterest pin ids plus other video and stock leads; at least 2 s between calls, at most 40 images a run, exit 3 at a captcha.
   - `python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg --delay 4 --out out/source-finder/s003.json`
-- **match**: Downloads the pins with yt-dlp (cached in <work>/cand) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; a candidate that cannot be decoded scores 0 with an error and the rest are still checked; --no-download or a folder keeps it offline.
+- **match**: Classifies the pins first and downloads only the video pins (cached in <work>/cand with a p<id>.pin.json per pin; image, GIF, embedded-YouTube and deleted pins are never asked again, CDN-refused ones at most once per run; audio stripped unless --keep-audio) or reads a folder of clips, samples every 0.5 s and ranks candidates by RANSAC inliers with the best timestamp; a candidate that cannot be decoded scores 0 with an error and the rest are still checked; the output counts the pins of each kind; --no-download or a folder keeps it offline.
   - `python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder`
 - **run**: The whole chain with cached searches and a partial report.json after every shot; a captcha stops it with exit 3 and a re-run continues. --candidates DIR skips the search and runs offline.
   - `python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop "crop=iw:ih*0.6:0:ih*0.2"`
 
 #### المتطلبات والأمان
 
-- binaries: ffmpeg, curl, yt-dlp
+- binaries: ffmpeg, ffprobe, curl, yt-dlp
 - network: true
 - python: numpy, opencv-python-headless
 - الأمان: network
 - الموافقة: search and run upload frames of the user's reference video to Yandex (a third-party service), and match and run download third-party Pinterest videos: confirm the user wants both. Downloaded clips stay as private reference in the work folder; reusing one needs its creator's permission or a licence, and every found source is credited and linked. Keep the rate limit, and at a captcha stop rather than bypass it. No account, cookie or credential is used.
-- الحدود: Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Found clips belong to their creators: credit and link them.
+- الحدود: Finds a source only when it is posted on Pinterest as a video pin that Yandex indexes, so the hit rate depends on the reel: in this repository's runs it found 4 of 13 shots on one reel (514-1447 inliers against about 7-36 for unrelated clips), 1 of 4 on another and none on four more. Yandex and Pinterest pages can change or answer with a captcha, which stops the run. Hard cuts only (dissolves and fades are not split); mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Most pins a search returns are not usable footage (in the 2026-10-29 scout run of about 140 pins, about 60% were images, and others were GIFs, embedded YouTube or deleted); Pinterest video is 720p at most whatever its 1080x1920 label says. Found clips belong to their creators: credit and link them.
 
 #### الاختبارات والأدلة
 
 - `.claude/skills/kosif-superpowers/evals/test_source_finder.py`
+- `.claude/skills/kosif-superpowers/evals/test_pinterest.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
 
 #### عند الفشل (A29)

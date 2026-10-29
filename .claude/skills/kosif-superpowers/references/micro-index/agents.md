@@ -132,9 +132,9 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0145 Community source scout | ffmpeg, python3, yt-dlp |
 | TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0145 Community source scout | python3 |
 | TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0145 Community source scout | ffmpeg, python3 |
+| TOOL-94 | ✅ | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0145 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
 | TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0145 Community source scout | ffmpeg, python3, key:unspecified |
 | TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0145 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0145 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
 | TOOL-103 | ✅ | فاحص سلامة أطلس الأنماط · Style atlas repository validator → `repo-validate` | SP-0146 Catalog Evidence Audit | python3 |
 | TOOL-124 | ✅ | محرك بروتوكول ذكاء المهارات الشامل · Universal Skill Intelligence Protocol engine → `skill-intelligence` | SP-0146 Catalog Evidence Audit | python3 |
 | TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0146 Catalog Evidence Audit | python3, npm:mermaid |

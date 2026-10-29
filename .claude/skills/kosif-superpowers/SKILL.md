@@ -175,7 +175,7 @@ The owner's GitHub account holds 25 repositories; [references/owned-repos-map.md
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5854 families=62 domains=10 styles=289 watched=254 proven=1021 ready=673 install=979 key=176 seen=609 documented=2325 idea=71 -->
+<!-- counts: powers=5854 families=62 domains=10 styles=289 watched=254 proven=1022 ready=673 install=978 key=176 seen=609 documented=2325 idea=71 -->
 **الأرقام / counts:** 5,854 قدرة في 62 عائلة و10 مجالات — ✅ 1,021 · 🟢 673 · 📦 979 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
@@ -294,7 +294,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (652 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (653 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure

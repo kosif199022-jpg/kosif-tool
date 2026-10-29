@@ -193,7 +193,7 @@
 | SP-0142 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | 16 | 16 | SP-0356 SP-0379 SP-0407 SP-0326 |
 | SP-0143 | ✅ | خريطة ترتيب المهارة · Skill Layout Map | 12 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
 | SP-0144 | ✅ | جسر Blender الآمن · Safe headless Blender bridge | 12 | 10 | SP-0129 SP-0171 SP-0269 SP-0371 |
-| SP-0145 | ✅ | مستكشف مصادر المجتمع · Community source scout | 12 | 10 | SP-0476 SP-0359 SP-0115 SP-0142 |
+| SP-0145 | ✅ | مستكشف مصادر المجتمع · Community source scout | 12 | 11 | SP-0476 SP-0359 SP-0142 SP-0115 |
 | SP-0146 | ✅ | تدقيق أدلة الكتالوج · Catalog Evidence Audit | 11 | 9 | SP-0139 SP-0293 SP-0038 SP-0347 |
 | SP-0147 | ✅ | مختبر البرومبت · Prompt Lab | 10 | 10 | SP-0037 SP-0176 SP-0151 SP-0372 |
 | SP-0148 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | 9 | 9 | SP-0184 SP-0185 SP-0140 SP-0325 |

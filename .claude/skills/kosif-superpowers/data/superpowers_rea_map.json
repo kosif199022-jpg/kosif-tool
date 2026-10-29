@@ -471,19 +471,19 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 139,
+  "evals": 140,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
   "powers": 5854,
-  "py_edges": 361,
+  "py_edges": 368,
   "repo_tests": 41,
   "roles": {
-   "helper": 3,
+   "helper": 4,
    "registered": 171
   },
-  "scripts": 174,
+  "scripts": 175,
   "tools": 194
  },
  "families": [
@@ -870,6 +870,11 @@
    "to": "fetch_video"
   },
   {
+   "from": "_pinterest",
+   "kind": "invokes",
+   "to": "fetch_video"
+  },
+  {
    "from": "_usip_cards",
    "kind": "imports",
    "to": "smart_capabilities"
@@ -1193,6 +1198,11 @@
    "from": "fetch_video",
    "kind": "imports",
    "to": "_deps"
+  },
+  {
+   "from": "fetch_video",
+   "kind": "imports",
+   "to": "_pinterest"
   },
   {
    "from": "fetch_video",
@@ -1585,6 +1595,11 @@
    "to": "creative_paint"
   },
   {
+   "from": "source_finder",
+   "kind": "imports",
+   "to": "_pinterest"
+  },
+  {
    "from": "sources_index",
    "kind": "imports",
    "to": "_secrets"
@@ -1965,6 +1980,11 @@
    "to": "free_footage"
   },
   {
+   "from": "test_free_footage",
+   "kind": "invokes",
+   "to": "free_footage"
+  },
+  {
    "from": "test_fusionforge",
    "kind": "imports",
    "to": "_secrets"
@@ -2198,6 +2218,21 @@
    "from": "test_photocraft_mcp",
    "kind": "invokes",
    "to": "photocraft_mcp"
+  },
+  {
+   "from": "test_pinterest",
+   "kind": "imports",
+   "to": "_pinterest"
+  },
+  {
+   "from": "test_pinterest",
+   "kind": "imports",
+   "to": "fetch_video"
+  },
+  {
+   "from": "test_pinterest",
+   "kind": "imports",
+   "to": "source_finder"
   },
   {
    "from": "test_prompt_forge",
@@ -3148,6 +3183,22 @@
    "role": "helper",
    "tests": [
     "tests/test_download_deps.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
+   "id": "_pinterest",
+   "imported_by": [
+    "fetch_video",
+    "source_finder"
+   ],
+   "path": "scripts/_pinterest.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [
+    "evals/test_pinterest.py"
    ],
    "tools": []
   },
@@ -4539,6 +4590,7 @@
    "id": "fetch_video",
    "imported_by": [
     "_deps",
+    "_pinterest",
     "boot",
     "instagram_finder",
     "tiktok_photo"
@@ -4557,6 +4609,8 @@
    ],
    "role": "registered",
    "tests": [
+    "evals/test_instagram_finder.py",
+    "evals/test_pinterest.py",
     "tests/test_download_deps.py",
     "tests/test_media_sources_gateway.py"
    ],
@@ -5957,6 +6011,7 @@
    "powers": [],
    "role": "registered",
    "tests": [
+    "evals/test_pinterest.py",
     "evals/test_source_finder.py"
    ],
    "tools": [
@@ -6523,36 +6578,36 @@
    "assets": 4,
    "data": 163,
    "dua-wednesday": 10,
-   "evals": 149,
+   "evals": 169,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
    "references": 255,
    "resources": 3,
    "schemas": 6,
-   "scripts": 205,
+   "scripts": 206,
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93408632,
+  "bytes": 93646894,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,
-   ".html": 74,
+   ".html": 80,
    ".jpg": 24,
    ".js": 50,
-   ".json": 285,
+   ".json": 298,
    ".md": 2107,
    ".mjs": 18,
    ".ogg": 14,
    ".png": 11,
-   ".py": 513,
+   ".py": 515,
    ".ttf": 38,
    ".txt": 64,
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3382,
+  "files": 3403,
   "symlinks": 0
  }
 }

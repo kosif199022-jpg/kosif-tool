@@ -404,8 +404,8 @@
     "SP-0142",
     "SP-0022",
     "SP-0143",
-    "SP-0144",
     "SP-0145",
+    "SP-0144",
     "SP-0147",
     "SP-0021",
     "SP-0146",
@@ -472,17 +472,17 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0144",
-     "name_ar": "جسر Blender الآمن",
-     "name_en": "Safe headless Blender bridge",
-     "size": 12,
-     "best": "proven",
-     "ready_now": 10
-    },
-    {
      "id": "SP-0145",
      "name_ar": "مستكشف مصادر المجتمع",
      "name_en": "Community source scout",
+     "size": 12,
+     "best": "proven",
+     "ready_now": 11
+    },
+    {
+     "id": "SP-0144",
+     "name_ar": "جسر Blender الآمن",
+     "name_en": "Safe headless Blender bridge",
      "size": 12,
      "best": "proven",
      "ready_now": 10
@@ -522,13 +522,13 @@
    ],
    "powers": 288,
    "status_mix": {
-    "proven": 171,
+    "proven": 172,
     "ready": 21,
-    "install": 14,
+    "install": 13,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 192,
+   "ready_now": 193,
    "requires": [
     "python3",
     "ffmpeg",

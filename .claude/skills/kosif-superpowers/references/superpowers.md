@@ -198,7 +198,7 @@
 | SP-0142 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine <sub>(reference, video, editing, cut)</sub> | 16 | ✅ ✅16 | 16 | SP-0356 SP-0379 SP-0407 SP-0326 |
 | SP-0143 | خريطة ترتيب المهارة · Skill Layout Map <sub>(map, skill, superpowers, repo)</sub> | 12 | ✅ ✅9 🟢3 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
 | SP-0144 | جسر Blender الآمن · Safe headless Blender bridge <sub>(blender, cycles, glb, cat)</sub> | 12 | ✅ ✅9 🟢1 📦2 | 10 | SP-0129 SP-0171 SP-0269 SP-0371 |
-| SP-0145 | مستكشف مصادر المجتمع · Community source scout <sub>(sources, references, stock, instagram)</sub> | 12 | ✅ ✅10 📦2 | 10 | SP-0476 SP-0359 SP-0115 SP-0142 |
+| SP-0145 | مستكشف مصادر المجتمع · Community source scout <sub>(sources, references, stock, instagram)</sub> | 12 | ✅ ✅11 📦1 | 11 | SP-0476 SP-0359 SP-0142 SP-0115 |
 | SP-0146 | تدقيق أدلة الكتالوج · Catalog Evidence Audit <sub>(catalog, creative, powers, proof)</sub> | 11 | ✅ ✅4 🟢5 📦2 | 9 | SP-0139 SP-0293 SP-0038 SP-0347 |
 | SP-0147 | مختبر البرومبت · Prompt Lab <sub>(prompt, think, memory, write)</sub> | 10 | ✅ ✅10 | 10 | SP-0037 SP-0176 SP-0151 SP-0372 |
 | SP-0148 | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter <sub>(word, rhythm, audio, words.json)</sub> | 9 | ✅ ✅9 | 9 | SP-0184 SP-0185 SP-0140 SP-0325 |
