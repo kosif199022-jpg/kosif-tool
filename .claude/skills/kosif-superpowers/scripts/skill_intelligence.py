@@ -412,6 +412,17 @@ TOPIC_RX = {"audio": r"صوت|تفريغ|\basr\b|\bstt\b|speech|whisper|transcri
 OWN_VOICE_RX = (r"بصوتي|فويسي|تسجيلي|(?<![ء-ي])(?:علي|ب|مع|استخدم|خد|حط)\s*صوتي(?![ء-ي])|صوتي (?:المرفق|المسجل|ده|دا|دي)|"
                 r"(?:فويس|تسجيل|ريكورد)(?:ات)? (?:بتاعي|المرفق|حقي|تبعي)|عندي (?:فويس|تسجيل)|"
                 r"\bmy (?:own )?(?:voice|recording|narration|voice ?over)\b|\bi recorded\b|recorded myself")
+# Another person's account or photos ("her account", "bring her photos"): personal data, so L3 and a FULL council,
+# and a consent question whose safe default collects nothing from that account. Matched on norm_ar() text.
+OTHER_PERSON_RX = (r"((حساب|اكونت|اكاونت|بروفايل|صفحه)\S*\s+(بتاعها|بتاعه|بتاعتها|بتاعهم|بتاعتهم|حقها|حقه|تبعها|تبعه)(?![ء-ي])|"
+                   r"(حساب|اكونت|اكاونت|بروفايل|صفحت)(ها|هم)(?![ء-ي])|"
+                   r"(هات|جيب|اجمع|جمع|نزل|حمل|اسحب)\S*\s+(\S+\s+){0,2}صور(ها|هم)(?![ء-ي])|"
+                   r"صور(ها|هم)\s+من\s+(ال)?(حساب|اكونت|اكاونت|بروفايل|صفحه)|"
+                   r"\b(her|his|their|someone'?s|a stranger'?s)\s+(tiktok|instagram|facebook|social|account|profile|photos|pictures)\b|"
+                   r"\b(scrape|collect|download|grab)\b.{0,40}\b(her|his|their)\s+(photos|pictures|posts|account|profile)\b)")
+# Words of suicide or self-harm, even inside a caption or a joke: a direct check-in comes before any production.
+SELF_HARM_RX = (r"(انتحر|انتحار|اموت نفسي|اقتل نفسي|اذي نفسي|اذيه نفسي|ايذاء النفس|"
+                r"\bsuicid\w*|\bkill (?:my|him|her|them)sel(?:f|ves)\b|\bself[- ]?harm\w*)")
 OWN_FOOTAGE_RX = (r"(فيديو(هات)? (بتاعي|بتاعتي|الخاص(ه)? بي|حقي|تبعي)|فيديوهاتي|مقاطعي|لقطاتي|صوري|تصويري|"
                   r"\bmy (?:own )?(?:footage|videos?|clips?|photos|shots)\b|footage i (?:shot|filmed|recorded))")
 SOUND_RX = (r"مونتاج|montage|\breels?\b|ريلز|tiktok|تيك ?توك|shorts|music|موسيق|اغني|\bsongs?\b|نشيد|صوت|voice|audio|podcast|بودكاست|"
@@ -788,6 +799,11 @@ def analyse(task: str) -> dict:
     own = {"voice": bool(re.search(OWN_VOICE_RX, low)), "footage": bool(re.search(OWN_FOOTAGE_RX, low))}
     if (own["voice"] or own["footage"]) and level in ("L0", "L1") and not publish:
         level = "L2"   # the user's own files are involved
+    other = bool(re.search(OTHER_PERSON_RX, low))
+    harm = bool(re.search(SELF_HARM_RX, low))
+    if other and level in ("L1", "L2"):
+        level = "L3"   # another person's account or photos: personal data (FULL council, safe default)
+    sensitive = [k for k, v in (("personal_data", other), ("self_harm", harm)) if v]
     topics = [g for g, rx in TOPIC_RX.items() if re.search(rx, low)]
     musts = []
     for n, rx, terms in MUST_HAVE:
@@ -828,6 +844,12 @@ def analyse(task: str) -> dict:
     for q_, d_ in story_questions(low, level):
         questions.append(q_)
         qdefaults.append(d_)
+    if harm:   # first: safety outranks every production question
+        questions.insert(0, "سلامة: في الطلب لفظ انتحار أو إيذاء للنفس، هل الشخص بخير الآن؟")
+        qdefaults.insert(0, "اطمئنان مباشر منك أولًا، وأرقام دعم بلده بعد التحقق منها، قبل أي إنتاج")
+    if other:
+        questions.append("صور الشخص وموافقته: ما علاقتك به، وهل وافق؟ الصور تأتي منك أو منه بموافقته، لا من حسابه")
+        qdefaults.append("لا جمع من حسابه؛ نسخة بلا صوره حتى تصل صور بموافقته؛ لا نشر")
     if level == "L0":
         questions, qdefaults, musts = [], [], []   # L0 gets no plans, no questions and no must-haves
     still = primary == "image" and not set(deliver) & {"video", "audio"}
@@ -836,6 +858,7 @@ def analyse(task: str) -> dict:
                                                      or re.search(SOUND_RX, low))
     return {"request": task, "level": level, "deliverables": deliver or [primary], "primary": primary, "ambition": ambition, "still": still,
             "style": style, "topics": topics, "silent": silent, "intent": "publish" if publish else "produce",
+            "sensitive": sensitive,
             "constraints": {"numbers": [n.strip() for n in numbers if n.strip()], "aspects": aspects, "own_assets": own, "platforms_mentioned": platforms},
             "files_mentioned": paths, "files_found": existing, "must_haves": musts, "open_questions": questions,
             "questions": [{"question": q_, "suggested_default": d_} for q_, d_ in zip(questions, qdefaults)],

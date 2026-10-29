@@ -441,6 +441,22 @@ class V53ReviewFixes(unittest.TestCase):
         self.assertEqual(S.analyse("عدّل السكربت وارفعه على GitHub")["intent"], "produce")
         self.assertEqual(S.analyse("اعمل فيديو ريلز وانشره على تيك توك")["intent"], "produce")
 
+    def test_another_persons_account_and_self_harm_are_sensitive(self):
+        # 29-10-2026: «افتح الاكونت بتاعها وهات صور» was rated L2 with no consent question
+        for task in ("حزنت جدا. افتح الاكونت بتاعها بتاع التيك توك وهات صور وجمع صور واعمل فيديو ليها على اغنية",
+                     "scrape her instagram photos and make a reel"):
+            a = S.analyse(task)
+            self.assertEqual(a["level"], "L3", task)
+            self.assertIn("personal_data", a["sensitive"], task)
+            self.assertTrue(any("موافقته" in q["question"] and q["suggested_default"].startswith("لا جمع")
+                                for q in a["questions"]), task)
+        h = S.analyse("كتبت في الكابشن ثواني انتحر وراجعه، اعمل لها فيديو موشن جرافيك يقول وجودك مهم")
+        self.assertEqual(h["sensitive"], ["self_harm"])
+        self.assertTrue(h["questions"][0]["question"].startswith("سلامة"))
+        for task in ("اعمل مونتاج لفيديوهاتي من الرحلة", "اعمل فيديو ريلز من صوري على اغنية", "make a montage of my own photos",
+                     "اعمل تقرير محاسبة شهري للحساب بتاع الشركة", "اعمل فيديو عن صورة الشمس"):
+            self.assertEqual(S.analyse(task)["sensitive"], [], task)
+
     def test_own_voice_is_an_ownership_form_and_sound_is_not_silent(self):
         own = lambda t: S.analyse(t)["constraints"]["own_assets"]
         for task in ("ابحث عن أفضل مكتبات تفريغ صوتي عربية وقارن بينها", "شو رأيك تعملي بودكاست صوتي عن تاريخ القهوة"):
