@@ -1,0 +1,79 @@
+{
+ "batchcomplete": true,
+ "query": {
+  "pages": [
+   {
+    "pageid": 9000002,
+    "ns": 6,
+    "title": "File:Synthetic harbour at dusk.webm",
+    "index": 2,
+    "imageinfo": [
+     {
+      "size": 4200000,
+      "width": 1080,
+      "height": 1920,
+      "duration": 12.5,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Synthetic_harbour_at_dusk.webm?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Synthetic_harbour_at_dusk.webm",
+      "extmetadata": {
+       "ObjectName": {"value": "Synthetic harbour at dusk"},
+       "Artist": {"value": "<a href=\"//commons.wikimedia.org/wiki/User:Example_Filmmaker\" title=\"User:Example Filmmaker\">Example &amp; Filmmaker</a>"},
+       "LicenseShortName": {"value": "CC BY-SA 4.0"},
+       "LicenseUrl": {"value": "https://creativecommons.org/licenses/by-sa/4.0"},
+       "AttributionRequired": {"value": "true"},
+       "UsageTerms": {"value": "Creative Commons Attribution-Share Alike 4.0"}
+      },
+      "mime": "video/webm",
+      "mediatype": "VIDEO"
+     }
+    ]
+   },
+   {
+    "pageid": 9000001,
+    "ns": 6,
+    "title": "File:Synthetic waves 01.ogv",
+    "index": 1,
+    "imageinfo": [
+     {
+      "size": 900000,
+      "width": 1920,
+      "height": 1080,
+      "duration": 8,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Synthetic_waves_01.ogv?utm_source=commons.wikimedia.org",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Synthetic_waves_01.ogv",
+      "extmetadata": {
+       "ObjectName": {"value": "Synthetic waves 01"},
+       "Artist": {"value": "Example Uploader"},
+       "LicenseShortName": {"value": "CC0"},
+       "LicenseUrl": {"value": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"},
+       "AttributionRequired": {"value": "false"}
+      },
+      "mime": "application/ogg",
+      "mediatype": "VIDEO"
+     }
+    ]
+   },
+   {
+    "pageid": 9000003,
+    "ns": 6,
+    "title": "File:Synthetic sea sound.ogg",
+    "index": 3,
+    "imageinfo": [
+     {
+      "size": 100000,
+      "width": 0,
+      "height": 0,
+      "duration": 30,
+      "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Synthetic_sea_sound.ogg",
+      "descriptionurl": "https://commons.wikimedia.org/wiki/File:Synthetic_sea_sound.ogg",
+      "extmetadata": {
+       "LicenseShortName": {"value": "CC0"}
+      },
+      "mime": "audio/ogg",
+      "mediatype": "AUDIO"
+     }
+    ]
+   }
+  ]
+ }
+}

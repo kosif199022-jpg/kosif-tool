@@ -1,0 +1,18 @@
+{
+ "created": 1761700000,
+ "dir": "/0/items/synthetic-coast-film",
+ "server": "ia000000.us.archive.org",
+ "metadata": {
+  "identifier": "synthetic-coast-film",
+  "mediatype": "movies",
+  "title": "Synthetic coast film",
+  "licenseurl": "https://creativecommons.org/licenses/by/4.0/"
+ },
+ "files": [
+  {"name": "synthetic-coast-film.thumbs/frame_000001.jpg", "format": "Thumbnail", "size": "7837", "source": "derivative"},
+  {"name": "Coast Film Original.mov", "format": "QuickTime", "size": "157286400", "width": "1920", "height": "1080", "length": "00:01:23", "source": "original"},
+  {"name": "Coast Film Original.mp4", "format": "h.264", "size": "9437184", "width": "640", "height": "360", "length": "83.1", "source": "derivative"},
+  {"name": "Coast Film Original.ogv", "format": "Ogg Video", "size": "7340032", "width": "533", "height": "300", "length": "83.0", "source": "derivative"},
+  {"name": "synthetic-coast-film_meta.xml", "format": "Metadata", "size": "1564", "source": "original"}
+ ]
+}

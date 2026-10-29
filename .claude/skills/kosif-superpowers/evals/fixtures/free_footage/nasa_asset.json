@@ -1,0 +1,15 @@
+{
+ "collection": {
+  "version": "1.1",
+  "href": "http://images-api.nasa.gov/asset/SYNTH_20260101_Ocean_Orbit",
+  "items": [
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit.vtt"},
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit~medium.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit~orig.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit~preview.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit~large.mp4"},
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/metadata.json"},
+   {"href": "http://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit~medium_1.jpg"}
+  ]
+ }
+}
