@@ -6723,17 +6723,17 @@
 | نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
-**ما هي:** قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit وCoverr. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد. — Keeps a checked database of 17 video sources: 15 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice, Coverr's embedded state without premium clips). download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size) and rebuilds ATTRIBUTION.md; probe re-measures every source.
+**ما هي:** قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد. — Keeps a checked database of 17 video sources: 15 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.
 
 **متى:** اجمع لي فيديوهات مفتوحة المصدر للمونتاج عن البحر والمدينة بالليل / Find free open-licence b-roll of a city at night for my montage
 
-**كيف:** sources: `python3 scripts/free_footage.py sources --searchable`; check: `python3 scripts/free_footage.py check`; probe: `python3 scripts/free_footage.py probe --out out/free-footage`; search: `python3 scripts/free_footage.py search "night city" --orientation portrait --min-height 1280 --limit 6`. Full card: `python3 scripts/hub.py tool free-footage`. Limits: Licences are what each source declares (Commons extmetadata, the uploader's licenseurl on the Archive, the Mixkit clip page, the Pexels, Pixabay, Coverr and NASA terms); the tool records them but cannot verify or grant rights, and Archive items are often re-uploads. The Mixkit and Coverr adapters read page markup and embedded JSON that can change without notice (that source then reports an error and the others continue). Scripts get Mixkit Free clips at 1080p (2160p when the clip has a 4K file) and Restricted clips at 720p, and Coverr's 1080p file (vertical Coverr files are upscaled to 1920 wide); Pexels and Pixabay search needs the user's keys (on 2026-10-21 Pexels was not issuing new keys (field note); its docs on 2026-10-29 say keys are issued instantly); from this sandbox upload.wikimedia.org and then the Commons API answered 429. Videezy, Vecteezy, Dareful, Life of Vids, ESA and Openverse are listed with their licences but not searched (no API, a login wall or 403); videvo.net and mazwai.com now redirect to Freepik (probe reports them as moved).
+**كيف:** sources: `python3 scripts/free_footage.py sources --searchable`; check: `python3 scripts/free_footage.py check`; probe: `python3 scripts/free_footage.py probe --out out/free-footage`; search: `python3 scripts/free_footage.py search "night city" --orientation portrait --min-height 1280 --resolve --limit 6`. Full card: `python3 scripts/hub.py tool free-footage`. Limits: Licences are what each source declares (Commons extmetadata, the uploader's licenseurl on the Archive, the Mixkit clip page, the Pexels, Pixabay, Coverr and NASA terms); the tool records them but cannot verify or grant rights. Archive items are often re-uploads: the suspicious-licence flag catches only titles and identifiers that look like music videos, film or TV rips or YouTube downloads, so every Archive licence stays the uploader's claim. --match and --no-people read titles only (a clip can show people its title does not name): screen the contact sheet. The Mixkit and Coverr adapters read page markup and embedded JSON that can change without notice (that source then reports an error and the others continue), and the Mixkit download route can answer a Cloudflare browser check, which the tool reports and does not work around (retry later). Scripts get Mixkit Free clips at their largest listed size (1080p, 2160p on some) and Restricted clips at 720p, and Coverr's 1080p file (vertical Coverr files are upscaled to 1920 wide); --quality/--max-height apply only where a source lists sizes (not NASA, Coverr or Commons, which offer one file here). Pexels and Pixabay search needs the user's keys (on 2026-10-21 Pexels was not issuing new keys (field note); its docs on 2026-10-29 say keys are issued instantly); from this sandbox upload.wikimedia.org and the Commons API answered 429 (Retry-After 46 s and 600 s), and --wait-429 waits at most 900 s. Videezy, Vecteezy, Dareful, Life of Vids, ESA and Openverse are listed with their licences but not searched (no API, a login wall or 403); videvo.net and mazwai.com now redirect to Freepik (probe reports them as moved).
 
-**المعاملات:** in: A search query in English (most sources index English words), optional --sources ids, --orientation, --min-height, --limit, --commercial, --no-ai; result ids or page/file links for download; PEXELS_API_KEY / PIXABAY_API_KEY in the environment to add those two sources. · out: out/free-footage/last_search.json (kosif.free_footage.results.v1), clips in --out with <file>.json sidecars (kosif.free_footage.asset.v1) and ATTRIBUTION.md, and probe-<YYYYMMDD>.json (kosif.free_footage.probe.v1).
+**المعاملات:** in: A search query in English (most sources index English words), optional --sources ids, --orientation, --min-height, --limit, --commercial, --resolve, --match, --no-people, --no-ai, --wait-429; result ids or page/file links for download (--quality, --max-height, --max-mb, --dry-run); a results file or a clip folder for preview; PEXELS_API_KEY / PIXABAY_API_KEY in the environment to add those two sources. · out: out/free-footage/last_search.json (kosif.free_footage.results.v1, merged by id with a searches history), clips in --out with <file>.json sidecars (kosif.free_footage.asset.v1) and ATTRIBUTION.md, contact_sheet.html/.jpg/.json (kosif.free_footage.preview.v1), and probe-<YYYYMMDD>.json (kosif.free_footage.probe.v1).
 
-**التثبيت:** optional: bin:ffprobe, env:PEXELS_API_KEY, env:PIXABAY_API_KEY
+**التثبيت:** optional: bin:ffmpeg, bin:ffprobe, env:PEXELS_API_KEY, env:PIXABAY_API_KEY
 
-**الوسوم:** free-footage · free footage · free stock video · stock footage · b-roll · open licence · open license · creative commons · cc0 · cc by · public domain · royalty free · attribution · credits · wikimedia commons · internet archive · prelinger · nasa · mixkit · coverr · pexels · pixabay · dareful · vertical video · montage · فيديوهات مجانية · لقطات مجانية · مفتوحة المصدر · بدون حقوق · ترخيص · حقوق النشر · نسب الحقوق · مكتبة فيديو · مونتاج · لقطات
+**الوسوم:** free-footage · free footage · free stock video · stock footage · b-roll · open licence · open license · creative commons · cc0 · cc by · public domain · royalty free · attribution · credits · wikimedia commons · internet archive · prelinger · nasa · mixkit · coverr · pexels · pixabay · dareful · vertical video · montage · فيديوهات مجانية · لقطات مجانية · مفتوحة المصدر · بدون حقوق · ترخيص · حقوق النشر · نسب الحقوق · مكتبة فيديو · مونتاج · لقطات · contact sheet · thumbnail · preview · 1080p · ورقة معاينة · صور مصغرة
 
 #### 1. الاستقبال (A25)
 
@@ -12129,7 +12129,7 @@
 - `TOOL-90` أداة عرض النص بخطوط مرشّحة / Font candidate text renderer (install)
 - `TOOL-91` مراجعة ساكنة لنصوص مهارات الأطلس / Atlas skill-body static audit (proven)
 - `TOOL-93` جلب المرجع المسموح وقياسه / Permitted reference fetch and measure (proven)
-- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (install)
+- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (proven)
 
 ### `TOOL-93` — جلب المرجع المسموح وقياسه / Permitted reference fetch and measure
 
@@ -12199,7 +12199,7 @@
 
 - `TOOL-91` مراجعة ساكنة لنصوص مهارات الأطلس / Atlas skill-body static audit (proven)
 - `TOOL-92` تحويل مراجعة الأطلس إلى بيان مُراجَع / Atlas audit to reviewed manifest (proven)
-- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (install)
+- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (proven)
 - `TOOL-95` تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) / Keyless stock footage fetcher (Pexels, Mixkit) (proven)
 
 ### `TOOL-94` — تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage
@@ -12209,22 +12209,22 @@
 | العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
 | المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
 | نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
-| الحالة في الكتالوج | 📦 `install`: تحتاج حزمة أو برنامجًا أو نموذجًا أولًا |
-| سقف التحقق قبل العمل (A27) | V1 حتى تُثبَّت (التثبيت النظامي بإذن) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
 | نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
-**ما هي:** غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، ويكتب ملف manifest.json فيه الملف والمدة والأبعاد ومعدل الإطارات والترميز والعنوان والناشر والترخيص إن كشفه الموقع. — Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes.
+**ما هي:** غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، وشيل صوت المقطع نفسه عند الاستلام (‎--strip-audio‎)، ويكتب ملف manifest.json فيه الملف والمدة والأبعاد ومعدل الإطارات والترميز والعنوان والناشر والترخيص إن كشفه الموقع. روابط Pinterest بتعدّي على المساعد المشترك scripts/_pinterest.py: طلب yt-dlp -J واحد يصنّف الـpin الأول (فيديو، صورة، GIF، يوتيوب مضمَّن، تضمين من موقع تاني، محذوف، سيرفر الفيديو رافض، محجوب) مع سبب في سطر، ومفيش تنزيل إلا للفيديو وفي فولدر مؤقت، والمقاس الحقيقي بيتقاس بـffprobe، وبيتكتب سجل نسب ‎.pin.json‎؛ و‎--classify‎ بيقول نوع كل pin بس. — Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy, can drop each clip's own audio on intake (--strip-audio), and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. Pinterest pin links go through the shared helper scripts/_pinterest.py: one yt-dlp -J call classifies the pin first (video, image, GIF, embedded YouTube, other embed, deleted, CDN-refused, blocked) with a one-line reason, only a video pin is downloaded, in a temp folder, its real size is measured with ffprobe, and a .pin.json credit record is written; --classify only reports what each pin is.
 
 **متى:** نزّل الفيديوهات دي من الروابط عشان المونتاج / Download these video links at 1080p with an edit-safe MP4 copy
 
-**كيف:** doctor: `python3 scripts/fetch_video.py --doctor`; download: `python3 scripts/fetch_video.py https://example.com/video -o ./out/clips --quality 1080 --safe`; batch: `python3 scripts/fetch_video.py --urls ./links.txt -o ./out/clips`; audio: `python3 scripts/fetch_video.py https://example.com/video --quality audio -o ./out/audio`. Full card: `python3 scripts/hub.py tool fetch-video`. Limits: It is only a yt-dlp wrapper: it does not bypass DRM or paywalls, does not verify licenses, and many platforms (YouTube 403, Vimeo login, Wikimedia 403) failed from cloud hosts.
+**كيف:** doctor: `python3 scripts/fetch_video.py --doctor`; download: `python3 scripts/fetch_video.py https://example.com/video -o ./out/clips --quality 1080 --safe`; batch: `python3 scripts/fetch_video.py --urls ./links.txt -o ./out/clips`; audio: `python3 scripts/fetch_video.py https://example.com/video --quality audio -o ./out/audio`. Full card: `python3 scripts/hub.py tool fetch-video`. Limits: It is only a yt-dlp wrapper: it does not bypass DRM or paywalls, does not verify licenses, and many platforms (YouTube 403, Vimeo login, Wikimedia 403) failed from cloud hosts. Pinterest is not a licence source: a pin is often a re-upload of unknown licence, its video is 720p at most whatever the 1080x1920 label says, and image, GIF, embedded-YouTube and deleted pins give no file (each is reported once, never retried; an embedded YouTube video is never fetched through the pin, use the YouTube link on your own computer).
 
-**المعاملات:** in: One or more HTTP(S) video URLs, or a text file of URLs (--urls). Optional --quality (best\|audio\|a height, aliases 4k/2k/uhd/fhd/hd, or e.g. 1080p; default 1080), --cookies, --proxy, --connections (default 8) and -o (default ./downloads relative to the cwd). · out: <out>/<title> [<id>].<ext>, .info.json sidecars, optional <name>.safe.mp4, and <out>/manifest.json (overwritten each run). Exit 0 only when every URL succeeded; 1 on any failure or missing yt-dlp; 2 when no valid URL was given.
+**المعاملات:** in: One or more HTTP(S) video URLs, or a text file of URLs (--urls); Pinterest pin links (pinterest.<tld>/pin/<id>, pin.it/<code>) take the pin path. Optional --quality (best\|audio\|a height, aliases 4k/2k/uhd/fhd/hd, or e.g. 1080p; default 1080; pins ignore the height, Pinterest serves 720p at most; with audio a pin is still classified first and only a video pin's audio is fetched, once), --strip-audio, --classify, --cookies, --proxy, --connections (default 8) and -o (default ./downloads relative to the cwd). · out: <out>/<title> [<id>].<ext>, .info.json sidecars, optional <name>.safe.mp4, and <out>/manifest.json (overwritten each run). A Pinterest pin (a pin.it link or a full link: the same name) gives <out>/pinterest-<id>.mp4 (video pins only) and <out>/pinterest-<id>.pin.json for every pin: kind, reason, retry rule, label_size (Pinterest's display-size label) against the ffprobe-measured width and height, audio state, and a credit record (pin URL, uploader if known, 'licence unknown — credit and link'). Exit 0 only when every URL gave a file; 1 on any failure, any non-video pin, a clip whose audio --strip-audio could not remove, or missing yt-dlp; 2 when no valid URL was given.
 
 **التثبيت:** pip install yt-dlp · needs on PATH: ffmpeg · optional: bin:ffprobe, bin:node, bin:yt-dlp, pip:curl_cffi
 
-**الوسوم:** fetch-video · yt-dlp · video download · links · montage · edit-safe mp4 · H.264 · audio only · cookies · manifest · تحميل فيديو · تنزيل من رابط · مونتاج · صوت فقط · نسخة آمنة
+**الوسوم:** fetch-video · yt-dlp · video download · links · montage · edit-safe mp4 · H.264 · audio only · cookies · manifest · pinterest · pin · strip audio · تحميل فيديو · تنزيل من رابط · مونتاج · صوت فقط · نسخة آمنة · بنترست · شيل الصوت
 
 #### 1. الاستقبال (A25)
 
@@ -12239,7 +12239,7 @@
 - `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `imagemagick` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `yt-dlp` ← افحص وجوده بأمر واحد قبل كتابة الشارة
-- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 📦 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 📦 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
 
@@ -12264,6 +12264,9 @@
 
 #### 6. الأدلة
 
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_pinterest.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_finder.py`
+- `kosif-tool/tests/test_download_deps.py`
 - `kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py`
 
 #### 7. قدرات قريبة في العائلة
@@ -12341,7 +12344,7 @@
 #### 7. قدرات قريبة في العائلة
 
 - `TOOL-93` جلب المرجع المسموح وقياسه / Permitted reference fetch and measure (proven)
-- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (install)
+- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (proven)
 - `TOOL-96` خريطة المستودعات الخارجية / External repository tool map (proven)
 - `TOOL-97` فرز المثبّتات / Installer Triage (proven)
 
@@ -12411,7 +12414,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (install)
+- `TOOL-94` تنزيل الفيديو من الروابط للمونتاج / Video link downloader for montage (proven)
 - `TOOL-95` تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) / Keyless stock footage fetcher (Pexels, Mixkit) (proven)
 - `TOOL-97` فرز المثبّتات / Installer Triage (proven)
 - `TOOL-98` جسر أوامر REA / REA CLI Bridge (proven)

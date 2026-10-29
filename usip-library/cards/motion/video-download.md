@@ -61,7 +61,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -137,7 +137,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -211,7 +211,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -287,7 +287,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -363,7 +363,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -439,7 +439,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -516,7 +516,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -591,7 +591,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -666,7 +666,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -745,7 +745,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -822,7 +822,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:DL-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder` · `stock-fetch`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `source-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

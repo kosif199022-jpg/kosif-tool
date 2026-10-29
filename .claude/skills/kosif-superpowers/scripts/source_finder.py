@@ -3,8 +3,12 @@
 
 Finds the ORIGINAL source clips behind the shots of a reference video (an edit, a reel, a montage):
 detect the cuts, take clean query frames per shot (cropping burned-in text away), reverse-search each
-frame on Yandex Images, collect the Pinterest pins it returns, download those pins and verify every
-candidate frame by frame with ORB features, a ratio test and RANSAC homography inliers. The inlier count
+frame on Yandex Images, collect the Pinterest pins it returns, download the video pins among them and verify
+every candidate frame by frame with ORB features, a ratio test and RANSAC homography inliers. Pins go through
+the shared helper _pinterest.py (as in fetch_video.py): each is classified first (video, image, gif, embedded
+YouTube, deleted, CDN-refused ...) and never retried, only video pins are downloaded, in a temp folder, their
+real size is measured with ffprobe, their own audio (usually the creator's music) is stripped unless
+--keep-audio, and <work>/cand/p<id>.pin.json records the outcome and a credit line. The inlier count
 is what makes a hit trustworthy: on the first real run (a 13-shot dua reel) four exact sources scored
 514-1447 inliers, and across six reels unrelated clips scored about 7-36.
 
@@ -40,6 +44,10 @@ import time
 import urllib.parse
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _pinterest as pinterest  # noqa: E402 - the shared Pinterest pin helper (fetch_video.py uses it too)
+from _pinterest import PIN_RE, pin_url  # noqa: E402,F401 - pin_url is part of this module's interface
+
 SCHEMA = "kosif.source_finder.v1"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36"
 UPLOAD_URL = ("https://yandex.com/images/search?rpt=imageview&format=json&request="
@@ -64,7 +72,6 @@ LIMITS = ("Finds a source only when it is posted on Pinterest as a video pin and
           "footage scores lower.")
 
 URL_RE = re.compile(r"https?://[^\"'\s<>\\]+")
-PIN_RE = re.compile(r"pinterest\.[a-z.]+/pin/(?:[^/?#\"'\s]*--)?(\d{6,})", re.I)
 LEAD_RE = re.compile(r"tiktok\.com/@|instagram\.com/(?:p|reel|reels)/|youtube\.com/(?:watch|shorts)|youtu\.be/|vimeo\.com/\d"
                      r"|pexels\.com|pixabay\.com|vecteezy\.com|shutterstock\.com|istockphoto\.com|storyblocks\.com"
                      r"|mixkit\.co|dreamstime\.com|artgrid\.io|motionarray\.com", re.I)
@@ -396,44 +403,45 @@ def cached_search(image, cache_dir: Path, pages=PAGES, delay: float = 4.0) -> di
 
 # ---------------------------------------------------------------------------------------- candidates
 
-def pin_url(pid: str) -> str:
-    return f"https://www.pinterest.com/pin/{pid}/"
-
-
-def download_pin(pid: str, cand_dir: Path, timeout: int = 120):
-    """yt-dlp one Pinterest video pin to cand_dir/p<id>.mp4; a p<id>.none marker records a miss."""
+def download_pin(pid: str, cand_dir: Path, timeout: int = 120, strip_audio: bool = True):
+    """One Pinterest pin -> cand_dir/p<id>.mp4 through the shared helper (_pinterest.fetch): classified first with
+    one yt-dlp -J call, downloaded only when it is a video, in a temp folder (no fragment files left in cand_dir),
+    measured with ffprobe and, by default, stripped of the pin's own audio (pins usually carry the creator's music).
+    Every outcome is written to cand_dir/p<id>.pin.json with a credit record; a non-video pin returns None."""
     cand_dir = Path(cand_dir)
-    out, miss = cand_dir / f"p{pid}.mp4", cand_dir / f"p{pid}.none"
-    if out.is_file():
+    out = cand_dir / f"p{pid}.mp4"
+    if out.is_file() and not strip_audio:
         return out
-    if miss.exists():
+    if not out.is_file() and (cand_dir / f"p{pid}.none").exists():   # miss marker of versions before 2026-10-29
         return None
-    exe = shutil.which("yt-dlp")
-    if not exe:
+    cmd = pinterest.ytdlp_command()
+    if not cmd and not out.is_file():                                 # a finished file is reused without yt-dlp
         raise SourceFinderError("yt-dlp is not installed (pip install yt-dlp); or pass downloaded clips with --candidates DIR")
-    cand_dir.mkdir(parents=True, exist_ok=True)
-    try:
-        subprocess.run([exe, "-q", "--no-warnings", "--no-playlist", "-f", "bv*[height<=1920]+ba/b",
-                        "--merge-output-format", "mp4", "-o", str(out), pin_url(pid)],
-                       capture_output=True, timeout=timeout)
-    except subprocess.TimeoutExpired:
-        pass
-    if out.is_file():
-        return out
-    miss.write_text("no video downloaded (image pin, removed, private or blocked)\n", encoding="utf-8")
+    rec = pinterest.fetch(pid, cand_dir, name=f"p{pid}", ytdlp=cmd, strip_audio=strip_audio, timeout=timeout)
+    if rec.get("file"):
+        return Path(rec["file"])
+    if not rec.get("cached") and not rec.get("repeated"):
+        log(f"pin {pid}: {rec.get('kind')}: {rec.get('reason')}")
     return None
 
 
-def _pin_of(item: str):
-    s = item.strip()
-    if re.fullmatch(r"\d{6,}", s):
-        return s
-    m = PIN_RE.search(s)
-    return m.group(1) if m else None
+def pin_outcomes(pins, cand_dir) -> dict:
+    """What happened to each pin (from its p<id>.pin.json): counts per kind and the unusable ones with their reason."""
+    counts, skipped = {}, []
+    for pid in pins:
+        rec = pinterest.read_record(cand_dir, f"p{pid}") or {}
+        kind = rec.get("kind") or ("video" if (Path(cand_dir) / f"p{pid}.mp4").is_file() else "unknown")
+        counts[kind] = counts.get(kind, 0) + 1
+        if kind != "video":
+            skipped.append({"pin": pid, "kind": kind, "reason": rec.get("reason")})
+    return {"counts": dict(sorted(counts.items())), "skipped": skipped}
 
 
-def resolve_candidates(items, work, download: bool = True, max_pins: int = 80, jobs: int = 4) -> list:
-    """Folders, video/image files, search JSON files, pin ids and pin URLs -> [{label, file, url, kind}]."""
+def resolve_candidates(items, work, download: bool = True, max_pins: int = 80, jobs: int = 4,
+                       strip_audio: bool = True, outcomes: dict | None = None) -> list:
+    """Folders, video/image files, search JSON files, pin ids and pin URLs -> [{label, file, url, kind}].
+    Pins are downloaded with download_pin (audio stripped unless strip_audio is False); when `outcomes` is a dict
+    it receives pin_outcomes() for the pins of this call."""
     files, pins = [], []
 
     def add_file(p: Path):
@@ -464,7 +472,7 @@ def resolve_candidates(items, work, download: bool = True, max_pins: int = 80, j
         elif p.is_file():
             add_file(p)
         else:
-            pid = _pin_of(str(item))
+            pid = pinterest.pin_id(item)
             if not pid:
                 raise SourceFinderError(f"candidate {item!r} is not a folder, file, pin id or Pinterest pin URL")
             if pid not in pins:
@@ -474,12 +482,14 @@ def resolve_candidates(items, work, download: bool = True, max_pins: int = 80, j
         cand_dir = Path(work) / "cand"
         if download:
             with cf.ThreadPoolExecutor(max(1, jobs)) as ex:
-                got = list(ex.map(lambda pid: download_pin(pid, cand_dir), pins))
+                got = list(ex.map(lambda pid: download_pin(pid, cand_dir, strip_audio=strip_audio), pins))
         else:
             got = [cand_dir / f"p{pid}.mp4" if (cand_dir / f"p{pid}.mp4").is_file() else None for pid in pins]
         for pid, f in zip(pins, got):
             if f:
                 files.append({"label": f"pin:{pid}", "file": str(f), "url": pin_url(pid), "kind": "video"})
+        if outcomes is not None:
+            outcomes.update(pin_outcomes(pins, cand_dir))
     seen, out = set(), []
     for c in files:
         if c["file"] not in seen:
@@ -602,7 +612,7 @@ def match_candidates(queries, candidates, matcher: Matcher | None = None, step: 
 def run(video, work, crop=None, shots=None, threshold: float = 27.0, min_shot: float = 0.4, per_shot: int = 3,
         full: bool = True, pages=PAGES, delay: float = 4.0, max_pins: int = 80, jobs: int = 4, step: float = 0.5,
         max_seconds: float = 180.0, exact: int = EXACT, possible: int = POSSIBLE, candidates=None,
-        download: bool = True, top: int = 5) -> dict:
+        download: bool = True, top: int = 5, strip_audio: bool = True) -> dict:
     """cuts -> frames -> search (or fixed --candidates) -> download -> match; writes <work>/report.json."""
     video, work = Path(video), Path(work)
     work.mkdir(parents=True, exist_ok=True)
@@ -611,11 +621,11 @@ def run(video, work, crop=None, shots=None, threshold: float = 27.0, min_shot: f
     log(f"cuts: {len(cuts['shots'])} shots in {cuts['duration']} s")
     frames = extract_frames(video, cuts["shots"], work / "queries", crop, per_shot, full and not candidates, shots)
     matcher = Matcher()
-    fixed = resolve_candidates(candidates, work, download, max_pins, jobs) if candidates else None
+    fixed = resolve_candidates(candidates, work, download, max_pins, jobs, strip_audio=strip_audio) if candidates else None
     report = {"schema": SCHEMA, "video": str(video), "work": str(work), "created": _now(),
               "settings": {"crop": frames["crop"], "per_shot": per_shot, "pages": list(pages), "delay": max(MIN_DELAY, delay),
-                           "max_pins": max_pins, "step": step, "cut_threshold": threshold,
-                           "mode": "fixed-candidates" if candidates else "yandex+pinterest"},
+                           "max_pins": max_pins, "step": step, "cut_threshold": threshold, "pin_audio":
+                           "stripped" if strip_audio else "kept", "mode": "fixed-candidates" if candidates else "yandex+pinterest"},
               "thresholds": {"exact": exact, "possible": possible,
                              "meaning": "RANSAC homography inliers between a query frame and the best candidate frame"},
               "shots": [], "ranked": [], "summary": {}, "stopped": None, "credit": CREDIT, "limits": LIMITS}
@@ -623,7 +633,8 @@ def run(video, work, crop=None, shots=None, threshold: float = 27.0, min_shot: f
         k = entry["shot"]
         qpaths = [q["path"] for q in entry["queries"]]
         rec = {"shot": k, "start": entry["start"], "end": entry["end"], "queries": qpaths, "searched": False,
-               "pins_found": 0, "candidates": 0, "verdict": "none", "best": None, "top": [], "leads": [], "errors": []}
+               "pins_found": 0, "pin_kinds": {}, "pins_skipped": [], "candidates": 0, "verdict": "none", "best": None,
+               "top": [], "leads": [], "errors": []}
         if fixed is not None:
             cands = fixed
             rec["searched"] = True
@@ -648,7 +659,9 @@ def run(video, work, crop=None, shots=None, threshold: float = 27.0, min_shot: f
                 log(report["stopped"])
                 break
             rec.update(searched=True, pins_found=len(pins), leads=leads[:10])
-            cands = resolve_candidates(pins, work, download, max_pins, jobs) if pins else []
+            oc = {}
+            cands = resolve_candidates(pins, work, download, max_pins, jobs, strip_audio=strip_audio, outcomes=oc) if pins else []
+            rec.update(pin_kinds=oc.get("counts", {}), pins_skipped=oc.get("skipped", [])[:20])
         rec["candidates"] = len(cands)
         results = match_candidates(qpaths, cands, matcher, step, max_seconds, exact, possible) if cands else []
         rec["top"] = results[:top]
@@ -712,19 +725,23 @@ def cmd_search(a) -> int:
 
 
 def cmd_match(a) -> int:
-    cands = resolve_candidates(a.candidates, a.work, not a.no_download, a.max_pins, a.jobs)
+    oc = {}
+    cands = resolve_candidates(a.candidates, a.work, not a.no_download, a.max_pins, a.jobs,
+                               strip_audio=not a.keep_audio, outcomes=oc)
     if not cands:
-        raise SourceFinderError("no usable candidates (no video/image files, or every pin failed to download)")
+        raise SourceFinderError("no usable candidates (no video/image files, or no pin was a downloadable video: "
+                                f"{oc.get('counts') or 'no pins'}; reasons in <work>/cand/p<id>.pin.json)")
     res = match_candidates(a.queries, cands, None, a.step, a.max_seconds, a.exact, a.possible)
     _emit({"schema": SCHEMA + ".match", "queries": a.queries, "thresholds": {"exact": a.exact, "possible": a.possible},
-           "results": res[: a.top], "candidates": len(cands), "credit": CREDIT}, a.out)
+           "results": res[: a.top], "candidates": len(cands), "pin_kinds": oc.get("counts", {}),
+           "pins_skipped": oc.get("skipped", [])[:20], "credit": CREDIT}, a.out)
     return 0
 
 
 def cmd_run(a) -> int:
     rep = run(a.video, a.work, a.crop, parse_shots(a.shots), a.threshold, a.min_shot, a.per_shot, not a.no_full,
               tuple(p for p in a.pages.split(",") if p), a.delay, a.max_pins, a.jobs, a.step, a.max_seconds,
-              a.exact, a.possible, a.candidates, not a.no_download, a.top)
+              a.exact, a.possible, a.candidates, not a.no_download, a.top, strip_audio=not a.keep_audio)
     _emit({"report": str(Path(a.work) / "report.json"), "summary": rep["summary"], "stopped": rep["stopped"],
            "ranked": [{k: h[k] for k in ("shot", "candidate", "url", "score", "t", "verdict")} for h in rep["ranked"]]})
     return 3 if rep["stopped"] else 0
@@ -738,9 +755,11 @@ def cmd_doctor(_a) -> int:
         except ImportError:
             return False
     rep = {"opencv": has("cv2"), "numpy": has("numpy"), "ffmpeg": bool(shutil.which("ffmpeg")),
-           "curl": bool(shutil.which("curl")), "yt-dlp": bool(shutil.which("yt-dlp"))}
+           "ffprobe": bool(shutil.which("ffprobe")), "curl": bool(shutil.which("curl")),
+           "yt-dlp": bool(pinterest.ytdlp_command())}
     rep["can"] = {"cuts/match (local files)": rep["opencv"] and rep["numpy"], "frames": rep["ffmpeg"],
-                  "search": rep["curl"], "download pins": rep["yt-dlp"]}
+                  "search": rep["curl"],
+                  "download pins (classified, measured, audio stripped)": rep["yt-dlp"] and rep["ffmpeg"] and rep["ffprobe"]}
     _emit(rep)
     return 0
 
@@ -758,6 +777,8 @@ def build_parser() -> argparse.ArgumentParser:
         p.add_argument("--max-pins", type=int, default=80, help="download at most this many pins (default 80)")
         p.add_argument("--jobs", type=int, default=4, help="parallel pin downloads (default 4)")
         p.add_argument("--no-download", action="store_true", help="use only pins already in <work>/cand/")
+        p.add_argument("--keep-audio", action="store_true",
+                       help="keep each pin's own audio (default: stripped on intake, pins usually carry the creator's music)")
 
     p = sub.add_parser("cuts", help="scene cuts from OpenCV frame differences -> JSON")
     p.add_argument("video")

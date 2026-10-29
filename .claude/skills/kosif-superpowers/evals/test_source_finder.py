@@ -244,7 +244,7 @@ class SearchParsingOffline(unittest.TestCase):
         js.write_text(json.dumps([{"pins": ["111111111", "222222222"]}]))
         got = []
 
-        def fake_dl(pid, cand_dir, timeout=120):
+        def fake_dl(pid, cand_dir, timeout=120, strip_audio=True):
             got.append(pid)
             f = Path(cand_dir) / f"p{pid}.mp4"
             f.parent.mkdir(parents=True, exist_ok=True)
@@ -418,7 +418,7 @@ class FramesAndRunChain(unittest.TestCase):
             return {"image": str(image), "cbir_id": "x", "pages": {p: {} for p in pages}, "pins": pins,
                     "pinterest": [S.pin_url(p) for p in pins], "leads": []}
 
-        def fake_dl(pid, cand_dir, timeout=120):
+        def fake_dl(pid, cand_dir, timeout=120, strip_audio=True):
             src = self.cands / f"p{pid}.avi"
             if not src.is_file():
                 return None

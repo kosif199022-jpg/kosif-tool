@@ -1,0 +1,39 @@
+{
+ "class": "image",
+ "note": "Synthetic. An image-only pin: with --ignore-no-formats-error yt-dlp exits 0 and prints the metadata with an empty formats list (without it, it fails with 'ERROR: [Pinterest] <id>: No video formats found!', which looks like a bug but is expected).",
+ "expect": {"probe": "image", "final": "image"},
+ "probe": {
+  "returncode": 0,
+  "stderr": "",
+  "stdout": {
+   "id": "100000000000000002",
+   "formats": [],
+   "webpage_url": "https://www.pinterest.com/pin/100000000000000002/",
+   "extractor_key": "Pinterest",
+   "extractor": "Pinterest",
+   "title": "Example image pin",
+   "description": "A synthetic pin used by the offline tests",
+   "timestamp": 1727776800,
+   "thumbnails": [
+    {"url": "https://i.pinimg.com/236x/00/00/00/100000000000000002.jpg", "width": 236, "height": 419, "id": "0", "resolution": "236x419"},
+    {"url": "https://i.pinimg.com/originals/00/00/00/100000000000000002.jpg", "width": 1080, "height": 1920, "id": "1", "resolution": "1080x1920"}
+   ],
+   "uploader": "Example Creator",
+   "uploader_id": "900000000000000001",
+   "repost_count": 3,
+   "comment_count": 0,
+   "categories": null,
+   "tags": ["#example"],
+   "webpage_url_basename": "100000000000000002",
+   "original_url": "https://www.pinterest.com/pin/100000000000000002/",
+   "webpage_url_domain": "pinterest.com",
+   "thumbnail": "https://i.pinimg.com/originals/00/00/00/100000000000000002.jpg",
+   "display_id": "100000000000000002",
+   "fulltitle": "Example image pin",
+   "upload_date": "20241001",
+   "requested_subtitles": null,
+   "_type": "video",
+   "_version": {"version": "2026.10.21", "current_git_head": null, "release_git_head": null, "repository": "yt-dlp/yt-dlp"}
+  }
+ }
+}

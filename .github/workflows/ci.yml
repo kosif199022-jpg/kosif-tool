@@ -193,6 +193,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_stream_grabber.py' -v
       - name: Source finder (offline; synthetic ORB+RANSAC match, cut detection, fake Yandex answers and captcha stop)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_finder.py' -v
+      - name: Pinterest pins (offline; fixture yt-dlp -J output per pin class, fake yt-dlp, temp-dir download, ffprobe size, GIF and audio strip)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_pinterest.py' -v
       - name: Free footage sources and search (offline; synthetic API and page answers, key gating, licence sidecars)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_free_footage.py' -v
       - name: Install PyAV for the real decode test (numpy comes with opencv-python-headless above)

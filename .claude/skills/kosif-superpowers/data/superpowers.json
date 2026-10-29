@@ -14841,7 +14841,7 @@
 "links": [
 {
 "id": "SP-0147",
-"sim": 0.168
+"sim": 0.169
 },
 {
 "id": "SP-0293",
@@ -16710,7 +16710,7 @@
 },
 {
 "id": "SP-0140",
-"sim": 0.085
+"sim": 0.084
 }
 ]
 },
@@ -18056,16 +18056,16 @@
 "name_ar": "نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز"
 },
 {
-"id": "TOOL-95",
-"status": "proven",
-"name_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
-"name_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)"
-},
-{
 "id": "TOOL-132",
 "status": "proven",
 "name_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
 "name_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16"
+},
+{
+"id": "TOOL-95",
+"status": "proven",
+"name_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
+"name_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)"
 },
 {
 "id": "TOOL-177",
@@ -18074,16 +18074,16 @@
 "name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب"
 },
 {
-"id": "TOOL-168",
-"status": "proven",
-"name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
-"name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
-},
-{
 "id": "TOOL-166",
 "status": "proven",
 "name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
 "name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL"
+},
+{
+"id": "TOOL-168",
+"status": "proven",
+"name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
+"name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
 },
 {
 "id": "TOOL-175",
@@ -18117,7 +18117,7 @@
 },
 {
 "id": "SP-0147",
-"sim": 0.206
+"sim": 0.194
 },
 {
 "id": "SP-0359",
@@ -19009,10 +19009,10 @@
 "size": 10,
 "best": "proven",
 "status_mix": {
-"proven": 8,
-"install": 2
+"proven": 9,
+"install": 1
 },
-"ready_now": 8,
+"ready_now": 9,
 "families": {
 "runnable-tools": 10
 },
@@ -19045,16 +19045,22 @@
 "name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
 },
 {
+"id": "TOOL-142",
+"status": "proven",
+"name_en": "Sources index: per-work-dir index memory of the user's attachments",
+"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
+},
+{
 "id": "TOOL-173",
 "status": "proven",
 "name_en": "Instagram product video finder",
 "name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
 },
 {
-"id": "TOOL-142",
+"id": "TOOL-94",
 "status": "proven",
-"name_en": "Sources index: per-work-dir index memory of the user's attachments",
-"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
+"name_en": "Video link downloader for montage",
+"name_ar": "تنزيل الفيديو من الروابط للمونتاج"
 },
 {
 "id": "TOOL-160",
@@ -19075,12 +19081,6 @@
 "name_ar": "جلب المرجع المسموح وقياسه"
 },
 {
-"id": "TOOL-94",
-"status": "install",
-"name_en": "Video link downloader for montage",
-"name_ar": "تنزيل الفيديو من الروابط للمونتاج"
-},
-{
 "id": "TOOL-51",
 "status": "install",
 "name_en": "Cinema C iPhone downloader studio",
@@ -19098,15 +19098,15 @@
 "links": [
 {
 "id": "SP-0476",
-"sim": 0.223
+"sim": 0.22
 },
 {
 "id": "SP-0140",
-"sim": 0.206
+"sim": 0.194
 },
 {
 "id": "SP-0115",
-"sim": 0.168
+"sim": 0.169
 },
 {
 "id": "SP-0359",
@@ -63505,7 +63505,7 @@
 "links": [
 {
 "id": "SP-0147",
-"sim": 0.223
+"sim": 0.22
 },
 {
 "id": "SP-0359",

@@ -8,7 +8,7 @@
 
 - [البحث والمعرفة — Research & knowledge](#hub-research) · 62 قدرة · 6 خارقة · جاهز الآن 21
 - [التفكير والتخطيط والاستراتيجية — Reasoning & strategy](#hub-thinking) · 387 قدرة · 34 خارقة · جاهز الآن 25
-- [الوكلاء والتوجيه الذكي — Agents & routing](#hub-agents) · 290 قدرة · 23 خارقة · جاهز الآن 195
+- [الوكلاء والتوجيه الذكي — Agents & routing](#hub-agents) · 290 قدرة · 23 خارقة · جاهز الآن 196
 - [البرمجة وبناء التطبيقات — Software & applications](#hub-software) · 662 قدرة · 57 خارقة · جاهز الآن 132
 - [الرسم والأشكال والتصميم — Drawing & visual composition](#hub-drawing) · 307 قدرة · 28 خارقة · جاهز الآن 107
 - [الصور والتحرير والتوليد — Images & photo editing](#hub-images) · 327 قدرة · 29 خارقة · جاهز الآن 140
@@ -71,7 +71,7 @@
 <a id="hub-agents"></a>
 ## الوكلاء والتوجيه الذكي — Agents & routing (`agents`)
 
-- **الحجم / size:** 290 قدرة ذرية في 23 قدرة خارقة · ✅174 🟢21 📦13 🔑2 📄80
+- **الحجم / size:** 290 قدرة ذرية في 23 قدرة خارقة · ✅175 🟢21 📦12 🔑2 📄80
 - **ابدأ / start:** `python3 scripts/hub.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install agents`
 - **السكربتات / scripts:** `scripts/skill_intelligence.py` · `scripts/hub.py` · `scripts/probe_env.py` · `scripts/superpowers_unified.py` · `scripts/capability_runtime_router.py`
 - **العائلات / families:** [agent-orchestration](powers/agent-orchestration.md) · [runnable-tools](powers/runnable-tools.md) · [self-discovery](powers/self-discovery.md)
@@ -90,8 +90,8 @@
 | SP-0145 جسر Blender الآمن · Safe headless Blender bridge | 12 | ✅ | 10 |
 | SP-0146 مختبر البرومبت · Prompt Lab | 10 | ✅ | 10 |
 | SP-0021 اعرف قبل أن تقول لا · Registry before no | 20 | ✅ | 9 |
+| SP-0147 مستكشف مصادر المجتمع · Community source scout | 10 | ✅ | 9 |
 | SP-0148 محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | 9 | ✅ | 9 |
-| SP-0147 مستكشف مصادر المجتمع · Community source scout | 10 | ✅ | 8 |
 
 …و11 قدرة خارقة أخرى: `python3 scripts/kosif_hubs.py show agents`
 

@@ -156,8 +156,8 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0147 Community source scout | python3, npm:rea |
 | TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0147 Community source scout | python3 |
 | TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0147 Community source scout | ffmpeg, python3 |
+| TOOL-94 | ✅ | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0147 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
 | TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-94 | 📦 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0147 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
 | TOOL-118 | ✅ | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video → `unified-cinematic` | SP-0148 Subtitle to words.json converter | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
 | TOOL-12 | ✅ | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge → `creative-reasoning-bridge` | SP-0148 Subtitle to words.json converter | python3 |
 | TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0148 Subtitle to words.json converter | python3 |

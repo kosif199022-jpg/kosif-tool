@@ -5,7 +5,7 @@ One line per power, tool and superpower: where it lives, its badge, requirements
 
 **5,856** powers · **195** tools · **481** superpowers · 15 groups · 62 families · 10 domains
 
-حالات / status: ✅ 1,024 · 🟢 673 · 📦 978 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71
+حالات / status: ✅ 1,025 · 🟢 673 · 📦 977 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71
 
 ## البحث / search
 

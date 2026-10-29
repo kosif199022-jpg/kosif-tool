@@ -182,8 +182,8 @@
     "docs": null,
     "notes": "No public API. The tool reads the search page: grid cards (data-item-grid--video-player-item-id-value, the overlay title and the clip link) and, on tag pages, the JSON-LD VideoObject entries (copyrightNotice, license, contentUrl)."
    },
-   "download": "Depends on the clip's licence. Free clips: https://assets.mixkit.co/videos/<id>/<id>-2160.mp4 when the clip has a 4K file, else <id>-1080.mp4, else <id>-720.mp4 (tried in that order; a missing size answers 403). Restricted clips: only <id>-720.mp4 (their -1080 and -2160 files answer 403 to scripts). The tool reads the licence from the clip page before choosing.",
-   "max_resolution": "Free clips 1080p by script (2160p on some); Restricted clips 720p",
+   "download": "Depends on the clip's licence and age. Free clips: the largest size the clip page lists (its download options: 720p, 1080p and on some 2160p, with their file sizes). Older clips name their files https://assets.mixkit.co/videos/<id>/<id>-<q>.mp4; newer ones use .../active_storage/video_items/<id>/<ts>/<id>-video-<q>.mp4 or opaque https://assets.mixkit.co/<hash> links, reached only through the page's download route /free-stock-video/download/<id>/?type=<q>p (its answer names the file). Without the page: <id>-2160.mp4, else -1080, else -720 (a missing size answers 403). Restricted clips: only 720p (larger files answer 403 to scripts). The tool reads the licence and the sizes from the clip page before choosing.",
+   "max_resolution": "Free clips at their largest listed size (1080p; 2160p on some); Restricted clips 720p",
    "formats": [
     "mp4"
    ],
@@ -209,7 +209,7 @@
     "checked_on": "2026-10-29",
     "status": "ok",
     "http": 200,
-    "detail": "Search and tag pages 200; the 720p file 206/200 video/mp4. Byte-range requests for Free clips' -1080 files (44399, 2079, 4312, 40746) and 44399-2160 answered 206 video/mp4; 40746-2160 and Restricted clips' -1080/-2160 files (15209, 48525, 9998) answered 403."
+    "detail": "Search and tag pages 200; the 720p file 206/200 video/mp4. Byte-range requests for Free clips' -1080 files (44399, 2079, 4312, 40746) and 44399-2160 answered 206 video/mp4; 40746-2160 and Restricted clips' -1080/-2160 files (15209, 48525, 9998) answered 403. Newer clips (100896, 100925, 100190) have no <id>-<q>.mp4 file (403): 100896's page listed 720p/1080p/2160p (4.03/44.59/58.21 MB) and its download route named a hashed file (1080p: 200 video/mp4, 46752430 bytes); 100896 and 100190 were fetched at 720p through the page and measured 1280x720 (the page lists that size as 1080x720). The download route once answered a Cloudflare \"Just a moment...\" page that cleared about 3 minutes later (field report)."
    },
    "notes": "A Restricted clip's 720p is soft when a 16:9 clip is cropped to full-screen 9:16; show it in a framed panel instead (stock-footage field notes in references/guides/sources.md). A Free clip's 2160p file crops to a sharp 1080x1920."
   },
@@ -695,7 +695,7 @@
     "http": 429,
     "detail": "API 200 with imageinfo extmetadata (licence, author, attribution flag, duration) at first; upload.wikimedia.org answered 429 with Retry-After 600 to the sandbox's shared IP for every User-Agent, and after about twenty requests the API answered 429 as well. Search when it answers, then download from your own computer or retry later, one request at a time."
    },
-   "notes": "Files are WebM or Ogg; transcode to H.264 for editing with ffmpeg. Many files are uploads from YouTube under CC BY: credit the channel named in Artist."
+   "notes": "Files are WebM or Ogg; transcode to H.264 for editing with ffmpeg. Many files are uploads from YouTube under CC BY: credit the channel named in Artist. When it answers 429, the search summary names the Retry-After (46 s and 600 s seen on 2026-10-29); --wait-429 waits for up to 900 s, and search --retry-failed asks only the sources that failed while the others' saved results are kept."
   },
   {
    "id": "archive",
@@ -759,7 +759,7 @@
     "http": 200,
     "detail": "advancedsearch and metadata APIs 200."
    },
-   "notes": "Archive items are large; keep --max-mb and prefer the h.264 derivative when the original is huge."
+   "notes": "Archive items are large; keep --max-mb and prefer the h.264 derivative when the original is huge. Every licence is the uploader's own claim, not checked by the Archive: on 2026-10-29 \"youtube-zILabWVdIMs Prince - Musicology (Official Music Video)\" was CC BY 4.0 and a y2mate rip CC0, so the tool marks YouTube re-uploads, downloader rips, music videos and film or TV rips suspicious-licence (unverified, commercial unknown). QuickTime .mov originals can be full-range (yuvj420p): the sidecar says so, convert range-aware. A data node answered a transient 500 once (it worked on a retry; the tool retries once)."
   },
   {
    "id": "nasa",

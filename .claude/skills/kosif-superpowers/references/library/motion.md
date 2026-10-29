@@ -60,7 +60,7 @@
 | `export-profile` | معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو | `python3 scripts/export_profile.py` | tested-here |
 | `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `fetch-reference` | جلب المرجع المسموح وقياسه | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
-| `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
+| `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-here |
 | `free-footage` | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب | `python3 scripts/free_footage.py sources --searchable` | tested-here |
 | `instagram-finder` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | `python3 scripts/instagram_finder.py accounts` | tested-here |
 | `instagram-reference-discovery` | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |

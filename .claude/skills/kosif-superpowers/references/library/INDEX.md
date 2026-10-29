@@ -21,7 +21,7 @@
 |---|---:|---:|---:|---:|---|
 | البحث والمعرفة (`research`) | 60 | 21 | 0 | 18 | [research.md](research.md) |
 | التفكير والتخطيط والاستراتيجية (`thinking`) | 402 | 17 | 8 | 25 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 275 | 174 | 21 | 49 | [agents.md](agents.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 275 | 175 | 21 | 49 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 692 | 115 | 17 | 22 | [software.md](software.md) |
 | الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 26 | [drawing.md](drawing.md) |
 | الصور والتحرير والتوليد (`images`) | 323 | 96 | 42 | 39 | [images.md](images.md) |

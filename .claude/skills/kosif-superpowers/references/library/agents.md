@@ -22,10 +22,10 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 174 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 175 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
-| `install` | 13 | 📦 install: needs a package, binary or model first |
+| `install` | 12 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | **المجموع** | **275** | |
 
@@ -243,6 +243,7 @@
 | `TOOL-91` | مراجعة ساكنة لنصوص مهارات الأطلس | Atlas skill-body static audit | proven | python3 |
 | `TOOL-92` | تحويل مراجعة الأطلس إلى بيان مُراجَع | Atlas audit to reviewed manifest | proven | python3, npm:rea |
 | `TOOL-93` | جلب المرجع المسموح وقياسه | Permitted reference fetch and measure | proven | ffmpeg, python3 |
+| `TOOL-94` | تنزيل الفيديو من الروابط للمونتاج | Video link downloader for montage | proven | ffmpeg, python3, imagemagick, yt-dlp |
 | `TOOL-95` | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) | Keyless stock footage fetcher (Pexels, Mixkit) | proven | ffmpeg, python3, key:unspecified |
 | `TOOL-96` | خريطة المستودعات الخارجية | External repository tool map | proven | ffmpeg, chromium, pip:faster-whisper |
 | `TOOL-97` | فرز المثبّتات | Installer Triage | proven | python3, npm:rea, 7zip, innoextract |
@@ -371,6 +372,5 @@
 | `TOOL-84` | قالب فيلم Remotion | Remotion film starter | install | ffmpeg, python3, npm:remotion, npm:react |
 | `TOOL-87` | رندر سينمائي بـBlender Cycles | Blender Cycles cinematic renders | install | ffmpeg, blender |
 | `TOOL-90` | أداة عرض النص بخطوط مرشّحة | Font candidate text renderer | install | node, python3, chromium, fonts:arabic |
-| `TOOL-94` | تنزيل الفيديو من الروابط للمونتاج | Video link downloader for montage | install | ffmpeg, python3, imagemagick, yt-dlp |
 | `AGENT-17` | مهام مجدولة وروتينات | Scheduled tasks & routines | key | claude:tools, key:unspecified |
 | `SELF-11` | الموصلات والمفاتيح | Connectors and keys | key | claude:tools, key:unspecified |

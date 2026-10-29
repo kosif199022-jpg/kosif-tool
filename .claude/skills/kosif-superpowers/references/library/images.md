@@ -45,7 +45,7 @@
 | `dua-wednesday` | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 | `python3 scripts/dua_wednesday.py doctor` | tested-here |
 | `fast-edit` | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت | `python3 scripts/fast_edit.py doctor` | tested-here |
 | `fetch-reference` | جلب المرجع المسموح وقياسه | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
-| `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
+| `fetch-video` | تنزيل الفيديو من الروابط للمونتاج | `python3 scripts/fetch_video.py --doctor` | tested-here |
 | `free-footage` | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب | `python3 scripts/free_footage.py sources --searchable` | tested-here |
 | `image-local-ai` | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره | `python3 scripts/image_local_ai.py models --json` | tested-here |
 | `instagram-finder` | البحث عن فيديوهات إنستجرام لمنتج وتحميلها | `python3 scripts/instagram_finder.py accounts` | tested-here |

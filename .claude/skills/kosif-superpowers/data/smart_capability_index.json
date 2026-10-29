@@ -133,9 +133,9 @@
       "count": 275,
       "status_counts": {
         "documented": 65,
-        "install": 13,
+        "install": 12,
         "key": 2,
-        "proven": 174,
+        "proven": 175,
         "ready": 21
       },
       "family_counts": {
@@ -72761,7 +72761,7 @@
       "domain": "build",
       "name_en": "Video link downloader for montage",
       "name_ar": "تنزيل الفيديو من الروابط للمونتاج",
-      "status": "install",
+      "status": "proven",
       "requires": [
         "ffmpeg",
         "python3",
@@ -72769,10 +72769,13 @@
         "yt-dlp"
       ],
       "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_pinterest.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_instagram_finder.py",
+        "kosif-tool/tests/test_download_deps.py",
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/fetch_video.py"
       ],
       "source": "runnable-tools.json",
-      "what": "غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، ويكتب ملف manifest.json فيه الملف والمدة و"
+      "what": "غلاف لأداة yt-dlp ينزّل رابطًا أو عدة روابط فيديو أو صوت لاستخدامها في المونتاج، مع سلسلة بدائل للصيغ، ومحاكاة متصفح اختيارية، وملف كوكيز من المستخدم، وحدّ أقصى للجودة. ويمكنه إنشاء نسخة ‎.safe.mp4‎ بترميز H.264/AAC تقبلها برامج التحرير، وشيل صوت المقطع نفسه عند الاستلام (‎--stri"
     },
     {
       "id": "TOOL-95",

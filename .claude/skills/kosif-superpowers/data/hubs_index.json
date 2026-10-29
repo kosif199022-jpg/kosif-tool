@@ -408,8 +408,8 @@
     "SP-0145",
     "SP-0146",
     "SP-0021",
-    "SP-0148",
     "SP-0147",
+    "SP-0148",
     "SP-0149",
     "SP-0150",
     "SP-0151",
@@ -504,31 +504,31 @@
      "ready_now": 9
     },
     {
+     "id": "SP-0147",
+     "name_ar": "مستكشف مصادر المجتمع",
+     "name_en": "Community source scout",
+     "size": 10,
+     "best": "proven",
+     "ready_now": 9
+    },
+    {
      "id": "SP-0148",
      "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
      "name_en": "Subtitle to words.json converter",
      "size": 9,
      "best": "proven",
      "ready_now": 9
-    },
-    {
-     "id": "SP-0147",
-     "name_ar": "مستكشف مصادر المجتمع",
-     "name_en": "Community source scout",
-     "size": 10,
-     "best": "proven",
-     "ready_now": 8
     }
    ],
    "powers": 290,
    "status_mix": {
-    "proven": 174,
+    "proven": 175,
     "ready": 21,
-    "install": 13,
+    "install": 12,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 195,
+   "ready_now": 196,
    "requires": [
     "python3",
     "ffmpeg",

@@ -146,7 +146,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
 - **يفتح / unlocks:** 806 powers
-- **بالحالة / by status:** proven 306 · documented 212 · ready 168 · install 104 · key 13 · seen 3
+- **بالحالة / by status:** proven 307 · documented 212 · ready 168 · install 103 · key 13 · seen 3
 - **العائلات / families:** runnable-tools (140), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
@@ -156,7 +156,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
 - **يفتح / unlocks:** 464 powers
-- **بالحالة / by status:** documented 158 · proven 156 · ready 71 · install 56 · key 10 · seen 9 · idea 4
+- **بالحالة / by status:** documented 158 · proven 157 · ready 71 · install 55 · key 10 · seen 9 · idea 4
 - **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (46), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
@@ -286,7 +286,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y imagemagick`
 - **يفتح / unlocks:** 88 powers
-- **بالحالة / by status:** proven 26 · ready 21 · documented 15 · install 15 · key 6 · seen 5
+- **بالحالة / by status:** proven 27 · ready 21 · documented 15 · install 14 · key 6 · seen 5
 - **العائلات / families:** engines-render-pipeline (13), music-beat-sound (13), transitions-cuts (9), photo-video-footage (8), runnable-tools (6), qa-verification (5), easing-timing-rhythm (4), particles-fluids-physics (4)
 - **أمثلة / examples:** `ARAB-62` Arabic ASS karaoke captions (reels · cinema · pu · `BEAT-18` Loudness mastering (−14 LUFS) · `COLOR-01` Eleven FFmpeg grade presets · `COLOR-02` Restore grade for old or soft footage · `EASE-11` Dependency-free easing set · `ENG-18` KOSIF Motion Web local studio server
 
@@ -456,7 +456,7 @@
 - **النوع / kind:** pip (حزمة بايثون)
 - **التثبيت / install:** `pip install yt-dlp`
 - **يفتح / unlocks:** 23 powers
-- **بالحالة / by status:** proven 10 · install 5 · documented 4 · ready 3 · key 1
+- **بالحالة / by status:** proven 11 · documented 4 · install 4 · ready 3 · key 1
 - **العائلات / families:** video-download (11), runnable-tools (6), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
 - **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
 

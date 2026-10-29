@@ -24,7 +24,7 @@ python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت ال
 |---|---|---|---|---|
 | `research` | البحث والمعرفة — Research & knowledge | 62 | 21 | `python3 scripts/source_scout.py check` |
 | `thinking` | التفكير والتخطيط والاستراتيجية — Reasoning & strategy | 387 | 25 | `python3 scripts/think.py ladder "<المهمة>"` |
-| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 290 | 195 | `python3 scripts/hub.py doctor` |
+| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 290 | 196 | `python3 scripts/hub.py doctor` |
 | `software` | البرمجة وبناء التطبيقات — Software & applications | 662 | 132 | `python3 scripts/hub.py find "<المهمة>"` |
 | `drawing` | الرسم والأشكال والتصميم — Drawing & visual composition | 307 | 107 | `python3 scripts/creative_paint.py doctor` |
 | `images` | الصور والتحرير والتوليد — Images & photo editing | 327 | 140 | `python3 scripts/app_studio.py doctor` |

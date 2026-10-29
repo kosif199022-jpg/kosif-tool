@@ -195,7 +195,7 @@
 | SP-0144 | ✅ | خريطة ترتيب المهارة · Skill Layout Map | 12 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
 | SP-0145 | ✅ | جسر Blender الآمن · Safe headless Blender bridge | 12 | 10 | SP-0129 SP-0171 SP-0269 SP-0371 |
 | SP-0146 | ✅ | مختبر البرومبت · Prompt Lab | 10 | 10 | SP-0037 SP-0176 SP-0151 SP-0372 |
-| SP-0147 | ✅ | مستكشف مصادر المجتمع · Community source scout | 10 | 8 | SP-0476 SP-0140 SP-0115 SP-0359 |
+| SP-0147 | ✅ | مستكشف مصادر المجتمع · Community source scout | 10 | 9 | SP-0476 SP-0140 SP-0115 SP-0359 |
 | SP-0148 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter | 9 | 9 | SP-0184 SP-0185 SP-0141 SP-0325 |
 | SP-0149 | ✅ | مختبر مطابقة الخطوط العربية · Arabic-aware font fidelity lab | 8 | 7 | SP-0454 SP-0460 SP-0378 SP-0159 |
 | SP-0150 | ✅ | جسر أوامر REA · REA CLI Bridge | 8 | 7 | SP-0077 SP-0083 SP-0082 SP-0091 |

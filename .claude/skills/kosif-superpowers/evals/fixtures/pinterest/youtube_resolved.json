@@ -1,0 +1,19 @@
+{
+ "class": "youtube",
+ "note": "Synthetic. -J output when an unrestricted yt-dlp on a machine YouTube accepts resolves the embed: the metadata comes from the YouTube extractor, not Pinterest. Still reported as embedded YouTube and not downloaded through the Pinterest path.",
+ "expect": {"probe": "youtube", "final": "youtube", "embed_url": "https://www.youtube.com/watch?v=CCCCCCCCCCC"},
+ "probe": {
+  "returncode": 0,
+  "stderr": "",
+  "stdout": {
+   "id": "CCCCCCCCCCC",
+   "title": "Example embedded video",
+   "formats": [{"format_id": "18", "ext": "mp4", "width": 640, "height": 360, "vcodec": "avc1.42001E", "acodec": "mp4a.40.2", "url": "https://rr1---sn-example.googlevideo.com/videoplayback"}],
+   "webpage_url": "https://www.youtube.com/watch?v=CCCCCCCCCCC",
+   "original_url": "http://www.youtube.com/embed/CCCCCCCCCCC?autoplay=1",
+   "extractor_key": "Youtube",
+   "extractor": "youtube",
+   "_type": "video"
+  }
+ }
+}

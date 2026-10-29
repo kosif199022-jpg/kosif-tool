@@ -1407,11 +1407,11 @@
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
    "count": 177,
-   "proven": 147,
+   "proven": 148,
    "status": {
-    "proven": 147,
+    "proven": 148,
     "ready": 20,
-    "install": 10
+    "install": 9
    }
   },
   {
@@ -2083,6 +2083,11 @@
    "label": "scripts/drawing_methods.py"
   },
   {
+   "id": "script:scripts/_pinterest.py",
+   "kind": "script",
+   "label": "scripts/_pinterest.py"
+  },
+  {
    "id": "script:scripts/stock_fetch.py",
    "kind": "script",
    "label": "scripts/stock_fetch.py"
@@ -2250,6 +2255,11 @@
    "label": "scripts/smart_draw.py"
   },
   {
+   "id": "script:scripts/source_finder.py",
+   "kind": "script",
+   "label": "scripts/source_finder.py"
+  },
+  {
    "id": "script:scripts/sources_index.py",
    "kind": "script",
    "label": "scripts/sources_index.py"
@@ -2333,6 +2343,11 @@
    "id": "test:tests/test_download_deps.py",
    "kind": "test",
    "label": "tests/test_download_deps.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_pinterest.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_pinterest.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge.py",
@@ -2678,6 +2693,11 @@
    "id": "test:tests/test_protocol_library.py",
    "kind": "test",
    "label": "tests/test_protocol_library.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_source_finder.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_source_finder.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
@@ -6930,6 +6950,12 @@
   },
   {
    "from": "script:scripts/fetch_video.py",
+   "to": "script:scripts/_pinterest.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_video.py",
    "to": "script:scripts/stock_fetch.py",
    "rel": "imports",
    "w": 1
@@ -7421,6 +7447,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/source_finder.py",
+   "to": "script:scripts/_pinterest.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/sources_index.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -7609,6 +7641,12 @@
   {
    "from": "script:scripts/_deps.py",
    "to": "test:tests/test_download_deps.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_pinterest.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_pinterest.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -7921,6 +7959,12 @@
   {
    "from": "script:scripts/fetch_video.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_instagram_finder.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_video.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_pinterest.py",
    "rel": "tested_by",
    "w": 1
   },
@@ -8297,8 +8341,26 @@
    "w": 1
   },
   {
+   "from": "script:scripts/source_finder.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_pinterest.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/source_finder.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_source_finder.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/sources_index.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_sources_index.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/stock_fetch.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_pinterest.py",
    "rel": "tested_by",
    "w": 1
   },

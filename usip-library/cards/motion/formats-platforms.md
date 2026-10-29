@@ -119,7 +119,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -197,7 +197,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -277,7 +277,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -356,7 +356,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -434,7 +434,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -511,7 +511,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -588,7 +588,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -668,7 +668,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -747,7 +747,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -825,7 +825,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -902,7 +902,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -981,7 +981,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1059,7 +1059,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1139,7 +1139,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1218,7 +1218,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1295,7 +1295,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1373,7 +1373,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1450,7 +1450,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1528,7 +1528,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1608,7 +1608,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1690,7 +1690,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1771,7 +1771,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1848,7 +1848,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1924,7 +1924,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2004,7 +2004,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2082,7 +2082,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2161,7 +2161,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-27` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2240,7 +2240,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-28` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2318,7 +2318,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-29` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2397,7 +2397,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-30` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2474,7 +2474,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-31` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2553,7 +2553,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-32` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2632,7 +2632,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-33` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2711,7 +2711,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-34` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2790,7 +2790,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-35` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2867,7 +2867,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-36` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -2943,7 +2943,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-37` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3024,7 +3024,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-38` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3100,7 +3100,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-39` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3178,7 +3178,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-40` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3257,7 +3257,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-41` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3336,7 +3336,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-42` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3412,7 +3412,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-43` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3489,7 +3489,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-44` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3569,7 +3569,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-45` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3648,7 +3648,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-46` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3725,7 +3725,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-47` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3802,7 +3802,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-48` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3879,7 +3879,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-49` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -3956,7 +3956,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-50` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4036,7 +4036,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-51` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4113,7 +4113,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-52` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4192,7 +4192,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-53` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4272,7 +4272,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-54` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4350,7 +4350,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-55` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4425,7 +4425,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-56` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4501,7 +4501,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-57` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4578,7 +4578,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-58` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4654,7 +4654,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-59` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4732,7 +4732,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-60` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4811,7 +4811,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-61` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4888,7 +4888,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-62` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -4968,7 +4968,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-63` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5046,7 +5046,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-64` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5126,7 +5126,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-65` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5205,7 +5205,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-66` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5282,7 +5282,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-67` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5360,7 +5360,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-68` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5437,7 +5437,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-69` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -5514,7 +5514,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `audio` ← المخرج `video`، والمنفّذ `method:FMT-X01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `instagram-finder` · `montage-pro`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `aspects` · `blender-bridge` · `dua-wednesday` · `export-profile` · `fetch-video` · `instagram-finder`.
 - مراحل النوع: قياس الصوت والأصول ← ستوريبورد ← بناء المشهد ← معاينة رخيصة ← رندر ← تحقق ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
