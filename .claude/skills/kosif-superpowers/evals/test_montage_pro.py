@@ -192,12 +192,14 @@ class TranscribeTests(unittest.TestCase):
         self.assertIn("pip install faster-whisper", err)
         self.assertFalse(dst.exists())
 
-    def test_no_ffmpeg_exit_2(self):
+    def test_no_ffmpeg_exit_2(self):  # without ffmpeg PyAV is tried next (evals/test_transcribe_recover.py); without both: exit 2
         stub = types.ModuleType("faster_whisper")
-        with mock.patch.dict(sys.modules, {"faster_whisper": stub}), mock.patch.object(M.shutil, "which", return_value=None):
+        with mock.patch.dict(sys.modules, {"faster_whisper": stub, "av": None}), mock.patch.object(M.shutil, "which", return_value=None):
             rc, out, err = self.cli(self.media, "--out", self.tmp / "noff" / "words.json", fake=False)
         self.assertEqual(rc, 2)
         self.assertIn("ffmpeg not found", err)
+        self.assertIn("PyAV fallback", err)
+        self.assertEqual(len(err.strip().splitlines()), 1)
 
     @unittest.skipUnless(HAVE and HAVE_NUMPY, "ffmpeg/ffprobe or numpy not installed")
     def test_model_not_cached_and_bad_media_exit_2(self):
@@ -314,10 +316,14 @@ class TranscribeReviewTests(unittest.TestCase):
         dst = self.tmp / "realstub" / "words.json"
         self.assertEqual(self.cli(self.media, "--out", dst)[0], 0)  # written by the fake hook first
         with mock.patch.dict(sys.modules, {"faster_whisper": stub}), mock.patch.object(M, "_fw_version", return_value="1.2.1"):
+            n0 = len(calls)
             rc, out, err = self.cli(self.media, "--out", dst, fake=False)
             self.assertEqual((rc, json.loads(out)["status"]), (0, "written"), err)  # the fake file is not "up to date"
-            self.assertIs(calls[-1]["vad_filter"], True)
-            self.assertEqual((calls[-1]["word_timestamps"], calls[-1]["beam_size"], calls[-1]["language"]), (True, 5, "ar"))
+            first = calls[n0]  # then one no-VAD re-run of the dropped span (its "subscribe" guess stays out)
+            self.assertEqual(len(calls), n0 + 2)
+            self.assertIs(first["vad_filter"], True)
+            self.assertEqual((calls[-1]["vad_filter"], calls[-1]["condition_on_previous_text"]), (False, False))
+            self.assertEqual((first["word_timestamps"], first["beam_size"], first["language"]), (True, 5, "ar"))
             d = json.loads(dst.read_text(encoding="utf-8"))
             self.assertEqual((d["engine"]["name"], d["engine"]["version"], d["engine"]["vad_filter"]), ("faster-whisper", "1.2.1", True))
             self.assertEqual([w["word"] for w in d["words"]], ["اللهم", "ارزقنا"])
