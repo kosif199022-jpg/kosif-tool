@@ -93,6 +93,22 @@ def is_blocked(err: str) -> bool:
     return any(m in e for m in BLOCK_MARKERS)
 
 
+# DRM: the publisher has locked the stream. Report and stop; never look for another route to the same item.
+DRM_MARKERS = ("drm protected", "drm-protected", "widevine", "fairplay", "playready")
+
+
+def is_drm(err: str) -> bool:
+    e = (err or "").lower()
+    return any(m in e for m in DRM_MARKERS)
+
+
+def drm_hint(url: str = "") -> str:
+    return ("This item is DRM-protected by its publisher: it will not be downloaded by any route, and no retry or other "
+            "tool will be tried on it. Pick another source (an upload the rights holder allows, the user's own file, or a "
+            "licensed library) and note the choice in CREDITS.md. | المصدر محمي بـ DRM من الناشر: لن يُحمَّل بأي طريقة. "
+            "اختر مصدرًا آخر أو ملفًا من المستخدم، واذكر ذلك في CREDITS.md.")
+
+
 def blocked_hint(url: str = "") -> str:
     site_name = next((s for s in ("tiktok", "instagram", "youtube", "facebook", "twitter", "x.com") if s in (url or "").lower()), "the site")
     return (f"{site_name} refused this download from the cloud machine (bot check / IP block). This is not a bug and "
