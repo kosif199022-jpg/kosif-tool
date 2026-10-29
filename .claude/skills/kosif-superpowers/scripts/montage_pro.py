@@ -9,11 +9,15 @@ Upload an audio or a video, get a team, a menu of strong options, and a real ren
                                                                  # --transcribe (opt-in, takes the transcribe options) writes
                                                                  # JOB/words.json after probing, before the cue mapper imports it
   python3 montage_pro.py transcribe MEDIA --job JOB [--model medium] [--language ar|auto] [--local-only] [--force] [--out PATH]
-                                    [--no-vad] [--no-speech-threshold 0.6] [--allow-tracked]
+                                    [--no-vad] [--no-recover] [--no-speech-threshold 0.6] [--allow-tracked]
                                                                  # transcriber: faster-whisper word timings → JOB/words.json (kosif-words/1);
-                                                                 # Silero VAD + no_speech_prob drop silence/music guesses; times are on the
-                                                                 # file timeline (audio start offset added); refuses jobs/, git-tracked or
-                                                                 # unignored repo paths (use out/…) unless --allow-tracked
+                                                                 # Silero VAD + no_speech_prob drop silence/music guesses; spans dropped that
+                                                                 # way are re-run once without VAD (re-checked with --no-vad) and their
+                                                                 # confident words come back marked "recovered" (sung or recited verses);
+                                                                 # --no-vad = no VAD, no previous-text conditioning; --no-recover = old output;
+                                                                 # audio via ffmpeg, PyAV when ffmpeg is missing or fails; times
+                                                                 # are on the file timeline (audio start offset added); refuses jobs/,
+                                                                 # git-tracked or unignored repo paths (use out/…) unless --allow-tracked
   python3 montage_pro.py options JOB [--brief "..."]             # director: option menu for this material + stage plan
   python3 montage_pro.py acquire URL --job JOB --license "CC0 / owner / …" --source-page URL [--owner]
                                                                  # IDM-style desk: segmented resumable file download, DASH/HLS manifest grab
@@ -203,11 +207,22 @@ WORDS_SCHEMA = "kosif-words/1"
 FAKE_ENV = "KOSIF_TRANSCRIBE_FAKE"  # test hook: a JSON file {"segments": [...], "language": "ar"} replaces the model
 WRITERS = ("faster-whisper", "fake")  # engine names this command writes (the fake hook never passes for a real run)
 NO_SPEECH_MAX = 0.6  # whisper's own no_speech_threshold: a segment above it is dropped as non-speech (silence/music)
+# Recovery of dropped spans (sung or recited passages over music score a high no_speech_prob with confident text):
+RECOVER_MIN_LOGPROB = -1.0     # whisper's own log_prob_threshold: a re-run segment below it is a guess
+RECOVER_MAX_COMPRESSION = 2.4  # whisper's own compression_ratio_threshold: above it the text repeats itself
+RECOVER_MIN_DBFS = -50.0       # a dropped span whose RMS level is below this is silence and is not re-run
+RECOVER_PAD = 0.3              # seconds of context on each side of a re-run window
+VAD_GAP_MIN = 2.0              # a loud stretch this long with no word at all is reported as a vad_gap (sung lines VAD cut)
+SR = 16000                     # whisper's sample rate
 REPO = SKILL.parents[2]
 
 
 class TranscribeError(Exception):
     """A clean one-line transcription failure: the CLI prints it on stderr and exits 2."""
+
+
+class DecodeStop(TranscribeError):
+    """A decode failure another decoder would not fix (a timeout, numpy missing): load_audio does not retry it."""
 
 
 def _one_line(exc) -> str:
@@ -313,12 +328,12 @@ def decode_16k(media: Path, timeout: int = 3600):
     try:
         import numpy as np  # lazy: only transcribe needs numpy
     except Exception as exc:  # noqa: BLE001 - a broken numpy raises more than ImportError
-        raise TranscribeError(f"numpy cannot be imported: {_one_line(exc)} (pip install faster-whisper)") from None
+        raise DecodeStop(f"numpy cannot be imported: {_one_line(exc)} (pip install faster-whisper)") from None
     try:
         r = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(media), "-vn", "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
                            capture_output=True, stdin=subprocess.DEVNULL, timeout=timeout)
     except subprocess.TimeoutExpired:
-        raise TranscribeError(f"decoding {media.name} timed out after {timeout} s") from None
+        raise DecodeStop(f"decoding {media.name} timed out after {timeout} s") from None
     except OSError as exc:
         raise TranscribeError(f"cannot run ffmpeg: {_one_line(exc)}") from None
     if r.returncode or len(r.stdout) < 4:
@@ -327,16 +342,200 @@ def decode_16k(media: Path, timeout: int = 3600):
     return np.frombuffer(r.stdout[:len(r.stdout) // 4 * 4], dtype=np.float32)
 
 
+def decode_pyav(media: Path):
+    """PyAV → mono 16 kHz float32, opened without the metadata_errors keyword: faster-whisper 1.2.1's decode_audio
+    passes it and av 19 rejects it ("TypeError: open() got an unexpected keyword argument 'metadata_errors'"), which
+    is also what a file path given to WhisperModel.transcribe hits. Raises whatever av raises; load_audio words it."""
+    import numpy as np
+    import av  # lazy: PyAV ships with faster-whisper
+    chunks = []
+    with av.open(str(media)) as box:
+        stream = next((s for s in box.streams if s.type == "audio"), None)
+        if stream is None:
+            raise ValueError("no audio stream")
+        rs = av.AudioResampler(format="flt", layout="mono", rate=SR)
+        for frame in box.decode(stream):
+            chunks.extend(f.to_ndarray().reshape(-1) for f in rs.resample(frame))
+        chunks.extend(f.to_ndarray().reshape(-1) for f in rs.resample(None))
+    if not chunks:
+        raise ValueError("no audio samples")
+    return np.concatenate(chunks).astype(np.float32, copy=False)
+
+
+def load_audio(media: Path, timeout: int = 3600):
+    """(samples, decoder name) for MEDIA as mono 16 kHz float32: the ffmpeg pipe first (decode_16k, no PyAV), then
+    PyAV directly (decode_pyav) when ffmpeg is missing or cannot decode it. A timeout or a missing numpy is not
+    retried. Never hands the model a path. TranscribeError naming each attempt when none works."""
+    if shutil.which("ffmpeg"):
+        try:
+            return decode_16k(media, timeout), "ffmpeg"
+        except DecodeStop:
+            raise
+        except TranscribeError as exc:
+            first = str(exc)
+    else:
+        first = "ffmpeg not found; install ffmpeg (see montage_pro.py doctor)"
+    try:
+        return decode_pyav(media), "pyav"
+    except ImportError as exc:
+        raise TranscribeError(f"{first} (PyAV fallback: {getattr(exc, 'name', None) or 'av'} is not installed)") from None
+    except Exception as exc:  # noqa: BLE001 - av raises its own error classes
+        raise TranscribeError(f"{first}; PyAV fallback: {_one_line(exc)}"[:400]) from None
+
+
+def _shifted(seg, dt: float) -> dict:
+    """A plain-dict copy of a whisper segment (object or dict) with its own and its words' times moved by dt seconds."""
+    def mv(v):
+        v = _num(v)
+        return None if v is None else v + dt
+    out = {k: _field(seg, k) for k in ("text", "no_speech_prob", "avg_logprob", "compression_ratio")}
+    out.update(start=mv(_field(seg, "start")), end=mv(_field(seg, "end")))
+    out["words"] = [{"word": _field(w, "word", ""), "start": mv(_field(w, "start")), "end": mv(_field(w, "end")),
+                     "probability": _field(w, "probability", _field(w, "prob"))} for w in _field(seg, "words") or []]
+    return out
+
+
+def _from(segs, a: float, b: float) -> list:
+    """The segments of SEGS (decoded-timeline times) that overlap a..b, as _shifted copies timed from a, i.e. what the
+    model returns when it is run on samples a..b."""
+    return [_shifted(g, -a) for g in segs or []
+            if (_num(_field(g, "start")) or 0.0) < b and (_num(_field(g, "end")) or b) > a]
+
+
+_SUSPECT = None  # caption_lines.SUSPECT, loaded on first use
+
+
+def _invented(text: str):
+    """The tag of caption_lines.SUSPECT (subscribe outros, subtitle credits, sound tags, punctuation only) TEXT
+    matches, or None. caption_lines is loaded from this folder by path; without it nothing is screened."""
+    global _SUSPECT
+    if _SUSPECT is None:
+        _SUSPECT = []
+        try:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("kosif_caption_lines", HERE / "caption_lines.py")
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            _SUSPECT = list(mod.SUSPECT)
+        except Exception:  # noqa: BLE001 - a missing or broken sibling must not stop a transcription
+            pass
+    return next((tag for rx, tag in _SUSPECT if rx.search(text)), None)
+
+
+def level_dbfs(audio, a: float, b: float):
+    """RMS level of audio[a s, b s) in dBFS (-120.0 for digital silence), or None without samples there."""
+    if audio is None:
+        return None
+    x = audio[max(0, int(round(a * SR))):max(0, int(round(b * SR)))]
+    if not len(x):
+        return None
+    rms = math.sqrt(float((x.astype("float64") ** 2).mean()))
+    return round(20 * math.log10(rms), 1) if rms > 1e-6 else -120.0
+
+
+def _word_spans(segs) -> list:
+    """Sorted (start, end) of every timed word in SEGS (whisper objects or dicts)."""
+    return sorted((s, e) for seg in segs for w in _field(seg, "words") or []
+                  for s, e in [(_num(_field(w, "start")), _num(_field(w, "end")))] if s is not None and e is not None)
+
+
+def loud_gaps(audio, covered, end, min_gap: float = VAD_GAP_MIN) -> list:
+    """[(start, end, level_dbfs)] of the stretches of at least min_gap s between 0 and END that no (start, end) in
+    COVERED touches and whose RMS level is at or above RECOVER_MIN_DBFS: sound the model left without a word, e.g. sung
+    lines Silero VAD never passed to it. Measures only; [] without audio."""
+    if audio is None or not end:
+        return []
+    out, t = [], 0.0
+    for s, e in sorted(covered) + [(end, end)]:
+        if s - t >= min_gap:
+            lv = level_dbfs(audio, t, s)
+            if lv is not None and lv >= RECOVER_MIN_DBFS:
+                out.append((t, s, lv))
+        t = max(t, e)
+    return out
+
+
+def recover_dropped(spans, kept, rerun, audio=None, limit=None, offset: float = 0.0):
+    """Re-run the spans the no-speech filter dropped without VAD and keep their confident words.
+
+    spans: [(start, end)] of the dropped segments on the decoded timeline; kept: the segments the first pass kept
+    (their words are never duplicated); rerun(a, b) -> segments timed from a (the model on samples a..b with
+    vad_filter False and condition_on_previous_text False). Touching spans form one window, re-run with RECOVER_PAD s
+    of context (clipped to 0 and `limit`). A window whose RMS level is below RECOVER_MIN_DBFS is silence and is not
+    re-run. A re-run segment is kept when its text is not on caption_lines' invented-phrase list, avg_logprob >=
+    RECOVER_MIN_LOGPROB and compression_ratio <= RECOVER_MAX_COMPRESSION (whisper's own bars; its no_speech_prob is
+    recorded, not gated, since that is what dropped the span); of its words only those with a letter or digit whose
+    middle lies inside a dropped span and outside every kept word stay, their edges trimmed so they never overlap a
+    kept word. A failing re-run is recorded, never raised.
+    Returns (segments marked recovered, one record per window with times on the file timeline)."""
+    taken = _word_spans(kept)
+    windows = []
+    for s, e in sorted(spans):
+        if windows and s <= windows[-1][1] + 0.05:
+            windows[-1][1] = max(windows[-1][1], e)
+            windows[-1][2].append((s, e))
+        else:
+            windows.append([s, e, [(s, e)]])
+    found, records = [], []
+    for s, e, parts in windows:
+        a = max(0.0, s - RECOVER_PAD)
+        b = e + RECOVER_PAD if limit is None else min(e + RECOVER_PAD, limit)
+        rec = {"start": round(s + offset, 3), "end": round(e + offset, 3)}
+        level = level_dbfs(audio, s, e)
+        if level is not None:
+            rec["level_dbfs"] = level
+        if level is not None and level < RECOVER_MIN_DBFS:
+            records.append({**rec, "skipped": f"silent (below {RECOVER_MIN_DBFS:g} dBFS)"})
+            continue
+        try:
+            segs = [_shifted(g, a) for g in rerun(a, b)]
+        except Exception as exc:  # noqa: BLE001 - the first pass already succeeded; keep it
+            records.append({**rec, "skipped": "re-run failed: " + _one_line(exc)})
+            continue
+        rejected, words_back = [], 0
+        for g in segs:
+            text = str(g.get("text") or "").strip()
+            lp, cr = _num(g.get("avg_logprob")), _num(g.get("compression_ratio"))
+            why = _invented(text)
+            why = why or (f"avg_logprob {lp:.3f} < {RECOVER_MIN_LOGPROB:g}" if lp is not None and lp < RECOVER_MIN_LOGPROB else None)
+            why = why or (f"compression_ratio {cr:.2f} > {RECOVER_MAX_COMPRESSION:g}" if cr is not None and cr > RECOVER_MAX_COMPRESSION else None)
+            inside = []
+            for w in g["words"]:
+                ws, we = w["start"], w["end"]
+                if ws is None or we is None or not re.search(r"\w", str(w["word"] or "")):
+                    continue  # untimed, or punctuation only (a "-" left over from a verse number)
+                mid = (ws + we) / 2
+                if any(p <= mid <= q for p, q in parts) and not any(p <= mid <= q for p, q in taken):
+                    ws = max([ws] + [q for p, q in taken if ws < q < mid])  # never eat into a kept word on either side
+                    we = min([we] + [p for p, q in taken if mid < p < we])
+                    inside.append({**w, "start": ws, "end": we})
+            if why or not inside:
+                if why:
+                    rejected.append({"text": text[:80], "why": why})
+                continue
+            whole = len(inside) == len([w for w in g["words"] if str(w["word"] or "").strip()])
+            found.append({"text": text if whole else " ".join(str(w["word"]).strip() for w in inside),
+                          "start": inside[0]["start"], "end": inside[-1]["end"], "no_speech_prob": g.get("no_speech_prob"),
+                          "avg_logprob": g.get("avg_logprob"), "recovered": True, "words": inside})
+            words_back += len(inside)
+        rec.update(segments=len(segs), recovered_words=words_back)
+        if rejected:
+            rec["rejected"] = rejected
+        records.append(rec)
+    return found, records
+
+
 def tidy_words(segments, limit=None, offset=0.0):
     """Whisper segments → (words, phrases) for kosif-words/1. `offset` seconds are added to every time (file timeline).
     Words are stripped (empty ones dropped), kept in segment order (segments by their first word, words by start inside a
     segment, so a phrase is always one contiguous index range), timed in whole milliseconds (3 decimals), starts strictly
     increasing (a word that starts before the previous one moves 1 ms after it), each end clamped to the next start and to
     `limit` seconds, so every word keeps a positive length. One phrase per segment that kept words, with the inclusive word
-    index range; its text is the segment text, or the kept words when any timed word was dropped (limit or bad times)."""
+    index range; its text is the segment text, or the kept words when any timed word was dropped (limit or bad times).
+    A segment with "recovered": true (recover_dropped) marks its phrase and each of its words "recovered": true."""
     groups = []
     for si, seg in enumerate(segments):
-        rows, lost = [], False
+        rows, lost, rec = [], False, _field(seg, "recovered") is True
         for w in _field(seg, "words") or []:
             text = str(_field(w, "word", "") or "").strip()
             s, e = _num(_field(w, "start")), _num(_field(w, "end"))
@@ -346,7 +545,7 @@ def tidy_words(segments, limit=None, offset=0.0):
                 lost = True
                 continue
             p = _field(w, "probability", _field(w, "prob"))
-            rows.append([int(round(max(0.0, s + offset) * 1000)), int(round(max(0.0, e + offset) * 1000)), text, p])
+            rows.append([int(round(max(0.0, s + offset) * 1000)), int(round(max(0.0, e + offset) * 1000)), text, p, rec])
         if rows:
             rows.sort(key=lambda r: (r[0], r[1]))
             groups.append((rows[0][0], si, rows, lost))
@@ -358,12 +557,14 @@ def tidy_words(segments, limit=None, offset=0.0):
     if lim is not None:
         flat = [f for f in flat if f[0][0] < lim]  # past the end of the audio (starts increase, so this cuts a tail)
     words, members = [], {}
-    for k, ((s, e, text, p), gi) in enumerate(flat):
+    for k, ((s, e, text, p, rec), gi) in enumerate(flat):
         nxt = flat[k + 1][0][0] if k + 1 < len(flat) else lim
         e = max(e, s + 1) if nxt is None else min(max(e, s + 1), nxt)
         w = {"word": text, "start": round(s / 1000, 3), "end": round(e / 1000, 3)}
         if _num(p) is not None:
             w["prob"] = round(float(p), 3)
+        if rec:
+            w["recovered"] = True
         words.append(w)
         members.setdefault(gi, []).append(k)
     phrases = []
@@ -380,18 +581,28 @@ def tidy_words(segments, limit=None, offset=0.0):
             v = _num(_field(seg, key))
             if v is not None:
                 ph[key] = round(v, 3)
+        if rows[0][4]:
+            ph["recovered"] = True
         phrases.append(ph)
     return words, phrases
 
 
 def transcribe(media: Path, out: Path, model: str = "medium", language: str = "ar", local_only: bool = False,
-               force: bool = False, vad: bool = True, no_speech_threshold: float = NO_SPEECH_MAX, allow_tracked: bool = False) -> dict:
+               force: bool = False, vad: bool = True, no_speech_threshold: float = NO_SPEECH_MAX, allow_tracked: bool = False,
+               recover: bool = True) -> dict:
     """Write word timings for MEDIA to OUT (kosif-words/1). Skips when OUT already holds the same source sha256, model,
-    engine (name, version, vad, threshold) and language (unless "auto") unless force. Silero VAD (vad) keeps silence and
-    music out of the model, and segments whose no_speech_prob exceeds no_speech_threshold are dropped (listed in
-    dropped_segments and a warning), so Whisper's "subscribe to the channel" guesses never become captions. OUT must
-    not be inside jobs/, tracked by git or an unignored repository path unless allow_tracked. The file holds no clock
-    time, so a rerun on the same input is diffable."""
+    engine (name, version, vad, conditioning, recovery, threshold) and language (unless "auto") unless force. Silero
+    VAD (vad) keeps silence and music out of the model, and segments whose no_speech_prob exceeds no_speech_threshold
+    are dropped (listed in dropped_segments and a warning), so Whisper's "subscribe to the channel" guesses never
+    become captions. Sung or recited passages over music score a high no_speech_prob too, so with vad and recover the
+    dropped spans are re-run once without VAD and without the previous text (recover_dropped): their confident words
+    are merged back marked "recovered": true (phrase, words and the dropped_segments entry) and every window is listed
+    in "recovery". vad=False decodes the whole file that way (vad_filter and condition_on_previous_text False), so its
+    dropped segments are re-checked against the same bars without a second model call. VAD can also cut sung lines
+    before the model sees them; with vad, loud stretches of VAD_GAP_MIN s or more with no word are listed in vad_gaps
+    with a warning to try --no-vad (measured only, nothing re-run). Audio comes from load_audio (ffmpeg, else PyAV); the model never gets a path. OUT must not be
+    inside jobs/, tracked by git or an unignored repository path unless allow_tracked. The file holds no clock time,
+    so a rerun on the same input is diffable."""
     t0 = time.time()
     media, out = Path(media), Path(out)
     if not media.is_file():
@@ -401,6 +612,7 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
     fake = os.environ.get(FAKE_ENV)
     name = "fake" if fake else "faster-whisper"
     thr = round(float(no_speech_threshold), 3)
+    cond, rec = bool(vad), bool(recover)  # --no-vad: no previous-text conditioning either
     digest = sha256(media)
     old = jload(out)
     eng = old.get("engine") if isinstance(old, dict) else None
@@ -411,18 +623,24 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
     if out.exists() and not ours and not force:  # hand-made or another tool's timings are never overwritten silently
         raise TranscribeError(f"{out} exists and was not written by transcribe; pass --force to replace it or --out another path")
     installed = None if fake else _fw_version()
+    # files from before these fields: conditioning was always on, and recovery changes nothing when nothing was dropped
+    same_recover = ours and (eng.get("recover_dropped") is rec or ("recover_dropped" not in eng and not old.get("dropped_segments")))
     if (not force and ours and (old.get("source") or {}).get("sha256") == digest and eng.get("name") == name
             and eng.get("model") == model and (lang is None or eng.get("language") == lang)
             and eng.get("vad_filter") is bool(vad) and eng.get("no_speech_threshold") == thr
+            and eng.get("condition_on_previous_text", True) is cond and same_recover
             and (eng.get("version") == "fake" if fake else (eng.get("version") != "fake" and installed in (None, eng.get("version"))))):
         return {"status": "up to date", "file": str(out), "words": len(old.get("words") or []),
                 "elapsed_s": round(time.time() - t0, 3)}
-    decoded = None
+    decoded = audio = decoder = None
     if fake:
         data = jload(Path(fake))
         if not isinstance(data, dict) or not isinstance(data.get("segments"), list):
             raise TranscribeError(f"{FAKE_ENV}={fake} must be a JSON file with segments[]")
         segments, detected, version = data["segments"], data.get("language"), "fake"
+
+        def rerun(a, b):  # the hook's "recover" segments carry decoded-timeline times
+            return _from(data.get("recover"), a, b)
     else:
         try:
             import faster_whisper  # lazy: optional dependency
@@ -430,10 +648,8 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
             raise TranscribeError("faster_whisper not installed: pip install faster-whisper") from None
         except Exception as exc:  # noqa: BLE001 - a broken install (missing ctranslate2 library, numpy ABI) raises OSError & co
             raise TranscribeError(f"faster_whisper cannot be imported: {_one_line(exc)} (pip install faster-whisper)") from None
-        if not shutil.which("ffmpeg"):
-            raise TranscribeError("ffmpeg not found; install ffmpeg (see montage_pro.py doctor)")
-        audio = decode_16k(media)
-        decoded = len(audio) / 16000.0
+        audio, decoder = load_audio(media)
+        decoded = len(audio) / float(SR)
         try:
             wm = faster_whisper.WhisperModel(model, device="cpu", compute_type="int8", local_files_only=local_only)
         except Exception as exc:  # noqa: BLE001 - huggingface_hub/ctranslate2 raise many types
@@ -441,43 +657,77 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
                 raise TranscribeError(f"model '{model}' is not cached locally (--local-only); run once without --local-only to download it") from None
             raise TranscribeError(f"cannot load model '{model}': {_one_line(exc)}") from None
         try:
-            segs, info = wm.transcribe(audio, language=lang, word_timestamps=True, beam_size=5, vad_filter=bool(vad))
+            segs, info = wm.transcribe(audio, language=lang, word_timestamps=True, beam_size=5, vad_filter=bool(vad),
+                                       condition_on_previous_text=cond)
             segments = list(segs)
         except Exception as exc:  # noqa: BLE001
             raise TranscribeError(f"transcription failed: {_one_line(exc)}") from None
         detected = getattr(info, "language", None)
         version = installed or getattr(faster_whisper, "__version__", None) or "unknown"
+
+        def rerun(a, b):
+            chunk = audio[int(round(a * SR)):int(round(b * SR))]
+            got, _ = wm.transcribe(chunk, language=lang or detected, word_timestamps=True, beam_size=5, vad_filter=False,
+                                   condition_on_previous_text=False)
+            return list(got)
     probed, offset = media_timing(media)
-    kept, dropped = [], []
+    kept, dropped, spans, gone = [], [], [], []
     for seg in segments:
         nsp = _num(_field(seg, "no_speech_prob"))
         if nsp is not None and nsp > thr:
             s, e = _num(_field(seg, "start")), _num(_field(seg, "end"))
             dropped.append({"text": str(_field(seg, "text", "") or "").strip(), "start": None if s is None else round(s + offset, 3),
                             "end": None if e is None else round(e + offset, 3), "no_speech_prob": round(nsp, 3)})
+            spans.append((s, e) if s is not None and e is not None and e > s else None)
+            gone.append(seg)
         else:
             kept.append(seg)
+    recovered, windows = [], None
+    if rec and any(spans):
+        limit = decoded if decoded is not None else (probed - offset if probed else None)
+        # --no-vad: the first pass already ran without VAD and without the previous text, so a re-run would repeat it;
+        # its dropped segments are checked against the same bars instead (no second model call)
+        check = rerun if vad else (lambda a, b: _from(gone, a, b))
+        recovered, windows = recover_dropped([sp for sp in spans if sp], kept, check, audio, limit, offset)
+        mids = [(w["start"] + w["end"]) / 2 for g in recovered for w in g["words"]]
+        for d, sp in zip(dropped, spans):
+            if sp and any(sp[0] <= m <= sp[1] for m in mids):
+                d["recovered"] = True
+    # VAD can cut sung lines before the model sees them: they are not in dropped_segments, so measure and report them
+    gaps = loud_gaps(audio, _word_spans(kept + recovered) + [sp for sp in spans if sp], decoded) if vad else []
     known = [d for d in (probed, None if decoded is None else offset + decoded) if d]
     # 1 ms under the shortest measured end, so readers that check end <= decoded duration (audio_cue_mapper) accept the last word
-    words, phrases = tidy_words(kept, (min(known) - 0.001) if known else None, offset)
+    words, phrases = tidy_words(kept + recovered, (min(known) - 0.001) if known else None, offset)
     duration = probed or (offset + decoded if decoded else None) or (words[-1]["end"] if words else 0.0)
     source = {"file": media.name, "sha256": digest, "duration": round(duration, 3)}
     if round(offset, 3):
         source["audio_offset"] = round(offset, 3)
-    doc = {"schema": WORDS_SCHEMA, "source": source,
-           "engine": {"name": name, "version": version, "model": model, "compute_type": "int8",
-                      "language": lang or detected, "device": "cpu", "beam_size": 5, "word_timestamps": True,
-                      "vad_filter": bool(vad), "no_speech_threshold": thr},
-           "words": words, "phrases": phrases}
+    engine = {"name": name, "version": version, "model": model, "compute_type": "int8",
+              "language": lang or detected, "device": "cpu", "beam_size": 5, "word_timestamps": True,
+              "vad_filter": bool(vad), "no_speech_threshold": thr, "condition_on_previous_text": cond, "recover_dropped": rec}
+    if decoder:
+        engine["decoder"] = decoder
+    doc = {"schema": WORDS_SCHEMA, "source": source, "engine": engine, "words": words, "phrases": phrases}
     if dropped:
         doc["dropped_segments"] = dropped
+    if gaps:
+        doc["vad_gaps"] = [{"start": round(a + offset, 3), "end": round(b + offset, 3), "level_dbfs": lv} for a, b, lv in gaps]
+    if windows is not None:
+        doc["recovery"] = {"method": "re-run without VAD and without the previous text" if vad else
+                           "first pass already without VAD and the previous text: its dropped segments re-checked",
+                           "min_avg_logprob": RECOVER_MIN_LOGPROB,
+                           "max_compression_ratio": RECOVER_MAX_COMPRESSION, "min_level_dbfs": RECOVER_MIN_DBFS,
+                           "windows": windows}
     try:
         jsave(out, doc)
     except OSError as exc:
         raise TranscribeError(f"cannot write {out}: {_one_line(exc)}") from None
     res = {"status": "written", "file": str(out), "words": len(words), "phrases": len(phrases),
            "duration": source["duration"], "model": model, "language": doc["engine"]["language"], "engine": name,
-           "engine_version": version, "vad_filter": bool(vad), "elapsed_s": round(time.time() - t0, 3)}
+           "engine_version": version, "vad_filter": bool(vad), "condition_on_previous_text": cond,
+           "elapsed_s": round(time.time() - t0, 3)}
+    if decoder:
+        res["decoder"] = decoder
     if source.get("audio_offset"):
         res["audio_offset"] = source["audio_offset"]
     warn = []
@@ -485,6 +735,20 @@ def transcribe(media: Path, out: Path, model: str = "medium", language: str = "a
         res["dropped_segments"] = len(dropped)
         warn.append(f"dropped {len(dropped)} segment(s) with no_speech_prob > {thr} (likely silence/music, not speech): "
                     + " | ".join(d["text"][:40] for d in dropped)[:200])
+    if windows is not None:
+        back = [w for w in words if w.get("recovered")]
+        res["recovered_segments"] = sum(1 for p in phrases if p.get("recovered"))
+        res["recovered_words"] = len(back)
+        if back:
+            how = f"re-running {len(windows)} span(s) without VAD" if vad else f"re-checking {len(windows)} span(s)"
+            warn.append(f"recovered {len(back)} word(s) in {res['recovered_segments']} phrase(s) by {how} "
+                        f"(sung or recited?); marked recovered: true, check them")
+        else:
+            warn.append(f"no words recovered from {len(windows)} dropped span(s) (see recovery.windows in the file)")
+    if gaps:
+        res["vad_gaps"] = len(gaps)
+        warn.append(f"{len(gaps)} loud span(s), {sum(b - a for a, b, _ in gaps):.1f} s, have no words (VAD may have cut sung "
+                    "or recited lines; listed in vad_gaps): try --no-vad")
     if not words:
         warn.append("no words recognised (silence, music or wrong --language?)")
     if warn:
@@ -510,15 +774,17 @@ def cue_map(job: Path, wav: Path, words: Path):
 
 def transcribe_job(media: Path, job: Path, out: Path = None, model: str = "medium", language: str = "ar",
                    local_only: bool = False, force: bool = False, vad: bool = True, no_speech_threshold: float = NO_SPEECH_MAX,
-                   allow_tracked: bool = False) -> dict:
+                   allow_tracked: bool = False, recover: bool = True) -> dict:
     """transcribe() for a job: never raises, records the result in JOB/report.json; ok=False carries the one-line error.
     JOB/report.json passes the same path guard as the words file."""
     try:
         guard_targets([job / "report.json"], allow_tracked)
-        r = transcribe(media, out or job / "words.json", model, language, local_only, force, vad, no_speech_threshold, allow_tracked)
+        r = transcribe(media, out or job / "words.json", model, language, local_only, force, vad, no_speech_threshold, allow_tracked,
+                       recover)
     except TranscribeError as exc:
         return {"ok": False, "error": str(exc)}
     rec = {k: r.get(k) for k in ("status", "file", "words", "model", "language", "elapsed_s")}
+    rec.update({k: r[k] for k in ("recovered_words", "vad_gaps", "decoder") if k in r})
     report(job, "transcribe", {**rec, "warning": r["warning"]} if r.get("warning") else rec)
     wav, words = job / "work" / "master.wav", Path(out or job / "words.json")
     if r.get("status") == "written" and wav.exists() and words == job / "words.json":
@@ -840,7 +1106,12 @@ def main(argv=None):
         q.add_argument("--language", default="ar", help="language code, or auto to detect (default ar)")
         q.add_argument("--local-only", action="store_true", help="never download the model; fail if it is not cached")
         q.add_argument("--force", action="store_true", help="rewrite words.json even when up to date or not written by transcribe")
-        q.add_argument("--no-vad", action="store_true", help="feed silence/music to the model too (default: Silero VAD skips them)")
+        q.add_argument("--no-vad", action="store_true",
+                       help="feed silence/music to the model too and decode each window without the previous text "
+                            "(vad_filter and condition_on_previous_text False; default: Silero VAD skips them)")
+        q.add_argument("--no-recover", action="store_true",
+                       help="keep dropped no-speech spans dropped (default: re-run them once without VAD, or with "
+                            "--no-vad re-check them, and merge their confident words back, marked recovered)")
         q.add_argument("--no-speech-threshold", type=float, default=NO_SPEECH_MAX,
                        help=f"drop segments whose no_speech_prob is above this (default {NO_SPEECH_MAX}; 1 keeps all)")
         q.add_argument("--allow-tracked", action="store_true", help="allow words.json/report.json inside jobs/, tracked by git or not git-ignored")
@@ -872,7 +1143,7 @@ def main(argv=None):
         topts = None
         if x.transcribe:
             topts = {"model": x.model, "language": x.language, "local_only": x.local_only, "force": x.force, "vad": not x.no_vad,
-                     "no_speech_threshold": x.no_speech_threshold, "allow_tracked": x.allow_tracked}
+                     "no_speech_threshold": x.no_speech_threshold, "allow_tracked": x.allow_tracked, "recover": not x.no_recover}
             try:  # fail before any intake work when the transcript could not be written there anyway
                 guard_targets([x.job / "words.json", x.job / "report.json"], x.allow_tracked)
             except TranscribeError as exc:
@@ -890,7 +1161,8 @@ def main(argv=None):
     if x.cmd == "transcribe":
         if not (x.job or x.out):
             ap.error("transcribe needs --job JOB or --out PATH")
-        tkw = {"vad": not x.no_vad, "no_speech_threshold": x.no_speech_threshold, "allow_tracked": x.allow_tracked}
+        tkw = {"vad": not x.no_vad, "no_speech_threshold": x.no_speech_threshold, "allow_tracked": x.allow_tracked,
+               "recover": not x.no_recover}
         if x.job:
             r = transcribe_job(x.media, x.job, x.out, x.model, x.language, x.local_only, x.force, **tkw)
             err = None if r.pop("ok") else r["error"]

@@ -11495,15 +11495,17 @@
       "area": "edit",
       "title_en": "Montage Pro task force (audio/video to montage or motion)",
       "title_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)",
-      "summary_en": "A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence and refusing to write into jobs/ or tracked paths.",
-      "summary_ar": "فريق من 13 دورًا لملف صوت أو فيديو مرفوع: يقيس المادة، ويعرض قائمة خيارات وخطة مراحل، ويجلب لقطات مرخصة بأسلوب IDM مع سجل حقوق، ويوحد الصيغ، وينتج فيلم موشن أو مصوّرًا صوتيًا أو إعادة تأطير أو ريلًا مختصرًا أو لوكًا سينمائيًا أو مشروع Remotion، مع فحص كل ناتج والحفاظ على الصوت الأصلي، وأمر transcribe يكتب توقيت الكلمات (words.json بصيغة kosif-words/1) محليًا بـ faster-whisper مع تخطي الصمت ورفض الكتابة داخل jobs/ أو الملفات المتتبعة.",
+      "summary_en": "A 13-role team over an uploaded audio or video: measures it (ffprobe, loudness, energy cues, cuts, contact sheet), offers an option menu with a stage plan, acquires licensed footage IDM-style (segmented resumable download, DASH/HLS grab, rights.json), conforms to an edit mezzanine with proxies, and builds a kinetic film, visualizer, reframe, highlight reel, look or a reference-remix Remotion project, each verified with verify_video.py; the master audio is never modified; its transcribe command writes word timings (kosif-words/1 words.json) locally with faster-whisper, skipping silence, re-running once without VAD the spans its silence filter dropped so sung or recited verses come back marked recovered, decoding with ffmpeg or PyAV, and refusing to write into jobs/ or tracked paths.",
+      "summary_ar": "فريق من 13 دورًا لملف صوت أو فيديو مرفوع: يقيس المادة، ويعرض قائمة خيارات وخطة مراحل، ويجلب لقطات مرخصة بأسلوب IDM مع سجل حقوق، ويوحد الصيغ، وينتج فيلم موشن أو مصوّرًا صوتيًا أو إعادة تأطير أو ريلًا مختصرًا أو لوكًا سينمائيًا أو مشروع Remotion، مع فحص كل ناتج والحفاظ على الصوت الأصلي، وأمر transcribe يكتب توقيت الكلمات (words.json بصيغة kosif-words/1) محليًا بـ faster-whisper مع تخطي الصمت، ويعيد تفريغ ما حذفه فلتر الصمت مرة بلا VAD فتعود كلمات التلاوة والأناشيد موسومة recovered، ويفك الصوت بـ ffmpeg أو PyAV، ويرفض الكتابة داخل jobs/ أو الملفات المتتبعة.",
       "use_when": [
         "رفعت فويس اعمل له موشن جرافيك",
         "اعمل ريلز من الفيديو ده على أقوى اللقطات",
         "Turn this interview into a 9:16 reel with a cinematic look",
         "حمّل اللقطة دي برخصتها وجهزها للمونتاج",
         "فرّغ الصوت ده كلمة كلمة بتوقيتها عشان الكتابة تمشي مع الصوت",
-        "Transcribe my Arabic voice-over into word timings for captions"
+        "Transcribe my Arabic voice-over into word timings for captions",
+        "التفريغ شال الآيات المرتلة رجّع كلماتها بتوقيتها",
+        "The sung lyrics were dropped from the transcript, get their word timings back"
       ],
       "keywords": [
         "montage",
@@ -11523,7 +11525,13 @@
         "faster-whisper",
         "words.json",
         "تفريغ",
-        "توقيت الكلمات"
+        "توقيت الكلمات",
+        "no-vad",
+        "recovered",
+        "lyrics",
+        "recitation",
+        "تلاوة",
+        "أناشيد"
       ],
       "commands": [
         {
@@ -11539,7 +11547,7 @@
         {
           "name": "transcribe",
           "example": "python3 scripts/montage_pro.py transcribe ./voice.m4a --job ../../../out/job1 --language ar --local-only",
-          "does": "Decodes the audio with ffmpeg to 16 kHz mono and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them; skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words."
+          "does": "Decodes the audio with ffmpeg to a 16 kHz mono array (PyAV opened directly when ffmpeg is missing or fails; the model never gets a path) and runs faster-whisper (CPU, int8, word timestamps, Silero VAD) into job1/words.json in schema kosif-words/1 (source sha256, engine, words, phrases); drops segments above --no-speech-threshold and lists them, then re-runs each dropped span once without VAD and without the previous text and merges the confident words back marked recovered: true (not invented phrases, avg_logprob >= -1, compression ratio <= 2.4, not silent), listing every window in recovery; --no-recover keeps the old output, --no-vad decodes the whole file without VAD or previous-text conditioning and re-checks its drops against the same bars without a second model call; loud stretches of 2 s or more that VAD left without a word are listed in vad_gaps with a warning to try --no-vad (measured, not re-run); skips when the source and engine are unchanged unless --force; refuses jobs/, git-tracked or un-ignored targets unless --allow-tracked; exit 2 with one line when ffmpeg, faster-whisper or the cached model is missing. After an earlier intake it also refreshes JOB/work/cues.json so a later build uses the new words."
         },
         {
           "name": "intake with transcription",
@@ -11582,13 +11590,15 @@
       },
       "safety": "runs-external-programs",
       "consent": "build runs ffmpeg/Chromium and writes new files in the job folder; acquire downloads only with a licence note and refuses DRM sources",
-      "limits": "broll-documentary, character and 3d-scene need words.json, clips or a scene JSON first; tests use synthetic media, not real user footage. Transcription word-timing accuracy is not measured against a reference: on the 14.7 s Arabic dua audio (medium, int8, 4 CPU cores) it took 14–28 s per run and three runs gave byte-identical words.json.",
+      "limits": "broll-documentary, character and 3d-scene need words.json, clips or a scene JSON first; tests use synthetic media, not real user footage. Transcription word-timing accuracy is not measured against a reference: on the 14.7 s Arabic dua audio (medium, int8, 4 CPU cores) it took 14–28 s per run and three runs gave byte-identical words.json. Recovery of dropped spans uses Whisper's own bars plus the caption_lines invented-phrase list, not a measured classifier, so a confident guess over music can come back (marked recovered: true; check those before captions); stretches VAD cut before the model are only reported (vad_gaps), not re-run, so songs need --no-vad; first-pass results on the same bytes, model and version differed between sessions (a 79.6 s song dropped 3 segments on 26-10 and none on 29-10).",
       "tests": [
-        ".claude/skills/kosif-superpowers/evals/test_montage_pro.py"
+        ".claude/skills/kosif-superpowers/evals/test_montage_pro.py",
+        ".claude/skills/kosif-superpowers/evals/test_transcribe_recover.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/montage-pro/README.md",
-        ".claude/skills/kosif-superpowers/montage-pro/IDM_STUDY.md"
+        ".claude/skills/kosif-superpowers/montage-pro/IDM_STUDY.md",
+        ".claude/skills/kosif-superpowers/references/guides/edit.md"
       ],
       "families": [
         "transitions-cuts",
@@ -11597,7 +11607,7 @@
         "formats-platforms"
       ],
       "evidence": "tested-here",
-      "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning.",
+      "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). evals/test_transcribe_recover.py 19/19 OK here (stub whisper model, no download or network; 9 skip without numpy, 1 without PyAV); it caught all 23 code mutations tried. Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning. Real model on 29-10 (medium, int8, --local-only): a 63 s recitation whose two verses the silence filter dropped → 49 words, 35 recovered, kept words untouched, two runs byte-identical, a third up to date in 0.05 s; a 60 s sung track → default 62 words with vad_gaps 3 (21.1 s, the lines VAD cut), --no-vad 78 words and nothing dropped (the 24-10 --no-vad run with previous-text conditioning kept 30 and dropped 15 lyric lines); without VAD medium wrote «اشتركوا في القناة» over digital silence and pink noise, which the recovery rejects.",
       "power_id": "TOOL-130"
     },
     {
