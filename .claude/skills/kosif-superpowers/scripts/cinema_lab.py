@@ -514,8 +514,23 @@ def keep_segments(silent, duration, margin=0.12, min_keep=0.2, fps=FPS):
             for i, (fa, fb) in enumerate(snapped)]
 
 
-def select_expr(segs, eps):
-    return "+".join(f"between(t,{s['start'] - eps:.4f},{s['end'] - eps:.4f})" for s in segs)
+def cut_graph(segs, size=None):
+    """trim/atrim + concat graph that keeps only `segs` (frame-snapped). Unlike select/aselect expressions it cuts the
+    same way on every FFmpeg version: on FFmpeg 8.0.1 (the CI runner from 29-10-2026) the select graph passed every
+    frame through. With size, the video is normalised (fps, fit, pad) before the cut; without it the graph is audio only."""
+    n = len(segs)
+    parts = []
+    if size:
+        parts.append(f"[0:v:0]fps={FPS},scale={size[0]}:{size[1]}:force_original_aspect_ratio=decrease,"
+                     f"pad={size[0]}:{size[1]}:(ow-iw)/2:(oh-ih)/2,setsar=1,split={n}" + "".join(f"[vs{i}]" for i in range(n)))
+    parts.append(f"[0:a:0]aresample=48000,asplit={n}" + "".join(f"[as{i}]" for i in range(n)))
+    for i, s in enumerate(segs):
+        if size:
+            parts.append(f"[vs{i}]trim=start={s['start']:.4f}:end={s['end']:.4f},setpts=PTS-STARTPTS[v{i}]")
+        parts.append(f"[as{i}]atrim=start={s['start']:.4f}:end={s['end']:.4f},asetpts=PTS-STARTPTS[a{i}]")
+    ins = "".join(f"[v{i}][a{i}]" if size else f"[a{i}]" for i in range(n))
+    parts.append(f"{ins}concat=n={n}:v={1 if size else 0}:a=1" + ("[v][a]" if size else "[a]"))
+    return ";".join(parts)
 
 
 def cmd_silence_cut(a):
@@ -541,22 +556,16 @@ def cmd_silence_cut(a):
     if a.plan_only:
         return receipt("silence-cut", input=media_summary(src), silences=len(silent), segments=len(segs),
                        kept_s=round(kept, 3), removed_s=round(dur - kept, 3), plan=str(plan_path), rendered=False, **extra)
-    eps = 0.5 / FPS
-    expr = select_expr(segs, eps)
     script = Path(tempfile.mkstemp(prefix="kosif_sc_", suffix=".txt")[1])
     v = video_stream(info)
     try:
         if v:
             size = parse_size(a.size, v.get("width"), v.get("height"))
-            graph = (f"[0:v:0]fps={FPS},scale={size[0]}:{size[1]}:force_original_aspect_ratio=decrease,"
-                     f"pad={size[0]}:{size[1]}:(ow-iw)/2:(oh-ih)/2,setsar=1,select='{expr}',setpts=N/{FPS}/TB[v];"
-                     f"[0:a:0]aresample=48000,asetnsamples=n={48000 // FPS}:p=0,aselect='{expr}',asetpts=N/SR/TB[a]")
-            script.write_text(graph, encoding="utf-8")
+            script.write_text(cut_graph(segs, size), encoding="utf-8")
             ff(["-v", "error", "-i", str(src), "-filter_complex_script", str(script), "-map", "[v]", "-map", "[a]",
                 *encode_args(), *xp.AAC_FALLBACK, "-y", str(out)])
         else:
-            script.write_text(f"[0:a:0]aresample=48000,asetnsamples=n={48000 // FPS}:p=0,aselect='{expr}',"
-                              "asetpts=N/SR/TB[a]", encoding="utf-8")
+            script.write_text(cut_graph(segs), encoding="utf-8")
             ff(["-v", "error", "-i", str(src), "-filter_complex_script", str(script), "-map", "[a]",
                 *xp.AAC_FALLBACK, "-y", str(out)])
     finally:
