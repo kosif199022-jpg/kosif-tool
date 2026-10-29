@@ -1,7 +1,16 @@
 {
  "schema": "kosif.task-history-index.v1",
- "count": 2,
+ "count": 3,
  "tasks": [
+  {
+   "id": "20261029-adh-dhariyat-51-22-23-reel-abdul-basit-t",
+   "date": "2026-10-29",
+   "kind": "video",
+   "mode": "موافق",
+   "plan": "B",
+   "status": "DONE_VERIFIED",
+   "title": "Adh-Dhariyat 51:22-23 reel, Abdul Basit — the cycle of provision (29-10)"
+  },
   {
    "id": "20261023-task-history-memory",
    "date": "2026-10-23",
