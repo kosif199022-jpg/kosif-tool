@@ -1,7 +1,7 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5854,
+  "catalog_powers": 5856,
   "group_count": 15,
   "family_count": 62,
   "tool_count": 195,
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 273,
+      "count": 275,
       "status_counts": {
         "documented": 65,
         "install": 13,
         "key": 2,
-        "proven": 172,
+        "proven": 174,
         "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 175,
+        "runnable-tools": 177,
         "self-discovery": 43
       },
       "examples": [
@@ -74323,6 +74323,45 @@
       ],
       "source": "runnable-tools.json",
       "what": "يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي بالتلاشي والمكان والحجم، XML لبريمير ودافنشي بالتلاشي كانتقالات، EDL لكل مسار، OTIO لدافنشي 18.5+، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT وقائمة قطع لكاب كات،"
+    },
+    {
+      "id": "TOOL-177",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Free footage: open-licence video sources with search, download and credits",
+      "name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "imagemagick"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_footage.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/free_footage.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام"
+    },
+    {
+      "id": "TOOL-178",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Quran text and timing: exact verses, measured pauses, verse and word timing for reels",
+      "name_ar": "نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "pip:faster-whisper"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_quran_text.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/quran_text.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "بيدّي ريل القرآن نص الآيات بالضبط وتوقيتها. fetch بياخد مراجع زي 51:22-23 ويجيب كل آية من api.alquran.cloud (نص تنزيل المبسّط أو العثماني) بهوية واضحة ومهلة وانتظار بين الطلبات وإعادة محاولة وكاش، ويحفظ النص حرف بحرف من غير ما يغيّر ترتيب التشكيل، ويشيل البسملة اللي الموقع بيلزقه"
     },
     {
       "id": "SEC-01",

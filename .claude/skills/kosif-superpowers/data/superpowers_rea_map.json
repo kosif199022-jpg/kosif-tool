@@ -476,7 +476,7 @@
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5854,
+  "powers": 5856,
   "py_edges": 363,
   "repo_tests": 41,
   "roles": {
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 175,
+   "powers": 177,
    "tools": 0
   },
   {
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "175 powers, no tools.json entry lists this family",
+   "detail": "177 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -4596,8 +4596,10 @@
    "id": "free_footage",
    "imported_by": [],
    "path": "scripts/free_footage.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-177"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_free_footage.py"
@@ -4712,7 +4714,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 175,
+   "power_count": 177,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5565,8 +5567,10 @@
    "id": "quran_text",
    "imported_by": [],
    "path": "scripts/quran_text.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-178"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_quran_text.py"
@@ -6560,7 +6564,7 @@
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93616385,
+  "bytes": 93708552,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,

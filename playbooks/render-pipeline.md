@@ -110,7 +110,7 @@ Fonts must be local or loaded before rendering; a fallback font in the final ren
 
 ## 7. Audio sync — المزامنة مع الصوت
 
-Set the film duration to the audio duration and let the renderer mux the audio in its one pass: `render_html.cjs --audio voice.m4a` stream-copies an AAC/MP3/ALAC track byte for byte (only WAV/FLAC become AAC 320k). Confirm with `verify_video.py --audio` that lengths match within 50 ms. Stills at chosen times for review: `render_html.cjs --stills 0,1.5,3.2` (see [tools/render_html.md](../tools/render_html.md)).
+Set the film duration to the audio duration and let the renderer mux the audio in its one pass: `render_html.cjs --audio voice.m4a` stream-copies an AAC/MP3/ALAC track byte for byte (every other codec, such as WAV, FLAC, Opus, Vorbis or AC-3, becomes AAC 320k and reports `audio_md5=reencoded`, so it has no byte proof). Confirm with `verify_video.py --audio` that lengths match within 50 ms. Stills at chosen times for review: `render_html.cjs --stills 0,1.5,3.2` (see [tools/render_html.md](../tools/render_html.md)).
 
 **The renderer's MP4 is the master (lesson of 2026-10-29):**
 

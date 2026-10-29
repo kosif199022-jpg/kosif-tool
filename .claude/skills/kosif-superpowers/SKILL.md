@@ -35,7 +35,7 @@ claude_ai_description: "Shows Claude its real powers in this session and how to 
 Trigger: substantial L2/L3 task requiring deeper reasoning, explicit @kosif see Pro, or user requests merging SEE capabilities. After reading the single canonical PROTOCOL.md and its trigger matrix, open references/protocol/A12-see-pro-cognitive-fusion.md. Integrate SEE 11 Stage-0 lenses, all nine *covered-by-routing* method domains, independent critical review, causal assumption tests, three distinct plans, numeric determinism and project-isolated FusionForge evidence memory. Load only smallest relevant SEE packs (normal <=2 total, <=1 dynamic; Deep/Full Pro <=4, <=2 dynamic). One method pack never proves an executor or Full Pro. C500 roster metadata/Einstein/Jev are external roles with request-bound receipts, not installed in this repository. For complex structured decision packets use scripts/see_pro_cognitive_gate.py --self-test or check --file PACKET.json; a PASS checks structure and evidence metadata only. Never auto-copy proprietary SEE plugin code, private payloads or cross-company knowledge. 
 
 
-**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,854 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
+**الفكرة:** أنت تقدر أكثر مما تتذكر. هذه المهارة تعرّفك بقدراتك الحقيقية في هذه الجلسة، وبالمكتبات التي تثبّتها بأمر واحد، وبطرق تفكير وإبداع وتحقق مجرَّبة، ثم بكتالوج من 5,856 قدرة لكل منها وصفة ومستلزمات ودليل. اعرف قوتك، ثم استخدمها بثقة وصدق.
 
 ## FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
 
@@ -175,8 +175,8 @@ The owner's GitHub account holds 25 repositories; [references/owned-repos-map.md
 
 **The idea:** most failures are not lack of ability but not knowing the ability is there. This skill makes your real powers visible, then gives you the method to use them well. Commands below use `$SKILL_DIR`: set it once with `SKILL_DIR=.claude/skills/kosif-superpowers` from the kosif-tool repo root, or `SKILL_DIR=.` inside the skill folder (links stay relative to this file).
 
-<!-- counts: powers=5854 families=62 domains=10 styles=289 watched=254 proven=1022 ready=673 install=978 key=176 seen=609 documented=2325 idea=71 -->
-**الأرقام / counts:** 5,854 قدرة في 62 عائلة و10 مجالات — ✅ 1,021 · 🟢 673 · 📦 979 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
+<!-- counts: powers=5856 families=62 domains=10 styles=289 watched=254 proven=1024 ready=673 install=978 key=176 seen=609 documented=2325 idea=71 -->
+**الأرقام / counts:** 5,856 قدرة في 62 عائلة و10 مجالات — ✅ 1,024 · 🟢 673 · 📦 978 · 🔑 176 · 👁 609 · 📄 2,325 · 💡 71 · 289 أسلوبًا مرجعيًا (254 منها شوهد فيديوها). `python3 $SKILL_DIR/scripts/powers.py stats`
 
 ## الفهرس / contents
 - [بروتوكول ذكاء المهارات الشامل / Universal Skill Intelligence Protocol](#00-بروتوكول-ذكاء-المهارات-الشامل--universal-skill-intelligence-protocol)
@@ -294,7 +294,7 @@ python3 $SKILL_DIR/scripts/hub.py doctor               # ما يعمل على ه
 استخدم أدنى شارة صادقة دائمًا. Always claim the lowest badge that is true.
 ✅ شُغّل فعلًا في حاوية Claude ومعه مسار دليل · 🟢 كود جاهز هنا · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (موشن فقط) · 📄 طريقة موصوفة · 💡 فكرة.
 ✅ إيصال بتاريخ لا وعد دائم: البيئات تختلف، فأعد الفحص قبل الادعاء. `executed ≠ verified`: التشغيل وحده ليس تحققًا.
-لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (653 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
+لكل سجل حقل `proof_scope` يقول أين دليله: `repo` ملف في هذا المستودع (655 من الـ✅ قابلة للتحقق هنا)، `sibling` ملف في مستودع آخر للمالك (368، غير قابلة للتحقق من هذه النسخة)، `session`/`archive`/`receipt` إيصالات تشغيل. `python3 $SKILL_DIR/scripts/relabel_proofs.py --check` يحافظ عليه. — proof_scope names where the evidence lives; only `repo` is verifiable from this copy.
 للأدوات شارة منفصلة في السجل: `tested-here` (اختبارها في هذا المستودع ونجح عند بناء السجل)، `tested-elsewhere` (نجح على جهاز آخر أو يحتاج مستلزمًا غير موجود هنا)، `untested`. — Tools carry their own evidence field; it is a dated receipt too.
 
 ## 5. الموشن والمونتاج / motion & video procedure

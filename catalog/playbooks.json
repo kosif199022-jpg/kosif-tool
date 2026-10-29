@@ -21,7 +21,7 @@
   "title_ar": "الخط العربي والاتجاه RTL في الحركة",
   "path": "playbooks/arabic-typography.md",
   "excerpt": "This playbook is mandatory whenever a film contains Arabic text. It covers letter joining and why words are never split, fonts that work, baselines and diacritics, mixed Arabic/Latin/number direction, bidi isolation, line breaking, kashida,",
-  "words_en": 1116
+  "words_en": 1261
  },
  {
   "key": "audio-sync",
@@ -141,7 +141,7 @@
   "title_ar": "خط أنابيب المعاينة والرندر",
   "path": "playbooks/render-pipeline.md",
   "excerpt": "This playbook describes how a KOSIF film goes from code to a verified MP4: deterministic rendering, previews before the final render, choosing between Remotion and Playwright + ffmpeg, platform encoding specs and the delivery gate.",
-  "words_en": 1546
+  "words_en": 1565
  },
  {
   "key": "shapes",
