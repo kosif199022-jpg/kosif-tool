@@ -11,7 +11,7 @@
 
 ## arabic-language (craft)
 
-chapter: [arabic-language](../powers/arabic-language.md) · card: `usip-library/cards/type/arabic-language.md` · tools: `anchor-gate` · `tell-scan`
+chapter: [arabic-language](../powers/arabic-language.md) · card: `usip-library/cards/type/arabic-language.md` · tools: `anchor-gate` · `quran-text` · `tell-scan`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -40,7 +40,7 @@ chapter: [arabic-language](../powers/arabic-language.md) · card: `usip-library/
 
 ## typography-arabic (motion)
 
-chapter: [typography-arabic](../powers/typography-arabic.md) · card: `usip-library/cards/type/typography-arabic.md` · tools: `app-studio` · `caption-lines` · `design-tells` · `font-fidelity-lab` · `image-local-ai` · `mimic` · `motion-runtime` · `reel-factory` …
+chapter: [typography-arabic](../powers/typography-arabic.md) · card: `usip-library/cards/type/typography-arabic.md` · tools: `app-studio` · `caption-lines` · `design-tells` · `font-fidelity-lab` · `image-local-ai` · `mimic` · `motion-runtime` · `quran-text` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5854,
+ "atoms": 5856,
  "superpowers": 481,
  "hubs": [
   {
@@ -403,13 +403,13 @@
     "SP-0141",
     "SP-0142",
     "SP-0022",
-    "SP-0143",
     "SP-0144",
+    "SP-0143",
     "SP-0145",
-    "SP-0147",
-    "SP-0021",
     "SP-0146",
+    "SP-0021",
     "SP-0148",
+    "SP-0147",
     "SP-0149",
     "SP-0150",
     "SP-0151",
@@ -427,30 +427,30 @@
      "id": "SP-0139",
      "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
      "name_en": "Atlas metadata capability miner",
-     "size": 33,
+     "size": 32,
      "best": "proven",
-     "ready_now": 33
+     "ready_now": 32
     },
     {
      "id": "SP-0140",
+     "name_ar": "فاحص توقيت الفيديو المرجعي",
+     "name_en": "Reference Video Timing Probe",
+     "size": 20,
+     "best": "proven",
+     "ready_now": 20
+    },
+    {
+     "id": "SP-0141",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
      "size": 19,
      "best": "proven",
-     "ready_now": 16
-    },
-    {
-     "id": "SP-0141",
-     "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
-     "name_en": "Staged drawing and original three-value visual studies",
-     "size": 16,
-     "best": "proven",
-     "ready_now": 16
+     "ready_now": 17
     },
     {
      "id": "SP-0142",
-     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
-     "name_en": "Reference Edit Engine",
+     "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
+     "name_en": "Staged drawing and original three-value visual studies",
      "size": 16,
      "best": "proven",
      "ready_now": 16
@@ -464,7 +464,7 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0143",
+     "id": "SP-0144",
      "name_ar": "خريطة ترتيب المهارة",
      "name_en": "Skill Layout Map",
      "size": 12,
@@ -472,7 +472,15 @@
      "ready_now": 12
     },
     {
-     "id": "SP-0144",
+     "id": "SP-0143",
+     "name_ar": "تدقيق أدلة الكتالوج",
+     "name_en": "Catalog Evidence Audit",
+     "size": 12,
+     "best": "proven",
+     "ready_now": 10
+    },
+    {
+     "id": "SP-0145",
      "name_ar": "جسر Blender الآمن",
      "name_en": "Safe headless Blender bridge",
      "size": 12,
@@ -480,15 +488,7 @@
      "ready_now": 10
     },
     {
-     "id": "SP-0145",
-     "name_ar": "مستكشف مصادر المجتمع",
-     "name_en": "Community source scout",
-     "size": 12,
-     "best": "proven",
-     "ready_now": 10
-    },
-    {
-     "id": "SP-0147",
+     "id": "SP-0146",
      "name_ar": "مختبر البرومبت",
      "name_en": "Prompt Lab",
      "size": 10,
@@ -504,31 +504,31 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0146",
-     "name_ar": "تدقيق أدلة الكتالوج",
-     "name_en": "Catalog Evidence Audit",
-     "size": 11,
-     "best": "proven",
-     "ready_now": 9
-    },
-    {
      "id": "SP-0148",
      "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
      "name_en": "Subtitle to words.json converter",
      "size": 9,
      "best": "proven",
      "ready_now": 9
+    },
+    {
+     "id": "SP-0147",
+     "name_ar": "مستكشف مصادر المجتمع",
+     "name_en": "Community source scout",
+     "size": 10,
+     "best": "proven",
+     "ready_now": 8
     }
    ],
-   "powers": 288,
+   "powers": 290,
    "status_mix": {
-    "proven": 171,
+    "proven": 174,
     "ready": 21,
-    "install": 14,
+    "install": 13,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 192,
+   "ready_now": 195,
    "requires": [
     "python3",
     "ffmpeg",
@@ -544,14 +544,14 @@
     "engine:ghidra",
     "git",
     "npm:remotion",
-    "pip:office",
     "pip:faster-whisper",
+    "pip:office",
     "network",
     "npm:p5",
     "fonts:arabic",
+    "imagemagick",
     "yt-dlp",
     "docker",
-    "imagemagick",
     "pip:pandas",
     "pip:torch",
     "tesseract",
@@ -587,10 +587,10 @@
     "pandoc",
     "pip:librosa",
     "pip:anthropic",
+    "pip:fonttools",
     "npm:animejs",
     "npm:esbuild",
     "pip:rdkit",
-    "pip:fonttools",
     "key:openai",
     "npm:lottie",
     "model:yunet",
@@ -1897,7 +1897,7 @@
    "links": [
     "3d",
     "software",
-    "agents",
+    "images",
     "audio"
    ]
   },
@@ -2115,7 +2115,7 @@
     "images",
     "motion",
     "quality",
-    "type"
+    "agents"
    ]
   },
   {

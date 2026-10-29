@@ -63,6 +63,10 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_self_council.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_council.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_think_models.py' -v
+      - name: Mandatory five-member council (A38 §7; hard constraints in every prompt, dropped context reported)
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/llm_council.py --self-test
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_llm_council.py' -v
       - name: Writing tells and anchor gate (62 checks)
         run: python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py
       - name: Smart capability index is up to date
@@ -197,6 +201,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_transcribe_recover.py' -v
       - name: Caption lines (reading rules, suspect-phrase screen, SRT/VTT/JSON)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_caption_lines.py' -v
+      - name: Quran text and timing (offline; captured alquran.cloud answers, synthetic pauses, merges/splits/misses alignment)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_quran_text.py' -v
       - name: Look pipeline (one colour look; ffmpeg parity part skips without ffmpeg)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_look_pipeline.py' -v
       - name: Web app study guardrails and facts-only report (live browser part skips without REA)
@@ -241,8 +247,8 @@ jobs:
           python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py cards-check
           python3 .claude/skills/kosif-superpowers/scripts/github_top_repos.py build --check
           python3 .claude/skills/kosif-superpowers/scripts/micro_index.py build --check
-      - name: HTML renderer disk guard (space pre-flight, stale kosif-frames-* folders, signal cleanup; no browser)
-        run: node --test tests/test_render_html.mjs tests/test_render_html_disk.mjs
+      - name: HTML renderer (disk guard, --stills grid, audio_md5 packet proof; ffmpeg only, the Chromium runs skip without Playwright)
+        run: node --test tests/test_render_html.mjs tests/test_render_html_disk.mjs tests/test_render_html_audio.mjs tests/test_render_html_stills.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules

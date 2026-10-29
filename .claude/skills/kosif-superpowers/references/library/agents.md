@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 171 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 174 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
-| `install` | 14 | 📦 install: needs a package, binary or model first |
+| `install` | 13 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **273** | |
+| **المجموع** | **275** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -90,7 +90,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 175 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 177 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -180,6 +180,8 @@
 | `TOOL-174` | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep | Background job runner and waiter (no sleep waits) | proven | ffmpeg, node, python3, chromium |
 | `TOOL-175` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | proven | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
 | `TOOL-176` | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات | NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | proven | ffmpeg, python3, blender |
+| `TOOL-177` | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب | Free footage: open-licence video sources with search, download and credits | proven | ffmpeg, python3, imagemagick |
+| `TOOL-178` | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز | Quran text and timing: exact verses, measured pauses, verse and word timing for reels | proven | ffmpeg, pip:faster-whisper |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
@@ -229,6 +231,7 @@
 | `TOOL-75` | فاحص العبارات الكتابية النمطية | Writing Tell Scanner | proven | python3 |
 | `TOOL-76` | فاحص عقود التفكير والتوليف KOSIF SEE Pro | SEE Pro Cognitive Fusion contract verifier | proven | python3, network |
 | `TOOL-77` | محلّل نِسَب أبعاد الفيديو | Flexible aspect ratio resolver | proven | python3 |
+| `TOOL-78` | محوّل HTML إلى فيديو MP4 | HTML to MP4 renderer | proven | ffmpeg, node, python3, chromium |
 | `TOOL-79` | بوابة فحص تسليم الفيديو | Video delivery gate | proven | ffmpeg, python3 |
 | `TOOL-80` | محلّل نسب العرض المرن | Flexible aspect ratio resolver | proven | python3 |
 | `TOOL-81` | محوّل حتمي من HTML إلى فيديو MP4 | Deterministic HTML-to-MP4 renderer | proven | ffmpeg, python3, chromium, npm:gsap |
@@ -364,7 +367,6 @@
 | `TOOL-49` | إعادة موازنة فهرس المستودعات الإبداعية | Rebalance creative repo catalog | install | python3, gh, npm:rea |
 | `TOOL-51` | استوديو التنزيل Cinema C للآيفون | Cinema C iPhone downloader studio | install | ffmpeg, python3, yt-dlp |
 | `TOOL-53` | تحليل REA لمستودعات المالك دفعةً واحدة | REA Owned-Repo Batch | install | python3, git, npm:rea |
-| `TOOL-78` | محوّل HTML إلى فيديو MP4 | HTML to MP4 renderer | install | ffmpeg, node, python3, chromium |
 | `TOOL-83` | قالب فيلم HTML Canvas | HTML Canvas film starter | install | ffmpeg, node, python3, chromium |
 | `TOOL-84` | قالب فيلم Remotion | Remotion film starter | install | ffmpeg, python3, npm:remotion, npm:react |
 | `TOOL-87` | رندر سينمائي بـBlender Cycles | Blender Cycles cinematic renders | install | ffmpeg, blender |

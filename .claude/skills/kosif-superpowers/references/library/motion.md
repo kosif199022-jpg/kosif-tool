@@ -82,7 +82,7 @@
 | `reel-factory` | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 | `reference-edit-engine` | محرك إعادة بناء المونتاج المرجعي | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./new-edit` | tested-here |
 | `reference-visual-fingerprint` | البصمة البصرية للفيديو المرجعي | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cuts.json --out ./reference-look.json` | tested-here |
-| `render-html` | محوّل HTML إلى فيديو MP4 | `node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --fps 30 --audio ./voice.wav` | tested-elsewhere |
+| `render-html` | محوّل HTML إلى فيديو MP4 | `node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --fps 30 --audio ./voice.wav` | tested-here |
 | `repo-ashell-cinema` | استوديو التنزيل Cinema C للآيفون | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.com/watch?v=VIDEO_ID"` | tested-elsewhere |
 | `repo-aspects` | محلّل نسب العرض المرن | `python3 -c "import sys; sys.path.insert(0,'tools'); from aspects import resolve; print(resolve('2.35:1'))"` | tested-here |
 | `repo-build` | مولّد ملفات أطلس الأساليب | `python3 tools/build.py` | untested |
