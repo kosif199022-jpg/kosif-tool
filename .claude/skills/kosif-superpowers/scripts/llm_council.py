@@ -117,7 +117,11 @@ HEDGES = re.compile(r"\b(it depends|consider both sides|both have merit)\b|حس�
                     re.I)
 GROUNDING = re.compile(r"(\w+\.(py|md|json|js|html|txt)\b|/\w|\d|unknown|مجهول|غير معروف|لم يُتحقق|دليل|evidence)",
                        re.I)
-PLAN_REF = re.compile(r"(?:\bplan\s*|الخطة\s*|خطة\s*)([A-D])\b", re.I)
+# A plan letter: «الخطة B», "plan B", or a backing verb before a bare letter («أدعم B»، «أساند B»، «أنا مع B»,
+# "I back B"), or a bold letter opening a line («**B** مخسوسة»). 29-10-2026: four advisors wrote «أدعم B» and were read as no plan.
+PLAN_REF = re.compile(r"(?:\bplan\s*|\boption\s*|الخطة\s*|خطة\s*|الخيار\s*"
+                      r"|(?:أدعم|أساند|أؤيد|أختار|أرشّح|أرشح|أوصي ب|أنصح ب|أنا مع|\bI (?:back|support|recommend|choose)|\bgo with)"
+                      r"\s*(?:\*\*)?\s*(?:الخطة\s*)?|^[^\w\n]*\*\*)([A-D])\b", re.I | re.M)
 WORDS_MIN, WORDS_MAX = 120, 360   # advisors are asked for 150-300 words; a little slack either way
 LIGHT_MAX = 120                   # a LIGHT voice is one or two lines
 REVIEW_MAX = 260
@@ -739,6 +743,11 @@ def self_test() -> int:
                                                                    "reviews": {}, "map": None})
         c = load(d)
         assert "between A: templates" in c["question"] and c["brief_recommended"] == "A"
+        for txt_, want in (("**أساند B، بشرط خمسة إصلاحات", "B"), ("المنفِّذ: أدعم B، بس نبنيها", "B"), ("أنا مع C بعد تخسيسه", "C"),
+                           ("- **B** مخسوسة، ومتنفذة على محرك A", "B"), ("I back A, piloted small", "A"), ("الخطة D", "D"),
+                           ("the planner A said", None), ("أدعم بقوة", None)):
+            m_ = PLAN_REF.search(txt_)
+            assert (m_.group(1).upper() if m_ else None) == want, (txt_, m_ and m_.group(1))
         assert c["plans_source"] == "brief"
         outsider = (d / "prompts" / "advisor_outsider.txt").read_text(encoding="utf-8")
         assert "Context worth reading" not in outsider and "Unknown / مجهول" not in outsider
