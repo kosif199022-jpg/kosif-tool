@@ -19,8 +19,18 @@
  *   node tools/render_html.cjs --in <file.html|http URL> --out <out.mp4>
  *        [--aspect <spec>] [--width 1080] [--height 1920] [--fps 30] [--duration <s>] [--start 0]
  *        [--audio <file>] [--mode seek|virtual] [--preview] [--frames-dir <dir>]
+ *        [--stills <t1,t2,...> [--stills-dir <dir>]] [--report <file.json>]
  *        [--crf 17] [--scale 1] [--seed <n>] [--offline] [--keep-frames]
  *        [--timeout <ms>] [--settle <ms>] [--no-space-check] [--clean-stale]
+ *
+ * Stills: --stills seeks the page to each film time, writes still_<t>.png and one labelled grid
+ * (stills_grid.png, times printed on every tile) plus stills.json, and encodes no video.
+ *
+ * Audio proof: when --audio is stream-copied, the MD5 of the source's and the output's audio
+ * packets (ffmpeg -map 0:a:0 -c copy -f md5 -, AAC through aac_adtstoasc as tools/verify_video.py
+ * --source-audio does) is compared and the VERIFY line says audio_md5=match, or
+ * audio_md5=differs (src N packets, out M packets) with a loud explanation on stderr (a cut at the
+ * last video frame is allowed and never fails the render); a re-encoded track says audio_md5=reencoded.
  *
  * Disk guard: PNG frames are big (about 3.4 MB per 1080x1920 frame), so before the first
  * frame the renderer checks that the frames folder's disk can hold them, lists stale
@@ -95,6 +105,9 @@ const SPACE_MARGIN = 0.10;
 const STALE_AGE_HOURS = 6;
 const SIGNAL_EXIT = { SIGINT: 130, SIGTERM: 143, SIGHUP: 129 };
 
+// --stills: at most this many times per run (each is a full-size PNG; the grid stays a sane size).
+const MAX_STILLS = 64;
+
 // ---------------------------------------------------------------- CLI parsing
 
 class UsageError extends Error {}
@@ -114,10 +127,22 @@ Options
   --fps <n>           frames per second                   (default ${DEFAULTS.fps})
   --duration <s>      seconds to render (seek mode: defaults to window.__kosif.duration)
   --start <s>         film time of the first frame        (default ${DEFAULTS.start})
-  --audio <file>      mux this audio (copied as-is if AAC/MP3/ALAC, else AAC 320k)
+  --audio <file>      mux this audio (copied as-is if AAC/MP3/ALAC, else AAC 320k). A copied track is
+                      proved by packet MD5: VERIFY ... audio_md5=match | differs (src N packets, out M packets)
+                      (differs never fails the render: a cut at the last video frame is allowed, and stderr
+                      says which packets were cut or changed); a re-encoded track says audio_md5=reencoded
   --mode seek|virtual driver; auto-detected when omitted (seek if window.__kosif exists)
   --preview           render 8 evenly spaced frames into a contact sheet PNG instead of a video,
                       written next to --out as <out name>_preview.png (out/p.mp4 -> out/p_preview.png)
+  --stills <times>    instead of a video, capture the film at these times: seconds or m:ss, comma-separated
+                      (--stills 0,1.5,2.25s,1:04), read to the millisecond, sorted, at most ${MAX_STILLS}. Writes
+                      still_<t>.png (t with 3 decimals), stills_grid.png (labelled with the times) and stills.json.
+                      Seek mode draws the exact time; virtual mode takes the nearest frame at --fps (labelled #n).
+                      --start and --audio are ignored; --duration is not needed
+  --stills-dir <dir>  where the stills go (created; other files in it are left alone; with it --out may be
+                      omitted); default: <out name>_stills/ next to --out (out/p.mp4 -> out/p_stills/)
+  --report <file>     also write a JSON report: the VERIFY values and the audio proof (render), the
+                      contact sheet (preview) or the stills manifest (stills)
   --frames-dir <dir>  where PNG frames go (kept; a ${USER_FRAMES_MARKER} file marks the folder so --clean-stale never
                       deletes it); default: a temp dir (${FRAMES_PREFIX}XXXXXX) that is deleted at the end, on errors
                       and when the render is stopped with Ctrl+C, SIGTERM or SIGHUP
@@ -147,7 +172,7 @@ ${EXIT_VERIFY} ffprobe disagrees with the request, ${SIGNAL_EXIT.SIGINT}/${SIGNA
 // Every option the CLI understands. Anything else is reported as a usage error,
 // so a typo such as --fsp 24 never renders silently with the default.
 const VALUE_OPTIONS = new Set(['in', 'out', 'aspect', 'width', 'height', 'fps', 'duration', 'start',
-  'audio', 'mode', 'frames-dir', 'crf', 'scale', 'seed', 'timeout', 'settle']);
+  'audio', 'mode', 'frames-dir', 'crf', 'scale', 'seed', 'timeout', 'settle', 'stills', 'stills-dir', 'report']);
 const FLAG_OPTIONS = new Set(['preview', 'offline', 'keep-frames', 'no-space-check', 'clean-stale', 'help']);
 
 function parseArgs(argv) {
@@ -702,22 +727,174 @@ function encodeVideo({ framesDir, frames, fps, out, crf, audio, start, width, he
   args.push('-c:v', 'libx264', '-preset', 'slow', '-crf', String(crf), '-profile:v', 'high', '-pix_fmt', 'yuv420p',
     '-colorspace', 'bt709', '-color_primaries', 'bt709', '-color_trc', 'bt709', '-color_range', 'tv',
     '-r', String(fps), '-movflags', '+faststart');
+  let audioInfo = null;
   if (audio) {
     const codec = audioCodecOf(audio);
     if (MP4_COPY_AUDIO.has(codec)) {
       // Byte-for-byte copy of the user's audio, trimmed at the last video frame.
       args.push('-c:a', 'copy', '-t', (frames / fps).toFixed(6));
       log(`audio: ${codec} stream-copied (not re-encoded)`);
+      audioInfo = { handling: 'copy', codec };
     } else {
       // apad appends silence so -shortest ends exactly at the last video frame;
       // the voice samples themselves are never resampled or retimed.
       args.push('-c:a', 'aac', '-b:a', '320k', '-af', 'apad', '-shortest');
       log(`audio: ${codec || 'unknown'} cannot live in MP4 as-is; AAC 320k (keep your master)`);
+      audioInfo = { handling: 'reencoded', codec: codec || null };
     }
   }
   args.push(out);
   const r = runTool('ffmpeg', args);
   if (r.status !== 0) throw new Error('ffmpeg failed:\n' + (r.stderr || r.stdout));
+  return { audio: audioInfo };
+}
+
+// ------------------------------------------------------------- audio proof
+// A stream-copied track must reach the MP4 byte for byte. The proof hashes the packets of the first
+// audio stream of the source and of the output without decoding them (ffmpeg -c copy into the md5
+// and framemd5 muxers). AAC goes through aac_adtstoasc on both sides, as tools/verify_video.py
+// --source-audio does: it strips the 7-byte ADTS headers of a raw .aac source the way the MP4 mux
+// does and passes MP4-style AAC through unchanged (the filter refuses every other codec).
+// Pure helpers below; tests/test_render_html_audio.mjs exercises them.
+
+function audioHashArgs(file, codec, format) {
+  return ['-hide_banner', '-v', 'error', '-nostdin', '-i', file, '-map', '0:a:0', '-c', 'copy',
+    ...(codec === 'aac' ? ['-bsf:a', 'aac_adtstoasc'] : []), '-f', format, '-'];
+}
+
+function parseMd5(text) {
+  const m = /MD5=([0-9a-f]{32})/.exec(String(text || ''));
+  return m ? m[1] : null;
+}
+
+// framemd5 output -> { tb: [num, den] | null, packets: [{ pts, duration, size, hash }] } (one stream).
+// A data line is "stream, dts, pts, duration, size, hash[, side data...]".
+function parseFrameMd5(text) {
+  let tb = null;
+  const packets = [];
+  for (const line of String(text || '').split(/\r?\n/)) {
+    const tbm = /^#tb 0:\s*(\d+)\/(\d+)/.exec(line);
+    if (tbm) { tb = [Number(tbm[1]), Number(tbm[2])]; continue; }
+    if (!line || line.startsWith('#')) continue;
+    const f = line.split(',').map((s) => s.trim());
+    if (f.length < 6 || f[0] !== '0' || !/^[0-9a-f]{32}$/.test(f[5])) continue;
+    packets.push({ pts: Number(f[2]), duration: Number(f[3]), size: Number(f[4]), hash: f[5] });
+  }
+  return { tb, packets };
+}
+
+// Seconds at which the last packet ends, or null when the time base or the numbers are missing.
+function packetsEndSeconds(hashes) {
+  if (!hashes || !hashes.tb || !hashes.packets || !hashes.packets.length) return null;
+  const last = hashes.packets[hashes.packets.length - 1];
+  const end = (last.pts + last.duration) * hashes.tb[0] / hashes.tb[1];
+  return Number.isFinite(end) ? Math.round(end * 1000) / 1000 : null;
+}
+
+// Compares two hash sets ({ md5, packets }). verdict: 'match' when the whole-stream MD5s and the packet
+// counts are equal, else 'differs'. relation says why: 'identical'; 'prefix' (the output is the first M
+// source packets byte for byte: the rest was cut at the last video frame); 'run' (a contiguous run from
+// packet `offset`: --start cut the head too); 'changed' (some packet's bytes changed; first_mismatch is
+// the 0-based output packet).
+function compareAudioPackets(src, out) {
+  const n = src.packets.length;
+  const m = out.packets.length;
+  const res = {
+    verdict: 'differs', relation: 'changed', src_md5: src.md5, out_md5: out.md5,
+    src_packets: n, out_packets: m, offset: null, cut_before: null, cut_after: null, first_mismatch: null,
+    src_end_s: packetsEndSeconds(src), out_end_s: packetsEndSeconds(out),
+  };
+  if (src.md5 && src.md5 === out.md5 && n === m) {
+    return { ...res, verdict: 'match', relation: 'identical', offset: 0, cut_before: 0, cut_after: 0 };
+  }
+  const sh = src.packets.map((p) => p.hash);
+  const oh = out.packets.map((p) => p.hash);
+  if (m > 0 && m <= n) {
+    for (let k = 0; k + m <= n; k++) {
+      if (sh[k] !== oh[0]) continue;
+      let j = 1;
+      while (j < m && sh[k + j] === oh[j]) j++;
+      if (j === m) return { ...res, relation: k === 0 ? 'prefix' : 'run', offset: k, cut_before: k, cut_after: n - k - m };
+    }
+  }
+  // No contiguous run matches: align on the first packet (or at 0) and name the first changed one.
+  const k0 = Math.max(0, sh.indexOf(oh[0]));
+  let j = 0;
+  while (j < m && k0 + j < n && sh[k0 + j] === oh[j]) j++;
+  return { ...res, offset: k0, first_mismatch: j < m ? j : null };
+}
+
+// The audio_md5= value of the VERIFY line.
+function audioMd5Token(proof) {
+  if (!proof || proof.verdict === 'none') return 'none';
+  if (proof.verdict === 'match') return 'match';
+  if (proof.verdict === 'reencoded') return 'reencoded';
+  if (proof.verdict === 'differs') return `differs (src ${proof.src_packets} packets, out ${proof.out_packets} packets)`;
+  return `unknown (${proof.reason || 'not computed'})`;
+}
+
+// Lines for stderr when a copied track is not byte-identical: what was cut or changed, and what to do.
+function audioProofWarning(proof, { source, output, filmSeconds, start = 0 } = {}) {
+  if (!proof || proof.verdict !== 'differs') return [];
+  const span = (a, b) => (a === b ? `packet ${a}` : `packets ${a}-${b}`);
+  const lines = [
+    `AUDIO NOT BYTE-IDENTICAL TO THE SOURCE: audio_md5=${audioMd5Token(proof)}`,
+    `  source md5 ${proof.src_md5 || '?'} (${proof.src_packets} packets${proof.src_end_s !== null ? `, ends at ${proof.src_end_s}s` : ''})${source ? ': ' + source : ''}`,
+    `  output md5 ${proof.out_md5 || '?'} (${proof.out_packets} packets${proof.out_end_s !== null ? `, ends at ${proof.out_end_s}s` : ''})${output ? ': ' + output : ''}`,
+  ];
+  const plural = (k) => `${k} packet${k === 1 ? '' : 's'}`;
+  if (proof.relation === 'prefix' || proof.relation === 'run') {
+    lines.push(`  every output packet is byte-identical to source ${span(proof.offset + 1, proof.offset + proof.out_packets)}: nothing was re-encoded, packets were only cut.`);
+    const why = [];
+    if (proof.cut_before > 0) why.push(`${plural(proof.cut_before)} before ${start > 0 ? `--start ${start}s` : 'the first video frame'}`);
+    if (proof.cut_after > 0) why.push(`${plural(proof.cut_after)} after the last video frame` +
+      (filmSeconds ? ` (the film is ${Number(filmSeconds.toFixed(3))}s${proof.src_end_s !== null ? `, the source audio ends at ${proof.src_end_s}s` : ''})` : ''));
+    lines.push(`  cut: ${why.join(' and ') || 'nothing'}. This trim is allowed; to keep every packet, render at least as long as the audio (--duration).`);
+  } else {
+    lines.push(proof.first_mismatch !== null
+      ? `  output packet ${proof.first_mismatch + 1} differs from source packet ${proof.offset + proof.first_mismatch + 1}: the audio BYTES CHANGED, not just cut.`
+      : '  the output packets do not line up with the source: the audio BYTES CHANGED, not just cut.');
+    lines.push('  re-render from the untouched source file.');
+  }
+  lines.push('  the render is kept (audio_md5 never fails it). Keep the source as the master, and never re-mux the delivery (ffmpeg -shortest drops the last packet).');
+  return lines;
+}
+
+function audioPacketHashes(file, codec) {
+  const md5 = runTool('ffmpeg', audioHashArgs(file, codec, 'md5'));
+  if (md5.status !== 0 || !parseMd5(md5.stdout)) {
+    return { error: `ffmpeg could not hash the audio packets of ${file}: ${String(md5.stderr || '').trim().split(/\r?\n/).pop() || 'no MD5 line'}` };
+  }
+  const frames = runTool('ffmpeg', audioHashArgs(file, codec, 'framemd5'));
+  if (frames.status !== 0) return { error: `ffmpeg framemd5 failed on ${file}: ${String(frames.stderr || '').trim().split(/\r?\n/).pop()}` };
+  const parsed = parseFrameMd5(frames.stdout);
+  return { md5: parseMd5(md5.stdout), tb: parsed.tb, packets: parsed.packets };
+}
+
+// The proof for one render: 'reencoded' when the track was encoded, else the packet comparison
+// (or 'unknown' with a reason when ffmpeg cannot hash a side). Never throws.
+function proveAudio({ audioInfo, source, output }) {
+  if (!audioInfo) return { verdict: 'none' };
+  if (audioInfo.handling !== 'copy') return { verdict: 'reencoded', codec_in: audioInfo.codec, codec_out: 'aac' };
+  try {
+    const src = audioPacketHashes(source, audioInfo.codec);
+    if (src.error) return { verdict: 'unknown', reason: src.error };
+    const out = audioPacketHashes(output, audioInfo.codec);
+    if (out.error) return { verdict: 'unknown', reason: out.error };
+    return compareAudioPackets(src, out);
+  } catch (e) {
+    return { verdict: 'unknown', reason: String(e.message || e) };
+  }
+}
+
+function verifyLine({ problems, probe, audioMd5, out }) {
+  return `VERIFY ${problems.length ? 'FAIL' : 'OK'} duration=${probe.duration.toFixed(3)}s fps=${probe.fps} frames=${probe.frames} ` +
+    `size=${probe.width}x${probe.height} audio=${probe.audio ? probe.audioCodec : 'none'} audio_md5=${audioMd5} file=${out}`;
+}
+
+function writeJsonReport(file, data) {
+  fs.mkdirSync(path.dirname(file), { recursive: true });
+  fs.writeFileSync(file, JSON.stringify(data, null, 2) + '\n');
 }
 
 function probeVideo(file) {
@@ -758,24 +935,141 @@ function verifyProbe(probe, want) {
 
 // ---------------------------------------------------------------- preview
 
-function composeContactSheet({ framesDir, picks, out }) {
-  const hasDrawtext = ffmpegHasFilter('drawtext');
-  picks.forEach(({ file, t, index }, k) => {
-    const tile = path.join(framesDir, `preview_tile_${String(k).padStart(2, '0')}.png`);
-    const filters = [];
-    if (hasDrawtext) {
-      const label = `${t.toFixed(2)}s  #${index}`;
-      filters.push(`drawtext=text='${label}':fontcolor=white:fontsize=h/36:box=1:boxcolor=black@0.55:boxborderw=10:x=14:y=14`);
+// Grid shape for n tiles: one row up to 4, then 4, 6 or 8 columns.
+function gridLayout(n) {
+  if (!(n >= 1)) return { cols: 0, rows: 0 };
+  const cols = n <= 4 ? n : n <= 8 ? 4 : n <= 24 ? 6 : 8;
+  return { cols, rows: Math.ceil(n / cols) };
+}
+
+// 3x5 pixel glyphs for tile labels when ffmpeg has no drawtext (built without libfreetype) or
+// drawtext finds no font: drawbox is part of every ffmpeg, so the times are always printed.
+const BITMAP_FONT = {
+  0: ['111', '101', '101', '101', '111'],
+  1: ['010', '110', '010', '010', '111'],
+  2: ['111', '001', '111', '100', '111'],
+  3: ['111', '001', '111', '001', '111'],
+  4: ['101', '101', '111', '001', '001'],
+  5: ['111', '100', '111', '001', '111'],
+  6: ['111', '100', '111', '101', '111'],
+  7: ['111', '001', '001', '001', '001'],
+  8: ['111', '101', '111', '101', '111'],
+  9: ['111', '101', '111', '001', '111'],
+  '.': ['000', '000', '000', '000', '010'],
+  s: ['011', '100', '010', '001', '110'],
+  '#': ['01010', '11111', '01010', '11111', '01010'],
+  ' ': ['000', '000', '000', '000', '000'],
+};
+
+// drawbox filters that print text (digits, '.', 's', '#', space; anything else is a space) at x,y
+// with px-sized pixels on a dark box. One blank column between glyphs; runs of lit pixels in a glyph
+// row become one box.
+function bitmapLabelFilters(text, { x = 10, y = 10, px = 3 } = {}) {
+  const glyphs = [...String(text)].map((ch) => BITMAP_FONT[ch] || BITMAP_FONT[' ']);
+  const pad = px * 2;
+  const cols = Math.max(1, glyphs.reduce((s, g) => s + g[0].length + 1, 0) - 1);
+  const out = [`drawbox=x=${x - pad}:y=${y - pad}:w=${cols * px + 2 * pad}:h=${5 * px + 2 * pad}:color=black@0.6:t=fill`];
+  let left = 0;
+  for (const glyph of glyphs) {
+    glyph.forEach((row, r) => {
+      for (let c = 0; c < row.length; c++) {
+        if (row[c] !== '1') continue;
+        let run = 1;
+        while (c + run < row.length && row[c + run] === '1') run++;
+        out.push(`drawbox=x=${x + (left + c) * px}:y=${y + r * px}:w=${run * px}:h=${px}:color=white:t=fill`);
+        c += run - 1;
+      }
+    });
+    left += glyph[0].length + 1;
+  }
+  return out;
+}
+
+// The label filters for one tile: drawtext when available, else the bitmap digits. The label text
+// only ever holds digits, '.', 's', '#' and spaces, so it needs no drawtext escaping.
+function labelFilters(text, drawtext) {
+  if (drawtext) return [`drawtext=text='${text}':fontcolor=white:fontsize=20:box=1:boxcolor=black@0.6:boxborderw=8:x=10:y=10`];
+  return bitmapLabelFilters(text, { x: 12, y: 12, px: 3 });
+}
+
+const TILE_SCALE = 'scale=480:540:force_original_aspect_ratio=decrease';
+
+// Tiles picks [{ file, label }] into one PNG (preview contact sheet and --stills grid). The tiles go to
+// workDir as preview_tile_NN.png; every tile is labelled after scaling, so labels read the same at any aspect.
+function composeGrid({ workDir, picks, out, drawtext = ffmpegHasFilter('drawtext') }) {
+  const { cols, rows } = gridLayout(picks.length);
+  let useDrawtext = drawtext;
+  picks.forEach(({ file, label }, k) => {
+    const tile = path.join(workDir, `preview_tile_${String(k).padStart(2, '0')}.png`);
+    const run = (withDrawtext) => runTool('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', file,
+      '-vf', [TILE_SCALE, ...labelFilters(label, withDrawtext)].join(','), '-update', '1', tile]);
+    let r = run(useDrawtext);
+    if (r.status !== 0 && useDrawtext) {
+      warn(`drawtext failed (${String(r.stderr || '').trim().split(/\r?\n/).pop()}); labelling with built-in digits`);
+      useDrawtext = false;
+      r = run(false);
     }
-    filters.push('scale=480:540:force_original_aspect_ratio=decrease');
-    const r = runTool('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', '-i', file, '-vf', filters.join(','), '-update', '1', tile]);
-    if (r.status !== 0) throw new Error('ffmpeg (preview tile) failed:\n' + r.stderr);
+    if (r.status !== 0) throw new Error('ffmpeg (grid tile) failed:\n' + r.stderr);
   });
   const r = runTool('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error',
-    '-framerate', '1', '-i', path.join(framesDir, 'preview_tile_%02d.png'),
-    '-vf', 'tile=4x2:padding=8:margin=12:color=0x101418', '-frames:v', '1', '-update', '1', out]);
-  if (r.status !== 0) throw new Error('ffmpeg (contact sheet) failed:\n' + r.stderr);
-  return { out, labeled: hasDrawtext };
+    '-framerate', '1', '-i', path.join(workDir, 'preview_tile_%02d.png'),
+    '-vf', `tile=${cols}x${rows}:padding=8:margin=12:color=0x101418`, '-frames:v', '1', '-update', '1', out]);
+  if (r.status !== 0) throw new Error('ffmpeg (grid) failed:\n' + r.stderr);
+  return { out, cols, rows, labels: useDrawtext ? 'drawtext' : 'bitmap' };
+}
+
+// ----------------------------------------------------------------- stills
+
+// "0,1.5,2.25s,1:04" -> [0, 1.5, 2.25, 64]: film times in seconds (an optional trailing "s") or m:ss(.fff),
+// read to the millisecond, de-duplicated and sorted (the virtual driver cannot move back in time).
+function parseStillTimes(spec) {
+  const example = 'e.g. --stills 0,1.5,2.25s,1:04';
+  if (spec === undefined || spec === null || spec === true) throw new UsageError(`--stills needs a comma-separated list of times in seconds (${example})`);
+  const parts = String(spec).split(',').map((s) => s.trim()).filter((s) => s !== '');
+  if (!parts.length) throw new UsageError(`--stills needs at least one time (${example})`);
+  const times = [];
+  for (const p of parts) {
+    const sec = /^(\d+(?:\.\d*)?|\.\d+)s?$/i.exec(p);
+    const mss = /^(\d+):([0-5]\d(?:\.\d*)?)$/.exec(p);
+    if (!sec && !mss) {
+      throw new UsageError(`--stills: "${p}" is not a film time (seconds such as 0, 1.5 or 2.25s, or m:ss such as 1:04; ${example})`);
+    }
+    const t = Math.round((sec ? Number(sec[1]) : Number(mss[1]) * 60 + Number(mss[2])) * 1000) / 1000;
+    if (!times.includes(t)) times.push(t);
+  }
+  if (times.length > MAX_STILLS) throw new UsageError(`--stills takes at most ${MAX_STILLS} times, got ${times.length}`);
+  return times.sort((a, b) => a - b);
+}
+
+function stillName(t) { return `still_${t.toFixed(3)}.png`; }
+
+// The capture plan for --stills: per time, the file, the frame index at fps and the time actually drawn
+// (seek mode: exactly t; virtual mode: the nearest frame, index / fps).
+function planStills(times, { fps, driver, dir }) {
+  return times.map((t) => {
+    const frame = Math.round(t * fps);
+    const tActual = driver === 'virtual' ? Math.round((frame / fps) * 1000) / 1000 : t;
+    const label = `${tActual.toFixed(3)}s` + (driver === 'virtual' ? ` #${frame}` : '');
+    return { t, t_actual: tActual, frame, file: path.join(dir, stillName(t)), label };
+  });
+}
+
+// Seeks the driver to each pick's time and captures it (the preview and --stills share this). Picks are
+// in time order; one that lands on the same virtual frame as the pick before it is a copy of that file.
+async function capturePicks(driver, picks, { capWidth, capHeight, describe }) {
+  let prev = null;
+  for (let k = 0; k < picks.length; k++) {
+    const p = picks[k];
+    if (prev && driver.name === 'virtual' && driver.frameIndex(p.t) === driver.frameIndex(prev.t)) {
+      fs.copyFileSync(prev.file, p.file);
+    } else {
+      await driver.goTo(p.t);
+      await driver.capture(p.file);
+      if (k === 0) checkFrameSize(p.file, capWidth, capHeight);
+    }
+    log(describe(p, k, picks.length));
+    prev = p;
+  }
 }
 
 // -------------------------------------------------------------------- main
@@ -813,7 +1107,12 @@ async function main() {
   if (args.help) { usage(); return 0; }
   checkArgs(args);
   if (!args.in) throw new UsageError('--in <file.html|http URL> is required');
-  if (!args.out) throw new UsageError('--out <out.mp4> is required');
+  const stills = args.stills === undefined ? null : parseStillTimes(args.stills);
+  if (args['stills-dir'] !== undefined && !stills) throw new UsageError('--stills-dir needs --stills <t1,t2,...>');
+  if (stills && args.preview) throw new UsageError('--stills and --preview are separate modes: use one of them');
+  if (!args.out && !(stills && args['stills-dir'] !== undefined)) {
+    throw new UsageError(`--out <out.mp4> is required${stills ? ' (or give --stills-dir <dir>)' : ''}`);
+  }
 
   const fromAspect = args.aspect ? aspectSize(String(args.aspect)) : null;
   if (args.aspect && !fromAspect) throw new UsageError(`--aspect ${args.aspect} is not a readable ratio (W:H, WxH or a name)`);
@@ -836,9 +1135,13 @@ async function main() {
   const cleanStale = !!args['clean-stale'];
   const audio = args.audio && args.audio !== true ? path.resolve(String(args.audio)) : null;
   if (audio && !fs.existsSync(audio)) throw new UsageError(`--audio file not found: ${audio}`);
-  if (audio && preview) warn('--audio is ignored in --preview mode');
+  if (audio && (preview || stills)) warn(`--audio is ignored in --${preview ? 'preview' : 'stills'} mode`);
+  if (stills && args.start !== undefined) warn('--start is ignored with --stills: the --stills times are film times');
+  const reportPath = args.report ? path.resolve(String(args.report)) : null;
 
-  const outPath = path.resolve(String(args.out));
+  const outPath = args.out ? path.resolve(String(args.out)) : null;
+  const stillsDir = !stills ? null : args['stills-dir'] !== undefined ? path.resolve(String(args['stills-dir']))
+    : path.join(path.dirname(outPath), path.basename(outPath, path.extname(outPath)) + '_stills');
   const outWidth = Math.round(width * scale);
   const outHeight = Math.round(height * scale);
   // Chromium ignores a device scale below 1 for screenshots: capture at 1x and let ffmpeg downscale.
@@ -910,8 +1213,9 @@ async function main() {
   let session = null;
   let exitCode = 0;
   try {
-    fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    if (duration !== null) checkSpace(Math.round(duration * fps)); // known now: fail before Chromium starts
+    if (outPath) fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    if (stills) { fs.mkdirSync(stillsDir, { recursive: true }); checkSpace(stills.length); } // the stills: full-size PNGs
+    else if (duration !== null) checkSpace(Math.round(duration * fps)); // known now: fail before Chromium starts
     session = await openBrowser(playwright, browserOpts);
     let hook = await loadPage(session.page, url, { timeout, settle });
     let useVirtual = mode === 'virtual';
@@ -926,11 +1230,9 @@ async function main() {
     }
     const { page, cdp, errors } = session;
 
-    if (duration === null) {
-      if (hook && Number.isFinite(hook.duration) && hook.duration > 0) duration = hook.duration;
-      else throw new UsageError('--duration is required (page has no window.__kosif.duration)');
-    }
-    const total = Math.round(duration * fps);
+    if (duration === null && hook && Number.isFinite(hook.duration) && hook.duration > 0) duration = hook.duration;
+    if (duration === null && !stills) throw new UsageError('--duration is required (page has no window.__kosif.duration)');
+    const total = stills ? stills.length : Math.round(duration * fps);
     if (total < 1) throw new UsageError('duration * fps must be at least one frame');
 
     if (useVirtual && capScale > 1) {
@@ -942,53 +1244,106 @@ async function main() {
     if (useVirtual) { driver = new VirtualDriver(page, cdp, fps); await driver.start(); }
     else driver = new SeekDriver(page, cdp, { width, height, scale: capScale });
 
-    log(`mode: ${driver.name} | ${width}x${height} css px, scale ${scale} -> ${outWidth}x${outHeight} | ${fps} fps | ${total} frames | start ${fmtTime(start)} | duration ${fmtTime(duration)}`);
-    const timeOf = (i) => start + i / fps;
-
-    if (preview) {
-      const count = Math.min(8, total);
-      const indices = [];
-      for (let k = 0; k < count; k++) {
-        const idx = count === 1 ? 0 : Math.round((k * (total - 1)) / (count - 1));
-        if (!indices.includes(idx)) indices.push(idx);
+    if (stills) {
+      log(`mode: ${driver.name} | ${width}x${height} css px, capture ${capWidth}x${capHeight} | ${stills.length} still${stills.length === 1 ? '' : 's'} -> ${stillsDir}` +
+        (driver.name === 'virtual' ? ` | virtual time: nearest frame at ${fps} fps` : ' | seek: exact times'));
+      if (duration !== null) {
+        const late = stills.filter((t) => t > duration);
+        if (late.length) warn(`--stills ${late.join(', ')} lie${late.length === 1 ? 's' : ''} past the film's duration (${duration}s); the page draws whatever it draws there`);
       }
-      const picks = [];
-      for (let k = 0; k < indices.length; k++) {
-        const idx = indices[k];
-        const t = timeOf(idx);
-        await driver.goTo(t);
-        const file = path.join(framesDir, `preview_raw_${String(k).padStart(2, '0')}.png`);
-        await driver.capture(file);
-        if (k === 0) checkFrameSize(file, capWidth, capHeight);
-        picks.push({ file, t, index: idx });
-        log(`preview ${k + 1}/${indices.length}: frame ${idx} (t=${fmtTime(t)})`);
-      }
-      const sheet = path.join(path.dirname(outPath), path.basename(outPath, path.extname(outPath)) + '_preview.png');
-      const res = composeContactSheet({ framesDir, picks, out: sheet });
-      log(`contact sheet: ${res.out} (${picks.length} frames, ${res.labeled ? 'labeled' : 'unlabeled'})`);
-      log('PREVIEW ' + res.out);
+      const picks = planStills(stills, { fps, driver: driver.name, dir: stillsDir });
+      await capturePicks(driver, picks, {
+        capWidth, capHeight,
+        describe: (p, k, n) => `still ${k + 1}/${n}: t=${fmtTime(p.t)}` +
+          (driver.name === 'virtual' ? ` -> frame ${p.frame} (t=${fmtTime(p.t_actual)})` : '') + ` -> ${p.file}`,
+      });
+      const gridPath = path.join(stillsDir, 'stills_grid.png');
+      const grid = composeGrid({ workDir: framesDir, picks, out: gridPath });
+      const manifest = {
+        schema: 'kosif.render_html.stills.v1', mode: 'stills', in: url, driver: driver.name, fps,
+        width: capWidth, height: capHeight, dir: stillsDir, grid: gridPath,
+        grid_layout: { cols: grid.cols, rows: grid.rows }, labels: grid.labels,
+        film_duration: duration,
+        stills: picks.map((p) => ({ t: p.t, t_actual: p.t_actual, frame: p.frame, file: p.file, label: p.label })),
+        page_errors: errors.slice(0, 10),
+      };
+      writeJsonReport(path.join(stillsDir, 'stills.json'), manifest);
+      if (reportPath) writeJsonReport(reportPath, manifest);
+      log(`stills grid: ${gridPath} (${picks.length} still${picks.length === 1 ? '' : 's'}, ${grid.cols}x${grid.rows}, labels: ${grid.labels === 'drawtext' ? 'drawtext' : 'built-in digits'}); manifest ${path.join(stillsDir, 'stills.json')}`);
+      log('STILLS ' + gridPath);
     } else {
-      const t0 = Date.now();
-      for (let i = 0; i < total; i++) {
-        const t = timeOf(i);
-        await driver.goTo(t);
-        const file = path.join(framesDir, frameName(i));
-        await driver.capture(file);
-        if (i === 0) checkFrameSize(file, capWidth, capHeight);
-        if ((i + 1) % 30 === 0 || i + 1 === total) {
-          const elapsed = (Date.now() - t0) / 1000;
-          log(`frame ${i + 1}/${total} (t=${fmtTime(t)}) ${elapsed.toFixed(1)}s elapsed`);
+      log(`mode: ${driver.name} | ${width}x${height} css px, scale ${scale} -> ${outWidth}x${outHeight} | ${fps} fps | ${total} frames | start ${fmtTime(start)} | duration ${fmtTime(duration)}`);
+      const timeOf = (i) => start + i / fps;
+
+      if (preview) {
+        const count = Math.min(8, total);
+        const indices = [];
+        for (let k = 0; k < count; k++) {
+          const idx = count === 1 ? 0 : Math.round((k * (total - 1)) / (count - 1));
+          if (!indices.includes(idx)) indices.push(idx);
         }
-      }
-      log(`encoding ${total} frames -> ${outPath}`);
-      encodeVideo({ framesDir, frames: total, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight, capWidth, capHeight });
-      const probe = probeVideo(outPath);
-      const want = { fps, frames: total, duration: total / fps, width: outWidth + (outWidth % 2), height: outHeight + (outHeight % 2), audio: !!audio };
-      const problems = verifyProbe(probe, want);
-      log(`VERIFY ${problems.length ? 'FAIL' : 'OK'} duration=${probe.duration.toFixed(3)}s fps=${probe.fps} frames=${probe.frames} size=${probe.width}x${probe.height} audio=${probe.audio ? probe.audioCodec : 'none'} file=${outPath}`);
-      if (problems.length) {
-        warn('verification problems: ' + problems.join('; '));
-        exitCode = EXIT_VERIFY;
+        const picks = indices.map((idx, k) => {
+          const t = timeOf(idx);
+          return { t, index: idx, file: path.join(framesDir, `preview_raw_${String(k).padStart(2, '0')}.png`), label: `${t.toFixed(2)}s  #${idx}` };
+        });
+        await capturePicks(driver, picks, {
+          capWidth, capHeight, describe: (p, k, n) => `preview ${k + 1}/${n}: frame ${p.index} (t=${fmtTime(p.t)})`,
+        });
+        const sheet = path.join(path.dirname(outPath), path.basename(outPath, path.extname(outPath)) + '_preview.png');
+        const res = composeGrid({ workDir: framesDir, picks, out: sheet });
+        log(`contact sheet: ${res.out} (${picks.length} frames, labels: ${res.labels === 'drawtext' ? 'drawtext' : 'built-in digits'})`);
+        if (reportPath) {
+          writeJsonReport(reportPath, {
+            schema: 'kosif.render_html.report.v1', mode: 'preview', in: url, driver: driver.name, fps, sheet: res.out,
+            frames: picks.map((p) => ({ t: p.t, frame: p.index })), page_errors: errors.slice(0, 10),
+          });
+        }
+        log('PREVIEW ' + res.out);
+      } else {
+        const t0 = Date.now();
+        for (let i = 0; i < total; i++) {
+          const t = timeOf(i);
+          await driver.goTo(t);
+          const file = path.join(framesDir, frameName(i));
+          await driver.capture(file);
+          if (i === 0) checkFrameSize(file, capWidth, capHeight);
+          if ((i + 1) % 30 === 0 || i + 1 === total) {
+            const elapsed = (Date.now() - t0) / 1000;
+            log(`frame ${i + 1}/${total} (t=${fmtTime(t)}) ${elapsed.toFixed(1)}s elapsed`);
+          }
+        }
+        log(`encoding ${total} frames -> ${outPath}`);
+        const enc = encodeVideo({ framesDir, frames: total, fps, out: outPath, crf, audio, start, width: outWidth, height: outHeight, capWidth, capHeight });
+        const probe = probeVideo(outPath);
+        const want = { fps, frames: total, duration: total / fps, width: outWidth + (outWidth % 2), height: outHeight + (outHeight % 2), audio: !!audio };
+        const problems = verifyProbe(probe, want);
+        const proof = proveAudio({ audioInfo: enc.audio, source: audio, output: outPath });
+        const audioMd5 = audioMd5Token(proof);
+        const line = verifyLine({ problems, probe, audioMd5, out: outPath });
+        log(line);
+        if (problems.length) {
+          warn('verification problems: ' + problems.join('; '));
+          exitCode = EXIT_VERIFY;
+        }
+        if (proof.verdict === 'differs') {
+          for (const l of audioProofWarning(proof, { source: audio, output: outPath, filmSeconds: total / fps, start })) warn(l);
+        } else if (proof.verdict === 'unknown') {
+          warn(`audio packet proof not computed: ${proof.reason}`);
+        }
+        if (reportPath) {
+          writeJsonReport(reportPath, {
+            schema: 'kosif.render_html.report.v1', mode: 'render', in: url, out: outPath, driver: driver.name,
+            verify: {
+              ok: problems.length === 0, problems, duration: probe.duration, fps: probe.fps, frames: probe.frames,
+              width: probe.width, height: probe.height, audio: probe.audio ? probe.audioCodec : null,
+            },
+            audio_md5: audioMd5,
+            audio: audio ? { source: audio, handling: enc.audio.handling, codec: enc.audio.codec, proof } : null,
+            verify_line: line,
+            page_errors: errors.slice(0, 10),
+          });
+          log(`report: ${reportPath}`);
+        }
       }
     }
 
@@ -1028,5 +1383,10 @@ if (require.main === module) {
     listFrameDirs, findStaleFrameDirs, removeStaleFrameDirs, reservedByOtherRenders, installSignalCleanup,
     realPath, pathsOverlap, notOwnTempReason, prepareUserFramesDir,
     FRAMES_PREFIX, RENDER_MARKER, USER_FRAMES_MARKER, PNG_BYTES_PER_PIXEL, SPACE_MARGIN, STALE_AGE_HOURS, SIGNAL_EXIT, DiskSpaceError,
+    // --stills and the preview grid
+    parseStillTimes, stillName, planStills, gridLayout, bitmapLabelFilters, labelFilters, composeGrid, BITMAP_FONT, MAX_STILLS,
+    // audio proof (needs ffmpeg only for audioPacketHashes/proveAudio/encodeVideo)
+    audioHashArgs, parseMd5, parseFrameMd5, packetsEndSeconds, compareAudioPackets, audioMd5Token, audioProofWarning,
+    audioPacketHashes, proveAudio, verifyLine, encodeVideo, probeVideo, MP4_COPY_AUDIO,
   };
 }
