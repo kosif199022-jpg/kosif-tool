@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 135,
+  "evals": 139,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5853,
-  "py_edges": 352,
-  "repo_tests": 40,
+  "powers": 5854,
+  "py_edges": 361,
+  "repo_tests": 41,
   "roles": {
    "helper": 3,
-   "registered": 168
+   "registered": 171
   },
-  "scripts": 171,
-  "tools": 190
+  "scripts": 174,
+  "tools": 194
  },
  "families": [
   {
@@ -495,7 +495,7 @@
   {
    "id": "agent-orchestration",
    "powers": 55,
-   "tools": 15
+   "tools": 16
   },
   {
    "id": "ai-generation",
@@ -570,7 +570,7 @@
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 25
+   "tools": 27
   },
   {
    "id": "brand-logo-identity",
@@ -630,7 +630,7 @@
   {
    "id": "engines-render-pipeline",
    "powers": 445,
-   "tools": 28
+   "tools": 30
   },
   {
    "id": "formats-platforms",
@@ -685,7 +685,7 @@
   {
    "id": "photo-video-footage",
    "powers": 71,
-   "tools": 29
+   "tools": 32
   },
   {
    "id": "pixel-retro-stylized",
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 174,
+   "powers": 175,
    "tools": 0
   },
   {
@@ -755,7 +755,7 @@
   {
    "id": "transitions-cuts",
    "powers": 475,
-   "tools": 17
+   "tools": 19
   },
   {
    "id": "typography-arabic",
@@ -780,17 +780,17 @@
   {
    "id": "video-download",
    "powers": 11,
-   "tools": 9
+   "tools": 10
   },
   {
    "id": "voice-tts",
    "powers": 55,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "web-research",
    "powers": 26,
-   "tools": 14
+   "tools": 15
   },
   {
    "id": "writing-humanizer",
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "174 powers, no tools.json entry lists this family",
+   "detail": "175 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -1198,6 +1198,11 @@
    "from": "fetch_video",
    "kind": "imports",
    "to": "stock_fetch"
+  },
+  {
+   "from": "free_footage",
+   "kind": "invokes",
+   "to": "source_finder"
   },
   {
    "from": "fusionforge",
@@ -1955,6 +1960,11 @@
    "to": "fast_edit"
   },
   {
+   "from": "test_free_footage",
+   "kind": "imports",
+   "to": "free_footage"
+  },
+  {
    "from": "test_fusionforge",
    "kind": "imports",
    "to": "_secrets"
@@ -2155,6 +2165,16 @@
    "to": "native_3d"
   },
   {
+   "from": "test_nle_export",
+   "kind": "imports",
+   "to": "nle_export"
+  },
+  {
+   "from": "test_nle_export",
+   "kind": "invokes",
+   "to": "nle_export"
+  },
+  {
    "from": "test_owned_repos",
    "kind": "imports",
    "to": "owned_repos"
@@ -2168,6 +2188,16 @@
    "from": "test_perspective_color_lab",
    "kind": "imports",
    "to": "perspective_color_lab"
+  },
+  {
+   "from": "test_photocraft_mcp",
+   "kind": "imports",
+   "to": "photocraft_mcp"
+  },
+  {
+   "from": "test_photocraft_mcp",
+   "kind": "invokes",
+   "to": "photocraft_mcp"
   },
   {
    "from": "test_prompt_forge",
@@ -2488,6 +2518,21 @@
    "from": "test_tiktok_photo",
    "kind": "invokes",
    "to": "tiktok_photo"
+  },
+  {
+   "from": "test_transcribe_recover",
+   "kind": "imports",
+   "to": "audio_cue_mapper"
+  },
+  {
+   "from": "test_transcribe_recover",
+   "kind": "imports",
+   "to": "cinematic_cut_planner"
+  },
+  {
+   "from": "test_transcribe_recover",
+   "kind": "imports",
+   "to": "montage_pro"
   },
   {
    "from": "test_tts_script",
@@ -3589,6 +3634,7 @@
    "tests": [
     "evals/test_creative_intelligence.py",
     "evals/test_montage_pro.py",
+    "evals/test_transcribe_recover.py",
     "evals/test_unified_cinematic.py"
    ],
    "tools": [
@@ -4109,6 +4155,7 @@
    "role": "registered",
    "tests": [
     "evals/test_montage_pro.py",
+    "evals/test_transcribe_recover.py",
     "tests/test_cinematic_broll_render.py",
     "tests/test_cinematic_cut_planner.py"
    ],
@@ -4536,6 +4583,21 @@
   },
   {
    "ci": false,
+   "id": "free_footage",
+   "imported_by": [],
+   "path": "scripts/free_footage.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_free_footage.py"
+   ],
+   "tools": [
+    "free-footage"
+   ]
+  },
+  {
+   "ci": false,
    "id": "fusionforge",
    "imported_by": [
     "boot",
@@ -4609,7 +4671,7 @@
    ]
   },
   {
-   "ci": false,
+   "ci": true,
    "id": "github_top_repos",
    "imported_by": [],
    "path": "scripts/github_top_repos.py",
@@ -4640,7 +4702,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 174,
+   "power_count": 175,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5018,6 +5080,7 @@
    "role": "registered",
    "tests": [
     "evals/test_montage_pro.py",
+    "evals/test_transcribe_recover.py",
     "tests/test_export_profile.py"
    ],
    "tools": [
@@ -5208,6 +5271,23 @@
    ]
   },
   {
+   "ci": false,
+   "id": "nle_export",
+   "imported_by": [],
+   "path": "scripts/nle_export.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-176"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_nle_export.py"
+   ],
+   "tools": [
+    "nle-export"
+   ]
+  },
+  {
    "ci": true,
    "id": "owned_repos",
    "imported_by": [],
@@ -5273,6 +5353,21 @@
    ],
    "tools": [
     "perspective-color-lab"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "photocraft_mcp",
+   "imported_by": [],
+   "path": "scripts/photocraft_mcp.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_photocraft_mcp.py"
+   ],
+   "tools": [
+    "photocraft-mcp"
    ]
   },
   {
@@ -5854,7 +5949,9 @@
   {
    "ci": false,
    "id": "source_finder",
-   "imported_by": [],
+   "imported_by": [
+    "free_footage"
+   ],
    "path": "scripts/source_finder.py",
    "power_count": 0,
    "powers": [],
@@ -6424,38 +6521,38 @@
   "areas": {
    "(root)": 10,
    "assets": 4,
-   "data": 162,
+   "data": 163,
    "dua-wednesday": 10,
-   "evals": 130,
+   "evals": 149,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 253,
+   "references": 255,
    "resources": 3,
-   "schemas": 5,
-   "scripts": 202,
+   "schemas": 6,
+   "scripts": 205,
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 92900852,
+  "bytes": 93408632,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,
-   ".html": 69,
+   ".html": 74,
    ".jpg": 24,
    ".js": 50,
-   ".json": 273,
-   ".md": 2105,
+   ".json": 285,
+   ".md": 2107,
    ".mjs": 18,
    ".ogg": 14,
    ".png": 11,
-   ".py": 506,
+   ".py": 513,
    ".ttf": 38,
    ".txt": 64,
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3356,
+  "files": 3382,
   "symlinks": 0
  }
 }

@@ -1,0 +1,22 @@
+{
+ "collection": {
+  "version": "1.0",
+  "href": "http://images-api.nasa.gov/search?q=launch&media_type=video",
+  "items": [
+   {
+    "href": "https://images-assets.nasa.gov/video/Synthetic Pad Dust Removal/collection.json",
+    "data": [
+     {
+      "center": "KSC",
+      "date_created": "2026-01-02T00:00:00Z",
+      "description": "A synthetic test record whose nasa_id has spaces, as 12 of 20 live 'launch' hits did on 2026-10-29.",
+      "media_type": "video",
+      "nasa_id": "Synthetic Pad Dust Removal",
+      "title": "Synthetic pad dust removal"
+     }
+    ]
+   }
+  ],
+  "metadata": {"total_hits": 1}
+ }
+}

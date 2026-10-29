@@ -1279,7 +1279,7 @@ chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-librar
 
 ## video-download (motion)
 
-chapter: [video-download](../powers/video-download.md) · card: `usip-library/cards/motion/video-download.md` · tools: `fetch-reference` · `fetch-video` · `instagram-finder` · `media-sources` · `repo-ashell-cinema` · `source-finder` · `stock-fetch` · `stream-grabber` …
+chapter: [video-download](../powers/video-download.md) · card: `usip-library/cards/motion/video-download.md` · tools: `fetch-reference` · `fetch-video` · `free-footage` · `instagram-finder` · `media-sources` · `repo-ashell-cinema` · `source-finder` · `stock-fetch` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

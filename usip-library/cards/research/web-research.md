@@ -72,7 +72,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-01` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -139,7 +139,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-02` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -206,7 +206,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-03` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -274,7 +274,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-04` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -344,7 +344,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-05` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -412,7 +412,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-06` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -480,7 +480,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-07` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -547,7 +547,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-08` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -615,7 +615,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-09` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -683,7 +683,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-10` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -749,7 +749,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-11` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -816,7 +816,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-12` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -882,7 +882,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-13` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -948,7 +948,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-14` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1022,7 +1022,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-15` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1089,7 +1089,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-16` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1156,7 +1156,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-17` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1223,7 +1223,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-18` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1289,7 +1289,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-19` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1355,7 +1355,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-20` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1422,7 +1422,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-21` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1489,7 +1489,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-22` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1556,7 +1556,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-23` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1627,7 +1627,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-24` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1695,7 +1695,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-25` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 
@@ -1760,7 +1760,7 @@
 #### 3. موضعها في الخطة (A26)
 
 - عقدة منمّطة: المدخل `brief` ← المخرج `report`، والمنفّذ `method:WEB-26` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
-- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `github-pulse`.
+- أدوات مسجلة تخدم عائلتها (اختر ما يطابق المخرج بـ `hub.py tool <id>`): `atlas-audit-synthesis` · `atlas-body-audit` · `atlas-external-bridge` · `browser-scout` · `creative-external-search` · `free-footage`.
 - مراحل النوع: السؤال والنطاق ← مصادر بتواريخها ← حقائق بمراجعها ← تركيب ورأي مخالف ← تدقيق ادعاء ← دليل ← تسليم.
 - إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
 

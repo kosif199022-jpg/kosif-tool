@@ -1,0 +1,32 @@
+{
+ "page": 1,
+ "per_page": 2,
+ "total_results": 2,
+ "videos": [
+  {
+   "id": 1000001,
+   "width": 2160,
+   "height": 3840,
+   "duration": 14,
+   "url": "https://www.pexels.com/video/synthetic-night-street-in-the-rain-1000001/",
+   "image": "https://images.pexels.com/videos/1000001/synthetic.jpeg",
+   "user": {"id": 42, "name": "Example Videographer", "url": "https://www.pexels.com/@example"},
+   "video_files": [
+    {"id": 1, "quality": "sd", "file_type": "video/mp4", "width": 360, "height": 640, "fps": 25, "link": "https://videos.pexels.com/video-files/1000001/1000001-sd_360_640_25fps.mp4"},
+    {"id": 2, "quality": "uhd", "file_type": "video/mp4", "width": 2160, "height": 3840, "fps": 25, "link": "https://videos.pexels.com/video-files/1000001/1000001-uhd_2160_3840_25fps.mp4"},
+    {"id": 3, "quality": "hd", "file_type": "video/mp4", "width": 1080, "height": 1920, "fps": 25, "link": "https://videos.pexels.com/video-files/1000001/1000001-hd_1080_1920_25fps.mp4"}
+   ]
+  },
+  {
+   "id": 1000002,
+   "width": 1920,
+   "height": 1080,
+   "duration": 9,
+   "url": "https://www.pexels.com/video/1000002/",
+   "user": {"id": 43, "name": "Second Videographer", "url": "https://www.pexels.com/@second"},
+   "video_files": [
+    {"id": 4, "quality": "hd", "file_type": "video/mp4", "width": 1920, "height": 1080, "fps": 30, "link": "https://videos.pexels.com/video-files/1000002/1000002-hd_1920_1080_30fps.mp4"}
+   ]
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "collection": {
+  "version": "1.0",
+  "href": "http://images-api.nasa.gov/search?q=ocean&media_type=video",
+  "items": [
+   {
+    "href": "https://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/collection.json",
+    "data": [
+     {
+      "center": "GSFC",
+      "date_created": "2026-01-01T00:00:00Z",
+      "description": "A synthetic test record of the ocean seen from orbit.",
+      "media_type": "video",
+      "nasa_id": "SYNTH_20260101_Ocean_Orbit",
+      "secondary_creator": "Example Visualizer",
+      "title": "Synthetic ocean from orbit"
+     }
+    ],
+    "links": [{"href": "https://images-assets.nasa.gov/video/SYNTH_20260101_Ocean_Orbit/SYNTH_20260101_Ocean_Orbit~large.jpg", "rel": "preview", "render": "image"}]
+   },
+   {
+    "href": "https://images-assets.nasa.gov/image/SYNTH_IMAGE/collection.json",
+    "data": [{"center": "JPL", "media_type": "image", "nasa_id": "SYNTH_IMAGE", "title": "An image, not a video"}]
+   }
+  ],
+  "metadata": {"total_hits": 2}
+ }
+}
