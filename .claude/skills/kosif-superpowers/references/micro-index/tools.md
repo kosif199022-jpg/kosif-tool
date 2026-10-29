@@ -115,6 +115,7 @@
 | `mimic` | TOOL-85 | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder | `python3 -c "import sys; sys.path.insert(0,'scripts/mimic'); import mm…` | 1 |
 | `montage-pro` | TOOL-130 | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) | `python3 scripts/montage_pro.py doctor` | 1 |
 | `motion-reference-probe` | TOOL-21 | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | `python3 scripts/motion_reference_probe.py ./in.mp4` | 2 |
+| `nle-export` | TOOL-176 | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات · NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | `python3 scripts/nle_export.py export --project ./project.json --out .…` | 1 |
 | `reel-factory` | TOOL-131 | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-righ…` | 1 |
 | `reference-edit-engine` | TOOL-22 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./…` | 4 |
 | `reference-visual-fingerprint` | TOOL-23 | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cu…` | 2 |

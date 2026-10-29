@@ -23,7 +23,7 @@
 
 | المستودع | الحالة | استشهادات | الغرض | المجموعات | ما يُستفاد منه |
 |---|---|---|---|---|---|
-| `kosif199022-jpg/kosif-tool` | مدمج في سوبر باور | 2510 | بيت مهارة سوبر باور: الكتالوج والبروتوكول USIP وFusionForge وأطلس الأساليب وأدوات الرندر | agents, motion, drawing, 3d, type, quality | الكتالوج 5,334 قدرة؛ 132 أداة قابلة للتشغيل؛ أطلس الأساليب والقوالب |
+| `kosif199022-jpg/kosif-tool` | مدمج في سوبر باور | 2512 | بيت مهارة سوبر باور: الكتالوج والبروتوكول USIP وFusionForge وأطلس الأساليب وأدوات الرندر | agents, motion, drawing, 3d, type, quality | الكتالوج 5,334 قدرة؛ 132 أداة قابلة للتشغيل؛ أطلس الأساليب والقوالب |
 | `kosif199022-jpg/kosif-one` | مدمج في سوبر باور | 1610 | المستودع المرجعي الموحّد لأدوات الأنيميشن والمونتاج والكلام مع مشاريع مرجعية منفّذة | motion, audio, type, agents, 3d | kosif-montage-motion؛ kosif-mimic؛ kosif-social؛ مشاريع مرجعية: غربة، دعاء الخميس، دورة الماء؛ vendor: hyperframes |
 | `kosif199022-jpg/kosif-atlas` | مدمج في سوبر باور | 1391 | مكتبة أطلس: آلاف المهارات الخارجية بتراخيص تسمح بإعادة النشر، كل مهارة بملفاتها ومصدرها وترخيصها | research, agents, software, quality, documents, data | 15,121 SKILL.md؛ فهرس CSV/JSON بالمصدر والترخيص؛ تقارير الاستبعاد (copyleft) |
 | `kosif199022-jpg/100-superskills` | مدمج في سوبر باور | 1274 | 114 مهارة جاهزة لكلاود وChatGPT (110 مركّبة من الأطلس + kosif-one وkosif-social وkosif-mimic وkosif-montage-motion): أنيميشن ترند، برومبتات صور وفيديو، إكسل، عروض، كود. منسوخة كاملة في vendor/100-superskills وتتلاقى بـ superskills.py find | motion, images, software, documents, thinking, data | character-animation-2d؛ svg-illustration-icons؛ comics-picture-books؛ pixel-art-game-assets؛ excel-financial-models؛ prompt-master-pro |
@@ -57,7 +57,7 @@
 |---|---|---|---|---|---|---|---|
 | research · البحث والمعرفة | 60 | 21 | 27 | 2 | 9 | kosif-atlas, think, kosif-omni, kosif-atlas-private | think, kosif-omni |
 | thinking · التفكير والتخطيط والاستراتيجية | 402 | 25 | 375 | 2 | 0 | 100-superskills, think, kosif-omni, CLOUDFLARE_API_TOKEN, new | think, kosif-omni |
-| agents · الوكلاء والتوجيه الذكي | 272 | 191 | 65 | 14 | 2 | kosif-tool, kosif-one, kosif-atlas, fastify-motion-bro, cloude, see, think, kosif-omni, kosif-atlas-private, CLOUDFLARE_API_TOKEN, whatsapp-personal-bridge | cloude, see, think, kosif-omni |
+| agents · الوكلاء والتوجيه الذكي | 273 | 192 | 65 | 14 | 2 | kosif-tool, kosif-one, kosif-atlas, fastify-motion-bro, cloude, see, think, kosif-omni, kosif-atlas-private, CLOUDFLARE_API_TOKEN, whatsapp-personal-bridge | cloude, see, think, kosif-omni |
 | software · البرمجة وبناء التطبيقات | 692 | 132 | 519 | 32 | 7 | kosif-atlas, 100-superskills, kosif-earth-ci-fork, cloude, kosif-audit-pro, see, whatsapp-personal-bridge, mafateeh-al-tharwa | kosif-earth-ci-fork, cloude, kosif-audit-pro, see, mafateeh-al-tharwa |
 | drawing · الرسم والأشكال والتصميم | 306 | 108 | 155 | 31 | 4 | kosif-tool, kosif-studio, fastify-motion-bro | — |
 | images · الصور والتحرير والتوليد | 323 | 138 | 121 | 27 | 35 | 100-superskills, kosif-studio | — |

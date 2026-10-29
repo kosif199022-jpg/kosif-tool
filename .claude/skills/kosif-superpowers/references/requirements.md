@@ -14,8 +14,8 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 804 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
-| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 461 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 1 | [`python3`](#req-python3) | bin | 805 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
+| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 462 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 4 | [`chromium`](#req-chromium) | bin | 374 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, runnable-tools |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
@@ -37,7 +37,7 @@
 | 21 | [`git`](#req-git) | bin | 52 | atlas-code, atlas-mind, agent-orchestration, atlas-docs, code-engineering |  |
 | 22 | [`os:macos`](#req-os-macos) | os | 43 | software-investigation, atlas-code, ui-product-device, atlas-build, engines-render-pipeline |  |
 | 23 | [`pip:office`](#req-pip-office) | pip | 41 | documents-office, atlas-docs, self-discovery, runnable-tools, app-feature-transfer |  |
-| 24 | [`blender`](#req-blender) | apt | 36 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
+| 24 | [`blender`](#req-blender) | apt | 37 | runnable-tools, app-feature-transfer, engines-render-pipeline, 3d-spatial, self-discovery |  |
 | 25 | [`engine:android`](#req-engine-android) | bin | 36 | software-investigation, runnable-tools |  |
 | 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools |  |
 | 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 26 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, atlas-code, texture-material |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 804 powers
-- **بالحالة / by status:** proven 303 · documented 212 · ready 168 · install 105 · key 13 · seen 3
-- **العائلات / families:** runnable-tools (138), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
+- **يفتح / unlocks:** 805 powers
+- **بالحالة / by status:** proven 304 · documented 212 · ready 168 · install 105 · key 13 · seen 3
+- **العائلات / families:** runnable-tools (139), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-ffmpeg"></a>
@@ -155,9 +155,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 461 powers
-- **بالحالة / by status:** documented 158 · proven 152 · ready 71 · install 57 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (43), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
+- **يفتح / unlocks:** 462 powers
+- **بالحالة / by status:** documented 158 · proven 153 · ready 71 · install 57 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (44), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-npm-hyperframes"></a>
@@ -375,9 +375,9 @@
 
 - **النوع / kind:** apt (حزمة نظام)
 - **التثبيت / install:** `apt-get install -y blender  (or the official tarball)`
-- **يفتح / unlocks:** 36 powers
-- **بالحالة / by status:** proven 19 · ready 8 · documented 5 · install 4
-- **العائلات / families:** runnable-tools (20), app-feature-transfer (5), engines-render-pipeline (3), 3d-spatial (2), self-discovery (2), story-direction-ideas (2), particles-fluids-physics (1), qa-verification (1)
+- **يفتح / unlocks:** 37 powers
+- **بالحالة / by status:** proven 20 · ready 8 · documented 5 · install 4
+- **العائلات / families:** runnable-tools (21), app-feature-transfer (5), engines-render-pipeline (3), 3d-spatial (2), self-discovery (2), story-direction-ideas (2), particles-fluids-physics (1), qa-verification (1)
 - **أمثلة / examples:** `APPX-114` Cinematic Cycles render presets (5 looks) · `APPX-115` Camera moves with 180° motion blur → MP4 · `APPX-116` Film finish in the Blender 5 compositor · `APPX-117` Live Blender capability inventory · `ENG-X06` Tool-map doctor before promising a stack · `PART-02` Closed-form particles (state-free seek)
 
 <a id="req-engine-android"></a>

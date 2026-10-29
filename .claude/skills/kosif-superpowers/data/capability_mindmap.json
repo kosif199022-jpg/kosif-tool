@@ -878,7 +878,7 @@
 "links": [
 "SP-0143",
 "SP-0002",
-"SP-0145",
+"SP-0146",
 "SP-0233"
 ],
 "text": "catalog snapshot: powers.py stats + repo validator لقطة الفهرس والمدقِّق snapshot baseline stats validator لقطة خط أساس إحصاءات مدقق deterministic record gate for the power catalog (mutation-tested) بوابة السجلات الحتمية validator catalog json gate mutation tested مدقق فهرس بوابة اختبار الطفرات self-evolution loop for this skill (evolve with evidence) حلقة التطوير الذاتي للمهارة self evolution improve skill changelog regression تطوير ذاتي تحسين المهارة سجل التغييرات انحدار trigger eval matrix for a skill (+ with/without a/b) مصفوفة اختبار التفعيل trigger eval skill testing routing a/b اختبار التفعيل تقييم المهارة توجيه decision ledger for repeated rollouts سجل القرارات المتكرر decision ledger rollout append-only سجل القرارات جولات إطلاق تدريجي one value registry: a source and the supporting sentence for every number سجل قيم بمصدر واقتباس لكل رقم cited numbers value registry source quote fact check أرقام موثقة سجل القيم مصدر اقتباس كل رقم ليه مصدر رقم متألف سكربت فيديو تعليمي فيديو تعليمي every number sourced consent-scoped lessons (growth log) دروس بموافقة ونطاق مشروع lessons growth log learning memory دروس سجل التعلم موافقة تعميم an explicit gaps list instead of an invented number ملف فجوات بدل اختراع رقم gaps unsourced do not invent فجوات بلا مصدر لا تخترع a conservation ledger: account for every unit دفتر حفظ: ابحث عن كل وحدة conservation energy ledger sankey efficiency حفظ الطاقة سانكي كفاءة ميزانية text refers to numbers by id and fails closed النص يشير إلى الرقم بمعرّفه ويفشل مغلقًا placeholders fail closed narration numbers single source of truth عناصر نائبة رقم من السجل تعليق صوتي"
@@ -1063,7 +1063,7 @@
 "SP-0181",
 "SP-0379",
 "SP-0406",
-"SP-0145"
+"SP-0146"
 ],
 "text": "ask for any visual style by name from a 586-style library اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا style library visual style art style أسلوب أساليب ستايل استايل مكتبة الأساليب موسوعة الأساليب futurepedia ks illustrated style catalog pdf with generated swatches كتالوج أساليب مصوّر pdf بعينات مولّدة style catalog pdf كتالوج ملف بي دي اف عينات swatches contact sheet fuse two styles 70/30 in one prompt دمج أسلوبين 70/30 في برومنت واحد style fusion mix styles دمج أساليب مزج accent fusion extract a writing style into a reusable style guide استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق writing style voice style guide أسلوب الكتابة صوت العلامة rubric"
 },
@@ -2833,7 +2833,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0144",
+"SP-0145",
 "SP-0293",
 "SP-0044",
 "SP-0064"
@@ -3135,7 +3135,7 @@
 "SP-0451",
 "SP-0293",
 "SP-0118",
-"SP-0145"
+"SP-0146"
 ],
 "text": "photo catalog + search فهرسة المكتبة والبحث catalog مكتبة صور search lightroom acdsee duplicate / near-duplicate finder كشف المكرر والمتشابه duplicates مكرر dhash similar exif and gps reader قراءة بيانات الصورة وgps exif gps metadata بيانات الصورة batch rename by exif date إعادة تسمية دفعة rename إعادة تسمية batch face detection كشف الوجوه faces وجوه people yunet"
 },
@@ -3153,7 +3153,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0146",
+"SP-0144",
 "SP-0171",
 "SP-0371",
 "SP-0269"
@@ -3383,7 +3383,7 @@
 "ready_now": 33,
 "links": [
 "SP-0347",
-"SP-0145",
+"SP-0146",
 "SP-0027",
 "SP-0143"
 ],
@@ -3486,6 +3486,28 @@
 },
 "SP-0144": {
 "id": "SP-0144",
+"name_ar": "جسر Blender الآمن",
+"name_en": "Safe headless Blender bridge",
+"hub": "agents",
+"stage": "assemble",
+"stages": {
+"assemble": 7,
+"create": 4,
+"understand": 1
+},
+"size": 12,
+"best": "proven",
+"ready_now": 10,
+"links": [
+"SP-0129",
+"SP-0171",
+"SP-0269",
+"SP-0371"
+],
+"text": "safe headless blender bridge جسر blender الآمن blender-bridge blender headless bridge bpy blend file glb export png render scene json doctor بلندر جسر بلندر رندر ثلاثي الأبعاد ملف blend create an editable blender 3d cat rescue demo إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل blender blender-rescue-scene blender cat rescue 3d cycles procedural scene model animation قطة إنقاذ بلندر مشهد blender cycles + kosif cinematic compositor دمج رندر blender cycles مع مونتاج kosif والصوت blender-cinematic-bridge blender cycles 3d render cinematic composite mp4 h264 aac photo drawing overlay cat rescue رندر بلندر سينما إنقاذ قطة صوت مونتاج native 3d renderer (no blender) رندر ثلاثي الأبعاد مستقل عن blender native-3d 3d native 3d software renderer z-buffer primitives keyframes orthographic camera mp4 png no blender ثلاثي الأبعاد رندر أشكال أساسية أنيميشن ثلاثي الأبعاد بدون بلندر native glb exporter (no blender) مُصدِّر glb مستقل عن blender native-glb glb gltf 2.0 3d export binary gltf keyframe animation stdlib only no blender three.js تصدير ثلاثي الأبعاد ملف glb نموذج ثلاثي الأبعاد بدون بلندر blender python api audit تدقيق واجهة بايثون في blender blender-api-audit blender bpy bpy.ops addon audit ast static analysis python api operators panels بلندر تحليل ثابت إضافات بلندر واجهة بايثون تدقيق الشيفرة cycles scene to verified video رندر cycles إلى فيديو مُتحقَّق منه blender-cycles-render blender cycles path tracing render to mp4 ffprobe qa render report glb to video blend to video plan رندر واقعي سايكلز فيديو ثلاثي الأبعاد تحقق من الفيديو بلندر blender cat fur upgrade: renderable hair geometry and character detail تطوير فرو القطة والملامح في blender cycles blender-cat-fur-upgrade blender fur hair whiskers strands cycles cat texture upgrade render shading قطة فرو خامة بلندر رندر واقعية nle export: open a kosif timeline in davinci resolve, final cut pro, premiere pro, blender or capcut تصدير للبرامج: افتح تايملاين kosif في دافنشي وفاينال كت وبريمير وبلندر وكاب كات nle-export 23.976 29.97 blender capcut cmx3600 davinci davinci resolve dissolve edl fade fcpxml final cut final cut pro handoff nle ntsc opentimelineio otio premiere premiere pro relink resolve srt subtitles timeline export video sequencer vse xmeml xml بريمير بلندر تايملاين ترجمة تصدير تلاشي دافنشي فاينال كت كاب كات blender motion video helper مساعد فيديو الحركة في blender blender-motion-video atlas kosif capabilities provenance 3d blender-side scene builder منفّذ المشهد داخل blender blender-worker blender worker bpy bl"
+},
+"SP-0145": {
+"id": "SP-0145",
 "name_ar": "مستكشف مصادر المجتمع",
 "name_en": "Community source scout",
 "hub": "agents",
@@ -3509,8 +3531,8 @@
 ],
 "text": "community source scout مستكشف مصادر المجتمع source-scout source scout community sources reference repositories github license gate code reuse python top 10 system design مصادر المجتمع مستودعات مرجعية ترخيص إعادة استخدام الكود مستكشف المصادر أفضل مستودعات بايثون creative sources offline search بحث المصادر الإبداعية دون اتصال creative-external-search creative search open source video tools motion graphics repos image editing creative websites discovery index github metadata offline search بحث إبداعي أدوات مونتاج مواقع تصميم موشن جرافيك تحرير الصور مستودعات مفتوحة المصدر licensed stock media gateway بوابة الوسائط المرخّصة media-sources stock footage stock media 100 sources license rights cc0 cc by provenance sha256 b-roll لقطات جاهزة مواقع الوسائط ترخيص حقوق الاستخدام مصادر مجانية sources index: per-work-dir index memory of the user's attachments فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل sources-index sources index attachments provenance prompt injection secret scan line range فهرس مصادر الذاكرة الفهرسية مرفقات keyless stock footage fetcher (pexels, mixkit) تحميل لقطات مجانية بلا مفتاح (pexels وmixkit) stock-fetch pexels mixkit stock footage b-roll no api key free video licence manifest لقطات مجانية بدون مفتاح تحميل لقطات مونتاج بكسلز instagram reference discovery → infinite matrices البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية instagram-reference-discovery instagram reels reel asirgokerr brkn.land video reference instagram discovery find videos by topic search clips motion reference causal handoff انستجرام إنستجرام ريلز ابحث عن فيديو مراجع فيديو بحث الفيديوهات بحث عن موشن مصفوفات لانهائية github top-1000 tracker متابعة أشهر 1000 مستودع github-top-repos github top repositories most starred stars licence tracker mining open source مستودعات جيت هاب أشهر المستودعات تراخيص نجوم dash/hls stream grabber for editing ملتقط بث dash وhls للمونتاج stream-grabber hls dash m3u8 mpd stream download segments subtitles بث تحميل مقاطع ترجمة instagram product video finder البحث عن فيديوهات إنستجرام لمنتج وتحميلها instagram-finder instagram reels product video hashtag saved accounts instaloader search انستجرام إنستجرام ريلز فيديوهات منتج هاشتاج حسابات محفوظة بحث download link chrome extension تحميل رابط إضافة كروم permitted reference fetch and measure جلب المرجع المسموح وقياسه fetch-reference reference video fetch hls m3u8 contact sheet scene cuts palette ffprobe style.md observe مرجع جلب لوحة إطارات قطعات لوحة ألوان رصد المرجع video link dow"
 },
-"SP-0145": {
-"id": "SP-0145",
+"SP-0146": {
+"id": "SP-0146",
 "name_ar": "تدقيق أدلة الكتالوج",
 "name_en": "Catalog Evidence Audit",
 "hub": "agents",
@@ -3531,28 +3553,6 @@
 "SP-0347"
 ],
 "text": "power catalog search البحث في كتالوج القدرات powers power catalog search suggest mind map families domains evidence badge stats mermaid كتالوج القدرات ابحث اقترح خريطة ذهنية عائلات مجالات قدراتك style atlas repository validator فاحص سلامة أطلس الأنماط repo-validate validate catalog check integrity styles.json style_index schema ci gate فحص المستودع التحقق سلامة الكتالوج فاحص تقرير json style library — 586 visual styles by name (86 futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated pdf catalog مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج pdf مصوّر style-library أسلوب أساليب ستايل استايل مكتبة الأساليب كتالوج بي دي اف برومنت عينة لقطة style styles style library visual style art style prompt recipe swatch catalog pdf 586 500 futurepedia ks universal skill intelligence protocol engine محرك بروتوكول ذكاء المهارات الشامل skill-intelligence protocol coverage receipt three plans brainstorm skill intelligence بروتوكول خطط كل المهارات جرد القدرات عصف ذهني catalog evidence audit تدقيق أدلة الكتالوج catalog-evidence-audit catalog audit evidence coverage proof links duplicate ids integrity check powers catalog badges static audit تدقيق الكتالوج أدلة الإثبات روابط مكسورة معرفات مكررة سلامة البيانات فحص القدرات promptsmotion catalog sync مزامنة الكتالوج مع promptsmotion repo-sync-catalog catalog sync promptsmotion scraper metadata styles.json style.json offline cache weekly sync listed=false مزامنة الكتالوج تحديث الأطلس بيانات وصفية مراجع جديدة تخزين مؤقت creative brief importer استيراد الملفات الإبداعية repo-import-briefs import briefs creative brief brief.md briefs.json schema validation catalog batch json strict mode استيراد ملف إبداعي بريف تحقق من الصيغة الأطلس proof scope relabeler إعادة تصنيف نطاق الأدلة relabel-proofs proof scope evidence labels proven proof paths relabel catalog maintenance verification نطاق الدليل الأدلة القدرات المثبتة إعادة التصنيف صيانة الكتالوج family chapter generator مولّد فصول العائلات build-chapters chapters generate markdown power families references/powers stale check deterministic catalog docs توليد الفصول فصول العائلات توثيق القدرات ملفات مولدة تحديث الفصول rebalance creative repo catalog إعادة موازنة فهرس المستودعات الإبداعية rebalance-creative-repos rebalance catalog creative repos image editing photo tools category quotas github search catalog maintenance موازنة الفهرس مستودعات إبداعية تحرير الصور حصص الفئات صيانة الفهرس creative resear"
-},
-"SP-0146": {
-"id": "SP-0146",
-"name_ar": "جسر Blender الآمن",
-"name_en": "Safe headless Blender bridge",
-"hub": "agents",
-"stage": "assemble",
-"stages": {
-"assemble": 6,
-"create": 4,
-"understand": 1
-},
-"size": 11,
-"best": "proven",
-"ready_now": 9,
-"links": [
-"SP-0129",
-"SP-0171",
-"SP-0269",
-"SP-0371"
-],
-"text": "safe headless blender bridge جسر blender الآمن blender-bridge blender headless bridge bpy blend file glb export png render scene json doctor بلندر جسر بلندر رندر ثلاثي الأبعاد ملف blend create an editable blender 3d cat rescue demo إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل blender blender-rescue-scene blender cat rescue 3d cycles procedural scene model animation قطة إنقاذ بلندر مشهد blender cycles + kosif cinematic compositor دمج رندر blender cycles مع مونتاج kosif والصوت blender-cinematic-bridge blender cycles 3d render cinematic composite mp4 h264 aac photo drawing overlay cat rescue رندر بلندر سينما إنقاذ قطة صوت مونتاج native 3d renderer (no blender) رندر ثلاثي الأبعاد مستقل عن blender native-3d 3d native 3d software renderer z-buffer primitives keyframes orthographic camera mp4 png no blender ثلاثي الأبعاد رندر أشكال أساسية أنيميشن ثلاثي الأبعاد بدون بلندر native glb exporter (no blender) مُصدِّر glb مستقل عن blender native-glb glb gltf 2.0 3d export binary gltf keyframe animation stdlib only no blender three.js تصدير ثلاثي الأبعاد ملف glb نموذج ثلاثي الأبعاد بدون بلندر blender python api audit تدقيق واجهة بايثون في blender blender-api-audit blender bpy bpy.ops addon audit ast static analysis python api operators panels بلندر تحليل ثابت إضافات بلندر واجهة بايثون تدقيق الشيفرة cycles scene to verified video رندر cycles إلى فيديو مُتحقَّق منه blender-cycles-render blender cycles path tracing render to mp4 ffprobe qa render report glb to video blend to video plan رندر واقعي سايكلز فيديو ثلاثي الأبعاد تحقق من الفيديو بلندر blender cat fur upgrade: renderable hair geometry and character detail تطوير فرو القطة والملامح في blender cycles blender-cat-fur-upgrade blender fur hair whiskers strands cycles cat texture upgrade render shading قطة فرو خامة بلندر رندر واقعية blender motion video helper مساعد فيديو الحركة في blender blender-motion-video atlas kosif capabilities provenance 3d blender-side scene builder منفّذ المشهد داخل blender blender-worker blender worker bpy blender --background --python scene builder primitives keyframes gltf export بلندر سكربت بلندر بناء المشهد تشغيل داخل بلندر blender cycles cinematic renders رندر سينمائي بـblender cycles blender-cinema blender cycles cinematic render product shot turntable depth of field agx bloom volumetric fog camera move bpy رندر سينمائي لقطة منتج بلندر إضاءة سينمائية حركة كاميرا"
 },
 "SP-0147": {
 "id": "SP-0147",
@@ -4121,7 +4121,7 @@
 "best": "proven",
 "ready_now": 12,
 "links": [
-"SP-0146",
+"SP-0144",
 "SP-0269",
 "SP-0129",
 "SP-0311"
@@ -4395,7 +4395,7 @@
 "ready_now": 0,
 "links": [
 "SP-0037",
-"SP-0144",
+"SP-0145",
 "SP-0099",
 "SP-0356"
 ],
@@ -5012,7 +5012,7 @@
 "SP-0210",
 "SP-0342",
 "SP-0409",
-"SP-0145"
+"SP-0146"
 ],
 "text": "chapter hud frame إطار hud للفصول فصول رقم الفصل خط تقدم chapter frame progress line chapter progress bar شريط فصول رقم الفصل شريط علوي تقدم الفصول chapter strip chapter number chapter ruler timeline مسطرة زمنية للفصول مسطرة زمنية مؤشر أحمر علامات الفصول playhead chapter markers chapter hud + timeline marker عناوين فصول وشريط زمني فصول مسطرة زمنية مؤشر الموضع chapter label timeline marker chaptered hud frame إطار hud بفصول مرقمة فصول مرقمة مسطرة تقدم إطار زوايا chapter counter progress ruler chapter tag system نظام وسوم الفصول ترقيم الفصول خط تقدم أقسام الفيديو chapter counter corner label numbered chapter header ترويسة فصل مرقّمة عنوان الفصل ترقيم ظهور بتمويه chapter title section heading bottom nav progress شريط تنقل سفلي شريط سفلي أقسام الفيديو فصول chapter nav section bar chapter text card bottom-left بطاقة فصل أسفل اليسار بطاقة نصية رقم الفصل تلاشي متقاطع text card crossfade editor timeline hud شريط زمني بنقاط مفاتيح تايملاين مونتاج مؤشر التشغيل playhead keyframes"
 },
@@ -5224,7 +5224,7 @@
 "SP-0194",
 "SP-0172",
 "SP-0212",
-"SP-0146"
+"SP-0144"
 ],
 "text": "road-level tripod push-in (veo shot language) دفع بطيء من مستوى الطريق زاوية منخفضة وصف اللقطة لقطة سينمائية low angle ai video breathe holds تنفس اللقطة الثابتة لقطة ثابتة حركة خفيفة انجراف subtle motion living hold locked-iso glide انزلاق إيزومتري ثابت زاوية ثابتة منظور إيزومتري حركة هادئة isometric fixed angle tilted ui push-in دفع كاميرا على واجهة مائلة منظور مائل تقريب الواجهة عرض ثلاثي الأبعاد 3d tilt perspective oblique room from projected polygons غرفة بزاوية من مضلعات مسقطة منظور مائل إسقاط ثلاثي الأبعاد باب يفتح 3d projection oblique view composition: low-angle hero / high-angle vulnerability تكوين: low-angle hero / high-angle vulnerability زاوية منخفضة زاوية عالية قوة الشخصية low angle high angle no grow-in-place hero entrance منع النمو في المكان دخول العنصر حركة الدخول انيميشن دخول entrance animation scale in"
 },
@@ -5270,7 +5270,7 @@
 "SP-0195",
 "SP-0210",
 "SP-0342",
-"SP-0144"
+"SP-0145"
 ],
 "text": "recut card zones مناطق البطاقات الثلث السفلي لوحة جانبية مكان البطاقة lower third side panel index + model lower-third رقم فهرس مع اسم النموذج شريط سفلي ترقيم اسم النموذج lower third index label mono corner counters عدادات ركنية أحادية عداد ترقيم زاوية الشاشة index counter uppercase labels scene index hud مؤشر المشاهد رقم المشهد مؤشر تقدم عداد مشاهد scene counter progress indicator editorial header ترويسة تحريرية ترويسة طابع مجلة اسم القسم magazine header top bar"
 },
@@ -6396,7 +6396,7 @@
 "ready_now": 3,
 "links": [
 "SP-0171",
-"SP-0146",
+"SP-0144",
 "SP-0430",
 "SP-0129"
 ],
@@ -6951,7 +6951,7 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0145",
+"SP-0146",
 "SP-0475",
 "SP-0347",
 "SP-0115"
@@ -7487,7 +7487,7 @@
 "SP-0444",
 "SP-0205",
 "SP-0363",
-"SP-0144"
+"SP-0145"
 ],
 "text": "kelvin → rgb, gels & 19 named light sources حرارة اللون والجيلاتين ومصادر مسماة كلفن حرارة اللون جيلاتين kelvin color temperature gel cto ctb sodium light sources لون الضوء ضوء دافئ ضوء بارد warm light kelvin to rgb lens chromatic aberration (edge-weighted) الانحراف اللوني للعدسة انحراف لوني عدسة chromatic aberration lens edges rgb fringe تشوه العدسة حواف ملونة مظهر سينمائي color fringing lens effect rgb-split hit jitter انقسام rgb على الضربة انقسام ألوان غليتش ضربة rgb split glitch hit chromatic onion skin جليتش تشويش اهتزاز color split impact jitter"
 },
@@ -8195,7 +8195,7 @@
 "ready_now": 6,
 "links": [
 "SP-0139",
-"SP-0145",
+"SP-0146",
 "SP-0293",
 "SP-0290"
 ],
@@ -8480,7 +8480,7 @@
 "best": "proven",
 "ready_now": 1,
 "links": [
-"SP-0144",
+"SP-0145",
 "SP-0379",
 "SP-0142",
 "SP-0476"
@@ -9055,7 +9055,7 @@
 "SP-0117",
 "SP-0278",
 "SP-0382",
-"SP-0144"
+"SP-0145"
 ],
 "text": "remote render client and bridge safety gates عميل التصيير البعيد وبوابات الأمان رندر عن بعد أمان الاتصال حماية التوكن remote render security source contact sheet for footage triage لوحة معاينة المصادر فرز المقاطع نص محروق شعارات اختيار اللقطات clip selection burned-in text honesty labels for illustrative simulations وسوم الأمانة للمحاكاة التوضيحية إخلاء مسؤولية أرقام توضيحية تحذير disclaimer illustrative source hygiene rule (no burned-in text, logos, screen recordings) قاعدة نظافة المصادر لقطات جاهزة حقوق اللقطات شعارات footage rights found clips honesty rule قاعدة الصدق نسب اللقطات الأمانة وجه حقيقي credit footage honest report frame-identical seam rule قاعدة الوصلة المتطابقة ربط المقاطع قفزة بين اللقطات آخر إطار seamless start image watch twice rule قاعدة المشاهدة مرتين مشاهدة بدون صوت شاشة الجوال مراجعة نهائية muted viewing final review trademark safety rule قاعدة العلامات التجارية شعارات الشركات ملكية فكرية ادعاءات غير مؤكدة logos brand safety"
 },
@@ -10150,7 +10150,7 @@
 "SP-0206",
 "SP-0243",
 "SP-0172",
-"SP-0146"
+"SP-0144"
 ],
 "text": "css 3d card flip قلب بطاقة ثلاثي الأبعاد قلب دوران ثلاثي الأبعاد بطاقة card flip 3d flip front-loaded 3d roll flip قلب ثلاثي الأبعاد قلب دوران دخول سريع flip in rotation x 3d card roll دوران ثلاثي الأبعاد دوران قلب أفقي ثلاثي الأبعاد card roll rotation css transition: 3d card flip انتقال css: قلب البطاقة ثلاثي الأبعاد قلب بطاقة ثلاثي الأبعاد card flip flip perspective 3d transitions انتقالات ثلاثية الأبعاد قلب بطاقة ثلاثي الأبعاد منظور card flip flip transition front-loaded 3d roll قلب ثلاثي الأبعاد قلبة دوران ثلاثي الأبعاد انقلاب سريع 3d flip flip in roll 3d flip seam انقلاب ثلاثي قلب ثلاثي انقلاب دوران ثلاثي الأبعاد 3d flip flip transition polarity stage flip قلب قطبية المسرح فاتح وداكن قلب الألوان فاصل الفصول light dark flip act break footage → card → implode → lockup لقطة إلى بطاقة إلى انهيار إلى شعار ختام بالشعار تصغير اللقطة انكماش logo reveal outro light/dark flip قلب فاتح داكن قلب الألوان على الإيقاع خلفية invert beat hero shrinks into card تقلّص الصورة إلى بطاقة تصغير بطاقة كشف الواجهة shrink to card rounded corners quote card over hazed scene بطاقة اقتباس فوق مشهد باهت اقتباس بطاقة نص تبهيت الخلفية quote card text overlay window grid to device تقلص الشبكة إلى هاتف شاشة موبايل شبكة نوافذ تحول flip animation phone screen zoom-through logo ending نهاية بالغوص في الشعار خاتمة شعار بطاقة اسم outro end card image flies into document slot صورة تطير من المحادثة إلى المستند محادثة إيميل طيران الصورة chat to email sparkle css/gsap 3d transitions انتقالات 3d قلب البطاقة انتقال ثلاثي الأبعاد فليب card flip 3d flip auto-animate between two states (magic move) انتقال سحري بين حالتين auto-animate magic move flip reveal.js transition انتقال شرائح حركة سحرية paper-curl page flip قلب صفحة قلب الصفحة تقليب ورق كتاب page turn page curl"
 },
@@ -11208,7 +11208,7 @@
 "best": "proven",
 "ready_now": 8,
 "links": [
-"SP-0144",
+"SP-0145",
 "SP-0359",
 "SP-0124",
 "SP-0299"
@@ -11404,8 +11404,8 @@
 "understand": [
 "SP-0139",
 "SP-0022",
-"SP-0144",
 "SP-0145",
+"SP-0146",
 "SP-0150",
 "SP-0023",
 "SP-0152"
@@ -11429,7 +11429,7 @@
 "assemble": [
 "SP-0140",
 "SP-0142",
-"SP-0146"
+"SP-0144"
 ],
 "verify": [
 "SP-0002"
@@ -12600,11 +12600,11 @@
 }
 ],
 "audit": {
-"atoms": 5853,
+"atoms": 5854,
 "superpowers": 481,
 "twin_groups": 177,
 "twin_members": 458,
-"distinct_methods": 5572,
+"distinct_methods": 5573,
 "tiny_absorbed": 28,
 "same_name_groups": [
 {
@@ -12931,7 +12931,7 @@
 "b": "TOOL-87",
 "sim": 0.72,
 "a_sp": "SP-0129",
-"b_sp": "SP-0146",
+"b_sp": "SP-0144",
 "cross_hub": true,
 "name": "Cinematic Cycles render presets (5 looks)",
 "name_b": "Blender Cycles cinematic renders"
@@ -13091,7 +13091,7 @@
 "codevelop_pairs": [
 {
 "a": "SP-0129",
-"b": "SP-0146",
+"b": "SP-0144",
 "sim": 0.735,
 "hubs": [
 "software",
@@ -13636,7 +13636,7 @@
 "deliver": 188,
 "create": 1941,
 "refine": 896,
-"assemble": 494,
+"assemble": 495,
 "understand": 833,
 "verify": 544
 }

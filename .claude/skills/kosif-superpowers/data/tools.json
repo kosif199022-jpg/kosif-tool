@@ -15299,6 +15299,117 @@
       "power_id": "TOOL-168"
     },
     {
+      "id": "nle-export",
+      "path": "scripts/nle_export.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut",
+      "title_ar": "تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات",
+      "summary_en": "Turns a kosif.timeline.v1 project or a kosif.edl.v1 cut plan into editable timelines that point at the original media: FCPXML 1.9 (Final Cut Pro, Resolve) with opacity keyframes, audio fades and position/size, FCP7 XML v5 (Premiere Pro, Resolve) with fades as dip-to-black transitions, one CMX3600 EDL per track, OpenTimelineIO JSON (Resolve 18.5+), a Blender Video Sequencer script with fades and layout, SRT captions from words.json and a numbered CapCut cut list. Integer and NTSC rates (23.976, 29.97, 59.94) are exact; times snap to frames with the largest drift reported, and a receipt lists SHA-256 per file and what each format could not carry.",
+      "summary_ar": "يحوّل مشروع التايملاين أو خطة القطع لملفات تايملاين قابلة للتعديل بتشاور على الميديا الأصلية: FCPXML لفاينال كت ودافنشي بالتلاشي والمكان والحجم، XML لبريمير ودافنشي بالتلاشي كانتقالات، EDL لكل مسار، OTIO لدافنشي 18.5+، سكربت بلندر بالتلاشي والأماكن، ترجمة SRT وقائمة قطع لكاب كات، ويدعم 29.97 و23.976 و59.94 فريم بالظبط، مع إيصال فيه البصمة واللي الصيغة مقدرتش تنقله.",
+      "use_when": [
+        "Open this KOSIF edit in DaVinci Resolve / Final Cut Pro / Premiere so I can keep editing",
+        "Export the timeline as FCPXML, XML or EDL",
+        "Build this cut in Blender's video sequencer",
+        "افتح المونتاج ده في دافنشي ريزولف أو فاينال كت أو بريمير",
+        "صدّر التايملاين لبلندر أو كاب كات وطلّع ملف ترجمة SRT"
+      ],
+      "keywords": [
+        "23.976",
+        "29.97",
+        "blender",
+        "capcut",
+        "cmx3600",
+        "davinci",
+        "davinci resolve",
+        "dissolve",
+        "edl",
+        "fade",
+        "fcpxml",
+        "final cut",
+        "final cut pro",
+        "handoff",
+        "nle",
+        "ntsc",
+        "opentimelineio",
+        "otio",
+        "premiere",
+        "premiere pro",
+        "relink",
+        "resolve",
+        "srt",
+        "subtitles",
+        "timeline export",
+        "video sequencer",
+        "vse",
+        "xmeml",
+        "xml",
+        "بريمير",
+        "بلندر",
+        "تايملاين",
+        "ترجمة",
+        "تصدير",
+        "تلاشي",
+        "دافنشي",
+        "فاينال كت",
+        "كاب كات"
+      ],
+      "commands": [
+        {
+          "name": "export",
+          "example": "python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json",
+          "does": "Write the timelines (fcpxml, xmeml, edl, otio, blender, srt, capcut; default the first five), HANDOFF.md with the import steps per editor and receipt.json; srt is skipped with a warning when no --words is given; refuses to overwrite unless --force."
+        },
+        {
+          "name": "export (cut plan)",
+          "example": "python3 scripts/nle_export.py export --project ./edit_plan.json --audio ./voice.wav --out ./nle",
+          "does": "Same from a cinematic_cut_planner.py kosif.edl.v1 plan, adding the voice-over as an audio track; scenes without footage stay as gaps with a warning."
+        },
+        {
+          "name": "formats",
+          "example": "python3 scripts/nle_export.py formats",
+          "does": "List the formats and which editor opens each."
+        },
+        {
+          "name": "tests",
+          "example": "python3 -m unittest discover -s evals -p 'test_nle_export.py' -v",
+          "does": "Run 16 tests: every format's structure and frame maths, FCPXML fades and layout, Premiere dissolves, OTIO JSON, NTSC rates, overwrite refusal, cut-plan input, the CLI, a read-back through OpenTimelineIO and a real Blender sequencer build, each skipped when that library is missing."
+        }
+      ],
+      "inputs": "A kosif.timeline.v1 project (kosif_timeline.py) or a kosif.edl.v1 cut plan (cinematic_cut_planner.py) with local media paths, optionally words.json (list or kosif-words/1) and a voice-over file.",
+      "outputs": "<name>.fcpxml, <name>.premiere.xml, <name>.<track>.edl, <name>.otio, <name>.blender_vse.py, <name>.srt, <name>.capcut.md, HANDOFF.md and receipt.json (kosif.nle-export.v1). Media is referenced, never copied or re-encoded.",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [
+          "ffprobe (reads real source lengths and sizes)",
+          "opentimelineio + otio-fcpx-xml-adapter, otio-fcp-adapter, otio-cmx3600-adapter (test read-back only)",
+          "Blender 4.2+ or the bpy module (to run the generated script)"
+        ],
+        "network": false
+      },
+      "safety": "writes-files",
+      "consent": "Use only media the user owns or may edit; the timelines only reference files, they do not copy them.",
+      "limits": "Non-drop timecode only (no drop-frame). Fades reach Blender, FCPXML and the Premiere XML; position/size reach Blender and FCPXML (the FCPXML transform is written to Apple's coordinate rules but was not opened in Final Cut or Resolve here). EDL and OTIO carry cuts only, with fades and layout in OTIO metadata. EDL holds one track per file and no overlaps; OTIO splits overlapping clips onto extra tracks. CapCut has no public timeline import, so it gets a cut list plus SRT. Not opened in the commercial editors on this machine: the files are checked by parsing, by OpenTimelineIO's independent readers and by running the Blender script in Blender 5.2 (bpy); the script also handles the Blender 4.x trim API.",
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-28: 16/16 tests passed. OpenTimelineIO 0.18.1 read FCPXML, FCP7 XML, EDL and OTIO back with the expected record and source frames, read the Premiere fades as Cross Dissolve / Cross Fade transitions of the right length, and read a 29.97 fps export at the exact times (its fcpx_xml adapter truncates 29.97 to 29, so FCPXML NTSC times are checked on the rational values). Blender 5.2.3 LTS (bpy) built the sequencer on real FFmpeg media at 30 and 29.97 fps, the .blend saved, and a rendered frame showed the logo at its set position and size.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_nle_export.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/edit.md"
+      ],
+      "families": [
+        "photo-video-footage",
+        "transitions-cuts",
+        "audio-sync-captions",
+        "engines-render-pipeline"
+      ],
+      "power_id": "TOOL-176"
+    },
+    {
       "id": "cinema-lab",
       "path": "scripts/cinema_lab.py",
       "root": "skill",
