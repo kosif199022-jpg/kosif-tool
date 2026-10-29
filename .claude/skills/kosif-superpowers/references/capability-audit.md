@@ -17,7 +17,7 @@
 
 | الاسم | القدرات | في القدرات الخارقة |
 |---|---|---|
-| deterministic three js seek scene | 3D-15 = ENG-315 | SP-0171 · SP-0270 |
+| deterministic three js seek scene | 3D-15 = ENG-315 | SP-0171 · SP-0269 |
 | iterative retrieval loop | AGENT-03 = WEB-12 | SP-0115 |
 | chroma key | APPX-02 = FOOT-28 | SP-0122 · SP-0358 |
 | loudness normalisation 14 lufs | APPX-05 = BEAT-269 | SP-0122 · SP-0329 |
@@ -56,7 +56,7 @@
 | 0.72 | ACODE-116 Redacted API diagnostic bundle for suppo (SP-0044) | ADOCS-13 Secret-safe redacted diagnostic bundle f (SP-0108) | نعم |
 | 0.72 | CAM-128 Log-space zoom lmix/push/zoomTrack (SP-0196) | EASE-16 Log-space zoom (logEase, lmix, zoomTrack (SP-0259) | لا |
 | 0.72 | CODE-01 Search-first: adopt, extend, compose, bu (SP-0072) | THINK-22 Search first: Adopt / Extend / Compose / (SP-0027) | نعم |
-| 0.72 | ENG-11 Cinematic post stack (makePost) (SP-0276) | GLOW-26 Three-kit cinematic post stack (makePost (SP-0311) | لا |
+| 0.72 | ENG-11 Cinematic post stack (makePost) (SP-0277) | GLOW-26 Three-kit cinematic post stack (makePost (SP-0311) | لا |
 | 0.72 | GLOW-81 Painted moon with halo (SP-0312) | TEX-58 Procedural moon texture (SP-0417) | لا |
 | 0.72 | BEAT-34 Seamless loops render-three-keep-middle (SP-0336) | TRANS-61 Seamless loop (SP-0447) | نعم |
 | 0.71 | SYNC-54 Joined-audio drift fix (SP-0187) | QA-08 Concat drift fix: encode once (SP-0377) | نعم |
@@ -86,7 +86,7 @@
 | 0.479 | SP-0156 صوت PipeWire داخل الحاويات | SP-0377 قياس الجهارة والذروة | images ↔ quality |
 | 0.474 | SP-0149 مختبر مطابقة الخطوط العربية | SP-0454 خريطة أصوات الخطوط | agents ↔ type |
 | 0.456 | SP-0006 مراسلة وكلاء مشاريع أخرى عبر الألواح | SP-0137 خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف | thinking ↔ software |
-| 0.455 | SP-0326 قطع على الإيقاع | SP-0422 قطع بقلب الألوان | audio ↔ motion |
+| 0.454 | SP-0326 قطع على الإيقاع | SP-0422 قطع بقلب الألوان | audio ↔ motion |
 | 0.451 | SP-0363 كلمة غليتش RGB على النوتات | SP-0425 انتقال جليتش شرائحي | drawing ↔ motion |
 | 0.449 | SP-0195 إطار HUD | SP-0342 واجهة عداد البارات الإيقاعية | motion ↔ audio |
 | 0.448 | SP-0047 أساطيل أشجار عمل لمراحل وكلاء متوازية | SP-0161 حلقة مستقلة لتصريف قائمة المهام | software ↔ thinking |
@@ -105,7 +105,7 @@
 | 0.395 | SP-0156 صوت PipeWire داخل الحاويات | SP-0329 تطبيع الجهارة -14 LUFS | images ↔ audio |
 | 0.395 | SP-0219 حجم الجهاز لكل نسبة | SP-0469 هاتف 2.5D على Canvas | motion ↔ software |
 | 0.394 | SP-0392 حد الوميض الآمن | SP-0436 قطع وميضي | quality ↔ motion |
-| 0.389 | SP-0271 ضبابية حركة حقيقية | SP-0368 قائمة جودة الحركة | 3d ↔ quality |
+| 0.389 | SP-0270 ضبابية حركة حقيقية | SP-0368 قائمة جودة الحركة | 3d ↔ quality |
 | 0.384 | SP-0038 اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا | SP-0181 مقدمات الأسلوب المتطابقة بايتًا | thinking ↔ images |
 | 0.384 | SP-0109 مراجعة مخاطر العقود واتفاقيات السرية | SP-0160 مراجعة تصميم بأسلوب الطرح حتى الجوهر | documents ↔ thinking |
 | 0.384 | SP-0331 عزل الصوت وتنظيفه | SP-0377 قياس الجهارة والذروة | audio ↔ quality |

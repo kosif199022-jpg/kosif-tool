@@ -91,7 +91,7 @@
 | SP-0055 | حكم LLM معايَر ومدقَّق التحيز · Calibrated, bias-audited LLM-as-judge <sub>(llm, litellm, evaluation, engineering)</sub> | 11 | 📄 📄11 | 0 | SP-0163 SP-0376 SP-0110 SP-0039 |
 | SP-0056 | ترحيل مخطط قاعدة البيانات دون توقف · Zero-downtime expand/contract schema migration <sub>(migration, storage, deno, databases)</sub> | 11 | 📄 📄11 | 0 | SP-0138 SP-0098 SP-0097 SP-0134 |
 | SP-0057 | تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد · Design the agent harness, not just the prompt: ten-part blueprint <sub>(agent, harness, skill, injection)</sub> | 10 | 📄 📄10 | 0 | SP-0006 SP-0047 SP-0161 SP-0001 |
-| SP-0058 | أنماط معمارية لـ GDScript في Godot 4 · Godot 4 GDScript architecture patterns <sub>(game, godot, ecs, collision)</sub> | 9 | 📄 📄9 | 0 | SP-0155 SP-0364 SP-0059 SP-0277 |
+| SP-0058 | أنماط معمارية لـ GDScript في Godot 4 · Godot 4 GDScript architecture patterns <sub>(game, godot, ecs, collision)</sub> | 9 | 📄 📄9 | 0 | SP-0155 SP-0364 SP-0059 SP-0384 |
 | SP-0059 | دورة حياة أعلام الميزات وتدقيق الديون · Feature flag lifecycle and debt audit <sub>(lifecycle, saas, rollout, staged)</sub> | 9 | 📄 📄9 | 0 | SP-0135 SP-0067 SP-0052 SP-0046 |
 | SP-0060 | هيكلة مكون React مع shadcn وTailwind وStorybook · React component scaffold with shadcn, Tailwind, Storybook <sub>(shadcn, react, tailwind, component)</sub> | 9 | 📄 📄9 | 0 | SP-0134 SP-0035 SP-0293 SP-0133 |
 | SP-0061 | ورشة SLO وسياسة ميزانية الخطأ · SLO workshop with error budget policy <sub>(error, budget, sre, slo)</sub> | 7 | 📄 📄7 | 0 | SP-0166 SP-0178 SP-0254 SP-0071 |
@@ -125,7 +125,7 @@
 | SP-0089 | تحليل حزمة ويب · Capture and statically analyze a page bundle, defaulting to the selected target origin <sub>(origin, javascript, web-js, page)</sub> | 6 | ✅ ✅5 📦1 | 5 | SP-0082 SP-0085 SP-0086 SP-0096 SP-0150 |
 | SP-0090 | فرز المثبّت قبل REA · Installer triage scan <sub>(windows, installer, electron, nsis)</sub> | 6 | ✅ ✅6 | 6 | SP-0152 SP-0085 SP-0120 SP-0077 |
 | SP-0091 | REA MCP: حالة جلسة GDB · REA MCP tool `gdb_session_status` <sub>(gdb, rea, mcp, session)</sub> | 5 | 📄 📄5 | 0 | SP-0077 SP-0084 SP-0087 SP-0150 |
-| SP-0092 | فحص عميل pcap · Inspect the caller-selected tshark and capinfos binaries without reading a capture <sub>(pcap, inspect, tshark, protocol)</sub> | 5 | ✅ ✅2 📦1 📄2 | 2 | SP-0081 SP-0079 SP-0088 SP-0080 SP-0272 |
+| SP-0092 | فحص عميل pcap · Inspect the caller-selected tshark and capinfos binaries without reading a capture <sub>(pcap, inspect, tshark, protocol)</sub> | 5 | ✅ ✅2 📦1 📄2 | 2 | SP-0081 SP-0079 SP-0088 SP-0080 SP-0271 |
 | SP-0093 | فتح مشروع JEB · Open or create a JEB project from an artifact or .jdb2 database <sub>(jeb, decompile, project, type)</sub> | 4 | 📄 📄4 | 0 | SP-0081 SP-0077 SP-0083 SP-0088 SP-0150 |
 | SP-0094 | فك ترميز تسجيل إشارة · Decode an existing signal recording with caller-supplied sigrok <sub>(sigrok, decode, signal, caller-supplied)</sub> | 3 | ✅ ✅1 📄2 | 1 | SP-0088 SP-0078 SP-0081 SP-0092 SP-0150 |
 | SP-0095 | استخراج فيرموير · Extract selected firmware bytes and return verified files and provenance <sub>(firmware, extract, regular, artifact)</sub> | 3 | ✅ ✅1 📄2 | 1 | SP-0081 SP-0083 SP-0079 SP-0150 |
@@ -171,7 +171,7 @@
 
 | id | القدرة الخارقة / superpower | حجم | أفضل | جاهز الآن | يرتبط بـ |
 |---|---|---|---|---|---|
-| SP-0118 | إزالة الضباب · Dehaze (ClearView-style) <sub>(dxo, jpegmini, capture, photolab)</sub> | 27 | ✅ ✅27 | 27 | SP-0122 SP-0272 SP-0451 SP-0128 |
+| SP-0118 | إزالة الضباب · Dehaze (ClearView-style) <sub>(dxo, jpegmini, capture, photolab)</sub> | 27 | ✅ ✅27 | 27 | SP-0122 SP-0271 SP-0451 SP-0128 |
 | SP-0119 | التطابق أولًا ثم التكييف · Parity first, adaptation second <sub>(magicpath, mit, methods, agent-skills)</sub> | 20 | 📄 📄20 | 0 | SP-0121 SP-0133 SP-0379 SP-0134 |
 | SP-0120 | جسر واحد بقناة MessagePort · Minimal context bridge over a MessagePort <sub>(app, architecture, patterns, installer)</sub> | 19 | ✅ ✅4 📄15 | 4 | SP-0152 SP-0090 SP-0135 SP-0123 |
 | SP-0121 | تفريغ عربي محلي بلا إنترنت · Offline Arabic speech stack <sub>(montaji, study, atempo, media)</sub> | 16 | ✅ ✅4 📄12 | 4 | SP-0379 SP-0185 SP-0119 SP-0467 |
@@ -182,24 +182,24 @@
 | SP-0126 | أوضاع المزج والطبقات (OpenRaster) · Blend modes (24) and layer stacks → PNG or OpenRaster <sub>(photoshop, lut, compositing, sky)</sub> | 6 | ✅ ✅4 🟢1 📄1 | 5 | SP-0239 SP-0245 SP-0199 SP-0433 |
 | SP-0127 | فرش الرسّام · MS Paint brushes on a canvas <sub>(paint, paintui.winmd, microsoft, sticker)</sub> | 5 | ✅ ✅4 📄1 | 4 | SP-0141 SP-0266 SP-0303 SP-0417 |
 | SP-0128 | فهرسة المكتبة والبحث · Photo catalog + search <sub>(acdsee, lightroom, gps, exif)</sub> | 5 | ✅ ✅4 📦1 | 4 | SP-0451 SP-0293 SP-0118 SP-0145 |
-| SP-0129 | جرد قدرات Blender الحي · Live Blender capability inventory <sub>(blender, cycles, bpy, cinematic)</sub> | 4 | ✅ ✅4 | 4 | SP-0146 SP-0171 SP-0371 SP-0270 |
+| SP-0129 | جرد قدرات Blender الحي · Live Blender capability inventory <sub>(blender, cycles, bpy, cinematic)</sub> | 4 | ✅ ✅4 | 4 | SP-0146 SP-0171 SP-0371 SP-0269 |
 | SP-0130 | مشغل فيديو عمودي بالسحب · Vertical swipe video player (Android) <sub>(virtual, player, android, camera)</sub> | 2 | 📄 📄2 | 0 | SP-0193 SP-0214 SP-0375 SP-0142 |
 | SP-0131 | نشر صفحة تفاعلية خاصة · Publish a private interactive page (Artifact) <sub>(html, interactive, page, uis)</sub> | 14 | ✅ ✅3 📦3 🔑3 📄5 | 3 | SP-0262 SP-0116 SP-0011 SP-0140 |
 | SP-0132 | بناء خادم MCP (الإصدار 2) · Build an MCP server (mcp 2.x API) <sub>(stl, server, api, servers)</sub> | 9 | ✅ ✅3 📦4 🔑2 | 3 | SP-0044 SP-0182 SP-0348 SP-0077 |
 | SP-0133 | اتجاه التصميم قبل الكود · Design direction before code <sub>(design, method, critic, polish)</sub> | 5 | 📄 📄5 | 0 | SP-0134 SP-0014 SP-0060 SP-0008 |
 | SP-0134 | من Figma إلى كود مطابق · Figma to pixel-exact code plan <sub>(design, figma, front-end, systems)</sub> | 27 | 📄 📄27 | 0 | SP-0035 SP-0060 SP-0133 SP-0149 |
 | SP-0135 | نموذج أولي مؤقت للإجابة عن سؤال · Throwaway prototype to answer one question <sub>(saas, prototype, app, building)</sub> | 11 | 📄 📄11 | 0 | SP-0059 SP-0067 SP-0299 SP-0120 |
-| SP-0136 | جلسات Playwright مسماة بمخرجات على القرص · Named-session Playwright CLI with disk artifacts <sub>(playwright, browser, apps, automation)</sub> | 11 | 📄 📄11 | 0 | SP-0273 SP-0272 SP-0388 SP-0154 |
+| SP-0136 | جلسات Playwright مسماة بمخرجات على القرص · Named-session Playwright CLI with disk artifacts <sub>(playwright, browser, apps, automation)</sub> | 11 | 📄 📄11 | 0 | SP-0273 SP-0271 SP-0388 SP-0154 |
 | SP-0137 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume <sub>(roadmap, agent, telemetry, orchestration)</sub> | 6 | 📄 📄6 | 0 | SP-0006 SP-0047 SP-0161 SP-0057 |
 | SP-0138 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook <sub>(kafka, postgres, backup, playbook)</sub> | 4 | 📄 📄4 | 0 | SP-0056 SP-0098 SP-0097 SP-0163 |
 | SP-0139 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner <sub>(atlas, discover, capability, kosif)</sub> | 33 | ✅ ✅25 🟢8 | 33 | SP-0347 SP-0145 SP-0027 SP-0143 |
-| SP-0140 | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler <sub>(graphics, rendering, motion, svg)</sub> | 19 | ✅ ✅15 📦4 | 15 | SP-0262 SP-0148 SP-0268 SP-0266 |
+| SP-0140 | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler <sub>(graphics, rendering, motion, svg)</sub> | 19 | ✅ ✅16 📦3 | 16 | SP-0262 SP-0148 SP-0268 SP-0266 |
 | SP-0141 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies <sub>(drawing, characters, layered, svg)</sub> | 16 | ✅ ✅13 🟢3 | 16 | SP-0303 SP-0266 SP-0036 SP-0451 |
 | SP-0142 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine <sub>(reference, video, editing, cut)</sub> | 16 | ✅ ✅16 | 16 | SP-0356 SP-0379 SP-0407 SP-0326 |
 | SP-0143 | خريطة ترتيب المهارة · Skill Layout Map <sub>(map, skill, superpowers, repo)</sub> | 12 | ✅ ✅9 🟢3 | 12 | SP-0317 SP-0074 SP-0002 SP-0030 |
 | SP-0144 | مستكشف مصادر المجتمع · Community source scout <sub>(sources, references, stock, instagram)</sub> | 12 | ✅ ✅10 📦2 | 10 | SP-0476 SP-0359 SP-0115 SP-0142 |
 | SP-0145 | تدقيق أدلة الكتالوج · Catalog Evidence Audit <sub>(catalog, creative, powers, proof)</sub> | 11 | ✅ ✅4 🟢5 📦2 | 9 | SP-0139 SP-0293 SP-0038 SP-0347 |
-| SP-0146 | جسر Blender الآمن · Safe headless Blender bridge <sub>(blender, cycles, glb, cat)</sub> | 11 | ✅ ✅8 🟢1 📦2 | 9 | SP-0129 SP-0171 SP-0270 SP-0371 |
+| SP-0146 | جسر Blender الآمن · Safe headless Blender bridge <sub>(blender, cycles, glb, cat)</sub> | 11 | ✅ ✅8 🟢1 📦2 | 9 | SP-0129 SP-0171 SP-0269 SP-0371 |
 | SP-0147 | مختبر البرومبت · Prompt Lab <sub>(prompt, think, memory, write)</sub> | 10 | ✅ ✅10 | 10 | SP-0037 SP-0176 SP-0151 SP-0372 |
 | SP-0148 | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter <sub>(word, rhythm, audio, words.json)</sub> | 9 | ✅ ✅9 | 9 | SP-0184 SP-0185 SP-0140 SP-0325 |
 | SP-0149 | مختبر مطابقة الخطوط العربية · Arabic-aware font fidelity lab <sub>(font, fonts, design, lab)</sub> | 8 | ✅ ✅7 📦1 | 7 | SP-0454 SP-0460 SP-0378 SP-0159 |
@@ -213,7 +213,7 @@
 |---|---|---|---|---|---|
 | SP-0153 | تحويل نص لصوت واستنساخ وMؤثرات ElevenLabs · ElevenLabs TTS, cloning and sound effects <sub>(voice, tts, music, elevenlabs)</sub> | 11 | 📄 📄11 | 0 | SP-0477 SP-0156 SP-0479 SP-0323 |
 | SP-0154 | نموذج الشيدر في React Three Fiber · GLSL shader mental model in React Three Fiber <sub>(creative, react, motion, video)</sub> | 10 | 📄 📄10 | 0 | SP-0301 SP-0431 SP-0274 SP-0279 |
-| SP-0155 | تريلر من لعب آلي حقيقي · Gameplay trailer from bot playthroughs <sub>(godot, pbr, hls, game)</sub> | 6 | 📄 📄6 | 0 | SP-0058 SP-0346 SP-0278 SP-0268 |
+| SP-0155 | تريلر من لعب آلي حقيقي · Gameplay trailer from bot playthroughs <sub>(godot, pbr, hls, game)</sub> | 6 | 📄 📄6 | 0 | SP-0058 SP-0346 SP-0268 SP-0278 |
 | SP-0156 | صوت PipeWire داخل الحاويات · PipeWire audio in containers <sub>(audio, lufs, python, transcode)</sub> | 14 | ✅ ✅11 📄3 | 11 | SP-0377 SP-0325 SP-0329 SP-0331 |
 | SP-0157 | التعرف على العربية والإنجليزية بـ tesseract · Arabic + English OCR with tesseract <sub>(ocr, arabic, tesseract, mosamem)</sub> | 13 | ✅ ✅7 📦4 🔑1 📄1 | 7 | SP-0034 SP-0349 SP-0033 SP-0112 |
 | SP-0158 | ضغط الصور ومقارنة الجودة · Image compression with quality metrics <sub>(image, processing, imagemagick, png)</sub> | 9 | ✅ ✅7 🟢1 📄1 | 8 | SP-0372 SP-0177 SP-0159 SP-0149 |
@@ -239,7 +239,7 @@
 
 | id | القدرة الخارقة / superpower | حجم | أفضل | جاهز الآن | يرتبط بـ |
 |---|---|---|---|---|---|
-| SP-0171 | عقد مشهد Three.js الحتمي · Deterministic Three.js seek scene <sub>(three.js, exploded, blender, glb)</sub> | 23 | ✅ ✅1 🟢11 📦2 🔑2 👁4 📄2 💡1 | 12 | SP-0146 SP-0270 SP-0129 SP-0311 |
+| SP-0171 | عقد مشهد Three.js الحتمي · Deterministic Three.js seek scene <sub>(three.js, exploded, blender, glb)</sub> | 23 | ✅ ✅1 🟢11 📦2 🔑2 👁4 📄2 💡1 | 12 | SP-0146 SP-0269 SP-0129 SP-0311 |
 | SP-0172 | منصة العمق 2.5D · 2.5D CSS depth rig <sub>(depth, css, perspective, turntable)</sub> | 12 | 🟢 🟢4 📦1 👁2 📄5 | 4 | SP-0200 SP-0285 SP-0199 SP-0197 SP-0143 |
 | SP-0173 | مناورات طيران على مسار · Aircraft spline manoeuvres & chase cam <sub>(spline, forest, instanced, sea)</sub> | 8 | 🟢 🟢5 👁3 | 5 | SP-0193 SP-0214 SP-0404 SP-0351 SP-0090 |
 | SP-0174 | الرسم بالأشعة ودوال المسافة · Raymarched SDF scenes <sub>(sdf, clouds, threecanvas, remotion)</sub> | 7 | ✅ ✅1 🟢2 📦1 👁2 📄1 | 3 | SP-0399 SP-0353 SP-0274 SP-0321 SP-0058 |
@@ -267,7 +267,7 @@
 | SP-0196 | زووم كين بيرنز · Ken Burns raised-cosine zoom <sub>(zoom, punch, ken, burns)</sub> | 22 | ✅ ✅1 🟢3 📦11 👁4 📄2 💡1 | 4 | SP-0423 SP-0222 SP-0194 SP-0259 SP-0051 |
 | SP-0197 | جدار بطاقات · Card wall drift <sub>(grid, cards, card, bento)</sub> | 20 | 🟢 🟢1 📦4 👁13 📄1 💡1 | 1 | SP-0475 SP-0397 SP-0327 SP-0190 SP-0167 |
 | SP-0198 | تخطيط نص وواجهة · Split text/UI layout <sub>(layout, split, feature, headline)</sub> | 18 | ✅ ✅3 🟢1 📦3 👁6 📄5 | 4 | SP-0206 SP-0019 SP-0287 SP-0358 |
-| SP-0199 | عمق الميدان وسحب التركيز · Depth-of-field rack focus <sub>(blur, focus, depth, rack)</sub> | 18 | 🟢 🟢4 📦8 👁3 📄2 💡1 | 4 | SP-0433 SP-0271 SP-0428 SP-0252 SP-0126 |
+| SP-0199 | عمق الميدان وسحب التركيز · Depth-of-field rack focus <sub>(blur, focus, depth, rack)</sub> | 18 | 🟢 🟢4 📦8 👁3 📄2 💡1 | 4 | SP-0433 SP-0270 SP-0428 SP-0252 SP-0126 |
 | SP-0200 | اختلاف المنظر · Layer parallax <sub>(parallax, depth, layers, camera)</sub> | 17 | ✅ ✅1 🟢4 📦4 👁3 📄3 💡2 | 5 | SP-0172 SP-0358 SP-0199 SP-0193 SP-0126 |
 | SP-0201 | تكوين: Frame-within-frame · Composition: Frame-within-frame <sub>(composition, symmetry, rule, thirds)</sub> | 17 | 🟢 🟢1 📦1 👁3 📄12 | 1 | SP-0467 SP-0216 SP-0206 SP-0263 SP-0060 |
 | SP-0202 | اهتزاز الكاميرا · Camera shake / hit <sub>(shake, camera, handheld, impact)</sub> | 15 | 🟢 🟢2 📦9 👁1 💡3 | 2 | SP-0193 SP-0260 SP-0194 SP-0214 SP-0130 |
@@ -280,7 +280,7 @@
 | SP-0209 | إطار HUD للفصول · Chapter HUD frame <sub>(chapter, hud, progress, ruler)</sub> | 10 | 👁 👁10 | 0 | SP-0195 SP-0210 SP-0342 SP-0409 SP-0145 |
 | SP-0210 | ملصقات فصول HUD · Chapter HUD labels <sub>(hud, labels, corner, poster)</sub> | 10 | 👁 👁9 📄1 | 0 | SP-0195 SP-0209 SP-0342 SP-0220 SP-0105 |
 | SP-0211 | إعادة تأطير ذكية · Smart reframe <sub>(crop, reframe, marks, curtain)</sub> | 9 | 🟢 🟢2 📦2 🔑1 👁3 📄1 | 2 | SP-0300 SP-0219 SP-0302 SP-0217 SP-0140 |
-| SP-0212 | حركة إيقاعية: mosaic-pack · Beat motion primitive: mosaic-pack <sub>(motion, continuity, primitive, beat)</sub> | 9 | 🟢 🟢1 📦5 👁1 📄2 | 1 | SP-0441 SP-0368 SP-0271 SP-0408 SP-0140 |
+| SP-0212 | حركة إيقاعية: mosaic-pack · Beat motion primitive: mosaic-pack <sub>(motion, continuity, primitive, beat)</sub> | 9 | 🟢 🟢1 📦5 👁1 📄2 | 1 | SP-0441 SP-0368 SP-0270 SP-0408 SP-0140 |
 | SP-0213 | دوار دائري · Carousel circle (styles 1-5) <sub>(carousel, scroll, styles, gallery)</sub> | 9 | 🟢 🟢1 📦8 | 1 | SP-0291 SP-0429 SP-0221 SP-0038 |
 | SP-0214 | كاميرا تتبع متأخرة · Ball-tracking lag camera <sub>(camera, follow, chase, lag)</sub> | 8 | 📦 📦1 🔑1 👁4 📄1 💡1 | 0 | SP-0193 SP-0173 SP-0130 SP-0194 |
 | SP-0215 | نمط صورة داخل صورة · Composition pattern: picture-in-picture <sub>(picture-in-picture, side, window, pip)</sub> | 8 | 🟢 🟢1 📦3 👁3 📄1 | 1 | SP-0360 SP-0372 SP-0206 SP-0250 SP-0096 |
@@ -320,32 +320,32 @@
 | SP-0249 | شبكة مفاهيم بقوة الجذب · Force-directed concept graph <sub>(graph, excalidraw, chips, json)</sub> | 6 | 📦 📦3 👁1 📄1 💡1 | 0 | SP-0074 SP-0011 SP-0073 SP-0053 |
 | SP-0250 | طباعة الكود على الشاشة · On-screen code typography <sub>(declarative, syntax, typography, semantic)</sub> | 4 | 📄 📄4 | 0 | SP-0238 SP-0215 SP-0053 SP-0292 |
 | SP-0251 | حدود الأيقونات المختصرة · Closure limits for minimal icons <sub>(manim, icons, closure, limits)</sub> | 3 | 📦 📦1 🔑1 📄1 | 0 | SP-0177 SP-0192 SP-0397 SP-0306 SP-0117 |
-| SP-0252 | تمويه السرعة الاتجاهي · Directional speed blur <sub>(speed, timing, blur, directional)</sub> | 24 | ✅ ✅5 🟢9 📦2 👁1 📄7 | 14 | SP-0433 SP-0271 SP-0258 SP-0199 SP-0148 |
+| SP-0252 | تمويه السرعة الاتجاهي · Directional speed blur <sub>(speed, timing, blur, directional)</sub> | 24 | ✅ ✅5 🟢9 📦2 👁1 📄7 | 14 | SP-0433 SP-0270 SP-0258 SP-0199 SP-0148 |
 | SP-0253 | إعادة الاستهداف بالنابض · Spring retargeting track() <sub>(spring, ease, gsap, timeline)</sub> | 23 | ✅ ✅7 🟢7 📦4 👁1 📄4 | 14 | SP-0459 SP-0281 SP-0263 SP-0285 SP-0142 |
 | SP-0254 | ميزانيات التتابع · Stagger budgets <sub>(stagger, budget, sway, overshoot)</sub> | 15 | ✅ ✅4 🟢4 👁3 📄4 | 8 | SP-0197 SP-0061 SP-0430 SP-0285 |
-| SP-0255 | رموز التسارع حسب الدور (17 منحنى) · Role-based easing tokens MOTION.E <sub>(easing, cubic-bezier, tokens, css)</sub> | 14 | ✅ ✅4 🟢3 📦1 👁2 📄4 | 7 | SP-0271 SP-0368 SP-0408 SP-0285 SP-0140 |
+| SP-0255 | رموز التسارع حسب الدور (17 منحنى) · Role-based easing tokens MOTION.E <sub>(easing, cubic-bezier, tokens, css)</sub> | 14 | ✅ ✅4 🟢3 📦1 👁2 📄4 | 7 | SP-0270 SP-0368 SP-0408 SP-0285 SP-0140 |
 | SP-0256 | بوسترة طبقة واحدة · Per-layer posterize (stepped time on one layer) <sub>(stepped, twos, keyframes, alive)</sub> | 11 | ✅ ✅2 🟢2 📦1 📄6 | 4 | SP-0327 SP-0465 SP-0285 SP-0326 SP-0090 |
 | SP-0257 | أربع تسارعات مسماة فقط · Four named eases slam/snap/drive/settle <sub>(settle, slam, stamp, drop)</sub> | 10 | ✅ ✅1 🟢3 👁3 📄3 | 4 | SP-0465 SP-0327 SP-0401 SP-0197 SP-0148 |
 | SP-0258 | انزلاق بطيء-سريع-بطيء · Nudge curve slow–fast–slow <sub>(slow, genre, interpolation, shot)</sub> | 6 | ✅ ✅1 🟢2 👁1 📄2 | 3 | SP-0194 SP-0252 SP-0356 SP-0212 SP-0148 |
 | SP-0259 | حركات طبقات الاستوديو · Studio layer entrances & opacity envelope <sub>(envelope, hop, zoom, reveal)</sub> | 5 | ✅ ✅3 🟢1 📄1 | 4 | SP-0196 SP-0423 SP-0194 SP-0187 SP-0003 |
 | SP-0260 | التمهيد والمتابعة · Anticipation & follow-through <sub>(anticipation, follow-through, overlap, proportions)</sub> | 3 | 📄 📄3 | 0 | SP-0202 SP-0334 SP-0436 SP-0316 SP-0053 |
 | SP-0261 | محرك خارجي: iLoveVideoEditor · External engine: iLoveVideoEditor <sub>(engine, external, tool, video)</sub> | 32 | ✅ ✅2 🟢1 📦23 🔑4 📄2 | 3 | SP-0142 SP-0140 SP-0263 SP-0274 |
-| SP-0262 | رندر HTML حتمي · HTML seek renderer <sub>(html, seek, contract, page)</sub> | 26 | ✅ ✅3 🟢4 📦15 📄4 | 7 | SP-0131 SP-0140 SP-0272 SP-0469 |
+| SP-0262 | رندر HTML حتمي · HTML seek renderer <sub>(html, seek, contract, page)</sub> | 26 | ✅ ✅3 🟢4 📦15 📄4 | 7 | SP-0131 SP-0140 SP-0271 SP-0469 |
 | SP-0263 | مواصفة الخط الزمني · JSON timeline spec <sub>(timeline, json, resolve, edit)</sub> | 22 | ✅ ✅2 🟢5 📦7 🔑3 📄5 | 7 | SP-0356 SP-0142 SP-0382 SP-0349 |
-| SP-0264 | تقسيم التصيير · Render sharding <sub>(render, shard, lambda, cache)</sub> | 22 | ✅ ✅2 🟢1 📦8 🔑6 👁1 📄4 | 3 | SP-0371 SP-0272 SP-0278 SP-0296 SP-0140 |
+| SP-0264 | تقسيم التصيير · Render sharding <sub>(render, shard, lambda, cache)</sub> | 22 | ✅ ✅2 🟢1 📦8 🔑6 👁1 📄4 | 3 | SP-0371 SP-0271 SP-0278 SP-0296 SP-0140 |
 | SP-0265 | معاينة مسودة · Draft preview render <sub>(preview, draft, render, cli)</sub> | 22 | ✅ ✅2 🟢6 📦11 📄3 | 8 | SP-0375 SP-0264 SP-0371 SP-0299 SP-0014 |
 | SP-0266 | استوديو KOSIF Motion Web المحلي · KOSIF Motion Web local studio server <sub>(kosif, svg, studio, motion)</sub> | 20 | ✅ ✅5 🟢4 📦9 📄2 | 9 | SP-0141 SP-0348 SP-0303 SP-0140 |
 | SP-0267 | مشروع أنيميشن جديد · New animation project (2D / 3D / lab) <sub>(project, scaffold, kmotion, lab)</sub> | 20 | ✅ ✅4 🟢4 📦11 📄1 | 8 | SP-0389 SP-0349 SP-0283 SP-0263 SP-0060 |
-| SP-0268 | تصدير MP4 من محرر المتصفح · Browser editor offline MP4 export (WebCodecs) <sub>(mp4, export, webcodecs, ffmpeg)</sub> | 17 | ✅ ✅3 🟢4 📦6 📄4 | 7 | SP-0269 SP-0140 SP-0011 SP-0262 |
-| SP-0269 | ترميز GPU بـ NVENC · NVENC GPU encode <sub>(encode, nvenc, h.264, gif)</sub> | 16 | ✅ ✅4 🟢1 📦3 📄8 | 5 | SP-0268 SP-0300 SP-0298 SP-0272 SP-0140 |
-| SP-0270 | حزمة ثلاثية الأبعاد جاهزة · Pre-bundled 3D kit (window.K3) <sub>(esbuild, offline, three.js, bundling)</sub> | 16 | ✅ ✅3 📦11 🔑1 👁1 | 3 | SP-0171 SP-0146 SP-0430 SP-0129 |
-| SP-0271 | ضبابية حركة حقيقية · GPU sub-frame motion blur <sub>(blur, motion, sub-frame, shutter)</sub> | 15 | 🟢 🟢5 📦7 👁1 📄2 | 5 | SP-0368 SP-0433 SP-0199 SP-0212 SP-0140 |
-| SP-0272 | التقاط الإطارات عبر متصفح Edge وكارت الشاشة · Playwright Edge D3D11 frame capture <sub>(capture, gpu, frame, render)</sub> | 15 | ✅ ✅1 🟢1 📦9 📄3 💡1 | 2 | SP-0374 SP-0273 SP-0371 SP-0264 SP-0118 |
-| SP-0273 | إيجاد Playwright و Chromium · Playwright/Chromium resolution order <sub>(chromium, playwright, deterministic, browser)</sub> | 15 | ✅ ✅1 🟢3 📦7 📄4 | 4 | SP-0136 SP-0272 SP-0371 SP-0264 |
-| SP-0274 | قائمة قواعد Remotion · Remotion rule checklist <sub>(remotion, react, delivery, video)</sub> | 13 | 📦 📦11 📄2 | 0 | SP-0356 SP-0174 SP-0154 SP-0142 |
+| SP-0268 | تصدير MP4 من محرر المتصفح · Browser editor offline MP4 export (WebCodecs) <sub>(mp4, export, ffmpeg, webcodecs)</sub> | 17 | ✅ ✅2 🟢4 📦7 📄4 | 6 | SP-0272 SP-0140 SP-0011 SP-0298 |
+| SP-0269 | حزمة ثلاثية الأبعاد جاهزة · Pre-bundled 3D kit (window.K3) <sub>(esbuild, offline, three.js, bundling)</sub> | 16 | ✅ ✅3 📦11 🔑1 👁1 | 3 | SP-0171 SP-0146 SP-0430 SP-0129 |
+| SP-0270 | ضبابية حركة حقيقية · GPU sub-frame motion blur <sub>(blur, motion, sub-frame, shutter)</sub> | 15 | 🟢 🟢5 📦7 👁1 📄2 | 5 | SP-0368 SP-0433 SP-0199 SP-0212 SP-0140 |
+| SP-0271 | التقاط الإطارات عبر متصفح Edge وكارت الشاشة · Playwright Edge D3D11 frame capture <sub>(capture, gpu, frame, render)</sub> | 15 | ✅ ✅1 🟢1 📦9 📄3 💡1 | 2 | SP-0374 SP-0273 SP-0371 SP-0264 SP-0118 |
+| SP-0272 | ترميز GPU بـ NVENC · NVENC GPU encode <sub>(encode, nvenc, h.264, gif)</sub> | 15 | ✅ ✅4 🟢1 📦2 📄8 | 5 | SP-0268 SP-0300 SP-0298 SP-0271 SP-0156 |
+| SP-0273 | إيجاد Playwright و Chromium · Playwright/Chromium resolution order <sub>(chromium, playwright, deterministic, browser)</sub> | 15 | ✅ ✅1 🟢3 📦7 📄4 | 4 | SP-0136 SP-0271 SP-0371 SP-0264 |
+| SP-0274 | قائمة قواعد Remotion · Remotion rule checklist <sub>(remotion, react, delivery, video)</sub> | 13 | 📦 📦11 📄2 | 0 | SP-0356 SP-0174 SP-0154 SP-0140 |
 | SP-0275 | ترند: Self-critique on frames · Trend: Self-critique on frames <sub>(trend, opus, audio, sept-oct)</sub> | 13 | ✅ ✅1 📦1 📄11 | 1 | SP-0325 SP-0156 SP-0377 SP-0331 |
-| SP-0276 | خيار التقنية: canvas · Stack option: canvas <sub>(stack, option, post, canvas)</sub> | 12 | ✅ ✅5 🟢3 📦3 📄1 | 8 | SP-0311 SP-0413 SP-0288 SP-0274 SP-0140 |
-| SP-0277 | فيلم بدون متصفح · workbench no-browser 2D film <sub>(pillow, film, workbench, program)</sub> | 11 | ✅ ✅4 🟢1 📦4 📄2 | 5 | SP-0405 SP-0268 SP-0140 SP-0303 |
+| SP-0276 | فيلم بدون متصفح · Workbench Pillow film <sub>(pillow, film, workbench, program)</sub> | 12 | ✅ ✅5 🟢1 📦4 📄2 | 6 | SP-0405 SP-0140 SP-0448 SP-0268 |
+| SP-0277 | خيار التقنية: canvas · Stack option: canvas <sub>(stack, option, post, canvas)</sub> | 12 | ✅ ✅5 🟢3 📦3 📄1 | 8 | SP-0311 SP-0413 SP-0288 SP-0274 SP-0140 |
 | SP-0278 | تجميع اللقطات بنوافذ إطارات · Shot assembly by frame windows <sub>(concat, frame, fcpxml, assembly)</sub> | 11 | ✅ ✅1 🟢1 📦6 👁2 📄1 | 2 | SP-0357 SP-0264 SP-0187 SP-0361 SP-0156 |
 | SP-0279 | جسر العرض ومزامنة الفيديو · Renderer shim + footage seeking <sub>(shim, seek, ffprobe, bridge)</sub> | 10 | ✅ ✅3 📦4 🔑2 📄1 | 3 | SP-0283 SP-0264 SP-0262 SP-0140 |
 | SP-0280 | عشوائية ببذرة · Seeded randomness (mulberry32 + hash) <sub>(seeded, mulberry32, seed, hash)</sub> | 10 | ✅ ✅1 🟢4 📦1 👁1 📄3 | 5 | SP-0371 SP-0350 SP-0284 SP-0354 SP-0140 |
@@ -354,19 +354,19 @@
 | SP-0283 | التصيير بمحركين · Dual-engine renderer (HyperFrames CLI or studio browser renderer) <sub>(renderer, mode, dual-engine, studio)</sub> | 10 | ✅ ✅2 🟢3 📦2 🔑1 📄2 | 5 | SP-0279 SP-0264 SP-0262 SP-0389 SP-0140 |
 | SP-0284 | قواعد أداء الحركة في المتصفح · Web-motion performance rules for renders <sub>(performance, rules, optimization, fromto)</sub> | 8 | ✅ ✅1 📦3 📄4 | 1 | SP-0384 SP-0369 SP-0280 SP-0368 SP-0049 |
 | SP-0285 | محول إطارات CSS · CSS keyframes adapter <sub>(css, keyframes, gsap, waapi)</sub> | 8 | ✅ ✅1 🟢3 📦3 📄1 | 4 | SP-0281 SP-0172 SP-0255 SP-0262 SP-0140 |
-| SP-0286 | التسلسل والسلاسل والتحميل المسبق · Sequence / Series / premount <sub>(sequence, components, png, order)</sub> | 7 | ✅ ✅1 🟢1 📦1 🔑1 👁1 📄2 | 2 | SP-0273 SP-0293 SP-0268 SP-0272 SP-0060 |
+| SP-0286 | التسلسل والسلاسل والتحميل المسبق · Sequence / Series / premount <sub>(sequence, components, png, order)</sub> | 7 | ✅ ✅1 🟢1 📦1 🔑1 👁1 📄2 | 2 | SP-0273 SP-0293 SP-0268 SP-0271 SP-0060 |
 | SP-0287 | اصطلاح المسارات والعلامات في المونتاج · Editing track and marker convention <sub>(track, tracks, nle, markers)</sub> | 7 | 📦 📦4 🔑1 📄2 | 0 | SP-0142 SP-0382 SP-0198 SP-0278 |
 | SP-0288 | مسودة منخفضة الدقة · Draft scale for fast 3D drafts <sub>(canvas, scale, native, lanczos)</sub> | 7 | 🟢 🟢2 📦2 🔑1 📄2 | 2 | SP-0360 SP-0469 SP-0265 SP-0079 |
 | SP-0289 | حلقة الإنتاج كمخطط اعتمادات · Production loop as dependency graph <sub>(production, pro, python, typescript)</sub> | 6 | ✅ ✅1 📦1 📄4 | 1 | SP-0049 SP-0164 SP-0052 SP-0022 |
 | SP-0290 | تكامل: HyperFrames skills plugin · Integration: HyperFrames skills plugin <sub>(skills, plugin, integration, skill)</sub> | 6 | ✅ ✅1 📦3 🔑2 | 1 | SP-0143 SP-0152 SP-0052 SP-0057 |
 | SP-0291 | التمرير الناعم وتحذير الرندر · Smooth-scroll weight (Lenis) and its render caveat <sub>(scroll, bugs, loading, lazy)</sub> | 5 | ✅ ✅1 📦3 📄1 | 1 | SP-0213 SP-0371 SP-0264 SP-0368 SP-0140 |
-| SP-0292 | خط مخططات بايثون الثابتة · Python static chart pipeline <sub>(matplotlib, chart, turtle, vega-lite)</sub> | 5 | 📦 📦5 | 0 | SP-0105 SP-0229 SP-0472 SP-0272 |
+| SP-0292 | خط مخططات بايثون الثابتة · Python static chart pipeline <sub>(matplotlib, chart, turtle, vega-lite)</sub> | 5 | 📦 📦5 | 0 | SP-0105 SP-0229 SP-0472 SP-0271 |
 | SP-0293 | أمر: الكتالوج والإضافة · CLI: catalog / add <sub>(search, catalog, registry, components)</sub> | 5 | 📦 📦5 | 0 | SP-0145 SP-0475 SP-0347 SP-0115 |
 | SP-0294 | التحكم في ComfyUI عبر REST وWebSocket · ComfyUI REST and WebSocket control <sub>(comfyui, automation, sse, bash)</sub> | 5 | ✅ ✅1 📦3 📄1 | 1 | SP-0177 SP-0136 SP-0161 SP-0047 |
 | SP-0295 | إعداد السحابة · Cloud setup on claude.ai <sub>(claude.ai, upload, cloud, sandbox)</sub> | 5 | 🟢 🟢1 📦3 🔑1 | 1 | SP-0113 SP-0264 SP-0021 SP-0045 |
 | SP-0296 | تشغيل دفعات · Batch jobs <sub>(batch, jobs, imagemagick, variables)</sub> | 5 | 🟢 🟢1 📦1 🔑1 👁1 📄1 | 1 | SP-0264 SP-0367 SP-0174 SP-0371 SP-0163 |
 | SP-0297 | إطباق محيطي وانعكاسات وحدود · SSAO / SSR / Outline / FXAA / SMAA nodes <sub>(antialiasing, tone, supersampled, ssr)</sub> | 3 | ✅ ✅1 🟢1 📦1 | 2 | SP-0283 SP-0451 SP-0171 SP-0431 SP-0140 |
-| SP-0298 | ملف مفحوص لكل منصة · Checked per-platform delivery (8 platforms) <sub>(platform, social, export, post)</sub> | 35 | ✅ ✅9 🟢6 📦4 🔑2 📄14 | 15 | SP-0268 SP-0140 SP-0269 SP-0453 |
+| SP-0298 | ملف مفحوص لكل منصة · Checked per-platform delivery (8 platforms) <sub>(platform, social, export, post)</sub> | 35 | ✅ ✅9 🟢6 📦4 🔑2 📄14 | 15 | SP-0268 SP-0140 SP-0272 SP-0453 |
 | SP-0299 | مواصفات معاينة متجر التطبيقات · App-store preview video spec <sub>(app, store, video, webm)</sub> | 12 | ✅ ✅1 🟢2 📦1 🔑1 👁1 📄6 | 3 | SP-0375 SP-0135 SP-0265 SP-0192 |
 | SP-0300 | صيغ الصوت للحلقات وتراخيص الموسيقى · Loop audio formats & music licence receipts <sub>(gif, loop, formats, audio)</sub> | 8 | ✅ ✅3 🟢2 📦1 📄2 | 5 | SP-0211 SP-0329 SP-0156 SP-0377 |
 | SP-0301 | بريف الصورة المصغرة: 3 أفكار واختبار A/B · Thumbnail brief: 3 concepts + A/B <sub>(thumbnail, youtube, frame, chapters)</sub> | 7 | ✅ ✅2 🟢3 📄2 | 5 | SP-0372 SP-0455 SP-0154 SP-0459 |
@@ -379,7 +379,7 @@
 | SP-0308 | دائرة يدوية مرتعشة · Hand-drawn circle emphasis <sub>(emphasis, circle, marker, exact-match)</sub> | 4 | ✅ ✅2 📦1 📄1 | 2 | SP-0463 SP-0322 SP-0427 SP-0303 SP-0141 |
 | SP-0309 | توهج النص النيوني بثلاثة ظلال لكل كلمة · Neon text glow (triple shadow, per word) <sub>(glow, neon, word, svg)</sub> | 20 | ✅ ✅10 🟢1 📦3 👁5 📄1 | 11 | SP-0184 SP-0457 SP-0438 SP-0325 SP-0148 |
 | SP-0310 | قراءة إضاءة صورة مرجعية · Read the light of a reference image <sub>(light, lighting, reflection, softness)</sub> | 16 | ✅ ✅5 🟢6 📦3 📄2 | 11 | SP-0314 SP-0414 SP-0240 SP-0432 SP-0169 |
-| SP-0311 | مرور العدسة «مصوَّر لا مرسوم» · Photographed lens pass (barrel, fringes, bloom, vignette, grain) <sub>(bloom, sun, rays, lens)</sub> | 14 | ✅ ✅5 🟢3 📦4 📄2 | 8 | SP-0400 SP-0276 SP-0314 SP-0171 SP-0129 |
+| SP-0311 | مرور العدسة «مصوَّر لا مرسوم» · Photographed lens pass (barrel, fringes, bloom, vignette, grain) <sub>(bloom, sun, rays, lens)</sub> | 14 | ✅ ✅5 🟢3 📦4 📄2 | 8 | SP-0400 SP-0277 SP-0314 SP-0171 SP-0129 |
 | SP-0312 | قمر مرسوم بهالة · Painted moon with halo <sub>(halo, sun, sky, light)</sub> | 12 | ✅ ✅1 🟢5 📦6 | 6 | SP-0245 SP-0417 SP-0240 SP-0310 SP-0126 |
 | SP-0313 | لمعة البطاقة والزر وانعكاس الزجاج · UI sheen family: card scan, button glint, one-pass glass band <sub>(glass, shine, glint, sheen)</sub> | 10 | ✅ ✅3 🟢2 📦1 👁2 📄2 | 5 | SP-0418 SP-0310 SP-0471 SP-0174 SP-0154 |
 | SP-0314 | ألواح ضوء WebGPU جاهزة · WebGPU shader light plates (Godrays · LensFlare · LightEdge · Prism …) <sub>(aurora, light, webgpu, rays)</sub> | 10 | ✅ ✅2 🟢2 📦5 👁1 | 4 | SP-0310 SP-0241 SP-0207 SP-0432 SP-0005 |
@@ -429,20 +429,20 @@
 | SP-0358 | عنوان خلف المتحدث · Title behind the speaker <sub>(matte, speaker, person, photo)</sub> | 13 | ✅ ✅3 🟢1 📦2 🔑1 👁1 📄5 | 4 | SP-0200 SP-0188 SP-0453 SP-0217 SP-0159 |
 | SP-0359 | مجمع لقطات بأسئلة بحث ثنائية اللغة · Per-shot bilingual footage pool <sub>(reference, hls, imitation, pinterest)</sub> | 7 | ✅ ✅1 📦1 📄5 | 1 | SP-0144 SP-0379 SP-0142 SP-0476 |
 | SP-0360 | تشخيص قبل رفع الدقة · Upscale triage <sub>(planar, sharpen, denoise, upscale)</sub> | 7 | ✅ ✅2 🟢2 📄3 | 4 | SP-0372 SP-0288 SP-0215 SP-0420 SP-0022 |
-| SP-0361 | إعدادات تسجيل الشاشة · Screen-capture defaults <sub>(chronological, adaptive, concat, player)</sub> | 4 | ✅ ✅1 🟢1 📄2 | 2 | SP-0278 SP-0272 SP-0480 SP-0187 SP-0130 |
+| SP-0361 | إعدادات تسجيل الشاشة · Screen-capture defaults <sub>(chronological, adaptive, concat, player)</sub> | 4 | ✅ ✅1 🟢1 📄2 | 2 | SP-0278 SP-0271 SP-0480 SP-0187 SP-0130 |
 | SP-0362 | مؤثرات بكسل بخطوات اللوحة · Pixel VFX by palette-step fades <sub>(pixel, led, vfx, crt)</sub> | 19 | ✅ ✅4 🟢2 📦2 👁4 📄6 💡1 | 6 | SP-0225 SP-0414 SP-0309 SP-0364 SP-0155 |
 | SP-0363 | كلمة غليتش RGB على النوتات · RGB-split glitch word on the beat <sub>(glitch, rgb, synthwave, phosphor)</sub> | 8 | ✅ ✅3 🟢2 📦1 📄2 | 5 | SP-0425 SP-0316 SP-0465 SP-0338 SP-0029 |
 | SP-0364 | الإضاءة والتلاشي بدثر Bayer · Bayer-dither fades & palette-stepped light <sub>(dither, bayer, game, seamless)</sub> | 6 | ✅ ✅3 👁1 📄2 | 3 | SP-0447 SP-0459 SP-0373 SP-0417 SP-0058 |
 | SP-0365 | بوابة التسليم · Delivery gate (inspect) <sub>(gate, delivery, check, checklist)</sub> | 43 | ✅ ✅9 🟢7 📦9 🔑1 📄17 | 16 | SP-0378 SP-0329 SP-0371 SP-0374 SP-0140 |
 | SP-0366 | حدود التباين · WCAG contrast floors <sub>(test, contrast, wcag, synthetic)</sub> | 31 | ✅ ✅11 🟢1 📦7 📄11 💡1 | 12 | SP-0063 SP-0453 SP-0378 SP-0217 |
 | SP-0367 | ورقة المراجعة · sheet contact review <sub>(contact, sheet, review, critique)</sub> | 26 | ✅ ✅3 🟢5 📦5 🔑3 👁1 📄9 | 8 | SP-0048 SP-0374 SP-0160 SP-0380 |
-| SP-0368 | قائمة جودة الحركة · Motion quality checklist <sub>(motion, reduced-motion, speed, frame)</sub> | 24 | ✅ ✅4 🟢4 📦7 📄9 | 8 | SP-0271 SP-0408 SP-0212 SP-0281 SP-0140 |
+| SP-0368 | قائمة جودة الحركة · Motion quality checklist <sub>(motion, reduced-motion, speed, frame)</sub> | 24 | ✅ ✅4 🟢4 📦7 📄9 | 8 | SP-0270 SP-0408 SP-0212 SP-0281 SP-0140 |
 | SP-0369 | فحص التركيب · lint composition <sub>(lint, anti-patterns, taste, determinism)</sub> | 23 | ✅ ✅2 🟢2 📦6 📄13 | 4 | SP-0284 SP-0365 SP-0071 SP-0028 |
 | SP-0370 | التحقق من تزامن القطع مع الضربة · Onset-sync verification <sub>(detection, check, verification, sync)</sub> | 21 | ✅ ✅5 🟢2 📦6 🔑2 📄6 | 7 | SP-0007 SP-0187 SP-0029 SP-0331 |
-| SP-0371 | تصيير حتمي بدوكر · Docker deterministic render <sub>(render, reproducible, deterministic, ffprobe)</sub> | 17 | ✅ ✅4 🟢1 📦4 🔑3 📄4 💡1 | 5 | SP-0264 SP-0280 SP-0272 SP-0273 SP-0129 |
+| SP-0371 | تصيير حتمي بدوكر · Docker deterministic render <sub>(render, reproducible, deterministic, ffprobe)</sub> | 17 | ✅ ✅4 🟢1 📦4 🔑3 📄4 💡1 | 5 | SP-0264 SP-0280 SP-0271 SP-0273 SP-0129 |
 | SP-0372 | اختيار إطار الغلاف · Settled poster frame pick <sub>(image, visual, prompt, comparison)</sub> | 16 | ✅ ✅4 🟢6 📦1 📄5 | 10 | SP-0177 SP-0360 SP-0158 SP-0037 |
 | SP-0373 | فحص الحلقة بلا درزة · Seamless loop check <sub>(loop, figure, seamless, review)</sub> | 14 | ✅ ✅4 🟢3 🔑1 👁2 📄4 | 7 | SP-0447 SP-0029 SP-0374 SP-0300 |
-| SP-0374 | فحص الإطارات الآلي · Frame QA: black/white/freeze/cut scan <sub>(review, frames, freeze, capture)</sub> | 14 | ✅ ✅4 🟢2 📦3 📄5 | 6 | SP-0272 SP-0048 SP-0367 SP-0373 |
+| SP-0374 | فحص الإطارات الآلي · Frame QA: black/white/freeze/cut scan <sub>(review, frames, freeze, capture)</sub> | 14 | ✅ ✅4 🟢2 📦3 📄5 | 6 | SP-0271 SP-0048 SP-0367 SP-0373 |
 | SP-0375 | مشغل معاينة داخل المتصفح · Built-in browser preview player <sub>(preview, player, scrub, regression)</sub> | 14 | ✅ ✅4 🟢5 📦5 | 9 | SP-0265 SP-0070 SP-0299 SP-0366 |
 | SP-0376 | الحكم جيف · Jev order-robust judge <sub>(judge, jev, realism, eval)</sub> | 14 | 📦 📦4 🔑3 📄7 | 0 | SP-0031 SP-0055 SP-0040 SP-0002 |
 | SP-0377 | قياس الجهارة والذروة · Loudness / true-peak verification <sub>(loudness, audio, waveform, spectrum)</sub> | 11 | ✅ ✅1 🟢1 📦1 📄8 | 2 | SP-0329 SP-0156 SP-0331 SP-0187 |
@@ -463,7 +463,7 @@
 | SP-0392 | حد الوميض الآمن · Flash photosensitivity cap <sub>(photosensitivity, flash, cap, limit)</sub> | 4 | 📄 📄3 💡1 | 0 | SP-0436 SP-0315 SP-0243 SP-0117 |
 | SP-0393 | تعليق الإشارة مقابل الضجيج · Signal-vs-noise annotation <sub>(interval, sampling, signal-vs-noise, significance)</sub> | 3 | ✅ ✅1 📄2 | 1 | SP-0366 SP-0063 SP-0019 SP-0374 |
 | SP-0394 | طبقة الرسوم وحدها من رندرين · Graphics-only layer from two aligned renders <sub>(alpha, diff, layer, png)</sub> | 3 | ✅ ✅1 🟢1 📄1 | 2 | SP-0312 SP-0241 SP-0158 SP-0086 |
-| SP-0395 | فخ إعادة الإسناد في TSL · TSL reassignment pitfall <sub>(tsl, pitfall, assign, invisible)</sub> | 1 | 📄 📄1 | 0 | SP-0354 SP-0311 SP-0276 SP-0270 SP-0041 |
+| SP-0395 | فخ إعادة الإسناد في TSL · TSL reassignment pitfall <sub>(tsl, pitfall, assign, invisible)</sub> | 1 | 📄 📄1 | 0 | SP-0354 SP-0311 SP-0277 SP-0269 SP-0041 |
 | SP-0396 | تحويل SVG بإضافة MorphSVG · MorphSVG plugin morph (HyperFrames rule) <sub>(morph, svg, path, shape)</sub> | 34 | ✅ ✅7 🟢3 📦3 👁8 📄12 💡1 | 10 | SP-0426 SP-0192 SP-0400 SP-0266 SP-0141 |
 | SP-0397 | شبكة بلاطات باوهاوس · Bauhaus tile grid (glyph swap on a distance wave) <sub>(grid, wave, tile, icon)</sub> | 16 | ✅ ✅2 🟢3 📦1 👁5 📄5 | 5 | SP-0197 SP-0327 SP-0435 SP-0427 SP-0035 |
 | SP-0398 | انفجار خطوط شعاعي · Radial line burst <sub>(lines, radial, waves, highlighter)</sub> | 11 | ✅ ✅2 🟢3 👁6 | 5 | SP-0237 SP-0314 SP-0350 SP-0305 SP-0086 |
@@ -473,15 +473,15 @@
 | SP-0402 | كتلة عضوية بضوضاء الرؤوس · Noise-displaced 3D blob <sub>(blob, clip-path, touch, eight-point)</sub> | 6 | 🟢 🟢2 📦2 👁2 | 2 | SP-0241 SP-0414 SP-0453 SP-0403 SP-0033 |
 | SP-0403 | تجمع الصلصال بالكرات · Metaball clay assembly <sub>(metaball, assembly, monogram, merge)</sub> | 4 | ✅ ✅1 👁1 💡2 | 1 | SP-0402 SP-0352 SP-0259 SP-0242 SP-0064 |
 | SP-0404 | منحنيات كاتمول-روم · Catmull-Rom smooth curves <sub>(catmull-rom, spline, donut, smooth)</sub> | 4 | 🟢 🟢2 👁1 📄1 | 2 | SP-0173 SP-0222 SP-0252 SP-0229 SP-0083 |
-| SP-0405 | فيلم العلامة: من المشكلة إلى الكشف · Brand film arc: problem → reveal (6 beats) <sub>(story, arc, beats, film)</sub> | 33 | ✅ ✅4 🟢9 👁7 📄13 | 13 | SP-0277 SP-0306 SP-0407 SP-0327 SP-0036 |
+| SP-0405 | فيلم العلامة: من المشكلة إلى الكشف · Brand film arc: problem → reveal (6 beats) <sub>(story, arc, beats, film)</sub> | 33 | ✅ ✅4 🟢9 👁7 📄13 | 13 | SP-0276 SP-0306 SP-0407 SP-0327 SP-0036 |
 | SP-0406 | مولّد طلب Claude من الأسلوب · Style → Claude request generator <sub>(style, router, request, prompt)</sub> | 13 | ✅ ✅4 🟢3 📦1 📄5 | 7 | SP-0038 SP-0181 SP-0379 SP-0176 |
 | SP-0407 | هياكل الشرح · Explainer structures <sub>(explainer, edit, faceless, vlog)</sub> | 13 | ✅ ✅2 🟢4 🔑1 👁1 📄5 | 6 | SP-0356 SP-0246 SP-0442 SP-0142 |
-| SP-0408 | نوتة الحركة · Motion score table <sub>(table, direction, motion, personality)</sub> | 12 | ✅ ✅1 🟢1 📄10 | 2 | SP-0368 SP-0212 SP-0271 SP-0255 SP-0140 |
+| SP-0408 | نوتة الحركة · Motion score table <sub>(table, direction, motion, personality)</sub> | 12 | ✅ ✅1 🟢1 📄10 | 2 | SP-0368 SP-0212 SP-0270 SP-0255 SP-0140 |
 | SP-0409 | أنظمة الفصول المرقّمة · Chapter label systems <sub>(titles, aesthetic, chapter, gated)</sub> | 8 | ✅ ✅1 🟢1 👁3 📄3 | 2 | SP-0209 SP-0206 SP-0301 SP-0204 SP-0035 |
 | SP-0410 | ذاكرة الذوق والوصفات · Taste memory & recipe freeze <sub>(taste, recipe, food, rejection)</sub> | 6 | ✅ ✅2 🟢1 📦1 📄2 | 3 | SP-0014 SP-0133 SP-0299 SP-0001 |
 | SP-0411 | قانون الثانية الأولى · One-second hook law (0–1–3 s) <sub>(hook, brief, opener, intake)</sub> | 5 | 🟢 🟢1 📄4 | 1 | SP-0459 SP-0301 SP-0192 SP-0389 SP-0039 |
 | SP-0412 | تقديرات وقت واقعية · Realistic time estimates <sub>(iteration, estimates, information, realistic)</sub> | 5 | 📄 📄5 | 0 | SP-0387 SP-0019 SP-0391 SP-0441 |
-| SP-0413 | حبيبات فيلم صحيحة · Film grain done right (post-mortem) <sub>(grain, noise, vignette, film)</sub> | 22 | ✅ ✅6 🟢4 📦2 👁7 📄3 | 10 | SP-0239 SP-0240 SP-0311 SP-0276 SP-0099 |
+| SP-0413 | حبيبات فيلم صحيحة · Film grain done right (post-mortem) <sub>(grain, noise, vignette, film)</sub> | 22 | ✅ ✅6 🟢4 📦2 👁7 📄3 | 10 | SP-0239 SP-0240 SP-0311 SP-0277 SP-0099 |
 | SP-0414 | تظليل كرة بالهالفتون · Halftone sphere (Lambert dots) <sub>(halftone, light, sphere, grid)</sub> | 19 | ✅ ✅4 🟢5 📦3 👁6 📄1 | 9 | SP-0353 SP-0310 SP-0314 SP-0362 SP-0143 |
 | SP-0415 | خلفية ورق ثابتة 5–10% · Static paper/board texture <sub>(paper, cut-out, board, style)</sub> | 14 | ✅ ✅1 🟢3 👁6 📄4 | 4 | SP-0241 SP-0227 SP-0363 SP-0038 |
 | SP-0416 | صلصال مطفي وبصمات · Claymation matte + fingerprint texture <sub>(texture, plush, matte, pbr)</sub> | 14 | 🟢 🟢7 📦1 👁2 📄4 | 7 | SP-0419 SP-0171 SP-0217 SP-0225 SP-0155 |
@@ -501,7 +501,7 @@
 | SP-0430 | قلب بطاقة ثلاثي الأبعاد · CSS 3D card flip <sub>(flip, card, roll, front-loaded)</sub> | 18 | 🟢 🟢3 📦6 👁6 📄2 💡1 | 3 | SP-0471 SP-0206 SP-0243 SP-0172 SP-0146 |
 | SP-0431 | انتقال شيدر WebGL: تشويه المجال · WebGL shader transition: domain-warp <sub>(transition, shader, webgl, warp)</sub> | 17 | 📦 📦17 | 0 | SP-0432 SP-0440 SP-0424 SP-0444 SP-0154 |
 | SP-0432 | انتقال شيدر: تسرب ضوء · Shader transition: light-leak <sub>(transition, ripple, light-leak, leak)</sub> | 16 | ✅ ✅1 🟢2 📦11 📄2 | 3 | SP-0431 SP-0424 SP-0440 SP-0437 SP-0154 |
-| SP-0433 | انتقال CSS: عبور بالضبابية · CSS transition: Blur through <sub>(blur, transition, css, focus)</sub> | 15 | ✅ ✅1 🟢2 📦8 👁4 | 3 | SP-0199 SP-0271 SP-0428 SP-0434 SP-0129 |
+| SP-0433 | انتقال CSS: عبور بالضبابية · CSS transition: Blur through <sub>(blur, transition, css, focus)</sub> | 15 | ✅ ✅1 🟢2 📦8 👁4 | 3 | SP-0199 SP-0270 SP-0428 SP-0434 SP-0129 |
 | SP-0434 | انتقال سوط ضبابي · Whip motion-blur transition <sub>(whip, pan, transition, whip-pan)</sub> | 15 | 🟢 🟢1 📦5 👁6 📄2 💡1 | 1 | SP-0437 SP-0433 SP-0431 SP-0441 SP-0154 |
 | SP-0435 | انتقال: ذوبان · Transition key: dissolve <sub>(dissolve, grid, transition, mosaic)</sub> | 14 | 📦 📦7 👁2 📄3 💡2 | 0 | SP-0428 SP-0397 SP-0197 SP-0440 SP-0125 |
 | SP-0436 | قطع وميضي · Flash cut <sub>(flash, white, cut, flash-through-white)</sub> | 13 | ✅ ✅1 📦7 👁4 📄1 | 1 | SP-0315 SP-0392 SP-0242 SP-0334 SP-0127 |
@@ -516,7 +516,7 @@
 | SP-0445 | قص الصمت حسب نوع المحتوى · Genre-aware silence trimming <sub>(silence, genre-aware, b-roll, cut)</sub> | 7 | ✅ ✅2 🟢1 📄4 | 3 | SP-0356 SP-0422 SP-0370 SP-0156 |
 | SP-0446 | انتقال البوابة · Portal <sub>(portal, inversion, dark, zoom-through)</sub> | 5 | 📦 📦1 👁3 📄1 | 0 | SP-0439 SP-0423 SP-0422 SP-0400 SP-0159 |
 | SP-0447 | حلقة سلسة · Seamless loop <sub>(seamless, loop, velocity-matched, builder)</sub> | 5 | 🟢 🟢4 📦1 | 4 | SP-0373 SP-0029 SP-0300 SP-0364 |
-| SP-0448 | بداية ونهاية بتلاشٍ من السواد وإليه · Fade-from/to-black bookends <sub>(countdown, black, exposure, film)</sub> | 4 | 📦 📦1 👁3 | 0 | SP-0443 SP-0277 SP-0203 SP-0405 SP-0140 |
+| SP-0448 | بداية ونهاية بتلاشٍ من السواد وإليه · Fade-from/to-black bookends <sub>(countdown, black, exposure, film)</sub> | 4 | 📦 📦1 👁3 | 0 | SP-0443 SP-0276 SP-0203 SP-0405 SP-0140 |
 | SP-0449 | الشريط المطاطي · Rubber Band Bumper <sub>(elastic, pour, overshoot, band)</sub> | 3 | 📦 📦2 📄1 | 0 | SP-0437 SP-0194 SP-0401 SP-0433 SP-0149 |
 | SP-0450 | توسيع العنصر المشترك (الغلاف) · Shared-element artwork expand <sub>(expand, details, artwork, mobile)</sub> | 3 | 🟢 🟢2 👁1 | 2 | SP-0079 SP-0430 SP-0301 SP-0041 |
 | SP-0451 | تحويل الصورة إلى رسم · Photo-to-graphic trace <sub>(photo, trace, masks, feathered)</sub> | 2 | 📄 📄2 | 0 | SP-0358 SP-0128 SP-0420 SP-0372 |
@@ -548,7 +548,7 @@
 | SP-0477 | أزياء صوتية للشخصيات · Character voice costumes <sub>(voice, tts, speech, ar-sa)</sub> | 26 | ✅ ✅6 🟢2 📦1 🔑8 👁2 📄7 | 8 | SP-0331 SP-0153 SP-0156 SP-0479 |
 | SP-0478 | ميزانية الكلمات في الثانية · Words-per-second budget <sub>(word, narration, script, timestamps)</sub> | 12 | ✅ ✅2 🔑2 👁3 📄5 | 2 | SP-0184 SP-0148 SP-0452 SP-0477 |
 | SP-0479 | اختيار النموذج والصيغة حسب الاستخدام · Model & output-format choice <sub>(tts, pcm, mp3, elevenlabs)</sub> | 9 | ✅ ✅2 🔑3 📄4 | 2 | SP-0156 SP-0477 SP-0377 SP-0331 |
-| SP-0480 | التقاط ميكروفون نظيف · Clean mic capture constraints <sub>(mic, mediarecorder, recording, fab)</sub> | 4 | 🟢 🟢3 📄1 | 3 | SP-0331 SP-0361 SP-0468 SP-0272 SP-0124 |
+| SP-0480 | التقاط ميكروفون نظيف · Clean mic capture constraints <sub>(mic, mediarecorder, recording, fab)</sub> | 4 | 🟢 🟢3 📄1 | 3 | SP-0331 SP-0361 SP-0468 SP-0271 SP-0124 |
 | SP-0481 | مدرب اللغة الثنائي · Language Coach (AR/EN) skill <sub>(coach, language, dialect, intake)</sub> | 3 | ✅ ✅1 🟢1 📄1 | 2 | SP-0477 SP-0167 SP-0411 SP-0339 |
 
 ---

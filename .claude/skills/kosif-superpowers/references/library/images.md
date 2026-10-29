@@ -62,9 +62,11 @@
 | `reference-visual-fingerprint` | البصمة البصرية للفيديو المرجعي | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cuts.json --out ./reference-look.json` | tested-here |
 | `repo-ashell-cinema` | استوديو التنزيل Cinema C للآيفون | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.com/watch?v=VIDEO_ID"` | tested-elsewhere |
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
+| `source-finder` | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي | `python3 scripts/source_finder.py doctor` | tested-here |
 | `stock-fetch` | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) | `python3 scripts/stock_fetch.py probe` | tested-here |
 | `stream-grabber` | ملتقط بث DASH وHLS للمونتاج | `python3 scripts/stream_grabber.py find ./saved-page.html` | tested-here |
 | `style-library` | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر | `python3 scripts/style_library.py groups` | tested-here |
+| `tiktok-photo` | تحميل بوست صور تيك توك (سلايد شو) | `python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post` | tested-here |
 | `unified-cinematic` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `unified-media` | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو | `python3 scripts/unified_media.py doctor` | tested-here |
 | `verify-video` | بوابة فحص تسليم الفيديو | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --duration 15 --json ./out/report.json` | tested-here |

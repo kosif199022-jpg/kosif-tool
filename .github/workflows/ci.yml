@@ -93,6 +93,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fast_edit.py' -v
       - name: Instagram product video finder (offline, fake yt-dlp)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_instagram_finder.py' -v
+      - name: TikTok photo-post downloader (offline, synthetic page fixture, fake HTTP and yt-dlp)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_tiktok_photo.py' -v
       - name: Motion Lab execution and safety regression tests
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_motion_*.py' -v
       - name: Motion engine JavaScript execution contract
@@ -181,6 +183,8 @@ jobs:
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_dua_wednesday.py' -v
       - name: Stream grabber
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_stream_grabber.py' -v
+      - name: Source finder (offline; synthetic ORB+RANSAC match, cut detection, fake Yandex answers and captcha stop)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_source_finder.py' -v
       - name: Caption lines (reading rules, suspect-phrase screen, SRT/VTT/JSON)
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_caption_lines.py' -v
       - name: Look pipeline (one colour look; ffmpeg parity part skips without ffmpeg)
@@ -223,7 +227,12 @@ jobs:
           (cd .claude/skills/kosif-superpowers && python3 scripts/powers.py mindmap --html references/capability-map.html --update-md references/capability-map.md --check)
           python3 .claude/skills/kosif-superpowers/scripts/hub.py build --check
           python3 .claude/skills/kosif-superpowers/scripts/boot.py --static --check
+          python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py library-check
+          python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py cards-check
+          python3 .claude/skills/kosif-superpowers/scripts/github_top_repos.py build --check
           python3 .claude/skills/kosif-superpowers/scripts/micro_index.py build --check
+      - name: HTML renderer disk guard (space pre-flight, stale kosif-frames-* folders, signal cleanup; no browser)
+        run: node --test tests/test_render_html.mjs tests/test_render_html_disk.mjs
       - name: Node tests (generator, markdown)
         run: node --test tests/*.mjs
       - name: Syntax-check site modules

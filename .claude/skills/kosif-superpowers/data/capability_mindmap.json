@@ -1534,7 +1534,7 @@
 "SP-0155",
 "SP-0364",
 "SP-0059",
-"SP-0277"
+"SP-0384"
 ],
 "text": "godot 4 gdscript architecture patterns أنماط معمارية لـ gdscript في godot 4 godot gdscript غودو ألعاب godot live-editor inspection via cli فحص محرر godot الحي عبر سطر الأوامر godot qa محرر اختبار measured game performance loop حلقة قياس أداء اللعبة performance playtest أداء اختبار fixed-step physics and collision broadphase فيزياء خطوة ثابتة وكشف تصادم physics collision فيزياء تصادم browser game stack, phaser and web foundations حزمة ألعاب المتصفح وphaser phaser web متصفح ألعاب bevy ecs, state flow and asset pipeline بيفي: ecs وتدفق الحالات وخط الأصول bevy rust ecs بيفي unity dots ecs and unreal/unity automation وحدة dots وأتمتة محركات unity وunreal unity unreal محرك dots geometry, sdf and mesh-voxel conversion choice اختيار تمثيل الهندسة وsdf وتحويل الشبكات sdf voxel هندسة شبكات parallel agent collision pre-flight checks فحوص ما قبل التنفيذ لتصادم الوكلاء المتوازيين parallel تصادم gh pr"
 },
@@ -2310,7 +2310,7 @@
 "SP-0079",
 "SP-0088",
 "SP-0080",
-"SP-0272"
+"SP-0271"
 ],
 "text": "inspect the caller-selected tshark and capinfos binaries without reading a capture فحص عميل pcap rea reverse engineering هندسة عكسية pcap inspect search installed tshark protocol and field definitions فحص حقول الحزم rea reverse engineering هندسة عكسية pcap inspect inspect pe resource identities, payload ranges, hashes and icon-group relationships فحص الموارد pe rea reverse engineering هندسة عكسية pe inspect inspect an existing packet capture with caller-supplied tshark فحص التقاط الحزم rea reverse engineering هندسة عكسية pcap inspect inspect one pcap/pcapng capture: endpoints, dns, tls sni, and protocol distribution فحص التقاط pcap rea reverse engineering هندسة عكسية pcap inspect"
 },
@@ -2900,7 +2900,7 @@
 "ready_now": 27,
 "links": [
 "SP-0122",
-"SP-0272",
+"SP-0271",
 "SP-0451",
 "SP-0128"
 ],
@@ -3156,7 +3156,7 @@
 "SP-0146",
 "SP-0171",
 "SP-0371",
-"SP-0270"
+"SP-0269"
 ],
 "text": "live blender capability inventory جرد قدرات blender الحي blender inventory bpy قدرات بلندر film finish in the blender 5 compositor تشطيب الفيلم في المركّب compositor bloom glare chromatic aberration vignette مركب توهج cinematic cycles render presets (5 looks) رندر سينمائي بخمسة أساليب blender cycles render cinematic رندر سينمائي بلندر camera moves with 180° motion blur → mp4 حركة كاميرا سينمائية إلى mp4 camera move orbit dolly zoom vertigo turntable motion blur حركة كاميرا"
 },
@@ -3315,7 +3315,7 @@
 "ready_now": 0,
 "links": [
 "SP-0273",
-"SP-0272",
+"SP-0271",
 "SP-0388",
 "SP-0154"
 ],
@@ -3397,21 +3397,21 @@
 "stage": "assemble",
 "stages": {
 "create": 5,
-"deliver": 2,
 "assemble": 8,
+"deliver": 2,
 "verify": 2,
 "plan": 2
 },
 "size": 19,
 "best": "proven",
-"ready_now": 15,
+"ready_now": 16,
 "links": [
 "SP-0262",
 "SP-0148",
 "SP-0268",
 "SP-0266"
 ],
-"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame count aspect check فحص الفيديو بوابة التسليم جهارة الصوت عدد الإطارات مدة الفيديو تقرير الاختبار motion physics فيزياء الحركة motion-physics spring spring physics cubic-bezier easing stagger keyframes overshoot settle time react-spring anime.js نابض ارتداد تسهيل تتابع فيزياء الحركة فريمات atlas explainer renderer: storyboard, determinism check and real mp4 with synthesized score رندر أفلام الشرح: ستوريبورد وفحص حتمية وmp4 حقيقي بصوت مُركّب atlas-render render explainer storyboard mp4 رندر ستوريبورد فيلم شرح atlas canvas seek motion math toolkit مكتبة رياضيات الحركة motion-toolkit easing keyframes interpolation timeline تسهيل الحركة إطارات مفتاحية stroke reveal رسم الخط camera zoom pan walk cycle parallax hand-drawn jitter timecode word cues ترجمة بالكلمة frame contract third-party motion engine scaffolder مولّد مشاريع بداية لمحركات الحركة motion-stack gsap remotion manim three.js pixijs p5.js rough.js vivus scaffold starter project motion engines محركات الحركة مشروع بداية قالب أنيميشن تحريك بالكود seekable parti"
+"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine deterministic html-to-mp4 renderer محوّل حتمي من html إلى فيديو mp4 repo-render-html html to mp4 render headless chromium playwright virtual time seek contact sheet ffmpeg رندر تحويل html إلى فيديو معاينة إطارات دمج الصوت فيديو حتمي موشن جرافيك disk space مساحة القرص kosif-frames unable to capture screenshot clean-stale flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame count aspect check فحص الفيديو بوابة التسليم جهارة الصوت عدد الإطارات مدة الفيديو تقرير الاختبار motion physics فيزياء الحركة motion-physics spring spring physics cubic-bezier easing stagger keyframes overshoot settle time react-spring anime.js نابض ارتداد تسهيل تتابع فيزياء الحركة فريمات atlas explainer renderer: storyboard, determinism check and real mp4 with synthesized score رندر أفلام الشرح: ستوريبورد وفحص حتمية وmp4 حقيقي بصوت مُركّب atlas-render render explainer storyboard mp4 رندر ستوريبورد فيلم شرح atlas canvas seek motion math toolkit مكتبة رياضيات الحركة motion-toolkit easing keyframes interpolation timeline تسهيل الحركة إطارات مفتاحية stroke reveal رسم الخط camera zoom pan walk cycle "
 },
 "SP-0141": {
 "id": "SP-0141",
@@ -3549,7 +3549,7 @@
 "links": [
 "SP-0129",
 "SP-0171",
-"SP-0270",
+"SP-0269",
 "SP-0371"
 ],
 "text": "safe headless blender bridge جسر blender الآمن blender-bridge blender headless bridge bpy blend file glb export png render scene json doctor بلندر جسر بلندر رندر ثلاثي الأبعاد ملف blend create an editable blender 3d cat rescue demo إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل blender blender-rescue-scene blender cat rescue 3d cycles procedural scene model animation قطة إنقاذ بلندر مشهد blender cycles + kosif cinematic compositor دمج رندر blender cycles مع مونتاج kosif والصوت blender-cinematic-bridge blender cycles 3d render cinematic composite mp4 h264 aac photo drawing overlay cat rescue رندر بلندر سينما إنقاذ قطة صوت مونتاج native 3d renderer (no blender) رندر ثلاثي الأبعاد مستقل عن blender native-3d 3d native 3d software renderer z-buffer primitives keyframes orthographic camera mp4 png no blender ثلاثي الأبعاد رندر أشكال أساسية أنيميشن ثلاثي الأبعاد بدون بلندر native glb exporter (no blender) مُصدِّر glb مستقل عن blender native-glb glb gltf 2.0 3d export binary gltf keyframe animation stdlib only no blender three.js تصدير ثلاثي الأبعاد ملف glb نموذج ثلاثي الأبعاد بدون بلندر blender python api audit تدقيق واجهة بايثون في blender blender-api-audit blender bpy bpy.ops addon audit ast static analysis python api operators panels بلندر تحليل ثابت إضافات بلندر واجهة بايثون تدقيق الشيفرة cycles scene to verified video رندر cycles إلى فيديو مُتحقَّق منه blender-cycles-render blender cycles path tracing render to mp4 ffprobe qa render report glb to video blend to video plan رندر واقعي سايكلز فيديو ثلاثي الأبعاد تحقق من الفيديو بلندر blender cat fur upgrade: renderable hair geometry and character detail تطوير فرو القطة والملامح في blender cycles blender-cat-fur-upgrade blender fur hair whiskers strands cycles cat texture upgrade render shading قطة فرو خامة بلندر رندر واقعية blender motion video helper مساعد فيديو الحركة في blender blender-motion-video atlas kosif capabilities provenance 3d blender-side scene builder منفّذ المشهد داخل blender blender-worker blender worker bpy blender --background --python scene builder primitives keyframes gltf export بلندر سكربت بلندر بناء المشهد تشغيل داخل بلندر blender cycles cinematic renders رندر سينمائي بـblender cycles blender-cinema blender cycles cinematic render product shot turntable depth of field agx bloom volumetric fog camera move bpy رندر سينمائي لقطة منتج بلندر إضاءة سينمائية حركة كاميرا"
@@ -3751,8 +3751,8 @@
 "links": [
 "SP-0058",
 "SP-0346",
-"SP-0278",
-"SP-0268"
+"SP-0268",
+"SP-0278"
 ],
 "text": "gameplay trailer from bot playthroughs تريلر من لعب آلي حقيقي trailer ffmpeg تريلر مونتاج godot 4: typed gdscript, physics timing, headless export godot 4: سكربت مُنمّط وفيزياء وتصدير بلا واجهة godot game لعبة gdscript تطوير ألعاب anchored sprite strip generation and normalization توليد ومعايرة شرائط السبرايت sprite pixel سبرايت بكسل substance painter pbr colour space and baking substance painter: مساحة لون pbr وخبز الخرائط pbr texture خامات substance normal map 3d programmatic final cut pro timelines via fcpxml and batch export with compressor توليد خط زمني لـfinal cut pro برمجيًا عبر fcpxml وتصدير دفعي بـcompressor final cut pro fcpxml nle interchange montage video export مونتاج تصدير ffmpeg diagnostics: vfr fix, aligned abr hls, stream health تشخيص ffmpeg: إطار متغير، hls متعدد الدقات، فحص التيار ffmpeg ffprobe hls sync تزامن transcode"
 },
@@ -4122,7 +4122,7 @@
 "ready_now": 12,
 "links": [
 "SP-0146",
-"SP-0270",
+"SP-0269",
 "SP-0129",
 "SP-0311"
 ],
@@ -4772,7 +4772,7 @@
 "ready_now": 4,
 "links": [
 "SP-0433",
-"SP-0271",
+"SP-0270",
 "SP-0428",
 "SP-0252",
 "SP-0126"
@@ -5081,7 +5081,7 @@
 "links": [
 "SP-0441",
 "SP-0368",
-"SP-0271",
+"SP-0270",
 "SP-0408",
 "SP-0140"
 ],
@@ -5996,7 +5996,7 @@
 "ready_now": 14,
 "links": [
 "SP-0433",
-"SP-0271",
+"SP-0270",
 "SP-0258",
 "SP-0199",
 "SP-0148"
@@ -6066,7 +6066,7 @@
 "best": "proven",
 "ready_now": 7,
 "links": [
-"SP-0271",
+"SP-0270",
 "SP-0368",
 "SP-0408",
 "SP-0285",
@@ -6232,7 +6232,7 @@
 "links": [
 "SP-0131",
 "SP-0140",
-"SP-0272",
+"SP-0271",
 "SP-0469"
 ],
 "text": "render_html seek driver (window.__kosif contract) محرك الرندر بوضع seek تحويل الصفحة لفيديو تصوير الإطارات رندر html to mp4 cdp screenshot plan → manifest + self-contained 2d html compiler مترجم الخطة إلى manifest وصفحة html تحويل الخطة صفحة واحدة مشاهد وعناوين plan compiler html page editorial storyboard compiler مُجمّع ستوري بورد التحرير تخطيط المشاهد ريلز فيديو طولي storyboard reels render_html.cjs seek mode وضع seek في render_html رندر تصدير فيديو تحويل html لفيديو html to video playwright landing-page single-file html discipline انضباط صفحة الهبوط في ملف واحد لاندنج بيدج موقع صفحة واحدة تصميم متجاوب landing page responsive html seek contract عقد seek واجهة الرندر جاهزية الصفحة مدة الفيديو render api page contract html-to-png still with auto-trim تحويل html إلى صورة png مع قص تلقائي بطاقة بيانات عنوان سفلي لقطة شاشة screenshot lower third end card html seek renderer رندر html حتمي تصدير فيديو ورقة معاينة رندر html to mp4 contact sheet hyperframes: html as video source هايبر فريمز: html كمصدر للفيديو فيديو من html موشن جرافيك تصدير html video headless chrome html composition format صيغة التركيب html فيديو من html بنية الملف توقيت العناصر html video clips headless html frame render تصيير html لقطة شاشة صورة ثابتة تصيير صفحة html to png still frame html-to-video composition model نموذج التركيب: html يتحول إلى فيديو فيديو من html موشن جرافيك تحريك بالكود html to video deterministic render seekable page animation renderer (render(t)/seek(t) -> mp4) تصيير صفحة قابلة للتقديم إلى فيديو صفحة إلى فيديو تصدير فيديو رندر html to video headless chromium html motion project مشروع موشن html موشن جرافيك ضبابية الحركة انيميشن html motion graphics draft hyperframes html composition contract عقد تركيب hyperframes قواعد التركيب سمات html جودة التصيير composition rules render quality html / three.js page to one deterministic frame صفحة html/three.js إلى إطار حتمي لقطة صفحة صورة من صفحة ويب إطار واحد webgl still page screenshot hyperframes route (target) مسار hyperframes فيديو من html تثبيت متطلبات node html to video seekable html page contract عقد الصفحة القابلة للتقديم عقد الصفحة شروط التصيير جاهزية page contract seek seekable html composition contract عقد التركيب القابل للتقديم إطاراً بإطار تقديم بالزمن إطار بإطار قابلية التصيير seek frame by frame htmlincanvas post-processing معالجة لاحقة لعناصر html مؤثرات فلاتر طبقات html webgl effects dom to canvas html-in-canvas live screens واجهات html داخل الكانفس شاشة موبايل موك أب واجهة تطبيق device mockup three.js texture slide"
@@ -6278,7 +6278,7 @@
 "ready_now": 3,
 "links": [
 "SP-0371",
-"SP-0272",
+"SP-0271",
 "SP-0278",
 "SP-0296",
 "SP-0140"
@@ -6371,41 +6371,17 @@
 },
 "size": 17,
 "best": "proven",
-"ready_now": 7,
+"ready_now": 6,
 "links": [
-"SP-0269",
+"SP-0272",
 "SP-0140",
 "SP-0011",
-"SP-0262"
+"SP-0298"
 ],
-"text": "browser editor offline mp4 export (webcodecs) تصدير mp4 من محرر المتصفح تصدير فيديو حفظ الفيديو محرر المتصفح webcodecs mp4 export frame-accurate offline mp4 export (webcodecs + mp4-muxer) تصدير mp4 دقيق بلا زمن حقيقي تصدير بدون تقطيع إطارات مفقودة تصدير فيديو webcodecs mp4-muxer pillow server-side manifest renderer with ffprobe verification مصيّر manifest على الخادم بـ pillow رندر على الخادم فحص الفيديو فيديو صامت h264 ffprobe check png sequence to h.264 mp4 encode تجميع الإطارات إلى فيديو mp4 تصدير فيديو دمج الصوت إطارات ffmpeg export fingerprint export: json, style bible, runnable ffmpeg script تصدير البصمة كملف وكود نسخ الأسلوب تقليد المونتاج دليل الأسلوب style clone ffmpeg script environment route check a/b/c فحص البيئة ومسارات a/b/c فحص الجهاز الأدوات المتاحة خطة بديلة environment check ffmpeg missing machine capability check and routes a/b/c فحص قدرات الجهاز فحص الجهاز تشخيص المتطلبات doctor environment check kosif studio exact mp4 export تصدير mp4 دقيق تصدير mp4 حفظ الفيديو استيراد للخط الزمني webcodecs offline export render to mp4 (hyperframes cli or studio engine) تصيير إلى mp4 تصدير رندر إخراج الفيديو export mp4 loudness deterministic playwright->ffmpeg mp4 export تصدير mp4 حتمي تصدير فيديو ستوري بورد مقاس عمودي headless chromium export browser studio frame-accurate mp4 محرر المتصفح بتصدير دقيق مونتاج في المتصفح تصدير فيديو ضبط مستوى الصوت browser export loudness svg frame capture to mp4 (playwright + ffmpeg) التقاط إطارات svg إلى فيديو تصدير فيديو تحويل لفيديو فحص الخط svg to mp4 h264 export frame-accurate mp4 render (webcodecs + mp4-muxer) ريندر دقيق إطار بإطار تصدير نهائي جودة عالية تصدير دقيق webcodecs h.264 review: export mp4 with edits baked in المراجعة: تصدير mp4 بالتعديلات تصدير حفظ التعديلات نسخة جديدة export review edits progress cinegraph mini scene graph: json → pillow frames → ffmpeg rawvideo pipe مخطط المشهد المصغّر cinegraph: json إلى mp4 بأنبوب مباشر scene graph cinegraph json ffmpeg pipe rawvideo rgb24 pillow مخطط مشهد أنبوب فيديو من json أعمدة متحركة نص متحرك h264 spring easing no png lossless remux / container swap تغيير الحاوية بدون إعادة ترميز تحويل الصيغة بدون فقد جودة إصلاح فيديو remux mkv to mp4 stream copy ffmpeg audio traps فخاخ ffmpeg الصوتية مشاكل الصوت خلط الصوت صوت منخفض amix adelay audio bug"
+"text": "browser editor offline mp4 export (webcodecs) تصدير mp4 من محرر المتصفح تصدير فيديو حفظ الفيديو محرر المتصفح webcodecs mp4 export frame-accurate offline mp4 export (webcodecs + mp4-muxer) تصدير mp4 دقيق بلا زمن حقيقي تصدير بدون تقطيع إطارات مفقودة تصدير فيديو webcodecs mp4-muxer png sequence to h.264 mp4 encode تجميع الإطارات إلى فيديو mp4 تصدير فيديو دمج الصوت إطارات ffmpeg export fingerprint export: json, style bible, runnable ffmpeg script تصدير البصمة كملف وكود نسخ الأسلوب تقليد المونتاج دليل الأسلوب style clone ffmpeg script environment route check a/b/c فحص البيئة ومسارات a/b/c فحص الجهاز الأدوات المتاحة خطة بديلة environment check ffmpeg missing machine capability check and routes a/b/c فحص قدرات الجهاز فحص الجهاز تشخيص المتطلبات doctor environment check kosif studio exact mp4 export تصدير mp4 دقيق تصدير mp4 حفظ الفيديو استيراد للخط الزمني webcodecs offline export deterministic playwright->ffmpeg mp4 export تصدير mp4 حتمي تصدير فيديو ستوري بورد مقاس عمودي headless chromium export render to mp4 (hyperframes cli or studio engine) تصيير إلى mp4 تصدير رندر إخراج الفيديو export mp4 loudness svg frame capture to mp4 (playwright + ffmpeg) التقاط إطارات svg إلى فيديو تصدير فيديو تحويل لفيديو فحص الخط svg to mp4 h264 export browser studio frame-accurate mp4 محرر المتصفح بتصدير دقيق مونتاج في المتصفح تصدير فيديو ضبط مستوى الصوت browser export loudness frame-accurate mp4 render (webcodecs + mp4-muxer) ريندر دقيق إطار بإطار تصدير نهائي جودة عالية تصدير دقيق webcodecs h.264 svg frame export + ffmpeg encode تصدير إطارات svg ثم ترميز mp4 رسوم متجهة تحويل إلى فيديو ترميز svg animation rasterize review: export mp4 with edits baked in المراجعة: تصدير mp4 بالتعديلات تصدير حفظ التعديلات نسخة جديدة export review edits progress lossless remux / container swap تغيير الحاوية بدون إعادة ترميز تحويل الصيغة بدون فقد جودة إصلاح فيديو remux mkv to mp4 stream copy cinegraph mini scene graph: json → pillow frames → ffmpeg rawvideo pipe مخطط المشهد المصغّر cinegraph: json إلى mp4 بأنبوب مباشر scene graph cinegraph json ffmpeg pipe rawvideo rgb24 pillow مخطط مشهد أنبوب فيديو من json أعمدة متحركة نص متحرك h264 spring easing no png ffmpeg audio traps فخاخ ffmpeg الصوتية مشاكل الصوت خلط الصوت صوت منخفض amix adelay audio bug"
 },
 "SP-0269": {
 "id": "SP-0269",
-"name_ar": "ترميز GPU بـ NVENC",
-"name_en": "NVENC GPU encode",
-"hub": "3d",
-"stage": "assemble",
-"stages": {
-"refine": 1,
-"assemble": 11,
-"understand": 1,
-"create": 3
-},
-"size": 16,
-"best": "proven",
-"ready_now": 5,
-"links": [
-"SP-0268",
-"SP-0300",
-"SP-0298",
-"SP-0272",
-"SP-0140"
-],
-"text": "web-safe h.264 master ماستر h.264 آمن للويب ترميز h264 faststart bt709 yuv420p master encode تصدير الفيديو ألوان باهتة رندر نهائي mp4 export washed out colors ios h.264 encode with untouched audio mux تشفير h.264 مع دمج الصوت دون تعديل دمج الصوت تعليق صوتي تصدير نهائي audio mux voiceover aac h.264 profile fallback chain سلسلة احتياط ملف h.264 توافق الترميز جودة الفيديو ترميز codec fallback avc profile live recording export (mediarecorder) تصدير بالتسجيل المباشر تسجيل الفيديو تسجيل الكانفس تصدير سريع mediarecorder webm ffmpeg h.264 encode + contact sheet + gif تجميع mp4 ولوحة تحقق تصدير فيديو صورة متحركة لوحة مصغرات gif preview export cli: render أمر: تصيير تصدير صيغ الفيديو جودة الفيديو gif export gpu encode svg frame export + ffmpeg encode تصدير إطارات svg ثم ترميز mp4 رسوم متجهة تحويل إلى فيديو ترميز svg animation rasterize fast realtime render (mediarecorder) الريندر السريع تصدير سريع تسجيل الكانفس تسجيل مباشر webm quick export nvenc gpu encode ترميز gpu بـ nvenc gpu nvenc nvidia fast encode كرت الشاشة تسريع الرندر ترميز سريع hardware encode h264_nvenc nvenc encode flags (vendored) ترميز nvenc ترميز بكرت الشاشة توحيد الصوت ترجمة cuda h264_nvenc loudnorm hardware encoder fallback الترميز بالعتاد مع بديل برمجي كرت الشاشة ترميز سريع تسريع عتادي gpu encode nvenc libx264 manual ffmpeg encode from frames ترميز يدوي من الإطارات تجميع الصور لفيديو دمج الصوت صور إلى فيديو png sequence frames to video libx264 trailer encode and gif loop recipe وصفة ترميز التريلر وحلقة الجيف تصدير نهائي جيف متكرر تريلر gif loop loudnorm palettegen scrub-friendly encode ترميز مناسب للسحب سحب الفيديو تقديم وترجيع نسخة موبايل scrubbing short gop faststart interleaved render workers and a continuity gate عمال رندر متداخلون وبوابة استمرار parallel render workers frames encode رندر متوازٍ عمال dense-keyframe re-encode for seekable footage إعادة الترميز بإطارات مفتاحية كثيفة تجمد الفيديو إطارات مفتاحية إعادة ترميز gop keyframe interval seek freeze"
-},
-"SP-0270": {
-"id": "SP-0270",
 "name_ar": "حزمة ثلاثية الأبعاد جاهزة",
 "name_en": "Pre-bundled 3D kit (window.K3)",
 "hub": "3d",
@@ -6426,8 +6402,8 @@
 ],
 "text": "pre-bundled 3d kit (window.k3) حزمة ثلاثية الأبعاد جاهزة ثري دي مشهد ثلاثي الأبعاد بدون تثبيت three.js offline 3d offline render (--offline) رندر بلا شبكة بدون إنترنت خطوط محلية نتيجة ثابتة offline no network kit sync for lightweight example projects مزامنة العدّة للمشاريع الخفيفة نسخ المكتبات تجهيز المشروع الخطوط sync assets fonts esbuild bundling of 3d projects تجميع المشروع بـ esbuild تجميع الملفات ثلاثي الأبعاد دمج الأصول bundle inline assets esbuild scene bundling تجميع المشهد بـ esbuild تجميع المشهد بدون خادم تضمين الأصول cors single script es-module scene bundling with esbuild تجميع مشهد es-module بـ esbuild تجميع الكود ملف واحد حزم السكربت bundle es modules prebuilt three-kit bundle (window.k3) حزمة three-kit الجاهزة ثري جي اس ثلاثي الأبعاد بدون تثبيت threejs 3d bundle deterministic three.js seek scene مشهد three.js قابل للتقديم الحتمي ثلاثي الأبعاد دوران الكاميرا مشهد ثري دي 3d scene orbit headless blender cycles render ريندر بلندر بدون واجهة ثري دي مشهد ثلاثي الأبعاد إضاءة وخامات blender script 3d render three.js scene + dom overlay on one clock مشهد ثلاثي الأبعاد مع طبقة نصوص على ساعة واحدة ثلاثي الأبعاد نص فوق المشهد مزامنة 3d overlay typography offline route-interception asset serving خدمة الملفات دون خادم بدون خادم أوفلاين ملفات محلية offline local files webgpu renderer + tsl node materials ريندر webgpu مع مواد tsl شيدر ثري دي خامات ثلاثية الأبعاد three.js gpu shaders r3f shadermaterial scaffold هيكل شيدر في react three fiber شيدر ثلاثي الأبعاد رياكت r3f fragment shader sub-compositions with <template> التركيبات الفرعية داخل template مشاهد منفصلة مشهد فرعي ملف مشهد scenes nested composition cesium headless render mechanics آليات تصيير سيزيوم دون واجهة الكرة الأرضية خرائط خريطة ثلاثية الأبعاد globe maps code-only asset rule قاعدة كل شيء مولّد بالكود توليد إجرائي بدون أصول جاهزة صوت مركب procedural no assets storyboard"
 },
-"SP-0271": {
-"id": "SP-0271",
+"SP-0270": {
+"id": "SP-0270",
 "name_ar": "ضبابية حركة حقيقية",
 "name_en": "GPU sub-frame motion blur",
 "hub": "3d",
@@ -6450,8 +6426,8 @@
 ],
 "text": "gpu sub-frame motion blur ضبابية حركة حقيقية موشن بلر تمويه الحركة زاوية الغالق motion blur shutter angle gpu sub-frame motion blur and lighten stacking تمويه حركة حقيقي وتراكم الإضاءة موشن بلر تعريض طويل رسم بالضوء مسارات النجوم light trails long exposure shutter angle → shutter speed (motion blur) زاوية الغالق إلى سرعة الغالق زاوية الغالق ضبابية الحركة معدل الإطارات motion blur fps 180 degree equivalent exposure التعريض المكافئ التعريض فتحة العدسة سرعة الغالق exposure aperture iso seek-safe deterministic motion law قانون الحركة القابلة للتقديم جزيئات اهتزاز ستوب موشن parallel capture seek safe sub-frame motion blur and long exposure ضبابية الحركة والتعريض الطويل بلور حركة مسارات النجوم رسم بالضوء light painting shutter motion blur render pass تمويه الحركة ضبابية الحركة بلور نعومة الحركة blur subframes sub-frame motion blur and long-exposure stacking ضبابية حركة بإطارات فرعية وتعريض طويل تعريض طويل أثر الضوء مسار النجوم light trails star trails gpu motion-blur / long-exposure frame loop حلقة الإطار مع تمويه الحركة ضبابية الحركة بلور خطوط الضوء motion blur light trails sub-compositions and tracks تركيبات فرعية ومسارات تقسيم المشاهد مسارات طبقات scenes layers nested sub-compositions تراكيب فرعية متداخلة مشاهد إعادة استخدام تقسيم الفيديو scenes reusable gsap quickto / matchmedia / reduced motion quickto و matchmedia وتقليل الحركة تتبع المؤشر تصميم متجاوب إمكانية الوصول cursor follower responsive sub-frame motion blur ضبابية حركة بإطارات فرعية بلور حركة نعومة الحركة إطارات فرعية motion blur tmix trend: 4 sub-frame motion blur ترند: 4 sub-frame motion blur ضبابية الحركة موشن بلور نعومة الحركة motion blur subframe adaptive motion-blur sample count (180° shutter) ضبابية حركة تكيفية motion blur sub-frames shutter render ضبابية الحركة إطارات فرعية"
 },
-"SP-0272": {
-"id": "SP-0272",
+"SP-0271": {
+"id": "SP-0271",
 "name_ar": "التقاط الإطارات عبر متصفح Edge وكارت الشاشة",
 "name_en": "Playwright Edge D3D11 frame capture",
 "hub": "3d",
@@ -6475,6 +6451,30 @@
 ],
 "text": "deterministic scene module contract عقد وحدة المشهد الحتمي تصوير الإطارات تصدير فيديو رندر frame capture playwright ffmpeg html composition render contract (window.render / __ready / ?capture) عقد تصيير صفحات html تصيير الصفحة دقة الإطار وضع الالتقاط render contract capture mode playwright edge d3d11 frame capture التقاط الإطارات عبر متصفح edge وكارت الشاشة التقاط إطارات كارت الشاشة تسريع الرسوميات gpu capture png sequence deterministic render(t) + frame capture (webgl) عرض حتمي render(t) والتقاط الإطارات مطابقة المعاينة تصيير ثابت لقطات فحص webgl capture frame exact playwright frame capture تصوير الإطارات بـ playwright تصوير الإطارات لقطات شاشة سكرين شوت frame screenshots spot frames cdp optimizeforspeed capture التقاط سريع عبر cdp تسريع الالتقاط لقطة شاشة معالج الرسوميات screenshot capture gpu fast frame capture via devtools التقاط سريع للإطارات عبر devtools التقاط سريع تسريع تمرير مباشر cdp fast capture cli: capture أمر: التقاط موقع لقطات شاشة سكرين شوت موقع ويب screenshots website render backends: local chrome + ffmpeg محرك التصيير المحلي تصيير محلي رندر التقاط الإطارات headless chrome frame capture local render wgsl custom functions in tsl دوال wgsl مخصصة شيدر مخصص كود gpu دالة مخصصة custom shader gpu code shader-backed product stage contract عقد طبقات خلفية الشيدر خلف الواجهة خلفية متحركة خلفية واجهة أجواء بصرية animated background gpu background edge d3d11 gpu flags تسريع العتاد عبر edge كرت الشاشة تسريع الرندر شيدر gpu angle swiftshader no screen recording for delivery لا تسجيل شاشة للتسليم تسجيل الشاشة سكرين ريكورد إطارات ناقصة screen capture dropped frames web font loading for headless render تحميل الخطوط قبل الالتقاط تحميل الخط خط بديل فونت woff2 font loading fonts.ready deterministic render(t) capture عرض حتمي إطار بإطار التقاط الإطارات متصفح بلا واجهة تصيير ثابت puppeteer frame stepping headless capture"
 },
+"SP-0272": {
+"id": "SP-0272",
+"name_ar": "ترميز GPU بـ NVENC",
+"name_en": "NVENC GPU encode",
+"hub": "3d",
+"stage": "assemble",
+"stages": {
+"refine": 1,
+"assemble": 10,
+"understand": 1,
+"create": 3
+},
+"size": 15,
+"best": "proven",
+"ready_now": 5,
+"links": [
+"SP-0268",
+"SP-0300",
+"SP-0298",
+"SP-0271",
+"SP-0156"
+],
+"text": "web-safe h.264 master ماستر h.264 آمن للويب ترميز h264 faststart bt709 yuv420p master encode تصدير الفيديو ألوان باهتة رندر نهائي mp4 export washed out colors ios h.264 encode with untouched audio mux تشفير h.264 مع دمج الصوت دون تعديل دمج الصوت تعليق صوتي تصدير نهائي audio mux voiceover aac h.264 profile fallback chain سلسلة احتياط ملف h.264 توافق الترميز جودة الفيديو ترميز codec fallback avc profile live recording export (mediarecorder) تصدير بالتسجيل المباشر تسجيل الفيديو تسجيل الكانفس تصدير سريع mediarecorder webm ffmpeg h.264 encode + contact sheet + gif تجميع mp4 ولوحة تحقق تصدير فيديو صورة متحركة لوحة مصغرات gif preview export cli: render أمر: تصيير تصدير صيغ الفيديو جودة الفيديو gif export gpu encode fast realtime render (mediarecorder) الريندر السريع تصدير سريع تسجيل الكانفس تسجيل مباشر webm quick export nvenc gpu encode ترميز gpu بـ nvenc gpu nvenc nvidia fast encode كرت الشاشة تسريع الرندر ترميز سريع hardware encode h264_nvenc nvenc encode flags (vendored) ترميز nvenc ترميز بكرت الشاشة توحيد الصوت ترجمة cuda h264_nvenc loudnorm hardware encoder fallback الترميز بالعتاد مع بديل برمجي كرت الشاشة ترميز سريع تسريع عتادي gpu encode nvenc libx264 trailer encode and gif loop recipe وصفة ترميز التريلر وحلقة الجيف تصدير نهائي جيف متكرر تريلر gif loop loudnorm palettegen manual ffmpeg encode from frames ترميز يدوي من الإطارات تجميع الصور لفيديو دمج الصوت صور إلى فيديو png sequence frames to video libx264 scrub-friendly encode ترميز مناسب للسحب سحب الفيديو تقديم وترجيع نسخة موبايل scrubbing short gop faststart interleaved render workers and a continuity gate عمال رندر متداخلون وبوابة استمرار parallel render workers frames encode رندر متوازٍ عمال dense-keyframe re-encode for seekable footage إعادة الترميز بإطارات مفتاحية كثيفة تجمد الفيديو إطارات مفتاحية إعادة ترميز gop keyframe interval seek freeze"
+},
 "SP-0273": {
 "id": "SP-0273",
 "name_ar": "إيجاد Playwright و Chromium",
@@ -6494,7 +6494,7 @@
 "ready_now": 4,
 "links": [
 "SP-0136",
-"SP-0272",
+"SP-0271",
 "SP-0371",
 "SP-0264"
 ],
@@ -6520,7 +6520,7 @@
 "SP-0356",
 "SP-0174",
 "SP-0154",
-"SP-0142"
+"SP-0140"
 ],
 "text": "remotion rule checklist قائمة قواعد remotion remotion react video captions transitions ريموشن remotion route (target) مسار remotion مونتاج طويل ريموشن مراجعة react video long edit remotion kosiffilm composition تركيبة kosiffilm في remotion فيديو رأسي قالب جاهز ترجمة vertical video react remotion equivalent path مسار remotion رياكت تسلسل المشاهد حركة نابضية react video spring remotion delivery path مسار تسليم remotion تسليم لقطة ثابتة فحص الجودة delivery props @remotion/three integration تكامل remotion مع three ثلاثي الأبعاد ثري دي رياكت 3d in react threecanvas remotion to hyperframes port تحويل مشاريع remotion تحويل مشروع نقل الكود ترحيل migration react to html parameterized remotion compositions تراكيب ريموشن قابلة للتهيئة فيديو بالبيانات قالب فيديو أفقي وعمودي data-driven video props schema remotion editable timeline patterns أنماط التايملاين في remotion مونتاج ترانزيشن قص المقاطع ripple edit transitions parameterized launch video in remotion فيديو إطلاق بمعاملات في ريموشن فيديو إطلاق إعلان منتج فيديو ديمو product launch demo video remotion frame-driven animation تحريك ريموشن المعتمد على رقم الإطار ريموشن رقم الإطار تسهيل الحركة interpolate easing standard 6-step delivery التسليم القياسي بست خطوات خطوات التسليم تسليم الفيديو فحص نهائي delivery verify video test report youtube 4k delivery spec and loudness check مواصفات تسليم يوتيوب 4k وفحص الجهارة رفع على يوتيوب علو الصوت معدل البت youtube upload lufs ebur128"
 },
@@ -6550,6 +6550,28 @@
 },
 "SP-0276": {
 "id": "SP-0276",
+"name_ar": "فيلم بدون متصفح",
+"name_en": "Workbench Pillow film",
+"hub": "3d",
+"stage": "create",
+"stages": {
+"plan": 3,
+"create": 7,
+"assemble": 2
+},
+"size": 12,
+"best": "proven",
+"ready_now": 6,
+"links": [
+"SP-0405",
+"SP-0140",
+"SP-0448",
+"SP-0268"
+],
+"text": "workbench no-browser 2d film فيلم بدون متصفح فيديو بدون متصفح عناوين عربية فيلم سريع pillow no browser image to standalone pillow program صورة إلى برنامج بايثون image to code pillow program صورة إلى كود pillow server-side manifest renderer with ffprobe verification مصيّر manifest على الخادم بـ pillow رندر على الخادم فحص الفيديو فيديو صامت h264 ffprobe check pure-function svg film (no libraries) فيلم svg كدالة نقية بلا مكتبات رسم بالكود فيلم قصير بدون مكتبات svg animation parallax recipe catalogue as typed forms كتالوج الوصفات كنماذج نماذج إدخال وصفات جاهزة التحقق من المدخلات typed forms command builder workbench pillow film فيلم بدون متصفح فيديو سريع عناوين متحركة سحابة pillow cloud render browser-free 2d workbench film فيلم ثنائي الأبعاد بلا متصفح بدون متصفح فيديو عمودي عناوين عربية no browser pillow frames image -> standalone pillow program صورة إلى برنامج بايثون صورة إلى كود رسم بالكود مضلعات image to code pillow motion-kit film builder (11 styles) بناء فيلم بستايل من المكتبة فيديو سبورة وايت بورد رسوم متحركة whiteboard doodle mimic remake builder باني النسخة المقلّدة تقليد فيديو إعادة إنتاج لقطة بلقطة remake lut song-film render pipeline (seek → jpeg → ffmpeg, song untouched) خط رندر فيلم الأغنية song film playwright ffmpeg canvas فيلم أغنية رندر web game development ألعاب متصفح كاملة لعبة ألعاب ويب فيزياء بسيطة phaser game loop canvas game"
+},
+"SP-0277": {
+"id": "SP-0277",
 "name_ar": "خيار التقنية: canvas",
 "name_en": "Stack option: canvas",
 "hub": "3d",
@@ -6571,28 +6593,6 @@
 "SP-0140"
 ],
 "text": "stack option: canvas خيار التقنية: canvas كانفس اختيار التقنية قالب الرسم html canvas stack stack option: auto خيار التقنية: auto اختيار التقنية اختيار الأداة تلقائي tech stack auto choose stack option: svg خيار التقنية: svg رسوم متجهة اختيار التقنية موشن متجه svg gsap vector animation cinematic post stack (makepost) سلسلة المعالجة السينمائية توهج عمق الميدان حبيبات الفيلم تلوين سينمائي bloom depth of field tool-map doctor before promising a stack فحص خريطة الأدوات قبل الوعد بأي حزمة doctor فحص tools catalog repos installed خريطة الأدوات lite post stack معالجة خفيفة توهج حبيبات أداء أسرع bloom film grain canvas route template (pure function of t) مسار الكانفس زنبرك منحنيات الحركة إيقاع spring easing bpm lab lightweight post معالجة المختبر معالجة سريعة توهج خفيف عمق الميدان software gl post processing stack option: remotion خيار التقنية: remotion اختيار التقنية رياكت قالب بداية stack starter tsl renderpipeline post stack سلسلة ما بعد المعالجة في tsl مؤثرات بوست بروسيسنج تأثيرات بصرية post-processing effects canvas route template قالب الكانفاس كانفاس قالب جاهز إيقاع canvas template spring stack option: three خيار التقنية: three ثلاثي الأبعاد كاميرا متحركة مشهد 3d threejs 3d scene camera move"
-},
-"SP-0277": {
-"id": "SP-0277",
-"name_ar": "فيلم بدون متصفح",
-"name_en": "workbench no-browser 2D film",
-"hub": "3d",
-"stage": "create",
-"stages": {
-"plan": 3,
-"create": 7,
-"assemble": 1
-},
-"size": 11,
-"best": "proven",
-"ready_now": 5,
-"links": [
-"SP-0405",
-"SP-0268",
-"SP-0140",
-"SP-0303"
-],
-"text": "workbench no-browser 2d film فيلم بدون متصفح فيديو بدون متصفح عناوين عربية فيلم سريع pillow no browser image to standalone pillow program صورة إلى برنامج بايثون image to code pillow program صورة إلى كود pure-function svg film (no libraries) فيلم svg كدالة نقية بلا مكتبات رسم بالكود فيلم قصير بدون مكتبات svg animation parallax recipe catalogue as typed forms كتالوج الوصفات كنماذج نماذج إدخال وصفات جاهزة التحقق من المدخلات typed forms command builder workbench pillow film فيلم بدون متصفح فيديو سريع عناوين متحركة سحابة pillow cloud render browser-free 2d workbench film فيلم ثنائي الأبعاد بلا متصفح بدون متصفح فيديو عمودي عناوين عربية no browser pillow frames image -> standalone pillow program صورة إلى برنامج بايثون صورة إلى كود رسم بالكود مضلعات image to code pillow motion-kit film builder (11 styles) بناء فيلم بستايل من المكتبة فيديو سبورة وايت بورد رسوم متحركة whiteboard doodle mimic remake builder باني النسخة المقلّدة تقليد فيديو إعادة إنتاج لقطة بلقطة remake lut song-film render pipeline (seek → jpeg → ffmpeg, song untouched) خط رندر فيلم الأغنية song film playwright ffmpeg canvas فيلم أغنية رندر web game development ألعاب متصفح كاملة لعبة ألعاب ويب فيزياء بسيطة phaser game loop canvas game"
 },
 "SP-0278": {
 "id": "SP-0278",
@@ -6800,7 +6800,7 @@
 "SP-0273",
 "SP-0293",
 "SP-0268",
-"SP-0272",
+"SP-0271",
 "SP-0060"
 ],
 "text": "frame dump (--frames-dir/--keep-frames) حفظ الإطارات png تصدير الإطارات صور متتالية تتبع الأخطاء png sequence image sequence readiness gates (fonts + __kosifready + settle) بوابات الجاهزية قبل الرندر تحميل الخطوط انتظار التحميل أول إطار fonts loading wait ready sequence / series / premount التسلسل والسلاسل والتحميل المسبق ترتيب المشاهد تسلسل وميض التحميل scene order overlap premiere/ae scripting automation أتمتة بريمير وأفتر إفكتس بالسكربت بريمير علامات التسلسل سكربت أدوبي premiere pro jsx real component reuse استخدام مكونات المنتج الحقيقية فيديو منتج مكونات الواجهة عرض المنتج react components ui components deterministic time for offline render زمن حتمي للريندر تصدير شيدر خطوة ثابتة تسلسل صور fixed timestep png sequence utime post pipeline order ترتيب مراحل ما بعد الإنتاج تمويه ترتيب الخطوات إعادة توقيت الترجمة privacy mosaic recut workflow order"
@@ -6932,7 +6932,7 @@
 "SP-0105",
 "SP-0229",
 "SP-0472",
-"SP-0272"
+"SP-0271"
 ],
 "text": "python static chart pipeline خط مخططات بايثون الثابتة رسم بياني تشارت عرض البيانات matplotlib data chart matplotlib and turtle capture التقاط رسوم matplotlib وturtle رسم بياني السلحفاة مخطط plot capture charts declarative grammars (vega-lite / observable plot) القواعد التصريحية للمخططات رسم بياني مخطط سريع مواصفات المخطط vega-lite chart spec product chart libraries مكتبات المخططات الجاهزة مكتبة مخططات رسوم بيانية جاهزة رسم بياني تفاعلي echarts plotly screencast guide yaml schema مخطط yaml لفيديو الشرح فيديو شرح تسجيل الشاشة شرح خطوات tutorial video walkthrough"
 },
@@ -7071,7 +7071,7 @@
 "links": [
 "SP-0268",
 "SP-0140",
-"SP-0269",
+"SP-0272",
 "SP-0453"
 ],
 "text": "checked per-platform delivery (8 platforms) ملف مفحوص لكل منصة تصدير المنصات tiktok reels shorts whatsapp platform export bitrate نسخ لكل منصة حدود الحجم مدة الفيديو social export file size limit snapchat post pack + linter per platform حزمة نشر مفحوصة لكل منصة حزمة نشر كابشن هاشتاج post pack caption hashtags lint وصف الفيديو عنوان يوتيوب تجهيز النشر social copy youtube description alt text platform limits table (as of 2026-10) جدول حدود المنصات (2026-10) حدود المنصات limits caption length posting time مواعيد النشر عدد الحروف المدة المسموحة وقت النشر character limit max duration platform specs delivery pack: all ratios + poster + gif/webp حزمة التسليم: كل النسب وغلاف وgif حزمة تسليم export pack poster gif webp multi aspect كل المقاسات صورة الغلاف ملفات التسليم deliverables preview variants aspect presets across the owner tools جدول المقاسات الموحد في أدواتك جدول المقاسات presets ratio table 4:3 21:9 scaffold نسب العرض أبعاد المشروع معدل الإطارات aspect presets fps verify_video 9:16 ui safe zone المنطقة الآمنة في الإطار العمودي منطقة آمنة safe zone reels tiktok ui overlay margins هوامش آمنة أزرار المنصة فيديو عمودي safe area 9:16 layout story end-card template قالب بطاقة الختام بطاقة ختام end card cta subscribe اشترك template شاشة النهاية تابعنا زر الاشتراك outro end screen social icons multi-rendition hls ladder سلم جودات hls hls بث abr streaming ladder dash cmaf جودات متعددة بث تكيفي تشغيل أونلاين adaptive bitrate m3u8 renditions kosif studio cloud — one-page artifact استوديو كامل كصفحة claude.ai واحدة artifact claude.ai studio cloud browser editor mp4 export محرر في المتصفح صفحة واحدة بدون سيرفر single html self-contained no server painter studio export modes (png · 4k · svg · mp4) تصدير svg وأوضاع الاستوديو الرسام svg vectorize 4k تتبع export modes painter تحويل لمتجه تصدير الرسمة فيديو الرسم vector trace drawing video png export chart export png@2x / svg + data-table toggle تصدير الرسوم png@2x وsvg تصدير الرسم svg png 2x chart export data table تنزيل الرسم صورة عالية الدقة جدول البيانات download chart save as image derive the canvas from the destination المقاس من الوجهة مقاس نسبة منصة aspect canvas destination 9:16 16:9 4:5 أبعاد الفيديو مقاس ريلز دقة الفيديو video size resolution dimensions carousel structure & limits بنية الكاروسيل وحدوده كاروسيل carousel slides instagram linkedin pdf منشور شرائح سلايدات إنستغرام بوست متعدد الصور multi-image post swipe post facebook phone legibility gate قواعد المقروئية على الهاتف مقروئية تباين legibility contrast mo"
@@ -7368,7 +7368,7 @@
 "ready_now": 8,
 "links": [
 "SP-0400",
-"SP-0276",
+"SP-0277",
 "SP-0314",
 "SP-0171",
 "SP-0129"
@@ -8528,7 +8528,7 @@
 "ready_now": 2,
 "links": [
 "SP-0278",
-"SP-0272",
+"SP-0271",
 "SP-0480",
 "SP-0187",
 "SP-0130"
@@ -8699,7 +8699,7 @@
 "best": "proven",
 "ready_now": 8,
 "links": [
-"SP-0271",
+"SP-0270",
 "SP-0408",
 "SP-0212",
 "SP-0281",
@@ -8773,7 +8773,7 @@
 "links": [
 "SP-0264",
 "SP-0280",
-"SP-0272",
+"SP-0271",
 "SP-0273",
 "SP-0129"
 ],
@@ -8843,7 +8843,7 @@
 "best": "proven",
 "ready_now": 6,
 "links": [
-"SP-0272",
+"SP-0271",
 "SP-0048",
 "SP-0367",
 "SP-0373"
@@ -9322,8 +9322,8 @@
 "links": [
 "SP-0354",
 "SP-0311",
-"SP-0276",
-"SP-0270",
+"SP-0277",
+"SP-0269",
 "SP-0041"
 ],
 "text": "tsl reassignment pitfall فخ إعادة الإسناد في tsl شيدر خطأ برمجي إسناد المتغير assign tsl"
@@ -9556,7 +9556,7 @@
 "best": "proven",
 "ready_now": 13,
 "links": [
-"SP-0277",
+"SP-0276",
 "SP-0306",
 "SP-0407",
 "SP-0327",
@@ -9632,7 +9632,7 @@
 "links": [
 "SP-0368",
 "SP-0212",
-"SP-0271",
+"SP-0270",
 "SP-0255",
 "SP-0140"
 ],
@@ -9750,7 +9750,7 @@
 "SP-0239",
 "SP-0240",
 "SP-0311",
-"SP-0276",
+"SP-0277",
 "SP-0099"
 ],
 "text": "frame-seeded grain (seek pages) حبيبات ببذرة رقم الإطار حبيبات بذرة grain seed deterministic seek نويز متجدد حبيبات متحركة ضوضاء per-frame noise canvas grain seekable stepped svg grain (motion-kit) حبيبات svg متدرجة قابلة للبحث حبيبات فيلم grain film grain feturbulence seekable vignette تعتيم ملمس سينمائي نويز ضوضاء noise overlay svg filter dot-lattice grain overlay طبقة حبيبات نقطية نقاط dot grain lattice css print شبكة نقاط ملمس خلفية داكنة dot pattern overlay ffmpeg film finish chain سلسلة تشطيب ffmpeg ffmpeg حبيبات تعتيم grain vignette bloom letterbox finish أشرطة سينما لوك سينمائي توهج cinematic look filtergraph procedural painted wooden hull خامة بدن خشبي مدهون خشب قارب wood hull procedural three.js مركب طلاء مقشور ألواح خشب boat wood grain fractal value-noise material (studio painter) نسيج الضوضاء الكسرية ضوضاء noise fbm skin rock pillow studio ملمس صخر جلد value noise texture seeded gaussian luminance grain (studio painter) حبيبات غاوسية في pillow حبيبات grain pillow studio render.py نويز ضوضاء غاوسية ملمس طباعة gaussian noise luminance grain 3d film grain pass حبيبات ثلاثية الأبعاد (filmpass) three.js filmpass grain post حبيبات مشهد ثلاثي الأبعاد ملمس سينمائي ما بعد المعالجة webgl post-processing look replication solver (vignette/grain/letterbox/fades) مطابقة اللوك: تعتيم وحبيبات وأشرطة محاكاة mimic grain vignette look match مطابقة تقليد الستايل نفس اللوك فيديو مرجعي reference video crf seeded cpu perlin / fbm / ridged noise ضوضاء بيرلين وfbm وridged ببذرة ضوضاء perlin fbm ridged noise terrain تضاريس توزيع عشوائي ضوضاء بيرلين procedural simplex warm-grain example project (hyperframes) مثال الحبيبات الدافئة دافئ حبيبات warm grain starter hyperframes لوحة ألوان خط كريمي palette outfit font grain field & ink-bleed reveal (hyperframes) حقل الحبيبات ونزف الحبر حبر حبيبات ink bleed gooey grain field hyperframes نزف الحبر كشف علامة حلقة متكررة ink reveal seamless loop chalk grain overlay حبيبات الطباشير طباشير chalk chalkboard grain سبورة طباشير طبشورة نمش blackboard svg grain film grain + hud corners حبيبات مع زوايا hud hud حبيبات grain camera ui واجهة كاميرا أقواس الزوايا شريط تقدم viewfinder corner brackets riso grain fill تعبئة حبيبات ريزو ريزو riso grain print ink ريزوغراف طباعة حبر ملمس محبب risograph misregistration warm-black grain + vignette grade أسود دافئ بحبيبات وتعتيم أسود حبيبات تعتيم warm black grain vignette premium فخامة خلفية سوداء لوك فاخر dark background luxury grain-glow title card عنوان محبب متوهج عنوان توهج title grain glow عنوان ا"
@@ -10213,7 +10213,7 @@
 "ready_now": 3,
 "links": [
 "SP-0199",
-"SP-0271",
+"SP-0270",
 "SP-0428",
 "SP-0434",
 "SP-0129"
@@ -10555,7 +10555,7 @@
 "ready_now": 0,
 "links": [
 "SP-0443",
-"SP-0277",
+"SP-0276",
 "SP-0203",
 "SP-0405",
 "SP-0140"
@@ -11298,7 +11298,7 @@
 "SP-0331",
 "SP-0361",
 "SP-0468",
-"SP-0272",
+"SP-0271",
 "SP-0124"
 ],
 "text": "clean mic capture constraints التقاط ميكروفون نظيف ميكروفون إلغاء الصدى getusermedia echo cancellation noise suppression كبت الضوضاء مايك تسجيل نظيف auto gain browser mic live mic fab ring pulse نبض حلقة زر الميكروفون العائم زر الميكروفون نبض mic button fab pulse ring زر عائم مايك تأثير نبض floating button microphone css animation mediarecorder capture + download تسجيل الصوت وتنزيله تسجيل تنزيل mediarecorder webm download تسجيل صوت حفظ الملف تحميل record audio blob human vo recording spec مواصفات تسجيل الصوت البشري تسجيل ميكروفون recording spec 48 khz noise floor تسجيل صوتي معلق مايك voice over mic setup"
@@ -11427,8 +11427,8 @@
 "SP-0005"
 ],
 "assemble": [
-"SP-0142",
 "SP-0140",
+"SP-0142",
 "SP-0146"
 ],
 "verify": [
@@ -11624,10 +11624,10 @@
 "SP-0171",
 "SP-0266",
 "SP-0267",
-"SP-0276",
+"SP-0277",
 "SP-0351",
 "SP-0352",
-"SP-0277",
+"SP-0276",
 "SP-0417",
 "SP-0173",
 "SP-0273",
@@ -11657,7 +11657,7 @@
 "SP-0311",
 "SP-0416",
 "SP-0312",
-"SP-0271",
+"SP-0270",
 "SP-0313",
 "SP-0415",
 "SP-0314",
@@ -11668,14 +11668,14 @@
 "SP-0265",
 "SP-0262",
 "SP-0268",
-"SP-0269",
+"SP-0272",
 "SP-0280",
 "SP-0283",
 "SP-0261",
 "SP-0264",
-"SP-0270",
+"SP-0269",
 "SP-0279",
-"SP-0272",
+"SP-0271",
 "SP-0278",
 "SP-0288",
 "SP-0282",
@@ -12193,7 +12193,7 @@
 ],
 "assemble": [
 "SP-0268",
-"SP-0272",
+"SP-0271",
 "SP-0406"
 ],
 "verify": [
@@ -12236,7 +12236,7 @@
 "SP-0400"
 ],
 "assemble": [
-"SP-0272"
+"SP-0271"
 ],
 "verify": [
 "SP-0044"
@@ -12369,8 +12369,8 @@
 "SP-0414"
 ],
 "assemble": [
-"SP-0270",
-"SP-0272",
+"SP-0269",
+"SP-0271",
 "SP-0288"
 ],
 "verify": [
@@ -12615,7 +12615,7 @@
 ],
 "superpowers": [
 "SP-0171",
-"SP-0270"
+"SP-0269"
 ]
 },
 {
@@ -12970,7 +12970,7 @@
 "a": "ENG-11",
 "b": "GLOW-26",
 "sim": 0.72,
-"a_sp": "SP-0276",
+"a_sp": "SP-0277",
 "b_sp": "SP-0311",
 "cross_hub": false,
 "name": "Cinematic post stack (makePost)",
@@ -13191,7 +13191,7 @@
 {
 "a": "SP-0326",
 "b": "SP-0422",
-"sim": 0.455,
+"sim": 0.454,
 "hubs": [
 "audio",
 "motion"
@@ -13360,7 +13360,7 @@
 ]
 },
 {
-"a": "SP-0271",
+"a": "SP-0270",
 "b": "SP-0368",
 "sim": 0.389,
 "hubs": [
@@ -13549,7 +13549,7 @@
 ]
 },
 {
-"a": "SP-0272",
+"a": "SP-0271",
 "b": "SP-0374",
 "sim": 0.344,
 "hubs": [

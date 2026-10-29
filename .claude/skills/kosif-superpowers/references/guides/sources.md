@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (21)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (23)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -21,6 +21,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `fetch-reference` | Discovers media URLs on a public web page (video and source tags, Open Graph and Twitter tags, JSON-LD, script text) or takes a direct file or an unencrypted HLS playlist. It downloads the media within a size cap into a git-ignored cache and measures it with ffmpeg (probe, contact sheet, scene cuts and dominant palette), plus a bilingual REPORT.md for STYLE.md. | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. | `python3 scripts/fetch_video.py --doctor` | tested-elsewhere |
 | `instagram-finder` | Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log. | `python3 scripts/instagram_finder.py accounts` | tested-here |
+| `tiktok-photo` | Downloads a TikTok photo post, which yt-dlp rejects with "Unsupported URL .../photo/<id>": it resolves a vt.tiktok.com or vm.tiktok.com short link by following redirects, fetches the /@user/photo/<id> page with a mobile Safari User-Agent, reads the JSON in <script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"> (itemStruct: desc, author, music, imagePost.images with sizes), saves every image as img00.jpg, img01.jpg ... (atomic writes, mirror links, resumable), gets the post's sound with yt-dlp -f ba on the rewritten /video/<id> link, and writes meta.json with author, desc, music, source link, image sizes and a credit line. parse and url work offline on a saved page or a link. | `python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post` | tested-here |
 | `stock-fetch` | Downloads free stock clips by id or page URL without an API key: Pexels through its public download endpoint (a 302 to videos.pexels.com) and Mixkit through its free 720p file. It writes manifest.json with the page, file URL, licence name, link and terms, size, dimensions, frame rate and duration, can skip oversized files, and has a probe that reports which stock sources answer from the current machine. | `python3 scripts/stock_fetch.py probe` | tested-here |
 | `media-sources` | Lists and searches a fixed catalog of 100 stock, open-collection and texture websites and prints the legal prerequisites for a URL. It downloads a single asset through fetch_video.py only after explicit per-asset rights evidence is supplied, and records each download with its SHA-256 and rights in asset_rights.jsonl. | `python3 scripts/media_sources.py list` | tested-here |
 | `rea-creative-research-atlas` | Builds the creative discovery catalogs by querying GitHub through the gh CLI: topic searches for repos, outbound links extracted from curated awesome-list READMEs for sites, and the owner's repo inventory and git-tree metadata. Each run prints a JSON summary; only `report` works offline, counting the existing catalogs. | `python3 scripts/rea_creative_research_atlas.py report` | tested-elsewhere |
@@ -33,6 +34,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `github-top-repos` | Keeps the review of the 1,000 most-starred public GitHub repositories: a facts snapshot (rank, stars, language, licence id, description, merged from the gitstar-ranking index and deps.dev records for a supplement list it misses), an automatic topic and licence classification, and a hand review of exclusions and transfers. build writes data/github_top1000.json and the table references/github-top-1000.md with a decision per repository (transferred, mine, reference, skip) and the power or tool ids that carry its methods; find and show search it; refresh fetches a new snapshot to a separate file for review. | `python3 scripts/github_top_repos.py build` | tested-here |
 | `instagram-reference-discovery` | Offline-first source registration for two user-specified Instagram creators. Produces public web-search links by topic, safely indexes researcher-confirmed reel permalinks and Arabic/English annotations in local SQLite, ranks metadata, and writes evidence-labelled six-brick research proposals referencing the existing KMX 86-style catalog. Does not scrape, visit or download Instagram. | `python3 scripts/instagram_reference_bridge.py doctor` | tested-here |
 | `github-pulse` | Ranks repositories by distinct people active in a 30-day window (GH Archive hourly events) plus total stars (deps.dev), keeps only those pushed or released in the window, classifies them into 14 domains with a minimum share for creative ones, labels licence classes, keeps cheats, cracks and bot-detection bypasses out, and records 24 ideas restated in our own words with where each now lives. build writes data/github_pulse.json and references/github-pulse-30d.md; top, find, show and ideas query it; collect, enrich and select refresh it into a work folder (network, curl). | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | tested-here |
+| `source-finder` | Splits a reference video into shots with OpenCV frame differences, takes per-shot query frames through an ffmpeg crop that removes burned-in captions, reverse-searches each frame on Yandex Images by upload (sites and similar pages) and keeps the Pinterest pins it returns, then downloads those video pins with yt-dlp and verifies every candidate every 0.5 s with ORB 3000 features, a 0.75 ratio test and RANSAC homography inliers. run chains the steps and writes a ranked report.json per shot: exact (150+ inliers), possible (40+) or none, with the pin link and timestamp; it waits between Yandex calls and stops at the first captcha. | `python3 scripts/source_finder.py doctor` | tested-here |
 
 <!-- hub:area:sources:end -->
 
@@ -48,6 +50,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 8. [Atlas external search (2026-10-20)](#atlas-external-search-2026-10-20)
 9. [أشهر 1000 مستودع على GitHub — GitHub top-1000 review (2026-10-23)](#أشهر-1000-مستودع-على-github--github-top-1000-review-2026-10-23)
 10. [بحث وتحميل فيديوهات إنستجرام لمنتج — Instagram product video finder (2026-10-24)](#بحث-وتحميل-فيديوهات-إنستجرام-لمنتج--instagram-product-video-finder-2026-10-24)
+11. [بوست صور تيك توك — TikTok photo posts (2026-10-28)](#بوست-صور-تيك-توك--tiktok-photo-posts-2026-10-28)
+12. [مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)](#مصدر-كل-لقطة-في-فيديو-مرجعي--source-finder-for-the-shots-of-a-reference-video-2026-10-28)
 
 ## Web apps and browser isolation research
 
@@ -179,4 +183,66 @@ python3 scripts/instagram_finder.py index --session-user MY_USERNAME
 python3 scripts/instagram_finder.py search "perfume splash" --save out/instagram/hits.json
 python3 scripts/instagram_finder.py download out/instagram/hits.json --pick 1,3 --rights permission --evidence "<link>"
 ```
+
+## بوست صور تيك توك — TikTok photo posts (2026-10-28)
+
+yt-dlp downloads TikTok videos but stops at a photo post (a slideshow) with `Unsupported URL .../photo/<id>`. `scripts/tiktok_photo.py` downloads one:
+
+```bash
+python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post   # images, sound, meta.json
+python3 scripts/tiktok_photo.py fetch "<link>" --out out/tiktok/post --html saved_page.html      # page saved on your device
+python3 scripts/tiktok_photo.py parse saved_page.html                                           # offline: the extracted JSON
+python3 scripts/tiktok_photo.py url "https://www.tiktok.com/@user/photo/7400000000000000001"    # offline: /photo/ and /video/ forms
+```
+
+How it works (the route that was reported working by hand on 2026-10-28):
+
+1. **Short link.** A `vt.tiktok.com`, `vm.tiktok.com` or `tiktok.com/t/…` link is followed through its redirects (what `curl -sIL` shows) to `https://www.tiktok.com/@<user>/photo/<id>`; the tracking query is dropped. A `/video/<id>` link is not refused on sight: its page is read, and only a post without `imagePost` is reported as a video post.
+2. **Page.** That page is fetched with a mobile Safari User-Agent. The post lives in the JSON of `<script id="__UNIVERSAL_DATA_FOR_REHYDRATION__">`, under `__DEFAULT_SCOPE__["webapp.reflow.video.detail"].itemInfo.itemStruct` (the desktop key `webapp.video-detail` is tried second): `desc`, `author.uniqueId`, `music.title`, and `imagePost.images[]` with `imageURL.urlList`, `imageWidth`, `imageHeight`.
+3. **Images.** Each image is saved as `img00.jpg`, `img01.jpg` … from `urlList[0]`, then its mirrors, two tries each. The extension follows the real file type (a WebP stays `.webp`), an answer that is not an image is refused, every file is written to `.part` and renamed only when complete, and a rerun skips the files already there.
+4. **Sound.** The link is rewritten to `https://www.tiktok.com/@<user>/video/<id>`, which yt-dlp does read, and `yt-dlp -f ba` saves the post's sound as `audio.<ext>` (mp3 or m4a). Without yt-dlp the images still download and meta.json says the sound is missing.
+5. **meta.json** (`kosif.tiktok_photo.v1`): author, desc, music, the source and resolved links, each image's declared width and height with its bytes and SHA-256, the failed images, a credit line and the rights note. The signed CDN image links expire, so only their host is kept.
+
+Exit codes: `0` done, `2` partial (rerun the same command to resume), `3` a video post (use `python3 scripts/fetch_video.py "<link>"` or yt-dlp), `4` the page JSON is missing (a login wall, a bot check, a removed post or a changed page), `1` a bad link or a network error.
+
+Limits: TikTok can change its page structure at any time, and then the tool stops with exit 4 rather than guessing; private, removed and region-locked posts fail; some networks block tiktok.com, in which case save the page on your phone or computer and pass it with `--html` (the images still download from the CDN). No cookies or login are sent.
+
+Respect the creator: the post stays theirs. Keep the `credit` line from meta.json, link the post wherever you use it, and reuse the images or sound only with the creator's permission or a licence; otherwise keep them as private reference. Tests: `evals/test_tiktok_photo.py`, offline, on a hand-written synthetic page fixture (`evals/fixtures/tiktok_photo_minimal.html`) with no real TikTok content.
+
+## مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)
+
+`scripts/source_finder.py` looks for the **original clips** an edit was cut from: it splits the reference into shots, takes clean query frames from each shot, reverse-searches them on Yandex Images, downloads the Pinterest video pins that come back and **verifies** each candidate with feature matching, so a hit is the same footage and not a look-alike.
+
+بيدوّر على **اللقطات الأصلية** اللي الفيديو المرجعي متجمّع منها: يقسم الفيديو لمشاهد، ياخد صور نظيفة من كل مشهد، يبحث بيها في Yandex بالصورة، ينزّل فيديوهات Pinterest اللي ظهرت، ويتأكد من كل واحد بمطابقة النقاط عشان النتيجة تكون نفس اللقطة مش لقطة شبهها.
+
+```bash
+python3 scripts/source_finder.py doctor                                  # OpenCV, numpy, ffmpeg, curl, yt-dlp present?
+python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --crop "crop=iw:ih*0.6:0:ih*0.2"
+# step by step
+python3 scripts/source_finder.py cuts reference.mp4 --out out/source-finder/cuts.json
+python3 scripts/source_finder.py frames reference.mp4 --cuts out/source-finder/cuts.json --crop "crop=iw:ih*0.6:0:ih*0.2" --out out/source-finder/queries
+python3 scripts/source_finder.py search out/source-finder/queries/s003_1.jpg out/source-finder/queries/s003_full.jpg --out out/source-finder/s003.json
+python3 scripts/source_finder.py match out/source-finder/queries/s003_0.jpg out/source-finder/queries/s003_1.jpg --candidates out/source-finder/s003.json --work out/source-finder
+# offline: score the shots against clips you already have
+python3 scripts/source_finder.py run reference.mp4 --work out/source-finder --candidates ~/Downloads/clips
+```
+
+How it decides:
+
+1. **Cuts**: the mean HSV change between consecutive frames of a 96-px copy; a change of 27 or more (0-255 scale) is a cut, and shots shorter than 0.4 s are merged. Hard cuts only: dissolves and fades stay inside one shot, so check `cuts.json` against the video and give `frames` your own boundaries (`--cuts 0,2.0,3.97,...`) when needed.
+2. **Query frames**: three frames per shot kept 0.35 s away from its cuts, taken through `--crop` so burned-in captions, verse text and logos do not pull the search toward other edits; one uncropped mid frame is searched as well. `--crop` accepts a single ffmpeg `crop=` filter and nothing else.
+3. **Search**: each image is uploaded to Yandex search-by-image; the `sites` and `similar` pages are read and every Pinterest `/pin/<id>/` link is kept (TikTok, Instagram, YouTube and stock links go to `leads` for a manual look). Calls are at least 2 s apart (`--delay`, default 4 s), and searches are cached in `<work>/search/` under the frame's name plus a hash of its bytes, so a re-run after a captcha resumes instead of repeating calls, while a re-run with another `--crop`, other cut settings or another video in the same `--work` searches the new frames. **At the first captcha everything stops** with exit code 3: wait, or solve it in a browser, then run the same command again. Never try to get around it.
+4. **Verify**: pins are downloaded with yt-dlp into `<work>/cand/` (a failure leaves a `p<id>.none` marker), and every 0.5 s of each clip is compared with the shot's frames: ORB (3,000 features) on a 540-px-wide grey copy, Lowe ratio 0.75, RANSAC homography with a 6-px tolerance. The score is the number of inliers. A candidate that cannot be decoded (a corrupt image or a video OpenCV cannot open, common in a downloads folder) scores 0 with an `error` field and the others are still checked.
+
+| score (inliers) | verdict | meaning |
+|---|---|---|
+| 150 or more | `exact` | the same footage (the first reel's four hits scored 514-1447; on cached clips the known source re-scored 1757) |
+| 40-149 | `possible` | open the pin at the timestamp and judge by eye |
+| below 40 | `none` | unrelated clips scored about 7-36 across six reels |
+
+`report.json` lists every shot with its verdict, the best pin URL and the second in it where the shot starts, the top five candidates and other leads, then a `ranked` list of all hits. A partial report is written after every shot.
+
+**Expect misses.** The tool can only find a source that is posted on Pinterest as a video pin and indexed by Yandex: in this repository's runs it found 4 of 13 shots on one reel, 1 of 4 on another and none on four more. Mirrored, re-framed, re-graded or AI-redrawn footage scores lower. Yandex and Pinterest pages change without notice; when the upload stops returning a `cbirId` the tool says so instead of guessing.
+
+**Rights.** `search` uploads frames of the reference to Yandex and `match`/`run` download other people's videos, so ask first. A found clip belongs to its creator (a Pinterest pin is often a re-upload, so trace the original), keep downloads as private reference, credit and link every source, and reuse footage only with the owner's permission or a licence; then fetch it properly with `fetch_video.py` or `media_sources.py` and record the rights.
 

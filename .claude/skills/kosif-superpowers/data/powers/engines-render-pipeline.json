@@ -1185,7 +1185,7 @@
   "status": "proven",
   "what": "سلسلة من سبع خطوات: اختيار معرّف النمط، وتوليد الطلب، وإنشاء هيكل المشروع، وملء STYLE/PLAN، والتحريك في قالب بداية، ومعاينة ورقة الاتصال، والتصيير النهائي بصوت دون مساس، والمراجعة عبر verify_video وTEST_REPORT. — Seven-step chain: pick a style id, generate the request, scaffold a project folder, fill STYLE/PLAN, animate in a starter, preview contact sheet, final render with untouched audio, gate with verify_video and TEST_REPORT.",
   "how": "kosif.py search/show -> kosif.py prompt or scaffold <id> <dir> --starter html-canvas|remotion -> words_convert.py transcript -> words.js/public/words.json -> edit scenes -> render_html.cjs --preview -> user approval -> render_html.cjs --audio voice -> verify_video.py --aspect --fps --duration --audio -> fill TEST_REPORT.md",
-  "params": "default deliverable 1080x1920, 30 fps, 15 s (scaffold) / 12 s (starters), H.264 yuv420p + AAC 192k",
+  "params": "default deliverable 1080x1920, 30 fps, 15 s (scaffold) / 12 s (starters), H.264 yuv420p + the voice stream-copied (AAC 320k only for WAV/FLAC)",
   "install": "",
   "requires": [
    "python3",
@@ -1338,14 +1338,14 @@
   "name_ar": "تشفير H.264 مع دمج الصوت دون تعديل",
   "name_en": "H.264 encode with untouched audio mux",
   "status": "proven",
-  "what": "تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُدمج الصوت المورَّد بـ AAC 192k مع apad و-shortest فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح زوجية. — PNG frames are encoded with libx264 yuv420p faststart; supplied audio is muxed as AAC 192k with apad + -shortest so the video length decides the end and the voice samples are never retimed; odd sizes are padded to even.",
-  "how": "--audio voice.mp3 [--crf 18] ; with --start the audio is also offset by -ss start",
-  "params": "libx264 preset medium, crf 18, -pix_fmt yuv420p, -movflags +faststart, AAC 192k",
+  "what": "تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُنسخ الصوت المورَّد بايتًا ببايت إن كان AAC أو MP3 أو ALAC ويُقص عند آخر إطار، وتُرمَّز الصيغ الأخرى (WAV وFLAC) إلى AAC 320k مع apad و-shortest، فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح زوجية. — PNG frames are encoded with libx264 yuv420p faststart; supplied AAC, MP3 or ALAC audio is stream-copied byte for byte and cut at the last video frame, other codecs (WAV, FLAC) are encoded to AAC 320k with apad + -shortest, so the video length decides the end and the voice samples are never retimed; odd sizes are padded to even.",
+  "how": "--audio voice.mp3 [--crf 17] ; with --start the audio is also offset by -ss start",
+  "params": "libx264 High preset slow, crf 17, -pix_fmt yuv420p, BT.709, -movflags +faststart; audio -c:a copy (AAC/MP3/ALAC) or AAC 320k",
   "install": "",
   "requires": [],
   "license": "owner",
   "proof": [
-   "kosif-tool/tools/render_html.cjs:356"
+   "kosif-tool/tools/render_html.cjs:647"
   ],
   "proof_scope": "repo",
   "styles": [],
@@ -3229,8 +3229,8 @@
   "name_en": "render_html.cjs seek mode",
   "status": "ready",
   "what": "HTML/Canvas/SVG ← MP4 حتمي عبر Playwright Chromium يستدعي window.__kosif.seek(t) لكل إطار. — Deterministic HTML/Canvas/SVG → MP4 via Playwright Chromium calling window.__kosif.seek(t) per frame.",
-  "how": "node tools/render_html.cjs --in film.html --out film.mp4 [--fps 30 --audio voice.mp3 --start --duration --width --height --crf 18 --scale --seed --offline]",
-  "params": "defaults 1080×1920, 30 fps, CRF 18",
+  "how": "node tools/render_html.cjs --in film.html --out film.mp4 [--fps 30 --audio voice.mp3 --start --duration --width --height --crf 17 --scale --seed --offline]",
+  "params": "defaults 1080×1920, 30 fps, CRF 17",
   "install": "",
   "requires": [
    "node",
@@ -9284,7 +9284,7 @@
   "status": "install",
   "what": "يصيّر صفحة HTML/Canvas/SVG تكشف window.__kosif.seek(t) إلى MP4 بدقة الإطار. — Renders an HTML/Canvas/SVG page exposing window.__kosif.seek(t) to MP4 frame-exactly.",
   "how": "node tools/render_html.cjs --in film.html --out film.mp4 [--preview for 8-frame contact sheet]; Playwright + ffmpeg.",
-  "params": "libx264 yuv420p crf 18 preset slow +faststart; AAC 48kHz 192k",
+  "params": "libx264 High yuv420p BT.709 crf 17 preset slow +faststart; audio stream-copied (AAC/MP3/ALAC) or AAC 320k for WAV/FLAC",
   "install": "see arsenal-libraries.md",
   "requires": [
    "ffmpeg",

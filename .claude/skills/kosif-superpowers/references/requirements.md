@@ -146,7 +146,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
 - **يفتح / unlocks:** 804 powers
-- **بالحالة / by status:** proven 302 · documented 212 · ready 168 · install 106 · key 13 · seen 3
+- **بالحالة / by status:** proven 303 · documented 212 · ready 168 · install 105 · key 13 · seen 3
 - **العائلات / families:** runnable-tools (138), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
@@ -156,7 +156,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
 - **يفتح / unlocks:** 461 powers
-- **بالحالة / by status:** documented 158 · proven 151 · ready 71 · install 58 · key 10 · seen 9 · idea 4
+- **بالحالة / by status:** documented 158 · proven 152 · ready 71 · install 57 · key 10 · seen 9 · idea 4
 - **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (43), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
@@ -176,7 +176,7 @@
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)`
 - **يفتح / unlocks:** 374 powers
-- **بالحالة / by status:** proven 121 · install 115 · documented 102 · ready 27 · key 6 · idea 2 · seen 1
+- **بالحالة / by status:** proven 122 · install 114 · documented 102 · ready 27 · key 6 · idea 2 · seen 1
 - **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), qa-verification (24), runnable-tools (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
 - **أمثلة / examples:** `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `APPX-31` Dehaze (ClearView-style) · `APPX-32` Tiered noise reduction · `APPX-33` Auto keystone / perspective · `APPX-34` Lens distortion correction
 
@@ -196,7 +196,7 @@
 - **النوع / kind:** npm (حزمة npm)
 - **التثبيت / install:** `npm i gsap  (GSAP standard licence: free for most uses; check the no-charge terms)`
 - **يفتح / unlocks:** 247 powers
-- **بالحالة / by status:** install 160 · documented 39 · ready 23 · proven 19 · idea 3 · key 2 · seen 1
+- **بالحالة / by status:** install 159 · documented 39 · ready 23 · proven 20 · idea 3 · key 2 · seen 1
 - **العائلات / families:** transitions-cuts (99), engines-render-pipeline (43), camera-composition-layout (33), easing-timing-rhythm (13), typography-latin (9), color-palette-grading (6), qa-verification (6), music-beat-sound (5)
 - **أمثلة / examples:** `ARAB-19` Word-mask reveal & hide · `ARAB-49` Eight Arabic motion templates · `COLOR-50` Harmony generator 2D/3D + harmony detector · `COLOR-66` Polarity flip ink↔paper at act boundaries · `EASE-01` Everything is a function of t · `EASE-09` Role-based easing tokens MOTION.E
 

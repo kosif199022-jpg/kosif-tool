@@ -1768,9 +1768,9 @@
 
 **متى:** عند تحويل صفحة HTML أو كانفس أو SVG إلى فيديو MP4 إطارًا بإطار مع صوت تعليق اختياري / when rendering an HTML, Canvas or SVG page to MP4 frame by frame, optionally with a voice track
 
-**كيف:** node tools/render_html.cjs --in film.html --out film.mp4 [--fps 30 --audio voice.mp3 --start --duration --width --height --crf 18 --scale --seed --offline]
+**كيف:** node tools/render_html.cjs --in film.html --out film.mp4 [--fps 30 --audio voice.mp3 --start --duration --width --height --crf 17 --scale --seed --offline]
 
-**المعاملات:** defaults 1080×1920, 30 fps, CRF 18
+**المعاملات:** defaults 1080×1920, 30 fps, CRF 17
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -16991,7 +16991,7 @@
 
 **كيف:** node tools/render_html.cjs --in film.html --out film.mp4 [--preview for 8-frame contact sheet]; Playwright + ffmpeg.
 
-**المعاملات:** libx264 yuv420p crf 18 preset slow +faststart; AAC 48kHz 192k
+**المعاملات:** libx264 High yuv420p BT.709 crf 17 preset slow +faststart; audio stream-copied (AAC/MP3/ALAC) or AAC 320k for WAV/FLAC
 
 **التثبيت:** see arsenal-libraries.md
 
@@ -23689,7 +23689,7 @@
 
 **كيف:** kosif.py search/show -> kosif.py prompt or scaffold <id> <dir> --starter html-canvas\|remotion -> words_convert.py transcript -> words.js/public/words.json -> edit scenes -> render_html.cjs --preview -> user approval -> render_html.cjs --audio voice -> verify_video.py --aspect --fps --duration --audio -> fill TEST_REPORT.md
 
-**المعاملات:** default deliverable 1080x1920, 30 fps, 15 s (scaffold) / 12 s (starters), H.264 yuv420p + AAC 192k
+**المعاملات:** default deliverable 1080x1920, 30 fps, 15 s (scaffold) / 12 s (starters), H.264 yuv420p + the voice stream-copied (AAC 320k only for WAV/FLAC)
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -26462,13 +26462,13 @@
 | نطاق الدليل | `repo` |
 | الرخصة | owner |
 
-**ما هي:** تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُدمج الصوت المورَّد بـ AAC 192k مع apad و-shortest فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح زوجية. — PNG frames are encoded with libx264 yuv420p faststart; supplied audio is muxed as AAC 192k with apad + -shortest so the video length decides the end and the voice samples are never retimed; odd sizes are padded to even.
+**ما هي:** تُرمَّز إطارات PNG بـ libx264 yuv420p faststart؛ ويُنسخ الصوت المورَّد بايتًا ببايت إن كان AAC أو MP3 أو ALAC ويُقص عند آخر إطار، وتُرمَّز الصيغ الأخرى (WAV وFLAC) إلى AAC 320k مع apad و-shortest، فيقرر طول الفيديو النهاية ولا يُعاد توقيت عينات الصوت؛ وتُحشى الأحجام الفردية لتصبح زوجية. — PNG frames are encoded with libx264 yuv420p faststart; supplied AAC, MP3 or ALAC audio is stream-copied byte for byte and cut at the last video frame, other codecs (WAV, FLAC) are encoded to AAC 320k with apad + -shortest, so the video length decides the end and the voice samples are never retimed; odd sizes are padded to even.
 
 **متى:** عند دمج تعليق صوتي مع الفيديو النهائي دون تغيير توقيت الصوت / when muxing a voiceover into the final H.264 video without retiming the voice
 
-**كيف:** --audio voice.mp3 [--crf 18] ; with --start the audio is also offset by -ss start
+**كيف:** --audio voice.mp3 [--crf 17] ; with --start the audio is also offset by -ss start
 
-**المعاملات:** libx264 preset medium, crf 18, -pix_fmt yuv420p, -movflags +faststart, AAC 192k
+**المعاملات:** libx264 High preset slow, crf 17, -pix_fmt yuv420p, BT.709, -movflags +faststart; audio -c:a copy (AAC/MP3/ALAC) or AAC 320k
 
 **التثبيت:** لا خطوة تثبيت مسجلة
 
@@ -26508,7 +26508,7 @@
 
 #### 6. الأدلة
 
-- `kosif-tool/tools/render_html.cjs:356`
+- `kosif-tool/tools/render_html.cjs:647`
 
 #### 7. قدرات قريبة في العائلة
 

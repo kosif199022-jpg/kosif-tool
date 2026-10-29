@@ -680,9 +680,9 @@
 | الدليل | `tested-elsewhere` |
 | العائلات | `engines-render-pipeline`, `qa-verification`, `formats-platforms` |
 
-**ما تفعله:** نسخة مضمّنة في المهارة من عارض KOSIF الحتمي لتحويل HTML إلى MP4: يلتقط فيلم HTML محليًا أو عبر رابط http إطارًا بإطار في Chromium بلا واجهة (عبر window.__kosif.seek(t) أو الزمن الافتراضي في Chromium)، ويرمّزه بصيغة H.264 عبر ffmpeg، ويدمج الصوت اختياريًا دون تعديله، ثم يتحقق بـ ffprobe من معدل الإطارات وعددها والمدة والأبعاد والصوت، أو يصنع بالخيار ‎--preview لوحة معاينة من 8 إطارات بدل الفيديو.
+**ما تفعله:** نسخة مضمّنة في المهارة من عارض KOSIF الحتمي لتحويل HTML إلى MP4: يلتقط فيلم HTML محليًا أو عبر رابط http إطارًا بإطار في Chromium بلا واجهة (عبر window.__kosif.seek(t) أو الزمن الافتراضي في Chromium)، ويرمّزه بصيغة H.264 عبر ffmpeg، ويدمج الصوت اختياريًا دون تعديله، ثم يتحقق بـ ffprobe من معدل الإطارات وعددها والمدة والأبعاد والصوت، أو يصنع بالخيار ‎--preview لوحة معاينة من 8 إطارات بدل الفيديو. وقبل أول إطار يتحقق من أن قرص مجلد الإطارات يتّسع لصور PNG (عدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10%)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP.
 
-**What it does:** The skill's bundled copy of KOSIF's deterministic HTML-to-MP4 renderer: it captures a local or http HTML film frame by frame in headless Chromium (through window.__kosif.seek(t) or Chromium virtual time), encodes H.264 with ffmpeg, optionally muxes untouched audio and checks fps, frames, duration, size and audio with ffprobe, or with --preview makes an 8-frame contact sheet instead.
+**What it does:** The skill's bundled copy of KOSIF's deterministic HTML-to-MP4 renderer: it captures a local or http HTML film frame by frame in headless Chromium (through window.__kosif.seek(t) or Chromium virtual time), encodes H.264 with ffmpeg, optionally muxes untouched audio and checks fps, frames, duration, size and audio with ffprobe, or with --preview makes an 8-frame contact sheet instead. Before the first frame it checks that the frames folder's disk can hold the PNG frames (frames x width x height x 1.7 bytes + 10%), lists kosif-frames-* temp folders older than 6 h left by killed renders (--clean-stale deletes them) and removes its own temp frames on SIGINT, SIGTERM and SIGHUP.
 
 #### متى تُستدعى
 
@@ -694,13 +694,13 @@
 
 #### الأوامر
 
-- **render**: Renders every frame (seek mode if window.__kosif exists, otherwise it relaunches in virtual mode), encodes libx264 CRF 18 yuv420p, muxes the audio as AAC 192k padded to the video length, then prints a 'VERIFY OK\|FAIL' line from ffprobe. Exits 3 on a mismatch.
+- **render**: Renders every frame (seek mode if window.__kosif exists, otherwise it relaunches in virtual mode) after checking that the frames fit on disk, encodes libx264 CRF 17 yuv420p, stream-copies AAC/MP3/ALAC audio (other codecs become AAC 320k padded to the video length, never retimed), then prints a 'VERIFY OK\|FAIL' line from ffprobe. Exits 3 on a mismatch.
   - `node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --fps 30 --audio ./voice.wav`
 - **preview**: Captures 8 evenly spaced frames and tiles them into a 4x2 contact sheet at ./out/film_preview.png. It always appends '_preview.png' to the --out stem. Tiles are labelled when ffmpeg has drawtext. Audio is ignored.
   - `node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --preview`
 - **virtual**: Renders any CSS/WAAPI/rAF/GSAP page under the paused Chromium virtual clock in exact 1000/fps steps. --offline aborts every http(s) request and --seed replaces Math.random with a seeded PRNG, for reproducible output.
   - `node resources/motion-runtime/render_html.cjs --in ./page.html --out ./out/clip.mp4 --mode virtual --duration 6 --aspect 16:9 --offline --seed 7`
-- **help**: Prints every option (--aspect, --width, --height, --fps, --duration, --start, --audio, --mode, --preview, --frames-dir, --keep-frames, --crf, --scale, --seed, --offline, --timeout, --settle) and the exit codes.
+- **help**: Prints every option (--aspect, --width, --height, --fps, --duration, --start, --audio, --mode, --preview, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout, --settle) and the exit codes.
   - `node resources/motion-runtime/render_html.cjs --help`
 
 #### المتطلبات والأمان
@@ -709,8 +709,8 @@
 - network: true
 - node: playwright
 - الأمان: network
-- الموافقة: An http(s) --in URL, or a page that loads remote assets, contacts the network (use --offline to block it). It runs the page's own scripts in headless Chromium, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_######.png, preview_raw_NN.png and preview_tile_NN.png files in that folder.
-- الحدود: Verifies only container metrics (fps, frame count, duration, size, audio presence), not visual or creative correctness, and it installs nothing, so Playwright Chromium and ffmpeg/ffprobe must already be present.
+- الموافقة: An http(s) --in URL, or a page that loads remote assets, contacts the network (use --offline to block it). It runs the page's own scripts in headless Chromium, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_######.png, preview_raw_NN.png and preview_tile_NN.png files in that folder and writes a .kosif-user-frames marker file there. --clean-stale permanently deletes the renderer's own kosif-frames-XXXXXX temp folders that hold only frames and are older than 6 h, including ones kept with --keep-frames; it never deletes a --frames-dir folder, the folder in use or a folder that holds it.
+- الحدود: Verifies only container metrics (fps, frame count, duration, size, audio presence), not visual or creative correctness, and it installs nothing, so Playwright Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate made once before the first frame, and a SIGKILL cannot be caught, so such a render's temp folder stays until --clean-stale removes it after 6 h.
 
 #### الاختبارات والأدلة
 
@@ -922,12 +922,12 @@
 |---|---|
 | المسار | `tools/render_html.cjs` (جذر: repo) |
 | المجال | `motion` |
-| الدليل | `tested-elsewhere` |
+| الدليل | `tested-here` |
 | العائلات | `engines-render-pipeline`, `qa-verification`, `formats-platforms` |
 
-**ما تفعله:** يحوّل فيلم HTML محليًا أو عبر رابط http إلى فيديو إطارًا بإطار داخل متصفح Chromium بلا واجهة (Playwright)، إما بالدالة window.__kosif.seek(t) في الصفحة، وإما بإيقاف الزمن الافتراضي للمتصفح وتقديمه خطوة خطوة لأي صفحة تعتمد CSS أو WAAPI أو requestAnimationFrame أو GSAP. ثم يرمّز الإطارات بصيغة H.264 ‏yuv420p عبر ffmpeg، ويدمج الصوت المرفق بعد ترميزه AAC بمعدل 192k دون إعادة أخذ العينات أو تغيير توقيته، ويتحقق عبر ffprobe من معدل الإطارات وعددها والمدة والأبعاد ووجود الصوت. ومع ‎--preview يُخرج لوحة PNG من ثمانية إطارات بدلًا من الفيديو.
+**ما تفعله:** يحوّل فيلم HTML محليًا أو عبر رابط http إلى فيديو إطارًا بإطار داخل متصفح Chromium بلا واجهة (Playwright)، إما بالدالة window.__kosif.seek(t) في الصفحة، وإما بإيقاف الزمن الافتراضي للمتصفح وتقديمه خطوة خطوة لأي صفحة تعتمد CSS أو WAAPI أو requestAnimationFrame أو GSAP. ثم يرمّز الإطارات بصيغة H.264 ‏yuv420p عبر ffmpeg، ويدمج الصوت المرفق دون إعادة أخذ العينات أو تغيير توقيته (يُنسخ AAC وMP3 وALAC كما هي، وما سواها يُرمَّز AAC بمعدل 320k)، ويتحقق عبر ffprobe من معدل الإطارات وعددها والمدة والأبعاد ووجود الصوت. ومع ‎--preview يُخرج لوحة PNG من ثمانية إطارات بدلًا من الفيديو. ويحمي القرص: يتوقف قبل أول إطار إذا لم يتّسع قرص مجلد الإطارات لعدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10% (بعد حساب ما ستكتبه عمليات رندر أخرى جارية)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP ويخرج بالرمز 130 أو 143 أو 129.
 
-**What it does:** Renders a local or http HTML film frame by frame in headless Chromium (Playwright), driving the page through window.__kosif.seek(t) or, for any CSS/WAAPI/rAF/GSAP page, through paused Chromium virtual time. It encodes H.264 yuv420p with ffmpeg, can mux a supplied audio track re-encoded as AAC 192k without resampling or retiming it, and checks fps, frame count, duration, size and audio presence with ffprobe. With --preview it writes an 8-frame contact-sheet PNG instead of a video.
+**What it does:** Renders a local or http HTML film frame by frame in headless Chromium (Playwright), driving the page through window.__kosif.seek(t) or, for any CSS/WAAPI/rAF/GSAP page, through paused Chromium virtual time. It encodes H.264 yuv420p with ffmpeg, muxes a supplied audio track without resampling or retiming it (AAC, MP3 and ALAC are stream-copied, other codecs become AAC 320k) and checks fps, frame count, duration, size and audio presence with ffprobe. With --preview it writes an 8-frame contact-sheet PNG instead of a video. A disk guard stops the render before the first frame when the frames folder's disk cannot hold frames x width x height x 1.7 bytes + 10% (after what other running renders still have to write), lists kosif-frames-* temp folders older than 6 h that killed renders left behind (--clean-stale deletes them), and removes its own temp frames on SIGINT, SIGTERM and SIGHUP (exit 130/143/129).
 
 #### متى تُستدعى
 
@@ -937,10 +937,12 @@
 - «render this GSAP/CSS animation page to a 30 fps MP4»
 - «make a contact-sheet preview of my HTML film before the final render»
 - «render only seconds 4 to 7 at half size for a motion check»
+- «الرندر وقف لأن القرص امتلأ (Unable to capture screenshot)، نظّف مجلدات الإطارات القديمة وأعد المحاولة»
+- «clean up the kosif-frames temp folders left by killed renders before a long render»
 
 #### الأوامر
 
-- **render**: Full render: seek mode when window.__kosif exists, otherwise it relaunches in virtual mode. Muxes the audio as AAC 192k (apad + -shortest, no retiming) and prints an ffprobe 'VERIFY OK/FAIL' line; exit 3 means the output disagrees with the request.
+- **render**: Full render: seek mode when window.__kosif exists, otherwise it relaunches in virtual mode. It first checks that the frames fit on the frames folder's disk, then muxes the audio (AAC/MP3/ALAC stream-copied and trimmed at the last frame, other codecs AAC 320k with apad + -shortest, never retimed) and prints an ffprobe 'VERIFY OK/FAIL' line; exit 3 means the output disagrees with the request.
   - `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3`
 - **preview**: Captures 8 evenly spaced frames into a 4x2 contact sheet written as <out-basename>_preview.png next to --out (here ./out/film_preview.png). No video is produced and --audio is ignored.
   - `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --preview`
@@ -948,9 +950,13 @@
   - `node tools/render_html.cjs --in ./page.html --out ./out/clip.mp4 --mode virtual --duration 6 --aspect 16:9 --offline --seed 7`
 - **segment**: Renders only part of the film (from film time --start for --duration seconds) at a custom viewport size, as a quick motion check.
   - `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/check.mp4 --start 4 --duration 3 --width 540 --height 960`
-- **frames-dir**: Writes and keeps the PNG frames (frame_000000.png …) in the given folder after deleting older frame_NNNNNN.png and preview_raw/tile_NN.png files there; --keep-frames instead keeps the temporary folder.
+- **frames-dir**: Writes and keeps the PNG frames (frame_000000.png …) in the given folder after deleting older frame_NNNNNN.png and preview_raw/tile_NN.png files there; --keep-frames instead keeps the temporary folder. Point it at a bigger disk when the space check says the temp folder's disk is too small (about 3.7 MB per 1080x1920 frame).
   - `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --frames-dir ./out/frames`
-- **help**: Prints the options and exit codes (0 ok, 1 usage, 2 render or encode failure, 3 ffprobe disagrees). Note: `-h` is not recognised and exits 1 with a usage error.
+- **clean-stale**: Before rendering, deletes the kosif-frames-* folders in the temp folder (os.tmpdir(), usually /tmp) that this user owns, that were not modified for 6 h and whose render is no longer running. Without the flag every render only lists them with their sizes on stderr. The folder this render uses is never touched.
+  - `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --clean-stale`
+- **no-space-check**: Skips the free-space pre-flight. By default a render that does not fit exits 2 before the first frame and prints how much it needs, how much is free and the remedies (--frames-dir, freeing space, a shorter --start/--duration range).
+  - `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --no-space-check`
+- **help**: Prints the options and exit codes (0 ok, 1 usage, 2 render or encode failure or not enough disk space, 3 ffprobe disagrees, 130/143/129 stopped by SIGINT/SIGTERM/SIGHUP); -h does the same.
   - `node tools/render_html.cjs --help`
 
 #### المتطلبات والأمان
@@ -960,12 +966,13 @@
 - node: playwright
 - optional: bin:ffmpeg built with the drawtext filter (time labels on preview tiles)
 - الأمان: network
-- الموافقة: An http(s) --in URL, or a page that loads remote assets, contacts the network (the html-canvas starter loads Google Fonts); --offline blocks this. It runs the page's own scripts in headless Chromium with HTTPS errors ignored, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_NNNNNN.png and preview_raw/tile_NN.png files in that folder.
-- الحدود: It verifies only container metrics (fps, frame count, duration, size, audio presence), not whether the visuals are right, and it installs nothing: Playwright, its Chromium and ffmpeg/ffprobe must already be present.
+- الموافقة: An http(s) --in URL, or a page that loads remote assets, contacts the network (the html-canvas starter loads Google Fonts); --offline blocks this. It runs the page's own scripts in headless Chromium with HTTPS errors ignored, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_NNNNNN.png and preview_raw/tile_NN.png files in that folder and writes a .kosif-user-frames marker file there. --clean-stale permanently deletes the renderer's own kosif-frames-XXXXXX temp folders that hold only frames and are older than 6 h, including ones kept earlier with --keep-frames; it never deletes a --frames-dir folder, the folder in use or a folder that holds it.
+- الحدود: It verifies only container metrics (fps, frame count, duration, size, audio presence), not whether the visuals are right, and it installs nothing: Playwright, its Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate (1.7 bytes per pixel + 10%; very noisy frames can be larger) taken once before the first frame, and it only knows about other renders that write to this version's temp folders, not --frames-dir renders or other programs. SIGKILL and the out-of-memory killer cannot be caught, so their temp folders stay until --clean-stale removes them after 6 h; a signal that arrives during the ffmpeg encode is handled when ffmpeg returns. Without fs.statfsSync (Node older than 18.15) the space check is skipped with a warning.
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `tests/test_render_html.mjs`
+- `tests/test_render_html_disk.mjs`
 - مرجع: `tools/render_html.md`
 - مرجع: `playbooks/render-pipeline.md`
 - مرجع: `starters/html-canvas/README.md`

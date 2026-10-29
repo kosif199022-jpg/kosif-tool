@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 120,
+  "evals": 135,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5848,
-  "py_edges": 305,
-  "repo_tests": 35,
+  "powers": 5853,
+  "py_edges": 352,
+  "repo_tests": 40,
   "roles": {
-   "helper": 2,
-   "registered": 151
+   "helper": 3,
+   "registered": 168
   },
-  "scripts": 153,
-  "tools": 169
+  "scripts": 171,
+  "tools": 190
  },
  "families": [
   {
@@ -495,7 +495,7 @@
   {
    "id": "agent-orchestration",
    "powers": 55,
-   "tools": 11
+   "tools": 15
   },
   {
    "id": "ai-generation",
@@ -570,7 +570,7 @@
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 23
+   "tools": 25
   },
   {
    "id": "brand-logo-identity",
@@ -580,7 +580,7 @@
   {
    "id": "camera-composition-layout",
    "powers": 425,
-   "tools": 7
+   "tools": 10
   },
   {
    "id": "characters-rigs",
@@ -600,12 +600,12 @@
   {
    "id": "color-palette-grading",
    "powers": 87,
-   "tools": 7
+   "tools": 8
   },
   {
    "id": "creativity-engine",
    "powers": 29,
-   "tools": 2
+   "tools": 5
   },
   {
    "id": "data-analysis",
@@ -625,17 +625,17 @@
   {
    "id": "easing-timing-rhythm",
    "powers": 106,
-   "tools": 6
+   "tools": 7
   },
   {
    "id": "engines-render-pipeline",
    "powers": 445,
-   "tools": 23
+   "tools": 28
   },
   {
    "id": "formats-platforms",
    "powers": 70,
-   "tools": 13
+   "tools": 16
   },
   {
    "id": "hand-drawn-draw-on",
@@ -650,7 +650,7 @@
   {
    "id": "light-glow-bloom",
    "powers": 87,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "maps-geo",
@@ -665,7 +665,7 @@
   {
    "id": "mental-models",
    "powers": 63,
-   "tools": 2
+   "tools": 4
   },
   {
    "id": "music-beat-sound",
@@ -680,12 +680,12 @@
   {
    "id": "particles-fluids-physics",
    "powers": 77,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "photo-video-footage",
    "powers": 71,
-   "tools": 23
+   "tools": 29
   },
   {
    "id": "pixel-retro-stylized",
@@ -695,7 +695,7 @@
   {
    "id": "planning-execution",
    "powers": 14,
-   "tools": 16
+   "tools": 18
   },
   {
    "id": "prompt-craft",
@@ -705,11 +705,11 @@
   {
    "id": "qa-verification",
    "powers": 384,
-   "tools": 18
+   "tools": 22
   },
   {
    "id": "runnable-tools",
-   "powers": 169,
+   "powers": 174,
    "tools": 0
   },
   {
@@ -720,7 +720,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 37
+   "tools": 41
   },
   {
    "id": "shapes-morph-geometry",
@@ -735,7 +735,7 @@
   {
    "id": "story-direction-ideas",
    "powers": 95,
-   "tools": 14
+   "tools": 15
   },
   {
    "id": "strategy-finance",
@@ -750,17 +750,17 @@
   {
    "id": "thinking-core",
    "powers": 47,
-   "tools": 2
+   "tools": 4
   },
   {
    "id": "transitions-cuts",
    "powers": 475,
-   "tools": 13
+   "tools": 17
   },
   {
    "id": "typography-arabic",
    "powers": 99,
-   "tools": 11
+   "tools": 12
   },
   {
    "id": "typography-latin",
@@ -770,17 +770,17 @@
   {
    "id": "ui-product-device",
    "powers": 93,
-   "tools": 1
+   "tools": 2
   },
   {
    "id": "verification-evals",
    "powers": 40,
-   "tools": 15
+   "tools": 16
   },
   {
    "id": "video-download",
    "powers": 11,
-   "tools": 6
+   "tools": 9
   },
   {
    "id": "voice-tts",
@@ -790,7 +790,7 @@
   {
    "id": "web-research",
    "powers": 26,
-   "tools": 11
+   "tools": 14
   },
   {
    "id": "writing-humanizer",
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "169 powers, no tools.json entry lists this family",
+   "detail": "174 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -864,6 +864,11 @@
  "method": "REA historical-reference discipline: content-addressed inventory, typed edges, explicit gaps and limitations; nothing executed",
  "parse_failures": [],
  "py_edges": [
+  {
+   "from": "_deps",
+   "kind": "invokes",
+   "to": "fetch_video"
+  },
   {
    "from": "_usip_cards",
    "kind": "imports",
@@ -957,6 +962,11 @@
   {
    "from": "boot",
    "kind": "imports",
+   "to": "_deps"
+  },
+  {
+   "from": "boot",
+   "kind": "imports",
    "to": "powers"
   },
   {
@@ -967,7 +977,17 @@
   {
    "from": "boot",
    "kind": "invokes",
+   "to": "_deps"
+  },
+  {
+   "from": "boot",
+   "kind": "invokes",
    "to": "capability_mindmap"
+  },
+  {
+   "from": "boot",
+   "kind": "invokes",
+   "to": "fetch_video"
   },
   {
    "from": "boot",
@@ -1115,6 +1135,11 @@
    "to": "test_protocol_structure"
   },
   {
+   "from": "cinema_lab",
+   "kind": "imports",
+   "to": "export_profile"
+  },
+  {
    "from": "cinematic_broll_render",
    "kind": "imports",
    "to": "cinematic_cut_planner"
@@ -1140,6 +1165,11 @@
    "to": "skill_intelligence"
   },
   {
+   "from": "council",
+   "kind": "imports",
+   "to": "think"
+  },
+  {
    "from": "creative_reasoning_bridge",
    "kind": "imports",
    "to": "audio_cue_mapper"
@@ -1150,9 +1180,24 @@
    "to": "motion_director"
   },
   {
+   "from": "creative_reasoning_bridge",
+   "kind": "invokes",
+   "to": "audio_cue_mapper"
+  },
+  {
    "from": "drawing_council",
    "kind": "imports",
    "to": "drawing_methods"
+  },
+  {
+   "from": "fetch_video",
+   "kind": "imports",
+   "to": "_deps"
+  },
+  {
+   "from": "fetch_video",
+   "kind": "imports",
+   "to": "stock_fetch"
   },
   {
    "from": "fusionforge",
@@ -1191,6 +1236,11 @@
   },
   {
    "from": "hub",
+   "kind": "imports",
+   "to": "superskills"
+  },
+  {
+   "from": "hub",
    "kind": "invokes",
    "to": "boot"
   },
@@ -1208,6 +1258,26 @@
    "from": "hub",
    "kind": "invokes",
    "to": "requirements"
+  },
+  {
+   "from": "hub",
+   "kind": "invokes",
+   "to": "superskills"
+  },
+  {
+   "from": "instagram_finder",
+   "kind": "imports",
+   "to": "_deps"
+  },
+  {
+   "from": "instagram_finder",
+   "kind": "imports",
+   "to": "fetch_video"
+  },
+  {
+   "from": "instagram_finder",
+   "kind": "invokes",
+   "to": "fetch_video"
   },
   {
    "from": "kosif_hubs",
@@ -1405,6 +1475,21 @@
    "to": "powers"
   },
   {
+   "from": "script_storyboard",
+   "kind": "imports",
+   "to": "export_profile"
+  },
+  {
+   "from": "script_storyboard",
+   "kind": "invokes",
+   "to": "export_profile"
+  },
+  {
+   "from": "self_council",
+   "kind": "imports",
+   "to": "_secrets"
+  },
+  {
    "from": "skill_intelligence",
    "kind": "imports",
    "to": "hub"
@@ -1455,6 +1540,31 @@
    "to": "telegram_typography_atlas"
   },
   {
+   "from": "skill_loader",
+   "kind": "invokes",
+   "to": "boot"
+  },
+  {
+   "from": "skill_loader",
+   "kind": "invokes",
+   "to": "council"
+  },
+  {
+   "from": "skill_loader",
+   "kind": "invokes",
+   "to": "hub"
+  },
+  {
+   "from": "skill_loader",
+   "kind": "invokes",
+   "to": "skill_intelligence"
+  },
+  {
+   "from": "skill_loader",
+   "kind": "invokes",
+   "to": "think"
+  },
+  {
    "from": "smart_capabilities",
    "kind": "imports",
    "to": "_usip_cards"
@@ -1490,6 +1600,11 @@
    "to": "capability_atlas"
   },
   {
+   "from": "superskills_bridge",
+   "kind": "invokes",
+   "to": "superskills"
+  },
+  {
    "from": "task_history",
    "kind": "imports",
    "to": "_secrets"
@@ -1513,6 +1628,11 @@
    "from": "think",
    "kind": "invokes",
    "to": "requirements"
+  },
+  {
+   "from": "tiktok_photo",
+   "kind": "invokes",
+   "to": "fetch_video"
   },
   {
    "from": "unified_cinematic",
@@ -1558,6 +1678,26 @@
    "from": "web_app_study",
    "kind": "imports",
    "to": "rea_bridge"
+  },
+  {
+   "from": "routing_generalization",
+   "kind": "imports",
+   "to": "skill_intelligence"
+  },
+  {
+   "from": "routing_generalization",
+   "kind": "invokes",
+   "to": "test_routing_generalization"
+  },
+  {
+   "from": "test_adobe_mcp",
+   "kind": "imports",
+   "to": "adobe_mcp"
+  },
+  {
+   "from": "test_adobe_mcp",
+   "kind": "invokes",
+   "to": "adobe_mcp"
   },
   {
    "from": "test_agent_guard",
@@ -1725,6 +1865,16 @@
    "to": "check_skill"
   },
   {
+   "from": "test_cinema_lab",
+   "kind": "imports",
+   "to": "cinema_lab"
+  },
+  {
+   "from": "test_cinema_lab",
+   "kind": "invokes",
+   "to": "cinema_lab"
+  },
+  {
    "from": "test_council",
    "kind": "invokes",
    "to": "council"
@@ -1868,6 +2018,21 @@
    "from": "test_image_local_ai",
    "kind": "invokes",
    "to": "image_local_ai"
+  },
+  {
+   "from": "test_instagram_finder",
+   "kind": "imports",
+   "to": "instagram_finder"
+  },
+  {
+   "from": "test_instagram_finder",
+   "kind": "invokes",
+   "to": "instagram_finder"
+  },
+  {
+   "from": "test_instagram_reference_bridge",
+   "kind": "imports",
+   "to": "instagram_reference_bridge"
   },
   {
    "from": "test_kosif_hubs",
@@ -2110,6 +2275,11 @@
    "to": "repo_map"
   },
   {
+   "from": "test_routing_generalization",
+   "kind": "imports",
+   "to": "routing_generalization"
+  },
+  {
    "from": "test_routing_quality",
    "kind": "imports",
    "to": "skill_intelligence"
@@ -2165,6 +2335,16 @@
    "to": "rebalance_creative_repos"
   },
   {
+   "from": "test_self_council",
+   "kind": "imports",
+   "to": "self_council"
+  },
+  {
+   "from": "test_self_council",
+   "kind": "invokes",
+   "to": "self_council"
+  },
+  {
    "from": "test_skill_intelligence",
    "kind": "imports",
    "to": "hub"
@@ -2190,6 +2370,16 @@
    "to": "skill_layout"
   },
   {
+   "from": "test_skill_loader",
+   "kind": "imports",
+   "to": "skill_loader"
+  },
+  {
+   "from": "test_skill_loader",
+   "kind": "invokes",
+   "to": "skill_loader"
+  },
+  {
    "from": "test_smart_draw",
    "kind": "imports",
    "to": "blender_api_audit"
@@ -2203,6 +2393,11 @@
    "from": "test_smart_draw",
    "kind": "imports",
    "to": "smart_draw"
+  },
+  {
+   "from": "test_source_finder",
+   "kind": "imports",
+   "to": "source_finder"
   },
   {
    "from": "test_sources_index",
@@ -2250,6 +2445,26 @@
    "to": "superpower_fusion"
   },
   {
+   "from": "test_superskills",
+   "kind": "imports",
+   "to": "hub"
+  },
+  {
+   "from": "test_superskills",
+   "kind": "imports",
+   "to": "superskills"
+  },
+  {
+   "from": "test_superskills",
+   "kind": "imports",
+   "to": "superskills_bridge"
+  },
+  {
+   "from": "test_superskills",
+   "kind": "invokes",
+   "to": "superskills"
+  },
+  {
    "from": "test_task_history",
    "kind": "imports",
    "to": "task_history"
@@ -2258,6 +2473,21 @@
    "from": "test_task_history",
    "kind": "invokes",
    "to": "task_history"
+  },
+  {
+   "from": "test_think_models",
+   "kind": "imports",
+   "to": "think"
+  },
+  {
+   "from": "test_tiktok_photo",
+   "kind": "imports",
+   "to": "tiktok_photo"
+  },
+  {
+   "from": "test_tiktok_photo",
+   "kind": "invokes",
+   "to": "tiktok_photo"
   },
   {
    "from": "test_tts_script",
@@ -2298,6 +2528,11 @@
    "from": "test_usip_shadow",
    "kind": "invokes",
    "to": "test_fusionforge"
+  },
+  {
+   "from": "test_v58_mastery",
+   "kind": "imports",
+   "to": "llm_council"
   },
   {
    "from": "test_video_workflow_bridge",
@@ -2856,6 +3091,23 @@
  "scripts": [
   {
    "ci": false,
+   "id": "_deps",
+   "imported_by": [
+    "boot",
+    "fetch_video",
+    "instagram_finder"
+   ],
+   "path": "scripts/_deps.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [
+    "tests/test_download_deps.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
    "id": "_secrets",
    "imported_by": [
     "agent_guard",
@@ -2864,6 +3116,7 @@
     "fusionforge",
     "memory_ops",
     "prompt_pack",
+    "self_council",
     "sources_index",
     "task_history"
    ],
@@ -2891,6 +3144,21 @@
     "tests/test_protocol_library.py"
    ],
    "tools": []
+  },
+  {
+   "ci": false,
+   "id": "adobe_mcp",
+   "imported_by": [],
+   "path": "scripts/adobe_mcp.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_adobe_mcp.py"
+   ],
+   "tools": [
+    "adobe-mcp-bridges"
+   ]
   },
   {
    "ci": false,
@@ -3086,7 +3354,7 @@
    ],
    "role": "registered",
    "tests": [
-    "tests/test_atlas_body_audit.py"
+    "evals/test_atlas_audit_synthesis.py"
    ],
    "tools": [
     "atlas-audit-synthesis"
@@ -3417,7 +3685,8 @@
    "tests": [
     "evals/test_blender_cinematic_bridge.py",
     "scripts/test_blender_cat_fur_upgrade.py",
-    "scripts/test_blender_cinematic_bridge.py"
+    "scripts/test_blender_cinematic_bridge.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "blender-cinematic-bridge"
@@ -3517,7 +3786,8 @@
    "id": "boot",
    "imported_by": [
     "hub",
-    "kosif_hubs"
+    "kosif_hubs",
+    "skill_loader"
    ],
    "path": "scripts/boot.py",
    "power_count": 1,
@@ -3526,7 +3796,8 @@
    ],
    "role": "registered",
    "tests": [
-    "tests/test_boot.py"
+    "tests/test_boot.py",
+    "tests/test_download_deps.py"
    ],
    "tools": [
     "boot"
@@ -3791,6 +4062,23 @@
   },
   {
    "ci": false,
+   "id": "cinema_lab",
+   "imported_by": [],
+   "path": "scripts/cinema_lab.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-175"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_cinema_lab.py"
+   ],
+   "tools": [
+    "cinema-lab"
+   ]
+  },
+  {
+   "ci": false,
    "id": "cinematic_broll_render",
    "imported_by": [],
    "path": "scripts/cinematic_broll_render.py",
@@ -3800,7 +4088,8 @@
    ],
    "role": "registered",
    "tests": [
-    "tests/test_cinematic_broll_render.py"
+    "tests/test_cinematic_broll_render.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "cinematic-broll-render"
@@ -3869,6 +4158,7 @@
    "ci": false,
    "id": "council",
    "imported_by": [
+    "skill_loader",
     "think"
    ],
    "path": "scripts/council.py",
@@ -3881,6 +4171,7 @@
    "role": "registered",
    "tests": [
     "evals/test_council.py",
+    "evals/test_think_models.py",
     "tests/test_think_pro.py"
    ],
    "tools": [
@@ -3924,7 +4215,8 @@
     "evals/test_character_fullbody.py",
     "evals/test_creative_paint.py",
     "evals/test_smart_draw.py",
-    "evals/test_unified_draw_animation.py"
+    "evals/test_unified_draw_animation.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "creative-paint"
@@ -3998,6 +4290,21 @@
    ],
    "tools": [
     "decision-math"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "design_tells",
+   "imported_by": [],
+   "path": "scripts/design_tells.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_v58_mastery.py"
+   ],
+   "tools": [
+    "design-tells"
    ]
   },
   {
@@ -4127,6 +4434,24 @@
   },
   {
    "ci": false,
+   "id": "export_profile",
+   "imported_by": [
+    "cinema_lab",
+    "script_storyboard"
+   ],
+   "path": "scripts/export_profile.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "tests/test_export_profile.py"
+   ],
+   "tools": [
+    "export-profile"
+   ]
+  },
+  {
+   "ci": false,
    "id": "fast_edit",
    "imported_by": [],
    "path": "scripts/fast_edit.py",
@@ -4136,7 +4461,8 @@
    ],
    "role": "registered",
    "tests": [
-    "evals/test_fast_edit.py"
+    "evals/test_fast_edit.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "fast-edit"
@@ -4164,7 +4490,12 @@
   {
    "ci": false,
    "id": "fetch_video",
-   "imported_by": [],
+   "imported_by": [
+    "_deps",
+    "boot",
+    "instagram_finder",
+    "tiktok_photo"
+   ],
    "path": "scripts/fetch_video.py",
    "power_count": 8,
    "powers": [
@@ -4179,6 +4510,7 @@
    ],
    "role": "registered",
    "tests": [
+    "tests/test_download_deps.py",
     "tests/test_media_sources_gateway.py"
    ],
    "tools": [
@@ -4263,6 +4595,21 @@
   },
   {
    "ci": false,
+   "id": "github_pulse",
+   "imported_by": [],
+   "path": "scripts/github_pulse.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_v58_mastery.py"
+   ],
+   "tools": [
+    "github-pulse"
+   ]
+  },
+  {
+   "ci": false,
    "id": "github_top_repos",
    "imported_by": [],
    "path": "scripts/github_top_repos.py",
@@ -4289,10 +4636,11 @@
     "kosif_mcp",
     "micro_index",
     "skill_intelligence",
+    "skill_loader",
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 169,
+   "power_count": 174,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -4311,7 +4659,8 @@
    "tests": [
     "evals/test_hub.py",
     "evals/test_protocol_structure.py",
-    "evals/test_skill_intelligence.py"
+    "evals/test_skill_intelligence.py",
+    "evals/test_superskills.py"
    ],
    "tools": [
     "hub"
@@ -4335,6 +4684,40 @@
    ],
    "tools": [
     "image-local-ai"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "instagram_finder",
+   "imported_by": [],
+   "path": "scripts/instagram_finder.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-173"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_instagram_finder.py"
+   ],
+   "tools": [
+    "instagram-finder"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "instagram_reference_bridge",
+   "imported_by": [],
+   "path": "scripts/instagram_reference_bridge.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-172"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_instagram_reference_bridge.py"
+   ],
+   "tools": [
+    "instagram-reference-discovery"
    ]
   },
   {
@@ -4450,7 +4833,8 @@
    "role": "registered",
    "tests": [
     "evals/test_kosif_timeline.py",
-    "scripts/test_kosif_timeline.py"
+    "scripts/test_kosif_timeline.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "kosif-timeline"
@@ -4495,6 +4879,21 @@
    ],
    "tools": [
     "lesson-integrity"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "llm_council",
+   "imported_by": [],
+   "path": "scripts/llm_council.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_v58_mastery.py"
+   ],
+   "tools": [
+    "llm-council"
    ]
   },
   {
@@ -4544,7 +4943,8 @@
    ],
    "role": "registered",
    "tests": [
-    "evals/test_look_pipeline.py"
+    "evals/test_look_pipeline.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "look-pipeline"
@@ -4617,7 +5017,8 @@
    ],
    "role": "registered",
    "tests": [
-    "evals/test_montage_pro.py"
+    "evals/test_montage_pro.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "montage-pro"
@@ -5302,6 +5703,21 @@
   },
   {
    "ci": false,
+   "id": "script_storyboard",
+   "imported_by": [],
+   "path": "scripts/script_storyboard.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "tests/test_script_storyboard.py"
+   ],
+   "tools": [
+    "script-storyboard"
+   ]
+  },
+  {
+   "ci": false,
    "id": "see_pro_cognitive_gate",
    "imported_by": [],
    "path": "scripts/see_pro_cognitive_gate.py",
@@ -5319,12 +5735,29 @@
   },
   {
    "ci": false,
+   "id": "self_council",
+   "imported_by": [],
+   "path": "scripts/self_council.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_self_council.py"
+   ],
+   "tools": [
+    "self-council"
+   ]
+  },
+  {
+   "ci": false,
    "id": "skill_intelligence",
    "imported_by": [
     "boot",
     "council",
     "fusionforge",
-    "kosif_hubs"
+    "kosif_hubs",
+    "routing_generalization",
+    "skill_loader"
    ],
    "path": "scripts/skill_intelligence.py",
    "power_count": 1,
@@ -5360,6 +5793,21 @@
    ],
    "tools": [
     "skill-layout"
+   ]
+  },
+  {
+   "ci": true,
+   "id": "skill_loader",
+   "imported_by": [],
+   "path": "scripts/skill_loader.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_skill_loader.py"
+   ],
+   "tools": [
+    "skill-loader"
    ]
   },
   {
@@ -5401,6 +5849,21 @@
    ],
    "tools": [
     "smart-draw"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "source_finder",
+   "imported_by": [],
+   "path": "scripts/source_finder.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_source_finder.py"
+   ],
+   "tools": [
+    "source-finder"
    ]
   },
   {
@@ -5457,7 +5920,9 @@
   {
    "ci": false,
    "id": "stock_fetch",
-   "imported_by": [],
+   "imported_by": [
+    "fetch_video"
+   ],
    "path": "scripts/stock_fetch.py",
    "power_count": 1,
    "powers": [
@@ -5568,7 +6033,9 @@
     "tests/test_cinematic_broll_render.py",
     "tests/test_cinematic_cut_planner.py",
     "tests/test_creative_external_research.py",
+    "tests/test_download_deps.py",
     "tests/test_dua_style.py",
+    "tests/test_export_profile.py",
     "tests/test_font_fidelity_lab.py",
     "tests/test_invention_lab.py",
     "tests/test_media_sources_gateway.py",
@@ -5577,6 +6044,7 @@
     "tests/test_rea_family_router.py",
     "tests/test_reference_fetch_security.py",
     "tests/test_requirements.py",
+    "tests/test_script_storyboard.py",
     "tests/test_stock_fetch.py",
     "tests/test_superpowers.py",
     "tests/test_superpowers_catalog.py",
@@ -5608,6 +6076,39 @@
    ],
    "tools": [
     "superpowers-unified"
+   ]
+  },
+  {
+   "ci": true,
+   "id": "superskills",
+   "imported_by": [
+    "hub",
+    "superskills_bridge"
+   ],
+   "path": "scripts/superskills.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_superskills.py"
+   ],
+   "tools": [
+    "superskills"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "superskills_bridge",
+   "imported_by": [],
+   "path": "scripts/superskills_bridge.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_superskills.py"
+   ],
+   "tools": [
+    "superskills-bridge"
    ]
   },
   {
@@ -5681,7 +6182,9 @@
    "id": "think",
    "imported_by": [
     "boot",
-    "powers"
+    "council",
+    "powers",
+    "skill_loader"
    ],
    "path": "scripts/think.py",
    "power_count": 11,
@@ -5700,6 +6203,7 @@
    ],
    "role": "registered",
    "tests": [
+    "evals/test_think_models.py",
     "tests/test_think.py",
     "tests/test_think_intel.py",
     "tests/test_think_pro.py",
@@ -5707,6 +6211,36 @@
    ],
    "tools": [
     "think"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "thinking_books",
+   "imported_by": [],
+   "path": "scripts/thinking_books.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_v58_mastery.py"
+   ],
+   "tools": [
+    "thinking-books"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "tiktok_photo",
+   "imported_by": [],
+   "path": "scripts/tiktok_photo.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_tiktok_photo.py"
+   ],
+   "tools": [
+    "tiktok-photo"
    ]
   },
   {
@@ -5757,7 +6291,8 @@
    "role": "registered",
    "tests": [
     "evals/test_unified_cinematic.py",
-    "scripts/test_unified_cinematic.py"
+    "scripts/test_unified_cinematic.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "unified-cinematic"
@@ -5806,7 +6341,8 @@
    "tests": [
     "evals/test_unified_cinematic.py",
     "evals/test_unified_media.py",
-    "scripts/test_unified_media.py"
+    "scripts/test_unified_media.py",
+    "tests/test_export_profile.py"
    ],
    "tools": [
     "unified-media"
@@ -5832,6 +6368,21 @@
    ],
    "tools": [
     "verify-video"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "video_eyes",
+   "imported_by": [],
+   "path": "scripts/video_eyes.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_v58_mastery.py"
+   ],
+   "tools": [
+    "video-eyes"
    ]
   },
   {
@@ -5871,40 +6422,40 @@
  ],
  "structure": {
   "areas": {
-   "(root)": 9,
+   "(root)": 10,
    "assets": 4,
-   "data": 152,
+   "data": 162,
    "dua-wednesday": 10,
-   "evals": 113,
+   "evals": 130,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 245,
+   "references": 253,
    "resources": 3,
    "schemas": 5,
-   "scripts": 184,
+   "scripts": 202,
    "templates": 16,
-   "vendor": 1619
+   "vendor": 2308
   },
-  "bytes": 74561923,
+  "bytes": 92900852,
   "extensions": {
-   "(none)": 32,
-   ".bru": 7,
-   ".cjs": 6,
-   ".html": 22,
-   ".jpg": 23,
-   ".js": 14,
-   ".json": 225,
-   ".md": 1787,
-   ".mjs": 9,
-   ".png": 6,
-   ".py": 319,
-   ".ttf": 14,
-   ".txt": 55,
-   ".woff2": 8,
+   "(none)": 34,
+   ".cjs": 10,
+   ".html": 69,
+   ".jpg": 24,
+   ".js": 50,
+   ".json": 273,
+   ".md": 2105,
+   ".mjs": 18,
+   ".ogg": 14,
+   ".png": 11,
+   ".py": 506,
+   ".ttf": 38,
+   ".txt": 64,
+   ".woff2": 34,
    ".yaml": 76
   },
-  "files": 2613,
+  "files": 3356,
   "symlinks": 0
  }
 }
