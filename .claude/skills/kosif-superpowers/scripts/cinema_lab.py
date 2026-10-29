@@ -37,6 +37,7 @@ import argparse
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import re
 import shutil
@@ -556,7 +557,9 @@ def cmd_silence_cut(a):
     if a.plan_only:
         return receipt("silence-cut", input=media_summary(src), silences=len(silent), segments=len(segs),
                        kept_s=round(kept, 3), removed_s=round(dur - kept, 3), plan=str(plan_path), rendered=False, **extra)
-    script = Path(tempfile.mkstemp(prefix="kosif_sc_", suffix=".txt")[1])
+    fd, name = tempfile.mkstemp(prefix="kosif_sc_", suffix=".txt")
+    os.close(fd)                             # the graph is written by path below; do not leak the descriptor
+    script = Path(name)
     v = video_stream(info)
     try:
         if v:
