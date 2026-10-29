@@ -63,6 +63,10 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_self_council.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_council.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_think_models.py' -v
+      - name: Mandatory five-member council (A38 §7; hard constraints in every prompt, dropped context reported)
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/llm_council.py --self-test
+          python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_llm_council.py' -v
       - name: Writing tells and anchor gate (62 checks)
         run: python3 -I .claude/skills/kosif-superpowers/proofs/general-writing/test_writing.py
       - name: Smart capability index is up to date

@@ -18,7 +18,13 @@ The council's own first run (out/20261026-smart-council) decided how the protoco
     and why?"), not the raw request;
   * one round only; no automatic escalation to the 100-persona council (only on explicit request);
   * correlated voices are caught by a similarity check, the Outsider gets no context, and every verdict
-    records whether it changed the plan (CHANGED / NO_DELTA) so `stats` can measure the council's worth.
+    records whether it changed the plan (CHANGED / NO_DELTA) so `stats` can measure the council's worth;
+  * the user's hard constraints (--constraints, e.g. «لا ترجمة للآيات») are never truncated: their own section
+    "Hard constraints / قيود ملزمة" sits right after the question in EVERY prompt (the five advisors, the
+    Outsider's bare prompt included, the reviewers, the chairman, LIGHT). --context stays capped at
+    MAX_CONTEXT files; whatever the cap drops is listed in "dropped_context", and a stderr warning names
+    every --context item the user gave that was cut (lesson of 2026-10-29: a rule passed as --context was
+    dropped without a word and no advisor saw it).
 
 The script never calls a model. It gates, frames, writes every prompt, keeps the anonymous letter map,
 checks each answer and the verdict, and writes a receipt. Claude runs the voices:
@@ -29,13 +35,14 @@ checks each answer and the verdict, and writes a receipt. Claude runs the voices
 
 From the repository root (S = python3 .claude/skills/kosif-superpowers/scripts/llm_council.py):
   S gate --level L2 [--from-brief brief.json] [--options 3] [--irreversible] [--force-full] [--dir D]
-  S frame "<question>" --dir D [--from-brief brief.json] [--level L2] [--context F ...] [--evidence "src: fact" ...] [--unknowns "..." ...]
+  S frame "<question>" --dir D [--from-brief brief.json] [--level L2] [--constraints "rule" ...] [--context F ...]
+          [--evidence "src: fact" ...] [--unknowns "..." ...]
   S ingest --dir D --advisor contrarian --file a.md [--simulated]
   S review --dir D                  # similarity check, consensus check, anonymised reviewer prompts
   S ingest-review --dir D --reviewer R1 --file r1.md [--simulated]
   S chair --dir D                   # de-anonymised chairman prompt
   S verdict --dir D --file verdict.md [--simulated]
-  S light "<question>" --dir D [--from-brief brief.json]
+  S light "<question>" --dir D [--from-brief brief.json] [--constraints "rule" ...]
   S status --dir D · S stats [--root out] · S advisors · S --self-test
 
 Exit codes: 0 ok, 2 usage or missing step, 3 the checked text fails the contract (fix and ingest again).
@@ -44,8 +51,10 @@ Python stdlib only.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import datetime as dt
 import hashlib
+import io
 import itertools
 import json
 import random
@@ -199,8 +208,9 @@ def cmd_gate(a) -> dict:
 
 
 # --------------------------------------------------------------------------------------------- frame
-def scan_context(root: Path, extra: list) -> list:
-    """The files the request names come first, then the project's entry doc or memory; at most MAX_CONTEXT."""
+def context_report(root: Path, extra: list) -> tuple:
+    """(kept, dropped). The files the request names come first, then the project's entry doc or memory;
+    at most MAX_CONTEXT are kept and the rest is returned, never silently lost."""
     found = list(dict.fromkeys(extra or []))
     for name in CONTEXT_CANDIDATES:
         p = root / name
@@ -211,7 +221,26 @@ def scan_context(root: Path, extra: list) -> list:
         else:
             cand = []
         found += [c for c in cand if c not in found]
-    return found[:MAX_CONTEXT]
+    return found[:MAX_CONTEXT], found[MAX_CONTEXT:]
+
+
+def scan_context(root: Path, extra: list) -> list:
+    """The kept context files only (at most MAX_CONTEXT); context_report also says what was dropped."""
+    return context_report(root, extra)[0]
+
+
+def clean_constraints(items) -> list:
+    """Hard user constraints, stripped and de-duplicated in order. Never truncated and never capped."""
+    return list(dict.fromkeys(s.strip() for s in (items or []) if s and s.strip()))
+
+
+CONSTRAINTS_HEAD = ("Hard constraints / قيود ملزمة (the user's own rules: binding, never traded off, reinterpreted "
+                    "or dropped; a plan that breaks one is out / قواعد صاحب الطلب: ملزمة لا تُقايَض ولا تُؤوَّل، "
+                    "والخطة التي تخالف واحدًا منها مرفوضة):")
+
+
+def constraints_block(constraints: list) -> str:
+    return CONSTRAINTS_HEAD + "\n" + "\n".join(f"- {k}" for k in constraints) + "\n"
 
 
 def derive_question(question: str, br: dict) -> str:
@@ -225,8 +254,12 @@ def derive_question(question: str, br: dict) -> str:
 
 
 def framed_text(question: str, context: list, stakes: str, evidence: list, unknowns: list,
-                with_context: bool = True) -> str:
+                with_context: bool = True, constraints: list = None) -> str:
+    """The framed question. Hard constraints come right after the question, also without context (the
+    Outsider's bare prompt): they are the user's rules, not background."""
     parts = [f"Question / السؤال:\n{question.strip()}\n"]
+    if constraints:
+        parts.append(constraints_block(constraints))
     if with_context:
         ctx = "\n".join(f"- {c}" for c in context) or "- (no context files; answer from the question alone)"
         parts.append(f"Context worth reading / سياق مفيد:\n{ctx}\n")
@@ -249,20 +282,49 @@ def advisor_prompt(a: dict, framed: str) -> str:
             "150-300 words, no preamble. Answer in the user's language.")
 
 
+def context_warnings(root: Path, user_ctx: list, dropped: list) -> list:
+    """Plain-language warnings: --context items the user gave that MAX_CONTEXT cut, and --context items that
+    are not files (a rule typed as --context belongs in --constraints)."""
+    out = []
+    cut = [x for x in dropped if x in user_ctx]
+    if cut:
+        out.append(f"--context: kept {len(user_ctx) - len(cut)} of {len(user_ctx)} item(s) you gave "
+                   f"(MAX_CONTEXT={MAX_CONTEXT}, a brief included); dropped: " + "; ".join(cut) +
+                   ". No advisor will see them. Pass hard user rules with --constraints (never truncated).")
+    loose = [x for x in user_ctx if not (root / x).exists() and not Path(x).exists()]
+    if loose:
+        out.append("--context item(s) that are not files: " + "; ".join(loose) +
+                   ". If one is a user rule, pass it with --constraints instead.")
+    return out
+
+
 def new_council(a, level: str, gate_info: dict) -> tuple:
     root = Path(a.root).resolve()
     br = read_brief(getattr(a, "from_brief", None))
-    context = scan_context(root, ([br["path"]] if br else []) + list(a.context or []))
+    user_ctx = list(dict.fromkeys(getattr(a, "context", None) or []))
+    context, dropped = context_report(root, ([br["path"]] if br else []) + user_ctx)
     question = derive_question(a.question, br)
     ev, un = list(getattr(a, "evidence", None) or []), list(getattr(a, "unknowns", None) or [])
-    framed = framed_text(question, context, a.stakes, ev, un)
-    bare = framed_text(question, [], a.stakes, [], [], with_context=False)
+    hard = clean_constraints(getattr(a, "constraints", None))
+    framed = framed_text(question, context, a.stakes, ev, un, constraints=hard)
+    bare = framed_text(question, [], a.stakes, [], [], with_context=False, constraints=hard)
+    warns = context_warnings(root, user_ctx, dropped)
+    for w in warns:
+        print(f"llm_council: warning: {w}", file=sys.stderr)
     c = {"schema": SCHEMA, "source": SOURCE, "created": now_iso(), "question": question, "level": level,
          "depth": gate_info["depth"], "gate": gate_info, "framed": framed, "framed_outsider": bare,
-         "context": context, "evidence": ev, "unknowns": un, "plans": br.get("plans") or {},
+         "constraints": hard, "context": context, "dropped_context": dropped,
+         "dropped_user_context": [x for x in dropped if x in user_ctx], "warnings": warns,
+         "evidence": ev, "unknowns": un, "plans": br.get("plans") or {},
          "brief_recommended": br.get("recommended"), "advisors": {}, "reviews": {}, "map": None,
          "consensus": None, "duplicates": [], "verdict": None}
     return c, framed, bare
+
+
+def frame_report(c: dict) -> dict:
+    """What the caller must see about a new council: the hard rules, what was kept and what was dropped."""
+    return {"constraints": c["constraints"], "context": c["context"], "dropped_context": c["dropped_context"],
+            "warnings": c["warnings"]}
 
 
 def cmd_frame(a) -> dict:
@@ -276,7 +338,7 @@ def cmd_frame(a) -> dict:
     for adv in ADVISORS:
         text = bare if adv["id"] == "outsider" else framed
         (pd / f"advisor_{adv['id']}.txt").write_text(advisor_prompt(adv, text), encoding="utf-8")
-    return {"dir": str(d), "depth": g["depth"], "reason": g["reason"], "context": c["context"],
+    return {"dir": str(d), "depth": g["depth"], "reason": g["reason"], **frame_report(c),
             "next": "run the five advisor prompts in parallel (one message), then `ingest` each"}
 
 
@@ -339,15 +401,17 @@ def letter_map(question: str, seed=None) -> dict:
     return {adv: LETTERS[i] for i, adv in enumerate(order)}
 
 
-def reviewer_prompt(framed: str, lettered: list) -> str:
+def reviewer_prompt(framed: str, lettered: list, constraints: list = None) -> str:
     body = "\n\n".join(f"**Response {L}:**\n{t}" for L, t in lettered)
+    hard = (" A response that breaks a hard constraint (قيد ملزم) above cannot be the strongest; name it under 2."
+            if constraints else "")
     return ("You are reviewing a council. Five advisors answered this question independently:\n---\n"
             f"{framed}---\n\nTheir answers, anonymised:\n\n{body}\n\n"
             "Answer three questions, citing responses by letter:\n"
             "1. Strongest response, and why?\n"
             "2. Biggest blind spot: which response, and what does it miss?\n"
             "3. What did all five miss that the council should weigh?\n"
-            "Under 200 words, direct, in the user's language.")
+            f"Under 200 words, direct, in the user's language.{hard}")
 
 
 def cmd_review(a) -> dict:
@@ -365,7 +429,7 @@ def cmd_review(a) -> dict:
     m = letter_map(c["question"], a.seed)
     c["map"] = m
     lettered = sorted(((m[i], c["advisors"][i]["text"]) for i in IDS))
-    prompt = reviewer_prompt(c["framed"], lettered)
+    prompt = reviewer_prompt(c["framed"], lettered, c.get("constraints"))
     for r in REVIEWERS:
         (d / "prompts" / f"review_{r}.txt").write_text(prompt, encoding="utf-8")
     save(d, c)
@@ -419,6 +483,9 @@ def chair_prompt(c: dict) -> str:
         or "(no review round: 4 of 5 advisors backed the same plan)"
     plan_rule = (" Name the plan letter you recommend, and say if it differs from the brief's recommendation "
                  f"({c['brief_recommended']}).") if c.get("plans") else ""
+    if c.get("constraints"):
+        plan_rule += (" The hard constraints (قيود ملزمة) are the user's rules: the recommendation and the first "
+                      "step keep every one of them, and an advisor who breaks one is overruled on that point.")
     return ("You chair the council. Turn five advisors and their peer reviews into one verdict.\n\n"
             f"The question:\n---\n{c['framed']}---\n\nADVISORS (de-anonymised):\n\n{adv}\n\nPEER REVIEWS:\n\n{rev}\n\n"
             "Write the verdict with exactly these five headings, in order:\n"
@@ -533,14 +600,15 @@ def cmd_light(a) -> dict:
     save(d, c)
     (d / "prompts").mkdir(parents=True, exist_ok=True)
     (d / "prompts" / "light.txt").write_text(light_prompt(framed), encoding="utf-8")
-    return {"prompt": str(d / "prompts" / "light.txt"),
+    return {"prompt": str(d / "prompts" / "light.txt"), **frame_report(c),
             "next": "answer the light prompt in context, save the verdict, then `verdict --file v.md`"}
 
 
 # --------------------------------------------------------------------------------------- reporting
 def cmd_status(a) -> dict:
     c = load(Path(a.dir))
-    return {"level": c.get("level"), "depth": c.get("depth"), "advisors": sorted(c["advisors"]),
+    return {"level": c.get("level"), "depth": c.get("depth"), "constraints": c.get("constraints") or [],
+            "dropped_context": c.get("dropped_context") or [], "advisors": sorted(c["advisors"]),
             "reviews": sorted(c["reviews"]), "anonymised": c.get("map") is not None,
             "consensus": c.get("consensus"), "duplicates": c.get("duplicates"), "receipt": c.get("receipt")}
 
@@ -665,6 +733,51 @@ def self_test() -> int:
         assert cmd_verdict(ns(dir=str(d4), file=str(vf), simulated=True))["status"] == "COUNCIL5_LIGHT"
         st = cmd_stats(ns(root=t))
         assert st["councils"] == 4 and st["delta"]["changed"] >= 1, st
+        # hard constraints: never truncated, right after the question in EVERY prompt; a cut --context is reported
+        rule = "لا ترجمة للآيات"
+        rules = [rule] + [f"rule {n}" for n in range(1, 8)]          # eight rules: more than MAX_CONTEXT
+        for n in range(4):
+            (tp / f"f{n}.md").write_text("x", encoding="utf-8")
+        user_ctx = [f"f{n}.md" for n in range(4)] + [rule]             # the 2026-10-29 bug: a rule passed as context
+        d5 = tp / "k"
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            fr = cmd_frame(ns(question="Which reel?", dir=str(d5), level="L3", context=user_ctx, stakes="", root=t,
+                              from_brief=str(brief), evidence=["brief.json: 3 plans"], unknowns=[],
+                              irreversible=False, force_full=False, constraints=rules + [rule, "  "]))
+        c5 = load(d5)
+        assert fr["constraints"] == rules and c5["constraints"] == rules, fr           # de-duplicated, never cut
+        assert fr["context"] == [str(brief), "f0.md", "f1.md", "f2.md"], fr
+        assert fr["dropped_context"] == ["f3.md", rule] == c5["dropped_user_context"], fr
+        warned = err.getvalue()
+        assert "dropped: f3.md; " + rule in warned and "--constraints" in warned and "not files" in warned, warned
+        head = f"{c5['question']}\n\n{CONSTRAINTS_HEAD}"                              # right after the question
+
+        def holds(text: str) -> bool:
+            return head in text and all(f"- {r}\n" in text for r in rules)
+        for i in IDS:
+            assert holds((d5 / "prompts" / f"advisor_{i}.txt").read_text(encoding="utf-8")), i
+        assert "Context worth reading" not in (d5 / "prompts" / "advisor_outsider.txt").read_text(encoding="utf-8")
+        for i in IDS:
+            cmd_ingest(ns(dir=str(d5), advisor=i, file=str(tp / f"{i}.md"), simulated=False))
+        cmd_review(ns(dir=str(d5), seed=None))
+        review = (d5 / "prompts" / "review_R1.txt").read_text(encoding="utf-8")
+        assert holds(review) and "cannot be the strongest" in review
+        for r in REVIEWERS:
+            cmd_ingest_review(ns(dir=str(d5), reviewer=r, file=str(rf), simulated=False))
+        cmd_chair(ns(dir=str(d5)))
+        chair = (d5 / "prompts" / "chair.txt").read_text(encoding="utf-8")
+        assert holds(chair) and "overruled on that point" in chair
+        assert cmd_status(ns(dir=str(d5)))["constraints"] == rules
+        d6 = tp / "kl"
+        lf = cmd_light(ns(question="Which font?", dir=str(d6), context=[], stakes="", root=t, from_brief=None,
+                          constraints=[rule]))
+        assert lf["constraints"] == [rule] and lf["dropped_context"] == [] and not lf["warnings"], lf
+        assert f"Which font?\n\n{CONSTRAINTS_HEAD}\n- {rule}\n" in (d6 / "prompts" / "light.txt").read_text(
+            encoding="utf-8")
+        # without constraints nothing changes: no section, no reviewer or chair clause
+        assert CONSTRAINTS_HEAD not in (d / "prompts" / "advisor_executor.txt").read_text(encoding="utf-8")
+        assert "overruled on that point" not in (d / "prompts" / "chair.txt").read_text(encoding="utf-8")
     print("llm_council self-test: OK")
     return 0
 
@@ -678,7 +791,12 @@ def main(argv=None) -> int:
         p.add_argument("question")
         p.add_argument("--dir", required=True)
         p.add_argument("--from-brief")
-        p.add_argument("--context", nargs="*", default=[])
+        p.add_argument("--constraints", nargs="*", default=[],
+                       help="the user's hard rules (e.g. «لا ترجمة للآيات»): never truncated, placed right after "
+                            "the question in every prompt, the Outsider's included")
+        p.add_argument("--context", nargs="*", default=[],
+                       help=f"files worth reading: at most {MAX_CONTEXT} with the brief; the rest is listed in "
+                            "dropped_context with a stderr warning")
         p.add_argument("--evidence", nargs="*", default=[])
         p.add_argument("--unknowns", nargs="*", default=[])
         p.add_argument("--stakes", default="")

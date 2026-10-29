@@ -107,7 +107,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py lessons --projec
 - **الصوت:** يُدمج بنسخ التيار ومطابقة MD5. الرفع كسب موحّد بموافقتي فقط.
 - **المحرك:** HTML/Canvas مع `window.__kosif.seek(t)`، ثم `node tools/render_html.cjs --in <scene.html> --out <film.mp4> --preview` ثم الرندر. خطوط OFL: Amiri، Aref Ruqaa، Reem Kufi، Lalezar، Marhey، KOSIF Jumuah.
 - **التسليم:** `TEST_REPORT.md` بالمقيس فعلًا، وقل إن المراجعة كانت بلقطات ثابتة. الوسائط الثقيلة لا تُرفع إلى GitHub، فذكّرني بحفظ الفيديو.
-- **مجلس الخمسة الإلزامي (v5.8، A38 §7):** كل طلب L1+ يمر على `python3 scripts/llm_council.py gate --level <L> --from-brief <مجلد العمل>/brief.json` ثم `frame` و`review` و`chair` و`verdict` بعمق البوابة (LIGHT في L1، خمسة وكلاء في L2، الكامل بالمراجعة المجهولة في L3 أو ما لا رجعة فيه)؛ اذكر في التقرير العمق وسببه والإيصال وهل غيّر الحكم الخطة.
+- **مجلس الخمسة الإلزامي (v5.8، A38 §7):** كل طلب L1+ يمر على `python3 scripts/llm_council.py gate --level <L> --from-brief <مجلد العمل>/brief.json` ثم `frame` (وقيودي الصريحة بـ `--constraints`: كاملة في كل مطالبة، لا في `--context` المحدود بأربعة) و`review` و`chair` و`verdict` بعمق البوابة (LIGHT في L1، خمسة وكلاء في L2، الكامل بالمراجعة المجهولة في L3 أو ما لا رجعة فيه)؛ اذكر في التقرير العمق وسببه والإيصال وهل غيّر الحكم الخطة.
 - **قبل قول «خلص» (v5.8، A38):** فيديو الموشن يمر بـ `python3 scripts/video_eyes.py report <film.mp4> --out <مجلد>/eyes` (انظر شريط الإطارات، واسأل عن أي تجميد أطول من 1.5 ثانية، وأصلح ذروة صوت أعلى من -1 dBTP)، والصفحة بـ `design_tells.py audit`، والتقرير بـ `thinking_books.py debias`.
 - **التفاصيل الكاملة:** قسم «دروس ميدانية — مشاريع المونتاج والموشن» في `PROTOCOL.md`، و«Stock footage without an API key» في `references/guides/sources.md`.
 
