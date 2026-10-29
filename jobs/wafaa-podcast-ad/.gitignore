@@ -1,0 +1,5 @@
+source/
+build/frames/
+out/
+*.mp4
+*.wav
