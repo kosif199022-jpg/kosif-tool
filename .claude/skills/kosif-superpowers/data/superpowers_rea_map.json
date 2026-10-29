@@ -471,20 +471,20 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 140,
+  "evals": 142,
   "families": 62,
   "gaps": {
    "family_without_tool": 11
   },
-  "powers": 5854,
-  "py_edges": 369,
+  "powers": 5856,
+  "py_edges": 371,
   "repo_tests": 41,
   "roles": {
    "helper": 4,
-   "registered": 171
+   "registered": 172
   },
-  "scripts": 175,
-  "tools": 194
+  "scripts": 176,
+  "tools": 195
  },
  "families": [
   {
@@ -520,7 +520,7 @@
   {
    "id": "arabic-language",
    "powers": 22,
-   "tools": 2
+   "tools": 3
   },
   {
    "id": "atlas-build",
@@ -570,7 +570,7 @@
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 27
+   "tools": 28
   },
   {
    "id": "brand-logo-identity",
@@ -709,7 +709,7 @@
   },
   {
    "id": "runnable-tools",
-   "powers": 175,
+   "powers": 177,
    "tools": 0
   },
   {
@@ -760,7 +760,7 @@
   {
    "id": "typography-arabic",
    "powers": 99,
-   "tools": 12
+   "tools": 13
   },
   {
    "id": "typography-latin",
@@ -850,7 +850,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "175 powers, no tools.json entry lists this family",
+   "detail": "177 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -2080,6 +2080,11 @@
    "to": "lesson_integrity"
   },
   {
+   "from": "test_llm_council",
+   "kind": "imports",
+   "to": "llm_council"
+  },
+  {
    "from": "test_local_first",
    "kind": "imports",
    "to": "local_first"
@@ -2298,6 +2303,11 @@
    "from": "test_protocol_structure",
    "kind": "invokes",
    "to": "superpower_fusion"
+  },
+  {
+   "from": "test_quran_text",
+   "kind": "imports",
+   "to": "quran_text"
   },
   {
    "from": "test_rea_superpowers_map",
@@ -4645,8 +4655,10 @@
    "id": "free_footage",
    "imported_by": [],
    "path": "scripts/free_footage.py",
-   "power_count": 0,
-   "powers": [],
+   "power_count": 1,
+   "powers": [
+    "TOOL-177"
+   ],
    "role": "registered",
    "tests": [
     "evals/test_free_footage.py"
@@ -4761,7 +4773,7 @@
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 175,
+   "power_count": 177,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5003,7 +5015,7 @@
    ]
   },
   {
-   "ci": false,
+   "ci": true,
    "id": "llm_council",
    "imported_by": [],
    "path": "scripts/llm_council.py",
@@ -5011,6 +5023,7 @@
    "powers": [],
    "role": "registered",
    "tests": [
+    "evals/test_llm_council.py",
     "evals/test_v58_mastery.py"
    ],
    "tools": [
@@ -5606,6 +5619,23 @@
    ],
    "tools": [
     "python-package-probe"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "quran_text",
+   "imported_by": [],
+   "path": "scripts/quran_text.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-178"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_quran_text.py"
+   ],
+   "tools": [
+    "quran-text"
    ]
   },
   {
@@ -6581,39 +6611,40 @@
  "structure": {
   "areas": {
    "(root)": 10,
+   ".ruff_cache": 6,
    "assets": 4,
    "data": 163,
    "dua-wednesday": 10,
-   "evals": 169,
+   "evals": 172,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
    "references": 255,
    "resources": 3,
    "schemas": 6,
-   "scripts": 206,
+   "scripts": 207,
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93672031,
+  "bytes": 93964952,
   "extensions": {
-   "(none)": 34,
+   "(none)": 39,
    ".cjs": 10,
    ".html": 80,
    ".jpg": 24,
    ".js": 50,
-   ".json": 298,
+   ".json": 299,
    ".md": 2107,
    ".mjs": 18,
    ".ogg": 14,
    ".png": 11,
-   ".py": 515,
+   ".py": 518,
    ".ttf": 38,
    ".txt": 64,
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3403,
+  "files": 3413,
   "symlinks": 0
  }
 }

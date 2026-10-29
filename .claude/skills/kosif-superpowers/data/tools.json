@@ -2823,14 +2823,16 @@
       "area": "motion",
       "title_en": "HTML to MP4 renderer",
       "title_ar": "محوّل HTML إلى فيديو MP4",
-      "summary_en": "The skill's bundled copy of KOSIF's deterministic HTML-to-MP4 renderer: it captures a local or http HTML film frame by frame in headless Chromium (through window.__kosif.seek(t) or Chromium virtual time), encodes H.264 with ffmpeg, optionally muxes untouched audio and checks fps, frames, duration, size and audio with ffprobe, or with --preview makes an 8-frame contact sheet instead. Before the first frame it checks that the frames folder's disk can hold the PNG frames (frames x width x height x 1.7 bytes + 10%), lists kosif-frames-* temp folders older than 6 h left by killed renders (--clean-stale deletes them) and removes its own temp frames on SIGINT, SIGTERM and SIGHUP.",
-      "summary_ar": "نسخة مضمّنة في المهارة من عارض KOSIF الحتمي لتحويل HTML إلى MP4: يلتقط فيلم HTML محليًا أو عبر رابط http إطارًا بإطار في Chromium بلا واجهة (عبر window.__kosif.seek(t) أو الزمن الافتراضي في Chromium)، ويرمّزه بصيغة H.264 عبر ffmpeg، ويدمج الصوت اختياريًا دون تعديله، ثم يتحقق بـ ffprobe من معدل الإطارات وعددها والمدة والأبعاد والصوت، أو يصنع بالخيار ‎--preview لوحة معاينة من 8 إطارات بدل الفيديو. وقبل أول إطار يتحقق من أن قرص مجلد الإطارات يتّسع لصور PNG (عدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10%)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP.",
+      "summary_en": "The skill's bundled copy of KOSIF's deterministic HTML-to-MP4 renderer: it captures a local or http HTML film frame by frame in headless Chromium (through window.__kosif.seek(t) or Chromium virtual time), encodes H.264 with ffmpeg, optionally muxes untouched audio and checks fps, frames, duration, size and audio with ffprobe, then proves a stream-copied track by packet MD5 (VERIFY ... audio_md5=match, or differs (src N packets, out M packets) with a loud stderr account of what was cut or changed, never failing the render, or reencoded). With --preview it makes an 8-frame contact sheet instead, and with --stills t1,t2,... it writes a still per film time, a grid labelled with the times and stills.json, without a video. Before the first frame it checks that the frames folder's disk can hold the PNG frames (frames x width x height x 1.7 bytes + 10%), lists kosif-frames-* temp folders older than 6 h left by killed renders (--clean-stale deletes them) and removes its own temp frames on SIGINT, SIGTERM and SIGHUP.",
+      "summary_ar": "نسخة مضمّنة في المهارة من عارض KOSIF الحتمي لتحويل HTML إلى MP4: يلتقط فيلم HTML محليًا أو عبر رابط http إطارًا بإطار في Chromium بلا واجهة (عبر window.__kosif.seek(t) أو الزمن الافتراضي في Chromium)، ويرمّزه بصيغة H.264 عبر ffmpeg، ويدمج الصوت اختياريًا دون تعديله، ثم يتحقق بـ ffprobe من معدل الإطارات وعددها والمدة والأبعاد والصوت، ويُثبت أن الصوت المنسوخ لم يُمس ببصمة MD5 لحِزمه (audio_md5=match أو differs مع شرح لما قُصّ أو تغيّر دون إفشال الرندر، أو reencoded)، أو يصنع بالخيار ‎--preview لوحة معاينة من 8 إطارات بدل الفيديو، أو بالخيار ‎--stills صورة لكل زمن مطلوب ولوحة مكتوب عليها الأزمنة بلا فيديو. وقبل أول إطار يتحقق من أن قرص مجلد الإطارات يتّسع لصور PNG (عدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10%)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP.",
       "use_when": [
         "حوّل ملف film.html لفيديو MP4 مع التعليق الصوتي",
         "اعمل لي معاينة سريعة للأنيميشن قبل الرندر النهائي",
         "أبي أصدّر الموشن جرافيك بمقاس ريلز 9:16",
         "Render this HTML animation to a 1080x1920 MP4 at 30 fps with my voiceover",
-        "Make a contact-sheet preview of my HTML film before the final render"
+        "Make a contact-sheet preview of my HTML film before the final render",
+        "طلّع لي لقطات من الفيلم عند ثواني محددة في لوحة واحدة",
+        "Give me stills of my HTML film at 1.5 s, 3 s and 7.9 s"
       ],
       "keywords": [
         "render to mp4",
@@ -2848,18 +2850,29 @@
         "aspect ratio",
         "9:16 reel",
         "deterministic render",
-        "دمج الصوت"
+        "دمج الصوت",
+        "stills",
+        "لقطات ثابتة",
+        "audio md5",
+        "audio_md5",
+        "byte-identical audio",
+        "بصمة الصوت"
       ],
       "commands": [
         {
           "name": "render",
           "example": "node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --fps 30 --audio ./voice.wav",
-          "does": "Renders every frame (seek mode if window.__kosif exists, otherwise it relaunches in virtual mode) after checking that the frames fit on disk, encodes libx264 CRF 17 yuv420p, stream-copies AAC/MP3/ALAC audio (other codecs become AAC 320k padded to the video length, never retimed), then prints a 'VERIFY OK|FAIL' line from ffprobe. Exits 3 on a mismatch."
+          "does": "Renders every frame (seek mode if window.__kosif exists, otherwise it relaunches in virtual mode) after checking that the frames fit on disk, encodes libx264 CRF 17 yuv420p, stream-copies AAC/MP3/ALAC audio (other codecs become AAC 320k padded to the video length, never retimed), then prints a 'VERIFY OK|FAIL' line from ffprobe ending in audio_md5=match | differs (src N packets, out M packets) | reencoded | none. Exits 3 on a mismatch; audio_md5 never changes the exit code. --report <file.json> writes the same as JSON."
         },
         {
           "name": "preview",
           "example": "node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --preview",
           "does": "Captures 8 evenly spaced frames and tiles them into a 4x2 contact sheet at ./out/film_preview.png. It always appends '_preview.png' to the --out stem. Tiles are labelled when ffmpeg has drawtext. Audio is ignored."
+        },
+        {
+          "name": "stills",
+          "example": "node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --stills 0.5,2,3.25s,1:04",
+          "does": "No video: seeks to each film time and writes ./out/film_stills/still_<t>.png, stills_grid.png (each tile labelled with its time) and stills.json. Seek mode draws the exact time, virtual mode the nearest frame at --fps; --stills-dir <dir> picks the folder."
         },
         {
           "name": "virtual",
@@ -2869,11 +2882,11 @@
         {
           "name": "help",
           "example": "node resources/motion-runtime/render_html.cjs --help",
-          "does": "Prints every option (--aspect, --width, --height, --fps, --duration, --start, --audio, --mode, --preview, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout, --settle) and the exit codes."
+          "does": "Prints every option (--aspect, --width, --height, --fps, --duration, --start, --audio, --mode, --preview, --stills, --stills-dir, --report, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout, --settle) and the exit codes."
         }
       ],
       "inputs": "A local .html file or an http(s) URL. In seek mode the page exposes window.__kosif = {duration, seek(t)} (and optionally window.__kosifReady); otherwise --duration is required. Optional audio file. Options: --aspect (9:16, 16:9, 4:5, 21:9, WxH or a name such as reel/square/cinema), --start for a partial render, fps, crf, scale, seed and others.",
-      "outputs": "An H.264 MP4 at --out (or <out-stem>_preview.png with --preview) and a VERIFY line with duration, fps, frames, size and audio. PNG frames go to --frames-dir if given, otherwise to a kosif-frames-* temp dir that is deleted at the end, on errors and on SIGINT/SIGTERM/SIGHUP unless --keep-frames is set. Exit codes: 0 ok, 1 usage, 2 render/encode failure or not enough disk space, 3 ffprobe mismatch, 130/143/129 stopped by a signal.",
+      "outputs": "An H.264 MP4 at --out (or <out-stem>_preview.png with --preview, or <out-stem>_stills/ with still_<t>.png, stills_grid.png and stills.json with --stills) and a VERIFY line with duration, fps, frames, size, audio and audio_md5 (match, differs (src N packets, out M packets) with an explanation on stderr, reencoded, none or unknown); --report writes it as JSON. PNG frames go to --frames-dir if given, otherwise to a kosif-frames-* temp dir that is deleted at the end, on errors and on SIGINT/SIGTERM/SIGHUP unless --keep-frames is set. Exit codes: 0 ok, 1 usage, 2 render/encode failure or not enough disk space, 3 ffprobe mismatch, 130/143/129 stopped by a signal.",
       "requires": {
         "python": [],
         "binaries": [
@@ -2890,10 +2903,14 @@
       },
       "safety": "network",
       "consent": "An http(s) --in URL, or a page that loads remote assets, contacts the network (use --offline to block it). It runs the page's own scripts in headless Chromium, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_######.png, preview_raw_NN.png and preview_tile_NN.png files in that folder and writes a .kosif-user-frames marker file there. --clean-stale permanently deletes the renderer's own kosif-frames-XXXXXX temp folders that hold only frames and are older than 6 h, including ones kept with --keep-frames; it never deletes a --frames-dir folder, the folder in use or a folder that holds it.",
-      "limits": "Verifies only container metrics (fps, frame count, duration, size, audio presence), not visual or creative correctness, and it installs nothing, so Playwright Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate made once before the first frame, and a SIGKILL cannot be caught, so such a render's temp folder stays until --clean-stale removes it after 6 h.",
-      "evidence": "tested-elsewhere",
-      "evidence_note": "No test in evals/ or tests/ executes this bundled copy. evals/test_motion_runtime.py mocks the render and, in a full repo, points at tools/render_html.cjs. Checked here: --help exits 0, and a missing --in file gives a usage error with exit 1. No render was run. It is byte-identical to tools/render_html.cjs (evals/test_hub.py BundledCopiesTest), whose disk guard tests/test_render_html_disk.mjs exercises without a browser.",
-      "tests": [],
+      "limits": "Verifies only container metrics (fps, frame count, duration, size, audio presence), not visual or creative correctness, and it installs nothing, so Playwright Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate made once before the first frame, and a SIGKILL cannot be caught, so such a render's temp folder stays until --clean-stale removes it after 6 h. audio_md5 proves byte identity of the first audio stream's packets (or names what was cut or changed), not sync or loudness; a re-encoded WAV/FLAC track gets no byte proof. Virtual-mode stills stop on the nearest frame at --fps.",
+      "evidence": "tested-here",
+      "evidence_note": "On 2026-10-29 tests/test_render_html_audio.mjs loaded this bundled copy and ran its encode and packet-MD5 proof on synthetic frames and a tone with real ffmpeg (differs, every kept packet identical), and tests/test_render_html_stills.mjs ran it as a CLI with Playwright Chromium for a --stills render whose stills matched tools/render_html.cjs's byte for byte (that test skips without Chromium, as in CI). It is byte-identical to tools/render_html.cjs (tests/test_render_html.mjs and evals/test_hub.py BundledCopiesTest), whose 41 tests passed here; see repo-render-html. evals/test_motion_runtime.py mocks the render.",
+      "tests": [
+        "tests/test_render_html_audio.mjs",
+        "tests/test_render_html_stills.mjs",
+        "tests/test_render_html.mjs"
+      ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/motion-runtime.md",
         ".claude/skills/kosif-superpowers/references/executable-creative-motion.md",
@@ -3098,8 +3115,8 @@
       "area": "motion",
       "title_en": "Deterministic HTML-to-MP4 renderer",
       "title_ar": "محوّل حتمي من HTML إلى فيديو MP4",
-      "summary_en": "Renders a local or http HTML film frame by frame in headless Chromium (Playwright), driving the page through window.__kosif.seek(t) or, for any CSS/WAAPI/rAF/GSAP page, through paused Chromium virtual time. It encodes H.264 yuv420p with ffmpeg, muxes a supplied audio track without resampling or retiming it (AAC, MP3 and ALAC are stream-copied, other codecs become AAC 320k) and checks fps, frame count, duration, size and audio presence with ffprobe. With --preview it writes an 8-frame contact-sheet PNG instead of a video. A disk guard stops the render before the first frame when the frames folder's disk cannot hold frames x width x height x 1.7 bytes + 10% (after what other running renders still have to write), lists kosif-frames-* temp folders older than 6 h that killed renders left behind (--clean-stale deletes them), and removes its own temp frames on SIGINT, SIGTERM and SIGHUP (exit 130/143/129).",
-      "summary_ar": "يحوّل فيلم HTML محليًا أو عبر رابط http إلى فيديو إطارًا بإطار داخل متصفح Chromium بلا واجهة (Playwright)، إما بالدالة window.__kosif.seek(t) في الصفحة، وإما بإيقاف الزمن الافتراضي للمتصفح وتقديمه خطوة خطوة لأي صفحة تعتمد CSS أو WAAPI أو requestAnimationFrame أو GSAP. ثم يرمّز الإطارات بصيغة H.264 ‏yuv420p عبر ffmpeg، ويدمج الصوت المرفق دون إعادة أخذ العينات أو تغيير توقيته (يُنسخ AAC وMP3 وALAC كما هي، وما سواها يُرمَّز AAC بمعدل 320k)، ويتحقق عبر ffprobe من معدل الإطارات وعددها والمدة والأبعاد ووجود الصوت. ومع ‎--preview يُخرج لوحة PNG من ثمانية إطارات بدلًا من الفيديو. ويحمي القرص: يتوقف قبل أول إطار إذا لم يتّسع قرص مجلد الإطارات لعدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10% (بعد حساب ما ستكتبه عمليات رندر أخرى جارية)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP ويخرج بالرمز 130 أو 143 أو 129.",
+      "summary_en": "Renders a local or http HTML film frame by frame in headless Chromium (Playwright), driving the page through window.__kosif.seek(t) or, for any CSS/WAAPI/rAF/GSAP page, through paused Chromium virtual time. It encodes H.264 yuv420p with ffmpeg, muxes a supplied audio track without resampling or retiming it (AAC, MP3 and ALAC are stream-copied, other codecs become AAC 320k) and checks fps, frame count, duration, size and audio presence with ffprobe. A stream-copied track is proved by packet MD5 (ffmpeg -map 0:a:0 -c copy -f md5, AAC through aac_adtstoasc as verify_video.py --source-audio): the VERIFY line says audio_md5=match, audio_md5=differs (src N packets, out M packets) with a loud stderr account of the packets cut after the last video frame or changed (it never fails the render), or audio_md5=reencoded, and --report writes it as JSON. With --preview it writes an 8-frame contact-sheet PNG instead of a video; with --stills t1,t2,... it seeks to each film time and writes still_<t>.png, a grid PNG labelled with the times and stills.json, without encoding a video. A disk guard stops the render before the first frame when the frames folder's disk cannot hold frames x width x height x 1.7 bytes + 10% (after what other running renders still have to write), lists kosif-frames-* temp folders older than 6 h that killed renders left behind (--clean-stale deletes them), and removes its own temp frames on SIGINT, SIGTERM and SIGHUP (exit 130/143/129).",
+      "summary_ar": "يحوّل فيلم HTML محليًا أو عبر رابط http إلى فيديو إطارًا بإطار داخل متصفح Chromium بلا واجهة (Playwright)، إما بالدالة window.__kosif.seek(t) في الصفحة، وإما بإيقاف الزمن الافتراضي للمتصفح وتقديمه خطوة خطوة لأي صفحة تعتمد CSS أو WAAPI أو requestAnimationFrame أو GSAP. ثم يرمّز الإطارات بصيغة H.264 ‏yuv420p عبر ffmpeg، ويدمج الصوت المرفق دون إعادة أخذ العينات أو تغيير توقيته (يُنسخ AAC وMP3 وALAC كما هي، وما سواها يُرمَّز AAC بمعدل 320k)، ويتحقق عبر ffprobe من معدل الإطارات وعددها والمدة والأبعاد ووجود الصوت. ويُثبت أن الصوت المنسوخ لم يُمس ببصمة MD5 لحِزمه في الأصل والناتج: يكتب سطر VERIFY إما audio_md5=match، أو audio_md5=differs (src N packets, out M packets) مع شرح واضح على stderr للحزم التي قُصّت بعد آخر إطار أو تغيّرت (دون أن يُفشل الرندر)، أو audio_md5=reencoded، ويحفظ ‎--report ذلك في ملف JSON. ومع ‎--preview يُخرج لوحة PNG من ثمانية إطارات بدلًا من الفيديو، ومع ‎--stills يلتقط الفيلم عند أزمنة محددة: صورة still_<t>.png لكل زمن ولوحة مكتوب عليها الأزمنة وملف stills.json، بلا فيديو. ويحمي القرص: يتوقف قبل أول إطار إذا لم يتّسع قرص مجلد الإطارات لعدد الإطارات × العرض × الارتفاع × 1.7 بايت + 10% (بعد حساب ما ستكتبه عمليات رندر أخرى جارية)، ويسرد مجلدات kosif-frames-* المؤقتة الأقدم من 6 ساعات التي خلّفها رندر مقطوع (ويحذفها ‎--clean-stale)، ويحذف مجلد إطاراته المؤقت عند SIGINT وSIGTERM وSIGHUP ويخرج بالرمز 130 أو 143 أو 129.",
       "use_when": [
         "حوّل صفحة الأنيميشن HTML لفيديو MP4 مع الصوت الأصلي",
         "اعمل لي معاينة إطارات قبل الرندر النهائي",
@@ -3108,7 +3125,11 @@
         "make a contact-sheet preview of my HTML film before the final render",
         "render only seconds 4 to 7 at half size for a motion check",
         "الرندر وقف لأن القرص امتلأ (Unable to capture screenshot)، نظّف مجلدات الإطارات القديمة وأعد المحاولة",
-        "clean up the kosif-frames temp folders left by killed renders before a long render"
+        "clean up the kosif-frames temp folders left by killed renders before a long render",
+        "طلّع لي لقطات من الفيلم عند الثانية 1.5 و3.2 و7.9 في لوحة واحدة عشان أراجعها",
+        "check my HTML film at 2.5 s and 7 s: give me stills and a labelled grid without rendering the video",
+        "اتأكد إن صوتي في الفيديو بعد الرندر هو نفسه بالظبط من غير ما يتغير ولا حزمة",
+        "prove the rendered MP4 carries my voice byte for byte (audio MD5)"
       ],
       "keywords": [
         "html to mp4",
@@ -3129,13 +3150,26 @@
         "مساحة القرص",
         "kosif-frames",
         "Unable to capture screenshot",
-        "clean-stale"
+        "clean-stale",
+        "stills",
+        "still frames",
+        "frame at time",
+        "grid",
+        "لقطات ثابتة",
+        "لقطة عند ثانية",
+        "audio md5",
+        "audio_md5",
+        "packet md5",
+        "byte-identical audio",
+        "بصمة الصوت",
+        "-shortest",
+        "report json"
       ],
       "commands": [
         {
           "name": "render",
           "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3",
-          "does": "Full render: seek mode when window.__kosif exists, otherwise it relaunches in virtual mode. It first checks that the frames fit on the frames folder's disk, then muxes the audio (AAC/MP3/ALAC stream-copied and trimmed at the last frame, other codecs AAC 320k with apad + -shortest, never retimed) and prints an ffprobe 'VERIFY OK/FAIL' line; exit 3 means the output disagrees with the request."
+          "does": "Full render: seek mode when window.__kosif exists, otherwise it relaunches in virtual mode. It first checks that the frames fit on the frames folder's disk, then muxes the audio (AAC/MP3/ALAC stream-copied and trimmed at the last frame, other codecs AAC 320k with apad + -shortest, never retimed) and prints an ffprobe 'VERIFY OK/FAIL' line ending in audio_md5=match | differs (src N packets, out M packets) | reencoded | none; exit 3 means the output disagrees with the request (audio_md5 never changes the exit code)."
         },
         {
           "name": "preview",
@@ -3146,6 +3180,16 @@
           "name": "virtual",
           "example": "node tools/render_html.cjs --in ./page.html --out ./out/clip.mp4 --mode virtual --duration 6 --aspect 16:9 --offline --seed 7",
           "does": "Forces the virtual-time driver for a page without a seek hook; here --aspect sets 1920x1080, --offline aborts every http(s) request and --seed replaces Math.random with a seeded PRNG for a reproducible render."
+        },
+        {
+          "name": "stills",
+          "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --stills 0.5,2,3.25s,1:04 --width 540 --height 960",
+          "does": "No video: loads the page once, seeks to each film time (seconds, a trailing s or m:ss, read to the millisecond, sorted, at most 64) and writes ./out/film_stills/still_0.500.png ... (t with 3 decimals), stills_grid.png with each tile labelled with its time (drawtext, or built-in drawbox digits without it) and stills.json (t, drawn time, frame index, file). Seek mode draws the exact time; virtual mode the nearest frame at --fps (labelled #n). --stills-dir <dir> chooses the folder (then --out may be omitted); --audio and --start are ignored."
+        },
+        {
+          "name": "audio-proof",
+          "example": "node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --audio ./voice.m4a --report ./out/film.report.json",
+          "does": "Renders with the voice stream-copied, hashes the audio packets of ./voice.m4a and of the MP4 without decoding (whole-stream MD5 and per-packet framemd5) and prints audio_md5=match, or audio_md5=differs (src N packets, out M packets) plus a loud stderr block naming the kept packets as byte-identical and how many were cut after the last video frame (allowed) or the first changed packet (re-render from the source). ./out/film.report.json holds the VERIFY values, the token and the proof (both MD5s, packet counts, cut, first mismatch)."
         },
         {
           "name": "segment",
@@ -3170,11 +3214,11 @@
         {
           "name": "help",
           "example": "node tools/render_html.cjs --help",
-          "does": "Prints the options and exit codes (0 ok, 1 usage, 2 render or encode failure or not enough disk space, 3 ffprobe disagrees, 130/143/129 stopped by SIGINT/SIGTERM/SIGHUP); -h does the same."
+          "does": "Prints the options (including --stills, --stills-dir and --report) and exit codes (0 ok, 1 usage, 2 render or encode failure or not enough disk space, 3 ffprobe disagrees, 130/143/129 stopped by SIGINT/SIGTERM/SIGHUP); -h does the same."
         }
       ],
-      "inputs": "--in takes a local .html file or an http(s) URL; --out takes an output .mp4 path. Optional: --aspect (W:H, WxH or a limited set of English names), --width/--height in CSS px, --fps, --duration (seek mode can read window.__kosif.duration), --start, --audio <file>, --mode seek|virtual, --preview, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout and --settle. Seek-mode pages expose window.__kosif = {duration, seek(t)} and an optional window.__kosifReady promise.",
-      "outputs": "An H.264 yuv420p MP4 with +faststart (audio stream-copied when MP4 can hold it, otherwise AAC 320k), or a contact-sheet PNG named <out-basename>_preview.png in preview mode. It prints a 'disk:' line (estimated frame bytes and free space), progress, a 'VERIFY OK|FAIL duration= fps= frames= size= audio=' line and up to 10 page console errors; stale kosif-frames-* folders are listed on stderr. Temporary frames are deleted at the end, on errors and on SIGINT/SIGTERM/SIGHUP unless --frames-dir or --keep-frames is given.",
+      "inputs": "--in takes a local .html file or an http(s) URL; --out takes an output .mp4 path. Optional: --aspect (W:H, WxH or a limited set of English names), --width/--height in CSS px, --fps, --duration (seek mode can read window.__kosif.duration), --start, --audio <file>, --mode seek|virtual, --preview, --stills <t1,t2,...> with --stills-dir, --report <file.json>, --frames-dir, --keep-frames, --no-space-check, --clean-stale, --crf, --scale, --seed, --offline, --timeout and --settle. Seek-mode pages expose window.__kosif = {duration, seek(t)} and an optional window.__kosifReady promise.",
+      "outputs": "An H.264 yuv420p MP4 with +faststart (audio stream-copied when MP4 can hold it, otherwise AAC 320k), or a contact-sheet PNG named <out-basename>_preview.png in preview mode, or with --stills the folder <out-basename>_stills/ (or --stills-dir) holding still_<t>.png per time, stills_grid.png and stills.json, with no video. It prints a 'disk:' line (estimated frame bytes and free space), progress, a 'VERIFY OK|FAIL duration= fps= frames= size= audio= audio_md5= file=' line (audio_md5 is match, differs (src N packets, out M packets), reencoded, none or unknown (reason); differs adds an 'AUDIO NOT BYTE-IDENTICAL TO THE SOURCE' block on stderr) and up to 10 page console errors; stale kosif-frames-* folders are listed on stderr. --report writes the same as JSON (kosif.render_html.report.v1, or the stills manifest kosif.render_html.stills.v1). Temporary frames are deleted at the end, on errors and on SIGINT/SIGTERM/SIGHUP unless --frames-dir or --keep-frames is given.",
       "requires": {
         "python": [],
         "binaries": [
@@ -3193,12 +3237,14 @@
       },
       "safety": "network",
       "consent": "An http(s) --in URL, or a page that loads remote assets, contacts the network (the html-canvas starter loads Google Fonts); --offline blocks this. It runs the page's own scripts in headless Chromium with HTTPS errors ignored, so render only pages the user trusts. It overwrites --out, and --frames-dir deletes existing frame_NNNNNN.png and preview_raw/tile_NN.png files in that folder and writes a .kosif-user-frames marker file there. --clean-stale permanently deletes the renderer's own kosif-frames-XXXXXX temp folders that hold only frames and are older than 6 h, including ones kept earlier with --keep-frames; it never deletes a --frames-dir folder, the folder in use or a folder that holds it.",
-      "limits": "It verifies only container metrics (fps, frame count, duration, size, audio presence), not whether the visuals are right, and it installs nothing: Playwright, its Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate (1.7 bytes per pixel + 10%; very noisy frames can be larger) taken once before the first frame, and it only knows about other renders that write to this version's temp folders, not --frames-dir renders or other programs. SIGKILL and the out-of-memory killer cannot be caught, so their temp folders stay until --clean-stale removes them after 6 h; a signal that arrives during the ffmpeg encode is handled when ffmpeg returns. Without fs.statfsSync (Node older than 18.15) the space check is skipped with a warning.",
+      "limits": "It verifies only container metrics (fps, frame count, duration, size, audio presence), not whether the visuals are right, and it installs nothing: Playwright, its Chromium and ffmpeg/ffprobe must already be present. The free-space check is an estimate (1.7 bytes per pixel + 10%; very noisy frames can be larger) taken once before the first frame, and it only knows about other renders that write to this version's temp folders, not --frames-dir renders or other programs. SIGKILL and the out-of-memory killer cannot be caught, so their temp folders stay until --clean-stale removes them after 6 h; a signal that arrives during the ffmpeg encode is handled when ffmpeg returns. Without fs.statfsSync (Node older than 18.15) the space check is skipped with a warning. audio_md5 compares the first audio stream's packets only: it proves byte identity (or names what was cut or changed), not sync, loudness or that the right file was given, and a re-encoded WAV/FLAC track gets no byte proof (audio_md5=reencoded). Virtual-mode stills can only stop on the frame grid (round(t x fps)); at a tiny viewport (a 1080-wide page shrunk 10x) Chromium can rasterise scaled text slightly differently depending on the time seeked before and on machine load (2 of 6 parallel 108x192 runs differed), so such a still can differ a little from the same frame inside a full render; at 270x480 and 540x960 stills were byte-identical across 8 parallel runs.",
       "evidence": "tested-here",
-      "evidence_note": "tests/test_render_html.mjs 6/6 and tests/test_render_html_disk.mjs 11/11 passed on 2026-10-28; neither launches a browser (CLI parsing, aspect table, space estimate and verdict, stale-folder selection and --clean-stale, including a --frames-dir nested in an old kosif-frames-* folder and an earlier --frames-dir named like a temp folder, which are never deleted, signal cleanup in a child process, and the out-of-space stop through the CLI, which skips without ffmpeg and the Playwright package). Also run by hand on this checkout: a 1 s 270x480 seek render of starters/html-canvas (VERIFY OK), an 8-frame preview, SIGTERM/SIGINT/SIGHUP during real renders (exit 143/130/129, temp folder removed, no Chromium left) a second render refused while a first one was running, and --clean-stale removing a real 8 h old --keep-frames temp folder while keeping two earlier --frames-dir folders (kosif-frames-final, kosif-frames-final1) and a nested one. CI has no Playwright, so CI never renders.",
+      "evidence_note": "On 2026-10-29: tests/test_render_html.mjs 6/6, tests/test_render_html_disk.mjs 11/11, tests/test_render_html_audio.mjs 16/16 and tests/test_render_html_stills.mjs 8/8 passed here (41/41). Without a browser: CLI parsing, aspect table, disk guard (space estimate and verdict, stale-folder selection, --clean-stale, signal cleanup, the out-of-space stop), --stills time parsing and usage errors, grid layout and built-in labels, and the audio proof on real ffmpeg encodes of synthetic frames and tones: a shorter AAC voice gives match, a longer one differs with every kept packet identical, --start gives a contiguous run, a -shortest re-mux and an AAC re-encode are caught, raw ADTS .aac and MP3 match, WAV says reencoded, an unreadable file gives unknown. With Playwright Chromium (skipped without it): a real 0.5 s render prints audio_md5 in VERIFY and --report, and a real --stills run writes the stills, grid and stills.json and repeats byte for byte. Also run by hand: 1 s 270x480 renders of starters/html-canvas with a 1.5 s and a 0.8 s AAC voice (differs: 48 of 72 packets kept identical; match), seek and virtual stills, an 8-frame --preview, and 8 parallel --stills runs at 270x480 (byte-identical). CI has ffmpeg but no Playwright, so CI runs every test except the two Chromium ones.",
       "tests": [
         "tests/test_render_html.mjs",
-        "tests/test_render_html_disk.mjs"
+        "tests/test_render_html_disk.mjs",
+        "tests/test_render_html_audio.mjs",
+        "tests/test_render_html_stills.mjs"
       ],
       "docs": [
         "tools/render_html.md",
@@ -11708,7 +11754,7 @@
         "formats-platforms"
       ],
       "evidence": "tested-here",
-      "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). evals/test_transcribe_recover.py 19/19 OK here (stub whisper model, no download or network; 9 skip without numpy, 1 without PyAV); it caught all 23 code mutations tried. Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning. Real model on 29-10 (medium, int8, --local-only): a 63 s recitation whose two verses the silence filter dropped → 49 words, 35 recovered, kept words untouched, two runs byte-identical, a third up to date in 0.05 s; a 60 s sung track → default 62 words with vad_gaps 3 (21.1 s, the lines VAD cut), --no-vad 78 words and nothing dropped (the 24-10 --no-vad run with previous-text conditioning kept 30 and dropped 15 lyric lines); without VAD medium wrote «اشتركوا في القناة» over digital silence and pink noise, which the recovery rejects.",
+      "evidence_note": "evals/test_montage_pro.py 25/25 OK here (transcribe tests use the KOSIF_TRANSCRIBE_FAKE hook; 9 skip without ffmpeg, 5 of them transcribe tests). evals/test_transcribe_recover.py 20/20 OK here (stub whisper model, no download or network; 9 skip without numpy, 1 without PyAV); it caught all 23 code mutations tried. Real model on 22-10: jobs/20261022-tiktok-reel/source/audio.m4a → 34 words, 2 phrases, three runs byte-identical; silence and a 220 Hz tone → 0 words with a warning. Real model on 29-10 (medium, int8, --local-only): a 63 s recitation whose two verses the silence filter dropped → 49 words, 35 recovered, kept words untouched, two runs byte-identical, a third up to date in 0.05 s; a 60 s sung track → default 62 words with vad_gaps 3 (21.1 s, the lines VAD cut), --no-vad 78 words and nothing dropped (the 24-10 --no-vad run with previous-text conditioning kept 30 and dropped 15 lyric lines); without VAD medium wrote «اشتركوا في القناة» over digital silence and pink noise, which the recovery rejects.",
       "power_id": "TOOL-130"
     },
     {
@@ -16511,18 +16557,21 @@
       "area": "think",
       "title_en": "Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict",
       "title_ar": "مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد",
-      "summary_en": "Runs USIP v5.8's mandatory council (A38 §7) without calling a model. gate sets the depth for every L1+ request (LIGHT at L1, STANDARD at L2, FULL at L3 or for money, publishing, personal data, architecture or irreversible steps, or on request) and never skips; frame derives the decision from the brief's plans A/B/C, gives at most four context files and splits inputs into evidence and named unknowns (REA's pattern), and gives the Outsider no context; ingest rejects an advisor answer with no evidence and no named unknown and records the plan it backs; review catches duplicate voices (word-set Jaccard > 0.6), detects a 4-of-5 consensus and writes anonymised reviewer prompts with a shuffled, per-question letter map; chair de-anonymises; verdict checks the five headings, a plan letter, no hedging and one first step, and records CHANGED or NO_DELTA against the brief; stats measures depth mix, receipts and how often the council changed the plan.",
-      "summary_ar": "ينفذ مجلس الخمسة الإلزامي بلا نداء نموذج: gate يحدد العمق لكل طلب L1+ ولا يتخطاه، وframe يشتق القرار من الخطط ويقسم المدخلات إلى أدلة ومجهولات والغريب بلا سياق، وreview يكشف الأصوات المكررة والإجماع ويخفي الأسماء، وverdict يفحص العناوين الخمسة وحرف الخطة والخطوة الواحدة ويسجل هل غيّر الحكم الخطة، وstats يقيس نفع المجلس.",
+      "summary_en": "Runs USIP v5.8's mandatory council (A38 §7) without calling a model. gate sets the depth for every L1+ request (LIGHT at L1, STANDARD at L2, FULL at L3 or for money, publishing, personal data, architecture or irreversible steps, or on request) and never skips; frame derives the decision from the brief's plans A/B/C, puts the user's hard rules (--constraints, e.g. «لا ترجمة للآيات») never truncated in their own section «Hard constraints / قيود ملزمة» right after the question in every prompt (the five advisors, the Outsider's bare prompt, the reviewers, the chairman and LIGHT), gives at most four context files and lists whatever that cap drops in dropped_context with a stderr warning when the user's own --context items are cut, splits inputs into evidence and named unknowns (REA's pattern), and gives the Outsider no context; ingest rejects an advisor answer with no evidence and no named unknown and records the plan it backs; review catches duplicate voices (word-set Jaccard > 0.6), detects a 4-of-5 consensus and writes anonymised reviewer prompts with a shuffled, per-question letter map; chair de-anonymises; verdict checks the five headings, a plan letter, no hedging and one first step, and records CHANGED or NO_DELTA against the brief; stats measures depth mix, receipts and how often the council changed the plan.",
+      "summary_ar": "ينفذ مجلس الخمسة الإلزامي بلا نداء نموذج: gate يحدد العمق لكل طلب L1+ ولا يتخطاه، وframe يشتق القرار من الخطط ويضع قيود المستخدم الملزمة (--constraints) كاملة بلا اقتطاع بعد السؤال مباشرة في كل مطالبة حتى مطالبة الغريب والمراجعين والرئيس، ويبلّغ عن ملفات السياق التي سقطت بالحد الأقصى (dropped_context وتحذير)، ويقسم المدخلات إلى أدلة ومجهولات والغريب بلا سياق، وreview يكشف الأصوات المكررة والإجماع ويخفي الأسماء، وverdict يفحص العناوين الخمسة وحرف الخطة والخطوة الواحدة ويسجل هل غيّر الحكم الخطة، وstats يقيس نفع المجلس.",
       "use_when": [
         "اعرض القرار ده على المجلس",
         "council this",
         "مجلس كامل على الخطة دي",
         "pressure-test this decision",
-        "أي خطة أحسن: A ولا B ولا C؟"
+        "أي خطة أحسن: A ولا B ولا C؟",
+        "اعرضها على المجلس بشرط: لا ترجمة للآيات"
       ],
       "keywords": [
         "council",
         "llm council",
+        "hard constraints",
+        "قيود ملزمة",
         "karpathy",
         "advisors",
         "peer review",
@@ -16550,8 +16599,8 @@
         },
         {
           "name": "frame",
-          "example": "python3 scripts/llm_council.py frame \"<question>\" --dir out/<work>/council5 --from-brief out/<work>/brief.json --unknowns \"budget\"",
-          "does": "Derived question, evidence/unknowns, five advisor prompts."
+          "example": "python3 scripts/llm_council.py frame \"<question>\" --dir out/<work>/council5 --from-brief out/<work>/brief.json --constraints \"لا ترجمة للآيات\" --unknowns \"budget\"",
+          "does": "Derived question, hard constraints right after it in every prompt (never truncated), evidence/unknowns, five advisor prompts; JSON lists dropped_context."
         },
         {
           "name": "review",
@@ -16580,9 +16629,10 @@
       },
       "safety": "read-only",
       "consent": "Writes only inside the given --dir; never calls a model or the network.",
-      "limits": "The voices are thinking styles run by Claude, not different models; LIGHT and SIMULATED receipts are not a run of agents. The checks test form and grounding words, not the quality of the reasoning; the user's explicit plan choice outranks the verdict.",
+      "limits": "The voices are thinking styles run by Claude, not different models; LIGHT and SIMULATED receipts are not a run of agents. The checks test form and grounding words, not the quality of the reasoning; the user's explicit plan choice outranks the verdict. --constraints puts the rules in every prompt but nothing checks that an answer or the verdict obeys them; a rule typed as --context instead is still capped at four items (it is only reported).",
       "tests": [
-        ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py"
+        ".claude/skills/kosif-superpowers/evals/test_v58_mastery.py",
+        ".claude/skills/kosif-superpowers/evals/test_llm_council.py"
       ],
       "docs": [
         ".claude/skills/kosif-superpowers/references/protocol/A38-v58-thinking-books-github-pulse.md",
@@ -16594,7 +16644,7 @@
         "planning-execution"
       ],
       "evidence": "tested-here",
-      "evidence_note": "--self-test and evals/test_v58_mastery.py passed on 2026-10-26; the first real run (five advisor and five reviewer subagents, COUNCIL5_RUN) is in docs/protocol/council-20261026-smart-council.md."
+      "evidence_note": "--self-test and evals/test_v58_mastery.py passed on 2026-10-26; --constraints, dropped_context and the stderr warning: --self-test and evals/test_llm_council.py passed on 2026-10-29; the first real run (five advisor and five reviewer subagents, COUNCIL5_RUN) is in docs/protocol/council-20261026-smart-council.md."
     },
     {
       "id": "superskills-bridge",
@@ -17342,8 +17392,8 @@
       "area": "sources",
       "title_en": "Free footage: open-licence video sources with search, download and credits",
       "title_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
-      "summary_en": "Keeps a checked database of 17 free and open-licence video sources (data/free_footage_sources.json: licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size, measured reachability, with Pinterest marked not a licence source). It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.",
-      "summary_ar": "قاعدة بيانات مفحوصة لـ17 موقع فيديو مجاني ومفتوح الترخيص (الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوة كل موقع، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر)، وفيها Pinterest متعلَّم عليه إنه مش مصدر ترخيص. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.",
+      "summary_en": "Keeps a checked database of 17 video sources: 15 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.",
+      "summary_ar": "قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.",
       "use_when": [
         "اجمع لي فيديوهات مفتوحة المصدر للمونتاج عن البحر والمدينة بالليل",
         "عايز لقطات مجانية من غير حقوق لفيديو تيك توك طولي",
@@ -17466,7 +17516,121 @@
         "photo-video-footage",
         "video-download",
         "web-research"
-      ]
+      ],
+      "power_id": "TOOL-177"
+    },
+    {
+      "id": "quran-text",
+      "path": "scripts/quran_text.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "Quran text and timing: exact verses, measured pauses, verse and word timing for reels",
+      "title_ar": "نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز",
+      "summary_en": "Gives a Quran reel its exact verse text and its timing. fetch takes references such as 51:22-23 and reads each ayah from api.alquran.cloud (Tanzil quran-simple or quran-uthmani), with a User-Agent, a timeout, a polite delay, retries and a JSON cache. It keeps the text byte for byte (no Unicode normalisation), removes the basmala prefix the API adds to ayah 1, and joins stand-alone waqf marks to their word. It writes verses.json: per ayah the text, words, sha256, the ayah number in Arabic-Indic digits, the url and the fetch time. Translation stays off unless the public-domain en.pickthall is asked for. pauses measures the breaths as 50 ms RMS frames below peak - 22 dB, and where the voice ends before the reverb tail. Its automatic threshold is used only for a reverberant recording whose frame levels form two classes, never for a wasl recitation without breaths. align maps every canonical word to the speech model's words with an edit-distance alignment that survives merges, splits, misses, mis-hearings and spelled-out opening letters (الم said as ألف لام ميم), and fills in the rest by letter count. Given the audio, it also snaps verse boundaries to the measured pauses, so no word crosses one. It keeps the isti'adha and «صدق الله العظيم» out of the verses and gives every voiced stretch of a verse a word. It moves the start of a long word to the onset after a clear consonant dip.",
+      "summary_ar": "بيدّي ريل القرآن نص الآيات بالضبط وتوقيتها. fetch بياخد مراجع زي 51:22-23 ويجيب كل آية من api.alquran.cloud (نص تنزيل المبسّط أو العثماني) بهوية واضحة ومهلة وانتظار بين الطلبات وإعادة محاولة وكاش، ويحفظ النص حرف بحرف من غير ما يغيّر ترتيب التشكيل، ويشيل البسملة اللي الموقع بيلزقها في أول آية، ويلزق علامات الوقف بكلمتها، ويكتب verses.json فيه النص والكلمات وبصمة sha256 ورقم الآية بالأرقام العربية والرابط ووقت التحميل. والترجمة مقفولة إلا لو طلبت ترجمة بيكتال (ملك عام). pauses بيقيس الأنفاس بـRMS كل 50 ملّي ثانية تحت الذروة بـ22 ديسيبل، وبيقيس فين الصوت بيخلص قبل ذيل الصدى. والعتبة التلقائية بتشتغل بس في التسجيل اللي فيه صدى ومستويات إطاراته فئتين، ومش بتشتغل أبدًا في تلاوة موصولة من غير نفَس. align بيطابق كل كلمة من النص الصحيح مع كلمات ويسبر حتى لو دمج كلمتين أو قسم كلمة أو نسي كلمات أو سمعها غلط، وحتى الحروف المقطعة المنطوقة (الم = ألف لام ميم)، ويوزّع الباقي حسب عدد الحروف. ولو اديته الصوت، بيثبّت حدود الآيات على الوقفات المقاسة ومفيش كلمة تعدّي وقفة، وبيطلّع الاستعاذة و«صدق الله العظيم» برّه الآيات، ومفيش جزء مسموع من الآية يفضل من غير كلمة، وبيحرّك بداية الكلمة الطويلة لأول الصوت بعد هبوط واضح في الحرف.",
+      "use_when": [
+        "هات نص الآيات 51:22-23 بالتشكيل من مصدر موثوق للريل",
+        "اعمل توقيت كل كلمة في التلاوة دي على نص الآية الصحيح",
+        "ويسبر كتب كلمة غلط ونسي جزء من الآية، ظبّط التوقيت",
+        "فين الأنفاس بين الآيات في التلاوة دي؟",
+        "Get the exact text of An-Najm 53:39-41 for a Quran reel",
+        "Time every word of this recitation against the real verse text",
+        "Whisper dropped words in this Quran recitation, fix the word timing"
+      ],
+      "keywords": [
+        "quran",
+        "koran",
+        "ayah",
+        "verse",
+        "surah",
+        "recitation",
+        "tilawa",
+        "alquran.cloud",
+        "tanzil",
+        "uthmani",
+        "word timing",
+        "verse timing",
+        "alignment",
+        "pauses",
+        "breath",
+        "whisper",
+        "karaoke",
+        "pickthall",
+        "قرآن",
+        "القرآن",
+        "آية",
+        "آيات",
+        "سورة",
+        "تلاوة",
+        "تشكيل",
+        "توقيت الكلمات",
+        "توقيت الآيات",
+        "وقفات",
+        "نفس",
+        "ريلز قرآن",
+        "عثماني"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/quran_text.py doctor",
+          "does": "Offline: whether ffmpeg and numpy are present and which commands can run here."
+        },
+        {
+          "name": "fetch",
+          "example": "python3 scripts/quran_text.py fetch 51:22-23 53:39-41 --out out/quran/job",
+          "does": "Network: one GET per ayah to api.alquran.cloud (User-Agent, 20 s timeout, 0.5 s between calls, retries on 429 and 5xx, a JSON cache in OUT/cache). It writes verses.json and verses.txt with the text byte for byte. --translation en.pickthall adds the public-domain Pickthall text, and any other translation is refused (exit 1). --offline uses only the cache (exit 3 for a missing verse), and --keep-basmala keeps the prefix the API adds to ayah 1."
+        },
+        {
+          "name": "pauses",
+          "example": "python3 scripts/quran_text.py pauses voice.m4a --json --out out/quran/job/pauses.json",
+          "does": "Offline: ffmpeg decodes to 16 kHz mono float32 (a PCM .wav also works without ffmpeg). It measures 50 ms RMS frames and reports the pauses below peak + --rel-db (default -22) that last at least --min (0.30 s), labelled lead, gap or tail, and voice_end (where the level falls 8 dB under the final voice level). --rel-db auto uses the Otsu split only when -22 dB finds no pause and the frame levels form two classes (a noisy or reverberant recording); otherwise it keeps -22 dB and says why. When -22 finds nothing, a hint tells a reverberant recording from a wasl recitation."
+        },
+        {
+          "name": "align",
+          "example": "python3 scripts/quran_text.py align --verses out/quran/job/verses.json --words out/quran/job/words.json --audio voice.m4a --out out/quran/job/timing.json",
+          "does": "Offline: a DP edit-distance alignment of the canonical words to the recogniser's words (merges, splits, misses, extra words, spelled-out opening letters), then letter-count interpolation. Verse boundaries snap to the measured pauses, and no word crosses a pause. Speech before or after the verses (after a pause, a known formula, or far more letters than the missing words) stays outside them. Every voiced stretch of a verse holds a word, a start pulled back far to a pause is reported (and re-shared by letters when it leaves the word implausibly slow), and the start of a long word moves to the onset after a clear dip (--no-dip-snap keeps whisper's). The passage ends at the measured voice end. It writes timing.json, where every word has its exact canonical text, start, end, source matched|interpolated, how, and any snap, dip, moved or reshared mark; stats list the unmatched recognised words, the outside speech, each boundary, the stretched and dip-snapped words, the ignored soft pauses and the warnings."
+        },
+        {
+          "name": "norm",
+          "example": "python3 scripts/quran_text.py norm \"وَأَنَّ سَعْيَهُ سَوْفَ يُرَىٰ\"",
+          "does": "Offline: prints the matching key (tashkeel and Quranic marks removed; alef forms, alef maqsura and ta marbuta unified)."
+        }
+      ],
+      "safe_commands": [
+        "doctor",
+        "norm"
+      ],
+      "inputs": "Verse references (surah:ayah or surah:first-last; Arabic-Indic digits work), a recitation (m4a, mp3, mp4 or wav) for pauses and align --audio, and words.json for align (kosif-words/1 from montage_pro.py transcribe, {\"words\": [...]}, a bare list or whisper segments).",
+      "outputs": "verses.json (kosif.quran-verses.v1: per ayah surah, ayah, ayah_ar, text, words, sha256, edition, url, fetched, plus the Tanzil credit and licence; a translation only on request), verses.txt and OUT/cache/<edition>/<sss>_<aaa>.json; a pauses report (kosif.quran-pauses.v1); timing.json (kosif.quran-timing.v1: verses [{n, start, end, words [{text, start, end, source, how, snap?, dip?, moved?, reshared?}]}], pauses, the speech span, voice_end, and stats with matched, interpolated, merged, split, spelled, demoted, unmatched recognised words, outside_speech, boundaries, stretched, dip_snapped, ignored_pauses and warnings).",
+      "requires": {
+        "python": [],
+        "binaries": [],
+        "node": [],
+        "optional": [
+          "bin:ffmpeg",
+          "pip:numpy"
+        ],
+        "network": true
+      },
+      "safety": "network",
+      "consent": "fetch sends one HTTPS GET per ayah to api.alquran.cloud, with no account, cookie or key, and writes only into --out and --cache. Keep the Tanzil credit and never alter the text. A translation other than the public-domain Pickthall is refused, so ask the user for a licence instead. The recitation audio stays local and is never uploaded.",
+      "limits": "fetch needs api.alquran.cloud or a filled cache, and accepts only quran-simple and quran-uthmani (Tanzil) and en.pickthall. Pauses come from loudness alone: breath noise, reverb or music above the threshold hide a pause. --rel-db auto finds those only when the frame levels form two classes; a wasl recitation (verses joined without a breath) keeps -22 dB, and its verse cut comes from the word timing, with a warning. Interpolated words are placed by letter count, not by listening; inside a long dropped span they can be off by a second or more, so check them at the preview. The dip refinement uses loudness alone too: on Adh-Dhariyat it moved «السَّمَاءِ» (v23) from 16.0 to 14.07 s and «رِزْقُكُمْ» from 2.38 to 3.13 s (heard at 14.1-14.2 and about 2.95). It left «أَنَّكُمْ» at whisper's 26.34 s, heard at 28.40 s after the madd of «مَا», and «تُوعَدُونَ» at 5.64 s (heard at 5.32). When a reciter repeats a phrase, one occurrence is aligned and the repeat is listed under unmatched_recognised. No forced-alignment model is used, so the timing is only as good as the matched words and the measured pauses.",
+      "evidence": "tested-here",
+      "evidence_note": "2026-10-29: evals/test_quran_text.py passed 40/40 on this checkout, fully offline (the proxy was pointed at a dead port). The tests use alquran.cloud answers captured once, a fake opener (cache, delay, Retry-After, 404, wrong verse, refused translations, a body cut off mid-transfer), synthetic numpy audio for the pauses, the auto threshold (reverberant, wasl, deep breaths), the voice end and the dip refinement, and words with merges, splits, misses, a mis-hearing, an isti'adha (with and without a pause), «صدق الله العظيم», spelled-out «الم», a wasl join, an empty voiced stretch and a late start after a breath. Each of the 12 new tests failed on the previous version of the script. Live re-runs of the fixes on the real recordings: auto on the uncut Adh-Dhariyat now keeps -22 dB (it had called the doubled س at 13.50-14.10 a pause), and the wasl cut of it keeps -22 dB with the verse cut at 11.30 s (the voice resumes at 11.35; before, 15 false pauses). The no-VAD align puts «فَوَرَبِّ» at 12.50 and «السَّمَاءِ» at 14.07 (the hand draft 12.45 and 14.1), and ends the passage at 35.50 s, not 35.97. An-Najm is unchanged, with no word moved. Live runs in the requesting session gave these results. fetch 51:22-23 and 53:39-41 returned texts byte-identical to the two hand-copied verses.txt. pauses on the Adh-Dhariyat recitation gave 11.35-12.50 and 23.30-23.75, as measured by hand. On An-Najm, an old reverberant recording, -22 dB found no pause, and auto (-11.5 dB) found 6.00-6.85 and 11.15-12.00. align of the real faster-whisper words on An-Najm matched the hand timing.json within 0.05 s on every verse edge and word start. On the Adh-Dhariyat VAD run (7 of 14 words, «يقول» for «أنكم تنطقون») it placed all 14 words in order across both pauses: their starts were within 0.4 s of the no-VAD run, except inside the dropped four-word span, where they were off by up to 1.5 s.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_quran_text.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/guides/edit.md"
+      ],
+      "families": [
+        "audio-sync-captions",
+        "arabic-language",
+        "typography-arabic"
+      ],
+      "power_id": "TOOL-178"
     }
   ]
 }

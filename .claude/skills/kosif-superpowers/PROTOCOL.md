@@ -56,7 +56,7 @@
 | [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج | جديد | تخطيط فقط |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | جديد | `prompt_pack.py` |
 | [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow | 64 خطة ببوابات | `business_workflows.py` |
-| [A19 دروس المونتاج الميدانية](references/protocol/A19-field-lessons-montage.md) | مونتاج أو موشن من رابط أو صوت مرفوع | الدروس الاثنا عشر | `stock_fetch.py`، `render_html.cjs` |
+| [A19 دروس المونتاج الميدانية](references/protocol/A19-field-lessons-montage.md) | مونتاج أو موشن من رابط أو صوت مرفوع | الدروس 1-14 | `stock_fetch.py`، `render_html.cjs`، `quran_text.py`، `verify_video.py --source-audio` |
 | [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة | 45 منهجًا | `book_methods.py` |
 | [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال | جديد؛ موجّه مواد التفكير | `think.py modes/bayes/gate/audit` |
 | [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض | جديد؛ يفصّل المرحلة 1 | `think.py intake` |
@@ -510,7 +510,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## دروس ميدانية — مشاريع المونتاج والموشن (أكتوبر 2026)
 
-نُقلت الدروس الاثنا عشر (الاستلام من الرابط، التفريغ، الآيات بنصها، اللقطات المجانية، الصوت بنسخ التيار، التحقق قبل التسليم…) كما هي إلى [A19](references/protocol/A19-field-lessons-montage.md) في v5.4، وما زالت تلزم كل مشروع مونتاج أو موشن من رابط فيديو.
+نُقلت الدروس الاثنا عشر (الاستلام من الرابط، التفريغ، الآيات بنصها، اللقطات المجانية، الصوت بنسخ التيار، التحقق قبل التسليم…) كما هي إلى [A19](references/protocol/A19-field-lessons-montage.md) في v5.4، وما زالت تلزم كل مشروع مونتاج أو موشن من رابط فيديو. ومنذ 29-10: 13 (ماستر بلا `-shortest`، MD5) و14 (التلاوة).
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 

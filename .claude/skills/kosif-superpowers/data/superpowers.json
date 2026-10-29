@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5854,
-"distinct_methods": 5573,
+"atoms": 5856,
+"distinct_methods": 5575,
 "twin_groups": 177,
 "superpowers": 481,
 "per_target": 12,
@@ -385,7 +385,7 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.23
 },
 {
@@ -2151,7 +2151,7 @@
 "sim": 0.245
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.14
 }
 ]
@@ -3171,7 +3171,7 @@
 "distinct_methods": 24,
 "links": [
 {
-"id": "SP-0147",
+"id": "SP-0146",
 "sim": 0.118
 },
 {
@@ -3762,7 +3762,7 @@
 "distinct_methods": 10,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.221
 },
 {
@@ -3770,12 +3770,12 @@
 "sim": 0.197
 },
 {
-"id": "SP-0146",
-"sim": 0.133
-},
-{
 "id": "SP-0233",
 "sim": 0.128
+},
+{
+"id": "SP-0143",
+"sim": 0.117
 }
 ]
 },
@@ -4423,7 +4423,7 @@
 "sim": 0.262
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.194
 },
 {
@@ -4674,7 +4674,7 @@
 "sim": 0.484
 },
 {
-"id": "SP-0147",
+"id": "SP-0146",
 "sim": 0.353
 },
 {
@@ -4758,8 +4758,8 @@
 "sim": 0.349
 },
 {
-"id": "SP-0146",
-"sim": 0.235
+"id": "SP-0143",
+"sim": 0.228
 }
 ]
 },
@@ -5019,7 +5019,7 @@
 "sim": 0.079
 },
 {
-"id": "SP-0147",
+"id": "SP-0146",
 "sim": 0.075
 }
 ]
@@ -5221,7 +5221,7 @@
 "sim": 0.134
 },
 {
-"id": "SP-0147",
+"id": "SP-0146",
 "sim": 0.107
 },
 {
@@ -9134,7 +9134,7 @@
 "sim": 0.113
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.098
 }
 ]
@@ -9227,7 +9227,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.247
 },
 {
@@ -14840,8 +14840,8 @@
 "distinct_methods": 14,
 "links": [
 {
-"id": "SP-0145",
-"sim": 0.158
+"id": "SP-0147",
+"sim": 0.169
 },
 {
 "id": "SP-0293",
@@ -16469,7 +16469,7 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.092
 },
 {
@@ -16569,8 +16569,8 @@
 "sim": 0.101
 },
 {
-"id": "SP-0146",
-"sim": 0.091
+"id": "SP-0143",
+"sim": 0.093
 }
 ]
 },
@@ -16638,7 +16638,7 @@
 "distinct_methods": 4,
 "links": [
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.735
 },
 {
@@ -16709,8 +16709,8 @@
 "sim": 0.09
 },
 {
-"id": "SP-0142",
-"sim": 0.083
+"id": "SP-0140",
+"sim": 0.084
 }
 ]
 },
@@ -16856,8 +16856,8 @@
 "sim": 0.134
 },
 {
-"id": "SP-0140",
-"sim": 0.111
+"id": "SP-0141",
+"sim": 0.107
 }
 ]
 },
@@ -17690,15 +17690,15 @@
 "capability",
 "kosif"
 ],
-"size": 33,
+"size": 32,
 "best": "proven",
 "status_mix": {
-"proven": 25,
+"proven": 24,
 "ready": 8
 },
-"ready_now": 33,
+"ready_now": 32,
 "families": {
-"runnable-tools": 33
+"runnable-tools": 32
 },
 "atlas_folded": 0,
 "requires": [
@@ -17815,16 +17815,10 @@
 "name_ar": "دمج القدرات في قدرات خارقة مترابطة"
 },
 {
-"id": "TOOL-06",
+"id": "TOOL-129",
 "status": "proven",
-"name_en": "KOSIF catalog MCP server",
-"name_ar": "خادم MCP لكتالوج KOSIF"
-},
-{
-"id": "TOOL-05",
-"status": "proven",
-"name_en": "KOSIF hub (front door)",
-"name_ar": "بوابة KOSIF الموحّدة"
+"name_en": "Group map with superpowers, scripts and install plans",
+"name_ar": "خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت"
 },
 {
 "id": "TOOL-72",
@@ -17833,10 +17827,10 @@
 "name_ar": "مخطط متطلبات القدرات"
 },
 {
-"id": "TOOL-129",
+"id": "TOOL-05",
 "status": "proven",
-"name_en": "Group map with superpowers, scripts and install plans",
-"name_ar": "خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت"
+"name_en": "KOSIF hub (front door)",
+"name_ar": "بوابة KOSIF الموحّدة"
 },
 {
 "id": "TOOL-54",
@@ -17881,16 +17875,16 @@
 "name_ar": "مناهج الأطلس المراجَعة"
 },
 {
-"id": "TOOL-113",
-"status": "ready",
-"name_en": "Atlas verified method transfer",
-"name_ar": "نقل مناهج الأطلس المثبتة"
-},
-{
 "id": "TOOL-110",
 "status": "ready",
 "name_en": "Atlas review summary",
 "name_ar": "ملخص مراجعة الأطلس"
+},
+{
+"id": "TOOL-113",
+"status": "ready",
+"name_en": "Atlas verified method transfer",
+"name_ar": "نقل مناهج الأطلس المثبتة"
 },
 {
 "id": "TOOL-109",
@@ -17925,33 +17919,214 @@
 [
 "TOOL-104",
 "TOOL-111",
-"TOOL-113",
 "TOOL-110",
+"TOOL-113",
 "TOOL-109"
 ]
 ],
-"distinct_methods": 28,
+"distinct_methods": 27,
 "links": [
 {
 "id": "SP-0347",
-"sim": 0.396
+"sim": 0.393
 },
 {
-"id": "SP-0146",
-"sim": 0.339
+"id": "SP-0143",
+"sim": 0.365
 },
 {
 "id": "SP-0027",
 "sim": 0.192
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.165
 }
 ]
 },
 {
 "id": "SP-0140",
+"domain": "build",
+"family": "runnable-tools",
+"name_ar": "فاحص توقيت الفيديو المرجعي",
+"name_en": "Reference Video Timing Probe",
+"focus": [
+"reference",
+"video",
+"editing",
+"stock"
+],
+"size": 20,
+"best": "proven",
+"status_mix": {
+"proven": 20
+},
+"ready_now": 20,
+"families": {
+"runnable-tools": 20
+},
+"atlas_folded": 0,
+"requires": [
+"ffmpeg",
+"python3",
+"npm:remotion",
+"pip:numpy",
+"pip:pillow",
+"pip:opencv",
+"chromium",
+"yt-dlp"
+],
+"pipeline": [
+{
+"id": "TOOL-21",
+"status": "proven",
+"name_en": "Reference Video Timing Probe",
+"name_ar": "فاحص توقيت الفيديو المرجعي"
+},
+{
+"id": "TOOL-22",
+"status": "proven",
+"name_en": "Reference Edit Engine",
+"name_ar": "محرك إعادة بناء المونتاج المرجعي"
+},
+{
+"id": "TOOL-23",
+"status": "proven",
+"name_en": "Reference Visual Fingerprint",
+"name_ar": "البصمة البصرية للفيديو المرجعي"
+},
+{
+"id": "TOOL-85",
+"status": "proven",
+"name_en": "KOSIF Mimic reference rebuilder",
+"name_ar": "محرك محاكاة الفيديو المرجعي"
+},
+{
+"id": "TOOL-20",
+"status": "proven",
+"name_en": "Footage-First Cut Planner",
+"name_ar": "مُخطِّط قطعات اللقطات الحقيقية"
+},
+{
+"id": "TOOL-122",
+"status": "proven",
+"name_en": "KOSIF Timeline: genuine multitrack video, image and audio editor",
+"name_ar": "محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة"
+},
+{
+"id": "TOOL-19",
+"status": "proven",
+"name_en": "Cinematic B-roll Renderer",
+"name_ar": "تصيير لقطات B-roll بحركة كاميرا"
+},
+{
+"id": "TOOL-35",
+"status": "proven",
+"name_en": "Reference-edit structural quality gate",
+"name_ar": "بوابة جودة خطة المونتاج"
+},
+{
+"id": "TOOL-123",
+"status": "proven",
+"name_en": "KOSIF Timeline one-command synthetic media demo",
+"name_ar": "تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة"
+},
+{
+"id": "TOOL-131",
+"status": "proven",
+"name_en": "Reel factory: voice + word timings + licensed shots → verified 9:16 reel",
+"name_ar": "مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص"
+},
+{
+"id": "TOOL-130",
+"status": "proven",
+"name_en": "Montage Pro task force (audio/video to montage or motion)",
+"name_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)"
+},
+{
+"id": "TOOL-24",
+"status": "proven",
+"name_en": "Video Workflow Bridge",
+"name_ar": "جسر سير عمل الفيديو"
+},
+{
+"id": "TOOL-178",
+"status": "proven",
+"name_en": "Quran text and timing: exact verses, measured pauses, verse and word timing for reels",
+"name_ar": "نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز"
+},
+{
+"id": "TOOL-132",
+"status": "proven",
+"name_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
+"name_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16"
+},
+{
+"id": "TOOL-95",
+"status": "proven",
+"name_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
+"name_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)"
+},
+{
+"id": "TOOL-177",
+"status": "proven",
+"name_en": "Free footage: open-licence video sources with search, download and credits",
+"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب"
+},
+{
+"id": "TOOL-166",
+"status": "proven",
+"name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
+"name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL"
+},
+{
+"id": "TOOL-168",
+"status": "proven",
+"name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
+"name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
+},
+{
+"id": "TOOL-175",
+"status": "proven",
+"name_en": "Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review",
+"name_ar": "معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B"
+},
+{
+"id": "TOOL-47",
+"status": "proven",
+"name_en": "Licensed stock media gateway",
+"name_ar": "بوابة الوسائط المرخّصة"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_reference_probe.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_edit_engine.py"
+],
+"twins": [],
+"distinct_methods": 20,
+"links": [
+{
+"id": "SP-0356",
+"sim": 0.333
+},
+{
+"id": "SP-0379",
+"sim": 0.288
+},
+{
+"id": "SP-0147",
+"sim": 0.194
+},
+{
+"id": "SP-0359",
+"sim": 0.18
+}
+]
+},
+{
+"id": "SP-0141",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
@@ -17965,10 +18140,10 @@
 "size": 19,
 "best": "proven",
 "status_mix": {
-"proven": 16,
-"install": 3
+"proven": 17,
+"install": 2
 },
-"ready_now": 16,
+"ready_now": 17,
 "families": {
 "runnable-tools": 19
 },
@@ -17991,28 +18166,28 @@
 "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت"
 },
 {
+"id": "TOOL-78",
+"status": "proven",
+"name_en": "HTML to MP4 renderer",
+"name_ar": "محوّل HTML إلى فيديو MP4"
+},
+{
 "id": "TOOL-14",
 "status": "proven",
 "name_en": "SVG motion engine runtime",
 "name_ar": "محرك حركة SVG"
 },
 {
-"id": "TOOL-81",
+"id": "TOOL-16",
 "status": "proven",
-"name_en": "Deterministic HTML-to-MP4 renderer",
-"name_ar": "محوّل حتمي من HTML إلى فيديو MP4"
+"name_en": "Doodle film runtime and renderer",
+"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
 },
 {
 "id": "TOOL-77",
 "status": "proven",
 "name_en": "Flexible aspect ratio resolver",
 "name_ar": "محلّل نِسَب أبعاد الفيديو"
-},
-{
-"id": "TOOL-16",
-"status": "proven",
-"name_en": "Doodle film runtime and renderer",
-"name_ar": "إنشاء فيلم سبورة مرسوم وتصييره"
 },
 {
 "id": "TOOL-79",
@@ -18027,6 +18202,12 @@
 "name_ar": "محلّل نسب العرض المرن"
 },
 {
+"id": "TOOL-81",
+"status": "proven",
+"name_en": "Deterministic HTML-to-MP4 renderer",
+"name_ar": "محوّل حتمي من HTML إلى فيديو MP4"
+},
+{
 "id": "TOOL-82",
 "status": "proven",
 "name_en": "Video delivery gate",
@@ -18037,12 +18218,6 @@
 "status": "proven",
 "name_en": "Motion Physics",
 "name_ar": "فيزياء الحركة"
-},
-{
-"id": "TOOL-64",
-"status": "proven",
-"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
-"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
 },
 {
 "id": "TOOL-18",
@@ -18057,16 +18232,16 @@
 "name_ar": "مولّد مشاريع بداية لمحركات الحركة"
 },
 {
+"id": "TOOL-64",
+"status": "proven",
+"name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
+"name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
+},
+{
 "id": "TOOL-146",
 "status": "proven",
 "name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
 "name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
-},
-{
-"id": "TOOL-174",
-"status": "proven",
-"name_en": "Background job runner and waiter (no sleep waits)",
-"name_ar": "تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep"
 },
 {
 "id": "TOOL-171",
@@ -18075,16 +18250,16 @@
 "name_ar": "محرك المصفوفات اللانهائية للأساليب السببية"
 },
 {
+"id": "TOOL-174",
+"status": "proven",
+"name_en": "Background job runner and waiter (no sleep waits)",
+"name_ar": "تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep"
+},
+{
 "id": "TOOL-150",
 "status": "proven",
 "name_en": "UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check",
 "name_ar": "إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة"
-},
-{
-"id": "TOOL-78",
-"status": "install",
-"name_en": "HTML to MP4 renderer",
-"name_ar": "محوّل HTML إلى فيديو MP4"
 },
 {
 "id": "TOOL-83",
@@ -18103,12 +18278,12 @@
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_director.py",
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_intelligence.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_director.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_engine.mjs"
+"kosif-tool/tests/test_render_html_audio.mjs"
 ],
 "twins": [
 [
-"TOOL-81",
-"TOOL-78"
+"TOOL-78",
+"TOOL-81"
 ],
 [
 "TOOL-77",
@@ -18123,15 +18298,15 @@
 "links": [
 {
 "id": "SP-0262",
-"sim": 0.28
+"sim": 0.266
 },
 {
 "id": "SP-0148",
-"sim": 0.238
+"sim": 0.262
 },
 {
 "id": "SP-0268",
-"sim": 0.225
+"sim": 0.211
 },
 {
 "id": "SP-0266",
@@ -18140,7 +18315,7 @@
 ]
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
@@ -18298,164 +18473,139 @@
 ]
 },
 {
-"id": "SP-0142",
+"id": "SP-0143",
 "domain": "build",
 "family": "runnable-tools",
-"name_ar": "محرك إعادة بناء المونتاج المرجعي",
-"name_en": "Reference Edit Engine",
+"name_ar": "تدقيق أدلة الكتالوج",
+"name_en": "Catalog Evidence Audit",
 "focus": [
-"reference",
-"video",
-"editing",
-"cut"
+"catalog",
+"creative",
+"powers",
+"power"
 ],
-"size": 16,
+"size": 12,
 "best": "proven",
 "status_mix": {
-"proven": 16
+"proven": 5,
+"ready": 5,
+"install": 2
 },
-"ready_now": 16,
+"ready_now": 10,
 "families": {
-"runnable-tools": 16
+"runnable-tools": 12
 },
 "atlas_folded": 0,
 "requires": [
-"ffmpeg",
 "python3",
-"npm:remotion",
-"pip:numpy",
-"pip:pillow",
-"pip:opencv",
-"chromium",
-"yt-dlp"
+"gh",
+"npm:rea",
+"npm:mermaid",
+"chromium"
 ],
 "pipeline": [
 {
-"id": "TOOL-22",
+"id": "TOOL-156",
 "status": "proven",
-"name_en": "Reference Edit Engine",
-"name_ar": "محرك إعادة بناء المونتاج المرجعي"
+"name_en": "Power catalog search",
+"name_ar": "البحث في كتالوج القدرات"
 },
 {
-"id": "TOOL-21",
+"id": "TOOL-06",
 "status": "proven",
-"name_en": "Reference Video Timing Probe",
-"name_ar": "فاحص توقيت الفيديو المرجعي"
+"name_en": "KOSIF catalog MCP server",
+"name_ar": "خادم MCP لكتالوج KOSIF"
 },
 {
-"id": "TOOL-85",
+"id": "TOOL-103",
 "status": "proven",
-"name_en": "KOSIF Mimic reference rebuilder",
-"name_ar": "محرك محاكاة الفيديو المرجعي"
+"name_en": "Style atlas repository validator",
+"name_ar": "فاحص سلامة أطلس الأنماط"
 },
 {
-"id": "TOOL-23",
+"id": "TOOL-70",
 "status": "proven",
-"name_en": "Reference Visual Fingerprint",
-"name_ar": "البصمة البصرية للفيديو المرجعي"
+"name_en": "Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog",
+"name_ar": "مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر"
 },
 {
-"id": "TOOL-122",
+"id": "TOOL-124",
 "status": "proven",
-"name_en": "KOSIF Timeline: genuine multitrack video, image and audio editor",
-"name_ar": "محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة"
+"name_en": "Universal Skill Intelligence Protocol engine",
+"name_ar": "محرك بروتوكول ذكاء المهارات الشامل"
 },
 {
-"id": "TOOL-20",
-"status": "proven",
-"name_en": "Footage-First Cut Planner",
-"name_ar": "مُخطِّط قطعات اللقطات الحقيقية"
+"id": "TOOL-33",
+"status": "ready",
+"name_en": "Catalog Evidence Audit",
+"name_ar": "تدقيق أدلة الكتالوج"
 },
 {
-"id": "TOOL-35",
-"status": "proven",
-"name_en": "Reference-edit structural quality gate",
-"name_ar": "بوابة جودة خطة المونتاج"
+"id": "TOOL-60",
+"status": "ready",
+"name_en": "PromptsMotion catalog sync",
+"name_ar": "مزامنة الكتالوج مع PromptsMotion"
 },
 {
-"id": "TOOL-123",
-"status": "proven",
-"name_en": "KOSIF Timeline one-command synthetic media demo",
-"name_ar": "تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة"
+"id": "TOOL-59",
+"status": "ready",
+"name_en": "Creative brief importer",
+"name_ar": "استيراد الملفات الإبداعية"
 },
 {
-"id": "TOOL-19",
-"status": "proven",
-"name_en": "Cinematic B-roll Renderer",
-"name_ar": "تصيير لقطات B-roll بحركة كاميرا"
+"id": "TOOL-58",
+"status": "ready",
+"name_en": "Proof Scope Relabeler",
+"name_ar": "إعادة تصنيف نطاق الأدلة"
 },
 {
-"id": "TOOL-130",
-"status": "proven",
-"name_en": "Montage Pro task force (audio/video to montage or motion)",
-"name_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)"
+"id": "TOOL-99",
+"status": "ready",
+"name_en": "Family Chapter Generator",
+"name_ar": "مولّد فصول العائلات"
 },
 {
-"id": "TOOL-131",
-"status": "proven",
-"name_en": "Reel factory: voice + word timings + licensed shots → verified 9:16 reel",
-"name_ar": "مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص"
+"id": "TOOL-48",
+"status": "install",
+"name_en": "Creative research catalog builder",
+"name_ar": "باني فهرس البحث الإبداعي"
 },
 {
-"id": "TOOL-24",
-"status": "proven",
-"name_en": "Video Workflow Bridge",
-"name_ar": "جسر سير عمل الفيديو"
-},
-{
-"id": "TOOL-132",
-"status": "proven",
-"name_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
-"name_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16"
-},
-{
-"id": "TOOL-166",
-"status": "proven",
-"name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
-"name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL"
-},
-{
-"id": "TOOL-168",
-"status": "proven",
-"name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
-"name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
-},
-{
-"id": "TOOL-175",
-"status": "proven",
-"name_en": "Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review",
-"name_ar": "معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B"
+"id": "TOOL-49",
+"status": "install",
+"name_en": "Rebalance creative repo catalog",
+"name_ar": "إعادة موازنة فهرس المستودعات الإبداعية"
 }
 ],
 "proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_edit_engine.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_creative_quality_gate.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_music_rhythm_engine.py"
+"kosif-tool/tests/test_superpowers.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_rea_routing.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py"
 ],
 "twins": [],
-"distinct_methods": 16,
+"distinct_methods": 12,
 "links": [
 {
-"id": "SP-0356",
-"sim": 0.348
+"id": "SP-0139",
+"sim": 0.365
 },
 {
-"id": "SP-0379",
-"sim": 0.308
+"id": "SP-0293",
+"sim": 0.317
 },
 {
-"id": "SP-0407",
-"sim": 0.176
+"id": "SP-0038",
+"sim": 0.228
 },
 {
-"id": "SP-0326",
-"sim": 0.172
+"id": "SP-0347",
+"sim": 0.227
 }
 ]
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "خريطة ترتيب المهارة",
@@ -18589,7 +18739,7 @@
 ]
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "جسر Blender الآمن",
@@ -18729,266 +18879,7 @@
 ]
 },
 {
-"id": "SP-0145",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "مستكشف مصادر المجتمع",
-"name_en": "Community source scout",
-"focus": [
-"sources",
-"references",
-"stock",
-"instagram"
-],
-"size": 12,
-"best": "proven",
-"status_mix": {
-"proven": 11,
-"install": 1
-},
-"ready_now": 11,
-"families": {
-"runnable-tools": 12
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"ffmpeg",
-"yt-dlp",
-"npm:rea",
-"pip:office",
-"key:unspecified",
-"imagemagick"
-],
-"pipeline": [
-{
-"id": "TOOL-50",
-"status": "proven",
-"name_en": "Community source scout",
-"name_ar": "مستكشف مصادر المجتمع"
-},
-{
-"id": "TOOL-46",
-"status": "proven",
-"name_en": "Creative sources offline search",
-"name_ar": "بحث المصادر الإبداعية دون اتصال"
-},
-{
-"id": "TOOL-47",
-"status": "proven",
-"name_en": "Licensed stock media gateway",
-"name_ar": "بوابة الوسائط المرخّصة"
-},
-{
-"id": "TOOL-142",
-"status": "proven",
-"name_en": "Sources index: per-work-dir index memory of the user's attachments",
-"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
-},
-{
-"id": "TOOL-95",
-"status": "proven",
-"name_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
-"name_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)"
-},
-{
-"id": "TOOL-172",
-"status": "proven",
-"name_en": "Instagram Reference Discovery → Infinite Matrices",
-"name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
-},
-{
-"id": "TOOL-160",
-"status": "proven",
-"name_en": "GitHub Top-1000 Tracker",
-"name_ar": "متابعة أشهر 1000 مستودع"
-},
-{
-"id": "TOOL-133",
-"status": "proven",
-"name_en": "DASH/HLS stream grabber for editing",
-"name_ar": "ملتقط بث DASH وHLS للمونتاج"
-},
-{
-"id": "TOOL-94",
-"status": "proven",
-"name_en": "Video link downloader for montage",
-"name_ar": "تنزيل الفيديو من الروابط للمونتاج"
-},
-{
-"id": "TOOL-173",
-"status": "proven",
-"name_en": "Instagram product video finder",
-"name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
-},
-{
-"id": "TOOL-93",
-"status": "proven",
-"name_en": "Permitted reference fetch and measure",
-"name_ar": "جلب المرجع المسموح وقياسه"
-},
-{
-"id": "TOOL-51",
-"status": "install",
-"name_en": "Cinema C iPhone downloader studio",
-"name_ar": "استوديو التنزيل Cinema C للآيفون"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_source_scout.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/source_scout.py",
-"kosif-tool/tests/test_creative_external_research.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_external_search.py"
-],
-"twins": [],
-"distinct_methods": 12,
-"links": [
-{
-"id": "SP-0476",
-"sim": 0.216
-},
-{
-"id": "SP-0359",
-"sim": 0.195
-},
-{
-"id": "SP-0142",
-"sim": 0.164
-},
-{
-"id": "SP-0115",
-"sim": 0.158
-}
-]
-},
-{
 "id": "SP-0146",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "تدقيق أدلة الكتالوج",
-"name_en": "Catalog Evidence Audit",
-"focus": [
-"catalog",
-"creative",
-"powers",
-"proof"
-],
-"size": 11,
-"best": "proven",
-"status_mix": {
-"proven": 4,
-"ready": 5,
-"install": 2
-},
-"ready_now": 9,
-"families": {
-"runnable-tools": 11
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"gh",
-"npm:rea",
-"npm:mermaid",
-"chromium"
-],
-"pipeline": [
-{
-"id": "TOOL-156",
-"status": "proven",
-"name_en": "Power catalog search",
-"name_ar": "البحث في كتالوج القدرات"
-},
-{
-"id": "TOOL-103",
-"status": "proven",
-"name_en": "Style atlas repository validator",
-"name_ar": "فاحص سلامة أطلس الأنماط"
-},
-{
-"id": "TOOL-70",
-"status": "proven",
-"name_en": "Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog",
-"name_ar": "مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر"
-},
-{
-"id": "TOOL-124",
-"status": "proven",
-"name_en": "Universal Skill Intelligence Protocol engine",
-"name_ar": "محرك بروتوكول ذكاء المهارات الشامل"
-},
-{
-"id": "TOOL-33",
-"status": "ready",
-"name_en": "Catalog Evidence Audit",
-"name_ar": "تدقيق أدلة الكتالوج"
-},
-{
-"id": "TOOL-60",
-"status": "ready",
-"name_en": "PromptsMotion catalog sync",
-"name_ar": "مزامنة الكتالوج مع PromptsMotion"
-},
-{
-"id": "TOOL-59",
-"status": "ready",
-"name_en": "Creative brief importer",
-"name_ar": "استيراد الملفات الإبداعية"
-},
-{
-"id": "TOOL-58",
-"status": "ready",
-"name_en": "Proof Scope Relabeler",
-"name_ar": "إعادة تصنيف نطاق الأدلة"
-},
-{
-"id": "TOOL-99",
-"status": "ready",
-"name_en": "Family Chapter Generator",
-"name_ar": "مولّد فصول العائلات"
-},
-{
-"id": "TOOL-49",
-"status": "install",
-"name_en": "Rebalance creative repo catalog",
-"name_ar": "إعادة موازنة فهرس المستودعات الإبداعية"
-},
-{
-"id": "TOOL-48",
-"status": "install",
-"name_en": "Creative research catalog builder",
-"name_ar": "باني فهرس البحث الإبداعي"
-}
-],
-"proof": [
-"kosif-tool/tests/test_superpowers.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_rea_routing.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_installer_triage.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/powers.py"
-],
-"twins": [],
-"distinct_methods": 11,
-"links": [
-{
-"id": "SP-0139",
-"sim": 0.339
-},
-{
-"id": "SP-0293",
-"sim": 0.312
-},
-{
-"id": "SP-0038",
-"sim": 0.235
-},
-{
-"id": "SP-0347",
-"sim": 0.22
-}
-]
-},
-{
-"id": "SP-0147",
 "domain": "build",
 "family": "runnable-tools",
 "name_ar": "مختبر البرومبت",
@@ -19104,6 +18995,126 @@
 ]
 },
 {
+"id": "SP-0147",
+"domain": "build",
+"family": "runnable-tools",
+"name_ar": "مستكشف مصادر المجتمع",
+"name_en": "Community source scout",
+"focus": [
+"sources",
+"references",
+"instagram",
+"hls"
+],
+"size": 10,
+"best": "proven",
+"status_mix": {
+"proven": 9,
+"install": 1
+},
+"ready_now": 9,
+"families": {
+"runnable-tools": 10
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"ffmpeg",
+"yt-dlp",
+"npm:rea",
+"pip:office",
+"imagemagick"
+],
+"pipeline": [
+{
+"id": "TOOL-50",
+"status": "proven",
+"name_en": "Community source scout",
+"name_ar": "مستكشف مصادر المجتمع"
+},
+{
+"id": "TOOL-46",
+"status": "proven",
+"name_en": "Creative sources offline search",
+"name_ar": "بحث المصادر الإبداعية دون اتصال"
+},
+{
+"id": "TOOL-172",
+"status": "proven",
+"name_en": "Instagram Reference Discovery → Infinite Matrices",
+"name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
+},
+{
+"id": "TOOL-142",
+"status": "proven",
+"name_en": "Sources index: per-work-dir index memory of the user's attachments",
+"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
+},
+{
+"id": "TOOL-173",
+"status": "proven",
+"name_en": "Instagram product video finder",
+"name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
+},
+{
+"id": "TOOL-94",
+"status": "proven",
+"name_en": "Video link downloader for montage",
+"name_ar": "تنزيل الفيديو من الروابط للمونتاج"
+},
+{
+"id": "TOOL-160",
+"status": "proven",
+"name_en": "GitHub Top-1000 Tracker",
+"name_ar": "متابعة أشهر 1000 مستودع"
+},
+{
+"id": "TOOL-133",
+"status": "proven",
+"name_en": "DASH/HLS stream grabber for editing",
+"name_ar": "ملتقط بث DASH وHLS للمونتاج"
+},
+{
+"id": "TOOL-93",
+"status": "proven",
+"name_en": "Permitted reference fetch and measure",
+"name_ar": "جلب المرجع المسموح وقياسه"
+},
+{
+"id": "TOOL-51",
+"status": "install",
+"name_en": "Cinema C iPhone downloader studio",
+"name_ar": "استوديو التنزيل Cinema C للآيفون"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_source_scout.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/source_scout.py",
+"kosif-tool/tests/test_creative_external_research.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/creative_external_search.py"
+],
+"twins": [],
+"distinct_methods": 10,
+"links": [
+{
+"id": "SP-0476",
+"sim": 0.22
+},
+{
+"id": "SP-0140",
+"sim": 0.194
+},
+{
+"id": "SP-0115",
+"sim": 0.169
+},
+{
+"id": "SP-0359",
+"sim": 0.16
+}
+]
+},
+{
 "id": "SP-0148",
 "domain": "build",
 "family": "runnable-tools",
@@ -19209,8 +19220,8 @@
 "sim": 0.273
 },
 {
-"id": "SP-0140",
-"sim": 0.238
+"id": "SP-0141",
+"sim": 0.262
 },
 {
 "id": "SP-0325",
@@ -19513,7 +19524,7 @@
 "distinct_methods": 6,
 "links": [
 {
-"id": "SP-0147",
+"id": "SP-0146",
 "sim": 0.203
 },
 {
@@ -19525,7 +19536,7 @@
 "sim": 0.112
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.108
 }
 ]
@@ -19602,7 +19613,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.129
+"sim": 0.128
 }
 ]
 },
@@ -21964,7 +21975,7 @@
 "distinct_methods": 23,
 "links": [
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.312
 },
 {
@@ -22108,7 +22119,7 @@
 "sim": 0.135
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.052
 }
 ]
@@ -22640,7 +22651,7 @@
 "sim": 0.484
 },
 {
-"id": "SP-0147",
+"id": "SP-0146",
 "sim": 0.303
 },
 {
@@ -23400,8 +23411,8 @@
 "sim": 0.145
 },
 {
-"id": "SP-0145",
-"sim": 0.13
+"id": "SP-0140",
+"sim": 0.105
 },
 {
 "id": "SP-0099",
@@ -23892,8 +23903,8 @@
 "sim": 0.137
 },
 {
-"id": "SP-0153",
-"sim": 0.117
+"id": "SP-0140",
+"sim": 0.133
 }
 ]
 },
@@ -25547,7 +25558,7 @@
 "sim": 0.195
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.019
 }
 ]
@@ -27493,8 +27504,8 @@
 "sim": 0.13
 },
 {
-"id": "SP-0142",
-"sim": 0.028
+"id": "SP-0130",
+"sim": 0.022
 }
 ]
 },
@@ -27604,8 +27615,8 @@
 "sim": 0.214
 },
 {
-"id": "SP-0146",
-"sim": 0.02
+"id": "SP-0140",
+"sim": 0.017
 }
 ]
 },
@@ -27832,7 +27843,7 @@
 "sim": 0.093
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.054
 }
 ]
@@ -27944,8 +27955,8 @@
 "sim": 0.223
 },
 {
-"id": "SP-0140",
-"sim": 0.121
+"id": "SP-0141",
+"sim": 0.122
 }
 ]
 },
@@ -28570,7 +28581,7 @@
 "sim": 0.095
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.042
 }
 ]
@@ -28749,8 +28760,8 @@
 "sim": 0.151
 },
 {
-"id": "SP-0145",
-"sim": 0.072
+"id": "SP-0147",
+"sim": 0.087
 }
 ]
 },
@@ -31638,8 +31649,8 @@
 "sim": 0.139
 },
 {
-"id": "SP-0142",
-"sim": 0.046
+"id": "SP-0140",
+"sim": 0.041
 }
 ]
 },
@@ -32227,7 +32238,7 @@
 "sim": 0.082
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.067
 }
 ]
@@ -32985,8 +32996,8 @@
 "sim": 0.098
 },
 {
-"id": "SP-0142",
-"sim": 0.025
+"id": "SP-0157",
+"sim": 0.024
 }
 ]
 },
@@ -33285,8 +33296,8 @@
 "sim": 0.169
 },
 {
-"id": "SP-0140",
-"sim": 0.132
+"id": "SP-0141",
+"sim": 0.133
 }
 ]
 },
@@ -34063,11 +34074,11 @@
 "distinct_methods": 18,
 "links": [
 {
-"id": "SP-0142",
-"sim": 0.141
+"id": "SP-0140",
+"sim": 0.122
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.092
 },
 {
@@ -34287,8 +34298,8 @@
 "sim": 0.364
 },
 {
-"id": "SP-0140",
-"sim": 0.28
+"id": "SP-0141",
+"sim": 0.266
 },
 {
 "id": "SP-0271",
@@ -34493,8 +34504,8 @@
 "sim": 0.316
 },
 {
-"id": "SP-0142",
-"sim": 0.159
+"id": "SP-0140",
+"sim": 0.148
 },
 {
 "id": "SP-0382",
@@ -34714,8 +34725,8 @@
 "sim": 0.188
 },
 {
-"id": "SP-0140",
-"sim": 0.118
+"id": "SP-0141",
+"sim": 0.113
 }
 ]
 },
@@ -35099,7 +35110,7 @@
 "distinct_methods": 19,
 "links": [
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.221
 },
 {
@@ -35111,7 +35122,7 @@
 "sim": 0.206
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.196
 }
 ]
@@ -35479,8 +35490,8 @@
 "sim": 0.307
 },
 {
-"id": "SP-0140",
-"sim": 0.225
+"id": "SP-0141",
+"sim": 0.211
 },
 {
 "id": "SP-0011",
@@ -35639,7 +35650,7 @@
 "sim": 0.287
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.223
 },
 {
@@ -35802,7 +35813,7 @@
 "sim": 0.303
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.141
 }
 ]
@@ -36404,11 +36415,11 @@
 "sim": 0.171
 },
 {
-"id": "SP-0154",
+"id": "SP-0141",
 "sim": 0.129
 },
 {
-"id": "SP-0140",
+"id": "SP-0154",
 "sim": 0.129
 }
 ]
@@ -36680,12 +36691,12 @@
 "sim": 0.167
 },
 {
-"id": "SP-0140",
-"sim": 0.128
-},
-{
 "id": "SP-0448",
 "sim": 0.118
+},
+{
+"id": "SP-0141",
+"sim": 0.116
 },
 {
 "id": "SP-0268",
@@ -36837,8 +36848,8 @@
 "sim": 0.102
 },
 {
-"id": "SP-0140",
-"sim": 0.067
+"id": "SP-0141",
+"sim": 0.068
 }
 ]
 },
@@ -36970,8 +36981,8 @@
 "sim": 0.169
 },
 {
-"id": "SP-0156",
-"sim": 0.118
+"id": "SP-0141",
+"sim": 0.122
 }
 ]
 },
@@ -37098,8 +37109,8 @@
 "sim": 0.143
 },
 {
-"id": "SP-0140",
-"sim": 0.139
+"id": "SP-0141",
+"sim": 0.137
 }
 ]
 },
@@ -37225,8 +37236,8 @@
 "sim": 0.096
 },
 {
-"id": "SP-0140",
-"sim": 0.047
+"id": "SP-0072",
+"sim": 0.045
 }
 ]
 },
@@ -37351,7 +37362,7 @@
 "sim": 0.117
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.085
 }
 ]
@@ -37592,8 +37603,8 @@
 "sim": 0.11
 },
 {
-"id": "SP-0140",
-"sim": 0.102
+"id": "SP-0141",
+"sim": 0.09
 }
 ]
 },
@@ -37813,8 +37824,8 @@
 "sim": 0.16
 },
 {
-"id": "SP-0140",
-"sim": 0.102
+"id": "SP-0141",
+"sim": 0.096
 }
 ]
 },
@@ -38004,8 +38015,8 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0142",
-"sim": 0.164
+"id": "SP-0140",
+"sim": 0.159
 },
 {
 "id": "SP-0382",
@@ -38295,7 +38306,7 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.178
 },
 {
@@ -38398,8 +38409,8 @@
 "sim": 0.097
 },
 {
-"id": "SP-0140",
-"sim": 0.07
+"id": "SP-0141",
+"sim": 0.066
 }
 ]
 },
@@ -38555,8 +38566,8 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0146",
-"sim": 0.312
+"id": "SP-0143",
+"sim": 0.317
 },
 {
 "id": "SP-0475",
@@ -38906,8 +38917,8 @@
 "sim": 0.072
 },
 {
-"id": "SP-0140",
-"sim": 0.031
+"id": "SP-0141",
+"sim": 0.03
 }
 ]
 },
@@ -39173,8 +39184,8 @@
 "sim": 0.148
 },
 {
-"id": "SP-0140",
-"sim": 0.131
+"id": "SP-0141",
+"sim": 0.132
 },
 {
 "id": "SP-0272",
@@ -39830,7 +39841,7 @@
 "distinct_methods": 25,
 "links": [
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.358
 },
 {
@@ -39838,11 +39849,11 @@
 "sim": 0.206
 },
 {
-"id": "SP-0345",
-"sim": 0.127
+"id": "SP-0141",
+"sim": 0.128
 },
 {
-"id": "SP-0140",
+"id": "SP-0345",
 "sim": 0.127
 }
 ]
@@ -40080,8 +40091,8 @@
 "sim": 0.09
 },
 {
-"id": "SP-0140",
-"sim": 0.062
+"id": "SP-0141",
+"sim": 0.063
 }
 ]
 },
@@ -40289,7 +40300,7 @@
 "sim": 0.135
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.088
 },
 {
@@ -40381,7 +40392,7 @@
 "sim": 0.085
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.056
 }
 ]
@@ -41355,7 +41366,7 @@
 "sim": 0.126
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.074
 }
 ]
@@ -41433,8 +41444,8 @@
 "sim": 0.187
 },
 {
-"id": "SP-0145",
-"sim": 0.05
+"id": "SP-0147",
+"sim": 0.048
 }
 ]
 },
@@ -41623,7 +41634,7 @@
 "distinct_methods": 23,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.429
 },
 {
@@ -41748,7 +41759,7 @@
 "sim": 0.209
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.154
 },
 {
@@ -42002,7 +42013,7 @@
 "sim": 0.101
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.075
 }
 ]
@@ -42097,7 +42108,7 @@
 "sim": 0.069
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.038
 }
 ]
@@ -43166,8 +43177,8 @@
 "sim": 0.445
 },
 {
-"id": "SP-0142",
-"sim": 0.172
+"id": "SP-0140",
+"sim": 0.166
 }
 ]
 },
@@ -45149,8 +45160,8 @@
 "sim": 0.29
 },
 {
-"id": "SP-0142",
-"sim": 0.057
+"id": "SP-0140",
+"sim": 0.053
 }
 ]
 },
@@ -45626,11 +45637,11 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.396
+"sim": 0.393
 },
 {
-"id": "SP-0146",
-"sim": 0.22
+"id": "SP-0143",
+"sim": 0.227
 },
 {
 "id": "SP-0293",
@@ -46868,8 +46879,8 @@
 "sim": 0.408
 },
 {
-"id": "SP-0142",
-"sim": 0.348
+"id": "SP-0140",
+"sim": 0.333
 },
 {
 "id": "SP-0263",
@@ -47060,8 +47071,8 @@
 "sim": 0.122
 },
 {
-"id": "SP-0142",
-"sim": 0.096
+"id": "SP-0140",
+"sim": 0.117
 }
 ]
 },
@@ -47300,16 +47311,16 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0145",
-"sim": 0.195
+"id": "SP-0140",
+"sim": 0.18
+},
+{
+"id": "SP-0147",
+"sim": 0.16
 },
 {
 "id": "SP-0379",
 "sim": 0.155
-},
-{
-"id": "SP-0142",
-"sim": 0.134
 },
 {
 "id": "SP-0476",
@@ -48239,8 +48250,8 @@
 "sim": 0.159
 },
 {
-"id": "SP-0140",
-"sim": 0.148
+"id": "SP-0141",
+"sim": 0.151
 }
 ]
 },
@@ -48948,8 +48959,8 @@
 "sim": 0.231
 },
 {
-"id": "SP-0140",
-"sim": 0.168
+"id": "SP-0141",
+"sim": 0.169
 }
 ]
 },
@@ -50624,8 +50635,8 @@
 "sim": 0.326
 },
 {
-"id": "SP-0142",
-"sim": 0.308
+"id": "SP-0140",
+"sim": 0.288
 },
 {
 "id": "SP-0406",
@@ -51083,7 +51094,7 @@
 "sim": 0.09
 },
 {
-"id": "SP-0145",
+"id": "SP-0348",
 "sim": 0.081
 }
 ]
@@ -52374,7 +52385,7 @@
 "sim": 0.1
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.084
 }
 ]
@@ -53768,8 +53779,8 @@
 "sim": 0.188
 },
 {
-"id": "SP-0142",
-"sim": 0.176
+"id": "SP-0140",
+"sim": 0.173
 }
 ]
 },
@@ -53903,7 +53914,7 @@
 "sim": 0.186
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.104
 }
 ]
@@ -54656,7 +54667,7 @@
 "sim": 0.14
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.055
 }
 ]
@@ -55945,8 +55956,8 @@
 "sim": 0.125
 },
 {
-"id": "SP-0142",
-"sim": 0.076
+"id": "SP-0155",
+"sim": 0.07
 }
 ]
 },
@@ -56150,8 +56161,8 @@
 "sim": 0.264
 },
 {
-"id": "SP-0142",
-"sim": 0.111
+"id": "SP-0140",
+"sim": 0.096
 }
 ]
 },
@@ -56946,7 +56957,7 @@
 "sim": 0.125
 },
 {
-"id": "SP-0141",
+"id": "SP-0142",
 "sim": 0.018
 }
 ]
@@ -57664,7 +57675,7 @@
 "sim": 0.131
 },
 {
-"id": "SP-0144",
+"id": "SP-0145",
 "sim": 0.1
 }
 ]
@@ -59174,8 +59185,8 @@
 "sim": 0.169
 },
 {
-"id": "SP-0142",
-"sim": 0.131
+"id": "SP-0140",
+"sim": 0.121
 }
 ]
 },
@@ -59297,7 +59308,7 @@
 "sim": 0.194
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.073
 }
 ]
@@ -59420,8 +59431,8 @@
 "sim": 0.283
 },
 {
-"id": "SP-0142",
-"sim": 0.162
+"id": "SP-0140",
+"sim": 0.16
 }
 ]
 },
@@ -59997,7 +60008,7 @@
 "sim": 0.092
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.036
 }
 ]
@@ -63493,8 +63504,8 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0145",
-"sim": 0.216
+"id": "SP-0147",
+"sim": 0.22
 },
 {
 "id": "SP-0359",

@@ -53,6 +53,7 @@
 | `motion-kit-bridge` | جسر توقيتات Motion Starter Kit | `python3 scripts/motion_kit_bridge.py styles` | tested-here |
 | `music-rhythm-engine` | فرضيات إيقاع الموسيقى | `python3 scripts/music_rhythm_engine.py ./out/cues.json --out ./out/rhythm.json` | tested-here |
 | `nle-export` | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات | `python3 scripts/nle_export.py export --project ./project.json --out ./nle --formats all --words ./words.json` | tested-here |
+| `quran-text` | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز | `python3 scripts/quran_text.py doctor` | tested-here |
 | `reel-factory` | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 | `reference-edit-engine` | محرك إعادة بناء المونتاج المرجعي | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./new-edit` | tested-here |
 | `repo-transcribe-audio` | تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة | `python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript.json` | tested-here |
