@@ -4,7 +4,7 @@
   "catalog_powers": 5853,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 190,
+  "tool_count": 191,
   "groups": [
     {
       "id": "research",
@@ -73460,6 +73460,7 @@
       ],
       "proof": [
         "kosif-tool/.claude/skills/kosif-superpowers/evals/test_montage_pro.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_transcribe_recover.py",
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/montage_pro.py"
       ],
       "source": "runnable-tools.json",

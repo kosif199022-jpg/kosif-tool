@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (23 أداة)
+# أدوات المجال `sources` (24 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -377,6 +377,60 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fetch-video --evidence <ملف>`.
+
+### `free-footage` — لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب / Free footage: open-licence video sources with search, download and credits
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/free_footage.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `video-download`, `web-research` |
+
+**ما تفعله:** قاعدة بيانات مفحوصة لـ17 موقع فيديو مجاني ومفتوح الترخيص (الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوة كل موقع، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر)، وفيها Pinterest متعلَّم عليه إنه مش مصدر ترخيص. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit وCoverr. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.
+
+**What it does:** Keeps a checked database of 17 free and open-licence video sources (data/free_footage_sources.json: licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size, measured reachability, with Pinterest marked not a licence source). It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice, Coverr's embedded state without premium clips). download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size) and rebuilds ATTRIBUTION.md; probe re-measures every source.
+
+#### متى تُستدعى
+
+- «اجمع لي فيديوهات مفتوحة المصدر للمونتاج عن البحر والمدينة بالليل»
+- «عايز لقطات مجانية من غير حقوق لفيديو تيك توك طولي»
+- «اعمل قاعدة مواقع فيها فيديوهات مفتوحة المصدر تساعدني في المونتاج»
+- «Find free open-licence b-roll of a city at night for my montage»
+- «Download CC0 or public-domain footage and record the licence and credit line»
+- «Which free stock video sites allow commercial use and which need attribution?»
+
+#### الأوامر
+
+- **sources**: Offline: lists the sources with recorded reachability, search mode, key variable, commercial use, credit rule and licence; --id shows one full record, --find WORD, --status, --no-attribution and --commercial filter, --json prints records.
+  - `python3 scripts/free_footage.py sources --searchable`
+- **check**: Offline: validates data/free_footage_sources.json against the rules of schemas/free_footage_sources.schema.json (required keys, enums, unique ids and names, https links, template placeholders, key variables, Pinterest-style non-licence sources); exit 1 on any problem.
+  - `python3 scripts/free_footage.py check`
+- **probe**: Network: requests each source's probe URLs (files with a byte range), one per host per --delay seconds, and writes probe-<YYYYMMDD>.json with HTTP codes, a status per source (ok, partial, needs-key, blocked, timeout, paid) and whether it changed since the database was checked.
+  - `python3 scripts/free_footage.py probe --out out/free-footage`
+- **search**: Network: Wikimedia Commons, the Internet Archive and NASA by API, Mixkit and Coverr by page, Pexels and Pixabay only when their key variables are set (otherwise reported as skipped, with no request). ND licences are dropped by default (--allow-nd keeps them for reference); --commercial drops NC, Mixkit Restricted and unconfirmed licences (it reads Mixkit clip pages to decide); --no-ai drops AI-generated clips. Prints id, size, duration, licence and credit rule, saves out/free-footage/last_search.json; one failing source never stops the others; exit 3 only when every source failed.
+  - `python3 scripts/free_footage.py search "night city" --orientation portrait --min-height 1280 --limit 6`
+- **download**: Network: a result id from the last search or a page/file link of a supported source (a Pexels link works without a key through stock_fetch.py); any other link needs --licence and --licence-url from its page. Writes <source>-<id>.<ext>, a <file>.json sidecar (licence, credit line, bytes, sha256, ffprobe size) and ATTRIBUTION.md; --max-mb 300 cap (Archive and NASA fall back to a smaller file); refuses web pages served instead of video, ND licences and Pinterest; exit 1 when any target failed.
+  - `python3 scripts/free_footage.py download wikimedia:81916645 --out out/free-footage/clips`
+- **credits**: Offline: rebuilds ATTRIBUTION.md (a table plus copy-ready credit lines) from the sidecars in the folder, for example after a clip was removed, and prints it.
+  - `python3 scripts/free_footage.py credits out/free-footage/clips`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: bin:ffprobe, env:PEXELS_API_KEY, env:PIXABAY_API_KEY
+- الأمان: network
+- الموافقة: search and probe send the query and plain requests to the listed sites, and download fetches third-party clips: confirm the user wants that. Keep each sidecar and ATTRIBUTION.md with the project and follow the licence (credit where required, no edits of ND clips, NC and Mixkit Restricted clips only in non-commercial work). Keys are read only from PEXELS_API_KEY / PIXABAY_API_KEY in the environment and are never printed or stored; never ask the user to paste a key into chat. Pinterest is never downloaded.
+- الحدود: Licences are what each source declares (Commons extmetadata, the uploader's licenseurl on the Archive, the Mixkit clip page, the Pexels, Pixabay, Coverr and NASA terms); the tool records them but cannot verify or grant rights, and Archive items are often re-uploads. The Mixkit and Coverr adapters read page markup and embedded JSON that can change without notice (that source then reports an error and the others continue). Scripts get Mixkit at 720p and Coverr's 1080p file (vertical Coverr files are upscaled to 1920 wide); Pexels and Pixabay search needs the user's keys and Pexels paused new keys; from this sandbox upload.wikimedia.org and then the Commons API answered 429. Videvo, Videezy, Vecteezy, Dareful, Mazwai, Life of Vids, ESA and Openverse are listed with their licences but not searched (no API, a login wall or 403).
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_free_footage.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:free-footage --evidence <ملف>`.
 
 ### `github-pulse` — نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها / GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken
 
