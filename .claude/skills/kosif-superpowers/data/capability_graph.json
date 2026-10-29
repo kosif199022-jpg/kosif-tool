@@ -1407,11 +1407,11 @@
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
    "count": 175,
-   "proven": 144,
+   "proven": 145,
    "status": {
-    "proven": 144,
+    "proven": 145,
     "ready": 20,
-    "install": 11
+    "install": 10
    }
   },
   {
@@ -2483,6 +2483,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_drawing_council.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_llm_council.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_llm_council.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_self_council.py",
@@ -7844,6 +7849,12 @@
   {
    "from": "script:scripts/council.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_drawing_council.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/council.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_llm_council.py",
    "rel": "tested_by",
    "w": 1
   },

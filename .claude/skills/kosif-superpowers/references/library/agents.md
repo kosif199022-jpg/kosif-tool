@@ -22,10 +22,10 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 171 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 172 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
-| `install` | 14 | 📦 install: needs a package, binary or model first |
+| `install` | 13 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
 | **المجموع** | **273** | |
 
@@ -229,6 +229,7 @@
 | `TOOL-75` | فاحص العبارات الكتابية النمطية | Writing Tell Scanner | proven | python3 |
 | `TOOL-76` | فاحص عقود التفكير والتوليف KOSIF SEE Pro | SEE Pro Cognitive Fusion contract verifier | proven | python3, network |
 | `TOOL-77` | محلّل نِسَب أبعاد الفيديو | Flexible aspect ratio resolver | proven | python3 |
+| `TOOL-78` | محوّل HTML إلى فيديو MP4 | HTML to MP4 renderer | proven | ffmpeg, node, python3, chromium |
 | `TOOL-79` | بوابة فحص تسليم الفيديو | Video delivery gate | proven | ffmpeg, python3 |
 | `TOOL-80` | محلّل نسب العرض المرن | Flexible aspect ratio resolver | proven | python3 |
 | `TOOL-81` | محوّل حتمي من HTML إلى فيديو MP4 | Deterministic HTML-to-MP4 renderer | proven | ffmpeg, python3, chromium, npm:gsap |
@@ -364,7 +365,6 @@
 | `TOOL-49` | إعادة موازنة فهرس المستودعات الإبداعية | Rebalance creative repo catalog | install | python3, gh, npm:rea |
 | `TOOL-51` | استوديو التنزيل Cinema C للآيفون | Cinema C iPhone downloader studio | install | ffmpeg, python3, yt-dlp |
 | `TOOL-53` | تحليل REA لمستودعات المالك دفعةً واحدة | REA Owned-Repo Batch | install | python3, git, npm:rea |
-| `TOOL-78` | محوّل HTML إلى فيديو MP4 | HTML to MP4 renderer | install | ffmpeg, node, python3, chromium |
 | `TOOL-83` | قالب فيلم HTML Canvas | HTML Canvas film starter | install | ffmpeg, node, python3, chromium |
 | `TOOL-84` | قالب فيلم Remotion | Remotion film starter | install | ffmpeg, python3, npm:remotion, npm:react |
 | `TOOL-87` | رندر سينمائي بـBlender Cycles | Blender Cycles cinematic renders | install | ffmpeg, blender |

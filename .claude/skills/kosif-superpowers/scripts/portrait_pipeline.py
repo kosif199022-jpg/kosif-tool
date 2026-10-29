@@ -161,8 +161,12 @@ def measure(img, models=None):
         out["engine"].append(f"mediapipe unavailable: {type(exc).__name__}: {exc}")
     if out["labels"] is None:
         out["labels"] = np.zeros((h, w), np.uint8)
-        casc = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
-        faces = [] if casc.empty() else casc.detectMultiScale(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 1.1, 5, minSize=(w // 10, w // 10))
+        faces = []
+        if hasattr(cv2, "CascadeClassifier"):  # OpenCV 5 moved the Haar cascades out of the main package
+            casc = cv2.CascadeClassifier(cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
+            faces = [] if casc.empty() else casc.detectMultiScale(cv2.cvtColor(img, cv2.COLOR_BGR2GRAY), 1.1, 5, minSize=(w // 10, w // 10))
+        else:
+            out["engine"].append("opencv.haar_face unavailable: no cv2.CascadeClassifier in this OpenCV build")
         for (x, y, fw, fh) in faces[:1]:
             cv2.ellipse(out["labels"], (x + fw // 2, y + fh // 2), (fw // 2, int(fh * 0.62)), 0, 0, 360, 3, -1)
             out["engine"].append("opencv.haar_face")

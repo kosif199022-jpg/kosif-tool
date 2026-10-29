@@ -117,6 +117,7 @@
 | `montage-pro` | TOOL-130 | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) | `python3 scripts/montage_pro.py doctor` | 2 |
 | `motion-reference-probe` | TOOL-21 | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | `python3 scripts/motion_reference_probe.py ./in.mp4` | 2 |
 | `nle-export` | TOOL-176 | تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات · NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut | `python3 scripts/nle_export.py export --project ./project.json --out .…` | 1 |
+| `quran-text` | — | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز · Quran text and timing: exact verses, measured pauses, verse and word timing for reels | `python3 scripts/quran_text.py doctor` | 1 |
 | `reel-factory` | TOOL-131 | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-righ…` | 1 |
 | `reference-edit-engine` | TOOL-22 | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine | `python3 scripts/reference_edit_engine.py --probe ./cuts.json --out ./…` | 4 |
 | `reference-visual-fingerprint` | TOOL-23 | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint | `python3 scripts/reference_visual_fingerprint.py ./in.mp4 --probe ./cu…` | 2 |
@@ -203,12 +204,12 @@
 | `motion-stack` | TOOL-17 | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder | `python3 scripts/motion_stack.py list` | 1 |
 | `motion-toolkit` | TOOL-18 | مكتبة رياضيات الحركة · Motion math toolkit | `node --input-type=module -e "import {ease, timeCode} from './resource…` | 1 |
 | `particles` | TOOL-146 | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame | `python3 scripts/particles.py burst --seed 7 --count 40 --t 0.5 --visi…` | 1 |
-| `render-html` | TOOL-78 | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer | `node resources/motion-runtime/render_html.cjs --in ./film.html --out…` | 0 |
+| `render-html` | TOOL-78 | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer | `node resources/motion-runtime/render_html.cjs --in ./film.html --out…` | 3 |
 | `repo-aspects` | TOOL-80 | محلّل نسب العرض المرن · Flexible aspect ratio resolver | `python3 -c "import sys; sys.path.insert(0,'tools'); from aspects impo…` | 1 |
 | `repo-check-frame-cover` | — | فحص تغطية الصورة للإطار · Photo frame-cover check | `node tools/check_frame_cover.cjs --in tests/fixtures/photo-cover/inde…` | 1 |
 | `repo-job-wait` | TOOL-174 | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) | `python3 tools/job.py start --dir out/20261024-film/render -- node too…` | 1 |
 | `repo-overlap-rig` | — | فاحص ريج الكاميرا المتداخلة · Overlapping camera rig checker | `python3 tools/overlap_rig.py graphs` | 1 |
-| `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 2 |
+| `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 4 |
 | `repo-verify-video` | TOOL-82 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 -…` | 2 |
 | `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 0 |
 | `starter-remotion` | TOOL-84 | قالب فيلم Remotion · Remotion film starter | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | 0 |
@@ -261,7 +262,7 @@
 | `decision-math` | TOOL-145 | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds | `echo '{"inputs":{"price":{"dist":"triangular","low":8,"mode":10,"high…` | 1 |
 | `invention-lab` | TOOL-11 | مختبر الابتكار الهندسي · Invention Lab Candidates | `python3 scripts/invention_lab.py methods` | 1 |
 | `lesson-integrity` | TOOL-167 | فاحص أرقام الدروس والشروح · Lesson number integrity checker | `python3 scripts/lesson_integrity.py values --registry values.json` | 1 |
-| `llm-council` | — | مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد · Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict | `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work…` | 1 |
+| `llm-council` | — | مجلس الخمسة الإلزامي: بوابة تحدد العمق، خمسة مستشارين متعارضين، مراجعة مجهولة، وحكم رئيس واحد · Mandatory five-member council: a gate sets the depth, five opposed advisors, anonymous peer review, one chairman verdict | `python3 scripts/llm_council.py gate --level L2 --from-brief out/<work…` | 2 |
 | `memory-ops` | TOOL-163 | عمليات الذاكرة · Memory Ops | `python3 scripts/memory_ops.py propose --store memory.json --facts fac…` | 1 |
 | `prompt-lab` | TOOL-159 | مختبر البرومبت · Prompt Lab | `python3 scripts/prompt_lab.py kinds` | 1 |
 | `see-pro-cognitive-gate` | TOOL-76 | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier | `python3 scripts/see_pro_cognitive_gate.py --self-test` | 1 |

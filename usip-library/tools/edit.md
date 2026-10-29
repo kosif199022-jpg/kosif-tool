@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (18 أداة)
+# أدوات المجال `edit` (19 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -695,6 +695,59 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:nle-export --evidence <ملف>`.
+
+### `quran-text` — نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/quran_text.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `tested-here` |
+| العائلات | `audio-sync-captions`, `arabic-language`, `typography-arabic` |
+
+**ما تفعله:** بيدّي ريل القرآن نص الآيات بالضبط وتوقيتها. fetch بياخد مراجع زي 51:22-23 ويجيب كل آية من api.alquran.cloud (نص تنزيل المبسّط أو العثماني) بهوية واضحة ومهلة وانتظار بين الطلبات وإعادة محاولة وكاش، ويحفظ النص حرف بحرف من غير ما يغيّر ترتيب التشكيل، ويشيل البسملة اللي الموقع بيلزقها في أول آية، ويلزق علامات الوقف بكلمتها، ويكتب verses.json فيه النص والكلمات وبصمة sha256 ورقم الآية بالأرقام العربية والرابط ووقت التحميل. والترجمة مقفولة إلا لو طلبت ترجمة بيكتال (ملك عام). pauses بيقيس الأنفاس بـRMS كل 50 ملّي ثانية تحت الذروة بـ22 ديسيبل، وفيه عتبة تلقائية للتسجيلات القديمة اللي فيها صدى. align بيطابق كل كلمة من النص الصحيح مع كلمات ويسبر حتى لو دمج كلمتين أو قسم كلمة أو نسي كلمات أو سمعها غلط، ويوزّع الباقي حسب عدد الحروف. ولو اديته الصوت، بيثبّت حدود الآيات على الوقفات المقاسة، ومفيش كلمة تعدّي وقفة.
+
+**What it does:** Gives a Quran reel its exact verse text and its timing. fetch takes references such as 51:22-23 and reads each ayah from api.alquran.cloud (Tanzil quran-simple or quran-uthmani), with a User-Agent, a timeout, a polite delay, retries and a JSON cache. It keeps the text byte for byte (no Unicode normalisation), removes the basmala prefix the API adds to ayah 1, and joins stand-alone waqf marks to their word. It writes verses.json: per ayah the text, words, sha256, the ayah number in Arabic-Indic digits, the url and the fetch time. Translation stays off unless the public-domain en.pickthall is asked for. pauses measures the breaths as 50 ms RMS frames below peak - 22 dB, with an automatic threshold for reverberant recordings. align maps every canonical word to the speech model's words with an edit-distance alignment that survives merges, splits, misses and mis-hearings, and fills in the rest by letter count. Given the audio, it also snaps verse boundaries to the measured pauses, so no word crosses one.
+
+#### متى تُستدعى
+
+- «هات نص الآيات 51:22-23 بالتشكيل من مصدر موثوق للريل»
+- «اعمل توقيت كل كلمة في التلاوة دي على نص الآية الصحيح»
+- «ويسبر كتب كلمة غلط ونسي جزء من الآية، ظبّط التوقيت»
+- «فين الأنفاس بين الآيات في التلاوة دي؟»
+- «Get the exact text of An-Najm 53:39-41 for a Quran reel»
+- «Time every word of this recitation against the real verse text»
+- «Whisper dropped words in this Quran recitation, fix the word timing»
+
+#### الأوامر
+
+- **doctor**: Offline: whether ffmpeg and numpy are present and which commands can run here.
+  - `python3 scripts/quran_text.py doctor`
+- **fetch**: Network: one GET per ayah to api.alquran.cloud (User-Agent, 20 s timeout, 0.5 s between calls, retries on 429 and 5xx, a JSON cache in OUT/cache). It writes verses.json and verses.txt with the text byte for byte. --translation en.pickthall adds the public-domain Pickthall text, and any other translation is refused (exit 1). --offline uses only the cache (exit 3 for a missing verse), and --keep-basmala keeps the prefix the API adds to ayah 1.
+  - `python3 scripts/quran_text.py fetch 51:22-23 53:39-41 --out out/quran/job`
+- **pauses**: Offline: ffmpeg decodes to 16 kHz mono float32 (a PCM .wav also works without ffmpeg). It measures 50 ms RMS frames and reports the pauses below peak + --rel-db (default -22) that last at least --min (0.30 s), labelled lead, gap or tail. --rel-db auto (an Otsu split) suits noisy or reverberant recordings, and a hint names it when -22 finds nothing.
+  - `python3 scripts/quran_text.py pauses voice.m4a --json --out out/quran/job/pauses.json`
+- **align**: Offline: a DP edit-distance alignment of the canonical words to the recogniser's words (merges, splits, misses, extra words), then letter-count interpolation. Verse boundaries snap to the measured pauses, and no word crosses a pause. It writes timing.json, where every word has its exact canonical text, start, end, source matched\|interpolated and how; stats list the unmatched recognised words and each boundary.
+  - `python3 scripts/quran_text.py align --verses out/quran/job/verses.json --words out/quran/job/words.json --audio voice.m4a --out out/quran/job/timing.json`
+- **norm**: Offline: prints the matching key (tashkeel and Quranic marks removed; alef forms, alef maqsura and ta marbuta unified).
+  - `python3 scripts/quran_text.py norm "وَأَنَّ سَعْيَهُ سَوْفَ يُرَىٰ"`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: bin:ffmpeg, pip:numpy
+- الأمان: network
+- الموافقة: fetch sends one HTTPS GET per ayah to api.alquran.cloud, with no account, cookie or key, and writes only into --out and --cache. Keep the Tanzil credit and never alter the text. A translation other than the public-domain Pickthall is refused, so ask the user for a licence instead. The recitation audio stays local and is never uploaded.
+- الحدود: fetch needs api.alquran.cloud or a filled cache, and accepts only quran-simple and quran-uthmani (Tanzil) and en.pickthall. Pauses come from loudness alone: breath noise, reverb or music above the threshold hide a pause. --rel-db auto finds those, but it can also split long madd notes on a clean recording, so align uses it only when -22 dB finds fewer pauses than verse boundaries. Interpolated words are placed by letter count, not by listening; inside a long dropped span they can be off by a second or more, so check them at the preview. When a reciter repeats a phrase, one occurrence is aligned and the repeat is listed under unmatched_recognised. Recognised words before the first or after the last verse count as extra speech only when the first or last canonical word was matched. No forced-alignment model is used, so the timing is only as good as the matched words and the measured pauses.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_quran_text.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/edit.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:quran-text --evidence <ملف>`.
 
 ### `reel-factory` — مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص / Reel factory: voice + word timings + licensed shots → verified 9:16 reel
 

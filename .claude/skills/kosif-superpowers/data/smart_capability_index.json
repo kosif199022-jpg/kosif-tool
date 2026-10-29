@@ -4,7 +4,7 @@
   "catalog_powers": 5854,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 194,
+  "tool_count": 195,
   "groups": [
     {
       "id": "research",
@@ -133,9 +133,9 @@
       "count": 273,
       "status_counts": {
         "documented": 65,
-        "install": 14,
+        "install": 13,
         "key": 2,
-        "proven": 171,
+        "proven": 172,
         "ready": 21
       },
       "family_counts": {
@@ -72433,7 +72433,7 @@
       "domain": "build",
       "name_en": "HTML to MP4 renderer",
       "name_ar": "محوّل HTML إلى فيديو MP4",
-      "status": "install",
+      "status": "proven",
       "requires": [
         "ffmpeg",
         "node",
@@ -72441,6 +72441,9 @@
         "chromium"
       ],
       "proof": [
+        "kosif-tool/tests/test_render_html_audio.mjs",
+        "kosif-tool/tests/test_render_html_stills.mjs",
+        "kosif-tool/tests/test_render_html.mjs",
         "kosif-tool/.claude/skills/kosif-superpowers/resources/motion-runtime/render_html.cjs"
       ],
       "source": "runnable-tools.json",
@@ -72501,6 +72504,8 @@
       "proof": [
         "kosif-tool/tests/test_render_html.mjs",
         "kosif-tool/tests/test_render_html_disk.mjs",
+        "kosif-tool/tests/test_render_html_audio.mjs",
+        "kosif-tool/tests/test_render_html_stills.mjs",
         "kosif-tool/tools/render_html.cjs"
       ],
       "source": "runnable-tools.json",

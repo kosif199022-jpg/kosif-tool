@@ -38,6 +38,9 @@ ROUTING = [
     ("find a whiteboard motion style and scaffold a project", "repo-kosif"),
     ("convert my srt captions to words.json", "repo-words-convert"),
     ("ايش اللي تقدر تعمله على الجهاز ده", "probe-env"),
+    ("نص آيات القرآن وتوقيت الكلمات مع صوت القارئ", "quran-text"),
+    ("هات نص الآيات بالتشكيل واعمل توقيت كل كلمة في التلاوة", "quran-text"),
+    ("اعرضها على المجلس بشرط لا ترجمة للآيات", "llm-council"),
 ]
 
 

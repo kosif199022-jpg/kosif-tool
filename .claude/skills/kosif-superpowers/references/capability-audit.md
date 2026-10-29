@@ -52,7 +52,7 @@
 | 0.74 | CODE-01 Search-first: adopt, extend, compose, bu (SP-0072) | SELF-30 Reuse before build matrix (SP-0021) | نعم |
 | 0.73 | ACODE-53 Webhook consumer: raw-body HMAC, dedupe, (SP-0046) | ACODE-65 Webhook HMAC verify, dedupe, fast-ack (SP-0059) | لا |
 | 0.73 | FOOT-20 Silence jump-cut (SP-0356) | TRANS-28 Silence jump-cut (SP-0445) | نعم |
-| 0.72 | APPX-114 Cinematic Cycles render presets (5 looks (SP-0129) | TOOL-87 Blender Cycles cinematic renders (SP-0144) | نعم |
+| 0.72 | APPX-114 Cinematic Cycles render presets (5 looks (SP-0129) | TOOL-87 Blender Cycles cinematic renders (SP-0145) | نعم |
 | 0.72 | ACODE-116 Redacted API diagnostic bundle for suppo (SP-0044) | ADOCS-13 Secret-safe redacted diagnostic bundle f (SP-0108) | نعم |
 | 0.72 | CAM-128 Log-space zoom lmix/push/zoomTrack (SP-0196) | EASE-16 Log-space zoom (logEase, lmix, zoomTrack (SP-0259) | لا |
 | 0.72 | CODE-01 Search-first: adopt, extend, compose, bu (SP-0072) | THINK-22 Search first: Adopt / Extend / Compose / (SP-0027) | نعم |
@@ -75,7 +75,7 @@
 
 | التشابه | القدرة الخارقة | القدرة الخارقة | البوابتان |
 |---|---|---|---|
-| 0.735 | SP-0129 جرد قدرات Blender الحي | SP-0144 جسر Blender الآمن | software ↔ agents |
+| 0.735 | SP-0129 جرد قدرات Blender الحي | SP-0145 جسر Blender الآمن | software ↔ agents |
 | 0.712 | SP-0326 قطع على الإيقاع | SP-0442 مونتاج على الإيقاع | audio ↔ motion |
 | 0.58 | SP-0396 تحويل SVG بإضافة MorphSVG | SP-0426 تبادل بالتحول | drawing ↔ motion |
 | 0.565 | SP-0006 مراسلة وكلاء مشاريع أخرى عبر الألواح | SP-0047 أساطيل أشجار عمل لمراحل وكلاء متوازية | thinking ↔ software |
@@ -91,7 +91,7 @@
 | 0.449 | SP-0195 إطار HUD | SP-0342 واجهة عداد البارات الإيقاعية | motion ↔ audio |
 | 0.448 | SP-0047 أساطيل أشجار عمل لمراحل وكلاء متوازية | SP-0161 حلقة مستقلة لتصريف قائمة المهام | software ↔ thinking |
 | 0.429 | SP-0006 مراسلة وكلاء مشاريع أخرى عبر الألواح | SP-0057 تصميم حزام الوكيل لا موجّهه فقط: عشر طبقات من تجميع الطلب إلى الاسترداد | thinking ↔ software |
-| 0.429 | SP-0143 خريطة ترتيب المهارة | SP-0317 هل نحتاج خريطة أصلًا | agents ↔ data |
+| 0.429 | SP-0144 خريطة ترتيب المهارة | SP-0317 هل نحتاج خريطة أصلًا | agents ↔ data |
 | 0.424 | SP-0356 مونتاج تلقائي على الموسيقى | SP-0442 مونتاج على الإيقاع | images ↔ motion |
 | 0.423 | SP-0264 تقسيم التصيير | SP-0371 تصيير حتمي بدوكر | 3d ↔ quality |
 | 0.42 | SP-0105 رسم بياني بعناوين عربية في matplotlib | SP-0292 خط مخططات بايثون الثابتة | data ↔ 3d |
@@ -101,10 +101,10 @@
 | 0.409 | SP-0373 فحص الحلقة بلا درزة | SP-0447 حلقة سلسة | quality ↔ motion |
 | 0.398 | SP-0153 تحويل نص لصوت واستنساخ وMؤثرات ElevenLabs | SP-0477 أزياء صوتية للشخصيات | images ↔ audio |
 | 0.396 | SP-0090 فرز المثبّت قبل REA | SP-0152 فرز المثبّتات | reverse ↔ agents |
-| 0.396 | SP-0139 منقّب قدرات الأطلس من البيانات الوصفية | SP-0347 مكتبة KOSIF Atlas | agents ↔ misc |
 | 0.395 | SP-0156 صوت PipeWire داخل الحاويات | SP-0329 تطبيع الجهارة -14 LUFS | images ↔ audio |
 | 0.395 | SP-0219 حجم الجهاز لكل نسبة | SP-0469 هاتف 2.5D على Canvas | motion ↔ software |
 | 0.394 | SP-0392 حد الوميض الآمن | SP-0436 قطع وميضي | quality ↔ motion |
+| 0.393 | SP-0139 منقّب قدرات الأطلس من البيانات الوصفية | SP-0347 مكتبة KOSIF Atlas | agents ↔ misc |
 | 0.389 | SP-0270 ضبابية حركة حقيقية | SP-0368 قائمة جودة الحركة | 3d ↔ quality |
 | 0.384 | SP-0038 اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا | SP-0181 مقدمات الأسلوب المتطابقة بايتًا | thinking ↔ images |
 | 0.384 | SP-0109 مراجعة مخاطر العقود واتفاقيات السرية | SP-0160 مراجعة تصميم بأسلوب الطرح حتى الجوهر | documents ↔ thinking |
