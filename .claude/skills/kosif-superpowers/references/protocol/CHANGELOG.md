@@ -34,6 +34,11 @@
 - **ما لم يُنقل من الحزمة:** فاحص ثانٍ للمواقع (مزاياه دخلت `check.py`)، و`atlas_86_index.json` (الفهرس موجود في `kosif-infinite-matrices/data/`)، والنص الكامل للأقسام 1–27 (هو v5.9 نفسه). التفاصيل في آخر A43.
 - **[A44 صور وفيديو مجانية للمونتاج](A44-free-stock-media.md) (30-10-2026):** أداة الصور `scripts/free_photos.py` (Openverse وويكيميديا وناسا والمتروبوليتان بلا مفتاح؛ Pexels وPixabay وUnsplash بالمفاتيح) واختبارها `evals/test_free_photos.py`، وملحق يجمعها مع `free_footage.py` في مسار واحد: بحث ← معاينة ← تحميل بترخيص ← ATTRIBUTION.md. رابطه في صف A19 بجدول المحفّزات، والبند الموحد في القسم 16 من `USIP_PORTABLE.md`.
 - **النسخ:** النواة والنسخة المحمولة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PASTE.md` صارت v6.0؛ صفوف A41 وA42 وA43 في جدول المحفّزات؛ نسخة مضغوطة جديدة `docs/protocol/USIP_PORTABLE_v6_0.md`. `check_skill.py` يقبل الآن مسار ملف كامل داخل مهارة أخرى (مثل `.claude/skills/living-site/tools/ledger.py`) ويتحقق منه هناك.
+- **إضافة 30-10 مساءً، [A46 Suno MCP](A46-suno-mcp.md)** (طلب المستخدم: «https://api.suno.com/mcp اضف ان يتم الاتصال به في اول شيء»): الخطوة صفر قبل أي شيء: ابحث عن أداة `suno`، نادِ أداة قراءة بلا رصيد، وأول سطر في الرد `suno: متصل ✅ / غير متصل 🔑 / مش مقيس من هنا` مع طريقة الإضافة. لا انتظار. التوليد (`credits:spend`) بإذن، والبديل `generate_audio` في Higgsfield ثم موسيقى مرخّصة.
+- **المقاس من السيرفر (30-10-2026، بلا دخول):** `401 sign in to Suno` حتى لـ `initialize`؛ OAuth 2.1 بحساب Suno (PKCE وتسجيل عميل ديناميكي)، بلا مفتاح API؛ ليس في دليل connectors فيُضاف custom connector. قائمة الأدوات غير مقيسة (تحتاج دخولًا). الدليل: `evidence/A46-suno-mcp-probe.txt`.
+- **أين:** `CLAUDE.md` (أول فقرة)، `boot.py` (سطر بعد العنوان)، النواة (المرحلة 0 وجدول الملاحق)، `USIP_PASTE.md`، `USIP_PORTABLE.md` (القسم 1 وسطر التفعيل)، `docs/protocol/USIP_PORTABLE_v6_0.md` (القسم 1 و2.13)، ومهارة `living-site` (Stage 0).
+- **[A45 تنزيل يوتيوب](A45-youtube-download.md) و`.claude/skills/living-site/tools/yt_get.sh`:** كانا في مجلد المشروع فقط؛ التنزيل على جهاز المستخدم لا من السحابة.
+- **الحدود:** المضغوطة والنواة و`USIP_PASTE.md` كانت على حدها (40KB، 73,000 حرف، 7,000 حرف)؛ اختُصرت صياغات بلا حذف قاعدة.
 
 ## v5.9 — 2026-10-29
 

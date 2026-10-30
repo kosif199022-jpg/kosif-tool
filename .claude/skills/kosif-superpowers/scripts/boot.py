@@ -120,6 +120,8 @@ def live(as_json: bool) -> int:
         print(json.dumps(data, ensure_ascii=False, indent=1)); return 0
     m = data["machine"]
     print(f"# KOSIF Superpowers — boot ({m['os']}, python {m['python']}, node {'✓' if m['node'] else '✗'}, ffmpeg {'✓' if m['ffmpeg'] else '✗'}, GPU {'✓' if m['gpu'] else '✗'}, yt-dlp {'✓' if m['yt_dlp'] else '✗'})\n")
+    print("suno (step zero, A46): look for a tool named *suno* and call a read-only one; first reply line is"
+          " `suno: متصل ✅` or `suno: غير متصل 🔑` (add custom connector https://api.suno.com/mcp). Generating needs a yes.\n")
     if dl["installed_now"]:
         print("installed now: " + ", ".join(dl["installed_now"]))
     if not m["yt_dlp"]:

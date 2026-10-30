@@ -1,0 +1,14 @@
+# probe 2026-10-30T19:33Z from a cloud sandbox, no credentials
+$ curl -i https://api.suno.com/mcp   (GET and JSON-RPC initialize POST: same answer)
+
+HTTP/2 401 
+content-type: application/json; charset=utf-8
+content-length: 46
+www-authenticate: Bearer resource_metadata="https://api.suno.com/.well-known/oauth-protected-resource/mcp"
+
+{"error":"sign in to Suno to use this server"}
+
+$ curl https://api.suno.com/.well-known/oauth-protected-resource/mcp
+{"authorization_servers":["https://studio-api-prod.suno.com/api/v2/external/oauth"],"bearer_methods_supported":["header"],"resource":"https://api.suno.com/mcp","scopes_supported":["api:v0","credits:spend","download","library:read","library:search","library:write","offline_access","profile:read"]}
+$ curl https://studio-api-prod.suno.com/api/v2/external/oauth/.well-known/oauth-authorization-server
+{"issuer": "https://studio-api-prod.suno.com/api/v2/external/oauth", "authorization_endpoint": "https://studio-api-prod.suno.com/api/v2/external/oauth/authorize/", "token_endpoint": "https://studio-api-prod.suno.com/api/v2/external/oauth/token/", "revocation_endpoint": "https://studio-api-prod.suno.com/api/v2/external/oauth/revoke_token/", "registration_endpoint": "https://studio-api-prod.suno.com/api/v2/external/oauth/register/", "jwks_uri": "https://studio-api-prod.suno.com/api/v2/external/oauth/.well-known/jwks.json", "response_types_supported": ["code"], "grant_types_supported": ["authorization_code", "refresh_token"], "code_challenge_methods_supported": ["S256"], "token_endpoint_auth_methods_supported": ["none", "client_secret_basic", "client_secret_post"], "client_id_metadata_document_supported": true, "scopes_supported": ["read_profile", "generate_music", "read_music", "api:v0", "offline_access", "credits:spend", "library:write", "download", "profile:read", "profile:write", "create:read", "create:search", "library:read", "library:search", "create:generate", "create:upload", "create:playback", "catalog:read", "catalog:sync", "catalog:link", "studio:write", "telemetry:write"]}
