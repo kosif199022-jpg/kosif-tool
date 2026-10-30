@@ -1,0 +1,7 @@
+KOSIF Jumuah — خط كوسيف جمعة
+
+التثبيت / install: افتح KOSIFJumuah-Regular.ttf و KOSIFJumuah-Bold.ttf وانقر «تثبيت» (Windows/macOS)؛ على الويب استخدم ملفات .woff2 مع كتلة @font-face في README.md.
+Open the two .ttf files and click Install (Windows/macOS); on the web use the .woff2 files with the @font-face block in README.md.
+
+العرض / demo: demo/jumuah.html (يحتاج Chromium أو Chrome؛ العنوان SVG مركّب من demo/compose_title.py).
+الرخصة / license: SIL Open Font License 1.1 — انظر OFL.txt.

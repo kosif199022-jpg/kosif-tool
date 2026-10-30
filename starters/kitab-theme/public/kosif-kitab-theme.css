@@ -1,0 +1,381 @@
+/* ==================================================================
+   Kosif — unified visual theme "كتاب كافيه" (Kitab Caffe)
+   ------------------------------------------------------------------
+   One warm system across hub, audit, libraries, reader, standards and
+   sales. Anchor colour #FBF4E1 is the published theme-color of
+   kitabcaffe.com; the coffee/gold ladder is built around it.
+
+   Load order: this file must be the LAST stylesheet in <head>.
+   kosif-kitab-theme.js pins it there and re-pins after any late
+   injection (Phase-D, canva, analytics-3d).
+
+   1. Fonts   2. Palette   3. Paper   4. Type
+   5. Signature (bookmark ribbon)     6. Surfaces
+   7. Dark scheme                     8. Quality floor
+   ================================================================== */
+
+/* ==================================================================
+   1. Fonts
+   ================================================================== */
+/* Self-hosted subsets (fontsource 5.3.0). Local files only — the Kosif hub
+   is served under `default-src 'self'`, so no external font CDN is usable. */
+@font-face{font-family:'Alexandria';font-style:normal;font-weight:500;font-display:swap;
+src:url(/fonts/alexandria-arabic-500-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'Alexandria';font-style:normal;font-weight:500;font-display:swap;
+src:url(/fonts/alexandria-latin-500-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alexandria';font-style:normal;font-weight:700;font-display:swap;
+src:url(/fonts/alexandria-arabic-700-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'Alexandria';font-style:normal;font-weight:700;font-display:swap;
+src:url(/fonts/alexandria-latin-700-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Alexandria';font-style:normal;font-weight:900;font-display:swap;
+src:url(/fonts/alexandria-arabic-900-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'Alexandria';font-style:normal;font-weight:900;font-display:swap;
+src:url(/fonts/alexandria-latin-900-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:400;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:400;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-latin-400-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:500;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:500;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-latin-500-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:600;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:600;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-latin-600-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:700;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-arabic-700-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'IBM Plex Sans Arabic';font-style:normal;font-weight:700;font-display:swap;
+src:url(/fonts/ibm-plex-sans-arabic-latin-700-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Amiri';font-style:normal;font-weight:400;font-display:swap;
+src:url(/fonts/amiri-arabic-400-normal.woff2) format('woff2');
+unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC,U+102E0-102FB,U+10E60-10E7E,U+10EC2-10EC4,U+10EFC-10EFF,U+1EE00-1EE03,U+1EE05-1EE1F,U+1EE21-1EE22,U+1EE24,U+1EE27,U+1EE29-1EE32,U+1EE34-1EE37,U+1EE39,U+1EE3B,U+1EE42,U+1EE47,U+1EE49,U+1EE4B,U+1EE4D-1EE4F,U+1EE51-1EE52,U+1EE54,U+1EE57,U+1EE59,U+1EE5B,U+1EE5D,U+1EE5F,U+1EE61-1EE62,U+1EE64,U+1EE67-1EE6A,U+1EE6C-1EE72,U+1EE74-1EE77,U+1EE79-1EE7C,U+1EE7E,U+1EE80-1EE89,U+1EE8B-1EE9B,U+1EEA1-1EEA3,U+1EEA5-1EEA9,U+1EEAB-1EEBB,U+1EEF0-1EEF1}
+@font-face{font-family:'Amiri';font-style:normal;font-weight:400;font-display:swap;
+src:url(/fonts/amiri-latin-400-normal.woff2) format('woff2');
+unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* ==================================================================
+   2. Palette — one source of truth for every namespace in Kosif
+   ================================================================== */
+:root{
+  /* paper */
+  --kc-cream:#FBF4E1; --kc-cream-deep:#F4E9CE; --kc-cream-band:#F5EBD4;
+  --kc-parchment:#FFFDF7; --kc-parchment-2:#FDF7E8;
+  --kc-line:#E8DCBE; --kc-line-2:#DFD0AC;
+  /* ink */
+  --kc-espresso:#2B1D0E; --kc-espresso-deep:#1E1409;
+  --kc-roast:#3B2A14; --kc-roast-2:#4A3419;
+  --kc-ink-2:#5A4327; --kc-muted:#7A6647; --kc-muted-2:#9C8A66; --kc-faint:#D9C9A4;
+  /* accent */
+  --kc-gold:#B8862B; --kc-gold-deep:#966C1F; --kc-gold-deeper:#7A5716;
+  --kc-gold-light:#D9A441; --kc-gold-lift:#E0B457;
+  --kc-gold-soft:#F9F1D9; --kc-gold-line:#E0C88C; --kc-gold-tint:#F7EEDA;
+  /* semantic */
+  --kc-ok:#4E6B33;      --kc-ok-soft:#EDF0E2;
+  --kc-warn:#9E6420;    --kc-warn-soft:#F9EDD9;
+  --kc-danger:#A8542E;  --kc-danger-soft:#F7E7DC;
+  --kc-info:#3F5D63;    --kc-info-soft:#E9EFEC;
+  --kc-ai:#6B4257;      --kc-ai-soft:#F3E7EC;
+  /* type */
+  --kc-display:"Alexandria","SF Arabic","Noto Kufi Arabic",system-ui,sans-serif;
+  --kc-body:"IBM Plex Sans Arabic","SF Arabic","Noto Sans Arabic",system-ui,sans-serif;
+  --kc-brand:"Amiri","Noto Naskh Arabic",Georgia,serif;
+  /* geometry & motion */
+  --kc-r-xl:28px; --kc-r-lg:22px; --kc-r-md:16px; --kc-r-sm:11px;
+  --kc-ease:cubic-bezier(.22,.8,.32,1);
+  --kc-shadow-sm:0 1px 2px rgba(43,29,14,.05),0 8px 22px -16px rgba(90,67,39,.30);
+  --kc-shadow:0 2px 4px rgba(43,29,14,.04),0 18px 44px -26px rgba(90,67,39,.40);
+  --kc-shadow-lg:0 30px 78px -34px rgba(43,29,14,.44);
+  --kc-glow:0 0 0 1px var(--kc-gold-line),0 14px 34px -18px rgba(184,134,43,.52);
+  --kc-grad:linear-gradient(135deg,var(--kc-gold-lift) 0%,var(--kc-gold) 52%,var(--kc-gold-deep) 100%);
+  --kc-grad-dark:linear-gradient(150deg,var(--kc-espresso-deep) 0%,var(--kc-roast) 58%,var(--kc-roast-2) 100%);
+
+  /* ---- bridges into the existing namespaces ------------------------ *
+     Every legacy token now resolves to the Kitab Caffe palette, so a
+     future palette change is a one-line edit here rather than a sweep. */
+  --bg:var(--kc-cream); --bg2:var(--kc-cream-deep);
+  --paper:var(--kc-cream); --surface:var(--kc-parchment); --surf:var(--kc-parchment);
+  --ink:var(--kc-espresso); --ink2:var(--kc-muted); --muted:var(--kc-muted); --soft:var(--kc-muted);
+  --line:var(--kc-line); --line2:var(--kc-line-2); --border:var(--kc-line);
+  --r:var(--kc-r-lg); --rs:var(--kc-r-sm); --rad:var(--kc-r-lg); --ease:var(--kc-ease);
+  --shadow:var(--kc-shadow); --shadow2:var(--kc-shadow-lg); --grad:var(--kc-grad); --grad2:var(--kc-grad);
+  --gold:var(--kc-gold); --goldL:var(--kc-gold-light); --navy:var(--kc-espresso); --deep:var(--kc-espresso-deep);
+  --hl:rgba(184,134,43,.20);
+  --indigo:var(--kc-gold); --violet:var(--kc-gold-light); --purple:var(--kc-gold-lift);
+  --blue:var(--kc-gold); --pink:var(--kc-danger); --red:var(--kc-danger); --rose:var(--kc-danger);
+  --cyan:var(--kc-info); --green:var(--kc-ok); --amber:var(--kc-gold);
+  --pine:var(--kc-espresso); --pine2:var(--kc-roast); --pinesoft:var(--kc-cream-band);
+  --viridian:var(--kc-gold-deep); --viridian2:var(--kc-gold-deeper); --virsoft:var(--kc-gold-soft);
+  --seal:var(--kc-gold); --seal2:var(--kc-gold-deep);
+  --sealsoft:var(--kc-gold-soft); --sealline:var(--kc-gold-line);
+  --ok:var(--kc-ok); --oksoft:var(--kc-ok-soft);
+  --warn:var(--kc-warn); --warnsoft:var(--kc-warn-soft);
+  --danger:var(--kc-danger); --dangersoft:var(--kc-danger-soft);
+  --info:var(--kc-info); --infosoft:var(--kc-info-soft);
+  --f-body:var(--kc-body); --f-head:var(--kc-display); --f-brand:var(--kc-brand);
+  --font:var(--kc-body); --ui:var(--kc-body);
+  --font-ui:var(--kc-body); --font-display:var(--kc-display); --font-brand:var(--kc-brand);
+
+  --v36-bg:var(--kc-cream); --v36-surface:var(--kc-parchment); --v36-ink:var(--kc-espresso);
+  --v36-muted:var(--kc-muted); --v36-border:var(--kc-line);
+  --v36-primary:var(--kc-gold); --v36-violet:var(--kc-gold-light); --v36-purple:var(--kc-gold-lift);
+  --v36-cyan:var(--kc-info); --v36-green:var(--kc-ok); --v36-amber:var(--kc-gold); --v36-rose:var(--kc-danger);
+  --v36-radius-lg:var(--kc-r-lg); --v36-radius-md:var(--kc-r-md); --v36-radius-sm:var(--kc-r-sm);
+  --v36-shadow:var(--kc-shadow-sm); --v36-shadow-lg:var(--kc-shadow);
+  --v36-grad-primary:var(--kc-grad); --v36-grad-hero:var(--kc-grad-dark);
+  --v36-infosoft:var(--kc-info-soft); --v36-warnsoft:var(--kc-warn-soft);
+  --v36-sealsoft:var(--kc-gold-soft); --v36-pinesoft:var(--kc-cream-band);
+  --v36-transition:all .3s var(--kc-ease); --v36-font-main:var(--kc-body);
+
+  --v38-navy:var(--kc-espresso); --v38-navy-2:var(--kc-roast); --v38-navy-3:var(--kc-roast-2);
+  --v38-ink:var(--kc-espresso); --v38-muted:var(--kc-muted);
+  --v38-paper:var(--kc-cream); --v38-surface:var(--kc-parchment);
+  --v38-line:var(--kc-line); --v38-line2:var(--kc-line-2);
+  --v38-gold:var(--kc-gold); --v38-gold-2:var(--kc-gold-deep);
+  --v38-goldsoft:var(--kc-gold-soft); --v38-goldline:var(--kc-gold-line);
+  --v38-ok:var(--kc-ok); --v38-oksoft:var(--kc-ok-soft);
+  --v38-danger:var(--kc-danger); --v38-dangersoft:var(--kc-danger-soft);
+  --v38-warn:var(--kc-warn); --v38-warnsoft:var(--kc-warn-soft);
+  --v38-info:var(--kc-info); --v38-infosoft:var(--kc-info-soft);
+  --v38-ai:var(--kc-ai); --v38-aisoft:var(--kc-ai-soft); --v38-ailine:var(--kc-gold-line);
+  --v38-fact:var(--kc-ok); --v38-factsoft:var(--kc-ok-soft);
+  --v38-r:var(--kc-r-md); --v38-rs:var(--kc-r-sm);
+  --v38-shadow:var(--kc-shadow-sm); --v38-ease:var(--kc-ease);
+
+  --kup-navy:var(--kc-espresso); --kup-navy-2:var(--kc-roast); --kup-navy-3:var(--kc-roast-2);
+  --kup-gold:var(--kc-gold); --kup-gold-2:var(--kc-gold-deep); --kup-gold-soft:var(--kc-gold-soft);
+  --kup-ink:var(--kc-espresso); --kup-muted:var(--kc-muted); --kup-line:var(--kc-line);
+  --kup-soft:var(--kc-cream); --kup-surface:var(--kc-parchment); --kup-accent:var(--kc-gold);
+  --kup-pink:var(--kc-danger); --kup-purple:var(--kc-roast);
+  --kup-font-display:var(--kc-display); --kup-font-ui:var(--kc-body); --kup-font-numbers:var(--kc-body);
+  --kosif-accent:var(--kc-gold); --kosif-pink:var(--kc-danger); --kosif-purple:var(--kc-roast);
+  --kosif-glass:rgba(255,253,247,.88); --kosif-shadow:var(--kc-shadow);
+
+  --k8-bg:var(--kc-cream); --k8-bg-soft:var(--kc-cream-deep);
+  --k8-surface:var(--kc-parchment); --k8-surface-2:var(--kc-parchment-2);
+  --k8-border:var(--kc-line); --k8-border-strong:var(--kc-line-2);
+  --k8-ink:var(--kc-espresso); --k8-ink-strong:var(--kc-espresso-deep);
+  --k8-muted:var(--kc-muted); --k8-muted-2:var(--kc-muted-2);
+  --k8-rose:var(--kc-gold); --k8-rose-deep:var(--kc-gold-deep); --k8-rose-soft:var(--kc-gold-soft);
+  --k8-gold:var(--kc-gold); --k8-gold-soft:var(--kc-gold-soft);
+  --k8-mauve:var(--kc-danger); --k8-mauve-soft:var(--kc-danger-soft);
+  --k8-peach:#C98A56; --k8-peach-soft:#F9EADB; --k8-blush:var(--kc-gold-soft);
+  --k8-sage:var(--kc-ok); --k8-sage-soft:var(--kc-ok-soft);
+  --k8-blue:var(--kc-info); --k8-blue-soft:var(--kc-info-soft);
+  --k8-radius:var(--kc-r-lg); --k8-radius-sm:var(--kc-r-md);
+  --k8-shadow:var(--kc-shadow); --k8-shadow-soft:var(--kc-shadow-sm);
+  --k8-font:var(--kc-body); --k8-head:var(--kc-display); --k8-brand:var(--kc-brand);
+
+  --kstd-primary:var(--kc-gold); --kstd-violet:var(--kc-gold-light); --kstd-cyan:var(--kc-info);
+  --kstd-green:var(--kc-ok); --kstd-amber:var(--kc-gold); --kstd-rose:var(--kc-danger);
+  --kstd-shadow:var(--kc-shadow-sm);
+
+  --r-bg:var(--kc-cream); --r-surface:var(--kc-parchment); --r-ink:var(--kc-espresso);
+  --r-muted:var(--kc-muted); --r-line:var(--kc-line);
+  --r-accent:var(--kc-gold); --r-accent2:var(--kc-gold-light); --r-warn:var(--kc-warn);
+  --r-shadow:var(--kc-shadow);
+
+  --lib-navy:var(--kc-espresso); --lib-gold:var(--kc-gold); --lib-gold2:var(--kc-gold-lift);
+
+  color-scheme:light;
+  accent-color:var(--kc-gold);
+}
+
+/* ==================================================================
+   3. Paper — the page is a sheet, not a screen
+   ================================================================== */
+html,body{background-color:var(--kc-cream)}
+body{
+  font-family:var(--kc-body);
+  color:var(--kc-espresso);
+  -webkit-text-size-adjust:100%;
+  text-rendering:optimizeLegibility;
+  min-height:100dvh;
+}
+/* Warm laid-paper grain: a 32px rule (the audit shell already reads as a
+   ledger) plus a low gold bloom at the two reading corners. */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:1;
+  background:
+    radial-gradient(58rem 32rem at 88% -6%,rgba(184,134,43,.10),transparent 70%),
+    radial-gradient(46rem 34rem at 6% 104%,rgba(168,84,46,.055),transparent 72%),
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(90,67,39,.045) 31px 32px);
+}
+body>:where(*:not(.ambient)){position:relative;z-index:1}
+
+/* ==================================================================
+   4. Type — Alexandria for structure, Plex Arabic for data, Amiri for the mark
+   ================================================================== */
+h1,h2,h3,h4,h5{font-family:var(--kc-display);letter-spacing:-.02em;color:var(--kc-espresso)}
+h1{font-weight:900;line-height:1.14}
+h2,h3{font-weight:700;line-height:1.3}
+small,.eyebrow,.chip,.tag,.pill,.status,figcaption{letter-spacing:.02em}
+.eyebrow{font-family:var(--kc-body);font-weight:700;font-size:11.5px;letter-spacing:.16em;color:var(--kc-gold-deep)}
+/* Figures are evidence: one width per digit, always. */
+td,th,input,output,.num,.amount,.money,[data-num],
+.hero-metrics b,.kpi b,.metric b,.stat b{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+/* The wordmark and pull quotes carry the "book" half of the brand. */
+.brand b,.library-brand b,.logo,blockquote,.quote,.pullquote{font-family:var(--kc-brand)}
+.brand b,.library-brand b{
+  font-weight:400;letter-spacing:0;font-size:1.32em;
+  background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--kc-espresso)
+}
+blockquote,.quote,.pullquote{font-size:1.12em;line-height:2;color:var(--kc-ink-2)}
+a{color:var(--kc-gold-deep);text-underline-offset:.28em;text-decoration-thickness:1px}
+::selection{background:var(--kc-gold-line);color:var(--kc-espresso-deep)}
+
+/* ==================================================================
+   5. Signature — the bookmark ribbon (شريط العلّامة)
+   A gold ribbon with a notched foot marks the page you are on: the
+   current nav item, the open tab, the active module. One idea, used
+   everywhere the product answers "where am I".
+   ================================================================== */
+.kc-ribbon,
+.tab[aria-selected="true"],.tab.active,
+.module,.book{position:relative}
+
+.kc-ribbon::before,
+.tab[aria-selected="true"]::before,.tab.active::before{
+  content:"";position:absolute;inset-block-start:0;inset-inline-end:16px;
+  width:13px;height:26px;
+  background:var(--kc-grad);
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%);
+  box-shadow:0 6px 12px -6px rgba(122,87,22,.6);
+  pointer-events:none;
+}
+/* Cards get the ribbon only once they are the active one, so it stays rare. */
+.module::before,.book::before{
+  content:"";position:absolute;inset-block-start:0;inset-inline-end:22px;
+  width:15px;height:0;background:var(--kc-grad);
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 74%,0 100%);
+  transition:height .34s var(--kc-ease);pointer-events:none;z-index:3;
+}
+.module:hover::before,.module:focus-visible::before,
+.book:hover::before,.book:focus-visible::before{height:30px}
+
+/* ==================================================================
+   6. Surfaces & controls
+   ================================================================== */
+.module,.book,.principle,.source-policy,.card,.panel,.tile,.sheet{
+  border-radius:var(--kc-r-lg);
+  border-color:var(--kc-line);
+  box-shadow:var(--kc-shadow-sm);
+  transition:transform .3s var(--kc-ease),box-shadow .3s var(--kc-ease),border-color .3s var(--kc-ease);
+}
+.module:hover,.book:hover,.card:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--kc-shadow);
+  border-color:var(--kc-gold-line);
+}
+.primary,.btn-primary,button.primary{
+  background:var(--kc-grad);color:#FFFDF7;border:1px solid var(--kc-gold-deep);
+  border-radius:var(--kc-r-md);font-weight:700;
+  box-shadow:0 12px 26px -14px rgba(122,87,22,.75);
+}
+.primary:hover,.btn-primary:hover{filter:brightness(1.04)}
+.ghost,.secondary{
+  background:var(--kc-parchment);border:1px solid var(--kc-line-2);
+  color:var(--kc-gold-deep);border-radius:var(--kc-r-md);font-weight:700;
+}
+.ghost:hover,.secondary:hover{border-color:var(--kc-gold);background:var(--kc-gold-soft)}
+.chip,.tag,.pill{
+  background:var(--kc-gold-soft);color:var(--kc-gold-deeper);
+  border:1px solid var(--kc-gold-line);border-radius:999px;font-weight:700;
+}
+.suite-head,.library-head,header[class*="head"]{
+  background:rgba(251,244,225,.86);
+  border-bottom:1px solid var(--kc-line);
+  backdrop-filter:blur(20px) saturate(1.2);
+  -webkit-backdrop-filter:blur(20px) saturate(1.2);
+}
+.logo{
+  background:var(--kc-grad);color:var(--kc-espresso-deep);
+  border:1px solid var(--kc-gold-deep);
+  box-shadow:0 12px 26px -14px rgba(122,87,22,.7);
+}
+/* Dark panels are roasted coffee, never navy. */
+.hero,.library-hero,.cover:not(.standards-cover):not(.training-cover){background-image:var(--kc-grad-dark)}
+.standards-cover{background-image:linear-gradient(155deg,var(--kc-parchment),var(--kc-cream-deep))}
+.training-cover{background-image:linear-gradient(155deg,var(--kc-roast),var(--kc-gold-deeper))}
+.hero h1 span,.library-hero h1 span{
+  background:linear-gradient(90deg,var(--kc-gold-lift),var(--kc-gold-light) 55%,#F0DCA8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+/* The ambient blobs read as spilled light on paper, not neon. */
+.ambient i{filter:blur(84px);opacity:.11}
+.ambient i:nth-child(1){background:var(--kc-gold)}
+.ambient i:nth-child(2){background:var(--kc-danger)}
+.ambient i:nth-child(3){background:var(--kc-gold-lift)}
+
+:focus-visible{outline:2.5px solid var(--kc-gold);outline-offset:2px;border-radius:5px}
+input,select,textarea{
+  background:var(--kc-parchment);border-color:var(--kc-line-2);
+  color:var(--kc-espresso);border-radius:var(--kc-r-sm)
+}
+input:focus,select:focus,textarea:focus{border-color:var(--kc-gold);box-shadow:0 0 0 3px rgba(184,134,43,.16)}
+::placeholder{color:var(--kc-muted-2)}
+* {scrollbar-color:var(--kc-gold-line) transparent}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-thumb{background:var(--kc-gold-line);border-radius:999px;border:3px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:var(--kc-gold);background-clip:content-box}
+hr{border:0;border-top:1px solid var(--kc-line)}
+
+/* ==================================================================
+   7. Late-night café — dark scheme
+   ================================================================== */
+@media (prefers-color-scheme:dark){
+  :root{
+    --kc-cream:#171009; --kc-cream-deep:#1E1409; --kc-cream-band:#221810;
+    --kc-parchment:#211710; --kc-parchment-2:#2A1E14;
+    --kc-line:#3A2C1D; --kc-line-2:#4C3B27;
+    --kc-espresso:#F0E4CB; --kc-espresso-deep:#FBF4E1;
+    --kc-roast:#2A1E14; --kc-roast-2:#33251A;
+    --kc-ink-2:#D6C3A0; --kc-muted:#B7A17C; --kc-muted-2:#8E7A58; --kc-faint:#5C4A32;
+    --kc-gold:#D9A441; --kc-gold-deep:#E0B457; --kc-gold-deeper:#EBC77E;
+    --kc-gold-light:#E8BE68; --kc-gold-lift:#F0D08C;
+    --kc-gold-soft:#2A2113; --kc-gold-line:#5C4A24; --kc-gold-tint:#231B10;
+    --kc-ok:#8FAE6A; --kc-ok-soft:#1C2414;
+    --kc-warn:#D2954A; --kc-warn-soft:#2A1F10;
+    --kc-danger:#D98156; --kc-danger-soft:#2C170F;
+    --kc-info:#82A8AE; --kc-info-soft:#14201F;
+    --kc-ai:#B98CA2; --kc-ai-soft:#241722;
+    --kc-shadow-sm:0 1px 2px rgba(0,0,0,.5),0 10px 26px -18px rgba(0,0,0,.8);
+    --kc-shadow:0 2px 6px rgba(0,0,0,.45),0 22px 50px -28px rgba(0,0,0,.9);
+    --kc-shadow-lg:0 34px 84px -38px rgba(0,0,0,.95);
+    --kc-grad-dark:linear-gradient(150deg,#0F0A05 0%,#1E1409 58%,#2A1E14 100%);
+    color-scheme:dark;
+  }
+  body::before{
+    background:
+      radial-gradient(58rem 32rem at 88% -6%,rgba(217,164,65,.09),transparent 70%),
+      radial-gradient(46rem 34rem at 6% 104%,rgba(217,129,86,.05),transparent 72%),
+      repeating-linear-gradient(0deg,transparent 0 31px,rgba(240,228,203,.035) 31px 32px);
+  }
+  .suite-head,.library-head,header[class*="head"]{background:rgba(23,16,9,.86)}
+  .logo,.primary,.btn-primary{color:#171009}
+  ::selection{background:var(--kc-gold-line);color:var(--kc-espresso)}
+}
+
+/* ==================================================================
+   8. Quality floor
+   ================================================================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media print{
+  body::before,.ambient,.kc-ribbon::before{display:none!important}
+  body{background:#fff;color:#000}
+}
