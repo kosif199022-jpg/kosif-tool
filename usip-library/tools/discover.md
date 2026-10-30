@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (29 أداة)
+# أدوات المجال `discover` (30 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -515,6 +515,48 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fusionforge --evidence <ملف>`.
+
+### `fusionforge-hub-runner` — جسر تنفيذ وصفات FusionForge عبر Hub / FusionForge to Hub execution bridge
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/fusionforge_hub_runner.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `agent-orchestration`, `planning-execution` |
+
+**ما تفعله:** يشغّل عُقد وصفة FusionForge v2 اختار المستخدم خطتها: يرتبها حسب الحواف، ويشغّل كل عقدة tool: عبر hub.py run، ويمرّر ملفات المخرجات المعلنة للعقد التالية ويفحصها (جديدة وغير فارغة وJSON صالح)، ويسجّل كل عقدة بـfusionforge.py trace، ويتوقف عند أول فشل أو حجب، ويعزل ملفات العقدة الفاشلة، ويستأنف بعد العقد المسجلة ناجحة. يكتب إيصال JSON مُبصَّمًا؛ والوضع الافتراضي تجربة بلا تشغيل.
+
+**What it does:** Runs the nodes of a FusionForge v2 recipe whose plan the user already chose: orders them by their edges, runs each tool: node with hub.py run, passes declared output files to later nodes and checks them (new, non-empty, valid JSON), records every node with fusionforge.py trace, stops at the first failure or blocked node, quarantines a failed node's files and resumes after nodes the recipe already shows as passed. Writes a hashed JSON receipt; dry run by default.
+
+#### متى تُستدعى
+
+- «شغّل خطة FusionForge اللي اخترتها بأدوات Hub وسجّل كل خطوة»
+- «كمّل تنفيذ الوصفة من آخر عقدة نجحت بعد ما خلصت الخطوة اليدوية»
+- «Run the chosen FusionForge plan through the Hub tools and trace every node»
+- «Dry-run a planned recipe to see which nodes are blocked and why»
+
+#### الأوامر
+
+- **dry run**: Checks the recipe (status planned, plan unchanged, no cycle), the plan file (args, inputs, outputs, {N.name} references), hub.py doctor readiness and approvals; launches nothing. Exit 0 ready, 2 blocked.
+  - `python3 scripts/fusionforge_hub_runner.py --recipe out/fusionforge/demo_project/recipes/FUSE-20261030-0123456789.json --plan-file out/job/io.json --report out/job/bridge-dry.json`
+- **execute**: Runs the plan's tool: nodes in edge order with hub.py run, checks each node's declared outputs, traces every node with fusionforge.py (a trace that fails fails the node), stops at the first FAIL or BLOCKED. --allow-network / --allow-external / --allow-consent only after the user's explicit approval; --fusionforge-root, --timeout. Exit 0 executed, 1 failed, 2 blocked.
+  - `python3 scripts/fusionforge_hub_runner.py --recipe out/fusionforge/demo_project/recipes/FUSE-20261030-0123456789.json --plan-file out/job/io.json --report out/job/bridge-run1.json --execute`
+
+#### المتطلبات والأمان
+
+- الأمان: runs-external-programs
+- الموافقة: With --execute it runs the recipe's Hub tools: confirm the user chose the plan, and pass --allow-network, --allow-external or --allow-consent only after the user explicitly approved those steps.
+- الحدود: EXECUTED means every selected command exited 0 and its declared files exist, are new, non-empty and parse as JSON when .json; that is not QA of the content, and the bridge never records tested or verified. method:/human nodes are manual (trace them, then rerun), bin:/mcp: executors are not run, and declared outputs must not exist before a node runs.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_fusionforge_hub_runner.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A4-fusionforge-composition.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:fusionforge-hub-runner --evidence <ملف>`.
 
 ### `fusionforge-shared` — ذاكرة FusionForge المشتركة بوصفات مهارات معزولة / FusionForge Shared Memory: reviewed cross-project skill structures
 
