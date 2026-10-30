@@ -688,6 +688,15 @@ def public_probe() -> dict:
 MCP_VERSIONS = ("2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05")
 _SOURCE_DESC = "YouTube id (11 chars), a YouTube/Shorts/youtu.be URL, or an https URL on an allowed host"
 TOOLS = [
+    {"name": "snapany_proxy_links",
+     "description": "Optional official SnapAny API: billable prepaid-credit request for permitted YouTube video proxy links (up to 1080p). Disabled until owner sets key and explicit enable flag. Requires confirm_credits=true; returns temporary media URLs, not downloaded MP4.",
+     "inputSchema": {"type": "object", "properties": {
+         "video": {"type": "string"},
+         "rights": {"type": "string", "enum": list(RIGHTS)},
+         "quality": {"type": "integer", "enum": list(QUALITIES), "default": 720},
+         "confirm_credits": {"type": "boolean", "const": True}},
+         "required": ["video", "rights", "confirm_credits"], "additionalProperties": False},
+     "annotations": {"readOnlyHint": False, "destructiveHint": False, "openWorldHint": True}},
     {"name": "gateway_status",
      "description": "Gateway health, real dependency checks, limits and the last YouTube result / cool-down.",
      "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
@@ -754,6 +763,11 @@ def mcp_handle(msg, base_url: str = "") -> dict | None:
         if name == "gateway_status":
             payload = status()
             payload["ok"] = True
+        elif name == "snapany_proxy_links":
+            payload = snapany_provider.resolve(
+                str(args.get("video", "")), str(args.get("rights", "")),
+                args.get("quality") if type(args.get("quality")) is int else 720,
+                args.get("confirm_credits") is True)
         elif name == "list_uploads":
             payload = inbox(base_url)
         elif name == "probe_youtube":
