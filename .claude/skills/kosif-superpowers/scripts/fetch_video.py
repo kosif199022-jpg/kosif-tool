@@ -39,6 +39,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _pinterest as pinterest  # noqa: E402 - the shared Pinterest pin helper (source_finder.py uses it too)
+import cobalt_provider as cobalt  # noqa: E402 - authorized provider, opt-in only
 
 
 def find_ytdlp(install: bool = True) -> list[str] | None:
@@ -350,6 +351,11 @@ def main(argv=None) -> int:
                     help="use your login from a local browser (chrome, firefox, edge, brave, safari…); nothing is copied or stored")
     ap.add_argument("--connections", type=int, default=8)
     ap.add_argument("--proxy")
+    ap.add_argument("--cobalt-api", help="explicitly authorized Cobalt API root, no default or public scraping")
+    ap.add_argument("--cobalt-key-env", default="KOSIF_COBALT_API_KEY", help="optional provider API key ENV name")
+    ap.add_argument("--cobalt-allow-loopback", action="store_true", help="local integration tests only")
+    ap.add_argument("--rights", choices=("owned", "direct-permission", "public-domain", "cc0", "cc-by", "cc-by-sa"),
+                    help="required with --cobalt-api: documented ownership or permission")
     ap.add_argument("--safe", action="store_true", help="also write an edit-safe H.264/AAC copy (.safe.mp4)")
     ap.add_argument("--strip-audio", action="store_true",
                     help="drop each clip's own audio on intake (video stream copied, needs ffmpeg); use it for Quran and "
@@ -360,24 +366,29 @@ def main(argv=None) -> int:
     ap.add_argument("--doctor", action="store_true")
     ap.add_argument("--update", action="store_true")
     a = ap.parse_args(argv)
+    if a.cobalt_api and not a.rights:
+        ap.error("--cobalt-api requires --rights")
+    if a.cobalt_api and a.quality == "audio":
+        ap.error("--cobalt-api currently supports video only")
     if a.strip_audio and a.quality == "audio":
         ap.error("--strip-audio cannot be combined with --quality audio")
-    ytdlp = find_ytdlp()
+    ytdlp = find_ytdlp(install=not bool(a.cobalt_api))
     if a.update:
         return subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", "yt-dlp", "yt-dlp-ejs", "curl_cffi"])
     if a.doctor:
         return doctor(ytdlp)
-    if not ytdlp and not a.urlfile and not all(_is_stock(u) for u in a.urls if is_url(u)):
+    if not ytdlp and not a.cobalt_api and not a.urlfile and not all(_is_stock(u) for u in a.urls if is_url(u)):
         print("yt-dlp not found and could not be installed: pip install yt-dlp curl_cffi"
               " (no network? ask the user to upload the video file instead)", file=sys.stderr)
         return 1
     urls = list(a.urls)
     if a.urlfile:
         urls += [l.strip() for l in Path(a.urlfile).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
-    bad = [u for u in urls if not is_url(u)]
+    valid = lambda u: is_url(u) or bool(a.cobalt_api and cobalt.youtube_id(u))
+    bad = [u for u in urls if not valid(u)]
     if bad:
         print("skipping entries that are not http(s) URLs: " + ", ".join(repr(u[:60]) for u in bad), file=sys.stderr)
-        urls = [u for u in urls if is_url(u)]
+        urls = [u for u in urls if valid(u)]
     if not urls:
         ap.print_usage()
         return 2
@@ -386,6 +397,21 @@ def main(argv=None) -> int:
     results = []
     no_ytdlp = {"file": None, "error": "yt-dlp not installed: pip install yt-dlp curl_cffi"}
     for u in urls:
+        if a.cobalt_api and cobalt.youtube_id(u):
+            try:
+                r = cobalt.download(u, a.out, a.cobalt_api, rights=a.rights, quality=a.quality,
+                                    key_env=a.cobalt_key_env, allow_loopback=a.cobalt_allow_loopback)
+                if a.strip_audio and r.get("file"):
+                    r.update(probe(Path(r["file"])))
+                    r = intake_audio(Path(r["file"]), a, r)
+                if a.safe and r.get("file"):
+                    safe = edit_safe(Path(r["file"]))
+                    r["safe_file"] = str(safe) if safe else None
+            except (cobalt.GatewayError, ValueError) as exc:
+                r = {"url": u, "file": None, "provider": "cobalt-opt-in", "error": str(exc)}
+            results.append(r)
+            print(("OK   " + r["file"]) if r.get("file") else f"FAIL {u}\n     {r.get('error')}")
+            continue  # A provider refusal is terminal; do not route around it.
         if pinterest.is_pin_link(u):
             r = (pin_audio if a.quality == "audio" else pin_download)(u, a, ytdlp) if ytdlp else {"url": u, **no_ytdlp}
         else:
