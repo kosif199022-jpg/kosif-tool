@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 275 powers
+[← الفهرس الدقيق / micro index](README.md) · 276 powers
 
 ## الفهرس / contents
 
@@ -20,12 +20,14 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-03 | ✅ | أطلس القدرات للبحث والتخطيط · Capability Atlas search and planner → `capability-atlas` | SP-0139 Atlas metadata capability miner | pip:pillow, pip:opencv |
 | TOOL-04 | ✅ | موجّه القدرات التنفيذية · Capability runtime router → `capability-runtime-router` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-05 | ✅ | بوابة KOSIF الموحّدة · KOSIF hub (front door) → `hub` | SP-0139 Atlas metadata capability miner | python3 |
+| TOOL-06 | ✅ | خادم MCP لكتالوج KOSIF · KOSIF catalog MCP server → `kosif-mcp` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-07 | ✅ | مدخل محلي بلا استنساخ · Local-first no-clone entry → `local-first` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-08 | ✅ | فاحص وجود حزم بايثون · Python package presence probe → `python-package-probe` | SP-0139 Atlas metadata capability miner | chromium, pip:numpy, pip:pillow, pip:opencv … |
 | TOOL-105 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner → `atlas-capability-miner` | SP-0139 Atlas metadata capability miner | python3, blender, npm:rea, engine:ghidra |
 | TOOL-106 | ✅ | خريطة تغطية أطلس الـ5000 مهارة · Atlas-5000 coverage map → `atlas-5000` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-107 | ✅ | سجل الأطلس: حالة واحدة لكل مهارة · Atlas ledger: one status for every Atlas skill → `atlas-ledger` | SP-0139 Atlas metadata capability miner | python3, npm:rea |
 | TOOL-116 | ✅ | فهرس ذكي للقدرات من أجل Claude · Smart capability index for Claude → `smart-capabilities` | SP-0139 Atlas metadata capability miner | python3, npm:rea, engine:ghidra |
+| TOOL-124 | ✅ | محرك بروتوكول ذكاء المهارات الشامل · Universal Skill Intelligence Protocol engine → `skill-intelligence` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-125 | ✅ | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع · FusionForge v2 project-scoped composite workflow recipes → `fusionforge` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-127 | ✅ | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) → `superpower-fusion` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-129 | ✅ | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت · Group map with superpowers, scripts and install plans → `kosif-groups` | SP-0139 Atlas metadata capability miner | node, python3 |
@@ -47,45 +49,45 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-112 | 🟢 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router → `atlas-task-method-router` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-113 | 🟢 | نقل مناهج الأطلس المثبتة · Atlas verified method transfer → `atlas-transfer` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-71 | 🟢 | فحص قدرات الجهاز · Machine capability probe → `probe-env` | SP-0139 Atlas metadata capability miner | node, python3, docker, gpu |
-| TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:pillow |
-| TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:pillow |
-| TOOL-130 | ✅ | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) → `montage-pro` | SP-0140 Reference Video Timing Probe | ffmpeg, chromium, imagemagick, yt-dlp … |
-| TOOL-131 | ✅ | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel → `reel-factory` | SP-0140 Reference Video Timing Probe | ffmpeg, node, chromium, fonts:arabic |
-| TOOL-132 | ✅ | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine → `dua-wednesday` | SP-0140 Reference Video Timing Probe | ffmpeg, node, chromium, yt-dlp … |
-| TOOL-166 | ✅ | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL → `look-pipeline` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-168 | ✅ | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract → `fast-edit` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-175 | ✅ | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review → `cinema-lab` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
-| TOOL-177 | ✅ | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits → `free-footage` | SP-0140 Reference Video Timing Probe | ffmpeg, python3, imagemagick |
-| TOOL-178 | ✅ | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز · Quran text and timing: exact verses, measured pauses, verse and word timing for reels → `quran-text` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:faster-whisper |
-| TOOL-19 | ✅ | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer → `cinematic-broll-render` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-20 | ✅ | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner → `cinematic-cut-planner` | SP-0140 Reference Video Timing Probe | python3 |
-| TOOL-21 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe → `motion-reference-probe` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-22 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine → `reference-edit-engine` | SP-0140 Reference Video Timing Probe | pip:higgsfield, npm:remotion, npm:react |
-| TOOL-23 | ✅ | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint → `reference-visual-fingerprint` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-24 | ✅ | جسر سير عمل الفيديو · Video Workflow Bridge → `video-workflow-bridge` | SP-0140 Reference Video Timing Probe | python3 |
-| TOOL-35 | ✅ | بوابة جودة خطة المونتاج · Reference-edit structural quality gate → `creative-quality-gate` | SP-0140 Reference Video Timing Probe | python3, npm:remotion |
-| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0140 Reference Video Timing Probe | ffmpeg, python3, yt-dlp |
-| TOOL-85 | ✅ | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder → `mimic` | SP-0140 Reference Video Timing Probe | ffmpeg, tesseract, pip:numpy, pip:pillow … |
-| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0140 Reference Video Timing Probe | ffmpeg, python3, key:unspecified |
-| TOOL-13 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler → `motion-director` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-14 | ✅ | محرك حركة SVG · SVG motion engine runtime → `motion-engine-js` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-146 | ✅ | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame → `particles` | SP-0141 Audio-timed SVG motion compiler | python3, npm:three |
-| TOOL-150 | ✅ | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة · UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check → `ui-beat` | SP-0141 Audio-timed SVG motion compiler | python3 |
-| TOOL-16 | ✅ | إنشاء فيلم سبورة مرسوم وتصييره · Doodle film runtime and renderer → `motion-runtime` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-164 | ✅ | فيزياء الحركة · Motion Physics → `motion-physics` | SP-0141 Audio-timed SVG motion compiler | python3, npm:animejs, npm:react |
-| TOOL-17 | ✅ | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder → `motion-stack` | SP-0141 Audio-timed SVG motion compiler | python3, npm:three, npm:gsap, npm:remotion … |
-| TOOL-171 | ✅ | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine → `infinite-matrices` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:rea |
-| TOOL-174 | ✅ | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) → `repo-job-wait` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-18 | ✅ | مكتبة رياضيات الحركة · Motion math toolkit → `motion-toolkit` | SP-0141 Audio-timed SVG motion compiler | node, python3 |
-| TOOL-64 | ✅ | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score → `atlas-render` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium |
-| TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0141 Audio-timed SVG motion compiler | python3 |
-| TOOL-78 | ✅ | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-79 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `verify-video` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3 |
-| TOOL-80 | ✅ | محلّل نسب العرض المرن · Flexible aspect ratio resolver → `repo-aspects` | SP-0141 Audio-timed SVG motion compiler | python3 |
-| TOOL-81 | ✅ | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
-| TOOL-82 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `repo-verify-video` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3 |
-| TOOL-83 | 📦 | قالب فيلم HTML Canvas · HTML Canvas film starter → `starter-html-canvas` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-84 | 📦 | قالب فيلم Remotion · Remotion film starter → `starter-remotion` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, npm:remotion, npm:react |
+| TOOL-13 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler → `motion-director` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-14 | ✅ | محرك حركة SVG · SVG motion engine runtime → `motion-engine-js` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-146 | ✅ | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame → `particles` | SP-0140 Audio-timed SVG motion compiler | python3, npm:three |
+| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0140 Audio-timed SVG motion compiler | python3 |
+| TOOL-150 | ✅ | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة · UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check → `ui-beat` | SP-0140 Audio-timed SVG motion compiler | python3 |
+| TOOL-16 | ✅ | إنشاء فيلم سبورة مرسوم وتصييره · Doodle film runtime and renderer → `motion-runtime` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-164 | ✅ | فيزياء الحركة · Motion Physics → `motion-physics` | SP-0140 Audio-timed SVG motion compiler | python3, npm:animejs, npm:react |
+| TOOL-17 | ✅ | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder → `motion-stack` | SP-0140 Audio-timed SVG motion compiler | python3, npm:three, npm:gsap, npm:remotion … |
+| TOOL-171 | ✅ | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine → `infinite-matrices` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:rea |
+| TOOL-174 | ✅ | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) → `repo-job-wait` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-18 | ✅ | مكتبة رياضيات الحركة · Motion math toolkit → `motion-toolkit` | SP-0140 Audio-timed SVG motion compiler | node, python3 |
+| TOOL-64 | ✅ | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score → `atlas-render` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium |
+| TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0140 Audio-timed SVG motion compiler | python3 |
+| TOOL-78 | ✅ | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-79 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `verify-video` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3 |
+| TOOL-80 | ✅ | محلّل نسب العرض المرن · Flexible aspect ratio resolver → `repo-aspects` | SP-0140 Audio-timed SVG motion compiler | python3 |
+| TOOL-81 | ✅ | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
+| TOOL-82 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `repo-verify-video` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3 |
+| TOOL-83 | 📦 | قالب فيلم HTML Canvas · HTML Canvas film starter → `starter-html-canvas` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-84 | 📦 | قالب فيلم Remotion · Remotion film starter → `starter-remotion` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, npm:remotion, npm:react |
+| TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:pillow |
+| TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:pillow |
+| TOOL-130 | ✅ | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) → `montage-pro` | SP-0141 Reference Video Timing Probe | ffmpeg, chromium, imagemagick, yt-dlp … |
+| TOOL-131 | ✅ | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel → `reel-factory` | SP-0141 Reference Video Timing Probe | ffmpeg, node, chromium, fonts:arabic |
+| TOOL-132 | ✅ | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine → `dua-wednesday` | SP-0141 Reference Video Timing Probe | ffmpeg, node, chromium, yt-dlp … |
+| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-166 | ✅ | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL → `look-pipeline` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-168 | ✅ | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract → `fast-edit` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-175 | ✅ | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review → `cinema-lab` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
+| TOOL-178 | ✅ | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز · Quran text and timing: exact verses, measured pauses, verse and word timing for reels → `quran-text` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:faster-whisper |
+| TOOL-19 | ✅ | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer → `cinematic-broll-render` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-20 | ✅ | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner → `cinematic-cut-planner` | SP-0141 Reference Video Timing Probe | python3 |
+| TOOL-21 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe → `motion-reference-probe` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-22 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine → `reference-edit-engine` | SP-0141 Reference Video Timing Probe | pip:higgsfield, npm:remotion, npm:react |
+| TOOL-23 | ✅ | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint → `reference-visual-fingerprint` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-24 | ✅ | جسر سير عمل الفيديو · Video Workflow Bridge → `video-workflow-bridge` | SP-0141 Reference Video Timing Probe | python3 |
+| TOOL-35 | ✅ | بوابة جودة خطة المونتاج · Reference-edit structural quality gate → `creative-quality-gate` | SP-0141 Reference Video Timing Probe | python3, npm:remotion |
+| TOOL-75 | ✅ | فاحص العبارات الكتابية النمطية · Writing Tell Scanner → `tell-scan` | SP-0141 Reference Video Timing Probe | python3 |
+| TOOL-85 | ✅ | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder → `mimic` | SP-0141 Reference Video Timing Probe | ffmpeg, tesseract, pip:numpy, pip:pillow … |
 | TOOL-115 | ✅ | الرسم الموحد: خطوط وأشكال وطبقات وتصدير · Unified Draw: freehand + geometry + layered export → `unified-draw` | SP-0142 Staged drawing and original three-value… | ffmpeg, pip:pillow |
 | TOOL-117 | ✅ | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو · Unified Media: photo adjustments + drawn overlays + GIF/MP4 → `unified-media` | SP-0142 Staged drawing and original three-value… | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
 | TOOL-136 | ✅ | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات · Drawing-book methods atlas with layered construction SVGs → `drawing-methods` | SP-0142 Staged drawing and original three-value… | python3, tesseract |
@@ -102,30 +104,33 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-134 | 🟢 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies → `creative-principles` | SP-0142 Staged drawing and original three-value… | python3 |
 | TOOL-135 | 🟢 | أكاديمية الرسم والدروس المبنية على مصادر · Source-aware drawing school and user-authorized book audits → `drawing-academy` | SP-0142 Staged drawing and original three-value… | python3 |
 | TOOL-137 | 🟢 | منظور هندسي ومقاييس التباين اللوني · Original two-point perspective and numeric palette analysis → `perspective-color-lab` | SP-0142 Staged drawing and original three-value… | python3, npm:axe |
-| TOOL-06 | ✅ | خادم MCP لكتالوج KOSIF · KOSIF catalog MCP server → `kosif-mcp` | SP-0143 Catalog Evidence Audit | python3 |
 | TOOL-103 | ✅ | فاحص سلامة أطلس الأنماط · Style atlas repository validator → `repo-validate` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-124 | ✅ | محرك بروتوكول ذكاء المهارات الشامل · Universal Skill Intelligence Protocol engine → `skill-intelligence` | SP-0143 Catalog Evidence Audit | python3 |
 | TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0143 Catalog Evidence Audit | python3, npm:mermaid |
+| TOOL-32 | ✅ | فحص المشروع المحلي دون تشغيل · Local project static audit → `local-project-audit` | SP-0143 Catalog Evidence Audit | python3, npm:rea, engine:ghidra |
+| TOOL-52 | ✅ | موجّه عائلات REA · REA Family Router → `rea-family-router` | SP-0143 Catalog Evidence Audit | python3, npm:rea, engine:android, engine:binwalk … |
+| TOOL-62 | ✅ | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) → `web-app-study` | SP-0143 Catalog Evidence Audit | python3, chromium, npm:rea |
 | TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0143 Catalog Evidence Audit | python3, chromium |
+| TOOL-98 | ✅ | جسر أوامر REA · REA CLI Bridge → `rea-bridge` | SP-0143 Catalog Evidence Audit | python3, npm:rea |
 | TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0143 Catalog Evidence Audit | python3 |
 | TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-59 | 🟢 | استيراد الملفات الإبداعية · Creative brief importer → `repo-import-briefs` | SP-0143 Catalog Evidence Audit | python3 |
 | TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0143 Catalog Evidence Audit | python3 |
 | TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0143 Catalog Evidence Audit | python3 |
 | TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0143 Catalog Evidence Audit | python3, gh, npm:rea |
 | TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0143 Catalog Evidence Audit | python3, gh, npm:rea |
-| TOOL-100 | ✅ | خريطة ترتيب المهارة · Skill Layout Map → `skill-layout` | SP-0144 Skill Layout Map | python3 |
-| TOOL-108 | ✅ | خريطة سوبر باور بمنهج REA · Superpowers map, REA approach → `rea-superpowers-map` | SP-0144 Skill Layout Map | python3, npm:rea |
-| TOOL-128 | ✅ | الخريطة الذهنية المرحلية وتدقيق التكرار · Task-stage capability mind map and duplicate audit → `capability-mindmap` | SP-0144 Skill Layout Map | python3, npm:mermaid |
-| TOOL-143 | ✅ | خريطة مستودعات المالك وخريطة المهارات · Owned-repositories map and skill map → `owned-repos` | SP-0144 Skill Layout Map | python3 |
-| TOOL-147 | ✅ | لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر · Map plate: projection to pixels, choropleth classes and source ledger → `geo-plate` | SP-0144 Skill Layout Map | python3, fonts:arabic |
-| TOOL-162 | ✅ | خريطة المستودع · Repo Map → `repo-map` | SP-0144 Skill Layout Map | python3 |
-| TOOL-55 | ✅ | خادم KOSIF Remote Commander · KOSIF Remote Commander MCP → `kosif-remote-commander` | SP-0144 Skill Layout Map | node, python3 |
-| TOOL-57 | ✅ | تحزيم المهارة للرفع إلى claude.ai · Skill Packager for claude.ai → `package-skill` | SP-0144 Skill Layout Map | python3 |
-| TOOL-96 | ✅ | خريطة المستودعات الخارجية · External repository tool map → `superpowers` | SP-0144 Skill Layout Map | ffmpeg, chromium, pip:faster-whisper |
-| TOOL-102 | 🟢 | فاحص أصالة الملفات الإبداعية · Brief originality checker → `repo-check-originality` | SP-0144 Skill Layout Map | python3 |
-| TOOL-126 | 🟢 | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة · FusionForge Shared Memory: reviewed cross-project skill structures → `fusionforge-shared` | SP-0144 Skill Layout Map | python3 |
-| TOOL-56 | 🟢 | فحص سلامة المهارة · Skill Health Check → `check-skill` | SP-0144 Skill Layout Map | python3 |
+| TOOL-53 | 📦 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch → `rea-owned-repo-batch` | SP-0143 Catalog Evidence Audit | python3, git, npm:rea |
+| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0144 Free footage: open-licence video source… | pip:office |
+| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0144 Free footage: open-licence video source… | python3 |
+| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0144 Free footage: open-licence video source… | python3 |
+| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-177 | ✅ | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits → `free-footage` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, imagemagick |
+| TOOL-179 | ✅ | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب · Free photos: open-licence and free stock photo search and download with credits → `free-photos` | SP-0144 Free footage: open-licence video source… | python3 |
+| TOOL-45 | ✅ | مستكشف المواقع بالمتصفح · Browser scout site survey → `browser-scout` | SP-0144 Free footage: open-licence video source… | python3, chromium |
+| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0144 Free footage: open-licence video source… | python3, npm:rea |
+| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0144 Free footage: open-licence video source… | python3 |
+| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3 |
+| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, key:unspecified |
+| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
 | TOOL-119 | ✅ | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت · Blender Cycles + KOSIF Cinematic compositor → `blender-cinematic-bridge` | SP-0145 Safe headless Blender bridge | ffmpeg, blender, pip:pillow, npm:rea … |
 | TOOL-120 | ✅ | إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender · Create an editable Blender 3D cat rescue demo → `blender-rescue-scene` | SP-0145 Safe headless Blender bridge | python3, blender |
 | TOOL-121 | ✅ | تطوير فرو القطة والملامح في Blender Cycles · Blender Cat Fur Upgrade: renderable hair geometry and character detail → `blender-cat-fur-upgrade` | SP-0145 Safe headless Blender bridge | python3, blender |
@@ -138,35 +143,35 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-114 | 🟢 | مساعد فيديو الحركة في Blender · Blender motion video helper → `blender-motion-video` | SP-0145 Safe headless Blender bridge | python3, blender, engine:ghidra |
 | TOOL-39 | 📦 | منفّذ المشهد داخل Blender · Blender-side scene builder → `blender-worker` | SP-0145 Safe headless Blender bridge | python3, blender |
 | TOOL-87 | 📦 | رندر سينمائي بـBlender Cycles · Blender Cycles cinematic renders → `blender-cinema` | SP-0145 Safe headless Blender bridge | ffmpeg, blender |
-| TOOL-10 | ✅ | مقدّر سعة الأنظمة · System Capacity Sizer → `architecture-sizer` | SP-0146 Prompt Lab | python3 |
-| TOOL-145 | ✅ | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds → `decision-math` | SP-0146 Prompt Lab | python3, npm:p5 |
-| TOOL-148 | ✅ | مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة · Prompt forge: layered generator prompts, prompt lint and frame-exact shot lists → `prompt-forge` | SP-0146 Prompt Lab | python3 |
-| TOOL-159 | ✅ | مختبر البرومبت · Prompt Lab → `prompt-lab` | SP-0146 Prompt Lab | python3 |
-| TOOL-163 | ✅ | عمليات الذاكرة · Memory Ops → `memory-ops` | SP-0146 Prompt Lab | python3 |
-| TOOL-167 | ✅ | فاحص أرقام الدروس والشروح · Lesson number integrity checker → `lesson-integrity` | SP-0146 Prompt Lab | python3 |
-| TOOL-170 | ✅ | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا · Task history: record every finished task and repeat it later → `task-history` | SP-0146 Prompt Lab | python3 |
-| TOOL-65 | ✅ | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude · AI for business: 9 functions, 64 workflows, Claude-native gated runbooks → `business-workflows` | SP-0146 Prompt Lab | python3, key:unspecified |
-| TOOL-69 | ✅ | محرك التفكير وقوالبه · Thinking engine scaffolds → `think` | SP-0146 Prompt Lab | python3 |
-| TOOL-74 | ✅ | بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate → `anchor-gate` | SP-0146 Prompt Lab | python3 |
-| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0147 Community source scout | ffmpeg, python3 |
-| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0147 Community source scout | pip:office |
-| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0147 Community source scout | python3 |
-| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0147 Community source scout | python3 |
-| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
-| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0147 Community source scout | python3, npm:rea |
-| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0147 Community source scout | python3 |
-| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0147 Community source scout | ffmpeg, python3 |
-| TOOL-94 | ✅ | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0147 Community source scout | ffmpeg, python3, imagemagick, yt-dlp |
-| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0147 Community source scout | ffmpeg, python3, yt-dlp |
+| TOOL-100 | ✅ | خريطة ترتيب المهارة · Skill Layout Map → `skill-layout` | SP-0146 Skill Layout Map | python3 |
+| TOOL-108 | ✅ | خريطة سوبر باور بمنهج REA · Superpowers map, REA approach → `rea-superpowers-map` | SP-0146 Skill Layout Map | python3, npm:rea |
+| TOOL-128 | ✅ | الخريطة الذهنية المرحلية وتدقيق التكرار · Task-stage capability mind map and duplicate audit → `capability-mindmap` | SP-0146 Skill Layout Map | python3, npm:mermaid |
+| TOOL-143 | ✅ | خريطة مستودعات المالك وخريطة المهارات · Owned-repositories map and skill map → `owned-repos` | SP-0146 Skill Layout Map | python3 |
+| TOOL-147 | ✅ | لوح الخرائط: إسقاط الإحداثيات إلى بكسلات وتصنيف الخرائط الملونة وسجل المصادر · Map plate: projection to pixels, choropleth classes and source ledger → `geo-plate` | SP-0146 Skill Layout Map | python3, fonts:arabic |
+| TOOL-162 | ✅ | خريطة المستودع · Repo Map → `repo-map` | SP-0146 Skill Layout Map | python3 |
+| TOOL-55 | ✅ | خادم KOSIF Remote Commander · KOSIF Remote Commander MCP → `kosif-remote-commander` | SP-0146 Skill Layout Map | node, python3 |
+| TOOL-57 | ✅ | تحزيم المهارة للرفع إلى claude.ai · Skill Packager for claude.ai → `package-skill` | SP-0146 Skill Layout Map | python3 |
+| TOOL-96 | ✅ | خريطة المستودعات الخارجية · External repository tool map → `superpowers` | SP-0146 Skill Layout Map | ffmpeg, chromium, pip:faster-whisper |
+| TOOL-126 | 🟢 | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة · FusionForge Shared Memory: reviewed cross-project skill structures → `fusionforge-shared` | SP-0146 Skill Layout Map | python3 |
+| TOOL-56 | 🟢 | فحص سلامة المهارة · Skill Health Check → `check-skill` | SP-0146 Skill Layout Map | python3 |
+| TOOL-10 | ✅ | مقدّر سعة الأنظمة · System Capacity Sizer → `architecture-sizer` | SP-0147 Prompt Lab | python3 |
+| TOOL-145 | ✅ | رياضيات القرار: نطاقات مونت كارلو ونقطة التعادل وترتيب ICE والقيمة الحالية ونقطة انقلاب القرار · Decision math: Monte Carlo ranges, break-even, ICE, NPV/IRR and flip thresholds → `decision-math` | SP-0147 Prompt Lab | python3, npm:p5 |
+| TOOL-148 | ✅ | مصنع البرومبتات: برومبتات طبقية وفحص البرومبت وقائمة لقطات بإطارات دقيقة · Prompt forge: layered generator prompts, prompt lint and frame-exact shot lists → `prompt-forge` | SP-0147 Prompt Lab | python3 |
+| TOOL-159 | ✅ | مختبر البرومبت · Prompt Lab → `prompt-lab` | SP-0147 Prompt Lab | python3 |
+| TOOL-163 | ✅ | عمليات الذاكرة · Memory Ops → `memory-ops` | SP-0147 Prompt Lab | python3 |
+| TOOL-170 | ✅ | سجل المهام: سجل لكل مهمة منجزة لإعادتها لاحقًا · Task history: record every finished task and repeat it later → `task-history` | SP-0147 Prompt Lab | python3 |
+| TOOL-65 | ✅ | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude · AI for business: 9 functions, 64 workflows, Claude-native gated runbooks → `business-workflows` | SP-0147 Prompt Lab | python3, key:unspecified |
+| TOOL-69 | ✅ | محرك التفكير وقوالبه · Thinking engine scaffolds → `think` | SP-0147 Prompt Lab | python3 |
+| TOOL-74 | ✅ | بوابة حفظ الحقائق عند إعادة الصياغة · Rewrite Fact Anchor Gate → `anchor-gate` | SP-0147 Prompt Lab | python3 |
 | TOOL-118 | ✅ | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا · Unified Cinematic: sound-clocked animation and video → `unified-cinematic` | SP-0148 Subtitle to words.json converter | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
 | TOOL-12 | ✅ | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge → `creative-reasoning-bridge` | SP-0148 Subtitle to words.json converter | python3 |
-| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0148 Subtitle to words.json converter | python3 |
 | TOOL-152 | ✅ | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML · TTS script prep: prosody-safe chunks, duration estimate and SSML → `tts-script` | SP-0148 Subtitle to words.json converter | python3 |
 | TOOL-165 | ✅ | سطور الترجمة: من توقيت الكلمات إلى ترجمة مقروءة · Caption lines: word timings to readable SRT/VTT → `caption-lines` | SP-0148 Subtitle to words.json converter | pip:faster-whisper, key:openai |
 | TOOL-25 | ✅ | مستخرج إشارات التوقيت من الصوت · WAV audio cue mapper → `audio-cue-mapper` | SP-0148 Subtitle to words.json converter | pip:faster-whisper |
 | TOOL-26 | ✅ | فرضيات إيقاع الموسيقى · Music rhythm hypotheses → `music-rhythm-engine` | SP-0148 Subtitle to words.json converter | python3 |
 | TOOL-28 | ✅ | تحريك ذراع الشخصية بالحركية العكسية · Character IK arm animator → `character-ik` | SP-0148 Subtitle to words.json converter | ffmpeg, pip:pillow |
 | TOOL-86 | ✅ | محوّل الترجمات إلى توقيت الكلمات · Subtitle to words.json converter → `repo-words-convert` | SP-0148 Subtitle to words.json converter | pip:faster-whisper |
+| TOOL-94 | ✅ | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage → `fetch-video` | SP-0148 Subtitle to words.json converter | ffmpeg, python3, imagemagick, yt-dlp |
 | TOOL-11 | ✅ | مختبر الابتكار الهندسي · Invention Lab Candidates → `invention-lab` | SP-0149 Arabic-aware font fidelity lab | pip:hypothesis |
 | TOOL-140 | ✅ | ذكاء الصور المحلي: إزالة الخلفية والملء الذكي بنموذج ONNX تختاره · Local image AI: remove background and smart fill with your own ONNX model → `image-local-ai` | SP-0149 Arabic-aware font fidelity lab | — |
 | TOOL-141 | ✅ | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط · Prompt pack: copyable prompts, one code block each, with a warn-only lint → `prompt-pack` | SP-0149 Arabic-aware font fidelity lab | python3, key:video-gen |
@@ -175,23 +180,19 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-61 | ✅ | مكتبة KOSIF الشاملة للخطوط وأفكار التصميم من صادرات تيليجرام · KOSIF Telegram Typography Atlas — private-safe font knowledge and idea search → `telegram-typography-atlas` | SP-0149 Arabic-aware font fidelity lab | fonts:arabic |
 | TOOL-88 | ✅ | استوديو التطبيقات للصور والتصميم · App Studio photo & design CLI → `app-studio` | SP-0149 Arabic-aware font fidelity lab | ffmpeg, chromium, pip:numpy, pip:pillow … |
 | TOOL-90 | 📦 | أداة عرض النص بخطوط مرشّحة · Font candidate text renderer → `render-text` | SP-0149 Arabic-aware font fidelity lab | node, python3, chromium, fonts:arabic |
-| TOOL-138 | ✅ | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن · Mosamem x REA source-safe image preflight and capability fusion → `mosamem-rea-fusion` | SP-0150 REA CLI Bridge | python3, chromium, npm:rea |
-| TOOL-154 | ✅ | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية · Agent guard: shell preflight, transcript secret scan and worktree plans → `agent-guard` | SP-0150 REA CLI Bridge | python3, git |
-| TOOL-32 | ✅ | فحص المشروع المحلي دون تشغيل · Local project static audit → `local-project-audit` | SP-0150 REA CLI Bridge | python3, npm:rea, engine:ghidra |
-| TOOL-45 | ✅ | مستكشف المواقع بالمتصفح · Browser scout site survey → `browser-scout` | SP-0150 REA CLI Bridge | python3, chromium |
-| TOOL-52 | ✅ | موجّه عائلات REA · REA Family Router → `rea-family-router` | SP-0150 REA CLI Bridge | python3, npm:rea, engine:android, engine:binwalk … |
-| TOOL-62 | ✅ | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) → `web-app-study` | SP-0150 REA CLI Bridge | python3, chromium, npm:rea |
-| TOOL-98 | ✅ | جسر أوامر REA · REA CLI Bridge → `rea-bridge` | SP-0150 REA CLI Bridge | python3, npm:rea |
-| TOOL-53 | 📦 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch → `rea-owned-repo-batch` | SP-0150 REA CLI Bridge | python3, git, npm:rea |
-| TOOL-139 | ✅ | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة · Charter roster ingest: the 500-expert council as a consultable index → `charter-ingest` | SP-0151 Pro Council: five opposing members or a… | python3 |
-| TOOL-158 | ✅ | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها · Drawing council: eleven experts from the 48 method cards review an image before it is sent → `drawing-council` | SP-0151 Pro Council: five opposing members or a… | pip:pillow |
-| TOOL-66 | ✅ | مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت · Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity → `book-methods` | SP-0151 Pro Council: five opposing members or a… | python3 |
-| TOOL-68 | ✅ | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict → `council` | SP-0151 Pro Council: five opposing members or a… | python3 |
-| TOOL-75 | ✅ | فاحص العبارات الكتابية النمطية · Writing Tell Scanner → `tell-scan` | SP-0151 Pro Council: five opposing members or a… | python3 |
-| TOOL-76 | ✅ | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier → `see-pro-cognitive-gate` | SP-0151 Pro Council: five opposing members or a… | python3, network |
-| TOOL-09 | ✅ | موجّه مهارات العمل ومثبّتها · Process-skill router and installer → `superpowers-unified` | SP-0152 Installer Triage | python3, imagemagick |
-| TOOL-67 | ✅ | مصحّح الامتحان الخفي التفاضلي · Differential hidden-exam scorer → `differential-exam` | SP-0152 Installer Triage | python3 |
-| TOOL-97 | ✅ | فرز المثبّتات · Installer Triage → `installer-triage` | SP-0152 Installer Triage | python3, npm:rea, 7zip, innoextract |
+| TOOL-139 | ✅ | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة · Charter roster ingest: the 500-expert council as a consultable index → `charter-ingest` | SP-0150 Pro Council: five opposing members or a… | python3 |
+| TOOL-158 | ✅ | مجلس خبراء الرسم: أحد عشر خبيرًا من بطاقات الكتب الـ48 يراجعون الصورة قبل إرسالها · Drawing council: eleven experts from the 48 method cards review an image before it is sent → `drawing-council` | SP-0150 Pro Council: five opposing members or a… | pip:pillow |
+| TOOL-66 | ✅ | مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت · Book-distilled methods: lateral ideas, pragmatic engineering, Bayesian evidence, personality, accounting checks, prompt clarity → `book-methods` | SP-0150 Pro Council: five opposing members or a… | python3 |
+| TOOL-68 | ✅ | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات · Pro Council: five opposing members or a task-fitted council from 100 personas, three rounds, a scored verdict → `council` | SP-0150 Pro Council: five opposing members or a… | python3 |
+| TOOL-76 | ✅ | فاحص عقود التفكير والتوليف KOSIF SEE Pro · SEE Pro Cognitive Fusion contract verifier → `see-pro-cognitive-gate` | SP-0150 Pro Council: five opposing members or a… | python3, network |
+| TOOL-09 | ✅ | موجّه مهارات العمل ومثبّتها · Process-skill router and installer → `superpowers-unified` | SP-0151 Installer Triage | python3, imagemagick |
+| TOOL-67 | ✅ | مصحّح الامتحان الخفي التفاضلي · Differential hidden-exam scorer → `differential-exam` | SP-0151 Installer Triage | python3 |
+| TOOL-97 | ✅ | فرز المثبّتات · Installer Triage → `installer-triage` | SP-0151 Installer Triage | python3, npm:rea, 7zip, innoextract |
+| TOOL-167 | ✅ | فاحص أرقام الدروس والشروح · Lesson number integrity checker → `lesson-integrity` | SP-0152 Brief originality checker | python3 |
+| TOOL-102 | 🟢 | فاحص أصالة الملفات الإبداعية · Brief originality checker → `repo-check-originality` | SP-0152 Brief originality checker | python3 |
+| TOOL-59 | 🟢 | استيراد الملفات الإبداعية · Creative brief importer → `repo-import-briefs` | SP-0152 Brief originality checker | python3 |
+| TOOL-138 | ✅ | تكامل مصمم وREA: فحص صور وتوليف مهارات آمن · Mosamem x REA source-safe image preflight and capability fusion → `mosamem-rea-fusion` | SP-0153 Agent guard: shell preflight, transcrip… | python3, chromium, npm:rea |
+| TOOL-154 | ✅ | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية · Agent guard: shell preflight, transcript secret scan and worktree plans → `agent-guard` | SP-0153 Agent guard: shell preflight, transcrip… | python3, git |
 
 ## agent-orchestration (mind)
 

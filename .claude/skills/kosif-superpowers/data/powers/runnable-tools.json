@@ -7922,5 +7922,59 @@
   ],
   "section": "Editing and reference video / المونتاج والفيديو المرجعي",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-179",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب",
+  "name_en": "Free photos: open-licence and free stock photo search and download with credits",
+  "status": "proven",
+  "what": "الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل تراخيص ممنوع التعديل (ND) تلقائيًا لأن المونتاج تعديل، و--commercial بتشيل غير التجاري، و--orientation portrait بتجيب الطولي للريلز. أمر sheet بيعمل صفحة معاينة، وأمر download بيحفظ الصورة ومعاها ملف JSON فيه الترخيص وسطر النسب، وبيحدّث ATTRIBUTION.md. — The photo sister of free-footage. Searches Openverse (CC and public-domain images indexed from many sites, licence per image), Wikimedia Commons (bitmap files, licence and author from extmetadata), NASA Images (largest rendition) and The Met Open Access (CC0 objects only) without keys, plus Pexels, Pixabay and Unsplash when PEXELS_API_KEY, PIXABAY_API_KEY or UNSPLASH_ACCESS_KEY is set (Unsplash+ paid photos skipped). ND licences are dropped by default, --commercial drops NC and unconfirmed licences, --orientation and --min-width filter for vertical reels or 4K frames. Results merge by id into out/free-photos/last_search.json; sheet writes a contact sheet; download saves each photo with a JSON sidecar (licence, credit line, bytes, sha256), reports Unsplash downloads as its API terms require, refuses web pages served instead of images, and rebuilds ATTRIBUTION.md.",
+  "when": "دوّر لي على صور مجانية للأهرامات أستخدمها في المونتاج / Find free open-licence photos of a desert at night for my edit",
+  "how": "sources: `python3 scripts/free_photos.py sources`; search: `python3 scripts/free_photos.py search \"pyramids at sunset\" --orientation portrait --commercial --limit 6`; sheet: `python3 scripts/free_photos.py sheet`; download: `python3 scripts/free_photos.py download nasa:PIA04745 met:1 --out out/free-photos/pics`. Full card: `python3 scripts/hub.py tool free-photos`. Limits: Licences are what each source declares; the tool records them but cannot verify or grant rights, and Openverse's licence is the one the original site shows (open page_url before paid use). Model releases are not covered: a photo of a recognisable person or a trademark can still need permission for advertising. From this cloud sandbox on 2026-10-30 NASA answered, Wikimedia Commons answered then rate-limited (429, Retry-After up to 600 s on upload.wikimedia.org), the Met API answered 403 intermittently from a bot wall, and api.openverse.org timed out (504); these adapters are covered offline and are expected to work from a home computer. Pixabay's API serves up to 1280 px without approved full-size access. Pexels, Pixabay and Unsplash need the user's free keys.",
+  "params": "in: A search query in English (most sources index English words), optional --sources ids, --orientation, --min-width, --limit, --commercial, --allow-nd; result ids for download (--size, --max-mb, --dry-run); PEXELS_API_KEY / PIXABAY_API_KEY / UNSPLASH_ACCESS_KEY in the environment to add those sources. · out: out/free-photos/last_search.json (kosif.free_photos.results.v1, merged by id with a searches history), contact_sheet.html, photos in --out with <file>.json sidecars (kosif.free_photos.asset.v1) and ATTRIBUTION.md.",
+  "install": "optional: env:PEXELS_API_KEY, env:PIXABAY_API_KEY, env:UNSPLASH_ACCESS_KEY",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_photos.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/free_photos.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "free-photos",
+   "free photos",
+   "free images",
+   "stock photos",
+   "open licence",
+   "creative commons",
+   "cc0",
+   "public domain",
+   "openverse",
+   "unsplash",
+   "pexels",
+   "pixabay",
+   "wikimedia commons",
+   "nasa images",
+   "met museum",
+   "open access",
+   "attribution",
+   "صور مجانية",
+   "صور بدون حقوق",
+   "صور مفتوحة المصدر",
+   "خلفيات",
+   "صور للمونتاج",
+   "ملك عام",
+   "ترخيص",
+   "نسب الحقوق",
+   "مخطوطات",
+   "خط عربي"
+  ],
+  "section": "Sources and references / المصادر والمراجع",
+  "source": "data/tools.json"
  }
 ]

@@ -253,4 +253,4 @@
 - في نهاية أي تنفيذ: **ما تم فعلًا (بإيصال)**، و**ما لم يتم ولماذا**، و**ما يحتاج إذني**، والحالة من سلّم التسليم.
 - إن لم تستطع فحص شيء فقل ذلك في سطر، ولا تملأ الفراغ بتخمين.
 
-**المرجع الكامل** (حين تتوفر أدوات): النواة `.claude/skills/kosif-superpowers/PROTOCOL.md`، وملاحقها `references/protocol/A1…A43`، والنسخة المحمولة الكاملة `.claude/skills/kosif-superpowers/USIP_PORTABLE.md`، وهذه النسخة `docs/protocol/USIP_PORTABLE_v6_0.md`، كلها في <https://github.com/kosif199022-jpg/kosif-tool>.
+**المرجع الكامل** (حين تتوفر أدوات): النواة `.claude/skills/kosif-superpowers/PROTOCOL.md`، وملاحقها `references/protocol/A1…A44`، والنسخة المحمولة الكاملة `.claude/skills/kosif-superpowers/USIP_PORTABLE.md`، وهذه النسخة `docs/protocol/USIP_PORTABLE_v6_0.md`، كلها في <https://github.com/kosif199022-jpg/kosif-tool>.

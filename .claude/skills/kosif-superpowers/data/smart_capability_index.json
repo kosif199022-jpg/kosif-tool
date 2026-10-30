@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5856,
+  "catalog_powers": 5857,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 200,
+  "tool_count": 201,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 275,
+      "count": 276,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 175,
+        "proven": 176,
         "ready": 21
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 177,
+        "runnable-tools": 178,
         "self-discovery": 43
       },
       "examples": [
@@ -74365,6 +74365,24 @@
       ],
       "source": "runnable-tools.json",
       "what": "بيدّي ريل القرآن نص الآيات بالضبط وتوقيتها. fetch بياخد مراجع زي 51:22-23 ويجيب كل آية من api.alquran.cloud (نص تنزيل المبسّط أو العثماني) بهوية واضحة ومهلة وانتظار بين الطلبات وإعادة محاولة وكاش، ويحفظ النص حرف بحرف من غير ما يغيّر ترتيب التشكيل، ويشيل البسملة اللي الموقع بيلزقه"
+    },
+    {
+      "id": "TOOL-179",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Free photos: open-licence and free stock photo search and download with credits",
+      "name_ar": "صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب",
+      "status": "proven",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_photos.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/free_photos.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل ترا"
     },
     {
       "id": "SEC-01",

@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **177 powers follow** — ✅ 148 · 🟢 20 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **178 powers follow** — ✅ 149 · 🟢 20 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-177 (21)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-179 (22)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -1571,6 +1571,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_footage.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/free_footage.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-179 · صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب · Free photos: open-licence and free stock photo search and download with credits · ✅ مُثبت هنا / proven here
+- **ماذا / what:** الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل تراخيص ممنوع التعديل (ND) تلقائيًا لأن المونتاج تعديل، و--commercial بتشيل غير التجاري، و--orientation portrait بتجيب الطولي للريلز. أمر sheet بيعمل صفحة معاينة، وأمر download بيحفظ الصورة ومعاها ملف JSON فيه الترخيص وسطر النسب، وبيحدّث ATTRIBUTION.md. — The photo sister of free-footage. Searches Openverse (CC and public-domain images indexed from many sites, licence per image), Wikimedia Commons (bitmap files, licence and author from extmetadata), NASA Images (largest rendition) and The Met Open Access (CC0 objects only) without keys, plus Pexels, Pixabay and Unsplash when PEXELS_API_KEY, PIXABAY_API_KEY or UNSPLASH_ACCESS_KEY is set (Unsplash+ paid photos skipped). ND licences are dropped by default, --commercial drops NC and unconfirmed licences, --orientation and --min-width filter for vertical reels or 4K frames. Results merge by id into out/free-photos/last_search.json; sheet writes a contact sheet; download saves each photo with a JSON sidecar (licence, credit line, bytes, sha256), reports Unsplash downloads as its API terms require, refuses web pages served instead of images, and rebuilds ATTRIBUTION.md.
+- **متى أستخدمها / when:** دوّر لي على صور مجانية للأهرامات أستخدمها في المونتاج / Find free open-licence photos of a desert at night for my edit
+- **كيف / how:** sources: `python3 scripts/free_photos.py sources`; search: `python3 scripts/free_photos.py search "pyramids at sunset" --orientation portrait --commercial --limit 6`; sheet: `python3 scripts/free_photos.py sheet`; download: `python3 scripts/free_photos.py download nasa:PIA04745 met:1 --out out/free-photos/pics`. Full card: `python3 scripts/hub.py tool free-photos`. Limits: Licences are what each source declares; the tool records them but cannot verify or grant rights, and Openverse's licence is the one the original site shows (open page_url before paid use). Model releases are not covered: a photo of a recognisable person or a trademark can still need permission for advertising. From this cloud sandbox on 2026-10-30 NASA answered, Wikimedia Commons answered then rate-limited (429, Retry-After up to 600 s on upload.wikimedia.org), the Met API answered 403 intermittently from a bot wall, and api.openverse.org timed out (504); these adapters are covered offline and are expected to work from a home computer. Pixabay's API serves up to 1280 px without approved full-size access. Pexels, Pixabay and Unsplash need the user's free keys. **أرقام / params:** in: A search query in English (most sources index English words), optional --sources ids, --orientation, --min-width, --limit, --commercial, --allow-nd; result ids for download (--size, --max-mb, --dry-run); PEXELS_API_KEY / PIXABAY_API_KEY / UNSPLASH_ACCESS_KEY in the environment to add those sources. · out: out/free-photos/last_search.json (kosif.free_photos.results.v1, merged by id with a searches history), contact_sheet.html, photos in --out with <file>.json sidecars (kosif.free_photos.asset.v1) and ATTRIBUTION.md.
+- **تثبيت / install:** `optional: env:PEXELS_API_KEY, env:PIXABAY_API_KEY, env:UNSPLASH_ACCESS_KEY`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_photos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/free_photos.py`
+- **المصدر / source:** data/tools.json
+
 ## Local computer / الجهاز المحلي
 
 #### TOOL-55 · خادم KOSIF Remote Commander · KOSIF Remote Commander MCP · ✅ مُثبت هنا / proven here
@@ -1584,7 +1593,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (177)
+- الرخص / licences: — (178)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
