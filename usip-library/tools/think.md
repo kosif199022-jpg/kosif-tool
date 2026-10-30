@@ -1,4 +1,4 @@
-# أدوات المجال `think` (19 أداة)
+# أدوات المجال `think` (21 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -642,6 +642,45 @@
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:prompt-lab --evidence <ملف>`.
 
+### `see-capability-bridge` — جسر توجيه قدرات SEE / SEE capability routing bridge
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/see_capability_bridge.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات |  |
+
+**ما تفعله:** توجيه القدرات وأساليب التفكير بصورة للقراءة فقط مع حفظ حدود التنفيذ والتحقق.
+
+**What it does:** Map the 11 cognitive lenses and nine SEE domains to specialist routes and live owners.
+
+#### متى تُستدعى
+
+- «Route specialist SEE methods for a finance task without running an external service»
+- «Distinguish Full Pro or remote tool availability from execution and proof»
+
+#### الأوامر
+
+- **route**: Return a read-only SEE method routing record without executing agents.
+  - `python3 scripts/see_capability_bridge.py --task "reconcile an Excel bank statement" --mode deep`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: This chooses guidance only; no proprietary source, hosted Full Pro, execution or verified output.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_see_capability_bridge.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/see-capability-bridge-20261030.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:see-capability-bridge --evidence <ملف>`.
+
 ### `see-pro-cognitive-gate` — فاحص عقود التفكير والتوليف KOSIF SEE Pro / SEE Pro Cognitive Fusion contract verifier
 
 | الحقل | القيمة |
@@ -682,6 +721,45 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:see-pro-cognitive-gate --evidence <ملف>`.
+
+### `see-superpower-unifier` — توحيد تخطيط SEE وسوبر باور / SEE and Superpowers unified planning
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/see_superpower_unifier.py` (جذر: skill) |
+| المجال | `think` |
+| الدليل | `tested-here` |
+| العائلات |  |
+
+**ما تفعله:** توجيه القدرات وأساليب التفكير بصورة للقراءة فقط مع حفظ حدود التنفيذ والتحقق.
+
+**What it does:** Enrich the one canonical Superpowers hub with bounded SEE cognitive and capability planning.
+
+#### متى تُستدعى
+
+- «Fuse SEE method candidates with the canonical Superpowers hub tool and power IDs»
+- «Create a permission-conscious plan and validation chain without a duplicate registry»
+
+#### الأوامر
+
+- **route**: Return a read-only SEE method routing record without executing agents.
+  - `python3 scripts/see_superpower_unifier.py plan "review bank invoices" --mode deep`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: read-only
+- الموافقة: —
+- الحدود: This chooses guidance only; no proprietary source, hosted Full Pro, execution or verified output.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:see-superpower-unifier --evidence <ملف>`.
 
 ### `stats-lab` — مختبر الإحصاء: اختبار A/B وحجم العينة ووصف عمود وأرباح الدفعات / Stats lab: A/B test, sample size, column statistics and FIFO/LIFO gains
 
