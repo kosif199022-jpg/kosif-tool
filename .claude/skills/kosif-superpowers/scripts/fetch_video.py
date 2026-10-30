@@ -39,7 +39,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _pinterest as pinterest  # noqa: E402 - the shared Pinterest pin helper (source_finder.py uses it too)
-import cobalt_provider as cobalt  # noqa: E402 - authorized provider, opt-in only
+import _cobalt_provider as cobalt  # noqa: E402 - internal authorized gateway, opt-in only
 
 
 def find_ytdlp(install: bool = True) -> list[str] | None:
