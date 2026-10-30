@@ -42,7 +42,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (37) / protocol appendices
+## ملاحق البروتوكول (42) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -65,6 +65,8 @@
 | [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات |
 | [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow |
+| [A19 دروس المونتاج](references/protocol/A19-field-lessons-montage.md) | مونتاج من رابط أو صوت؛ لقطات وصور مجانية |
+| [A44 صور وفيديو مجانية](references/protocol/A44-free-stock-media.md) | مونتاج من رابط أو صوت؛ لقطات وصور مجانية |
 | [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة |
 | [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال |
 | [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض |
@@ -83,6 +85,9 @@
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير |
 | [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling |
 | [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
+| [A46 Suno](references/protocol/A46-suno-mcp.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
+| [A45 يوتيوب](references/protocol/A45-youtube-download.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
