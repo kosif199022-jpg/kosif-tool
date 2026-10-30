@@ -446,7 +446,7 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
     try:
         from see_superpower_unifier import fuse as _see_fuse
         _see_mode = ("full_pro" if re.search(r"(?i)full[ -]?pro|وضع البرو|قصيف برو", brief)
-                     else "deep" if re.search(r"(?i)\\bdeep\\b|فكر بعمق|فكّر بعمق", brief)
+                     else "deep" if re.search(r"(?i)\bdeep\b|فكر بعمق|فكّر بعمق", brief)
                      else "standard")
         out["see_fusion"] = _see_fuse(brief, out, mode=_see_mode)
     except (ImportError, TypeError, ValueError) as exc:
