@@ -10,6 +10,8 @@
     "inputs": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}}}},
     "checks": {"type": "array", "items": {"type": "object", "required": ["name", "result"], "properties": {"name": {"type": "string"}, "result": {"enum": ["PASS", "FAIL", "NOT_RUN"]}, "evidence": {"type": "string"}}}},
     "limits": {"type": "array", "items": {"type": "string"}},
+    "estimate_minutes": {"type": "number", "minimum": 0},
+    "actual_minutes": {"type": "number", "minimum": 0},
     "remote_deployment": {"type": "boolean"},
     "remote_evidence": {"type": "string"}
   }

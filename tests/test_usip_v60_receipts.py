@@ -55,6 +55,16 @@ class ReceiptTest(unittest.TestCase):
             r = {"version": "USIP-6.0", "status": "PARTIAL", "artifact": "x", "checks": [], "remote_deployment": True}
             self.assertIn("remote_deployment=true requires remote_evidence", receipts.validate(r, Path(d)))
 
+    def test_countdown_minutes(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = {"version": "USIP-6.0", "status": "PARTIAL", "artifact": "x", "checks": [],
+                 "estimate_minutes": 15, "actual_minutes": 22.5}
+            self.assertEqual(receipts.validate(r, Path(d)), [])
+            r["actual_minutes"] = -1
+            self.assertTrue(any("actual_minutes" in e for e in receipts.validate(r, Path(d))))
+            r["actual_minutes"] = "soon"
+            self.assertTrue(any("actual_minutes" in e for e in receipts.validate(r, Path(d))))
+
     def test_cli_exit_codes(self):
         with tempfile.TemporaryDirectory() as d:
             p = Path(d) / "receipt.json"

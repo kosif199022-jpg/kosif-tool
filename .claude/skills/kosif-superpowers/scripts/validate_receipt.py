@@ -46,6 +46,9 @@ def validate(data, base):
         h=s.get('sha256','')
         if h and not (isinstance(h,str) and len(h)==64 and all(x in '0123456789abcdef' for x in h.lower())):
             errors.append(f'inputs[{i}] SHA256 must be 64 hexadecimal characters')
+    for key in ('estimate_minutes', 'actual_minutes'):
+        if key in data and (isinstance(data[key], bool) or not isinstance(data[key], (int, float)) or data[key] < 0):
+            errors.append(f'{key} must be a non-negative number of minutes')
     if data.get('remote_deployment') is True and not data.get('remote_evidence'):
         errors.append('remote_deployment=true requires remote_evidence')
     return errors
