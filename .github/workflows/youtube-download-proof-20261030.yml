@@ -1,0 +1,54 @@
+name: YouTube owned-media acquisition proof
+on:
+  push:
+    branches:
+      - feat/youtube-opt-in-cobalt-gateway-20261030
+    paths:
+      - .github/workflows/youtube-download-proof-20261030.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Install public open-source downloader
+        run: |
+          python3 -m pip install --user -U 'yt-dlp[default]'
+          python3 -m yt_dlp --version
+          ffmpeg -version | head -n 1
+      - name: Acquire public test URL without authentication or protections bypass
+        id: get
+        continue-on-error: true
+        shell: bash
+        env:
+          VIDEO_ID: dYrEeavC3cw
+        run: |
+          mkdir -p out
+          set -o pipefail
+          python3 -m yt_dlp --no-playlist --no-progress --no-warnings --retries 2 --fragment-retries 2 --extractor-retries 1 --socket-timeout 20 \
+            --js-runtimes node --max-filesize 180M -f 'bv*[height<=720]+ba/b[height<=720]/b' \
+            --merge-output-format mp4 -o 'out/%(id)s.%(ext)s' \
+            "https://www.youtube.com/watch?v=$VIDEO_ID"
+          test -n "$(find out -maxdepth 1 -type f -name '*.mp4' -size +10k -print -quit)"
+          ffprobe -v error -select_streams v:0 -show_entries stream=width,height,codec_name -show_entries format=duration,size -of json out/*.mp4 | tee out/video_probe.json
+          sha256sum out/*.mp4 > out/video_sha256.txt
+      - name: Summarize result
+        if: always()
+        shell: bash
+        run: |
+          echo "Downloader result: ${{ steps.get.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.get.outcome }}" = "success" ]; then
+            echo "MP4 was downloaded and verified with ffprobe." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No verified MP4; see downloader logs. No bypass or fake output." >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload verified MP4 privately to workflow artifacts
+        if: steps.get.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: verified-video-dYrEeavC3cw
+          path: out/
+          if-no-files-found: error
+          retention-days: 1
