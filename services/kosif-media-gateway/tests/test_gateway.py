@@ -426,7 +426,7 @@ class TestMcpRaw(Base):
         self.assertEqual(self.rpc({"jsonrpc": "2.0", "method": "notifications/cancelled",
                                    "params": {"requestId": 1}})[0], 202)
         names = [t["name"] for t in self.rpc({"jsonrpc": "2.0", "id": 2, "method": "tools/list"})[2]["result"]["tools"]]
-        self.assertEqual(names, ["snapany_proxy_links", "gateway_status", "list_uploads", "probe_youtube", "download_permitted_video"])
+        self.assertEqual(names, ["gateway_status", "list_uploads", "probe_youtube", "download_permitted_video"])
         unknown = self.rpc({"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "nope"}})[2]
         self.assertEqual(unknown["error"]["code"], -32602)
         self.assertEqual(self.rpc({"jsonrpc": "2.0", "id": 4, "method": "x/y"})[2]["error"]["code"], -32601)
