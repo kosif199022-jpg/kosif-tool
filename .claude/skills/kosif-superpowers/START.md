@@ -18,13 +18,13 @@ python3 $SKILL_DIR/scripts/capability_mindmap.py task "<المهمة>" # 3. رت
 python3 $SKILL_DIR/scripts/kosif_hubs.py install <hub>        # 4. ثبّت الناقص (--apply لـ pip/npm فقط، واسأل قبل النظام والمفاتيح)
 ```
 
-الهيكل: **15 مجموعة** ← **481 قدرة خارقة مدمجة** ← **5,856 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
+الهيكل: **15 مجموعة** ← **482 قدرة خارقة مدمجة** ← **5,857 قدرة ذرية** بأدلتها. التفاصيل في [references/hubs.md](references/hubs.md) و[references/superpowers.md](references/superpowers.md) و[references/capability-mindmap.md](references/capability-mindmap.md)، والقواعد في [SKILL.md](SKILL.md).
 
 | المجموعة | ماذا تغطي | قدرات | جاهز الآن | أول أمر |
 |---|---|---|---|---|
 | `research` | البحث والمعرفة — Research & knowledge | 62 | 21 | `python3 scripts/source_scout.py check` |
 | `thinking` | التفكير والتخطيط والاستراتيجية — Reasoning & strategy | 387 | 25 | `python3 scripts/think.py ladder "<المهمة>"` |
-| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 290 | 196 | `python3 scripts/hub.py doctor` |
+| `agents` | الوكلاء والتوجيه الذكي — Agents & routing | 291 | 197 | `python3 scripts/hub.py doctor` |
 | `software` | البرمجة وبناء التطبيقات — Software & applications | 662 | 132 | `python3 scripts/hub.py find "<المهمة>"` |
 | `drawing` | الرسم والأشكال والتصميم — Drawing & visual composition | 307 | 107 | `python3 scripts/creative_paint.py doctor` |
 | `images` | الصور والتحرير والتوليد — Images & photo editing | 327 | 140 | `python3 scripts/app_studio.py doctor` |

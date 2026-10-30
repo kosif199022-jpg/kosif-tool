@@ -1,6 +1,6 @@
 # مكتبة البروتوكول — USIP v5.6 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,856 قدرة في 62 عائلة و15 مجموعة، و198 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,857 قدرة في 62 عائلة و15 مجموعة، و199 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -19,12 +19,12 @@
 
 | المجموعة | القدرات | proven | ready | الأدوات | الفصل |
 |---|---:|---:|---:|---:|---|
-| البحث والمعرفة (`research`) | 60 | 21 | 0 | 18 | [research.md](research.md) |
+| البحث والمعرفة (`research`) | 60 | 21 | 0 | 19 | [research.md](research.md) |
 | التفكير والتخطيط والاستراتيجية (`thinking`) | 402 | 17 | 8 | 25 | [thinking.md](thinking.md) |
-| الوكلاء والتوجيه الذكي (`agents`) | 275 | 175 | 21 | 49 | [agents.md](agents.md) |
+| الوكلاء والتوجيه الذكي (`agents`) | 276 | 176 | 21 | 49 | [agents.md](agents.md) |
 | البرمجة وبناء التطبيقات (`software`) | 692 | 115 | 17 | 22 | [software.md](software.md) |
 | الرسم والأشكال والتصميم (`drawing`) | 306 | 53 | 55 | 26 | [drawing.md](drawing.md) |
-| الصور والتحرير والتوليد (`images`) | 323 | 96 | 42 | 39 | [images.md](images.md) |
+| الصور والتحرير والتوليد (`images`) | 323 | 96 | 42 | 40 | [images.md](images.md) |
 | الثري دي والمحاكاة والرندر (`3d`) | 758 | 122 | 141 | 35 | [3d.md](3d.md) |
 | الموشن والمونتاج والسينما (`motion`) | 1,233 | 117 | 183 | 66 | [motion.md](motion.md) |
 | الصوت والموسيقى والتعليق (`audio`) | 422 | 59 | 74 | 30 | [audio.md](audio.md) |
@@ -35,7 +35,7 @@
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 21 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 7,074 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 7,077 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 
