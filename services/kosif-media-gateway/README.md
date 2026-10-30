@@ -80,6 +80,17 @@ python3 services/kosif-media-gateway/mcp_client_check.py $G/mcp --probe dYrEeavC
 
 Keep the token in an environment variable; never paste it into chat, commits or logs.
 
+Full live check (health, MCP with the official SDK, wrong-token rejection, and a real verified download of a
+public-domain archive.org film pulled back and decoded locally):
+
+```sh
+python3 services/kosif-media-gateway/live_check.py --out live-report.json
+```
+
+Without a local machine: add the repository secret `KOSIF_GATEWAY_TOKEN` (GitHub Settings > Secrets and
+variables > Actions) and run the **KOSIF Media Gateway live check** workflow; it uploads `live-report.json`
+(token-free) as an artifact.
+
 ## Connect Claude Code
 
 ```sh

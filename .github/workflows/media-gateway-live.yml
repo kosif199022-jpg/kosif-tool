@@ -1,0 +1,48 @@
+name: KOSIF Media Gateway live check
+# Calls the DEPLOYED Render gateway with the repository secret KOSIF_GATEWAY_TOKEN
+# (Settings > Secrets and variables > Actions). The token is never printed; the report
+# artifact is token-free. Uses one of the gateway's three hourly downloads (a public-domain
+# archive.org film); it does not download from YouTube.
+on:
+  workflow_dispatch:
+  push:
+    branches: [feat/kosif-media-gateway-render-free-20261030]
+    paths:
+      - ".github/workflows/media-gateway-live.yml"
+      - "services/kosif-media-gateway/live_check.py"
+permissions:
+  contents: read
+concurrency:
+  group: media-gateway-live
+  cancel-in-progress: false
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      KOSIF_GATEWAY_TOKEN: ${{ secrets.KOSIF_GATEWAY_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Secret present?
+        id: secret
+        run: |
+          if [ -n "$KOSIF_GATEWAY_TOKEN" ]; then echo "has=1" >> "$GITHUB_OUTPUT"; else
+            echo "::warning::Add the repository secret KOSIF_GATEWAY_TOKEN to run the live check"; fi
+      - name: Install client tools
+        if: steps.secret.outputs.has == '1'
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null
+          python -m pip install -q mcp
+      - name: Live check (health, MCP, verified download)
+        if: steps.secret.outputs.has == '1'
+        run: python services/kosif-media-gateway/live_check.py --out live-report.json
+      - name: Upload token-free report
+        if: always() && steps.secret.outputs.has == '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: media-gateway-live-report
+          path: live-report.json
+          if-no-files-found: ignore
