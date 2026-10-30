@@ -52,3 +52,11 @@ jobs:
           path: out/
           if-no-files-found: error
           retention-days: 1
+      - name: Enforce verified download outcome
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.get.outcome }}" != "success" ]; then
+            echo "No verified MP4: acquisition failed, see logs." >&2
+            exit 1
+          fi
