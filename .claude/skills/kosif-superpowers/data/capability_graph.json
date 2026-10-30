@@ -2083,6 +2083,11 @@
    "label": "scripts/drawing_methods.py"
   },
   {
+   "id": "script:scripts/_media_gateway.py",
+   "kind": "script",
+   "label": "scripts/_media_gateway.py"
+  },
+  {
    "id": "script:scripts/_pinterest.py",
    "kind": "script",
    "label": "scripts/_pinterest.py"
@@ -6975,6 +6980,12 @@
   {
    "from": "script:scripts/fetch_video.py",
    "to": "script:scripts/_deps.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_video.py",
+   "to": "script:scripts/_media_gateway.py",
    "rel": "imports",
    "w": 1
   },
