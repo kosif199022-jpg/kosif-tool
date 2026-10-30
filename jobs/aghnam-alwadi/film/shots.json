@@ -6,11 +6,11 @@
   "duration": 24.5,
   "shots": [
    {
-    "clip": "px_11344099",
+    "clip": "mk_47410",
     "t0": 0.0,
     "t1": 1.62,
-    "from": 3.0,
-    "mode": "fill"
+    "from": 0.3,
+    "mode": "panel"
    },
    {
     "clip": "@flash",
@@ -87,7 +87,8 @@
     "t1": 1.6,
     "text": "طازج؟",
     "icon": "",
-    "pos": "hero"
+    "pos": "hero",
+    "y": 300
    },
    {
     "t0": 1.65,
