@@ -30,7 +30,7 @@ You need the `Artifact` and `ArtifactData` tools (Claude Code, or any Claude sur
 1. List the rows: `ArtifactData` action `list`, url = the page, collection `files` (videos page: `uploads`), `query: {"limit": 1000}`, `out_dir: <scratch>/rows`.
 2. Keep rows with `status: "done"` and `len(chunks) == parts`. Skip duplicates (same `name` and `size`). Rows with `status: "failed"` were refused by the store; their `error` says why.
 3. Download each part with its own call (the plural `paths` form does not work for assets): `Artifact` action `read`, url = the page, `path: "<chunk id>"`. Send many of these calls in one message to go fast. Each part lands at `<scratch>/artifact-files/<uuid>/<id>.mp4` (the `.mp4` is only a label).
-4. Join and verify: `python3 -I scripts/join_parts.py --rows <scratch>/rows/files --parts <scratch>/artifact-files/<uuid> --out <dest>`. It joins parts in index order, checks every size, skips duplicates and prints one line per file.
+4. Join and verify: `python3 -I .claude/skills/kosif-upload-link/scripts/join_parts.py --rows <scratch>/rows/files --parts <scratch>/artifact-files/<uuid> --out <dest>`. It joins parts in index order, checks every size, skips duplicates, refuses chunk ids that are not 32-hex asset ids, renames same-name files (`name (1).pdf`) and prints one line per file.
 5. Put the results where later work can read them. In a Claude project, use `/mnt/project-files/uploads/files/`.
 6. Optional: mark a row as fetched (`ArtifactData` `update` `{"fetched": true}` with `if_version`). The page then shows «Claude سحبه».
 7. Clean up only when the user agrees: `Artifact` `delete` with `url` and `path: <chunk id>` for each part, then `ArtifactData` `delete` for the row.
