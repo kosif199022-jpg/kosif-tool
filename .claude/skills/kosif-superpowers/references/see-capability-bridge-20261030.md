@@ -6,7 +6,7 @@
 
 Use `python3 scripts/see_capability_bridge.py --catalog` to enumerate the methods and owners, then `python3 scripts/see_capability_bridge.py --task "طابق دفتر الحسابات" --mode deep` to obtain a read-only routing receipt. For a referenced video: add `--reference-video` **only if a real reference video was actually supplied**. Run `python3 scripts/see_capability_bridge.py --self-test` or `python3 -m unittest evals/test_see_capability_bridge.py` locally from the skill directory. This script never invokes a plugin or executes a side effect.
 
-The canonical first entry remains **`scripts/hub.py find`** and the USIP pipeline; the new bridge adds specific SEE routing and guards, not a competing front door. Read [A12 Cognitive Fusion](protocol/A12-see-pro-cognitive-fusion.md) and canonical [PROTOCOL](../../PROTOCOL.md), open only matched materials.
+The canonical first entry remains **`scripts/hub.py find`** and the USIP pipeline; the new bridge adds specific SEE routing and guards, not a competing front door. Read [A12 Cognitive Fusion](protocol/A12-see-pro-cognitive-fusion.md) and canonical [PROTOCOL](../PROTOCOL.md), open only matched materials.
 
 ## Eleven Stage-0 lenses carried over
 
