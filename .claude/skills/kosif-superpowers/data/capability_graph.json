@@ -2575,6 +2575,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_free_photos.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_hub_runner.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_fusionforge_hub_runner.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_prompt_pack.py"
@@ -8053,6 +8058,12 @@
   },
   {
    "from": "script:scripts/fusionforge.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_hub_runner.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fusionforge.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
    "rel": "tested_by",
    "w": 1
@@ -8078,6 +8089,12 @@
   {
    "from": "script:scripts/fusionforge_shared.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/hub.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_fusionforge_hub_runner.py",
    "rel": "tested_by",
    "w": 1
   },

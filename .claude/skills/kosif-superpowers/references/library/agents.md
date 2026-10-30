@@ -49,6 +49,7 @@
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `fusionforge` | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --project demo_project --from-brief out/20261021-reel/brief.json` | tested-here |
+| `fusionforge-hub-runner` | جسر تنفيذ وصفات FusionForge عبر Hub | `python3 scripts/fusionforge_hub_runner.py --recipe out/fusionforge/demo_project/recipes/FUSE-20261030-0123456789.json --plan-file out/job/io.json --report out/job/bridge-dry.json` | tested-here |
 | `fusionforge-shared` | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة | `python3 scripts/fusionforge_shared.py audit` | untested |
 | `github-pulse` | نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | tested-here |
 | `github-top-repos` | متابعة أشهر 1000 مستودع | `python3 scripts/github_top_repos.py build` | tested-here |

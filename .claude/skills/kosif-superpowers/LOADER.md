@@ -20,7 +20,7 @@
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
-| `living-site` | `.claude/skills/living-site/SKILL.md` | 11 KB · 179 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
+| `living-site` | `.claude/skills/living-site/SKILL.md` | 12 KB · 188 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 
 ## المجموعات (15) / capability groups
 
@@ -42,7 +42,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (38) / protocol appendices
+## ملاحق البروتوكول (42) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -65,6 +65,8 @@
 | [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات |
 | [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow |
+| [A19 دروس المونتاج](references/protocol/A19-field-lessons-montage.md) | مونتاج من رابط أو صوت؛ لقطات وصور مجانية |
+| [A44 صور وفيديو مجانية](references/protocol/A44-free-stock-media.md) | مونتاج من رابط أو صوت؛ لقطات وصور مجانية |
 | [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة |
 | [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال |
 | [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض |
@@ -83,7 +85,9 @@
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير |
 | [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling |
 | [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح |
-| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم» |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
+| [A46 Suno](references/protocol/A46-suno-mcp.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
+| [A45 يوتيوب](references/protocol/A45-youtube-download.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -182,13 +186,13 @@
 ### `.claude/skills/living-site/SKILL.md`
 
 - 6–25: Living Site
-- 26–51: Stage 0. Setup (one block)
-- 52–73: Stage 1. Pick a real site and copy it (the canvas)
-- 74–96: Stage 2. Level 1: the live 3D
-- 97–128: Stage 3. Level 2: Higgsfield film and images (the co-star)
-- 129–159: Stage 4. Level 3: living Claude motion graphics
-- 160–172: Stage 5. Copy, check, show
-- 173–178: Guardrails
+- 26–59: Stage 0. Setup (one block)
+- 60–81: Stage 1. Pick a real site and copy it (the canvas)
+- 82–104: Stage 2. Level 1: the live 3D
+- 105–137: Stage 3. Level 2: Higgsfield film and images (the co-star)
+- 138–168: Stage 4. Level 3: living Claude motion graphics
+- 169–181: Stage 5. Copy, check, show
+- 182–187: Guardrails
 
 
 ## مكتبة 100 Super Skills (114) / vendored skills

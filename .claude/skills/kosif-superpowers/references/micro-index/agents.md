@@ -196,7 +196,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 
 ## agent-orchestration (mind)
 
-chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-library/cards/agents/agent-orchestration.md` · tools: `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `hub` · `kosif-mcp` …
+chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-library/cards/agents/agent-orchestration.md` · tools: `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `fusionforge-hub-runner` · `hub` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

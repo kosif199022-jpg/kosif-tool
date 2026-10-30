@@ -102,11 +102,13 @@ def appendices() -> list[dict]:
         return []
     out = []
     for line in PROTOCOL.read_text(encoding="utf-8").splitlines():
-        m = re.match(r"^\| \[(A\d+)[^\]]*\]\(([^)]+)\) \| ([^|]+)\|", line)
-        if m:
-            title = re.match(r"^\| \[([^\]]+)\]", line).group(1)
-            out.append({"id": m.group(1), "title": title, "path": f"{SKILL.relative_to(REPO).as_posix()}/{m.group(2)}",
-                        "trigger": m.group(3).strip()})
+        # one table row may name several appendices in its first cell: "[A43 …](…) · [A46 …](…) | trigger |"
+        m = re.match(r"^\| ((?:\[A\d+[^\]]*\]\([^)]+\)(?: · )?)+) \| ([^|]+)\|", line)
+        if not m:
+            continue
+        for title, path in re.findall(r"\[(A\d+[^\]]*)\]\(([^)]+)\)", m.group(1)):
+            out.append({"id": re.match(r"A\d+", title).group(0), "title": title,
+                        "path": f"{SKILL.relative_to(REPO).as_posix()}/{path}", "trigger": m.group(2).strip()})
     return out
 
 
