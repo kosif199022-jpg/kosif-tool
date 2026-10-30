@@ -35,7 +35,11 @@ import time
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-import snapany_provider
+import importlib.util
+_SNAPANY_MODULE_PATH = Path(__file__).resolve().parent / "snapany_provider.py"
+_SNAPANY_SPEC = importlib.util.spec_from_file_location("kosif_snapany_provider", _SNAPANY_MODULE_PATH)
+snapany_provider = importlib.util.module_from_spec(_SNAPANY_SPEC)
+_SNAPANY_SPEC.loader.exec_module(snapany_provider)
 
 VERSION = "0.2.0"
 
