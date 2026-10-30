@@ -1,0 +1,28 @@
+name: Cinema V34 video intake regression
+on:
+  push:
+    branches:
+      - feat/youtube-opt-in-cobalt-gateway-20261030
+    paths:
+      - .github/workflows/cinema-v34-intake-tests.yml
+      - .claude/skills/kosif-superpowers/scripts/fetch_video.py
+      - .claude/skills/kosif-superpowers/evals/test_cinema_v34_intake.py
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test-cinema:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check media tools
+        run: |
+          command -v ffmpeg
+          command -v ffprobe
+          ffmpeg -hide_banner -version | head -1
+      - name: Run Cinema V34 regressions
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_cinema_v34_intake.py' -v
