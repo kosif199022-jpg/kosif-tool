@@ -86,7 +86,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 
 How to think, ideate, decide, write and check before and after acting. A24 is the router into this section.
 
-`cognition` · 10 file(s) · planned folder `references/cognition/`
+`cognition` · 11 file(s) · planned folder `references/cognition/`
 
 - [references/cognition.md](cognition.md)
 - [references/thinking.md](thinking.md)
@@ -98,6 +98,7 @@ How to think, ideate, decide, write and check before and after acting. A24 is th
 - [references/humanizer.md](humanizer.md)
 - [references/creative-quality-gates.md](creative-quality-gates.md)
 - [references/lesson-integrity-methods.md](lesson-integrity-methods.md)
+- [references/see-capability-bridge-20261030.md](see-capability-bridge-20261030.md)
 
 ## 4. الفهرس والخرائط / Catalog, maps and environment
 

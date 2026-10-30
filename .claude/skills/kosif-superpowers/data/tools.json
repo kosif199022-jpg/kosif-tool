@@ -17631,6 +17631,118 @@
         "typography-arabic"
       ],
       "power_id": "TOOL-178"
+    },
+    {
+      "id": "see-capability-bridge",
+      "title_en": "SEE capability routing bridge",
+      "title_ar": "جسر توجيه قدرات SEE",
+      "summary_en": "Map the 11 cognitive lenses and nine SEE domains to specialist routes and live owners.",
+      "summary_ar": "توجيه القدرات وأساليب التفكير بصورة للقراءة فقط مع حفظ حدود التنفيذ والتحقق.",
+      "root": "skill",
+      "path": "scripts/see_capability_bridge.py",
+      "kind": "cli",
+      "area": "think",
+      "use_when": [
+        "Route specialist SEE methods for a finance task without running an external service",
+        "Distinguish Full Pro or remote tool availability from execution and proof"
+      ],
+      "keywords": [
+        "see",
+        "capability",
+        "route",
+        "thinking",
+        "cognition",
+        "specialists",
+        "full pro",
+        "decision"
+      ],
+      "commands": [
+        {
+          "name": "route",
+          "example": "python3 scripts/see_capability_bridge.py --task \"reconcile an Excel bank statement\" --mode deep",
+          "does": "Return a read-only SEE method routing record without executing agents."
+        }
+      ],
+      "inputs": "A user task description and optional mode.",
+      "outputs": "A JSON plan, named method candidates and explicit execution limitations.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "",
+      "limits": "This chooses guidance only; no proprietary source, hosted Full Pro, execution or verified output.",
+      "evidence": "tested-here",
+      "evidence_note": "Deterministic offline routing and claim-boundary regression tests only.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_see_capability_bridge.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/see-capability-bridge-20261030.md"
+      ],
+      "families": [],
+      "safe_commands": []
+    },
+    {
+      "id": "see-superpower-unifier",
+      "title_en": "SEE and Superpowers unified planning",
+      "title_ar": "توحيد تخطيط SEE وسوبر باور",
+      "summary_en": "Enrich the one canonical Superpowers hub with bounded SEE cognitive and capability planning.",
+      "summary_ar": "توجيه القدرات وأساليب التفكير بصورة للقراءة فقط مع حفظ حدود التنفيذ والتحقق.",
+      "root": "skill",
+      "path": "scripts/see_superpower_unifier.py",
+      "kind": "cli",
+      "area": "think",
+      "use_when": [
+        "Fuse SEE method candidates with the canonical Superpowers hub tool and power IDs",
+        "Create a permission-conscious plan and validation chain without a duplicate registry"
+      ],
+      "keywords": [
+        "see",
+        "superpowers",
+        "fusion",
+        "unified",
+        "thinking",
+        "route",
+        "planning",
+        "11 lenses"
+      ],
+      "commands": [
+        {
+          "name": "route",
+          "example": "python3 scripts/see_superpower_unifier.py plan \"review bank invoices\" --mode deep",
+          "does": "Return a read-only SEE method routing record without executing agents."
+        }
+      ],
+      "inputs": "A user task description and optional mode.",
+      "outputs": "A JSON plan, named method candidates and explicit execution limitations.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "read-only",
+      "consent": "",
+      "limits": "This chooses guidance only; no proprietary source, hosted Full Pro, execution or verified output.",
+      "evidence": "tested-here",
+      "evidence_note": "Deterministic offline routing and claim-boundary regression tests only.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/protocol/A12-see-pro-cognitive-fusion.md"
+      ],
+      "families": [],
+      "safe_commands": []
     }
   ]
 }

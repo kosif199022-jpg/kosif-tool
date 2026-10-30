@@ -2108,6 +2108,11 @@
    "label": "scripts/relabel_proofs.py"
   },
   {
+   "id": "script:scripts/see_superpower_unifier.py",
+   "kind": "script",
+   "label": "scripts/see_superpower_unifier.py"
+  },
+  {
    "id": "script:scripts/superskills.py",
    "kind": "script",
    "label": "scripts/superskills.py"
@@ -2678,6 +2683,11 @@
    "id": "test:tests/test_script_storyboard.py",
    "kind": "test",
    "label": "tests/test_script_storyboard.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
@@ -6998,6 +7008,12 @@
   },
   {
    "from": "script:scripts/hub.py",
+   "to": "script:scripts/see_superpower_unifier.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/hub.py",
    "to": "script:scripts/superskills.py",
    "rel": "imports",
    "w": 1
@@ -7395,6 +7411,12 @@
   {
    "from": "script:scripts/script_storyboard.py",
    "to": "script:scripts/export_profile.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/see_superpower_unifier.py",
+   "to": "script:scripts/hub.py",
    "rel": "imports",
    "w": 1
   },
@@ -8295,6 +8317,12 @@
   {
    "from": "script:scripts/script_storyboard.py",
    "to": "test:tests/test_script_storyboard.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/see_superpower_unifier.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py",
    "rel": "tested_by",
    "w": 1
   },
