@@ -23,7 +23,7 @@ SK = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SK / "scripts"))
 import check_skill as C  # noqa: E402
 
-EXPECTED_VERSION = "5.9"
+EXPECTED_VERSION = "6.0"
 CORE = C.PROTO_CORE
 SESSION = SK / "SESSION_PROMPT.md"
 SKILL_MD = SK / "SKILL.md"
@@ -382,6 +382,10 @@ class FileStructureTests(unittest.TestCase):
     def test_every_named_script_exists(self):
         for f in protocol_files():
             text = C.strip_fences(read(f))
+            for skill, rel in sorted(set(C.SKILL_FILE_RE.findall(text))):
+                with self.subTest(file=f.name, path=f".claude/skills/{skill}/{rel}"):
+                    self.assertTrue((C.REPO / ".claude" / "skills" / skill / rel).is_file())
+            text = C.SKILL_FILE_RE.sub("", text)
             for name in sorted(set(re.findall(r"scripts/([A-Za-z0-9_][\w-]*\.py)", text))):
                 with self.subTest(file=f.name, script=name):
                     self.assertTrue((SK / "scripts" / name).is_file(), f"{f.name} names scripts/{name}")
@@ -419,7 +423,7 @@ class FileStructureTests(unittest.TestCase):
                 self.assertTrue(first.startswith(C.gh_slug(sid + " ")), f"{sid} maps to {first!r}")
         log = read(base / "CHANGELOG.md")
         versions = [m.group(1) for m in re.finditer(r"^## v(\d+(?:\.\d+)*)", log, re.M)]
-        self.assertEqual(versions[:6], ["5.9", "5.8", "5.7", "5.6", "5.5", "5.4"], "CHANGELOG is newest first")
+        self.assertEqual(versions[:6], ["6.0", "5.9", "5.8", "5.7", "5.6", "5.5"], "CHANGELOG is newest first")
         self.assertIn("2", versions)
 
 
@@ -859,7 +863,7 @@ V52_REPLACED = (
      "نحو 170 أداة قابلة للتشغيل للبحث والتحليل والتصميم والمونتاج والموشن والثري دي والهندسة العكسية",
      "repo-origin: the tool registry grew from about 115 to 132, then 170 (v5.7, hub.py list) runnable tools"),
     ("KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.2)",
-     "UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.9)",
+     "UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v6.0)",
      "banner: the title carries the current version"),
     ("نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).",
      "نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة",

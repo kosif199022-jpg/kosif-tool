@@ -563,6 +563,8 @@ PLAN_DRIFT = ("A توازن", "وB مبتكرة", "B توليفة ابتكاري
 VERSION_RE = re.compile(r"USIP v(\d+(?:\.\d+)*)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*#*\s*$")
 NAMED_FILE_RE = re.compile(r"(?<![\w.-])(scripts|evals|tools|tests)/([A-Za-z0-9_][\w-]*\.(?:py|cjs|mjs))")
+# a file named with its full skill path (.claude/skills/<skill>/tools/x.py) resolves against that skill
+SKILL_FILE_RE = re.compile(r"\.claude/skills/([\w-]+)/((?:scripts|evals|tools|tests)/[A-Za-z0-9_][\w-]*\.(?:py|cjs|mjs|js))")
 ANCHOR_RE = re.compile(r"<a\s+(?:id|name)=\"([^\"]+)\"")
 
 
@@ -671,7 +673,12 @@ def protocol_problems() -> list:
             probs.append(("error", f"{name}: {msg}"))
         if f != PROTO_CORE and CORE_LINK_RE.search(text) is None:
             probs.append(("error", f"{name} does not link back to ../../PROTOCOL.md"))
-        for kind, fname in sorted(set(NAMED_FILE_RE.findall(strip_fences(text)))):
+        body = strip_fences(text)
+        for skill, sk_rel in sorted(set(SKILL_FILE_RE.findall(body))):
+            if not (REPO / ".claude" / "skills" / skill / sk_rel).is_file():
+                probs.append(("error", f"{name} names .claude/skills/{skill}/{sk_rel}, which does not exist"))
+        body = SKILL_FILE_RE.sub("", body)
+        for kind, fname in sorted(set(NAMED_FILE_RE.findall(body))):
             base = SK if kind in ("scripts", "evals") else REPO
             if not (base / kind / fname).is_file():
                 probs.append(("error", f"{name} names {kind}/{fname}, which does not exist"))

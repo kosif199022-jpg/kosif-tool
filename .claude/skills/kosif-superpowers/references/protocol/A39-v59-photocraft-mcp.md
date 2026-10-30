@@ -1,4 +1,4 @@
-# A39 — PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude (USIP v5.9)
+# A39 — PhotoCraft MCP: محرر صور مفتوح المصدر يتحكم فيه Claude (USIP v5.9، محدّث v5.10)
 
 > **متى تقرأه / when to read:** تعديل صور أو PSD أو دفعة صور بلا فوتوشوب (سحابة، لينكس، مجاني)، أو LUT يوحّد لوك الصور والفيديو · [العودة إلى النواة / back to the core](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
@@ -80,7 +80,9 @@ photocraft --control 7878 --control-token-file /private/pc.token --automation-re
 claude mcp add photocraft-live -- photocraft-cli mcp --bridge 127.0.0.1:7878 --control-token-file /private/pc.token
 ```
 
-الأداة المساعدة `scripts/photocraft_mcp.py` تطبع الخطوات والإعداد فقط ولا تسطّب شيئًا: `steps headless|bridge|release`، `config --client claude-code|claude-desktop|json`، `doctor`، `actions`، `recipes`.
+الأداة المساعدة `scripts/photocraft_mcp.py` تطبع الخطوات والإعداد فقط ولا تسطّب ولا تشغّل شيئًا: `steps headless|bridge|release`، `config --client claude-code|claude-desktop|json`، `doctor [--json]`، `actions`، `recipes`، `lut <look.cube> <in.mp4> <out.mp4>`، `selftest`.
+
+**حراس السكربت (v5.10):** يرفض `--bridge` على عنوان غير loopback (القاعدة 6)، ويرفض أعلام الجذور مع `--bridge`، ويرفض جذر كتابة = `/` أو مجلد البيت (القاعدة 1)، ويحذّر لو مفيش جذر كتابة أصلًا، ويقتبس المسارات اللي فيها مسافات بـ `shlex` فأمر `claude mcp add` المطبوع يتنسخ كما هو. `selftest` يشغّل 11 حالة من دول ويطبع PASS.
 
 **أخطاء شائعة:** `ENOENT` أو "Executable not found" ← البرنامج مش على PATH الخاص بالعميل: استخدم المسار المطلق (بدون `~`). جذر نسبي ← يتحسب من مكان تشغيل العميل، فاستعمل المطلق دايمًا. أعلام الجذور مرفوضة مع `--bridge` (الجذور على البرنامج نفسه).
 
@@ -100,7 +102,7 @@ claude mcp add photocraft-live -- photocraft-cli mcp --bridge 127.0.0.1:7878 --c
 ## 5. وصفات جاهزة (FusionForge)
 
 - **R1 — ثمبنيل عربي للفيديو:** `doc_new` 1280×720 ← `doc_place` لفريم من الفيديو ← `layer.newAdjustmentLayer.curves` ← طبقة كتابة عربية بخط مثبت ← `render_preview` ← `doc_export` PNG/WebP. المحقق: A31 + فحص المقاس.
-- **R2 — لوك موحّد صورة + فيديو:** تلوين صورة مرجعية بطبقات ضبط ← `file.export.colorLookupTables` `{"size":33,"path":"look.cube"}` ← `ffmpeg -i in.mp4 -vf lut3d=look.cube out.mp4` ← مقارنة فريم قبل/بعد. (الأقنعة والقص لا تدخل في LUT.)
+- **R2 — لوك موحّد صورة + فيديو:** تلوين صورة مرجعية بطبقات ضبط ← `file.export.colorLookupTables` `{"size":33,"path":"look.cube"}` ← `photocraft_mcp.py lut look.cube in.mp4 out.mp4` يطبع أمر ffmpeg بمعيار التصدير (H.264 High، CRF 17، slow، BT.709، الصوت منسوخ، faststart) ← مقارنة فريم قبل/بعد. (الأقنعة والقص لا تدخل في LUT.) الأمر المطبوع اتجرّب في جلسة v5.10 على LUT هوية ومقطع اختبار: خرج H.264 High بوسم bt709.
 - **R3 — دفعة صور منتجات:** أكشن `[{"command":"image.imageSize","params":{…}}, …]` ← `photocraft-cli batch --actions a.json --in raw --out done --format webp` (لا يكتب فوق المصدر بلا `--in-place`).
 - **R4 — قالب بيانات:** PSD فيه متغيرات ← `doc_import_data_sets` من CSV ← `doc_export_data_sets` نسخة لكل صف (بطاقات، شهادات، بوستات).
 - **R5 — تفكيك تصميم:** `doc_open` لملف PSD ← `doc_export_layers` (طبقة لكل ملف) ← تستخدمها في صفحة KOSIF الحية أو موشن.

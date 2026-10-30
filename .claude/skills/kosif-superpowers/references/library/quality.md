@@ -49,6 +49,7 @@
 | `charter-ingest` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
+| `collect-links` | جمع الروابط من صفحة بمتصفح بلا واجهة | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | untested |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |
 | `design-tells` | كاشف علامات التصميم المولّد: فحص حتمي لصفحات HTML/CSS | `python3 scripts/design_tells.py audit index.html` | tested-here |
@@ -59,6 +60,7 @@
 | `package-skill` | تحزيم المهارة للرفع إلى claude.ai | `python3 scripts/package_skill.py` | tested-here |
 | `prompt-lab` | مختبر البرومبت | `python3 scripts/prompt_lab.py kinds` | tested-here |
 | `prompt-pack` | حزمة المطالبات: كل مطالبة في كتلة كود قابلة للنسخ مع فحص يحذّر فقط | `python3 scripts/prompt_pack.py build prompts.json --out out/demo/prompts --engine midjourney` | tested-here |
+| `protocol-lint` | فاحص اتساق حزمة البروتوكول | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | tested-here |
 | `reel-factory` | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص | `python3 scripts/reel_factory.py plan --audio ./voice.m4a --audio-rights owned --words ./words.json --shots-manifest ./stock/manifest.json --shot-ids 17928486,8165467,20382699 --title "دعاء يوم الخميس" --handle @kosif` | tested-here |
 | `relabel-proofs` | إعادة تصنيف نطاق الأدلة | `python3 scripts/relabel_proofs.py` | untested |
 | `render-html` | محوّل HTML إلى فيديو MP4 | `node resources/motion-runtime/render_html.cjs --in ./film.html --out ./out/film.mp4 --fps 30 --audio ./voice.wav` | tested-here |

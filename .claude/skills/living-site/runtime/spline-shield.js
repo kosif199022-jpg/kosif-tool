@@ -1,32 +1,34 @@
 /* spline-shield.js: keeps the page scrollable over Spline embeds.
    Our own scenes (my.spline.design): a transparent shield passes the cursor in by postMessage,
-   so the wheel always scrolls the page. Community previews: "click to play", wheel scrolls until then. */
+   so the wheel always scrolls the page. Community previews (app.spline.design): a plain shield,
+   the scene plays its own animation behind it. No "click to play" pill, no hint (page law).
+   KOSIF v5.10: only Spline iframes are shielded (a YouTube or map iframe is left alone), iframes
+   added later (lazy data-src) are picked up, and messages go to the Spline origin, not '*'. */
 (() => {
-  const OURS = /my\.spline\.design/;
+  const SPLINE = /^https:\/\/(my|app|prod)\.spline\.design\//;
+  const OURS = /^https:\/\/my\.spline\.design\//;
   const css = document.createElement('style');
-  css.textContent = '.sp-shield{position:absolute;inset:0;z-index:1}.sp-pill{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font:500 12px/1 Inter,system-ui,sans-serif;letter-spacing:.04em;color:#fff;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);padding:9px 14px;border-radius:99px;transition:opacity .3s;pointer-events:none;white-space:nowrap}';
+  css.textContent = '.sp-shield{position:absolute;inset:0;z-index:1}';
   document.head.appendChild(css);
+  const done = new WeakSet();
   function wrap(f) {
+    const src = f.getAttribute('src') || f.dataset.src || '';
+    if (done.has(f) || !SPLINE.test(src)) return;
+    done.add(f);
     const host = f.parentElement;
     if (getComputedStyle(host).position === 'static') host.style.position = 'relative';
-    const sh = document.createElement('div'); sh.className = 'sp-shield';
+    const sh = document.createElement('div'); sh.className = 'sp-shield'; sh.setAttribute('aria-hidden', 'true');
     f.after(sh);
-    const src = f.getAttribute('src') || f.dataset.src || '';
-    if (OURS.test(src)) {
-      const send = (sp, e) => { const r = f.getBoundingClientRect(); if (f.contentWindow) f.contentWindow.postMessage({ sp, x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }, '*'); };
-      sh.addEventListener('pointermove', e => send('move', e));
-      sh.addEventListener('pointerleave', e => send('leave', e));
-      sh.addEventListener('pointerdown', e => send('down', e));
-      sh.addEventListener('pointerup', e => send('up', e));
-      sh.addEventListener('click', e => send('click', e));
-    } else {
-      sh.style.cursor = 'pointer';
-      const pill = document.createElement('span'); pill.className = 'sp-pill'; pill.textContent = 'Click to play with it';
-      sh.appendChild(pill);
-      let playing = false;
-      sh.addEventListener('click', () => { playing = true; sh.style.pointerEvents = 'none'; pill.style.opacity = 0; });
-      document.addEventListener('mousemove', () => { if (playing) { playing = false; sh.style.pointerEvents = ''; pill.style.opacity = 1; } });
-    }
+    if (!OURS.test(src)) return;
+    const origin = new URL(src).origin;
+    const send = (sp, e) => {
+      const r = f.getBoundingClientRect();
+      if (f.contentWindow) f.contentWindow.postMessage({ sp, x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }, origin);
+    };
+    for (const [ev, sp] of [['pointermove', 'move'], ['pointerleave', 'leave'], ['pointerdown', 'down'], ['pointerup', 'up'], ['click', 'click']])
+      sh.addEventListener(ev, e => send(sp, e), { passive: true });
   }
-  document.querySelectorAll('iframe').forEach(wrap);
+  const scan = () => document.querySelectorAll('iframe').forEach(wrap);
+  scan();
+  new MutationObserver(scan).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['src'] });
 })();

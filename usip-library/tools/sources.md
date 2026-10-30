@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (24 أداة)
+# أدوات المجال `sources` (25 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -443,6 +443,57 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:free-footage --evidence <ملف>`.
+
+### `free-photos` — صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/free_photos.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `photo-video-footage`, `web-research` |
+
+**ما تفعله:** الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل تراخيص ممنوع التعديل (ND) تلقائيًا لأن المونتاج تعديل، و--commercial بتشيل غير التجاري، و--orientation portrait بتجيب الطولي للريلز. أمر sheet بيعمل صفحة معاينة، وأمر download بيحفظ الصورة ومعاها ملف JSON فيه الترخيص وسطر النسب، وبيحدّث ATTRIBUTION.md.
+
+**What it does:** The photo sister of free-footage. Searches Openverse (CC and public-domain images indexed from many sites, licence per image), Wikimedia Commons (bitmap files, licence and author from extmetadata), NASA Images (largest rendition) and The Met Open Access (CC0 objects only) without keys, plus Pexels, Pixabay and Unsplash when PEXELS_API_KEY, PIXABAY_API_KEY or UNSPLASH_ACCESS_KEY is set (Unsplash+ paid photos skipped). ND licences are dropped by default, --commercial drops NC and unconfirmed licences, --orientation and --min-width filter for vertical reels or 4K frames. Results merge by id into out/free-photos/last_search.json; sheet writes a contact sheet; download saves each photo with a JSON sidecar (licence, credit line, bytes, sha256), reports Unsplash downloads as its API terms require, refuses web pages served instead of images, and rebuilds ATTRIBUTION.md.
+
+#### متى تُستدعى
+
+- «دوّر لي على صور مجانية للأهرامات أستخدمها في المونتاج»
+- «عايز صور طولية من غير حقوق لخلفية ريلز»
+- «هات صور مخطوطات وخط عربي ملك عام من المتاحف»
+- «Find free open-licence photos of a desert at night for my edit»
+- «Download CC0 or public-domain images with their licence and credit line»
+
+#### الأوامر
+
+- **sources**: Offline: lists the seven photo sources with licence, link, credit rule, commercial use and whether the key variable is set; --json prints the records.
+  - `python3 scripts/free_photos.py sources`
+- **search**: Network: Openverse, Wikimedia Commons, NASA and the Met without keys; Pexels, Pixabay and Unsplash only when their key variables are set (otherwise reported as skipped, with no request). Drops ND licences unless --allow-nd, --commercial drops NC and unconfirmed licences, --orientation and --min-width filter by size. Prints id, size, licence and credit rule and merges the results by id into out/free-photos/last_search.json (--replace overwrites). One failing source never stops the others; exit 3 only when every source failed.
+  - `python3 scripts/free_photos.py search "pyramids at sunset" --orientation portrait --commercial --limit 6`
+- **sheet**: Offline: contact_sheet.html next to the results file, with each result's preview, id, size, licence and credit line, to choose before downloading.
+  - `python3 scripts/free_photos.py sheet`
+- **download**: Network: saves each result id as <source>-<id>.<ext> with a <file>.json sidecar (licence, credit line, bytes, sha256) and rebuilds ATTRIBUTION.md; --size large takes the ~2400 px rendition where offered (Pexels, Unsplash), --max-mb caps the file (60 MB), --dry-run prints what it would fetch. Unsplash downloads are reported to its download endpoint first; ND licences and web pages served instead of images are refused; exit 1 when any target failed.
+  - `python3 scripts/free_photos.py download nasa:PIA04745 met:1 --out out/free-photos/pics`
+- **credits**: Offline: rebuilds ATTRIBUTION.md from the sidecars in the folder and prints it.
+  - `python3 scripts/free_photos.py credits out/free-photos/pics`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: env:PEXELS_API_KEY, env:PIXABAY_API_KEY, env:UNSPLASH_ACCESS_KEY
+- الأمان: network
+- الموافقة: search sends the query to the listed sites and download fetches third-party photos: confirm the user wants that. Keep each sidecar and ATTRIBUTION.md with the project and follow the licence (credit where required, NC photos only in non-commercial work). Keys are read only from the environment and never printed or stored; never ask the user to paste a key into chat. A Cloudflare or bot-wall answer is reported, never worked around.
+- الحدود: Licences are what each source declares; the tool records them but cannot verify or grant rights, and Openverse's licence is the one the original site shows (open page_url before paid use). Model releases are not covered: a photo of a recognisable person or a trademark can still need permission for advertising. From this cloud sandbox on 2026-10-30 NASA answered, Wikimedia Commons answered then rate-limited (429, Retry-After up to 600 s on upload.wikimedia.org), the Met API answered 403 intermittently from a bot wall, and api.openverse.org timed out (504); these adapters are covered offline and are expected to work from a home computer. Pixabay's API serves up to 1280 px without approved full-size access. Pexels, Pixabay and Unsplash need the user's free keys.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_free_photos.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:free-photos --evidence <ملف>`.
 
 ### `github-pulse` — نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها / GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken
 

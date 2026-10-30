@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5856
+   "count": 5857
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 177,
-   "proven": 148,
+   "count": 178,
+   "proven": 149,
    "status": {
-    "proven": 148,
+    "proven": 149,
     "ready": 20,
     "install": 9
    }
@@ -2093,6 +2093,16 @@
    "label": "scripts/stock_fetch.py"
   },
   {
+   "id": "script:scripts/free_photos.py",
+   "kind": "script",
+   "label": "scripts/free_photos.py"
+  },
+  {
+   "id": "script:scripts/free_footage.py",
+   "kind": "script",
+   "label": "scripts/free_footage.py"
+  },
+  {
    "id": "script:scripts/fusionforge.py",
    "kind": "script",
    "label": "scripts/fusionforge.py"
@@ -2548,6 +2558,16 @@
    "id": "test:tests/test_media_sources_gateway.py",
    "kind": "test",
    "label": "tests/test_media_sources_gateway.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_free_footage.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_free_footage.py"
+  },
+  {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_free_photos.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_free_photos.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_prompt_pack.py",
@@ -5480,13 +5500,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 177
+   "w": 178
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 140
+   "w": 141
   },
   {
    "from": "fam:runnable-tools",
@@ -5534,7 +5554,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 182
+   "w": 183
   },
   {
    "from": "fam:runnable-tools",
@@ -6971,6 +6991,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/free_photos.py",
+   "to": "script:scripts/free_footage.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/fusionforge.py",
    "to": "script:scripts/_secrets.py",
    "rel": "imports",
@@ -7993,6 +8019,18 @@
   {
    "from": "script:scripts/fetch_video.py",
    "to": "test:tests/test_media_sources_gateway.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/free_footage.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_free_footage.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/free_photos.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_free_photos.py",
    "rel": "tested_by",
    "w": 1
   },

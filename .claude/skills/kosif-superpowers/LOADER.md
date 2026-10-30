@@ -20,7 +20,7 @@
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
-| `living-site` | `.claude/skills/living-site/SKILL.md` | 11 KB · 171 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
+| `living-site` | `.claude/skills/living-site/SKILL.md` | 11 KB · 179 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 
 ## المجموعات (15) / capability groups
 
@@ -42,7 +42,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (37) / protocol appendices
+## ملاحق البروتوكول (38) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -65,7 +65,6 @@
 | [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج |
 | [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات |
 | [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow |
-| [A19 دروس المونتاج الميدانية](references/protocol/A19-field-lessons-montage.md) | مونتاج أو موشن من رابط أو صوت مرفوع |
 | [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة |
 | [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال |
 | [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض |
@@ -75,13 +74,15 @@
 | [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة |
 | [A31 مجلس خبراء الرسم](references/protocol/A31-drawing-council.md) | قبل إرسال أي صورة أو رسمة (القانون 27) |
 | [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل |
-| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | قدرة أو أداة بعينها، نسخ البروتوكول لمساعد آخر، إضافة أداة أو بطاقة أو تعديل التوجيه، طابور دمج |
+| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | قدرة أو أداة بعينها، نسخ البروتوكول، إضافة أداة أو بطاقة، طابور دمج |
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» |
 | [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو |
 | [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب، أو LUT يوحّد لوك الصور والفيديو |
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير |
+| [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling |
+| [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح |
 | [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
@@ -126,7 +127,7 @@
 - 7–32: قواك الخارقة — KOSIF Superpowers
 - 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
 - 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 44–47: FusionForge v2 (USIP v5.9) — project-scoped composite workflow recipes
+- 44–47: FusionForge v2 (USIP v6.0) — project-scoped composite workflow recipes
 - 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 - 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 - 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports
@@ -184,10 +185,10 @@
 - 26–51: Stage 0. Setup (one block)
 - 52–73: Stage 1. Pick a real site and copy it (the canvas)
 - 74–96: Stage 2. Level 1: the live 3D
-- 97–123: Stage 3. Level 2: Higgsfield film and images (the co-star)
-- 124–154: Stage 4. Level 3: living Claude motion graphics
-- 155–164: Stage 5. Copy, check, show
-- 165–170: Guardrails
+- 97–128: Stage 3. Level 2: Higgsfield film and images (the co-star)
+- 129–159: Stage 4. Level 3: living Claude motion graphics
+- 160–172: Stage 5. Copy, check, show
+- 173–178: Guardrails
 
 
 ## مكتبة 100 Super Skills (114) / vendored skills

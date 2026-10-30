@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (177 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (178 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -99,6 +99,7 @@
 - [`TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات](#tool-176--تصدير-للبرامج-افتح-تايملاين-kosif-في-دافنشي-وفاينال-كت-وبريمير-وبلندر-وكاب-كات--nle-export-open-a-kosif-timeline-in-davinci-resolve-final-cut-pro-premiere-pro-blender-or-capcut)
 - [`TOOL-177` لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب](#tool-177--لقطات-مجانية-قاعدة-مواقع-فيديو-مفتوحة-الترخيص-مع-بحث-وتحميل-وسطر-نسب--free-footage-open-licence-video-sources-with-search-download-and-credits)
 - [`TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز](#tool-178--نص-القرآن-وتوقيته-الآيات-بالضبط-والوقفات-المقاسة-وتوقيت-الآية-والكلمة-للريلز--quran-text-and-timing-exact-verses-measured-pauses-verse-and-word-timing-for-reels)
+- [`TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب](#tool-179--صور-مجانية-بحث-وتحميل-صور-مفتوحة-الترخيص-ومجانية-للمونتاج-مع-سطر-النسب--free-photos-open-licence-and-free-stock-photo-search-and-download-with-credits)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
@@ -6780,7 +6781,7 @@
 - `TOOL-175` معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B / Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review (proven)
 - `TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut (proven)
 - `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
 
 ### `TOOL-178` — نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels
 
@@ -6849,6 +6850,75 @@
 
 - `TOOL-176` تصدير للبرامج: افتح تايملاين KOSIF في دافنشي وفاينال كت وبريمير وبلندر وكاب كات / NLE Export: open a KOSIF timeline in DaVinci Resolve, Final Cut Pro, Premiere Pro, Blender or CapCut (proven)
 - `TOOL-177` لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب / Free footage: open-licence video sources with search, download and credits (proven)
+- `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+
+### `TOOL-179` — صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل تراخيص ممنوع التعديل (ND) تلقائيًا لأن المونتاج تعديل، و--commercial بتشيل غير التجاري، و--orientation portrait بتجيب الطولي للريلز. أمر sheet بيعمل صفحة معاينة، وأمر download بيحفظ الصورة ومعاها ملف JSON فيه الترخيص وسطر النسب، وبيحدّث ATTRIBUTION.md. — The photo sister of free-footage. Searches Openverse (CC and public-domain images indexed from many sites, licence per image), Wikimedia Commons (bitmap files, licence and author from extmetadata), NASA Images (largest rendition) and The Met Open Access (CC0 objects only) without keys, plus Pexels, Pixabay and Unsplash when PEXELS_API_KEY, PIXABAY_API_KEY or UNSPLASH_ACCESS_KEY is set (Unsplash+ paid photos skipped). ND licences are dropped by default, --commercial drops NC and unconfirmed licences, --orientation and --min-width filter for vertical reels or 4K frames. Results merge by id into out/free-photos/last_search.json; sheet writes a contact sheet; download saves each photo with a JSON sidecar (licence, credit line, bytes, sha256), reports Unsplash downloads as its API terms require, refuses web pages served instead of images, and rebuilds ATTRIBUTION.md.
+
+**متى:** دوّر لي على صور مجانية للأهرامات أستخدمها في المونتاج / Find free open-licence photos of a desert at night for my edit
+
+**كيف:** sources: `python3 scripts/free_photos.py sources`; search: `python3 scripts/free_photos.py search "pyramids at sunset" --orientation portrait --commercial --limit 6`; sheet: `python3 scripts/free_photos.py sheet`; download: `python3 scripts/free_photos.py download nasa:PIA04745 met:1 --out out/free-photos/pics`. Full card: `python3 scripts/hub.py tool free-photos`. Limits: Licences are what each source declares; the tool records them but cannot verify or grant rights, and Openverse's licence is the one the original site shows (open page_url before paid use). Model releases are not covered: a photo of a recognisable person or a trademark can still need permission for advertising. From this cloud sandbox on 2026-10-30 NASA answered, Wikimedia Commons answered then rate-limited (429, Retry-After up to 600 s on upload.wikimedia.org), the Met API answered 403 intermittently from a bot wall, and api.openverse.org timed out (504); these adapters are covered offline and are expected to work from a home computer. Pixabay's API serves up to 1280 px without approved full-size access. Pexels, Pixabay and Unsplash need the user's free keys.
+
+**المعاملات:** in: A search query in English (most sources index English words), optional --sources ids, --orientation, --min-width, --limit, --commercial, --allow-nd; result ids for download (--size, --max-mb, --dry-run); PEXELS_API_KEY / PIXABAY_API_KEY / UNSPLASH_ACCESS_KEY in the environment to add those sources. · out: out/free-photos/last_search.json (kosif.free_photos.results.v1, merged by id with a searches history), contact_sheet.html, photos in --out with <file>.json sidecars (kosif.free_photos.asset.v1) and ATTRIBUTION.md.
+
+**التثبيت:** optional: env:PEXELS_API_KEY, env:PIXABAY_API_KEY, env:UNSPLASH_ACCESS_KEY
+
+**الوسوم:** free-photos · free photos · free images · stock photos · open licence · creative commons · cc0 · public domain · openverse · unsplash · pexels · pixabay · wikimedia commons · nasa images · met museum · open access · attribution · صور مجانية · صور بدون حقوق · صور مفتوحة المصدر · خلفيات · صور للمونتاج · ملك عام · ترخيص · نسب الحقوق · مخطوطات · خط عربي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-179` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_photos.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/free_photos.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-177` لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب / Free footage: open-licence video sources with search, download and credits (proven)
+- `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
@@ -6917,8 +6987,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-177` لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب / Free footage: open-licence video sources with search, download and credits (proven)
 - `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
+- `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -6987,7 +7057,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
+- `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)

@@ -176,7 +176,9 @@
 | `build-chapters` | TOOL-99 | مولّد فصول العائلات · Family Chapter Generator | `python3 scripts/build_chapters.py` | 0 |
 | `catalog-evidence-audit` | TOOL-33 | تدقيق أدلة الكتالوج · Catalog Evidence Audit | `python3 scripts/catalog_evidence_audit.py` | 1 |
 | `check-skill` | TOOL-56 | فحص سلامة المهارة · Skill Health Check | `python3 scripts/check_skill.py` | 0 |
+| `collect-links` | — | جمع الروابط من صفحة بمتصفح بلا واجهة · Collect links from a page (headless Chromium) | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 0 |
 | `package-skill` | TOOL-57 | تحزيم المهارة للرفع إلى claude.ai · Skill Packager for claude.ai | `python3 scripts/package_skill.py` | 1 |
+| `protocol-lint` | — | فاحص اتساق حزمة البروتوكول · USIP release-folder lint | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 0 |
 | `rea-superpowers-map` | TOOL-108 | خريطة سوبر باور بمنهج REA · Superpowers map, REA approach | `python3 scripts/rea_superpowers_map.py build` | 1 |
 | `relabel-proofs` | TOOL-58 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler | `python3 scripts/relabel_proofs.py` | 0 |
 | `repo-build` | TOOL-101 | مولّد ملفات أطلس الأساليب · Style Atlas Builder | `python3 tools/build.py` | 0 |
@@ -233,6 +235,7 @@
 | `fetch-reference` | TOOL-93 | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure | `python3 scripts/fetch_reference.py https://example.com/page --list --…` | 2 |
 | `fetch-video` | TOOL-94 | تنزيل الفيديو من الروابط للمونتاج · Video link downloader for montage | `python3 scripts/fetch_video.py --doctor` | 3 |
 | `free-footage` | TOOL-177 | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits | `python3 scripts/free_footage.py sources --searchable` | 1 |
+| `free-photos` | TOOL-179 | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب · Free photos: open-licence and free stock photo search and download with credits | `python3 scripts/free_photos.py sources` | 1 |
 | `github-pulse` | — | نبض GitHub: أهم 1000 مستودع نشط في آخر 30 يومًا حسب المجال، والأفكار المنقولة منها · GitHub 30-day pulse: the 1,000 most important repositories active in the last 30 days, by domain, with the ideas taken | `python3 scripts/github_pulse.py top --domain design-ui -n 15` | 1 |
 | `github-top-repos` | TOOL-160 | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker | `python3 scripts/github_top_repos.py build` | 1 |
 | `instagram-finder` | TOOL-173 | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder | `python3 scripts/instagram_finder.py accounts` | 1 |

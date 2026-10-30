@@ -12,7 +12,9 @@ set -e
 H=${0:A:h}; D=${1:A}; RES=${2:-1080p}; SEC=${3:-5}
 [[ -d "$D/kf" && -s "$D/film/prompts.txt" ]] || { echo "need $D/kf/k1..kN.png and $D/film/prompts.txt"; exit 1; }
 cd "$D"; export WORKDIR=${WORKDIR:-$D}
-case $RES in 1080p) C=$((12*SEC));; 720p) C=$((6*SEC));; 480p) C=$((3*SEC));; esac
+[[ "$SEC" == <-> && "$SEC" -gt 0 ]] || { echo "seconds must be a positive integer"; exit 1; }
+case $RES in 1080p) C=$((12*SEC));; 720p) C=$((6*SEC));; 480p) C=$((3*SEC));; *) echo "resolution must be 1080p, 720p or 480p"; exit 1;; esac
+command -v ffmpeg >/dev/null || { echo "missing dependency: ffmpeg"; exit 1; }
 P=("${(@f)$(cat film/prompts.txt)}"); N=$(( ${#P} + 1 ))
 START=kf/k1.png; CLIPS=()
 for i in $(seq 1 $((N-1))); do
