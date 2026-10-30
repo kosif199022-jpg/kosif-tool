@@ -284,6 +284,82 @@ class TestHttp(Base):
         self.assertEqual(self.jreq("GET", body["files"][0]["file_path"])[0], 404)
 
 
+class TestUpload(Base):
+    """Files the owner's iPhone (a-Shell) downloaded and sends in: POST /v1/upload, GET /v1/inbox, MCP list_uploads."""
+
+    def make_mp4(self, codec=("-c:v", "libx264", "-pix_fmt", "yuv420p")):
+        out = Path(tempfile.mkdtemp()) / "clip.mp4"
+        import subprocess  # noqa: PLC0415
+        subprocess.run([os.environ["KOSIF_FFMPEG"], "-y", "-v", "error", "-f", "lavfi", "-i", "testsrc2=s=360x640:r=25:d=2",
+                        "-f", "lavfi", "-i", "sine=d=2", *codec, "-c:a", "aac", "-shortest", str(out)], check=True)
+        return out
+
+    def up(self, data, token=TOKEN, name="Clip One.mp4"):
+        return self.jreq("POST", "/v1/upload", raw=data, token=token,
+                         headers={"Content-Type": "video/mp4", "X-Filename": name,
+                                  "X-Source-Url": "https://youtube.com/shorts/dYrEeavC3cw"})
+
+    def test_upload_verify_inbox_and_fetch(self):
+        data = self.make_mp4().read_bytes()
+        code, _, body = self.up(data)
+        self.assertEqual(code, 200, body)
+        roles = {f["role"]: f for f in body["files"]}
+        self.assertEqual(roles["original"]["sha256"], hashlib.sha256(data).hexdigest())
+        self.assertEqual(roles["original"]["media"]["orientation"], "portrait")
+        self.assertTrue(roles["compatible"]["lossless"])
+        code, _, box = self.jreq("GET", "/v1/inbox")
+        self.assertEqual(box["uploads"][0]["upload_id"], body["upload_id"])
+        self.assertEqual(box["uploads"][0]["name"], "Clip_One")
+        c, _, got = self.req("GET", roles["original"]["file_path"])
+        self.assertEqual(got, data)
+        mcp = self.jreq("POST", "/mcp", {"jsonrpc": "2.0", "id": 1, "method": "tools/call",
+                                         "params": {"name": "list_uploads", "arguments": {}}})[2]
+        self.assertEqual(mcp["result"]["structuredContent"]["uploads"][0]["upload_id"], body["upload_id"])
+
+    def test_upload_rejects_bad_auth_corrupt_and_truncated(self):
+        data = self.make_mp4().read_bytes()
+        self.assertEqual(self.up(data, token="wrong")[0], 401)
+        code, _, body = self.up(data[: len(data) // 2])
+        self.assertEqual(code, 422)
+        self.assertFalse(body["ok"])
+        self.assertEqual(self.jreq("GET", "/v1/inbox")[2]["uploads"], [])
+        import http.client  # noqa: PLC0415  (declared length larger than what arrives)
+        conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=10)
+        conn.putrequest("POST", "/v1/upload")
+        conn.putheader("Authorization", "Bearer " + TOKEN)
+        conn.putheader("Content-Length", str(len(data) + 5000))
+        conn.endheaders()
+        conn.send(data)
+        conn.sock.shutdown(1)
+        r = conn.getresponse()
+        self.assertEqual(json.loads(r.read())["error"], "UPLOAD_INCOMPLETE")
+        conn.close()
+
+    def test_upload_size_limit(self):
+        old = gw.UPLOAD_MB
+        gw.UPLOAD_MB = 1
+        try:
+            import http.client  # noqa: PLC0415  (curl's Expect: 100-continue: refused before any byte is sent)
+            for tok, want in ((TOKEN, 413), ("wrong", 401)):
+                conn = http.client.HTTPConnection("127.0.0.1", self.port, timeout=10)
+                conn.putrequest("POST", "/v1/upload")
+                conn.putheader("Authorization", "Bearer " + tok)
+                conn.putheader("Content-Length", str(1024 * 1024 + 10))
+                conn.putheader("Expect", "100-continue")
+                conn.endheaders()
+                r = conn.getresponse()
+                self.assertEqual(r.status, want)
+                conn.close()
+        finally:
+            gw.UPLOAD_MB = old
+
+    def test_send_script_is_served(self):
+        code, headers, body = self.req("GET", "/kosif-send.sh", token=None)
+        self.assertEqual(code, 200)
+        self.assertTrue(body.startswith(b"#!/bin/sh"))
+        self.assertNotIn(TOKEN.encode(), body)
+
+
 class TestSuperpowersClient(Base):
     """The KOSIF Superpowers client (_media_gateway.py, used by fetch_video.py --gateway) end to end."""
 
@@ -308,6 +384,15 @@ class TestSuperpowersClient(Base):
         self.assertEqual(hashlib.sha256(Path(rec["original_file"]).read_bytes()).hexdigest(), rec["sha256"])
         self.assertEqual((rec["width"], rec["height"]), (360, 640))
         self.assertFalse(list(self.out.glob("*.part")))
+
+    def test_pull_latest_upload(self):
+        clip = TestUpload.make_mp4(self)
+        code, _, body = self.jreq("POST", "/v1/upload", raw=clip.read_bytes(), headers={"X-Filename": "a.mp4"})
+        self.assertEqual(code, 200, body)
+        rec = self.client.pull("", self.out)
+        self.assertEqual(rec["upload_id"], body["upload_id"])
+        self.assertEqual(Path(rec["original_file"]).read_bytes(), clip.read_bytes())
+        self.assertFalse(self.client.pull("nope", self.out)["ok"])
 
     def test_blocked_is_reported(self):
         reset("login")
@@ -341,7 +426,7 @@ class TestMcpRaw(Base):
         self.assertEqual(self.rpc({"jsonrpc": "2.0", "method": "notifications/cancelled",
                                    "params": {"requestId": 1}})[0], 202)
         names = [t["name"] for t in self.rpc({"jsonrpc": "2.0", "id": 2, "method": "tools/list"})[2]["result"]["tools"]]
-        self.assertEqual(names, ["gateway_status", "probe_youtube", "download_permitted_video"])
+        self.assertEqual(names, ["gateway_status", "list_uploads", "probe_youtube", "download_permitted_video"])
         unknown = self.rpc({"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "nope"}})[2]
         self.assertEqual(unknown["error"]["code"], -32602)
         self.assertEqual(self.rpc({"jsonrpc": "2.0", "id": 4, "method": "x/y"})[2]["error"]["code"], -32601)

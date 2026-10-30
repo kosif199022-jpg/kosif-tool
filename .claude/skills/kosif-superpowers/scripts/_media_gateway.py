@@ -4,6 +4,8 @@
     python3 _media_gateway.py health
     python3 _media_gateway.py probe dYrEeavC3cw [--media-check]
     python3 _media_gateway.py download URL_OR_ID --rights cc-licensed [--quality 720] [-o DIR]
+    python3 _media_gateway.py inbox                 # videos the iPhone sent with kosif-send
+    python3 _media_gateway.py pull [UPLOAD_ID] -o DIR   # fetch the latest (or one) of them
 
 fetch_video.py uses it with --gateway RIGHTS. Settings come from the environment only:
 KOSIF_GATEWAY_URL (default below) and KOSIF_GATEWAY_TOKEN (never printed, logged or written).
@@ -128,9 +130,33 @@ def download(video: str, out_dir: str | Path, rights: str, quality: int = 720) -
     return rec
 
 
+def inbox() -> dict:
+    """Videos the owner's iPhone sent with kosif-send (a-Shell), newest first."""
+    return _call("GET", "/v1/inbox", timeout=120)[1]
+
+
+def pull(upload_id: str, out_dir: str | Path) -> dict:
+    """Fetch one uploaded video (latest when upload_id is empty): original + compatible MP4, SHA-256 checked."""
+    box = inbox()
+    ups = box.get("uploads") or []
+    up = next((u for u in ups if not upload_id or u["upload_id"] == upload_id), None)
+    if not up:
+        return {"ok": False, "error": box.get("error") or "NO_SUCH_UPLOAD", "available": [u["upload_id"] for u in ups]}
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    rec = {"ok": True, "upload_id": up["upload_id"], "source_url": up.get("source_url"), "provider": "kosif-send"}
+    for f in up["files"]:
+        dest = _fetch(f["file_path"], out / f["filename"], f["sha256"], f["size_bytes"])
+        rec["original_file" if f["role"] == "original" else "safe_file"] = str(dest)
+        if f["role"] == "original":
+            rec.update({k: f["media"].get(k) for k in ("duration", "width", "height", "vcodec", "acodec", "fps")})
+    rec["file"] = rec.get("safe_file") or rec.get("original_file")
+    return rec
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("action", choices=["health", "probe", "download"])
+    ap.add_argument("action", choices=["health", "probe", "download", "inbox", "pull"])
     ap.add_argument("video", nargs="?", default="dYrEeavC3cw")
     ap.add_argument("--rights", choices=RIGHTS)
     ap.add_argument("--quality", type=int, default=720, choices=(360, 480, 720, 1080))
@@ -141,6 +167,10 @@ def main(argv=None) -> int:
     try:
         if a.action == "health":
             res = health(a.deep)
+        elif a.action == "inbox":
+            res = inbox()
+        elif a.action == "pull":
+            res = pull("" if a.video == "dYrEeavC3cw" else a.video, a.out)
         elif a.action == "probe":
             res = probe(a.video, a.media_check)
         else:

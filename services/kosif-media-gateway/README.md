@@ -31,6 +31,8 @@ Environment variables (set in the Render dashboard, never in the repo):
 | `KOSIF_DOWNLOAD_TIMEOUT` | no | 150 | Seconds for one yt-dlp download |
 | `KOSIF_TRANSCODE_TIMEOUT` | no | 240 | Seconds for the libx264 fallback |
 | `KOSIF_EXTRA_HOSTS` | no | empty | Extra https hosts allowed besides YouTube, Wikimedia, archive.org and Vimeo |
+| `KOSIF_UPLOAD_MB` | no | 150 | Largest upload from the owner's device |
+| `KOSIF_UPLOAD_TTL` | no | 3600 | Seconds an upload stays available |
 | `KOSIF_PUBLIC_PROBE_EVERY` | no | 900 | Minimum seconds between unauthenticated `/health?deep=1` checks |
 
 `RENDER_EXTERNAL_URL` is set by Render itself and is used to build absolute file links.
@@ -46,6 +48,9 @@ Free services sleep after ~15 idle minutes, so the first request can take up to 
 | `POST /v1/download` | Bearer | `{"video": "ID or URL", "rights": "cc-licensed", "quality": 720}` |
 | `GET /v1/files/<ticket>` | Bearer | The file; `X-Content-SHA256` header carries its hash |
 | `POST /mcp` | Bearer | MCP Streamable HTTP (stateless JSON responses) |
+| `POST /v1/upload` | Bearer | Raw video body (`--data-binary @file`, headers `X-Filename`, `X-Source-Url`): verified like a download, kept `KOSIF_UPLOAD_TTL` (default 1 h), max `KOSIF_UPLOAD_MB` (default 150). `Expect: 100-continue` is refused before any byte for a bad token or size |
+| `GET /v1/inbox` | Bearer | Uploads still held, newest first (MCP tool `list_uploads`) |
+| `GET /kosif-send.sh` | none | The a-Shell script below (contains no secrets) |
 | `GET /browser` | none | KOSIF Video Browser: paste a YouTube link, watch it in YouTube's official embed, read public oEmbed data, thumbnails and duration. It does not download: the page cannot read the player's media (cross-origin) and YouTube blocks direct requests (CORS) |
 
 `rights` must be one of `owned`, `written-permission`, `public-domain`, `cc-licensed`, `youtube-authorized`.
@@ -102,13 +107,34 @@ claude mcp list        # expect: kosif-media ... ✓ Connected
 
 Tools: `gateway_status`, `probe_youtube`, `download_permitted_video`.
 
+## From the iPhone: kosif-send (share button)
+
+YouTube refuses cloud hosts, but the owner's iPhone downloads fine (Cinema C). `kosif-send` downloads on the
+phone with a-Shell and uploads the verified file here, so Claude can fetch it with `list_uploads` or
+`_media_gateway.py pull`.
+
+In a-Shell, once:
+
+```sh
+mkdir -p ~/Documents/bin
+curl -fsSL https://kosif-media-gateway-free-20261030.onrender.com/kosif-send.sh -o ~/Documents/bin/kosif-send
+chmod +x ~/Documents/bin/kosif-send
+kosif-send --setup        # paste the token; saved in ~/Documents/.kosif/token (mode 600)
+kosif-send --check
+```
+
+Use: `kosif-send "https://youtube.com/shorts/..."` (Arabic text around the link is ignored) or
+`kosif-send --file ~/Documents/Cinema_Downloads/clip.mp4`. Shortcuts: an iOS shortcut that accepts URLs from the
+Share Sheet and runs a-Shell's **Execute Command** action with `kosif-send "<Shortcut Input>"`.
+The token never appears on a command line; curl reads it from a temporary private header file.
+
 ## KOSIF Superpowers
 
 `fetch_video.py URL --gateway cc-licensed` tries the local machine first (yt-dlp, TikTok, Pinterest, stock
 sites unchanged) and, only if that fails, asks the gateway once. The client is
 `.claude/skills/kosif-superpowers/scripts/_media_gateway.py` (`health`, `probe`, `download`); it needs
 `KOSIF_GATEWAY_TOKEN` and optionally `KOSIF_GATEWAY_URL`, re-checks each file's SHA-256 and size, and writes
-files atomically.
+files atomically. `_media_gateway.py inbox` lists what the iPhone sent; `pull [UPLOAD_ID] -o DIR` fetches it.
 
 ## Tests
 

@@ -49,6 +49,8 @@ def _env_int(name: str, default: int) -> int:
 MAX_MB = _env_int("KOSIF_MAX_MB", 45)
 PER_HOUR = _env_int("KOSIF_DOWNLOADS_PER_HOUR", 3)
 FILE_TTL = _env_int("KOSIF_FILE_TTL", 600)
+UPLOAD_MB = _env_int("KOSIF_UPLOAD_MB", 150)
+UPLOAD_TTL = _env_int("KOSIF_UPLOAD_TTL", 3600)
 BLOCK_COOLDOWN = _env_int("KOSIF_BLOCK_COOLDOWN", 1800)
 DOWNLOAD_TIMEOUT = _env_int("KOSIF_DOWNLOAD_TIMEOUT", 150)
 PROBE_TIMEOUT = _env_int("KOSIF_PROBE_TIMEOUT", 45)
@@ -569,6 +571,85 @@ def download(source: str, rights: str, quality: int | str = 720, base_url: str =
         _BUSY.release()
 
 
+_SAFE_NAME = re.compile(r"[^A-Za-z0-9._-]+")
+
+
+def ingest_upload(stream, length: int, filename: str = "", source_url: str = "", base_url: str = "") -> dict:
+    """A file the owner's own device downloaded (a-Shell / Cinema C) and sent here: verify, keep, serve.
+
+    The platform download happened on the owner's network; this only receives the bytes."""
+    if length <= 0:
+        return {"ok": False, "error": "LENGTH_REQUIRED"}
+    if length > UPLOAD_MB * 1024 * 1024:
+        return {"ok": False, "error": "FILE_TOO_LARGE", "limit_mb": UPLOAD_MB}
+    prune()
+    folder = Path(tempfile.mkdtemp(prefix=TEMP_PREFIX))
+    keep = False
+    try:
+        stem = _SAFE_NAME.sub("_", Path(filename or "upload.mp4").stem)[:60] or "upload"
+        suffix = Path(filename or "x.mp4").suffix.lower()
+        suffix = suffix if suffix in (".mp4", ".mov", ".m4v", ".webm", ".mkv") else ".mp4"
+        original = folder / ("upload" + suffix)
+        h = hashlib.sha256()
+        left = length
+        with open(original, "wb") as fp:
+            while left > 0:
+                chunk = stream.read(min(1 << 20, left))
+                if not chunk:
+                    break
+                fp.write(chunk)
+                h.update(chunk)
+                left -= len(chunk)
+        if left:
+            return {"ok": False, "error": "UPLOAD_INCOMPLETE", "missing_bytes": left}
+        check = verify(original)
+        if not check.get("ok"):
+            return {"ok": False, "error": check.get("error"), "verify": check}
+        files = {}
+        ticket, entry = _file_entry(original, check, "original", f"{stem}.original{suffix}")
+        files[ticket] = entry
+        compat = make_compatible(original, check, folder)
+        if compat.get("ok"):
+            t2, e2 = _file_entry(compat["path"], compat["media"], "compatible", f"{stem}.mp4")
+            e2.update(method=compat["method"], lossless=compat["lossless"])
+            files[t2] = e2
+        job_id = secrets.token_hex(8)
+        created = time.time()
+        with _LOCK:
+            _JOBS[job_id] = {"folder": str(folder), "expires": created + UPLOAD_TTL, "files": files,
+                             "kind": "upload", "created": created, "name": stem,
+                             "source_url": source_url[:300] if source_url.startswith("https://") else ""}
+        keep = True
+        return {"ok": True, "upload_id": job_id, "verified": True, "files": _public_files(files, base_url),
+                "expires_in_seconds": UPLOAD_TTL}
+    finally:
+        if not keep:
+            shutil.rmtree(folder, ignore_errors=True)
+
+
+def _public_files(files: dict, base_url: str = "") -> list[dict]:
+    out = []
+    for t, e in files.items():
+        item = {k: v for k, v in e.items() if k != "path"}
+        item["file_path"] = "/v1/files/" + t
+        if base_url:
+            item["url"] = base_url.rstrip("/") + item["file_path"]
+        out.append(item)
+    return out
+
+
+def inbox(base_url: str = "") -> dict:
+    """Uploads still held, newest first."""
+    prune()
+    with _LOCK:
+        jobs = [(k, j) for k, j in _JOBS.items() if j.get("kind") == "upload"]
+    jobs.sort(key=lambda kj: kj[1]["created"], reverse=True)
+    return {"ok": True, "uploads": [{"upload_id": k, "name": j["name"], "source_url": j["source_url"],
+                                     "age_seconds": int(time.time() - j["created"]),
+                                     "expires_in_seconds": int(j["expires"] - time.time()),
+                                     "files": _public_files(j["files"], base_url)} for k, j in jobs]}
+
+
 def status() -> dict:
     prune()
     with _LOCK:
@@ -578,7 +659,7 @@ def status() -> dict:
                 "youtube": {"last_result": _STATE["last_youtube"], "cooldown_seconds": left},
                 "youtube_download_verified": _STATE["verified_downloads"] > 0,
                 "verified_downloads_since_start": _STATE["verified_downloads"],
-                "limits": {"max_mb": MAX_MB, "downloads_per_hour": PER_HOUR, "file_ttl_seconds": FILE_TTL,
+                "limits": {"max_mb": MAX_MB, "upload_mb": UPLOAD_MB, "upload_ttl_seconds": UPLOAD_TTL, "downloads_per_hour": PER_HOUR, "file_ttl_seconds": FILE_TTL,
                            "download_timeout_seconds": DOWNLOAD_TIMEOUT, "concurrent_downloads": 1,
                            "attempts_last_hour": len(_ATTEMPTS)},
                 "allowed_hosts": sorted(allowed_hosts()), "uptime_seconds": int(time.time() - _STATE["started"])}
@@ -604,6 +685,11 @@ _SOURCE_DESC = "YouTube id (11 chars), a YouTube/Shorts/youtu.be URL, or an http
 TOOLS = [
     {"name": "gateway_status",
      "description": "Gateway health, real dependency checks, limits and the last YouTube result / cool-down.",
+     "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
+     "annotations": {"readOnlyHint": True, "openWorldHint": False}},
+    {"name": "list_uploads",
+     "description": "Videos the owner's own device downloaded and sent to the gateway (POST /v1/upload), newest "
+                    "first, each verified with a real decoder, with bearer-protected links to the original and an H.264/AAC MP4.",
      "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
      "annotations": {"readOnlyHint": True, "openWorldHint": False}},
     {"name": "probe_youtube",
@@ -663,6 +749,8 @@ def mcp_handle(msg, base_url: str = "") -> dict | None:
         if name == "gateway_status":
             payload = status()
             payload["ok"] = True
+        elif name == "list_uploads":
+            payload = inbox(base_url)
         elif name == "probe_youtube":
             payload = probe(str(args.get("video", "")), bool(args.get("media_check")))
         elif name == "download_permitted_video":
@@ -746,10 +834,14 @@ class Gateway(BaseHTTPRequestHandler):
                 body["public_probe"] = public_probe()
             self._send(200, body)
             return
-        if path in ("/browser", "/browser/"):
-            page = (Path(__file__).resolve().parent / "static" / "browser.html").read_bytes()
+        static = {"/browser": ("browser.html", "text/html; charset=utf-8"),
+                  "/browser/": ("browser.html", "text/html; charset=utf-8"),
+                  "/kosif-send.sh": ("kosif-send.sh", "text/plain; charset=utf-8")}
+        if path in static:
+            fname, ctype = static[path]
+            page = (Path(__file__).resolve().parent / "static" / fname).read_bytes()
             self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Type", ctype)
             self.send_header("Content-Length", str(len(page)))
             self.send_header("Cache-Control", "no-cache")
             self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
@@ -765,6 +857,9 @@ class Gateway(BaseHTTPRequestHandler):
             return
         if not self._authorized():
             self._deny()
+            return
+        if path == "/v1/inbox":
+            self._send(200, inbox(self._base_url()))
             return
         if not path.startswith("/v1/files/"):
             self._send(404, {"error": "NOT_FOUND"})
@@ -788,6 +883,53 @@ class Gateway(BaseHTTPRequestHandler):
             except (BrokenPipeError, ConnectionResetError):
                 pass
 
+    def handle_expect_100(self):
+        """curl sends `Expect: 100-continue` for big bodies: refuse a bad token or an oversized upload
+        before the phone sends a single byte."""
+        if not self._authorized():
+            self.close_connection = True
+            self._deny()
+            return False
+        if urllib.parse.urlsplit(self.path).path == "/v1/upload":
+            try:
+                length = int(self.headers.get("Content-Length", "-1"))
+            except ValueError:
+                length = -1
+            if length > UPLOAD_MB * 1024 * 1024:
+                self.close_connection = True
+                self._send(413, {"ok": False, "error": "FILE_TOO_LARGE", "limit_mb": UPLOAD_MB})
+                return False
+        return super().handle_expect_100()
+
+    def _upload(self) -> None:
+        try:
+            length = int(self.headers.get("Content-Length", "-1"))
+        except ValueError:
+            length = -1
+        if not self._authorized():
+            self.close_connection = True       # the body is not read
+            self._deny()
+            return
+        if length < 0 or length > UPLOAD_MB * 1024 * 1024:
+            self.close_connection = True
+            self._send(413 if length > 0 else 411, {"ok": False, "error": "FILE_TOO_LARGE" if length > 0 else "LENGTH_REQUIRED",
+                                                    "limit_mb": UPLOAD_MB})
+            return
+        if not _BUSY.acquire(blocking=False):
+            self.close_connection = True
+            self._send(409, {"ok": False, "error": "BUSY_ONE_DOWNLOAD_AT_A_TIME", "retry_after_seconds": 30},
+                       {"Retry-After": "30"})
+            return
+        try:
+            name = urllib.parse.unquote(self.headers.get("X-Filename", ""))[:200]
+            src = urllib.parse.unquote(self.headers.get("X-Source-Url", ""))[:300]
+            out = ingest_upload(self.rfile, length, name, src, self._base_url())
+        finally:
+            _BUSY.release()
+        if out.get("error") == "UPLOAD_INCOMPLETE":
+            self.close_connection = True
+        self._send(200 if out.get("ok") else 422, out)
+
     def do_DELETE(self):
         if urllib.parse.urlsplit(self.path).path == "/mcp":
             self._send(405, {"error": "STATELESS_NO_SESSION"}, {"Allow": "POST"})
@@ -796,6 +938,9 @@ class Gateway(BaseHTTPRequestHandler):
 
     def do_POST(self):
         route = urllib.parse.urlsplit(self.path).path
+        if route == "/v1/upload":
+            self._upload()
+            return
         # Read (bounded) before answering, so an early 401 never leaves body bytes on a keep-alive
         # connection; anything unread closes the connection instead.
         data, err = self._body()
