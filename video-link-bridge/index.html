@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="KOSIF Link Bridge: test YouTube links through public download services and verify direct media links before handing them to Claude.">
+<title>KOSIF Link Bridge | تجربة روابط الفيديو</title>
+<style>
+:root{color-scheme:dark;--bg:#0b111a;--panel:#141d29;--edge:#293647;--text:#edf4f8;--muted:#adbecf;--accent:#60d4b4;--bad:#ffac99}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#153e42,transparent 42%),var(--bg);font:16px/1.8 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);min-height:100vh}
+main{max-width:920px;margin:auto;padding:32px 16px 70px}h1{font-size:clamp(27px,5vw,40px);margin:0}h2{font-size:19px;margin:0 0 12px}p{margin:7px 0 14px;color:var(--muted)}.intro{max-width:68ch}
+section{background:var(--panel);border:1px solid var(--edge);border-radius:16px;padding:20px;margin-top:20px}
+label{display:block;font-weight:600;margin-bottom:7px}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:stretch}
+input,textarea{background:#0c151f;border:1px solid #4a5b6e;color:var(--text);border-radius:10px;padding:12px;font:14px/1.5 ui-monospace,Consolas,monospace;direction:ltr;text-align:left;width:100%;min-width:0}
+.row input{flex:1 1 330px}.row button{flex:0 0 auto}textarea{min-height:144px;resize:vertical}
+button,.btn{border:0;border-radius:10px;padding:11px 17px;font:600 15px system-ui;cursor:pointer;background:var(--accent);color:#07251e;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+.btn.secondary,button.secondary{border:1px solid #556679;background:transparent;color:var(--text)}
+button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.providers{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr));gap:10px;margin:16px 0}
+.providers a{border:1px solid #51677a;border-radius:10px;color:var(--text);padding:11px 14px;text-decoration:none;font-weight:600;text-align:center;background:#1a2936}
+.providers a:hover{border-color:var(--accent)}.badge{display:inline-block;border:1px solid var(--edge);border-radius:100px;padding:1px 9px;color:var(--accent);font-size:13px}
+.hint{font-size:13px;color:var(--muted)}.warn{color:#ffd293}.error{color:var(--bad)}.success{color:#8aebbf}
+.player{aspect-ratio:16/9;background:#080b10;display:none;overflow:hidden;border-radius:10px;margin-top:14px}.player iframe{width:100%;height:100%;border:0}
+#result a{word-break:break-all;color:var(--accent)}#result{white-space:pre-wrap;overflow-wrap:anywhere}small{color:var(--muted)}footer{color:var(--muted);font-size:13px;margin-top:25px}.mono{font-family:monospace;direction:ltr;unicode-bidi:isolate}
+</style>
+</head>
+<body>
+<main>
+<header><span class="badge">GitHub Pages • تجربة قابلة لإعادة الاستخدام</span>
+<h1>KOSIF Video Link Bridge</h1>
+<p class="intro">جرّب رابط يوتيوب، افتح إحدى خدمات التحميل في تبويب آخر، ثم أدخل رابط <strong>الملف المباشر</strong> الذي تعطيه الخدمة. الصفحة تفحص الرابط قدر الإمكان وتصدر بيانات منظمة لـClaude. الصفحة <strong>لا تدّعي</strong> تحويل روابط يوتيوب تلقائيًا، ولا تحتاج توكن GitHub أو Render.</p></header>
+<section>
+<h2>١ — أدخل رابط الفيديو</h2>
+<form id="video-form" class="row">
+<input id="source" type="url" placeholder="https://www.youtube.com/watch?v=dYrEeavC3cw" value="https://www.youtube.com/watch?v=dYrEeavC3cw" required aria-label="رابط الفيديو">
+<button type="submit">تحضير الرابط</button>
+</form>
+<p id="source-status" role="status">جاهز للتجربة.</p>
+<div id="player" class="player"><iframe id="embed" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="مشغّل يوتيوب الرسمي" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+</section>
+<section>
+<h2>٢ — افتح خدمة التحميل</h2>
+<p>اضغط على الخدمة، وسيُنسخ رابط الفيديو إلى الحافظة إن سمح المتصفح. الصقه في موقع الخدمة واحصل على رابط ملف مباشر إن وفّرته. بعض الخدمات تتيح تنزيل ملف فقط، وليس رابطًا مناسبًا لـClaude.</p>
+<div id="providers" class="providers">
+<a href="https://www.snapyt.app/" target="_blank" rel="noopener noreferrer" data-provider="SnapYT">SnapYT ↗</a>
+<a href="https://ssyoutube.me/" target="_blank" rel="noopener noreferrer" data-provider="SSYouTube">SSYouTube ↗</a>
+<a href="https://youtubetoolkit.com/tools/video-downloader-1080p" target="_blank" rel="noopener noreferrer" data-provider="YouTubeToolkit">YouTubeToolkit ↗</a>
+<a href="https://snapany.com/youtube-3" target="_blank" rel="noopener noreferrer" data-provider="SnapAny">SnapAny ↗</a>
+</div>
+<p id="provider-status" class="hint">لا توجد واجهة API عامة مؤكدة لهذه المواقع. فتحها لا يعني نجاح استخراج رابط MP4.</p>
+</section>
+<section>
+<h2>٣ — استلم الرابط المباشر واختبره</h2>
+<label for="direct">رابط ملف MP4 / WebM / فيديو مباشر أو رابط مؤقت من الخدمة</label>
+<div class="row"><input id="direct" type="url" placeholder="https://cdn.example.org/video.mp4" aria-label="رابط الملف المباشر">
+<button id="verify" type="button">افحص الرابط</button>
+<button id="paste" type="button" class="secondary">لصق من الحافظة</button></div>
+<p class="hint">الفحص يستخدم HEAD فقط، ولا يسحب الفيديو. لو الخادم مانع فحص CORS تظهر نتيجة «غير قابل للتحقق من المتصفح»، مش نجاح كاذب. الروابط المؤقتة قد تنتهي أو تحتاج Cookies.</p>
+<p id="result" role="status">لم يتم فحص رابط ملف بعد.</p>
+<div id="file-actions" class="row" hidden><a id="file-link" class="btn secondary" href="#" target="_blank" rel="noopener noreferrer">فتح الرابط المرشح ↗</a><button id="copy-url" type="button">نسخ رابط الملف</button></div>
+</section>
+<section>
+<h2>٤ — سلّم النتيجة إلى Claude</h2>
+<p>انسخ JSON التالي إلى Claude. الحالة <span class="mono">verified</span> تعني أن الخادم أرجع نوع فيديو عند فحص HEAD؛ لا تعني أننا نزّلنا الملف كاملًا أو تأكدنا من صلاحيته عند Claude. اختبر الوصول إليه من بيئة Claude نفسها.</p>
+<textarea id="report" aria-label="تقرير JSON" readonly></textarea>
+<div class="row"><button id="copy-json" type="button">نسخ تقرير Claude</button><button id="reset" type="button" class="secondary">بدء تجربة جديدة</button></div>
+</section>
+<footer>للاستخدام مع فيديوهات تملك حق تنزيلها. لا يحاول الموقع تجاوز تسجيل الدخول أو DRM أو قيود يوتيوب، ولا يرسل أسرارًا إلى أي خدمة. GitHub Pages استضافة ثابتة؛ التشغيل الآلي الكامل يتطلب API موثقة من المزود أو خادمًا وسيطًا خاصًا.</footer>
+</main>
+<script>
+(function(){
+'use strict';
+var source=document.getElementById('source'),direct=document.getElementById('direct'),result=document.getElementById('result'),status=document.getElementById('source-status');
+var report={service:'KOSIF Video Link Bridge',version:'0.1.0',source_url:null,video_id:null,provider:null,direct_media_url:null,status:'not_tested',verified:false,http_status:null,content_type:null,note:'A direct candidate URL is required; YouTube iframe is not a downloadable stream.'};
+function show(){document.getElementById('report').value=JSON.stringify(report,null,2)}
+function parseYouTube(input){try{var u=new URL(input);if(u.protocol!=='https:')return null;var h=u.hostname.toLowerCase().replace(/^(www\.|m\.)/,'');var path=u.pathname.split('/').filter(Boolean);var id=null;if(h==='youtu.be'&&path.length===1)id=path[0];else if(h==='youtube.com'&&path[0]==='watch')id=u.searchParams.get('v');else if(h==='youtube.com'&&['shorts','live','embed'].includes(path[0]))id=path[1];return id&&/^[\w-]{11}$/.test(id)?id:null}catch(e){return null}}
+function validHttps(input){try{var u=new URL(input);return u.protocol==='https:'&&!!u.hostname&&!!u.hostname.match(/\./)?u:null}catch(e){return null}}
+function prepare(){var u=validHttps(source.value.trim());if(!u){status.textContent='الرابط لازم يبدأ بـ https:// ويكون صحيحًا.';status.className='error';return false}
+report.source_url=u.href;report.video_id=parseYouTube(u.href);report.provider=null;report.direct_media_url=null;report.status='awaiting_direct_link';report.verified=false;report.http_status=null;report.content_type=null;
+status.textContent=report.video_id?'تم التعرف على فيديو يوتيوب: '+report.video_id+' — جرّب مزودًا ثم ألصق رابط الملف.':'رابط HTTPS صالح. لو ده رابط ملف مباشر، الصقه أيضًا في الخطوة ٣.';
+status.className='success';document.getElementById('player').style.display=report.video_id?'block':'none';
+document.getElementById('embed').src=report.video_id?'https://www.youtube-nocookie.com/embed/'+report.video_id:'about:blank';
+document.getElementById('file-actions').hidden=true;result.textContent='مستني رابط الملف.';show();return true}
+document.getElementById('video-form').addEventListener('submit',function(e){e.preventDefault();prepare()});
+document.querySelectorAll('[data-provider]').forEach(function(a){a.addEventListener('click',function(){report.provider=a.dataset.provider;show();if(report.source_url&&navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(report.source_url).then(function(){document.getElementById('provider-status').textContent='تم نسخ رابط الفيديو — الصقه في '+a.dataset.provider+'.'},function(){document.getElementById('provider-status').textContent='انسخ رابط الفيديو يدويًا من الخطوة ١.'})}})});
+document.getElementById('paste').addEventListener('click',async function(){if(!navigator.clipboard||!navigator.clipboard.readText){result.textContent='المتصفح لا يسمح بقراءة الحافظة هنا؛ الصق الرابط يدويًا.';return}try{direct.value=await navigator.clipboard.readText()}catch(e){result.textContent='لا توجد صلاحية لقراءة الحافظة؛ الصق الرابط يدويًا.'}});
+document.getElementById('verify').addEventListener('click',async function(){
+if(!report.source_url&&!prepare())return;
+var u=validHttps(direct.value.trim());if(!u){result.textContent='أدخل رابط HTTPS صحيحًا للملف.';result.className='error';return}
+if(['youtube.com','www.youtube.com','m.youtube.com','youtu.be','www.snapyt.app','snapyt.app','ssyoutube.me','youtubetoolkit.com','snapany.com','www.snapany.com'].includes(u.hostname.toLowerCase())){result.textContent='ده رابط صفحة، مش رابط ملف مباشر. اختَر رابط ملف MP4/WEBM الناتج بدلًا منه.';result.className='error';return}
+report.direct_media_url=u.href;report.status='unverified';report.verified=false;report.http_status=null;report.content_type=null;
+document.getElementById('file-link').href=u.href;document.getElementById('file-actions').hidden=false;
+result.className='warn';result.textContent='جارٍ إرسال طلب HEAD فقط للتحقق من الرابط…';show();
+try{var response=await fetch(u.href,{method:'HEAD',redirect:'follow',credentials:'omit',mode:'cors',signal:AbortSignal.timeout(12000)});
+report.http_status=response.status;report.content_type=response.headers.get('content-type')||'';
+if(response.ok&&/^video\//i.test(report.content_type)){report.status='verified_head_video';report.verified=true;result.textContent='أعاد المصدر HTTP '+response.status+' ونوع '+report.content_type+'. الرابط مرشح مناسب لـClaude، لكن يجب تجربته من بيئته.';result.className='success'}
+else{report.status='not_verified';result.textContent='رد الخادم HTTP '+response.status+' ونوع '+(report.content_type||'غير معروف')+'. لم نتأكد من أنه رابط فيديو مباشر.';result.className='warn'}
+}catch(e){report.status='cors_or_network_unknown';result.textContent='لم يمكن فحص الرابط من المتصفح (CORS أو شبكة أو انتهت المهلة). لا يُعتبر نجاحًا أو فشلًا مؤكدًا. جرّبه من Claude.';result.className='warn'}
+show()
+});
+document.getElementById('copy-url').addEventListener('click',function(){if(report.direct_media_url&&navigator.clipboard)navigator.clipboard.writeText(report.direct_media_url)});
+document.getElementById('copy-json').addEventListener('click',function(){show();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('report').value)});
+document.getElementById('reset').addEventListener('click',function(){source.value='';direct.value='';report.source_url=null;report.direct_media_url=null;report.video_id=null;report.provider=null;report.status='not_tested';report.verified=false;document.getElementById('embed').src='about:blank';document.getElementById('player').style.display='none';document.getElementById('file-actions').hidden=true;status.textContent='جاهز لتجربة جديدة.';result.textContent='لم يتم فحص رابط ملف بعد.';show();source.focus()});
+var query=new URLSearchParams(location.search);if(query.get('url'))source.value=query.get('url');if(query.get('direct'))direct.value=query.get('direct');prepare();
+window.KOSIF_LINK_BRIDGE={getReport:function(){return JSON.parse(JSON.stringify(report))},prepare:prepare};
+})();
+</script>
+</body>
+</html>
