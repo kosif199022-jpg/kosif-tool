@@ -1,0 +1,27 @@
+name: SEE Superpowers Fusion
+
+on:
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-superpowers/scripts/hub.py'
+      - '.claude/skills/kosif-superpowers/scripts/see_superpower_unifier.py'
+      - '.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py'
+      - '.github/workflows/see-superpower-fusion.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-fusion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile modules
+        run: |
+          python3 -m py_compile .claude/skills/kosif-superpowers/scripts/hub.py
+          python3 -m py_compile .claude/skills/kosif-superpowers/scripts/see_superpower_unifier.py
+      - name: Verify core adapter
+        run: python3 .claude/skills/kosif-superpowers/scripts/see_superpower_unifier.py self-test
+      - name: Run fusion regressions
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_see_superpower_unifier.py' -v
