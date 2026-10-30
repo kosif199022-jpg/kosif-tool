@@ -16,13 +16,14 @@ class BookMethodsTests(unittest.TestCase):
         cls.d = M.load()
 
     def test_registry_scope_and_provenance(self):
-        self.assertEqual(len(self.d["sources"]), 10)
-        self.assertEqual(len(self.d["methods"]), 45)
+        self.assertEqual(len(self.d["sources"]), 15)
+        self.assertEqual(len(self.d["methods"]), 62)
         st = {s["id"]: s["status"] for s in self.d["sources"]}
         self.assertEqual(st["SRC-HP"], "excluded")
         self.assertEqual(st["SRC-BY"], "teaser-only")
         used = {m["source"] for m in self.d["methods"]}
-        self.assertTrue(used >= {"SRC-LT", "SRC-PP", "SRC-PS", "SRC-AC", "SRC-KV", "SRC-SH", "SRC-IM", "SRC-OU"})
+        self.assertTrue(used >= {"SRC-LT", "SRC-PP", "SRC-PS", "SRC-AC", "SRC-KV", "SRC-SH", "SRC-IM", "SRC-OU",
+                                       "SRC-ST", "SRC-AM", "SRC-CC", "SRC-IS"})
         self.assertEqual({m["domain"] for m in self.d["methods"]}, M.DOMAINS)
 
     def test_annex_lists_every_source_file(self):
@@ -32,6 +33,8 @@ class BookMethodsTests(unittest.TestCase):
 
     def test_search_arabic(self):
         self.assertEqual(M.search(self.d, "محاسبة")[0]["domain"], "accounting")
+        self.assertEqual(M.search(self.d, "day-for-night")[0]["id"], "AM-04")
+        self.assertEqual(M.search(self.d, "الكليات الخمس")[0]["id"], "IS-01")
         self.assertIn(M.search(self.d, "قصيدة")[0]["id"], {"AR-01", "AR-02"})
         with self.assertRaises(ValueError):
             M.resolve(self.d, "XX-99")

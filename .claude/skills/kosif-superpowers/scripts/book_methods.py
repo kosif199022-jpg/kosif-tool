@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF book methods (A20): thinking, talent and craft methods distilled from ten owner-uploaded PDFs.
+"""KOSIF book methods (A20): thinking, talent and craft methods distilled from owner-uploaded PDFs (ten on 2026-10-23, five more on 2026-10-30).
 
 Registry: data/book_methods.json (our own wording; no book text copied). Sources: a lateral-thinking
 course (REST), The Pragmatic Programmer, Jaynes's Bayesian framework (the upload itself was an empty
@@ -8,7 +8,7 @@ sales teaser), the Cambridge Handbook of Personality Psychology, an AI accountin
 unlicensed fan translation was excluded.
 
 Commands
-  sources                       the ten files: what each is and whether it was used
+  sources                       every source file: what each is and whether it was used
   list [--domain D]             methods (lateral, engineering, bayesian, personality, accounting,
                                 prompting, arabic-verse, teaching, drama)
   search "<words>"              Arabic/English search
@@ -36,7 +36,7 @@ from pathlib import Path
 SKILL = Path(__file__).resolve().parents[1]
 DATA = SKILL / "data" / "book_methods.json"
 DOMAINS = {"lateral", "engineering", "bayesian", "personality", "accounting", "prompting",
-           "arabic-verse", "teaching", "drama"}
+           "arabic-verse", "teaching", "drama", "conceptual", "cinematography", "logic"}
 ALIASES = {"تفكير": "lateral thinking", "إبداع": "lateral idea", "أفكار": "idea lateral", "جانبي": "lateral",
            "برمجة": "engineering code", "كود": "code engineering", "اختبار": "test", "تصحيح": "debugging",
            "احتمال": "bayesian probability", "بايز": "bayesian", "أدلة": "evidence", "قرار": "decision",

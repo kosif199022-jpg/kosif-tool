@@ -1,6 +1,6 @@
-# A20 — Book-distilled methods: lateral thinking, pragmatic engineering, Bayesian evidence, personality, accounting controls, prompt clarity and Arabic verse
+# A20 — Book-distilled methods: lateral thinking, pragmatic engineering, Bayesian evidence, personality, accounting controls, prompt clarity, Arabic verse, conceptual thinking, cinematography, code construction and classical logic
 
-> **متى تقرأه / when to read:** طلب يحتاج توليد أفكار غير تقليدية، أو انضباطًا هندسيًا في كود أو أداة، أو قرارًا بأدلة ناقصة، أو بناء شخصية أو نبرة أو حوار، أو قيودًا محاسبية أو IFRS/ISA، أو فحص وضوح برومبت صورة/فيديو، أو فيلم قصيدة/دعاء عربي، أو درسًا تعليميًا. Any request that needs lateral ideas, engineering discipline, Bayesian weighing of evidence, character/tone design, accounting entries or standards, prompt clarity scoring, Arabic verse on screen, or a lesson design.
+> **متى تقرأه / when to read:** طلب يحتاج توليد أفكار غير تقليدية، أو انضباطًا هندسيًا في كود أو أداة، أو قرارًا بأدلة ناقصة، أو بناء شخصية أو نبرة أو حوار، أو قيودًا محاسبية أو IFRS/ISA، أو فحص وضوح برومبت صورة/فيديو، أو فيلم قصيدة/دعاء عربي، أو درسًا تعليميًا، أو تحليل مفهوم وتركيب أفكار ومفاضلة بشبكة، أو قرارات تصوير (غالق، عمق بؤري، ليل نهاري، مسار لون)، أو تعريفًا وتصنيفًا دقيقًا. Any request that needs lateral ideas, engineering discipline, Bayesian weighing of evidence, character/tone design, accounting entries or standards, prompt clarity scoring, Arabic verse on screen, a lesson design, concept analysis and grid decisions, camera and colour decisions, or a precise definition or taxonomy.
 >
 > **Canonical routing:** [PROTOCOL.md](../../PROTOCOL.md) → this appendix → `scripts/book_methods.py` and `data/book_methods.json`.
 
@@ -15,7 +15,7 @@
 
 ## Provenance and boundary
 
-The owner uploaded ten PDFs on 2026-10-23. Each was opened and identified: the short ones read in full (the accounting report and the v8 spec, the latter as rendered pages because its text layer is broken), the long ones through their contents pages and the chapters that carry the methods. [`data/book_methods.json`](../../data/book_methods.json) holds **45 methods in 9 domains**, written in our own words, each with steps, a check and the KOSIF stage it plugs into. No book text, exercise, answer, prompt or dialogue is stored. Methods and ideas are attributed to their authors. Reading a contents page and a few chapters is not reading 900 pages, so we never claim the whole book was studied.
+The owner uploaded ten PDFs on 2026-10-23 and five more on 2026-10-30 (with skills and protocol files, handled elsewhere). Each was opened and identified: the short ones read in full (the accounting report and the v8 spec, the latter as rendered pages because its text layer is broken), the long ones through their contents pages and the chapters that carry the methods. [`data/book_methods.json`](../../data/book_methods.json) holds **62 methods in 12 domains**, written in our own words, each with steps, a check and the KOSIF stage it plugs into. No book text, exercise, answer, prompt or dialogue is stored. Methods and ideas are attributed to their authors. Reading a contents page and a few chapters is not reading 900 pages, so we never claim the whole book was studied. Two of the 2026-10-30 files are scans with no text layer and no OCR on the machine that read them (Code Complete, Ibn Sina): they were identified from their rendered pages and metadata, and their cards restate the books' well-known methods, marked `identified`, not `used`.
 
 ## What each file contributed
 
@@ -30,6 +30,11 @@ The owner uploaded ten PDFs on 2026-10-23. Each was opened and identified: the s
 | 41.pdf (921 pp) | Ahmed Shawqi, *Al-Shawqiyyat* (Hindawi edition, 2012); the poet died in 1932 | used | AR-01…03: putting classical verse on screen (whole hemistichs, rhyme letter), the occasion poem and the verse fable as formats, and the Arabic PDF extraction hazard found in this very file |
 | Safari 3 (108 pp) | *Impact* Student's Book 1, Bahrain Edition (National Geographic Learning, 2021) | used | ED-01: can-do outcomes first, a photo hook, one task per outcome |
 | Safari 4 (8 pp) | Unit 1 "Entertainment" of a National Geographic Learning English coursebook | used | ED-02: notice, check, practise, personalise, with partner swaps |
+| Smart-Thinking (329 pp) | Bryan Greetham, *Smart Thinking*: three stages (conceptual thinking, creative thinking, making decisions), 17 chapters | used | ST-01…06: create a concept from examples, analyse a vague word in three steps, four kinds of synthesis, trigger questions × perspectives × levels, four ways to adapt a stuck structure, grid analysis with paired comparisons and frequencies for risk |
+| American-Cinematographer-Manual-10 (1445 pp) | ASC, *American Cinematographer Manual*, 10th ed. | used | AM-01…05: the look serves the story inside the budget, 180° shutter and safe pans, hyperfocal distance by formula, day-for-night, a reversible per-shot colour decision in one managed colour space |
+| Code-Complete (966 pp) | McConnell, *Code Complete* 2nd ed., Chinese translation, scanned with no text layer | identified | CC-01…04 from the book's well-known practices: prerequisites before construction, pseudocode first, defensive programming at the trust boundary, reviews plus measuring before tuning |
+| Al-Shifa, Logic 1, al-Madkhal (714 pp) | Ibn Sina, *al-Shifa'*, Logic part 1 (the Isagoge), scanned | identified | IS-01/02: the five universals (genus, species, differentia, property, common accident) and definition by nearest genus plus differentia, used for catalogue levels and skill descriptions |
+| 23.pdf (303 pp) | Diwan of Mahmoud Sami al-Baroudi (Hindawi edition) | used | confirms AR-01…03; no new method |
 | Safari 2 (390 pp) | an unlicensed Arabic fan translation of the play *Harry Potter and the Cursed Child* | **excluded** | nothing used. DR-01 records only generic stage-script layout, which needs no source |
 
 ## Where the methods plug into USIP
@@ -45,6 +50,12 @@ The owner uploaded ten PDFs on 2026-10-23. Each was opened and identified: the s
 | code and tools | PP-01, PP-05…07, PP-09/10 | a bug found once becomes a test; builders keep one source |
 | finance (kosif-finance-data) | AC-01…08 | the model proposes, deterministic code validates, a human approves |
 | teaching and explainers (A14/A15/A18) | ED-01/02 | outcomes first, discovery before the rule |
+| request card for vague words | ST-02, IS-02 | a loaded word becomes 2-4 checkable features; a term is defined by kind plus difference |
+| synthesis and plan C | ST-03, ST-05 | name the synthesis kind; plan C changes the structure, not just adds to it |
+| choosing between plans | ST-06 | written grid, stated weights, base rates as frequencies |
+| film, motion and video prompts (A8, Kling) | AM-01…05 | look sheet first; fps, shutter, lens, stop and colour stated, not implied |
+| catalogue and skill descriptions | IS-01/02 | families as genus, powers as species, the deciding feature as differentia |
+| tools and scripts | CC-01…04 | pseudocode first, validate at the edge, measure before tuning |
 
 ## KOSIF v8 reconciled with v5.3
 
@@ -60,7 +71,7 @@ The owner uploaded ten PDFs on 2026-10-23. Each was opened and identified: the s
 ## Commands
 
 ```bash
-python3 scripts/book_methods.py sources                     # the ten files and their status
+python3 scripts/book_methods.py sources                     # every source file and its status
 python3 scripts/book_methods.py search "شخصية حوار"         # Arabic/English search
 python3 scripts/book_methods.py show PP-05
 python3 scripts/book_methods.py rest --problem "إعلان لمقهى" --words 3 --seed 7
@@ -80,4 +91,5 @@ python3 scripts/book_methods.py persona --name سارة --big5 O=4,C=2,E=5,A=2,N
 - `persona` is for fiction, tone and design only. Never score, profile or diagnose a real person (PS-07).
 - `bayes` refuses a zero prior, because ruling a hypothesis out completely is a claim the evidence cannot undo.
 - Quote Arabic from a PDF only after checking it against the rendered page (AR-03).
+- Never claim the scanned books (Code Complete, Ibn Sina) were read; their cards are marked `identified`.
 - Never claim the uploaded books were read in full, that the testbank held content, or that anything from the excluded fan translation was used.

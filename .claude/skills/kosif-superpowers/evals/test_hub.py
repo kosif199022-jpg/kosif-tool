@@ -139,10 +139,31 @@ class FindTest(unittest.TestCase):
         proc = run("scripts/hub.py", "find", "اعمل فيديو موشن عربي متزامن مع صوتي 9:16", "--json")
         self.assertEqual(proc.returncode, 0, proc.stderr)
         data = json.loads(proc.stdout)
-        for key in ("tools", "powers", "guides", "family_chapters", "styles", "next"):
+        for key in ("tools", "execution_plan", "powers", "guides", "family_chapters", "styles", "next"):
             self.assertIn(key, data)
         self.assertTrue(data["tools"] and data["powers"])
         self.assertIn(data["tools"][0]["readiness"]["state"], ("ready", "missing", "unavailable"))
+        self.assertIn("matched_terms", data["tools"][0])
+        self.assertIn("strong_terms", data["tools"][0])
+        self.assertEqual(data["execution_plan"]["primary"], data["execution_plan"]["ready_now"][0])
+
+    def test_execution_plan_separates_ready_tools_and_aggregates_unlocks(self):
+        cards = [
+            {"id": "ready", "readiness": {"state": "ready", "missing": []}},
+            {"id": "blocked-a", "readiness": {"state": "missing", "missing": ["bin:ffmpeg", "pip:cv2"]}},
+            {"id": "blocked-b", "readiness": {"state": "missing", "missing": ["bin:ffmpeg"]}},
+        ]
+        plan = hub.execution_plan(cards)
+        self.assertEqual(plan["primary"], "ready")
+        self.assertEqual(plan["ready_now"], ["ready"])
+        self.assertEqual(plan["best_unlocks"][0], {"requirement": "bin:ffmpeg", "tools_unlocked": 2})
+
+    def test_match_explanation_uses_the_same_fields_as_ranking(self):
+        tool = hub.load_registry()["tools"][0]
+        phrase = tool["keywords"][0]
+        explanation = hub.explain_tool_match(tool, hub.terms_of(phrase))
+        self.assertTrue(explanation["matched_terms"], (tool["id"], phrase, explanation))
+        self.assertTrue(set(explanation["strong_terms"]) <= set(explanation["matched_terms"]))
 
     def test_human_output_from_repo_root_rewrites_paths(self):
         proc = run(".claude/skills/kosif-superpowers/scripts/hub.py", "find", "render a 3D cube without blender", cwd=REPO)
