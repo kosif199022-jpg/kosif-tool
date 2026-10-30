@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (6) / skills
+## المهارات (7) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -19,6 +19,7 @@
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
+| `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 11 KB · 171 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 
 ## المجموعات (15) / capability groups
@@ -168,6 +169,13 @@
 - 411–422: Blender headless H.264 motion video
 - 423–430: 8. مراجع أخرى / other references
 - 431–437: 100 Super Skills / الـ114 مهارة المدمجة
+
+### `.claude/skills/kosif-upload-link/SKILL.md`
+
+- 6–12: Upload link — any file, any size, any number
+- 13–25: 1. When the user asks for the link
+- 26–39: 2. When the user says they uploaded
+- 40–45: 3. Reading what came in
 
 ### `.claude/skills/living-site/SKILL.md`
 
