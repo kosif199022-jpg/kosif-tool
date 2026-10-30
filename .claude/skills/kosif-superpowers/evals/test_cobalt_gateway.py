@@ -11,7 +11,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts"))
-import cobalt_provider as cobalt
+import _cobalt_provider as cobalt
 
 VIDEO_ID="dYrEeavC3cw"
 
