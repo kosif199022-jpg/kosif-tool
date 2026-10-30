@@ -155,3 +155,29 @@ A healthy `/health` or a successful metadata probe does not prove a download wil
 metadata and still refuse the media stream (HTTP 403) to data-center IPs. Only a `download` that returns
 `verified: true` with a SHA-256 is proof. If Render's IP is refused, the options are the owner's own device
 (Cinema C), an uploaded file, or a provider the owner is authorized to use; the gateway will not work around it.
+
+## Official SnapAny API provider — opt-in, usage-based credits
+
+Official docs: https://platform.snapany.com/docs/youtube-proxy-download
+
+SnapAny offers 50 starter credits for new accounts with no credit card required at signup. It is **NOT unlimited free**; YouTube proxy download costs 4 credits per 10 minutes of video, rounded up, subject to their current terms. It produces temporary video/audio proxy URLs, NOT an MP4 downloaded and verified.
+
+**Disabled by default.** To enable after approval:
+
+1. Create a SnapAny account at https://platform.snapany.com and create an API key.
+2. In Render Environment settings (NEVER GitHub code): set `KOSIF_SNAPANY_API_KEY` (secret) and `KOSIF_SNAPANY_ENABLED=1`.
+3. Turn OFF SnapAny auto top-up to avoid automated paid charges; this repo cannot inspect your billing account.
+4. Keep `KOSIF_GATEWAY_TOKEN` private. Enter only this gateway bearer, NOT SnapAny key, on https://kosif199022-jpg.github.io/kosif-tool/video-link-bridge/ when needed. The page doesn't store the bearer.
+5. Click the status button (no credits), select rights and quality, check the explicit credit-consent box, then request a temporary proxy URL. Or call Claude MCP tool `snapany_proxy_links` with `confirm_credits=true`.
+
+Two requests per running-process 24 hours, one simultaneous request, rights required, quality cap <=1080 and consent required for every call. It will NEVER automatically activate after yt-dlp fails. This limit resets if the process restarts; do not rely on it as a provider billing limit. Render remains Free.
+
+API routes:
+- `GET /v1/providers/snapany/status` (gateway bearer): enabled/configured/calls; never returns SnapAny key.
+- `POST /v1/providers/snapany/resolve` (gateway bearer): JSON `{"video":"https://www.youtube.com/watch?v=dYrEeavC3cw","rights":"owned","quality":720,"confirm_credits":true}`.
+- Browser CORS restricted to `https://kosif199022-jpg.github.io` for this route; bearer auth still required.
+- The result contains temporary `video_proxy_url`, sometimes `audio_proxy_url`, quality and mux indication. It always says `downloaded:false`. This is NOT proof of working MP4.
+
+SnapAny receives the user-provided video URL. The API key is sent only by Render to the official HTTPS endpoint and is never placed in JS, Git history, logs or responses. No scraping of hidden APIs, no login/DRM/CAPTCHA workaround. Separate file transfer and real ffmpeg verification are still needed.
+
+**Not yet tested with a real SnapAny key:** an owner account, key and explicit consent are required before spending even free credits. Do not call the integration production-proven before a live authorized request and verified file.
