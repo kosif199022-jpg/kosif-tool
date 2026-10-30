@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KOSIF USIP v6.0 task spec",
+  "type": "object",
+  "required": ["task_id", "intent", "goal", "deliverables", "inputs", "constraints", "acceptance_tests"],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "intent": {"type": "string", "minLength": 1},
+    "goal": {"type": "string", "minLength": 1},
+    "deliverables": {"type": "array", "items": {"type": "object"}},
+    "inputs": {"type": "array", "items": {"type": "object"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "permissions": {"type": "array", "items": {"type": "object"}},
+    "acceptance_tests": {"type": "array", "items": {"type": "object"}}
+  }
+}

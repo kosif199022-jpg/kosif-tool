@@ -74,6 +74,7 @@
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
 | `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |
 | `tell-scan` | فاحص العبارات الكتابية النمطية | `python3 scripts/tell_scan.py proofs/general-writing/samples/en_ai.txt` | tested-here |
+| `validate-receipt` | فاحص إيصال التسليم USIP v6.0 | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | tested-here |
 | `verify-video` | بوابة فحص تسليم الفيديو | `python3 scripts/verify_video.py ./in.mp4 --aspect 9:16 --fps 30 --duration 15 --json ./out/report.json` | tested-here |
 | `video-eyes` | عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية | `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes` | tested-here |
 | `video-workflow-bridge` | جسر سير عمل الفيديو | `python3 scripts/video_workflow_bridge.py paper-edit templates/ik-wave-words.json --keep "1-3,5" --fps 30 --out ./out/paper-edit.json` | tested-here |

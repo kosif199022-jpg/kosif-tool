@@ -4,8 +4,7 @@
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
-> **USIP v5.9 — 29-10-2026:** PhotoCraft MCP ([A39](references/protocol/A39-v59-photocraft-mcp.md)) والمواقع الحية ([A40](references/protocol/A40-v59-living-site.md)).
-> **USIP v5.8 — 26-10-2026:** مجلس الخمسة والإتقان ([A38](references/protocol/A38-v58-thinking-books-github-pulse.md)).
+> **أحدث الإصدارات:** v6.0 العقد والإيصال ([A43](references/protocol/A43-v60-contracts-receipts-registry.md)) · v5.9 PhotoCraft ([A39](references/protocol/A39-v59-photocraft-mcp.md)) والمواقع الحية ([A40](references/protocol/A40-v59-living-site.md)).
 
 ## الفهرس / contents
 
@@ -48,31 +47,32 @@
 | [A9 Shadow Evals](references/protocol/A9-shadow-evals.md) | تعديل البروتوكول أو المهارة، أو قبل نشرهما | -1.11، -1.16، -1.32، -1.38، -1.47 في جدول موحد | مواصفات؛ المختبر منها آليًا مسمّى في الجدول |
 | [A10 التطور الذاتي](references/protocol/A10-self-evolution.md) | تطوير SEE أو هذا البروتوكول أو المهارة | -1.10، -1.34، جسر المرحلة 10 | موثَّق + `check_skill.py` و`evals/test_protocol_structure.py` |
 | [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات مؤرخة من -1.1 و-1.18 و-1.20 و-1.21 والمستودع الأصل، وسطر عنوان v5.2 | تاريخية؛ أعد الفحص حيًا |
-| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | جديد | `see_pro_cognitive_gate.py` |
-| [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | جديد | `council.py` |
+| [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | — | `see_pro_cognitive_gate.py` |
+| [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | — | `council.py` |
 | [A30 مجلس المئة وطبقات البرو](references/protocol/A30-council-100.md) | «نفّذ بأقصى قوة»، مجلس أكبر من خمسة، أو شخصية بعينها | 100 شخصية و12 طبقة | `council.py --seats`، `think.py pro` |
-| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | كتب الرسم والإضاءة وتصميم الفيديو | جديد | `drawing_academy.py` (جزئي) |
+| [A14 أكاديمية الرسم والمونتاج](references/protocol/A14-drawing-cinematic-academy.md) | كتب الرسم والإضاءة وتصميم الفيديو | — | `drawing_academy.py` (جزئي) |
 | [A15 Style Atlas 86](references/protocol/A15-futurepedia-style-atlas.md) | أسلوب بصري أو فيلم شرح | 86 طريقة + محرك أصلي | `atlas_render.py` (→ MP4) |
-| [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج | جديد | تخطيط فقط |
-| [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | جديد | `prompt_pack.py` |
+| [A16 Mosamem × REA](references/protocol/A16-mosamem-rea-capability-fusion.md) | صور، PSD، تحليل برامج | — | تخطيط فقط |
+| [A17 القصة](references/protocol/A17-story-scene-charter.md) | قصة وبرومنتات | — | `prompt_pack.py` |
 | [A18 For Business](references/protocol/A18-futurepedia-business-workflows.md) | AI لوظيفة عمل أو workflow | 64 خطة ببوابات | `business_workflows.py` |
 | [A19 دروس المونتاج الميدانية](references/protocol/A19-field-lessons-montage.md) | مونتاج أو موشن من رابط أو صوت مرفوع | الدروس 1-14 | `stock_fetch.py`، `render_html.cjs`، `quran_text.py`، `verify_video.py --source-audio` |
 | [A20 مناهج الكتب](references/protocol/A20-book-distilled-methods.md) | أفكار، كود، أدلة، شخصية، محاسبة | 45 منهجًا | `book_methods.py` |
-| [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال | جديد؛ موجّه مواد التفكير | `think.py modes/bayes/gate/audit` |
-| [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض | جديد؛ يفصّل المرحلة 1 | `think.py intake` |
-| [A26 التخطيط والتفكيك](references/protocol/A26-planning-decomposition.md) | خطة بمراحل واعتماديات وتقدير، أو إعادة تخطيط | جديد؛ المرحلتان 6 و9 | `think.py decompose` |
-| [A27 التحقق والجودة](references/protocol/A27-verification-quality-standards.md) | معايير النجاح، كيف تقيس، قبل أي «تم» أو تسليم | جديد؛ 12 نوع مخرج | `think.py qa` |
-| [A28 اختيار الأدوات](references/protocol/A28-capability-routing.md) | اختيار أداة أو مهارة أو مجموعة، أو العمل خارج المستودع | جديد؛ المكتبة `references/library/` | `hub.py`، `smart_capabilities.py library` |
-| [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة | جديد؛ البند 5 من المرحلة 9 | `think.py recover` |
-| [A31 مجلس خبراء الرسم](references/protocol/A31-drawing-council.md) | قبل إرسال أي صورة أو رسمة (القانون 27) | جديد | `drawing_council.py` |
-| [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل | جديد؛ بوابات الترخيص والبرومبت | `github_top_repos.py`، `prompt_lab.py` |
-| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | تبحث عن قدرة أو أداة بعينها، أو تنسخ البروتوكول لمساعد آخر، أو تضيف أداة أو بطاقة أو تعدّل التوجيه، أو تعمل بطابور دمج | جديد؛ الفهرس الدقيق والنسخة المختصرة | `micro_index.py`، `USIP_PASTE.md` |
-| [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» | جديد؛ ملف لكل مهمة على `main` في `history/` | `task_history.py` |
-| [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء | جديد | موثَّق؛ أداة Agent حين توجد |
-| [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» | جديد | `self_council.py` |
-| [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو | جديد (v5.8) | `llm_council.py` وأربع أدوات |
-| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب (سحابة، لينكس، مجاني)، أو LUT يوحّد لوك الصور والفيديو | جديد (v5.9) | `photocraft_mcp.py` |
-| [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير | جديد (v5.9) | مهارة `living-site` و`check.py` |
+| [A24 الاستدلال والبوابات](references/protocol/A24-reasoning-modes-decision-gates.md) | حكم صعب: سبب، أدلة متفاوتة، قرار لا رجعة فيه، تدقيق قبل الإرسال | موجّه مواد التفكير | `think.py modes/bayes/gate/audit` |
+| [A25 الاستقبال والتوضيح](references/protocol/A25-task-intake-clarification.md) | غموض في المرجع أو النطاق أو المعيار، أو أكثر من مخرج، أو تسأل أم تفترض | يفصّل المرحلة 1 | `think.py intake` |
+| [A26 التخطيط والتفكيك](references/protocol/A26-planning-decomposition.md) | خطة بمراحل واعتماديات وتقدير، أو إعادة تخطيط | المرحلتان 6 و9 | `think.py decompose` |
+| [A27 التحقق والجودة](references/protocol/A27-verification-quality-standards.md) | معايير النجاح، كيف تقيس، قبل أي «تم» أو تسليم | 12 نوع مخرج | `think.py qa` |
+| [A28 اختيار الأدوات](references/protocol/A28-capability-routing.md) | اختيار أداة أو مهارة أو مجموعة، أو العمل خارج المستودع | المكتبة `references/library/` | `hub.py`، `smart_capabilities.py library` |
+| [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة | البند 5 من المرحلة 9 | `think.py recover` |
+| [A31 مجلس خبراء الرسم](references/protocol/A31-drawing-council.md) | قبل إرسال أي صورة أو رسمة (القانون 27) | — | `drawing_council.py` |
+| [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل | بوابات الترخيص والبرومبت | `github_top_repos.py`، `prompt_lab.py` |
+| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | قدرة أو أداة بعينها، نسخ البروتوكول لمساعد آخر، إضافة أداة أو بطاقة أو تعديل التوجيه، طابور دمج | الفهرس الدقيق والنسخة المختصرة | `micro_index.py`، `USIP_PASTE.md` |
+| [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» | ملف لكل مهمة على `main` في `history/` | `task_history.py` |
+| [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء | — | موثَّق؛ أداة Agent حين توجد |
+| [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» | — | `self_council.py` |
+| [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو | v5.8 | `llm_council.py` وأربع أدوات |
+| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب، أو LUT يوحّد لوك الصور والفيديو | v5.9 | `photocraft_mcp.py` |
+| [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير | v5.9 | مهارة `living-site` و`check.py` |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | إثبات تسليم L2+، دمج حزمة خارجية، أو قبل «تم» | v6.0 | `validate_receipt.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة

@@ -186,6 +186,7 @@
 | `repo-validate` | TOOL-103 | فاحص سلامة أطلس الأنماط · Style atlas repository validator | `python3 tools/validate.py` | 3 |
 | `self-council` | — | مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية · Self-Council: five Claude-derived critics review every skill and feature, with a coverage ledger | `python3 scripts/self_council.py inventory --summary` | 1 |
 | `skill-layout` | TOOL-100 | خريطة ترتيب المهارة · Skill Layout Map | `python3 scripts/skill_layout.py build` | 1 |
+| `validate-receipt` | — | فاحص إيصال التسليم USIP v6.0 · USIP v6.0 receipt validator | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 1 |
 
 ## motion
 

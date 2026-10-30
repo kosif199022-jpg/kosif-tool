@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KOSIF USIP v6.0 execution receipt",
+  "type": "object",
+  "required": ["version", "status", "artifact", "checks"],
+  "properties": {
+    "version": {"enum": ["USIP-6.0", "6.0"]},
+    "status": {"enum": ["PLANNED", "RUNNING", "VERIFIED", "PARTIAL", "FAILED", "BLOCKED", "SKIPPED"]},
+    "artifact": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array", "items": {"type": "object", "properties": {"name": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}}}},
+    "checks": {"type": "array", "items": {"type": "object", "required": ["name", "result"], "properties": {"name": {"type": "string"}, "result": {"enum": ["PASS", "FAIL", "NOT_RUN"]}, "evidence": {"type": "string"}}}},
+    "limits": {"type": "array", "items": {"type": "string"}},
+    "remote_deployment": {"type": "boolean"},
+    "remote_evidence": {"type": "string"}
+  }
+}

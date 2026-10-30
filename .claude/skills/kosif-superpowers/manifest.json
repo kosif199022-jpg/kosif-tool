@@ -18,7 +18,7 @@
   "powers": 5856,
   "families": 62,
   "domains": 10,
-  "tools": 197,
+  "tools": 198,
   "guides": 118,
   "statuses": {
    "documented": 2325,
@@ -18847,6 +18847,68 @@
    ],
    "families": [],
    "safe_commands": []
+  },
+  {
+   "id": "validate-receipt",
+   "path": "scripts/validate_receipt.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "maintain",
+   "title_en": "USIP v6.0 receipt validator",
+   "title_ar": "فاحص إيصال التسليم USIP v6.0",
+   "summary_en": "Appendix A43 gate: checks that an execution receipt is coherent before anyone says 'done'. VERIFIED needs an existing artifact file and every check PASS with evidence; PASS without evidence, a VERIFIED with NOT_RUN or FAIL checks, a malformed SHA-256 or remote_deployment=true without remote_evidence are rejected. Stdlib only, no network.",
+   "summary_ar": "بوابة الملحق A43: تفحص تماسك إيصال التنفيذ قبل كلمة «تم». VERIFIED تحتاج ملف مخرج موجودًا وكل فحص PASS بدليل؛ ويُرفض PASS بلا دليل، وVERIFIED مع فحص NOT_RUN أو FAIL، وبصمة SHA-256 غير سليمة، وremote_deployment=true بلا remote_evidence. مكتبة بايثون القياسية فقط، بلا شبكة.",
+   "use_when": [
+    "اتأكد إن الإيصال ده سليم قبل ما أقول تم",
+    "Validate a USIP receipt.json",
+    "هل ينفع أكتب VERIFIED على المخرج ده؟"
+   ],
+   "keywords": [
+    "receipt",
+    "ExecutionReceipt",
+    "VERIFIED",
+    "PARTIAL",
+    "evidence",
+    "USIP v6.0",
+    "A43",
+    "إيصال",
+    "تسليم",
+    "دليل"
+   ],
+   "commands": [
+    {
+     "name": "validate",
+     "example": "python3 scripts/validate_receipt.py out/<job>/receipt.json",
+     "does": "Prints PASS or one FAIL line per problem; exit 0 or 1."
+    }
+   ],
+   "inputs": "A receipt JSON (schemas/usip_receipt.v1.json); relative artifact paths resolve next to the receipt.",
+   "outputs": "PASS/FAIL lines on stdout. It writes no files.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "None: it only reads the receipt and checks that the artifact path exists.",
+   "safe_commands": [
+    "validate"
+   ],
+   "limits": "Checks internal coherence only, not that the evidence is true or that the artifact is good.",
+   "evidence": "tested-here",
+   "evidence_note": "12/12 passed (python3 -m unittest tests.test_usip_v60_receipts), 5 of them on this validator.",
+   "tests": [
+    "tests/test_usip_v60_receipts.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A43-v60-contracts-receipts-registry.md"
+   ],
+   "families": [
+    "verification-evals",
+    "qa-verification"
+   ]
   }
  ],
  "guides": [

@@ -1,4 +1,4 @@
-# أدوات المجال `maintain` (14 أداة)
+# أدوات المجال `maintain` (15 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -698,4 +698,43 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:skill-layout --evidence <ملف>`.
+
+### `validate-receipt` — فاحص إيصال التسليم USIP v6.0 / USIP v6.0 receipt validator
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/validate_receipt.py` (جذر: skill) |
+| المجال | `maintain` |
+| الدليل | `tested-here` |
+| العائلات | `verification-evals`, `qa-verification` |
+
+**ما تفعله:** بوابة الملحق A43: تفحص تماسك إيصال التنفيذ قبل كلمة «تم». VERIFIED تحتاج ملف مخرج موجودًا وكل فحص PASS بدليل؛ ويُرفض PASS بلا دليل، وVERIFIED مع فحص NOT_RUN أو FAIL، وبصمة SHA-256 غير سليمة، وremote_deployment=true بلا remote_evidence. مكتبة بايثون القياسية فقط، بلا شبكة.
+
+**What it does:** Appendix A43 gate: checks that an execution receipt is coherent before anyone says 'done'. VERIFIED needs an existing artifact file and every check PASS with evidence; PASS without evidence, a VERIFIED with NOT_RUN or FAIL checks, a malformed SHA-256 or remote_deployment=true without remote_evidence are rejected. Stdlib only, no network.
+
+#### متى تُستدعى
+
+- «اتأكد إن الإيصال ده سليم قبل ما أقول تم»
+- «Validate a USIP receipt.json»
+- «هل ينفع أكتب VERIFIED على المخرج ده؟»
+
+#### الأوامر
+
+- **validate**: Prints PASS or one FAIL line per problem; exit 0 or 1.
+  - `python3 scripts/validate_receipt.py out/<job>/receipt.json`
+
+#### المتطلبات والأمان
+
+- الأمان: read-only
+- الموافقة: None: it only reads the receipt and checks that the artifact path exists.
+- الحدود: Checks internal coherence only, not that the evidence is true or that the artifact is good.
+
+#### الاختبارات والأدلة
+
+- `tests/test_usip_v60_receipts.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A43-v60-contracts-receipts-registry.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:validate-receipt --evidence <ملف>`.
 
