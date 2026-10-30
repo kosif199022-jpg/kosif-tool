@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "KOSIF USIP v6.0 capability record (appendix A43 §2)",
+  "type": "object",
+  "required": ["id", "name", "kind", "source", "status_here", "evidence"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^kosif\\.[a-z0-9_]+(\\.[a-z0-9_-]+)*$"},
+    "name": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["idea", "reference", "prompt", "skill", "source_code", "tool", "workflow"]},
+    "source": {"type": "object", "required": ["artifact"], "properties": {"artifact": {"type": "string"}, "sha256": {"type": "string"}, "license": {"type": "string"}}},
+    "input_contract": {"type": "object"},
+    "output_contract": {"type": "object"},
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "execution": {"type": "object", "properties": {"entrypoint": {"type": ["string", "null"]}, "requires_network": {"type": "boolean"}, "requires_paid_credit": {"type": "boolean"}, "writes_external": {"type": "boolean"}}},
+    "evidence": {"type": "object", "required": ["level"], "properties": {"level": {"enum": ["E0", "E1", "E2", "E3", "E4", "E5"]}, "tests": {"type": "array"}}},
+    "status_here": {"enum": ["INDEXED", "STATIC_REVIEWED", "TESTED", "READY", "BLOCKED"]},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

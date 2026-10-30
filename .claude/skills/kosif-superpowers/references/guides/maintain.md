@@ -8,7 +8,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 
 <!-- hub:area:maintain:start -->
 
-**الأدوات / tools (14)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (15)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -26,6 +26,7 @@ Commands are typed from the skill folder (`.claude/skills/kosif-superpowers/`) u
 | `rea-superpowers-map` | Maps this skill the way REA maps a source tree it does not execute: a content-addressed inventory, Python import and invoke edges (ast), REA's JavaScript edges from its committed receipt, links from every script to its tools.json entry, tests, CI steps, powers and families, the gaps (orphan or untested scripts, missing tool files, unlisted references, broken links, families without a runnable tool) and Atlas safe-core coverage per theme. | `python3 scripts/rea_superpowers_map.py build` | tested-here |
 | `agent-guard` | Checks a shell command before an agent runs it against a documented 13-rule table (recursive rm of / ~ * or outside the folder, curl\|bash, force push, world-writable chmod, credentials in argv, disk-destroying commands, writes to system paths or outside cwd, history-rewriting git, sudo) and returns GREEN, YELLOW or RED with redacted findings; scans a transcript or log line by line for credential-shaped strings with the shared detector and prints only redacted excerpts; and plans parallel agent work as deterministic branch/worktree names, waves and a dependency-respecting merge order with the git commands. | `python3 scripts/agent_guard.py rules` | tested-here |
 | `self-council` | Inventories every reviewable unit of the repository with a stable id (skills, this skill's scripts, apps, tools, playbooks, workflows) and cheap static signals (direct or indirect test, docstring and usage line, line count, tools.json registration, SKILL.md description, last CHANGELOG mention). It plans the next batch of the weakest unreviewed units, writes prompts for five fixed personas (Strict Engineer, New Egyptian User, Devil's Advocate, Architect, Innovator), validates each persona's review (severity, an evidence path that exists, proposed change, effort, confidence, a persona-specific field), refuses secrets, merges and dedupes the findings, and ranks proposals by severity, confidence, agreement and effort into an implement-next list. A ledger in data/self_council_ledger.json records which units were reviewed and at which content hash, so successive runs cover the whole app and changed units come back as stale. It never calls a model: Claude runs the personas as parallel subagents, or the report says SELF_COUNCIL_SIMULATED. | `python3 scripts/self_council.py inventory --summary` | tested-here |
+| `validate-receipt` | Appendix A43 gate: checks that an execution receipt is coherent before anyone says 'done'. VERIFIED needs an existing artifact file and every check PASS with evidence; PASS without evidence, a VERIFIED with NOT_RUN or FAIL checks, a malformed SHA-256 or remote_deployment=true without remote_evidence are rejected. Stdlib only, no network. | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | tested-here |
 
 <!-- hub:area:maintain:end -->
 

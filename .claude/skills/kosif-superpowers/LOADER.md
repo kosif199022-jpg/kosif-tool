@@ -42,7 +42,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (36) / protocol appendices
+## ملاحق البروتوكول (37) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -75,13 +75,14 @@
 | [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة |
 | [A31 مجلس خبراء الرسم](references/protocol/A31-drawing-council.md) | قبل إرسال أي صورة أو رسمة (القانون 27) |
 | [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل |
-| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | تبحث عن قدرة أو أداة بعينها، أو تنسخ البروتوكول لمساعد آخر، أو تضيف أداة أو بطاقة أو تعدّل التوجيه، أو تعمل بطابور دمج |
+| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | قدرة أو أداة بعينها، نسخ البروتوكول لمساعد آخر، إضافة أداة أو بطاقة أو تعديل التوجيه، طابور دمج |
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» |
 | [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو |
-| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب (سحابة، لينكس، مجاني)، أو LUT يوحّد لوك الصور والفيديو |
+| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب، أو LUT يوحّد لوك الصور والفيديو |
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
