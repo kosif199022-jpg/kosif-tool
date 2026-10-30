@@ -564,7 +564,7 @@ def cmd_find(a) -> int:
             print(f"     $ {shown(k['show'], {'root': 'skill'})}")
     fusion = res.get("see_fusion") or {}
     if fusion.get("status") == "PLAN_ONLY":
-        print("\\n🧠 SEE × Superpowers — unified reasoning route")
+        print("\n🧠 SEE × Superpowers — unified reasoning route")
         print("  lenses: 11 available · SEE domains: 9 mapped · loaded method candidates: "
               + ", ".join(m["name"] for m in fusion["selected_see_methods"]))
         print("  execution: NOT_RUN · verification: NOT_RUN"
