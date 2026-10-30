@@ -1,0 +1,38 @@
+name: Preserve Existing SEE Tool Registry Formatting
+on:
+  push:
+    branches: ['feature/see-superpowers-unified-fusion-20261030']
+    paths: ['.github/workflows/see-fusion-tools-format-once.yml']
+permissions:
+  contents: write
+jobs:
+  format-registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/see-superpowers-unified-fusion-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Restore original two-space tool catalog indentation
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('.claude/skills/kosif-superpowers/data/tools.json')
+          data=json.loads(p.read_text(encoding='utf-8'))
+          assert {'see-capability-bridge','see-superpower-unifier'} <= {t['id'] for t in data['tools']}
+          p.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n',encoding='utf-8')
+          PY
+          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: Commit minimal diff
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .claude/skills/kosif-superpowers/data/tools.json
+          if git diff --cached --quiet; then echo 'Already formatted'; else
+            git diff --cached --stat
+            git commit -m 'style(superpowers): retain original tools registry layout'
+            git push origin HEAD:feature/see-superpowers-unified-fusion-20261030
+          fi
