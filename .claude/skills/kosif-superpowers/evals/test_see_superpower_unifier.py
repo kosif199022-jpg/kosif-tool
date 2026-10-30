@@ -59,6 +59,21 @@ class SeeSuperpowerFusionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             fusion.fuse("x", [], "standard")
 
+    def test_latin_keywords_match_whole_words_only(self):
+        names = lambda q: [m["name"] for m in fusion.select_methods(q, "deep")]
+        self.assertNotIn("kosif-eval-trust", names("the latest approach"))          # latest != test
+        self.assertNotIn("kosif-skill-orchestrator", names("a poem I have seen"))   # seen != see
+        self.assertEqual(names("a rapid approach"), ["kosif-research-evidence"])   # rapid/approach != api/app
+        self.assertIn("kosif-eval-trust", names("run the tests"))                   # plural still matches
+        self.assertIn("kosif-finance-data", names("راجع الفواتير"))                  # Arabic stems keep prefixes
+
+    def test_hub_find_prints_a_real_newline_before_the_see_block(self):
+        import subprocess, sys
+        hub = PATH.parent / "hub.py"
+        out = subprocess.run([sys.executable, str(hub), "find", "fix the python code"],
+                             capture_output=True, text=True, check=True).stdout
+        self.assertIn("SEE × Superpowers", out)
+        self.assertNotIn("\\n🧠", out)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

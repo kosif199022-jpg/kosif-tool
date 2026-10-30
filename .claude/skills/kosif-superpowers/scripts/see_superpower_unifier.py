@@ -48,6 +48,16 @@ def normalize(value: str) -> str:
     return s
 
 
+def phrase_hit(phrase: str, query: str) -> bool:
+    """Latin phrases match whole words (plus s/es/ing/ed), so "latest" is not "test",
+    "rapid" is not "api" and "seen" is not "see". Arabic stems keep substring matching,
+    because prefixes such as ال/و/ب attach to the word."""
+    p = normalize(phrase)
+    if not p.isascii():
+        return p in query
+    return re.search(r"(?<![a-z0-9])" + re.escape(p) + r"(?:s|es|ing|ed)?(?![a-z0-9])", query) is not None
+
+
 def redact(text: str) -> str:
     return SENSITIVE.sub("[REDACTED]", text)
 
@@ -60,7 +70,7 @@ def select_methods(task: str, mode: str = "standard") -> list[dict]:
     query = normalize(task)
     ranked = []
     for order, (name, phrases) in enumerate(PACKS.items()):
-        hits = [w for w in phrases if normalize(w) in query]
+        hits = [w for w in phrases if phrase_hit(w, query)]
         if hits:
             ranked.append((-len(hits), order, name, hits))
     ranked.sort()
