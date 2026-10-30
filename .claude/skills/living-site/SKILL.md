@@ -25,6 +25,14 @@ Work through the five stages in order. Each has a gate. Do not skip a gate.
 
 ## Stage 0. Setup (one block)
 
+First thing, before anything else (annex A46): check for the Suno MCP (`https://api.suno.com/mcp`),
+used for the site's music and sound. Look for a tool whose name contains `suno` and call a read-only, no-credit
+tool (profile or library). Write one line: `suno: connected` or `suno: not connected — add it in claude.ai
+Settings > Connectors > Add custom connector > https://api.suno.com/mcp` (Claude Code:
+`claude mcp add --transport http suno https://api.suno.com/mcp`, then `/mcp`). Sign-in is OAuth with the Suno
+account, no API key. Do not wait for it; keep going. Generating a song spends Suno credits: show the prompt and get
+a yes first. Not connected: Higgsfield `generate_audio` (with a yes), else licensed music with its source.
+
 For work that needs AI images or video, check whether Higgsfield is already connected.
 If that is unclear, ask once: "Have you already got Higgsfield set up for image and video generation?"
 If they need to set it up, point them to higgsfield.ai (no referral links).
@@ -113,6 +121,7 @@ Read `references/level-2-higgsfield.md`. This is where most of the "how did they
    orb is waiting below. The film hands over to Level 1.
 6. **Stills from the same world:** pass the film keyframes as references so cards match the film.
 7. **Living stills:** `tools/living_loop.sh` turns a Seedance start=end loop into a seamless forward-and-back loop.
+   **Source footage from YouTube:** `tools/yt_get.sh <url>` on the user's own device (not the cloud), writes `receipt.json`. See protocol A45.
    Use them for product cards. They make a static grid feel alive.
 
 Show the film with `recipes/split-film.html` (captions left, framed film right, frame blending on).
