@@ -18030,6 +18030,67 @@
         "verification-evals",
         "qa-verification"
       ]
+    },
+    {
+      "id": "cobalt-provider",
+      "path": "scripts/cobalt_provider.py",
+      "root": "skill",
+      "kind": "library",
+      "area": "sources",
+      "title_en": "Opt-in authorized Cobalt video gateway",
+      "title_ar": "بوابة Cobalt اختيارية لتنزيل الفيديو المصرح به",
+      "summary_en": "Library used by fetch_video.py. Sends a YouTube ID to an explicitly configured operator-authorized Cobalt instance, accepts only a same-origin tunnel, rejects errors and redirects, limits bytes, verifies a video stream with ffprobe and records SHA-256. No site-block or DRM bypass; no hosted public API is used automatically.",
+      "summary_ar": "مكتبة تستعملها fetch_video.py: تمرر معرف الفيديو إلى خادم Cobalt اختياري له تصريح واضح، وترفض التحويل إلى مضيف آخر والملفات الوهمية والعمليات المحجوبة، وتقيس الفيديو وتسجل SHA-256. لا تتجاوز DRM أو حظر المنصة ولا تستخدم API عامًّا تلقائيًّا.",
+      "use_when": [
+        "نزّل فيديو يوتيوب أملكه من خادم Cobalt مصرح باستخدامه",
+        "Download an owned YouTube video ID through my approved Cobalt API"
+      ],
+      "keywords": [
+        "cobalt",
+        "youtube id",
+        "video gateway",
+        "authorized api",
+        "licensed video",
+        "download",
+        "يوتيوب",
+        "تنزيل",
+        "بوابة"
+      ],
+      "commands": [
+        {
+          "name": "provider-gateway",
+          "example": "python3 scripts/fetch_video.py VIDEO_ID --cobalt-api https://YOUR-APPROVED-INSTANCE.example --rights owned --quality 720 -o ./out/owned-media",
+          "does": "Only when the operator explicitly authorizes the configured instance and the user owns the video or has the necessary rights; returns MP4 verified by ffprobe or an explicit failure."
+        }
+      ],
+      "inputs": "A YouTube 11-character ID or official URL, a caller-supplied HTTPS Cobalt API root, optional API key provided only via environment, and explicit --rights. No default public endpoint.",
+      "outputs": "A verified .mp4 plus JSON manifest with provider, rights, SHA-256, dimensions and duration; nonzero exit code on refusal.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [
+          "bin:ffmpeg"
+        ],
+        "network": true
+      },
+      "safety": "network",
+      "consent": "You must have ownership or permission for each video and explicit permission from the Cobalt instance operator. Do not submit browser cookies, secrets or restricted media.",
+      "safe_commands": [],
+      "limits": "Not a universal bypass: Cobalt processing of YouTube may be unavailable or return 403/login/DRM errors. No live YouTube download or authorized public provider was validated on this date.",
+      "evidence": "tested-here",
+      "evidence_note": "7 local mocked-server unit tests passed on 2026-10-30; real Cobalt/YouTube integration has NOT been verified.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_cobalt_gateway.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/video-download.md"
+      ],
+      "families": [
+        "video-download"
+      ]
     }
   ]
 }
