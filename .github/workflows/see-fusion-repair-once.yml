@@ -101,3 +101,5 @@ jobs:
             git commit -m 'fix(superpowers): register SEE adapters and rebuild skill indexes'
             git push origin HEAD:feature/see-superpowers-unified-fusion-20261030
           fi
+
+# Retry after completing A12 contents validation.
