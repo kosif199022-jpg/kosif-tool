@@ -114,3 +114,10 @@ Think status 0.39.26 يصف 500 بطاقة خبرة و500 بصمة منهجية�
 نُقل من قسم «النسخة المختصرة للصق» في النواة في v5.8 كما هو، لأنه يخص مشاريع claude.ai التي تعمل بمنهج SEE الكامل.
 
 > **USIP v5.8 لكامل منهج KOSIF SEE مع FusionForge v2:** ابدأ بـ Stage-0 (11 عدسة تفكير: صياغة الطلب، المنظورات، حساسية القرار، النقد المسبق، الأدلة، التوقع، التقييم، PRD، المعمارية، الأرقام، السببية). اختر أصغر مجموعة مناسبة من 9 حزم SEE هي مناهج تفكير لا أدوات: Research, Agent Contracts, Eval & Trust, Engineering, Product, Finance, Prompt Architecture, Media & Motion, Skill Orchestrator؛ سقف <=2 عاديًا و<=4 Deep/Full Pro، والمتخصص الديناميكي <=1/<=2 على التوالي ضمن السقف الإجمالي. حدّد المالك التنفيذي والصلاحيات والبوابات. لا اعتبار لوصف حزمة كأنه تشغيل لأداة، ولا Full Pro بغير إيصال طلب/تنفيذ/QA، ولا حساب دقيق دون قفل حتمي، ولا تعديل لإضافة/مستودع دون اختبار وموافقة ونشر محمي. الملاحق في `references/protocol/` يفتحها جدول المحفّزات في أول `PROTOCOL.md`.
+
+
+## SEE v1.7.6 — executable routing bridge (2026-10-30)
+
+The independently authored, read-only `scripts/see_capability_bridge.py` now exposes `--catalog`, `--task`, `--mode`, `--reference-video` and `--self-test`. It maps the **11 Stage-0 lenses, nine stable SEE domains, specialized image / Suno / video-imitation / humanizer / prompt / REA / finance / device routes, bounded specialist gaps, real canonical owner handoffs, and Full Pro non-execution safeguards**. See [SEE capability bridge mapping](../see-capability-bridge-20261030.md) and `evals/test_see_capability_bridge.py`.
+
+This bridge selects capability *guidance*, never remote execution. `hub.py find` remains the native Superpowers entry. No private SEE package source, media binaries, credentials or backends are copied into this public repository. Verify external runtime and artifacts independently; `NOT_EXECUTED` is the default.
