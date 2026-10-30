@@ -1,0 +1,30 @@
+name: Sync Last SEE Static Output
+on:
+  push:
+    branches: ['feature/see-superpowers-unified-fusion-20261030']
+    paths: ['.github/workflows/see-fusion-llms-sync-once.yml']
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/see-superpowers-unified-fusion-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate and verify static entrypoints
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/boot.py --static --write
+          python3 -m unittest discover -s tests -p 'test_boot.py' -v
+      - name: Persist llms static manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A llms.txt CAPABILITIES.md
+          if git diff --cached --quiet; then echo 'No changes'; else
+            git commit -m 'fix(superpowers): synchronize llms static manifest after SEE catalog fusion'
+            git push origin HEAD:feature/see-superpowers-unified-fusion-20261030
+          fi
