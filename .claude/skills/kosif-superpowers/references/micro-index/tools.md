@@ -58,6 +58,7 @@
 | `capability-graph` | TOOL-34 | باني خريطة القدرات المترابطة · Capability Graph Builder | `python3 scripts/capability_graph.py build` | 1 |
 | `capability-runtime-router` | TOOL-04 | موجّه القدرات التنفيذية · Capability runtime router | `python3 scripts/capability_runtime_router.py --task "حلل فيديو مرجعي…` | 1 |
 | `fusionforge` | TOOL-125 | FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع · FusionForge v2 project-scoped composite workflow recipes | `python3 scripts/fusionforge.py propose "مونتاج ريلز بترجمة عربية" --p…` | 2 |
+| `fusionforge-hub-runner` | — | جسر تنفيذ وصفات FusionForge عبر Hub · FusionForge to Hub execution bridge | `python3 scripts/fusionforge_hub_runner.py --recipe out/fusionforge/de…` | 1 |
 | `fusionforge-shared` | TOOL-126 | ذاكرة FusionForge المشتركة بوصفات مهارات معزولة · FusionForge Shared Memory: reviewed cross-project skill structures | `python3 scripts/fusionforge_shared.py audit` | 1 |
 | `hub` | TOOL-05 | بوابة KOSIF الموحّدة · KOSIF hub (front door) | `python3 scripts/hub.py find "اعمل فيديو موشن عربي متزامن مع صوتي"` | 1 |
 | `kosif-groups` | TOOL-129 | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت · Group map with superpowers, scripts and install plans | `python3 scripts/kosif_hubs.py` | 1 |

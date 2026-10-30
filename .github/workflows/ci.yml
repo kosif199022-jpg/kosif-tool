@@ -153,6 +153,8 @@ jobs:
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_routing_quality.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fusionforge.py' -v
           python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_usip_shadow.py' -v
+      - name: FusionForge to Hub execution bridge (fake tools plus a real two-tool recipe)
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_fusionforge_hub_runner.py' -v
       - name: Superpower fusion, groups and mind map
         run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_superpower_fusion.py' -v
       - name: Groups index
