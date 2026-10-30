@@ -2565,6 +2565,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_fusionforge_shared.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_image_local_ai.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_image_local_ai.py"
@@ -2683,11 +2688,6 @@
    "id": "test:tests/test_script_storyboard.py",
    "kind": "test",
    "label": "tests/test_script_storyboard.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_skill_intelligence.py",
@@ -8041,6 +8041,12 @@
   {
    "from": "script:scripts/hub.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_protocol_structure.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/hub.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_see_superpower_unifier.py",
    "rel": "tested_by",
    "w": 1
   },
