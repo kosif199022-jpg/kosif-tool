@@ -2083,6 +2083,11 @@
    "label": "scripts/drawing_methods.py"
   },
   {
+   "id": "script:scripts/_cobalt_provider.py",
+   "kind": "script",
+   "label": "scripts/_cobalt_provider.py"
+  },
+  {
    "id": "script:scripts/_pinterest.py",
    "kind": "script",
    "label": "scripts/_pinterest.py"
@@ -6974,6 +6979,12 @@
   {
    "from": "script:scripts/drawing_council.py",
    "to": "script:scripts/drawing_methods.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/fetch_video.py",
+   "to": "script:scripts/_cobalt_provider.py",
    "rel": "imports",
    "w": 1
   },

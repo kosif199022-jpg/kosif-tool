@@ -39,6 +39,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _pinterest as pinterest  # noqa: E402 - the shared Pinterest pin helper (source_finder.py uses it too)
+import _cobalt_provider as cobalt  # noqa: E402 - internal authorized gateway, opt-in only
 
 
 def find_ytdlp(install: bool = True) -> list[str] | None:
@@ -91,11 +92,24 @@ def is_url(u: str) -> bool:
 
 
 def selector(quality: str) -> tuple[str, list[str]]:
-    """Return (format selector, extra args)."""
+    """Cinema V34-aware portrait quality preferences and iOS-friendly formats.
+
+    yt-dlp's [height<=1080] rejects portrait 1080x1920. Its -S res:1080
+    evaluates the shorter side, then prefers H.264 and AAC for Photos.
+    Sorting is a preference, not a guarantee of a strict size cap.
+    """
     if quality == "audio":
         return "ba/b", ["-x", "--audio-format", "m4a"]
-    cap = "" if quality == "best" else f"[height<={int(quality)}]"
-    return f"bv*{cap}+ba/b{cap}/best", ["--merge-output-format", "mp4"]
+    ios_video = "[vcodec~='^(avc|h264|hvc|hev|h265|bytevc1)']"
+    ios_audio = "[acodec~='^(mp4a|aac)']"
+    if quality != "best" and int(quality) > 1080:
+        fmt = "bv*+ba/b/best"
+    else:
+        fmt = f"bv*{ios_video}+ba{ios_audio}/bv*+ba/b{ios_video}/b[ext=mp4]/best"
+    sorting = "res,fps,vcodec:h264,acodec:aac" if quality == "best" else (
+        f"res:{quality},fps,vcodec:h264,acodec:aac"
+    )
+    return fmt, ["-S", sorting, "--merge-output-format", "mp4"]
 
 
 def impersonation(ytdlp: list[str]) -> str | None:
@@ -131,14 +145,59 @@ def attempt(ytdlp, url, out_dir, fmt, extra, cookies, imp, connections, proxy, b
 
 
 def edit_safe(src: Path) -> Path | None:
-    """H.264 + AAC + yuv420p + faststart copy that every editor/Photos app accepts."""
+    """Cinema V34 Photos-safe MP4: lossless remux when possible; encode only if needed.
+
+    Verify a video frame decodes before delivery. Keep the source untouched.
+    A bad or interrupted attempt never leaves a file labelled .safe.mp4.
+    """
     if not shutil.which("ffmpeg"):
         return None
     dst = src.with_name(src.stem + ".safe.mp4")
-    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
-           "-sn", "-dn", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(dst)]
-    return dst if sh(cmd).returncode == 0 and dst.is_file() and dst.stat().st_size else None
+    temp = dst.with_name(dst.stem + ".pending.mp4")
+    formats = None
+    if shutil.which("ffprobe"):
+        try:
+            p = sh(["ffprobe", "-v", "error", "-show_streams", "-of", "json", str(src)], timeout=35)
+            if p.returncode == 0:
+                formats = json.loads(p.stdout).get("streams", [])
+        except (ValueError, OSError, subprocess.TimeoutExpired):
+            pass
+    video = next((s for s in formats or [] if s.get("codec_type") == "video"), {})
+    audio = next((s for s in formats or [] if s.get("codec_type") == "audio"), {})
+    compatible = (
+        (video.get("codec_name") == "h264" and video.get("pix_fmt") in ("yuv420p", "yuvj420p"))
+        or (video.get("codec_name") == "hevc" and video.get("pix_fmt") in ("yuv420p", "yuv420p10le"))
+    ) and (not audio or audio.get("codec_name") == "aac")
+    base = ["ffmpeg", "-y", "-nostdin", "-hide_banner", "-loglevel", "error", "-i", str(src),
+            "-map", "0:v:0", "-map", "0:a:0?", "-sn", "-dn"]
+    trials = []
+    if compatible:
+        tag = "hvc1" if video["codec_name"] == "hevc" else "avc1"
+        trials.append(base + ["-c:v", "copy", "-tag:v", tag, "-c:a", "copy",
+                              "-movflags", "+faststart", str(temp)])
+    # Fallback for unreadable/unsupported codecs. No hidden quality loss when a
+    # stream copy succeeds; iPhone a-Shell's hardware encoder isn't required.
+    trials.append(base + ["-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+                          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+                          "-movflags", "+faststart", str(temp)])
+    for command in trials:
+        temp.unlink(missing_ok=True)
+        try:
+            p = sh(command, timeout=300)
+            if p.returncode or not temp.is_file() or temp.stat().st_size <= 0:
+                continue
+            check = sh(["ffmpeg", "-nostdin", "-hide_banner", "-loglevel", "error",
+                        "-i", str(temp), "-map", "0:v:0", "-frames:v", "1",
+                        "-f", "null", "-"], timeout=40)
+            if check.returncode:
+                continue
+            temp.replace(dst)
+            return dst
+        except (OSError, subprocess.TimeoutExpired):
+            continue
+        finally:
+            temp.unlink(missing_ok=True)
+    return None
 
 
 probe = pinterest.probe_media  # ffprobe: duration, width, height, fps, vcodec, acodec ({} without ffprobe)
@@ -350,6 +409,11 @@ def main(argv=None) -> int:
                     help="use your login from a local browser (chrome, firefox, edge, brave, safari…); nothing is copied or stored")
     ap.add_argument("--connections", type=int, default=8)
     ap.add_argument("--proxy")
+    ap.add_argument("--cobalt-api", help="explicitly authorized Cobalt API root, no default or public scraping")
+    ap.add_argument("--cobalt-key-env", default="KOSIF_COBALT_API_KEY", help="optional provider API key ENV name")
+    ap.add_argument("--cobalt-allow-loopback", action="store_true", help="local integration tests only")
+    ap.add_argument("--rights", choices=("owned", "direct-permission", "public-domain", "cc0", "cc-by", "cc-by-sa"),
+                    help="required with --cobalt-api: documented ownership or permission")
     ap.add_argument("--safe", action="store_true", help="also write an edit-safe H.264/AAC copy (.safe.mp4)")
     ap.add_argument("--strip-audio", action="store_true",
                     help="drop each clip's own audio on intake (video stream copied, needs ffmpeg); use it for Quran and "
@@ -360,24 +424,29 @@ def main(argv=None) -> int:
     ap.add_argument("--doctor", action="store_true")
     ap.add_argument("--update", action="store_true")
     a = ap.parse_args(argv)
+    if a.cobalt_api and not a.rights:
+        ap.error("--cobalt-api requires --rights")
+    if a.cobalt_api and a.quality == "audio":
+        ap.error("--cobalt-api currently supports video only")
     if a.strip_audio and a.quality == "audio":
         ap.error("--strip-audio cannot be combined with --quality audio")
-    ytdlp = find_ytdlp()
+    ytdlp = find_ytdlp(install=not bool(a.cobalt_api))
     if a.update:
         return subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", "yt-dlp", "yt-dlp-ejs", "curl_cffi"])
     if a.doctor:
         return doctor(ytdlp)
-    if not ytdlp and not a.urlfile and not all(_is_stock(u) for u in a.urls if is_url(u)):
+    if not ytdlp and not a.cobalt_api and not a.urlfile and not all(_is_stock(u) for u in a.urls if is_url(u)):
         print("yt-dlp not found and could not be installed: pip install yt-dlp curl_cffi"
               " (no network? ask the user to upload the video file instead)", file=sys.stderr)
         return 1
     urls = list(a.urls)
     if a.urlfile:
         urls += [l.strip() for l in Path(a.urlfile).read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
-    bad = [u for u in urls if not is_url(u)]
+    valid = lambda u: is_url(u) or bool(a.cobalt_api and cobalt.youtube_id(u))
+    bad = [u for u in urls if not valid(u)]
     if bad:
         print("skipping entries that are not http(s) URLs: " + ", ".join(repr(u[:60]) for u in bad), file=sys.stderr)
-        urls = [u for u in urls if is_url(u)]
+        urls = [u for u in urls if valid(u)]
     if not urls:
         ap.print_usage()
         return 2
@@ -386,6 +455,21 @@ def main(argv=None) -> int:
     results = []
     no_ytdlp = {"file": None, "error": "yt-dlp not installed: pip install yt-dlp curl_cffi"}
     for u in urls:
+        if a.cobalt_api and cobalt.youtube_id(u):
+            try:
+                r = cobalt.download(u, a.out, a.cobalt_api, rights=a.rights, quality=a.quality,
+                                    key_env=a.cobalt_key_env, allow_loopback=a.cobalt_allow_loopback)
+                if a.strip_audio and r.get("file"):
+                    r.update(probe(Path(r["file"])))
+                    r = intake_audio(Path(r["file"]), a, r)
+                if a.safe and r.get("file"):
+                    safe = edit_safe(Path(r["file"]))
+                    r["safe_file"] = str(safe) if safe else None
+            except (cobalt.GatewayError, ValueError) as exc:
+                r = {"url": u, "file": None, "provider": "cobalt-opt-in", "error": str(exc)}
+            results.append(r)
+            print(("OK   " + r["file"]) if r.get("file") else f"FAIL {u}\n     {r.get('error')}")
+            continue  # A provider refusal is terminal; do not route around it.
         if pinterest.is_pin_link(u):
             r = (pin_audio if a.quality == "audio" else pin_download)(u, a, ytdlp) if ytdlp else {"url": u, **no_ytdlp}
         else:
