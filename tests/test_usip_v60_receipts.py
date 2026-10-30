@@ -18,7 +18,7 @@ spec = importlib.util.spec_from_file_location("usip_validate_receipt", VALIDATOR
 receipts = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(receipts)
 
-GOOD = """<!doctype html><html lang="ar" dir="rtl"><head><meta name="viewport" content="width=device-width,initial-scale=1">
+GOOD = """<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>@media (prefers-reduced-motion: reduce){*{animation:none}}</style></head><body>
 <section data-xray="رحلة الطلب" data-xray-tool="code">حركة</section>
 <p>KOSIF علامة خيالية للعرض.</p>

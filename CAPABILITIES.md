@@ -31,7 +31,7 @@
 ## 2. الأرقام / numbers
 
 **5,856** قدرة · **62** عائلة · **10** مجالات · ✅ 1025 مُثبتة بتشغيل فعلي · 🟢 673 جاهزة · 📦 977 بأمر تثبيت · 🔑 176 بمفتاح أو حساب · 👁 609 شوهدت في فيديو مرجعي · 📄 2325 طريقة موصوفة · 💡 71 فكرة.
-المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **198**.
+المستلزمات المسجّلة: **122** (أدوات، حزم، مفاتيح، منصات، خطوط، نماذج)؛ النماذج الذهنية: **63**؛ خريطة الأدوات: **125** مستودعًا موثّق الترخيص؛ أطلس الموشن: **289** أسلوبًا؛ الأدوات القابلة للتشغيل: **200**.
 
 <a id="tools"></a>
 ## 3. الأدوات حسب المجال / tools by area
@@ -51,7 +51,7 @@
 | [Sources and references / المصادر والمراجع](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/sources.md) | `atlas-external-bridge` · `atlas-body-audit` · `atlas-audit-synthesis` · `atlas-metadata-audit` · `browser-scout` · `creative-external-search` · `fetch-reference` · `fetch-video` · `instagram-finder` · `tiktok-photo` · `stock-fetch` · `media-sources` · `rea-creative-research-atlas` · `rebalance-creative-repos` · `source-scout` · `superpowers` · `repo-ashell-cinema` · `stream-grabber` · `sources-index` · `github-top-repos` · `instagram-reference-discovery` · `github-pulse` · `source-finder` · `free-footage` |
 | [Software investigation / فحص البرامج](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/investigate.md) | `installer-triage` · `local-project-audit` · `rea-bridge` · `web-app-study` · `rea-family-router` · `rea-owned-repo-batch` · `repository-capability-packer` · `atlas-bulk-source-audit` · `atlas-deep-fusion` · `atlas-review-summary` · `atlas-reviewed-methods-v3` · `atlas-transfer` · `differential-exam` · `repo-map` |
 | [Local computer / الجهاز المحلي](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/local-computer.md) | `kosif-remote-commander` · `adobe-mcp-bridges` · `photocraft-mcp` |
-| [Maintain and build / الصيانة والبناء](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/maintain.md) | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` · `agent-guard` · `self-council` · `validate-receipt` |
+| [Maintain and build / الصيانة والبناء](https://github.com/kosif199022-jpg/kosif-tool/blob/main/.claude/skills/kosif-superpowers/references/guides/maintain.md) | `build-chapters` · `catalog-evidence-audit` · `check-skill` · `skill-layout` · `package-skill` · `relabel-proofs` · `repo-build` · `repo-check-originality` · `repo-import-briefs` · `repo-sync-catalog` · `repo-validate` · `rea-superpowers-map` · `agent-guard` · `self-council` · `validate-receipt` · `protocol-lint` · `collect-links` |
 
 <a id="domains"></a>
 ## 4. المجالات والعائلات / domains and families

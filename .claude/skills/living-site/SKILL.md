@@ -85,7 +85,7 @@ Read `references/level-1-3d.md` before you start. The short version:
      `app.spline.design/file/<inner-id>?view=preview` link is public. (The id in the community URL is not.)
      Credit the author in the footer.
   3. Remix a community scene into your account, then export it like your own.
-- **Never trap the scroll.** Put a clear shield over every iframe. For your own scenes the shield passes the cursor
+- **Never trap the scroll.** Put a clear shield over every Spline iframe. For your own scenes the shield passes the cursor
   in by `postMessage` (runtime/spline-shield.js + the bridge snippet in the reference). Community scenes run on
   their own behind the shield. No "click to play" pills, no "move your cursor" hints.
 - Crop editor chrome by oversizing the iframe; fade the bottom with a mask so the model melts into the page.
@@ -117,7 +117,12 @@ Read `references/level-2-higgsfield.md`. This is where most of the "how did they
 
 Show the film with `recipes/split-film.html` (captions left, framed film right, frame blending on).
 
-Gate: cut scan clean, continuity PASS, film plays smoothly at slow scroll, ledger total matches the quote.
+Gate: cut scan clean, continuity PASS, film plays smoothly at slow scroll, `tools/ledger.py sum --quote` PASS.
+
+**When the film is a story** (characters, acting, dialogue, a fight, a brand short film), use the director's
+layer in `references/level-2-kling-director.md`: story engine, element library, 3x3 storyboard, one Kling 4.0
+master prompt per block of 30 s or less, 2 to 4 takes per block. Every block passes
+`python3 $L/tools/kling_lint.py block.txt` before any credit is spent (`kling_lint.py plan <seconds>` splits the film).
 
 ---
 
@@ -157,9 +162,12 @@ Gate: something visibly changes every 1 to 2 s in every Level 3 piece; at most 6
 1. **Copy:** short, specific, human. No em or en dashes. No invented numbers. If a SlopMonster-style linter is
    installed, run it to 5/5. Otherwise apply `references/copy.md` by hand.
 2. **Check:** `python3 $L/check.py "$WORKDIR/index.html"` must print PASS. It checks the three levels are present,
-   motion respects reduced motion, no scroll traps, no raw scroll listeners, assets exist, no dashes in copy.
-3. **Look:** headless screenshots at 1440x900 and 390x844 with `tools/shots.js` (two shots a second apart prove it
-   moves). Read every image. Fix the worst three things. Repeat until it looks like the reference on a great day.
+   motion respects reduced motion, no scroll traps, no raw scroll listeners, assets exist, no dashes in copy,
+   a utf-8 charset, no negative letter-spacing on an Arabic page, and a cost on every generated piece.
+   Credits: `python3 $L/tools/ledger.py sum "$WORKDIR/ledger.tsv" --quote <quote>` must print PASS.
+3. **Look:** headless screenshots at 1440x900 and 390x844 with `tools/shots.js <url> <out> <size> a=0 b=0`
+   (two shots of the same spot about 2 s apart; it prints `moves? yes` and exits 1 on console errors or a
+   horizontal scroll). Read every image. Fix the worst three things. Repeat until it looks like the reference on a great day.
 4. **Report:** the URL, one line per level (what it is, how it moves), credits spent, Spline calls used, open gaps.
 
 ## Guardrails

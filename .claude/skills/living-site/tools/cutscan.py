@@ -6,7 +6,10 @@ mid-clip and lands on the end pin, so the junctions look perfect and the middle 
 Method: SSIM of every adjacent frame pair (480 px wide). A frame pair below (median - 0.25) is a cut.
 Exit code 1 if any file has a cut, so it can gate a pipeline.
 """
-import subprocess, sys
+import shutil, subprocess, sys
+
+if not shutil.which('ffmpeg'):
+    sys.exit('missing dependency: ffmpeg')
 
 def scan(f):
     cmd = ['ffmpeg', '-i', f, '-i', f, '-lavfi',

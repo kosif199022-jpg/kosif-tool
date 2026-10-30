@@ -22,7 +22,8 @@
 #   • a freeze       → ~1.0, the camera stopped: a dead scroll zone
 # So every pair is judged against its own local baseline, never a global constant.
 #
-#   PASS  no pair below 45% of its local median, and at most 2 frozen pairs
+#   PASS  no pair below 45% of its local median, no isolated dip (0.25 under the local median and
+#         0.2 under both neighbours), and at most 2 frozen pairs
 #   FAIL  otherwise — regenerate; do NOT build on it
 #
 set -u
@@ -61,7 +62,12 @@ for ((i=1; i<=${#SCORES}; i++)); do
   lo=$(( i-3 < 1 ? 1 : i-3 )); hi=$(( i+3 > ${#SCORES} ? ${#SCORES} : i+3 ))
   LM=$(med ${SCORES[$lo,$hi]})
   s=${SCORES[$i]}
-  awk "BEGIN{exit !($s < 0.45*$LM)}" && CUTS+=("${NAMES[$i]}  $s vs local $LM")
+  # an isolated dip: far under the local median AND under both neighbours (KOSIF v5.10: the 45% rule
+  # alone let a real cut at 0.55 vs 0.89 through; smooth fast motion is low everywhere, so it is not a dip)
+  pv=${SCORES[$(( i > 1 ? i-1 : i+1 ))]}; nx=${SCORES[$(( i < ${#SCORES} ? i+1 : i-1 ))]}
+  if awk "BEGIN{exit !($s < 0.45*$LM || ($s < $LM-0.25 && $s < $pv-0.2 && $s < $nx-0.2))}"; then
+    CUTS+=("${NAMES[$i]}  $s vs local $LM")
+  fi
   awk "BEGIN{exit !($s > 0.995)}"    && FROZEN+=("${NAMES[$i]}  $s")
 done
 

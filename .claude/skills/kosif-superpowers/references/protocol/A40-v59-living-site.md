@@ -1,11 +1,20 @@
-# A40 · Living Site داخل KOSIF (USIP v5.9)
+# A40 · Living Site داخل KOSIF (USIP v5.9، محدّث v5.11)
 
 > **متى تقرأه / when to read:** موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير · [العودة إلى النواة / back to the core](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
-> المهارة نفسها في المستودع: `.claude/skills/living-site/` (المسارات أدناه نسبية لها). مثال مبني: `living-site/kosif-living-demo.html`.
+> المهارة نفسها في المستودع: `.claude/skills/living-site/` (المسارات أدناه نسبية لها). مثال مبني في مجلد المشروع: `living-site/kosif-living-demo.html`.
 
-هذه المهارة جاءت من مصدر خارجي (living-site-skill.zip). الملفات الأصلية كما هي، مع ثلاثة تعديلات فقط:
-حذف رابط الإحالة (affiliate) من SKILL.md وREADME.md، وإضافة `--levels` والكلمات العربية في `check.py`، وهذا الملف.
+هذه المهارة جاءت من مصدر خارجي (living-site-skill.zip). تعديلات KOSIF عليها:
+- **v5.9:** حذف رابط الإحالة (affiliate) من SKILL.md وREADME.md، وإضافة `--levels` والكلمات العربية في `check.py`، وهذا الملف.
+- **v5.10 (كل بند مقيس باختبار في `.claude/skills/living-site/tests/test_tools.py`، 18 اختبار ناجح):**
+  - `check.py`: إصلاح «مجسمان بحد أقصى» (كان يقبل 3)، قراءة `data-xray` و`data-xray-tool` بأي ترتيب، فحوص جديدة: `<meta charset="utf-8">`، لا `letter-spacing` سالب في صفحة عربية، `data-xray-cost` على كل عنصر مولّد، ورفض `--levels` الخاطئ، و`--json`.
+  - `runtime/spline-shield.js`: بلا زر «Click to play» (كان يخالف قانون الصفحة وفحص check.py لا يراه لأنه يُحقن بالـ JS)، يغطي إطارات Spline فقط، يلتقط الإطارات المتأخرة (lazy)، ويرسل لأصل Spline لا `'*'`.
+  - `recipes/living-pipeline.js`: تباعد الحروف السالب على اللافتات اللاتينية فقط؛ على العربي كان يفصل الحروف.
+  - `tools/shots.js`: يقفل المتصفح دايمًا، يرجّع 1 عند خطأ كونسول أو HTTP أو محدد مفقود أو تمرير أفقي، ويقارن لقطتين لنفس المكان (`a=0 b=0`) فيطبع `moves? yes|NO`. يلقى Chromium المثبت في الجلسات السحابية.
+  - `tools/continuity-gate.sh`: يمسك «الهبوط المعزول» (قطع حاد 0.55 مقابل 0.89 كان يعدّي بقاعدة 45% وحدها)، والحركة السريعة الناعمة لسه بتعدّي.
+  - `.claude/skills/living-site/tools/ledger.py` جديد: `add` لكل مهمة مدفوعة في جلسات MCP، و`sum --quote --budget` كبوابة؛ يمنع تسجيل نفس المهمة مرتين.
+  - `film_chain.sh` و`living_loop.sh` و`cutscan.py`: رسائل واضحة عند معامل خاطئ أو ffmpeg ناقص. `package.json` باسم المهارة الصحيح.
+- **v5.11:** مخرج Kling السينمائي (الملحق A41): `references/level-2-kling-director.md` و`.claude/skills/living-site/tools/kling_lint.py` و`recipes/kling-master-prompt.txt`، و8 اختبارات جديدة (26 ناجح). فيلم التمرير هنا يفضل حركة كاميرا واحدة؛ فيلم القصة بشخصيات وتمثيل يروح لـ A41.
 
 ## متى تُستخدم
 أي طلب «موقع حي»، «صفحة هبوط بموشن»، «خلّي الموقع عايش»، «موقع 3D»، أو صفحة تعريف بمنتج/خدمة/براند.
@@ -34,7 +43,7 @@
 | `--wait` | `jobs_wait` (مهلة 15 ثانية لكل نداء) |
 | `cutscan.py` و`continuity-gate.sh` و`living_loop.sh` | تعمل محليًا كما هي على الملفات بعد تنزيلها (ffmpeg + Python) |
 
-اكتب كل رصيد في `ledger.tsv` يدويًا (الوقت، الموديل، الرصيد، رقم المهمة، المسار). اعدّ من السجل لا من الرصيد.
+سجّل كل مهمة مدفوعة فور إنشائها: `python3 .claude/skills/living-site/tools/ledger.py add ledger.tsv <الموديل> <الرصيد> <رقم المهمة> <المسار>` (نفس أعمدة سكربتات الـ CLI). اعدّ من السجل لا من الرصيد، والبوابة `ledger.py sum ledger.tsv --quote <التقدير>`.
 
 ## قوانين الصفحة بالعربي (RTL)
 - «النص يسار والصورة يمين» تصير في RTL: **النص يمين والمرئي يسار**. القاعدة الأصلية «قسّم ولا تكدّس» كما هي.
@@ -54,7 +63,10 @@
 ```bash
 python3 check.py page.html                 # موقع كامل بالمستويات الثلاثة
 python3 check.py page.html --levels 3      # بناء جزئي: المستوى 3 فقط (المستويات الأخرى تُطبع skip لا ok)
-node tools/shots.js ...                    # لقطتان 1440x900 و390x844 بفارق ثانية تثبتان الحركة
+node tools/shots.js http://127.0.0.1:<port>/ out 1440x900 a=0 b=0   # يرجع 0 + "moves? y=0: yes"
+node tools/shots.js http://127.0.0.1:<port>/ out 390x844 a=0 b=0    # الموبايل: ولا تمرير أفقي
+python3 .claude/skills/living-site/tools/ledger.py sum ledger.tsv --quote <التقدير المعتمد>    # لو اتصرف رصيد: PASS
+python3 .claude/skills/living-site/tests/test_tools.py                # بعد أي تعديل على أدوات المهارة نفسها
 ```
 في Claude Artifacts: النص المقروء ظاهر من أول إطار (اللقطة المصغرة تُلتقط فورًا)، والدخول المتحرك للعناصر الزخرفية فقط. وأي وصفة فيها `</script>` داخل تعليق تُهرَّب قبل دمجها في الصفحة.
 في التقرير: سطر لكل مستوى (ما هو وكيف يتحرك)، الرصيد المصروف، مكالمات Spline، والفجوات المفتوحة. لا تقل «الفيلم جاهز» قبل نجاح فحص القطع والاستمرارية.

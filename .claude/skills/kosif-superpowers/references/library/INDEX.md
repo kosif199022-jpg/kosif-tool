@@ -1,6 +1,6 @@
 # مكتبة البروتوكول — USIP v5.6 protocol library
 
-> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,856 قدرة في 62 عائلة و15 مجموعة، و198 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
+> مولّدة بـ `scripts/smart_capabilities.py library`؛ لا تُحرَّر يدويًا. 5,856 قدرة في 62 عائلة و15 مجموعة، و200 أداة مسجلة. الدليل: [A28](../protocol/A28-capability-routing.md) · [النواة](../../PROTOCOL.md#متى-تفتح-الملاحق--appendix-triggers)
 
 ## الفهرس / contents
 
@@ -31,11 +31,11 @@
 | الخطوط والنصوص العربية واللاتينية (`type`) | 215 | 40 | 49 | 15 | [type.md](type.md) |
 | البيانات والرسوم والمواقع (`data`) | 268 | 49 | 18 | 4 | [data.md](data.md) |
 | المستندات والكتابة (`documents`) | 148 | 32 | 0 | 2 | [documents.md](documents.md) |
-| الاختبارات والجودة والأمان (`quality`) | 469 | 94 | 58 | 43 | [quality.md](quality.md) |
+| الاختبارات والجودة والأمان (`quality`) | 469 | 94 | 58 | 45 | [quality.md](quality.md) |
 | التحليل العكسي وفحص البرامج (`reverse`) | 258 | 30 | 0 | 21 | [reverse.md](reverse.md) |
 | قدرات مساندة غير مصنفة (`misc`) | 27 | 5 | 7 | 0 | [misc.md](misc.md) |
 
-الفصول الـ15 معًا 7,074 سطرًا، وكل قدرة في فصل واحد بالضبط.
+الفصول الـ15 معًا 7,076 سطرًا، وكل قدرة في فصل واحد بالضبط.
 
 ## من أي محادثة / from any chat
 

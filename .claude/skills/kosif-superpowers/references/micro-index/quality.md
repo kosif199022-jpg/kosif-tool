@@ -71,7 +71,7 @@ chapter: [security-safety](../powers/security-safety.md) · card: `usip-library/
 
 ## verification-evals (mind)
 
-chapter: [verification-evals](../powers/verification-evals.md) · card: `usip-library/cards/quality/verification-evals.md` · tools: `build-chapters` · `catalog-evidence-audit` · `check-skill` · `council` · `differential-exam` · `lesson-integrity` · `package-skill` · `prompt-lab` …
+chapter: [verification-evals](../powers/verification-evals.md) · card: `usip-library/cards/quality/verification-evals.md` · tools: `build-chapters` · `catalog-evidence-audit` · `check-skill` · `collect-links` · `council` · `differential-exam` · `lesson-integrity` · `package-skill` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -118,7 +118,7 @@ chapter: [verification-evals](../powers/verification-evals.md) · card: `usip-li
 
 ## qa-verification (motion)
 
-chapter: [qa-verification](../powers/qa-verification.md) · card: `usip-library/cards/quality/qa-verification.md` · tools: `anchor-gate` · `atlas-metadata-audit` · `blender-cycles-render` · `book-methods` · `catalog-evidence-audit` · `charter-ingest` · `cinematic-broll-render` · `creative-quality-gate` …
+chapter: [qa-verification](../powers/qa-verification.md) · card: `usip-library/cards/quality/qa-verification.md` · tools: `anchor-gate` · `atlas-metadata-audit` · `blender-cycles-render` · `book-methods` · `catalog-evidence-audit` · `charter-ingest` · `cinematic-broll-render` · `collect-links` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -1,0 +1,53 @@
+SCENE CONTEXT
+Block 1 of 1. 15 s, 21:9. A courier in a rain-soaked night alley has to deliver one sealed envelope before the shutter of the last open shop comes down. He reaches the shop as the shutter drops, slides the envelope under it, and the shopkeeper's hand pulls it inside. Neo-noir, quiet tension.
+
+ACTIVE REFERENCES
+@Image1 — CHARACTER — SAMI: face, short black hair, lean build, olive rain jacket, grey backpack 100% match the reference. Reference controls identity only; backdrop, lighting and pose are not inherited.
+@Image2 — LOCATION — ALLEY: controls layout, wet cobblestones, neon sign and shop shutter. The reference's camera angle and framing are not inherited.
+@Image3 — STORYBOARD: follow its shot order and framing. Do not render the storyboard itself.
+@Image4 — PROP — ENVELOPE: reproduce its design exactly as one consistent solid object.
+
+LOCATION MAP
+The alley is 3 m wide and 25 m long. Sami enters frame-left at the far end and travels toward camera and frame-right. The shop is on the right wall 4 m from the camera, its shutter half down. The camera works from the left wall.
+
+FIRST FRAME AND SPATIAL BLOCKING
+Wide, lens at waist height, three-quarter angle down the alley. Exactly one person in the shot: Sami already running, 20 m away, envelope in his RIGHT hand.
+
+FORMAT MODE
+Controlled multi-shot sequence, 4 shots, hard cuts.
+
+OPTICS
+Wide 84°, medium 47°, close-ups 47°, inserts 29°; anamorphic rectilinear character; lens locked within each shot; focus on Sami.
+
+CAMERA
+Shot 1 locked-off; shot 2 side-tracking at running speed; shot 3 slow push-in; shot 4 locked-off insert.
+
+ACTION TIMING
+0.0-4.0s — SHOT 1 — ALLEY. Wide 84°, waist height. Sami runs toward camera, splashing through a puddle. Hard cut.
+4.0-8.0s — SHOT 2 — ALLEY. Medium 47°, side-tracking. The shutter starts to drop; Sami lengthens his stride. Hard cut.
+8.0-12.0s — SHOT 3 — SHOP. Medium close-up 47°, slow push-in. He drops to his knees and slides the envelope under the closing shutter. Hard cut.
+12.0-15.0s — SHOT 4 — SHOP. Insert 29°, locked-off. A hand on the inside pulls the envelope in; the shutter hits the ground.
+
+ACTING TASK — SAMI (fully invested in his tactic; the work happens in his eyes):
+SCENE DIRECTION (shared, unspoken): make it in time.
+MOTIVE: the envelope is someone's last chance.   GOAL: get it inside the shop.   OBSTACLE: the shutter is closing.
+TACTIC: he does not slow for anything; his eyes measure the gap under the shutter at every step.
+(Safety: gaze always engaged in the task, natural blink cadence.)
+
+PHYSICS
+Rainwater sprays from each footfall; the jacket is heavy and wet; the steel shutter drops with weight and stops with a hard bounce.
+
+LIGHTING
+Practical sources only: the pink-red neon sign above the shop, a sodium street lamp at the far end. Blacks lifted, detail readable in the corners.
+
+AUDIO
+English, no dialogue. Rain ambience, running footsteps on wet stone, the shutter's rattle and final clang on the last frame. No music. No subtitles.
+
+STYLE
+Neo-noir, tungsten-balanced 500-speed colour negative film grain, 60/30/10 teal, black and neon pink, anamorphic flares off the neon.
+
+QUALITY
+Readable faces and hands at held moments; natural 180° shutter motion blur on fast moves; stable temporal continuity; consistent anatomy; the envelope stays one consistent object.
+
+POSITIVE CONSTRAINTS
+Exactly one person visible; the shopkeeper appears only as a hand. The envelope stays in Sami's RIGHT hand until shot 3. Sami always travels frame-right. The last frame is the closed shutter with the envelope gone.

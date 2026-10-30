@@ -176,7 +176,9 @@
 | `build-chapters` | TOOL-99 | مولّد فصول العائلات · Family Chapter Generator | `python3 scripts/build_chapters.py` | 0 |
 | `catalog-evidence-audit` | TOOL-33 | تدقيق أدلة الكتالوج · Catalog Evidence Audit | `python3 scripts/catalog_evidence_audit.py` | 1 |
 | `check-skill` | TOOL-56 | فحص سلامة المهارة · Skill Health Check | `python3 scripts/check_skill.py` | 0 |
+| `collect-links` | — | جمع الروابط من صفحة بمتصفح بلا واجهة · Collect links from a page (headless Chromium) | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 0 |
 | `package-skill` | TOOL-57 | تحزيم المهارة للرفع إلى claude.ai · Skill Packager for claude.ai | `python3 scripts/package_skill.py` | 1 |
+| `protocol-lint` | — | فاحص اتساق حزمة البروتوكول · USIP release-folder lint | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 0 |
 | `rea-superpowers-map` | TOOL-108 | خريطة سوبر باور بمنهج REA · Superpowers map, REA approach | `python3 scripts/rea_superpowers_map.py build` | 1 |
 | `relabel-proofs` | TOOL-58 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler | `python3 scripts/relabel_proofs.py` | 0 |
 | `repo-build` | TOOL-101 | مولّد ملفات أطلس الأساليب · Style Atlas Builder | `python3 tools/build.py` | 0 |

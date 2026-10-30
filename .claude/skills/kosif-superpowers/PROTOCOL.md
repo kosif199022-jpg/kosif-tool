@@ -1,10 +1,8 @@
-# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v5.9)
+# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v6.0)
 
-> **وضع التفعيل الكامل:** «فعّل كل القدرات» أو «الوضع الكامل» = كل المهارات المناسبة بكامل عمقها (L3، الملاحق المطابقة، المجلس ومحامي الشيطان، النماذج الذهنية، وكلاء متوازيين) والقوانين كما هي. **التحميل الخفيف:** اقرأ [`LOADER.md`](LOADER.md) أولًا ثم افتح الأسطر المطابقة فقط (`skill_loader.py need`).
+> **وضع التفعيل الكامل:** «فعّل كل القدرات» أو «الوضع الكامل» = كل المهارات المناسبة بكامل عمقها (L3، الملاحق المطابقة، المجلس ومحامي الشيطان، النماذج الذهنية، وكلاء متوازيين) والقوانين كما هي. **التحميل الخفيف:** اقرأ [`LOADER.md`](LOADER.md) أولًا ثم افتح الأسطر المطابقة فقط (`skill_loader.py need`). **أحدث الإصدارات:** v6.0 العقد والإيصال والعدّاد (A43)، v5.12 المتصفح (A42)، v5.11 مخرج Kling (A41)، v5.9 PhotoCraft والمواقع الحية (A39، A40).
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
-
-> **أحدث الإصدارات:** v6.0 العقد والإيصال ([A43](references/protocol/A43-v60-contracts-receipts-registry.md)) · v5.9 PhotoCraft ([A39](references/protocol/A39-v59-photocraft-mcp.md)) والمواقع الحية ([A40](references/protocol/A40-v59-living-site.md)).
 
 ## الفهرس / contents
 
@@ -36,17 +34,17 @@
 
 | الملحق | افتحه عندما | أقسامه القديمة | الحالة هنا |
 |---|---|---|---|
-| [A1 عدسات SEE للتفكير والتخطيط](references/protocol/A1-see-thinking.md) | تحتاج Stage-0 مفصلة، أو حزمة SEE، أو بطاقة الخطة، أو IdeaForge، أو محاور الأسئلة، أو حساسية القرار، أو نص جسر SEE لمرحلة | -1، -1.1…-1.6، -1.10.أ، -1.12، -1.15، -1.23، -1.24، -1.31، -1.41، جسور المراحل 0–9 | منهج موثَّق؛ سقالات: `think.py frame/ideas/decide`؛ حزم SEE التسع خارجية |
+| [A1 عدسات SEE للتفكير والتخطيط](references/protocol/A1-see-thinking.md) | تحتاج Stage-0 مفصلة، أو حزمة SEE، أو بطاقة الخطة، أو IdeaForge، أو محاور الأسئلة، أو حساسية القرار، أو نص جسر SEE لمرحلة | -1، -1.1…-1.6، -1.10.أ، -1.12، -1.15، -1.23، -1.24، -1.31، -1.41، جسور المراحل 0–9 | موثَّق؛ `think.py frame/ideas/decide`؛ حزم SEE خارجية |
 | [A2 المنفذون وFull Pro والجسور](references/protocol/A2-executors-fullpro.md) | ذكرتُ Full Pro أو مجلسًا أو Think أو Flagship/Astra، أو طلبت فعلًا على جهاز أو متصفح أو واتساب أو صوت | -1.7، -1.8، -1.18…-1.21، -1.39، -1.40، -1.42، -1.43، -1.48 | خارجي: لا منفذ منها هنا |
-| [A3 Release Bridge](references/protocol/A3-release-bridge.md) | دفع أو دمج أو إصدار أو نشر | -1.44 + صف kosif-tool | إجراء موثَّق؛ النشر هنا GitHub Pages لا Cloudflare |
+| [A3 Release Bridge](references/protocol/A3-release-bridge.md) | دفع أو دمج أو إصدار أو نشر | -1.44 + صف kosif-tool | موثَّق؛ النشر GitHub Pages |
 | [A4 FusionForge والتركيب](references/protocol/A4-fusionforge-composition.md) | أي L2/L3، أو تركيب مهارات، أو وصفة أو دروس مشروع | -1.22، -1.35…-1.37، -1.45 + أوامر v2 | قابل للتنفيذ ومختبر: `scripts/fusionforge.py` + `evals/test_fusionforge.py` |
-| [A5 الحالة والإيصالات](references/protocol/A5-state-receipts.md) | عمل طويل أو قابل للاستئناف أو متعدد الوكلاء، أو رمز حالة أو تعافٍ | -1.10.ب، -1.17، -1.28، -1.29، -1.33، -1.46 | إجراء موثَّق؛ لا كود يكتب هذه السجلات |
+| [A5 الحالة والإيصالات](references/protocol/A5-state-receipts.md) | عمل طويل أو قابل للاستئناف أو متعدد الوكلاء، أو رمز حالة أو تعافٍ | -1.10.ب، -1.17، -1.28، -1.29، -1.33، -1.46 | موثَّق؛ بلا كود |
 | [A6 الأدلة والأمان والأرقام](references/protocol/A6-evidence-security-numbers.md) | ادعاءات ومصادر، أسرار، أكثر من شركة، حساب دقيق أو مال | -1.9، -1.25، -1.26، -1.27 | موثَّق + `scripts/anchor_gate.py` و`scripts/_secrets.py` و`think.py decide` |
 | [A7 PMO](references/protocol/A7-pmo.md) | مشروع طويل، عدة وكلاء أو مستودعات أو موارد | -1.13 | موثَّق؛ سقالة `think.py plan` |
 | [A8 Motion Brain وDirector Pro](references/protocol/A8-motion-brain.md) | صور/فيديو مرجعي، موشن، رندر؛ Katana تحليل فقط | -1.14، -1.30 | جزئي: `montage_pro.py` و`motion_director.py` و`creative_quality_gate.py` و`tools/verify_video.py` |
 | [A9 Shadow Evals](references/protocol/A9-shadow-evals.md) | تعديل البروتوكول أو المهارة، أو قبل نشرهما | -1.11، -1.16، -1.32، -1.38، -1.47 في جدول موحد | مواصفات؛ المختبر منها آليًا مسمّى في الجدول |
-| [A10 التطور الذاتي](references/protocol/A10-self-evolution.md) | تطوير SEE أو هذا البروتوكول أو المهارة | -1.10، -1.34، جسر المرحلة 10 | موثَّق + `check_skill.py` و`evals/test_protocol_structure.py` |
-| [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات مؤرخة من -1.1 و-1.18 و-1.20 و-1.21 والمستودع الأصل، وسطر عنوان v5.2 | تاريخية؛ أعد الفحص حيًا |
+| [A10 التطور الذاتي](references/protocol/A10-self-evolution.md) | تطوير SEE أو هذا البروتوكول أو المهارة | -1.10، -1.34، جسر المرحلة 10 | `check_skill.py` وبنية `evals` |
+| [A11 لقطات 21-10-2026](references/protocol/A11-snapshots-20261021.md) | سؤال عن حالة SEE أو Think المسجلة يومها | لقطات -1.1، -1.18، -1.20، -1.21 | تاريخية؛ أعد الفحص حيًا |
 | [A12 SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) | تفكير SEE Pro وL2/L3 | — | `see_pro_cognitive_gate.py` |
 | [A13 مجلس البرو](references/protocol/A13-pro-council.md) | مجلس Pro | — | `council.py` |
 | [A30 مجلس المئة وطبقات البرو](references/protocol/A30-council-100.md) | «نفّذ بأقصى قوة»، مجلس أكبر من خمسة، أو شخصية بعينها | 100 شخصية و12 طبقة | `council.py --seats`، `think.py pro` |
@@ -65,13 +63,15 @@
 | [A29 التعافي من الفشل](references/protocol/A29-failure-recovery.md) | خطأ أو قياس دون العتبة، أو قبل إعادة محاولة | البند 5 من المرحلة 9 | `think.py recover` |
 | [A31 مجلس خبراء الرسم](references/protocol/A31-drawing-council.md) | قبل إرسال أي صورة أو رسمة (القانون 27) | — | `drawing_council.py` |
 | [A33 تعدين المستودعات والبرومبت](references/protocol/A33-open-source-mining-prompts.md) | التعلم من مستودعات GitHub أو الويب، أو كتابة برومبت لنموذج أو مولد أو وكيل | بوابات الترخيص والبرومبت | `github_top_repos.py`، `prompt_lab.py` |
-| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | قدرة أو أداة بعينها، نسخ البروتوكول لمساعد آخر، إضافة أداة أو بطاقة أو تعديل التوجيه، طابور دمج | الفهرس الدقيق والنسخة المختصرة | `micro_index.py`، `USIP_PASTE.md` |
+| [A34 طبقة الدقة v5.6](references/protocol/A34-usip-v56-precision-layer.md) | قدرة أو أداة بعينها، نسخ البروتوكول، إضافة أداة أو بطاقة، طابور دمج | الفهرس الدقيق والنسخة المختصرة | `micro_index.py`، `USIP_PASTE.md` |
 | [A35 سجل المهام](references/protocol/A35-task-history.md) | نهاية أي مهمة L1 فأعلى سلّمت مخرجًا، أو سؤال «إيه المهام اللي عملتها؟»، أو «كررها» | ملف لكل مهمة على `main` في `history/` | `task_history.py` |
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء | — | موثَّق؛ أداة Agent حين توجد |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» | — | `self_council.py` |
 | [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو | v5.8 | `llm_council.py` وأربع أدوات |
 | [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب، أو LUT يوحّد لوك الصور والفيديو | v5.9 | `photocraft_mcp.py` |
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير | v5.9 | مهارة `living-site` و`check.py` |
+| [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling | v5.11 | `kling_lint.py` |
+| [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح | v5.12 | `collect_links.js` |
 | [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم» | v6.0 | `validate_receipt.py` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
@@ -486,7 +486,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 المعاني المعتمدة في كل ملف ومحرك (النواة، الملاحق، `SESSION_PROMPT.md`، `CLAUDE.md`، `SKILL.md`، `skill_intelligence.py`، `fusionforge.py`):
 
-**الإصدارات:** البروتوكول **USIP v5.9** (29-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
+**الإصدارات:** البروتوكول **USIP v6.0** (29-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
 
 **الخطط** (تعريفات المرحلة 6 هي المصدر الوحيد):
 - **A — الذكية السريعة:** أبسط مسار يحقق كل متطلب إلزامي (لا الأرخص؛ خطة تفوّت متطلبًا إلزاميًا ليست A). — `simplest path that meets every must-have`
@@ -514,6 +514,6 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> **USIP v5.9:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم مجلس الخمسة ببوابته (A38)، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
+> **USIP v6.0:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم مجلس الخمسة ببوابته (A38)، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
 
-> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده)، أو المضغوطة `docs/protocol/USIP_PORTABLE_v5_9.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.
+> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده)، أو المضغوطة `docs/protocol/USIP_PORTABLE_v6_0.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.

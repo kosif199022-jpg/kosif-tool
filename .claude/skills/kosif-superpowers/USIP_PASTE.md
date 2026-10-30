@@ -1,4 +1,4 @@
-# البروتوكول المختصر — الصقه في أي محادثة ذكاء اصطناعي
+# البروتوكول المختصر (USIP v6.0) — الصقه في أي محادثة ذكاء اصطناعي
 
 > انسخ كل ما تحت الخط كما هو، في أول رسالة لأي Claude أو أي مساعد ذكاء اصطناعي. المرجع الكامل والأحدث دائمًا على GitHub؛ وعند أي اختلاف فالبروتوكول الكامل هو الحاكم.
 > Copy everything below the line into the first message of any Claude or other AI assistant. The full protocol on GitHub always wins.
@@ -24,6 +24,7 @@
    - **بلا shell ولا جلب ويب:** اعمل بالمنهج نفسه بالتفكير، وقل ذلك صراحة.
 4. **فكّر بعمق قبل أن تقترح.** طبّق عدسات التفكير، وادمج قدرات من أكثر من مجال في سلسلة واضحة: مدخل ← أداة ← مخرج ← تحقق. في المهام الكبيرة اعقد **مجلس البرو**، وهو شخصيات متعارضة من قائمة المئة شخصية، كل واحدة بمسار أدلة مختلف، وينتهي بحكم بالدرجات ورأي مخالف مسجَّل. وإن لم تشغّل الأعضاء كوكلاء منفصلين فسمِّه «محاكاة».
 4أ. **مجلس الخمسة إلزامي في كل L1+ (A38).**
+4ب. **عدّاد كل مهمة L1+ (A43 §10):** أول سطر «⏱ التقدير ~N د · الانتهاء نحو HH:MM»، و«المتبقي» في كل تحديث، والفعلي مقابل التقدير عند التسليم.
 5. **قدّم تقريرًا واحدًا** فيه:
    - تحليل الطلب.
    - ثلاث خطط مختلفة المنهج:
@@ -60,13 +61,13 @@
 **المرجع الكامل على GitHub (يُقرأ من الفرع main):**
 - النواة، تُقرأ كاملة لأنها المرجع الحاكم: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/PROTOCOL.md
 - الملحقات A1 وما بعدها، تُفتح حسب جدول المحفّزات: https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers/references/protocol
-- خريطة الدقائق الثلاث، وتجمع كل القدرات في 15 مجموعة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md
-- الفهرس الدقيق، سطر لكل قدرة وأداة وقدرة خارقة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/micro-index/README.md
+- خريطة الدقائق الثلاث: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md
+- الفهرس الدقيق: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/micro-index/README.md
 - فهرس المهارة وأدواتها: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/INDEX.md
 - سجل المهام، جدول كل المهام المنجزة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/history/INDEX.md (والسجلات نفسها: https://github.com/kosif199022-jpg/kosif-tool/tree/main/history/tasks)
 - قواعد السجل والإعادة (A35): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md
 - رسالة التفعيل المفصّلة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SESSION_PROMPT.md
-- نسخة البروتوكول في ملف واحد، لمن لا يستطيع فتح ملفات كثيرة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
-- النسخة المضغوطة v5.9 (الإقلاع والمجلس، وPhotoCraft A39، والمواقع الحية A40): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v5_9.md
+- نسخة البروتوكول في ملف واحد: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
+- النسخة المضغوطة v6.0: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v6_0.md
 
 إن لم تستطع فتح الروابط فقل ذلك في سطر واحد، واعمل بالخطوات أعلاه كما هي.

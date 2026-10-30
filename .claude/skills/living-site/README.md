@@ -31,4 +31,8 @@ In Claude Code, say: `/living-site` and name a site you love as the reference, o
 - `recipes/`: drop-in pieces (living pipeline, split film, word light, eclipse CTA, LED eyes, live counters, reveal).
 - `runtime/`: the scroll film engine (with frame blending), the motion switch, the scroll shield for 3D.
 - `tools/`: image and film generation, the chained film builder, cut scan, continuity gate, seamless loops, screenshots.
-- `check.py`: the gate for a finished page.
+- `check.py`: the gate for a finished page (`--levels`, `--json`).
+- `tools/ledger.py`: the credit ledger as a gate (`add`, `sum --quote --budget`).
+- `tools/kling_lint.py`: the gate for a Kling 4.0 master prompt (timing adds up, references have roles, no polish words or brand names, no Arabic dialogue), plus `plan <seconds>`. The worked example is `recipes/kling-master-prompt.txt`, the method is `references/level-2-kling-director.md`.
+- `tests/test_tools.py`: self-tests for the gate tools (`python3 tests/test_tools.py`).
+- `KOSIF.md`: the KOSIF adaptation (Arabic RTL, Higgsfield MCP mapping, what changed in v5.9, v5.10 and v5.11).

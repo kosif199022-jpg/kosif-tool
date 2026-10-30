@@ -67,7 +67,9 @@
       // KOSIF: glyph = short text (or fn(round) -> text) drawn where a logo would sit, for nodes with no real logo.
       let glyph = null;
       if (n.glyph) { glyph = el('text', { x: 0, y: -h / 2 + 76, 'text-anchor': 'middle', 'font-family': 'inherit', 'font-weight': 800, 'font-size': 38, fill: A }, g); glyph.textContent = typeof n.glyph === 'function' ? n.glyph(0) : n.glyph; }
-      const lab = el('text', { x: 0, y: h / 2 - 22, 'text-anchor': 'middle', 'font-family': 'inherit', 'font-weight': 600, 'font-size': 21, fill: INK, 'letter-spacing': '-.4' }, g); lab.textContent = n.label;
+      const lab = el('text', { x: 0, y: h / 2 - 22, 'text-anchor': 'middle', 'font-family': 'inherit', 'font-weight': 600, 'font-size': 21, fill: INK }, g); lab.textContent = n.label;
+      // KOSIF: tight tracking only for Latin labels; on Arabic any letter-spacing breaks the joins.
+      if (!/[\u0600-\u06FF]/.test(n.label)) lab.setAttribute('letter-spacing', '-0.4');
       const tickBg = el('circle', { cx: w / 2 - 6, cy: -h / 2 + 6, r: 12, fill: A, opacity: 0 }, g);
       const tick = el('path', { d: `M${w / 2 - 12} ${-h / 2 + 6}l4 4 7.5-8`, fill: 'none', stroke: '#fff', 'stroke-width': 2.4, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', pathLength: 1, 'stroke-dasharray': 1, 'stroke-dashoffset': 1 }, g);
       return { n, g, ring, tickBg, tick, w, h, glyph };

@@ -6,7 +6,8 @@
 
 ## الفهرس / contents
 
-- [v5.9 — 2026-10-29 (هذا الإصدار)](#v59--2026-10-29-هذا-الإصدار)
+- [v6.0 — 2026-10-30 (هذا الإصدار)](#v60--2026-10-30-هذا-الإصدار)
+- [v5.9 — 2026-10-29](#v59--2026-10-29)
 - [v5.8 — 2026-10-26](#v58--2026-10-26)
 - [v5.7 — 2026-10-24](#v57--2026-10-24)
 - [v5.6 — 2026-10-23](#v56--2026-10-23)
@@ -21,16 +22,24 @@
 - [v2 — 2026-10-20 (commits 3827e09، ثم v2.1 ec6374a، ثم v2.2 1e65848 وdbeae16)](#v2--2026-10-20-commits-3827e09-ثم-v21-ec6374a-ثم-v22-1e65848-وdbeae16)
 - [خريطة الأقسام القديمة / old → new map](#خريطة-الأقسام-القديمة--old--new-map)
 
-## v5.9 — 2026-10-29 (هذا الإصدار)
+## v6.0 — 2026-10-30 (هذا الإصدار)
+
+يجمع ثلاثة إصدارات بُنيت خارج المستودع (v5.10 وv5.11 وv5.12) وطبقة v6.0 في إصدار واحد.
+
+- **v5.10، إصلاحات مقيسة:** مهارة `living-site` مُزامنة مع نسختها المختبرة (`check.py` بإصلاح `--levels`، و`.claude/skills/living-site/tools/ledger.py` لسجل الرصيد يمنع تسجيل مهمة مرتين، و`.claude/skills/living-site/tests/test_tools.py`)، و`scripts/photocraft_mcp.py` بنسخته المصححة، و`scripts/protocol_lint.py` جديد يفحص حزمة البروتوكول المنقولة (الحجم، الروابط، رقم الإصدار، الملاحق).
+- **v5.11، [A41 مخرج Kling](A41-v511-kling-director.md):** طريقة فيلم بشخصيات وتمثيل وقتال بـ Kling 4.0: محرّك القصة، هيكل البرومبت، قواعد السينما، الحدود، وبوابة `.claude/skills/living-site/tools/kling_lint.py` قبل أي رصيد، مع نسب الطريقة لمؤلفها.
+- **v5.12، [A42 المتصفح والروابط](A42-v512-browser-links.md):** سلّم تصفّح مجاني من الأرخص (جلب نص، ثم متصفح بلا واجهة، ثم متصفح المستخدم)، و`scripts/collect_links.js` لجمع روابط الوسائط من صفحة، وتوضيح أن Higgsfield لا يملك متصفحًا.
+- **[A43 العقد والإيصال وسجل القدرات](A43-v60-contracts-receipts-registry.md):** من حزمة `KOSIF_USIP_v6_0_COMPLETE.zip` (مبنية خارج المستودع على v5.9): عقد `TaskSpec` وإيصال `ExecutionReceipt`، حالات المعرفة `INDEXED → STATIC_REVIEWED → TESTED → READY / BLOCKED`، درجات الإثبات E0–E5، البوابات G0–G5، سبع بوابات ثقة وحقوق، جسور المواقع والأطلس وإنستجرام والسينما، وقاعدة «نفّذ الطلب المحلي الواضح مباشرة».
+- **أدوات:** `scripts/validate_receipt.py` جديد؛ `.claude/skills/living-site/check.py` يقبل `--levels code|3d|film|all` بجانب الأرقام، و`--json` و`--strict`، وأربعة تحذيرات (viewport، `lang`، `dir="rtl"` للعربي، `alt`). مخططات `schemas/usip_task_spec.v1.json` و`usip_receipt.v1.json` و`usip_capability_record.v1.json`، وسجل مثال `data/usip_capability_registry_v60.json`. الاختبار `tests/test_usip_v60_receipts.py` (12 اختبارًا).
+- **ما لم يُنقل من الحزمة:** فاحص ثانٍ للمواقع (مزاياه دخلت `check.py`)، و`atlas_86_index.json` (الفهرس موجود في `kosif-infinite-matrices/data/`)، والنص الكامل للأقسام 1–27 (هو v5.9 نفسه). التفاصيل في آخر A43.
+- **النسخ:** النواة والنسخة المحمولة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PASTE.md` صارت v6.0؛ صفوف A41 وA42 وA43 في جدول المحفّزات؛ نسخة مضغوطة جديدة `docs/protocol/USIP_PORTABLE_v6_0.md`. `check_skill.py` يقبل الآن مسار ملف كامل داخل مهارة أخرى (مثل `.claude/skills/living-site/tools/ledger.py`) ويتحقق منه هناك.
+
+## v5.9 — 2026-10-29
 
 - **[A39 PhotoCraft MCP](A39-v59-photocraft-mcp.md):** من `storytold/photocraft` (MIT/Apache، الطريقة بكلماتنا بلا نسخ كود): خريطة القدرات P1–P12، التسطيب والتسجيل بجذور مطلقة، عشر قواعد إلزامية (الجذور صلاحية، نص المستندات بيانات، التجربة على نسخة، الدفعة غير ذرّية، التوكن في ملف خاص)، ووصفات R1–R6. الأداة `scripts/photocraft_mcp.py` واختبارها `evals/test_photocraft_mcp.py`.
 - **[A40 المواقع الحية](A40-v59-living-site.md):** مهارة `living-site` مكيّفة لـ KOSIF في `.claude/skills/living-site/`.
 - **دروس 29-10-2026:** (1) `llm_council.py frame --constraints`: قيود المستخدم الملزمة لا تُقتطع وتظهر بعد السؤال مباشرة في كل مطالبة (الغريب والمراجعون والرئيس وLIGHT)، و`--context` يبقى بحد أربعة ملفات مع `dropped_context` وتحذير على stderr ([A38 §7](A38-v58-thinking-books-github-pulse.md)، `evals/test_llm_council.py`)؛ السبب أن «لا ترجمة للآيات» مُرِّر بـ `--context` فسقط بلا كلمة. (2) الدرسان 13 و14 في [A19](A19-field-lessons-montage.md): ملف المُرندر هو الماستر بلا `-shortest` ومطابقة MD5، وريلز التلاوة (النص من `api.alquran.cloud`، خط ScheherazadeNew-Bold، ﴿ ﴾ حرفان LTR منفصلان، لا ترجمة إلا بطلب وحينها Pickthall، القطع داخل الأنفاس، لا نار على الوعد والجزاء، لا نبض مع الصوت)، وتفاصيلهما بفحوصها في `playbooks/render-pipeline.md` §7 و`playbooks/arabic-typography.md` §11، وسطران في القسم 16 من `USIP_PORTABLE.md` وجملة في قسم الدروس الميدانية بالنواة.
 - **النسخ:** `USIP_PORTABLE.md` (سطر «ما الجديد»، بند في القسم 23، القسم 26 للمواقع الحية والبطاقة صارت 27)، والنسخة المضغوطة `docs/protocol/USIP_PORTABLE_v5_9.md` (القسمان 2.7 و2.8)، و`USIP_PASTE.md`، وصفّا A39 وA40 في جدول محفّزات النواة.
-- **طبقة v6.0 (30-10-2026)، [A43 العقد والإيصال وسجل القدرات](A43-v60-contracts-receipts-registry.md):** من حزمة `KOSIF_USIP_v6_0_COMPLETE.zip` (مبنية خارج المستودع على v5.9): عقد `TaskSpec` وإيصال `ExecutionReceipt`، حالات المعرفة `INDEXED → STATIC_REVIEWED → TESTED → READY / BLOCKED`، درجات الإثبات E0–E5، البوابات G0–G5، سبع بوابات ثقة وحقوق، جسور المواقع والأطلس وإنستجرام والسينما، وقاعدة «نفّذ الطلب المحلي الواضح مباشرة».
-- **أدوات:** `scripts/validate_receipt.py` جديد؛ `.claude/skills/living-site/check.py` يقبل `--levels code|3d|film|all` بجانب الأرقام، و`--json` و`--strict`، وأربعة تحذيرات (viewport، `lang`، `dir="rtl"` للعربي، `alt`). مخططات `schemas/usip_task_spec.v1.json` و`usip_receipt.v1.json` و`usip_capability_record.v1.json`، وسجل مثال `data/usip_capability_registry_v60.json`. الاختبار `tests/test_usip_v60_receipts.py` (12 اختبارًا).
-- **ما لم يُنقل من الحزمة:** فاحص ثانٍ للمواقع (مزاياه دخلت `check.py`)، و`atlas_86_index.json` (الفهرس موجود في `kosif-infinite-matrices/data/`)، والنص الكامل للأقسام 1–27 (هو v5.9 نفسه). التفاصيل في آخر A43.
-- **النسخ:** سطر «ما الجديد» وإحالة في القسمين 22 و25 من `USIP_PORTABLE.md`، وصف A43 في جدول محفّزات النواة. لم يُغيَّر ترقيم الأقسام لأن v5.10–v5.12 (A41 وA42) تُدمج على حدة.
 
 ## v5.8 — 2026-10-26
 
@@ -107,7 +116,6 @@
 ## v5.5 — 2026-10-23
 
 سطر الإصدار في النواة كان: «ذكاء الاستقبال والتوضيح (A25)، والتخطيط والتفكيك (A26)، والتحقق ومعايير الجودة (A27)، واختيار الأدوات في أي بيئة مع مكتبة 15 مجموعة (A28)، والتعافي من الفشل (A29)، بأوامر `think.py intake/decompose/qa/recover` المختبرة».
-
 
 إصدار إضافي متوافق بطلب المستخدم («طوّر البروتوكول جدًا واجعله أكثر ذكاءً»): لا تتغير المراحل ولا معاني الخطط ولا الحدود؛ تُضاف خمسة ملاحق بأدوات مختبرة ومكتبة مولّدة، ونسخة محمولة موسعة.
 
@@ -192,7 +200,7 @@
 
 | المعرّف القديم | العنوان القديم | المكان الجديد |
 |---|---|---|
-| `banner` | سطر «نسخة الدمج الموسّعة v5.2» تحت العنوان | [النواة: العنوان وفقرة ما تغيّر](../../PROTOCOL.md#kosif-superpowers--kosif-see--universal-skill-intelligence-protocol-usip-v59) · نص السطر: [A11](A11-snapshots-20261021.md#من-العنوان--السطر-التعريفي-لـ-v52) |
+| `banner` | سطر «نسخة الدمج الموسّعة v5.2» تحت العنوان | [النواة: العنوان وفقرة ما تغيّر](../../PROTOCOL.md#kosif-superpowers--kosif-see--universal-skill-intelligence-protocol-usip-v60) · نص السطر: [A11](A11-snapshots-20261021.md#من-العنوان--السطر-التعريفي-لـ-v52) |
 | `toc` | الفهرس / contents | [النواة §الفهرس](../../PROTOCOL.md#الفهرس--contents) |
 | `repo-origin` | المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة | [النواة §المستودع الأصل](../../PROTOCOL.md#المستودع-الأصل--اقرأه-كاملًا-حتى-لو-لم-تكن-المهارة-مثبتة) · صف commit v3.1: [A11](A11-snapshots-20261021.md#من-المستودع-الأصل--صف-commit-ملف-v31) |
 | `loop` | الحلقة في شاشة واحدة | [النواة §الحلقة](../../PROTOCOL.md#الحلقة-في-شاشة-واحدة) · وتفصيلها [النواة §المسار القانوني](../../PROTOCOL.md#المسار-القانوني-الواحد--canonical-pipeline) |
