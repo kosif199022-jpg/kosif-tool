@@ -52,3 +52,12 @@ python3 scripts/fetch_video.py --update                         # عند تغي�
 ## 100-source licensed media discovery — NEW
 
 See [100 source websites and license checks](stock-media-100.md). Before acquiring stock for montage use `scripts/media_sources.py search` then `plan` and `download` with verified per-item `--rights` and `--evidence-url`. This builds an asset-level rights and SHA-256 manifest and reuses the current yt-dlp downloader. Never infer permissions merely because a site is indexed.
+
+
+## نقل سلوك Cinema C V34 إلى fetch-video — 2026-10-30
+
+- **إصلاح الفيديو الرأسي:** `--quality 1080` يستخدم تفضيل الفرز `-S res:1080,fps,vcodec:h264,acodec:aac` لقياس الضلع الأقصر؛ لم نعد نستبعد الفيديو 1080×1920 بسبب `[height<=1080]`. هذا *تفضيل جودة* وليس حدًا صارمًا مضمونًا عند عدم توفر الصيغة المطلوبة.
+- **`--safe` على الفيديو المتوافق:** يفحص FFprobe H.264/HEVC + AAC وأبعاد المسار؛ إذا أمكن يستخدم FFmpeg لعمل remux مع `+faststart` بلا إعادة ترميز أو فقد جودة. إذا تعذر ذلك يعيد الترميز إلى H.264/AAC، ثم يفك إطارًا حقيقيًا للتحقق. يحتفظ بالأصل ولا يسلم الملف الجزئي بعد الفشل.
+- **اختبار حي في GitHub Actions:** [Cinema V34 media tests](https://github.com/kosif199022-jpg/kosif-tool/actions/workflows/cinema-v34-intake-tests.yml) (6 حالات: الجودة الرأسية، الصوت، 4K، ملف H.264، ملف MPEG-4، ملف فاسد).
+- **حد التنفيذ:** نجاح Cinema على آيفون المالك دليل نجاح *بيئة الآيفون*، وليس دليلًا أن نفس الفيديو يتاح من خوادم GitHub. تجربة GitHub برابط YouTube رفضت الوصول برسالة `Sign in to confirm you're not a bot`؛ لم تنتج ملف فيديو على الخادم ولا يُعتبر تنزيلًا ناجحًا. لا تجاوز لـDRM أو أنظمة منع الوصول.
+- **مصدر المقارنة:** سكربتات Cinema C V14.1/V16/V20/V21/V24/V26/V28/V30/V32/V34 التي قدمها المالك في المحادثة. لم يتم تشغيل محتوى السكربتات المرفوعة قبل الفحص، ولم تُنقل ملفات تسجيل الدخول أو الكوكيز.
