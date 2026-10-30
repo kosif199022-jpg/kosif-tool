@@ -18,6 +18,8 @@ For any task, ask the front door first: `python3 .claude/skills/kosif-superpower
 
 Read AGENTS.md, then the selected style's `styles/<style-id>/SKILL.md`, `STYLE.json` and `BRIEF.md` (when present), then the playbooks that the SKILL.md lists (`playbooks/<category>.md`, plus `playbooks/arabic-typography.md` for Arabic text, `playbooks/audio-sync.md` when audio is supplied and `playbooks/render-pipeline.md` before rendering). Find IDs in `STYLE_INDEX.md` or with `python3 tools/kosif.py search <words>`.
 
+**Big uploads (any file, any size):** when the user asks for the upload link, or a file is too big to attach, or says «رفعت», follow `.claude/skills/kosif-upload-link/SKILL.md` (files page https://claude.ai/artifact/5ynx1gBuPUYMnro8yxRS22, videos page https://claude.ai/artifact/52jZrcrPnHByPPVKKXFgSP; join with its `scripts/join_parts.py`).
+
 Uploaded audio or video for montage or motion graphics: use the Montage Pro task force, `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py intake <file> --job <dir>` then `options` and `build` (guide: `.claude/skills/kosif-superpowers/montage-pro/README.md`).
 
 Downloading footage: any link (Pexels, Mixkit, Pixabay, Coverr or other direct `.mp4` files, plus every yt-dlp site) goes through `python3 .claude/skills/kosif-superpowers/scripts/fetch_video.py URL -o <dir>`, or `media_sources.py download URL --rights ...` for the 100-site gateway with a rights record. Stock pages are fetched by `stock_fetch.py` without yt-dlp (yt-dlp gets 403 on them); Pixabay needs a free `PIXABAY_API_KEY`. YouTube and some sites block cloud machines: report it and offer the user's own computer or an upload, never a bypass. Run each of these as one plain command from the repo root, with the exact paths above.
