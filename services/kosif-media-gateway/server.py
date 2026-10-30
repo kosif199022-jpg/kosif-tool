@@ -35,6 +35,7 @@ import time
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import snapany_provider
 
 VERSION = "0.2.0"
 
@@ -783,6 +784,9 @@ class Gateway(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(content)))
         self.send_header("Cache-Control", "no-store")
+        if self.headers.get("Origin") == "https://kosif199022-jpg.github.io":
+            self.send_header("Access-Control-Allow-Origin", "https://kosif199022-jpg.github.io")
+            self.send_header("Vary", "Origin")
         if self.close_connection:
             self.send_header("Connection", "close")
         for k, v in (headers or {}).items():
@@ -820,6 +824,20 @@ class Gateway(BaseHTTPRequestHandler):
             return json.loads(self.rfile.read(size) or b"null"), None
         except (ValueError, UnicodeError):
             return None, "INVALID_JSON"
+
+    def do_OPTIONS(self):
+        if (urllib.parse.urlsplit(self.path).path.startswith("/v1/providers/snapany")
+                and self.headers.get("Origin") == "https://kosif199022-jpg.github.io"):
+            self.send_response(204)
+            self.send_header("Access-Control-Allow-Origin", "https://kosif199022-jpg.github.io")
+            self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Authorization, Content-Type")
+            self.send_header("Access-Control-Max-Age", "600")
+            self.send_header("Content-Length", "0")
+            self.send_header("Vary", "Origin")
+            self.end_headers()
+            return
+        self._send(403, {"ok": False, "error": "CORS_OR_ROUTE_NOT_ALLOWED"})
 
     def do_HEAD(self):
         self.do_GET()
@@ -860,6 +878,9 @@ class Gateway(BaseHTTPRequestHandler):
             return
         if path == "/v1/inbox":
             self._send(200, inbox(self._base_url()))
+            return
+        if path == "/v1/providers/snapany/status":
+            self._send(200, {"ok": True, **snapany_provider.status()})
             return
         if not path.startswith("/v1/files/"):
             self._send(404, {"error": "NOT_FOUND"})
@@ -968,6 +989,15 @@ class Gateway(BaseHTTPRequestHandler):
             self._send(400, {"ok": False, "error": "JSON_OBJECT_REQUIRED"})
             return
         source = str(data.get("video") or data.get("url") or "")
+        if route == "/v1/providers/snapany/resolve":
+            out = snapany_provider.resolve(
+                source,
+                str(data.get("rights", "")),
+                data.get("quality") if type(data.get("quality")) is int else 720,
+                data.get("confirm_credits") is True,
+            )
+            self._send(200 if out.get("ok") else (503 if out.get("error") == "SNAPANY_NOT_CONFIGURED" else 422), out)
+            return
         if route == "/v1/probe":
             out = probe(source, bool(data.get("media_check")))
         elif route == "/v1/download":
