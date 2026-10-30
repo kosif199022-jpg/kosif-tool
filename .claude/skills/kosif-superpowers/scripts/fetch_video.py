@@ -391,6 +391,25 @@ def download(url, a, ytdlp, once: bool = False) -> dict:
     return rec
 
 
+def via_gateway(url: str, a, local: dict) -> dict:
+    """--gateway RIGHTS: when this machine could not download, ask the owner's KOSIF Media Gateway (Render).
+
+    The gateway is a separate host the owner runs; when YouTube refuses it as well, its exact code
+    (LOGIN_REQUIRED, HTTP_429, HTTP_403, PROXY_502) is reported and nothing else is tried."""
+    import _media_gateway as gateway  # noqa: PLC0415
+    if not gateway.available():
+        local["gateway"] = "not configured: set KOSIF_GATEWAY_TOKEN (and KOSIF_GATEWAY_URL if not the default)"
+        return local
+    quality = 720 if a.quality in ("best", "audio") else min((q for q in (360, 480, 720, 1080) if q >= int(a.quality)),
+                                                             default=1080)
+    try:
+        rec = gateway.download(url, a.out, a.gateway, quality)
+    except gateway.GatewayError as exc:
+        rec = {"url": url, "file": None, "provider": "kosif-media-gateway", "error": str(exc)}
+    rec["local_error"] = (local.get("error") or "")[-200:]
+    return rec
+
+
 def doctor(ytdlp) -> int:  # noqa: D103
     print("yt-dlp:", sh(ytdlp + ["--version"]).stdout.strip() if ytdlp else "MISSING (pip install yt-dlp curl_cffi)")
     print("ffmpeg:", "ok" if shutil.which("ffmpeg") else "MISSING")
@@ -421,6 +440,10 @@ def main(argv=None) -> int:
     ap.add_argument("--classify", action="store_true",
                     help="Pinterest pins only: print what each pin is (video, image, gif, youtube, embedded, deleted, ...) "
                          "with one yt-dlp -J call each, and download nothing")
+    ap.add_argument("--gateway", metavar="RIGHTS",
+                    choices=("owned", "written-permission", "public-domain", "cc-licensed", "youtube-authorized"),
+                    help="if this machine is refused, retry once through the owner's KOSIF Media Gateway "
+                         "(needs KOSIF_GATEWAY_TOKEN); RIGHTS says why you may download the video")
     ap.add_argument("--doctor", action="store_true")
     ap.add_argument("--update", action="store_true")
     a = ap.parse_args(argv)
@@ -476,6 +499,8 @@ def main(argv=None) -> int:
             r = stock_download(u, a)
         if r is None:
             r = download(u, a, ytdlp) if ytdlp else {"url": u, **no_ytdlp}
+        if not r.get("file") and a.gateway and not r.get("drm"):
+            r = via_gateway(u, a, r)
         results.append(r)
         print(("OK   " + r["file"]) if r.get("file") else f"FAIL {u}\n     {r.get('error')}")
         if r.get("file") and r.get("size_note"):

@@ -1,0 +1,32 @@
+name: KOSIF Media Gateway tests
+on:
+  pull_request:
+    paths:
+      - "services/kosif-media-gateway/**"
+      - ".claude/skills/kosif-superpowers/scripts/_media_gateway.py"
+      - ".claude/skills/kosif-superpowers/scripts/fetch_video.py"
+      - ".github/workflows/media-gateway.yml"
+  push:
+    branches: [main]
+    paths:
+      - "services/kosif-media-gateway/**"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install (offline tests use a stub yt-dlp; no YouTube traffic from CI)
+        run: python -m pip install -r services/kosif-media-gateway/requirements.txt mcp
+      - name: Gateway, MCP and Superpowers client tests
+        run: python -m unittest discover -s services/kosif-media-gateway/tests -v
+      - name: Server compiles and refuses to start without a token
+        run: |
+          python -m py_compile services/kosif-media-gateway/server.py
+          if python services/kosif-media-gateway/server.py; then exit 1; fi

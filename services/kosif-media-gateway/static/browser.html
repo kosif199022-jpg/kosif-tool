@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KOSIF Video Browser</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=Reem+Kufi:wght@600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: one column on phones; player beside a facts sheet on wide screens, like a screening-room log. */
+:root {
+  --bg: #f3f4f1; --panel: #ffffff; --fg: #1c211f; --muted: #5f6964; --line: #d9ddd8;
+  --accent: #0f7a5c; --warn: #9a5b00; --bad: #a3322a; --ok: #1f7a3a;
+  --display: "Reem Kufi", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #121614; --panel: #1a201d; --fg: #e8ece9; --muted: #9aa59f; --line: #2c3430;
+  --accent: #4cc39b; --warn: #e0a548; --bad: #ef7b72; --ok: #6fd18b; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #121614; --panel: #1a201d; --fg: #e8ece9; --muted: #9aa59f; --line: #2c3430;
+  --accent: #4cc39b; --warn: #e0a548; --bad: #ef7b72; --ok: #6fd18b; color-scheme: dark }
+* { box-sizing: border-box }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 48px }
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 20px }
+h1 { font: 600 clamp(26px, 4vw, 36px)/1.2 var(--display); margin: 0; text-wrap: balance }
+h2 { font: 600 17px/1.3 var(--body); margin: 0 0 10px }
+.lede { color: var(--muted); margin: 4px 0 0; max-width: 65ch }
+form { display: flex; gap: 8px; flex-wrap: wrap }
+input { flex: 1 1 280px; min-width: 0; font: 15px var(--mono); direction: ltr; text-align: left; padding: 11px 12px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--fg) }
+input:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+button { font: 600 15px var(--body); padding: 11px 18px; border: 0; border-radius: 8px; background: var(--accent); color: var(--bg); cursor: pointer }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start }
+@media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr) } }
+.player { background: #000; border-radius: 10px; overflow: hidden; width: 100%; aspect-ratio: 16 / 9; max-width: 100% }
+.player.portrait { aspect-ratio: 9 / 16; max-width: 380px; margin-inline: auto }
+.player iframe { width: 100%; height: 100%; border: 0; display: block }
+.sheet { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; min-width: 0 }
+dl { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 6px 14px; margin: 0 }
+dt { color: var(--muted) } dd { margin: 0; overflow-wrap: anywhere }
+.mono { font-family: var(--mono); direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px }
+.thumbs figure { margin: 0; font: 12px var(--mono); color: var(--muted); text-align: center }
+.thumbs img { height: 64px; border-radius: 6px; display: block; border: 1px solid var(--line) }
+.pill { display: inline-block; font-size: 13px; padding: 1px 9px; border-radius: 99px; border: 1px solid currentColor }
+.ok { color: var(--ok) } .bad { color: var(--bad) } .warn { color: var(--warn) }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px }
+.checks li { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 10px; align-items: baseline }
+.empty { color: var(--muted) }
+a { color: var(--accent) }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>KOSIF Video Browser</h1>
+    <p class="lede">الصق رابط يوتيوب (عادي أو Shorts أو youtu.be). الفيديو بيشتغل في مشغّل يوتيوب الرسمي، والصفحة بتحلل البيانات العامة المتاحة، وبتجرّب هل الصفحة تقدر توصل لملف الفيديو.</p>
+  </header>
+  <form id="f">
+    <input id="u" name="u" autocomplete="off" spellcheck="false" placeholder="https://youtube.com/shorts/dYrEeavC3cw" value="https://youtube.com/shorts/dYrEeavC3cw" aria-label="رابط يوتيوب">
+    <button type="submit">اعرض وحلّل</button>
+  </form>
+  <div class="grid">
+    <div><div id="player" class="player"><p class="empty" style="color:#bbb;padding:16px">المشغّل هيظهر هنا</p></div></div>
+    <section class="sheet" aria-live="polite">
+      <h2>بيانات الفيديو</h2>
+      <dl id="facts"><dt>الحالة</dt><dd class="empty">مستني رابط</dd></dl>
+      <div class="thumbs" id="thumbs"></div>
+    </section>
+  </div>
+  <section class="sheet">
+    <h2>تجربة التحميل من الصفحة</h2>
+    <ul class="checks" id="checks"><li><span class="pill warn">—</span><span class="empty">التجربة بتشتغل بعد تحميل المشغّل</span></li></ul>
+  </section>
+  <section class="sheet">
+    <h2>لو عايز الملف نفسه</h2>
+    <ul class="checks">
+      <li><span class="pill ok">نجح</span><span>Cinema C على الآيفون بتاعك (اتجرب على dYrEeavC3cw).</span></li>
+      <li><span class="pill ok">متاح</span><span>نزّل الفيديو من التطبيق وارفع الملف، وKOSIF يكمّل عليه.</span></li>
+      <li><span class="pill ok">متاح</span><span>فيديوهاتك أنت: تنزيل مباشر من YouTube Studio.</span></li>
+      <li><span class="pill warn">سحابة</span><span>KOSIF Media Gateway على Render بيحمّل من مصادر مسموحة (archive.org وWikimedia)، لكن يوتيوب بيرد عليه بـ LOGIN_REQUIRED.</span></li>
+    </ul>
+  </section>
+</div>
+<script>
+const ID = /^[A-Za-z0-9_-]{11}$/;
+function parse(raw) {
+  raw = (raw || "").trim();
+  if (ID.test(raw)) return { id: raw, kind: "id" };
+  let u; try { u = new URL(raw); } catch { return null; }
+  const host = u.hostname.replace(/^www\.|^m\./, ""), p = u.pathname.split("/").filter(Boolean);
+  let id = null, kind = "watch";
+  if (host === "youtu.be" && p.length === 1) { id = p[0]; kind = "youtu.be"; }
+  else if (host === "youtube.com" && p[0] === "watch") id = u.searchParams.get("v");
+  else if (host === "youtube.com" && ["shorts", "live", "embed"].includes(p[0]) && p[1]) { id = p[1]; kind = p[0]; }
+  return id && ID.test(id) ? { id, kind } : null;
+}
+const $ = (s) => document.getElementById(s);
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+function facts(rows) { $("facts").innerHTML = rows.map(([k, v, cls]) => `<dt>${esc(k)}</dt><dd class="${cls || ""}">${v}</dd>`).join(""); }
+function checks(rows) { $("checks").innerHTML = rows.map(([state, text]) =>
+  `<li><span class="pill ${state === "ok" ? "ok" : state === "bad" ? "bad" : "warn"}">${state === "ok" ? "متاح" : state === "bad" ? "ممنوع" : "جزئي"}</span><span>${text}</span></li>`).join(""); }
+function showDuration(d) {
+  const el = $("dur");
+  if (el && d > 0) { el.innerHTML = `<span class="mono">${fmt(d)}</span> (${Math.round(d)} ث)`; report.duration = d; }
+}
+const fmt = (s) => s ? `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}` : "—";
+let ytReady = new Promise((res) => { window.onYouTubeIframeAPIReady = res; });
+(function () { const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api"; document.head.appendChild(s); })();
+let player = null;
+const report = { checks: [] };
+window.KOSIF_REPORT = report;
+
+async function run(raw) {
+  const v = parse(raw);
+  if (!v) { facts([["الحالة", "الرابط ده مش رابط فيديو يوتيوب. جرّب watch?v= أو shorts/ أو youtu.be/.", "bad"]]); return; }
+  report.id = v.id;
+  facts([["معرّف الفيديو", `<span class="mono">${v.id}</span>`], ["نوع الرابط", esc(v.kind)], ["الحالة", "بيحمّل…"]]);
+  let meta = null;
+  try {
+    const r = await fetch(`https://www.youtube.com/oembed?format=json&url=${encodeURIComponent((v.kind === "shorts" ? "https://www.youtube.com/shorts/" : "https://www.youtube.com/watch?v=") + v.id)}`);
+    meta = r.ok ? await r.json() : { error: r.status };
+  } catch (e) { meta = { error: "network" }; }
+  const portrait = v.kind === "shorts" || (meta && meta.height > meta.width);
+  $("player").className = "player" + (portrait ? " portrait" : "");
+  $("player").innerHTML = '<div id="yt"></div>';
+  await ytReady;
+  const duration = await new Promise((res) => {
+    if (player) { try { player.destroy(); } catch {} }
+    player = new YT.Player("yt", { videoId: v.id, host: "https://www.youtube-nocookie.com",
+      playerVars: { playsinline: 1, rel: 0, modestbranding: 1 },
+      events: { onReady: (e) => res(e.target.getDuration() || 0.001), onError: (e) => res(-e.data),
+                onStateChange: () => showDuration(player.getDuration()) } });
+    setTimeout(() => res(null), 15000);
+  });
+  const qualities = player && player.getAvailableQualityLevels ? player.getAvailableQualityLevels() : [];
+  report.meta = meta; report.duration = duration; report.portrait = portrait;
+  const rows = [["معرّف الفيديو", `<span class="mono">${v.id}</span>`], ["نوع الرابط", esc(v.kind)]];
+  if (meta && !meta.error) {
+    rows.push(["العنوان", esc(meta.title)], ["القناة", `<a href="${esc(meta.author_url)}" target="_blank" rel="noopener">${esc(meta.author_name)}</a>`],
+      ["نسبة المشغّل", `<span class="mono">${meta.width}×${meta.height}</span> ${portrait ? "طولي (Shorts)" : "عرضي"}`]);
+  } else rows.push(["oEmbed", `مش متاح (${esc(meta && meta.error)}). ممكن الفيديو خاص أو ممنوع تضمينه.`, "warn"]);
+  rows.push(["المدة", duration < 0 ? `المشغّل رفض (كود ${-duration})` : `<span id="dur">بتظهر لما يبدأ التشغيل</span>`, duration < 0 ? "bad" : ""]);
+  if (qualities.length) rows.push(["جودات المشغّل", `<span class="mono">${qualities.join(" · ")}</span>`]);
+  rows.push(["رابط المشاهدة", `<a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">فتح على يوتيوب</a>`]);
+  facts(rows);
+  if (duration > 1) showDuration(duration);
+  const names = ["maxresdefault", "sddefault", "hqdefault"];
+  $("thumbs").innerHTML = names.map((n) => `<figure><img alt="" src="https://i.ytimg.com/vi/${v.id}/${n}.jpg" data-n="${n}"><figcaption>${n}</figcaption></figure>`).join("");
+  $("thumbs").querySelectorAll("img").forEach((img) => img.addEventListener("load", () => {
+    img.nextElementSibling.textContent = `${img.dataset.n} ${img.naturalWidth}×${img.naturalHeight}`; }));
+  // The experiment: can this page reach the media?
+  const iframe = document.querySelector("#player iframe");
+  let frameAccess;
+  try { frameAccess = iframe && iframe.contentDocument ? "readable" : "blocked"; } catch (e) { frameAccess = "blocked"; }
+  let streamFetch;
+  try { await fetch(`https://www.youtube.com/watch?v=${v.id}`, { mode: "cors" }); streamFetch = "readable"; }
+  catch (e) { streamFetch = "blocked"; }
+  report.checks = [["metadata", !!(meta && !meta.error)], ["player", duration > 0], ["frame", frameAccess], ["page_fetch", streamFetch]];
+  checks([
+    [meta && !meta.error ? "ok" : "warn", "بيانات عامة (العنوان والقناة ونسبة الأبعاد) عن طريق oEmbed الرسمي."],
+    [duration > 0 ? "ok" : "bad", duration > 0 ? "التشغيل في مشغّل يوتيوب الرسمي (IFrame API)، والمدة بتظهر مع التشغيل." : "مشغّل يوتيوب رفض تشغيل الفيديو ده هنا (ممكن التضمين مقفول)."],
+    [frameAccess === "blocked" ? "bad" : "ok", "قراءة ملف الفيديو من جوه المشغّل: المتصفح بيمنعها لأن المشغّل صفحة تانية تبع يوتيوب (cross-origin)."],
+    [streamFetch === "blocked" ? "bad" : "warn", "طلب صفحة الفيديو من الصفحة دي مباشرة: يوتيوب مش بيسمح بيه (CORS)."],
+  ]);
+}
+$("f").addEventListener("submit", (e) => { e.preventDefault(); run($("u").value); });
+run($("u").value);
+</script>
+</body>
+</html>
