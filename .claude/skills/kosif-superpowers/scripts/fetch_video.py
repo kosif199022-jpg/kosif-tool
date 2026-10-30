@@ -92,11 +92,24 @@ def is_url(u: str) -> bool:
 
 
 def selector(quality: str) -> tuple[str, list[str]]:
-    """Return (format selector, extra args)."""
+    """Cinema V34-aware portrait quality preferences and iOS-friendly formats.
+
+    yt-dlp's [height<=1080] rejects portrait 1080x1920. Its -S res:1080
+    evaluates the shorter side, then prefers H.264 and AAC for Photos.
+    Sorting is a preference, not a guarantee of a strict size cap.
+    """
     if quality == "audio":
         return "ba/b", ["-x", "--audio-format", "m4a"]
-    cap = "" if quality == "best" else f"[height<={int(quality)}]"
-    return f"bv*{cap}+ba/b{cap}/best", ["--merge-output-format", "mp4"]
+    ios_video = "[vcodec~='^(avc|h264|hvc|hev|h265|bytevc1)']"
+    ios_audio = "[acodec~='^(mp4a|aac)']"
+    if quality != "best" and int(quality) > 1080:
+        fmt = "bv*+ba/b/best"
+    else:
+        fmt = f"bv*{ios_video}+ba{ios_audio}/bv*+ba/b{ios_video}/b[ext=mp4]/best"
+    sorting = "res,fps,vcodec:h264,acodec:aac" if quality == "best" else (
+        f"res:{quality},fps,vcodec:h264,acodec:aac"
+    )
+    return fmt, ["-S", sorting, "--merge-output-format", "mp4"]
 
 
 def impersonation(ytdlp: list[str]) -> str | None:
@@ -132,14 +145,59 @@ def attempt(ytdlp, url, out_dir, fmt, extra, cookies, imp, connections, proxy, b
 
 
 def edit_safe(src: Path) -> Path | None:
-    """H.264 + AAC + yuv420p + faststart copy that every editor/Photos app accepts."""
+    """Cinema V34 Photos-safe MP4: lossless remux when possible; encode only if needed.
+
+    Verify a video frame decodes before delivery. Keep the source untouched.
+    A bad or interrupted attempt never leaves a file labelled .safe.mp4.
+    """
     if not shutil.which("ffmpeg"):
         return None
     dst = src.with_name(src.stem + ".safe.mp4")
-    cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(src), "-map", "0:v:0", "-map", "0:a:0?",
-           "-sn", "-dn", "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
-           "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(dst)]
-    return dst if sh(cmd).returncode == 0 and dst.is_file() and dst.stat().st_size else None
+    temp = dst.with_name(dst.stem + ".pending.mp4")
+    formats = None
+    if shutil.which("ffprobe"):
+        try:
+            p = sh(["ffprobe", "-v", "error", "-show_streams", "-of", "json", str(src)], timeout=35)
+            if p.returncode == 0:
+                formats = json.loads(p.stdout).get("streams", [])
+        except (ValueError, OSError, subprocess.TimeoutExpired):
+            pass
+    video = next((s for s in formats or [] if s.get("codec_type") == "video"), {})
+    audio = next((s for s in formats or [] if s.get("codec_type") == "audio"), {})
+    compatible = (
+        (video.get("codec_name") == "h264" and video.get("pix_fmt") in ("yuv420p", "yuvj420p"))
+        or (video.get("codec_name") == "hevc" and video.get("pix_fmt") in ("yuv420p", "yuv420p10le"))
+    ) and (not audio or audio.get("codec_name") == "aac")
+    base = ["ffmpeg", "-y", "-nostdin", "-hide_banner", "-loglevel", "error", "-i", str(src),
+            "-map", "0:v:0", "-map", "0:a:0?", "-sn", "-dn"]
+    trials = []
+    if compatible:
+        tag = "hvc1" if video["codec_name"] == "hevc" else "avc1"
+        trials.append(base + ["-c:v", "copy", "-tag:v", tag, "-c:a", "copy",
+                              "-movflags", "+faststart", str(temp)])
+    # Fallback for unreadable/unsupported codecs. No hidden quality loss when a
+    # stream copy succeeds; iPhone a-Shell's hardware encoder isn't required.
+    trials.append(base + ["-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
+                          "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k",
+                          "-movflags", "+faststart", str(temp)])
+    for command in trials:
+        temp.unlink(missing_ok=True)
+        try:
+            p = sh(command, timeout=300)
+            if p.returncode or not temp.is_file() or temp.stat().st_size <= 0:
+                continue
+            check = sh(["ffmpeg", "-nostdin", "-hide_banner", "-loglevel", "error",
+                        "-i", str(temp), "-map", "0:v:0", "-frames:v", "1",
+                        "-f", "null", "-"], timeout=40)
+            if check.returncode:
+                continue
+            temp.replace(dst)
+            return dst
+        except (OSError, subprocess.TimeoutExpired):
+            continue
+        finally:
+            temp.unlink(missing_ok=True)
+    return None
 
 
 probe = pinterest.probe_media  # ffprobe: duration, width, height, fps, vcodec, acodec ({} without ffprobe)
