@@ -59,6 +59,38 @@ button:disabled{opacity:.5;cursor:not-allowed}button:focus-visible,input:focus-v
 <p id="result" role="status">لم يتم فحص رابط ملف بعد.</p>
 <div id="file-actions" class="row" hidden><a id="file-link" class="btn secondary" href="#" target="_blank" rel="noopener noreferrer">فتح الرابط المرشح ↗</a><button id="copy-url" type="button">نسخ رابط الملف</button></div>
 </section>
+
+<section id="snapany-automatic">
+  <h2>٣أ — استخراج تلقائي عبر SnapAny API الرسمي</h2>
+  <p>الخدمة دي اختيارية، وهي الأقرب لحل رفض YouTube على الخوادم. تدعم روابط Proxy مؤقتة حتى 1080p، لكنها تحتاج حساب SnapAny API ومفتاحًا محفوظًا على خادم Render. 50 رصيد تجربة للحسابات الجديدة، والاستخدام قد يستهلك 4 أرصدة لكل 10 دقائق. <strong>لن يُخصم شيء عند فتح الصفحة أو الضغط على فحص الإعداد.</strong></p>
+  <p><a href="https://platform.snapany.com/docs/youtube-proxy-download" target="_blank" rel="noopener noreferrer">وثائق API الرسمية</a> · <a href="https://platform.snapany.com/" target="_blank" rel="noopener noreferrer">فتح حساب مجاني والحصول على API key</a> · <a href="https://dashboard.render.com/web/srv-dbig4urbc2fs73fcmq50" target="_blank" rel="noopener noreferrer">إعدادات Render</a></p>
+  <label for="gateway-token">مفتاح دخول KOSIF Gateway الخاص بك (ليس مفتاح SnapAny API)</label>
+  <div class="row">
+    <input id="gateway-token" type="password" autocomplete="off" spellcheck="false" placeholder="KOSIF_GATEWAY_TOKEN (يُستخدم في الطلب فقط، ولا يُحفظ)" aria-label="رمز بوابة KOSIF الخاص">
+    <button id="snapany-status" type="button" class="secondary">افحص تفعيل الخدمة</button>
+  </div>
+  <div class="row" style="margin-top:12px">
+    <label for="snapany-rights" style="flex:1 1 170px">إذن استخدام الفيديو
+      <select id="snapany-rights" style="display:block;background:#0c151f;border:1px solid #4a5b6e;border-radius:8px;color:#edf4f8;padding:10px;width:100%">
+        <option value="">اختر أساس الإذن</option><option value="owned">أنا مالك الفيديو</option>
+        <option value="written-permission">إذن مكتوب</option><option value="public-domain">ملك عام</option>
+        <option value="cc-licensed">رخصة Creative Commons تسمح بالتنزيل</option>
+        <option value="youtube-authorized">تنزيل مصرح من يوتيوب</option>
+      </select>
+    </label>
+    <label for="snapany-quality" style="flex:1 1 130px">أقصى جودة
+      <select id="snapany-quality" style="display:block;background:#0c151f;border:1px solid #4a5b6e;border-radius:8px;color:#edf4f8;padding:10px;width:100%">
+        <option value="720">720p</option><option value="1080">1080p</option>
+        <option value="480">480p</option><option value="360">360p</option>
+      </select>
+    </label>
+  </div>
+  <label style="font-weight:400;margin:14px 0"><input id="snapany-consent" type="checkbox" style="width:auto;min-width:0;vertical-align:middle;margin-left:8px"> أوافق على استهلاك أرصدة SnapAny المجانية أو المدفوعة المتاحة في حسابي لهذا الطلب الواحد، وأقر بأن لي إذنًا بتنزيل الفيديو. لن يُفعل الدفع التلقائي من هذه الصفحة.</label>
+  <button id="snapany-run" type="button">اطلب روابط البروكسي من SnapAny</button>
+  <p id="snapany-result" role="status" class="hint">الحالة: لم يتم فحص الخدمة. مطلوب إعداد مفتاح SnapAny API على Render وتفعيله صراحة.</p>
+  <div id="snapany-links" style="display:grid;gap:10px"></div>
+  <p class="hint">روابط البروكسي قد تكون مؤقتة؛ ولو رجع رابط فيديو وصوت منفصلين يحتاجان دمجًا بواسطة FFmpeg. ظهور الرابط ليس إثباتًا أن MP4 نزل كاملًا. لا ترسل توكن أو مفتاح SnapAny إلى رابط عام أو في الدردشة.</p>
+</section>
 <section>
 <h2>٤ — سلّم النتيجة إلى Claude</h2>
 <p>انسخ JSON التالي إلى Claude. الحالة <span class="mono">verified</span> تعني أن الخادم أرجع نوع فيديو عند فحص HEAD؛ لا تعني أننا نزّلنا الملف كاملًا أو تأكدنا من صلاحيته عند Claude. اختبر الوصول إليه من بيئة Claude نفسها.</p>
@@ -101,6 +133,73 @@ show()
 document.getElementById('copy-url').addEventListener('click',function(){if(report.direct_media_url&&navigator.clipboard)navigator.clipboard.writeText(report.direct_media_url)});
 document.getElementById('copy-json').addEventListener('click',function(){show();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('report').value)});
 document.getElementById('reset').addEventListener('click',function(){source.value='';direct.value='';report.source_url=null;report.direct_media_url=null;report.video_id=null;report.provider=null;report.status='not_tested';report.verified=false;document.getElementById('embed').src='about:blank';document.getElementById('player').style.display='none';document.getElementById('file-actions').hidden=true;status.textContent='جاهز لتجربة جديدة.';result.textContent='لم يتم فحص رابط ملف بعد.';show();source.focus()});
+
+const gatewayBase='https://kosif-media-gateway-free-20261030.onrender.com';
+function gatewayKey(){return document.getElementById('gateway-token').value.trim()}
+function snapMessage(msg, cls){var el=document.getElementById('snapany-result');el.textContent=msg;el.className=cls||'hint'}
+function newDownloadLink(url, label){
+  var u;try{u=new URL(url)}catch(e){return null}
+  if(u.protocol!=='https:'||!u.hostname)return null;
+  var a=document.createElement('a');a.href=u.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=label;
+  a.style.wordBreak='break-all';a.style.color='var(--accent)';return a
+}
+async function gatewayRequest(path, payload){
+  var token=gatewayKey();if(!token)throw new Error('أدخل KOSIF Gateway Token في الحقل، ولا تكتب مفتاح SnapAny API هنا.');
+  var ctrl=new AbortController(),timer=setTimeout(()=>ctrl.abort(),65000);
+  try{
+    var res=await fetch(gatewayBase+path,{method:payload?'POST':'GET',
+      headers:Object.assign({'Authorization':'Bearer '+token},payload?{'Content-Type':'application/json'}:{}),
+      body:payload?JSON.stringify(payload):undefined,credentials:'omit',signal:ctrl.signal,cache:'no-store'});
+    var data=await res.json();
+    return {status:res.status,data:data};
+  }finally{clearTimeout(timer)}
+}
+document.getElementById('snapany-status').addEventListener('click',async function(){
+  var btn=this;btn.disabled=true;snapMessage('جارٍ التحقق من إعداد مزود الخدمة على Render…');
+  try{
+    var r=await gatewayRequest('/v1/providers/snapany/status');
+    if(r.status===401)throw new Error('مفتاح KOSIF Gateway غير صحيح (HTTP 401).');
+    if(r.status!==200)throw new Error('خطأ إعداد الخدمة: HTTP '+r.status);
+    snapMessage(r.data.configured?'SnapAny API جاهز. لا يتم استهلاك رصيد إلا عند اختيار طلب الروابط.':'الخادم متاح، لكن SnapAny API غير مفعّل. أضف KOSIF_SNAPANY_API_KEY و KOSIF_SNAPANY_ENABLED=1 في إعدادات Render فقط.',r.data.configured?'success':'warn');
+  }catch(e){snapMessage('تعذر فحص الاتصال: '+e.message+' (قد يكون السبب CORS أو عدم نشر تحديث Render).','error')}
+  finally{btn.disabled=false}
+});
+document.getElementById('snapany-run').addEventListener('click',async function(){
+  var btn=this;var vid=parseYouTube(source.value.trim());
+  if(!vid){snapMessage('أدخل رابط يوتيوب صحيحًا أولًا.','error');return}
+  var rights=document.getElementById('snapany-rights').value;
+  if(!rights){snapMessage('اختر الإذن الذي يسمح بتنزيل الفيديو.','error');return}
+  if(!document.getElementById('snapany-consent').checked){snapMessage('لازم توافق صراحة على احتمال استهلاك أرصدة SnapAny لهذا الطلب.','error');return}
+  btn.disabled=true;document.getElementById('snapany-links').replaceChildren();
+  snapMessage('جارٍ طلب روابط SnapAny عبر بوابة KOSIF. قد تُستهلك أرصدة عند نجاح الطلب…');
+  try{
+    var r=await gatewayRequest('/v1/providers/snapany/resolve',{
+      video:'https://www.youtube.com/watch?v='+vid,rights:rights,
+      quality:Number(document.getElementById('snapany-quality').value),
+      confirm_credits:true});
+    var d=r.data;
+    if(!d.ok){snapMessage('لم يتم الحصول على روابط فيديو: '+(d.error||'UNKNOWN')+
+      (r.status===503?' — يلزم تفعيل مزود SnapAny على Render.':''),'warn');return}
+    snapMessage('وصلت '+(d.options||[]).length+' خيارات روابط من SnapAny. لم يتم تنزيل MP4 أو التحقق من صلاحية الرابط من بيئة Claude.','success');
+    var box=document.getElementById('snapany-links');
+    for(var o of d.options||[]){
+      var line=document.createElement('div');line.style.padding='10px';line.style.border='1px solid var(--edge)';line.style.borderRadius='8px';
+      var caption=document.createElement('div');caption.textContent='الجودة: '+(o.quality||'المصدر')+(o.requires_mux?' — فيديو وصوت منفصلان':' — ملف مرشح واحد');line.appendChild(caption);
+      var a=newDownloadLink(o.video_proxy_url,'فتح رابط الفيديو المؤقت');
+      if(a)line.appendChild(a);
+      if(o.audio_proxy_url){line.appendChild(document.createTextNode(' | '));
+        var b=newDownloadLink(o.audio_proxy_url,'فتح الصوت المؤقت');if(b)line.appendChild(b)}
+      box.appendChild(line);
+    }
+    if((d.options||[]).length){
+      direct.value=d.options[0].video_proxy_url;
+      report.provider='SnapAny API';report.direct_media_url=direct.value;report.status='proxy_link_returned_unverified';report.verified=false;
+      report.note='Link returned by official provider; actual file delivery, rights and accessibility from Claude not verified.';show();
+    }
+  }catch(e){snapMessage('خطأ اتصال: '+e.message+' — لم نؤكد وصول رابط أو تنزيل فيديو.','error')}
+  finally{btn.disabled=false}
+});
+
 var query=new URLSearchParams(location.search);if(query.get('url'))source.value=query.get('url');if(query.get('direct'))direct.value=query.get('direct');prepare();
 window.KOSIF_LINK_BRIDGE={getReport:function(){return JSON.parse(JSON.stringify(report))},prepare:prepare};
 })();
