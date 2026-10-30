@@ -442,6 +442,15 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
     out["motion"] = sug["motion"]
     out["hints"] = [P.HINTS[h] for h in sug["hints"] if h in P.HINTS]
     out["superskills"] = superskills_for(brief)
+    # SEE stays a method layer inside the one existing hub, not another registry.
+    try:
+        from see_superpower_unifier import fuse as _see_fuse
+        _see_mode = ("full_pro" if re.search(r"(?i)full[ -]?pro|وضع البرو|قصيف برو", brief)
+                     else "deep" if re.search(r"(?i)\\bdeep\\b|فكر بعمق|فكّر بعمق", brief)
+                     else "standard")
+        out["see_fusion"] = _see_fuse(brief, out, mode=_see_mode)
+    except (ImportError, TypeError, ValueError) as exc:
+        out["see_fusion"] = {"status": "UNAVAILABLE", "reason": type(exc).__name__}
     nxt = []
     if tools:
         nxt.append(f"python3 scripts/hub.py tool {tools[0][1]['id']}")
@@ -513,6 +522,13 @@ def cmd_find(a) -> int:
         for k in res["superskills"]:
             print(f"  {k['slug']:<34} {k['title_ar']} — {k['title_en']}")
             print(f"     $ {shown(k['show'], {'root': 'skill'})}")
+    fusion = res.get("see_fusion") or {}
+    if fusion.get("status") == "PLAN_ONLY":
+        print("\\n🧠 SEE × Superpowers — unified reasoning route")
+        print("  lenses: 11 available · SEE domains: 9 mapped · loaded method candidates: "
+              + ", ".join(m["name"] for m in fusion["selected_see_methods"]))
+        print("  execution: NOT_RUN · verification: NOT_RUN"
+              + (" · Full Pro: NOT_FULL_PRO" if fusion["full_pro"]["requested"] else ""))
     for h in res["hints"]:
         print(f"\nhint: {h}")
     q = shlex.quote(a.brief)
