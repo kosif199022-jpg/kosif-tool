@@ -298,6 +298,43 @@ def rank_tools(reg: dict, brief: str, terms: list, power_families: Counter, limi
     return scored[:limit]
 
 
+def explain_tool_match(tool: dict, terms: list) -> dict:
+    """Return a compact, deterministic explanation of why a tool matched.
+
+    The scorer used to expose only a number.  Agents could not tell which request
+    words produced that number, and therefore could not distinguish a strong
+    semantic match from a catalog accident.  Keep this explanation derived from
+    the exact same strong/normal fields used by ``rank_tools``.
+    """
+    strong, normal = tool_text(tool)
+    strong_hits, normal_hits = [], []
+    for term in terms:
+        if term[:1] in "@~!":
+            continue
+        if _hit(term, strong):
+            strong_hits.append(term)
+        elif _hit(term, normal):
+            normal_hits.append(term)
+    return {
+        "matched_terms": list(OrderedDict.fromkeys(strong_hits + normal_hits))[:12],
+        "strong_terms": list(OrderedDict.fromkeys(strong_hits))[:12],
+    }
+
+
+def execution_plan(tool_results: list) -> dict:
+    """Turn ranked tool cards into an honest ready-now / blocked execution plan."""
+    ready = [t for t in tool_results if t["readiness"]["state"] == "ready"]
+    blocked = [t for t in tool_results if t["readiness"]["state"] != "ready"]
+    unlocks = Counter(req for t in blocked for req in t["readiness"].get("missing", []))
+    return {
+        "primary": ready[0]["id"] if ready else None,
+        "ready_now": [t["id"] for t in ready],
+        "blocked": [{"id": t["id"], "missing": t["readiness"].get("missing", [])} for t in blocked],
+        "best_unlocks": [{"requirement": req, "tools_unlocked": count}
+                         for req, count in sorted(unlocks.items(), key=lambda item: (-item[1], item[0]))[:8]],
+    }
+
+
 # ------------------------------------------------------------------ guides
 def doc_entries(reg: dict = None) -> list:
     """Every reference guide (references/*.md, not the generated family chapters) with its title and area."""
@@ -432,8 +469,9 @@ def find(brief: str, limit_tools: int = 5, limit_powers: int = 10, reg: dict = N
     fam_chapters = [f"references/powers/{f}.md" for f in sug["chapters"][:4]]
     out = OrderedDict()
     out["brief"] = brief
-    out["tools"] = [dict(tool_card(t, reg, full=False), score=s, docs=t["docs"][:2], safety=t["safety"], consent=t["consent"],
-                         evidence=t["evidence"]) for s, t in tools]
+    out["tools"] = [dict(tool_card(t, reg, full=False), score=s, **explain_tool_match(t, terms), docs=t["docs"][:2],
+                         safety=t["safety"], consent=t["consent"], evidence=t["evidence"]) for s, t in tools]
+    out["execution_plan"] = execution_plan(out["tools"])
     out["powers"] = [dict(P.short(p, s), when=p.get("when", ""), family=p.get("family")) for s, p in sug["picked"][:limit_powers]]
     out["guides"] = [{"path": d["path"], "title": d["title"], "score": s} for s, d in docs]
     out["family_chapters"] = fam_chapters
@@ -488,6 +526,8 @@ def cmd_find(a) -> int:
         tool = by[t["id"]]
         print(f"  {i}. {t['id']} — {t['title_en']} / {t['title_ar']}  [{t['area']} · {state_mark(t['readiness'])}]")
         print(f"     {t['summary_en']}")
+        if t.get("matched_terms"):
+            print("     why: " + ", ".join(t["matched_terms"]))
         print(f"     $ {shown(t['first_command'], tool)}")
         extra = []
         if t["docs"]:
@@ -515,6 +555,12 @@ def cmd_find(a) -> int:
             print(f"     $ {shown(k['show'], {'root': 'skill'})}")
     for h in res["hints"]:
         print(f"\nhint: {h}")
+    plan = res.get("execution_plan", {})
+    if plan.get("primary"):
+        print(f"\nready now: {plan['primary']} (primary)" +
+              (" · alternatives: " + ", ".join(plan["ready_now"][1:]) if len(plan.get("ready_now", [])) > 1 else ""))
+    elif plan.get("blocked"):
+        print("\nready now: none of the matched tools; inspect best_unlocks in --json before installing anything")
     q = shlex.quote(a.brief)
     print("\nnext: " + " · ".join(shown(n[: -len(q)], {"root": "skill"}) + q if n.endswith(" " + q) else shown(n, {"root": "skill"})
                                    for n in res["next"]))
