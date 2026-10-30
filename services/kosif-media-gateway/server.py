@@ -746,6 +746,17 @@ class Gateway(BaseHTTPRequestHandler):
                 body["public_probe"] = public_probe()
             self._send(200, body)
             return
+        if path in ("/browser", "/browser/"):
+            page = (Path(__file__).resolve().parent / "static" / "browser.html").read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(page)))
+            self.send_header("Cache-Control", "no-cache")
+            self.send_header("Referrer-Policy", "strict-origin-when-cross-origin")
+            self.end_headers()
+            if self.command != "HEAD":
+                self.wfile.write(page)
+            return
         if path == "/mcp":
             self._send(405, {"error": "SSE_STREAM_NOT_SUPPORTED"}, {"Allow": "POST"})
             return

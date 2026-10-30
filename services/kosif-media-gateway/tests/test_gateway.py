@@ -120,6 +120,12 @@ class TestHttp(Base):
         self.assertTrue(body["dependencies"]["ffmpeg"])
         self.assertFalse(body["youtube_download_verified"])
 
+    def test_browser_page_is_public(self):
+        code, headers, body = self.req("GET", "/browser", token=None)
+        self.assertEqual(code, 200)
+        self.assertIn("text/html", headers["Content-Type"])
+        self.assertIn(b"KOSIF Video Browser", body)
+
     def test_auth_failures(self):
         for tok in (None, "wrong", TOKEN + "x", TOKEN[:-1]):
             code, headers, body = self.jreq("POST", "/v1/probe", {"video": "dYrEeavC3cw"}, token=tok)

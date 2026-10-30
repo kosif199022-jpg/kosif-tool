@@ -46,6 +46,7 @@ Free services sleep after ~15 idle minutes, so the first request can take up to 
 | `POST /v1/download` | Bearer | `{"video": "ID or URL", "rights": "cc-licensed", "quality": 720}` |
 | `GET /v1/files/<ticket>` | Bearer | The file; `X-Content-SHA256` header carries its hash |
 | `POST /mcp` | Bearer | MCP Streamable HTTP (stateless JSON responses) |
+| `GET /browser` | none | KOSIF Video Browser: paste a YouTube link, watch it in YouTube's official embed, read public oEmbed data, thumbnails and duration. It does not download: the page cannot read the player's media (cross-origin) and YouTube blocks direct requests (CORS) |
 
 `rights` must be one of `owned`, `written-permission`, `public-domain`, `cc-licensed`, `youtube-authorized`.
 `quality` (360/480/720/1080) caps the **shorter side** (Cinema C V34 rule), so a portrait 1080x1920 Short counts as 1080.
