@@ -72,7 +72,7 @@
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير | v5.9 | مهارة `living-site` و`check.py` |
 | [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling | v5.11 | `kling_lint.py` |
 | [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح | v5.12 | `collect_links.js` |
-| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم» | v6.0 | `validate_receipt.py` |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) · [A46 Suno](references/protocol/A46-suno-mcp.md) · [A45 يوتيوب](references/protocol/A45-youtube-download.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب | v6.0 | `validate_receipt.py`، `yt_get.sh` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
@@ -186,7 +186,7 @@
 
 ## المرحلة 0 — تشغيل KOSIF والتحقق من البيئة
 
-**جسر SEE:** ملفات SEE (`SYSTEM_REGISTRY.json` ثم `COGNITIVE_CORE.md`) تُقرأ أولًا فقط إن كانت إضافة SEE متاحة فعلًا، وليست في هذا المستودع؛ وإلا فـ Stage-0 الموثقة، بلا ملفات أو اتصال مخترع ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-0)). سجّل في `Stage0Card`: `side_effect_owner` و`approval_required` و`verification`.
+**جسر SEE:** ملفات SEE (`SYSTEM_REGISTRY.json` ثم `COGNITIVE_CORE.md`) تُقرأ أولًا فقط إن كانت إضافة SEE متاحة فعلًا، وليست في هذا المستودع؛ وإلا فـ Stage-0 الموثقة، بلا ملفات أو اتصال مخترع ([النص الكامل](references/protocol/A1-see-thinking.md#جسر-see--المرحلة-0)). سجّل في `Stage0Card`: `side_effect_owner` و`approval_required` و`verification`. **أولًا: سطر `suno:` ([A46](references/protocol/A46-suno-mcp.md)).**
 
 **مرة واحدة في الجلسة:** `boot.py` أولها كما يطلب `CLAUDE.md` (ثانية واحدة لا تؤخر جواب L0)، والباقي عند أول طلب L1 فأعلى؛ ولا تُعاد إلا إن تغيّر الكتالوج (`git status` يُظهر تعديلًا تحت `data/`) أو بعد أي `build`:
 
@@ -510,10 +510,10 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## دروس ميدانية — مشاريع المونتاج والموشن (أكتوبر 2026)
 
-نُقلت الدروس الاثنا عشر (الاستلام من الرابط، التفريغ، الآيات بنصها، اللقطات المجانية، الصوت بنسخ التيار، التحقق قبل التسليم…) كما هي إلى [A19](references/protocol/A19-field-lessons-montage.md) في v5.4، وما زالت تلزم كل مشروع مونتاج أو موشن من رابط فيديو. ومنذ 29-10: 13 (ماستر بلا `-shortest`، MD5) و14 (التلاوة).
+نُقلت الدروس الاثنا عشر كما هي إلى [A19](references/protocol/A19-field-lessons-montage.md) في v5.4، وما زالت تلزم كل مشروع مونتاج أو موشن من رابط فيديو. ومنذ 29-10: 13 (ماستر بلا `-shortest`، MD5) و14 (التلاوة).
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> **USIP v6.0:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم مجلس الخمسة ببوابته (A38)، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. للأحكام الصعبة أنماط الاستدلال والوزن البايزي وبوابات القرار والتدقيق الذاتي في `references/protocol/A24-reasoning-modes-decision-gates.md` و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29. ترتيب ملفات المهارة في `references/LAYOUT.md`.
+> **USIP v6.0:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم مجلس الخمسة ببوابته (A38)، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. الأحكام الصعبة في A24 و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29.
 
-> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع (يعمل وحده)، أو المضغوطة `docs/protocol/USIP_PORTABLE_v6_0.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.
+> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع، أو المضغوطة `docs/protocol/USIP_PORTABLE_v6_0.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.
