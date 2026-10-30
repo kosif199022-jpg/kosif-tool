@@ -1,0 +1,44 @@
+name: Rebuild Smart Index After SEE Fusion
+on:
+  push:
+    branches: ['feature/see-superpowers-unified-fusion-20261030']
+    paths: ['.github/workflows/see-fusion-smart-index-once.yml']
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/see-superpowers-unified-fusion-20261030
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild smart index and all dependent public artifacts
+        run: |
+          cd .claude/skills/kosif-superpowers
+          python3 scripts/hub.py build --check
+          python3 scripts/smart_capabilities.py build
+          python3 scripts/smart_capabilities.py cards
+          python3 scripts/smart_capabilities.py library
+          python3 scripts/capability_atlas.py build
+          python3 scripts/micro_index.py build
+          python3 scripts/capability_graph.py build
+          cd ../../../
+          python3 .claude/skills/kosif-superpowers/scripts/boot.py --static --write
+          python3 .claude/skills/kosif-superpowers/scripts/smart_capabilities.py verify
+          python3 .claude/skills/kosif-superpowers/scripts/capability_atlas.py build --check
+          python3 .claude/skills/kosif-superpowers/scripts/capability_graph.py build --check
+          python3 .claude/skills/kosif-superpowers/scripts/micro_index.py build --check
+          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+      - name: Commit exactly the generated public outputs
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A .claude/skills/kosif-superpowers CAPABILITIES.md llms.txt usip-library
+          if git diff --cached --quiet; then echo 'Up to date'; else
+            git diff --cached --stat
+            git commit -m 'fix(superpowers): update smart capability indexes after SEE fusion'
+            git push origin HEAD:feature/see-superpowers-unified-fusion-20261030
+          fi
