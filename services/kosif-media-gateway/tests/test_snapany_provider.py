@@ -92,7 +92,7 @@ class SnapAnyProviderTest(unittest.TestCase):
     def test_daily_cap(self):
         os.environ["KOSIF_SNAPANY_ENABLED"] = "1"
         os.environ["KOSIF_SNAPANY_API_KEY"] = "mock-secret"
-        with mock.patch.object(mod.urllib.request, "urlopen", return_value=_Response(_FIXTURE)) as called:
+        with mock.patch.object(mod.urllib.request, "urlopen", side_effect=lambda *args, **kwargs: _Response(_FIXTURE)) as called:
             for _ in range(2):
                 self.assertTrue(mod.resolve(_VIDEO, "owned", 720, True)["ok"])
             third = mod.resolve(_VIDEO, "owned", 720, True)
