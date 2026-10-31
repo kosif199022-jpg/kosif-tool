@@ -91,6 +91,10 @@ class CognitivePlannerTests(unittest.TestCase):
         b = brain.plan("animation video", self.catalog, {})
         self.assertEqual(a["assignment_sha256"], b["assignment_sha256"])
 
+    def test_metadata_ignores_non_dict_entries(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(brain.metadata({"a": 1}, Path(tmp)), {})
+
     def test_arabic_prefixes_are_normalised(self):
         self.assertIn("مونتاج", brain.tokens("والمونتاج"))
         self.assertIn("صوت", brain.tokens("بصوت"))

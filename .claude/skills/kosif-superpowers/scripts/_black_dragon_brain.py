@@ -137,7 +137,7 @@ def metadata(index: dict, skill_root: Path) -> dict:
     for key, meta in index.items():
         if key in result:
             continue
-        if meta.get("text"):
+        if isinstance(meta, dict) and meta.get("text"):
             result[key] = str(meta["text"])
     return result
 
