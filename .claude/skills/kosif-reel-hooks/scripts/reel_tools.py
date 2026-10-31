@@ -64,7 +64,10 @@ def tokens(text):
 
 
 def variants(word):
-    """A word plus its forms without the attached و / ف / ب / ل / ال."""
+    """A word plus its forms without a leading و / ف and the article (ال، بال، لل، كال).
+
+    Bare ب / ل are left alone: stripping them turns ordinary words into false lexicon hits.
+    """
     w = norm(word)
     forms = {w}
     for pre in ("و", "ف"):
@@ -117,13 +120,15 @@ STAKES = lex("""
 خسرت خسرنا خساره بخسر هتخسر غلط غلطه اغلاط اخطاء خطا متعملش ماتعملش متعملوش
 مش مفيش محدش ماحدش ماحدّش حد سر اسرار سري ممنوع اوعي اياك بطل وقف اترفدت فشلت فشل
 ضيعت ضاع ضاعت ضياع اتسرق سرقه نصب كدب كذب كدبه الحقيقه حقيقه مجاني ببلاش بدل بدون
-من غير لكن بس قبل لحد ندمت ندم تحذير خطر اسوا احسن اغلي ارخص وفرت وفرت وفر
+لكن بس قبل لحد ندمت ندم تحذير خطر اسوا احسن اغلي ارخص وفرت وفرت وفر
 مستحيل اول اخر الوحيد دلوقتي بقيت بقت بدلا ضد مقابل بجد فعلا لسه خلاص ابدا عمر عمري
 اسرق انسرق
 stop never wrong mistake lost lose cost broke failed nobody no not don't can't
 quit fired deleted secret truth lie free only without instead but before until
 worst regret wasted warning versus vs actually still already first
 """)
+
+STAKE_PHRASES = {norm(p) for p in ("من غير", "مش هتصدق", "بدل ما")}
 
 WEAK_OPENERS = [norm(x) for x in [
     "اهلا", "أهلاً", "مرحبا", "السلام", "ازيكم", "إزيكم", "هاي", "يا جماعه", "يا شباب",
@@ -228,7 +233,10 @@ def check_specificity(text):
 
 
 def check_stakes(text):
-    marks = sorted({norm(t) for t in tokens(text) if in_lex(t, STAKES)})
+    marks = {norm(t) for t in tokens(text) if in_lex(t, STAKES)}
+    # Two-word stakes ("without") must match as a phrase, never word by word.
+    marks |= {p for p in STAKE_PHRASES if p in norm(text)}
+    marks = sorted(marks)
     if re.search(r"\$\s?\d|\d[\d,٬]*\s*(?:جنيه|دولار|ريال|درهم)", text.translate(DIGITS)):
         marks.append("سعر")
     score = {0: 20.0, 1: 70.0}.get(len(marks), 100.0)
@@ -241,11 +249,12 @@ def check_frontload(text):
     if not t:
         return 0.0, "فاضي"
     opener = norm(" ".join(t[:2]))
-    weak = next((w for w in WEAK_OPENERS if opener.startswith(w) or norm(t[0]) == w), None)
+    weak = next((w for w in WEAK_OPENERS if opener == w or opener.startswith(w + " ")
+                 or norm(t[0]) == w), None)
     payload = None
     for i, tok in enumerate(t):
         if (in_lex(tok, STAKES | SPOKEN_NUMBERS | MONEY) or re.search(r"\d", tok)
-                or (i and LATIN_PROPER_RE.fullmatch(tok))):
+                or (i and re.fullmatch(r"[A-Z][a-z]{2,}", tok))):
             payload = i
             break
     if payload is None:

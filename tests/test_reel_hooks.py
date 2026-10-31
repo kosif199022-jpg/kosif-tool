@@ -45,6 +45,19 @@ class TestHookScore(unittest.TestCase):
         self.assertFalse(r["screen"]["ok"])
         self.assertTrue(rt.score_hook("خسرت ٤٠٠٠ جنيه.", screen="٤٠٠٠ جنيه ضاعوا")["screen"]["ok"])
 
+    def test_tashkeel_strips_marks_not_letters(self):
+        self.assertEqual(rt.norm("خَسِرْتُ"), "خسرت")
+
+    def test_common_preposition_is_not_a_stake(self):
+        self.assertEqual(rt.check_stakes("اشتريت الكتاب من المكتبة")[0], 20.0)
+
+    def test_latin_name_counts_as_front_payload(self):
+        self.assertEqual(rt.check_frontload("my client Canva paid twice")[0], 100.0)
+
+    def test_weak_opener_needs_a_word_boundary(self):
+        self.assertNotIn("بداية ضعيفة", rt.check_frontload("Something broke at Canva")[1])
+        self.assertIn("بداية ضعيفة", rt.check_frontload("so I lost $400")[1])
+
     def test_library_examples_are_usable(self):
         lib = json.loads((SKILL / "data/hooks_ar.json").read_text(encoding="utf-8"))
         self.assertEqual(len(lib["hooks"]), 16)
