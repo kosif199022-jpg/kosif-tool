@@ -293,7 +293,7 @@ chapter: [color-palette-grading](../powers/color-palette-grading.md) · card: `u
 
 ## photo-video-footage (motion)
 
-chapter: [photo-video-footage](../powers/photo-video-footage.md) · card: `usip-library/cards/images/photo-video-footage.md` · tools: `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `creative-external-search` · `dua-wednesday` …
+chapter: [photo-video-footage](../powers/photo-video-footage.md) · card: `usip-library/cards/images/photo-video-footage.md` · tools: `adobe-mcp-bridges` · `app-studio` · `app-studio-paint` · `cinema-lab` · `cinematic-broll-render` · `cinematic-cut-planner` · `cinematic-pro-conductor` · `creative-external-search` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

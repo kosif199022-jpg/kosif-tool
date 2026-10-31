@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (19 أداة)
+# أدوات المجال `edit` (20 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -160,6 +160,52 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:cinematic-cut-planner --evidence <ملف>`.
+
+### `cinematic-pro-conductor` — مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/cinematic_pro_conductor.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `untested` |
+| العائلات | `transitions-cuts`, `audio-sync-captions`, `photo-video-footage`, `qa-verification` |
+
+**ما تفعله:** يستعرض مهارات سوبر باور وأدوار مونتاج برو الثلاثة عشر ويخطط للمهارات الملائمة، ثم ينفذ المونتاج عبر المحرك الحالي مع تسجيل ما نُفذ فعلًا، وحماية بصمة المصدر، ورفض الادعاء بنجاح فيديو MP4 لم يُفحص.
+
+**What it does:** Inventories available Superpowers modules and 13 Montage Pro creative roles, proposes a task-specific workflow, and routes permitted local audio/video to the existing render pipeline. It distinguishes proposed roles from executed steps, preserves source SHA-256, and rejects missing or unverified MP4 outputs.
+
+#### متى تُستدعى
+
+- «شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل»
+- «ابغى أمر واحد يطلع فيديو موشن مفحوص من صوتي»
+- «Unify relevant KOSIF Superpowers video skills in one real verified montage run»
+- «Create a cinematic Pro reel with evidence that the MP4 actually rendered»
+
+#### الأوامر
+
+- **doctor**: List installed skills and tool/module readiness without claiming execution.
+  - `python3 scripts/cinematic_pro_conductor.py doctor`
+- **plan**: Show the chosen Montage Pro team and stages before any media is touched.
+  - `python3 scripts/cinematic_pro_conductor.py plan --kind audio --option kinetic-film`
+- **run**: Use local intake, option selection and real Montage Pro renderer; write an evidence receipt and exit nonzero unless verified MP4 exists.
+  - `python3 scripts/cinematic_pro_conductor.py run ./voice.wav --job ../../../out/cinema/my-reel --option kinetic-film --style cinematic`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- optional: bin:node, bin:chromium, pip:faster-whisper
+- الأمان: runs-external-programs
+- الموافقة: Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.
+- الحدود: Planning does not execute every installed skill; the runnable options use Montage Pro and do not automatically fuse specialist B-roll/3D/WhisperX branches into a single timeline. Creative visual review and source rights are still human-gated.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_cinematic_pro_conductor.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/cinematic-pro-conductor.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:cinematic-pro-conductor --evidence <ملف>`.
 
 ### `creative-quality-gate` — بوابة جودة خطة المونتاج / Reference-edit structural quality gate
 

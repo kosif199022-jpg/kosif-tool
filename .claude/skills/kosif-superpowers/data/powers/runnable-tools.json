@@ -7976,5 +7976,50 @@
   ],
   "section": "Sources and references / المصادر والمراجع",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-180",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+  "name_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+  "status": "ready",
+  "what": "يستعرض مهارات سوبر باور وأدوار مونتاج برو الثلاثة عشر ويخطط للمهارات الملائمة، ثم ينفذ المونتاج عبر المحرك الحالي مع تسجيل ما نُفذ فعلًا، وحماية بصمة المصدر، ورفض الادعاء بنجاح فيديو MP4 لم يُفحص. — Inventories available Superpowers modules and 13 Montage Pro creative roles, proposes a task-specific workflow, and routes permitted local audio/video to the existing render pipeline. It distinguishes proposed roles from executed steps, preserves source SHA-256, and rejects missing or unverified MP4 outputs.",
+  "when": "شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل / Unify relevant KOSIF Superpowers video skills in one real verified montage run",
+  "how": "doctor: `python3 scripts/cinematic_pro_conductor.py doctor`; plan: `python3 scripts/cinematic_pro_conductor.py plan --kind audio --option kinetic-film`; run: `python3 scripts/cinematic_pro_conductor.py run ./voice.wav --job ../../../out/cinema/my-reel --option kinetic-film --style cinematic`. Full card: `python3 scripts/hub.py tool cinematic-pro-conductor`. Limits: Planning does not execute every installed skill; the runnable options use Montage Pro and do not automatically fuse specialist B-roll/3D/WhisperX branches into a single timeline. Creative visual review and source rights are still human-gated.",
+  "params": "in: Owned or licensed local audio/video source; output job under out/ (or outside checkout); selected runnable option and optional style. · out: JOB/intake.json, options.json, out/*.mp4 if rendered, and cinema_pro_receipt.json with actual stages, source SHA-256, verification result and truthful success/failure.",
+  "install": "needs on PATH: ffmpeg, ffprobe · optional: bin:node, bin:chromium, pip:faster-whisper",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "imagemagick"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "cinematic-pro-conductor",
+   "cinematic pro",
+   "superpowers",
+   "montage",
+   "orchestrator",
+   "one command",
+   "motion",
+   "skills",
+   "verify video",
+   "MP4",
+   "director",
+   "سينما برو",
+   "سوبر باور",
+   "مونتاج",
+   "إخراج",
+   "تحقق",
+   "توحيد المهارات"
+  ],
+  "section": "Editing and reference video / المونتاج والفيديو المرجعي",
+  "source": "data/tools.json"
  }
 ]

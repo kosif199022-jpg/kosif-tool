@@ -108,6 +108,7 @@
 | `cinema-lab` | TOOL-175 | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | `python3 scripts/cinema_lab.py doctor` | 1 |
 | `cinematic-broll-render` | TOOL-19 | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest…` | 1 |
 | `cinematic-cut-planner` | TOOL-20 | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips…` | 2 |
+| `cinematic-pro-conductor` | TOOL-180 | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي · Cinema Pro Conductor — single-entry montage with evidence-gated delivery | `python3 scripts/cinematic_pro_conductor.py doctor` | 1 |
 | `creative-quality-gate` | TOOL-35 | بوابة جودة خطة المونتاج · Reference-edit structural quality gate | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json -…` | 1 |
 | `dua-wednesday` | TOOL-132 | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine | `python3 scripts/dua_wednesday.py doctor` | 1 |
 | `fast-edit` | TOOL-168 | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract | `python3 scripts/fast_edit.py doctor` | 1 |

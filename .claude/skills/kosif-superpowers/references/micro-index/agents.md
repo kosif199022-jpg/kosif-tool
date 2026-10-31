@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 276 powers
+[← الفهرس الدقيق / micro index](README.md) · 277 powers
 
 ## الفهرس / contents
 
@@ -49,45 +49,46 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-112 | 🟢 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router → `atlas-task-method-router` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-113 | 🟢 | نقل مناهج الأطلس المثبتة · Atlas verified method transfer → `atlas-transfer` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-71 | 🟢 | فحص قدرات الجهاز · Machine capability probe → `probe-env` | SP-0139 Atlas metadata capability miner | node, python3, docker, gpu |
-| TOOL-13 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler → `motion-director` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-14 | ✅ | محرك حركة SVG · SVG motion engine runtime → `motion-engine-js` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-146 | ✅ | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame → `particles` | SP-0140 Audio-timed SVG motion compiler | python3, npm:three |
-| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0140 Audio-timed SVG motion compiler | python3 |
-| TOOL-150 | ✅ | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة · UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check → `ui-beat` | SP-0140 Audio-timed SVG motion compiler | python3 |
-| TOOL-16 | ✅ | إنشاء فيلم سبورة مرسوم وتصييره · Doodle film runtime and renderer → `motion-runtime` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-164 | ✅ | فيزياء الحركة · Motion Physics → `motion-physics` | SP-0140 Audio-timed SVG motion compiler | python3, npm:animejs, npm:react |
-| TOOL-17 | ✅ | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder → `motion-stack` | SP-0140 Audio-timed SVG motion compiler | python3, npm:three, npm:gsap, npm:remotion … |
-| TOOL-171 | ✅ | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine → `infinite-matrices` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:rea |
-| TOOL-174 | ✅ | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) → `repo-job-wait` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-18 | ✅ | مكتبة رياضيات الحركة · Motion math toolkit → `motion-toolkit` | SP-0140 Audio-timed SVG motion compiler | node, python3 |
-| TOOL-64 | ✅ | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score → `atlas-render` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium |
-| TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0140 Audio-timed SVG motion compiler | python3 |
-| TOOL-78 | ✅ | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-79 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `verify-video` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3 |
-| TOOL-80 | ✅ | محلّل نسب العرض المرن · Flexible aspect ratio resolver → `repo-aspects` | SP-0140 Audio-timed SVG motion compiler | python3 |
-| TOOL-81 | ✅ | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
-| TOOL-82 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `repo-verify-video` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3 |
-| TOOL-83 | 📦 | قالب فيلم HTML Canvas · HTML Canvas film starter → `starter-html-canvas` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
-| TOOL-84 | 📦 | قالب فيلم Remotion · Remotion film starter → `starter-remotion` | SP-0140 Audio-timed SVG motion compiler | ffmpeg, python3, npm:remotion, npm:react |
-| TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:pillow |
-| TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:pillow |
-| TOOL-130 | ✅ | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) → `montage-pro` | SP-0141 Reference Video Timing Probe | ffmpeg, chromium, imagemagick, yt-dlp … |
-| TOOL-131 | ✅ | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel → `reel-factory` | SP-0141 Reference Video Timing Probe | ffmpeg, node, chromium, fonts:arabic |
-| TOOL-132 | ✅ | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine → `dua-wednesday` | SP-0141 Reference Video Timing Probe | ffmpeg, node, chromium, yt-dlp … |
-| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-166 | ✅ | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL → `look-pipeline` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-168 | ✅ | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract → `fast-edit` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-175 | ✅ | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review → `cinema-lab` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
-| TOOL-178 | ✅ | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز · Quran text and timing: exact verses, measured pauses, verse and word timing for reels → `quran-text` | SP-0141 Reference Video Timing Probe | ffmpeg, pip:faster-whisper |
-| TOOL-19 | ✅ | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer → `cinematic-broll-render` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-20 | ✅ | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner → `cinematic-cut-planner` | SP-0141 Reference Video Timing Probe | python3 |
-| TOOL-21 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe → `motion-reference-probe` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-22 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine → `reference-edit-engine` | SP-0141 Reference Video Timing Probe | pip:higgsfield, npm:remotion, npm:react |
-| TOOL-23 | ✅ | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint → `reference-visual-fingerprint` | SP-0141 Reference Video Timing Probe | ffmpeg, python3 |
-| TOOL-24 | ✅ | جسر سير عمل الفيديو · Video Workflow Bridge → `video-workflow-bridge` | SP-0141 Reference Video Timing Probe | python3 |
-| TOOL-35 | ✅ | بوابة جودة خطة المونتاج · Reference-edit structural quality gate → `creative-quality-gate` | SP-0141 Reference Video Timing Probe | python3, npm:remotion |
-| TOOL-75 | ✅ | فاحص العبارات الكتابية النمطية · Writing Tell Scanner → `tell-scan` | SP-0141 Reference Video Timing Probe | python3 |
-| TOOL-85 | ✅ | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder → `mimic` | SP-0141 Reference Video Timing Probe | ffmpeg, tesseract, pip:numpy, pip:pillow … |
+| TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:pillow |
+| TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:pillow |
+| TOOL-130 | ✅ | فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) · Montage Pro task force (audio/video to montage or motion) → `montage-pro` | SP-0140 Reference Video Timing Probe | ffmpeg, chromium, imagemagick, yt-dlp … |
+| TOOL-131 | ✅ | مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص · Reel factory: voice + word timings + licensed shots → verified 9:16 reel → `reel-factory` | SP-0140 Reference Video Timing Probe | ffmpeg, node, chromium, fonts:arabic |
+| TOOL-132 | ✅ | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine → `dua-wednesday` | SP-0140 Reference Video Timing Probe | ffmpeg, node, chromium, yt-dlp … |
+| TOOL-133 | ✅ | ملتقط بث DASH وHLS للمونتاج · DASH/HLS stream grabber for editing → `stream-grabber` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-166 | ✅ | خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL · Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL → `look-pipeline` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-168 | ✅ | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract → `fast-edit` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-175 | ✅ | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review → `cinema-lab` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:numpy, pip:opencv, npm:remotion |
+| TOOL-178 | ✅ | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز · Quran text and timing: exact verses, measured pauses, verse and word timing for reels → `quran-text` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:faster-whisper |
+| TOOL-19 | ✅ | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer → `cinematic-broll-render` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-20 | ✅ | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner → `cinematic-cut-planner` | SP-0140 Reference Video Timing Probe | python3 |
+| TOOL-21 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe → `motion-reference-probe` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-22 | ✅ | محرك إعادة بناء المونتاج المرجعي · Reference Edit Engine → `reference-edit-engine` | SP-0140 Reference Video Timing Probe | pip:higgsfield, npm:remotion, npm:react |
+| TOOL-23 | ✅ | البصمة البصرية للفيديو المرجعي · Reference Visual Fingerprint → `reference-visual-fingerprint` | SP-0140 Reference Video Timing Probe | ffmpeg, python3 |
+| TOOL-24 | ✅ | جسر سير عمل الفيديو · Video Workflow Bridge → `video-workflow-bridge` | SP-0140 Reference Video Timing Probe | python3 |
+| TOOL-35 | ✅ | بوابة جودة خطة المونتاج · Reference-edit structural quality gate → `creative-quality-gate` | SP-0140 Reference Video Timing Probe | python3, npm:remotion |
+| TOOL-75 | ✅ | فاحص العبارات الكتابية النمطية · Writing Tell Scanner → `tell-scan` | SP-0140 Reference Video Timing Probe | python3 |
+| TOOL-85 | ✅ | محرك محاكاة الفيديو المرجعي · KOSIF Mimic reference rebuilder → `mimic` | SP-0140 Reference Video Timing Probe | ffmpeg, tesseract, pip:numpy, pip:pillow … |
+| TOOL-180 | 🟢 | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي · Cinema Pro Conductor — single-entry montage with evidence-gated delivery → `cinematic-pro-conductor` | SP-0140 Reference Video Timing Probe | ffmpeg, chromium, imagemagick |
+| TOOL-13 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler → `motion-director` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-14 | ✅ | محرك حركة SVG · SVG motion engine runtime → `motion-engine-js` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-146 | ✅ | جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG · Seekable particles: closed-form bursts, budget check and SVG frame → `particles` | SP-0141 Audio-timed SVG motion compiler | python3, npm:three |
+| TOOL-15 | ✅ | جسر توقيتات Motion Starter Kit · Motion Starter Kit timing bridge → `motion-kit-bridge` | SP-0141 Audio-timed SVG motion compiler | python3 |
+| TOOL-150 | ✅ | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة · UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check → `ui-beat` | SP-0141 Audio-timed SVG motion compiler | python3 |
+| TOOL-16 | ✅ | إنشاء فيلم سبورة مرسوم وتصييره · Doodle film runtime and renderer → `motion-runtime` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-164 | ✅ | فيزياء الحركة · Motion Physics → `motion-physics` | SP-0141 Audio-timed SVG motion compiler | python3, npm:animejs, npm:react |
+| TOOL-17 | ✅ | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder → `motion-stack` | SP-0141 Audio-timed SVG motion compiler | python3, npm:three, npm:gsap, npm:remotion … |
+| TOOL-171 | ✅ | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine → `infinite-matrices` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:rea |
+| TOOL-174 | ✅ | تشغيل المهام الطويلة في الخلفية وانتظارها بلا sleep · Background job runner and waiter (no sleep waits) → `repo-job-wait` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-18 | ✅ | مكتبة رياضيات الحركة · Motion math toolkit → `motion-toolkit` | SP-0141 Audio-timed SVG motion compiler | node, python3 |
+| TOOL-64 | ✅ | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score → `atlas-render` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium |
+| TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0141 Audio-timed SVG motion compiler | python3 |
+| TOOL-78 | ✅ | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-79 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `verify-video` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3 |
+| TOOL-80 | ✅ | محلّل نسب العرض المرن · Flexible aspect ratio resolver → `repo-aspects` | SP-0141 Audio-timed SVG motion compiler | python3 |
+| TOOL-81 | ✅ | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer → `repo-render-html` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:gsap |
+| TOOL-82 | ✅ | بوابة فحص تسليم الفيديو · Video delivery gate → `repo-verify-video` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3 |
+| TOOL-83 | 📦 | قالب فيلم HTML Canvas · HTML Canvas film starter → `starter-html-canvas` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
+| TOOL-84 | 📦 | قالب فيلم Remotion · Remotion film starter → `starter-remotion` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, npm:remotion, npm:react |
 | TOOL-115 | ✅ | الرسم الموحد: خطوط وأشكال وطبقات وتصدير · Unified Draw: freehand + geometry + layered export → `unified-draw` | SP-0142 Staged drawing and original three-value… | ffmpeg, pip:pillow |
 | TOOL-117 | ✅ | محرر الوسائط الموحد: صور ورسم وتحريك وفيديو · Unified Media: photo adjustments + drawn overlays + GIF/MP4 → `unified-media` | SP-0142 Staged drawing and original three-value… | ffmpeg, imagemagick, pip:numpy, pip:pillow … |
 | TOOL-136 | ✅ | أطلس مناهج كتب الرسم مع رسم بنائي بالطبقات · Drawing-book methods atlas with layered construction SVGs → `drawing-methods` | SP-0142 Staged drawing and original three-value… | python3, tesseract |

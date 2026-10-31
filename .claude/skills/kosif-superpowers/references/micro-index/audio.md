@@ -11,7 +11,7 @@
 
 ## audio-sync-captions (motion)
 
-chapter: [audio-sync-captions](../powers/audio-sync-captions.md) · card: `usip-library/cards/audio/audio-sync-captions.md` · tools: `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `code-drawing-master` · `creative-quality-gate` …
+chapter: [audio-sync-captions](../powers/audio-sync-captions.md) · card: `usip-library/cards/audio/audio-sync-captions.md` · tools: `audio-cue-mapper` · `blender-cinematic-bridge` · `caption-lines` · `character-fullbody` · `character-ik` · `cinematic-cut-planner` · `cinematic-pro-conductor` · `code-drawing-master` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -15,9 +15,9 @@
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
 | 1 | [`python3`](#req-python3) | bin | 807 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
-| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 464 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 465 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
-| 4 | [`chromium`](#req-chromium) | bin | 374 | engines-render-pipeline, software-investigation, app-feature-transfer, qa-verification, runnable-tools |  |
+| 4 | [`chromium`](#req-chromium) | bin | 375 | engines-render-pipeline, software-investigation, app-feature-transfer, runnable-tools, qa-verification |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
 | 6 | [`npm:gsap`](#req-npm-gsap) | npm | 247 | transitions-cuts, engines-render-pipeline, camera-composition-layout, easing-timing-rhythm, typography-latin |  |
 | 7 | [`npm:three`](#req-npm-three) | npm | 186 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
@@ -28,7 +28,7 @@
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 119 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
 | 13 | [`pip:opencv`](#req-pip-opencv) | pip | 103 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
 | 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 98 | typography-arabic, typography-latin, documents-office, audio-sync-captions, runnable-tools |  |
-| 15 | [`imagemagick`](#req-imagemagick) | bin | 88 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, runnable-tools |  |
+| 15 | [`imagemagick`](#req-imagemagick) | bin | 89 | engines-render-pipeline, music-beat-sound, transitions-cuts, photo-video-footage, runnable-tools |  |
 | 16 | [`engine:ghidra`](#req-engine-ghidra) | bin | 87 | software-investigation, runnable-tools |  |
 | 17 | [`claude:tools`](#req-claude-tools) | service | 82 | agent-orchestration, thinking-core, atlas-code, atlas-mind, self-discovery |  |
 | 18 | [`key:video-gen`](#req-key-video-gen) | service | 69 | ai-generation, music-beat-sound, camera-composition-layout, atlas-strategy, prompt-craft |  |
@@ -155,9 +155,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 464 powers
-- **بالحالة / by status:** documented 158 · proven 157 · ready 71 · install 55 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (46), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
+- **يفتح / unlocks:** 465 powers
+- **بالحالة / by status:** documented 158 · proven 157 · ready 72 · install 55 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (47), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-npm-hyperframes"></a>
@@ -175,9 +175,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `npm i playwright && npx playwright install chromium  (cloud: pre-installed at /opt/pw-browsers)`
-- **يفتح / unlocks:** 374 powers
-- **بالحالة / by status:** proven 123 · install 113 · documented 102 · ready 27 · key 6 · idea 2 · seen 1
-- **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), qa-verification (24), runnable-tools (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
+- **يفتح / unlocks:** 375 powers
+- **بالحالة / by status:** proven 123 · install 113 · documented 102 · ready 28 · key 6 · idea 2 · seen 1
+- **العائلات / families:** engines-render-pipeline (59), software-investigation (56), app-feature-transfer (33), runnable-tools (25), qa-verification (24), transitions-cuts (22), camera-composition-layout (15), atlas-build (12)
 - **أمثلة / examples:** `APP-05` Phone-viewport screenshot + overflow check · `APP-06` HTML to MP4 renderer (repo tool) · `APPX-31` Dehaze (ClearView-style) · `APPX-32` Tiered noise reduction · `APPX-33` Auto keystone / perspective · `APPX-34` Lens distortion correction
 
 <a id="req-npm-rea"></a>
@@ -285,9 +285,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y imagemagick`
-- **يفتح / unlocks:** 88 powers
-- **بالحالة / by status:** proven 27 · ready 21 · documented 15 · install 14 · key 6 · seen 5
-- **العائلات / families:** engines-render-pipeline (13), music-beat-sound (13), transitions-cuts (9), photo-video-footage (8), runnable-tools (6), qa-verification (5), easing-timing-rhythm (4), particles-fluids-physics (4)
+- **يفتح / unlocks:** 89 powers
+- **بالحالة / by status:** proven 27 · ready 22 · documented 15 · install 14 · key 6 · seen 5
+- **العائلات / families:** engines-render-pipeline (13), music-beat-sound (13), transitions-cuts (9), photo-video-footage (8), runnable-tools (7), qa-verification (5), easing-timing-rhythm (4), particles-fluids-physics (4)
 - **أمثلة / examples:** `ARAB-62` Arabic ASS karaoke captions (reels · cinema · pu · `BEAT-18` Loudness mastering (−14 LUFS) · `COLOR-01` Eleven FFmpeg grade presets · `COLOR-02` Restore grade for old or soft footage · `EASE-11` Dependency-free easing set · `ENG-18` KOSIF Motion Web local studio server
 
 <a id="req-engine-ghidra"></a>

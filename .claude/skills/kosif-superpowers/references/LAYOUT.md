@@ -266,7 +266,7 @@ Short how-to guides per kind of job (motion, edit, 3D, draw, audio, image, inves
 
 Executable motion, montage, rhythm, reference transfer and cinematic direction.
 
-`motion` · 18 file(s) · planned folder `references/motion/`
+`motion` · 19 file(s) · planned folder `references/motion/`
 
 - [references/motion-runtime.md](motion-runtime.md)
 - [references/motion-starter-kit-bridge.md](motion-starter-kit-bridge.md)
@@ -286,6 +286,7 @@ Executable motion, montage, rhythm, reference transfer and cinematic direction.
 - [references/styles-atlas.md](styles-atlas.md)
 - [references/external-skills.md](external-skills.md)
 - [references/stock-media-100.md](stock-media-100.md)
+- [references/cinematic-pro-conductor.md](cinematic-pro-conductor.md)
 
 ## 8. الرسم والثري دي / Drawing and 3D
 

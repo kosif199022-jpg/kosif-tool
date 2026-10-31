@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5857,
+ "atoms": 5858,
  "superpowers": 482,
  "hubs": [
   {
@@ -399,8 +399,8 @@
    ],
    "superpowers": [
     "SP-0139",
-    "SP-0141",
     "SP-0140",
+    "SP-0141",
     "SP-0142",
     "SP-0022",
     "SP-0144",
@@ -433,15 +433,15 @@
      "ready_now": 34
     },
     {
-     "id": "SP-0141",
+     "id": "SP-0140",
      "name_ar": "فاحص توقيت الفيديو المرجعي",
      "name_en": "Reference Video Timing Probe",
-     "size": 19,
+     "size": 20,
      "best": "proven",
-     "ready_now": 19
+     "ready_now": 20
     },
     {
-     "id": "SP-0140",
+     "id": "SP-0141",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
      "size": 20,
@@ -521,15 +521,15 @@
      "ready_now": 9
     }
    ],
-   "powers": 291,
+   "powers": 292,
    "status_mix": {
     "proven": 176,
-    "ready": 21,
+    "ready": 22,
     "install": 12,
     "key": 2,
     "documented": 80
    },
-   "ready_now": 197,
+   "ready_now": 198,
    "requires": [
     "python3",
     "ffmpeg",
@@ -547,10 +547,10 @@
     "npm:remotion",
     "pip:faster-whisper",
     "pip:office",
+    "imagemagick",
     "network",
     "npm:p5",
     "fonts:arabic",
-    "imagemagick",
     "yt-dlp",
     "docker",
     "pip:pandas",
@@ -588,9 +588,9 @@
     "pandoc",
     "pip:librosa",
     "pip:anthropic",
+    "pip:fonttools",
     "npm:animejs",
     "npm:esbuild",
-    "pip:fonttools",
     "pip:rdkit",
     "engine:android",
     "engine:binwalk",
