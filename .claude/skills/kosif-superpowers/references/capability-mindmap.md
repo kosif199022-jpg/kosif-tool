@@ -16,7 +16,7 @@
 
 ## المراحل السبع / the seven stages
 
-1. **افهم المادة — Understand the material** · 835 قدرة ذرية
+1. **افهم المادة — Understand the material** · 836 قدرة ذرية
 2. **خطّط وقرّر — Plan & decide** · 957 قدرة ذرية
 3. **اصنع — Create** · 1941 قدرة ذرية
 4. **حسّن واصقل — Refine & polish** · 896 قدرة ذرية
