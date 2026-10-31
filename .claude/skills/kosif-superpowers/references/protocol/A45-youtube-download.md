@@ -23,7 +23,15 @@ merged to MP4, then a lossless Photos-safe copy (streams copied, no re-encode).
 Screenshot: project folder `protocol/v61-20261030/evidence/A45-iphone-cinema-c-dYrEeavC3cw.png` (not committed: 937 KB).
 
 **Rule: on iPhone, YouTube downloads go through Cinema C (`c "<url>"`). On Mac/PC: `yt_get.sh` or Zajil.
-From a cloud sandbox: never, hand the URL to the user's device.**
+From any cloud host (sandbox or the Render gateway): never, hand the URL to the user's device;
+when Claude needs the file in the cloud, the phone runs `kosif-send "<url>"` and Claude reads it with `list_uploads` (A47).**
+
+## The Render gateway does not change this (measured 2026-10-31)
+
+`/health?deep=1` on `kosif-media-gateway-free-20261030.onrender.com` (yt-dlp 2026.10.26 + deno) returned
+`YOUTUBE_LOGIN_REQUIRED` for `dYrEeavC3cw`, and `youtube_download_verified: false`. Render is a data-center IP like
+the sandbox. The gateway stays useful as an inbox for files the phone downloaded, and for archive.org /
+Wikimedia / Vimeo. Details and routing table: A47.
 
 ## Chain
 

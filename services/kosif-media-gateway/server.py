@@ -829,9 +829,11 @@ class Gateway(BaseHTTPRequestHandler):
         parts = urllib.parse.urlsplit(self.path)
         path = parts.path
         if path in ("/", "/health", "/healthz"):
+            # Probe first, so "youtube" / cool-down in the same reply already reflect its result.
+            probe_result = public_probe() if "deep=1" in parts.query else None
             body = status()
-            if "deep=1" in parts.query:
-                body["public_probe"] = public_probe()
+            if probe_result is not None:
+                body["public_probe"] = probe_result
             self._send(200, body)
             return
         static = {"/browser": ("browser.html", "text/html; charset=utf-8"),
