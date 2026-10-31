@@ -38,6 +38,8 @@ class MontageProTests(unittest.TestCase):
         self.assertEqual(menu["reframe"]["status"], "ready")
         r = M.build(job, "reframe", "9:16", deliver=True)
         self.assertEqual(r["status"], "rendered")
+        self.assertEqual(r["verify"]["exit"], 0)
+        self.assertTrue(any("source preserved" in line for line in r["verify"]["checks"]))
         self.assertTrue(r["master_unchanged"])
         self.assertEqual(r["delivery_mix"]["verify"]["exit"], 0)
         h = M.build(job, "highlight-reel", "3")
