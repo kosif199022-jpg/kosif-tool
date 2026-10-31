@@ -8,14 +8,14 @@
 
 ## 1. اللي اتقاس (31-10-2026، 11:49 UTC، من غير توكن)
 
-الدليل الخام: `evidence/A47-gateway-health-20261031.json` (بجانب هذا الملف).
+الدليل الخام: `evidence/A47-gateway-health-20261031.json` (بجانب هذا الملف). إعادة القياس 16:53 UTC بنفس النتيجة، ومعاها حكم النسخة المنشورة (القسم 6): `evidence/A47-deploy-check-20261031.json`.
 
 | السؤال | النتيجة |
 |---|---|
 | `/health` | `alive: true`، الإصدار 0.2.0، yt-dlp 2026.10.26، ffmpeg 5.1.9 بـ libx264، deno موجود |
 | المصادر المسموحة غير يوتيوب | `archive.org`، `commons.wikimedia.org`، `upload.wikimedia.org`، `vimeo.com`، `player.vimeo.com` |
 | `/health?deep=1` (الفيديو الثابت `dYrEeavC3cw`) | `ok: false` و`YOUTUBE_LOGIN_REQUIRED` («Sign in to confirm you're not a bot») |
-| `youtube_download_verified` | `false` (صفر تنزيلات متحققة من يوتيوب) |
+| `youtube_download_verified` | `false` (صفر تنزيلات متحققة من يوتيوب). من 0.3.0 تنزيل archive.org أو Wikimedia أو Vimeo ما بيقلبهاش؛ قبلها كان أي تنزيل متحقق بيقلبها، فـ `true` من نسخة 0.2.0 مش دليل على يوتيوب |
 
 **الحكم:** يوتيوب من Render = **BLOCKED** (درجة إثبات E3: قياس حي من الخدمة نفسها). نفس نتيجة sandbox السحابة في A45. يوتيوب بيحجب عناوين مراكز البيانات، والجيتواي مش بيلف حوالين الحجب ده (لا كوكيز، لا بروكسي، لا كابتشا) ولا هيلف.
 
@@ -45,6 +45,23 @@
 - 45MB للتنزيل، 150MB للرفع، 3 محاولات في الساعة، تنزيل واحد في المرة، والملفات بتتمسح بعد 10 دقايق (الرفع بعد ساعة).
 - بعد أي `LOGIN_REQUIRED` / 429 / 403 من يوتيوب، الجيتواي بيوقف طلبات يوتيوب 30 دقيقة (`cooldown_seconds`). من v6.2، `/health?deep=1` بيعرض النتيجة والتهدئة في نفس الرد.
 - الخطة Free. أي ترقية بإذني.
+
+## 6. هل Render شغال بآخر كود؟ (v6.3)
+
+كل تعديل في `server.py` بيرفع `VERSION`، و`/health` من 0.3.0 فيه `build.commit` و`build.branch` (من متغيرات Render نفسها).
+
+```
+python3 services/kosif-media-gateway/deploy_check.py --json
+```
+
+| الحكم | المعنى | تعمل إيه |
+|---|---|---|
+| `FRESH` | النسخة المنشورة = المستودع | كمّل |
+| `STALE` | Render شغال بكود أقدم | قولها بالكود، وما تقولش إن إصلاح وصل. الحل عندي أنا: Render ← الخدمة ← **Manual Deploy ← Deploy latest commit** (أو شغّل Auto-Deploy على `main`) |
+| `UNREACHABLE` | `/health` ما ردّش | Render Free ممكن يكون نايم، جرّب مرة كمان بعد دقيقة، مرة واحدة بس |
+
+**اتقاس 31-10-2026 16:53 UTC:** `STALE` (المنشور 0.2.0، والمستودع 0.3.0). وحتى قبل 0.3.0 كان باين إنه قديم: `/health?deep=1` رجّع `public_probe` فاشل جنب `last_result: null`، وده سلوك ما قبل إصلاح v6.2.
+workflow **KOSIF Media Gateway live check** فيه job اسمه `deploy` من غير توكن، بيشتغل كل يوم 06:17 UTC وبيطلع تحذير لو `STALE`.
 
 ## 5. Gate
 

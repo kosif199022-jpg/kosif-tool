@@ -5,7 +5,7 @@ owner may download, without the owner's iPhone or computer. It reads only what a
 signing in: no cookies, no IP or proxy rotation, no CAPTCHA, PO-token or DRM workarounds. When YouTube
 refuses the host, the gateway returns the exact code and pauses YouTube calls for a cool-down instead of retrying.
 
-Version 0.2.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (static ffmpeg with libx264) and
+Version 0.3.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (static ffmpeg with libx264) and
 `deno` (the JavaScript runtime yt-dlp needs for YouTube) come from `requirements.txt`.
 
 ## Deploy on Render (Free plan only)
@@ -35,14 +35,22 @@ Environment variables (set in the Render dashboard, never in the repo):
 | `KOSIF_UPLOAD_TTL` | no | 3600 | Seconds an upload stays available |
 | `KOSIF_PUBLIC_PROBE_EVERY` | no | 900 | Minimum seconds between unauthenticated `/health?deep=1` checks |
 
-`RENDER_EXTERNAL_URL` is set by Render itself and is used to build absolute file links.
+`RENDER_EXTERNAL_URL` is set by Render itself and is used to build absolute file links. `RENDER_GIT_COMMIT` and
+`RENDER_GIT_BRANCH` (also set by Render) appear in `/health` as `build.commit` / `build.branch` (0.3.0+).
+
+### Is Render running the latest code?
+
+Every change to `server.py` bumps `VERSION`. `python3 services/kosif-media-gateway/deploy_check.py` (public, no
+token) compares the deployed `/health` with this checkout: `FRESH`, `STALE` or `UNREACHABLE`. The workflow
+**KOSIF Media Gateway live check** runs it daily and warns on `STALE`. The fix is the owner's: Render dashboard >
+the service > **Manual Deploy > Deploy latest commit**, or turn **Auto-Deploy** on for `main`.
 Free services sleep after ~15 idle minutes, so the first request can take up to a minute.
 
 ## API
 
 | Call | Auth | What it does |
 |---|---|---|
-| `GET /health` | none | Version, dependencies actually executed (`yt-dlp --version`, `ffmpeg -version`, libx264, JS runtime), limits, the last YouTube result and cool-down |
+| `GET /health` | none | Version, deployed commit (`build`), dependencies actually executed (`yt-dlp --version`, `ffmpeg -version`, libx264, JS runtime), limits, the last YouTube result and cool-down |
 | `GET /health?deep=1` | none | Same, plus a fixed-video check (`dYrEeavC3cw`, metadata and the first ~10 KB of a stream), at most every 15 min |
 | `POST /v1/probe` | Bearer | `{"video": "ID or URL", "media_check": true}`: metadata and, with `media_check`, a real 10 KB stream read |
 | `POST /v1/download` | Bearer | `{"video": "ID or URL", "rights": "cc-licensed", "quality": 720}` |

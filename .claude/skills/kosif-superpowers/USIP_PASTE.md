@@ -1,4 +1,4 @@
-# البروتوكول المختصر (USIP v6.2) — الصقه في أي محادثة ذكاء اصطناعي
+# البروتوكول المختصر (USIP v6.3) — الصقه في أي محادثة ذكاء اصطناعي
 
 > انسخ كل ما تحت الخط كما هو، في أول رسالة لأي Claude أو أي مساعد ذكاء اصطناعي. وعند أي اختلاف فالمرجع الكامل على GitHub هو الحاكم.
 
@@ -70,6 +70,6 @@
 - قواعد السجل والإعادة (A35): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md
 - رسالة التفعيل: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SESSION_PROMPT.md
 - ملف واحد: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
-- النسخة المضغوطة v6.2: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v6_2.md
+- النسخة المضغوطة v6.3: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v6_3.md
 
 إن لم تستطع فتح الروابط فقل ذلك في سطر واحد، واعمل بالخطوات أعلاه كما هي.

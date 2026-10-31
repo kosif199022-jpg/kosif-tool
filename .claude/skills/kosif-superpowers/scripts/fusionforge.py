@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF FusionForge v2 — project-scoped composite workflow recipes for USIP v6.2.
+"""KOSIF FusionForge v2 — project-scoped composite workflow recipes for USIP v6.3.
 
 A recipe (schema kosif.fusionforge.recipe.v2) turns a USIP brief into typed workflow nodes — stage, catalog
 capabilities fingerprinted by their atom IDs, input/output artifact kinds, an executor reference — joined by
@@ -90,7 +90,7 @@ if str(HERE) not in sys.path:
 from _secrets import SecretError, find_secrets, refuse_secrets, scan_object  # noqa: E402
 
 ENGINE = "FusionForge v2"
-PROTOCOL = "USIP v6.2"
+PROTOCOL = "USIP v6.3"
 SCHEMA = "kosif.fusionforge.recipe.v2"
 SCHEMA_V1 = "kosif.fusionforge.recipe.v1"
 CARD_SCHEMA = "kosif.fusionforge.card.v2"

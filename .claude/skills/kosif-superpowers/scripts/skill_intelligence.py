@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v6.2).
+"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v6.3).
 
 The machine half of PROTOCOL.md. For any request it:
   0. checks the environment and that every derived index is fresh,
@@ -64,7 +64,7 @@ WEIGHTS = {"fit": 35, "integration": 20, "feasibility": 15, "evidence": 10, "cos
 LOCAL_RANK = ["✅", "🟢", "📦", "🔑", "📄", "💡"]
 LOCAL_EVIDENCE = {"✅": 1.0, "🟢": 0.8, "📦": 0.55, "🔑": 0.4, "📄": 0.25, "💡": 0.1}
 STAGE_ORDER = ["understand", "plan", "create", "refine", "assemble", "verify", "deliver"]
-PROTOCOL_VERSION = "USIP v6.2"
+PROTOCOL_VERSION = "USIP v6.3"
 META_TOOL_RX = re.compile(r"^(capability-|atlas-|ai-tool-discovery|boot|hub$|powers|skill-intelligence|superpower-fusion|kosif-groups|capability|requirements|probe-env|catalog-|check-skill|relabel|build-chapters|package-skill|rea-creative)")
 MIN_FIT = 0.25          # a non-must-have pick needs at least this share of the best fit to enter a plan or be "core"
 PLAN_DEFINITIONS = {    # canonical one-line meanings (CONTRACT glossary); Phase 6 of PROTOCOL.md is the source
