@@ -67,6 +67,8 @@ def main() -> int:
     base = a.url.rstrip("/")
     report: dict = {"gateway": base, "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     report["health"] = _get(base + "/health")
+    from deploy_check import judge, local_version
+    report["deploy"] = judge(report["health"], local_version())
     report["health_deep"] = _get(base + "/health?deep=1").get("public_probe")
 
     from mcp_client_check import run_check

@@ -132,7 +132,7 @@
 - 7–32: قواك الخارقة — KOSIF Superpowers
 - 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
 - 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 44–47: FusionForge v2 (USIP v6.2) — project-scoped composite workflow recipes
+- 44–47: FusionForge v2 (USIP v6.3) — project-scoped composite workflow recipes
 - 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 - 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 - 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports

@@ -6,7 +6,8 @@
 
 ## الفهرس / contents
 
-- [v6.2 — 2026-10-31 (هذا الإصدار)](#v62--2026-10-31-هذا-الإصدار)
+- [v6.3 — 2026-10-31 (هذا الإصدار)](#v63--2026-10-31-هذا-الإصدار)
+- [v6.2 — 2026-10-31](#v62--2026-10-31)
 - [v6.0 — 2026-10-30](#v60--2026-10-30)
 - [v5.9 — 2026-10-29](#v59--2026-10-29)
 - [v5.8 — 2026-10-26](#v58--2026-10-26)
@@ -23,7 +24,17 @@
 - [v2 — 2026-10-20 (commits 3827e09، ثم v2.1 ec6374a، ثم v2.2 1e65848 وdbeae16)](#v2--2026-10-20-commits-3827e09-ثم-v21-ec6374a-ثم-v22-1e65848-وdbeae16)
 - [خريطة الأقسام القديمة / old → new map](#خريطة-الأقسام-القديمة--old--new-map)
 
-## v6.2 — 2026-10-31 (هذا الإصدار)
+## v6.3 — 2026-10-31 (هذا الإصدار)
+
+بعد دمج v6.2 اتقاس الجيتواي تاني (16:51 UTC): `/health?deep=1` لسه بيرجّع `last_result: null` جنب فحص فاشل، يعني Render ما نشرش PR #189. v6.3 بتخلّي ده مقيس بدل ما يتخمّن:
+
+- **[A47](A47-v62-media-gateway.md) القسم 6 «هل Render شغال بآخر كود؟»:** `services/kosif-media-gateway/deploy_check.py` (من غير توكن) بيقارن `/health` بالمستودع ويطلع `FRESH` / `STALE` / `UNREACHABLE`. أول قياس: **STALE** (0.2.0 والمستودع 0.3.0)، الدليل `evidence/A47-deploy-check-20261031.json`. الحل عند صاحب المشروع: Render ← Manual Deploy ← Deploy latest commit.
+- **الجيتواي 0.3.0:** `/health` فيه `build.commit` و`build.branch` من `RENDER_GIT_COMMIT` و`RENDER_GIT_BRANCH`.
+- **إصلاح:** `youtube_download_verified` كانت بتتقلب true بعد أي تنزيل متحقق، حتى من archive.org اللي فحص `live_check.py` بينزّله. دلوقتي يوتيوب بس، وفيه `youtube_verified_downloads_since_start`. اختبار `test_permitted_host_download_is_not_youtube_proof`.
+- **workflow «KOSIF Media Gateway live check»:** job `deploy` جديد من غير سر، يومي 06:17 UTC، بيحذّر لو `STALE`.
+- **النسخ:** النواة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PORTABLE.md` و`USIP_PASTE.md` والمحركين بقوا v6.3، والمضغوطة `docs/protocol/USIP_PORTABLE_v6_3.md`.
+
+## v6.2 — 2026-10-31
 
 v6.1 (Suno الخطوة صفر، A46) اتعملت كحزمة في مجلد المشروع، ومحتواها دخل هنا تحت v6.0 من غير ما رقم الإصدار يتغير. v6.2 بتوحّد الرقم وتضيف:
 
@@ -218,7 +229,7 @@ v6.1 (Suno الخطوة صفر، A46) اتعملت كحزمة في مجلد ال
 
 | المعرّف القديم | العنوان القديم | المكان الجديد |
 |---|---|---|
-| `banner` | سطر «نسخة الدمج الموسّعة v5.2» تحت العنوان | [النواة: العنوان وفقرة ما تغيّر](../../PROTOCOL.md#kosif-superpowers--kosif-see--universal-skill-intelligence-protocol-usip-v62) · نص السطر: [A11](A11-snapshots-20261021.md#من-العنوان--السطر-التعريفي-لـ-v52) |
+| `banner` | سطر «نسخة الدمج الموسّعة v5.2» تحت العنوان | [النواة: العنوان وفقرة ما تغيّر](../../PROTOCOL.md#kosif-superpowers--kosif-see--universal-skill-intelligence-protocol-usip-v63) · نص السطر: [A11](A11-snapshots-20261021.md#من-العنوان--السطر-التعريفي-لـ-v52) |
 | `toc` | الفهرس / contents | [النواة §الفهرس](../../PROTOCOL.md#الفهرس--contents) |
 | `repo-origin` | المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة | [النواة §المستودع الأصل](../../PROTOCOL.md#المستودع-الأصل--اقرأه-كاملًا-حتى-لو-لم-تكن-المهارة-مثبتة) · صف commit v3.1: [A11](A11-snapshots-20261021.md#من-المستودع-الأصل--صف-commit-ملف-v31) |
 | `loop` | الحلقة في شاشة واحدة | [النواة §الحلقة](../../PROTOCOL.md#الحلقة-في-شاشة-واحدة) · وتفصيلها [النواة §المسار القانوني](../../PROTOCOL.md#المسار-القانوني-الواحد--canonical-pipeline) |

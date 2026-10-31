@@ -36,7 +36,7 @@ import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 
 def _env_int(name: str, default: int) -> int:
@@ -77,7 +77,7 @@ _BUSY = threading.Lock()
 _JOBS: dict[str, dict] = {}          # job id -> {"folder", "expires", "files": {ticket: meta}}
 _ATTEMPTS: list[float] = []          # download attempts that reached the platform, last hour
 _STATE = {"blocked_until": 0.0, "last_youtube": None, "public_probe_at": 0.0,
-          "verified_downloads": 0, "started": time.time()}
+          "verified_downloads": 0, "youtube_verified_downloads": 0, "started": time.time()}
 
 
 # ---------------------------------------------------------------- sources
@@ -551,6 +551,8 @@ def download(source: str, rights: str, quality: int | str = 720, base_url: str =
         with _LOCK:
             _JOBS[job_id] = {"folder": str(folder), "expires": time.time() + FILE_TTL, "files": files}
             _STATE["verified_downloads"] += 1
+            if src["kind"] == "youtube":
+                _STATE["youtube_verified_downloads"] += 1
         keep = True
         out = []
         for t, e in files.items():
@@ -650,6 +652,15 @@ def inbox(base_url: str = "") -> dict:
                                      "files": _public_files(j["files"], base_url)} for k, j in jobs]}
 
 
+def build_info() -> dict:
+    """Which commit is deployed. Render sets RENDER_GIT_COMMIT / RENDER_GIT_BRANCH on every build, so a stale
+    deploy (main moved on, the service did not) is measurable from the public /health."""
+    commit = (os.environ.get("RENDER_GIT_COMMIT") or os.environ.get("KOSIF_GIT_COMMIT") or "").strip()
+    commit = commit if re.fullmatch(r"[0-9a-f]{7,40}", commit) else ""
+    branch = (os.environ.get("RENDER_GIT_BRANCH") or os.environ.get("KOSIF_GIT_BRANCH") or "").strip()[:100]
+    return {"commit": commit or None, "branch": branch or None}
+
+
 def status() -> dict:
     prune()
     with _LOCK:
@@ -657,8 +668,11 @@ def status() -> dict:
         return {"service": "KOSIF Media Gateway", "version": VERSION, "alive": True,
                 "dependencies": dependencies(),
                 "youtube": {"last_result": _STATE["last_youtube"], "cooldown_seconds": left},
-                "youtube_download_verified": _STATE["verified_downloads"] > 0,
+                # Only a verified YouTube download proves YouTube works; archive.org etc. do not count.
+                "youtube_download_verified": _STATE["youtube_verified_downloads"] > 0,
+                "youtube_verified_downloads_since_start": _STATE["youtube_verified_downloads"],
                 "verified_downloads_since_start": _STATE["verified_downloads"],
+                "build": build_info(),
                 "limits": {"max_mb": MAX_MB, "upload_mb": UPLOAD_MB, "upload_ttl_seconds": UPLOAD_TTL, "downloads_per_hour": PER_HOUR, "file_ttl_seconds": FILE_TTL,
                            "download_timeout_seconds": DOWNLOAD_TIMEOUT, "concurrent_downloads": 1,
                            "attempts_last_hour": len(_ATTEMPTS)},
