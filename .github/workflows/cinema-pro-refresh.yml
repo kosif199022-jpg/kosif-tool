@@ -67,8 +67,14 @@ jobs:
           old_count = re.search(r'<!-- counts: powers=(\d+)', original)
           new_count = re.search(r'powers=(\d+)', marker)
           if old_count and new_count:
-              previous, current = old_count.group(1), new_count.group(1)
-              updated = updated.replace(f'{int(previous):,} قدرة', f'{int(current):,} قدرة', 1)
+              previous, current = int(old_count.group(1)), int(new_count.group(1))
+              old_display, new_display = f'{previous:,}', f'{current:,}'
+              updated = re.sub(re.escape(old_display) + r'(?=\\s+قدرة)', new_display, updated)
+              readme = Path.cwd().parents[2] / 'README.md'
+              if readme.is_file():
+                  readme_text = readme.read_text(encoding='utf-8')
+                  readme_text = re.sub(re.escape(old_display) + r'(?=\\s+قدرة)', new_display, readme_text)
+                  readme.write_text(readme_text, encoding='utf-8')
           p.write_text(updated, encoding='utf-8')
           print(marker)
           PY
@@ -79,7 +85,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .claude/skills/kosif-superpowers CAPABILITIES.md llms.txt usip-library
+          git add .claude/skills/kosif-superpowers CAPABILITIES.md llms.txt usip-library README.md
           if ! git diff --cached --quiet; then
             git commit -m "chore: regenerate Cinema Pro catalogs [generated cinema-pro]"
             git push origin HEAD:feat/cinematic-pro-conductor-20261031
