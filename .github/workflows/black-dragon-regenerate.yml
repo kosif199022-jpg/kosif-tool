@@ -1,75 +1,58 @@
-name: Black Dragon regenerate derived indexes
+name: Black Dragon checks
 on:
-  push:
-    branches:
-      - feature/black-dragon-all-capabilities-20261031
+  pull_request:
     paths:
       - '.github/workflows/black-dragon-regenerate.yml'
       - '.claude/skills/kosif-superpowers/data/tools.json'
+      - '.claude/skills/kosif-superpowers/data/black_dragon_adapters.json'
       - '.claude/skills/kosif-superpowers/scripts/black_dragon.py'
-      - '.claude/skills/kosif-superpowers/scripts/_black_dragon_brain.py'
+      - '.claude/skills/kosif-superpowers/scripts/_black_dragon_*.py'
       - 'tests/test_black_dragon*.py'
+  workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: black-dragon-regenerate
-  cancel-in-progress: true
+  contents: read
 
 jobs:
-  refresh:
-    if: github.repository == 'kosif199022-jpg/kosif-tool'
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Regenerate all catalog-derived maps locally without network APIs
-        shell: bash
+      - name: Black Dragon unit and integration tests
+        run: python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
+      - name: Generated indexes are current (regenerate locally with the chain in references/guides/maintain.md)
+        working-directory: .claude/skills/kosif-superpowers
         run: |
-          set -euo pipefail
-          cd .claude/skills/kosif-superpowers
-          python3 scripts/hub.py build
-          python3 scripts/requirements.py derive
-          python3 scripts/relabel_proofs.py
-          python3 scripts/build_chapters.py
-          python3 scripts/requirements.py index
-          python3 scripts/capability_graph.py build
-          python3 scripts/capability_atlas.py build
-          python3 scripts/powers.py mindmap --html references/capability-map.html
-          python3 scripts/powers.py mindmap --update-md references/capability-map.md
-          python3 scripts/smart_capabilities.py build
-          python3 scripts/superpower_fusion.py build
-          python3 scripts/kosif_hubs.py build
-          python3 scripts/capability_mindmap.py build
-          python3 scripts/owned_repos.py render
-          python3 scripts/smart_capabilities.py library
-          python3 scripts/smart_capabilities.py cards
-          python3 scripts/github_top_repos.py build
-          python3 scripts/micro_index.py build
-          python3 scripts/skill_loader.py build
-          python3 scripts/hub.py build
-          python3 scripts/boot.py --static --write
-      - name: Run Black Dragon and generated-file tests
-        shell: bash
+          python3 scripts/hub.py build --check
+          python3 scripts/capability_graph.py build --check
+          python3 scripts/boot.py --static --check
+          python3 scripts/check_skill.py
+      - name: Real run with reviewed adapters and tool probes (evidence uploaded)
         run: |
-          set -euo pipefail
-          python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
-          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
-          python3 .claude/skills/kosif-superpowers/scripts/capability_graph.py build --check
-      - name: Commit generated files only to the feature branch
-        shell: bash
-        run: |
-          set -euo pipefail
-          if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add -A
-            git commit -m "build: refresh Black Dragon registries and capability graphs [skip ci]"
-            git push origin "HEAD:feature/black-dragon-all-capabilities-20261031"
-          fi
+          set +e
+          python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "اعمل مونتاج فيديو موشن جرافيك بصوت" \
+            --job out/black-dragon/ci-run --workers 8 --probe-tools --reviewed-adapters --execute-adapters
+          code=$?
+          set -e
+          # 4 = honest "not every entry executed"; anything else is an error
+          test "$code" -eq 4
+          python3 - <<'PY'
+          import json
+          r = json.load(open("out/black-dragon/ci-run/black_dragon_report.json"))
+          assert r["assignment_complete"] and r["assigned"] == r["scheduled"], r
+          assert r["failed"] == 0 and r["executed"] == r["adapter_count"], r
+          print("assigned", r["assigned"], "executed", r["executed"], "probe_passed", r["probe_passed"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: black-dragon-ci-run
+          path: |
+            out/black-dragon/ci-run/*.json
+            out/black-dragon/ci-run/*.md
+            out/black-dragon/ci-run/receipts/
+            out/black-dragon/ci-run/artifacts/
+          if-no-files-found: warn

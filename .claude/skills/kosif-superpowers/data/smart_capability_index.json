@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5858,
+  "catalog_powers": 5859,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 203,
+  "tool_count": 204,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 277,
+      "count": 278,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
         "proven": 176,
-        "ready": 22
+        "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 179,
+        "runnable-tools": 180,
         "self-discovery": 43
       },
       "examples": [
@@ -74402,6 +74402,23 @@
       ],
       "source": "runnable-tools.json",
       "what": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montag"
+    },
+    {
+      "id": "TOOL-181",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Black Dragon — All-Capability Cognitive Orchestrator",
+      "name_ar": "التنين الأسود — العقل المنسق لكل القدرات",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه. — Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concu"
     },
     {
       "id": "SEC-01",

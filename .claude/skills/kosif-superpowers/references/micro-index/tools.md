@@ -53,6 +53,7 @@
 | `atlas-capability-miner` | TOOL-105 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | `python3 scripts/atlas_capability_miner.py --help` | 1 |
 | `atlas-ledger` | TOOL-107 | سجل الأطلس: حالة واحدة لكل مهارة · Atlas ledger: one status for every Atlas skill | `python3 scripts/atlas_ledger.py stats --json` | 1 |
 | `atlas-task-method-router` | TOOL-112 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router | `python3 scripts/atlas_task_method_router.py --help` | 0 |
+| `black-dragon` | TOOL-181 | التنين الأسود — العقل المنسق لكل القدرات · Black Dragon — All-Capability Cognitive Orchestrator | `python3 scripts/black_dragon.py inventory` | 1 |
 | `boot` | TOOL-02 | إحاطة بدء الجلسة · Session boot briefing | `python3 scripts/boot.py` | 1 |
 | `capability-atlas` | TOOL-03 | أطلس القدرات للبحث والتخطيط · Capability Atlas search and planner | `python3 scripts/capability_atlas.py stats --json` | 1 |
 | `capability-graph` | TOOL-34 | باني خريطة القدرات المترابطة · Capability Graph Builder | `python3 scripts/capability_graph.py build` | 1 |

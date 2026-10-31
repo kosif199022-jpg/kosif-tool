@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 277 powers
+[← الفهرس الدقيق / micro index](README.md) · 278 powers
 
 ## الفهرس / contents
 
@@ -48,6 +48,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-111 | 🟢 | مناهج الأطلس المراجَعة · Reviewed Atlas methods → `atlas-reviewed-methods-v3` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-112 | 🟢 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router → `atlas-task-method-router` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
 | TOOL-113 | 🟢 | نقل مناهج الأطلس المثبتة · Atlas verified method transfer → `atlas-transfer` | SP-0139 Atlas metadata capability miner | python3, blender, engine:ghidra |
+| TOOL-181 | 🟢 | التنين الأسود — العقل المنسق لكل القدرات · Black Dragon — All-Capability Cognitive Orchestrator → `black-dragon` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-71 | 🟢 | فحص قدرات الجهاز · Machine capability probe → `probe-env` | SP-0139 Atlas metadata capability miner | node, python3, docker, gpu |
 | TOOL-122 | ✅ | محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة · KOSIF Timeline: genuine multitrack video, image and audio editor → `kosif-timeline` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:pillow |
 | TOOL-123 | ✅ | تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة · KOSIF Timeline one-command synthetic media demo → `kosif-timeline-demo` | SP-0140 Reference Video Timing Probe | ffmpeg, pip:pillow |
@@ -197,7 +198,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 
 ## agent-orchestration (mind)
 
-chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-library/cards/agents/agent-orchestration.md` · tools: `adobe-mcp-bridges` · `agent-guard` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `fusionforge-hub-runner` · `hub` …
+chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-library/cards/agents/agent-orchestration.md` · tools: `adobe-mcp-bridges` · `agent-guard` · `black-dragon` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `fusionforge-hub-runner` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
@@ -259,7 +260,7 @@ chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-
 
 ## self-discovery (mind)
 
-chapter: [self-discovery](../powers/self-discovery.md) · card: `usip-library/cards/agents/self-discovery.md` · tools: `ai-tool-discovery` · `atlas-5000` · `atlas-ledger` · `boot` · `build-chapters` · `capability-atlas` · `capability-graph` · `capability-runtime-router` …
+chapter: [self-discovery](../powers/self-discovery.md) · card: `usip-library/cards/agents/self-discovery.md` · tools: `ai-tool-discovery` · `atlas-5000` · `atlas-ledger` · `black-dragon` · `boot` · `build-chapters` · `capability-atlas` · `capability-graph` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

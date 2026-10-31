@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **179 powers follow** — ✅ 149 · 🟢 21 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **180 powers follow** — ✅ 149 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -13,7 +13,7 @@
 
 ## الفهرس / contents
 
-- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
+- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-181 (27)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
@@ -252,6 +252,15 @@
 - **كيف / how:** build: `python3 scripts/micro_index.py build`; find: `python3 scripts/micro_index.py find "قص على الإيقاع" --top 10`; show: `python3 scripts/micro_index.py show SP-0001`; stats: `python3 scripts/micro_index.py stats`. Full card: `python3 scripts/hub.py tool micro-index`. Limits: An entry is an address, not a proof: badges are the records' own and a proven badge still needs a real run. **أرقام / params:** in: data/powers/*.json, data/tools.json, data/superpowers.json, data/smart_capability_index.json · out: data/micro_index.json and references/micro-index/*.md; matches on stdout
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_micro_index.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/micro_index.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-181 · التنين الأسود — العقل المنسق لكل القدرات · Black Dragon — All-Capability Cognitive Orchestrator · 🟢 جاهز / ready
+- **ماذا / what:** يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه. — Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully.
+- **متى أستخدمها / when:** استدعِ التنين الأسود وشغّل كل المهارات في المهمة / Use all KOSIF skills with dependency-aware intelligent parallel coordination
+- **كيف / how:** inventory: `python3 scripts/black_dragon.py inventory`; plan: `python3 scripts/black_dragon.py plan "اصنع مونتاج" `; run: `python3 scripts/black_dragon.py run "اصنع مونتاج" --job ../../../out/black-dragon/demo --workers 8`. Full card: `python3 scripts/hub.py tool black-dragon`. Limits: A full catalog dispatch is not universal same-instant execution. Documentation-only powers or unavailable adapters are blocked, not credited. Plans are heuristic and do not establish cinematic quality. **أرقام / params:** in: User task and output folder. Optional reviewed adapter map, --execute-adapters consent flag, --workers 1..32. · out: All-skills ledger, all-skills audit report, brain plan with dependency waves, execution report; real artifacts only from configured adapters.
+- **تثبيت / install:** `needs on PATH: python3`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py`
 - **المصدر / source:** data/tools.json
 
 ## Think, ideate and write / التفكير والأفكار والكتابة
@@ -1602,7 +1611,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (179)
+- الرخص / licences: — (180)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
