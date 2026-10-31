@@ -120,6 +120,17 @@ class TestHttp(Base):
         self.assertTrue(body["dependencies"]["ffmpeg"])
         self.assertFalse(body["youtube_download_verified"])
 
+    def test_deep_health_reports_block_in_same_reply(self):
+        reset("login")
+        with gw._LOCK:
+            gw._STATE["public_probe_at"] = 0.0
+        code, _, body = self.jreq("GET", "/health?deep=1", token=None)
+        self.assertEqual(code, 200)
+        self.assertEqual(body["public_probe"]["error"], "YOUTUBE_LOGIN_REQUIRED")
+        self.assertEqual(body["youtube"]["last_result"]["code"], "YOUTUBE_LOGIN_REQUIRED")
+        self.assertGreater(body["youtube"]["cooldown_seconds"], 0)
+        self.assertFalse(body["youtube_download_verified"])
+
     def test_browser_page_is_public(self):
         code, headers, body = self.req("GET", "/browser", token=None)
         self.assertEqual(code, 200)

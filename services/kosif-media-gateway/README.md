@@ -13,7 +13,7 @@ Version 0.2.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (sta
 | Setting | Value |
 |---|---|
 | Runtime | Python 3 |
-| Branch | `feat/kosif-media-gateway-render-free-20261030` (until PR #184 merges) |
+| Branch | `main` |
 | Build command | `pip install -r services/kosif-media-gateway/requirements.txt` |
 | Start command | `python services/kosif-media-gateway/server.py` |
 | Health check path | `/health` |
@@ -105,7 +105,7 @@ claude mcp add --transport http kosif-media https://kosif-media-gateway-free-202
 claude mcp list        # expect: kosif-media ... ✓ Connected
 ```
 
-Tools: `gateway_status`, `probe_youtube`, `download_permitted_video`.
+Tools: `gateway_status`, `list_uploads`, `probe_youtube`, `download_permitted_video`.
 
 ## From the iPhone: kosif-send (share button)
 
@@ -148,6 +148,12 @@ SSRF guard, oversized bodies, keep-alive after 401, LOGIN_REQUIRED / 429 / 403 /
 second request, corrupt and short files rejected and cleaned, size limit, timeout, one-at-a-time, hourly
 limit, expiry, lossless remux, libx264 fallback, and the Superpowers client's hash check.
 CI: `.github/workflows/media-gateway.yml`.
+
+## Measured status (2026-10-31)
+
+`/health?deep=1` from the live service: `YOUTUBE_LOGIN_REQUIRED` for `dYrEeavC3cw`, `youtube_download_verified: false`.
+YouTube refuses Render's data-center IP, as it refuses the Claude sandbox. Use the gateway as an inbox for files the
+phone downloaded (`kosif-send`, then `list_uploads`) and for archive.org / Wikimedia / Vimeo. Protocol appendix A47.
 
 ## Honest limits
 

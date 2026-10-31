@@ -1,6 +1,6 @@
-# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v6.0)
+# KOSIF SUPERPOWERS × KOSIF SEE — UNIVERSAL SKILL INTELLIGENCE PROTOCOL (USIP v6.2)
 
-> **وضع التفعيل الكامل:** «فعّل كل القدرات» أو «الوضع الكامل» = كل المهارات المناسبة بكامل عمقها (L3، الملاحق المطابقة، المجلس ومحامي الشيطان، النماذج الذهنية، وكلاء متوازيين) والقوانين كما هي. **التحميل الخفيف:** اقرأ [`LOADER.md`](LOADER.md) أولًا ثم افتح الأسطر المطابقة فقط (`skill_loader.py need`). **أحدث الإصدارات:** v6.0 العقد والإيصال والعدّاد (A43)، v5.12 المتصفح (A42)، v5.11 مخرج Kling (A41)، v5.9 PhotoCraft والمواقع الحية (A39، A40).
+> **وضع التفعيل الكامل:** «فعّل كل القدرات» أو «الوضع الكامل» = كل المهارات المناسبة بكامل عمقها (L3، الملاحق المطابقة، المجلس ومحامي الشيطان، النماذج الذهنية، وكلاء متوازيين) والقوانين كما هي. **التحميل الخفيف:** اقرأ [`LOADER.md`](LOADER.md) أولًا ثم افتح الأسطر المطابقة فقط (`skill_loader.py need`). **أحدث الإصدارات:** v6.2 الجيتواي (A47)، v6.1 Suno (A46)، v6.0 العقد (A43).
 
 بروتوكول الفهم الشامل والتفكير الإبداعي واختيار القدرات قبل التنفيذ — تعليمات دائمة لـ Claude داخل مستودع [kosif-tool](https://github.com/kosif199022-jpg/kosif-tool)، مسار المهارة `.claude/skills/kosif-superpowers/`. نصفه الآلي `scripts/skill_intelligence.py` (إيصال، ترشيح، مسودة خطط وأسئلة) و`scripts/fusionforge.py` (وصفة المشروع وسجل التجربة)، ونصفه العقلي هذه الصفحة (فهم، تنقيح، حكم).
 
@@ -68,11 +68,13 @@
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء | — | موثَّق؛ أداة Agent حين توجد |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» | — | `self_council.py` |
 | [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو | v5.8 | `llm_council.py` وأربع أدوات |
-| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب، أو LUT يوحّد لوك الصور والفيديو | v5.9 | `photocraft_mcp.py` |
+| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | صور أو PSD أو دفعة بلا فوتوشوب، أو LUT موحّد للصور والفيديو | v5.9 | `photocraft_mcp.py` |
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير | v5.9 | مهارة `living-site` و`check.py` |
 | [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling | v5.11 | `kling_lint.py` |
 | [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح | v5.12 | `collect_links.js` |
-| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) · [A46 Suno](references/protocol/A46-suno-mcp.md) · [A45 يوتيوب](references/protocol/A45-youtube-download.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب | v6.0 | `validate_receipt.py`، `yt_get.sh` |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد L1+، إثبات تسليم، دمج حزمة، قبل «تم» | v6.0 | `validate_receipt.py` |
+| [A46 Suno](references/protocol/A46-suno-mcp.md) | أول خطوة (سطر `suno:`)، أو أي موسيقى | v6.1 | Suno MCP |
+| [A45 يوتيوب](references/protocol/A45-youtube-download.md) · [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)؛ فيديو للسحابة، `kosif-send` | v6.2 | `yt_get.sh` |
 | [CHANGELOG](references/protocol/CHANGELOG.md) | تبحث عن قسم قديم برقمه أو عن تاريخ الإصدارات | خريطة كل قسم قديم إلى مكانه | — |
 
 ## المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة
@@ -439,9 +441,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## المرحلة 10 — تطوير ذكاء الفهرس
 
-**إضافة SEE Pro المعرفية:** عند تطوير هذا البروتوكول احتفظ بالنواة USIP v5.3 وبحدود الـ9 packs، وراجِع A12 وA10 وA9؛ اختبر حدود Full Pro/المجلس وتطابق نوع الواجهات وعزل العملاء والحساب الدقيق. سكربت `see_pro_cognitive_gate.py` فحص عقود فقط؛ معيار الترقية هو مقارنة baseline/candidate واختبارات الانحدار والمخرجات الحقيقية، وليس طول البروتوكول.
-
-**جسر التطوير الذاتي SEE:** أي تعديل لمسار الحزم الفكرية أو Registry/Fabric/Full Pro يمر بـ baseline وفرضية وcandidate وshadow tests وHARD_FAIL ومقارنة وإذن نشر وread-back وسجل إصلاح لا يمحو القديم؛ وتحسين هذا الملف محليًا لا يعني أن الإضافة المنشورة أو GitHub تغيّر ([النص الكامل وقاعدة الإصدار التالي](references/protocol/A10-self-evolution.md)).
+**إضافة SEE Pro المعرفية:** عند تطوير هذا البروتوكول احتفظ بالنواة USIP v5.3 وبحدود الـ9 packs، وراجِع A12 وA10 وA9؛ اختبر حدود Full Pro/المجلس وتطابق نوع الواجهات وعزل العملاء والحساب الدقيق. سكربت `see_pro_cognitive_gate.py` فحص عقود فقط؛ معيار الترقية هو مقارنة baseline/candidate واختبارات الانحدار والمخرجات الحقيقية، وليس طول البروتوكول. **جسر التطوير الذاتي SEE:** أي تعديل لمسار الحزم الفكرية أو Registry/Fabric/Full Pro يمر بـ baseline وفرضية وcandidate وshadow tests وHARD_FAIL ومقارنة وإذن نشر وread-back وسجل إصلاح لا يمحو القديم؛ وتحسين هذا الملف محليًا لا يعني أن الإضافة المنشورة أو GitHub تغيّر ([النص الكامل وقاعدة الإصدار التالي](references/protocol/A10-self-evolution.md)).
 
 الفهرس الدائم موجود ولا يُبنى من الصفر في كل مهمة (الطبقة ← الملف ← يُعاد بناؤه بـ): المجموعات وتصنيف كل قدرة ← `data/smart_capability_index.json` ← `smart_capabilities.py build` · القدرات الخارقة والتوائم والروابط ← `data/superpowers.json` ← `superpower_fusion.py build` · خريطة المجموعات وخطط التثبيت ← `data/hubs_index.json` و`START.md` ← `kosif_hubs.py build` · المراحل وخرائط المهام وتدقيق التكرار ← `data/capability_mindmap.json` ← `capability_mindmap.py build` · سجل الأدوات ← `data/tools.json` ثم `manifest.json` ← `hub.py build` · وصفات المشروع ودروسه (محلي، خارج git) ← `out/fusionforge/<slug>/` ← `fusionforge.py lessons --project <slug>`.
 
@@ -486,7 +486,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 المعاني المعتمدة في كل ملف ومحرك (النواة، الملاحق، `SESSION_PROMPT.md`، `CLAUDE.md`، `SKILL.md`، `skill_intelligence.py`، `fusionforge.py`):
 
-**الإصدارات:** البروتوكول **USIP v6.0** (29-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
+**الإصدارات:** البروتوكول **USIP v6.2** (31-10-2026)؛ محرك الوصفات **FusionForge v2** (مخطط `kosif.fusionforge.recipe.v2`).
 
 **الخطط** (تعريفات المرحلة 6 هي المصدر الوحيد):
 - **A — الذكية السريعة:** أبسط مسار يحقق كل متطلب إلزامي (لا الأرخص؛ خطة تفوّت متطلبًا إلزاميًا ليست A). — `simplest path that meets every must-have`
@@ -498,9 +498,7 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 **قاعدة الأسئلة:** الأسئلة التي تغيّر النتيجة تُكتب **داخل تقرير الخطط الواحد**، ولكل منها إجابة مقترحة؛ لا جولة أسئلة منفصلة قبل الخطط، إلا حين يكون المدخل الحاجب هو مادة التحليل نفسها فيُعرض التقرير المضغوط أولًا (من v3.1). **والسؤال ذو الأثر المالي أو الذي لا رجعة فيه أو الحساس** (صرف أو دفع، نشر، مشاركة بيانات شخصية، حقوق) لا يُفترض جوابه (-1.23): إجابته المقترحة هي الخيار الآمن (بلا صرف ولا نشر ولا مشاركة)، ولا يعتمد `موافق` غيرها؛ والخطوة نفسها لا تُنفَّذ إلا بإذن صريح بها (القانون 17). **L0 بلا خطط ولا أسئلة.**
 
-**مراحل الوصفة** (`STAGES` في FusionForge v2، بهذا الترتيب): understand, research, plan, build, create, refine, assemble, verify, deliver. ومراحل `brief` (`STAGE_ORDER`) جزء منها: understand, plan, create, refine, assemble, verify, deliver.
-
-**حالة الوصفة** (تعداد المحرك): candidate → planned → tested → verified | failed؛ وverified وfailed نهائيتان (تجربة جديدة = `fork`). علامتان مشتقتان: **reusable** = verified وvalidate نظيف؛ **generalized** = ترقية يوافق عليها إنسان (لا تحدث آليًا أبدًا). مقابل سلّم v5.1 القديم: IDEA = لا وصفة بعد · CANDIDATE = candidate أو planned · TESTED = tested · VERIFIED = verified (ومعه مقارنة بخط أساس حين يوجد حل سابق أو أبسط، `--baseline`؛ شرط عليك لا على المحرك) · REUSABLE = علامة reusable · GENERALIZED = ترقية معتمدة.
+**مراحل الوصفة** (`STAGES` في FusionForge v2، بهذا الترتيب): understand, research, plan, build, create, refine, assemble, verify, deliver. ومراحل `brief` (`STAGE_ORDER`) جزء منها: understand, plan, create, refine, assemble, verify, deliver. **حالة الوصفة** (تعداد المحرك): candidate → planned → tested → verified | failed؛ وverified وfailed نهائيتان (تجربة جديدة = `fork`). علامتان مشتقتان: **reusable** = verified وvalidate نظيف؛ **generalized** = ترقية يوافق عليها إنسان (لا تحدث آليًا أبدًا). مقابل سلّم v5.1 القديم: IDEA = لا وصفة بعد · CANDIDATE = candidate أو planned · TESTED = tested · VERIFIED = verified (ومعه مقارنة بخط أساس حين يوجد حل سابق أو أبسط، `--baseline`؛ شرط عليك لا على المحرك) · REUSABLE = علامة reusable · GENERALIZED = ترقية معتمدة.
 
 **سلّم المنفذ** (من v5.2، لكل منفذ أو أداة): candidate → selected → method_loaded → executor_exposed → configured/authorized → online/available → executed → verified؛ وmethod_loaded ≠ executed ≠ verified. اذكر أعلى حالة مثبتة في الجلسة ولا تقفز.
 
@@ -514,6 +512,6 @@ python3 .claude/skills/kosif-superpowers/scripts/fusionforge.py propose "<اله
 
 ## النسخة المختصرة للصق في مشروع claude.ai
 
-> **USIP v6.0:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم مجلس الخمسة ببوابته (A38)، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. الأحكام الصعبة في A24 و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29.
+> **USIP v6.2:** ثبّت المستوى أولًا (L0 يُجاب فورًا بلا خطط ولا أسئلة ولا وصفة). لكل طلب حقيقي: بطاقة الطلب، ثم `skill_intelligence.py brief "<الطلب>" --out <مجلد العمل>/brief.json` بإيصال `complete = true`، ثم في L2/L3 وصفة `fusionforge.py reuse` و`propose`، ثم مجلس الخمسة ببوابته (A38)، ثم تقرير واحد فيه A/B/C (A أبسط مسار يحقق كل متطلب إلزامي · B متوازنة بتكاملات من مجالات أخرى · C محرك أو مصدر أو طريقة تحقق مختلفة، ليست B + إضافات · D دمج عقد مسماة بطلبي) والأسئلة بإجاباتها المقترحة، ثم انتظر ردي. الأحكام الصعبة في A24 و`think.py modes/bayes/gate/audit`، والاستقبال والتخطيط والجودة والأدوات والتعافي في A25–A29.
 
-> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع، أو المضغوطة `docs/protocol/USIP_PORTABLE_v6_0.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.
+> **النص الكامل للصق:** رسالة التفعيل [`SESSION_PROMPT.md`](SESSION_PROMPT.md) لمشروع claude.ai فيه المستودع، و[`USIP_PORTABLE.md`](USIP_PORTABLE.md) لأي محادثة بلا مستودع، أو المضغوطة `docs/protocol/USIP_PORTABLE_v6_2.md` للصق السريع. المستودع الأصل: <https://github.com/kosif199022-jpg/kosif-tool/tree/main/.claude/skills/kosif-superpowers>؛ بلا تثبيت اقرأ الملفات الخام `https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/<المسار>` (ابدأ بـ START.md ثم references/INDEX.md)، ولا تعمل من الذاكرة. الصدق فوق أي طلب: لا تدّعِ ما لم تفحصه، ولا خطوة مدفوعة أو لا رجعة فيها أو نشر بلا إذن صريح بها.

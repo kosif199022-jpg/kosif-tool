@@ -42,7 +42,7 @@ Read first: what the skill is, the protocol, the one-file copy and the maps. Sta
 
 USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table.
 
-`protocol` · 43 file(s)
+`protocol` · 44 file(s)
 
 - [references/protocol/A1-see-thinking.md](protocol/A1-see-thinking.md)
 - [references/protocol/A10-self-evolution.md](protocol/A10-self-evolution.md)
@@ -81,6 +81,7 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A44-free-stock-media.md](protocol/A44-free-stock-media.md)
 - [references/protocol/A45-youtube-download.md](protocol/A45-youtube-download.md)
 - [references/protocol/A46-suno-mcp.md](protocol/A46-suno-mcp.md)
+- [references/protocol/A47-v62-media-gateway.md](protocol/A47-v62-media-gateway.md)
 - [references/protocol/A5-state-receipts.md](protocol/A5-state-receipts.md)
 - [references/protocol/A6-evidence-security-numbers.md](protocol/A6-evidence-security-numbers.md)
 - [references/protocol/A7-pmo.md](protocol/A7-pmo.md)
