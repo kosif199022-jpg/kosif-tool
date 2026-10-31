@@ -2058,6 +2058,11 @@
    "label": "scripts/cinematic_pro_conductor.py"
   },
   {
+   "id": "script:scripts/_cinema_all_skills.py",
+   "kind": "script",
+   "label": "scripts/_cinema_all_skills.py"
+  },
+  {
    "id": "script:scripts/montage_pro.py",
    "kind": "script",
    "label": "scripts/montage_pro.py"
@@ -2373,6 +2378,11 @@
    "id": "script:scripts/python_package_probe.py",
    "kind": "script",
    "label": "scripts/python_package_probe.py"
+  },
+  {
+   "id": "test:tests/test_cinema_all_skills.py",
+   "kind": "test",
+   "label": "tests/test_cinema_all_skills.py"
   },
   {
    "id": "test:tests/test_download_deps.py",
@@ -6951,6 +6961,12 @@
   },
   {
    "from": "script:scripts/cinematic_pro_conductor.py",
+   "to": "script:scripts/_cinema_all_skills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/cinematic_pro_conductor.py",
    "to": "script:scripts/montage_pro.py",
    "rel": "imports",
    "w": 1
@@ -7728,6 +7744,12 @@
    "to": "script:scripts/check_skill.py",
    "rel": "graphify:indirect_call",
    "w": 0.85
+  },
+  {
+   "from": "script:scripts/_cinema_all_skills.py",
+   "to": "test:tests/test_cinema_all_skills.py",
+   "rel": "tested_by",
+   "w": 1
   },
   {
    "from": "script:scripts/_deps.py",
