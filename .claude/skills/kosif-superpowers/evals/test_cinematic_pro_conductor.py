@@ -50,12 +50,12 @@ class CinemaProTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             path = Path(d); src = path / "source.mp3"; src.write_bytes(b"source")
             job = path / "job"
-            with patch.object(c.m, "probe", return_value={"video": None, "audio": {"codec": "mp3"}}), \\
+            with patch.object(c.m, "probe", return_value={"video": None, "audio": {"codec": "mp3"}}), \
                  patch.object(c.m, "doctor", return_value={"tools": {"ffmpeg": {"present": True},
-                     "node": {"present": True}}, "ready_options": []}), \\
-                 patch.object(c.m, "sha256", return_value="original"), \\
-                 patch.object(c.m, "intake", return_value={"kind": "audio"}), \\
-                 patch.object(c.m, "options", return_value={"menu": [{"id": "kinetic-film"}]}), \\
+                     "node": {"present": True}}, "ready_options": []}), \
+                 patch.object(c.m, "sha256", return_value="original"), \
+                 patch.object(c.m, "intake", return_value={"kind": "audio"}), \
+                 patch.object(c.m, "options", return_value={"menu": [{"id": "kinetic-film"}]}), \
                  patch.object(c.m, "build", return_value={"status": "rendered", "output": str(path / "absent.mp4"),
                      "master_unchanged": True, "verify": {"exit": 0}}):
                 result = c.run(src, job)
