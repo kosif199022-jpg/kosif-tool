@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-MODULE = ROOT / ".claude/skills/kosif-superpowers/scripts/cinema_all_skills.py"
+MODULE = ROOT / ".claude/skills/kosif-superpowers/scripts/_cinema_all_skills.py"
 spec = importlib.util.spec_from_file_location("cinema_all_skills", MODULE)
 c = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(c)
