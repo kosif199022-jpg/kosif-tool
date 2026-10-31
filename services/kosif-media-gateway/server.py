@@ -35,6 +35,11 @@ import time
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+import importlib.util
+_SNAPANY_MODULE_PATH = Path(__file__).resolve().parent / "snapany_provider.py"
+_SNAPANY_SPEC = importlib.util.spec_from_file_location("kosif_snapany_provider", _SNAPANY_MODULE_PATH)
+snapany_provider = importlib.util.module_from_spec(_SNAPANY_SPEC)
+_SNAPANY_SPEC.loader.exec_module(snapany_provider)
 
 VERSION = "0.2.0"
 
@@ -683,6 +688,15 @@ def public_probe() -> dict:
 MCP_VERSIONS = ("2025-11-25", "2025-06-18", "2025-03-26", "2024-11-05")
 _SOURCE_DESC = "YouTube id (11 chars), a YouTube/Shorts/youtu.be URL, or an https URL on an allowed host"
 TOOLS = [
+    {"name": "snapany_proxy_links",
+     "description": "Optional official SnapAny API: billable prepaid-credit request for permitted YouTube video proxy links (up to 1080p). Disabled until owner sets key and explicit enable flag. Requires confirm_credits=true; returns temporary media URLs, not downloaded MP4.",
+     "inputSchema": {"type": "object", "properties": {
+         "video": {"type": "string"},
+         "rights": {"type": "string", "enum": list(RIGHTS)},
+         "quality": {"type": "integer", "enum": list(QUALITIES), "default": 720},
+         "confirm_credits": {"type": "boolean", "const": True}},
+         "required": ["video", "rights", "confirm_credits"], "additionalProperties": False},
+     "annotations": {"readOnlyHint": False, "destructiveHint": False, "openWorldHint": True}},
     {"name": "gateway_status",
      "description": "Gateway health, real dependency checks, limits and the last YouTube result / cool-down.",
      "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False},
@@ -749,6 +763,11 @@ def mcp_handle(msg, base_url: str = "") -> dict | None:
         if name == "gateway_status":
             payload = status()
             payload["ok"] = True
+        elif name == "snapany_proxy_links":
+            payload = snapany_provider.resolve(
+                str(args.get("video", "")), str(args.get("rights", "")),
+                args.get("quality") if type(args.get("quality")) is int else 720,
+                args.get("confirm_credits") is True)
         elif name == "list_uploads":
             payload = inbox(base_url)
         elif name == "probe_youtube":
@@ -783,6 +802,9 @@ class Gateway(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(content)))
         self.send_header("Cache-Control", "no-store")
+        if self.headers.get("Origin") == "https://kosif199022-jpg.github.io":
+            self.send_header("Access-Control-Allow-Origin", "https://kosif199022-jpg.github.io")
+            self.send_header("Vary", "Origin")
         if self.close_connection:
             self.send_header("Connection", "close")
         for k, v in (headers or {}).items():
@@ -820,6 +842,20 @@ class Gateway(BaseHTTPRequestHandler):
             return json.loads(self.rfile.read(size) or b"null"), None
         except (ValueError, UnicodeError):
             return None, "INVALID_JSON"
+
+    def do_OPTIONS(self):
+        if (urllib.parse.urlsplit(self.path).path.startswith("/v1/providers/snapany")
+                and self.headers.get("Origin") == "https://kosif199022-jpg.github.io"):
+            self.send_response(204)
+            self.send_header("Access-Control-Allow-Origin", "https://kosif199022-jpg.github.io")
+            self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Authorization, Content-Type")
+            self.send_header("Access-Control-Max-Age", "600")
+            self.send_header("Content-Length", "0")
+            self.send_header("Vary", "Origin")
+            self.end_headers()
+            return
+        self._send(403, {"ok": False, "error": "CORS_OR_ROUTE_NOT_ALLOWED"})
 
     def do_HEAD(self):
         self.do_GET()
@@ -860,6 +896,9 @@ class Gateway(BaseHTTPRequestHandler):
             return
         if path == "/v1/inbox":
             self._send(200, inbox(self._base_url()))
+            return
+        if path == "/v1/providers/snapany/status":
+            self._send(200, {"ok": True, **snapany_provider.status()})
             return
         if not path.startswith("/v1/files/"):
             self._send(404, {"error": "NOT_FOUND"})
@@ -968,6 +1007,15 @@ class Gateway(BaseHTTPRequestHandler):
             self._send(400, {"ok": False, "error": "JSON_OBJECT_REQUIRED"})
             return
         source = str(data.get("video") or data.get("url") or "")
+        if route == "/v1/providers/snapany/resolve":
+            out = snapany_provider.resolve(
+                source,
+                str(data.get("rights", "")),
+                data.get("quality") if type(data.get("quality")) is int else 720,
+                data.get("confirm_credits") is True,
+            )
+            self._send(200 if out.get("ok") else (503 if out.get("error") == "SNAPANY_NOT_CONFIGURED" else 422), out)
+            return
         if route == "/v1/probe":
             out = probe(source, bool(data.get("media_check")))
         elif route == "/v1/download":
