@@ -8021,5 +8021,45 @@
   ],
   "section": "Editing and reference video / المونتاج والفيديو المرجعي",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-181",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "التنين الأسود — العقل المنسق لكل القدرات",
+  "name_en": "Black Dragon — All-Capability Cognitive Orchestrator",
+  "status": "ready",
+  "what": "يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه. — Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully.",
+  "when": "استدعِ التنين الأسود وشغّل كل المهارات في المهمة / Use all KOSIF skills with dependency-aware intelligent parallel coordination",
+  "how": "inventory: `python3 scripts/black_dragon.py inventory`; plan: `python3 scripts/black_dragon.py plan \"اصنع مونتاج\" `; run: `python3 scripts/black_dragon.py run \"اصنع مونتاج\" --job ../../../out/black-dragon/demo --workers 8`. Full card: `python3 scripts/hub.py tool black-dragon`. Limits: A full catalog dispatch is not universal same-instant execution. Documentation-only powers or unavailable adapters are blocked, not credited. Plans are heuristic and do not establish cinematic quality.",
+  "params": "in: User task and output folder. Optional reviewed adapter map, --execute-adapters consent flag, --workers 1..32. · out: All-skills ledger, all-skills audit report, brain plan with dependency waves, execution report; real artifacts only from configured adapters.",
+  "install": "needs on PATH: python3",
+  "requires": [
+   "python3"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "black-dragon",
+   "black dragon",
+   "التنين الأسود",
+   "all skills",
+   "كل المهارات",
+   "full power",
+   "cognitive orchestration",
+   "parallel",
+   "inventory",
+   "skill audit",
+   "brain",
+   "dependency",
+   "استدعاء",
+   "تشغيل متوازي"
+  ],
+  "section": "Discover and route / اكتشاف القدرات والتوجيه",
+  "source": "data/tools.json"
  }
 ]

@@ -41,6 +41,7 @@
 | `atlas-body-audit` | مراجعة ساكنة لنصوص مهارات الأطلس | `python3 scripts/atlas_body_audit.py --index ./atlas-index.json --out ./out/atlas-audit-private --limit 200` | tested-here |
 | `atlas-external-bridge` | بحث مهارات أطلس الخارجية | `python3 scripts/atlas_external_bridge.py stats --index ./atlas_index.json --copyleft-index ./atlas_copyleft_index.json` | tested-here |
 | `atlas-metadata-audit` | تدقيق بيانات أطلس الوصفية | `python3 scripts/atlas_metadata_audit.py --index ./atlas_index.json --copyleft ./atlas_copyleft_index.json --output ./out/atlas_audit.json` | tested-here |
+| `black-dragon` | التنين الأسود — العقل المنسق لكل القدرات | `python3 scripts/black_dragon.py inventory` | untested |
 | `blender-cycles-render` | رندر Cycles إلى فيديو مُتحقَّق منه | `python3 scripts/blender_cycles_render.py doctor` | tested-here |
 | `book-methods` | مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت | `python3 scripts/book_methods.py search "شخصية حوار"` | tested-here |
 | `build-chapters` | مولّد فصول العائلات | `python3 scripts/build_chapters.py` | untested |

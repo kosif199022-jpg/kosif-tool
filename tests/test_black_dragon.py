@@ -1,6 +1,7 @@
 """Black Dragon tests: full inventory coverage, truthful parallel adapter execution, safety."""
 import importlib.util
 import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -104,6 +105,123 @@ class BlackDragonTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             dragon.run("invalid", self.root / "out" / "other", {}, workers=1000,
                        allow_execution=False, timeout=5, entries=self.inventory)
+
+    def test_every_entry_gets_a_brief_line_and_assignment(self):
+        result = dragon.run("montage video", self.job, {}, workers=2,
+                            allow_execution=False, timeout=5, entries=self.inventory)
+        self.assertEqual(result["assigned"], 4)
+        self.assertTrue(result["assignment_complete"])
+        lines = [json.loads(x) for x in (self.job / "briefs.jsonl").read_text().splitlines()]
+        self.assertEqual({x["entry"] for x in lines}, set(self.inventory))
+        self.assertTrue(all(x["part"] and x["mode"] and x["application"] for x in lines))
+        ledger = json.loads((self.job / "all_skills_ledger.json").read_text())
+        for item in ledger["items"].values():
+            self.assertEqual(len(item["assignment"]["brief_sha256"]), 64)
+            self.assertEqual(item["status"], "blocked")  # assigned is never "executed"
+        self.assertIn("Black Dragon", (self.job / "black_dragon_report.md").read_text())
+
+    def test_failing_adapter_is_failed_and_dependents_blocked(self):
+        (self.root / "scripts" / "bad.py").write_text("import sys\nsys.exit(3)\n")
+        adapters = {"power:THINK-A": {"script": "scripts/bad.py", "args": []},
+                    "tool:render": dict(self.adapter(), depends_on=["power:THINK-A"])}
+        result = dragon.run("x", self.job, adapters, workers=2,
+                            allow_execution=True, timeout=5, entries=self.inventory)
+        ledger = dragon.audit.load(self.job, self.inventory)
+        self.assertEqual(ledger["items"]["power:THINK-A"]["status"], "failed")
+        self.assertEqual(ledger["items"]["tool:render"]["status"], "blocked")
+        self.assertIn("Prerequisites", ledger["items"]["tool:render"]["reason"])
+        self.assertEqual(result["executed"], 0)
+
+
+class FullInventoryTests(unittest.TestCase):
+    """The real repository inventory: every capability type, no duplicates."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.entries = dragon.full_inventory()
+
+    def test_every_kind_is_present(self):
+        kinds = {v["kind"] for v in self.entries.values()}
+        self.assertEqual(kinds, {"skill", "power", "tool", "superpower", "style", "playbook", "protocol"})
+        base = dragon.audit.catalog()
+        self.assertTrue(set(base) <= set(self.entries))
+
+    def test_counts_match_their_sources(self):
+        skill = dragon.audit.SKILL
+        tools = json.loads((skill / "data/tools.json").read_text(encoding="utf-8"))["tools"]
+        sps = json.loads((skill / "data/superpowers.json").read_text(encoding="utf-8"))["items"]
+        styles = json.loads((ROOT / "catalog/styles.json").read_text(encoding="utf-8"))
+        count = lambda k: sum(1 for v in self.entries.values() if v["kind"] == k)
+        self.assertEqual(count("tool"), len(tools))
+        self.assertEqual(count("superpower"), len(sps))
+        self.assertEqual(count("style"), len(styles))
+        self.assertEqual(count("playbook"), len(list((ROOT / "playbooks").glob("*.md"))))
+
+    def test_brain_assigns_every_real_entry(self):
+        plan = dragon.brain.plan("اعمل مونتاج فيديو بصوت", self.entries, {},
+                                 skill_root=dragon.audit.SKILL)
+        self.assertEqual(plan["assigned"], len(self.entries))
+        self.assertEqual(plan["selected_out"], 0)
+        self.assertEqual(sum(p["assigned"] for p in plan["parts"].values()), len(self.entries))
+        self.assertEqual(sum(plan["modes"].values()), len(self.entries))
+        self.assertTrue(any(p["leads"] for p in plan["parts"].values()))
+
+    def test_reviewed_adapters_point_at_real_entries_and_scripts(self):
+        adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
+        self.assertGreaterEqual(len(adapters), 20)
+        for key, spec in adapters.items():
+            self.assertIn(key, self.entries)
+            self.assertTrue(dragon._safe_script(spec["script"]).is_file())
+            tool = spec["args"][1]
+            self.assertTrue((ROOT / tool).is_file(), tool)
+            self.assertEqual(spec["args"][0], "{artifact}")
+
+
+class RealExecutionTests(unittest.TestCase):
+    """Integration: real repo tools run through reviewed adapters with verified receipts."""
+
+    def test_reviewed_adapters_execute_with_receipts_on_full_inventory(self):
+        adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
+        keep = {k: adapters[k] for k in ("tool:export-profile", "tool:agent-guard", "tool:micro-index")}
+        with tempfile.TemporaryDirectory() as tmp:
+            job = Path(tmp) / "job"
+            result = dragon.run("مونتاج ريلز", job, keep, workers=3, allow_execution=True,
+                                timeout=120, probe_tools=False)
+            self.assertEqual(result["executed"], 3, result)
+            self.assertEqual(result["failed"], 0)
+            self.assertEqual(result["assigned"], result["scheduled"])
+            self.assertFalse(result["full_coverage"])
+            ledger = json.loads((job / "all_skills_ledger.json").read_text())
+            for key in keep:
+                receipt = ledger["items"][key]["receipt"]
+                artifact = Path(receipt["artifact"])
+                self.assertGreater(artifact.stat().st_size, 0)
+                self.assertEqual(dragon.audit.sha256(artifact), receipt["artifact_sha256"])
+
+    def test_exec_wrapper_keeps_the_tool_exit_code(self):
+        wrapper = SCRIPTS / "_black_dragon_exec.py"
+        with tempfile.TemporaryDirectory() as tmp:
+            art = Path(tmp) / "a.txt"
+            bad = subprocess.run([sys.executable, str(wrapper), str(art), "../x.py"],
+                                 capture_output=True, text=True)
+            self.assertEqual(bad.returncode, 2)
+            ok = subprocess.run([sys.executable, str(wrapper), str(art),
+                                 ".claude/skills/kosif-superpowers/scripts/export_profile.py"],
+                                capture_output=True, text=True)
+            self.assertEqual(ok.returncode, 0, ok.stderr)
+            self.assertGreater(art.stat().st_size, 0)
+
+    def test_probe_runs_help_only_for_argparse_cli_tools(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            job = Path(tmp)
+            record = {"id": "micro-index", "kind": "cli", "root": "skill",
+                      "path": "scripts/micro_index.py", "safety": "read-only"}
+            probe = dragon._probe("tool:micro-index", record, job)
+            self.assertEqual(probe["status"], "passed", probe)
+            self.assertEqual(probe["command"][-1], "--help")
+            self.assertEqual(dragon._probe("tool:x", dict(record, kind="library"), job)["status"],
+                             "not-probeable")
+            self.assertEqual(dragon._probe("tool:x", None, job)["status"], "not-probeable")
 
 
 if __name__ == "__main__":

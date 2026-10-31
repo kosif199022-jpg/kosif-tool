@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5858
+   "count": 5859
   },
   {
    "id": "dom:motion",
@@ -1406,11 +1406,11 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 179,
+   "count": 180,
    "proven": 149,
    "status": {
     "proven": 149,
-    "ready": 21,
+    "ready": 22,
     "install": 9
    }
   },
@@ -1938,6 +1938,21 @@
    "label": "scripts/atlas_capability_miner.py"
   },
   {
+   "id": "script:scripts/black_dragon.py",
+   "kind": "script",
+   "label": "scripts/black_dragon.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_brain.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_brain.py"
+  },
+  {
+   "id": "script:scripts/_cinema_all_skills.py",
+   "kind": "script",
+   "label": "scripts/_cinema_all_skills.py"
+  },
+  {
    "id": "script:scripts/blender_cinematic_bridge.py",
    "kind": "script",
    "label": "scripts/blender_cinematic_bridge.py"
@@ -2056,11 +2071,6 @@
    "id": "script:scripts/cinematic_pro_conductor.py",
    "kind": "script",
    "label": "scripts/cinematic_pro_conductor.py"
-  },
-  {
-   "id": "script:scripts/_cinema_all_skills.py",
-   "kind": "script",
-   "label": "scripts/_cinema_all_skills.py"
   },
   {
    "id": "script:scripts/montage_pro.py",
@@ -2448,6 +2458,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_atlas_ledger.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -5535,13 +5550,13 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 179
+   "w": 180
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:python3",
    "rel": "needs",
-   "w": 141
+   "w": 142
   },
   {
    "from": "fam:runnable-tools",
@@ -5589,7 +5604,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 184
+   "w": 185
   },
   {
    "from": "fam:runnable-tools",
@@ -6804,6 +6819,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_black_dragon_brain.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_cinema_all_skills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cinematic_bridge.py",
    "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
@@ -7854,6 +7881,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cinema.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
    "rel": "tested_by",
@@ -8053,6 +8086,12 @@
   },
   {
    "from": "script:scripts/export_profile.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/export_profile.py",
    "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
@@ -8234,6 +8273,12 @@
   {
    "from": "script:scripts/micro_index.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
    "w": 1
   },

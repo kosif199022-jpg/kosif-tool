@@ -1,0 +1,264 @@
+{
+  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters.",
+  "adapters": {
+    "tool:skill-intelligence": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/skill_intelligence.py",
+        "brief",
+        "{task}"
+      ],
+      "why": "USIP brief: 100% catalog scan and plans A/B/C for the task"
+    },
+    "tool:hub": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/hub.py",
+        "find",
+        "{task}",
+        "--json"
+      ],
+      "why": "front door: runnable tools and guides for the task"
+    },
+    "tool:ai-tool-discovery": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/ai_tool_discovery.py",
+        "{task}",
+        "--top",
+        "8"
+      ],
+      "why": "rank catalog powers for the task"
+    },
+    "tool:smart-capabilities": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/smart_capabilities.py",
+        "find",
+        "{task}",
+        "--json"
+      ],
+      "why": "matched capability groups"
+    },
+    "tool:micro-index": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/micro_index.py",
+        "find",
+        "{task}"
+      ],
+      "why": "one-line addresses of matching entries"
+    },
+    "tool:capability-runtime-router": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/capability_runtime_router.py",
+        "--task",
+        "{task}",
+        "--limit",
+        "5"
+      ],
+      "why": "runtime routes for the task"
+    },
+    "tool:think": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/think.py",
+        "ladder",
+        "{task}"
+      ],
+      "why": "reasoning ladder after the brief",
+      "depends_on": [
+        "tool:skill-intelligence"
+      ]
+    },
+    "tool:thinking-books": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/thinking_books.py",
+        "stack",
+        "{task}"
+      ],
+      "why": "thinking-book methods stack"
+    },
+    "tool:book-methods": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/book_methods.py",
+        "search",
+        "{task}"
+      ],
+      "why": "book methods for the task"
+    },
+    "tool:owned-repos": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/owned_repos.py",
+        "find",
+        "{task}"
+      ],
+      "why": "owner's repositories that can help"
+    },
+    "tool:see-capability-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/see_capability_bridge.py",
+        "--task",
+        "{task}",
+        "--mode",
+        "deep"
+      ],
+      "why": "SEE capability bridge plan"
+    },
+    "tool:see-superpower-unifier": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/see_superpower_unifier.py",
+        "plan",
+        "{task}",
+        "--mode",
+        "deep"
+      ],
+      "why": "SEE superpower unification",
+      "depends_on": [
+        "tool:see-capability-bridge"
+      ]
+    },
+    "tool:see-pro-cognitive-gate": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/see_pro_cognitive_gate.py",
+        "--self-test"
+      ],
+      "why": "cognitive gate self-test",
+      "depends_on": [
+        "tool:see-superpower-unifier"
+      ]
+    },
+    "tool:llm-council": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/llm_council.py",
+        "--self-test"
+      ],
+      "why": "council gate self-test",
+      "depends_on": [
+        "tool:think"
+      ]
+    },
+    "tool:invention-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/invention_lab.py",
+        "methods"
+      ],
+      "why": "invention methods list"
+    },
+    "tool:prompt-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/prompt_lab.py",
+        "kinds"
+      ],
+      "why": "prompt kinds for generation steps"
+    },
+    "tool:motion-physics": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/motion_physics.py",
+        "spring",
+        "--from",
+        "0",
+        "--to",
+        "1",
+        "--stiffness",
+        "170",
+        "--damping",
+        "26",
+        "--fps",
+        "30"
+      ],
+      "why": "spring easing curve for motion"
+    },
+    "tool:export-profile": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/export_profile.py"
+      ],
+      "why": "owner-approved video export standard for delivery"
+    },
+    "tool:agent-guard": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/agent_guard.py",
+        "rules"
+      ],
+      "why": "safety rules for any command the run issues"
+    },
+    "tool:photocraft-mcp": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/photocraft_mcp.py",
+        "steps",
+        "headless"
+      ],
+      "why": "photo craft steps"
+    },
+    "tool:adobe-mcp-bridges": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/adobe_mcp.py",
+        "list"
+      ],
+      "why": "Adobe bridges available"
+    },
+    "tool:rea-family-router": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/rea_family_router.py",
+        "list"
+      ],
+      "why": "REA family routes"
+    },
+    "tool:atlas-5000": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/atlas_5000.py",
+        "stats",
+        "--json"
+      ],
+      "why": "atlas statistics"
+    },
+    "tool:catalog-evidence-audit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/catalog_evidence_audit.py"
+      ],
+      "why": "audit catalog evidence before claiming anything"
+    }
+  }
+}
