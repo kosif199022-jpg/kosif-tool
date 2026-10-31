@@ -11,6 +11,7 @@
 - [-1.14 عقل الإخراج والمونتاج KOSIF Motion Brain — من المعنى إلى ملف MP4](#-114-عقل-الإخراج-والمونتاج-kosif-motion-brain--من-المعنى-إلى-ملف-mp4)
 - [-1.30 Director Pro — دمج التفكير المتقدم بالإنتاج السينمائي](#-130-director-pro--دمج-التفكير-المتقدم-بالإنتاج-السينمائي)
 - [Katana / Higgsfield — سياسة التحليل فقط وحفظ الرصيد](#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد)
+- [Cinema Pro — unified, evidence-gated entry point (2026-10-31)](#cinema-pro--unified-evidence-gated-entry-point-2026-10-31)
 
 ### -1.14 عقل الإخراج والمونتاج KOSIF Motion Brain — من المعنى إلى ملف MP4
 
