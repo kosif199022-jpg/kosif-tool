@@ -13,7 +13,7 @@ import json
 import sys
 from pathlib import Path
 import montage_pro as m
-import cinema_all_skills as full_skills
+import _cinema_all_skills as full_skills
 
 SKILL = Path(__file__).resolve().parent.parent
 REPO = SKILL.parents[2]
