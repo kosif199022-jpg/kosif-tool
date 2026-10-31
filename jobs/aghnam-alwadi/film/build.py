@@ -34,6 +34,9 @@ def frames(v):
             continue
         out = os.path.join(HERE, "frames", v, f"s{i:02d}")
         os.makedirs(out, exist_ok=True)
+        for old in os.listdir(out):  # frames from an earlier, longer cut would inflate the count in config.js
+            if old.endswith(".jpg"):
+                os.remove(os.path.join(out, old))
         dur = s["t1"] - s["t0"] + 0.1
         if s["mode"] == "fill":
             vf = f"fps={FPS},scale=1080:1920:force_original_aspect_ratio=increase:flags=lanczos,crop=1080:1920"
