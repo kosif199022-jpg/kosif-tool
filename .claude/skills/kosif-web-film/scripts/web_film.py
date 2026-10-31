@@ -52,6 +52,11 @@ def check_plan(plan: dict) -> list[str]:
         return ["duration must be a positive number"]
     if len(shots) < 3:
         errs.append(f"need at least 3 shots, found {len(shots)}")
+    for key in ("width", "height"):
+        if not isinstance(plan.get(key), int) or plan[key] <= 0:
+            errs.append(f"{key} must be a positive whole number of pixels")
+    if not isinstance(plan.get("seed", 7), int):
+        errs.append("seed must be a whole number")
     if not (plan.get("concept") or "").strip():
         errs.append("concept is empty: write the one idea the film serves")
     t = 0.0
@@ -73,7 +78,7 @@ def check_plan(plan: dict) -> list[str]:
         errs.append("every shot has the same length: vary the pacing")
     for i in range(1, len(shots)):
         if shots[i].get("transition_in") == shots[i - 1].get("transition_in") and shots[i].get("transition_in") != "cut":
-            errs.append(f"shots {i - 1} and {i} use the same transition ({shots[i]['transition_in']})")
+            errs.append(f"shots {i - 1} and {i} use the same transition ({shots[i].get('transition_in')})")
     if shots and not any(s.get("memorable") for s in shots):
         errs.append("no shot is marked memorable")
     reqs = plan.get("requirements") or []
@@ -84,7 +89,7 @@ def check_plan(plan: dict) -> list[str]:
     return errs
 
 
-_NET = re.compile(r"""(?:src|href)\s*=\s*["']\s*(?:https?:)?//|@import\s+url\(\s*["']?(?:https?:)?//|fetch\(\s*["']https?://""", re.I)
+_NET = re.compile(r"""(?:src|href)\s*=\s*["']\s*(?:https?:)?//|url\(\s*["']?\s*(?:https?:)?//|fetch\(\s*["']https?://""", re.I)
 
 
 def check_html(text: str, plan: dict) -> list[str]:
@@ -93,7 +98,7 @@ def check_html(text: str, plan: dict) -> list[str]:
         errs.append("page does not define window.__kosif (the renderer's seek API)")
     if not re.search(r"\bseek\s*[:(]", text):
         errs.append("window.__kosif has no seek(t)")
-    m = re.search(r"""["']?duration["']?\s*:\s*([0-9.]+)""", text)
+    m = re.search(r"""(?<![-\w])["']?duration["']?\s*:\s*([0-9.]+)""", text)
     if m and abs(float(m.group(1)) - float(plan.get("duration", 0))) > 1e-3:
         errs.append(f"page duration {m.group(1)} differs from plan {plan.get('duration')}")
     if _NET.search(text):
@@ -158,7 +163,9 @@ def scaffold(plan: dict) -> str:
         words = "".join(f'<span class="w">{html.escape(w)}</span> ' for w in text.split())
         extra = {"shape": '<div class="shape"></div>', "reveal": '<div class="field"></div>'}.get(s.get("kind"), "")
         parts.append(f'<section class="scene k-{html.escape(s.get("kind", ""))}" data-shot="{i}">{extra}<h1>{words}</h1></section>')
-    data = json.dumps({k: plan[k] for k in ("duration", "seed", "shots")}, ensure_ascii=False)
+    # "<" escaped so text such as "</script>" in a shot cannot end the script block.
+    data = json.dumps({k: plan.get(k, 7) if k == "seed" else plan[k] for k in ("duration", "seed", "shots")},
+                      ensure_ascii=False).replace("<", "\\u003c")
     return f"""<!doctype html>
 <html lang="{'ar' if rtl else 'en'}" dir="{'rtl' if rtl else 'ltr'}"><head><meta charset="utf-8">
 <title>{html.escape(plan.get('concept') or plan.get('prompt') or 'KOSIF web film')}</title>

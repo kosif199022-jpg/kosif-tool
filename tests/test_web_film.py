@@ -52,6 +52,36 @@ class PlanChecks(unittest.TestCase):
         self.assertIn("no shot is marked memorable", wf.check_plan(p))
 
 
+class ReviewFixes(unittest.TestCase):
+    def test_script_close_in_text_stays_inside_the_script(self):
+        p = filled()
+        p["shots"][0]["text"] = "</script><b>x"
+        page = wf.scaffold(p)
+        script = page.split("<script>", 1)[1]
+        self.assertEqual(script.count("</script>"), 1)
+        self.assertEqual(wf.check_html(page, p), [])
+
+    def test_missing_transitions_do_not_crash(self):
+        p = filled()
+        for s in p["shots"][:2]:
+            s.pop("transition_in")
+        errs = wf.check_plan(p)
+        self.assertTrue(any("transition_in must be" in e for e in errs))
+
+    def test_plan_needs_pixel_size(self):
+        p = filled()
+        del p["width"]
+        self.assertIn("width must be a positive whole number of pixels", wf.check_plan(p))
+
+    def test_css_duration_and_css_url(self):
+        p = filled()
+        ok = wf.scaffold(p)
+        css = ok.replace("<style>", "<style>.x{transition-duration:3s;animation-duration:2s}", 1)
+        self.assertEqual(wf.check_html(css, p), [])
+        net = ok.replace("<style>", "<style>.x{background:url(https://example.com/a.png)}", 1)
+        self.assertTrue(any("network" in e for e in wf.check_html(net, p)))
+
+
 class HtmlChecks(unittest.TestCase):
     def test_scaffold_passes_its_own_check(self):
         p = filled()
