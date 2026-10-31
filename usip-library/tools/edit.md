@@ -170,9 +170,9 @@
 | الدليل | `untested` |
 | العائلات | `transitions-cuts`, `audio-sync-captions`, `photo-video-footage`, `qa-verification` |
 
-**ما تفعله:** يستعرض مهارات سوبر باور وأدوار مونتاج برو الثلاثة عشر ويخطط للمهارات الملائمة، ثم ينفذ المونتاج عبر المحرك الحالي مع تسجيل ما نُفذ فعلًا، وحماية بصمة المصدر، ورفض الادعاء بنجاح فيديو MP4 لم يُفحص.
+**ما تفعله:** يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل.
 
-**What it does:** Inventories available Superpowers modules and 13 Montage Pro creative roles, proposes a task-specific workflow, and routes permitted local audio/video to the existing render pipeline. It distinguishes proposed roles from executed steps, preserves source SHA-256, and rejects missing or unverified MP4 outputs.
+**What it does:** Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.
 
 #### متى تُستدعى
 
@@ -185,10 +185,10 @@
 
 - **doctor**: List installed skills and tool/module readiness without claiming execution.
   - `python3 scripts/cinematic_pro_conductor.py doctor`
-- **plan**: Show the chosen Montage Pro team and stages before any media is touched.
-  - `python3 scripts/cinematic_pro_conductor.py plan --kind audio --option kinetic-film`
-- **run**: Use local intake, option selection and real Montage Pro renderer; write an evidence receipt and exit nonzero unless verified MP4 exists.
-  - `python3 scripts/cinematic_pro_conductor.py run ./voice.wav --job ../../../out/cinema/my-reel --option kinetic-film --style cinematic`
+- **plan**: Show creative roles, evidence gates and the complete ordered production chain without asserting those roles were executed.
+  - `python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel`
+- **run**: Render highlight -> 9:16 -> cinematic look with verified output at every stage; or use --recipe cinematic-audio for kinetic motion -> film look; optional --transcribe-local runs only with a cached model.
+  - `python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30`
 
 #### المتطلبات والأمان
 
@@ -196,7 +196,7 @@
 - optional: bin:node, bin:chromium, pip:faster-whisper
 - الأمان: runs-external-programs
 - الموافقة: Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.
-- الحدود: Planning does not execute every installed skill; the runnable options use Montage Pro and do not automatically fuse specialist B-roll/3D/WhisperX branches into a single timeline. Creative visual review and source rights are still human-gated.
+- الحدود: A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.
 
 #### الاختبارات والأدلة
 

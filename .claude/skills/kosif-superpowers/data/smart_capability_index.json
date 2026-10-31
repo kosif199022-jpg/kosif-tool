@@ -74401,7 +74401,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py"
       ],
       "source": "runnable-tools.json",
-      "what": "يستعرض مهارات سوبر باور وأدوار مونتاج برو الثلاثة عشر ويخطط للمهارات الملائمة، ثم ينفذ المونتاج عبر المحرك الحالي مع تسجيل ما نُفذ فعلًا، وحماية بصمة المصدر، ورفض الادعاء بنجاح فيديو MP4 لم يُفحص. — Inventories available Superpowers modules and 13 Montage Pro creative roles, prop"
+      "what": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montag"
     },
     {
       "id": "SEC-01",

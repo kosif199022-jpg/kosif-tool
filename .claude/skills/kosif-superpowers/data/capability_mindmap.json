@@ -3419,7 +3419,7 @@
 "SP-0408",
 "SP-0327"
 ],
-"text": "reference video timing probe فاحص توقيت الفيديو المرجعي motion-reference-probe cut detection scene change ffprobe video metadata reference video shot boundaries timing probe كشف القطعات تغيّر المشهد بيانات الفيديو الفيديو المرجعي حدود اللقطات مدة الفيديو reference edit engine محرك إعادة بناء المونتاج المرجعي reference-edit-engine reference edit cut rhythm remotion project editable timeline word-safe cuts replacement clips katana-style مونتاج مرجعي إيقاع القطعات مشروع ريموشن إعادة بناء المونتاج محاكاة مونتاج لقطات بديلة reference visual fingerprint البصمة البصرية للفيديو المرجعي reference-visual-fingerprint visual fingerprint color palette luma contrast frame change camera pan candidate reference look بصمة بصرية لوحة الألوان الإضاءة التباين حركة الكاميرا ألوان الفيديو المرجعي kosif mimic reference rebuilder محرك محاكاة الفيديو المرجعي mimic reference video remake transition classification xfade text animation arabic text font matching colour transfer spec.json محاكاة فيديو مرجعي إعادة بناء انتقالات كتابة عربية متحركة مطابقة الخط kosif timeline: genuine multitrack video, image and audio editor محرر kosif timeline: مونتاج متعدد المسارات مع تراجع وإعادة kosif-timeline timeline multi track multitrack video editing photo image overlay trim cuts crossfade audio mix undo redo ffmpeg mp4 h264 aac مونتاج تايملاين فيديو صوت قص تراجع montage pro task force (audio/video to montage or motion) فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) montage-pro montage motion graphics reels reframe highlight visualizer task force مونتاج موشن ريلز فريق تحويل transcribe word timings faster-whisper words.json تفريغ توقيت الكلمات no-vad recovered lyrics recitation تلاوة أناشيد reference-edit structural quality gate بوابة جودة خطة المونتاج creative-quality-gate quality gate plan.json frame continuity no gap no overlap word timing hard cut remotion reference edit audit بوابة الجودة استمرارية الإطارات توقيت الكلمات قطع حاد تدقيق المونتاج خطة المونتاج footage-first cut planner مُخطِّط قطعات اللقطات الحقيقية cinematic-cut-planner edl edit decision list b-roll planning footage selection speech pause scenes licensed footage camera moves خطة مونتاج قائمة قرارات المونتاج توزيع اللقطات لقطات مرخصة وقفات الكلام cinematic b-roll renderer تصيير لقطات b-roll بحركة كاميرا cinematic-broll-render b-roll render ffmpeg zoompan ken burns camera motion audio stream copy video master edl render تصيير حركة كاميرا ماستر فيديو الصوت الأصلي لقطات مرخصة مونتاج حقيقي reel factory: voice + word timings + licen"
+"text": "reference video timing probe فاحص توقيت الفيديو المرجعي motion-reference-probe cut detection scene change ffprobe video metadata reference video shot boundaries timing probe كشف القطعات تغيّر المشهد بيانات الفيديو الفيديو المرجعي حدود اللقطات مدة الفيديو reference edit engine محرك إعادة بناء المونتاج المرجعي reference-edit-engine reference edit cut rhythm remotion project editable timeline word-safe cuts replacement clips katana-style مونتاج مرجعي إيقاع القطعات مشروع ريموشن إعادة بناء المونتاج محاكاة مونتاج لقطات بديلة reference visual fingerprint البصمة البصرية للفيديو المرجعي reference-visual-fingerprint visual fingerprint color palette luma contrast frame change camera pan candidate reference look بصمة بصرية لوحة الألوان الإضاءة التباين حركة الكاميرا ألوان الفيديو المرجعي kosif mimic reference rebuilder محرك محاكاة الفيديو المرجعي mimic reference video remake transition classification xfade text animation arabic text font matching colour transfer spec.json محاكاة فيديو مرجعي إعادة بناء انتقالات كتابة عربية متحركة مطابقة الخط kosif timeline: genuine multitrack video, image and audio editor محرر kosif timeline: مونتاج متعدد المسارات مع تراجع وإعادة kosif-timeline timeline multi track multitrack video editing photo image overlay trim cuts crossfade audio mix undo redo ffmpeg mp4 h264 aac مونتاج تايملاين فيديو صوت قص تراجع montage pro task force (audio/video to montage or motion) فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن) montage-pro montage motion graphics reels reframe highlight visualizer task force مونتاج موشن ريلز فريق تحويل transcribe word timings faster-whisper words.json تفريغ توقيت الكلمات no-vad recovered lyrics recitation تلاوة أناشيد reference-edit structural quality gate بوابة جودة خطة المونتاج creative-quality-gate quality gate plan.json frame continuity no gap no overlap word timing hard cut remotion reference edit audit بوابة الجودة استمرارية الإطارات توقيت الكلمات قطع حاد تدقيق المونتاج خطة المونتاج footage-first cut planner مُخطِّط قطعات اللقطات الحقيقية cinematic-cut-planner edl edit decision list b-roll planning footage selection speech pause scenes licensed footage camera moves خطة مونتاج قائمة قرارات المونتاج توزيع اللقطات لقطات مرخصة وقفات الكلام cinematic b-roll renderer تصيير لقطات b-roll بحركة كاميرا cinematic-broll-render b-roll render ffmpeg zoompan ken burns camera motion audio stream copy video master edl render تصيير حركة كاميرا ماستر فيديو الصوت الأصلي لقطات مرخصة مونتاج حقيقي kosif timeline one-command synthetic media"
 },
 "SP-0141": {
 "id": "SP-0141",
@@ -13556,21 +13556,21 @@
 ]
 },
 {
-"a": "SP-0140",
-"b": "SP-0357",
-"sim": 0.341,
-"hubs": [
-"agents",
-"images"
-]
-},
-{
 "a": "SP-0234",
 "b": "SP-0457",
 "sim": 0.341,
 "hubs": [
 "data",
 "type"
+]
+},
+{
+"a": "SP-0140",
+"b": "SP-0357",
+"sim": 0.34,
+"hubs": [
+"agents",
+"images"
 ]
 },
 {

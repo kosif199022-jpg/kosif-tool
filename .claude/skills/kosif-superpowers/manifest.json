@@ -19213,8 +19213,8 @@
    "area": "edit",
    "title_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
    "title_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
-   "summary_en": "Inventories available Superpowers modules and 13 Montage Pro creative roles, proposes a task-specific workflow, and routes permitted local audio/video to the existing render pipeline. It distinguishes proposed roles from executed steps, preserves source SHA-256, and rejects missing or unverified MP4 outputs.",
-   "summary_ar": "يستعرض مهارات سوبر باور وأدوار مونتاج برو الثلاثة عشر ويخطط للمهارات الملائمة، ثم ينفذ المونتاج عبر المحرك الحالي مع تسجيل ما نُفذ فعلًا، وحماية بصمة المصدر، ورفض الادعاء بنجاح فيديو MP4 لم يُفحص.",
+   "summary_en": "Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.",
+   "summary_ar": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل.",
    "use_when": [
     "شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل",
     "ابغى أمر واحد يطلع فيديو موشن مفحوص من صوتي",
@@ -19247,17 +19247,17 @@
     },
     {
      "name": "plan",
-     "example": "python3 scripts/cinematic_pro_conductor.py plan --kind audio --option kinetic-film",
-     "does": "Show the chosen Montage Pro team and stages before any media is touched."
+     "example": "python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel",
+     "does": "Show creative roles, evidence gates and the complete ordered production chain without asserting those roles were executed."
     },
     {
      "name": "run",
-     "example": "python3 scripts/cinematic_pro_conductor.py run ./voice.wav --job ../../../out/cinema/my-reel --option kinetic-film --style cinematic",
-     "does": "Use local intake, option selection and real Montage Pro renderer; write an evidence receipt and exit nonzero unless verified MP4 exists."
+     "example": "python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30",
+     "does": "Render highlight -> 9:16 -> cinematic look with verified output at every stage; or use --recipe cinematic-audio for kinetic motion -> film look; optional --transcribe-local runs only with a cached model."
     }
    ],
-   "inputs": "Owned or licensed local audio/video source; output job under out/ (or outside checkout); selected runnable option and optional style.",
-   "outputs": "JOB/intake.json, options.json, out/*.mp4 if rendered, and cinema_pro_receipt.json with actual stages, source SHA-256, verification result and truthful success/failure.",
+   "inputs": "Authorized local audio/video input, a job under out/, --recipe single|cinematic-reel|cinematic-audio, optional style/clip length and --transcribe-local for cached word timings.",
+   "outputs": "JOB/intake.json, options.json, cinema_pro_receipt.json and for multi-pass recipes JOB/passes/{stage}/ with real verified MP4s, final output path and source SHA-256.",
    "requires": {
     "python": [],
     "binaries": [
@@ -19274,9 +19274,9 @@
    },
    "safety": "runs-external-programs",
    "consent": "Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.",
-   "limits": "Planning does not execute every installed skill; the runnable options use Montage Pro and do not automatically fuse specialist B-roll/3D/WhisperX branches into a single timeline. Creative visual review and source rights are still human-gated.",
+   "limits": "A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.",
    "evidence": "untested",
-   "evidence_note": "Added 2026-10-31 with targeted regression tests; CI and real user-footage render not yet verified when registered.",
+   "evidence_note": "Feature branch 2026-10-31: regression tests written for single and three-pass recipes; automated catalog integrity and routing verified before this recipe extension, but live rendering/CI for the updated recipe not yet confirmed.",
    "tests": [
     ".claude/skills/kosif-superpowers/evals/test_cinematic_pro_conductor.py"
    ],
