@@ -13,6 +13,7 @@ import json
 import sys
 from pathlib import Path
 import montage_pro as m
+import cinema_all_skills as full_skills
 
 SKILL = Path(__file__).resolve().parent.parent
 REPO = SKILL.parents[2]
@@ -108,7 +109,7 @@ def gate(result, source, source_sha):
     return {"passed": True, "output": str(video), "video_verification": verification}
 
 
-def run(media, job, option=None, style=None, title="", recipe="single", transcribe_local=False):
+def run(media, job, option=None, style=None, title="", recipe="single", transcribe_local=False, require_all_skills=False):
     safe_output(job)
     media = media.resolve()
     if not media.is_file():
@@ -134,6 +135,11 @@ def run(media, job, option=None, style=None, title="", recipe="single", transcri
         raise ValueError("No source audio for local transcription")
     sha = m.sha256(media)
     job.mkdir(parents=True, exist_ok=True)
+    if require_all_skills:
+        all_catalog = full_skills.catalog()
+        coverage_job = job / "full-skills"
+        if not (coverage_job / "all_skills_ledger.json").exists():
+            full_skills.init(coverage_job, all_catalog)
     receipt = {"schema": "kosif.cinema-pro.receipt.v2", "plan": plan_doc,
                "source_sha256": sha, "executed": [], "status": "failed", "passes": []}
     try:
@@ -176,6 +182,13 @@ def run(media, job, option=None, style=None, title="", recipe="single", transcri
             receipt["error"] = "Original source changed during the render passes"
     except Exception as exc:
         receipt["error"] = type(exc).__name__ + ": " + str(exc)
+    if require_all_skills:
+        coverage = full_skills.report(coverage_job, all_catalog)
+        receipt["full_skills_coverage"] = coverage
+        if not coverage["fully_executed"]:
+            receipt["status"] = "coverage-incomplete"
+            receipt["coverage_warning"] = ("Export may be technically verified, but every catalogued "
+                                           "skill/power/tool has NOT been executed with evidence")
     m.jsave(job / "cinema_pro_receipt.json", receipt)
     return receipt
 
@@ -188,11 +201,12 @@ def main(argv=None):
     q.add_argument("--option"); q.add_argument("--style"); q.add_argument("--title", default="")
     q.add_argument("--recipe", choices=("single", "cinematic-reel", "cinematic-audio"), default="single")
     q.add_argument("--transcribe-local", action="store_true", help="opt-in: cached local model only")
+    q.add_argument("--require-all-skills", action="store_true", help="strict full-catalog proof gate; incomplete returns nonzero")
     a = p.parse_args(argv)
     try:
         data = doctor() if a.cmd == "doctor" else (plan(a.kind, a.option, a.recipe) if a.cmd == "plan"
                                                      else run(a.media, a.job, a.option, a.style, a.title, a.recipe,
-                                                              a.transcribe_local))
+                                                              a.transcribe_local, a.require_all_skills))
         print(json.dumps(data, ensure_ascii=False, indent=2))
         return 0 if a.cmd != "run" or data["status"] == "verified" else 4
     except (OSError, ValueError) as exc:
