@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5857,
+  "catalog_powers": 5858,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 202,
+  "tool_count": 203,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 276,
+      "count": 277,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
         "proven": 176,
-        "ready": 21
+        "ready": 22
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 178,
+        "runnable-tools": 179,
         "self-discovery": 43
       },
       "examples": [
@@ -74383,6 +74383,25 @@
       ],
       "source": "runnable-tools.json",
       "what": "الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل ترا"
+    },
+    {
+      "id": "TOOL-180",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+      "name_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+      "status": "ready",
+      "requires": [
+        "ffmpeg",
+        "chromium",
+        "imagemagick"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montag"
     },
     {
       "id": "SEC-01",

@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5857,
-"distinct_methods": 5575,
+"atoms": 5858,
+"distinct_methods": 5576,
 "twin_groups": 178,
 "superpowers": 482,
 "per_target": 12,
@@ -16733,7 +16733,7 @@
 "sim": 0.09
 },
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.081
 }
 ]
@@ -16880,7 +16880,7 @@
 "sim": 0.134
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.107
 }
 ]
@@ -17984,6 +17984,188 @@
 "id": "SP-0140",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "فاحص توقيت الفيديو المرجعي",
+"name_en": "Reference Video Timing Probe",
+"focus": [
+"reference",
+"editing",
+"video",
+"edit"
+],
+"size": 20,
+"best": "proven",
+"status_mix": {
+"proven": 19,
+"ready": 1
+},
+"ready_now": 20,
+"families": {
+"runnable-tools": 20
+},
+"atlas_folded": 0,
+"requires": [
+"ffmpeg",
+"python3",
+"npm:remotion",
+"chromium",
+"pip:numpy",
+"pip:pillow",
+"pip:opencv",
+"imagemagick"
+],
+"pipeline": [
+{
+"id": "TOOL-21",
+"status": "proven",
+"name_en": "Reference Video Timing Probe",
+"name_ar": "فاحص توقيت الفيديو المرجعي"
+},
+{
+"id": "TOOL-22",
+"status": "proven",
+"name_en": "Reference Edit Engine",
+"name_ar": "محرك إعادة بناء المونتاج المرجعي"
+},
+{
+"id": "TOOL-23",
+"status": "proven",
+"name_en": "Reference Visual Fingerprint",
+"name_ar": "البصمة البصرية للفيديو المرجعي"
+},
+{
+"id": "TOOL-85",
+"status": "proven",
+"name_en": "KOSIF Mimic reference rebuilder",
+"name_ar": "محرك محاكاة الفيديو المرجعي"
+},
+{
+"id": "TOOL-122",
+"status": "proven",
+"name_en": "KOSIF Timeline: genuine multitrack video, image and audio editor",
+"name_ar": "محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة"
+},
+{
+"id": "TOOL-130",
+"status": "proven",
+"name_en": "Montage Pro task force (audio/video to montage or motion)",
+"name_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)"
+},
+{
+"id": "TOOL-35",
+"status": "proven",
+"name_en": "Reference-edit structural quality gate",
+"name_ar": "بوابة جودة خطة المونتاج"
+},
+{
+"id": "TOOL-20",
+"status": "proven",
+"name_en": "Footage-First Cut Planner",
+"name_ar": "مُخطِّط قطعات اللقطات الحقيقية"
+},
+{
+"id": "TOOL-19",
+"status": "proven",
+"name_en": "Cinematic B-roll Renderer",
+"name_ar": "تصيير لقطات B-roll بحركة كاميرا"
+},
+{
+"id": "TOOL-123",
+"status": "proven",
+"name_en": "KOSIF Timeline one-command synthetic media demo",
+"name_ar": "تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة"
+},
+{
+"id": "TOOL-131",
+"status": "proven",
+"name_en": "Reel factory: voice + word timings + licensed shots → verified 9:16 reel",
+"name_ar": "مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص"
+},
+{
+"id": "TOOL-24",
+"status": "proven",
+"name_en": "Video Workflow Bridge",
+"name_ar": "جسر سير عمل الفيديو"
+},
+{
+"id": "TOOL-132",
+"status": "proven",
+"name_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
+"name_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16"
+},
+{
+"id": "TOOL-178",
+"status": "proven",
+"name_en": "Quran text and timing: exact verses, measured pauses, verse and word timing for reels",
+"name_ar": "نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز"
+},
+{
+"id": "TOOL-168",
+"status": "proven",
+"name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
+"name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
+},
+{
+"id": "TOOL-166",
+"status": "proven",
+"name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
+"name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL"
+},
+{
+"id": "TOOL-175",
+"status": "proven",
+"name_en": "Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review",
+"name_ar": "معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B"
+},
+{
+"id": "TOOL-133",
+"status": "proven",
+"name_en": "DASH/HLS stream grabber for editing",
+"name_ar": "ملتقط بث DASH وHLS للمونتاج"
+},
+{
+"id": "TOOL-75",
+"status": "proven",
+"name_en": "Writing Tell Scanner",
+"name_ar": "فاحص العبارات الكتابية النمطية"
+},
+{
+"id": "TOOL-180",
+"status": "ready",
+"name_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+"name_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_reference_probe.py",
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_edit_engine.py"
+],
+"twins": [],
+"distinct_methods": 20,
+"links": [
+{
+"id": "SP-0357",
+"sim": 0.34
+},
+{
+"id": "SP-0380",
+"sim": 0.295
+},
+{
+"id": "SP-0408",
+"sim": 0.174
+},
+{
+"id": "SP-0327",
+"sim": 0.174
+}
+]
+},
+{
+"id": "SP-0141",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
 "name_en": "Audio-timed SVG motion compiler",
 "focus": [
@@ -18172,181 +18354,6 @@
 {
 "id": "SP-0267",
 "sim": 0.199
-}
-]
-},
-{
-"id": "SP-0141",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "فاحص توقيت الفيديو المرجعي",
-"name_en": "Reference Video Timing Probe",
-"focus": [
-"reference",
-"editing",
-"video",
-"edit"
-],
-"size": 19,
-"best": "proven",
-"status_mix": {
-"proven": 19
-},
-"ready_now": 19,
-"families": {
-"runnable-tools": 19
-},
-"atlas_folded": 0,
-"requires": [
-"ffmpeg",
-"python3",
-"npm:remotion",
-"pip:numpy",
-"pip:pillow",
-"pip:opencv",
-"chromium",
-"yt-dlp"
-],
-"pipeline": [
-{
-"id": "TOOL-21",
-"status": "proven",
-"name_en": "Reference Video Timing Probe",
-"name_ar": "فاحص توقيت الفيديو المرجعي"
-},
-{
-"id": "TOOL-22",
-"status": "proven",
-"name_en": "Reference Edit Engine",
-"name_ar": "محرك إعادة بناء المونتاج المرجعي"
-},
-{
-"id": "TOOL-23",
-"status": "proven",
-"name_en": "Reference Visual Fingerprint",
-"name_ar": "البصمة البصرية للفيديو المرجعي"
-},
-{
-"id": "TOOL-85",
-"status": "proven",
-"name_en": "KOSIF Mimic reference rebuilder",
-"name_ar": "محرك محاكاة الفيديو المرجعي"
-},
-{
-"id": "TOOL-122",
-"status": "proven",
-"name_en": "KOSIF Timeline: genuine multitrack video, image and audio editor",
-"name_ar": "محرر KOSIF Timeline: مونتاج متعدد المسارات مع تراجع وإعادة"
-},
-{
-"id": "TOOL-35",
-"status": "proven",
-"name_en": "Reference-edit structural quality gate",
-"name_ar": "بوابة جودة خطة المونتاج"
-},
-{
-"id": "TOOL-20",
-"status": "proven",
-"name_en": "Footage-First Cut Planner",
-"name_ar": "مُخطِّط قطعات اللقطات الحقيقية"
-},
-{
-"id": "TOOL-19",
-"status": "proven",
-"name_en": "Cinematic B-roll Renderer",
-"name_ar": "تصيير لقطات B-roll بحركة كاميرا"
-},
-{
-"id": "TOOL-130",
-"status": "proven",
-"name_en": "Montage Pro task force (audio/video to montage or motion)",
-"name_ar": "فريق مونتاج برو (صوت أو فيديو إلى مونتاج أو موشن)"
-},
-{
-"id": "TOOL-24",
-"status": "proven",
-"name_en": "Video Workflow Bridge",
-"name_ar": "جسر سير عمل الفيديو"
-},
-{
-"id": "TOOL-123",
-"status": "proven",
-"name_en": "KOSIF Timeline one-command synthetic media demo",
-"name_ar": "تجربة مونتاج KOSIF Timeline تلقائية بملفات أصلية مولدة"
-},
-{
-"id": "TOOL-131",
-"status": "proven",
-"name_en": "Reel factory: voice + word timings + licensed shots → verified 9:16 reel",
-"name_ar": "مصنع الريلز: صوت وتوقيت كلمات ولقطات مرخصة ← ريلز 9:16 مفحوص"
-},
-{
-"id": "TOOL-178",
-"status": "proven",
-"name_en": "Quran text and timing: exact verses, measured pauses, verse and word timing for reels",
-"name_ar": "نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز"
-},
-{
-"id": "TOOL-132",
-"status": "proven",
-"name_en": "Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine",
-"name_ar": "دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16"
-},
-{
-"id": "TOOL-168",
-"status": "proven",
-"name_en": "Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract",
-"name_ar": "التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت"
-},
-{
-"id": "TOOL-166",
-"status": "proven",
-"name_en": "Look pipeline: one colour grade for ffmpeg, SVG/CSS and GLSL",
-"name_ar": "خط اللوك: تلوين واحد لـ ffmpeg وSVG وGLSL"
-},
-{
-"id": "TOOL-175",
-"status": "proven",
-"name_en": "Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review",
-"name_ar": "معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B"
-},
-{
-"id": "TOOL-133",
-"status": "proven",
-"name_en": "DASH/HLS stream grabber for editing",
-"name_ar": "ملتقط بث DASH وHLS للمونتاج"
-},
-{
-"id": "TOOL-75",
-"status": "proven",
-"name_en": "Writing Tell Scanner",
-"name_ar": "فاحص العبارات الكتابية النمطية"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_motion_reference_probe.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_visual_style.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/motion_reference_probe.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_reference_edit_engine.py"
-],
-"twins": [],
-"distinct_methods": 19,
-"links": [
-{
-"id": "SP-0357",
-"sim": 0.33
-},
-{
-"id": "SP-0380",
-"sim": 0.297
-},
-{
-"id": "SP-0408",
-"sim": 0.17
-},
-{
-"id": "SP-0288",
-"sim": 0.167
 }
 ]
 },
@@ -19937,7 +19944,7 @@
 "sim": 0.129
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.121
 }
 ]
@@ -20021,12 +20028,12 @@
 "sim": 0.103
 },
 {
-"id": "SP-0269",
+"id": "SP-0140",
 "sim": 0.1
 },
 {
-"id": "SP-0279",
-"sim": 0.095
+"id": "SP-0269",
+"sim": 0.1
 }
 ]
 },
@@ -23991,8 +23998,8 @@
 "sim": 0.137
 },
 {
-"id": "SP-0141",
-"sim": 0.136
+"id": "SP-0140",
+"sim": 0.132
 }
 ]
 },
@@ -24177,7 +24184,7 @@
 "sim": 0.099
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.07
 }
 ]
@@ -25646,7 +25653,7 @@
 "sim": 0.195
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.018
 }
 ]
@@ -27703,8 +27710,8 @@
 "sim": 0.214
 },
 {
-"id": "SP-0141",
-"sim": 0.018
+"id": "SP-0140",
+"sim": 0.017
 }
 ]
 },
@@ -27931,7 +27938,7 @@
 "sim": 0.093
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.051
 }
 ]
@@ -28043,7 +28050,7 @@
 "sim": 0.223
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.133
 }
 ]
@@ -31737,8 +31744,8 @@
 "sim": 0.139
 },
 {
-"id": "SP-0141",
-"sim": 0.044
+"id": "SP-0140",
+"sim": 0.045
 }
 ]
 },
@@ -33384,7 +33391,7 @@
 "sim": 0.169
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.136
 }
 ]
@@ -34162,7 +34169,7 @@
 "distinct_methods": 18,
 "links": [
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.119
 },
 {
@@ -34170,7 +34177,7 @@
 "sim": 0.091
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.089
 },
 {
@@ -34386,7 +34393,7 @@
 "sim": 0.364
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.265
 },
 {
@@ -34592,8 +34599,8 @@
 "sim": 0.316
 },
 {
-"id": "SP-0141",
-"sim": 0.156
+"id": "SP-0140",
+"sim": 0.151
 },
 {
 "id": "SP-0383",
@@ -34813,7 +34820,7 @@
 "sim": 0.188
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.109
 }
 ]
@@ -35210,7 +35217,7 @@
 "sim": 0.206
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.199
 }
 ]
@@ -35578,7 +35585,7 @@
 "sim": 0.307
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.201
 },
 {
@@ -35901,7 +35908,7 @@
 "sim": 0.303
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.15
 }
 ]
@@ -36507,7 +36514,7 @@
 "sim": 0.129
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.124
 }
 ]
@@ -36787,7 +36794,7 @@
 "sim": 0.115
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.112
 }
 ]
@@ -36936,7 +36943,7 @@
 "sim": 0.102
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.065
 }
 ]
@@ -37197,7 +37204,7 @@
 "sim": 0.143
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.131
 }
 ]
@@ -37691,7 +37698,7 @@
 "sim": 0.11
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.086
 }
 ]
@@ -37912,7 +37919,7 @@
 "sim": 0.16
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.096
 }
 ]
@@ -38103,7 +38110,7 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0141",
+"id": "SP-0140",
 "sim": 0.167
 },
 {
@@ -38307,8 +38314,8 @@
 "sim": 0.09
 },
 {
-"id": "SP-0022",
-"sim": 0.085
+"id": "SP-0140",
+"sim": 0.086
 }
 ]
 },
@@ -38497,7 +38504,7 @@
 "sim": 0.097
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.066
 }
 ]
@@ -39005,7 +39012,7 @@
 "sim": 0.072
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.028
 }
 ]
@@ -39272,7 +39279,7 @@
 "sim": 0.148
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.126
 },
 {
@@ -39937,7 +39944,7 @@
 "sim": 0.206
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.163
 },
 {
@@ -40179,7 +40186,7 @@
 "sim": 0.09
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.066
 }
 ]
@@ -43265,8 +43272,8 @@
 "sim": 0.445
 },
 {
-"id": "SP-0141",
-"sim": 0.163
+"id": "SP-0140",
+"sim": 0.174
 }
 ]
 },
@@ -45248,8 +45255,8 @@
 "sim": 0.29
 },
 {
-"id": "SP-0141",
-"sim": 0.053
+"id": "SP-0140",
+"sim": 0.052
 }
 ]
 },
@@ -46967,8 +46974,8 @@
 "sim": 0.408
 },
 {
-"id": "SP-0141",
-"sim": 0.33
+"id": "SP-0140",
+"sim": 0.34
 },
 {
 "id": "SP-0264",
@@ -47159,8 +47166,8 @@
 "sim": 0.122
 },
 {
-"id": "SP-0141",
-"sim": 0.091
+"id": "SP-0140",
+"sim": 0.086
 }
 ]
 },
@@ -47407,8 +47414,8 @@
 "sim": 0.155
 },
 {
-"id": "SP-0141",
-"sim": 0.151
+"id": "SP-0140",
+"sim": 0.155
 },
 {
 "id": "SP-0477",
@@ -49047,7 +49054,7 @@
 "sim": 0.231
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.176
 }
 ]
@@ -50723,8 +50730,8 @@
 "sim": 0.326
 },
 {
-"id": "SP-0141",
-"sim": 0.297
+"id": "SP-0140",
+"sim": 0.295
 },
 {
 "id": "SP-0407",
@@ -53863,8 +53870,8 @@
 "sim": 0.188
 },
 {
-"id": "SP-0141",
-"sim": 0.17
+"id": "SP-0140",
+"sim": 0.174
 }
 ]
 },
@@ -53998,7 +54005,7 @@
 "sim": 0.186
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.111
 }
 ]
@@ -56036,8 +56043,8 @@
 "sim": 0.125
 },
 {
-"id": "SP-0141",
-"sim": 0.073
+"id": "SP-0140",
+"sim": 0.07
 }
 ]
 },
@@ -56241,8 +56248,8 @@
 "sim": 0.264
 },
 {
-"id": "SP-0141",
-"sim": 0.1
+"id": "SP-0140",
+"sim": 0.097
 }
 ]
 },
@@ -59265,8 +59272,8 @@
 "sim": 0.169
 },
 {
-"id": "SP-0141",
-"sim": 0.126
+"id": "SP-0140",
+"sim": 0.119
 }
 ]
 },
@@ -59388,7 +59395,7 @@
 "sim": 0.194
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.082
 }
 ]
@@ -59511,8 +59518,8 @@
 "sim": 0.283
 },
 {
-"id": "SP-0141",
-"sim": 0.154
+"id": "SP-0140",
+"sim": 0.17
 }
 ]
 },
@@ -60088,7 +60095,7 @@
 "sim": 0.092
 },
 {
-"id": "SP-0140",
+"id": "SP-0141",
 "sim": 0.034
 }
 ]

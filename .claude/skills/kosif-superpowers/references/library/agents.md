@@ -23,11 +23,11 @@
 | الحالة | العدد | المعنى |
 |---|---:|---|
 | `proven` | 176 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
+| `ready` | 22 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 12 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **276** | |
+| **المجموع** | **277** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -91,7 +91,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 178 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 179 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -290,6 +290,7 @@
 | `TOOL-134` | دراسة الرسم التدريجي والظل الأصلي | Staged drawing and original three-value visual studies | ready | python3 |
 | `TOOL-135` | أكاديمية الرسم والدروس المبنية على مصادر | Source-aware drawing school and user-authorized book audits | ready | python3 |
 | `TOOL-137` | منظور هندسي ومقاييس التباين اللوني | Original two-point perspective and numeric palette analysis | ready | python3, npm:axe |
+| `TOOL-180` | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي | Cinema Pro Conductor — single-entry montage with evidence-gated delivery | ready | ffmpeg, chromium, imagemagick |
 | `TOOL-33` | تدقيق أدلة الكتالوج | Catalog Evidence Audit | ready | python3 |
 | `TOOL-56` | فحص سلامة المهارة | Skill Health Check | ready | python3 |
 | `TOOL-58` | إعادة تصنيف نطاق الأدلة | Proof Scope Relabeler | ready | python3 |

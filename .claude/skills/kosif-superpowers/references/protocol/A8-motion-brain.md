@@ -11,6 +11,7 @@
 - [-1.14 عقل الإخراج والمونتاج KOSIF Motion Brain — من المعنى إلى ملف MP4](#-114-عقل-الإخراج-والمونتاج-kosif-motion-brain--من-المعنى-إلى-ملف-mp4)
 - [-1.30 Director Pro — دمج التفكير المتقدم بالإنتاج السينمائي](#-130-director-pro--دمج-التفكير-المتقدم-بالإنتاج-السينمائي)
 - [Katana / Higgsfield — سياسة التحليل فقط وحفظ الرصيد](#katana--higgsfield--سياسة-التحليل-فقط-وحفظ-الرصيد)
+- [Cinema Pro — unified, evidence-gated entry point (2026-10-31)](#cinema-pro--unified-evidence-gated-entry-point-2026-10-31)
 
 ### -1.14 عقل الإخراج والمونتاج KOSIF Motion Brain — من المعنى إلى ملف MP4
 
@@ -64,3 +65,8 @@
 8. لو طُلِب لاحقًا تعديل صورة أو إخراج فيديو، يبقى قيد Katana للتحليل فقط؛ استخدم أداة توليد أخرى مصرحًا بها مع مراعاة الحقوق والميزانية. تغيير القاعدة يحتاج **توجيهًا صريحًا جديدًا بشأن Katana نفسها**، وليس مجرد طلب إنشاء فيلم.
 
 **فحص QA:** طلب صورة أو فيديو ← تحليل مرجعي وقائع/توقيتات ← تقرير نصي؛ تأكد أن مسار Higgsfield Katana لم ينفذ generate/recreate/render/remix ولم يحدث أي خصم رصيد توليد مقصود. عند عدم التأكد لا تستدعِ الخدمة؛ هذا لا يمنع SEE Media Motion وأدوات KOSIF الأخرى من التحليل.
+
+
+## Cinema Pro — unified, evidence-gated entry point (2026-10-31)
+
+Use [the Cinema Pro conductor guide](../cinematic-pro-conductor.md) when the user asks to run all appropriate motion/montage/Pro abilities as one workflow. Start with `python3 scripts/cinematic_pro_conductor.py doctor`, then `plan --kind audio|video`; when the user supplied rights-cleared media, run `run MEDIA --job out/cinema/NAME`. The command uses existing Montage Pro executors and writes an honest receipt. It **never** claims that every available Pro or catalogue skill has executed; candidate roles and verified actions are distinct. No paid generation, downloads or external transfers by default. A nonempty MP4 + independent video verification + unchanged source SHA-256 is mandatory before describing a video as verified.

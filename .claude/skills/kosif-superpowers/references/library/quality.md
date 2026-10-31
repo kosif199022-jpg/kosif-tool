@@ -49,6 +49,7 @@
 | `charter-ingest` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
+| `cinematic-pro-conductor` | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي | `python3 scripts/cinematic_pro_conductor.py doctor` | untested |
 | `collect-links` | جمع الروابط من صفحة بمتصفح بلا واجهة | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | untested |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |

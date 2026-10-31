@@ -7976,5 +7976,50 @@
   ],
   "section": "Sources and references / المصادر والمراجع",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-180",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+  "name_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+  "status": "ready",
+  "what": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.",
+  "when": "شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل / Unify relevant KOSIF Superpowers video skills in one real verified montage run",
+  "how": "doctor: `python3 scripts/cinematic_pro_conductor.py doctor`; plan: `python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel`; run: `python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30`. Full card: `python3 scripts/hub.py tool cinematic-pro-conductor`. Limits: A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.",
+  "params": "in: Authorized local audio/video input, a job under out/, --recipe single|cinematic-reel|cinematic-audio, optional style/clip length and --transcribe-local for cached word timings. · out: JOB/intake.json, options.json, cinema_pro_receipt.json and for multi-pass recipes JOB/passes/{stage}/ with real verified MP4s, final output path and source SHA-256.",
+  "install": "needs on PATH: ffmpeg, ffprobe · optional: bin:node, bin:chromium, pip:faster-whisper",
+  "requires": [
+   "ffmpeg",
+   "chromium",
+   "imagemagick"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "cinematic-pro-conductor",
+   "cinematic pro",
+   "superpowers",
+   "montage",
+   "orchestrator",
+   "one command",
+   "motion",
+   "skills",
+   "verify video",
+   "MP4",
+   "director",
+   "سينما برو",
+   "سوبر باور",
+   "مونتاج",
+   "إخراج",
+   "تحقق",
+   "توحيد المهارات"
+  ],
+  "section": "Editing and reference video / المونتاج والفيديو المرجعي",
+  "source": "data/tools.json"
  }
 ]

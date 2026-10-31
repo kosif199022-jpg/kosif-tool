@@ -18099,6 +18099,92 @@
         "verification-evals",
         "qa-verification"
       ]
+    },
+    {
+      "id": "cinematic-pro-conductor",
+      "power_id": "TOOL-180",
+      "path": "scripts/cinematic_pro_conductor.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+      "title_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+      "summary_en": "Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.",
+      "summary_ar": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل.",
+      "use_when": [
+        "شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل",
+        "ابغى أمر واحد يطلع فيديو موشن مفحوص من صوتي",
+        "Unify relevant KOSIF Superpowers video skills in one real verified montage run",
+        "Create a cinematic Pro reel with evidence that the MP4 actually rendered"
+      ],
+      "keywords": [
+        "cinematic pro",
+        "superpowers",
+        "montage",
+        "orchestrator",
+        "one command",
+        "motion",
+        "skills",
+        "verify video",
+        "MP4",
+        "director",
+        "سينما برو",
+        "سوبر باور",
+        "مونتاج",
+        "إخراج",
+        "تحقق",
+        "توحيد المهارات"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/cinematic_pro_conductor.py doctor",
+          "does": "List installed skills and tool/module readiness without claiming execution."
+        },
+        {
+          "name": "plan",
+          "example": "python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel",
+          "does": "Show creative roles, evidence gates and the complete ordered production chain without asserting those roles were executed."
+        },
+        {
+          "name": "run",
+          "example": "python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30",
+          "does": "Render highlight -> 9:16 -> cinematic look with verified output at every stage; or use --recipe cinematic-audio for kinetic motion -> film look; optional --transcribe-local runs only with a cached model."
+        }
+      ],
+      "inputs": "Authorized local audio/video input, a job under out/, --recipe single|cinematic-reel|cinematic-audio, optional style/clip length and --transcribe-local for cached word timings.",
+      "outputs": "JOB/intake.json, options.json, cinema_pro_receipt.json and for multi-pass recipes JOB/passes/{stage}/ with real verified MP4s, final output path and source SHA-256.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "ffmpeg",
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [
+          "bin:node",
+          "bin:chromium",
+          "pip:faster-whisper"
+        ],
+        "network": false
+      },
+      "safety": "runs-external-programs",
+      "consent": "Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.",
+      "limits": "A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.",
+      "evidence": "untested",
+      "evidence_note": "Feature branch 2026-10-31: regression tests written for single and three-pass recipes; automated catalog integrity and routing verified before this recipe extension, but live rendering/CI for the updated recipe not yet confirmed.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_cinematic_pro_conductor.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/cinematic-pro-conductor.md"
+      ],
+      "families": [
+        "transitions-cuts",
+        "audio-sync-captions",
+        "photo-video-footage",
+        "qa-verification"
+      ]
     }
   ]
 }

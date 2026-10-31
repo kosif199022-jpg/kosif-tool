@@ -797,7 +797,7 @@ chapter: [story-direction-ideas](../powers/story-direction-ideas.md) · card: `u
 
 ## transitions-cuts (motion)
 
-chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-library/cards/motion/transitions-cuts.md` · tools: `adobe-mcp-bridges` · `cinema-lab` · `cinematic-cut-planner` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` · `kosif-timeline` …
+chapter: [transitions-cuts](../powers/transitions-cuts.md) · card: `usip-library/cards/motion/transitions-cuts.md` · tools: `adobe-mcp-bridges` · `cinema-lab` · `cinematic-cut-planner` · `cinematic-pro-conductor` · `creative-quality-gate` · `dua-wednesday` · `fast-edit` · `fetch-reference` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -46,6 +46,7 @@
 | `cinema-lab` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | `python3 scripts/cinema_lab.py doctor` | tested-here |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
+| `cinematic-pro-conductor` | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي | `python3 scripts/cinematic_pro_conductor.py doctor` | untested |
 | `code-drawing-master` | رسم الشخصيات والمشاهد بالكود | `python3 scripts/code_drawing_master.py --cast human+cat --expression happy --location street --action walk --out ./story.json --html ./story.html` | tested-here |
 | `color-media` | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة | `python3 scripts/color_media.py draw --photo in.png --out out/x --medium oil` | tested-here |
 | `creative-paint` | الرسم الإبداعي بالطبقات | `python3 scripts/creative_paint.py doctor` | tested-here |

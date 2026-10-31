@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5857
+   "count": 5858
   },
   {
    "id": "dom:motion",
@@ -1406,11 +1406,11 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 178,
+   "count": 179,
    "proven": 149,
    "status": {
     "proven": 149,
-    "ready": 20,
+    "ready": 21,
     "install": 9
    }
   },
@@ -2053,6 +2053,16 @@
    "label": "scripts/cinematic_cut_planner.py"
   },
   {
+   "id": "script:scripts/cinematic_pro_conductor.py",
+   "kind": "script",
+   "label": "scripts/cinematic_pro_conductor.py"
+  },
+  {
+   "id": "script:scripts/montage_pro.py",
+   "kind": "script",
+   "label": "scripts/montage_pro.py"
+  },
+  {
    "id": "script:scripts/color_media.py",
    "kind": "script",
    "label": "scripts/color_media.py"
@@ -2640,6 +2650,11 @@
    "label": "tests/test_mimic.py"
   },
   {
+   "id": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
+   "kind": "test",
+   "label": ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
+  },
+  {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_motion_director.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_motion_director.py"
@@ -2703,11 +2718,6 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_rea_superpowers_map.py"
-  },
-  {
-   "id": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
-   "kind": "test",
-   "label": ".claude/skills/kosif-superpowers/evals/test_reel_factory.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_repo_map.py",
@@ -5515,7 +5525,7 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 178
+   "w": 179
   },
   {
    "from": "fam:runnable-tools",
@@ -5527,13 +5537,13 @@
    "from": "fam:runnable-tools",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 46
+   "w": 47
   },
   {
    "from": "fam:runnable-tools",
    "to": "req:chromium",
    "rel": "needs",
-   "w": 24
+   "w": 25
   },
   {
    "from": "fam:runnable-tools",
@@ -5569,7 +5579,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 183
+   "w": 184
   },
   {
    "from": "fam:runnable-tools",
@@ -6940,6 +6950,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/cinematic_pro_conductor.py",
+   "to": "script:scripts/montage_pro.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/color_media.py",
    "to": "script:scripts/portrait_pipeline.py",
    "rel": "imports",
@@ -8226,6 +8242,18 @@
   {
    "from": "script:scripts/mimic/synthetic/run_synthetic.py",
    "to": "test:tests/test_mimic.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/montage_pro.py",
+   "to": "test:.claude/skills/kosif-superpowers/evals/test_reel_factory.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/montage_pro.py",
+   "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
   },

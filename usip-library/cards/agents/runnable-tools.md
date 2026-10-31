@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (178 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (179 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -101,6 +101,7 @@
 - [`TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز](#tool-178--نص-القرآن-وتوقيته-الآيات-بالضبط-والوقفات-المقاسة-وتوقيت-الآية-والكلمة-للريلز--quran-text-and-timing-exact-verses-measured-pauses-verse-and-word-timing-for-reels)
 - [`TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب](#tool-179--صور-مجانية-بحث-وتحميل-صور-مفتوحة-الترخيص-ومجانية-للمونتاج-مع-سطر-النسب--free-photos-open-licence-and-free-stock-photo-search-and-download-with-credits)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
+- [`TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي](#tool-180--مخرج-سينما-برو--تشغيل-منسّق-للمونتاج-مع-تحقق-حقيقي--cinema-pro-conductor--single-entry-montage-with-evidence-gated-delivery)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -6920,7 +6921,7 @@
 - `TOOL-177` لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب / Free footage: open-licence video sources with search, download and credits (proven)
 - `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
-- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 
 ### `TOOL-18` — مكتبة رياضيات الحركة / Motion math toolkit
 
@@ -6989,6 +6990,76 @@
 
 - `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
 - `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
+- `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-180` — مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.
+
+**متى:** شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل / Unify relevant KOSIF Superpowers video skills in one real verified montage run
+
+**كيف:** doctor: `python3 scripts/cinematic_pro_conductor.py doctor`; plan: `python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel`; run: `python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30`. Full card: `python3 scripts/hub.py tool cinematic-pro-conductor`. Limits: A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.
+
+**المعاملات:** in: Authorized local audio/video input, a job under out/, --recipe single\|cinematic-reel\|cinematic-audio, optional style/clip length and --transcribe-local for cached word timings. · out: JOB/intake.json, options.json, cinema_pro_receipt.json and for multi-pass recipes JOB/passes/{stage}/ with real verified MP4s, final output path and source SHA-256.
+
+**التثبيت:** needs on PATH: ffmpeg, ffprobe · optional: bin:node, bin:chromium, pip:faster-whisper
+
+**الوسوم:** cinematic-pro-conductor · cinematic pro · superpowers · montage · orchestrator · one command · motion · skills · verify video · MP4 · director · سينما برو · سوبر باور · مونتاج · إخراج · تحقق · توحيد المهارات
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `imagemagick` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-180` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -7057,8 +7128,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7127,7 +7198,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

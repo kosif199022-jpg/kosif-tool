@@ -926,12 +926,14 @@ def convert(job: Path, fps: int = 30) -> dict:
 
 
 # ------------------------------------------------------------------ build
-def verify(job: Path, out: Path, aspect=None, master=None) -> dict:
+def verify(job: Path, out: Path, aspect=None, master=None, source_audio=None) -> dict:
     cmd = [PY, str(HERE / "verify_video.py"), str(out), "--json", str(job / "work" / (out.stem + ".verify.json"))]
     if aspect:
         cmd += ["--aspect", aspect]
     if master:
         cmd += ["--audio", str(master)]
+    if source_audio:
+        cmd += ["--source-audio", str(source_audio)]
     rc, o, e = sh(cmd, 900, encoding="utf-8")
     lines = [l for l in o.splitlines() if l.startswith("[")]
     return {"exit": rc, "checks": lines[-12:], "summary": (o.strip().splitlines() or [""])[-1]}
@@ -1012,7 +1014,11 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
                          "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, *delivery_audio(src), "-movflags", "+faststart", str(out)], 3600)
         if rc:
             return {**res, "status": "failed", "stderr": se[-500:]}
-        res["verify"] = verify(job, out, aspect=style or "9:16")
+        # Reframing stream-copies AAC/MP3/ALAC source audio; its original LUFS is
+        # intentionally unchanged. Verify packet identity rather than demanding -14 LUFS.
+        # The separate deliver_mix output is normalized and scored at -14 LUFS.
+        res["verify"] = verify(job, out, aspect=style or "9:16",
+                               source_audio=src if delivery_audio(src) == ["-c:a", "copy"] else None)
     elif option == "highlight-reel":
         target = float(style or 30)
         segs = highlight_segments(it, work, target)
@@ -1058,7 +1064,18 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
         res["delivery_mix"] = deliver_mix(job, Path(res["output"]))
     master_now = sha256(src)
     res["master_unchanged"] = master_now == it["sha256"]
-    res["status"] = "rendered" if (option == "reference-remix" or Path(res["output"]).exists()) else "failed"
+    # Delivery claim must be based on the actual verify-video result, not file existence.
+    verify_receipt = res.get("verify")
+    mix = res.get("delivery_mix")
+    main_ok = isinstance(verify_receipt, dict) and verify_receipt.get("exit") == 0
+    mix_ok = not isinstance(mix, dict) or (mix.get("status") != "failed" and
+             isinstance(mix.get("verify"), dict) and mix["verify"].get("exit") == 0)
+    if option == "reference-remix":
+        # An editable source project is NOT a finished MP4.
+        res["status"] = "project-generated" if Path(res["output"]).is_dir() and res["master_unchanged"] else "failed"
+    else:
+        res["status"] = "rendered" if (Path(res["output"]).is_file() and main_ok and mix_ok and
+                                       res["master_unchanged"]) else "failed"
     report(job, "build:" + option + ":" + str(style), {k: res[k] for k in ("status", "output", "master_unchanged")})
     return res
 
@@ -1197,7 +1214,7 @@ def main(argv=None):
     if x.cmd == "build":
         r = build(x.job, x.option, x.style, x.title, x.deliver_mix)
         print(json.dumps(r, ensure_ascii=False, indent=1))
-        return 0 if r.get("status") in ("rendered", "needs-inputs") else 1
+        return 0 if r.get("status") in ("rendered", "project-generated") else 4
 
 
 if __name__ == "__main__":

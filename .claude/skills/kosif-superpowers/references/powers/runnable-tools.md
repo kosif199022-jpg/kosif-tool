@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **178 powers follow** — ✅ 149 · 🟢 20 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **179 powers follow** — ✅ 149 · 🟢 21 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -16,7 +16,7 @@
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-161 (26)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
-- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-178 (18)
+- **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
 - **Software investigation / فحص البرامج** — TOOL-32 … TOOL-162 (14)
@@ -757,6 +757,15 @@
 - **تثبيت / install:** `optional: bin:ffmpeg, pip:numpy`
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:faster-whisper`](../requirements.md#req-pip-faster-whisper)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_quran_text.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/quran_text.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-180 · مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي · Cinema Pro Conductor — single-entry montage with evidence-gated delivery · 🟢 جاهز / ready
+- **ماذا / what:** يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.
+- **متى أستخدمها / when:** شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل / Unify relevant KOSIF Superpowers video skills in one real verified montage run
+- **كيف / how:** doctor: `python3 scripts/cinematic_pro_conductor.py doctor`; plan: `python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel`; run: `python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30`. Full card: `python3 scripts/hub.py tool cinematic-pro-conductor`. Limits: A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed. **أرقام / params:** in: Authorized local audio/video input, a job under out/, --recipe single|cinematic-reel|cinematic-audio, optional style/clip length and --transcribe-local for cached word timings. · out: JOB/intake.json, options.json, cinema_pro_receipt.json and for multi-pass recipes JOB/passes/{stage}/ with real verified MP4s, final output path and source SHA-256.
+- **تثبيت / install:** `needs on PATH: ffmpeg, ffprobe · optional: bin:node, bin:chromium, pip:faster-whisper`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`chromium`](../requirements.md#req-chromium) · [`imagemagick`](../requirements.md#req-imagemagick)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py`
 - **المصدر / source:** data/tools.json
 
 ## Audio and rhythm / الصوت والإيقاع
@@ -1593,7 +1602,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (178)
+- الرخص / licences: — (179)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
