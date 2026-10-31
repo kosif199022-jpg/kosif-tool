@@ -22,7 +22,7 @@ jobs:
         working-directory: .claude/skills/kosif-superpowers
         run: |
           python3 scripts/capability_graph.py build
-          python3 -m unittest discover -s ../../../../tests -p 'test_capability_graph.py' -v
+          python3 -m unittest discover -s ../../../tests -p 'test_capability_graph.py' -v
       - name: Commit generated files to feature branch only
         run: |
           set -euo pipefail
