@@ -18102,6 +18102,7 @@
     },
     {
       "id": "cinematic-pro-conductor",
+      "power_id": "TOOL-180",
       "path": "scripts/cinematic_pro_conductor.py",
       "root": "skill",
       "kind": "cli",
