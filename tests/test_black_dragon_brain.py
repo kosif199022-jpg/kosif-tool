@@ -67,6 +67,34 @@ class CognitivePlannerTests(unittest.TestCase):
             self.assertEqual(result["selected_out"], 0)
             self.assertGreater(result["items"]["tool:research"]["priority"], 0)
 
+    def test_every_item_gets_part_mode_weight_and_application(self):
+        result = brain.plan("اعمل مونتاج فيديو وتحقق الجودة", self.catalog, {})
+        parts = {p["id"] for p in brain.PARTS}
+        for item in result["items"].values():
+            self.assertIn(item["part"], parts)
+            self.assertIn(item["mode"], brain.MODES)
+            self.assertIn(item["weight"], ("lead", "core", "support"))
+            self.assertTrue(item["application"])
+        self.assertEqual(sum(result["weights"].values()), 4)
+        self.assertEqual(result["items"]["power:QA-01"]["mode"], "quality-gate")
+
+    def test_adapter_changes_mode_to_execute_and_kind_sets_mode(self):
+        catalog = dict(self.catalog, **{"style:neon": {"kind": "style", "source": "styles"},
+                                        "protocol:A1": {"kind": "protocol", "source": "p"}})
+        result = brain.plan("any", catalog, {"tool:research": {}})
+        self.assertEqual(result["items"]["tool:research"]["mode"], "execute")
+        self.assertEqual(result["items"]["style:neon"]["mode"], "visual-reference")
+        self.assertEqual(result["items"]["protocol:A1"]["mode"], "protocol-rule")
+
+    def test_assignment_is_deterministic(self):
+        a = brain.plan("animation video", self.catalog, {})
+        b = brain.plan("animation video", self.catalog, {})
+        self.assertEqual(a["assignment_sha256"], b["assignment_sha256"])
+
+    def test_arabic_prefixes_are_normalised(self):
+        self.assertIn("مونتاج", brain.tokens("والمونتاج"))
+        self.assertIn("صوت", brain.tokens("بصوت"))
+
 
 if __name__ == "__main__":
     unittest.main()

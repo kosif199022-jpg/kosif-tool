@@ -8086,6 +8086,12 @@
   },
   {
    "from": "script:scripts/export_profile.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/export_profile.py",
    "to": "test:tests/test_export_profile.py",
    "rel": "tested_by",
    "w": 1
@@ -8267,6 +8273,12 @@
   {
    "from": "script:scripts/micro_index.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_micro_index.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/micro_index.py",
+   "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
    "w": 1
   },
