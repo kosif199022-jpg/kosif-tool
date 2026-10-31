@@ -118,7 +118,7 @@ chapter: [verification-evals](../powers/verification-evals.md) · card: `usip-li
 
 ## qa-verification (motion)
 
-chapter: [qa-verification](../powers/qa-verification.md) · card: `usip-library/cards/quality/qa-verification.md` · tools: `anchor-gate` · `atlas-metadata-audit` · `blender-cycles-render` · `book-methods` · `catalog-evidence-audit` · `charter-ingest` · `cinematic-broll-render` · `cinematic-pro-conductor` …
+chapter: [qa-verification](../powers/qa-verification.md) · card: `usip-library/cards/quality/qa-verification.md` · tools: `anchor-gate` · `atlas-metadata-audit` · `black-dragon` · `blender-cycles-render` · `book-methods` · `catalog-evidence-audit` · `charter-ingest` · `cinematic-broll-render` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (179 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (180 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -102,6 +102,7 @@
 - [`TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب](#tool-179--صور-مجانية-بحث-وتحميل-صور-مفتوحة-الترخيص-ومجانية-للمونتاج-مع-سطر-النسب--free-photos-open-licence-and-free-stock-photo-search-and-download-with-credits)
 - [`TOOL-18` مكتبة رياضيات الحركة](#tool-18--مكتبة-رياضيات-الحركة--motion-math-toolkit)
 - [`TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي](#tool-180--مخرج-سينما-برو--تشغيل-منسّق-للمونتاج-مع-تحقق-حقيقي--cinema-pro-conductor--single-entry-montage-with-evidence-gated-delivery)
+- [`TOOL-181` التنين الأسود — العقل المنسق لكل القدرات](#tool-181--التنين-الأسود--العقل-المنسق-لكل-القدرات--black-dragon--all-capability-cognitive-orchestrator)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -6991,7 +6992,7 @@
 - `TOOL-178` نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز / Quran text and timing: exact verses, measured pauses, verse and word timing for reels (proven)
 - `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
-- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 
 ### `TOOL-180` — مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery
 
@@ -7060,6 +7061,74 @@
 
 - `TOOL-179` صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب / Free photos: open-licence and free stock photo search and download with credits (proven)
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-181` — التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | 🟢 `ready`: جاهزة حسب الكتالوج بلا إعداد |
+| سقف التحقق قبل العمل (A27) | V2 بعد تشغيلها، وV3 بعد قياس معيار |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه. — Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully.
+
+**متى:** استدعِ التنين الأسود وشغّل كل المهارات في المهمة / Use all KOSIF skills with dependency-aware intelligent parallel coordination
+
+**كيف:** inventory: `python3 scripts/black_dragon.py inventory`; plan: `python3 scripts/black_dragon.py plan "اصنع مونتاج" `; run: `python3 scripts/black_dragon.py run "اصنع مونتاج" --job ../../../out/black-dragon/demo --workers 8`. Full card: `python3 scripts/hub.py tool black-dragon`. Limits: A full catalog dispatch is not universal same-instant execution. Documentation-only powers or unavailable adapters are blocked, not credited. Plans are heuristic and do not establish cinematic quality.
+
+**المعاملات:** in: User task and output folder. Optional reviewed adapter map, --execute-adapters consent flag, --workers 1..32. · out: All-skills ledger, all-skills audit report, brain plan with dependency waves, execution report; real artifacts only from configured adapters.
+
+**التثبيت:** needs on PATH: python3
+
+**الوسوم:** black-dragon · black dragon · التنين الأسود · all skills · كل المهارات · full power · cognitive orchestration · parallel · inventory · skill audit · brain · dependency · استدعاء · تشغيل متوازي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا 🟢 الكتالوج تلقائيًا · الوضع 2: `كتالوج: 🟢 · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-181` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
+- `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -7128,8 +7197,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
+- `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7198,7 +7267,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
+- `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

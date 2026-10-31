@@ -1,11 +1,11 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5858,
-"distinct_methods": 5576,
+"atoms": 5859,
+"distinct_methods": 5577,
 "twin_groups": 178,
 "superpowers": 482,
 "per_target": 12,
-"fusion_ratio": 12.15,
+"fusion_ratio": 12.16,
 "atlas_folded_into_native": 71,
 "tiny_absorbed": 27,
 "lookalikes_unified": 8,
@@ -3399,7 +3399,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.198
+"sim": 0.202
 },
 {
 "id": "SP-0072",
@@ -17714,15 +17714,15 @@
 "capability",
 "kosif"
 ],
-"size": 34,
+"size": 35,
 "best": "proven",
 "status_mix": {
 "proven": 26,
-"ready": 8
+"ready": 9
 },
-"ready_now": 34,
+"ready_now": 35,
 "families": {
-"runnable-tools": 34
+"runnable-tools": 35
 },
 "atlas_folded": 0,
 "requires": [
@@ -17785,28 +17785,28 @@
 "name_ar": "مدخل محلي بلا استنساخ"
 },
 {
-"id": "TOOL-92",
-"status": "proven",
-"name_en": "Atlas audit to reviewed manifest",
-"name_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع"
-},
-{
 "id": "TOOL-44",
 "status": "proven",
 "name_en": "Atlas metadata audit",
 "name_ar": "تدقيق بيانات أطلس الوصفية"
 },
 {
-"id": "TOOL-63",
+"id": "TOOL-92",
 "status": "proven",
-"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
-"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
+"name_en": "Atlas audit to reviewed manifest",
+"name_ar": "تحويل مراجعة الأطلس إلى بيان مُراجَع"
 },
 {
 "id": "TOOL-01",
 "status": "proven",
 "name_en": "Offline bilingual capability finder",
 "name_ar": "باحث القدرات ثنائي اللغة بلا اتصال"
+},
+{
+"id": "TOOL-63",
+"status": "proven",
+"name_en": "Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds",
+"name_ar": "أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح"
 },
 {
 "id": "TOOL-116",
@@ -17833,22 +17833,28 @@
 "name_ar": "خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت"
 },
 {
-"id": "TOOL-127",
-"status": "proven",
-"name_en": "Superpower fusion (powers to connected superpowers)",
-"name_ar": "دمج القدرات في قدرات خارقة مترابطة"
-},
-{
 "id": "TOOL-124",
 "status": "proven",
 "name_en": "Universal Skill Intelligence Protocol engine",
 "name_ar": "محرك بروتوكول ذكاء المهارات الشامل"
 },
 {
+"id": "TOOL-127",
+"status": "proven",
+"name_en": "Superpower fusion (powers to connected superpowers)",
+"name_ar": "دمج القدرات في قدرات خارقة مترابطة"
+},
+{
 "id": "TOOL-04",
 "status": "proven",
 "name_en": "Capability runtime router",
 "name_ar": "موجّه القدرات التنفيذية"
+},
+{
+"id": "TOOL-72",
+"status": "proven",
+"name_en": "Power requirements planner",
+"name_ar": "مخطط متطلبات القدرات"
 },
 {
 "id": "TOOL-06",
@@ -17861,12 +17867,6 @@
 "status": "proven",
 "name_en": "KOSIF hub (front door)",
 "name_ar": "بوابة KOSIF الموحّدة"
-},
-{
-"id": "TOOL-72",
-"status": "proven",
-"name_en": "Power requirements planner",
-"name_ar": "مخطط متطلبات القدرات"
 },
 {
 "id": "TOOL-02",
@@ -17939,6 +17939,12 @@
 "status": "ready",
 "name_en": "Machine capability probe",
 "name_ar": "فحص قدرات الجهاز"
+},
+{
+"id": "TOOL-181",
+"status": "ready",
+"name_en": "Black Dragon — All-Capability Cognitive Orchestrator",
+"name_ar": "التنين الأسود — العقل المنسق لكل القدرات"
 }
 ],
 "proof": [
@@ -17960,23 +17966,23 @@
 "TOOL-109"
 ]
 ],
-"distinct_methods": 29,
+"distinct_methods": 30,
 "links": [
 {
 "id": "SP-0348",
-"sim": 0.392
+"sim": 0.391
 },
 {
 "id": "SP-0143",
-"sim": 0.296
+"sim": 0.3
 },
 {
 "id": "SP-0027",
-"sim": 0.198
+"sim": 0.202
 },
 {
 "id": "SP-0146",
-"sim": 0.19
+"sim": 0.196
 }
 ]
 },
@@ -18646,7 +18652,7 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.296
+"sim": 0.3
 },
 {
 "id": "SP-0294",
@@ -19568,7 +19574,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.133
+"sim": 0.136
 }
 ]
 },
@@ -28856,7 +28862,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.07
+"sim": 0.069
 }
 ]
 },
@@ -45732,7 +45738,7 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.392
+"sim": 0.391
 },
 {
 "id": "SP-0143",
