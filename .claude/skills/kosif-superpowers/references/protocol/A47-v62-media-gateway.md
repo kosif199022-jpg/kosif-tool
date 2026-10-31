@@ -46,6 +46,11 @@
 - بعد أي `LOGIN_REQUIRED` / 429 / 403 من يوتيوب، الجيتواي بيوقف طلبات يوتيوب 30 دقيقة (`cooldown_seconds`). من v6.2، `/health?deep=1` بيعرض النتيجة والتهدئة في نفس الرد.
 - الخطة Free. أي ترقية بإذني.
 
+## 5. Gate
+
+PASS = `download_permitted_video` أو `pull` رجع ملف بـ `verified: true` و`sha256` وحجم أكبر من صفر ومدة قريبة من المصدر.
+BLOCKED = أي كود من `YOUTUBE_*` أو `ACCESS_RESTRICTED` أو `DRM_PROTECTED`: قوله بالكود، واقترح الطريق اللي في جدول 2، وما تعيدش المحاولة.
+
 ## 6. هل Render شغال بآخر كود؟ (v6.3)
 
 كل تعديل في `server.py` بيرفع `VERSION`، و`/health` من 0.3.0 فيه `build.commit` و`build.branch` (من متغيرات Render نفسها).
@@ -62,8 +67,3 @@ python3 services/kosif-media-gateway/deploy_check.py --json
 
 **اتقاس 31-10-2026 16:53 UTC:** `STALE` (المنشور 0.2.0، والمستودع 0.3.0). وحتى قبل 0.3.0 كان باين إنه قديم: `/health?deep=1` رجّع `public_probe` فاشل جنب `last_result: null`، وده سلوك ما قبل إصلاح v6.2.
 workflow **KOSIF Media Gateway live check** فيه job اسمه `deploy` من غير توكن، بيشتغل كل يوم 06:17 UTC وبيطلع تحذير لو `STALE`.
-
-## 5. Gate
-
-PASS = `download_permitted_video` أو `pull` رجع ملف بـ `verified: true` و`sha256` وحجم أكبر من صفر ومدة قريبة من المصدر.
-BLOCKED = أي كود من `YOUTUBE_*` أو `ACCESS_RESTRICTED` أو `DRM_PROTECTED`: قوله بالكود، واقترح الطريق اللي في جدول 2، وما تعيدش المحاولة.
