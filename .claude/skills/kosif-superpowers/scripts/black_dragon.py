@@ -14,6 +14,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 import _cinema_all_skills as audit
+import _black_dragon_brain as brain
 
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v1"
@@ -101,19 +102,32 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     unknown = sorted(set(adapters) - set(inventory))
     if unknown:
         raise ValueError("Unknown adapter entry: " + unknown[0])
+    strategy = brain.plan(task, inventory, adapters, skill_root=audit.SKILL if entries is None else None)
     audit.init(job, inventory)
+    (job / "black_dragon_plan.json").write_text(json.dumps(strategy, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (job / "artifacts").mkdir()
     (job / "receipts").mkdir()
     outcomes = {}
     with futures.ThreadPoolExecutor(max_workers=workers) as pool:
-        jobs = {pool.submit(_attempt, key, adapters.get(key), task, job,
-                            allow_execution, timeout): key for key in inventory}
-        for future in futures.as_completed(jobs):
-            key = jobs[future]
-            try:
-                outcomes[key] = future.result()
-            except Exception as exc:
-                outcomes[key] = {"status": "failed", "reason": str(exc)[:350]}
+        for wave in strategy["waves"]:
+            running = {}
+            for key in wave:
+                predecessors = strategy["items"][key]["depends_on"]
+                skipped = [d for d in predecessors if outcomes[d]["status"] != "executed"]
+                if skipped:
+                    outcomes[key] = {"status": "blocked",
+                                     "reason": "Prerequisites not executed: " + ", ".join(skipped)}
+                else:
+                    running[pool.submit(_attempt, key, adapters.get(key),
+                                        task, job, allow_execution, timeout)] = key
+            for future in futures.as_completed(running):
+                key = running[future]
+                try:
+                    outcomes[key] = future.result()
+                except Exception as exc:
+                    outcomes[key] = {"status": "failed", "reason": str(exc)[:350]}
+    if set(outcomes) != set(inventory):
+        raise ValueError("Black Dragon did not account for every catalog entry")
     ledger = audit.load(job, inventory)
     for key in inventory:
         item = ledger["items"][key]
@@ -133,6 +147,9 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     counts = Counter(x["status"] for x in ledger["items"].values())
     report = {"schema": SCHEMA, "task": task, "scheduled": len(inventory),
               "workers": workers, "adapter_count": len(adapters),
+              "roles": strategy["roles"], "waves": len(strategy["waves"]),
+              "brain_plan_file": str(job / "black_dragon_plan.json"),
+              "selected_out": strategy["selected_out"],
               "executed": counts["executed"], "blocked": counts["blocked"],
               "failed": counts["failed"], "full_coverage": coverage["fully_executed"],
               "coverage_file": str(job / "all_skills_report.json"),
@@ -152,12 +169,24 @@ def main(argv=None) -> int:
     p.add_argument("--execute-adapters", action="store_true")
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--timeout", type=int, default=60)
+    q = sub.add_parser("plan", help="Plan every catalog entry without execution")
+    q.add_argument("task")
+    q.add_argument("--adapters", type=Path)
     args = parser.parse_args(argv)
     try:
         if args.command == "inventory":
             entries = audit.catalog()
             print(json.dumps({"total": len(entries),
                               "by_kind": Counter(v["kind"] for v in entries.values())},
+                             ensure_ascii=False, indent=2))
+            return 0
+        if args.command == "plan":
+            inventory = audit.catalog()
+            adapters = _load_adapters(args.adapters)
+            if set(adapters) - set(inventory):
+                raise ValueError("Unknown adapter entry")
+            strategy = brain.plan(args.task, inventory, adapters, skill_root=audit.SKILL)
+            print(json.dumps({k: v for k, v in strategy.items() if k != "items"},
                              ensure_ascii=False, indent=2))
             return 0
         report = run(args.task, args.job, _load_adapters(args.adapters),

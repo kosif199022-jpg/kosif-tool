@@ -18185,6 +18185,82 @@
         "photo-video-footage",
         "qa-verification"
       ]
+    },
+    {
+      "id": "black-dragon",
+      "power_id": "TOOL-181",
+      "path": "scripts/black_dragon.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "discover",
+      "title_en": "Black Dragon — All-Capability Cognitive Orchestrator",
+      "title_ar": "التنين الأسود — العقل المنسق لكل القدرات",
+      "summary_en": "Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully.",
+      "summary_ar": "يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه.",
+      "use_when": [
+        "استدعِ التنين الأسود وشغّل كل المهارات في المهمة",
+        "شغّل كل قدرات سوبر باور بذكاء من غير استبعاد أي مهارة",
+        "Use all KOSIF skills with dependency-aware intelligent parallel coordination",
+        "Invoke Black Dragon and audit every registered capability"
+      ],
+      "keywords": [
+        "black dragon",
+        "التنين الأسود",
+        "all skills",
+        "كل المهارات",
+        "full power",
+        "cognitive orchestration",
+        "parallel",
+        "inventory",
+        "skill audit",
+        "brain",
+        "dependency",
+        "استدعاء",
+        "تشغيل متوازي"
+      ],
+      "commands": [
+        {
+          "name": "inventory",
+          "example": "python3 scripts/black_dragon.py inventory",
+          "does": "Count all registered skills, powers and tools without executing them."
+        },
+        {
+          "name": "plan",
+          "example": "python3 scripts/black_dragon.py plan \"اصنع مونتاج\" ",
+          "does": "Produce ranked all-entry plan with roles and dependency waves; skips no catalog entry."
+        },
+        {
+          "name": "run",
+          "example": "python3 scripts/black_dragon.py run \"اصنع مونتاج\" --job ../../../out/black-dragon/demo --workers 8",
+          "does": "Record every entry, launch only explicitly reviewed adapters when enabled, produce SHA-256 evidence and blocked/failed counts."
+        }
+      ],
+      "inputs": "User task and output folder. Optional reviewed adapter map, --execute-adapters consent flag, --workers 1..32.",
+      "outputs": "All-skills ledger, all-skills audit report, brain plan with dependency waves, execution report; real artifacts only from configured adapters.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "python3"
+        ],
+        "node": [],
+        "optional": [],
+        "network": false
+      },
+      "safety": "runs-external-programs",
+      "consent": "Adapter execution requires user authorization and --execute-adapters. No automatic payment, upload, installation or production deployment.",
+      "limits": "A full catalog dispatch is not universal same-instant execution. Documentation-only powers or unavailable adapters are blocked, not credited. Plans are heuristic and do not establish cinematic quality.",
+      "evidence": "untested",
+      "tests": [
+        "tests/test_black_dragon.py"
+      ],
+      "docs": [
+        "docs/BLACK_DRAGON_ALL_CAPABILITIES.md"
+      ],
+      "families": [
+        "agent-orchestration",
+        "self-discovery",
+        "qa-verification"
+      ]
     }
   ]
 }
