@@ -1938,6 +1938,21 @@
    "label": "scripts/atlas_capability_miner.py"
   },
   {
+   "id": "script:scripts/black_dragon.py",
+   "kind": "script",
+   "label": "scripts/black_dragon.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_brain.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_brain.py"
+  },
+  {
+   "id": "script:scripts/_cinema_all_skills.py",
+   "kind": "script",
+   "label": "scripts/_cinema_all_skills.py"
+  },
+  {
    "id": "script:scripts/blender_cinematic_bridge.py",
    "kind": "script",
    "label": "scripts/blender_cinematic_bridge.py"
@@ -2056,11 +2071,6 @@
    "id": "script:scripts/cinematic_pro_conductor.py",
    "kind": "script",
    "label": "scripts/cinematic_pro_conductor.py"
-  },
-  {
-   "id": "script:scripts/_cinema_all_skills.py",
-   "kind": "script",
-   "label": "scripts/_cinema_all_skills.py"
   },
   {
    "id": "script:scripts/montage_pro.py",
@@ -2448,6 +2458,11 @@
    "id": "test:.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py",
    "kind": "test",
    "label": ".claude/skills/kosif-superpowers/evals/test_atlas_ledger.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -6804,6 +6819,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_black_dragon_brain.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_cinema_all_skills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cinematic_bridge.py",
    "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
@@ -7850,6 +7877,12 @@
   {
    "from": "script:scripts/atlas_transfer.py",
    "to": "test:.claude/skills/kosif-superpowers/evals/test_script_smoke.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
    "w": 1
   },
