@@ -45,25 +45,39 @@ def doctor():
             "truth": "Module presence and an option menu do not prove an edit was rendered."}
 
 
-def plan(kind, option=None):
+def plan(kind, option=None, recipe="single"):
     if kind not in DEFAULTS:
         raise ValueError("Expected kind audio or video")
-    chosen = option or DEFAULTS[kind]
+    recipes = {
+        "single": None,
+        "cinematic-reel": ("video", ["highlight-reel", "reframe", "look"]),
+        "cinematic-audio": ("audio", ["kinetic-film", "look"]),
+    }
+    if recipe not in recipes:
+        raise ValueError("Unknown recipe")
+    config = recipes[recipe]
+    if config and kind != config[0]:
+        raise ValueError("Recipe incompatible with source kind")
+    chosen = (config[1][0] if config else (option or DEFAULTS[kind]))
+    if config and option and option != chosen:
+        raise ValueError("Recipe fixes the initial option; do not override it")
     item = next((x for x in m.OPTIONS if x["id"] == chosen and kind in x["for"]), None)
     if item is None:
         raise ValueError("Unsupported option for this media kind")
+    chain = list(config[1]) if config else [chosen]
     roles = m.team()["roles"]
-    return {"schema": "kosif.cinema-pro.plan.v1", "kind": kind, "option": chosen,
+    return {"schema": "kosif.cinema-pro.plan.v2", "kind": kind, "option": chosen,
+            "recipe": recipe, "render_chain": chain,
             "team": [{"role": x["id"], "mission": x["mission"], "state": "candidate"}
                      for x in roles],
             "chosen_roles": item["team"], "pipeline": item["pipeline"],
             "readiness": "runnable" if item["runs"] else "needs-other-inputs",
             "stages": [{"name": x, "acceptance": y} for x, y in STAGES],
             "policies": ["No paid APIs or unattended download", "No invented transcript",
-                         "Original audio retained unless source format forces conversion",
+                         "Each pass's actual source and MP4 are checked before the next pass",
+                         "Original source SHA-256 must be unchanged",
                          "Do not call a plan or Remotion project a finished MP4",
                          "Run verified checks before claiming delivery"]}
-
 
 def safe_output(job):
     dst = job.resolve()
@@ -94,7 +108,7 @@ def gate(result, source, source_sha):
     return {"passed": True, "output": str(video), "video_verification": verification}
 
 
-def run(media, job, option=None, style=None, title=""):
+def run(media, job, option=None, style=None, title="", recipe="single", transcribe_local=False):
     safe_output(job)
     media = media.resolve()
     if not media.is_file():
@@ -103,49 +117,82 @@ def run(media, job, option=None, style=None, title=""):
     kind = "video" if info["video"] else ("audio" if info["audio"] else None)
     if kind is None:
         raise ValueError("Not an audio or video source")
-    plan_doc = plan(kind, option)
+    plan_doc = plan(kind, option, recipe)
     chosen = plan_doc["option"]
     if chosen == "reference-remix":
-        raise ValueError("This creates an editable Remotion project, not a verified MP4; use montage_pro.py directly")
+        raise ValueError("This creates a Remotion project, not a verified MP4; use montage_pro.py directly")
     if plan_doc["readiness"] != "runnable":
-        raise ValueError("Option needs additional assets; cannot one-shot render it")
-    target = next(x for x in m.OPTIONS if x["id"] == chosen)
+        raise ValueError("Option needs extra assets; cannot one-shot render it")
+    chain = plan_doc["render_chain"]
+    catalog = {o["id"]: o for o in m.OPTIONS}
     tools = m.doctor()["tools"]
-    missing = [x for x in target["needs"] if not tools.get(x, {}).get("present")]
+    missing = sorted({tool for step in chain for tool in catalog[step]["needs"]
+                      if not tools.get(tool, {}).get("present")})
     if missing:
         raise ValueError("Missing tools: " + ", ".join(missing))
+    if transcribe_local and not info["audio"]:
+        raise ValueError("No source audio for local transcription")
     sha = m.sha256(media)
     job.mkdir(parents=True, exist_ok=True)
-    receipt = {"schema": "kosif.cinema-pro.receipt.v1", "plan": plan_doc,
-               "source_sha256": sha, "executed": [], "status": "failed"}
+    receipt = {"schema": "kosif.cinema-pro.receipt.v2", "plan": plan_doc,
+               "source_sha256": sha, "executed": [], "status": "failed", "passes": []}
     try:
-        intake = m.intake(media, job)
-        receipt["executed"].append({"stage": "intake", "kind": intake["kind"]})
-        menu = m.options(job, title)
-        receipt["executed"].append({"stage": "options", "count": len(menu["menu"])})
-        result = m.build(job, chosen, style, title)
-        verified = gate(result, media, sha)
-        receipt["executed"].append({"stage": "render", "status": result.get("status")})
-        receipt["executed"].append({"stage": "verify", **verified})
-        receipt["status"] = "verified" if verified["passed"] else "failed"
-        receipt["output"] = verified.get("output")
+        current = media
+        for index, step in enumerate(chain):
+            stage_job = job if index == 0 else job / "passes" / ("%02d-" % (index + 1) + step)
+            stage_sha = m.sha256(current)
+            transcript_options = ({"model": "medium", "language": "ar", "local_only": True}
+                                  if index == 0 and transcribe_local else None)
+            intake = m.intake(current, stage_job, transcript_options)
+            receipt["executed"].append({"stage": "intake", "pass": index + 1, "kind": intake["kind"]})
+            if transcript_options and not (intake.get("transcribe") or {}).get("ok"):
+                raise ValueError("Cached-model transcription failed; not using invented captions")
+            menu = m.options(stage_job, title if index == 0 else "")
+            receipt["executed"].append({"stage": "options", "pass": index + 1,
+                                        "count": len(menu["menu"])})
+            if recipe == "cinematic-reel":
+                stage_style = (style if style in ("15", "30", "60") else "30") if index == 0 else (
+                    "9:16" if step == "reframe" else "film")
+            elif recipe == "cinematic-audio":
+                stage_style = (style or "cinematic") if index == 0 else "film"
+            else:
+                stage_style = style
+            result = m.build(stage_job, step, stage_style, title if index == 0 else "")
+            verified = gate(result, current, stage_sha)
+            receipt["executed"].append({"stage": "render", "pass": index + 1,
+                                        "option": step, "style": stage_style,
+                                        "status": result.get("status")})
+            receipt["executed"].append({"stage": "verify", "pass": index + 1, **verified})
+            receipt["passes"].append({"option": step, "style": stage_style,
+                                      "verification": verified})
+            if not verified["passed"]:
+                break
+            current = Path(verified["output"])
+        if len(receipt["passes"]) == len(chain) and all(
+                p["verification"]["passed"] for p in receipt["passes"]) and m.sha256(media) == sha:
+            receipt["status"] = "verified"
+            receipt["output"] = str(current)
+        elif m.sha256(media) != sha:
+            receipt["error"] = "Original source changed during the render passes"
     except Exception as exc:
         receipt["error"] = type(exc).__name__ + ": " + str(exc)
     m.jsave(job / "cinema_pro_receipt.json", receipt)
     return receipt
 
-
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     subs = p.add_subparsers(dest="cmd", required=True)
     subs.add_parser("doctor")
-    q = subs.add_parser("plan"); q.add_argument("--kind", choices=("audio", "video"), required=True); q.add_argument("--option")
+    q = subs.add_parser("plan"); q.add_argument("--kind", choices=("audio", "video"), required=True); q.add_argument("--option"); q.add_argument("--recipe", choices=("single", "cinematic-reel", "cinematic-audio"), default="single")
     q = subs.add_parser("run"); q.add_argument("media", type=Path); q.add_argument("--job", type=Path, required=True)
     q.add_argument("--option"); q.add_argument("--style"); q.add_argument("--title", default="")
+    q.add_argument("--recipe", choices=("single", "cinematic-reel", "cinematic-audio"), default="single")
+    q.add_argument("--transcribe-local", action="store_true", help="opt-in: cached local model only")
     a = p.parse_args(argv)
     try:
-        data = doctor() if a.cmd == "doctor" else (plan(a.kind, a.option) if a.cmd == "plan"
-                                                     else run(a.media, a.job, a.option, a.style, a.title))
+        data = doctor() if a.cmd == "doctor" else (plan(a.kind, a.option, a.recipe) if a.cmd == "plan"
+                                                     else run(a.media, a.job, a.option, a.style, a.title, a.recipe,
+                                                              a.transcribe_local))
         print(json.dumps(data, ensure_ascii=False, indent=2))
         return 0 if a.cmd != "run" or data["status"] == "verified" else 4
     except (OSError, ValueError) as exc:
