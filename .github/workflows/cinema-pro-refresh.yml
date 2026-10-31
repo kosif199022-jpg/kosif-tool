@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Verify multi-pass Cinema Pro execution contracts
+        run: python3 -m unittest discover -s .claude/skills/kosif-superpowers/evals -p 'test_cinematic_pro_conductor.py' -v
       - name: Regenerate every catalog derived from the tool registry
         working-directory: .claude/skills/kosif-superpowers
         shell: bash
