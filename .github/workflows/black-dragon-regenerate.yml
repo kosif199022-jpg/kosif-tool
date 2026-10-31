@@ -1,0 +1,75 @@
+name: Black Dragon regenerate derived indexes
+on:
+  push:
+    branches:
+      - feature/black-dragon-all-capabilities-20261031
+    paths:
+      - '.github/workflows/black-dragon-regenerate.yml'
+      - '.claude/skills/kosif-superpowers/data/tools.json'
+      - '.claude/skills/kosif-superpowers/scripts/black_dragon.py'
+      - '.claude/skills/kosif-superpowers/scripts/_black_dragon_brain.py'
+      - 'tests/test_black_dragon*.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: black-dragon-regenerate
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    if: github.repository == 'kosif199022-jpg/kosif-tool'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate all catalog-derived maps locally without network APIs
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd .claude/skills/kosif-superpowers
+          python3 scripts/hub.py build
+          python3 scripts/requirements.py derive
+          python3 scripts/relabel_proofs.py
+          python3 scripts/build_chapters.py
+          python3 scripts/requirements.py index
+          python3 scripts/capability_graph.py build
+          python3 scripts/capability_atlas.py build
+          python3 scripts/powers.py mindmap --html references/capability-map.html
+          python3 scripts/powers.py mindmap --update-md references/capability-map.md
+          python3 scripts/smart_capabilities.py build
+          python3 scripts/superpower_fusion.py build
+          python3 scripts/kosif_hubs.py build
+          python3 scripts/capability_mindmap.py build
+          python3 scripts/owned_repos.py render
+          python3 scripts/smart_capabilities.py library
+          python3 scripts/smart_capabilities.py cards
+          python3 scripts/github_top_repos.py build
+          python3 scripts/micro_index.py build
+          python3 scripts/skill_loader.py build
+          python3 scripts/hub.py build
+          python3 scripts/boot.py --static --write
+      - name: Run Black Dragon and generated-file tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
+          python3 .claude/skills/kosif-superpowers/scripts/check_skill.py --evals
+          python3 .claude/skills/kosif-superpowers/scripts/capability_graph.py build --check
+      - name: Commit generated files only to the feature branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          if ! git diff --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "build: refresh Black Dragon registries and capability graphs [skip ci]"
+            git push origin "HEAD:feature/black-dragon-all-capabilities-20261031"
+          fi
