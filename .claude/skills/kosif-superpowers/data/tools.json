@@ -18099,6 +18099,91 @@
         "verification-evals",
         "qa-verification"
       ]
+    },
+    {
+      "id": "cinematic-pro-conductor",
+      "path": "scripts/cinematic_pro_conductor.py",
+      "root": "skill",
+      "kind": "cli",
+      "area": "edit",
+      "title_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+      "title_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+      "summary_en": "Inventories available Superpowers modules and 13 Montage Pro creative roles, proposes a task-specific workflow, and routes permitted local audio/video to the existing render pipeline. It distinguishes proposed roles from executed steps, preserves source SHA-256, and rejects missing or unverified MP4 outputs.",
+      "summary_ar": "يستعرض مهارات سوبر باور وأدوار مونتاج برو الثلاثة عشر ويخطط للمهارات الملائمة، ثم ينفذ المونتاج عبر المحرك الحالي مع تسجيل ما نُفذ فعلًا، وحماية بصمة المصدر، ورفض الادعاء بنجاح فيديو MP4 لم يُفحص.",
+      "use_when": [
+        "شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل",
+        "ابغى أمر واحد يطلع فيديو موشن مفحوص من صوتي",
+        "Unify relevant KOSIF Superpowers video skills in one real verified montage run",
+        "Create a cinematic Pro reel with evidence that the MP4 actually rendered"
+      ],
+      "keywords": [
+        "cinematic pro",
+        "superpowers",
+        "montage",
+        "orchestrator",
+        "one command",
+        "motion",
+        "skills",
+        "verify video",
+        "MP4",
+        "director",
+        "سينما برو",
+        "سوبر باور",
+        "مونتاج",
+        "إخراج",
+        "تحقق",
+        "توحيد المهارات"
+      ],
+      "commands": [
+        {
+          "name": "doctor",
+          "example": "python3 scripts/cinematic_pro_conductor.py doctor",
+          "does": "List installed skills and tool/module readiness without claiming execution."
+        },
+        {
+          "name": "plan",
+          "example": "python3 scripts/cinematic_pro_conductor.py plan --kind audio --option kinetic-film",
+          "does": "Show the chosen Montage Pro team and stages before any media is touched."
+        },
+        {
+          "name": "run",
+          "example": "python3 scripts/cinematic_pro_conductor.py run ./voice.wav --job ../../../out/cinema/my-reel --option kinetic-film --style cinematic",
+          "does": "Use local intake, option selection and real Montage Pro renderer; write an evidence receipt and exit nonzero unless verified MP4 exists."
+        }
+      ],
+      "inputs": "Owned or licensed local audio/video source; output job under out/ (or outside checkout); selected runnable option and optional style.",
+      "outputs": "JOB/intake.json, options.json, out/*.mp4 if rendered, and cinema_pro_receipt.json with actual stages, source SHA-256, verification result and truthful success/failure.",
+      "requires": {
+        "python": [],
+        "binaries": [
+          "ffmpeg",
+          "ffprobe"
+        ],
+        "node": [],
+        "optional": [
+          "bin:node",
+          "bin:chromium",
+          "pip:faster-whisper"
+        ],
+        "network": false
+      },
+      "safety": "runs-external-programs",
+      "consent": "Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.",
+      "limits": "Planning does not execute every installed skill; the runnable options use Montage Pro and do not automatically fuse specialist B-roll/3D/WhisperX branches into a single timeline. Creative visual review and source rights are still human-gated.",
+      "evidence": "untested",
+      "evidence_note": "Added 2026-10-31 with targeted regression tests; CI and real user-footage render not yet verified when registered.",
+      "tests": [
+        ".claude/skills/kosif-superpowers/evals/test_cinematic_pro_conductor.py"
+      ],
+      "docs": [
+        ".claude/skills/kosif-superpowers/references/cinematic-pro-conductor.md"
+      ],
+      "families": [
+        "transitions-cuts",
+        "audio-sync-captions",
+        "photo-video-footage",
+        "qa-verification"
+      ]
     }
   ]
 }
