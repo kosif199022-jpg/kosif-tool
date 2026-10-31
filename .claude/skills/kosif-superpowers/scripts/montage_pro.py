@@ -1058,7 +1058,18 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
         res["delivery_mix"] = deliver_mix(job, Path(res["output"]))
     master_now = sha256(src)
     res["master_unchanged"] = master_now == it["sha256"]
-    res["status"] = "rendered" if (option == "reference-remix" or Path(res["output"]).exists()) else "failed"
+    # Delivery claim must be based on the actual verify-video result, not file existence.
+    verify_receipt = res.get("verify")
+    mix = res.get("delivery_mix")
+    main_ok = isinstance(verify_receipt, dict) and verify_receipt.get("exit") == 0
+    mix_ok = not isinstance(mix, dict) or (mix.get("status") != "failed" and
+             isinstance(mix.get("verify"), dict) and mix["verify"].get("exit") == 0)
+    if option == "reference-remix":
+        # An editable source project is NOT a finished MP4.
+        res["status"] = "project-generated" if Path(res["output"]).is_dir() and res["master_unchanged"] else "failed"
+    else:
+        res["status"] = "rendered" if (Path(res["output"]).is_file() and main_ok and mix_ok and
+                                       res["master_unchanged"]) else "failed"
     report(job, "build:" + option + ":" + str(style), {k: res[k] for k in ("status", "output", "master_unchanged")})
     return res
 
@@ -1197,7 +1208,7 @@ def main(argv=None):
     if x.cmd == "build":
         r = build(x.job, x.option, x.style, x.title, x.deliver_mix)
         print(json.dumps(r, ensure_ascii=False, indent=1))
-        return 0 if r.get("status") in ("rendered", "needs-inputs") else 1
+        return 0 if r.get("status") in ("rendered", "project-generated") else 4
 
 
 if __name__ == "__main__":
