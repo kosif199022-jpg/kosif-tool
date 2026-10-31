@@ -1,0 +1,35 @@
+name: Regenerate Cinema Full Skills Graph (feature branch)
+on:
+  push:
+    branches:
+      - feat/cinema-full-skills-coverage-20261031
+    paths:
+      - .github/workflows/cinema-full-skills-refresh.yml
+permissions:
+  contents: write
+jobs:
+  graph:
+    if: github.ref == 'refs/heads/feat/cinema-full-skills-coverage-20261031'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate graph deterministically
+        working-directory: .claude/skills/kosif-superpowers
+        run: |
+          python3 scripts/capability_graph.py build
+          python3 scripts/capability_graph.py check
+      - name: Commit generated files to feature branch only
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .claude/skills/kosif-superpowers/data/capability_graph.json .claude/skills/kosif-superpowers/references/capability-graph.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(cinema): refresh generated capability graph"
+            git push origin HEAD:feat/cinema-full-skills-coverage-20261031
+          fi
