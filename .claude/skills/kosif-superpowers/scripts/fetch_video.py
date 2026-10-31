@@ -14,7 +14,7 @@ Only the standard library is imported; yt-dlp and ffmpeg are used if present.
   python3 fetch_video.py URL --strip-audio              # drop the clip's own audio on intake (Quran/dignified jobs);
                                                         # a clip whose audio cannot be removed is not kept (FAIL)
   python3 fetch_video.py PIN_URL [PIN_URL ...] --classify   # Pinterest: say what each pin is, download nothing
-  python3 fetch_video.py --doctor | --update
+  python3 fetch_video.py --doctor | --install-deps | --update
 
 Writes <DIR>/<title> [<id>].<ext> and a manifest.json (url, file, duration, title, uploader,
 license field if the site exposes one). Use only content you have the right to use.
@@ -42,8 +42,8 @@ import _pinterest as pinterest  # noqa: E402 - the shared Pinterest pin helper (
 import _cobalt_provider as cobalt  # noqa: E402 - internal authorized gateway, opt-in only
 
 
-def find_ytdlp(install: bool = True) -> list[str] | None:
-    """yt-dlp as a command; in a cloud session a missing yt-dlp (and curl_cffi) is pip-installed once, quietly."""
+def find_ytdlp(install: bool = False) -> list[str] | None:
+    """Return yt-dlp; install missing packages only when the caller explicitly opts in."""
     cmd = pinterest.ytdlp_command()
     if cmd or not install:
         return cmd
@@ -444,6 +444,8 @@ def main(argv=None) -> int:
                     choices=("owned", "written-permission", "public-domain", "cc-licensed", "youtube-authorized"),
                     help="if this machine is refused, retry once through the owner's KOSIF Media Gateway "
                          "(needs KOSIF_GATEWAY_TOKEN); RIGHTS says why you may download the video")
+    ap.add_argument("--install-deps", action="store_true",
+                    help="explicitly allow pip installation of missing yt-dlp dependencies (never automatic)")
     ap.add_argument("--doctor", action="store_true")
     ap.add_argument("--update", action="store_true")
     a = ap.parse_args(argv)
@@ -453,7 +455,7 @@ def main(argv=None) -> int:
         ap.error("--cobalt-api currently supports video only")
     if a.strip_audio and a.quality == "audio":
         ap.error("--strip-audio cannot be combined with --quality audio")
-    ytdlp = find_ytdlp(install=not bool(a.cobalt_api))
+    ytdlp = find_ytdlp(install=a.install_deps and not bool(a.cobalt_api))
     if a.update:
         return subprocess.call([sys.executable, "-m", "pip", "install", "--upgrade", "yt-dlp", "yt-dlp-ejs", "curl_cffi"])
     if a.doctor:
