@@ -926,12 +926,14 @@ def convert(job: Path, fps: int = 30) -> dict:
 
 
 # ------------------------------------------------------------------ build
-def verify(job: Path, out: Path, aspect=None, master=None) -> dict:
+def verify(job: Path, out: Path, aspect=None, master=None, source_audio=None) -> dict:
     cmd = [PY, str(HERE / "verify_video.py"), str(out), "--json", str(job / "work" / (out.stem + ".verify.json"))]
     if aspect:
         cmd += ["--aspect", aspect]
     if master:
         cmd += ["--audio", str(master)]
+    if source_audio:
+        cmd += ["--source-audio", str(source_audio)]
     rc, o, e = sh(cmd, 900, encoding="utf-8")
     lines = [l for l in o.splitlines() if l.startswith("[")]
     return {"exit": rc, "checks": lines[-12:], "summary": (o.strip().splitlines() or [""])[-1]}
@@ -1012,7 +1014,11 @@ def build(job: Path, option: str, style: str = None, title: str = "", deliver: b
                          "-c:v", "libx264", "-preset", "slow", "-crf", "17", "-profile:v", "high", "-pix_fmt", "yuv420p", *COLOR_709, *delivery_audio(src), "-movflags", "+faststart", str(out)], 3600)
         if rc:
             return {**res, "status": "failed", "stderr": se[-500:]}
-        res["verify"] = verify(job, out, aspect=style or "9:16")
+        # Reframing stream-copies AAC/MP3/ALAC source audio; its original LUFS is
+        # intentionally unchanged. Verify packet identity rather than demanding -14 LUFS.
+        # The separate deliver_mix output is normalized and scored at -14 LUFS.
+        res["verify"] = verify(job, out, aspect=style or "9:16",
+                               source_audio=src if delivery_audio(src) == ["-c:a", "copy"] else None)
     elif option == "highlight-reel":
         target = float(style or 30)
         segs = highlight_segments(it, work, target)
