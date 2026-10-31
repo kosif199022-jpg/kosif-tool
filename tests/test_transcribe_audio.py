@@ -138,5 +138,39 @@ class TranscribeAudioTest(unittest.TestCase):
         self.assertIn("still PROCESSING", str(cm.exception))
 
 
+class WhisperSamplesTest(unittest.TestCase):
+    """The local fallback hands faster-whisper decoded samples, never a path (PyAV 19 + faster-whisper 1.2.1 break on paths)."""
+
+    def test_whisper_gets_samples_not_a_path(self):
+        import shutil
+        import subprocess
+        if not shutil.which("ffmpeg"):
+            self.skipTest("ffmpeg not installed")
+        try:
+            import numpy  # noqa: F401  (imported before sys.modules is patched, so the patch cannot unload it)
+        except ImportError:
+            self.skipTest("numpy not installed")
+        with tempfile.TemporaryDirectory() as d:
+            wav = Path(d) / "tone.wav"
+            subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi", "-i", "sine=f=440:d=0.5", "-ar", "44100", str(wav)], check=True)
+            got = {}
+
+            class FakeModel:
+                def __init__(self, *a, **k):
+                    pass
+
+                def transcribe(self, audio, **k):
+                    got["audio"] = audio
+                    return iter([mock.Mock(text=" مرحبا ")]), None
+
+            fake_mod = mock.Mock(WhisperModel=FakeModel)
+            with mock.patch.dict(sys.modules, {"faster_whisper": fake_mod}):
+                text = ta.whisper_transcribe(wav, "ar", "tiny")
+            self.assertEqual(text, "مرحبا")
+            self.assertNotIsInstance(got["audio"], (str, Path))
+            self.assertEqual(str(got["audio"].dtype), "float32")
+            self.assertAlmostEqual(len(got["audio"]) / 16000, 0.5, delta=0.05)
+
+
 if __name__ == "__main__":
     unittest.main()

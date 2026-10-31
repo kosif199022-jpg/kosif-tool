@@ -198,10 +198,39 @@ def gemini_transcribe(path: Path, prompt: str, models: list[str], key: str, retr
     raise last or GeminiError("no model was tried")
 
 
+def load_audio_16k(path: Path):
+    """Mono 16 kHz float32 samples for faster-whisper, decoded by ffmpeg (or PyAV without the metadata_errors keyword).
+
+    Why: faster-whisper 1.2.1's decode_audio opens the file with av.open(..., metadata_errors="ignore") and PyAV 19
+    rejects that keyword ("TypeError: open() got an unexpected keyword argument 'metadata_errors'"), so handing
+    WhisperModel.transcribe a file path fails on such machines. Samples avoid that code path entirely."""
+    import numpy as np
+    import shutil
+    import subprocess
+    if shutil.which("ffmpeg"):
+        r = subprocess.run(["ffmpeg", "-v", "error", "-nostdin", "-i", str(path), "-vn", "-ac", "1", "-ar", "16000",
+                            "-f", "f32le", "-"], capture_output=True)
+        if r.returncode == 0 and len(r.stdout) >= 4:
+            return np.frombuffer(r.stdout[:len(r.stdout) // 4 * 4], dtype=np.float32)
+    import av  # PyAV ships with faster-whisper
+    chunks = []
+    with av.open(str(path)) as box:
+        stream = next((s for s in box.streams if s.type == "audio"), None)
+        if stream is None:
+            raise ValueError(f"no audio stream in {path}")
+        rs = av.AudioResampler(format="flt", layout="mono", rate=16000)
+        for frame in box.decode(stream):
+            chunks.extend(f.to_ndarray().reshape(-1) for f in rs.resample(frame))
+        chunks.extend(f.to_ndarray().reshape(-1) for f in rs.resample(None))
+    if not chunks:
+        raise ValueError(f"no audio samples in {path}")
+    return np.concatenate(chunks).astype(np.float32, copy=False)
+
+
 def whisper_transcribe(path: Path, language: str = "ar", size: str = "small") -> str:
     from faster_whisper import WhisperModel  # optional: pip install faster-whisper
     model = WhisperModel(size, device="cpu", compute_type="int8")
-    segments, _ = model.transcribe(str(path), language=language or None, beam_size=5)
+    segments, _ = model.transcribe(load_audio_16k(path), language=language or None, beam_size=5)
     return " ".join(s.text.strip() for s in segments).strip()
 
 
