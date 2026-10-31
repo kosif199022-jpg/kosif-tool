@@ -52,6 +52,16 @@ class MontageProTests(unittest.TestCase):
         M.intake(self.clip, job)
         r = M.build(job, "broll-documentary")
         self.assertEqual(r["status"], "needs-inputs")
+        # Missing assets must not be advertised as a successful CLI build.
+        self.assertEqual(M.main(["build", str(job), "--option", "broll-documentary"]), 4)
+
+    def test_failed_verify_never_returns_rendered(self):
+        from unittest.mock import patch
+        job = self.tmp / "job_verify_failure"
+        M.intake(self.clip, job)
+        with patch.object(M, "verify", return_value={"exit": 3, "summary": "failed decode"}):
+            result = M.build(job, "reframe", "9:16")
+        self.assertEqual(result["status"], "failed")
 
 
 
