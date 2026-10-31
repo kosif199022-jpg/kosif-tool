@@ -1,0 +1,88 @@
+name: Refresh Cinema Pro capability catalogs (feature branch only)
+on:
+  push:
+    branches:
+      - feat/cinematic-pro-conductor-20261031
+    paths:
+      - .github/workflows/cinema-pro-refresh.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: cinema-pro-refresh-feature
+  cancel-in-progress: false
+jobs:
+  regenerate:
+    if: github.ref == 'refs/heads/feat/cinematic-pro-conductor-20261031'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/cinematic-pro-conductor-20261031
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate every catalog derived from the tool registry
+        working-directory: .claude/skills/kosif-superpowers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/hub.py build
+          python3 scripts/requirements.py derive
+          python3 scripts/relabel_proofs.py
+          python3 scripts/build_chapters.py
+          python3 scripts/requirements.py index
+          python3 scripts/capability_graph.py build
+          python3 scripts/capability_atlas.py build
+          python3 scripts/powers.py mindmap --html references/capability-map.html
+          python3 scripts/powers.py mindmap --update-md references/capability-map.md
+          python3 scripts/smart_capabilities.py build
+          python3 scripts/superpower_fusion.py build
+          python3 scripts/kosif_hubs.py build
+          python3 scripts/capability_mindmap.py build
+          python3 scripts/owned_repos.py render
+          python3 scripts/smart_capabilities.py library
+          python3 scripts/smart_capabilities.py cards
+          python3 scripts/superpower_fusion.py build
+          python3 scripts/kosif_hubs.py build
+          python3 scripts/capability_mindmap.py build
+          python3 scripts/owned_repos.py render
+          python3 scripts/github_top_repos.py build
+          python3 scripts/micro_index.py build
+          python3 scripts/hub.py build
+          python3 scripts/skill_layout.py build
+          python3 scripts/boot.py --static --write
+          python3 - <<'PY'
+          import json, re, subprocess, sys
+          from pathlib import Path
+          p = Path('SKILL.md')
+          original = p.read_text(encoding='utf-8')
+          marker = subprocess.check_output(
+              [sys.executable, 'scripts/check_skill.py', '--print-counts'],
+              text=True).strip()
+          updated, count = re.subn(r'<!-- counts:.*?-->', marker, original, count=1)
+          if count != 1:
+              raise SystemExit('Missing counts marker; refusing blind rewrite')
+          old_count = re.search(r'<!-- counts: powers=(\d+)', original)
+          new_count = re.search(r'powers=(\d+)', marker)
+          if old_count and new_count:
+              previous, current = old_count.group(1), new_count.group(1)
+              updated = updated.replace(f'{int(previous):,} قدرة', f'{int(current):,} قدرة', 1)
+          p.write_text(updated, encoding='utf-8')
+          print(marker)
+          PY
+          python3 scripts/check_skill.py --evals
+      - name: Commit only generated changes to this feature branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .claude/skills/kosif-superpowers CAPABILITIES.md llms.txt usip-library
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: regenerate Cinema Pro catalogs [generated cinema-pro]"
+            git push origin HEAD:feat/cinematic-pro-conductor-20261031
+          else
+            echo "No generated changes"
+          fi
