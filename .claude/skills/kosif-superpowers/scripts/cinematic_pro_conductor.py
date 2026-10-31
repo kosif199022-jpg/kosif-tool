@@ -105,6 +105,8 @@ def run(media, job, option=None, style=None, title=""):
         raise ValueError("Not an audio or video source")
     plan_doc = plan(kind, option)
     chosen = plan_doc["option"]
+    if chosen == "reference-remix":
+        raise ValueError("This creates an editable Remotion project, not a verified MP4; use montage_pro.py directly")
     if plan_doc["readiness"] != "runnable":
         raise ValueError("Option needs additional assets; cannot one-shot render it")
     target = next(x for x in m.OPTIONS if x["id"] == chosen)
