@@ -66,5 +66,61 @@ class CinemaProTests(unittest.TestCase):
             self.assertEqual(saved["status"], "failed")
 
 
+    def test_cinematic_recipes_select_chain_and_reject_wrong_kind(self):
+        self.assertEqual(c.plan("video", recipe="cinematic-reel")["render_chain"],
+                         ["highlight-reel", "reframe", "look"])
+        self.assertEqual(c.plan("audio", recipe="cinematic-audio")["render_chain"],
+                         ["kinetic-film", "look"])
+        with self.assertRaises(ValueError):
+            c.plan("audio", recipe="cinematic-reel")
+        with self.assertRaises(ValueError):
+            c.plan("video", option="look", recipe="cinematic-reel")
+
+    def test_three_pass_recipe_verifies_each_stage_and_preserves_original(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            src = root / "source.mp4"
+            src.write_bytes(b"original")
+            outputs = []
+            def mock_build(stage_job, option, style, title):
+                f = stage_job / "out" / (option + ".mp4")
+                f.parent.mkdir(parents=True, exist_ok=True)
+                f.write_bytes(option.encode())
+                outputs.append((option, style))
+                return {"status": "rendered", "output": str(f),
+                        "verify": {"exit": 0}, "master_unchanged": True}
+            with patch.object(c.m, "probe", return_value={"video": {"width": 640}, "audio": {}}), \
+                 patch.object(c.m, "doctor", return_value={"tools": {"ffmpeg": {"present": True},
+                     "ffprobe": {"present": True}}, "ready_options": []}), \
+                 patch.object(c.m, "sha256", return_value="immutable"), \
+                 patch.object(c.m, "intake", return_value={"kind": "video"}), \
+                 patch.object(c.m, "options", return_value={"menu": [{"id": "highlight-reel"}]}), \
+                 patch.object(c.m, "build", side_effect=mock_build):
+                receipt = c.run(src, root / "job", recipe="cinematic-reel", style="15")
+            self.assertEqual(receipt["status"], "verified", receipt)
+            self.assertEqual(outputs, [("highlight-reel", "15"), ("reframe", "9:16"), ("look", "film")])
+            self.assertEqual(len(receipt["passes"]), 3)
+            self.assertTrue(Path(receipt["output"]).is_file())
+            self.assertEqual(len([s for s in receipt["executed"] if s["stage"] == "verify"]), 3)
+
+    def test_recipe_stops_if_intermediate_verification_fails(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d); src = root / "source.mp4"; src.write_bytes(b"original")
+            def failed_build(*_args):
+                return {"status": "rendered", "output": str(root / "missing.mp4"),
+                        "verify": {"exit": 0}, "master_unchanged": True}
+            with patch.object(c.m, "probe", return_value={"video": {"width": 640}, "audio": {}}), \
+                 patch.object(c.m, "doctor", return_value={"tools": {"ffmpeg": {"present": True},
+                     "ffprobe": {"present": True}}, "ready_options": []}), \
+                 patch.object(c.m, "sha256", return_value="immutable"), \
+                 patch.object(c.m, "intake", return_value={"kind": "video"}), \
+                 patch.object(c.m, "options", return_value={"menu": [{"id": "highlight-reel"}]}), \
+                 patch.object(c.m, "build", side_effect=failed_build) as execute:
+                receipt = c.run(src, root / "job", recipe="cinematic-reel")
+            self.assertEqual(receipt["status"], "failed")
+            self.assertEqual(execute.call_count, 1)
+            self.assertEqual(len(receipt["passes"]), 1)
+
+
 if __name__ == "__main__":
     unittest.main()
