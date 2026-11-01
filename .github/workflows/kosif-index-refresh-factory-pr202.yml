@@ -1,0 +1,36 @@
+name: Refresh Skill Factory indexes PR202
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/kosif-index-refresh-factory-pr202.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    if: github.event.pull_request.head.repo.full_name == 'kosif199022-jpg/kosif-tool' && github.event.pull_request.head.ref == 'feature/reviewed-tool-router-pro-max-v2-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/reviewed-tool-router-pro-max-v2-20261101
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild deterministic indexes
+        working-directory: .claude/skills/kosif-superpowers
+        run: |
+          python3 scripts/hub.py build
+          python3 scripts/capability_graph.py build
+          python3 scripts/boot.py --static --write
+          python3 scripts/check_skill.py
+      - name: Commit index updates only to branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .claude/skills/kosif-superpowers
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat
+            git commit -m 'chore: refresh capability graph for Claude Skill Factory v1.2'
+            git push origin HEAD:feature/reviewed-tool-router-pro-max-v2-20261101
+          fi
