@@ -52,5 +52,5 @@ jobs:
           assert len(replies) == 2, result.stdout
           assert len(replies[1]['result']['tools']) == 11
           assert replies[0]['result']['serverInfo']['name'] == 'kosif-superpowers-bridge'
-          print('MCP: initialized and listed ten tools')
+          print('MCP: initialized and listed eleven tools')
           PY
