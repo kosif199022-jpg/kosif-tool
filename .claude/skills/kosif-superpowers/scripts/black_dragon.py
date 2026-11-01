@@ -25,7 +25,7 @@ from collections import Counter
 from pathlib import Path
 import _cinema_all_skills as audit
 import _black_dragon_brain as brain
-import black_dragon_pro_max as pro_max
+import _black_dragon_pro_max as pro_max
 
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v2"
