@@ -219,7 +219,7 @@ def verify_zip(path: Path) -> dict:
         for item in infos:
             p = Path(item.filename)
             if (p.is_absolute() or ".." in p.parts or "\\" in item.filename or
-                    (item.external_attr >> 16) & stat.S_IFMT(0o170000) == stat.S_IFLNK):
+                    stat.S_ISLNK(item.external_attr >> 16)):
                 errors.append("Unsafe archive member: " + item.filename[:100])
             total += item.file_size
             if total > MAX_ZIP_UNCOMPRESSED:
