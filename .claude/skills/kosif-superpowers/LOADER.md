@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (8) / skills
+## المهارات (9) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -18,6 +18,7 @@
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
+| `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | >- |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
@@ -128,6 +129,17 @@
 - 38–45: Search design
 - 46–49: Safety and portability
 - 50–84: Update 2026-10-24 — evidence-based creative mechanism mining
+
+### `.claude/skills/kosif-reel-hooks/SKILL.md`
+
+- 12–28: KOSIF Reel Hooks - من فكرة لريل حد يكمّله
+- 29–44: Before you write
+- 45–56: The shape
+- 57–85: The loop
+- 86–94: On-screen cards
+- 95–103: Rules
+- 104–111: What the score is and is not
+- 112–119: Credit
 
 ### `.claude/skills/kosif-superpowers/SKILL.md`
 
