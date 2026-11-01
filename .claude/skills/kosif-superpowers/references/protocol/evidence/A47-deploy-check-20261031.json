@@ -1,0 +1,22 @@
+{
+  "what": "deploy_check.py against the live Render gateway, public /health, no token",
+  "command": "python3 services/kosif-media-gateway/deploy_check.py --json",
+  "result": {
+    "deployed_version": "0.2.0",
+    "repo_version": "0.3.0",
+    "deployed_commit": null,
+    "deployed_branch": null,
+    "uptime_seconds": 194,
+    "verdict": "STALE",
+    "why": "deployed 0.2.0, repository 0.3.0",
+    "gateway": "https://kosif-media-gateway-free-20261030.onrender.com",
+    "checked_at": "2026-10-31T16:53:47Z"
+  },
+  "health_deep_same_session": {
+    "checked_at": "2026-10-31T16:51Z",
+    "youtube": {"last_result": null, "cooldown_seconds": 0},
+    "public_probe": {"ok": false, "video_id": "dYrEeavC3cw", "error": "YOUTUBE_LOGIN_REQUIRED"},
+    "note": "last_result null beside a failed probe in the same reply is the pre-v6.2 behaviour, so Render had not deployed PR #189 either"
+  },
+  "proof_grade": "E3 (live measurement of the service itself)"
+}

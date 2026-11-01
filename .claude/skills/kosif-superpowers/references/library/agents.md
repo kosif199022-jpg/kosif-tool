@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 176 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
-| `ready` | 21 | 🟢 ready: runnable without setup according to the catalog |
+| `proven` | 177 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `ready` | 23 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 12 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **276** | |
+| **المجموع** | **279** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -38,6 +38,7 @@
 | `ai-tool-discovery` | باحث القدرات ثنائي اللغة بلا اتصال | `python3 scripts/ai_tool_discovery.py "تحريك شخصيات فيديو" --top 8` | tested-here |
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
+| `black-dragon` | التنين الأسود — العقل المنسق لكل القدرات | `python3 scripts/black_dragon.py inventory` | untested |
 | `boot` | إحاطة بدء الجلسة | `python3 scripts/boot.py` | tested-here |
 | `build-chapters` | مولّد فصول العائلات | `python3 scripts/build_chapters.py` | untested |
 | `business-workflows` | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude | `python3 scripts/business_workflows.py functions` | tested-here |
@@ -91,7 +92,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 178 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 181 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -185,6 +186,7 @@
 | `TOOL-178` | نص القرآن وتوقيته: الآيات بالضبط والوقفات المقاسة وتوقيت الآية والكلمة للريلز | Quran text and timing: exact verses, measured pauses, verse and word timing for reels | proven | ffmpeg, pip:faster-whisper |
 | `TOOL-179` | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب | Free photos: open-licence and free stock photo search and download with credits | proven | python3 |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
+| `TOOL-182` | معاينة الأغنية الرسمية (بديل الـDRM) | Official song preview (DRM fallback) | proven | ffmpeg, python3, yt-dlp |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
 | `TOOL-21` | فاحص توقيت الفيديو المرجعي | Reference Video Timing Probe | proven | ffmpeg, python3 |
@@ -290,6 +292,8 @@
 | `TOOL-134` | دراسة الرسم التدريجي والظل الأصلي | Staged drawing and original three-value visual studies | ready | python3 |
 | `TOOL-135` | أكاديمية الرسم والدروس المبنية على مصادر | Source-aware drawing school and user-authorized book audits | ready | python3 |
 | `TOOL-137` | منظور هندسي ومقاييس التباين اللوني | Original two-point perspective and numeric palette analysis | ready | python3, npm:axe |
+| `TOOL-180` | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي | Cinema Pro Conductor — single-entry montage with evidence-gated delivery | ready | ffmpeg, chromium, imagemagick |
+| `TOOL-181` | التنين الأسود — العقل المنسق لكل القدرات | Black Dragon — All-Capability Cognitive Orchestrator | ready | python3 |
 | `TOOL-33` | تدقيق أدلة الكتالوج | Catalog Evidence Audit | ready | python3 |
 | `TOOL-56` | فحص سلامة المهارة | Skill Health Check | ready | python3 |
 | `TOOL-58` | إعادة تصنيف نطاق الأدلة | Proof Scope Relabeler | ready | python3 |

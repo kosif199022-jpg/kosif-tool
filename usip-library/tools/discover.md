@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (30 أداة)
+# أدوات المجال `discover` (31 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -226,6 +226,51 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-task-method-router --evidence <ملف>`.
+
+### `black-dragon` — التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/black_dragon.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `untested` |
+| العائلات | `agent-orchestration`, `self-discovery`, `qa-verification` |
+
+**ما تفعله:** يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه.
+
+**What it does:** Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully.
+
+#### متى تُستدعى
+
+- «استدعِ التنين الأسود وشغّل كل المهارات في المهمة»
+- «شغّل كل قدرات سوبر باور بذكاء من غير استبعاد أي مهارة»
+- «Use all KOSIF skills with dependency-aware intelligent parallel coordination»
+- «Invoke Black Dragon and audit every registered capability»
+
+#### الأوامر
+
+- **inventory**: Count all registered skills, powers and tools without executing them.
+  - `python3 scripts/black_dragon.py inventory`
+- **plan**: Produce ranked all-entry plan with roles and dependency waves; skips no catalog entry.
+  - `python3 scripts/black_dragon.py plan "اصنع مونتاج"`
+- **run**: Record every entry, launch only explicitly reviewed adapters when enabled, produce SHA-256 evidence and blocked/failed counts.
+  - `python3 scripts/black_dragon.py run "اصنع مونتاج" --job ../../../out/black-dragon/demo --workers 8`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- الأمان: runs-external-programs
+- الموافقة: Adapter execution requires user authorization and --execute-adapters. No automatic payment, upload, installation or production deployment.
+- الحدود: A full catalog dispatch is not universal same-instant execution. Documentation-only powers or unavailable adapters are blocked, not credited. Plans are heuristic and do not establish cinematic quality.
+
+#### الاختبارات والأدلة
+
+- `tests/test_black_dragon.py`
+- مرجع: `docs/BLACK_DRAGON_ALL_CAPABILITIES.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:black-dragon --evidence <ملف>`.
 
 ### `boot` — إحاطة بدء الجلسة / Session boot briefing
 

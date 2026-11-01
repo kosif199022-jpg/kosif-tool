@@ -1,0 +1,58 @@
+name: Black Dragon checks
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/black-dragon-regenerate.yml'
+      - '.claude/skills/kosif-superpowers/data/tools.json'
+      - '.claude/skills/kosif-superpowers/data/black_dragon_adapters.json'
+      - '.claude/skills/kosif-superpowers/scripts/black_dragon.py'
+      - '.claude/skills/kosif-superpowers/scripts/_black_dragon_*.py'
+      - 'tests/test_black_dragon*.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Black Dragon unit and integration tests
+        run: python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
+      - name: Generated indexes are current (regenerate locally with the chain in references/guides/maintain.md)
+        working-directory: .claude/skills/kosif-superpowers
+        run: |
+          python3 scripts/hub.py build --check
+          python3 scripts/capability_graph.py build --check
+          python3 scripts/boot.py --static --check
+          python3 scripts/check_skill.py
+      - name: Real run with reviewed adapters and tool probes (evidence uploaded)
+        run: |
+          set +e
+          python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "اعمل مونتاج فيديو موشن جرافيك بصوت" \
+            --job out/black-dragon/ci-run --workers 8 --probe-tools --reviewed-adapters --execute-adapters
+          code=$?
+          set -e
+          # 4 = honest "not every entry executed"; anything else is an error
+          test "$code" -eq 4
+          python3 - <<'PY'
+          import json
+          r = json.load(open("out/black-dragon/ci-run/black_dragon_report.json"))
+          assert r["assignment_complete"] and r["assigned"] == r["scheduled"], r
+          assert r["failed"] == 0 and r["executed"] == r["adapter_count"], r
+          print("assigned", r["assigned"], "executed", r["executed"], "probe_passed", r["probe_passed"])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: black-dragon-ci-run
+          path: |
+            out/black-dragon/ci-run/*.json
+            out/black-dragon/ci-run/*.md
+            out/black-dragon/ci-run/receipts/
+            out/black-dragon/ci-run/artifacts/
+          if-no-files-found: warn

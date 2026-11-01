@@ -4,13 +4,15 @@
     python3 _media_gateway.py health
     python3 _media_gateway.py probe dYrEeavC3cw [--media-check]
     python3 _media_gateway.py download URL_OR_ID --rights cc-licensed [--quality 720] [-o DIR]
+    python3 _media_gateway.py snapany-status        # read-only provider configuration; zero credits
     python3 _media_gateway.py inbox                 # videos the iPhone sent with kosif-send
     python3 _media_gateway.py pull [UPLOAD_ID] -o DIR   # fetch the latest (or one) of them
 
 fetch_video.py uses it with --gateway RIGHTS. Settings come from the environment only:
 KOSIF_GATEWAY_URL (default below) and KOSIF_GATEWAY_TOKEN (never printed, logged or written).
 Every downloaded file is checked against the gateway's SHA-256 and size and written atomically;
-a mismatch deletes it. The gateway reports YouTube blocks; nothing here tries to get around them.
+a mismatch deletes it. Redirects are blocked to keep the gateway bearer token on the configured host.
+The gateway reports YouTube blocks; nothing here tries to get around them.
 """
 from __future__ import annotations
 
@@ -32,11 +34,34 @@ class GatewayError(RuntimeError):
     pass
 
 
+class _BlockRedirect(urllib.request.HTTPRedirectHandler):
+    """Never forward the gateway bearer token to another origin on HTTP redirect."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        raise urllib.error.HTTPError(req.full_url, code, "GATEWAY_REDIRECT_BLOCKED", headers, fp)
+
+
+def _safe_open(req, timeout: int):
+    return urllib.request.build_opener(_BlockRedirect()).open(req, timeout=timeout)
+
+
+def _destination(out_dir: Path, filename: str) -> Path:
+    """A gateway filename must be a single safe component, never a path."""
+    if (not isinstance(filename, str) or not filename or filename in (".", "..")
+            or filename != Path(filename).name or "\\" in filename
+            or any(ord(c) < 32 or ord(c) == 127 for c in filename)):
+        raise GatewayError("unsafe filename returned by gateway")
+    return out_dir / filename
+
+
 def config() -> tuple[str, str]:
     base = os.environ.get("KOSIF_GATEWAY_URL", DEFAULT_URL).rstrip("/")
     u = urlsplit(base)
-    if u.scheme != "https" and u.hostname not in ("127.0.0.1", "localhost"):
-        raise GatewayError("KOSIF_GATEWAY_URL must be https")
+    if (not u.hostname or u.username or u.password or u.query or u.fragment
+            or u.path not in ("", "/")):
+        raise GatewayError("KOSIF_GATEWAY_URL must be an origin without credentials, paths or query")
+    if not (u.scheme == "https" or (u.scheme == "http" and u.hostname in ("127.0.0.1", "localhost"))):
+        raise GatewayError("KOSIF_GATEWAY_URL must use https (http only for loopback tests)")
     return base, os.environ.get("KOSIF_GATEWAY_TOKEN", "")
 
 
@@ -60,9 +85,11 @@ def _call(method: str, path: str, payload: dict | None = None, timeout: int = 33
         headers["Content-Type"] = "application/json"
     req = urllib.request.Request(base + path, data=data, headers=headers, method=method)
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with _safe_open(req, timeout=timeout) as r:
             return r.status, json.load(r)
     except urllib.error.HTTPError as e:
+        if 300 <= e.code < 400:
+            return e.code, {"ok": False, "error": "GATEWAY_REDIRECT_BLOCKED"}
         try:
             return e.code, json.load(e)
         except ValueError:
@@ -75,18 +102,27 @@ def health(deep: bool = False) -> dict:
     return _call("GET", "/health?deep=1" if deep else "/health", timeout=120)[1]
 
 
+def snapany_status() -> dict:
+    """Free read-only check of the optional SnapAny adapter, never a credit-spending resolve."""
+    return _call("GET", "/v1/providers/snapany/status", timeout=30)[1]
+
+
 def probe(video: str, media_check: bool = False) -> dict:
     return _call("POST", "/v1/probe", {"video": video, "media_check": media_check}, timeout=150)[1]
 
 
 def _fetch(file_path: str, dest: Path, sha256: str, size: int) -> Path:
+    ticket = file_path.removeprefix("/v1/files/") if isinstance(file_path, str) else ""
+    if (not isinstance(file_path, str) or not file_path.startswith("/v1/files/")
+            or not ticket or not all(c.isalnum() or c in "-_" for c in ticket)):
+        raise GatewayError("unsafe file path returned by gateway")
     base, token = config()
     tmp = dest.with_name(dest.name + ".part")
     req = urllib.request.Request(base + file_path, headers={"Authorization": "Bearer " + token})
     h = hashlib.sha256()
     got = 0
     try:
-        with urllib.request.urlopen(req, timeout=300) as r, open(tmp, "wb") as fp:
+        with _safe_open(req, timeout=300) as r, open(tmp, "wb") as fp:
             for chunk in iter(lambda: r.read(1 << 20), b""):
                 fp.write(chunk)
                 h.update(chunk)
@@ -118,7 +154,7 @@ def download(video: str, out_dir: str | Path, rights: str, quality: int = 720) -
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     for f in res["files"]:
-        dest = out / f["filename"]
+        dest = _destination(out, f["filename"])
         _fetch(f["file_path"], dest, f["sha256"], f["size_bytes"])
         rec["original_file" if f["role"] == "original" else "safe_file"] = str(dest)
         if f["role"] == "original":
@@ -146,7 +182,7 @@ def pull(upload_id: str, out_dir: str | Path) -> dict:
     out.mkdir(parents=True, exist_ok=True)
     rec = {"ok": True, "upload_id": up["upload_id"], "source_url": up.get("source_url"), "provider": "kosif-send"}
     for f in up["files"]:
-        dest = _fetch(f["file_path"], out / f["filename"], f["sha256"], f["size_bytes"])
+        dest = _fetch(f["file_path"], _destination(out, f["filename"]), f["sha256"], f["size_bytes"])
         rec["original_file" if f["role"] == "original" else "safe_file"] = str(dest)
         if f["role"] == "original":
             rec.update({k: f["media"].get(k) for k in ("duration", "width", "height", "vcodec", "acodec", "fps")})
@@ -156,7 +192,7 @@ def pull(upload_id: str, out_dir: str | Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("action", choices=["health", "probe", "download", "inbox", "pull"])
+    ap.add_argument("action", choices=["health", "snapany-status", "probe", "download", "inbox", "pull"])
     ap.add_argument("video", nargs="?", default="dYrEeavC3cw")
     ap.add_argument("--rights", choices=RIGHTS)
     ap.add_argument("--quality", type=int, default=720, choices=(360, 480, 720, 1080))
@@ -167,6 +203,8 @@ def main(argv=None) -> int:
     try:
         if a.action == "health":
             res = health(a.deep)
+        elif a.action == "snapany-status":
+            res = snapany_status()
         elif a.action == "inbox":
             res = inbox()
         elif a.action == "pull":

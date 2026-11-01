@@ -1,0 +1,11 @@
+{"success": true, "totalResults": 4, "items": [
+ {"id": "/931/Synthetic_open_clip", "title": ["Synthetic open newsreel"], "rights": ["http://creativecommons.org/licenses/by-sa/4.0/"],
+  "edmIsShownBy": ["https://archive.example.ro/public/newsreel%201958.mov"], "dataProvider": ["Synthetic Film Archive"],
+  "edmPreview": ["https://api.europeana.eu/thumbnail/v2/url.json?uri=x&type=VIDEO"], "year": ["1958"]},
+ {"id": "/08623/Synthetic_pd_youtube", "title": ["Synthetic PD film on YouTube"], "rights": ["http://creativecommons.org/publicdomain/mark/1.0/"],
+  "edmIsShownBy": ["https://youtu.be/h_BskxVZzdw"], "dataProvider": ["Synthetic Cinematek"]},
+ {"id": "/123/Synthetic_nc_clip", "title": ["Synthetic NC clip"], "rights": ["http://creativecommons.org/licenses/by-nc/4.0/"],
+  "edmIsShownBy": ["https://files.example.org/nc.mp4"], "dataProvider": ["Synthetic NC Archive"]},
+ {"id": "/2051906/Synthetic_pdm_mp4", "title": ["Synthetic public domain lunapark"], "rights": ["http://creativecommons.org/publicdomain/mark/1.0/"],
+  "edmIsShownBy": ["https://www.openbeelden.nl/files/11/85/synthetic.mp4"], "dcCreator": ["Synthetic Polygoon"], "dataProvider": ["Synthetic Sound and Vision"]}
+]}

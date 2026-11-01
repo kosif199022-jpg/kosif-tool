@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""protocol_lint.py: consistency gate for a USIP release folder (KOSIF v5.11).
+"""protocol_lint.py: consistency gate for a USIP release folder (KOSIF v6.2).
 
 Every release so far drifted somewhere: a footer that still points at an old version, a quick card
 numbered 14, 16, 15, a README that names a step the paste file does not have, an annex range that
 stops one short. This reads the release files and fails on that kind of drift. It changes nothing.
 
-  python3 protocol_lint.py <release-dir> --version 5.11 [--project-root /mnt/project-files] [--json]
+  python3 protocol_lint.py <release-dir> --version 6.2 [--project-root /mnt/project-files] [--repo-root kosif-tool] [--json]
 
 Checks
   V  version     every main file names the release version in its title line
@@ -17,6 +17,11 @@ Checks
   R  readme      every file the README lists exists, and every main file is listed
   P  paths       project-folder paths the text names (living-site/..., protocol/...) exist (needs --project-root)
   Z  size        the compact paste file stays under 40 KB (it is pasted as a first message)
+  G  repo sync   (needs --repo-root) the repository copies match this release: the skill's USIP_PORTABLE.md,
+                 USIP_PASTE.md and docs/protocol/USIP_PORTABLE_v<X_Y>.md are byte-identical to the release's
+                 full, paste and compact files, PROTOCOL.md names the version, and every annex here exists
+                 unchanged under references/protocol/. Added in v6.2 after v6.1 lived only in the project
+                 folder while the repository still said v6.0. Scripts that differ are a warning.
 Exit 1 on any failure. Warnings never fail the gate but are printed.
 """
 import argparse
@@ -47,7 +52,7 @@ def find(rel, pattern):
     return hits[0] if hits else None
 
 
-def lint(rel, version, project_root=None):
+def lint(rel, version, project_root=None, repo_root=None):
     vtag = version.replace('.', '_')
     files = {
         'compact': find(rel, f'USIP_PORTABLE_v{vtag}.md'),
@@ -168,6 +173,32 @@ def lint(rel, version, project_root=None):
         elif kb > 36:
             warn('Z', f'compact file is {kb:.1f} KB, close to the 40 KB limit')
 
+    # G: repository copies match the release
+    if repo_root:
+        skill = os.path.join(repo_root, '.claude', 'skills', 'kosif-superpowers')
+        pairs = [('full', os.path.join(skill, 'USIP_PORTABLE.md')),
+                 ('paste', os.path.join(skill, 'USIP_PASTE.md')),
+                 ('compact', os.path.join(repo_root, 'docs', 'protocol', f'USIP_PORTABLE_v{vtag}.md'))]
+        for k, dst in pairs:
+            rel_dst = os.path.relpath(dst, repo_root)
+            if not os.path.exists(dst):
+                fail('G', f'repository has no {rel_dst}')
+            elif files.get(k) and read(dst) != texts.get(k):
+                fail('G', f'{rel_dst} differs from the release {os.path.basename(files[k])}')
+        core = os.path.join(skill, 'PROTOCOL.md')
+        if not os.path.exists(core) or f'v{version}' not in read(core).splitlines()[0]:
+            fail('G', f'PROTOCOL.md title line does not name v{version}')
+        for a in sorted(glob.glob(os.path.join(rel, 'A[0-9]*.md'))):
+            dst = os.path.join(skill, 'references', 'protocol', os.path.basename(a))
+            if not os.path.exists(dst):
+                fail('G', f'{os.path.basename(a)} is not in the repository references/protocol/')
+            elif read(dst) != read(a):
+                fail('G', f'references/protocol/{os.path.basename(a)} differs from the release copy')
+        for sc in sorted(glob.glob(os.path.join(rel, 'scripts', '*'))):
+            dst = os.path.join(skill, 'scripts', os.path.basename(sc))
+            if os.path.exists(dst) and read(dst) != read(sc):
+                warn('G', f'scripts/{os.path.basename(sc)} differs from the repository copy')
+
     return {'release': rel, 'version': version, 'pass': not fails, 'fails': fails, 'warnings': warns,
             'files': {k: os.path.basename(v) if v else None for k, v in files.items()}}
 
@@ -177,11 +208,12 @@ def main(argv=None):
     p.add_argument('release')
     p.add_argument('--version', required=True, help='e.g. 5.10')
     p.add_argument('--project-root')
+    p.add_argument('--repo-root', help='kosif-tool checkout; compares its copies with the release (check G)')
     p.add_argument('--json', action='store_true')
     ns = p.parse_args(argv)
     if not os.path.isdir(ns.release):
         sys.exit(f'not a folder: {ns.release}')
-    r = lint(ns.release, ns.version, ns.project_root)
+    r = lint(ns.release, ns.version, ns.project_root, ns.repo_root)
     if ns.json:
         print(json.dumps(r, ensure_ascii=False, indent=2))
     else:

@@ -192,11 +192,14 @@ def frontmatter(text: str) -> dict:
     end = text.find("\n---", 3)
     if end < 0:
         return {}
-    out = {}
+    out, key = {}, None
     for ln in text[3:end].splitlines():
         if ":" in ln and not ln.startswith((" ", "\t")):
             k, v = ln.split(":", 1)
-            out[k.strip()] = v.strip().strip('"\'')
+            key, v = k.strip(), v.strip()
+            out[key] = "" if re.fullmatch(r"[|>][-+]?", v) else v.strip('"\'')
+        elif key and ln.strip():   # folded (>-) or indented continuation of a multi-line value
+            out[key] = (out[key] + " " + ln.strip()).strip()
     return out
 
 

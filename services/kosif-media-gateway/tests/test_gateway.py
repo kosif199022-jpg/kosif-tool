@@ -43,6 +43,7 @@ def reset(mode: str = "ok") -> None:
         gw._STATE["blocked_until"] = 0.0
         gw._STATE["last_youtube"] = None
         gw._STATE["verified_downloads"] = 0
+        gw._STATE["youtube_verified_downloads"] = 0
         gw._ATTEMPTS.clear()
         for job in gw._JOBS.values():
             shutil.rmtree(job["folder"], ignore_errors=True)
@@ -119,6 +120,33 @@ class TestHttp(Base):
         self.assertTrue(body["dependencies"]["yt_dlp"])
         self.assertTrue(body["dependencies"]["ffmpeg"])
         self.assertFalse(body["youtube_download_verified"])
+
+    def test_deep_health_reports_block_in_same_reply(self):
+        reset("login")
+        with gw._LOCK:
+            gw._STATE["public_probe_at"] = 0.0
+        code, _, body = self.jreq("GET", "/health?deep=1", token=None)
+        self.assertEqual(code, 200)
+        self.assertEqual(body["public_probe"]["error"], "YOUTUBE_LOGIN_REQUIRED")
+        self.assertEqual(body["youtube"]["last_result"]["code"], "YOUTUBE_LOGIN_REQUIRED")
+        self.assertGreater(body["youtube"]["cooldown_seconds"], 0)
+        self.assertFalse(body["youtube_download_verified"])
+
+    def test_health_reports_deployed_commit(self):
+        old = {k: os.environ.get(k) for k in ("RENDER_GIT_COMMIT", "RENDER_GIT_BRANCH")}
+        try:
+            os.environ["RENDER_GIT_COMMIT"] = "ba8e3eb0123456789abcdef0123456789abcdef0"
+            os.environ["RENDER_GIT_BRANCH"] = "main"
+            body = self.jreq("GET", "/health", token=None)[2]
+            self.assertEqual(body["build"], {"commit": "ba8e3eb0123456789abcdef0123456789abcdef0", "branch": "main"})
+            os.environ["RENDER_GIT_COMMIT"] = "not a sha; rm -rf /"
+            self.assertIsNone(self.jreq("GET", "/health", token=None)[2]["build"]["commit"])
+        finally:
+            for k, v in old.items():
+                if v is None:
+                    os.environ.pop(k, None)
+                else:
+                    os.environ[k] = v
 
     def test_browser_page_is_public(self):
         code, headers, body = self.req("GET", "/browser", token=None)
@@ -215,6 +243,17 @@ class TestHttp(Base):
             self.assertEqual(len(data), f["size_bytes"])
             self.assertEqual(headers["X-Content-SHA256"], f["sha256"])
         self.assertTrue(self.jreq("GET", "/health")[2]["youtube_download_verified"])
+
+    def test_permitted_host_download_is_not_youtube_proof(self):
+        reset("ok")
+        code, _, body = self.jreq("POST", "/v1/download", {"video": "https://archive.org/download/Everyday1948/Everyday1948_512kb.mp4",
+                                                           "rights": "public-domain"})
+        self.assertEqual(code, 200, body)
+        self.assertTrue(body["verified"])
+        health = self.jreq("GET", "/health")[2]
+        self.assertEqual(health["verified_downloads_since_start"], 1)
+        self.assertEqual(health["youtube_verified_downloads_since_start"], 0)
+        self.assertFalse(health["youtube_download_verified"], "an archive.org file must not read as YouTube proof")
 
     def test_non_h264_is_transcoded_and_original_kept(self):
         if not gw.dependencies()["libx264"]:
@@ -466,3 +505,25 @@ sys.path.insert(0, str(HERE.parent))
 
 if __name__ == "__main__":
     unittest.main()
+
+
+_dspec = importlib.util.spec_from_file_location("deploy_check", HERE.parent / "deploy_check.py")
+dc = importlib.util.module_from_spec(_dspec)
+_dspec.loader.exec_module(dc)
+
+
+class TestDeployCheck(Base):
+    def test_local_version_matches_server(self):
+        self.assertEqual(dc.local_version(), gw.VERSION)
+
+    def test_verdicts(self):
+        v = gw.VERSION
+        self.assertEqual(dc.judge(None, v)["verdict"], "UNREACHABLE")
+        self.assertEqual(dc.judge({"version": "0.2.0"}, "0.3.0")["verdict"], "STALE")
+        self.assertEqual(dc.judge({"version": v, "build": {"commit": "abc1234def"}}, v)["verdict"], "FRESH")
+        self.assertEqual(dc.judge({"version": v, "build": {"commit": "abc1234def"}}, v, "abc1234")["verdict"], "FRESH")
+        self.assertEqual(dc.judge({"version": v, "build": {"commit": "abc1234def"}}, v, "fff0000")["verdict"], "STALE")
+        self.assertEqual(dc.judge({"version": v}, v, "fff0000")["verdict"], "STALE")
+
+    def test_against_running_server(self):
+        self.assertEqual(dc.main(["--url", self.base]), 0)

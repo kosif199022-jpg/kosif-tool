@@ -1,4 +1,4 @@
-# أدوات المجال `edit` (19 أداة)
+# أدوات المجال `edit` (20 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -160,6 +160,52 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:cinematic-cut-planner --evidence <ملف>`.
+
+### `cinematic-pro-conductor` — مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/cinematic_pro_conductor.py` (جذر: skill) |
+| المجال | `edit` |
+| الدليل | `untested` |
+| العائلات | `transitions-cuts`, `audio-sync-captions`, `photo-video-footage`, `qa-verification` |
+
+**ما تفعله:** يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل.
+
+**What it does:** Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.
+
+#### متى تُستدعى
+
+- «شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل»
+- «ابغى أمر واحد يطلع فيديو موشن مفحوص من صوتي»
+- «Unify relevant KOSIF Superpowers video skills in one real verified montage run»
+- «Create a cinematic Pro reel with evidence that the MP4 actually rendered»
+
+#### الأوامر
+
+- **doctor**: List installed skills and tool/module readiness without claiming execution.
+  - `python3 scripts/cinematic_pro_conductor.py doctor`
+- **plan**: Show creative roles, evidence gates and the complete ordered production chain without asserting those roles were executed.
+  - `python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel`
+- **run**: Render highlight -> 9:16 -> cinematic look with verified output at every stage; or use --recipe cinematic-audio for kinetic motion -> film look; optional --transcribe-local runs only with a cached model.
+  - `python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30`
+
+#### المتطلبات والأمان
+
+- binaries: ffmpeg, ffprobe
+- optional: bin:node, bin:chromium, pip:faster-whisper
+- الأمان: runs-external-programs
+- الموافقة: Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.
+- الحدود: A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_cinematic_pro_conductor.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/cinematic-pro-conductor.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:cinematic-pro-conductor --evidence <ملف>`.
 
 ### `creative-quality-gate` — بوابة جودة خطة المونتاج / Reference-edit structural quality gate
 

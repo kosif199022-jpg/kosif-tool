@@ -1,0 +1,55 @@
+{
+ "measured_at_utc": "2026-10-31T11:49:41Z",
+ "by": "Claude cloud session (no token, public endpoints only)",
+ "url": "https://kosif-media-gateway-free-20261030.onrender.com",
+ "health": {
+  "service": "KOSIF Media Gateway",
+  "version": "0.2.0",
+  "alive": true,
+  "dependencies": {
+   "yt_dlp": "2026.10.26",
+   "ffmpeg": "ffmpeg version 5.1.9-0+deb12u1 Copyright (c) 2000-2026 the FFmpeg developers",
+   "libx264": true,
+   "js_runtime": "deno:/opt/render/project/src/.venv/bin/deno"
+  },
+  "youtube": {
+   "last_result": {
+    "code": "YOUTUBE_LOGIN_REQUIRED",
+    "at": 1793447399
+   },
+   "cooldown_seconds": 1653
+  },
+  "youtube_download_verified": false,
+  "verified_downloads_since_start": 0,
+  "limits": {
+   "max_mb": 45,
+   "upload_mb": 150,
+   "upload_ttl_seconds": 3600,
+   "downloads_per_hour": 3,
+   "file_ttl_seconds": 600,
+   "download_timeout_seconds": 150,
+   "concurrent_downloads": 1,
+   "attempts_last_hour": 0
+  },
+  "allowed_hosts": [
+   "archive.org",
+   "commons.wikimedia.org",
+   "player.vimeo.com",
+   "upload.wikimedia.org",
+   "vimeo.com"
+  ],
+  "uptime_seconds": 176
+ },
+ "deep_probe_2026-10-31T11:50Z": {
+  "ok": false,
+  "video_id": "dYrEeavC3cw",
+  "error": "YOUTUBE_LOGIN_REQUIRED",
+  "detail": "ERROR: [youtube] dYrEeavC3cw: Sign in to confirm you’re not a bot. This helps protect our community. Use --cookies-from-browser or --cookies for the authentication."
+ },
+ "note": "In 0.2.0 the deep reply still showed youtube.last_result=null because status() ran before the probe; fixed in the v6.2 PR.",
+ "verdict": {
+  "youtube_via_render": "BLOCKED",
+  "evidence_grade": "E3",
+  "archive_org_download": "NOT_MEASURED (needs KOSIF_GATEWAY_TOKEN)"
+ }
+}

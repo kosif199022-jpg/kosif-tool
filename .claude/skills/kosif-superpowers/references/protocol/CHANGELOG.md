@@ -6,7 +6,11 @@
 
 ## الفهرس / contents
 
-- [v6.0 — 2026-10-30 (هذا الإصدار)](#v60--2026-10-30-هذا-الإصدار)
+- [v6.5 — 2026-11-01 (هذا الإصدار)](#v65--2026-11-01-هذا-الإصدار)
+- [v6.4 — 2026-11-01](#v64--2026-11-01)
+- [v6.3 — 2026-10-31](#v63--2026-10-31)
+- [v6.2 — 2026-10-31](#v62--2026-10-31)
+- [v6.0 — 2026-10-30](#v60--2026-10-30)
 - [v5.9 — 2026-10-29](#v59--2026-10-29)
 - [v5.8 — 2026-10-26](#v58--2026-10-26)
 - [v5.7 — 2026-10-24](#v57--2026-10-24)
@@ -22,7 +26,48 @@
 - [v2 — 2026-10-20 (commits 3827e09، ثم v2.1 ec6374a، ثم v2.2 1e65848 وdbeae16)](#v2--2026-10-20-commits-3827e09-ثم-v21-ec6374a-ثم-v22-1e65848-وdbeae16)
 - [خريطة الأقسام القديمة / old → new map](#خريطة-الأقسام-القديمة--old--new-map)
 
-## v6.0 — 2026-10-30 (هذا الإصدار)
+## v6.5 — 2026-11-01 (هذا الإصدار)
+
+طلب المالك: «راجع كل السوبر باور… ادمج قدرات التنين بالبرو… تأكد من قدرة كلاود على مشاهدة المهارات واستخدامها، طوّر ذكاء كلاود، وأضف مواقع يحمّل منها فيديوهات مجانًا». v6.5 بتخلّي التنين خطوة ثابتة في المسار وبتصلّح اللي اتلقى في المراجعة:
+
+- **[A49](A49-v65-dragon-in-pipeline.md) جديد:** في L3 التنين بيشتغل بعد البريف بـ `--probe-tools --reviewed-adapters` (متعيّن + بيشتغل هنا)، وفي `نفّذ بأقصى قوة` بيضيف `--execute-adapters` (المحوّلات قراءة بس، فالرد ده إذنها). قائد كل مرحلة بيتقارن بالخطة، واللي يغيّر المحرك أو طريقة التحقق بيروح للخطة C. سطر «التنين:» إلزامي في التقرير.
+- **محوّلات التنين:** من 24 لـ 39 (capability-atlas، powers، requirements، superpowers-unified، superpower-fusion، kosif-groups، drawing-methods، style-atlas-bridge، style-library، mosamem-rea-fusion، business-workflows، superskills-bridge، superskills، source-scout، creative-external-search). تشغيل حقيقي: 7,381 متعيّن، 187 من 205 بيشتغلوا هنا، **39 من 39 اتنفذوا بإيصال**، 0 فشل.
+- **مصادر فيديو مجانية:** `free_footage.py` بقى بيبحث في مكتبة الكونجرس (من غير مفتاح؛ أفلام منشورة لحد سنة الملكية العامة في أمريكا، 1930 سنة 2026) وEuropeana (`EUROPEANA_API_KEY` مجاني؛ رخص مفتوحة وملفات مباشرة بس). القاعدة بقت 19 مصدر. كليب اتنزّل فعلًا من مكتبة الكونجرس بملف ترخيص.
+- **ذكاء التوجيه:** (1) المتطلب الإلزامي ما بقاش ياخد خانة المرحلة في الخطة، فطلب «صمم شعار عربي بخط رقعة» بقى فيه «SVG logo construction» في A (كان `evals/test_routing_quality.py` فاشل على main ومش في CI)؛ (2) `hub.py` بقى يطابق الكلمات الإنجليزية من 3 حروف ككلمة كاملة («see» مش «seek»)؛ (3) كلمة «kosif» ما بقتش بتتحسب في الترتيب، فأدوات SEE التلاتة بقت تطلع لطلب «kosif see».
+- **شوفان المهارات:** `skill_loader.py` و`self_council.py` كانوا بيقروا الوصف متعدد الأسطر (`description: >-`) على إنه `>-`، فمهارة `kosif-reel-hooks` ما كانتش بتتلاقي من `need`. اتصلح، و`tests/test_skill_discovery.py` جديد.
+- **النسخ:** النواة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PORTABLE.md` و`USIP_PASTE.md` والمحركين بقوا v6.5، والمضغوطة `docs/protocol/USIP_PORTABLE_v6_5.md`.
+
+## v6.4 — 2026-11-01
+
+طلب المالك: «لازم ينفذ كل القدرات، بس هينفذها إزاي؟ هي دي الجزئية اللي هتبقى خاضعة للذكاء بتاع التنين الأسود». التنين الأسود اتدمج كأداة في PR #195 و#197، وv6.4 بتخلّيه جزء من البروتوكول نفسه:
+
+- **[A48](A48-v64-black-dragon.md) جديد:** المحفّز («استدعِ التنين الأسود» / Black Dragon)، المخزون (7,378 عنصر من 7 أنواع)، العقل (جزء من المراحل السبعة، وطريقة، ووزن، وسطر تطبيق لكل عنصر)، ثلاث درجات دليل ممنوع خلطها (متعيّن، بيشتغل هنا، اتنفذ بإيصال)، الأمر، وشكل الرد الإلزامي.
+- **المقاس:** على main بعد PR #197، طلب برومو 15 ثانية: 7,377 متعيّن، 186 من 204 أداة بتشتغل، 24 من 24 محوّل اتنفذوا بإيصالات SHA-256، 0 فشل، خروج 4 (`full_coverage: false` بصدق).
+- **جدول المحفّزات** في النواة فيه صف A48، و`USIP_PORTABLE.md` و`USIP_PASTE.md` والمضغوطة (القسم 2.14) فيهم القاعدة.
+- **النسخ:** النواة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PORTABLE.md` و`USIP_PASTE.md` والمحركين بقوا v6.4، والمضغوطة `docs/protocol/USIP_PORTABLE_v6_4.md` (اتختصرت سطور قديمة عشان تفضل تحت 40 KB).
+
+## v6.3 — 2026-10-31
+
+بعد دمج v6.2 اتقاس الجيتواي تاني (16:51 UTC): `/health?deep=1` لسه بيرجّع `last_result: null` جنب فحص فاشل، يعني Render ما نشرش PR #189. v6.3 بتخلّي ده مقيس بدل ما يتخمّن:
+
+- **[A47](A47-v62-media-gateway.md) القسم 6 «هل Render شغال بآخر كود؟»:** `services/kosif-media-gateway/deploy_check.py` (من غير توكن) بيقارن `/health` بالمستودع ويطلع `FRESH` / `STALE` / `UNREACHABLE`. أول قياس: **STALE** (0.2.0 والمستودع 0.3.0)، الدليل `evidence/A47-deploy-check-20261031.json`. الحل عند صاحب المشروع: Render ← Manual Deploy ← Deploy latest commit.
+- **الجيتواي 0.3.0:** `/health` فيه `build.commit` و`build.branch` من `RENDER_GIT_COMMIT` و`RENDER_GIT_BRANCH`.
+- **إصلاح:** `youtube_download_verified` كانت بتتقلب true بعد أي تنزيل متحقق، حتى من archive.org اللي فحص `live_check.py` بينزّله. دلوقتي يوتيوب بس، وفيه `youtube_verified_downloads_since_start`. اختبار `test_permitted_host_download_is_not_youtube_proof`.
+- **workflow «KOSIF Media Gateway live check»:** job `deploy` جديد من غير سر، يومي 06:17 UTC، بيحذّر لو `STALE`.
+- **النسخ:** النواة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PORTABLE.md` و`USIP_PASTE.md` والمحركين بقوا v6.3، والمضغوطة `docs/protocol/USIP_PORTABLE_v6_3.md`.
+
+## v6.2 — 2026-10-31
+
+v6.1 (Suno الخطوة صفر، A46) اتعملت كحزمة في مجلد المشروع، ومحتواها دخل هنا تحت v6.0 من غير ما رقم الإصدار يتغير. v6.2 بتوحّد الرقم وتضيف:
+
+- **[A47 جيتواي الوسائط](A47-v62-media-gateway.md):** خدمة `services/kosif-media-gateway/` (PR #184) اتقاست حي يوم 31-10-2026: `/health` سليم (yt-dlp 2026.10.26، ffmpeg بـ libx264، deno)، و`/health?deep=1` رجّع `YOUTUBE_LOGIN_REQUIRED` للفيديو الثابت `dYrEeavC3cw`، و`youtube_download_verified: false`. الحكم: يوتيوب من Render **BLOCKED** (E3). الجيتواي صندوق بريد لملفات الموبايل (`kosif-send` ثم `list_uploads`) ومصدر لـ archive.org وWikimedia وVimeo.
+- **[A45](A45-youtube-download.md):** القاعدة بقت «أي سحابة، sandbox أو Render: لأ»، وطريق السحابة لفيديو يوتيوب هو `kosif-send` من الآيفون.
+- **إصلاح في الجيتواي:** `/health?deep=1` كان بيبني الحالة قبل الفحص، فالرد نفسه كان بيقول `last_result: null` و`cooldown_seconds: 0` جنب فحص فاشل. دلوقتي الفحص الأول. اختبار جديد `test_deep_health_reports_block_in_same_reply`.
+- **`scripts/protocol_lint.py` فحص G:** `--repo-root` بيقارن نسخ المستودع (`USIP_PORTABLE.md` و`USIP_PASTE.md` و`docs/protocol/USIP_PORTABLE_v<X_Y>.md` والملاحق) بحزمة الإصدار حرف بحرف، وبيفشل لو اختلفوا. ده بالظبط اللي حصل في v6.1.
+- **جدول المحفّزات:** الصف اللي كان جامع A43 وA46 وA45 في خانة واحدة اتقسم لصف لكل ملحق بمحفّزه، فـ `LOADER.md` بطّل يكرر نفس المحفّز لتلات ملاحق. وA47 ليه صف.
+- **النسخ:** النواة و`SESSION_PROMPT.md` و`SKILL.md` و`CLAUDE.md` و`USIP_PORTABLE.md` و`USIP_PASTE.md` (بقت نسخة v6.1 الأغنى بمسارات الطلبات الخاصة) ومحركا `skill_intelligence.py` و`fusionforge.py` صاروا v6.2، والنسخة المضغوطة `docs/protocol/USIP_PORTABLE_v6_2.md`. إيصال A43 فضل `USIP-6.0` (رقم مخطط الإيصال، مش رقم البروتوكول).
+
+## v6.0 — 2026-10-30
 
 يجمع ثلاثة إصدارات بُنيت خارج المستودع (v5.10 وv5.11 وv5.12) وطبقة v6.0 في إصدار واحد.
 
@@ -206,7 +251,7 @@
 
 | المعرّف القديم | العنوان القديم | المكان الجديد |
 |---|---|---|
-| `banner` | سطر «نسخة الدمج الموسّعة v5.2» تحت العنوان | [النواة: العنوان وفقرة ما تغيّر](../../PROTOCOL.md#kosif-superpowers--kosif-see--universal-skill-intelligence-protocol-usip-v60) · نص السطر: [A11](A11-snapshots-20261021.md#من-العنوان--السطر-التعريفي-لـ-v52) |
+| `banner` | سطر «نسخة الدمج الموسّعة v5.2» تحت العنوان | [النواة: العنوان وفقرة ما تغيّر](../../PROTOCOL.md#kosif-superpowers--kosif-see--universal-skill-intelligence-protocol-usip-v65) · نص السطر: [A11](A11-snapshots-20261021.md#من-العنوان--السطر-التعريفي-لـ-v52) |
 | `toc` | الفهرس / contents | [النواة §الفهرس](../../PROTOCOL.md#الفهرس--contents) |
 | `repo-origin` | المستودع الأصل — اقرأه كاملًا حتى لو لم تكن المهارة مثبتة | [النواة §المستودع الأصل](../../PROTOCOL.md#المستودع-الأصل--اقرأه-كاملًا-حتى-لو-لم-تكن-المهارة-مثبتة) · صف commit v3.1: [A11](A11-snapshots-20261021.md#من-المستودع-الأصل--صف-commit-ملف-v31) |
 | `loop` | الحلقة في شاشة واحدة | [النواة §الحلقة](../../PROTOCOL.md#الحلقة-في-شاشة-واحدة) · وتفصيلها [النواة §المسار القانوني](../../PROTOCOL.md#المسار-القانوني-الواحد--canonical-pipeline) |

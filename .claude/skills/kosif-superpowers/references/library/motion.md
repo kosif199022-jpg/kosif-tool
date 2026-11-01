@@ -46,6 +46,7 @@
 | `cinema-lab` | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B | `python3 scripts/cinema_lab.py doctor` | tested-here |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
 | `cinematic-cut-planner` | مُخطِّط قطعات اللقطات الحقيقية | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips ./clips.json --duration 48.5 --fps 30 --out ./out/edl.json` | tested-here |
+| `cinematic-pro-conductor` | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي | `python3 scripts/cinematic_pro_conductor.py doctor` | untested |
 | `code-drawing-master` | رسم الشخصيات والمشاهد بالكود | `python3 scripts/code_drawing_master.py --cast human+cat --expression happy --location street --action walk --out ./story.json --html ./story.html` | tested-here |
 | `color-media` | محرك الخامات الملوّنة: ألوان خشبية وفرشاة زيت وألوان مائية لأي صورة | `python3 scripts/color_media.py draw --photo in.png --out out/x --medium oil` | tested-here |
 | `creative-paint` | الرسم الإبداعي بالطبقات | `python3 scripts/creative_paint.py doctor` | tested-here |
@@ -92,6 +93,7 @@
 | `repo-render-html` | محوّل حتمي من HTML إلى فيديو MP4 | `node tools/render_html.cjs --in starters/html-canvas/index.html --out ./out/film.mp4 --fps 30 --audio ./voice.mp3` | tested-here |
 | `repo-verify-video` | بوابة فحص تسليم الفيديو | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 --duration 12 --audio ./voice.mp3 --json ./out/report.json` | tested-here |
 | `script-storyboard` | من السيناريو إلى الستوري بورد والأنيماتك | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90` | tested-here |
+| `song-preview` | معاينة الأغنية الرسمية (بديل الـDRM) | `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10` | tested-here |
 | `source-finder` | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي | `python3 scripts/source_finder.py doctor` | tested-here |
 | `starter-html-canvas` | قالب فيلم HTML Canvas | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `stock-fetch` | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) | `python3 scripts/stock_fetch.py probe` | tested-here |

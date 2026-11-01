@@ -5,7 +5,7 @@ owner may download, without the owner's iPhone or computer. It reads only what a
 signing in: no cookies, no IP or proxy rotation, no CAPTCHA, PO-token or DRM workarounds. When YouTube
 refuses the host, the gateway returns the exact code and pauses YouTube calls for a cool-down instead of retrying.
 
-Version 0.2.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (static ffmpeg with libx264) and
+Version 0.3.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (static ffmpeg with libx264) and
 `deno` (the JavaScript runtime yt-dlp needs for YouTube) come from `requirements.txt`.
 
 ## Deploy on Render (Free plan only)
@@ -13,7 +13,7 @@ Version 0.2.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (sta
 | Setting | Value |
 |---|---|
 | Runtime | Python 3 |
-| Intended branch | `main` (PR #184 was merged on 2026-10-30; verify the deployed commit before switching) |
+| Branch | `main` |
 | Build command | `pip install -r services/kosif-media-gateway/requirements.txt` |
 | Start command | `python services/kosif-media-gateway/server.py` |
 | Health check path | `/health` |
@@ -35,10 +35,20 @@ Environment variables (set in the Render dashboard, never in the repo):
 | `KOSIF_UPLOAD_TTL` | no | 3600 | Seconds an upload stays available |
 | `KOSIF_PUBLIC_PROBE_EVERY` | no | 900 | Minimum seconds between unauthenticated `/health?deep=1` checks |
 
-`RENDER_EXTERNAL_URL` is set by Render itself and is used to build absolute file links.
+`RENDER_EXTERNAL_URL` is set by Render itself and is used to build absolute file links. `RENDER_GIT_COMMIT` and
+`RENDER_GIT_BRANCH` (also set by Render) appear in `/health` as `build.commit` / `build.branch` (0.3.0+).
+
+### Is Render running the latest code?
+
+Every change to `server.py` bumps `VERSION`. `python3 services/kosif-media-gateway/deploy_check.py` (public, no
+token) compares the deployed `/health` with this checkout: `FRESH`, `STALE` or `UNREACHABLE`. The workflow
+**KOSIF Media Gateway live check** runs it daily and warns on `STALE`. The fix is the owner's: Render dashboard >
+the service > **Manual Deploy > Deploy latest commit**, or turn **Auto-Deploy** on for `main`.
 Free services sleep after ~15 idle minutes, so the first request can take up to a minute.
 
 ## Deployment drift — checked 2026-10-31
+
+_Snapshot from 2026-10-31. `main` has moved on since then; run `deploy_check.py` (above) for the current state before acting on it._
 
 **GitHub and Render are not currently on the same revision.** The merged, CI-tested GitHub
 `main` is commit `44ab43a596cd413a47e57a33d15767a983d7346a`, which intentionally does **not**
@@ -69,7 +79,7 @@ that credits were spent, or that a video was downloaded.
 
 | Call | Auth | What it does |
 |---|---|---|
-| `GET /health` | none | Version, dependencies actually executed (`yt-dlp --version`, `ffmpeg -version`, libx264, JS runtime), limits, the last YouTube result and cool-down |
+| `GET /health` | none | Version, deployed commit (`build`), dependencies actually executed (`yt-dlp --version`, `ffmpeg -version`, libx264, JS runtime), limits, the last YouTube result and cool-down |
 | `GET /health?deep=1` | none | Same, plus a fixed-video check (`dYrEeavC3cw`, metadata and the first ~10 KB of a stream), at most every 15 min |
 | `POST /v1/probe` | Bearer | `{"video": "ID or URL", "media_check": true}`: metadata and, with `media_check`, a real 10 KB stream read |
 | `POST /v1/download` | Bearer | `{"video": "ID or URL", "rights": "cc-licensed", "quality": 720}` |
@@ -132,7 +142,7 @@ claude mcp add --transport http kosif-media https://kosif-media-gateway-free-202
 claude mcp list        # expect: kosif-media ... ✓ Connected
 ```
 
-Tools: `gateway_status`, `probe_youtube`, `download_permitted_video`.
+Tools: `gateway_status`, `list_uploads`, `probe_youtube`, `download_permitted_video`.
 
 ## From the iPhone: kosif-send (share button)
 
@@ -175,6 +185,12 @@ SSRF guard, oversized bodies, keep-alive after 401, LOGIN_REQUIRED / 429 / 403 /
 second request, corrupt and short files rejected and cleaned, size limit, timeout, one-at-a-time, hourly
 limit, expiry, lossless remux, libx264 fallback, and the Superpowers client's hash check.
 CI: `.github/workflows/media-gateway.yml`.
+
+## Measured status (2026-10-31)
+
+`/health?deep=1` from the live service: `YOUTUBE_LOGIN_REQUIRED` for `dYrEeavC3cw`, `youtube_download_verified: false`.
+YouTube refuses Render's data-center IP, as it refuses the Claude sandbox. Use the gateway as an inbox for files the
+phone downloaded (`kosif-send`, then `list_uploads`) and for archive.org / Wikimedia / Vimeo. Protocol appendix A47.
 
 ## Honest limits
 

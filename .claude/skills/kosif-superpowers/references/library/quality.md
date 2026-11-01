@@ -41,6 +41,7 @@
 | `atlas-body-audit` | مراجعة ساكنة لنصوص مهارات الأطلس | `python3 scripts/atlas_body_audit.py --index ./atlas-index.json --out ./out/atlas-audit-private --limit 200` | tested-here |
 | `atlas-external-bridge` | بحث مهارات أطلس الخارجية | `python3 scripts/atlas_external_bridge.py stats --index ./atlas_index.json --copyleft-index ./atlas_copyleft_index.json` | tested-here |
 | `atlas-metadata-audit` | تدقيق بيانات أطلس الوصفية | `python3 scripts/atlas_metadata_audit.py --index ./atlas_index.json --copyleft ./atlas_copyleft_index.json --output ./out/atlas_audit.json` | tested-here |
+| `black-dragon` | التنين الأسود — العقل المنسق لكل القدرات | `python3 scripts/black_dragon.py inventory` | untested |
 | `blender-cycles-render` | رندر Cycles إلى فيديو مُتحقَّق منه | `python3 scripts/blender_cycles_render.py doctor` | tested-here |
 | `book-methods` | مناهج مستخلصة من الكتب: التفكير الجانبي والهندسة العملية والأدلة البايزية والشخصية وفحوص المحاسبة ووضوح البرومنت | `python3 scripts/book_methods.py search "شخصية حوار"` | tested-here |
 | `build-chapters` | مولّد فصول العائلات | `python3 scripts/build_chapters.py` | untested |
@@ -49,6 +50,7 @@
 | `charter-ingest` | إدخال قائمة الميثاق: مجلس الخبراء 500 فهرسًا للاستشارة | `python3 scripts/charter_ingest.py roster.txt --out data/experts_500.json` | tested-here |
 | `check-skill` | فحص سلامة المهارة | `python3 scripts/check_skill.py` | untested |
 | `cinematic-broll-render` | تصيير لقطات B-roll بحركة كاميرا | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest ./clips.json --audio ./voice.wav --out ./out/master.mkv --width 1080 --height 1920` | tested-here |
+| `cinematic-pro-conductor` | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي | `python3 scripts/cinematic_pro_conductor.py doctor` | untested |
 | `collect-links` | جمع الروابط من صفحة بمتصفح بلا واجهة | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | untested |
 | `council` | مجلس البرو: خمسة متعارضين أو مجلس مناسب من 100 شخصية، ثلاث جولات وحكم بالدرجات | `python3 scripts/council.py plan "اعمل ريلز دعاء" --dir out/demo/council --options A,B,C` | tested-here |
 | `creative-quality-gate` | بوابة جودة خطة المونتاج | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json --out ./out/quality-audit.json` | tested-here |

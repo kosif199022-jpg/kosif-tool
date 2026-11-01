@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (25 أداة)
+# أدوات المجال `sources` (26 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -395,9 +395,9 @@
 | الدليل | `tested-here` |
 | العائلات | `photo-video-footage`, `video-download`, `web-research` |
 
-**ما تفعله:** قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.
+**ما تفعله:** قاعدة بيانات مفحوصة لـ19 موقع فيديو: 17 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا ومكتبة الكونجرس (أفلام ملكية عامة في أمريكا بس، منشورة لحد 1930) من غير مفتاح، وفي Pexels وPixabay وEuropeana (رخص مفتوحة بس) لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.
 
-**What it does:** Keeps a checked database of 17 video sources: 15 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.
+**What it does:** Keeps a checked database of 19 video sources: 17 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) NASA and the Library of Congress (only films published on or before the latest US public-domain year, 1930 in 2026) without keys, Pexels, Pixabay and Europeana (open rights statements only: PD, CC0, CC BY, CC BY-SA, direct files) when PEXELS_API_KEY, PIXABAY_API_KEY or EUROPEANA_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.
 
 #### متى تُستدعى
 
@@ -940,6 +940,51 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-ashell-cinema --evidence <ملف>`.
+
+### `song-preview` — معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback)
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/song_preview.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `music-beat-sound`, `video-download` |
+
+**ما تفعله:** لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، وبعدين تنزّل معاينة المتجر الرسمية 30 ثانية اللي الناشر بيوفّرها (iTunes ‎.m4a‎ وDeezer ‎.mp3‎) ومعاها سجل ‎<file>.rights.json‎: المصدر، أرقام الأغنية والفنان، رابط المتجر، رابط المعاينة، وقت التنزيل، المدة من ffprobe، وملاحظة الترخيص (للمسودات الخاصة؛ النشر العام بالصوت المرخّص من المنصة؛ واذكر الفنان). مكتبة بايثون القياسية بس.
+
+**What it does:** When a requested song is DRM-locked (yt-dlp says 'DRM protected'), the source stops there; this tool is the lawful fallback. It searches Apple's public iTunes Search API and Deezer's public API, prints one table (source, track, artist, album, release date, duration, whether a preview exists) saved to a cache, then downloads the official 30-second store preview the label supplies (iTunes .m4a AAC, Deezer .mp3) with a <file>.rights.json sidecar: source, track and artist ids, store URL, preview URL, fetched_at, ffprobe duration and the licence note (private drafts only; public posts use the platform's licensed sound; credit the artist). Standard library only.
+
+#### متى تُستدعى
+
+- «الأغنية على ساوند كلاود عليها DRM، هات المعاينة الرسمية بتاعتها»
+- «دوّر على أغنية تامر عاشور انا بحبك يا بلادي ونزّل الـ30 ثانية»
+- «yt-dlp says DRM protected for this song, get the official store preview instead»
+- «Find the iTunes preview of this song for a private reel draft»
+
+#### الأوامر
+
+- **search**: Queries the iTunes Search API (entity=song, the --country storefront) and Deezer's search, prints numbered rows and saves them to out/song-preview/last_search.json (or --out). --json prints the payload; a failing source is reported and the other still answers. Exit 1 when no row came back.
+  - `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10`
+- **download**: Downloads row N of the last search in --out (or a preview URL from *.itunes.apple.com, *.mzstatic.com or *.dzcdn.net only) to <artist>-<track>-<source>.<m4a\|mp3> plus <file>.rights.json, and prints the ffprobe duration when ffprobe exists. A row without a preview, or any other host, is refused before any request.
+  - `python3 scripts/song_preview.py download 1 --out out/song-preview`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: bin:ffprobe
+- الأمان: network
+- الموافقة: It downloads a copyrighted 30-second preview for a private draft only. Public posting uses the platform's licensed sound (for example TikTok's library) and credits the artist; tell the user before anything is published.
+- الحدود: It is not a full-track source and grants no licence: previews are 30 s, Deezer's preview field is sometimes empty and its links expire, release dates come only from iTunes, and catalogue coverage depends on the storefront. A longer reel may only repeat preview phrases aligned to the beat; it never touches DRM streams, cookies, logins or yt-dlp.
+
+#### الاختبارات والأدلة
+
+- `tests/test_song_preview.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A19-field-lessons-montage.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:song-preview --evidence <ملف>`.
 
 ### `source-finder` — البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي / Source finder: the original clips behind each shot of a reference video
 

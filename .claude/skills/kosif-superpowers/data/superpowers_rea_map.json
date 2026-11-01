@@ -471,20 +471,23 @@
  },
  "counts": {
   "broken_links": 0,
-  "evals": 142,
+  "evals": 149,
   "families": 62,
   "gaps": {
-   "family_without_tool": 11
+   "family_without_tool": 11,
+   "script_orphan": 1,
+   "script_untested": 2
   },
-  "powers": 5856,
-  "py_edges": 371,
-  "repo_tests": 41,
+  "powers": 5860,
+  "py_edges": 388,
+  "repo_tests": 49,
   "roles": {
-   "helper": 4,
-   "registered": 172
+   "helper": 8,
+   "orphan": 1,
+   "registered": 181
   },
-  "scripts": 176,
-  "tools": 195
+  "scripts": 190,
+  "tools": 205
  },
  "families": [
   {
@@ -495,7 +498,7 @@
   {
    "id": "agent-orchestration",
    "powers": 55,
-   "tools": 16
+   "tools": 18
   },
   {
    "id": "ai-generation",
@@ -570,7 +573,7 @@
   {
    "id": "audio-sync-captions",
    "powers": 61,
-   "tools": 28
+   "tools": 29
   },
   {
    "id": "brand-logo-identity",
@@ -670,7 +673,7 @@
   {
    "id": "music-beat-sound",
    "powers": 306,
-   "tools": 2
+   "tools": 3
   },
   {
    "id": "other",
@@ -685,7 +688,7 @@
   {
    "id": "photo-video-footage",
    "powers": 71,
-   "tools": 32
+   "tools": 34
   },
   {
    "id": "pixel-retro-stylized",
@@ -695,7 +698,7 @@
   {
    "id": "planning-execution",
    "powers": 14,
-   "tools": 18
+   "tools": 19
   },
   {
    "id": "prompt-craft",
@@ -705,11 +708,11 @@
   {
    "id": "qa-verification",
    "powers": 384,
-   "tools": 22
+   "tools": 27
   },
   {
    "id": "runnable-tools",
-   "powers": 177,
+   "powers": 181,
    "tools": 0
   },
   {
@@ -720,7 +723,7 @@
   {
    "id": "self-discovery",
    "powers": 43,
-   "tools": 41
+   "tools": 42
   },
   {
    "id": "shapes-morph-geometry",
@@ -755,7 +758,7 @@
   {
    "id": "transitions-cuts",
    "powers": 475,
-   "tools": 19
+   "tools": 20
   },
   {
    "id": "typography-arabic",
@@ -775,12 +778,12 @@
   {
    "id": "verification-evals",
    "powers": 40,
-   "tools": 16
+   "tools": 19
   },
   {
    "id": "video-download",
    "powers": 11,
-   "tools": 10
+   "tools": 11
   },
   {
    "id": "voice-tts",
@@ -790,7 +793,7 @@
   {
    "id": "web-research",
    "powers": 26,
-   "tools": 15
+   "tools": 16
   },
   {
    "id": "writing-humanizer",
@@ -799,6 +802,21 @@
   }
  ],
  "gaps": [
+  {
+   "detail": "not in tools.json, imported by no script",
+   "id": "_black_dragon_exec",
+   "kind": "script_orphan"
+  },
+  {
+   "detail": "no eval, repo test, tools.json test or CI step references it",
+   "id": "_media_gateway",
+   "kind": "script_untested"
+  },
+  {
+   "detail": "no eval, repo test, tools.json test or CI step references it",
+   "id": "protocol_lint",
+   "kind": "script_untested"
+  },
   {
    "detail": "22 powers, no tools.json entry lists this family",
    "id": "api-testing",
@@ -850,7 +868,7 @@
    "kind": "family_without_tool"
   },
   {
-   "detail": "177 powers, no tools.json entry lists this family",
+   "detail": "181 powers, no tools.json entry lists this family",
    "id": "runnable-tools",
    "kind": "family_without_tool"
   }
@@ -928,6 +946,16 @@
    "from": "atlas_transfer",
    "kind": "imports",
    "to": "powers"
+  },
+  {
+   "from": "black_dragon",
+   "kind": "imports",
+   "to": "_black_dragon_brain"
+  },
+  {
+   "from": "black_dragon",
+   "kind": "imports",
+   "to": "_cinema_all_skills"
   },
   {
    "from": "blender_cinematic_bridge",
@@ -1150,6 +1178,16 @@
    "to": "cinematic_cut_planner"
   },
   {
+   "from": "cinematic_pro_conductor",
+   "kind": "imports",
+   "to": "_cinema_all_skills"
+  },
+  {
+   "from": "cinematic_pro_conductor",
+   "kind": "imports",
+   "to": "montage_pro"
+  },
+  {
    "from": "color_media",
    "kind": "imports",
    "to": "portrait_pipeline"
@@ -1197,7 +1235,17 @@
   {
    "from": "fetch_video",
    "kind": "imports",
+   "to": "_cobalt_provider"
+  },
+  {
+   "from": "fetch_video",
+   "kind": "imports",
    "to": "_deps"
+  },
+  {
+   "from": "fetch_video",
+   "kind": "imports",
+   "to": "_media_gateway"
   },
   {
    "from": "fetch_video",
@@ -1213,6 +1261,16 @@
    "from": "free_footage",
    "kind": "invokes",
    "to": "source_finder"
+  },
+  {
+   "from": "free_photos",
+   "kind": "imports",
+   "to": "free_footage"
+  },
+  {
+   "from": "free_photos",
+   "kind": "invokes",
+   "to": "free_footage"
   },
   {
    "from": "fusionforge",
@@ -1248,6 +1306,11 @@
    "from": "hub",
    "kind": "imports",
    "to": "requirements"
+  },
+  {
+   "from": "hub",
+   "kind": "imports",
+   "to": "see_superpower_unifier"
   },
   {
    "from": "hub",
@@ -1498,6 +1561,11 @@
    "from": "script_storyboard",
    "kind": "invokes",
    "to": "export_profile"
+  },
+  {
+   "from": "see_superpower_unifier",
+   "kind": "imports",
+   "to": "hub"
   },
   {
    "from": "self_council",
@@ -1895,6 +1963,21 @@
    "to": "cinema_lab"
   },
   {
+   "from": "test_cinema_v34_intake",
+   "kind": "imports",
+   "to": "fetch_video"
+  },
+  {
+   "from": "test_cinematic_pro_conductor",
+   "kind": "imports",
+   "to": "cinematic_pro_conductor"
+  },
+  {
+   "from": "test_cobalt_gateway",
+   "kind": "imports",
+   "to": "_cobalt_provider"
+  },
+  {
    "from": "test_council",
    "kind": "invokes",
    "to": "council"
@@ -1985,6 +2068,16 @@
    "to": "free_footage"
   },
   {
+   "from": "test_free_photos",
+   "kind": "imports",
+   "to": "free_footage"
+  },
+  {
+   "from": "test_free_photos",
+   "kind": "imports",
+   "to": "free_photos"
+  },
+  {
    "from": "test_fusionforge",
    "kind": "imports",
    "to": "_secrets"
@@ -1998,6 +2091,16 @@
    "from": "test_fusionforge",
    "kind": "invokes",
    "to": "fusionforge"
+  },
+  {
+   "from": "test_fusionforge_hub_runner",
+   "kind": "imports",
+   "to": "test_fusionforge"
+  },
+  {
+   "from": "test_fusionforge_hub_runner",
+   "kind": "invokes",
+   "to": "fusionforge_hub_runner"
   },
   {
    "from": "test_geo_plate",
@@ -3186,6 +3289,65 @@
  "scripts": [
   {
    "ci": false,
+   "id": "_black_dragon_brain",
+   "imported_by": [
+    "black_dragon"
+   ],
+   "path": "scripts/_black_dragon_brain.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [
+    "tests/test_black_dragon_brain.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
+   "id": "_black_dragon_exec",
+   "imported_by": [],
+   "path": "scripts/_black_dragon_exec.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "orphan",
+   "tests": [
+    "tests/test_black_dragon.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
+   "id": "_cinema_all_skills",
+   "imported_by": [
+    "black_dragon",
+    "cinematic_pro_conductor"
+   ],
+   "path": "scripts/_cinema_all_skills.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [
+    "tests/test_cinema_all_skills.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
+   "id": "_cobalt_provider",
+   "imported_by": [
+    "fetch_video"
+   ],
+   "path": "scripts/_cobalt_provider.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [
+    "evals/test_cobalt_gateway.py"
+   ],
+   "tools": []
+  },
+  {
+   "ci": false,
    "id": "_deps",
    "imported_by": [
     "boot",
@@ -3199,6 +3361,19 @@
    "tests": [
     "tests/test_download_deps.py"
    ],
+   "tools": []
+  },
+  {
+   "ci": false,
+   "id": "_media_gateway",
+   "imported_by": [
+    "fetch_video"
+   ],
+   "path": "scripts/_media_gateway.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "helper",
+   "tests": [],
    "tools": []
   },
   {
@@ -3705,6 +3880,23 @@
    ],
    "tools": [
     "audio-cue-mapper"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "black_dragon",
+   "imported_by": [],
+   "path": "scripts/black_dragon.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-181"
+   ],
+   "role": "registered",
+   "tests": [
+    "tests/test_black_dragon.py"
+   ],
+   "tools": [
+    "black-dragon"
    ]
   },
   {
@@ -4231,6 +4423,23 @@
   },
   {
    "ci": false,
+   "id": "cinematic_pro_conductor",
+   "imported_by": [],
+   "path": "scripts/cinematic_pro_conductor.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-180"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_cinematic_pro_conductor.py"
+   ],
+   "tools": [
+    "cinematic-pro-conductor"
+   ]
+  },
+  {
+   "ci": false,
    "id": "code_drawing_master",
    "imported_by": [
     "motion_kit_bridge"
@@ -4557,6 +4766,7 @@
    "powers": [],
    "role": "registered",
    "tests": [
+    "tests/test_black_dragon.py",
     "tests/test_export_profile.py"
    ],
    "tools": [
@@ -4624,6 +4834,7 @@
    ],
    "role": "registered",
    "tests": [
+    "evals/test_cinema_v34_intake.py",
     "evals/test_instagram_finder.py",
     "evals/test_pinterest.py",
     "tests/test_download_deps.py",
@@ -4653,7 +4864,9 @@
   {
    "ci": false,
    "id": "free_footage",
-   "imported_by": [],
+   "imported_by": [
+    "free_photos"
+   ],
    "path": "scripts/free_footage.py",
    "power_count": 1,
    "powers": [
@@ -4661,10 +4874,28 @@
    ],
    "role": "registered",
    "tests": [
-    "evals/test_free_footage.py"
+    "evals/test_free_footage.py",
+    "evals/test_free_photos.py"
    ],
    "tools": [
     "free-footage"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "free_photos",
+   "imported_by": [],
+   "path": "scripts/free_photos.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-179"
+   ],
+   "role": "registered",
+   "tests": [
+    "evals/test_free_photos.py"
+   ],
+   "tools": [
+    "free-photos"
    ]
   },
   {
@@ -4690,6 +4921,21 @@
    ],
    "tools": [
     "fusionforge"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "fusionforge_hub_runner",
+   "imported_by": [],
+   "path": "scripts/fusionforge_hub_runner.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_fusionforge_hub_runner.py"
+   ],
+   "tools": [
+    "fusionforge-hub-runner"
    ]
   },
   {
@@ -4768,12 +5014,13 @@
     "check_skill",
     "kosif_mcp",
     "micro_index",
+    "see_superpower_unifier",
     "skill_intelligence",
     "skill_loader",
     "smart_capabilities"
    ],
    "path": "scripts/hub.py",
-   "power_count": 177,
+   "power_count": 181,
    "powers": [
     "TOOL-01",
     "TOOL-02",
@@ -5132,7 +5379,8 @@
    ],
    "role": "registered",
    "tests": [
-    "evals/test_micro_index.py"
+    "evals/test_micro_index.py",
+    "tests/test_black_dragon.py"
    ],
    "tools": [
     "micro-index"
@@ -5142,6 +5390,7 @@
    "ci": false,
    "id": "montage_pro",
    "imported_by": [
+    "cinematic_pro_conductor",
     "kosif_hubs"
    ],
    "path": "scripts/montage_pro.py",
@@ -5505,9 +5754,12 @@
     "evals/test_protocol_structure.py",
     "evals/test_rea_routing.py",
     "evals/test_superpower_fusion.py",
+    "tests/test_black_dragon.py",
+    "tests/test_black_dragon_brain.py",
     "tests/test_boot.py",
     "tests/test_capability_atlas.py",
     "tests/test_capability_graph.py",
+    "tests/test_cinema_all_skills.py",
     "tests/test_dua_style.py",
     "tests/test_protocol_library.py",
     "tests/test_requirements.py",
@@ -5602,6 +5854,19 @@
    ],
    "tools": [
     "prompt-pack"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "protocol_lint",
+   "imported_by": [],
+   "path": "scripts/protocol_lint.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [],
+   "tools": [
+    "protocol-lint"
    ]
   },
   {
@@ -5902,6 +6167,21 @@
   },
   {
    "ci": false,
+   "id": "see_capability_bridge",
+   "imported_by": [],
+   "path": "scripts/see_capability_bridge.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_see_capability_bridge.py"
+   ],
+   "tools": [
+    "see-capability-bridge"
+   ]
+  },
+  {
+   "ci": false,
    "id": "see_pro_cognitive_gate",
    "imported_by": [],
    "path": "scripts/see_pro_cognitive_gate.py",
@@ -5915,6 +6195,23 @@
    ],
    "tools": [
     "see-pro-cognitive-gate"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "see_superpower_unifier",
+   "imported_by": [
+    "hub"
+   ],
+   "path": "scripts/see_superpower_unifier.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "evals/test_see_superpower_unifier.py"
+   ],
+   "tools": [
+    "see-superpower-unifier"
    ]
   },
   {
@@ -6033,6 +6330,23 @@
    ],
    "tools": [
     "smart-draw"
+   ]
+  },
+  {
+   "ci": false,
+   "id": "song_preview",
+   "imported_by": [],
+   "path": "scripts/song_preview.py",
+   "power_count": 1,
+   "powers": [
+    "TOOL-182"
+   ],
+   "role": "registered",
+   "tests": [
+    "tests/test_song_preview.py"
+   ],
+   "tools": [
+    "song-preview"
    ]
   },
   {
@@ -6214,10 +6528,13 @@
    "tests": [
     "tests/test_atlas_body_audit.py",
     "tests/test_atlas_cycles_integration.py",
+    "tests/test_black_dragon.py",
+    "tests/test_black_dragon_brain.py",
     "tests/test_boot.py",
     "tests/test_bruno_api.py",
     "tests/test_capability_atlas.py",
     "tests/test_capability_graph.py",
+    "tests/test_cinema_all_skills.py",
     "tests/test_cinematic_broll_render.py",
     "tests/test_cinematic_cut_planner.py",
     "tests/test_creative_external_research.py",
@@ -6233,6 +6550,7 @@
     "tests/test_reference_fetch_security.py",
     "tests/test_requirements.py",
     "tests/test_script_storyboard.py",
+    "tests/test_song_preview.py",
     "tests/test_stock_fetch.py",
     "tests/test_superpowers.py",
     "tests/test_superpowers_catalog.py",
@@ -6241,6 +6559,7 @@
     "tests/test_think_intel.py",
     "tests/test_think_pro.py",
     "tests/test_think_reasoning.py",
+    "tests/test_usip_v60_receipts.py",
     "tests/test_verify_source_audio.py"
    ],
    "tools": [
@@ -6538,6 +6857,21 @@
   },
   {
    "ci": false,
+   "id": "validate_receipt",
+   "imported_by": [],
+   "path": "scripts/validate_receipt.py",
+   "power_count": 0,
+   "powers": [],
+   "role": "registered",
+   "tests": [
+    "tests/test_usip_v60_receipts.py"
+   ],
+   "tools": [
+    "validate-receipt"
+   ]
+  },
+  {
+   "ci": false,
    "id": "verify_video",
    "imported_by": [
     "motion_director",
@@ -6612,38 +6946,38 @@
   "areas": {
    "(root)": 10,
    "assets": 4,
-   "data": 163,
+   "data": 165,
    "dua-wednesday": 10,
-   "evals": 172,
+   "evals": 181,
    "examples": 12,
    "montage-pro": 2,
    "proofs": 239,
-   "references": 255,
+   "references": 268,
    "resources": 3,
-   "schemas": 6,
-   "scripts": 207,
+   "schemas": 9,
+   "scripts": 222,
    "templates": 16,
    "vendor": 2308
   },
-  "bytes": 93979820,
+  "bytes": 94626848,
   "extensions": {
    "(none)": 34,
    ".cjs": 10,
    ".html": 80,
    ".jpg": 24,
-   ".js": 50,
-   ".json": 299,
-   ".md": 2107,
+   ".js": 51,
+   ".json": 308,
+   ".md": 2117,
    ".mjs": 18,
    ".ogg": 14,
    ".png": 11,
-   ".py": 518,
+   ".py": 539,
    ".ttf": 38,
-   ".txt": 64,
+   ".txt": 65,
    ".woff2": 34,
    ".yaml": 76
   },
-  "files": 3407,
+  "files": 3449,
   "symlinks": 0
  }
 }

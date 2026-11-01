@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v6.0).
+"""KOSIF Universal Skill Intelligence Protocol — محرك بروتوكول ذكاء المهارات الشامل (implements USIP v6.5).
 
 The machine half of PROTOCOL.md. For any request it:
   0. checks the environment and that every derived index is fresh,
@@ -64,7 +64,7 @@ WEIGHTS = {"fit": 35, "integration": 20, "feasibility": 15, "evidence": 10, "cos
 LOCAL_RANK = ["✅", "🟢", "📦", "🔑", "📄", "💡"]
 LOCAL_EVIDENCE = {"✅": 1.0, "🟢": 0.8, "📦": 0.55, "🔑": 0.4, "📄": 0.25, "💡": 0.1}
 STAGE_ORDER = ["understand", "plan", "create", "refine", "assemble", "verify", "deliver"]
-PROTOCOL_VERSION = "USIP v6.0"
+PROTOCOL_VERSION = "USIP v6.5"
 META_TOOL_RX = re.compile(r"^(capability-|atlas-|ai-tool-discovery|boot|hub$|powers|skill-intelligence|superpower-fusion|kosif-groups|capability|requirements|probe-env|catalog-|check-skill|relabel|build-chapters|package-skill|rea-creative)")
 MIN_FIT = 0.25          # a non-must-have pick needs at least this share of the best fit to enter a plan or be "core"
 PLAN_DEFINITIONS = {    # canonical one-line meanings (CONTRACT glossary); Phase 6 of PROTOCOL.md is the source
@@ -1333,8 +1333,11 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
                 and (x["role"] == "must-have" or (x["stage"] or "create") != "verify" or can_verify(x, fams)) and not off_domain(x)]
         chosen, stages = [], collections.OrderedDict((s, []) for s in stages_tpl)
         left = []
+        need_rows = must_rows if name != "A" else [sp_by_id[m["superpowers"][0]] for m in must_cov if m["superpowers"] and m["superpowers"][0] in sp_by_id]
+        need_ids = {x["id"] for x in need_rows}   # carried below anyway, so they never take a stage's own slot
         for st in stages_tpl:
-            cands = [x for x in pool if (x["stage"] or "create") == st and x["id"] not in [c["id"] for c in chosen]]
+            cands = [x for x in pool if (x["stage"] or "create") == st and x["id"] not in [c["id"] for c in chosen]
+                     and x["id"] not in need_ids]
             cands.sort(key=lambda x: -boost(x))
             if avoid:
                 head = cands[:1] if share_best else []
@@ -1349,7 +1352,6 @@ def build_brief(task: str, details=False, terms: str = "") -> dict:
                 chosen.append(x)
                 stages[st].append(x)
             left += [x for x in cands if x not in picked]
-        need_rows = must_rows if name != "A" else [sp_by_id[m["superpowers"][0]] for m in must_cov if m["superpowers"] and m["superpowers"][0] in sp_by_id]
         for x in need_rows:
             if x["id"] not in [c["id"] for c in chosen]:
                 chosen.append(x)

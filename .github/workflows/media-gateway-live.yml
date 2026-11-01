@@ -3,8 +3,12 @@ name: KOSIF Media Gateway live check
 # (Settings > Secrets and variables > Actions). The token is never printed; the report
 # artifact is token-free. Uses one of the gateway's three hourly downloads (a public-domain
 # archive.org film); it does not download from YouTube.
+# The "deploy" job needs no secret: it compares the public /health with server.py on main and
+# warns when Render still runs older code (the fix is a manual deploy on Render, by the owner).
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"
   push:
     branches: [feat/kosif-media-gateway-render-free-20261030]
     paths:
@@ -16,6 +20,26 @@ concurrency:
   group: media-gateway-live
   cancel-in-progress: false
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Deployed gateway matches main? (public, no token)
+        run: |
+          set +e
+          python services/kosif-media-gateway/deploy_check.py --json | tee deploy-report.json
+          rc=${PIPESTATUS[0]}
+          if [ "$rc" = 1 ]; then echo "::warning::Render runs older gateway code than main. Render > kosif-media-gateway > Manual Deploy > Deploy latest commit"; fi
+          if [ "$rc" = 2 ]; then echo "::warning::Gateway /health did not answer"; fi
+          exit 0
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-gateway-deploy-report
+          path: deploy-report.json
   live:
     runs-on: ubuntu-latest
     timeout-minutes: 20

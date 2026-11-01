@@ -231,12 +231,20 @@ def terms_of(brief: str) -> list:
         n = _norm(w).strip(".-")
         if len(n) >= 2 and n not in P.STOP:
             out.append(n)
-    return list(OrderedDict.fromkeys(out))
+    out = list(OrderedDict.fromkeys(out))
+    # The brand name is in every tool's text, so it ranks nothing; keep it only when it is the whole query.
+    rest = [w for w in out if w not in _BRAND]
+    return rest or out
+
+
+_BRAND = {_norm(w) for w in ("kosif", "قصيف", "كوسيف")}
 
 
 def _hit(term: str, text: str) -> bool:
     if len(term) <= 2:
         return re.search(rf"(?<![\w]){re.escape(term)}(?![\w])", text) is not None
+    if len(term) == 3 and term.isascii() and term.isalpha():   # "see" is SEE, not "seek"/"seeded"
+        return re.search(rf"(?<![\w]){re.escape(term)}(?:s|es)?(?![\w])", text) is not None
     if term in text:
         return True
     for pre in P._AR_PREFIXES:  # Arabic clitics: والرسم → رسم

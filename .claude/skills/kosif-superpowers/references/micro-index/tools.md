@@ -53,6 +53,7 @@
 | `atlas-capability-miner` | TOOL-105 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | `python3 scripts/atlas_capability_miner.py --help` | 1 |
 | `atlas-ledger` | TOOL-107 | سجل الأطلس: حالة واحدة لكل مهارة · Atlas ledger: one status for every Atlas skill | `python3 scripts/atlas_ledger.py stats --json` | 1 |
 | `atlas-task-method-router` | TOOL-112 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router | `python3 scripts/atlas_task_method_router.py --help` | 0 |
+| `black-dragon` | TOOL-181 | التنين الأسود — العقل المنسق لكل القدرات · Black Dragon — All-Capability Cognitive Orchestrator | `python3 scripts/black_dragon.py inventory` | 1 |
 | `boot` | TOOL-02 | إحاطة بدء الجلسة · Session boot briefing | `python3 scripts/boot.py` | 1 |
 | `capability-atlas` | TOOL-03 | أطلس القدرات للبحث والتخطيط · Capability Atlas search and planner | `python3 scripts/capability_atlas.py stats --json` | 1 |
 | `capability-graph` | TOOL-34 | باني خريطة القدرات المترابطة · Capability Graph Builder | `python3 scripts/capability_graph.py build` | 1 |
@@ -108,6 +109,7 @@
 | `cinema-lab` | TOOL-175 | معمل السينما: كشف القطعات، حذف الصمت، تايملاين OTIO/EDL، ألوان LUT، تثبيت الكاميرا، تأطير ذكي بالطول، حركة كاميرا، مراجعة A/B · Cinema Lab: scene cuts, silence cut, OTIO/EDL timelines, LUT looks, stabilise, smart portrait reframe, camera moves, A/B review | `python3 scripts/cinema_lab.py doctor` | 1 |
 | `cinematic-broll-render` | TOOL-19 | تصيير لقطات B-roll بحركة كاميرا · Cinematic B-roll Renderer | `python3 scripts/cinematic_broll_render.py --edl ./edl.json --manifest…` | 1 |
 | `cinematic-cut-planner` | TOOL-20 | مُخطِّط قطعات اللقطات الحقيقية · Footage-First Cut Planner | `python3 scripts/cinematic_cut_planner.py --words ./words.json --clips…` | 2 |
+| `cinematic-pro-conductor` | TOOL-180 | مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي · Cinema Pro Conductor — single-entry montage with evidence-gated delivery | `python3 scripts/cinematic_pro_conductor.py doctor` | 1 |
 | `creative-quality-gate` | TOOL-35 | بوابة جودة خطة المونتاج · Reference-edit structural quality gate | `python3 scripts/creative_quality_gate.py ./my-project/src/plan.json -…` | 1 |
 | `dua-wednesday` | TOOL-132 | دعاء يوم الأربعاء — محرك ريل دعاء موشن جرافيك 9:16 · Wednesday-morning dua reel (دعاء يوم الأربعاء) — 9:16 motion-graphics dua engine | `python3 scripts/dua_wednesday.py doctor` | 1 |
 | `fast-edit` | TOOL-168 | التعديل السريع: قص فوري يعرف الإطارات المفتاحية، مغيّر صوت، تفتيح الفيديو المظلم، استخراج الصوت · Fast Edit: keyframe-aware instant cut, voice presets, low-light lift, audio extract | `python3 scripts/fast_edit.py doctor` | 1 |
@@ -245,6 +247,7 @@
 | `rea-creative-research-atlas` | TOOL-48 | باني فهرس البحث الإبداعي · Creative research catalog builder | `python3 scripts/rea_creative_research_atlas.py report` | 1 |
 | `rebalance-creative-repos` | TOOL-49 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog | `python3 scripts/rebalance_creative_repos.py run` | 0 |
 | `repo-ashell-cinema` | TOOL-51 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.c…` | 0 |
+| `song-preview` | TOOL-182 | معاينة الأغنية الرسمية (بديل الـDRM) · Official song preview (DRM fallback) | `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلاد…` | 1 |
 | `source-finder` | — | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي · Source finder: the original clips behind each shot of a reference video | `python3 scripts/source_finder.py doctor` | 2 |
 | `source-scout` | TOOL-50 | مستكشف مصادر المجتمع · Community source scout | `python3 scripts/source_scout.py check` | 1 |
 | `sources-index` | TOOL-142 | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../ou…` | 1 |

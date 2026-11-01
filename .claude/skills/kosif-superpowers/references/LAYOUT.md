@@ -42,7 +42,7 @@ Read first: what the skill is, the protocol, the one-file copy and the maps. Sta
 
 USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table.
 
-`protocol` · 43 file(s)
+`protocol` · 46 file(s)
 
 - [references/protocol/A1-see-thinking.md](protocol/A1-see-thinking.md)
 - [references/protocol/A10-self-evolution.md](protocol/A10-self-evolution.md)
@@ -81,6 +81,9 @@ USIP appendices A1… and the CHANGELOG, opened only by the core's trigger table
 - [references/protocol/A44-free-stock-media.md](protocol/A44-free-stock-media.md)
 - [references/protocol/A45-youtube-download.md](protocol/A45-youtube-download.md)
 - [references/protocol/A46-suno-mcp.md](protocol/A46-suno-mcp.md)
+- [references/protocol/A47-v62-media-gateway.md](protocol/A47-v62-media-gateway.md)
+- [references/protocol/A48-v64-black-dragon.md](protocol/A48-v64-black-dragon.md)
+- [references/protocol/A49-v65-dragon-in-pipeline.md](protocol/A49-v65-dragon-in-pipeline.md)
 - [references/protocol/A5-state-receipts.md](protocol/A5-state-receipts.md)
 - [references/protocol/A6-evidence-security-numbers.md](protocol/A6-evidence-security-numbers.md)
 - [references/protocol/A7-pmo.md](protocol/A7-pmo.md)
@@ -266,7 +269,7 @@ Short how-to guides per kind of job (motion, edit, 3D, draw, audio, image, inves
 
 Executable motion, montage, rhythm, reference transfer and cinematic direction.
 
-`motion` · 18 file(s) · planned folder `references/motion/`
+`motion` · 19 file(s) · planned folder `references/motion/`
 
 - [references/motion-runtime.md](motion-runtime.md)
 - [references/motion-starter-kit-bridge.md](motion-starter-kit-bridge.md)
@@ -286,6 +289,7 @@ Executable motion, montage, rhythm, reference transfer and cinematic direction.
 - [references/styles-atlas.md](styles-atlas.md)
 - [references/external-skills.md](external-skills.md)
 - [references/stock-media-100.md](stock-media-100.md)
+- [references/cinematic-pro-conductor.md](cinematic-pro-conductor.md)
 
 ## 8. الرسم والثري دي / Drawing and 3D
 

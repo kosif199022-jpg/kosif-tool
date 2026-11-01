@@ -15,18 +15,18 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5857,
+  "powers": 5860,
   "families": 62,
   "domains": 10,
-  "tools": 202,
-  "guides": 118,
+  "tools": 205,
+  "guides": 119,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 977,
    "key": 176,
-   "proven": 1026,
-   "ready": 673,
+   "proven": 1027,
+   "ready": 675,
    "seen": 609
   }
  },
@@ -890,11 +890,11 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 178,
+   "count": 181,
    "statuses": {
     "install": 9,
-    "proven": 149,
-    "ready": 20
+    "proven": 150,
+    "ready": 22
    },
    "chapter": "references/powers/runnable-tools.md",
    "data": "data/powers/runnable-tools.json"
@@ -8112,6 +8112,85 @@
     "formats-platforms"
    ],
    "power_id": "TOOL-94"
+  },
+  {
+   "id": "song-preview",
+   "path": "scripts/song_preview.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "Official song preview (DRM fallback)",
+   "title_ar": "معاينة الأغنية الرسمية (بديل الـDRM)",
+   "summary_en": "When a requested song is DRM-locked (yt-dlp says 'DRM protected'), the source stops there; this tool is the lawful fallback. It searches Apple's public iTunes Search API and Deezer's public API, prints one table (source, track, artist, album, release date, duration, whether a preview exists) saved to a cache, then downloads the official 30-second store preview the label supplies (iTunes .m4a AAC, Deezer .mp3) with a <file>.rights.json sidecar: source, track and artist ids, store URL, preview URL, fetched_at, ffprobe duration and the licence note (private drafts only; public posts use the platform's licensed sound; credit the artist). Standard library only.",
+   "summary_ar": "لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، وبعدين تنزّل معاينة المتجر الرسمية 30 ثانية اللي الناشر بيوفّرها (iTunes ‎.m4a‎ وDeezer ‎.mp3‎) ومعاها سجل ‎<file>.rights.json‎: المصدر، أرقام الأغنية والفنان، رابط المتجر، رابط المعاينة، وقت التنزيل، المدة من ffprobe، وملاحظة الترخيص (للمسودات الخاصة؛ النشر العام بالصوت المرخّص من المنصة؛ واذكر الفنان). مكتبة بايثون القياسية بس.",
+   "use_when": [
+    "الأغنية على ساوند كلاود عليها DRM، هات المعاينة الرسمية بتاعتها",
+    "دوّر على أغنية تامر عاشور انا بحبك يا بلادي ونزّل الـ30 ثانية",
+    "yt-dlp says DRM protected for this song, get the official store preview instead",
+    "Find the iTunes preview of this song for a private reel draft"
+   ],
+   "keywords": [
+    "song preview",
+    "itunes",
+    "itunes search api",
+    "deezer",
+    "previewUrl",
+    "DRM",
+    "drm protected",
+    "30 second preview",
+    "store preview",
+    "song",
+    "music",
+    "rights",
+    "licence",
+    "معاينة",
+    "أغنية",
+    "اغنية",
+    "مقطع الأغنية",
+    "ايتونز",
+    "ديزر",
+    "حقوق"
+   ],
+   "commands": [
+    {
+     "name": "search",
+     "example": "python3 scripts/song_preview.py search \"Tamer Ashour انا بحبك يا بلادي\" --country eg --limit 10",
+     "does": "Queries the iTunes Search API (entity=song, the --country storefront) and Deezer's search, prints numbered rows and saves them to out/song-preview/last_search.json (or --out). --json prints the payload; a failing source is reported and the other still answers. Exit 1 when no row came back."
+    },
+    {
+     "name": "download",
+     "example": "python3 scripts/song_preview.py download 1 --out out/song-preview",
+     "does": "Downloads row N of the last search in --out (or a preview URL from *.itunes.apple.com, *.mzstatic.com or *.dzcdn.net only) to <artist>-<track>-<source>.<m4a|mp3> plus <file>.rights.json, and prints the ffprobe duration when ffprobe exists. A row without a preview, or any other host, is refused before any request."
+    }
+   ],
+   "inputs": "Artist and title words for search, with --country (iTunes storefront, default eg), --limit (1..50 per source, default 10), --sources itunes,deezer, --timeout and --retries (0..3, default 2); for download a row number from the last search or an official preview URL, and --out (default out/song-preview relative to the cwd).",
+   "outputs": "<out>/last_search.json (kosif.song_preview.results.v1: query, country, rows, per-source errors); the preview file and <file>.rights.json (kosif.song_preview.rights.v1). Exit 0 on success, 1 when nothing was found or the download failed, 2 on bad arguments.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:ffprobe"
+    ],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "It downloads a copyrighted 30-second preview for a private draft only. Public posting uses the platform's licensed sound (for example TikTok's library) and credits the artist; tell the user before anything is published.",
+   "limits": "It is not a full-track source and grants no licence: previews are 30 s, Deezer's preview field is sometimes empty and its links expire, release dates come only from iTunes, and catalogue coverage depends on the storefront. A longer reel may only repeat preview phrases aligned to the beat; it never touches DRM streams, cookies, logins or yt-dlp.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_song_preview.py (9 tests, HTTP mocked, no network) passed here on 2026-11-01: both parsers, search table and cache, a failing source, row download with the rights sidecar, a Deezer .mp3 row, refusal of an empty preview and of foreign hosts before any request, bounded retries with no retry on 404, the size cap and the bilingual --help. Live here on 2026-11-01 through the session proxy: search 'Tamer Ashour' returned iTunes and Deezer rows and download 1 saved a 1,015,426-byte iTunes .m4a measured 30.0 s by ffprobe.",
+   "tests": [
+    "tests/test_song_preview.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A19-field-lessons-montage.md",
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "music-beat-sound",
+    "video-download"
+   ],
+   "power_id": "TOOL-182"
   },
   {
    "id": "instagram-finder",
@@ -18565,8 +18644,8 @@
    "area": "sources",
    "title_en": "Free footage: open-licence video sources with search, download and credits",
    "title_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
-   "summary_en": "Keeps a checked database of 17 video sources: 15 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) and NASA without keys, Pexels and Pixabay when PEXELS_API_KEY or PIXABAY_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.",
-   "summary_ar": "قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا من غير مفتاح، وفي Pexels وPixabay لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.",
+   "summary_en": "Keeps a checked database of 19 video sources: 17 free or open-licence sites, plus Pinterest (credit and link only, never downloaded, not a licence source) and Storyblocks (a paid subscription, listed so it is not mistaken for free). data/free_footage_sources.json gives each one's licence and its link, credit rule and template, commercial use, edits allowed, strengths, search URL, API and key variable, how a file URL is obtained, largest scripted size and measured reachability. It searches Wikimedia Commons (licence, author and attribution flag from imageinfo extmetadata), the Internet Archive (licenseurl plus the item's file list, with uploader claims on music videos, rips and YouTube re-uploads flagged suspicious) NASA and the Library of Congress (only films published on or before the latest US public-domain year, 1930 in 2026) without keys, Pexels, Pixabay and Europeana (open rights statements only: PD, CC0, CC BY, CC BY-SA, direct files) when PEXELS_API_KEY, PIXABAY_API_KEY or EUROPEANA_API_KEY is set, and the Mixkit and Coverr search pages (Mixkit's per-clip Free or Restricted notice and the sizes its clip page offers, including newer clips with hashed file links; Coverr's embedded state without premium clips). Results carry thumbnail and preview links and are merged into one results file; preview builds a contact sheet before any full download. download saves a clip with a sidecar JSON (licence, credit line, bytes, sha256, ffprobe size, pixel format and range) and rebuilds ATTRIBUTION.md; probe re-measures every source.",
+   "summary_ar": "قاعدة بيانات مفحوصة لـ19 موقع فيديو: 17 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام التجاري، هل التعديل مسموح، نقاط قوته، رابط البحث، الـAPI واسم متغير المفتاح، إزاي يتجاب رابط الملف، أكبر جودة، وهل الموقع بيرد من السيرفر. بيبحث في ويكيميديا كومنز وأرشيف الإنترنت (وبيعلّم على ترخيص الأغاني والأفلام المنسوخة من يوتيوب إنه مشكوك فيه) وناسا ومكتبة الكونجرس (أفلام ملكية عامة في أمريكا بس، منشورة لحد 1930) من غير مفتاح، وفي Pexels وPixabay وEuropeana (رخص مفتوحة بس) لو مفاتيحهم موجودة في البيئة، وفي صفحات Mixkit (حتى اللقطات الجديدة اللي روابطها مشفّرة) وCoverr. كل نتيجة معاها صورة مصغّرة ورابط معاينة، والنتائج بتتجمّع في ملف واحد من غير ما تمسح القديم، وأمر preview بيعمل ورقة معاينة قبل ما تنزّل أي ملف كامل. أمر download بيحفظ اللقطة ومعاها ملف JSON فيه الترخيص وسطر النسب والحجم والبصمة ونوع الألوان، وبيحدّث ATTRIBUTION.md، وأمر probe بيقيس الوصول لكل موقع من جديد.",
    "use_when": [
     "اجمع لي فيديوهات مفتوحة المصدر للمونتاج عن البحر والمدينة بالليل",
     "عايز لقطات مجانية من غير حقوق لفيديو تيك توك طولي",
@@ -19203,6 +19282,168 @@
     "verification-evals",
     "qa-verification"
    ]
+  },
+  {
+   "id": "cinematic-pro-conductor",
+   "power_id": "TOOL-180",
+   "path": "scripts/cinematic_pro_conductor.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "edit",
+   "title_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+   "title_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+   "summary_en": "Discovers available KOSIF Superpowers modules and creative roles, runs Montage Pro with verifiable local audio/video output, or chains three real editing passes for cinematic-reel (highlight -> 9:16 reframe -> film look) and cinematic-audio (kinetic motion -> film look). Stops on any unverified MP4 and preserves original media SHA-256.",
+   "summary_ar": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل.",
+   "use_when": [
+    "شغّل مهارات سوبر باور والبرو معًا لصناعة مونتاج سينمائي متكامل",
+    "ابغى أمر واحد يطلع فيديو موشن مفحوص من صوتي",
+    "Unify relevant KOSIF Superpowers video skills in one real verified montage run",
+    "Create a cinematic Pro reel with evidence that the MP4 actually rendered"
+   ],
+   "keywords": [
+    "cinematic pro",
+    "superpowers",
+    "montage",
+    "orchestrator",
+    "one command",
+    "motion",
+    "skills",
+    "verify video",
+    "MP4",
+    "director",
+    "سينما برو",
+    "سوبر باور",
+    "مونتاج",
+    "إخراج",
+    "تحقق",
+    "توحيد المهارات"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/cinematic_pro_conductor.py doctor",
+     "does": "List installed skills and tool/module readiness without claiming execution."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/cinematic_pro_conductor.py plan --kind video --recipe cinematic-reel",
+     "does": "Show creative roles, evidence gates and the complete ordered production chain without asserting those roles were executed."
+    },
+    {
+     "name": "run",
+     "example": "python3 scripts/cinematic_pro_conductor.py run ./video.mp4 --job ../../../out/cinema/my-reel --recipe cinematic-reel --style 30",
+     "does": "Render highlight -> 9:16 -> cinematic look with verified output at every stage; or use --recipe cinematic-audio for kinetic motion -> film look; optional --transcribe-local runs only with a cached model."
+    }
+   ],
+   "inputs": "Authorized local audio/video input, a job under out/, --recipe single|cinematic-reel|cinematic-audio, optional style/clip length and --transcribe-local for cached word timings.",
+   "outputs": "JOB/intake.json, options.json, cinema_pro_receipt.json and for multi-pass recipes JOB/passes/{stage}/ with real verified MP4s, final output path and source SHA-256.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [
+     "bin:node",
+     "bin:chromium",
+     "pip:faster-whisper"
+    ],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Running `run` performs local ffmpeg/Chromium media processing and writes files; confirm authorization for the submitted media. No network fetch, paid APIs or deployment.",
+   "limits": "A real three-pass cinematic reel uses one existing source video; professional B-roll from multiple supplied clips, licensed sound design, 3D characters, and manual artistic review remain separate asset-dependent routes. A list of candidate skills does not mean all skills executed.",
+   "evidence": "untested",
+   "evidence_note": "Feature branch 2026-10-31: regression tests written for single and three-pass recipes; automated catalog integrity and routing verified before this recipe extension, but live rendering/CI for the updated recipe not yet confirmed.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_cinematic_pro_conductor.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/cinematic-pro-conductor.md"
+   ],
+   "families": [
+    "transitions-cuts",
+    "audio-sync-captions",
+    "photo-video-footage",
+    "qa-verification"
+   ]
+  },
+  {
+   "id": "black-dragon",
+   "power_id": "TOOL-181",
+   "path": "scripts/black_dragon.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Black Dragon — All-Capability Cognitive Orchestrator",
+   "title_ar": "التنين الأسود — العقل المنسق لكل القدرات",
+   "summary_en": "Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully.",
+   "summary_ar": "يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه.",
+   "use_when": [
+    "استدعِ التنين الأسود وشغّل كل المهارات في المهمة",
+    "شغّل كل قدرات سوبر باور بذكاء من غير استبعاد أي مهارة",
+    "Use all KOSIF skills with dependency-aware intelligent parallel coordination",
+    "Invoke Black Dragon and audit every registered capability"
+   ],
+   "keywords": [
+    "black dragon",
+    "التنين الأسود",
+    "all skills",
+    "كل المهارات",
+    "full power",
+    "cognitive orchestration",
+    "parallel",
+    "inventory",
+    "skill audit",
+    "brain",
+    "dependency",
+    "استدعاء",
+    "تشغيل متوازي"
+   ],
+   "commands": [
+    {
+     "name": "inventory",
+     "example": "python3 scripts/black_dragon.py inventory",
+     "does": "Count all registered skills, powers and tools without executing them."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/black_dragon.py plan \"اصنع مونتاج\" ",
+     "does": "Produce ranked all-entry plan with roles and dependency waves; skips no catalog entry."
+    },
+    {
+     "name": "run",
+     "example": "python3 scripts/black_dragon.py run \"اصنع مونتاج\" --job ../../../out/black-dragon/demo --workers 8",
+     "does": "Record every entry, launch only explicitly reviewed adapters when enabled, produce SHA-256 evidence and blocked/failed counts."
+    }
+   ],
+   "inputs": "User task and output folder. Optional reviewed adapter map, --execute-adapters consent flag, --workers 1..32.",
+   "outputs": "All-skills ledger, all-skills audit report, brain plan with dependency waves, execution report; real artifacts only from configured adapters.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Adapter execution requires user authorization and --execute-adapters. No automatic payment, upload, installation or production deployment.",
+   "limits": "A full catalog dispatch is not universal same-instant execution. Documentation-only powers or unavailable adapters are blocked, not credited. Plans are heuristic and do not establish cinematic quality.",
+   "evidence": "untested",
+   "tests": [
+    "tests/test_black_dragon.py"
+   ],
+   "docs": [
+    "docs/BLACK_DRAGON_ALL_CAPABILITIES.md"
+   ],
+   "families": [
+    "agent-orchestration",
+    "self-discovery",
+    "qa-verification"
+   ]
   }
  ],
  "guides": [
@@ -19450,6 +19691,12 @@
    "path": "references/cinematic-director-pro.md",
    "title": "حزمة المالك: KOSIF Claude Cinematic Director PRO (v2 → v5)",
    "area": "general",
+   "summary": ""
+  },
+  {
+   "path": "references/cinematic-pro-conductor.md",
+   "title": "KOSIF Cinema Pro — unified skill orchestration",
+   "area": "edit",
    "summary": ""
   },
   {

@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5857,
+  "catalog_powers": 5860,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 202,
+  "tool_count": 205,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 276,
+      "count": 279,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 176,
-        "ready": 21
+        "proven": 177,
+        "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 178,
+        "runnable-tools": 181,
         "self-discovery": 43
       },
       "examples": [
@@ -74345,7 +74345,7 @@
         "kosif-tool/.claude/skills/kosif-superpowers/scripts/free_footage.py"
       ],
       "source": "runnable-tools.json",
-      "what": "قاعدة بيانات مفحوصة لـ17 موقع فيديو: 15 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام"
+      "what": "قاعدة بيانات مفحوصة لـ19 موقع فيديو: 17 منهم مجانية أو مفتوحة الترخيص، ومعاهم Pinterest (للنسب والرابط بس، مبيتحمّلش منه حاجة، ومش مصدر ترخيص) وStoryblocks (اشتراك مدفوع، موجود عشان محدش يفتكره مجاني). لكل موقع: الترخيص ورابطه، هل لازم تكتب اسم صاحب الفيديو وصيغة السطر، الاستخدام"
     },
     {
       "id": "TOOL-178",
@@ -74383,6 +74383,62 @@
       ],
       "source": "runnable-tools.json",
       "what": "الأخت الصغيرة لأداة الفيديو المجاني، بس للصور. بتدوّر من غير مفتاح في Openverse (صور مفتوحة الترخيص من مواقع كتير، والترخيص مكتوب لكل صورة) وويكيميديا كومنز وناسا ومتحف المتروبوليتان (الصور الملك العام CC0 بس)، وفي Pexels وPixabay وUnsplash لو مفاتيحهم موجودة في البيئة. بتشيل ترا"
+    },
+    {
+      "id": "TOOL-180",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Cinema Pro Conductor — single-entry montage with evidence-gated delivery",
+      "name_ar": "مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي",
+      "status": "ready",
+      "requires": [
+        "ffmpeg",
+        "chromium",
+        "imagemagick"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/cinematic_pro_conductor.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يستعرض المهارات والأدوار المتاحة ويشغّل مونتاج برو فعليًا، مع وصفة سينمائية متسلسلة للريلز (قص لقطات ثم 9:16 ثم تلوين فيلم) أو للصوت (موشن ثم تلوين). يوقف التشغيل عند فشل أي ملف ويحافظ على بصمة الأصل. — Discovers available KOSIF Superpowers modules and creative roles, runs Montag"
+    },
+    {
+      "id": "TOOL-181",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Black Dragon — All-Capability Cognitive Orchestrator",
+      "name_ar": "التنين الأسود — العقل المنسق لكل القدرات",
+      "status": "ready",
+      "requires": [
+        "python3"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه. — Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concu"
+    },
+    {
+      "id": "TOOL-182",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Official song preview (DRM fallback)",
+      "name_ar": "معاينة الأغنية الرسمية (بديل الـDRM)",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "yt-dlp"
+      ],
+      "proof": [
+        "kosif-tool/tests/test_song_preview.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/song_preview.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، و"
     },
     {
       "id": "SEC-01",

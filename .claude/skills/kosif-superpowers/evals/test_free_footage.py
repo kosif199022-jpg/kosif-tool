@@ -161,7 +161,7 @@ ROUTES = [
 
 class DatabaseTest(unittest.TestCase):
     REQUIRED = ("pexels", "pixabay", "mixkit", "coverr", "videvo", "videezy", "vecteezy", "dareful", "mazwai",
-                "lifeofvids", "wikimedia", "archive", "nasa", "esa", "openverse", "pinterest")
+                "lifeofvids", "wikimedia", "archive", "nasa", "esa", "openverse", "pinterest", "loc", "europeana")
 
     def test_database_is_valid(self):
         self.assertEqual(FF.validate_db(DB), [])
@@ -441,7 +441,8 @@ class KeyGatingTest(unittest.TestCase):
     def test_default_sources_follow_the_environment(self):
         self.assertNotIn("pexels", FF.default_sources(DB, NO_KEYS))
         self.assertNotIn("pixabay", FF.default_sources(DB, NO_KEYS))
-        self.assertEqual(set(FF.default_sources(DB, NO_KEYS)), {"wikimedia", "archive", "nasa", "mixkit", "coverr"})
+        self.assertEqual(set(FF.default_sources(DB, NO_KEYS)), {"wikimedia", "archive", "nasa", "mixkit", "coverr", "loc"})
+        self.assertNotIn("europeana", FF.default_sources(DB, NO_KEYS))
         both = FF.default_sources(DB, {"PEXELS_API_KEY": "abc", "PIXABAY_API_KEY": "def"})
         self.assertTrue({"pexels", "pixabay"} <= set(both))
 
@@ -469,6 +470,56 @@ class KeyGatingTest(unittest.TestCase):
         self.assertNotIn(secret_pb, text)
         self.assertNotIn(secret_px, text)
         self.assertIn("key=***", rep["sources"]["pixabay"]["detail"])
+
+
+class LibraryOfCongressAndEuropeanaTest(unittest.TestCase):
+    """Two more free, legitimately licensed sources: US public-domain films from the Library of Congress (by
+    publication year) and Europeana records whose rights URL is an open licence."""
+
+    def test_loc_keeps_only_public_domain_downloadable_films(self):
+        rs = FF.parse_loc(DB, json.loads(fixture("loc_search.json")), pd_year=1930)
+        self.assertEqual([r["id"] for r in rs], ["loc:00694211"])   # too late, restricted, undated, off-site: dropped
+        r = rs[0]
+        self.assertEqual(r["file_url"], "https://tile.loc.gov/storage-services/service/mbrs/ntscrm/00047124/00047124.mp4")
+        self.assertTrue(r["licence"]["commercial"] and r["licence"]["derivatives"])
+        self.assertFalse(r["licence"]["attribution_required"])
+        self.assertIn("1898", r["licence"]["name"])
+        self.assertIn("check-abroad", r["flags"])
+        self.assertEqual(r["author"], "Thomas A. Edison, Inc")      # the Library itself is not the author
+        self.assertTrue(r["thumb_url"].startswith("https://tile.loc.gov/"))
+        self.assertIn("Library of Congress", r["attribution"])
+
+    def test_loc_public_domain_year_moves_each_january(self):
+        import datetime
+        self.assertEqual(FF.loc_pd_year(datetime.date(2026, 11, 1)), 1930)
+        self.assertEqual(FF.loc_pd_year(datetime.date(2027, 1, 1)), 1931)
+        self.assertIn("dates=1800%2F1930", FF.loc_search_url("train", 5, pd_year=1930))
+
+    def test_europeana_keeps_open_licences_with_a_direct_file(self):
+        rs = FF.parse_europeana(DB, json.loads(fixture("europeana_search.json")))
+        self.assertEqual([r["id"] for r in rs], ["europeana:931_Synthetic_open_clip", "europeana:2051906_Synthetic_pdm_mp4"])
+        a, b = rs
+        self.assertEqual(a["licence"]["name"], "CC BY-SA 4.0")
+        self.assertTrue(a["licence"]["share_alike"] and a["licence"]["attribution_required"])
+        self.assertEqual(a["mime"], "video/quicktime")
+        self.assertEqual(a["page_url"], "https://www.europeana.eu/item/931/Synthetic_open_clip")
+        self.assertEqual(b["licence"]["name"], "Public Domain Mark 1.0")
+        self.assertEqual(b["author"], "Synthetic Polygoon")
+
+    def test_europeana_needs_its_key_and_never_reports_it(self):
+        h, t, _ = http([])
+        with mock.patch.dict(os.environ, NO_KEYS):
+            rep = FF.run_search(h, DB, "sea", ["europeana"], 3, {})
+        self.assertEqual(t.calls, [])
+        self.assertIn("EUROPEANA_API_KEY", rep["sources"]["europeana"]["detail"])
+        secret = "euTESTKEY0123456789"
+        h, t, _ = http([(r"api\.europeana\.eu", fixture("europeana_search.json"))])
+        with mock.patch.dict(os.environ, {"EUROPEANA_API_KEY": secret}):
+            rep = FF.run_search(h, DB, "sea", ["europeana"], 3, {})
+            self.assertNotIn(secret, FF.redact(f"https://api.europeana.eu/record/v2/search.json?wskey={secret}&q=x"))
+        self.assertIn("wskey=" + secret, t.calls[0][0])
+        self.assertEqual(rep["sources"]["europeana"]["status"], "ok")
+        self.assertNotIn(secret, json.dumps(rep))
 
 
 class SearchTest(unittest.TestCase):
@@ -799,9 +850,9 @@ class ProbeAndCliTest(unittest.TestCase):
         self.assertEqual(run("--help").returncode, 0)
         chk = run("check")
         self.assertEqual(chk.returncode, 0, chk.stderr)
-        self.assertIn("17 sources", chk.stdout)
+        self.assertIn("19 sources", chk.stdout)
         rows = json.loads(run("sources", "--json", "--searchable").stdout)
-        self.assertEqual({r["id"] for r in rows}, {"pexels", "pixabay", "mixkit", "coverr", "wikimedia", "archive", "nasa"})
+        self.assertEqual({r["id"] for r in rows}, {"pexels", "pixabay", "mixkit", "coverr", "wikimedia", "archive", "nasa", "loc", "europeana"})
         pin = json.loads(run("sources", "--id", "pinterest").stdout)
         self.assertFalse(pin["licence_source"])
         self.assertIn("dareful", run("sources", "--find", "4K").stdout)
@@ -836,7 +887,7 @@ class ProbeAndCliTest(unittest.TestCase):
     def test_paid_stock_is_not_listed_as_free(self):
         run = lambda *a: subprocess.run([sys.executable, str(SCRIPT), *a], capture_output=True, text=True, timeout=60)  # noqa: E731
         free = {r["id"] for r in json.loads(run("sources", "--commercial", "--no-attribution", "--json").stdout)}
-        self.assertEqual(free, {"pexels", "pixabay", "coverr", "lifeofvids"})
+        self.assertEqual(free, {"pexels", "pixabay", "coverr", "lifeofvids", "loc"})
         self.assertNotIn("storyblocks", {r["id"] for r in json.loads(run("sources", "--commercial", "--json").stdout)})
         paid = {r["id"] for r in json.loads(run("sources", "--commercial", "--include-paid", "--json").stdout)}
         self.assertIn("storyblocks", paid)

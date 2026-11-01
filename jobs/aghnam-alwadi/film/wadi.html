@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>أغنام الوادي</title>
+<style>
+@font-face{font-family:Cairo;src:url(fonts/Cairo.ttf);font-weight:200 1000}
+:root{--red:#e2231a;--red2:#ff4d3d;--green:#8cc63f;--green2:#5a9e2a;--cream:#fff7ea;--char:#151515;--char2:#232323}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;position:fixed;left:0;top:0;font-family:Cairo;color:#fff;background:var(--char)}
+.abs{position:absolute}
+#fill{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;opacity:0}
+#fillShade{position:absolute;inset:0;opacity:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0,rgba(0,0,0,0) 26%,rgba(0,0,0,0) 55%,rgba(0,0,0,.78) 80%,rgba(0,0,0,.85) 100%)}
+#brandBg{position:absolute;inset:0;opacity:0;background:
+  repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 22px,transparent 22px 44px),
+  radial-gradient(90% 55% at 50% 38%,#2b2b2b 0,#151515 70%)}
+#hills{position:absolute;left:0;bottom:0;width:1080px;height:420px;opacity:0}
+#panel{position:absolute;left:40px;top:600px;width:1000px;height:562px;border-radius:34px;overflow:hidden;opacity:0;
+  box-shadow:0 0 0 8px #fff,0 0 0 16px var(--red),0 40px 90px rgba(0,0,0,.6)}
+#panel img{width:100%;height:100%;object-fit:cover;display:block}
+#flashBg{position:absolute;inset:0;opacity:0;background:radial-gradient(80% 60% at 50% 45%,var(--red2),var(--red) 60%,#b3140d)}
+#wipe{position:absolute;left:-600px;top:-200px;width:2300px;height:2400px;transform:rotate(-18deg);opacity:0;pointer-events:none}
+#wipe div{position:absolute;top:0;bottom:0}
+#bug{position:absolute;right:40px;top:60px;width:132px;opacity:0;filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.pill{position:absolute;display:flex;align-items:center;gap:18px;padding:18px 34px 18px 26px;border-radius:999px;background:var(--red);
+  font-size:52px;font-weight:900;white-space:nowrap;box-shadow:0 16px 40px rgba(0,0,0,.45);opacity:0}
+.pill .ic{width:76px;height:76px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex:none}
+.pill .ic svg{width:46px;height:46px}
+.hero{position:absolute;left:0;right:0;text-align:center;font-size:150px;font-weight:1000;line-height:1.1;opacity:0;text-shadow:0 10px 40px rgba(0,0,0,.6)}
+.bar{position:absolute;height:18px;border-radius:9px;background:var(--red);left:50%;transform:translateX(-50%)}
+.chips{position:absolute;left:60px;right:60px;display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.chip{padding:16px 40px;border-radius:999px;background:var(--cream);color:var(--char);font-size:56px;font-weight:900;opacity:0;box-shadow:0 14px 34px rgba(0,0,0,.4);border:5px solid var(--green)}
+.stack{position:absolute;right:70px;left:70px;display:flex;flex-direction:column;gap:22px}
+.srow{display:flex;align-items:center;gap:22px;padding:20px 30px;border-radius:30px;background:rgba(21,21,21,.86);border:3px solid var(--green);font-size:52px;font-weight:900;opacity:0}
+.srow i{width:66px;height:66px;border-radius:50%;background:var(--green);flex:none;display:flex;align-items:center;justify-content:center}
+#quote{position:absolute;left:60px;right:60px;top:1210px;padding:60px 56px 50px;border-radius:40px;background:var(--cream);color:var(--char);opacity:0;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+#quote .q{position:absolute;right:40px;top:-70px;font-size:220px;line-height:1;color:var(--red);font-weight:900}
+#quote .t{font-size:64px;font-weight:900;line-height:1.35}
+#quote .s{margin-top:18px;font-size:32px;font-weight:700;color:#6b6b6b}
+#tap{position:absolute;width:150px;height:150px;border-radius:50%;border:8px solid #fff;opacity:0}
+/* end card */
+#card{position:absolute;inset:0;opacity:0}
+#cardBg{position:absolute;inset:0;background:radial-gradient(90% 55% at 50% 36%,#2d2d2d 0,#121212 72%)}
+#bigLogo{position:absolute;left:290px;top:200px;width:500px;filter:drop-shadow(0 30px 60px rgba(0,0,0,.6))}
+#tag{position:absolute;left:0;right:0;top:860px;text-align:center;font-size:64px;font-weight:900}
+#url{position:absolute;left:50%;top:990px;transform:translateX(-50%);padding:14px 40px;border-radius:999px;background:var(--green);color:#10230a;font-size:50px;font-weight:900;direction:ltr;white-space:nowrap}
+#cta{position:absolute;left:50%;top:1110px;width:520px;height:124px;margin-left:-260px;border-radius:62px;background:var(--red);font-size:62px;font-weight:1000;text-align:center;line-height:120px;box-shadow:0 20px 50px rgba(226,35,26,.5)}
+#facts{position:absolute;left:0;right:0;top:1270px;text-align:center;font-size:36px;font-weight:700;color:#d8d8d8}
+/* captions */
+#cap{position:absolute;left:60px;right:60px;top:1450px;height:240px;display:flex;flex-wrap:wrap;justify-content:center;align-content:center;gap:2px 18px}
+.w{font-weight:900;font-size:74px;line-height:1.28;color:#fff;text-shadow:0 5px 20px rgba(0,0,0,.85),0 0 3px rgba(0,0,0,.9)}
+.w.hot{color:#ffd54a}
+#credit{position:absolute;left:0;right:0;bottom:30px;text-align:center;font-size:22px;color:rgba(255,255,255,.45);opacity:0}
+</style>
+</head>
+<body>
+<div id="brandBg"></div>
+<svg id="hills" viewBox="0 0 1080 420"><path d="M0 260 C220 160 420 200 560 250 C720 300 880 210 1080 170 V420 H0Z" fill="#5a9e2a" opacity=".55"/><path d="M0 330 C260 250 470 300 640 320 C820 340 940 290 1080 270 V420 H0Z" fill="#8cc63f" opacity=".7"/></svg>
+<img id="fill"><div id="fillShade"></div>
+<div id="panel"><img id="pimg"></div>
+<div id="flashBg"></div>
+<div id="layer"></div>
+<div id="quote"><div class="q">”</div><div class="t" id="qt"></div><div class="s">من تقييمات عملائنا على المتجر</div></div>
+<div id="tap"></div>
+<img id="bug" src="assets/logo.png">
+<div id="card"><div id="cardBg"></div>
+  <svg class="abs" style="left:0;bottom:0" width="1080" height="420" viewBox="0 0 1080 420"><path d="M0 260 C220 160 420 200 560 250 C720 300 880 210 1080 170 V420 H0Z" fill="#5a9e2a" opacity=".55"/><path d="M0 330 C260 250 470 300 640 320 C820 340 940 290 1080 270 V420 H0Z" fill="#8cc63f" opacity=".7"/></svg>
+  <img id="bigLogo" src="assets/logo.png">
+  <div id="tag"></div>
+  <div id="url">aghnam-alwadi.com</div>
+  <div id="cta">اطلب الحين</div>
+  <div id="facts">جدة · توصيل مبرّد · خدمة عملاء ٢٤/٧</div>
+</div>
+<div id="wipe"><div style="left:0;width:700px;background:#e2231a"></div><div style="left:700px;width:160px;background:#fff"></div><div style="left:860px;width:380px;background:#8cc63f"></div></div>
+<div id="cap"></div>
+<div id="credit">لقطات: Pexels و Mixkit (تراخيص مجانية) · تمثيل توضيحي</div>
+<script src="config.js"></script>
+<script>
+const C = window.CONFIG, W = C.words, SH = C.shots, B = C.badges;
+const $ = (id) => document.getElementById(id);
+const cl = (x) => Math.max(0, Math.min(1, x));
+const eo = (x) => 1 - Math.pow(1 - cl(x), 3);
+const eio = (x) => { x = cl(x); return x < .5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const back = (x) => { x = cl(x); const c = 1.9; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const P = (t, a, d) => cl((t - a) / d);
+const css = (el, o) => { for (const k in o) el.style[k] = o[k]; };
+const ICON = {
+  plane: '<svg viewBox="0 0 48 48"><path fill="#fff" d="M44 30v-4L27 16V6a3 3 0 0 0-6 0v10L4 26v4l17-5v10l-5 4v3l8-2 8 2v-3l-5-4V25z"/></svg>',
+  check: '<svg viewBox="0 0 48 48"><path fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M9 25l10 10 20-22"/></svg>',
+  star: '<svg viewBox="0 0 48 48"><path fill="#fff" d="M24 4l6 13 14 2-10 10 2 14-12-7-12 7 2-14L4 19l14-2z"/></svg>',
+  knife: '<svg viewBox="0 0 48 48"><path fill="#fff" d="M38 4c-6 4-14 14-18 22l6 4c4-6 10-16 12-26zM18 28l-8 12a3 3 0 0 0 5 3l8-12z"/></svg>',
+  snow: '<svg viewBox="0 0 48 48"><g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M24 4v40M7 14l34 20M41 14L7 34"/><path d="M18 7l6 5 6-5M18 41l6-5 6 5"/></g></svg>',
+  pin: '<svg viewBox="0 0 48 48"><path fill="#fff" d="M24 3c-8 0-14 6-14 14 0 10 14 28 14 28s14-18 14-28c0-8-6-14-14-14zm0 19a5 5 0 1 1 0-10 5 5 0 0 1 0 10z"/></svg>',
+  tap: '<svg viewBox="0 0 48 48"><path fill="#fff" d="M20 22V9a4 4 0 0 1 8 0v11l9 2c3 1 4 3 4 6l-2 12H19l-9-12c-2-3 2-6 5-4z"/></svg>',
+  clock: '<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="#fff" stroke-width="5"/><path d="M24 13v12l8 5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>',
+  quote: '<svg viewBox="0 0 48 48"><path fill="#fff" d="M8 30c0-8 4-14 12-16v6c-3 1-5 4-5 7h5v11H8zm20 0c0-8 4-14 12-16v6c-3 1-5 4-5 7h5v11H28z"/></svg>',
+};
+// build badge DOM
+const layer = $('layer');
+B.forEach((b) => {
+  let el;
+  if (b.pos === 'hero' || b.pos === 'flash') { el = document.createElement('div'); el.className = 'hero'; el.style.top = b.y ? b.y + 'px' : (b.pos === 'flash' ? '780px' : '700px'); el.style.fontSize = (b.text.length > 12 ? 96 : 150) + 'px'; el.innerHTML = (b.icon ? `<div style="width:120px;height:120px;margin:0 auto 20px">${ICON[b.icon].replace('<svg', '<svg width="120" height="120"')}</div>` : '') + b.text; const bar = document.createElement('div'); bar.className = 'bar'; bar.style.top = b.y ? (b.y + 200) + 'px' : (b.pos === 'flash' ? '1010px' : '900px'); layer.appendChild(bar); b.bar = bar; }
+  else if (b.list && (b.pos === 'stack')) { el = document.createElement('div'); el.className = 'stack'; el.style.top = '300px'; b.list.forEach((x) => { const r = document.createElement('div'); r.className = 'srow'; r.innerHTML = `<i>${ICON.check.replace('<svg', '<svg width="40" height="40"')}</i>${x}`; el.appendChild(r); }); }
+  else if (b.list) { el = document.createElement('div'); el.className = 'chips'; el.style.top = b.pos === 'hero2' ? '640px' : '330px'; b.list.forEach((x) => { const c = document.createElement('div'); c.className = 'chip'; c.textContent = x; if (b.pos === 'hero2') { c.style.fontSize = '110px'; c.style.background = 'transparent'; c.style.color = '#fff'; c.style.border = 'none'; c.style.boxShadow = 'none'; c.style.textShadow = '0 10px 40px rgba(0,0,0,.7)'; } el.appendChild(c); }); }
+  else if (b.quote) { el = null; }
+  else { el = document.createElement('div'); el.className = 'pill'; el.innerHTML = (b.icon ? `<div class="ic">${ICON[b.icon]}</div>` : '') + `<span>${b.text}</span>`;
+    if (b.pos === 'chip') { el.style.left = '70px'; el.style.top = '1290px'; el.style.fontSize = '44px'; el.style.background = 'var(--green2)'; }
+    else { el.style.top = '330px'; el.style.left = '50%'; } }
+  if (el) { layer.appendChild(el); b.el = el; }
+});
+
+function shotAt(t) { let i = SH.findIndex((s) => t >= s.t0 && t < s.t1); return i < 0 ? -1 : i; }
+function frameSrc(s, t) { const i = Math.min(s.frames, Math.max(1, Math.floor((t - s.t0) * C.fps) + 1)); return `${s.dir}/f_${String(i).padStart(4, '0')}.jpg`; }
+const loads = [];
+function setSrc(img, src) { if (img.dataset.src === src) return; img.dataset.src = src; img.src = src; loads.push(img.decode().catch(() => {})); }
+
+function captions(t) {
+  const nocap = C.nocap || [];
+  const cur = W.filter((w) => w.s <= t + 0.05); const line = cur.length ? cur[cur.length - 1].line : -1;
+  const ws = W.filter((w) => w.line === line && !nocap.includes(w.seg));
+  const endT = ws.length ? Math.max(...ws.map((w) => w.e)) : 0;
+  const next = (W.find((w) => w.line === line + 1) || { s: C.duration }).s;
+  const out = cl((t - Math.min(endT + 0.35, next - 0.08)) / 0.14);
+  const cap = $('cap'); cap.innerHTML = '';
+  for (const w of ws) { const el = document.createElement('span'); el.className = 'w'; el.textContent = w.w;
+    const p = eo((t - w.s + 0.05) / 0.22);
+    css(el, { opacity: p * (1 - out), transform: `translateY(${(1 - p) * 30 - out * 14}px) scale(${0.88 + 0.12 * back(p)})` });
+    if (t >= w.s && t <= w.e + 0.06) el.classList.add('hot'); cap.appendChild(el); }
+}
+
+function badges(t) {
+  B.forEach((b) => {
+    const inn = P(t, b.t0, 0.32), out = P(t, b.t1 - 0.22, 0.22); const vis = t >= b.t0 && t < b.t1;
+    if (b.quote) return;
+    const el = b.el; if (!el) return;
+    if (b.pos === 'hero' || b.pos === 'flash') {
+      const p = back(inn); css(el, { opacity: vis ? cl(inn * 2) * (1 - out) : 0, transform: `scale(${0.7 + 0.3 * p}) translateY(${out * -30}px)` });
+      css(b.bar, { opacity: vis ? 1 - out : 0, width: `${560 * eo(P(t, b.t0 + .15, .4))}px` });
+    } else if (b.list) {
+      [...el.children].forEach((c, i) => { const a = b.at[i]; const p = back(P(t, a, .35)); css(c, { opacity: vis && t >= a ? cl(p * 2) * (1 - out) : 0, transform: `translateY(${(1 - cl(p)) * 50}px) scale(${0.6 + 0.4 * p})` }); });
+    } else {
+      const p = back(inn); const tx = b.pos === 'chip' ? '' : 'translateX(-50%) ';
+      css(el, { opacity: vis ? cl(inn * 2) * (1 - out) : 0, transform: `${tx}scale(${0.75 + 0.25 * p})` });
+      if (b.taps) { const tp = $('tap'); let shown = false; b.taps.forEach((a) => { const q = P(t, a, .45); if (q > 0 && q < 1) { shown = true; css(tp, { left: `${465 + (b.taps.indexOf(a) - 1) * 40}px`, top: `${1080}px`, opacity: 1 - q, transform: `scale(${0.4 + 1.2 * q})` }); } }); if (!shown) $('tap').style.opacity = 0; }
+    }
+  });
+  // review quotes
+  const rq = B.filter((b) => b.quote && t >= b.t0 && t < b.t1)[0]; const q = $('quote');
+  if (rq) { const p = back(P(t, rq.t0, .45)), o = P(t, rq.t1 - .25, .25); css(q, { opacity: cl(p * 2) * (1 - o), transform: `translateY(${(1 - cl(p)) * 80}px) scale(${0.92 + 0.08 * p})` }); const txt = rq.quote; const n = Math.round(txt.length * cl((t - rq.t0 - .15) / 1.1)); $('qt').textContent = txt.slice(0, n); }
+  else q.style.opacity = 0;
+}
+
+function endCard(t) {
+  const a = C.card; const c = $('card');
+  if (t < a) { c.style.opacity = 0; return; }
+  c.style.opacity = eo(P(t, a, .4));
+  const lp = back(P(t, a + .15, .7)); css($('bigLogo'), { transform: `scale(${0.6 + 0.4 * lp}) rotate(${(1 - cl(lp)) * -8}deg)`, opacity: cl(lp * 1.5) });
+  $('tag').textContent = C.tag;
+  [['tag', a + .6], ['url', a + 1.0], ['cta', a + 1.3], ['facts', a + 1.7]].forEach(([id, s]) => { const p = back(P(t, s, .5)); const base = id === 'url' ? 'translateX(-50%) ' : ''; css($(id), { opacity: cl(p * 2), transform: `${base}translateY(${(1 - cl(p)) * 40}px) scale(${id === 'cta' ? 1 + 0.04 * Math.sin((t - s) * 6) : 1})` }); });
+}
+
+function seek(t) {
+  window.scrollTo(0, 0); document.documentElement.scrollLeft = 0;
+  loads.length = 0;
+  const i = shotAt(t); const s = SH[i] || SH[SH.length - 1];
+  const fill = $('fill'), shade = $('fillShade'), panel = $('panel'), pimg = $('pimg'), brand = $('brandBg'), hills = $('hills'), flash = $('flashBg');
+  const k = (t - s.t0); const len = s.t1 - s.t0; const punch = 1 + 0.05 * (1 - eo(k / 0.25));
+  const mode = s.clip === '@flash' ? 'flash' : s.clip === '@brand' ? 'brand' : s.mode;
+  const inCard = t >= C.card;
+  if (mode === 'fill') { setSrc(fill, frameSrc(s, t)); css(fill, { opacity: 1, transform: `scale(${(1.0 + 0.06 * eio(k / len)) * punch})` }); shade.style.opacity = 1; } else { fill.style.opacity = 0; shade.style.opacity = 0; }
+  const panelMode = mode === 'panel' || mode === 'review';
+  brand.style.opacity = panelMode || mode === 'brand' ? 1 : 0; hills.style.opacity = panelMode || mode === 'brand' ? 1 : 0;
+  if (panelMode) { setSrc(pimg, frameSrc(s, t)); const top = mode === 'review' ? 330 : 640; css(panel, { opacity: 1, top: `${top}px`, transform: `scale(${(0.97 + 0.03 * eio(k / len)) * punch})` }); pimg.style.transform = `scale(${1 + 0.05 * eio(k / len)})`; }
+  else panel.style.opacity = 0;
+  flash.style.opacity = mode === 'flash' ? 1 : 0;
+  // brand wipe on mode changes
+  const wipe = $('wipe'); let wp = -1;
+  for (let j = 1; j < SH.length; j++) { const prev = SH[j - 1], cur = SH[j]; const pm = prev.clip[0] === '@' ? prev.clip : prev.mode, cm = cur.clip[0] === '@' ? cur.clip : cur.mode; if (pm !== cm || j === SH.length) { const d = t - cur.t0; if (d > -0.22 && d < 0.22) wp = (d + 0.22) / 0.44; } }
+  { const d = t - C.card; if (d > -0.22 && d < 0.22) wp = (d + 0.22) / 0.44; }
+  if (wp >= 0) css(wipe, { opacity: 1, left: `${-2400 + 3600 * eio(wp)}px` }); else wipe.style.opacity = 0;
+  css($('bug'), { opacity: inCard ? 0 : eo(P(t, 0.3, .5)) });
+  badges(t); endCard(t); captions(t);
+  $('credit').style.opacity = inCard ? 0 : 0.9;
+  return Promise.all(loads);
+}
+window.__kosif = { duration: C.duration, seek };
+</script>
+</body>
+</html>

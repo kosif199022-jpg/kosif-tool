@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (7) / skills
+## المهارات (9) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -18,8 +18,10 @@
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
+| `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | Write an Instagram Reel or short video script from one raw idea, in Egyptian Arabic, MSA or English - three hooks off the Arabic hook library, scored by a local tool,… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
+| `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 12 KB · 188 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
 
 ## المجموعات (15) / capability groups
@@ -42,7 +44,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (42) / protocol appendices
+## ملاحق البروتوكول (45) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -81,13 +83,16 @@
 | [A36 السياق والإقلاع والتوازي](references/protocol/A36-v57-context-boot-parallel.md) | أول طلب L1+ في محادثة جديدة، أو تعريف المشروع، أو قبل توزيع مهمة على وكلاء |
 | [A37 مجلس المراجعة الذاتية](references/protocol/A37-self-council.md) | «راجع كل المهارات واقترح تحسينات» |
 | [A38 المجلس والإتقان](references/protocol/A38-v58-thinking-books-github-pulse.md) | كل L1+، قرار L2/L3، صفحة أو فيديو |
-| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | تعديل صور أو PSD أو دفعة صور بلا فوتوشوب، أو LUT يوحّد لوك الصور والفيديو |
+| [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | صور أو PSD أو دفعة بلا فوتوشوب، أو LUT موحّد للصور والفيديو |
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير |
 | [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling |
-| [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح |
-| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
-| [A46 Suno](references/protocol/A46-suno-mcp.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
-| [A45 يوتيوب](references/protocol/A45-youtube-download.md) | عدّاد كل مهمة L1+، إثبات تسليم، دمج حزمة، قبل «تم»؛ Suno أول خطوة وأي أغنية؛ تنزيل يوتيوب |
+| [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة ويب |
+| [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد L1+، إثبات تسليم، دمج حزمة، قبل «تم» |
+| [A46 Suno](references/protocol/A46-suno-mcp.md) | أول خطوة (سطر `suno:`)، أو أي موسيقى |
+| [A45 يوتيوب](references/protocol/A45-youtube-download.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
+| [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
+| [A48 التنين](references/protocol/A48-v64-black-dragon.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
+| [A49 في المسار](references/protocol/A49-v65-dragon-in-pipeline.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -126,12 +131,23 @@
 - 46–49: Safety and portability
 - 50–84: Update 2026-10-24 — evidence-based creative mechanism mining
 
+### `.claude/skills/kosif-reel-hooks/SKILL.md`
+
+- 12–28: KOSIF Reel Hooks - من فكرة لريل حد يكمّله
+- 29–44: Before you write
+- 45–56: The shape
+- 57–85: The loop
+- 86–94: On-screen cards
+- 95–103: Rules
+- 104–111: What the score is and is not
+- 112–119: Credit
+
 ### `.claude/skills/kosif-superpowers/SKILL.md`
 
 - 7–32: قواك الخارقة — KOSIF Superpowers
 - 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
 - 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 44–47: FusionForge v2 (USIP v6.0) — project-scoped composite workflow recipes
+- 44–47: FusionForge v2 (USIP v6.5) — project-scoped composite workflow recipes
 - 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 - 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 - 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports
@@ -182,6 +198,17 @@
 - 13–25: 1. When the user asks for the link
 - 26–39: 2. When the user says they uploaded
 - 40–45: 3. Reading what came in
+
+### `.claude/skills/kosif-web-film/SKILL.md`
+
+- 6–12: KOSIF Web Film («التنين الأسود»)
+- 13–17: 0. Prompt first
+- 18–23: 1. Keep every explicit requirement
+- 24–35: 2. Concept before code
+- 36–46: 3. Build the page
+- 47–57: 4. Validate and fix, then look
+- 58–66: 5. Render
+- 67–70: Limits
 
 ### `.claude/skills/living-site/SKILL.md`
 
