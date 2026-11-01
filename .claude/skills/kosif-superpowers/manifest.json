@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5859,
+  "powers": 5860,
   "families": 62,
   "domains": 10,
-  "tools": 204,
+  "tools": 205,
   "guides": 119,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 977,
    "key": 176,
-   "proven": 1026,
+   "proven": 1027,
    "ready": 675,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 180,
+   "count": 181,
    "statuses": {
     "install": 9,
-    "proven": 149,
+    "proven": 150,
     "ready": 22
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -8112,6 +8112,85 @@
     "formats-platforms"
    ],
    "power_id": "TOOL-94"
+  },
+  {
+   "id": "song-preview",
+   "path": "scripts/song_preview.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "Official song preview (DRM fallback)",
+   "title_ar": "معاينة الأغنية الرسمية (بديل الـDRM)",
+   "summary_en": "When a requested song is DRM-locked (yt-dlp says 'DRM protected'), the source stops there; this tool is the lawful fallback. It searches Apple's public iTunes Search API and Deezer's public API, prints one table (source, track, artist, album, release date, duration, whether a preview exists) saved to a cache, then downloads the official 30-second store preview the label supplies (iTunes .m4a AAC, Deezer .mp3) with a <file>.rights.json sidecar: source, track and artist ids, store URL, preview URL, fetched_at, ffprobe duration and the licence note (private drafts only; public posts use the platform's licensed sound; credit the artist). Standard library only.",
+   "summary_ar": "لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، وبعدين تنزّل معاينة المتجر الرسمية 30 ثانية اللي الناشر بيوفّرها (iTunes ‎.m4a‎ وDeezer ‎.mp3‎) ومعاها سجل ‎<file>.rights.json‎: المصدر، أرقام الأغنية والفنان، رابط المتجر، رابط المعاينة، وقت التنزيل، المدة من ffprobe، وملاحظة الترخيص (للمسودات الخاصة؛ النشر العام بالصوت المرخّص من المنصة؛ واذكر الفنان). مكتبة بايثون القياسية بس.",
+   "use_when": [
+    "الأغنية على ساوند كلاود عليها DRM، هات المعاينة الرسمية بتاعتها",
+    "دوّر على أغنية تامر عاشور انا بحبك يا بلادي ونزّل الـ30 ثانية",
+    "yt-dlp says DRM protected for this song, get the official store preview instead",
+    "Find the iTunes preview of this song for a private reel draft"
+   ],
+   "keywords": [
+    "song preview",
+    "itunes",
+    "itunes search api",
+    "deezer",
+    "previewUrl",
+    "DRM",
+    "drm protected",
+    "30 second preview",
+    "store preview",
+    "song",
+    "music",
+    "rights",
+    "licence",
+    "معاينة",
+    "أغنية",
+    "اغنية",
+    "مقطع الأغنية",
+    "ايتونز",
+    "ديزر",
+    "حقوق"
+   ],
+   "commands": [
+    {
+     "name": "search",
+     "example": "python3 scripts/song_preview.py search \"Tamer Ashour انا بحبك يا بلادي\" --country eg --limit 10",
+     "does": "Queries the iTunes Search API (entity=song, the --country storefront) and Deezer's search, prints numbered rows and saves them to out/song-preview/last_search.json (or --out). --json prints the payload; a failing source is reported and the other still answers. Exit 1 when no row came back."
+    },
+    {
+     "name": "download",
+     "example": "python3 scripts/song_preview.py download 1 --out out/song-preview",
+     "does": "Downloads row N of the last search in --out (or a preview URL from *.itunes.apple.com, *.mzstatic.com or *.dzcdn.net only) to <artist>-<track>-<source>.<m4a|mp3> plus <file>.rights.json, and prints the ffprobe duration when ffprobe exists. A row without a preview, or any other host, is refused before any request."
+    }
+   ],
+   "inputs": "Artist and title words for search, with --country (iTunes storefront, default eg), --limit (1..50 per source, default 10), --sources itunes,deezer, --timeout and --retries (0..3, default 2); for download a row number from the last search or an official preview URL, and --out (default out/song-preview relative to the cwd).",
+   "outputs": "<out>/last_search.json (kosif.song_preview.results.v1: query, country, rows, per-source errors); the preview file and <file>.rights.json (kosif.song_preview.rights.v1). Exit 0 on success, 1 when nothing was found or the download failed, 2 on bad arguments.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "bin:ffprobe"
+    ],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "It downloads a copyrighted 30-second preview for a private draft only. Public posting uses the platform's licensed sound (for example TikTok's library) and credits the artist; tell the user before anything is published.",
+   "limits": "It is not a full-track source and grants no licence: previews are 30 s, Deezer's preview field is sometimes empty and its links expire, release dates come only from iTunes, and catalogue coverage depends on the storefront. A longer reel may only repeat preview phrases aligned to the beat; it never touches DRM streams, cookies, logins or yt-dlp.",
+   "evidence": "tested-here",
+   "evidence_note": "tests/test_song_preview.py (9 tests, HTTP mocked, no network) passed here on 2026-11-01: both parsers, search table and cache, a failing source, row download with the rights sidecar, a Deezer .mp3 row, refusal of an empty preview and of foreign hosts before any request, bounded retries with no retry on 404, the size cap and the bilingual --help. Live here on 2026-11-01 through the session proxy: search 'Tamer Ashour' returned iTunes and Deezer rows and download 1 saved a 1,015,426-byte iTunes .m4a measured 30.0 s by ffprobe.",
+   "tests": [
+    "tests/test_song_preview.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A19-field-lessons-montage.md",
+    ".claude/skills/kosif-superpowers/references/guides/sources.md"
+   ],
+   "families": [
+    "music-beat-sound",
+    "video-download"
+   ],
+   "power_id": "TOOL-182"
   },
   {
    "id": "instagram-finder",

@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5859,
+  "catalog_powers": 5860,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 204,
+  "tool_count": 205,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 278,
+      "count": 279,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 176,
+        "proven": 177,
         "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 180,
+        "runnable-tools": 181,
         "self-discovery": 43
       },
       "examples": [
@@ -74419,6 +74419,26 @@
       ],
       "source": "runnable-tools.json",
       "what": "يخطط لكل المهارات والقدرات والأدوات المسجلة بدون استبعاد، ويوزع الأدوار والاعتماديات والتشغيل المتوازي، ويُظهر ما نُفذ بالدليل وما تعذر تنفيذه. — Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concu"
+    },
+    {
+      "id": "TOOL-182",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Official song preview (DRM fallback)",
+      "name_ar": "معاينة الأغنية الرسمية (بديل الـDRM)",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "python3",
+        "yt-dlp"
+      ],
+      "proof": [
+        "kosif-tool/tests/test_song_preview.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/song_preview.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، و"
     },
     {
       "id": "SEC-01",

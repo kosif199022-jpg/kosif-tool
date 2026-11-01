@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **180 powers follow** — ✅ 149 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **181 powers follow** — ✅ 150 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-179 (22)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-182 (23)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -1598,6 +1598,15 @@
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_photos.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/free_photos.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-182 · معاينة الأغنية الرسمية (بديل الـDRM) · Official song preview (DRM fallback) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، وبعدين تنزّل معاينة المتجر الرسمية 30 ثانية اللي الناشر بيوفّرها (iTunes ‎.m4a‎ وDeezer ‎.mp3‎) ومعاها سجل ‎<file>.rights.json‎: المصدر، أرقام الأغنية والفنان، رابط المتجر، رابط المعاينة، وقت التنزيل، المدة من ffprobe، وملاحظة الترخيص (للمسودات الخاصة؛ النشر العام بالصوت المرخّص من المنصة؛ واذكر الفنان). مكتبة بايثون القياسية بس. — When a requested song is DRM-locked (yt-dlp says 'DRM protected'), the source stops there; this tool is the lawful fallback. It searches Apple's public iTunes Search API and Deezer's public API, prints one table (source, track, artist, album, release date, duration, whether a preview exists) saved to a cache, then downloads the official 30-second store preview the label supplies (iTunes .m4a AAC, Deezer .mp3) with a <file>.rights.json sidecar: source, track and artist ids, store URL, preview URL, fetched_at, ffprobe duration and the licence note (private drafts only; public posts use the platform's licensed sound; credit the artist). Standard library only.
+- **متى أستخدمها / when:** الأغنية على ساوند كلاود عليها DRM، هات المعاينة الرسمية بتاعتها / yt-dlp says DRM protected for this song, get the official store preview instead
+- **كيف / how:** search: `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10`; download: `python3 scripts/song_preview.py download 1 --out out/song-preview`. Full card: `python3 scripts/hub.py tool song-preview`. Limits: It is not a full-track source and grants no licence: previews are 30 s, Deezer's preview field is sometimes empty and its links expire, release dates come only from iTunes, and catalogue coverage depends on the storefront. A longer reel may only repeat preview phrases aligned to the beat; it never touches DRM streams, cookies, logins or yt-dlp. **أرقام / params:** in: Artist and title words for search, with --country (iTunes storefront, default eg), --limit (1..50 per source, default 10), --sources itunes,deezer, --timeout and --retries (0..3, default 2); for download a row number from the last search or an official preview URL, and --out (default out/song-preview relative to the cwd). · out: <out>/last_search.json (kosif.song_preview.results.v1: query, country, rows, per-source errors); the preview file and <file>.rights.json (kosif.song_preview.rights.v1). Exit 0 on success, 1 when nothing was found or the download failed, 2 on bad arguments.
+- **تثبيت / install:** `optional: bin:ffprobe`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`python3`](../requirements.md#req-python3) · [`yt-dlp`](../requirements.md#req-yt-dlp)
+- **الدليل / proof:** `kosif-tool/tests/test_song_preview.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/song_preview.py`
+- **المصدر / source:** data/tools.json
+
 ## Local computer / الجهاز المحلي
 
 #### TOOL-55 · خادم KOSIF Remote Commander · KOSIF Remote Commander MCP · ✅ مُثبت هنا / proven here
@@ -1611,7 +1620,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (180)
+- الرخص / licences: — (181)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
