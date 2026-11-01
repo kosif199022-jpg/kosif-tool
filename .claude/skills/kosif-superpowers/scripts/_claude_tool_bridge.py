@@ -19,11 +19,12 @@ from pathlib import Path
 import black_dragon as dragon
 import _black_dragon_brain as brain
 import _claude_reviewed_router as reviewed
+import _claude_skill_tool_factory as factory
 
 REPO = dragon.REPO
 SKILLS = dragon.audit.SKILL.parent
 SERVER_NAME = "kosif-superpowers-bridge"
-VERSION = "1.1.0"
+VERSION = "1.2.0"
 
 
 def inventory():
@@ -171,6 +172,15 @@ TOOLS = [
      "inputSchema": {"type": "object", "properties": {"task": {"type": "string"},
                      "limit": {"type": "integer", "minimum": 1, "maximum": 30}},
                      "required": ["task"], "additionalProperties": False}},
+    {"name": "kosif_toolify_skill", "description": "Statically inspect one installed SKILL.md and find possible CLI tool entrypoints with SHA receipts, missing references and explicit human review requirements. Never imports or executes skill scripts.",
+     "inputSchema": {"type": "object", "properties": {"name": {"type": "string"},
+                     "script_limit": {"type": "integer", "minimum": 1, "maximum": 600}},
+                     "required": ["name"], "additionalProperties": False}},
+    {"name": "kosif_verify_skill_package", "description": "Read-only integrity audit of a generated skill ZIP under repository out/ (SHA-256 manifest, unsafe members, bounded size), no extraction or code execution.",
+     "inputSchema": {"type": "object", "properties": {"path": {"type": "string"}},
+                     "required": ["path"], "additionalProperties": False}},
+    {"name": "kosif_bridge_doctor", "description": "Read-only check of the reviewed adapter registry, artifact contracts and permission gates; does not run any adapter.",
+     "inputSchema": {"type": "object", "properties": {}, "additionalProperties": False}},
     {"name": "kosif_route_reviewed", "description": "Find task-matching reviewed adapters and their explicit prerequisites without executing anything.",
      "inputSchema": {"type": "object", "properties": {"task": {"type": "string"},
                      "limit": {"type": "integer", "minimum": 1, "maximum": 20}},
@@ -207,6 +217,12 @@ def call_tool(name: str, params: dict, process_execution: bool = False) -> dict:
         return describe(params["id"], params.get("max_chars", 8000))
     if name == "kosif_plan_pro_max":
         return plan(params["task"], params.get("limit", 15))
+    if name == "kosif_toolify_skill":
+        return factory.inspect(params["name"], params.get("script_limit", 100))
+    if name == "kosif_verify_skill_package":
+        return factory.verify_zip(Path(params["path"]))
+    if name == "kosif_bridge_doctor":
+        return factory.doctor()
     if name == "kosif_route_reviewed":
         return reviewed.route(params["task"], params.get("limit", 8))
     if name == "kosif_review_execution":
@@ -247,7 +263,7 @@ def respond(req: dict, process_execution: bool = False) -> dict | None:
         else:
             return {"jsonrpc": "2.0", "id": rid, "error": {"code": -32601, "message": "Method not found"}}
         return {"jsonrpc": "2.0", "id": rid, "result": result}
-    except (ValueError, TypeError, KeyError, OSError, PermissionError) as exc:
+    except (ValueError, TypeError, KeyError, OSError, PermissionError, zipfile.BadZipFile) as exc:
         return {"jsonrpc": "2.0", "id": rid, "error": {"code": -32602, "message": str(exc)[:400]}}
 
 
@@ -276,6 +292,15 @@ def main(argv=None):
     d.add_argument("id")
     p = sub.add_parser("plan")
     p.add_argument("task")
+    si = sub.add_parser("inspect-skill")
+    si.add_argument("name")
+    si.add_argument("--script-limit", type=int, default=100)
+    sf = sub.add_parser("draft-skill-tool")
+    sf.add_argument("name")
+    sf.add_argument("--out", required=True, type=Path)
+    vv = sub.add_parser("verify-skill-zip")
+    vv.add_argument("path", type=Path)
+    sub.add_parser("doctor")
     rr = sub.add_parser("route-reviewed")
     rr.add_argument("task")
     rr.add_argument("--limit", type=int, default=8)
@@ -296,12 +321,16 @@ def main(argv=None):
                   search(args.query, args.limit) if args.command == "search" else
                   describe(args.id) if args.command == "describe" else
                   plan(args.task) if args.command == "plan" else
+                  factory.inspect(args.name, args.script_limit) if args.command == "inspect-skill" else
+                  factory.draft(args.name, args.out) if args.command == "draft-skill-tool" else
+                  factory.verify_zip(args.path) if args.command == "verify-skill-zip" else
+                  factory.doctor() if args.command == "doctor" else
                   reviewed.route(args.task, args.limit) if args.command == "route-reviewed" else
                   reviewed.review(args.job_name) if args.command == "review-execution" else
                   export_skill(args.name, args.out, args.max_mb))
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 0
-    except (ValueError, OSError, PermissionError) as exc:
+    except (ValueError, OSError, PermissionError, zipfile.BadZipFile) as exc:
         print("claude-tool-bridge: " + str(exc), file=sys.stderr)
         return 2
 
