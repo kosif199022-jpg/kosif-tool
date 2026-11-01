@@ -95,7 +95,7 @@ def examine_receipt(job: Path, key: str, item: dict, seen_artifacts: set[str]) -
         if proof.get("artifact_sha256") != receipt.get("artifact_sha256"):
             issues.append("ledger and receipt artifact hashes differ")
         if not artifact.stat().st_size or audit.sha256(artifact) != proof.get("artifact_sha256"):
-            issues.append("artifact SHA-256 mismatch or empty artifact")
+            issues.append("artifact/digest mismatch or empty artifact")
         if str(artifact) != str(Path(receipt.get("artifact", "")).resolve()):
             issues.append("ledger artifact path differs from receipt")
         command = proof.get("command")
