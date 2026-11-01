@@ -60,6 +60,7 @@
 | `repo-transcribe-audio` | تفريغ الصوت بـ Gemini مع رسائل خطأ واضحة | `python3 tools/transcribe_audio.py ./voice.wav --json ./out/transcript.json` | tested-here |
 | `repo-words-convert` | محوّل الترجمات إلى توقيت الكلمات | `python3 tools/words_convert.py ./captions.srt ./words.json` | tested-here |
 | `script-storyboard` | من السيناريو إلى الستوري بورد والأنيماتك | `python3 scripts/script_storyboard.py parse ./script.pdf --first-page 8 --last-page 60 --out ./out/storyboard.json --episode-seconds 90` | tested-here |
+| `song-preview` | معاينة الأغنية الرسمية (بديل الـDRM) | `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10` | tested-here |
 | `starter-html-canvas` | قالب فيلم HTML Canvas | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `starter-remotion` | قالب فيلم Remotion | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | tested-elsewhere |
 | `tts-script` | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30` | tested-here |

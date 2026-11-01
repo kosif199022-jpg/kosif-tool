@@ -14,8 +14,8 @@
 
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
-| 1 | [`python3`](#req-python3) | bin | 808 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
-| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 465 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 1 | [`python3`](#req-python3) | bin | 809 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
+| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 466 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 4 | [`chromium`](#req-chromium) | bin | 375 | engines-render-pipeline, software-investigation, app-feature-transfer, runnable-tools, qa-verification |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
@@ -42,10 +42,10 @@
 | 26 | [`npm:axe`](#req-npm-axe) | npm | 28 | qa-verification, atlas-build, atlas-code, color-palette-grading, runnable-tools |  |
 | 27 | [`npm:esbuild`](#req-npm-esbuild) | npm | 26 | engines-render-pipeline, light-glow-bloom, particles-fluids-physics, atlas-code, texture-material |  |
 | 28 | [`network`](#req-network) | os | 25 | self-discovery, audio-sync-captions, web-research, app-feature-transfer, media-image-audio |  |
-| 29 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph |  |
-| 30 | [`key:graphify`](#req-key-graphify) | service | 24 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
-| 31 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery |  |
-| 32 | [`yt-dlp`](#req-yt-dlp) | pip | 23 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
+| 29 | [`yt-dlp`](#req-yt-dlp) | pip | 24 | video-download, runnable-tools, atlas-media, audio-sync-captions, engines-render-pipeline |  |
+| 30 | [`npm:mermaid`](#req-npm-mermaid) | npm | 24 | atlas-docs, atlas-code, diagrams-explainers-code, atlas-craft, knowledge-graph |  |
+| 31 | [`key:graphify`](#req-key-graphify) | service | 24 | knowledge-graph, code-engineering, agent-orchestration, runnable-tools, security-safety |  |
+| 32 | [`tesseract`](#req-tesseract) | apt | 23 | media-image-audio, arabic-language, other, runnable-tools, self-discovery |  |
 | 33 | [`engine:wakaru`](#req-engine-wakaru) | bin | 23 | software-investigation |  |
 | 34 | [`key:openai`](#req-key-openai) | key | 22 | ai-generation, atlas-code, audio-sync-captions, characters-rigs, prompt-craft |  |
 | 35 | [`npm:bruno`](#req-npm-bruno) | npm | 22 | api-testing |  |
@@ -145,9 +145,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y python3 python3-pip python3-venv`
-- **يفتح / unlocks:** 808 powers
-- **بالحالة / by status:** proven 308 · documented 212 · ready 169 · install 103 · key 13 · seen 3
-- **العائلات / families:** runnable-tools (142), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
+- **يفتح / unlocks:** 809 powers
+- **بالحالة / by status:** proven 309 · documented 212 · ready 169 · install 103 · key 13 · seen 3
+- **العائلات / families:** runnable-tools (143), engines-render-pipeline (97), qa-verification (79), mental-models (61), music-beat-sound (45), app-feature-transfer (27), atlas-code (24), photo-video-footage (16)
 - **أمثلة / examples:** `ANLY-08` statsmodels OLS and time-series models · `ANLY-14` altair / Vega-Lite chart specs · `ANLY-17` Gradient boosting (XGBoost, LightGBM) · `ANLY-21` Convex optimisation with cvxpy · `ANLY-23` Graph algorithms with networkx · `APP-06` HTML to MP4 renderer (repo tool)
 
 <a id="req-ffmpeg"></a>
@@ -155,9 +155,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 465 powers
-- **بالحالة / by status:** documented 158 · proven 157 · ready 72 · install 55 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (47), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
+- **يفتح / unlocks:** 466 powers
+- **بالحالة / by status:** documented 158 · proven 158 · ready 72 · install 55 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (48), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-npm-hyperframes"></a>
@@ -420,6 +420,16 @@
 - **العائلات / families:** self-discovery (5), audio-sync-captions (3), web-research (3), app-feature-transfer (2), media-image-audio (2), security-safety (2), voice-tts (2), ai-generation (1)
 - **أمثلة / examples:** `SELF-15` Network test ladder · `SELF-24` Registry lookup before saying no · `SELF-25` Python-version compatibility check · `SELF-28` Heavy ML is possible on CPU · `SELF-29` License gate before adopting · `SYNC-07` Local Arabic word-timed transcription (faster-wh
 
+<a id="req-yt-dlp"></a>
+### `yt-dlp` — تحميل وسائط مرخّصة أو مملوكة من روابط / download licensed or owned media from links
+
+- **النوع / kind:** pip (حزمة بايثون)
+- **التثبيت / install:** `pip install yt-dlp`
+- **يفتح / unlocks:** 24 powers
+- **بالحالة / by status:** proven 12 · documented 4 · install 4 · ready 3 · key 1
+- **العائلات / families:** video-download (11), runnable-tools (7), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
+- **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
+
 <a id="req-npm-mermaid"></a>
 ### `npm:mermaid` — رسم مخططات Mermaid إلى صور / render Mermaid diagrams to images
 
@@ -449,16 +459,6 @@
 - **بالحالة / by status:** proven 11 · documented 6 · install 3 · key 2 · seen 1
 - **العائلات / families:** media-image-audio (5), arabic-language (3), other (2), runnable-tools (2), self-discovery (2), ai-generation (1), atlas-data (1), atlas-docs (1)
 - **أمثلة / examples:** `ARAB-84` Text-style capture & compositing · `ARL-14` Arabic OCR with tesseract · `ARL-15` Verify OCR numbers with the anchor gate · `DOC-17` OCR for scanned PDF pages · `MEDIA-03` Arabic + English OCR with tesseract · `MEDIA-04` Arabic OCR weak spots (digits, display fonts)
-
-<a id="req-yt-dlp"></a>
-### `yt-dlp` — تحميل وسائط مرخّصة أو مملوكة من روابط / download licensed or owned media from links
-
-- **النوع / kind:** pip (حزمة بايثون)
-- **التثبيت / install:** `pip install yt-dlp`
-- **يفتح / unlocks:** 23 powers
-- **بالحالة / by status:** proven 11 · documented 4 · install 4 · ready 3 · key 1
-- **العائلات / families:** video-download (11), runnable-tools (6), atlas-media (1), audio-sync-captions (1), engines-render-pipeline (1), knowledge-graph (1), photo-video-footage (1), qa-verification (1)
-- **أمثلة / examples:** `DL-01` Download video from any URL · `DL-02` Batch of links from a file · `DL-03` Quality cap or audio-only · `DL-04` Edit-safe H.264/AAC copy · `DL-07` Update yt-dlp when a site breaks · `ENG-X06` Tool-map doctor before promising a stack
 
 <a id="req-engine-wakaru"></a>
 ### `engine:wakaru` — استعادة مصادر JavaScript المقروءة / readable JavaScript source recovery

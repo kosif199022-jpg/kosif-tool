@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (25 أداة)
+# أدوات المجال `sources` (26 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -940,6 +940,51 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-ashell-cinema --evidence <ملف>`.
+
+### `song-preview` — معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback)
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/song_preview.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `music-beat-sound`, `video-download` |
+
+**ما تفعله:** لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، وبعدين تنزّل معاينة المتجر الرسمية 30 ثانية اللي الناشر بيوفّرها (iTunes ‎.m4a‎ وDeezer ‎.mp3‎) ومعاها سجل ‎<file>.rights.json‎: المصدر، أرقام الأغنية والفنان، رابط المتجر، رابط المعاينة، وقت التنزيل، المدة من ffprobe، وملاحظة الترخيص (للمسودات الخاصة؛ النشر العام بالصوت المرخّص من المنصة؛ واذكر الفنان). مكتبة بايثون القياسية بس.
+
+**What it does:** When a requested song is DRM-locked (yt-dlp says 'DRM protected'), the source stops there; this tool is the lawful fallback. It searches Apple's public iTunes Search API and Deezer's public API, prints one table (source, track, artist, album, release date, duration, whether a preview exists) saved to a cache, then downloads the official 30-second store preview the label supplies (iTunes .m4a AAC, Deezer .mp3) with a <file>.rights.json sidecar: source, track and artist ids, store URL, preview URL, fetched_at, ffprobe duration and the licence note (private drafts only; public posts use the platform's licensed sound; credit the artist). Standard library only.
+
+#### متى تُستدعى
+
+- «الأغنية على ساوند كلاود عليها DRM، هات المعاينة الرسمية بتاعتها»
+- «دوّر على أغنية تامر عاشور انا بحبك يا بلادي ونزّل الـ30 ثانية»
+- «yt-dlp says DRM protected for this song, get the official store preview instead»
+- «Find the iTunes preview of this song for a private reel draft»
+
+#### الأوامر
+
+- **search**: Queries the iTunes Search API (entity=song, the --country storefront) and Deezer's search, prints numbered rows and saves them to out/song-preview/last_search.json (or --out). --json prints the payload; a failing source is reported and the other still answers. Exit 1 when no row came back.
+  - `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10`
+- **download**: Downloads row N of the last search in --out (or a preview URL from *.itunes.apple.com, *.mzstatic.com or *.dzcdn.net only) to <artist>-<track>-<source>.<m4a\|mp3> plus <file>.rights.json, and prints the ffprobe duration when ffprobe exists. A row without a preview, or any other host, is refused before any request.
+  - `python3 scripts/song_preview.py download 1 --out out/song-preview`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: bin:ffprobe
+- الأمان: network
+- الموافقة: It downloads a copyrighted 30-second preview for a private draft only. Public posting uses the platform's licensed sound (for example TikTok's library) and credits the artist; tell the user before anything is published.
+- الحدود: It is not a full-track source and grants no licence: previews are 30 s, Deezer's preview field is sometimes empty and its links expire, release dates come only from iTunes, and catalogue coverage depends on the storefront. A longer reel may only repeat preview phrases aligned to the beat; it never touches DRM streams, cookies, logins or yt-dlp.
+
+#### الاختبارات والأدلة
+
+- `tests/test_song_preview.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/protocol/A19-field-lessons-montage.md`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:song-preview --evidence <ملف>`.
 
 ### `source-finder` — البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي / Source finder: the original clips behind each shot of a reference video
 

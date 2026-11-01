@@ -9,7 +9,7 @@
 | kind | source | today |
 |---|---|---:|
 | skill | every `SKILL.md` under `.claude/skills/` | 472 |
-| power | `data/powers/*.json` | 5,859 |
+| power | `data/powers/*.json` | 5,860 |
 | tool | `data/tools.json` | 204 |
 | superpower | `data/superpowers.json` (fused powers) | 482 |
 | style | `catalog/styles.json` (motion style atlas) | 297 |
