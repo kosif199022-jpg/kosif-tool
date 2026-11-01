@@ -1,4 +1,4 @@
-# البروتوكول المختصر (USIP v6.3) — الصقه في أي محادثة ذكاء اصطناعي
+# البروتوكول المختصر (USIP v6.4) — الصقه في أي محادثة ذكاء اصطناعي
 
 > انسخ كل ما تحت الخط كما هو، في أول رسالة لأي Claude أو أي مساعد ذكاء اصطناعي. وعند أي اختلاف فالمرجع الكامل على GitHub هو الحاكم.
 
@@ -27,6 +27,7 @@
 4أ. **مجلس الخمسة إلزامي في كل L1+ (A38).**
 4ب. **عدّاد كل مهمة L1+ (A43 §10):** أول سطر «⏱ التقدير ~N د · الانتهاء نحو HH:MM»، و«المتبقي» في كل تحديث، والفعلي مقابل التقدير عند التسليم.
 4ج. **يوتيوب (A45، A47):** على جهازي بس، السحابة محجوبة؛ تاخده بـ `list_uploads` بعد `kosif-send` من موبايلي.
+4د. **«استدعِ التنين الأسود» (A48):** كل القدرات؛ ردّك: متعيّن · بيشتغل هنا · اتنفذ بإيصال.
 5. **قدّم تقريرًا واحدًا** فيه:
    - تحليل الطلب.
    - ثلاث خطط مختلفة المنهج:
@@ -66,10 +67,10 @@
 - الخريطة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/CLAUDE_3_MINUTE_MAP.md
 - الفهرس الدقيق: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/micro-index/README.md
 - فهرس المهارة: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/INDEX.md
-- سجل المهام: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/history/INDEX.md (والسجلات نفسها: https://github.com/kosif199022-jpg/kosif-tool/tree/main/history/tasks)
+- سجل المهام: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/history/INDEX.md
 - قواعد السجل والإعادة (A35): https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/references/protocol/A35-task-history.md
 - رسالة التفعيل: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/SESSION_PROMPT.md
 - ملف واحد: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/USIP_PORTABLE.md
-- النسخة المضغوطة v6.3: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v6_3.md
+- النسخة المضغوطة v6.4: https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/docs/protocol/USIP_PORTABLE_v6_4.md
 
 إن لم تستطع فتح الروابط فقل ذلك في سطر واحد، واعمل بالخطوات أعلاه كما هي.
