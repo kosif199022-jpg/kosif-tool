@@ -47,6 +47,8 @@ class SkillToolFactoryTests(unittest.TestCase):
         (self.repo / "out").mkdir()
         self.patches = [patch.object(factory, "REPO", self.repo),
                         patch.object(factory, "SKILLS", self.skills),
+                        patch.object(bridge, "REPO", self.repo),
+                        patch.object(bridge, "SKILLS", self.skills),
                         patch.object(dragon, "REPO", self.repo)]
         for p in self.patches:
             p.start()
