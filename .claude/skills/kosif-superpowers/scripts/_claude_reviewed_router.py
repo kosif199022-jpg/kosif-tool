@@ -185,7 +185,7 @@ def execute(task: str, ids: list[str], job_name: str, *,
     # Validate all selected script paths before creating any job or executing a tool.
     for key, spec in adapters.items():
         dragon._safe_script(spec["script"])
-        if any("{artifact}" not in arg for arg in spec.get("args", [])):
+        if not any("{artifact}" in arg for arg in spec.get("args", [])):
             raise ValueError("Adapter needs {artifact} output placeholder: " + key)
     job = dragon._safe_job(job)
     if job.exists():
