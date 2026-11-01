@@ -2,19 +2,19 @@
 
 **Invocation:** «استدعِ التنين الأسود» or «شغّل التنين الأسود». The owner's rule: **every capability is used, none is left out; the dragon's intelligence decides how and where each one is used.** The existing `kosif-web-film` remains the separate code-drawn video director; Black Dragon is an **orchestrator**, not a film renderer.
 
-## What it uses (7,378 entries today)
+## What it uses (7,383 entries on 2026-11-01)
 
 `black_dragon.py inventory` counts every type, failing loudly on duplicates:
 
 | kind | source | today |
 |---|---|---:|
-| skill | every `SKILL.md` under `.claude/skills/` | 472 |
+| skill | every `SKILL.md` under `.claude/skills/` | 473 |
 | power | `data/powers/*.json` | 5,860 |
-| tool | `data/tools.json` | 204 |
-| superpower | `data/superpowers.json` (fused powers) | 482 |
+| tool | `data/tools.json` | 205 |
+| superpower | `data/superpowers.json` (fused powers) | 483 |
 | style | `catalog/styles.json` (motion style atlas) | 297 |
 | playbook | `playbooks/*.md` | 19 |
-| protocol | `PROTOCOL.md` + `references/protocol/A*.md` | 45 |
+| protocol | `PROTOCOL.md` + `references/protocol/A*.md` | 46 |
 
 ## How the brain decides "how" (`_black_dragon_brain.py`)
 
@@ -50,7 +50,7 @@ The job folder gets `black_dragon_report.md` (Arabic/English summary), `black_dr
 
 ### Reviewed adapters
 
-`data/black_dragon_adapters.json` holds 24 read-only repo tools (brief, hub find, discovery, routers, thinking, council and gate self-tests, export standard, agent-guard rules, evidence audit…) run on the task through `scripts/_black_dragon_exec.py`, which keeps the tool's own exit code and writes its stdout as the artifact. To connect more, map an **exact catalog entry ID** to a repo-relative Python script and its argv:
+`data/black_dragon_adapters.json` holds 39 read-only repo tools (brief, hub find, discovery, routers, thinking, council and gate self-tests, export standard, agent-guard rules, evidence audit, and since USIP v6.5 the capability atlas, power and superpower suggestions, requirement plans, style and drawing finders, superskills and source scouts…) run on the task through `scripts/_black_dragon_exec.py`, which keeps the tool's own exit code and writes its stdout as the artifact. To connect more, map an **exact catalog entry ID** to a repo-relative Python script and its argv:
 
 ```json
 {
@@ -78,3 +78,7 @@ python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
 ```
 
 They cover inventory of every kind against its sources, part/mode/weight for every entry, determinism, dependency waves and blocked dependents, explicit execution gating, unsafe paths, job reuse, the `--help` probe, the exec wrapper's exit code and a real run of reviewed adapters with checked receipts. The `Black Dragon checks` workflow also runs a full job on every pull request and uploads its receipts.
+
+## In the USIP pipeline (v6.5, appendix A49)
+
+The dragon is no longer only a named command. At L3 it runs right after the USIP brief with `--probe-tools --reviewed-adapters` (assigned + probed); when the owner answers `نفّذ بأقصى قوة` it also gets `--execute-adapters`, since every reviewed adapter only reads. Each stage leader that would change the engine or the verification method goes into plan C, and the report carries one line: assigned · probed · executed with receipt · `full_coverage`. Measured on 2026-11-01: 7,381 assigned, 187 of 205 tools probed, 39 of 39 adapters executed with receipts, 0 failed.

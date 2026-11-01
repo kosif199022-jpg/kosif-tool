@@ -18,7 +18,7 @@
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
-| `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | >- |
+| `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | Write an Instagram Reel or short video script from one raw idea, in Egyptian Arabic, MSA or English - three hooks off the Arabic hook library, scored by a local tool,… |
 | `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
@@ -44,7 +44,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (44) / protocol appendices
+## ملاحق البروتوكول (45) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -91,7 +91,8 @@
 | [A46 Suno](references/protocol/A46-suno-mcp.md) | أول خطوة (سطر `suno:`)، أو أي موسيقى |
 | [A45 يوتيوب](references/protocol/A45-youtube-download.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
 | [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
-| [A48 التنين](references/protocol/A48-v64-black-dragon.md) | «استدعِ التنين الأسود» |
+| [A48 التنين](references/protocol/A48-v64-black-dragon.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
+| [A49 في المسار](references/protocol/A49-v65-dragon-in-pipeline.md) | «استدعِ التنين الأسود»، L3، «بأقصى قوة» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -146,7 +147,7 @@
 - 7–32: قواك الخارقة — KOSIF Superpowers
 - 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
 - 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 44–47: FusionForge v2 (USIP v6.4) — project-scoped composite workflow recipes
+- 44–47: FusionForge v2 (USIP v6.5) — project-scoped composite workflow recipes
 - 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 - 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 - 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports

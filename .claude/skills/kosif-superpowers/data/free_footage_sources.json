@@ -822,6 +822,128 @@
    "notes": "Check the description for third-party credits (for example ESA, JAXA or a university) before using a clip commercially."
   },
   {
+   "id": "loc",
+   "name": "Library of Congress — National Screening Room and Paper Print films",
+   "url": "https://www.loc.gov/film-and-videos/",
+   "category": "public-agency",
+   "licence_source": true,
+   "licence": {
+    "name": "US public domain by publication year (published 95+ years ago)",
+    "url": "https://www.loc.gov/legal/understanding-copyright/",
+    "per_item": true,
+    "summary": "The tool keeps only films dated on or before the latest US public-domain year (1930 in 2026). The Library is not aware of US restrictions on most of these films, but rights assessment is the user's, and a film can still be protected abroad."
+   },
+   "attribution": {
+    "required": false,
+    "per_item": false,
+    "template": "\"{title}\" ({author}), {licence}, Library of Congress, Motion Picture, Broadcasting, and Recorded Sound Division: {page_url}"
+   },
+   "commercial_use": "yes",
+   "commercial_note": "US public domain; check other countries, privacy/publicity and trademarks before commercial use abroad.",
+   "modification": "yes",
+   "video_kinds": [
+    "early cinema",
+    "archival street scenes",
+    "historic events",
+    "trains and transport",
+    "silent film"
+   ],
+   "strengths": "Key-less JSON API with direct MP4 files of early films (Edison, Paper Print Collection) that are public domain in the US.",
+   "search_url": "https://www.loc.gov/film-and-videos/?q={query}&dates=1800/1930",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://www.loc.gov/search/",
+    "key_required": false,
+    "key_env": null,
+    "docs": "https://www.loc.gov/apis/json-and-yaml/",
+    "notes": "search/?q=...&fa=online-format:video&dates=1800/<year>&fo=json gives results with date, contributor, access_restricted and resources[].video (an MP4 on tile.loc.gov)."
+   },
+   "download": "resources[].video from the search answer (tile.loc.gov MP4).",
+   "max_resolution": "SD digital viewing copies (scans of early film)",
+   "formats": [
+    "mp4"
+   ],
+   "tool": {
+    "search": "api",
+    "download": "api"
+   },
+   "probes": [
+    {
+     "what": "search API",
+     "url": "https://www.loc.gov/search/?q=train&fa=online-format:video&dates=1800/1930&fo=json&c=1"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-11-01",
+    "status": "ok",
+    "http": 200,
+    "detail": "search JSON 200 from the cloud sandbox; 83 films for 'train' up to 1930."
+   },
+   "notes": "Later films on loc.gov are often copyrighted or educational-only, so the tool never returns them."
+  },
+  {
+   "id": "europeana",
+   "name": "Europeana (European film archives)",
+   "url": "https://www.europeana.eu/",
+   "category": "open-collection",
+   "licence_source": true,
+   "licence": {
+    "name": "Per item: open rights statements only (PD Mark, CC0, CC BY, CC BY-SA)",
+    "url": "https://www.europeana.eu/en/rights",
+    "per_item": true,
+    "summary": "Each record carries its own rights URL. The tool asks the API for reusability=open and keeps only CC0, Public Domain Mark, CC BY and CC BY-SA records that point at a direct video file."
+   },
+   "attribution": {
+    "required": true,
+    "per_item": true,
+    "template": "\"{title}\" ({author}), {licence} ({licence_url}), via Europeana: {page_url}"
+   },
+   "commercial_use": "per-item",
+   "commercial_note": "Only open licences are kept; NC and ND records are never returned.",
+   "modification": "per-item",
+   "video_kinds": [
+    "newsreels",
+    "archival film",
+    "European history",
+    "documentary"
+   ],
+   "strengths": "Hundreds of European film archives behind one API with a machine-readable rights URL per clip.",
+   "search_url": "https://www.europeana.eu/en/search?query={query}&qf=TYPE%3A%22VIDEO%22&reusability=open",
+   "search_url_checked": true,
+   "api": {
+    "endpoint": "https://api.europeana.eu/record/v2/search.json",
+    "key_required": true,
+    "key_env": "EUROPEANA_API_KEY",
+    "docs": "https://pro.europeana.eu/page/search",
+    "notes": "Free personal key from pro.europeana.eu (instant). The key travels as wskey in the query string; the tool redacts it from every report."
+   },
+   "download": "edmIsShownBy when it is a direct video file (mp4, mov, webm, ogv); viewer pages and YouTube links are skipped.",
+   "max_resolution": "as supplied by each archive",
+   "formats": [
+    "mp4",
+    "mov",
+    "webm",
+    "ogv"
+   ],
+   "tool": {
+    "search": "api-key",
+    "download": "direct"
+   },
+   "probes": [
+    {
+     "what": "search API (needs a key)",
+     "url": "https://api.europeana.eu/record/v2/search.json?query=cairo&qf=TYPE:VIDEO&reusability=open&rows=1"
+    }
+   ],
+   "reachability": {
+    "checked_on": "2026-11-01",
+    "status": "needs-key",
+    "http": 200,
+    "detail": "search JSON 200 from the cloud sandbox with Europeana's public demo key; set EUROPEANA_API_KEY for real use."
+   },
+   "notes": "A record's rights are the providing archive's statement; keep the credit line with the project."
+  },
+  {
    "id": "esa",
    "name": "ESA Multimedia (videos)",
    "url": "https://www.esa.int/ESA_Multimedia/Videos",

@@ -259,6 +259,169 @@
         ".claude/skills/kosif-superpowers/scripts/catalog_evidence_audit.py"
       ],
       "why": "audit catalog evidence before claiming anything"
+    },
+    "tool:capability-atlas": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/capability_atlas.py",
+        "search",
+        "{task}",
+        "--top",
+        "10",
+        "--json"
+      ],
+      "why": "search the capability atlas for the task (read-only)"
+    },
+    "tool:powers": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/powers.py",
+        "suggest",
+        "{task}",
+        "--limit",
+        "12",
+        "--json"
+      ],
+      "why": "suggest catalog powers for the task"
+    },
+    "tool:requirements": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/requirements.py",
+        "plan",
+        "{task}",
+        "--limit",
+        "8",
+        "--json"
+      ],
+      "why": "list what the task needs installed (prints, never installs)"
+    },
+    "tool:superpowers-unified": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/superpowers_unified.py",
+        "plan",
+        "{task}"
+      ],
+      "why": "unified superpowers plan (plan is read-only; install is never called)"
+    },
+    "tool:superpower-fusion": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/superpower_fusion.py",
+        "suggest",
+        "{task}"
+      ],
+      "why": "suggest fused superpowers for the task"
+    },
+    "tool:kosif-groups": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/kosif_hubs.py",
+        "route",
+        "{task}"
+      ],
+      "why": "route the task to KOSIF groups (route only, never install)"
+    },
+    "tool:drawing-methods": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/drawing_methods.py",
+        "find",
+        "{task}"
+      ],
+      "why": "drawing methods that fit the task"
+    },
+    "tool:style-atlas-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/style_atlas_bridge.py",
+        "search",
+        "{task}"
+      ],
+      "why": "search the style atlas"
+    },
+    "tool:style-library": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/style_library.py",
+        "find",
+        "{task}"
+      ],
+      "why": "find matching visual styles"
+    },
+    "tool:mosamem-rea-fusion": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/mosamem_rea_fusion.py",
+        "plan",
+        "{task}"
+      ],
+      "why": "Mosamem/REA plan (plan only, nothing run)"
+    },
+    "tool:business-workflows": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/business_workflows.py",
+        "search",
+        "{task}"
+      ],
+      "why": "search business workflows"
+    },
+    "tool:superskills-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/superskills_bridge.py",
+        "find",
+        "{task}"
+      ],
+      "why": "find vendored superskills (index read only)"
+    },
+    "tool:superskills": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/superskills.py",
+        "find",
+        "{task}"
+      ],
+      "why": "find superskills (find only, no install)"
+    },
+    "tool:source-scout": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/source_scout.py",
+        "suggest",
+        "{task}",
+        "--limit",
+        "3"
+      ],
+      "why": "suggest local open-source references"
+    },
+    "tool:creative-external-search": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/creative_external_search.py",
+        "search",
+        "{task}",
+        "--top",
+        "5"
+      ],
+      "why": "search the local creative index"
     }
   }
 }

@@ -89,7 +89,7 @@ THUMB_CAP_MB = 5
 PREVIEW_CAP_MB = 25       # a 360p preview file, never the full clip
 RESULTS_HISTORY = 100     # searches remembered in the results file
 VIDEO_EXT = (".mp4", ".m4v", ".mov", ".webm", ".mkv", ".ogv", ".ogg", ".mpeg", ".mpg", ".avi")
-KEY_ENV = {"pexels": "PEXELS_API_KEY", "pixabay": "PIXABAY_API_KEY"}
+KEY_ENV = {"pexels": "PEXELS_API_KEY", "pixabay": "PIXABAY_API_KEY", "europeana": "EUROPEANA_API_KEY"}
 
 REQUIRED_TOP = ("schema", "checked_on", "about", "notice", "template_fields", "sources")
 REQUIRED_SOURCE = ("id", "name", "url", "category", "licence_source", "licence", "attribution", "commercial_use",
@@ -301,7 +301,7 @@ def _keys_in_env() -> list:
 def redact(text) -> str:
     """Remove API keys from a URL or message: key=... query values and any key value present in the environment."""
     s = str(text)
-    s = re.sub(r"(?i)([?&](?:key|api_key|apikey|token|access_token|auth|signature|sig)=)[^&#\s]+", r"\1***", s)
+    s = re.sub(r"(?i)([?&](?:key|wskey|api_key|apikey|token|access_token|auth|signature|sig)=)[^&#\s]+", r"\1***", s)
     for k in _keys_in_env():
         if len(k) >= 6:
             s = s.replace(k, "***")
@@ -1546,6 +1546,110 @@ def search_coverr(http: Http, db: dict, query: str, limit: int, opts: dict) -> l
     return results
 
 
+# ------------------------------------------------------------------------------------------------- Library of Congress
+
+LOC_SEARCH = "https://www.loc.gov/search/"
+LOC_RIGHTS = "https://www.loc.gov/legal/understanding-copyright/"
+
+
+def loc_pd_year(today: _dt.date | None = None) -> int:
+    """Latest publication year that is public domain in the US on `today` (works published 95 years ago entered it
+    on 1 January): 1930 in 2026."""
+    return (today or _dt.datetime.now(_dt.timezone.utc).date()).year - 96
+
+
+def loc_search_url(query: str, limit: int, pd_year: int | None = None) -> str:
+    q = {"q": query, "fa": "online-format:video", "dates": f"1800/{pd_year or loc_pd_year()}", "fo": "json",
+         "c": str(max(1, min(limit * 2, 100))), "at": "results"}
+    return LOC_SEARCH + "?" + urllib.parse.urlencode(q)
+
+
+def _loc_year(r: dict):
+    m = re.match(r"\s*(\d{4})", str(r.get("date") or ""))
+    return int(m.group(1)) if m else None
+
+
+def parse_loc(db: dict, data: dict, pd_year: int | None = None) -> list:
+    """Library of Congress films published in or before `pd_year`, with a downloadable MP4. Anything later, undated,
+    access-restricted or without a video file is left out: the year is what makes a clip public domain in the US."""
+    pd_year = pd_year or loc_pd_year()
+    out = []
+    for r in (data or {}).get("results") or []:
+        year = _loc_year(r)
+        if r.get("access_restricted") or year is None or year > pd_year:
+            continue
+        res = next((x for x in r.get("resources") or [] if isinstance(x, dict) and isinstance(x.get("video"), str)), None)
+        video = https(res["video"]) if res else None
+        if not video or not video.lower().endswith(VIDEO_EXT) or urllib.parse.urlsplit(video).hostname != "tile.loc.gov":
+            continue
+        page = https(r.get("url") or r.get("id") or "")
+        native = page.rstrip("/").rsplit("/", 1)[-1] if page else video.rsplit("/", 1)[-1]
+        lic = licence_record(f"Public domain in the US (published {year}, on or before {pd_year})", LOC_RIGHTS,
+                             attribution=False, commercial=True, derivatives=True, share_alike=False,
+                             note="US public domain by publication year; the Library asks for its credit line, and "
+                                  "a film can still be protected in other countries: check before use abroad")
+        contrib = [c for c in r.get("contributor") or [] if "library of congress" not in str(c).lower()]
+        thumb = res.get("image") if isinstance(res.get("image"), str) else None
+        out.append(make_result(db, "loc", native, title=r.get("title"), page_url=page, file_url=video, licence=lic,
+                               author=contrib[0].title() if contrib else None, mime="video/mp4",
+                               flags=["us-public-domain", "check-abroad"],
+                               thumb_url=("https:" + thumb) if thumb and thumb.startswith("//") else thumb,
+                               extra={"native": {"year": year}}))
+    return out
+
+
+def search_loc(http: Http, db: dict, query: str, limit: int, opts: dict) -> list:
+    return parse_loc(db, http.get_json(loc_search_url(query, limit)))
+
+
+# ------------------------------------------------------------------------------------------------- Europeana
+
+EUROPEANA_SEARCH = "https://api.europeana.eu/record/v2/search.json"
+
+
+def europeana_search_url(key: str, query: str, limit: int) -> str:
+    q = [("wskey", key), ("query", query), ("qf", "TYPE:VIDEO"), ("reusability", "open"), ("media", "true"),
+         ("profile", "rich"), ("rows", str(max(1, min(limit * 3, 100))))]
+    return EUROPEANA_SEARCH + "?" + urllib.parse.urlencode(q)
+
+
+def _first(v):
+    if isinstance(v, list):
+        return next((x for x in v if isinstance(x, str) and x.strip()), None)
+    return v if isinstance(v, str) and v.strip() else None
+
+
+def parse_europeana(db: dict, data: dict) -> list:
+    """Europeana videos whose rights statement is an open licence (PD, CC0, CC BY, CC BY-SA) and whose
+    edmIsShownBy is a direct video file. Links to YouTube or a viewer page are skipped: they are not a file to
+    download, and the platform rules there are not Europeana's."""
+    out = []
+    for it in (data or {}).get("items") or []:
+        rights, shown = _first(it.get("rights")), _first(it.get("edmIsShownBy"))
+        if not rights or not shown:
+            continue
+        lic = classify_licence(None, rights)
+        if not lic.get("verified") or lic.get("commercial") is False or lic.get("derivatives") is False:
+            continue
+        url = https(shown)
+        if not url or not urllib.parse.urlsplit(url).path.lower().endswith(VIDEO_EXT):
+            continue
+        native = str(it.get("id") or "").strip("/").replace("/", "_") or url.rsplit("/", 1)[-1]
+        page = "https://www.europeana.eu/item" + str(it.get("id") or "") if it.get("id") else _first(it.get("edmIsShownAt"))
+        ext = urllib.parse.urlsplit(url).path.lower().rsplit(".", 1)[-1]
+        out.append(make_result(db, "europeana", native, title=_first(it.get("title")), page_url=page, file_url=url,
+                               licence=lic, author=_first(it.get("dcCreator")) or _first(it.get("dataProvider")),
+                               mime={"mov": "video/quicktime", "webm": "video/webm", "ogv": "video/ogg"}.get(ext, "video/mp4"),
+                               thumb_url=_first(it.get("edmPreview")),
+                               extra={"native": {"data_provider": _first(it.get("dataProvider")),
+                                                 "year": _first(it.get("year"))}}))
+    return out
+
+
+def search_europeana(http: Http, db: dict, query: str, limit: int, opts: dict) -> list:
+    return parse_europeana(db, http.get_json(europeana_search_url(api_key("europeana"), query, limit)))
+
+
 SEARCHERS = {
     "wikimedia": search_wikimedia,
     "archive": search_archive,
@@ -1554,6 +1658,8 @@ SEARCHERS = {
     "pixabay": search_pixabay,
     "mixkit": search_mixkit,
     "coverr": search_coverr,
+    "loc": search_loc,
+    "europeana": search_europeana,
 }
 
 

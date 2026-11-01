@@ -4,7 +4,7 @@
 >
 > **التحميل الخفيف / light loading:** لا تقرأ ملفات المهارات الكبيرة كاملة. اقرأ الخريطة الخفيفة أولًا <https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/LOADER.md> (كل المهارات والمجموعات والملاحق وأرقام أسطر أقسام كل `SKILL.md`)، ثم افتح الملف أو نطاق الأسطر المطابق للطلب فقط. في المستودع: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`.
 
-> آخر تحديث: 01-11-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v6.4) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
+> آخر تحديث: 01-11-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v6.5) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
 
 ## الفهرس / contents
 - FusionForge v2 — وصفة لكل تجربة، وتعلّم من كل تجربة داخل المشروع نفسه
@@ -13,7 +13,7 @@
 
 ---
 
-فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v6.4** (مع محرك الوصفات FusionForge v2) باعتباره منهج العمل الأساسي في هذا المشروع.
+فعّل بروتوكول **KOSIF Superpowers × KOSIF SEE — USIP v6.5** (مع محرك الوصفات FusionForge v2) باعتباره منهج العمل الأساسي في هذا المشروع.
 
 **SEE Pro Cognitive Fusion:** في المهام L2/L3 المعقدة أو عندما أطلب تطوير الذكاء، اقرأ الملحق [A12 — SEE Pro Cognitive Fusion](references/protocol/A12-see-pro-cognitive-fusion.md) بعد النواة، وطبّق 11 عدسة Stage-0 بصورة متناسبة. اجمع قدرات Superpowers في Workflow سببي بأنواع مدخلات ومخرجات واضحة؛ اختر حزم SEE التسع حسب الحاجة فقط (Standard 2/1، Deep 4/2)، واعرض 3 خطط مختلفة واختبر baseline والحل الجديد، واسألني الأسئلة المؤثرة على الإبداع فقط. بوابة scripts/see_pro_cognitive_gate.py تفحص عقد التفكير ولا تزعم تشغيل أدوات. **Full Pro لا يُعتبر منفذًا إلا بإيصال خاص بنفس الطلب من مالكه KOSIF Think.** لا تنسخ بيانات الشركات أو أصول الخدمات الخارجية.
 
