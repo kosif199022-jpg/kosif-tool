@@ -15,15 +15,15 @@ This bridge offers four stable MCP tools, not thousands of invented executors. I
 From the repository root:
 
 ~~~bash
-python3 .claude/skills/kosif-superpowers/scripts/claude_tool_bridge.py inventory
-python3 .claude/skills/kosif-superpowers/scripts/claude_tool_bridge.py search "تحليل مالي" --limit 10
-python3 .claude/skills/kosif-superpowers/scripts/claude_tool_bridge.py plan "أراجع تقرير مالي"
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py inventory
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py search "تحليل مالي" --limit 10
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py plan "أراجع تقرير مالي"
 ~~~
 
 Register Claude Code using an **absolute path** to the repository checkout:
 
 ~~~bash
-claude mcp add --transport stdio kosif-superpowers -- python3 /ABSOLUTE/PATH/kosif-tool/.claude/skills/kosif-superpowers/scripts/claude_tool_bridge.py serve
+claude mcp add --transport stdio kosif-superpowers -- python3 /ABSOLUTE/PATH/kosif-tool/.claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py serve
 ~~~
 
 Verify with Claude Code /mcp. GitHub commits alone do not connect an external Claude account.
@@ -42,7 +42,7 @@ Discovery is not execution. Missing runtime permissions mean blocked, not succee
 Claude's custom skill ZIP expects SKILL.md at archive root. The exporter copies every file from the selected installed skill directory, keeps relative resource paths, adds per-file SHA-256 manifest and fails closed on partial exports, size limits or symlinks.
 
 ~~~bash
-python3 .claude/skills/kosif-superpowers/scripts/claude_tool_bridge.py export-skill kosif-superpowers --out out/kosif-superpowers-claude.zip --max-mb 512
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py export-skill kosif-superpowers --out out/kosif-superpowers-claude.zip --max-mb 512
 ~~~
 
 Replace kosif-superpowers with an exact directory name under .claude/skills/ to export that skill. Upload the ZIP to Claude under Customize → Skills with code execution enabled, subject to Anthropic's size/plan restrictions. For Claude Code, the existing project .claude/skills/<name>/SKILL.md tree can be discovered without an upload. The exporter does not upload for you.
