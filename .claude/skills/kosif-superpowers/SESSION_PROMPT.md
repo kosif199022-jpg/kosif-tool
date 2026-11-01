@@ -4,7 +4,7 @@
 >
 > **التحميل الخفيف / light loading:** لا تقرأ ملفات المهارات الكبيرة كاملة. اقرأ الخريطة الخفيفة أولًا <https://raw.githubusercontent.com/kosif199022-jpg/kosif-tool/main/.claude/skills/kosif-superpowers/LOADER.md> (كل المهارات والمجموعات والملاحق وأرقام أسطر أقسام كل `SKILL.md`)، ثم افتح الملف أو نطاق الأسطر المطابق للطلب فقط. في المستودع: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`.
 
-> آخر تحديث: 26-10-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v6.4) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
+> آخر تحديث: 01-11-2026 · المصدر: `kosif199022-jpg/kosif-tool` → `.claude/skills/kosif-superpowers/SESSION_PROMPT.md` · تطابق `PROTOCOL.md` (USIP v6.4) بمعانيه؛ وعند أي اختلاف فالبروتوكول هو المرجع.
 
 ## الفهرس / contents
 - FusionForge v2 — وصفة لكل تجربة، وتعلّم من كل تجربة داخل المشروع نفسه
