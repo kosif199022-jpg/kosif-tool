@@ -130,3 +130,146 @@ def council_plan(task: str, activation: dict) -> dict:
     raw = json.dumps(out, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     out["plan_sha256"] = hashlib.sha256(raw.encode("utf-8")).hexdigest()
     return out
+
+
+def _static_source(record: dict, repo_root: Path, skill_root: Path) -> dict:
+    """Read and fingerprint a registered tool's source; never import or run it."""
+    raw = record.get("path")
+    root_name = record.get("root", "repo")
+    if root_name not in ("repo", "skill") or not isinstance(raw, str) or not raw.strip():
+        return {"status": "invalid_metadata", "reason": "Missing path or unsupported root"}
+    rel = Path(raw)
+    if rel.is_absolute() or ".." in rel.parts:
+        return {"status": "unsafe_path", "reason": "Absolute/traversal source path"}
+    root = (skill_root if root_name == "skill" else repo_root).resolve()
+    target = root / rel
+    if any(node.is_symlink() for node in (target, *target.parents) if node != root):
+        return {"status": "unsafe_path", "reason": "Symlink in source path"}
+    if not target.resolve().is_relative_to(root):
+        return {"status": "unsafe_path", "reason": "Source escapes declared root"}
+    if not target.is_file():
+        return {"status": "missing_source", "reason": "Declared source file does not exist"}
+    try:
+        digest = hashlib.sha256()
+        with target.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(65536), b""):
+                digest.update(chunk)
+    except OSError as exc:
+        return {"status": "source_unreadable", "reason": type(exc).__name__}
+    return {"status": "inspected", "source": f"{root_name}/{rel.as_posix()}",
+            "source_sha256": digest.hexdigest()}
+
+
+def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
+                         tool_records: dict, repo_root: Path, skill_root: Path,
+                         mode: str = "all") -> dict:
+    """Inventory -> static inspection -> dependency plan -> approval gate.
+
+    Covers ALL registered catalog tools in either mode; all mode selects ALL
+    reviewed adapters, not arbitrary scripts. There is no subprocess/import of
+    catalog tools and the result never grants permission to execute.
+    """
+    from collections import Counter
+
+    if not isinstance(tool_records, dict):
+        raise ValueError("Tool registry must be keyed by catalog ID")
+    plan, selected, activation = select(task, inventory, adapters, mode, skill_root)
+    if set(plan["items"]) != set(inventory):
+        raise ValueError("Incomplete capability catalog")
+    tool_ids = sorted(k for k, meta in inventory.items() if meta.get("kind") == "tool")
+    rows = {}
+    for key in tool_ids:
+        record = tool_records.get(key)
+        detail = (_static_source(record, repo_root, skill_root)
+                  if isinstance(record, dict)
+                  else {"status": "missing_metadata", "reason": "No matching tools.json record"})
+        spec = selected.get(key)
+        adapter_status = "not_selected" if key in adapters else "not_reviewed"
+        if spec is not None:
+            script = spec.get("script")
+            arguments = spec.get("args", [])
+            if not isinstance(script, str) or not isinstance(arguments, list) or not all(
+                    isinstance(arg, str) for arg in arguments):
+                adapter_status = "invalid_manifest"
+            else:
+                adapter_status = _static_source(
+                    {"root": "repo", "path": script}, repo_root, skill_root)["status"]
+                adapter_status = ("reviewed_candidate" if adapter_status == "inspected"
+                                  else "adapter_" + adapter_status)
+        item = plan["items"][key]
+        purpose_fields = ("title_ar", "title_en", "summary_ar", "summary_en", "use_when", "area")
+        purpose = " | ".join(str(record[k]) for k in purpose_fields
+                             if isinstance(record, dict) and record.get(k))[:600]
+        safety = str(record.get("safety") or "unknown") if isinstance(record, dict) else "unknown"
+        rows[key] = {
+            "id": key, "purpose": purpose or key,
+            "kind": str(record.get("kind") or "undocumented") if isinstance(record, dict) else "unregistered",
+            "stage": item["part"], "priority": item["priority"],
+            "weight": item["weight"], "application": item["application"],
+            "depends_on": item["depends_on"], "risk": safety,
+            "inspection": detail, "adapter_status": adapter_status,
+            "selected": key in selected,
+            "execution_authorized": False,
+        }
+    # Validate source inspection before calling anything a runnable candidate.
+    candidates = {k for k, row in rows.items()
+                  if row["inspection"]["status"] == "inspected"
+                  and row["adapter_status"] == "reviewed_candidate"}
+    # A candidate cannot run if one of its adapter dependencies is not eligible.
+    eligible = set(candidates)
+    changed = True
+    while changed:
+        blocked = {key for key in eligible if any(
+            dep not in selected or
+            (dep.startswith("tool:") and dep not in eligible)
+            for dep in plan["items"][key]["depends_on"])}
+        changed = bool(blocked)
+        eligible -= blocked
+    for key, row in rows.items():
+        row["readiness"] = (
+            "candidate_requires_approval" if key in eligible else
+            "dependency_blocked" if key in candidates else
+            "inspection_blocked" if row["inspection"]["status"] != "inspected" else
+            "review_required" if key in adapters else "knowledge_only"
+        )
+    stage_order = list(plan["parts"])
+    stages = []
+    for stage in stage_order:
+        members = sorted((key for key in tool_ids if rows[key]["stage"] == stage),
+                         key=lambda key: (-rows[key]["priority"], key))
+        stages.append({"id": stage, "name": plan["parts"][stage]["ar"],
+                       "tool_count": len(members), "tools": members})
+    # The brain already computed dependency-correct waves over the full catalog.
+    # Preserve them; never reorder by stage in a way that violates dependencies.
+    waves = [[key for key in wave if key in eligible]
+             for wave in plan["waves"]]
+    waves = [wave for wave in waves if wave]
+    result = {
+        "schema": "kosif.black-dragon.tool-inspection.v1",
+        "task": task, "mode": mode, "status": "planned_not_executed",
+        "activation": activation,
+        "catalog": {"examined": len(inventory), "assigned": len(plan["items"]),
+                    "assignment_sha256": plan["assignment_sha256"]},
+        "tools": rows, "stages": stages, "dependency_waves": waves,
+        "council": council_plan(task, activation),
+        "counts": {
+            "catalog_tools": len(tool_ids),
+            "statically_inspected": sum(r["inspection"]["status"] == "inspected" for r in rows.values()),
+            "missing_or_unsafe": sum(r["inspection"]["status"] != "inspected" for r in rows.values()),
+            "reviewed_adapters_selected": len(selected),
+            "tool_candidates_after_dependencies": len(eligible),
+            "execution_attempts": 0,
+        },
+        "approval_gate": {
+            "required": True, "approved": False,
+            "conditions": ["review purpose, permissions and dependency waves",
+                           "approve external/write/paid actions independently",
+                           "verify actual outputs and receipts after execution"],
+        },
+        "limitations": ("Static inspection verifies metadata, local paths and hashes; it does not "
+                        "prove that a tool works. Assignment is not execution. Council is a planned "
+                        "review contract, not five completed independent reviews."),
+    }
+    raw = json.dumps(result, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+    result["plan_sha256"] = hashlib.sha256(raw.encode("utf-8")).hexdigest()
+    return result
