@@ -47,13 +47,19 @@ def words(text: str) -> set[str]:
 
 
 def frontmatter(md: str) -> dict:
+    """Top-level keys of the YAML frontmatter, with folded/literal (`>-`, `|`) and indented continuation lines
+    joined, so a multi-line description is read as text and not as its block marker."""
     m = re.match(r"^---\n(.*?)\n---\n", md, re.S)
-    out = {}
+    out, key = {}, None
     if m:
         for line in m.group(1).splitlines():
             k, sep, v = line.partition(":")
-            if sep and not line.startswith(" "):
-                out[k.strip()] = v.strip().strip('"')
+            if sep and not line.startswith((" ", "\t")):
+                key = k.strip()
+                v = v.strip()
+                out[key] = "" if re.fullmatch(r"[|>][-+]?", v) else v.strip('"')
+            elif key and line.strip():
+                out[key] = (out[key] + " " + line.strip()).strip()
     return out
 
 

@@ -45,7 +45,7 @@ python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "<طلب ا
   --job out/black-dragon/<job-جديد> --workers 8 --probe-tools --reviewed-adapters --execute-adapters
 ```
 
-المحوّلات المراجَعة (`data/black_dragon_adapters.json`): 24 أداة للقراءة بس (البريف، `hub find`، الاكتشاف، الموجّهات، التفكير، اختبارات المجلس والبوابة الذاتية، معيار التصدير، قواعد agent-guard، تدقيق الأدلة...) بتشتغل على الطلب عن طريق `scripts/_black_dragon_exec.py`، اللي بيحتفظ بكود خروج الأداة نفسها.
+المحوّلات المراجَعة (`data/black_dragon_adapters.json`): 24 أداة في v6.4، وبقوا 39 في v6.5 ([A49](A49-v65-dragon-in-pipeline.md))، كلها للقراءة بس (البريف، `hub find`، الاكتشاف، الموجّهات، التفكير، اختبارات المجلس والبوابة الذاتية، معيار التصدير، قواعد agent-guard، تدقيق الأدلة...) بتشتغل على الطلب عن طريق `scripts/_black_dragon_exec.py`، اللي بيحتفظ بكود خروج الأداة نفسها.
 
 ## 5. الرد على المالك (إلزامي)
 

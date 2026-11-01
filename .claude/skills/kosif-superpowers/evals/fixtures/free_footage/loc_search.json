@@ -1,0 +1,13 @@
+{"results": [
+ {"id": "http://www.loc.gov/item/00694211/", "url": "https://www.loc.gov/item/00694211/", "title": "Synthetic freight train", "date": "1898",
+  "access_restricted": false, "contributor": ["thomas a. edison, inc", "paper print collection (library of congress)"],
+  "resources": [{"image": "//tile.loc.gov/storage-services/service/mbrs/ntscrm/00047124/00047124.gif", "video": "https://tile.loc.gov/storage-services/service/mbrs/ntscrm/00047124/00047124.mp4"}]},
+ {"id": "http://www.loc.gov/item/late01/", "url": "https://www.loc.gov/item/late01/", "title": "Synthetic newsreel too late", "date": "1931-05-01",
+  "access_restricted": false, "resources": [{"video": "https://tile.loc.gov/storage-services/service/mbrs/x/late01.mp4"}]},
+ {"id": "http://www.loc.gov/item/restricted01/", "url": "https://www.loc.gov/item/restricted01/", "title": "Synthetic restricted film", "date": "1910",
+  "access_restricted": true, "resources": [{"video": "https://tile.loc.gov/storage-services/service/mbrs/x/r01.mp4"}]},
+ {"id": "http://www.loc.gov/item/nodate01/", "url": "https://www.loc.gov/item/nodate01/", "title": "Synthetic undated film",
+  "access_restricted": false, "resources": [{"video": "https://tile.loc.gov/storage-services/service/mbrs/x/nd01.mp4"}]},
+ {"id": "http://www.loc.gov/item/offsite01/", "url": "https://www.loc.gov/item/offsite01/", "title": "Synthetic offsite film", "date": "1902",
+  "access_restricted": false, "resources": [{"video": "https://example.org/film.mp4"}]}
+]}
