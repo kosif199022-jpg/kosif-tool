@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import concurrent.futures
 import hashlib
+import hmac
 import json
 import os
 import re
@@ -116,6 +117,56 @@ def _file_hash(path: Path) -> str:
     return dragon.audit.sha256(path)
 
 
+def _bounded_runtime(workers: int, timeout: int) -> None:
+    if type(workers) is not int or not 1 <= workers <= MAX_WORKERS:
+        raise ValueError("workers must be 1..4")
+    if type(timeout) is not int or not 1 <= timeout <= MAX_TIMEOUT:
+        raise ValueError("timeout must be 1..120")
+
+
+def preview(task: str, ids: list[str], *, workers: int = 2, timeout: int = 60) -> dict:
+    """Stable, read-only approval plan; never executes an adapter or creates a job.
+
+    The SHA binds exact task, selected IDs, prerequisite waves, adapter
+    definitions and script contents. It is NOT user consent or a signature.
+    """
+    task = _check_task(task)
+    _bounded_runtime(workers, timeout)
+    catalog, registered = _inventory(), _registry()
+    selected, adapters = _select(ids, catalog, registered)
+    strategy = brain.plan(task, selected, adapters)
+    scripts = []
+    for key in sorted(selected):
+        spec = adapters[key]
+        path = dragon._safe_script(spec["script"])
+        if not any("{artifact}" in arg for arg in spec.get("args", [])):
+            raise ValueError("Adapter needs {artifact} output placeholder: " + key)
+        scripts.append({
+            "id": key, "script": spec["script"], "script_sha256": _file_hash(path),
+            "adapter_sha256": hashlib.sha256(json.dumps(
+                spec, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode("utf-8")).hexdigest(),
+            "depends_on": sorted(spec.get("depends_on", [])),
+        })
+    packet = {
+        "schema": SCHEMA + ".approval-plan",
+        "task": task,
+        "selected": sorted(selected),
+        "waves": strategy["waves"],
+        "workers": workers, "timeout": timeout,
+        "scripts": scripts,
+        "catalog_fingerprint": dragon.audit.fingerprint(catalog),
+        "registry_sha256": _file_hash(dragon.REVIEWED_ADAPTERS),
+    }
+    serialized = json.dumps(packet, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+    return {
+        **packet,
+        "approval_digest": hashlib.sha256(serialized.encode("utf-8")).hexdigest(),
+        "execution_performed": False, "runtime_verified": False,
+        "scope": "selected-reviewed-only",
+        "approval_required": "Review exact IDs/commands and provide separate explicit consent; digest alone grants no permission",
+    }
+
+
 def _inside_file(file: str, job: Path, subfolder: str) -> Path:
     raw = Path(file)
     expected = (job / subfolder).resolve()
@@ -135,14 +186,18 @@ def review(job_name: str) -> dict:
     if data.get("schema") != SCHEMA or data.get("scope") != "selected-reviewed-only":
         raise ValueError("Invalid reviewed execution ledger")
     selected = data.get("selected")
-    if not isinstance(selected, list) or len(selected) != len(set(selected)):
+    if (not isinstance(selected, list) or not 1 <= len(selected) <= MAX_SELECTED or
+            any(not isinstance(k, str) for k in selected) or len(selected) != len(set(selected))):
         raise ValueError("Invalid selected IDs")
     entries = data.get("entries", {})
-    if set(selected) != set(entries):
+    if not isinstance(entries, dict) or set(selected) != set(entries):
         raise ValueError("Missing or extra selected entries")
     issues, counts = [], Counter()
     for key in selected:
         item = entries[key]
+        if not isinstance(item, dict):
+            issues.append(key + ": malformed ledger entry")
+            continue
         status = item.get("status")
         counts[status] += 1
         if status == "executed":
@@ -169,16 +224,20 @@ def review(job_name: str) -> dict:
 
 
 def execute(task: str, ids: list[str], job_name: str, *,
-            permission: bool = False, workers: int = 2, timeout: int = 60) -> dict:
+            permission: bool = False, workers: int = 2, timeout: int = 60,
+            approval_digest: str | None = None) -> dict:
     """Explicitly selected, reviewed and independently verifiable local adapters."""
     task = _check_task(task)
     job = _job(job_name)
     if permission is not True or os.environ.get("KOSIF_ALLOW_ADAPTER_EXECUTION") != "1":
         raise PermissionError("Reviewed execution requires explicit MCP permission and KOSIF_ALLOW_ADAPTER_EXECUTION=1")
-    if type(workers) is not int or not 1 <= workers <= MAX_WORKERS:
-        raise ValueError("workers must be 1..4")
-    if type(timeout) is not int or not 1 <= timeout <= MAX_TIMEOUT:
-        raise ValueError("timeout must be 1..120")
+    _bounded_runtime(workers, timeout)
+    if approval_digest is not None:
+        if not isinstance(approval_digest, str) or not re.fullmatch(r"[0-9a-f]{64}", approval_digest):
+            raise ValueError("Invalid approval_digest")
+        current = preview(task, ids, workers=workers, timeout=timeout)["approval_digest"]
+        if not hmac.compare_digest(approval_digest, current):
+            raise PermissionError("Approval plan changed; preview the exact task, IDs, adapters and scripts again")
     catalog, registered = _inventory(), _registry()
     selected, adapters = _select(ids, catalog, registered)
     strategy = brain.plan(task, selected, adapters)
@@ -225,6 +284,7 @@ def execute(task: str, ids: list[str], job_name: str, *,
             value["reason"] = str(outcome.get("reason", "Unknown"))[:180]
         entries[key] = value
     ledger = {"schema": SCHEMA, "scope": "selected-reviewed-only", "task": task,
+              "approval_digest": approval_digest,
               "catalog_size": len(catalog), "selected": sorted(selected), "entries": entries,
               "catalog_fingerprint": dragon.audit.fingerprint(catalog),
               "reviewed_registry_sha256": _file_hash(dragon.REVIEWED_ADAPTERS)}
