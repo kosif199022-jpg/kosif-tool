@@ -1918,6 +1918,11 @@
    "label": "scripts/black_dragon.py"
   },
   {
+   "id": "script:scripts/_claude_skill_tool_factory.py",
+   "kind": "script",
+   "label": "scripts/_claude_skill_tool_factory.py"
+  },
+  {
    "id": "script:scripts/_claude_tool_bridge.py",
    "kind": "script",
    "label": "scripts/_claude_tool_bridge.py"
@@ -6810,6 +6815,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_claude_skill_tool_factory.py",
+   "to": "script:scripts/black_dragon.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_claude_tool_bridge.py",
    "to": "script:scripts/_black_dragon_brain.py",
    "rel": "imports",
@@ -6818,6 +6829,12 @@
   {
    "from": "script:scripts/_claude_tool_bridge.py",
    "to": "script:scripts/_claude_reviewed_router.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_claude_tool_bridge.py",
+   "to": "script:scripts/_claude_skill_tool_factory.py",
    "rel": "imports",
    "w": 1
   },
