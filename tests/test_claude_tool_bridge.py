@@ -22,7 +22,8 @@ class BridgeTests(unittest.TestCase):
         init = bridge.respond(req("initialize", {"protocolVersion": "2025-11-25"}))
         self.assertEqual(init["result"]["serverInfo"]["name"], "kosif-superpowers-bridge")
         names = {x["name"] for x in bridge.respond(req("tools/list"))["result"]["tools"]}
-        self.assertEqual(names, {"kosif_search", "kosif_describe", "kosif_plan_pro_max", "kosif_run_pro_max"})
+        self.assertEqual(names, {"kosif_search", "kosif_describe", "kosif_plan_pro_max", "kosif_run_pro_max",
+                                 "kosif_route_reviewed", "kosif_execute_reviewed", "kosif_review_execution"})
         self.assertEqual(bridge.respond(req("unknown"))["error"]["code"], -32601)
         self.assertIsNone(bridge.respond({"jsonrpc": "2.0", "method": "notifications/initialized"}))
 
