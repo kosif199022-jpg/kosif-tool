@@ -148,3 +148,26 @@ python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py \
 The selected IDs above are **examples**; verify they are present in the current registry and match the task before use. A preview requires every dependency to be explicitly listed. It never executes a script or writes a job. A changed source hash, registry, dependency, task, worker limit or timeout invalidates the digest at the subsequent MCP execution call. This is a local integrity binding, not cryptographic identity verification or a guarantee that other processes cannot modify files between verification and spawn. The three explicit execution approvals still apply; the OS process remains unsandboxed.
 
 Read-only audit was tightened: an empty or structurally invalid selected-job ledger no longer counts as a valid successful run.
+
+
+## Black Dragon Pro Max v1.4 — critical-path reasoning and independent evidence audit
+
+The existing exhaustive engine still assigns every capability a part, mode and brief. **v1.4** adds a deterministic dependency map in `black_dragon_pro_max_plan.json` and the final JSON report:
+
+- `execution_adapter_ready`: how many entries have a reviewed adapter in this plan, not how many have executed
+- `dependency_waves` and `max_parallel_wave_width`: graph structure, not performance predictions
+- `critical_path_length` and `critical_path`: longest chain of explicit adapter prerequisites, not measured duration
+- `documentation_or_unreviewed`: catalog entries without adapters; cannot be counted as executed
+
+A stronger Pro Max QA independently reopens each assigned brief, ledger entry, receipt JSON and artifact. It checks each receipt SHA-256, content/exit-code/entry/command agreement, nonempty artifact digest, no evidence escaping its `job/artifacts` and `job/receipts` directories, no symlink traversal, no artifact shared across different entries, blocked/failed reasons, and exact ledger/report counts.
+
+### Verify an existing completed run, without executing code
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py \
+  verify --job out/black-dragon/pro-max-001
+~~~
+
+Exit code **0**: integrity checks passed (even if some capabilities are honestly blocked). Exit code **4**: evidence changed, missing, or inconsistent; code **2**: malformed job or changed catalog. A completed job must be a Pro Max run, with the same installed catalog fingerprint; ordinary `standard` runs have no Pro Max revalidation contract.
+
+This is **local file integrity, not cryptographic attestation**. A malicious actor who can rewrite the ledger, reports and receipts can forge consistent data; the OS account is not sandboxed. The checker does not claim external KOSIF Think execution, extra model intelligence, independent expert deliberation or actual time savings. Do not infer successful business outcomes from a nonempty artifact.

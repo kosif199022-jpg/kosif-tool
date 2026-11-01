@@ -314,6 +314,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                         "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
     report["mode"] = mode
     if pro_max_packet is not None:
+        report["execution_map"] = pro_max_packet["execution_map"]
         qa = pro_max.verify(job, inventory, report)
         report["pro_max"] = {"integrity_passed": qa["integrity_passed"],
                              "every_capability_executed": qa["every_capability_executed"],
@@ -345,6 +346,10 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
         lines.append(f"| {part['ar']} / {part['en']} | {part['assigned']:,} | {leads} |")
     lines += ["", "| الطريقة / mode | entries |", "|---|---:|"]
     lines += [f"| {m} | {n:,} |" for m, n in report["modes"].items()]
+    if "execution_map" in report:
+        m = report["execution_map"]
+        lines += ["", f"- Pro Max dependency critical path: **{m['critical_path_length']}** stages; "
+                  f"reviewed adapter-ready entries: **{m['execution_adapter_ready']}**", ""]
     executed = [k for k, v in ledger["items"].items() if v["status"] == "executed"]
     if executed:
         lines += ["", "## اتنفذ بإيصال / executed with receipt", ""]
@@ -370,6 +375,8 @@ def main(argv=None) -> int:
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
                    help="run --help on every argparse CLI tool as a startup probe")
+    v = sub.add_parser("verify", help="Independently re-audit a completed Pro Max job without execution")
+    v.add_argument("--job", required=True, type=Path)
     q = sub.add_parser("plan", help="Plan every catalog entry without execution")
     q.add_argument("task")
     q.add_argument("--adapters", type=Path)
@@ -382,6 +389,10 @@ def main(argv=None) -> int:
                               "by_kind": Counter(v["kind"] for v in entries.values())},
                              ensure_ascii=False, indent=2))
             return 0
+        if args.command == "verify":
+            result = pro_max.review_job(args.job, full_inventory())
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            return 0 if result["audit"]["integrity_passed"] else 4
         if args.command == "plan":
             inventory = full_inventory()
             adapters = _load_adapters(args.adapters)

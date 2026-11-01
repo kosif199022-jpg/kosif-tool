@@ -1893,14 +1893,19 @@
    "label": "scripts/tell_scan.py"
   },
   {
-   "id": "script:scripts/_black_dragon_pro_max.py",
+   "id": "script:scripts/_black_dragon_evidence_guard.py",
    "kind": "script",
-   "label": "scripts/_black_dragon_pro_max.py"
+   "label": "scripts/_black_dragon_evidence_guard.py"
   },
   {
    "id": "script:scripts/_cinema_all_skills.py",
    "kind": "script",
    "label": "scripts/_cinema_all_skills.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_pro_max.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_pro_max.py"
   },
   {
    "id": "script:scripts/_claude_reviewed_router.py",
@@ -6795,6 +6800,18 @@
    "to": "script:scripts/anchor_gate.py",
    "rel": "runs",
    "w": 2
+  },
+  {
+   "from": "script:scripts/_black_dragon_evidence_guard.py",
+   "to": "script:scripts/_cinema_all_skills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_black_dragon_pro_max.py",
+   "to": "script:scripts/_black_dragon_evidence_guard.py",
+   "rel": "imports",
+   "w": 1
   },
   {
    "from": "script:scripts/_black_dragon_pro_max.py",
