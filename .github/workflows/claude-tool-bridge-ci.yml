@@ -50,7 +50,7 @@ jobs:
                                   text=True, capture_output=True, timeout=20, check=True)
           replies = [json.loads(line) for line in result.stdout.splitlines()]
           assert len(replies) == 2, result.stdout
-          assert len(replies[1]['result']['tools']) == 10
+          assert len(replies[1]['result']['tools']) == 11
           assert replies[0]['result']['serverInfo']['name'] == 'kosif-superpowers-bridge'
-          print('MCP: initialized and listed ten tools')
+          print('MCP: initialized and listed eleven tools')
           PY

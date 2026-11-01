@@ -126,11 +126,85 @@ class ReviewedToolRouterTests(unittest.TestCase):
         with self.assertRaisesRegex(PermissionError, "server"):
             bridge.call_tool("kosif_execute_reviewed", {
                 "task": "finance", "ids": ["tool:finance"],
-                "job_name": "blocked", "allow_execution": True}, False)
+                "job_name": "blocked", "allow_execution": True,
+                "approval_digest": "0" * 64}, False)
         with self.assertRaises(PermissionError):
             bridge.call_tool("kosif_execute_reviewed", {
                 "task": "finance", "ids": ["tool:finance"],
-                "job_name": "blocked", "allow_execution": False}, True)
+                "job_name": "blocked", "allow_execution": False,
+                "approval_digest": "0" * 64}, True)
+
+    def test_preview_is_read_only_and_deterministic(self):
+        before = self.root / "out" / "claude-reviewed-tools"
+        a = router.preview("finance report", ["tool:verify", "tool:finance"])
+        b = router.preview("finance report", ["tool:finance", "tool:verify"])
+        self.assertEqual(a["approval_digest"], b["approval_digest"])
+        self.assertEqual(len(a["approval_digest"]), 64)
+        self.assertEqual(a["waves"], [["tool:finance"], ["tool:verify"]])
+        self.assertEqual(a["selected"], ["tool:finance", "tool:verify"])
+        self.assertFalse(a["execution_performed"])
+        self.assertFalse(before.exists())
+
+    def test_preview_changes_on_task_tool_content_or_runtime(self):
+        first = router.preview("finance", ["tool:finance"])
+        self.assertNotEqual(first["approval_digest"],
+                            router.preview("tax", ["tool:finance"])["approval_digest"])
+        self.assertNotEqual(first["approval_digest"],
+                            router.preview("finance", ["tool:finance"], timeout=61)["approval_digest"])
+        self.assertNotEqual(first["approval_digest"],
+                            router.preview("finance", ["tool:finance", "tool:verify"])["approval_digest"])
+        (self.scripts / "ok.py").write_text("print('new version')\n")
+        self.assertNotEqual(first["approval_digest"],
+                            router.preview("finance", ["tool:finance"])["approval_digest"])
+
+    def test_execution_rejects_changed_approval_plan_before_job(self):
+        digest = router.preview("finance", ["tool:finance"])["approval_digest"]
+        target = self.root / "out" / "claude-reviewed-tools" / "stale"
+        with patch.dict(os.environ, {"KOSIF_ALLOW_ADAPTER_EXECUTION": "1"}):
+            with self.assertRaisesRegex(PermissionError, "Approval plan changed"):
+                router.execute("modified finance", ["tool:finance"], "stale",
+                               permission=True, approval_digest=digest)
+        self.assertFalse(target.exists())
+
+    def test_execution_with_matching_preview_evidence(self):
+        plan = router.preview("finance report", ["tool:finance"])
+        with patch.dict(os.environ, {"KOSIF_ALLOW_ADAPTER_EXECUTION": "1"}):
+            completed = router.execute("finance report", ["tool:finance"],
+                                       "approved", permission=True,
+                                       approval_digest=plan["approval_digest"])
+        self.assertTrue(completed["review"]["selected_subset_fully_executed"])
+        data = json.loads((self.root / "out" / "claude-reviewed-tools" /
+                           "approved" / "reviewed_execution.json").read_text())
+        self.assertEqual(data["approval_digest"], plan["approval_digest"])
+
+    def test_preview_rejects_unreviewed_prerequisites_and_bad_runtime(self):
+        with self.assertRaisesRegex(ValueError, "Explicit prerequisite"):
+            router.preview("finance", ["tool:verify"])
+        with self.assertRaisesRegex(ValueError, "workers must"):
+            router.preview("finance", ["tool:finance"], workers=True)
+
+    def test_review_rejects_forged_empty_selection(self):
+        job = self.root / "out" / "claude-reviewed-tools" / "empty"
+        job.mkdir(parents=True)
+        (job / "reviewed_execution.json").write_text(json.dumps({
+            "schema": router.SCHEMA, "scope": "selected-reviewed-only",
+            "selected": [], "entries": {},
+        }))
+        with self.assertRaisesRegex(ValueError, "Invalid selected IDs"):
+            router.review("empty")
+
+    def test_mcp_preview_and_matching_digest_enforcement(self):
+        params = {"task": "finance", "ids": ["tool:finance"]}
+        p = bridge.call_tool("kosif_preview_reviewed", params)
+        self.assertEqual(p["approval_digest"], router.preview(**params)["approval_digest"])
+        with patch.dict(os.environ, {"KOSIF_ALLOW_ADAPTER_EXECUTION": "1"}):
+            with self.assertRaisesRegex(ValueError, "Invalid tool arguments"):
+                bridge.call_tool("kosif_execute_reviewed", {
+                    **params, "job_name": "needs-preview", "allow_execution": True}, True)
+            result = bridge.call_tool("kosif_execute_reviewed", {
+                **params, "job_name": "mcp-approved", "allow_execution": True,
+                "approval_digest": p["approval_digest"]}, True)
+        self.assertEqual(result["review"]["verified_executed"], 1)
 
     def test_unsafe_job_name_rejected(self):
         with self.assertRaisesRegex(ValueError, "job_name"):

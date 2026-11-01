@@ -8,7 +8,7 @@ KOSIF Superpowers contains three distinct capability types:
 2. MCP tools: callable functions exposed by a local stdio server.
 3. Reviewed runtime adapters: selected Python executors with genuine artifact receipts.
 
-This bridge offers ten stable MCP tools, not thousands of invented executors. It runs locally, without network listeners, cloud tokens, payments or automatic installations.
+This bridge offers eleven stable MCP tools, not thousands of invented executors. It runs locally, without network listeners, cloud tokens, payments or automatic installations.
 
 ## Quick start: read-only MCP for Claude Code
 
@@ -35,7 +35,8 @@ Verify with Claude Code /mcp. GitHub commits alone do not connect an external Cl
 | kosif_plan_pro_max | Exhaustive assignment plan with concise summary | Read-only |
 | kosif_run_pro_max | Generate exhaustive assignment plan, evidence ledger and QA report | Writes one new job under out/; no adapters run without explicit approval |
 | kosif_route_reviewed | Select task-matching reviewed executable adapters and show their prerequisites | Read-only |
-| kosif_execute_reviewed | Execute up to eight explicitly selected and reviewed adapter IDs with genuine SHA-256 receipts | Requires three execution approvals; writes an isolated job |
+| kosif_preview_reviewed | Bind exact task, reviewed IDs, dependency waves, adapter definitions, script hashes and runtime bounds to a SHA-256 plan | Read-only; no job created |
+| kosif_execute_reviewed | Execute only the tool IDs and file versions in a matching approval plan with artifact receipts | Requires matching approval_digest and three execution approvals; writes an isolated job |
 | kosif_review_execution | Recheck receipt hashes and artifacts of a prior selected-tool job | Read-only |
 
 Discovery is not execution. Missing runtime permissions mean blocked, not succeeded.
@@ -53,9 +54,9 @@ python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py route-re
 Example MCP sequence:
 
 1. Call kosif_route_reviewed with task="finance report". Review its suggested exact IDs and required prerequisites.
-2. The user approves a specific short set of IDs and a unique job name.
-3. Start the MCP process with serve --allow-execution and KOSIF_ALLOW_ADAPTER_EXECUTION=1 (separate user authorization).
-4. Call kosif_execute_reviewed with task, ids, job_name and allow_execution=true. No tool ID outside the bundled reviewed adapter registry is allowed; prerequisite IDs must be selected explicitly.
+2. Call kosif_preview_reviewed with exact task, explicit IDs including prerequisites, workers and timeout. Inspect its dependency waves and SHA-256 approval_digest, which commits to scripts, registry, task and runtime settings.
+3. The user reviews and approves the exact plan, tool IDs and requested side effects; an approval_digest is **not** consent or a signed authorization. Start MCP with serve --allow-execution and KOSIF_ALLOW_ADAPTER_EXECUTION=1 only with explicit approval.
+4. Call kosif_execute_reviewed with the same task, IDs, workers, timeout, unique job_name, allow_execution=true and the returned approval_digest. A changed task, selected ID, adapter definition, script or registry refuses execution and requires a new preview. No unreviewed ID or hidden prerequisite is permitted.
 5. Call kosif_review_execution with job_name. Its passed/verified_executed flags come from re-opening the receipts and artifact checksums. If any artifact changes, the review fails.
 
 The selected execution writes to out/claude-reviewed-tools/JOB_NAME/{artifacts,receipts} and reviewed_execution.json. It can report selected_subset_fully_executed=true, **never** entire_catalog_executed=true: only an explicitly selected subset of tools was run. A plain successful CLI help/metadata lookup does not prove a creative or professional-quality output.
@@ -87,7 +88,7 @@ Three new MCP tools are **read-only**:
 - kosif_verify_skill_package — verify an existing package ZIP under the repository out/ directory
 - kosif_bridge_doctor — report reviewed-adapter configuration defects and approval state
 
-The original seven MCP tools remain available unchanged. No skill is installed into an external Claude account by committing these changes to GitHub.
+The original seven MCP tools remain available; the focused execution action now requires a matching plan digest (v1.3). No skill is installed into an external Claude account by committing these changes to GitHub.
 
 ## Export a portable custom Agent Skill ZIP
 
@@ -127,10 +128,23 @@ python3 -m unittest tests/test_claude_tool_bridge.py -v
 python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
 ~~~
 
-CI workflow .github/workflows/claude-tool-bridge-ci.yml verifies compilation, all bridge/router tests, permission gates, dependency handling, artifact tamper detection, inventory access and the actual ten-tool stdio JSON-RPC handshake.
+CI workflow .github/workflows/claude-tool-bridge-ci.yml verifies compilation, all bridge/router tests, permission gates, dependency handling, artifact tamper detection, inventory access and the actual eleven-tool stdio JSON-RPC handshake.
 
 - MCP has four declared tools, not arbitrary shell command execution.
 - Source excerpts are bounded; archive and source symlink traversals are rejected.
 - ZIP output must be under repository out/, and existing ZIPs are not overwritten.
 - Evidence requires a real artifact hash; exhaustive *assignment* is not exhaustive *execution*.
 - Full Pro means stronger task planning and QA orchestration here, not an upgrade to the underlying Claude model.
+
+## Plan integrity (v1.3) — التنين الأسود
+
+Before authorizing execution, inspect a stable SHA-256 preview:
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py \
+  preview-reviewed "finance report" --ids tool:capability-atlas tool:powers --workers 2 --timeout 60
+~~~
+
+The selected IDs above are **examples**; verify they are present in the current registry and match the task before use. A preview requires every dependency to be explicitly listed. It never executes a script or writes a job. A changed source hash, registry, dependency, task, worker limit or timeout invalidates the digest at the subsequent MCP execution call. This is a local integrity binding, not cryptographic identity verification or a guarantee that other processes cannot modify files between verification and spawn. The three explicit execution approvals still apply; the OS process remains unsandboxed.
+
+Read-only audit was tightened: an empty or structurally invalid selected-job ledger no longer counts as a valid successful run.

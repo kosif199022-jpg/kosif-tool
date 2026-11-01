@@ -24,7 +24,7 @@ import _claude_skill_tool_factory as factory
 REPO = dragon.REPO
 SKILLS = dragon.audit.SKILL.parent
 SERVER_NAME = "kosif-superpowers-bridge"
-VERSION = "1.2.0"
+VERSION = "1.3.0"
 
 
 def inventory():
@@ -185,12 +185,20 @@ TOOLS = [
      "inputSchema": {"type": "object", "properties": {"task": {"type": "string"},
                      "limit": {"type": "integer", "minimum": 1, "maximum": 20}},
                      "required": ["task"], "additionalProperties": False}},
-    {"name": "kosif_execute_reviewed", "description": "Run ONLY explicitly selected reviewed tool IDs; requires server opt-in, environment opt-in, and per-call approval. Writes independently verifiable receipts.",
+    {"name": "kosif_preview_reviewed", "description": "Read-only SHA-256 approval plan of exact tool IDs, dependency waves, adapter contents, script hashes and runtime bounds. Hash is integrity binding, not consent.",
+     "inputSchema": {"type": "object", "properties": {"task": {"type": "string"},
+                     "ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 8, "uniqueItems": True},
+                     "workers": {"type": "integer", "minimum": 1, "maximum": 4},
+                     "timeout": {"type": "integer", "minimum": 1, "maximum": 120}},
+                     "required": ["task", "ids"], "additionalProperties": False}},
+    {"name": "kosif_execute_reviewed", "description": "Execute only explicitly approved reviewed tool IDs with a matching, recent kosif_preview_reviewed approval_digest; requires server, environment and per-call gates; writes verified receipts.",
      "inputSchema": {"type": "object", "properties": {"task": {"type": "string"},
                      "ids": {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 8, "uniqueItems": True},
                      "job_name": {"type": "string"}, "workers": {"type": "integer", "minimum": 1, "maximum": 4},
+                     "timeout": {"type": "integer", "minimum": 1, "maximum": 120},
+                     "approval_digest": {"type": "string", "minLength": 64, "maxLength": 64},
                      "allow_execution": {"type": "boolean"}},
-                     "required": ["task", "ids", "job_name", "allow_execution"], "additionalProperties": False}},
+                     "required": ["task", "ids", "job_name", "allow_execution", "approval_digest"], "additionalProperties": False}},
     {"name": "kosif_review_execution", "description": "Independently revalidate a prior selected-tool job and detect tampered or missing receipts.",
      "inputSchema": {"type": "object", "properties": {"job_name": {"type": "string"}},
                      "required": ["job_name"], "additionalProperties": False}},
@@ -227,11 +235,16 @@ def call_tool(name: str, params: dict, process_execution: bool = False) -> dict:
         return reviewed.route(params["task"], params.get("limit", 8))
     if name == "kosif_review_execution":
         return reviewed.review(params["job_name"])
+    if name == "kosif_preview_reviewed":
+        return reviewed.preview(params["task"], params["ids"],
+                                workers=params.get("workers", 2), timeout=params.get("timeout", 60))
     if name == "kosif_execute_reviewed":
         if params.get("allow_execution") is not True or not process_execution:
             raise PermissionError("Reviewed execution requires per-call allow_execution=true and server --allow-execution")
         return reviewed.execute(params["task"], params["ids"], params["job_name"],
-                                permission=True, workers=params.get("workers", 2))
+                                permission=True, workers=params.get("workers", 2),
+                                timeout=params.get("timeout", 60),
+                                approval_digest=params["approval_digest"])
     if params.get("allow_execution") is True and not process_execution:
         raise PermissionError("MCP server started read-only: restart with --allow-execution")
     return run_pro_max(params["task"], params["job_name"],
@@ -301,6 +314,11 @@ def main(argv=None):
     vv = sub.add_parser("verify-skill-zip")
     vv.add_argument("path", type=Path)
     sub.add_parser("doctor")
+    pv = sub.add_parser("preview-reviewed")
+    pv.add_argument("task")
+    pv.add_argument("--ids", nargs="+", required=True)
+    pv.add_argument("--workers", type=int, default=2)
+    pv.add_argument("--timeout", type=int, default=60)
     rr = sub.add_parser("route-reviewed")
     rr.add_argument("task")
     rr.add_argument("--limit", type=int, default=8)
@@ -325,6 +343,7 @@ def main(argv=None):
                   factory.draft(args.name, args.out) if args.command == "draft-skill-tool" else
                   factory.verify_zip(args.path) if args.command == "verify-skill-zip" else
                   factory.doctor() if args.command == "doctor" else
+                  reviewed.preview(args.task, args.ids, workers=args.workers, timeout=args.timeout) if args.command == "preview-reviewed" else
                   reviewed.route(args.task, args.limit) if args.command == "route-reviewed" else
                   reviewed.review(args.job_name) if args.command == "review-execution" else
                   export_skill(args.name, args.out, args.max_mb))
