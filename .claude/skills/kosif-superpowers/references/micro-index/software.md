@@ -652,96 +652,96 @@ chapter: [ui-product-device](../powers/ui-product-device.md) · card: `usip-libr
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
-| UI-11 | ✅ | مؤشر بفيزياء في motion-kit · motion-kit physics cursor + press + typeOn | SP-0469 Cursor as protagonist | node, chromium |
-| UI-X03 | ✅ | تسجيل عرض واجهة بـPlaywright · Playwright UI demo recording (WebM) | SP-0469 Cursor as protagonist | ffmpeg, node, chromium |
-| UI-14 | 🟢 | حلقة الضغط والتموج · Press ring & click ripple | SP-0469 Cursor as protagonist | — |
-| UI-72 | 🟢 | تسجيل صفحة بخطوات مبرمجة · Scripted page recording (Playwright) | SP-0469 Cursor as protagonist | node, chromium |
-| UI-86 | 🟢 | أساليب KOSIF للواجهات · KOSIF UI styles to scaffold | SP-0469 Cursor as protagonist | python3 |
-| UI-88 | 🟢 | مراجعة على الإطار: سحب وتحجيم واختصارات · Frame review: drag, resize & Arabic-safe shortcuts | SP-0469 Cursor as protagonist | — |
-| UI-17 | 📦 | المؤشر المغناطيسي · Magnetic cursor & magnetic buttons | SP-0469 Cursor as protagonist | npm:hyperframes, lean |
-| UI-18 | 📦 | سحب وإفلات · Cursor drag & drop | SP-0469 Cursor as protagonist | npm:hyperframes |
-| UI-19 | 📦 | تحديد نص ومستطيل وقائمة يمين · Text select, marquee select & context menu | SP-0469 Cursor as protagonist | npm:hyperframes |
-| UI-20 | 📦 | مؤشرات متعاونين بأسمائها · Named multiplayer cursors | SP-0469 Cursor as protagonist | npm:hyperframes |
-| UI-21 | 📦 | مؤشر وكيل ذكي · AI agent cursor | SP-0469 Cursor as protagonist | npm:hyperframes |
-| UI-22 | 📦 | مؤشر اللمس على الهاتف · Touch indicator: tap & swipe | SP-0469 Cursor as protagonist | npm:hyperframes |
-| UI-77 | 📦 | تسجيل المتصفح بمؤشر ولوحة لقطات · Browser recording CLI with cursor & contact sheet | SP-0469 Cursor as protagonist | ffmpeg, node, chromium |
-| UI-15 | 👁 | مؤشر ماك معبّر يتجه مع حركته · Expressive directional macOS cursor | SP-0469 Cursor as protagonist | os:macos |
-| UI-16 | 👁 | مؤشر بهالة لونية يلاحق هدفًا متحركًا · Cursor with accent halo homing on a live target | SP-0469 Cursor as protagonist | — |
-| UI-60 | 👁 | اقتراب يقوده المؤشر · Cursor-led push-in & focus zoom | SP-0469 Cursor as protagonist | — |
-| UI-01 | 📄 | العرض الصامت: الواجهة تحكي · Silent product demo — the UI tells the story | SP-0469 Cursor as protagonist | — |
-| UI-13 | 📄 | تصميم حركة المؤشر · Cursor choreography rules | SP-0469 Cursor as protagonist | — |
-| UI-26 | 📄 | طلب يُكتب ثم يُرسل ثم يولّد · Prompt type → submit → generate | SP-0469 Cursor as protagonist | — |
-| UI-35 | 📄 | ضغط وتحرير زر نابض · Press-release spring button | SP-0469 Cursor as protagonist | — |
-| UI-61 | 📄 | وصفة النقر وفتح نافذة · Click → modal recipe | SP-0469 Cursor as protagonist | npm:remotion |
-| UI-89 | 📄 | قواعد صفحات الويب المسلَّمة · Web deliverable rules (landing, perf, hover gating) | SP-0469 Cursor as protagonist | — |
-| UI-X01 | 📄 | المؤشر بطلًا · Cursor as protagonist | SP-0469 Cursor as protagonist | chromium |
-| UI-12 | ✅ | واجهة منتج على Canvas بدالة draw(t) · Canvas product UI draw(t) recipe | SP-0470 Canvas 2.5D phone (drawPhone) | node, chromium |
-| UI-87 | ✅ | مشغّل HTML مستقل بشريط تقديم · Standalone HTML player with seek & reduced motion | SP-0470 Canvas 2.5D phone (drawPhone) | node |
-| UI-50 | 🟢 | هاتف 2.5D على Canvas · Canvas 2.5D phone (drawPhone) | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-56 | 🟢 | موك أب HTML بلقطة 2× · HTML/CSS device & package mockup screenshot | SP-0470 Canvas 2.5D phone (drawPhone) | chromium |
-| UI-51 | 📦 | مكوّن Device في Remotion · Remotion Device component | SP-0470 Canvas 2.5D phone (drawPhone) | npm:remotion, npm:react |
-| UI-54 | 📦 | مروحة أجهزة وانفراد الهواتف · Multi-device splay & phone fan-out | SP-0470 Canvas 2.5D phone (drawPhone) | npm:hyperframes |
-| UI-76 | 🔑 | من فيجما إلى طبقات متحركة · Figma frame → animatable layers | SP-0470 Canvas 2.5D phone (drawPhone) | key:unspecified |
-| UI-53 | 👁 | نافذة متصفح أو ماك وهمية · Browser chrome & macOS frame mock | SP-0470 Canvas 2.5D phone (drawPhone) | os:macos |
-| UI-71 | 👁 | مسرح أداة تصميم ومقابض تحديد · Design-tool canvas, selection handles & size tags | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-82 | 👁 | ستايل برومو المنتج · Product promo style (neon prompt + glass orb) | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-47 | 📄 | ثوابت الهاتف البارامتري · Parametric phone constants | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-48 | 📄 | منظور الجهاز وسرعة دورانه · Device perspective, rotation caps & idle hover | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-49 | 📄 | دخول الجهاز وكشف البطل · Device entrance & hero reveal | SP-0470 Canvas 2.5D phone (drawPhone) | npm:remotion |
-| UI-52 | 📄 | تسليم بين جهازين · Two-device turntable handoff | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-X02 | 📄 | تسليم المجسم وطبقات منفجرة · Mockup hand-off and exploded layers | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-57 | 💡 | قلب الهاتف وتبديل الشاشة · Phone flip with mid-swap | SP-0470 Canvas 2.5D phone (drawPhone) | — |
-| UI-04 | 🟢 | إعادة بناء الشاشة كطبقات · Layered screen rebuild | SP-0471 Real, locale-correct UI content | — |
-| UI-05 | 🟢 | حقيبة أصول من أجزاء حقيقية · Animation kit from real parts | SP-0471 Real, locale-correct UI content | chromium, pip:pillow |
-| UI-43 | 🟢 | مؤشرات التبويب والشريط النشط · Tab slide indicator & active rail bar | SP-0471 Real, locale-correct UI content | — |
-| UI-39 | 📦 | هيكل لامع يتحول إلى محتوى · Skeleton shimmer → content | SP-0471 Real, locale-correct UI content | npm:hyperframes |
-| UI-X04 | 📦 | رموز الحركة وصقل الواجهة · Motion tokens and interface polish (React UIs) | SP-0471 Real, locale-correct UI content | npm:animejs, npm:react |
-| UI-63 | 👁 | جدار بطاقات واجهة يطفو بعمق · Floating UI card wall in depth | SP-0471 Real, locale-correct UI content | — |
-| UI-83 | 👁 | واجهة ملصقات بظل صلب · Sticker UI with hard offset shadow | SP-0471 Real, locale-correct UI content | — |
-| UI-03 | 📄 | محتوى واجهة حقيقي ومحلي · Real, locale-correct UI content | SP-0471 Real, locale-correct UI content | — |
-| UI-06 | 📄 | عكس الواجهة للعربية · RTL product-UI mirroring | SP-0471 Real, locale-correct UI content | — |
-| UI-07 | 📄 | لوحة البيانات داخل الإطار · Dashboard composition for a frame | SP-0471 Real, locale-correct UI content | — |
-| UI-08 | 📄 | تشريح التفاعل الدقيق كوحدة مشهد · Microinteraction anatomy as a beat | SP-0471 Real, locale-correct UI content | — |
-| UI-09 | 📄 | مقطع حلقة لمكوّن واحد · Seamless UI component loop (3–6 s) | SP-0471 Real, locale-correct UI content | — |
-| UI-62 | 📄 | صفحة ويب مائلة تتمرر · 3D tilted webpage scroll & perspective pan | SP-0471 Real, locale-correct UI content | npm:gsap |
-| UI-75 | 📄 | وصفة فيديو ميزة حقيقية · Real-feature video recipe | SP-0471 Real, locale-correct UI content | ffmpeg, node, chromium |
-| UI-79 | 📄 | رموز تصميم الواجهة وسلالمها · UI tokens & Refactoring-UI scales | SP-0471 Real, locale-correct UI content | — |
-| UI-80 | ✅ | سطح زجاجي للواجهات · Glass surface stack | SP-0472 Control ↔ target live sync | chromium, npm:hyperframes |
-| UI-45 | 🟢 | نقطة حالة بهالة وشارة مباشرة · Status dot with halo & live pill | SP-0472 Control ↔ target live sync | — |
-| UI-69 | 🟢 | لوحة قياس HUD وشروح مسقطة من 3D · Instrument-panel HUD & projected callouts | SP-0472 Control ↔ target live sync | — |
-| UI-38 | 📦 | حقل إدخال: خطأ واهتزاز ونجاح · Input feedback: error shake & valid state | SP-0472 Control ↔ target live sync | npm:hyperframes |
-| UI-41 | 📦 | تحول بطاقة إلى لوحة (FLIP) · Shared-element morph: card → panel (FLIP) | SP-0472 Control ↔ target live sync | npm:hyperframes |
-| UI-55 | 📦 | آيفون وماك بوك ثلاثيا الأبعاد بشاشات حية · 3D GLTF iPhone & MacBook with live screens | SP-0472 Control ↔ target live sync | chromium, npm:three, npm:gsap, npm:hyperframes … |
-| UI-66 | 📦 | مقارنة قبل وبعد · Before/after wipe & comparison split | SP-0472 Control ↔ target live sync | npm:hyperframes |
-| UI-67 | 📦 | دوار الشاشات والموكاب الثابت · Screen-flow carousel & sticky mock swap | SP-0472 Control ↔ target live sync | npm:hyperframes |
-| UI-31 | 👁 | إجابة متدفقة وسجل حي · Streaming answer & live log | SP-0472 Control ↔ target live sync | — |
-| UI-42 | 👁 | إعادة ترتيب قائمة وسطور · FLIP list reorder & self-reordering lines | SP-0472 Control ↔ target live sync | — |
-| UI-70 | 👁 | مربع تتبع وماسح ضوئي · AI tracking box & scanner brackets | SP-0472 Control ↔ target live sync | tesseract |
-| UI-24 | 📄 | تحكم وهدف يتغيران معًا · Control ↔ target live sync | SP-0472 Control ↔ target live sync | — |
-| UI-34 | 🟢 | ضغط ومرور بمنطق القراءة · Press & hover with reading-direction nudges | SP-0473 Plain action labels in tutorials | — |
-| UI-74 | 🟢 | فيلم إطلاق kmotion brag · kmotion brag launch film | SP-0473 Plain action labels in tutorials | python3 |
-| UI-73 | 📦 | التقاط موقع إلى فيديو · Website capture → video | SP-0473 Plain action labels in tutorials | chromium, npm:hyperframes, npm:lottie |
-| UI-23 | 👁 | ضغط اختصار لوحة المفاتيح · Keycap shortcut trigger | SP-0473 Plain action labels in tutorials | — |
-| UI-27 | 👁 | وكيل ينجز قائمة مهام · Agent progress theater & tool-call checklist | SP-0473 Plain action labels in tutorials | npm:hyperframes |
-| UI-65 | 👁 | نقطة ساخنة مع فقاعة إرشاد · Hotspot tooltip walkthrough | SP-0473 Plain action labels in tutorials | — |
-| UI-02 | 📄 | ثلاثية النية والفعل والاستجابة · Intent → action → response with real latency | SP-0473 Plain action labels in tutorials | — |
-| UI-10 | 📄 | عناوين أفعال بسيطة في الشروحات · Plain action labels in tutorials | SP-0473 Plain action labels in tutorials | — |
-| UI-58 | 📄 | جولة تمرير مع شروحات · Scroll tour with callouts | SP-0473 Plain action labels in tutorials | — |
-| UI-59 | 📄 | خطوط شرح قائدة · Callout leader lines | SP-0473 Plain action labels in tutorials | — |
-| UI-78 | 📄 | فيديو تعليمي من ملف YAML · YAML-defined tutorial video | SP-0473 Plain action labels in tutorials | docker |
-| UI-25 | 🟢 | كتابة بإيقاع بشري · Human-rhythm typing with caret | SP-0474 Terminal & IDE scenes (24 theme blocks) | — |
-| UI-81 | 🟢 | معمارية الثيمات: الشكل × الوضع × العلامة · Look × theme × brand token architecture | SP-0474 Terminal & IDE scenes (24 theme blocks) | — |
-| UI-29 | 📦 | طرفية ومحرر كود · Terminal & IDE scenes (24 theme blocks) | SP-0474 Terminal & IDE scenes (24 theme blocks) | npm:hyperframes, os:macos |
-| UI-32 | 📦 | كتابة في تطبيق الملاحظات · Notes-app typing story | SP-0474 Terminal & IDE scenes (24 theme blocks) | npm:hyperframes |
-| UI-36 | 📦 | قلب المفتاح وتبديل الثيم · Toggle flip & theme switch | SP-0474 Terminal & IDE scenes (24 theme blocks) | npm:hyperframes |
-| UI-30 | 👁 | لوحة أوامر وبحث يصفّي النتائج · Command palette & search filter | SP-0474 Terminal & IDE scenes (24 theme blocks) | — |
-| UI-85 | 📄 | مخططات مشاهد الواجهة · UI scene blueprints | SP-0474 Terminal & IDE scenes (24 theme blocks) | — |
-| UI-44 | ✅ | شريط المراحل والحلقة والتقدم · Stepper, progress ring & progress bars | SP-0475 Spinner → success check | — |
-| UI-28 | 📦 | محادثة: فقاعات وكتابة جارية · Chat thread, bubbles & typing dots | SP-0475 Spinner → success check | npm:hyperframes |
-| UI-37 | 📦 | من التحميل إلى علامة صح · Spinner → success check | SP-0475 Spinner → success check | npm:hyperframes |
-| UI-33 | 📄 | جدول ردود الفعل الدقيقة · Micro-feedback timing table | SP-0475 Spinner → success check | — |
-| UI-64 | 📄 | عدسة تكبير التفاصيل · Magnifier lens pass | SP-0475 Spinner → success check | — |
-| UI-46 | 💡 | لحظة احتفال توقيعية · Signature celebration moment | SP-0475 Spinner → success check | — |
-| UI-40 | 📦 | إشعارات: نظام وجزيرة ورصّة · Notifications: native pop, dynamic island, stacks | SP-0476 HyperFrames UI component registry | npm:hyperframes, os:macos |
-| UI-84 | 📦 | مكتبة مكوّنات HyperFrames للواجهات · HyperFrames UI component registry | SP-0476 HyperFrames UI component registry | npm:hyperframes |
-| UI-68 | 👁 | شبكة بنتو للميزات · Bento feature grid | SP-0476 HyperFrames UI component registry | — |
+| UI-11 | ✅ | مؤشر بفيزياء في motion-kit · motion-kit physics cursor + press + typeOn | SP-0470 Cursor as protagonist | node, chromium |
+| UI-X03 | ✅ | تسجيل عرض واجهة بـPlaywright · Playwright UI demo recording (WebM) | SP-0470 Cursor as protagonist | ffmpeg, node, chromium |
+| UI-14 | 🟢 | حلقة الضغط والتموج · Press ring & click ripple | SP-0470 Cursor as protagonist | — |
+| UI-72 | 🟢 | تسجيل صفحة بخطوات مبرمجة · Scripted page recording (Playwright) | SP-0470 Cursor as protagonist | node, chromium |
+| UI-86 | 🟢 | أساليب KOSIF للواجهات · KOSIF UI styles to scaffold | SP-0470 Cursor as protagonist | python3 |
+| UI-88 | 🟢 | مراجعة على الإطار: سحب وتحجيم واختصارات · Frame review: drag, resize & Arabic-safe shortcuts | SP-0470 Cursor as protagonist | — |
+| UI-17 | 📦 | المؤشر المغناطيسي · Magnetic cursor & magnetic buttons | SP-0470 Cursor as protagonist | npm:hyperframes, lean |
+| UI-18 | 📦 | سحب وإفلات · Cursor drag & drop | SP-0470 Cursor as protagonist | npm:hyperframes |
+| UI-19 | 📦 | تحديد نص ومستطيل وقائمة يمين · Text select, marquee select & context menu | SP-0470 Cursor as protagonist | npm:hyperframes |
+| UI-20 | 📦 | مؤشرات متعاونين بأسمائها · Named multiplayer cursors | SP-0470 Cursor as protagonist | npm:hyperframes |
+| UI-21 | 📦 | مؤشر وكيل ذكي · AI agent cursor | SP-0470 Cursor as protagonist | npm:hyperframes |
+| UI-22 | 📦 | مؤشر اللمس على الهاتف · Touch indicator: tap & swipe | SP-0470 Cursor as protagonist | npm:hyperframes |
+| UI-77 | 📦 | تسجيل المتصفح بمؤشر ولوحة لقطات · Browser recording CLI with cursor & contact sheet | SP-0470 Cursor as protagonist | ffmpeg, node, chromium |
+| UI-15 | 👁 | مؤشر ماك معبّر يتجه مع حركته · Expressive directional macOS cursor | SP-0470 Cursor as protagonist | os:macos |
+| UI-16 | 👁 | مؤشر بهالة لونية يلاحق هدفًا متحركًا · Cursor with accent halo homing on a live target | SP-0470 Cursor as protagonist | — |
+| UI-60 | 👁 | اقتراب يقوده المؤشر · Cursor-led push-in & focus zoom | SP-0470 Cursor as protagonist | — |
+| UI-01 | 📄 | العرض الصامت: الواجهة تحكي · Silent product demo — the UI tells the story | SP-0470 Cursor as protagonist | — |
+| UI-13 | 📄 | تصميم حركة المؤشر · Cursor choreography rules | SP-0470 Cursor as protagonist | — |
+| UI-26 | 📄 | طلب يُكتب ثم يُرسل ثم يولّد · Prompt type → submit → generate | SP-0470 Cursor as protagonist | — |
+| UI-35 | 📄 | ضغط وتحرير زر نابض · Press-release spring button | SP-0470 Cursor as protagonist | — |
+| UI-61 | 📄 | وصفة النقر وفتح نافذة · Click → modal recipe | SP-0470 Cursor as protagonist | npm:remotion |
+| UI-89 | 📄 | قواعد صفحات الويب المسلَّمة · Web deliverable rules (landing, perf, hover gating) | SP-0470 Cursor as protagonist | — |
+| UI-X01 | 📄 | المؤشر بطلًا · Cursor as protagonist | SP-0470 Cursor as protagonist | chromium |
+| UI-12 | ✅ | واجهة منتج على Canvas بدالة draw(t) · Canvas product UI draw(t) recipe | SP-0471 Canvas 2.5D phone (drawPhone) | node, chromium |
+| UI-87 | ✅ | مشغّل HTML مستقل بشريط تقديم · Standalone HTML player with seek & reduced motion | SP-0471 Canvas 2.5D phone (drawPhone) | node |
+| UI-50 | 🟢 | هاتف 2.5D على Canvas · Canvas 2.5D phone (drawPhone) | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-56 | 🟢 | موك أب HTML بلقطة 2× · HTML/CSS device & package mockup screenshot | SP-0471 Canvas 2.5D phone (drawPhone) | chromium |
+| UI-51 | 📦 | مكوّن Device في Remotion · Remotion Device component | SP-0471 Canvas 2.5D phone (drawPhone) | npm:remotion, npm:react |
+| UI-54 | 📦 | مروحة أجهزة وانفراد الهواتف · Multi-device splay & phone fan-out | SP-0471 Canvas 2.5D phone (drawPhone) | npm:hyperframes |
+| UI-76 | 🔑 | من فيجما إلى طبقات متحركة · Figma frame → animatable layers | SP-0471 Canvas 2.5D phone (drawPhone) | key:unspecified |
+| UI-53 | 👁 | نافذة متصفح أو ماك وهمية · Browser chrome & macOS frame mock | SP-0471 Canvas 2.5D phone (drawPhone) | os:macos |
+| UI-71 | 👁 | مسرح أداة تصميم ومقابض تحديد · Design-tool canvas, selection handles & size tags | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-82 | 👁 | ستايل برومو المنتج · Product promo style (neon prompt + glass orb) | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-47 | 📄 | ثوابت الهاتف البارامتري · Parametric phone constants | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-48 | 📄 | منظور الجهاز وسرعة دورانه · Device perspective, rotation caps & idle hover | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-49 | 📄 | دخول الجهاز وكشف البطل · Device entrance & hero reveal | SP-0471 Canvas 2.5D phone (drawPhone) | npm:remotion |
+| UI-52 | 📄 | تسليم بين جهازين · Two-device turntable handoff | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-X02 | 📄 | تسليم المجسم وطبقات منفجرة · Mockup hand-off and exploded layers | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-57 | 💡 | قلب الهاتف وتبديل الشاشة · Phone flip with mid-swap | SP-0471 Canvas 2.5D phone (drawPhone) | — |
+| UI-04 | 🟢 | إعادة بناء الشاشة كطبقات · Layered screen rebuild | SP-0472 Real, locale-correct UI content | — |
+| UI-05 | 🟢 | حقيبة أصول من أجزاء حقيقية · Animation kit from real parts | SP-0472 Real, locale-correct UI content | chromium, pip:pillow |
+| UI-43 | 🟢 | مؤشرات التبويب والشريط النشط · Tab slide indicator & active rail bar | SP-0472 Real, locale-correct UI content | — |
+| UI-39 | 📦 | هيكل لامع يتحول إلى محتوى · Skeleton shimmer → content | SP-0472 Real, locale-correct UI content | npm:hyperframes |
+| UI-X04 | 📦 | رموز الحركة وصقل الواجهة · Motion tokens and interface polish (React UIs) | SP-0472 Real, locale-correct UI content | npm:animejs, npm:react |
+| UI-63 | 👁 | جدار بطاقات واجهة يطفو بعمق · Floating UI card wall in depth | SP-0472 Real, locale-correct UI content | — |
+| UI-83 | 👁 | واجهة ملصقات بظل صلب · Sticker UI with hard offset shadow | SP-0472 Real, locale-correct UI content | — |
+| UI-03 | 📄 | محتوى واجهة حقيقي ومحلي · Real, locale-correct UI content | SP-0472 Real, locale-correct UI content | — |
+| UI-06 | 📄 | عكس الواجهة للعربية · RTL product-UI mirroring | SP-0472 Real, locale-correct UI content | — |
+| UI-07 | 📄 | لوحة البيانات داخل الإطار · Dashboard composition for a frame | SP-0472 Real, locale-correct UI content | — |
+| UI-08 | 📄 | تشريح التفاعل الدقيق كوحدة مشهد · Microinteraction anatomy as a beat | SP-0472 Real, locale-correct UI content | — |
+| UI-09 | 📄 | مقطع حلقة لمكوّن واحد · Seamless UI component loop (3–6 s) | SP-0472 Real, locale-correct UI content | — |
+| UI-62 | 📄 | صفحة ويب مائلة تتمرر · 3D tilted webpage scroll & perspective pan | SP-0472 Real, locale-correct UI content | npm:gsap |
+| UI-75 | 📄 | وصفة فيديو ميزة حقيقية · Real-feature video recipe | SP-0472 Real, locale-correct UI content | ffmpeg, node, chromium |
+| UI-79 | 📄 | رموز تصميم الواجهة وسلالمها · UI tokens & Refactoring-UI scales | SP-0472 Real, locale-correct UI content | — |
+| UI-80 | ✅ | سطح زجاجي للواجهات · Glass surface stack | SP-0473 Control ↔ target live sync | chromium, npm:hyperframes |
+| UI-45 | 🟢 | نقطة حالة بهالة وشارة مباشرة · Status dot with halo & live pill | SP-0473 Control ↔ target live sync | — |
+| UI-69 | 🟢 | لوحة قياس HUD وشروح مسقطة من 3D · Instrument-panel HUD & projected callouts | SP-0473 Control ↔ target live sync | — |
+| UI-38 | 📦 | حقل إدخال: خطأ واهتزاز ونجاح · Input feedback: error shake & valid state | SP-0473 Control ↔ target live sync | npm:hyperframes |
+| UI-41 | 📦 | تحول بطاقة إلى لوحة (FLIP) · Shared-element morph: card → panel (FLIP) | SP-0473 Control ↔ target live sync | npm:hyperframes |
+| UI-55 | 📦 | آيفون وماك بوك ثلاثيا الأبعاد بشاشات حية · 3D GLTF iPhone & MacBook with live screens | SP-0473 Control ↔ target live sync | chromium, npm:three, npm:gsap, npm:hyperframes … |
+| UI-66 | 📦 | مقارنة قبل وبعد · Before/after wipe & comparison split | SP-0473 Control ↔ target live sync | npm:hyperframes |
+| UI-67 | 📦 | دوار الشاشات والموكاب الثابت · Screen-flow carousel & sticky mock swap | SP-0473 Control ↔ target live sync | npm:hyperframes |
+| UI-31 | 👁 | إجابة متدفقة وسجل حي · Streaming answer & live log | SP-0473 Control ↔ target live sync | — |
+| UI-42 | 👁 | إعادة ترتيب قائمة وسطور · FLIP list reorder & self-reordering lines | SP-0473 Control ↔ target live sync | — |
+| UI-70 | 👁 | مربع تتبع وماسح ضوئي · AI tracking box & scanner brackets | SP-0473 Control ↔ target live sync | tesseract |
+| UI-24 | 📄 | تحكم وهدف يتغيران معًا · Control ↔ target live sync | SP-0473 Control ↔ target live sync | — |
+| UI-34 | 🟢 | ضغط ومرور بمنطق القراءة · Press & hover with reading-direction nudges | SP-0474 Plain action labels in tutorials | — |
+| UI-74 | 🟢 | فيلم إطلاق kmotion brag · kmotion brag launch film | SP-0474 Plain action labels in tutorials | python3 |
+| UI-73 | 📦 | التقاط موقع إلى فيديو · Website capture → video | SP-0474 Plain action labels in tutorials | chromium, npm:hyperframes, npm:lottie |
+| UI-23 | 👁 | ضغط اختصار لوحة المفاتيح · Keycap shortcut trigger | SP-0474 Plain action labels in tutorials | — |
+| UI-27 | 👁 | وكيل ينجز قائمة مهام · Agent progress theater & tool-call checklist | SP-0474 Plain action labels in tutorials | npm:hyperframes |
+| UI-65 | 👁 | نقطة ساخنة مع فقاعة إرشاد · Hotspot tooltip walkthrough | SP-0474 Plain action labels in tutorials | — |
+| UI-02 | 📄 | ثلاثية النية والفعل والاستجابة · Intent → action → response with real latency | SP-0474 Plain action labels in tutorials | — |
+| UI-10 | 📄 | عناوين أفعال بسيطة في الشروحات · Plain action labels in tutorials | SP-0474 Plain action labels in tutorials | — |
+| UI-58 | 📄 | جولة تمرير مع شروحات · Scroll tour with callouts | SP-0474 Plain action labels in tutorials | — |
+| UI-59 | 📄 | خطوط شرح قائدة · Callout leader lines | SP-0474 Plain action labels in tutorials | — |
+| UI-78 | 📄 | فيديو تعليمي من ملف YAML · YAML-defined tutorial video | SP-0474 Plain action labels in tutorials | docker |
+| UI-25 | 🟢 | كتابة بإيقاع بشري · Human-rhythm typing with caret | SP-0475 Terminal & IDE scenes (24 theme blocks) | — |
+| UI-81 | 🟢 | معمارية الثيمات: الشكل × الوضع × العلامة · Look × theme × brand token architecture | SP-0475 Terminal & IDE scenes (24 theme blocks) | — |
+| UI-29 | 📦 | طرفية ومحرر كود · Terminal & IDE scenes (24 theme blocks) | SP-0475 Terminal & IDE scenes (24 theme blocks) | npm:hyperframes, os:macos |
+| UI-32 | 📦 | كتابة في تطبيق الملاحظات · Notes-app typing story | SP-0475 Terminal & IDE scenes (24 theme blocks) | npm:hyperframes |
+| UI-36 | 📦 | قلب المفتاح وتبديل الثيم · Toggle flip & theme switch | SP-0475 Terminal & IDE scenes (24 theme blocks) | npm:hyperframes |
+| UI-30 | 👁 | لوحة أوامر وبحث يصفّي النتائج · Command palette & search filter | SP-0475 Terminal & IDE scenes (24 theme blocks) | — |
+| UI-85 | 📄 | مخططات مشاهد الواجهة · UI scene blueprints | SP-0475 Terminal & IDE scenes (24 theme blocks) | — |
+| UI-44 | ✅ | شريط المراحل والحلقة والتقدم · Stepper, progress ring & progress bars | SP-0476 Spinner → success check | — |
+| UI-28 | 📦 | محادثة: فقاعات وكتابة جارية · Chat thread, bubbles & typing dots | SP-0476 Spinner → success check | npm:hyperframes |
+| UI-37 | 📦 | من التحميل إلى علامة صح · Spinner → success check | SP-0476 Spinner → success check | npm:hyperframes |
+| UI-33 | 📄 | جدول ردود الفعل الدقيقة · Micro-feedback timing table | SP-0476 Spinner → success check | — |
+| UI-64 | 📄 | عدسة تكبير التفاصيل · Magnifier lens pass | SP-0476 Spinner → success check | — |
+| UI-46 | 💡 | لحظة احتفال توقيعية · Signature celebration moment | SP-0476 Spinner → success check | — |
+| UI-40 | 📦 | إشعارات: نظام وجزيرة ورصّة · Notifications: native pop, dynamic island, stacks | SP-0477 HyperFrames UI component registry | npm:hyperframes, os:macos |
+| UI-84 | 📦 | مكتبة مكوّنات HyperFrames للواجهات · HyperFrames UI component registry | SP-0477 HyperFrames UI component registry | npm:hyperframes |
+| UI-68 | 👁 | شبكة بنتو للميزات · Bento feature grid | SP-0477 HyperFrames UI component registry | — |

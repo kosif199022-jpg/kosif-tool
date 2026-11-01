@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:sources:start -->
 
-**الأدوات / tools (25)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (26)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -20,6 +20,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `creative-external-search` | Keyword-searches an offline index of 1,000 public GitHub repositories (video editing and processing, motion graphics, image and photo tools, computer vision, creative coding) and 1,000 creative websites extracted from curated awesome lists (design tools, motion graphics, AI image tools, creative coding, video production), and prints ranked JSON matches labelled metadata-only. | `python3 scripts/creative_external_search.py search "kinetic typography" --kind repo --top 5` | tested-here |
 | `fetch-reference` | Discovers media URLs on a public web page (video and source tags, Open Graph and Twitter tags, JSON-LD, script text) or takes a direct file or an unencrypted HLS playlist. It downloads the media within a size cap into a git-ignored cache and measures it with ffmpeg (probe, contact sheet, scene cuts and dominant palette), plus a bilingual REPORT.md for STYLE.md. | `python3 scripts/fetch_reference.py https://example.com/page --list --json` | tested-here |
 | `fetch-video` | Wraps yt-dlp to download one or many video or audio links for editing, with a format fallback chain, optional browser impersonation, a user cookies file and a quality cap. It can add an edit-safe H.264/AAC .safe.mp4 copy, can drop each clip's own audio on intake (--strip-audio), and writes a manifest.json with the file, duration, dimensions, frame rate, codecs, title, uploader and any license the site exposes. Pinterest pin links go through the shared helper scripts/_pinterest.py: one yt-dlp -J call classifies the pin first (video, image, GIF, embedded YouTube, other embed, deleted, CDN-refused, blocked) with a one-line reason, only a video pin is downloaded, in a temp folder, its real size is measured with ffprobe, and a .pin.json credit record is written; --classify only reports what each pin is. | `python3 scripts/fetch_video.py --doctor` | tested-here |
+| `song-preview` | When a requested song is DRM-locked (yt-dlp says 'DRM protected'), the source stops there; this tool is the lawful fallback. It searches Apple's public iTunes Search API and Deezer's public API, prints one table (source, track, artist, album, release date, duration, whether a preview exists) saved to a cache, then downloads the official 30-second store preview the label supplies (iTunes .m4a AAC, Deezer .mp3) with a <file>.rights.json sidecar: source, track and artist ids, store URL, preview URL, fetched_at, ffprobe duration and the licence note (private drafts only; public posts use the platform's licensed sound; credit the artist). Standard library only. | `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10` | tested-here |
 | `instagram-finder` | Keeps a list of saved Instagram source accounts (tracking parameters stripped), builds a local searchable index of their recent posts (instaloader), hashtags and pasted reel links (yt-dlp), and ranks the indexed videos for a product query in Arabic or English using bilingual synonyms, Arabic normalisation, hashtags, captions and Instagram's automatic image description. It prints offline web-search plans, fetches thumbnails for a visual check, and downloads picked results through fetch_video.py with a rights log. | `python3 scripts/instagram_finder.py accounts` | tested-here |
 | `tiktok-photo` | Downloads a TikTok photo post, which yt-dlp rejects with "Unsupported URL .../photo/<id>": it resolves a vt.tiktok.com or vm.tiktok.com short link by following redirects, fetches the /@user/photo/<id> page with a mobile Safari User-Agent, reads the JSON in <script id="__UNIVERSAL_DATA_FOR_REHYDRATION__"> (itemStruct: desc, author, music, imagePost.images with sizes), saves every image as img00.jpg, img01.jpg ... (atomic writes, mirror links, resumable), gets the post's sound with yt-dlp -f ba on the rewritten /video/<id> link, and writes meta.json with author, desc, music, source link, image sizes and a credit line. parse and url work offline on a saved page or a link. | `python3 scripts/tiktok_photo.py fetch "https://vt.tiktok.com/XXXXXXX/" --out out/tiktok/post` | tested-here |
 | `stock-fetch` | Downloads free stock clips by id or page URL without an API key: Pexels through its public download endpoint (a 302 to videos.pexels.com) and Mixkit through its free 720p file. It writes manifest.json with the page, file URL, licence name, link and terms, size, dimensions, frame rate and duration, can skip oversized files, and has a probe that reports which stock sources answer from the current machine. | `python3 scripts/stock_fetch.py probe` | tested-here |
@@ -55,6 +56,8 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 11. [بوست صور تيك توك — TikTok photo posts (2026-10-28)](#بوست-صور-تيك-توك--tiktok-photo-posts-2026-10-28)
 12. [مصدر كل لقطة في فيديو مرجعي — Source finder for the shots of a reference video (2026-10-28)](#مصدر-كل-لقطة-في-فيديو-مرجعي--source-finder-for-the-shots-of-a-reference-video-2026-10-28)
 13. [مكتبة اللقطات المفتوحة الترخيص — Free footage sources, search and credits (2026-10-29)](#مكتبة-اللقطات-المفتوحة-الترخيص--free-footage-sources-search-and-credits-2026-10-29)
+14. [صور مجانية للمونتاج — Free photos, search and credits (2026-10-30)](#صور-مجانية-للمونتاج--free-photos-search-and-credits-2026-10-30)
+15. [معاينة الأغنية الرسمية — Official song preview when a song is DRM-locked (2026-11-01)](#معاينة-الأغنية-الرسمية--official-song-preview-when-a-song-is-drm-locked-2026-11-01)
 
 ## Web apps and browser isolation research
 
@@ -314,4 +317,15 @@ python3 scripts/free_photos.py credits out/free-photos/pics                    #
 ```
 
 Key-less: Openverse (licence per image, as the original site declares it), Wikimedia Commons (bitmap files only), NASA Images (largest rendition) and The Met Open Access (CC0 objects only, through the v1.1 search; v1 search answers 410 since 2026-10-01). With keys in the environment: Pexels (`PEXELS_API_KEY`), Pixabay (`PIXABAY_API_KEY`, up to 1280 px) and Unsplash (`UNSPLASH_ACCESS_KEY`; each download is reported to its download endpoint as the API terms require, Unsplash+ is skipped). ND licences are dropped by default; `--commercial` also drops NC and unconfirmed licences. From the cloud sandbox on 2026-10-30 NASA answered, Commons rate-limited (429), the Met answered 403 intermittently behind a bot wall and api.openverse.org timed out: those are reported, never worked around. Tests: `evals/test_free_photos.py`, offline.
+
+## معاينة الأغنية الرسمية — Official song preview when a song is DRM-locked (2026-11-01)
+
+When yt-dlp says "DRM protected" (for example a song on SoundCloud only under the artist's official account), that source stops: no bypass (A19, lessons 16 and 17). `scripts/song_preview.py` fetches the official 30-second preview the label supplies to stores instead: Apple's public iTunes Search API first (`previewUrl`, AAC .m4a, about 256 kb/s, 44.1 kHz), Deezer's public API second (`preview`, .mp3, sometimes empty).
+
+```bash
+python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg   # numbered rows, saved to out/song-preview/last_search.json
+python3 scripts/song_preview.py download 1 --out out/song-preview                       # the preview + <file>.rights.json, duration via ffprobe
+```
+
+The sidecar keeps the source, track and artist ids, store URL, preview URL, fetch time and the licence note: private drafts only; public posts use the platform's licensed sound (for example TikTok's library); credit the artist. A longer reel repeats preview phrases on the measured beat grid, never a full track from elsewhere. Only store preview hosts are downloaded; no cookies, logins or yt-dlp. Tests: `tests/test_song_preview.py`, offline.
 
