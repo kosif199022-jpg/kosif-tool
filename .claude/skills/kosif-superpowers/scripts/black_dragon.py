@@ -413,7 +413,7 @@ def main(argv=None) -> int:
             destination.parent.mkdir(parents=True, exist_ok=True)
             with destination.open("x", encoding="utf-8") as stream:
                 json.dump(packet, stream, ensure_ascii=False, indent=2)
-                stream.write("\\n")
+                stream.write(chr(10))
             print(json.dumps({"status": packet["status"], "output": str(destination),
                               "mode": args.selection, "counts": packet["counts"],
                               "plan_sha256": packet["plan_sha256"]},
