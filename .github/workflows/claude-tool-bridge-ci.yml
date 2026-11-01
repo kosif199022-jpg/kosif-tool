@@ -1,0 +1,50 @@
+name: Claude tool bridge and Pro Max
+on:
+  pull_request:
+    paths:
+      - '.claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py'
+      - '.claude/skills/kosif-superpowers/scripts/black_dragon.py'
+      - '.claude/skills/kosif-superpowers/scripts/_black_dragon_pro_max.py'
+      - 'tests/test_claude_tool_bridge.py'
+      - '.github/workflows/claude-tool-bridge-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  skill-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile bridge and Pro Max modules
+        run: |
+          python3 -m py_compile \
+            .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py \
+            .claude/skills/kosif-superpowers/scripts/black_dragon.py \
+            .claude/skills/kosif-superpowers/scripts/_black_dragon_pro_max.py
+      - name: Test bridge, planner, Black Dragon
+        run: python3 -m unittest discover -s tests -p 'test_*black_dragon*.py' -v && python3 -m unittest tests/test_claude_tool_bridge.py -v
+      - name: Smoke check actual catalog and MCP handshake
+        run: |
+          python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py inventory
+          python3 - <<'PY'
+          import json, subprocess, sys
+          script = '.claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py'
+          requests = [
+              {'jsonrpc':'2.0','id':1,'method':'initialize','params':{'protocolVersion':'2025-11-25'}},
+              {'jsonrpc':'2.0','id':2,'method':'tools/list'},
+          ]
+          result = subprocess.run([sys.executable, script, 'serve'],
+                                  input=''.join(json.dumps(r)+'\n' for r in requests),
+                                  text=True, capture_output=True, timeout=20, check=True)
+          replies = [json.loads(line) for line in result.stdout.splitlines()]
+          assert len(replies) == 2, result.stdout
+          assert len(replies[1]['result']['tools']) == 4
+          assert replies[0]['result']['serverInfo']['name'] == 'kosif-superpowers-bridge'
+          print('MCP: initialized and listed four tools')
+          PY

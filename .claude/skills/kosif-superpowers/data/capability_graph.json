@@ -1893,6 +1893,31 @@
    "label": "scripts/tell_scan.py"
   },
   {
+   "id": "script:scripts/_black_dragon_pro_max.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_pro_max.py"
+  },
+  {
+   "id": "script:scripts/_cinema_all_skills.py",
+   "kind": "script",
+   "label": "scripts/_cinema_all_skills.py"
+  },
+  {
+   "id": "script:scripts/_claude_tool_bridge.py",
+   "kind": "script",
+   "label": "scripts/_claude_tool_bridge.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_brain.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_brain.py"
+  },
+  {
+   "id": "script:scripts/black_dragon.py",
+   "kind": "script",
+   "label": "scripts/black_dragon.py"
+  },
+  {
    "id": "script:scripts/_usip_cards.py",
    "kind": "script",
    "label": "scripts/_usip_cards.py"
@@ -1936,21 +1961,6 @@
    "id": "script:scripts/atlas_capability_miner.py",
    "kind": "script",
    "label": "scripts/atlas_capability_miner.py"
-  },
-  {
-   "id": "script:scripts/black_dragon.py",
-   "kind": "script",
-   "label": "scripts/black_dragon.py"
-  },
-  {
-   "id": "script:scripts/_black_dragon_brain.py",
-   "kind": "script",
-   "label": "scripts/_black_dragon_brain.py"
-  },
-  {
-   "id": "script:scripts/_cinema_all_skills.py",
-   "kind": "script",
-   "label": "scripts/_cinema_all_skills.py"
   },
   {
    "id": "script:scripts/blender_cinematic_bridge.py",
@@ -6777,6 +6787,24 @@
    "w": 2
   },
   {
+   "from": "script:scripts/_black_dragon_pro_max.py",
+   "to": "script:scripts/_cinema_all_skills.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_claude_tool_bridge.py",
+   "to": "script:scripts/_black_dragon_brain.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_claude_tool_bridge.py",
+   "to": "script:scripts/black_dragon.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_usip_cards.py",
    "to": "script:scripts/smart_capabilities.py",
    "rel": "imports",
@@ -6821,6 +6849,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "script:scripts/_black_dragon_brain.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_black_dragon_pro_max.py",
    "rel": "imports",
    "w": 1
   },

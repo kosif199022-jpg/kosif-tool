@@ -25,6 +25,7 @@ from collections import Counter
 from pathlib import Path
 import _cinema_all_skills as audit
 import _black_dragon_brain as brain
+import _black_dragon_pro_max as pro_max
 
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v2"
@@ -204,20 +205,26 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
 
 def run(task: str, job: Path, adapters: dict, workers: int,
         allow_execution: bool, timeout: int, entries: dict | None = None,
-        probe_tools: bool = False) -> dict:
+        probe_tools: bool = False, mode: str = "standard") -> dict:
     if not task.strip():
         raise ValueError("Task is required")
     if not 1 <= workers <= MAX_WORKERS:
         raise ValueError("workers must be between 1 and 32")
     if not 1 <= timeout <= 3600:
         raise ValueError("timeout must be between 1 and 3600 seconds")
+    if mode not in ("standard", "pro-max"):
+        raise ValueError("mode must be standard or pro-max")
     job = _safe_job(job)
     inventory = full_inventory() if entries is None else entries
     unknown = sorted(set(adapters) - set(inventory))
     if unknown:
         raise ValueError("Unknown adapter entry: " + unknown[0])
     strategy = brain.plan(task, inventory, adapters, skill_root=audit.SKILL if entries is None else None)
+    pro_max_packet = pro_max.preflight(task, strategy, inventory) if mode == "pro-max" else None
     audit.init(job, inventory)
+    if pro_max_packet is not None:
+        (job / "black_dragon_pro_max_plan.json").write_text(
+            json.dumps(pro_max_packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (job / "black_dragon_plan.json").write_text(json.dumps(strategy, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (job / "artifacts").mkdir()
     (job / "receipts").mkdir()
@@ -305,6 +312,15 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "coverage_file": str(job / "all_skills_report.json"),
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
                         "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
+    report["mode"] = mode
+    if pro_max_packet is not None:
+        qa = pro_max.verify(job, inventory, report)
+        report["pro_max"] = {"integrity_passed": qa["integrity_passed"],
+                             "every_capability_executed": qa["every_capability_executed"],
+                             "external_full_pro_verified": False,
+                             "qa_file": str(job / "black_dragon_pro_max_qa.json")}
+        if not qa["integrity_passed"]:
+            raise ValueError("Pro Max evidence QA failed; see black_dragon_pro_max_qa.json")
     (job / "black_dragon_report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (job / "black_dragon_report.md").write_text(_markdown(report, strategy, ledger), encoding="utf-8")
@@ -349,6 +365,7 @@ def main(argv=None) -> int:
     p.add_argument("--reviewed-adapters", action="store_true",
                    help="use the bundled reviewed adapters (data/black_dragon_adapters.json)")
     p.add_argument("--execute-adapters", action="store_true")
+    p.add_argument("--mode", choices=("standard", "pro-max"), default="standard")
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
@@ -356,6 +373,7 @@ def main(argv=None) -> int:
     q = sub.add_parser("plan", help="Plan every catalog entry without execution")
     q.add_argument("task")
     q.add_argument("--adapters", type=Path)
+    q.add_argument("--mode", choices=("standard", "pro-max"), default="standard")
     args = parser.parse_args(argv)
     try:
         if args.command == "inventory":
@@ -370,15 +388,17 @@ def main(argv=None) -> int:
             if set(adapters) - set(inventory):
                 raise ValueError("Unknown adapter entry")
             strategy = brain.plan(args.task, inventory, adapters, skill_root=audit.SKILL)
-            print(json.dumps({k: v for k, v in strategy.items() if k != "items"},
-                             ensure_ascii=False, indent=2))
+            summary = {k: v for k, v in strategy.items() if k != "items"}
+            if args.mode == "pro-max":
+                summary["pro_max"] = pro_max.preflight(args.task, strategy, inventory)
+            print(json.dumps(summary, ensure_ascii=False, indent=2))
             return 0
         if args.adapters and args.reviewed_adapters:
             raise ValueError("Use either --adapters or --reviewed-adapters")
         report = run(args.task, args.job,
                      _load_adapters(REVIEWED_ADAPTERS if args.reviewed_adapters else args.adapters),
                      args.workers, args.execute_adapters, args.timeout,
-                     probe_tools=args.probe_tools)
+                     probe_tools=args.probe_tools, mode=args.mode)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["full_coverage"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
