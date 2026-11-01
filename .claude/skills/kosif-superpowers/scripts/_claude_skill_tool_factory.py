@@ -123,6 +123,8 @@ def inspect(name: str, script_limit: int = 100) -> dict:
     if type(script_limit) is not int or not 1 <= script_limit <= MAX_SCRIPTS:
         raise ValueError("script_limit must be an integer from 1 to 600")
     root = _skill_dir(name)
+    if (root / "SKILL.md").stat().st_size > 2 * 1024 * 1024:
+        raise ValueError("SKILL.md exceeds the bounded 2 MiB inspection limit")
     md = (root / "SKILL.md").read_text(encoding="utf-8")
     front = _frontmatter(md)
     missing, outside = _declared_links(md, root)
@@ -169,6 +171,8 @@ def inspect(name: str, script_limit: int = 100) -> dict:
 def draft(name: str, out: Path, script_limit: int = 100) -> dict:
     """Save a non-executable proposal. Never register or execute discovered code."""
     data = inspect(name, script_limit)
+    if (REPO / "out").is_symlink() or (REPO / "out" / "skill-tool-proposals").is_symlink():
+        raise ValueError("Symlinked proposal output folder forbidden")
     target = out.resolve()
     allowed = (REPO / "out" / "skill-tool-proposals").resolve()
     if not target.is_relative_to(allowed) or target.suffix != ".json" or out.is_symlink():
@@ -199,6 +203,8 @@ def draft(name: str, out: Path, script_limit: int = 100) -> dict:
 def verify_zip(path: Path) -> dict:
     """Bounded no-extraction audit of a portable skill ZIP exported under out/."""
     raw = Path(path)
+    if (REPO / "out").is_symlink():
+        raise ValueError("Symlinked output folder forbidden")
     resolved = raw.resolve()
     allowed = (REPO / "out").resolve()
     if raw.is_symlink() or not resolved.is_relative_to(allowed) or not resolved.is_file():
@@ -227,6 +233,8 @@ def verify_zip(path: Path) -> dict:
         manifest = None
         if not errors:
             manifest = json.loads(archive.read("KOSIF_EXPORT_MANIFEST.json"))
+            if not isinstance(manifest, dict):
+                raise ValueError("ZIP manifest must be a JSON object")
             hashes = manifest.get("files", {})
             if not isinstance(hashes, dict) or set(hashes) != set(names) - {"KOSIF_EXPORT_MANIFEST.json"}:
                 errors.append("Manifest entries differ from archive members")
