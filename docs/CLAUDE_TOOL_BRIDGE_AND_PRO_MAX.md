@@ -8,7 +8,7 @@ KOSIF Superpowers contains three distinct capability types:
 2. MCP tools: callable functions exposed by a local stdio server.
 3. Reviewed runtime adapters: selected Python executors with genuine artifact receipts.
 
-This bridge offers seven stable MCP tools, not thousands of invented executors. It runs locally, without network listeners, cloud tokens, payments or automatic installations.
+This bridge offers ten stable MCP tools, not thousands of invented executors. It runs locally, without network listeners, cloud tokens, payments or automatic installations.
 
 ## Quick start: read-only MCP for Claude Code
 
@@ -62,6 +62,33 @@ The selected execution writes to out/claude-reviewed-tools/JOB_NAME/{artifacts,r
 
 Security: maximum eight selected IDs, at most four parallel subprocess workers, only registered repo-relative Python adapters, required artifact placeholders, no shell interpolation and strict JSON tool inputs. The OS account is still not sandboxed; review every registered adapter before approval. Never send private task inputs to external systems without separate authorization.
 
+## Skill-to-Tool Factory (v1.2): inspect first, approve later
+
+New **static, no-execution** skill workshop: verify the source and detect Python CLI candidates, rather than pretending every SKILL.md is runnable. The scanner checks SHA-256, declared relative references, CLI parsing and main guards, and flags risky imported modules. It does not import, run, install, certify licenses, or automatically register code.
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py inspect-skill kosif-superpowers --script-limit 100
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py draft-skill-tool kosif-superpowers --out out/skill-tool-proposals/superpowers.json
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py doctor
+~~~
+
+The generated JSON is explicitly **PENDING_HUMAN_REVIEW_NOT_EXECUTABLE**, with missing argument/output contracts. A developer must review side effects and dependencies, test a real artifact with SHA-256, then separately register a vetted adapter. There is no direct promotion from a draft to the runtime catalog.
+
+After exporting a portable ZIP, verify it without extraction or script execution:
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py verify-skill-zip out/kosif-superpowers-claude.zip
+~~~
+
+This verifies root SKILL.md, exact SHA-256 manifest coverage, duplicate/unsafe ZIP paths and bounded total unpacked size. A passing integrity check does **not** prove runtime safety, skill quality, compatible Claude subscription limits or license rights.
+
+Three new MCP tools are **read-only**:
+- kosif_toolify_skill — static source analysis of a named installed skill (returns candidates, not executors)
+- kosif_verify_skill_package — verify an existing package ZIP under the repository out/ directory
+- kosif_bridge_doctor — report reviewed-adapter configuration defects and approval state
+
+The original seven MCP tools remain available unchanged. No skill is installed into an external Claude account by committing these changes to GitHub.
+
 ## Export a portable custom Agent Skill ZIP
 
 Claude's custom skill ZIP expects SKILL.md at archive root. The exporter copies every file from the selected installed skill directory, keeps relative resource paths, adds per-file SHA-256 manifest and fails closed on partial exports, size limits or symlinks.
@@ -100,7 +127,7 @@ python3 -m unittest tests/test_claude_tool_bridge.py -v
 python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
 ~~~
 
-CI workflow .github/workflows/claude-tool-bridge-ci.yml verifies compilation, all bridge/router tests, permission gates, dependency handling, artifact tamper detection, inventory access and the actual seven-tool stdio JSON-RPC handshake.
+CI workflow .github/workflows/claude-tool-bridge-ci.yml verifies compilation, all bridge/router tests, permission gates, dependency handling, artifact tamper detection, inventory access and the actual ten-tool stdio JSON-RPC handshake.
 
 - MCP has four declared tools, not arbitrary shell command execution.
 - Source excerpts are bounded; archive and source symlink traversals are rejected.
