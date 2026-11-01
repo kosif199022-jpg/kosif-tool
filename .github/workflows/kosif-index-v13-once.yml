@@ -1,0 +1,36 @@
+name: Refresh v13 Capability Graph
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/kosif-index-v13-once.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    if: github.event.pull_request.head.repo.full_name == 'kosif199022-jpg/kosif-tool' && github.event.pull_request.head.ref == 'feature/black-dragon-approved-plan-lock-v13-20261101'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feature/black-dragon-approved-plan-lock-v13-20261101
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh generated capability metadata
+        working-directory: .claude/skills/kosif-superpowers
+        run: |
+          python3 scripts/hub.py build
+          python3 scripts/capability_graph.py build
+          python3 scripts/boot.py --static --write
+          python3 scripts/check_skill.py
+      - name: Commit generated indexes into feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .claude/skills/kosif-superpowers
+          if ! git diff --cached --quiet; then
+            git diff --cached --stat
+            git commit -m 'chore: update Black Dragon v1.3 capability graph'
+            git push origin HEAD:feature/black-dragon-approved-plan-lock-v13-20261101
+          fi
