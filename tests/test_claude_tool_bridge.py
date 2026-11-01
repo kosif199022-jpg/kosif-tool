@@ -12,8 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / ".claude/skills/kosif-superpowers/scripts"
 sys.path.insert(0, str(SCRIPTS))
 import black_dragon as dragon
-import black_dragon_pro_max as pro_max
-import claude_tool_bridge as bridge
+import _black_dragon_pro_max as pro_max
+import _claude_tool_bridge as bridge
 
 
 class BridgeTests(unittest.TestCase):
