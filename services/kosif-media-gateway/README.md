@@ -46,6 +46,35 @@ token) compares the deployed `/health` with this checkout: `FRESH`, `STALE` or `
 the service > **Manual Deploy > Deploy latest commit**, or turn **Auto-Deploy** on for `main`.
 Free services sleep after ~15 idle minutes, so the first request can take up to a minute.
 
+## Deployment drift — checked 2026-10-31
+
+_Snapshot from 2026-10-31. `main` has moved on since then; run `deploy_check.py` (above) for the current state before acting on it._
+
+**GitHub and Render are not currently on the same revision.** The merged, CI-tested GitHub
+`main` is commit `44ab43a596cd413a47e57a33d15767a983d7346a`, which intentionally does **not**
+include SnapAny. Render service `srv-dbig4urbc2fs73fcmq50` has `autoDeploy=off` and
+is configured to the older `feat/kosif-media-gateway-render-free-20261030` branch.
+Its latest successful *manual* deployment (`dep-dbinjv8ae00c73c6kbkg`) is commit
+`2904aab226a226a7b03e37acf2c19c8097174a59`, which contains optional SnapAny
+provider routes. This is a **deployment version mismatch**, not a failed merge, and
+a successful GitHub CI run does not prove that Render serves the same code.
+
+To align production with the approved `main` version, first confirm whether the
+later manually deployed SnapAny experiment must be preserved. If it need not be
+preserved, change **Render > service > Settings > Build & Deploy > Branch** to
+`main`, keep **Auto-Deploy disabled** until the owner chooses otherwise, and
+manually deploy that main commit on the existing **Free** service. Keep the
+current `KOSIF_GATEWAY_TOKEN` and other environment variables unchanged; do
+**not** disclose keys, upgrade the plan, or activate prepaid provider credits.
+Then validate `/health`, authenticated `/mcp` and `/v1/probe`, and record
+the **actual Render commit** and test results. Changing branch or deploying
+production is an explicit operational action, not part of a documentation edit.
+
+The unmerged SnapAny code may be retained in a separate development branch,
+but must not be described as a production capability of the approved `main`.
+Its route's presence does not establish that the provider API key is enabled,
+that credits were spent, or that a video was downloaded.
+
 ## API
 
 | Call | Auth | What it does |
