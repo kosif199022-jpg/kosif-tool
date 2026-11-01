@@ -8,7 +8,7 @@ KOSIF Superpowers contains three distinct capability types:
 2. MCP tools: callable functions exposed by a local stdio server.
 3. Reviewed runtime adapters: selected Python executors with genuine artifact receipts.
 
-This bridge offers four stable MCP tools, not thousands of invented executors. It runs locally, without network listeners, cloud tokens, payments or automatic installations.
+This bridge offers seven stable MCP tools, not thousands of invented executors. It runs locally, without network listeners, cloud tokens, payments or automatic installations.
 
 ## Quick start: read-only MCP for Claude Code
 
@@ -33,9 +33,34 @@ Verify with Claude Code /mcp. GitHub commits alone do not connect an external Cl
 | kosif_search | Search full installed skill, power and tool catalog | Read-only |
 | kosif_describe | Bounded source excerpt + SHA-256 | Read-only |
 | kosif_plan_pro_max | Exhaustive assignment plan with concise summary | Read-only |
-| kosif_run_pro_max | Generate plan, evidence ledger and QA report | Writes one new job under out/; no adapters run without explicit approval |
+| kosif_run_pro_max | Generate exhaustive assignment plan, evidence ledger and QA report | Writes one new job under out/; no adapters run without explicit approval |
+| kosif_route_reviewed | Select task-matching reviewed executable adapters and show their prerequisites | Read-only |
+| kosif_execute_reviewed | Execute up to eight explicitly selected and reviewed adapter IDs with genuine SHA-256 receipts | Requires three execution approvals; writes an isolated job |
+| kosif_review_execution | Recheck receipt hashes and artifacts of a prior selected-tool job | Read-only |
 
 Discovery is not execution. Missing runtime permissions mean blocked, not succeeded.
+
+## Focused reviewed-tool execution (v1.1)
+
+This is different from exhaustive Black Dragon planning. Rather than mark thousands of documentation cards as "executed", Claude can now route one task to a small set of **39 currently reviewed adapters** and run only the exact approved IDs. The list is generated from the live bundled registry; the count can change. Tool routing uses lexical matches (Arabic or English), not a semantic AI embedding model, and returned candidates have runtime_verified=false until the individual adapter actually runs.
+
+Read-only route:
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py route-reviewed "financial reporting" --limit 8
+~~~
+
+Example MCP sequence:
+
+1. Call kosif_route_reviewed with task="finance report". Review its suggested exact IDs and required prerequisites.
+2. The user approves a specific short set of IDs and a unique job name.
+3. Start the MCP process with serve --allow-execution and KOSIF_ALLOW_ADAPTER_EXECUTION=1 (separate user authorization).
+4. Call kosif_execute_reviewed with task, ids, job_name and allow_execution=true. No tool ID outside the bundled reviewed adapter registry is allowed; prerequisite IDs must be selected explicitly.
+5. Call kosif_review_execution with job_name. Its passed/verified_executed flags come from re-opening the receipts and artifact checksums. If any artifact changes, the review fails.
+
+The selected execution writes to out/claude-reviewed-tools/JOB_NAME/{artifacts,receipts} and reviewed_execution.json. It can report selected_subset_fully_executed=true, **never** entire_catalog_executed=true: only an explicitly selected subset of tools was run. A plain successful CLI help/metadata lookup does not prove a creative or professional-quality output.
+
+Security: maximum eight selected IDs, at most four parallel subprocess workers, only registered repo-relative Python adapters, required artifact placeholders, no shell interpolation and strict JSON tool inputs. The OS account is still not sandboxed; review every registered adapter before approval. Never send private task inputs to external systems without separate authorization.
 
 ## Export a portable custom Agent Skill ZIP
 
@@ -75,7 +100,7 @@ python3 -m unittest tests/test_claude_tool_bridge.py -v
 python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
 ~~~
 
-CI workflow .github/workflows/claude-tool-bridge-ci.yml verifies compilation, unit tests, inventory access and the actual stdio JSON-RPC handshake.
+CI workflow .github/workflows/claude-tool-bridge-ci.yml verifies compilation, all bridge/router tests, permission gates, dependency handling, artifact tamper detection, inventory access and the actual seven-tool stdio JSON-RPC handshake.
 
 - MCP has four declared tools, not arbitrary shell command execution.
 - Source excerpts are bounded; archive and source symlink traversals are rejected.
