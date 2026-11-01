@@ -375,6 +375,11 @@ def main(argv=None) -> int:
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
                    help="run --help on every argparse CLI tool as a startup probe")
+    a = sub.add_parser("activate", help="Inspect every tool and stage a full or smart reviewed usage plan (no execution)")
+    a.add_argument("task")
+    a.add_argument("--selection", choices=("all", "smart"), required=True)
+    a.add_argument("--out", type=Path, required=True,
+                   help="new JSON path for the inspect-first activation plan")
     v = sub.add_parser("verify", help="Independently re-audit a completed Pro Max job without execution")
     v.add_argument("--job", required=True, type=Path)
     q = sub.add_parser("plan", help="Plan every catalog entry without execution")
@@ -393,6 +398,27 @@ def main(argv=None) -> int:
             result = pro_max.review_job(args.job, full_inventory())
             print(json.dumps(result, ensure_ascii=False, indent=2))
             return 0 if result["audit"]["integrity_passed"] else 4
+        if args.command == "activate":
+            import _black_dragon_activation as activation
+            inventory = full_inventory()
+            adapters = _load_adapters(REVIEWED_ADAPTERS)
+            if set(adapters) - set(inventory):
+                raise ValueError("Unknown reviewed adapter entry")
+            packet = activation.inspect_and_schedule(
+                args.task, inventory, adapters, _tool_records(), REPO, audit.SKILL,
+                mode=args.selection)
+            destination = args.out
+            if destination.is_symlink() or destination.exists():
+                raise ValueError("Activation plan path must be new and not a symlink")
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            with destination.open("x", encoding="utf-8") as stream:
+                json.dump(packet, stream, ensure_ascii=False, indent=2)
+                stream.write("\\n")
+            print(json.dumps({"status": packet["status"], "output": str(destination),
+                              "mode": args.selection, "counts": packet["counts"],
+                              "plan_sha256": packet["plan_sha256"]},
+                             ensure_ascii=False, indent=2))
+            return 0
         if args.command == "plan":
             inventory = full_inventory()
             adapters = _load_adapters(args.adapters)
