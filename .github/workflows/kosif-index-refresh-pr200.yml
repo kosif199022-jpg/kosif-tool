@@ -22,7 +22,7 @@ jobs:
         run: |
           python3 scripts/hub.py build
           python3 scripts/capability_graph.py build
-          python3 scripts/boot.py --static
+          python3 scripts/boot.py --static --write
           python3 scripts/check_skill.py
       - name: Commit generated indexes to feature branch only
         run: |
