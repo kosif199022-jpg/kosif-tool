@@ -5,6 +5,8 @@ on:
       - '.claude/skills/kosif-superpowers/scripts/_claude_tool_bridge.py'
       - '.claude/skills/kosif-superpowers/scripts/black_dragon.py'
       - '.claude/skills/kosif-superpowers/scripts/_black_dragon_pro_max.py'
+      - '.claude/skills/kosif-superpowers/scripts/_black_dragon_evidence_guard.py'
+      - 'tests/test_black_dragon_evidence_guard.py'
       - 'tests/test_claude_tool_bridge.py'
       - 'tests/test_claude_reviewed_router.py'
       - 'tests/test_claude_skill_tool_factory.py'
@@ -32,7 +34,8 @@ jobs:
             .claude/skills/kosif-superpowers/scripts/_claude_reviewed_router.py \
             .claude/skills/kosif-superpowers/scripts/_claude_skill_tool_factory.py \
             .claude/skills/kosif-superpowers/scripts/black_dragon.py \
-            .claude/skills/kosif-superpowers/scripts/_black_dragon_pro_max.py
+            .claude/skills/kosif-superpowers/scripts/_black_dragon_pro_max.py \
+            .claude/skills/kosif-superpowers/scripts/_black_dragon_evidence_guard.py
       - name: Test bridge, planner, Black Dragon
         run: python3 -m unittest discover -s tests -p 'test_*black_dragon*.py' -v && python3 -m unittest tests/test_claude_tool_bridge.py tests/test_claude_reviewed_router.py tests/test_claude_skill_tool_factory.py -v
       - name: Smoke check actual catalog and MCP handshake
