@@ -193,6 +193,8 @@ def call_tool(name: str, params: dict, process_execution: bool = False) -> dict:
         return describe(params["id"], params.get("max_chars", 8000))
     if name == "kosif_plan_pro_max":
         return plan(params["task"], params.get("limit", 15))
+    if params.get("allow_execution") is True and not process_execution:
+        raise PermissionError("MCP server started read-only: restart with --allow-execution")
     return run_pro_max(params["task"], params["job_name"],
                        process_execution and params.get("allow_execution") is True,
                        params.get("workers", 8))
