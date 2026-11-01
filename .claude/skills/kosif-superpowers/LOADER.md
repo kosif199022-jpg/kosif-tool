@@ -43,7 +43,7 @@
 | `reverse` | التحليل العكسي وفحص البرامج — Reverse engineering | `python3 scripts/rea_bridge.py doctor` |
 | `misc` | قدرات مساندة غير مصنفة — Other supporting capabilities | `python3 scripts/powers.py family other` |
 
-## ملاحق البروتوكول (43) / protocol appendices
+## ملاحق البروتوكول (44) / protocol appendices
 
 | الملحق | افتحه عندما |
 |---|---|
@@ -85,11 +85,12 @@
 | [A39 PhotoCraft MCP](references/protocol/A39-v59-photocraft-mcp.md) | صور أو PSD أو دفعة بلا فوتوشوب، أو LUT موحّد للصور والفيديو |
 | [A40 المواقع الحية](references/protocol/A40-v59-living-site.md) | موقع حي، صفحة هبوط بموشن، 3D أو فيلم تمرير |
 | [A41 مخرج Kling](references/protocol/A41-v511-kling-director.md) | فيلم بشخصيات أو تمثيل أو قتال بـ Kling |
-| [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة في المتصفح |
+| [A42 روابط المتصفح](references/protocol/A42-v512-browser-links.md) | جمع روابط وسائط من صفحة ويب |
 | [A43 العقد والإيصال](references/protocol/A43-v60-contracts-receipts-registry.md) | عدّاد L1+، إثبات تسليم، دمج حزمة، قبل «تم» |
 | [A46 Suno](references/protocol/A46-suno-mcp.md) | أول خطوة (سطر `suno:`)، أو أي موسيقى |
-| [A45 يوتيوب](references/protocol/A45-youtube-download.md) | يوتيوب (على جهاز المستخدم)؛ فيديو للسحابة، `kosif-send` |
-| [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)؛ فيديو للسحابة، `kosif-send` |
+| [A45 يوتيوب](references/protocol/A45-youtube-download.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
+| [A47 الجيتواي](references/protocol/A47-v62-media-gateway.md) | يوتيوب (على جهاز المستخدم)، `kosif-send` |
+| [A48 التنين](references/protocol/A48-v64-black-dragon.md) | «استدعِ التنين الأسود» |
 
 ## أقسام كل SKILL.md بأرقام الأسطر / section line ranges
 
@@ -133,7 +134,7 @@
 - 7–32: قواك الخارقة — KOSIF Superpowers
 - 33–39: SEE Pro Cognitive Fusion — bounded reasoning, typed skill synthesis
 - 40–43: FusionForge Shared Memory v1 — cross-project structural learning (opt-in only)
-- 44–47: FusionForge v2 (USIP v6.3) — project-scoped composite workflow recipes
+- 44–47: FusionForge v2 (USIP v6.4) — project-scoped composite workflow recipes
 - 48–51: Telegram Typography Knowledge Library — 5,514 fonts from the user's own exports
 - 52–55: Atlas Deep Fusion — 14,793 metadata records, on-demand and license-aware
 - 56–59: Atlas Stratified Source Methods — verified provenance, not executable imports

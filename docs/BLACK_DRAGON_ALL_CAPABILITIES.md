@@ -2,7 +2,7 @@
 
 **Invocation:** «استدعِ التنين الأسود» or «شغّل التنين الأسود». The owner's rule: **every capability is used, none is left out; the dragon's intelligence decides how and where each one is used.** The existing `kosif-web-film` remains the separate code-drawn video director; Black Dragon is an **orchestrator**, not a film renderer.
 
-## What it uses (7,377 entries today)
+## What it uses (7,378 entries today)
 
 `black_dragon.py inventory` counts every type, failing loudly on duplicates:
 
@@ -14,7 +14,7 @@
 | superpower | `data/superpowers.json` (fused powers) | 482 |
 | style | `catalog/styles.json` (motion style atlas) | 297 |
 | playbook | `playbooks/*.md` | 19 |
-| protocol | `PROTOCOL.md` + `references/protocol/A*.md` | 44 |
+| protocol | `PROTOCOL.md` + `references/protocol/A*.md` | 45 |
 
 ## How the brain decides "how" (`_black_dragon_brain.py`)
 
