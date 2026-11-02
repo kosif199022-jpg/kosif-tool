@@ -6,6 +6,7 @@ import json
 import math
 import shutil
 import struct
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -81,6 +82,14 @@ class MediaContractTests(unittest.TestCase):
                 output.symlink_to(outside)
                 with self.assertRaises(ValueError):
                     media.verify("proof")
+
+    def test_main_black_dragon_cli_routes_media_doctor(self):
+        result = subprocess.run([sys.executable, str(SCRIPTS / "black_dragon.py"),
+                                 "media", "doctor"], capture_output=True, text=True, timeout=90)
+        self.assertEqual(result.returncode, 0, result.stderr[-500:])
+        data = json.loads(result.stdout)
+        self.assertEqual(data["schema"], media.SCHEMA + ".doctor")
+        self.assertIn("ffmpeg", data)
 
     @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),
                          "ffmpeg and ffprobe are required for real media integration")
