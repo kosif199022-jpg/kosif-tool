@@ -31,7 +31,7 @@ class MediaAdapterRegistry(unittest.TestCase):
     def test_every_media_adapter_names_a_real_recipe_and_catalog_tool(self):
         adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
         inventory = dragon.full_inventory()
-        rows = {k: v for k, v in adapters.items() if v.get("media")}
+        rows = {k: v for k, v in adapters.items() if v["script"].endswith("_black_dragon_media.py")}
         self.assertGreaterEqual(len(rows), 8)
         self.assertEqual(sorted(v["args"][0] for v in rows.values()), sorted(media.RECIPES))
         for key in rows:
@@ -42,6 +42,8 @@ class MediaAdapterRegistry(unittest.TestCase):
         self.assertEqual(dragon._why_blocked("tool"), "tool_without_adapter")
         for kind in ("power", "skill", "style", "playbook", "protocol", "superpower"):
             self.assertEqual(dragon._why_blocked(kind), "method_description")
+        self.assertEqual(dragon._why_blocked("skill", "kosif-web-film/SKILL.md"), "skill_program_without_adapter")
+        self.assertEqual(dragon._why_blocked("skill", "kosif-superpowers/SKILL.md"), "method_description")
 
 
 @unittest.skipUnless(HAVE_FFMPEG, "ffmpeg/ffprobe not installed")

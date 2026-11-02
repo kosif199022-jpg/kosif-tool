@@ -1,5 +1,5 @@
 {
-  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters. Media adapters (\"media\": true) run real video/audio tools through _black_dragon_media.py on --media FILE, or on a self-test clip with known answers when no file is given; their outputs stay inside the job.",
+  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters. Media adapters (\"media\": true) run real video/audio tools through _black_dragon_media.py on --media FILE, or on a self-test clip with known answers when no file is given; their outputs stay inside the job. Skill adapters (\"skill_program\": true) run the script a skill ships through _black_dragon_skill.py and check its output.",
   "adapters": {
     "tool:skill-intelligence": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
@@ -501,6 +501,82 @@
         "--media={media}"
       ],
       "why": "frame-exact cut with the output length checked",
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/prompt-master-pro": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "prompt-master",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "prompt-master-pro: builds a structured prompt (+tests, A/B variants, blind spots) from the task, then lints it",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/prompt-architect-reasoning-models": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "prompt-architect",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "prompt-architect: writes the 20-case injection test set and analyses the task prompt for reasoning models",
+      "skill_program": true
+    },
+    "skill:kosif-reel-hooks": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "reel-hooks",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "reel-hooks: scores the task as an opening hook (length, specificity, stakes, front-loading)",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/excel-automation-power": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "excel-lambdas",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "excel-automation-power: generates a workbook of named LAMBDA functions",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/kosif-social": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "social",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "kosif-social: platform limits and a post-pack skeleton measured from the video",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/pro-video-editor-ffmpeg": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "video-editor",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "pro-video-editor-ffmpeg: probe plus beat-cut points from the soundtrack",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/motion-director-pro": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "motion-energy",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "motion-director-pro: per-frame motion energy, still spans and luma of the video",
+      "skill_program": true,
       "media": true
     }
   }

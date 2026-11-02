@@ -194,6 +194,10 @@ class FullInventoryTests(unittest.TestCase):
         for key, spec in adapters.items():
             self.assertIn(key, self.entries)
             self.assertTrue(dragon._safe_script(spec["script"]).is_file())
+            if spec.get("skill_program"):  # skill adapters: RECIPE {artifact} --task={task} [--media={media}]
+                self.assertTrue(spec["script"].endswith("_black_dragon_skill.py"), key)
+                self.assertEqual(spec["args"][1:3], ["{artifact}", "--task={task}"], key)
+                continue
             if spec.get("media"):  # media adapters: RECIPE {artifact} --media={media}
                 self.assertTrue(spec["script"].endswith("_black_dragon_media.py"), key)
                 self.assertEqual(spec["args"][1:], ["{artifact}", "--media={media}"], key)

@@ -81,9 +81,25 @@ Pass your file with `black_dragon.py run ... --media FILE` (never modified; its 
 
 Kling 3.0 / Higgsfield are **not** adapters: they spend credits and run through the Higgsfield connector only after the owner sees the exact price and approves.
 
+### Skill adapters (skills that ship a program)
+
+Of 473 skills, 443 are written methods with no code. The rest ship scripts, and seven of them are now adapters (`"skill_program": true`) run through `scripts/_black_dragon_skill.py RECIPE {artifact} --task={task} [--media={media}]`:
+
+| entry | recipe | what runs | checked |
+|---|---|---|---|
+| `skill:…/prompt-master-pro` | prompt-master | prompt_build from the task (+tests, A/B variants, blind spots), then prompt_lint | lint verdict given; the task is inside the prompt |
+| `skill:…/prompt-architect-reasoning-models` | prompt-architect | injection_shield writes its 20 attack test cases; prompt_frontier analyses the task | 20 cases written; analysis returned |
+| `skill:kosif-reel-hooks` | reel-hooks | scores the task as an opening hook | score returned |
+| `skill:…/excel-automation-power` | excel-lambdas | workbook of named LAMBDA functions | ≥10 functions; a real xlsx |
+| `skill:…/kosif-social` | social | platform limits + post pack measured from the video | three platforms; video measured |
+| `skill:…/pro-video-editor-ffmpeg` | video-editor | probe + beat-cut points | self-test tempo 120 ±3 BPM |
+| `skill:…/motion-director-pro` | motion-energy | per-frame motion energy and still spans | frames measured; self-test is never still |
+
+The injection suite only *writes* attack cases for testing a model; it is not a model test by itself.
+
 ### Why the rest stay blocked
 
-The report's `blocked_why` splits the blocked entries: `method_description` (powers, skills, styles, playbooks, protocol rules, superpowers: written methods applied in the plan through `briefs.jsonl`, never counted as executed, because there is no program to run) and `tool_without_adapter` (real programs that still need a reviewed adapter: the honest backlog). Measured on 2026-11-02: 7,383 entries, 47 of 47 adapters executed, 0 failed, blocked 7,178 method descriptions + 158 tools without an adapter.
+The report's `blocked_why` splits the blocked entries: `method_description` (powers, skills without code, styles, playbooks, protocol rules, superpowers: written methods applied in the plan through `briefs.jsonl`, never counted as executed, because there is no program to run), `tool_without_adapter` (registered programs that still need a reviewed adapter) and `skill_program_without_adapter` (skills whose folder ships an argparse Python script with no adapter yet). The last two are the honest backlog. Measured on 2026-11-02: 7,385 entries, 54 of 54 adapters executed, 0 failed, blocked 7,155 method descriptions + 159 tools + 17 skills with a program but no adapter yet.
 
 Execution is **explicitly opt-in**. Keep network calls, paid services, deployment, installation and uploads out of adapters unless the owner authorises them separately. No shell string is built from user text. Adapters run with the local user's permissions; this is not a sandbox, so review them.
 

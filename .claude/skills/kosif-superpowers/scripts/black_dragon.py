@@ -182,11 +182,34 @@ NO_ADAPTER = "No executable adapter registered"
 BLOCKED_WHY = {
     "method_description": "method description, not a program (applied in the plan, never counted as executed)",
     "tool_without_adapter": "a program with no reviewed adapter yet (candidate for a new adapter)",
+    "skill_program_without_adapter": "a skill that ships a Python CLI with no reviewed adapter yet (candidate)",
 }
 
 
-def _why_blocked(kind: str | None) -> str:
-    return "tool_without_adapter" if kind == "tool" else "method_description"
+def _skill_has_cli(source: str | None) -> bool:
+    """True when a skill folder (not the big kosif-superpowers root) ships an argparse Python script."""
+    if not source:
+        return False
+    root = (audit.SKILL.parent / source).parent
+    if root == audit.SKILL or not root.is_dir():
+        return False
+    for path in root.rglob("*.py"):
+        if "node_modules" in path.parts or path.name.startswith("test"):
+            continue
+        try:
+            if "argparse" in path.read_text(encoding="utf-8", errors="replace"):
+                return True
+        except OSError:
+            continue
+    return False
+
+
+def _why_blocked(kind: str | None, source: str | None = None) -> str:
+    if kind == "tool":
+        return "tool_without_adapter"
+    if kind == "skill" and _skill_has_cli(source):
+        return "skill_program_without_adapter"
+    return "method_description"
 
 
 def _attempt(key: str, spec: dict | None, task: str, job: Path,
@@ -310,7 +333,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
         else:
             item["reason"] = result["reason"]
             if result["reason"] == NO_ADAPTER:
-                why = _why_blocked(inventory[key].get("kind"))
+                why = _why_blocked(inventory[key].get("kind"), inventory[key].get("source"))
                 item["reason"] = NO_ADAPTER + ": " + BLOCKED_WHY[why]
                 blocked_why[why] += 1
     audit.save(job, ledger)
@@ -368,7 +391,8 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"blocked {report['blocked']:,} · failed {report['failed']}",
              f"- ليه متوقفين / why blocked: **{report['blocked_why']['method_description']:,}** "
              f"وصف طريقة مش برنامج / method descriptions (not programs) · "
-             f"**{report['blocked_why']['tool_without_adapter']:,}** برامج لسه من غير adapter / tools without an adapter",
+             f"**{report['blocked_why']['tool_without_adapter']:,}** برامج لسه من غير adapter / tools without an adapter · "
+             f"**{report['blocked_why']['skill_program_without_adapter']:,}** مهارات فيها برنامج لسه مش متوصّل / skills with a program, no adapter yet",
              f"- full coverage (every entry executed): **{report['full_coverage']}**", "",
              "| الجزء / part | assigned | leads |", "|---|---:|---|"]
     for pid, part in strategy["parts"].items():
