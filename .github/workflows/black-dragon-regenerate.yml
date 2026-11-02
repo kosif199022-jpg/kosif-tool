@@ -37,8 +37,9 @@ jobs:
             --job out/black-dragon/ci-run --workers 8 --probe-tools --reviewed-adapters --execute-adapters
           code=$?
           set -e
-          # 4 = honest "not every entry executed"; anything else is an error
-          test "$code" -eq 4
+          # 0 = every reviewed adapter executed (catalog entries without an adapter stay blocked,
+          # see full_coverage in the report); 4 = reviewed execution incomplete; anything else is an error
+          test "$code" -eq 0
           python3 - <<'PY'
           import json
           r = json.load(open("out/black-dragon/ci-run/black_dragon_report.json"))
