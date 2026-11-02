@@ -39,6 +39,7 @@
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
 | `black-dragon` | التنين الأسود — العقل المنسق لكل القدرات | `python3 scripts/black_dragon.py inventory` | untested |
+| `black-dragon-media` | التنين الأسود ميديا — شغل فيديو حقيقي بإذن | `python3 scripts/black_dragon_media.py doctor` | untested |
 | `boot` | إحاطة بدء الجلسة | `python3 scripts/boot.py` | tested-here |
 | `build-chapters` | مولّد فصول العائلات | `python3 scripts/build_chapters.py` | untested |
 | `business-workflows` | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude | `python3 scripts/business_workflows.py functions` | tested-here |

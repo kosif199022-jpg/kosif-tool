@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (27 أداة)
+# أدوات المجال `motion` (28 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -100,6 +100,49 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:atlas-render --evidence <ملف>`.
+
+### `black-dragon-media` — التنين الأسود ميديا — شغل فيديو حقيقي بإذن / Black Dragon Media — opt-in real video job
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/black_dragon_media.py` (جذر: skill) |
+| المجال | `motion` |
+| الدليل | `untested` |
+| العائلات | `agent-orchestration`, `qa-verification` |
+
+**ما تفعله:** يشغّل شغل ميديا حقيقي على كليب مرفوع عن طريق أدوات المونتاج والإيقاع والسينما الموجودة، ويحسب بصمة كل ملف ناتج. الخيارات زي التثبيت وإعادة التأطير ما بتشتغلش غير لو اتطلبت، وverify بيراجع البصمات.
+
+**What it does:** Runs one real media job on a supplied clip through the bundled montage_pro, audio_cue_mapper, music_rhythm_engine and cinema_lab, then hashes every artifact. Options such as stabilize or reframe run only when passed; verify re-checks the hashes.
+
+#### متى تُستدعى
+
+- «شغّل التنين الأسود على الفيديو ده فعلاً»
+- «Run the Black Dragon media job on my clip and verify the outputs»
+
+#### الأوامر
+
+- **doctor**: Read-only prerequisite check.
+  - `python3 scripts/black_dragon_media.py doctor`
+- **run**: Run the job on the clip and hash every artifact; nothing runs without --execute.
+  - `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute`
+- **verify**: Re-check the job's artifact hashes.
+  - `python3 scripts/black_dragon_media.py verify --job-name my-film`
+
+#### المتطلبات والأمان
+
+- binaries: python3, ffmpeg
+- الأمان: runs-external-programs
+- الموافقة: Runs only with --execute on a file the user supplied. No network, downloads, paid providers or upload.
+- الحدود: Uses only the bundled tools; it does not run the whole catalog and does not judge cinematic quality.
+
+#### الاختبارات والأدلة
+
+- `tests/test_black_dragon_media.py`
+- مرجع: `docs/BLACK_DRAGON_ALL_CAPABILITIES.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:black-dragon-media --evidence <ملف>`.
 
 ### `creative-reasoning-bridge` — جسر الصوت إلى لوحة القصة / Audio-to-Storyboard Bridge
 
