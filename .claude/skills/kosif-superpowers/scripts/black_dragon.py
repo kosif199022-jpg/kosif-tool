@@ -176,10 +176,23 @@ def _safe_job(job: Path) -> Path:
         raise ValueError("Job already has an immutable inventory; use a new folder")
     return result
 
+NO_ADAPTER = "No executable adapter registered"
+# Why an entry has no adapter. Only "tool" entries are programs; every other kind is a written
+# method, rule, style or guide that is applied while planning (briefs.jsonl), never "executed".
+BLOCKED_WHY = {
+    "method_description": "method description, not a program (applied in the plan, never counted as executed)",
+    "tool_without_adapter": "a program with no reviewed adapter yet (candidate for a new adapter)",
+}
+
+
+def _why_blocked(kind: str | None) -> str:
+    return "tool_without_adapter" if kind == "tool" else "method_description"
+
+
 def _attempt(key: str, spec: dict | None, task: str, job: Path,
-             approved: bool, timeout: int) -> dict:
+             approved: bool, timeout: int, media: str = "") -> dict:
     if spec is None:
-        return {"status": "blocked", "reason": "No executable adapter registered"}
+        return {"status": "blocked", "reason": NO_ADAPTER}
     if not approved:
         return {"status": "blocked", "reason": "Adapter execution not enabled"}
     try:
@@ -188,7 +201,7 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
         basename = re.sub(r"[^a-zA-Z0-9_.-]", "_", key)[:90] + "-" + sha256(key.encode()).hexdigest()[:10]
         artifact = job / "artifacts" / f"{basename}.txt"
         receipt = job / "receipts" / f"{basename}.json"
-        args = [a.replace("{task}", task).replace("{artifact}", str(artifact))
+        args = [a.replace("{task}", task).replace("{artifact}", str(artifact)).replace("{media}", media)
                 for a in spec.get("args", [])]
         command = [sys.executable, str(script), *args]
         completed = subprocess.run(command, cwd=REPO, text=True, capture_output=True,
@@ -206,7 +219,7 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
 
 def run(task: str, job: Path, adapters: dict, workers: int,
         allow_execution: bool, timeout: int, entries: dict | None = None,
-        probe_tools: bool = False, mode: str = "standard") -> dict:
+        probe_tools: bool = False, mode: str = "standard", media: Path | None = None) -> dict:
     if not task.strip():
         raise ValueError("Task is required")
     if not 1 <= workers <= MAX_WORKERS:
@@ -216,6 +229,11 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     if mode not in ("standard", "pro-max"):
         raise ValueError("mode must be standard or pro-max")
     job = _safe_job(job)
+    media_arg = ""
+    if media is not None:
+        if not media.is_file():
+            raise ValueError("Media file not found: " + str(media))
+        media_arg = str(media.resolve())
     inventory = full_inventory() if entries is None else entries
     unknown = sorted(set(adapters) - set(inventory))
     if unknown:
@@ -262,7 +280,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                                      "reason": "Prerequisites not executed: " + ", ".join(skipped)}
                 else:
                     running[pool.submit(_attempt, key, adapters.get(key),
-                                        task, job, allow_execution, timeout)] = key
+                                        task, job, allow_execution, timeout, media_arg)] = key
             for future in futures.as_completed(running):
                 key = running[future]
                 try:
@@ -272,6 +290,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     if set(outcomes) != set(inventory):
         raise ValueError("Black Dragon did not account for every catalog entry")
     ledger = audit.load(job, inventory)
+    blocked_why = Counter()
     for key in inventory:
         item = ledger["items"][key]
         result = outcomes[key]
@@ -290,6 +309,10 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                 item["reason"] = "Evidence check failed: " + str(exc)
         else:
             item["reason"] = result["reason"]
+            if result["reason"] == NO_ADAPTER:
+                why = _why_blocked(inventory[key].get("kind"))
+                item["reason"] = NO_ADAPTER + ": " + BLOCKED_WHY[why]
+                blocked_why[why] += 1
     audit.save(job, ledger)
     coverage = audit.report(job, inventory)
     counts = Counter(x["status"] for x in ledger["items"].values())
@@ -309,6 +332,9 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "brain_plan_file": str(job / "black_dragon_plan.json"),
               "selected_out": strategy["selected_out"],
               "executed": counts["executed"], "blocked": counts["blocked"],
+              "blocked_why": {k: blocked_why[k] for k in BLOCKED_WHY},
+              "media": ({"path": media_arg, "sha256": audit.sha256(Path(media_arg))} if media_arg
+                        else "none: media adapters ran on their self-test clip, not on your footage"),
               "failed": counts["failed"], "full_coverage": coverage["fully_executed"],
               "coverage_file": str(job / "all_skills_report.json"),
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
@@ -340,6 +366,9 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"of {report['probed']} probed",
              f"- اتنفذت فعلًا بإيصال / executed with receipt: **{report['executed']}** · "
              f"blocked {report['blocked']:,} · failed {report['failed']}",
+             f"- ليه متوقفين / why blocked: **{report['blocked_why']['method_description']:,}** "
+             f"وصف طريقة مش برنامج / method descriptions (not programs) · "
+             f"**{report['blocked_why']['tool_without_adapter']:,}** برامج لسه من غير adapter / tools without an adapter",
              f"- full coverage (every entry executed): **{report['full_coverage']}**", "",
              "| الجزء / part | assigned | leads |", "|---|---:|---|"]
     for pid, part in strategy["parts"].items():
@@ -376,6 +405,8 @@ def main(argv=None) -> int:
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
                    help="run --help on every argparse CLI tool as a startup probe")
+    p.add_argument("--media", type=Path,
+                   help="video/audio file for the media adapters ({media}); without it they use a self-test clip")
     l = sub.add_parser("links", help="Audit every capability's verified skill owner; NO execution")
     l.add_argument("--out", type=Path, help="optional new JSON file with all capability-to-skill links")
     a = sub.add_parser("activate", help="Inspect every tool and stage a full or smart reviewed usage plan (no execution)")
@@ -461,7 +492,7 @@ def main(argv=None) -> int:
         report = run(args.task, args.job,
                      _load_adapters(REVIEWED_ADAPTERS if args.reviewed_adapters else args.adapters),
                      args.workers, args.execute_adapters, args.timeout,
-                     probe_tools=args.probe_tools, mode=args.mode)
+                     probe_tools=args.probe_tools, mode=args.mode, media=args.media)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["full_coverage"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:

@@ -1,5 +1,5 @@
 {
-  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters.",
+  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters. Media adapters (\"media\": true) run real video/audio tools through _black_dragon_media.py on --media FILE, or on a self-test clip with known answers when no file is given; their outputs stay inside the job.",
   "adapters": {
     "tool:skill-intelligence": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
@@ -422,6 +422,86 @@
         "5"
       ],
       "why": "search the local creative index"
+    },
+    "tool:music-rhythm-engine": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "rhythm",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "rhythm grid: measured tempo and beat times so cuts, flashes and words land on the beat",
+      "media": true
+    },
+    "tool:audio-cue-mapper": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "audio-cues",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "audio cues: onsets and RMS energy curve of the soundtrack",
+      "media": true
+    },
+    "tool:cinema-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "cinema",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "cinema lab: vid.stab stabilize (shake measured before/after), teal-orange LUT grade with .cube, tracked 16:9 to 9:16 reframe",
+      "media": true
+    },
+    "tool:montage-pro": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "montage",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "montage team intake: loudness, cuts, energy cues, calm vs peak seconds and build options",
+      "media": true
+    },
+    "tool:verify-video": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "verify",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "delivery checks: codec, pixel format, fps, aspect, loudness, true peak",
+      "media": true
+    },
+    "tool:video-eyes": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "eyes",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "look at the video: contact strip, onion skin, motion and audio flags",
+      "media": true
+    },
+    "tool:look-pipeline": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "look",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "colour looks: every preset checked against reference maths, then a cinematic grade rendered",
+      "media": true
+    },
+    "tool:fast-edit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_media.py",
+      "args": [
+        "cut",
+        "{artifact}",
+        "--media={media}"
+      ],
+      "why": "frame-exact cut with the output length checked",
+      "media": true
     }
   }
 }

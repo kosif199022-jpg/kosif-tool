@@ -62,6 +62,29 @@ The job folder gets `black_dragon_report.md` (Arabic/English summary), `black_dr
 }
 ```
 
+### Media adapters (video and audio tools that really run)
+
+Eight more adapters (`"media": true`) run the production tools on real footage through `scripts/_black_dragon_media.py RECIPE {artifact} --media={media}`:
+
+| entry | recipe | what runs | checked |
+|---|---|---|---|
+| `tool:music-rhythm-engine` | rhythm | audio_cue_mapper → music_rhythm_engine: tempo and beat grid | grid written; self-test tempo 120 ±3 BPM |
+| `tool:audio-cue-mapper` | audio-cues | onsets and RMS energy curve | self-test finds its 12 clicks ±1 |
+| `tool:cinema-lab` | cinema | vid.stab stabilize, teal-orange LUT grade + `.cube`, tracked 16:9 → 9:16 reframe | outputs probed; reframe is 9:16; self-test shake goes down |
+| `tool:montage-pro` | montage | intake (loudness, cuts, energy cues) + build options; calm vs peak seconds | cues measured |
+| `tool:verify-video` | verify | delivery checks (codec, fps, aspect, loudness, true peak) | checks evaluated; failed checks are reported as findings |
+| `tool:video-eyes` | eyes | contact strip, onion skin, frozen spans, clipping flags | report files written; flags are findings |
+| `tool:look-pipeline` | look | every look vs its reference maths, then a cinematic grade | all looks match; output probed |
+| `tool:fast-edit` | cut | frame-exact cut | output length matches ±0.1 s |
+
+Pass your file with `black_dragon.py run ... --media FILE` (never modified; its SHA-256 goes in the report). Without `--media` each adapter first renders a **self-test clip with known answers** (120 BPM clicks, shaking camera, colour bars) and its artifact says `"kind": "self-test"`, so CI proves the tools work without pretending it edited your footage. Every output stays in the artifact's `.work` folder inside the job; a tool error or a failed required check exits non-zero, so it can never be counted as executed. Long footage needs a larger `--timeout` (a 62 s 720p clip took about 6 minutes for all eight).
+
+Kling 3.0 / Higgsfield are **not** adapters: they spend credits and run through the Higgsfield connector only after the owner sees the exact price and approves.
+
+### Why the rest stay blocked
+
+The report's `blocked_why` splits the blocked entries: `method_description` (powers, skills, styles, playbooks, protocol rules, superpowers: written methods applied in the plan through `briefs.jsonl`, never counted as executed, because there is no program to run) and `tool_without_adapter` (real programs that still need a reviewed adapter: the honest backlog). Measured on 2026-11-02: 7,383 entries, 47 of 47 adapters executed, 0 failed, blocked 7,178 method descriptions + 158 tools without an adapter.
+
 Execution is **explicitly opt-in**. Keep network calls, paid services, deployment, installation and uploads out of adapters unless the owner authorises them separately. No shell string is built from user text. Adapters run with the local user's permissions; this is not a sandbox, so review them.
 
 ## Limits
