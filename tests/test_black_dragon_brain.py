@@ -155,6 +155,30 @@ class ToolInspectionTests(unittest.TestCase):
         self.assertEqual(len(result["council"]["members"]), 5)
         self.assertEqual(result["plan_sha256"], self.inspect()["plan_sha256"])
 
+    def test_full_mode_targets_all_tools_and_all_skills_without_fake_success(self):
+        report = self.inspect("all")
+        self.assertEqual(report["full_mode_contract"]["catalog_tools_targeted"], 2)
+        self.assertEqual(report["full_mode_contract"]["installed_skills_planned"], 1)
+        self.assertEqual(report["counts"]["tool_execution_gaps"], 0)
+        self.assertEqual(report["counts"]["skills_planned_for_usage"], 1)
+        self.assertEqual(len(report["skill_usage_plan"]), 1)
+        self.assertTrue(all(row["full_mode_execution_target"] for row in report["tools"].values()))
+        self.assertTrue(all(not row["execution_attempted"] for row in report["tools"].values()))
+        self.assertFalse(report["full_mode_contract"]["all_tools_executed"])
+        self.assertFalse(report["full_mode_contract"]["all_skills_applied"])
+        staged = [key for wave in report["all_tool_execution_waves"] for key in wave["tool_ids"]]
+        self.assertEqual(set(staged), set(report["tools"]))
+
+    def test_full_mode_does_not_drop_tools_that_lack_reviewed_adapters(self):
+        del self.adapters["tool:second"]
+        report = self.inspect("all")
+        self.assertEqual(report["full_mode_contract"]["catalog_tools_targeted"], 2)
+        self.assertEqual(len(report["all_tool_execution_gaps"]), 1)
+        self.assertEqual(report["all_tool_execution_gaps"]["tool:second"], "unreviewed_or_missing_adapter")
+        self.assertEqual(report["tools"]["tool:second"]["execution_gap"],
+                         "unreviewed_or_missing_adapter")
+        self.assertFalse(report["full_mode_contract"]["all_tools_executed"])
+
     def test_missing_source_or_metadata_blocks_execution_but_keeps_inventory(self):
         self.records["tool:first"]["path"] = "scripts/missing.py"
         result = self.inspect()
