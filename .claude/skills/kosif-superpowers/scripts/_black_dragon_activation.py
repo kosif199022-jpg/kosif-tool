@@ -161,6 +161,45 @@ def _static_source(record: dict, repo_root: Path, skill_root: Path) -> dict:
             "source_sha256": digest.hexdigest()}
 
 
+def qualification_queue(tool_rows: dict, execution_gaps: dict) -> dict:
+    """An actionable, deterministic backlog for full-tool execution coverage.
+
+    The queue is only a *plan*: it does not grant permissions, modify adapters,
+    import target programs, or label a merely catalogued item executable.
+    """
+    severity = {
+        "source_not_inspectable": (0, "repair registry source path and re-check contents"),
+        "dependency_or_adapter_review_required": (1, "repair reviewed adapter manifest or prerequisite and rerun isolated tests"),
+        "unreviewed_or_missing_adapter": (2, "design and independently test an allowlisted adapter with real input/output receipts"),
+    }
+    queued = []
+    for key in sorted(execution_gaps):
+        row = tool_rows[key]
+        gap = execution_gaps[key]
+        rank, next_action = severity[gap]
+        queued.append({
+            "id": key,
+            "stage": row["stage"],
+            "priority": row["priority"],
+            "declared_risk": row["risk"],
+            "gap": gap,
+            "next_action": next_action,
+            "source_status": row["inspection"]["status"],
+            "approval_required": True,
+            "status": "unqualified_not_executed",
+        })
+    queued.sort(key=lambda x: (severity[x["gap"]][0], -x["priority"], x["id"]))
+    by_reason = dict(sorted(Counter(x["gap"] for x in queued).items()))
+    return {
+        "schema": "kosif.black-dragon.tool-qualification.v1",
+        "status": "review_backlog_only",
+        "count": len(queued),
+        "counts_by_reason": by_reason,
+        "items": queued,
+        "policy": "Qualify every registered tool individually; NEVER execute unreviewed code to meet a coverage metric.",
+    }
+
+
 def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
                          tool_records: dict, repo_root: Path, skill_root: Path,
                          mode: str = "all") -> dict:
@@ -252,6 +291,7 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
                 row["execution_gap"] = None
         else:
             row["execution_gap"] = "not_selected_in_smart_mode" if not row["selected"] else None
+    backlog = qualification_queue(rows, execution_gaps)
     stage_order = list(plan["parts"])
     stages = []
     for stage in stage_order:
@@ -288,6 +328,7 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
         "tools": rows, "stages": stages, "dependency_waves": waves,
         "all_tool_execution_waves": all_execution_waves,
         "all_tool_execution_gaps": execution_gaps,
+        "tool_qualification_backlog": backlog,
         "skill_usage_plan": skill_uses,
         "full_mode_contract": {
             "goal": "Run every registered runnable tool and apply every installed skill appropriately" if mode == "all" else "Choose best-fit tool and skill applications",
@@ -295,6 +336,7 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
             "installed_skills_planned": len(skill_ids),
             "tools_eligible_for_separate_approval": len(eligible),
             "tools_pending_adapter_review_or_missing_source": len(execution_gaps),
+            "qualification_backlog_count": backlog["count"],
             "tools_executed": 0,
             "skills_applied_with_evidence": 0,
             "all_tools_executed": False,
@@ -309,6 +351,7 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
             "reviewed_adapters_selected": len(selected),
             "tool_candidates_after_dependencies": len(eligible),
             "tool_execution_gaps": len(execution_gaps),
+            "qualification_backlog_by_reason": backlog["counts_by_reason"],
             "skills_planned_for_usage": len(skill_uses),
             "execution_attempts": 0,
         },
