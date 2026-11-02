@@ -93,6 +93,34 @@ class MediaContractTests(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),
                          "ffmpeg and ffprobe are required for real media integration")
+    def test_real_video_scene_analysis_and_grade(self):
+        if not all((SCRIPTS / x).is_file() for x in media.TOOLS.values()):
+            self.skipTest("Bundled media tools unavailable")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "original.mp4"
+            generated = subprocess.run([
+                "ffmpeg", "-nostdin", "-hide_banner", "-loglevel", "error",
+                "-f", "lavfi", "-i", "testsrc2=size=320x180:rate=12",
+                "-t", "2", "-an", "-c:v", "mpeg4", "-q:v", "4", str(source),
+            ], capture_output=True, text=True, timeout=60)
+            self.assertEqual(generated.returncode, 0, generated.stderr[-500:])
+            args = argparse.Namespace(input=source, aligned_words=None, job_name="video-test",
+                                      execute=True, timeout=240, skip_scenes=False,
+                                      stabilize=False, reframe=False, grade_look="teal-orange")
+            with mock.patch.object(media, "JOBS", root / "jobs"):
+                status, report = media.run(args)
+                self.assertEqual(status, 0, report.get("error"))
+                self.assertEqual(report["media_kind"], "video")
+                job = root / "jobs" / "video-test"
+                self.assertTrue((job / "scenes" / "scenes.json").is_file())
+                self.assertTrue((job / "exports" / "grade.mp4").is_file())
+                self.assertEqual(report["final_video"], "exports/grade.mp4")
+                self.assertEqual(media.verify("video-test")["verified_artifacts"],
+                                 report["verified_artifact_count"])
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),
+                         "ffmpeg and ffprobe are required for real media integration")
     def test_real_audio_intake_and_rhythm_create_verified_outputs(self):
         if not all((SCRIPTS / x).is_file() for x in media.TOOLS.values()):
             self.skipTest("Bundled media tools unavailable")
