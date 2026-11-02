@@ -10,7 +10,12 @@ Evidence tiers, never mixed up in the report:
   assigned  - in the plan with a part, mode and application (all entries)
   probed    - a read-only tool answered `--help` here (opt-in --probe-tools)
   executed  - a reviewed adapter ran on the task, wrote a nonempty artifact and
-              a SHA-256 receipt (opt-in --adapters FILE --execute-adapters)
+              a SHA-256 receipt (opt-in --adapters FILE --execute-adapters).
+              Two classes, always reported apart:
+                tool-run      a registered program ran (the reviewed adapters)
+                method-apply  --apply-methods: _black_dragon_apply.py read the
+                              entry's own source, checked its requirements and
+                              proofs here and wrote a task sheet for it
 Bounded parallel dispatch. No shell strings, payments, uploads or installs.
 """
 from __future__ import annotations
@@ -31,6 +36,9 @@ SCHEMA = "kosif.black-dragon.v2"
 MAX_WORKERS = 32
 PROBE_TIMEOUT = 30
 REVIEWED_ADAPTERS = audit.SKILL / "data" / "black_dragon_adapters.json"
+METHOD_ADAPTER = {"script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_apply.py",
+                  "args": ["{artifact}", "{key}", "{kind}", "{source}", "{task}"],
+                  "class": "method-apply"}
 
 
 def _file_sha(path: Path, cache: dict) -> str | None:
@@ -175,7 +183,7 @@ def _safe_job(job: Path) -> Path:
     return result
 
 def _attempt(key: str, spec: dict | None, task: str, job: Path,
-             approved: bool, timeout: int) -> dict:
+             approved: bool, timeout: int, meta: dict | None = None) -> dict:
     if spec is None:
         return {"status": "blocked", "reason": "No executable adapter registered"}
     if not approved:
@@ -186,7 +194,10 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
         basename = re.sub(r"[^a-zA-Z0-9_.-]", "_", key)[:90] + "-" + sha256(key.encode()).hexdigest()[:10]
         artifact = job / "artifacts" / f"{basename}.txt"
         receipt = job / "receipts" / f"{basename}.json"
+        meta = meta or {}
         args = [a.replace("{task}", task).replace("{artifact}", str(artifact))
+                 .replace("{key}", key).replace("{kind}", str(meta.get("kind", "")))
+                 .replace("{source}", str(meta.get("source", "")))
                 for a in spec.get("args", [])]
         command = [sys.executable, str(script), *args]
         completed = subprocess.run(command, cwd=REPO, text=True, capture_output=True,
@@ -196,15 +207,16 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
                     f"Adapter exit={completed.returncode}; missing output or error: {completed.stderr[-220:]}"}
         proof = {"entry": key, "exit_code": completed.returncode,
                  "command": command, "artifact": str(artifact),
-                 "artifact_sha256": audit.sha256(artifact)}
+                 "artifact_sha256": audit.sha256(artifact),
+                 "class": spec.get("class", "tool-run")}
         receipt.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        return {"status": "executed", "receipt": receipt}
+        return {"status": "executed", "receipt": receipt, "class": spec.get("class", "tool-run")}
     except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
         return {"status": "failed", "reason": str(exc)[:350]}
 
 def run(task: str, job: Path, adapters: dict, workers: int,
         allow_execution: bool, timeout: int, entries: dict | None = None,
-        probe_tools: bool = False) -> dict:
+        probe_tools: bool = False, apply_methods: bool = False) -> dict:
     if not task.strip():
         raise ValueError("Task is required")
     if not 1 <= workers <= MAX_WORKERS:
@@ -253,8 +265,9 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                     outcomes[key] = {"status": "blocked",
                                      "reason": "Prerequisites not executed: " + ", ".join(skipped)}
                 else:
-                    running[pool.submit(_attempt, key, adapters.get(key),
-                                        task, job, allow_execution, timeout)] = key
+                    spec = adapters.get(key) or (METHOD_ADAPTER if apply_methods else None)
+                    running[pool.submit(_attempt, key, spec, task, job, allow_execution,
+                                        timeout, inventory[key])] = key
             for future in futures.as_completed(running):
                 key = running[future]
                 try:
@@ -277,6 +290,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
         if result["status"] == "executed":
             try:
                 item["receipt"] = audit.evidence(result["receipt"], key)
+                item["class"] = result.get("class", "tool-run")
             except (OSError, ValueError) as exc:
                 item["status"] = "failed"
                 item["reason"] = "Evidence check failed: " + str(exc)
@@ -285,6 +299,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     audit.save(job, ledger)
     coverage = audit.report(job, inventory)
     counts = Counter(x["status"] for x in ledger["items"].values())
+    classes = Counter(x.get("class", "tool-run") for x in ledger["items"].values() if x["status"] == "executed")
     probe_counts = Counter(p["status"] for p in probes.values())
     briefs_file = job / "briefs.jsonl"
     report = {"schema": SCHEMA, "task": task, "scheduled": len(inventory),
@@ -300,11 +315,15 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "roles": strategy["roles"], "waves": len(strategy["waves"]),
               "brain_plan_file": str(job / "black_dragon_plan.json"),
               "selected_out": strategy["selected_out"],
-              "executed": counts["executed"], "blocked": counts["blocked"],
+              "executed": counts["executed"], "executed_tool_run": classes["tool-run"],
+              "executed_method_apply": classes["method-apply"], "apply_methods": apply_methods,
+              "blocked": counts["blocked"],
               "failed": counts["failed"], "full_coverage": coverage["fully_executed"],
               "coverage_file": str(job / "all_skills_report.json"),
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
-                        "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
+                        "a tool answered --help here; only receipt-verified adapter work is 'executed'; "
+                        "'method-apply' means the entry was read from its source and applied to the "
+                        "task as a sheet here, not that a program with that name ran")}
     (job / "black_dragon_report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (job / "black_dragon_report.md").write_text(_markdown(report, strategy, ledger), encoding="utf-8")
@@ -322,6 +341,8 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"of {report['probed']} probed",
              f"- اتنفذت فعلًا بإيصال / executed with receipt: **{report['executed']}** · "
              f"blocked {report['blocked']:,} · failed {report['failed']}",
+             f"  - برنامج اشتغل / tool-run: **{report['executed_tool_run']:,}** · "
+             f"طريقة اتطبقت بورقة وإيصال / method-apply: **{report['executed_method_apply']:,}**",
              f"- full coverage (every entry executed): **{report['full_coverage']}**", "",
              "| الجزء / part | assigned | leads |", "|---|---:|---|"]
     for pid, part in strategy["parts"].items():
@@ -329,9 +350,10 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
         lines.append(f"| {part['ar']} / {part['en']} | {part['assigned']:,} | {leads} |")
     lines += ["", "| الطريقة / mode | entries |", "|---|---:|"]
     lines += [f"| {m} | {n:,} |" for m, n in report["modes"].items()]
-    executed = [k for k, v in ledger["items"].items() if v["status"] == "executed"]
+    executed = [k for k, v in ledger["items"].items()
+                if v["status"] == "executed" and v.get("class", "tool-run") == "tool-run"]
     if executed:
-        lines += ["", "## اتنفذ بإيصال / executed with receipt", ""]
+        lines += ["", "## برامج اشتغلت بإيصال / tool-run with receipt", ""]
         for key in sorted(executed):
             r = ledger["items"][key]["receipt"]
             lines.append(f"- `{key}` → `{Path(r['artifact']).name}` sha256 `{r['artifact_sha256'][:16]}…`")
@@ -349,6 +371,9 @@ def main(argv=None) -> int:
     p.add_argument("--reviewed-adapters", action="store_true",
                    help="use the bundled reviewed adapters (data/black_dragon_adapters.json)")
     p.add_argument("--execute-adapters", action="store_true")
+    p.add_argument("--apply-methods", action="store_true",
+                   help="give every entry without a reviewed adapter the method adapter "
+                        "(_black_dragon_apply.py); reported as method-apply, never as tool-run")
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
@@ -378,7 +403,7 @@ def main(argv=None) -> int:
         report = run(args.task, args.job,
                      _load_adapters(REVIEWED_ADAPTERS if args.reviewed_adapters else args.adapters),
                      args.workers, args.execute_adapters, args.timeout,
-                     probe_tools=args.probe_tools)
+                     probe_tools=args.probe_tools, apply_methods=args.apply_methods)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["full_coverage"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:

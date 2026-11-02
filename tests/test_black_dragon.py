@@ -198,6 +198,51 @@ class RealExecutionTests(unittest.TestCase):
                 self.assertGreater(artifact.stat().st_size, 0)
                 self.assertEqual(dragon.audit.sha256(artifact), receipt["artifact_sha256"])
 
+    def test_method_adapter_writes_a_sheet_for_every_kind(self):
+        apply = SCRIPTS / "_black_dragon_apply.py"
+        by_kind = {}
+        entries = dragon.full_inventory()
+        for key, meta in sorted(entries.items()):
+            by_kind.setdefault(meta["kind"], (key, meta))
+        with tempfile.TemporaryDirectory() as tmp:
+            for kind, (key, meta) in by_kind.items():
+                art = Path(tmp) / (kind + ".json")
+                done = subprocess.run([sys.executable, str(apply), str(art), key, kind,
+                                       meta["source"], "مونتاج ريلز"], capture_output=True, text=True)
+                self.assertEqual(done.returncode, 0, (key, done.stderr))
+                sheet = json.loads(art.read_text(encoding="utf-8"))
+                self.assertEqual(sheet["entry"], key)
+                self.assertEqual(sheet["class"], "method-apply")
+                self.assertIn("ready_here", sheet)
+            missing = subprocess.run([sys.executable, str(apply), str(Path(tmp) / "x.json"),
+                                      "power:NO-SUCH-ID", "power", "data/powers/3d-spatial.json", "x"],
+                                     capture_output=True, text=True)
+            self.assertEqual(missing.returncode, 3)
+
+    def test_apply_methods_is_reported_apart_from_tool_runs(self):
+        subset = {}
+        entries = dragon.full_inventory()
+        for key, meta in sorted(entries.items()):
+            if meta["kind"] not in {m["kind"] for m in subset.values()}:
+                subset[key] = meta
+        subset["tool:export-profile"] = entries["tool:export-profile"]
+        adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
+        keep = {"tool:export-profile": adapters["tool:export-profile"]}
+        with tempfile.TemporaryDirectory() as tmp:
+            job = Path(tmp) / "job"
+            result = dragon.run("مونتاج ريلز", job, keep, workers=4, allow_execution=True,
+                                timeout=120, entries=subset, apply_methods=True)
+            self.assertEqual(result["executed"], len(subset), result)
+            self.assertEqual(result["executed_tool_run"], 1)
+            self.assertEqual(result["executed_method_apply"], len(subset) - 1)
+            self.assertTrue(result["full_coverage"])
+            md = (job / "black_dragon_report.md").read_text(encoding="utf-8")
+            self.assertIn("method-apply", md)
+        with tempfile.TemporaryDirectory() as tmp:
+            result = dragon.run("x", Path(tmp) / "job", {}, workers=2, allow_execution=False,
+                                timeout=30, entries=subset, apply_methods=True)
+            self.assertEqual(result["executed"], 0)
+
     def test_exec_wrapper_keeps_the_tool_exit_code(self):
         wrapper = SCRIPTS / "_black_dragon_exec.py"
         with tempfile.TemporaryDirectory() as tmp:
