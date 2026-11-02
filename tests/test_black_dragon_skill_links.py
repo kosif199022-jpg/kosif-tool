@@ -53,6 +53,26 @@ class SkillLinkAuditTests(unittest.TestCase):
         self.assertEqual(hints[0]["status"], "suggested_not_verified")
         self.assertFalse(r["summary"]["all_specialist_links_proven"])
 
+    def test_description_signal_requires_an_independent_name_match(self):
+        specialised = self.skill.parent / "cinematic-video-editing" / "SKILL.md"
+        specialised.write_text("---\nname: cinematic-video-editing\n"
+                               "description: >-\n  Detailed color grading timelines and sound mixing\n"
+                               "---\n# Cinematic Video Editing\n", encoding="utf-8")
+        hit = self.audit(desc={"power:VIDEO-001": "cinematic sound mixing"})
+        candidates = hit["links"]["power:VIDEO-001"]["specialist_candidates"]
+        self.assertEqual(candidates[0]["skill"], "skill:cinematic-video-editing")
+        self.assertGreaterEqual(candidates[0]["matching_description_terms"], 1)
+        self.assertEqual(candidates[0]["status"], "suggested_not_verified")
+        # The same word in the slug and the frontmatter cannot count twice.
+        weak = self.audit(desc={"power:VIDEO-001": "cinematic"})
+        self.assertEqual(weak["links"]["power:VIDEO-001"]["specialist_candidates"], [])
+
+    def test_bare_description_cannot_fabricate_specialist_link(self):
+        specialised = self.skill.parent / "cinematic-video-editing" / "SKILL.md"
+        specialised.write_text("---\ndescription: editing filters tools and timelines\n---\n", encoding="utf-8")
+        r = self.audit(desc={"power:VIDEO-001": "editing filters tools and timelines"})
+        self.assertEqual(r["links"]["power:VIDEO-001"]["specialist_candidates"], [])
+
     def test_missing_source_is_reported_not_silently_linked_as_working(self):
         (self.skill / "data" / "tools.json").unlink()
         r = self.audit()
