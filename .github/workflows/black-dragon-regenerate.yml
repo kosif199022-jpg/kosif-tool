@@ -42,14 +42,15 @@ jobs:
             --job out/black-dragon/ci-run --workers 8 --probe-tools --reviewed-adapters --execute-adapters --timeout 300
           code=$?
           set -e
-          # 4 = honest "not every entry executed"; anything else is an error
-          test "$code" -eq 4
+          # 0 = every reviewed adapter executed (not whole-catalog coverage); anything else is an error
+          test "$code" -eq 0
           python3 - <<'PY'
           import json
           r = json.load(open("out/black-dragon/ci-run/black_dragon_report.json"))
           assert r["assignment_complete"] and r["assigned"] == r["scheduled"], r
           assert r["failed"] == 0 and r["executed"] == r["adapter_count"], r
           assert sum(r["blocked_why"].values()) == r["blocked"], r["blocked_why"]
+          assert r["reviewed_execution_complete"] and not r["full_coverage"], r
           print("assigned", r["assigned"], "executed", r["executed"], "probe_passed", r["probe_passed"],
                 "blocked_why", r["blocked_why"])
           PY

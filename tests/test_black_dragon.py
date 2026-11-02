@@ -132,6 +132,29 @@ class BlackDragonTests(unittest.TestCase):
         self.assertIn("Prerequisites", ledger["items"]["tool:render"]["reason"])
         self.assertEqual(result["executed"], 0)
 
+    def test_diagnosis_separates_knowledge_from_executable_tools(self):
+        result = dragon.run("diagnose", self.job, {}, workers=2,
+                            allow_execution=False, timeout=5, entries=self.inventory)
+        readiness = result["adapter_readiness"]
+        self.assertEqual(readiness["catalog_entries"], 4)
+        self.assertEqual(readiness["catalog_tools"], 1)
+        self.assertEqual(readiness["tools_missing_reviewed_adapter"], 1)
+        self.assertEqual(readiness["knowledge_entries_without_adapter"], 3)
+        self.assertFalse(result["reviewed_execution_complete"])
+        ledger = json.loads((self.job / "all_skills_ledger.json").read_text())
+        self.assertIn("Tool has no reviewed", ledger["items"]["tool:render"]["reason"])
+        self.assertIn("Knowledge-only", ledger["items"]["skill:editor"]["reason"])
+
+    def test_approved_adapter_completion_does_not_claim_whole_catalog(self):
+        result = dragon.run("selective", self.job, {"tool:render": self.adapter()},
+                            workers=2, allow_execution=True, timeout=5,
+                            entries=self.inventory)
+        self.assertTrue(result["reviewed_execution_complete"])
+        self.assertEqual(result["registered_tool_executed"], 1)
+        self.assertEqual(result["adapter_readiness"]["reviewed_tool_adapters"], 1)
+        self.assertEqual(result["adapter_readiness"]["knowledge_entries_without_adapter"], 3)
+        self.assertFalse(result["full_coverage"])
+
 
 class FullInventoryTests(unittest.TestCase):
     """The real repository inventory: every capability type, no duplicates."""
@@ -187,6 +210,28 @@ class FullInventoryTests(unittest.TestCase):
             self.assertEqual(report["counts"]["execution_attempts"], 0)
             self.assertFalse(report["approval_gate"]["approved"])
             self.assertEqual(len(report["council"]["members"]), 5)
+
+    def test_default_cli_registry_is_reviewed_but_does_not_auto_execute(self):
+        built_in = dragon._cli_adapters(None)
+        self.assertGreaterEqual(len(built_in), 20)
+        self.assertEqual(built_in, dragon._load_adapters(dragon.REVIEWED_ADAPTERS))
+        with tempfile.TemporaryDirectory() as tmp:
+            custom = Path(tmp) / "custom.json"
+            custom.write_text('{"adapters": {}}', encoding="utf-8")
+            self.assertEqual(dragon._cli_adapters(custom), {})
+
+    def test_doctor_reports_missing_adapters_without_fake_success(self):
+        completed = subprocess.run(
+            [sys.executable, str(SCRIPTS / "black_dragon.py"), "doctor"],
+            cwd=ROOT, capture_output=True, text=True, timeout=120)
+        self.assertEqual(completed.returncode, 0, completed.stderr[-1600:])
+        diagnosis = json.loads(completed.stdout)
+        self.assertGreater(diagnosis["catalog_entries"], 1000)
+        self.assertGreater(diagnosis["catalog_tools"], 0)
+        self.assertEqual(diagnosis["unknown_adapters"], [])
+        self.assertEqual(diagnosis["invalid_adapter_scripts"], {})
+        self.assertGreater(diagnosis["tools_missing_reviewed_adapter"], 0)
+        self.assertGreater(diagnosis["knowledge_entries_without_adapter"], 0)
 
     def test_reviewed_adapters_point_at_real_entries_and_scripts(self):
         adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
