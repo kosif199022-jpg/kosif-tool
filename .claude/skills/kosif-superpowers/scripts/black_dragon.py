@@ -153,6 +153,40 @@ def _load_adapters(path: Path | None) -> dict:
             raise ValueError("Adapter args must be strings")
     return raw
 
+def _cli_adapters(custom_path: Path | None) -> dict:
+    """Load the vetted repository registry by default; never auto-execute it."""
+    return _load_adapters(custom_path if custom_path is not None else REVIEWED_ADAPTERS)
+
+def adapter_readiness(inventory: dict, adapters: dict) -> dict:
+    """Diagnose executable coverage without treating reference cards as broken code.
+
+    Only registered, reviewed adapters are candidates; script presence is a
+    static check, not a claim that the adapter ran successfully.
+    """
+    tool_ids = {k for k, meta in inventory.items() if meta.get("kind") == "tool"}
+    registered = set(adapters)
+    unknown = sorted(registered - set(inventory))
+    script_errors = {}
+    for key in sorted(registered & set(inventory)):
+        try:
+            _safe_script(adapters[key]["script"])
+        except (ValueError, KeyError, TypeError) as exc:
+            script_errors[key] = str(exc)
+    return {
+        "catalog_entries": len(inventory),
+        "catalog_tools": len(tool_ids),
+        "knowledge_entries": len(inventory) - len(tool_ids),
+        "reviewed_adapter_count": len(registered),
+        "reviewed_tool_adapters": len(registered & tool_ids),
+        "tools_missing_reviewed_adapter": len(tool_ids - registered),
+        "tools_missing_reviewed_adapter_ids": sorted(tool_ids - registered),
+        "knowledge_entries_without_adapter": len((set(inventory) - tool_ids) - registered),
+        "unknown_adapters": unknown,
+        "invalid_adapter_scripts": script_errors,
+        "scope": ("An indexed method/skill/style is knowledge, not a standalone "
+                  "executable tool. Adapter registration is not proof of execution."),
+    }
+
 def _safe_script(path: str) -> Path:
     rel = Path(path)
     if rel.is_absolute() or ".." in rel.parts or rel.suffix != ".py":
@@ -177,9 +211,11 @@ def _safe_job(job: Path) -> Path:
     return result
 
 def _attempt(key: str, spec: dict | None, task: str, job: Path,
-             approved: bool, timeout: int) -> dict:
+             approved: bool, timeout: int, kind: str = "tool") -> dict:
     if spec is None:
-        return {"status": "blocked", "reason": "No executable adapter registered"}
+        reason = ("Tool has no reviewed executable adapter" if kind == "tool"
+                  else "Knowledge-only catalog entry; no standalone executable adapter")
+        return {"status": "blocked", "reason": reason}
     if not approved:
         return {"status": "blocked", "reason": "Adapter execution not enabled"}
     try:
@@ -220,6 +256,9 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     unknown = sorted(set(adapters) - set(inventory))
     if unknown:
         raise ValueError("Unknown adapter entry: " + unknown[0])
+    readiness = adapter_readiness(inventory, adapters)
+    if readiness["unknown_adapters"]:
+        raise ValueError("Unknown adapter entry: " + readiness["unknown_adapters"][0])
     strategy = brain.plan(task, inventory, adapters, skill_root=audit.SKILL if entries is None else None)
     pro_max_packet = pro_max.preflight(task, strategy, inventory) if mode == "pro-max" else None
     audit.init(job, inventory)
@@ -262,7 +301,8 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                                      "reason": "Prerequisites not executed: " + ", ".join(skipped)}
                 else:
                     running[pool.submit(_attempt, key, adapters.get(key),
-                                        task, job, allow_execution, timeout)] = key
+                                        task, job, allow_execution, timeout,
+                                        inventory[key].get("kind", "tool"))] = key
             for future in futures.as_completed(running):
                 key = running[future]
                 try:
@@ -305,6 +345,11 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "probed": len(probes), "probe_passed": probe_counts["passed"],
               "probe_failed": probe_counts["failed"], "probe_not_probeable": probe_counts["not-probeable"],
               "workers": workers, "adapter_count": len(adapters),
+              "adapter_readiness": {k: v for k, v in readiness.items()
+                                    if k != "tools_missing_reviewed_adapter_ids"},
+              "registered_tool_executed": sum(
+                  ledger["items"][key]["status"] == "executed"
+                  for key in adapters if inventory[key].get("kind") == "tool"),
               "roles": strategy["roles"], "waves": len(strategy["waves"]),
               "brain_plan_file": str(job / "black_dragon_plan.json"),
               "selected_out": strategy["selected_out"],
@@ -314,6 +359,11 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
                         "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
     report["mode"] = mode
+    report["reviewed_execution_complete"] = bool(
+        allow_execution and adapters and all(
+            ledger["items"][key]["status"] == "executed" for key in adapters
+        )
+    )
     if pro_max_packet is not None:
         report["execution_map"] = pro_max_packet["execution_map"]
         qa = pro_max.verify(job, inventory, report)
@@ -340,7 +390,13 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"of {report['probed']} probed",
              f"- اتنفذت فعلًا بإيصال / executed with receipt: **{report['executed']}** · "
              f"blocked {report['blocked']:,} · failed {report['failed']}",
-             f"- full coverage (every entry executed): **{report['full_coverage']}**", "",
+             f"- full coverage (every entry executed): **{report['full_coverage']}**",
+             f"- tools without reviewed adapters: **{report['adapter_readiness']['tools_missing_reviewed_adapter']}**; "
+             f"knowledge entries without adapters: **{report['adapter_readiness']['knowledge_entries_without_adapter']}**",
+             f"- registered tools with verified execution: **{report['registered_tool_executed']}** / "
+             f"{report['adapter_readiness']['reviewed_tool_adapters']}",
+             f"- reviewed execution complete: **{report['reviewed_execution_complete']}** "
+             "(not equal to whole-catalog execution)", "",
              "| الجزء / part | assigned | leads |", "|---|---:|---|"]
     for pid, part in strategy["parts"].items():
         leads = ", ".join(f"`{k}`" for k in part["leads"]) or "—"
@@ -364,6 +420,7 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("inventory", help="Count every skill, power and tool")
+    sub.add_parser("doctor", help="Diagnose reviewed adapters and distinguish tools from knowledge")
     media_parser = sub.add_parser("media", help="Process a real audio/video asset with evidence (opt-in)")
     media_parser.add_argument("media_arguments", nargs=argparse.REMAINDER,
                               help="run|doctor|verify and arguments; see media doctor")
@@ -372,7 +429,7 @@ def main(argv=None) -> int:
     p.add_argument("--job", required=True, type=Path)
     p.add_argument("--adapters", type=Path)
     p.add_argument("--reviewed-adapters", action="store_true",
-                   help="use the bundled reviewed adapters (data/black_dragon_adapters.json)")
+                   help="explicitly select the bundled reviewed adapters (also the default)")
     p.add_argument("--execute-adapters", action="store_true")
     p.add_argument("--mode", choices=("standard", "pro-max"), default="standard")
     p.add_argument("--workers", type=int, default=8)
@@ -403,6 +460,10 @@ def main(argv=None) -> int:
                               "by_kind": Counter(v["kind"] for v in entries.values())},
                              ensure_ascii=False, indent=2))
             return 0
+        if args.command == "doctor":
+            diagnosis = adapter_readiness(full_inventory(), _load_adapters(REVIEWED_ADAPTERS))
+            print(json.dumps(diagnosis, ensure_ascii=False, indent=2))
+            return 4 if diagnosis["unknown_adapters"] or diagnosis["invalid_adapter_scripts"] else 0
         if args.command == "verify":
             result = pro_max.review_job(args.job, full_inventory())
             print(json.dumps(result, ensure_ascii=False, indent=2))
@@ -453,7 +514,7 @@ def main(argv=None) -> int:
             return 0
         if args.command == "plan":
             inventory = full_inventory()
-            adapters = _load_adapters(args.adapters)
+            adapters = _cli_adapters(args.adapters)
             if set(adapters) - set(inventory):
                 raise ValueError("Unknown adapter entry")
             strategy = brain.plan(args.task, inventory, adapters, skill_root=audit.SKILL)
@@ -465,11 +526,11 @@ def main(argv=None) -> int:
         if args.adapters and args.reviewed_adapters:
             raise ValueError("Use either --adapters or --reviewed-adapters")
         report = run(args.task, args.job,
-                     _load_adapters(REVIEWED_ADAPTERS if args.reviewed_adapters else args.adapters),
+                     _cli_adapters(args.adapters),
                      args.workers, args.execute_adapters, args.timeout,
                      probe_tools=args.probe_tools, mode=args.mode)
         print(json.dumps(report, ensure_ascii=False, indent=2))
-        return 0 if report["full_coverage"] else 4
+        return 0 if report["reviewed_execution_complete"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:
         print("black-dragon: " + str(exc), file=sys.stderr)
         return 2
