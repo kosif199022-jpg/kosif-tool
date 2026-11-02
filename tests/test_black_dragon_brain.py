@@ -179,6 +179,27 @@ class ToolInspectionTests(unittest.TestCase):
                          "unreviewed_or_missing_adapter")
         self.assertFalse(report["full_mode_contract"]["all_tools_executed"])
 
+    def test_qualification_backlog_covers_missing_adapters_with_actions(self):
+        del self.adapters["tool:second"]
+        report = self.inspect("all")
+        backlog = report["tool_qualification_backlog"]
+        self.assertEqual(backlog["count"], 1)
+        self.assertEqual(backlog["counts_by_reason"], {"unreviewed_or_missing_adapter": 1})
+        self.assertEqual(backlog["items"][0]["id"], "tool:second")
+        self.assertEqual(backlog["items"][0]["status"], "unqualified_not_executed")
+        self.assertTrue(backlog["items"][0]["approval_required"])
+        self.assertIn("adapter", backlog["items"][0]["next_action"])
+        self.assertEqual(report["full_mode_contract"]["qualification_backlog_count"], 1)
+
+    def test_qualification_backlog_prioritizes_broken_paths(self):
+        del self.adapters["tool:second"]
+        self.records["tool:second"]["path"] = "../not_allowed.py"
+        report = self.inspect("all")
+        backlog = report["tool_qualification_backlog"]
+        self.assertEqual(backlog["items"][0]["gap"], "source_not_inspectable")
+        self.assertEqual(backlog["items"][0]["source_status"], "unsafe_path")
+        self.assertFalse(report["full_mode_contract"]["all_tools_executed"])
+
     def test_missing_source_or_metadata_blocks_execution_but_keeps_inventory(self):
         self.records["tool:first"]["path"] = "scripts/missing.py"
         result = self.inspect()
