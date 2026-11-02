@@ -35,3 +35,14 @@ what this repository can do, and the motion-graphics production rules.
 12. Video export standard (owner-approved, every delivery): 1080×1920, 30 fps, H.264 High CRF 17 preset slow, BT.709, the user's audio stream-copied, MP4 `+faststart`, colour matched to the source, no 4K unless asked. Same or better, never lower. See `playbooks/export-standard.md`.
 
 13. Capabilities: `.claude/skills/kosif-superpowers/` maps every power (thinking, writing, code, data, documents, research, apps, media, strategy, motion) with how-to and proof. Probe the session with `python3 .claude/skills/kosif-superpowers/scripts/probe_env.py` and search with `python3 .claude/skills/kosif-superpowers/scripts/powers.py suggest "<brief>"`.
+
+## C. Black Dragon real-media execution (opt-in)
+
+A catalog capability without a reviewed executable adapter is a **description**, not a broken process. For genuine video/audio processing, use the dedicated file-aware runner instead of trying to execute every catalog card:
+
+- Read-only prerequisites: `python3 .claude/skills/kosif-superpowers/scripts/black_dragon_media.py doctor`.
+- Approved asset pipeline: `python3 .claude/skills/kosif-superpowers/scripts/black_dragon_media.py run --input /path/to/media.mp4 --job-name film-001 --execute --stabilize --reframe`.
+- Independent evidence check: `python3 .claude/skills/kosif-superpowers/scripts/black_dragon_media.py verify --job-name film-001`.
+- Documentation and limits: `docs/BLACK_DRAGON_REAL_MEDIA_EXECUTION.md`.
+
+Only explicitly chosen transformations run. Generated outputs and SHA-256 receipts prove those exact stages, not full-catalog activation, beat certainty, transcription, aesthetic quality or external paid-model use.
