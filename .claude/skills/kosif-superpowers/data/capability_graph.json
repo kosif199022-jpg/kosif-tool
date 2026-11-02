@@ -15,7 +15,7 @@
    "id": "root",
    "kind": "root",
    "label": "KOSIF Superpowers",
-   "count": 5860
+   "count": 5861
   },
   {
    "id": "dom:motion",
@@ -1406,10 +1406,10 @@
    "label": "Runnable KOSIF tools",
    "ar": "الأدوات القابلة للتشغيل",
    "prefix": "TOOL",
-   "count": 181,
-   "proven": 150,
+   "count": 182,
+   "proven": 151,
    "status": {
-    "proven": 150,
+    "proven": 151,
     "ready": 22,
     "install": 9
    }
@@ -1988,6 +1988,11 @@
    "label": "scripts/atlas_capability_miner.py"
   },
   {
+   "id": "script:scripts/black_dragon_media.py",
+   "kind": "script",
+   "label": "scripts/black_dragon_media.py"
+  },
+  {
    "id": "script:scripts/blender_cinematic_bridge.py",
    "kind": "script",
    "label": "scripts/blender_cinematic_bridge.py"
@@ -2498,6 +2503,11 @@
    "id": "test:tests/test_black_dragon.py",
    "kind": "test",
    "label": "tests/test_black_dragon.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_media.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_media.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -5585,7 +5595,7 @@
    "from": "dom:build",
    "to": "fam:runnable-tools",
    "rel": "has",
-   "w": 181
+   "w": 182
   },
   {
    "from": "fam:runnable-tools",
@@ -5597,7 +5607,7 @@
    "from": "fam:runnable-tools",
    "to": "req:ffmpeg",
    "rel": "needs",
-   "w": 48
+   "w": 49
   },
   {
    "from": "fam:runnable-tools",
@@ -5615,7 +5625,7 @@
    "from": "fam:runnable-tools",
    "to": "req:pip:pillow",
    "rel": "needs",
-   "w": 19
+   "w": 20
   },
   {
    "from": "fam:runnable-tools",
@@ -5639,7 +5649,7 @@
    "from": "fam:runnable-tools",
    "to": "script:scripts/hub.py",
    "rel": "runs",
-   "w": 186
+   "w": 187
   },
   {
    "from": "fam:runnable-tools",
@@ -6956,6 +6966,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/black_dragon_media.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/blender_cinematic_bridge.py",
    "to": "script:scripts/audio_cue_mapper.py",
    "rel": "imports",
@@ -8008,6 +8024,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_media.py",
    "rel": "tested_by",
    "w": 1
   },

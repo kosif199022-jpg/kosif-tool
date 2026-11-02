@@ -8,13 +8,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
-import numpy as np
-
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / ".claude/skills/kosif-shadow-theatre"
 sys.path.insert(0, str(SKILL / "scripts"))
-import shadow_engine as E  # noqa: E402
-import shadow_theatre as ST  # noqa: E402
+try:  # the renderer needs numpy + Pillow; CI installs them, a bare machine skips with a reason
+    import numpy as np
+    import shadow_engine as E
+    import shadow_theatre as ST
+except ImportError as exc:  # pragma: no cover
+    raise unittest.SkipTest(f"shadow theatre needs numpy and Pillow: {exc}")
 
 DEMO = SKILL / "scenes/lantern-keeper.json"
 

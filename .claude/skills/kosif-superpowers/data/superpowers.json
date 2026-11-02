@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5860,
-"distinct_methods": 5578,
+"atoms": 5861,
+"distinct_methods": 5579,
 "twin_groups": 178,
 "superpowers": 483,
 "per_target": 12,
@@ -16881,7 +16881,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.109
+"sim": 0.107
 }
 ]
 },
@@ -18180,15 +18180,15 @@
 "rendering",
 "svg"
 ],
-"size": 19,
+"size": 20,
 "best": "proven",
 "status_mix": {
-"proven": 17,
+"proven": 18,
 "install": 2
 },
-"ready_now": 17,
+"ready_now": 18,
 "families": {
-"runnable-tools": 19
+"runnable-tools": 20
 },
 "atlas_folded": 0,
 "requires": [
@@ -18227,16 +18227,16 @@
 "name_ar": "محرك حركة SVG"
 },
 {
-"id": "TOOL-77",
-"status": "proven",
-"name_en": "Flexible aspect ratio resolver",
-"name_ar": "محلّل نِسَب أبعاد الفيديو"
-},
-{
 "id": "TOOL-15",
 "status": "proven",
 "name_en": "Motion Starter Kit timing bridge",
 "name_ar": "جسر توقيتات Motion Starter Kit"
+},
+{
+"id": "TOOL-77",
+"status": "proven",
+"name_en": "Flexible aspect ratio resolver",
+"name_ar": "محلّل نِسَب أبعاد الفيديو"
 },
 {
 "id": "TOOL-79",
@@ -18275,22 +18275,28 @@
 "name_ar": "مولّد مشاريع بداية لمحركات الحركة"
 },
 {
-"id": "TOOL-18",
-"status": "proven",
-"name_en": "Motion math toolkit",
-"name_ar": "مكتبة رياضيات الحركة"
-},
-{
 "id": "TOOL-64",
 "status": "proven",
 "name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
 "name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
 },
 {
+"id": "TOOL-18",
+"status": "proven",
+"name_en": "Motion math toolkit",
+"name_ar": "مكتبة رياضيات الحركة"
+},
+{
 "id": "TOOL-146",
 "status": "proven",
 "name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
 "name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
+},
+{
+"id": "TOOL-183",
+"status": "proven",
+"name_en": "KOSIF Shadow Theatre silhouette film engine",
+"name_ar": "محرك أفلام مسرح الظل"
 },
 {
 "id": "TOOL-171",
@@ -18337,23 +18343,23 @@
 "TOOL-82"
 ]
 ],
-"distinct_methods": 16,
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0264",
-"sim": 0.267
-},
-{
-"id": "SP-0147",
-"sim": 0.225
-},
-{
-"id": "SP-0270",
-"sim": 0.204
+"sim": 0.257
 },
 {
 "id": "SP-0268",
-"sim": 0.201
+"sim": 0.232
+},
+{
+"id": "SP-0147",
+"sim": 0.22
+},
+{
+"id": "SP-0270",
+"sim": 0.202
 }
 ]
 },
@@ -20015,7 +20021,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.123
+"sim": 0.122
 }
 ]
 },
@@ -24255,7 +24261,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.078
+"sim": 0.069
 }
 ]
 },
@@ -28009,7 +28015,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.05
+"sim": 0.049
 }
 ]
 },
@@ -33462,7 +33468,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.138
+"sim": 0.136
 }
 ]
 },
@@ -34244,7 +34250,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.091
+"sim": 0.098
 },
 {
 "id": "SP-0265",
@@ -34464,7 +34470,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.267
+"sim": 0.257
 },
 {
 "id": "SP-0273",
@@ -35275,6 +35281,10 @@
 "distinct_methods": 19,
 "links": [
 {
+"id": "SP-0141",
+"sim": 0.232
+},
+{
 "id": "SP-0142",
 "sim": 0.221
 },
@@ -35285,10 +35295,6 @@
 {
 "id": "SP-0305",
 "sim": 0.206
-},
-{
-"id": "SP-0141",
-"sim": 0.201
 }
 ]
 },
@@ -35656,7 +35662,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.204
+"sim": 0.202
 },
 {
 "id": "SP-0011",
@@ -35979,7 +35985,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.149
+"sim": 0.148
 }
 ]
 },
@@ -36585,7 +36591,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.126
+"sim": 0.123
 }
 ]
 },
@@ -36865,7 +36871,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.113
+"sim": 0.114
 }
 ]
 },
@@ -37014,7 +37020,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.066
+"sim": 0.064
 }
 ]
 },
@@ -37275,7 +37281,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.13
+"sim": 0.126
 }
 ]
 },
@@ -37769,7 +37775,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.086
+"sim": 0.085
 }
 ]
 },
@@ -37990,7 +37996,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.095
+"sim": 0.093
 }
 ]
 },
@@ -38575,7 +38581,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.063
+"sim": 0.062
 }
 ]
 },
@@ -39082,8 +39088,8 @@
 "sim": 0.072
 },
 {
-"id": "SP-0141",
-"sim": 0.029
+"id": "SP-0160",
+"sim": 0.028
 }
 ]
 },
@@ -39350,7 +39356,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.128
+"sim": 0.125
 },
 {
 "id": "SP-0274",
@@ -40015,7 +40021,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.166
+"sim": 0.163
 },
 {
 "id": "SP-0347",
@@ -40257,7 +40263,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.068
+"sim": 0.066
 }
 ]
 },
@@ -47974,8 +47980,8 @@
 "sim": 0.137
 },
 {
-"id": "SP-0029",
-"sim": 0.038
+"id": "SP-0141",
+"sim": 0.039
 }
 ]
 },
@@ -49125,7 +49131,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.177
+"sim": 0.175
 }
 ]
 },
@@ -54076,7 +54082,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.112
+"sim": 0.111
 }
 ]
 },
@@ -60166,7 +60172,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.035
+"sim": 0.038
 }
 ]
 },

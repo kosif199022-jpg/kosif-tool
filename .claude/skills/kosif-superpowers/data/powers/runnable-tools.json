@@ -8111,5 +8111,45 @@
   ],
   "section": "Sources and references / المصادر والمراجع",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-183",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "محرك أفلام مسرح الظل",
+  "name_en": "KOSIF Shadow Theatre silhouette film engine",
+  "status": "proven",
+  "what": "موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. — Shadow-theatre / silhouette motion graphics: articulated black bodies that join into trees and boats, depth toward the lamp (bigger, softer shadow), iris and spotlight transitions over projected gradient skies; analyses a reference act (cuts, palette, silhouette share), checks the scene grammar, renders stills and an export-standard MP4 with an original synth score.",
+  "when": "اعمل مشاهد بالظلال زي فقرة مسرح الظل / Make a silhouette shadow-theatre film where bodies form a tree and a boat",
+  "how": "doctor: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py doctor`; analyze: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py analyze <reference.mp4> --out out/shadow/ref`; check: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py check .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json`; stills: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py stills .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/stills --times 3,9.5,18`. Full card: `python3 scripts/hub.py tool shadow-theatre`. Limits: Bodies are procedural capsules, not hand-cut puppets; body-builds need stills review to read clearly; no lip-sync or text; a 22 s 1080x1920 film takes about 4 minutes on a 2-core container.",
+  "params": "in: A scene JSON (kosif.shadow-theatre.scene.v1); for analyze, a local video file. · out: PNG stills, an MP4, and for analyze analysis.json + contact.jpg in --out.",
+  "install": "pip install numpy Pillow · needs on PATH: python3 · optional: ffmpeg, ffprobe",
+  "requires": [
+   "ffmpeg",
+   "pip:numpy",
+   "pip:pillow"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/tests/test_shadow_theatre.py",
+   "kosif-tool/.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "shadow-theatre",
+   "shadow theatre",
+   "silhouette",
+   "مسرح الظل",
+   "ظلال",
+   "shadow puppet",
+   "body build",
+   "iris",
+   "spotlight",
+   "depth",
+   "projected backdrop"
+  ],
+  "section": "Motion graphics and rendering / الموشن والرندر",
+  "source": "data/tools.json"
  }
 ]

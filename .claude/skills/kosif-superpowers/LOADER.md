@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (9) / skills
+## المهارات (10) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -19,7 +19,8 @@
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
 | `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | Write an Instagram Reel or short video script from one raw idea, in Egyptian Arabic, MSA or English - three hooks off the Arabic hook library, scored by a local tool,… |
-| `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 82 KB · 438 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
+| `kosif-shadow-theatre` | `.claude/skills/kosif-shadow-theatre/SKILL.md` | 7 KB · 80 سطر | Make shadow-theatre / silhouette motion-graphics films (مسرح الظل، مشاهد بالظلال) from code — bodies that join into trees, boats and buildings, figures that grow as… |
+| `kosif-superpowers` | `.claude/skills/kosif-superpowers/SKILL.md` | 83 KB · 448 سطر | Capability self-awareness and thinking upgrade for Claude. One front door (scripts/hub.py find) maps a task in the user's words to the runnable tools, catalog powers… |
 | `kosif-upload-link` | `.claude/skills/kosif-upload-link/SKILL.md` | 4 KB · 46 سطر | Send the user's big-file upload link and pull what they uploaded. Use when the user asks for the upload link, says a file is too big to attach (over 30-40 MB), wants to… |
 | `kosif-web-film` | `.claude/skills/kosif-web-film/SKILL.md` | 4 KB · 71 سطر | Direct and render a motion-design video built as a webpage (codename «التنين الأسود» / Black Dragon). Use when the user asks for a video, promo, intro, explainer or… |
 | `living-site` | `.claude/skills/living-site/SKILL.md` | 12 KB · 188 سطر | Build a living website in three levels. Level 1 live 3D (Spline), Level 2 generated images and a scroll film (Higgsfield), Level 3 living motion graphics drawn in code… |
@@ -142,6 +143,15 @@
 - 104–111: What the score is and is not
 - 112–119: Credit
 
+### `.claude/skills/kosif-shadow-theatre/SKILL.md`
+
+- 6–12: KOSIF Shadow Theatre — مسرح الظل
+- 13–29: Front door
+- 30–43: Workflow (director first, then code)
+- 44–61: The style in eight techniques (what makes it read as shadow theatre)
+- 62–70: Rules
+- 71–79: Files
+
 ### `.claude/skills/kosif-superpowers/SKILL.md`
 
 - 7–32: قواك الخارقة — KOSIF Superpowers
@@ -190,7 +200,8 @@
 - 395–410: REA Creative Research Atlas — 2,000 public sources (2026-10-19)
 - 411–422: Blender headless H.264 motion video
 - 423–430: 8. مراجع أخرى / other references
-- 431–437: 100 Super Skills / الـ114 مهارة المدمجة
+- 431–438: 100 Super Skills / الـ114 مهارة المدمجة
+- 439–447: Real Black Dragon media runtime — تشغيل فعلي للأصول
 
 ### `.claude/skills/kosif-upload-link/SKILL.md`
 

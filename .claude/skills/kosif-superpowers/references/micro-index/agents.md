@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 279 powers
+[← الفهرس الدقيق / micro index](README.md) · 280 powers
 
 ## الفهرس / contents
 
@@ -80,6 +80,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-17 | ✅ | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder → `motion-stack` | SP-0141 Audio-timed SVG motion compiler | python3, npm:three, npm:gsap, npm:remotion … |
 | TOOL-171 | ✅ | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine → `infinite-matrices` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:rea |
 | TOOL-18 | ✅ | مكتبة رياضيات الحركة · Motion math toolkit → `motion-toolkit` | SP-0141 Audio-timed SVG motion compiler | node, python3 |
+| TOOL-183 | ✅ | محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine → `shadow-theatre` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, pip:numpy, pip:pillow |
 | TOOL-64 | ✅ | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score → `atlas-render` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium |
 | TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0141 Audio-timed SVG motion compiler | python3 |
 | TOOL-78 | ✅ | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |
