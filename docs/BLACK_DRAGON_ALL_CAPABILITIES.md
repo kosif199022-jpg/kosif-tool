@@ -122,3 +122,46 @@ Tests:
 ~~~bash
 python3 -m unittest tests/test_black_dragon_brain.py -v
 ~~~
+
+
+## Skill linkage audit (v1.6): do all catalog entries have real skills?
+
+\`capability_graph.json\` was originally a **power-family → script/test** graph, not
+a skill-to-capability linkage graph; its absence of explicit skill nodes is not
+evidence that every catalog capability is routed to an installed skill.
+
+The new **complete ownership audit** provides an explicit link for **every**
+item in \`black_dragon.full_inventory()\` to a real installed
+\`skill:kosif-superpowers\` file. Each skill also links to its own \`SKILL.md\`.
+It validates every capability source path and its existence, blocks traversal
+and symlink sources, and reports any missing source or orphan. The ownership
+map is attached to the output of \`black_dragon.py activate\`, so the full
+activation plan contains individual \`skill_links\` for every item.
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py links
+python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py links \
+  --out out/black-dragon/skill-links.json
+~~~
+
+The first prints an independent summary; the second writes the full
+capability-to-skill index and its deterministic SHA-256. These are read-only
+audits, and the output filename must be new.
+
+**Three different claims must not be confused:**
+
+1. **Central skill ownership (verified by paths):** each catalog item has the
+   installed KOSIF Superpowers controller as its owner. That is a real
+   organizational link, *not* proof every item runs.
+2. **Specialist skill relationship (suggested):** where at least two distinct
+   specialist-name tokens match the capability's metadata, the audit records
+   up to three candidates with \`suggested_not_verified\`. The model/user must
+   still inspect the specialist's instructions, inputs, permissions and tests.
+   Items with no specialist match are counted explicitly.
+3. **Actual execution (independently evidenced):** still needs a reviewed
+   adapter, permission gates, task outputs and receipts; merely adding a link
+   never upgrades a documented power into an executable tool.
+
+CI enforces **zero missing sources and zero orphan ownership links** on the
+real catalog. It does **not** imply that all 7,383 entries have 473 distinct,
+validated specialist mappings or runnable implementations.
