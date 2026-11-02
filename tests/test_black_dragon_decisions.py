@@ -24,7 +24,7 @@ class DecisionContractTests(unittest.TestCase):
         self.assertIsNotNone(four)
         self.assertIn("تشغيل جميع الأدوات", four.group(1))
         self.assertIn("كل مهارة", four.group(1))
-        self.assertIn("غير قابلة للتشغيل", four.group(1))
+        self.assertIn("غير القابلة للتشغيل", four.group(1))
         self.assertIn("قرارات تصميم معتمدة", new)
         self.assertIn("ليست", new)
 
