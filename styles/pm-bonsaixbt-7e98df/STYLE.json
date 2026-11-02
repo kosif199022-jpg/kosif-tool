@@ -1,0 +1,35 @@
+{
+  "id": "pm-bonsaixbt-7e98df",
+  "name": "Frame-accurate edits with Remotion",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "kinetic-type",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/bonsaixbt/status/2113751074414744061",
+  "page": "https://www.promptsmotion.com/bonsaixbt-7e98df",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/3adbd36e-c62e-45f1-9a77-b9916f422378/6b7b41882b9bc8a6.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/370a2e41-1bdf-4137-8d6d-e1fdd6384e24/a539894673d1ed3b.webp",
+  "aspect": {
+    "w": 1080,
+    "h": 1334
+  },
+  "aspect_label": "4:5",
+  "rank": 228,
+  "published": "2026-10-23",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 114,
+  "listed": true,
+  "skill": "styles/pm-bonsaixbt-7e98df/SKILL.md",
+  "playbooks": [
+    "playbooks/kinetic-type.md",
+    "playbooks/code.md"
+  ]
+}

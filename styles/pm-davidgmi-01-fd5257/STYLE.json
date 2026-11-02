@@ -1,0 +1,37 @@
+{
+  "id": "pm-davidgmi-01-fd5257",
+  "name": "Product ad generated from one photo",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "product-ui",
+    "characters",
+    "photos",
+    "music"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/Davidgmi_01/status/2113555264422985810",
+  "page": "https://www.promptsmotion.com/davidgmi-01-fd5257",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/09caa599-807d-423d-93ed-a72097de323a/565c6ebdba7b95fe.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/a56ed100-b4a5-44ba-8777-3ab222681cc4/c537530c2170be01.webp",
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 224,
+  "published": "2026-10-23",
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 94,
+  "listed": true,
+  "skill": "styles/pm-davidgmi-01-fd5257/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md",
+    "playbooks/music.md"
+  ]
+}

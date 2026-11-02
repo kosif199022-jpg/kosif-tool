@@ -21,14 +21,14 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 36,
+  "rank": 180,
   "published": "2026-09-26",
   "model": "Opus 5.5",
   "effort": "Max",
   "tech": [
     "Remotion"
   ],
-  "source_prompt_words": 40,
+  "source_prompt_words": 106,
   "listed": true,
   "skill": "styles/pm-anthonyriera-9b1b2a/SKILL.md",
   "playbooks": [

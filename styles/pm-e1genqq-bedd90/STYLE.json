@@ -1,0 +1,39 @@
+{
+  "id": "pm-e1genqq-bedd90",
+  "name": "Character scene with Remotion, GSAP and Three.js",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "shapes",
+    "characters",
+    "music"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/e1genqq/status/2113372924627325243",
+  "page": "https://www.promptsmotion.com/e1genqq-bedd90",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/e02d12d9-cbdb-41b8-a999-35b37ffd0445/65f7434f76e2147a.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/6fc63aa9-4720-4e43-9232-89761a78607f/6cc9dd9dd98048de.webp",
+  "aspect": {
+    "w": 1080,
+    "h": 1350
+  },
+  "aspect_label": "4:5",
+  "rank": 227,
+  "published": "2026-10-22",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "GSAP",
+    "Remotion",
+    "Three.js"
+  ],
+  "source_prompt_words": 108,
+  "listed": true,
+  "skill": "styles/pm-e1genqq-bedd90/SKILL.md",
+  "playbooks": [
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/music.md"
+  ]
+}

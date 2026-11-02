@@ -1,0 +1,35 @@
+{
+  "id": "pm-scenario-gg-4fd21d",
+  "name": "ALTER: restyle footage you already shot",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "product-ui",
+    "characters",
+    "photos"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/Scenario_gg/status/2113998556524646534",
+  "page": "https://www.promptsmotion.com/scenario-gg-4fd21d",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/23e640ac-fc5c-4e38-a2fd-1b8edd47df21/9338f0d221dfb1b0.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/fa06b7b8-43d0-4b52-9e32-baa560b8cf26/9706f3c5149d3517.webp",
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 149,
+  "published": "2026-10-24",
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 117,
+  "listed": true,
+  "skill": "styles/pm-scenario-gg-4fd21d/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md"
+  ]
+}

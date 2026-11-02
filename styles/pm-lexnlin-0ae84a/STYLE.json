@@ -1,0 +1,37 @@
+{
+  "id": "pm-lexnlin-0ae84a",
+  "name": "TasteSkill dashboard launch film",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "product-ui",
+    "charts",
+    "characters",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/LexnLin/status/2112674349132194185",
+  "page": "https://www.promptsmotion.com/lexnlin-0ae84a",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/57fcf626-af08-4e70-a4ea-a822dc11acfd/6953bc5fc952b2e3.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/dae9f400-4bc9-4d2f-af0e-638040ee9f9b/abf51fe66fed8099.webp",
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 9,
+  "published": "2026-10-20",
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 108,
+  "listed": true,
+  "skill": "styles/pm-lexnlin-0ae84a/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/characters.md",
+    "playbooks/code.md"
+  ]
+}

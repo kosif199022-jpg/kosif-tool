@@ -1,0 +1,37 @@
+{
+  "id": "pm-beamnxw-6d4fc1",
+  "name": "Small-world character film with Blender MCP",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "shapes",
+    "characters",
+    "photos"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/beamnxw/status/2113275303808160226",
+  "page": "https://www.promptsmotion.com/beamnxw-6d4fc1",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/78085904-ce5d-42f0-9d87-a6c5baf15165/08e195def8391d36.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/54a5301f-4674-4c24-93da-30e4be504efe/c55a7f5c7c2ea7ca.webp",
+  "aspect": {
+    "w": 1440,
+    "h": 1728
+  },
+  "aspect_label": "4:5",
+  "rank": 145,
+  "published": "2026-10-22",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 114,
+  "listed": true,
+  "skill": "styles/pm-beamnxw-6d4fc1/SKILL.md",
+  "playbooks": [
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md"
+  ]
+}
