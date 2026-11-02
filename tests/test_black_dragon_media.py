@@ -1,104 +1,153 @@
-"""Black Dragon media adapters: real video/audio tools, known-answer self-test, honest failure."""
-import importlib.util
+"""Tests for Black Dragon's real media runner and fail-closed evidence contract."""
+from __future__ import annotations
+
+import argparse
 import json
+import math
 import shutil
+import struct
 import subprocess
 import sys
 import tempfile
 import unittest
+import wave
 from pathlib import Path
+from unittest import mock
 
-ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / ".claude/skills/kosif-superpowers/scripts"
-WRAPPER = SCRIPTS / "_black_dragon_media.py"
+SCRIPTS = Path(__file__).resolve().parents[1] / ".claude" / "skills" / "kosif-superpowers" / "scripts"
 sys.path.insert(0, str(SCRIPTS))
-spec = importlib.util.spec_from_file_location("black_dragon", SCRIPTS / "black_dragon.py")
-dragon = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(dragon)
-mspec = importlib.util.spec_from_file_location("bd_media", WRAPPER)
-media = importlib.util.module_from_spec(mspec)
-mspec.loader.exec_module(media)
-
-HAVE_FFMPEG = bool(shutil.which("ffmpeg") and shutil.which("ffprobe"))
+import black_dragon_media as media  # noqa: E402
 
 
-def run(recipe, artifact, *extra):
-    return subprocess.run([sys.executable, str(WRAPPER), recipe, str(artifact), *extra],
-                          capture_output=True, text=True, timeout=600)
+def wav_fixture(path: Path, duration=2.0, rate=8000):
+    with wave.open(str(path), "wb") as stream:
+        stream.setnchannels(1)
+        stream.setsampwidth(2)
+        stream.setframerate(rate)
+        values = []
+        for n in range(round(duration * rate)):
+            # A regular sound with deliberate amplitude transients.
+            loud = 0.65 if int(n / (rate * 0.35)) % 2 else 0.08
+            values.append(int(32767 * loud * math.sin(2 * math.pi * 330 * n / rate)))
+        stream.writeframes(struct.pack("<" + "h" * len(values), *values))
 
 
-class MediaAdapterRegistry(unittest.TestCase):
-    def test_every_media_adapter_names_a_real_recipe_and_catalog_tool(self):
-        adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
-        inventory = dragon.full_inventory()
-        rows = {k: v for k, v in adapters.items() if v.get("media")}
-        self.assertGreaterEqual(len(rows), 8)
-        self.assertEqual(sorted(v["args"][0] for v in rows.values()), sorted(media.RECIPES))
-        for key in rows:
-            self.assertIn(key, inventory)
-            self.assertEqual(inventory[key]["kind"], "tool")
-
-    def test_blocked_reasons_separate_methods_from_programs(self):
-        self.assertEqual(dragon._why_blocked("tool"), "tool_without_adapter")
-        for kind in ("power", "skill", "style", "playbook", "protocol", "superpower"):
-            self.assertEqual(dragon._why_blocked(kind), "method_description")
-
-
-@unittest.skipUnless(HAVE_FFMPEG, "ffmpeg/ffprobe not installed")
-class MediaAdapterRuns(unittest.TestCase):
-    def test_every_recipe_passes_its_known_answer_self_test(self):
+class MediaContractTests(unittest.TestCase):
+    def test_path_validation_rejects_traversal_and_links(self):
+        for name in ("../oops", "bad/name", "contains space", "", "é"):
+            with self.assertRaises(ValueError, msg=name):
+                media.job_path(name)
         with tempfile.TemporaryDirectory() as tmp:
-            for recipe in media.RECIPES:
-                with self.subTest(recipe=recipe):
-                    art = Path(tmp) / f"{recipe}.txt"
-                    done = run(recipe, art)
-                    report = json.loads(art.read_text(encoding="utf-8"))
-                    self.assertEqual(done.returncode, 0, json.dumps(report, ensure_ascii=False)[:1500])
-                    self.assertEqual(report["verdict"], "passed")
-                    self.assertEqual(report["input"]["kind"], "self-test")
-                    self.assertTrue(report["checks"])
-                    for row in report["outputs"]:
-                        out = Path(row["path"])
-                        self.assertTrue(out.is_file())
-                        self.assertEqual(media.sha256(out), row["sha256"])
-                        self.assertTrue(out.is_relative_to(art.with_name(art.stem + ".work")))
+            root = Path(tmp)
+            src = root / "ok.wav"
+            wav_fixture(src, duration=0.2)
+            self.assertEqual(media.existing_file(src), src.resolve())
+            (root / "link.wav").symlink_to(src)
+            with self.assertRaises(ValueError):
+                media.existing_file(root / "link.wav")
 
-    def test_missing_or_broken_media_fails_and_never_passes(self):
+    def test_explicit_execution_consent_required_and_no_job_created(self):
         with tempfile.TemporaryDirectory() as tmp:
-            art = Path(tmp) / "missing.txt"
-            self.assertEqual(run("cinema", art, "--media=" + str(Path(tmp) / "nope.mp4")).returncode, 1)
-            self.assertEqual(json.loads(art.read_text())["verdict"], "failed")
-            junk = Path(tmp) / "junk.mp4"
-            junk.write_text("not a video", encoding="utf-8")
-            art2 = Path(tmp) / "junk.txt"
-            self.assertEqual(run("rhythm", art2, "--media=" + str(junk)).returncode, 1)
+            root = Path(tmp)
+            source = root / "audio.wav"
+            wav_fixture(source, duration=0.2)
+            args = argparse.Namespace(input=source, aligned_words=None, job_name="never-run",
+                                      execute=False, timeout=60, skip_scenes=True,
+                                      stabilize=False, reframe=False, grade_look=None)
+            with mock.patch.object(media, "JOBS", root / "jobs"):
+                with self.assertRaisesRegex(ValueError, "--execute"):
+                    media.run(args)
+                self.assertFalse((root / "jobs").exists())
 
-    def test_user_media_is_used_and_left_untouched(self):
+    def test_verify_rejects_tampering_and_symlink(self):
         with tempfile.TemporaryDirectory() as tmp:
-            clip = media.self_test_clip(Path(tmp))
-            before = media.sha256(clip)
-            art = Path(tmp) / "cut.txt"
-            self.assertEqual(run("cut", art, "--media=" + str(clip)).returncode, 0)
-            report = json.loads(art.read_text())
-            self.assertEqual(report["input"]["kind"], "user-media")
-            self.assertEqual(report["input"]["sha256"], before)
-            self.assertEqual(media.sha256(clip), before)
+            root = Path(tmp)
+            with mock.patch.object(media, "JOBS", root / "jobs"):
+                job = media.job_path("proof")
+                job.mkdir(parents=True)
+                output = job / "result.json"
+                output.write_text('{"real":true}\n')
+                proof = media.artifact_proof(job, output)
+                report = {"schema": media.SCHEMA, "status": "completed",
+                          "verified_artifact_count": 1,
+                          "stages": [{"name": "test", "status": "executed", "artifacts": [proof]}]}
+                media._save(job, report)
+                self.assertEqual(media.verify("proof")["verified_artifacts"], 1)
+                output.write_text('{"real":false}\n')
+                with self.assertRaisesRegex(ValueError, "artifact changed"):
+                    media.verify("proof")
+                output.unlink()
+                outside = root / "outside"
+                outside.write_text("not an artifact")
+                output.symlink_to(outside)
+                with self.assertRaises(ValueError):
+                    media.verify("proof")
 
-    def test_black_dragon_passes_media_to_adapters_and_reports_it(self):
-        adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
-        keep = {"tool:fast-edit": adapters["tool:fast-edit"],
-                "tool:audio-cue-mapper": adapters["tool:audio-cue-mapper"]}
+    def test_main_black_dragon_cli_routes_media_doctor(self):
+        result = subprocess.run([sys.executable, str(SCRIPTS / "black_dragon.py"),
+                                 "media", "doctor"], capture_output=True, text=True, timeout=90)
+        self.assertEqual(result.returncode, 0, result.stderr[-500:])
+        data = json.loads(result.stdout)
+        self.assertEqual(data["schema"], media.SCHEMA + ".doctor")
+        self.assertIn("ffmpeg", data)
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),
+                         "ffmpeg and ffprobe are required for real media integration")
+    def test_real_video_scene_analysis_and_grade(self):
+        if not all((SCRIPTS / x).is_file() for x in media.TOOLS.values()):
+            self.skipTest("Bundled media tools unavailable")
         with tempfile.TemporaryDirectory() as tmp:
-            clip = media.self_test_clip(Path(tmp))
-            job = Path(tmp) / "job"
-            result = dragon.run("cut on the beat", job, keep, workers=2, allow_execution=True,
-                                timeout=300, media=clip)
-            self.assertEqual(result["executed"], 2, result)
-            self.assertEqual(result["media"]["sha256"], media.sha256(clip))
-            self.assertEqual(sum(result["blocked_why"].values()), result["blocked"])
-            ledger = json.loads((job / "all_skills_ledger.json").read_text())
-            art = json.loads(Path(ledger["items"]["tool:fast-edit"]["receipt"]["artifact"]).read_text())
-            self.assertEqual(art["input"]["kind"], "user-media")
+            root = Path(tmp)
+            source = root / "original.mp4"
+            generated = subprocess.run([
+                "ffmpeg", "-nostdin", "-hide_banner", "-loglevel", "error",
+                "-f", "lavfi", "-i", "testsrc2=size=320x180:rate=12",
+                "-t", "2", "-an", "-c:v", "mpeg4", "-q:v", "4", str(source),
+            ], capture_output=True, text=True, timeout=60)
+            self.assertEqual(generated.returncode, 0, generated.stderr[-500:])
+            args = argparse.Namespace(input=source, aligned_words=None, job_name="video-test",
+                                      execute=True, timeout=240, skip_scenes=False,
+                                      stabilize=False, reframe=False, grade_look="teal-orange")
+            with mock.patch.object(media, "JOBS", root / "jobs"):
+                status, report = media.run(args)
+                self.assertEqual(status, 0, report.get("error"))
+                self.assertEqual(report["media_kind"], "video")
+                job = root / "jobs" / "video-test"
+                self.assertTrue((job / "scenes" / "scenes.json").is_file())
+                self.assertTrue((job / "exports" / "grade.mp4").is_file())
+                self.assertEqual(report["final_video"], "exports/grade.mp4")
+                self.assertEqual(media.verify("video-test")["verified_artifacts"],
+                                 report["verified_artifact_count"])
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),
+                         "ffmpeg and ffprobe are required for real media integration")
+    def test_real_audio_intake_and_rhythm_create_verified_outputs(self):
+        if not all((SCRIPTS / x).is_file() for x in media.TOOLS.values()):
+            self.skipTest("Bundled media tools unavailable")
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / "original.wav"
+            wav_fixture(source)
+            before = media.digest(source)
+            args = argparse.Namespace(input=source, aligned_words=None, job_name="audio-test",
+                                      execute=True, timeout=180, skip_scenes=True,
+                                      stabilize=False, reframe=False, grade_look=None)
+            with mock.patch.object(media, "JOBS", root / "jobs"):
+                status, report = media.run(args)
+                self.assertEqual(status, 0, report.get("error"))
+                self.assertEqual(report["status"], "completed")
+                self.assertEqual(report["media_kind"], "audio")
+                self.assertFalse(report["catalog_coverage_claim"])
+                self.assertEqual(report["paid_provider_calls"], 0)
+                self.assertTrue((root / "jobs" / "audio-test" / "rhythm.json").is_file())
+                result = json.loads((root / "jobs" / "audio-test" / "rhythm.json").read_text())
+                self.assertIn("tempo_hypotheses", result)
+                self.assertFalse(result["verified_bpm"])
+                self.assertEqual(media.digest(source), before)
+                self.assertEqual(media.verify("audio-test")["verified_artifacts"],
+                                 report["verified_artifact_count"])
+                with self.assertRaisesRegex(ValueError, "already exists"):
+                    media.run(args)
 
 
 if __name__ == "__main__":

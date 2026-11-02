@@ -393,6 +393,9 @@ def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("inventory", help="Count every skill, power and tool")
+    media_parser = sub.add_parser("media", help="Process a real audio/video asset with evidence (opt-in)")
+    media_parser.add_argument("media_arguments", nargs=argparse.REMAINDER,
+                              help="run|doctor|verify and arguments; see media doctor")
     p = sub.add_parser("run", help="Fan out attempts to every catalog entry")
     p.add_argument("task")
     p.add_argument("--job", required=True, type=Path)
@@ -422,6 +425,9 @@ def main(argv=None) -> int:
     q.add_argument("--mode", choices=("standard", "pro-max"), default="standard")
     args = parser.parse_args(argv)
     try:
+        if args.command == "media":
+            import black_dragon_media as real_media
+            return real_media.main(args.media_arguments)
         if args.command == "inventory":
             entries = full_inventory()
             print(json.dumps({"total": len(entries),

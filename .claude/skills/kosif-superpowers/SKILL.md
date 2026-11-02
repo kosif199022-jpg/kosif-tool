@@ -435,3 +435,13 @@ Do not claim full Blender equivalence; use narrow executable proofs.
 - **الاستدعاء:** `python3 .claude/skills/kosif-superpowers/scripts/superskills_bridge.py doctor` ثم `list` أو `find "مهمة"` أو `show <slug>`. ويمكن أيضًا الاستعلام عبر `skill_loader.py need "مهمة"`، الذي يضمّن المكتبة في ترشيحاته.
 - **الفهرس:** [الـ114 مهارة](references/100-superskills-integration.md)، والبيانات [data/100-superskills-index.json](data/100-superskills-index.json). افتح `skills/<slug>/SKILL.md` داخل `vendor/100-superskills` حسب التوجيه؛ اقرأ المراجع والسكربتات المطلوبة فقط ولا تنفّذ شيئًا لمجرد وجوده.
 - **عدم التكرار:** يبقى نظام KOSIF وأدواته الأصلية كما هو؛ المكتبة المضافة مصدر إضافي، وليس بديلًا أو إعلانًا بأن كل 114 سكربتًا قابل للتشغيل في الجلسة. تحقّق من حالة البيئة والمستلزمات وحقوق المحتوى وأي أذونات قبل التنفيذ.
+
+## Real Black Dragon media runtime — تشغيل فعلي للأصول
+
+أدوات الفيديو الحقيقية متاحة عبر `scripts/black_dragon_media.py`، لا عبر تحويل آلاف أوصاف الكتالوج إلى برامج وهمية. ابدأ بقراءة `../../../docs/BLACK_DRAGON_REAL_MEDIA_EXECUTION.md` من جذر المستودع (`docs/BLACK_DRAGON_REAL_MEDIA_EXECUTION.md`).
+
+- `python3 .claude/skills/kosif-superpowers/scripts/black_dragon_media.py doctor`: فحص المتطلبات فقط.
+- `python3 .claude/skills/kosif-superpowers/scripts/black_dragon_media.py run --input /path/to/video.mp4 --job-name real-video-001 --execute --stabilize --reframe`: تحليل وتشغيل أدوات فعلية على ملف محدد.
+- `python3 .claude/skills/kosif-superpowers/scripts/black_dragon_media.py verify --job-name real-video-001`: فحص بصمات المخرجات بعد الإنتاج.
+
+التشغيل يتطلب `--execute` ومدخلات حقيقية، ولا يصرف رصيدًا ولا يثبت نماذج. كل عملية ناجحة لها ملف ناتج وبصمة؛ لا يُحسب أي وصف مجرد أو تحليل للمادة كفيلم مُنجز.
