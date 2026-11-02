@@ -1918,6 +1918,11 @@
    "label": "scripts/_black_dragon_pro_max.py"
   },
   {
+   "id": "script:scripts/_black_dragon_skill_links.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_skill_links.py"
+  },
+  {
    "id": "script:scripts/_claude_reviewed_router.py",
    "kind": "script",
    "label": "scripts/_claude_reviewed_router.py"
@@ -6831,6 +6836,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_skill_links.py",
+   "to": "script:scripts/_black_dragon_brain.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_claude_reviewed_router.py",
    "to": "script:scripts/_black_dragon_brain.py",
    "rel": "imports",
@@ -6929,6 +6940,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "script:scripts/_black_dragon_pro_max.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_black_dragon_skill_links.py",
    "rel": "imports",
    "w": 1
   },
