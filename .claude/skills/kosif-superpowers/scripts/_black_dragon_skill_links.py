@@ -113,17 +113,20 @@ def build(inventory: dict, skill_root: Path, repo_root: Path,
     slug_index: dict[str, set[str]] = defaultdict(set)
     description_index: dict[str, set[str]] = defaultdict(set)
     described_skills = 0
+    slug_terms_by_skill: dict[str, set[str]] = {}
     for key in skills:
         path = sources.get(key)
         if key in missing or path is None:
             continue
         stem = path.parent.name
-        for term in _terms(stem.replace("-", " ").replace("_", " ")):
+        name_terms = _terms(stem.replace("-", " ").replace("_", " "))
+        slug_terms_by_skill[key] = name_terms
+        for term in name_terms:
             slug_index[term].add(key)
         description = _description(path)
         if description:
             described_skills += 1
-        for term in _terms(description):
+        for term in _terms(description) - name_terms:
             description_index[term].add(key)
 
     links = {}
@@ -147,7 +150,7 @@ def build(inventory: dict, skill_root: Path, repo_root: Path,
                 for possible in description_index.get(term, ()):
                     if possible != owner:
                         description_hits[possible] += 1
-            # At least one exact name token AND >= 2 independent matching
+            # At least one exact name token AND >= 2 DISTINCT matching
             # tokens; descriptions improve ranking but cannot independently
             # produce a trusted specialist link.
             valid = []
