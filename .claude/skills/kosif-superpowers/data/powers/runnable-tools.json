@@ -8111,5 +8111,40 @@
   ],
   "section": "Sources and references / المصادر والمراجع",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-183",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن",
+  "name_en": "Black Dragon Media — real opt-in media pipeline",
+  "status": "proven",
+  "what": "يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.",
+  "when": "شغّل التنين الأسود على الفيديو بتاعي فعلًا / Run the Black Dragon media pipeline on a real clip with evidence",
+  "how": "doctor: `python3 scripts/black_dragon_media.py doctor`; run: `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe`; verify: `python3 scripts/black_dragon_media.py verify --job-name my-film`. Full card: `python3 scripts/hub.py tool black-dragon-media`. Limits: Only the bundled media tools run; hashes prove the files exist, not their creative quality.",
+  "params": "in: One audio/video file, a job name and the --execute consent flag. · out: Stage outputs and a hashed report under out/black-dragon-media/<job>.",
+  "install": "pip install numpy · needs on PATH: python3, ffmpeg, ffprobe",
+  "requires": [
+   "ffmpeg",
+   "pip:numpy"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/tests/test_black_dragon_media.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "black-dragon-media",
+   "black dragon media",
+   "التنين الأسود",
+   "rhythm",
+   "stabilize",
+   "reframe",
+   "evidence"
+  ],
+  "section": "Discover and route / اكتشاف القدرات والتوجيه",
+  "source": "data/tools.json"
  }
 ]

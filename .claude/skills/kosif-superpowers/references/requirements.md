@@ -15,7 +15,7 @@
 | # | requirement | kind | powers unlocked | families | here now |
 |---|---|---|---|---|---|
 | 1 | [`python3`](#req-python3) | bin | 809 | runnable-tools, engines-render-pipeline, qa-verification, mental-models, music-beat-sound |  |
-| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 466 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
+| 2 | [`ffmpeg`](#req-ffmpeg) | bin | 467 | engines-render-pipeline, qa-verification, transitions-cuts, music-beat-sound, runnable-tools |  |
 | 3 | [`npm:hyperframes`](#req-npm-hyperframes) | npm | 461 | transitions-cuts, engines-render-pipeline, camera-composition-layout, typography-latin, qa-verification |  |
 | 4 | [`chromium`](#req-chromium) | bin | 375 | engines-render-pipeline, software-investigation, app-feature-transfer, runnable-tools, qa-verification |  |
 | 5 | [`npm:rea`](#req-npm-rea) | npm | 280 | software-investigation, runnable-tools, app-feature-transfer, verification-evals |  |
@@ -23,7 +23,7 @@
 | 7 | [`npm:three`](#req-npm-three) | npm | 186 | transitions-cuts, engines-render-pipeline, light-glow-bloom, texture-material, 3d-spatial |  |
 | 8 | [`node`](#req-node) | bin | 185 | qa-verification, atlas-code, runnable-tools, engines-render-pipeline, color-palette-grading |  |
 | 9 | [`key:unspecified`](#req-key-unspecified) | key | 167 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
-| 10 | [`pip:numpy`](#req-pip-numpy) | pip | 141 | app-feature-transfer, music-beat-sound, qa-verification, transitions-cuts, runnable-tools |  |
+| 10 | [`pip:numpy`](#req-pip-numpy) | pip | 142 | app-feature-transfer, music-beat-sound, qa-verification, runnable-tools, transitions-cuts |  |
 | 11 | [`pip:pillow`](#req-pip-pillow) | pip | 141 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 119 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
 | 13 | [`pip:opencv`](#req-pip-opencv) | pip | 103 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
@@ -155,9 +155,9 @@
 
 - **النوع / kind:** bin (أداة)
 - **التثبيت / install:** `apt-get install -y ffmpeg  (or: conda install ffmpeg)`
-- **يفتح / unlocks:** 466 powers
-- **بالحالة / by status:** documented 158 · proven 158 · ready 72 · install 55 · key 10 · seen 9 · idea 4
-- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (48), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
+- **يفتح / unlocks:** 467 powers
+- **بالحالة / by status:** proven 159 · documented 158 · ready 72 · install 55 · key 10 · seen 9 · idea 4
+- **العائلات / families:** engines-render-pipeline (68), qa-verification (63), transitions-cuts (54), music-beat-sound (49), runnable-tools (49), app-feature-transfer (27), photo-video-footage (22), color-palette-grading (15)
 - **أمثلة / examples:** `APPX-01` Speed curve (ramp) · `APPX-02` Chroma key · `APPX-03` Auto reframe to 9:16 · `APPX-04` Scene edit detection · `APPX-05` Loudness normalisation (-14 LUFS) · `APPX-06` Colour look from a .cube LUT
 
 <a id="req-npm-hyperframes"></a>
@@ -235,9 +235,9 @@
 
 - **النوع / kind:** pip (حزمة بايثون)
 - **التثبيت / install:** `pip install numpy`
-- **يفتح / unlocks:** 141 powers
-- **بالحالة / by status:** proven 83 · documented 24 · ready 21 · install 8 · seen 3 · key 2
-- **العائلات / families:** app-feature-transfer (46), music-beat-sound (31), qa-verification (11), transitions-cuts (11), runnable-tools (10), media-image-audio (5), color-palette-grading (3), engines-render-pipeline (3)
+- **يفتح / unlocks:** 142 powers
+- **بالحالة / by status:** proven 84 · documented 24 · ready 21 · install 8 · seen 3 · key 2
+- **العائلات / families:** app-feature-transfer (46), music-beat-sound (31), qa-verification (11), runnable-tools (11), transitions-cuts (11), media-image-audio (5), color-palette-grading (3), engines-render-pipeline (3)
 - **أمثلة / examples:** `ANLY-09` Seeded Monte Carlo risk check · `ANLY-28` Seeded, labelled synthetic data · `APPX-03` Auto reframe to 9:16 · `APPX-08` Beat markers from audio · `APPX-100` Distort: twist, bulge, polar inversion, dents, f · `APPX-101` Blurs: zoom, radial, motion, surface, unfocus, f
 
 <a id="req-pip-pillow"></a>

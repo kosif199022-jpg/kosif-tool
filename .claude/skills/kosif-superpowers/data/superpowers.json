@@ -1,7 +1,7 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5860,
-"distinct_methods": 5578,
+"atoms": 5861,
+"distinct_methods": 5579,
 "twin_groups": 178,
 "superpowers": 483,
 "per_target": 12,
@@ -17714,15 +17714,15 @@
 "capability",
 "kosif"
 ],
-"size": 35,
+"size": 36,
 "best": "proven",
 "status_mix": {
-"proven": 26,
+"proven": 27,
 "ready": 9
 },
-"ready_now": 35,
+"ready_now": 36,
 "families": {
-"runnable-tools": 35
+"runnable-tools": 36
 },
 "atlas_folded": 0,
 "requires": [
@@ -17733,7 +17733,7 @@
 "node",
 "pip:pillow",
 "pip:opencv",
-"npm:remotion"
+"pip:numpy"
 ],
 "pipeline": [
 {
@@ -17743,16 +17743,16 @@
 "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية"
 },
 {
-"id": "TOOL-107",
-"status": "proven",
-"name_en": "Atlas ledger: one status for every Atlas skill",
-"name_ar": "سجل الأطلس: حالة واحدة لكل مهارة"
-},
-{
 "id": "TOOL-03",
 "status": "proven",
 "name_en": "Capability Atlas search and planner",
 "name_ar": "أطلس القدرات للبحث والتخطيط"
+},
+{
+"id": "TOOL-107",
+"status": "proven",
+"name_en": "Atlas ledger: one status for every Atlas skill",
+"name_ar": "سجل الأطلس: حالة واحدة لكل مهارة"
 },
 {
 "id": "TOOL-73",
@@ -17815,16 +17815,16 @@
 "name_ar": "فهرس ذكي للقدرات من أجل Claude"
 },
 {
-"id": "TOOL-34",
-"status": "proven",
-"name_en": "Capability Graph Builder",
-"name_ar": "باني خريطة القدرات المترابطة"
-},
-{
 "id": "TOOL-161",
 "status": "proven",
 "name_en": "Micro index: one line per power, tool and superpower",
 "name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة"
+},
+{
+"id": "TOOL-34",
+"status": "proven",
+"name_en": "Capability Graph Builder",
+"name_ar": "باني خريطة القدرات المترابطة"
 },
 {
 "id": "TOOL-129",
@@ -17845,12 +17845,6 @@
 "name_ar": "دمج القدرات في قدرات خارقة مترابطة"
 },
 {
-"id": "TOOL-04",
-"status": "proven",
-"name_en": "Capability runtime router",
-"name_ar": "موجّه القدرات التنفيذية"
-},
-{
 "id": "TOOL-72",
 "status": "proven",
 "name_en": "Power requirements planner",
@@ -17869,6 +17863,12 @@
 "name_ar": "بوابة KOSIF الموحّدة"
 },
 {
+"id": "TOOL-04",
+"status": "proven",
+"name_en": "Capability runtime router",
+"name_ar": "موجّه القدرات التنفيذية"
+},
+{
 "id": "TOOL-02",
 "status": "proven",
 "name_en": "Session boot briefing",
@@ -17885,6 +17885,12 @@
 "status": "proven",
 "name_en": "FusionForge v2 project-scoped composite workflow recipes",
 "name_ar": "FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع"
+},
+{
+"id": "TOOL-183",
+"status": "proven",
+"name_en": "Black Dragon Media — real opt-in media pipeline",
+"name_ar": "ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن"
 },
 {
 "id": "TOOL-08",
@@ -17950,8 +17956,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_capability_miner.py",
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_ledger.py"
+"kosif-tool/tests/test_capability_atlas.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/capability_atlas.py"
 ],
 "twins": [
 [
@@ -17966,15 +17972,15 @@
 "TOOL-109"
 ]
 ],
-"distinct_methods": 30,
+"distinct_methods": 31,
 "links": [
 {
 "id": "SP-0349",
-"sim": 0.391
+"sim": 0.387
 },
 {
 "id": "SP-0143",
-"sim": 0.3
+"sim": 0.297
 },
 {
 "id": "SP-0027",
@@ -17982,7 +17988,7 @@
 },
 {
 "id": "SP-0146",
-"sim": 0.196
+"sim": 0.194
 }
 ]
 },
@@ -18646,7 +18652,7 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.3
+"sim": 0.297
 },
 {
 "id": "SP-0295",
@@ -19638,7 +19644,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.136
+"sim": 0.134
 }
 ]
 },
@@ -28926,7 +28932,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.069
+"sim": 0.068
 }
 ]
 },
@@ -45802,7 +45808,7 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.391
+"sim": 0.387
 },
 {
 "id": "SP-0143",

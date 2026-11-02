@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5860,
+  "powers": 5861,
   "families": 62,
   "domains": 10,
-  "tools": 205,
+  "tools": 206,
   "guides": 119,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 977,
    "key": 176,
-   "proven": 1027,
+   "proven": 1028,
    "ready": 675,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 181,
+   "count": 182,
    "statuses": {
     "install": 9,
-    "proven": 150,
+    "proven": 151,
     "ready": 22
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -19442,6 +19442,76 @@
    "families": [
     "agent-orchestration",
     "self-discovery",
+    "qa-verification"
+   ]
+  },
+  {
+   "id": "black-dragon-media",
+   "power_id": "TOOL-183",
+   "path": "scripts/black_dragon_media.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "discover",
+   "title_en": "Black Dragon Media — real opt-in media pipeline",
+   "title_ar": "ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن",
+   "summary_en": "Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.",
+   "summary_ar": "يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات.",
+   "use_when": [
+    "شغّل التنين الأسود على الفيديو بتاعي فعلًا",
+    "Run the Black Dragon media pipeline on a real clip with evidence"
+   ],
+   "keywords": [
+    "black dragon media",
+    "التنين الأسود",
+    "rhythm",
+    "stabilize",
+    "reframe",
+    "evidence"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/black_dragon_media.py doctor",
+     "does": "Read-only prerequisite check."
+    },
+    {
+     "name": "run",
+     "example": "python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe",
+     "does": "Opt-in real processing with hashed outputs."
+    },
+    {
+     "name": "verify",
+     "example": "python3 scripts/black_dragon_media.py verify --job-name my-film",
+     "does": "Re-check output hashes."
+    }
+   ],
+   "inputs": "One audio/video file, a job name and the --execute consent flag.",
+   "outputs": "Stage outputs and a hashed report under out/black-dragon-media/<job>.",
+   "requires": {
+    "python": [
+     "numpy"
+    ],
+    "binaries": [
+     "python3",
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Processing needs --execute. No network, payment, upload or install.",
+   "limits": "Only the bundled media tools run; hashes prove the files exist, not their creative quality.",
+   "evidence": "tested-here",
+   "tests": [
+    "tests/test_black_dragon_media.py"
+   ],
+   "docs": [
+    "docs/BLACK_DRAGON_REAL_MEDIA_EXECUTION.md"
+   ],
+   "families": [
+    "agent-orchestration",
     "qa-verification"
    ]
   }

@@ -187,7 +187,7 @@
 | SP-0136 | 📄 | جلسات Playwright مسماة بمخرجات على القرص · Named-session Playwright CLI with disk artifacts | 11 | 0 | SP-0275 SP-0273 SP-0390 SP-0156 |
 | SP-0137 | 📄 | خط وكلاء بأدوار ومراحل وأقفال كتابة واستئناف · Role-squad agent pipeline with stages, locks and resume | 6 | 0 | SP-0006 SP-0047 SP-0163 SP-0057 |
 | SP-0138 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | 4 | 0 | SP-0056 SP-0098 SP-0097 SP-0165 |
-| SP-0139 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 35 | 35 | SP-0349 SP-0143 SP-0027 SP-0146 |
+| SP-0139 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 36 | 36 | SP-0349 SP-0143 SP-0027 SP-0146 |
 | SP-0140 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | 20 | 20 | SP-0358 SP-0381 SP-0409 SP-0328 |
 | SP-0141 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 19 | 17 | SP-0264 SP-0147 SP-0270 SP-0268 |
 | SP-0142 | ✅ | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | 16 | SP-0305 SP-0268 SP-0036 SP-0150 |

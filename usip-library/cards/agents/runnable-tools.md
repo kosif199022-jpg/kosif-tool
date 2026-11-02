@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (181 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (182 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -104,6 +104,7 @@
 - [`TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي](#tool-180--مخرج-سينما-برو--تشغيل-منسّق-للمونتاج-مع-تحقق-حقيقي--cinema-pro-conductor--single-entry-montage-with-evidence-gated-delivery)
 - [`TOOL-181` التنين الأسود — العقل المنسق لكل القدرات](#tool-181--التنين-الأسود--العقل-المنسق-لكل-القدرات--black-dragon--all-capability-cognitive-orchestrator)
 - [`TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM)](#tool-182--معاينة-الأغنية-الرسمية-بديل-الـdrm--official-song-preview-drm-fallback)
+- [`TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن](#tool-183--ميديا-التنين-الأسود--تشغيل-حقيقي-للصوت-والفيديو-بإذن--black-dragon-media--real-opt-in-media-pipeline)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -7131,7 +7132,7 @@
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
-- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
 
 ### `TOOL-182` — معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback)
 
@@ -7201,6 +7202,76 @@
 
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
+- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-183` — ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.
+
+**متى:** شغّل التنين الأسود على الفيديو بتاعي فعلًا / Run the Black Dragon media pipeline on a real clip with evidence
+
+**كيف:** doctor: `python3 scripts/black_dragon_media.py doctor`; run: `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe`; verify: `python3 scripts/black_dragon_media.py verify --job-name my-film`. Full card: `python3 scripts/hub.py tool black-dragon-media`. Limits: Only the bundled media tools run; hashes prove the files exist, not their creative quality.
+
+**المعاملات:** in: One audio/video file, a job name and the --execute consent flag. · out: Stage outputs and a hashed report under out/black-dragon-media/<job>.
+
+**التثبيت:** pip install numpy · needs on PATH: python3, ffmpeg, ffprobe
+
+**الوسوم:** black-dragon-media · black dragon media · التنين الأسود · rhythm · stabilize · reframe · evidence
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `pip:numpy` ← python3 -c "import numpy" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-183` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/tests/test_black_dragon_media.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
+- `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -7269,8 +7340,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
+- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7339,7 +7410,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
+- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

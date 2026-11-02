@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5860,
+  "catalog_powers": 5861,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 205,
+  "tool_count": 206,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 279,
+      "count": 280,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 177,
+        "proven": 178,
         "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 181,
+        "runnable-tools": 182,
         "self-discovery": 43
       },
       "examples": [
@@ -74439,6 +74439,25 @@
       ],
       "source": "runnable-tools.json",
       "what": "لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، و"
+    },
+    {
+      "id": "TOOL-183",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Black Dragon Media — real opt-in media pipeline",
+      "name_ar": "ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "pip:numpy"
+      ],
+      "proof": [
+        "kosif-tool/tests/test_black_dragon_media.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/bla"
     },
     {
       "id": "SEC-01",

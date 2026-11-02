@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 279 powers
+[← الفهرس الدقيق / micro index](README.md) · 280 powers
 
 ## الفهرس / contents
 
@@ -32,6 +32,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-127 | ✅ | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) → `superpower-fusion` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-129 | ✅ | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت · Group map with superpowers, scripts and install plans → `kosif-groups` | SP-0139 Atlas metadata capability miner | node, python3 |
 | TOOL-161 | ✅ | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة · Micro index: one line per power, tool and superpower → `micro-index` | SP-0139 Atlas metadata capability miner | python3 |
+| TOOL-183 | ✅ | ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن · Black Dragon Media — real opt-in media pipeline → `black-dragon-media` | SP-0139 Atlas metadata capability miner | ffmpeg, pip:numpy |
 | TOOL-34 | ✅ | باني خريطة القدرات المترابطة · Capability Graph Builder → `capability-graph` | SP-0139 Atlas metadata capability miner | node, python3, key:graphify |
 | TOOL-43 | ✅ | بحث مهارات أطلس الخارجية · Atlas external skill search → `atlas-external-bridge` | SP-0139 Atlas metadata capability miner | python3, blender |
 | TOOL-44 | ✅ | تدقيق بيانات أطلس الوصفية · Atlas metadata audit → `atlas-metadata-audit` | SP-0139 Atlas metadata capability miner | python3 |
@@ -199,7 +200,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 
 ## agent-orchestration (mind)
 
-chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-library/cards/agents/agent-orchestration.md` · tools: `adobe-mcp-bridges` · `agent-guard` · `black-dragon` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` · `fusionforge-hub-runner` …
+chapter: [agent-orchestration](../powers/agent-orchestration.md) · card: `usip-library/cards/agents/agent-orchestration.md` · tools: `adobe-mcp-bridges` · `agent-guard` · `black-dragon` · `black-dragon-media` · `business-workflows` · `charter-ingest` · `council` · `fusionforge` …
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

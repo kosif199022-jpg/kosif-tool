@@ -1,4 +1,4 @@
-# أدوات المجال `discover` (31 أداة)
+# أدوات المجال `discover` (32 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -271,6 +271,50 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:black-dragon --evidence <ملف>`.
+
+### `black-dragon-media` — ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/black_dragon_media.py` (جذر: skill) |
+| المجال | `discover` |
+| الدليل | `tested-here` |
+| العائلات | `agent-orchestration`, `qa-verification` |
+
+**ما تفعله:** يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات.
+
+**What it does:** Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.
+
+#### متى تُستدعى
+
+- «شغّل التنين الأسود على الفيديو بتاعي فعلًا»
+- «Run the Black Dragon media pipeline on a real clip with evidence»
+
+#### الأوامر
+
+- **doctor**: Read-only prerequisite check.
+  - `python3 scripts/black_dragon_media.py doctor`
+- **run**: Opt-in real processing with hashed outputs.
+  - `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe`
+- **verify**: Re-check output hashes.
+  - `python3 scripts/black_dragon_media.py verify --job-name my-film`
+
+#### المتطلبات والأمان
+
+- binaries: python3, ffmpeg, ffprobe
+- python: numpy
+- الأمان: runs-external-programs
+- الموافقة: Processing needs --execute. No network, payment, upload or install.
+- الحدود: Only the bundled media tools run; hashes prove the files exist, not their creative quality.
+
+#### الاختبارات والأدلة
+
+- `tests/test_black_dragon_media.py`
+- مرجع: `docs/BLACK_DRAGON_REAL_MEDIA_EXECUTION.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:black-dragon-media --evidence <ملف>`.
 
 ### `boot` — إحاطة بدء الجلسة / Session boot briefing
 

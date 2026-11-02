@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **181 powers follow** — ✅ 150 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **182 powers follow** — ✅ 151 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -13,7 +13,7 @@
 
 ## الفهرس / contents
 
-- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-181 (27)
+- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-183 (28)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
 - **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
@@ -261,6 +261,15 @@
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-183 · ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن · Black Dragon Media — real opt-in media pipeline · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.
+- **متى أستخدمها / when:** شغّل التنين الأسود على الفيديو بتاعي فعلًا / Run the Black Dragon media pipeline on a real clip with evidence
+- **كيف / how:** doctor: `python3 scripts/black_dragon_media.py doctor`; run: `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe`; verify: `python3 scripts/black_dragon_media.py verify --job-name my-film`. Full card: `python3 scripts/hub.py tool black-dragon-media`. Limits: Only the bundled media tools run; hashes prove the files exist, not their creative quality. **أرقام / params:** in: One audio/video file, a job name and the --execute consent flag. · out: Stage outputs and a hashed report under out/black-dragon-media/<job>.
+- **تثبيت / install:** `pip install numpy · needs on PATH: python3, ffmpeg, ffprobe`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy)
+- **الدليل / proof:** `kosif-tool/tests/test_black_dragon_media.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py`
 - **المصدر / source:** data/tools.json
 
 ## Think, ideate and write / التفكير والأفكار والكتابة
@@ -1620,7 +1629,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (181)
+- الرخص / licences: — (182)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---
