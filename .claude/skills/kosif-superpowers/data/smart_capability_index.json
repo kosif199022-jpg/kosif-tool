@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5860,
+  "catalog_powers": 5861,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 206,
+  "tool_count": 207,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 279,
+      "count": 280,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 177,
+        "proven": 178,
         "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 181,
+        "runnable-tools": 182,
         "self-discovery": 43
       },
       "examples": [
@@ -74439,6 +74439,26 @@
       ],
       "source": "runnable-tools.json",
       "what": "لما الأغنية المطلوبة مقفولة بـDRM (yt-dlp يقول «DRM protected») المصدر ده بيقف؛ والأداة دي هي البديل المشروع. بتبحث في واجهة iTunes Search العامة من Apple وواجهة Deezer العامة، وبتطبع جدول واحد (المصدر، الأغنية، الفنان، الألبوم، تاريخ الإصدار، المدة، وفيه معاينة ولا لأ) وتحفظه، و"
+    },
+    {
+      "id": "TOOL-183",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "KOSIF Shadow Theatre silhouette film engine",
+      "name_ar": "محرك أفلام مسرح الظل",
+      "status": "proven",
+      "requires": [
+        "ffmpeg",
+        "pip:numpy",
+        "pip:pillow"
+      ],
+      "proof": [
+        "kosif-tool/tests/test_shadow_theatre.py",
+        "kosif-tool/.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. "
     },
     {
       "id": "SEC-01",

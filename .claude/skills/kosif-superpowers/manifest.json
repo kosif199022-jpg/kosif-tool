@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5860,
+  "powers": 5861,
   "families": 62,
   "domains": 10,
-  "tools": 206,
+  "tools": 207,
   "guides": 119,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 977,
    "key": 176,
-   "proven": 1027,
+   "proven": 1028,
    "ready": 675,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 181,
+   "count": 182,
    "statuses": {
     "install": 9,
-    "proven": 150,
+    "proven": 151,
     "ready": 22
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -17301,6 +17301,99 @@
     "engines-render-pipeline"
    ],
    "power_id": "TOOL-171"
+  },
+  {
+   "id": "shadow-theatre",
+   "path": ".claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py",
+   "root": "repo",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "KOSIF Shadow Theatre silhouette film engine",
+   "title_ar": "محرك أفلام مسرح الظل",
+   "summary_en": "Shadow-theatre / silhouette motion graphics: articulated black bodies that join into trees and boats, depth toward the lamp (bigger, softer shadow), iris and spotlight transitions over projected gradient skies; analyses a reference act (cuts, palette, silhouette share), checks the scene grammar, renders stills and an export-standard MP4 with an original synth score.",
+   "summary_ar": "موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية.",
+   "use_when": [
+    "اعمل مشاهد بالظلال زي فقرة مسرح الظل",
+    "حلل فيديو الظلال ده واعمل مشاهد شبهه",
+    "Make a silhouette shadow-theatre film where bodies form a tree and a boat",
+    "مسرح ظل بقصة أصلية وفانوس وهلال"
+   ],
+   "keywords": [
+    "shadow theatre",
+    "silhouette",
+    "مسرح الظل",
+    "ظلال",
+    "shadow puppet",
+    "body build",
+    "iris",
+    "spotlight",
+    "depth",
+    "projected backdrop"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py doctor",
+     "does": "Reports python, numpy, Pillow, ffmpeg/ffprobe and whether the owner's export profile was found; exits 1 without ffmpeg."
+    },
+    {
+     "name": "analyze",
+     "example": "python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py analyze <reference.mp4> --out out/shadow/ref",
+     "does": "Camera cuts (scene threshold), sampled lit-screen palette, silhouette share and edge strength, a contact sheet and analysis.json."
+    },
+    {
+     "name": "check",
+     "example": "python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py check .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json",
+     "does": "Timing rules (tiling, ≥3 scenes, varied pacing, no repeated transition) and the style grammar (≥4 of 8 techniques, a body-build, a memorable scene, known poses/props/backdrops); exits 1 with reasons."
+    },
+    {
+     "name": "stills",
+     "example": "python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py stills .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/stills --times 3,9.5,18",
+     "does": "Renders PNG frames at the given times plus a side-by-side sheet."
+    },
+    {
+     "name": "render",
+     "example": "python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py render .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/film.mp4",
+     "does": "Renders every frame and pipes it to ffmpeg at the export standard (1080x1920, 30 fps, H.264 High CRF 17, BT.709, faststart) with a generated synth score; --preview is half size at 15 fps; --no-audio for the user's own music."
+    }
+   ],
+   "inputs": "A scene JSON (kosif.shadow-theatre.scene.v1); for analyze, a local video file.",
+   "outputs": "PNG stills, an MP4, and for analyze analysis.json + contact.jpg in --out.",
+   "requires": {
+    "python": [
+     "numpy",
+     "Pillow"
+    ],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [
+     "ffmpeg",
+     "ffprobe"
+    ],
+    "network": false
+   },
+   "safety": "writes-files",
+   "consent": "Writes only into the --out path given.",
+   "limits": "Bodies are procedural capsules, not hand-cut puppets; body-builds need stills review to read clearly; no lip-sync or text; a 22 s 1080x1920 film takes about 4 minutes on a 2-core container.",
+   "evidence": "tested-here",
+   "evidence_note": "10/10 unit tests passed (incl. a real MP4 render with audio); the 22 s demo rendered and frame-checked on this checkout",
+   "tests": [
+    "tests/test_shadow_theatre.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-shadow-theatre/SKILL.md",
+    ".claude/skills/kosif-shadow-theatre/references/scene-grammar.md",
+    ".claude/skills/kosif-shadow-theatre/references/style-analysis.md"
+   ],
+   "families": [
+    "characters-rigs",
+    "light-glow-bloom",
+    "transitions-cuts",
+    "story-direction-ideas"
+   ],
+   "power_id": "TOOL-183"
   },
   {
    "id": "instagram-reference-discovery",

@@ -1,0 +1,841 @@
+{
+ "schema": "kosif.shadow-theatre.scene.v1",
+ "title": "حارس الفانوس — The Lantern Keeper",
+ "concept": "A grandfather hands his lantern to a child; the light he carried becomes the palm, the dance and the boat that take the child home under the crescent.",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "duration": 22,
+ "seed": 11,
+ "lamp": {
+  "x": 0.5,
+  "y": 0.45
+ },
+ "scenes": [
+  {
+   "name": "arrival",
+   "start": 0,
+   "end": 5.5,
+   "backdrop": "desert-amber",
+   "transition_in": "blackout",
+   "fade_in": 0.9,
+   "fade_out": 0.5,
+   "techniques": [
+    "walk-in",
+    "prop-cutout",
+    "blackout",
+    "spotlight"
+   ],
+   "chord": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ],
+   "actors": [
+    {
+     "type": "prop",
+     "shape": "dunes",
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.5,
+       "y": 1.0,
+       "scale": 0.11
+      }
+     ],
+     "params": {
+      "drift": 0.05
+     }
+    },
+    {
+     "type": "human",
+     "costume": "elder",
+     "height": 0.33,
+     "cycle": {
+      "type": "walk",
+      "period": 1.3,
+      "amp": 0.7
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": -0.1,
+       "y": 0.95,
+       "pose": {
+        "base": "stand",
+        "torso": 12,
+        "arm_a": 55,
+        "elbow_a": 30
+       }
+      },
+      {
+       "t": 4.2,
+       "x": 0.36,
+       "y": 0.95,
+       "ease": "out",
+       "pose": {
+        "base": "stand",
+        "torso": 12,
+        "arm_a": 55,
+        "elbow_a": 30
+       }
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "lantern",
+     "params": {
+      "period": 1.3
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": -0.005,
+       "y": 0.775,
+       "scale": 0.075
+      },
+      {
+       "t": 4.2,
+       "x": 0.455,
+       "y": 0.775,
+       "scale": 0.075,
+       "ease": "out"
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "child",
+     "height": 0.19,
+     "facing": -1,
+     "cycle": {
+      "type": "walk",
+      "period": 0.6
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 1.15,
+       "y": 0.95
+      },
+      {
+       "t": 2.0,
+       "x": 1.15,
+       "y": 0.95
+      },
+      {
+       "t": 4.6,
+       "x": 0.66,
+       "y": 0.95,
+       "ease": "out",
+       "pose": "stand"
+      },
+      {
+       "t": 5.5,
+       "x": 0.64,
+       "y": 0.95,
+       "pose": "reach_up"
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "bird",
+     "keys": [
+      {
+       "t": 0.5,
+       "x": 0.1,
+       "y": 0.3,
+       "scale": 0.05
+      },
+      {
+       "t": 5.5,
+       "x": 0.9,
+       "y": 0.2,
+       "scale": 0.04
+      }
+     ]
+    }
+   ],
+   "spot": {
+    "x": 0.62,
+    "y": 0.8,
+    "r": 0.3,
+    "color": [
+     255,
+     236,
+     190
+    ],
+    "r_keys": [
+     {
+      "t": 0,
+      "scale": 0.12
+     },
+     {
+      "t": 5.5,
+      "scale": 0.34,
+      "ease": "out"
+     }
+    ]
+   }
+  },
+  {
+   "name": "tree of bodies",
+   "start": 5.5,
+   "end": 10.5,
+   "backdrop": "dawn-green",
+   "transition_in": "iris",
+   "fade_in": 0.0,
+   "fade_out": 0.5,
+   "techniques": [
+    "body-build",
+    "morph",
+    "iris",
+    "prop-cutout"
+   ],
+   "chord": [
+    "B2",
+    "F#3",
+    "B3",
+    "D4"
+   ],
+   "iris": {
+    "shape": "circle",
+    "x": 0.5,
+    "y": 0.55,
+    "soft": 3,
+    "keys": [
+     {
+      "t": 0,
+      "scale": 0.0
+     },
+     {
+      "t": 1.6,
+      "scale": 3.0,
+      "ease": "in"
+     }
+    ]
+   },
+   "actors": [
+    {
+     "type": "prop",
+     "shape": "dunes",
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.5,
+       "y": 1.0,
+       "scale": 0.07
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "foliage",
+     "params": {
+      "seed": 76,
+      "period": 2.4
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.76,
+       "y": 0.47,
+       "scale": 0.2,
+       "opacity": 0
+      },
+      {
+       "t": 2.8,
+       "x": 0.76,
+       "y": 0.47,
+       "scale": 0.2,
+       "opacity": 0
+      },
+      {
+       "t": 3.6,
+       "x": 0.76,
+       "y": 0.47,
+       "scale": 0.2,
+       "opacity": 1
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "foliage",
+     "params": {
+      "seed": 50,
+      "period": 2.4
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.5,
+       "y": 0.4,
+       "scale": 0.24,
+       "opacity": 0
+      },
+      {
+       "t": 2.8,
+       "x": 0.5,
+       "y": 0.4,
+       "scale": 0.24,
+       "opacity": 0
+      },
+      {
+       "t": 3.6,
+       "x": 0.5,
+       "y": 0.4,
+       "scale": 0.24,
+       "opacity": 1
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "foliage",
+     "params": {
+      "seed": 24,
+      "period": 2.4
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.24,
+       "y": 0.47,
+       "scale": 0.2,
+       "opacity": 0
+      },
+      {
+       "t": 2.8,
+       "x": 0.24,
+       "y": 0.47,
+       "scale": 0.2,
+       "opacity": 0
+      },
+      {
+       "t": 3.6,
+       "x": 0.24,
+       "y": 0.47,
+       "scale": 0.2,
+       "opacity": 1
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "plain",
+     "height": 0.4,
+     "facing": -1,
+     "cycle": {
+      "type": "flutter",
+      "period": 2.4,
+      "amp": 0.5
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.14,
+       "y": 0.95,
+       "pose": "stand"
+      },
+      {
+       "t": 1.0,
+       "x": 0.14,
+       "y": 0.95,
+       "pose": "stand"
+      },
+      {
+       "t": 3.2,
+       "x": 0.38,
+       "y": 0.95,
+       "pose": {
+        "base": "stand",
+        "torso": 24,
+        "head": 10,
+        "arm_a": 175,
+        "elbow_a": -25,
+        "arm_b": 120,
+        "elbow_b": 30,
+        "leg_a": -5,
+        "leg_b": -28
+       }
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "plain",
+     "height": 0.4,
+     "facing": 1,
+     "cycle": {
+      "type": "flutter",
+      "period": 2.4,
+      "amp": 0.5,
+      "phase": 0.4
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.86,
+       "y": 0.95,
+       "pose": "stand"
+      },
+      {
+       "t": 1.0,
+       "x": 0.86,
+       "y": 0.95,
+       "pose": "stand"
+      },
+      {
+       "t": 3.2,
+       "x": 0.62,
+       "y": 0.95,
+       "pose": {
+        "base": "stand",
+        "torso": 24,
+        "head": 10,
+        "arm_a": 175,
+        "elbow_a": -25,
+        "arm_b": 120,
+        "elbow_b": 30,
+        "leg_a": -5,
+        "leg_b": -28
+       }
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "plain",
+     "height": 0.5,
+     "cycle": {
+      "type": "breathe",
+      "period": 3.0
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.5,
+       "y": 0.95,
+       "pose": "stand"
+      },
+      {
+       "t": 1.0,
+       "x": 0.5,
+       "y": 0.95,
+       "pose": "stand"
+      },
+      {
+       "t": 3.0,
+       "x": 0.5,
+       "y": 0.95,
+       "pose": "trunk"
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "child",
+     "height": 0.17,
+     "facing": 1,
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.08,
+       "y": 0.95,
+       "pose": "stand",
+       "opacity": 0
+      },
+      {
+       "t": 3.2,
+       "x": 0.16,
+       "y": 0.95,
+       "pose": "stand",
+       "opacity": 1
+      },
+      {
+       "t": 5.0,
+       "x": 0.2,
+       "y": 0.95,
+       "pose": "reach_up"
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "bird",
+     "keys": [
+      {
+       "t": 2.5,
+       "x": 0.95,
+       "y": 0.25,
+       "scale": 0.04
+      },
+      {
+       "t": 5.0,
+       "x": 0.25,
+       "y": 0.18,
+       "scale": 0.05
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "bird",
+     "params": {
+      "flap": 2.8
+     },
+     "keys": [
+      {
+       "t": 2.8,
+       "x": 1.05,
+       "y": 0.3,
+       "scale": 0.03
+      },
+      {
+       "t": 5.0,
+       "x": 0.4,
+       "y": 0.24,
+       "scale": 0.035
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "the dance and the giant",
+   "start": 10.5,
+   "end": 15.0,
+   "backdrop": "crimson-spot",
+   "transition_in": "swell",
+   "fade_in": 0.3,
+   "fade_out": 0.6,
+   "techniques": [
+    "spotlight",
+    "depth-scale",
+    "morph"
+   ],
+   "chord": [
+    "G2",
+    "D3",
+    "G3",
+    "B3"
+   ],
+   "cues": [
+    12.6
+   ],
+   "spot": {
+    "x": 0.5,
+    "y": 0.55,
+    "r": 0.4,
+    "color": [
+     236,
+     238,
+     255
+    ],
+    "r_keys": [
+     {
+      "t": 0,
+      "scale": 0.05
+     },
+     {
+      "t": 1.4,
+      "scale": 0.42,
+      "ease": "out"
+     },
+     {
+      "t": 4.5,
+      "scale": 0.5
+     }
+    ]
+   },
+   "actors": [
+    {
+     "type": "human",
+     "costume": "dress",
+     "height": 0.3,
+     "facing": 1,
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.4,
+       "y": 0.86,
+       "pose": "stand"
+      },
+      {
+       "t": 1.0,
+       "x": 0.41,
+       "y": 0.86,
+       "pose": "dance_arc"
+      },
+      {
+       "t": 2.0,
+       "x": 0.44,
+       "y": 0.86,
+       "pose": "spin"
+      },
+      {
+       "t": 3.0,
+       "x": 0.45,
+       "y": 0.86,
+       "pose": "reach_up"
+      },
+      {
+       "t": 4.5,
+       "x": 0.45,
+       "y": 0.86,
+       "pose": "reach_up"
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "plain",
+     "height": 0.3,
+     "facing": -1,
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.62,
+       "y": 0.86,
+       "pose": "stand",
+       "depth": 0
+      },
+      {
+       "t": 1.0,
+       "x": 0.6,
+       "y": 0.86,
+       "pose": "lunge",
+       "depth": 0
+      },
+      {
+       "t": 2.0,
+       "x": 0.58,
+       "y": 0.86,
+       "pose": "offer",
+       "depth": 0
+      },
+      {
+       "t": 3.6,
+       "x": 0.56,
+       "y": 0.86,
+       "pose": "embrace",
+       "depth": 0.62,
+       "ease": "inout"
+      },
+      {
+       "t": 4.5,
+       "x": 0.56,
+       "y": 0.86,
+       "pose": "embrace",
+       "depth": 0.66
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "boat under the crescent",
+   "start": 15.0,
+   "end": 22.0,
+   "backdrop": "moon-indigo",
+   "transition_in": "blackout",
+   "fade_in": 0.8,
+   "fade_out": 0.0,
+   "memorable": true,
+   "techniques": [
+    "body-build",
+    "iris",
+    "prop-cutout"
+   ],
+   "chord": [
+    "A2",
+    "E3",
+    "A3",
+    "C#4"
+   ],
+   "iris": {
+    "shape": "arch",
+    "x": 0.5,
+    "y": 0.5,
+    "soft": 3,
+    "keys": [
+     {
+      "t": 0,
+      "scale": 3.0
+     },
+     {
+      "t": 5.0,
+      "scale": 3.0
+     },
+     {
+      "t": 5.6,
+      "scale": 1.1,
+      "ease": "out"
+     },
+     {
+      "t": 6.5,
+      "scale": 0.9
+     },
+     {
+      "t": 7.0,
+      "scale": 0.0,
+      "ease": "in"
+     }
+    ]
+   },
+   "actors": [
+    {
+     "type": "prop",
+     "shape": "crescent",
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.68,
+       "y": 0.22,
+       "scale": 0.13,
+       "rot": -20
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "skyline",
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.2,
+       "y": 0.9,
+       "scale": 0.1,
+       "opacity": 0.0
+      },
+      {
+       "t": 3.5,
+       "x": 0.2,
+       "y": 0.9,
+       "scale": 0.1,
+       "opacity": 0.0
+      },
+      {
+       "t": 5.0,
+       "x": 0.2,
+       "y": 0.9,
+       "scale": 0.1,
+       "opacity": 1.0
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "plain",
+     "height": 0.32,
+     "grounded": false,
+     "facing": 1,
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.36,
+       "y": 0.865,
+       "pose": "hull"
+      },
+      {
+       "t": 5.0,
+       "x": 0.56,
+       "y": 0.865,
+       "pose": "hull"
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "plain",
+     "height": 0.34,
+     "facing": 1,
+     "grounded": true,
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.34,
+       "y": 0.85,
+       "pose": "sail"
+      },
+      {
+       "t": 5.0,
+       "x": 0.54,
+       "y": 0.85,
+       "pose": "sail"
+      }
+     ]
+    },
+    {
+     "type": "human",
+     "costume": "child",
+     "height": 0.16,
+     "facing": 1,
+     "grounded": true,
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.5,
+       "y": 0.85,
+       "pose": "stand"
+      },
+      {
+       "t": 2.5,
+       "x": 0.6,
+       "y": 0.85,
+       "pose": "reach_up"
+      },
+      {
+       "t": 5.0,
+       "x": 0.7,
+       "y": 0.85,
+       "pose": "reach_up"
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "lantern",
+     "params": {
+      "period": 2.2,
+      "chain": 0.9
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.28,
+       "y": -0.2,
+       "scale": 0.12
+      },
+      {
+       "t": 2.5,
+       "x": 0.28,
+       "y": 0.28,
+       "scale": 0.12,
+       "ease": "out"
+      }
+     ]
+    },
+    {
+     "type": "prop",
+     "shape": "waves",
+     "params": {
+      "period": 2.0
+     },
+     "keys": [
+      {
+       "t": 0,
+       "x": 0.5,
+       "y": 0.96,
+       "scale": 0.08
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

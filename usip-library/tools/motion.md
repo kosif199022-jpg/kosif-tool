@@ -1,4 +1,4 @@
-# أدوات المجال `motion` (28 أداة)
+# أدوات المجال `motion` (29 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -1102,6 +1102,59 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-verify-video --evidence <ملف>`.
+
+### `shadow-theatre` — محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py` (جذر: repo) |
+| المجال | `motion` |
+| الدليل | `tested-here` |
+| العائلات | `characters-rigs`, `light-glow-bloom`, `transitions-cuts`, `story-direction-ideas` |
+
+**ما تفعله:** موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية.
+
+**What it does:** Shadow-theatre / silhouette motion graphics: articulated black bodies that join into trees and boats, depth toward the lamp (bigger, softer shadow), iris and spotlight transitions over projected gradient skies; analyses a reference act (cuts, palette, silhouette share), checks the scene grammar, renders stills and an export-standard MP4 with an original synth score.
+
+#### متى تُستدعى
+
+- «اعمل مشاهد بالظلال زي فقرة مسرح الظل»
+- «حلل فيديو الظلال ده واعمل مشاهد شبهه»
+- «Make a silhouette shadow-theatre film where bodies form a tree and a boat»
+- «مسرح ظل بقصة أصلية وفانوس وهلال»
+
+#### الأوامر
+
+- **doctor**: Reports python, numpy, Pillow, ffmpeg/ffprobe and whether the owner's export profile was found; exits 1 without ffmpeg.
+  - `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py doctor`
+- **analyze**: Camera cuts (scene threshold), sampled lit-screen palette, silhouette share and edge strength, a contact sheet and analysis.json.
+  - `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py analyze <reference.mp4> --out out/shadow/ref`
+- **check**: Timing rules (tiling, ≥3 scenes, varied pacing, no repeated transition) and the style grammar (≥4 of 8 techniques, a body-build, a memorable scene, known poses/props/backdrops); exits 1 with reasons.
+  - `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py check .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json`
+- **stills**: Renders PNG frames at the given times plus a side-by-side sheet.
+  - `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py stills .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/stills --times 3,9.5,18`
+- **render**: Renders every frame and pipes it to ffmpeg at the export standard (1080x1920, 30 fps, H.264 High CRF 17, BT.709, faststart) with a generated synth score; --preview is half size at 15 fps; --no-audio for the user's own music.
+  - `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py render .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/film.mp4`
+
+#### المتطلبات والأمان
+
+- binaries: python3
+- optional: ffmpeg, ffprobe
+- python: numpy, Pillow
+- الأمان: writes-files
+- الموافقة: Writes only into the --out path given.
+- الحدود: Bodies are procedural capsules, not hand-cut puppets; body-builds need stills review to read clearly; no lip-sync or text; a 22 s 1080x1920 film takes about 4 minutes on a 2-core container.
+
+#### الاختبارات والأدلة
+
+- `tests/test_shadow_theatre.py`
+- مرجع: `.claude/skills/kosif-shadow-theatre/SKILL.md`
+- مرجع: `.claude/skills/kosif-shadow-theatre/references/scene-grammar.md`
+- مرجع: `.claude/skills/kosif-shadow-theatre/references/style-analysis.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:shadow-theatre --evidence <ملف>`.
 
 ### `starter-html-canvas` — قالب فيلم HTML Canvas / HTML Canvas film starter
 

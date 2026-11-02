@@ -218,6 +218,7 @@
 | `repo-overlap-rig` | — | فاحص ريج الكاميرا المتداخلة · Overlapping camera rig checker | `python3 tools/overlap_rig.py graphs` | 1 |
 | `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 4 |
 | `repo-verify-video` | TOOL-82 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 -…` | 2 |
+| `shadow-theatre` | TOOL-183 | محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine | `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py…` | 1 |
 | `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 0 |
 | `starter-remotion` | TOOL-84 | قالب فيلم Remotion · Remotion film starter | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | 0 |
 | `style-atlas-bridge` | TOOL-63 | أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح · Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds | `python3 scripts/style_atlas_bridge.py families` | 1 |

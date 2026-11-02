@@ -189,7 +189,7 @@
 | SP-0138 | 📄 | ضبط مجمع الاتصالات وموثوقية قاعدة البيانات · Connection pool sizing and DB reliability playbook | 4 | 0 | SP-0056 SP-0098 SP-0097 SP-0165 |
 | SP-0139 | ✅ | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 35 | 35 | SP-0349 SP-0143 SP-0027 SP-0146 |
 | SP-0140 | ✅ | فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | 20 | 20 | SP-0358 SP-0381 SP-0409 SP-0328 |
-| SP-0141 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 19 | 17 | SP-0264 SP-0147 SP-0270 SP-0268 |
+| SP-0141 | ✅ | مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 20 | 18 | SP-0264 SP-0268 SP-0147 SP-0270 |
 | SP-0142 | ✅ | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | 16 | SP-0305 SP-0268 SP-0036 SP-0150 |
 | SP-0143 | ✅ | تدقيق أدلة الكتالوج · Catalog Evidence Audit | 14 | 11 | SP-0139 SP-0295 SP-0038 SP-0077 |
 | SP-0144 | ✅ | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits | 14 | 13 | SP-0361 SP-0115 SP-0349 SP-0478 |
@@ -331,7 +331,7 @@
 | SP-0265 | ✅ | مواصفة الخط الزمني · JSON timeline spec | 22 | 7 | SP-0358 SP-0140 SP-0384 SP-0351 |
 | SP-0266 | ✅ | تقسيم التصيير · Render sharding | 22 | 3 | SP-0373 SP-0273 SP-0280 SP-0298 SP-0129 |
 | SP-0267 | ✅ | معاينة مسودة · Draft preview render | 22 | 8 | SP-0377 SP-0266 SP-0373 SP-0301 SP-0014 |
-| SP-0268 | ✅ | استوديو KOSIF Motion Web المحلي · KOSIF Motion Web local studio server | 20 | 9 | SP-0142 SP-0350 SP-0305 SP-0141 |
+| SP-0268 | ✅ | استوديو KOSIF Motion Web المحلي · KOSIF Motion Web local studio server | 20 | 9 | SP-0141 SP-0142 SP-0350 SP-0305 |
 | SP-0269 | ✅ | مشروع أنيميشن جديد · New animation project (2D / 3D / lab) | 20 | 8 | SP-0391 SP-0351 SP-0285 SP-0265 SP-0060 |
 | SP-0270 | ✅ | تصدير MP4 من محرر المتصفح · Browser editor offline MP4 export (WebCodecs) | 17 | 6 | SP-0274 SP-0141 SP-0011 SP-0300 |
 | SP-0271 | ✅ | حزمة ثلاثية الأبعاد جاهزة · Pre-bundled 3D kit (window.K3) | 16 | 3 | SP-0173 SP-0145 SP-0432 SP-0129 |
@@ -362,7 +362,7 @@
 | SP-0296 | ✅ | التحكم في ComfyUI عبر REST وWebSocket · ComfyUI REST and WebSocket control | 5 | 1 | SP-0179 SP-0151 SP-0136 SP-0163 |
 | SP-0297 | 🟢 | إعداد السحابة · Cloud setup on claude.ai | 5 | 1 | SP-0113 SP-0266 SP-0021 SP-0045 |
 | SP-0298 | 🟢 | تشغيل دفعات · Batch jobs | 5 | 1 | SP-0266 SP-0369 SP-0176 SP-0373 SP-0165 |
-| SP-0299 | ✅ | إطباق محيطي وانعكاسات وحدود · SSAO / SSR / Outline / FXAA / SMAA nodes | 3 | 2 | SP-0285 SP-0453 SP-0173 SP-0433 SP-0141 |
+| SP-0299 | ✅ | إطباق محيطي وانعكاسات وحدود · SSAO / SSR / Outline / FXAA / SMAA nodes | 3 | 2 | SP-0285 SP-0453 SP-0173 SP-0433 SP-0160 |
 | SP-0300 | ✅ | ملف مفحوص لكل منصة · Checked per-platform delivery (8 platforms) | 35 | 15 | SP-0270 SP-0141 SP-0274 SP-0455 |
 | SP-0301 | ✅ | مواصفات معاينة متجر التطبيقات · App-store preview video spec | 12 | 3 | SP-0377 SP-0135 SP-0267 SP-0194 |
 | SP-0302 | ✅ | صيغ الصوت للحلقات وتراخيص الموسيقى · Loop audio formats & music licence receipts | 8 | 5 | SP-0213 SP-0331 SP-0158 SP-0379 |
@@ -428,7 +428,7 @@
 | SP-0362 | ✅ | تشخيص قبل رفع الدقة · Upscale triage | 7 | 4 | SP-0374 SP-0290 SP-0217 SP-0422 SP-0022 |
 | SP-0363 | ✅ | إعدادات تسجيل الشاشة · Screen-capture defaults | 4 | 2 | SP-0280 SP-0273 SP-0482 SP-0189 SP-0130 |
 | SP-0364 | ✅ | مؤثرات بكسل بخطوات اللوحة · Pixel VFX by palette-step fades | 19 | 6 | SP-0227 SP-0416 SP-0311 SP-0366 SP-0157 |
-| SP-0365 | ✅ | كلمة غليتش RGB على النوتات · RGB-split glitch word on the beat | 8 | 5 | SP-0427 SP-0318 SP-0467 SP-0340 SP-0029 |
+| SP-0365 | ✅ | كلمة غليتش RGB على النوتات · RGB-split glitch word on the beat | 8 | 5 | SP-0427 SP-0318 SP-0467 SP-0340 SP-0141 |
 | SP-0366 | ✅ | الإضاءة والتلاشي بدثر Bayer · Bayer-dither fades & palette-stepped light | 6 | 3 | SP-0449 SP-0461 SP-0375 SP-0419 SP-0058 |
 | SP-0367 | ✅ | بوابة التسليم · Delivery gate (inspect) | 43 | 16 | SP-0380 SP-0331 SP-0373 SP-0376 SP-0167 |
 | SP-0368 | ✅ | حدود التباين · WCAG contrast floors | 31 | 12 | SP-0063 SP-0455 SP-0380 SP-0219 |
