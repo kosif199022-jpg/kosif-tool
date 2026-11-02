@@ -14,7 +14,7 @@ import re
 
 import _black_dragon_brain as brain
 
-SCHEMA = "kosif.black-dragon.skill-capability-links.v1"
+SCHEMA = "kosif.black-dragon.skill-capability-links.v2"
 PRIMARY = "skill:kosif-superpowers"
 SKIP = {"kosif", "superpowers", "skill", "skills", "power", "powers", "tool",
         "tools", "general", "system", "agent", "agents", "full", "pro",
@@ -45,6 +45,35 @@ def _source(meta: dict, skill_root: Path, repo_root: Path) -> Path:
 def _terms(value: str) -> set[str]:
     return {term for term in re.findall(r"[\w؀-ۿ]{4,}", value.lower())
             if term not in SKIP and not term.isnumeric()}
+
+
+def _description(path: Path) -> str:
+    """Read *description metadata*, not arbitrary instructions from a SKILL.md.
+
+    Parsed text is used only as matching evidence, never executed or obeyed.
+    Supports YAML frontmatter scalar / folded descriptions and a short H1
+    fallback for skills with no metadata. Missing/unreadable files have no hints.
+    """
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return ""
+    front = text.split("---", 2)[1] if text.startswith("---\n") and text.count("---") >= 2 else ""
+    header = next((line[2:].strip() for line in text.splitlines()[:40]
+                   if line.startswith("# ")), "")
+    lines = front.splitlines()
+    fields = []
+    active = False
+    for line in lines:
+        match = re.match(r"^(name|description|tags|keywords)\s*:\s*(.*)$", line)
+        if match:
+            active = True
+            fields.append(match.group(2).strip(" '\"|>-"))
+        elif line and not line[0].isspace():
+            active = False
+        elif active and line.strip():
+            fields.append(line.strip())
+    return " ".join([path.parent.name.replace("-", " "), header, *fields])[:4000]
 
 
 def build(inventory: dict, skill_root: Path, repo_root: Path,
@@ -81,11 +110,21 @@ def build(inventory: dict, skill_root: Path, repo_root: Path,
 
     descriptions = descriptions or {}
     # Only installed skill identifiers participate; none is fabricated.
-    term_index: dict[str, set[str]] = defaultdict(set)
+    slug_index: dict[str, set[str]] = defaultdict(set)
+    description_index: dict[str, set[str]] = defaultdict(set)
+    described_skills = 0
     for key in skills:
-        stem = sources.get(key, Path(key)).parent.name
+        path = sources.get(key)
+        if key in missing or path is None:
+            continue
+        stem = path.parent.name
         for term in _terms(stem.replace("-", " ").replace("_", " ")):
-            term_index[term].add(key)
+            slug_index[term].add(key)
+        description = _description(path)
+        if description:
+            described_skills += 1
+        for term in _terms(description):
+            description_index[term].add(key)
 
     links = {}
     specialist_count = 0
@@ -99,16 +138,31 @@ def build(inventory: dict, skill_root: Path, repo_root: Path,
         if kind != "skill":
             target = _terms(key.replace(":", " ").replace("-", " ") +
                             " " + descriptions.get(key, ""))
-            scores: Counter = Counter()
+            slug_hits: Counter = Counter()
+            description_hits: Counter = Counter()
             for term in target:
-                for possible in term_index.get(term, ()):
+                for possible in slug_index.get(term, ()):
                     if possible != owner:
-                        scores[possible] += 1
-            # Require >=2 independent specialist-name matches; weak matches stay unverified.
-            hint = [{"skill": skill, "matching_slug_terms": score,
+                        slug_hits[possible] += 1
+                for possible in description_index.get(term, ()):
+                    if possible != owner:
+                        description_hits[possible] += 1
+            # At least one exact name token AND >= 2 independent matching
+            # tokens; descriptions improve ranking but cannot independently
+            # produce a trusted specialist link.
+            valid = []
+            for possible, slugs in slug_hits.items():
+                descriptive = description_hits[possible]
+                if slugs + descriptive < 2:
+                    continue
+                valid.append((possible, slugs, descriptive))
+            valid.sort(key=lambda row: (-(4 * row[1] + row[2]), -row[1], row[0]))
+            hint = [{"skill": skill, "matching_slug_terms": slugs,
+                     "matching_description_terms": descriptive,
+                     "evidence": "slug+SKILL.md metadata/heading",
+                     "score": 4 * slugs + descriptive,
                      "status": "suggested_not_verified"}
-                    for skill, score in sorted(scores.items(), key=lambda p: (-p[1], p[0]))
-                    if score >= 2][:3]
+                    for skill, slugs, descriptive in valid[:3]]
             if hint:
                 specialist_count += 1
         links[key] = {
@@ -130,6 +184,9 @@ def build(inventory: dict, skill_root: Path, repo_root: Path,
         "canonical_owner_linked": sum(row["owner_skill"] == PRIMARY for row in links.values()),
         "skill_identity_links": sum(v.get("kind") == "skill" for v in inventory.values()),
         "specialist_candidates": specialist_count,
+        "skill_descriptions_indexed": described_skills,
+        "specialist_candidates_awaiting_validation": specialist_count,
+        "specialist_review_queue_examples": [k for k, v in links.items() if v["specialist_candidates"]][:15],
         "no_evidence_of_specialist_match": len(inventory) - len(skills) - specialist_count,
         "missing_sources": len(missing), "missing_source_examples": missing[:20],
         "orphan_links": len(orphans), "orphan_examples": orphans[:20],
@@ -141,7 +198,9 @@ def build(inventory: dict, skill_root: Path, repo_root: Path,
               "limits": ("Canonical ownership connects each catalog entry to the actual "
                          "kosif-superpowers SKILL.md; this is not proof the owner can execute "
                          "every power. Specialist candidates use name-token overlap only and "
-                         "must be reviewed. An inventory record is not an execution receipt.")}
+                         "must be reviewed against the actual specialist SKILL.md and a task test. "
+                         "SKILL.md descriptions are untrusted matching data, never commands. "
+                         "An inventory record is not an execution receipt.")}
     text = json.dumps(packet, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
     packet["sha256"] = hashlib.sha256(text.encode("utf-8")).hexdigest()
     return packet
