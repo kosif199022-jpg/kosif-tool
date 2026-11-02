@@ -26,6 +26,7 @@ from pathlib import Path
 import _cinema_all_skills as audit
 import _black_dragon_brain as brain
 import _black_dragon_pro_max as pro_max
+import _black_dragon_skill_links as skill_links
 
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v2"
@@ -375,6 +376,8 @@ def main(argv=None) -> int:
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
                    help="run --help on every argparse CLI tool as a startup probe")
+    l = sub.add_parser("links", help="Audit every capability's verified skill owner; NO execution")
+    l.add_argument("--out", type=Path, help="optional new JSON file with all capability-to-skill links")
     a = sub.add_parser("activate", help="Inspect every tool and stage a full or smart reviewed usage plan (no execution)")
     a.add_argument("task")
     a.add_argument("--selection", choices=("all", "smart"), required=True)
@@ -398,6 +401,20 @@ def main(argv=None) -> int:
             result = pro_max.review_job(args.job, full_inventory())
             print(json.dumps(result, ensure_ascii=False, indent=2))
             return 0 if result["audit"]["integrity_passed"] else 4
+        if args.command == "links":
+            inventory = full_inventory()
+            package = skill_links.build(inventory, audit.SKILL, REPO,
+                                        brain.metadata(inventory, audit.SKILL))
+            if args.out is not None:
+                if args.out.exists() or args.out.is_symlink():
+                    raise ValueError("Skill-links output path must be new")
+                args.out.parent.mkdir(parents=True, exist_ok=True)
+                args.out.write_text(json.dumps(package, ensure_ascii=False, indent=2) + "\n",
+                                    encoding="utf-8")
+            print(json.dumps({"summary": package["summary"], "sha256": package["sha256"],
+                              "out": str(args.out) if args.out else None}, ensure_ascii=False, indent=2))
+            return 0 if (package["summary"]["all_owned"] and
+                         package["summary"]["all_sources_present"]) else 4
         if args.command == "activate":
             import _black_dragon_activation as activation
             inventory = full_inventory()
@@ -407,6 +424,15 @@ def main(argv=None) -> int:
             packet = activation.inspect_and_schedule(
                 args.task, inventory, adapters, _tool_records(), REPO, audit.SKILL,
                 mode=args.selection)
+            link_packet = skill_links.build(inventory, audit.SKILL, REPO,
+                                            brain.metadata(inventory, audit.SKILL))
+            packet["skill_link_summary"] = link_packet["summary"]
+            packet["skill_links"] = link_packet["links"]
+            packet["skill_link_sha256"] = link_packet["sha256"]
+            packet.pop("plan_sha256", None)
+            packet["plan_sha256"] = hashlib.sha256(json.dumps(
+                packet, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+            ).encode("utf-8")).hexdigest()
             destination = args.out
             if destination.is_symlink() or destination.exists():
                 raise ValueError("Activation plan path must be new and not a symlink")

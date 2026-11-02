@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+from collections import Counter
 from pathlib import Path
 
 import _black_dragon_brain as brain
@@ -38,7 +39,7 @@ def invocation() -> dict:
         "question_ar": "عايز التنين الأسود يستخدم كل القدرات بتوزيع ذكي، ولا يختار القدرات الأنسب للمهمة؟",
         "question_en": "Use the full capability catalog, or choose a focused set intelligently?",
         "options": [
-            {"id": "all", "label_ar": "كل القدرات", "effect": "Assign EVERY catalog item a stage and method; attempt every approved reviewed adapter with its prerequisites."},
+            {"id": "all", "label_ar": "كل القدرات", "effect": "Target execution of EVERY catalog tool and task-specific use of EVERY skill in its proper stage. List all non-runnable, unreviewed or permission-blocked tools as explicit gaps. Never count blocked tools as executed."},
             {"id": "smart", "label_ar": "اختيار ذكي", "effect": "Inspect the entire catalog; execute only a scored, dependency-closed set of reviewed adapters."},
         ],
         "approval": "Choosing a mode is not permission for paid, external, mutating or unreviewed actions.",
@@ -94,7 +95,8 @@ def select(task: str, inventory: dict, adapters: dict, mode: str,
         "reviewed_adapters_selected": len(selected),
         "selected_adapter_ids": sorted(selected),
         "unselected_reviewed_adapters": sorted(set(adapters) - set(selected)),
-        "reason": ("Full catalog and all reviewed adapters scheduled" if mode == "all"
+        "full_mode_goal": ("Execute all catalog tools and apply every installed skill at its appropriate stage, subject to real runnable adapters and permission checks" if mode == "all" else "Use appropriate reviewed tools and skills"),
+        "reason": ("All catalog tools targeted; only reviewed and approved ones may execute, gaps are explicit" if mode == "all"
                    else "All entries examined; ranked reviewed adapters and dependency closure"),
         "execution_authorized": False,
         "notice": "Assignment is not execution. A separate approval and evidence receipts are required.",
@@ -158,6 +160,45 @@ def _static_source(record: dict, repo_root: Path, skill_root: Path) -> dict:
         return {"status": "source_unreadable", "reason": type(exc).__name__}
     return {"status": "inspected", "source": f"{root_name}/{rel.as_posix()}",
             "source_sha256": digest.hexdigest()}
+
+
+def qualification_queue(tool_rows: dict, execution_gaps: dict) -> dict:
+    """An actionable, deterministic backlog for full-tool execution coverage.
+
+    The queue is only a *plan*: it does not grant permissions, modify adapters,
+    import target programs, or label a merely catalogued item executable.
+    """
+    severity = {
+        "source_not_inspectable": (0, "repair registry source path and re-check contents"),
+        "dependency_or_adapter_review_required": (1, "repair reviewed adapter manifest or prerequisite and rerun isolated tests"),
+        "unreviewed_or_missing_adapter": (2, "design and independently test an allowlisted adapter with real input/output receipts"),
+    }
+    queued = []
+    for key in sorted(execution_gaps):
+        row = tool_rows[key]
+        gap = execution_gaps[key]
+        rank, next_action = severity[gap]
+        queued.append({
+            "id": key,
+            "stage": row["stage"],
+            "priority": row["priority"],
+            "declared_risk": row["risk"],
+            "gap": gap,
+            "next_action": next_action,
+            "source_status": row["inspection"]["status"],
+            "approval_required": True,
+            "status": "unqualified_not_executed",
+        })
+    queued.sort(key=lambda x: (severity[x["gap"]][0], -x["priority"], x["id"]))
+    by_reason = dict(sorted(Counter(x["gap"] for x in queued).items()))
+    return {
+        "schema": "kosif.black-dragon.tool-qualification.v1",
+        "status": "review_backlog_only",
+        "count": len(queued),
+        "counts_by_reason": by_reason,
+        "items": queued,
+        "policy": "Qualify every registered tool individually; NEVER execute unreviewed code to meet a coverage metric.",
+    }
 
 
 def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
@@ -232,6 +273,26 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
             "inspection_blocked" if row["inspection"]["status"] != "inspected" else
             "review_required" if key in adapters else "knowledge_only"
         )
+    # In FULL mode all tools remain execution targets, even when no reviewed
+    # adapter exists. A goal is never upgraded to a successful execution claim.
+    execution_gaps = {}
+    for key, row in rows.items():
+        row["full_mode_execution_target"] = mode == "all"
+        row["execution_attempted"] = False
+        if mode == "all":
+            if row["readiness"] != "candidate_requires_approval":
+                gap = (
+                    "source_not_inspectable" if row["inspection"]["status"] != "inspected" else
+                    "unreviewed_or_missing_adapter" if key not in adapters else
+                    "dependency_or_adapter_review_required"
+                )
+                execution_gaps[key] = gap
+                row["execution_gap"] = gap
+            else:
+                row["execution_gap"] = None
+        else:
+            row["execution_gap"] = "not_selected_in_smart_mode" if not row["selected"] else None
+    backlog = qualification_queue(rows, execution_gaps)
     stage_order = list(plan["parts"])
     stages = []
     for stage in stage_order:
@@ -244,13 +305,45 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
     waves = [[key for key in wave if key in eligible]
              for wave in plan["waves"]]
     waves = [wave for wave in waves if wave]
+    all_execution_waves = []
+    for n, wave in enumerate(plan["waves"], start=1):
+        tools_here = [key for key in wave if key in rows]
+        if tools_here:
+            all_execution_waves.append({
+                "index": n,
+                "tool_ids": tools_here,
+                "eligible_for_approval": [key for key in tools_here if key in eligible],
+                "blocked_with_gap": [key for key in tools_here if key in execution_gaps],
+            })
+    skill_ids = sorted(key for key, meta in inventory.items() if meta.get("kind") == "skill")
+    skill_uses = [{"id": key, "stage": plan["items"][key]["part"],
+                   "application": plan["items"][key]["application"],
+                   "status": "planned_not_applied"}
+                  for key in skill_ids]
     result = {
-        "schema": "kosif.black-dragon.tool-inspection.v1",
+        "schema": "kosif.black-dragon.tool-inspection.v2",
         "task": task, "mode": mode, "status": "planned_not_executed",
         "activation": activation,
         "catalog": {"examined": len(inventory), "assigned": len(plan["items"]),
                     "assignment_sha256": plan["assignment_sha256"]},
         "tools": rows, "stages": stages, "dependency_waves": waves,
+        "all_tool_execution_waves": all_execution_waves,
+        "all_tool_execution_gaps": execution_gaps,
+        "tool_qualification_backlog": backlog,
+        "skill_usage_plan": skill_uses,
+        "full_mode_contract": {
+            "goal": "Run every registered runnable tool and apply every installed skill appropriately" if mode == "all" else "Choose best-fit tool and skill applications",
+            "catalog_tools_targeted": len(tool_ids) if mode == "all" else len(selected),
+            "installed_skills_planned": len(skill_ids),
+            "tools_eligible_for_separate_approval": len(eligible),
+            "tools_pending_adapter_review_or_missing_source": len(execution_gaps),
+            "qualification_backlog_count": backlog["count"],
+            "tools_executed": 0,
+            "skills_applied_with_evidence": 0,
+            "all_tools_executed": False,
+            "all_skills_applied": False,
+            "separate_execution_approval_required": True,
+        },
         "council": council_plan(task, activation),
         "counts": {
             "catalog_tools": len(tool_ids),
@@ -258,6 +351,9 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
             "missing_or_unsafe": sum(r["inspection"]["status"] != "inspected" for r in rows.values()),
             "reviewed_adapters_selected": len(selected),
             "tool_candidates_after_dependencies": len(eligible),
+            "tool_execution_gaps": len(execution_gaps),
+            "qualification_backlog_by_reason": backlog["counts_by_reason"],
+            "skills_planned_for_usage": len(skill_uses),
             "execution_attempts": 0,
         },
         "approval_gate": {
@@ -267,7 +363,8 @@ def inspect_and_schedule(task: str, inventory: dict, adapters: dict,
                            "verify actual outputs and receipts after execution"],
         },
         "limitations": ("Static inspection verifies metadata, local paths and hashes; it does not "
-                        "prove that a tool works. Assignment is not execution. Council is a planned "
+                        "prove that a tool works. ALL mode targets all tools and skills but is not " 
+                        "proof of their execution or application. Council is a planned "
                         "review contract, not five completed independent reviews."),
     }
     raw = json.dumps(result, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
