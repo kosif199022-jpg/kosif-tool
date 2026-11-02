@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **181 powers follow** — ✅ 150 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **182 powers follow** — ✅ 151 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -15,7 +15,7 @@
 
 - **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-181 (27)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-183 (24)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
@@ -605,6 +605,15 @@
 - **كيف / how:** start: `python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4`; wait: `python3 tools/job.py wait --dir out/20261024-film/render`; status: `python3 tools/job.py status --dir out/20261024-film/render`; stop: `python3 tools/job.py stop --dir out/20261024-film/render`. Full card: `python3 scripts/hub.py tool repo-job-wait`. Limits: Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection). **أرقام / params:** in: A job folder (--dir) and, for start, the command after `--`. · out: job.log, job.pid, job.exit and job.json in the job folder; STARTED/PROGRESS/WARN/DONE/FAILED/TIMEOUT lines on stdout; exit code = the job's exit code (124 on timeout, 2 when no job exists).
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`node`](../requirements.md#req-node) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
 - **الدليل / proof:** `kosif-tool/tests/test_job_wait.py` · `kosif-tool/tools/job.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-183 · محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine · ✅ مُثبت هنا / proven here
+- **ماذا / what:** موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. — Shadow-theatre / silhouette motion graphics: articulated black bodies that join into trees and boats, depth toward the lamp (bigger, softer shadow), iris and spotlight transitions over projected gradient skies; analyses a reference act (cuts, palette, silhouette share), checks the scene grammar, renders stills and an export-standard MP4 with an original synth score.
+- **متى أستخدمها / when:** اعمل مشاهد بالظلال زي فقرة مسرح الظل / Make a silhouette shadow-theatre film where bodies form a tree and a boat
+- **كيف / how:** doctor: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py doctor`; analyze: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py analyze <reference.mp4> --out out/shadow/ref`; check: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py check .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json`; stills: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py stills .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/stills --times 3,9.5,18`. Full card: `python3 scripts/hub.py tool shadow-theatre`. Limits: Bodies are procedural capsules, not hand-cut puppets; body-builds need stills review to read clearly; no lip-sync or text; a 22 s 1080x1920 film takes about 4 minutes on a 2-core container. **أرقام / params:** in: A scene JSON (kosif.shadow-theatre.scene.v1); for analyze, a local video file. · out: PNG stills, an MP4, and for analyze analysis.json + contact.jpg in --out.
+- **تثبيت / install:** `pip install numpy Pillow · needs on PATH: python3 · optional: ffmpeg, ffprobe`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الدليل / proof:** `kosif-tool/tests/test_shadow_theatre.py` · `kosif-tool/.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py`
 - **المصدر / source:** data/tools.json
 
 ## Editing and reference video / المونتاج والفيديو المرجعي
@@ -1620,7 +1629,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (181)
+- الرخص / licences: — (182)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

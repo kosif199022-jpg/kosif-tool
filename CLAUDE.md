@@ -29,6 +29,8 @@ Read AGENTS.md, then the selected style's `styles/<style-id>/SKILL.md`, `STYLE.j
 
 Uploaded audio or video for montage or motion graphics: use the Montage Pro task force, `python3 .claude/skills/kosif-superpowers/scripts/montage_pro.py intake <file> --job <dir>` then `options` and `build` (guide: `.claude/skills/kosif-superpowers/montage-pro/README.md`).
 
+Shadow theatre / silhouette scenes (مسرح الظل، مشاهد بالظلال، «زي فقرة الظلال»): follow `.claude/skills/kosif-shadow-theatre/SKILL.md` (`shadow_theatre.py analyze` a reference, write the scene JSON, `check`, `stills`, then `render`).
+
 A motion-design video made from code (promo, intro, kinetic typography, «التنين الأسود»): follow `.claude/skills/kosif-web-film/SKILL.md` (concept and shot plan first, `web_film.py check`, stills, then `tools/render_html.cjs`).
 
 Downloading footage: any link (Pexels, Mixkit, Pixabay, Coverr or other direct `.mp4` files, plus every yt-dlp site) goes through `python3 .claude/skills/kosif-superpowers/scripts/fetch_video.py URL -o <dir>`, or `media_sources.py download URL --rights ...` for the 100-site gateway with a rights record. Stock pages are fetched by `stock_fetch.py` without yt-dlp (yt-dlp gets 403 on them); Pixabay needs a free `PIXABAY_API_KEY`. Free photos and footage to search for a montage (Openverse, Commons, NASA, the Library of Congress, Europeana, the Met, Pexels, Pixabay, Unsplash, Mixkit, Coverr): `free_photos.py` and `free_footage.py` search, then download with a licence sidecar and ATTRIBUTION.md (appendix A44). YouTube and some sites block cloud machines: report it and offer the user's own computer or an upload, never a bypass. Run each of these as one plain command from the repo root, with the exact paths above.
