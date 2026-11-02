@@ -113,11 +113,13 @@ def run(args: argparse.Namespace) -> tuple[int, dict]:
     }
     py = sys.executable
     try:
+        intake = job / "intake"
         if words:
-            dst = job / "words.json"
+            # Stage word timings BEFORE intake so audio_cue_mapper actually imports them.
+            intake.mkdir()
+            dst = intake / "words.json"
             shutil.copyfile(words, dst)
             report["imported_aligned_words"] = artifact_proof(job, dst)
-        intake = job / "intake"
         _run_stage(report, job, "montage-intake",
                    [py, str(HERE / TOOLS["montage"]), "intake", str(media), "--job", str(intake)],
                    [intake / "intake.json"], args.timeout)
@@ -126,9 +128,6 @@ def run(args: argparse.Namespace) -> tuple[int, dict]:
         report["media_kind"] = kind
         if kind not in ("audio", "video"):
             raise RuntimeError("unsupported media: ffprobe found no usable audio or video streams")
-        if words:
-            # The import is explicit and must be recognized by the cue mapper.
-            shutil.copyfile(job / "words.json", intake / "words.json")
         if obj.get("probe", {}).get("audio"):
             cues = intake / "work" / "cues.json"
             if not cues.is_file():
@@ -144,6 +143,8 @@ def run(args: argparse.Namespace) -> tuple[int, dict]:
                            [py, str(HERE / TOOLS["cues"]), str(excerpt), "--out", str(cues)],
                            [cues], args.timeout)
                 report["rhythm_input_scope"] = "first 120 seconds, not entire media"
+                if words:
+                    report["alignment_warning"] = "long media: excerpt cue fallback does not import full-timeline words"
             else:
                 report["rhythm_input_scope"] = "full audio (up to 120 seconds)"
                 report["stages"].append({"name": "measured-audio-cues", "status": "executed",
@@ -190,6 +191,8 @@ def run(args: argparse.Namespace) -> tuple[int, dict]:
 
 def verify(name: str) -> dict:
     job = job_path(name)
+    if job.is_symlink():
+        raise ValueError("symlinked job is forbidden")
     path = job / "black_dragon_media_report.json"
     if path.is_symlink() or not path.is_file():
         raise ValueError("job report missing")
