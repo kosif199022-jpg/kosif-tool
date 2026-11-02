@@ -72,7 +72,7 @@ class SkillLinkAuditTests(unittest.TestCase):
         specialised = self.skill.parent / "cinematic-video-editing" / "SKILL.md"
         specialised.write_text("---\ndescription: editing filters tools and timelines\n---\n", encoding="utf-8")
         alternate = {**self.inventory, "power:OTHER-001": {"kind": "power", "source": "data/powers/video.json"}}
-        r = self.audit(entries=alternate, desc={"power:OTHER-001": "editing filters tools and timelines"})
+        r = self.audit(entries=alternate, desc={"power:OTHER-001": "filters color and timelines"})
         self.assertEqual(r["links"]["power:OTHER-001"]["specialist_candidates"], [])
 
     def test_missing_source_is_reported_not_silently_linked_as_working(self):
