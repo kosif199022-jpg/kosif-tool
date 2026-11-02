@@ -1063,7 +1063,7 @@
 "SP-0183",
 "SP-0381",
 "SP-0408",
-"SP-0143"
+"SP-0144"
 ],
 "text": "ask for any visual style by name from a 586-style library اطلب أي أسلوب بصري بالاسم من مكتبة 586 أسلوبًا style library visual style art style أسلوب أساليب ستايل استايل مكتبة الأساليب موسوعة الأساليب futurepedia ks illustrated style catalog pdf with generated swatches كتالوج أساليب مصوّر pdf بعينات مولّدة style catalog pdf كتالوج ملف بي دي اف عينات swatches contact sheet fuse two styles 70/30 in one prompt دمج أسلوبين 70/30 في برومنت واحد style fusion mix styles دمج أساليب مزج accent fusion extract a writing style into a reusable style guide استخراج أسلوب كاتب إلى دليل أسلوب قابل للتطبيق writing style voice style guide أسلوب الكتابة صوت العلامة rubric"
 },
@@ -1970,7 +1970,7 @@
 "SP-0084",
 "SP-0087",
 "SP-0083",
-"SP-0143"
+"SP-0144"
 ],
 "text": "rea mcp tool `goto_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية goto rea mcp tool `current_procedure` rea mcp: دالة rea mcp reverse engineering هندسة عكسية current rea mcp tool `procedure_references` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `inspect_address_context` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية inspect rea mcp tool `current_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية current rea mcp tool `current_document` rea mcp: المستند الحالي rea mcp reverse engineering هندسة عكسية current rea mcp tool `list_strings` rea mcp: النصوص rea mcp reverse engineering هندسة عكسية list rea mcp tool `list_unknowns` rea mcp: سرد المجهولات rea mcp reverse engineering هندسة عكسية list rea mcp tool `next_address` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية next rea mcp tool `set_address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية set rea mcp tool `read_function_instructions` rea mcp: دالة rea mcp reverse engineering هندسة عكسية read rea mcp tool `list_segments` rea mcp: المقاطع rea mcp reverse engineering هندسة عكسية list rea mcp tool `binary_session` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية binary rea mcp tool `procedure_info` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `list_procedures` rea mcp: سرد الإجراءات المستعادة rea mcp reverse engineering هندسة عكسية list rea mcp tool `build_call_path` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية build rea mcp tool `procedure_address` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `open_binary` rea mcp: الثنائي rea mcp reverse engineering هندسة عكسية open rea mcp tool `address_name` rea mcp: عنوان rea mcp reverse engineering هندسة عكسية address rea mcp tool `analyze_function` rea mcp: دالة rea mcp reverse engineering هندسة عكسية analyze rea mcp tool `procedure_assembly` rea mcp: دالة rea mcp reverse engineering هندسة عكسية procedure rea mcp tool `list_names` rea mcp: سرد الأسماء والرموز rea mcp reverse engineering هندسة عكسية list rea mcp tool `export_evidence_bundle` rea mcp: الأدلة rea mcp reverse engineering هندسة عكسية export rea mcp tool `compare_functions` rea mcp: الدوال rea mcp reverse engineering هندسة عكسية compare rea mcp tool `get_call_graph` rea mcp: الاستدعاء rea mcp reverse engineering هندسة عكسية get rea mcp tool `verify_unknown_resolution` rea mcp: المجهول rea mcp reverse engineering هندسة عكسية verify re"
 },
@@ -2043,7 +2043,7 @@
 "SP-0079",
 "SP-0082",
 "SP-0096",
-"SP-0143"
+"SP-0144"
 ],
 "text": "project authenticated harmonyos hap, hsp, or app pack inventory evidence into an application graph إسقاط مخطط تطبيق harmonyos rea reverse engineering هندسة عكسية harmony project run inspect_macho without launching hopper فحص mach-o rea reverse engineering هندسة عكسية apple inspect run inspect_signature without launching hopper فحص التوقيع rea reverse engineering هندسة عكسية apple inspect project authenticated ipa or macos app inventory evidence into an apple application graph إسقاط مخطط تطبيق apple rea reverse engineering هندسة عكسية apple project inspect compiled apple asset catalog metadata فحص كتالوج الأصول rea reverse engineering هندسة عكسية apple inspect parse app plist metadata without launching hopper فحص plist rea reverse engineering هندسة عكسية apple inspect run list_architectures without launching hopper سرد المعماريات rea reverse engineering هندسة عكسية apple list trace dyld load-path resolution for a mach-o or every executable in an app bundle تتبّع تحليل dylib rea reverse engineering هندسة عكسية apple trace demangle swift symbols without hopper فك تشويه swift rea reverse engineering هندسة عكسية apple demangle inspect typed objective-c and swift dispatch metadata فحص بيانات وصفية الإرسال أصلية rea reverse engineering هندسة عكسية apple inspect inspect a foundation keyed archive as an object-reference graph فحص أرشيف مفاتيح rea reverse engineering هندسة عكسية apple inspect decode compiled storyboard and nib archives from an app bundle فك ترميز interface builder واجهة rea reverse engineering هندسة عكسية apple decode launch a mach-o under lldb and record entries into selected functions or objective-c methods مراقبة calls أصلية rea reverse engineering هندسة عكسية apple observe run declarative ax actions or waits in one exact native application window التقاط سيناريو الواجهة أصلية rea reverse engineering هندسة عكسية apple capture trace a compiled ui action selector to its native handler and direct callees تتبّع إجراء الواجهة أصلية rea reverse engineering هندسة عكسية apple trace apple platform design: choose the track first تصميم تطبيقات apple: اختر المسار أولاً ios swiftui آيفون apple macos تطبيق"
 },
@@ -2091,7 +2091,7 @@
 "SP-0089",
 "SP-0083",
 "SP-0080",
-"SP-0143"
+"SP-0144"
 ],
 "text": "trace a typed seed through authenticated application evidence json تتبّع ميزة تطبيق rea reverse engineering هندسة عكسية web-js trace trace bounded static semantic relations through authenticated application evidence تتبّع الدلالات جافاسكربت rea reverse engineering هندسة عكسية web-js trace project authenticated managed static evidence into an application graph إسقاط مخطط تطبيق مُدار (.net) rea reverse engineering هندسة عكسية dotnet project compare committed historical source with authenticated application evidence مقارنة حزمة إلى المصدر rea reverse engineering هندسة عكسية web-js compare project authenticated apk inventory evidence into an android application graph إسقاط مخطط تطبيق أندرويد rea reverse engineering هندسة عكسية evidence-core project verify managed p/invoke declarations against authenticated native evidence تحقق من الحدود أصلية مُدار (.net) rea reverse engineering هندسة عكسية dotnet verify import a source tree as historical reference only استيراد المصدر مرجعي rea reverse engineering هندسة عكسية web-js import import decompiler-produced managed reconstruction against exact static member evidence استيراد إعادة البناء مُدار (.net) rea reverse engineering هندسة عكسية dotnet import trace one retained script position through an explicitly selected local source map تتبّع موقع المصدر ويب rea reverse engineering هندسة عكسية web-js trace recover readable javascript modules with source provenance and verified files استعادة sources جافاسكربت rea reverse engineering هندسة عكسية web-js recover export retained website scripts into an absent directory for static javascript analysis تصدير السكربتات ويب rea reverse engineering هندسة عكسية web-js export run one bounded playwright browser scenario and return evidence التقاط سيناريو المتصفح rea reverse engineering هندسة عكسية web-js capture"
 },
@@ -2114,7 +2114,7 @@
 "SP-0077",
 "SP-0086",
 "SP-0082",
-"SP-0143"
+"SP-0144"
 ],
 "text": "check whether rea is ready فحص جاهزية rea rea reverse engineering هندسة عكسية evidence-core doctor list configured analysis providers المزودون المهيّأون rea reverse engineering هندسة عكسية evidence-core providers list provider capabilities and side effects قدرات المزودين rea reverse engineering هندسة عكسية evidence-core capabilities validate and import a bounded local evidence bundle استيراد حزمة أدلة rea reverse engineering هندسة عكسية evidence-core evidence validate and atomically export canonical evidence json تصدير حزمة أدلة rea reverse engineering هندسة عكسية evidence-core evidence configure agent integrations and optional analysis providers إعداد rea rea reverse engineering هندسة عكسية evidence-core setup update this rea installation and verify the installed release تحديث rea rea reverse engineering هندسة عكسية evidence-core update capture one caller-selected process scenario التقاط عملية rea reverse engineering هندسة عكسية evidence-core capture generate a deterministic evidence-backed reconstruction obligation ledger page بناء سجل الالتزامات إعادة البناء rea reverse engineering هندسة عكسية evidence-core build remove rea-owned agent configuration and skill files إزالة rea reverse engineering هندسة عكسية evidence-core uninstall evaluate inline fail-closed reconstruction coverage تقييم التغطية إعادة البناء rea reverse engineering هندسة عكسية evidence-core evaluate"
 },
@@ -2137,7 +2137,7 @@
 "SP-0091",
 "SP-0087",
 "SP-0083",
-"SP-0143"
+"SP-0144"
 ],
 "text": "rea mcp tool `frida_session_status` rea mcp: حالة جلسة frida rea mcp reverse engineering هندسة عكسية frida rea mcp tool `start_frida_session` rea mcp: بدء جلسة frida rea mcp reverse engineering هندسة عكسية start rea mcp tool `close_frida_session` rea mcp: إغلاق جلسة frida rea mcp reverse engineering هندسة عكسية close rea mcp tool `resume_frida_session` rea mcp: استئناف جلسة frida rea mcp reverse engineering هندسة عكسية resume rea mcp tool `load_frida_script` rea mcp: تحميل سكربت frida rea mcp reverse engineering هندسة عكسية load rea mcp tool `unload_frida_script` rea mcp: إزالة سكربت frida rea mcp reverse engineering هندسة عكسية unload run one frida script against a selected process and detach تجهيز frida بـ rea reverse engineering هندسة عكسية frida instrument list processes visible through a frida device سرد العمليات frida rea reverse engineering هندسة عكسية frida list list local frida devices and an optional remote endpoint سرد الأجهزة frida rea reverse engineering هندسة عكسية frida list"
 },
@@ -2208,7 +2208,7 @@
 "SP-0091",
 "SP-0084",
 "SP-0083",
-"SP-0143"
+"SP-0144"
 ],
 "text": "rea mcp tool `rizin_debug_command` rea mcp: أمر تصحيح rizin rea mcp reverse engineering هندسة عكسية rizin rea mcp tool `rizin_debug_session_status` rea mcp: حالة جلسة تصحيح rizin rea mcp reverse engineering هندسة عكسية rizin rea mcp tool `start_rizin_debug_session` rea mcp: بدء جلسة تصحيح rizin rea mcp reverse engineering هندسة عكسية start run one unrestricted rizin debugger command in an ephemeral session تنقيح rizin بـ rea reverse engineering هندسة عكسية rizin debug rea mcp tool `close_rizin_debug_session` rea mcp: إغلاق جلسة تصحيح rizin rea mcp reverse engineering هندسة عكسية close execute one rizin command against a local artifact تنفيذ command rizin rea reverse engineering هندسة عكسية rizin execute execute one rizin command in a selected live cutter instance أمر cutter command rea reverse engineering هندسة عكسية rizin cutter list live cutter instances connected through the rea python plugin bridge سرد الجلسات cutter rea reverse engineering هندسة عكسية rizin list"
 },
@@ -2230,7 +2230,7 @@
 "SP-0081",
 "SP-0094",
 "SP-0079",
-"SP-0143"
+"SP-0144"
 ],
 "text": "inspect apk declarations and decoded manifest without executing it فحص حزمة أندرويد rea reverse engineering هندسة عكسية android-static inspect identify a flutter build's dart snapshot hash and engine facts by pure apk parsing تعريف build flutter rea reverse engineering هندسة عكسية android-static identify inspect one abi's dart aot snapshot: sections, headers, and the string pool فحص aot dart rea reverse engineering هندسة عكسية android-static inspect inspect one exact apk class's member inventory فحص صنف أندرويد rea reverse engineering هندسة عكسية android-device inspect decompile one apk method with explicit overload selection فحص دالة أندرويد rea reverse engineering هندسة عكسية android-device inspect trace incoming apk using nodes for a class or selected method تتبّع المراجع أندرويد rea reverse engineering هندسة عكسية android-device trace search apk class names; empty query inventories all classes بحث في الأصناف أندرويد rea reverse engineering هندسة عكسية android-device search"
 },
@@ -2294,7 +2294,7 @@
 "SP-0084",
 "SP-0087",
 "SP-0083",
-"SP-0143"
+"SP-0144"
 ],
 "text": "rea mcp tool `gdb_session_status` rea mcp: حالة جلسة gdb rea mcp reverse engineering هندسة عكسية gdb rea mcp tool `gdb_console` rea mcp: وحدة أوامر gdb rea mcp reverse engineering هندسة عكسية gdb rea mcp tool `start_gdb_session` rea mcp: بدء جلسة gdb rea mcp reverse engineering هندسة عكسية start rea mcp tool `close_gdb_session` rea mcp: إغلاق جلسة gdb rea mcp reverse engineering هندسة عكسية close run one unrestricted gdb console command in an ephemeral mi session; provide an inferior tty so a live target can be safely detached تنقيح gdb بـ rea reverse engineering هندسة عكسية gdb debug"
 },
@@ -2839,7 +2839,7 @@
 "best": "proven",
 "ready_now": 4,
 "links": [
-"SP-0144",
+"SP-0143",
 "SP-0295",
 "SP-0044",
 "SP-0064"
@@ -3141,7 +3141,7 @@
 "SP-0453",
 "SP-0295",
 "SP-0118",
-"SP-0143"
+"SP-0144"
 ],
 "text": "photo catalog + search فهرسة المكتبة والبحث catalog مكتبة صور search lightroom acdsee duplicate / near-duplicate finder كشف المكرر والمتشابه duplicates مكرر dhash similar exif and gps reader قراءة بيانات الصورة وgps exif gps metadata بيانات الصورة batch rename by exif date إعادة تسمية دفعة rename إعادة تسمية batch face detection كشف الوجوه faces وجوه people yunet"
 },
@@ -3389,7 +3389,7 @@
 "ready_now": 35,
 "links": [
 "SP-0349",
-"SP-0143",
+"SP-0144",
 "SP-0027",
 "SP-0146"
 ],
@@ -3470,6 +3470,30 @@
 },
 "SP-0143": {
 "id": "SP-0143",
+"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
+"name_en": "Free footage: open-licence video sources with search, download and credits",
+"hub": "agents",
+"stage": "understand",
+"stages": {
+"understand": 9,
+"refine": 1,
+"verify": 2,
+"plan": 1,
+"create": 2
+},
+"size": 15,
+"best": "proven",
+"ready_now": 14,
+"links": [
+"SP-0361",
+"SP-0115",
+"SP-0478",
+"SP-0349"
+],
+"text": "free footage: open-licence video sources with search, download and credits لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب free-footage free footage free stock video stock footage b-roll open licence open license creative commons cc0 cc by public domain royalty free attribution credits wikimedia commons internet archive prelinger nasa mixkit coverr pexels pixabay dareful vertical video montage فيديوهات مجانية لقطات مجانية مفتوحة المصدر بدون حقوق ترخيص حقوق النشر نسب الحقوق مكتبة فيديو مونتاج لقطات contact sheet thumbnail preview 1080p ورقة معاينة صور مصغرة keyless stock footage fetcher (pexels, mixkit) تحميل لقطات مجانية بلا مفتاح (pexels وmixkit) stock-fetch pexels mixkit stock footage b-roll no api key free video licence manifest لقطات مجانية بدون مفتاح تحميل لقطات مونتاج بكسلز community source scout مستكشف مصادر المجتمع source-scout source scout community sources reference repositories github license gate code reuse python top 10 system design مصادر المجتمع مستودعات مرجعية ترخيص إعادة استخدام الكود مستكشف المصادر أفضل مستودعات بايثون free photos: open-licence and free stock photo search and download with credits صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب free-photos free photos free images stock photos open licence creative commons cc0 public domain openverse unsplash pexels pixabay wikimedia commons nasa images met museum open access attribution صور مجانية صور بدون حقوق صور مفتوحة المصدر خلفيات صور للمونتاج ملك عام ترخيص نسب الحقوق مخطوطات خط عربي creative sources offline search بحث المصادر الإبداعية دون اتصال creative-external-search creative search open source video tools motion graphics repos image editing creative websites discovery index github metadata offline search بحث إبداعي أدوات مونتاج مواقع تصميم موشن جرافيك تحرير الصور مستودعات مفتوحة المصدر licensed stock media gateway بوابة الوسائط المرخّصة media-sources stock footage stock media 100 sources license rights cc0 cc by provenance sha256 b-roll لقطات جاهزة مواقع الوسائط ترخيص حقوق الاستخدام مصادر مجانية github top-1000 tracker متابعة أشهر 1000 مستودع github-top-repos github top repositories most starred stars licence tracker mining open source مستودعات جيت هاب أشهر المستودعات تراخيص نجوم sources index: per-work-dir index memory of the user's attachments فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل sources-index sources index attachments provenance prompt injection secret scan line range فهرس مصادر الذاكرة الفهرسية مرفقات i"
+},
+"SP-0144": {
+"id": "SP-0144",
 "name_ar": "تدقيق أدلة الكتالوج",
 "name_en": "Catalog Evidence Audit",
 "hub": "agents",
@@ -3489,30 +3513,6 @@
 "SP-0077"
 ],
 "text": "rea cli bridge جسر أوامر rea rea-bridge rea reverse engineering هندسة عكسية تحليل ساكن static analysis فحص الثنائيات javascript dotnet electron-fuses pe-resources catalog doctor جسر node evidence power catalog search البحث في كتالوج القدرات powers power catalog search suggest mind map families domains evidence badge stats mermaid كتالوج القدرات ابحث اقترح خريطة ذهنية عائلات مجالات قدراتك style atlas repository validator فاحص سلامة أطلس الأنماط repo-validate validate catalog check integrity styles.json style_index schema ci gate فحص المستودع التحقق سلامة الكتالوج فاحص تقرير json rea family router موجّه عائلات rea rea-family-router rea router موجّه عائلات القدرات هندسة عكسية dotnet apk har firmware capability family routing تصنيف الهدف style library — 586 visual styles by name (86 futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated pdf catalog مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج pdf مصوّر style-library أسلوب أساليب ستايل استايل مكتبة الأساليب كتالوج بي دي اف برومنت عينة لقطة style styles style library visual style art style prompt recipe swatch catalog pdf 586 500 futurepedia ks local project static audit فحص المشروع المحلي دون تشغيل local-project-audit project audit static triage folder inventory file hashes sha256 zip slip path traversal binary candidates ghidra rea فحص مشروع جرد الملفات تحليل ساكن ملفات تنفيذية بصمة الملفات أمان الأرشيف web app study (public frontend, rea, facts only) دراسة تطبيق ويب عام بـ rea (حقائق فقط) web-app-study web app website frontend stack bundle javascript webmcp rea browser cdp screenshot reverse engineering تحليل موقع واجهة تطبيق ويب هندسة عكسية مبني بإيه magicpath tech stack detection catalog evidence audit تدقيق أدلة الكتالوج catalog-evidence-audit catalog audit evidence coverage proof links duplicate ids integrity check powers catalog badges static audit تدقيق الكتالوج أدلة الإثبات روابط مكسورة معرفات مكررة سلامة البيانات فحص القدرات promptsmotion catalog sync مزامنة الكتالوج مع promptsmotion repo-sync-catalog catalog sync promptsmotion scraper metadata styles.json style.json offline cache weekly sync listed=false مزامنة الكتالوج تحديث الأطلس بيانات وصفية مراجع جديدة تخزين مؤقت proof scope relabeler إعادة تصنيف نطاق الأدلة relabel-proofs proof scope evidence labels proven proof paths relabel catalog maintenance verification نطاق الدليل الأدلة القدرات المثبتة إعادة التصنيف صيانة الكتالوج family chapter generator مولّد فص"
-},
-"SP-0144": {
-"id": "SP-0144",
-"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
-"name_en": "Free footage: open-licence video sources with search, download and credits",
-"hub": "agents",
-"stage": "understand",
-"stages": {
-"understand": 8,
-"refine": 1,
-"verify": 2,
-"create": 2,
-"plan": 1
-},
-"size": 14,
-"best": "proven",
-"ready_now": 13,
-"links": [
-"SP-0361",
-"SP-0115",
-"SP-0349",
-"SP-0478"
-],
-"text": "free footage: open-licence video sources with search, download and credits لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب free-footage free footage free stock video stock footage b-roll open licence open license creative commons cc0 cc by public domain royalty free attribution credits wikimedia commons internet archive prelinger nasa mixkit coverr pexels pixabay dareful vertical video montage فيديوهات مجانية لقطات مجانية مفتوحة المصدر بدون حقوق ترخيص حقوق النشر نسب الحقوق مكتبة فيديو مونتاج لقطات contact sheet thumbnail preview 1080p ورقة معاينة صور مصغرة keyless stock footage fetcher (pexels, mixkit) تحميل لقطات مجانية بلا مفتاح (pexels وmixkit) stock-fetch pexels mixkit stock footage b-roll no api key free video licence manifest لقطات مجانية بدون مفتاح تحميل لقطات مونتاج بكسلز free photos: open-licence and free stock photo search and download with credits صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب free-photos free photos free images stock photos open licence creative commons cc0 public domain openverse unsplash pexels pixabay wikimedia commons nasa images met museum open access attribution صور مجانية صور بدون حقوق صور مفتوحة المصدر خلفيات صور للمونتاج ملك عام ترخيص نسب الحقوق مخطوطات خط عربي community source scout مستكشف مصادر المجتمع source-scout source scout community sources reference repositories github license gate code reuse python top 10 system design مصادر المجتمع مستودعات مرجعية ترخيص إعادة استخدام الكود مستكشف المصادر أفضل مستودعات بايثون licensed stock media gateway بوابة الوسائط المرخّصة media-sources stock footage stock media 100 sources license rights cc0 cc by provenance sha256 b-roll لقطات جاهزة مواقع الوسائط ترخيص حقوق الاستخدام مصادر مجانية creative sources offline search بحث المصادر الإبداعية دون اتصال creative-external-search creative search open source video tools motion graphics repos image editing creative websites discovery index github metadata offline search بحث إبداعي أدوات مونتاج مواقع تصميم موشن جرافيك تحرير الصور مستودعات مفتوحة المصدر sources index: per-work-dir index memory of the user's attachments فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل sources-index sources index attachments provenance prompt injection secret scan line range فهرس مصادر الذاكرة الفهرسية مرفقات github top-1000 tracker متابعة أشهر 1000 مستودع github-top-repos github top repositories most starred stars licence tracker mining open source مستودعات جيت هاب أشهر المستودعات تراخيص نجوم i"
 },
 "SP-0145": {
 "id": "SP-0145",
@@ -3705,7 +3705,7 @@
 "best": "proven",
 "ready_now": 3,
 "links": [
-"SP-0143",
+"SP-0144",
 "SP-0383",
 "SP-0030",
 "SP-0413"
@@ -4443,7 +4443,7 @@
 "ready_now": 0,
 "links": [
 "SP-0037",
-"SP-0144",
+"SP-0143",
 "SP-0099",
 "SP-0358"
 ],
@@ -6999,7 +6999,7 @@
 "best": "install",
 "ready_now": 0,
 "links": [
-"SP-0143",
+"SP-0144",
 "SP-0477",
 "SP-0349",
 "SP-0115"
@@ -7535,7 +7535,7 @@
 "SP-0446",
 "SP-0207",
 "SP-0365",
-"SP-0144"
+"SP-0143"
 ],
 "text": "kelvin → rgb, gels & 19 named light sources حرارة اللون والجيلاتين ومصادر مسماة كلفن حرارة اللون جيلاتين kelvin color temperature gel cto ctb sodium light sources لون الضوء ضوء دافئ ضوء بارد warm light kelvin to rgb lens chromatic aberration (edge-weighted) الانحراف اللوني للعدسة انحراف لوني عدسة chromatic aberration lens edges rgb fringe تشوه العدسة حواف ملونة مظهر سينمائي color fringing lens effect rgb-split hit jitter انقسام rgb على الضربة انقسام ألوان غليتش ضربة rgb split glitch hit chromatic onion skin جليتش تشويش اهتزاز color split impact jitter"
 },
@@ -8243,9 +8243,9 @@
 "ready_now": 6,
 "links": [
 "SP-0139",
-"SP-0143",
+"SP-0144",
 "SP-0295",
-"SP-0144"
+"SP-0143"
 ],
 "text": "style catalogue search · list · show البحث في كتالوج الأساليب بحث كتالوج أسلوب search catalog styles scaffold إيجاد ستايل قائمة الأساليب عرض الأسلوب style id list styles auto skill selection & deterministic capability router اختيار المهارة تلقائيًا والموجّه الحتمي موجه اختيار مهارة router skill selection capabilities rubric توجيه الطلب ترشيح المهارات أنسب أداة routing auto select owner apps as design references (audit pro, audit studio, kosif earth) تطبيقات المالك كمراجع تصميم تطبيقات audit rtl app dashboard design reference واجهة عربية رموز التصميم لوحة تحكم design tokens ui reference knowledge provenance registry سجل مصادر المعرفة مصادر provenance sha256 taint knowledge سجل المصادر حقن الأوامر إزالة التكرار prompt injection dedupe best time to post from own analytics أفضل وقت للنشر من بيانات الحساب أفضل وقت best time analytics posting schedule موعد النشر إحصاءات الحساب جدولة المنشورات when to post views scene footer label & progress bar تذييل المشهد وشريط التقدم شريط تقدم progress bar footer scene label تذييل رقم المشهد موضع التشغيل playback bar scene id atlas full-text index (fts5) فهرس نصي كامل لمهارات الأطلس فهرس fts5 full text sqlite search بحث نصي مصدر تقنية مهارات الأطلس text index keyword lookup kosif atlas library access مكتبة kosif atlas أطلس مكتبة مهارات atlas skills library vendor search بحث عن مهارة استيراد مهارة ترخيص متساهل find skill import skill windows desktop control with live view (kosif mouse) التحكم بسطح مكتب ويندوز (kosif mouse) ويندوز desktop automation mouse uia التحكم بالجهاز سطح المكتب ماوس desktop control ocr source licence audit & reuse allowlist تدقيق تراخيص المصادر وحدود إعادة الاستخدام ترخيص licence license audit attribution reuse حقوق نسخ الكود ذكر المصدر mit allowlist owner supporting playbooks (31) مهارات المالك المساندة (31 كتيب) مهارات مساندة playbooks supporting skills excel accounting a/b test كتيبات محاسبة فواتير ifrs prd kosif see routing limits حدود التكامل مع kosif see see full pro receipts limits integration حدود التكامل حزم المنهج ادعاء الرندر method packs specialists route-collision guard with 10 shadow cases حارس تصادم المسارات بعشر حالات ظل routing negative cases shadow tests توجيه تصادم router اختبار التوجيه حالات سلبية خطف الطلب route tests route collision agent orchestration rules for parallel film builds تنسيق الوكلاء لبناء فيلم متوازٍ agents parallel orchestration digests وكلاء تنسيق توازي 60-card concept-preview catalog generator (a01–a60) كتالوج 60 معاينة مفهومية مولّدة بالكود catalog concept preview "
 },
@@ -8528,7 +8528,7 @@
 "best": "proven",
 "ready_now": 1,
 "links": [
-"SP-0144",
+"SP-0143",
 "SP-0381",
 "SP-0140",
 "SP-0478"
@@ -9102,7 +9102,7 @@
 "SP-0117",
 "SP-0280",
 "SP-0384",
-"SP-0144"
+"SP-0143"
 ],
 "text": "remote render client and bridge safety gates عميل التصيير البعيد وبوابات الأمان رندر عن بعد أمان الاتصال حماية التوكن remote render security source contact sheet for footage triage لوحة معاينة المصادر فرز المقاطع نص محروق شعارات اختيار اللقطات clip selection burned-in text honesty labels for illustrative simulations وسوم الأمانة للمحاكاة التوضيحية إخلاء مسؤولية أرقام توضيحية تحذير disclaimer illustrative source hygiene rule (no burned-in text, logos, screen recordings) قاعدة نظافة المصادر لقطات جاهزة حقوق اللقطات شعارات footage rights found clips honesty rule قاعدة الصدق نسب اللقطات الأمانة وجه حقيقي credit footage honest report frame-identical seam rule قاعدة الوصلة المتطابقة ربط المقاطع قفزة بين اللقطات آخر إطار seamless start image watch twice rule قاعدة المشاهدة مرتين مشاهدة بدون صوت شاشة الجوال مراجعة نهائية muted viewing final review trademark safety rule قاعدة العلامات التجارية شعارات الشركات ملكية فكرية ادعاءات غير مؤكدة logos brand safety"
 },
@@ -11254,7 +11254,7 @@
 "best": "proven",
 "ready_now": 8,
 "links": [
-"SP-0144",
+"SP-0143",
 "SP-0361",
 "SP-0124",
 "SP-0301"
@@ -11449,9 +11449,9 @@
 "stages": {
 "understand": [
 "SP-0139",
-"SP-0144",
-"SP-0022",
 "SP-0143",
+"SP-0022",
+"SP-0144",
 "SP-0023",
 "SP-0152"
 ],
@@ -12648,11 +12648,11 @@
 }
 ],
 "audit": {
-"atoms": 5861,
+"atoms": 5862,
 "superpowers": 483,
 "twin_groups": 178,
 "twin_members": 460,
-"distinct_methods": 5579,
+"distinct_methods": 5580,
 "tiny_absorbed": 27,
 "same_name_groups": [
 {
@@ -13685,7 +13685,7 @@
 "create": 1942,
 "refine": 896,
 "assemble": 496,
-"understand": 836,
+"understand": 837,
 "verify": 545
 }
 }

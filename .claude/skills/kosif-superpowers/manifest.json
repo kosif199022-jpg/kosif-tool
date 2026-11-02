@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5861,
+  "powers": 5862,
   "families": 62,
   "domains": 10,
-  "tools": 206,
+  "tools": 207,
   "guides": 119,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 977,
    "key": 176,
-   "proven": 1028,
+   "proven": 1029,
    "ready": 675,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 182,
+   "count": 183,
    "statuses": {
     "install": 9,
-    "proven": 151,
+    "proven": 152,
     "ready": 22
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -7985,6 +7985,116 @@
     "color-palette-grading"
    ],
    "power_id": "TOOL-93"
+  },
+  {
+   "id": "site-snapshot",
+   "path": "scripts/site_snapshot.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "sources",
+   "title_en": "Website snapshot and design read-out (goclone capabilities)",
+   "title_ar": "نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)",
+   "summary_en": "Brings goclone's capabilities (github.com/goclone-dev/goclone, MIT) into the skill in pure Python: copies one or more pages with their CSS, JS, images, fonts and media into goclone's css/ js/ imgs/ layout (plus fonts/ and media/), follows CSS url() and @import, srcset, posters and inline styles, rewrites every link to the local copy, and can crawl N same-site pages, serve the copy on 127.0.0.1 or run the real goclone binary with --engine goclone. Each snapshot gets manifest.json (SHA-256 per file), RIGHTS.json and a design read-out (design.json + design.md: colours, fonts, @font-face, type scale, radii, spacing, shadows, breakpoints, CSS variables) for the Living Site Stage 1 canvas. A rights gate (--rights own|licensed|permission + --rights-note), robots.txt, a private-address guard and size caps stop misuse.",
+   "summary_ar": "يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط كل الروابط على النسخة المحلية، ويقدر يزحف على N صفحة من نفس الموقع، ويشغّل النسخة على 127.0.0.1، أو يشغّل goclone الحقيقي بـ --engine goclone. كل نسخة معاها manifest.json (SHA-256 لكل ملف) وRIGHTS.json وقراءة تصميم (design.json + design.md: الألوان والخطوط و@font-face وسلم المقاسات والزوايا والمسافات والظلال ونقاط الكسر ومتغيرات CSS) لمرحلة «انسخ اللوحة» في Living Site. بوابة حقوق (--rights own|licensed|permission مع --rights-note) وrobots.txt وحماية العناوين الخاصة وحدود الحجم تمنع إساءة الاستخدام.",
+   "use_when": [
+    "انسخ موقعي ده أوفلاين وطلّعلي ألوانه وخطوطه",
+    "خد نسخة من الموقع بتاعي عشان أبني عليه الموقع الحي",
+    "استخدم goclone على موقعي",
+    "Clone my website offline with its CSS, JS and images",
+    "Snapshot my site and extract its design system into design.md",
+    "Mirror our landing page locally and serve it on localhost"
+   ],
+   "keywords": [
+    "goclone",
+    "clone website",
+    "website copy",
+    "offline copy",
+    "mirror",
+    "snapshot",
+    "site snapshot",
+    "design tokens",
+    "design.md",
+    "living site",
+    "css",
+    "fonts",
+    "نسخ موقع",
+    "نسخة أوفلاين",
+    "استنساخ موقع",
+    "نظام التصميم",
+    "ألوان الموقع",
+    "خطوط الموقع",
+    "الموقع الحي"
+   ],
+   "commands": [
+    {
+     "name": "snapshot",
+     "example": "python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note \"my company site\" --out ./out/site",
+     "does": "Copies the page and its assets, rewrites links, writes manifest.json, RIGHTS.json, design.json and design.md. Refuses (exit 1) without --rights and --rights-note, on robots.txt disallow, on private addresses (unless --allow-private) and over size caps."
+    },
+    {
+     "name": "crawl",
+     "example": "python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note \"my site\" --pages 5 --same-origin-assets --out ./out/site",
+     "does": "Breadth-first copy of up to N same-site pages into pages/*.html with links between them rewritten; --same-origin-assets skips CDN files."
+    },
+    {
+     "name": "goclone-engine",
+     "example": "python3 scripts/site_snapshot.py snapshot example.com --engine goclone --rights own --rights-note \"my site\" --out ./out/site",
+     "does": "Runs the goclone binary on PATH (cookie, user agent and proxy passed through), then adds manifest, rights record and design read-out."
+    },
+    {
+     "name": "analyse",
+     "example": "python3 scripts/site_snapshot.py analyse ./out/site --json",
+     "does": "Re-reads all CSS in a snapshot folder (or any goclone output) and rewrites design.json and design.md."
+    },
+    {
+     "name": "serve",
+     "example": "python3 scripts/site_snapshot.py serve ./out/site --port 5000",
+     "does": "Serves the copy on http://127.0.0.1:PORT/ like goclone --serve (foreground; run it in the background)."
+    },
+    {
+     "name": "doctor",
+     "example": "python3 scripts/site_snapshot.py doctor --json",
+     "does": "Says which engines this machine can run (built-in Python always; goclone if on PATH) and how to install goclone."
+    },
+    {
+     "name": "self-test",
+     "example": "python3 scripts/site_snapshot.py --self-test",
+     "does": "Offline fixture server on 127.0.0.1: checks layout, rewriting, CSS chains, srcset, crawl, manifest, design read-out and the refusals."
+    }
+   ],
+   "inputs": "One or more http(s) URLs or bare domains of a site the user owns or may copy, plus --rights and --rights-note. Optional cookies (-C), user agent (-u), proxy (-p).",
+   "outputs": "DIR/index.html, pages/*.html, css/ js/ imgs/ fonts/ media/, manifest.json, RIGHTS.json, design.json, design.md. DIR defaults to ./.kosif-cache/site-snapshot/<domain>/ (git-ignored). Exit 0 ok, 1 refused, 2 network failure.",
+   "requires": {
+    "python": [],
+    "binaries": [],
+    "node": [],
+    "optional": [
+     "goclone"
+    ],
+    "network": true
+   },
+   "safety": "network",
+   "consent": "Only sites the user owns or has written permission to copy; the rights basis is recorded in RIGHTS.json. A copy of a third-party site is analysis material only: never rehost, publish or commit it, and its code, fonts and images keep their own licences.",
+   "safe_commands": [
+    "analyse",
+    "doctor"
+   ],
+   "limits": "Static HTML only: pages built by JavaScript after load, logins, captchas and anti-bot walls are not rendered (use a headless browser for those). The design read-out counts CSS values; it does not see computed styles, images or motion.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_site_snapshot.py 10/10 passed on this checkout (offline fixture server). Also run here against https://example.com with the built-in engine and with --engine goclone (goclone built from source, go1.25).",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_site_snapshot.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/guides/sources.md",
+    ".claude/skills/living-site/KOSIF.md"
+   ],
+   "families": [
+    "web-research",
+    "ui-product-device",
+    "brand-logo-identity"
+   ],
+   "power_id": "TOOL-184"
   },
   {
    "id": "fetch-video",

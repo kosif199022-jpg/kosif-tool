@@ -1,6 +1,6 @@
 # الوكلاء والتوجيه الذكي — Agents & routing
 
-[← الفهرس الدقيق / micro index](README.md) · 280 powers
+[← الفهرس الدقيق / micro index](README.md) · 281 powers
 
 ## الفهرس / contents
 
@@ -106,34 +106,35 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-134 | 🟢 | دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies → `creative-principles` | SP-0142 Staged drawing and original three-value… | python3 |
 | TOOL-135 | 🟢 | أكاديمية الرسم والدروس المبنية على مصادر · Source-aware drawing school and user-authorized book audits → `drawing-academy` | SP-0142 Staged drawing and original three-value… | python3 |
 | TOOL-137 | 🟢 | منظور هندسي ومقاييس التباين اللوني · Original two-point perspective and numeric palette analysis → `perspective-color-lab` | SP-0142 Staged drawing and original three-value… | python3, npm:axe |
-| TOOL-103 | ✅ | فاحص سلامة أطلس الأنماط · Style atlas repository validator → `repo-validate` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0143 Catalog Evidence Audit | python3, npm:mermaid |
-| TOOL-32 | ✅ | فحص المشروع المحلي دون تشغيل · Local project static audit → `local-project-audit` | SP-0143 Catalog Evidence Audit | python3, npm:rea, engine:ghidra |
-| TOOL-52 | ✅ | موجّه عائلات REA · REA Family Router → `rea-family-router` | SP-0143 Catalog Evidence Audit | python3, npm:rea, engine:android, engine:binwalk … |
-| TOOL-62 | ✅ | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) → `web-app-study` | SP-0143 Catalog Evidence Audit | python3, chromium, npm:rea |
-| TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0143 Catalog Evidence Audit | python3, chromium |
-| TOOL-98 | ✅ | جسر أوامر REA · REA CLI Bridge → `rea-bridge` | SP-0143 Catalog Evidence Audit | python3, npm:rea |
-| TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0143 Catalog Evidence Audit | python3 |
-| TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0143 Catalog Evidence Audit | python3, gh, npm:rea |
-| TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0143 Catalog Evidence Audit | python3, gh, npm:rea |
-| TOOL-53 | 📦 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch → `rea-owned-repo-batch` | SP-0143 Catalog Evidence Audit | python3, git, npm:rea |
-| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0144 Free footage: open-licence video source… | pip:office |
-| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0144 Free footage: open-licence video source… | python3 |
-| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0144 Free footage: open-licence video source… | python3 |
-| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
-| TOOL-177 | ✅ | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits → `free-footage` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, imagemagick |
-| TOOL-179 | ✅ | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب · Free photos: open-licence and free stock photo search and download with credits → `free-photos` | SP-0144 Free footage: open-licence video source… | python3 |
-| TOOL-182 | ✅ | معاينة الأغنية الرسمية (بديل الـDRM) · Official song preview (DRM fallback) → `song-preview` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
-| TOOL-45 | ✅ | مستكشف المواقع بالمتصفح · Browser scout site survey → `browser-scout` | SP-0144 Free footage: open-licence video source… | python3, chromium |
-| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0144 Free footage: open-licence video source… | python3, npm:rea |
-| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
-| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0144 Free footage: open-licence video source… | python3 |
-| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3 |
-| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, key:unspecified |
-| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0144 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-142 | ✅ | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل · Sources index: per-work-dir index memory of the user's attachments → `sources-index` | SP-0143 Free footage: open-licence video source… | pip:office |
+| TOOL-160 | ✅ | متابعة أشهر 1000 مستودع · GitHub Top-1000 Tracker → `github-top-repos` | SP-0143 Free footage: open-licence video source… | python3 |
+| TOOL-172 | ✅ | البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية · Instagram Reference Discovery → Infinite Matrices → `instagram-reference-discovery` | SP-0143 Free footage: open-licence video source… | python3 |
+| TOOL-173 | ✅ | البحث عن فيديوهات إنستجرام لمنتج وتحميلها · Instagram product video finder → `instagram-finder` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-177 | ✅ | لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits → `free-footage` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3, imagemagick |
+| TOOL-179 | ✅ | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب · Free photos: open-licence and free stock photo search and download with credits → `free-photos` | SP-0143 Free footage: open-licence video source… | python3 |
+| TOOL-182 | ✅ | معاينة الأغنية الرسمية (بديل الـDRM) · Official song preview (DRM fallback) → `song-preview` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-184 | ✅ | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) · Website snapshot and design read-out (goclone capabilities) → `site-snapshot` | SP-0143 Free footage: open-licence video source… | python3, chromium |
+| TOOL-45 | ✅ | مستكشف المواقع بالمتصفح · Browser scout site survey → `browser-scout` | SP-0143 Free footage: open-licence video source… | python3, chromium |
+| TOOL-46 | ✅ | بحث المصادر الإبداعية دون اتصال · Creative sources offline search → `creative-external-search` | SP-0143 Free footage: open-licence video source… | python3, npm:rea |
+| TOOL-47 | ✅ | بوابة الوسائط المرخّصة · Licensed stock media gateway → `media-sources` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-50 | ✅ | مستكشف مصادر المجتمع · Community source scout → `source-scout` | SP-0143 Free footage: open-licence video source… | python3 |
+| TOOL-93 | ✅ | جلب المرجع المسموح وقياسه · Permitted reference fetch and measure → `fetch-reference` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3 |
+| TOOL-95 | ✅ | تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit) · Keyless stock footage fetcher (Pexels, Mixkit) → `stock-fetch` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3, key:unspecified |
+| TOOL-51 | 📦 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio → `repo-ashell-cinema` | SP-0143 Free footage: open-licence video source… | ffmpeg, python3, yt-dlp |
+| TOOL-103 | ✅ | فاحص سلامة أطلس الأنماط · Style atlas repository validator → `repo-validate` | SP-0144 Catalog Evidence Audit | python3 |
+| TOOL-156 | ✅ | البحث في كتالوج القدرات · Power catalog search → `powers` | SP-0144 Catalog Evidence Audit | python3, npm:mermaid |
+| TOOL-32 | ✅ | فحص المشروع المحلي دون تشغيل · Local project static audit → `local-project-audit` | SP-0144 Catalog Evidence Audit | python3, npm:rea, engine:ghidra |
+| TOOL-52 | ✅ | موجّه عائلات REA · REA Family Router → `rea-family-router` | SP-0144 Catalog Evidence Audit | python3, npm:rea, engine:android, engine:binwalk … |
+| TOOL-62 | ✅ | دراسة تطبيق ويب عام بـ REA (حقائق فقط) · Web app study (public frontend, REA, facts only) → `web-app-study` | SP-0144 Catalog Evidence Audit | python3, chromium, npm:rea |
+| TOOL-70 | ✅ | مكتبة الأساليب: 586 أسلوبًا بصريًا بالاسم (86 من أطلس Futurepedia + 500 أصلي) — بحث ووصف وبرومنت وعينة وكتالوج PDF مصوّر · Style library — 586 visual styles by name (86 Futurepedia-derived + 500 original): find, describe, prompt, swatch, illustrated PDF catalog → `style-library` | SP-0144 Catalog Evidence Audit | python3, chromium |
+| TOOL-98 | ✅ | جسر أوامر REA · REA CLI Bridge → `rea-bridge` | SP-0144 Catalog Evidence Audit | python3, npm:rea |
+| TOOL-33 | 🟢 | تدقيق أدلة الكتالوج · Catalog Evidence Audit → `catalog-evidence-audit` | SP-0144 Catalog Evidence Audit | python3 |
+| TOOL-58 | 🟢 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler → `relabel-proofs` | SP-0144 Catalog Evidence Audit | python3 |
+| TOOL-60 | 🟢 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync → `repo-sync-catalog` | SP-0144 Catalog Evidence Audit | python3 |
+| TOOL-99 | 🟢 | مولّد فصول العائلات · Family Chapter Generator → `build-chapters` | SP-0144 Catalog Evidence Audit | python3 |
+| TOOL-48 | 📦 | باني فهرس البحث الإبداعي · Creative research catalog builder → `rea-creative-research-atlas` | SP-0144 Catalog Evidence Audit | python3, gh, npm:rea |
+| TOOL-49 | 📦 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog → `rebalance-creative-repos` | SP-0144 Catalog Evidence Audit | python3, gh, npm:rea |
+| TOOL-53 | 📦 | تحليل REA لمستودعات المالك دفعةً واحدة · REA Owned-Repo Batch → `rea-owned-repo-batch` | SP-0144 Catalog Evidence Audit | python3, git, npm:rea |
 | TOOL-119 | ✅ | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت · Blender Cycles + KOSIF Cinematic compositor → `blender-cinematic-bridge` | SP-0145 Safe headless Blender bridge | ffmpeg, blender, pip:pillow, npm:rea … |
 | TOOL-120 | ✅ | إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender · Create an editable Blender 3D cat rescue demo → `blender-rescue-scene` | SP-0145 Safe headless Blender bridge | python3, blender |
 | TOOL-121 | ✅ | تطوير فرو القطة والملامح في Blender Cycles · Blender Cat Fur Upgrade: renderable hair geometry and character detail → `blender-cat-fur-upgrade` | SP-0145 Safe headless Blender bridge | python3, blender |

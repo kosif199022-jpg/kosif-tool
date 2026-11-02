@@ -1,4 +1,4 @@
-# `runnable-tools` — الوكلاء والتوجيه الذكي (182 بطاقة)
+# `runnable-tools` — الوكلاء والتوجيه الذكي (183 بطاقة)
 
 > مكتبة بروتوكول USIP v5.6 الكاملة، مولّدة بـ `smart_capabilities.py cards` من `data/powers/runnable-tools.json` وقواعد الملاحق A25–A29؛ لا تُحرَّر يدويًا. [الفهرس الرئيسي](../../README.md) · [فصل المجموعة](../../../.claude/skills/kosif-superpowers/references/library/agents.md) · [النواة](../../../.claude/skills/kosif-superpowers/PROTOCOL.md)
 
@@ -105,6 +105,7 @@
 - [`TOOL-181` التنين الأسود — العقل المنسق لكل القدرات](#tool-181--التنين-الأسود--العقل-المنسق-لكل-القدرات--black-dragon--all-capability-cognitive-orchestrator)
 - [`TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM)](#tool-182--معاينة-الأغنية-الرسمية-بديل-الـdrm--official-song-preview-drm-fallback)
 - [`TOOL-183` محرك أفلام مسرح الظل](#tool-183--محرك-أفلام-مسرح-الظل--kosif-shadow-theatre-silhouette-film-engine)
+- [`TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)](#tool-184--نسخة-أوفلاين-من-موقع-وقراءة-نظام-تصميمه-قدرات-goclone--website-snapshot-and-design-read-out-goclone-capabilities)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -7203,7 +7204,7 @@
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 - `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
-- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
 
 ### `TOOL-183` — محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine
 
@@ -7273,6 +7274,76 @@
 
 - `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
+- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
+- `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
+
+### `TOOL-184` — نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities)
+
+| الحقل | القيمة |
+|---|---|
+| العائلة | `runnable-tools` ([فصل العائلة](../../../.claude/skills/kosif-superpowers/references/powers/runnable-tools.md)) |
+| المجموعة | الوكلاء والتوجيه الذكي (`agents`) |
+| نوع المخرج (A25، A27) | خطة واستراتيجية وقرار (`plan`) |
+| الحالة في الكتالوج | ✅ `proven`: مثبتة في الكتالوج؛ افحص متطلباتها هنا قبل كتابة ✅ في الخطة |
+| سقف التحقق قبل العمل (A27) | V3 بعد تشغيلها هنا وقياس معيار، لا قبل ذلك |
+| نطاق الدليل | `repo` |
+| الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
+
+**ما هي:** يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط كل الروابط على النسخة المحلية، ويقدر يزحف على N صفحة من نفس الموقع، ويشغّل النسخة على 127.0.0.1، أو يشغّل goclone الحقيقي بـ --engine goclone. كل نسخة معاها manifest.json (SHA-256 لكل ملف) وRIGHTS.json وقراءة تصميم (design.json + design.md: الألوان والخطوط و@font-face وسلم المقاسات والزوايا والمسافات والظلال ونقاط الكسر ومتغيرات CSS) لمرحلة «انسخ اللوحة» في Living Site. بوابة حقوق (--rights own\|licensed\|permission مع --rights-note) وrobots.txt وحماية العناوين الخاصة وحدود الحجم تمنع إساءة الاستخدام. — Brings goclone's capabilities (github.com/goclone-dev/goclone, MIT) into the skill in pure Python: copies one or more pages with their CSS, JS, images, fonts and media into goclone's css/ js/ imgs/ layout (plus fonts/ and media/), follows CSS url() and @import, srcset, posters and inline styles, rewrites every link to the local copy, and can crawl N same-site pages, serve the copy on 127.0.0.1 or run the real goclone binary with --engine goclone. Each snapshot gets manifest.json (SHA-256 per file), RIGHTS.json and a design read-out (design.json + design.md: colours, fonts, @font-face, type scale, radii, spacing, shadows, breakpoints, CSS variables) for the Living Site Stage 1 canvas. A rights gate (--rights own\|licensed\|permission + --rights-note), robots.txt, a private-address guard and size caps stop misuse.
+
+**متى:** انسخ موقعي ده أوفلاين وطلّعلي ألوانه وخطوطه / Clone my website offline with its CSS, JS and images
+
+**كيف:** snapshot: `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my company site" --out ./out/site`; crawl: `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my site" --pages 5 --same-origin-assets --out ./out/site`; goclone-engine: `python3 scripts/site_snapshot.py snapshot example.com --engine goclone --rights own --rights-note "my site" --out ./out/site`; analyse: `python3 scripts/site_snapshot.py analyse ./out/site --json`. Full card: `python3 scripts/hub.py tool site-snapshot`. Limits: Static HTML only: pages built by JavaScript after load, logins, captchas and anti-bot walls are not rendered (use a headless browser for those). The design read-out counts CSS values; it does not see computed styles, images or motion.
+
+**المعاملات:** in: One or more http(s) URLs or bare domains of a site the user owns or may copy, plus --rights and --rights-note. Optional cookies (-C), user agent (-u), proxy (-p). · out: DIR/index.html, pages/*.html, css/ js/ imgs/ fonts/ media/, manifest.json, RIGHTS.json, design.json, design.md. DIR defaults to ./.kosif-cache/site-snapshot/<domain>/ (git-ignored). Exit 0 ok, 1 refused, 2 network failure.
+
+**التثبيت:** optional: goclone
+
+**الوسوم:** site-snapshot · goclone · clone website · website copy · offline copy · mirror · snapshot · site snapshot · design tokens · design.md · living site · css · fonts · نسخ موقع · نسخة أوفلاين · استنساخ موقع · نظام التصميم · ألوان الموقع · خطوط الموقع · الموقع الحي
+
+#### 1. الاستقبال (A25)
+
+- الهدف القابل للقياس: سؤال بإجابة مقترحة ← هدف مقترح بعتبة رقمية يُعرض للتعديل
+- الأفق الزمني: افتراض مكتوب ← 90 يومًا
+- الموارد والميزانية: افتراض مكتوب ← شخص واحد بلا صرف
+- لا تُفترض أبدًا: مادة الإنتاج نفسها، والإذن بخطوة مدفوعة أو منشورة أو لا رجعة فيها، والهوية والحقوق.
+
+#### 2. الجاهزية والشارة (A28)
+
+- `python3` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- `chromium` ← افحص وجوده بأمر واحد قبل كتابة الشارة
+- الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
+
+#### 3. موضعها في الخطة (A26)
+
+- عقدة منمّطة: المدخل `brief` ← المخرج `plan`، والمنفّذ `method:TOOL-184` حتى تُربط بأداة مختبرة (`fusionforge.py bind`).
+- لا أداة مسجلة تخدم عائلتها: التنفيذ بالمكتبات أو بأداة من مجموعة أخرى.
+- مراحل النوع: الهدف بمؤشره ← ثلاثة خيارات مختلفة ← تقييم وحساسية ← تشريح مسبق ← بوابات مكتوبة ← خطوة أولى قابلة للتراجع.
+- إن اختلف نوع مدخلها عن مخرج العقدة السابقة فمحوّل صريح بينهما، والخط ينتهي بعقدة تحقق قبل التسليم.
+
+#### 4. بوابة التحقق (A27)
+
+- إلزامي: لكل هدف مؤشر وعتبة وتاريخ ← جدول المؤشرات
+- إلزامي: ثلاثة خيارات مختلفة المنهج مع توصية ← جدول المقارنة
+- جودة: تشريح مسبق بأهم أسباب الفشل والوقاية ← think.py plan
+- جودة: بوابات go/pivot/kill مكتوبة قبل النتائج ← think.py gate
+- إلزامي: خطوة أولى صغيرة قابلة للتراجع هذا الأسبوع ← مراجعة
+- أمر الحكم في الوضع 1: `think.py qa plan --answers qa.json` (PASS / FAIL / INCOMPLETE).
+
+#### 5. التعافي (A29)
+
+- `missing_dependency` (اعتمادية مفقودة، ميزانية 2): سمِّ الاعتمادية بالضبط (حزمة، برنامج، خط، نموذج) ← ثبّت محليًا في بيئة العمل إن كان مجانيًا ومسموحًا (pip --user أو venv أو npm محلي) · البديل: مسار المكتبة القياسية أو أداة أخرى من نفس المجموعة · تصعيد: تثبيت نظامي أو مدفوع أو يحتاج مفتاحًا: توقف واسأل
+- `quality_below_threshold` (جودة دون العتبة، ميزانية 3): أي معيار فشل وبكم (المقيس مقابل العتبة) ← عالج السبب الأكبر وحده ثم أعد القياس · البديل: المنهج البديل المكتوب للمرحلة في الخطة · تصعيد: معيار إلزامي لا يتحقق بعد البديل: توقف وأبلغ بالأرقام
+
+#### 6. الأدلة
+
+- `kosif-tool/.claude/skills/kosif-superpowers/evals/test_site_snapshot.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/site_snapshot.py`
+
+#### 7. قدرات قريبة في العائلة
+
+- `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
+- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 
@@ -7341,8 +7412,8 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
 - `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
+- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7411,7 +7482,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
+- `TOOL-184` نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities) (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

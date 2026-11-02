@@ -1,10 +1,10 @@
 {
   "schema": "kosif.smart-capability-index.v1",
   "origin": "data/powers/*.json (catalog); no original records changed",
-  "catalog_powers": 5861,
+  "catalog_powers": 5862,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 206,
+  "tool_count": 207,
   "groups": [
     {
       "id": "research",
@@ -130,17 +130,17 @@
       ],
       "keywords": "agent orchestration tool routing discover automation وكلاء أدوات توجيه بحث",
       "workflow": [],
-      "count": 280,
+      "count": 281,
       "status_counts": {
         "documented": 65,
         "install": 12,
         "key": 2,
-        "proven": 178,
+        "proven": 179,
         "ready": 23
       },
       "family_counts": {
         "agent-orchestration": 55,
-        "runnable-tools": 182,
+        "runnable-tools": 183,
         "self-discovery": 43
       },
       "examples": [
@@ -74459,6 +74459,25 @@
       ],
       "source": "runnable-tools.json",
       "what": "موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. "
+    },
+    {
+      "id": "TOOL-184",
+      "family": "runnable-tools",
+      "group": "agents",
+      "domain": "build",
+      "name_en": "Website snapshot and design read-out (goclone capabilities)",
+      "name_ar": "نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)",
+      "status": "proven",
+      "requires": [
+        "python3",
+        "chromium"
+      ],
+      "proof": [
+        "kosif-tool/.claude/skills/kosif-superpowers/evals/test_site_snapshot.py",
+        "kosif-tool/.claude/skills/kosif-superpowers/scripts/site_snapshot.py"
+      ],
+      "source": "runnable-tools.json",
+      "what": "يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط ك"
     },
     {
       "id": "SEC-01",
