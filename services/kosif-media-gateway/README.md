@@ -5,7 +5,7 @@ owner may download, without the owner's iPhone or computer. It reads only what a
 signing in: no cookies, no IP or proxy rotation, no CAPTCHA, PO-token or DRM workarounds. When YouTube
 refuses the host, the gateway returns the exact code and pauses YouTube calls for a cool-down instead of retrying.
 
-Version 0.3.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (static ffmpeg with libx264) and
+Version 0.4.0. Standard library server; `yt-dlp[default]`, `imageio-ffmpeg` (static ffmpeg with libx264) and
 `deno` (the JavaScript runtime yt-dlp needs for YouTube) come from `requirements.txt`.
 
 ## Deploy on Render (Free plan only)
