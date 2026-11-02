@@ -1,7 +1,7 @@
-"""Structural verification of the 1,000 new Black Dragon questionnaire items.
+"""Structural verification of 1,000 owner-approved Black Dragon design decisions.
 
-Question count/unique strings are NOT evidence that answers are good, or that
-proposed capabilities are already implemented. A separate quality review exists.
+Question counts and unique strings do not prove implementation or quality.
+Separate execution receipts and content-quality reviews remain required.
 """
 import re
 import unittest
@@ -10,6 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / "docs" / "BLACK_DRAGON_1000_QUESTIONS_301_TO_1300.md"
 REVIEW = ROOT / "docs" / "BLACK_DRAGON_1000_QUESTIONS_REVIEW.md"
+LEDGER = ROOT / "docs" / "BLACK_DRAGON_APPROVED_ANSWERS_LEDGER_301_TO_1300.json"
 
 
 class Questions1000Tests(unittest.TestCase):
@@ -41,12 +42,16 @@ class Questions1000Tests(unittest.TestCase):
         self.assertEqual(len(set(questions)), len(questions))
         self.assertEqual(len(set(self.answers)), len(self.answers))
 
-    def test_review_distinguishes_proposal_from_approved_prior_decisions(self):
-        self.assertIn("لم يوافق المستخدم عليها بعد", self.content)
+    def test_owner_approval_is_documented_but_not_equated_to_shipping(self):
+        self.assertIn("اعتمد المالك جميع الإجابات المقترحة", self.content)
+        self.assertIn(LEDGER.name, self.content)
+        self.assertIn("الاعتماد لا يثبت تنفيذ", self.content)
+        self.assertNotIn("لم يوافق المستخدم عليها بعد", self.content)
         review = REVIEW.read_text(encoding="utf-8")
         self.assertIn("الربط", review)
-        self.assertIn("لم تُعتمد الإجابات 301–1300 بعد", review)
+        self.assertIn("1300 قرار تصميم معتمد", review)
         self.assertIn("لا يمكن اعتبار كل سؤال مرتبطًا بمهارة/أداة", review)
+        self.assertNotIn("لم تُعتمد الإجابات 301–1300 بعد", review)
 
 
 if __name__ == "__main__":
