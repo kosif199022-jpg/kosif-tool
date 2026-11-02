@@ -20,6 +20,11 @@ skill = importlib.util.module_from_spec(sspec)
 sspec.loader.exec_module(skill)
 
 HAVE_FFMPEG = bool(shutil.which("ffmpeg") and shutil.which("ffprobe"))
+
+
+def missing_module(recipe):
+    name = skill.NEEDS_MODULE.get(recipe)
+    return bool(name) and importlib.util.find_spec(name) is None
 TASK = "اعمل مونتاج فيديو موشن جرافيك بصوت"
 
 
@@ -44,8 +49,8 @@ class SkillAdapterRuns(unittest.TestCase):
     def test_every_recipe_runs_and_passes_its_checks(self):
         with tempfile.TemporaryDirectory() as tmp:
             for recipe in skill.RECIPES:
-                if recipe in skill.NEEDS_MEDIA and not HAVE_FFMPEG:
-                    continue
+                if (recipe in skill.NEEDS_MEDIA and not HAVE_FFMPEG) or missing_module(recipe):
+                    continue  # its prerequisite is absent here; the Black Dragon checks job installs them
                 with self.subTest(recipe=recipe):
                     art = Path(tmp) / f"{recipe}.txt"
                     done = run(recipe, art, "--task=" + TASK, "--media=")

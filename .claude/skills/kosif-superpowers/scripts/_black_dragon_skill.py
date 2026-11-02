@@ -37,6 +37,7 @@ SCRIPT = {
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy"}
+NEEDS_MODULE = {"excel-lambdas": "openpyxl"}  # Python packages a recipe's script imports
 
 
 def _json(path: Path):

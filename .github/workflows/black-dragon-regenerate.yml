@@ -21,11 +21,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Media tools for the video/audio adapters (ffmpeg with vid.stab, numpy)
+      - name: Prerequisites for the media and skill adapters (ffmpeg with vid.stab, numpy, openpyxl)
         run: |
           sudo apt-get update -q
           sudo apt-get install -y -q ffmpeg
-          python3 -m pip install -q numpy
+          python3 -m pip install -q numpy openpyxl
       - name: Black Dragon unit and integration tests
         run: python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
       - name: Generated indexes are current (regenerate locally with the chain in references/guides/maintain.md)
