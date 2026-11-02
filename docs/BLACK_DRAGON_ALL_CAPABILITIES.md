@@ -82,3 +82,43 @@ They cover inventory of every kind against its sources, part/mode/weight for eve
 ## In the USIP pipeline (v6.5, appendix A49)
 
 The dragon is no longer only a named command. At L3 it runs right after the USIP brief with `--probe-tools --reviewed-adapters` (assigned + probed); when the owner answers `نفّذ بأقصى قوة` it also gets `--execute-adapters`, since every reviewed adapter only reads. Each stage leader that would change the engine or the verification method goes into plan C, and the report carries one line: assigned · probed · executed with receipt · `full_coverage`. Measured on 2026-11-01: 7,381 assigned, 187 of 205 tools probed, 39 of 39 adapters executed with receipts, 0 failed.
+
+
+## Full-tool activation: inspect first, then schedule (proposed unified version)
+
+The following read-only mode scans the **entire capability catalog**, statically
+checks **every registered tool's metadata and local source**, and writes a
+dependency-ordered usage plan. It does **not** run any of those tools.
+
+~~~bash
+python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py activate \
+  "اعمل فيديو سينمائي مع مراجعة الجودة" --selection all \
+  --out out/black-dragon/full-tools-plan.json
+~~~
+
+The alternative is --selection smart: it still inspects the entire catalog,
+but chooses a focused set of reviewed adapter candidates. --selection all
+selects all reviewed adapters, not all arbitrary Python files. Both modes
+assign every catalog item a workflow stage.
+
+The JSON file contains a purpose and static source SHA-256 for every
+registered tool, path/metadata errors, readiness labels, risk declarations,
+dependency waves, a five-perspective council **plan**, a plan SHA-256,
+and the explicit human approval gate. No approval is granted by mode choice.
+"Inspected" means the local source and registry entry were found, **not**
+runtime functionality. "Candidate" means its reviewed manifest can be
+scheduled, **not** that it has executed successfully or is free of risk.
+Unreviewed capabilities stay represented as knowledge, references, or
+protocol requirements, and must not be counted as executed adapters.
+
+The proposed workflow is: request -> ALL tool metadata and sources inspected ->
+stage assignments -> dependency waves and council prompts -> review + explicit
+approval -> separately authorized execution -> receipt/evidence verification.
+Never claim independent council reviewers actually ran without their genuine
+outputs. For actual execution use the pre-existing reviewed, approval-gated
+execution path, not the static activation command.
+
+Tests:
+~~~bash
+python3 -m unittest tests/test_black_dragon_brain.py -v
+~~~

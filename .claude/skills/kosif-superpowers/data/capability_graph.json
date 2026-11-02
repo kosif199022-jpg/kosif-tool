@@ -1893,6 +1893,16 @@
    "label": "scripts/tell_scan.py"
   },
   {
+   "id": "script:scripts/_black_dragon_activation.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_activation.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_brain.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_brain.py"
+  },
+  {
    "id": "script:scripts/_black_dragon_evidence_guard.py",
    "kind": "script",
    "label": "scripts/_black_dragon_evidence_guard.py"
@@ -1911,11 +1921,6 @@
    "id": "script:scripts/_claude_reviewed_router.py",
    "kind": "script",
    "label": "scripts/_claude_reviewed_router.py"
-  },
-  {
-   "id": "script:scripts/_black_dragon_brain.py",
-   "kind": "script",
-   "label": "scripts/_black_dragon_brain.py"
   },
   {
    "id": "script:scripts/black_dragon.py",
@@ -6802,6 +6807,12 @@
    "w": 2
   },
   {
+   "from": "script:scripts/_black_dragon_activation.py",
+   "to": "script:scripts/_black_dragon_brain.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_black_dragon_evidence_guard.py",
    "to": "script:scripts/_cinema_all_skills.py",
    "rel": "imports",
@@ -6900,6 +6911,12 @@
   {
    "from": "script:scripts/atlas_transfer.py",
    "to": "script:scripts/powers.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_black_dragon_activation.py",
    "rel": "imports",
    "w": 1
   },

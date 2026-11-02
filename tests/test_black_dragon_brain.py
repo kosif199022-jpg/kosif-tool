@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / ".claude/skills/kosif-superpowers/scripts"
 sys.path.insert(0, str(SCRIPTS))
 import _black_dragon_brain as brain
+import _black_dragon_activation as activation
 
 
 class CognitivePlannerTests(unittest.TestCase):
@@ -98,6 +99,96 @@ class CognitivePlannerTests(unittest.TestCase):
     def test_arabic_prefixes_are_normalised(self):
         self.assertIn("مونتاج", brain.tokens("والمونتاج"))
         self.assertIn("صوت", brain.tokens("بصوت"))
+
+
+
+class ToolInspectionTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.repo = Path(self.temp.name)
+        self.skill = self.repo / "skill_root"
+        self.skill.mkdir()
+        (self.repo / "scripts").mkdir()
+        (self.repo / "scripts" / "first.py").write_text(
+            "raise RuntimeError('static inspection must not execute')\n", encoding="utf-8")
+        (self.repo / "scripts" / "second.py").write_text(
+            "raise RuntimeError('never execute imported scripts')\n", encoding="utf-8")
+        self.inv = {
+            "tool:first": {"kind": "tool", "source": "data/tools.json"},
+            "tool:second": {"kind": "tool", "source": "data/tools.json"},
+            "skill:kosif-infinite-matrices": {"kind": "skill", "source": "SKILL.md"},
+            "protocol:A38": {"kind": "protocol", "source": "PROTOCOL.md"},
+        }
+        self.records = {
+            "tool:first": {"kind": "cli", "root": "repo", "path": "scripts/first.py",
+                           "summary_en": "Analyze text and prepare task", "safety": "read-only"},
+            "tool:second": {"kind": "cli", "root": "repo", "path": "scripts/second.py",
+                            "summary_en": "Generate output", "safety": "read-only"},
+        }
+        self.adapters = {
+            "tool:first": {"script": "scripts/first.py", "args": ["{task}"]},
+            "tool:second": {"script": "scripts/second.py", "args": ["{task}"],
+                            "depends_on": ["tool:first"]},
+        }
+
+    def inspect(self, mode="all"):
+        return activation.inspect_and_schedule("analyze output", self.inv, self.adapters,
+                                                self.records, self.repo, self.skill,
+                                                mode=mode)
+
+    def test_full_coverage_inspection_order_and_no_execution(self):
+        result = self.inspect()
+        self.assertEqual(result["catalog"]["examined"], len(self.inv))
+        self.assertEqual(result["counts"]["catalog_tools"], 2)
+        self.assertEqual(result["counts"]["statically_inspected"], 2)
+        self.assertEqual(result["counts"]["tool_candidates_after_dependencies"], 2)
+        self.assertEqual(result["counts"]["execution_attempts"], 0)
+        self.assertFalse(result["approval_gate"]["approved"])
+        self.assertEqual(result["status"], "planned_not_executed")
+        self.assertEqual(result["tools"]["tool:first"]["inspection"]["status"], "inspected")
+        self.assertEqual(len(result["tools"]["tool:first"]["inspection"]["source_sha256"]), 64)
+        self.assertEqual(result["catalog"]["assigned"], 4)
+        waves = result["dependency_waves"]
+        self.assertLess(next(i for i, w in enumerate(waves) if "tool:first" in w),
+                        next(i for i, w in enumerate(waves) if "tool:second" in w))
+        self.assertEqual(len(result["council"]["members"]), 5)
+        self.assertEqual(result["plan_sha256"], self.inspect()["plan_sha256"])
+
+    def test_missing_source_or_metadata_blocks_execution_but_keeps_inventory(self):
+        self.records["tool:first"]["path"] = "scripts/missing.py"
+        result = self.inspect()
+        self.assertEqual(result["counts"]["catalog_tools"], 2)
+        self.assertEqual(result["tools"]["tool:first"]["readiness"], "inspection_blocked")
+        self.assertEqual(result["tools"]["tool:second"]["readiness"], "dependency_blocked")
+        self.assertEqual(result["counts"]["tool_candidates_after_dependencies"], 0)
+        self.records.pop("tool:second")
+        result = self.inspect()
+        self.assertEqual(result["tools"]["tool:second"]["inspection"]["status"],
+                         "missing_metadata")
+
+    def test_traversal_and_symlink_are_rejected(self):
+        self.records["tool:first"]["path"] = "../secrets.py"
+        self.assertEqual(self.inspect()["tools"]["tool:first"]["inspection"]["status"],
+                         "unsafe_path")
+        self.records["tool:first"]["path"] = "scripts/link.py"
+        (self.repo / "scripts/link.py").symlink_to(self.repo / "scripts/first.py")
+        self.assertEqual(self.inspect()["tools"]["tool:first"]["inspection"]["status"],
+                         "unsafe_path")
+
+    def test_smart_still_inspects_all_tools(self):
+        result = self.inspect("smart")
+        self.assertEqual(len(result["tools"]), 2)
+        self.assertEqual(result["counts"]["statically_inspected"], 2)
+        self.assertEqual(result["mode"], "smart")
+        self.assertFalse(result["activation"]["execution_authorized"])
+
+    def test_invalid_mode_or_cycle_rejected_before_planning(self):
+        with self.assertRaisesRegex(ValueError, "activation"):
+            self.inspect("invalid")
+        self.adapters["tool:first"]["depends_on"] = ["tool:second"]
+        with self.assertRaisesRegex(ValueError, "Cyclic"):
+            self.inspect()
 
 
 if __name__ == "__main__":

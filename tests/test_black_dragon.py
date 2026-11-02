@@ -166,6 +166,28 @@ class FullInventoryTests(unittest.TestCase):
         self.assertEqual(sum(plan["modes"].values()), len(self.entries))
         self.assertTrue(any(p["leads"] for p in plan["parts"].values()))
 
+
+    def test_real_full_tool_activation_cli(self):
+        """Production catalog is inspected without executing its programs."""
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "full-tools.json"
+            completed = subprocess.run([
+                sys.executable, str(SCRIPTS / "black_dragon.py"), "activate",
+                "اعمل فيديو موشن", "--selection", "all", "--out", str(output),
+            ], cwd=ROOT, capture_output=True, text=True, timeout=120)
+            self.assertEqual(completed.returncode, 0, completed.stderr[-1600:])
+            report = json.loads(output.read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "planned_not_executed")
+            self.assertEqual(report["catalog"]["examined"], len(self.entries))
+            self.assertEqual(report["catalog"]["assigned"], len(self.entries))
+            self.assertEqual(report["counts"]["catalog_tools"],
+                             sum(x["kind"] == "tool" for x in self.entries.values()))
+            self.assertEqual(len(report["tools"]), report["counts"]["catalog_tools"])
+            self.assertGreater(report["counts"]["statically_inspected"], 0)
+            self.assertEqual(report["counts"]["execution_attempts"], 0)
+            self.assertFalse(report["approval_gate"]["approved"])
+            self.assertEqual(len(report["council"]["members"]), 5)
+
     def test_reviewed_adapters_point_at_real_entries_and_scripts(self):
         adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
         self.assertGreaterEqual(len(adapters), 20)
