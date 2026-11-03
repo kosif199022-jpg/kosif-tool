@@ -3343,6 +3343,34 @@
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-04: its cited proof code ran green here (test-file, tool-runner; 26 tests)"
     },
+    "power:TOOL-05": {
+      "args": [
+        "power:TOOL-05",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/evals/test_hub.py": "b4d3a73f5dc2f5374ca538b6de656ab683cc4a4dbfcdb9d3bca3fdfd6d4021c0",
+        ".claude/skills/kosif-superpowers/scripts/hub.py": "b84b22d6e7a81c2222b4714b8960fefefd1b3b1137e177885d70b62f02226797"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-05: its cited proof code ran green here (test-file, tool-runner; 54 tests)"
+    },
+    "power:TOOL-06": {
+      "args": [
+        "power:TOOL-06",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/evals/test_hub.py": "b4d3a73f5dc2f5374ca538b6de656ab683cc4a4dbfcdb9d3bca3fdfd6d4021c0",
+        ".claude/skills/kosif-superpowers/scripts/kosif_mcp.py": "5ed88034a336f53e26700cf349fbad8fff7b6971b28a0eac0446c43dc7d19807"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-06: its cited proof code ran green here (test-file, tool-runner; 54 tests)"
+    },
     "power:TOOL-07": {
       "args": [
         "power:TOOL-07",
@@ -3856,6 +3884,20 @@
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-131: its cited proof code ran green here (test-file, tool-runner; 68 tests)"
+    },
+    "power:TOOL-132": {
+      "args": [
+        "power:TOOL-132",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/evals/test_dua_wednesday.py": "ee97f80105b59ac71d15c3f872abb46500e17196fde52899d7031f94d4a94308",
+        ".claude/skills/kosif-superpowers/scripts/dua_wednesday.py": "b5edadfb03c7ad8fea9af1210dc0bdfacef1e3c9338fcc3a84f89048eaaae98b"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-132: its cited proof code ran green here (test-file, tool-runner; 16 tests)"
     },
     "power:TOOL-133": {
       "args": [
@@ -4586,6 +4628,19 @@
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-180: its cited proof code ran green here (tool-runner; 8 tests)"
     },
+    "power:TOOL-181": {
+      "args": [
+        "power:TOOL-181",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/scripts/black_dragon.py": "b8817ae17c68b9e916bff800a0a324023e220d4468fb2d8b7807bbd16e7970d5"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-181: its cited proof code ran green here (tool-runner; 23 tests)"
+    },
     "power:TOOL-182": {
       "args": [
         "power:TOOL-182",
@@ -4845,6 +4900,20 @@
       },
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
       "why": "TOOL-33: its cited proof code ran green here (tool-runner; 7 tests)"
+    },
+    "power:TOOL-34": {
+      "args": [
+        "power:TOOL-34",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "power_proof": true,
+      "proof_sha256": {
+        ".claude/skills/kosif-superpowers/scripts/capability_graph.py": "9bbccaccba29079ed11e61ccef896d89182cd7e32397d9e91f6cb95e37a55ad3",
+        "tests/test_capability_graph.py": "80c1b988c7316ba1b362a34d77703830b478a3666cde38fbe3ada177bf908bba"
+      },
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_power.py",
+      "why": "TOOL-34: its cited proof code ran green here (test-file, tool-runner; 10 tests)"
     },
     "power:TOOL-35": {
       "args": [
@@ -5944,8 +6013,8 @@
   },
   "counts": {
     "candidates": 512,
-    "excluded": 79,
-    "included": 433
+    "excluded": 74,
+    "included": 438
   },
   "excluded": {
     "power:AGENT-37": "refused: no test file names it, no --self-test and no known-answer recipe (only --help would run)",
@@ -5992,13 +6061,8 @@
     "power:QA-X09": "slow: its proof units take over 120s here",
     "power:SYNC-07": "refused: no test file names it, no --self-test and no known-answer recipe (only --help would run)",
     "power:SYNC-09": "refused: no test file names it, no --self-test and no known-answer recipe (only --help would run)",
-    "power:TOOL-05": "failed: .claude/skills/kosif-superpowers/evals/test_hub.py (test-file): .claude/skills/kosif-superpowers/evals/test_hub.py: unittest OK | .claude/skills/kosif-superpowers/scripts/hub.py (tool-runner): tool hub: runner verdict passed (exit 0)",
-    "power:TOOL-06": "failed: .claude/skills/kosif-superpowers/evals/test_hub.py (test-file): .claude/skills/kosif-superpowers/evals/test_hub.py: unittest OK | .claude/skills/kosif-superpowers/scripts/kosif_mcp.py (tool-runner): tool kosif-mcp: runner verdict passed (exit 0)",
     "power:TOOL-124": "slow: its proof units take over 120s here",
     "power:TOOL-125": "slow: its proof units take over 120s here",
-    "power:TOOL-132": "slow: its proof units take over 120s here",
-    "power:TOOL-181": "failed: .claude/skills/kosif-superpowers/scripts/black_dragon.py (tool-runner): tool black-dragon: runner verdict passed (exit 0)",
-    "power:TOOL-34": "failed: tests/test_capability_graph.py (test-file): tests/test_capability_graph.py: unittest OK",
     "power:TOOL-51": "refused: its only code proofs are shell scripts (not run by this adapter)",
     "power:TOOL-85": "slow: its proof units take over 120s here",
     "power:TRANS-01": "slow: its proof units take over 120s here",
