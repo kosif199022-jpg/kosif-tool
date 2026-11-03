@@ -231,7 +231,8 @@ def apply(key: str, task: str) -> dict:
     links = _LINKS
     node = links["nodes"].get(key)
     if node is None:  # links snapshot older than the catalog: ask the live Black Dragon inventory
-        sys.path.insert(0, str(HERE))
+        if str(HERE) not in sys.path:
+            sys.path.insert(0, str(HERE))
         import dragon_mind as dm
         inv, desc, _, _ = dm.load_inventory()
         if key not in inv:
