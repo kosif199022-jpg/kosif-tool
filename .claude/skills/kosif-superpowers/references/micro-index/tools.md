@@ -54,7 +54,6 @@
 | `atlas-ledger` | TOOL-107 | سجل الأطلس: حالة واحدة لكل مهارة · Atlas ledger: one status for every Atlas skill | `python3 scripts/atlas_ledger.py stats --json` | 1 |
 | `atlas-task-method-router` | TOOL-112 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router | `python3 scripts/atlas_task_method_router.py --help` | 0 |
 | `black-dragon` | TOOL-181 | التنين الأسود — العقل المنسق لكل القدرات · Black Dragon — All-Capability Cognitive Orchestrator | `python3 scripts/black_dragon.py inventory` | 1 |
-| `black-dragon-media` | TOOL-183 | ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن · Black Dragon Media — real opt-in media pipeline | `python3 scripts/black_dragon_media.py doctor` | 1 |
 | `boot` | TOOL-02 | إحاطة بدء الجلسة · Session boot briefing | `python3 scripts/boot.py` | 1 |
 | `capability-atlas` | TOOL-03 | أطلس القدرات للبحث والتخطيط · Capability Atlas search and planner | `python3 scripts/capability_atlas.py stats --json` | 1 |
 | `capability-graph` | TOOL-34 | باني خريطة القدرات المترابطة · Capability Graph Builder | `python3 scripts/capability_graph.py build` | 1 |
@@ -200,6 +199,7 @@
 |---|---|---|---|---|
 | `aspects` | TOOL-77 | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver | `python3 -c "import sys; sys.path.insert(0,'scripts'); import aspects;…` | 1 |
 | `atlas-render` | TOOL-64 | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score | `python3 scripts/atlas_render.py check` | 1 |
+| `black-dragon-media` | — | التنين الأسود ميديا — شغل فيديو حقيقي بإذن · Black Dragon Media — opt-in real video job | `python3 scripts/black_dragon_media.py doctor` | 1 |
 | `creative-reasoning-bridge` | TOOL-12 | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto…` | 1 |
 | `export-profile` | — | معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو · Export profile: the owner-approved delivery settings for every video | `python3 scripts/export_profile.py` | 1 |
 | `infinite-matrices` | TOOL-171 | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | 2 |
@@ -218,6 +218,7 @@
 | `repo-overlap-rig` | — | فاحص ريج الكاميرا المتداخلة · Overlapping camera rig checker | `python3 tools/overlap_rig.py graphs` | 1 |
 | `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 4 |
 | `repo-verify-video` | TOOL-82 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 -…` | 2 |
+| `shadow-theatre` | TOOL-183 | محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine | `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py…` | 1 |
 | `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 0 |
 | `starter-remotion` | TOOL-84 | قالب فيلم Remotion · Remotion film starter | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | 0 |
 | `style-atlas-bridge` | TOOL-63 | أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح · Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds | `python3 scripts/style_atlas_bridge.py families` | 1 |

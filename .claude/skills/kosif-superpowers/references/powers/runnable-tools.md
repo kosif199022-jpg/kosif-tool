@@ -13,9 +13,9 @@
 
 ## الفهرس / contents
 
-- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-183 (28)
+- **Discover and route / اكتشاف القدرات والتوجيه** — TOOL-01 … TOOL-181 (27)
 - **Think, ideate and write / التفكير والأفكار والكتابة** — TOOL-10 … TOOL-170 (17)
-- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-174 (23)
+- **Motion graphics and rendering / الموشن والرندر** — TOOL-12 … TOOL-183 (24)
 - **Editing and reference video / المونتاج والفيديو المرجعي** — TOOL-19 … TOOL-180 (19)
 - **Audio and rhythm / الصوت والإيقاع** — TOOL-25 … TOOL-165 (5)
 - **Drawing and characters / الرسم والشخصيات** — TOOL-27 … TOOL-169 (17)
@@ -261,15 +261,6 @@
 - **تثبيت / install:** `needs on PATH: python3`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3)
 - **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon.py`
-- **المصدر / source:** data/tools.json
-
-#### TOOL-183 · ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن · Black Dragon Media — real opt-in media pipeline · ✅ مُثبت هنا / proven here
-- **ماذا / what:** يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.
-- **متى أستخدمها / when:** شغّل التنين الأسود على الفيديو بتاعي فعلًا / Run the Black Dragon media pipeline on a real clip with evidence
-- **كيف / how:** doctor: `python3 scripts/black_dragon_media.py doctor`; run: `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe`; verify: `python3 scripts/black_dragon_media.py verify --job-name my-film`. Full card: `python3 scripts/hub.py tool black-dragon-media`. Limits: Only the bundled media tools run; hashes prove the files exist, not their creative quality. **أرقام / params:** in: One audio/video file, a job name and the --execute consent flag. · out: Stage outputs and a hashed report under out/black-dragon-media/<job>.
-- **تثبيت / install:** `pip install numpy · needs on PATH: python3, ffmpeg, ffprobe`
-- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy)
-- **الدليل / proof:** `kosif-tool/tests/test_black_dragon_media.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py`
 - **المصدر / source:** data/tools.json
 
 ## Think, ideate and write / التفكير والأفكار والكتابة
@@ -614,6 +605,15 @@
 - **كيف / how:** start: `python3 tools/job.py start --dir out/20261024-film/render -- node tools/render_html.cjs --in film.html --out out/film.mp4`; wait: `python3 tools/job.py wait --dir out/20261024-film/render`; status: `python3 tools/job.py status --dir out/20261024-film/render`; stop: `python3 tools/job.py stop --dir out/20261024-film/render`. Full card: `python3 scripts/hub.py tool repo-job-wait`. Limits: Progress is parsed from the job's own log lines, so a command that prints nothing shows no PROGRESS until it ends; POSIX only (process groups, /proc for zombie detection). **أرقام / params:** in: A job folder (--dir) and, for start, the command after `--`. · out: job.log, job.pid, job.exit and job.json in the job folder; STARTED/PROGRESS/WARN/DONE/FAILED/TIMEOUT lines on stdout; exit code = the job's exit code (124 on timeout, 2 when no job exists).
 - **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`node`](../requirements.md#req-node) · [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
 - **الدليل / proof:** `kosif-tool/tests/test_job_wait.py` · `kosif-tool/tools/job.py`
+- **المصدر / source:** data/tools.json
+
+#### TOOL-183 · محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine · ✅ مُثبت هنا / proven here
+- **ماذا / what:** موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. — Shadow-theatre / silhouette motion graphics: articulated black bodies that join into trees and boats, depth toward the lamp (bigger, softer shadow), iris and spotlight transitions over projected gradient skies; analyses a reference act (cuts, palette, silhouette share), checks the scene grammar, renders stills and an export-standard MP4 with an original synth score.
+- **متى أستخدمها / when:** اعمل مشاهد بالظلال زي فقرة مسرح الظل / Make a silhouette shadow-theatre film where bodies form a tree and a boat
+- **كيف / how:** doctor: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py doctor`; analyze: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py analyze <reference.mp4> --out out/shadow/ref`; check: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py check .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json`; stills: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py stills .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/stills --times 3,9.5,18`. Full card: `python3 scripts/hub.py tool shadow-theatre`. Limits: Bodies are procedural capsules, not hand-cut puppets; body-builds need stills review to read clearly; no lip-sync or text; a 22 s 1080x1920 film takes about 4 minutes on a 2-core container. **أرقام / params:** in: A scene JSON (kosif.shadow-theatre.scene.v1); for analyze, a local video file. · out: PNG stills, an MP4, and for analyze analysis.json + contact.jpg in --out.
+- **تثبيت / install:** `pip install numpy Pillow · needs on PATH: python3 · optional: ffmpeg, ffprobe`
+- **يحتاج / needs:** [`ffmpeg`](../requirements.md#req-ffmpeg) · [`pip:numpy`](../requirements.md#req-pip-numpy) · [`pip:pillow`](../requirements.md#req-pip-pillow)
+- **الدليل / proof:** `kosif-tool/tests/test_shadow_theatre.py` · `kosif-tool/.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py`
 - **المصدر / source:** data/tools.json
 
 ## Editing and reference video / المونتاج والفيديو المرجعي

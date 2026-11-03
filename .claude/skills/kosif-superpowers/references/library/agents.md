@@ -39,7 +39,7 @@
 | `atlas-5000` | خريطة تغطية أطلس الـ5000 مهارة | `python3 scripts/atlas_5000.py stats --json` | tested-here |
 | `atlas-ledger` | سجل الأطلس: حالة واحدة لكل مهارة | `python3 scripts/atlas_ledger.py stats --json` | tested-here |
 | `black-dragon` | التنين الأسود — العقل المنسق لكل القدرات | `python3 scripts/black_dragon.py inventory` | untested |
-| `black-dragon-media` | ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن | `python3 scripts/black_dragon_media.py doctor` | tested-here |
+| `black-dragon-media` | التنين الأسود ميديا — شغل فيديو حقيقي بإذن | `python3 scripts/black_dragon_media.py doctor` | untested |
 | `boot` | إحاطة بدء الجلسة | `python3 scripts/boot.py` | tested-here |
 | `build-chapters` | مولّد فصول العائلات | `python3 scripts/build_chapters.py` | untested |
 | `business-workflows` | الذكاء الاصطناعي في الأعمال: 9 وظائف و64 خطة عمل بخطط تشغيل لClaude | `python3 scripts/business_workflows.py functions` | tested-here |
@@ -188,7 +188,7 @@
 | `TOOL-179` | صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب | Free photos: open-licence and free stock photo search and download with credits | proven | python3 |
 | `TOOL-18` | مكتبة رياضيات الحركة | Motion math toolkit | proven | node, python3 |
 | `TOOL-182` | معاينة الأغنية الرسمية (بديل الـDRM) | Official song preview (DRM fallback) | proven | ffmpeg, python3, yt-dlp |
-| `TOOL-183` | ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن | Black Dragon Media — real opt-in media pipeline | proven | ffmpeg, pip:numpy |
+| `TOOL-183` | محرك أفلام مسرح الظل | KOSIF Shadow Theatre silhouette film engine | proven | ffmpeg, pip:numpy, pip:pillow |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
 | `TOOL-21` | فاحص توقيت الفيديو المرجعي | Reference Video Timing Probe | proven | ffmpeg, python3 |

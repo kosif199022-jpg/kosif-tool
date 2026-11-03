@@ -4,7 +4,7 @@
   "catalog_powers": 5861,
   "group_count": 15,
   "family_count": 62,
-  "tool_count": 206,
+  "tool_count": 207,
   "groups": [
     {
       "id": "research",
@@ -74445,19 +74445,20 @@
       "family": "runnable-tools",
       "group": "agents",
       "domain": "build",
-      "name_en": "Black Dragon Media — real opt-in media pipeline",
-      "name_ar": "ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن",
+      "name_en": "KOSIF Shadow Theatre silhouette film engine",
+      "name_ar": "محرك أفلام مسرح الظل",
       "status": "proven",
       "requires": [
         "ffmpeg",
-        "pip:numpy"
+        "pip:numpy",
+        "pip:pillow"
       ],
       "proof": [
-        "kosif-tool/tests/test_black_dragon_media.py",
-        "kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py"
+        "kosif-tool/tests/test_shadow_theatre.py",
+        "kosif-tool/.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py"
       ],
       "source": "runnable-tools.json",
-      "what": "يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/bla"
+      "what": "موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. "
     },
     {
       "id": "SEC-01",

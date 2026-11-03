@@ -24,7 +24,7 @@
 | 8 | [`node`](#req-node) | bin | 185 | qa-verification, atlas-code, runnable-tools, engines-render-pipeline, color-palette-grading |  |
 | 9 | [`key:unspecified`](#req-key-unspecified) | key | 167 | engines-render-pipeline, atlas-code, ai-generation, camera-composition-layout, qa-verification |  |
 | 10 | [`pip:numpy`](#req-pip-numpy) | pip | 142 | app-feature-transfer, music-beat-sound, qa-verification, runnable-tools, transitions-cuts |  |
-| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 141 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
+| 11 | [`pip:pillow`](#req-pip-pillow) | pip | 142 | app-feature-transfer, runnable-tools, qa-verification, engines-render-pipeline, typography-arabic |  |
 | 12 | [`npm:remotion`](#req-npm-remotion) | npm | 119 | engines-render-pipeline, music-beat-sound, runnable-tools, typography-arabic, easing-timing-rhythm |  |
 | 13 | [`pip:opencv`](#req-pip-opencv) | pip | 103 | app-feature-transfer, runnable-tools, transitions-cuts, media-image-audio, engines-render-pipeline |  |
 | 14 | [`fonts:arabic`](#req-fonts-arabic) | font | 98 | typography-arabic, typography-latin, documents-office, audio-sync-captions, runnable-tools |  |
@@ -245,9 +245,9 @@
 
 - **النوع / kind:** pip (حزمة بايثون)
 - **التثبيت / install:** `pip install pillow  (Arabic shaping needs a libraqm build: PIL.features.check('raqm'))`
-- **يفتح / unlocks:** 141 powers
-- **بالحالة / by status:** proven 87 · documented 22 · ready 21 · install 7 · key 2 · idea 1 · seen 1
-- **العائلات / families:** app-feature-transfer (37), runnable-tools (19), qa-verification (15), engines-render-pipeline (14), typography-arabic (10), media-image-audio (8), texture-material (5), color-palette-grading (3)
+- **يفتح / unlocks:** 142 powers
+- **بالحالة / by status:** proven 88 · documented 22 · ready 21 · install 7 · key 2 · idea 1 · seen 1
+- **العائلات / families:** app-feature-transfer (37), runnable-tools (20), qa-verification (15), engines-render-pipeline (14), typography-arabic (10), media-image-audio (8), texture-material (5), color-palette-grading (3)
 - **أمثلة / examples:** `ANLY-11` Detect libraqm before shaping Arabic · `APPX-105` Blend modes (24) and layer stacks → PNG or OpenR · `APPX-113` Sticker: cut-out with white border and soft shad · `APPX-38` Watermark with exact opacity · `APPX-39` Perceptual JPEG recompression (JPEGmini-style) · `APPX-40` Contact sheet / print templates
 
 <a id="req-npm-remotion"></a>

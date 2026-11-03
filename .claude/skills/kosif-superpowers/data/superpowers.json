@@ -16881,7 +16881,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.109
+"sim": 0.107
 }
 ]
 },
@@ -17714,15 +17714,15 @@
 "capability",
 "kosif"
 ],
-"size": 36,
+"size": 35,
 "best": "proven",
 "status_mix": {
-"proven": 27,
+"proven": 26,
 "ready": 9
 },
-"ready_now": 36,
+"ready_now": 35,
 "families": {
-"runnable-tools": 36
+"runnable-tools": 35
 },
 "atlas_folded": 0,
 "requires": [
@@ -17733,7 +17733,7 @@
 "node",
 "pip:pillow",
 "pip:opencv",
-"pip:numpy"
+"npm:remotion"
 ],
 "pipeline": [
 {
@@ -17743,16 +17743,16 @@
 "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية"
 },
 {
-"id": "TOOL-03",
-"status": "proven",
-"name_en": "Capability Atlas search and planner",
-"name_ar": "أطلس القدرات للبحث والتخطيط"
-},
-{
 "id": "TOOL-107",
 "status": "proven",
 "name_en": "Atlas ledger: one status for every Atlas skill",
 "name_ar": "سجل الأطلس: حالة واحدة لكل مهارة"
+},
+{
+"id": "TOOL-03",
+"status": "proven",
+"name_en": "Capability Atlas search and planner",
+"name_ar": "أطلس القدرات للبحث والتخطيط"
 },
 {
 "id": "TOOL-73",
@@ -17815,16 +17815,16 @@
 "name_ar": "فهرس ذكي للقدرات من أجل Claude"
 },
 {
-"id": "TOOL-161",
-"status": "proven",
-"name_en": "Micro index: one line per power, tool and superpower",
-"name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة"
-},
-{
 "id": "TOOL-34",
 "status": "proven",
 "name_en": "Capability Graph Builder",
 "name_ar": "باني خريطة القدرات المترابطة"
+},
+{
+"id": "TOOL-161",
+"status": "proven",
+"name_en": "Micro index: one line per power, tool and superpower",
+"name_ar": "الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة"
 },
 {
 "id": "TOOL-129",
@@ -17845,6 +17845,12 @@
 "name_ar": "دمج القدرات في قدرات خارقة مترابطة"
 },
 {
+"id": "TOOL-04",
+"status": "proven",
+"name_en": "Capability runtime router",
+"name_ar": "موجّه القدرات التنفيذية"
+},
+{
 "id": "TOOL-72",
 "status": "proven",
 "name_en": "Power requirements planner",
@@ -17863,12 +17869,6 @@
 "name_ar": "بوابة KOSIF الموحّدة"
 },
 {
-"id": "TOOL-04",
-"status": "proven",
-"name_en": "Capability runtime router",
-"name_ar": "موجّه القدرات التنفيذية"
-},
-{
 "id": "TOOL-02",
 "status": "proven",
 "name_en": "Session boot briefing",
@@ -17885,12 +17885,6 @@
 "status": "proven",
 "name_en": "FusionForge v2 project-scoped composite workflow recipes",
 "name_ar": "FusionForge v2 لوصفات الـWorkflow المركبة داخل المشروع"
-},
-{
-"id": "TOOL-183",
-"status": "proven",
-"name_en": "Black Dragon Media — real opt-in media pipeline",
-"name_ar": "ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن"
 },
 {
 "id": "TOOL-08",
@@ -17956,8 +17950,8 @@
 "proof": [
 "kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_capability_miner.py",
 "kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_capability_miner.py",
-"kosif-tool/tests/test_capability_atlas.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/capability_atlas.py"
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_atlas_ledger.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/atlas_ledger.py"
 ],
 "twins": [
 [
@@ -17972,15 +17966,15 @@
 "TOOL-109"
 ]
 ],
-"distinct_methods": 31,
+"distinct_methods": 30,
 "links": [
 {
 "id": "SP-0349",
-"sim": 0.387
+"sim": 0.391
 },
 {
 "id": "SP-0143",
-"sim": 0.297
+"sim": 0.3
 },
 {
 "id": "SP-0027",
@@ -17988,7 +17982,7 @@
 },
 {
 "id": "SP-0146",
-"sim": 0.194
+"sim": 0.196
 }
 ]
 },
@@ -18186,15 +18180,15 @@
 "rendering",
 "svg"
 ],
-"size": 19,
+"size": 20,
 "best": "proven",
 "status_mix": {
-"proven": 17,
+"proven": 18,
 "install": 2
 },
-"ready_now": 17,
+"ready_now": 18,
 "families": {
-"runnable-tools": 19
+"runnable-tools": 20
 },
 "atlas_folded": 0,
 "requires": [
@@ -18233,16 +18227,16 @@
 "name_ar": "محرك حركة SVG"
 },
 {
-"id": "TOOL-77",
-"status": "proven",
-"name_en": "Flexible aspect ratio resolver",
-"name_ar": "محلّل نِسَب أبعاد الفيديو"
-},
-{
 "id": "TOOL-15",
 "status": "proven",
 "name_en": "Motion Starter Kit timing bridge",
 "name_ar": "جسر توقيتات Motion Starter Kit"
+},
+{
+"id": "TOOL-77",
+"status": "proven",
+"name_en": "Flexible aspect ratio resolver",
+"name_ar": "محلّل نِسَب أبعاد الفيديو"
 },
 {
 "id": "TOOL-79",
@@ -18281,22 +18275,28 @@
 "name_ar": "مولّد مشاريع بداية لمحركات الحركة"
 },
 {
-"id": "TOOL-18",
-"status": "proven",
-"name_en": "Motion math toolkit",
-"name_ar": "مكتبة رياضيات الحركة"
-},
-{
 "id": "TOOL-64",
 "status": "proven",
 "name_en": "Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score",
 "name_ar": "رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب"
 },
 {
+"id": "TOOL-18",
+"status": "proven",
+"name_en": "Motion math toolkit",
+"name_ar": "مكتبة رياضيات الحركة"
+},
+{
 "id": "TOOL-146",
 "status": "proven",
 "name_en": "Seekable particles: closed-form bursts, budget check and SVG frame",
 "name_ar": "جسيمات قابلة للقفز: انفجار بصيغة مغلقة وفحص الميزانية وإطار SVG"
+},
+{
+"id": "TOOL-183",
+"status": "proven",
+"name_en": "KOSIF Shadow Theatre silhouette film engine",
+"name_ar": "محرك أفلام مسرح الظل"
 },
 {
 "id": "TOOL-171",
@@ -18343,23 +18343,23 @@
 "TOOL-82"
 ]
 ],
-"distinct_methods": 16,
+"distinct_methods": 17,
 "links": [
 {
 "id": "SP-0264",
-"sim": 0.267
-},
-{
-"id": "SP-0147",
-"sim": 0.225
-},
-{
-"id": "SP-0270",
-"sim": 0.204
+"sim": 0.257
 },
 {
 "id": "SP-0268",
-"sim": 0.201
+"sim": 0.232
+},
+{
+"id": "SP-0147",
+"sim": 0.22
+},
+{
+"id": "SP-0270",
+"sim": 0.202
 }
 ]
 },
@@ -18652,7 +18652,7 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.297
+"sim": 0.3
 },
 {
 "id": "SP-0295",
@@ -19644,7 +19644,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.134
+"sim": 0.136
 }
 ]
 },
@@ -20021,7 +20021,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.123
+"sim": 0.122
 }
 ]
 },
@@ -24261,7 +24261,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.078
+"sim": 0.069
 }
 ]
 },
@@ -28015,7 +28015,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.05
+"sim": 0.049
 }
 ]
 },
@@ -28932,7 +28932,7 @@
 },
 {
 "id": "SP-0139",
-"sim": 0.068
+"sim": 0.069
 }
 ]
 },
@@ -33468,7 +33468,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.138
+"sim": 0.136
 }
 ]
 },
@@ -34250,7 +34250,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.091
+"sim": 0.098
 },
 {
 "id": "SP-0265",
@@ -34470,7 +34470,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.267
+"sim": 0.257
 },
 {
 "id": "SP-0273",
@@ -35281,6 +35281,10 @@
 "distinct_methods": 19,
 "links": [
 {
+"id": "SP-0141",
+"sim": 0.232
+},
+{
 "id": "SP-0142",
 "sim": 0.221
 },
@@ -35291,10 +35295,6 @@
 {
 "id": "SP-0305",
 "sim": 0.206
-},
-{
-"id": "SP-0141",
-"sim": 0.201
 }
 ]
 },
@@ -35662,7 +35662,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.204
+"sim": 0.202
 },
 {
 "id": "SP-0011",
@@ -35985,7 +35985,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.149
+"sim": 0.148
 }
 ]
 },
@@ -36591,7 +36591,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.126
+"sim": 0.123
 }
 ]
 },
@@ -36871,7 +36871,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.113
+"sim": 0.114
 }
 ]
 },
@@ -37020,7 +37020,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.066
+"sim": 0.064
 }
 ]
 },
@@ -37281,7 +37281,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.13
+"sim": 0.126
 }
 ]
 },
@@ -37775,7 +37775,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.086
+"sim": 0.085
 }
 ]
 },
@@ -37996,7 +37996,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.095
+"sim": 0.093
 }
 ]
 },
@@ -38581,7 +38581,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.063
+"sim": 0.062
 }
 ]
 },
@@ -39088,8 +39088,8 @@
 "sim": 0.072
 },
 {
-"id": "SP-0141",
-"sim": 0.029
+"id": "SP-0160",
+"sim": 0.028
 }
 ]
 },
@@ -39356,7 +39356,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.128
+"sim": 0.125
 },
 {
 "id": "SP-0274",
@@ -40021,7 +40021,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.166
+"sim": 0.163
 },
 {
 "id": "SP-0347",
@@ -40263,7 +40263,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.068
+"sim": 0.066
 }
 ]
 },
@@ -45808,7 +45808,7 @@
 "links": [
 {
 "id": "SP-0139",
-"sim": 0.387
+"sim": 0.391
 },
 {
 "id": "SP-0143",
@@ -47980,8 +47980,8 @@
 "sim": 0.137
 },
 {
-"id": "SP-0029",
-"sim": 0.038
+"id": "SP-0141",
+"sim": 0.039
 }
 ]
 },
@@ -49131,7 +49131,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.177
+"sim": 0.175
 }
 ]
 },
@@ -54082,7 +54082,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.112
+"sim": 0.111
 }
 ]
 },
@@ -60172,7 +60172,7 @@
 },
 {
 "id": "SP-0141",
-"sim": 0.035
+"sim": 0.038
 }
 ]
 },

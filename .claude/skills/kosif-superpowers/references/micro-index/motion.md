@@ -447,7 +447,7 @@ chapter: [camera-composition-layout](../powers/camera-composition-layout.md) · 
 
 ## characters-rigs (motion)
 
-chapter: [characters-rigs](../powers/characters-rigs.md) · card: `usip-library/cards/motion/characters-rigs.md` · tools: `character-fullbody` · `character-ik` · `code-drawing-master` · `motion-engine-js` · `motion-toolkit`
+chapter: [characters-rigs](../powers/characters-rigs.md) · card: `usip-library/cards/motion/characters-rigs.md` · tools: `character-fullbody` · `character-ik` · `code-drawing-master` · `motion-engine-js` · `motion-toolkit` · `shadow-theatre`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|

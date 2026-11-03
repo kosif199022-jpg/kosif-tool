@@ -8,7 +8,7 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 
 <!-- hub:area:discover:start -->
 
-**الأدوات / tools (32)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
+**الأدوات / tools (31)** — `python3 scripts/hub.py tool <id>` for every command, requirement and limit:
 
 | tool | what it does | start with | evidence |
 |---|---|---|---|
@@ -43,7 +43,6 @@ Commands below are typed from the skill folder (`.claude/skills/kosif-superpower
 | `superskills-bridge` | Read-only lookup over data/100-superskills-index.json (the 114-skill index added with PR #153): doctor reports how many SKILL.md files are present, list, find, show and path print entries with their category and vendored path. skill_loader.py need uses the same index. For ranking, install, hash checks and the skills' own tests use superskills. | `python3 scripts/superskills_bridge.py doctor` | tested-here |
 | `superskills` | Holds the owner's repository kosif199022-jpg/100-superskills inside Superpowers: all 114 skill folders (110 catalogued super skills plus kosif-one, kosif-social, kosif-mimic and kosif-montage-motion, 682 files with 143 scripts) copied into vendor/100-superskills with a SHA-256 manifest. It finds the right super skill for a request in Arabic or English, shows its method, scripts, tests and sources, installs one into ~/.claude/skills, verifies every file against its hash and runs the skills' own unit tests in a temporary copy. hub.py find lists the matching super skills too. | `python3 scripts/superskills.py find "نموذج مالي في إكسل"` | tested-here |
 | `black-dragon` | Plans EVERY registered skill, catalog power and tool, with relevance-ranked roles, exact inventory and explicit dependency-aware concurrent execution. Produces audit receipts and reports unexecuted items truthfully. | `python3 scripts/black_dragon.py inventory` | untested |
-| `black-dragon-media` | Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes. | `python3 scripts/black_dragon_media.py doctor` | tested-here |
 
 <!-- hub:area:discover:end -->
 

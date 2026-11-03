@@ -3382,18 +3382,18 @@
 "verify": 4,
 "plan": 3,
 "create": 2,
-"assemble": 2
+"assemble": 1
 },
-"size": 36,
+"size": 35,
 "best": "proven",
-"ready_now": 36,
+"ready_now": 35,
 "links": [
 "SP-0349",
 "SP-0143",
 "SP-0027",
 "SP-0146"
 ],
-"text": "atlas metadata capability miner منقّب قدرات الأطلس من البيانات الوصفية atlas-capability-miner atlas kosif capabilities provenance discover capability atlas search and planner أطلس القدرات للبحث والتخطيط capability-atlas capability atlas catalog search task planning capability id requirements check index freshness bilingual search أطلس القدرات بحث في الكتالوج تخطيط المهمة معرّف القدرة فحص المتطلبات فهرس atlas ledger: one status for every atlas skill سجل الأطلس: حالة واحدة لكل مهارة atlas-ledger atlas ledger atlas review pending skills transferred skipped excluded duplicate سجل الأطلس مراجعة الأطلس اتنقلت اتسابت مهارات معلقة kosif style atlas cli أداة سطر أوامر لأطلس أنماط kosif repo-kosif style atlas catalog search scaffold prompt generator motion graphics styles style.json brief.md أطلس الأنماط أنماط الموشن استايل بحث في الفهرس تجهيز مشروع طلب claude code إحصاءات الفهرس atlas-5000 coverage map خريطة تغطية أطلس الـ5000 مهارة atlas-5000 atlas 5000 5000 skills skill atlas coverage gaps learnable skills أطلس الـ5000 أطلس المهارات تغطية فجوات مهارات يمكن تعلمها atlas external skill search بحث مهارات أطلس الخارجية atlas-external-bridge atlas skill index third-party skills copyleft license scope risk flags blender skill.md skill search أطلس المهارات مهارات خارجية ترخيص علامات الخطر فهرس المهارات atlas skill-body static audit مراجعة ساكنة لنصوص مهارات الأطلس atlas-body-audit atlas skill audit static review skill.md risk indicators prompt injection مراجعة الأطلس فحص المهارات مؤشرات خطر local-first no-clone entry مدخل محلي بلا استنساخ local-first offline no clone doctor auto mode style atlas catalog search standalone skill بدون استنساخ محلي بلا شبكة فحص المهارة أطلس الأساليب atlas metadata audit تدقيق بيانات أطلس الوصفية atlas-metadata-audit atlas audit metadata audit index validation structural errors license labels verdicts copyleft source urls تدقيق فحص الفهرس أطلس المهارات بيانات وصفية أخطاء بنيوية تراخيص atlas audit to reviewed manifest تحويل مراجعة الأطلس إلى بيان مُراجَع atlas-audit-synthesis atlas reviewed manifest audit synthesis rea metadata only بيان المراجعة تلخيص المراجعة الأطلس offline bilingual capability finder باحث القدرات ثنائي اللغة بلا اتصال ai-tool-discovery capability finder offline ranking idf bilingual catalog discovery local index باحث القدرات ترتيب اكتشاف بدون إنترنت فهرس محلي عربي وإنجليزي futurepedia ai style atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وم"
+"text": "atlas metadata capability miner منقّب قدرات الأطلس من البيانات الوصفية atlas-capability-miner atlas kosif capabilities provenance discover atlas ledger: one status for every atlas skill سجل الأطلس: حالة واحدة لكل مهارة atlas-ledger atlas ledger atlas review pending skills transferred skipped excluded duplicate سجل الأطلس مراجعة الأطلس اتنقلت اتسابت مهارات معلقة capability atlas search and planner أطلس القدرات للبحث والتخطيط capability-atlas capability atlas catalog search task planning capability id requirements check index freshness bilingual search أطلس القدرات بحث في الكتالوج تخطيط المهمة معرّف القدرة فحص المتطلبات فهرس kosif style atlas cli أداة سطر أوامر لأطلس أنماط kosif repo-kosif style atlas catalog search scaffold prompt generator motion graphics styles style.json brief.md أطلس الأنماط أنماط الموشن استايل بحث في الفهرس تجهيز مشروع طلب claude code إحصاءات الفهرس atlas-5000 coverage map خريطة تغطية أطلس الـ5000 مهارة atlas-5000 atlas 5000 5000 skills skill atlas coverage gaps learnable skills أطلس الـ5000 أطلس المهارات تغطية فجوات مهارات يمكن تعلمها atlas external skill search بحث مهارات أطلس الخارجية atlas-external-bridge atlas skill index third-party skills copyleft license scope risk flags blender skill.md skill search أطلس المهارات مهارات خارجية ترخيص علامات الخطر فهرس المهارات atlas skill-body static audit مراجعة ساكنة لنصوص مهارات الأطلس atlas-body-audit atlas skill audit static review skill.md risk indicators prompt injection مراجعة الأطلس فحص المهارات مؤشرات خطر local-first no-clone entry مدخل محلي بلا استنساخ local-first offline no clone doctor auto mode style atlas catalog search standalone skill بدون استنساخ محلي بلا شبكة فحص المهارة أطلس الأساليب atlas metadata audit تدقيق بيانات أطلس الوصفية atlas-metadata-audit atlas audit metadata audit index validation structural errors license labels verdicts copyleft source urls تدقيق فحص الفهرس أطلس المهارات بيانات وصفية أخطاء بنيوية تراخيص atlas audit to reviewed manifest تحويل مراجعة الأطلس إلى بيان مُراجَع atlas-audit-synthesis atlas reviewed manifest audit synthesis rea metadata only بيان المراجعة تلخيص المراجعة الأطلس offline bilingual capability finder باحث القدرات ثنائي اللغة بلا اتصال ai-tool-discovery capability finder offline ranking idf bilingual catalog discovery local index باحث القدرات ترتيب اكتشاف بدون إنترنت فهرس محلي عربي وإنجليزي futurepedia ai style atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وم"
 },
 "SP-0140": {
 "id": "SP-0140",
@@ -3429,22 +3429,22 @@
 "stage": "assemble",
 "stages": {
 "create": 5,
-"assemble": 7,
-"deliver": 2,
+"assemble": 8,
 "refine": 1,
+"deliver": 2,
 "verify": 2,
 "plan": 2
 },
-"size": 19,
+"size": 20,
 "best": "proven",
-"ready_now": 17,
+"ready_now": 18,
 "links": [
 "SP-0264",
+"SP-0268",
 "SP-0147",
-"SP-0270",
-"SP-0268"
+"SP-0270"
 ],
-"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي html to mp4 renderer محوّل html إلى فيديو mp4 render-html render to mp4 html to video رندر تصدير فيديو playwright chromium ffmpeg ffprobe verify virtual time seek(t) contact sheet معاينة aspect ratio 9:16 reel deterministic render دمج الصوت stills لقطات ثابتة audio md5 audio_md5 byte-identical audio بصمة الصوت doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع motion starter kit timing bridge جسر توقيتات motion starter kit motion-kit-bridge motion starter kit words.json word timing storyboard doodle whiteboard plotter infographic arabic captions توقيت الكلمات لوحة قصة رسم يدوي سبورة تزامن صوتي video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي deterministic html-to-mp4 renderer محوّل حتمي من html إلى فيديو mp4 repo-render-html html to mp4 render headless chromium playwright virtual time seek contact sheet ffmpeg رندر تحويل html إلى فيديو معاينة إطارات دمج الصوت فيديو حتمي موشن جرافيك disk space مساحة القرص kosif-frames unable to capture screenshot clean-stale stills still frames frame at time grid لقطات ثابتة لقطة عند ثانية audio md5 audio_md5 packet md5 byte-identical audio بصمة الصوت -shortest report json video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame coun"
+"text": "audio-timed svg motion compiler مُصرِّف حركة svg المتزامنة مع الصوت motion-director motion graphics svg animation word timing captions draw-on camera zoom morph seekable html render mp4 موشن جرافيك رسم بالكود تزامن الكلمات نصوص مصاحبة متزامنة تحريك svg فيديو عربي html to mp4 renderer محوّل html إلى فيديو mp4 render-html render to mp4 html to video رندر تصدير فيديو playwright chromium ffmpeg ffprobe verify virtual time seek(t) contact sheet معاينة aspect ratio 9:16 reel deterministic render دمج الصوت stills لقطات ثابتة audio md5 audio_md5 byte-identical audio بصمة الصوت doodle film runtime and renderer إنشاء فيلم سبورة مرسوم وتصييره motion-runtime whiteboard doodle hand-drawn svg film seek render preview png mp4 engine map سبورة بيضاء رسم يدوي فيلم svg معاينة تصيير فيديو طولي svg motion engine runtime محرك حركة svg motion-engine-js svg animation whiteboard سبورة بيضاء draw-on رسم بالقلم stroke dashoffset stick figure character rig شخصية متحركة morph camera zoom word captions ترجمة عربية seek(t) deterministic motion engine motion starter kit timing bridge جسر توقيتات motion starter kit motion-kit-bridge motion starter kit words.json word timing storyboard doodle whiteboard plotter infographic arabic captions توقيت الكلمات لوحة قصة رسم يدوي سبورة تزامن صوتي flexible aspect ratio resolver محلّل نِسَب أبعاد الفيديو aspects aspect ratio resolution 9:16 16:9 21:9 2.39:1 reel cinema even dimensions h.264 نسبة الأبعاد مقاس الفيديو دقة طولي عرضي مربع video delivery gate بوابة فحص تسليم الفيديو verify-video verify video delivery check ffprobe loudness lufs true peak aspect ratio frame rate duration qa فحص الفيديو بوابة التسليم جهارة الصوت نسبة الأبعاد معدل الإطارات ضبط الجودة flexible aspect ratio resolver محلّل نسب العرض المرن repo-aspects aspect ratio resolution 9:16 2.35:1 pixel size even dimensions platform presets نسبة العرض المقاس الدقة أبعاد الفيديو ريلز مربع سينمائي deterministic html-to-mp4 renderer محوّل حتمي من html إلى فيديو mp4 repo-render-html html to mp4 render headless chromium playwright virtual time seek contact sheet ffmpeg رندر تحويل html إلى فيديو معاينة إطارات دمج الصوت فيديو حتمي موشن جرافيك disk space مساحة القرص kosif-frames unable to capture screenshot clean-stale stills still frames frame at time grid لقطات ثابتة لقطة عند ثانية audio md5 audio_md5 packet md5 byte-identical audio بصمة الصوت -shortest report json video delivery gate بوابة فحص تسليم الفيديو repo-verify-video verify video delivery gate ffprobe loudness lufs true peak frame coun"
 },
 "SP-0142": {
 "id": "SP-0142",
@@ -6375,10 +6375,10 @@
 "best": "proven",
 "ready_now": 9,
 "links": [
+"SP-0141",
 "SP-0142",
 "SP-0350",
-"SP-0305",
-"SP-0141"
+"SP-0305"
 ],
 "text": "kosif motion web local studio server استوديو kosif motion web المحلي موقع محلي واجهة عربية خصوصية الملفات local server starlette local studio web app + mcp server تطبيق الاستوديو المحلي وخادم mcp استوديو محلي واجهة ويب مهام التصيير mcp server render jobs svg importer (shapes, css, transforms, gradients, arabic text) مستورد svg رسم تدريجي استيراد رسمة تدرج لوني svg parser drawing steps procedural svg illustration from python رسم svg إجرائي ببايثون رسم بالكود رسم توضيحي متجهات vector art generative kosif omni mcp server (65 tools) خادم mcp لكوسيف أومني ربط الأدوات خادم أدوات مساعد ذكي mcp openapi chatgpt actions svg import as paint steps استيراد svg كخطوات رسم رسم متجهي فيكتور رسومات الذكاء الاصطناعي vector graphics svg import run any ai drawing code in painter order تشغيل كود الرسم من أي ذكاء اصطناعي كود رسم تنفيذ الكود رسم تدريجي drawing code paint jobs writable home for projects (kosif_motion_home) مجلد العمل القابل للكتابة مجلد الحفظ مسار المشاريع صلاحيات الكتابة output folder read-only kosif: kmotion one-command toolbox كوسف: أداة kmotion الموحدة أدوات المونتاج تفريغ الكلام إزالة الترجمة beats transcribe local kosif motion web studio الاستوديو المحلي واجهة عربية استوديو محلي لوحة تحكم arabic ui local site kosif motion web local studio استوديو الويب المحلي واجهة محلية موقع محلي إدارة المشاريع local studio web ui kosif-web mcp mcp الاستوديو ربط claude تحكم آلي أدوات الاستوديو mcp server automation pixel-by-pixel painting window (kosif studio) نافذة الرسم بيكسلاً ببيكسل رسم تدريجي فرشاة نافذة رسم painting app tkinter studio animation menu bridging to kosif motion قائمة الأنيميشن في الاستوديو قائمة الأنيميشن ريلز تفريغ صوتي إزالة الترجمة auto reel transcription kosif motion kit on hyperframes (delta) عدة kosif motion فوق hyperframes عدة الحركة سطر الأوامر موشن جرافيك motion cli toolkit any-ai code runner (svg / scene / pil / matplotlib / turtle / html / image code) مشغّل كود أي ذكاء اصطناعي تشغيل الكود كود رسم لصق كود run code code to image kosif picture program (step/ops vector renderer) برنامج الصورة: خطوات وعمليات متجهة رسم متجه لوحة رسم بالكود vector drawing high res svg render(t) template with seg/fadewin/mix helpers قالب svg حتمي بدوال مساعدة رسوم متجهة متحركة تلاشي مزج الألوان svg animation easing kosif motion route (target) مسار kosif motion كاريوكي مزامنة الكلمات تحليل الصوت audio2motion karaoke captions word sync renderer ladder svg -> canvas -> webgl سلم المصيّرات svg ثم canvas ثم webgl رسم بياني جسيمات عناصر كثيرة data viz pixijs particles"
 },
@@ -7094,7 +7094,7 @@
 "SP-0453",
 "SP-0173",
 "SP-0433",
-"SP-0141"
+"SP-0160"
 ],
 "text": "antialiased supersampled shape masks أقنعة أشكال مُنعّمة بالعيّنات الفائقة حواف ناعمة تنعيم الحواف قناع antialiasing jagged edges webgl renderer with tone curves مُصيّر webgl مع منحنيات الإضاءة إضاءة المشهد ظلال تصوير منتجات tone mapping aces exposure ssao / ssr / outline / fxaa / smaa nodes إطباق محيطي وانعكاسات وحدود ظلال تنعيم الحواف حدود العناصر antialiasing ambient occlusion reflections"
 },
@@ -8629,7 +8629,7 @@
 "SP-0318",
 "SP-0467",
 "SP-0340",
-"SP-0029"
+"SP-0141"
 ],
 "text": "rgb-split glitch word on the beat كلمة غليتش rgb على النوتات غليتش كلمة glitch text rgb beat datamosh decrypt على الإيقاع تشويش نص ضربة beat sync rgb split integer-grid motion & animating on twos حركة على شبكة صحيحة والرسم على الاثنين على الاثنين on twos stop motion integer stepped cutout ستوب موشن حركة متقطعة قص ورق 12 fps paper cutout locked kinetic themes: brutalist acid · retro 70s · paper craft · y2k chrome ثيمات التايب الحركي المقفلة (j، k، n، q) ثيم ريترو y2k 70s brutalist paper craft style lock تايب حركي لوك ثابت كروم kinetic type flow prompts dom glitch stutter (motion-kit) تقطيع رقمي قصير للعناصر غليتش glitch rgb split stutter motion-kit تشويش ارتجاف إزاحة ألوان html element glitch effect analysis-keyed 3d glitch pass تمريرة غليتش ثلاثية الأبعاد غليتش shader glitch pass three.js datamosh freeze ثلاثي الأبعاد توقف الزمن فصل لوني chroma split 3d glitch oscilloscope phosphor trace أثر الأوسيلوسكوب الفوسفوري أوسيلوسكوب oscilloscope phosphor waveform crt موجة راسم الإشارة تفاعل مع الصوت audio reactive scope synthwave / retrowave سينث ويف / ريترو ويف سينث ويف synthwave retrowave 80s neon grid chrome الثمانينات نيون شبكة نيون three.js title intro memories on film strips الذكريات على شرائط الفيلم شريط فيلم ذكريات film strip memory biography nostalgia صور قديمة سيرة ذاتية حنين photo montage old photos"
 },
@@ -13417,21 +13417,21 @@
 ]
 },
 {
+"a": "SP-0139",
+"b": "SP-0349",
+"sim": 0.391,
+"hubs": [
+"agents",
+"misc"
+]
+},
+{
 "a": "SP-0272",
 "b": "SP-0370",
 "sim": 0.389,
 "hubs": [
 "3d",
 "quality"
-]
-},
-{
-"a": "SP-0139",
-"b": "SP-0349",
-"sim": 0.387,
-"hubs": [
-"agents",
-"misc"
 ]
 },
 {

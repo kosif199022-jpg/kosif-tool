@@ -75,14 +75,14 @@
 - **ابدأ / start:** `python3 scripts/hub.py doctor` · خطة التثبيت: `python3 scripts/kosif_hubs.py install agents`
 - **السكربتات / scripts:** `scripts/skill_intelligence.py` · `scripts/hub.py` · `scripts/probe_env.py` · `scripts/superpowers_unified.py` · `scripts/capability_runtime_router.py`
 - **العائلات / families:** [agent-orchestration](powers/agent-orchestration.md) · [runnable-tools](powers/runnable-tools.md) · [self-discovery](powers/self-discovery.md)
-- **المستلزمات / needs:** `python3` · `ffmpeg` · `chromium` · `blender` · `node` · `pip:pillow` · `claude:tools` · `npm:rea` · `key:unspecified` · `pip:numpy` · `pip:opencv` · `engine:ghidra` · `git` · `npm:remotion`
+- **المستلزمات / needs:** `python3` · `ffmpeg` · `chromium` · `blender` · `pip:pillow` · `node` · `claude:tools` · `npm:rea` · `key:unspecified` · `pip:numpy` · `pip:opencv` · `engine:ghidra` · `git` · `npm:remotion`
 - **يتصل بـ / links:** [thinking](#hub-thinking) · [software](#hub-software) · [quality](#hub-quality) · [3d](#hub-3d)
 
 | القدرة الخارقة | حجم | أفضل | جاهز |
 |---|---|---|---|
-| SP-0139 منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 36 | ✅ | 36 |
+| SP-0139 منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | 35 | ✅ | 35 |
 | SP-0140 فاحص توقيت الفيديو المرجعي · Reference Video Timing Probe | 20 | ✅ | 20 |
-| SP-0141 مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 19 | ✅ | 17 |
+| SP-0141 مُصرِّف حركة SVG المتزامنة مع الصوت · Audio-timed SVG motion compiler | 20 | ✅ | 18 |
 | SP-0142 دراسة الرسم التدريجي والظل الأصلي · Staged drawing and original three-value visual studies | 16 | ✅ | 16 |
 | SP-0144 لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب · Free footage: open-licence video sources with search, download and credits | 14 | ✅ | 13 |
 | SP-0022 خطوط عربية قبل الرندر · Arabic font probe | 14 | ✅ | 12 |

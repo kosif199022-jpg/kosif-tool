@@ -15,6 +15,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Python packages for the shadow-theatre renderer tests
+        run: python3 -m pip install --quiet numpy pillow
       - name: Validate catalog and files
         run: python3 tools/validate.py
       - name: Derived files are up to date

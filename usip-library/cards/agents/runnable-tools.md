@@ -104,7 +104,7 @@
 - [`TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي](#tool-180--مخرج-سينما-برو--تشغيل-منسّق-للمونتاج-مع-تحقق-حقيقي--cinema-pro-conductor--single-entry-montage-with-evidence-gated-delivery)
 - [`TOOL-181` التنين الأسود — العقل المنسق لكل القدرات](#tool-181--التنين-الأسود--العقل-المنسق-لكل-القدرات--black-dragon--all-capability-cognitive-orchestrator)
 - [`TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM)](#tool-182--معاينة-الأغنية-الرسمية-بديل-الـdrm--official-song-preview-drm-fallback)
-- [`TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن](#tool-183--ميديا-التنين-الأسود--تشغيل-حقيقي-للصوت-والفيديو-بإذن--black-dragon-media--real-opt-in-media-pipeline)
+- [`TOOL-183` محرك أفلام مسرح الظل](#tool-183--محرك-أفلام-مسرح-الظل--kosif-shadow-theatre-silhouette-film-engine)
 - [`TOOL-19` تصيير لقطات B-roll بحركة كاميرا](#tool-19--تصيير-لقطات-b-roll-بحركة-كاميرا--cinematic-b-roll-renderer)
 - [`TOOL-20` مُخطِّط قطعات اللقطات الحقيقية](#tool-20--مُخطِّط-قطعات-اللقطات-الحقيقية--footage-first-cut-planner)
 - [`TOOL-21` فاحص توقيت الفيديو المرجعي](#tool-21--فاحص-توقيت-الفيديو-المرجعي--reference-video-timing-probe)
@@ -7132,7 +7132,7 @@
 - `TOOL-18` مكتبة رياضيات الحركة / Motion math toolkit (proven)
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
-- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
+- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 
 ### `TOOL-182` — معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback)
 
@@ -7202,10 +7202,10 @@
 
 - `TOOL-180` مخرج سينما برو — تشغيل منسّق للمونتاج مع تحقق حقيقي / Cinema Pro Conductor — single-entry montage with evidence-gated delivery (ready)
 - `TOOL-181` التنين الأسود — العقل المنسق لكل القدرات / Black Dragon — All-Capability Cognitive Orchestrator (ready)
-- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
+- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 
-### `TOOL-183` — ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline
+### `TOOL-183` — محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine
 
 | الحقل | القيمة |
 |---|---|
@@ -7217,17 +7217,17 @@
 | نطاق الدليل | `repo` |
 | الرخصة | غير مذكورة في السجل: تُؤكَّد من المصدر قبل التسليم |
 
-**ما هي:** يشغّل المونتاج برو ومحلل الصوت ومحرك الإيقاع ومعمل السينما على ملف صوت أو فيديو حقيقي جوه out/black-dragon-media، ويحسب بصمة كل ناتج، وverify يراجع البصمات. — Runs montage_pro intake, audio_cue_mapper, music_rhythm_engine and cinema_lab on one real audio/video file inside out/black-dragon-media/<job>, then hashes every output; verify re-checks the hashes.
+**ما هي:** موشن جرافيك بأسلوب مسرح الظل: أجسام سودا بمفاصل بتتجمع وتعمل شجرة أو مركب، وظل بيكبر ويغبش لما يقرب من اللمبة، وفتحات ضوء وسبوت لايت فوق سما متدرجة؛ بيحلل فيديو مرجعي (القطعات والألوان ونسبة الظل)، وبيراجع قواعد المشهد، وبيطلع صور ثابتة وفيديو MP4 بمعيار التصدير مع موسيقى أصلية. — Shadow-theatre / silhouette motion graphics: articulated black bodies that join into trees and boats, depth toward the lamp (bigger, softer shadow), iris and spotlight transitions over projected gradient skies; analyses a reference act (cuts, palette, silhouette share), checks the scene grammar, renders stills and an export-standard MP4 with an original synth score.
 
-**متى:** شغّل التنين الأسود على الفيديو بتاعي فعلًا / Run the Black Dragon media pipeline on a real clip with evidence
+**متى:** اعمل مشاهد بالظلال زي فقرة مسرح الظل / Make a silhouette shadow-theatre film where bodies form a tree and a boat
 
-**كيف:** doctor: `python3 scripts/black_dragon_media.py doctor`; run: `python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute --stabilize --reframe`; verify: `python3 scripts/black_dragon_media.py verify --job-name my-film`. Full card: `python3 scripts/hub.py tool black-dragon-media`. Limits: Only the bundled media tools run; hashes prove the files exist, not their creative quality.
+**كيف:** doctor: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py doctor`; analyze: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py analyze <reference.mp4> --out out/shadow/ref`; check: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py check .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json`; stills: `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py stills .claude/skills/kosif-shadow-theatre/scenes/lantern-keeper.json --out out/shadow/stills --times 3,9.5,18`. Full card: `python3 scripts/hub.py tool shadow-theatre`. Limits: Bodies are procedural capsules, not hand-cut puppets; body-builds need stills review to read clearly; no lip-sync or text; a 22 s 1080x1920 film takes about 4 minutes on a 2-core container.
 
-**المعاملات:** in: One audio/video file, a job name and the --execute consent flag. · out: Stage outputs and a hashed report under out/black-dragon-media/<job>.
+**المعاملات:** in: A scene JSON (kosif.shadow-theatre.scene.v1); for analyze, a local video file. · out: PNG stills, an MP4, and for analyze analysis.json + contact.jpg in --out.
 
-**التثبيت:** pip install numpy · needs on PATH: python3, ffmpeg, ffprobe
+**التثبيت:** pip install numpy Pillow · needs on PATH: python3 · optional: ffmpeg, ffprobe
 
-**الوسوم:** black-dragon-media · black dragon media · التنين الأسود · rhythm · stabilize · reframe · evidence
+**الوسوم:** shadow-theatre · shadow theatre · silhouette · مسرح الظل · ظلال · shadow puppet · body build · iris · spotlight · depth · projected backdrop
 
 #### 1. الاستقبال (A25)
 
@@ -7240,6 +7240,7 @@
 
 - `ffmpeg` ← افحص وجوده بأمر واحد قبل كتابة الشارة
 - `pip:numpy` ← python3 -c "import numpy" (اسم الاستيراد قد يختلف عن اسم الحزمة)
+- `pip:pillow` ← python3 -c "import pillow" (اسم الاستيراد قد يختلف عن اسم الحزمة)
 - الوضع 1: شارة «هنا الآن» بعد الفحص، لا ✅ الكتالوج تلقائيًا · الوضع 2: `كتالوج: ✅ · هنا: غير مفحوص` · الوضع 3: بلا شارة ولا معرّف.
 
 #### 3. موضعها في الخطة (A26)
@@ -7265,8 +7266,8 @@
 
 #### 6. الأدلة
 
-- `kosif-tool/tests/test_black_dragon_media.py`
-- `kosif-tool/.claude/skills/kosif-superpowers/scripts/black_dragon_media.py`
+- `kosif-tool/tests/test_shadow_theatre.py`
+- `kosif-tool/.claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py`
 
 #### 7. قدرات قريبة في العائلة
 
@@ -7341,7 +7342,7 @@
 #### 7. قدرات قريبة في العائلة
 
 - `TOOL-182` معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback) (proven)
-- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
+- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-20` مُخطِّط قطعات اللقطات الحقيقية / Footage-First Cut Planner (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 
@@ -7410,7 +7411,7 @@
 
 #### 7. قدرات قريبة في العائلة
 
-- `TOOL-183` ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن / Black Dragon Media — real opt-in media pipeline (proven)
+- `TOOL-183` محرك أفلام مسرح الظل / KOSIF Shadow Theatre silhouette film engine (proven)
 - `TOOL-19` تصيير لقطات B-roll بحركة كاميرا / Cinematic B-roll Renderer (proven)
 - `TOOL-21` فاحص توقيت الفيديو المرجعي / Reference Video Timing Probe (proven)
 - `TOOL-22` محرك إعادة بناء المونتاج المرجعي / Reference Edit Engine (proven)

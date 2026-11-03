@@ -32,7 +32,6 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-127 | ✅ | دمج القدرات في قدرات خارقة مترابطة · Superpower fusion (powers to connected superpowers) → `superpower-fusion` | SP-0139 Atlas metadata capability miner | python3 |
 | TOOL-129 | ✅ | خريطة المجموعات مع القدرات الخارقة والسكربتات وخطط التثبيت · Group map with superpowers, scripts and install plans → `kosif-groups` | SP-0139 Atlas metadata capability miner | node, python3 |
 | TOOL-161 | ✅ | الفهرس الدقيق: سطر لكل قدرة وأداة وقدرة خارقة · Micro index: one line per power, tool and superpower → `micro-index` | SP-0139 Atlas metadata capability miner | python3 |
-| TOOL-183 | ✅ | ميديا التنين الأسود — تشغيل حقيقي للصوت والفيديو بإذن · Black Dragon Media — real opt-in media pipeline → `black-dragon-media` | SP-0139 Atlas metadata capability miner | ffmpeg, pip:numpy |
 | TOOL-34 | ✅ | باني خريطة القدرات المترابطة · Capability Graph Builder → `capability-graph` | SP-0139 Atlas metadata capability miner | node, python3, key:graphify |
 | TOOL-43 | ✅ | بحث مهارات أطلس الخارجية · Atlas external skill search → `atlas-external-bridge` | SP-0139 Atlas metadata capability miner | python3, blender |
 | TOOL-44 | ✅ | تدقيق بيانات أطلس الوصفية · Atlas metadata audit → `atlas-metadata-audit` | SP-0139 Atlas metadata capability miner | python3 |
@@ -81,6 +80,7 @@ chapter: [runnable-tools](../powers/runnable-tools.md) · card: `usip-library/ca
 | TOOL-17 | ✅ | مولّد مشاريع بداية لمحركات الحركة · Third-party motion engine scaffolder → `motion-stack` | SP-0141 Audio-timed SVG motion compiler | python3, npm:three, npm:gsap, npm:remotion … |
 | TOOL-171 | ✅ | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine → `infinite-matrices` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium, npm:rea |
 | TOOL-18 | ✅ | مكتبة رياضيات الحركة · Motion math toolkit → `motion-toolkit` | SP-0141 Audio-timed SVG motion compiler | node, python3 |
+| TOOL-183 | ✅ | محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine → `shadow-theatre` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, pip:numpy, pip:pillow |
 | TOOL-64 | ✅ | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score → `atlas-render` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, python3, chromium |
 | TOOL-77 | ✅ | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver → `aspects` | SP-0141 Audio-timed SVG motion compiler | python3 |
 | TOOL-78 | ✅ | محوّل HTML إلى فيديو MP4 · HTML to MP4 renderer → `render-html` | SP-0141 Audio-timed SVG motion compiler | ffmpeg, node, python3, chromium |

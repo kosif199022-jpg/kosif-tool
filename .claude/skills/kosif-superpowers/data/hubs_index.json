@@ -429,9 +429,9 @@
      "id": "SP-0139",
      "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
      "name_en": "Atlas metadata capability miner",
-     "size": 36,
+     "size": 35,
      "best": "proven",
-     "ready_now": 36
+     "ready_now": 35
     },
     {
      "id": "SP-0140",
@@ -445,9 +445,9 @@
      "id": "SP-0141",
      "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
      "name_en": "Audio-timed SVG motion compiler",
-     "size": 19,
+     "size": 20,
      "best": "proven",
-     "ready_now": 17
+     "ready_now": 18
     },
     {
      "id": "SP-0142",
@@ -536,8 +536,8 @@
     "ffmpeg",
     "chromium",
     "blender",
-    "node",
     "pip:pillow",
+    "node",
     "claude:tools",
     "npm:rea",
     "key:unspecified",
