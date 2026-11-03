@@ -306,10 +306,10 @@ class RealExecutionTests(unittest.TestCase):
             target = root / "unreviewed.py"
             side_effect = root / "would_have_executed.txt"
             target.write_text(
-                "import argparse\\n"
-                "from pathlib import Path\\n"
-                f"Path({str(side_effect)!r}).write_text('unsafe')\\n"
-                "argparse.ArgumentParser().parse_args()\\n",
+                "import argparse\n"
+                "from pathlib import Path\n"
+                f"Path({str(side_effect)!r}).write_text('unsafe')\n"
+                "argparse.ArgumentParser().parse_args()\n",
                 encoding="utf-8",
             )
             record = {"id": "unreviewed", "kind": "cli", "root": "repo",
