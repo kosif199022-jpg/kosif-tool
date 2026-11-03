@@ -116,7 +116,9 @@ ALIASES = {"زخرفة": "ornament", "هندسي": "geometry", "خط": "calligra
            "زجاج": "glass", "معدن": "metal", "ذهب": "gold", "فضة": "silver", "رمل": "sand", "جليد": "ice",
            "دخان": "smoke", "بكسل": "pixel", "قديم": "vintage retro", "ريترو": "retro", "ألوان مائية": "watercolor",
            "حبر": "ink", "سبورة": "whiteboard chalkboard", "طباشير": "chalk", "بوب": "pop", "صلصال": "clay",
-           "مانغا": "manga", "أنمي": "anime kawaii", "فضاء": "space cosmic", "نجوم": "star", "ليل": "night"}
+           "مانغا": "manga", "أنمي": "anime kawaii", "فضاء": "space cosmic", "نجوم": "star", "ليل": "night",
+           "مونتاج": "film collage cut", "فيديو": "film motion", "ريلز": "film motion", "انميشن": "motion animation",
+           "أنميشن": "motion animation", "موشن": "motion", "تحريك": "motion animation", "إعلان": "poster advert"}
 
 
 def _norm(text):

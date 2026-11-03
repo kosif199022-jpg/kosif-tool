@@ -11,6 +11,8 @@ Evidence tiers, never mixed up in the report:
   probed    - a read-only tool answered `--help` here (opt-in --probe-tools)
   executed  - a reviewed adapter ran on the task, wrote a nonempty artifact and
               a SHA-256 receipt (opt-in --adapters FILE --execute-adapters)
+  validated - separate tier: the card passed structural checks with a receipt in
+              validation.jsonl (opt-in --validate-cards); never counted as executed
 Bounded parallel dispatch. No shell strings, payments, uploads or installs.
 """
 from __future__ import annotations
@@ -27,6 +29,7 @@ import _cinema_all_skills as audit
 import _black_dragon_brain as brain
 import _black_dragon_pro_max as pro_max
 import _black_dragon_skill_links as skill_links
+import _black_dragon_validate as card_validate
 
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v2"
@@ -210,12 +213,73 @@ def _safe_job(job: Path) -> Path:
         raise ValueError("Job already has an immutable inventory; use a new folder")
     return result
 
+# Why an entry has no adapter. Only "tool" entries are programs; every other kind is a written
+# method, rule, style or guide that is applied while planning (briefs.jsonl), never "executed".
+BLOCKED_WHY = {
+    "method_description": "method description, not a program (applied in the plan, never counted as executed)",
+    "tool_without_adapter": "a program with no reviewed adapter yet (candidate for a new adapter)",
+    "skill_program_without_adapter": "a skill that ships a Python CLI with no reviewed adapter yet (candidate)",
+    "method_applied": "a method card applied to the task by a generic applier (its own tier: a written procedure, not the card's program run)",
+}
+
+# Skills that ship a program which was tried and cannot earn a receipt in this environment yet.
+_VENDOR = "skill:kosif-superpowers/vendor/100-superskills/skills/"
+SKILL_PROGRAM_BLOCKERS = {
+    _VENDOR + "davinci-resolve-pipeline": "needs the DaVinci Resolve app and its scripting API (not installable here)",
+}
+
+
+# Programs that were tried and cannot earn a receipt in this environment; the reason goes into the report.
+TOOL_BLOCKERS = {
+    "tool:rea-owned-repo-batch": "clones the owner's repositories over the network with the rea-agents CLI into private output",
+    "tool:rebalance-creative-repos": "changes the owner's GitHub repositories through gh and the network",
+    "tool:repo-ashell-cinema": "an a-Shell script for the iPhone that downloads YouTube videos (needs the phone and the network)",
+}
+
+
+def _skill_has_cli(source: str | None) -> bool:
+    """True when a skill folder (not the big kosif-superpowers root) ships an argparse Python script."""
+    if not source:
+        return False
+    root = (audit.SKILL.parent / source).parent
+    if root == audit.SKILL or not root.is_dir():
+        return False
+    for path in root.rglob("*.py"):
+        if "node_modules" in path.parts or path.name.startswith("test"):
+            continue
+        try:
+            if "argparse" in path.read_text(encoding="utf-8", errors="replace"):
+                return True
+        except OSError:
+            continue
+    return False
+
+
+def _why_blocked(kind: str | None, source: str | None = None) -> str:
+    if kind == "tool":
+        return "tool_without_adapter"
+    if kind == "skill" and _skill_has_cli(source):
+        return "skill_program_without_adapter"
+    return "method_description"
+
+
+# Generic method appliers write a task-specific procedure for a knowledge card. That is real work with a
+# receipt, but it is not the card's own program running, so it is its own tier ("applied"): the ledger
+# keeps such entries out of "executed" and out of full_coverage.
+METHOD_APPLIER_SCRIPTS = (".claude/skills/kosif-dragon-mind/scripts/card_apply.py",)
+
+
+def _is_method_applier(spec: dict) -> bool:
+    script = str(spec.get("script", "")).replace("\\", "/")
+    return bool(spec.get("method_applier")) or any(script.endswith(s) for s in METHOD_APPLIER_SCRIPTS)
+
+
 def _attempt(key: str, spec: dict | None, task: str, job: Path,
-             approved: bool, timeout: int, kind: str = "tool") -> dict:
+             approved: bool, timeout: int, kind: str = "tool", media: str = "") -> dict:
     if spec is None:
         reason = ("Tool has no reviewed executable adapter" if kind == "tool"
                   else "Knowledge-only catalog entry; no standalone executable adapter")
-        return {"status": "blocked", "reason": reason}
+        return {"status": "blocked", "reason": reason, "no_adapter": True}
     if not approved:
         return {"status": "blocked", "reason": "Adapter execution not enabled"}
     try:
@@ -224,7 +288,7 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
         basename = re.sub(r"[^a-zA-Z0-9_.-]", "_", key)[:90] + "-" + sha256(key.encode()).hexdigest()[:10]
         artifact = job / "artifacts" / f"{basename}.txt"
         receipt = job / "receipts" / f"{basename}.json"
-        args = [a.replace("{task}", task).replace("{artifact}", str(artifact))
+        args = [a.replace("{task}", task).replace("{artifact}", str(artifact)).replace("{media}", media)
                 for a in spec.get("args", [])]
         command = [sys.executable, str(script), *args]
         completed = subprocess.run(command, cwd=REPO, text=True, capture_output=True,
@@ -235,6 +299,12 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
         proof = {"entry": key, "exit_code": completed.returncode,
                  "command": command, "artifact": str(artifact),
                  "artifact_sha256": audit.sha256(artifact)}
+        if _is_method_applier(spec):
+            proof["tier"] = "applied"
+            proof["counts_as_executed"] = False
+            receipt.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            return {"status": "blocked", "applied": True, "receipt": receipt,
+                    "reason": "Method card applied to the task by a generic applier (applied tier, not execution)"}
         receipt.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return {"status": "executed", "receipt": receipt}
     except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
@@ -242,7 +312,8 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
 
 def run(task: str, job: Path, adapters: dict, workers: int,
         allow_execution: bool, timeout: int, entries: dict | None = None,
-        probe_tools: bool = False, mode: str = "standard") -> dict:
+        probe_tools: bool = False, mode: str = "standard", media: Path | None = None,
+        validate_cards: bool = False, catalog_roots: tuple | None = None) -> dict:
     if not task.strip():
         raise ValueError("Task is required")
     if not 1 <= workers <= MAX_WORKERS:
@@ -252,6 +323,11 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     if mode not in ("standard", "pro-max"):
         raise ValueError("mode must be standard or pro-max")
     job = _safe_job(job)
+    media_arg = ""
+    if media is not None:
+        if not media.is_file():
+            raise ValueError("Media file not found: " + str(media))
+        media_arg = str(media.resolve())
     inventory = full_inventory() if entries is None else entries
     unknown = sorted(set(adapters) - set(inventory))
     if unknown:
@@ -302,7 +378,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                 else:
                     running[pool.submit(_attempt, key, adapters.get(key),
                                         task, job, allow_execution, timeout,
-                                        inventory[key].get("kind", "tool"))] = key
+                                        inventory[key].get("kind", "tool"), media_arg)] = key
             for future in futures.as_completed(running):
                 key = running[future]
                 try:
@@ -312,6 +388,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
     if set(outcomes) != set(inventory):
         raise ValueError("Black Dragon did not account for every catalog entry")
     ledger = audit.load(job, inventory)
+    blocked_why = Counter()
     for key in inventory:
         item = ledger["items"][key]
         result = outcomes[key]
@@ -330,6 +407,19 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                 item["reason"] = "Evidence check failed: " + str(exc)
         else:
             item["reason"] = result["reason"]
+            if result.get("applied"):
+                item["applied_receipt"] = {"receipt_path": str(result["receipt"]),
+                                           "receipt_sha256": audit.sha256(result["receipt"])}
+                blocked_why["method_applied"] += 1
+            if result.get("no_adapter"):
+                why = _why_blocked(inventory[key].get("kind"), inventory[key].get("source"))
+                if why == "tool_without_adapter" and key in TOOL_BLOCKERS:
+                    item["reason"] += ": " + TOOL_BLOCKERS[key]
+                if why == "skill_program_without_adapter":
+                    item["reason"] = "Skill ships a Python CLI with no reviewed adapter yet"
+                    if key in SKILL_PROGRAM_BLOCKERS:
+                        item["reason"] += ": " + SKILL_PROGRAM_BLOCKERS[key]
+                blocked_why[why] += 1
     audit.save(job, ledger)
     coverage = audit.report(job, inventory)
     counts = Counter(x["status"] for x in ledger["items"].values())
@@ -354,11 +444,27 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "brain_plan_file": str(job / "black_dragon_plan.json"),
               "selected_out": strategy["selected_out"],
               "executed": counts["executed"], "blocked": counts["blocked"],
+              "applied": blocked_why["method_applied"],
+              "blocked_why": {k: blocked_why[k] for k in BLOCKED_WHY},
+              "media": ({"path": media_arg, "sha256": audit.sha256(Path(media_arg))} if media_arg
+                        else "none: media adapters ran on their self-test clip, not on your footage"),
               "failed": counts["failed"], "full_coverage": coverage["fully_executed"],
               "coverage_file": str(job / "all_skills_report.json"),
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
                         "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
     report["mode"] = mode
+    if validate_cards:
+        # Separate tier: structural card validation. It never touches the ledger, the executed
+        # count or full_coverage.
+        skill_root, repo_root = catalog_roots or (audit.SKILL, REPO)
+        vsum = card_validate.write(job, card_validate.validate_catalog(inventory, skill_root, repo_root),
+                                   inventory)
+        report["validated"] = vsum["validated"]
+        report["validation_invalid"] = vsum["invalid"]
+        report["validation"] = {k: vsum[k] for k in ("total", "validated", "invalid", "by_kind",
+                                                     "problem_categories", "validation_file",
+                                                     "validation_sha256", "yaml_parser",
+                                                     "counts_as_executed", "truth")}
     report["reviewed_execution_complete"] = bool(
         allow_execution and adapters and all(
             ledger["items"][key]["status"] == "executed" for key in adapters
@@ -390,13 +496,23 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"of {report['probed']} probed",
              f"- اتنفذت فعلًا بإيصال / executed with receipt: **{report['executed']}** · "
              f"blocked {report['blocked']:,} · failed {report['failed']}",
+             f"- ليه متوقفين / why blocked: **{report['blocked_why']['method_description']:,}** "
+             f"وصف طريقة مش برنامج / method descriptions (not programs) · "
+             f"**{report['blocked_why']['tool_without_adapter']:,}** برامج لسه من غير adapter / tools without an adapter · "
+             f"**{report['blocked_why']['skill_program_without_adapter']:,}** مهارات فيها برنامج لسه مش متوصّل / skills with a program, no adapter yet",
+             f"- اتطبّقت كطريقة (مش تنفيذ) / method cards applied (NOT execution): **{report.get('applied', 0):,}**",
              f"- full coverage (every entry executed): **{report['full_coverage']}**",
              f"- tools without reviewed adapters: **{report['adapter_readiness']['tools_missing_reviewed_adapter']}**; "
              f"knowledge entries without adapters: **{report['adapter_readiness']['knowledge_entries_without_adapter']}**",
              f"- registered tools with verified execution: **{report['registered_tool_executed']}** / "
              f"{report['adapter_readiness']['reviewed_tool_adapters']}",
              f"- reviewed execution complete: **{report['reviewed_execution_complete']}** "
-             "(not equal to whole-catalog execution)", "",
+             "(not equal to whole-catalog execution)"]
+    if "validation" in report:
+        lines.append(f"- فحص بنية البطاقات / structural card validation (NOT execution): "
+                     f"validated: **{report['validated']:,}/{report['scheduled']:,}** "
+                     f"(invalid: {report['validation_invalid']:,}) — receipts in `validation.jsonl`")
+    lines += ["",
              "| الجزء / part | assigned | leads |", "|---|---:|---|"]
     for pid, part in strategy["parts"].items():
         leads = ", ".join(f"`{k}`" for k in part["leads"]) or "—"
@@ -436,6 +552,8 @@ def main(argv=None) -> int:
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
                    help="run --help on every argparse CLI tool as a startup probe")
+    p.add_argument("--media", type=Path,
+                   help="video/audio file for the media adapters ({media}); without it they use a self-test clip")
     l = sub.add_parser("links", help="Audit every capability's verified skill owner; NO execution")
     l.add_argument("--out", type=Path, help="optional new JSON file with all capability-to-skill links")
     a = sub.add_parser("activate", help="Inspect every tool and stage a full or smart reviewed usage plan (no execution)")
@@ -443,6 +561,11 @@ def main(argv=None) -> int:
     a.add_argument("--selection", choices=("all", "smart"), required=True)
     a.add_argument("--out", type=Path, required=True,
                    help="new JSON path for the inspect-first activation plan")
+    p.add_argument("--validate-cards", action="store_true",
+                   help="structurally validate every catalog card with a receipt (validation.jsonl); "
+                        "a separate tier, never counted as executed")
+    c = sub.add_parser("validate", help="Structurally validate every catalog card with a receipt; NO execution")
+    c.add_argument("--out", type=Path, help="new folder for validation.jsonl and validation_summary.json")
     v = sub.add_parser("verify", help="Independently re-audit a completed Pro Max job without execution")
     v.add_argument("--job", required=True, type=Path)
     q = sub.add_parser("plan", help="Plan every catalog entry without execution")
@@ -464,10 +587,31 @@ def main(argv=None) -> int:
             diagnosis = adapter_readiness(full_inventory(), _load_adapters(REVIEWED_ADAPTERS))
             print(json.dumps(diagnosis, ensure_ascii=False, indent=2))
             return 4 if diagnosis["unknown_adapters"] or diagnosis["invalid_adapter_scripts"] else 0
+        if args.command == "validate":
+            inventory = full_inventory()
+            rows = card_validate.validate_catalog(inventory, audit.SKILL, REPO)
+            if args.out is not None:
+                out = _safe_job(args.out)
+                out.mkdir(parents=True, exist_ok=True)
+                summary = card_validate.write(out, rows, inventory)
+            else:
+                summary = card_validate.summarize(rows, inventory)
+            print(json.dumps(summary, ensure_ascii=False, indent=2))
+            return 0 if summary["validated"] + summary["invalid"] == summary["total"] else 4
         if args.command == "verify":
-            result = pro_max.review_job(args.job, full_inventory())
+            inventory = full_inventory()
+            validation = card_validate.verify_job(args.job, inventory, audit.SKILL, REPO)
+            mode = json.loads((args.job / "black_dragon_report.json").read_text(encoding="utf-8")).get("mode") \
+                if (args.job / "black_dragon_report.json").is_file() else None
+            if mode != "pro-max" and validation["present"]:
+                result = {"job": str(args.job.resolve()), "validation_audit": validation,
+                          "truth": "Card validation receipts re-hashed only; no scripts executed"}
+                print(json.dumps(result, ensure_ascii=False, indent=2))
+                return 0 if validation["integrity_passed"] else 4
+            result = pro_max.review_job(args.job, inventory)
+            result["validation_audit"] = validation
             print(json.dumps(result, ensure_ascii=False, indent=2))
-            return 0 if result["audit"]["integrity_passed"] else 4
+            return 0 if result["audit"]["integrity_passed"] and validation["integrity_passed"] else 4
         if args.command == "links":
             inventory = full_inventory()
             package = skill_links.build(inventory, audit.SKILL, REPO,
@@ -528,7 +672,8 @@ def main(argv=None) -> int:
         report = run(args.task, args.job,
                      _cli_adapters(args.adapters),
                      args.workers, args.execute_adapters, args.timeout,
-                     probe_tools=args.probe_tools, mode=args.mode)
+                     probe_tools=args.probe_tools, mode=args.mode, media=args.media,
+                     validate_cards=args.validate_cards)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["reviewed_execution_complete"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:

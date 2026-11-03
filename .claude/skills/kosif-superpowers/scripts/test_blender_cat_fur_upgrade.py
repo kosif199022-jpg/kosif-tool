@@ -1,9 +1,17 @@
-"""Reproducible Blender 5.2 scene-upgrade tests, with real Blender when installed."""
+"""Reproducible Blender 5.2 scene-upgrade tests, with real Blender when installed.
+
+Two real engines, never a stand-in: the Blender app (`blender --background ...`) when it is
+on this machine, otherwise the official `bpy` module from PyPI (`pip install bpy`, Blender
+built as a Python module, same version line), which runs the same scripts under plain
+`python3 SCRIPT -- ARGS`. With neither, every test skips.
+"""
 from __future__ import annotations
 
+import importlib.util
 import json
 import re
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,19 +19,25 @@ from pathlib import Path
 from blender_cycles_render import executable
 
 HERE=Path(__file__).resolve().parent
+BLENDER=executable(None,"blender")
+# The bpy wheel needs the matching CPython; find_spec only looks, it does not import Blender here.
+BPY_MODULE=None if BLENDER else (sys.executable if importlib.util.find_spec("bpy") else None)
 
 
 def launch(blender, script, parameters):
-    cmd=[blender,"--background","--factory-startup","--disable-autoexec",
-         "--python-exit-code","7","--python",str(script),"--",*map(str,parameters)]
+    if blender==BPY_MODULE:
+        cmd=[blender,"-B",str(script),"--",*map(str,parameters)]
+    else:
+        cmd=[blender,"--background","--factory-startup","--disable-autoexec",
+             "--python-exit-code","7","--python",str(script),"--",*map(str,parameters)]
     return subprocess.run(cmd,capture_output=True,text=True,timeout=55,errors="replace")
 
 
-@unittest.skipUnless(executable(None,"blender"),"Blender not present locally")
+@unittest.skipUnless(BLENDER or BPY_MODULE,"neither the Blender app nor the bpy module is present locally")
 class BlenderFurIntegrationTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.blender=executable(None,"blender")
+        cls.blender=BLENDER or BPY_MODULE
         cls.dir=tempfile.TemporaryDirectory(prefix="kosif-fur-tests-")
         cls.path=Path(cls.dir.name)
         cls.original=cls.path/"original.blend"
@@ -31,6 +45,7 @@ class BlenderFurIntegrationTests(unittest.TestCase):
         made=launch(cls.blender,HERE/"blender_rescue_scene.py",[cls.original])
         if made.returncode:
             raise AssertionError("base scene failed: "+(made.stdout+made.stderr)[-1000:])
+        cls.scene_log=made.stdout
         result=launch(cls.blender,HERE/"blender_cat_fur_upgrade.py",
                       ["--source",cls.original,"--output",cls.upgraded,
                        "--fur-count",320,"--seed",2307])
@@ -45,9 +60,11 @@ class BlenderFurIntegrationTests(unittest.TestCase):
 
     @classmethod
     def inspect(cls):
-        script=cls.path/"inspect.py"
+        script=cls.path/"kosif_fur_inspect.py"  # not inspect.py: under plain python3 it would shadow the stdlib module
         script.write_text(
-            """import bpy,json
+            """import bpy,json,sys
+if '--' in sys.argv:  # bpy module: open the .blend here (the Blender app opened it from its command line)
+    bpy.ops.wm.open_mainfile(filepath=sys.argv[sys.argv.index('--')+1],load_ui=False)
 s=bpy.context.scene
 cat=bpy.data.objects['CAT_ANIMATED_GROUP']
 tor=bpy.data.objects['KOSIF_CAT_FUR_TORSO']
@@ -69,8 +86,11 @@ print('KOSIF_FUR_INSPECTION',json.dumps({
 'root_z1':z1,'root_z24':z24,'root_x1':x1,'root_x24':x24
 }),flush=True)
 """,encoding="utf-8")
-        cmd=[cls.blender,"--background","--factory-startup","--disable-autoexec",
-             str(cls.upgraded),"--python-exit-code","7","--python",str(script)]
+        if cls.blender==BPY_MODULE:
+            cmd=[cls.blender,"-B",str(script),"--",str(cls.upgraded)]
+        else:
+            cmd=[cls.blender,"--background","--factory-startup","--disable-autoexec",
+                 str(cls.upgraded),"--python-exit-code","7","--python",str(script)]
         r=subprocess.run(cmd,capture_output=True,text=True,timeout=30,errors="replace")
         if r.returncode:raise AssertionError("inspection failed: "+(r.stdout+r.stderr)[-1400:])
         line=next((x for x in r.stdout.splitlines() if x.startswith("KOSIF_FUR_INSPECTION ")),"")
@@ -108,6 +128,26 @@ print('KOSIF_FUR_INSPECTION',json.dumps({
         self.assertNotEqual(result.returncode,0)
         self.assertIn("Output must be new",result.stdout+result.stderr)
         self.assertEqual(original,self.upgraded.read_bytes())
+
+    def test_base_scene_known_answer(self):
+        # blender_rescue_scene.py: the documented 56-object, 24-frame Cycles scene.
+        self.assertRegex(self.scene_log,r"KOSIF_3D_SCENE_CREATED .* objects 56 frames 24 engine CYCLES")
+        self.assertGreater(self.original.stat().st_size,100000)
+
+    def test_base_scene_refuses_existing_output(self):
+        before=self.original.read_bytes()
+        result=launch(self.blender,HERE/"blender_rescue_scene.py",[self.original])
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("Output must be unused",result.stdout+result.stderr)
+        self.assertEqual(before,self.original.read_bytes())
+
+    def test_already_upgraded_source_refused(self):
+        # A planted flaw: feeding the upgraded scene back in must be caught, not double-furred.
+        result=launch(self.blender,HERE/"blender_cat_fur_upgrade.py",
+                      ["--source",self.upgraded,"--output",self.path/"twice.blend","--fur-count",320])
+        self.assertNotEqual(result.returncode,0)
+        self.assertIn("already contains this upgrade",result.stdout+result.stderr)
+        self.assertFalse((self.path/"twice.blend").exists())
 
     def test_invalid_fur_density_rejected(self):
         result=launch(self.blender,HERE/"blender_cat_fur_upgrade.py",

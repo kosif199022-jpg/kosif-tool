@@ -10,7 +10,7 @@
 
 **التحميل الخفيف:** اقرأ هذا الملف وحده أولًا. لا تقرأ ملفات المهارات الكبيرة كاملة؛ افتح الملف أو نطاق الأسطر الذي يطابق الطلب فقط (`sed -n START,ENDp <path>`)، أو اسأل السكربت: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py need "<الطلب>"`. كل مهارة وكل ملحق ممثَّل هنا بسطر، فلا توجد مهارة خارج الوصول. في الوضع الكامل: `python3 .claude/skills/kosif-superpowers/scripts/skill_loader.py full`.
 
-## المهارات (13) / skills
+## المهارات (14) / skills
 
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
@@ -19,6 +19,7 @@
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
+| `kosif-kling-director` | `.claude/skills/kosif-kling-director/SKILL.md` | 4 KB · 39 سطر | Kling 4.0 short-film director's prompt pack from one story line: split the film into generation blocks of 30 s or less (20 s for Flash), write a master prompt per block… |
 | `kosif-reel-hooks` | `.claude/skills/kosif-reel-hooks/SKILL.md` | 6 KB · 120 سطر | Write an Instagram Reel or short video script from one raw idea, in Egyptian Arabic, MSA or English - three hooks off the Arabic hook library, scored by a local tool,… |
 | `kosif-shadow-theatre` | `.claude/skills/kosif-shadow-theatre/SKILL.md` | 7 KB · 80 سطر | Make shadow-theatre / silhouette motion-graphics films (مسرح الظل، مشاهد بالظلال) from code — bodies that join into trees, boats and buildings, figures that grow as… |
 | `kosif-site-snapshot` | `.claude/skills/kosif-site-snapshot/SKILL.md` | 4 KB · 47 سطر | Copy a website the user owns (or may copy) offline with its CSS, JS, images and fonts, goclone-style, and measure its design system into design.md (colours, fonts, type… |
@@ -146,6 +147,13 @@
 - 38–45: Search design
 - 46–49: Safety and portability
 - 50–84: Update 2026-10-24 — evidence-based creative mechanism mining
+
+### `.claude/skills/kosif-kling-director/SKILL.md`
+
+- 13–16: KOSIF Kling Director — مخرج أفلام كلينج القصيرة
+- 17–20: The method lives in one place
+- 21–32: Front door
+- 33–38: Rules
 
 ### `.claude/skills/kosif-reel-hooks/SKILL.md`
 

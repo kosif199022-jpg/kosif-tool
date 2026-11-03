@@ -20,16 +20,65 @@ ALLOWED_NUMBERS = {"365", "12", "100", "1000", "360", "52", "0", "1", "2", "3"}
 VOLATILE = re.compile(r"\b(NOW|TODAY|RAND|RANDBETWEEN|OFFSET|INDIRECT)\s*\(", re.I)
 SHEET_REF = re.compile(r"(?:'([^']+)'|([A-Za-z_][\w\.]*))!")
 
+INPUT_SHEETS = ("assumptions", "inputs", "docs")
+
+
+def _is_formula(v) -> bool:
+    return isinstance(v, str) and v.startswith("=")
+
+
+def _is_number(v) -> bool:
+    return isinstance(v, (int, float)) and not isinstance(v, bool)
+
+
+def _sheet_index(ws):
+    """Per-sheet value map: rows[r] and cols[c] are sorted [(pos, "f"|"n")] for formula/number cells."""
+    rows, cols = {}, {}
+    for row in ws.iter_rows():
+        for c in row:
+            if _is_formula(c.value) or _is_number(c.value):
+                k = "f" if _is_formula(c.value) else "n"
+                rows.setdefault(c.row, []).append((c.column, k))
+                cols.setdefault(c.column, []).append((c.row, k))
+    for d in (rows, cols):
+        for v in d.values():
+            v.sort()
+    return rows, cols
+
+
+def _in_formula_region(index, r: int, col: int) -> bool:
+    """True when a constant sits inside a run of formulas, i.e. where a formula belongs.
+
+    Flagged: formulas on both sides in the row, formulas above and below in the column,
+    or every other value cell of the row is a formula (>=2) and this is not the row's
+    first value cell (a first-period opening balance followed by formulas stays legal).
+    Rows or columns of plain numbers (input blocks) never match.
+    """
+    rows, cols = index
+    line = rows.get(r, [])
+    left = [k for c, k in line if c < col]
+    right = [k for c, k in line if c > col]
+    if left and right and left[-1] == "f" and right[0] == "f":
+        return True
+    line = cols.get(col, [])
+    above = [k for rr, k in line if rr < r]
+    below = [k for rr, k in line if rr > r]
+    if above and below and above[-1] == "f" and below[0] == "f":
+        return True
+    others = left + right
+    return bool(left) and len(others) >= 2 and all(k == "f" for k in others)
+
 
 def main() -> None:
     ap = argparse.ArgumentParser(); ap.add_argument("file"); ap.add_argument("--json", action="store_true")
     a = ap.parse_args()
     wb = load_workbook(a.file, data_only=False); wv = load_workbook(a.file, data_only=True)
-    names = set(wb.sheetnames); findings = []; stats = {"formulas": 0, "inputs": 0, "hardcoded": 0}
+    names = set(wb.sheetnames); findings = []; stats = {"formulas": 0, "inputs": 0, "hardcoded": 0, "hardcoded_in_formulas": 0, "hardcoded_cells": 0}
     has_checks = any(n.lower() in ("checks", "check", "فحوص") for n in names)
     has_scenario = any(dn.lower() == "scenario" for dn in wb.defined_names)
     for ws in wb.worksheets:
         wsv = wv[ws.title]
+        index = _sheet_index(ws)
         for row in ws.iter_rows():
             for c in row:
                 v = c.value
@@ -44,6 +93,7 @@ def main() -> None:
                         num = m.group(1)
                         if num not in ALLOWED_NUMBERS:
                             stats["hardcoded"] += 1
+                            stats["hardcoded_in_formulas"] += 1
                             findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}", "issue": f"رقم مدفون في صيغة: {m.group(0).strip()}", "fix": "انقله إلى خلية مدخل زرقاء في Assumptions وأشر إليها"})
                     if VOLATILE.search(f):
                         findings.append({"sev": "MED", "cell": f"{ws.title}!{c.coordinate}", "issue": "دالة متقلبة (OFFSET/INDIRECT/NOW…)", "fix": "استبدلها بمرجع ثابت أو INDEX"})
@@ -58,7 +108,12 @@ def main() -> None:
                         findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}", "issue": f"خطأ محفوظ {cached}", "fix": "أصلح الصيغة؛ لا تلفّها بـ IFERROR لإخفائها"})
                 elif isinstance(v, (int, float)):
                     stats["inputs"] += 1
-                    if ws.title.lower() not in ("assumptions", "inputs", "docs") and not color.endswith("0000FF") and c.row > 3 and c.column > 2:
+                    off_input = ws.title.lower() not in INPUT_SHEETS and not color.endswith("0000FF")
+                    if off_input and not isinstance(v, bool) and _in_formula_region(index, c.row, c.column):
+                        stats["hardcoded"] += 1
+                        stats["hardcoded_cells"] += 1
+                        findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}", "issue": f"رقم ثابت ({v}) مكان صيغة داخل صف/عمود صيغ", "fix": "أعد الصيغة؛ وإن كان مدخلاً فانقله إلى Assumptions بالأزرق وأشر إليه"})
+                    elif off_input and c.row > 3 and c.column > 2:
                         findings.append({"sev": "MED", "cell": f"{ws.title}!{c.coordinate}", "issue": f"رقم ثابت ({v}) خارج ورقة المدخلات وبلون غير أزرق", "fix": "إن كان مدخلاً فانقله إلى Assumptions بالأزرق؛ وإن كان نتيجة فاجعله صيغة"})
     if not has_checks:
         findings.append({"sev": "HIGH", "cell": "-", "issue": "لا ورقة Checks", "fix": "أضف BS_check وCF_check وحالة كلية OK/ERROR"})

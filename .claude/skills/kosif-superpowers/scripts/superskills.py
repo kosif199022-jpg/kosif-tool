@@ -236,6 +236,27 @@ for _i in range(2, 7):
     PATCHES.append({"slug": "kosif-montage-motion", "file": "scripts/kit/sfx/catalog.json",
                     "why": f"key-{_i}.wav stored as lossless FLAC", "old": f'"file": "key-{_i}.wav"', "new": f'"file": "key-{_i}.flac"'})
 
+PATCHES.append({
+    "slug": "kosif-mimic", "file": "scripts/mm_img.py",
+    "why": "Pillow 12 refuses GaussianBlur on float (mode F) images, so the no-OpenCV/no-SciPy blur crashed; "
+           "use a numpy separable Gaussian with reflect borders instead",
+    "old": ('        return np.asarray(Image.fromarray(img.astype(np.float32), "F").filter(ImageFilter.GaussianBlur(sigma))).astype(dtype)\n'),
+    "new": ('        # Pure numpy, separable, reflect borders. (Pillow 12 refuses GaussianBlur on mode "F" images.)\n'
+            '        r = int(max(1, round(sigma * 3)))\n'
+            '        x = np.arange(-r, r + 1, dtype=np.float64)\n'
+            '        k = np.exp(-(x * x) / (2 * sigma * sigma))\n'
+            '        k /= k.sum()\n'
+            '        out = np.pad(img.astype(np.float64), r, mode="symmetric")\n'
+            '        out = sum(k[i] * out[:, i:i + out.shape[1] - 2 * r] for i in range(2 * r + 1))\n'
+            '        out = sum(k[i] * out[i:i + out.shape[0] - 2 * r, :] for i in range(2 * r + 1))\n'
+            '        return out.astype(dtype)\n'),
+})
+
+
+# Larger KOSIF fixes (found by the Black Dragon deep run) keep their exact old/new spans in a data file,
+# so this module stays readable. Same contract as above: applied on sync, recorded in the manifest.
+PATCHES.extend(json.loads((Path(__file__).resolve().parent.parent / "data" / "superskills_patches.json")
+                          .read_text(encoding="utf-8")))
 
 def apply_patches(root: Path) -> list:
     done = []

@@ -196,7 +196,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/evals/test_check_skill_json.py`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/maintain.md`
 
 #### عند الفشل (A29)
@@ -515,7 +515,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `tests/test_catalog_tools.py`
 - مرجع: `README.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/powers/qa-verification.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/maintain.md`
@@ -561,7 +561,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `tests/test_catalog_tools.py`
 - مرجع: `README.md`
 - مرجع: `AGENTS.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/maintain.md`
@@ -613,7 +613,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `tests/test_catalog_tools.py`
 - مرجع: `README.md`
 - مرجع: `AGENTS.md`
 - مرجع: `.claude/skills/kosif-superpowers/references/guides/maintain.md`

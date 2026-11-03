@@ -4791,7 +4791,9 @@
    "limits": "It is one hand-coded 12 s sample film to copy and edit, with no visual editor, and it does not render itself (render_html.cjs with Playwright Chromium and ffmpeg does).",
    "evidence": "tested-elsewhere",
    "evidence_note": "No test file exercises the real starter. tests/test_cli.py (17/17 passed here) only scaffolds a fixture stand-in. Manual checks here: render_html.cjs --preview --offline wrote an 8-frame contact sheet to scratch (seek mode, 360 frames, 12 s, exit 0, one expected blocked-font console error), and the frames look correct. kosif.py scaffold kinetic-arabic --starter html-canvas copied the folder into scratch. words_convert wrote 19 words from the starter's words.json to a scratch words.js. The KOSIF.Timeline example ran in node and drew at t=1.5 with p=0.5.",
-   "tests": [],
+   "tests": [
+    "tests/test_cli.py"
+   ],
    "docs": [
     "starters/html-canvas/README.md",
     "tools/render_html.md",
@@ -10115,7 +10117,9 @@
    "limits": "It checks structure, links, counts and registry consistency only: the routing evals test search ranking, not whether any power works, and proofs outside this checkout are skipped rather than verified.",
    "evidence": "untested",
    "evidence_note": "Not run: no test file in tests/ or evals/ exercises it (CI runs it from .github/workflows/ci.yml and skill-package.yml). Manual runs on HEAD 524e22a (clean tree): --help exit 0; the full run exits 1 with 52 errors and 1 warning (42 scripts/tools not yet in data/tools.json, 2 stale/missing chapters, 3 counts-marker and 4 drift mismatches against 4,784 powers, 1 broken link to powers/runnable-tools.md); --evals routing passed 82/82 (100%); --print-counts exit 0 (powers=4784 families=53 domains=10); --json --evals output fails json.loads ('Extra data').",
-   "tests": [],
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_check_skill_json.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/guides/maintain.md"
    ],
@@ -10497,7 +10501,9 @@
    "limits": "It finds exact lower-case n-gram overlaps in the English fields only, joined into one string. It does not check paraphrase, the Arabic fields, briefs without a matching <slug>.txt or briefs whose id does not start with pm-, and a missing or misspelled folder passes silently.",
    "evidence": "untested",
    "evidence_note": "No test file exercises it. Re-run here on synthetic scratch data: --help exit 0, and no arguments gave exit 2. A brief that copies 16 source words was flagged with 11 shared 6-word runs (exit 1), and with 9 runs at --ngram 8 (exit 1). At --ngram 20 nothing was flagged (exit 0). A non-pm id and a pm- id without a source text were skipped ('checked 1'). A nonexistent --briefs or --texts folder gave 'checked 0 briefs, flagged 0' with exit 0. An invalid JSON file raised JSONDecodeError (exit 1).",
-   "tests": [],
+   "tests": [
+    "tests/test_catalog_tools.py"
+   ],
    "docs": [
     "README.md",
     ".claude/skills/kosif-superpowers/references/powers/qa-verification.md",
@@ -10569,7 +10575,9 @@
    "limits": "It checks only shape and simple ranges, not originality or accuracy; without --strict it imports briefs that fail the range checks, it accepts only ids already in the catalog, and it does not rebuild SKILL.md or STYLE_INDEX.md (run build.py).",
    "evidence": "untested",
    "evidence_note": "No test file exercises it. Re-run here in a scratch copy (import_briefs.py, aspects.py and the catalog JSON): --help exit 0, and an empty folder gave exit 2. With a batch of 4 briefs (valid, difficulty=9, missing concept_en, unknown id), the run without --strict imported 2 (including difficulty=9) and exited 0. With --strict it imported 1 and exited 1. With --strict plus an invalid zz.json it exited 1 after writing styles/kinetic-arabic/BRIEF.md and STYLE.json, but left catalog/styles.json and briefs.json unchanged. A top-level JSON list crashed with AttributeError.",
-   "tests": [],
+   "tests": [
+    "tests/test_catalog_tools.py"
+   ],
    "docs": [
     "README.md",
     "AGENTS.md",
@@ -10653,7 +10661,9 @@
    "limits": "It parses only the site's current markup with regexes, stores metadata and links only, does not regenerate SKILL.md, STYLE_INDEX.md or briefs (build.py does), and drops every non-PromptsMotion record that is missing from its hard-coded BASE list.",
    "evidence": "untested",
    "evidence_note": "No test file exercises it. Re-run here in a scratch copy (sync_catalog.py plus catalog/styles.json and categories.json): --help exit 0. --offline with no cache exit 2, after creating .cache/promptsmotion/pages/. --offline with a synthetic 55-card cached index exit 0: 343 records (55 new, 0 changed, 243 unlisted), and 'dua' was gone. '--limit 20 --workers 3 --offline' was accepted (exit 0). Online mode was not run (network).",
-   "tests": [],
+   "tests": [
+    "tests/test_catalog_tools.py"
+   ],
    "docs": [
     "README.md",
     "AGENTS.md",
@@ -10802,7 +10812,9 @@
    "safety": "writes-files",
    "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
    "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
-   "tests": [],
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_atlas_bulk_source_audit.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/SKILL.md"
    ],
@@ -11179,7 +11191,9 @@
    "safety": "read-only",
    "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
    "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
-   "tests": [],
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_atlas_deep_fusion.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/SKILL.md"
    ],
@@ -11291,7 +11305,9 @@
    "safety": "read-only",
    "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
    "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
-   "tests": [],
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_atlas_reviewed_methods_v3.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/SKILL.md"
    ],
@@ -11347,7 +11363,9 @@
    "safety": "read-only",
    "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
    "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
-   "tests": [],
+   "tests": [
+    ".claude/skills/kosif-superpowers/scripts/test_atlas_task_method_router.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/SKILL.md"
    ],
@@ -11459,7 +11477,9 @@
    "safety": "runs-external-programs",
    "consent": "Require the user's authorization before analyzing third-party installations, invoking REA or Blender, writing files, or performing any external actions. --help is informational.",
    "limits": "Registration describes discovery; verify CLI and run targeted tests. Do not infer that Atlas entries are runnable or that Blender/Ghidra work without installed binaries.",
-   "tests": [],
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_blender_motion_video.py"
+   ],
    "docs": [
     ".claude/skills/kosif-superpowers/SKILL.md"
    ],
@@ -12003,7 +12023,7 @@
    "evidence": "tested-here",
    "evidence_note": "2026-10-20 Blender 5.2.2 created 156 KB animated .blend with 56 objects; source SHA-256 and separate Cycles video readback are in proofs/blender-cinematic-acceptance-20261020.json.",
    "tests": [
-    ".claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py"
+    ".claude/skills/kosif-superpowers/scripts/test_blender_cat_fur_upgrade.py"
    ],
    "docs": [
     ".claude/skills/kosif-superpowers/references/blender-cinematic-bridge.md"

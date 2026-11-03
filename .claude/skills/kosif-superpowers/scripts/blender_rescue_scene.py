@@ -12,13 +12,14 @@ import math
 import sys
 from pathlib import Path
 
+if "--" not in sys.argv and {"-h", "--help"} & set(sys.argv):
+    # Help never needs Blender, even where the bpy module (pip install bpy) is importable.
+    print(__doc__)
+    raise SystemExit(0)
 try:
     import bpy
     from mathutils import Vector
-except ImportError:  # plain Python: show help instead of crashing
-    if {"-h", "--help"} & set(sys.argv):
-        print(__doc__)
-        raise SystemExit(0)
+except ImportError:  # plain Python without the bpy module
     raise SystemExit("Run inside Blender: blender -b --factory-startup --disable-autoexec --python <this file> -- ...")
 
 if "--" not in sys.argv:
