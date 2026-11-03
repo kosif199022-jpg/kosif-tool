@@ -26,6 +26,28 @@ Run from repository root:
 
 To include *only optional pointers* to catalog entries, add `--legacy-links` to compose. No external process, paid model, or original adapter is invoked by these commands.
 
+## Native reasoning absorbed from Dragon Mind
+
+The new `scripts/native_mind.py` **contains its own** 26-faculty taxonomy and six-stage cognitive
+cycle, based on Dragon Mind's controlled vocabulary. It does **not** import or run
+`kosif-dragon-mind`, the legacy `black_dragon.py`, or their adapters.
+
+`compose` now includes a `native_mind` result with:
+
+- Task-specific faculty classification and the six thinking stages:
+  frame → explore → decide → build → verify → learn.
+- Native, source-traceable merging of identical method fragments. **Different
+  constraints are preserved**, even when methods are similar.
+- Typed input/output handoffs and an explicit critic for missing inputs.
+- A source-ID lineage for every extracted method and a clear distinction between
+  native thinking implemented and original features not yet reimplemented.
+- Original tool references remain links only when `--legacy-links` is explicitly requested.
+
+This is a first **native cognitive fusion engine**. It is deterministic text/knowledge
+synthesis; it does not independently render video, transcribe audio, or execute all
+underlying programs. Source hashing, extraction, reasoning, implementation, and
+actual execution must continue to be reported as separate milestones.
+
 ## Evidence and limits
 
 `sources.jsonl` stores one machine-extracted link per catalog entry with its source hash and code fingerprint (where a local file exists). `summary.json` stores the exact input count and index hash. `verify` detects changed or missing sources. These are fast bookkeeping checks, **not** 7,000 functional test runs.
