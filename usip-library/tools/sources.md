@@ -1,4 +1,4 @@
-# أدوات المجال `sources` (26 أداة)
+# أدوات المجال `sources` (27 أداة)
 
 > مولّد من `data/tools.json`. [الفهرس الرئيسي](../README.md) · `python3 scripts/hub.py tool <id>` للبطاقة الحية.
 
@@ -940,6 +940,63 @@
 #### عند الفشل (A29)
 
 - ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:repo-ashell-cinema --evidence <ملف>`.
+
+### `site-snapshot` — نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) / Website snapshot and design read-out (goclone capabilities)
+
+| الحقل | القيمة |
+|---|---|
+| المسار | `scripts/site_snapshot.py` (جذر: skill) |
+| المجال | `sources` |
+| الدليل | `tested-here` |
+| العائلات | `web-research`, `ui-product-device`, `brand-logo-identity` |
+
+**ما تفعله:** يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط كل الروابط على النسخة المحلية، ويقدر يزحف على N صفحة من نفس الموقع، ويشغّل النسخة على 127.0.0.1، أو يشغّل goclone الحقيقي بـ --engine goclone. كل نسخة معاها manifest.json (SHA-256 لكل ملف) وRIGHTS.json وقراءة تصميم (design.json + design.md: الألوان والخطوط و@font-face وسلم المقاسات والزوايا والمسافات والظلال ونقاط الكسر ومتغيرات CSS) لمرحلة «انسخ اللوحة» في Living Site. بوابة حقوق (--rights own\|licensed\|permission مع --rights-note) وrobots.txt وحماية العناوين الخاصة وحدود الحجم تمنع إساءة الاستخدام.
+
+**What it does:** Brings goclone's capabilities (github.com/goclone-dev/goclone, MIT) into the skill in pure Python: copies one or more pages with their CSS, JS, images, fonts and media into goclone's css/ js/ imgs/ layout (plus fonts/ and media/), follows CSS url() and @import, srcset, posters and inline styles, rewrites every link to the local copy, and can crawl N same-site pages, serve the copy on 127.0.0.1 or run the real goclone binary with --engine goclone. Each snapshot gets manifest.json (SHA-256 per file), RIGHTS.json and a design read-out (design.json + design.md: colours, fonts, @font-face, type scale, radii, spacing, shadows, breakpoints, CSS variables) for the Living Site Stage 1 canvas. A rights gate (--rights own\|licensed\|permission + --rights-note), robots.txt, a private-address guard and size caps stop misuse.
+
+#### متى تُستدعى
+
+- «انسخ موقعي ده أوفلاين وطلّعلي ألوانه وخطوطه»
+- «خد نسخة من الموقع بتاعي عشان أبني عليه الموقع الحي»
+- «استخدم goclone على موقعي»
+- «Clone my website offline with its CSS, JS and images»
+- «Snapshot my site and extract its design system into design.md»
+- «Mirror our landing page locally and serve it on localhost»
+
+#### الأوامر
+
+- **snapshot**: Copies the page and its assets, rewrites links, writes manifest.json, RIGHTS.json, design.json and design.md. Refuses (exit 1) without --rights and --rights-note, on robots.txt disallow, on private addresses (unless --allow-private) and over size caps.
+  - `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my company site" --out ./out/site`
+- **crawl**: Breadth-first copy of up to N same-site pages into pages/*.html with links between them rewritten; --same-origin-assets skips CDN files.
+  - `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my site" --pages 5 --same-origin-assets --out ./out/site`
+- **goclone-engine**: Runs the goclone binary on PATH (cookie, user agent and proxy passed through), then adds manifest, rights record and design read-out.
+  - `python3 scripts/site_snapshot.py snapshot example.com --engine goclone --rights own --rights-note "my site" --out ./out/site`
+- **analyse**: Re-reads all CSS in a snapshot folder (or any goclone output) and rewrites design.json and design.md.
+  - `python3 scripts/site_snapshot.py analyse ./out/site --json`
+- **serve**: Serves the copy on http://127.0.0.1:PORT/ like goclone --serve (foreground; run it in the background).
+  - `python3 scripts/site_snapshot.py serve ./out/site --port 5000`
+- **doctor**: Says which engines this machine can run (built-in Python always; goclone if on PATH) and how to install goclone.
+  - `python3 scripts/site_snapshot.py doctor --json`
+- **self-test**: Offline fixture server on 127.0.0.1: checks layout, rewriting, CSS chains, srcset, crawl, manifest, design read-out and the refusals.
+  - `python3 scripts/site_snapshot.py --self-test`
+
+#### المتطلبات والأمان
+
+- network: true
+- optional: goclone
+- الأمان: network
+- الموافقة: Only sites the user owns or has written permission to copy; the rights basis is recorded in RIGHTS.json. A copy of a third-party site is analysis material only: never rehost, publish or commit it, and its code, fonts and images keep their own licences.
+- الحدود: Static HTML only: pages built by JavaScript after load, logins, captchas and anti-bot walls are not rendered (use a headless browser for those). The design read-out counts CSS values; it does not see computed styles, images or motion.
+
+#### الاختبارات والأدلة
+
+- `.claude/skills/kosif-superpowers/evals/test_site_snapshot.py`
+- مرجع: `.claude/skills/kosif-superpowers/references/guides/sources.md`
+- مرجع: `.claude/skills/living-site/KOSIF.md`
+
+#### عند الفشل (A29)
+
+- ابدأ بـ `think.py recover --message "<نص الخطأ>"`، ثم سجّل `fusionforge.py trace --project <slug> --id <FUSE-ID> --stage <stage> --node <N> --action "<ما جُرّب>" --result failed --error-class <الصنف> --tool tool:site-snapshot --evidence <ملف>`.
 
 ### `song-preview` — معاينة الأغنية الرسمية (بديل الـDRM) / Official song preview (DRM fallback)
 

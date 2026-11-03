@@ -1,11 +1,11 @@
 {
 "schema": "kosif.superpowers.v1",
-"atoms": 5861,
-"distinct_methods": 5579,
+"atoms": 5862,
+"distinct_methods": 5580,
 "twin_groups": 178,
 "superpowers": 483,
 "per_target": 12,
-"fusion_ratio": 12.13,
+"fusion_ratio": 12.14,
 "atlas_folded_into_native": 71,
 "tiny_absorbed": 27,
 "lookalikes_unified": 8,
@@ -4758,7 +4758,7 @@
 "sim": 0.349
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.209
 }
 ]
@@ -10222,7 +10222,7 @@
 "sim": 0.331
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.203
 }
 ]
@@ -10789,7 +10789,7 @@
 "sim": 0.203
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.077
 }
 ]
@@ -11091,7 +11091,7 @@
 "sim": 0.245
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.163
 }
 ]
@@ -11218,7 +11218,7 @@
 "sim": 0.312
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.173
 }
 ]
@@ -11339,7 +11339,7 @@
 "sim": 0.214
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.115
 }
 ]
@@ -11672,7 +11672,7 @@
 "sim": 0.189
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.103
 }
 ]
@@ -11770,7 +11770,7 @@
 "sim": 0.213
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.086
 }
 ]
@@ -12055,7 +12055,7 @@
 "sim": 0.195
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.116
 }
 ]
@@ -14864,8 +14864,8 @@
 "distinct_methods": 14,
 "links": [
 {
-"id": "SP-0144",
-"sim": 0.177
+"id": "SP-0143",
+"sim": 0.173
 },
 {
 "id": "SP-0295",
@@ -16593,7 +16593,7 @@
 "sim": 0.101
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.088
 }
 ]
@@ -17973,7 +17973,7 @@
 "sim": 0.391
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.3
 },
 {
@@ -18525,6 +18525,163 @@
 "id": "SP-0143",
 "domain": "build",
 "family": "runnable-tools",
+"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
+"name_en": "Free footage: open-licence video sources with search, download and credits",
+"focus": [
+"sources",
+"references",
+"stock",
+"free"
+],
+"size": 15,
+"best": "proven",
+"status_mix": {
+"proven": 14,
+"install": 1
+},
+"ready_now": 14,
+"families": {
+"runnable-tools": 15
+},
+"atlas_folded": 0,
+"requires": [
+"python3",
+"ffmpeg",
+"yt-dlp",
+"chromium",
+"imagemagick",
+"key:unspecified",
+"npm:rea",
+"pip:office"
+],
+"pipeline": [
+{
+"id": "TOOL-177",
+"status": "proven",
+"name_en": "Free footage: open-licence video sources with search, download and credits",
+"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب"
+},
+{
+"id": "TOOL-95",
+"status": "proven",
+"name_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
+"name_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)"
+},
+{
+"id": "TOOL-50",
+"status": "proven",
+"name_en": "Community source scout",
+"name_ar": "مستكشف مصادر المجتمع"
+},
+{
+"id": "TOOL-179",
+"status": "proven",
+"name_en": "Free photos: open-licence and free stock photo search and download with credits",
+"name_ar": "صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب"
+},
+{
+"id": "TOOL-46",
+"status": "proven",
+"name_en": "Creative sources offline search",
+"name_ar": "بحث المصادر الإبداعية دون اتصال"
+},
+{
+"id": "TOOL-47",
+"status": "proven",
+"name_en": "Licensed stock media gateway",
+"name_ar": "بوابة الوسائط المرخّصة"
+},
+{
+"id": "TOOL-160",
+"status": "proven",
+"name_en": "GitHub Top-1000 Tracker",
+"name_ar": "متابعة أشهر 1000 مستودع"
+},
+{
+"id": "TOOL-142",
+"status": "proven",
+"name_en": "Sources index: per-work-dir index memory of the user's attachments",
+"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
+},
+{
+"id": "TOOL-172",
+"status": "proven",
+"name_en": "Instagram Reference Discovery → Infinite Matrices",
+"name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
+},
+{
+"id": "TOOL-173",
+"status": "proven",
+"name_en": "Instagram product video finder",
+"name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
+},
+{
+"id": "TOOL-182",
+"status": "proven",
+"name_en": "Official song preview (DRM fallback)",
+"name_ar": "معاينة الأغنية الرسمية (بديل الـDRM)"
+},
+{
+"id": "TOOL-45",
+"status": "proven",
+"name_en": "Browser scout site survey",
+"name_ar": "مستكشف المواقع بالمتصفح"
+},
+{
+"id": "TOOL-93",
+"status": "proven",
+"name_en": "Permitted reference fetch and measure",
+"name_ar": "جلب المرجع المسموح وقياسه"
+},
+{
+"id": "TOOL-184",
+"status": "proven",
+"name_en": "Website snapshot and design read-out (goclone capabilities)",
+"name_ar": "نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)"
+},
+{
+"id": "TOOL-51",
+"status": "install",
+"name_en": "Cinema C iPhone downloader studio",
+"name_ar": "استوديو التنزيل Cinema C للآيفون"
+}
+],
+"proof": [
+"kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_footage.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/free_footage.py",
+"kosif-tool/tests/test_stock_fetch.py",
+"kosif-tool/.claude/skills/kosif-superpowers/scripts/stock_fetch.py"
+],
+"twins": [
+[
+"TOOL-177",
+"TOOL-179"
+]
+],
+"distinct_methods": 14,
+"links": [
+{
+"id": "SP-0361",
+"sim": 0.203
+},
+{
+"id": "SP-0115",
+"sim": 0.173
+},
+{
+"id": "SP-0478",
+"sim": 0.154
+},
+{
+"id": "SP-0349",
+"sim": 0.15
+}
+]
+},
+{
+"id": "SP-0144",
+"domain": "build",
+"family": "runnable-tools",
 "name_ar": "تدقيق أدلة الكتالوج",
 "name_en": "Catalog Evidence Audit",
 "focus": [
@@ -18665,157 +18822,6 @@
 {
 "id": "SP-0077",
 "sim": 0.203
-}
-]
-},
-{
-"id": "SP-0144",
-"domain": "build",
-"family": "runnable-tools",
-"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
-"name_en": "Free footage: open-licence video sources with search, download and credits",
-"focus": [
-"sources",
-"stock",
-"references",
-"free"
-],
-"size": 14,
-"best": "proven",
-"status_mix": {
-"proven": 13,
-"install": 1
-},
-"ready_now": 13,
-"families": {
-"runnable-tools": 14
-},
-"atlas_folded": 0,
-"requires": [
-"python3",
-"ffmpeg",
-"yt-dlp",
-"imagemagick",
-"key:unspecified",
-"npm:rea",
-"pip:office",
-"chromium"
-],
-"pipeline": [
-{
-"id": "TOOL-177",
-"status": "proven",
-"name_en": "Free footage: open-licence video sources with search, download and credits",
-"name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب"
-},
-{
-"id": "TOOL-95",
-"status": "proven",
-"name_en": "Keyless stock footage fetcher (Pexels, Mixkit)",
-"name_ar": "تحميل لقطات مجانية بلا مفتاح (Pexels وMixkit)"
-},
-{
-"id": "TOOL-179",
-"status": "proven",
-"name_en": "Free photos: open-licence and free stock photo search and download with credits",
-"name_ar": "صور مجانية: بحث وتحميل صور مفتوحة الترخيص ومجانية للمونتاج مع سطر النسب"
-},
-{
-"id": "TOOL-50",
-"status": "proven",
-"name_en": "Community source scout",
-"name_ar": "مستكشف مصادر المجتمع"
-},
-{
-"id": "TOOL-47",
-"status": "proven",
-"name_en": "Licensed stock media gateway",
-"name_ar": "بوابة الوسائط المرخّصة"
-},
-{
-"id": "TOOL-46",
-"status": "proven",
-"name_en": "Creative sources offline search",
-"name_ar": "بحث المصادر الإبداعية دون اتصال"
-},
-{
-"id": "TOOL-142",
-"status": "proven",
-"name_en": "Sources index: per-work-dir index memory of the user's attachments",
-"name_ar": "فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل"
-},
-{
-"id": "TOOL-160",
-"status": "proven",
-"name_en": "GitHub Top-1000 Tracker",
-"name_ar": "متابعة أشهر 1000 مستودع"
-},
-{
-"id": "TOOL-172",
-"status": "proven",
-"name_en": "Instagram Reference Discovery → Infinite Matrices",
-"name_ar": "البحث عن مراجع فيديو إنستجرام وربطها بالمصفوفات اللانهائية"
-},
-{
-"id": "TOOL-173",
-"status": "proven",
-"name_en": "Instagram product video finder",
-"name_ar": "البحث عن فيديوهات إنستجرام لمنتج وتحميلها"
-},
-{
-"id": "TOOL-182",
-"status": "proven",
-"name_en": "Official song preview (DRM fallback)",
-"name_ar": "معاينة الأغنية الرسمية (بديل الـDRM)"
-},
-{
-"id": "TOOL-93",
-"status": "proven",
-"name_en": "Permitted reference fetch and measure",
-"name_ar": "جلب المرجع المسموح وقياسه"
-},
-{
-"id": "TOOL-45",
-"status": "proven",
-"name_en": "Browser scout site survey",
-"name_ar": "مستكشف المواقع بالمتصفح"
-},
-{
-"id": "TOOL-51",
-"status": "install",
-"name_en": "Cinema C iPhone downloader studio",
-"name_ar": "استوديو التنزيل Cinema C للآيفون"
-}
-],
-"proof": [
-"kosif-tool/.claude/skills/kosif-superpowers/evals/test_free_footage.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/free_footage.py",
-"kosif-tool/tests/test_stock_fetch.py",
-"kosif-tool/.claude/skills/kosif-superpowers/scripts/stock_fetch.py"
-],
-"twins": [
-[
-"TOOL-177",
-"TOOL-179"
-]
-],
-"distinct_methods": 13,
-"links": [
-{
-"id": "SP-0361",
-"sim": 0.206
-},
-{
-"id": "SP-0115",
-"sim": 0.177
-},
-{
-"id": "SP-0349",
-"sim": 0.159
-},
-{
-"id": "SP-0478",
-"sim": 0.158
 }
 ]
 },
@@ -19702,7 +19708,7 @@
 "distinct_methods": 3,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.169
 },
 {
@@ -23582,8 +23588,8 @@
 "sim": 0.145
 },
 {
-"id": "SP-0144",
-"sim": 0.124
+"id": "SP-0143",
+"sim": 0.12
 },
 {
 "id": "SP-0099",
@@ -38737,7 +38743,7 @@
 "distinct_methods": 5,
 "links": [
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.283
 },
 {
@@ -41615,8 +41621,8 @@
 "sim": 0.187
 },
 {
-"id": "SP-0144",
-"sim": 0.049
+"id": "SP-0143",
+"sim": 0.05
 }
 ]
 },
@@ -45811,7 +45817,7 @@
 "sim": 0.391
 },
 {
-"id": "SP-0143",
+"id": "SP-0144",
 "sim": 0.198
 },
 {
@@ -45819,8 +45825,8 @@
 "sim": 0.182
 },
 {
-"id": "SP-0144",
-"sim": 0.159
+"id": "SP-0143",
+"sim": 0.15
 }
 ]
 },
@@ -47482,8 +47488,8 @@
 "distinct_methods": 7,
 "links": [
 {
-"id": "SP-0144",
-"sim": 0.206
+"id": "SP-0143",
+"sim": 0.203
 },
 {
 "id": "SP-0381",
@@ -51261,7 +51267,7 @@
 "sim": 0.09
 },
 {
-"id": "SP-0144",
+"id": "SP-0143",
 "sim": 0.086
 }
 ]
@@ -63667,8 +63673,8 @@
 "distinct_methods": 11,
 "links": [
 {
-"id": "SP-0144",
-"sim": 0.158
+"id": "SP-0143",
+"sim": 0.154
 },
 {
 "id": "SP-0361",

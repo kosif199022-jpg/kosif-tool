@@ -3,7 +3,7 @@
 
 > **قوتك هنا / what this gives you:** كل سكربت في المهارة والمستودع يُشغَّل فعلًا ولم يكن له سجل في الكتالوج: ماذا يفعل، ومتى، وأمره الأول، ومستلزماته، ودليله. مولَّدة من data/tools.json بأمر hub.py build؛ hub.py tool <id> يعطي البطاقة كاملة. — Every script in the skill and repository that really runs and had no catalog record: what it does, when, its first command, requirements and proof. Generated from data/tools.json by hub.py build; hub.py tool <id> gives the full card.
 > **أقوى دليل / strongest evidence:** **TOOL-01** Offline bilingual capability finder (`kosif-tool/.claude/skills/kosif-superpowers/evals/test_ai_tool_discovery.py`) · **TOOL-02** Session boot briefing (`kosif-tool/tests/test_boot.py`)
-> **182 powers follow** — ✅ 151 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
+> **183 powers follow** — ✅ 152 · 🟢 22 · 📦 9 · 🔑 0 · 👁 0 · 📄 0 · 💡 0.
 
 **الحالة / status:** ✅ مُثبت (شُغّل فعلًا وله مسار دليل) · 🟢 جاهز (كود موجود يعمل بما هو متاح عادة) · 📦 بأمر تثبيت واحد · 🔑 يحتاج مفتاحًا أو حسابًا أو موصلًا · 👁 شوهد في فيديو مرجعي (للموشن فقط) · 📄 طريقة موثقة · 💡 فكرة. الشارة هي أدنى مستوى صادق — the badge is the lowest level that is true.
 مسارات الدليل نسبية إلى `/home/user/`؛ و`session-<date>:<file>#<section>` تشير إلى تشغيل موثق في جلسة سابقة؛ و`owner-upload:` إلى ملف داخل أرشيف أرسله المالك. Proof paths are relative to `/home/user/`.
@@ -23,7 +23,7 @@
 - **Maintain and build / الصيانة والبناء** — TOOL-33 … TOOL-154 (13)
 - **3D / ثلاثي الأبعاد** — TOOL-36 … TOOL-121 (11)
 - **Image, design and fonts / الصور والتصميم والخطوط** — TOOL-42 … TOOL-148 (11)
-- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-182 (23)
+- **Sources and references / المصادر والمراجع** — TOOL-43 … TOOL-184 (24)
 - **Local computer / الجهاز المحلي** — TOOL-55 (1)
 - المصادر والرخص / sources & licences
 
@@ -1616,6 +1616,15 @@
 - **الدليل / proof:** `kosif-tool/tests/test_song_preview.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/song_preview.py`
 - **المصدر / source:** data/tools.json
 
+#### TOOL-184 · نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) · Website snapshot and design read-out (goclone capabilities) · ✅ مُثبت هنا / proven here
+- **ماذا / what:** يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط كل الروابط على النسخة المحلية، ويقدر يزحف على N صفحة من نفس الموقع، ويشغّل النسخة على 127.0.0.1، أو يشغّل goclone الحقيقي بـ --engine goclone. كل نسخة معاها manifest.json (SHA-256 لكل ملف) وRIGHTS.json وقراءة تصميم (design.json + design.md: الألوان والخطوط و@font-face وسلم المقاسات والزوايا والمسافات والظلال ونقاط الكسر ومتغيرات CSS) لمرحلة «انسخ اللوحة» في Living Site. بوابة حقوق (--rights own|licensed|permission مع --rights-note) وrobots.txt وحماية العناوين الخاصة وحدود الحجم تمنع إساءة الاستخدام. — Brings goclone's capabilities (github.com/goclone-dev/goclone, MIT) into the skill in pure Python: copies one or more pages with their CSS, JS, images, fonts and media into goclone's css/ js/ imgs/ layout (plus fonts/ and media/), follows CSS url() and @import, srcset, posters and inline styles, rewrites every link to the local copy, and can crawl N same-site pages, serve the copy on 127.0.0.1 or run the real goclone binary with --engine goclone. Each snapshot gets manifest.json (SHA-256 per file), RIGHTS.json and a design read-out (design.json + design.md: colours, fonts, @font-face, type scale, radii, spacing, shadows, breakpoints, CSS variables) for the Living Site Stage 1 canvas. A rights gate (--rights own|licensed|permission + --rights-note), robots.txt, a private-address guard and size caps stop misuse.
+- **متى أستخدمها / when:** انسخ موقعي ده أوفلاين وطلّعلي ألوانه وخطوطه / Clone my website offline with its CSS, JS and images
+- **كيف / how:** snapshot: `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my company site" --out ./out/site`; crawl: `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my site" --pages 5 --same-origin-assets --out ./out/site`; goclone-engine: `python3 scripts/site_snapshot.py snapshot example.com --engine goclone --rights own --rights-note "my site" --out ./out/site`; analyse: `python3 scripts/site_snapshot.py analyse ./out/site --json`. Full card: `python3 scripts/hub.py tool site-snapshot`. Limits: Static HTML only: pages built by JavaScript after load, logins, captchas and anti-bot walls are not rendered (use a headless browser for those). The design read-out counts CSS values; it does not see computed styles, images or motion. **أرقام / params:** in: One or more http(s) URLs or bare domains of a site the user owns or may copy, plus --rights and --rights-note. Optional cookies (-C), user agent (-u), proxy (-p). · out: DIR/index.html, pages/*.html, css/ js/ imgs/ fonts/ media/, manifest.json, RIGHTS.json, design.json, design.md. DIR defaults to ./.kosif-cache/site-snapshot/<domain>/ (git-ignored). Exit 0 ok, 1 refused, 2 network failure.
+- **تثبيت / install:** `optional: goclone`
+- **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`chromium`](../requirements.md#req-chromium)
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/evals/test_site_snapshot.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/site_snapshot.py`
+- **المصدر / source:** data/tools.json
+
 ## Local computer / الجهاز المحلي
 
 #### TOOL-55 · خادم KOSIF Remote Commander · KOSIF Remote Commander MCP · ✅ مُثبت هنا / proven here
@@ -1629,7 +1638,7 @@
 
 ## المصادر والرخص / sources & licences
 
-- الرخص / licences: — (182)
+- الرخص / licences: — (183)
 - الأفكار مكتوبة بكلماتنا مع رابط المصدر؛ لا يُنسخ نص طرف ثالث طويل. Ideas are paraphrased with a link to the source; no long third-party text is copied. `—` = no licence recorded (own method or own wording).
 
 ---

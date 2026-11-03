@@ -48,6 +48,7 @@
 | `rea-creative-research-atlas` | باني فهرس البحث الإبداعي | `python3 scripts/rea_creative_research_atlas.py report` | tested-elsewhere |
 | `rebalance-creative-repos` | إعادة موازنة فهرس المستودعات الإبداعية | `python3 scripts/rebalance_creative_repos.py run` | tested-elsewhere |
 | `repo-sync-catalog` | مزامنة الكتالوج مع PromptsMotion | `python3 tools/sync_catalog.py` | untested |
+| `site-snapshot` | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) | `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note "my company site" --out ./out/site` | tested-here |
 | `source-finder` | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي | `python3 scripts/source_finder.py doctor` | tested-here |
 | `source-scout` | مستكشف مصادر المجتمع | `python3 scripts/source_scout.py check` | tested-here |
 | `sources-index` | فهرس المصادر: الذاكرة الفهرسية لمرفقات المستخدم داخل مجلد العمل | `python3 -I scripts/sources_index.py add charter.txt --dir ../../../out/demo` | tested-here |

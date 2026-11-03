@@ -8151,5 +8151,53 @@
   ],
   "section": "Motion graphics and rendering / الموشن والرندر",
   "source": "data/tools.json"
+ },
+ {
+  "id": "TOOL-184",
+  "family": "runnable-tools",
+  "domain": "build",
+  "name_ar": "نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone)",
+  "name_en": "Website snapshot and design read-out (goclone capabilities)",
+  "status": "proven",
+  "what": "يجيب قدرات goclone (github.com/goclone-dev/goclone، ترخيص MIT) جوه المهارة ببايثون صافي: ينسخ صفحة أو أكتر بملفات CSS وJS والصور والخطوط والميديا في ترتيب goclone (css/ js/ imgs/ ومعاهم fonts/ وmedia/)، ويتتبع url() و@import في CSS وsrcset والـposter والستايل الداخلي، ويعيد ربط كل الروابط على النسخة المحلية، ويقدر يزحف على N صفحة من نفس الموقع، ويشغّل النسخة على 127.0.0.1، أو يشغّل goclone الحقيقي بـ --engine goclone. كل نسخة معاها manifest.json (SHA-256 لكل ملف) وRIGHTS.json وقراءة تصميم (design.json + design.md: الألوان والخطوط و@font-face وسلم المقاسات والزوايا والمسافات والظلال ونقاط الكسر ومتغيرات CSS) لمرحلة «انسخ اللوحة» في Living Site. بوابة حقوق (--rights own|licensed|permission مع --rights-note) وrobots.txt وحماية العناوين الخاصة وحدود الحجم تمنع إساءة الاستخدام. — Brings goclone's capabilities (github.com/goclone-dev/goclone, MIT) into the skill in pure Python: copies one or more pages with their CSS, JS, images, fonts and media into goclone's css/ js/ imgs/ layout (plus fonts/ and media/), follows CSS url() and @import, srcset, posters and inline styles, rewrites every link to the local copy, and can crawl N same-site pages, serve the copy on 127.0.0.1 or run the real goclone binary with --engine goclone. Each snapshot gets manifest.json (SHA-256 per file), RIGHTS.json and a design read-out (design.json + design.md: colours, fonts, @font-face, type scale, radii, spacing, shadows, breakpoints, CSS variables) for the Living Site Stage 1 canvas. A rights gate (--rights own|licensed|permission + --rights-note), robots.txt, a private-address guard and size caps stop misuse.",
+  "when": "انسخ موقعي ده أوفلاين وطلّعلي ألوانه وخطوطه / Clone my website offline with its CSS, JS and images",
+  "how": "snapshot: `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note \"my company site\" --out ./out/site`; crawl: `python3 scripts/site_snapshot.py snapshot https://example.com --rights own --rights-note \"my site\" --pages 5 --same-origin-assets --out ./out/site`; goclone-engine: `python3 scripts/site_snapshot.py snapshot example.com --engine goclone --rights own --rights-note \"my site\" --out ./out/site`; analyse: `python3 scripts/site_snapshot.py analyse ./out/site --json`. Full card: `python3 scripts/hub.py tool site-snapshot`. Limits: Static HTML only: pages built by JavaScript after load, logins, captchas and anti-bot walls are not rendered (use a headless browser for those). The design read-out counts CSS values; it does not see computed styles, images or motion.",
+  "params": "in: One or more http(s) URLs or bare domains of a site the user owns or may copy, plus --rights and --rights-note. Optional cookies (-C), user agent (-u), proxy (-p). · out: DIR/index.html, pages/*.html, css/ js/ imgs/ fonts/ media/, manifest.json, RIGHTS.json, design.json, design.md. DIR defaults to ./.kosif-cache/site-snapshot/<domain>/ (git-ignored). Exit 0 ok, 1 refused, 2 network failure.",
+  "install": "optional: goclone",
+  "requires": [
+   "python3",
+   "chromium"
+  ],
+  "license": "",
+  "proof": [
+   "kosif-tool/.claude/skills/kosif-superpowers/evals/test_site_snapshot.py",
+   "kosif-tool/.claude/skills/kosif-superpowers/scripts/site_snapshot.py"
+  ],
+  "proof_scope": "repo",
+  "styles": [],
+  "tags": [
+   "site-snapshot",
+   "goclone",
+   "clone website",
+   "website copy",
+   "offline copy",
+   "mirror",
+   "snapshot",
+   "site snapshot",
+   "design tokens",
+   "design.md",
+   "living site",
+   "css",
+   "fonts",
+   "نسخ موقع",
+   "نسخة أوفلاين",
+   "استنساخ موقع",
+   "نظام التصميم",
+   "ألوان الموقع",
+   "خطوط الموقع",
+   "الموقع الحي"
+  ],
+  "section": "Sources and references / المصادر والمراجع",
+  "source": "data/tools.json"
  }
 ]
