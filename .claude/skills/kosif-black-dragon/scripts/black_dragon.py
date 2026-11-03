@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import importlib.util
 import json
 import re
 import sys
@@ -185,6 +186,8 @@ def build(root: Path, out: Path) -> dict:
         "by_kind": dict(sorted(Counter(x["kind"] for x in items.values()).items())),
         "machine_extracted": len(items), "native_implemented": 0,
         "real_execution_verified": 0,
+        "native_thinking_implemented": True,
+        "native_thinking_faculties": 26,
         "source_index_sha256": digest(index.read_bytes()),
         "truth": "Every source is linked and machine-extracted, NOT individually reviewed, native-implemented or executed."
     }
@@ -194,6 +197,17 @@ def build(root: Path, out: Path) -> dict:
 
 def load_index(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def native_reasoner():
+    """Load only the NEW local reasoning module, never the legacy Dragon Mind."""
+    path = Path(__file__).with_name("native_mind.py")
+    spec = importlib.util.spec_from_file_location("_kosif_black_dragon_native_reasoner", path)
+    if spec is None or spec.loader is None:
+        raise ValueError("independent native reasoning module unavailable")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 
 def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> dict:
@@ -210,11 +224,15 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
             ranking.append((score, x["id"], x))
     ranking.sort(key=lambda t: (-t[0], t[1]))
     selected = [x for _, _, x in ranking[:limit]]
+    # Internalized Dragon Mind's ideas: 26 faculties, cognitive cycle, native
+    # method reconciliation and typed inputs. No old runtime is invoked.
+    synthesis = native_reasoner().fuse(task, selected, len(items))
     return {
         "schema": SCHEMA + ".task", "task": task,
         "status": "native-thinking-blueprint-not-execution",
         "phases": list(PHASES),
         "source_count": len(items),
+        "native_mind": synthesis,
         "selected": [{"id": x["id"], "faculty": x["faculty"], "purpose": x["purpose"][:450],
                       "method": x["method"][:800], "requirements": x["requirements"],
                       "code": x["code"], "source_sha256": x["source_sha256"],
