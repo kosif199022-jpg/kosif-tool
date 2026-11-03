@@ -18,6 +18,11 @@ VENDOR = SUPER / "vendor/100-superskills/skills"
 sys.path.insert(0, str(SCRIPTS))
 import black_dragon as dragon
 
+HAS_NUMPY = importlib.util.find_spec("numpy") is not None
+HAS_OPENPYXL = importlib.util.find_spec("openpyxl") is not None
+HAS_PIL = importlib.util.find_spec("PIL") is not None
+HAS_CV2 = importlib.util.find_spec("cv2") is not None
+
 
 class BlackDragonQualityRegressions(unittest.TestCase):
     def test_probe_never_runs_import_time_code_even_for_argparse_file(self):
@@ -42,6 +47,7 @@ class BlackDragonQualityRegressions(unittest.TestCase):
             receipt = json.loads(Path(result["output"]).read_text(encoding="utf-8"))
             self.assertFalse(receipt["executed"])
 
+    @unittest.skipUnless(HAS_OPENPYXL, "openpyxl optional in this CI lane; exercised in Black Dragon checks")
     def test_excel_planted_statement_constant_is_high_and_not_pass(self):
         from openpyxl import Workbook
         with tempfile.TemporaryDirectory() as temp:
@@ -64,6 +70,7 @@ class BlackDragonQualityRegressions(unittest.TestCase):
             self.assertTrue(any(x["sev"] == "HIGH" and x["cell"] == "PnL!D6"
                                 and "12345" in x["issue"] for x in result["findings"]), result)
 
+    @unittest.skipUnless(HAS_NUMPY and HAS_PIL, "numpy/Pillow optional in generic CI; exercised in Black Dragon checks")
     def test_pixel_studio_headless_code_renders_supplied_svg_not_default_scene(self):
         from PIL import Image
         with tempfile.TemporaryDirectory() as temp:
@@ -85,6 +92,7 @@ class BlackDragonQualityRegressions(unittest.TestCase):
             self.assertLess(g, 80)
             self.assertLess(b, 80)
 
+    @unittest.skipUnless(HAS_NUMPY and HAS_PIL, "numpy/Pillow optional in generic CI; exercised in Black Dragon checks")
     def test_pixel_studio_never_silently_renders_default_for_python_code(self):
         with tempfile.TemporaryDirectory() as temp:
             tmp = Path(temp)
@@ -99,6 +107,7 @@ class BlackDragonQualityRegressions(unittest.TestCase):
             self.assertFalse(output.exists())
             self.assertIn("SVG/scene JSON only", p.stderr)
 
+    @unittest.skipUnless(HAS_NUMPY and HAS_PIL and HAS_CV2, "OpenCV/numpy/Pillow optional in generic CI")
     def test_camera_translation_does_not_look_like_a_new_shot(self):
         import numpy as np
         mimic = VENDOR / "kosif-mimic/scripts"
@@ -114,6 +123,7 @@ class BlackDragonQualityRegressions(unittest.TestCase):
         self.assertLess(camera, 2.0)
         self.assertGreater(new_scene, 30.0)
 
+    @unittest.skipUnless(HAS_NUMPY, "numpy optional in generic CI; exercised in Black Dragon checks")
     def test_beat_estimator_does_not_invent_tempo_from_irregular_transients(self):
         import numpy as np
         path = VENDOR / "pro-video-editor-ffmpeg/scripts/beat_cuts.py"
