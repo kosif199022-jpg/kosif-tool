@@ -56,9 +56,19 @@ def main() -> None:
                     cached = wsv[c.coordinate].value
                     if isinstance(cached, str) and cached in ERR:
                         findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}", "issue": f"خطأ محفوظ {cached}", "fix": "أصلح الصيغة؛ لا تلفّها بـ IFERROR لإخفائها"})
-                elif isinstance(v, (int, float)):
+                elif isinstance(v, (int, float)) and not isinstance(v, bool):
                     stats["inputs"] += 1
-                    if ws.title.lower() not in ("assumptions", "inputs", "docs") and not color.endswith("0000FF") and c.row > 3 and c.column > 2:
+                    # Financial statements are calculated matrices. Replacing a
+                    # formula with a number must be a HIGH error even if the
+                    # original formula's formatting was bold/black (or if the
+                    # inserted number is 0, 1, 12, etc.).
+                    calculated_sheet = ws.title.lower() in ("pnl", "bs", "cf", "checks", "check", "فحوص")
+                    if calculated_sheet and c.row > 3 and c.column >= 3:
+                        stats["hardcoded"] += 1
+                        findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}",
+                                         "issue": f"رقم ثابت ({v}) في منطقة نتائج محسوبة؛ ربما استبدل معادلة",
+                                         "fix": "استعد المعادلة؛ احتفظ بالثوابت في Assumptions"})
+                    elif ws.title.lower() not in ("assumptions", "inputs", "docs") and not color.endswith("0000FF") and c.row > 3 and c.column > 2:
                         findings.append({"sev": "MED", "cell": f"{ws.title}!{c.coordinate}", "issue": f"رقم ثابت ({v}) خارج ورقة المدخلات وبلون غير أزرق", "fix": "إن كان مدخلاً فانقله إلى Assumptions بالأزرق؛ وإن كان نتيجة فاجعله صيغة"})
     if not has_checks:
         findings.append({"sev": "HIGH", "cell": "-", "issue": "لا ورقة Checks", "fix": "أضف BS_check وCF_check وحالة كلية OK/ERROR"})
