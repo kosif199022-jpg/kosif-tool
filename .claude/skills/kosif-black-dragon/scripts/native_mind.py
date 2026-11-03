@@ -148,12 +148,12 @@ def classify(item: dict) -> list[dict]:
 
 
 def _method_fragments(item: dict) -> list[str]:
-    """Preserve distinct instructions; no unsafe fuzzy deletion of constraints."""
+    """Preserve every distinct instruction; do not silently cap or drop constraints."""
     raw = str(item.get("method") or item.get("purpose") or item.get("title") or "")
     fragments = re.split(r"[;\n]+", raw)
     parts = [re.sub(r"\s+", " ", x).strip() for x in fragments if x.strip()]
     # A source's text may be long. Keep original fingerprints for full detail.
-    return parts[:32] or [str(item.get("title") or item.get("id"))]
+    return parts or [str(item.get("title") or item.get("id"))]
 
 
 def fuse(task: str, selected: list[dict], catalog_total: int) -> dict:
@@ -181,7 +181,7 @@ def fuse(task: str, selected: list[dict], catalog_total: int) -> dict:
             raw_method_count += 1
             normalized = _normalize(step)
             if normalized not in group["methods"]:
-                group["methods"][normalized] = {"method": step[:1200], "source_ids": []}
+                group["methods"][normalized] = {"method": step, "source_ids": []}
             if sid not in group["methods"][normalized]["source_ids"]:
                 group["methods"][normalized]["source_ids"].append(sid)
 
