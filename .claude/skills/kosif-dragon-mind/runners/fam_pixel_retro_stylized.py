@@ -59,7 +59,7 @@ def _blur(a, s):
 
 
 def _video(path, frames, fps=30, lossless=True):
-    frames = [np.clip(f, 0, 255).astype(np.uint8) for f in frames]
+    frames = [np.clip(np.round(f), 0, 255).astype(np.uint8) for f in frames]
     h, w = frames[0].shape[:2]
     codec = ["-c:v", "libx264rgb", "-qp", "0", "-pix_fmt", "rgb24"] if lossless else \
         ["-c:v", "libx264", "-crf", "18", "-pix_fmt", "yuv420p"]
@@ -1068,8 +1068,8 @@ def glitch_pass(task, wd):
                   sorted(set(offs)), 2 * co),
             check("hashed per frame: deterministic and varying", np.array_equal(v[3], fx.frames(vid, (W, H))[3]) and
                   not np.array_equal(v[3], v[4]), True, True),
-            check("negative control: input bands are unshifted", float(np.abs(src - np.roll(src, 0, 1)).max()) == 0 and
-                  float(np.abs(v[0] - src).mean()) > 1, float(np.abs(v[0] - src).mean()), ">1")], [vid]
+            check("negative control: the unprocessed input has no R/B offset",
+                  _shift_x(src[0:1, :, 2], src[0:1, :, 0], 8) != 2 * co, _shift_x(src[0:1, :, 2], src[0:1, :, 0], 8), 2 * co)], [vid]
 
 
 @card("RETRO-29")
