@@ -17,6 +17,8 @@ except ImportError:
 ERR = {"#REF!", "#N/A", "#VALUE!", "#DIV/0!", "#NAME?", "#NUM!", "#NULL!"}
 HARDCODE = re.compile(r"(?<![A-Za-z\$!:\.\d])(?:\*|/|\+|-)\s*(\d+\.\d+|\d{2,})(?![\d\.:])")  # e.g. *0.21, *1.05, +5000 ; excludes cell refs like A12, 365 handled below
 ALLOWED_NUMBERS = {"365", "12", "100", "1000", "360", "52", "0", "1", "2", "3"}
+# A formula whose entire body is a numeric literal (including =0) is never a calculation.
+BARE_NUMERIC_FORMULA = re.compile(r"^=\s*[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?\s*$")
 VOLATILE = re.compile(r"\b(NOW|TODAY|RAND|RANDBETWEEN|OFFSET|INDIRECT)\s*\(", re.I)
 SHEET_REF = re.compile(r"(?:'([^']+)'|([A-Za-z_][\w\.]*))!")
 
@@ -40,11 +42,17 @@ def main() -> None:
                 if is_formula:
                     stats["formulas"] += 1
                     f = v.upper()
-                    for m in HARDCODE.finditer(v):
-                        num = m.group(1)
-                        if num not in ALLOWED_NUMBERS:
-                            stats["hardcoded"] += 1
-                            findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}", "issue": f"رقم مدفون في صيغة: {m.group(0).strip()}", "fix": "انقله إلى خلية مدخل زرقاء في Assumptions وأشر إليها"})
+                    if BARE_NUMERIC_FORMULA.fullmatch(v):
+                        stats["hardcoded"] += 1
+                        findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}",
+                                         "issue": f"صيغة عبارة عن رقم ثابت: {v}",
+                                         "fix": "انقل الثابت إلى Assumptions وأشر إلى خليته؛ لا تعتبر =0 صيغة محسوبة"})
+                    else:
+                        for m in HARDCODE.finditer(v):
+                            num = m.group(1)
+                            if num not in ALLOWED_NUMBERS:
+                                stats["hardcoded"] += 1
+                                findings.append({"sev": "HIGH", "cell": f"{ws.title}!{c.coordinate}", "issue": f"رقم مدفون في صيغة: {m.group(0).strip()}", "fix": "انقله إلى خلية مدخل زرقاء في Assumptions وأشر إليها"})
                     if VOLATILE.search(f):
                         findings.append({"sev": "MED", "cell": f"{ws.title}!{c.coordinate}", "issue": "دالة متقلبة (OFFSET/INDIRECT/NOW…)", "fix": "استبدلها بمرجع ثابت أو INDEX"})
                     for m in SHEET_REF.finditer(v):
