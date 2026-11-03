@@ -28,11 +28,20 @@ def card_index() -> dict:
     return out
 
 
-def module_for(family: str):
+def modules_for(family: str) -> list:
+    """The family's module <family>.py plus any wave modules <family>__<wave>.py."""
     name = family.replace("-", "_")
-    if not (HERE / f"{name}.py").is_file():
-        return None
-    return importlib.import_module(f"power_programs.{name}")
+    paths = [HERE / f"{name}.py"] + sorted(HERE.glob(f"{name}__*.py"))
+    return [importlib.import_module(f"power_programs.{p.stem}") for p in paths if p.is_file()]
+
+
+def program_for(family: str, pid: str):
+    """(module, function) holding PROGRAMS[pid] for this family, or (None, None)."""
+    for mod in modules_for(family):
+        fn = getattr(mod, "PROGRAMS", {}).get(pid)
+        if fn is not None:
+            return mod, fn
+    return None, None
 
 
 def all_programs() -> dict:

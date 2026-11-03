@@ -36,8 +36,7 @@ def run_program(pid: str, work: Path) -> dict:
     if pid not in cards:
         return {"ok": False, "error": f"unknown power id: {pid}"}
     family, card = cards[pid]
-    mod = pp.module_for(family)
-    fn = getattr(mod, "PROGRAMS", {}).get(pid) if mod else None
+    mod, fn = pp.program_for(family, pid)
     if fn is None:
         return {"ok": False, "refused": True, "error": f"no program written for {pid} ({family})"}
     if work.exists():
