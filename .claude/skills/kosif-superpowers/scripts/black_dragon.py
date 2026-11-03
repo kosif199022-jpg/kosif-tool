@@ -8,13 +8,14 @@ weight, and every entry gets a written brief line with the hash of its source.
 
 Evidence tiers, never mixed up in the report:
   assigned  - in the plan with a part, mode and application (all entries)
-  probed    - a read-only tool answered `--help` here (opt-in --probe-tools)
+  inspected - static AST inspection of a CLI without executing any module code (opt-in --probe-tools)
   executed  - a reviewed adapter ran on the task, wrote a nonempty artifact and
               a SHA-256 receipt (opt-in --adapters FILE --execute-adapters)
 Bounded parallel dispatch. No shell strings, payments, uploads or installs.
 """
 from __future__ import annotations
 import argparse
+import ast
 import concurrent.futures as futures
 import json
 import hashlib
@@ -31,7 +32,6 @@ import _black_dragon_skill_links as skill_links
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v2"
 MAX_WORKERS = 32
-PROBE_TIMEOUT = 30
 REVIEWED_ADAPTERS = audit.SKILL / "data" / "black_dragon_adapters.json"
 
 
@@ -100,9 +100,11 @@ def _tool_records() -> dict:
 
 
 def _probe(key: str, record: dict | None, job: Path) -> dict:
-    """Ask an argparse CLI tool for --help (argparse exits before any action).
+    """Inspect a Python CLI via AST only. NEVER import or run unreviewed code.
 
-    Proves the tool starts on this machine with its imports, nothing more.
+    Historically this launched arbitrary repo scripts with --help; Python executes
+    module-level statements before argparse processes that flag. A static finding
+    is deliberately NOT a successful runtime probe.
     """
     if record is None:
         return {"status": "not-probeable", "reason": "no registry record"}
@@ -113,25 +115,22 @@ def _probe(key: str, record: dict | None, job: Path) -> dict:
     if target.suffix != ".py" or not target.is_file() or not _inside(target.resolve(), REPO):
         return {"status": "not-probeable", "reason": "not a Python file inside the repository"}
     try:
-        if "argparse" not in target.read_text(encoding="utf-8", errors="replace"):
-            return {"status": "not-probeable", "reason": "no argparse, --help is not known to be harmless"}
-    except OSError as exc:
-        return {"status": "not-probeable", "reason": str(exc)[:200]}
-    name = re.sub(r"[^a-zA-Z0-9_.-]", "_", key)
-    sandbox = job / "probes" / "cwd"
-    sandbox.mkdir(parents=True, exist_ok=True)
-    command = [sys.executable, str(target), "--help"]
-    try:
-        done = subprocess.run(command, cwd=sandbox, text=True, capture_output=True,
-                              timeout=PROBE_TIMEOUT, check=False, stdin=subprocess.DEVNULL)
-    except (OSError, subprocess.TimeoutExpired) as exc:
-        return {"status": "failed", "reason": str(exc)[:200], "command": command}
-    out = job / "probes" / f"{name}.txt"
-    out.write_text(done.stdout + done.stderr, encoding="utf-8")
-    ok = done.returncode == 0 and out.stat().st_size > 0
-    return {"status": "passed" if ok else "failed", "exit_code": done.returncode,
-            "safety": record.get("safety"),
-            "command": command, "output": str(out), "output_sha256": audit.sha256(out)}
+        source = target.read_text(encoding="utf-8")
+        tree = ast.parse(source, filename=str(target))
+    except (OSError, UnicodeError, SyntaxError) as exc:
+        return {"status": "failed", "reason": f"static parse failed: {str(exc)[:180]}"}
+    imports_argparse = any(
+        (isinstance(node, ast.Import) and any(a.name == "argparse" for a in node.names))
+        or (isinstance(node, ast.ImportFrom) and node.module == "argparse")
+        for node in ast.walk(tree)
+    )
+    if not imports_argparse:
+        return {"status": "not-probeable", "reason": "no argparse import in Python AST"}
+    return {"status": "inspected", "method": "static-ast-no-execution",
+            "source_sha256": audit.sha256(target),
+            "reason": "argparse import declared; runtime/import readiness NOT verified"}
+
+
 
 def _inside(child: Path, parent: Path) -> bool:
     return child == parent or parent in child.parents
@@ -397,6 +396,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "parts": {k: {"assigned": v["assigned"], "leads": v["leads"]} for k, v in strategy["parts"].items()},
               "modes": strategy["modes"], "weights": strategy["weights"],
               "probed": len(probes), "probe_passed": probe_counts["passed"],
+              "probe_static_inspected": probe_counts["inspected"],
               "probe_failed": probe_counts["failed"], "probe_not_probeable": probe_counts["not-probeable"],
               "workers": workers, "adapter_count": len(adapters),
               "adapter_readiness": {k: v for k, v in readiness.items()
@@ -414,7 +414,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "failed": counts["failed"], "full_coverage": coverage["fully_executed"],
               "coverage_file": str(job / "all_skills_report.json"),
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
-                        "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
+                        "--probe-tools inspects CLI source without importing/executing it; only receipt-verified adapter work is 'executed'")}
     report["mode"] = mode
     report["reviewed_execution_complete"] = bool(
         allow_execution and adapters and all(
@@ -443,8 +443,8 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"({', '.join(f'{k} {v:,}' for k, v in report['by_kind'].items())})",
              f"- اتعيّن لها جزء وطريقة / assigned a part and mode: **{report['assigned']:,}** "
              f"(complete: {report['assignment_complete']})",
-             f"- أدوات اشتغلت `--help` هنا / tools that start here: **{report['probe_passed']}** "
-             f"of {report['probed']} probed",
+             f"- فحص ساكن دون تشغيل / static CLI inspections (not execution): "
+             f"**{report['probe_static_inspected']}** of {report['probed']} registered tools",
              f"- اتنفذت فعلًا بإيصال / executed with receipt: **{report['executed']}** · "
              f"blocked {report['blocked']:,} · failed {report['failed']}",
              f"- ليه متوقفين / why blocked: **{report['blocked_why']['method_description']:,}** "
@@ -496,7 +496,7 @@ def main(argv=None) -> int:
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--timeout", type=int, default=60)
     p.add_argument("--probe-tools", action="store_true",
-                   help="run --help on every argparse CLI tool as a startup probe")
+                   help="AST-inspect argparse CLIs without importing or executing them")
     p.add_argument("--media", type=Path,
                    help="video/audio file for the media adapters ({media}); without it they use a self-test clip")
     l = sub.add_parser("links", help="Audit every capability's verified skill owner; NO execution")
