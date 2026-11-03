@@ -417,6 +417,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "modes": strategy["modes"], "weights": strategy["weights"],
               "probed": len(probes), "probe_passed": probe_counts["passed"],
               "probe_failed": probe_counts["failed"], "probe_not_probeable": probe_counts["not-probeable"],
+              "probe_static_only": probe_counts["static-only"],
               "workers": workers, "adapter_count": len(adapters),
               "adapter_readiness": {k: v for k, v in readiness.items()
                                     if k != "tools_missing_reviewed_adapter_ids"},
@@ -462,8 +463,8 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"({', '.join(f'{k} {v:,}' for k, v in report['by_kind'].items())})",
              f"- اتعيّن لها جزء وطريقة / assigned a part and mode: **{report['assigned']:,}** "
              f"(complete: {report['assignment_complete']})",
-             f"- أدوات اشتغلت `--help` هنا / tools that start here: **{report['probe_passed']}** "
-             f"of {report['probed']} probed",
+             f"- فحص ساكن / AST-only CLI declarations: **{report['probe_static_only']}** "
+             f"of {report['probed']} inspected (runtime executed: {report['probe_passed']})",
              f"- اتنفذت فعلًا بإيصال / executed with receipt: **{report['executed']}** · "
              f"blocked {report['blocked']:,} · failed {report['failed']}",
              f"- ليه متوقفين / why blocked: **{report['blocked_why']['method_description']:,}** "
