@@ -243,6 +243,11 @@ class FullInventoryTests(unittest.TestCase):
                 self.assertTrue(spec["script"].endswith("_black_dragon_skill.py"), key)
                 self.assertEqual(spec["args"][1:3], ["{artifact}", "--task={task}"], key)
                 continue
+            if spec.get("tool_suite"):  # tool adapters: TOOL_ID {artifact} --task={task}
+                self.assertTrue(spec["script"].endswith("_black_dragon_tool.py"), key)
+                self.assertEqual(spec["args"][1:], ["{artifact}", "--task={task}"], key)
+                self.assertEqual(key, "tool:" + spec["args"][0])
+                continue
             if spec.get("media"):  # media adapters: RECIPE {artifact} --media={media}
                 self.assertTrue(spec["script"].endswith("_black_dragon_media.py"), key)
                 self.assertEqual(spec["args"][1:], ["{artifact}", "--media={media}"], key)

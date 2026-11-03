@@ -27,7 +27,7 @@
 | `blender-cinema` | TOOL-87 | رندر سينمائي بـBlender Cycles · Blender Cycles cinematic renders | `python3 scripts/blender_cinema.py doctor` | 1 |
 | `blender-cinematic-bridge` | TOOL-119 | دمج رندر Blender Cycles مع مونتاج KOSIF والصوت · Blender Cycles + KOSIF Cinematic compositor | `python3 scripts/blender_cinematic_bridge.py doctor` | 2 |
 | `blender-cycles-render` | TOOL-38 | رندر Cycles إلى فيديو مُتحقَّق منه · Cycles scene to verified video | `python3 scripts/blender_cycles_render.py doctor` | 1 |
-| `blender-motion-video` | TOOL-114 | مساعد فيديو الحركة في Blender · Blender motion video helper | `python3 scripts/blender_motion_video.py --help` | 0 |
+| `blender-motion-video` | TOOL-114 | مساعد فيديو الحركة في Blender · Blender motion video helper | `python3 scripts/blender_motion_video.py --help` | 1 |
 | `blender-rescue-scene` | TOOL-120 | إنشاء مشهد إنقاذ قطة ثلاثي الأبعاد داخل Blender · Create an editable Blender 3D cat rescue demo | `blender --background --factory-startup --disable-autoexec --python-ex…` | 1 |
 | `blender-worker` | TOOL-39 | منفّذ المشهد داخل Blender · Blender-side scene builder | `blender --background --factory-startup --disable-autoexec --python-ex…` | 1 |
 | `native-3d` | TOOL-40 | رندر ثلاثي الأبعاد مستقل عن Blender · Native 3D renderer (no Blender) | `python3 scripts/native_3d.py doctor` | 3 |
@@ -52,7 +52,7 @@
 | `atlas-5000` | TOOL-106 | خريطة تغطية أطلس الـ5000 مهارة · Atlas-5000 coverage map | `python3 scripts/atlas_5000.py stats --json` | 1 |
 | `atlas-capability-miner` | TOOL-105 | منقّب قدرات الأطلس من البيانات الوصفية · Atlas metadata capability miner | `python3 scripts/atlas_capability_miner.py --help` | 1 |
 | `atlas-ledger` | TOOL-107 | سجل الأطلس: حالة واحدة لكل مهارة · Atlas ledger: one status for every Atlas skill | `python3 scripts/atlas_ledger.py stats --json` | 1 |
-| `atlas-task-method-router` | TOOL-112 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router | `python3 scripts/atlas_task_method_router.py --help` | 0 |
+| `atlas-task-method-router` | TOOL-112 | موجّه مناهج الأطلس حسب المهمة · Atlas task method router | `python3 scripts/atlas_task_method_router.py --help` | 1 |
 | `black-dragon` | TOOL-181 | التنين الأسود — العقل المنسق لكل القدرات · Black Dragon — All-Capability Cognitive Orchestrator | `python3 scripts/black_dragon.py inventory` | 1 |
 | `boot` | TOOL-02 | إحاطة بدء الجلسة · Session boot briefing | `python3 scripts/boot.py` | 1 |
 | `capability-atlas` | TOOL-03 | أطلس القدرات للبحث والتخطيط · Capability Atlas search and planner | `python3 scripts/capability_atlas.py stats --json` | 1 |
@@ -148,10 +148,10 @@
 
 | tool | ID | الأداة / tool | أمر أول / first command | tests |
 |---|---|---|---|---|
-| `atlas-bulk-source-audit` | TOOL-104 | تدقيق نصوص مصادر الأطلس · Atlas source-text audit | `python3 scripts/atlas_bulk_source_audit.py --help` | 0 |
-| `atlas-deep-fusion` | TOOL-109 | منتقي مناهج الأطلس للقراءة فقط · Atlas read-only method selector | `python3 scripts/atlas_deep_fusion.py --help` | 0 |
+| `atlas-bulk-source-audit` | TOOL-104 | تدقيق نصوص مصادر الأطلس · Atlas source-text audit | `python3 scripts/atlas_bulk_source_audit.py --help` | 1 |
+| `atlas-deep-fusion` | TOOL-109 | منتقي مناهج الأطلس للقراءة فقط · Atlas read-only method selector | `python3 scripts/atlas_deep_fusion.py --help` | 1 |
 | `atlas-review-summary` | TOOL-110 | ملخص مراجعة الأطلس · Atlas review summary | `python3 scripts/atlas_review_summary.py --help` | 0 |
-| `atlas-reviewed-methods-v3` | TOOL-111 | مناهج الأطلس المراجَعة · Reviewed Atlas methods | `python3 scripts/atlas_reviewed_methods_v3.py --help` | 0 |
+| `atlas-reviewed-methods-v3` | TOOL-111 | مناهج الأطلس المراجَعة · Reviewed Atlas methods | `python3 scripts/atlas_reviewed_methods_v3.py --help` | 1 |
 | `atlas-transfer` | TOOL-113 | نقل مناهج الأطلس المثبتة · Atlas verified method transfer | `python3 scripts/atlas_transfer.py --help` | 0 |
 | `differential-exam` | TOOL-67 | مصحّح الامتحان الخفي التفاضلي · Differential hidden-exam scorer | `python3 scripts/differential_exam.py seal ./exam --out ./exam-seal.js…` | 1 |
 | `installer-triage` | TOOL-97 | فرز المثبّتات · Installer Triage | `python3 scripts/installer_triage.py scan ./setup.exe` | 1 |
@@ -178,16 +178,16 @@
 | `agent-guard` | TOOL-154 | حارس الوكيل: فحص الأوامر قبل تشغيلها وكشف الأسرار وخطة فروع متوازية · Agent guard: shell preflight, transcript secret scan and worktree plans | `python3 scripts/agent_guard.py rules` | 1 |
 | `build-chapters` | TOOL-99 | مولّد فصول العائلات · Family Chapter Generator | `python3 scripts/build_chapters.py` | 0 |
 | `catalog-evidence-audit` | TOOL-33 | تدقيق أدلة الكتالوج · Catalog Evidence Audit | `python3 scripts/catalog_evidence_audit.py` | 1 |
-| `check-skill` | TOOL-56 | فحص سلامة المهارة · Skill Health Check | `python3 scripts/check_skill.py` | 0 |
+| `check-skill` | TOOL-56 | فحص سلامة المهارة · Skill Health Check | `python3 scripts/check_skill.py` | 1 |
 | `collect-links` | — | جمع الروابط من صفحة بمتصفح بلا واجهة · Collect links from a page (headless Chromium) | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 0 |
 | `package-skill` | TOOL-57 | تحزيم المهارة للرفع إلى claude.ai · Skill Packager for claude.ai | `python3 scripts/package_skill.py` | 1 |
 | `protocol-lint` | — | فاحص اتساق حزمة البروتوكول · USIP release-folder lint | `python3 scripts/validate_receipt.py out/<job>/receipt.json` | 0 |
 | `rea-superpowers-map` | TOOL-108 | خريطة سوبر باور بمنهج REA · Superpowers map, REA approach | `python3 scripts/rea_superpowers_map.py build` | 1 |
 | `relabel-proofs` | TOOL-58 | إعادة تصنيف نطاق الأدلة · Proof Scope Relabeler | `python3 scripts/relabel_proofs.py` | 0 |
 | `repo-build` | TOOL-101 | مولّد ملفات أطلس الأساليب · Style Atlas Builder | `python3 tools/build.py` | 0 |
-| `repo-check-originality` | TOOL-102 | فاحص أصالة الملفات الإبداعية · Brief originality checker | `python3 tools/check_originality.py --briefs ./briefs/ --texts ./sourc…` | 0 |
-| `repo-import-briefs` | TOOL-59 | استيراد الملفات الإبداعية · Creative brief importer | `python3 tools/import_briefs.py ./briefs/` | 0 |
-| `repo-sync-catalog` | TOOL-60 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync | `python3 tools/sync_catalog.py` | 0 |
+| `repo-check-originality` | TOOL-102 | فاحص أصالة الملفات الإبداعية · Brief originality checker | `python3 tools/check_originality.py --briefs ./briefs/ --texts ./sourc…` | 1 |
+| `repo-import-briefs` | TOOL-59 | استيراد الملفات الإبداعية · Creative brief importer | `python3 tools/import_briefs.py ./briefs/` | 1 |
+| `repo-sync-catalog` | TOOL-60 | مزامنة الكتالوج مع PromptsMotion · PromptsMotion catalog sync | `python3 tools/sync_catalog.py` | 1 |
 | `repo-validate` | TOOL-103 | فاحص سلامة أطلس الأنماط · Style atlas repository validator | `python3 tools/validate.py` | 3 |
 | `self-council` | — | مجلس المراجعة الذاتية: خمس شخصيات من Claude تنقد كل مهارة وميزة، مع سجل تغطية · Self-Council: five Claude-derived critics review every skill and feature, with a coverage ledger | `python3 scripts/self_council.py inventory --summary` | 1 |
 | `skill-layout` | TOOL-100 | خريطة ترتيب المهارة · Skill Layout Map | `python3 scripts/skill_layout.py build` | 1 |
@@ -219,7 +219,7 @@
 | `repo-render-html` | TOOL-81 | محوّل حتمي من HTML إلى فيديو MP4 · Deterministic HTML-to-MP4 renderer | `node tools/render_html.cjs --in starters/html-canvas/index.html --out…` | 4 |
 | `repo-verify-video` | TOOL-82 | بوابة فحص تسليم الفيديو · Video delivery gate | `python3 tools/verify_video.py ./out/film.mp4 --aspect 9:16 --fps 30 -…` | 2 |
 | `shadow-theatre` | TOOL-183 | محرك أفلام مسرح الظل · KOSIF Shadow Theatre silhouette film engine | `python3 .claude/skills/kosif-shadow-theatre/scripts/shadow_theatre.py…` | 1 |
-| `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 0 |
+| `starter-html-canvas` | TOOL-83 | قالب فيلم HTML Canvas · HTML Canvas film starter | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter ht…` | 1 |
 | `starter-remotion` | TOOL-84 | قالب فيلم Remotion · Remotion film starter | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | 0 |
 | `style-atlas-bridge` | TOOL-63 | أطلس الأساليب الكامل (86 طريقة): بحث وتوليف وموجز إنتاج وهيكل مشروع شرح · Futurepedia AI Style Atlas — all 86 methods: search, fusion, storyboard-first briefs and engine scaffolds | `python3 scripts/style_atlas_bridge.py families` | 1 |
 | `ui-beat` | TOOL-150 | إيقاع الواجهات: مسار مؤشر بتسهيل وعكس تخطيط للعربية وفحص الحلقة المتصلة · UI beat: eased cursor keyframes, RTL layout mirror and seamless-loop check | `python3 scripts/ui_beat.py cursor --from 900,1700 --to 540,960 --dur…` | 1 |

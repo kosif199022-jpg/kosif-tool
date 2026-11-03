@@ -1304,7 +1304,7 @@
 - **كيف / how:** generate: `blender --background --factory-startup --disable-autoexec --python-exit-code 7 --python scripts/blender_rescue_scene.py -- ./cat_rescue.blend`. Full card: `python3 scripts/hub.py tool blender-rescue-scene`. Limits: Stylized Blender procedural demonstration; Blender must be installed separately (verified portable 5.2.2 on Windows); not photorealistic cat/human assets or a complete rig; use Blender bridge doctor to locate binary. **أرقام / params:** in: A fresh output .blend path inside an existing directory, supplied after Blender's -- separator; no arbitrary script input. · out: Stylized original animated Blender .blend with cat, person, street, 3D camera, area lighting and Cycles render configuration.
 - **تثبيت / install:** `optional: bin:blender`
 - **يحتاج / needs:** [`python3`](../requirements.md#req-python3) · [`blender`](../requirements.md#req-blender)
-- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_rescue_scene.py`
+- **الدليل / proof:** `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_blender_cat_fur_upgrade.py` · `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_rescue_scene.py`
 - **المصدر / source:** data/tools.json
 
 #### TOOL-121 · تطوير فرو القطة والملامح في Blender Cycles · Blender Cat Fur Upgrade: renderable hair geometry and character detail · ✅ مُثبت هنا / proven here

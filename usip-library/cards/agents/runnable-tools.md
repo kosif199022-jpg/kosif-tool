@@ -2490,7 +2490,7 @@
 
 #### 6. الأدلة
 
-- `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_blender_cinematic_bridge.py`
+- `kosif-tool/.claude/skills/kosif-superpowers/scripts/test_blender_cat_fur_upgrade.py`
 - `kosif-tool/.claude/skills/kosif-superpowers/scripts/blender_rescue_scene.py`
 
 #### 7. قدرات قريبة في العائلة

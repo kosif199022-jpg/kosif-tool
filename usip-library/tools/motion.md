@@ -1205,7 +1205,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `tests/test_cli.py`
 - مرجع: `starters/html-canvas/README.md`
 - مرجع: `tools/render_html.md`
 - مرجع: `playbooks/render-pipeline.md`

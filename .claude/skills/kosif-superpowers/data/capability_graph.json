@@ -1933,6 +1933,16 @@
    "label": "scripts/_black_dragon_skill_links.py"
   },
   {
+   "id": "script:scripts/_black_dragon_tool.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_tool.py"
+  },
+  {
+   "id": "script:scripts/_black_dragon_tool_recipes.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_tool_recipes.py"
+  },
+  {
    "id": "script:scripts/_claude_reviewed_router.py",
    "kind": "script",
    "label": "scripts/_claude_reviewed_router.py"
@@ -2453,6 +2463,11 @@
    "id": "test:tests/test_black_dragon_skill_adapters.py",
    "kind": "test",
    "label": "tests/test_black_dragon_skill_adapters.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_tool_adapters.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_tool_adapters.py"
   },
   {
    "id": "test:tests/test_cinema_all_skills.py",
@@ -6878,6 +6893,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_tool.py",
+   "to": "script:scripts/_black_dragon_tool_recipes.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_claude_reviewed_router.py",
    "to": "script:scripts/_black_dragon_brain.py",
    "rel": "imports",
@@ -7964,6 +7985,18 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_tool.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/_black_dragon_tool.py",
+   "to": "test:tests/test_black_dragon_tool_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_cinema_all_skills.py",
    "to": "test:tests/test_cinema_all_skills.py",
    "rel": "tested_by",
@@ -8092,6 +8125,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_skill_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_tool_adapters.py",
    "rel": "tested_by",
    "w": 1
   },

@@ -225,6 +225,17 @@ SKILL_PROGRAM_BLOCKERS = {
 }
 
 
+# Programs that were tried and cannot earn a receipt in this environment; the reason goes into the report.
+TOOL_BLOCKERS = {
+    "tool:blender-cat-fur-upgrade": "needs the Blender app (not installed here; every one of its tests skips without it)",
+    "tool:blender-rescue-scene": "needs the Blender app (not installed here; every one of its tests skips without it)",
+    "tool:starter-remotion": "needs an npm install of Remotion and its headless Chrome (network download; never auto-installed)",
+    "tool:rea-owned-repo-batch": "clones the owner's repositories over the network with the rea-agents CLI into private output",
+    "tool:rebalance-creative-repos": "changes the owner's GitHub repositories through gh and the network",
+    "tool:repo-ashell-cinema": "an a-Shell script for the iPhone that downloads YouTube videos (needs the phone and the network)",
+}
+
+
 def _skill_has_cli(source: str | None) -> bool:
     """True when a skill folder (not the big kosif-superpowers root) ships an argparse Python script."""
     if not source:
@@ -379,6 +390,8 @@ def run(task: str, job: Path, adapters: dict, workers: int,
             item["reason"] = result["reason"]
             if result.get("no_adapter"):
                 why = _why_blocked(inventory[key].get("kind"), inventory[key].get("source"))
+                if why == "tool_without_adapter" and key in TOOL_BLOCKERS:
+                    item["reason"] += ": " + TOOL_BLOCKERS[key]
                 if why == "skill_program_without_adapter":
                     item["reason"] = "Skill ships a Python CLI with no reviewed adapter yet"
                     if key in SKILL_PROGRAM_BLOCKERS:

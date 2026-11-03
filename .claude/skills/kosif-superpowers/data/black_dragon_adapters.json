@@ -1,5 +1,5 @@
 {
-  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters. Media adapters (\"media\": true) run real video/audio tools through _black_dragon_media.py on --media FILE, or on a self-test clip with known answers when no file is given; their outputs stay inside the job. Skill adapters (\"skill_program\": true) run the script a skill ships through _black_dragon_skill.py and check its output.",
+  "_comment": "Reviewed Black Dragon adapters: read-only repo tools run on the task through _black_dragon_exec.py. Each was run by hand and exits 0 without writing outside the job. Execution still needs --execute-adapters. Media adapters (\"media\": true) run real video/audio tools through _black_dragon_media.py on --media FILE, or on a self-test clip with known answers when no file is given; their outputs stay inside the job. Skill adapters (\"skill_program\": true) run the script a skill ships through _black_dragon_skill.py and check its output. Tool adapters (\"tool_suite\": true) run through _black_dragon_tool.py: the tool's own registered test files run against its real code, or, for a tool with no tests, a known-answer recipe on a fixture (checkers must catch a planted flaw); they do not run the tool on the task text.",
   "adapters": {
     "tool:skill-intelligence": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
@@ -772,6 +772,1556 @@
       ],
       "why": "pixel-studio-painter: paints a known SVG pixel by pixel into a film (final colours checked) and judges the picture",
       "skill_program": true
+    },
+    "tool:anchor-gate": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "anchor-gate",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "anchor-gate: runs its own 1 test file(s) on its real code (0 tests here)",
+      "tool_suite": true
+    },
+    "tool:app-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "app-studio",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "app-studio: runs its own 2 test file(s) on its real code (57 tests here)",
+      "tool_suite": true
+    },
+    "tool:app-studio-paint": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "app-studio-paint",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "app-studio-paint: runs its own 1 test file(s) on its real code (12 tests here)",
+      "tool_suite": true
+    },
+    "tool:architecture-sizer": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "architecture-sizer",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "architecture-sizer: runs its own 1 test file(s) on its real code (18 tests here)",
+      "tool_suite": true
+    },
+    "tool:aspects": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "aspects",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "aspects: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-audit-synthesis": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-audit-synthesis",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-audit-synthesis: runs its own 1 test file(s) on its real code (1 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-body-audit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-body-audit",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-body-audit: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-bulk-source-audit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-bulk-source-audit",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-bulk-source-audit: runs its own 1 test file(s) on its real code (14 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-capability-miner": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-capability-miner",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-capability-miner: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-deep-fusion": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-deep-fusion",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-deep-fusion: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-external-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-external-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-external-bridge: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-ledger": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-ledger",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-ledger: runs its own 1 test file(s) on its real code (6 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:atlas-metadata-audit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-metadata-audit",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-metadata-audit: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-render": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-render",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-render: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-review-summary": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-review-summary",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-review-summary: known-answer recipe on a fixture built in the job (3 checks, a planted flaw must be caught)",
+      "tool_suite": true
+    },
+    "tool:atlas-reviewed-methods-v3": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-reviewed-methods-v3",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-reviewed-methods-v3: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-task-method-router": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-task-method-router",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-task-method-router: runs its own 1 test file(s) on its real code (12 tests here)",
+      "tool_suite": true
+    },
+    "tool:atlas-transfer": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "atlas-transfer",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "atlas-transfer: known-answer recipe on a fixture built in the job (3 checks)",
+      "tool_suite": true
+    },
+    "tool:black-dragon": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "black-dragon",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "black-dragon: runs its own 1 test file(s) on its real code (21 tests here)",
+      "tool_suite": true
+    },
+    "tool:black-dragon-media": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "black-dragon-media",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "black-dragon-media: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-api-audit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-api-audit",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-api-audit: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-bridge: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-cinema": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-cinema",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-cinema: runs its own 1 test file(s) on its real code (14 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-cinematic-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-cinematic-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-cinematic-bridge: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-cycles-render": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-cycles-render",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-cycles-render: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-motion-video": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-motion-video",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-motion-video: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-worker": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-worker",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-worker: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:boot": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "boot",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "boot: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:brand-tokens": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "brand-tokens",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "brand-tokens: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:browser-scout": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "browser-scout",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "browser-scout: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:build-chapters": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "build-chapters",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "build-chapters: known-answer recipe on a fixture built in the job (3 checks, a planted flaw must be caught)",
+      "tool_suite": true
+    },
+    "tool:capability-graph": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "capability-graph",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "capability-graph: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:capability-mindmap": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "capability-mindmap",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "capability-mindmap: runs its own 1 test file(s) on its real code (2 tests here)",
+      "tool_suite": true
+    },
+    "tool:caption-lines": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "caption-lines",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "caption-lines: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:character-fullbody": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "character-fullbody",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "character-fullbody: runs its own 1 test file(s) on its real code (16 tests here)",
+      "tool_suite": true
+    },
+    "tool:character-ik": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "character-ik",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "character-ik: runs its own 2 test file(s) on its real code (38 tests here)",
+      "tool_suite": true
+    },
+    "tool:charter-ingest": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "charter-ingest",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "charter-ingest: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:check-skill": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "check-skill",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "check-skill: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:cinematic-broll-render": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "cinematic-broll-render",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "cinematic-broll-render: runs its own 1 test file(s) on its real code (3 tests here)",
+      "tool_suite": true
+    },
+    "tool:cinematic-cut-planner": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "cinematic-cut-planner",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "cinematic-cut-planner: runs its own 2 test file(s) on its real code (14 tests here)",
+      "tool_suite": true
+    },
+    "tool:cinematic-pro-conductor": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "cinematic-pro-conductor",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "cinematic-pro-conductor: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:code-drawing-master": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "code-drawing-master",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "code-drawing-master: runs its own 1 test file(s) on its real code (16 tests here)",
+      "tool_suite": true
+    },
+    "tool:collect-links": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "collect-links",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "collect-links: known-answer recipe on a fixture built in the job (2 checks)",
+      "tool_suite": true
+    },
+    "tool:color-media": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "color-media",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "color-media: known-answer recipe on a fixture built in the job (4 checks)",
+      "tool_suite": true
+    },
+    "tool:council": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "council",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "council: runs its own 1 test file(s) on its real code (17 tests here)",
+      "tool_suite": true
+    },
+    "tool:creative-paint": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "creative-paint",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "creative-paint: runs its own 3 test file(s) on its real code (37 tests here)",
+      "tool_suite": true
+    },
+    "tool:creative-principles": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "creative-principles",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "creative-principles: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:creative-quality-gate": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "creative-quality-gate",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "creative-quality-gate: runs its own 1 test file(s) on its real code (11 tests here)",
+      "tool_suite": true
+    },
+    "tool:creative-reasoning-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "creative-reasoning-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "creative-reasoning-bridge: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:decision-math": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "decision-math",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "decision-math: runs its own 1 test file(s) on its real code (11 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:design-tells": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "design-tells",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "design-tells: runs its own 1 test file(s) on its real code (11 tests here)",
+      "tool_suite": true
+    },
+    "tool:diagram-layout": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "diagram-layout",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "diagram-layout: runs its own 1 test file(s) on its real code (9 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:differential-exam": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "differential-exam",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "differential-exam: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:drawing-academy": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "drawing-academy",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "drawing-academy: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:drawing-council": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "drawing-council",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "drawing-council: runs its own 1 test file(s) on its real code (13 tests here)",
+      "tool_suite": true
+    },
+    "tool:drawing-visual-qa": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "drawing-visual-qa",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "drawing-visual-qa: runs its own 1 test file(s) on its real code (14 tests here)",
+      "tool_suite": true
+    },
+    "tool:dua-wednesday": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "dua-wednesday",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "dua-wednesday: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:fetch-reference": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "fetch-reference",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "fetch-reference: runs its own 2 test file(s) on its real code (30 tests here)",
+      "tool_suite": true
+    },
+    "tool:fetch-video": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "fetch-video",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "fetch-video: runs its own 3 test file(s) on its real code (43 tests here)",
+      "tool_suite": true
+    },
+    "tool:font-fidelity-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "font-fidelity-lab",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "font-fidelity-lab: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:free-footage": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "free-footage",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "free-footage: runs its own 1 test file(s) on its real code (120 tests here)",
+      "tool_suite": true
+    },
+    "tool:free-photos": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "free-photos",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "free-photos: runs its own 1 test file(s) on its real code (15 tests here)",
+      "tool_suite": true
+    },
+    "tool:fusionforge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "fusionforge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "fusionforge: runs its own 2 test file(s) on its real code (87 tests here)",
+      "tool_suite": true
+    },
+    "tool:fusionforge-hub-runner": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "fusionforge-hub-runner",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "fusionforge-hub-runner: runs its own 1 test file(s) on its real code (24 tests here)",
+      "tool_suite": true
+    },
+    "tool:fusionforge-shared": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "fusionforge-shared",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "fusionforge-shared: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:geo-plate": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "geo-plate",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "geo-plate: runs its own 1 test file(s) on its real code (12 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:github-pulse": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "github-pulse",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "github-pulse: runs its own 1 test file(s) on its real code (11 tests here)",
+      "tool_suite": true
+    },
+    "tool:github-top-repos": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "github-top-repos",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "github-top-repos: runs its own 1 test file(s) on its real code (5 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:image-local-ai": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "image-local-ai",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "image-local-ai: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:infinite-matrices": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "infinite-matrices",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "infinite-matrices: runs its own 1 test file(s) on its real code (18 tests here)",
+      "tool_suite": true
+    },
+    "tool:instagram-finder": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "instagram-finder",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "instagram-finder: runs its own 1 test file(s) on its real code (11 tests here)",
+      "tool_suite": true
+    },
+    "tool:instagram-reference-discovery": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "instagram-reference-discovery",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "instagram-reference-discovery: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:installer-triage": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "installer-triage",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "installer-triage: runs its own 1 test file(s) on its real code (23 tests here)",
+      "tool_suite": true
+    },
+    "tool:kosif-mcp": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "kosif-mcp",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-mcp: runs its own 1 test file(s) on its real code (27 tests here)",
+      "tool_suite": true
+    },
+    "tool:kosif-remote-commander": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "kosif-remote-commander",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-remote-commander: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:kosif-timeline": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "kosif-timeline",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-timeline: runs its own 1 test file(s) on its real code (18 tests here)",
+      "tool_suite": true
+    },
+    "tool:kosif-timeline-demo": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "kosif-timeline-demo",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-timeline-demo: runs its own 1 test file(s) on its real code (18 tests here)",
+      "tool_suite": true
+    },
+    "tool:lesson-integrity": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "lesson-integrity",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "lesson-integrity: runs its own 1 test file(s) on its real code (14 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:local-first": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "local-first",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "local-first: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:local-project-audit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "local-project-audit",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "local-project-audit: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:media-sources": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "media-sources",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "media-sources: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:memory-ops": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "memory-ops",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "memory-ops: runs its own 1 test file(s) on its real code (4 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:mimic": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "mimic",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "mimic: runs its own 1 test file(s) on its real code (2 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-director": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-director",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-director: runs its own 2 test file(s) on its real code (21 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-engine-js": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-engine-js",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-engine-js: runs its own 3 test file(s) on its real code (25 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-kit-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-kit-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-kit-bridge: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-reference-probe": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-reference-probe",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-reference-probe: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-runtime": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-runtime",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-runtime: runs its own 1 test file(s) on its real code (16 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-stack": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-stack",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-stack: runs its own 1 test file(s) on its real code (11 tests here)",
+      "tool_suite": true
+    },
+    "tool:motion-toolkit": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "motion-toolkit",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "motion-toolkit: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:native-3d": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "native-3d",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "native-3d: runs its own 3 test file(s) on its real code (17 tests here)",
+      "tool_suite": true
+    },
+    "tool:native-glb": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "native-glb",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "native-glb: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:nle-export": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "nle-export",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "nle-export: runs its own 1 test file(s) on its real code (16 tests here)",
+      "tool_suite": true
+    },
+    "tool:package-skill": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "package-skill",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "package-skill: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:particles": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "particles",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "particles: runs its own 1 test file(s) on its real code (13 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:perspective-color-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "perspective-color-lab",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "perspective-color-lab: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:portrait-pipeline": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "portrait-pipeline",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "portrait-pipeline: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:probe-env": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "probe-env",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "probe-env: known-answer recipe on a fixture built in the job (4 checks)",
+      "tool_suite": true
+    },
+    "tool:prompt-forge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "prompt-forge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "prompt-forge: runs its own 1 test file(s) on its real code (11 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:prompt-pack": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "prompt-pack",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "prompt-pack: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:protocol-lint": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "protocol-lint",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "protocol-lint: known-answer recipe on a fixture built in the job (3 checks, a planted flaw must be caught)",
+      "tool_suite": true
+    },
+    "tool:python-package-probe": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "python-package-probe",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "python-package-probe: runs its own 1 test file(s) on its real code (18 tests here)",
+      "tool_suite": true
+    },
+    "tool:quran-text": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "quran-text",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "quran-text: runs its own 1 test file(s) on its real code (40 tests here)",
+      "tool_suite": true
+    },
+    "tool:rea-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "rea-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "rea-bridge: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:rea-creative-research-atlas": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "rea-creative-research-atlas",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "rea-creative-research-atlas: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:rea-superpowers-map": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "rea-superpowers-map",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "rea-superpowers-map: runs its own 1 test file(s) on its real code (9 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:reel-factory": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "reel-factory",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "reel-factory: runs its own 1 test file(s) on its real code (34 tests here)",
+      "tool_suite": true
+    },
+    "tool:reference-edit-engine": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "reference-edit-engine",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "reference-edit-engine: runs its own 4 test file(s) on its real code (37 tests here)",
+      "tool_suite": true
+    },
+    "tool:reference-visual-fingerprint": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "reference-visual-fingerprint",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "reference-visual-fingerprint: runs its own 2 test file(s) on its real code (20 tests here)",
+      "tool_suite": true
+    },
+    "tool:relabel-proofs": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "relabel-proofs",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "relabel-proofs: known-answer recipe on a fixture built in the job (2 checks)",
+      "tool_suite": true
+    },
+    "tool:render-html": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "render-html",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "render-html: runs its own 3 test file(s) on its real code (30 tests here)",
+      "tool_suite": true
+    },
+    "tool:render-text": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "render-text",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "render-text: known-answer recipe on a fixture built in the job (3 checks)",
+      "tool_suite": true
+    },
+    "tool:repo-aspects": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-aspects",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-aspects: runs its own 1 test file(s) on its real code (4 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-build": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-build",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-build: known-answer recipe on a fixture built in the job (1 checks)",
+      "tool_suite": true
+    },
+    "tool:repo-check-frame-cover": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-check-frame-cover",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-check-frame-cover: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-check-originality": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-check-originality",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-check-originality: runs its own 1 test file(s) on its real code (13 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-import-briefs": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-import-briefs",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-import-briefs: runs its own 1 test file(s) on its real code (13 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-job-wait": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-job-wait",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-job-wait: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-kosif": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-kosif",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-kosif: runs its own 2 test file(s) on its real code (21 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-map": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-map",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-map: runs its own 1 test file(s) on its real code (4 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:repo-overlap-rig": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-overlap-rig",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-overlap-rig: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-render-html": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-render-html",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-render-html: runs its own 4 test file(s) on its real code (41 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-sync-catalog": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-sync-catalog",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-sync-catalog: runs its own 1 test file(s) on its real code (13 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-transcribe-audio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-transcribe-audio",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-transcribe-audio: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-validate": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-validate",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-validate: runs its own 3 test file(s) on its real code (44 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-verify-video": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-verify-video",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-verify-video: runs its own 2 test file(s) on its real code (17 tests here)",
+      "tool_suite": true
+    },
+    "tool:repo-words-convert": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repo-words-convert",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repo-words-convert: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:repository-capability-packer": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "repository-capability-packer",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "repository-capability-packer: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:script-storyboard": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "script-storyboard",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "script-storyboard: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:self-council": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "self-council",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "self-council: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:shadow-theatre": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "shadow-theatre",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "shadow-theatre: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:site-snapshot": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "site-snapshot",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "site-snapshot: runs its own 1 test file(s) on its real code (10 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:skill-layout": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "skill-layout",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "skill-layout: runs its own 1 test file(s) on its real code (4 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:skill-loader": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "skill-loader",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "skill-loader: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:smart-draw": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "smart-draw",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "smart-draw: runs its own 1 test file(s) on its real code (5 tests here)",
+      "tool_suite": true
+    },
+    "tool:song-preview": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "song-preview",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "song-preview: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:source-finder": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "source-finder",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "source-finder: runs its own 2 test file(s) on its real code (44 tests here)",
+      "tool_suite": true
+    },
+    "tool:sources-index": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "sources-index",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "sources-index: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:starter-html-canvas": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "starter-html-canvas",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "starter-html-canvas: runs its own 1 test file(s) on its real code (17 tests here)",
+      "tool_suite": true
+    },
+    "tool:stats-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "stats-lab",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "stats-lab: runs its own 1 test file(s) on its real code (8 tests here)",
+      "tool_suite": true
+    },
+    "tool:stock-fetch": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "stock-fetch",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "stock-fetch: runs its own 1 test file(s) on its real code (7 tests here)",
+      "tool_suite": true
+    },
+    "tool:stream-grabber": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "stream-grabber",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "stream-grabber: runs its own 1 test file(s) on its real code (12 tests here)",
+      "tool_suite": true
+    },
+    "tool:superpowers": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "superpowers",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "superpowers: runs its own 1 test file(s) on its real code (25 tests here)",
+      "tool_suite": true
+    },
+    "tool:task-history": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "task-history",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "task-history: runs its own 1 test file(s) on its real code (25 tests here)",
+      "tool_suite": true
+    },
+    "tool:telegram-typography-atlas": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "telegram-typography-atlas",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "telegram-typography-atlas: runs its own 1 test file(s) on its real code (22 tests here)",
+      "tool_suite": true
+    },
+    "tool:tell-scan": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "tell-scan",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "tell-scan: runs its own 1 test file(s) on its real code (0 tests here)",
+      "tool_suite": true
+    },
+    "tool:tiktok-photo": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "tiktok-photo",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "tiktok-photo: runs its own 1 test file(s) on its real code (23 tests here)",
+      "tool_suite": true
+    },
+    "tool:tts-script": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "tts-script",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "tts-script: runs its own 1 test file(s) on its real code (6 tests here)",
+      "tool_suite": true
+    },
+    "tool:ui-beat": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "ui-beat",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "ui-beat: runs its own 1 test file(s) on its real code (9 tests here) plus its --self-test",
+      "tool_suite": true
+    },
+    "tool:unified-cinematic": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "unified-cinematic",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "unified-cinematic: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:unified-draw": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "unified-draw",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "unified-draw: runs its own 2 test file(s) on its real code (13 tests here)",
+      "tool_suite": true
+    },
+    "tool:unified-media": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "unified-media",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "unified-media: runs its own 1 test file(s) on its real code (9 tests here)",
+      "tool_suite": true
+    },
+    "tool:validate-receipt": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "validate-receipt",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "validate-receipt: runs its own 1 test file(s) on its real code (13 tests here)",
+      "tool_suite": true
+    },
+    "tool:video-workflow-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "video-workflow-bridge",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "video-workflow-bridge: runs its own 1 test file(s) on its real code (12 tests here)",
+      "tool_suite": true
+    },
+    "tool:web-app-study": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "web-app-study",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "web-app-study: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
     }
   }
 }

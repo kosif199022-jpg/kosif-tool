@@ -36,7 +36,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/scripts/test_atlas_bulk_source_audit.py`
 - مرجع: `.claude/skills/kosif-superpowers/SKILL.md`
 
 #### عند الفشل (A29)
@@ -77,7 +77,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/scripts/test_atlas_deep_fusion.py`
 - مرجع: `.claude/skills/kosif-superpowers/SKILL.md`
 
 #### عند الفشل (A29)
@@ -159,7 +159,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/scripts/test_atlas_reviewed_methods_v3.py`
 - مرجع: `.claude/skills/kosif-superpowers/SKILL.md`
 
 #### عند الفشل (A29)

@@ -220,7 +220,7 @@
 
 #### الاختبارات والأدلة
 
-- لا اختبار مسجل: الشارة لا تتجاوز 📄 حتى يُختبر هنا.
+- `.claude/skills/kosif-superpowers/scripts/test_atlas_task_method_router.py`
 - مرجع: `.claude/skills/kosif-superpowers/SKILL.md`
 
 #### عند الفشل (A29)

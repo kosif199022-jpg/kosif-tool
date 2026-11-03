@@ -2,7 +2,8 @@
 // collect_links.js — يجمع الروابط من صفحة أو أكتر بمتصفح Chromium حقيقي (مجاني، بلا تسجيل دخول). USIP v5.12، A42.
 // node collect_links.js <url> [url...] [--filter كلمة] [--same-site] [--json] [--wait ms]
 // يطبع الروابط (سطر لكل رابط) والعدد على stderr. يرجع 1 لو صفحة ما اتفتحتش أو صفر روابط.
-const { chromium } = require('playwright');
+// Loaded with import() so the file runs both as CommonJS (the skill on its own) and as an ES module
+// (inside kosif-tool, whose package.json says "type": "module"; require() is undefined there).
 const args = process.argv.slice(2);
 const opt = { filter: null, same: false, json: false, wait: 0 }, urls = [];
 for (let i = 0; i < args.length; i++) {
@@ -14,7 +15,19 @@ for (let i = 0; i < args.length; i++) {
   else urls.push(a);
 }
 if (!urls.length) { console.error('usage: node collect_links.js <url> [url...] [--filter word] [--same-site] [--json] [--wait ms]'); process.exit(2); }
+// Playwright is found like tools/render_html.cjs does: the project, /opt/node-tools, KOSIF_PLAYWRIGHT, then NODE_PATH.
+async function loadPlaywright() {
+  const { createRequire } = await import('node:module');
+  const fs = await import('node:fs');
+  const path = await import('node:path');
+  const req = createRequire(path.join(process.cwd(), 'collect_links.js'));
+  for (const p of [path.join(process.cwd(), 'node_modules', 'playwright'), '/opt/node-tools/node_modules/playwright', process.env.KOSIF_PLAYWRIGHT]) {
+    if (p && fs.existsSync(p)) return req(p);
+  }
+  return req('playwright');
+}
 (async () => {
+  const { chromium } = await loadPlaywright();
   const browser = await chromium.launch();
   const out = [];
   let bad = 0;
