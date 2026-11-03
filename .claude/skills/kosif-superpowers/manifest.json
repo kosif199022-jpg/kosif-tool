@@ -18,7 +18,7 @@
   "powers": 5861,
   "families": 62,
   "domains": 10,
-  "tools": 206,
+  "tools": 207,
   "guides": 119,
   "statuses": {
    "documented": 2325,
@@ -19535,6 +19535,74 @@
    "families": [
     "agent-orchestration",
     "self-discovery",
+    "qa-verification"
+   ]
+  },
+  {
+   "id": "black-dragon-media",
+   "path": "scripts/black_dragon_media.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "motion",
+   "title_en": "Black Dragon Media — opt-in real video job",
+   "title_ar": "التنين الأسود ميديا — شغل فيديو حقيقي بإذن",
+   "summary_en": "Runs one real media job on a supplied clip through the bundled montage_pro, audio_cue_mapper, music_rhythm_engine and cinema_lab, then hashes every artifact. Options such as stabilize or reframe run only when passed; verify re-checks the hashes.",
+   "summary_ar": "يشغّل شغل ميديا حقيقي على كليب مرفوع عن طريق أدوات المونتاج والإيقاع والسينما الموجودة، ويحسب بصمة كل ملف ناتج. الخيارات زي التثبيت وإعادة التأطير ما بتشتغلش غير لو اتطلبت، وverify بيراجع البصمات.",
+   "use_when": [
+    "شغّل التنين الأسود على الفيديو ده فعلاً",
+    "Run the Black Dragon media job on my clip and verify the outputs"
+   ],
+   "keywords": [
+    "black dragon",
+    "التنين الأسود",
+    "media job",
+    "montage",
+    "stabilize",
+    "reframe",
+    "verify",
+    "sha256"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/black_dragon_media.py doctor",
+     "does": "Read-only prerequisite check."
+    },
+    {
+     "name": "run",
+     "example": "python3 scripts/black_dragon_media.py run --input clip.mp4 --job-name my-film --execute",
+     "does": "Run the job on the clip and hash every artifact; nothing runs without --execute."
+    },
+    {
+     "name": "verify",
+     "example": "python3 scripts/black_dragon_media.py verify --job-name my-film",
+     "does": "Re-check the job's artifact hashes."
+    }
+   ],
+   "inputs": "A local video or audio clip and a job name.",
+   "outputs": "out/black-dragon-media/<job>/ with the artifacts and a hashed report.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3",
+     "ffmpeg"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "runs-external-programs",
+   "consent": "Runs only with --execute on a file the user supplied. No network, downloads, paid providers or upload.",
+   "limits": "Uses only the bundled tools; it does not run the whole catalog and does not judge cinematic quality.",
+   "evidence": "untested",
+   "tests": [
+    "tests/test_black_dragon_media.py"
+   ],
+   "docs": [
+    "docs/BLACK_DRAGON_ALL_CAPABILITIES.md"
+   ],
+   "families": [
+    "agent-orchestration",
     "qa-verification"
    ]
   }
