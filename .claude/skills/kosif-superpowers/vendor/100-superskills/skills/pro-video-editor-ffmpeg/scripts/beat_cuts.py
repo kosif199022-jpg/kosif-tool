@@ -54,13 +54,25 @@ def pick_peaks(flux, min_gap_frames=25):
     return peaks
 
 
+def tempo_consistency(beats_s):
+    """Fraction of onset gaps supporting a dominant pulse (0..1); not a confidence in musical meaning."""
+    if len(beats_s) < 5:
+        return 0.0
+    gaps = np.diff(beats_s)
+    gaps = gaps[(gaps > 0.25) & (gaps < 2.0)]
+    if len(gaps) < 4:
+        return 0.0
+    period = float(np.median(gaps))
+    tolerance = max(0.04, 0.12 * period)
+    return round(float(np.mean(np.abs(gaps - period) <= tolerance)), 3)
+
+
 def estimate_bpm(beats_s):
-    if len(beats_s) < 4:
+    # An irregular sequence of unrelated sound effects must NOT yield a fabricated steady BPM.
+    if tempo_consistency(beats_s) < 0.70:
         return None
     gaps = np.diff(beats_s)
     gaps = gaps[(gaps > 0.25) & (gaps < 2.0)]
-    if not len(gaps):
-        return None
     hist, edges = np.histogram(gaps, bins=60, range=(0.25, 2.0))
     g = edges[hist.argmax()] + (edges[1] - edges[0]) / 2
     bpm = 60 / g
@@ -80,13 +92,16 @@ def main() -> None:
     flux, rms = onset_envelope(x)
     peaks = pick_peaks(flux, int(a.min_gap * 100 * 0.6))
     beats = [round(p / 100, 3) for p in peaks]
+    consistency = tempo_consistency(np.array(beats))
     bpm = estimate_bpm(np.array(beats))
     cuts = beats[:: max(1, a.every)]
     # also expose per-video-frame energy at 30fps for animation use
     idx = (np.arange(0, len(rms), 100 / 30)).astype(int)
     energy30 = [round(float(v), 3) for v in rms[idx[idx < len(rms)]]]
     out = {"file": a.audio, "duration_s": round(len(x) / SR, 2), "bpm": bpm, "beats_s": beats, "cut_points_s": cuts,
-           "beat_period_s": round(60 / bpm, 3) if bpm else None, "energy_fps": 30, "energy": energy30}
+           "beat_period_s": round(60 / bpm, 3) if bpm else None,
+           "tempo_consistency": consistency, "tempo_status": "candidate" if bpm else "unreliable",
+           "energy_fps": 30, "energy": energy30}
     open(a.out, "w", encoding="utf-8").write(json.dumps(out, ensure_ascii=False))
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
