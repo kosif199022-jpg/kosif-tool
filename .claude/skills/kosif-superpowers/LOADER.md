@@ -15,7 +15,7 @@
 | المهارة | الملف | الحجم | متى |
 |---|---|---|---|
 | `editorial-film-edit` | `.claude/skills/editorial-film-edit/SKILL.md` | 6 KB · 48 سطر | Edit footage in an archival editorial style with bundled video and photo references, kinetic text, film grain, bloom, masks and presenter splits. Use for new edits and… |
-| `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 6 KB · 96 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
+| `kosif-dragon-mind` | `.claude/skills/kosif-dragon-mind/SKILL.md` | 10 KB · 129 سطر | The thinking brain of the Black Dragon («عقل التنين الأسود»). Use when a task should be thought through before the Black Dragon runs, when the owner asks to decompose,… |
 | `kosif-infinite-matrices` | `.claude/skills/kosif-infinite-matrices/SKILL.md` | 9 KB · 88 سطر | Invent new visual and motion systems from causal bricks (state, operation, law, time, memory, feedback) mined from the 86 reference styles; build a recipe, run an A/B/C… |
 | `kosif-instagram-discovery` | `.claude/skills/kosif-instagram-discovery/SKILL.md` | 3 KB · 34 سطر | Find public Instagram reel references by topic using generated public web search queries; index researcher-confirmed permalinks; rank Arabic/English metadata; create… |
 | `kosif-instagram-video-research` | `.claude/skills/kosif-instagram-video-research/SKILL.md` | 6 KB · 85 سطر | Search public Instagram Reel references by content/topic and known creator, expand Arabic-to-English queries, optionally ingest public search index via Brave Search… |
@@ -112,14 +112,15 @@
 ### `.claude/skills/kosif-dragon-mind/SKILL.md`
 
 - 6–11: KOSIF Dragon Mind — عقل التنين الأسود
-- 12–21: الفهرس / contents
-- 22–34: What it does
-- 35–43: Commands
-- 44–53: Readiness tiers
-- 54–64: The thinking cycle
-- 65–77: Research data and its limits
-- 78–89: Running the mind inside the dragon
-- 90–95: Rules
+- 12–22: الفهرس / contents
+- 23–40: What it does
+- 41–49: Commands
+- 50–59: Readiness tiers
+- 60–70: The thinking cycle
+- 71–83: Research data and its limits
+- 84–95: Running the mind inside the dragon
+- 96–121: Every entry usable: the method applier
+- 122–128: Rules
 
 ### `.claude/skills/kosif-infinite-matrices/SKILL.md`
 

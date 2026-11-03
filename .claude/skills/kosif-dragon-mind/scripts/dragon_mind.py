@@ -92,8 +92,23 @@ def load_inventory() -> tuple[dict, dict, dict, dict]:
         if meta.get("kind") == "skill":
             fm = _frontmatter(bd.audit.SKILL.parent / meta["source"])
             desc[key] = " ".join([fm.get("name", ""), fm.get("description", "")]).strip()
-    adapters = bd._load_adapters(bd.REVIEWED_ADAPTERS)
+    adapters = reviewed_adapters(bd)
     return inventory, desc, adapters, bd._tool_records()
+
+
+def reviewed_adapters(bd, data_dir: Path | None = None) -> dict:
+    """The reviewed adapters plus the generated real runners (powers, styles) when those files exist.
+
+    A real runner always wins over the method applier; the hand-reviewed file wins over a generated one.
+    """
+    data_dir = data_dir or bd.REVIEWED_ADAPTERS.parent
+    merged: dict = {}
+    for name in V.GENERATED_ADAPTER_FILES:
+        path = data_dir / name
+        if path.is_file():
+            merged.update(bd._load_adapters(path))
+    merged.update(bd._load_adapters(data_dir / bd.REVIEWED_ADAPTERS.name))
+    return merged
 
 
 def fingerprint(inventory: dict) -> str:
@@ -473,6 +488,182 @@ def upgrade_plan(max_executors: int = 12) -> dict:
             "rule": "candidates are leads, not installed capabilities; nothing is downloaded or installed"}
 
 
+# --------------------------------------------------------------------------- link graph
+
+PEERS = 3
+NEXTS = 2
+RARE = 250  # tokens in more entries than this carry no linking signal
+
+
+def _components(nodes, edges) -> int:
+    parent = {k: k for k in nodes}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    for a, e in edges.items():
+        for kind in ("peers", "next", "prev", "owner", "specialist", "hub"):
+            vals = e.get(kind)
+            for b in ([vals] if isinstance(vals, str) else vals or []):
+                if b in parent:
+                    ra, rb = find(a), find(b)
+                    if ra != rb:
+                        parent[ra] = rb
+    return len({find(k) for k in nodes})
+
+
+def build_links() -> dict:
+    """Link every entry to similar peers, the entries its output feeds, its owning skill and its faculty hub."""
+    import math
+    bd, brain = _dragon()
+    import _black_dragon_skill_links as sl
+    inventory, desc, adapters, tools = load_inventory()
+    dec = decompose(inventory, desc)
+    rd = readiness(inventory, desc, adapters, tools)
+    fused = fuse(dec, rd["rows"], desc)
+    keys = sorted(inventory)
+    toks = {k: _entry_tokens(k, desc) for k in keys}
+    df = Counter(t for k in keys for t in toks[k])
+    post = defaultdict(list)
+    for k in keys:
+        for t in toks[k]:
+            if 1 < df[t] <= RARE:
+                post[t].append(k)
+    stage_i = {s["id"]: i for i, s in enumerate(V.CYCLE)}
+    nodes, edges = {}, {}
+    owners = sl.build(inventory, bd.audit.SKILL, bd.REPO, desc)["links"]
+    hubs = {fid: (fused[fid]["champions"][0]["id"] if fused[fid]["champions"] else None) for fid in V.FACULTY_IDS}
+    for k in keys:
+        row = dec[k]
+        nodes[k] = {"kind": row["kind"], "source": inventory[k]["source"], "primary": row["primary"],
+                    "faculties": row["faculties"], "inputs": row["inputs"], "outputs": row["outputs"],
+                    "tier": rd["rows"][k]["tier"]}
+        score = Counter()
+        for t in sorted(toks[k]):  # fixed order: float sums must not depend on set hashing
+            if t in post:
+                w = math.log(len(keys) / df[t])
+                for o in post[t]:
+                    if o != k:
+                        score[o] += w
+        ranked = sorted(score.items(), key=lambda kv: (-round(kv[1], 6), kv[0]))
+        same = [o for o, _ in ranked if dec[o]["primary"] == row["primary"]][:PEERS]
+        peers = same or [o for o, _ in ranked[:PEERS]]
+        my_stage = stage_i[row["stage"]]
+        outs = set(row["outputs"])
+        nxt = [o for o, _ in ranked if stage_i[dec[o]["stage"]] > my_stage and outs & set(dec[o]["inputs"])][:NEXTS]
+        own = owners.get(k, {})
+        spec = [c["skill"] for c in own.get("specialist_candidates", [])[:1] if c.get("skill") != k]
+        edges[k] = {"peers": peers, "next": nxt, "prev": [],
+                    "owner": own.get("owner_skill") if own.get("owner_skill") != k else None,
+                    "specialist": spec, "hub": hubs[row["primary"]] if hubs[row["primary"]] != k else None}
+    for k in keys:  # reverse of next = prev
+        for o in edges[k]["next"]:
+            edges[o]["prev"].append(k)
+    for k in keys:
+        edges[k]["prev"] = sorted(edges[k]["prev"])[:NEXTS * 2]
+    hub_ids = [h for h in hubs.values() if h]
+    for a, b in zip(hub_ids, hub_ids[1:]):  # hubs chain along the cycle so faculties connect
+        edges[a].setdefault("hub_chain", []).append(b)
+        edges[b].setdefault("hub_chain", []).append(a)
+    lexical = {k: {kk: v for kk, v in e.items() if kk in ("peers", "next", "prev")} for k, e in edges.items()}
+    stats = {"entries": len(keys),
+             "with_peers": sum(1 for e in edges.values() if e["peers"]),
+             "with_next": sum(1 for e in edges.values() if e["next"]),
+             "with_prev": sum(1 for e in edges.values() if e["prev"]),
+             "with_owner_skill": sum(1 for e in edges.values() if e["owner"]) + sum(1 for k in keys if k == "skill:kosif-superpowers"),
+             "with_specialist_hint": sum(1 for e in edges.values() if e["specialist"]),
+             "edges_total": sum(len(e["peers"]) + len(e["next"]) + (1 if e["owner"] else 0) + len(e["specialist"]) +
+                                (1 if e["hub"] else 0) for e in edges.values()),
+             "components_lexical_only": _components(nodes, lexical),
+             "components_all_links": _components(nodes, {k: {**e, "peers": e["peers"] + e.get("hub_chain", [])}
+                                                         for k, e in edges.items()})}
+    return {"schema": SCHEMA + ".links", "inventory_fingerprint": fingerprint(inventory), "stats": stats,
+            "edge_kinds": {"peers": "most similar entries of the same faculty (rare shared words, idf)",
+                           "next": "entries a later cycle stage that take this entry's output kind",
+                           "prev": "reverse of next", "owner": "the installed skill that owns the entry",
+                           "specialist": "suggested specialist skill (lexical hint, not proven)",
+                           "hub": "the faculty champion this entry reports to",
+                           "hub_chain": "faculty champions chained so all faculties connect"},
+            "nodes": nodes, "edges": edges}
+
+
+# --------------------------------------------------------------------------- unlock
+
+def unlock_plan(task: str = "readiness check") -> dict:
+    """Which installs would make the most entries ready on this machine (greedy, measured here).
+
+    Nothing is installed: the plan lists commands for the owner to run where they want them.
+    """
+    import card_apply as ca
+    links = json.loads((DATA / "mind_links.json").read_text(encoding="utf-8"))
+    blocked, status, install = {}, Counter(), {}
+    for key in sorted(links["nodes"]):
+        r = ca.apply(key, task)
+        status[r["status"]] += 1
+        if r["missing_here"]:
+            blocked[key] = set(r["missing_here"])
+            for q in r["requirements"]:
+                if q["state"] == "missing":
+                    install.setdefault(q["requirement"], q.get("install"))
+    steps, remaining = [], dict(blocked)
+    while remaining:
+        gain = Counter()
+        for need in remaining.values():
+            for req in need:
+                gain[req] += 1.0 / len(need)
+        req, _ = max(gain.items(), key=lambda kv: (kv[1], kv[0]))
+        before = len(remaining)
+        remaining = {k: v - {req} for k, v in remaining.items()}
+        freed = [k for k, v in remaining.items() if not v]
+        remaining = {k: v for k, v in remaining.items() if v}
+        steps.append({"requirement": req, "install": install.get(req), "unlocks_now": len(freed),
+                      "still_blocked_after": len(remaining), "blocked_by_it_before": sum(1 for v in blocked.values() if req in v)})
+        if before == len(remaining) and not freed and len(steps) > 200:
+            break
+    return {"schema": SCHEMA + ".unlock", "status_here": dict(status), "blocked_by_install": len(blocked),
+            "steps": steps, "rule": "nothing installed by the mind; run the commands where you want them, with your yes"}
+
+
+# --------------------------------------------------------------------------- audit a Black Dragon job
+
+def audit_job(job: Path) -> dict:
+    """Split a Black Dragon job's receipts into honest tiers (the dragon counts them all as executed).
+
+    tool/mind adapter = a reviewed program ran on the task; method applied = card_apply.py wrote a
+    task-bound procedure (ready here / needs install / needs connector). Hashes are re-checked.
+    """
+    tiers, status, bad, real = Counter(), Counter(), [], Counter()
+    for rec in sorted((job / "receipts").glob("*.json")):
+        r = json.loads(rec.read_text(encoding="utf-8"))
+        art = Path(r.get("artifact", ""))
+        if not art.is_file() or hashlib.sha256(art.read_bytes()).hexdigest() != r.get("artifact_sha256"):
+            bad.append(r.get("entry"))
+            continue
+        cmd = " ".join(map(str, r.get("command", [])))
+        if V.APPLIER_SCRIPT.rsplit("/", 1)[-1] in cmd:
+            tiers["method_applied"] += 1
+            try:
+                status[json.loads(art.read_text(encoding="utf-8")).get("status", "?")] += 1
+            except ValueError:
+                status["unreadable"] += 1
+        elif V.SUPERPOWER_SCRIPT.rsplit("/", 1)[-1] in cmd:
+            tiers["superpower_chain_executed"] += 1
+            real[str(r.get("entry", "")).split(":", 1)[0]] += 1
+        elif "kosif-dragon-mind" in cmd:
+            tiers["mind_executed"] += 1
+            real["skill"] += 1
+        else:
+            tiers["tool_adapter_executed"] += 1
+            real[str(r.get("entry", "")).split(":", 1)[0]] += 1
+    return {"schema": SCHEMA + ".job-audit", "job": str(job), "receipts": sum(tiers.values()) + len(bad),
+            "tiers": dict(tiers), "method_status": dict(status), "hash_mismatch": bad,
+            "real_executed": sum(real.values()), "real_executed_by_kind": dict(sorted(real.items())),
+            "truth": "black_dragon.py counts every receipt as executed; only tool_adapter_executed and "
+                     "mind_executed and superpower_chain_executed are programs that ran; method_applied are task-bound procedures"}
+
+
 # --------------------------------------------------------------------------- doctor
 
 def doctor() -> dict:
@@ -524,10 +715,21 @@ def main(argv=None) -> int:
     t.add_argument("--deep", action="store_true", help="two frameworks per stage instead of one")
     t.add_argument("--out", type=Path, help="work dir for mind_trace.json and mind_report.md")
     sub.add_parser("doctor", help="read-only health check")
+    lk = sub.add_parser("link", help="link every entry to peers, next/prev stages, owner skill and faculty hub")
+    lk.add_argument("--write", action="store_true", help="write data/mind_links.json")
+    lk.add_argument("--check", action="store_true", help="exit 1 if data/mind_links.json is stale")
+    au = sub.add_parser("audit", help="split a Black Dragon job's receipts into honest tiers")
+    au.add_argument("--job", type=Path, required=True)
+    spw = sub.add_parser("superpowers", help="chain runners for superpowers whose every member has a real runner")
+    spw.add_argument("--write", action="store_true", help="write data/%s" % V.SUPERPOWERS_ADAPTER_FILE)
+    ul = sub.add_parser("unlock", help="install plan that makes the most entries ready here (installs nothing)")
+    ul.add_argument("--script", type=Path, help="also write a shell script with the install commands")
     up = sub.add_parser("upgrade", help="weakest faculties + measured GitHub candidates to strengthen them")
     up.add_argument("--max-executors", type=int, default=12)
     ad = sub.add_parser("adapters", help="write reviewed adapters + the mind's own adapter for black_dragon.py --adapters")
     ad.add_argument("--out", type=Path, required=True)
+    ad.add_argument("--all", action="store_true",
+                    help="also give every entry without a reviewed adapter the method applier (card_apply.py)")
     a = ap.parse_args(argv)
     if a.cmd == "decompose":
         inv, desc, _, _ = load_inventory()
@@ -572,13 +774,63 @@ def main(argv=None) -> int:
         else:
             sys.stdout.write(report_md(tr))
         return 0
+    if a.cmd == "link":
+        g = build_links()
+        target = DATA / "mind_links.json"
+        text = json.dumps(g, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n"
+        if a.check:
+            ok = target.is_file() and target.read_text(encoding="utf-8") == text
+            print("mind_links.json " + ("fresh" if ok else "STALE"))
+            return 0 if ok else 1
+        if a.write:
+            target.write_text(text, encoding="utf-8")
+        _dump(g["stats"], None)
+        return 0 if g["stats"]["components_all_links"] == 1 else 4
+    if a.cmd == "audit":
+        res = audit_job(a.job)
+        _dump(res, None)
+        return 0 if not res["hash_mismatch"] else 4
+    if a.cmd == "superpowers":
+        import superpower_run as spr
+        bd, _ = _dragon()
+        adapters, counts = spr.registry()
+        res = {"superpowers": sum(counts.values()), "fully_runnable": counts["full"],
+               "partly_runnable": counts["partial"], "no_member_runner": counts["none"],
+               "rule": "a superpower gets a chain runner only when every member power has a real runner"}
+        if a.write:
+            path = bd.REVIEWED_ADAPTERS.parent / V.SUPERPOWERS_ADAPTER_FILE
+            _dump({"_comment": "Generated by dragon_mind.py superpowers --write. Each entry runs every member "
+                               "power's real runner in order (superpower_run.py); exit 0 only if all pass.",
+                   "adapters": adapters}, path)
+            res["wrote"] = path.name
+        _dump(res, None)
+        return 0
+    if a.cmd == "unlock":
+        plan = unlock_plan()
+        if a.script:
+            lines = ["#!/usr/bin/env bash", "# Dragon Mind unlock plan: review each line before running it.", "set -u"]
+            for st in plan["steps"]:
+                cmd = (st["install"] or "").split("  (")[0].strip()
+                lines.append("# %s -> unlocks %d (blocked by it: %d)" % (st["requirement"], st["unlocks_now"], st["blocked_by_it_before"]))
+                lines.append(cmd if cmd and not cmd.lower().startswith(("see ", "set ", "get ", "sign ")) else "# manual: " + (cmd or "no install command recorded"))
+            a.script.parent.mkdir(parents=True, exist_ok=True)
+            a.script.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        _dump(plan, None)
+        return 0
     if a.cmd == "upgrade":
         _dump(upgrade_plan(a.max_executors), None)
         return 0
     if a.cmd == "adapters":
         bd, _ = _dragon()
-        merged = dict(bd._load_adapters(bd.REVIEWED_ADAPTERS))
-        merged[V.MIND_ADAPTER_KEY] = V.MIND_ADAPTER
+        merged = reviewed_adapters(bd)
+        merged.setdefault(V.MIND_ADAPTER_KEY, V.MIND_ADAPTER)  # a reviewed adapter for the mind wins
+        if a.all:
+            inv, *_ = load_inventory()
+            for key in sorted(inv):
+                if key not in merged:
+                    merged[key] = {"script": V.APPLIER_SCRIPT, "args": ["{artifact}", key, "{task}"],
+                                   "method_applier": True,
+                                   "why": "method applier: task-bound procedure, requirement check and links"}
         _dump({"_comment": "Reviewed Black Dragon adapters plus the Dragon Mind (read-only think). "
                            "Use: black_dragon.py run TASK --job out/black-dragon/<job> --adapters THIS --execute-adapters",
                "adapters": merged}, a.out)

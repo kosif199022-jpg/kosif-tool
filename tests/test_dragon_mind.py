@@ -110,7 +110,138 @@ class DragonMindTests(unittest.TestCase):
             done = subprocess.run([sys.executable, str(ROOT / spec["script"]), *args], cwd=ROOT,
                                   capture_output=True, text=True, timeout=120)
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
-            self.assertIn("عقل التنين", artifact.read_text(encoding="utf-8"))
+            body = artifact.read_text(encoding="utf-8")
+            # the mind's own adapter writes its report; a reviewed skill adapter (PR #214) writes a JSON verdict
+            self.assertTrue("عقل التنين" in body or '"verdict": "passed"' in body, body[:300])
+
+
+class DragonMindLinkAndApplyTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.links = json.loads((MIND / "data" / "mind_links.json").read_text(encoding="utf-8"))
+        cls.inv, *_ = dm.load_inventory()
+
+    def test_graph_is_one_connected_network_over_valid_ids(self):
+        nodes, edges = self.links["nodes"], self.links["edges"]
+        self.assertEqual(self.links["stats"]["components_all_links"], 1)
+        self.assertEqual(set(nodes), set(edges))
+        for k, e in edges.items():
+            for kind in ("peers", "next", "prev", "specialist", "hub_chain"):
+                for o in e.get(kind, []):
+                    self.assertIn(o, nodes, (k, kind))
+            for kind in ("owner", "hub"):
+                if e.get(kind):
+                    self.assertIn(e[kind], nodes)
+
+    def test_every_live_entry_is_linked_or_resolvable(self):
+        missing = set(self.inv) - set(self.links["nodes"])
+        self.assertLessEqual(len(missing), 25, "run dragon_mind.py link --write")
+
+    def test_applier_works_for_every_kind(self):
+        import card_apply as ca
+        by_kind = {}
+        for k, n in sorted(self.links["nodes"].items()):
+            by_kind.setdefault(n["kind"], k)
+        self.assertEqual(set(by_kind), {"power", "superpower", "style", "skill", "playbook", "protocol", "tool"})
+        with tempfile.TemporaryDirectory() as tmp:
+            for kind, key in by_kind.items():
+                out = Path(tmp) / (kind + ".json")
+                self.assertEqual(ca.main([str(out), key, "اعمل فيديو موشن عربي"]), 0, key)
+                res = json.loads(out.read_text(encoding="utf-8"))
+                self.assertTrue(res["steps"], key)
+                self.assertTrue(res["status"].startswith("applied-"))
+                src = ca.source_path(res["kind"], res["source"])
+                self.assertEqual(res["source_sha256"], ca.sha(src))
+            self.assertEqual(ca.main([str(Path(tmp) / "x.json"), "power:NO-SUCH-CARD", "task"]), 3)
+
+    def test_audit_splits_receipts_and_catches_tampering(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as tmp:
+            job = Path(tmp)
+            (job / "receipts").mkdir()
+            (job / "artifacts").mkdir()
+            rows = [("power:A", V.APPLIER_SCRIPT, '{"status": "applied-ready-here"}'),
+                    ("tool:b", ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py x tool.py", "ran"),
+                    ("tool:c", "_black_dragon_exec.py", "ran")]
+            for i, (entry, script, body) in enumerate(rows):
+                art = job / "artifacts" / ("%d.txt" % i)
+                art.write_text(body, encoding="utf-8")
+                rec = {"entry": entry, "command": ["python3", script], "artifact": str(art),
+                       "artifact_sha256": hashlib.sha256(art.read_bytes()).hexdigest()}
+                (job / "receipts" / ("%d.json" % i)).write_text(json.dumps(rec), encoding="utf-8")
+            (job / "artifacts" / "2.txt").write_text("tampered", encoding="utf-8")
+            res = dm.audit_job(job)
+        self.assertEqual(res["tiers"], {"method_applied": 1, "tool_adapter_executed": 1})
+        self.assertEqual(res["method_status"], {"applied-ready-here": 1})
+        self.assertEqual(res["hash_mismatch"], ["tool:c"])
+        self.assertEqual(res["real_executed"], 1)
+
+    def test_all_adapters_cover_every_entry_and_keep_reviewed_ones(self):
+        bd, _ = dm._dragon()
+        reviewed = bd._load_adapters(bd.REVIEWED_ADAPTERS)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "all.json"
+            self.assertEqual(dm.main(["adapters", "--all", "--out", str(out)]), 0)
+            allad = bd._load_adapters(out)
+        self.assertEqual(set(allad), set(self.inv))
+        for k, spec in reviewed.items():
+            self.assertEqual(allad[k], spec)
+        for k, spec in allad.items():
+            bd._safe_script(spec["script"])
+            if k not in reviewed and k != V.MIND_ADAPTER_KEY:
+                self.assertIs(spec.get("method_applier"), True, k)
+
+    def test_generated_real_runners_merge_and_reviewed_wins(self):
+        bd, _ = dm._dragon()
+        reviewed = bd._load_adapters(bd.REVIEWED_ADAPTERS)
+        some = sorted(reviewed)[0]
+        power = next(k for k in sorted(self.inv) if k.startswith("power:") and k not in reviewed)
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / bd.REVIEWED_ADAPTERS.name).write_text(bd.REVIEWED_ADAPTERS.read_text(encoding="utf-8"),
+                                                      encoding="utf-8")
+            runner = {"script": V.APPLIER_SCRIPT, "args": ["{artifact}"], "why": "proof runner"}
+            (d / V.GENERATED_ADAPTER_FILES[0]).write_text(
+                json.dumps({"adapters": {power: runner, some: runner}}), encoding="utf-8")
+            merged = dm.reviewed_adapters(bd, d)
+        self.assertEqual(merged[power], runner)
+        self.assertEqual(merged[some], reviewed[some])
+        self.assertNotIn("method_applier", merged[power])
+
+    def test_superpower_chain_executes_only_when_every_member_runs(self):
+        import superpower_run as spr
+        sps = spr.load_superpowers()
+        self.assertEqual(len(sps), sum(1 for k in self.inv if k.startswith("superpower:")))
+        sp_id = min(sps, key=lambda i: (len(sps[i]["pipeline"]), i))
+        members = ["power:" + s["id"] for s in sps[sp_id]["pipeline"]]
+        with tempfile.TemporaryDirectory() as tmp:
+            ok = Path(tmp) / "ok.py"
+            ok.write_text("import sys,pathlib; pathlib.Path(sys.argv[1]).write_text('ran ' + sys.argv[2])\n")
+            bad = Path(tmp) / "bad.py"
+            bad.write_text("import sys; sys.exit(1)\n")
+            rel_ok = ".claude/skills/kosif-dragon-mind/scripts/_t_ok.py"
+            rel_bad = ".claude/skills/kosif-dragon-mind/scripts/_t_bad.py"
+            (ROOT / rel_ok).write_text(ok.read_text())
+            (ROOT / rel_bad).write_text(bad.read_text())
+            try:
+                full = {m: {"script": rel_ok, "args": ["{artifact}", "{task}"]} for m in members}
+                adapters, counts = spr.registry(full)
+                self.assertIn("superpower:" + sp_id, adapters)
+                art = Path(tmp) / "a.json"
+                self.assertEqual(spr.execute(art, sp_id, "t", runners=full), 0)
+                res = json.loads(art.read_text(encoding="utf-8"))
+                self.assertEqual(res["verdict"], "executed")
+                self.assertEqual(res["members_executed"], len(members))
+                for st in res["steps"]:
+                    self.assertEqual(st["artifact_sha256"], spr.sha(Path(st["artifact"])))
+                broken = dict(full, **{members[0]: {"script": rel_bad, "args": []}})
+                self.assertEqual(spr.execute(Path(tmp) / "b.json", sp_id, "t", runners=broken), 3)
+                none = spr.execute(Path(tmp) / "c.json", sp_id, "t", runners={})
+                self.assertEqual(none, 3)
+                self.assertEqual(json.loads((Path(tmp) / "c.json").read_text())["verdict"], "none")
+            finally:
+                (ROOT / rel_ok).unlink()
+                (ROOT / rel_bad).unlink()
 
 
 if __name__ == "__main__":
