@@ -33,6 +33,8 @@ jobs:
             imageio-ffmpeg arabic-reshaper python-bidi instaloader mcp yt-dlp
           npm install --no-save --no-package-lock playwright@1.63.0
           npx playwright install --with-deps chromium
+          # Some suites run the renderer from a temp folder, so tell it where Playwright lives.
+          echo "KOSIF_PLAYWRIGHT=$GITHUB_WORKSPACE/node_modules/playwright" >> "$GITHUB_ENV"
       - name: Black Dragon unit and integration tests
         run: python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
       - name: Generated indexes are current (regenerate locally with the chain in references/guides/maintain.md)
