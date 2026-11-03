@@ -138,6 +138,28 @@ def hist_dist(feats, i, j):
     return 0.5 * np.abs(Hh[np.clip(i, 0, len(Hh) - 1)] - Hh[np.clip(j, 0, len(Hh) - 1)]).sum(-1)
 
 
+def translation_residual(feats, first: int, last: int, max_shift: int = 8) -> float:
+    """Residual frame difference after compensating for camera translation.
+
+    A handheld pan/shake may produce a large unaligned frame difference but
+    should not be mistaken for a new shot. Compare a shared central region at
+    bounded integer displacements; this is a conservative veto, not a classifier.
+    """
+    frames = _gray_small(feats)
+    a, b = frames[first], frames[last]
+    h, w = a.shape
+    margin = min(max_shift, (h - 1) // 4, (w - 1) // 4)
+    if margin < 1:
+        return float(np.abs(a - b).mean())
+    center = a[margin:h - margin, margin:w - margin]
+    best = float("inf")
+    for dy in range(-margin, margin + 1):
+        for dx in range(-margin, margin + 1):
+            shifted = b[margin + dy:h - margin + dy, margin + dx:w - margin + dx]
+            best = min(best, float(np.abs(center - shifted).mean()))
+    return best
+
+
 # ----------------------------------------------------------------------------- boundaries
 
 def detect_boundaries(feats, tmask=None, L: int = 8, sensitivity: float = 1.0) -> list[dict]:
@@ -263,6 +285,12 @@ def refine_extent(feats, cand, tmask, L):
     mB = float(pair_dist(feats, np.array([pb]), np.array([min(N - 1, pb + g)]), tmask)[0])
     hAB = float(hist_dist(feats, np.array([pa]), np.array([pb]))[0])
     real = dAB > 1.5 * max(mA, mB) + 1.5 or hAB > 0.25
+    # If the apparent discontinuity vanishes after a small translation and
+    # the colour distribution is unchanged, this is camera motion, not a cut.
+    if real and hAB <= 0.25:
+        aligned = translation_residual(feats, pa, pb)
+        if aligned < max(4.0, 0.20 * dAB):
+            real = False
     if not real:
         return None
     return {"a": int(a), "b": int(b), "pa": int(pa), "pb": int(pb), "strength": dAB / (max(mA, mB) + 1.0),
@@ -549,6 +577,10 @@ def analyze(ref: str, work: str, text_color: str | None = None, sensitivity: flo
         fitter = _Fitter(feats, tmask)
         for bd in bnds:
             tr = classify(feats, bd, tmask, deep=deep, fitter=fitter)
+            # The fitter floors confidence at 0.05; such a floor is not
+            # evidence of a real gradual edit. Do not report it as a shot cut.
+            if tr["type"] != "cut" and tr.get("confidence", 0.0) < 0.20:
+                continue
             tr["evidence"] = {"src": bd["src"], "strength": rnd(bd["strength"], 2), "dAB": rnd(bd["dAB"], 2)}
             if trans and tr["ts"] < trans[-1]["te"]:  # keep transitions disjoint
                 if tr["frames"] == 0 or tr["te"] <= trans[-1]["te"]:
