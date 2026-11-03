@@ -1,0 +1,2379 @@
+{
+ "schema": "kosif.dragon-mind.github.v1",
+ "repos_measured": 32820,
+ "readmes_read": 3293,
+ "stars_median": 156,
+ "queries": {
+  "topic:3d": 896,
+  "topic:agent-framework": 734,
+  "topic:agents": 435,
+  "topic:ai-agent": 434,
+  "topic:ai-agents": 1000,
+  "topic:ai-tools": 702,
+  "topic:animation": 962,
+  "topic:anthropic": 366,
+  "topic:audio": 819,
+  "topic:automation ai": 688,
+  "topic:autonomous-agents": 727,
+  "topic:blender": 916,
+  "topic:chatgpt": 707,
+  "topic:claude": 149,
+  "topic:claude-code": 538,
+  "topic:computer-vision": 943,
+  "topic:copilot": 771,
+  "topic:decision-making": 321,
+  "topic:design-system": 933,
+  "topic:evaluation llm": 340,
+  "topic:ffmpeg": 911,
+  "topic:generative-ai": 730,
+  "topic:gpt": 510,
+  "topic:knowledge-graph": 794,
+  "topic:langchain": 609,
+  "topic:llm": 463,
+  "topic:llm-agent": 740,
+  "topic:llm-tools": 905,
+  "topic:llmops": 566,
+  "topic:mcp": 687,
+  "topic:mcp-server": 676,
+  "topic:mental-models": 40,
+  "topic:motion-graphics": 310,
+  "topic:multi-agent": 914,
+  "topic:openai": 312,
+  "topic:orchestration": 794,
+  "topic:planning": 578,
+  "topic:product-management": 325,
+  "topic:prompt-engineering": 874,
+  "topic:rag": 732,
+  "topic:reasoning": 657,
+  "topic:remotion": 198,
+  "topic:skills claude": 792,
+  "topic:speech-recognition": 785,
+  "topic:stable-diffusion": 818,
+  "topic:text-to-speech": 872,
+  "topic:typography": 684,
+  "topic:video": 759,
+  "topic:video-editing": 835,
+  "topic:workflow-engine": 569
+ },
+ "languages_top": {
+  "Python": 12169,
+  "TypeScript": 5273,
+  "JavaScript": 2781,
+  "none": 2384,
+  "Rust": 1206,
+  "Go": 1205,
+  "Jupyter Notebook": 958,
+  "C++": 891,
+  "HTML": 844,
+  "Java": 714,
+  "Shell": 664,
+  "C#": 582,
+  "Swift": 562,
+  "C": 340,
+  "Kotlin": 338
+ },
+ "topics_top": {
+  "llm": 6313,
+  "ai": 5293,
+  "ai-agents": 4892,
+  "claude-code": 4370,
+  "mcp": 4153,
+  "python": 4090,
+  "claude": 3275,
+  "openai": 2396,
+  "codex": 2210,
+  "typescript": 2121,
+  "ai-agent": 2070,
+  "developer-tools": 1999,
+  "mcp-server": 1928,
+  "automation": 1926,
+  "agent-skills": 1718,
+  "chatgpt": 1665,
+  "anthropic": 1635,
+  "skills": 1610,
+  "rag": 1598,
+  "agents": 1579,
+  "agent": 1500,
+  "multi-agent": 1480,
+  "cli": 1463,
+  "cursor": 1462,
+  "model-context-protocol": 1437,
+  "video": 1369,
+  "agentic-ai": 1363,
+  "prompt-engineering": 1356,
+  "react": 1355,
+  "machine-learning": 1353,
+  "open-source": 1287,
+  "ffmpeg": 1281,
+  "deep-learning": 1279,
+  "ai-tools": 1251,
+  "generative-ai": 1234,
+  "computer-vision": 1225,
+  "animation": 1204,
+  "langchain": 1160,
+  "gpt": 1131,
+  "3d": 1119,
+  "audio": 1103,
+  "knowledge-graph": 1074,
+  "orchestration": 1054,
+  "text-to-speech": 1036,
+  "autonomous-agents": 1035,
+  "llm-tools": 1031,
+  "design-system": 1027,
+  "rust": 1018,
+  "gemini": 1015,
+  "self-hosted": 1014,
+  "blender": 1012,
+  "stable-diffusion": 1012,
+  "copilot": 1009,
+  "speech-recognition": 1007,
+  "video-editing": 927,
+  "agent-framework": 874,
+  "pytorch": 870,
+  "artificial-intelligence": 861,
+  "javascript": 779,
+  "llm-agent": 771
+ },
+ "patterns": [
+  {
+   "id": "skills-plugins",
+   "name": "Skills / plugins packs",
+   "repos": 7387,
+   "share": "22.5%",
+   "exemplars": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "deepseek-ai/deepseek-harness",
+     "stars": 270556,
+     "license": "MIT"
+    },
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars": 198173,
+     "license": "AGPL-3.0"
+    }
+   ],
+   "mind_feature": "the super-skill folds 470+ skills into faculties",
+   "implemented": true
+  },
+  {
+   "id": "mcp",
+   "name": "Model Context Protocol servers",
+   "repos": 5319,
+   "share": "16.2%",
+   "exemplars": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "n8n-io/n8n",
+     "stars": 209434,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars": 198173,
+     "license": "AGPL-3.0"
+    }
+   ],
+   "mind_feature": "external executors (Higgsfield, Suno) listed as consent-gated MCP routes",
+   "implemented": true
+  },
+  {
+   "id": "memory",
+   "name": "Long-term / vector memory",
+   "repos": 2713,
+   "share": "8.3%",
+   "exemplars": [
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "ollama/ollama",
+     "stars": 185774,
+     "license": "MIT"
+    },
+    {
+     "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+     "stars": 165234,
+     "license": "AGPL-3.0"
+    }
+   ],
+   "mind_feature": "FusionForge project recipes (lexical, not vector)",
+   "implemented": false
+  },
+  {
+   "id": "sandbox",
+   "name": "Sandboxed execution",
+   "repos": 2670,
+   "share": "8.1%",
+   "exemplars": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT"
+    },
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "n8n-io/n8n",
+     "stars": 209434,
+     "license": "NOASSERTION"
+    }
+   ],
+   "mind_feature": "probe runs in job/probes/cwd; no shell strings",
+   "implemented": true
+  },
+  {
+   "id": "multi-agent-roles",
+   "name": "Role-based multi-agent crews",
+   "repos": 2496,
+   "share": "7.6%",
+   "exemplars": [
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "ollama/ollama",
+     "stars": 185774,
+     "license": "MIT"
+    },
+    {
+     "full_name": "f/prompts.chat",
+     "stars": 175682,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "langflow-ai/langflow",
+     "stars": 156287,
+     "license": "MIT"
+    },
+    {
+     "full_name": "Shubhamsaboo/awesome-llm-apps",
+     "stars": 143805,
+     "license": "Apache-2.0"
+    }
+   ],
+   "mind_feature": "five-voice council in llm_council.py; mind lists faculties as roles",
+   "implemented": true
+  },
+  {
+   "id": "evaluation",
+   "name": "Evals and benchmarks",
+   "repos": 2467,
+   "share": "7.5%",
+   "exemplars": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT"
+    },
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars": 198173,
+     "license": "AGPL-3.0"
+    },
+    {
+     "full_name": "Significant-Gravitas/AutoGPT",
+     "stars": 187885,
+     "license": "NOASSERTION"
+    }
+   ],
+   "mind_feature": "self-test + unit tests + doctor; receipts for executed work",
+   "implemented": true
+  },
+  {
+   "id": "rag-retrieval",
+   "name": "Retrieval-augmented generation",
+   "repos": 2366,
+   "share": "7.2%",
+   "exemplars": [
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "ollama/ollama",
+     "stars": 185774,
+     "license": "MIT"
+    },
+    {
+     "full_name": "DietrichGebert/ponytail",
+     "stars": 183327,
+     "license": "MIT"
+    },
+    {
+     "full_name": "langgenius/dify",
+     "stars": 160317,
+     "license": "NOASSERTION"
+    }
+   ],
+   "mind_feature": "frameworks/patterns retrieved by trigger words (lexical)",
+   "implemented": true
+  },
+  {
+   "id": "observability",
+   "name": "Tracing / observability",
+   "repos": 1557,
+   "share": "4.7%",
+   "exemplars": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT"
+    },
+    {
+     "full_name": "n8n-io/n8n",
+     "stars": 209434,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "ollama/ollama",
+     "stars": 185774,
+     "license": "MIT"
+    },
+    {
+     "full_name": "DietrichGebert/ponytail",
+     "stars": 183327,
+     "license": "MIT"
+    },
+    {
+     "full_name": "langgenius/dify",
+     "stars": 160317,
+     "license": "NOASSERTION"
+    }
+   ],
+   "mind_feature": "mind_trace.json with a digest per run",
+   "implemented": true
+  },
+  {
+   "id": "cost-budget",
+   "name": "Cost / token budgeting",
+   "repos": 1464,
+   "share": "4.5%",
+   "exemplars": [
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars": 198173,
+     "license": "AGPL-3.0"
+    },
+    {
+     "full_name": "microsoft/markitdown",
+     "stars": 193675,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "framework cost field and bounded framework count",
+   "implemented": true
+  },
+  {
+   "id": "parallel-agents",
+   "name": "Parallel / concurrent agents",
+   "repos": 1097,
+   "share": "3.3%",
+   "exemplars": [
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "Snailclimb/JavaGuide",
+     "stars": 159401,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "farion1231/cc-switch",
+     "stars": 151450,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "Black Dragon bounded parallel dispatch; mind marks parallel build stages",
+   "implemented": true
+  },
+  {
+   "id": "routing",
+   "name": "Model / task routing",
+   "repos": 1059,
+   "share": "3.2%",
+   "exemplars": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT"
+    },
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "microsoft/markitdown",
+     "stars": 193675,
+     "license": "MIT"
+    },
+    {
+     "full_name": "farion1231/cc-switch",
+     "stars": 151450,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "faculty routing to champion capabilities",
+   "implemented": true
+  },
+  {
+   "id": "checkpoint-resume",
+   "name": "Checkpoint / resume / replay",
+   "repos": 1041,
+   "share": "3.2%",
+   "exemplars": [
+    {
+     "full_name": "donnemartin/system-design-primer",
+     "stars": 376651,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "huggingface/transformers",
+     "stars": 168487,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "AUTOMATIC1111/stable-diffusion-webui",
+     "stars": 165234,
+     "license": "AGPL-3.0"
+    },
+    {
+     "full_name": "Snailclimb/JavaGuide",
+     "stars": 159401,
+     "license": "Apache-2.0"
+    }
+   ],
+   "mind_feature": "trace + digest make a run replayable; not a live checkpointer",
+   "implemented": false
+  },
+  {
+   "id": "guardrails",
+   "name": "Guardrails / safety filters",
+   "repos": 954,
+   "share": "2.9%",
+   "exemplars": [
+    {
+     "full_name": "deepseek-ai/deepseek-harness",
+     "stars": 270556,
+     "license": "MIT"
+    },
+    {
+     "full_name": "x1xhlol/system-prompts-and-models-of-ai-tools",
+     "stars": 144425,
+     "license": "GPL-3.0"
+    },
+    {
+     "full_name": "VoltAgent/awesome-design-md",
+     "stars": 125385,
+     "license": "MIT"
+    },
+    {
+     "full_name": "TauricResearch/TradingAgents",
+     "stars": 120158,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "ruvnet/RuView",
+     "stars": 102167,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "safety-rights faculty always on; untrusted data never instructions",
+   "implemented": true
+  },
+  {
+   "id": "dag-workflow",
+   "name": "Graph / DAG workflows",
+   "repos": 790,
+   "share": "2.4%",
+   "exemplars": [
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "langchain-ai/langchain",
+     "stars": 148937,
+     "license": "MIT"
+    },
+    {
+     "full_name": "Comfy-Org/ComfyUI",
+     "stars": 144791,
+     "license": "GPL-3.0"
+    },
+    {
+     "full_name": "Shubhamsaboo/awesome-llm-apps",
+     "stars": 143805,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "Graphify-Labs/graphify",
+     "stars": 141544,
+     "license": "Apache-2.0"
+    }
+   ],
+   "mind_feature": "think(): typed handoff graph nodes → edges; Black Dragon Kahn waves",
+   "implemented": true
+  },
+  {
+   "id": "typed-schemas",
+   "name": "Typed / structured outputs",
+   "repos": 782,
+   "share": "2.4%",
+   "exemplars": [
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars": 198173,
+     "license": "AGPL-3.0"
+    },
+    {
+     "full_name": "DietrichGebert/ponytail",
+     "stars": 183327,
+     "license": "MIT"
+    },
+    {
+     "full_name": "langchain-ai/langchain",
+     "stars": 148937,
+     "license": "MIT"
+    },
+    {
+     "full_name": "Shubhamsaboo/awesome-llm-apps",
+     "stars": 143805,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "VoltAgent/awesome-design-md",
+     "stars": 125385,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "nodes carry typed input/output media kinds; handoff check",
+   "implemented": true
+  },
+  {
+   "id": "tool-registry",
+   "name": "Tool registry / function calling",
+   "repos": 611,
+   "share": "1.9%",
+   "exemplars": [
+    {
+     "full_name": "n8n-io/n8n",
+     "stars": 209434,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "Shubhamsaboo/awesome-llm-apps",
+     "stars": 143805,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "microsoft/generative-ai-for-beginners",
+     "stars": 122898,
+     "license": "MIT"
+    },
+    {
+     "full_name": "punkpeye/awesome-mcp-servers",
+     "stars": 97241,
+     "license": "MIT"
+    },
+    {
+     "full_name": "vllm-project/vllm",
+     "stars": 96212,
+     "license": "Apache-2.0"
+    }
+   ],
+   "mind_feature": "Black Dragon inventory + tiers = tool registry with readiness",
+   "implemented": true
+  },
+  {
+   "id": "human-in-the-loop",
+   "name": "Human approval gates",
+   "repos": 385,
+   "share": "1.2%",
+   "exemplars": [
+    {
+     "full_name": "n8n-io/n8n",
+     "stars": 209434,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "paperclipai/paperclip",
+     "stars": 110700,
+     "license": "MIT"
+    },
+    {
+     "full_name": "punkpeye/awesome-mcp-servers",
+     "stars": 97241,
+     "license": "MIT"
+    },
+    {
+     "full_name": "ruvnet/ruflo",
+     "stars": 80732,
+     "license": "MIT"
+    },
+    {
+     "full_name": "career-ops-hq/career-ops",
+     "stars": 79712,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "consent flag: spend/publish steps wait for the owner's yes",
+   "implemented": true
+  },
+  {
+   "id": "self-improving",
+   "name": "Self-improving / learning agents",
+   "repos": 352,
+   "share": "1.1%",
+   "exemplars": [
+    {
+     "full_name": "NousResearch/hermes-agent",
+     "stars": 260071,
+     "license": "MIT"
+    },
+    {
+     "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
+     "stars": 144568,
+     "license": "MIT"
+    },
+    {
+     "full_name": "Shubhamsaboo/awesome-llm-apps",
+     "stars": 143805,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "punkpeye/awesome-mcp-servers",
+     "stars": 97241,
+     "license": "MIT"
+    },
+    {
+     "full_name": "ruvnet/ruflo",
+     "stars": 80732,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "FusionForge lessons; no weight training",
+   "implemented": false
+  },
+  {
+   "id": "reflection-critic",
+   "name": "Reflection / self-critique loop",
+   "repos": 320,
+   "share": "1.0%",
+   "exemplars": [
+    {
+     "full_name": "Snailclimb/JavaGuide",
+     "stars": 159401,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "TauricResearch/TradingAgents",
+     "stars": 120158,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "rasbt/LLMs-from-scratch",
+     "stars": 107741,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "ruvnet/RuView",
+     "stars": 102167,
+     "license": "MIT"
+    },
+    {
+     "full_name": "mui/material-ui",
+     "stars": 99296,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "think(): critic pass lists gaps, handoff and consent issues",
+   "implemented": true
+  },
+  {
+   "id": "planner-executor",
+   "name": "Planner → executor split",
+   "repos": 251,
+   "share": "0.8%",
+   "exemplars": [
+    {
+     "full_name": "affaan-m/ECC",
+     "stars": 296113,
+     "license": "MIT"
+    },
+    {
+     "full_name": "Shubhamsaboo/awesome-llm-apps",
+     "stars": 143805,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "tt-a1i/archify",
+     "stars": 92980,
+     "license": "Apache-2.0"
+    },
+    {
+     "full_name": "datawhalechina/hello-agents",
+     "stars": 85897,
+     "license": "NOASSERTION"
+    },
+    {
+     "full_name": "shareAI-lab/learn-claude-code",
+     "stars": 79808,
+     "license": "MIT"
+    }
+   ],
+   "mind_feature": "think(): cycle stages plan faculties, Black Dragon run executes",
+   "implemented": true
+  }
+ ],
+ "faculty_candidates": {
+  "perceive-media": {
+   "matching_repos": 171,
+   "top": [
+    {
+     "full_name": "cvat-ai/cvat",
+     "stars": 17059,
+     "license": "MIT",
+     "permissive": true,
+     "description": "CVAT is a leading data annotation platform for image, video, audio, and 3D datasets. It offers open-source, cloud, and enterprise products, as well as labeling "
+    },
+    {
+     "full_name": "yusufkaraaslan/Skill_Seekers",
+     "stars": 15269,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Convert documentation websites, GitHub repositories, and PDFs into Claude AI skills with automatic conflict detection"
+    },
+    {
+     "full_name": "wangrongding/wechat-bot",
+     "stars": 11519,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🤖 Multi-platform IM AI Agent for Telegram, WhatsApp, Lark, and WeChat. Connects ChatGPT / Claude / Kimi / DeepSeek / Ollama / Pi for auto-replies, community ana"
+    },
+    {
+     "full_name": "QwenAudio/SenseVoice",
+     "stars": 9679,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Open-source SenseVoiceSmall model for Mandarin, Cantonese, English, Japanese, and Korean ASR, language ID, emotion recognition, and audio event detection."
+    },
+    {
+     "full_name": "yzhao062/anomaly-detection-resources",
+     "stars": 9438,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Anomaly detection related books, papers, videos, and toolboxes. Last update late 2025 for LLM and VLM works!"
+    },
+    {
+     "full_name": "dusty-nv/jetson-inference",
+     "stars": 9030,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Hello AI World guide to deploying deep-learning inference networks and deep vision primitives with TensorRT and NVIDIA Jetson."
+    },
+    {
+     "full_name": "repowise-dev/repowise",
+     "stars": 8117,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Codebase intelligence for AI and humans: code health scores, auto-generated docs, git analytics, dead code detection, and architectural decisions via MCP."
+    },
+    {
+     "full_name": "shy3130/tick-stock-panel",
+     "stars": 6963,
+     "license": "MIT",
+     "permissive": true,
+     "description": "TSP自托管、零运维的 A 股「自建策略 + 监控 + 回测」量化工作台  | LLM能力驱使策略定制+个股分析+复盘 | 自由接入第三方数据源与个性化扩展数据 | 个人开源"
+    }
+   ]
+  },
+  "transcribe": {
+   "matching_repos": 436,
+   "top": [
+    {
+     "full_name": "debpalash/VoiceStudio",
+     "stars": 99659,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation i"
+    },
+    {
+     "full_name": "ggml-org/whisper.cpp",
+     "stars": 54881,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Port of OpenAI's Whisper model in C/C++"
+    },
+    {
+     "full_name": "Zackriya-Solutions/meetily",
+     "stars": 32404,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Privacy-first AI meeting note taker for Windows and macOS. Free, open source (MIT). On-device Whisper/Parakeet transcription and speaker diarization, no meeting"
+    },
+    {
+     "full_name": "SYSTRAN/faster-whisper",
+     "stars": 26440,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Faster Whisper transcription with CTranslate2"
+    },
+    {
+     "full_name": "m-bain/whisperX",
+     "stars": 25054,
+     "license": "BSD-2-Clause",
+     "permissive": true,
+     "description": "WhisperX:  Automatic Speech Recognition with Word-level Timestamps (& Diarization)"
+    },
+    {
+     "full_name": "modelscope/FunASR",
+     "stars": 20920,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Open-source speech recognition toolkit for training, inference, streaming ASR, VAD, punctuation, speaker diarization pipelines, and OpenAI-compatible/MCP servin"
+    },
+    {
+     "full_name": "jianchang512/pyvideotrans",
+     "stars": 19629,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Translate the video from one language to another and embed dubbing & subtitles."
+    },
+    {
+     "full_name": "abus-aikorea/voice-pro",
+     "stars": 13395,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Gradio WebUI for creators and developers, featuring key TTS (Edge-TTS, kokoro) and zero-shot Voice Cloning (E2 & F5-TTS, CosyVoice), with Whisper audio processi"
+    }
+   ]
+  },
+  "research": {
+   "matching_repos": 660,
+   "top": [
+    {
+     "full_name": "firecrawl/firecrawl",
+     "stars": 198173,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥"
+    },
+    {
+     "full_name": "f/prompts.chat",
+     "stars": 175682,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete pr"
+    },
+    {
+     "full_name": "Panniantong/Agent-Reach",
+     "stars": 108268,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees."
+    },
+    {
+     "full_name": "D4Vinci/Scrapling",
+     "stars": 93751,
+     "license": "BSD-3-Clause",
+     "permissive": true,
+     "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ a"
+    },
+    {
+     "full_name": "unclecode/crawl4ai",
+     "stars": 86822,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Open-source web crawler and scraper for LLMs and AI agents: any website into clean, LLM-ready Markdown. Run it yourself, or use Crawl4AI Cloud with one key. Joi"
+    },
+    {
+     "full_name": "bytedance/deer-flow",
+     "stars": 84934,
+     "license": "MIT",
+     "permissive": true,
+     "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message ga"
+    },
+    {
+     "full_name": "career-ops-hq/career-ops",
+     "stars": 79712,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Open-source AI job search agent and job finder: scan job boards, score each job 1-5 against your CV before you apply, tailor an ATS-friendly resume and cover le"
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars": 66429,
+     "license": "MIT",
+     "permissive": true,
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    }
+   ]
+  },
+  "reason-plan": {
+   "matching_repos": 220,
+   "top": [
+    {
+     "full_name": "backnotprop/plannotator",
+     "stars": 9835,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one c"
+    },
+    {
+     "full_name": "XiaoDuoYa/codex-with-chatgpt",
+     "stars": 7642,
+     "license": "MIT",
+     "permissive": true,
+     "description": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness."
+    },
+    {
+     "full_name": "fabio-rovai/open-ontologies",
+     "stars": 2787,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Plan, apply and roll back changes to a production ontology, with a blast radius report and a proof an auditor can re-check."
+    },
+    {
+     "full_name": "penecho/penecho",
+     "stars": 2512,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Think with AI beyond the chat box. A shared canvas for handwriting, equations, diagrams, and spatial reasoning."
+    },
+    {
+     "full_name": "zai-org/GLM-V",
+     "stars": 2406,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "GLM-4.6V/4.5V/4.1V-Thinking: Towards Versatile Multimodal Reasoning with Scalable Reinforcement Learning"
+    },
+    {
+     "full_name": "1517005260/graph-rag-agent",
+     "stars": 2356,
+     "license": "MIT",
+     "permissive": true,
+     "description": "拼好RAG：手搓并融合了GraphRAG、LightRAG、Neo4j-llm-graph-builder进行知识图谱构建以及搜索；整合DeepSearch技术实现私域RAG的推理；自制针对GraphRAG的评估框架| Integrate GraphRAG, LightRAG, and Neo4j-llm-graph-"
+    },
+    {
+     "full_name": "masamasa59/ai-agent-papers",
+     "stars": 1720,
+     "license": null,
+     "permissive": false,
+     "description": "A collection of AI Agents papers (Updated biweekly)"
+    },
+    {
+     "full_name": "StartLuxLabs/StartLux-Decision",
+     "stars": 1644,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Open decision models from 0.8B to 27B: a calibrated probability for every option in one pass, and a short thought only when unsure. Engine for vLLM, llama.cpp a"
+    }
+   ]
+  },
+  "write-story": {
+   "matching_repos": 59,
+   "top": [
+    {
+     "full_name": "Narcooo/inkos",
+     "stars": 10985,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Story Creation AI Agent for novel, scripts, translation, interactive games, and IP content"
+    },
+    {
+     "full_name": "dramaclaw/dramaclaw",
+     "stars": 6971,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "A general-purpose AIGC video engine: script to finished film in one pipeline — dramas, ads, product videos, otome games, and more. | 通用 AIGC 视频引擎 —— 从剧本到成片一条流水线"
+    },
+    {
+     "full_name": "Dicklesworthstone/destructive_command_guard",
+     "stars": 6241,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "A fast Rust safety hook that blocks destructive shell, git, and filesystem commands before AI coding agents run them. 50+ security packs (databases, Kubernetes,"
+    },
+    {
+     "full_name": "ArcReel/ArcReel",
+     "stars": 6107,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "AI Agent 驱动的开源可自部署视频工作台：将小说与剧本转为角色、场景、道具资产、分镜、视频和剪映草稿，支持跨镜头一致性、多供应商与费用追踪 | Self-hosted AI video workspace for stories, storyboards and short-form video producti"
+    },
+    {
+     "full_name": "CreditTone/hooker",
+     "stars": 5335,
+     "license": null,
+     "permissive": false,
+     "description": "🔥🔥 hooker is a Frida-based reverse engineering toolkit for Android. It offers a user-friendly CLI, universal scripts, auto hook generation, memory roaming to de"
+    },
+    {
+     "full_name": "darkzOGx/youtube-automation-agent",
+     "stars": 4964,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🎬 Open-source, self-hosted AI agent that runs a YouTube channel end to end: researches topics, writes scripts, generates narration, visuals and video, optimizes"
+    },
+    {
+     "full_name": "kaomei/stickman-video-director",
+     "stars": 3933,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Turn any script into viral, multi-style animated stickman videos for Faceless YouTube Channels. Automate visuals, voiceover, captions & SFX. 100% Free & Open-So"
+    },
+    {
+     "full_name": "zenstory-ai/drama-skills",
+     "stars": 3714,
+     "license": "MIT",
+     "permissive": true,
+     "description": "开源 AI 短剧/漫剧创作 skill 合集：剧本、角色资产、分镜 storyboard、图片/视频提示词、审查，适配 Claude Code 与 Codex | Open-source AI short drama / micro-drama skills for Claude Code & Codex: scrip"
+    }
+   ]
+  },
+  "design-visual": {
+   "matching_repos": 591,
+   "top": [
+    {
+     "full_name": "VoltAgent/awesome-design-md",
+     "stars": 125385,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI."
+    },
+    {
+     "full_name": "subframe7536/maple-font",
+     "stars": 29630,
+     "license": "OFL-1.1",
+     "permissive": false,
+     "description": "Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽"
+    },
+    {
+     "full_name": "op7418/guizang-ppt-skill",
+     "stars": 29192,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "AI-agent Skill for generating polished HTML slide decks: editorial magazine and Swiss layouts, image prompts, social covers, and a WebGL/low-power presentation "
+    },
+    {
+     "full_name": "HeroTransitions/Hero",
+     "stars": 22492,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Elegant transition library for iOS & tvOS"
+    },
+    {
+     "full_name": "githubnext/monaspace",
+     "stars": 19780,
+     "license": "OFL-1.1",
+     "permissive": false,
+     "description": "An innovative superfamily of fonts for code"
+    },
+    {
+     "full_name": "gztchan/awesome-design",
+     "stars": 17729,
+     "license": null,
+     "permissive": false,
+     "description": "🌟 Curated design resources from all over the world."
+    },
+    {
+     "full_name": "tw93/Kami",
+     "stars": 12220,
+     "license": "MIT",
+     "permissive": true,
+     "description": "👩‍🚒 Good content deserves good paper. Layout rules and templates that let AI agents export PDF, PNG and editable PowerPoint."
+    },
+    {
+     "full_name": "nexu-io/html-anything",
+     "stars": 9387,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "✨ The agentic HTML editor — your local AI agent writes the HTML, you ship it. 🚀 75 Skills × 9 Surfaces (magazine · deck · poster · XHS / tweet · prototype · dat"
+    }
+   ]
+  },
+  "arabic-type": {
+   "matching_repos": 1,
+   "top": [
+    {
+     "full_name": "idanlevi1/rtlify",
+     "stars": 10,
+     "license": "MIT",
+     "permissive": true,
+     "description": "RTL Brain for AI coding agents. Teach Claude Code, Cursor, Copilot, Windsurf, Cline, Gemini CLI, and Codex CLI to generate production-ready RTL code. Zero depen"
+    }
+   ]
+  },
+  "generate-image": {
+   "matching_repos": 317,
+   "top": [
+    {
+     "full_name": "unslothai/unsloth",
+     "stars": 79002,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more."
+    },
+    {
+     "full_name": "calesthio/OpenMontage",
+     "stars": 75655,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI c"
+    },
+    {
+     "full_name": "huggingface/diffusers",
+     "stars": 34855,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "🤗 Diffusers: State-of-the-art diffusion models for image, video, and audio generation in PyTorch."
+    },
+    {
+     "full_name": "Anil-matcha/Open-Generative-AI",
+     "stars": 32133,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No c"
+    },
+    {
+     "full_name": "FoundationVision/VAR",
+     "stars": 8764,
+     "license": "MIT",
+     "permissive": true,
+     "description": "[NeurIPS 2024 Best Paper Award][GPT beats diffusion🔥] [scaling laws in visual generation📈] Official impl. of \"Visual Autoregressive Modeling: Scalable Image Gen"
+    },
+    {
+     "full_name": "jamez-bondos/awesome-gpt4o-images",
+     "stars": 8156,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Awesome curated collection of images and prompts generated by GPT-4o and gpt-image-1. Explore AI generated visuals created with ChatGPT and Sora, showcasing Ope"
+    },
+    {
+     "full_name": "TheLastBen/fast-stable-diffusion",
+     "stars": 7908,
+     "license": "MIT",
+     "permissive": true,
+     "description": "fast-stable-diffusion + DreamBooth"
+    },
+    {
+     "full_name": "leejet/stable-diffusion.cpp",
+     "stars": 7881,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Diffusion model(SD,Flux,Wan,Qwen Image,Z-Image,...) inference in pure C/C++"
+    }
+   ]
+  },
+  "generate-video": {
+   "matching_repos": 90,
+   "top": [
+    {
+     "full_name": "Anil-matcha/Open-Generative-AI",
+     "stars": 32133,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Unrestricted Open-source alternative to AI video platforms — Free AI image & video generation studio with 600+ models (Flux, Midjourney, Kling, Sora, Veo). No c"
+    },
+    {
+     "full_name": "HBAI-Ltd/Toonflow-app",
+     "stars": 20311,
+     "license": "MIT",
+     "permissive": true,
+     "description": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic"
+    },
+    {
+     "full_name": "zai-org/CogVideo",
+     "stars": 13176,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "text and image to video generation: CogVideoX (2024) and CogVideo (ICLR 2023)"
+    },
+    {
+     "full_name": "dramaclaw/dramaclaw",
+     "stars": 6971,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "A general-purpose AIGC video engine: script to finished film in one pipeline — dramas, ads, product videos, otome games, and more. | 通用 AIGC 视频引擎 —— 从剧本到成片一条流水线"
+    },
+    {
+     "full_name": "ArcReel/ArcReel",
+     "stars": 6107,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "AI Agent 驱动的开源可自部署视频工作台：将小说与剧本转为角色、场景、道具资产、分镜、视频和剪映草稿，支持跨镜头一致性、多供应商与费用追踪 | Self-hosted AI video workspace for stories, storyboards and short-form video producti"
+    },
+    {
+     "full_name": "ai-boost/awesome-image-video-prompts",
+     "stars": 3431,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Copy-ready prompts for the leading AI video and image models, each with its real output and source. Plus agent recipes for editing video."
+    },
+    {
+     "full_name": "FurkanGozukara/Stable-Diffusion",
+     "stars": 2780,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "FLUX, Stable Diffusion, SDXL, SD3, LoRA, Fine Tuning, DreamBooth, Training, Automatic1111, Forge WebUI, SwarmUI, DeepFake, TTS, Animation, Text To Video, Tutori"
+    },
+    {
+     "full_name": "LearnPrompt/awesome-seedance",
+     "stars": 2404,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🎬 Evidence-led Seedance 2.5 / 2.0 prompt library: 840+ cases traced to original posts, 490+ cross-model retest runs, 27 copy-ready templates, 79 installable AI-"
+    }
+   ]
+  },
+  "generate-audio": {
+   "matching_repos": 102,
+   "top": [
+    {
+     "full_name": "mudler/LocalAI",
+     "stars": 50155,
+     "license": "MIT",
+     "permissive": true,
+     "description": "LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required."
+    },
+    {
+     "full_name": "multimodal-art-projection/YuE",
+     "stars": 13040,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "YuE2: frontier music generation with symbolic planning, zero-shot covers, and agentic music editing."
+    },
+    {
+     "full_name": "open-mmlab/Amphion",
+     "stars": 10330,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Amphion (/æmˈfaɪən/) is a toolkit for Audio, Music, and Speech Generation. Its purpose is to support reproducible research and help junior researchers and engin"
+    },
+    {
+     "full_name": "OxygenCobalt/Auxio",
+     "stars": 4418,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "A simple, rational music player for android"
+    },
+    {
+     "full_name": "0xShug0/audio.cpp",
+     "stars": 3960,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "An all-in-one, pure C++ inference engine for audio models, powered by ggml. Supports TTS, STT, VAD, voice conversion, music generation, and more, with highly op"
+    },
+    {
+     "full_name": "deepjyoti30/ytmdl",
+     "stars": 3553,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A simple app to get songs from YouTube in mp3 format with artist name, album name etc from sources like iTunes, Spotify, LastFM, Deezer, Gaana etc."
+    },
+    {
+     "full_name": "zzw922cn/awesome-speech-recognition-speech-synthesis-papers",
+     "stars": 3133,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Automatic Speech Recognition (ASR), Speaker Verification, Speech Synthesis, Text-to-Speech (TTS), Language Modelling, Singing Voice Synthesis (SVS), Voice Conve"
+    },
+    {
+     "full_name": "NeptuneHub/AudioMuse-AI",
+     "stars": 2894,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "AudioMuse-AI uses sonic analysis to rediscover forgotten songs, uncover hidden connections in your music library, and generate intelligent playlists for Navidro"
+    }
+   ]
+  },
+  "animate-motion": {
+   "matching_repos": 459,
+   "top": [
+    {
+     "full_name": "heygen-com/hyperframes",
+     "stars": 78063,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Write HTML. Render video. Built for agents."
+    },
+    {
+     "full_name": "airbnb/lottie-android",
+     "stars": 35764,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Render After Effects animations natively on Android and iOS, Web, and React Native"
+    },
+    {
+     "full_name": "motiondivision/motion",
+     "stars": 34839,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A modern animation library for React and JavaScript"
+    },
+    {
+     "full_name": "greensock/GSAP",
+     "stars": 30104,
+     "license": null,
+     "permissive": false,
+     "description": "GSAP (GreenSock Animation Platform), a JavaScript animation library for the modern web"
+    },
+    {
+     "full_name": "GraphiteEditor/Graphite",
+     "stars": 27826,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Community-built comprehensive 2D content creation appplication for graphic design, digital art, and interactive real-time motion graphics powered by a node-base"
+    },
+    {
+     "full_name": "airbnb/lottie-ios",
+     "stars": 26927,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "An iOS library to natively render After Effects vector animations"
+    },
+    {
+     "full_name": "Popmotion/popmotion",
+     "stars": 20149,
+     "license": null,
+     "permissive": false,
+     "description": "Simple animation libraries for delightful user interfaces"
+    },
+    {
+     "full_name": "mojs/mojs",
+     "stars": 18875,
+     "license": "MIT",
+     "permissive": true,
+     "description": "The motion graphics toolbelt for the web"
+    }
+   ]
+  },
+  "three-d": {
+   "matching_repos": 86,
+   "top": [
+    {
+     "full_name": "SBCV/Blender-Addon-Photogrammetry-Importer",
+     "stars": 1380,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Addon to import different photogrammetry formats into Blender"
+    },
+    {
+     "full_name": "viettranx/3dviz-pro-max",
+     "stars": 1007,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Agent skill for creative 3D visualization: turn an idea into a Three.js/Blender scene worth exploring. Claude Code + Codex plugin, 223 recipes, 440 knowledge re"
+    },
+    {
+     "full_name": "neverhood311/Stop-motion-OBJ",
+     "stars": 750,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "A Blender add-on for importing a sequence of OBJ meshes as frames"
+    },
+    {
+     "full_name": "egtwobits/mesh_mesh_align_plus",
+     "stars": 650,
+     "license": null,
+     "permissive": false,
+     "description": "Precisely align, move, and measure+match objects and mesh parts in your 3D scenes."
+    },
+    {
+     "full_name": "Jim-Kroovy/mr_mannequins_tools",
+     "stars": 556,
+     "license": null,
+     "permissive": false,
+     "description": "Install the latest release for intuitive Blender imports and easy Unreal exports!"
+    },
+    {
+     "full_name": "luosijie/threejs-examples",
+     "stars": 543,
+     "license": "MIT",
+     "permissive": true,
+     "description": " This is a place where I post sketches, experiments and the like based on Three.js"
+    },
+    {
+     "full_name": "Unity-Technologies/MeshSyncDCCPlugins",
+     "stars": 490,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "DCC plugins for MeshSync in Unity. Supported tools: Maya, Maya LT, 3ds Max, Motion Builder, Modo, Blender, Metasequoia"
+    },
+    {
+     "full_name": "leomoon-studios/leomoon-lightstudio",
+     "stars": 421,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Light Studio plugin for Blender"
+    }
+   ]
+  },
+  "edit-video": {
+   "matching_repos": 1151,
+   "top": [
+    {
+     "full_name": "harry0703/MoneyPrinterTurbo",
+     "stars": 137983,
+     "license": "MIT",
+     "permissive": true,
+     "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow."
+    },
+    {
+     "full_name": "heygen-com/hyperframes",
+     "stars": 78063,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Write HTML. Render video. Built for agents."
+    },
+    {
+     "full_name": "mifi/lossless-cut",
+     "stars": 45657,
+     "license": "GPL-2.0",
+     "permissive": false,
+     "description": "The swiss army knife of lossless video/audio editing"
+    },
+    {
+     "full_name": "NickeManarin/ScreenToGif",
+     "stars": 27887,
+     "license": "MS-PL",
+     "permissive": false,
+     "description": "🎬 ScreenToGif allows you to record a selected area of your screen, edit and save it as a gif or video."
+    },
+    {
+     "full_name": "hypit-ai/hypit",
+     "stars": 27677,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get you"
+    },
+    {
+     "full_name": "HBAI-Ltd/Toonflow-app",
+     "stars": 20311,
+     "license": "MIT",
+     "permissive": true,
+     "description": "短剧、漫剧制作工具 Toonflow：开源 AI 视频创作平台，集成剧本创作、智能分镜、角色与场景资产管理、图像生成和视频生成。融合无限画布、AI Agent 与可视化工作流，支持本地部署、自选模型、跨平台客户端、MCP 与插件扩展。Open-source AI short drama and motion comic"
+    },
+    {
+     "full_name": "KlingAIResearch/LivePortrait",
+     "stars": 19384,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Bring portraits to life!"
+    },
+    {
+     "full_name": "alyssaxuu/screenity",
+     "stars": 18923,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "The free and privacy-friendly screen recorder with no limits 🎥"
+    }
+   ]
+  },
+  "color-grade": {
+   "matching_repos": 9,
+   "top": [
+    {
+     "full_name": "fatihaydost/brand-identity-skill",
+     "stars": 289,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A Claude Code skill that designs a brand identity as one system: logo, typography and colour palette built together from one brief, measured, compared as identi"
+    },
+    {
+     "full_name": "city96/ComfyUI_ColorMod",
+     "stars": 112,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Color/contrast editing, tonemapping, 16 bit and HDR image support."
+    },
+    {
+     "full_name": "byadityaraj/designmd",
+     "stars": 74,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Production-grade design context for AI coding workflows. Extract a real design system from any URL — colors, typography, spacing, breakpoints — as a portable DE"
+    },
+    {
+     "full_name": "kbhujbal/AlphaAnalyst-open-source-autonomous-equity-research-agent",
+     "stars": 51,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Enter a US stock ticker, get an analyst grade memo with DCF valuation, peer comparables, news sentiment, and earnings call tone analysis. Multi agent LLM pipeli"
+    },
+    {
+     "full_name": "Pixelgamer4k/graden",
+     "stars": 39,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Multi-layer video editor and colour grading app for Android — proxy editing, native-resolution preview, colour wheels and scopes, full-quality H.264/H.265 expor"
+    },
+    {
+     "full_name": "bean-mhm/Saffron",
+     "stars": 25,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "🪻 A Huge Collection of Compositor Nodes for Blender"
+    },
+    {
+     "full_name": "festivities/Blender-GT-Tonemapper",
+     "stars": 23,
+     "license": null,
+     "permissive": false,
+     "description": "Blender implementation of Gran Turismo tone mapping"
+    },
+    {
+     "full_name": "DenisHumen/cinema-skills",
+     "stars": 7,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🎬 Claude Agent Skills for cinematic AI video production: screenplay → directed shots → color grade → voice-over → mini-series, all in one consistent style. Grow"
+    }
+   ]
+  },
+  "audio-mix": {
+   "matching_repos": 18,
+   "top": [
+    {
+     "full_name": "pathwaycom/serviette",
+     "stars": 58730,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway."
+    },
+    {
+     "full_name": "Vincentwei1021/video-shotcraft",
+     "stars": 16376,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "AI video skill for Claude Code & Codex — cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, "
+    },
+    {
+     "full_name": "AbubakrChan/product-launch-motion",
+     "stars": 416,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Claude Code skill for Dribbble-level product launch videos from code. One shape that never cuts, springs, a cursor that drives every change, beat-synced SFX, 60"
+    },
+    {
+     "full_name": "groupmm/libfmp",
+     "stars": 229,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "A Python package for teaching and learning Fundamentals of Music Processing (FMP)"
+    },
+    {
+     "full_name": "Sunwood-ai-labs/hyperframes-motion-reel-skill",
+     "stars": 170,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🎬 Claude Code skill for showreel-grade, beat-synced motion graphics with HyperFrames (HTML + GSAP + SVG + Canvas, Apache-2.0) — 120 BPM / 60 FPS to MP4"
+    },
+    {
+     "full_name": "blixvip/easyedit",
+     "stars": 167,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Type a movie name and get a fan edit: a captioned speech cut, then a montage cut to the beat."
+    },
+    {
+     "full_name": "benseverndev-oss/goldenmatch",
+     "stars": 135,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Zero-config entity resolution feeding a durable identity layer: messy records from any source become stable golden entities, a Customer 360 with provenance, mer"
+    },
+    {
+     "full_name": "bestagentkits/motion-video-skill",
+     "stars": 131,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Agent skill that produces beat-synced 1080p motion-graphic videos in HyperFrames (HTML + GSAP) with an AI voice-over, karaoke captions, SFX and generated music."
+    }
+   ]
+  },
+  "render-encode": {
+   "matching_repos": 196,
+   "top": [
+    {
+     "full_name": "heygen-com/hyperframes",
+     "stars": 78063,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Write HTML. Render video. Built for agents."
+    },
+    {
+     "full_name": "ossrs/srs",
+     "stars": 29421,
+     "license": "MIT",
+     "permissive": true,
+     "description": "SRS is a simple, high-performance, AI-driven real-time media server supporting RTMP, WebRTC, HLS, HTTP-FLV, HTTP-TS, SRT, MPEG-DASH, and GB28181, with codec sup"
+    },
+    {
+     "full_name": "0voice/audio_video_streaming",
+     "stars": 6259,
+     "license": null,
+     "permissive": false,
+     "description": "音视频流媒体权威资料整理，500+份文章，论文，视频，实践项目，协议，业界大神名单。"
+    },
+    {
+     "full_name": "xufuji456/FFmpegAndroid",
+     "stars": 5896,
+     "license": null,
+     "permissive": false,
+     "description": "FFmpeg实现视频裁剪、水印、转码、编解码、转Gif动图；FFmpeg本地推流、H264与RTMP实时推流直播；OpenGL滤镜特效，视频拍摄。音视频学习路线，音视频知识总结、流媒体协议"
+    },
+    {
+     "full_name": "liuzhao1225/YouDub-webui",
+     "stars": 5792,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Open-source AI video localization and dubbing for YouTube/Bilibili: speech recognition, subtitle translation, voice cloning, audio mixing and rendering. 开源 AI 视"
+    },
+    {
+     "full_name": "nexu-io/html-video",
+     "stars": 4802,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Programmatic video for coding agents — HTML to video on your laptop. Turn HTML, CSS & data into real MP4s with pluggable render engines, 21 templates, AI soundt"
+    },
+    {
+     "full_name": "microshow/RxFFmpeg",
+     "stars": 4754,
+     "license": null,
+     "permissive": false,
+     "description": "🔥💥RxFFmpeg 是基于 ( FFmpeg 4.0 + X264 + mp3lame + fdk-aac + opencore-amr + openssl ) 编译的适用于 Android 平台的音视频编辑、视频剪辑的快速处理框架，包含以下功能：视频拼接，转码，压缩，裁剪，片头片尾，分离音视频，变速，添加静态贴纸和"
+    },
+    {
+     "full_name": "kajisho5/ffmpeg-skill",
+     "stars": 4425,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, refr"
+    }
+   ]
+  },
+  "web-build": {
+   "matching_repos": 178,
+   "top": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Reverse engineer anything with agents, from app behavior down to native binaries."
+    },
+    {
+     "full_name": "nextlevelbuilder/ui-ux-pro-max-skill",
+     "stars": 144568,
+     "license": "MIT",
+     "permissive": true,
+     "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms."
+    },
+    {
+     "full_name": "videojs/video.js",
+     "stars": 40064,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Video.js v10 - open source media player framework for HTML and React."
+    },
+    {
+     "full_name": "The-Vibe-Company/quivr",
+     "stars": 39626,
+     "license": "MIT",
+     "permissive": true,
+     "description": "An open-source engine that turns continuous content streams into search and monitoring. Durable ingestion, hybrid search, alerts, and plugins for formats, model"
+    },
+    {
+     "full_name": "JCodesMore/ai-website-cloner-template",
+     "stars": 38499,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Clone any website with one command using AI coding agents"
+    },
+    {
+     "full_name": "apify/crawlee",
+     "stars": 26324,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Crawlee—A web scraping and browser automation library for Node.js to build reliable crawlers. In JavaScript and TypeScript. Extract data for AI, LLMs, RAG, or G"
+    },
+    {
+     "full_name": "wasp-lang/open-saas",
+     "stars": 16245,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A 100% free modern JS SaaS boilerplate (React, NodeJS, Prisma). Full-featured: Auth (email, google, github, slack, MS), Email sending, Background jobs, Landing "
+    },
+    {
+     "full_name": "apify/apify-mcp-server",
+     "stars": 14507,
+     "license": "MIT",
+     "permissive": true,
+     "description": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of r"
+    }
+   ]
+  },
+  "code-engineering": {
+   "matching_repos": 1737,
+   "top": [
+    {
+     "full_name": "morluto/rea",
+     "stars": 425165,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Reverse engineer anything with agents, from app behavior down to native binaries."
+    },
+    {
+     "full_name": "langgenius/dify",
+     "stars": 160317,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move "
+    },
+    {
+     "full_name": "shadcn-ui/ui",
+     "stars": 127252,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own."
+    },
+    {
+     "full_name": "browser-use/browser-use",
+     "stars": 119922,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API."
+    },
+    {
+     "full_name": "mrdoob/three.js",
+     "stars": 117476,
+     "license": "MIT",
+     "permissive": true,
+     "description": "JavaScript 3D Library."
+    },
+    {
+     "full_name": "Panniantong/Agent-Reach",
+     "stars": 108268,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees."
+    },
+    {
+     "full_name": "bytedance/deer-flow",
+     "stars": 84934,
+     "license": "MIT",
+     "permissive": true,
+     "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message ga"
+    },
+    {
+     "full_name": "shareAI-lab/learn-claude-code",
+     "stars": 79808,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Bash is all you need -  A nano claude code–like 「agent harness」, built from 0 to 1"
+    }
+   ]
+  },
+  "data-analysis": {
+   "matching_repos": 143,
+   "top": [
+    {
+     "full_name": "qax-os/excelize",
+     "stars": 21047,
+     "license": "BSD-3-Clause",
+     "permissive": true,
+     "description": "Go language library for reading and writing Microsoft Excel™ (XLAM / XLSM / XLSX / XLTM / XLTX) spreadsheets"
+    },
+    {
+     "full_name": "Canner/WrenAI",
+     "stars": 18055,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "GenBI (Generative BI) for AI agents, an open-source, governed text-to-SQL through an open context layer that turns natural-language questions into trusted dashb"
+    },
+    {
+     "full_name": "raga-ai-hub/RagaAI-Catalyst",
+     "stars": 16188,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Python SDK for Agent AI Observability, Monitoring and Evaluation Framework. Includes features like agent, llm and tools tracing, debugging multi-agentic system,"
+    },
+    {
+     "full_name": "kmario23/deep-learning-drizzle",
+     "stars": 12976,
+     "license": null,
+     "permissive": false,
+     "description": "Drench yourself in Deep Learning, Reinforcement Learning, Machine Learning, Computer Vision, and NLP by learning from these exciting lectures!!"
+    },
+    {
+     "full_name": "antvis/G2",
+     "stars": 12651,
+     "license": "MIT",
+     "permissive": true,
+     "description": "📊 The concise and progressive visualization grammar."
+    },
+    {
+     "full_name": "CLUEbenchmark/CLUEDatasetSearch",
+     "stars": 4459,
+     "license": null,
+     "permissive": false,
+     "description": "搜索所有中文NLP数据集，附常用英文NLP数据集"
+    },
+    {
+     "full_name": "DLR-RM/BlenderProc",
+     "stars": 3775,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "A procedural Blender pipeline for photorealistic training image generation"
+    },
+    {
+     "full_name": "GanjinZero/awesome_Chinese_medical_NLP",
+     "stars": 2656,
+     "license": null,
+     "permissive": false,
+     "description": "中文医学NLP公开资源整理：术语集/语料库/词向量/预训练模型/知识图谱/命名实体识别/QA/信息抽取/模型/论文/etc"
+    }
+   ]
+  },
+  "verify-qa": {
+   "matching_repos": 338,
+   "top": [
+    {
+     "full_name": "OthmanAdi/planning-with-files",
+     "stars": 27854,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Persistent file-based planning for AI coding agents and long-running tasks. Crash-proof markdown plans, session recovery after /clear and compaction, per-turn r"
+    },
+    {
+     "full_name": "AgriciDaniel/claude-ads",
+     "stars": 10696,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pint"
+    },
+    {
+     "full_name": "evidentlyai/evidently",
+     "stars": 8032,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Evidently is ​​an open-source ML and LLM observability framework. Evaluate, test, and monitor any AI-powered system or data pipeline. From tabular data to Gen A"
+    },
+    {
+     "full_name": "spiritLHLS/ecs",
+     "stars": 7272,
+     "license": "MIT",
+     "permissive": true,
+     "description": "VPS 融合怪服务器测评脚本 —— 更推荐使用无环境依赖的 Go 版本：https://github.com/oneclickvirt/ecs VPS Fusion Monster Server Test Script — we now recommend the Go version (zero external d"
+    },
+    {
+     "full_name": "infobyte/faraday",
+     "stars": 6839,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Open-source and AI-powered cybersecurity tools for offensive security, vulnerability management, and autonomous pentesting. Built by hackers in Latin America, u"
+    },
+    {
+     "full_name": "Giskard-AI/giskard-oss",
+     "stars": 5941,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "🐢 Open-Source Evaluation & Testing library for LLM Agents"
+    },
+    {
+     "full_name": "darrenhinde/OpenAgentsControl",
+     "stars": 4968,
+     "license": "MIT",
+     "permissive": true,
+     "description": "AI agent framework for plan-first development workflows with approval-based execution. Multi-language support (TypeScript, Python, Go, Rust) with automatic test"
+    },
+    {
+     "full_name": "oritera/Cairn",
+     "stars": 4780,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Cairn is a general-purpose AI state-space search engine, validated first on autonomous penetration testing. Sometimes misspelled as Carin."
+    }
+   ]
+  },
+  "safety-rights": {
+   "matching_repos": 86,
+   "top": [
+    {
+     "full_name": "NVIDIA-NeMo/Guardrails",
+     "stars": 7421,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversational systems."
+    },
+    {
+     "full_name": "superagent-ai/superagent",
+     "stars": 6815,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Superagent protects your AI applications against prompt injections, data leaks, and harmful outputs. Embed safety directly into your app and prove compliance to"
+    },
+    {
+     "full_name": "AhmadHassan-BTed/GardenPulse",
+     "stars": 2787,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Method-agnostic smart garden companion built with React Native, Expo, and TypeScript. Adapts to soil, hydro, container, or indoor setups with location-aware int"
+    },
+    {
+     "full_name": "CryptoAILab/Awesome-LM-SSP",
+     "stars": 2101,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "A reading list for large models safety, security, and privacy (including Awesome LLM Security, Safety, etc.)."
+    },
+    {
+     "full_name": "kenryu42/cc-safety-net",
+     "stars": 1905,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A pre-execution guard for AI coding agents. It blocks destructive Git and file system commands, plus common attempts to access sensitive files, before a tool ca"
+    },
+    {
+     "full_name": "yueliu1999/Awesome-Jailbreak-on-LLMs",
+     "stars": 1722,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Awesome-Jailbreak-on-LLMs is a collection of state-of-the-art, novel, exciting jailbreak methods on LLMs. It contains papers, codes, datasets, evaluations, and "
+    },
+    {
+     "full_name": "DUNHKpcc/Claude-Guardian",
+     "stars": 1678,
+     "license": "GPL-3.0",
+     "permissive": false,
+     "description": "Claude Guardian is an all-in-one Claude account safety and risk prevention skill.Claude防封实战 It intelligently assesses your device, account history, network envi"
+    },
+    {
+     "full_name": "Pantheon-Security/medusa",
+     "stars": 1013,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "AI-first security scanner. NEW in v2026.7: Claude Code compromise detection — vet .claude/ hooks, permissions & skills before you clone — plus an always-on AI a"
+    }
+   ]
+  },
+  "deliver-publish": {
+   "matching_repos": 219,
+   "top": [
+    {
+     "full_name": "harry0703/MoneyPrinterTurbo",
+     "stars": 137983,
+     "license": "MIT",
+     "permissive": true,
+     "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow."
+    },
+    {
+     "full_name": "mvanhorn/last30days-skill",
+     "stars": 66429,
+     "license": "MIT",
+     "permissive": true,
+     "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary"
+    },
+    {
+     "full_name": "imputnet/cobalt",
+     "stars": 45751,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "best way to save what you love"
+    },
+    {
+     "full_name": "wasp-lang/open-saas",
+     "stars": 16245,
+     "license": "MIT",
+     "permissive": true,
+     "description": "A 100% free modern JS SaaS boilerplate (React, NodeJS, Prisma). Full-featured: Auth (email, google, github, slack, MS), Email sending, Background jobs, Landing "
+    },
+    {
+     "full_name": "krillinai/OpenCreator",
+     "stars": 14104,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Formerly KrillinAI, VideoTranslation and Dubbing Tool for 120+ Languages. Open-source AI workspace for creators, powered by Codex. Video downloader, video trans"
+    },
+    {
+     "full_name": "AgriciDaniel/claude-ads",
+     "stars": 10696,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Claude-first paid-media operations skill for Claude Code across 12 ad platforms (Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pint"
+    },
+    {
+     "full_name": "zhouxiaoka/autoclip",
+     "stars": 9944,
+     "license": "MIT",
+     "permissive": true,
+     "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing."
+    },
+    {
+     "full_name": "RayVentura/ShortGPT",
+     "stars": 8101,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🚀🎬 ShortGPT - Experimental AI framework for youtube shorts / tiktok channel automation"
+    }
+   ]
+  },
+  "memory-learn": {
+   "matching_repos": 196,
+   "top": [
+    {
+     "full_name": "ruvnet/ruflo",
+     "stars": 80732,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive me"
+    },
+    {
+     "full_name": "dair-ai/Prompt-Engineering-Guide",
+     "stars": 79771,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🐙 Guides, papers, lessons, notebooks and resources for prompt engineering, context engineering, RAG, and AI Agents."
+    },
+    {
+     "full_name": "microsoft/AI-For-Beginners",
+     "stars": 70525,
+     "license": "MIT",
+     "permissive": true,
+     "description": "12 Weeks, 24 Lessons, AI for All!"
+    },
+    {
+     "full_name": "vectorize-io/hindsight",
+     "stars": 58275,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Hindsight: Agent Memory That Learns"
+    },
+    {
+     "full_name": "bojieli/ai-agent-book",
+     "stars": 57033,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码"
+    },
+    {
+     "full_name": "letta-ai/letta",
+     "stars": 25329,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time."
+    },
+    {
+     "full_name": "screenpipe/screenpipe",
+     "stars": 22215,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "YC (S26) | Open Computer History | Continuously record your company computer work, map your workflows, help you find work worth automating, and power your agent"
+    },
+    {
+     "full_name": "memvid/memvid",
+     "stars": 17355,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Memory layer for AI Agents. Replace complex RAG pipelines with a serverless, single-file memory layer. Give your agents instant retrieval and long-term memory."
+    }
+   ]
+  },
+  "orchestrate": {
+   "matching_repos": 3289,
+   "top": [
+    {
+     "full_name": "langgenius/dify",
+     "stars": 160317,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Build Agentic workflows, RAG pipelines, with rich AI model and tool support on one collaborative workspace. Deploy on cloud, VPC, or self-hosted, so teams move "
+    },
+    {
+     "full_name": "langflow-ai/langflow",
+     "stars": 156287,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Langflow is a powerful tool for building and deploying AI-powered agents and workflows."
+    },
+    {
+     "full_name": "stablyai/orca",
+     "stars": 114083,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile"
+    },
+    {
+     "full_name": "paperclipai/paperclip",
+     "stars": 110700,
+     "license": "MIT",
+     "permissive": true,
+     "description": "The open-source app everyone uses to manage agents at work"
+    },
+    {
+     "full_name": "bytedance/deer-flow",
+     "stars": 84934,
+     "license": "MIT",
+     "permissive": true,
+     "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of sandboxes, memories, tools, skill, subagents and message ga"
+    },
+    {
+     "full_name": "ruvnet/ruflo",
+     "stars": 80732,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive me"
+    },
+    {
+     "full_name": "ComposioHQ/awesome-claude-skills",
+     "stars": 78637,
+     "license": null,
+     "permissive": false,
+     "description": "A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows"
+    },
+    {
+     "full_name": "calesthio/OpenMontage",
+     "stars": 75655,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI c"
+    }
+   ]
+  },
+  "protocol-govern": {
+   "matching_repos": 93,
+   "top": [
+    {
+     "full_name": "modelcontextprotocol/modelcontextprotocol",
+     "stars": 9601,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Specification and documentation for the Model Context Protocol"
+    },
+    {
+     "full_name": "HarnessRouter/harnessrouter",
+     "stars": 3918,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "HarnessRouter Community Edition: the self-hosted, Apache-2.0 edition of the unified interface for agent harnesses. Run Codex, Claude Code, Hermes, PI, DSH, and "
+    },
+    {
+     "full_name": "modelcontextprotocol/ext-apps",
+     "stars": 3043,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Official repo for spec & SDK of MCP Apps protocol - standard for UIs embedded AI chatbots, served by MCP servers"
+    },
+    {
+     "full_name": "KimGLee/Cambium",
+     "stars": 666,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "Governance standard and reference toolset for LLM-maintained knowledge corpora"
+    },
+    {
+     "full_name": "universal-tool-calling-protocol/python-utcp",
+     "stars": 657,
+     "license": "MPL-2.0",
+     "permissive": true,
+     "description": "Official python implementation of UTCP. UTCP is an open standard that lets AI agents call any API directly, without extra middleware."
+    },
+    {
+     "full_name": "cordum-io/cordum",
+     "stars": 509,
+     "license": "NOASSERTION",
+     "permissive": false,
+     "description": "The action firewall for AI agents. Enforce policy and human approval before risky tool calls, shell commands, workflows, and production changes, with auditable "
+    },
+    {
+     "full_name": "openaccountants/openaccountants",
+     "stars": 473,
+     "license": "AGPL-3.0",
+     "permissive": false,
+     "description": "Open tax skills for AI: 2,250 skills across 266 jurisdictions, every figure cited to the law. Works in ChatGPT, Claude, Cursor and any MCP client."
+    },
+    {
+     "full_name": "CodeSoul-co/Hypha",
+     "stars": 451,
+     "license": "Apache-2.0",
+     "permissive": true,
+     "description": "Harness-oriented agent system framework for production-grade LLM agent applications"
+    }
+   ]
+  },
+  "visual-reference": {
+   "matching_repos": 28,
+   "top": [
+    {
+     "full_name": "hectahertz/react-native-typography",
+     "stars": 3559,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Pixel–perfect, native–looking typographic styles for React Native ✒️"
+    },
+    {
+     "full_name": "zanwei/design-dna",
+     "stars": 2076,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Turn reference UIs (images, screenshots, URLs) into quantified Design DNA JSON—tokens, qualitative style, visual effects—then generate matching UI from your con"
+    },
+    {
+     "full_name": "internet-development/www-sacred",
+     "stars": 1569,
+     "license": "MIT",
+     "permissive": true,
+     "description": "SRCL is an open-source React component and style repository that helps you build web applications, desktop applications, and static websites with terminal aesth"
+    },
+    {
+     "full_name": "cth9191/animate",
+     "stars": 1434,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Procedural animation in any style for Claude Code: short single-file canvas videos with story, look and storyboard check-ins. 7 built-in styles or one matched f"
+    },
+    {
+     "full_name": "VigoZhao/AI-Visual-Prompt-Cookbook",
+     "stars": 829,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Plug-and-play JSON style prompts for Nano Banana Pro, GPT Image & Midjourney. Copy one style.json, get a consistent look. New styles every week."
+    },
+    {
+     "full_name": "yokel1121/muyang-illustration-skills",
+     "stars": 217,
+     "license": "MIT",
+     "permissive": true,
+     "description": "25 fixed illustration styles for Codex: 9 skills, prompt recipes, and visual references"
+    },
+    {
+     "full_name": "aesthetic-suite/framework",
+     "stars": 207,
+     "license": "MIT",
+     "permissive": true,
+     "description": "🎨 Aesthetic is an end-to-end multi-platform styling framework that offers a strict design system, robust atomic CSS-in-JS engine, a structural style sheet speci"
+    },
+    {
+     "full_name": "Dsadd4/AgentFigureGallery",
+     "stars": 176,
+     "license": "MIT",
+     "permissive": true,
+     "description": "Drop-in scientific plotting skill for Claude Code, Codex, Cursor, and other coding agents."
+    }
+   ]
+  }
+ },
+ "method": "GitHub search API metadata (description, topics, stars, license) for repos with >=5 stars under 30 topic queries, plus README text for the most-starred repos; lexical pattern regexes"
+}
