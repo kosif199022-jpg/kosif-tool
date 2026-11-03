@@ -785,7 +785,7 @@ def main(argv=None) -> int:
     if a.cmd == "adapters":
         bd, _ = _dragon()
         merged = dict(bd._load_adapters(bd.REVIEWED_ADAPTERS))
-        merged[V.MIND_ADAPTER_KEY] = V.MIND_ADAPTER
+        merged.setdefault(V.MIND_ADAPTER_KEY, V.MIND_ADAPTER)  # a reviewed adapter for the mind wins
         if a.all:
             inv, *_ = load_inventory()
             for key in sorted(inv):
