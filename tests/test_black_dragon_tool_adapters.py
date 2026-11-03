@@ -49,7 +49,9 @@ class Honesty(unittest.TestCase):
     """The runner refuses or fails instead of handing out an empty pass."""
 
     def setUp(self):
-        self.tmp = Path(tempfile.mkdtemp(dir=ROOT / "out" if (ROOT / "out").is_dir() else None))
+        # The fake tool must live inside the repository (the runner resolves paths against it); out/ is gitignored.
+        (ROOT / "out").mkdir(exist_ok=True)
+        self.tmp = Path(tempfile.mkdtemp(dir=ROOT / "out"))
         self.addCleanup(shutil.rmtree, self.tmp, True)
         self.registry = self.tmp / "tools.json"
         self.saved = tool.TOOLS
