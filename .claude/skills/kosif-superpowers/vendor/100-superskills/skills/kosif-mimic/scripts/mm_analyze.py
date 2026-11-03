@@ -20,6 +20,15 @@ from mm_video import FrameReader, extract_audio, fit_short_side, grab_frames_at
 
 SMALL_SHORT = 96      # shot/transition analysis resolution (short side)
 MID_SHORT = 360       # sharpness / motion resolution
+MIN_TRANSITION_CONFIDENCE = 0.20  # 0.05 fits from camera shake are not reliable edits
+
+
+def accept_transition(transition: dict) -> bool:
+    """Fail closed on weak fits, rather than reporting camera motion as an edit."""
+    try:
+        return float(transition.get("confidence", 0)) >= MIN_TRANSITION_CONFIDENCE
+    except (TypeError, ValueError):
+        return False
 
 
 # ----------------------------------------------------------------------------- pass A
@@ -549,6 +558,8 @@ def analyze(ref: str, work: str, text_color: str | None = None, sensitivity: flo
         fitter = _Fitter(feats, tmask)
         for bd in bnds:
             tr = classify(feats, bd, tmask, deep=deep, fitter=fitter)
+            if not accept_transition(tr):
+                continue  # weak fits (e.g. 0.05 confidence during camera shake) are not verified edits
             tr["evidence"] = {"src": bd["src"], "strength": rnd(bd["strength"], 2), "dAB": rnd(bd["dAB"], 2)}
             if trans and tr["ts"] < trans[-1]["te"]:  # keep transitions disjoint
                 if tr["frames"] == 0 or tr["te"] <= trans[-1]["te"]:
