@@ -13,6 +13,7 @@ passed. Scripts run with `python3 -I`, no shell, no network.
 from __future__ import annotations
 import argparse
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -24,7 +25,7 @@ SCRIPTS = Path(__file__).resolve().parent
 SKILLS = SCRIPTS.parents[1]           # .claude/skills
 VENDOR = SCRIPTS.parent / "vendor" / "100-superskills" / "skills"
 SCHEMA = "kosif.black-dragon.skill-adapter.v1"
-PY = [sys.executable, "-I"]
+PY = [sys.executable, "-I", "-B"]  # -B: never write __pycache__ into the vetted (hash-manifested) vendor folders
 
 SCRIPT = {
     "prompt-master": VENDOR / "prompt-master-pro" / "scripts",
@@ -61,7 +62,7 @@ NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-mode
                 "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
-PY_SIBLINGS = [sys.executable, "-E", "-s"]  # Python packages a recipe's script imports
+PY_SIBLINGS = [sys.executable, "-E", "-s", "-B"]  # Python packages a recipe's script imports
 
 
 def _json(path: Path):
@@ -665,6 +666,8 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--task", default="")
     ap.add_argument("--media", default="")
     a = ap.parse_args(argv)
+    # Scripts that start their own Python helpers (pixel-studio's film.py) must not write __pycache__ into vendor/ either.
+    os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
     artifact = a.artifact.resolve()
     work = artifact.with_name(artifact.stem + ".work")
     work.mkdir(parents=True, exist_ok=False)

@@ -103,10 +103,12 @@ class MimicBlurFallback(unittest.TestCase):
             self.skipTest("numpy missing")
         import numpy as np
         sys.path.insert(0, str(skill.SCRIPT["mimic-analyze"]))
+        saved_flag, sys.dont_write_bytecode = sys.dont_write_bytecode, True  # keep vendor/ free of __pycache__
         try:
             import mm_img
         finally:
             sys.path.remove(str(skill.SCRIPT["mimic-analyze"]))
+            sys.dont_write_bytecode = saved_flag
         saved = mm_img.HAVE_CV2, mm_img.ndi
         mm_img.HAVE_CV2, mm_img.ndi = False, None
         try:
