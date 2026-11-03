@@ -1,0 +1,22 @@
+{
+ "schema": "kosif.dragon-mind.research-receipt.v1",
+ "github": {
+  "repos_measured": 9890,
+  "readmes_read": 1497,
+  "raw_sha256": "7deb38e9d884294ab7c5efa3252fcdf304c29f3aa98d6d28e56d5a855c52d841"
+ },
+ "books": {
+  "screened": 10000,
+  "kept": 936,
+  "files_sha256": {
+   "books.csv": "4d21d0e0433128657c752e3a3d0405ac0ec11675d6c70c64cb0abf4ab1acb76a",
+   "tags.csv": "87f316957564fa21c316a4f50afc87f07906f478f990eec027aaca00c536c449",
+   "book_tags.csv": "8ff2f0659be9ddbe10bf47ba33b5b69024f893f017ac665236f15bc97d862950"
+  }
+ },
+ "frameworks": {
+  "count": 120,
+  "with_book_evidence": 28
+ },
+ "honesty": "counts are measured from the files hashed here; README/book analysis is lexical metadata analysis"
+}

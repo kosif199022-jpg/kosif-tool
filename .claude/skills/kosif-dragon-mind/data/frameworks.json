@@ -1,0 +1,5762 @@
+{
+ "schema": "kosif.dragon-mind.frameworks.v1",
+ "frameworks": [
+  {
+   "id": "first-principles",
+   "name_en": "First Principles Thinking",
+   "name_ar": "التفكير من المبادئ الأولى",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The Great Mental Models Volume 1: General Thinking Concepts",
+     "author": "Shane Parrish, Rhiannon Beaubien",
+     "year": 2019
+    }
+   ],
+   "triggers_en": [
+    "why",
+    "assumption",
+    "fundamental",
+    "cost",
+    "rebuild",
+    "redesign",
+    "basics"
+   ],
+   "triggers_ar": [
+    "اساس",
+    "افتراض",
+    "جوهر",
+    "تكلفة",
+    "اعادة",
+    "بناء"
+   ],
+   "questions_en": [
+    "Which beliefs about this task are conventions rather than facts?",
+    "What are the irreducible components, constraints and their real costs?",
+    "What solution emerges if we rebuild only from those components?"
+   ],
+   "questions_ar": [
+    "ما المعتقدات في هذه المهمة التي هي أعراف وليست حقائق؟",
+    "ما المكونات والقيود غير القابلة للاختزال وما تكلفتها الحقيقية؟",
+    "ما الحل الذي يظهر إذا أعدنا البناء من هذه المكونات فقط؟"
+   ],
+   "output": "list of assumptions split into facts vs conventions plus a rebuilt solution sketch from the facts only",
+   "check": "at least 5 assumptions classified, each fact has a cited source or measurement, and the sketch uses no item marked convention",
+   "anti_pattern": "declaring something a first principle without evidence, or reinventing what already works for no gain",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "inversion",
+   "name_en": "Inversion",
+   "name_ar": "التفكير العكسي",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The Great Mental Models Volume 1: General Thinking Concepts",
+     "author": "Shane Parrish, Rhiannon Beaubien",
+     "year": 2019
+    },
+    {
+     "title": "Poor Charlie's Almanack",
+     "author": "Peter D. Kaufman (ed.), Charles T. Munger",
+     "year": 2005
+    }
+   ],
+   "triggers_en": [
+    "avoid",
+    "fail",
+    "failure",
+    "mistake",
+    "wrong",
+    "opposite",
+    "prevent"
+   ],
+   "triggers_ar": [
+    "تجنب",
+    "فشل",
+    "خطأ",
+    "عكس",
+    "منع",
+    "اسوا"
+   ],
+   "questions_en": [
+    "What would guarantee this task fails?",
+    "Which of those failure causes are we currently doing or at risk of doing?",
+    "What rules prevent each failure cause?"
+   ],
+   "questions_ar": [
+    "ما الذي يضمن فشل هذه المهمة؟",
+    "أي من أسباب الفشل هذه نفعلها حالياً أو معرضون لها؟",
+    "ما القواعد التي تمنع كل سبب فشل؟"
+   ],
+   "output": "list of failure causes, each mapped to a 'never do' rule and a current-status flag",
+   "check": "at least 6 failure causes, every cause has exactly one prevention rule, and every rule is testable as yes/no",
+   "anti_pattern": "stopping at the list of fears without converting them into concrete avoidance rules",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "second-order-thinking",
+   "name_en": "Second-Order Thinking",
+   "name_ar": "التفكير من الدرجة الثانية",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The Great Mental Models Volume 1: General Thinking Concepts",
+     "author": "Shane Parrish, Rhiannon Beaubien",
+     "year": 2019
+    },
+    {
+     "title": "The Most Important Thing",
+     "author": "Howard Marks",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "consequence",
+    "effect",
+    "impact",
+    "later",
+    "policy",
+    "change",
+    "ripple",
+    "incentive"
+   ],
+   "triggers_ar": [
+    "عواقب",
+    "اثر",
+    "نتائج",
+    "لاحقا",
+    "سياسة",
+    "تغيير",
+    "حوافز"
+   ],
+   "questions_en": [
+    "What happens immediately if we do this?",
+    "And then what happens next, for each stakeholder, after weeks and after a year?",
+    "Which delayed effect reverses or outweighs the first-order benefit?"
+   ],
+   "questions_ar": [
+    "ماذا يحدث فوراً إذا فعلنا هذا؟",
+    "ثم ماذا يحدث بعد ذلك لكل طرف بعد أسابيع وبعد سنة؟",
+    "أي أثر متأخر يعكس الفائدة الأولى أو يفوقها؟"
+   ],
+   "output": "consequence chain table: action -> 1st-order -> 2nd-order -> 3rd-order effects per stakeholder",
+   "check": "at least 3 stakeholders with at least 2 levels of effects each, and at least one negative delayed effect identified or explicitly ruled out",
+   "anti_pattern": "speculating endlessly into unlikely chains instead of the few probable, material ones",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "cynefin",
+   "name_en": "Cynefin Framework",
+   "name_ar": "إطار كنيفين",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Cynefin: Weaving Sense-Making into the Fabric of Our World",
+     "author": "Dave Snowden",
+     "year": 2020
+    }
+   ],
+   "triggers_en": [
+    "complex",
+    "uncertain",
+    "chaos",
+    "unclear",
+    "context",
+    "domain",
+    "crisis",
+    "novel"
+   ],
+   "triggers_ar": [
+    "معقد",
+    "غموض",
+    "فوضى",
+    "سياق",
+    "ازمة",
+    "جديد"
+   ],
+   "questions_en": [
+    "Is the cause-effect relationship obvious, knowable by analysis, only visible in hindsight, or absent?",
+    "Which parts of the task belong to which domain?",
+    "Which response fits each part: best practice, expert analysis, safe-to-fail probes, or act-first stabilisation?"
+   ],
+   "questions_ar": [
+    "هل العلاقة بين السبب والنتيجة واضحة أم تُعرف بالتحليل أم تظهر بعد حدوثها فقط أم غائبة؟",
+    "أي أجزاء المهمة تنتمي لأي مجال؟",
+    "ما الاستجابة المناسبة لكل جزء: أفضل ممارسة أم تحليل خبير أم تجارب آمنة الفشل أم تصرف فوري للتثبيت؟"
+   ],
+   "output": "domain classification of each sub-problem (clear/complicated/complex/chaotic/confused) with the matching response mode",
+   "check": "every sub-problem has exactly one domain and a response verb (sense-categorise-respond, sense-analyse-respond, probe-sense-respond, act-sense-respond)",
+   "anti_pattern": "forcing complex problems into best-practice plans, or using the framework as a 2x2 label without changing the approach",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "problem-reframing",
+   "name_en": "Problem Reframing",
+   "name_ar": "إعادة صياغة المشكلة",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "What's Your Problem?",
+     "author": "Thomas Wedell-Wedellsborg",
+     "year": 2020
+    }
+   ],
+   "triggers_en": [
+    "problem",
+    "reframe",
+    "request",
+    "need",
+    "real",
+    "goal",
+    "stuck"
+   ],
+   "triggers_ar": [
+    "مشكلة",
+    "صياغة",
+    "طلب",
+    "حاجة",
+    "هدف",
+    "عالق"
+   ],
+   "questions_en": [
+    "What is the problem as stated, and who stated it?",
+    "What else could the real problem be (look outside the frame, rethink the goal, examine bright spots, look in the mirror)?",
+    "Which reframe changes what we would build?"
+   ],
+   "questions_ar": [
+    "ما المشكلة كما طُرحت ومن طرحها؟",
+    "ما الذي قد تكون عليه المشكلة الحقيقية (خارج الإطار، إعادة التفكير في الهدف، النقاط المضيئة، النظر لأنفسنا)؟",
+    "أي صياغة جديدة تغير ما سنبنيه؟"
+   ],
+   "output": "original problem statement plus 3-5 alternative framings, with the selected framing and why",
+   "check": "at least 3 alternative framings that each imply a different solution, and the chosen one is confirmed by the request owner or evidence",
+   "anti_pattern": "reframing forever as procrastination, or reframing away the user's explicit request",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "five-whys",
+   "name_en": "Five Whys",
+   "name_ar": "الأسئلة الخمسة (لماذا)",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Toyota Production System: Beyond Large-Scale Production",
+     "author": "Taiichi Ohno",
+     "year": 1988
+    }
+   ],
+   "triggers_en": [
+    "bug",
+    "root",
+    "cause",
+    "incident",
+    "why",
+    "defect",
+    "recurring",
+    "broken"
+   ],
+   "triggers_ar": [
+    "سبب",
+    "جذر",
+    "عطل",
+    "حادث",
+    "لماذا",
+    "خلل",
+    "متكرر"
+   ],
+   "questions_en": [
+    "What exactly is the observed symptom?",
+    "Why did it happen, and why did that happen, until we reach a cause we can control?",
+    "What countermeasure addresses the deepest controllable cause?"
+   ],
+   "questions_ar": [
+    "ما العَرَض المرصود بالضبط؟",
+    "لماذا حدث، ولماذا حدث ذلك، حتى نصل إلى سبب يمكننا التحكم فيه؟",
+    "ما الإجراء المضاد الذي يعالج أعمق سبب قابل للتحكم؟"
+   ],
+   "output": "why-chain from symptom to root cause with evidence at each link and one countermeasure",
+   "check": "each link cites evidence (log, measurement, observation), the chain ends at a process-level cause, and the countermeasure would have prevented the original symptom",
+   "anti_pattern": "stopping at 'human error' or following a single linear chain when multiple causes exist",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "fishbone-diagram",
+   "name_en": "Fishbone (Ishikawa) Diagram",
+   "name_ar": "مخطط عظم السمكة (إيشيكاوا)",
+   "family": "frame",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Guide to Quality Control",
+     "author": "Kaoru Ishikawa",
+     "year": 1976
+    }
+   ],
+   "triggers_en": [
+    "quality",
+    "defect",
+    "cause",
+    "variation",
+    "problem",
+    "process",
+    "failure"
+   ],
+   "triggers_ar": [
+    "جودة",
+    "عيب",
+    "اسباب",
+    "تباين",
+    "عملية",
+    "مشكلة"
+   ],
+   "questions_en": [
+    "What is the effect (problem) at the head of the diagram?",
+    "What candidate causes exist in each category (methods, machines, materials, people, measurement, environment)?",
+    "Which candidate causes are supported by data?"
+   ],
+   "questions_ar": [
+    "ما الأثر (المشكلة) في رأس المخطط؟",
+    "ما الأسباب المحتملة في كل فئة (الطرق، الآلات، المواد، الأشخاص، القياس، البيئة)؟",
+    "أي الأسباب المحتملة تدعمها البيانات؟"
+   ],
+   "output": "cause-and-effect diagram with categorised candidate causes, top suspects marked for verification",
+   "check": "at least 4 categories populated with at least 2 causes each, and top 3 suspects each have a verification test",
+   "anti_pattern": "treating the brainstormed causes as proven without checking data",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "issue-tree-mece",
+   "name_en": "Issue Tree (MECE)",
+   "name_ar": "شجرة القضايا (متنافية وشاملة)",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The McKinsey Way",
+     "author": "Ethan M. Rasiel",
+     "year": 1999
+    },
+    {
+     "title": "Bulletproof Problem Solving",
+     "author": "Charles Conn, Robert McLean",
+     "year": 2018
+    }
+   ],
+   "triggers_en": [
+    "break",
+    "decompose",
+    "analysis",
+    "structure",
+    "scope",
+    "components",
+    "drivers"
+   ],
+   "triggers_ar": [
+    "تفكيك",
+    "تحليل",
+    "هيكل",
+    "نطاق",
+    "مكونات",
+    "محركات"
+   ],
+   "questions_en": [
+    "What is the single key question at the root?",
+    "How does it split into branches that are mutually exclusive and collectively exhaustive?",
+    "Which branches matter most and can be analysed first?"
+   ],
+   "questions_ar": [
+    "ما السؤال الرئيسي الواحد في الجذر؟",
+    "كيف يتفرع إلى فروع متنافية وشاملة معاً؟",
+    "أي الفروع أهم ويمكن تحليلها أولاً؟"
+   ],
+   "output": "issue tree of 2-3 levels with prioritised branches and an analysis owner per leaf",
+   "check": "no two sibling branches overlap, siblings sum to the parent, and every leaf is answerable with a named analysis",
+   "anti_pattern": "building a beautiful tree that is never pruned or prioritised",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "hypothesis-driven-problem-solving",
+   "name_en": "Hypothesis-Driven Problem Solving",
+   "name_ar": "حل المشكلات المبني على الفرضيات",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The McKinsey Mind",
+     "author": "Ethan M. Rasiel, Paul N. Friga",
+     "year": 2001
+    }
+   ],
+   "triggers_en": [
+    "hypothesis",
+    "answer",
+    "analysis",
+    "prove",
+    "research",
+    "investigate",
+    "data"
+   ],
+   "triggers_ar": [
+    "فرضية",
+    "اجابة",
+    "تحليل",
+    "اثبات",
+    "بحث",
+    "بيانات"
+   ],
+   "questions_en": [
+    "What is our best initial answer to the question right now?",
+    "What would have to be true for that answer to hold?",
+    "Which analysis would most quickly prove or kill it?"
+   ],
+   "questions_ar": [
+    "ما أفضل إجابة أولية لدينا على السؤال الآن؟",
+    "ما الذي يجب أن يكون صحيحاً لكي تصمد هذه الإجابة؟",
+    "أي تحليل يثبتها أو يسقطها بأسرع شكل؟"
+   ],
+   "output": "initial hypothesis with its supporting conditions and a ranked list of disconfirming analyses",
+   "check": "hypothesis is falsifiable, at least 3 conditions listed, and each condition has a test with a pass/fail threshold",
+   "anti_pattern": "anchoring on the first hypothesis and only seeking confirming data",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "circle-of-competence",
+   "name_en": "Circle of Competence",
+   "name_ar": "دائرة الكفاءة",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The Great Mental Models Volume 1: General Thinking Concepts",
+     "author": "Shane Parrish, Rhiannon Beaubien",
+     "year": 2019
+    }
+   ],
+   "triggers_en": [
+    "expertise",
+    "unfamiliar",
+    "domain",
+    "skill",
+    "expert",
+    "outsource",
+    "knowledge"
+   ],
+   "triggers_ar": [
+    "خبرة",
+    "مجال",
+    "مهارة",
+    "خبير",
+    "معرفة",
+    "غريب"
+   ],
+   "questions_en": [
+    "Which parts of this task are inside our proven competence?",
+    "Which parts are at the edge or outside it?",
+    "Who or what can cover the parts outside the circle?"
+   ],
+   "questions_ar": [
+    "أي أجزاء المهمة تقع داخل كفاءتنا المثبتة؟",
+    "أي أجزاء على الحافة أو خارجها؟",
+    "من أو ما الذي يمكنه تغطية الأجزاء خارج الدائرة؟"
+   ],
+   "output": "map of task parts labelled inside/edge/outside competence with a coverage plan for edge and outside parts",
+   "check": "every part labelled with evidence of past success for 'inside', and every 'outside' part has a named expert, tool or learning step",
+   "anti_pattern": "overestimating the circle, or refusing all work outside it instead of borrowing competence",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "map-is-not-territory",
+   "name_en": "The Map Is Not the Territory",
+   "name_ar": "الخريطة ليست هي الأرض",
+   "family": "frame",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Great Mental Models Volume 1: General Thinking Concepts",
+     "author": "Shane Parrish, Rhiannon Beaubien",
+     "year": 2019
+    },
+    {
+     "title": "Science and Sanity",
+     "author": "Alfred Korzybski",
+     "year": 1933
+    }
+   ],
+   "triggers_en": [
+    "model",
+    "metric",
+    "dashboard",
+    "report",
+    "proxy",
+    "data",
+    "reality"
+   ],
+   "triggers_ar": [
+    "نموذج",
+    "مقياس",
+    "تقرير",
+    "مؤشر",
+    "بيانات",
+    "واقع"
+   ],
+   "questions_en": [
+    "Which models, metrics or documents are we relying on?",
+    "Where might they diverge from reality on the ground?",
+    "How can we check the territory directly?"
+   ],
+   "questions_ar": [
+    "ما النماذج أو المقاييس أو الوثائق التي نعتمد عليها؟",
+    "أين قد تختلف عن الواقع الفعلي؟",
+    "كيف نتحقق من الواقع مباشرة؟"
+   ],
+   "output": "list of models/proxies in use with their known blind spots and a direct-observation check for each",
+   "check": "each proxy has at least one stated limitation and one ground-truth check that was actually performed or scheduled",
+   "anti_pattern": "discarding all models as 'just maps' instead of using them with stated limits",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "occams-razor",
+   "name_en": "Occam's Razor",
+   "name_ar": "شفرة أوكام",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The Great Mental Models Volume 1: General Thinking Concepts",
+     "author": "Shane Parrish, Rhiannon Beaubien",
+     "year": 2019
+    }
+   ],
+   "triggers_en": [
+    "explain",
+    "simple",
+    "cause",
+    "theory",
+    "complicated",
+    "diagnose",
+    "why"
+   ],
+   "triggers_ar": [
+    "تفسير",
+    "بسيط",
+    "سبب",
+    "نظرية",
+    "معقد",
+    "تشخيص"
+   ],
+   "questions_en": [
+    "What competing explanations fit the evidence?",
+    "Which explanation needs the fewest unsupported assumptions?",
+    "What evidence would force us to the more complex explanation?"
+   ],
+   "questions_ar": [
+    "ما التفسيرات المتنافسة التي تتوافق مع الأدلة؟",
+    "أي تفسير يحتاج أقل عدد من الافتراضات غير المدعومة؟",
+    "ما الدليل الذي سيجبرنا على التفسير الأكثر تعقيداً؟"
+   ],
+   "output": "ranked list of explanations by number of unsupported assumptions, with the leading one and its upgrade trigger",
+   "check": "at least 3 explanations, assumption count stated for each, and a concrete observation named that would overturn the simplest",
+   "anti_pattern": "using simplicity as proof, ignoring evidence that demands a richer explanation",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "strategy-kernel",
+   "name_en": "Strategy Kernel (Diagnosis, Guiding Policy, Coherent Actions)",
+   "name_ar": "نواة الاستراتيجية (التشخيص، السياسة الموجهة، الأفعال المتسقة)",
+   "family": "frame",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Good Strategy Bad Strategy",
+     "author": "Richard Rumelt",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "strategy",
+    "plan",
+    "vision",
+    "goal",
+    "challenge",
+    "roadmap",
+    "direction"
+   ],
+   "triggers_ar": [
+    "استراتيجية",
+    "خطة",
+    "رؤية",
+    "هدف",
+    "تحدي",
+    "اتجاه"
+   ],
+   "questions_en": [
+    "What is the diagnosis of the critical challenge?",
+    "What guiding policy addresses that challenge?",
+    "Which coherent, mutually reinforcing actions carry out the policy?"
+   ],
+   "questions_ar": [
+    "ما تشخيص التحدي الحرج؟",
+    "ما السياسة الموجهة التي تعالج هذا التحدي؟",
+    "ما الأفعال المتسقة والمتعاضدة التي تنفذ هذه السياسة؟"
+   ],
+   "output": "one-page strategy kernel: diagnosis paragraph, guiding policy sentence, 3-5 coherent actions",
+   "check": "the diagnosis names a specific obstacle, the policy rules options out, and every action traces to the policy",
+   "anti_pattern": "writing goals or slogans ('be the best') and calling them strategy",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "ladder-of-inference",
+   "name_en": "Ladder of Inference",
+   "name_ar": "سلّم الاستدلال",
+   "family": "frame",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Fifth Discipline Fieldbook",
+     "author": "Peter M. Senge, Art Kleiner, Charlotte Roberts, Richard Ross, Bryan Smith",
+     "year": 1994
+    }
+   ],
+   "triggers_en": [
+    "assume",
+    "conclusion",
+    "belief",
+    "conflict",
+    "interpret",
+    "feedback",
+    "data"
+   ],
+   "triggers_ar": [
+    "استنتاج",
+    "افتراض",
+    "قناعة",
+    "خلاف",
+    "تفسير",
+    "بيانات"
+   ],
+   "questions_en": [
+    "What observable data did we start from?",
+    "Which meanings and assumptions did we add on the way to the conclusion?",
+    "Which rung should we test or revisit?"
+   ],
+   "questions_ar": [
+    "ما البيانات المرصودة التي انطلقنا منها؟",
+    "ما المعاني والافتراضات التي أضفناها في الطريق إلى الاستنتاج؟",
+    "أي درجة يجب أن نختبرها أو نراجعها؟"
+   ],
+   "output": "ladder trace from observed data through interpretations to conclusion, with flagged untested rungs",
+   "check": "each rung is written explicitly, at least one assumption is tested against raw data, and the conclusion is kept or revised accordingly",
+   "anti_pattern": "using the ladder to dismiss other people's views while not examining one's own",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "six-thinking-hats",
+   "name_en": "Six Thinking Hats",
+   "name_ar": "قبعات التفكير الست",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Six Thinking Hats",
+     "author": "Edward de Bono",
+     "year": 1985
+    }
+   ],
+   "triggers_en": [
+    "meeting",
+    "perspective",
+    "discuss",
+    "team",
+    "evaluate",
+    "idea",
+    "debate"
+   ],
+   "triggers_ar": [
+    "اجتماع",
+    "منظور",
+    "نقاش",
+    "فريق",
+    "تقييم",
+    "فكرة"
+   ],
+   "questions_en": [
+    "What are the facts and missing information (white), feelings (red), and risks (black)?",
+    "What are the benefits (yellow) and new alternatives (green)?",
+    "What is the process summary and next step (blue)?"
+   ],
+   "questions_ar": [
+    "ما الحقائق والمعلومات الناقصة (الأبيض) والمشاعر (الأحمر) والمخاطر (الأسود)؟",
+    "ما الفوائد (الأصفر) والبدائل الجديدة (الأخضر)؟",
+    "ما ملخص العملية والخطوة التالية (الأزرق)؟"
+   ],
+   "output": "six-section note with entries under each hat and a blue-hat decision on next step",
+   "check": "all six hats have at least 2 entries and the blue-hat section names one next action",
+   "anti_pattern": "letting one hat (usually black) dominate or using hats to label people instead of modes",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "scamper",
+   "name_en": "SCAMPER",
+   "name_ar": "سكامبر",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Thinkertoys",
+     "author": "Michael Michalko",
+     "year": 1991
+    },
+    {
+     "title": "Applied Imagination",
+     "author": "Alex F. Osborn",
+     "year": 1953
+    }
+   ],
+   "triggers_en": [
+    "improve",
+    "redesign",
+    "variation",
+    "product",
+    "feature",
+    "modify",
+    "idea"
+   ],
+   "triggers_ar": [
+    "تحسين",
+    "تعديل",
+    "تطوير",
+    "منتج",
+    "ميزة",
+    "افكار"
+   ],
+   "questions_en": [
+    "What could we substitute, combine or adapt?",
+    "What could we modify/magnify, put to another use, or eliminate?",
+    "What could we reverse or rearrange?"
+   ],
+   "questions_ar": [
+    "ما الذي يمكن استبداله أو دمجه أو تكييفه؟",
+    "ما الذي يمكن تعديله أو تكبيره أو استخدامه لغرض آخر أو حذفه؟",
+    "ما الذي يمكن عكسه أو إعادة ترتيبه؟"
+   ],
+   "output": "idea list with at least one idea per SCAMPER verb, tagged by verb",
+   "check": "all 7 verbs covered with at least 1 idea each and at least 14 ideas total before any filtering",
+   "anti_pattern": "judging ideas during generation or applying only the easy verbs",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "triz",
+   "name_en": "TRIZ (Theory of Inventive Problem Solving)",
+   "name_ar": "تريز (نظرية الحل الإبداعي للمشكلات)",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Creativity as an Exact Science",
+     "author": "Genrich Altshuller",
+     "year": 1984
+    }
+   ],
+   "triggers_en": [
+    "contradiction",
+    "tradeoff",
+    "engineering",
+    "invent",
+    "conflict",
+    "technical",
+    "constraint"
+   ],
+   "triggers_ar": [
+    "تناقض",
+    "مقايضة",
+    "هندسة",
+    "اختراع",
+    "قيد",
+    "تقني"
+   ],
+   "questions_en": [
+    "Which parameter improves while another worsens (the contradiction)?",
+    "What would the ideal final result be, with the function delivered and no cost?",
+    "Which inventive principles (e.g. segmentation, prior action, inversion) resolve the contradiction?"
+   ],
+   "questions_ar": [
+    "أي معيار يتحسن بينما يسوء آخر (التناقض)؟",
+    "ما النتيجة النهائية المثالية التي تؤدي الوظيفة بلا تكلفة؟",
+    "أي مبادئ إبداعية (مثل التجزئة، الفعل المسبق، العكس) تحل التناقض؟"
+   ],
+   "output": "contradiction statement, ideal final result, and concept options each linked to a named inventive principle",
+   "check": "contradiction states both parameters, at least 3 principles applied, and each concept removes the trade-off rather than compromising",
+   "anti_pattern": "settling for a compromise and calling it a TRIZ solution, or forcing the matrix on non-technical problems",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "lateral-thinking",
+   "name_en": "Lateral Thinking",
+   "name_ar": "التفكير الجانبي",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Lateral Thinking: Creativity Step by Step",
+     "author": "Edward de Bono",
+     "year": 1970
+    }
+   ],
+   "triggers_en": [
+    "creative",
+    "stuck",
+    "new",
+    "fresh",
+    "alternative",
+    "unconventional",
+    "idea"
+   ],
+   "triggers_ar": [
+    "ابداع",
+    "عالق",
+    "جديد",
+    "بديل",
+    "مختلف",
+    "افكار"
+   ],
+   "questions_en": [
+    "What dominant idea or assumption controls current thinking about this task?",
+    "What alternatives emerge if we challenge it or enter from a different point?",
+    "Which alternative is worth moving forward?"
+   ],
+   "questions_ar": [
+    "ما الفكرة أو الافتراض المسيطر على التفكير الحالي في المهمة؟",
+    "ما البدائل التي تظهر إذا تحديناها أو دخلنا من نقطة مختلفة؟",
+    "أي بديل يستحق المضي به؟"
+   ],
+   "output": "named dominant idea plus a list of alternative entry points and the ideas they produced",
+   "check": "dominant idea explicitly stated, at least 5 alternatives, and at least 2 not reachable by incremental tweaks",
+   "anti_pattern": "producing random novelty with no link back to the task goal",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "brainstorming",
+   "name_en": "Brainstorming (Osborn rules)",
+   "name_ar": "العصف الذهني (قواعد أوزبورن)",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Applied Imagination",
+     "author": "Alex F. Osborn",
+     "year": 1953
+    }
+   ],
+   "triggers_en": [
+    "ideas",
+    "names",
+    "options",
+    "brainstorm",
+    "generate",
+    "list",
+    "concepts"
+   ],
+   "triggers_ar": [
+    "افكار",
+    "اسماء",
+    "خيارات",
+    "عصف",
+    "توليد",
+    "قائمة"
+   ],
+   "questions_en": [
+    "How many ideas can we generate with judgement deferred?",
+    "What wild ideas push beyond the obvious?",
+    "How can ideas be combined and built upon?"
+   ],
+   "questions_ar": [
+    "كم فكرة يمكننا توليدها مع تأجيل الحكم؟",
+    "ما الأفكار الجامحة التي تتجاوز المألوف؟",
+    "كيف يمكن دمج الأفكار والبناء عليها؟"
+   ],
+   "output": "unfiltered numbered list of ideas with combined/built-on ideas marked",
+   "check": "at least 20 ideas recorded before evaluation, at least 3 marked wild, at least 3 combinations",
+   "anti_pattern": "criticising during generation or stopping at the first ten obvious ideas",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "how-might-we",
+   "name_en": "How Might We Questions",
+   "name_ar": "أسئلة كيف يمكننا",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Creative Confidence",
+     "author": "Tom Kelley, David Kelley",
+     "year": 2013
+    }
+   ],
+   "triggers_en": [
+    "opportunity",
+    "challenge",
+    "insight",
+    "user",
+    "problem",
+    "design",
+    "pain"
+   ],
+   "triggers_ar": [
+    "فرصة",
+    "تحدي",
+    "رؤية",
+    "مستخدم",
+    "مشكلة",
+    "تصميم",
+    "الم"
+   ],
+   "questions_en": [
+    "What insight or pain point are we starting from?",
+    "How might we phrase it as an opportunity that is neither too broad nor too narrow?",
+    "Which HMW questions open the most promising solution space?"
+   ],
+   "questions_ar": [
+    "ما الرؤية أو نقطة الألم التي ننطلق منها؟",
+    "كيف يمكننا صياغتها كفرصة ليست واسعة جداً ولا ضيقة جداً؟",
+    "أي أسئلة \"كيف يمكننا\" تفتح أكثر مساحة حلول واعدة؟"
+   ],
+   "output": "set of 5-10 'How might we...' questions derived from insights, with 2-3 selected",
+   "check": "each HMW traces to a stated insight, contains no embedded solution, and selected ones each yield at least 3 ideas",
+   "anti_pattern": "writing HMWs that smuggle in a solution or are so broad they guide nothing",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "beautiful-question",
+   "name_en": "Why / What If / How Questioning",
+   "name_ar": "التساؤل: لماذا / ماذا لو / كيف",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "A More Beautiful Question",
+     "author": "Warren Berger",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "question",
+    "curious",
+    "innovate",
+    "explore",
+    "rethink",
+    "ask",
+    "challenge"
+   ],
+   "triggers_ar": [
+    "سؤال",
+    "فضول",
+    "ابتكار",
+    "استكشاف",
+    "تحدي",
+    "تساؤل"
+   ],
+   "questions_en": [
+    "Why does this situation exist as it does?",
+    "What if we changed a core element?",
+    "How could we try the most promising 'what if' in practice?"
+   ],
+   "questions_ar": [
+    "لماذا يوجد هذا الوضع على ما هو عليه؟",
+    "ماذا لو غيرنا عنصراً جوهرياً؟",
+    "كيف نجرب أكثر \"ماذا لو\" واعدة عملياً؟"
+   ],
+   "output": "question ladder: why-questions, what-if-questions, and how-questions with one chosen experiment",
+   "check": "at least 3 questions per stage and the chosen how-question names a concrete first test",
+   "anti_pattern": "asking clever questions without ever moving to the 'how' stage",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "morphological-analysis",
+   "name_en": "Morphological Analysis",
+   "name_ar": "التحليل المورفولوجي",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Discovery, Invention, Research Through the Morphological Approach",
+     "author": "Fritz Zwicky",
+     "year": 1969
+    }
+   ],
+   "triggers_en": [
+    "combination",
+    "configuration",
+    "options",
+    "parameters",
+    "design",
+    "variants",
+    "matrix"
+   ],
+   "triggers_ar": [
+    "تركيبات",
+    "خيارات",
+    "معايير",
+    "تصميم",
+    "متغيرات",
+    "مصفوفة"
+   ],
+   "questions_en": [
+    "What independent dimensions define a solution?",
+    "What options exist along each dimension?",
+    "Which combinations are novel and consistent?"
+   ],
+   "questions_ar": [
+    "ما الأبعاد المستقلة التي تحدد الحل؟",
+    "ما الخيارات المتاحة على كل بعد؟",
+    "أي التركيبات جديدة ومتسقة؟"
+   ],
+   "output": "morphological box (dimensions x options) and a shortlist of consistent novel combinations",
+   "check": "at least 4 dimensions with at least 3 options each, incompatible pairs marked, and at least 3 consistent combinations shortlisted",
+   "anti_pattern": "enumerating thousands of combinations without a consistency filter",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "provocation-po",
+   "name_en": "Provocation (Po) and Random Entry",
+   "name_ar": "الاستفزاز الإبداعي والمدخل العشوائي",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Serious Creativity",
+     "author": "Edward de Bono",
+     "year": 1992
+    }
+   ],
+   "triggers_en": [
+    "provoke",
+    "random",
+    "stimulus",
+    "creative",
+    "novel",
+    "break",
+    "pattern"
+   ],
+   "triggers_ar": [
+    "استفزاز",
+    "عشوائي",
+    "محفز",
+    "ابداع",
+    "كسر",
+    "نمط"
+   ],
+   "questions_en": [
+    "What deliberately unreasonable statement (Po) about this task can we make?",
+    "What useful idea can be extracted by moving from the provocation?",
+    "What does a random word or object suggest when connected to the task?"
+   ],
+   "questions_ar": [
+    "ما العبارة غير المعقولة عمداً (Po) التي يمكن قولها عن المهمة؟",
+    "ما الفكرة المفيدة التي يمكن استخراجها بالتحرك من هذا الاستفزاز؟",
+    "ماذا تقترح كلمة أو شيء عشوائي عند ربطه بالمهمة؟"
+   ],
+   "output": "list of provocations and random entries, each with the practical idea extracted from it",
+   "check": "at least 3 provocations and 2 random entries, each producing a feasible idea written in plain terms",
+   "anti_pattern": "stopping at the absurd provocation instead of extracting movement value from it",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "adjacent-possible",
+   "name_en": "Adjacent Possible",
+   "name_ar": "الممكن المجاور",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Where Good Ideas Come From",
+     "author": "Steven Johnson",
+     "year": 2010
+    }
+   ],
+   "triggers_en": [
+    "next",
+    "innovation",
+    "build",
+    "existing",
+    "platform",
+    "combine",
+    "extend"
+   ],
+   "triggers_ar": [
+    "التالي",
+    "ابتكار",
+    "موجود",
+    "منصة",
+    "دمج",
+    "توسيع"
+   ],
+   "questions_en": [
+    "Which existing components, tools and capabilities are already available to us?",
+    "What new things become possible one step away by combining them?",
+    "Which slow hunches or partial ideas can be connected now?"
+   ],
+   "questions_ar": [
+    "ما المكونات والأدوات والقدرات المتاحة لنا فعلاً؟",
+    "ما الأشياء الجديدة التي تصبح ممكنة على بعد خطوة بدمجها؟",
+    "أي حدس بطيء أو أفكار جزئية يمكن ربطها الآن؟"
+   ],
+   "output": "inventory of available building blocks and a list of one-step-away combinations",
+   "check": "at least 8 building blocks listed and at least 3 combinations that require no unavailable component",
+   "anti_pattern": "jumping to ideas that need several missing breakthroughs",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 9939,
+     "title": "Where Good Ideas Come From: The Natural History of Innovation",
+     "ratings": 7696
+    }
+   ]
+  },
+  {
+   "id": "medici-intersection",
+   "name_en": "Intersectional Ideas (Medici Effect)",
+   "name_ar": "أفكار التقاطع (تأثير ميديتشي)",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "The Medici Effect",
+     "author": "Frans Johansson",
+     "year": 2004
+    }
+   ],
+   "triggers_en": [
+    "crossdomain",
+    "interdisciplinary",
+    "combine",
+    "fusion",
+    "analogy",
+    "borrow",
+    "hybrid"
+   ],
+   "triggers_ar": [
+    "تقاطع",
+    "مجالات",
+    "دمج",
+    "اندماج",
+    "تشبيه",
+    "هجين"
+   ],
+   "questions_en": [
+    "Which unrelated fields have solved a structurally similar problem?",
+    "What concept from each field could be transplanted here?",
+    "Which intersection produces an idea no single field would?"
+   ],
+   "questions_ar": [
+    "ما المجالات غير المرتبطة التي حلت مشكلة مشابهة بنيوياً؟",
+    "ما المفهوم من كل مجال الذي يمكن نقله إلى هنا؟",
+    "أي تقاطع ينتج فكرة لا ينتجها مجال واحد وحده؟"
+   ],
+   "output": "list of source fields, transplanted concepts and resulting intersectional ideas",
+   "check": "at least 3 distinct fields, each concept adapted with a stated mapping, at least 1 idea combining 2 fields",
+   "anti_pattern": "superficial metaphors with no structural mapping to the task",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "synectics",
+   "name_en": "Synectics",
+   "name_ar": "السينكتيكس (التآلف الإبداعي)",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Synectics: The Development of Creative Capacity",
+     "author": "William J. J. Gordon",
+     "year": 1961
+    }
+   ],
+   "triggers_en": [
+    "analogy",
+    "metaphor",
+    "empathy",
+    "creative",
+    "strange",
+    "familiar",
+    "invent"
+   ],
+   "triggers_ar": [
+    "تشبيه",
+    "استعارة",
+    "تقمص",
+    "ابداع",
+    "غريب",
+    "مألوف"
+   ],
+   "questions_en": [
+    "How can we make the familiar strange through direct, personal, symbolic or fantasy analogy?",
+    "What would it feel like to be the object or system?",
+    "Which analogy yields a workable concept when forced back onto the task?"
+   ],
+   "questions_ar": [
+    "كيف نجعل المألوف غريباً عبر تشبيه مباشر أو شخصي أو رمزي أو خيالي؟",
+    "كيف سيكون الشعور لو كنا الشيء أو النظام نفسه؟",
+    "أي تشبيه ينتج مفهوماً قابلاً للتطبيق عند إسقاطه على المهمة؟"
+   ],
+   "output": "analogy set (by type) and the force-fit concepts derived from them",
+   "check": "at least one analogy of each of the 4 types and at least 2 force-fit concepts with a feasibility note",
+   "anti_pattern": "enjoying the metaphors without the force-fit step back to a solution",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "mind-mapping",
+   "name_en": "Mind Mapping",
+   "name_ar": "الخرائط الذهنية",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Use Your Head",
+     "author": "Tony Buzan",
+     "year": 1974
+    }
+   ],
+   "triggers_en": [
+    "topic",
+    "map",
+    "overview",
+    "notes",
+    "associate",
+    "plan",
+    "outline"
+   ],
+   "triggers_ar": [
+    "موضوع",
+    "خريطة",
+    "نظرة",
+    "ملاحظات",
+    "ترابط",
+    "مخطط"
+   ],
+   "questions_en": [
+    "What is the central topic?",
+    "What main branches and sub-branches radiate from it?",
+    "Which cross-links between branches reveal new ideas?"
+   ],
+   "questions_ar": [
+    "ما الموضوع المركزي؟",
+    "ما الفروع الرئيسية والفرعية المنبثقة منه؟",
+    "أي روابط بين الفروع تكشف أفكاراً جديدة؟"
+   ],
+   "output": "radial mind map (as nested outline or graph) with cross-links highlighted",
+   "check": "at least 5 main branches, at least 2 levels deep, and at least 2 cross-links annotated",
+   "anti_pattern": "turning the map into a linear list and losing the associations",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "double-diamond",
+   "name_en": "Double Diamond",
+   "name_ar": "الماسة المزدوجة",
+   "family": "diverge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "This Is Service Design Doing",
+     "author": "Marc Stickdorn, Markus Edgar Hormess, Adam Lawrence, Jakob Schneider",
+     "year": 2018
+    }
+   ],
+   "triggers_en": [
+    "design",
+    "process",
+    "discover",
+    "define",
+    "develop",
+    "deliver",
+    "service"
+   ],
+   "triggers_ar": [
+    "تصميم",
+    "اكتشاف",
+    "تعريف",
+    "تطوير",
+    "تسليم",
+    "خدمة"
+   ],
+   "questions_en": [
+    "Have we diverged to discover the problem space before defining it?",
+    "What single problem definition closes the first diamond?",
+    "Have we explored multiple solutions before converging on delivery?"
+   ],
+   "questions_ar": [
+    "هل توسعنا لاكتشاف مساحة المشكلة قبل تعريفها؟",
+    "ما تعريف المشكلة الواحد الذي يغلق الماسة الأولى؟",
+    "هل استكشفنا حلولاً متعددة قبل التقارب على التسليم؟"
+   ],
+   "output": "four-phase plan (discover, define, develop, deliver) with outputs and a gate between each",
+   "check": "each phase has a named artifact, the define gate yields one problem statement, and develop shows at least 3 candidate solutions",
+   "anti_pattern": "running it as a linear waterfall or skipping the first diamond",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "pareto-principle",
+   "name_en": "Pareto Principle (80/20)",
+   "name_ar": "مبدأ باريتو (80/20)",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The 80/20 Principle",
+     "author": "Richard Koch",
+     "year": 1997
+    }
+   ],
+   "triggers_en": [
+    "priority",
+    "focus",
+    "most",
+    "biggest",
+    "top",
+    "efficiency",
+    "optimize"
+   ],
+   "triggers_ar": [
+    "اولوية",
+    "تركيز",
+    "اكبر",
+    "اهم",
+    "كفاءة",
+    "تحسين"
+   ],
+   "questions_en": [
+    "Which few inputs drive most of the outcome?",
+    "What does the measured distribution actually look like?",
+    "What would we stop doing if we focused on the vital few?"
+   ],
+   "questions_ar": [
+    "ما المدخلات القليلة التي تقود معظم النتيجة؟",
+    "كيف يبدو التوزيع المقاس فعلياً؟",
+    "ما الذي سنتوقف عنه إذا ركزنا على القلة الحيوية؟"
+   ],
+   "output": "ranked contribution table with cumulative percentage and the vital-few cut line",
+   "check": "table built from real counts, cumulative share computed, and the cut line items account for a stated majority of the effect",
+   "anti_pattern": "assuming an 80/20 split without measuring it",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 6441,
+     "title": "The 80/20 Principle: The Secret to Success by Achieving More with Less",
+     "ratings": 13241
+    }
+   ]
+  },
+  {
+   "id": "affinity-diagram",
+   "name_en": "Affinity Diagramming",
+   "name_ar": "مخطط التقارب (تجميع الأفكار)",
+   "family": "converge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Universal Methods of Design",
+     "author": "Bella Martin, Bruce Hanington",
+     "year": 2012
+    }
+   ],
+   "triggers_en": [
+    "feedback",
+    "research",
+    "notes",
+    "interviews",
+    "cluster",
+    "themes",
+    "insights"
+   ],
+   "triggers_ar": [
+    "ملاحظات",
+    "بحث",
+    "مقابلات",
+    "تجميع",
+    "محاور",
+    "رؤى"
+   ],
+   "questions_en": [
+    "What raw observations do we have?",
+    "Which observations cluster naturally, bottom-up?",
+    "What theme label and insight does each cluster express?"
+   ],
+   "questions_ar": [
+    "ما الملاحظات الخام المتوفرة لدينا؟",
+    "أي الملاحظات تتجمع طبيعياً من الأسفل للأعلى؟",
+    "ما عنوان المحور والرؤية التي يعبر عنها كل تجمع؟"
+   ],
+   "output": "clustered observations under labelled themes with one insight statement per theme",
+   "check": "every observation assigned to exactly one cluster or an 'unassigned' bin, each cluster has at least 3 items and an insight sentence",
+   "anti_pattern": "starting with predefined categories and forcing data into them",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "dot-voting",
+   "name_en": "Dot Voting",
+   "name_ar": "التصويت بالنقاط",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Gamestorming",
+     "author": "Dave Gray, Sunni Brown, James Macanufo",
+     "year": 2010
+    }
+   ],
+   "triggers_en": [
+    "vote",
+    "team",
+    "shortlist",
+    "choose",
+    "select",
+    "options",
+    "group"
+   ],
+   "triggers_ar": [
+    "تصويت",
+    "فريق",
+    "قائمة",
+    "اختيار",
+    "خيارات",
+    "مجموعة"
+   ],
+   "questions_en": [
+    "Which options are on the board and what criterion are we voting on?",
+    "How many votes does each participant get?",
+    "Which options rise to the top, and is the result a decision or an input?"
+   ],
+   "questions_ar": [
+    "ما الخيارات المطروحة وما المعيار الذي نصوت عليه؟",
+    "كم صوتاً لكل مشارك؟",
+    "أي الخيارات تتصدر، وهل النتيجة قرار أم مُدخل؟"
+   ],
+   "output": "vote tally per option against a stated criterion with the top-N shortlist",
+   "check": "criterion written before voting, total votes equal participants x allowance, top-N listed with counts",
+   "anti_pattern": "treating a popularity count as a final decision on high-stakes questions",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "pugh-matrix",
+   "name_en": "Pugh Concept Selection Matrix",
+   "name_ar": "مصفوفة بيو لاختيار المفاهيم",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Total Design",
+     "author": "Stuart Pugh",
+     "year": 1991
+    }
+   ],
+   "triggers_en": [
+    "compare",
+    "criteria",
+    "concepts",
+    "alternatives",
+    "evaluate",
+    "select",
+    "matrix"
+   ],
+   "triggers_ar": [
+    "مقارنة",
+    "معايير",
+    "مفاهيم",
+    "بدائل",
+    "تقييم",
+    "مصفوفة"
+   ],
+   "questions_en": [
+    "Which concept is the datum (baseline)?",
+    "How does each alternative score better, same or worse on each criterion?",
+    "Which hybrid combines the strengths found?"
+   ],
+   "questions_ar": [
+    "أي مفهوم هو المرجع (خط الأساس)؟",
+    "كيف يقارن كل بديل: أفضل أو مساوٍ أو أسوأ على كل معيار؟",
+    "أي مزيج يجمع نقاط القوة المكتشفة؟"
+   ],
+   "output": "criteria x concepts matrix with +/S/- scores versus a datum and a recommended or hybrid concept",
+   "check": "at least 5 criteria and 3 concepts, every cell scored, totals computed, and the recommendation follows from the totals or explains the override",
+   "anti_pattern": "weighting criteria after seeing the scores to justify a favourite",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "nominal-group-technique",
+   "name_en": "Nominal Group Technique",
+   "name_ar": "تقنية المجموعة الاسمية",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Group Techniques for Program Planning",
+     "author": "Andre L. Delbecq, Andrew H. Van de Ven, David H. Gustafson",
+     "year": 1975
+    }
+   ],
+   "triggers_en": [
+    "group",
+    "consensus",
+    "rank",
+    "silent",
+    "ideas",
+    "committee",
+    "prioritize"
+   ],
+   "triggers_ar": [
+    "مجموعة",
+    "اجماع",
+    "ترتيب",
+    "صامت",
+    "لجنة",
+    "اولويات"
+   ],
+   "questions_en": [
+    "What ideas does each member generate silently and independently?",
+    "What clarifications are needed after round-robin sharing?",
+    "How do private rankings aggregate?"
+   ],
+   "questions_ar": [
+    "ما الأفكار التي يولدها كل عضو بصمت وباستقلال؟",
+    "ما التوضيحات اللازمة بعد المشاركة الدورية؟",
+    "كيف تُجمع الترتيبات الفردية الخاصة؟"
+   ],
+   "output": "aggregated ranking from independent individual rankings with the idea list",
+   "check": "each member's ideas recorded before discussion, every member submitted a ranking, and the aggregate is reproducible from the raw ranks",
+   "anti_pattern": "letting discussion start before independent generation, which re-introduces anchoring",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "delphi-method",
+   "name_en": "Delphi Method",
+   "name_ar": "طريقة دلفي",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Delphi Method: Techniques and Applications",
+     "author": "Harold A. Linstone, Murray Turoff",
+     "year": 1975
+    }
+   ],
+   "triggers_en": [
+    "forecast",
+    "experts",
+    "estimate",
+    "future",
+    "consensus",
+    "panel",
+    "uncertain"
+   ],
+   "triggers_ar": [
+    "توقع",
+    "خبراء",
+    "تقدير",
+    "مستقبل",
+    "اجماع",
+    "لجنة"
+   ],
+   "questions_en": [
+    "Which independent experts should estimate?",
+    "What do anonymous first-round estimates and reasons show?",
+    "How do estimates move after controlled feedback rounds?"
+   ],
+   "questions_ar": [
+    "من الخبراء المستقلون الذين يجب أن يقدّروا؟",
+    "ماذا تظهر التقديرات المجهولة للجولة الأولى وأسبابها؟",
+    "كيف تتحرك التقديرات بعد جولات تغذية راجعة مضبوطة؟"
+   ],
+   "output": "multi-round anonymous estimate record with median, spread and rationale per round",
+   "check": "at least 2 rounds, at least 3 independent estimators, spread reported per round, and final median stated",
+   "anti_pattern": "leaking identities so that seniority drives convergence",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "essentialism",
+   "name_en": "Essentialism (Disciplined Pursuit of Less)",
+   "name_ar": "الجوهرية (السعي المنضبط للأقل)",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Essentialism",
+     "author": "Greg McKeown",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "scope",
+    "focus",
+    "overload",
+    "cut",
+    "less",
+    "commitments",
+    "saying"
+   ],
+   "triggers_ar": [
+    "نطاق",
+    "تركيز",
+    "ضغط",
+    "حذف",
+    "اقل",
+    "التزامات"
+   ],
+   "questions_en": [
+    "What is the one thing that matters most in this task?",
+    "Which items score below 90% on our essential criteria and should be cut?",
+    "What will we explicitly say no to?"
+   ],
+   "questions_ar": [
+    "ما الشيء الواحد الأهم في هذه المهمة؟",
+    "أي البنود تحصل على أقل من 90% في معاييرنا الجوهرية ويجب حذفها؟",
+    "ما الذي سنرفضه صراحة؟"
+   ],
+   "output": "essential-intent statement, kept list, and explicit not-doing list",
+   "check": "one essential intent sentence, kept list shorter than cut list or justified, and every cut item has a reason",
+   "anti_pattern": "using 'essentialism' to drop must-haves the user stated",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 6095,
+     "title": "Essentialism: The Disciplined Pursuit of Less",
+     "ratings": 16137
+    }
+   ]
+  },
+  {
+   "id": "integrative-thinking",
+   "name_en": "Integrative Thinking",
+   "name_ar": "التفكير التكاملي",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Opposable Mind",
+     "author": "Roger Martin",
+     "year": 2007
+    }
+   ],
+   "triggers_en": [
+    "tradeoff",
+    "tension",
+    "either",
+    "versus",
+    "conflict",
+    "options",
+    "both"
+   ],
+   "triggers_ar": [
+    "مقايضة",
+    "توتر",
+    "اما",
+    "مقابل",
+    "تعارض",
+    "كلاهما"
+   ],
+   "questions_en": [
+    "What are the two opposing models on the table?",
+    "What does each model get right that we must keep?",
+    "What new model achieves both benefits rather than choosing one?"
+   ],
+   "questions_ar": [
+    "ما النموذجان المتعارضان المطروحان؟",
+    "ما الذي يصيب فيه كل نموذج ويجب أن نحتفظ به؟",
+    "ما النموذج الجديد الذي يحقق الفائدتين بدلاً من اختيار أحدهما؟"
+   ],
+   "output": "description of two opposing models, their kept strengths, and an integrated third model",
+   "check": "integrated model is shown to keep at least one key benefit from each side, with a test of feasibility",
+   "anti_pattern": "averaging the two models into a mushy compromise",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "dvf-lens",
+   "name_en": "Desirability, Feasibility, Viability Lens",
+   "name_ar": "عدسة الرغبة والجدوى التقنية والجدوى التجارية",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Change by Design",
+     "author": "Tim Brown",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "concept",
+    "idea",
+    "viable",
+    "feasible",
+    "business",
+    "users",
+    "evaluate"
+   ],
+   "triggers_ar": [
+    "مفهوم",
+    "فكرة",
+    "جدوى",
+    "ممكن",
+    "عمل",
+    "مستخدمين"
+   ],
+   "questions_en": [
+    "Do users actually want this (desirability)?",
+    "Can we build it with available technology and skills (feasibility)?",
+    "Does it sustain itself economically (viability)?"
+   ],
+   "questions_ar": [
+    "هل يريد المستخدمون هذا فعلاً (الرغبة)؟",
+    "هل يمكننا بناؤه بالتقنية والمهارات المتاحة (الجدوى التقنية)؟",
+    "هل يستمر اقتصادياً (الجدوى التجارية)؟"
+   ],
+   "output": "concept scorecard with evidence for each of the three lenses and the weakest lens flagged",
+   "check": "each lens has at least one evidence item (not opinion) and the weakest lens has a next test",
+   "anti_pattern": "scoring all three lenses from internal opinion without user or cost evidence",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "card-sorting",
+   "name_en": "Card Sorting",
+   "name_ar": "فرز البطاقات",
+   "family": "converge",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Card Sorting: Designing Usable Categories",
+     "author": "Donna Spencer",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "navigation",
+    "categories",
+    "menu",
+    "structure",
+    "taxonomy",
+    "labels",
+    "organize"
+   ],
+   "triggers_ar": [
+    "تنقل",
+    "فئات",
+    "قائمة",
+    "هيكل",
+    "تصنيف",
+    "تسميات"
+   ],
+   "questions_en": [
+    "Which items need to be organised?",
+    "How do users group and label them (open or closed sort)?",
+    "Which groupings are consistent across participants?"
+   ],
+   "questions_ar": [
+    "ما العناصر التي تحتاج إلى تنظيم؟",
+    "كيف يجمعها المستخدمون ويسمونها (فرز مفتوح أو مغلق)؟",
+    "أي التجميعات متسقة بين المشاركين؟"
+   ],
+   "output": "category structure derived from participant sorts with agreement percentages",
+   "check": "at least 5 participants or a stated proxy, agreement computed per item, and items below threshold flagged",
+   "anti_pattern": "designing the taxonomy from the org chart instead of user mental models",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "paradox-of-choice",
+   "name_en": "Limit the Options (Paradox of Choice)",
+   "name_ar": "تقليص الخيارات (مفارقة الاختيار)",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Paradox of Choice",
+     "author": "Barry Schwartz",
+     "year": 2004
+    }
+   ],
+   "triggers_en": [
+    "options",
+    "choices",
+    "menu",
+    "plans",
+    "pricing",
+    "overwhelm",
+    "simplify"
+   ],
+   "triggers_ar": [
+    "خيارات",
+    "قائمة",
+    "باقات",
+    "تسعير",
+    "تشتت",
+    "تبسيط"
+   ],
+   "questions_en": [
+    "How many options are we presenting to the user or decision-maker?",
+    "Which options add little distinct value and can be removed or defaulted?",
+    "What sensible default reduces choice burden?"
+   ],
+   "questions_ar": [
+    "كم خياراً نعرض على المستخدم أو صاحب القرار؟",
+    "أي الخيارات تضيف قيمة متمايزة قليلة ويمكن حذفها أو جعلها افتراضية؟",
+    "ما الخيار الافتراضي المعقول الذي يخفف عبء الاختيار؟"
+   ],
+   "output": "reduced option set with a recommended default and rationale for each removal",
+   "check": "option count reduced or justified, exactly one default marked, and each remaining option has a distinct use case",
+   "anti_pattern": "removing options users genuinely need to differentiate",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 4356,
+     "title": "The Paradox of Choice: Why More Is Less",
+     "ratings": 20990
+    }
+   ]
+  },
+  {
+   "id": "pmi",
+   "name_en": "Plus, Minus, Interesting (PMI)",
+   "name_ar": "إيجابي، سلبي، مثير للاهتمام",
+   "family": "converge",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "de Bono's Thinking Course",
+     "author": "Edward de Bono",
+     "year": 1982
+    }
+   ],
+   "triggers_en": [
+    "pros",
+    "cons",
+    "evaluate",
+    "proposal",
+    "idea",
+    "review",
+    "judge"
+   ],
+   "triggers_ar": [
+    "مزايا",
+    "عيوب",
+    "تقييم",
+    "مقترح",
+    "فكرة",
+    "مراجعة"
+   ],
+   "questions_en": [
+    "What are the plus points of the idea?",
+    "What are the minus points?",
+    "What is interesting, neither good nor bad, and worth exploring?"
+   ],
+   "questions_ar": [
+    "ما النقاط الإيجابية في الفكرة؟",
+    "ما النقاط السلبية؟",
+    "ما المثير للاهتمام، ليس جيداً ولا سيئاً، ويستحق الاستكشاف؟"
+   ],
+   "output": "three-column PMI table per idea with a resulting judgement",
+   "check": "each column has at least 2 entries and the judgement references specific entries",
+   "anti_pattern": "filling the columns to rationalise a decision already made",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "ooda-loop",
+   "name_en": "OODA Loop",
+   "name_ar": "حلقة أودا (لاحظ، وجّه، قرر، نفذ)",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Boyd: The Fighter Pilot Who Changed the Art of War",
+     "author": "Robert Coram",
+     "year": 2002
+    }
+   ],
+   "triggers_en": [
+    "competitor",
+    "fast",
+    "react",
+    "tempo",
+    "incident",
+    "adapt",
+    "realtime"
+   ],
+   "triggers_ar": [
+    "منافس",
+    "سرعة",
+    "رد",
+    "ايقاع",
+    "حادث",
+    "تكيف"
+   ],
+   "questions_en": [
+    "What are we observing right now, from which sources?",
+    "How do our mental models and context orient our interpretation?",
+    "What decision and action can we take now, and how fast can we loop again?"
+   ],
+   "questions_ar": [
+    "ماذا نلاحظ الآن ومن أي مصادر؟",
+    "كيف توجه نماذجنا الذهنية وسياقنا تفسيرنا؟",
+    "ما القرار والفعل الذي يمكننا اتخاذه الآن، وبأي سرعة نعيد الحلقة؟"
+   ],
+   "output": "loop record: observations, orientation notes, decision, action, and next loop time",
+   "check": "each element filled, action is executable within the stated loop time, and the next observation point is scheduled",
+   "anti_pattern": "treating it as a slow linear checklist instead of a fast adaptive cycle",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "expected-value",
+   "name_en": "Expected Value Thinking",
+   "name_ar": "التفكير بالقيمة المتوقعة",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking in Bets",
+     "author": "Annie Duke",
+     "year": 2018
+    }
+   ],
+   "triggers_en": [
+    "bet",
+    "probability",
+    "payoff",
+    "gamble",
+    "invest",
+    "odds",
+    "risk"
+   ],
+   "triggers_ar": [
+    "رهان",
+    "احتمال",
+    "عائد",
+    "استثمار",
+    "احتمالات",
+    "مخاطرة"
+   ],
+   "questions_en": [
+    "What are the possible outcomes of each option?",
+    "What probability and payoff do we assign to each outcome?",
+    "Which option has the best expected value, and can we survive its worst case?"
+   ],
+   "questions_ar": [
+    "ما النتائج الممكنة لكل خيار؟",
+    "ما الاحتمال والعائد الذي نعطيه لكل نتيجة؟",
+    "أي خيار له أفضل قيمة متوقعة، وهل يمكننا تحمل أسوأ حالاته؟"
+   ],
+   "output": "outcome table per option with probabilities, payoffs, expected value and worst case",
+   "check": "probabilities per option sum to 1, EV computed numerically, and worst case compared against a stated survival limit",
+   "anti_pattern": "maximising EV on bets with ruinous downside",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "regret-minimization",
+   "name_en": "Regret Minimization Framework",
+   "name_ar": "إطار تقليل الندم",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Everything Store",
+     "author": "Brad Stone",
+     "year": 2013
+    }
+   ],
+   "triggers_en": [
+    "career",
+    "life",
+    "quit",
+    "start",
+    "bold",
+    "venture",
+    "personal"
+   ],
+   "triggers_ar": [
+    "مسيرة",
+    "حياة",
+    "ترك",
+    "بدء",
+    "جرأة",
+    "مشروع"
+   ],
+   "questions_en": [
+    "Projecting to age 80 (or the far future), which choice would we regret not making?",
+    "Is the regret about action or inaction?",
+    "What is the cost of trying and failing versus never trying?"
+   ],
+   "questions_ar": [
+    "بالنظر إلى سن الثمانين (أو المستقبل البعيد)، أي اختيار سنندم على عدم اتخاذه؟",
+    "هل الندم على الفعل أم على عدم الفعل؟",
+    "ما تكلفة المحاولة والفشل مقابل عدم المحاولة أبداً؟"
+   ],
+   "output": "long-horizon regret comparison per option with a chosen path and the accepted downside",
+   "check": "each option has a regret statement for both action and inaction, and the chosen path names its accepted worst case",
+   "anti_pattern": "using it to justify reckless bets while ignoring survivability",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 4803,
+     "title": "The Everything Store: Jeff Bezos and the Age of Amazon",
+     "ratings": 20539
+    }
+   ]
+  },
+  {
+   "id": "one-way-two-way-doors",
+   "name_en": "Reversible vs Irreversible Decisions (One-Way and Two-Way Doors)",
+   "name_ar": "القرارات القابلة وغير القابلة للعكس (الأبواب ذات الاتجاه الواحد والاتجاهين)",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Invent and Wander: The Collected Writings of Jeff Bezos",
+     "author": "Jeff Bezos",
+     "year": 2020
+    },
+    {
+     "title": "Working Backwards",
+     "author": "Colin Bryar, Bill Carr",
+     "year": 2021
+    }
+   ],
+   "triggers_en": [
+    "reversible",
+    "irreversible",
+    "publish",
+    "delete",
+    "migrate",
+    "commit",
+    "deploy",
+    "launch"
+   ],
+   "triggers_ar": [
+    "عكس",
+    "نهائي",
+    "نشر",
+    "حذف",
+    "ترحيل",
+    "اطلاق"
+   ],
+   "questions_en": [
+    "Can this decision be undone cheaply and quickly?",
+    "If irreversible, what extra analysis and approval does it need?",
+    "If reversible, how can we decide fast and set a rollback trigger?"
+   ],
+   "questions_ar": [
+    "هل يمكن التراجع عن هذا القرار بسرعة وبتكلفة منخفضة؟",
+    "إذا كان غير قابل للعكس، ما التحليل والموافقة الإضافيان اللازمان؟",
+    "إذا كان قابلاً للعكس، كيف نقرر بسرعة ونحدد شرط التراجع؟"
+   ],
+   "output": "list of decisions classified one-way or two-way with the matching process (fast + rollback, or deliberate + approval)",
+   "check": "every decision classified with a reversal cost estimate, every two-way door has a rollback trigger, every one-way door has an explicit approver",
+   "anti_pattern": "treating all decisions as one-way doors and slowing everything down, or vice versa",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "bayesian-updating",
+   "name_en": "Bayesian Updating",
+   "name_ar": "التحديث البايزي",
+   "family": "decide",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Superforecasting",
+     "author": "Philip E. Tetlock, Dan Gardner",
+     "year": 2015
+    },
+    {
+     "title": "The Signal and the Noise",
+     "author": "Nate Silver",
+     "year": 2012
+    }
+   ],
+   "triggers_en": [
+    "evidence",
+    "probability",
+    "forecast",
+    "belief",
+    "update",
+    "data",
+    "likely"
+   ],
+   "triggers_ar": [
+    "دليل",
+    "احتمال",
+    "توقع",
+    "قناعة",
+    "تحديث",
+    "بيانات"
+   ],
+   "questions_en": [
+    "What is our prior probability before the new evidence?",
+    "How much more likely is this evidence if the hypothesis is true than if false?",
+    "What is the posterior, and what would move it further?"
+   ],
+   "questions_ar": [
+    "ما الاحتمال المسبق قبل الدليل الجديد؟",
+    "بكم مرة يكون هذا الدليل أكثر احتمالاً إذا كانت الفرضية صحيحة مقارنة بخطئها؟",
+    "ما الاحتمال اللاحق، وما الذي سيحركه أكثر؟"
+   ],
+   "output": "belief log with prior, likelihood ratio, posterior per evidence item",
+   "check": "prior stated numerically before evidence, each update shows the ratio, and the posterior is arithmetically consistent",
+   "anti_pattern": "overreacting to vivid single data points or never updating from a stated prior",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 3227,
+     "title": "The Signal and the Noise: Why So Many Predictions Fail - But Some Don't",
+     "ratings": 26888
+    }
+   ]
+  },
+  {
+   "id": "outside-view",
+   "name_en": "Base Rates and the Outside View",
+   "name_ar": "معدلات الأساس والنظرة الخارجية",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "estimate",
+    "timeline",
+    "deadline",
+    "budget",
+    "forecast",
+    "success",
+    "duration"
+   ],
+   "triggers_ar": [
+    "تقدير",
+    "جدول",
+    "موعد",
+    "ميزانية",
+    "توقع",
+    "نجاح",
+    "مدة"
+   ],
+   "questions_en": [
+    "What reference class of similar projects or cases does this belong to?",
+    "What is the base rate of outcomes (duration, cost, success) in that class?",
+    "How much should our specific case adjust from that base rate, and why?"
+   ],
+   "questions_ar": [
+    "ما الفئة المرجعية من المشاريع أو الحالات المشابهة التي تنتمي إليها هذه؟",
+    "ما معدل الأساس للنتائج (المدة، التكلفة، النجاح) في تلك الفئة؟",
+    "كم يجب أن تعدل حالتنا عن معدل الأساس ولماذا؟"
+   ],
+   "output": "reference-class forecast: class definition, base rate with source, adjusted estimate and justification",
+   "check": "reference class has at least 5 comparable cases or a cited statistic, and adjustment is bounded and justified",
+   "anti_pattern": "picking a flattering reference class or ignoring it in favour of the inside story",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ]
+  },
+  {
+   "id": "system-1-system-2",
+   "name_en": "System 1 / System 2 Check",
+   "name_ar": "فحص النظام 1 والنظام 2",
+   "family": "decide",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "intuition",
+    "gut",
+    "quick",
+    "judgement",
+    "snap",
+    "feeling",
+    "obvious"
+   ],
+   "triggers_ar": [
+    "حدس",
+    "سريع",
+    "حكم",
+    "شعور",
+    "بديهي",
+    "انطباع"
+   ],
+   "questions_en": [
+    "Which of our conclusions came from fast intuition?",
+    "Is this a domain with regular feedback where intuition is reliable?",
+    "Which conclusions need slow, deliberate checking?"
+   ],
+   "questions_ar": [
+    "أي استنتاجاتنا جاءت من الحدس السريع؟",
+    "هل هذا مجال ذو تغذية راجعة منتظمة يكون فيه الحدس موثوقاً؟",
+    "أي الاستنتاجات تحتاج فحصاً متأنياً ومتعمداً؟"
+   ],
+   "output": "list of key judgements tagged intuitive or deliberate with a validity note and the ones re-checked",
+   "check": "every key judgement tagged, intuitive ones in low-validity domains are re-derived explicitly",
+   "anti_pattern": "slowing down every trivial choice, or trusting intuition in noisy, low-feedback domains",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ]
+  },
+  {
+   "id": "wrap-process",
+   "name_en": "WRAP Decision Process",
+   "name_ar": "عملية WRAP لاتخاذ القرار",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Decisive",
+     "author": "Chip Heath, Dan Heath",
+     "year": 2013
+    }
+   ],
+   "triggers_en": [
+    "decide",
+    "choice",
+    "whether",
+    "option",
+    "dilemma",
+    "hire",
+    "choose"
+   ],
+   "triggers_ar": [
+    "قرار",
+    "اختيار",
+    "هل",
+    "خيار",
+    "معضلة",
+    "توظيف"
+   ],
+   "questions_en": [
+    "How can we Widen our options beyond 'whether or not'?",
+    "How can we Reality-test our assumptions?",
+    "How do we Attain distance before deciding and Prepare to be wrong?"
+   ],
+   "questions_ar": [
+    "كيف نوسع خياراتنا بعيداً عن \"نفعل أو لا نفعل\"؟",
+    "كيف نختبر افتراضاتنا على أرض الواقع؟",
+    "كيف نأخذ مسافة قبل القرار ونستعد لاحتمال الخطأ؟"
+   ],
+   "output": "decision brief covering widened options, reality tests, distancing check and tripwires",
+   "check": "at least 3 options, at least 1 reality test executed or planned, and at least 1 tripwire with a date or metric",
+   "anti_pattern": "skipping 'widen' and evaluating a single yes/no option",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "resulting-decision-quality",
+   "name_en": "Decision Quality vs Outcome Quality (Resulting)",
+   "name_ar": "جودة القرار مقابل جودة النتيجة",
+   "family": "decide",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Thinking in Bets",
+     "author": "Annie Duke",
+     "year": 2018
+    }
+   ],
+   "triggers_en": [
+    "postmortem",
+    "outcome",
+    "luck",
+    "review",
+    "result",
+    "blame",
+    "retrospective"
+   ],
+   "triggers_ar": [
+    "مراجعة",
+    "نتيجة",
+    "حظ",
+    "لوم",
+    "حصيلة",
+    "تقييم"
+   ],
+   "questions_en": [
+    "What did we know and what could we have known when we decided?",
+    "Was the outcome driven by decision quality or by luck?",
+    "What would we change in the process, not just the result?"
+   ],
+   "questions_ar": [
+    "ماذا كنا نعرف وماذا كان يمكن أن نعرف عند اتخاذ القرار؟",
+    "هل كانت النتيجة مدفوعة بجودة القرار أم بالحظ؟",
+    "ما الذي سنغيره في العملية وليس في النتيجة فقط؟"
+   ],
+   "output": "decision review separating information available, process quality, luck factors and process changes",
+   "check": "review lists information known at the time, rates process independently of outcome, and names at least 1 process change",
+   "anti_pattern": "judging decisions solely by their outcomes",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "kepner-tregoe",
+   "name_en": "Kepner-Tregoe Decision Analysis",
+   "name_ar": "تحليل القرار بطريقة كيبنر-تريغو",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Rational Manager",
+     "author": "Charles H. Kepner, Benjamin B. Tregoe",
+     "year": 1965
+    }
+   ],
+   "triggers_en": [
+    "vendor",
+    "selection",
+    "criteria",
+    "must",
+    "want",
+    "alternative",
+    "procurement"
+   ],
+   "triggers_ar": [
+    "مورد",
+    "اختيار",
+    "معايير",
+    "ضروري",
+    "مرغوب",
+    "بديل"
+   ],
+   "questions_en": [
+    "What are the must criteria (pass/fail) and want criteria (weighted)?",
+    "Which alternatives pass all musts, and how do they score on wants?",
+    "What adverse consequences does the leading alternative carry?"
+   ],
+   "questions_ar": [
+    "ما المعايير الإلزامية (نجاح/رسوب) والمعايير المرغوبة (موزونة)؟",
+    "أي البدائل تجتاز كل الإلزاميات وكيف تُقيّم على المرغوبات؟",
+    "ما العواقب السلبية التي يحملها البديل المتصدر؟"
+   ],
+   "output": "decision table with musts, weighted wants, scores per alternative and adverse-consequence analysis of the top choice",
+   "check": "musts are binary, weights set before scoring, totals computed, and top choice has at least 2 risks with probability and severity",
+   "anti_pattern": "setting weights after scoring to favour a preferred option",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "satisficing",
+   "name_en": "Satisficing",
+   "name_ar": "الاكتفاء بالحل المُرضي",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Sciences of the Artificial",
+     "author": "Herbert A. Simon",
+     "year": 1969
+    }
+   ],
+   "triggers_en": [
+    "good",
+    "enough",
+    "search",
+    "time",
+    "tradeoff",
+    "perfect",
+    "threshold"
+   ],
+   "triggers_ar": [
+    "كافي",
+    "بحث",
+    "وقت",
+    "مقايضة",
+    "مثالي",
+    "حد"
+   ],
+   "questions_en": [
+    "What is the minimum acceptable level on each criterion?",
+    "How much search cost are we willing to spend?",
+    "Which first option meets all thresholds?"
+   ],
+   "questions_ar": [
+    "ما الحد الأدنى المقبول على كل معيار؟",
+    "كم من تكلفة البحث نحن مستعدون لإنفاقه؟",
+    "ما أول خيار يحقق كل الحدود؟"
+   ],
+   "output": "aspiration thresholds per criterion, search budget, and the first option that satisfies them",
+   "check": "thresholds written before evaluating options, the selected option meets every threshold, and search stayed within budget",
+   "anti_pattern": "satisficing on irreversible high-stakes decisions that deserve optimisation",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "ten-ten-ten",
+   "name_en": "10-10-10 Rule",
+   "name_ar": "قاعدة 10-10-10",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "10-10-10",
+     "author": "Suzy Welch",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "emotional",
+    "personal",
+    "dilemma",
+    "tradeoff",
+    "short",
+    "long",
+    "feelings"
+   ],
+   "triggers_ar": [
+    "عاطفي",
+    "شخصي",
+    "معضلة",
+    "قصير",
+    "طويل",
+    "مشاعر"
+   ],
+   "questions_en": [
+    "How will we feel about each option in 10 minutes?",
+    "How about in 10 months?",
+    "And in 10 years?"
+   ],
+   "questions_ar": [
+    "كيف سنشعر تجاه كل خيار بعد 10 دقائق؟",
+    "وبعد 10 أشهر؟",
+    "وبعد 10 سنوات؟"
+   ],
+   "output": "three-horizon consequence table per option with the chosen option",
+   "check": "each option has an entry at all three horizons and the choice is justified by the longer horizons where they conflict",
+   "anti_pattern": "letting the 10-minute emotion silently win",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "playing-to-win",
+   "name_en": "Playing to Win Strategy Cascade",
+   "name_ar": "سلسلة استراتيجية اللعب للفوز",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Playing to Win",
+     "author": "A. G. Lafley, Roger L. Martin",
+     "year": 2013
+    }
+   ],
+   "triggers_en": [
+    "strategy",
+    "market",
+    "compete",
+    "position",
+    "segment",
+    "capabilities",
+    "winning"
+   ],
+   "triggers_ar": [
+    "استراتيجية",
+    "سوق",
+    "منافسة",
+    "تموضع",
+    "شريحة",
+    "قدرات"
+   ],
+   "questions_en": [
+    "What is our winning aspiration?",
+    "Where will we play, and how will we win there?",
+    "What capabilities and management systems must be in place?"
+   ],
+   "questions_ar": [
+    "ما طموحنا للفوز؟",
+    "أين سنلعب، وكيف سنفوز هناك؟",
+    "ما القدرات وأنظمة الإدارة التي يجب أن تكون موجودة؟"
+   ],
+   "output": "five-box strategy cascade (aspiration, where to play, how to win, capabilities, systems)",
+   "check": "all five boxes filled, 'where to play' excludes at least one segment, and capabilities map to 'how to win'",
+   "anti_pattern": "choosing 'everywhere' as where to play",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "rapid-decision-roles",
+   "name_en": "RAPID Decision Roles",
+   "name_ar": "أدوار القرار RAPID",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Decide & Deliver",
+     "author": "Marcia W. Blenko, Michael C. Mankins, Paul Rogers",
+     "year": 2010
+    }
+   ],
+   "triggers_en": [
+    "owner",
+    "approve",
+    "stakeholders",
+    "accountability",
+    "roles",
+    "team",
+    "signoff"
+   ],
+   "triggers_ar": [
+    "مسؤول",
+    "موافقة",
+    "اصحاب",
+    "مساءلة",
+    "ادوار",
+    "فريق"
+   ],
+   "questions_en": [
+    "Who Recommends and who has the D (Decide)?",
+    "Who must Agree, who gives Input, and who Performs?",
+    "Is there exactly one decider?"
+   ],
+   "questions_ar": [
+    "من يوصي ومن يملك القرار؟",
+    "من يجب أن يوافق، ومن يقدم مدخلات، ومن ينفذ؟",
+    "هل هناك صاحب قرار واحد فقط؟"
+   ],
+   "output": "RAPID role table for each key decision",
+   "check": "every key decision has exactly one D, at least one R, and named P owners",
+   "anti_pattern": "giving 'Agree' veto to so many people that nothing gets decided",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "decision-hygiene-mediating-assessments",
+   "name_en": "Decision Hygiene (Mediating Assessments Protocol)",
+   "name_ar": "نظافة القرار (بروتوكول التقييمات الوسيطة)",
+   "family": "decide",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Noise",
+     "author": "Daniel Kahneman, Olivier Sibony, Cass R. Sunstein",
+     "year": 2021
+    }
+   ],
+   "triggers_en": [
+    "judgement",
+    "evaluate",
+    "hire",
+    "review",
+    "score",
+    "consistency",
+    "panel"
+   ],
+   "triggers_ar": [
+    "حكم",
+    "تقييم",
+    "توظيف",
+    "مراجعة",
+    "درجات",
+    "اتساق"
+   ],
+   "questions_en": [
+    "Which independent dimensions should the judgement be decomposed into?",
+    "Are assessors scoring each dimension independently before discussion?",
+    "Is the final holistic judgement delayed until all dimensions are scored?"
+   ],
+   "questions_ar": [
+    "إلى أي أبعاد مستقلة يجب تفكيك الحكم؟",
+    "هل يقيّم المقيّمون كل بعد باستقلال قبل النقاش؟",
+    "هل الحكم الشامل النهائي مؤجل حتى تُقيّم كل الأبعاد؟"
+   ],
+   "output": "assessment sheet of independent dimension scores per assessor and a delayed final judgement",
+   "check": "at least 4 dimensions, at least 2 independent assessors, scores recorded before discussion, and noise (spread) reported",
+   "anti_pattern": "letting one dimension's impression contaminate the others (halo)",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "fermi-estimation",
+   "name_en": "Fermi Estimation",
+   "name_ar": "تقدير فيرمي",
+   "family": "decide",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Guesstimation",
+     "author": "Lawrence Weinstein, John A. Adam",
+     "year": 2008
+    }
+   ],
+   "triggers_en": [
+    "estimate",
+    "size",
+    "market",
+    "how",
+    "many",
+    "rough",
+    "calculate"
+   ],
+   "triggers_ar": [
+    "تقدير",
+    "حجم",
+    "سوق",
+    "كم",
+    "تقريبي",
+    "حساب"
+   ],
+   "questions_en": [
+    "Which factors multiply to give the quantity we need?",
+    "What reasonable bounds can we put on each factor?",
+    "What order-of-magnitude result follows, and which factor dominates uncertainty?"
+   ],
+   "questions_ar": [
+    "ما العوامل التي تتضاعف لتعطي الكمية المطلوبة؟",
+    "ما الحدود المعقولة لكل عامل؟",
+    "ما النتيجة بمرتبة الحجم، وأي عامل يهيمن على عدم اليقين؟"
+   ],
+   "output": "factor decomposition with low/high bounds per factor and an order-of-magnitude estimate",
+   "check": "at least 3 factors with bounds, arithmetic shown, and result reported as a range with the dominant factor named",
+   "anti_pattern": "presenting a Fermi estimate as a precise number",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "pre-mortem",
+   "name_en": "Pre-Mortem",
+   "name_ar": "التشريح المسبق للفشل",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Power of Intuition",
+     "author": "Gary Klein",
+     "year": 2003
+    },
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "launch",
+    "plan",
+    "project",
+    "risk",
+    "deadline",
+    "release",
+    "kickoff"
+   ],
+   "triggers_ar": [
+    "اطلاق",
+    "خطة",
+    "مشروع",
+    "مخاطر",
+    "موعد",
+    "اصدار"
+   ],
+   "questions_en": [
+    "Imagine it is months later and the project failed: what happened?",
+    "Which failure stories are most plausible and most damaging?",
+    "What changes to the plan now prevent or detect them?"
+   ],
+   "questions_ar": [
+    "تخيل أنه بعد أشهر وقد فشل المشروع: ماذا حدث؟",
+    "أي قصص الفشل أكثر معقولية وضرراً؟",
+    "ما التغييرات على الخطة الآن التي تمنعها أو تكشفها؟"
+   ],
+   "output": "list of failure stories ranked by likelihood x impact with a mitigation or early-warning signal each",
+   "check": "at least 5 failure stories, top 3 each have a mitigation owner and a detection signal added to the plan",
+   "anti_pattern": "running it as a polite risk list without the vivid 'it already failed' frame, or ignoring the results",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ]
+  },
+  {
+   "id": "red-team",
+   "name_en": "Red Teaming",
+   "name_ar": "الفريق الأحمر",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Red Team: How to Succeed by Thinking Like the Enemy",
+     "author": "Micah Zenko",
+     "year": 2015
+    }
+   ],
+   "triggers_en": [
+    "security",
+    "attack",
+    "adversary",
+    "review",
+    "challenge",
+    "threat",
+    "exploit"
+   ],
+   "triggers_ar": [
+    "امن",
+    "هجوم",
+    "خصم",
+    "مراجعة",
+    "تهديد",
+    "ثغرة"
+   ],
+   "questions_en": [
+    "How would a motivated adversary or critic defeat this plan or system?",
+    "Which assumptions would they exploit?",
+    "What did the independent challenge find, and what changed as a result?"
+   ],
+   "questions_ar": [
+    "كيف سيهزم خصم أو ناقد متحمس هذه الخطة أو النظام؟",
+    "أي افتراضات سيستغلها؟",
+    "ماذا وجد التحدي المستقل، وما الذي تغير نتيجة لذلك؟"
+   ],
+   "output": "red-team findings list with severity, exploited assumption and remediation status",
+   "check": "red team independent of builders, at least 3 findings with severity, and each high finding has a fix or accepted-risk sign-off",
+   "anti_pattern": "red team that is captured by the team it reviews or whose findings are ignored",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "antifragility",
+   "name_en": "Antifragility",
+   "name_ar": "مضادة الهشاشة",
+   "family": "risk",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Antifragile",
+     "author": "Nassim Nicholas Taleb",
+     "year": 2012
+    }
+   ],
+   "triggers_en": [
+    "volatility",
+    "stress",
+    "shock",
+    "resilience",
+    "robust",
+    "uncertainty",
+    "scale"
+   ],
+   "triggers_ar": [
+    "تقلب",
+    "ضغط",
+    "صدمة",
+    "مرونة",
+    "متانة",
+    "عدم يقين"
+   ],
+   "questions_en": [
+    "Is this system fragile, robust or antifragile to volatility?",
+    "Where does it lose a lot from shocks and gain little?",
+    "How can we add optionality so stressors make it stronger?"
+   ],
+   "questions_ar": [
+    "هل هذا النظام هش أم متين أم مضاد للهشاشة تجاه التقلب؟",
+    "أين يخسر كثيراً من الصدمات ويكسب قليلاً؟",
+    "كيف نضيف خيارات بحيث تجعله الضغوط أقوى؟"
+   ],
+   "output": "fragility map of components with the shape of their response to shocks and optionality changes",
+   "check": "each component labelled fragile/robust/antifragile with a stressor example, and at least 2 changes that convert a fragile exposure",
+   "anti_pattern": "confusing antifragility with mere robustness, or inviting unhedged shocks",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 5529,
+     "title": "Antifragile: Things That Gain from Disorder",
+     "ratings": 16184
+    }
+   ]
+  },
+  {
+   "id": "margin-of-safety",
+   "name_en": "Margin of Safety",
+   "name_ar": "هامش الأمان",
+   "family": "risk",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "The Intelligent Investor",
+     "author": "Benjamin Graham",
+     "year": 1949
+    },
+    {
+     "title": "Margin of Safety",
+     "author": "Seth A. Klarman",
+     "year": 1991
+    }
+   ],
+   "triggers_en": [
+    "buffer",
+    "capacity",
+    "budget",
+    "estimate",
+    "tolerance",
+    "deadline",
+    "reserve"
+   ],
+   "triggers_ar": [
+    "هامش",
+    "سعة",
+    "ميزانية",
+    "تقدير",
+    "تحمل",
+    "احتياطي"
+   ],
+   "questions_en": [
+    "What is our best estimate of the requirement (load, cost, time)?",
+    "How wrong could that estimate plausibly be?",
+    "What buffer do we build in so that being wrong is survivable?"
+   ],
+   "questions_ar": [
+    "ما أفضل تقدير لدينا للمتطلب (الحمل، التكلفة، الوقت)؟",
+    "إلى أي حد قد يكون هذا التقدير خاطئاً بشكل معقول؟",
+    "ما الهامش الذي نبنيه بحيث يكون الخطأ قابلاً للتحمل؟"
+   ],
+   "output": "table of key estimates with error range and the chosen buffer per item",
+   "check": "every critical estimate has an error range and a buffer at least as large as the plausible error, stated numerically",
+   "anti_pattern": "padding everything uniformly so buffers become waste and are consumed by Parkinson's law",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 3695,
+     "title": "The Intelligent Investor",
+     "ratings": 29825
+    }
+   ]
+  },
+  {
+   "id": "black-swan",
+   "name_en": "Black Swan Awareness",
+   "name_ar": "الوعي بالبجعات السوداء",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Black Swan",
+     "author": "Nassim Nicholas Taleb",
+     "year": 2007
+    }
+   ],
+   "triggers_en": [
+    "rare",
+    "extreme",
+    "tail",
+    "catastrophe",
+    "unexpected",
+    "outlier",
+    "crash"
+   ],
+   "triggers_ar": [
+    "نادر",
+    "متطرف",
+    "كارثة",
+    "غير متوقع",
+    "شاذ",
+    "انهيار"
+   ],
+   "questions_en": [
+    "Which rare, high-impact events would our model not anticipate?",
+    "Are we in a domain with fat tails (Extremistan) or thin tails?",
+    "How can we limit exposure to negative tails and keep exposure to positive ones?"
+   ],
+   "questions_ar": [
+    "ما الأحداث النادرة عالية الأثر التي لن يتوقعها نموذجنا؟",
+    "هل نحن في مجال ذي ذيول سميكة أم رفيعة؟",
+    "كيف نحد من التعرض للذيول السلبية ونحافظ على التعرض للإيجابية؟"
+   ],
+   "output": "tail-exposure list with domain classification and exposure limits",
+   "check": "domain classified with justification, at least 3 tail events listed, and each negative tail has an exposure cap",
+   "anti_pattern": "pretending to predict specific black swans instead of limiting exposure",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 1516,
+     "title": "The Black Swan: The Impact of the Highly Improbable",
+     "ratings": 53586
+    }
+   ]
+  },
+  {
+   "id": "barbell-strategy",
+   "name_en": "Barbell Strategy",
+   "name_ar": "استراتيجية الحديدة (الدمبل)",
+   "family": "risk",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Antifragile",
+     "author": "Nassim Nicholas Taleb",
+     "year": 2012
+    }
+   ],
+   "triggers_en": [
+    "portfolio",
+    "allocation",
+    "experiment",
+    "safe",
+    "bet",
+    "invest",
+    "balance"
+   ],
+   "triggers_ar": [
+    "محفظة",
+    "توزيع",
+    "تجربة",
+    "امن",
+    "رهان",
+    "توازن"
+   ],
+   "questions_en": [
+    "What portion can be kept extremely safe?",
+    "What small portion can go into high-upside, capped-downside bets?",
+    "Are we avoiding the fragile middle?"
+   ],
+   "questions_ar": [
+    "ما الجزء الذي يمكن إبقاؤه آمناً جداً؟",
+    "ما الجزء الصغير الذي يمكن وضعه في رهانات عالية العائد ومحدودة الخسارة؟",
+    "هل نتجنب المنطقة الوسطى الهشة؟"
+   ],
+   "output": "allocation split between safe core and capped speculative bets, with loss caps",
+   "check": "percentages sum to 100, each speculative bet has a maximum loss, and no allocation sits in the medium-risk middle without reason",
+   "anti_pattern": "labelling a reckless portfolio as a barbell without a truly safe side",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 5529,
+     "title": "Antifragile: Things That Gain from Disorder",
+     "ratings": 16184
+    }
+   ]
+  },
+  {
+   "id": "cognitive-bias-checklist",
+   "name_en": "Cognitive Bias Checklist",
+   "name_ar": "قائمة فحص التحيزات المعرفية",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Art of Thinking Clearly",
+     "author": "Rolf Dobelli",
+     "year": 2013
+    },
+    {
+     "title": "Thinking, Fast and Slow",
+     "author": "Daniel Kahneman",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "bias",
+    "review",
+    "judgement",
+    "confident",
+    "assumption",
+    "sure",
+    "decision"
+   ],
+   "triggers_ar": [
+    "تحيز",
+    "مراجعة",
+    "حكم",
+    "ثقة",
+    "افتراض",
+    "متاكد"
+   ],
+   "questions_en": [
+    "Which biases are most likely here (confirmation, anchoring, sunk cost, overconfidence, availability, groupthink)?",
+    "What evidence shows each bias is or is not operating?",
+    "What debiasing step addresses each operating bias?"
+   ],
+   "questions_ar": [
+    "ما التحيزات الأرجح هنا (التأكيد، الارتكاز، التكلفة الغارقة، الثقة المفرطة، الإتاحة، التفكير الجمعي)؟",
+    "ما الدليل على أن كل تحيز يعمل أو لا يعمل؟",
+    "ما خطوة إزالة التحيز التي تعالج كل تحيز فاعل؟"
+   ],
+   "output": "bias checklist with present/absent verdict, evidence and a debiasing action for each present bias",
+   "check": "at least 6 biases checked, each verdict cites evidence, and each present bias has a concrete countermeasure",
+   "anti_pattern": "citing biases to dismiss opponents rather than auditing one's own reasoning",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 8601,
+     "title": "Die Kunst des klaren Denkens",
+     "ratings": 8367
+    },
+    {
+     "book_id": 619,
+     "title": "Thinking, Fast and Slow",
+     "ratings": 136950
+    }
+   ]
+  },
+  {
+   "id": "fmea",
+   "name_en": "Failure Mode and Effects Analysis (FMEA)",
+   "name_ar": "تحليل أنماط الفشل وآثارها",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Basics of FMEA",
+     "author": "Robin E. McDermott, Raymond J. Mikulak, Michael R. Beauregard",
+     "year": 1996
+    }
+   ],
+   "triggers_en": [
+    "reliability",
+    "component",
+    "failure",
+    "safety",
+    "hardware",
+    "process",
+    "severity"
+   ],
+   "triggers_ar": [
+    "موثوقية",
+    "مكون",
+    "فشل",
+    "سلامة",
+    "عملية",
+    "خطورة"
+   ],
+   "questions_en": [
+    "How can each component or step fail?",
+    "What are the severity, occurrence and detection ratings of each failure mode?",
+    "Which highest-risk modes get corrective actions first?"
+   ],
+   "questions_ar": [
+    "كيف يمكن أن يفشل كل مكون أو خطوة؟",
+    "ما تقييمات الخطورة والتكرار والكشف لكل نمط فشل؟",
+    "أي الأنماط الأعلى خطراً تحصل على إجراءات تصحيحية أولاً؟"
+   ],
+   "output": "FMEA table: item, failure mode, effect, S/O/D scores, RPN and corrective action",
+   "check": "every item has at least 1 failure mode, RPN = S x O x D computed, and top RPNs have actions with owners",
+   "anti_pattern": "treating RPN as precise and ignoring high-severity low-RPN modes",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "via-negativa",
+   "name_en": "Via Negativa",
+   "name_ar": "طريق النفي (التحسين بالحذف)",
+   "family": "risk",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Antifragile",
+     "author": "Nassim Nicholas Taleb",
+     "year": 2012
+    }
+   ],
+   "triggers_en": [
+    "remove",
+    "simplify",
+    "subtract",
+    "cleanup",
+    "reduce",
+    "bloat",
+    "dependencies"
+   ],
+   "triggers_ar": [
+    "حذف",
+    "تبسيط",
+    "طرح",
+    "تنظيف",
+    "تقليل",
+    "تضخم"
+   ],
+   "questions_en": [
+    "What can be removed rather than added to improve this?",
+    "Which components carry risk without proportional benefit?",
+    "What breaks if we remove each candidate?"
+   ],
+   "questions_ar": [
+    "ما الذي يمكن حذفه بدلاً من إضافته لتحسين هذا؟",
+    "أي المكونات تحمل مخاطرة دون فائدة متناسبة؟",
+    "ما الذي سينكسر إذا حذفنا كل مرشح؟"
+   ],
+   "output": "removal list with expected risk reduction and a breakage check per item",
+   "check": "at least 3 removal candidates, each with a breakage test result, and net complexity reduced",
+   "anti_pattern": "removing load-bearing parts without checking why they exist",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 5529,
+     "title": "Antifragile: Things That Gain from Disorder",
+     "ratings": 16184
+    }
+   ]
+  },
+  {
+   "id": "swiss-cheese-model",
+   "name_en": "Swiss Cheese Model",
+   "name_ar": "نموذج الجبنة السويسرية",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Human Error",
+     "author": "James Reason",
+     "year": 1990
+    }
+   ],
+   "triggers_en": [
+    "safety",
+    "incident",
+    "defense",
+    "layers",
+    "accident",
+    "controls",
+    "failsafe"
+   ],
+   "triggers_ar": [
+    "سلامة",
+    "حادث",
+    "دفاع",
+    "طبقات",
+    "ضوابط",
+    "حماية"
+   ],
+   "questions_en": [
+    "What layers of defence stand between hazard and harm?",
+    "Where are the holes in each layer (active failures and latent conditions)?",
+    "Which holes could line up, and which layer should we strengthen?"
+   ],
+   "questions_ar": [
+    "ما طبقات الدفاع بين الخطر والضرر؟",
+    "أين الثقوب في كل طبقة (إخفاقات نشطة وظروف كامنة)؟",
+    "أي الثقوب قد تصطف، وأي طبقة يجب تقويتها؟"
+   ],
+   "output": "layer diagram listing defences, known holes per layer and aligned-hole scenarios",
+   "check": "at least 3 layers, each with at least 1 identified hole, and at least 1 aligned-hole scenario with a fix",
+   "anti_pattern": "blaming the last person in the chain instead of fixing latent conditions",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "scenario-planning",
+   "name_en": "Scenario Planning",
+   "name_ar": "التخطيط بالسيناريوهات",
+   "family": "risk",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "The Art of the Long View",
+     "author": "Peter Schwartz",
+     "year": 1991
+    }
+   ],
+   "triggers_en": [
+    "future",
+    "uncertainty",
+    "scenario",
+    "longterm",
+    "trend",
+    "plan",
+    "market"
+   ],
+   "triggers_ar": [
+    "مستقبل",
+    "عدم يقين",
+    "سيناريو",
+    "بعيد",
+    "اتجاه",
+    "سوق"
+   ],
+   "questions_en": [
+    "What are the two most critical and uncertain driving forces?",
+    "What plausible, distinct scenarios result from their combinations?",
+    "Which strategy is robust across scenarios, and what signposts tell us which is unfolding?"
+   ],
+   "questions_ar": [
+    "ما القوتان الدافعتان الأكثر حرجاً وعدم يقين؟",
+    "ما السيناريوهات المعقولة والمتمايزة الناتجة عن تركيباتهما؟",
+    "أي استراتيجية تصمد عبر السيناريوهات، وما المؤشرات التي تخبرنا أيها يتحقق؟"
+   ],
+   "output": "2x2 scenario set with narratives, implications per scenario and signposts",
+   "check": "exactly 2 axes of critical uncertainty, 4 named scenarios, a robust action list, and at least 1 signpost per scenario",
+   "anti_pattern": "treating one scenario as the forecast and the rest as decoration",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "normal-accidents",
+   "name_en": "Tight Coupling and Interactive Complexity",
+   "name_ar": "الاقتران المحكم والتعقيد التفاعلي",
+   "family": "risk",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Normal Accidents",
+     "author": "Charles Perrow",
+     "year": 1984
+    }
+   ],
+   "triggers_en": [
+    "coupling",
+    "cascade",
+    "dependency",
+    "outage",
+    "infrastructure",
+    "complexity",
+    "failure"
+   ],
+   "triggers_ar": [
+    "اقتران",
+    "تتابع",
+    "اعتماد",
+    "انقطاع",
+    "بنية",
+    "تعقيد"
+   ],
+   "questions_en": [
+    "Which parts are tightly coupled, with little slack or time to intervene?",
+    "Where can failures interact in unexpected ways?",
+    "How can we loosen coupling or reduce interactive complexity?"
+   ],
+   "questions_ar": [
+    "أي الأجزاء مقترنة بإحكام، بلا مرونة أو وقت للتدخل؟",
+    "أين يمكن أن تتفاعل الإخفاقات بطرق غير متوقعة؟",
+    "كيف نخفف الاقتران أو نقلل التعقيد التفاعلي؟"
+   ],
+   "output": "coupling/complexity map of components with cascade paths and decoupling actions",
+   "check": "each component rated on coupling and complexity, at least 2 cascade paths traced, and at least 1 decoupling change specified",
+   "anti_pattern": "adding more safety mechanisms that themselves add interactive complexity",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "stocks-and-flows",
+   "name_en": "Stocks and Flows",
+   "name_ar": "المخزونات والتدفقات",
+   "family": "systems",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Thinking in Systems: A Primer",
+     "author": "Donella H. Meadows",
+     "year": 2008
+    }
+   ],
+   "triggers_en": [
+    "accumulate",
+    "backlog",
+    "inventory",
+    "growth",
+    "rate",
+    "balance",
+    "churn"
+   ],
+   "triggers_ar": [
+    "تراكم",
+    "متاخرات",
+    "مخزون",
+    "نمو",
+    "معدل",
+    "توازن"
+   ],
+   "questions_en": [
+    "What accumulates in this system (the stocks)?",
+    "What inflows and outflows change each stock, and at what rates?",
+    "What delays exist between flow changes and stock changes?"
+   ],
+   "questions_ar": [
+    "ما الذي يتراكم في هذا النظام (المخزونات)؟",
+    "ما التدفقات الداخلة والخارجة التي تغير كل مخزون وبأي معدلات؟",
+    "ما التأخيرات بين تغير التدفقات وتغير المخزونات؟"
+   ],
+   "output": "stock-and-flow diagram with named stocks, inflows, outflows, rates and delays",
+   "check": "every stock has at least one inflow and outflow, units are consistent, and at least one delay is quantified",
+   "anti_pattern": "confusing stocks with flows (e.g. treating sign-ups as users)",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "leverage-points",
+   "name_en": "Leverage Points",
+   "name_ar": "نقاط الرافعة",
+   "family": "systems",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Thinking in Systems: A Primer",
+     "author": "Donella H. Meadows",
+     "year": 2008
+    }
+   ],
+   "triggers_en": [
+    "intervention",
+    "change",
+    "policy",
+    "incentive",
+    "rules",
+    "goal",
+    "paradigm"
+   ],
+   "triggers_ar": [
+    "تدخل",
+    "تغيير",
+    "سياسة",
+    "حوافز",
+    "قواعد",
+    "هدف"
+   ],
+   "questions_en": [
+    "Where could we intervene: parameters, buffers, structure, delays, feedback, information flows, rules, goals or paradigms?",
+    "Which interventions are higher on the leverage ladder?",
+    "Which high-leverage intervention is feasible now?"
+   ],
+   "questions_ar": [
+    "أين يمكن أن نتدخل: المعاملات، المخازن، البنية، التأخيرات، التغذية الراجعة، تدفق المعلومات، القواعد، الأهداف أم النماذج الفكرية؟",
+    "أي التدخلات أعلى في سلم الرافعة؟",
+    "أي تدخل عالي الرافعة ممكن الآن؟"
+   ],
+   "output": "list of candidate interventions classified by leverage level with feasibility and expected effect",
+   "check": "at least 5 interventions across at least 3 leverage levels, and the chosen one is above 'parameters' or justified",
+   "anti_pattern": "spending all effort tweaking numbers (parameters) while ignoring rules and goals",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "feedback-loops",
+   "name_en": "Reinforcing and Balancing Feedback Loops",
+   "name_ar": "حلقات التغذية الراجعة المعززة والموازنة",
+   "family": "systems",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Thinking in Systems: A Primer",
+     "author": "Donella H. Meadows",
+     "year": 2008
+    },
+    {
+     "title": "The Fifth Discipline",
+     "author": "Peter M. Senge",
+     "year": 1990
+    }
+   ],
+   "triggers_en": [
+    "loop",
+    "virality",
+    "growth",
+    "spiral",
+    "equilibrium",
+    "feedback",
+    "network"
+   ],
+   "triggers_ar": [
+    "حلقة",
+    "انتشار",
+    "نمو",
+    "دوامة",
+    "توازن",
+    "تغذية راجعة"
+   ],
+   "questions_en": [
+    "Which reinforcing loops amplify change here?",
+    "Which balancing loops resist change or seek a goal?",
+    "Which loop currently dominates, and what could shift dominance?"
+   ],
+   "questions_ar": [
+    "أي الحلقات المعززة تضخم التغيير هنا؟",
+    "أي الحلقات الموازنة تقاوم التغيير أو تسعى نحو هدف؟",
+    "أي حلقة تهيمن حالياً، وما الذي قد يغير الهيمنة؟"
+   ],
+   "output": "loop inventory labelled R or B with the variables in each and the currently dominant loop",
+   "check": "at least 1 R and 1 B loop, each loop's polarity check is consistent, and dominance claim cites data",
+   "anti_pattern": "drawing loops without checking link polarities",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 5424,
+     "title": "The Fifth Discipline: The Art & Practice of The Learning Organization",
+     "ratings": 20935
+    }
+   ]
+  },
+  {
+   "id": "system-archetypes",
+   "name_en": "System Archetypes",
+   "name_ar": "النماذج الأصلية للأنظمة",
+   "family": "systems",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "The Fifth Discipline",
+     "author": "Peter M. Senge",
+     "year": 1990
+    }
+   ],
+   "triggers_en": [
+    "pattern",
+    "recurring",
+    "fix",
+    "backfire",
+    "limits",
+    "tragedy",
+    "escalation"
+   ],
+   "triggers_ar": [
+    "نمط",
+    "متكرر",
+    "اصلاح",
+    "ارتداد",
+    "حدود",
+    "تصعيد"
+   ],
+   "questions_en": [
+    "Does the situation match an archetype (fixes that fail, shifting the burden, limits to growth, tragedy of the commons, escalation, success to the successful)?",
+    "What structure produces the recurring behaviour?",
+    "What is the archetype's known high-leverage response?"
+   ],
+   "questions_ar": [
+    "هل يطابق الوضع نموذجاً أصلياً (إصلاحات تفشل، نقل العبء، حدود النمو، مأساة المشاع، التصعيد، النجاح للناجح)؟",
+    "ما البنية التي تنتج السلوك المتكرر؟",
+    "ما الاستجابة عالية الرافعة المعروفة لهذا النموذج؟"
+   ],
+   "output": "matched archetype diagram mapped to task variables plus the recommended structural response",
+   "check": "archetype variables mapped one-to-one to real task variables and the response targets a loop, not a symptom",
+   "anti_pattern": "forcing a superficial archetype match with no evidence of the structure",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 5424,
+     "title": "The Fifth Discipline: The Art & Practice of The Learning Organization",
+     "ratings": 20935
+    }
+   ]
+  },
+  {
+   "id": "theory-of-constraints",
+   "name_en": "Theory of Constraints",
+   "name_ar": "نظرية القيود",
+   "family": "systems",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Goal",
+     "author": "Eliyahu M. Goldratt, Jeff Cox",
+     "year": 1984
+    }
+   ],
+   "triggers_en": [
+    "bottleneck",
+    "throughput",
+    "slow",
+    "pipeline",
+    "capacity",
+    "queue",
+    "delivery"
+   ],
+   "triggers_ar": [
+    "عنق الزجاجة",
+    "انتاجية",
+    "بطء",
+    "خط",
+    "سعة",
+    "طابور"
+   ],
+   "questions_en": [
+    "What is the single constraint limiting throughput now?",
+    "How can we exploit and subordinate everything else to it?",
+    "After elevating it, where does the constraint move?"
+   ],
+   "questions_ar": [
+    "ما القيد الواحد الذي يحد من الإنتاجية الآن؟",
+    "كيف نستغله ونُخضع كل شيء آخر له؟",
+    "بعد رفعه، إلى أين ينتقل القيد؟"
+   ],
+   "output": "constraint identification with throughput measurements and the five focusing steps plan",
+   "check": "constraint chosen from measured queue/throughput data, the plan includes exploit and subordinate steps, and throughput is re-measured after change",
+   "anti_pattern": "optimising non-bottleneck steps, which adds no throughput",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 2132,
+     "title": "The Goal",
+     "ratings": 34837
+    }
+   ]
+  },
+  {
+   "id": "wardley-mapping",
+   "name_en": "Wardley Mapping",
+   "name_ar": "خرائط واردلي",
+   "family": "systems",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Wardley Maps: Topographical Intelligence in Business",
+     "author": "Simon Wardley",
+     "year": 2018
+    }
+   ],
+   "triggers_en": [
+    "build",
+    "buy",
+    "outsource",
+    "commodity",
+    "evolution",
+    "platform",
+    "strategy"
+   ],
+   "triggers_ar": [
+    "بناء",
+    "شراء",
+    "اسناد",
+    "سلعة",
+    "تطور",
+    "منصة"
+   ],
+   "questions_en": [
+    "What user need anchors the map, and what value chain of components serves it?",
+    "Where is each component on the evolution axis (genesis, custom, product, commodity)?",
+    "What should we build, buy or use as utility given that position?"
+   ],
+   "questions_ar": [
+    "ما احتياج المستخدم الذي يرسي الخريطة، وما سلسلة القيمة من المكونات التي تخدمه؟",
+    "أين يقع كل مكون على محور التطور (نشأة، مخصص، منتج، سلعة)؟",
+    "ما الذي يجب أن نبنيه أو نشتريه أو نستخدمه كخدمة بناءً على ذلك؟"
+   ],
+   "output": "Wardley map: anchored value chain with components positioned on evolution and build/buy/outsource decisions",
+   "check": "anchor is a user need, every component has a dependency link and an evolution stage, and every commodity component is not custom-built without justification",
+   "anti_pattern": "drawing a map without movement or using it as a static architecture diagram",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "causal-loop-diagram",
+   "name_en": "Causal Loop Diagramming",
+   "name_ar": "مخططات الحلقات السببية",
+   "family": "systems",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Business Dynamics",
+     "author": "John D. Sterman",
+     "year": 2000
+    }
+   ],
+   "triggers_en": [
+    "causes",
+    "dynamics",
+    "model",
+    "influence",
+    "variables",
+    "unintended",
+    "policy"
+   ],
+   "triggers_ar": [
+    "اسباب",
+    "ديناميكيات",
+    "نموذج",
+    "تاثير",
+    "متغيرات",
+    "سياسة"
+   ],
+   "questions_en": [
+    "Which variables matter and how does each influence the others (+/-)?",
+    "Which closed loops and delays exist?",
+    "What policy experiments does the diagram suggest?"
+   ],
+   "questions_ar": [
+    "ما المتغيرات المهمة وكيف يؤثر كل منها على الآخر (+/-)؟",
+    "ما الحلقات المغلقة والتأخيرات الموجودة؟",
+    "ما تجارب السياسات التي يقترحها المخطط؟"
+   ],
+   "output": "causal loop diagram (as edge list with polarity and delay marks) and a list of policy experiments",
+   "check": "every edge has polarity, at least 2 closed loops identified, and at least 1 policy experiment linked to a loop",
+   "anti_pattern": "diagramming everything into an unreadable hairball",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "flow-queueing",
+   "name_en": "Product Development Flow and Queueing (Little's Law)",
+   "name_ar": "تدفق تطوير المنتج والطوابير (قانون ليتل)",
+   "family": "systems",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "The Principles of Product Development Flow",
+     "author": "Donald G. Reinertsen",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "queue",
+    "wip",
+    "cycle",
+    "batch",
+    "throughput",
+    "delay",
+    "leadtime"
+   ],
+   "triggers_ar": [
+    "طابور",
+    "عمل جاري",
+    "دورة",
+    "دفعة",
+    "انتاجية",
+    "تاخير"
+   ],
+   "questions_en": [
+    "How much work is in progress, and what is the arrival and completion rate?",
+    "What does Little's Law (cycle time = WIP / throughput) predict?",
+    "Which batch-size or WIP reductions cut cycle time, and what is the cost of delay?"
+   ],
+   "questions_ar": [
+    "كم العمل الجاري، وما معدل الوصول والإنجاز؟",
+    "ماذا يتنبأ قانون ليتل (زمن الدورة = العمل الجاري / الإنتاجية)؟",
+    "أي تقليصات في حجم الدفعة أو العمل الجاري تختصر زمن الدورة، وما تكلفة التأخير؟"
+   ],
+   "output": "queue analysis with WIP, throughput, computed cycle time, cost of delay and batch-size recommendation",
+   "check": "cycle time computed from measured WIP and throughput and compared with observed cycle time; recommendation quantified",
+   "anti_pattern": "maximising utilisation to near 100%, which explodes queues",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "viable-system-model",
+   "name_en": "Viable System Model",
+   "name_ar": "نموذج النظام القابل للحياة",
+   "family": "systems",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Brain of the Firm",
+     "author": "Stafford Beer",
+     "year": 1972
+    }
+   ],
+   "triggers_en": [
+    "organization",
+    "governance",
+    "autonomy",
+    "coordination",
+    "structure",
+    "control",
+    "team"
+   ],
+   "triggers_ar": [
+    "منظمة",
+    "حوكمة",
+    "استقلالية",
+    "تنسيق",
+    "هيكل",
+    "تحكم"
+   ],
+   "questions_en": [
+    "Which units do the primary work (System 1), and how are they coordinated (System 2)?",
+    "What provides operational control (3), environmental intelligence (4) and identity/policy (5)?",
+    "Which of the five functions is missing or overloaded?"
+   ],
+   "questions_ar": [
+    "ما الوحدات التي تؤدي العمل الأساسي (النظام 1)، وكيف تُنسَّق (النظام 2)؟",
+    "ما الذي يوفر التحكم التشغيلي (3) والاستخبارات البيئية (4) والهوية والسياسة (5)؟",
+    "أي الوظائف الخمس مفقودة أو مثقلة؟"
+   ],
+   "output": "VSM mapping of the organisation or agent system to Systems 1-5 with gaps identified",
+   "check": "all five systems mapped to named roles or components and at least 1 gap with a remedy",
+   "anti_pattern": "using VSM as a rigid org chart rather than a diagnostic of viability",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "galls-law",
+   "name_en": "Gall's Law",
+   "name_ar": "قانون غال",
+   "family": "systems",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Systemantics",
+     "author": "John Gall",
+     "year": 1975
+    }
+   ],
+   "triggers_en": [
+    "architecture",
+    "rewrite",
+    "platform",
+    "scale",
+    "monolith",
+    "bigbang",
+    "system"
+   ],
+   "triggers_ar": [
+    "معمارية",
+    "اعادة كتابة",
+    "منصة",
+    "توسع",
+    "نظام",
+    "ضخم"
+   ],
+   "questions_en": [
+    "Is there a simple version of this system that already works?",
+    "What is the smallest working system we can evolve from?",
+    "Are we designing a complex system from scratch?"
+   ],
+   "questions_ar": [
+    "هل توجد نسخة بسيطة من هذا النظام تعمل فعلاً؟",
+    "ما أصغر نظام عامل يمكننا التطور منه؟",
+    "هل نصمم نظاماً معقداً من الصفر؟"
+   ],
+   "output": "evolution path starting from a minimal working system with staged increments",
+   "check": "first stage is independently runnable and tested, and each later stage adds one capability with its own check",
+   "anti_pattern": "big-bang rewrites or full-spec designs never run end to end",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "conways-law-team-topologies",
+   "name_en": "Conway's Law and Team Topologies",
+   "name_ar": "قانون كونواي وطوبولوجيا الفرق",
+   "family": "systems",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Team Topologies",
+     "author": "Matthew Skelton, Manuel Pais",
+     "year": 2019
+    }
+   ],
+   "triggers_en": [
+    "team",
+    "architecture",
+    "ownership",
+    "microservices",
+    "organization",
+    "communication",
+    "platform"
+   ],
+   "triggers_ar": [
+    "فريق",
+    "معمارية",
+    "ملكية",
+    "خدمات",
+    "تنظيم",
+    "تواصل"
+   ],
+   "questions_en": [
+    "How do current team boundaries and communication paths shape the architecture?",
+    "Which team types (stream-aligned, platform, enabling, complicated-subsystem) fit the work?",
+    "What interaction modes should teams use?"
+   ],
+   "questions_ar": [
+    "كيف تشكل حدود الفرق ومسارات التواصل الحالية المعمارية؟",
+    "أي أنواع الفرق (موجهة للتدفق، منصة، تمكينية، نظام فرعي معقد) تناسب العمل؟",
+    "ما أنماط التفاعل التي يجب أن تستخدمها الفرق؟"
+   ],
+   "output": "team-to-component ownership map with team types and interaction modes",
+   "check": "every component has exactly one owning team, each team has a type, and cognitive load concerns are noted",
+   "anti_pattern": "reorganising teams without aligning architecture, or ignoring cognitive load",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "value-stream-mapping",
+   "name_en": "Value Stream Mapping",
+   "name_ar": "رسم خرائط تدفق القيمة",
+   "family": "systems",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Learning to See",
+     "author": "Mike Rother, John Shook",
+     "year": 1999
+    }
+   ],
+   "triggers_en": [
+    "process",
+    "waste",
+    "lead",
+    "handoff",
+    "workflow",
+    "lean",
+    "steps"
+   ],
+   "triggers_ar": [
+    "عملية",
+    "هدر",
+    "مهلة",
+    "تسليم",
+    "سير عمل",
+    "خطوات"
+   ],
+   "questions_en": [
+    "What are the steps from request to delivered value?",
+    "What is process time versus wait time at each step?",
+    "What future-state flow removes the largest waits and handoffs?"
+   ],
+   "questions_ar": [
+    "ما الخطوات من الطلب إلى القيمة المسلّمة؟",
+    "ما زمن المعالجة مقابل زمن الانتظار في كل خطوة؟",
+    "ما التدفق المستقبلي الذي يزيل أكبر فترات الانتظار والتسليمات؟"
+   ],
+   "output": "current-state and future-state value stream maps with process and wait times",
+   "check": "each step has measured process and wait time, flow efficiency computed, and the future state removes at least 1 step or wait",
+   "anti_pattern": "mapping from memory instead of walking the actual process",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "jobs-to-be-done",
+   "name_en": "Jobs to Be Done",
+   "name_ar": "الوظائف المطلوب إنجازها",
+   "family": "product",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Competing Against Luck",
+     "author": "Clayton M. Christensen, Taddy Hall, Karen Dillon, David S. Duncan",
+     "year": 2016
+    }
+   ],
+   "triggers_en": [
+    "customer",
+    "need",
+    "switch",
+    "hire",
+    "users",
+    "motivation",
+    "demand"
+   ],
+   "triggers_ar": [
+    "عميل",
+    "حاجة",
+    "تبديل",
+    "مستخدمين",
+    "دافع",
+    "طلب"
+   ],
+   "questions_en": [
+    "What progress is the customer trying to make in a specific circumstance?",
+    "What functional, emotional and social dimensions does the job have?",
+    "What are they 'hiring' today, and what makes them switch?"
+   ],
+   "questions_ar": [
+    "ما التقدم الذي يحاول العميل تحقيقه في ظرف محدد؟",
+    "ما الأبعاد الوظيفية والعاطفية والاجتماعية للوظيفة؟",
+    "ما الذي \"يوظفونه\" اليوم، وما الذي يدفعهم للتبديل؟"
+   ],
+   "output": "job statements (when..., I want to..., so I can...) with current solutions and switching forces",
+   "check": "at least 3 job statements grounded in user evidence, each with a current alternative and at least 1 push and 1 pull force",
+   "anti_pattern": "writing jobs as product features or demographic personas",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "kano-model",
+   "name_en": "Kano Model",
+   "name_ar": "نموذج كانو",
+   "family": "product",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The Lean Product Playbook",
+     "author": "Dan Olsen",
+     "year": 2015
+    }
+   ],
+   "triggers_en": [
+    "features",
+    "satisfaction",
+    "delight",
+    "basic",
+    "expectations",
+    "survey",
+    "roadmap"
+   ],
+   "triggers_ar": [
+    "ميزات",
+    "رضا",
+    "ابهار",
+    "اساسي",
+    "توقعات",
+    "استبيان"
+   ],
+   "questions_en": [
+    "Which features are must-haves whose absence causes dissatisfaction?",
+    "Which are performance features (more is better)?",
+    "Which are delighters users do not expect?"
+   ],
+   "questions_ar": [
+    "أي الميزات أساسية يسبب غيابها عدم الرضا؟",
+    "أيها ميزات أداء (كلما زاد كان أفضل)؟",
+    "أيها ميزات مبهرة لا يتوقعها المستخدمون؟"
+   ],
+   "output": "feature list classified must-be / performance / delighter / indifferent with evidence",
+   "check": "every feature classified, classification based on user responses or cited evidence, and all must-bes included in scope",
+   "anti_pattern": "assuming delighters stay delighters forever (they decay into must-bes)",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "ice-scoring",
+   "name_en": "ICE Scoring",
+   "name_ar": "تقييم ICE (الأثر، الثقة، السهولة)",
+   "family": "product",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Hacking Growth",
+     "author": "Sean Ellis, Morgan Brown",
+     "year": 2017
+    }
+   ],
+   "triggers_en": [
+    "experiments",
+    "growth",
+    "backlog",
+    "ideas",
+    "prioritize",
+    "test",
+    "score"
+   ],
+   "triggers_ar": [
+    "تجارب",
+    "نمو",
+    "قائمة",
+    "افكار",
+    "اولويات",
+    "اختبار"
+   ],
+   "questions_en": [
+    "What impact would each idea have on the target metric?",
+    "How confident are we in that impact, and why?",
+    "How easy is it to implement?"
+   ],
+   "questions_ar": [
+    "ما الأثر الذي ستحدثه كل فكرة على المقياس المستهدف؟",
+    "ما مدى ثقتنا في هذا الأثر ولماذا؟",
+    "ما مدى سهولة التنفيذ؟"
+   ],
+   "output": "ranked experiment backlog with Impact, Confidence, Ease scores and total",
+   "check": "every idea scored on the same scale, confidence references evidence, and the top item is the next experiment",
+   "anti_pattern": "inflating confidence scores without evidence",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "moscow",
+   "name_en": "MoSCoW Prioritisation",
+   "name_ar": "أولويات موسكو (يجب، ينبغي، يمكن، لن)",
+   "family": "product",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "DSDM: Dynamic Systems Development Method",
+     "author": "Jennifer Stapleton",
+     "year": 1997
+    }
+   ],
+   "triggers_en": [
+    "scope",
+    "requirements",
+    "release",
+    "deadline",
+    "mvp",
+    "must",
+    "priority"
+   ],
+   "triggers_ar": [
+    "نطاق",
+    "متطلبات",
+    "اصدار",
+    "موعد",
+    "ضروري",
+    "اولوية"
+   ],
+   "questions_en": [
+    "Which requirements are Must have for this release?",
+    "Which are Should have and Could have?",
+    "What Won't we do this time?"
+   ],
+   "questions_ar": [
+    "ما المتطلبات التي يجب توفرها في هذا الإصدار؟",
+    "أيها ينبغي توفرها وأيها يمكن توفرها؟",
+    "ما الذي لن نفعله هذه المرة؟"
+   ],
+   "output": "requirements list labelled Must/Should/Could/Won't for a defined timebox",
+   "check": "every requirement labelled, Musts fit within the timebox estimate, and Won't list is non-empty",
+   "anti_pattern": "labelling almost everything Must",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "opportunity-solution-tree",
+   "name_en": "Opportunity Solution Tree",
+   "name_ar": "شجرة الفرص والحلول",
+   "family": "product",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Continuous Discovery Habits",
+     "author": "Teresa Torres",
+     "year": 2021
+    }
+   ],
+   "triggers_en": [
+    "discovery",
+    "outcome",
+    "opportunity",
+    "interview",
+    "solution",
+    "experiment",
+    "metric"
+   ],
+   "triggers_ar": [
+    "اكتشاف",
+    "نتيجة",
+    "فرصة",
+    "مقابلة",
+    "حل",
+    "تجربة"
+   ],
+   "questions_en": [
+    "What desired outcome sits at the root?",
+    "Which customer opportunities (needs, pains, desires) could drive it?",
+    "Which solutions and assumption tests branch from the chosen opportunity?"
+   ],
+   "questions_ar": [
+    "ما النتيجة المرغوبة في الجذر؟",
+    "ما فرص العملاء (الاحتياجات، الآلام، الرغبات) التي قد تقودها؟",
+    "ما الحلول واختبارات الافتراضات المتفرعة من الفرصة المختارة؟"
+   ],
+   "output": "opportunity solution tree: outcome -> opportunities -> solutions -> assumption tests",
+   "check": "one measurable outcome, at least 3 opportunities from research, at least 3 solutions for the target opportunity, each with an assumption test",
+   "anti_pattern": "jumping from outcome straight to a single favourite solution",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "lean-canvas",
+   "name_en": "Lean Canvas",
+   "name_ar": "اللوحة الرشيقة",
+   "family": "product",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Running Lean",
+     "author": "Ash Maurya",
+     "year": 2012
+    }
+   ],
+   "triggers_en": [
+    "startup",
+    "idea",
+    "business",
+    "venture",
+    "pitch",
+    "market",
+    "model"
+   ],
+   "triggers_ar": [
+    "شركة ناشئة",
+    "فكرة",
+    "عمل",
+    "مشروع",
+    "سوق",
+    "نموذج"
+   ],
+   "questions_en": [
+    "What are the top 3 problems and customer segments?",
+    "What is the unique value proposition, solution and unfair advantage?",
+    "What are channels, revenue streams, cost structure and key metrics?"
+   ],
+   "questions_ar": [
+    "ما أهم 3 مشكلات وشرائح العملاء؟",
+    "ما عرض القيمة الفريد والحل والميزة غير القابلة للنسخ؟",
+    "ما القنوات ومصادر الإيراد وهيكل التكاليف والمقاييس الرئيسية؟"
+   ],
+   "output": "one-page lean canvas with all 9 boxes and the riskiest box flagged",
+   "check": "all 9 boxes filled, the riskiest assumption identified, and a test planned for it",
+   "anti_pattern": "filling the canvas once and treating it as validated",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "build-measure-learn",
+   "name_en": "Build-Measure-Learn Loop",
+   "name_ar": "حلقة ابنِ، قِس، تعلّم",
+   "family": "product",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "The Lean Startup",
+     "author": "Eric Ries",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "experiment",
+    "iterate",
+    "validate",
+    "startup",
+    "metric",
+    "pivot",
+    "feedback"
+   ],
+   "triggers_ar": [
+    "تجربة",
+    "تكرار",
+    "تحقق",
+    "قياس",
+    "تحول",
+    "تغذية راجعة"
+   ],
+   "questions_en": [
+    "What is the leap-of-faith assumption we need to test?",
+    "What is the smallest thing we can build to measure it?",
+    "What result will make us persevere or pivot?"
+   ],
+   "questions_ar": [
+    "ما الافتراض الجوهري الذي نحتاج لاختباره؟",
+    "ما أصغر شيء يمكن بناؤه لقياسه؟",
+    "ما النتيجة التي ستجعلنا نستمر أو نغير الاتجاه؟"
+   ],
+   "output": "experiment card: hypothesis, build, metric, success threshold, decision rule, and result",
+   "check": "threshold set before running, metric measured, and a persevere/pivot decision recorded",
+   "anti_pattern": "measuring vanity metrics or setting thresholds after seeing results",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 1415,
+     "title": "The Lean Startup‎",
+     "ratings": 86284
+    }
+   ]
+  },
+  {
+   "id": "mvp",
+   "name_en": "Minimum Viable Product",
+   "name_ar": "المنتج الأدنى القابل للتطبيق",
+   "family": "product",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "The Lean Startup",
+     "author": "Eric Ries",
+     "year": 2011
+    }
+   ],
+   "triggers_en": [
+    "mvp",
+    "prototype",
+    "first",
+    "version",
+    "launch",
+    "scope",
+    "validate"
+   ],
+   "triggers_ar": [
+    "نموذج اولي",
+    "نسخة",
+    "اولى",
+    "اطلاق",
+    "نطاق",
+    "تحقق"
+   ],
+   "questions_en": [
+    "What is the key learning goal of the first version?",
+    "What is the minimum that delivers that learning with real users?",
+    "What is deliberately excluded?"
+   ],
+   "questions_ar": [
+    "ما هدف التعلم الأساسي للنسخة الأولى؟",
+    "ما الحد الأدنى الذي يحقق هذا التعلم مع مستخدمين حقيقيين؟",
+    "ما المستبعد عمداً؟"
+   ],
+   "output": "MVP spec: learning goal, included features, excluded features, success metric",
+   "check": "one learning goal, every included feature tied to it, excluded list non-empty, and metric measurable within the first release",
+   "anti_pattern": "shipping a buggy half-product with no learning goal, or gold-plating the MVP",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 1415,
+     "title": "The Lean Startup‎",
+     "ratings": 86284
+    }
+   ]
+  },
+  {
+   "id": "north-star-metric",
+   "name_en": "North Star Metric",
+   "name_ar": "مقياس نجم الشمال",
+   "family": "product",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Hacking Growth",
+     "author": "Sean Ellis, Morgan Brown",
+     "year": 2017
+    }
+   ],
+   "triggers_en": [
+    "metric",
+    "kpi",
+    "growth",
+    "goal",
+    "value",
+    "dashboard",
+    "measure"
+   ],
+   "triggers_ar": [
+    "مقياس",
+    "مؤشر",
+    "نمو",
+    "هدف",
+    "قيمة",
+    "لوحة"
+   ],
+   "questions_en": [
+    "What single metric best captures the core value customers get?",
+    "Does it predict long-term revenue and retention?",
+    "Which input metrics drive it?"
+   ],
+   "questions_ar": [
+    "ما المقياس الواحد الذي يلتقط أفضل القيمة الجوهرية التي يحصل عليها العملاء؟",
+    "هل يتنبأ بالإيراد والاحتفاظ على المدى الطويل؟",
+    "ما مقاييس المدخلات التي تقوده؟"
+   ],
+   "output": "North Star metric definition with formula, rationale and 3-5 input metrics",
+   "check": "metric has an exact formula and time window, reflects delivered customer value (not vanity), and each input metric is actionable by a team",
+   "anti_pattern": "choosing a revenue or vanity metric that does not reflect customer value",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "aarrr-pirate-metrics",
+   "name_en": "AARRR Pirate Metrics",
+   "name_ar": "مقاييس القراصنة AARRR",
+   "family": "product",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Lean Analytics",
+     "author": "Alistair Croll, Benjamin Yoskovitz",
+     "year": 2013
+    }
+   ],
+   "triggers_en": [
+    "funnel",
+    "acquisition",
+    "activation",
+    "retention",
+    "referral",
+    "revenue",
+    "conversion"
+   ],
+   "triggers_ar": [
+    "قمع",
+    "اكتساب",
+    "تفعيل",
+    "احتفاظ",
+    "احالة",
+    "ايراد"
+   ],
+   "questions_en": [
+    "How are users acquired and activated?",
+    "What are retention and referral rates?",
+    "Where does revenue come from, and which stage leaks most?"
+   ],
+   "questions_ar": [
+    "كيف يُكتسب المستخدمون ويُفعّلون؟",
+    "ما معدلات الاحتفاظ والإحالة؟",
+    "من أين يأتي الإيراد، وأي مرحلة تتسرب أكثر؟"
+   ],
+   "output": "funnel table with one defined metric and current value per AARRR stage and the leakiest stage",
+   "check": "all 5 stages have a precise definition and a number, conversion between stages computed, and one stage chosen for focus",
+   "anti_pattern": "optimising acquisition while retention leaks",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "hook-model",
+   "name_en": "Hook Model",
+   "name_ar": "نموذج الخطّاف",
+   "family": "product",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Hooked",
+     "author": "Nir Eyal",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "habit",
+    "engagement",
+    "retention",
+    "notification",
+    "daily",
+    "reward",
+    "app"
+   ],
+   "triggers_ar": [
+    "عادة",
+    "تفاعل",
+    "احتفاظ",
+    "اشعار",
+    "يومي",
+    "مكافاة"
+   ],
+   "questions_en": [
+    "What external and internal triggers prompt use?",
+    "What is the simplest action, and what variable reward follows?",
+    "What investment do users make that improves the next cycle?"
+   ],
+   "questions_ar": [
+    "ما المحفزات الخارجية والداخلية التي تدفع للاستخدام؟",
+    "ما أبسط فعل، وما المكافأة المتغيرة التي تتبعه؟",
+    "ما الاستثمار الذي يقدمه المستخدم ويحسن الدورة التالية؟"
+   ],
+   "output": "hook canvas: trigger, action, variable reward, investment, plus an ethics check",
+   "check": "all four phases defined, the action is measurable, and the manipulation-matrix ethics check is answered",
+   "anti_pattern": "building compulsive loops that do not improve users' lives",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "value-proposition-canvas",
+   "name_en": "Value Proposition Canvas",
+   "name_ar": "لوحة عرض القيمة",
+   "family": "product",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Value Proposition Design",
+     "author": "Alexander Osterwalder, Yves Pigneur, Gregory Bernarda, Alan Smith",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "value",
+    "customer",
+    "pains",
+    "gains",
+    "offer",
+    "segment",
+    "fit"
+   ],
+   "triggers_ar": [
+    "قيمة",
+    "عميل",
+    "الام",
+    "مكاسب",
+    "عرض",
+    "شريحة"
+   ],
+   "questions_en": [
+    "What jobs, pains and gains does the customer segment have?",
+    "Which products, pain relievers and gain creators do we offer?",
+    "Where is the fit, and where are the gaps?"
+   ],
+   "questions_ar": [
+    "ما الوظائف والآلام والمكاسب لدى شريحة العملاء؟",
+    "ما المنتجات ومخففات الألم وصانعات المكاسب التي نقدمها؟",
+    "أين التوافق وأين الفجوات؟"
+   ],
+   "output": "value proposition canvas with customer profile, value map and fit assessment",
+   "check": "at least 3 items per profile section, every pain reliever maps to a listed pain, and gaps are listed",
+   "anti_pattern": "filling the customer profile from internal assumptions without customer evidence",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "business-model-canvas",
+   "name_en": "Business Model Canvas",
+   "name_ar": "لوحة نموذج العمل",
+   "family": "product",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Business Model Generation",
+     "author": "Alexander Osterwalder, Yves Pigneur",
+     "year": 2010
+    }
+   ],
+   "triggers_en": [
+    "business",
+    "revenue",
+    "partners",
+    "costs",
+    "model",
+    "channels",
+    "monetize"
+   ],
+   "triggers_ar": [
+    "عمل",
+    "ايراد",
+    "شركاء",
+    "تكاليف",
+    "نموذج",
+    "قنوات"
+   ],
+   "questions_en": [
+    "Who are the customer segments, what is the value proposition, and through which channels and relationships?",
+    "What are the revenue streams and cost structure?",
+    "Which key resources, activities and partners make it work?"
+   ],
+   "questions_ar": [
+    "من شرائح العملاء، وما عرض القيمة، وعبر أي قنوات وعلاقات؟",
+    "ما مصادر الإيراد وهيكل التكاليف؟",
+    "ما الموارد والأنشطة والشركاء الرئيسيون الذين يجعلونه يعمل؟"
+   ],
+   "output": "nine-block business model canvas with consistency notes",
+   "check": "all 9 blocks filled, revenue and cost blocks reference the same segments, and at least 1 untested assumption flagged",
+   "anti_pattern": "listing everything the company does instead of the model's essentials",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 4366,
+     "title": "Business Model Generation",
+     "ratings": 20389
+    }
+   ]
+  },
+  {
+   "id": "blue-ocean-errc",
+   "name_en": "Blue Ocean Strategy (ERRC Grid)",
+   "name_ar": "استراتيجية المحيط الأزرق (شبكة الحذف، التقليل، الرفع، الابتكار)",
+   "family": "product",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Blue Ocean Strategy",
+     "author": "W. Chan Kim, Renee Mauborgne",
+     "year": 2005
+    }
+   ],
+   "triggers_en": [
+    "competition",
+    "differentiate",
+    "market",
+    "niche",
+    "commodity",
+    "crowded",
+    "position"
+   ],
+   "triggers_ar": [
+    "منافسة",
+    "تمايز",
+    "سوق",
+    "متخصص",
+    "مزدحم",
+    "تموضع"
+   ],
+   "questions_en": [
+    "Which factors the industry competes on should be eliminated or reduced?",
+    "Which should be raised well above standard?",
+    "What new factors should be created?"
+   ],
+   "questions_ar": [
+    "أي العوامل التي تتنافس عليها الصناعة يجب حذفها أو تقليلها؟",
+    "أيها يجب رفعه فوق المعيار بكثير؟",
+    "ما العوامل الجديدة التي يجب ابتكارها؟"
+   ],
+   "output": "ERRC grid and a strategy canvas comparing our value curve to competitors",
+   "check": "at least 1 entry in each of the 4 ERRC boxes and a value curve that visibly diverges from at least 2 competitors",
+   "anti_pattern": "adding 'create' items without eliminating anything, which only raises cost",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 2686,
+     "title": "Blue Ocean Strategy: How to Create Uncontested Market Space and Make Competition Irrelevant",
+     "ratings": 30665
+    }
+   ]
+  },
+  {
+   "id": "crossing-the-chasm",
+   "name_en": "Crossing the Chasm",
+   "name_ar": "عبور الهوة",
+   "family": "product",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Crossing the Chasm",
+     "author": "Geoffrey A. Moore",
+     "year": 1991
+    }
+   ],
+   "triggers_en": [
+    "adoption",
+    "mainstream",
+    "earlyadopters",
+    "beachhead",
+    "segment",
+    "gotomarket",
+    "scale"
+   ],
+   "triggers_ar": [
+    "تبني",
+    "انتشار",
+    "اوائل",
+    "راس جسر",
+    "شريحة",
+    "توسع"
+   ],
+   "questions_en": [
+    "Where on the adoption lifecycle are our current users?",
+    "Which single beachhead niche of pragmatists can we dominate?",
+    "What whole product does that niche need?"
+   ],
+   "questions_ar": [
+    "أين يقع مستخدمونا الحاليون في دورة التبني؟",
+    "ما الشريحة الواحدة (رأس الجسر) من البراغماتيين التي يمكننا السيطرة عليها؟",
+    "ما المنتج الكامل الذي تحتاجه هذه الشريحة؟"
+   ],
+   "output": "beachhead segment definition with whole-product checklist and reference customers plan",
+   "check": "exactly one beachhead named with size estimate, whole-product gaps listed, and at least 1 reference customer target",
+   "anti_pattern": "targeting several mainstream segments at once",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 5779,
+     "title": "Crossing the Chasm: Marketing and Selling High-Tech Products to Mainstream Customers",
+     "ratings": 14329
+    }
+   ]
+  },
+  {
+   "id": "disruptive-innovation",
+   "name_en": "Disruptive Innovation",
+   "name_ar": "الابتكار المُزعزع",
+   "family": "product",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "The Innovator's Dilemma",
+     "author": "Clayton M. Christensen",
+     "year": 1997
+    }
+   ],
+   "triggers_en": [
+    "incumbent",
+    "disrupt",
+    "lowend",
+    "cheaper",
+    "newmarket",
+    "threat",
+    "overserved"
+   ],
+   "triggers_ar": [
+    "مهيمن",
+    "زعزعة",
+    "ارخص",
+    "سوق جديد",
+    "تهديد",
+    "منافس"
+   ],
+   "questions_en": [
+    "Are mainstream customers overserved by incumbents?",
+    "Is there a low-end or new-market foothold incumbents ignore?",
+    "Is our trajectory improving fast enough to move upmarket?"
+   ],
+   "questions_ar": [
+    "هل يحصل العملاء الرئيسيون على أكثر مما يحتاجون من الشركات المهيمنة؟",
+    "هل توجد نقطة دخول من الطرف المنخفض أو سوق جديد يتجاهلها المهيمنون؟",
+    "هل يتحسن مسارنا بسرعة كافية للصعود نحو السوق الرئيسي؟"
+   ],
+   "output": "disruption assessment: foothold type, overserved evidence, performance trajectory and incumbent response",
+   "check": "foothold classified low-end or new-market with evidence, and trajectory compared to mainstream needs over time",
+   "anti_pattern": "calling any successful new product 'disruptive'",
+   "cost": "medium",
+   "book_evidence": [
+    {
+     "book_id": 3661,
+     "title": "The Innovator's Dilemma: The Revolutionary Book that Will Change the Way You Do Business (Collins Business Essentials)",
+     "ratings": 21997
+    }
+   ]
+  },
+  {
+   "id": "design-thinking",
+   "name_en": "Design Thinking",
+   "name_ar": "التفكير التصميمي",
+   "family": "product",
+   "stage": "explore",
+   "source_books": [
+    {
+     "title": "Change by Design",
+     "author": "Tim Brown",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "design",
+    "user",
+    "empathy",
+    "prototype",
+    "human",
+    "experience",
+    "ux"
+   ],
+   "triggers_ar": [
+    "تصميم",
+    "مستخدم",
+    "تعاطف",
+    "نموذج",
+    "انسان",
+    "تجربة"
+   ],
+   "questions_en": [
+    "What did we learn by empathising with real users?",
+    "How do we define the problem from their point of view?",
+    "Which ideas do we prototype and test with them?"
+   ],
+   "questions_ar": [
+    "ماذا تعلمنا من التعاطف مع مستخدمين حقيقيين؟",
+    "كيف نعرّف المشكلة من وجهة نظرهم؟",
+    "أي الأفكار نصنع لها نماذج ونختبرها معهم؟"
+   ],
+   "output": "empathy findings, point-of-view statement, prototypes and test results",
+   "check": "at least 3 user observations, POV names user + need + insight, and at least 1 prototype tested with users",
+   "anti_pattern": "running workshops with sticky notes but no real users",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "design-sprint",
+   "name_en": "Design Sprint",
+   "name_ar": "السبرنت التصميمي",
+   "family": "product",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Sprint",
+     "author": "Jake Knapp, John Zeratsky, Braden Kowitz",
+     "year": 2016
+    }
+   ],
+   "triggers_en": [
+    "sprint",
+    "prototype",
+    "test",
+    "week",
+    "workshop",
+    "validate",
+    "concept"
+   ],
+   "triggers_ar": [
+    "سبرنت",
+    "نموذج",
+    "اختبار",
+    "اسبوع",
+    "ورشة",
+    "تحقق"
+   ],
+   "questions_en": [
+    "What long-term goal and sprint questions frame the week?",
+    "Which solution does the decider choose to prototype?",
+    "What did five customer tests reveal?"
+   ],
+   "questions_ar": [
+    "ما الهدف بعيد المدى وأسئلة السبرنت التي تؤطر الأسبوع؟",
+    "أي حل يختاره صاحب القرار لعمل نموذج له؟",
+    "ماذا كشفت خمسة اختبارات مع العملاء؟"
+   ],
+   "output": "five-day sprint record: map, sketches, decision, realistic prototype, test findings",
+   "check": "sprint questions written, one decider named, prototype built, and findings from 5 user tests tallied against sprint questions",
+   "anti_pattern": "skipping the user tests and treating the prototype as validated",
+   "cost": "high",
+   "book_evidence": []
+  },
+  {
+   "id": "mom-test",
+   "name_en": "The Mom Test (Customer Interviews)",
+   "name_ar": "اختبار الأم (مقابلات العملاء)",
+   "family": "product",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Mom Test",
+     "author": "Rob Fitzpatrick",
+     "year": 2013
+    }
+   ],
+   "triggers_en": [
+    "interview",
+    "customer",
+    "validate",
+    "feedback",
+    "survey",
+    "idea",
+    "research"
+   ],
+   "triggers_ar": [
+    "مقابلة",
+    "عميل",
+    "تحقق",
+    "تغذية راجعة",
+    "استبيان",
+    "بحث"
+   ],
+   "questions_en": [
+    "Are we asking about their life and past behaviour rather than our idea?",
+    "What specifics did they actually do, spend or try?",
+    "What commitment or advancement did they offer?"
+   ],
+   "questions_ar": [
+    "هل نسأل عن حياتهم وسلوكهم السابق بدلاً من فكرتنا؟",
+    "ما التفاصيل التي فعلوها أو أنفقوها أو جربوها فعلاً؟",
+    "ما الالتزام أو الخطوة المتقدمة التي قدموها؟"
+   ],
+   "output": "interview script of past-behaviour questions and notes separating facts, compliments and commitments",
+   "check": "no question asks for opinions about the idea, notes tag each item fact/compliment/commitment, and at least 1 commitment is sought",
+   "anti_pattern": "counting compliments and hypothetical 'I would buy it' as validation",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "four-product-risks",
+   "name_en": "Four Big Product Risks",
+   "name_ar": "المخاطر الأربع الكبرى للمنتج",
+   "family": "product",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "Inspired",
+     "author": "Marty Cagan",
+     "year": 2008
+    }
+   ],
+   "triggers_en": [
+    "product",
+    "feature",
+    "discovery",
+    "feasible",
+    "usable",
+    "valuable",
+    "viable"
+   ],
+   "triggers_ar": [
+    "منتج",
+    "ميزة",
+    "اكتشاف",
+    "ممكن",
+    "سهل",
+    "قيمة"
+   ],
+   "questions_en": [
+    "Will customers buy or choose it (value risk)?",
+    "Can users figure out how to use it (usability risk)?",
+    "Can we build it (feasibility risk), and does it work for the business (viability risk)?"
+   ],
+   "questions_ar": [
+    "هل سيشتريه العملاء أو يختارونه (مخاطرة القيمة)؟",
+    "هل يستطيع المستخدمون معرفة كيفية استخدامه (مخاطرة سهولة الاستخدام)؟",
+    "هل يمكننا بناؤه (مخاطرة الجدوى التقنية)، وهل يناسب العمل (مخاطرة الجدوى التجارية)؟"
+   ],
+   "output": "risk table for the four risks with evidence level and a discovery test for each high risk",
+   "check": "all 4 risks rated with evidence, and each risk rated high has a prototype or test before build",
+   "anti_pattern": "addressing only feasibility because engineers are in the room",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "user-story-mapping",
+   "name_en": "User Story Mapping",
+   "name_ar": "خرائط قصص المستخدم",
+   "family": "product",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "User Story Mapping",
+     "author": "Jeff Patton",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "backlog",
+    "stories",
+    "release",
+    "journey",
+    "slice",
+    "requirements",
+    "mvp"
+   ],
+   "triggers_ar": [
+    "قصص",
+    "اصدار",
+    "رحلة",
+    "شريحة",
+    "متطلبات",
+    "تخطيط"
+   ],
+   "questions_en": [
+    "What is the user's journey as a sequence of activities (the backbone)?",
+    "Which stories sit under each activity?",
+    "Which horizontal slice forms the first releasable outcome?"
+   ],
+   "questions_ar": [
+    "ما رحلة المستخدم كسلسلة أنشطة (العمود الفقري)؟",
+    "ما القصص الواقعة تحت كل نشاط؟",
+    "أي شريحة أفقية تشكل أول نتيجة قابلة للإصدار؟"
+   ],
+   "output": "story map with backbone activities, stories beneath, and release slices",
+   "check": "backbone covers the journey end to end, every story sits under an activity, and slice 1 spans all backbone activities",
+   "anti_pattern": "a flat backlog in story-map clothing with no end-to-end first slice",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "monetizing-innovation",
+   "name_en": "Price Before Product (Willingness-to-Pay Research)",
+   "name_ar": "التسعير قبل المنتج (بحث الاستعداد للدفع)",
+   "family": "product",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "Monetizing Innovation",
+     "author": "Madhavan Ramanujam, Georg Tacke",
+     "year": 2016
+    }
+   ],
+   "triggers_en": [
+    "pricing",
+    "price",
+    "monetize",
+    "willingness",
+    "plans",
+    "tiers",
+    "revenue"
+   ],
+   "triggers_ar": [
+    "تسعير",
+    "سعر",
+    "تحقيق دخل",
+    "استعداد",
+    "باقات",
+    "ايراد"
+   ],
+   "questions_en": [
+    "Have we tested willingness to pay before building?",
+    "Which segments value which features differently?",
+    "What packaging and pricing model (tiers, usage, bundles) follows?"
+   ],
+   "questions_ar": [
+    "هل اختبرنا الاستعداد للدفع قبل البناء؟",
+    "أي الشرائح تقدّر أي الميزات بشكل مختلف؟",
+    "ما نموذج التغليف والتسعير (باقات، استخدام، حزم) الناتج؟"
+   ],
+   "output": "willingness-to-pay findings by segment with proposed packages and price points",
+   "check": "WTP data from at least 1 method (interviews, van Westendorp, conjoint) per segment, and each package maps to a segment",
+   "anti_pattern": "designing the product first and bolting on a price at launch",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "deliberate-practice",
+   "name_en": "Deliberate Practice",
+   "name_ar": "الممارسة المتعمدة",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Peak",
+     "author": "Anders Ericsson, Robert Pool",
+     "year": 2016
+    }
+   ],
+   "triggers_en": [
+    "skill",
+    "practice",
+    "improve",
+    "training",
+    "expert",
+    "coach",
+    "master"
+   ],
+   "triggers_ar": [
+    "مهارة",
+    "تمرين",
+    "تحسين",
+    "تدريب",
+    "خبير",
+    "اتقان"
+   ],
+   "questions_en": [
+    "Which specific sub-skill sits just beyond current ability?",
+    "What well-defined practice task with immediate feedback targets it?",
+    "How will we measure improvement between sessions?"
+   ],
+   "questions_ar": [
+    "ما المهارة الفرعية المحددة التي تقع مباشرة خارج القدرة الحالية؟",
+    "ما مهمة التمرين المحددة ذات التغذية الراجعة الفورية التي تستهدفها؟",
+    "كيف سنقيس التحسن بين الجلسات؟"
+   ],
+   "output": "practice plan with targeted sub-skills, drills, feedback source and progress metric",
+   "check": "each drill names one sub-skill, a feedback source and a baseline measurement; progress recorded over at least 2 sessions",
+   "anti_pattern": "mindless repetition in the comfort zone",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "feynman-technique",
+   "name_en": "Feynman Technique",
+   "name_ar": "تقنية فاينمان",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Ultralearning",
+     "author": "Scott H. Young",
+     "year": 2019
+    }
+   ],
+   "triggers_en": [
+    "explain",
+    "understand",
+    "learn",
+    "concept",
+    "teach",
+    "simple",
+    "study"
+   ],
+   "triggers_ar": [
+    "شرح",
+    "فهم",
+    "تعلم",
+    "مفهوم",
+    "تدريس",
+    "بسيط"
+   ],
+   "questions_en": [
+    "Can we explain the concept in plain words to a newcomer?",
+    "Where does our explanation break down or rely on jargon?",
+    "What do we need to relearn to fill those gaps?"
+   ],
+   "questions_ar": [
+    "هل نستطيع شرح المفهوم بكلمات بسيطة لمبتدئ؟",
+    "أين ينهار شرحنا أو يعتمد على المصطلحات؟",
+    "ما الذي نحتاج لإعادة تعلمه لسد هذه الفجوات؟"
+   ],
+   "output": "plain-language explanation with marked gaps and the revised explanation after filling them",
+   "check": "explanation avoids undefined jargon, at least 1 gap identified and fixed, and a newcomer or checker can restate it correctly",
+   "anti_pattern": "oversimplifying until the explanation becomes wrong",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "spaced-repetition",
+   "name_en": "Spaced Repetition",
+   "name_ar": "التكرار المتباعد",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Make It Stick",
+     "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "memorize",
+    "remember",
+    "vocabulary",
+    "exam",
+    "retain",
+    "flashcards",
+    "study"
+   ],
+   "triggers_ar": [
+    "حفظ",
+    "تذكر",
+    "مفردات",
+    "امتحان",
+    "مراجعة",
+    "بطاقات"
+   ],
+   "questions_en": [
+    "What items must be retained long term?",
+    "What review schedule with increasing intervals fits the deadline?",
+    "How do we track which items are failing?"
+   ],
+   "questions_ar": [
+    "ما العناصر التي يجب الاحتفاظ بها على المدى الطويل؟",
+    "ما جدول المراجعة بفترات متزايدة الذي يناسب الموعد النهائي؟",
+    "كيف نتتبع العناصر التي يتم نسيانها؟"
+   ],
+   "output": "item deck with an expanding review schedule and a recall log",
+   "check": "each item has a scheduled next review, intervals increase after successful recall, and recall rate is logged",
+   "anti_pattern": "cramming massed reviews the night before",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "retrieval-and-interleaving",
+   "name_en": "Retrieval Practice and Interleaving",
+   "name_ar": "ممارسة الاسترجاع والتداخل",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Make It Stick",
+     "author": "Peter C. Brown, Henry L. Roediger III, Mark A. McDaniel",
+     "year": 2014
+    }
+   ],
+   "triggers_en": [
+    "learn",
+    "course",
+    "quiz",
+    "test",
+    "lesson",
+    "training",
+    "curriculum"
+   ],
+   "triggers_ar": [
+    "تعلم",
+    "دورة",
+    "اختبار",
+    "درس",
+    "تدريب",
+    "منهج"
+   ],
+   "questions_en": [
+    "How can learners recall from memory instead of rereading?",
+    "How can we mix problem types instead of blocking them?",
+    "What low-stakes quizzes check retention?"
+   ],
+   "questions_ar": [
+    "كيف يسترجع المتعلمون من الذاكرة بدلاً من إعادة القراءة؟",
+    "كيف نمزج أنواع المسائل بدلاً من تجميعها؟",
+    "ما الاختبارات منخفضة المخاطر التي تتحقق من الاحتفاظ؟"
+   ],
+   "output": "learning plan with retrieval quizzes and an interleaved practice set",
+   "check": "at least 1 retrieval activity per topic, practice set mixes at least 3 problem types, and quiz scores are recorded",
+   "anti_pattern": "using rereading and highlighting as the main study method",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "after-action-review",
+   "name_en": "After-Action Review",
+   "name_ar": "مراجعة ما بعد العمل",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Learning in Action",
+     "author": "David A. Garvin",
+     "year": 2000
+    }
+   ],
+   "triggers_en": [
+    "retrospective",
+    "review",
+    "postmortem",
+    "lessons",
+    "debrief",
+    "sprint",
+    "project"
+   ],
+   "triggers_ar": [
+    "مراجعة",
+    "دروس",
+    "تقييم",
+    "استخلاص",
+    "مشروع",
+    "نهاية"
+   ],
+   "questions_en": [
+    "What did we intend to happen?",
+    "What actually happened?",
+    "Why was there a difference, and what will we sustain or change?"
+   ],
+   "questions_ar": [
+    "ما الذي كنا ننوي حدوثه؟",
+    "ما الذي حدث فعلاً؟",
+    "لماذا وُجد الفرق، وما الذي سنحافظ عليه أو نغيره؟"
+   ],
+   "output": "AAR record: intent, actual, gap causes, sustain list, improve list with owners",
+   "check": "intent and actual stated factually, at least 1 gap cause, and every improve item has an owner and a date",
+   "anti_pattern": "turning it into blame or a ritual whose actions are never followed up",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "double-loop-learning",
+   "name_en": "Double-Loop Learning",
+   "name_ar": "التعلم مزدوج الحلقة",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Organizational Learning: A Theory of Action Perspective",
+     "author": "Chris Argyris, Donald A. Schon",
+     "year": 1978
+    }
+   ],
+   "triggers_en": [
+    "lessons",
+    "assumptions",
+    "policy",
+    "recurring",
+    "culture",
+    "norms",
+    "strategy"
+   ],
+   "triggers_ar": [
+    "دروس",
+    "افتراضات",
+    "سياسة",
+    "متكرر",
+    "ثقافة",
+    "اعراف"
+   ],
+   "questions_en": [
+    "What single-loop correction (changing actions) have we tried?",
+    "Which governing variables, goals or norms produced the error?",
+    "What change to those governing variables would prevent recurrence?"
+   ],
+   "questions_ar": [
+    "ما التصحيح أحادي الحلقة (تغيير الأفعال) الذي جربناه؟",
+    "ما المتغيرات الحاكمة أو الأهداف أو الأعراف التي أنتجت الخطأ؟",
+    "ما التغيير في هذه المتغيرات الحاكمة الذي سيمنع التكرار؟"
+   ],
+   "output": "table of errors with single-loop fix, underlying governing variable and proposed double-loop change",
+   "check": "each error has both levels stated and at least 1 governing variable is explicitly revised",
+   "anti_pattern": "endlessly questioning goals while basic execution fixes are needed",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "kolb-experiential-cycle",
+   "name_en": "Kolb Experiential Learning Cycle",
+   "name_ar": "دورة كولب للتعلم التجريبي",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Experiential Learning",
+     "author": "David A. Kolb",
+     "year": 1984
+    }
+   ],
+   "triggers_en": [
+    "experience",
+    "reflect",
+    "workshop",
+    "training",
+    "handson",
+    "practice",
+    "onboarding"
+   ],
+   "triggers_ar": [
+    "تجربة",
+    "تامل",
+    "ورشة",
+    "تدريب",
+    "عملي",
+    "تهيئة"
+   ],
+   "questions_en": [
+    "What concrete experience did the learner have?",
+    "What reflective observation and abstract conceptualisation follow?",
+    "What active experimentation tests the new concept?"
+   ],
+   "questions_ar": [
+    "ما التجربة الملموسة التي مر بها المتعلم؟",
+    "ما الملاحظة التأملية والتصور المجرد اللذان يليانها؟",
+    "ما التجريب النشط الذي يختبر المفهوم الجديد؟"
+   ],
+   "output": "four-stage learning design or record: experience, reflection, concept, experiment",
+   "check": "all four stages present in order, the concept is stated as a rule, and the experiment tests that rule",
+   "anti_pattern": "skipping reflection and conceptualisation, so experience never becomes learning",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "black-box-thinking",
+   "name_en": "Black Box Thinking (Learning from Failure)",
+   "name_ar": "تفكير الصندوق الأسود (التعلم من الفشل)",
+   "family": "learn",
+   "stage": "learn",
+   "source_books": [
+    {
+     "title": "Black Box Thinking",
+     "author": "Matthew Syed",
+     "year": 2015
+    }
+   ],
+   "triggers_en": [
+    "failure",
+    "error",
+    "incident",
+    "blameless",
+    "mistakes",
+    "improve",
+    "safety"
+   ],
+   "triggers_ar": [
+    "فشل",
+    "خطا",
+    "حادث",
+    "بلا لوم",
+    "اخطاء",
+    "تحسين"
+   ],
+   "questions_en": [
+    "Is failure data being captured systematically and openly?",
+    "What does each failure reveal about the system?",
+    "How are lessons propagated so the same failure cannot recur?"
+   ],
+   "questions_ar": [
+    "هل تُجمع بيانات الفشل بشكل منهجي ومفتوح؟",
+    "ماذا يكشف كل فشل عن النظام؟",
+    "كيف تُنشر الدروس بحيث لا يتكرر الفشل نفسه؟"
+   ],
+   "output": "failure log with system-level lesson and the propagated fix for each entry",
+   "check": "every failure has a system lesson (not a person), a fix applied to process or tooling, and a recurrence check",
+   "anti_pattern": "punishing reporters so failures go hidden",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "pyramid-principle",
+   "name_en": "Pyramid Principle",
+   "name_ar": "مبدأ الهرم",
+   "family": "communicate",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "The Pyramid Principle",
+     "author": "Barbara Minto",
+     "year": 1987
+    }
+   ],
+   "triggers_en": [
+    "report",
+    "memo",
+    "email",
+    "executive",
+    "summary",
+    "presentation",
+    "argument"
+   ],
+   "triggers_ar": [
+    "تقرير",
+    "مذكرة",
+    "بريد",
+    "تنفيذي",
+    "ملخص",
+    "عرض"
+   ],
+   "questions_en": [
+    "What is the single governing message, stated first?",
+    "What 3-5 key supporting points, grouped MECE, back it?",
+    "Does the introduction follow situation-complication-question?"
+   ],
+   "questions_ar": [
+    "ما الرسالة الحاكمة الواحدة التي تُذكر أولاً؟",
+    "ما النقاط الداعمة الرئيسية (3-5) المجمعة بشكل متنافٍ وشامل التي تسندها؟",
+    "هل تتبع المقدمة تسلسل الموقف ثم التعقيد ثم السؤال؟"
+   ],
+   "output": "answer-first document outline: governing thought, key line, supporting evidence, SCQ intro",
+   "check": "governing thought in the first 2 sentences, 3-5 supporting points with no overlap, each point backed by evidence",
+   "anti_pattern": "burying the conclusion at the end after a chronological narrative",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "made-to-stick-success",
+   "name_en": "SUCCESs Principles (Made to Stick)",
+   "name_ar": "مبادئ SUCCESs (اجعلها تلتصق)",
+   "family": "communicate",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Made to Stick",
+     "author": "Chip Heath, Dan Heath",
+     "year": 2007
+    }
+   ],
+   "triggers_en": [
+    "message",
+    "memorable",
+    "campaign",
+    "slogan",
+    "explain",
+    "pitch",
+    "content"
+   ],
+   "triggers_ar": [
+    "رسالة",
+    "لا تنسى",
+    "حملة",
+    "شعار",
+    "شرح",
+    "محتوى"
+   ],
+   "questions_en": [
+    "Is the message Simple and Unexpected?",
+    "Is it Concrete and Credible?",
+    "Does it carry Emotion and a Story?"
+   ],
+   "questions_ar": [
+    "هل الرسالة بسيطة وغير متوقعة؟",
+    "هل هي ملموسة وموثوقة؟",
+    "هل تحمل عاطفة وقصة؟"
+   ],
+   "output": "revised message with a score and improvement note for each of the six principles",
+   "check": "all six principles scored, at least 1 concrete example and 1 credibility detail present, and the core fits in one sentence",
+   "anti_pattern": "forcing all six into a short message until it becomes gimmicky",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 1926,
+     "title": "Made to Stick: Why Some Ideas Survive and Others Die",
+     "ratings": 46736
+    }
+   ]
+  },
+  {
+   "id": "storybrand",
+   "name_en": "StoryBrand Framework",
+   "name_ar": "إطار قصة العلامة (StoryBrand)",
+   "family": "communicate",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Building a StoryBrand",
+     "author": "Donald Miller",
+     "year": 2017
+    }
+   ],
+   "triggers_en": [
+    "brand",
+    "website",
+    "marketing",
+    "copy",
+    "landing",
+    "message",
+    "customer"
+   ],
+   "triggers_ar": [
+    "علامة",
+    "موقع",
+    "تسويق",
+    "نص",
+    "صفحة",
+    "رسالة"
+   ],
+   "questions_en": [
+    "Who is the hero (customer), what do they want, and what problem stands in the way?",
+    "How does the brand act as guide with empathy, authority and a plan?",
+    "What call to action, and what success and failure are at stake?"
+   ],
+   "questions_ar": [
+    "من البطل (العميل)، وماذا يريد، وما المشكلة التي تعترضه؟",
+    "كيف تؤدي العلامة دور المرشد بالتعاطف والسلطة وخطة واضحة؟",
+    "ما الدعوة للعمل، وما النجاح والفشل المترتبان؟"
+   ],
+   "output": "BrandScript with the seven elements and a homepage/headline draft derived from it",
+   "check": "all 7 elements filled, customer is the hero (not the brand), and a single clear call to action appears",
+   "anti_pattern": "making the brand the hero of the story",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "working-backwards-pr-faq",
+   "name_en": "Working Backwards (PR/FAQ)",
+   "name_ar": "العمل بالعكس (البيان الصحفي والأسئلة الشائعة)",
+   "family": "communicate",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Working Backwards",
+     "author": "Colin Bryar, Bill Carr",
+     "year": 2021
+    }
+   ],
+   "triggers_en": [
+    "launch",
+    "feature",
+    "product",
+    "proposal",
+    "vision",
+    "customer",
+    "announce"
+   ],
+   "triggers_ar": [
+    "اطلاق",
+    "ميزة",
+    "منتج",
+    "مقترح",
+    "رؤية",
+    "اعلان"
+   ],
+   "questions_en": [
+    "What would the launch press release say about the customer benefit?",
+    "What external FAQs would customers ask?",
+    "What internal FAQs about cost, feasibility and risk must be answered?"
+   ],
+   "questions_ar": [
+    "ماذا سيقول البيان الصحفي للإطلاق عن فائدة العميل؟",
+    "ما الأسئلة الخارجية التي سيطرحها العملاء؟",
+    "ما الأسئلة الداخلية عن التكلفة والجدوى والمخاطر التي يجب الإجابة عنها؟"
+   ],
+   "output": "one-page press release plus external and internal FAQ",
+   "check": "press release names customer, problem and benefit in the first paragraph, at least 5 external and 5 internal FAQs answered",
+   "anti_pattern": "writing marketing fluff that hides unresolved hard questions",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "resonate-sparkline",
+   "name_en": "Presentation Sparkline (What Is vs What Could Be)",
+   "name_ar": "خط العرض (ما هو كائن مقابل ما يمكن أن يكون)",
+   "family": "communicate",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Resonate",
+     "author": "Nancy Duarte",
+     "year": 2010
+    }
+   ],
+   "triggers_en": [
+    "presentation",
+    "talk",
+    "keynote",
+    "pitch",
+    "slides",
+    "audience",
+    "persuade"
+   ],
+   "triggers_ar": [
+    "عرض",
+    "كلمة",
+    "خطاب",
+    "شرائح",
+    "جمهور",
+    "اقناع"
+   ],
+   "questions_en": [
+    "What is the current reality (what is) for the audience?",
+    "What is the better future (what could be)?",
+    "How does the talk alternate between them and end with a call to action and the new bliss?"
+   ],
+   "questions_ar": [
+    "ما الواقع الحالي (ما هو كائن) بالنسبة للجمهور؟",
+    "ما المستقبل الأفضل (ما يمكن أن يكون)؟",
+    "كيف يتناوب العرض بينهما وينتهي بدعوة للعمل وحالة النعيم الجديدة؟"
+   ],
+   "output": "talk outline mapped on the sparkline with alternating is/could-be beats and a call to action",
+   "check": "at least 3 is/could-be alternations, a clear turning point, and an explicit call to action",
+   "anti_pattern": "making the presenter the hero instead of the audience",
+   "cost": "medium",
+   "book_evidence": []
+  },
+  {
+   "id": "golden-circle",
+   "name_en": "Golden Circle (Start with Why)",
+   "name_ar": "الدائرة الذهبية (ابدأ بلماذا)",
+   "family": "communicate",
+   "stage": "frame",
+   "source_books": [
+    {
+     "title": "Start with Why",
+     "author": "Simon Sinek",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "purpose",
+    "mission",
+    "brand",
+    "why",
+    "vision",
+    "values",
+    "story"
+   ],
+   "triggers_ar": [
+    "غاية",
+    "رسالة",
+    "علامة",
+    "لماذا",
+    "رؤية",
+    "قيم"
+   ],
+   "questions_en": [
+    "Why does this exist, beyond making money?",
+    "How do we do it differently?",
+    "What exactly do we offer?"
+   ],
+   "questions_ar": [
+    "لماذا يوجد هذا، بعيداً عن جني المال؟",
+    "كيف نفعله بشكل مختلف؟",
+    "ماذا نقدم بالضبط؟"
+   ],
+   "output": "why/how/what statement set used to order a message from purpose to offer",
+   "check": "one why sentence free of product features, 2-3 how differentiators, a concrete what, and the message follows that order",
+   "anti_pattern": "inventing a lofty why that actions and product contradict",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 3235,
+     "title": "Start with Why: How Great Leaders Inspire Everyone to Take Action",
+     "ratings": 32899
+    }
+   ]
+  },
+  {
+   "id": "okrs",
+   "name_en": "Objectives and Key Results (OKRs)",
+   "name_ar": "الأهداف والنتائج الرئيسية",
+   "family": "execute",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Measure What Matters",
+     "author": "John Doerr",
+     "year": 2018
+    }
+   ],
+   "triggers_en": [
+    "goals",
+    "quarter",
+    "targets",
+    "alignment",
+    "okr",
+    "outcomes",
+    "team"
+   ],
+   "triggers_ar": [
+    "اهداف",
+    "ربع",
+    "مستهدفات",
+    "مواءمة",
+    "نتائج",
+    "فريق"
+   ],
+   "questions_en": [
+    "What qualitative, inspiring objective matters most this period?",
+    "Which 2-5 measurable key results prove it was achieved?",
+    "How are progress check-ins and scoring done?"
+   ],
+   "questions_ar": [
+    "ما الهدف النوعي الملهم الأهم في هذه الفترة؟",
+    "ما النتائج الرئيسية القابلة للقياس (2-5) التي تثبت تحققه؟",
+    "كيف تتم متابعة التقدم والتقييم؟"
+   ],
+   "output": "OKR set: objective, 2-5 key results with baseline and target, check-in cadence",
+   "check": "each key result is a number with baseline, target and date, none is a task, and a scoring method is stated",
+   "anti_pattern": "writing key results as task lists, or setting too many objectives",
+   "cost": "low",
+   "book_evidence": []
+  },
+  {
+   "id": "eisenhower-matrix",
+   "name_en": "Eisenhower Matrix (Urgent vs Important)",
+   "name_ar": "مصفوفة أيزنهاور (العاجل مقابل المهم)",
+   "family": "execute",
+   "stage": "decide",
+   "source_books": [
+    {
+     "title": "The 7 Habits of Highly Effective People",
+     "author": "Stephen R. Covey",
+     "year": 1989
+    }
+   ],
+   "triggers_en": [
+    "todo",
+    "tasks",
+    "urgent",
+    "overwhelm",
+    "schedule",
+    "time",
+    "week"
+   ],
+   "triggers_ar": [
+    "مهام",
+    "عاجل",
+    "ضغط",
+    "جدول",
+    "وقت",
+    "اسبوع"
+   ],
+   "questions_en": [
+    "Which tasks are both urgent and important (do now)?",
+    "Which are important but not urgent (schedule)?",
+    "Which are urgent but not important (delegate) or neither (drop)?"
+   ],
+   "questions_ar": [
+    "أي المهام عاجلة ومهمة معاً (نفّذ الآن)؟",
+    "أيها مهمة غير عاجلة (جدولها)؟",
+    "أيها عاجلة غير مهمة (فوّضها) أو لا هذا ولا ذاك (احذفها)؟"
+   ],
+   "output": "task list sorted into the four quadrants with actions and dates",
+   "check": "every task in exactly one quadrant, quadrant-2 items have scheduled dates, and drop list is non-empty or justified",
+   "anti_pattern": "living in quadrant 1 firefighting and never scheduling quadrant 2",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 247,
+     "title": "The 7 Habits of Highly Effective People",
+     "ratings": 314700
+    }
+   ]
+  },
+  {
+   "id": "checklist",
+   "name_en": "Checklists (Checklist Manifesto)",
+   "name_ar": "قوائم التحقق",
+   "family": "execute",
+   "stage": "verify",
+   "source_books": [
+    {
+     "title": "The Checklist Manifesto",
+     "author": "Atul Gawande",
+     "year": 2009
+    }
+   ],
+   "triggers_en": [
+    "release",
+    "deploy",
+    "procedure",
+    "steps",
+    "handover",
+    "routine",
+    "errors"
+   ],
+   "triggers_ar": [
+    "اصدار",
+    "نشر",
+    "اجراء",
+    "خطوات",
+    "تسليم",
+    "روتين"
+   ],
+   "questions_en": [
+    "Which critical steps are easy to forget under pressure?",
+    "Is it a do-confirm or read-do checklist, and where are the pause points?",
+    "Is it short enough (about 5-9 items per pause point) to actually be used?"
+   ],
+   "questions_ar": [
+    "ما الخطوات الحرجة التي يسهل نسيانها تحت الضغط؟",
+    "هل هي قائمة نفّذ-ثم-أكّد أم اقرأ-ثم-نفّذ، وأين نقاط التوقف؟",
+    "هل هي قصيرة بما يكفي (نحو 5-9 بنود لكل نقطة توقف) لتُستخدم فعلاً؟"
+   ],
+   "output": "short checklist with pause points, type, and items that each prevent a known failure",
+   "check": "each pause point has at most 9 items, each item is a verifiable action, and the list was tested in a real run",
+   "anti_pattern": "writing long checklists of obvious steps that people stop reading",
+   "cost": "low",
+   "book_evidence": [
+    {
+     "book_id": 3603,
+     "title": "The Checklist Manifesto: How to Get Things Right",
+     "ratings": 23778
+    }
+   ]
+  },
+  {
+   "id": "kanban-wip-limits",
+   "name_en": "Kanban with WIP Limits",
+   "name_ar": "كانبان مع حدود العمل الجاري",
+   "family": "execute",
+   "stage": "build",
+   "source_books": [
+    {
+     "title": "Kanban: Successful Evolutionary Change for Your Technology Business",
+     "author": "David J. Anderson",
+     "year": 2010
+    }
+   ],
+   "triggers_en": [
+    "board",
+    "workflow",
+    "tasks",
+    "wip",
+    "flow",
+    "team",
+    "backlog"
+   ],
+   "triggers_ar": [
+    "لوحة",
+    "سير عمل",
+    "مهام",
+    "تدفق",
+    "فريق",
+    "متابعة"
+   ],
+   "questions_en": [
+    "What are the columns of the real workflow?",
+    "What WIP limit fits each column?",
+    "What blockers and cycle times does the board reveal?"
+   ],
+   "questions_ar": [
+    "ما أعمدة سير العمل الفعلي؟",
+    "ما حد العمل الجاري المناسب لكل عمود؟",
+    "ما العوائق وأزمنة الدورة التي تكشفها اللوحة؟"
+   ],
+   "output": "kanban board definition with columns, WIP limits, policies and cycle-time metrics",
+   "check": "every in-progress column has a numeric WIP limit, explicit done-policy per column, and cycle time tracked for completed items",
+   "anti_pattern": "drawing a board without WIP limits, which makes it just a to-do list",
+   "cost": "low",
+   "book_evidence": []
+  }
+ ],
+ "book_matched": 28
+}

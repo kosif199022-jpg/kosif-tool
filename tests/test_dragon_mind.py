@@ -1,0 +1,117 @@
+"""Tests for the Dragon Mind super-skill: full coverage, honest tiers, deterministic thinking."""
+import json
+import subprocess
+import sys
+import tempfile
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+MIND = ROOT / ".claude/skills/kosif-dragon-mind"
+sys.path.insert(0, str(MIND / "scripts"))
+import dragon_mind as dm  # noqa: E402
+import _mind_vocab as V  # noqa: E402
+
+TIERS = {t for t, _ in V.TIERS}
+
+
+class DragonMindTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.inv, cls.desc, cls.adapters, cls.tools = dm.load_inventory()
+        cls.dec = dm.decompose(cls.inv, cls.desc)
+        cls.ready = dm.readiness(cls.inv, cls.desc, cls.adapters, cls.tools)
+
+    def test_every_entry_is_decomposed(self):
+        self.assertEqual(set(self.dec), set(self.inv))
+        for row in self.dec.values():
+            self.assertIn(row["primary"], V.FACULTY_IDS)
+            self.assertEqual(row["faculties"][0], row["primary"])
+            self.assertLessEqual(len(row["faculties"]), 4)
+
+    def test_every_entry_has_a_known_tier(self):
+        rows = self.ready["rows"]
+        self.assertEqual(set(rows), set(self.inv))
+        self.assertTrue(all(r["tier"] in TIERS for r in rows.values()))
+        self.assertEqual(sum(self.ready["tiers"].values()), len(self.inv))
+
+    def test_executable_tier_only_for_reviewed_adapters(self):
+        for key, row in self.ready["rows"].items():
+            if row["tier"] == "T4-executable":
+                self.assertIn(key, self.adapters)
+            if key.startswith(("power:", "superpower:", "style:")):
+                self.assertNotIn(row["tier"], ("T3-runnable",))
+
+    def test_fuse_has_all_faculties_and_champions_are_members(self):
+        fused = dm.fuse(self.dec, self.ready["rows"], self.desc)
+        self.assertEqual(list(fused), V.FACULTY_IDS)
+        for fid, info in fused.items():
+            for champ in info["champions"]:
+                self.assertIn(fid, self.dec[champ["id"]]["faculties"])
+            if info["executors"] == 0:
+                self.assertTrue(info["gap"])
+
+    def test_think_is_deterministic_and_covers_the_cycle(self):
+        task = "اعمل فيديو موشن عربي لإطلاق منتج وانشره على تيك توك"
+        a, b = dm.think(task), dm.think(task)
+        self.assertEqual(a["digest"], b["digest"])
+        self.assertEqual({f["stage"] for f in a["frameworks"]} if a["frameworks"] else set(),
+                         {s["id"] for s in V.CYCLE} if a["frameworks"] else set())
+        names = {n["faculty"] for n in a["graph"]["nodes"]}
+        self.assertTrue(set(dm.ALWAYS) <= names)
+        self.assertIn("animate-motion", names)
+        self.assertEqual(len(a["graph"]["edges"]), len(a["graph"]["nodes"]))
+        self.assertTrue(a["consent_required"])
+        self.assertTrue(any(i["kind"] == "consent" for i in a["critic"]))
+        self.assertIn("executed", a["evidence_rule"])
+
+    def test_think_rejects_empty_task(self):
+        with self.assertRaises(ValueError):
+            dm.think("  ")
+
+    def test_report_is_markdown_with_sections(self):
+        md = dm.report_md(dm.think("research a pricing strategy for a new app"))
+        for head in ("## 1.", "## 2.", "## 3.", "## 4.", "## 5."):
+            self.assertIn(head, md)
+
+    def test_frameworks_library_is_valid(self):
+        lib = json.loads((MIND / "data" / "frameworks.json").read_text(encoding="utf-8"))["frameworks"]
+        self.assertGreaterEqual(len(lib), 100)
+        self.assertEqual(len({f["id"] for f in lib}), len(lib))
+        stages = {s["id"] for s in V.CYCLE}
+        for f in lib:
+            self.assertIn(f["stage"], stages)
+            self.assertTrue(f["source_books"] and f["check"] and f["questions_ar"])
+        for st, dflt in dm.STAGE_DEFAULTS.items():
+            self.assertIn(dflt, {f["id"] for f in lib if f["stage"] == st}, st)
+
+    def test_research_receipt_matches_data(self):
+        rec = json.loads((MIND / "data" / "research_receipt.json").read_text(encoding="utf-8"))
+        gh = json.loads((MIND / "data" / "github_patterns.json").read_text(encoding="utf-8"))
+        bk = json.loads((MIND / "data" / "books_thinking.json").read_text(encoding="utf-8"))
+        self.assertEqual(rec["github"]["repos_measured"], gh["repos_measured"])
+        self.assertEqual(rec["books"]["kept"], len(bk["books"]))
+        self.assertEqual(bk["screened"], 10000)
+        for p in gh["patterns"]:
+            self.assertLessEqual(p["repos"], gh["repos_measured"])
+
+    def test_mind_adapter_runs_through_the_dragon_runner(self):
+        bd, _ = dm._dragon()
+        self.assertIn(V.MIND_ADAPTER_KEY, self.inv)
+        with tempfile.TemporaryDirectory() as tmp:
+            out = Path(tmp) / "adapters.json"
+            self.assertEqual(dm.main(["adapters", "--out", str(out)]), 0)
+            loaded = bd._load_adapters(out)
+            self.assertIn(V.MIND_ADAPTER_KEY, loaded)
+            self.assertTrue(set(loaded) <= set(self.inv))
+            artifact = Path(tmp) / "mind.txt"
+            spec = loaded[V.MIND_ADAPTER_KEY]
+            args = [a.replace("{artifact}", str(artifact)).replace("{task}", "قص فيديو وتلوينه") for a in spec["args"]]
+            done = subprocess.run([sys.executable, str(ROOT / spec["script"]), *args], cwd=ROOT,
+                                  capture_output=True, text=True, timeout=120)
+            self.assertEqual(done.returncode, 0, done.stderr[-500:])
+            self.assertIn("عقل التنين", artifact.read_text(encoding="utf-8"))
+
+
+if __name__ == "__main__":
+    unittest.main()
