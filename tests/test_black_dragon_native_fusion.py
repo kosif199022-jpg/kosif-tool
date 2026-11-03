@@ -102,6 +102,44 @@ class NativeFusionTests(unittest.TestCase):
         self.assertEqual(synthesis["catalog_total"], 7393)
         self.assertEqual(synthesis["selected_source_count"], 2)
 
+    def test_catalog_wide_fusion_covers_every_source_and_uses_no_old_executor(self):
+        out = self.root / "out/full-atlas"
+        summary = native.build(self.root, out)
+        atlas = native.read_json(out / "fusion_atlas.json")
+        sources = native.load_index(out / "sources.jsonl")
+        self.assertEqual(summary["fused_source_count"], len(sources))
+        self.assertEqual(atlas["selected_source_count"], len(sources))
+        self.assertTrue(atlas["provenance_preserved"])
+        self.assertFalse(atlas["runtime_legacy_imports"])
+        self.assertEqual({row["source_id"] for row in atlas["affiliation"]},
+                         {row["id"] for row in sources})
+        self.assertTrue(native.verify(self.root, out)["fusion_atlas_integrity_passed"])
+        response = native.compose("Beat montage video", out / "sources.jsonl")
+        self.assertEqual(response["catalog_wide_fusion"]["source_count"], len(sources))
+        self.assertEqual(summary["native_implemented"], 0)
+
+    def test_catalog_fusion_preserves_full_document_and_every_method(self):
+        long_document = "# Full source\\n" + "\\n".join(
+            "Preserve rule number %d" % n for n in range(40))
+        self.write(".claude/skills/example/SKILL.md", long_document)
+        rows = native.inventory(self.root)
+        self.assertIn("Preserve rule number 39", rows["skill:example"]["method"])
+        mind = native.native_reasoner().fuse("Preserve all rules",
+                                             [rows["skill:example"]], len(rows))
+        methods = [m["method"] for faculty in mind["faculties"]
+                   for m in faculty["merged_methods"]]
+        self.assertIn("Preserve rule number 39", methods)
+
+    def test_detect_fusion_atlas_tampering(self):
+        out = self.root / "out/tamper-atlas"
+        native.build(self.root, out)
+        atlas_path = out / "fusion_atlas.json"
+        atlas = native.read_json(atlas_path)
+        atlas["selected_source_count"] = 0
+        atlas_path.write_text(json.dumps(atlas, ensure_ascii=False), encoding="utf-8")
+        self.assertFalse(native.verify(self.root, out)["fusion_atlas_integrity_passed"])
+        self.assertFalse(native.verify(self.root, out)["integrity_passed"])
+
     def test_detect_source_tampering_and_duplicate(self):
         out = self.root / "out/report"
         native.build(self.root, out)
