@@ -702,9 +702,11 @@ def dragon_mind(r, d, task, clip, selftest):
             [c["id"] for c in t["cycle"]])
     r.check("tiers cover every catalog entry exactly once", sum(t["tiers"].values()) == t["inventory_total"],
             [t["tiers"], t["inventory_total"]])
-    reviewed = json.loads((SCRIPTS.parent / "data" / "black_dragon_adapters.json").read_text(encoding="utf-8"))
-    reviewed = reviewed.get("adapters", reviewed)
-    r.check("T4 executable equals the reviewed adapters registry", t["tiers"].get("T4-executable") == len(reviewed),
+    # The same set black_dragon.py loads: the reviewed registry plus generated runner registries.
+    import black_dragon as _bd
+    reviewed = _bd._load_adapters(_bd.REVIEWED_ADAPTERS)
+    r.check("T4 executable equals the adapters black_dragon.py loads (reviewed + generated)",
+            t["tiers"].get("T4-executable") == len(reviewed),
             [t["tiers"].get("T4-executable"), len(reviewed)])
     nodes = t["graph"]["nodes"]
     r.check("every graph node has a faculty, typed inputs/outputs and champions",
