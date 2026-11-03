@@ -11,6 +11,8 @@ Evidence tiers, never mixed up in the report:
   probed    - a read-only tool answered `--help` here (opt-in --probe-tools)
   executed  - a reviewed adapter ran on the task, wrote a nonempty artifact and
               a SHA-256 receipt (opt-in --adapters FILE --execute-adapters)
+  validated - separate tier: the card passed structural checks with a receipt in
+              validation.jsonl (opt-in --validate-cards); never counted as executed
 Bounded parallel dispatch. No shell strings, payments, uploads or installs.
 """
 from __future__ import annotations
@@ -27,6 +29,7 @@ import _cinema_all_skills as audit
 import _black_dragon_brain as brain
 import _black_dragon_pro_max as pro_max
 import _black_dragon_skill_links as skill_links
+import _black_dragon_validate as card_validate
 
 REPO = audit.REPO.resolve()
 SCHEMA = "kosif.black-dragon.v2"
@@ -227,9 +230,6 @@ SKILL_PROGRAM_BLOCKERS = {
 
 # Programs that were tried and cannot earn a receipt in this environment; the reason goes into the report.
 TOOL_BLOCKERS = {
-    "tool:blender-cat-fur-upgrade": "needs the Blender app (not installed here; every one of its tests skips without it)",
-    "tool:blender-rescue-scene": "needs the Blender app (not installed here; every one of its tests skips without it)",
-    "tool:starter-remotion": "needs an npm install of Remotion and its headless Chrome (network download; never auto-installed)",
     "tool:rea-owned-repo-batch": "clones the owner's repositories over the network with the rea-agents CLI into private output",
     "tool:rebalance-creative-repos": "changes the owner's GitHub repositories through gh and the network",
     "tool:repo-ashell-cinema": "an a-Shell script for the iPhone that downloads YouTube videos (needs the phone and the network)",
@@ -294,7 +294,8 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
 
 def run(task: str, job: Path, adapters: dict, workers: int,
         allow_execution: bool, timeout: int, entries: dict | None = None,
-        probe_tools: bool = False, mode: str = "standard", media: Path | None = None) -> dict:
+        probe_tools: bool = False, mode: str = "standard", media: Path | None = None,
+        validate_cards: bool = False, catalog_roots: tuple | None = None) -> dict:
     if not task.strip():
         raise ValueError("Task is required")
     if not 1 <= workers <= MAX_WORKERS:
@@ -429,6 +430,18 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "truth": ("Every entry is assigned a part and mode with a brief line; 'probed' only means "
                         "a tool answered --help here; only receipt-verified adapter work is 'executed'")}
     report["mode"] = mode
+    if validate_cards:
+        # Separate tier: structural card validation. It never touches the ledger, the executed
+        # count or full_coverage.
+        skill_root, repo_root = catalog_roots or (audit.SKILL, REPO)
+        vsum = card_validate.write(job, card_validate.validate_catalog(inventory, skill_root, repo_root),
+                                   inventory)
+        report["validated"] = vsum["validated"]
+        report["validation_invalid"] = vsum["invalid"]
+        report["validation"] = {k: vsum[k] for k in ("total", "validated", "invalid", "by_kind",
+                                                     "problem_categories", "validation_file",
+                                                     "validation_sha256", "yaml_parser",
+                                                     "counts_as_executed", "truth")}
     report["reviewed_execution_complete"] = bool(
         allow_execution and adapters and all(
             ledger["items"][key]["status"] == "executed" for key in adapters
@@ -470,7 +483,12 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"- registered tools with verified execution: **{report['registered_tool_executed']}** / "
              f"{report['adapter_readiness']['reviewed_tool_adapters']}",
              f"- reviewed execution complete: **{report['reviewed_execution_complete']}** "
-             "(not equal to whole-catalog execution)", "",
+             "(not equal to whole-catalog execution)"]
+    if "validation" in report:
+        lines.append(f"- فحص بنية البطاقات / structural card validation (NOT execution): "
+                     f"validated: **{report['validated']:,}/{report['scheduled']:,}** "
+                     f"(invalid: {report['validation_invalid']:,}) — receipts in `validation.jsonl`")
+    lines += ["",
              "| الجزء / part | assigned | leads |", "|---|---:|---|"]
     for pid, part in strategy["parts"].items():
         leads = ", ".join(f"`{k}`" for k in part["leads"]) or "—"
@@ -519,6 +537,11 @@ def main(argv=None) -> int:
     a.add_argument("--selection", choices=("all", "smart"), required=True)
     a.add_argument("--out", type=Path, required=True,
                    help="new JSON path for the inspect-first activation plan")
+    p.add_argument("--validate-cards", action="store_true",
+                   help="structurally validate every catalog card with a receipt (validation.jsonl); "
+                        "a separate tier, never counted as executed")
+    c = sub.add_parser("validate", help="Structurally validate every catalog card with a receipt; NO execution")
+    c.add_argument("--out", type=Path, help="new folder for validation.jsonl and validation_summary.json")
     v = sub.add_parser("verify", help="Independently re-audit a completed Pro Max job without execution")
     v.add_argument("--job", required=True, type=Path)
     q = sub.add_parser("plan", help="Plan every catalog entry without execution")
@@ -540,10 +563,31 @@ def main(argv=None) -> int:
             diagnosis = adapter_readiness(full_inventory(), _load_adapters(REVIEWED_ADAPTERS))
             print(json.dumps(diagnosis, ensure_ascii=False, indent=2))
             return 4 if diagnosis["unknown_adapters"] or diagnosis["invalid_adapter_scripts"] else 0
+        if args.command == "validate":
+            inventory = full_inventory()
+            rows = card_validate.validate_catalog(inventory, audit.SKILL, REPO)
+            if args.out is not None:
+                out = _safe_job(args.out)
+                out.mkdir(parents=True, exist_ok=True)
+                summary = card_validate.write(out, rows, inventory)
+            else:
+                summary = card_validate.summarize(rows, inventory)
+            print(json.dumps(summary, ensure_ascii=False, indent=2))
+            return 0 if summary["validated"] + summary["invalid"] == summary["total"] else 4
         if args.command == "verify":
-            result = pro_max.review_job(args.job, full_inventory())
+            inventory = full_inventory()
+            validation = card_validate.verify_job(args.job, inventory, audit.SKILL, REPO)
+            mode = json.loads((args.job / "black_dragon_report.json").read_text(encoding="utf-8")).get("mode") \
+                if (args.job / "black_dragon_report.json").is_file() else None
+            if mode != "pro-max" and validation["present"]:
+                result = {"job": str(args.job.resolve()), "validation_audit": validation,
+                          "truth": "Card validation receipts re-hashed only; no scripts executed"}
+                print(json.dumps(result, ensure_ascii=False, indent=2))
+                return 0 if validation["integrity_passed"] else 4
+            result = pro_max.review_job(args.job, inventory)
+            result["validation_audit"] = validation
             print(json.dumps(result, ensure_ascii=False, indent=2))
-            return 0 if result["audit"]["integrity_passed"] else 4
+            return 0 if result["audit"]["integrity_passed"] and validation["integrity_passed"] else 4
         if args.command == "links":
             inventory = full_inventory()
             package = skill_links.build(inventory, audit.SKILL, REPO,
@@ -604,7 +648,8 @@ def main(argv=None) -> int:
         report = run(args.task, args.job,
                      _cli_adapters(args.adapters),
                      args.workers, args.execute_adapters, args.timeout,
-                     probe_tools=args.probe_tools, mode=args.mode, media=args.media)
+                     probe_tools=args.probe_tools, mode=args.mode, media=args.media,
+                     validate_cards=args.validate_cards)
         print(json.dumps(report, ensure_ascii=False, indent=2))
         return 0 if report["reviewed_execution_complete"] else 4
     except (OSError, ValueError, KeyError, json.JSONDecodeError) as exc:

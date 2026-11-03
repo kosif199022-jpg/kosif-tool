@@ -2008,6 +2008,11 @@
    "label": "scripts/atlas_capability_miner.py"
   },
   {
+   "id": "script:scripts/_black_dragon_validate.py",
+   "kind": "script",
+   "label": "scripts/_black_dragon_validate.py"
+  },
+  {
    "id": "script:scripts/black_dragon_media.py",
    "kind": "script",
    "label": "scripts/black_dragon_media.py"
@@ -2540,9 +2545,19 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_atlas_ledger.py"
   },
   {
+   "id": "test:tests/test_tempo_agreement.py",
+   "kind": "test",
+   "label": "tests/test_tempo_agreement.py"
+  },
+  {
    "id": "test:tests/test_black_dragon_media.py",
    "kind": "test",
    "label": "tests/test_black_dragon_media.py"
+  },
+  {
+   "id": "test:tests/test_black_dragon_validate.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_validate.py"
   },
   {
    "id": "test:.claude/skills/kosif-superpowers/evals/test_blender_cinema.py",
@@ -7008,6 +7023,12 @@
   },
   {
    "from": "script:scripts/black_dragon.py",
+   "to": "script:scripts/_black_dragon_validate.py",
+   "rel": "imports",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
    "to": "script:scripts/_cinema_all_skills.py",
    "rel": "imports",
    "w": 1
@@ -8105,6 +8126,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/audio_cue_mapper.py",
+   "to": "test:tests/test_tempo_agreement.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
@@ -8131,6 +8158,12 @@
   {
    "from": "script:scripts/black_dragon.py",
    "to": "test:tests/test_black_dragon_tool_adapters.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/black_dragon.py",
+   "to": "test:tests/test_black_dragon_validate.py",
    "rel": "tested_by",
    "w": 1
   },

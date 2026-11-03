@@ -53,6 +53,7 @@ SCRIPT = {
     "montage-tools": VENDOR / "kosif-montage-motion" / "scripts",
     "mimic-analyze": VENDOR / "kosif-mimic" / "scripts",
     "pixel-painter": VENDOR / "pixel-studio-painter" / "scripts",
+    "kling-director": SKILLS / "kosif-kling-director" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
@@ -247,13 +248,16 @@ def excel_model(r, d, task, clip, selftest):
     wb.save(r.work / "planted.xlsx")
     planted = r.call("model_audit on a copy with a planted constant",
                      [*PY, str(d / "model_audit.py"), "planted.xlsx", "--json"], ok_codes=(0, 1)).get("receipt") or {}
-    caught = any("12345" in str(f.get("issue")) for f in planted.get("findings", []))
-    r.check(f"audit reports the constant planted in PnL!{coordinate}", caught, planted.get("verdict"))
+    r.check("built model passes the audit", rep.get("verdict") == "PASS", rep.get("verdict"))
+    listed = any(f.get("cell") == f"PnL!{coordinate}" and f.get("sev") == "HIGH" and "12345" in str(f.get("issue"))
+                 for f in planted.get("findings", []))
+    hardcoded = (planted.get("stats") or {}).get("hardcoded") or 0
+    r.check(f"audit flags the constant planted in PnL!{coordinate} (HIGH finding, hardcoded>=1, verdict not PASS)",
+            listed and hardcoded >= 1 and planted.get("verdict") not in (None, "PASS"),
+            {"verdict": planted.get("verdict"), "hardcoded": hardcoded, "listed": listed})
     r.findings.append({"built_verdict": rep.get("verdict"), "built_stats": rep.get("stats"),
                        "planted_cell": f"PnL!{coordinate}", "planted_verdict": planted.get("verdict"),
-                       "planted_stats_hardcoded": (planted.get("stats") or {}).get("hardcoded"),
-                       "note": "the audit lists the planted constant but keeps verdict PASS and hardcoded=0"
-                       if caught and planted.get("verdict") == "PASS" else None})
+                       "planted_stats_hardcoded": hardcoded})
 
 
 def excel_check(r, d, task, clip, selftest):
@@ -648,6 +652,42 @@ def pixel_painter(r, d, task, clip, selftest):
                        "note": "a two-shape test drawing; the judge rates it as flat art, which is the right call"})
 
 
+def kling_director(r, d, task, clip, selftest):
+    tool = [*PY, str(d / "kling_director.py")]
+    # The task's own words decide its lint verdict ("8K" or a camera brand fail), so exit 1 is allowed here.
+    r.call("build a 45 s prompt pack from the task", [*tool, "build", "--task", task, "--seconds", "45",
+                                                       "--out", "task", "--json"], ok_codes=(0, 1))
+    plan = _json(r.work / "task" / "plan.json")
+    for name in ("plan.json", "block_01.txt", "block_02.txt", "storyboard_01.txt", "storyboard_02.txt"):
+        r.output(r.work / "task" / name)
+    r.check("45 s splits into blocks 0-23 s and 23-45 s", [b["film_range_s"] for b in plan["blocks"]] == [[0, 23], [23, 45]],
+            [b["film_range_s"] for b in plan["blocks"]])
+    block1 = (r.work / "task" / "block_01.txt").read_text(encoding="utf-8")
+    r.check("task text is inside SCENE CONTEXT", " ".join(task.split()) in block1.split("ACTIVE REFERENCES")[0], len(task))
+    structural = {"duration", "headers", "timing", "refs", "limits"}
+    r.check("every block's clock, headers and references pass the lint",
+            all(not structural & set(b["lint"]["failed"]) for b in plan["blocks"]),
+            [b["lint"]["failed"] for b in plan["blocks"]])
+    board = (r.work / "task" / "storyboard_01.txt").read_text(encoding="utf-8")
+    r.check("storyboard has 9 panels ending at 23.0 s", board.count("Panel ") == 9 and "-23.0s" in board, None)
+    clean = r.call("build a known clean 60 s story", [*tool, "build", "--task", "A courier races the rain to deliver one last letter.",
+                                                    "--seconds", "60", "--out", "clean", "--json"]).get("receipt") or {}
+    r.check("known clean story: 2 blocks of 30 s, all PASS, 0 credits",
+            clean.get("result") == "PASS" and len(clean.get("blocks", [])) == 2 and clean.get("credits_spent") == 0,
+            clean.get("result"))
+    good = (r.work / "clean" / "block_01.txt").read_text(encoding="utf-8")
+    bad = good.replace("STYLE\n", "STYLE\n8K masterpiece, ", 1).replace("OPTICS\n", "OPTICS\nShot on an ARRI Alexa. ", 1)
+    bad = bad.replace("AUDIO\n", "AUDIO\nHe says: «يا صاحبي استنى». ", 1).replace("6.0-12.0s — SHOT 2", "6.5-12.0s — SHOT 2", 1)
+    (r.work / "planted.txt").write_text(bad, encoding="utf-8")
+    planted = r.call("check a copy with 4 planted mistakes", [*tool, "check", "planted.txt", "--duration", "30", "--json"],
+                     ok_codes=(1,)).get("receipt") or {}
+    failed = {t["name"] for t in planted.get("tests", []) if t["status"] == "FAIL"}
+    r.check("lint caught every planted mistake (polish, brands, arabic-dlg, timing)",
+            {"polish", "brands", "arabic-dlg", "timing"} <= failed, sorted(failed))
+    r.findings.append({"task_result": plan["result"], "task_lint_failed": [b["lint"]["failed"] for b in plan["blocks"]],
+                       "planted_caught": sorted(failed), "note": "text only; nothing was generated and no credits were spent"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -656,7 +696,8 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "shadow-theatre": shadow_theatre, "web-film": web_film, "causal-laws": causal_laws,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
-           "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter}
+           "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
+           "kling-director": kling_director}
 
 
 def main(argv: list[str]) -> int:

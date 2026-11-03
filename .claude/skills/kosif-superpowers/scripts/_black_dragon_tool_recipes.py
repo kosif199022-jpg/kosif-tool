@@ -10,6 +10,7 @@ the work folder.
 from __future__ import annotations
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import sys
@@ -285,6 +286,55 @@ def repo_build(c: Ctx) -> None:
             done.returncode == 0 and "up to date" in done.stdout, done.stdout[-300:])
 
 
+# --------------------------------------------------------------------------- starter-remotion
+REMOTION_LINE = re.compile(r"^KosifFilm\s+(\d+)\s+(\d+)x(\d+)\s+(\d+)\b", re.M)
+
+
+def starter_remotion(c: Ctx) -> None:
+    """The Remotion starter, really bundled and rendered by Remotion in headless Chromium.
+
+    Needs `npm ci` in starters/remotion (CI does it; node_modules is gitignored and never committed).
+    Known answers: one composition KosifFilm at 30 fps, 1080x1920, 360 frames; frames 0 and 60 render
+    to non-blank 1080x1920 PNGs that differ (it moves); tsc finds no type error; and a planted flaw,
+    a composition id that does not exist, must be refused with no file written.
+    """
+    from PIL import Image
+    root = c.script if c.script.is_dir() else c.script.parent
+    cli = root / "node_modules" / ".bin" / "remotion"
+    c.check("starter's node_modules installed (npm ci in starters/remotion)", cli.is_file(), str(cli))
+    if not cli.is_file():
+        return
+    done = run(c, "remotion compositions src/index.ts", [cli, "compositions", "src/index.ts"], cwd=root)
+    m = REMOTION_LINE.search(done.stdout)
+    got = tuple(int(x) for x in m.groups()) if m else None
+    c.check("composition KosifFilm: 30 fps, 1080x1920, 360 frames", done.returncode == 0 and got == (30, 1080, 1920, 360),
+            got or done.stderr[-200:])
+    stills = {}
+    for frame in (0, 60):
+        png = c.work / f"still-{frame}.png"
+        done = run(c, f"remotion still KosifFilm frame {frame}",
+                   [cli, "still", "KosifFilm", png, f"--frame={frame}"], cwd=root)
+        ok = done.returncode == 0 and png.is_file()
+        info = None
+        if ok:
+            im = Image.open(png).convert("RGB")
+            colors = im.getcolors(1 << 22) or []
+            lo, hi = im.convert("L").getextrema()
+            info = {"size": list(im.size), "colors": len(colors), "luma": [lo, hi]}
+            stills[frame] = im.tobytes()
+            ok = im.size == (1080, 1920) and len(colors) > 50 and hi - lo > 30
+        c.check(f"frame {frame}: 1080x1920 PNG with real, non-blank pixels", ok, info or done.stderr[-200:])
+    c.check("frames 0 and 60 differ (the film moves)", len(stills) == 2 and stills[0] != stills[60], None)
+    tsc = root / "node_modules" / ".bin" / "tsc"
+    done = run(c, "tsc --noEmit (npm run typecheck)", [tsc, "--noEmit"], cwd=root)
+    c.check("typecheck passes", done.returncode == 0, done.stdout[-200:])
+    bad = c.work / "no-such.png"
+    done = run(c, "planted flaw: still of a composition that does not exist",
+               [cli, "still", "NoSuchFilm", bad, "--frame=0"], cwd=root)
+    c.check("planted flaw caught: unknown composition refused, no file written",
+            done.returncode != 0 and not bad.exists(), done.returncode)
+
+
 RECIPES = {
     "atlas-transfer": atlas_transfer,
     "atlas-review-summary": atlas_review_summary,
@@ -296,4 +346,5 @@ RECIPES = {
     "render-text": render_text,
     "color-media": color_media,
     "repo-build": repo_build,
+    "starter-remotion": starter_remotion,
 }

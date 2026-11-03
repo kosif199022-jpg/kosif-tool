@@ -773,6 +773,16 @@
       "why": "pixel-studio-painter: paints a known SVG pixel by pixel into a film (final colours checked) and judges the picture",
       "skill_program": true
     },
+    "skill:kosif-kling-director": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "kling-director",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-kling-director: builds a Kling 4.0 prompt pack from the task (45 s = 23 + 22 s blocks), a known clean story passes the lint, and a copy with 4 planted mistakes is caught; text only, no credits spent",
+      "skill_program": true
+    },
     "tool:anchor-gate": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
       "args": [
@@ -2321,6 +2331,36 @@
         "--task={task}"
       ],
       "why": "web-app-study: runs its own 1 test file(s) on its real code (10 tests here)",
+      "tool_suite": true
+    },
+    "tool:blender-rescue-scene": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-rescue-scene",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-rescue-scene: runs its own 1 test file(s) on its real code (10 tests here, under the bpy module from PyPI when the Blender app is absent)",
+      "tool_suite": true
+    },
+    "tool:blender-cat-fur-upgrade": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "blender-cat-fur-upgrade",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "blender-cat-fur-upgrade: runs its own 1 test file(s) on its real code (10 tests here, under the bpy module from PyPI when the Blender app is absent)",
+      "tool_suite": true
+    },
+    "tool:starter-remotion": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_tool.py",
+      "args": [
+        "starter-remotion",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "starter-remotion: known-answer recipe on a fixture built in the job (7 checks; needs npm ci in starters/remotion)",
       "tool_suite": true
     }
   }

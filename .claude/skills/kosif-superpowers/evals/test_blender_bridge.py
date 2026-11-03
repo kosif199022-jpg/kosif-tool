@@ -84,12 +84,14 @@ class BlenderBridgeTests(TestCase):
     def test_worker_help_and_errors_outside_blender(self):
         import subprocess
         worker = str(SK / "scripts" / "blender_worker.py")
+        # -S hides site-packages, so a pip-installed bpy module (Blender as a Python module) does not
+        # turn this plain-python run into an "inside Blender" one; the worker itself needs only the stdlib here.
         with tempfile.TemporaryDirectory() as temp:
-            shown = subprocess.run([sys.executable, worker, "--help"], capture_output=True, text=True, cwd=temp)
+            shown = subprocess.run([sys.executable, "-S", worker, "--help"], capture_output=True, text=True, cwd=temp)
             self.assertEqual(shown.returncode, 0, shown.stderr)
             self.assertIn("usage: blender_worker.py", shown.stdout)
             for args in ([], ["scene.json", "out.glb"]):
-                done = subprocess.run([sys.executable, worker, *args], capture_output=True, text=True, cwd=temp)
+                done = subprocess.run([sys.executable, "-S", worker, *args], capture_output=True, text=True, cwd=temp)
                 self.assertEqual(done.returncode, 2, args)
                 self.assertNotIn("Traceback", done.stderr)
             self.assertIn("inside Blender", done.stderr)
