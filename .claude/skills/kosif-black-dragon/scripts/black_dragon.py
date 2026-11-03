@@ -101,8 +101,9 @@ def inventory(root: Path = ROOT) -> dict[str, dict]:
                             for x in content.splitlines()[:40] if x.startswith("description:")), "")
         headings = [x.strip("# ").strip() for x in content.splitlines() if x.startswith("# ")][:25]
         link("skill", ident, path, title=ident.rsplit("/", 1)[-1],
-             purpose=description or " ".join(headings[:2]), method="; ".join(headings),
-             family=ident.split("/")[0], details={"description": description, "headings": headings})
+             purpose=description or " ".join(headings[:2]), method=content,
+             family=ident.split("/")[0], details={"description": description, "headings": headings,
+                                                      "full_text_sha256": digest(content.encode("utf-8"))})
 
     power_dir = skill_root / "data/powers"
     if not power_dir.is_dir():
@@ -155,18 +156,14 @@ def inventory(root: Path = ROOT) -> dict[str, dict]:
     for path in sorted((root / "playbooks").glob("*.md")):
         text = path.read_text(encoding="utf-8")
         link("playbook", path.stem, path, title=path.stem,
-             purpose=text[:500], method="; ".join(line.strip("# ") for line in text.splitlines()
-                                                   if line.startswith("# "))[:1500],
-             family="production-playbook")
+             purpose=text[:500], method=text, family="production-playbook")
 
     protocol = skill_root / "PROTOCOL.md"
     protocol_dir = skill_root / "references/protocol"
     for path in ([protocol] if protocol.is_file() else []) + sorted(protocol_dir.glob("A*.md")):
         text = path.read_text(encoding="utf-8")
         link("protocol", path.stem, path, title=path.stem,
-             purpose=text[:500], method="; ".join(line.strip("# ") for line in text.splitlines()
-                                                   if line.startswith("# "))[:1500],
-             family="operating-protocol")
+             purpose=text[:500], method=text, family="operating-protocol")
     if not records:
         raise ValueError("empty inventory")
     return records
@@ -181,15 +178,29 @@ def build(root: Path, out: Path) -> dict:
     with index.open("x", encoding="utf-8") as fh:
         for key in sorted(items):
             fh.write(json.dumps(items[key], ensure_ascii=False, sort_keys=True) + "\n")
+    # Group extracted methods across the FULL catalog, not just selected task matches.
+    # Knowledge fusion is independent of and distinct from executable capability fusion.
+    atlas = native_reasoner().fuse("Unify all source methods",
+                                   [items[key] for key in sorted(items)], len(items))
+    if not atlas["provenance_preserved"] or atlas["selected_source_count"] != len(items):
+        raise ValueError("catalog-wide fusion lost source lineage")
+    atlas_file = out / "fusion_atlas.json"
+    atlas_file.write_text(json.dumps(atlas, ensure_ascii=False, sort_keys=True) + "\n",
+                          encoding="utf-8")
     summary = {
         "schema": SCHEMA, "total_source_linked": len(items),
+        "knowledge_fusion": "catalog-wide-native-reasoning-not-tool-execution",
+        "fused_source_count": atlas["selected_source_count"],
+        "fused_faculty_count": len(atlas["faculties"]),
+        "fused_method_fragments": atlas["method_fusion"]["distinct_fragments"],
+        "fusion_atlas_sha256": digest(atlas_file.read_bytes()),
         "by_kind": dict(sorted(Counter(x["kind"] for x in items.values()).items())),
         "machine_extracted": len(items), "native_implemented": 0,
         "real_execution_verified": 0,
         "native_thinking_implemented": True,
         "native_thinking_faculties": 26,
         "source_index_sha256": digest(index.read_bytes()),
-        "truth": "Every source is linked and machine-extracted, NOT individually reviewed, native-implemented or executed."
+        "truth": "All extracted source methods are grouped in a native knowledge atlas; not proof of human review, executable reimplementation or real task execution."
     }
     (out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return summary
@@ -233,6 +244,15 @@ def compose(task: str, path: Path, *, legacy: bool = False, limit: int = 12) -> 
         "phases": list(PHASES),
         "source_count": len(items),
         "native_mind": synthesis,
+        "catalog_wide_fusion": (
+            (lambda atlas: {
+                "status": "knowledge-reconciled-not-all-capabilities-implemented",
+                "source_count": atlas["selected_source_count"],
+                "faculty_count": len(atlas["faculties"]),
+                "distinct_method_fragments": atlas["method_fusion"]["distinct_fragments"],
+                "atlas_path": str(path.with_name("fusion_atlas.json"))
+            })(read_json(path.with_name("fusion_atlas.json")))
+            if path.with_name("fusion_atlas.json").is_file() else None),
         "selected": [{"id": x["id"], "faculty": x["faculty"], "purpose": x["purpose"][:450],
                       "method": x["method"][:800], "requirements": x["requirements"],
                       "code": x["code"], "source_sha256": x["source_sha256"],
@@ -260,9 +280,22 @@ def verify(root: Path, folder: Path) -> dict:
         if code.get("path") and (not (root / code["path"]).is_file()
                                  or digest((root / code["path"]).read_bytes()) != code["sha256"]):
             changed.append(row["id"] + ":code")
+    atlas_path = folder / "fusion_atlas.json"
+    atlas_valid = False
+    if atlas_path.is_file():
+        atlas = read_json(atlas_path)
+        affiliation = [x["source_id"] for x in atlas["affiliation"]]
+        atlas_valid = (
+            digest(atlas_path.read_bytes()) == summary.get("fusion_atlas_sha256")
+            and atlas.get("provenance_preserved") is True
+            and atlas.get("selected_source_count") == len(rows)
+            and len(affiliation) == len(rows)
+            and set(affiliation) == {row["id"] for row in rows})
     ok = (unique and len(rows) == summary["total_source_linked"]
-          and digest(path.read_bytes()) == summary["source_index_sha256"] and not changed)
-    return {"integrity_passed": ok, "source_count": len(rows),
+          and digest(path.read_bytes()) == summary["source_index_sha256"]
+          and atlas_valid and not changed)
+    return {"integrity_passed": ok, "fusion_atlas_integrity_passed": atlas_valid,
+            "source_count": len(rows),
             "changed_or_missing": changed[:40], "changed_count": len(changed),
             "native_implemented": summary["native_implemented"]}
 
