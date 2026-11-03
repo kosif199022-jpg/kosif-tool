@@ -298,12 +298,12 @@ def starter_remotion(c: Ctx) -> None:
     to non-blank 1080x1920 PNGs that differ (it moves); tsc finds no type error; and a planted flaw,
     a composition id that does not exist, must be refused with no file written.
     """
-    from PIL import Image
     root = c.script if c.script.is_dir() else c.script.parent
     cli = root / "node_modules" / ".bin" / "remotion"
     c.check("starter's node_modules installed (npm ci in starters/remotion)", cli.is_file(), str(cli))
     if not cli.is_file():
         return
+    from PIL import Image  # only needed once Remotion is installed
     done = run(c, "remotion compositions src/index.ts", [cli, "compositions", "src/index.ts"], cwd=root)
     m = REMOTION_LINE.search(done.stdout)
     got = tuple(int(x) for x in m.groups()) if m else None
