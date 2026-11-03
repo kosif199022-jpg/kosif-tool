@@ -43,6 +43,22 @@ cycle, based on Dragon Mind's controlled vocabulary. It does **not** import or r
   native thinking implemented and original features not yet reimplemented.
 - Original tool references remain links only when `--legacy-links` is explicitly requested.
 
+## Catalog-wide native fusion atlas
+
+The `index` command now creates **`fusion_atlas.json`** in addition to `sources.jsonl`:
+it feeds *all catalog records* through the independent 26-faculty native mind,
+combines exactly repeated instructions without losing their contributing source IDs,
+and retains each distinct instruction and original source lineage. Unlike task-specific
+`compose`, the atlas is built across the full indexed catalog rather than the
+top 12 matching sources. Markdown skills, playbooks and protocols contribute their
+full original text rather than headings alone. `verify` also checks the atlas hash
+and every source ID in its membership list. A changed or missing atlas fails verification.
+
+The atlas is **a knowledge artifact, not an executable substitute for 7,000 programs**.
+Semantic equivalence, conflicts, execution, and media/API capabilities still require
+further implementation and evidence. Optional pointers to old tools remain disabled
+by default; no legacy process is executed during fusion.
+
 This is a first **native cognitive fusion engine**. It is deterministic text/knowledge
 synthesis; it does not independently render video, transcribe audio, or execute all
 underlying programs. Source hashing, extraction, reasoning, implementation, and
@@ -52,4 +68,4 @@ actual execution must continue to be reported as separate milestones.
 
 `sources.jsonl` stores one machine-extracted link per catalog entry with its source hash and code fingerprint (where a local file exists). `summary.json` stores the exact input count and index hash. `verify` detects changed or missing sources. These are fast bookkeeping checks, **not** 7,000 functional test runs.
 
-The initial implementation covers catalog discovery, extraction, exact source linking, simple native task matching, and provenance checking. It **does not** claim that every catalog method has been rewritten into one runtime program, or that every original feature has been manually reviewed. Those milestones require actual further code and cannot be inferred from a generated index.
+The current implementation covers full-catalog extraction, exact linking, catalog-wide method grouping and lineage, task-specific native composition, and integrity checking. It **does not** claim that every catalog method has been rewritten into one runtime program, or that every original feature has been manually reviewed. Those milestones require actual further code and cannot be inferred from a generated index.
