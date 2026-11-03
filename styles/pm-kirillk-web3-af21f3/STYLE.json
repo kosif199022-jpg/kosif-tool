@@ -1,0 +1,42 @@
+{
+  "id": "pm-kirillk-web3-af21f3",
+  "name": "Diagram Design: 44 kinds of diagrams",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "product-ui",
+    "charts",
+    "diagrams",
+    "characters",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/kirillk_web3/status/2114157494650257431",
+  "page": "https://www.promptsmotion.com/kirillk-web3-af21f3",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/9503e66d-822b-4730-9b53-93366d16e111/d0fad745c57a3d86.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/0e06d504-8dcb-490a-b1e4-8a3fbf9366b9/21142b0b1f4e8208.webp",
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 221,
+  "published": "2026-10-25",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "HTML",
+    "SVG"
+  ],
+  "source_prompt_words": 107,
+  "listed": true,
+  "skill": "styles/pm-kirillk-web3-af21f3/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/diagrams.md",
+    "playbooks/characters.md",
+    "playbooks/code.md"
+  ]
+}

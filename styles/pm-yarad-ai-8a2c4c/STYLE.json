@@ -1,0 +1,37 @@
+{
+  "id": "pm-yarad-ai-8a2c4c",
+  "name": "Remotion workflow with precise timing",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "diagrams",
+    "kinetic-type",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/Yarad_ai/status/2114069657741078974",
+  "page": "https://www.promptsmotion.com/yarad-ai-8a2c4c",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/04e6627a-feb4-4ea5-95ae-92b4536df793/ff34e0f62193ac8a.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/343f955a-df9f-4ba0-b0a3-af8ec6fc7c9c/a53da4d53762cdd8.webp",
+  "aspect": {
+    "w": 1080,
+    "h": 1334
+  },
+  "aspect_label": "4:5",
+  "rank": 226,
+  "published": "2026-10-24",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 100,
+  "listed": true,
+  "skill": "styles/pm-yarad-ai-8a2c4c/SKILL.md",
+  "playbooks": [
+    "playbooks/diagrams.md",
+    "playbooks/kinetic-type.md",
+    "playbooks/code.md"
+  ]
+}

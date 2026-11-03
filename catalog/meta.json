@@ -1,40 +1,40 @@
 {
- "total": 297,
- "promptsmotion": 251,
+ "total": 311,
+ "promptsmotion": 265,
  "base": 46,
  "with_briefs": 45,
  "playbooks": 19,
  "categories": {
-  "diagrams": 41,
+  "diagrams": 43,
   "hand-drawn": 11,
-  "characters": 50,
-  "kinetic-type": 132,
+  "characters": 60,
+  "kinetic-type": 135,
   "ads": 6,
-  "product-ui": 86,
-  "shapes": 32,
-  "photos": 40,
-  "music": 55,
-  "charts": 155,
+  "product-ui": 92,
+  "shapes": 37,
+  "photos": 44,
+  "music": 58,
+  "charts": 158,
   "3d": 10,
   "particles": 22,
-  "code": 44,
+  "code": 51,
   "phone": 8
  },
  "types": {
   "Style": 46,
   "Prompt": 247,
-  "Skill": 4
+  "Skill": 18
  },
  "aspects": {
   "unknown": 45,
-  "16:9": 208,
-  "4:3": 2,
+  "16:9": 214,
   "1:1": 14,
+  "4:3": 2,
   "9:16": 17,
-  "other": 8,
-  "4:5": 2,
-  "21:9": 1
+  "other": 10,
+  "21:9": 1,
+  "4:5": 8
  },
  "creators": 225,
- "latest_published": "2026-10-08"
+ "latest_published": "2026-10-25"
 }

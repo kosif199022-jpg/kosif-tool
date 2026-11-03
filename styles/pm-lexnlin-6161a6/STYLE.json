@@ -19,12 +19,12 @@
     "h": 1080
   },
   "aspect_label": "16:9",
-  "rank": 199,
+  "rank": 153,
   "published": "2026-10-04",
   "model": "Opus 5.5",
   "effort": "Max",
   "tech": [],
-  "source_prompt_words": 27,
+  "source_prompt_words": 93,
   "listed": true,
   "skill": "styles/pm-lexnlin-6161a6/SKILL.md",
   "playbooks": [

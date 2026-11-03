@@ -1,0 +1,38 @@
+{
+  "id": "pm-thegreatest-sv-f33d62",
+  "name": "HyperFrames motion setup for Claude Code",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "product-ui",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/thegreatest_sv/status/2112609040962359354",
+  "page": "https://www.promptsmotion.com/thegreatest-sv-f33d62",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/912b80a4-8144-4341-831f-dd8e6da81782/44ec8783da9a5baf.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/bd02aa73-6ed3-4659-9622-09469d19c846/c029ad2ac74d2f12.webp",
+  "aspect": {
+    "w": 1080,
+    "h": 1530
+  },
+  "aspect_label": "other",
+  "rank": 79,
+  "published": "2026-10-20",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "GSAP",
+    "HTML",
+    "Lottie",
+    "Remotion"
+  ],
+  "source_prompt_words": 123,
+  "listed": true,
+  "skill": "styles/pm-thegreatest-sv-f33d62/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/code.md"
+  ]
+}

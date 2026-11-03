@@ -1,0 +1,37 @@
+{
+  "id": "pm-slash1sol-b35cb1",
+  "name": "One-evening animated short with Blender and Remotion",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "shapes",
+    "characters",
+    "photos"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/slash1sol/status/2114484472456397194",
+  "page": "https://www.promptsmotion.com/slash1sol-b35cb1",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/a7dede05-9a55-4b6d-9748-0053b756a475/aa898958d5e8c6b9.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/27b3959f-0adb-4cb6-b749-b02d7b0041c5/26410d1fb5582091.webp",
+  "aspect": {
+    "w": 1920,
+    "h": 1080
+  },
+  "aspect_label": "16:9",
+  "rank": 220,
+  "published": "2026-10-25",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 117,
+  "listed": true,
+  "skill": "styles/pm-slash1sol-b35cb1/SKILL.md",
+  "playbooks": [
+    "playbooks/shapes.md",
+    "playbooks/characters.md",
+    "playbooks/photos.md"
+  ]
+}

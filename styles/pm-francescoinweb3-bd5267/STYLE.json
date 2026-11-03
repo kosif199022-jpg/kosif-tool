@@ -1,0 +1,37 @@
+{
+  "id": "pm-francescoinweb3-bd5267",
+  "name": "Step-by-step video pipeline with Lottie",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "product-ui",
+    "charts",
+    "shapes"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/francescoinweb3/status/2112648679731392876",
+  "page": "https://www.promptsmotion.com/francescoinweb3-bd5267",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/b7fa4375-acfd-4177-ae04-2140256b971a/ba66f9f56be95a51.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/64a58390-657a-4ee1-9811-8c0eae1bd7b6/466ca36d35db354f.webp",
+  "aspect": {
+    "w": 1080,
+    "h": 1350
+  },
+  "aspect_label": "4:5",
+  "rank": 222,
+  "published": "2026-10-20",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 111,
+  "listed": true,
+  "skill": "styles/pm-francescoinweb3-bd5267/SKILL.md",
+  "playbooks": [
+    "playbooks/product-ui.md",
+    "playbooks/charts.md",
+    "playbooks/shapes.md"
+  ]
+}

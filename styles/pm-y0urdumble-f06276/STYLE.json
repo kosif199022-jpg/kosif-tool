@@ -1,0 +1,35 @@
+{
+  "id": "pm-y0urdumble-f06276",
+  "name": "Dancing voxel character built in Blender",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "characters",
+    "music",
+    "code"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/Y0urDumble/status/2113374545302200732",
+  "page": "https://www.promptsmotion.com/y0urdumble-f06276",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/8b36f2b6-0297-4c7b-8a54-9e7223b37048/6ad473ff41c72803.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/3228d860-3813-4577-8158-d2c69393c5a8/83a2b39e19a714ab.webp",
+  "aspect": {
+    "w": 1080,
+    "h": 1500
+  },
+  "aspect_label": "other",
+  "rank": 223,
+  "published": "2026-10-22",
+  "model": null,
+  "effort": null,
+  "tech": [],
+  "source_prompt_words": 103,
+  "listed": true,
+  "skill": "styles/pm-y0urdumble-f06276/SKILL.md",
+  "playbooks": [
+    "playbooks/characters.md",
+    "playbooks/music.md",
+    "playbooks/code.md"
+  ]
+}

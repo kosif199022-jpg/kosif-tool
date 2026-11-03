@@ -1,0 +1,33 @@
+{
+  "id": "pm-le0xet-da422b",
+  "name": "Animated short from a single laptop",
+  "name_ar": null,
+  "origin": "PromptsMotion",
+  "type": "Skill",
+  "category": [
+    "characters"
+  ],
+  "creator": "unknown",
+  "creator_url": "https://x.com/le0xet/status/2113998990081409165",
+  "page": "https://www.promptsmotion.com/le0xet-da422b",
+  "video": "https://www.promptsmotion.com/__l5e/assets-v1/e6ab714f-b3a4-49a4-aef8-7d9c7f2ae283/a9734174be1e814e.mp4",
+  "poster": "https://www.promptsmotion.com/__l5e/assets-v1/d6d97d4a-f821-448f-9def-c2fbe9c14fa0/67406397db464506.webp",
+  "aspect": {
+    "w": 1440,
+    "h": 1728
+  },
+  "aspect_label": "4:5",
+  "rank": 219,
+  "published": "2026-10-24",
+  "model": null,
+  "effort": null,
+  "tech": [
+    "Remotion"
+  ],
+  "source_prompt_words": 107,
+  "listed": true,
+  "skill": "styles/pm-le0xet-da422b/SKILL.md",
+  "playbooks": [
+    "playbooks/characters.md"
+  ]
+}
