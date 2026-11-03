@@ -152,7 +152,7 @@ class GeneratedRegistry(unittest.TestCase):
             dragon._safe_script(spec["script"])
         self.assertFalse(set(doc["adapters"]) & set(doc["excluded"]))
         for key, why in doc["excluded"].items():
-            self.assertTrue(why.split(":")[0] in ("refused", "failed", "slow", "timeout"), (key, why))
+            self.assertTrue(why.split(":")[0] in ("refused", "failed", "slow", "timeout", "not exercised"), (key, why))
 
     def test_check_catches_a_tampered_pin(self):
         doc = json.loads(builder.OUT.read_text(encoding="utf-8"))

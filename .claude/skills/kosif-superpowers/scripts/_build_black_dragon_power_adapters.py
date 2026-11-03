@@ -121,6 +121,16 @@ def reason_for(code: int, body: dict, unit_seconds: float, slow: float) -> str |
     return "failed: " + " | ".join(sorted(bits))
 
 
+# Powers whose shared proof file passes while the test methods for THIS power are skipped here
+# (their library is missing), so a pass would not show the power ran.
+NOT_EXERCISED = {
+    "power:ARL-10": "not exercised: camel-tools not installed; its test methods in test_proof_arabic_probe.py skip",
+    "power:ARL-12": "not exercised: pyarabic not installed; its test methods in test_proof_arabic_probe.py skip",
+    "power:ARL-14": "not exercised: tesseract not installed; its test methods in test_proof_arabic_probe.py skip",
+    "power:ARL-18": "not exercised: camel-tools not installed; its test methods in test_proof_arabic_probe.py skip",
+}
+
+
 def build(workers: int, slow: float, timeout: int, job: Path | None) -> int:
     cands = candidates()
     job = job or Path(tempfile.mkdtemp(prefix="black-dragon-power-build-"))
@@ -145,7 +155,7 @@ def build(workers: int, slow: float, timeout: int, job: Path | None) -> int:
         unit_secs[r["key"]] = float(r.get("seconds") or 0)
     for pid, (code, body) in sorted(results.items()):
         secs = sum(unit_secs.get(p.get("cache_key"), 0) for p in body.get("proofs", []) if p.get("cache_key"))
-        why = reason_for(code, body, secs, slow)
+        why = NOT_EXERCISED.get(pid) or reason_for(code, body, secs, slow)
         if why is None:
             adapters[pid] = adapter_spec(pid, body)
         else:
