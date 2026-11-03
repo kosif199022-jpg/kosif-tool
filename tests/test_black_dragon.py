@@ -277,6 +277,11 @@ class FullInventoryTests(unittest.TestCase):
                 self.assertTrue(spec["script"].endswith("_black_dragon_media.py"), key)
                 self.assertEqual(spec["args"][1:], ["{artifact}", "--media={media}"], key)
                 continue
+            if spec.get("style_render"):  # style adapters: STYLE_ID {artifact} --task={task}
+                self.assertTrue(spec["script"].endswith("_black_dragon_style.py"), key)
+                self.assertEqual(spec["args"][1:], ["{artifact}", "--task={task}"], key)
+                self.assertEqual(key, "style:" + spec["args"][0])
+                continue
             tool = spec["args"][1]
             self.assertTrue((ROOT / tool).is_file(), tool)
             self.assertEqual(spec["args"][0], "{artifact}")
