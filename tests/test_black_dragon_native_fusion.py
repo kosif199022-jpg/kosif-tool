@@ -119,7 +119,7 @@ class NativeFusionTests(unittest.TestCase):
         self.assertEqual(summary["native_implemented"], 0)
 
     def test_catalog_fusion_preserves_full_document_and_every_method(self):
-        long_document = "# Full source\\n" + "\\n".join(
+        long_document = "# Full source\n" + "\n".join(
             "Preserve rule number %d" % n for n in range(40))
         self.write(".claude/skills/example/SKILL.md", long_document)
         rows = native.inventory(self.root)
