@@ -219,6 +219,7 @@ BLOCKED_WHY = {
     "method_description": "method description, not a program (applied in the plan, never counted as executed)",
     "tool_without_adapter": "a program with no reviewed adapter yet (candidate for a new adapter)",
     "skill_program_without_adapter": "a skill that ships a Python CLI with no reviewed adapter yet (candidate)",
+    "method_applied": "a method card applied to the task by a generic applier (its own tier: a written procedure, not the card's program run)",
 }
 
 # Skills that ship a program which was tried and cannot earn a receipt in this environment yet.
@@ -262,6 +263,17 @@ def _why_blocked(kind: str | None, source: str | None = None) -> str:
     return "method_description"
 
 
+# Generic method appliers write a task-specific procedure for a knowledge card. That is real work with a
+# receipt, but it is not the card's own program running, so it is its own tier ("applied"): the ledger
+# keeps such entries out of "executed" and out of full_coverage.
+METHOD_APPLIER_SCRIPTS = (".claude/skills/kosif-dragon-mind/scripts/card_apply.py",)
+
+
+def _is_method_applier(spec: dict) -> bool:
+    script = str(spec.get("script", "")).replace("\\", "/")
+    return bool(spec.get("method_applier")) or any(script.endswith(s) for s in METHOD_APPLIER_SCRIPTS)
+
+
 def _attempt(key: str, spec: dict | None, task: str, job: Path,
              approved: bool, timeout: int, kind: str = "tool", media: str = "") -> dict:
     if spec is None:
@@ -287,6 +299,12 @@ def _attempt(key: str, spec: dict | None, task: str, job: Path,
         proof = {"entry": key, "exit_code": completed.returncode,
                  "command": command, "artifact": str(artifact),
                  "artifact_sha256": audit.sha256(artifact)}
+        if _is_method_applier(spec):
+            proof["tier"] = "applied"
+            proof["counts_as_executed"] = False
+            receipt.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            return {"status": "blocked", "applied": True, "receipt": receipt,
+                    "reason": "Method card applied to the task by a generic applier (applied tier, not execution)"}
         receipt.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return {"status": "executed", "receipt": receipt}
     except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
@@ -389,6 +407,10 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                 item["reason"] = "Evidence check failed: " + str(exc)
         else:
             item["reason"] = result["reason"]
+            if result.get("applied"):
+                item["applied_receipt"] = {"receipt_path": str(result["receipt"]),
+                                           "receipt_sha256": audit.sha256(result["receipt"])}
+                blocked_why["method_applied"] += 1
             if result.get("no_adapter"):
                 why = _why_blocked(inventory[key].get("kind"), inventory[key].get("source"))
                 if why == "tool_without_adapter" and key in TOOL_BLOCKERS:
@@ -422,6 +444,7 @@ def run(task: str, job: Path, adapters: dict, workers: int,
               "brain_plan_file": str(job / "black_dragon_plan.json"),
               "selected_out": strategy["selected_out"],
               "executed": counts["executed"], "blocked": counts["blocked"],
+              "applied": blocked_why["method_applied"],
               "blocked_why": {k: blocked_why[k] for k in BLOCKED_WHY},
               "media": ({"path": media_arg, "sha256": audit.sha256(Path(media_arg))} if media_arg
                         else "none: media adapters ran on their self-test clip, not on your footage"),
@@ -477,6 +500,7 @@ def _markdown(report: dict, strategy: dict, ledger: dict) -> str:
              f"وصف طريقة مش برنامج / method descriptions (not programs) · "
              f"**{report['blocked_why']['tool_without_adapter']:,}** برامج لسه من غير adapter / tools without an adapter · "
              f"**{report['blocked_why']['skill_program_without_adapter']:,}** مهارات فيها برنامج لسه مش متوصّل / skills with a program, no adapter yet",
+             f"- اتطبّقت كطريقة (مش تنفيذ) / method cards applied (NOT execution): **{report.get('applied', 0):,}**",
              f"- full coverage (every entry executed): **{report['full_coverage']}**",
              f"- tools without reviewed adapters: **{report['adapter_readiness']['tools_missing_reviewed_adapter']}**; "
              f"knowledge entries without adapters: **{report['adapter_readiness']['knowledge_entries_without_adapter']}**",

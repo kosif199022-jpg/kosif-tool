@@ -72,6 +72,31 @@ class BlackDragonTests(unittest.TestCase):
             self.assertEqual(ledger["items"][key]["receipt"]["command"][0], sys.executable)
         self.assertTrue(dragon.audit.report(self.job, self.inventory)["fully_executed"])
 
+    def test_method_applier_receipts_are_applied_not_executed(self):
+        # A generic applier that writes a procedure for every card must not inflate "executed".
+        applier = self.root / ".claude/skills/kosif-dragon-mind/scripts"
+        applier.mkdir(parents=True)
+        (applier / "card_apply.py").write_text(
+            "import pathlib,sys\npathlib.Path(sys.argv[1]).write_text('procedure for ' + sys.argv[2])\n",
+            encoding="utf-8")
+        card = {"script": ".claude/skills/kosif-dragon-mind/scripts/card_apply.py", "args": ["{artifact}", "{task}"]}
+        adapters = {k: dict(card) for k in self.inventory if k != "tool:render"}
+        adapters["power:RENDER-A"]["script"] = "scripts/safe_adapter.py"
+        adapters["power:RENDER-A"]["method_applier"] = True  # the explicit flag works for any script too
+        adapters["tool:render"] = self.adapter()
+        result = dragon.run("apply all", self.job, adapters, workers=4,
+                            allow_execution=True, timeout=5, entries=self.inventory)
+        self.assertEqual(result["executed"], 1)
+        self.assertEqual(result["applied"], 3)
+        self.assertEqual(result["blocked_why"]["method_applied"], 3)
+        self.assertEqual(sum(result["blocked_why"].values()), result["blocked"])
+        self.assertFalse(result["full_coverage"])
+        ledger = dragon.audit.load(self.job, self.inventory)
+        for key in ("skill:editor", "power:THINK-A", "power:RENDER-A"):
+            self.assertNotEqual(ledger["items"][key]["status"], "executed")
+            self.assertTrue(Path(ledger["items"][key]["applied_receipt"]["receipt_path"]).is_file())
+        self.assertFalse(dragon.audit.report(self.job, self.inventory)["fully_executed"])
+
     def test_unregistered_entries_prevent_full_coverage(self):
         adapters = {"tool:render": self.adapter()}
         result = dragon.run("partial", self.job, adapters, workers=8,
