@@ -128,11 +128,15 @@ def video_editor(r, d, task, clip, selftest):
 
 def motion_energy(r, d, task, clip, selftest):
     out = r.work / "motion_energy.json"
-    r.call("motion_energy", [*PY, str(d / "motion_energy.py"), str(clip), "--out", str(out)])
+    # exit 1 = verdict REVISE (e.g. a frozen span): a finding about the video, not a broken tool.
+    step = r.call("motion_energy", [*PY, str(d / "motion_energy.py"), str(clip), "--out", str(out)], ok_codes=(0, 1))
     r.output(out)
-    build = _json(out).get("build") or {}
+    data = _json(out)
+    build = data.get("build") or {}
     r.check("motion measured per frame", (build.get("frames") or 0) > 0, build.get("frames"))
-    r.findings.append({k: build.get(k) for k in ("mean", "peak", "near_still_share", "longest_still_s")})
+    r.findings.append({**{k: build.get(k) for k in ("mean", "peak", "near_still_share", "longest_still_s")},
+                       "verdict": (step.get("receipt") or data).get("verdict"),
+                       "issues": (step.get("receipt") or data).get("issues", [])})
     if selftest:
         r.check("self-test clip (shaking camera) is never still", (build.get("near_still_share") or 0) < 0.1,
                 build.get("near_still_share"))
