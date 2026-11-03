@@ -291,14 +291,15 @@ class RealExecutionTests(unittest.TestCase):
             self.assertEqual(ok.returncode, 0, ok.stderr)
             self.assertGreater(art.stat().st_size, 0)
 
-    def test_probe_runs_help_only_for_argparse_cli_tools(self):
+    def test_probe_staticaly_discovers_cli_without_executing_help(self):
         with tempfile.TemporaryDirectory() as tmp:
             job = Path(tmp)
             record = {"id": "micro-index", "kind": "cli", "root": "skill",
                       "path": "scripts/micro_index.py", "safety": "read-only"}
             probe = dragon._probe("tool:micro-index", record, job)
-            self.assertEqual(probe["status"], "passed", probe)
-            self.assertEqual(probe["command"][-1], "--help")
+            self.assertEqual(probe["status"], "static-only", probe)
+            self.assertNotIn("command", probe)
+            self.assertEqual(json.loads(Path(probe["output"]).read_text())["executed"], False)
             self.assertEqual(dragon._probe("tool:x", dict(record, kind="library"), job)["status"],
                              "not-probeable")
             self.assertEqual(dragon._probe("tool:x", None, job)["status"], "not-probeable")
