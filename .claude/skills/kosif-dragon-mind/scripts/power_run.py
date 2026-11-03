@@ -33,6 +33,7 @@ import _harness as H  # noqa: E402
 _LOADED = False
 GAPS: dict = {}
 OWNER: dict = {}
+BROKEN: dict = {}
 
 
 def load_all() -> dict:
@@ -42,7 +43,13 @@ def load_all() -> dict:
             before = set(H.REGISTRY)
             spec = importlib.util.spec_from_file_location(path.stem, path)
             mod = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(mod)
+            try:
+                spec.loader.exec_module(mod)
+            except Exception as exc:  # one broken module must not hide every other family
+                for cid in set(H.REGISTRY) - before:
+                    del H.REGISTRY[cid]
+                BROKEN[path.name] = "%s: %s" % (type(exc).__name__, str(exc)[:200])
+                continue
             for cid in set(H.REGISTRY) - before:
                 OWNER[cid] = path.name
             GAPS.update(getattr(mod, "GAPS", {}))
@@ -101,7 +108,7 @@ def build(jobs: int = 4) -> dict:
                                          "program passed every known-answer check here.", "adapters": adapters},
                                         ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     report = {"registered": len(ids), "passed": len(passed), "failed": [r for r in rows if r["verdict"] != "executed"],
-              "gaps": dict(sorted(GAPS.items())), "by_module": {}}
+              "gaps": dict(sorted(GAPS.items())), "broken_modules": BROKEN, "by_module": {}}
     for r in rows:
         m = report["by_module"].setdefault(r["runner"], {"passed": 0, "failed": 0})
         m["passed" if r["verdict"] == "executed" else "failed"] += 1
