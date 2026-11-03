@@ -33,6 +33,7 @@ use it*, and *which ones lead this task*. It never executes catalog tools, never
 | ربط / link | `dragon_mind.py link [--write\|--check]` | `data/mind_links.json`: every entry linked to peers, next/prev stage, owner skill, specialist hint and faculty hub; exit 4 unless one connected network |
 | تطبيق / apply | `card_apply.py ARTIFACT ENTRY_ID "<task>"` | one entry applied to the task: steps bound to the task, requirements checked here, acceptance checks, links; exit 3 when it cannot apply |
 | تدقيق / audit | `dragon_mind.py audit --job out/black-dragon/<job>` | splits the dragon's receipts into tool adapters executed, mind executed and method cards applied (by status), re-checking every hash |
+| سوبر باور / superpowers | `dragon_mind.py superpowers [--write]` | how many of the 483 superpowers have a real runner for every member power; `--write` gives those a chain adapter (`superpower_run.py`) |
 | فك القفل / unlock | `dragon_mind.py unlock [--script out/<job>/unlock.sh]` | greedy install plan: which install makes the most entries ready here (installs nothing) |
 
 Paths: scripts live in `.claude/skills/kosif-dragon-mind/scripts/`; run them from the repository root.
@@ -106,6 +107,11 @@ check and not a reviewed tool adapter's `executed`; a procedure is not media tha
 Generated real runners (`data/black_dragon_adapters_powers.json`, `data/black_dragon_adapters_styles.json`,
 when present) are merged with the reviewed adapters first: an entry with a real runner never gets the applier,
 and the hand-reviewed file wins over a generated one.
+
+A superpower is a pipeline of member powers. `superpower_run.py ARTIFACT SP-ID TASK` runs each member's
+real runner in order, hashes every step's output and exits 0 only when every member ran ("executed");
+otherwise it writes "partial" or "none" and exits 3. `audit` counts these as `superpower_chain_executed`
+and reports `real_executed` (programs that really ran) by kind, which is the number to quote.
 
 ```bash
 python3 .claude/skills/kosif-dragon-mind/scripts/dragon_mind.py adapters --all --out out/black-dragon/<job>-all.json

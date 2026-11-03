@@ -174,6 +174,7 @@ class DragonMindLinkAndApplyTests(unittest.TestCase):
         self.assertEqual(res["tiers"], {"method_applied": 1, "tool_adapter_executed": 1})
         self.assertEqual(res["method_status"], {"applied-ready-here": 1})
         self.assertEqual(res["hash_mismatch"], ["tool:c"])
+        self.assertEqual(res["real_executed"], 1)
 
     def test_all_adapters_cover_every_entry_and_keep_reviewed_ones(self):
         bd, _ = dm._dragon()
@@ -206,6 +207,41 @@ class DragonMindLinkAndApplyTests(unittest.TestCase):
         self.assertEqual(merged[power], runner)
         self.assertEqual(merged[some], reviewed[some])
         self.assertNotIn("method_applier", merged[power])
+
+    def test_superpower_chain_executes_only_when_every_member_runs(self):
+        import superpower_run as spr
+        sps = spr.load_superpowers()
+        self.assertEqual(len(sps), sum(1 for k in self.inv if k.startswith("superpower:")))
+        sp_id = min(sps, key=lambda i: (len(sps[i]["pipeline"]), i))
+        members = ["power:" + s["id"] for s in sps[sp_id]["pipeline"]]
+        with tempfile.TemporaryDirectory() as tmp:
+            ok = Path(tmp) / "ok.py"
+            ok.write_text("import sys,pathlib; pathlib.Path(sys.argv[1]).write_text('ran ' + sys.argv[2])\n")
+            bad = Path(tmp) / "bad.py"
+            bad.write_text("import sys; sys.exit(1)\n")
+            rel_ok = ".claude/skills/kosif-dragon-mind/scripts/_t_ok.py"
+            rel_bad = ".claude/skills/kosif-dragon-mind/scripts/_t_bad.py"
+            (ROOT / rel_ok).write_text(ok.read_text())
+            (ROOT / rel_bad).write_text(bad.read_text())
+            try:
+                full = {m: {"script": rel_ok, "args": ["{artifact}", "{task}"]} for m in members}
+                adapters, counts = spr.registry(full)
+                self.assertIn("superpower:" + sp_id, adapters)
+                art = Path(tmp) / "a.json"
+                self.assertEqual(spr.execute(art, sp_id, "t", runners=full), 0)
+                res = json.loads(art.read_text(encoding="utf-8"))
+                self.assertEqual(res["verdict"], "executed")
+                self.assertEqual(res["members_executed"], len(members))
+                for st in res["steps"]:
+                    self.assertEqual(st["artifact_sha256"], spr.sha(Path(st["artifact"])))
+                broken = dict(full, **{members[0]: {"script": rel_bad, "args": []}})
+                self.assertEqual(spr.execute(Path(tmp) / "b.json", sp_id, "t", runners=broken), 3)
+                none = spr.execute(Path(tmp) / "c.json", sp_id, "t", runners={})
+                self.assertEqual(none, 3)
+                self.assertEqual(json.loads((Path(tmp) / "c.json").read_text())["verdict"], "none")
+            finally:
+                (ROOT / rel_ok).unlink()
+                (ROOT / rel_bad).unlink()
 
 
 if __name__ == "__main__":
