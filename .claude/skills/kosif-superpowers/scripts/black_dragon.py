@@ -145,9 +145,25 @@ def _probe(key: str, record: dict | None, job: Path) -> dict:
 def _inside(child: Path, parent: Path) -> bool:
     return child == parent or parent in child.parents
 
+def generated_adapter_files() -> list:
+    """Generated runner registries (data/black_dragon_adapters_<name>.json), loaded with the reviewed file."""
+    return sorted(REVIEWED_ADAPTERS.parent.glob(REVIEWED_ADAPTERS.stem + "_*.json"))
+
+
 def _load_adapters(path: Path | None) -> dict:
     if path is None:
         return {}
+    if path == REVIEWED_ADAPTERS:
+        # The hand-reviewed registry always wins; generated runner files only add entries it lacks.
+        merged = {}
+        for extra in generated_adapter_files():
+            merged.update(_load_one_adapter_file(extra))
+        merged.update(_load_one_adapter_file(path))
+        return merged
+    return _load_one_adapter_file(path)
+
+
+def _load_one_adapter_file(path: Path) -> dict:
     raw = json.loads(path.read_text(encoding="utf-8"))
     if isinstance(raw, dict) and isinstance(raw.get("adapters"), dict):
         raw = raw["adapters"]  # bundled file format: {"_comment": ..., "adapters": {...}}

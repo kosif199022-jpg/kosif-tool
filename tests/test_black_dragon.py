@@ -332,3 +332,22 @@ class RealExecutionTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class GeneratedRegistryMergeTests(unittest.TestCase):
+    def test_generated_files_add_entries_and_reviewed_wins(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            reviewed = Path(tmp) / "black_dragon_adapters.json"
+            reviewed.write_text(json.dumps({"adapters": {"a": {"script": "r.py", "args": []}}}))
+            (Path(tmp) / "black_dragon_adapters_powers.json").write_text(json.dumps(
+                {"adapters": {"a": {"script": "gen.py", "args": []}, "b": {"script": "gen.py", "args": []}}}))
+            old = dragon.REVIEWED_ADAPTERS
+            dragon.REVIEWED_ADAPTERS = reviewed
+            try:
+                merged = dragon._load_adapters(reviewed)
+            finally:
+                dragon.REVIEWED_ADAPTERS = old
+            self.assertEqual(merged["a"]["script"], "r.py")
+            self.assertEqual(merged["b"]["script"], "gen.py")
+            # A custom path is loaded alone, without generated files.
+            self.assertEqual(set(dragon._load_adapters(Path(tmp) / "black_dragon_adapters_powers.json")), {"a", "b"})
