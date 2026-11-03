@@ -24,7 +24,7 @@ def load(name, path):
 
 dragon = load("black_dragon", SCRIPTS / "black_dragon.py")
 style = load("bd_style", ADAPTER)
-builder = load("bd_style_build", SCRIPTS / "build_black_dragon_style_adapters.py")
+builder = load("bd_style_build", SCRIPTS / "_build_black_dragon_style_adapters.py")
 
 
 def have_browser():
@@ -61,7 +61,7 @@ class KnownAnswers(unittest.TestCase):
 
 class Registry(unittest.TestCase):
     def test_generated_file_is_current_and_loaded(self):
-        self.assertTrue(DATA.is_file(), "run build_black_dragon_style_adapters.py")
+        self.assertTrue(DATA.is_file(), "run _build_black_dragon_style_adapters.py")
         self.assertEqual(builder.static_check(DATA), [])
         adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
         inventory = dragon.full_inventory()

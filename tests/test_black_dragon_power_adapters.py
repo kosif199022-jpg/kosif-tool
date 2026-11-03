@@ -22,7 +22,7 @@ def _load(name, file):
 
 
 power = _load("bd_power", "_black_dragon_power.py")
-builder = _load("bd_power_build", "build_black_dragon_power_adapters.py")
+builder = _load("bd_power_build", "_build_black_dragon_power_adapters.py")
 dragon = _load("black_dragon", "black_dragon.py")
 
 GOOD = """import unittest
