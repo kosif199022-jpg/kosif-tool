@@ -55,17 +55,35 @@ def pick_peaks(flux, min_gap_frames=25):
 
 
 def estimate_bpm(beats_s):
-    if len(beats_s) < 4:
+    """Return a tempo hypothesis only for an actual repeatable pulse train.
+
+    The old single histogram-bin maximum gave plausible BPM values for
+    unrelated transient intervals (e.g. 92.9 BPM in a clip with no steady
+    beat). Require both consistent intervals and a coherent global beat phase.
+    Return None rather than invent precision when either test fails.
+    """
+    beats = np.asarray(beats_s, dtype=np.float64)
+    if len(beats) < 7 or not np.isfinite(beats).all() or np.any(np.diff(beats) <= 0):
         return None
-    gaps = np.diff(beats_s)
-    gaps = gaps[(gaps > 0.25) & (gaps < 2.0)]
-    if not len(gaps):
+    gaps = np.diff(beats)
+    usable = gaps[(gaps > 0.25) & (gaps < 2.0)]
+    if len(usable) < 6:
         return None
-    hist, edges = np.histogram(gaps, bins=60, range=(0.25, 2.0))
-    g = edges[hist.argmax()] + (edges[1] - edges[0]) / 2
-    bpm = 60 / g
-    while bpm < 70: bpm *= 2
-    while bpm > 180: bpm /= 2
+    period = float(np.median(usable))
+    if not 0.25 < period < 2.0:
+        return None
+    # Missing individual beats are allowed (gaps of 2x or 3x the period).
+    multiples = usable / period
+    interval_support = float(np.mean(np.abs(multiples - np.rint(multiples)) <= 0.12))
+    phases = (beats - beats[0]) / period
+    phase_support = float(np.mean(np.abs(phases - np.rint(phases)) <= 0.15))
+    if interval_support < 0.80 or phase_support < 0.75:
+        return None
+    bpm = 60.0 / period
+    while bpm < 70:
+        bpm *= 2
+    while bpm > 180:
+        bpm /= 2
     return round(bpm, 1)
 
 
@@ -86,7 +104,8 @@ def main() -> None:
     idx = (np.arange(0, len(rms), 100 / 30)).astype(int)
     energy30 = [round(float(v), 3) for v in rms[idx[idx < len(rms)]]]
     out = {"file": a.audio, "duration_s": round(len(x) / SR, 2), "bpm": bpm, "beats_s": beats, "cut_points_s": cuts,
-           "beat_period_s": round(60 / bpm, 3) if bpm else None, "energy_fps": 30, "energy": energy30}
+           "beat_period_s": round(60 / bpm, 3) if bpm else None, "tempo_status": "candidate" if bpm else "no_steady_tempo",
+           "verified_bpm": False, "energy_fps": 30, "energy": energy30}
     open(a.out, "w", encoding="utf-8").write(json.dumps(out, ensure_ascii=False))
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
