@@ -9,6 +9,7 @@ never "the function returned". The dispatcher _black_dragon_power_program.py run
 refuses a pass without outputs or with any failed check.
 """
 from __future__ import annotations
+import functools
 import importlib
 import json
 from pathlib import Path
@@ -17,6 +18,7 @@ HERE = Path(__file__).resolve().parent
 POWERS = HERE.parent.parent / "data" / "powers"
 
 
+@functools.lru_cache(maxsize=1)
 def card_index() -> dict:
     """power id -> (family, card dict)."""
     out = {}
