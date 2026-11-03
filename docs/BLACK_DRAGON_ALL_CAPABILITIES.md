@@ -32,10 +32,10 @@ Relevance orders and weights; it never removes. Adapter `depends_on` lists build
 | tier | meaning | how |
 |---|---|---|
 | assigned | in the plan with part, mode, weight; one line in `briefs.jsonl` with the SHA-256 of its source file | always, all entries |
-| probed | a CLI tool with argparse answered `--help` on this machine (it starts and its imports load) | `--probe-tools` |
+| inspected | Python CLI source was parsed with AST; no import, `--help` or other module code was executed; runtime readiness remains unknown | `--probe-tools` |
 | executed | a reviewed adapter ran on the task, exit 0, nonempty artifact, SHA-256 receipt checked | `--reviewed-adapters` or `--adapters FILE`, plus `--execute-adapters` |
 
-`full_coverage=true` needs **every** entry executed with a receipt, so today the run honestly exits 4. Assigned and probed are never reported as executed.
+`full_coverage=true` needs **every** entry executed with a receipt, so today the run honestly exits 4. Assigned and statically inspected entries are never reported as executed.
 
 ## Try it (from repo root)
 
@@ -46,7 +46,7 @@ python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "اعمل �
   --job out/black-dragon/<unique-job> --workers 8 --probe-tools --reviewed-adapters --execute-adapters
 ```
 
-The job folder gets `black_dragon_report.md` (Arabic/English summary), `black_dragon_report.json`, `black_dragon_plan.json`, `briefs.jsonl`, `all_skills_ledger.json`, `all_skills_report.json`, `receipts/`, `artifacts/` and `probes/`. Measured on 2026-10-31 in a cloud container: 7,377 assigned, 186 of 204 tools started, 24 of 24 reviewed adapters executed with receipts, 0 failed, about 12 s.
+The job folder gets `black_dragon_report.md` (Arabic/English summary), `black_dragon_report.json`, `black_dragon_plan.json`, `briefs.jsonl`, `all_skills_ledger.json`, `all_skills_report.json`, `receipts/`, `artifacts/` and `probes/`. Measured on 2026-10-31 in a cloud container: 7,377 assigned, 186 of 204 tools started **under the old `--help` probe (historical figure; no longer a readiness metric)**, 24 of 24 reviewed adapters executed with receipts, 0 failed, about 12 s.
 
 ### Reviewed adapters
 
@@ -136,11 +136,11 @@ Execution is **explicitly opt-in**. Keep network calls, paid services, deploymen
 python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
 ```
 
-They cover inventory of every kind against its sources, part/mode/weight for every entry, determinism, dependency waves and blocked dependents, explicit execution gating, unsafe paths, job reuse, the `--help` probe, the exec wrapper's exit code and a real run of reviewed adapters with checked receipts. The `Black Dragon checks` workflow also runs a full job on every pull request and uploads its receipts.
+They cover inventory of every kind against its sources, part/mode/weight for every entry, determinism, dependency waves and blocked dependents, explicit execution gating, unsafe paths, job reuse, the non-executing AST probe (including a malicious top-level side-effect fixture), the exec wrapper's exit code and a real run of reviewed adapters with checked receipts. The `Black Dragon checks` workflow also runs a full job on every pull request and uploads its receipts.
 
 ## In the USIP pipeline (v6.5, appendix A49)
 
-The dragon is no longer only a named command. At L3 it runs right after the USIP brief with `--probe-tools --reviewed-adapters` (assigned + probed); when the owner answers `نفّذ بأقصى قوة` it also gets `--execute-adapters`, since every reviewed adapter only reads. Each stage leader that would change the engine or the verification method goes into plan C, and the report carries one line: assigned · probed · executed with receipt · `full_coverage`. Measured on 2026-11-01: 7,381 assigned, 187 of 205 tools probed, 39 of 39 adapters executed with receipts, 0 failed.
+The dragon is no longer only a named command. At L3 it runs right after the USIP brief with `--probe-tools --reviewed-adapters` (assigned + statically inspected); when the owner answers `نفّذ بأقصى قوة` it also gets `--execute-adapters`, since every reviewed adapter only reads. Each stage leader that would change the engine or the verification method goes into plan C, and the report carries one line: assigned · statically inspected · executed with receipt · `full_coverage`. Measured on 2026-11-01: 7,381 assigned, 187 of 205 tools probed **under the old `--help` implementation (historical; no longer executed)**, 39 of 39 adapters executed with receipts, 0 failed.
 
 
 ## Full-tool activation: inspect first, then schedule (proposed unified version)
