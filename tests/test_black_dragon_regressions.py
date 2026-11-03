@@ -56,7 +56,11 @@ class ModelAuditRegression(unittest.TestCase):
 
 class PixelStudioRegression(unittest.TestCase):
     def test_headless_render_uses_code_file_not_default_scene(self):
-        from PIL import Image
+        try:
+            from PIL import Image
+            import numpy  # studio.py requires numpy even for the headless SVG case
+        except ImportError:
+            self.skipTest("numpy and Pillow are optional; Black Dragon CI installs them")
 
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
@@ -92,6 +96,10 @@ class PixelStudioRegression(unittest.TestCase):
 
 class MimicRegression(unittest.TestCase):
     def test_shaky_camera_low_confidence_is_not_counted_as_edit(self):
+        try:
+            import numpy  # mm_analyze.py imports numpy
+        except ImportError:
+            self.skipTest("numpy is optional; Black Dragon CI installs it")
         analyzer = load_script("dragon_mimic_analysis", VENDOR / "kosif-mimic/scripts/mm_analyze.py")
         self.assertFalse(analyzer.accept_transition({"type": "wipeleft", "confidence": 0.05}))
         self.assertFalse(analyzer.accept_transition({"type": "fade", "confidence": None}))
@@ -100,14 +108,20 @@ class MimicRegression(unittest.TestCase):
 
 class BeatCutsRegression(unittest.TestCase):
     def test_periodic_clicks_have_stable_bpm(self):
-        import numpy as np
+        try:
+            import numpy as np
+        except ImportError:
+            self.skipTest("numpy is optional; Black Dragon CI installs it")
         beat = load_script("dragon_beat_cuts", VENDOR / "pro-video-editor-ffmpeg/scripts/beat_cuts.py")
         times = np.arange(0.1, 7.0, 0.5)
         self.assertGreaterEqual(beat.tempo_consistency(times), 0.95)
         self.assertAlmostEqual(beat.estimate_bpm(times), 120.0, delta=3.0)
 
     def test_irregular_impacts_do_not_invent_bpm(self):
-        import numpy as np
+        try:
+            import numpy as np
+        except ImportError:
+            self.skipTest("numpy is optional; Black Dragon CI installs it")
         beat = load_script("dragon_beat_cuts_irregular", VENDOR / "pro-video-editor-ffmpeg/scripts/beat_cuts.py")
         irregular = np.array([0.1, 0.46, 1.19, 1.77, 2.81, 3.17, 4.1, 5.55])
         self.assertLess(beat.tempo_consistency(irregular), 0.70)
