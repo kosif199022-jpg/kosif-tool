@@ -122,3 +122,6 @@ MIND_ADAPTER = {
     "args": ["{artifact}", ".claude/skills/kosif-dragon-mind/scripts/dragon_mind.py", "think", "{task}"],
     "why": "Dragon Mind: six-step cognitive cycle, frameworks, patterns and typed faculty graph for the task (read-only)",
 }
+
+# The universal method applier: turns any catalog entry into a task-bound procedure artifact.
+APPLIER_SCRIPT = ".claude/skills/kosif-dragon-mind/scripts/card_apply.py"
