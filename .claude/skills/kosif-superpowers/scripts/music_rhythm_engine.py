@@ -17,6 +17,61 @@ def number(x,name,lo,hi):
         raise ValueError(name+" invalid or outside allowed range")
     return float(x)
 
+# Shared tempo-steadiness rule. beat_cuts.py (pro-video-editor-ffmpeg) ports the
+# same constants and formula so both tools agree on what counts as a steady beat.
+ALIGN_TOLERANCE_SECONDS=0.055
+STEADY_MIN_MATCH=0.60
+STEADY_MARGIN=0.10
+
+def chance_match(onsets):
+    """Approximate best match random (non-periodic) onsets reach in this search.
+
+    Calibrated on ~1,000 synthetic onset sets (uniform, Poisson and random-gap
+    onsets against jittered/dropped/extra-onset beats, 3-20 s): with few onsets the
+    60-200 BPM x 12-anchor search overfits, so a 0.60 match alone is not a beat.
+    At the chosen margin ~1% of random sets pass, ~95% of beat sets from 6 s up.
+    """
+    return 0.30+1.2/math.sqrt(max(1,onsets))
+
+def steadiness(match,onsets):
+    chance=chance_match(onsets)
+    required=max(STEADY_MIN_MATCH,chance+STEADY_MARGIN)
+    confidence=0.0 if onsets<4 else max(0.0,min(1.0,(match-chance)/max(1e-9,1-chance)))
+    return {"match":round(match,5),"onsets":onsets,"chance_match":round(chance,5),
+            "required_match":round(required,5),"tempo_confidence":round(confidence,4),
+            "steady_beat":onsets>=4 and match>=required,
+            "rule":"steady when onsets >= 4 and match >= max(0.60, chance_match + 0.10); chance_match = 0.30 + 1.2/sqrt(onsets)"}
+
+def _tempo_entry(events,duration,bpm):
+    period=60/bpm
+    best=(0,float('inf'),-1,None)
+    for anchor in events[:min(12,len(events))]:
+        errs=[min((t-anchor)%period, period-((t-anchor)%period)) for t in events]
+        close=sum(err<=ALIGN_TOLERANCE_SECONDS for err in errs)
+        # Whole grid ticks that fit, so a few ms of encoder padding at the end
+        # does not penalise the true tempo against a slightly slower one.
+        expected=max(1,math.floor(duration/period+1e-9))
+        coverage=min(1,len(events)/expected)
+        score=(close/len(events))*(0.60+0.40*coverage)
+        # Penalize artificial fast tempos with extra "missing" beats.
+        mean_error=statistics.mean(errs)
+        if score>best[0]+1e-9 or (abs(score-best[0])<=1e-9 and mean_error<best[1]):
+            best=(score,mean_error,close,anchor)
+    return {"bpm":bpm,"match":round(best[0],5),
+            "aligned_onsets":best[2],
+            "mean_error_seconds":round(best[1],6),
+            "phase_anchor_seconds":best[3]}
+
+def _refine(events,duration,entry,min_bpm,max_bpm):
+    best=entry
+    for step in range(-9,10):
+        bpm=round(entry["bpm"]+step/10,1)
+        if step==0 or not min_bpm<=bpm<=max_bpm:continue
+        cand=_tempo_entry(events,duration,bpm)
+        if cand["match"]>best["match"]+1e-9:
+            best=cand
+    return best
+
 def rhythm(cues,min_bpm=60,max_bpm=200):
     if not isinstance(cues,dict) or cues.get("schema")!="kosif.audio-cues.v1":
         raise ValueError("expected KOSIF measured audio cues")
@@ -37,22 +92,7 @@ def rhythm(cues,min_bpm=60,max_bpm=200):
     sorted_scores=[]
     if len(events)>=4:
         for bpm in range(min_bpm,max_bpm+1):
-            period=60/bpm
-            best=(0,float('inf'),-1,None)
-            for anchor in events[:min(12,len(events))]:
-                errs=[min((t-anchor)%period, period-((t-anchor)%period)) for t in events]
-                close=sum(err<=0.055 for err in errs)
-                expected=max(1,duration/period)
-                coverage=min(1,len(events)/expected)
-                score=(close/len(events))*(0.60+0.40*coverage)
-                # Penalize artificial fast tempos with extra "missing" beats.
-                mean_error=statistics.mean(errs)
-                if score>best[0]+1e-9 or (abs(score-best[0])<=1e-9 and mean_error<best[1]):
-                    best=(score,mean_error,close,anchor)
-            sorted_scores.append({"bpm":bpm,"match":round(best[0],5),
-                                  "aligned_onsets":best[2],
-                                  "mean_error_seconds":round(best[1],6),
-                                  "phase_anchor_seconds":best[3]})
+            sorted_scores.append(_tempo_entry(events,duration,bpm))
     sorted_scores.sort(key=lambda x:(-x["match"],x["mean_error_seconds"],x["bpm"]))
     # Avoid listing near-duplicate tempo hypotheses as meaningfully distinct.
     alternatives=[]
@@ -60,9 +100,15 @@ def rhythm(cues,min_bpm=60,max_bpm=200):
         if all(abs(x["bpm"]-a["bpm"])>=6 for a in alternatives):
             alternatives.append(x)
         if len(alternatives)>=3:break
+    # Integer BPM drifts off the onsets on long tracks with a fractional tempo:
+    # refine each hypothesis in 0.1 BPM steps, keeping it only on a strictly better match.
+    alternatives=[_refine(events,duration,x,min_bpm,max_bpm) for x in alternatives]
+    alternatives.sort(key=lambda x:(-x["match"],x["mean_error_seconds"],x["bpm"]))
     winner=alternatives[0] if alternatives else None
+    gate=steadiness(winner["match"] if winner else 0.0,len(events))
+    steady=bool(winner) and gate["steady_beat"]
     grid=[]
-    if winner and winner["match"]>=0.60:
+    if steady:
         p=60/winner["bpm"]
         start=winner["phase_anchor_seconds"]
         while start-p>=0:start-=p
@@ -87,7 +133,10 @@ def rhythm(cues,min_bpm=60,max_bpm=200):
         "duration":duration,
         "source":cues.get("source"),
         "tempo_hypotheses":alternatives,
-        "candidate_tempo_bpm":winner["bpm"] if winner and winner["match"]>=0.60 else None,
+        "candidate_tempo_bpm":winner["bpm"] if steady else None,
+        "steady_beat":steady,
+        "tempo_confidence":gate["tempo_confidence"],
+        "steadiness":gate,
         "estimated_grid_seconds":grid,
         "measured_transients_seconds":events,
         "relative_energy_sections":sections,
@@ -95,6 +144,7 @@ def rhythm(cues,min_bpm=60,max_bpm=200):
         "lyric_understanding":False,
         "emotion_detection":False,
         "notes":["candidate tempo and grid based on onset alignment only; not ground truth",
+                 "steady_beat is false (and candidate_tempo_bpm null) unless onset alignment beats the chance level for this many onsets",
                  "half/double-time ambiguity is common; user can override",
                  "energy level cannot reliably infer musical mood or semantic meaning",
                  "local original-audio measurements, no model downloads or transcription"]
@@ -118,6 +168,7 @@ def main():
             json.dump(result,f,ensure_ascii=False,indent=2)
             f.write("\n")
         print(json.dumps({"path":str(out.resolve()),"tempo_candidate":result["candidate_tempo_bpm"],
+                          "steady_beat":result["steady_beat"],"tempo_confidence":result["tempo_confidence"],
                           "verified_bpm":False,"beat_grid":len(result["estimated_grid_seconds"])},
                          ensure_ascii=False))
     except (ValueError,TypeError,OSError,json.JSONDecodeError) as exc:

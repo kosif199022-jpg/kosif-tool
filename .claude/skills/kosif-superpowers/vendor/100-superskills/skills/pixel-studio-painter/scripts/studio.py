@@ -1308,6 +1308,46 @@ class Studio:
         self.root.mainloop()
 
 
+def render_code(code_file: Path, png: Path, scale: float = 1.0, allow_risky: bool = False) -> tuple[int, int]:
+    """No window: draw a code file (SVG / PIL / matplotlib / turtle / KOSIF scene / HTML / image code) to a PNG.
+    The code is cleaned as if pasted into the panel, then run in its own process by runner.py --export, exactly
+    as ▶ runs it. Returns the PNG's size."""
+    import edit_pack
+    code, _ = edit_pack.restore(extract_code(Path(code_file).read_text(encoding="utf-8-sig")))
+    if not code:
+        raise SystemExit(f"{code_file}: no code to draw")
+    why = risky(code)
+    if why and not allow_risky:
+        raise SystemExit(f"{code_file}: the code goes beyond drawing ({'، '.join(why)}); "
+                         "check it and pass --allow-risky to run it anyway")
+    low = code.lstrip()[:4000].lower()
+    ext = ".html" if low.startswith("<") and ("<!doctype html" in low or "<html" in low or "<script" in low) else \
+        ".svg" if low.startswith("<") else ".py"
+    work = Path(tempfile.mkdtemp(prefix="kosif_render_"))
+    try:
+        src, made = work / f"code{ext}", work / "out.png"
+        src.write_text(code, encoding="utf-8")
+        try:
+            proc = subprocess.run([sys.executable, str(HERE / "runner.py"), str(src), str(work / "jobs"),
+                                   "--scale", str(scale), "--export", str(made)],
+                                  stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=CODE_TIMEOUT,
+                                  creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
+        except subprocess.TimeoutExpired:
+            raise SystemExit(f"{code_file}: the code ran longer than {CODE_TIMEOUT} s and was stopped")
+        err = work / "jobs" / "error.txt"
+        if err.exists():
+            raise SystemExit(f"{code_file}: the code failed\n{err.read_text(encoding='utf-8')}")
+        if proc.returncode or not made.exists():
+            raise SystemExit(f"{code_file}: the code made no picture "
+                             f"(exit {proc.returncode}) {proc.stderr.decode('utf-8', 'replace')[-2000:]}")
+        with Image.open(made) as im:
+            size = im.size
+        shutil.move(str(made), str(png))                     # an earlier file at PNG is only replaced on success
+        return size
+    finally:
+        shutil.rmtree(work, ignore_errors=True)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("scene", nargs="?", default="dragon_girl" if scene_file("dragon_girl") else (scenes() or [""])[0])
@@ -1319,6 +1359,8 @@ def main():
     ap.add_argument("--image-code", metavar="IMAGE", help="no window: write a standalone Python program for this image to out/<name>.py")
     ap.add_argument("--data-only", action="store_true", help="with --image-code: the pure-data form (TITLE/SIZE/IMAGE_B64), read by the studio without running")
     ap.add_argument("--code", metavar="FILE", help="open the studio and draw this code file (SVG/PIL/matplotlib/turtle/scene)")
+    ap.add_argument("--allow-risky", action="store_true",
+                    help="with --code --render: run code that risky() flags (files, network, subprocess) without asking")
     ap.add_argument("--name", help="scene name for --trace (default: the image's file name)")
     ap.add_argument("--title", help="title shown while drawing a traced scene")
     a = ap.parse_args()
@@ -1348,6 +1390,11 @@ def main():
         print(f"{f}: {f.stat().st_size // 1024:,} KB")
         return
     speed = {"slow": "بطيء", "normal": "عادي", "fast": "سريع", "instant": "فوري"}.get(a.speed, a.speed)
+    if a.render and a.code:                                  # the code file is the picture, not the default scene
+        t = time.perf_counter()
+        size = render_code(Path(a.code), Path(a.render), a.scale, allow_risky=a.allow_risky)
+        print(f"{a.render}: {size[0]}x{size[1]} in {time.perf_counter() - t:.1f}s")
+        return
     if a.render:
         t = time.perf_counter()
         loaded = load(a.scene)

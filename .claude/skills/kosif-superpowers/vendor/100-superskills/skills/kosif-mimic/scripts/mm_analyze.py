@@ -18,6 +18,7 @@ import mm_transitions as TR
 from mm_common import Timer, ensure_dir, f2t, fps_str, log, probe, rnd, save_json, tc, work_paths
 from mm_video import FrameReader, extract_audio, fit_short_side, grab_frames_at
 
+MIN_TRANSITION_CONFIDENCE = 0.1   # classify() clamps to 0.05 when no kind fits better than another: not a transition
 SMALL_SHORT = 96      # shot/transition analysis resolution (short side)
 MID_SHORT = 360       # sharpness / motion resolution
 
@@ -131,6 +132,48 @@ def pair_dist(feats, i: np.ndarray, j: np.ndarray, tmask=None, block: int = 6, h
             res = np.nanmedian(bm, axis=1) if how == "median" else np.nanmean(bm, axis=1)
         out[k0:k0 + 512] = np.nan_to_num(res, nan=0.0)
     return out
+
+
+def aligned_dist(feats, i: int, j: int, tmask=None, block: int = 6) -> float:
+    """Like pair_dist(how='median') for ONE pair, after undoing the global translation between the
+    two frames (phase correlation). Camera shake / pans move the whole picture, which the plain
+    pixel distance reads as change; a cut or a transition still differs after alignment. Returns
+    min(plain, aligned), so a bad alignment can never make a real change look bigger or smaller
+    than the unaligned measure says."""
+    plain = float(pair_dist(feats, np.array([i]), np.array([j]), tmask)[0])
+    cv2 = mm_img.cv2 if mm_img.HAVE_CV2 else None
+    if cv2 is None:
+        return plain
+    G = _gray_small(feats)
+    i = int(np.clip(i, 0, len(G) - 1))
+    j = int(np.clip(j, 0, len(G) - 1))
+    a, b = G[i].astype(np.float32), G[j].astype(np.float32)
+    h, w = a.shape
+    try:
+        win = cv2.createHanningWindow((w, h), cv2.CV_32F)
+        (dx, dy), _ = cv2.phaseCorrelate(a, b, win)
+    except cv2.error:
+        return plain
+    if not (np.isfinite(dx) and np.isfinite(dy)) or max(abs(dx), abs(dy)) > 0.25 * min(h, w):
+        return plain
+    M = np.float32([[1, 0, -dx], [0, 1, -dy]])
+    bw = cv2.warpAffine(b, M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+    m = int(np.ceil(max(abs(dx), abs(dy)))) + 1
+    d = np.abs(a - bw)
+    if tmask is not None:
+        d = np.where(~(tmask[i] | tmask[j]), d, np.nan)
+    d = d[m:h - m, m:w - m]
+    hh, ww = d.shape
+    gh, gw = hh // block, ww // block
+    if gh < 2 or gw < 2:
+        return plain
+    d = d[: gh * block, : gw * block].reshape(gh, block, gw, block)
+    with np.errstate(all="ignore"):
+        import warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", RuntimeWarning)
+            al = float(np.nanmedian(np.nanmean(d, axis=(1, 3))))
+    return plain if not np.isfinite(al) else min(plain, al)
 
 
 def hist_dist(feats, i, j):
@@ -262,7 +305,13 @@ def refine_extent(feats, cand, tmask, L):
     mA = float(pair_dist(feats, np.array([max(0, pa - g)]), np.array([pa]), tmask)[0])
     mB = float(pair_dist(feats, np.array([pb]), np.array([min(N - 1, pb + g)]), tmask)[0])
     hAB = float(hist_dist(feats, np.array([pa]), np.array([pb]))[0])
-    real = dAB > 1.5 * max(mA, mB) + 1.5 or hAB > 0.25
+    # motion-compensated check: camera shake / pans shift the whole frame, so the plain distance
+    # between pa and pb is high although it is the same shot; after aligning the frames by phase
+    # correlation the same shot matches again while a cut or a transition still differs
+    aAB = aligned_dist(feats, pa, pb, tmask)
+    aA = aligned_dist(feats, max(0, pa - g), pa, tmask)
+    aB = aligned_dist(feats, pb, min(N - 1, pb + g), tmask)
+    real = (dAB > 1.5 * max(mA, mB) + 1.5 and aAB > 1.5 * max(aA, aB) + 1.5) or hAB > 0.25
     if not real:
         return None
     return {"a": int(a), "b": int(b), "pa": int(pa), "pb": int(pb), "strength": dAB / (max(mA, mB) + 1.0),
@@ -550,6 +599,9 @@ def analyze(ref: str, work: str, text_color: str | None = None, sensitivity: flo
         for bd in bnds:
             tr = classify(feats, bd, tmask, deep=deep, fitter=fitter)
             tr["evidence"] = {"src": bd["src"], "strength": rnd(bd["strength"], 2), "dAB": rnd(bd["dAB"], 2)}
+            if tr["confidence"] < MIN_TRANSITION_CONFIDENCE:
+                log(f"dropped low-confidence {tr['type']} at frame {tr['ts']} (confidence {tr['confidence']})")
+                continue
             if trans and tr["ts"] < trans[-1]["te"]:  # keep transitions disjoint
                 if tr["frames"] == 0 or tr["te"] <= trans[-1]["te"]:
                     continue
