@@ -12,6 +12,7 @@ growing shapes, rising figures, sparkling details). Vector pictures (scenes, SVG
     python studio.py                      # open the studio
     python studio.py dragon_girl --speed fast
     python studio.py --code drawing.py    # draw a code file (SVG / PIL / matplotlib / turtle / KOSIF scene)
+    python studio.py --code drawing.svg --render output.png   # render the supplied code (no window)
     python studio.py --image photo.jpg    # trace an image and draw it
     python studio.py dragon_girl --render out.png --scale 3.2   # no window: render a 3840x2560 PNG
 """
@@ -1350,6 +1351,24 @@ def main():
     speed = {"slow": "بطيء", "normal": "عادي", "fast": "سريع", "instant": "فوري"}.get(a.speed, a.speed)
     if a.render:
         t = time.perf_counter()
+        if a.code:
+            # --code has priority over the default scene even for headless renders.
+            # runner.py supports SVG, scene/PIL and HTML; no GUI is required.
+            source = Path(a.code).resolve()
+            if not source.is_file():
+                raise SystemExit(f"Code file does not exist: {source}")
+            with tempfile.TemporaryDirectory(prefix="kosif_studio_headless_") as work:
+                completed = subprocess.run(
+                    [sys.executable, str(HERE / "runner.py"), str(source), work,
+                     "--scale", str(a.scale), "--export", str(Path(a.render).resolve())],
+                    text=True, capture_output=True, stdin=subprocess.DEVNULL, check=False,
+                )
+            if completed.returncode:
+                raise SystemExit(f"Code render failed: {completed.stderr[-600:]}")
+            with Image.open(a.render) as result:
+                result.verify()  # do not report success from a missing/corrupt output
+            print(f"{a.render}: rendered supplied code {source.name} in {time.perf_counter() - t:.1f}s")
+            return
         loaded = load(a.scene)
         if loaded is None:
             raise SystemExit("this scene is plain Python: draw it in the studio, or run runner.py with --export")
