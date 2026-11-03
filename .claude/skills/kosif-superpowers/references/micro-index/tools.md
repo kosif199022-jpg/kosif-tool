@@ -199,6 +199,7 @@
 |---|---|---|---|---|
 | `aspects` | TOOL-77 | محلّل نِسَب أبعاد الفيديو · Flexible aspect ratio resolver | `python3 -c "import sys; sys.path.insert(0,'scripts'); import aspects;…` | 1 |
 | `atlas-render` | TOOL-64 | رندر أفلام الشرح: ستوريبورد وفحص حتمية وMP4 حقيقي بصوت مُركّب · Atlas explainer renderer: storyboard, determinism check and real MP4 with synthesized score | `python3 scripts/atlas_render.py check` | 1 |
+| `black-dragon-media` | — | التنين الأسود ميديا — شغل فيديو حقيقي بإذن · Black Dragon Media — opt-in real video job | `python3 scripts/black_dragon_media.py doctor` | 1 |
 | `creative-reasoning-bridge` | TOOL-12 | جسر الصوت إلى لوحة القصة · Audio-to-Storyboard Bridge | `python3 scripts/creative_reasoning_bridge.py ./cues.json --style auto…` | 1 |
 | `export-profile` | — | معيار التصدير: إعدادات التسليم المعتمدة لكل فيديو · Export profile: the owner-approved delivery settings for every video | `python3 scripts/export_profile.py` | 1 |
 | `infinite-matrices` | TOOL-171 | محرك المصفوفات اللانهائية للأساليب السببية · KOSIF Infinite Matrices causal style engine | `python3 .claude/skills/kosif-infinite-matrices/scripts/kmx.py doctor` | 2 |
