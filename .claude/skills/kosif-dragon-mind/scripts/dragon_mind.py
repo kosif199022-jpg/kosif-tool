@@ -791,6 +791,7 @@ def main(argv=None) -> int:
             for key in sorted(inv):
                 if key not in merged:
                     merged[key] = {"script": V.APPLIER_SCRIPT, "args": ["{artifact}", key, "{task}"],
+                                   "method_applier": True,
                                    "why": "method applier: task-bound procedure, requirement check and links"}
         _dump({"_comment": "Reviewed Black Dragon adapters plus the Dragon Mind (read-only think). "
                            "Use: black_dragon.py run TASK --job out/black-dragon/<job> --adapters THIS --execute-adapters",

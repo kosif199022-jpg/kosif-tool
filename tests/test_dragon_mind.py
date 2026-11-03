@@ -185,6 +185,8 @@ class DragonMindLinkAndApplyTests(unittest.TestCase):
             self.assertEqual(allad[k], spec)
         for k, spec in allad.items():
             bd._safe_script(spec["script"])
+            if k not in reviewed and k != V.MIND_ADAPTER_KEY:
+                self.assertIs(spec.get("method_applier"), True, k)
 
 
 if __name__ == "__main__":
