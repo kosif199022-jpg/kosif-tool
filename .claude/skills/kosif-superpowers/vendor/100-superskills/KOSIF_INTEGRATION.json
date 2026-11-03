@@ -71,6 +71,26 @@
    "slug": "kosif-mimic",
    "file": "scripts/mm_img.py",
    "why": "Pillow 12 refuses GaussianBlur on float (mode F) images, so the no-OpenCV/no-SciPy blur crashed; use a numpy separable Gaussian with reflect borders instead"
+  },
+  {
+   "slug": "excel-model-architect",
+   "file": "scripts/model_audit.py",
+   "why": "a constant planted where a formula belongs was only a MED note (verdict PASS, hardcoded 0); it is now a HIGH hardcode finding (verdict REVISE, exit 1)"
+  },
+  {
+   "slug": "kosif-mimic",
+   "file": "scripts/mm_analyze.py",
+   "why": "camera shake raised phantom 0.05-confidence transitions; boundaries are now confirmed after phase-correlation alignment and transitions below 0.1 confidence are dropped"
+  },
+  {
+   "slug": "pixel-studio-painter",
+   "file": "scripts/studio.py",
+   "why": "--code FILE --render PNG ignored FILE and rendered the default scene; it now renders the code headlessly (risky code still needs --allow-risky)"
+  },
+  {
+   "slug": "pro-video-editor-ffmpeg",
+   "file": "scripts/beat_cuts.py",
+   "why": "reported a BPM (e.g. 92.9) for any audio, noise included; it now shares music_rhythm_engine's steady-beat rule and gives bpm null when there is no steady beat"
   }
  ],
  "skills_count": 114,
@@ -864,8 +884,8 @@
     },
     {
      "path": "scripts/model_audit.py",
-     "sha256": "85dd212d5fe033ce5a5f5f2ac003da7928f72bdfd633465be4d84612dd164703",
-     "bytes": 6419
+     "sha256": "cc755caf04d2ce596236123da6af797c19d2caabc63ecdf68b75f1d082b11c3a",
+     "bytes": 8891
     },
     {
      "path": "scripts/model_builder.py",
@@ -1592,8 +1612,8 @@
     },
     {
      "path": "scripts/mm_analyze.py",
-     "sha256": "f56994b70fc873a85cf0f385bd54d5a3da595020450c56fd058f111ae7b8af5d",
-     "bytes": 30751
+     "sha256": "36e3d92bc052b04b86f05b5df4bf598eb6e3c98698672b6edecd9386d21d58c9",
+     "bytes": 33463
     },
     {
      "path": "scripts/mm_build.py",
@@ -3675,8 +3695,8 @@
     },
     {
      "path": "scripts/studio.py",
-     "sha256": "fcba6a99358429baa2a905aaf135a50607d54eec6ec60d8dc527e873276abad0",
-     "bytes": 80425
+     "sha256": "cb36dcc8f3022f928e54904a8df30a364f27dfb1bd184c0c3fa857a884377552",
+     "bytes": 83315
     },
     {
      "path": "scripts/svg_import.py",
@@ -3764,8 +3784,8 @@
     },
     {
      "path": "scripts/beat_cuts.py",
-     "sha256": "1a4a5ff2e9325b7c625a36ba0f60254a260a94bd6bcbcf61da72be609f5d50d8",
-     "bytes": 3916
+     "sha256": "01edd0e57d0cba4c810b0b80c41bc9322e4a69976ec51dec7a974983b268a17a",
+     "bytes": 8380
     },
     {
      "path": "scripts/edl_render.py",

@@ -253,6 +253,11 @@ PATCHES.append({
 })
 
 
+# Larger KOSIF fixes (found by the Black Dragon deep run) keep their exact old/new spans in a data file,
+# so this module stays readable. Same contract as above: applied on sync, recorded in the manifest.
+PATCHES.extend(json.loads((Path(__file__).resolve().parent.parent / "data" / "superskills_patches.json")
+                          .read_text(encoding="utf-8")))
+
 def apply_patches(root: Path) -> list:
     done = []
     for pt in PATCHES:
