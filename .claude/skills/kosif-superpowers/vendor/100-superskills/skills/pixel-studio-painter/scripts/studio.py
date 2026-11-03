@@ -1318,7 +1318,7 @@ def main():
     ap.add_argument("--image", metavar="IMAGE", help="open the studio and redraw this image")
     ap.add_argument("--image-code", metavar="IMAGE", help="no window: write a standalone Python program for this image to out/<name>.py")
     ap.add_argument("--data-only", action="store_true", help="with --image-code: the pure-data form (TITLE/SIZE/IMAGE_B64), read by the studio without running")
-    ap.add_argument("--code", metavar="FILE", help="open the studio and draw this code file (SVG/PIL/matplotlib/turtle/scene)")
+    ap.add_argument("--code", metavar="FILE", help="draw this source; headless --render supports SVG and scene JSON (Python requires interactive approval)")
     ap.add_argument("--name", help="scene name for --trace (default: the image's file name)")
     ap.add_argument("--title", help="title shown while drawing a traced scene")
     a = ap.parse_args()
@@ -1350,10 +1350,29 @@ def main():
     speed = {"slow": "بطيء", "normal": "عادي", "fast": "سريع", "instant": "فوري"}.get(a.speed, a.speed)
     if a.render:
         t = time.perf_counter()
-        loaded = load(a.scene)
-        if loaded is None:
-            raise SystemExit("this scene is plain Python: draw it in the studio, or run runner.py with --export")
-        _, steps, rolloff = loaded
+        if a.code:
+            # Headless --code must use the supplied source, never the default
+            # scene. Data-only formats can be rendered without executing
+            # arbitrary Python from an untrusted AI response.
+            source = Path(a.code)
+            if not source.is_file():
+                raise SystemExit(f"--code file not found: {source}")
+            if source.suffix.lower() == ".svg":
+                import svg_import
+                _, steps = svg_import.load_svg(source.read_text(encoding="utf-8-sig"))
+                rolloff = 1.0
+            elif source.suffix.lower() == ".json":
+                import vector_scene
+                steps = vector_scene.build(json.loads(source.read_text(encoding="utf-8-sig")))
+                rolloff = 1.0
+            else:
+                raise SystemExit("--code with --render accepts SVG/scene JSON only; "
+                                 "Python code needs the interactive trust confirmation")
+        else:
+            loaded = load(a.scene)
+            if loaded is None:
+                raise SystemExit("this scene is plain Python: draw it in the studio, or run runner.py with --export")
+            _, steps, rolloff = loaded
         R.render_image(steps, scale=a.scale, ss=2 if a.scale > 2 else 3, rolloff=rolloff).save(a.render)
         print(f"{a.render}: {round(R.W0 * a.scale)}x{round(R.H0 * a.scale)} in {time.perf_counter() - t:.1f}s")
         return
