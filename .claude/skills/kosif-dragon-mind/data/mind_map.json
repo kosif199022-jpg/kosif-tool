@@ -1,0 +1,1490 @@
+{
+ "schema": "kosif.dragon-mind.v1.map",
+ "inventory_fingerprint": "49fb0720cfa9c96c11527f2be761df00e976086983f6c128fe8eda8b5d56c798",
+ "total": 7392,
+ "decomposed": 7392,
+ "by_kind": {
+  "playbook": 19,
+  "power": 5862,
+  "protocol": 46,
+  "skill": 477,
+  "style": 297,
+  "superpower": 483,
+  "tool": 208
+ },
+ "tiers": {
+  "T1-method": 6642,
+  "T2-guided": 553,
+  "T3-runnable": 158,
+  "T4-executable": 39
+ },
+ "usable": 7392,
+ "broken": [],
+ "faculties": {
+  "perceive-media": {
+   "ar": "افحص الوسائط",
+   "stage": "frame",
+   "inputs": [
+    "video",
+    "audio",
+    "image"
+   ],
+   "outputs": [
+    "data"
+   ],
+   "members": 2237,
+   "primary_members": 811,
+   "tiers": {
+    "T1-method": 2049,
+    "T2-guided": 97,
+    "T3-runnable": 75,
+    "T4-executable": 16
+   },
+   "executors": 91,
+   "champions": [
+    {
+     "id": "tool:mosamem-rea-fusion",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:agent-guard",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:book-methods",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:business-workflows",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-runtime-router",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:catalog-evidence-audit",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:drawing-methods",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:invention-lab",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "transcribe": {
+   "ar": "فرّغ الكلام",
+   "stage": "frame",
+   "inputs": [
+    "audio",
+    "video"
+   ],
+   "outputs": [
+    "text"
+   ],
+   "members": 428,
+   "primary_members": 133,
+   "tiers": {
+    "T1-method": 396,
+    "T2-guided": 20,
+    "T3-runnable": 11,
+    "T4-executable": 1
+   },
+   "executors": 12,
+   "champions": [
+    {
+     "id": "tool:invention-lab",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:caption-lines",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:motion-kit-bridge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:repo-words-convert",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:audio-cue-mapper",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:montage-pro",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:nle-export",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:quran-text",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "research": {
+   "ar": "ابحث واجمع المصادر",
+   "stage": "frame",
+   "inputs": [
+    "text"
+   ],
+   "outputs": [
+    "data"
+   ],
+   "members": 1025,
+   "primary_members": 277,
+   "tiers": {
+    "T1-method": 877,
+    "T2-guided": 68,
+    "T3-runnable": 58,
+    "T4-executable": 22
+   },
+   "executors": 80,
+   "champions": [
+    {
+     "id": "tool:atlas-5000",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-atlas",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:creative-external-search",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:micro-index",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:powers",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:smart-capabilities",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:source-scout",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:superpowers-unified",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "reason-plan": {
+   "ar": "فكّر وخطّط",
+   "stage": "explore",
+   "inputs": [
+    "text",
+    "data"
+   ],
+   "outputs": [
+    "plan"
+   ],
+   "members": 1359,
+   "primary_members": 512,
+   "tiers": {
+    "T1-method": 1139,
+    "T2-guided": 158,
+    "T3-runnable": 43,
+    "T4-executable": 19
+   },
+   "executors": 62,
+   "champions": [
+    {
+     "id": "tool:business-workflows",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:invention-lab",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:kosif-groups",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:llm-council",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:prompt-lab",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:requirements",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:see-capability-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:see-pro-cognitive-gate",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "write-story": {
+   "ar": "اكتب السيناريو والنص",
+   "stage": "explore",
+   "inputs": [
+    "plan"
+   ],
+   "outputs": [
+    "text"
+   ],
+   "members": 1705,
+   "primary_members": 317,
+   "tiers": {
+    "T1-method": 1580,
+    "T2-guided": 93,
+    "T3-runnable": 26,
+    "T4-executable": 6
+   },
+   "executors": 32,
+   "champions": [
+    {
+     "id": "tool:atlas-5000",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-runtime-router",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:catalog-evidence-audit",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:hub",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:kosif-groups",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:superskills",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:creative-reasoning-bridge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:prompt-pack",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "design-visual": {
+   "ar": "صمّم بصريًا",
+   "stage": "build",
+   "inputs": [
+    "plan",
+    "text"
+   ],
+   "outputs": [
+    "image"
+   ],
+   "members": 2480,
+   "primary_members": 784,
+   "tiers": {
+    "T1-method": 2310,
+    "T2-guided": 131,
+    "T3-runnable": 28,
+    "T4-executable": 11
+   },
+   "executors": 39,
+   "champions": [
+    {
+     "id": "tool:drawing-methods",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:style-atlas-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:style-library",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:adobe-mcp-bridges",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-atlas",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:creative-external-search",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:kosif-groups",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:requirements",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "arabic-type": {
+   "ar": "اكتب بالعربي صح",
+   "stage": "build",
+   "inputs": [
+    "text"
+   ],
+   "outputs": [
+    "image"
+   ],
+   "members": 661,
+   "primary_members": 272,
+   "tiers": {
+    "T1-method": 531,
+    "T2-guided": 100,
+    "T3-runnable": 20,
+    "T4-executable": 10
+   },
+   "executors": 30,
+   "champions": [
+    {
+     "id": "tool:ai-tool-discovery",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:business-workflows",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-atlas",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-runtime-router",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:micro-index",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:mosamem-rea-fusion",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:powers",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:prompt-lab",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "generate-image": {
+   "ar": "ولّد صورًا",
+   "stage": "build",
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "outputs": [
+    "image"
+   ],
+   "members": 281,
+   "primary_members": 21,
+   "tiers": {
+    "T1-method": 266,
+    "T2-guided": 7,
+    "T3-runnable": 6,
+    "T4-executable": 2
+   },
+   "executors": 8,
+   "champions": [
+    {
+     "id": "tool:see-capability-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:see-superpower-unifier",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:browser-scout",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:image-local-ai",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:motion-runtime",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:prompt-forge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:prompt-pack",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:repo-check-frame-cover",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [
+    "mcp:Higgsfield.generate_image (credits, consent)"
+   ],
+   "gap": null
+  },
+  "generate-video": {
+   "ar": "ولّد فيديو",
+   "stage": "build",
+   "inputs": [
+    "text",
+    "image"
+   ],
+   "outputs": [
+    "video"
+   ],
+   "members": 38,
+   "primary_members": 15,
+   "tiers": {
+    "T1-method": 36,
+    "T2-guided": 2
+   },
+   "executors": 0,
+   "champions": [
+    {
+     "id": "skill:kosif-superpowers/vendor/100-superskills/skills/video-prompt-director",
+     "tier": "T2-guided"
+    },
+    {
+     "id": "protocol:A41-v511-kling-director",
+     "tier": "T2-guided"
+    },
+    {
+     "id": "power:CAM-183",
+     "tier": "T1-method"
+    },
+    {
+     "id": "power:GEN-10",
+     "tier": "T1-method"
+    },
+    {
+     "id": "power:GEN-11",
+     "tier": "T1-method"
+    },
+    {
+     "id": "power:GEN-13",
+     "tier": "T1-method"
+    },
+    {
+     "id": "power:GEN-14",
+     "tier": "T1-method"
+    },
+    {
+     "id": "power:GEN-22",
+     "tier": "T1-method"
+    }
+   ],
+   "external": [
+    "mcp:Higgsfield.generate_video (credits, consent)"
+   ],
+   "gap": "no T3/T4 executor in the catalog; external route needs consent: mcp:Higgsfield.generate_video (credits, consent)"
+  },
+  "generate-audio": {
+   "ar": "ولّد صوتًا وموسيقى",
+   "stage": "build",
+   "inputs": [
+    "text"
+   ],
+   "outputs": [
+    "audio"
+   ],
+   "members": 805,
+   "primary_members": 325,
+   "tiers": {
+    "T1-method": 766,
+    "T2-guided": 18,
+    "T3-runnable": 20,
+    "T4-executable": 1
+   },
+   "executors": 21,
+   "champions": [
+    {
+     "id": "tool:requirements",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:prompt-forge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:tts-script",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:audio-cue-mapper",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:black-dragon-media",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:character-fullbody",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:cinematic-cut-planner",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:creative-reasoning-bridge",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [
+    "mcp:suno (credits:spend, consent)",
+    "mcp:Higgsfield.generate_audio (credits, consent)"
+   ],
+   "gap": null
+  },
+  "animate-motion": {
+   "ar": "حرّك (موشن)",
+   "stage": "build",
+   "inputs": [
+    "plan",
+    "image",
+    "text"
+   ],
+   "outputs": [
+    "video"
+   ],
+   "members": 3636,
+   "primary_members": 1015,
+   "tiers": {
+    "T1-method": 3554,
+    "T2-guided": 42,
+    "T3-runnable": 33,
+    "T4-executable": 7
+   },
+   "executors": 40,
+   "champions": [
+    {
+     "id": "tool:motion-physics",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:adobe-mcp-bridges",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:ai-tool-discovery",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:creative-external-search",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:drawing-methods",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:hub",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:style-atlas-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:blender-motion-video",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "three-d": {
+   "ar": "ابنِ ثلاثي الأبعاد",
+   "stage": "build",
+   "inputs": [
+    "plan",
+    "image"
+   ],
+   "outputs": [
+    "video",
+    "3d"
+   ],
+   "members": 383,
+   "primary_members": 137,
+   "tiers": {
+    "T1-method": 348,
+    "T2-guided": 14,
+    "T3-runnable": 20,
+    "T4-executable": 1
+   },
+   "executors": 21,
+   "champions": [
+    {
+     "id": "tool:ai-tool-discovery",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:blender-bridge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:blender-cat-fur-upgrade",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:blender-cinema",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:blender-cinematic-bridge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:blender-worker",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:native-glb",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:atlas-capability-miner",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [
+    "mcp:Higgsfield.generate_3d (credits, consent)"
+   ],
+   "gap": null
+  },
+  "edit-video": {
+   "ar": "اقطع ومنتج",
+   "stage": "build",
+   "inputs": [
+    "video",
+    "audio"
+   ],
+   "outputs": [
+    "video"
+   ],
+   "members": 2135,
+   "primary_members": 575,
+   "tiers": {
+    "T1-method": 1993,
+    "T2-guided": 76,
+    "T3-runnable": 56,
+    "T4-executable": 10
+   },
+   "executors": 66,
+   "champions": [
+    {
+     "id": "tool:adobe-mcp-bridges",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:capability-runtime-router",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:superpower-fusion",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:creative-external-search",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:export-profile",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:photocraft-mcp",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:powers",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:prompt-lab",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "color-grade": {
+   "ar": "لوّن الصورة",
+   "stage": "build",
+   "inputs": [
+    "video",
+    "image"
+   ],
+   "outputs": [
+    "video",
+    "image"
+   ],
+   "members": 676,
+   "primary_members": 201,
+   "tiers": {
+    "T1-method": 653,
+    "T2-guided": 12,
+    "T3-runnable": 11
+   },
+   "executors": 11,
+   "champions": [
+    {
+     "id": "tool:color-media",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:drawing-visual-qa",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:look-pipeline",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:brand-tokens",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:cinema-lab",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:creative-principles",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:drawing-council",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:native-glb",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "audio-mix": {
+   "ar": "امزج الصوت",
+   "stage": "build",
+   "inputs": [
+    "audio"
+   ],
+   "outputs": [
+    "audio"
+   ],
+   "members": 669,
+   "primary_members": 151,
+   "tiers": {
+    "T1-method": 636,
+    "T2-guided": 24,
+    "T3-runnable": 8,
+    "T4-executable": 1
+   },
+   "executors": 9,
+   "champions": [
+    {
+     "id": "tool:superpower-fusion",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:audio-cue-mapper",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:music-rhythm-engine",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:blender-cinematic-bridge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:capability-mindmap",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:repo-sync-catalog",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:repo-words-convert",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:tts-script",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "render-encode": {
+   "ar": "ارندر وصدّر",
+   "stage": "build",
+   "inputs": [
+    "video",
+    "plan"
+   ],
+   "outputs": [
+    "video"
+   ],
+   "members": 989,
+   "primary_members": 204,
+   "tiers": {
+    "T1-method": 926,
+    "T2-guided": 22,
+    "T3-runnable": 39,
+    "T4-executable": 2
+   },
+   "executors": 41,
+   "champions": [
+    {
+     "id": "tool:export-profile",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:photocraft-mcp",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:atlas-render",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:blender-cycles-render",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:character-fullbody",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:character-ik",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:creative-paint",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:motion-runtime",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "web-build": {
+   "ar": "ابنِ صفحات ومواقع",
+   "stage": "build",
+   "inputs": [
+    "plan",
+    "text"
+   ],
+   "outputs": [
+    "web"
+   ],
+   "members": 652,
+   "primary_members": 63,
+   "tiers": {
+    "T1-method": 584,
+    "T2-guided": 50,
+    "T3-runnable": 16,
+    "T4-executable": 2
+   },
+   "executors": 18,
+   "champions": [
+    {
+     "id": "tool:micro-index",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:motion-physics",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:collect-links",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:design-tells",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:web-app-study",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:atlas-render",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:brand-tokens",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:capability-graph",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "code-engineering": {
+   "ar": "برمج وهندس",
+   "stage": "build",
+   "inputs": [
+    "plan",
+    "code"
+   ],
+   "outputs": [
+    "code"
+   ],
+   "members": 1739,
+   "primary_members": 426,
+   "tiers": {
+    "T1-method": 1541,
+    "T2-guided": 171,
+    "T3-runnable": 20,
+    "T4-executable": 7
+   },
+   "executors": 27,
+   "champions": [
+    {
+     "id": "tool:rea-family-router",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:adobe-mcp-bridges",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:micro-index",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:mosamem-rea-fusion",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:owned-repos",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:source-scout",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:thinking-books",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:repo-map",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "data-analysis": {
+   "ar": "حلّل البيانات",
+   "stage": "explore",
+   "inputs": [
+    "data"
+   ],
+   "outputs": [
+    "data"
+   ],
+   "members": 480,
+   "primary_members": 48,
+   "tiers": {
+    "T1-method": 441,
+    "T2-guided": 30,
+    "T3-runnable": 8,
+    "T4-executable": 1
+   },
+   "executors": 9,
+   "champions": [
+    {
+     "id": "tool:superpower-fusion",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:stats-lab",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:atlas-capability-miner",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:atlas-transfer",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:charter-ingest",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:python-package-probe",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:rea-creative-research-atlas",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:repo-build",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "verify-qa": {
+   "ar": "تحقّق واختبر",
+   "stage": "verify",
+   "inputs": [
+    "video",
+    "audio",
+    "image",
+    "code",
+    "web",
+    "data"
+   ],
+   "outputs": [
+    "receipt"
+   ],
+   "members": 1660,
+   "primary_members": 566,
+   "tiers": {
+    "T1-method": 1399,
+    "T2-guided": 189,
+    "T3-runnable": 56,
+    "T4-executable": 16
+   },
+   "executors": 72,
+   "champions": [
+    {
+     "id": "tool:book-methods",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:catalog-evidence-audit",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:owned-repos",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:skill-intelligence",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:superskills-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:invention-lab",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:llm-council",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:prompt-lab",
+     "tier": "T4-executable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "safety-rights": {
+   "ar": "احمِ الحقوق والأمان",
+   "stage": "verify",
+   "inputs": [
+    "data",
+    "text"
+   ],
+   "outputs": [
+    "receipt"
+   ],
+   "members": 407,
+   "primary_members": 53,
+   "tiers": {
+    "T1-method": 356,
+    "T2-guided": 34,
+    "T3-runnable": 14,
+    "T4-executable": 3
+   },
+   "executors": 17,
+   "champions": [
+    {
+     "id": "tool:agent-guard",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:atlas-5000",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:owned-repos",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:atlas-external-bridge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:atlas-metadata-audit",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:charter-ingest",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:council",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:drawing-academy",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "deliver-publish": {
+   "ar": "سلّم وانشر",
+   "stage": "learn",
+   "inputs": [
+    "video",
+    "web",
+    "code",
+    "text"
+   ],
+   "outputs": [
+    "delivery"
+   ],
+   "members": 365,
+   "primary_members": 66,
+   "tiers": {
+    "T1-method": 300,
+    "T2-guided": 51,
+    "T3-runnable": 13,
+    "T4-executable": 1
+   },
+   "executors": 14,
+   "champions": [
+    {
+     "id": "tool:export-profile",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:package-skill",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:design-tells",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:fetch-video",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:free-footage",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:fusionforge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:installer-triage",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:source-finder",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [
+    "mcp:Higgsfield.tiktok_prepare_publish (publishing, consent)"
+   ],
+   "gap": null
+  },
+  "memory-learn": {
+   "ar": "تذكّر وتعلّم",
+   "stage": "learn",
+   "inputs": [
+    "receipt",
+    "data"
+   ],
+   "outputs": [
+    "data"
+   ],
+   "members": 176,
+   "primary_members": 37,
+   "tiers": {
+    "T1-method": 152,
+    "T2-guided": 12,
+    "T3-runnable": 10,
+    "T4-executable": 2
+   },
+   "executors": 12,
+   "champions": [
+    {
+     "id": "tool:atlas-5000",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:think",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:drawing-academy",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:fusionforge",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:fusionforge-hub-runner",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:fusionforge-shared",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:infinite-matrices",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:lesson-integrity",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "orchestrate": {
+   "ar": "نسّق الوكلاء",
+   "stage": "decide",
+   "inputs": [
+    "plan"
+   ],
+   "outputs": [
+    "plan"
+   ],
+   "members": 502,
+   "primary_members": 140,
+   "tiers": {
+    "T1-method": 385,
+    "T2-guided": 114,
+    "T3-runnable": 2,
+    "T4-executable": 1
+   },
+   "executors": 3,
+   "champions": [
+    {
+     "id": "tool:agent-guard",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:black-dragon",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:self-council",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "skill:kosif-superpowers/vendor/100-superskills/skills/agent-tool-instructions",
+     "tier": "T2-guided"
+    },
+    {
+     "id": "skill:kosif-superpowers/vendor/kosif-atlas/skills/146-c-level-agents/463-cro-review",
+     "tier": "T2-guided"
+    },
+    {
+     "id": "skill:kosif-superpowers/vendor/kosif-atlas/skills/2-agent-workflow-system/2-agent-debug-fixer",
+     "tier": "T2-guided"
+    },
+    {
+     "id": "skill:kosif-superpowers/vendor/kosif-atlas/skills/2-agent-workflow-system/3-agent-drift-auditor",
+     "tier": "T2-guided"
+    },
+    {
+     "id": "skill:kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7932-bun-development",
+     "tier": "T2-guided"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "protocol-govern": {
+   "ar": "التزم بالبروتوكول",
+   "stage": "decide",
+   "inputs": [
+    "plan"
+   ],
+   "outputs": [
+    "plan"
+   ],
+   "members": 271,
+   "primary_members": 62,
+   "tiers": {
+    "T1-method": 186,
+    "T2-guided": 77,
+    "T3-runnable": 4,
+    "T4-executable": 4
+   },
+   "executors": 8,
+   "champions": [
+    {
+     "id": "tool:llm-council",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:skill-intelligence",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:smart-capabilities",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:thinking-books",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:protocol-lint",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:skill-loader",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:check-skill",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:validate-receipt",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  },
+  "visual-reference": {
+   "ar": "استلهم مرجعًا بصريًا",
+   "stage": "explore",
+   "inputs": [
+    "text"
+   ],
+   "outputs": [
+    "plan"
+   ],
+   "members": 675,
+   "primary_members": 181,
+   "tiers": {
+    "T1-method": 617,
+    "T2-guided": 32,
+    "T3-runnable": 20,
+    "T4-executable": 6
+   },
+   "executors": 26,
+   "champions": [
+    {
+     "id": "tool:hub",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:owned-repos",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:powers",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:style-atlas-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:style-library",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:superskills-bridge",
+     "tier": "T4-executable"
+    },
+    {
+     "id": "tool:repo-sync-catalog",
+     "tier": "T3-runnable"
+    },
+    {
+     "id": "tool:color-media",
+     "tier": "T3-runnable"
+    }
+   ],
+   "external": [],
+   "gap": null
+  }
+ }
+}

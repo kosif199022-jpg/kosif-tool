@@ -773,6 +773,16 @@
       "why": "pixel-studio-painter: paints a known SVG pixel by pixel into a film (final colours checked) and judges the picture",
       "skill_program": true
     },
+    "skill:kosif-dragon-mind": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "dragon-mind",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-dragon-mind: runs the six-step think cycle on the task twice (same digest), checks every entry gets one tier and T4 equals the reviewed registry; a planner, it executes nothing",
+      "skill_program": true
+    },
     "skill:kosif-kling-director": {
       "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
       "args": [

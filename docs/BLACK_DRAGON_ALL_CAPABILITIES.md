@@ -101,7 +101,7 @@ Kling 3.0 / Higgsfield are **not** adapters: they spend credits and run through 
 
 ### Skill adapters (skills that ship a program)
 
-Of 477 skills (counted 2026-11-03), most are written methods with no code; 27 ship an argparse program, and 26 of them are now adapters (`"skill_program": true`) run through `scripts/_black_dragon_skill.py RECIPE {artifact} --task={task} [--media={media}]`:
+Of 478 skills (counted 2026-11-03), most are written methods with no code; 28 ship an argparse program, and 27 of them are now adapters (`"skill_program": true`) run through `scripts/_black_dragon_skill.py RECIPE {artifact} --task={task} [--media={media}]`:
 
 | entry | recipe | what runs | checked |
 |---|---|---|---|
@@ -131,6 +131,7 @@ Of 477 skills (counted 2026-11-03), most are written methods with no code; 27 sh
 | `skill:…/kosif-mimic` | mimic-analyze | mm_analyze on a known-cut clip, then on the first 20 s of the input | exactly 2 shots and the hard cut at 3.0 s |
 | `skill:…/pixel-studio-painter` | pixel-painter | film.py paints a known SVG pixel by pixel; judge.py rates it | final centre red and background blue; first frame not yet painted |
 | `skill:kosif-kling-director` | kling-director | kling_director.py builds a Kling 4.0 prompt pack from the task (master prompt + 3x3 storyboard per block, plan.json), then lints a known clean story and a copy with 4 planted mistakes | 45 s = 0-23 + 23-45 s; clean story PASS; polish, brands, Arabic dialogue and a clock gap all caught; text only, 0 credits |
+| `skill:kosif-dragon-mind` | dragon-mind | dragon_mind.py runs its six-step think cycle (frame, explore, decide, build, verify, learn) on the task, twice, and on a different task | one tier per catalog entry; T4 = the reviewed registry; every graph node typed with champions; same task = same digest, different task = different digest; a planner, executes nothing |
 
 Where a skill's script is a checker, the recipe also feeds it a copy with a planted mistake: a checker that misses a known mistake earns no receipt (tested). One skill ships a program that cannot run here and says why in its blocked reason: `davinci-resolve-pipeline` needs the DaVinci Resolve app and its scripting API. `kosif-mimic`'s blur fallback was fixed for Pillow 12 (which refuses GaussianBlur on float images); it and `pixel-studio-painter` need OpenCV, which the Black Dragon CI job installs. Finding: `studio.py --code FILE --render PNG` renders the default scene and ignores the code, so the adapter uses `film.py drawing`.
 

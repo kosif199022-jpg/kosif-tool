@@ -54,6 +54,7 @@ SCRIPT = {
     "mimic-analyze": VENDOR / "kosif-mimic" / "scripts",
     "pixel-painter": VENDOR / "pixel-studio-painter" / "scripts",
     "kling-director": SKILLS / "kosif-kling-director" / "scripts",
+    "dragon-mind": SKILLS / "kosif-dragon-mind" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
@@ -688,6 +689,36 @@ def kling_director(r, d, task, clip, selftest):
                        "planted_caught": sorted(failed), "note": "text only; nothing was generated and no credits were spent"})
 
 
+def dragon_mind(r, d, task, clip, selftest):
+    """The Dragon Mind planner: a deterministic lexical cycle over the whole catalog. It plans, never executes."""
+    tool = [*PY_SIBLINGS, "-B", str(d / "dragon_mind.py")]
+    r.call("think the task through", [*tool, "think", task, "--out", "think"])
+    r.call("think it again (same task, same digest)", [*tool, "think", task, "--out", "again"])
+    for name in ("mind_trace.json", "mind_report.md"):
+        r.output(r.work / "think" / name)
+    t, t2 = _json(r.work / "think" / "mind_trace.json"), _json(r.work / "again" / "mind_trace.json")
+    r.check("six-step cycle: frame, explore, decide, build, verify, learn",
+            [c["id"] for c in t["cycle"]] == ["frame", "explore", "decide", "build", "verify", "learn"],
+            [c["id"] for c in t["cycle"]])
+    r.check("tiers cover every catalog entry exactly once", sum(t["tiers"].values()) == t["inventory_total"],
+            [t["tiers"], t["inventory_total"]])
+    reviewed = json.loads((SCRIPTS.parent / "data" / "black_dragon_adapters.json").read_text(encoding="utf-8"))
+    reviewed = reviewed.get("adapters", reviewed)
+    r.check("T4 executable equals the reviewed adapters registry", t["tiers"].get("T4-executable") == len(reviewed),
+            [t["tiers"].get("T4-executable"), len(reviewed)])
+    nodes = t["graph"]["nodes"]
+    r.check("every graph node has a faculty, typed inputs/outputs and champions",
+            bool(nodes) and all(n.get("faculty") and "inputs" in n and "outputs" in n and n.get("champions") for n in nodes),
+            len(nodes))
+    r.check("same task gives the same digest (deterministic)", t["digest"] == t2["digest"], t["digest"][:12])
+    r.check("the trace keeps planned apart from executed", "executed" in t.get("evidence_rule", ""), t.get("evidence_rule"))
+    other = r.call("think a different task", [*tool, "think", "Write a pitch deck about solar panels", "--out", "other"])
+    r.check("a different task gives a different digest", _json(r.work / "other" / "mind_trace.json")["digest"] != t["digest"],
+            other.get("exit_code"))
+    r.findings.append({"faculties_needed": t["faculties_needed"], "critic": t["critic"][:5], "tiers": t["tiers"],
+                       "note": "a planner: nothing in the catalog was executed by this step"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -697,7 +728,7 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
            "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
            "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter,
-           "kling-director": kling_director}
+           "kling-director": kling_director, "dragon-mind": dragon_mind}
 
 
 def main(argv: list[str]) -> int:
