@@ -26,7 +26,10 @@ def load_script(name: str, path: Path):
 
 class ModelAuditRegression(unittest.TestCase):
     def test_bare_zero_formula_is_reported_as_high_severity(self):
-        from openpyxl import Workbook
+        try:
+            from openpyxl import Workbook
+        except ImportError:
+            self.skipTest("openpyxl is optional; Black Dragon CI installs it for this regression")
 
         with tempfile.TemporaryDirectory() as d:
             xlsx = Path(d) / "model.xlsx"
