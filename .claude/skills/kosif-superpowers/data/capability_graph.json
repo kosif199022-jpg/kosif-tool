@@ -2735,6 +2735,11 @@
    "label": ".claude/skills/kosif-superpowers/evals/test_micro_index.py"
   },
   {
+   "id": "test:tests/test_black_dragon_regressions.py",
+   "kind": "test",
+   "label": "tests/test_black_dragon_regressions.py"
+  },
+  {
    "id": "test:tests/test_mimic.py",
    "kind": "test",
    "label": "tests/test_mimic.py"
@@ -8500,6 +8505,12 @@
   {
    "from": "script:scripts/micro_index.py",
    "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
+   "from": "script:scripts/mimic/mm_analyze.py",
+   "to": "test:tests/test_black_dragon_regressions.py",
    "rel": "tested_by",
    "w": 1
   },
