@@ -282,6 +282,10 @@ class FullInventoryTests(unittest.TestCase):
                 self.assertEqual(spec["args"][1:], ["{artifact}", "--task={task}"], key)
                 self.assertEqual(key, "style:" + spec["args"][0])
                 continue
+            if spec.get("power_proof"):  # power adapters: power:ID {artifact} --task={task}
+                self.assertTrue(spec["script"].endswith("_black_dragon_power.py"), key)
+                self.assertEqual(spec["args"], [key, "{artifact}", "--task={task}"], key)
+                continue
             tool = spec["args"][1]
             self.assertTrue((ROOT / tool).is_file(), tool)
             self.assertEqual(spec["args"][0], "{artifact}")
