@@ -63,6 +63,7 @@
 | `song-preview` | معاينة الأغنية الرسمية (بديل الـDRM) | `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلادي" --country eg --limit 10` | tested-here |
 | `starter-html-canvas` | قالب فيلم HTML Canvas | `python3 tools/kosif.py scaffold kinetic-arabic ./my-film --starter html-canvas` | tested-elsewhere |
 | `starter-remotion` | قالب فيلم Remotion | `python3 tools/kosif.py scaffold product ./my-film --starter remotion` | tested-elsewhere |
+| `suno-bridge` | جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال | `python3 scripts/suno_bridge.py doctor` | tested-here |
 | `tts-script` | تجهيز نص التعليق الصوتي: تقطيع آمن وتقدير المدة وSSML | `printf 'مرحبا بكم في KOSIF Studio. هذا اختبار، قصير جدا!\n\nفقرة ثانية؟ نعم.\n' \| python3 scripts/tts_script.py chunk - --max-chars 30` | tested-here |
 | `unified-cinematic` | السينما الموحدة: مونتاج الفيديو مع الصوت وحركة الكاميرا | `python3 scripts/unified_cinematic.py doctor` | tested-here |
 | `video-eyes` | عيون الفيديو: شريط إطارات، طبقات شفافة للحركة، خط طاقة الحركة وكشف التجميد، وارتفاع الصوت لكل ثانية | `python3 scripts/video_eyes.py report film.mp4 --out out/job/eyes` | tested-here |

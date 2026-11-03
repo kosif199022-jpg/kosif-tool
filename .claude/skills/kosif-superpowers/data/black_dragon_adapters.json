@@ -422,6 +422,16 @@
         "5"
       ],
       "why": "search the local creative index"
+    },
+    "tool:suno-bridge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_exec.py",
+      "args": [
+        "{artifact}",
+        ".claude/skills/kosif-superpowers/scripts/suno_bridge.py",
+        "plan",
+        "{task}"
+      ],
+      "why": "Suno song brief + consent digest for the task (A46); never generates or spends credits"
     }
   }
 }

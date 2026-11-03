@@ -22,12 +22,12 @@
 
 | الحالة | العدد | المعنى |
 |---|---:|---|
-| `proven` | 179 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
+| `proven` | 180 | ✅ proven: a proof exists in the catalog; still check its requirements here before calling it ready |
 | `ready` | 23 | 🟢 ready: runnable without setup according to the catalog |
 | `documented` | 65 | 📄 documented: a described method; needs building or wiring before it runs |
 | `install` | 12 | 📦 install: needs a package, binary or model first |
 | `key` | 2 | 🔑 key: needs an account, key or paid service (ask before any spend) |
-| **المجموع** | **281** | |
+| **المجموع** | **282** | |
 
 ## الأدوات القابلة للتشغيل / runnable tools
 
@@ -93,7 +93,7 @@
 | العائلة | القدرات | الفصل |
 |---|---:|---|
 | `agent-orchestration` | 55 | [agent-orchestration.md](../powers/agent-orchestration.md) |
-| `runnable-tools` | 183 | [runnable-tools.md](../powers/runnable-tools.md) |
+| `runnable-tools` | 184 | [runnable-tools.md](../powers/runnable-tools.md) |
 | `self-discovery` | 43 | [self-discovery.md](../powers/self-discovery.md) |
 
 ## كل القدرات / every power
@@ -190,6 +190,7 @@
 | `TOOL-182` | معاينة الأغنية الرسمية (بديل الـDRM) | Official song preview (DRM fallback) | proven | ffmpeg, python3, yt-dlp |
 | `TOOL-183` | محرك أفلام مسرح الظل | KOSIF Shadow Theatre silhouette film engine | proven | ffmpeg, pip:numpy, pip:pillow |
 | `TOOL-184` | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) | Website snapshot and design read-out (goclone capabilities) | proven | python3, chromium |
+| `TOOL-185` | جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال | Suno MCP bridge: song brief, consent digest and receipt | proven | python3, key:video-gen, key:unspecified |
 | `TOOL-19` | تصيير لقطات B-roll بحركة كاميرا | Cinematic B-roll Renderer | proven | ffmpeg, python3 |
 | `TOOL-20` | مُخطِّط قطعات اللقطات الحقيقية | Footage-First Cut Planner | proven | python3 |
 | `TOOL-21` | فاحص توقيت الفيديو المرجعي | Reference Video Timing Probe | proven | ffmpeg, python3 |

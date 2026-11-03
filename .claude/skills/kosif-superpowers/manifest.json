@@ -15,17 +15,17 @@
  },
  "paths_note": "Tool paths and examples are relative to their root: 'skill' = this folder, 'repo' = the kosif-tool repository root.",
  "counts": {
-  "powers": 5862,
+  "powers": 5863,
   "families": 62,
   "domains": 10,
-  "tools": 208,
+  "tools": 209,
   "guides": 119,
   "statuses": {
    "documented": 2325,
    "idea": 71,
    "install": 977,
    "key": 176,
-   "proven": 1029,
+   "proven": 1030,
    "ready": 675,
    "seen": 609
   }
@@ -890,10 +890,10 @@
    "domain": "build",
    "title_ar": "الأدوات القابلة للتشغيل",
    "title_en": "Runnable KOSIF tools",
-   "count": 183,
+   "count": 184,
    "statuses": {
     "install": 9,
-    "proven": 152,
+    "proven": 153,
     "ready": 22
    },
    "chapter": "references/powers/runnable-tools.md",
@@ -19715,6 +19715,91 @@
     "agent-orchestration",
     "qa-verification"
    ]
+  },
+  {
+   "id": "suno-bridge",
+   "path": "scripts/suno_bridge.py",
+   "root": "skill",
+   "kind": "cli",
+   "area": "audio",
+   "title_en": "Suno MCP bridge: song brief, consent digest and receipt",
+   "title_ar": "جسر Suno: برومبت الأغنية وبصمة الموافقة والإيصال",
+   "summary_en": "The local half of the Suno MCP connector (A46). doctor prints the endpoint, OAuth scopes from the committed probe and the consent rule; probe makes an unauthenticated read-only HTTP check (401 = healthy, no credits); plan turns an Arabic or English request into a Suno brief (style tags, structure, lyric scaffold, duration, dialect, vocals-only for dua/nasheed) with a SHA-256 approval_digest and never generates; receipt checks the generation tool's returned JSON (song id, link, duration, optional downloaded file hash) against the digest the user approved and refuses any mismatch.",
+   "summary_ar": "النص المحلي من موصّل Suno (A46). doctor بيطبع العنوان وصلاحيات OAuth من دليل الفحص وقاعدة الموافقة؛ probe فحص HTTP للقراءة بس من غير دخول (401 = سليم، بلا رصيد)؛ plan بيحوّل الطلب لبرومبت Suno (ستايل، هيكل، هيكل كلمات، مدة، لهجة، وصوت بس للدعاء والنشيد) مع بصمة approval_digest ومش بيولّد أبدًا؛ receipt بيراجع رد أداة التوليد (معرّف الأغنية والرابط والمدة وبصمة الملف) على البصمة اللي المستخدم وافق عليها ويرفض أي اختلاف.",
+   "use_when": [
+    "اعمل أغنية مهرجان لإعلان 30 ثانية على Suno",
+    "جهّز برومبت Suno لنشيد رمضان بدون موسيقى",
+    "Prepare a Suno song brief for a 2-minute cinematic trailer",
+    "Check that the Suno song I approved is the one that was generated"
+   ],
+   "keywords": [
+    "suno",
+    "song",
+    "music generation",
+    "lyrics",
+    "nasheed",
+    "jingle",
+    "credits",
+    "consent",
+    "receipt",
+    "أغنية",
+    "اغنية",
+    "سونو",
+    "موسيقى",
+    "نشيد",
+    "كلمات",
+    "لحن",
+    "إعلان"
+   ],
+   "commands": [
+    {
+     "name": "doctor",
+     "example": "python3 scripts/suno_bridge.py doctor",
+     "does": "Offline: endpoint, auth model, resource scopes parsed from references/protocol/evidence/A46-suno-mcp-probe.txt, how to add the connector, network_requests=0."
+    },
+    {
+     "name": "probe",
+     "example": "python3 scripts/suno_bridge.py probe",
+     "does": "GET https://api.suno.com/mcp without credentials and read the OAuth resource metadata; 401 is reported as healthy. Exit 3 when the network blocks the host."
+    },
+    {
+     "name": "plan",
+     "example": "python3 scripts/suno_bridge.py plan \"أغنية مهرجان مصري لإعلان 30 ثانية صوت رجالي\" --out out/suno/plan.json",
+     "does": "Deterministic brief (kosif.suno.plan.v1) with style tags under 200 characters, structure by duration, lyric scaffold with placeholders, credits_spend=true, approval_required=true, generated=false and approval_digest over the prompt."
+    },
+    {
+     "name": "receipt",
+     "example": "python3 scripts/suno_bridge.py receipt --plan out/suno/plan.json --result out/suno/result.json --approved-digest <digest> --out out/suno/receipt.json",
+     "does": "VERIFIED only when the plan is unedited, the approved digest matches and the result has a song id plus a link or --audio file; otherwise REFUSED with reasons and exit 1."
+    }
+   ],
+   "inputs": "A request in Arabic or English (plan); the plan file, the Suno tool's JSON answer and the approved digest (receipt).",
+   "outputs": "JSON on stdout and optional --out file: kosif.suno.doctor.v1, kosif.suno.probe.v1, kosif.suno.plan.v1, kosif.suno.receipt.v1.",
+   "requires": {
+    "python": [],
+    "binaries": [
+     "python3"
+    ],
+    "node": [],
+    "optional": [],
+    "network": false
+   },
+   "safety": "read-only",
+   "consent": "Generation happens only through the Suno MCP connector and spends Suno credits (credits:spend): show the plan's style, lyrics and duration and get the user's explicit yes first. The digest is not consent.",
+   "limits": "It never talks to Suno with credentials and cannot generate, list tools or read the library; style detection is a keyword table, the lyric scaffold has placeholders for Claude and the user to fill, and licence terms depend on the user's Suno plan and are not checked.",
+   "evidence": "tested-here",
+   "evidence_note": "evals/test_suno_bridge.py: 12 tests passed here on 2026-11-03 (plans, digest binding, receipt refusals, CLI round trip, mocked network block). Live probe from this cloud session: exit 3, the proxy refused api.suno.com.",
+   "tests": [
+    ".claude/skills/kosif-superpowers/evals/test_suno_bridge.py"
+   ],
+   "docs": [
+    ".claude/skills/kosif-superpowers/references/protocol/A46-suno-mcp.md",
+    ".claude/skills/kosif-superpowers/references/guides/audio.md"
+   ],
+   "families": [
+    "music-beat-sound"
+   ],
+   "power_id": "TOOL-185"
   }
  ],
  "guides": [

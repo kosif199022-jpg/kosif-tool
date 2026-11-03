@@ -1,6 +1,6 @@
 {
  "schema": "kosif.hubs-index.v1",
- "atoms": 5862,
+ "atoms": 5863,
  "superpowers": 483,
  "hubs": [
   {
@@ -133,7 +133,7 @@
    ],
    "links": [
     "software",
-    "agents",
+    "3d",
     "data",
     "quality"
    ]
@@ -405,19 +405,19 @@
     "SP-0143",
     "SP-0022",
     "SP-0144",
-    "SP-0146",
     "SP-0145",
+    "SP-0146",
     "SP-0021",
-    "SP-0147",
-    "SP-0148",
     "SP-0149",
-    "SP-0023",
+    "SP-0147",
     "SP-0150",
     "SP-0151",
+    "SP-0148",
     "SP-0152",
+    "SP-0023",
     "SP-0153",
-    "SP-0001",
     "SP-0154",
+    "SP-0001",
     "SP-0002",
     "SP-0003",
     "SP-0004",
@@ -429,41 +429,41 @@
      "id": "SP-0139",
      "name_ar": "منقّب قدرات الأطلس من البيانات الوصفية",
      "name_en": "Atlas metadata capability miner",
-     "size": 35,
+     "size": 36,
      "best": "proven",
-     "ready_now": 35
+     "ready_now": 36
     },
     {
      "id": "SP-0140",
-     "name_ar": "فاحص توقيت الفيديو المرجعي",
-     "name_en": "Reference Video Timing Probe",
-     "size": 20,
+     "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
+     "name_en": "Audio-timed SVG motion compiler",
+     "size": 21,
      "best": "proven",
-     "ready_now": 20
+     "ready_now": 19
     },
     {
      "id": "SP-0141",
-     "name_ar": "مُصرِّف حركة SVG المتزامنة مع الصوت",
-     "name_en": "Audio-timed SVG motion compiler",
-     "size": 20,
+     "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
+     "name_en": "Staged drawing and original three-value visual studies",
+     "size": 17,
      "best": "proven",
-     "ready_now": 18
+     "ready_now": 17
     },
     {
      "id": "SP-0142",
-     "name_ar": "دراسة الرسم التدريجي والظل الأصلي",
-     "name_en": "Staged drawing and original three-value visual studies",
-     "size": 16,
+     "name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
+     "name_en": "Free footage: open-licence video sources with search, download and credits",
+     "size": 14,
      "best": "proven",
-     "ready_now": 16
+     "ready_now": 13
     },
     {
      "id": "SP-0143",
-     "name_ar": "لقطات مجانية: قاعدة مواقع فيديو مفتوحة الترخيص مع بحث وتحميل وسطر نسب",
-     "name_en": "Free footage: open-licence video sources with search, download and credits",
-     "size": 15,
+     "name_ar": "محرك إعادة بناء المونتاج المرجعي",
+     "name_en": "Reference Edit Engine",
+     "size": 13,
      "best": "proven",
-     "ready_now": 14
+     "ready_now": 13
     },
     {
      "id": "SP-0022",
@@ -475,25 +475,25 @@
     },
     {
      "id": "SP-0144",
-     "name_ar": "تدقيق أدلة الكتالوج",
-     "name_en": "Catalog Evidence Audit",
-     "size": 14,
-     "best": "proven",
-     "ready_now": 11
-    },
-    {
-     "id": "SP-0146",
-     "name_ar": "خريطة ترتيب المهارة",
-     "name_en": "Skill Layout Map",
-     "size": 11,
-     "best": "proven",
-     "ready_now": 11
-    },
-    {
-     "id": "SP-0145",
      "name_ar": "جسر Blender الآمن",
      "name_en": "Safe headless Blender bridge",
      "size": 12,
+     "best": "proven",
+     "ready_now": 10
+    },
+    {
+     "id": "SP-0145",
+     "name_ar": "خريطة ترتيب المهارة",
+     "name_en": "Skill Layout Map",
+     "size": 10,
+     "best": "proven",
+     "ready_now": 10
+    },
+    {
+     "id": "SP-0146",
+     "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
+     "name_en": "Subtitle to words.json converter",
+     "size": 10,
      "best": "proven",
      "ready_now": 10
     },
@@ -506,31 +506,31 @@
      "ready_now": 9
     },
     {
-     "id": "SP-0147",
-     "name_ar": "محوّل الترجمات إلى توقيت الكلمات",
-     "name_en": "Subtitle to words.json converter",
-     "size": 9,
+     "id": "SP-0149",
+     "name_ar": "مقدّر سعة الأنظمة",
+     "name_en": "System Capacity Sizer",
+     "size": 8,
      "best": "proven",
-     "ready_now": 9
+     "ready_now": 8
     },
     {
-     "id": "SP-0148",
-     "name_ar": "مختبر البرومبت",
-     "name_en": "Prompt Lab",
-     "size": 7,
+     "id": "SP-0147",
+     "name_ar": "إعادة موازنة فهرس المستودعات الإبداعية",
+     "name_en": "Rebalance creative repo catalog",
+     "size": 9,
      "best": "proven",
      "ready_now": 7
     }
    ],
-   "powers": 296,
+   "powers": 298,
    "status_mix": {
-    "proven": 179,
+    "proven": 180,
     "ready": 23,
     "install": 12,
     "key": 2,
-    "documented": 80
+    "documented": 81
    },
-   "ready_now": 202,
+   "ready_now": 203,
    "requires": [
     "python3",
     "ffmpeg",
@@ -573,6 +573,7 @@
     "pip:mediapipe",
     "npm:axe",
     "npm:mermaid",
+    "key:video-gen",
     "pip:chromadb",
     "pip:llama-cpp",
     "npm:mcp-servers",
@@ -589,14 +590,13 @@
     "pandoc",
     "pip:librosa",
     "pip:anthropic",
-    "pip:fonttools",
     "npm:animejs",
     "npm:esbuild",
     "pip:rdkit",
+    "pip:fonttools",
+    "key:openai",
     "engine:android",
     "engine:binwalk",
-    "key:openai",
-    "key:video-gen",
     "npm:lottie",
     "model:yunet",
     "7zip",
@@ -605,8 +605,8 @@
    "links": [
     "thinking",
     "software",
-    "quality",
-    "3d"
+    "3d",
+    "quality"
    ]
   },
   {
@@ -674,8 +674,8 @@
     "SP-0072",
     "SP-0476",
     "SP-0045",
-    "SP-0134",
     "SP-0046",
+    "SP-0134",
     "SP-0047",
     "SP-0119",
     "SP-0048",
@@ -684,12 +684,12 @@
     "SP-0051",
     "SP-0052",
     "SP-0053",
+    "SP-0135",
     "SP-0054",
+    "SP-0136",
     "SP-0055",
     "SP-0056",
     "SP-0071",
-    "SP-0135",
-    "SP-0136",
     "SP-0057",
     "SP-0058",
     "SP-0059",
@@ -701,8 +701,8 @@
     "SP-0065",
     "SP-0066",
     "SP-0067",
-    "SP-0137",
     "SP-0133",
+    "SP-0137",
     "SP-0068",
     "SP-0069",
     "SP-0138",
@@ -807,14 +807,14 @@
      "ready_now": 4
     }
    ],
-   "powers": 662,
+   "powers": 661,
    "status_mix": {
     "proven": 115,
     "ready": 17,
     "install": 32,
     "key": 7,
     "seen": 16,
-    "documented": 473,
+    "documented": 472,
     "idea": 2
    },
    "ready_now": 132,
@@ -1099,7 +1099,7 @@
     "motion",
     "3d",
     "agents",
-    "software"
+    "documents"
    ]
   },
   {
@@ -1596,9 +1596,9 @@
     "pip:vtracer"
    ],
    "links": [
-    "motion",
-    "software",
     "agents",
+    "software",
+    "motion",
     "images"
    ]
   },
@@ -1900,7 +1900,7 @@
     "3d",
     "software",
     "agents",
-    "images"
+    "audio"
    ]
   },
   {
@@ -2117,7 +2117,7 @@
     "images",
     "motion",
     "quality",
-    "type"
+    "agents"
    ]
   },
   {
@@ -3145,8 +3145,8 @@
    "links": [
     "agents",
     "3d",
-    "motion",
-    "quality"
+    "quality",
+    "software"
    ]
   },
   {
@@ -3222,8 +3222,8 @@
     "node"
    ],
    "links": [
-    "agents",
     "3d",
+    "agents",
     "images",
     "thinking"
    ]
