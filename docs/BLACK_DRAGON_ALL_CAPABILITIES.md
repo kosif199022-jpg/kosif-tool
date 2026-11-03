@@ -32,7 +32,7 @@ Relevance orders and weights; it never removes. Adapter `depends_on` lists build
 | tier | meaning | how |
 |---|---|---|
 | assigned | in the plan with part, mode, weight; one line in `briefs.jsonl` with the SHA-256 of its source file | always, all entries |
-| probed | a CLI tool with argparse answered `--help` on this machine (it starts and its imports load) | `--probe-tools` |
+| probed (static-only) | AST parses an argparse CLI declaration without importing or running the module; **not** proof of startup | `--probe-tools` |
 | executed | a reviewed adapter ran on the task, exit 0, nonempty artifact, SHA-256 receipt checked | `--reviewed-adapters` or `--adapters FILE`, plus `--execute-adapters` |
 
 `full_coverage=true` needs **every** entry executed with a receipt, so today the run honestly exits 4. Assigned and probed are never reported as executed.
@@ -46,7 +46,7 @@ python3 .claude/skills/kosif-superpowers/scripts/black_dragon.py run "اعمل �
   --job out/black-dragon/<unique-job> --workers 8 --probe-tools --reviewed-adapters --execute-adapters
 ```
 
-The job folder gets `black_dragon_report.md` (Arabic/English summary), `black_dragon_report.json`, `black_dragon_plan.json`, `briefs.jsonl`, `all_skills_ledger.json`, `all_skills_report.json`, `receipts/`, `artifacts/` and `probes/`. Measured on 2026-10-31 in a cloud container: 7,377 assigned, 186 of 204 tools started, 24 of 24 reviewed adapters executed with receipts, 0 failed, about 12 s.
+The job folder gets `black_dragon_report.md` (Arabic/English summary), `black_dragon_report.json`, `black_dragon_plan.json`, `briefs.jsonl`, `all_skills_ledger.json`, `all_skills_report.json`, `receipts/`, `artifacts/` and `probes/`. Historical pre-hardening measurement (2026-10-31, when --help actually executed): 7,377 assigned, 186 of 204 tools started, 24 of 24 reviewed adapters executed with receipts, 0 failed, about 12 s.
 
 ### Reviewed adapters
 
@@ -147,11 +147,11 @@ Execution is **explicitly opt-in**. Keep network calls, paid services, deploymen
 python3 -m unittest discover -s tests -p 'test_black_dragon*.py' -v
 ```
 
-They cover inventory of every kind against its sources, part/mode/weight for every entry, determinism, dependency waves and blocked dependents, explicit execution gating, unsafe paths, job reuse, the `--help` probe, the exec wrapper's exit code and a real run of reviewed adapters with checked receipts. The `Black Dragon checks` workflow also runs a full job on every pull request and uploads its receipts.
+They cover inventory of every kind against its sources, part/mode/weight for every entry, determinism, dependency waves and blocked dependents, explicit execution gating, unsafe paths, job reuse, the AST-only (no-execution) CLI probe, the exec wrapper's exit code and a real run of reviewed adapters with checked receipts. The `Black Dragon checks` workflow also runs a full job on every pull request and uploads its receipts.
 
 ## In the USIP pipeline (v6.5, appendix A49)
 
-The dragon is no longer only a named command. At L3 it runs right after the USIP brief with `--probe-tools --reviewed-adapters` (assigned + probed); when the owner answers `نفّذ بأقصى قوة` it also gets `--execute-adapters`, since every reviewed adapter only reads. Each stage leader that would change the engine or the verification method goes into plan C, and the report carries one line: assigned · probed · executed with receipt · `full_coverage`. Measured on 2026-11-01: 7,381 assigned, 187 of 205 tools probed, 39 of 39 adapters executed with receipts, 0 failed.
+The dragon is no longer only a named command. At L3 it runs right after the USIP brief with `--probe-tools --reviewed-adapters` (assigned + probed); when the owner answers `نفّذ بأقصى قوة` it also gets `--execute-adapters`, since every reviewed adapter only reads. Each stage leader that would change the engine or the verification method goes into plan C, and the report carries one line: assigned · probed · executed with receipt · `full_coverage`. Historical pre-hardening measurement on 2026-11-01: 7,381 assigned, 187 of 205 tools probed, 39 of 39 adapters executed with receipts, 0 failed.
 
 
 ## Full-tool activation: inspect first, then schedule (proposed unified version)
@@ -266,3 +266,12 @@ Next phases: (1) qualify additional read-only adapters in measured batches,
 permission-gated execution and collect per-tool receipts, (4) expand domain
 integrations with their own sandboxing and authorization checks. CI must pass
 before merging any phase.
+
+## 2026-11-03 security and QA remediation (follow-up to PR #207)
+
+- **--probe-tools is now AST-only:** it parses local Python CLI files and writes `static-only` evidence; no Python subprocess is launched. Import-time code is not safe merely because a file contains `argparse`. `probe_passed` is therefore zero unless a *separate, future reviewed* executable probe is introduced. This change deliberately reduces apparent runtime readiness without losing real adapter execution.
+- **Financial models:** numeric literals inserted into the calculated PnL, BS, CF or Checks grid are now HIGH findings, increase `hardcoded`, and fail the audit. Genuine input numbers belong in Assumptions/Inputs.
+- **Pixel Studio:** headless `--code SOURCE.svg --render OUTPUT.png` and scene JSON render the specified data source. Headless Python source is explicitly rejected rather than executing untrusted code or silently rendering the default scene; interactive Python still requires the existing trust prompt.
+- **KOSIF Mimic:** translation-compensated verification suppresses handheld camera shake masquerading as shot changes; gradual transitions with confidence below 0.20 are not published as real edits.
+- **beat_cuts:** avoids publishing BPM from a single lucky histogram bin; requires repeatable onset intervals and coherent phase, and returns `null` when no steady tempo is supported. Different analyzers may still disagree on ambiguous audio; neither produces a verified musical BPM.
+- Regression tests: `tests/test_black_dragon_quality_regressions.py` creates local synthetic malicious CLI, formula-overwrite workbook, SVG, translated frames and irregular/click onsets without network or paid providers.
