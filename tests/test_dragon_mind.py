@@ -110,7 +110,9 @@ class DragonMindTests(unittest.TestCase):
             done = subprocess.run([sys.executable, str(ROOT / spec["script"]), *args], cwd=ROOT,
                                   capture_output=True, text=True, timeout=120)
             self.assertEqual(done.returncode, 0, done.stderr[-500:])
-            self.assertIn("عقل التنين", artifact.read_text(encoding="utf-8"))
+            body = artifact.read_text(encoding="utf-8")
+            # the mind's own adapter writes its report; a reviewed skill adapter (PR #214) writes a JSON verdict
+            self.assertTrue("عقل التنين" in body or '"verdict": "passed"' in body, body[:300])
 
 
 class DragonMindLinkAndApplyTests(unittest.TestCase):
