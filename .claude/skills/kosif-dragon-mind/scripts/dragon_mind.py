@@ -92,8 +92,23 @@ def load_inventory() -> tuple[dict, dict, dict, dict]:
         if meta.get("kind") == "skill":
             fm = _frontmatter(bd.audit.SKILL.parent / meta["source"])
             desc[key] = " ".join([fm.get("name", ""), fm.get("description", "")]).strip()
-    adapters = bd._load_adapters(bd.REVIEWED_ADAPTERS)
+    adapters = reviewed_adapters(bd)
     return inventory, desc, adapters, bd._tool_records()
+
+
+def reviewed_adapters(bd, data_dir: Path | None = None) -> dict:
+    """The reviewed adapters plus the generated real runners (powers, styles) when those files exist.
+
+    A real runner always wins over the method applier; the hand-reviewed file wins over a generated one.
+    """
+    data_dir = data_dir or bd.REVIEWED_ADAPTERS.parent
+    merged: dict = {}
+    for name in V.GENERATED_ADAPTER_FILES:
+        path = data_dir / name
+        if path.is_file():
+            merged.update(bd._load_adapters(path))
+    merged.update(bd._load_adapters(data_dir / bd.REVIEWED_ADAPTERS.name))
+    return merged
 
 
 def fingerprint(inventory: dict) -> str:
@@ -784,7 +799,7 @@ def main(argv=None) -> int:
         return 0
     if a.cmd == "adapters":
         bd, _ = _dragon()
-        merged = dict(bd._load_adapters(bd.REVIEWED_ADAPTERS))
+        merged = reviewed_adapters(bd)
         merged.setdefault(V.MIND_ADAPTER_KEY, V.MIND_ADAPTER)  # a reviewed adapter for the mind wins
         if a.all:
             inv, *_ = load_inventory()

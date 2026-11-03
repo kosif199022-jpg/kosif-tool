@@ -103,6 +103,9 @@ consent). Report "method cards applied" as its own tier: it is not the Black Dra
 check and not a reviewed tool adapter's `executed`; a procedure is not media that was produced.
 `black_dragon.py` counts every receipt as executed (and may print `full_coverage: true`), so after a run with
 `--all` always quote `dragon_mind.py audit --job ...`, which separates the tiers.
+Generated real runners (`data/black_dragon_adapters_powers.json`, `data/black_dragon_adapters_styles.json`,
+when present) are merged with the reviewed adapters first: an entry with a real runner never gets the applier,
+and the hand-reviewed file wins over a generated one.
 
 ```bash
 python3 .claude/skills/kosif-dragon-mind/scripts/dragon_mind.py adapters --all --out out/black-dragon/<job>-all.json

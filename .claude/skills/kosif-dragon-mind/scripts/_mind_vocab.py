@@ -125,3 +125,7 @@ MIND_ADAPTER = {
 
 # The universal method applier: turns any catalog entry into a task-bound procedure artifact.
 APPLIER_SCRIPT = ".claude/skills/kosif-dragon-mind/scripts/card_apply.py"
+
+# Generated real-execution registries (proof runners for powers, style runners), loaded next to the
+# reviewed file when present. Entries in them are real runners and never get the method applier.
+GENERATED_ADAPTER_FILES = ["black_dragon_adapters_powers.json", "black_dragon_adapters_styles.json"]

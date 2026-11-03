@@ -190,6 +190,23 @@ class DragonMindLinkAndApplyTests(unittest.TestCase):
             if k not in reviewed and k != V.MIND_ADAPTER_KEY:
                 self.assertIs(spec.get("method_applier"), True, k)
 
+    def test_generated_real_runners_merge_and_reviewed_wins(self):
+        bd, _ = dm._dragon()
+        reviewed = bd._load_adapters(bd.REVIEWED_ADAPTERS)
+        some = sorted(reviewed)[0]
+        power = next(k for k in sorted(self.inv) if k.startswith("power:") and k not in reviewed)
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp)
+            (d / bd.REVIEWED_ADAPTERS.name).write_text(bd.REVIEWED_ADAPTERS.read_text(encoding="utf-8"),
+                                                      encoding="utf-8")
+            runner = {"script": V.APPLIER_SCRIPT, "args": ["{artifact}"], "why": "proof runner"}
+            (d / V.GENERATED_ADAPTER_FILES[0]).write_text(
+                json.dumps({"adapters": {power: runner, some: runner}}), encoding="utf-8")
+            merged = dm.reviewed_adapters(bd, d)
+        self.assertEqual(merged[power], runner)
+        self.assertEqual(merged[some], reviewed[some])
+        self.assertNotIn("method_applier", merged[power])
+
 
 if __name__ == "__main__":
     unittest.main()
