@@ -1,133 +1,14 @@
 {
- "registered": 1357,
- "passed": 1340,
- "failed": [
-  {
-   "id": "BEAT-248",
-   "verdict": "failed",
-   "reason": "failed checks: social integrated loudness on target",
-   "runner": "fam_music_beat_sound.py",
-   "seconds": 4.544
-  },
-  {
-   "id": "BEAT-39",
-   "verdict": "failed",
-   "reason": "failed checks: web integrated loudness on target",
-   "runner": "fam_music_beat_sound.py",
-   "seconds": 1.198
-  },
-  {
-   "id": "CAM-10",
-   "verdict": "failed",
-   "reason": "failed checks: direct.plan produced keywords and captions, negative control: centred text would overlap a face",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": 0.083
-  },
-  {
-   "id": "CAM-12",
-   "verdict": "failed",
-   "reason": "failed checks: negative control: a fixed lower-third y (0.55 H) lands on a low face",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": 0.01
-  },
-  {
-   "id": "CAM-156",
-   "verdict": "error",
-   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": null
-  },
-  {
-   "id": "CAM-157",
-   "verdict": "error",
-   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": null
-  },
-  {
-   "id": "CAM-169",
-   "verdict": "failed",
-   "reason": "failed checks: lighten stack keeps the brightest sample: a full-brightness trail",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": 0.698
-  },
-  {
-   "id": "CAM-170",
-   "verdict": "error",
-   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": null
-  },
-  {
-   "id": "CAM-171",
-   "verdict": "error",
-   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": null
-  },
-  {
-   "id": "CAM-172",
-   "verdict": "error",
-   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": null
-  },
-  {
-   "id": "CAM-174",
-   "verdict": "failed",
-   "reason": "failed checks: small subject (<20% H): start wider and push more 1.12 -> 1.22",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": 2.319
-  },
-  {
-   "id": "CAM-175",
-   "verdict": "failed",
-   "reason": "failed checks: negative control: a centred line (0.47 H) would cover the face",
-   "runner": "fam_camera_composition_layout_a.py",
-   "seconds": 1.102
-  },
-  {
-   "id": "CAM-416",
-   "verdict": "failed",
-   "reason": "failed checks: hit frame jumps to 1.15 in one frame",
-   "runner": "fam_camera_composition_layout_b.py",
-   "seconds": 7.422
-  },
-  {
-   "id": "TYPE-69",
-   "verdict": "failed",
-   "reason": "failed checks: arrival bounded by 0.1 + 0.3 + 0.8 s",
-   "runner": "fam_typography_latin.py",
-   "seconds": 2.994
-  },
-  {
-   "id": "TYPE-70",
-   "verdict": "failed",
-   "reason": "failed checks: cells flicker on over time",
-   "runner": "fam_typography_latin.py",
-   "seconds": 1.58
-  },
-  {
-   "id": "TYPE-71",
-   "verdict": "failed",
-   "reason": "failed checks: blur matches the depth of field at its depth (edge-ratio ≈1), contact shadow falls away from the light (down-right)",
-   "runner": "fam_typography_latin.py",
-   "seconds": 0.711
-  },
-  {
-   "id": "TYPE-81",
-   "verdict": "error",
-   "reason": "ValueError: x1 must be greater than or equal to x0",
-   "runner": "fam_typography_latin.py",
-   "seconds": null
-  }
- ],
+ "registered": 2062,
+ "passed": 2062,
+ "failed": [],
  "gaps": {
   "ARAB-91": "Mosamem (HarfRust engine, cargo workspace mosamem-core) is not present in this container; its 13 golden text tests cannot be run here, and re-testing the same properties with raqm would not prove Mosamem",
   "BEAT-04": "prompt text for a generative video model's soundtrack; the sound is produced by that paid model",
   "BEAT-05": "the AUDIO section of a generative video prompt (car); no program, the model makes the sound",
   "BEAT-06": "foley presets written into generative video prompts; the model makes the sound",
   "BEAT-07": "per-profile policy text inside prompts (no VO / no music); nothing executable to measure",
+  "BEAT-104": "draw() of the Basma browser editor (S.kind 'audio' presets) needs the whole app state and DOM canvas; no headless entry point",
   "BEAT-113": "a WebGPU shader background; needs a WebGPU-capable Chromium (no GPU here)",
   "BEAT-119": "carve.mjs needs the @hyperframes/core npm package (audio-carve), which is not installed here; installing packages is out of scope",
   "BEAT-128": "the music-to-video HyperFrames skill (its scripts) is not installed here",
@@ -137,6 +18,7 @@
   "BEAT-133": "three.js spectrogram canyon heightfield needs a WebGL scene render",
   "BEAT-135": "three.js tape-stop bullet time / glitch pass needs a WebGL scene render",
   "BEAT-153": "K3.spectrumOnTape builds a three.js texture; needs the WebGL kit in a browser",
+  "BEAT-154": "verse.py builds the project and HyperFrames renders it (~6 s), but the kick response is a 0.14-alpha halo swell inside the global fade; no robust known-answer measurement with a negative control fits the 15 s budget",
   "BEAT-161": "needs a paid generator account/API key (ElevenLabs text-to-SFX); the method's output (the generated sound/song) cannot be produced or measured here",
   "BEAT-162": "hosted SFX by URL at remotion.media needs network at render and has unclear per-sound licences",
   "BEAT-163": "needs a paid generator account/API key (ElevenLabs sound-generation); the method's output (the generated sound/song) cannot be produced or measured here",
@@ -157,6 +39,7 @@
   "BEAT-178": "needs a paid generator account/API key (Suno/Udio); the method's output (the generated sound/song) cannot be produced or measured here",
   "BEAT-179": "needs a paid generator account/API key (ElevenLabs SFX / Stable Audio prompts); the method's output (the generated sound/song) cannot be produced or measured here",
   "BEAT-180": "an index of atlas skill ids read through kosif_atlas_read (external atlas); nothing to execute here",
+  "BEAT-184": "noise-displaced emissive fireball sphere is a WebGL/three.js scene; no GPU scene render here",
   "BEAT-228": "a layering practice for sound roles (judgement of texture), no measurable output of its own",
   "BEAT-234": "a genre starting-point table (BPM/swing ranges) for score JSON; no method of its own to execute",
   "BEAT-235": "a policy (never imitate a recognisable tune); no program can prove originality here",
@@ -174,6 +57,7 @@
   "BEAT-44": "SFX timing cues written into motion prompts/storyboards only (no audio is produced)",
   "BEAT-69": "songreel make needs faster-whisper model weights and a footage pool (yt-dlp/network)",
   "BEAT-71": "an interactive review-page music swap with volume sliders (UI, needs a person)",
+  "BEAT-81": "templates/audio-reactive.html renders here (render_html.cjs stills), but the measured disc did not follow the band data as documented (quiet-bass still 166 px wide vs loud-bass still 150 px); cause unresolved, so no runner is registered",
   "BEAT-87": "@remotion/media-utils is not installed here",
   "BEAT-89": "the vendored game-audio-procedural toolkit is not in this repo",
   "BEAT-90": "the step-notation Song() toolkit (game-audio-procedural) is not in this repo",
@@ -182,10 +66,22 @@
   "BEAT-X08": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
   "BEAT-X09": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
   "BEAT-X10": "an 11-point qualitative PASS rubric for song hand-offs (hook identifiable, singable...)",
+  "CAM-119": "needs the subject matte and the repo's scripts/safe-zones.cjs (not present in this checkout); a safe-zone map from a matte cannot be produced without them",
+  "CAM-184": "Kling's simple camera_control is executed by the paid Kling video API (key required); a config validator alone cannot show the camera move",
+  "CAM-389": "reference-only excerpt of Kling camera-control parameters: running it needs a paid video-generation key (key:video-gen)",
+  "CAM-64": "needs WebGPU or a verified fallback: headless Chrome here has no navigator.gpu; three r186 TSL dof() through WebGPURenderer's WebGL2 fallback ran but blurred the near (3 m) and far (15 m) planes alike (Laplacian 15 vs 15, plain pass 1690 / 2933), so a focus pull cannot be shown",
   "CAM-71": "measured, not registered: the card's coverage zoom need = |cos r| + q|sin r|*0.56 leaves 0.3-0.9 % black corners on a 16:9 frame at 2-6 deg roll (the exact cover is |cos r| + q|sin r|); runner kept as rotation_coverage() for the evidence but a passing check would be false",
+  "CAM-92": "needs network the sandbox does not have: `hyperframes add carousel-circle-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+  "CAM-93": "needs network the sandbox does not have: `hyperframes add carousel-orbit-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+  "CAM-94": "needs network the sandbox does not have: `hyperframes add carousel-path-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+  "CAM-95": "needs network the sandbox does not have: `hyperframes add carousel-text-circle-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
+  "CAM-96": "needs network the sandbox does not have: `hyperframes add carousel-vision-1..5` aborts because its sample photos come from static.heygen.ai, which does not resolve here (ENOTFOUND); without the installed HTML there is nothing real to run",
   "COLOR-81": "the seven plates are the HyperFrames shaders.iife.js WebGPU library (shaders 4.0.0); it is not vendored here and headless WebGPU rendering is not verified, so the plates cannot be produced",
   "DATA-91": "the card's 'CVD-safe' palette fails here: Machado-2009 deuteranopia makes #3B82F6 vs #A855F7 dE2000 = 0.9 (protanopia 5.4), so the CVD known-answer check cannot pass without changing the card",
   "DATA-98": "needs a Gemini image model (paid Google API key + network); its raster numbers would also have to be re-set in code, so nothing honest can run here",
+  "DRAW-16": "hw-write-title block fetches as HTML only: its baked per-glyph centrelines (assets/baked/caveat-pen.js) and the Caveat 700 woff2 are not delivered by `hyperframes add` here, and no Hershey stroke fonts are installed",
+  "DRAW-55": "drives Microsoft Paint on Windows through the desktop mouse tool (kosif_mouse_act / kosif_paint_copy); no Windows desktop app in this Linux container",
+  "DRAW-60": "alternative libraries (vivus, roughjs, rough-notation, perfect-freehand, @remotion/paths, @excalidraw/excalidraw) are not installed in this container; installing is outside this pass",
   "GLOW-37": "@remotion/effects (~55 WebGL2 effects, lightLeak/starburst/shine) is a specific npm library that is not installed here and its effect code is not vendored; reproducing its unknown shaders would be a fake",
   "GLOW-38": "needs Chromium's html-in-canvas drawElementImage flag plus WebGPU/TypeGPU in the render environment; neither is available or verified here",
   "GLOW-52": "the plates are the HyperFrames shaders.iife.js WebGPU library (shaders 4.0.0); not vendored here and headless WebGPU rendering is not verified",
@@ -200,6 +96,12 @@
   "PART-67": "Houdini FLIP/Pyro/Vellum/RBD + Karma need a commercial SideFX licence and hython; not installed",
   "RETRO-14": "the card is the HyperFrames media-treatment command itself (engraving/crosshatch/Kuwahara attributes interpreted by the HyperFrames runtime in headless Chrome); no runner wired here and the treatments' shader maths is not given on the card",
   "RETRO-17": "the card is the HyperFrames registry blocks yt-screen-warp / camcorder-hud / yt-lcd-background (GSAP timelines rendered in headless Chrome after `hyperframes add`); not reproducible from the card's text and no <15 s Chrome render wired here",
+  "SYNC-08": "the .en-model trap and model ladder need faster-whisper / whisper.cpp weights (75 MB-3.1 GB downloads) to demonstrate",
+  "SYNC-14": "cloud STT with diarisation needs paid keys (Deepgram, ElevenLabs Scribe, AssemblyAI, Together, Gemini)",
+  "SYNC-19": "narration word budgets are a planning rule of thumb (words per minute); the real check is a TTS duration, which needs a TTS engine",
+  "SYNC-45": "verse film from sound renders through HyperFrames after faster-whisper timing (network model download); the estimated path writes into the vendor projects/ folder",
+  "SYNC-48": "the talking-clip reel needs faster-whisper weights (or a real transcript) and a decaption/restoration chain on a real clip",
+  "SYNC-51": "songreel needs faster-whisper large-v3 weights and a footage pool fetched with yt-dlp (network)",
   "TEX-39": "HyperFrames media-treatment shader effects (18 keys) are interpreted by the HyperFrames runtime in headless Chrome; the card gives no shader maths and no <15 s render is wired here",
   "TEX-49": "a live CubeCamera reflection needs a WebGL three.js render loop and the demo's assets/main.bundle.js (not built in this checkout); not reproducible as a measured <15 s program here",
   "TEX-62": "texture-mask-text depends on the 66 ambientCG PNG masks shipped with the HyperFrames registry block; only the registry JSON is cached locally, the mask images are not present",
@@ -215,7 +117,68 @@
   "TRANS-92": "@hyperframes/shader-transitions package on a WebGL canvas with html2canvas captures; the package is not installed and headless WebGL is not available here",
   "TRANS-94": "React <ViewTransition> / ::view-transition snapshot morphs are a browser DOM feature; needs a driven Chromium page plus React",
   "TRANS-97": "Three.js/R3F WebGLRenderTargets in a GPU (or SwiftShader) Chromium; three is not installed here (the same noise-threshold math runs as TRANS-95 / TRANS-99)",
-  "TYPE-13": "the card is the review page's live Google Fonts swap (seven families fetched from fonts.googleapis.com at preview time); that page and the remote families are not part of this container, so a local run would not be the card's method"
+  "TYPE-13": "the card is the review page's live Google Fonts swap (seven families fetched from fonts.googleapis.com at preview time); that page and the remote families are not part of this container, so a local run would not be the card's method",
+  "protocol:A45-youtube-download": "the rule's program (living-site/tools/yt_get.sh) runs only on the user's own device: YouTube refuses data-centre IPs (429 / bot check) and the cloud sandbox has no network here",
+  "protocol:A46-suno-mcp": "Suno MCP is a remote OAuth server (https://api.suno.com/mcp, sign-in with a Suno account, credits:spend): no tool, no account and no network in this sandbox, so nothing can be executed or measured",
+  "protocol:A47-v62-media-gateway": "the gateway is a deployed Render service (gateway_status/list_uploads/download_permitted_video over HTTPS); its rules are about that live service and cannot be exercised without network",
+  "skill:kosif-superpowers/vendor/100-superskills/skills/davinci-resolve-pipeline": "deliverable (timeline B, role tracks, markers, render job) needs DaVinci Resolve Studio's scripting API, a desktop app; its resolve_pipeline.py doctor exits 2 here by design",
+  "skill:kosif-superpowers/vendor/100-superskills/skills/mobile-app-builder": "the skill's gates are 'the build succeeds on both platforms' and running on an emulator: needs the Flutter or Expo SDK plus Android/iOS toolchains and emulators, none installed here",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/117-programming/304-writing-csharp": "needs the .NET SDK (dotnet build/test/format); no dotnet on this machine",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1226-fd/2908-fd": "the fd binary is not installed (nor fdfind) and the skill says stop rather than install or imitate it",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1228-fuzzy-filter/2909-fuzzy-filter": "the pipeline's ranking stage is `fzf --filter`; fzf is not installed here",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1230-fzf/2910-fzf": "the fzf binary is not installed; the skill is the fzf tool itself (interactive picker), not imitable",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1271-ty/2949-ty": "Astral's ty type checker is not installed and installing is out of scope (no network)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1426-livekit-skills/3391-debugging-livekit-agents": "needs the LiveKit `lk agent debugger` CLI and an agent with its own LLM credentials",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1426-livekit-skills/3394-running-livekit-simulations": "needs `lk agent simulate`, a LiveKit Cloud project and paid LLM-judged runs",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1989-epharmoge/7149-contextualize": "dialogical protocol: its deliverable is a turn-by-turn dialogue in which the person settles each decision; there is no deterministic procedure to run without the person's turns (a scripted 'answer' would fake the protocol)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7150-gate-check": "needs an independent external advisor model (codex) as adjudicator; a second pass by this program would void the independence the skill exists for",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7157-white-bear": "semantic audit: deciding whether a prohibition is load-bearing (the rewrite test) is a meaning-level LLM judgment; a regex would report safety boundaries as findings",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1990-epistemic-cooperative/7158-zero-shot": "semantic audit: telling anchoring examples from scope-delineating or reliability examples is a meaning-level LLM judgment, not a lexical rule",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1991-euporia/7159-elicit": "dialogical protocol: its deliverable is a turn-by-turn dialogue in which the person settles each decision; there is no deterministic procedure to run without the person's turns (a scripted 'answer' would fake the protocol)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1993-horismos/7161-bound": "dialogical protocol: its deliverable is a turn-by-turn dialogue in which the person settles each decision; there is no deterministic procedure to run without the person's turns (a scripted 'answer' would fake the protocol)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/1996-katalepsis/7164-grasp": "dialogical protocol: its deliverable is a turn-by-turn dialogue in which the person settles each decision; there is no deterministic procedure to run without the person's turns (a scripted 'answer' would fake the protocol)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7801-eslint-to-biome": "Biome is not installed and cannot be fetched offline; the migration's proof (biome migrate / biome check accepting the config) cannot run here",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2160-migration-patterns-plugin/7803-mypy-to-ty": "ty is not installed and cannot be fetched offline; the cutover must be proven by running ty check against the mypy baseline",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2166-python-plugin/7853-ty-type-checking": "ty (Astral type checker) is not installed and cannot be fetched offline",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2166-python-plugin/7861-vulture-dead-code": "vulture and deadcode are not installed and cannot be fetched offline",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7928-biome-tooling": "Biome is not installed and cannot be fetched offline",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2174-typescript-plugin/7935-bun-outdated": "bun outdated compares installed versions with the npm registry; needs network",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2209-majestic-founder/8267-company-values": "needs the founder's real decision episodes and judgment; the output is a qualitative synthesis with no known answer to measure",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2209-majestic-founder/8276-operating-priorities": "needs the leader's real calendar, stage and bottlenecks plus a judgment conversation; no deterministic known answer",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2209-majestic-founder/8277-strategic-plan-review": "qualitative review of a real business plan under a posture the owner selects; no deterministic known answer",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/228-mas-3d-games/708-houdini": "guide for driving a commercial desktop application (SideFX Houdini: hou/VEX/PDG/Karma) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/228-mas-3d-games/712-zbrush": "guide for driving a commercial desktop application (Maxon ZBrush: ZScript/GoZ) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/724-catia": "guide for driving a commercial desktop application (Dassault CATIA V5/3DEXPERIENCE: VBA/CAA automation) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/725-fusion-360": "guide for driving a commercial desktop application (Autodesk Fusion 360: adsk Python API, cloud account) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/726-rhino": "guide for driving a commercial desktop application (McNeel Rhino/Grasshopper: RhinoCommon/rhinoscriptsyntax) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/230-mas-cad-studio/728-solidworks": "guide for driving a commercial desktop application (Dassault SolidWorks (Windows only): SW API/VBA) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/235-mas-video-lab/755-final-cut-pro": "guide for driving a commercial desktop application (Apple Final Cut Pro (macOS only): FCPXML round-trips inside the app) through its own scripting API; the application is not installed here and needs a paid licence, so nothing can be executed or measured",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2650-programming-tasuke/10069-prefer-yq": "the skill assumes mikefarah/yq (Go: strenv, -i keeping comments, -p=xml, eval-all); only kislyuk/yq (Python jq wrapper) is installed, whose syntax differs as the skill itself warns",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2688-build-macos-apps/10303-liquid-glass": "macOS SwiftUI Liquid Glass: needs Xcode, the macOS 26 SDK and a visual run on a Mac; none exist on this Linux host",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2688-build-macos-apps/10305-signing-entitlements": "needs codesign, spctl and security on macOS to read a real signed bundle; Linux has none of them",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2688-build-macos-apps/10308-telemetry": "needs a macOS build of an app with OSLog Logger and `log stream` / Console.app to verify the event fired",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2882-pm-product-discovery/11642-brainstorm-ideas-existing": "its core deliverable is generative ideation from PM / Designer / Engineer perspectives (judgment); ranking given ideas is covered by the prioritize-features runner",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11715-deno-frontend": "the deno binary is not installed here and cannot be downloaded (no network)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11716-deno-sandbox": "Deno Sandbox runs Firecracker microVMs on Deno Deploy: needs an online Deno Deploy account and token",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11717-deno": "the deno binary is not installed here and cannot be downloaded (no network)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2898-deno/11718-migrate-to-deno": "each rung runs `deno install` / `deno run`; the deno binary is not installed and cannot be downloaded",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2922-pinia/12131-pinia": "the pinia package is not installed anywhere on this machine (Vue is, pinia is not) and npm has no network",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2940-tanstack/12197-use-tanstack": "its whole method is `npx @tanstack/intent@latest list/load`, which downloads from npm; no network and no @tanstack/intent here",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2943-tsdown/12203-tsdown": "the tsdown package is not installed and cannot be fetched from npm (no network)",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2944-turborepo/12208-turborepo": "turbo is not installed; the skill says the docs ship inside the installed turbo package, so nothing to read or run",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2954-workflow-sdk/12247-migrating-to-workflow-sdk": "the Workflow SDK package (`workflow`) is not installed, so migrated 'use workflow'/'use step' code cannot be run or verified",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/2959-dryforge/12437-ready": "its deliverable is user-approved intent: an ELICIT dialogue with the human plus explicit approval of the 3-doc; a program cannot stand in for that",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3061-angular-developer/13218-angular-developer": "needs the Angular v20 CLI/framework packages (ng new/build/test); not installed and no network to fetch them",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3175-prior-art/13504-prior-art": "core step is a live arXiv export API fetch plus one isolated reading subagent per paper; no network here",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3326-litellm-custom-provider-dispatch-order/13840-litellm-custom-provider-dispatch-order": "the dispatch order being diagnosed is litellm's own if/elif chain; litellm is not installed and cannot be installed",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3364-terraform-check-block-warn-only-ci-gate/13879-terraform-check-block-warn-only-ci-gate": "needs the terraform binary to produce a real plan with a failing check block; terraform is not installed",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3431-metaskills/14077-create-website": "the journey starts with a human intake (business, customer, offer) feeding ten phase documents; needs a human interview",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3519-shell-scripting/14290-shellcheck-configuration": "the skill is configuring and running ShellCheck; the shellcheck binary is not installed here",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/360-skill-authoring/1290-eval-skills": "the eval runs the target skill blind in fresh context-free subagents and grades with a judge model; no agent runtime in a runner",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/3601-skill-evolve/14445-skill-evolve": "9-dimension rubric is scored by independent judge subagents with a with/without-skill baseline; needs an LLM runtime",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/891-codex-tui-proof/2013-validate-tui-in-codex": "needs the Codex in-app browser plus the plugin's scripts/tui-proof.mjs (not shipped here) and an npm ci of its locked runtime; the skill forbids any fallback surface",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/972-scaffold-lean-library/2256-scaffold-lean-library": "Lean 4 / lake toolchain is not installed and Mathlib cannot be fetched offline; the scaffold's verification step (lake build) cannot run, so a rendered tree would be unproven",
+  "skill:kosif-superpowers/vendor/kosif-atlas/skills/975-scaffold-zig-cli/2259-scaffold-zig-cli": "zig compiler is not installed here; without zig build / zig fmt the scaffolded sources cannot be parsed or built, so a rendered tree would be unproven"
  },
  "broken_modules": {},
  "by_module": {
@@ -224,16 +187,16 @@
    "failed": 0
   },
   "fam_music_beat_sound.py": {
-   "passed": 174,
-   "failed": 2
+   "passed": 186,
+   "failed": 0
   },
   "fam_camera_composition_layout_a.py": {
-   "passed": 109,
-   "failed": 10
+   "passed": 200,
+   "failed": 0
   },
   "fam_camera_composition_layout_b.py": {
-   "passed": 139,
-   "failed": 1
+   "passed": 195,
+   "failed": 0
   },
   "fam_color_palette_grading.py": {
    "passed": 72,
@@ -241,6 +204,10 @@
   },
   "fam_charts_data_infographic.py": {
    "passed": 72,
+   "failed": 0
+  },
+  "fam_hand_drawn_draw_on.py": {
+   "passed": 33,
    "failed": 0
   },
   "fam_easing_timing_rhythm.py": {
@@ -260,7 +227,11 @@
    "failed": 0
   },
   "fam_shapes_morph_geometry.py": {
-   "passed": 39,
+   "passed": 41,
+   "failed": 0
+  },
+  "fam_audio_sync_captions.py": {
+   "passed": 19,
    "failed": 0
   },
   "fam_texture_material.py": {
@@ -268,16 +239,56 @@
    "failed": 0
   },
   "fam_transitions_cuts_a.py": {
-   "passed": 203,
+   "passed": 215,
    "failed": 0
   },
   "fam_transitions_cuts_b.py": {
-   "passed": 178,
+   "passed": 210,
    "failed": 0
   },
   "fam_typography_latin.py": {
-   "passed": 64,
-   "failed": 4
+   "passed": 74,
+   "failed": 0
+  },
+  "fam_playbooks_protocols.py": {
+   "passed": 62,
+   "failed": 0
+  },
+  "fam_skills_part1.py": {
+   "passed": 50,
+   "failed": 0
+  },
+  "fam_skills_part2.py": {
+   "passed": 50,
+   "failed": 0
+  },
+  "fam_skills_part3.py": {
+   "passed": 44,
+   "failed": 0
+  },
+  "fam_skills_part4.py": {
+   "passed": 35,
+   "failed": 0
+  },
+  "fam_skills_part5.py": {
+   "passed": 44,
+   "failed": 0
+  },
+  "fam_skills_part6.py": {
+   "passed": 36,
+   "failed": 0
+  },
+  "fam_skills_part7.py": {
+   "passed": 50,
+   "failed": 0
+  },
+  "fam_skills_part8.py": {
+   "passed": 44,
+   "failed": 0
+  },
+  "fam_skills_part9.py": {
+   "passed": 40,
+   "failed": 0
   }
  }
 }
