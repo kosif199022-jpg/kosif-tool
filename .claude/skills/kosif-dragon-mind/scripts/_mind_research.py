@@ -98,7 +98,7 @@ def sha(path: Path) -> str:
 
 
 def github(raw: Path, readmes: Path | None) -> dict:
-    rows = [json.loads(l) for l in raw.read_text(encoding="utf-8").splitlines() if l.strip()]
+    rows = [json.loads(l) for l in raw.read_text(encoding="utf-8").split("\n") if l.strip()]
     rows = list({r["full_name"]: r for r in rows}.values())
     readme_text = {}
     if readmes and readmes.is_dir():
