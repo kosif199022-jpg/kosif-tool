@@ -286,17 +286,39 @@ class RealExecutionTests(unittest.TestCase):
             self.assertEqual(ok.returncode, 0, ok.stderr)
             self.assertGreater(art.stat().st_size, 0)
 
-    def test_probe_runs_help_only_for_argparse_cli_tools(self):
+    def test_probe_uses_static_ast_only_for_argparse_cli_tools(self):
         with tempfile.TemporaryDirectory() as tmp:
             job = Path(tmp)
             record = {"id": "micro-index", "kind": "cli", "root": "skill",
                       "path": "scripts/micro_index.py", "safety": "read-only"}
             probe = dragon._probe("tool:micro-index", record, job)
-            self.assertEqual(probe["status"], "passed", probe)
-            self.assertEqual(probe["command"][-1], "--help")
+            self.assertEqual(probe["status"], "inspected", probe)
+            self.assertEqual(probe["method"], "static-ast-no-execution")
+            self.assertNotIn("command", probe)
             self.assertEqual(dragon._probe("tool:x", dict(record, kind="library"), job)["status"],
                              "not-probeable")
             self.assertEqual(dragon._probe("tool:x", None, job)["status"], "not-probeable")
+
+    def test_probe_never_executes_top_level_payload(self):
+        from unittest import mock
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            target = root / "unreviewed.py"
+            side_effect = root / "would_have_executed.txt"
+            target.write_text(
+                "import argparse\\n"
+                "from pathlib import Path\\n"
+                f"Path({str(side_effect)!r}).write_text('unsafe')\\n"
+                "argparse.ArgumentParser().parse_args()\\n",
+                encoding="utf-8",
+            )
+            record = {"id": "unreviewed", "kind": "cli", "root": "repo",
+                      "path": "unreviewed.py"}
+            with mock.patch.object(dragon, "REPO", root):
+                result = dragon._probe("tool:unreviewed", record, root / "job")
+            self.assertEqual(result["status"], "inspected")
+            self.assertFalse(side_effect.exists(), "source inspection must not run module code")
+
 
 
 if __name__ == "__main__":
