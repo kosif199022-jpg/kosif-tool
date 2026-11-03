@@ -75,13 +75,14 @@ def log_push(a, b, p, ez):
     return math.exp(math.log(a) + ez(p) * (math.log(b) - math.log(a)))
 
 
-def chrome_run(wd: Path, name: str, html: str, size=(320, 180), screenshot=False, budget=2000):
+def chrome_run(wd: Path, name: str, html: str, size=(320, 180), screenshot=False, budget=2000, gl=False):
     """Run a page in headless Chrome; return the JSON the page wrote into #OUT (and the screenshot path)."""
     if not CHROME:
         raise RuntimeError("google-chrome not found")
     page = wd / ("%s.html" % name)
     page.write_text(html, encoding="utf-8")
-    base = [CHROME, "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars", "--no-first-run",
+    base = [CHROME, "--headless=new", "--no-sandbox", *(["--use-angle=swiftshader", "--enable-unsafe-swiftshader"] if gl else ["--disable-gpu"]),
+            "--hide-scrollbars", "--no-first-run",
             "--disable-extensions", "--allow-file-access-from-files", "--window-size=%d,%d" % size,
             "--virtual-time-budget=%d" % budget]
     done = subprocess.run(base + ["--dump-dom", page.as_uri()], capture_output=True, text=True, timeout=40,
@@ -4899,7 +4900,7 @@ def cam147(task, wd):
     fr = fx.frames(out, size=(270, 480))
     m = track_colors(fr, [hex2rgb(RED), hex2rgb(BLUE)], tol=60)
     d = np.array([math.hypot(a["cx"] - b["cx"], a["cy"] - b["cy"]) for a, b in m])
-    z = d / d[-1] if False else d / np.median(d[(np.arange(len(d)) / 30 % per) > 1.4])
+    z = d / np.median(d[(np.arange(len(d)) / 30 % per) > 1.4])     # relative to the unpunched frames
     T = np.arange(len(z)) / 30
     on = z > 1.05
     starts = [T[i] for i in range(len(on)) if on[i] and (i == 0 or not on[i - 1])]
@@ -4916,7 +4917,7 @@ def cam147(task, wd):
             check("each punch holds 1.2 s (1.0-1.5 s rule)", all(abs(r - 1.2) <= 1.5 / 30 for r in runs), runs, 1.2),
             check("zoompan rejects the 't' expression; 'it' renders 1080x1920 @30", (not broken_ok) and (int(p["width"]), int(p["height"])) == (W, H) and p["r_frame_rate"] == "30/1",
                   [broken_ok, p["width"], p["height"], p["r_frame_rate"]], [False, W, H, "30/1"]),
-            check("negative control: the unprocessed plate has no punch", len(still_d) == 1 and True, float(still_d[0] / np.median(d[~on])), "1.0 (no 1.10 frames)")], [out]
+            check("negative control: the unprocessed plate shows no 1.10 punch", abs(float(still_d[0] / np.median(d[~on])) - 1.10) > .05, float(still_d[0] / np.median(d[~on])), "~1.0, not 1.10")], [out]
 
 
 def _plate_js(plates):
@@ -5301,3 +5302,796 @@ def cam127(task, wd):
                 ("every tile follows the diagonal rule (browser opacities)", lambda m, fr: (all(abs(on(k, f) - (am["reveal"] + .25 * (i + j))) <= 1 / 30 + .011 for k, (i, j) in enumerate(tiles)), True), True),
                 ("the poster assembles within the best span 1.5-3.5 s", lambda m, fr: (1.5 <= .25 * 5 + .5 <= 3.5 and all(f[-1]["el"][k]["o"] == 1 for k in range(12)), .25 * 5 + .5), "1.5-3.5, all tiles on")]
     return _beat_card(wd, "tilemosaic", None, js, ["#t%d" % k for k in track] + ["#t%d" % k for k in range(12) if k not in track], [cols[q] for q in range(4)] + [None] * 8, 5.0, crits, body=body)
+
+
+# ───────────────────────────── previs: prompt camera plans executed as K3 (THREE) camera moves and measured ─────────────────────────────
+
+def _forge():
+    return repo_mod(FORGE / "video_prompt_forge.py", "forge")
+
+
+def cam_words(text):
+    F = _forge()
+    return [w for w in re.findall(F.CAMERA_WORDS, text.lower()) if w not in ("static", "locked-off", "locked off")]
+
+
+def _in_frame(b, W, H):
+    return b is not None and b["x0"] > 0 and b["y0"] > 0 and b["x1"] < W - 1 and b["y1"] < H - 1
+
+
+STICK5 = [(0, 0.06, 0, 0.06, RED), (0, 1.75, 0, 0.09, BLUE), (-1.4, 1.45, 2.3, 0.22, GREEN)]
+
+
+@card("CAM-05")
+def cam05(task, wd):
+    """Stickman shot-size progression: five clips escalate with the arc - wide establishing, medium eye level,
+    over-the-shoulder three-quarter, slightly low angle, close-up with a very slow push-in; 9:16, steady camera with a
+    subtle horizontal follow; executed as a K3 camera plan and measured."""
+    W, H = 144, 256
+    shots = [("wide establishing", [0, 1.6, 9], [0, .9, 0]), ("medium eye level", [0, 1.6, 3.2], [0, 1.4, 0]),
+             ("over-the-shoulder three-quarter", [-2.2, 1.65, 3.2], [0, 1.5, 0]), ("slightly low angle", [.5, .8, 3.5], [0, 1.3, 0]),
+             ("close-up on posture, room for the reveal", [0, 1.55, 1.6], [0, 1.45, 0])]
+    prompts = [{"clip": i + 1, "shot": s[0], "camera": "very slow push-in" if i == 4 else "steady with subtle horizontal follow", "aspect": "9:16"} for i, s in enumerate(shots)]
+    (wd / "shots.json").write_text(json.dumps(prompts, indent=1), encoding="utf-8")
+    js = ("const SH=%s; function update(t){ const k=Math.min(4,Math.floor(t/2)), u=t-2*k; const s=SH[k]; const walk=k<4?0.15*u:0;"
+          "const p=s[1].slice(), l=s[2].slice(); p[0]+=0.8*walk; l[0]+=walk; if(k===4){ p[2]=1.6-0.14*u/2; }"
+          "camera.position.set(p[0],p[1],p[2]); camera.lookAt(l[0],l[1],l[2]); return {k, look:l}; }") % json.dumps(shots)
+    js = js.replace("function update(t){", "function update(t){ const sx=(Math.min(4,Math.floor(t/2))<4)?0.15*(t-2*Math.min(4,Math.floor(t/2))):0; PTS[0][0]=sx; PTS[1][0]=sx;")
+
+    def crits(r, T):
+        mid = [idx(T, 2 * k + 1) for k in range(5)]
+        head = lambda m, k: rad(m, 1)[mid[k]]
+        return [("shot sizes escalate: head size wide < medium < close-up, close-up the largest", lambda m, f: (head(m, 0) < head(m, 1) < head(m, 4) and head(m, 4) == np.nanmax([head(m, k) for k in range(5)]),
+                                                                                                  [round(float(head(m, k)), 2) for k in range(5)]), "increasing to the close-up"),
+                ("wide: full figure in frame and < 45% of the height", lambda m, f: (m[mid[0]][0] is not None and _in_frame(m[mid[0]][1], W, H) and (m[mid[0]][0]["cy"] - m[mid[0]][1]["cy"]) / H < .45,
+                                                                                (m[mid[0]][0]["cy"] - m[mid[0]][1]["cy"]) / H if m[mid[0]][0] else None), "<0.45"),
+                ("medium at eye level: camera y 1.6, feet out of frame", lambda m, f: (abs(f[mid[1]]["pos"][1] - 1.6) < 1e-6 and m[mid[1]][0] is None and m[mid[1]][1] is not None, f[mid[1]]["pos"][1]), 1.6),
+                ("over-the-shoulder: foreground shoulder bigger than the subject's head, camera 30-45 deg off the front", lambda m, f: (m[mid[2]][2] is not None and rad(m, 2)[mid[2]] > 2 * rad(m, 1)[mid[2]]
+                                                                                                                          and 30 <= abs(math.degrees(math.atan2(f[mid[2]]["pos"][0], f[mid[2]]["pos"][2]))) <= 45,
+                                                                                                                          abs(math.degrees(math.atan2(f[mid[2]]["pos"][0], f[mid[2]]["pos"][2])))), "30-45 deg"),
+                ("slightly low angle: camera below the chest looking up", lambda m, f: (f[mid[3]]["pos"][1] < 1.0 and f[mid[3]]["x"]["look"][1] > f[mid[3]]["pos"][1], [f[mid[3]]["pos"][1], f[mid[3]]["x"]["look"][1]]), "y<1, looking up"),
+                ("close-up: very slow push-in (head grows 2-15%), steady elsewhere (camera height constant within each clip)", lambda m, f: (1.02 < rad(m, 1)[idx(T, 9.9)] / rad(m, 1)[idx(T, 8.0)] < 1.15
+                                                                                                                                 and all(np.ptp([f[i]["pos"][1] for i in range(len(T)) if 2 * k <= T[i] < 2 * k + 2]) < 1e-9 for k in range(5)),
+                                                                                                                                 float(rad(m, 1)[idx(T, 9.9)] / rad(m, 1)[idx(T, 8.0)])), "1.02-1.15"),
+                ("subtle horizontal follow: the walking subject stays near its screen x within a clip", lambda m, f: (max(abs(m[idx(T, 2 * k + 1.9)][1]["cx"] - m[idx(T, 2 * k)][1]["cx"]) for k in range(4)) < .06 * W,
+                                                                                                                 max(abs(m[idx(T, 2 * k + 1.9)][1]["cx"] - m[idx(T, 2 * k)][1]["cx"]) for k in range(4))), "<6% of W")]
+    checks, outs = run3d(wd, "stickman", STICK5, js, 9.9, 10, crits, W=W, H=H, fov=40)
+    return checks, outs + [wd / "shots.json"]
+
+
+def fov_v(mm, sensor=36.0):
+    return 2 * math.degrees(math.atan(sensor / 2 / mm))
+
+
+@card("CAM-06")
+def cam06(task, wd):
+    """Two-lens emotional coverage: every story beat is covered twice in 9:16 - a 35 mm wide with layered depth
+    (foreground / subject / background in frame) and an 85 mm close-up on hands, posture or eyes; vertical fov from
+    the focal length on a 36 mm portrait sensor."""
+    W, H = 144, 256
+    pts = [(0, 1.6, 0, .09, BLUE), (.22, 1.05, .25, .07, RED), (0, 1.3, .1, .08, MAG), (-.45, .9, 2.6, .12, GREEN), (1.3, 1.8, -6, .5, YEL)]
+    targets = [[.22, 1.05, .25], [0, 1.3, .1], [0, 1.6, 0]]          # hands, posture, eyes
+    plan = [{"beat": b, "j": j, "lens": ("35 mm wide" if j == 0 else "85 mm close-up"), "aspect": "9:16"} for b in range(3) for j in range(2)]
+    (wd / "coverage.json").write_text(json.dumps(plan, indent=1), encoding="utf-8")
+    js = ("const TG=%s, F35=%s, F85=%s; function update(t){ const n=Math.round(t), b=Math.floor(n/2), j=n%%2;"
+          "if(j===0){ camera.fov=F35; camera.position.set(0.4,1.5,4.6); camera.lookAt(0,1.4,0); }"
+          "else { const g=TG[b]; camera.fov=F85; camera.position.set(g[0]+0.15,g[1]+0.05,g[2]+1.25); camera.lookAt(g[0],g[1],g[2]); }"
+          "return {b,j}; }") % (json.dumps(targets), fov_v(35), fov_v(85))
+    T = [float(i) for i in range(6)]
+    col = {BLUE: 0, RED: 1, MAG: 2, GREEN: 3, YEL: 4}
+    tk = [1, 2, 0]
+
+    def crits(r, T):
+        f = r["frames"]
+        return [("the 85 mm close-up magnifies its target >= 3x over the 35 mm wide of the same beat", lambda m, fr: (all(m[2 * b + 1][tk[b]] is not None and m[2 * b][tk[b]] is not None and rad(m, tk[b])[2 * b + 1] > 3 * rad(m, tk[b])[2 * b] for b in range(3)),
+                                                                                                         [round(float(rad(m, tk[b])[2 * b + 1] / rad(m, tk[b])[2 * b]), 2) if m[2 * b + 1][tk[b]] else None for b in range(3)]), ">3"),
+                ("fov = 2 atan(18 / f): 35 mm -> %.2f deg, 85 mm -> %.2f deg" % (fov_v(35), fov_v(85)), lambda m, fr: (all(abs(f[i]["fov"] - (fov_v(35) if i % 2 == 0 else fov_v(85))) < 1e-6 for i in range(6)), [f[0]["fov"], f[1]["fov"]]), [fov_v(35), fov_v(85)]),
+                ("35 mm frames hold layered depth: foreground, subject and background all in frame", lambda m, fr: (all(m[2 * b][3] is not None and m[2 * b][0] is not None and m[2 * b][4] is not None for b in range(3)), True), True),
+                ("close-ups on hands, posture, eyes in turn", lambda m, fr: (all(abs(m[2 * b + 1][tk[b]]["cx"] - W / 2) < 12 and abs(m[2 * b + 1][tk[b]]["cy"] - H / 2) < 12 for b in range(3)), [(round(m[2 * b + 1][tk[b]]["cx"]), round(m[2 * b + 1][tk[b]]["cy"])) for b in range(3)]), "centred")]
+    r = cam3d(wd, "twolens", pts, js, T, 1, W=W, H=H, fov=40)
+    return verify(r, crits(r, T)), out_files(r["video"], r["json"]) + [wd / "coverage.json"]
+
+
+@card("CAM-07")
+def cam07(task, wd):
+    """Locked 45 deg food macro: a fixed tripod three-quarter view at 45 deg elevation with a 50 mm look (fov 27 deg on a
+    24 mm-high frame), identical in every clip, allowing only a tiny motivated macro push (<= 3%) in one clip."""
+    W, H = 256, 144
+    pts = [(0, .05, 0, .12, RED), (.25, .05, -.15, .06, BLUE), (-.3, .05, .2, .05, GREEN)]
+    d = 1.2
+    el, az = math.radians(45), math.radians(45)
+    cpos = [d * math.cos(el) * math.sin(az), .05 + d * math.sin(el), d * math.cos(el) * math.cos(az)]
+    js = ("const C=%s; function update(t){ const k=Math.floor(t/2), u=t-2*k; const s=(k===1)?1-0.025*Math.min(1,u/1.5):1;"
+          "camera.fov=%s; camera.position.set(C[0]*s,0.05+(C[1]-0.05)*s,C[2]*s); camera.lookAt(0,0.05,0); return {k}; }") % (json.dumps(cpos), fov_v(50, 24))
+
+    def crits(r, T):
+        f = r["frames"]
+        starts = [idx(T, 2 * k) for k in range(3)]
+        sc = lambda m, a, b: rad(m, 0)[b] / rad(m, 0)[a]
+        return [("clip 2 has the one motivated macro push: 1-3% measured", lambda m, fr: (1.01 < sc(m, starts[1], idx(T, 3.9)) <= 1.03 and abs(sc(m, starts[0], idx(T, 1.9)) - 1) < 1e-3 and abs(sc(m, starts[2], idx(T, 5.9)) - 1) < 1e-3,
+                                                                                    [round(float(sc(m, starts[k], idx(T, 2 * k + 1.9))), 4) for k in range(3)]), [1, "1.01-1.03", 1]),
+                ("identical camera at the start of every clip (measured plate)", lambda m, fr: (all(abs(m[s][0]["cx"] - m[0][0]["cx"]) < 1e-6 and abs(m[s][0]["area"] - m[0][0]["area"]) < 1e-6 for s in starts), True), True),
+                ("45 deg elevation, three-quarter (45 deg) azimuth, 50 mm look", lambda m, fr: (abs(math.degrees(math.atan2(f[0]["pos"][1] - .05, math.hypot(f[0]["pos"][0], f[0]["pos"][2]))) - 45) < 1e-6
+                                                                                         and abs(math.degrees(math.atan2(f[0]["pos"][0], f[0]["pos"][2])) - 45) < 1e-6 and abs(f[0]["fov"] - fov_v(50, 24)) < 1e-6, f[0]["fov"]), [45, 45, round(fov_v(50, 24), 3)])]
+    return run3d(wd, "foodmacro", pts, js, 5.9, 10, crits, W=W, H=H)
+
+
+@card("CAM-185")
+def cam185(task, wd):
+    """First-frame framing per segment (not camera motion): every UGC segment opens 'medium shot chest-up, eye level'
+    unless a progression is asked for (wide -> medium close-up -> face close-up); action lines replace lens moves.
+    The plan's opening frames are executed as K3 cameras and the visible body markers measured."""
+    W, H = 144, 256
+    body = [(0, .05, 0, .05, RED), (0, 1.0, 0, .05, GREEN), (0, 1.3, 0, .05, YEL), (0, 1.55, 0, .05, MAG), (0, 1.8, 0, .05, BLUE)]
+    span = {"medium shot chest-up, eye level": (1.15, 1.95), "wide": (-.25, 2.2), "medium close-up": (1.38, 1.93), "face close-up": (1.48, 1.88)}
+    actions = ["turns toward camera", "holds up the bottle", "smiles and nods", "points at the label"]
+    default = [{"segment": i + 1, "framing": "medium shot chest-up, eye level", "action": a} for i, a in enumerate(actions)]
+    prog = [{"segment": i + 1, "framing": fr_, "action": a} for i, (fr_, a) in enumerate(zip(["wide", "medium close-up", "face close-up", "face close-up"], actions))]
+    naive = ["camera zooms in on her face", "slow dolly out to reveal the room", "orbit around the product", "handheld push-in"]
+    (wd / "segments.json").write_text(json.dumps({"default": default, "on_request": prog}, indent=1), encoding="utf-8")
+    fv = 40
+
+    def cam_for(fr_):
+        lo, hi = span[fr_]
+        dist = (hi - lo) / 2 / math.tan(math.radians(fv) / 2)
+        return [0, 1.6, dist], [0, (lo + hi) / 2, 0]
+    shots = [cam_for(s["framing"]) for s in default + prog]
+    js = "const S=%s; function update(t){ const s=S[Math.round(t)]; camera.position.set(...s[0]); camera.lookAt(...s[1]); }" % json.dumps(shots)
+    r = cam3d(wd, "firstframes", body, js, [float(i) for i in range(8)], 1, W=W, H=H, fov=fv)
+    vis = [[k for k in range(5) if r["meas"][i][k] is not None and _in_frame(r["meas"][i][k], W, H)] for i in range(8)]
+    fr = read_video(r["video"])
+    same = float(max(np.abs(fr[i] - fr[0]).max() for i in range(4)))
+    words_default = [w for s in default for w in cam_words(s["action"] + " " + s["framing"])]
+    words_naive = [w for s in naive for w in cam_words(s)]
+    return [check("default: all 4 segments open on the identical chest-up, eye-level frame (chest, chin, head in; hip out)", same < 1 and all(v == [2, 3, 4] for v in vis[:4]) and all(abs(shots[i][0][1] - 1.6) < 1e-9 for i in range(4)),
+                  [same, vis[:4]], [0, [[2, 3, 4]] * 4]),
+            check("on request the openings tighten: wide (feet in) -> medium close-up (chest out) -> face close-up (chin in, chest out)", vis[4][0] == 0 and 2 not in vis[5] and 3 in vis[5] and 3 in vis[6] and 2 not in vis[6]
+                  and rad(r["meas"], 4)[6] > rad(r["meas"], 4)[5] > rad(r["meas"], 4)[4], vis[4:7], "progression"),
+            check("action lines, no lens moves, in the default prompts", not words_default, words_default, []),
+            check("negative control: the unprocessed lens-move prompts name camera moves", bool(words_naive), words_naive, "camera words")], [wd / "segments.json", r["video"], r["json"]]
+
+
+MOVE_LIBRARY = {"luxury product": "slow half-orbit around hero object", "real estate": "steadicam glide through doorways, crane-up in atria",
+                "industrial": "low lateral track with foreground parallax", "travel": "drone rise-and-reveal then descending swoop",
+                "food/craft": "push in to craft moment, ease back", "miniature": "dives + aerial hops", "locked-iso": "locked high isometric angle, straight level travel only"}
+
+
+def _grammar(wd, name, concept, pts, js, dur, fps, crits, W=256, H=144, fov=40):
+    leg = {"concept": concept, "leg": "mid-leg", "prompt": "%s scene, %s" % (concept, MOVE_LIBRARY[concept]), "camera": MOVE_LIBRARY[concept]}
+    (wd / ("%s_leg.json" % name)).write_text(json.dumps(leg, indent=1), encoding="utf-8")
+    checks, outs = run3d(wd, name, pts, js, dur, fps, crits, W=W, H=H, fov=fov)
+    checks.insert(0, check("leg prompt carries the concept's move from the library", MOVE_LIBRARY[concept] in leg["prompt"], leg["camera"], MOVE_LIBRARY[concept]))
+    return checks, outs + [wd / ("%s_leg.json" % name)]
+
+
+@card("CAM-187")
+def cam187(task, wd):
+    """Camera grammar, luxury product: the library's 'slow half-orbit around hero object' added to the leg prompt and
+    executed as a previs camera (radius 4, sine ease over 4 s); hero stays centred, the orbit sweeps 180 deg."""
+    pts = [(0, 1, 0, .3, RED), (.9, 1.8, -.6, .12, BLUE)]
+    js = "function update(t){ const a=Math.PI*(1-Math.cos(Math.PI*Math.min(t/4,1)))/2; camera.position.set(4*Math.sin(a),1.3,4*Math.cos(a)); camera.lookAt(0,1,0); return {a}; }"
+
+    def crits(r, T):
+        f = r["frames"]
+        az = [math.degrees(math.atan2(fr["pos"][0], fr["pos"][2])) % 360 for fr in f]
+        return [("the side detail swings across the hero (orbit parallax, measured)", lambda m, fr: (np.sign(P(m, 1)[0][0] - P(m, 0)[0][0]) != np.sign(P(m, 1)[0][-1] - P(m, 0)[0][-1]), [float(P(m, 1)[0][0]), float(P(m, 1)[0][-1])]), "sign flip"),
+                ("hero stays centred all the way (measured)", lambda m, fr: (float(np.nanmax(np.hypot(P(m, 0)[0] - 128, P(m, 0)[1] - 72))) < .5, float(np.nanmax(np.hypot(P(m, 0)[0] - 128, P(m, 0)[1] - 72)))), "<0.5 px"),
+                ("half-orbit: azimuth sweeps 180 deg at constant radius", lambda m, fr: (abs((az[-1] - az[0]) - 180) < 1e-6 and np.ptp([math.hypot(x["pos"][0], x["pos"][2]) for x in f]) < 1e-9, az[-1] - az[0]), 180),
+                ("slow: zero speed at both ends (sine ease)", lambda m, fr: (abs(az[1] - az[0]) < 1.5 and abs(az[-1] - az[-2]) < 1.5 and az[21] - az[19] > 5, [az[1] - az[0], az[21] - az[19]]), "ends ~0")]
+    return _grammar(wd, "luxury_orbit", "luxury product", pts, js, 4.0, 10, crits)
+
+
+@card("CAM-188")
+def cam188(task, wd):
+    """Camera grammar, real estate: 'steadicam glide through doorways, crane-up in atria' executed as a previs - a level,
+    roll-free glide through a door (posts sweep out symmetrically), then a 3 m crane-up revealing the atrium."""
+    pts = [(-.6, 1.5, -2, .12, BLUE), (.6, 1.5, -2, .12, GREEN), (0, 6, -9, .5, YEL)]
+    js = ("function update(t){ if(t<=3){ const u=(1-Math.cos(Math.PI*t/3))/2; camera.position.set(0,1.5,2-5*u); camera.lookAt(0,1.5,-8); }"
+          "else { const u=(1-Math.cos(Math.PI*Math.min(1,(t-3)/2)))/2; camera.position.set(0,1.5+3*u,-3); camera.lookAt(0,1.5+3*u+1.2*u,-8); } }")
+
+    def crits(r, T):
+        f = r["frames"]
+        g = [i for i, t in enumerate(T) if t <= 3]
+        sym = lambda m: max(abs((P(m, 0)[0][i] + P(m, 1)[0][i]) / 2 - 128) for i in g if m[i][0] and m[i][1] and _in_frame(m[i][0], 256, 144) and _in_frame(m[i][1], 256, 144))
+        lvl = lambda m: max(abs(P(m, 0)[1][i] - P(m, 1)[1][i]) for i in g if m[i][0] and m[i][1])
+        return [("glide: door posts sweep outward symmetrically and leave the frame", lambda m, fr: (sym(m) < .5 and P(m, 1)[0][g[12]] - P(m, 0)[0][g[12]] > 1.5 * (P(m, 1)[0][0] - P(m, 0)[0][0]) and m[g[-1]][0] is None,
+                                                                                         [sym(m), float(P(m, 1)[0][0] - P(m, 0)[0][0])]), "symmetric, widening, gone"),
+                ("steadicam: level and roll-free (posts stay on one horizontal line, height constant)", lambda m, fr: (lvl(m) < .3 and np.ptp([f[i]["pos"][1] for i in g]) < 1e-9, lvl(m)), "<0.3 px"),
+                ("crane-up: +3 m rise after the doorway reveals the atrium (marker enters the frame)", lambda m, fr: (abs(f[-1]["pos"][1] - 4.5) < 1e-6 and m[-1][2] is not None and m[idx(T, 3.0)][2] is None,
+                                                                                                    [f[-1]["pos"][1], m[idx(T, 3.0)][2] is None, m[-1][2] is not None]), [4.5, True, True])]
+    return _grammar(wd, "realestate", "real estate", pts, js, 5.0, 10, crits)
+
+
+@card("CAM-189")
+def cam189(task, wd):
+    """Camera grammar, industrial: 'low lateral track with foreground parallax' - a camera 0.4 m high tracks sideways at
+    2 m/s; the foreground (2 m) crosses the screen 5x faster than the machinery (10 m), as the pinhole model requires."""
+    pts = [(0, .5, 2, .08, RED), (0, 1.0, -6, .3, BLUE)]
+    js = "function update(t){ const x=-1.5+2*t; camera.position.set(x,.4,4); camera.lookAt(x,.45,-1); }"
+
+    def crits(r, T):
+        w = [i for i in range(len(T)) if r["meas"][i][0] and r["meas"][i][1] and _in_frame(r["meas"][i][0], 256, 144)]
+        v = lambda m, k: float(np.polyfit([T[i] for i in w], [P(m, k)[0][i] for i in w], 1)[0])
+        return [("foreground parallax: screen speed ratio fg / bg = depth ratio 5 (measured)", lambda m, fr: (abs(v(m, 0) / v(m, 1) - 5) < .1, v(m, 0) / v(m, 1)), 5),
+                ("low lateral track: camera 0.4 m high, moving only sideways at 2 m/s", lambda m, fr: (all(abs(x["pos"][1] - .4) < 1e-9 and abs(x["pos"][2] - 4) < 1e-9 for x in fr) and abs((fr[-1]["pos"][0] - fr[0]["pos"][0]) / T[-1] - 2) < 1e-6, True), True)]
+    return _grammar(wd, "industrial", "industrial", pts, js, 1.5, 20, crits)
+
+
+@card("CAM-190")
+def cam190(task, wd):
+    """Camera grammar, travel: 'drone rise-and-reveal then descending swoop' - the drone rises from behind a near ridge
+    until the hidden landmark is revealed, then swoops down and forward toward it (occlusion measured on the render)."""
+    pts = [(0, 1.0, -30, .9, YEL), (0, 1.0, 3, 1.4, MAG)]
+    js = ("function update(t){ let y,z; if(t<=3){ y=1+13*(1-Math.cos(Math.PI*t/3))/2; z=6; } else { const u=(1-Math.cos(Math.PI*Math.min(1,(t-3)/3)))/2; y=14-10*u; z=6-14*u; }"
+          "camera.position.set(0,y,z); camera.lookAt(0,1,-30); }")
+
+    def crits(r, T):
+        f = r["frames"]
+        seen = lambda m: [m[i][0] is not None and m[i][0]["area"] > 5 for i in range(len(T))]
+        return [("reveal: the landmark is hidden behind the ridge at the start and visible after the rise", lambda m, fr: (not seen(m)[0] and seen(m)[idx(T, 3.0)], [seen(m)[0], seen(m)[idx(T, 3.0)]]), [False, True]),
+                ("altitude rises 1 -> 14 m, then descends while flying forward (swoop)", lambda m, fr: (abs(f[idx(T, 3.0)]["pos"][1] - 14) < 1e-6 and f[-1]["pos"][1] < 5 and f[-1]["pos"][2] < f[idx(T, 3.0)]["pos"][2] - 10,
+                                                                                               [f[0]["pos"][1], f[idx(T, 3.0)]["pos"][1], f[-1]["pos"][1], f[-1]["pos"][2]]), "1 -> 14 -> 4, forward"),
+                ("the swoop brings the landmark closer (it grows on screen)", lambda m, fr: (rad(m, 0)[-1] > 1.3 * rad(m, 0)[idx(T, 3.0)], [float(rad(m, 0)[idx(T, 3.0)]), float(rad(m, 0)[-1])]), ">1.3x")]
+    return _grammar(wd, "travel", "travel", pts, js, 6.0, 10, crits)
+
+
+@card("CAM-191")
+def cam191(task, wd):
+    """Camera grammar, food/craft: 'push in to craft moment, ease back' - distance 2.0 -> 1.2 m at the craft moment
+    (t = 2 s) and back, raised-cosine; the subject's size peaks at the moment and returns to its start size."""
+    pts = [(0, .9, 0, .15, RED)]
+    js = "function update(t){ const d=2-0.8*(1-Math.cos(2*Math.PI*t/4))/2; camera.position.set(0,1.3,d); camera.lookAt(0,.9,0); return {d}; }"
+
+    def crits(r, T):
+        return [("subject size peaks at the craft moment (t = 2 s) and eases back to its start size", lambda m, fr: (abs(T[int(np.nanargmax(rad(m, 0)))] - 2.0) <= .1 + 1e-6 and abs(rad(m, 0)[-1] / rad(m, 0)[0] - 1) < .01 and rad(m, 0)[idx(T, 2)] / rad(m, 0)[0] > 1.4,
+                                                                                                     [T[int(np.nanargmax(rad(m, 0)))], float(rad(m, 0)[idx(T, 2)] / rad(m, 0)[0])]), [2.0, ">1.4"]),
+                ("eased: zero speed at the start, the peak and the end", lambda m, fr: (abs(fr[1]["x"]["d"] - fr[0]["x"]["d"]) < .01 and abs(fr[idx(T, 2.1)]["x"]["d"] - fr[idx(T, 1.9)]["x"]["d"]) < .01, True), True)]
+    return _grammar(wd, "craft", "food/craft", pts, js, 4.0, 10, crits)
+
+
+@card("CAM-192")
+def cam192(task, wd):
+    """Camera grammar, miniature: 'dives + aerial hops' - dive into diorama A, hop up over the set, dive into diorama B;
+    altitude minima sit at the dioramas and each diorama is largest at its own dive."""
+    pts = [(-4, .3, 0, .4, RED), (4, .3, 0, .4, BLUE)]
+    js = ("const K=[[0,-4,12,6,-4],[1.5,-4,1.2,1.6,-4],[3,0,10,6,0],[4.5,4,1.2,1.6,4]];"
+          "function update(t){ let k=0; while(k<K.length-2&&t>K[k+1][0]) k++; const a=K[k], b=K[k+1], u=Math.min(1,Math.max(0,(t-a[0])/(b[0]-a[0]))), e=(1-Math.cos(Math.PI*u))/2;"
+          "const L=(i)=>a[i]+(b[i]-a[i])*e; camera.position.set(L(1),L(2),L(3)); camera.lookAt(L(4),.3,0); }")
+
+    def crits(r, T):
+        f = r["frames"]
+        y = [x["pos"][1] for x in f]
+        return [("each diorama is largest at its own dive (A at 1.5 s, B at 4.5 s)", lambda m, fr: (abs(T[int(np.nanargmax(rad(m, 0)))] - 1.5) < 1e-6 and abs(T[int(np.nanargmax(rad(m, 1)))] - 4.5) < 1e-6,
+                                                                                         [T[int(np.nanargmax(rad(m, 0)))], T[int(np.nanargmax(rad(m, 1)))]]), [1.5, 4.5]),
+                ("altitude: dives to 1.2 m at both dioramas, an aerial hop >= 10 m between", lambda m, fr: (abs(y[idx(T, 1.5)] - 1.2) < 1e-6 and abs(y[idx(T, 4.5)] - 1.2) < 1e-6 and y[idx(T, 3.0)] >= 10 - 1e-6, [y[idx(T, 1.5)], y[idx(T, 3.0)], y[idx(T, 4.5)]]), [1.2, 10, 1.2])]
+    return _grammar(wd, "miniature", "miniature", pts, js, 4.5, 10, crits)
+
+
+@card("CAM-193")
+def cam193(task, wd):
+    """Locked-iso glide: a fixed high isometric view (pitch -35.26 deg, yaw 45 deg) with only straight, level travel along
+    the view's right axis; measured: no rotation or zoom on screen (marker offsets constant), constant speed."""
+    Dv = -np.ones(3) / math.sqrt(3)
+    Rv = np.cross(Dv, [0, 1, 0])
+    Rv /= np.linalg.norm(Rv)
+    Uv = np.cross(Rv, Dv)
+    pts = [(0, 0, 0, .2, RED), tuple(2 * Rv) + (.2, BLUE), tuple(1.5 * Uv) + (.2, GREEN)]          # one depth plane
+    js = ("const D=new TH.Vector3(-1,-1,-1).normalize(), Rt=new TH.Vector3().crossVectors(D,new TH.Vector3(0,1,0)).normalize();"
+          "function update(t){ const p=new TH.Vector3(9,9,9).addScaledVector(Rt,-1.5+1.0*t); camera.position.copy(p); camera.lookAt(p.clone().add(D)); }")
+
+    def crits(r, T):
+        f = r["frames"]
+        off = lambda m: np.array([[P(m, 1)[0][i] - P(m, 0)[0][i], P(m, 1)[1][i] - P(m, 0)[1][i]] for i in range(len(T))])
+        return [("locked: no rotation or zoom - marker offsets constant on screen (measured)", lambda m, fr: (float(np.abs(off(m) - off(m)[0]).max()) < .15 and abs(P(m, 0)[0][-1] - P(m, 0)[0][0]) > 20, float(np.abs(off(m) - off(m)[0]).max())), "<0.15 px, travelling"),
+                ("isometric angles: pitch -35.26 deg, yaw 45 deg, constant orientation", lambda m, fr: (np.ptp(np.array([x["q"] for x in f]), 0).max() < 1e-9, [round(math.degrees(math.asin(-1 / math.sqrt(3))), 2), 45]), "quaternion constant"),
+                ("straight level travel at constant speed (height constant)", lambda m, fr: (np.ptp([x["pos"][1] for x in f]) < 1e-9 and float(np.abs(np.diff(np.diff(P(m, 0)[0]))).max()) < .2, float(np.abs(np.diff(np.diff(P(m, 0)[0]))).max())), "<0.2")]
+    return _grammar(wd, "lockiso", "locked-iso", pts, js, 3.0, 10, crits)
+
+
+def choose_architecture(world):
+    """Intake CAMERA choice: grounded continuous worlds take A (one forward flight), sets of dioramas take B."""
+    return "A" if world["kind"] == "grounded" else "B"
+
+
+@card("CAM-194")
+def cam194(task, wd):
+    """Camera architecture A (continuous take) vs B (dive + aerial connector), chosen at intake: A is one forward flight
+    with no cuts for a grounded world, B dives into each diorama and links them with high connectors."""
+    worlds = [{"kind": "grounded", "name": "valley"}, {"kind": "dioramas", "name": "shelf", "sets": [-6, 0, 6]}]
+    choice = [choose_architecture(w) for w in worlds]
+    (wd / "intake.json").write_text(json.dumps([dict(w, camera=c) for w, c in zip(worlds, choice)]), encoding="utf-8")
+    ptsA = [(0, .5, -6 * k, .2, [RED, BLUE, GREEN][k]) for k in range(3)]
+    jsA = "function update(t){ camera.position.set(0,3,12-5*t); camera.lookAt(0,1,4-5*t); }"
+    ptsB = [(x, .3, 0, .4, c) for x, c in zip(worlds[1]["sets"], [RED, BLUE, GREEN])]
+    jsB = ("const S=%s; function update(t){ const k=Math.min(2,Math.floor(t/2)), u=(t-2*k)/2, x=S[k];"
+           "const dive=Math.sin(Math.PI*Math.min(1,u)); const y=10-8.8*dive; const xx=(u<0.5)?x:(x+(S[Math.min(2,k+1)]-x)*(1-Math.cos(Math.PI*(u-0.5)/0.5*0.5))*(k<2?1:0));"
+           "camera.position.set(xx,y,1.6+4*(1-dive)); camera.lookAt(xx,.3,0); }") % json.dumps(worlds[1]["sets"])
+    T = times_for(3.0, 10)
+    rA = cam3d(wd, "archA", ptsA, jsA, T, 10)
+    TB = times_for(5.9, 10)
+    rB = cam3d(wd, "archB", ptsB, jsB, TB, 10)
+    zA = [f["pos"][2] for f in rA["frames"]]
+    steps = np.abs(np.diff(zA))
+    yB = np.array([f["pos"][1] for f in rB["frames"]])
+    minima = [TB[i] for i in range(1, len(TB) - 1) if yB[i] <= yB[i - 1] and yB[i] < yB[i + 1]]
+    xA = P(rA["meas"], 0)[1]
+    still = P(rA["meas_in"], 0)[1]
+    return [check("intake: grounded world -> A, dioramas -> B", choice == ["A", "B"], choice, ["A", "B"]),
+            check("A: one forward flight, monotonic, no cut (every step equal)", bool((np.diff(zA) < 0).all()) and float(steps.max() / steps.min()) < 1.0001, [zA[0], zA[-1]], "12 -> -3"),
+            check("A measured: the ground marker streams toward the camera continuously", bool(np.all(np.diff(xA[np.isfinite(xA)]) > 0)) and np.isfinite(xA).sum() > 10, int(np.isfinite(xA).sum()), ">10 frames, monotonic"),
+            check("B: dives (minima 1.2 m) at each of the 3 dioramas, connectors at 10 m", len(minima) == 3 and all(abs(yB[TB.index(t)] - 1.2) < .01 for t in minima) and yB.max() >= 10 - 1e-6, [minima, float(yB.max())], "3 dives"),
+            check("negative control: the unprocessed still never flies forward", not bool(np.all(np.diff(still[np.isfinite(still)]) > 0)) or np.isfinite(still).sum() <= 10, int(np.isfinite(still).sum()), "no motion")], \
+        [rA["video"], rB["video"], wd / "intake.json"]
+
+
+@card("CAM-183")
+def cam183(task, wd):
+    """Camera-move vocabulary for video models: one plainly phrased move per clip ('camera slowly pushes in') for Kling /
+    Runway, a first-frame framing instead of camera verbs for Seedance R2V; and the zoom (lens) vs dolly (body)
+    distinction executed in K3: a zoom keeps the near/far size ratio, a dolly changes it."""
+    verbs = r"\b(pushes in|pulls out|pans|tilts|dollies|orbits|tracks|cranes|zooms)\b"
+
+    def phrase(move, model):
+        plain = {"push-in": "camera slowly pushes in", "pan": "camera pans left", "orbit": "camera orbits the subject", "dolly out": "camera dollies out"}[move]
+        return "medium shot, subject centred, eye level" if model == "seedance-r2v" else plain
+    lines = {m: phrase("push-in", m) for m in ("kling", "runway", "seedance-r2v")}
+    raw = "dolly in then orbit around her, handheld"
+    (wd / "camera_lines.json").write_text(json.dumps(lines, indent=1), encoding="utf-8")
+    pts = [(0, 1, 0, .2, RED), (1.5, 1, -8, .4, BLUE)]
+    js = ("function update(t){ if(t<=2){ camera.fov=40-20*t/2; camera.position.set(0,1,4); } else { camera.fov=40; camera.position.set(0,1,4-2*(t-2)/2); } camera.lookAt(0,1,0); }")
+    T = times_for(4.0, 10)
+    r = cam3d(wd, "zoomdolly", pts, js, T, 10)
+    m = r["meas"]
+    ratio = rad(m, 0) / rad(m, 1)
+    i2, j0, j4 = idx(T, 2.0), idx(T, 2.1), idx(T, 4.0)
+    zoom_keep = abs(ratio[i2] / ratio[0] - 1) < .03 and rad(m, 0)[i2] / rad(m, 0)[0] > 1.9
+    dolly_change = ratio[j4] / ratio[j0] > 1.5
+    return [check("one plainly phrased move per clip for Kling / Runway", all(len(re.findall(verbs, lines[k])) == 1 and not cam_words(lines[k])[1:] for k in ("kling", "runway")), [lines["kling"], re.findall(verbs, lines["kling"])], "camera slowly pushes in"),
+            check("Seedance R2V gets a first-frame framing, no camera verbs", not cam_words(lines["seedance-r2v"]) and not re.findall(verbs, lines["seedance-r2v"]) and "shot" in lines["seedance-r2v"], lines["seedance-r2v"], "framing only"),
+            check("zoom (lens): magnifies 2x and keeps the near/far size ratio (measured)", zoom_keep, [float(rad(m, 0)[i2] / rad(m, 0)[0]), float(ratio[i2] / ratio[0])], [2, 1]),
+            check("dolly (body): the near/far ratio changes (measured > 1.5x)", dolly_change, float(ratio[j4] / ratio[j0]), ">1.5"),
+            check("negative control: the unprocessed line stacks camera verbs (fails the one-move rule)", len(cam_words(raw)) > 1, cam_words(raw), ">1 moves")], [wd / "camera_lines.json", r["video"]]
+
+
+@card("CAM-27")
+def cam27(task, wd):
+    """Locked restrained camera approximated with depth scale breathing: a slow 4% push on the focal layer (sine over
+    4 s) with the depth layers breathing by depth (scale = (1 + 0.04 p)^k, k = 1.6 / 1 / 0.5) and no shake."""
+    layers = [("fg", 1.6, RED, BLUE, (60, 40), (250, 140)), ("mid", 1.0, GREEN, YEL, (110, 60), (200, 120)), ("bg", 0.5, MAG, CYAN, (90, 100), (230, 50))]
+    body = "".join('<div id=%s class=a style="left:0;top:0;width:320px;height:180px;transform-origin:50%% 50%%">%s%s</div>'
+                   % (n, box_html(n + "a", a[0], a[1], 10, 10, ca), box_html(n + "b", b[0], b[1], 10, 10, cb)) for n, k, ca, cb, a, b in layers)
+    js = ("window.camAt=function(t){ const p=(1-Math.cos(Math.PI*Math.min(t/4,1)))/2; %s }"
+          % "".join("document.getElementById('%s').style.transform='scale('+Math.pow(1+0.04*p,%s)+')';" % (n, k) for n, k, *_ in layers))
+    sels = sum([["#%sa" % n, "#%sb" % n] for n, *_ in layers], [])
+    cols = sum([[ca, cb] for _, _, ca, cb, _, _ in layers], [])
+
+    def crits(r, T):
+        mdl = lambda k: np.array([(1 + .04 * sine_io(min(t / 4, 1))) ** k for t in T])
+        def smooth(m):
+            res = []
+            for i in range(6):
+                x, y = P(m, i)
+                for v in (x, y):
+                    c = np.polyfit(T, v, 6)
+                    res.append(float(np.abs(v - np.polyval(c, T)).max()))
+            return max(res)
+        return [("focal layer pushes 1 -> 1.04 (measured, sine)", lambda m, f: (float(np.abs(D(m, 2, 3) - mdl(1)).max()) < .005, [round(float(D(m, 2, 3)[-1]), 4)]), 1.04),
+                ("depth breathing: fg / mid / bg scale by depth (exponents 1.6 / 1 / 0.5)", lambda m, f: (float(np.abs(D(m, 0, 1) - mdl(1.6)).max()) < .005 and float(np.abs(D(m, 4, 5) - mdl(.5)).max()) < .005
+                                                                                                   and D(m, 0, 1)[-1] > D(m, 2, 3)[-1] > D(m, 4, 5)[-1],
+                                                                                                   [round(float(D(m, k, k + 1)[-1]), 4) for k in (0, 2, 4)]), [round((1.04) ** k, 4) for k in (1.6, 1, .5)]),
+                ("no shake: every marker path is smooth (residual from a smooth fit < 0.3 px, the measuring floor)", lambda m, f: (smooth(m) < .3, smooth(m)), "<0.3")]
+    return run_tl(wd, "restrained", body, js, sels, cols, 4.0, 10, crits)
+
+
+GL_PAGE = r"""
+const TH=K3.THREE, W=%(W)d, H=%(H)d; const ren=new TH.WebGLRenderer({preserveDrawingBuffer:true, antialias:false}); ren.setPixelRatio(1); ren.setSize(W,H);
+ren.outputColorSpace=TH.SRGBColorSpace; document.getElementById('view').appendChild(ren.domElement);
+const scene=new TH.Scene(), camera=new TH.PerspectiveCamera(35,W/H,.1,200);
+%(js)s
+ren.render(scene,camera); const gl=ren.getContext(); const px=new Uint8Array(W*H*4); gl.readPixels(0,0,W,H,gl.RGBA,gl.UNSIGNED_BYTE,px);
+const img=[]; for(let y=H-1;y>=0;y--){ const row=[]; for(let x=0;x<W;x++){ const i=(y*W+x)*4; row.push([px[i],px[i+1],px[i+2]]); } img.push(row); }
+OUT(Object.assign({img}, typeof EXTRA==='function'?EXTRA():{}));
+"""
+
+
+def gl_run(wd, name, js, W=160, H=90, scripts=(K3B,)):
+    html = lpage("", GL_PAGE % {"W": W, "H": H, "js": js}, W, H, scripts=list(scripts))
+    out, _ = chrome_run(wd, name, html, size=(W, H), gl=True, budget=4000)
+    img = np.array(out.pop("img"), np.uint8)
+    from PIL import Image
+    Image.fromarray(img).save(wd / ("%s.png" % name))
+    return out, img.astype(float), wd / ("%s.png" % name)
+
+
+@card("CAM-167")
+def cam167(task, wd):
+    """Studio backdrop gradient: scene.background = K3S.studioBackdrop({inner #1e4a44, mid #0c2224, outer #050c0d,
+    cy .42}) - a radial canvas texture; rendered by THREE in WebGL (SwiftShader) and read back pixel by pixel."""
+    js = ("camera.position.set(0,1,5); camera.lookAt(0,1,0); if(APPLY) scene.background=K3S.studioBackdrop({inner:'#1e4a44',mid:'#0c2224',outer:'#050c0d',cy:.42});"
+          "const EXTRA=()=>{ if(!APPLY) return {}; const c=scene.background.image.getContext('2d'); const g=(u,v)=>Array.from(c.getImageData(Math.floor(u*511),Math.floor(v*511),1,1).data).slice(0,3);"
+          "return {tex_c:g(.5,.42), tex_corner:g(0,0), tex_mid:g(.5,.42+.55*.75)}; };")
+    out, img, png = gl_run(wd, "backdrop", "const APPLY=true;" + js, scripts=(K3B, SHAPEKIT))
+    _, img0, _ = gl_run(wd, "backdrop_input", "const APPLY=false;" + js, scripts=(K3B, SHAPEKIT))
+    H, W = img.shape[:2]
+    L = lum(img)
+    yb, xb = np.unravel_index(int(np.argmax(L)), L.shape)
+    inner = np.array(hex2rgb("#1e4a44"), float)
+    col = img[yb, xb]
+    prof = L[yb, xb:]
+    def falloff(a):
+        return float(lum(a[yb, xb]) - lum(a[0, 0]))
+    return [check("radial falloff from the bright centre to the dark corners (measured luminance drop)", falloff(img) > 30 and bool((np.diff(prof) <= 1).all()), [falloff(img), float(lum(img[0, 0]))], ">30, monotonic"),
+            check("brightest pixel is the inner colour #1e4a44, centred horizontally, above the middle (cy .42)", float(np.abs(col - inner).max()) <= 3 and abs(xb - W / 2) <= 2 and yb < H / 2, [col.tolist(), int(xb), int(yb)], [inner.tolist(), W / 2, "< H/2"]),
+            check("corners reach the outer colour #050c0d", float(np.abs(img[0, 0] - hex2rgb("#050c0d")).max()) <= 4, img[0, 0].tolist(), hex2rgb("#050c0d")),
+            check("the texture itself holds inner at (0.5, cy) and outer at the corner", out["tex_c"] == list(hex2rgb("#1e4a44")) and max(abs(a - b) for a, b in zip(out["tex_corner"], hex2rgb("#050c0d"))) <= 4, [out["tex_c"], out["tex_corner"]], ["#1e4a44", "#050c0d"]),
+            check("negative control: the unprocessed scene has no gradient", not falloff(img0) > 30, falloff(img0), "<=30")], [png]
+
+
+@card("CAM-168")
+def cam168(task, wd):
+    """Cream studio sweep: K3.studio(scene, {bg, grid}) - cream sweep sphere (#f1efe8), contact-shadow floor (.22),
+    faint grid (16 m / 32, #c9d8c2 .35), key 2.6 @ (3,6,4), fill #dfe8ff .9, rim 1.4, hemi .9; rendered in WebGL with a
+    box on the floor; light rig read from the scene graph, sweep colour and contact shadow measured in pixels."""
+    js = ("ren.shadowMap.enabled=true; camera.position.set(-4,3,-4); camera.lookAt(0,.3,0); let S=null; if(APPLY) S=K3.studio(scene,{});"
+          "const box=new TH.Mesh(new TH.BoxGeometry(1,1,1), new TH.MeshStandardMaterial({color:0x8899aa})); box.position.y=.5; box.castShadow=true; scene.add(box);"
+          "const EXTRA=()=>{ const pr=(x,y,z)=>{ const v=new TH.Vector3(x,y,z).project(camera); return [Math.round((v.x*.5+.5)*W), Math.round((-v.y*.5+.5)*H)]; };"
+          "const L=[]; scene.traverse(o=>{ if(o.isLight) L.push([o.type, +o.intensity.toFixed(3), o.color.getHexString(), o.position.toArray().map(v=>+v.toFixed(3))]); });"
+          "return {lights:L, shadow:pr(-0.85,0,-0.75), lit:pr(-2.2,0,1.0), sky:pr(0,6,8), grid: S?[S.grid.material.opacity, S.floor.material.opacity]:null}; };")
+    out, img, png = gl_run(wd, "studio", "const APPLY=true;" + js, W=192, H=108, scripts=(K3B, LABKIT))
+    out0, img0, _ = gl_run(wd, "studio_input", "const APPLY=false;" + js, W=192, H=108, scripts=(K3B, LABKIT))
+    sky = lambda o, a: a[min(107, max(0, o["sky"][1])), min(191, max(0, o["sky"][0]))]
+    want_l = [["DirectionalLight", 2.6, "ffffff", [3, 6, 4]], ["DirectionalLight", .9, "dfe8ff", [-5, 3, 2]], ["DirectionalLight", 1.4, "ffffff", [-2, 4, -5]]]
+    dirs = [l for l in out["lights"] if l[0] == "DirectionalLight"]
+    hemi = [l for l in out["lights"] if l[0] == "HemisphereLight"]
+    sh, li = img[out["shadow"][1], out["shadow"][0]], img[out["lit"][1], out["lit"][0]]
+    return [check("cream sweep fills the background (#f1efe8, unlit basic material)", float(np.abs(sky(out, img) - hex2rgb("#f1efe8")).max()) <= 3, sky(out, img).tolist(), hex2rgb("#f1efe8")),
+            check("light rig: key 2.6 @ (3,6,4), fill #dfe8ff 0.9, rim 1.4, hemisphere 0.9", dirs == want_l and len(hemi) == 1 and hemi[0][1] == .9, out["lights"], want_l + [["HemisphereLight", .9]]),
+            check("contact shadow: the floor next to the box (away from the key) is darker than the open floor", lum(sh) < lum(li) - 15, [float(lum(sh)), float(lum(li))], "darker by >15"),
+            check("shadow floor .22 and faint grid .35", out["grid"] == [.35, .22], out["grid"], [.35, .22]),
+            check("negative control: the unprocessed scene has no cream sweep", not float(np.abs(sky(out0, img0) - hex2rgb("#f1efe8")).max()) <= 3, sky(out0, img0).tolist(), "not cream")], [png]
+
+
+def chaikin(pts, passes):
+    p = np.asarray(pts, float)
+    for _ in range(passes):
+        q = [p[0]]
+        for a, b in zip(p[:-1], p[1:]):
+            q += [.75 * a + .25 * b, .25 * a + .75 * b]
+        q.append(p[-1])
+        p = np.array(q)
+    return p
+
+
+def flyover(route, passes=3, travel=13.0, secs=24.0, fps=10, look=1.5, gain=.6, roll_max=.13, alt=(4600, 4300), pitch_nadir=76):
+    """The card's flyover camera: Chaikin-rounded path walked by arc length at constant ground speed, heading = bearing
+    to the point LOOK_AHEAD further, constant pitch, roll = clamp(dHeading x gain) between the aim and 2x look-ahead."""
+    p = chaikin(route, passes)
+    seg = np.hypot(*np.diff(p, axis=0).T)
+    s = np.r_[0, np.cumsum(seg)]
+    at = lambda d: np.array([np.interp(d, s, p[:, 0]), np.interp(d, s, p[:, 1])])
+    bearing = lambda a, b: math.atan2(b[0] - a[0], b[1] - a[1])
+    n = int(secs * fps) + 1
+    out = []
+    for i in range(n):
+        t = i / fps
+        d = travel * t / secs
+        c = at(d)
+        h1 = bearing(c, at(d + look))
+        h2 = bearing(c, at(d + 2 * look))
+        dh = (h2 - h1 + math.pi) % (2 * math.pi) - math.pi
+        out.append({"t": t, "x": float(c[0]), "y": float(c[1]), "heading": h1, "pitch": -(90 - pitch_nadir), "roll": float(np.clip(dh * gain, -roll_max, roll_max)),
+                    "alt": alt[0] + (alt[1] - alt[0]) * t / secs})
+    return out, p, float(s[-1])
+
+
+@card("CAM-181")
+def cam181(task, wd):
+    """Flyover camera math: Chaikin corner cutting (3 passes), arc-length walk at 13 km / 24 s = 0.54 km/s, heading =
+    bearing to a point 1.5 km ahead, constant pitch -14 deg (pitch-from-nadir 76), roll = clamp(dHeading x 0.6, +/-0.13)
+    toward the turn, altitude 4600 -> 4300 m; path >= travel + 2 x look-ahead. Computed and plotted (no globe engine)."""
+    route = [(0, 0), (4, 0), (6, 4), (10, 5), (14, 2), (17, 3)]
+    cam, path, L = flyover(route)
+    raw, _, _ = flyover(route, passes=0)
+    (wd / "flyover.json").write_text(json.dumps(cam), encoding="utf-8")
+    from PIL import Image, ImageDraw
+    im = Image.new("RGB", (360, 200), (20, 24, 30))
+    d = ImageDraw.Draw(im)
+    tr = lambda x, y: (10 + x * 20, 180 - y * 30)
+    d.line([tr(*q) for q in route], fill=(90, 90, 90), width=1)
+    d.line([tr(*q) for q in path], fill=(80, 200, 255), width=2)
+    for c in cam[::20]:
+        d.ellipse([tr(c["x"], c["y"])[0] - 2, tr(c["x"], c["y"])[1] - 2, tr(c["x"], c["y"])[0] + 2, tr(c["x"], c["y"])[1] + 2], fill=(255, 200, 0))
+    im.save(wd / "flyover.png")
+    sp = [math.hypot(b["x"] - a["x"], b["y"] - a["y"]) * 10 for a, b in zip(cam, cam[1:])]
+    dh = lambda c: max(abs((b["heading"] - a["heading"] + math.pi) % (2 * math.pi) - math.pi) for a, b in zip(c, c[1:]))
+    ahead = int(round(1.5 / (13 / 24) * 10))             # frames until the camera reaches today's aim point
+    agree = [np.sign(c["roll"]) == np.sign(((cam[min(len(cam) - 1, i + ahead)]["heading"] - c["heading"] + math.pi) % (2 * math.pi) - math.pi)) for i, c in enumerate(cam) if abs(c["roll"]) > .02]
+    turn_sign = sum(agree) >= .9 * len(agree)
+    return [check("smooth heading: max heading change per frame < 1.5 deg (Chaikin + look-ahead)", math.degrees(dh(cam)) < 1.5, math.degrees(dh(cam)), "<1.5 deg"),
+            check("constant ground speed 0.54 km/s by arc length (sampled path)", max(abs(v - 13 / 24) for v in sp) / (13 / 24) < .01, [min(sp), max(sp)], 13 / 24),
+            check("constant pitch -14 deg; altitude 4600 -> 4300 m", all(c["pitch"] == -14 for c in cam) and cam[0]["alt"] == 4600 and abs(cam[-1]["alt"] - 4300) < 1e-9, [cam[0]["pitch"], cam[-1]["alt"]], [-14, 4300]),
+            check("roll banks into the turn, clamped to +/-0.13 rad", max(abs(c["roll"]) for c in cam) <= .13 + 1e-12 and max(abs(c["roll"]) for c in cam) > .05 and turn_sign, max(abs(c["roll"]) for c in cam), "<=0.13, signed with the turn"),
+            check("Chaikin 3 passes: 8x segments, path km >= travel + 2 x look-ahead", len(path) == 8 * len(route) and L >= 13 + 3, [len(path), round(L, 2)], [">=16 km"]),
+            check("negative control: the raw polyline turns in heading jumps", not math.degrees(dh(raw)) < 1.5, math.degrees(dh(raw)), ">=1.5 deg")], [wd / "flyover.json", wd / "flyover.png"]
+
+
+def reserve_space(prompt, side="left"):
+    return prompt.rstrip(". ") + ", subject on the %s third, generous empty space on the %s for text overlay, no text" % ("right" if side == "left" else "left", side)
+
+
+def zone_clean(img, side="left", thr=6.0):
+    a = img.astype(float).mean(-1)
+    w = a.shape[1]
+    z = a[:, :w // 3] if side == "left" else a[:, 2 * w // 3:]
+    g = np.abs(np.diff(z, axis=1)).mean() + np.abs(np.diff(z, axis=0)).mean()
+    return float(g) < thr, float(g)
+
+
+@card("CAM-182")
+def cam182(task, wd):
+    """Composition keywords that reserve space for type: the generator prompt gains 'subject on the right third, generous
+    empty space on the left for text overlay, no text'; the empty zone of the returned frame is verified before type is
+    animated into it (LinkedIn banner 1584x396). The generation itself is not run here: two banner fixtures stand in."""
+    from PIL import Image, ImageDraw
+    W, H = 1584, 396
+    rng = np.random.default_rng(2)
+    prompt = reserve_space("a barista pouring latte art, warm morning light")
+
+    def banner(cx):
+        im = Image.new("RGB", (W, H), (236, 226, 210))
+        a = np.asarray(im).copy()
+        x0 = int(cx - 260)
+        a[40:360, x0:x0 + 520] = rng.integers(60, 200, (320, 520, 3))
+        return Image.fromarray(a.astype(np.uint8))
+    good, bad = banner(0.78 * W), banner(0.45 * W)
+    good.save(wd / "banner_right_third.png")
+    bad.save(wd / "banner_centred.png")
+    ok_g, e_g = zone_clean(np.asarray(good))
+    ok_b, e_b = zone_clean(np.asarray(bad))
+    im = good.copy()
+    ImageDraw.Draw(im).rectangle([80, 150, 80 + 380, 150 + 90], fill=(20, 30, 60))
+    im.save(wd / "banner_with_type.png")
+    after_type = np.asarray(im).astype(float)
+    subj_untouched = float(np.abs(after_type[:, W // 3:] - np.asarray(good)[:, W // 3:]).max()) == 0
+    (wd / "prompt.txt").write_text(prompt, encoding="utf-8")
+    return [check("the empty left third of the right-third banner verifies clean (edge energy)", ok_g, e_g, "<6"),
+            check("prompt carries the space-reserving phrase", "subject on the right third" in prompt and "empty space on the left for text overlay" in prompt, prompt, "phrase added"),
+            check("type animated into the verified zone leaves the subject untouched", subj_untouched, subj_untouched, True),
+            check("negative control: a centred-subject frame fails the empty-zone check", not ok_b, e_b, ">=6")], [wd / "prompt.txt", wd / "banner_with_type.png"]
+
+
+def smooth_subject(samples, conf_min=.3, still=.08):
+    """The card's smoothSubject: keep samples with confidence > 0.3, two-way exponential smoothing with weight 0.3 x conf,
+    a still shot (travel < 0.08) takes the median; returns smoothed x (fraction of width)."""
+    s = [(t, x, c) for t, x, c in samples if c > conf_min]
+    if not s:
+        return None
+    xs = np.array([x for _, x, _ in s])
+    if xs.max() - xs.min() < still:
+        return [(t, float(np.median(xs))) for t, _, _ in s]
+    f, b = [xs[0]], [xs[-1]]
+    for i in range(1, len(s)):
+        w = .3 * s[i][2]
+        f.append(f[-1] + w * (xs[i] - f[-1]))
+    for i in range(len(s) - 2, -1, -1):
+        w = .3 * s[i][2]
+        b.append(b[-1] + w * (xs[i] - b[-1]))
+    b = b[::-1]
+    return [(t, float((a + c) / 2)) for (t, _, _), a, c in zip(s, f, b)]
+
+
+def subject_pan(cx, src_w, crop_w):
+    return float(np.clip(cx * src_w - crop_w / 2, 0, src_w - crop_w))
+
+
+@card("CAM-186")
+def cam186(task, wd):
+    """Subject-follow reframing: the subject is found with cv2 (frame difference, no models) every 0.4 s with a
+    confidence, smoothed two ways (weight 0.3 x conf), still shots use the median, the 9:16 cover crop follows sideways
+    and clamps to the picture edges; measured on a synthetic walking plate."""
+    import cv2
+    W, H, fps = 320, 180, 10
+    rng = np.random.default_rng(4)
+    true_x = lambda t: 60 + 200 * sine_io(min(t / 6, 1))
+    frames = []
+    for i in range(int(6 * fps) + 1):
+        t = i / fps
+        f = np.zeros((H, W, 3), np.uint8) + 90
+        x = int(true_x(t) + rng.normal(0, 3))
+        cv2.rectangle(f, (x - 12, 50), (x + 12, 160), (220, 180, 150), -1)
+        frames.append(f)
+    src = write_video(wd / "walk.mp4", frames, fps)
+    dec = read_video(src).astype(np.uint8)
+    samples = []
+    for i in range(0, len(dec), 4):                         # every 0.4 s
+        a = cv2.cvtColor(dec[i], cv2.COLOR_RGB2GRAY).astype(np.int16)
+        bgf = np.full_like(a, 90)
+        m = (np.abs(a - bgf) > 10).astype(np.uint8)
+        n, lab, st, cen = cv2.connectedComponentsWithStats(m)
+        if n > 1:
+            j = 1 + int(np.argmax(st[1:, 4]))
+            samples.append((i / fps, float(cen[j][0] / W), float(min(1, st[j, 4] / 2000))))
+    sm = smooth_subject(samples)
+    cw = int(H * 9 / 16)
+    pans = [(t, subject_pan(x, W, cw)) for t, x in sm]
+    full = [np.interp(i / fps, [p[0] for p in pans], [p[1] for p in pans]) for i in range(len(dec))]
+    crops = [dec[i][:, int(round(full[i])):int(round(full[i])) + cw] for i in range(len(dec))]
+    out = write_video(wd / "follow_9x16.mp4", [np.ascontiguousarray(c) for c in crops], fps)
+    err = [abs((true_x(i / fps)) - (full[i] + cw / 2)) for i in range(len(dec))]
+    raw_x = np.array([x for _, x, _ in samples]) * W
+    jerk = lambda v: float(np.abs(np.diff(v, 2)).mean())
+    still_s = smooth_subject([(t, .5 + .01 * math.sin(t), .9) for t in np.arange(0, 3, .4)])
+    clampL = subject_pan(.02, W, cw)
+    fixed_err = max(abs(true_x(i / fps) - W / 2) for i in range(len(dec)))
+    return [check("the 9:16 crop keeps the subject near its centre (true path, after smoothing)", max(err) < .25 * cw, max(err), "<%.1f px" % (.25 * cw)),
+            check("two-way smoothing removes jitter: smoothed path jerk < raw detections", jerk(np.array([x for _, x in sm]) * W) < .5 * jerk(raw_x), [jerk(np.array([x for _, x in sm]) * W), jerk(raw_x)], "<0.5x"),
+            check("still shot (< 0.08 travel) -> one median position", len({round(x, 9) for _, x in still_s}) == 1, still_s[0][1], "median"),
+            check("pan clamps to the picture edges", clampL == 0 and subject_pan(.99, W, cw) == W - cw, [clampL, subject_pan(.99, W, cw)], [0, W - cw]),
+            check("negative control: a fixed centre crop loses the subject", not fixed_err < .25 * cw, fixed_err, ">=%.1f" % (.25 * cw))], [out, src]
+
+
+def _oblique(yaw=20, pitch=10, f=300, W=320, H=200, cam=(0, 1.4, 6)):
+    cy, sy = math.cos(math.radians(yaw)), math.sin(math.radians(yaw))
+    cp, sp = math.cos(math.radians(pitch)), math.sin(math.radians(pitch))
+
+    def proj(p):
+        x, y, z = p[0] - cam[0], p[1] - cam[1], p[2] - cam[2]
+        x, z = cy * x - sy * z, sy * x + cy * z           # yaw
+        y, z = cp * y + sp * z, -sp * y + cp * z          # pitch
+        return (W / 2 + f * x / -z, H / 2 - f * y / -z)
+    return proj
+
+
+@card("CAM-203")
+def cam203(task, wd):
+    """Oblique room from projected polygons: a fixed yaw 20 / pitch 10 camera projects the wall, floor, frame and door
+    point by point; the door is drawn before the wall-with-opening so its swing is occluded outside the opening, and the
+    key inside the lock is clipped in the lock's own coordinates."""
+    from PIL import Image, ImageDraw
+    W, H = 320, 200
+    proj = _oblique()
+    wall = [(-3, 0, 0), (3, 0, 0), (3, 3, 0), (-3, 3, 0)]
+    opening = [(-.5, 0, 0), (.5, 0, 0), (.5, 2.1, 0), (-.5, 2.1, 0)]
+    floor = [(-3, 0, 0), (3, 0, 0), (3, 0, 3), (-3, 0, 3)]
+
+    def door(a):
+        c, s_ = math.cos(math.radians(a)), math.sin(math.radians(a))
+        return [(-.5, 0, 0), (-.5 + c, 0, -s_), (-.5 + c, 2.1, -s_), (-.5, 2.1, 0)]   # hinged on the left jamb, swings into the room behind
+
+    def frame(a, order):
+        im = Image.new("RGB", (W, H), (30, 30, 36))
+        d = ImageDraw.Draw(im)
+        d.polygon([proj(p) for p in floor], fill=(90, 70, 50))
+        layers = [("door", [proj(p) for p in door(a)], (255, 0, 0)), ("wall", None, None)]
+        if order == "wall-first":
+            layers = layers[::-1]
+        for kind, poly, col in layers:
+            if kind == "door":
+                d.polygon(poly, fill=col)
+            else:
+                m = Image.new("L", (W, H), 0)
+                ImageDraw.Draw(m).polygon([proj(p) for p in wall], fill=255)
+                ImageDraw.Draw(m).polygon([proj(p) for p in opening], fill=0)
+                im.paste((200, 200, 210), (0, 0), m)
+        # lock with a key clipped in the lock's own coordinates (unit square on the door)
+        lock = Image.new("RGBA", (40, 40), (60, 60, 60, 255))
+        ImageDraw.Draw(lock).rectangle([25, 15, 60, 25], fill=(0, 0, 255, 255))    # the key overhangs the lock: clipped by the 40x40 canvas
+        q = [proj(p) for p in [(-.1, 1.0, .001), (.1, 1.0, .001), (.1, 1.2, .001), (-.1, 1.2, .001)]]
+        x0, y0 = int(min(p[0] for p in q)), int(min(p[1] for p in q))
+        x1, y1 = int(max(p[0] for p in q)), int(max(p[1] for p in q))
+        im.paste(lock.resize((x1 - x0, y1 - y0)), (x0, y0), lock.resize((x1 - x0, y1 - y0)))
+        return np.asarray(im), (x0, y0, x1, y1)
+    om = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(om).polygon([proj(p) for p in opening], fill=255)
+    om = np.asarray(om) > 0
+    vids, leak, leak_naive = [], 0, 0
+    for a in range(0, 80, 5):
+        f, lk = frame(a, "door-first")
+        g, _ = frame(a, "wall-first")
+        red = (f[..., 0] > 200) & (f[..., 1] < 50)
+        redn = (g[..., 0] > 200) & (g[..., 1] < 50)
+        wallm = np.zeros((H, W), bool)
+        mm = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(mm).polygon([proj(p) for p in wall], fill=255)
+        wallm = (np.asarray(mm) > 0) & ~om
+        leak = max(leak, int((red & wallm).sum()))
+        leak_naive = max(leak_naive, int((redn & wallm).sum()))
+        vids.append(f)
+    key_out = int(((vids[0][..., 2] > 200) & (vids[0][..., 0] < 50)).sum() and
+                  ((lambda b: ((vids[0][..., 2] > 200) & (vids[0][..., 0] < 50))[:, :lk[0]].sum() + ((vids[0][..., 2] > 200) & (vids[0][..., 0] < 50))[:, lk[2]:].sum())(lk)))
+    v = write_video(wd / "door.mp4", vids, 10)
+    c = proj((3, 3, 0))
+    yaw, pitch = math.radians(20), math.radians(10)
+    p = np.array([3 - 0, 3 - 1.4, 0 - 6.0])
+    x, z = math.cos(yaw) * p[0] - math.sin(yaw) * p[2], math.sin(yaw) * p[0] + math.cos(yaw) * p[2]
+    y, z = math.cos(pitch) * p[1] + math.sin(pitch) * z, -math.sin(pitch) * p[1] + math.cos(pitch) * z
+    want = (160 + 300 * x / -z, 100 - 300 * y / -z)
+    return [check("door drawn before the wall-with-opening: no door pixel ever shows outside the opening", leak == 0, leak, 0),
+            check("the door is visible through the opening while it swings", int(((vids[-1][..., 0] > 200) & (vids[-1][..., 1] < 50) & om).sum()) > 50, int(((vids[-1][..., 0] > 200) & (vids[-1][..., 1] < 50) & om).sum()), ">50 px"),
+            check("the key is clipped to the lock in the lock's own coordinates", key_out == 0, key_out, 0),
+            check("projection point by point with yaw 20 / pitch 10 (corner re-derived)", abs(c[0] - want[0]) < 1e-9 and abs(c[1] - want[1]) < 1e-9, [c, want], "equal"),
+            check("negative control: drawing the wall first lets the swinging door paint over the wall", not leak_naive == 0, leak_naive, ">0")], [v]
+
+
+@card("CAM-204")
+def cam204(task, wd):
+    """World-space camera keys + follow blend: keyframes [t, x, y, z, zoom] interpolated with easeInOut (1.8 s glide
+    between zones), a follow weight w(t) blends the target to the van's position, the target is projected to the
+    viewport centre; measured from the rendered markers."""
+    keys = [[0, 100, 90, 0, 1.5], [1.0, 100, 90, 0, 1.5], [2.8, 400, 140, 0, 1.2], [3.0, 400, 140, 0, 1.2], [4.0, 400, 140, 0, 1.0]]
+    body = ('<div id=world class=a style="left:0;top:0;width:600px;height:300px;transform-origin:0 0">%s%s%s</div>'
+            % (box_html("za", 95, 85, 10, 10, RED), box_html("zb", 395, 135, 10, 10, BLUE), box_html("van", 0, 175, 10, 10, GREEN)))
+    js = ("const K=%s; const io=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;"
+          "function key(t){ let k=0; while(k<K.length-2&&t>K[k+1][0]) k++; const a=K[k], b=K[k+1], u=io(Math.min(1,Math.max(0,(t-a[0])/(b[0]-a[0])))); return a.map((v,i)=>v+(b[i]-v)*u); }"
+          "const van=t=>[200+60*t,180]; const w=t=>{const u=Math.min(1,Math.max(0,(t-3)/1)); return u*u*(3-2*u);};"
+          "window.camAt=function(t){ const k=key(t), v=van(t), ww=w(t); const tx=k[1]+(v[0]-k[1])*ww, ty=k[2]+(v[1]-k[2])*ww; const s=k[4]*1000/(1000+k[3]);"
+          "document.getElementById('van').style.left=(v[0]-5)+'px'; document.getElementById('van').style.top=(v[1]-5)+'px';"
+          "document.getElementById('world').style.transform='translate('+(160-tx*s)+'px,'+(90-ty*s)+'px) scale('+s+')'; }") % json.dumps(keys)
+
+    def crits(r, T):
+        cen = lambda m, k, t: math.hypot(m[idx(T, t)][k]["cx"] - 160, m[idx(T, t)][k]["cy"] - 90) if m[idx(T, t)][k] else 999
+        sc = lambda m: np.array([math.dist(fr["el"][3]["q"][0], fr["el"][3]["q"][1]) / 600 for fr in r["frames"]])   # browser quad of the world layer
+        mdl = [1.5 + (1.2 - 1.5) * cubic_io(min(1, max(0, (t - 1) / 1.8))) for t in T]
+        return [("zone A, then zone B (after a 1.8 s easeInOut glide), then the van sit at the viewport centre", lambda m, f: (cen(m, 0, .5) < .3 and cen(m, 1, 2.9) < .3 and cen(m, 2, 4.5) < .3, [cen(m, 0, .5), cen(m, 1, 2.9), cen(m, 2, 4.5)]), "<0.3 px"),
+                ("zoom keys interpolate with easeInOut (measured marker spacing)", lambda m, f: (maxerr(sc(m)[:idx(T, 2.8)], mdl[:idx(T, 2.8)]) < .003, [round(float(v), 3) for v in sc(m)[:idx(T, 2.8):6]]), [round(v, 3) for v in mdl[:idx(T, 2.8):6]]),
+                ("follow blend: the van drifts across the frame before w = 1 and is locked after", lambda m, f: (cen(m, 2, 3.0) > 20 and max(cen(m, 2, t) for t in (4.1, 4.5, 4.9)) < .3, [cen(m, 2, 3.0), cen(m, 2, 4.5)]), [">20", "<0.3"])]
+    return run_tl(wd, "followkeys", body, js, ["#za", "#zb", "#van", "#world"], [RED, BLUE, GREEN, None], 5.0, 10, crits)
+
+
+@card("CAM-205")
+def cam205(task, wd):
+    """Follow camera with leg-based zoom: camera centre = lerp(head, a point slightly ahead on the route, 0.35); zoom =
+    1.8 - 0.8 sin(pi x legProgress), so it widens mid-leg (1.0) and tightens on arrival (1.8)."""
+    route = [[60, 90], [260, 90], [260, 250], [460, 250]]
+    body = ('<div id=world class=a style="left:0;top:0;width:600px;height:400px;transform-origin:0 0">%s%s%s</div>'
+            % (box_html("hd", 0, 0, 8, 8, RED), box_html("ra", 155, 160, 8, 8, BLUE), box_html("rb", 355, 160, 8, 8, GREEN)))
+    js = ("const RT=%s, LEG=2.0, AH=30; function at(d){ let k=0; while(k<RT.length-2&&d>Math.hypot(RT[k+1][0]-RT[k][0],RT[k+1][1]-RT[k][1])){ d-=Math.hypot(RT[k+1][0]-RT[k][0],RT[k+1][1]-RT[k][1]); k++; }"
+          "const a=RT[k], b=RT[k+1], L=Math.hypot(b[0]-a[0],b[1]-a[1]); const u=Math.min(1,d/L); return [a[0]+(b[0]-a[0])*u, a[1]+(b[1]-a[1])*u]; }"
+          "window.camAt=function(t){ const leg=Math.min(2,Math.floor(t/LEG)), p=Math.min(1,(t-leg*LEG)/LEG); let d=0; for(let k=0;k<leg;k++) d+=Math.hypot(RT[k+1][0]-RT[k][0],RT[k+1][1]-RT[k][1]);"
+          "d+=p*Math.hypot(RT[leg+1][0]-RT[leg][0],RT[leg+1][1]-RT[leg][1]); const h=at(d), a=at(d+AH); const c=[h[0]+(a[0]-h[0])*.35, h[1]+(a[1]-h[1])*.35]; const z=1.8-0.8*Math.sin(Math.PI*p);"
+          "document.getElementById('hd').style.left=(h[0]-4)+'px'; document.getElementById('hd').style.top=(h[1]-4)+'px';"
+          "document.getElementById('world').style.transform='translate('+(160-c[0]*z)+'px,'+(90-c[1]*z)+'px) scale('+z+')'; }") % json.dumps(route)
+
+    def crits(r, T):
+        mdl = [1.8 - .8 * math.sin(math.pi * min(1, (t - 2 * min(2, int(t // 2))) / 2)) for t in T]
+        z = lambda m: np.array([math.dist(fr["el"][3]["q"][0], fr["el"][3]["q"][1]) / 600 for fr in r["frames"]])   # browser quad of the world layer
+        lead = lambda m, t: (m[idx(T, t)][0]["cx"] - 160) if m[idx(T, t)][0] else None
+        return [("the camera leads the head: head sits behind centre by 0.35 x 30 px x zoom along the route", lambda m, f: (abs(lead(m, 1.0) + .35 * 30 * 1.0) < .3 and abs(lead(m, .5) + .35 * 30 * (1.8 - .8 * math.sin(math.pi * .25))) < .3,
+                                                                                                                [lead(m, .5), lead(m, 1.0)]), [-.35 * 30 * (1.8 - .8 * math.sin(math.pi * .25)), -10.5]),
+                ("zoom = 1.8 - 0.8 sin(pi p): widest (1.0) mid-leg, tight (1.8) on arrival (measured)", lambda m, f: (maxerr([z(m)[i] for i in range(len(T)) if T[i] < 1.99], [mdl[i] for i in range(len(T)) if T[i] < 1.99]) < .004 and abs(z(m)[idx(T, 1.0)] - 1.0) < .004,
+                                                                                                            [round(float(z(m)[idx(T, t)]), 3) for t in (0, .5, 1.0, 1.5)]), [round(1.8 - .8 * math.sin(math.pi * t / 2), 3) for t in (0, .5, 1.0, 1.5)])]
+    return run_tl(wd, "legzoom", body, js, ["#hd", "#ra", "#rb", "#world"], [RED, BLUE, GREEN, None], 1.9, 10, crits)
+
+
+@card("CAM-236")
+def cam236(task, wd):
+    """Split-screen grid: a 3x3 grid of clips, each inset on its own coloured panel (ffmpeg pad + xstack); measured: nine
+    panel colours in place and every cell's clip moving."""
+    cols = ["0xe63946", "0xf1a208", "0x2a9d8f", "0x264653", "0x8338ec", "0xff006e", "0x3a86ff", "0x06d6a0", "0xffbe0b"]
+    args, chains = [], []
+    for k, c in enumerate(cols):
+        args += ["-f", "lavfi", "-i", "testsrc2=s=96x52:d=1.5:r=10"]
+        chains.append("[%d]pad=106:60:5:4:color=%s[p%d]" % (k, c, k))
+    lay = "|".join("%d_%d" % (106 * (k % 3), 60 * (k // 3)) for k in range(9))
+    fc = ";".join(chains) + ";" + "".join("[p%d]" % k for k in range(9)) + "xstack=inputs=9:layout=%s" % lay
+    out = wd / "grid.mp4"
+    ff(*args, "-filter_complex", fc, "-c:v", "libx264rgb", "-qp", "0", "-preset", "ultrafast", out)
+    raw = wd / "single_input.mp4"
+    ff("-f", "lavfi", "-i", "testsrc2=s=318x180:d=1.5:r=10", "-c:v", "libx264rgb", "-qp", "0", "-preset", "ultrafast", raw)
+    v, vr = read_video(out), read_video(raw)
+
+    def panels(a):
+        return [float(np.abs(a[0, 60 * (k // 3) + 1, 106 * (k % 3) + 50] - hex2rgb(cols[k][2:])).max()) for k in range(9)]
+
+    def moving(a):
+        return [float(np.abs(np.diff(a[:, 60 * (k // 3) + 8:60 * (k // 3) + 52, 106 * (k % 3) + 10:106 * (k % 3) + 96], axis=0)).mean()) for k in range(9)]
+    return [check("nine coloured panels in a 3x3 grid (each panel's colour measured at its border)", max(panels(v)) < 4, [round(x, 1) for x in panels(v)], "<4"),
+            check("every cell's clip plays", min(moving(v)) > 1, [round(x, 2) for x in moving(v)], ">1"),
+            check("output is the 3x3 mosaic size (318x180)", v.shape[1:3] == (180, 318), list(v.shape[1:3]), [180, 318]),
+            check("negative control: a single full-frame clip has no coloured panels", not max(panels(vr)) < 4, [round(x, 1) for x in panels(vr)], ">=4")], [out]
+
+
+GAPS.update({
+    "CAM-119": "needs the subject matte and the repo's scripts/safe-zones.cjs (not present in this checkout); a safe-zone map from a matte cannot be produced without them",
+    "CAM-184": "Kling's simple camera_control is executed by the paid Kling video API (key required); a config validator alone cannot show the camera move",
+})
