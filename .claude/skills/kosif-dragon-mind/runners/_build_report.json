@@ -1,0 +1,283 @@
+{
+ "registered": 1357,
+ "passed": 1340,
+ "failed": [
+  {
+   "id": "BEAT-248",
+   "verdict": "failed",
+   "reason": "failed checks: social integrated loudness on target",
+   "runner": "fam_music_beat_sound.py",
+   "seconds": 4.544
+  },
+  {
+   "id": "BEAT-39",
+   "verdict": "failed",
+   "reason": "failed checks: web integrated loudness on target",
+   "runner": "fam_music_beat_sound.py",
+   "seconds": 1.198
+  },
+  {
+   "id": "CAM-10",
+   "verdict": "failed",
+   "reason": "failed checks: direct.plan produced keywords and captions, negative control: centred text would overlap a face",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": 0.083
+  },
+  {
+   "id": "CAM-12",
+   "verdict": "failed",
+   "reason": "failed checks: negative control: a fixed lower-third y (0.55 H) lands on a low face",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": 0.01
+  },
+  {
+   "id": "CAM-156",
+   "verdict": "error",
+   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": null
+  },
+  {
+   "id": "CAM-157",
+   "verdict": "error",
+   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": null
+  },
+  {
+   "id": "CAM-169",
+   "verdict": "failed",
+   "reason": "failed checks: lighten stack keeps the brightest sample: a full-brightness trail",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": 0.698
+  },
+  {
+   "id": "CAM-170",
+   "verdict": "error",
+   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": null
+  },
+  {
+   "id": "CAM-171",
+   "verdict": "error",
+   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": null
+  },
+  {
+   "id": "CAM-172",
+   "verdict": "error",
+   "reason": "AttributeError: 'NoneType' object has no attribute '__dict__'",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": null
+  },
+  {
+   "id": "CAM-174",
+   "verdict": "failed",
+   "reason": "failed checks: small subject (<20% H): start wider and push more 1.12 -> 1.22",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": 2.319
+  },
+  {
+   "id": "CAM-175",
+   "verdict": "failed",
+   "reason": "failed checks: negative control: a centred line (0.47 H) would cover the face",
+   "runner": "fam_camera_composition_layout_a.py",
+   "seconds": 1.102
+  },
+  {
+   "id": "CAM-416",
+   "verdict": "failed",
+   "reason": "failed checks: hit frame jumps to 1.15 in one frame",
+   "runner": "fam_camera_composition_layout_b.py",
+   "seconds": 7.422
+  },
+  {
+   "id": "TYPE-69",
+   "verdict": "failed",
+   "reason": "failed checks: arrival bounded by 0.1 + 0.3 + 0.8 s",
+   "runner": "fam_typography_latin.py",
+   "seconds": 2.994
+  },
+  {
+   "id": "TYPE-70",
+   "verdict": "failed",
+   "reason": "failed checks: cells flicker on over time",
+   "runner": "fam_typography_latin.py",
+   "seconds": 1.58
+  },
+  {
+   "id": "TYPE-71",
+   "verdict": "failed",
+   "reason": "failed checks: blur matches the depth of field at its depth (edge-ratio ≈1), contact shadow falls away from the light (down-right)",
+   "runner": "fam_typography_latin.py",
+   "seconds": 0.711
+  },
+  {
+   "id": "TYPE-81",
+   "verdict": "error",
+   "reason": "ValueError: x1 must be greater than or equal to x0",
+   "runner": "fam_typography_latin.py",
+   "seconds": null
+  }
+ ],
+ "gaps": {
+  "ARAB-91": "Mosamem (HarfRust engine, cargo workspace mosamem-core) is not present in this container; its 13 golden text tests cannot be run here, and re-testing the same properties with raqm would not prove Mosamem",
+  "BEAT-04": "prompt text for a generative video model's soundtrack; the sound is produced by that paid model",
+  "BEAT-05": "the AUDIO section of a generative video prompt (car); no program, the model makes the sound",
+  "BEAT-06": "foley presets written into generative video prompts; the model makes the sound",
+  "BEAT-07": "per-profile policy text inside prompts (no VO / no music); nothing executable to measure",
+  "BEAT-113": "a WebGPU shader background; needs a WebGPU-capable Chromium (no GPU here)",
+  "BEAT-119": "carve.mjs needs the @hyperframes/core npm package (audio-carve), which is not installed here; installing packages is out of scope",
+  "BEAT-128": "the music-to-video HyperFrames skill (its scripts) is not installed here",
+  "BEAT-129": "analyze-beatgrid.py (music-to-video skill) is not shipped in this repo",
+  "BEAT-131": "pad-frame-duration.mjs / bgm-volume.mjs (music-to-video skill) are not shipped in this repo",
+  "BEAT-132": "three.js sound-driven picture (K3 kit) needs a WebGL scene render",
+  "BEAT-133": "three.js spectrogram canyon heightfield needs a WebGL scene render",
+  "BEAT-135": "three.js tape-stop bullet time / glitch pass needs a WebGL scene render",
+  "BEAT-153": "K3.spectrumOnTape builds a three.js texture; needs the WebGL kit in a browser",
+  "BEAT-161": "needs a paid generator account/API key (ElevenLabs text-to-SFX); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-162": "hosted SFX by URL at remotion.media needs network at render and has unclear per-sound licences",
+  "BEAT-163": "needs a paid generator account/API key (ElevenLabs sound-generation); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-164": "needs a paid generator account/API key (ElevenLabs Music); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-165": "needs a paid generator account/API key (ElevenLabs Music + Scribe STT); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-166": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-167": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-168": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-169": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-170": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-171": "needs a paid generator account/API key (Suno Pro/Premier editing); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-172": "needs a paid generator account/API key (Suno Pro/Premier stems/MIDI); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-173": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-174": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-175": "needs a paid generator account/API key (ElevenLabs Music composition plan); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-176": "needs a paid generator account/API key (ElevenLabs audio isolation); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-177": "the KOSIF bridge script basma_bridge.py is not in this repo (and runs on the user's machine)",
+  "BEAT-178": "needs a paid generator account/API key (Suno/Udio); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-179": "needs a paid generator account/API key (ElevenLabs SFX / Stable Audio prompts); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-180": "an index of atlas skill ids read through kosif_atlas_read (external atlas); nothing to execute here",
+  "BEAT-228": "a layering practice for sound roles (judgement of texture), no measurable output of its own",
+  "BEAT-234": "a genre starting-point table (BPM/swing ranges) for score JSON; no method of its own to execute",
+  "BEAT-235": "a policy (never imitate a recognisable tune); no program can prove originality here",
+  "BEAT-237": "sound-semantics guidance for choosing gestures; a judgement, not a measurable method",
+  "BEAT-241": "a cue-sheet classification practice (human labelling of sound roles)",
+  "BEAT-257": "a mood-to-maqam table of prompt hints for music generators",
+  "BEAT-259": "an instrument-name palette for music prompts",
+  "BEAT-260": "a song-brief writing template (lyrics, maqam, hook)",
+  "BEAT-28": "three.js spectrogram canyon (K3 kit) needs a WebGL scene render",
+  "BEAT-281": "the Kenney CC0 SFX library and its sfx-analysis.md are not present in this repo",
+  "BEAT-282": "the music cue preset files (cues/<stem>.music-cues.json) are not present in this repo",
+  "BEAT-283": "needs faster-whisper model weights (download) for the word captions",
+  "BEAT-41": "a live-microphone canvas visualiser tied to the assistant's speaking state",
+  "BEAT-42": "a live microphone level meter (getUserMedia); no microphone here",
+  "BEAT-44": "SFX timing cues written into motion prompts/storyboards only (no audio is produced)",
+  "BEAT-69": "songreel make needs faster-whisper model weights and a footage pool (yt-dlp/network)",
+  "BEAT-71": "an interactive review-page music swap with volume sliders (UI, needs a person)",
+  "BEAT-87": "@remotion/media-utils is not installed here",
+  "BEAT-89": "the vendored game-audio-procedural toolkit is not in this repo",
+  "BEAT-90": "the step-notation Song() toolkit (game-audio-procedural) is not in this repo",
+  "BEAT-X06": "lyric-writing craft (hook-first song brief); qualitative",
+  "BEAT-X07": "Arabic dialect gates for lyrics; needs a human/LLM judgement of dialect consistency",
+  "BEAT-X08": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-X09": "needs a paid generator account/API key (Suno); the method's output (the generated sound/song) cannot be produced or measured here",
+  "BEAT-X10": "an 11-point qualitative PASS rubric for song hand-offs (hook identifiable, singable...)",
+  "CAM-71": "measured, not registered: the card's coverage zoom need = |cos r| + q|sin r|*0.56 leaves 0.3-0.9 % black corners on a 16:9 frame at 2-6 deg roll (the exact cover is |cos r| + q|sin r|); runner kept as rotation_coverage() for the evidence but a passing check would be false",
+  "COLOR-81": "the seven plates are the HyperFrames shaders.iife.js WebGPU library (shaders 4.0.0); it is not vendored here and headless WebGPU rendering is not verified, so the plates cannot be produced",
+  "DATA-91": "the card's 'CVD-safe' palette fails here: Machado-2009 deuteranopia makes #3B82F6 vs #A855F7 dE2000 = 0.9 (protanopia 5.4), so the CVD known-answer check cannot pass without changing the card",
+  "DATA-98": "needs a Gemini image model (paid Google API key + network); its raster numbers would also have to be re-set in code, so nothing honest can run here",
+  "GLOW-37": "@remotion/effects (~55 WebGL2 effects, lightLeak/starburst/shine) is a specific npm library that is not installed here and its effect code is not vendored; reproducing its unknown shaders would be a fake",
+  "GLOW-38": "needs Chromium's html-in-canvas drawElementImage flag plus WebGPU/TypeGPU in the render environment; neither is available or verified here",
+  "GLOW-52": "the plates are the HyperFrames shaders.iife.js WebGPU library (shaders 4.0.0); not vendored here and headless WebGPU rendering is not verified",
+  "GLOW-72": "the locked lighting phrases only pay off through an image/video generation service (Google Flow / Veo or another paid API key); no such key is configured, so no picture can be produced or measured",
+  "PART-19": "the card is the HyperFrames registry block particle-image-reveal (installed via `hyperframes add`, rendered in headless Chrome); its particle maths is not given on the card and no <15 s render is wired",
+  "PART-27": "deck.gl TripsLayer/ArcLayer/HexagonLayer over MapLibre need a WebGL browser render; deck.gl is not installed and the card gives no maths to reproduce",
+  "PART-41": "the card is the HyperFrames snow/starfield registry blocks (headless-Chrome render after `hyperframes add`); no <15 s runner wired",
+  "PART-58": "three.js Water plane / K3.makeSea from the three-kit bundle need a WebGL renderer (headless Chrome SwiftShader) and the demo bundle; not runnable as a <15 s program here",
+  "PART-60": "K3.makeVapour/makeCloudSlab/makeRain/makeFlock live in the three-kit demo whose assets/main.bundle.js is not built; a raymarched cloud slab needs WebGL",
+  "PART-61": "makeKoi/makePetals/makeBlades are three-kit WebGL scene builders (demo bundle not built); not reproducible as measured output without the WebGL render",
+  "PART-62": "long-exposure car trails are emissive three.js spheres scaled in a WebGL scene (demo bundle not built); the card itself notes the Studio 'lighten' pass test errored",
+  "PART-67": "Houdini FLIP/Pyro/Vellum/RBD + Karma need a commercial SideFX licence and hython; not installed",
+  "RETRO-14": "the card is the HyperFrames media-treatment command itself (engraving/crosshatch/Kuwahara attributes interpreted by the HyperFrames runtime in headless Chrome); no runner wired here and the treatments' shader maths is not given on the card",
+  "RETRO-17": "the card is the HyperFrames registry blocks yt-screen-warp / camcorder-hud / yt-lcd-background (GSAP timelines rendered in headless Chrome after `hyperframes add`); not reproducible from the card's text and no <15 s Chrome render wired here",
+  "TEX-39": "HyperFrames media-treatment shader effects (18 keys) are interpreted by the HyperFrames runtime in headless Chrome; the card gives no shader maths and no <15 s render is wired here",
+  "TEX-49": "a live CubeCamera reflection needs a WebGL three.js render loop and the demo's assets/main.bundle.js (not built in this checkout); not reproducible as a measured <15 s program here",
+  "TEX-62": "texture-mask-text depends on the 66 ambientCG PNG masks shipped with the HyperFrames registry block; only the registry JSON is cached locally, the mask images are not present",
+  "TEX-63": "HyperFrames material shader blocks need a WebGPU-capable Chromium (data-requires-webgpu); only SwiftShader WebGL is available here",
+  "TEX-83": "warm-grain is a HyperFrames example project used as a style reference only; the local copy lacks its sub-compositions, so there is no method to execute",
+  "TEX-92": "K3.makePebbles/makeBlades are three-kit WebGL instanced-geometry builders; without a WebGL render there is no measurable output beyond restating parameters",
+  "TEX-93": "pond terrain with caustics lives in the three-kit demo whose assets/main.bundle.js is not built; needs a WebGL render",
+  "TEX-94": "wet asphalt road ribbon lives in the three-kit demo whose assets/main.bundle.js is not built; needs a WebGL render",
+  "TRANS-261": "needs a paid video-generation API key (Kling/Together image2video with first and last frame); no generative video model is available here",
+  "TRANS-33": "View Transitions API (document.startViewTransition / React <ViewTransition>) is a browser DOM-snapshot feature; it needs a driven Chromium page plus React, not frame math here",
+  "TRANS-35": "CSS-only popover/dialog enter-exit with @starting-style and transition-behavior allow-discrete is a browser CSS feature (Tailwind v4 @theme); needs a driven Chromium page to prove",
+  "TRANS-51": "Pure-CSS accordion via ::details-content and interpolate-size is a browser CSS feature; needs a driven Chromium page to prove",
+  "TRANS-92": "@hyperframes/shader-transitions package on a WebGL canvas with html2canvas captures; the package is not installed and headless WebGL is not available here",
+  "TRANS-94": "React <ViewTransition> / ::view-transition snapshot morphs are a browser DOM feature; needs a driven Chromium page plus React",
+  "TRANS-97": "Three.js/R3F WebGLRenderTargets in a GPU (or SwiftShader) Chromium; three is not installed here (the same noise-threshold math runs as TRANS-95 / TRANS-99)",
+  "TYPE-13": "the card is the review page's live Google Fonts swap (seven families fetched from fonts.googleapis.com at preview time); that page and the remote families are not part of this container, so a local run would not be the card's method"
+ },
+ "broken_modules": {},
+ "by_module": {
+  "fam_typography_arabic.py": {
+   "passed": 61,
+   "failed": 0
+  },
+  "fam_music_beat_sound.py": {
+   "passed": 174,
+   "failed": 2
+  },
+  "fam_camera_composition_layout_a.py": {
+   "passed": 109,
+   "failed": 10
+  },
+  "fam_camera_composition_layout_b.py": {
+   "passed": 139,
+   "failed": 1
+  },
+  "fam_color_palette_grading.py": {
+   "passed": 72,
+   "failed": 0
+  },
+  "fam_charts_data_infographic.py": {
+   "passed": 72,
+   "failed": 0
+  },
+  "fam_easing_timing_rhythm.py": {
+   "passed": 64,
+   "failed": 0
+  },
+  "fam_light_glow_bloom.py": {
+   "passed": 67,
+   "failed": 0
+  },
+  "fam_particles_fluids_physics.py": {
+   "passed": 26,
+   "failed": 0
+  },
+  "fam_pixel_retro_stylized.py": {
+   "passed": 26,
+   "failed": 0
+  },
+  "fam_shapes_morph_geometry.py": {
+   "passed": 39,
+   "failed": 0
+  },
+  "fam_texture_material.py": {
+   "passed": 46,
+   "failed": 0
+  },
+  "fam_transitions_cuts_a.py": {
+   "passed": 203,
+   "failed": 0
+  },
+  "fam_transitions_cuts_b.py": {
+   "passed": 178,
+   "failed": 0
+  },
+  "fam_typography_latin.py": {
+   "passed": 64,
+   "failed": 4
+  }
+ }
+}
