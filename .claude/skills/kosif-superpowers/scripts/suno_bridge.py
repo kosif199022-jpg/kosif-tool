@@ -234,7 +234,7 @@ def probe(timeout: float = 15.0) -> tuple[dict, int]:
         return out, 3
     try:
         with urllib.request.urlopen(RESOURCE_METADATA, timeout=timeout) as r:
-            meta = json.loads(r.read().decode("utf-8"))
+            meta = json.loads(r.read(65536).decode("utf-8"))  # metadata is ~300 bytes; bound the read
             out["scopes_supported"] = meta.get("scopes_supported")
             out["authorization_servers"] = meta.get("authorization_servers")
     except (urllib.error.URLError, OSError, ValueError) as e:
