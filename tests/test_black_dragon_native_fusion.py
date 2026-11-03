@@ -67,6 +67,41 @@ class NativeFusionTests(unittest.TestCase):
         opt_in = native.compose("Beat montage", out / "sources.jsonl", legacy=True)
         self.assertEqual(opt_in["selected"][0]["legacy_entry"], opt_in["selected"][0]["id"])
 
+    def test_native_dragon_mind_has_six_stages_and_faculties(self):
+        out = self.root / "out/brain"
+        native.build(self.root, out)
+        plan = native.compose("Beat montage video", out / "sources.jsonl")
+        mind = plan["native_mind"]
+        self.assertEqual(mind["engine"], "black-dragon-independent-native-mind")
+        self.assertFalse(mind["runtime_legacy_imports"])
+        self.assertEqual(len(native.native_reasoner().FACULTIES), 26)
+        self.assertEqual([p["stage"] for p in mind["cognitive_cycle"]],
+                         ["frame", "explore", "decide", "build", "verify", "learn"])
+        self.assertTrue(mind["provenance_preserved"])
+        self.assertTrue(mind["typed_handoffs"])
+        self.assertIn("execution-not-proven", [x["kind"] for x in mind["critic"]])
+        self.assertEqual(plan, native.compose("Beat montage video", out / "sources.jsonl"))
+
+    def test_native_mind_reconciles_duplicates_without_losing_unique_rules(self):
+        mind = native.native_reasoner()
+        inputs = [
+            {"id": "power:first", "kind": "power", "title": "Beat music mix",
+             "purpose": "Align beats", "method": "Find beats; Preserve original audio"},
+            {"id": "power:second", "kind": "power", "title": "Beat music mix",
+             "purpose": "Align beats", "method": "Find beats; Never normalize the source"},
+        ]
+        synthesis = mind.fuse("Edit audio to a beat", inputs, 7393)
+        self.assertTrue(synthesis["provenance_preserved"])
+        self.assertEqual(synthesis["method_fusion"]["source_fragments"], 4)
+        self.assertEqual(synthesis["method_fusion"]["distinct_fragments"], 3)
+        self.assertEqual(synthesis["method_fusion"]["deduplicated_exact_fragments"], 1)
+        used = [m for f in synthesis["faculties"] for m in f["merged_methods"]]
+        self.assertEqual(len([m for m in used if m["method"] == "Find beats"]), 1)
+        self.assertEqual(len(next(m for m in used if m["method"] == "Find beats")["source_ids"]), 2)
+        self.assertIn("Never normalize the source", [m["method"] for m in used])
+        self.assertEqual(synthesis["catalog_total"], 7393)
+        self.assertEqual(synthesis["selected_source_count"], 2)
+
     def test_detect_source_tampering_and_duplicate(self):
         out = self.root / "out/report"
         native.build(self.root, out)
