@@ -97,5 +97,28 @@ class SkillProgramsLeft(unittest.TestCase):
         self.assertEqual(left, sorted(dragon.SKILL_PROGRAM_BLOCKERS))
 
 
+class MimicBlurFallback(unittest.TestCase):
+    def test_numpy_blur_matches_a_gaussian_without_opencv_or_scipy(self):
+        if importlib.util.find_spec("numpy") is None:
+            self.skipTest("numpy missing")
+        import numpy as np
+        sys.path.insert(0, str(skill.SCRIPT["mimic-analyze"]))
+        try:
+            import mm_img
+        finally:
+            sys.path.remove(str(skill.SCRIPT["mimic-analyze"]))
+        saved = mm_img.HAVE_CV2, mm_img.ndi
+        mm_img.HAVE_CV2, mm_img.ndi = False, None
+        try:
+            dot = np.zeros((21, 21), np.float32)
+            dot[10, 10] = 1
+            out = mm_img.gaussian_blur(dot, 1.2)
+        finally:
+            mm_img.HAVE_CV2, mm_img.ndi = saved
+        self.assertEqual(out.shape, (21, 21))
+        self.assertAlmostEqual(float(out.sum()), 1.0, places=4)
+        self.assertAlmostEqual(float(out[10, 10]), 1 / (2 * 3.141592653589793 * 1.44), places=3)
+
+
 if __name__ == "__main__":
     unittest.main()

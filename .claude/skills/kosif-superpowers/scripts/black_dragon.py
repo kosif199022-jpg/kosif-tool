@@ -222,8 +222,6 @@ BLOCKED_WHY = {
 _VENDOR = "skill:kosif-superpowers/vendor/100-superskills/skills/"
 SKILL_PROGRAM_BLOCKERS = {
     _VENDOR + "davinci-resolve-pipeline": "needs the DaVinci Resolve app and its scripting API (not installable here)",
-    _VENDOR + "kosif-mimic": "its analyzer crashes on this Pillow version (ValueError: image has wrong mode); needs a fix first",
-    _VENDOR + "pixel-studio-painter": "needs OpenCV (cv2), which is not installed here",
 }
 
 

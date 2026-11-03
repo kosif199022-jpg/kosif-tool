@@ -50,13 +50,15 @@ SCRIPT = {
     "animation-qa": VENDOR / "claude-animation-studio" / "scripts",
     "hyperframes-beats": VENDOR / "hyperframes-animation-studio" / "scripts",
     "montage-tools": VENDOR / "kosif-montage-motion" / "scripts",
+    "mimic-analyze": VENDOR / "kosif-mimic" / "scripts",
+    "pixel-painter": VENDOR / "pixel-studio-painter" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
 NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
-               "animation-qa", "hyperframes-beats", "montage-tools"}
+               "animation-qa", "hyperframes-beats", "montage-tools", "mimic-analyze"}
 NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
                 "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
-                "animation-qa": "PIL", "hyperframes-beats": "numpy"}
+                "animation-qa": "PIL", "hyperframes-beats": "numpy", "mimic-analyze": "cv2", "pixel-painter": "cv2"}
 # Scripts that import their sibling modules: run without -I (which drops the script's folder from
 # sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
 PY_SIBLINGS = [sys.executable, "-E", "-s"]  # Python packages a recipe's script imports
@@ -579,6 +581,72 @@ def montage_tools(r, d, task, clip, selftest):
     r.findings.append({"input": {k: facts.get(k) for k in ("duration", "video", "audio")}, "silences": spans})
 
 
+def _cut_clip(path: Path) -> list[str]:
+    """ffmpeg argv for a 6 s clip with ONE hard cut at exactly 3.0 s (testsrc2 -> mandelbrot)."""
+    return ["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "testsrc2=s=640x360:r=30:d=3",
+            "-f", "lavfi", "-i", "mandelbrot=s=640x360:r=30", "-f", "lavfi", "-i", "sine=d=6",
+            "-filter_complex", "[1]trim=duration=3,setpts=PTS-STARTPTS[b];[0][b]concat=n=2:v=1:a=0[v]",
+            "-map", "[v]", "-map", "2", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-shortest", str(path)]
+
+
+def mimic_analyze(r, d, task, clip, selftest):
+    run = "import sys; sys.path.insert(0, sys.argv[1]); import mm_analyze; mm_analyze.analyze(sys.argv[2], sys.argv[3])"
+    cut = r.work / "known-cut.mp4"
+    r.call("make a clip with one hard cut at 3.0 s (known answer)", _cut_clip(cut))
+    r.call("mm_analyze on the known-cut clip", [*PY_SIBLINGS, "-c", run, str(d), str(cut), str(r.work / "known")], timeout=900)
+    known = _json(r.work / "known" / "spec.json")
+    r.output(r.work / "known" / "spec.json")
+    cuts = [t.get("ts_s") for t in known.get("transitions", []) if t.get("type") == "cut"]
+    r.check("finds exactly 2 shots", len(known.get("shots", [])) == 2, len(known.get("shots", [])))
+    r.check("finds the hard cut at 3.0 s (±0.1)", len(cuts) == 1 and abs(cuts[0] - 3.0) <= 0.1, cuts)
+    ref = r.work / "reference.mp4"
+    # The analyzer reads every frame; keep the first 20 s of the input so a long video stays within the timeout.
+    r.call("first 20 s of the input (ffmpeg)", ["ffmpeg", "-y", "-loglevel", "error", "-i", str(clip), "-t", "20",
+                                                "-c:v", "libx264", "-preset", "veryfast", "-c:a", "aac", str(ref)], timeout=900)
+    r.call("mm_analyze on the input", [*PY_SIBLINGS, "-c", run, str(d), str(ref), str(r.work / "reference")], timeout=900)
+    spec = _json(r.work / "reference" / "spec.json")
+    r.output(r.work / "reference" / "spec.json")
+    r.output(r.work / "reference" / "analysis.md")
+    r.check("input analysed into shots", len(spec.get("shots", [])) >= 1, len(spec.get("shots", [])))
+    r.findings.append({"input_seconds_analysed": (spec.get("reference") or {}).get("duration"),
+                       "shots": len(spec.get("shots", [])),
+                       "transitions": [(t.get("type"), t.get("ts_s"), t.get("confidence")) for t in spec.get("transitions", [])][:12],
+                       "texts": len(spec.get("texts", []))})
+
+
+def pixel_painter(r, d, task, clip, selftest):
+    from PIL import Image
+    from xml.sax.saxutils import escape
+    svg = r.work / "drawing.svg"
+    svg.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">'
+                   f'<title>{escape(task)}</title><rect width="600" height="400" fill="#1030c0"/>'
+                   '<circle cx="300" cy="200" r="100" fill="#e01010"/></svg>', encoding="utf-8")
+    film = r.work / "drawing.mp4"
+    r.call("film.py: paint the drawing pixel by pixel", [*PY_SIBLINGS, str(d / "film.py"), "drawing", str(svg),
+                                                         "--out", str(film), "--seconds", "4"], timeout=900)
+    row = r.output(film, video=True)
+    first, last = r.work / "first.png", r.work / "last.png"
+    r.call("first frame", ["ffmpeg", "-y", "-loglevel", "error", "-i", str(film), "-frames:v", "1", str(first)])
+    r.call("last frame", ["ffmpeg", "-y", "-loglevel", "error", "-sseof", "-0.1", "-i", str(film), "-frames:v", "1", str(last)])
+
+    def px(path, fx, fy):
+        im = Image.open(path).convert("RGB")
+        return im.getpixel((int(im.width * fx), int(im.height * fy)))
+
+    def near(a, b, tol=24):
+        return all(abs(x - y) <= tol for x, y in zip(a, b))
+    centre, corner = px(last, 0.5, 0.5), px(last, 0.1, 0.1)
+    r.check("finished picture: red circle in the centre (#e01010 ±24)", near(centre, (224, 16, 16)), centre)
+    r.check("finished picture: blue background (#1030c0 ±24)", near(corner, (16, 48, 192)), corner)
+    r.check("the film starts before the paint (first frame centre is not red)", not near(px(first, 0.5, 0.5), (224, 16, 16)),
+            px(first, 0.5, 0.5))
+    judged = r.call("judge the finished picture", [*PY_SIBLINGS, str(d / "judge.py"), str(last), "--no-jev"]).get("receipt") or {}
+    r.check("judge gave a verdict", judged.get("verdict") in ("PASS", "REVISE", "BLOCK"), judged.get("verdict"))
+    r.findings.append({"film": (row.get("probe") or {}).get("duration"), "judge_verdict": judged.get("verdict"),
+                       "judge_reasons": judged.get("reasons"),
+                       "note": "a two-shape test drawing; the judge rates it as flat art, which is the right call"})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
            "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
@@ -586,7 +654,8 @@ RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect,
            "captions-audio": captions_audio, "upload-join": upload_join, "credit-ledger": credit_ledger,
            "shadow-theatre": shadow_theatre, "web-film": web_film, "causal-laws": causal_laws,
            "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
-           "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools}
+           "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools,
+           "mimic-analyze": mimic_analyze, "pixel-painter": pixel_painter}
 
 
 def main(argv: list[str]) -> int:

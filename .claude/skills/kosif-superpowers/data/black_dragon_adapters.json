@@ -750,6 +750,28 @@
       "why": "kosif-montage-motion: tools.py probe, 9:16 reframe to 1080x1920 and silence cut (planted silence found at 1.0 s)",
       "skill_program": true,
       "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/kosif-mimic": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "mimic-analyze",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "kosif-mimic: mm_analyze finds the one hard cut at 3.0 s in a known-answer clip, then breaks the first 20 s of the input into shots, transitions and text",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/pixel-studio-painter": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "pixel-painter",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "pixel-studio-painter: paints a known SVG pixel by pixel into a film (final colours checked) and judges the picture",
+      "skill_program": true
     }
   }
 }
