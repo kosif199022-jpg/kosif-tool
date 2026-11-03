@@ -578,6 +578,178 @@
       "why": "motion-director-pro: per-frame motion energy, still spans and luma of the video",
       "skill_program": true,
       "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/image-prompt-forge": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "image-prompts",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "image-prompt-forge: turns the task into prompts for 6 image models, then proves its linter catches 3 planted spec flaws",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/video-prompt-director": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "video-prompts",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "video-prompt-director: shot-by-shot prompts for 7 video models (checks Veo 8 s / Kling 10 s clamping) and catches 3 planted continuity flaws",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/excel-model-architect": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "excel-model",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "excel-model-architect: builds a 3-statement Excel model, audits it, and checks the audit reports a constant planted in a formula cell",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/excel-power-formulas": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "excel-check",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "excel-power-formulas: xlsx_check passes a clean workbook and finds planted volatile functions and a number stored as text",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/llm-judge-eval-lab": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "judge-eval",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "llm-judge-eval-lab: scores fixed judges against hand-computed answers (final 6.96) and checks the regression gate blocks (exit 3)",
+      "skill_program": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/audio-reactive-captions-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "captions-audio",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "audio-reactive-captions-studio: task words to caption pages (SRT/VTT/ASS) and per-frame audio energy; self-test tempo must be 120 BPM",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-upload-link": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "upload-join",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-upload-link: joins 3 upload parts byte for byte (sha256) and refuses to write a file with a missing part",
+      "skill_program": true
+    },
+    "skill:living-site": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "credit-ledger",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "living-site: credit ledger refuses a double-billed job and blocks an over-budget total; test entries only, no credits spent",
+      "skill_program": true
+    },
+    "skill:kosif-shadow-theatre": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "shadow-theatre",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "kosif-shadow-theatre: checks a scene (and catches 2 planted flaws), renders stills and a 22 s preview film, analyzes the input video",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-web-film": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "web-film",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-web-film: plans and scaffolds a film page from the task, passes the structural check and catches 2 planted plan flaws (no video render)",
+      "skill_program": true
+    },
+    "skill:kosif-infinite-matrices": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "causal-laws",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-infinite-matrices: reruns the elastic-memory law, reproduces its recorded effect exactly, verifies the report and detects a tampered frame",
+      "skill_program": true
+    },
+    "skill:kosif-instagram-video-research": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "reel-research",
+        "{artifact}",
+        "--task={task}"
+      ],
+      "why": "kosif-instagram-video-research: builds search links for the task (no network), refuses non-Instagram links, exports only human-reviewed reels",
+      "skill_program": true
+    },
+    "skill:kosif-voice-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "voice-check",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "kosif-voice-studio: its self-test, engine doctor and audio verify (duration matches ffprobe, planted silence rejected); speech needs an engine not installed here",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/claude-animation-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "animation-qa",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "claude-animation-studio: frame QA on the video and catches a planted 2 s freeze and black frame",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/hyperframes-animation-studio": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "hyperframes-beats",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "hyperframes-animation-studio: motion.py beats and per-frame motion; self-test tempo must be 120 BPM and never still",
+      "skill_program": true,
+      "media": true
+    },
+    "skill:kosif-superpowers/vendor/100-superskills/skills/kosif-montage-motion": {
+      "script": ".claude/skills/kosif-superpowers/scripts/_black_dragon_skill.py",
+      "args": [
+        "montage-tools",
+        "{artifact}",
+        "--task={task}",
+        "--media={media}"
+      ],
+      "why": "kosif-montage-motion: tools.py probe, 9:16 reframe to 1080x1920 and silence cut (planted silence found at 1.0 s)",
+      "skill_program": true,
+      "media": true
     }
   }
 }

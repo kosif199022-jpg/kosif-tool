@@ -68,6 +68,34 @@ class SkillAdapterRuns(unittest.TestCase):
             self.assertEqual(run("reel-hooks", art, "--task=").returncode, 1)
             self.assertEqual(json.loads(art.read_text())["verdict"], "failed")
 
+    def test_a_checker_that_misses_the_planted_flaw_earns_no_receipt(self):
+        # A fake image_prompt_forge that writes prompts but never reports a problem.
+        with tempfile.TemporaryDirectory() as tmp:
+            fake = Path(tmp) / "fake"
+            fake.mkdir()
+            (fake / "image_prompt_forge.py").write_text(
+                "import sys\nopen(sys.argv[sys.argv.index('--out') + 1], 'w').write("
+                "''.join(f'## {p}\\n' for p in ['midjourney','flux','sdxl','chatgpt','ideogram','nanobanana']) + "
+                "open(sys.argv[1], encoding='utf-8').read())\n", encoding="utf-8")
+            saved = skill.SCRIPT["image-prompts"]
+            skill.SCRIPT["image-prompts"] = fake
+            try:
+                art = Path(tmp) / "art.json"
+                code = skill.main(["image-prompts", str(art), "--task=" + TASK])
+            finally:
+                skill.SCRIPT["image-prompts"] = saved
+            self.assertEqual(code, 1)
+            self.assertEqual(json.loads(art.read_text(encoding="utf-8"))["verdict"], "failed")
+
+
+class SkillProgramsLeft(unittest.TestCase):
+    def test_every_skill_program_is_connected_or_has_a_named_blocker(self):
+        adapters = dragon._load_adapters(dragon.REVIEWED_ADAPTERS)
+        inventory = dragon.full_inventory()
+        left = sorted(k for k, v in inventory.items() if v["kind"] == "skill" and k not in adapters
+                      and dragon._skill_has_cli(v.get("source")))
+        self.assertEqual(left, sorted(dragon.SKILL_PROGRAM_BLOCKERS))
+
 
 if __name__ == "__main__":
     unittest.main()

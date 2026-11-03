@@ -83,7 +83,7 @@ Kling 3.0 / Higgsfield are **not** adapters: they spend credits and run through 
 
 ### Skill adapters (skills that ship a program)
 
-Of 473 skills, 443 are written methods with no code. The rest ship scripts, and seven of them are now adapters (`"skill_program": true`) run through `scripts/_black_dragon_skill.py RECIPE {artifact} --task={task} [--media={media}]`:
+Of 473 skills, 443 are written methods with no code. The rest ship scripts, and 23 of them are now adapters (`"skill_program": true`) run through `scripts/_black_dragon_skill.py RECIPE {artifact} --task={task} [--media={media}]`:
 
 | entry | recipe | what runs | checked |
 |---|---|---|---|
@@ -94,6 +94,24 @@ Of 473 skills, 443 are written methods with no code. The rest ship scripts, and 
 | `skill:…/kosif-social` | social | platform limits + post pack measured from the video | three platforms; video measured |
 | `skill:…/pro-video-editor-ffmpeg` | video-editor | probe + beat-cut points | self-test tempo 120 ±3 BPM |
 | `skill:…/motion-director-pro` | motion-energy | per-frame motion energy and still spans | frames measured; self-test is never still |
+| `skill:…/image-prompt-forge` | image-prompts | prompts for 6 image models from the task, then a spec with 3 planted flaws | 6 platforms; task inside; all 3 planted flaws caught |
+| `skill:…/video-prompt-director` | video-prompts | shot prompts for 7 video models, then shots with 3 planted flaws | 12 s shot clamped to Veo 8 s / Kling 10 s; all 3 flaws caught |
+| `skill:…/excel-model-architect` | excel-model | 3-statement model, audit, then audit of a copy with a planted constant | PnL/CF/BS/Checks; no hard-coded numbers; planted constant reported |
+| `skill:…/excel-power-formulas` | excel-check | xlsx_check on a clean workbook and on one with planted flaws | clean passes; NOW/OFFSET and number-as-text found |
+| `skill:…/llm-judge-eval-lab` | judge-eval | scores fixed test judges; regression gate | hand-computed answers (8.0, 5.4, 6.96, not passed); gate exit 3 |
+| `skill:…/audio-reactive-captions-studio` | captions-audio | task words to caption pages + SRT/VTT/ASS; per-frame audio energy | every word kept; self-test tempo 120 ±3 BPM |
+| `skill:kosif-upload-link` | upload-join | joins 3 upload parts, then with one part deleted | sha256 identical; missing part refused |
+| `skill:living-site` | credit-ledger | credit ledger with test entries | double billing refused; over-budget blocks (no credits spent) |
+| `skill:kosif-shadow-theatre` | shadow-theatre | check, stills, 22 s preview render, analyze the input | planted gap + missing memorable caught; stills not flat; duration 22 s with sound |
+| `skill:kosif-web-film` | web-film | plan, scaffold, check (structure only, no video render) | check passes; planted gap + uncovered requirement caught |
+| `skill:kosif-infinite-matrices` | causal-laws | reruns the elastic-memory law, verifies, tampers a frame | recorded effect 0.097492994 reproduced exactly; tamper detected |
+| `skill:kosif-instagram-video-research` | reel-research | search links (no network), index, review, export | foreign link refused; only the reviewed reel exported |
+| `skill:kosif-voice-studio` | voice-check | self-test, engine doctor, audio verify | duration matches ffprobe; planted silence rejected (speech needs an engine) |
+| `skill:…/claude-animation-studio` | animation-qa | frame QA on the first 8 s, then frames with a planted freeze and black frame | both planted problems caught |
+| `skill:…/hyperframes-animation-studio` | hyperframes-beats | motion.py beats + motion measure | self-test 120 ±3 BPM and never still |
+| `skill:…/kosif-montage-motion` | montage-tools | probe, 9:16 reframe, silence cut on a planted clip | 1080x1920; silence found at 1.0 s |
+
+Where a skill's script is a checker, the recipe also feeds it a copy with a planted mistake: a checker that misses a known mistake earns no receipt (tested). Three skills ship a program that cannot run here yet and say why in their blocked reason: `davinci-resolve-pipeline` (needs the DaVinci Resolve app), `kosif-mimic` (its analyzer crashes on this Pillow version) and `pixel-studio-painter` (needs OpenCV).
 
 The injection suite only *writes* attack cases for testing a model; it is not a model test by itself.
 

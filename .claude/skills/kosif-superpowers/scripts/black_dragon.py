@@ -218,6 +218,14 @@ BLOCKED_WHY = {
     "skill_program_without_adapter": "a skill that ships a Python CLI with no reviewed adapter yet (candidate)",
 }
 
+# Skills that ship a program which was tried and cannot earn a receipt in this environment yet.
+_VENDOR = "skill:kosif-superpowers/vendor/100-superskills/skills/"
+SKILL_PROGRAM_BLOCKERS = {
+    _VENDOR + "davinci-resolve-pipeline": "needs the DaVinci Resolve app and its scripting API (not installable here)",
+    _VENDOR + "kosif-mimic": "its analyzer crashes on this Pillow version (ValueError: image has wrong mode); needs a fix first",
+    _VENDOR + "pixel-studio-painter": "needs OpenCV (cv2), which is not installed here",
+}
+
 
 def _skill_has_cli(source: str | None) -> bool:
     """True when a skill folder (not the big kosif-superpowers root) ships an argparse Python script."""
@@ -375,6 +383,8 @@ def run(task: str, job: Path, adapters: dict, workers: int,
                 why = _why_blocked(inventory[key].get("kind"), inventory[key].get("source"))
                 if why == "skill_program_without_adapter":
                     item["reason"] = "Skill ships a Python CLI with no reviewed adapter yet"
+                    if key in SKILL_PROGRAM_BLOCKERS:
+                        item["reason"] += ": " + SKILL_PROGRAM_BLOCKERS[key]
                 blocked_why[why] += 1
     audit.save(job, ledger)
     coverage = audit.report(job, inventory)

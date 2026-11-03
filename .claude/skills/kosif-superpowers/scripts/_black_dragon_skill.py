@@ -34,10 +34,32 @@ SCRIPT = {
     "social": VENDOR / "kosif-social" / "scripts",
     "video-editor": VENDOR / "pro-video-editor-ffmpeg" / "scripts",
     "motion-energy": VENDOR / "motion-director-pro" / "scripts",
+    "image-prompts": VENDOR / "image-prompt-forge" / "scripts",
+    "video-prompts": VENDOR / "video-prompt-director" / "scripts",
+    "excel-model": VENDOR / "excel-model-architect" / "scripts",
+    "excel-check": VENDOR / "excel-power-formulas" / "scripts",
+    "judge-eval": VENDOR / "llm-judge-eval-lab" / "scripts",
+    "captions-audio": VENDOR / "audio-reactive-captions-studio" / "scripts",
+    "upload-join": SKILLS / "kosif-upload-link" / "scripts",
+    "credit-ledger": SKILLS / "living-site" / "tools",
+    "shadow-theatre": SKILLS / "kosif-shadow-theatre" / "scripts",
+    "web-film": SKILLS / "kosif-web-film" / "scripts",
+    "causal-laws": SKILLS / "kosif-infinite-matrices" / "scripts",
+    "reel-research": SKILLS / "kosif-instagram-video-research",
+    "voice-check": SKILLS / "kosif-voice-studio" / "scripts",
+    "animation-qa": VENDOR / "claude-animation-studio" / "scripts",
+    "hyperframes-beats": VENDOR / "hyperframes-animation-studio" / "scripts",
+    "montage-tools": VENDOR / "kosif-montage-motion" / "scripts",
 }
 RECIPES = tuple(SCRIPT)
-NEEDS_MEDIA = {"social", "video-editor", "motion-energy"}
-NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL"}  # Python packages a recipe's script imports
+NEEDS_MEDIA = {"social", "video-editor", "motion-energy", "captions-audio", "shadow-theatre", "voice-check",
+               "animation-qa", "hyperframes-beats", "montage-tools"}
+NEEDS_MODULE = {"excel-lambdas": "openpyxl", "motion-energy": "PIL", "excel-model": "openpyxl",
+                "excel-check": "openpyxl", "captions-audio": "numpy", "shadow-theatre": "numpy",
+                "animation-qa": "PIL", "hyperframes-beats": "numpy"}
+# Scripts that import their sibling modules: run without -I (which drops the script's folder from
+# sys.path) but still with -E -s, so no environment variable or user site-packages leaks in.
+PY_SIBLINGS = [sys.executable, "-E", "-s"]  # Python packages a recipe's script imports
 
 
 def _json(path: Path):
@@ -142,9 +164,429 @@ def motion_energy(r, d, task, clip, selftest):
                 build.get("near_still_share"))
 
 
+# --- Batch 2. Each recipe runs the skill's script twice where it can: once on the task
+# (the real job) and once on an input with a PLANTED flaw, and checks that the script
+# catches the flaw. A checker that cannot find a known mistake earns no receipt.
+
+def _lint_codes(md: Path) -> list[str]:
+    import re
+    return re.findall(r"\[(?:REVISE|BLOCK|INFO)\] ([a-z_]+):", md.read_text(encoding="utf-8"))
+
+
+def image_prompts(r, d, task, clip, selftest):
+    clean = {"subject": task, "environment": "minimal studio set", "shot": "medium close-up", "angle": "eye level",
+             "lens": "50mm", "lighting": "soft window key from camera left", "style": "photorealistic editorial",
+             "aspect": "9:16", "negative": ["watermark", "text artifacts", "extra fingers"]}
+    (r.work / "spec.json").write_text(json.dumps(clean, ensure_ascii=False), encoding="utf-8")
+    # exit 1/3 = the linter's REVISE/BLOCK verdict on the spec, not a broken tool.
+    r.call("image_prompt_forge on the task", [*PY, str(d / "image_prompt_forge.py"), "spec.json", "--out", "prompts.md"],
+           ok_codes=(0, 1, 3))
+    md = r.work / "prompts.md"
+    r.output(md)
+    text = md.read_text(encoding="utf-8")
+    platforms = ["midjourney", "flux", "sdxl", "chatgpt", "ideogram", "nanobanana"]
+    r.check("a prompt for each of the 6 platforms", all(f"## {p}" in text for p in platforms),
+            [p for p in platforms if f"## {p}" not in text])
+    r.check("task text is inside the prompts", task.strip().rstrip(".") in text, len(task))
+    planted = {**clean, "lens": "35mm and 85mm", "aspect": "7:3", "negative": []}
+    (r.work / "planted.json").write_text(json.dumps(planted, ensure_ascii=False), encoding="utf-8")
+    r.call("image_prompt_forge on a spec with 3 planted flaws",
+           [*PY, str(d / "image_prompt_forge.py"), "planted.json", "--out", "planted.md"], ok_codes=(1, 3))
+    codes = _lint_codes(r.work / "planted.md")
+    r.check("linter caught every planted flaw (two_lenses, aspect, no_negative)",
+            {"two_lenses", "aspect", "no_negative"} <= set(codes), codes)
+    r.findings.append({"task_spec_issues": _lint_codes(md), "planted_caught": codes})
+
+
+def video_prompts(r, d, task, clip, selftest):
+    doc = {"locks": {"character": "the same presenter in every shot", "style": "warm editorial realism"},
+           "aspect": "9:16", "fps": 24,
+           "shots": [{"n": 1, "duration": 12, "action": task, "camera": "slow push-in", "lens": "50mm"},
+                     {"n": 2, "duration": 5, "action": "close-up reaction to the reveal", "camera": "static", "lens": "85mm"}]}
+    (r.work / "shots.json").write_text(json.dumps(doc, ensure_ascii=False), encoding="utf-8")
+    r.call("video_prompt_forge on the task", [*PY, str(d / "video_prompt_forge.py"), "shots.json", "--out", "prompts.md"],
+           ok_codes=(0, 1, 3))
+    md = r.work / "prompts.md"
+    r.output(md)
+    text = md.read_text(encoding="utf-8")
+    r.check("task text is inside the shot prompts", task.strip().rstrip(".").lower() in text.lower(), len(task))
+    # Known answer: a 12 s shot must be clamped to each platform's limit (Veo 8 s, Kling 10 s).
+    r.check("12 s shot clamped to Veo's 8 s", "Duration 8 seconds" in text, None)
+    r.check("12 s shot clamped to Kling's 10 s", "Length 10s" in text, None)
+    planted = {**doc, "locks": {}, "shots": [{"n": 1, "duration": 6, "action": "", "camera": "push-in then orbit"}]}
+    (r.work / "planted.json").write_text(json.dumps(planted, ensure_ascii=False), encoding="utf-8")
+    r.call("video_prompt_forge on shots with 3 planted flaws",
+           [*PY, str(d / "video_prompt_forge.py"), "planted.json", "--out", "planted.md"], ok_codes=(1, 3))
+    codes = _lint_codes(r.work / "planted.md")
+    r.check("linter caught every planted flaw (no_locks, multi_camera, no_action)",
+            {"no_locks", "multi_camera", "no_action"} <= set(codes), codes)
+    r.findings.append({"task_shot_issues": _lint_codes(md), "planted_caught": codes})
+
+
+def excel_model(r, d, task, clip, selftest):
+    import openpyxl
+    spec = json.loads((d.parent / "templates" / "spec.example.json").read_text(encoding="utf-8"))
+    spec["name"] = task[:60]
+    (r.work / "spec.json").write_text(json.dumps(spec, ensure_ascii=False), encoding="utf-8")
+    step = r.call("model_builder (3-statement model)", [*PY, str(d / "model_builder.py"), "spec.json", "--out", "model.xlsx"])
+    model = r.work / "model.xlsx"
+    r.output(model)
+    sheets = (step.get("receipt") or {}).get("sheets") or []
+    r.check("model has PnL, CF, BS and Checks sheets", {"PnL", "CF", "BS", "Checks"} <= set(sheets), sheets)
+    audit = r.call("model_audit on the built model", [*PY, str(d / "model_audit.py"), "model.xlsx", "--json"], ok_codes=(0, 1))
+    rep = audit.get("receipt") or {}
+    r.check("built model has formulas and no hard-coded numbers",
+            (rep.get("stats") or {}).get("formulas", 0) > 50 and (rep.get("stats") or {}).get("hardcoded") == 0, rep.get("stats"))
+    wb = openpyxl.load_workbook(model)
+    cell = next(c for row in wb["PnL"].iter_rows(min_col=4) for c in row if isinstance(c.value, str) and c.value.startswith("="))
+    coordinate = cell.coordinate
+    cell.value = 12345
+    wb.save(r.work / "planted.xlsx")
+    planted = r.call("model_audit on a copy with a planted constant",
+                     [*PY, str(d / "model_audit.py"), "planted.xlsx", "--json"], ok_codes=(0, 1)).get("receipt") or {}
+    caught = any("12345" in str(f.get("issue")) for f in planted.get("findings", []))
+    r.check(f"audit reports the constant planted in PnL!{coordinate}", caught, planted.get("verdict"))
+    r.findings.append({"built_verdict": rep.get("verdict"), "built_stats": rep.get("stats"),
+                       "planted_cell": f"PnL!{coordinate}", "planted_verdict": planted.get("verdict"),
+                       "planted_stats_hardcoded": (planted.get("stats") or {}).get("hardcoded"),
+                       "note": "the audit lists the planted constant but keeps verdict PASS and hardcoded=0"
+                       if caught and planted.get("verdict") == "PASS" else None})
+
+
+def excel_check(r, d, task, clip, selftest):
+    import openpyxl
+    wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Data"
+    ws["A1"], ws["A2"], ws["A3"] = "Item", 10, 20
+    ws["B1"], ws["B2"] = "Total", "=SUM(A2:A3)"
+    good = r.work / "clean.xlsx"
+    wb.save(good)
+    ws["C2"], ws["C3"], ws["D2"] = "=NOW()", "=OFFSET(A2,1,0)", "42"
+    wb.save(r.work / "planted.xlsx")
+    clean = r.call("xlsx_check on a clean workbook", [*PY, str(d / "xlsx_check.py"), str(good), "--json"], ok_codes=(0, 1))
+    r.output(good)
+    rep = clean.get("receipt") or {}
+    r.check("clean workbook passes", rep.get("verdict") == "PASS", rep.get("verdict"))
+    bad = r.call("xlsx_check on a workbook with planted flaws",
+                 [*PY, str(d / "xlsx_check.py"), "planted.xlsx", "--json"], ok_codes=(0, 1)).get("receipt") or {}
+    sheet = (bad.get("sheets") or [{}])[0]
+    r.check("planted volatile functions found (C2 NOW, C3 OFFSET)", set(sheet.get("volatile") or []) >= {"C2", "C3"},
+            sheet.get("volatile"))
+    r.check("planted number-stored-as-text found (D2)", "D2" in (sheet.get("text_numbers") or []), sheet.get("text_numbers"))
+    r.findings.append({"clean_verdict": rep.get("verdict"), "planted_verdict": bad.get("verdict"),
+                       "planted_issues": bad.get("issues")})
+
+
+def judge_eval(r, d, task, clip, selftest):
+    t = d.parent / "templates"
+    judges = r.work / "judges"
+    judges.mkdir()
+    for name, role, s in (("j1", "standard", 8), ("j2", "standard", 8)):
+        (judges / f"{name}.json").write_text(json.dumps({"judge": name, "role": role, "scores": dict.fromkeys(
+            ("correctness", "security", "readability", "tests"), s)}), encoding="utf-8")
+    shutil.copy(t / "judge-score.example.json", judges / "j3.json")  # adversarial: 5, 3, 7, 8
+    args = [*PY, str(d / "eval_runner.py"), "score", "--rubric", str(t / "rubric.example.json"),
+            "--judges", "judges/*.json", "--assertions", str(t / "assertions.example.json"), "--out", "score.json"]
+    rep = r.call("eval_runner score (2 standard + 1 adversarial judge)", args, ok_codes=(0, 1)).get("receipt") or {}
+    r.output(r.work / "score.json")
+    # Known answer worked out by hand from the rubric weights (0.3, 0.3, 0.2, 0.2):
+    # adversarial = 0.3*5 + 0.3*3 + 0.2*7 + 0.2*8 = 5.4; gap 2.6 > 1.5 -> 0.6*8 + 0.4*5.4 = 6.96 < 7 -> not passed.
+    r.check("standard average is 8.0", rep.get("standard_avg") == 8.0, rep.get("standard_avg"))
+    r.check("adversarial average is 5.4", rep.get("adversarial_avg") == 5.4, rep.get("adversarial_avg"))
+    r.check("final score is 6.96 and does not pass 7", rep.get("final") == 6.96 and rep.get("passed") is False,
+            [rep.get("final"), rep.get("passed")])
+    (r.work / "baseline.json").write_text(json.dumps({"final": 8.2, "passed": True, "hard_fail": False}), encoding="utf-8")
+    gate = r.call("eval_runner gate against a better baseline",
+                  [*PY, str(d / "eval_runner.py"), "gate", "--run", "score.json", "--baseline", "baseline.json"],
+                  ok_codes=(3,)).get("receipt") or {}
+    r.check("gate blocks the regression (exit 3, drop 1.24)", gate.get("blocked") is True and gate.get("drop") == 1.24,
+            gate.get("drop"))
+    r.findings.append({"final": rep.get("final"), "passed": rep.get("passed"), "notes": rep.get("notes"),
+                       "gate": gate, "note": "scores are fixed test judges, not a model judging the task"})
+
+
+def captions_audio(r, d, task, clip, selftest):
+    words, t = [], 0.1
+    for w in task.split()[:40]:
+        words.append({"text": w, "start": round(t, 2), "end": round(t + 0.35, 2)})
+        t += 0.4
+    (r.work / "words.json").write_text(json.dumps(words, ensure_ascii=False), encoding="utf-8")
+    rtl = ["--rtl"] if any("؀" <= ch <= "ۿ" for ch in task) else []
+    cap = r.call("captions_pages (pages + SRT/VTT/ASS from word timings)",
+                 [*PY, str(d / "captions_pages.py"), "words.json", "--out", "captions", *rtl]).get("receipt") or {}
+    for ext in (".json", ".srt", ".vtt", ".ass"):
+        r.output(r.work / f"captions{ext}")
+    r.check("every task word became a caption word", cap.get("words") == len(words), [cap.get("words"), len(words)])
+    srt = (r.work / "captions.srt").read_text(encoding="utf-8")
+    r.check("first and last task words are in the SRT", words[0]["text"] in srt and words[-1]["text"] in srt, None)
+    data = r.call("extract_audio_data (per-frame energy + beats)",
+                  [*PY, str(d / "extract_audio_data.py"), str(clip), "--out", "audio.json"]).get("receipt") or {}
+    r.output(r.work / "audio.json")
+    r.check("audio measured frame by frame", (data.get("frames") or 0) > 0, data.get("frames"))
+    r.findings.append({"pages": cap.get("pages"), "rtl": bool(rtl), "bpm": data.get("bpm"), "beats": data.get("beats")})
+    if selftest:
+        bpm = data.get("bpm")
+        r.check(f"self-test tempo near {media.SELF_TEST['bpm']} BPM (±3)",
+                isinstance(bpm, (int, float)) and abs(bpm - media.SELF_TEST["bpm"]) <= 3, bpm)
+
+
+def upload_join(r, d, task, clip, selftest):
+    import hashlib
+    import os
+    original = os.urandom(300_000) + task.encode("utf-8")
+    rows, parts, out = r.work / "rows", r.work / "parts", r.work / "joined"
+    rows.mkdir(), parts.mkdir()
+    chunks = []
+    for i in range(3):
+        cid = hashlib.md5(f"part-{i}".encode()).hexdigest()  # a 32-hex id, like the upload page's asset ids
+        piece = original[i * 100_000:(i + 1) * 100_000 if i < 2 else None]
+        (parts / f"{cid}.mp4").write_bytes(piece)
+        chunks.append({"index": i, "id": cid, "size": len(piece)})
+    row = {"name": "clip.mp4", "size": len(original), "parts": 3, "status": "done", "chunks": chunks}
+    (rows / "clip.json").write_text(json.dumps(row), encoding="utf-8")
+    r.call("join_parts (3 uploaded parts)", [*PY, str(d / "join_parts.py"), "--rows", "rows", "--parts", "parts", "--out", "joined"])
+    joined = out / "clip.mp4"
+    r.output(joined)
+    r.check("joined file is byte-for-byte the original (sha256)",
+            joined.is_file() and media.sha256(joined) == hashlib.sha256(original).hexdigest(), None)
+    (parts / f"{chunks[1]['id']}.mp4").unlink()
+    (rows / "clip.json").write_text(json.dumps({**row, "name": "clip-missing.mp4"}), encoding="utf-8")
+    miss = r.call("join_parts with a part deleted", [*PY, str(d / "join_parts.py"), "--rows", "rows", "--parts", "parts",
+                                                      "--out", "joined"], ok_codes=(1,))
+    r.check("missing part reported and no file written", "MISSING" in miss.get("stdout_tail", "")
+            and not (out / "clip-missing.mp4").exists(), None)
+    r.findings.append({"bytes": len(original), "parts": 3})
+
+
+def credit_ledger(r, d, task, clip, selftest):
+    led, tool = "ledger.tsv", [*PY, str(d / "ledger.py")]
+    r.call("ledger add job-1 (10 credits)", [*tool, "add", led, "kling-test", "10", "job-1", "a.mp4"])
+    r.call("ledger add job-2 (12 credits)", [*tool, "add", led, "kling-test", "12", "job-2", "b.mp4"])
+    again = r.call("ledger add job-2 again", [*tool, "add", led, "kling-test", "12", "job-2", "b.mp4"], ok_codes=(0, 1))
+    r.output(r.work / led)
+    ok = r.call("ledger sum vs quote 22", [*tool, "sum", led, "--quote", "22", "--json"]).get("receipt") or {}
+    r.check("double billing refused: 2 jobs, total 22", ok.get("jobs") == 2 and ok.get("total") == 22.0,
+            [ok.get("jobs"), ok.get("total")])
+    over = r.call("ledger sum vs budget 15", [*tool, "sum", led, "--budget", "15", "--json"], ok_codes=(1,)).get("receipt") or {}
+    r.check("over-budget total blocks the gate (exit 1)", over.get("pass") is False, over.get("problems"))
+    r.findings.append({"total": ok.get("total"), "duplicate_add": ((again.get("stdout_tail") or "") + (again.get("stderr_tail") or "")).strip()[:120],
+                       "over_budget": over.get("problems"), "note": "test entries only; no credits were spent"})
+
+
+def shadow_theatre(r, d, task, clip, selftest):
+    from PIL import Image, ImageStat
+    tool = [*PY, str(d / "shadow_theatre.py")]
+    scene = json.loads((d.parent / "scenes" / "lantern-keeper.json").read_text(encoding="utf-8"))
+    scene["title"], scene["concept"] = task[:80], task
+    (r.work / "scene.json").write_text(json.dumps(scene, ensure_ascii=False), encoding="utf-8")
+    ok = r.call("check the scene", [*tool, "check", "scene.json"])
+    r.check("scene passes the style grammar", (ok.get("stdout_tail") or "").startswith("PASS"), (ok.get("stdout_tail") or "")[:120])
+    bad = json.loads(json.dumps(scene))
+    bad["scenes"][1]["start"] += 0.5
+    for sc in bad["scenes"]:
+        sc.pop("memorable", None)
+    (r.work / "planted.json").write_text(json.dumps(bad, ensure_ascii=False), encoding="utf-8")
+    fail = r.call("check a scene with 2 planted flaws", [*tool, "check", "planted.json"], ok_codes=(1,))
+    text = fail.get("stdout_tail") or ""
+    r.check("check caught the planted gap and the missing memorable scene",
+            "gap or overlap" in text and "memorable" in text, text[:300])
+    r.call("stills (preview size)", [*tool, "stills", "scene.json", "--out", "stills", "--preview"])
+    stills = sorted((r.work / "stills").glob("still_*.png"))
+    for png in stills:
+        r.output(png)
+    r.check("one still per scene", len(stills) == len(scene["scenes"]), len(stills))
+    spread = [round(ImageStat.Stat(Image.open(p).convert("L")).stddev[0], 1) for p in stills]
+    r.check("every still has a picture (not a flat frame)", bool(spread) and min(spread) > 5, spread)
+    film = r.work / "shadow.mp4"
+    r.call("render preview film", [*tool, "render", "scene.json", "--out", str(film), "--preview"], timeout=900)
+    row = r.output(film, video=True)
+    facts = row.get("probe") or {}
+    dur = facts.get("duration")
+    r.check(f"film lasts the scene's {scene['duration']} s (±0.2)",
+            isinstance(dur, (int, float)) and abs(dur - scene["duration"]) <= 0.2, dur)
+    r.check("film has picture and sound", "video" in facts and "audio" in facts, sorted(facts))
+    r.call("analyze the input video as a shadow reference", [*tool, "analyze", str(clip), "--out", "analysis"])
+    r.output(r.work / "analysis" / "analysis.json")
+    r.findings.append({"check": (ok.get("stdout_tail") or "").strip()[:200], "stills_contrast": spread, "film_seconds": dur})
+
+
+def web_film(r, d, task, clip, selftest):
+    tool = [*PY, str(d / "web_film.py")]
+    r.call("plan the film from the task", [*tool, "plan", task, "--require", task, "--out", "film.plan.json"])
+    plan = _json(r.work / "film.plan.json")
+    # The plan is a template a director fills; fill it plainly from the task so check can judge it.
+    plan["concept"] = task
+    words = task.split() or [task]
+    for i, shot in enumerate(plan["shots"]):
+        shot["text"] = task if i == 0 else words[i % len(words)]
+        shot["motion"] = "ease-out entrance, 2% drift, exit on the cut"
+    plan["shots"][0]["covers"] = [0]
+    (r.work / "film.plan.json").write_text(json.dumps(plan, ensure_ascii=False, indent=1), encoding="utf-8")
+    r.call("scaffold the page", [*tool, "scaffold", "film.plan.json", "--out", "film.html"])
+    r.output(r.work / "film.html")
+    rep = r.call("check plan + page", [*tool, "check", "film.plan.json", "--html", "film.html", "--json"], ok_codes=(0, 1))
+    res = rep.get("receipt") or {}
+    r.check("plan and page pass every structural check", res.get("ok") is True, res.get("errors"))
+    bad = json.loads(json.dumps(plan))
+    bad["shots"][2]["start"] += 0.4
+    bad["shots"][0]["covers"] = []
+    (r.work / "planted.plan.json").write_text(json.dumps(bad, ensure_ascii=False), encoding="utf-8")
+    caught = r.call("check a plan with 2 planted flaws", [*tool, "check", "planted.plan.json", "--json"],
+                    ok_codes=(1,)).get("receipt") or {}
+    errs = " | ".join(caught.get("errors") or [])
+    r.check("check caught the planted gap and the uncovered requirement",
+            "gap or overlap" in errs and "no shot covering" in errs, errs[:300])
+    r.findings.append({"shots": len(plan["shots"]), "duration": plan.get("duration"),
+                       "note": "structure only; the page was not rendered to video here"})
+
+
+def causal_laws(r, d, task, clip, selftest):
+    recipe = d.parent / "recipes" / "laws" / "elastic-memory.json"
+    expected = json.loads(recipe.read_text(encoding="utf-8"))["provenance"]["v0_2_demo_receipt"]["metrics"]
+    tool = [*PY, str(d / "kmx.py"), "laws"]
+    rep = r.call("run the elastic-memory law (A coupled vs B control)", [*tool, "run", str(recipe), "--render", "lab"]
+                 ).get("receipt") or {}
+    report = r.work / "lab" / "report.json"
+    r.output(report)
+    full = [x for x in rep.get("dose") or rep.get("dose_response") or [] if x.get("factor") == 1.0]
+    got = full[0].get("mean_post_light_effect") if full else None
+    r.check("reproduces the recorded effect 0.097492994 at full gain", got == expected["mean_post_light_effect"],
+            [got, expected["mean_post_light_effect"]])
+    r.check("causal checks hold (effect, zero gain = zero effect, monotonic dose)",
+            all((rep.get("checks") or {}).values()) and bool(rep.get("checks")), rep.get("checks"))
+    ver = r.call("verify the report hashes", [*tool, "verify", str(report)]).get("receipt") or {}
+    r.check("report verifies", ver.get("verified") is True, ver)
+    frame = sorted((r.work / "lab" / "a_coupled").glob("*.svg"))[-1]
+    frame.write_text(frame.read_text(encoding="utf-8") + "<!-- tampered -->", encoding="utf-8")
+    bad = r.call("verify after tampering one frame", [*tool, "verify", str(report)], ok_codes=(1,)).get("receipt") or {}
+    r.check("tampered frame is detected", bad.get("verified") is False, bad)
+    r.findings.append({"verdict": rep.get("verdict"), "effect": got, "limits": rep.get("limits"),
+                       "note": "the law runs on the stored recipe; the task text does not change it"})
+
+
+def reel_research(r, d, task, clip, selftest):
+    tool = [*PY, str(d / "instagram_research.py"), "--db", "research.sqlite"]
+    plan = r.call("plan public-index searches for the task", [*tool, "plan", task]).get("receipt") or {}
+    queries = plan.get("queries") or []
+    r.check("search plan quotes the task", sum(task in q.get("query", "") for q in queries) >= 1, len(queries))
+    good, other = "https://www.instagram.com/reel/KOSIFtest01/", "https://www.instagram.com/reel/KOSIFtest02/"
+    a = r.call("index a reel link", [*tool, "add", good, "--title", task[:60]]).get("receipt") or {}
+    r.call("index a second reel link (left unreviewed)", [*tool, "add", other])
+    off = r.call("try to index a non-Instagram link", [*tool, "add", "https://example.com/reel/KOSIFtest03/"]).get("receipt") or {}
+    r.check("Instagram link indexed, foreign link refused", a.get("indexed") == 1 and off.get("indexed") == 0,
+            [a.get("indexed"), off.get("indexed")])
+    r.call("record a named human review", [*tool, "review", good, "--reviewer", "black-dragon-test",
+                                           "--mechanisms", "beat cut", "--observations", "test entry, no media examined"])
+    exp = r.call("export reviewed references", [*tool, "export-reviewed", "reviewed.json"]).get("receipt") or {}
+    r.output(r.work / "reviewed.json")
+    refs = _json(r.work / "reviewed.json").get("references") or []
+    r.check("only the reviewed reel is exported", exp.get("exported") == 1 and [x["url"] for x in refs] == [good],
+            [x.get("url") for x in refs])
+    r.findings.append({"queries": len(queries), "mode": plan.get("mode"),
+                       "note": "no network: search links are built, not opened; no media downloaded"})
+
+
+def voice_check(r, d, task, clip, selftest):
+    tool = [*PY, str(d / "voice_studio.py")]
+    st = r.call("voice_studio self-test (word timings, SRT/VTT, language)", [*tool, "--self-test"])
+    r.check("self-test ok", "self-test: ok" in (st.get("stdout_tail") or ""), (st.get("stdout_tail") or "").strip())
+    doc = r.call("doctor (which speech engines are here)", [*tool, "--json", "doctor"]).get("receipt") or {}
+    wav, silent = r.work / "voice.wav", r.work / "silent.wav"
+    r.call("extract the audio (ffmpeg)", ["ffmpeg", "-y", "-loglevel", "error", "-i", str(clip), "-vn", "-ac", "1", str(wav)])
+    r.call("make a 2 s silent file (planted)", ["ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi",
+                                                "-i", "anullsrc=r=44100:cl=mono", "-t", "2", str(silent)])
+    rep = r.call("verify the audio", [*tool, "--json", "verify", str(wav)]).get("receipt") or {}
+    r.output(wav)
+    truth = media.probe(wav).get("duration")
+    r.check("audio passes and its duration matches ffprobe (±0.05 s)",
+            rep.get("ok") is True and isinstance(truth, (int, float)) and abs(rep.get("duration_s", -1) - truth) <= 0.05,
+            [rep.get("duration_s"), truth])
+    bad = r.call("verify the planted silent file", [*tool, "--json", "verify", str(silent)]).get("receipt") or {}
+    r.check("silent file is rejected", bad.get("ok") is False, bad.get("problem"))
+    ready = sorted(k for k, v in (doc.get("engines") or {}).items() if v.get("ready"))
+    r.findings.append({"engines_ready": ready, "mean_volume_db": rep.get("mean_volume_db"),
+                       "note": "speech, cloning and transcription need an engine; none ran unless listed as ready"})
+
+
+def animation_qa(r, d, task, clip, selftest):
+    from PIL import Image
+    frames, planted = r.work / "frames", r.work / "planted"
+    frames.mkdir(), planted.mkdir()
+    r.call("frames at 15 fps, first 8 s (ffmpeg)", ["ffmpeg", "-y", "-loglevel", "error", "-i", str(clip), "-t", "8",
+                                         "-vf", "fps=15", str(frames / "f_%04d.png")])
+    real = r.call("qa on the video's frames", [*PY, str(d / "qa.py"), "--frames", "frames", "--fps", "15",
+                                                "--out", "qa.json"], ok_codes=(0, 1)).get("receipt") or {}
+    r.output(r.work / "qa.json")
+    names = sorted(frames.glob("f_*.png"))
+    if len(names) < 60:
+        raise RuntimeError(f"need at least 4 s of frames, got {len(names)}")
+    for i, p in enumerate(names):  # planted copy: 2 s frozen from frame 20, and one black frame at 3.93 s
+        src = names[19] if 19 <= i < 50 else p
+        shutil.copy(src, planted / p.name)
+    Image.new("RGB", Image.open(names[0]).size).save(planted / names[59].name)
+    bad = r.call("qa on frames with a planted freeze and black frame", [*PY, str(d / "qa.py"), "--frames", "planted",
+                                                                         "--fps", "15"], ok_codes=(1,)).get("receipt") or {}
+    kinds = {i.get("type") for i in bad.get("issues", [])}
+    r.check("qa caught the planted freeze and black frame", {"freeze", "black_frames"} <= kinds, sorted(kinds))
+    r.findings.append({"verdict": real.get("verdict"), "issues": real.get("issues"), "mean_motion": real.get("mean_motion")})
+    if selftest:
+        r.check("self-test clip (always moving) passes", real.get("verdict") == "PASS", real.get("verdict"))
+
+
+def hyperframes_beats(r, d, task, clip, selftest):
+    wav = r.work / "audio.wav"
+    r.call("extract WAV (ffmpeg)", ["ffmpeg", "-y", "-loglevel", "error", "-i", str(clip), "-vn", str(wav)])
+    r.call("motion beats", [*PY_SIBLINGS, str(d / "motion.py"), "beats", str(wav), "--out", "beats.json"])
+    r.output(r.work / "beats.json")
+    beats = _json(r.work / "beats.json")
+    if isinstance(beats.get("beats"), list):
+        beats["beats"] = len(beats["beats"])
+    if isinstance(beats.get("downbeats"), list):
+        beats["downbeats"] = len(beats["downbeats"])
+    r.check("beats found", (beats.get("beats") or 0) > 0, beats.get("beats"))
+    mov = r.call("motion measure (per-frame motion)", [*PY_SIBLINGS, str(d / "motion.py"), "measure", str(clip)]
+                 ).get("receipt") or {}
+    r.check("motion measured", (mov.get("frames") or 0) > 0, mov.get("frames"))
+    r.findings.append({"bpm": beats.get("bpm"), "beats": beats.get("beats"), "downbeats": beats.get("downbeats"),
+                       "motion": mov})
+    if selftest:
+        r.check(f"self-test tempo near {media.SELF_TEST['bpm']} BPM (±3)",
+                isinstance(beats.get("bpm"), (int, float)) and abs(beats["bpm"] - media.SELF_TEST["bpm"]) <= 3, beats.get("bpm"))
+        r.check("self-test clip (shaking camera) is never still", (mov.get("near_still_share") or 0) < 0.1,
+                mov.get("near_still_share"))
+
+
+def montage_tools(r, d, task, clip, selftest):
+    tool = [*PY, str(d / "tools.py")]
+    facts = r.call("probe the video", [*tool, "probe", str(clip)]).get("receipt") or {}
+    r.check("probe matches ffprobe duration (±0.05 s)",
+            abs((facts.get("duration") or -1) - (media.probe(clip).get("duration") or 0)) <= 0.05, facts.get("duration"))
+    vert = r.work / "vertical.mp4"
+    r.call("reframe to 9:16", [*tool, "aspect", str(clip), "--to", "9:16", "--mode", "crop", "--out", str(vert)], timeout=900)
+    row = r.output(vert, video=True)
+    size = [((row.get("probe") or {}).get("video") or {}).get(k) for k in ("width", "height")]
+    r.check("vertical output is 1080x1920", size == [1080, 1920], size)
+    planted = r.work / "planted-silence.mp4"
+    r.call("make a 2 s clip whose sound stops at 1.0 s (planted)", [
+        "ffmpeg", "-y", "-loglevel", "error", "-f", "lavfi", "-i", "testsrc2=s=640x360:d=2", "-f", "lavfi", "-i", "sine=d=1",
+        "-f", "lavfi", "-i", "anullsrc=r=44100:cl=mono:d=1.5", "-filter_complex", "[1][2]concat=n=2:v=0:a=1[a]",
+        "-map", "0", "-map", "[a]", "-shortest", str(planted)])
+    cut = r.call("cut the silence", [*tool, "silence", str(planted), "--out", "no-silence.mp4"]).get("receipt") or {}
+    spans = cut.get("silences") or []
+    r.check("silence found at 1.0 s (±0.1)", bool(spans) and abs(spans[0][0] - 1.0) <= 0.1, spans)
+    r.output(r.work / "no-silence.mp4", video=True)
+    r.findings.append({"input": {k: facts.get(k) for k in ("duration", "video", "audio")}, "silences": spans})
+
+
 RUNNERS = {"prompt-master": prompt_master, "prompt-architect": prompt_architect, "reel-hooks": reel_hooks,
            "excel-lambdas": excel_lambdas, "social": social, "video-editor": video_editor,
-           "motion-energy": motion_energy}
+           "motion-energy": motion_energy, "image-prompts": image_prompts, "video-prompts": video_prompts,
+           "excel-model": excel_model, "excel-check": excel_check, "judge-eval": judge_eval,
+           "captions-audio": captions_audio, "upload-join": upload_join, "credit-ledger": credit_ledger,
+           "shadow-theatre": shadow_theatre, "web-film": web_film, "causal-laws": causal_laws,
+           "reel-research": reel_research, "voice-check": voice_check, "animation-qa": animation_qa,
+           "hyperframes-beats": hyperframes_beats, "montage-tools": montage_tools}
 
 
 def main(argv: list[str]) -> int:
