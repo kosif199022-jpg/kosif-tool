@@ -8501,6 +8501,12 @@
    "w": 1
   },
   {
+   "from": "script:scripts/_black_dragon_power_program.py",
+   "to": "test:tests/test_black_dragon.py",
+   "rel": "tested_by",
+   "w": 1
+  },
+  {
    "from": "script:scripts/_black_dragon_skill.py",
    "to": "test:tests/test_black_dragon.py",
    "rel": "tested_by",
