@@ -63,6 +63,11 @@ Serve the folder in the background, never in the foreground:
    has big type and big images. Mercury, Apple product pages, Raycast and AuthKit all worked.
 2. Capture it: hero, every section, colours, fonts, radii, spacing. Write the system down in `design.md`
    (exact hexes, font and weights, type scale, radius, button shape).
+   On a site you own or may copy (your current site, a client's site under contract), measure it instead of
+   eyeballing it: `python3 $L/../kosif-superpowers/scripts/site_snapshot.py snapshot <url> --rights own
+   --rights-note "<why it is yours>" --out "$WORKDIR/refs/site"` copies the page offline (goclone layout) and
+   writes `design.md` with the measured colours, fonts, type scale, radii, spacing and CSS variables. For a
+   gallery site you do not own, do not snapshot it: read it in the browser and write `design.md` by hand.
 3. Copy it faithfully: same section order, same spacing rhythm, same components. Only the brand, words and
    media change. A faithful copy of a great site beats an original mediocre one every time.
 

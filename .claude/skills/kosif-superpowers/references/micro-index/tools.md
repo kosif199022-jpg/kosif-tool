@@ -249,6 +249,7 @@
 | `rea-creative-research-atlas` | TOOL-48 | باني فهرس البحث الإبداعي · Creative research catalog builder | `python3 scripts/rea_creative_research_atlas.py report` | 1 |
 | `rebalance-creative-repos` | TOOL-49 | إعادة موازنة فهرس المستودعات الإبداعية · Rebalance creative repo catalog | `python3 scripts/rebalance_creative_repos.py run` | 0 |
 | `repo-ashell-cinema` | TOOL-51 | استوديو التنزيل Cinema C للآيفون · Cinema C iPhone downloader studio | `sh tools/a-shell/Cinema_C_V34_Studio_iPhone.sh "https://www.youtube.c…` | 0 |
+| `site-snapshot` | TOOL-184 | نسخة أوفلاين من موقع وقراءة نظام تصميمه (قدرات goclone) · Website snapshot and design read-out (goclone capabilities) | `python3 scripts/site_snapshot.py snapshot https://example.com --right…` | 1 |
 | `song-preview` | TOOL-182 | معاينة الأغنية الرسمية (بديل الـDRM) · Official song preview (DRM fallback) | `python3 scripts/song_preview.py search "Tamer Ashour انا بحبك يا بلاد…` | 1 |
 | `source-finder` | — | البحث عن اللقطات الأصلية لكل مشهد في فيديو مرجعي · Source finder: the original clips behind each shot of a reference video | `python3 scripts/source_finder.py doctor` | 2 |
 | `source-scout` | TOOL-50 | مستكشف مصادر المجتمع · Community source scout | `python3 scripts/source_scout.py check` | 1 |

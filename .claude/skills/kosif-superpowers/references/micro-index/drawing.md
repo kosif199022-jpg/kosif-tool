@@ -13,7 +13,7 @@
 
 ## brand-logo-identity (motion)
 
-chapter: [brand-logo-identity](../powers/brand-logo-identity.md) · card: `usip-library/cards/drawing/brand-logo-identity.md` · tools: `brand-tokens`
+chapter: [brand-logo-identity](../powers/brand-logo-identity.md) · card: `usip-library/cards/drawing/brand-logo-identity.md` · tools: `brand-tokens` · `site-snapshot`
 
 | ID | | القدرة / power | SP | يحتاج / requires |
 |---|---|---|---|---|
